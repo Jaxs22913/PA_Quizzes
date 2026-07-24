@@ -1209,14 +1209,15 @@
           window.removeEventListener("afterprint", restore);
         }
         window.addEventListener("afterprint", restore);
+        // CRITICAL: window.print() must run SYNCHRONOUSLY inside the tap
+        // gesture -- iOS Safari silently ignores a print() call deferred out
+        // of the user-activation context (a setTimeout here broke it on
+        // mobile). Set the light theme synchronously first (print() flushes
+        // styles, so it's reflected), then print; afterprint restores the
+        // theme, with a fallback timeout for browsers that don't fire it.
         root.setAttribute("data-theme", "light");
-        // let the light-theme repaint land before the print snapshot, then
-        // print; the afterprint listener restores the theme, plus a fallback
-        // timeout in case afterprint never fires (e.g., iOS Safari).
-        setTimeout(function () {
-          window.print();
-          setTimeout(restore, 800);
-        }, 60);
+        window.print();
+        setTimeout(restore, 1000);
       });
       group.appendChild(pdfBtn);
     }
