@@ -1818,6 +1818,31 @@
   }
 })();
 
+// Personal progress log (feeds progress.html's dashboard). When a quiz
+// finishes it calls markCompleted() -- the engines' shared finish hook, a
+// global on quiz pages -- so wrap that to append a dated completion event to a
+// local "progressLog". This adds the time dimension (streaks, recent activity)
+// that the per-quiz qc:<path> records lack. Pure localStorage (cloud-sync
+// mirrors it across a signed-in user's devices) and independent of Firebase,
+// so it keeps working offline. Runs here in theme.js (loads right after the
+// page's own inline script) rather than the Firebase chain, so it's in place
+// well before any quiz is finished.
+(function () {
+  if (typeof window.markCompleted !== "function") return;
+  var LOG_KEY = "progressLog";
+  var orig = window.markCompleted;
+  window.markCompleted = function (score, total, timeMs) {
+    try {
+      var log = [];
+      try { log = JSON.parse(localStorage.getItem(LOG_KEY)) || []; } catch (e) {}
+      log.push({ t: Date.now(), p: location.pathname, s: score, n: total });
+      if (log.length > 400) log = log.slice(log.length - 400);
+      localStorage.setItem(LOG_KEY, JSON.stringify(log));
+    } catch (e) {}
+    return orig.apply(this, arguments);
+  };
+})();
+
 // Cloud sync bootstrap (added 2026-07-10). Dynamically injects the Firebase
 // SDK + firebase-config.js + cloud-sync.js, in that order, on every page --
 // same zero-per-page-HTML-edit rollout as the calculator widget, since this
