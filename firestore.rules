@@ -50,5 +50,20 @@ service cloud.firestore {
       allow create, update: if request.auth != null && request.resource.data.uid == request.auth.uid;
       allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
     }
+
+    // Class-wide cumulative "questions answered" counter (class-stats.js): a
+    // single shared doc that finishing any quiz increments. Writes are OPEN
+    // (not auth-gated) on purpose -- most homepage/quiz visitors are not
+    // signed in (Google sign-in is opt-in; presence/group-study are the only
+    // things that establish auth), so requiring auth would block their
+    // increments. It's constrained to the counter's own numeric field so the
+    // doc can't be abused as arbitrary open storage; deletes are denied. A
+    // casual engagement metric, client-trusted like gameRooms scoring -- not
+    // authoritative data.
+    match /stats/global {
+      allow read: if true;
+      allow write: if request.resource.data.questionsCompleted is number;
+      allow delete: if false;
+    }
   }
 }
