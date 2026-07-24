@@ -1864,6 +1864,11 @@
             // not a hard dependency -- it no-ops instantly on any page
             // without a .guide-back-bar.
             loadScript(base + "presence.js");
+            // class-stats.js (added 2026-07-24): the class-wide cumulative
+            // "questions answered" counter. Increments a shared Firestore doc
+            // when any quiz finishes and displays it on the homepage. Same
+            // firebaseReady-gated, no-op-where-irrelevant pattern as presence.
+            loadScript(base + "class-stats.js");
           });
         });
       }

@@ -607,6 +607,21 @@
       #semester-progress-fill { transition: none; }
     }
 
+    /* Class-wide cumulative "questions answered" counter (class-stats.js).
+       Hidden until the live value loads so it never flashes a stale 0. */
+    .class-counter {
+      display: flex; align-items: baseline; justify-content: center;
+      flex-wrap: wrap; gap: 4px 8px; margin: 2px 0 16px;
+      font-size: 13.5px; color: var(--muted, #6b7280);
+      opacity: 0; transition: opacity .5s ease;
+    }
+    .class-counter.ready { opacity: 1; }
+    .class-counter .cc-icon { font-size: 15px; }
+    .class-counter .cc-num {
+      font-weight: 800; font-size: 20px; letter-spacing: -.01em;
+      color: var(--accent, #2563eb); font-variant-numeric: tabular-nums;
+    }
+
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -1327,6 +1342,11 @@
       <div class="semester-progress" id="semester-progress">
         <div class="semester-progress-track"><i id="semester-progress-fill"></i></div>
         <div class="semester-progress-label" id="semester-progress-label"></div>
+      </div>
+      <div id="class-counter" class="class-counter" aria-live="polite">
+        <span class="cc-icon" aria-hidden="true">📚</span>
+        <span class="cc-num" id="class-counter-value">0</span>
+        <span class="cc-label">questions answered by the Class of 2028</span>
       </div>
       <div class="tabs">
         <button class="tab-btn active" data-tab="physio">Physiology</button>
