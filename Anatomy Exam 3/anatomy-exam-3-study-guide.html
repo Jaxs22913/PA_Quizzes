@@ -146,7 +146,7 @@
   /* ---- uniform site shell (sidebar layout), added for the 2026-07-16 retrofit ---- */
   .layout { display:flex; max-width:1180px; margin:0 auto; }
   nav.toc {
-    position:sticky; top:38px; align-self:flex-start; height:calc(100vh - 38px);height:calc(100dvh - 38px); overflow-y:auto;
+    position:sticky; top:38px; align-self:flex-start; max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px); overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
     width:240px; min-width:240px; padding:24px 16px; border-right:1px solid var(--line);
     background:#f2efe9; font-family:ui-sans-serif, system-ui, sans-serif; font-size:.85rem;
   }
