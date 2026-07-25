@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f7a5c; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2793a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAM/Nutrition Exam 1 — Master Exam (Form D)</title>
+<style>
+  :root{
+    --navy:#2a2f6b; --indigo:#3f7a5c; --gold:#c2793a; --ice:#c3e0d2;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>CAM/Nutrition Exam 1 — Master Exam, Form D</h1>
+    <div class="sub">Cumulative &middot; all 8 CAM/Nutrition Exam 1 topics</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Form D of five cumulative Master Exams for CAM/Nutrition Exam 1. Sixty questions drawn across all eight topics on the exam. Each form is a distinct set of questions.</p>
+    <div class="chips"><span class="chip">Human Nutrition</span><span class="chip">Macro/Micronutrients</span><span class="chip">Special Topics</span><span class="chip">Weight Control</span><span class="chip">Pregnancy & Breastfeeding</span><span class="chip">Food Allergies</span><span class="chip">Aging</span><span class="chip">Infancy–Adolescence</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Fat", "io": "Diet guidelines for normal infant growth", "q": "The lecture emphasizes that dietary fat is vital in infancy mainly for what reason?", "opts": [["It lowers the infant's calorie needs", "Fat is calorie-dense and supports high energy needs rather than lowering them."], ["It is vital to nervous system development", "Correct: fat is vital to nervous system development, and about half of breast-milk energy comes from fat."], ["It replaces the need for protein", "Fat does not substitute for protein in the infant diet."], ["It prevents all food allergies", "Fat supports nervous-system development; it is not described as preventing allergies."]], "c": 1, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 121"}, {"topic": "Influences on Food Choice", "io": "Influences on Food Choice", "q": "The lecture notes that increased affluence in North America has been linked to which dietary and lifestyle shift?", "opts": [["A universal, exclusive improvement in nutrient density seen equally across every income level", "The first choice reverses the actual trend the lecture describes, since affluence increased (not reduced) these intakes; the third choice overstates it as a universal, exclusive improvement, when the lecture frames affluence as bringing both benefits and downsides; and the fourth choice isn't supported, since convenience and time pressures are cited elsewhere as ongoing influences on food choice, not something affluence eliminated."], ["Higher intake of animal fat, sugar, salt, and alcohol, alongside more sedentary lifestyles", "The lecture states that although North Americans generally live longer and have more money, diverse food, and lifestyle choices, affluence has also led to sedentary lifestyles and high intakes of animal fat, sugar, salt, and alcohol."], ["A complete shift away from convenience and processed foods toward home-cooked, whole-food meals", "The first choice reverses the actual trend the lecture describes, since affluence increased (not reduced) these intakes; the third choice overstates it as a universal, exclusive improvement, when the lecture frames affluence as bringing both benefits and downsides; and the fourth choice isn't supported, since convenience and time pressures are cited elsewhere as ongoing influences on food choice, not something affluence eliminated."], ["Reduced intake of animal fat, sugar, salt, and alcohol across nearly every demographic group", "The first choice reverses the actual trend the lecture describes, since affluence increased (not reduced) these intakes; the third choice overstates it as a universal, exclusive improvement, when the lecture frames affluence as bringing both benefits and downsides; and the fourth choice isn't supported, since convenience and time pressures are cited elsewhere as ongoing influences on food choice, not something affluence eliminated."]], "c": 1, "cite": "Human Nutrition lecture, slide 42 (Longer Healthier Lives)"}, {"topic": "Blue Zones", "io": "Recommendations for dietary changes in older adults", "q": "The lecture describes common lifestyle habits of Blue Zone centenarians. Which is one of them?", "opts": [["A diet centered on processed convenience foods", "Their diets are plant-based, not built on processed foods."], ["Avoiding all physical activity to conserve energy", "They perform daily physical activity rather than avoiding it."], ["Maintaining a sense of purpose and daily stress-reduction behaviors", "Correct: centenarians maintain a sense of purpose and practice daily stress reduction such as napping and socializing."], ["Frequent tobacco use to relax", "Blue Zone centenarians do not use tobacco."]], "c": 2, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 17"}, {"topic": "Vitamins", "io": "Vitamins", "q": "Vitamin K is required as a coenzyme in the synthesis of proteins involved in which two processes, per the slide?", "opts": [["Calcium absorption and phosphorus balance", "Vision and gene expression are functions the slide lists under vitamin A, not vitamin K; antioxidant defense and preventing the breakdown of vitamin A and unsaturated fatty acids is vitamin E's listed function; maintaining serum calcium and phosphorus concentrations is attributed to vitamin D on this slide, not to vitamin K."], ["Blood clotting and bone metabolism", "The slide states vitamin K is required as a coenzyme during the synthesis of proteins involved in blood clotting and bone metabolism."], ["Antioxidant defense and fatty acid breakdown prevention", "Vision and gene expression are functions the slide lists under vitamin A, not vitamin K; antioxidant defense and preventing the breakdown of vitamin A and unsaturated fatty acids is vitamin E's listed function; maintaining serum calcium and phosphorus concentrations is attributed to vitamin D on this slide, not to vitamin K."], ["Vision and gene expression", "Vision and gene expression are functions the slide lists under vitamin A, not vitamin K; antioxidant defense and preventing the breakdown of vitamin A and unsaturated fatty acids is vitamin E's listed function; maintaining serum calcium and phosphorus concentrations is attributed to vitamin D on this slide, not to vitamin K."]], "c": 1, "cite": "Macro/Micro lecture, slide 100 (Vitamins: Classification & Function—Fat Soluble)"}, {"topic": "Signs of Anaphylaxis", "io": "Food Allergy vs. Food Intolerance", "q": "In the lecture's list of allergic reaction symptoms by body system, which cardiovascular findings are both marked with an asterisk as signs of rapid, potentially fatal anaphylaxis?", "opts": [["Itching and hives appearing across the skin", "Incorrect. Of the skin symptoms listed, only tingling is asterisked; itching and hives are not marked."], ["Nausea and vomiting in the GI tract", "Incorrect. None of the listed GI tract symptoms are marked with the asterisk indicating anaphylaxis."], ["Low blood pressure and rapid heart rate (cardiovascular)", "Correct — the lecture asterisks both low blood pressure and rapid heart rate under the cardiovascular system as indicators of rapid, potentially fatal anaphylaxis."], ["Runny nose and wheezing in the airway", "Incorrect. Of the respiratory symptoms, only difficulty breathing is asterisked; runny nose and wheezing are not."]], "c": 2, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 24"}, {"topic": "Nutrition Support", "io": "Nutrition Support", "q": "What are the three major factors to weigh before starting specialized nutrition support (SNS), per lecture?", "opts": [["Availability of trained staff, necessary equipment, and appropriate timing within the hospital's daily schedule", "Staffing/equipment/timing, cost/insurance/policy, and demographic factors like age/sex/blood type are not the three clinical factors the lecture lists for this decision."], ["Total treatment cost, the patient's insurance coverage, and the receiving hospital's internal policy", "Staffing/equipment/timing, cost/insurance/policy, and demographic factors like age/sex/blood type are not the three clinical factors the lecture lists for this decision."], ["Impact of the disease process on nutritional intake, likelihood SNS will improve outcome/quality of life, and preexisting nutritional status", "The three major factors are the impact of the disease process on nutritional intake, the likelihood that SNS will improve patient outcome or quality of life, and preexisting nutritional status."], ["The patient's chronological age, biological sex, ABO blood type, and family history of chronic disease", "Staffing/equipment/timing, cost/insurance/policy, and demographic factors like age/sex/blood type are not the three clinical factors the lecture lists for this decision."]], "c": 2, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 20"}, {"topic": "Vitamins", "io": "Vitamins", "q": "Water-soluble vitamins in food are particularly susceptible to destruction by which of the following, per the slide?", "opts": [["Heat, light, air exposure, cooking in water, and alkalinity", "The slide states water-soluble vitamins are particularly susceptible to destruction by heat, light, air exposure, cooking in water, and alkalinity, while freezing (with prior blanching) actually helps retain vitamin content."], ["Freezing and blanching before long-term frozen storage", "Freezing and blanching are described on the slide as helping retain nutrients, not destroying them; ripening on the plant is when vitamin content is described as greatest, the opposite of destruction; refrigeration isn't mentioned on the slide as a destructive factor at all."], ["Ripening on the plant well past peak harvest time", "Freezing and blanching are described on the slide as helping retain nutrients, not destroying them; ripening on the plant is when vitamin content is described as greatest, the opposite of destruction; refrigeration isn't mentioned on the slide as a destructive factor at all."], ["Refrigeration below 40°F for several consecutive weeks", "Freezing and blanching are described on the slide as helping retain nutrients, not destroying them; ripening on the plant is when vitamin content is described as greatest, the opposite of destruction; refrigeration isn't mentioned on the slide as a destructive factor at all."]], "c": 0, "cite": "Macro/Micro lecture, slide 105 (Vitamin Preservation in Foods)"}, {"topic": "Living with Food Allergies", "io": "Food Allergy Epidemiology & Prevention", "q": "According to the lecture, what proportion of young children outgrow their food allergies before age 3, and by when?", "opts": [["10% to 15% of young children outgrow food allergies before age 3", "Incorrect. This is not the figure the lecture states; the lecture states a much higher proportion."], ["80% of young children outgrow food allergies before age 3", "Correct. The lecture states 80% of young children outgrow their food allergies before age 3."], ["Cooking food always worsens the allergic response", "Incorrect. The lecture states cooking food may eliminate the response, not worsen it."], ["Avoiding the food is rarely recommended", "Incorrect. The lecture states avoiding the food is usually the best approach."]], "c": 1, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 27"}, {"topic": "Fat Needs in Pregnancy", "io": "Unique Nutritional Needs of Pregnancy", "q": "During the second half of pregnancy, what happens to plasma lipids according to the lecture?", "opts": [["Plasma cholesterol and triglycerides both decrease noticeably", "Incorrect -- the lecture states both increase during the second half of pregnancy, the opposite of this."], ["Plasma cholesterol increases about 50% and triglycerides may triple", "Correct -- the lecture states plasma cholesterol increases roughly 50% and plasma triglycerides may triple during the second half of pregnancy."], ["Only plasma triglycerides rise; cholesterol stays stable", "Incorrect -- the lecture states cholesterol also rises (about 50%) during this period, not just triglycerides."], ["Plasma lipids remain unchanged until after delivery", "Incorrect -- the lecture describes the rise occurring during the second half of pregnancy itself, with a decrease only after delivery."]], "c": 1, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 21"}, {"topic": "Rise in Food Allergies", "io": "Food Allergy Epidemiology & Prevention", "q": "By what percentage does the lecture state food allergies in children rose between 1997 and 2011?", "opts": [["25%", "Incorrect — the lecture states the increase was 50%, not 25%."], ["75%", "Incorrect — the lecture states the increase was 50%, not 75%."], ["100%", "Incorrect — the lecture states the increase was 50%, not a doubling."], ["50%", "Correct — the lecture states 'from 1997 to 2011, food allergies in children rose by 50%.'"]], "c": 3, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 25"}, {"topic": "Weaning", "io": "Do's and don'ts of infant feeding", "q": "According to the lecture, infants should be able to drink from a cup by what age and be weaned from the bottle by what age?", "opts": [["Drink from a cup by 3 months and be weaned by 6 months", "This is far earlier than the ages the lecture gives."], ["Drink from a cup by 3 years and be weaned by 4 years", "These ages are later than the 1-year and 18-month targets described."], ["There is no recommended weaning age", "The lecture provides specific ages of 1 year and 18 months."], ["Drink from a cup by 1 year and be weaned from the bottle by 18 months", "Correct: infants should drink from a cup by 1 year and be weaned from the bottle by 18 months."]], "c": 3, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 268"}, {"topic": "Caloric Requirements by Trimester", "io": "Balanced Meal Planning (MyPlate)", "q": "According to the lecture's patient education on caloric requirements, how many additional kcal/day are recommended during the second trimester?", "opts": [["No additional calories", "Incorrect -- this describes the first trimester recommendation, not the second trimester."], ["+450 kcal/day", "Incorrect -- this is the additional amount recommended for the third trimester, not the second."], ["+340 kcal/day", "Correct -- the lecture states the second trimester recommendation is an additional 340 kcal/day."], ["+680 kcal/day", "Incorrect -- this figure does not appear anywhere in the lecture's caloric requirement guidance."]], "c": 2, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 34"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "What percentage of total daily energy needs does the thermic effect of food (TEF) account for, per lecture?", "opts": [["15% to 30%", "15-30% is instead the physical-activity range, 60-80% is instead the basal-metabolism range, and 40-50% doesn't correspond to any of the three energy-use categories given."], ["40% to 50%", "15-30% is instead the physical-activity range, 60-80% is instead the basal-metabolism range, and 40-50% doesn't correspond to any of the three energy-use categories given."], ["8% to 15%", "The thermic effect of food accounts for approximately 8% to 15% of total daily energy needs."], ["60% to 80%", "15-30% is instead the physical-activity range, 60-80% is instead the basal-metabolism range, and 40-50% doesn't correspond to any of the three energy-use categories given."]], "c": 2, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 7"}, {"topic": "AAP Peanut Introduction Guidance", "io": "Food Allergy Epidemiology & Prevention", "q": "What does the lecture state the 2019 AAP guidance concludes about early introduction of peanut protein?", "opts": [["It should be delayed until the child reaches 12 months of age.", "Incorrect. The lecture states there is no evidence to delay introduction beyond 4 to 6 months, the opposite of delaying to 12 months."], ["It has essentially no measurable effect on peanut allergy risk.", "Incorrect. The lecture states early introduction reduces risk, not that it has no effect."], ["Maternal avoidance of peanuts during pregnancy is recommended instead.", "Incorrect. The lecture states there is no evidence to recommend maternal dietary restriction during pregnancy."], ["Early introduction between 4 and 6 months of age reduces the risk of peanut allergy.", "Correct — the lecture states 'there is evidence that early introduction (between 4 and 6 months of age) of peanut protein reduces the risk for peanut allergies.'"]], "c": 3, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 29"}, {"topic": "Teen Beverages", "io": "Nutrients lacking in infant and child diets", "q": "The lecture notes soft drinks replacing milk contributes to low intake of which nutrients among teenagers?", "opts": [["Iron and vitamin B12", "These relate to other diet concerns, not to soft drinks replacing milk."], ["Fiber and potassium", "Milk is not a major fiber source; the nutrients at issue are calcium and vitamin D."], ["Calcium and vitamin D", "Correct: soft drinks replacing milk contribute to low calcium and vitamin D intake in teenagers."], ["Sodium and added sugar", "Soft drinks add sodium and sugar; the concern for milk replacement is calcium and vitamin D."]], "c": 2, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 535"}, {"topic": "Colostrum", "io": "Physiology of Breastfeeding", "q": "Human milk oligosaccharides (HMOs) found in colostrum promote the growth of which type of beneficial intestinal bacteria, per the lecture?", "opts": [["Lactobacillus", "Incorrect -- the lecture does not name this genus in its discussion of HMOs."], ["Escherichia coli", "Incorrect -- E. coli is not described as a beneficial bacterium promoted by HMOs in the lecture."], ["Bifidobacteria", "Correct -- the lecture states HMOs in colostrum promote growth of beneficial intestinal bacteria, particularly Bifidobacteria."], ["Streptococcus", "Incorrect -- Streptococcus is not mentioned in the lecture and is not a beneficial gut bacterium in this context."]], "c": 2, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 55"}, {"topic": "Solid Foods", "io": "Do's and don'ts of infant feeding", "q": "Which first solid food does the lecture specifically suggest introducing, and in what serving size at first?", "opts": [["Whole cow's milk, starting with 4 ounces", "Cow's milk is avoided before 1 year and is not a first solid food."], ["Honey, starting with 1 tablespoon", "Honey is avoided in infancy due to botulism risk."], ["Mixed table foods, a full bowl at a time", "The lecture advises single foods in small amounts, not mixed foods in large portions."], ["Iron-fortified rice cereal, starting with a 1-teaspoon serving", "Correct: iron-fortified cereals such as rice cereal are suggested, starting with a 1-teaspoon serving."]], "c": 3, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 243"}, {"topic": "Protein-Calorie Malnutrition", "io": "Protein-Calorie Malnutrition", "q": "In developing countries, protein-calorie malnutrition in children is most closely associated with which outcome?", "opts": [["A measurable decrease in overall infection risk", "Malnutrition impairs rather than accelerates growth, and it weakens rather than improves immune function — inadequate protein and calories increase (not decrease) infection risk, which is the opposite of two of these distractors."], ["A noticeable improvement in overall immune function", "Malnutrition impairs rather than accelerates growth, and it weakens rather than improves immune function — inadequate protein and calories increase (not decrease) infection risk, which is the opposite of two of these distractors."], ["Accelerated growth compared to well-nourished peers", "Malnutrition impairs rather than accelerates growth, and it weakens rather than improves immune function — inadequate protein and calories increase (not decrease) infection risk, which is the opposite of two of these distractors."], ["Stunted growth and increased risk of infection", "In developing countries, protein-calorie malnutrition stunts growth and increases the risk of infection. It's somewhat rare in developed countries, though it's seen in alcoholics and sometimes the elderly."]], "c": 3, "cite": "Macro/Micro lecture, slide 87 (Protein-Calorie Malnutrition)"}, {"topic": "Calories & Metabolism", "io": "Changes in nutritional requirements during adulthood", "q": "The lecture lists factors that influence basal metabolic rate (BMR). Which set matches the lecture?", "opts": [["Genetics, sex, muscle mass, adipose tissue, body size, and age", "Correct: basal metabolic rate is influenced by genetics, sex, muscle mass, adipose tissue, body size, weight, height, and age."], ["Only the number of meals eaten per day", "Meal frequency is not listed as a determinant of basal metabolic rate."], ["Blood type and eye color", "These are not among the influences the lecture lists."], ["Time of sunrise and season", "These environmental factors are not listed as determinants of basal metabolic rate."]], "c": 0, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 23"}, {"topic": "Calories & Nutrient Energy Values", "io": "Calories & Nutrient Energy Values", "q": "A food's \"energy density\" is determined by comparing which two properties?", "opts": [["Its fiber content and its vitamin content.", "Fiber/vitamin content and sugar/sodium content describe nutrient quality, not energy density, and price has nothing to do with the calorie-per-gram calculation that defines energy density."], ["Its macronutrient ratio and its price.", "Fiber/vitamin content and sugar/sodium content describe nutrient quality, not energy density, and price has nothing to do with the calorie-per-gram calculation that defines energy density."], ["Its sugar content and its sodium content.", "Fiber/vitamin content and sugar/sodium content describe nutrient quality, not energy density, and price has nothing to do with the calorie-per-gram calculation that defines energy density."], ["Its kilocalorie content and its weight.", "Energy density compares a food's calorie (kcal) content with its weight — foods like salsa or vegetable soup are low-energy-density because they pack few calories per gram, while foods like butter are high-energy-density."]], "c": 3, "cite": "Human Nutrition lecture, slide 51 (Energy Density)"}, {"topic": "Nutrition Screening", "io": "Programs and patient education for older adults", "q": "The \"DETERMINE\" checklist taught in the lecture is used for what purpose?", "opts": [["To identify warning signs of poor nutrition in older adults", "Correct: DETERMINE is an acronym used to identify warning signs of poor nutritional health."], ["To calculate an older adult's basal metabolic rate", "Basal metabolic rate is estimated separately; DETERMINE screens for nutritional risk."], ["To diagnose specific vitamin deficiencies from blood tests", "It is a warning-sign checklist, not a laboratory diagnostic tool."], ["To rank foods by their glycemic index", "Glycemic index is a separate carbohydrate concept, unrelated to DETERMINE."]], "c": 0, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 21"}, {"topic": "Vegetarian & Plant-Based Diets", "io": "Vegetarian & Plant-Based Diets", "q": "According to the slide, which of the following is NOT listed as a nutrient deficiency concern specific to vegan diets?", "opts": [["Zinc", "Vitamin B12, zinc, and iron are all explicitly listed on the slide as vegan-diet deficiency concerns because they're concentrated in animal foods that a vegan diet excludes; vitamin C doesn't share that problem, since it's abundant in the plant foods vegans emphasize."], ["Vitamin B12", "Vitamin B12, zinc, and iron are all explicitly listed on the slide as vegan-diet deficiency concerns because they're concentrated in animal foods that a vegan diet excludes; vitamin C doesn't share that problem, since it's abundant in the plant foods vegans emphasize."], ["Iron", "Vitamin B12, zinc, and iron are all explicitly listed on the slide as vegan-diet deficiency concerns because they're concentrated in animal foods that a vegan diet excludes; vitamin C doesn't share that problem, since it's abundant in the plant foods vegans emphasize."], ["Vitamin C", "The slide lists vitamin B12, vitamin D, calcium, iron, zinc, and omega-3 fatty acids as vegan diet deficiency concerns. Vitamin C is not on that list, since the fruits and vegetables that make up a larger share of a vegan diet are generally rich sources of it."]], "c": 3, "cite": "Macro/Micro lecture, slide 93 (Vegan Diets)"}, {"topic": "Nutrition Support", "io": "Nutrition Support", "q": "Which of the following is a contraindication for enteral nutrition (and thus an indication for parenteral nutrition instead)?", "opts": [["Severe ileus or feeding intolerance", "Severe ileus or feeding intolerance is a listed contraindication for enteral nutrition (along with intestinal obstruction, hemodynamic instability, severe malabsorption, major GI bleed, and major GI surgery requiring gut rest)."], ["Recent uncomplicated dental work", "Mild nausea alone isn't listed as a contraindication; a functional GI tract with good appetite is exactly the scenario where enteral nutrition (or even oral intake) would be preferred; and uncomplicated dental work has no bearing on GI feeding route."], ["Mild nausea after meals", "Mild nausea alone isn't listed as a contraindication; a functional GI tract with good appetite is exactly the scenario where enteral nutrition (or even oral intake) would be preferred; and uncomplicated dental work has no bearing on GI feeding route."], ["A functional GI tract with good appetite", "Mild nausea alone isn't listed as a contraindication; a functional GI tract with good appetite is exactly the scenario where enteral nutrition (or even oral intake) would be preferred; and uncomplicated dental work has no bearing on GI feeding route."]], "c": 0, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 28"}, {"topic": "Enteral Nutrition", "io": "Enteral Nutrition", "q": "What is a cycled enteral feeding schedule, per lecture's example?", "opts": [["A single large bolus feed delivered once daily, usually overnight while the patient sleeps.", "Running continuously with no breaks describes a straight continuous feed, a single daily bolus describes bolus feeding, and a full 24-hour pause isn't how a cycled schedule is described."], ["A schedule such as 20 hours on/4 hours off, allowing improved tolerance with time off the pump.", "A cycled feed schedule (e.g. 20 hours on, 4 hours off, or 10 hours on/2 off) allows improved tolerance of continuous feeds by giving a few hours off the pump."], ["A continuous drip feed that runs for the entire 24-hour period with no pump-free breaks.", "Running continuously with no breaks describes a straight continuous feed, a single daily bolus describes bolus feeding, and a full 24-hour pause isn't how a cycled schedule is described."], ["A schedule pausing feeds entirely for a full 24 hours between each feeding session.", "Running continuously with no breaks describes a straight continuous feed, a single daily bolus describes bolus feeding, and a full 24-hour pause isn't how a cycled schedule is described."]], "c": 1, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 25"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "What does indirect calorimetry measure, per lecture?", "opts": [["Skinfold thickness measured with calipers at multiple standardized body sites", "Skinfold thickness and waist circumference describe other body-composition measures, and direct calorimetry (not indirect) measures body heat via an insulated chamber."], ["Oxygen intake and carbon dioxide output, used to estimate energy expenditure", "Indirect calorimetry measures oxygen intake and carbon dioxide output as a surrogate for the substrates consumed and produced during metabolism, estimating energy expenditure."], ["Waist circumference measured precisely at the level of the umbilicus", "Skinfold thickness and waist circumference describe other body-composition measures, and direct calorimetry (not indirect) measures body heat via an insulated chamber."], ["Body heat output directly, via an insulated chamber", "Measuring body heat directly via an insulated chamber describes direct calorimetry, the opposite method; skinfold thickness describes the skinfold measurement technique for body composition; and waist circumference is a separate body-fat-distribution measure."]], "c": 1, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 15"}, {"topic": "Breastfeeding Advantages for Infant", "io": "Physiology of Breastfeeding", "q": "Per the lecture, breastfeeding is associated with which long-term benefit for the infant?", "opts": [["Reduced risk of obesity later in life and modest improvements in cognitive performance", "Correct -- the lecture lists reduced risk of obesity later in life and modest cognitive performance improvements among the infant advantages of breastfeeding."], ["Accelerated uterine involution occurring after delivery of the placenta", "Incorrect -- this is listed as a maternal advantage of breastfeeding, not an infant benefit."], ["Protection against maternal breast and ovarian cancer", "Incorrect -- this is listed as a maternal advantage of breastfeeding, not an infant benefit."], ["Delayed return of the mother's normal ovulatory menstrual cycles", "Incorrect -- this is listed as a maternal physiological effect, not an infant benefit."]], "c": 0, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 61"}, {"topic": "Signs of a Well-Nourished Breastfed Infant", "io": "Patient Education", "q": "Once breastfeeding is well established, a well-nourished infant's stool should typically appear:", "opts": [["Chalky and firm", "Incorrect -- this description does not match the lecture's description of a well-nourished breastfed infant's stool."], ["Lumpy, mustard-appearing", "Correct -- the lecture states a well-nourished breastfed infant should have lumpy, mustard-appearing stool."], ["Watery and clear", "Incorrect -- this description does not match the lecture's description of a well-nourished breastfed infant's stool."], ["Thick and black (meconium) beyond the first week", "Incorrect -- meconium is passed early, aided by colostrum's laxative effect, and is not described in the lecture as an ongoing sign of adequate nutrition once breastfeeding is well established."]], "c": 1, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 62"}, {"topic": "Digestive Changes", "io": "Nutritional factors related to aging", "q": "The lecture notes a decline in hydrochloric acid, intrinsic factor, and digestive enzymes with age most directly lowers absorption of which vitamin?", "opts": [["Vitamin B12", "Correct: reduced hydrochloric acid and intrinsic factor lower absorption of vitamin B12."], ["Vitamin C", "The described decline specifically affects vitamin B12 absorption, not vitamin C."], ["Vitamin K", "Vitamin K is not the vitamin tied to intrinsic factor in the lecture."], ["Vitamin D", "Vitamin D concerns relate to intake and sunlight, not intrinsic factor."]], "c": 0, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 44"}, {"topic": "Enteral Nutrition", "io": "Enteral Nutrition", "q": "Which of the following is a monitored complication specific to a nasal feeding tube, per lecture?", "opts": [["Nasal erosion, requiring the tube to be replaced roughly every 30 days with alternating nostrils", "Nasal erosion is a monitored tube complication; nasal tubes should be replaced roughly every 30 days, alternating nostrils, to help manage this risk."], ["Noticeably improved visual acuity within the first few weeks after tube placement", "Improved smell, hair loss, and visual acuity are not complications associated with nasal feeding tubes in this lecture's monitoring list."], ["A gradual improvement in the sense of smell over several weeks of tube use", "Improved smell, hair loss, and visual acuity are not complications associated with nasal feeding tubes in this lecture's monitoring list."], ["Permanent, irreversible hair loss developing along the tube's nasal insertion path", "Improved smell, hair loss, and visual acuity are not complications associated with nasal feeding tubes in this lecture's monitoring list."]], "c": 0, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 26"}, {"topic": "Metric System & Calorie Calculations", "io": "Metric System & Calorie Calculations", "q": "Per the lecture's metric summary, which statement correctly compares teaspoon-equivalents of sugar and salt?", "opts": [["4 g of salt and 6 g of sugar are each about one teaspoon", "The second choice reverses which substance gets which gram figure; the third choice confuses the unrelated tsp-to-mL conversion (1 tsp ≈ 5 mL) with the very different sugar/salt gram-per-teaspoon values, neither of which is 5 g; and the lecture does explicitly give both figures, so the fourth choice is factually wrong."], ["Teaspoon-equivalents were not given for sugar or salt", "The second choice reverses which substance gets which gram figure; the third choice confuses the unrelated tsp-to-mL conversion (1 tsp ≈ 5 mL) with the very different sugar/salt gram-per-teaspoon values, neither of which is 5 g; and the lecture does explicitly give both figures, so the fourth choice is factually wrong."], ["4 g of sugar and 6 g of salt are each about one teaspoon", "The lecture states 4 grams of sugar is about 1 teaspoon, and separately that 6 grams of salt is about 1 teaspoon — different gram weights for the same volume because the substances have different densities."], ["Sugar and salt both equal exactly 5 g per teaspoon", "The second choice reverses which substance gets which gram figure; the third choice confuses the unrelated tsp-to-mL conversion (1 tsp ≈ 5 mL) with the very different sugar/salt gram-per-teaspoon values, neither of which is 5 g; and the lecture does explicitly give both figures, so the fourth choice is factually wrong."]], "c": 2, "cite": "Human Nutrition lecture, slide 26 (Metric System Summary (1))"}, {"topic": "Physical Examination", "io": "Diagnosing Food Allergies", "q": "According to the lecture's diagnostic approach, what should a physical examination look for in suspected food allergy?", "opts": [["Elevated liver enzymes found on standard laboratory blood testing", "Incorrect. Liver enzyme testing is not mentioned in the lecture's description of the physical examination step."], ["Signs of an allergic reaction such as rash, itching, or intestinal bloating", "Correct — the lecture states the physical examination should 'look for signs of an allergic reaction (rash, itching, intestinal bloating, etc.).'"], ["Abnormal heart rhythm on cardiac auscultation", "Incorrect. Cardiac rhythm assessment is not part of the physical examination step described in the lecture."], ["Weight loss over the preceding several months", "Incorrect. Weight history is not mentioned as part of the physical examination step in the lecture."]], "c": 1, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 9"}, {"topic": "Lipids & Cardiovascular Health", "io": "Lipids & Cardiovascular Health", "q": "Which food source provides the long-chain omega-3 fatty acids DHA and EPA directly, rather than requiring the body to convert a shorter-chain precursor?", "opts": [["Fatty fish such as salmon", "Fatty fish (salmon, tuna, mackerel, lake trout) and fish oil are direct sources of DHA and EPA per the slide, which recommends about 2 servings of fish per week."], ["Walnuts, a plant source", "Flaxseed oil, walnuts, and canola oil are all listed on the slide as sources of alpha-linolenic acid (ALA), the short-chain omega-3 the body must convert into DHA/EPA — none of the three is a direct source of the long-chain forms themselves."], ["Canola oil, a plant source", "Flaxseed oil, walnuts, and canola oil are all listed on the slide as sources of alpha-linolenic acid (ALA), the short-chain omega-3 the body must convert into DHA/EPA — none of the three is a direct source of the long-chain forms themselves."], ["Flaxseed oil, a plant source", "Flaxseed oil, walnuts, and canola oil are all listed on the slide as sources of alpha-linolenic acid (ALA), the short-chain omega-3 the body must convert into DHA/EPA — none of the three is a direct source of the long-chain forms themselves."]], "c": 0, "cite": "Macro/Micro lecture, slide 56 (Omega-3 Fatty Acid Sources)"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "What is energy balance, per lecture's definition?", "opts": [["Energy intake equals energy output — food/beverage energy matches what's expended through basal metabolism and physical activity.", "Energy balance means energy intake (food and beverages) matches energy output, primarily through basal metabolism and physical activity."], ["The relative balance maintained between an individual's total body fat mass and their total lean body mass over time.", "Macronutrient ratio, meal frequency, and fat-to-lean-mass ratio are all real nutrition concepts, but none is how the lecture defines energy balance itself."], ["The specific dietary ratio maintained between an individual's daily carbohydrate intake and daily fat intake.", "Macronutrient ratio, meal frequency, and fat-to-lean-mass ratio are all real nutrition concepts, but none is how the lecture defines energy balance itself."], ["The total number of discrete meals and snacks an individual chooses to eat across a single day.", "Macronutrient ratio, meal frequency, and fat-to-lean-mass ratio are all real nutrition concepts, but none is how the lecture defines energy balance itself."]], "c": 0, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 4"}, {"topic": "Genetics of Aging", "io": "Nutritional factors related to aging", "q": "A person whose body burns energy quickly when overeating and shows little energy drop while fasting, and who tends to gain less weight, fits which description from the lecture?", "opts": [["Sedentary phenotype", "The lecture does not use this term; the energy-burning pattern is the spendthrift phenotype."], ["Spendthrift phenotype", "Correct: the spendthrift phenotype burns energy quickly during overeating and is associated with less weight gain."], ["Thrifty phenotype", "The thrifty phenotype conserves energy and stores fat easily, the opposite pattern."], ["Sarcopenic phenotype", "Sarcopenia refers to loss of lean body mass, not an energy-burning pattern."]], "c": 1, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 12"}, {"topic": "Celiac Disease Pathology", "io": "Celiac Disease & Gluten Sensitivity", "q": "What effect does celiac disease have on the small intestine, according to the lecture?", "opts": [["It creates diverticula along the intestinal lining.", "Incorrect — diverticula formation is a separate condition (diverticular disease) discussed elsewhere in the lecture, not a feature of celiac disease."], ["It causes ulceration within the duodenal and gastric lining.", "Incorrect. Ulceration is described under peptic ulcers, a separate GI condition, not celiac disease."], ["It thickens the intestinal wall, slowing motility.", "Incorrect — the lecture does not describe celiac disease as thickening the intestinal wall."], ["It flattens the villi, limiting nutrient absorption.", "Correct — the lecture states celiac disease 'flattens villi' and 'limits absorption of nutrients.'"]], "c": 3, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 21"}, {"topic": "H2 Blockers", "io": "GI Conditions & Nutrition", "q": "Which drug pair from the lecture's 'Medicine Cabinet' slide are both classified as H2 blockers rather than proton pump inhibitors?", "opts": [["Omeprazole and Lansoprazole", "Incorrect — both of these are listed as proton pump inhibitor examples, not H2 blockers."], ["Rabeprazole and Esomeprazole", "Incorrect — both of these are listed as proton pump inhibitor examples, not H2 blockers."], ["Nizatidine and Famotidine", "Correct — the lecture lists Nizatidine (Axid) and Famotidine (Pepcid) as H2 blocker examples, along with Cimetidine and Ranitidine."], ["Cimetidine and Omeprazole", "Incorrect — Cimetidine is an H2 blocker, but Omeprazole is listed as a proton pump inhibitor, so this pair is mixed rather than both H2 blockers."]], "c": 2, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 13"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "Which macronutrient has the highest thermic effect of food (TEF), per lecture?", "opts": [["Carbohydrate", "Carbohydrate and fat both have a lower TEF than protein per the stated order, and the three macronutrients are explicitly ranked differently, not identical."], ["Protein", "TEF is highest for protein, followed by carbohydrate, and then fat."], ["Fat", "Carbohydrate and fat both have a lower TEF than protein per the stated order, and the three macronutrients are explicitly ranked differently, not identical."], ["All three have an identical TEF.", "Carbohydrate and fat both have a lower TEF than protein per the stated order, and the three macronutrients are explicitly ranked differently, not identical."]], "c": 1, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 13"}, {"topic": "Disease-Specific Nutrition", "io": "Disease-Specific Nutrition", "q": "If ascites is present in a chronic liver disease patient, what sodium intake is recommended, per lecture?", "opts": [["No sodium restriction is needed.", "No restriction contradicts the lecture's explicit guidance; increasing sodium intake would worsen fluid retention, the opposite of what's recommended; and under 100 mg/day is far more extreme than the 1500-2000 mg/day range actually given."], ["Restrict sodium to under 100 mg/day.", "No restriction contradicts the lecture's explicit guidance; increasing sodium intake would worsen fluid retention, the opposite of what's recommended; and under 100 mg/day is far more extreme than the 1500-2000 mg/day range actually given."], ["Increase sodium intake to compensate for fluid loss.", "No restriction contradicts the lecture's explicit guidance; increasing sodium intake would worsen fluid retention, the opposite of what's recommended; and under 100 mg/day is far more extreme than the 1500-2000 mg/day range actually given."], ["Reduce sodium intake to 1500-2000 mg/day.", "If ascites is present, sodium intake should be reduced to 1500-2000 mg/day (and fluid restriction may also be required)."]], "c": 3, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 43"}, {"topic": "Influences on Food Habits & Choices", "io": "Influences on Food Habits & Choices", "q": "Which of the following is NOT listed among the lecture's food-choice influences?", "opts": [["Marketing and advertising", "Cost and economics, marketing and advertising, and time and convenience are all explicitly named on the lecture's food-choice influences slide — genetic testing results is the only option here that lecture never mentions."], ["Time and convenience", "Cost and economics, marketing and advertising, and time and convenience are all explicitly named on the lecture's food-choice influences slide — genetic testing results is the only option here that lecture never mentions."], ["Cost and economics", "Cost and economics, marketing and advertising, and time and convenience are all explicitly named on the lecture's food-choice influences slide — genetic testing results is the only option here that lecture never mentions."], ["Genetic testing results", "Genetic testing results do not appear on lecture's list of food-choice influences — the list covers flavor/texture/appearance, early influences, habits/availability/convenience, marketing/advertising, restaurant dining, time/convenience, cost/economics, sustainability, and nutrition."]], "c": 3, "cite": "Human Nutrition lecture, slide 3 (Food Choice Influences)"}, {"topic": "Blue Zones", "io": "Recommendations for dietary changes in older adults", "q": "In the Blue Zones dietary pattern, what is described as the main dietary fat?", "opts": [["Coconut oil", "Coconut oil is not the fat highlighted in the lecture's Blue Zones pattern."], ["Lard", "Lard is an animal fat, whereas the Blue Zones emphasize olive oil."], ["Olive oil", "Correct: olive oil is identified as the main dietary fat in the Blue Zones pattern."], ["Butter", "Butter is a saturated animal fat and is not the featured fat of the Blue Zones."]], "c": 2, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 16"}, {"topic": "Nutrition Terms & Classification", "io": "Nutrition Terms & Classification", "q": "Which characteristic distinguishes minerals from vitamins per lecture?", "opts": [["Minerals are only needed by the body in the presence of dietary fat.", "It's vitamins (specifically the water-soluble ones) that are more readily destroyed by cooking, not minerals, which lecture specifically notes are not destroyed during cooking; minerals produce no calories at all, not 4 kcal/gram; and needing fat for absorption describes fat-soluble vitamins (A, D, E, K), not minerals generally."], ["Minerals provide 4 kcal per gram.", "It's vitamins (specifically the water-soluble ones) that are more readily destroyed by cooking, not minerals, which lecture specifically notes are not destroyed during cooking; minerals produce no calories at all, not 4 kcal/gram; and needing fat for absorption describes fat-soluble vitamins (A, D, E, K), not minerals generally."], ["Minerals are inorganic substances that do not contain carbon atoms.", "Minerals are defined as inorganic substances that contain no carbon atoms; unlike some vitamins, they are not destroyed during cooking and, like vitamins, produce no calories/energy."], ["Minerals are destroyed easily during cooking.", "It's vitamins (specifically the water-soluble ones) that are more readily destroyed by cooking, not minerals, which lecture specifically notes are not destroyed during cooking; minerals produce no calories at all, not 4 kcal/gram; and needing fat for absorption describes fat-soluble vitamins (A, D, E, K), not minerals generally."]], "c": 2, "cite": "Human Nutrition lecture, slides 18–19 (Vitamins / Minerals)"}, {"topic": "Pica in Pregnancy", "io": "Common Discomforts of Pregnancy", "q": "A pregnant patient reports craving and eating clay and ice. This behavior, known as pica, may be associated with which underlying condition per the lecture?", "opts": [["Vitamin A toxicity", "Incorrect -- the lecture does not link pica to vitamin A toxicity; excess vitamin A intake is instead discussed as a teratogenicity concern in a different context."], ["Gestational diabetes", "Incorrect -- the lecture does not associate pica with gestational diabetes."], ["Folate deficiency", "Incorrect -- the lecture links pica to iron deficiency, not folate deficiency."], ["Iron deficiency", "Correct -- the lecture states pica may be associated with iron deficiency."]], "c": 3, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 13"}, {"topic": "Medications & Surgery", "io": "Medications & Surgery", "q": "What is a very-low-calorie diet (VLCD), also known as a protein-sparing modified fast, per lecture?", "opts": [["A diet providing 400 to 800 kcal per day, often in liquid form, administered under strict medical supervision.", "A VLCD (protein-sparing modified fast) provides 400 to 800 kcal per day, often in liquid form, and is administered under strict medical supervision."], ["A liquid diet that eliminates protein entirely while allowing unrestricted carbohydrate and fat intake.", "1,800-2,400 kcal describes typical intake, not a VLCD; the lecture emphasizes strict medical supervision; and a protein-sparing modified fast is designed to spare protein, not eliminate it."], ["A diet providing 1,800 to 2,400 kcal per day without any medical supervision required.", "1,800-2,400 kcal describes typical intake, not a VLCD; the lecture emphasizes strict medical supervision; and a protein-sparing modified fast is designed to spare protein, not eliminate it."], ["An entirely unsupervised home diet with no minimum calorie floor and no medical monitoring.", "1,800-2,400 kcal describes typical intake, not a VLCD; the lecture emphasizes strict medical supervision; and a protein-sparing modified fast is designed to spare protein, not eliminate it."]], "c": 0, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 64"}, {"topic": "Disease-Specific Nutrition", "io": "Disease-Specific Nutrition", "q": "What nutritional priority applies to trauma patients, per lecture?", "opts": [["Restrict protein intake substantially during the first week after injury to help minimize the body's overall metabolic stress response and inflammation.", "The lecture emphasizes starting early with increased, not restricted, protein needs in trauma; and its guiding principle ('if the gut works, use it') favors enteral feeding when possible, not avoiding it."], ["Start nutrition support early — trauma causes a hypermetabolic state with increased calorie and protein needs for wound healing and to prevent lean muscle loss.", "Trauma patients should start nutrition support early, since trauma produces a hypermetabolic state with increased calorie and high protein needs for wound healing and preventing lean muscle loss."], ["Delay nutrition support until the patient is fully hemodynamically stable, often waiting a week or more before starting.", "The lecture emphasizes starting early with increased, not restricted, protein needs in trauma; and its guiding principle ('if the gut works, use it') favors enteral feeding when possible, not avoiding it."], ["Avoid enteral feeding entirely and rely instead on immediately starting parenteral nutrition delivered through a central line.", "The lecture emphasizes starting early with increased, not restricted, protein needs in trauma; and its guiding principle ('if the gut works, use it') favors enteral feeding when possible, not avoiding it."]], "c": 1, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 48"}, {"topic": "Protein", "io": "Nutrients lacking in infant and child diets", "q": "Why does the lecture warn against a high-protein diet for infants?", "opts": [["It prevents absorption of breast milk", "High protein does not block breast-milk absorption."], ["Excess nitrogen and minerals can exceed the infant's immature kidney abilities", "Correct: a high-protein diet stresses the kidneys because excess nitrogen and minerals exceed the infant's immature kidney abilities."], ["Protein cannot be digested before 1 year of age", "Infants do digest protein; the concern is kidney stress from excess."], ["It causes the number of fat cells to fall", "High protein is a kidney concern, not a fat-cell concern."]], "c": 1, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 111"}, {"topic": "Life Span & Expectancy", "io": "Nutritional factors related to aging", "q": "How does the lecture distinguish \"life span\" from \"life expectancy\"?", "opts": [["Life span applies to women and life expectancy applies to men", "Neither term is defined by sex; both apply to all people."], ["Life span is the maximum years a human can live; life expectancy is the average years a person born in a given year and place is expected to live", "Correct: life span is the biological maximum, while life expectancy is the statistical average for a birth cohort."], ["Life span is the average years lived; life expectancy is the biological maximum", "This reverses the two definitions given in the lecture."], ["Both terms mean the same number of years for any individual", "The lecture treats them as distinct concepts, not synonyms."]], "c": 1, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 11"}, {"topic": "Vulnerable Periods of Fetal Development", "io": "Nutritional Deficiencies & High-Risk Pregnancy", "q": "Why does the lecture identify the first trimester as the most critical period for potential fetal problems?", "opts": [["It is a finite window during which cells develop into tissues and organs, making the quality of nutrition especially important.", "Correct. The lecture describes the first trimester as the most critical period for potential problems because it is a finite window of opportunity for cells to develop into tissue/organ, making nutritional quality most important."], ["It is when the fetus doubles in length and gains the greatest amount of weight overall.", "Incorrect. That description is given for the third trimester, not the first."], ["It is the period when the fetus can still be affected by toxins, but not as easily as later trimesters.", "Incorrect. That statement describes the second trimester, which the lecture says is less easily affected by toxins compared to earlier development."], ["It is the period when iron intake specifically takes priority for the developing fetus.", "Incorrect. Iron prioritization for the fetus is described as critical during the third trimester, not the first."]], "c": 0, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 14"}, {"topic": "Disease-Specific Nutrition", "io": "Disease-Specific Nutrition", "q": "What dietary pattern is recommended for chronic liver disease patients to increase tolerance, per lecture?", "opts": [["Extended fasting between three large daily meals", "One large meal, two large meals with no snacks, and fasting between meals all contradict the small, frequent-meal pattern recommended to increase tolerance."], ["One very large meal eaten only at dinner", "One large meal, two large meals with no snacks, and fasting between meals all contradict the small, frequent-meal pattern recommended to increase tolerance."], ["5-7 small meals with a late-night snack", "5-7 small meals with a late-night snack is recommended to increase tolerance and increase protein synthesis post-prandially and overnight."], ["Two large meals daily with strictly no snacking", "One large meal, two large meals with no snacks, and fasting between meals all contradict the small, frequent-meal pattern recommended to increase tolerance."]], "c": 2, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 43"}, {"topic": "Nutrition Terms & Classification", "io": "Nutrition Terms & Classification", "q": "Which definition best matches the lecture's definition of \"nutrition\"?", "opts": [["The process of digesting and absorbing macronutrients.", "Digestion/absorption and temperature regulation are functions nutrients perform, not the definition of the discipline itself, and measuring body fat percentage is a body-composition assessment, not what \"nutrition\" means."], ["The regulation of body temperature through diet.", "Digestion/absorption and temperature regulation are functions nutrients perform, not the definition of the discipline itself, and measuring body fat percentage is a body-composition assessment, not what \"nutrition\" means."], ["The measurement of body fat percentage.", "Digestion/absorption and temperature regulation are functions nutrients perform, not the definition of the discipline itself, and measuring body fat percentage is a body-composition assessment, not what \"nutrition\" means."], ["The science that links foods to health.", "Nutrition is defined in lecture as the science that links foods to health — food provides both energy (calories) and the compounds needed to build and maintain body cells."]], "c": 3, "cite": "Human Nutrition lecture, slide 5 (Nutrition)"}, {"topic": "Refeeding Syndrome", "io": "Refeeding Syndrome", "q": "What neurological complication can result from untreated thiamine deficiency during refeeding?", "opts": [["Bell's palsy with unilateral facial nerve paralysis", "Guillain-Barré syndrome, Bell's palsy, and trigeminal neuralgia are all real neurological conditions, but none is the complication the lecture links to thiamine deficiency during refeeding."], ["Wernicke's and Korsakoff encephalopathy", "Untreated thiamine deficiency during refeeding can lead to Wernicke's and Korsakoff encephalopathy."], ["Trigeminal neuralgia with episodic facial pain", "Guillain-Barré syndrome, Bell's palsy, and trigeminal neuralgia are all real neurological conditions, but none is the complication the lecture links to thiamine deficiency during refeeding."], ["Guillain-Barré syndrome with ascending muscle paralysis", "Guillain-Barré syndrome, Bell's palsy, and trigeminal neuralgia are all real neurological conditions, but none is the complication the lecture links to thiamine deficiency during refeeding."]], "c": 1, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 36"}, {"topic": "Digestive Changes", "io": "Prevention and treatment of nutrition-related issues", "q": "For an older adult with constipation, which combination does the lecture recommend?", "opts": [["Restrict all physical activity", "Exercise is encouraged, not restricted, to relieve constipation."], ["Increase fiber, fluid, and exercise", "Correct: the lecture recommends increasing fiber, fluid, and exercise for constipation."], ["Decrease fiber and fluid intake", "Reducing fiber and fluid would worsen constipation."], ["Add more processed foods", "Processed foods are discouraged and would not relieve constipation."]], "c": 1, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 44"}, {"topic": "School-Age Diabetes", "io": "Challenges with childhood eating habits", "q": "According to the lecture, roughly what share of youth are overweight at the time they are diagnosed with type 2 diabetes?", "opts": [["About 40%", "The lecture cites a higher figure, about 85%."], ["About 100%", "The lecture cites about 85%, not all youth, as overweight at diagnosis."], ["About 85%", "Correct: about 85% of youth are overweight at diagnosis of type 2 diabetes."], ["About 10%", "This greatly understates the figure cited in the lecture."]], "c": 2, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 470"}, {"topic": "Healthy Body Weight", "io": "Healthy Body Weight", "q": "What BMI category does a BMI of 18.50-24.99 fall into, per the categories given?", "opts": [["Overweight (pre-obese)", "Underweight is BMI below 18.50; overweight (pre-obese) is 25.00-29.99; and obese class I is 30.00-34.99 — all different ranges than 18.50-24.99."], ["Underweight", "Underweight is BMI below 18.50; overweight (pre-obese) is 25.00-29.99; and obese class I is 30.00-34.99 — all different ranges than 18.50-24.99."], ["Obese class I", "Underweight is BMI below 18.50; overweight (pre-obese) is 25.00-29.99; and obese class I is 30.00-34.99 — all different ranges than 18.50-24.99."], ["Normal", "A BMI of 18.50-24.99 falls into the Normal category."]], "c": 3, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 21"}, {"topic": "Omega-3s & Cardiovascular Health", "io": "Omega-3s & Cardiovascular Health", "q": "Which lipoprotein is described as picking up cholesterol from dying cells, taking it back to the liver, and thereby reducing cardiovascular disease risk?", "opts": [["Chylomicron", "Chylomicrons carry dietary fat from the small intestine to cells, VLDL carries liver-made lipids out to cells, and LDL carries cholesterol from the liver and other sources TO cells — all three deliver lipids outward to tissues, while only HDL works in reverse to remove cholesterol from the bloodstream."], ["HDL", "HDL (high-density lipoprotein) is synthesized by the liver and intestine, is high in protein, picks up cholesterol from dying cells and returns it to the liver, may block LDL oxidation, and reduces cardiovascular disease risk."], ["VLDL", "Chylomicrons carry dietary fat from the small intestine to cells, VLDL carries liver-made lipids out to cells, and LDL carries cholesterol from the liver and other sources TO cells — all three deliver lipids outward to tissues, while only HDL works in reverse to remove cholesterol from the bloodstream."], ["LDL", "Chylomicrons carry dietary fat from the small intestine to cells, VLDL carries liver-made lipids out to cells, and LDL carries cholesterol from the liver and other sources TO cells — all three deliver lipids outward to tissues, while only HDL works in reverse to remove cholesterol from the bloodstream."]], "c": 1, "cite": "Macro/Micro lecture, slide 64 (High-density Lipoprotein); contrast slide 63 (Major Lipoproteins in Blood)"}, {"topic": "Water Safety", "io": "Water Safety", "q": "Which statement about hard versus soft water is accurate, per the slide?", "opts": [["Soft water is unsafe to drink, while hard water is always considered safe", "Incorrect. This reverses the definitions the slide gives; neither is framed as inherently unsafe to drink."], ["Hard water contains high levels of calcium and magnesium; soft water contains a high level of sodium", "The slide defines hard water as containing high levels of calcium and magnesium (present in about 89% of U.S. homes, and it makes soap lather poorly), while soft water contains a high level of sodium and produces cleaner-rinsing laundry."], ["Hard and soft water differ only in their fluoride content levels", "Incorrect. Fluoride content isn't the distinguishing factor described; calcium/magnesium versus sodium is."], ["Hard water contains high levels of sodium; soft water contains high levels of calcium and magnesium", "The first distractor reverses the definitions the slide actually gives; fluoride content isn't the distinguishing factor described — calcium/magnesium versus sodium is; and the slide doesn't frame either hard or soft water as inherently unsafe to drink, just chemically different in mineral content."]], "c": 1, "cite": "Macro/Micro lecture, slide 140 (What Is the Difference Between Hard and Soft Water?)"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "What does direct calorimetry measure, per lecture?", "opts": [["Oxygen intake and carbon dioxide output", "Oxygen intake/carbon dioxide output describes indirect, not direct, calorimetry; electrical resistance describes bioelectrical impedance, a body-composition method; and blood glucose response to a meal is unrelated to calorimetry."], ["Body heat output, using an insulated chamber", "Direct calorimetry measures body heat output using an insulated chamber — it's accurate but expensive and complex."], ["Body fat percentage via electrical resistance", "Oxygen intake/carbon dioxide output describes indirect, not direct, calorimetry; electrical resistance describes bioelectrical impedance, a body-composition method; and blood glucose response to a meal is unrelated to calorimetry."], ["Blood glucose response to a meal", "Oxygen intake/carbon dioxide output describes indirect, not direct, calorimetry; electrical resistance describes bioelectrical impedance, a body-composition method; and blood glucose response to a meal is unrelated to calorimetry."]], "c": 1, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 15"}, {"topic": "Calorie Calculations & the Metric System", "io": "Calorie Calculations & the Metric System", "q": "A patient weighs 220 pounds. Using the conversion that 1 kilogram equals about 2.2 pounds, approximately what is that weight in kilograms?", "opts": [["120 kg", "110 kg would result from not dividing at all (simply halving 220), and 90 kg and 120 kg both come from using an incorrect conversion factor — dividing 220 by the correct factor of 2.2 gives exactly 100 kg."], ["110 kg", "110 kg would result from not dividing at all (simply halving 220), and 90 kg and 120 kg both come from using an incorrect conversion factor — dividing 220 by the correct factor of 2.2 gives exactly 100 kg."], ["100 kg", "220 lb ÷ 2.2 = 100 kg, matching the lecture's instruction to divide pounds by 2.2 to convert to kilograms."], ["90 kg", "110 kg would result from not dividing at all (simply halving 220), and 90 kg and 120 kg both come from using an incorrect conversion factor — dividing 220 by the correct factor of 2.2 gives exactly 100 kg."]], "c": 2, "cite": "Human Nutrition lecture, slide 26 (Metric System Summary)"}, {"topic": "Feeding Technique", "io": "Do's and don'ts of infant feeding", "q": "The lecture suggests burping an infant after roughly how much time or intake, since infants swallow air?", "opts": [["After about 10 minutes or 1 to 2 ounces consumed", "Correct: burp after about 10 minutes or once 1 to 2 ounces are consumed."], ["Only at the very end of a full feeding", "The lecture suggests burping partway through, after about 10 minutes or 1 to 2 ounces."], ["After every single swallow", "Burping after each swallow is not what the lecture recommends."], ["Burping is unnecessary for infants", "The lecture recommends burping because infants swallow air."]], "c": 0, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 205"}, {"topic": "PPI Mechanism", "io": "GI Conditions & Nutrition", "q": "How does the lecture describe the mechanism of proton pump inhibitors (PPIs)?", "opts": [["They neutralize acid already present in the stomach.", "Incorrect — the lecture describes PPIs as reducing acid production, not neutralizing existing acid."], ["They inhibit the ability of gastric cells to secrete hydrogen ions.", "Correct — the lecture states PPIs 'inhibit the ability of gastric cells to secrete hydrogen ions and thus reduce acid production.'"], ["They block histamine receptors on acid-producing cells.", "Incorrect — this describes the mechanism of H2 blockers, a separate drug class in the lecture, not PPIs."], ["They slow gastric motility in order to reduce reflux episodes.", "Incorrect. Slowing gastric motility is not the mechanism described for PPIs in the lecture."]], "c": 1, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 13"}, {"topic": "Foods to Avoid", "io": "Do's and don'ts of infant feeding", "q": "According to the lecture, until what age should cow's milk NOT be given to an infant?", "opts": [["Until 1 year of age", "Correct: cow's milk should not be given until 1 year of age."], ["Until 6 months of age", "The lecture advises no cow's milk until 1 year, not 6 months."], ["Until 2 years of age", "Cow's milk may be introduced at 1 year; after age 2 fat-free or 1% is acceptable."], ["Cow's milk is fine from birth", "Cow's milk is specifically discouraged before 1 year of age."]], "c": 0, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 288"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

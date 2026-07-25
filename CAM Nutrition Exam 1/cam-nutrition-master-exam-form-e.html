@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f7a5c; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2793a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAM/Nutrition Exam 1 — Master Exam (Form E)</title>
+<style>
+  :root{
+    --navy:#2a2f6b; --indigo:#3f7a5c; --gold:#c2793a; --ice:#c3e0d2;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>CAM/Nutrition Exam 1 — Master Exam, Form E</h1>
+    <div class="sub">Cumulative &middot; all 8 CAM/Nutrition Exam 1 topics</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Form E of five cumulative Master Exams for CAM/Nutrition Exam 1. Sixty questions drawn across all eight topics on the exam. Each form is a distinct set of questions.</p>
+    <div class="chips"><span class="chip">Human Nutrition</span><span class="chip">Macro/Micronutrients</span><span class="chip">Special Topics</span><span class="chip">Weight Control</span><span class="chip">Pregnancy & Breastfeeding</span><span class="chip">Food Allergies</span><span class="chip">Aging</span><span class="chip">Infancy–Adolescence</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Weight Gain Guidelines", "io": "Optimal Weight Gain", "q": "What weight gain pattern does the lecture describe for a typical pregnancy?", "opts": [["About 1 pound per week throughout the entire pregnancy, including the first trimester.", "Incorrect. The roughly 1 pound per week pace applies to the second and third trimesters; the first trimester is described separately as 1-5 pounds total."], ["About 5 to 10 pounds total gained in the first trimester, then minimal gain afterward.", "Incorrect. The lecture specifies 1-5 pounds total in the first trimester, with gain continuing at about 1 pound per week afterward."], ["1-5 pounds total in the first trimester, then approximately 1 pound per week in the second and third trimesters.", "Correct. This matches the lecture's stated weight gain pattern."], ["No specific first-trimester target; weight gain begins only in the second trimester.", "Incorrect. The lecture does give a specific first-trimester target of 1-5 pounds total."]], "c": 2, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 36"}, {"topic": "Influences on Food Habits & Choices", "io": "Influences on Food Habits & Choices", "q": "Which of the following is explicitly listed among the lecture's food-choice influences?", "opts": [["Early influences", "\"Early influences\" (paralleling early childhood experiences shaping eating habits) is explicitly listed among the lecture's food-choice influences, alongside flavor/texture/appearance, habits/availability, marketing, dining out, time, cost, sustainability, and nutrition."], ["Employer wellness policy", "Genetic testing results, employer wellness policy, and local weather patterns do not appear anywhere on the lecture's list of food-choice influences — only \"early influences\" is one of the factors actually named."], ["Genetic testing results", "Genetic testing results, employer wellness policy, and local weather patterns do not appear anywhere on the lecture's list of food-choice influences — only \"early influences\" is one of the factors actually named."], ["Local weather patterns", "Genetic testing results, employer wellness policy, and local weather patterns do not appear anywhere on the lecture's list of food-choice influences — only \"early influences\" is one of the factors actually named."]], "c": 0, "cite": "Human Nutrition lecture, slide 3 (Food Choice Influences)"}, {"topic": "Behavioral Strategies", "io": "Behavioral Strategies", "q": "What portion-control tactic is suggested for restaurant dining, per lecture?", "opts": [["Order the entrée and share it, order a cup of soup instead of a bowl, or use a take-home box for half the entrée.", "Suggested portion-control tactics include sharing an entrée, choosing a cup instead of a bowl of soup, ordering an appetizer instead of an entrée, or packing half the entrée in a take-home box."], ["Always order the largest available portion size on the menu, since it offers the best overall value.", "Ordering the largest size works against portion control; and the lecture's plan explicitly supports normal social activities like dining out, not avoiding restaurants entirely."], ["Avoid eating at restaurants entirely under all circumstances, even for special occasions.", "Ordering the largest size works against portion control; and the lecture's plan explicitly supports normal social activities like dining out, not avoiding restaurants entirely."], ["Skip the appetizer and entrée entirely and order only the largest dessert on the menu.", "Ordering the largest size works against portion control; and the lecture's plan explicitly supports normal social activities like dining out, not avoiding restaurants entirely."]], "c": 0, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 60"}, {"topic": "Lipids & Fatty Acids", "io": "Lipids & Fatty Acids", "q": "Saturated fatty acids are found primarily in which type of food, and what physical state do they typically take at room temperature?", "opts": [["Plant foods; solid", "Plant foods are instead higher in unsaturated fatty acids, which take a liquid (oil) form — the reverse source/state pairings in the other choices don't match how the deck describes saturated fat specifically."], ["Animal fats; liquid", "Plant foods are instead higher in unsaturated fatty acids, which take a liquid (oil) form — the reverse source/state pairings in the other choices don't match how the deck describes saturated fat specifically."], ["Animal fats; solid", "Saturated fatty acids are found primarily in animal fats and take a solid form at room temperature."], ["Plant foods; liquid", "Plant foods are instead higher in unsaturated fatty acids, which take a liquid (oil) form — the reverse source/state pairings in the other choices don't match how the deck describes saturated fat specifically."]], "c": 2, "cite": "Macro/Micro lecture, slide 49 (Fatty Acids and Triglycerides)"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "What is the single most significant contributor to basal metabolic rate, per lecture?", "opts": [["Chronological age alone", "Total body weight is distinguished from LBM; age alone isn't described as most significant; and dietary fat intake affects energy intake, not BMR itself."], ["Total body weight", "Total body weight is explicitly distinguished from LBM (two people of the same weight can have very different LBM and thus different energy needs); age alone isn't described as the most significant factor; and dietary fat intake affects energy intake, not BMR itself."], ["Dietary fat intake", "Total body weight is explicitly distinguished from LBM (two people of the same weight can have very different LBM and thus different energy needs); age alone isn't described as the most significant factor; and dietary fat intake affects energy intake, not BMR itself."], ["Lean body mass (LBM)", "Lean body mass (LBM) is described as the most significant contributor to basal metabolic rate, and it varies greatly between individuals of the same body weight."]], "c": 3, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 11"}, {"topic": "Food Allergy Terms", "io": "Common food allergens and reducing allergy risk", "q": "According to the lecture's definitions, how are allergens related to antigens?", "opts": [["Allergens and antigens are unrelated", "They are related, an allergen being a type of antigen."], ["Neither allergens nor antigens involve the immune system", "Both terms relate to immune-system responses in the lecture."], ["All allergens are antigens, but not all antigens are allergens", "Correct: allergens are a subset of antigens, so all allergens are antigens but not all antigens are allergens."], ["All antigens are allergens", "The lecture states the reverse, that not all antigens are allergens."]], "c": 2, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 611"}, {"topic": "Solid Foods", "io": "Do's and don'ts of infant feeding", "q": "The lecture lists general readiness signs for solid foods. Which matches?", "opts": [["Reaching about 25 pounds and refusing all milk", "These figures do not match the readiness signs described."], ["Sleeping through the night for a week", "Sleep pattern is not listed among the solid-food readiness signs."], ["Having a full set of molars", "Molar eruption is not one of the readiness signs given."], ["Reaching about 13 pounds and consuming more than 32 ounces of formula daily", "Correct: readiness signs include reaching about 13 pounds and taking more than 32 ounces of formula daily or breastfeeding 8 to 10 times in 24 hours."]], "c": 3, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 216"}, {"topic": "Calorie Calculations & the Metric System", "io": "Calorie Calculations & the Metric System", "q": "Per the metric system summary in lecture, approximately how many grams are in one pound?", "opts": [["454 grams", "One pound equals about 454 grams, per the lecture's metric conversion summary."], ["1,000 grams", "500 and 250 grams are round-number guesses that don't match the lecture's stated conversion, and 1,000 grams is actually the number of grams in a kilogram (which is about 2.2 pounds, not 1 pound) — 454 grams is the figure lecture gives for a single pound."], ["250 grams", "500 and 250 grams are round-number guesses that don't match the lecture's stated conversion, and 1,000 grams is actually the number of grams in a kilogram (which is about 2.2 pounds, not 1 pound) — 454 grams is the figure lecture gives for a single pound."], ["500 grams", "500 and 250 grams are round-number guesses that don't match the lecture's stated conversion, and 1,000 grams is actually the number of grams in a kilogram (which is about 2.2 pounds, not 1 pound) — 454 grams is the figure lecture gives for a single pound."]], "c": 0, "cite": "Human Nutrition lecture, slide 26 (Metric System Summary)"}, {"topic": "Protein Balance & Malnutrition", "io": "Protein Balance & Malnutrition", "q": "Why does chronically low protein intake lead to edema, according to the slide on protein and fluid balance?", "opts": [["Low protein directly increases capillary blood pressure, forcing fluid out of vessels and into surrounding tissue spaces", "The slide doesn't describe low protein as directly raising capillary blood pressure — its mechanism is about fluid distribution between compartments, not pressure; it doesn't describe the kidneys stopping filtration either, which would be a far more severe and unrelated process; and the slide attributes the fluid shift to protein's role in retaining fluid in the bloodstream, not to a sodium-retention mechanism."], ["Protein deficiency increases sodium retention, which then osmotically pulls extra water out of the bloodstream and into tissues", "The slide doesn't describe low protein as directly raising capillary blood pressure — its mechanism is about fluid distribution between compartments, not pressure; it doesn't describe the kidneys stopping filtration either, which would be a far more severe and unrelated process; and the slide attributes the fluid shift to protein's role in retaining fluid in the bloodstream, not to a sodium-retention mechanism."], ["Low protein intake causes the kidneys to stop filtering fluid entirely, so waste and water both build up systemically", "The slide doesn't describe low protein as directly raising capillary blood pressure — its mechanism is about fluid distribution between compartments, not pressure; it doesn't describe the kidneys stopping filtration either, which would be a far more severe and unrelated process; and the slide attributes the fluid shift to protein's role in retaining fluid in the bloodstream, not to a sodium-retention mechanism."], ["Protein molecules are too large to move into tissues, so with too little protein, fluid isn't pulled back into the bloodstream and builds up in tissues", "Protein molecules are normally too large to move out of the bloodstream into tissue, and that size difference is what lets protein pull the proper amount of fluid back into the blood. When protein intake is too low, that pull weakens, fluid builds up in the tissues, and edema results."]], "c": 3, "cite": "Macro/Micro lecture, slide 80 (Protein Maintains Fluid Balance)"}, {"topic": "Macronutrients", "io": "Recommendations for dietary changes in older adults", "q": "What protein intake does the lecture recommend for older adults to help preserve muscle and bone mass?", "opts": [["1.0 to 1.2 grams per kilogram per day", "Correct: the recommended intake is 1.0 to 1.2 grams of protein per kilogram per day."], ["0.4 to 0.6 grams per kilogram per day", "This is below the range recommended to preserve muscle and bone mass."], ["2.5 to 3.0 grams per kilogram per day", "This exceeds the recommendation and could accelerate kidney decline."], ["No specific amount is recommended", "The lecture gives a specific range of 1.0 to 1.2 grams per kilogram per day."]], "c": 0, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 28"}, {"topic": "Solid Foods", "io": "Do's and don'ts of infant feeding", "q": "When introducing solid foods, the lecture recommends waiting how long before introducing a new food to check for intolerance?", "opts": [["About 30 days", "The lecture recommends waiting about 7 days, not a full month."], ["No waiting is needed", "The lecture specifically recommends waiting about 7 days between new foods."], ["About 7 days", "Correct: introduce one food at a time and wait about 7 days before adding a new food to check for intolerance."], ["About 1 hour", "This is far too short to detect an intolerance to a new food."]], "c": 2, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 243"}, {"topic": "Food Allergen Labeling Act", "io": "Food Allergy Epidemiology & Prevention", "q": "The 2006 Food Allergen Labeling and Consumer Protection Act mandated that manufacturers clearly identify which allergens on food labels, per the lecture?", "opts": [["Milk, eggs, fish, shellfish, peanuts, tree nuts, wheat, and soy", "Correct — the lecture lists these eight allergens as the major food allergens the 2006 Act required manufacturers to identify on labels."], ["Only peanuts, tree nuts, and shellfish specifically", "Incorrect. The Act covers eight major allergens, not only peanuts, tree nuts, and shellfish."], ["Gluten-containing grains such as wheat, rye, and barley", "Incorrect. The Act covers eight specific allergens; wheat is only one of the eight, and the others aren't gluten grains."], ["Sulfites, MSG, and artificial food coloring agents", "Incorrect. Sulfites and MSG are discussed as synthetic compounds causing intolerance, not allergens covered by the Act."]], "c": 0, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 28"}, {"topic": "Body Composition", "io": "Body Composition", "q": "How does the Bod Pod® measure body composition, per lecture?", "opts": [["By sending a small painless electrical current through the entire body", "Calipers describe skinfold measurement, electrical current describes bioelectrical impedance, and X-ray scanning describes DXA — none of these is how the Bod Pod works."], ["By pinching and measuring skinfold thickness at several sites with calipers", "Calipers describe skinfold measurement, electrical current describes bioelectrical impedance, and X-ray scanning describes DXA — none of these is how the Bod Pod works."], ["By determining body volume and air displaced in a sealed chamber (air displacement)", "The Bod Pod® uses air displacement — determining body volume and air displaced in a sealed chamber — to calculate body density (body weight per body volume)."], ["By performing a full-body dual-energy X-ray absorptiometry scan", "Calipers describe skinfold measurement, electrical current describes bioelectrical impedance, and X-ray scanning describes DXA — none of these is how the Bod Pod works."]], "c": 2, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 26"}, {"topic": "Malnutrition Basics", "io": "Malnutrition Basics", "q": "Which of the following is listed as a malnutrition risk factor that develops AFTER hospital admission, rather than before it?", "opts": [["Long-term nursing home placement", "Nursing home residence, chronic illness, and food insecurity are all listed among the 'before admit' risk factors instead of the 'after admit' category."], ["Longstanding preexisting chronic illness", "Nursing home residence, chronic illness, and food insecurity are all listed among the 'before admit' risk factors instead of the 'after admit' category."], ["Chronic household food insecurity", "Nursing home residence, chronic illness, and food insecurity are all listed among the 'before admit' risk factors instead of the 'after admit' category."], ["NPO/fasting status for procedures", "NPO/fasting for procedures is listed among the \"after admit\" risk factors, along with acute illness, worsening chronic illness, need for mealtime assistance, and meal restrictions."]], "c": 3, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 9"}, {"topic": "Social Determinants", "io": "Programs and patient education for older adults", "q": "The lecture links social determinants of health to \"health literacy,\" which it defines as the ability to do what?", "opts": [["Find, understand, and use reliable health information and services to make informed decisions", "Correct: health literacy is the ability to find, understand, and use reliable health information and services."], ["Memorize the calorie content of common foods", "Health literacy is broader than recalling calorie counts."], ["Prescribe one's own medications safely", "Self-prescribing is not part of the definition of health literacy."], ["Perform laboratory nutrition testing at home", "Health literacy concerns using information and services, not running lab tests."]], "c": 0, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 9"}, {"topic": "Weight Management", "io": "Weight Management", "q": "What typically happens to the composition of weight lost during the early phase of a weight-loss plan, per lecture?", "opts": [["Early weight loss is larger and includes fluid and fat.", "Early weight loss is larger and includes both fluid and fat; the rate begins to slow as muscle mass increases with continued exercise."], ["No measurable weight loss occurs during the early phase of a new diet.", "Early loss is not purely muscle; the lecture describes weight change as NOT linear and occurring most rapidly in the first 6 months rather than not occurring at all early on."], ["Weight loss is perfectly linear throughout a diet.", "Early loss is not purely muscle (it includes fluid and fat); the lecture describes weight change as NOT linear and explicitly occurring most rapidly in the first 6 months rather than not occurring at all early on."], ["Early weight loss consists purely of muscle mass.", "Early loss is not purely muscle (it includes fluid and fat); the lecture describes weight change as NOT linear and explicitly occurring most rapidly in the first 6 months rather than not occurring at all early on."]], "c": 0, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 43"}, {"topic": "Fiber", "io": "Fiber", "q": "Consuming more than 60 grams of fiber per day can cause which of the following, per the slide?", "opts": [["Increased availability of certain minerals", "The slide states excess fiber may decrease — not increase — mineral availability; it lists unmet energy needs in children as a risk of too much fiber, not improved energy balance; and fiber generally increases fecal bulk, so 'decreased fecal bulk' reverses fiber's known effect rather than describing a genuine consequence of overconsumption."], ["A need for extra fluid intake", "Excess fiber intake (more than 60 g/day) requires extra fluid, may decrease the availability of some minerals, and can create unmet energy needs in children, per the slide."], ["Improved energy balance in children", "The slide states excess fiber may decrease — not increase — mineral availability; it lists unmet energy needs in children as a risk of too much fiber, not improved energy balance; and fiber generally increases fecal bulk, so 'decreased fecal bulk' reverses fiber's known effect rather than describing a genuine consequence of overconsumption."], ["Decreased fecal bulk", "The slide states excess fiber may decrease — not increase — mineral availability; it lists unmet energy needs in children as a risk of too much fiber, not improved energy balance; and fiber generally increases fecal bulk, so 'decreased fecal bulk' reverses fiber's known effect rather than describing a genuine consequence of overconsumption."]], "c": 1, "cite": "Macro/Micro lecture, slide 16 (Too Much Fiber)"}, {"topic": "Food Allergen Labeling Act", "io": "Food Allergy Epidemiology & Prevention", "q": "Which group of foods must be clearly identified on labels under the 2006 Food Allergen Labeling and Consumer Protection Act, per the lecture?", "opts": [["Only the grains wheat, rye, and barley", "Incorrect. These are the grains eliminated for celiac disease, not the labeling act's full allergen list."], ["Sulfites, MSG, and artificial coloring agents", "Incorrect. These are synthetic compounds causing intolerance, not the labeling act's major allergens."], ["Milk, eggs, fish, shellfish, peanuts, tree nuts, wheat, and soy", "Correct. The lecture lists these eight foods as the major allergens the 2006 Act mandates be clearly identified on labels."], ["Red wine, tomatoes, and ripe pineapples", "Incorrect. These are food constituents causing intolerance, not the labeling act's allergens."]], "c": 2, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 28"}, {"topic": "Malnutrition Basics", "io": "Malnutrition Basics", "q": "Per ASPEN significant-weight-loss guidelines cited in lecture, which pairing of timeframe and percent loss is correct?", "opts": [["1 week: 2%", "ASPEN's significant-weight-loss guideline pairs 1 week with 2% loss (also: 30 days with 5%, 3 months with 7.5%, and 6 months with 10%)."], ["30 days: 2%", "10% loss is the 6-month threshold, not the 1-week one; 2% loss is the 1-week threshold, not the 30-day one; and 5% loss is the 30-day threshold, not the 6-month one — each distractor mismatches the timeframe with the wrong percentage."], ["6 months: 5%", "10% loss is the 6-month threshold, not the 1-week one; 2% loss is the 1-week threshold, not the 30-day one; and 5% loss is the 30-day threshold, not the 6-month one — each distractor mismatches the timeframe with the wrong percentage."], ["1 week: 10%", "10% loss is the 6-month threshold, not the 1-week one; 2% loss is the 1-week threshold, not the 30-day one; and 5% loss is the 30-day threshold, not the 6-month one — each distractor mismatches the timeframe with the wrong percentage."]], "c": 0, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 12"}, {"topic": "Malnutrition Basics", "io": "Malnutrition Basics", "q": "When should a nutrition screen be completed on a hospitalized patient, per lecture?", "opts": [["Only at discharge", "A full week is too long a window per the lecture's stated timeframe; the screen itself is what identifies weight-loss/appetite concerns, so it isn't conditional on the patient already reporting weight loss; and it's meant to catch risk early, not only at discharge."], ["Within the first week of admission", "A full week is too long a window per the lecture's stated timeframe; the screen itself is what identifies weight-loss/appetite concerns, so it isn't conditional on the patient already reporting weight loss; and it's meant to catch risk early, not only at discharge."], ["Within 24 hours of admission", "The nutrition screen should be completed within 24 hours of admission, typically as part of nursing admission."], ["Only if the patient reports unintentional weight loss", "A full week is too long a window per the lecture's stated timeframe; the screen itself is what identifies weight-loss/appetite concerns, so it isn't conditional on the patient already reporting weight loss; and it's meant to catch risk early, not only at discharge."]], "c": 2, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 11"}, {"topic": "Energy Balance", "io": "Energy Balance", "q": "What does a bomb calorimeter measure, per lecture?", "opts": [["The calorific value of food and fuels, by measuring heat of combustion", "A bomb calorimeter measures the calorific value of food and fuels by measuring heats of combustion — burning food raises the temperature of water surrounding the chamber."], ["Total body fat percentage using a skinfold-based estimation method", "Blood glucose, oxygen consumption during exercise, and body fat percentage are measured by other methods described elsewhere in the lecture, not by a bomb calorimeter."], ["The rate of oxygen consumption during graded exercise testing", "Blood glucose, oxygen consumption during exercise, and body fat percentage are measured by other methods described elsewhere in the lecture, not by a bomb calorimeter."], ["Fasting blood glucose levels drawn before a standard test meal", "Blood glucose, oxygen consumption during exercise, and body fat percentage are measured by other methods described elsewhere in the lecture, not by a bomb calorimeter."]], "c": 0, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 5"}, {"topic": "Dysphagia Diets", "io": "Prevention and treatment of nutrition-related issues", "q": "The lecture lists thickened-liquid consistencies for dysphagia diet orders. Which set matches?", "opts": [["Diluted, watery, and thin", "Dysphagia orders thicken liquids; thin liquids are what such diets often avoid."], ["Nectar thick, honey thick, and pudding thick", "Correct: the thickened-liquid orders listed are nectar thick, honey thick, and pudding thick."], ["Clear, sparkling, and carbonated", "These are not the dysphagia thickened-liquid consistencies described."], ["Frozen, boiled, and steamed", "These are cooking methods, not liquid-thickness orders."]], "c": 1, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 45"}, {"topic": "Disease-Specific Nutrition", "io": "Disease-Specific Nutrition", "q": "In chronic kidney disease stages 3-5 (pre-dialysis), which nutrients should typically be reduced?", "opts": [["Carbohydrates and dietary fiber exclusively", "Carbohydrates/fiber and fat-soluble vitamins aren't the nutrients flagged for restriction at this stage; and fluid restriction is added at CKD 4-5, but it isn't the only restriction."], ["Water only, with no other dietary restrictions", "Carbohydrates/fiber and fat-soluble vitamins aren't the nutrients flagged for restriction at this stage; and fluid restriction is added at CKD 4-5, but it isn't the only restriction."], ["Fat-soluble vitamins A, D, E, and K", "Carbohydrates/fiber and fat-soluble vitamins aren't the nutrients flagged for restriction at this stage; and fluid restriction is added at CKD 4-5, but it isn't the only restriction."], ["Sodium, phosphorus, potassium, and protein", "CKD stages 3-5 (pre-dialysis) call for reduced sodium, phosphorus, potassium, and protein intake."]], "c": 3, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 42"}, {"topic": "Micronutrients", "io": "Recommendations for dietary changes in older adults", "q": "According to the lecture, a deficiency of which micronutrient increases the risk of osteoporosis and muscle weakness, with recommended intake rising to 800 international units daily at age 70 and older?", "opts": [["Vitamin D", "Correct: vitamin D deficiency raises osteoporosis and muscle-weakness risk, with 800 international units recommended at age 70 and older."], ["Vitamin E", "Vitamin E deficiency is linked to low antioxidant status and cell damage, not this dosing."], ["Zinc", "Zinc deficiency is tied to declining immunity, not this vitamin D dosing."], ["Iron", "Iron deficiency impairs red blood cell synthesis, not the osteoporosis-and-dosing pattern described."]], "c": 0, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 32"}, {"topic": "Formula", "io": "Diet guidelines for normal infant growth", "q": "The lecture states infant formulas are fortified with vitamins and minerals except for which one?", "opts": [["Fluoride", "Correct: formulas are fortified with vitamins and minerals except for fluoride."], ["Iron", "Iron-fortified formula is standard; fluoride is the excepted nutrient."], ["Calcium", "Formulas include calcium; fluoride is the exception noted."], ["Vitamin D", "Formulas are fortified with vitamin D; fluoride is the exception."]], "c": 0, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 191"}, {"topic": "Bone Health", "io": "Prevention and treatment of nutrition-related issues", "q": "Which set of measures does the lecture recommend to help preserve bone mass with aging?", "opts": [["Bed rest with a very-low-protein diet", "Inactivity and low protein would worsen, not preserve, bone mass."], ["Increased alcohol and cola intake", "The lecture advises avoiding alcohol and cola to protect bone."], ["Smoking to suppress appetite", "Smoking is specifically discouraged for bone preservation."], ["Weight-bearing exercise plus adequate vitamin D, calcium, and protein", "Correct: weight-bearing exercise with adequate vitamin D, calcium, and protein helps preserve bone mass."]], "c": 3, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 42"}, {"topic": "Diet, Lifestyle & Leading Causes of Death", "io": "Diet, Lifestyle & Leading Causes of Death", "q": "A patient with a BMI of 32 falls into which category per the lecture's BMI guidelines?", "opts": [["Healthy body weight", "Overweight covers 25–29.99, which is below 32; healthy body weight covers 18.5–24.99, far below 32; and Class 2 Obesity doesn't begin until 35 — 32 lands specifically in the 30–34.99 Class 1 Obesity range."], ["Class 1 Obesity", "The lecture's BMI guidelines place 30–34.99 in the Class 1 Obesity category, and 32 falls squarely within that range."], ["Class 2 Obesity", "Overweight covers 25–29.99, which is below 32; healthy body weight covers 18.5–24.99, far below 32; and Class 2 Obesity doesn't begin until 35 — 32 lands specifically in the 30–34.99 Class 1 Obesity range."], ["Overweight", "Overweight covers 25–29.99, which is below 32; healthy body weight covers 18.5–24.99, far below 32; and Class 2 Obesity doesn't begin until 35 — 32 lands specifically in the 30–34.99 Class 1 Obesity range."]], "c": 1, "cite": "Human Nutrition lecture, slide 29 (Obesity Definition / BMI Guidelines)"}, {"topic": "Breastfeeding Advantages for Mother", "io": "Physiology of Breastfeeding", "q": "Which of the following is listed in the lecture as an advantage of breastfeeding specifically for the mother?", "opts": [["Reduced risk of obesity later in life for the child", "Incorrect. This is listed as an infant advantage, not a maternal one."], ["Improved long-term cognitive performance measured in the child", "Incorrect. This is listed as an infant advantage in the lecture, not a maternal one."], ["Freedom from bacterial contamination in the feeding", "Incorrect. This is listed as an infant advantage of breastfeeding, not a maternal one."], ["Accelerated uterine involution due to uterine contractions", "Correct. The lecture lists uterine contraction and accelerated uterine involution as advantages of breastfeeding for the mother."]], "c": 3, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 60"}, {"topic": "Blue Zones", "io": "Recommendations for dietary changes in older adults", "q": "Which four foods does the lecture specifically say to INCLUDE based on Blue Zones habits?", "opts": [["Sugar-sweetened beverages and doughnuts", "These are discouraged, not recommended for inclusion."], ["Butter, lard, and beef", "These are not the plant-forward foods the Blue Zones emphasize."], ["Whole wheat bread, nuts, beans, and fruit", "Correct: the lecture lists whole wheat bread, nuts, beans, and fruit as foods to include."], ["Processed meats, salty snacks, and packaged sweets", "These are listed among foods to avoid, not include."]], "c": 2, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 18"}, {"topic": "Peptic Ulcer Causes", "io": "GI Conditions & Nutrition", "q": "Besides acid secreted by the stomach and H. pylori infection, what other common cause of peptic ulcers does the lecture list?", "opts": [["Overuse of nonsteroidal anti-inflammatory drugs (NSAIDs)", "Correct — the lecture lists 'overuse of nonsteroidal anti-inflammatory drugs (NSAIDs)' as a common cause of ulcers."], ["Excessive intake of dietary fiber from whole grains", "Incorrect. Excessive fiber is not listed as an ulcer cause; fiber is instead recommended for constipation."], ["Chronic dehydration from insufficient fluid intake", "Incorrect. Dehydration is not listed as a cause of peptic ulcers in the lecture."], ["Overuse of over-the-counter antihistamine medications", "Incorrect. Antihistamines are not listed as an ulcer cause; H2 blockers are instead listed as a treatment."]], "c": 0, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 11"}, {"topic": "Solid Foods", "io": "Do's and don'ts of infant feeding", "q": "When first spoon-feeding an infant, the lecture says to expect the infant to take about how much?", "opts": [["Nothing at all for the first month", "Infants do take a few bites; the lecture sets expectations at 2 or 3 bites."], ["Only 2 or 3 bites", "Correct: expect an infant to take only 2 or 3 bites at first meals."], ["A full jar of baby food", "First meals are just a few bites, not a full jar."], ["At least 1 cup of puree", "The lecture describes only a few bites at first, not a cupful."]], "c": 1, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 255"}, {"topic": "Nutrition Terms & Classification", "io": "Nutrition Terms & Classification", "q": "To be classified as an \"essential nutrient,\" a substance must meet which set of criteria per lecture?", "opts": [["It must provide at least 4 kcal per gram, be required in gram quantities daily, and be classified separately from micronutrients.", "Providing 4 kcal/gram describes only carbohydrate and protein specifically, not the general definition of essential (many essential nutrients, like vitamins and minerals, provide no calories at all); a nutrient the body can fully synthesize itself would be nonessential, the opposite of essential; and food-label presence is a labeling convention, not the biological criterion for essentiality."], ["A specific biological function must be identified, omitting it from the diet causes a decline in function, and replacing it restores normal function.", "Per lecture, an essential nutrient must have one specific biological function identified, its omission from the diet must cause a decline in that function, and replacing it in the diet must restore normal function."], ["It must be synthesized entirely by the body, never require dietary intake, and remain unaffected by omission from the diet.", "Providing 4 kcal/gram describes only carbohydrate and protein specifically, not the general definition of essential (many essential nutrients, like vitamins and minerals, provide no calories at all); a nutrient the body can fully synthesize itself would be nonessential, the opposite of essential; and food-label presence is a labeling convention, not the biological criterion for essentiality."], ["It must appear on the Nutrition Facts label, list a Percent Daily Value, and meet FDA disclosure requirements for that nutrient.", "Providing 4 kcal/gram describes only carbohydrate and protein specifically, not the general definition of essential (many essential nutrients, like vitamins and minerals, provide no calories at all); a nutrient the body can fully synthesize itself would be nonessential, the opposite of essential; and food-label presence is a labeling convention, not the biological criterion for essentiality."]], "c": 1, "cite": "Human Nutrition lecture, slide 5 (Nutrition — Essential Nutrient)"}, {"topic": "Breastfeeding Advantages for Infant", "io": "Physiology of Breastfeeding", "q": "Which benefit of breastfeeding is listed in the lecture for the infant specifically, rather than the mother?", "opts": [["Modest improvements in cognitive performance and reduced risk of later obesity.", "Correct. The lecture lists modest improvements in cognitive performance and reduced risk of obesity later in life as infant advantages of breastfeeding."], ["Delayed return of the mother's normal ovulatory cycles", "Incorrect. Delayed ovulation is listed as a maternal advantage of breastfeeding, not an infant one."], ["Possible protection against maternal breast and ovarian cancer", "Incorrect. This is listed as a maternal advantage of breastfeeding, not an infant benefit."], ["Promotion of mother-infant bonding and maternal self-confidence", "Incorrect. This is framed in the lecture as a maternal advantage, not an infant one."]], "c": 0, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 61"}, {"topic": "Nonceliac Gluten Sensitivity vs Celiac", "io": "Celiac Disease & Gluten Sensitivity", "q": "What distinguishes nonceliac gluten sensitivity from celiac disease, according to the lecture?", "opts": [["Gluten sensitivity requires lifelong avoidance of dairy, while celiac disease does not.", "Incorrect — the lecture does not mention dairy avoidance as part of either condition's treatment; both list elimination of wheat, rye, and barley."], ["Gluten sensitivity produces intestinal damage identical to celiac disease.", "Incorrect — this is the opposite of what the lecture states; nonceliac gluten sensitivity specifically involves no intestinal damage."], ["Gluten sensitivity causes symptoms after gluten ingestion but no intestinal damage.", "Correct — the lecture states nonceliac gluten sensitivity involves experiencing 'symptoms after ingestion of gluten, but no intestinal damage,' unlike celiac disease, which flattens villi."], ["Gluten sensitivity is unrelated to any dietary trigger.", "Incorrect — the lecture explicitly ties nonceliac gluten sensitivity to gluten ingestion as its trigger."]], "c": 2, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 23"}, {"topic": "Minerals", "io": "Minerals", "q": "Which of the following can cause a potassium deficiency, per the slide?", "opts": [["Laxative abuse", "The slide lists laxative abuse, along with chronic diarrhea, vomiting, alcohol abuse, eating disorders, and very low-calorie diets, as causes of potassium deficiency, with symptoms including muscle cramps, confusion, constipation, and irregular heartbeat."], ["Excess dietary potassium intake", "Excess dietary potassium intake would move toward toxicity, not deficiency, and the slide notes that typical food intake doesn't cause potassium toxicity in people with healthy kidneys anyway; high blood pressure is a consequence more commonly linked to mineral imbalances like excess sodium, but it isn't listed as a cause of potassium deficiency; vitamin D toxicity is an unrelated fat-soluble vitamin issue, not a listed cause of potassium loss."], ["High blood pressure", "Excess dietary potassium intake would move toward toxicity, not deficiency, and the slide notes that typical food intake doesn't cause potassium toxicity in people with healthy kidneys anyway; high blood pressure is a consequence more commonly linked to mineral imbalances like excess sodium, but it isn't listed as a cause of potassium deficiency; vitamin D toxicity is an unrelated fat-soluble vitamin issue, not a listed cause of potassium loss."], ["Vitamin D toxicity", "Excess dietary potassium intake would move toward toxicity, not deficiency, and the slide notes that typical food intake doesn't cause potassium toxicity in people with healthy kidneys anyway; high blood pressure is a consequence more commonly linked to mineral imbalances like excess sodium, but it isn't listed as a cause of potassium deficiency; vitamin D toxicity is an unrelated fat-soluble vitamin issue, not a listed cause of potassium loss."]], "c": 0, "cite": "Macro/Micro lecture, slide 151 (Potassium: Deficiency)"}, {"topic": "Nutrition Support", "io": "Nutrition Support", "q": "What is enteral nutrition?", "opts": [["Any diet consisting only of liquid nutrition supplements taken by mouth rather than by tube.", "Oral liquid supplements are a form of PO nutrition rather than tube feeding; a calorie-restricted diet describes something like a VLCD, not enteral nutrition; and IV nutrition describes parenteral, not enteral, nutrition."], ["A structured diet restricted to fewer than 800 kilocalories consumed per day.", "Oral liquid supplements are a form of PO nutrition rather than tube feeding; a calorie-restricted diet describes something like a VLCD, not enteral nutrition; and IV nutrition describes parenteral, not enteral, nutrition."], ["Nutrition delivered directly into the bloodstream intravenously.", "Oral liquid supplements are a form of PO nutrition rather than tube feeding; a calorie-restricted diet describes something like a VLCD, not enteral nutrition; and IV nutrition describes parenteral, not enteral, nutrition."], ["Nutrition fed into the GI tract using a special tube, bypassing the mouth.", "Enteral nutrition is nutrition fed into the GI tract via a special tube, bypassing the mouth."]], "c": 3, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 17"}, {"topic": "Omega-3s & Cardiovascular Health", "io": "Omega-3s & Cardiovascular Health", "q": "Which food source provides the long-chain omega-3 forms DHA and EPA directly, rather than requiring the body to convert them?", "opts": [["Canola oil, a plant-based source", "Flaxseed, walnuts, canola oil, chia, and hemp are all plant sources that provide alpha-linolenic acid — the short-chain omega-3 that the body must convert into DHA/EPA — so none of them supplies the long-chain forms directly the way fatty fish does."], ["Chia and hemp seeds, both plant-based", "Flaxseed, walnuts, canola oil, chia, and hemp are all plant sources that provide alpha-linolenic acid — the short-chain omega-3 that the body must convert into DHA/EPA — so none of them supplies the long-chain forms directly the way fatty fish does."], ["Flaxseed and walnuts, both plant-based", "Flaxseed, walnuts, canola oil, chia, and hemp are all plant sources that provide alpha-linolenic acid — the short-chain omega-3 that the body must convert into DHA/EPA — so none of them supplies the long-chain forms directly the way fatty fish does."], ["Fatty fish such as salmon and mackerel", "Fatty fish (salmon, tuna, mackerel, lake trout) and fish oil directly supply DHA and EPA, the long-chain omega-3 fatty acids; about 2 servings of fish per week is the recommended intake."]], "c": 3, "cite": "Macro/Micro lecture, slide 56 (Omega-3 Fatty Acid Sources)"}, {"topic": "Weight Management", "io": "Weight Management", "q": "What is the average daily calorie need range given for men, per lecture?", "opts": [["500 to 800 kcal", "1,800-2,400 kcal is instead the range given for women; 1,200-1,600 kcal is too low for the stated male average; and 500-800 kcal describes a very-low-calorie diet range, not typical daily need."], ["2,400 to 3,200 kcal", "Average daily calorie need for men is 2,400 to 3,200 kcal per day, per lecture."], ["1,200 to 1,600 kcal", "1,800-2,400 kcal is instead the range given for women; 1,200-1,600 kcal is too low for the stated male average; and 500-800 kcal describes a very-low-calorie diet range, not typical daily need."], ["1,800 to 2,400 kcal", "1,800-2,400 kcal is instead the range given for women; 1,200-1,600 kcal is too low for the stated male average; and 500-800 kcal describes a very-low-calorie diet range, not typical daily need."]], "c": 1, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 45"}, {"topic": "Infant Growth", "io": "Nutrition and infant growth and development", "q": "The lecture emphasizes that the brain grows faster during which period than at any other time?", "opts": [["The preschool years, ages 4 to 5", "The lecture places the fastest brain growth in the first year."], ["The first year of life", "Correct: the brain grows faster during the first year than at any other time."], ["The teenage growth spurt", "Rapid brain growth is highlighted for the first year, not adolescence."], ["The toddler years, ages 2 to 3", "The fastest brain growth described is during the first year of life."]], "c": 1, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 43"}, {"topic": "Peptic Ulcer Cause and Treatment", "io": "GI Conditions & Nutrition", "q": "According to the lecture, which combination correctly pairs a cause of peptic ulcers with its corresponding treatment?", "opts": [["Overuse of NSAIDs; treated with laxatives", "Incorrect. Laxatives are the lecture's treatment for constipation, not ulcers."], ["H. pylori infection; treated with a low-FODMAP diet", "Incorrect. The low-FODMAP diet is the lecture's treatment for IBS, not H. pylori infection."], ["H. pylori infection; treated with antibiotics", "Correct. The lecture lists H. pylori infection as a cause of ulcers and antibiotics as the treatment to eradicate it."], ["Acid secreted by the stomach; treated with increased fiber intake", "Incorrect. Increased fiber is the lecture's treatment for constipation, not for acid-related ulcers."]], "c": 2, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 11"}, {"topic": "Nutrition for Breastfeeding", "io": "Patient Education", "q": "How many additional calories per day and how much daily protein does the lecture recommend for a breastfeeding mother?", "opts": [["340 kcal/day additional and 71 g/day protein", "Incorrect. 340 kcal/day is the second-trimester pregnancy caloric increase, and 71 g/day is the pregnancy protein target -- neither is the breastfeeding figure."], ["450 kcal/day additional and 27 g/day protein", "Incorrect. 450 kcal/day is the third-trimester pregnancy caloric increase, and 27 g/day is actually the iron RDA in milligrams, not a protein figure."], ["500 kcal/day additional and 70 g/day protein", "Correct. The lecture states breastfeeding requires 500 additional kcal/day and 70 grams/day of protein."], ["600 kcal/day additional and 85 g/day protein", "Incorrect. Neither figure matches the lecture; 85 mg/day is actually the vitamin C RDA during pregnancy, not a caloric or protein figure for breastfeeding."]], "c": 2, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 63"}, {"topic": "Medications", "io": "Nutritional factors related to aging", "q": "The lecture notes that a common class of medications leaches which mineral out of the body in older adults?", "opts": [["Iron supplements remove sodium", "Iron supplements can cause constipation and affect zinc and copper, not remove sodium."], ["Diuretics leach potassium out of the body", "Correct: the lecture states diuretics leach potassium out of the body."], ["Antibiotics add excess iron to the body", "Antibiotics disrupt normal flora and raise Clostridioides difficile risk; they do not add iron."], ["Aspirin increases potassium stores", "Long-term aspirin is linked to anemia, not to raising potassium."]], "c": 1, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 51"}, {"topic": "Malnutrition Basics", "io": "Malnutrition Basics", "q": "Per lecture, how many of the 6 ASPEN characteristics need to be present to diagnose malnutrition?", "opts": [["1 of 6", "1 of 6 is too low a bar per the stated criteria, and both 4 of 6 and all 6 overstate the number actually required."], ["All 6", "1 of 6 is too low a bar per the stated criteria, and both 4 of 6 and all 6 overstate the number actually required."], ["2 of 6", "2 of the 6 ASPEN characteristics should be present to diagnose malnutrition."], ["4 of 6", "1 of 6 is too low a bar per the stated criteria, and both 4 of 6 and all 6 overstate the number actually required."]], "c": 2, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 14"}, {"topic": "Underweight & Food Insecurity", "io": "Underweight & Food Insecurity", "q": "Which of the following is listed as a resource to help combat food insecurity, per lecture?", "opts": [["OSHA workplace safety grant funding programs", "Medicare Part D, FEMA disaster loans, and OSHA grants are all real federal programs, but none is listed among the nutrition-focused resources the lecture names for food insecurity."], ["Medicare Part D prescription drug coverage", "Medicare Part D, FEMA disaster loans, and OSHA grants are all real federal programs, but none is listed among the nutrition-focused resources the lecture names for food insecurity."], ["WIC (Women, Infants, and Children program)", "WIC is listed among the resources to combat undernutrition/food insecurity, along with Summer EBT, school lunch/breakfast programs, the Child and Adult Care Food Program, and afterschool nutrition programs."], ["FEMA emergency disaster relief loan programs", "Medicare Part D, FEMA disaster loans, and OSHA grants are all real federal programs, but none is listed among the nutrition-focused resources the lecture names for food insecurity."]], "c": 2, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 78"}, {"topic": "Calorie Needs", "io": "Diet guidelines for normal infant growth", "q": "The lecture cites about how many kilocalories per day for a 6-month-old child, met by breast milk or formula?", "opts": [["About 1,500 kilocalories per day", "This overstates the roughly 700-kilocalorie figure for a 6-month-old."], ["About 700 kilocalories per day", "Correct: about 700 kilocalories per day is cited for a 6-month-old, supplied by breast milk or formula."], ["About 200 kilocalories per day", "This is far below the energy needs of a 6-month-old."], ["About 2,000 kilocalories per day", "This resembles an adult need, not that of a 6-month-old infant."]], "c": 1, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 84"}, {"topic": "Diet, Lifestyle & Leading Causes of Death", "io": "Diet, Lifestyle & Leading Causes of Death", "q": "Per the 2018 CDC statistics cited in lecture, approximately what percentage of the U.S. population was classified as overweight?", "opts": [["41%", "41% is the cited obesity figure (a narrower category than overweight), 26% is the cited normal-weight figure, and 15.8% is the NHANES percentage of kcal from protein, not an obesity statistic at all — 72.5% is the figure lecture attributes to overweight status."], ["15.8%", "41% is the cited obesity figure (a narrower category than overweight), 26% is the cited normal-weight figure, and 15.8% is the NHANES percentage of kcal from protein, not an obesity statistic at all — 72.5% is the figure lecture attributes to overweight status."], ["72.5%", "Lecture cites 2018 CDC data showing about 72.5% of the U.S. population classified as overweight, compared to 41% obese and 26% normal weight."], ["26%", "41% is the cited obesity figure (a narrower category than overweight), 26% is the cited normal-weight figure, and 15.8% is the NHANES percentage of kcal from protein, not an obesity statistic at all — 72.5% is the figure lecture attributes to overweight status."]], "c": 2, "cite": "Human Nutrition lecture, slide 30 (2018 CDC stats on obesity)"}, {"topic": "Malnutrition Basics", "io": "Malnutrition Basics", "q": "A patient's usual body weight (UBW) was 210 lbs and current weight is 170 lbs. What is the percent weight loss?", "opts": [["About 40%", "10% and 24% are not the result of the stated calculation; 40 is the raw pounds lost, not the percentage, so \"about 40%\" confuses the numerator with the final percent."], ["About 24%", "10% and 24% are not the result of the stated calculation; 40 is the raw pounds lost, not the percentage, so \"about 40%\" confuses the numerator with the final percent."], ["About 10%", "10% and 24% are not the result of the stated calculation; 40 is the raw pounds lost, not the percentage, so \"about 40%\" confuses the numerator with the final percent."], ["About 19%", "(210-170)/210 = 40/210 ≈ 19% weight loss, matching the lecture's own worked example."]], "c": 3, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 12"}, {"topic": "Malnutrition Labs", "io": "Malnutrition Labs", "q": "Why can't albumin alone reliably diagnose malnutrition, per lecture?", "opts": [["Albumin levels remain essentially identical across every disease state, regardless of inflammation, hydration, or organ dysfunction.", "Albumin is routinely measured in hospitalized patients; its 3-week half-life reflects a much longer window than 12 hours; and it is affected differently by different disease states, not identically."], ["Albumin simply cannot be measured with any reliability in hospitalized or critically ill patient populations at any point.", "Albumin is routinely measured in hospitalized patients; its 3-week half-life reflects a much longer window than 12 hours; and it is affected differently by different disease states, not identically."], ["Albumin levels only reflect dietary protein intake from approximately the past 12 hours, similar to prealbumin.", "Albumin is routinely measured in hospitalized patients; its 3-week half-life reflects a much longer window than 12 hours; and it is affected differently by different disease states, not identically."], ["Hypoalbuminemia won't improve with nutrition therapy alone as long as systemic inflammation persists, and it's affected by hydration status and organ disease.", "Albumin is affected by inflammation, stress, renal/liver disease, hydration status, and certain medications — hypoalbuminemia won't improve with nutrition support alone if systemic inflammation persists."]], "c": 3, "cite": "Special Topics in Nutrition for Nova 2026 NEW.pptx, Slide 16"}, {"topic": "Reproductive Function and Nutrition", "io": "Unique Nutritional Needs of Pregnancy", "q": "Which statement best reflects how the lecture frames the relationship between maternal nutrition and pregnancy outcomes?", "opts": [["Maternal nutritional status is a modifiable risk factor, and maintaining a healthy weight and good nutrition before and during pregnancy can optimize pregnancy outcomes.", "Correct. This directly matches the lecture's framing of reproductive function and nutrition."], ["Maternal nutritional status has essentially little influence on pregnancy outcomes once conception has already occurred.", "Incorrect. The lecture identifies maternal nutritional status as a modifiable risk factor that continues to matter throughout pregnancy."], ["Reproductive hormone synthesis and normal menstrual cycling require only minimal caloric input compared to pregnancy itself.", "Incorrect. The lecture states reproductive function, including hormone synthesis and cycling, does require calories."], ["Nutritional optimization is only considered relevant during breastfeeding, not at any point prior to conception.", "Incorrect. The lecture emphasizes optimizing nutrition and weight before and during pregnancy, not only during breastfeeding."]], "c": 0, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 3"}, {"topic": "RDA & Macronutrient Basics", "io": "RDA & Macronutrient Basics", "q": "According to the Food and Nutrition Board, what is the RDA for carbohydrate intake in adults?", "opts": [["250 grams per day", "45 grams per day is far below the actual RDA and wouldn't meet glucose needs; 250 grams per day exceeds the RDA figure given on the slide, even though it falls within the typical American intake range; 65 grams per day isn't a gram figure used for the carbohydrate RDA at all — it's easy to confuse with the acceptable macronutrient distribution range's upper carbohydrate percentage (45–65% of total kcal), which is a percentage, not a gram amount."], ["65 grams per day", "45 grams per day is far below the actual RDA and wouldn't meet glucose needs; 250 grams per day exceeds the RDA figure given on the slide, even though it falls within the typical American intake range; 65 grams per day isn't a gram figure used for the carbohydrate RDA at all — it's easy to confuse with the acceptable macronutrient distribution range's upper carbohydrate percentage (45–65% of total kcal), which is a percentage, not a gram amount."], ["130 grams per day", "The RDA for carbohydrate is 130 grams per day for adults — the minimum needed to supply the brain and central nervous system with adequate glucose, though average U.S. intake runs much higher (180–330 g/day)."], ["45 grams per day", "45 grams per day is far below the actual RDA and wouldn't meet glucose needs; 250 grams per day exceeds the RDA figure given on the slide, even though it falls within the typical American intake range; 65 grams per day isn't a gram figure used for the carbohydrate RDA at all — it's easy to confuse with the acceptable macronutrient distribution range's upper carbohydrate percentage (45–65% of total kcal), which is a percentage, not a gram amount."]], "c": 2, "cite": "Macro/Micro lecture, slide 35 (Carbohydrate Needs)"}, {"topic": "Weight Management", "io": "Weight Management", "q": "What is recommended when a person has a minor setback (a \"lapse\") in a weight-loss plan, per lecture?", "opts": [["Immediately restrict calories far below the original plan as a form of self-punishment for the lapse.", "Giving up entirely is exactly what the relapse-prevention guidance tries to prevent; punitive restriction isn't recommended; and waiting weeks contradicts the advice to take charge immediately."], ["Wait several full weeks before even attempting to resume any of the original healthy habits.", "Giving up entirely is exactly what the relapse-prevention guidance tries to prevent; punitive restriction isn't recommended; and waiting weeks contradicts the advice to take charge immediately."], ["Do not overreact, take charge immediately, and modify internal language so the lapse doesn't collapse all effort.", "The lecture recommends not overreacting, taking charge immediately, and modifying internal language (e.g. reframing a slip positively) so that one lapse doesn't collapse all prior effort."], ["Give up on the entire plan permanently, since the setback proves it was never going to work.", "Giving up entirely is exactly what the relapse-prevention guidance tries to prevent; punitive restriction isn't recommended; and waiting weeks contradicts the advice to take charge immediately."]], "c": 2, "cite": "Weight Control Slides Only - CAM - Putnam .pptx, Slide 61"}, {"topic": "Caloric Requirements by Trimester", "io": "Balanced Meal Planning (MyPlate)", "q": "A patient in her third trimester asks how many additional calories per day she needs above her prepregnancy intake. Based on the lecture, what should she be told?", "opts": [["No additional calories are needed; this reflects the myth of 'eating for two.'", "Incorrect. While the lecture does clarify pregnancy is not the nutritional equivalent of literally 'eating for two,' it also specifies a third-trimester increase of 450 kcal/day; 'no additional calories' actually describes the first trimester, not the third."], ["About 450 additional kcal/day, and this still isn't the equivalent of literally 'eating for two.'", "Correct. The lecture specifies +450 kcal/day for the third trimester, while clarifying this is not the nutritional equivalent of 'eating for two.'"], ["About 340 additional kcal per day above her prepregnancy intake.", "Incorrect. That figure is the second-trimester increase, not the third-trimester figure."], ["About 500 additional kcal/day, the same increase recommended during breastfeeding.", "Incorrect. 500 kcal/day is the caloric increase recommended during breastfeeding, not the third-trimester pregnancy figure."]], "c": 1, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 34"}, {"topic": "Calories & Metabolism", "io": "Changes in nutritional requirements during adulthood", "q": "According to the lecture, approximately how much does basal metabolic rate (BMR) decline per decade in adulthood?", "opts": [["It does not decline with age", "The lecture specifically notes a decline, making dietary quality more important."], ["About 2% per decade", "Correct: the lecture states basal metabolic rate declines about 2% per decade."], ["About 10% per decade", "This overstates the decline described in the lecture."], ["About 25% per decade", "This is far larger than the roughly 2% per-decade decline taught."]], "c": 1, "cite": "Nutrition & Aging CAM Gopal SV .pptx, Slide 23"}, {"topic": "Autism & Nutrition", "io": "Challenges with childhood eating habits", "q": "The lecture lists nutrition interventions sometimes used for children with autism spectrum disorder. Which matches?", "opts": [["Exclusive breast milk through age 5", "This is not an autism intervention described in the lecture."], ["A gluten-free, casein-free diet with supplements such as probiotics and omega-3 fatty acids", "Correct: interventions listed include a gluten-free, casein-free diet and supplements such as probiotics, vitamin B6, magnesium, and omega-3 fatty acids."], ["A high-sodium, high-sugar diet", "The lecture does not recommend high sodium and sugar for autism."], ["Complete elimination of all protein", "Protein is not eliminated; the diet described removes gluten and casein."]], "c": 1, "cite": "PAJ5508 Infancy Through Adolescence mbf2026sc.pptx, Slide 413"}, {"topic": "Fiber", "io": "Fiber", "q": "Consuming more than 60 grams of fiber per day can lead to which problem, according to the lecture?", "opts": [["Constipation from inadequate fluid intake", "Constipation is instead a consequence of too LITTLE fiber (or too little water, or pain medication), not too much; and fiber is linked to a LOWER colon-cancer risk and REDUCED cholesterol absorption — the opposite of what excess fiber intake causes."], ["Decreased availability of some minerals", "Too much fiber (>60 g/day) requires extra fluid, may decrease the availability of some minerals, and can create unmet energy needs in children."], ["Increased risk of colon cancer", "Constipation is instead a consequence of too LITTLE fiber (or too little water, or pain medication), not too much; and fiber is linked to a LOWER colon-cancer risk and REDUCED cholesterol absorption — the opposite of what excess fiber intake causes."], ["Increased cholesterol absorption", "Constipation is instead a consequence of too LITTLE fiber (or too little water, or pain medication), not too much; and fiber is linked to a LOWER colon-cancer risk and REDUCED cholesterol absorption — the opposite of what excess fiber intake causes."]], "c": 1, "cite": "Macro/Micro lecture, slide 16 (Too Much Fiber); contrast slide 15 (Too Little Fiber) and slide 13 (Benefits of Fiber)"}, {"topic": "IgE-Mediated Reactions", "io": "Food Allergy vs. Food Intolerance", "q": "Which type of food allergy reaction does the lecture describe as often presenting soon after ingestion, being more violent, and potentially causing anaphylaxis?", "opts": [["Non-IgE mediated (late onset)", "Incorrect — the lecture describes non-IgE mediated reactions as presenting later with more subtle reactions, not violent early reactions."], ["IgE mediated (early onset)", "Correct — the lecture states IgE mediated (early onset) reactions 'often present soon after digestion,' are 'often more violent,' and can include anaphylaxis."], ["Cross-reactive syndrome", "Incorrect — this term does not appear in the lecture; only IgE mediated and non-IgE mediated categories are described."], ["Delayed hypersensitivity syndrome", "Incorrect — this term is not used in the lecture; the two categories given are IgE mediated and non-IgE mediated."]], "c": 1, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 4"}, {"topic": "Calories Per Nutrient", "io": "Calories Per Nutrient", "q": "On a nutrition facts food label, the 'Calories' figure (capital C) is numerically equivalent to which unit discussed in the lecture?", "opts": [["kilocalorie (kcal)", "The lecture states that energy on food labels is expressed as Calories (capital C), which is the same as kcal — 1,000 calories = 1 kcal = 1 (food) Calorie."], ["calorie (lowercase c)", "The lowercase calorie is 1/1000 the size of what's printed on labels, so it isn't equivalent; joule is an SI energy unit never mentioned in this lecture's food-label discussion; and kilogram is a unit of mass, not energy, so it can't equal a Calorie figure at all."], ["kilogram", "The lowercase calorie is 1/1000 the size of what's printed on labels, so it isn't equivalent; joule is an SI energy unit never mentioned in this lecture's food-label discussion; and kilogram is a unit of mass, not energy, so it can't equal a Calorie figure at all."], ["joule", "The lowercase calorie is 1/1000 the size of what's printed on labels, so it isn't equivalent; joule is an SI energy unit never mentioned in this lecture's food-label discussion; and kilogram is a unit of mass, not energy, so it can't equal a Calorie figure at all."]], "c": 0, "cite": "Human Nutrition lecture, slide 22 (Calories Defined)"}, {"topic": "Toxic Food Contaminant", "io": "Substances Causing Food Intolerance", "q": "Which of the following does the lecture list as a toxic food contaminant capable of causing food intolerance-type reactions?", "opts": [["Lactase deficiency", "Incorrect — lactase deficiency is listed under 'deficiencies in digestive enzymes,' a separate category from food contaminants."], ["Monosodium glutamate (MSG)", "Incorrect — MSG is listed under 'synthetic compounds added to foods,' not under toxic contaminants."], ["Sulfites", "Incorrect — sulfites are listed under 'synthetic compounds added to foods,' not under toxic contaminants."], ["Clostridium botulinum", "Correct — the lecture lists Clostridium botulinum as a 'toxic contaminant' under food contaminants."]], "c": 3, "cite": "RECORDED Nutrition Allergies and Intolerances CAM Putnam (4).pptx, Slide 30"}, {"topic": "Diet, Lifestyle & Leading Causes of Death", "io": "Diet, Lifestyle & Leading Causes of Death", "q": "Per lecture, how has increasing affluence in North America contributed to leading causes of death?", "opts": [["It has led to decreased alcohol consumption, reduced use of processed foods, and less reliance on convenience dining.", "Increased physical activity, decreased alcohol consumption, and increased fiber/whole-grain intake all describe healthier shifts — the opposite of what lecture says affluence actually produced, which was more sedentary behavior and higher intake of animal fat, sugar, salt, and alcohol."], ["It has led to increased physical activity, reduced sugar intake, and more consistent structured exercise habits.", "Increased physical activity, decreased alcohol consumption, and increased fiber/whole-grain intake all describe healthier shifts — the opposite of what lecture says affluence actually produced, which was more sedentary behavior and higher intake of animal fat, sugar, salt, and alcohol."], ["It has led to increased consumption of fiber, whole grains, and other minimally processed staple foods.", "Increased physical activity, decreased alcohol consumption, and increased fiber/whole-grain intake all describe healthier shifts — the opposite of what lecture says affluence actually produced, which was more sedentary behavior and higher intake of animal fat, sugar, salt, and alcohol."], ["It has led to more sedentary lifestyles and higher intakes of animal fat, sugar, salt, and alcohol.", "Lecture notes that although North Americans live longer with more diverse food and lifestyle choices, affluence has also driven more sedentary lifestyles and higher intakes of animal fat, sugar, salt, and alcohol — factors that feed into leading causes of death."]], "c": 3, "cite": "Human Nutrition lecture, slide 42 (Longer Healthier Lives)"}, {"topic": "Vulnerable Periods of Fetal Development", "io": "Unique Nutritional Needs of Pregnancy", "q": "The lecture describes the third trimester as a critical time for which nutrient, noting that the fetus takes priority for it?", "opts": [["Iron", "Correct -- the lecture states the third trimester is a critical time for iron, as the fetus takes priority for it."], ["Folic acid", "Incorrect -- folic acid is emphasized earliest in the lecture, for neural tube closure around conception and the first weeks of pregnancy, not as the nutrient prioritized in the third trimester."], ["Vitamin D", "Incorrect -- the lecture does not identify vitamin D as the nutrient the fetus prioritizes during the third trimester."], ["Calcium", "Incorrect -- the lecture does not identify calcium as the nutrient the fetus prioritizes during the third trimester."]], "c": 0, "cite": "Nutrition Pregnancy Breastfeeding 2026 Dr. McInnis.pptx, Slide 15"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
