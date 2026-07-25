@@ -183,7 +183,9 @@
         align-items: stretch;
       }
       .page > .search-wrap { order: 30; }
+      .page > #stats-widget { order: 35; }
       .page > #semester-card { order: 40; }
+      .page > #continue-widget { order: 45; }
       .page > .more-links { order: 50; }
 
       .mobile-widgets-row #week-widget,
@@ -477,6 +479,16 @@
     .week-empty { font-size: 14px; color: var(--muted); padding: 4px 2px; }
 
     .continue-widget { margin: 18px 0; }
+    /* Cumulative counter + My Progress share their own card (#stats-widget),
+       sitting under Group Study -- left sidebar on desktop, under the buttons
+       on tablet/phone. Placed BEFORE the >=1180px block below so that block's
+       `margin: 0` override wins on desktop by source order, same as the
+       week/continue widgets (media queries don't add specificity). */
+    .stats-widget {
+      margin: 18px 0;
+      display: flex; flex-direction: column; align-items: center; gap: 11px;
+      text-align: center;
+    }
     .guides-btn-floating { display: none; }
 
     /* Must come after both base `margin: 18px 0`/`display: none` rules above
@@ -487,6 +499,16 @@
       .continue-widget {
         position: absolute;
         top: 0;
+        right: calc(100% + 24px);
+        width: 260px;
+        margin: 0;
+      }
+      /* Left sidebar stack under the Group Study button: #stats-widget sits at
+         the semester-card top line (like the other widgets), and #continue-widget
+         is pushed below it -- exact tops are set by alignSidebars() since the
+         stats card's height is dynamic. */
+      .stats-widget {
+        position: absolute;
         right: calc(100% + 24px);
         width: 260px;
         margin: 0;
@@ -610,18 +632,18 @@
     /* Class-wide cumulative "questions answered" counter (class-stats.js).
        Hidden until the live value loads so it never flashes a stale 0. */
     .class-counter {
-      display: flex; align-items: baseline; justify-content: center;
-      flex-wrap: wrap; gap: 4px 8px; margin: 2px 0 16px;
-      font-size: 13.5px; color: var(--muted, #6b7280);
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 3px 7px; margin: 0;
+      font-size: 13px; color: var(--muted, #6b7280); line-height: 1.35;
       opacity: 0; transition: opacity .5s ease;
     }
     .class-counter.ready { opacity: 1; }
-    .class-counter .cc-icon { font-size: 15px; }
+    .class-counter .cc-icon { display: inline-flex; align-self: center; }
+    .class-counter .cc-icon svg { width: 18px; height: 18px; display: block; }
     .class-counter .cc-num {
       font-weight: 800; font-size: 20px; letter-spacing: -.01em;
       color: var(--accent, #2563eb); font-variant-numeric: tabular-nums;
     }
-    .progress-link-row { text-align: center; margin: 0 0 18px; }
     .my-progress-link {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--accent-soft, #eef0fd); color: var(--accent, #2563eb);
@@ -1330,6 +1352,15 @@
       <span>Group Study</span>
     </a>
 
+    <div id="stats-widget" class="card stats-widget">
+      <div id="class-counter" class="class-counter" aria-live="polite">
+        <span class="cc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3.4 2 8l10 4.6L22 8 12 3.4Z" fill="var(--accent)"/><path d="M6.4 10.2v3.9c0 1.15 2.5 2.1 5.6 2.1s5.6-.95 5.6-2.1v-3.9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/><path d="M22 8v4.6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="13.5" r="1.1" fill="var(--accent)"/></svg></span>
+        <span class="cc-num" id="class-counter-value">0</span>
+        <span class="cc-label">questions answered by the Class of 2028</span>
+      </div>
+      <a href="progress.html" class="my-progress-link">📊 My Progress</a>
+    </div>
+
     <div class="mobile-widgets-row">
       <div id="week-widget" class="card week-widget">
         <div class="week-widget-top">
@@ -1337,11 +1368,6 @@
           <span class="week-range" id="week-range"></span>
         </div>
         <div id="week-list" class="week-list"></div>
-      </div>
-
-      <div id="continue-widget" class="card continue-widget hidden">
-        <h2 class="continue-title">Continue where you left off</h2>
-        <div id="continue-list" class="continue-list"></div>
       </div>
     </div>
 
@@ -1351,14 +1377,6 @@
       <div class="semester-progress" id="semester-progress">
         <div class="semester-progress-track"><i id="semester-progress-fill"></i></div>
         <div class="semester-progress-label" id="semester-progress-label"></div>
-      </div>
-      <div id="class-counter" class="class-counter" aria-live="polite">
-        <span class="cc-icon" aria-hidden="true">📚</span>
-        <span class="cc-num" id="class-counter-value">0</span>
-        <span class="cc-label">questions answered by the Class of 2028</span>
-      </div>
-      <div class="progress-link-row">
-        <a href="progress.html" class="my-progress-link">📊 My Progress</a>
       </div>
       <div class="tabs">
         <button class="tab-btn active" data-tab="physio">Physiology</button>
@@ -2415,6 +2433,11 @@
       </div>
     </div>
 
+    <div id="continue-widget" class="card continue-widget hidden">
+      <h2 class="continue-title">Continue where you left off</h2>
+      <div id="continue-list" class="continue-list"></div>
+    </div>
+
     <details class="more-links">
       <summary>More<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
       <button type="button" id="request-open" class="request-link">Have a feature idea or want a new exam added? Request it &rarr;</button>
@@ -2776,8 +2799,15 @@
         const offset = Math.round((card.getBoundingClientRect().top - page.getBoundingClientRect().top) / zoom);
         const weekEl = document.getElementById("week-widget");
         const continueEl = document.getElementById("continue-widget");
+        const statsEl = document.getElementById("stats-widget");
         if (weekEl) weekEl.style.top = offset + "px";
-        if (continueEl) continueEl.style.top = offset + "px";
+        // Left sidebar: #stats-widget aligns to the semester-card top line;
+        // #continue-widget stacks directly below it (its dynamic height + a gap).
+        if (statsEl) statsEl.style.top = offset + "px";
+        if (continueEl) {
+          const statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
+          continueEl.style.top = (offset + (statsH ? statsH + 18 : 0)) + "px";
+        }
         const guidesFloatBtn = document.getElementById("guides-btn-floating");
         const groupFloatBtn = document.getElementById("group-btn-floating");
         const searchInput = document.getElementById("site-search");
