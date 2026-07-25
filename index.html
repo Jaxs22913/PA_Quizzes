@@ -513,6 +513,10 @@
         width: 260px;
         margin: 0;
       }
+      /* The 260px rail is the only place the caption doesn't fit at base size,
+         so shrink it here just enough to hold one line (~208px in a ~210px
+         content box). */
+      .stats-widget .cc-label { font-size: 10.5px; letter-spacing: -.2px; }
       .week-widget {
         position: absolute;
         top: 0;
@@ -644,6 +648,10 @@
       font-weight: 800; font-size: 20px; letter-spacing: -.01em;
       color: var(--accent, #2563eb); font-variant-numeric: tabular-nums;
     }
+    /* Keep the caption on a single line -- it fits at the base size on phone
+       and tablet; the narrow 260px desktop sidebar shrinks it just enough
+       (see the >=1180px block) rather than letting it wrap to two lines. */
+    .class-counter .cc-label { white-space: nowrap; }
     .my-progress-link {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--accent-soft, #eef0fd); color: var(--accent, #2563eb);
