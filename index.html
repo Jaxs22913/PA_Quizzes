@@ -684,17 +684,19 @@
 
     /* Relax: standalone calming button (its own element under the stats card) */
     .relax-cta {
+      position: relative; overflow: hidden;
       display: flex; width: 100%; box-sizing: border-box;
       align-items: center; justify-content: center; gap: 9px;
-      background: var(--accent-soft, #eef0fd); color: var(--accent, #2563eb);
+      background: var(--card, #fff); color: var(--accent, #2563eb);
       border: 1px solid var(--border, #e5e7ef); border-radius: 14px;
       padding: 13px 18px; font-size: 14.5px; font-weight: 700; text-decoration: none;
+      box-shadow: var(--shadow);
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
-    .relax-cta svg { width: 18px; height: 18px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+    .relax-cta svg.leaf-icon { width: 18px; height: 18px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
     .relax-cta .leaf-blade { fill: transparent; transition: fill .5s ease; }
     .relax-cta:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.16); }
-    .relax-cta:hover svg { transform: scale(1.14) rotate(-6deg); }
+    .relax-cta:hover svg.leaf-icon { transform: scale(1.1) rotate(-4deg); }
     .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
     @media (prefers-reduced-motion: reduce) {
       .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
@@ -1415,7 +1417,7 @@
 
     <div id="relax-cta-row" class="relax-cta-row">
       <a href="relax.html" class="relax-cta">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="leaf-blade" d="M12 2.5C15.5 7 17.5 9.5 17.5 12.5 17.5 16 15 19 12 20.5 9 19 6.5 16 6.5 12.5 6.5 9.5 8.5 7 12 2.5Z"/><path d="M12 6.5v10.5M12 11.5l2.7-2M12 14l2.9-2.1"/></svg>
+        <svg class="leaf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="leaf-blade" d="M20.5 4.5C11 4 4.5 10.5 4 20c9.5.5 16-6 16.5-15.5Z"/><path d="M5.5 19C9 15.5 13 11.5 18 6.5"/></svg>
         <span>Relax</span>
       </a>
     </div>
