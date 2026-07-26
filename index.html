@@ -183,9 +183,9 @@
         align-items: stretch;
       }
       .page > .search-wrap { order: 30; }
-      .page > #relax-cta-row { order: 34; }
+      .page > #relax-cta-row { order: 33; }
+      .page > #group-cta-row { order: 34; }
       .page > #stats-widget { order: 35; }
-      .page > #group-cta-row { order: 37; }
       .page > #semester-card { order: 40; }
       .page > #continue-widget { order: 45; }
       .page > .more-links { order: 50; }
@@ -712,9 +712,16 @@
     @media (prefers-reduced-motion: reduce) {
       .relax-cta:hover .sprig .vine { animation: none; stroke-dashoffset: 0; }
       .relax-cta:hover .sprig .leaf { animation: none; transform: scale(1); }
+      .relax-cta:not(.group-cta):hover { animation: none; box-shadow: 0 8px 22px rgba(37,99,235,.3); }
     }
     .relax-cta .leaf-blade { fill: rgba(37,99,235,.15); transition: fill .5s ease; }
     .relax-cta:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.16); }
+    /* Relax widget only: a blue aura that gently pulses/exudes on hover */
+    .relax-cta:not(.group-cta):hover { animation: relax-aura 2s ease-in-out infinite; }
+    @keyframes relax-aura {
+      0%, 100% { box-shadow: 0 6px 16px rgba(37,99,235,.18), 0 0 12px rgba(37,99,235,.16); }
+      50% { box-shadow: 0 9px 26px rgba(37,99,235,.32), 0 0 34px rgba(37,99,235,.42); }
+    }
     .relax-cta:hover svg.leaf-icon { transform: scale(1.1) rotate(-4deg); }
     /* Words in black like the other widgets; the icon keeps the accent color */
     .relax-cta > span { color: var(--ink, #1f2937); }
@@ -1427,6 +1434,13 @@
       </a>
     </div>
 
+    <div id="group-cta-row" class="group-cta-row">
+      <a href="group-join.html" class="relax-cta group-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
+        <span>Group Study</span>
+      </a>
+    </div>
+
     <div id="stats-widget" class="card stats-widget">
       <div id="class-counter" class="class-counter" aria-live="polite">
         <span class="cc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3.4 2 8l10 4.6L22 8 12 3.4Z" fill="var(--accent)"/><path d="M6.4 10.2v3.9c0 1.15 2.5 2.1 5.6 2.1s5.6-.95 5.6-2.1v-3.9" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/><path d="M22 8v4.6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="13.5" r="1.1" fill="var(--accent)"/></svg></span>
@@ -1436,13 +1450,6 @@
       <a href="progress.html" class="my-progress-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path class="mp-line" pathLength="1" d="M7 14l3.5-3.6 2.8 2.8L21 6.5"/></svg>
         <span>My Progress</span>
-      </a>
-    </div>
-
-    <div id="group-cta-row" class="group-cta-row">
-      <a href="group-join.html" class="relax-cta group-cta">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
-        <span>Group Study</span>
       </a>
     </div>
 
@@ -2914,16 +2921,16 @@
             guidesFloatBtn.style.top = btnTop + "px";
           }
         }
-        // Left rail (top -> bottom): Relax -> stats card -> Group Study -> Continue.
+        // Left rail (top -> bottom): Relax -> Group Study -> stats card -> Continue.
         if (relaxEl) relaxEl.style.top = btnTop + "px";
-        if (statsEl) statsEl.style.top = offset + "px";
-        const statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
-        var gTop = offset + (statsH ? statsH + 18 : 0);
-        if (groupEl) groupEl.style.top = gTop + "px";
-        if (continueEl) {
-          const groupH = groupEl ? groupEl.getBoundingClientRect().height / zoom : 0;
-          continueEl.style.top = (gTop + (groupH ? groupH + 18 : 0)) + "px";
-        }
+        var relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
+        var groupTop = btnTop + (relaxH ? relaxH + 18 : 0);
+        if (groupEl) groupEl.style.top = groupTop + "px";
+        var groupH = groupEl ? groupEl.getBoundingClientRect().height / zoom : 0;
+        var statsTop = groupTop + (groupH ? groupH + 18 : 0);
+        if (statsEl) statsEl.style.top = statsTop + "px";
+        var statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
+        if (continueEl) continueEl.style.top = (statsTop + (statsH ? statsH + 18 : 0)) + "px";
       }
       alignSidebars();
       window.addEventListener("resize", alignSidebars);
@@ -3827,7 +3834,7 @@
           })(i);
         }
       }
-      document.querySelectorAll('a.guides-btn[href="group-join.html"]').forEach(function (btn) {
+      document.querySelectorAll('a[href="group-join.html"]').forEach(function (btn) {
         btn.addEventListener("mouseenter", function () { joinAtButton(btn); });
       });
     })();

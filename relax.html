@@ -334,25 +334,24 @@
     if (!soundOn || !actx) return;
     stopVoice(true);
     var t = actx.currentTime;
-    var g = actx.createGain(); g.connect(masterGain);
-    var o = actx.createOscillator(); o.type = "sine"; o.connect(g);
-    // One clean mid-register sine (no detune "beating" = no hum; mid pitch is
-    // clearly audible on small laptop speakers) that swells in and then fades
-    // within the phase — a gentle breath of sound, not a held drone.
-    var f0, f1, peak, dur;
-    if (kind === "in") { f0 = 329.6; f1 = 440.0; peak = 0.24; dur = Math.min(secs, 3.4); }        // soft rise
-    else if (kind === "out") { f0 = 440.0; f1 = 293.7; peak = 0.24; dur = Math.min(secs, 3.6); }  // soft fall
-    else { f0 = 329.6; f1 = 329.6; peak = 0.13; dur = Math.min(secs, 1.8); }                       // hold: brief marker
-    o.frequency.setValueAtTime(f0, t);
-    o.frequency.linearRampToValueAtTime(f1, t + dur);
-    // swell in, hold briefly, then fade — present enough to hear on any speaker,
-    // but a single clean sine (no beating), so it reads as a breath, not a drone.
+    var g = actx.createGain();
+    var filt = actx.createBiquadFilter(); filt.type = "lowpass"; filt.frequency.value = 780; filt.Q.value = 0.2;
+    g.connect(filt); filt.connect(masterGain);
+    // A soft, warm singing-bowl tone: a low fundamental + a quiet octave
+    // (consonant, no beating), gently struck and left to DECAY (no sustained,
+    // steady pitch) so it reads as a calm chime, not an alarm. Low register +
+    // low-pass keep it mellow.
+    var f = kind === "in" ? 246.9 : kind === "out" ? 174.6 : 196.0;
+    var o1 = actx.createOscillator(); o1.type = "sine"; o1.frequency.value = f; o1.connect(g);
+    var g2 = actx.createGain(); g2.gain.value = 0.28;
+    var o2 = actx.createOscillator(); o2.type = "sine"; o2.frequency.value = f * 2; o2.connect(g2); g2.connect(g);
+    var peak = kind === "hold" ? 0.045 : 0.085;
+    var dur = Math.min(secs, kind === "hold" ? 1.6 : 3.2);
     g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(peak, t + 0.5);
-    g.gain.setValueAtTime(peak, t + dur * 0.4);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-    o.start(t); o.stop(t + dur + 0.1);
-    activeVoice = { g: g, oscs: [o] };
+    g.gain.exponentialRampToValueAtTime(peak, t + 0.14);         // soft strike
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);        // long gentle decay
+    o1.start(t); o2.start(t); o1.stop(t + dur + 0.1); o2.stop(t + dur + 0.1);
+    activeVoice = { g: g, oscs: [o1, o2] };
   }
 
   // ---------- mode switching ----------
