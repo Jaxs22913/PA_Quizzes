@@ -25,6 +25,12 @@ zero-padded to 3 digits). Requires: pip install edge-tts
    Safe to re-run / interrupt and resume: existing files are skipped, so a
    partial run just picks up where it left off.
 
+   Pass --force when the guide's CONTENT or STRUCTURE changed. Files are
+   addressed purely by queue index, so inserting/removing a single readable
+   unit shifts every later one and silently desynchronizes the whole track;
+   the skip-existing default would leave those stale files in place. If the
+   new queue is shorter than the old one, delete the surplus tail files too.
+
 --- Swapping voices ---
 
 Change MALE_VOICE / FEMALE_VOICE below. List everything available with:
@@ -59,8 +65,8 @@ FEMALE_VOICE = "en-US-AvaMultilingualNeural"
 CONCURRENCY = 6
 
 
-async def generate_one(sem, voice, text, path):
-    if os.path.exists(path) or not text.strip():
+async def generate_one(sem, voice, text, path, force=False):
+    if (os.path.exists(path) and not force) or not text.strip():
         return
     async with sem:
         for attempt in range(3):
@@ -78,7 +84,7 @@ async def generate_one(sem, voice, text, path):
                     await asyncio.sleep(2)
 
 
-async def generate_all(texts, out_dir):
+async def generate_all(texts, out_dir, force=False):
     sem = asyncio.Semaphore(CONCURRENCY)
     total = len(texts) * 2
     done = 0
@@ -90,7 +96,7 @@ async def generate_all(texts, out_dir):
         for i, text in enumerate(texts):
             num = str(i + 1).zfill(3)
             path = os.path.join(gender_dir, f"{num}.mp3")
-            tasks.append(generate_one(sem, voice, text, path))
+            tasks.append(generate_one(sem, voice, text, path, force))
 
         # Run in chunks so progress logging stays meaningful instead of one
         # silent asyncio.gather over everything.
@@ -107,13 +113,20 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--texts", required=True, help="Path to a JSON array of strings, in queue order")
     parser.add_argument("--out", required=True, help="Output directory (gets male/ and female/ subfolders)")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-synthesize and overwrite files that already exist. Needed after a "
+             "guide's content or structure changes: the queue is index-addressed, so "
+             "an edit shifts later units and every stale MP3 must be replaced.",
+    )
     args = parser.parse_args()
 
     with open(args.texts, encoding="utf-8") as f:
         texts = json.load(f)
 
     os.makedirs(args.out, exist_ok=True)
-    asyncio.run(generate_all(texts, args.out))
+    asyncio.run(generate_all(texts, args.out, args.force))
 
 
 if __name__ == "__main__":
