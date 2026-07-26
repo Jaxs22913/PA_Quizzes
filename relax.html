@@ -7,7 +7,9 @@
 <!-- Intentionally self-contained: no theme.js / theme.css, so the site's
      light/dark theme, settings gear, and sign-in prompt never touch this page.
      It's a fixed, low-distraction calm space. -->
-<style>
+<script>(function(){var m={normal:1,large:1.13,xl:1.28}[localStorage.getItem('relaxTextSize')]||1;document.documentElement.style.fontSize=(16*m)+'px';})();</script>
+<style>  html{font-size:16px;}
+
   /* One fixed, calming LIGHT palette — this page ignores the site's light/dark
      and seasonal (snow/hearts/leaves) themes entirely, by design. Soft and airy,
      tinted so it's never a blinding white. */
@@ -19,7 +21,7 @@
 
   *{box-sizing:border-box}
   body{margin:0;color:var(--r-ink);
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font:1rem/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     min-height:100vh;position:relative;overflow-x:hidden;
     background:var(--r-soft);}
   /* Soft drifting pastel aurora over the light tinted base — gentle, not blinding. */
@@ -32,16 +34,16 @@
   @keyframes drift{from{transform:translate3d(-2%,-1%,0) scale(1.05)}to{transform:translate3d(2%,2%,0) scale(1.12)}}
 
   .wrap{max-width:640px;margin:0 auto;padding:24px 18px 80px;}
-  .back-link{display:inline-block;color:var(--r-muted);text-decoration:none;font-size:13.5px;margin-bottom:16px;}
+  .back-link{display:inline-block;color:var(--r-muted);text-decoration:none;font-size:0.8438rem;margin-bottom:16px;}
   .back-link:hover{color:var(--r-a1)}
-  h1{font-size:29px;margin:0 0 4px;letter-spacing:-.02em;text-wrap:balance;}
-  .sub{color:var(--r-muted);font-size:15px;margin:0 0 22px;}
+  h1{font-size:1.8125rem;margin:0 0 4px;letter-spacing:-.02em;text-wrap:balance;}
+  .sub{color:var(--r-muted);font-size:0.9375rem;margin:0 0 22px;}
 
   /* SOS quick-reset (physiological sigh) — a gentle warm cue that stands apart */
   .sos-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
     background:linear-gradient(135deg, rgba(242,170,96,.20), rgba(232,120,120,.15));
     color:#b26235;border:1px solid rgba(214,148,104,.5);border-radius:14px;
-    padding:13px 16px;font:600 14px/1.3 inherit;cursor:pointer;margin:0 0 20px;
+    padding:13px 16px;font:600 0.875rem/1.3 inherit;cursor:pointer;margin:0 0 20px;
     transition:transform .15s, box-shadow .15s, border-color .15s;}
   .sos-btn strong{font-weight:800;color:#8f4a22;}
   .sos-btn svg{width:20px;height:20px;flex:none;}
@@ -49,10 +51,10 @@
 
   /* Ambient soundscape bar */
   .scape{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;margin:0 auto 24px;}
-  .scape-label{font-size:11px;color:var(--r-muted);font-weight:700;text-transform:uppercase;letter-spacing:.07em;}
+  .scape-label{font-size:0.6875rem;color:var(--r-muted);font-weight:700;text-transform:uppercase;letter-spacing:.07em;}
   .scape-opts{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
   .scape-btn{border:1px solid var(--r-line);background:var(--r-card);color:var(--r-muted);
-    border-radius:999px;padding:6px 13px;font:600 12.5px/1 inherit;cursor:pointer;
+    border-radius:999px;padding:6px 13px;font:600 0.7812rem/1 inherit;cursor:pointer;
     transition:background .15s,color .15s,border-color .15s;}
   .scape-btn:hover{color:var(--r-ink);}
   .scape-btn.active{background:var(--r-a1);border-color:var(--r-a1);color:#0e1a22;}
@@ -61,7 +63,7 @@
   .modes{display:flex;gap:6px;background:var(--r-card);border:1px solid var(--r-line);
     border-radius:999px;padding:5px;box-shadow:var(--r-shadow);margin:0 auto 26px;max-width:420px;}
   .mode-btn{flex:1;border:0;background:transparent;color:var(--r-muted);cursor:pointer;
-    font:600 14px/1 inherit;padding:10px 8px;border-radius:999px;transition:background .2s,color .2s;}
+    font:600 0.875rem/1 inherit;padding:10px 8px;border-radius:999px;transition:background .2s,color .2s;}
   .mode-btn.active{background:var(--r-a1);color:#fff;}
   .panel{display:none;animation:fade .4s ease;}
   .panel.active{display:block;}
@@ -70,11 +72,11 @@
   /* ---- Breathe ---- */
   .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 8px;}
   .chip{border:1px solid var(--r-line);background:var(--r-card);color:var(--r-ink);
-    border-radius:999px;padding:8px 15px;font:600 13px/1 inherit;cursor:pointer;
+    border-radius:999px;padding:8px 15px;font:600 0.8125rem/1 inherit;cursor:pointer;
     transition:border-color .15s,transform .15s;box-shadow:var(--r-shadow);}
   .chip:hover{transform:translateY(-1px)}
   .chip.active{border-color:var(--r-a1);color:var(--r-a1);background:var(--r-soft);}
-  .pat-desc{text-align:center;color:var(--r-muted);font-size:13px;min-height:18px;margin:2px 0 6px;}
+  .pat-desc{text-align:center;color:var(--r-muted);font-size:0.8125rem;min-height:18px;margin:2px 0 6px;}
 
   .stage{display:flex;flex-direction:column;align-items:center;justify-content:center;
     padding:24px 0 8px;min-height:320px;}
@@ -84,7 +86,7 @@
     box-shadow:0 10px 34px rgba(var(--r-glow),.4), inset 0 0 32px rgba(255,255,255,.35);
     display:flex;align-items:center;justify-content:center;
     transition:transform 4s ease-in-out;}
-  .orb .count{font-size:40px;font-weight:300;color:#fff;font-variant-numeric:tabular-nums;
+  .orb .count{font-size:2.5rem;font-weight:300;color:#fff;font-variant-numeric:tabular-nums;
     text-shadow:0 1px 6px rgba(0,0,0,.18);opacity:.92;}
   /* Siri-like moving aurora, only while a session is running */
   .orb-holder .aura{position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none;z-index:0;
@@ -93,23 +95,23 @@
     filter:blur(26px);}
   .orb-holder.running .aura{opacity:.9;animation:aura-spin 8s linear infinite;}
   @keyframes aura-spin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-  .phase{font-size:20px;font-weight:600;letter-spacing:.01em;margin:14px 0 2px;min-height:26px;color:var(--r-ink);}
-  .cyclecount{color:var(--r-muted);font-size:13px;min-height:18px;}
+  .phase{font-size:1.25rem;font-weight:600;letter-spacing:.01em;margin:14px 0 2px;min-height:26px;color:var(--r-ink);}
+  .cyclecount{color:var(--r-muted);font-size:0.8125rem;min-height:18px;}
 
   .controls{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap;}
-  .btn{border:0;border-radius:999px;padding:12px 26px;font:700 15px/1 inherit;cursor:pointer;
+  .btn{border:0;border-radius:999px;padding:12px 26px;font:700 0.9375rem/1 inherit;cursor:pointer;
     background:var(--r-a1);color:#fff;box-shadow:var(--r-shadow);transition:transform .15s,opacity .15s;}
   .btn:hover{transform:translateY(-1px)}
   .btn.ghost{background:var(--r-card);color:var(--r-ink);border:1px solid var(--r-line);}
   .toggles{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:16px;}
-  .sound-toggle{display:inline-flex;align-items:center;gap:7px;color:var(--r-muted);font-size:13px;
+  .sound-toggle{display:inline-flex;align-items:center;gap:7px;color:var(--r-muted);font-size:0.8125rem;
     cursor:pointer;user-select:none;}
   .sound-toggle input{accent-color:var(--r-a1);width:16px;height:16px;}
 
   /* ---- Meditate ---- */
-  .timer{font-size:64px;font-weight:200;letter-spacing:.01em;font-variant-numeric:tabular-nums;
+  .timer{font-size:4rem;font-weight:200;letter-spacing:.01em;font-variant-numeric:tabular-nums;
     text-align:center;margin:18px 0 4px;color:var(--r-ink);}
-  .prompt{text-align:center;color:var(--r-muted);font-size:16px;font-style:italic;min-height:48px;
+  .prompt{text-align:center;color:var(--r-muted);font-size:1rem;font-style:italic;min-height:48px;
     max-width:420px;margin:6px auto 10px;transition:opacity .6s;}
   .med-ring{display:block;margin:0 auto;}
   .med-ring circle{fill:none;stroke-width:6;stroke-linecap:round;}
@@ -119,25 +121,25 @@
   /* ---- Ground ---- */
   .ground-card{background:var(--r-card);border:1px solid var(--r-line);border-radius:20px;
     box-shadow:var(--r-shadow);padding:34px 26px;text-align:center;max-width:440px;margin:10px auto 0;}
-  .ground-num{font-size:60px;font-weight:800;line-height:1;color:var(--r-a3);letter-spacing:-.03em;}
-  .ground-sense{font-size:22px;font-weight:700;margin:6px 0 4px;}
-  .ground-hint{color:var(--r-muted);font-size:14.5px;margin:0 0 22px;}
+  .ground-num{font-size:3.75rem;font-weight:800;line-height:1;color:var(--r-a3);letter-spacing:-.03em;}
+  .ground-sense{font-size:1.375rem;font-weight:700;margin:6px 0 4px;}
+  .ground-hint{color:var(--r-muted);font-size:0.9062rem;margin:0 0 22px;}
   .dots{display:flex;gap:8px;justify-content:center;margin-top:22px;}
   .dots span{width:9px;height:9px;border-radius:50%;background:var(--r-line);transition:background .2s,transform .2s;}
   .dots span.done{background:var(--r-a3);}
   .dots span.cur{background:var(--r-a3);transform:scale(1.35);}
 
-  .note{text-align:center;color:var(--r-muted);font-size:12.5px;margin-top:34px;line-height:1.5;}
+  .note{text-align:center;color:var(--r-muted);font-size:0.7812rem;margin-top:34px;line-height:1.5;}
 
   .hotlines{background:var(--r-card);border:1px solid var(--r-line);border-radius:20px;
     box-shadow:var(--r-shadow);padding:22px 22px 12px;margin-top:36px;}
-  .hotlines h2{font-size:17px;margin:0 0 4px;letter-spacing:-.01em;}
-  .hl-note{color:var(--r-muted);font-size:13px;margin:0 0 12px;line-height:1.5;}
+  .hotlines h2{font-size:1.0625rem;margin:0 0 4px;letter-spacing:-.01em;}
+  .hl-note{color:var(--r-muted);font-size:0.8125rem;margin:0 0 12px;line-height:1.5;}
   .hotlines ul{list-style:none;margin:0;padding:0;}
   .hotlines li{display:flex;justify-content:space-between;align-items:baseline;gap:10px 16px;
     padding:11px 0;border-bottom:1px solid var(--r-line);flex-wrap:wrap;}
   .hotlines li:last-child{border-bottom:0;}
-  .hl-name{font-weight:600;font-size:14.5px;color:var(--r-ink);}
+  .hl-name{font-weight:600;font-size:0.9062rem;color:var(--r-ink);}
   .hl-name .hl-tag{font-weight:400;color:var(--r-muted);}
   a.hl-num{color:var(--r-a2);font-weight:700;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums;}
   a.hl-num:hover{text-decoration:underline;}
@@ -153,8 +155,16 @@
   .r-settings{position:fixed;top:60px;right:14px;z-index:601;background:var(--r-card);border:1px solid var(--r-line);
     border-radius:14px;box-shadow:var(--r-shadow);padding:14px 16px;min-width:210px;display:none;}
   .r-settings.open{display:block;animation:fade .25s ease;}
-  .r-settings h3{margin:0 0 8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--r-muted);}
+  .r-settings h3{margin:0 0 8px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--r-muted);}
   .r-settings .sound-toggle{display:flex;margin:9px 0;}
+  .r-set-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 4px;font-size:0.8125rem;color:var(--r-ink);}
+  .r-tsize{display:inline-flex;gap:4px;flex:none;}
+  .r-tsize button{border:1px solid var(--r-line);background:transparent;color:var(--r-ink);border-radius:8px;
+    width:30px;height:28px;cursor:pointer;line-height:1;padding:0;font-weight:700;transition:border-color .15s,color .15s,background .15s;}
+  .r-tsize button:nth-child(1){font-size:11px}
+  .r-tsize button:nth-child(2){font-size:14px}
+  .r-tsize button:nth-child(3){font-size:17px}
+  .r-tsize button.active{border-color:var(--r-a1);color:var(--r-a1);background:var(--r-soft);}
 
   @media (prefers-reduced-motion: reduce){
     .r-bg{animation:none}
@@ -165,7 +175,7 @@
   }
   @media (max-width:520px){
     .orb-holder{width:210px;height:210px}.orb{width:190px;height:190px}
-    h1{font-size:25px}.timer{font-size:52px}
+    h1{font-size:1.5625rem}.timer{font-size:3.25rem}
   }
 </style>
 </head>
@@ -177,6 +187,14 @@
 </div>
 <div class="r-settings" id="relax-settings" role="dialog" aria-label="Settings">
   <h3>Settings</h3>
+  <div class="r-set-row">
+    <span>Text size</span>
+    <div class="r-tsize" id="r-tsize">
+      <button type="button" data-ts="normal" aria-label="Normal text">A</button>
+      <button type="button" data-ts="large" aria-label="Large text">A</button>
+      <button type="button" data-ts="xl" aria-label="Larger text">A</button>
+    </div>
+  </div>
   <label class="sound-toggle"><input type="checkbox" id="sound-on" checked> Gentle sound cues</label>
   <label class="sound-toggle" id="haptics-label" style="display:none;"><input type="checkbox" id="haptics-on" checked> Vibration cues</label>
 </div>
@@ -401,6 +419,18 @@
     if (rSettings.classList.contains("open") && !rSettings.contains(e.target) && !rSetBtn.contains(e.target)) rSettings.classList.remove("open");
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") rSettings.classList.remove("open"); });
+  // text size — scales the rem-based type via the root font-size (persisted)
+  var R_TS = { normal: 1, large: 1.13, xl: 1.28 };
+  function applyTextSize(sz) {
+    if (!R_TS[sz]) sz = "normal";
+    document.documentElement.style.fontSize = (16 * R_TS[sz]) + "px";
+    try { localStorage.setItem("relaxTextSize", sz); } catch (e) {}
+    document.querySelectorAll("#r-tsize button").forEach(function (b) { b.classList.toggle("active", b.dataset.ts === sz); });
+  }
+  document.querySelectorAll("#r-tsize button").forEach(function (b) {
+    b.addEventListener("click", function () { applyTextSize(b.dataset.ts); });
+  });
+  applyTextSize(localStorage.getItem("relaxTextSize") || "normal");
 
   // ---------- BREATHE ----------
   var PATTERNS = {
