@@ -183,8 +183,9 @@
         align-items: stretch;
       }
       .page > .search-wrap { order: 30; }
+      .page > #relax-cta-row { order: 34; }
       .page > #stats-widget { order: 35; }
-      .page > #relax-cta-row { order: 36; }
+      .page > #group-cta-row { order: 37; }
       .page > #semester-card { order: 40; }
       .page > #continue-widget { order: 45; }
       .page > .more-links { order: 50; }
@@ -492,7 +493,7 @@
     }
     /* Relax is its own standalone element under the stats card (base margin here,
        before the >=1180px block, so that block's `margin: 0` wins on desktop). */
-    .relax-cta-row { text-align: center; margin: 14px 0 0; }
+    .relax-cta-row, .group-cta-row { text-align: center; margin: 14px 0 0; }
     .guides-btn-floating { display: none; }
 
     /* Must come after both base `margin: 18px 0`/`display: none` rules above
@@ -521,9 +522,9 @@
          so shrink it here just enough to hold one line (~208px in a ~210px
          content box). */
       .stats-widget .cc-label { font-size: 10.5px; letter-spacing: -.2px; }
-      /* #relax-cta-row stacks under the stats card on the left rail; #continue-widget
-         is pushed below it. Exact tops set by alignSidebars() (dynamic heights). */
-      .relax-cta-row {
+      /* Left rail (top -> bottom): #relax-cta-row -> stats card -> #group-cta-row
+         -> #continue-widget. Exact tops set by alignSidebars() (dynamic heights). */
+      .relax-cta-row, .group-cta-row {
         position: absolute;
         right: calc(100% + 24px);
         width: 260px;
@@ -693,8 +694,9 @@
       box-shadow: var(--shadow);
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
-    .relax-cta svg.leaf-icon { width: 18px; height: 18px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
-    .relax-cta .leaf-blade { fill: transparent; transition: fill .5s ease; }
+    .relax-cta svg { width: 18px; height: 18px; flex: none; }
+    .relax-cta svg.leaf-icon { transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+    .relax-cta .leaf-blade { fill: rgba(37,99,235,.15); transition: fill .5s ease; }
     .relax-cta:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.16); }
     .relax-cta:hover svg.leaf-icon { transform: scale(1.1) rotate(-4deg); }
     .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
@@ -1373,10 +1375,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="text" id="site-search" class="site-search-input" placeholder="Search all quizzes…" autocomplete="off" spellcheck="false">
       </div>
-      <a href="group-join.html" class="guides-btn group-btn">
-        <svg class="guides-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
-        <span>Group Study</span>
-      </a>
       <a href="arcade.html" class="guides-btn arcade-btn">
         <svg class="guides-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="14" height="10" rx="2"/><rect x="7" y="4" width="14" height="10" rx="2"/></svg>
         <span>Arcade</span>
@@ -1398,10 +1396,12 @@
       </span>
       <span>Guides &amp; Study Aids</span>
     </a>
-    <a href="group-join.html" class="guides-btn guides-btn-floating group-btn-floating" id="group-btn-floating">
-      <svg class="guides-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
-      <span>Group Study</span>
-    </a>
+    <div id="relax-cta-row" class="relax-cta-row">
+      <a href="relax.html" class="relax-cta">
+        <svg class="leaf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(40 12 12)"><path class="leaf-blade" d="M12 2.6C8.5 6.2 6.8 9.9 6.8 13.2 6.8 16.8 9.1 19.6 12 21.4 14.9 19.6 17.2 16.8 17.2 13.2 17.2 9.9 15.5 6.2 12 2.6Z"/><path d="M12 5.2V20.2"/><path d="M12 9.4 9.1 7.7M12 9.4 14.9 7.7M12 12.9 8.7 11.1M12 12.9 15.3 11.1M12 16.4 9.6 14.9M12 16.4 14.4 14.9"/></g></svg>
+        <span>Relax</span>
+      </a>
+    </div>
 
     <div id="stats-widget" class="card stats-widget">
       <div id="class-counter" class="class-counter" aria-live="polite">
@@ -1415,10 +1415,10 @@
       </a>
     </div>
 
-    <div id="relax-cta-row" class="relax-cta-row">
-      <a href="relax.html" class="relax-cta">
-        <svg class="leaf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="leaf-blade" d="M20.5 4.5C11 4 4.5 10.5 4 20c9.5.5 16-6 16.5-15.5Z"/><path d="M5.5 19C9 15.5 13 11.5 18 6.5"/></svg>
-        <span>Relax</span>
+    <div id="group-cta-row" class="group-cta-row">
+      <a href="group-join.html" class="relax-cta group-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
+        <span>Group Study</span>
       </a>
     </div>
 
@@ -2874,34 +2874,31 @@
         const continueEl = document.getElementById("continue-widget");
         const statsEl = document.getElementById("stats-widget");
         if (weekEl) weekEl.style.top = offset + "px";
-        // Left sidebar: #stats-widget aligns to the semester-card top line;
-        // #continue-widget stacks directly below it (its dynamic height + a gap).
-        if (statsEl) statsEl.style.top = offset + "px";
-        // Left rail stack: stats card -> Relax button -> Continue, each below the last.
         const relaxEl = document.getElementById("relax-cta-row");
-        const statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
-        let stackTop = offset + (statsH ? statsH + 18 : 0);
-        if (relaxEl) relaxEl.style.top = stackTop + "px";
-        if (continueEl) {
-          const relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
-          continueEl.style.top = (stackTop + (relaxH ? relaxH + 18 : 0)) + "px";
-        }
+        const groupEl = document.getElementById("group-cta-row");
         const guidesFloatBtn = document.getElementById("guides-btn-floating");
-        const groupFloatBtn = document.getElementById("group-btn-floating");
         const searchInput = document.getElementById("site-search");
         const searchWrap = document.querySelector(".search-wrap");
+        // Top-of-rail line, aligned with the search-input row (above the stats card).
+        let btnTop = offset;
         if (searchInput && searchWrap) {
           const searchHeight = searchInput.getBoundingClientRect().height / zoom;
           const gap = (card.getBoundingClientRect().top - searchWrap.getBoundingClientRect().bottom) / zoom;
-          const btnTop = Math.round(offset - searchHeight - gap) + "px";
+          btnTop = Math.round(offset - searchHeight - gap);
           if (guidesFloatBtn) {
             guidesFloatBtn.style.height = Math.round(searchHeight) + "px";
-            guidesFloatBtn.style.top = btnTop;
+            guidesFloatBtn.style.top = btnTop + "px";
           }
-          if (groupFloatBtn) {
-            groupFloatBtn.style.height = Math.round(searchHeight) + "px";
-            groupFloatBtn.style.top = btnTop;
-          }
+        }
+        // Left rail (top -> bottom): Relax -> stats card -> Group Study -> Continue.
+        if (relaxEl) relaxEl.style.top = btnTop + "px";
+        if (statsEl) statsEl.style.top = offset + "px";
+        const statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
+        var gTop = offset + (statsH ? statsH + 18 : 0);
+        if (groupEl) groupEl.style.top = gTop + "px";
+        if (continueEl) {
+          const groupH = groupEl ? groupEl.getBoundingClientRect().height / zoom : 0;
+          continueEl.style.top = (gTop + (groupH ? groupH + 18 : 0)) + "px";
         }
       }
       alignSidebars();
