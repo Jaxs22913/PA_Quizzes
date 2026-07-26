@@ -716,6 +716,11 @@
     .relax-cta .leaf-blade { fill: rgba(37,99,235,.15); transition: fill .5s ease; }
     .relax-cta:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.16); }
     .relax-cta:hover svg.leaf-icon { transform: scale(1.1) rotate(-4deg); }
+    /* Words in black like the other widgets; the icon keeps the accent color */
+    .relax-cta > span { color: var(--ink, #1f2937); }
+    /* Group Study widget: icon springs on hover (its own effect, since it has no leaf/branches) */
+    .group-cta svg { transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+    .group-cta:hover svg { transform: scale(1.14); }
     .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
     @media (prefers-reduced-motion: reduce) {
       .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
