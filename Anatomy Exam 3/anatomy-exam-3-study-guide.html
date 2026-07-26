@@ -16,118 +16,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anatomy Exam 3 — Study Guide | Class of 2028</title>
 <style>
-  :root {
-    --ink:#22201d; --muted:#6b655d; --line:#e3ddd3; --bg:#faf8f4; --card:#ffffff;
-    --acc:#3f7d4e; --accd:#2c5a38; --accs:#e8f1ea;
+  :root{
+    --ink:#241f22;
+    --paper:#faf7f6;
+    --accent:#8a3d5b;      /* visceral wine */
+    --accent2:#a2681c;     /* aged bronze */
+    --accent3:#2f6560;     /* deep teal */
+    --line:#e6dcdd;
+    --soft:#6a5f62;
   }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body {
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:Georgia, 'Times New Roman', serif; line-height:1.6; font-size:17px;
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
   }
-  h1,h2,h3,.io-num,.subj-tab,.io-link,.masthead-sub {
-    font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  header.top{
+    background:linear-gradient(120deg,#5e2740,var(--accent) 55%,#a85778);
+    color:#fff;
+    padding:34px 26px 30px;
   }
-  .masthead {
-    background:linear-gradient(135deg,#2c2420,#3a2f28); color:#f5efe6;
-    padding:30px 22px 26px; border-bottom:4px solid #b8860b;
+  header.top h1{
+    margin:0 0 6px;
+    font-size:2rem;
+    letter-spacing:.2px;
+    font-weight:800;
   }
-  .masthead h1 { margin:0 0 4px; font-size:30px; letter-spacing:.3px; }
-  .masthead-sub { margin:0; color:#d8cdbb; font-size:14px; letter-spacing:.5px; text-transform:uppercase; }
-  .masthead .exam { color:#e8b84b; }
-  .wrap { max-width:1080px; margin:0 auto; padding:0 20px 60px; }
+  header.top p{margin:2px 0;color:#f2dfe6;font-size:.95rem;}
+  .layout{display:flex;max-width:1180px;margin:0 auto;}
+  nav.toc{
+    position:sticky;top:38px;align-self:flex-start;
+    width:280px;min-width:280px;max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:24px 18px;border-right:1px solid var(--line);
+    background:#f4eef0;
+    font-size:.85rem;
+  }
+  nav.toc h2{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:14px 0 6px;}
+  nav.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;}
+  nav.toc a.top-link{font-weight:700;color:var(--accent2);margin-top:10px;}
+  nav.toc a:hover{color:var(--accent);}
+  main{flex:1;padding:30px 40px 90px;min-width:0;}
+  section.deck{margin-bottom:56px;scroll-margin-top:18px;}
+  h2.deck-title{
+    font-size:1.55rem;color:var(--accent);
+    border-bottom:3px solid var(--accent2);
+    padding-bottom:8px;margin:0 0 6px;
+    font-weight:800;
+  }
+  .lecturer{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px;}
+  .io-box{
+    background:#f4eaee;border:1px solid var(--line);
+    border-radius:10px;padding:14px 18px;margin:14px 0 20px;
+  }
+  .io-box h3{
+    margin:0 0 8px;font-size:.8rem;text-transform:uppercase;
+    letter-spacing:1px;color:var(--accent3);
+  }
+  .io-box ol{margin:0;padding-left:20px;}
+  .io-box li{margin-bottom:5px;font-size:.92rem;}
+  h3.sub{
+    color:var(--accent3);font-size:1.14rem;margin:26px 0 6px;font-weight:800;
+    scroll-margin-top:18px;
+  }
+  h4.subsub{
+    color:var(--accent2);font-size:.98rem;margin:16px 0 4px;
+    font-weight:700;
+  }
+  ul,ol{margin:6px 0 12px;}
+  li{margin-bottom:3px;}
+  p{margin:8px 0;}
+  .callout{
+    border-left:4px solid var(--accent3);
+    background:#e8f0ef;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  .pearl{
+    border-left:4px solid var(--accent2);
+    background:#f7efe1;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--accent);color:#fff;font-weight:700;}
+  tr:nth-child(even) td{background:#f5eff0;}
+  td.grp-row{background:#efe3e7!important;font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:.04em;color:var(--accent3);}
+  .table-scroll{overflow-x:auto;}
+  .table-scroll table{min-width:640px;}
+  code{background:#eee4e6;padding:1px 5px;border-radius:4px;font-size:.85rem;}
+  .tag{
+    display:inline-block;background:var(--accent2);color:#fff;
+    font-size:.68rem;
+    padding:2px 8px;border-radius:10px;letter-spacing:.5px;
+    vertical-align:middle;margin-left:8px;
+  }
+  figure.fig{
+    margin:18px 0;padding:12px;background:#f5eff0;border-radius:10px;
+    border:1px solid var(--line);text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;height:auto;border-radius:6px;background:#fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+  }
+  figure.fig figcaption{
+    margin-top:8px;font-size:13.5px;color:var(--soft);font-style:italic;line-height:1.45;
+  }
+  .test-yourself-btn{
+    display:inline-block;margin-top:18px;padding:10px 18px;border:none;border-radius:999px;
+    background:var(--acc,var(--accent));color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .test-yourself-btn:hover{filter:brightness(1.08);}
+  footer.guide-foot{margin:34px 40px 0;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);}
+  @media(max-width:820px){
+    nav.toc{display:none;}
+    main{padding:22px 18px 60px;}
+    footer.guide-foot{margin:34px 18px 0;}
+  }
+  @media print{
+    nav.toc{display:none !important;}
+    section.deck{break-inside:avoid;}
+    figure.fig{break-inside:avoid;}
+  }
 
-  .subj-panel { display:block; }
-
-  .subj-header { padding:26px 0 6px; }
-  .subj-header h2 { margin:0 0 2px; font-size:26px; color:var(--accd); }
-  .prof { margin:0 0 14px; color:var(--muted); font-style:italic; font-size:15px; }
-  .io-nav {
-    display:flex; flex-wrap:wrap; gap:6px; padding:12px; background:var(--accs);
-    border-radius:10px;
-  }
-  .io-link {
-    text-decoration:none; font-size:12.5px; font-weight:600; color:var(--accd);
-    background:#fff; border:1px solid var(--line); padding:5px 10px; border-radius:6px;
-    transition:all .15s;
-  }
-  .io-link:hover { background:var(--acc); color:#fff; border-color:var(--acc); }
-
-  .io {
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:24px 26px; margin:22px 0; scroll-margin-top:120px;
-    box-shadow:0 1px 3px rgba(0,0,0,.04);
-  }
-  .io-head { display:flex; align-items:baseline; gap:12px; margin-bottom:6px;
-    border-bottom:2px solid var(--accs); padding-bottom:12px; }
-  .io-num {
-    flex:none; background:var(--acc); color:#fff; font-size:12px; font-weight:700;
-    padding:4px 10px; border-radius:6px; letter-spacing:.5px;
-  }
-  .io-head h3 { margin:0; font-size:19px; color:var(--accd); line-height:1.3; }
-  .io-body { padding-top:6px; }
-  .io-body p { margin:.7em 0; }
-  .io-body ul, .io-body ol { margin:.6em 0 .9em; padding-left:1.4em; }
-  .io-body li { margin:.35em 0; }
-  .io-body b { color:var(--accd); }
-
-  figure.fig {
-    margin:18px 0; padding:10px; background:var(--accs); border-radius:10px;
-    border:1px solid var(--line); text-align:center;
-  }
-  figure.fig img {
-    max-width:100%; height:auto; border-radius:6px; background:#fff;
-    box-shadow:0 1px 4px rgba(0,0,0,.08);
-  }
-  figure.fig figcaption {
-    margin-top:8px; font-size:13.5px; color:var(--muted); font-style:italic; line-height:1.45;
-    font-family:ui-sans-serif, system-ui, sans-serif;
-  }
-
-  .hook {
-    margin:16px 0 4px; padding:12px 16px; border-left:4px solid var(--acc);
-    background:var(--accs); border-radius:0 8px 8px 0; font-size:15px;
-    font-family:ui-sans-serif, system-ui, sans-serif;
-  }
-  .hook b { color:var(--accd); }
-
-  table {
-    width:100%; border-collapse:collapse; margin:16px 0; font-size:14.5px;
-    font-family:ui-sans-serif, system-ui, sans-serif; background:#fff;
-  }
-  th, td { border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top; }
-  th { background:var(--acc); color:#fff; font-weight:600; }
-  tr:nth-child(even) td { background:var(--accs); }
-  td b { color:var(--accd); }
-
-  .totop { display:inline-block; margin-top:8px; font-size:12px; color:var(--muted);
-    text-decoration:none; font-family:ui-sans-serif, sans-serif; }
-  .totop:hover { color:var(--acc); }
-
-  .footer { text-align:center; color:var(--muted); font-size:13px; padding:30px 0 0;
-    font-family:ui-sans-serif, sans-serif; }
-
-  @media (max-width:820px) {
-    nav.toc { display:none; }
-    main.gmain { padding:22px 18px 60px; }
-  }
-  @media (max-width:640px) {
-    body { font-size:16px; }
-    .io { padding:18px 16px; }
-    .masthead h1 { font-size:24px; }
-    .io-head h3 { font-size:17px; }
-  }
-  @media print {
-    .io-nav, .totop, nav.toc { display:none !important; }
-    .io { break-inside:avoid; box-shadow:none; }
-    figure.fig { break-inside:avoid; }
-  }
-
-  /* header.masthead sits outside .wrap (full-bleed banner) so it needs its
-     own dark-mode invert -- everything else lives inside the main
-     body > .wrap and gets the site-wide invert from theme.css for free. */
-  :root[data-theme="dark"] header.masthead { filter: invert(1) hue-rotate(180deg); }
+  /* header.top sits outside .wrap (full-bleed banner) so it needs its own
+     dark-mode invert -- everything else lives inside .layout.wrap and gets
+     the site-wide body > .wrap invert from theme.css for free. */
+  :root[data-theme="dark"] header.top { filter: invert(1) hue-rotate(180deg); }
 
   html, body { overscroll-behavior-y: contain; }
   #pull-refresh {
@@ -137,35 +152,20 @@
   }
   #pull-refresh svg { width: 100%; height: 44px; }
   #pull-refresh path {
-    fill: none; stroke: #3f7d4e; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    fill: none; stroke: #8a3d5b; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
     stroke-dasharray: 420; stroke-dashoffset: 420;
   }
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
-
-  /* ---- uniform site shell (sidebar layout), added for the 2026-07-16 retrofit ---- */
-  .layout { display:flex; max-width:1180px; margin:0 auto; }
-  nav.toc {
-    position:sticky; top:38px; align-self:flex-start; max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px); overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
-    width:240px; min-width:240px; padding:24px 16px; border-right:1px solid var(--line);
-    background:#f2efe9; font-family:ui-sans-serif, system-ui, sans-serif; font-size:.85rem;
-  }
-  nav.toc h2 { font-size:.7rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin:0 0 10px; }
-  nav.toc a.top-link {
-    display:block; font-weight:700; padding:7px 9px; margin:3px 0; border-radius:8px;
-    text-decoration:none; color:inherit;
-  }
-  nav.toc a.top-link:hover { background:#fff; }
-  main.gmain { flex:1; padding:0 20px 60px; min-width:0; }
 </style>
 </head>
 <body>
 <style>
-  .footer-mark-ink { stroke: #22201d; }
-  .footer-mark-accent { stroke: #3f7d4e; }
+  .footer-mark-ink { stroke: #241f22; }
+  .footer-mark-accent { stroke: #8a3d5b; }
   @media (prefers-color-scheme: dark) {
     .footer-mark-ink { stroke: #e5e7eb; }
-    .footer-mark-accent { stroke: #6fbf82; }
+    .footer-mark-accent { stroke: #d99cb4; }
   }
 </style>
 <div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
@@ -187,35 +187,88 @@
 <div class="guide-back-bar">
   <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
 </div>
-<header class="masthead">
-  <div class="wrap" style="padding-bottom:0;">
-    <h1>Anatomy <span class="exam">Exam 3</span> — Study Guide</h1>
-    <p class="masthead-sub">PAJ 5000 · Class of 2028 · GI · Endocrine · Male &amp; Female Reproductive · Renal/Urinary</p>
-  </div>
+<header class="top">
+  <h1>Anatomy Exam 3 &mdash; Study Guide</h1>
+  <p>PAJ 5000 Graduate Anatomy &middot; Prof. Hugh G. Rappa, MD &middot; Prof. Hugh E. Griffenkranz, MPAS, PA-C &middot; Prof. Lauren Reynolds, MSPA, PA-C &middot; Class of 2028</p>
+  <p>Gastrointestinal System &middot; Endocrine System &middot; Male &amp; Female Reproductive Systems &middot; Nephrology / Urinary System &middot; with labeled figures</p>
 </header>
 
 <div class="layout wrap" data-readable data-audio-dir="anatomy-exam-3-study-guide-audio">
 <nav class="toc">
   <h2>Contents</h2>
-  <a class="top-link" href="#gi-top" style="color:#2c5a38">Gastrointestinal System I &amp; II</a>
-  <a class="top-link" href="#endo-top" style="color:#8a6508">Endocrine System</a>
-  <a class="top-link" href="#male-top" style="color:#224f66">Male Reproductive System</a>
-  <a class="top-link" href="#fem-top" style="color:#7c2b47">Female Reproductive System</a>
-  <a class="top-link" href="#neph-top" style="color:#5a3a7a">Nephrology / Urinary System</a>
+  <a class="top-link" href="#gi-top">1 &middot; Gastrointestinal System I &amp; II</a>
+  <a href="#gi-io1">1.1 Obj 1 &mdash; Abdominal regions &amp; quadrants</a>
+  <a href="#gi-io2">1.2 Obj 2 &mdash; Parietal vs. visceral peritoneum</a>
+  <a href="#gi-io3">1.3 Obj 3 &mdash; Cells, tissues &amp; organs of the tract</a>
+  <a href="#gi-io4">1.4 Obj 4 &mdash; Stomach</a>
+  <a href="#gi-io5">1.5 Obj 5 &mdash; Spleen</a>
+  <a href="#gi-io6">1.6 Obj 6 &mdash; Small intestine</a>
+  <a href="#gi-io7">1.7 Obj 7 &mdash; Large intestine</a>
+  <a href="#gi-io8">1.8 Obj 8 &mdash; Pancreas</a>
+  <a href="#gi-io9">1.9 Obj 9 &mdash; Lobes of the liver</a>
+  <a href="#gi-io10">1.10 Obj 10 &mdash; Portal vein &amp; portal drainage</a>
+  <a href="#gi-io11">1.11 Obj 11 &mdash; Gallbladder &amp; biliary tree</a>
+  <a href="#gi-io12">1.12 Obj 12 &mdash; Abdominal aorta branches</a>
+  <a href="#gi-io13">1.13 Obj 13 &mdash; Inferior vena cava tributaries</a>
+  <a href="#gi-io14">1.14 Obj 14 &mdash; Abdominal lymph drainage</a>
+  <a class="top-link" href="#endo-top">2 &middot; Endocrine System</a>
+  <a href="#endo-io1">2.1 Obj 1 &mdash; Organs of the endocrine system</a>
+  <a href="#endo-io2">2.2 Obj 2 &mdash; Endocrine histology</a>
+  <a href="#endo-io3">2.3 Obj 3 &mdash; Relationships &amp; blood supply</a>
+  <a href="#endo-io4">2.4 Obj 4 &mdash; Calcium metabolism</a>
+  <a class="top-link" href="#male-top">3 &middot; Male Reproductive System</a>
+  <a href="#male-io1">3.1 Obj 1 &mdash; Embryologic development</a>
+  <a href="#male-io2">3.2 Obj 2 &mdash; Pelvic floor muscles</a>
+  <a href="#male-io3">3.3 Obj 3 &mdash; Blood supply</a>
+  <a href="#male-io4">3.4 Obj 4 &mdash; Innervation</a>
+  <a href="#male-io5">3.5 Obj 5 &mdash; Organs &amp; relationships</a>
+  <a href="#male-io6">3.6 Obj 6 &mdash; Pathway of semen</a>
+  <a href="#male-io7">3.7 Obj 7 &mdash; Parts of the urethra</a>
+  <a class="top-link" href="#fem-top">4 &middot; Female Reproductive System</a>
+  <a href="#fem-io1">4.1 Obj 1 &mdash; Embryologic development</a>
+  <a href="#fem-io2">4.2 Obj 2 &mdash; Perineum &amp; its triangles</a>
+  <a href="#fem-io3">4.3 Obj 3 &mdash; Ligaments &amp; peritoneal folds</a>
+  <a href="#fem-io4">4.4 Obj 4 &mdash; Pelvic floor muscles</a>
+  <a href="#fem-io5">4.5 Obj 5 &mdash; Blood supply</a>
+  <a href="#fem-io6">4.6 Obj 6 &mdash; Innervation</a>
+  <a href="#fem-io7">4.7 Obj 7 &mdash; Organs &amp; relationships</a>
+  <a href="#fem-io8">4.8 Obj 8 &mdash; Cell types of the tract</a>
+  <a href="#fem-io9">4.9 Obj 9 &mdash; Peritoneal coverings</a>
+  <a class="top-link" href="#neph-top">5 &middot; Nephrology / Urinary System</a>
+  <a href="#neph-io1">5.1 Obj 1 &mdash; Organs of the urinary system</a>
+  <a href="#neph-io2">5.2 Obj 2 &mdash; Kidney anatomy</a>
+  <a href="#neph-io3">5.3 Obj 3 &mdash; Renal blood flow</a>
+  <a href="#neph-io4">5.4 Obj 4 &mdash; Parts of the nephron</a>
+  <a href="#neph-io5">5.5 Obj 5 &mdash; Relationships of urinary organs</a>
+  <a href="#neph-io6">5.6 Obj 6 &mdash; Cell types of the urinary system</a>
 </nav>
 
-<main class="gmain">
-<div class="subj-panel" data-subj="gi" style="--acc:#3f7d4e;--accd:#2c5a38;--accs:#e8f1ea">
-  <div id="gi-top" class="subj-header">
-    <h2>Gastrointestinal System I & II</h2>
-    <p class="prof">Prof. Hugh G. Rappa, MD</p>
-    <nav class="io-nav"><a href="#gi-io1" class="io-link">IO 1</a><a href="#gi-io2" class="io-link">IO 2</a><a href="#gi-io3" class="io-link">IO 3</a><a href="#gi-io4" class="io-link">IO 4</a><a href="#gi-io5" class="io-link">IO 5</a><a href="#gi-io6" class="io-link">IO 6</a><a href="#gi-io7" class="io-link">IO 7</a><a href="#gi-io8" class="io-link">IO 8</a><a href="#gi-io9" class="io-link">IO 9</a><a href="#gi-io10" class="io-link">IO 10</a><a href="#gi-io11" class="io-link">IO 11</a><a href="#gi-io12" class="io-link">IO 12</a><a href="#gi-io13" class="io-link">IO 13</a><a href="#gi-io14" class="io-link">IO 14</a></nav>
-    <div class="io-objectives" style="margin:14px 0 4px;padding:14px 16px 14px 34px;background:rgba(0,0,0,.03);border-left:4px solid var(--accd,#666);border-radius:8px;font-size:14.5px;line-height:1.5"><b style="display:block;margin:0 0 6px -18px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.7">Instructional Objectives</b><ol style="margin:0;padding-left:2px"><li>Describe the regions and quadrants of the abdomen and corresponding viscera.</li><li>Compare and contrast the parietal and visceral peritoneum and the relationship to abdominal organs.</li><li>Describe the various cell types, tissue, and organs of the gastrointestinal tract.</li><li>Describe the anatomy of the stomach including regions and the relationship to other abdominal viscera.</li><li>Describe the anatomical features of the spleen and list its anatomical relationships.</li><li>Compare and contrast the parts of the small intestines and its relationship with other abdominal organs.</li><li>Compare and contrast the parts of the large intestines and its relationship with other abdominal organs.</li><li>Describe the anatomy of the pancreas and its relationships with other abdominal organs.</li><li>Identify the lobes of the liver and describe their anatomical relations within the abdominal cavity.</li><li>Identify the anatomy of the portal vein and portal venous drainage and its relationship with other abdominal organs.</li><li>Describe the anatomy of the gall bladder and biliary tree and its relationship with other abdominal organs.</li><li>Describe the origins course and major branches of the abdominal aorta that supply the gastrointestinal tract.</li><li>Describe the origins course and major tributaries of the inferior vena cava that supply the gastrointestinal tract.</li><li>Define the anatomy of abdominal lymph drainage.</li></ol></div>
+<main>
+<!-- ============ 1 GASTROINTESTINAL SYSTEM I &AMP; II ============ -->
+<section class="deck" id="gi-top">
+  <h2 class="deck-title">1 &middot; Gastrointestinal System I &amp; II</h2>
+  <p class="lecturer">Prof. Hugh G. Rappa, MD</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol>
+      <li>Describe the regions and quadrants of the abdomen and corresponding viscera.</li>
+      <li>Compare and contrast the parietal and visceral peritoneum and the relationship to abdominal organs.</li>
+      <li>Describe the various cell types, tissue, and organs of the gastrointestinal tract.</li>
+      <li>Describe the anatomy of the stomach including regions and the relationship to other abdominal viscera.</li>
+      <li>Describe the anatomical features of the spleen and list its anatomical relationships.</li>
+      <li>Compare and contrast the parts of the small intestines and its relationship with other abdominal organs.</li>
+      <li>Compare and contrast the parts of the large intestines and its relationship with other abdominal organs.</li>
+      <li>Describe the anatomy of the pancreas and its relationships with other abdominal organs.</li>
+      <li>Identify the lobes of the liver and describe their anatomical relations within the abdominal cavity.</li>
+      <li>Identify the anatomy of the portal vein and portal venous drainage and its relationship with other abdominal organs.</li>
+      <li>Describe the anatomy of the gall bladder and biliary tree and its relationship with other abdominal organs.</li>
+      <li>Describe the origins course and major branches of the abdominal aorta that supply the gastrointestinal tract.</li>
+      <li>Describe the origins course and major tributaries of the inferior vena cava that supply the gastrointestinal tract.</li>
+      <li>Define the anatomy of abdominal lymph drainage.</li>
+    </ol>
   </div>
-  
-<section class="io" id="gi-io1">
-  <div class="io-head"><span class="io-num">IO 1</span><h3>Describe the regions and quadrants of the abdomen and corresponding viscera</h3></div>
-  <div class="io-body">
+
+  <h3 class="sub" id="gi-io1">1.1 &middot; Objective 1 &mdash; Describe the regions and quadrants of the abdomen and corresponding viscera</h3>
 <p>The abdomen is mapped two ways so you can localize organs and pain precisely.</p>
 <p><b>Four quadrants</b> (divided by a vertical median plane and a horizontal transumbilical plane):</p>
 <ul>
@@ -227,13 +280,9 @@
 <p><b>Nine regions</b> (two vertical midclavicular planes + subcostal and transtubercular planes) give finer localization: right/left <b>hypochondriac</b> flanking the central <b>epigastric</b>; right/left <b>lumbar (lateral)</b> flanking the central <b>umbilical</b>; right/left <b>inguinal (iliac)</b> flanking the central <b>hypogastric (pubic)</b>.</p>
 <figure class="fig"><img width="454" height="529" loading="lazy" src="anatomy-exam-3-study-guide-images/001.jpg" alt="Planes dividing the abdomen into regions and quadrants."><figcaption>Planes dividing the abdomen into regions and quadrants.</figcaption></figure>
 <figure class="fig"><img width="301" height="551" loading="lazy" src="anatomy-exam-3-study-guide-images/002.jpg" alt="Cadaver abdomen (anterior view): diaphragm, liver lobes with falciform ligament, stomach, greater omentum draping the small bowel, and the frame of ascending/descending/sigmoid colon."><figcaption>Cadaver abdomen (anterior view): diaphragm, liver lobes with falciform ligament, stomach, greater omentum draping the small bowel, and the frame of ascending/descending/sigmoid colon.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Epigastric pain → think stomach/duodenum/pancreas. RLQ pain → appendix (McBurney's). LUQ trauma → spleen.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io2">
-  <div class="io-head"><span class="io-num">IO 2</span><h3>Compare and contrast the parietal and visceral peritoneum and the relationship to abdominal organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Epigastric pain → think stomach/duodenum/pancreas. RLQ pain → appendix (McBurney's). LUQ trauma → spleen.</div>
+
+  <h3 class="sub" id="gi-io2">1.2 &middot; Objective 2 &mdash; Compare and contrast the parietal and visceral peritoneum and the relationship to abdominal organs</h3>
 <p>The <b>peritoneum</b> is a serous membrane lining the abdominopelvic cavity. It has two continuous layers:</p>
 <ul>
 <li><b>Parietal peritoneum</b> — lines the abdominal/pelvic <i>walls</i>; somatically innervated (sharp, well-localized pain).</li>
@@ -255,13 +304,9 @@
 <li><b>Mesentery proper</b> — root runs from the duodenojejunal flexure to the right iliac fossa; suspends jejunum and ileum.</li>
 </ul>
 <figure class="fig"><img width="560" height="600" loading="lazy" src="anatomy-exam-3-study-guide-images/005.jpg" alt="Peritoneal reflections and the lesser omentum extending from the porta hepatis to the lesser curvature."><figcaption>Peritoneal reflections and the lesser omentum extending from the porta hepatis to the lesser curvature.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "SAD PUCKER" for retroperitoneal structures — Suprarenals, Aorta/IVC, Duodenum (2–4), Pancreas, Ureters, Colon (ascending/descending), Kidneys, Esophagus (distal), Rectum.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io3">
-  <div class="io-head"><span class="io-num">IO 3</span><h3>Describe the various cell types, tissue, and organs of the gastrointestinal tract</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "SAD PUCKER" for retroperitoneal structures — Suprarenals, Aorta/IVC, Duodenum (2–4), Pancreas, Ureters, Colon (ascending/descending), Kidneys, Esophagus (distal), Rectum.</div>
+
+  <h3 class="sub" id="gi-io3">1.3 &middot; Objective 3 &mdash; Describe the various cell types, tissue, and organs of the gastrointestinal tract</h3>
 <p>The GI tract has two categories of organs:</p>
 <ul>
 <li><b>Digestive organs (the tube / alimentary canal):</b> oral cavity → pharynx → esophagus → stomach → small intestine → large intestine → anus. A continuous ~30 ft (9–10 m) tube; smooth muscle in the wall provides motility.</li>
@@ -281,13 +326,9 @@
 <figure class="fig"><img width="800" height="705" loading="lazy" src="anatomy-exam-3-study-guide-images/007.jpg" alt="The three pairs of salivary glands: parotid, submandibular, sublingual."><figcaption>The three pairs of salivary glands: parotid, submandibular, sublingual.</figcaption></figure>
 <p><b>Esophagus histology:</b> nonkeratinized stratified squamous mucosa; submucosa with mucous glands; muscularis that is skeletal muscle superiorly, mixed in the middle, and smooth muscle inferiorly; adventitia (no serosa in the thorax). Upper esophageal sphincter = skeletal (cricopharyngeus); lower (cardiac) sphincter = physiologic, aided by the diaphragm.</p>
 <figure class="fig"><img width="800" height="407" loading="lazy" src="anatomy-exam-3-study-guide-images/008.jpg" alt="Esophageal wall layers: mucosa, submucosa, muscularis, adventitia."><figcaption>Esophageal wall layers: mucosa, submucosa, muscularis, adventitia.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Epithelium follows job — <i>squamous where it takes abuse</i> (mouth, esophagus, anal canal), <i>columnar where it works</i> (stomach → colon, secretion & absorption).</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io4">
-  <div class="io-head"><span class="io-num">IO 4</span><h3>Describe the anatomy of the stomach including regions and the relationship to other abdominal viscera</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Epithelium follows job — <i>squamous where it takes abuse</i> (mouth, esophagus, anal canal), <i>columnar where it works</i> (stomach → colon, secretion & absorption).</div>
+
+  <h3 class="sub" id="gi-io4">1.4 &middot; Objective 4 &mdash; Describe the anatomy of the stomach including regions and the relationship to other abdominal viscera</h3>
 <p>The stomach is an <b>intraperitoneal</b>, J-shaped organ in the LUQ/epigastric region, continuous with the esophagus at the cardia and the duodenum at the pylorus.</p>
 <p><b>Regions:</b></p>
 <ul>
@@ -301,13 +342,9 @@
 <figure class="fig"><img width="300" height="243" loading="lazy" src="anatomy-exam-3-study-guide-images/010.png" alt="Gross anatomy of the stomach with sphincters and curvatures."><figcaption>Gross anatomy of the stomach with sphincters and curvatures.</figcaption></figure>
 <p><b>Relationships:</b> anterior — left lobe of liver, diaphragm, anterior abdominal wall; posterior — the <b>lesser sac (omental bursa)</b>, then pancreas, spleen, left kidney & adrenal, splenic artery (the "stomach bed"). The spleen lies to its left, the liver to its right.</p>
 <p><b>Interior:</b> <b>rugae</b> (folds), a <b>gastric canal</b> along the lesser curvature, and gastric <b>pits</b> leading into gastric <b>glands</b>.</p>
-<div class="hook"><b>Memory hook:</b> Lesser curve = lesser omentum + <b>left gastric artery</b>; greater curve = greater omentum. Posterior stomach "bed" = Pancreas, Spleen, Left kidney/adrenal.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io5">
-  <div class="io-head"><span class="io-num">IO 5</span><h3>Describe the anatomical features of the spleen and list its anatomical relationships</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Lesser curve = lesser omentum + <b>left gastric artery</b>; greater curve = greater omentum. Posterior stomach "bed" = Pancreas, Spleen, Left kidney/adrenal.</div>
+
+  <h3 class="sub" id="gi-io5">1.5 &middot; Objective 5 &mdash; Describe the anatomical features of the spleen and list its anatomical relationships</h3>
 <p>The <b>spleen</b> is the largest lymphatic organ — <b>intraperitoneal</b>, in the LUQ, lying against <b>ribs 9–11</b> along its long axis.</p>
 <ul>
 <li><b>White pulp</b> — lymphatic tissue (immune surveillance).</li>
@@ -315,13 +352,9 @@
 </ul>
 <p><b>Relationships & ligaments:</b> connected to the stomach by the <b>gastrosplenic ligament</b> (carries short gastric vessels) and to the left kidney by the <b>splenorenal ligament</b> (carries the splenic vessels and pancreatic tail). Its <b>hilum</b> contacts the tail of the pancreas.</p>
 <figure class="fig"><img width="160" height="96" loading="lazy" src="anatomy-exam-3-study-guide-images/011.jpg" alt="The spleen: intraperitoneal LUQ organ against ribs 9–11, with white pulp (lymphatic) and red pulp (blood filtration)."><figcaption>The spleen: intraperitoneal LUQ organ against ribs 9–11, with white pulp (lymphatic) and red pulp (blood filtration).</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "1-3-5-7-9-11" — spleen is 1×3×5 inches, ~7 oz, lies against ribs 9–11. Rib fracture on the left → suspect splenic injury.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io6">
-  <div class="io-head"><span class="io-num">IO 6</span><h3>Compare and contrast the parts of the small intestines and its relationship with other abdominal organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "1-3-5-7-9-11" — spleen is 1×3×5 inches, ~7 oz, lies against ribs 9–11. Rib fracture on the left → suspect splenic injury.</div>
+
+  <h3 class="sub" id="gi-io6">1.6 &middot; Objective 6 &mdash; Compare and contrast the parts of the small intestines and its relationship with other abdominal organs</h3>
 <p>The small intestine finishes chemical digestion and absorbs most nutrients (~6 m total, coiled from pylorus to the ileocecal valve). Three parts:</p>
 <p><b>1. Duodenum</b> (~25 cm, C-shaped, mostly <b>retroperitoneal</b>) — 4 parts:</p>
 <ul>
@@ -336,13 +369,9 @@
 <figure class="fig"><img width="418" height="512" loading="lazy" src="anatomy-exam-3-study-guide-images/013.jpg" alt="Jejunum vs. ileum: jejunum has thicker walls, taller plicae, and long straight vasa recta; ileum has more arcades and Peyer's patches."><figcaption>Jejunum vs. ileum: jejunum has thicker walls, taller plicae, and long straight vasa recta; ileum has more arcades and Peyer's patches.</figcaption></figure>
 <figure class="fig"><img width="858" height="1167" loading="lazy" src="anatomy-exam-3-study-guide-images/014.jpg" alt="Terminal ileum with Peyer's patches, ending at the ileocecal junction."><figcaption>Terminal ileum with Peyer's patches, ending at the ileocecal junction.</figcaption></figure>
 <p>Jejunum and ileum are <b>intraperitoneal</b>, suspended by the mesentery proper.</p>
-<div class="hook"><b>Memory hook:</b> <b>J</b>ejunum = <b>J</b>umbo folds + <b>J</b>ust a few arcades (long vasa recta). Ileum = many arcades + Peyer's patches (immune "eye-leum" watching the gut).</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io7">
-  <div class="io-head"><span class="io-num">IO 7</span><h3>Compare and contrast the parts of the large intestines and its relationship with other abdominal organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> <b>J</b>ejunum = <b>J</b>umbo folds + <b>J</b>ust a few arcades (long vasa recta). Ileum = many arcades + Peyer's patches (immune "eye-leum" watching the gut).</div>
+
+  <h3 class="sub" id="gi-io7">1.7 &middot; Objective 7 &mdash; Compare and contrast the parts of the large intestines and its relationship with other abdominal organs</h3>
 <p>Horseshoe-shaped, ~1.5 m long, it frames the small intestine, absorbs water & electrolytes, and stores feces. Segments: <b>cecum → colon → rectum → anal canal</b>.</p>
 <p><b>Distinguishing features:</b> <b>teniae coli</b> (3 longitudinal muscle bands), <b>haustra</b> (sacculations), and <b>omental (epiploic) appendices</b> (fat tags). Colon lacks villi, has abundant goblet cells, and does &lt;10% of absorption.</p>
 <figure class="fig"><img width="612" height="792" loading="lazy" src="anatomy-exam-3-study-guide-images/015.jpg" alt="Large intestine framing the small bowel; note teniae coli, haustra, and omental appendices."><figcaption>Large intestine framing the small bowel; note teniae coli, haustra, and omental appendices.</figcaption></figure>
@@ -357,25 +386,17 @@
 </ul>
 <figure class="fig"><img width="427" height="536" loading="lazy" src="anatomy-exam-3-study-guide-images/016.jpg" alt="Colon segments and the hepatic/splenic flexures."><figcaption>Colon segments and the hepatic/splenic flexures.</figcaption></figure>
 <figure class="fig"><img width="387" height="544" loading="lazy" src="anatomy-exam-3-study-guide-images/017.jpg" alt="Rectum and anal canal with internal (smooth) and external (skeletal) sphincters."><figcaption>Rectum and anal canal with internal (smooth) and external (skeletal) sphincters.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Retroperitoneal colon = <b>ascending & descending</b> (fixed to the wall). Intraperitoneal & mobile = <b>transverse & sigmoid</b> (have mesocolons).</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io8">
-  <div class="io-head"><span class="io-num">IO 8</span><h3>Describe the anatomy of the pancreas and its relationships with other abdominal organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Retroperitoneal colon = <b>ascending & descending</b> (fixed to the wall). Intraperitoneal & mobile = <b>transverse & sigmoid</b> (have mesocolons).</div>
+
+  <h3 class="sub" id="gi-io8">1.8 &middot; Objective 8 &mdash; Describe the anatomy of the pancreas and its relationships with other abdominal organs</h3>
 <p>The pancreas is a <b>retroperitoneal</b> (secondarily) mixed exocrine/endocrine gland lying across the posterior abdomen at ~L1–L2, running from the duodenal C-loop to the splenic hilum.</p>
 <p><b>Regions:</b> <b>head</b> (in the duodenal concavity) with the <b>uncinate process</b> (hooks posterior to the SMA/SMV) → <b>neck</b> (anterior to SMV) → <b>body</b> (crosses the aorta/left kidney) → <b>tail</b> (reaches the splenic hilum, intraperitoneal within the splenorenal ligament).</p>
 <p><b>Ducts:</b> <b>main pancreatic duct (of Wirsung)</b> joins the common bile duct at the <b>ampulla of Vater</b> → major duodenal papilla; the <b>accessory duct (of Santorini)</b> drains to the minor papilla.</p>
 <figure class="fig"><img width="616" height="584" loading="lazy" src="anatomy-exam-3-study-guide-images/018.jpg" alt="Pancreas: head (with uncinate process), neck, body, and tail reaching the spleen; duct system draining to the duodenum."><figcaption>Pancreas: head (with uncinate process), neck, body, and tail reaching the spleen; duct system draining to the duodenum.</figcaption></figure>
 <p><b>Key posterior relations of the body:</b> left crus of the diaphragm, left adrenal, left renal vein, and splenic vein; the celiac trunk lies superior. The <b>common bile duct</b> passes behind the 1st part of the duodenum and through the head to the ampulla — why pancreatic head cancer causes obstructive jaundice.</p>
-<div class="hook"><b>Memory hook:</b> Uncinate process <b>hooks behind the SMA/SMV</b>. Head disease → jaundice (CBD runs through it). Tail follows the splenic vessels to the spleen.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io9">
-  <div class="io-head"><span class="io-num">IO 9</span><h3>Identify the lobes of the liver and describe their anatomical relations within the abdominal cavity</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Uncinate process <b>hooks behind the SMA/SMV</b>. Head disease → jaundice (CBD runs through it). Tail follows the splenic vessels to the spleen.</div>
+
+  <h3 class="sub" id="gi-io9">1.9 &middot; Objective 9 &mdash; Identify the lobes of the liver and describe their anatomical relations within the abdominal cavity</h3>
 <p>The liver is the largest gland and visceral organ, <b>intraperitoneal</b> in the RUQ, covered by <b>Glisson's capsule</b> (with a posterior <b>bare area</b> lacking peritoneum).</p>
 <p><b>Four anatomical lobes:</b></p>
 <ul>
@@ -389,13 +410,9 @@
 <p><b>Peritoneal ligaments</b> reflect onto the liver from the diaphragm and surround the bare area: <b>falciform</b>, <b>ligamentum teres</b> (remnant of the umbilical vein), <b>coronary</b>, and <b>right/left triangular</b> ligaments.</p>
 <p><b>Triple blood supply:</b> <b>hepatic portal vein</b> (~75% of flow — nutrient-rich blood for processing), <b>hepatic artery</b> (~25%, oxygen; supplies the ducts), and <b>hepatic veins</b> (outflow to the IVC → right atrium).</p>
 <figure class="fig"><img width="461" height="574" loading="lazy" src="anatomy-exam-3-study-guide-images/021.jpg" alt="Liver with its ligaments and vascular pedicle at the porta hepatis."><figcaption>Liver with its ligaments and vascular pedicle at the porta hepatis.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Falciform separates R/L; ligamentum teres borders the <b>quadrate</b>; IVC + ligamentum venosum border the <b>caudate</b>. Portal triad enters at the porta hepatis.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io10">
-  <div class="io-head"><span class="io-num">IO 10</span><h3>Identify the anatomy of the portal vein and portal venous drainage and its relationship with other abdominal organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Falciform separates R/L; ligamentum teres borders the <b>quadrate</b>; IVC + ligamentum venosum border the <b>caudate</b>. Portal triad enters at the porta hepatis.</div>
+
+  <h3 class="sub" id="gi-io10">1.10 &middot; Objective 10 &mdash; Identify the anatomy of the portal vein and portal venous drainage and its relationship with other abdominal organs</h3>
 <p>The <b>hepatic portal vein</b> carries nutrient-rich, deoxygenated blood from the GI tract, spleen, and pancreas to the liver for first-pass processing. It forms <b>posterior to the neck of the pancreas</b> by the union of the <b>superior mesenteric vein (SMV)</b> and the <b>splenic vein</b>.</p>
 <ul>
 <li><b>Splenic vein</b> — drains the spleen; receives the <b>inferior mesenteric vein (IMV)</b> and short gastric/left gastroepiploic veins.</li>
@@ -405,13 +422,9 @@
 <p>The portal vein ascends in the <b>hepatoduodenal ligament</b> as part of the <b>portal triad</b> (portal vein posteriorly, hepatic artery and bile duct anteriorly), then divides into right and left branches at the porta hepatis.</p>
 <figure class="fig"><img width="433" height="571" loading="lazy" src="anatomy-exam-3-study-guide-images/022.jpg" alt="Portal venous system: splenic vein + SMV unite behind the pancreatic neck to form the portal vein; IMV joins the splenic vein."><figcaption>Portal venous system: splenic vein + SMV unite behind the pancreatic neck to form the portal vein; IMV joins the splenic vein.</figcaption></figure>
 <p><b>Portosystemic anastomoses</b> (clinically vital in portal hypertension): gastroesophageal (→ esophageal varices), rectal (→ hemorrhoids), paraumbilical (→ caput medusae), and retroperitoneal.</p>
-<div class="hook"><b>Memory hook:</b> Portal vein = <b>SMV + splenic vein</b>, born <b>behind the pancreatic neck</b>. IMV usually drains into the splenic vein. Portal triad in the hepatoduodenal ligament: vein behind, artery + duct in front.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io11">
-  <div class="io-head"><span class="io-num">IO 11</span><h3>Describe the anatomy of the gall bladder and biliary tree and its relationship with other abdominal organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Portal vein = <b>SMV + splenic vein</b>, born <b>behind the pancreatic neck</b>. IMV usually drains into the splenic vein. Portal triad in the hepatoduodenal ligament: vein behind, artery + duct in front.</div>
+
+  <h3 class="sub" id="gi-io11">1.11 &middot; Objective 11 &mdash; Describe the anatomy of the gall bladder and biliary tree and its relationship with other abdominal organs</h3>
 <p>The <b>gallbladder</b> stores and concentrates bile. It sits on the visceral surface of the liver between the right and quadrate lobes. Parts: <b>fundus</b> (projects at the tip of the 9th costal cartilage), <b>body</b>, and <b>neck</b> (→ cystic duct, with the spiral valve of Heister).</p>
 <figure class="fig"><img width="686" height="520" loading="lazy" src="anatomy-exam-3-study-guide-images/023.jpg" alt="Gallbladder (fundus, body, neck) and the extrahepatic biliary tree."><figcaption>Gallbladder (fundus, body, neck) and the extrahepatic biliary tree.</figcaption></figure>
 <p><b>The biliary tree</b> (bile flow):</p>
@@ -422,13 +435,9 @@
 </ul>
 <figure class="fig"><img width="784" height="520" loading="lazy" src="anatomy-exam-3-study-guide-images/024.jpg" alt="Confluence of hepatic ducts → common hepatic duct → common bile duct joining the pancreatic duct at the ampulla of Vater."><figcaption>Confluence of hepatic ducts → common hepatic duct → common bile duct joining the pancreatic duct at the ampulla of Vater.</figcaption></figure>
 <p><b>Cystohepatic triangle of Calot</b> (landmark for the cystic artery in cholecystectomy): bounded by the cystic duct, common hepatic duct, and inferior liver edge.</p>
-<div class="hook"><b>Memory hook:</b> Bile path: <b>hepatic ducts → common hepatic → (+cystic) → CBD → ampulla of Vater → duodenum</b>. A stone in the CBD blocks both bile <i>and</i> pancreatic outflow (risk of gallstone pancreatitis).</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io12">
-  <div class="io-head"><span class="io-num">IO 12</span><h3>Describe the origins course and major branches of the abdominal aorta that supply the gastrointestinal tract</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Bile path: <b>hepatic ducts → common hepatic → (+cystic) → CBD → ampulla of Vater → duodenum</b>. A stone in the CBD blocks both bile <i>and</i> pancreatic outflow (risk of gallstone pancreatitis).</div>
+
+  <h3 class="sub" id="gi-io12">1.12 &middot; Objective 12 &mdash; Describe the origins course and major branches of the abdominal aorta that supply the gastrointestinal tract</h3>
 <p>The <b>abdominal aorta</b> enters at the <b>aortic hiatus (T12)</b> between the diaphragmatic crura and descends to <b>L4</b>, where it bifurcates into the common iliac arteries. Three unpaired anterior branches supply the GI tract (following embryonic gut divisions):</p>
 <p><b>1. Celiac trunk (T12)</b> — foregut. Three branches:</p>
 <ul>
@@ -439,13 +448,9 @@
 <figure class="fig"><img width="852" height="652" loading="lazy" src="anatomy-exam-3-study-guide-images/025.jpg" alt="Celiac trunk and its three branches (left gastric, splenic, common hepatic) supplying the foregut."><figcaption>Celiac trunk and its three branches (left gastric, splenic, common hepatic) supplying the foregut.</figcaption></figure>
 <p><b>2. Superior mesenteric artery (SMA, L1)</b> — midgut: distal duodenum → proximal 2/3 of the transverse colon (jejunal/ileal branches, ileocolic, right colic, middle colic).</p>
 <p><b>3. Inferior mesenteric artery (IMA, L3)</b> — hindgut: distal 1/3 transverse colon → upper rectum (left colic, sigmoid, superior rectal).</p>
-<div class="hook"><b>Memory hook:</b> Levels — Celiac <b>T12</b>, SMA <b>L1</b>, renal <b>L1–L2</b>, IMA <b>L3</b>, bifurcation <b>L4</b>. Foregut→celiac, Midgut→SMA, Hindgut→IMA (the watershed at the splenic flexure = "Griffith's point").</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io13">
-  <div class="io-head"><span class="io-num">IO 13</span><h3>Describe the origins course and major tributaries of the inferior vena cava that supply the gastrointestinal tract</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Levels — Celiac <b>T12</b>, SMA <b>L1</b>, renal <b>L1–L2</b>, IMA <b>L3</b>, bifurcation <b>L4</b>. Foregut→celiac, Midgut→SMA, Hindgut→IMA (the watershed at the splenic flexure = "Griffith's point").</div>
+
+  <h3 class="sub" id="gi-io13">1.13 &middot; Objective 13 &mdash; Describe the origins course and major tributaries of the inferior vena cava that supply the gastrointestinal tract</h3>
 <p>The <b>IVC</b> is the largest vein, <b>retroperitoneal</b> to the right of the aorta. It forms at <b>L5</b> from the union of the two <b>common iliac veins</b>, ascends, and pierces the diaphragm at the <b>caval hiatus (T8)</b> to enter the right atrium.</p>
 <p><b>Tributaries (ascending order):</b></p>
 <ul>
@@ -460,13 +465,9 @@
 <figure class="fig"><img width="859" height="989" loading="lazy" src="anatomy-exam-3-study-guide-images/026.jpg" alt="Inferior vena cava and its tributaries, formed at L5 and piercing the diaphragm at T8."><figcaption>Inferior vena cava and its tributaries, formed at L5 and piercing the diaphragm at T8.</figcaption></figure>
 <figure class="fig"><img width="472" height="572" loading="lazy" src="anatomy-exam-3-study-guide-images/027.jpg" alt="IVC relationships: renal, suprarenal, gonadal, phrenic, and hepatic vein drainage."><figcaption>IVC relationships: renal, suprarenal, gonadal, phrenic, and hepatic vein drainage.</figcaption></figure>
 <p><b>Note on the GI tract:</b> GI venous blood does <i>not</i> drain directly to the IVC — it goes through the <b>portal system → liver → hepatic veins → IVC</b>. The IVC directly drains the "systemic" abdominal organs (kidneys, adrenals, gonads, diaphragm, body wall).</p>
-<div class="hook"><b>Memory hook:</b> <b>Left is longer</b> — the left renal vein receives left suprarenal + left gonadal and crosses the aorta. Right gonadal/suprarenal go straight to the IVC. Caval hiatus = <b>T8</b>, IVC origin = <b>L5</b>.</div>
-</div>
-  <a class="totop" href="#gi-top">↑ top</a>
-</section>
-<section class="io" id="gi-io14">
-  <div class="io-head"><span class="io-num">IO 14</span><h3>Define the anatomy of abdominal lymph drainage</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> <b>Left is longer</b> — the left renal vein receives left suprarenal + left gonadal and crosses the aorta. Right gonadal/suprarenal go straight to the IVC. Caval hiatus = <b>T8</b>, IVC origin = <b>L5</b>.</div>
+
+  <h3 class="sub" id="gi-io14">1.14 &middot; Objective 14 &mdash; Define the anatomy of abdominal lymph drainage</h3>
 <p>Abdominal lymph follows the arteries in reverse, draining through <b>prevertebral (pre-aortic and lateral aortic/lumbar) nodes</b> up to the cisterna chyli.</p>
 <p><b>Pre-aortic nodes</b> (named for the three unpaired GI arteries) drain the GI tract:</p>
 <ul>
@@ -476,34 +477,31 @@
 </ul>
 <p><b>Lateral aortic (lumbar) nodes</b> drain the paired/retroperitoneal structures (kidneys, adrenals, gonads, posterior wall).</p>
 <p><b>Convergence:</b> intestinal + lumbar lymph trunks → <b>cisterna chyli</b> (at ~L1–L2, behind the aorta) → <b>thoracic duct</b> → drains into the junction of the left subclavian and internal jugular veins (left venous angle).</p>
-<div class="hook"><b>Memory hook:</b> GI lymph mirrors the arteries: <b>Celiac / SMA / IMA nodes → cisterna chyli → thoracic duct → left venous angle.</b> Gut fat is absorbed as chyle into these lacteals — hence "cisterna <i>chyli</i>."</div>
-</div>
+<div class="pearl"><b>Memory hook:</b> GI lymph mirrors the arteries: <b>Celiac / SMA / IMA nodes → cisterna chyli → thoracic duct → left venous angle.</b> Gut fat is absorbed as chyle into these lacteals — hence "cisterna <i>chyli</i>."</div>
   <button type="button" class="test-yourself-btn" style="--acc:#3f7d4e" onclick="window.openTestYourself('Test yourself — GI', TEST_YOURSELF.gi)">Test yourself! →</button>
-<a class="totop" href="#gi-top">↑ top</a>
 </section>
-</div>
-<div class="subj-panel" data-subj="endo" style="--acc:#b8860b;--accd:#8a6508;--accs:#f6efdd">
-  <div id="endo-top" class="subj-header">
-    <h2>Endocrine System</h2>
-    <p class="prof">Prof. Hugh G. Rappa, MD</p>
-    <nav class="io-nav"><a href="#endo-io1" class="io-link">IO 1</a><a href="#endo-io2" class="io-link">IO 2</a><a href="#endo-io3" class="io-link">IO 3</a><a href="#endo-io4" class="io-link">IO 4</a></nav>
-    <div class="io-objectives" style="margin:14px 0 4px;padding:14px 16px 14px 34px;background:rgba(0,0,0,.03);border-left:4px solid var(--accd,#666);border-radius:8px;font-size:14.5px;line-height:1.5"><b style="display:block;margin:0 0 6px -18px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.7">Instructional Objectives</b><ol style="margin:0;padding-left:2px"><li>Describe the organs of the endocrine system.</li><li>Compare and contrast the histology of the various organs of the endocrine system.</li><li>Describe the anatomical relationships of each of the endocrine organs and surrounding anatomical structures and their blood supplies.</li><li>Compare and contrast hormones and other factors involved in calcium metabolism.</li></ol></div>
+<!-- ============ 2 ENDOCRINE SYSTEM ============ -->
+<section class="deck" id="endo-top">
+  <h2 class="deck-title">2 &middot; Endocrine System</h2>
+  <p class="lecturer">Prof. Hugh G. Rappa, MD</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol>
+      <li>Describe the organs of the endocrine system.</li>
+      <li>Compare and contrast the histology of the various organs of the endocrine system.</li>
+      <li>Describe the anatomical relationships of each of the endocrine organs and surrounding anatomical structures and their blood supplies.</li>
+      <li>Compare and contrast hormones and other factors involved in calcium metabolism.</li>
+    </ol>
   </div>
-  
-<section class="io" id="endo-io1">
-  <div class="io-head"><span class="io-num">IO 1</span><h3>Describe the organs of the endocrine system</h3></div>
-  <div class="io-body">
+
+  <h3 class="sub" id="endo-io1">2.1 &middot; Objective 1 &mdash; Describe the organs of the endocrine system</h3>
 <p>The endocrine system secretes hormones directly into the blood (ductless). <b>Primary endocrine organs:</b> pituitary, hypothalamus, pineal, thyroid, parathyroids, thymus, adrenals (suprarenals), pancreatic islets, and gonads (ovaries/testes).</p>
 <p><b>Organs with secondary endocrine tissue:</b> heart (ANP/BNP), kidney (erythropoietin, calcitriol, renin), adipose (leptin, resistin), and the digestive tract (gut hormones).</p>
 <figure class="fig"><img width="1200" height="899" loading="lazy" src="anatomy-exam-3-study-guide-images/028.jpg" alt="Overview of the endocrine system and the major hormones each organ secretes."><figcaption>Overview of the endocrine system and the major hormones each organ secretes.</figcaption></figure>
 <p>This lecture focuses on the <b>thyroid, parathyroids, pituitary, pancreas, and adrenal glands</b>.</p>
-<div class="hook"><b>Memory hook:</b> "Pure endocrine" glands do <i>only</i> hormones (thyroid, parathyroid, pituitary, pineal, adrenal). "Mixed/secondary" organs have a day job too (heart pumps + ANP; kidney filters + EPO; pancreas digests + insulin).</div>
-</div>
-  <a class="totop" href="#endo-top">↑ top</a>
-</section>
-<section class="io" id="endo-io2">
-  <div class="io-head"><span class="io-num">IO 2</span><h3>Compare and contrast the histology of the various organs of the endocrine system</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "Pure endocrine" glands do <i>only</i> hormones (thyroid, parathyroid, pituitary, pineal, adrenal). "Mixed/secondary" organs have a day job too (heart pumps + ANP; kidney filters + EPO; pancreas digests + insulin).</div>
+
+  <h3 class="sub" id="endo-io2">2.2 &middot; Objective 2 &mdash; Compare and contrast the histology of the various organs of the endocrine system</h3>
 <p><b>Anterior pituitary (adenohypophysis) — pars distalis:</b> cords of cells with sinusoids. Two staining classes:</p>
 <ul>
 <li><b>Chromophobes</b> (~50%) — pale, no granules.</li>
@@ -519,13 +517,9 @@
 <figure class="fig"><img width="400" height="314" loading="lazy" src="anatomy-exam-3-study-guide-images/032.jpg" alt="Pancreatic islet (endocrine) surrounded by exocrine acini; α, β, δ, and F cells."><figcaption>Pancreatic islet (endocrine) surrounded by exocrine acini; α, β, δ, and F cells.</figcaption></figure>
 <p><b>Adrenal cortex</b> — three zones (superficial→deep): <b>zona glomerulosa</b> (mineralocorticoids — aldosterone), <b>zona fasciculata</b> (glucocorticoids — cortisol; radial columns of lipid-laden cells), <b>zona reticularis</b> (androgens; meshwork). <b>Adrenal medulla</b> — <b>chromaffin cells</b> (modified sympathetic neurons) secrete epinephrine/norepinephrine; contains a central vein.</p>
 <figure class="fig"><img width="800" height="495" loading="lazy" src="anatomy-exam-3-study-guide-images/033.jpg" alt="Adrenal cortex zones (glomerulosa, fasciculata, reticularis) over the catecholamine-secreting medulla."><figcaption>Adrenal cortex zones (glomerulosa, fasciculata, reticularis) over the catecholamine-secreting medulla.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Cortex zones = "GFR" and "Salt, Sugar, Sex" (deeper = sweeter/sexier): <b>G</b>lomerulosa→aldosterone (salt), <b>F</b>asciculata→cortisol (sugar), <b>R</b>eticularis→androgens (sex).</div>
-</div>
-  <a class="totop" href="#endo-top">↑ top</a>
-</section>
-<section class="io" id="endo-io3">
-  <div class="io-head"><span class="io-num">IO 3</span><h3>Describe the anatomical relationships of each of the endocrine organs and surrounding anatomical structures and their blood supplies</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Cortex zones = "GFR" and "Salt, Sugar, Sex" (deeper = sweeter/sexier): <b>G</b>lomerulosa→aldosterone (salt), <b>F</b>asciculata→cortisol (sugar), <b>R</b>eticularis→androgens (sex).</div>
+
+  <h3 class="sub" id="endo-io3">2.3 &middot; Objective 3 &mdash; Describe the anatomical relationships of each of the endocrine organs and surrounding anatomical structures and their blood supplies</h3>
 <p><b>Pituitary gland (hypophysis):</b> sits in the <b>hypophyseal fossa of the sella turcica</b> (sphenoid), attached to the hypothalamus by the <b>infundibulum</b>. Superiorly the <b>diaphragma sellae</b> separates it from the optic chiasm; laterally lie the <b>cavernous sinuses</b>; inferiorly the <b>sphenoid air sinus</b>; posteriorly the dorsum sellae.</p>
 <ul>
 <li><b>Anterior lobe</b> receives <b>portal blood</b> via the <b>hypophyseal portal system</b> (superior hypophyseal artery → capillary plexus in the infundibulum → portal veins → adenohypophysis).</li>
@@ -543,39 +537,39 @@
 <p><b>Pancreas:</b> retroperitoneal, epigastric/LUQ at T12–L3. Head in the duodenal C-loop, body crosses the left kidney, tail reaches the splenic hilum. Highly vascular (fenestrated capillaries); supplied by the <b>pancreaticoduodenal arteries</b> (from GDA & SMA) and <b>pancreatic branches of the splenic artery</b>; venous drainage → portal system.</p>
 <p><b>Adrenal (suprarenal) glands:</b> retroperitoneal, capping the superior pole of each kidney within the renal fascia. <b>Right</b> = pyramidal (relates to liver & IVC); <b>Left</b> = semilunar (relates to stomach, pancreas, spleen). <b>Triple arterial supply:</b> superior suprarenal (from inferior phrenic), middle suprarenal (from aorta), inferior suprarenal (from renal artery). <b>Venous:</b> right suprarenal vein → IVC; left suprarenal vein → left renal vein.</p>
 <figure class="fig"><img width="468" height="394" loading="lazy" src="anatomy-exam-3-study-guide-images/040.jpg" alt="Adrenal glands capping the kidneys, with their triple arterial supply and asymmetric venous drainage."><figcaption>Adrenal glands capping the kidneys, with their triple arterial supply and asymmetric venous drainage.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Pituitary: <b>anterior = portal blood</b> (hypothalamic hormones travel in vessels), <b>posterior = arterial blood</b> (hormones travel in axons). Adrenal veins mirror gonadal veins: right → IVC, left → renal vein.</div>
-</div>
-  <a class="totop" href="#endo-top">↑ top</a>
-</section>
-<section class="io" id="endo-io4">
-  <div class="io-head"><span class="io-num">IO 4</span><h3>Compare and contrast hormones and other factors involved in calcium metabolism</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Pituitary: <b>anterior = portal blood</b> (hypothalamic hormones travel in vessels), <b>posterior = arterial blood</b> (hormones travel in axons). Adrenal veins mirror gonadal veins: right → IVC, left → renal vein.</div>
+
+  <h3 class="sub" id="endo-io4">2.4 &middot; Objective 4 &mdash; Compare and contrast hormones and other factors involved in calcium metabolism</h3>
 <p>Three hormones regulate serum calcium; two raise it, one lowers it.</p>
-<table>
+<div class="table-scroll"><table>
 <tr><th>Hormone</th><th>Source</th><th>Effect on Ca²⁺</th><th>Actions</th></tr>
 <tr><td><b>Parathyroid hormone (PTH)</b></td><td>Chief cells of parathyroid</td><td>↑ (raises)</td><td>↑ bone resorption (osteoclasts), ↑ renal Ca²⁺ reabsorption & phosphate excretion, ↑ activation of vitamin D (calcitriol) in the kidney.</td></tr>
 <tr><td><b>Calcitriol</b> (active vitamin D)</td><td>Kidney (activates vit D)</td><td>↑ (raises)</td><td>↑ intestinal absorption of Ca²⁺ and phosphate; assists PTH on bone.</td></tr>
 <tr><td><b>Calcitonin</b></td><td>Parafollicular (C) cells of thyroid</td><td>↓ (lowers)</td><td>↓ osteoclast activity (inhibits bone resorption); minor role in adult humans.</td></tr>
-</table>
+</table></div>
 <p><b>The PTH loop:</b> low serum Ca²⁺ → parathyroid chief cells release PTH → bone, kidney, and (via calcitriol) gut all raise Ca²⁺ → normal Ca²⁺ feeds back to shut off PTH.</p>
 <p><b>Relevant anatomy:</b> the <b>parathyroids</b> (posterior thyroid) sense calcium directly; the <b>thyroid C cells</b> supply calcitonin; the <b>kidney</b> performs the final hydroxylation of vitamin D to calcitriol and executes PTH's renal effects.</p>
-<div class="hook"><b>Memory hook:</b> <b>PTH raises, calciTONIN tones it down.</b> "PTH PHounds the Phosphate out (of urine) but keeps Calcium in." Vitamin D is the gut's calcium importer.</div>
-</div>
+<div class="pearl"><b>Memory hook:</b> <b>PTH raises, calciTONIN tones it down.</b> "PTH PHounds the Phosphate out (of urine) but keeps Calcium in." Vitamin D is the gut's calcium importer.</div>
   <button type="button" class="test-yourself-btn" style="--acc:#b8860b" onclick="window.openTestYourself('Test yourself — Endocrine', TEST_YOURSELF.endo)">Test yourself! →</button>
-<a class="totop" href="#endo-top">↑ top</a>
 </section>
-</div>
-<div class="subj-panel" data-subj="male" style="--acc:#2f6f8f;--accd:#224f66;--accs:#e4eef3">
-  <div id="male-top" class="subj-header">
-    <h2>Male Reproductive System</h2>
-    <p class="prof">Prof. Hugh E. Griffenkranz, MPAS, PA-C</p>
-    <nav class="io-nav"><a href="#male-io1" class="io-link">IO 1</a><a href="#male-io2" class="io-link">IO 2</a><a href="#male-io3" class="io-link">IO 3</a><a href="#male-io4" class="io-link">IO 4</a><a href="#male-io5" class="io-link">IO 5</a><a href="#male-io6" class="io-link">IO 6</a><a href="#male-io7" class="io-link">IO 7</a></nav>
-    <div class="io-objectives" style="margin:14px 0 4px;padding:14px 16px 14px 34px;background:rgba(0,0,0,.03);border-left:4px solid var(--accd,#666);border-radius:8px;font-size:14.5px;line-height:1.5"><b style="display:block;margin:0 0 6px -18px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.7">Instructional Objectives</b><ol style="margin:0;padding-left:2px"><li>Recall the embryologic development of the male reproductive tract.</li><li>Identify the major muscles that make up the pelvic floor.</li><li>Identify the major blood supply to the pelvis and male reproductive organs.</li><li>Identify the nerves that innervate the pelvic floor and male reproductive organs.</li><li>Describe the organs of the male reproductive system and their relationship to other anatomical features.</li><li>Describe the pathway for semen from origin to ejaculation.</li><li>Describe the parts of the urethra in relationship to the male reproduction system.</li></ol></div>
+<!-- ============ 3 MALE REPRODUCTIVE SYSTEM ============ -->
+<section class="deck" id="male-top">
+  <h2 class="deck-title">3 &middot; Male Reproductive System</h2>
+  <p class="lecturer">Prof. Hugh E. Griffenkranz, MPAS, PA-C</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol>
+      <li>Recall the embryologic development of the male reproductive tract.</li>
+      <li>Identify the major muscles that make up the pelvic floor.</li>
+      <li>Identify the major blood supply to the pelvis and male reproductive organs.</li>
+      <li>Identify the nerves that innervate the pelvic floor and male reproductive organs.</li>
+      <li>Describe the organs of the male reproductive system and their relationship to other anatomical features.</li>
+      <li>Describe the pathway for semen from origin to ejaculation.</li>
+      <li>Describe the parts of the urethra in relationship to the male reproduction system.</li>
+    </ol>
   </div>
-  
-<section class="io" id="male-io1">
-  <div class="io-head"><span class="io-num">IO 1</span><h3>Recall the embryologic development of the male reproductive tract</h3></div>
-  <div class="io-body">
+
+  <h3 class="sub" id="male-io1">3.1 &middot; Objective 1 &mdash; Recall the embryologic development of the male reproductive tract</h3>
 <p>The male tract develops under the influence of the <b>SRY gene</b> (testis-determining factor) and testicular hormones.</p>
 <ul>
 <li><b>Testes</b> form in the posterior abdomen near the developing kidneys.</li>
@@ -586,26 +580,18 @@
 <p><b>Descent of the testes:</b> the <b>gubernaculum testis</b> anchors the testis; as the body grows, the gubernaculum doesn't lengthen, so the testis is drawn inferiorly through the <b>inguinal canal</b> into the scrotum (usually by birth). The ductus deferens, vessels, lymphatics, and nerves stay bundled as the <b>spermatic cord</b>.</p>
 <figure class="fig"><img width="784" height="1080" loading="lazy" src="anatomy-exam-3-study-guide-images/041.jpg" alt="Descent of the testes from the posterior abdomen through the inguinal canal into the scrotum, guided by the gubernaculum."><figcaption>Descent of the testes from the posterior abdomen through the inguinal canal into the scrotum, guided by the gubernaculum.</figcaption></figure>
 <p><b>Why descend?</b> Sperm development needs ~2 °F below core temperature — hence the extra-abdominal scrotal location.</p>
-<div class="hook"><b>Memory hook:</b> "AMH kills the female ducts; Testosterone keeps the male (Wolffian) ducts." <b>W</b>olffian → <b>W</b>ale (male) internal ducts.</div>
-</div>
-  <a class="totop" href="#male-top">↑ top</a>
-</section>
-<section class="io" id="male-io2">
-  <div class="io-head"><span class="io-num">IO 2</span><h3>Identify the major muscles that make up the pelvic floor</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "AMH kills the female ducts; Testosterone keeps the male (Wolffian) ducts." <b>W</b>olffian → <b>W</b>ale (male) internal ducts.</div>
+
+  <h3 class="sub" id="male-io2">3.2 &middot; Objective 2 &mdash; Identify the major muscles that make up the pelvic floor</h3>
 <p>The pelvic floor (<b>pelvic diaphragm</b>) is formed mainly by the <b>levator ani</b> and <b>coccygeus</b> muscles, supporting the pelvic viscera and sealing the pelvic outlet.</p>
 <ul>
 <li><b>Levator ani</b> — three parts: <b>puborectalis</b> (sling around the anorectal junction, maintains fecal continence), <b>pubococcygeus</b>, and <b>iliococcygeus</b>.</li>
 <li><b>Coccygeus (ischiococcygeus)</b> — posterior part, from ischial spine to coccyx/sacrum.</li>
 </ul>
 <p><b>Perineal muscles</b> relevant to the male tract include the <b>bulbospongiosus</b> and <b>ischiocavernosus</b> (contribute to erection and ejaculation) and the <b>external urethral sphincter</b> in the deep perineal pouch.</p>
-<div class="hook"><b>Memory hook:</b> Levator ani = "PIP" (<b>P</b>uborectalis, <b>I</b>liococcygeus, <b>P</b>ubococcygeus). Puborectalis is the continence sling — it relaxes to defecate.</div>
-</div>
-  <a class="totop" href="#male-top">↑ top</a>
-</section>
-<section class="io" id="male-io3">
-  <div class="io-head"><span class="io-num">IO 3</span><h3>Identify the major blood supply to the pelvis and male reproductive organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Levator ani = "PIP" (<b>P</b>uborectalis, <b>I</b>liococcygeus, <b>P</b>ubococcygeus). Puborectalis is the continence sling — it relaxes to defecate.</div>
+
+  <h3 class="sub" id="male-io3">3.3 &middot; Objective 3 &mdash; Identify the major blood supply to the pelvis and male reproductive organs</h3>
 <p>The pelvis is supplied chiefly by the <b>internal iliac artery</b>, with the gonads supplied from the abdominal aorta.</p>
 <ul>
 <li><b>Testicular arteries</b> — arise directly from the <b>abdominal aorta</b> (below the renal arteries), reflecting the testes' abdominal origin; travel in the spermatic cord.</li>
@@ -615,26 +601,18 @@
 </ul>
 <p><b>Venous drainage:</b> the <b>pampiniform plexus</b> surrounds the testicular artery (counter-current heat exchange) and coalesces into the testicular vein: <b>right → IVC, left → left renal vein</b> (why left-sided varicoceles are more common).</p>
 <figure class="fig"><img width="1200" height="623" loading="lazy" src="anatomy-exam-3-study-guide-images/042.jpg" alt="Spermatic cord contents: ductus deferens, testicular artery, pampiniform plexus, and nerves; layers of the scrotum."><figcaption>Spermatic cord contents: ductus deferens, testicular artery, pampiniform plexus, and nerves; layers of the scrotum.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Gonadal arteries come from the <b>aorta</b> (high origin = abdominal descent). Left testicular vein → left renal vein → higher pressure → left varicocele ("bag of worms").</div>
-</div>
-  <a class="totop" href="#male-top">↑ top</a>
-</section>
-<section class="io" id="male-io4">
-  <div class="io-head"><span class="io-num">IO 4</span><h3>Identify the nerves that innervate the pelvic floor and male reproductive organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Gonadal arteries come from the <b>aorta</b> (high origin = abdominal descent). Left testicular vein → left renal vein → higher pressure → left varicocele ("bag of worms").</div>
+
+  <h3 class="sub" id="male-io4">3.4 &middot; Objective 4 &mdash; Identify the nerves that innervate the pelvic floor and male reproductive organs</h3>
 <ul>
 <li><b>Pudendal nerve (S2–S4)</b> — the main somatic nerve of the perineum: motor to the pelvic floor/perineal muscles and external urethral sphincter; sensory to the external genitalia (via the dorsal nerve of the penis).</li>
 <li><b>Pelvic splanchnic nerves (S2–S4, parasympathetic)</b> — drive <b>erection</b> ("point").</li>
 <li><b>Hypogastric / sympathetic (T11–L2)</b> — drive <b>emission and ejaculation</b> ("shoot"); also close the internal urethral sphincter to prevent retrograde ejaculation.</li>
 <li><b>Ilioinguinal & genitofemoral nerves</b> — sensory to the scrotum and anterior groin; the genital branch also supplies the cremaster muscle (cremasteric reflex).</li>
 </ul>
-<div class="hook"><b>Memory hook:</b> "<b>Point and Shoot</b>": <b>P</b>arasympathetic = <b>P</b>oint (erection, pelvic splanchnics); <b>S</b>ympathetic = <b>S</b>hoot (emission/ejaculation). Pudendal = "pudendum" = external genital sensation + voluntary sphincter.</div>
-</div>
-  <a class="totop" href="#male-top">↑ top</a>
-</section>
-<section class="io" id="male-io5">
-  <div class="io-head"><span class="io-num">IO 5</span><h3>Describe the organs of the male reproductive system and their relationship to other anatomical features</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "<b>Point and Shoot</b>": <b>P</b>arasympathetic = <b>P</b>oint (erection, pelvic splanchnics); <b>S</b>ympathetic = <b>S</b>hoot (emission/ejaculation). Pudendal = "pudendum" = external genital sensation + voluntary sphincter.</div>
+
+  <h3 class="sub" id="male-io5">3.5 &middot; Objective 5 &mdash; Describe the organs of the male reproductive system and their relationship to other anatomical features</h3>
 <p><b>Principal structures:</b> scrotum, testes, epididymis, ductus (vas) deferens, urethra, accessory glands (seminal vesicles, prostate, bulbourethral), and penis.</p>
 <figure class="fig"><img width="1200" height="698" loading="lazy" src="anatomy-exam-3-study-guide-images/043.jpg" alt="Overview of the male reproductive system: gonad, duct system, accessory glands, and external genitalia in sagittal section."><figcaption>Overview of the male reproductive system: gonad, duct system, accessory glands, and external genitalia in sagittal section.</figcaption></figure>
 <p><b>Testes:</b> within the scrotum, each ~5×3×2.5 cm. <b>Tunica albuginea</b> (fibrous capsule) sends <b>septa</b> that divide the testis into lobules; septa converge at the <b>mediastinum testis</b>. <b>Tunica vaginalis</b> (serous, from peritoneum) surrounds it and reduces friction.</p>
@@ -648,25 +626,17 @@
 <p><b>Penis:</b> root, body (shaft), glans. Three erectile columns — two dorsal <b>corpora cavernosa</b> (each ends as a crus attached to the ischial ramus; contains the deep artery) and one ventral <b>corpus spongiosum</b> (surrounds the spongy urethra; expands as the bulb and the glans).</p>
 <figure class="fig"><img width="1200" height="1035" loading="lazy" src="anatomy-exam-3-study-guide-images/048.jpg" alt="Penis: root (crura + bulb), body, and glans, showing the erectile tissues."><figcaption>Penis: root (crura + bulb), body, and glans, showing the erectile tissues.</figcaption></figure>
 <figure class="fig"><img width="1200" height="665" loading="lazy" src="anatomy-exam-3-study-guide-images/049.jpg" alt="Cross-section of the penis: paired corpora cavernosa (dorsal) and single corpus spongiosum (ventral) around the spongy urethra."><figcaption>Cross-section of the penis: paired corpora cavernosa (dorsal) and single corpus spongiosum (ventral) around the spongy urethra.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Semen volume "60-30-5-5": Seminal vesicles 60%, Prostate 30%, Bulbourethral 5%, epididymis/sperm 5%. Erectile tissue: "<b>2 caverns up top, 1 spongy below</b>" (spongiosum carries the urethra).</div>
-</div>
-  <a class="totop" href="#male-top">↑ top</a>
-</section>
-<section class="io" id="male-io6">
-  <div class="io-head"><span class="io-num">IO 6</span><h3>Describe the pathway for semen from origin to ejaculation</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Semen volume "60-30-5-5": Seminal vesicles 60%, Prostate 30%, Bulbourethral 5%, epididymis/sperm 5%. Erectile tissue: "<b>2 caverns up top, 1 spongy below</b>" (spongiosum carries the urethra).</div>
+
+  <h3 class="sub" id="male-io6">3.6 &middot; Objective 6 &mdash; Describe the pathway for semen from origin to ejaculation</h3>
 <p>Follow one cell from production to exit:</p>
 <p><b>Seminiferous tubules → straight tubules → rete testis → efferent ductules → epididymis (head→body→tail) → ductus (vas) deferens → ampulla of the ductus deferens → (joins seminal vesicle duct) → ejaculatory duct → prostatic urethra → membranous urethra → spongy (penile) urethra → external urethral orifice.</b></p>
 <figure class="fig"><img width="1200" height="880" loading="lazy" src="anatomy-exam-3-study-guide-images/050.jpg" alt="Early pathway: rete testis → efferent ductules → epididymis → ductus deferens."><figcaption>Early pathway: rete testis → efferent ductules → epididymis → ductus deferens.</figcaption></figure>
 <figure class="fig"><img width="1192" height="1080" loading="lazy" src="anatomy-exam-3-study-guide-images/051.jpg" alt="Ampulla of the ductus deferens + seminal vesicle duct → ejaculatory duct → prostatic urethra."><figcaption>Ampulla of the ductus deferens + seminal vesicle duct → ejaculatory duct → prostatic urethra.</figcaption></figure>
 <p><b>Physiology overlay:</b> <b>emission</b> (sympathetic) mixes sperm with glandular secretions in the urethra; <b>ejaculation</b> is the forceful expulsion by rhythmic contractions of the <b>bulbospongiosus</b> and <b>ischiocavernosus</b>. Sperm complete <b>capacitation</b> (final functional maturation) only in the female tract.</p>
-<div class="hook"><b>Memory hook:</b> "<b>SEVEN UP</b>": <b>S</b>eminiferous tubules, <b>E</b>pididymis, <b>V</b>as deferens, <b>E</b>jaculatory duct, (<b>N</b>othing), <b>U</b>rethra, <b>P</b>enis. The vas "ampulla + seminal vesicle" merge is where the ejaculatory duct is born.</div>
-</div>
-  <a class="totop" href="#male-top">↑ top</a>
-</section>
-<section class="io" id="male-io7">
-  <div class="io-head"><span class="io-num">IO 7</span><h3>Describe the parts of the urethra in relationship to the male reproduction system</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "<b>SEVEN UP</b>": <b>S</b>eminiferous tubules, <b>E</b>pididymis, <b>V</b>as deferens, <b>E</b>jaculatory duct, (<b>N</b>othing), <b>U</b>rethra, <b>P</b>enis. The vas "ampulla + seminal vesicle" merge is where the ejaculatory duct is born.</div>
+
+  <h3 class="sub" id="male-io7">3.7 &middot; Objective 7 &mdash; Describe the parts of the urethra in relationship to the male reproduction system</h3>
 <p>The male urethra (~18–20 cm) is shared by the urinary and reproductive systems and has three regions:</p>
 <ol>
 <li><b>Prostatic urethra</b> — passes through the prostate; receives the <b>ejaculatory ducts</b> and multiple prostatic ducts. This is where the reproductive and urinary tracts join.</li>
@@ -674,23 +644,29 @@
 <li><b>Spongy (penile) urethra</b> — longest; runs within the corpus spongiosum to the <b>external urethral orifice</b>; receives the <b>bulbourethral gland</b> ducts proximally.</li>
 </ol>
 <figure class="fig"><img width="1200" height="698" loading="lazy" src="anatomy-exam-3-study-guide-images/052.jpg" alt="Sagittal view showing the prostatic, membranous, and spongy portions of the male urethra."><figcaption>Sagittal view showing the prostatic, membranous, and spongy portions of the male urethra.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Three P/M/S regions from bladder out: <b>P</b>rostatic → <b>M</b>embranous → <b>S</b>pongy = "<b>Please May I</b>" go longer (spongy is longest, membranous shortest). Ejaculatory ducts enter at the <b>prostatic</b> urethra.</div>
-</div>
+<div class="pearl"><b>Memory hook:</b> Three P/M/S regions from bladder out: <b>P</b>rostatic → <b>M</b>embranous → <b>S</b>pongy = "<b>Please May I</b>" go longer (spongy is longest, membranous shortest). Ejaculatory ducts enter at the <b>prostatic</b> urethra.</div>
   <button type="button" class="test-yourself-btn" style="--acc:#2f6f8f" onclick="window.openTestYourself('Test yourself — Male Reproductive', TEST_YOURSELF.male)">Test yourself! →</button>
-<a class="totop" href="#male-top">↑ top</a>
 </section>
-</div>
-<div class="subj-panel" data-subj="fem" style="--acc:#a23b5e;--accd:#7c2b47;--accs:#f6e6ec">
-  <div id="fem-top" class="subj-header">
-    <h2>Female Reproductive System</h2>
-    <p class="prof">Prof. Hugh G. Rappa, MD</p>
-    <nav class="io-nav"><a href="#fem-io1" class="io-link">IO 1</a><a href="#fem-io2" class="io-link">IO 2</a><a href="#fem-io3" class="io-link">IO 3</a><a href="#fem-io4" class="io-link">IO 4</a><a href="#fem-io5" class="io-link">IO 5</a><a href="#fem-io6" class="io-link">IO 6</a><a href="#fem-io7" class="io-link">IO 7</a><a href="#fem-io8" class="io-link">IO 8</a><a href="#fem-io9" class="io-link">IO 9</a></nav>
-    <div class="io-objectives" style="margin:14px 0 4px;padding:14px 16px 14px 34px;background:rgba(0,0,0,.03);border-left:4px solid var(--accd,#666);border-radius:8px;font-size:14.5px;line-height:1.5"><b style="display:block;margin:0 0 6px -18px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.7">Instructional Objectives</b><ol style="margin:0;padding-left:2px"><li>Recall the embryologic development of all organs of the female reproductive tract.</li><li>Describe the perineum, including the anterior and posterior triangles.</li><li>Compare and contrast the various ligaments / peritoneal folds of the female reproductive tract.</li><li>Identify the major muscles that make up the pelvic floor.</li><li>Identify the major blood supply to the pelvis and each organ of the female reproductive.</li><li>Identify the nerves that innervate the pelvic floor and female reproductive organs.</li><li>Describe each of the organs of the female reproduction system and their relationship to other anatomical features.</li><li>Describe the cell type of the organs of the female reproductive tract.</li><li>Identify the peritoneal coverings of the female internal genitalia.</li></ol></div>
+<!-- ============ 4 FEMALE REPRODUCTIVE SYSTEM ============ -->
+<section class="deck" id="fem-top">
+  <h2 class="deck-title">4 &middot; Female Reproductive System</h2>
+  <p class="lecturer">Prof. Hugh G. Rappa, MD</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol>
+      <li>Recall the embryologic development of all organs of the female reproductive tract.</li>
+      <li>Describe the perineum, including the anterior and posterior triangles.</li>
+      <li>Compare and contrast the various ligaments / peritoneal folds of the female reproductive tract.</li>
+      <li>Identify the major muscles that make up the pelvic floor.</li>
+      <li>Identify the major blood supply to the pelvis and each organ of the female reproductive.</li>
+      <li>Identify the nerves that innervate the pelvic floor and female reproductive organs.</li>
+      <li>Describe each of the organs of the female reproduction system and their relationship to other anatomical features.</li>
+      <li>Describe the cell type of the organs of the female reproductive tract.</li>
+      <li>Identify the peritoneal coverings of the female internal genitalia.</li>
+    </ol>
   </div>
-  
-<section class="io" id="fem-io1">
-  <div class="io-head"><span class="io-num">IO 1</span><h3>Recall the embryologic development of all organs of the female reproductive tract</h3></div>
-  <div class="io-body">
+
+  <h3 class="sub" id="fem-io1">4.1 &middot; Objective 1 &mdash; Recall the embryologic development of all organs of the female reproductive tract</h3>
 <p>In the <b>absence of AMH and testosterone</b>, the female pattern develops by default.</p>
 <ul>
 <li><b>Paramesonephric (Müllerian) ducts</b> persist (no AMH to regress them) and form the major internal organs. They arise from coelomic epithelium lateral to the mesonephros (~week 6), grow caudally, and fuse in the midline into the <b>uterovaginal primordium</b>.</li>
@@ -700,13 +676,9 @@
 <li><b>Mesonephric (Wolffian) ducts regress</b> (no testosterone).</li>
 </ul>
 <figure class="fig"><img width="1173" height="1305" loading="lazy" src="anatomy-exam-3-study-guide-images/053.jpg" alt="Differentiation of the reproductive system: Müllerian ducts persist and fuse to form tubes, uterus, cervix, and upper vagina."><figcaption>Differentiation of the reproductive system: Müllerian ducts persist and fuse to form tubes, uterus, cervix, and upper vagina.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "<b>M</b>üllerian → <b>M</b>ade female." No AMH = Müllerian survives; unfused tops = tubes, fused bottom = uterus/cervix/upper vagina. Lower vagina is the odd one out (urogenital sinus).</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io2">
-  <div class="io-head"><span class="io-num">IO 2</span><h3>Describe the perineum, including the anterior and posterior triangles</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "<b>M</b>üllerian → <b>M</b>ade female." No AMH = Müllerian survives; unfused tops = tubes, fused bottom = uterus/cervix/upper vagina. Lower vagina is the odd one out (urogenital sinus).</div>
+
+  <h3 class="sub" id="fem-io2">4.2 &middot; Objective 2 &mdash; Describe the perineum, including the anterior and posterior triangles</h3>
 <p>The <b>perineum</b> is the diamond-shaped region between the thighs, bounded anteriorly by the <b>pubic symphysis</b>, laterally by the <b>ischial tuberosities</b>, and posteriorly by the <b>coccyx</b>.</p>
 <p>An imaginary line between the ischial tuberosities divides it into two triangles:</p>
 <ul>
@@ -715,13 +687,9 @@
 </ul>
 <figure class="fig"><img width="800" height="279" loading="lazy" src="anatomy-exam-3-study-guide-images/054.jpg" alt="Female perineum: the diamond divided into the anterior (urogenital) and posterior (anal) triangles."><figcaption>Female perineum: the diamond divided into the anterior (urogenital) and posterior (anal) triangles.</figcaption></figure>
 <figure class="fig"><img width="640" height="480" loading="lazy" src="anatomy-exam-3-study-guide-images/055.jpg" alt="Surface boundaries of the female perineum: mons pubis, thighs, gluteal folds, and coccyx."><figcaption>Surface boundaries of the female perineum: mons pubis, thighs, gluteal folds, and coccyx.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Diamond corners = "Pubic symphysis (front), Ischial tuberosities (sides), Coccyx (back)." Front triangle = <b>U</b>rogenital (urine + vagina); back triangle = <b>A</b>nal.</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io3">
-  <div class="io-head"><span class="io-num">IO 3</span><h3>Compare and contrast the various ligaments / peritoneal folds of the female reproductive tract</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Diamond corners = "Pubic symphysis (front), Ischial tuberosities (sides), Coccyx (back)." Front triangle = <b>U</b>rogenital (urine + vagina); back triangle = <b>A</b>nal.</div>
+
+  <h3 class="sub" id="fem-io3">4.3 &middot; Objective 3 &mdash; Compare and contrast the various ligaments / peritoneal folds of the female reproductive tract</h3>
 <p>Peritoneum drapes the pelvic organs, forming supporting folds and two clinically important pouches.</p>
 <p><b>Peritoneal pouches:</b> the <b>vesicouterine pouch</b> (between bladder and uterus) and the deeper <b>rectouterine pouch (of Douglas)</b> (between uterus and rectum — the lowest point of the female peritoneal cavity, where fluid collects).</p>
 <p><b>Ligaments / folds:</b></p>
@@ -736,24 +704,16 @@
 </ul>
 <figure class="fig"><img width="640" height="480" loading="lazy" src="anatomy-exam-3-study-guide-images/056.jpg" alt="Uterus, tubes, ovaries and their supporting ligaments/peritoneal folds."><figcaption>Uterus, tubes, ovaries and their supporting ligaments/peritoneal folds.</figcaption></figure>
 <figure class="fig"><img width="800" height="600" loading="lazy" src="anatomy-exam-3-study-guide-images/057.jpg" alt="Ligaments of the female internal genitalia in relation to the broad ligament."><figcaption>Ligaments of the female internal genitalia in relation to the broad ligament.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> <b>Suspensory ligament carries the ovarian vessels</b> (surgical caution). Round ligament follows the old gubernaculum path to the labia majora. Cardinal ligament = "cardinal" support (uterine artery runs in it — "water under the bridge").</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io4">
-  <div class="io-head"><span class="io-num">IO 4</span><h3>Identify the major muscles that make up the pelvic floor</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> <b>Suspensory ligament carries the ovarian vessels</b> (surgical caution). Round ligament follows the old gubernaculum path to the labia majora. Cardinal ligament = "cardinal" support (uterine artery runs in it — "water under the bridge").</div>
+
+  <h3 class="sub" id="fem-io4">4.4 &middot; Objective 4 &mdash; Identify the major muscles that make up the pelvic floor</h3>
 <p>Same pelvic diaphragm as in the male: <b>levator ani</b> (puborectalis, pubococcygeus, iliococcygeus) + <b>coccygeus</b>. It supports the pelvic organs, seals the pelvic outlet, and helps continence and defecation.</p>
 <p>In females, the levator ani also includes the <b>pubovaginalis</b> slip encircling the vagina. Perineal muscles around the vagina: <b>bulbospongiosus</b>, <b>external urethral sphincter</b>, and the <b>urethrovaginal sphincter</b>.</p>
 <figure class="fig"><img width="621" height="605" loading="lazy" src="anatomy-exam-3-study-guide-images/058.jpg" alt="Pelvic diaphragm: levator ani (puborectalis, pubococcygeus, iliococcygeus) and coccygeus."><figcaption>Pelvic diaphragm: levator ani (puborectalis, pubococcygeus, iliococcygeus) and coccygeus.</figcaption></figure>
 <figure class="fig"><img width="450" height="271" loading="lazy" src="anatomy-exam-3-study-guide-images/059.jpg" alt="Muscles of the female pelvic floor."><figcaption>Muscles of the female pelvic floor.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Same "PIP + coccygeus" as the male, plus a <b>pubovaginalis</b> sling. Weakened levator ani → prolapse and stress incontinence.</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io5">
-  <div class="io-head"><span class="io-num">IO 5</span><h3>Identify the major blood supply to the pelvis and each organ of the female reproductive</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Same "PIP + coccygeus" as the male, plus a <b>pubovaginalis</b> sling. Weakened levator ani → prolapse and stress incontinence.</div>
+
+  <h3 class="sub" id="fem-io5">4.5 &middot; Objective 5 &mdash; Identify the major blood supply to the pelvis and each organ of the female reproductive</h3>
 <ul>
 <li><b>Ovarian arteries</b> — from the <b>abdominal aorta</b> (below the renals), travel in the suspensory ligament (reflecting ovarian origin near the kidneys).</li>
 <li><b>Uterine artery</b> — from the <b>internal iliac</b>; runs in the cardinal ligament and <b>crosses over the ureter</b> ("water under the bridge"). Supplies uterus and anastomoses with ovarian and vaginal arteries.</li>
@@ -763,13 +723,9 @@
 <p><b>Venous drainage:</b> the uterine/vaginal/pampiniform plexuses → internal iliac veins; ovarian veins mirror the male — <b>right ovarian vein → IVC, left ovarian vein → left renal vein</b>.</p>
 <figure class="fig"><img width="800" height="600" loading="lazy" src="anatomy-exam-3-study-guide-images/060.jpg" alt="Uterine arteries (from internal iliac) and ovarian arteries (from the aorta) supplying the uterus."><figcaption>Uterine arteries (from internal iliac) and ovarian arteries (from the aorta) supplying the uterus.</figcaption></figure>
 <figure class="fig"><img width="800" height="600" loading="lazy" src="anatomy-exam-3-study-guide-images/061.jpg" alt="Vasculature of the vagina and adjacent pelvic organs."><figcaption>Vasculature of the vagina and adjacent pelvic organs.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "<b>Water (ureter) under the bridge (uterine artery).</b>" Ovarian arteries high (aorta); uterine/vaginal from internal iliac. Left ovarian vein → left renal vein.</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io6">
-  <div class="io-head"><span class="io-num">IO 6</span><h3>Identify the nerves that innervate the pelvic floor and female reproductive organs</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "<b>Water (ureter) under the bridge (uterine artery).</b>" Ovarian arteries high (aorta); uterine/vaginal from internal iliac. Left ovarian vein → left renal vein.</div>
+
+  <h3 class="sub" id="fem-io6">4.6 &middot; Objective 6 &mdash; Identify the nerves that innervate the pelvic floor and female reproductive organs</h3>
 <ul>
 <li><b>Pudendal nerve (S2–S4)</b> — somatic supply to the perineum, external genitalia, and pelvic floor/perineal muscles (including the external urethral & anal sphincters). Stretched in childbirth → incontinence.</li>
 <li><b>Pelvic splanchnic nerves (S2–S4, parasympathetic)</b> — to the pelvic organs; drive clitoral erection.</li>
@@ -777,13 +733,9 @@
 </ul>
 <p>Uterine/cervical pain above the pelvic pain line travels with sympathetics; below the pelvic pain line (e.g., lower vagina, perineum) travels with the pudendal nerve.</p>
 <figure class="fig"><img width="800" height="596" loading="lazy" src="anatomy-exam-3-study-guide-images/062.jpg" alt="Female internal genitalia and their neurovascular relationships in the pelvis."><figcaption>Female internal genitalia and their neurovascular relationships in the pelvis.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Ovarian afferents = <b>T10–T11</b> (same as the testis and the umbilicus dermatome) → periovulatory pain refers to the umbilical region. Pudendal = perineum + voluntary sphincters.</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io7">
-  <div class="io-head"><span class="io-num">IO 7</span><h3>Describe each of the organs of the female reproduction system and their relationship to other anatomical features</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Ovarian afferents = <b>T10–T11</b> (same as the testis and the umbilicus dermatome) → periovulatory pain refers to the umbilical region. Pudendal = perineum + voluntary sphincters.</div>
+
+  <h3 class="sub" id="fem-io7">4.7 &middot; Objective 7 &mdash; Describe each of the organs of the female reproduction system and their relationship to other anatomical features</h3>
 <p><b>Ovaries</b> — the primary sex organs (produce oocytes + estrogen/progesterone). Lie against the lateral pelvic wall, posterior to the broad ligament; anchored by the ovarian and suspensory ligaments. Blood via the ovarian artery; right ovarian vein → IVC, left → left renal vein.</p>
 <figure class="fig"><img width="713" height="599" loading="lazy" src="anatomy-exam-3-study-guide-images/063.jpg" alt="Ovary structure with developing follicles; attachments via the mesovarium, ovarian, and suspensory ligaments."><figcaption>Ovary structure with developing follicles; attachments via the mesovarium, ovarian, and suspensory ligaments.</figcaption></figure>
 <p><b>Uterine (fallopian) tubes</b> — receive the ovulated oocyte and are the usual site of fertilization; lie in the free (superior) edge of the broad ligament. Parts: <b>infundibulum</b> (with fimbriae) → <b>ampulla</b> (widest; fertilization site) → <b>isthmus</b> → <b>intramural/uterine part</b>. Do not physically attach to the ovary.</p>
@@ -796,13 +748,9 @@
 <figure class="fig"><img width="800" height="600" loading="lazy" src="anatomy-exam-3-study-guide-images/067.jpg" alt="Female external genitalia (vulva): mons pubis, labia, clitoris, and vestibule."><figcaption>Female external genitalia (vulva): mons pubis, labia, clitoris, and vestibule.</figcaption></figure>
 <p><b>Breast</b> — glandular lobes drained by lactiferous ducts to the nipple; supported by <b>suspensory (Cooper's) ligaments</b>; lymph drains mostly to the <b>axillary nodes</b>. Lies over pectoralis major/serratus anterior (ribs 2–6).</p>
 <figure class="fig"><img width="734" height="1024" loading="lazy" src="anatomy-exam-3-study-guide-images/068.jpg" alt="Anatomy of the breast: glandular lobes, ducts, Cooper's ligaments, and axillary lymphatic drainage."><figcaption>Anatomy of the breast: glandular lobes, ducts, Cooper's ligaments, and axillary lymphatic drainage.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Fertilization happens in the <b>ampulla</b>. Uterus is <b>anteverted + anteflexed</b>. Homologies: labia majora↔scrotum, clitoris↔penis, Bartholin↔bulbourethral.</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io8">
-  <div class="io-head"><span class="io-num">IO 8</span><h3>Describe the cell type of the organs of the female reproductive tract</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Fertilization happens in the <b>ampulla</b>. Uterus is <b>anteverted + anteflexed</b>. Homologies: labia majora↔scrotum, clitoris↔penis, Bartholin↔bulbourethral.</div>
+
+  <h3 class="sub" id="fem-io8">4.8 &middot; Objective 8 &mdash; Describe the cell type of the organs of the female reproductive tract</h3>
 <table>
 <tr><th>Organ</th><th>Epithelium / cell type</th></tr>
 <tr><td><b>Ovary (surface)</b></td><td>Simple cuboidal ("germinal") epithelium over a tunica albuginea; cortex holds follicles (oocyte + follicular/granulosa cells).</td></tr>
@@ -815,13 +763,9 @@
 <figure class="fig"><img width="498" height="534" loading="lazy" src="anatomy-exam-3-study-guide-images/069.jpg" alt="Uterine tube histology: ciliated and secretory simple columnar epithelium."><figcaption>Uterine tube histology: ciliated and secretory simple columnar epithelium.</figcaption></figure>
 <figure class="fig"><img width="303" height="354" loading="lazy" src="anatomy-exam-3-study-guide-images/070.png" alt="Uterine wall layers: endometrium (functionalis + basalis), myometrium, perimetrium."><figcaption>Uterine wall layers: endometrium (functionalis + basalis), myometrium, perimetrium.</figcaption></figure>
 <p><b>Endometrial cycle:</b> the stratum functionalis builds each month under ovarian hormones; at menstruation the spiral arteries constrict, the functionalis self-digests and sloughs, and the basalis regenerates it.</p>
-<div class="hook"><b>Memory hook:</b> "Tubes have <b>cilia</b> to sweep the egg; vagina is <b>stratified squamous</b> for wear." Functionalis <b>F</b>alls off; <b>B</b>asalis stays to re<b>B</b>uild.</div>
-</div>
-  <a class="totop" href="#fem-top">↑ top</a>
-</section>
-<section class="io" id="fem-io9">
-  <div class="io-head"><span class="io-num">IO 9</span><h3>Identify the peritoneal coverings of the female internal genitalia</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "Tubes have <b>cilia</b> to sweep the egg; vagina is <b>stratified squamous</b> for wear." Functionalis <b>F</b>alls off; <b>B</b>asalis stays to re<b>B</b>uild.</div>
+
+  <h3 class="sub" id="fem-io9">4.9 &middot; Objective 9 &mdash; Identify the peritoneal coverings of the female internal genitalia</h3>
 <p>The peritoneum reflects over the pelvic organs, giving each a characteristic covering:</p>
 <ul>
 <li><b>Uterus</b> — the fundus and body are covered by peritoneum (<b>perimetrium</b>), continuous laterally with the <b>broad ligament</b>. The uterus is <b>intraperitoneal</b>.</li>
@@ -830,23 +774,26 @@
 <li><b>Peritoneal pouches</b> — <b>vesicouterine</b> (anterior) and <b>rectouterine of Douglas</b> (posterior, the lowest point).</li>
 </ul>
 <figure class="fig"><img width="640" height="480" loading="lazy" src="anatomy-exam-3-study-guide-images/071.jpg" alt="Peritoneal coverings and folds: broad ligament (mesometrium, mesosalpinx, mesovarium) draping the uterus, tubes, and ovaries."><figcaption>Peritoneal coverings and folds: broad ligament (mesometrium, mesosalpinx, mesovarium) draping the uterus, tubes, and ovaries.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> The ovary is the "open door" — its surface is <b>germinal epithelium, not peritoneum</b>, so the fimbriae catch the ovulated egg from the peritoneal cavity. Uterus = intraperitoneal (perimetrium); rectouterine pouch of Douglas is the lowest sump.</div>
-</div>
+<div class="pearl"><b>Memory hook:</b> The ovary is the "open door" — its surface is <b>germinal epithelium, not peritoneum</b>, so the fimbriae catch the ovulated egg from the peritoneal cavity. Uterus = intraperitoneal (perimetrium); rectouterine pouch of Douglas is the lowest sump.</div>
   <button type="button" class="test-yourself-btn" style="--acc:#a23b5e" onclick="window.openTestYourself('Test yourself — Female Reproductive', TEST_YOURSELF.fem)">Test yourself! →</button>
-<a class="totop" href="#fem-top">↑ top</a>
 </section>
-</div>
-<div class="subj-panel" data-subj="neph" style="--acc:#7a4fa3;--accd:#5a3a7a;--accs:#efe8f6">
-  <div id="neph-top" class="subj-header">
-    <h2>Nephrology / Urinary System</h2>
-    <p class="prof">Prof. Lauren Reynolds, MSPA, PA-C</p>
-    <nav class="io-nav"><a href="#neph-io1" class="io-link">IO 1</a><a href="#neph-io2" class="io-link">IO 2</a><a href="#neph-io3" class="io-link">IO 3</a><a href="#neph-io4" class="io-link">IO 4</a><a href="#neph-io5" class="io-link">IO 5</a><a href="#neph-io6" class="io-link">IO 6</a></nav>
-    <div class="io-objectives" style="margin:14px 0 4px;padding:14px 16px 14px 34px;background:rgba(0,0,0,.03);border-left:4px solid var(--accd,#666);border-radius:8px;font-size:14.5px;line-height:1.5"><b style="display:block;margin:0 0 6px -18px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.7">Instructional Objectives</b><ol style="margin:0;padding-left:2px"><li>Identify the organs that make up the urinary system.</li><li>Describe the anatomy of the kidneys.</li><li>Describe the blood flow to the kidney(s) and nephrons.</li><li>Compare and contrast the various sections and parts of the nephron.</li><li>Describe the anatomical relationships of each component of the urinary system and the surrounding anatomical structures.</li><li>Compare and contrast the cell types of the urinary system.</li></ol></div>
+<!-- ============ 5 NEPHROLOGY / URINARY SYSTEM ============ -->
+<section class="deck" id="neph-top">
+  <h2 class="deck-title">5 &middot; Nephrology / Urinary System</h2>
+  <p class="lecturer">Prof. Lauren Reynolds, MSPA, PA-C</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol>
+      <li>Identify the organs that make up the urinary system.</li>
+      <li>Describe the anatomy of the kidneys.</li>
+      <li>Describe the blood flow to the kidney(s) and nephrons.</li>
+      <li>Compare and contrast the various sections and parts of the nephron.</li>
+      <li>Describe the anatomical relationships of each component of the urinary system and the surrounding anatomical structures.</li>
+      <li>Compare and contrast the cell types of the urinary system.</li>
+    </ol>
   </div>
-  
-<section class="io" id="neph-io1">
-  <div class="io-head"><span class="io-num">IO 1</span><h3>Identify the organs that make up the urinary system</h3></div>
-  <div class="io-body">
+
+  <h3 class="sub" id="neph-io1">5.1 &middot; Objective 1 &mdash; Identify the organs that make up the urinary system</h3>
 <p>The urinary system = <b>kidneys</b> (primary organs) + the <b>urinary tract</b> (ureters, bladder, urethra).</p>
 <ul>
 <li><b>Kidneys</b> — filter waste from the blood and convert filtrate into urine; also regulate BP, electrolytes, pH, and produce erythropoietin & calcitriol.</li>
@@ -856,13 +803,9 @@
 </ul>
 <p>The act of urination is <b>micturition</b>.</p>
 <figure class="fig"><img width="1050" height="1041" loading="lazy" src="anatomy-exam-3-study-guide-images/072.jpg" alt="Organs of the urinary system: kidneys, ureters, bladder, and urethra."><figcaption>Organs of the urinary system: kidneys, ureters, bladder, and urethra.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "<b>Kidneys make it, ureters take it, bladder stores it, urethra pours it.</b>"</div>
-</div>
-  <a class="totop" href="#neph-top">↑ top</a>
-</section>
-<section class="io" id="neph-io2">
-  <div class="io-head"><span class="io-num">IO 2</span><h3>Describe the anatomy of the kidneys</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "<b>Kidneys make it, ureters take it, bladder stores it, urethra pours it.</b>"</div>
+
+  <h3 class="sub" id="neph-io2">5.2 &middot; Objective 2 &mdash; Describe the anatomy of the kidneys</h3>
 <p>The kidneys are bean-shaped, <b>retroperitoneal</b> organs, ~11 cm long. Vertebral levels: <b>right T12–L3</b> (lower, pushed down by the liver), <b>left T10/11–L2</b>.</p>
 <p><b>Hilum</b> (concave medial border) transmits the NAVs and pelvis: renal artery, renal vein, renal pelvis, nerves, lymphatics. The <b>renal sinus</b> is the internal fat-filled space housing vessels, calyces, and the pelvis.</p>
 <figure class="fig"><img width="688" height="1125" loading="lazy" src="anatomy-exam-3-study-guide-images/073.jpg" alt="Retroperitoneal kidney location and the structures entering/leaving at the hilum."><figcaption>Retroperitoneal kidney location and the structures entering/leaving at the hilum.</figcaption></figure>
@@ -871,13 +814,9 @@
 <p><b>Surrounding layers (deep → superficial):</b> <b>fibrous (renal) capsule</b> → <b>perinephric (perirenal) fat</b> → <b>renal fascia</b> → <b>paranephric (pararenal) fat</b> → peritoneum.</p>
 <figure class="fig"><img width="1200" height="937" loading="lazy" src="anatomy-exam-3-study-guide-images/075.jpg" alt="Kidney coverings from deep to superficial: fibrous capsule, perinephric fat, renal fascia, paranephric fat."><figcaption>Kidney coverings from deep to superficial: fibrous capsule, perinephric fat, renal fascia, paranephric fat.</figcaption></figure>
 <figure class="fig"><img width="1200" height="906" loading="lazy" src="anatomy-exam-3-study-guide-images/076.jpg" alt="Cross section at the L1/L2 disc level showing the retroperitoneal kidneys and their relations."><figcaption>Cross section at the L1/L2 disc level showing the retroperitoneal kidneys and their relations.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "Right is lower" (liver pushes it down). Coverings deep→superficial: "<b>Capsule, Peri-fat, Fascia, Para-fat</b>" — fat sandwiches the fascia. Urine path inside: papilla → minor → major calyx → pelvis.</div>
-</div>
-  <a class="totop" href="#neph-top">↑ top</a>
-</section>
-<section class="io" id="neph-io3">
-  <div class="io-head"><span class="io-num">IO 3</span><h3>Describe the blood flow to the kidney(s) and nephrons</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> "Right is lower" (liver pushes it down). Coverings deep→superficial: "<b>Capsule, Peri-fat, Fascia, Para-fat</b>" — fat sandwiches the fascia. Urine path inside: papilla → minor → major calyx → pelvis.</div>
+
+  <h3 class="sub" id="neph-io3">5.3 &middot; Objective 3 &mdash; Describe the blood flow to the kidney(s) and nephrons</h3>
 <p><b>Arterial inflow (aorta → glomerulus):</b></p>
 <p><b>Renal artery → segmental → interlobar (between pyramids) → arcuate (arching over pyramid bases) → interlobular (cortical radiate) → afferent arteriole → glomerulus.</b></p>
 <figure class="fig"><img width="1200" height="772" loading="lazy" src="anatomy-exam-3-study-guide-images/077.jpg" alt="Renal arterial tree from the renal artery down to the afferent arteriole and glomerulus."><figcaption>Renal arterial tree from the renal artery down to the afferent arteriole and glomerulus.</figcaption></figure>
@@ -885,13 +824,9 @@
 <p><b>Glomerulus → efferent arteriole →</b> either <b>peritubular capillaries</b> (around cortical tubules) or <b>vasa recta</b> (long loops paralleling juxtamedullary nephron loops; concentrate urine).</p>
 <p><b>Venous outflow (reverse of arterial, no "segmental"):</b> <b>vasa recta/peritubular → interlobular → arcuate → interlobar → renal vein → IVC.</b></p>
 <figure class="fig"><img width="1200" height="952" loading="lazy" src="anatomy-exam-3-study-guide-images/078.jpg" alt="Renal microcirculation: afferent arteriole → glomerulus → efferent arteriole → peritubular capillaries / vasa recta → venous return."><figcaption>Renal microcirculation: afferent arteriole → glomerulus → efferent arteriole → peritubular capillaries / vasa recta → venous return.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Two arterioles around the glomerulus (<b>Afferent In, Efferent Exits</b>) = the trick that lets the kidney control filtration pressure. Arteries: "<b>Some Interns Are Interested</b>" — Segmental, Interlobar, Arcuate, Interlobular.</div>
-</div>
-  <a class="totop" href="#neph-top">↑ top</a>
-</section>
-<section class="io" id="neph-io4">
-  <div class="io-head"><span class="io-num">IO 4</span><h3>Compare and contrast the various sections and parts of the nephron</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Two arterioles around the glomerulus (<b>Afferent In, Efferent Exits</b>) = the trick that lets the kidney control filtration pressure. Arteries: "<b>Some Interns Are Interested</b>" — Segmental, Interlobar, Arcuate, Interlobular.</div>
+
+  <h3 class="sub" id="neph-io4">5.4 &middot; Objective 4 &mdash; Compare and contrast the various sections and parts of the nephron</h3>
 <p>The <b>nephron</b> is the functional unit. Two components: the <b>renal corpuscle</b> (filter) and the <b>renal tubule</b> (processor).</p>
 <p><b>Renal corpuscle:</b> <b>glomerulus</b> (capillary tuft) + <b>glomerular (Bowman's) capsule</b>.</p>
 <p><b>Renal tubule (filtrate order):</b></p>
@@ -913,13 +848,9 @@
 <figure class="fig"><img width="1200" height="1570" loading="lazy" src="anatomy-exam-3-study-guide-images/080.jpg" alt="Cortical vs. juxtamedullary nephrons: short loops with peritubular capillaries vs. long loops with vasa recta."><figcaption>Cortical vs. juxtamedullary nephrons: short loops with peritubular capillaries vs. long loops with vasa recta.</figcaption></figure>
 <p><b>Juxtaglomerular apparatus (JGA):</b> where the DCT contacts the afferent arteriole. <b>Macula densa</b> (DCT) senses NaCl/flow; <b>juxtaglomerular (granular) cells</b> (afferent arteriole smooth muscle) secrete <b>renin</b> in response to low BP or macula densa signals; <b>EPO-producing/oxygen-sensing cells</b> release erythropoietin.</p>
 <figure class="fig"><img width="808" height="617" loading="lazy" src="anatomy-exam-3-study-guide-images/081.png" alt="Glomerulus and filtration membrane within Bowman's capsule."><figcaption>Glomerulus and filtration membrane within Bowman's capsule.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> Filtrate route: "<b>Bowman's → PCT → Loop (down thick/thin, up thin/thick) → DCT → Collecting duct</b>." JGA = "BP + GFR sensor" → renin → RAAS. Long loops + vasa recta = concentrating machinery.</div>
-</div>
-  <a class="totop" href="#neph-top">↑ top</a>
-</section>
-<section class="io" id="neph-io5">
-  <div class="io-head"><span class="io-num">IO 5</span><h3>Describe the anatomical relationships of each component of the urinary system and the surrounding anatomical structures</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Filtrate route: "<b>Bowman's → PCT → Loop (down thick/thin, up thin/thick) → DCT → Collecting duct</b>." JGA = "BP + GFR sensor" → renin → RAAS. Long loops + vasa recta = concentrating machinery.</div>
+
+  <h3 class="sub" id="neph-io5">5.5 &middot; Objective 5 &mdash; Describe the anatomical relationships of each component of the urinary system and the surrounding anatomical structures</h3>
 <p><b>Kidneys</b> — retroperitoneal against the posterior wall; the <b>right</b> sits below the liver, the <b>left</b> relates to the stomach, spleen, pancreas, and left colic flexure. Adrenal glands cap the superior poles. Renal artery off the aorta; renal vein to the IVC (the <b>left renal vein</b> crosses anterior to the aorta under the SMA and receives the left gonadal & suprarenal veins).</p>
 <figure class="fig"><img width="1010" height="1125" loading="lazy" src="anatomy-exam-3-study-guide-images/082.jpg" alt="Surrounding relationships of the kidney within the retroperitoneum."><figcaption>Surrounding relationships of the kidney within the retroperitoneum.</figcaption></figure>
 <p><b>Ureters</b> — retroperitoneal, ~25 cm; from the renal pelvis they descend on the psoas, cross the pelvic brim at the bifurcation of the common iliac vessels, and enter the posterolateral bladder. Three common stone sites: <b>ureteropelvic junction (UPJ)</b>, crossing the <b>common iliac vessels</b>, and the <b>ureterovesical junction (UVJ)</b>. Clinically the ureter passes <b>inferior to the gonadal vessels</b> ("water under the bridge").</p>
@@ -929,13 +860,9 @@
 <br>In <b>males</b>: rectum is posterosuperior, prostate lies inferiorly.</p>
 <figure class="fig"><img width="1200" height="720" loading="lazy" src="anatomy-exam-3-study-guide-images/084.jpg" alt="Urinary bladder relationships in the pelvis."><figcaption>Urinary bladder relationships in the pelvis.</figcaption></figure>
 <p><b>Urethra</b> — <b>female ~3–4 cm</b> (opens in the vestibule, anterior to the vaginal orifice, posterior to the clitoris); <b>male ~18–20 cm</b> with prostatic, membranous, and spongy regions.</p>
-<div class="hook"><b>Memory hook:</b> Ureter stone stops: "<b>UPJ, iliac crossing, UVJ</b>" (top, middle, bottom). "Water (ureter) under the bridge (gonadal vessels)." Only the <b>bladder dome</b> touches peritoneum.</div>
-</div>
-  <a class="totop" href="#neph-top">↑ top</a>
-</section>
-<section class="io" id="neph-io6">
-  <div class="io-head"><span class="io-num">IO 6</span><h3>Compare and contrast the cell types of the urinary system</h3></div>
-  <div class="io-body">
+<div class="pearl"><b>Memory hook:</b> Ureter stone stops: "<b>UPJ, iliac crossing, UVJ</b>" (top, middle, bottom). "Water (ureter) under the bridge (gonadal vessels)." Only the <b>bladder dome</b> touches peritoneum.</div>
+
+  <h3 class="sub" id="neph-io6">5.6 &middot; Objective 6 &mdash; Compare and contrast the cell types of the urinary system</h3>
 <table>
 <tr><th>Structure</th><th>Epithelium / cells</th><th>Why</th></tr>
 <tr><td><b>Glomerular capillaries</b></td><td><b>Fenestrated endothelium</b></td><td>Large pores → highly permeable to plasma (not cells).</td></tr>
@@ -951,18 +878,15 @@
 <figure class="fig"><img width="1200" height="1095" loading="lazy" src="anatomy-exam-3-study-guide-images/085.jpg" alt="Renal corpuscle: parietal (simple squamous) and visceral (podocyte) layers around the capsular space."><figcaption>Renal corpuscle: parietal (simple squamous) and visceral (podocyte) layers around the capsular space.</figcaption></figure>
 <figure class="fig"><img width="1200" height="888" loading="lazy" src="anatomy-exam-3-study-guide-images/086.jpg" alt="Proximal convoluted tubule lined by simple cuboidal cells with a brush border."><figcaption>Proximal convoluted tubule lined by simple cuboidal cells with a brush border.</figcaption></figure>
 <figure class="fig"><img width="1200" height="694" loading="lazy" src="anatomy-exam-3-study-guide-images/087.jpg" alt="Ureter wall: transitional epithelium (urothelium), smooth muscle, and adventitia."><figcaption>Ureter wall: transitional epithelium (urothelium), smooth muscle, and adventitia.</figcaption></figure>
-<div class="hook"><b>Memory hook:</b> "<b>Transitional epithelium = the whole plumbing</b> (calyces → proximal urethra) because it stretches." PCT has a <b>brush border</b> (busy reabsorbing); the filtration barrier blocks albumin by <b>size + negative charge</b>.</div>
-</div>
+<div class="pearl"><b>Memory hook:</b> "<b>Transitional epithelium = the whole plumbing</b> (calyces → proximal urethra) because it stretches." PCT has a <b>brush border</b> (busy reabsorbing); the filtration barrier blocks albumin by <b>size + negative charge</b>.</div>
   <button type="button" class="test-yourself-btn" style="--acc:#7a4fa3" onclick="window.openTestYourself('Test yourself — Renal/Urinary', TEST_YOURSELF.neph)">Test yourself! →</button>
-<a class="totop" href="#neph-top">↑ top</a>
 </section>
-</div>
 
-  <div class="footer">
-    Built from lecture materials &middot; figures from course slides &middot; organized by Instructional Objective.
-    <p style="margin:14px 0 0;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
-    <p style="margin:10px 0 0;font-size:12px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
-  </div>
+  <footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from lecture materials &middot; figures from course slides &middot; organized by Instructional Objective &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
 
 </main>
 </div>
