@@ -184,6 +184,7 @@
       }
       .page > .search-wrap { order: 30; }
       .page > #stats-widget { order: 35; }
+      .page > #relax-cta-row { order: 36; }
       .page > #semester-card { order: 40; }
       .page > #continue-widget { order: 45; }
       .page > .more-links { order: 50; }
@@ -489,6 +490,9 @@
       display: flex; flex-direction: column; align-items: center; gap: 11px;
       text-align: center;
     }
+    /* Relax is its own standalone element under the stats card (base margin here,
+       before the >=1180px block, so that block's `margin: 0` wins on desktop). */
+    .relax-cta-row { text-align: center; margin: 14px 0 0; }
     .guides-btn-floating { display: none; }
 
     /* Must come after both base `margin: 18px 0`/`display: none` rules above
@@ -517,6 +521,14 @@
          so shrink it here just enough to hold one line (~208px in a ~210px
          content box). */
       .stats-widget .cc-label { font-size: 10.5px; letter-spacing: -.2px; }
+      /* #relax-cta-row stacks under the stats card on the left rail; #continue-widget
+         is pushed below it. Exact tops set by alignSidebars() (dynamic heights). */
+      .relax-cta-row {
+        position: absolute;
+        right: calc(100% + 24px);
+        width: 260px;
+        margin: 0;
+      }
       .week-widget {
         position: absolute;
         top: 0;
@@ -661,12 +673,36 @@
     }
     .my-progress-link svg { width: 15px; height: 15px; flex: none; opacity: .95; }
     .my-progress-link:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,.14); }
-    .stats-links { display: flex; gap: 9px; flex-wrap: wrap; justify-content: center; }
-    .relax-link { background: #e7f2ef; color: #2f7d6b; }
-    .relax-link:hover { box-shadow: 0 4px 12px rgba(47,125,107,.16); }
-    :root[data-theme="dark"] .relax-link { background: #16261f; color: #6fc0a8; }
-    .relax-link:hover { border-color: #2f7d6b; }
-    :root[data-theme="dark"] .relax-link:hover { border-color: #6fc0a8; }
+    /* Playful icon hovers -------------------------------------------------- */
+    /* Cap tips its hat when you hover the counter */
+    .class-counter .cc-icon svg { transition: transform .35s cubic-bezier(.34,1.56,.64,1); transform-origin: 58% 68%; }
+    .class-counter:hover .cc-icon svg { transform: rotate(-15deg); }
+    /* My Progress: the trend line draws upward on hover */
+    .my-progress-link .mp-line { stroke-dasharray: 1; stroke-dashoffset: 0; }
+    .my-progress-link:hover .mp-line { animation: mp-draw .75s ease forwards; }
+    @keyframes mp-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+    /* Relax: standalone calming button (its own element under the stats card) */
+    .relax-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: #e7f2ef; color: #2f7d6b;
+      border: 1px solid var(--border, #e5e7ef); border-radius: 999px;
+      padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: border-color .15s, transform .15s, box-shadow .15s;
+    }
+    .relax-cta svg { width: 17px; height: 17px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+    .relax-cta .leaf-blade { fill: transparent; transition: fill .5s ease; }
+    .relax-cta:hover { border-color: #2f7d6b; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(47,125,107,.18); }
+    .relax-cta:hover svg { transform: scale(1.18) rotate(-6deg); }
+    .relax-cta:hover .leaf-blade { fill: rgba(47,125,107,.28); }
+    :root[data-theme="dark"] .relax-cta { background: #16261f; color: #6fc0a8; }
+    :root[data-theme="dark"] .relax-cta:hover { border-color: #6fc0a8; box-shadow: 0 6px 16px rgba(0,0,0,.4); }
+    :root[data-theme="dark"] .relax-cta:hover .leaf-blade { fill: rgba(111,192,168,.30); }
+    @media (prefers-reduced-motion: reduce) {
+      .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
+      .my-progress-link:hover .mp-line { animation: none; }
+      .class-counter .cc-icon svg, .relax-cta svg { transition: none; }
+    }
 
     .tabs {
       display: flex;
@@ -1373,16 +1409,17 @@
         <span class="cc-num" id="class-counter-value">0</span>
         <span class="cc-label">questions answered by the Class of 2028</span>
       </div>
-      <div class="stats-links">
-        <a href="progress.html" class="my-progress-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 14l3.5-3.6 2.8 2.8L21 6.5"/></svg>
-          <span>My Progress</span>
-        </a>
-        <a href="relax.html" class="my-progress-link relax-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20.5A7.5 7.5 0 0 1 9.7 5.8C15 4.7 16.7 4.2 19 2c1 2.2 2 4.5 2 8.2 0 5.7-4.5 10.3-10 10.3Z"/><path d="M2 21.5c0-3.2 2-5.7 5.4-6.4"/></svg>
-          <span>Relax</span>
-        </a>
-      </div>
+      <a href="progress.html" class="my-progress-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path class="mp-line" pathLength="1" d="M7 14l3.5-3.6 2.8 2.8L21 6.5"/></svg>
+        <span>My Progress</span>
+      </a>
+    </div>
+
+    <div id="relax-cta-row" class="relax-cta-row">
+      <a href="relax.html" class="relax-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="leaf-blade" d="M11 20.5A7.5 7.5 0 0 1 9.7 5.8C15 4.7 16.7 4.2 19 2c1 2.2 2 4.5 2 8.2 0 5.7-4.5 10.3-10 10.3Z"/><path d="M2 21.5c0-3.2 2-5.7 5.4-6.4"/></svg>
+        <span>Relax</span>
+      </a>
     </div>
 
     <div class="mobile-widgets-row">
@@ -2840,9 +2877,14 @@
         // Left sidebar: #stats-widget aligns to the semester-card top line;
         // #continue-widget stacks directly below it (its dynamic height + a gap).
         if (statsEl) statsEl.style.top = offset + "px";
+        // Left rail stack: stats card -> Relax button -> Continue, each below the last.
+        const relaxEl = document.getElementById("relax-cta-row");
+        const statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
+        let stackTop = offset + (statsH ? statsH + 18 : 0);
+        if (relaxEl) relaxEl.style.top = stackTop + "px";
         if (continueEl) {
-          const statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
-          continueEl.style.top = (offset + (statsH ? statsH + 18 : 0)) + "px";
+          const relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
+          continueEl.style.top = (stackTop + (relaxH ? relaxH + 18 : 0)) + "px";
         }
         const guidesFloatBtn = document.getElementById("guides-btn-floating");
         const groupFloatBtn = document.getElementById("group-btn-floating");

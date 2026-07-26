@@ -11,19 +11,19 @@
   :root{
     --r-ink:#1d2b30; --r-muted:#5b6f75; --r-line:#dde8ea; --r-card:#ffffff;
     --r-a1:#4b7f86; --r-a2:#6a9bd8; --r-a3:#9b8fce; --r-soft:#e8f2f2;
-    --r-glow:120,180,190; --r-shadow:0 1px 2px rgba(30,60,64,.05),0 14px 40px rgba(30,60,64,.10);
+    --r-glow:125,175,235; --r-shadow:0 1px 2px rgba(30,60,64,.05),0 14px 40px rgba(30,60,64,.10);
   }
   @media (prefers-color-scheme: dark){
     :root{--r-ink:#e7f0f1; --r-muted:#9fb2b6; --r-line:#243035; --r-card:#141b1e;
       --r-a1:#5fa7ae; --r-a2:#7aa7e0; --r-a3:#a99fdd; --r-soft:#18262a;
-      --r-glow:70,120,130; --r-shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px rgba(0,0,0,.45);}
+      --r-glow:95,150,215; --r-shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px rgba(0,0,0,.45);}
   }
   :root[data-theme="dark"]{--r-ink:#e7f0f1; --r-muted:#9fb2b6; --r-line:#243035; --r-card:#141b1e;
     --r-a1:#5fa7ae; --r-a2:#7aa7e0; --r-a3:#a99fdd; --r-soft:#18262a;
-    --r-glow:70,120,130; --r-shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px rgba(0,0,0,.45);}
+    --r-glow:95,150,215; --r-shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px rgba(0,0,0,.45);}
   :root[data-theme="light"]{--r-ink:#1d2b30; --r-muted:#5b6f75; --r-line:#dde8ea; --r-card:#ffffff;
     --r-a1:#4b7f86; --r-a2:#6a9bd8; --r-a3:#9b8fce; --r-soft:#e8f2f2;
-    --r-glow:120,180,190; --r-shadow:0 1px 2px rgba(30,60,64,.05),0 14px 40px rgba(30,60,64,.10);}
+    --r-glow:125,175,235; --r-shadow:0 1px 2px rgba(30,60,64,.05),0 14px 40px rgba(30,60,64,.10);}
 
   *{box-sizing:border-box}
   body{margin:0;color:var(--r-ink);
@@ -67,14 +67,27 @@
 
   .stage{display:flex;flex-direction:column;align-items:center;justify-content:center;
     padding:24px 0 8px;min-height:320px;}
-  .orb-holder{width:240px;height:240px;display:flex;align-items:center;justify-content:center;position:relative;}
-  .orb{width:220px;height:220px;border-radius:50%;transform:scale(.55);
-    background:radial-gradient(circle at 38% 34%, rgba(255,255,255,.55), rgba(var(--r-glow),.55) 55%, rgba(var(--r-glow),.28) 100%);
-    box-shadow:0 0 44px 6px rgba(var(--r-glow),.35), inset 0 0 40px rgba(255,255,255,.25);
+  .orb-holder{width:260px;height:260px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .orb{width:220px;height:220px;border-radius:50%;transform:scale(.55);position:relative;z-index:1;
+    background:radial-gradient(circle at 38% 34%, rgba(255,255,255,.6), rgba(var(--r-glow),.6) 55%, rgba(var(--r-glow),.3) 100%);
+    box-shadow:0 0 46px 8px rgba(var(--r-glow),.4), inset 0 0 40px rgba(255,255,255,.3);
     display:flex;align-items:center;justify-content:center;
     transition:transform 4s ease-in-out;}
   .orb .count{font-size:40px;font-weight:300;color:#fff;font-variant-numeric:tabular-nums;
     text-shadow:0 1px 6px rgba(0,0,0,.18);opacity:.92;}
+  /* Siri-like aura + expanding waves, only while a session is running */
+  .orb-holder .aura,.orb-holder .ripple{position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none;z-index:0;}
+  .aura{width:250px;height:250px;transform:translate(-50%,-50%);opacity:0;transition:opacity 1.2s ease;
+    background:conic-gradient(from 0deg, rgba(var(--r-glow),0), rgba(var(--r-glow),.5), rgba(150,205,255,.4), rgba(var(--r-glow),.15), rgba(var(--r-glow),0));
+    filter:blur(24px);}
+  .ripple{width:220px;height:220px;transform:translate(-50%,-50%) scale(.55);opacity:0;
+    border:2px solid rgba(var(--r-glow),.5);}
+  .orb-holder.running .aura{opacity:.85;animation:aura-spin 8s linear infinite;}
+  .orb-holder.running .ripple{animation:ripple 4.5s ease-out infinite;}
+  .orb-holder.running .ripple:nth-child(3){animation-delay:1.5s;}
+  .orb-holder.running .ripple:nth-child(4){animation-delay:3s;}
+  @keyframes aura-spin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+  @keyframes ripple{0%{transform:translate(-50%,-50%) scale(.5);opacity:.5}60%{opacity:.16}100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
   .phase{font-size:20px;font-weight:600;letter-spacing:.01em;margin:14px 0 2px;min-height:26px;color:var(--r-ink);}
   .cyclecount{color:var(--r-muted);font-size:13px;min-height:18px;}
 
@@ -128,6 +141,8 @@
     .r-bg{animation:none}
     .orb{transition:transform .4s ease}
     .panel{animation:none}
+    .orb-holder.running .ripple{animation:none;opacity:0}
+    .orb-holder.running .aura{animation:none;opacity:.5}
   }
   @media (max-width:520px){
     .orb-holder{width:210px;height:210px}.orb{width:190px;height:190px}
@@ -153,7 +168,11 @@
     <div class="chips" id="pattern-chips"></div>
     <div class="pat-desc" id="pat-desc"></div>
     <div class="stage">
-      <div class="orb-holder">
+      <div class="orb-holder" id="orb-holder">
+        <span class="aura" aria-hidden="true"></span>
+        <span class="ripple" aria-hidden="true"></span>
+        <span class="ripple" aria-hidden="true"></span>
+        <span class="ripple" aria-hidden="true"></span>
         <div class="orb" id="orb"><span class="count" id="count"></span></div>
       </div>
       <div class="phase" id="phase">Ready when you are</div>
@@ -246,6 +265,51 @@
     try { navigator.vibrate(pattern); } catch (e) {}
   }
 
+  // ---------- breathing voice: a soft, warm tone that spans each phase, with a
+  // distinct character per phase (rising on inhale, falling on exhale, steady
+  // on hold). Two detuned sines through a low-pass filter keep it calm. ----------
+  var activeVoice = null;
+  function stopVoice(quick) {
+    if (!activeVoice || !actx) { activeVoice = null; return; }
+    var t = actx.currentTime, g = activeVoice.g, d = quick ? 0.15 : 0.4;
+    try {
+      g.gain.cancelScheduledValues(t);
+      g.gain.setValueAtTime(Math.max(0.0001, g.gain.value), t);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+      activeVoice.oscs.forEach(function (o) { try { o.stop(t + d + 0.05); } catch (e) {} });
+    } catch (e) {}
+    activeVoice = null;
+  }
+  function phaseSound(kind, secs) {
+    if (!soundOn || !actx) return;
+    stopVoice(true);
+    var t = actx.currentTime;
+    var g = actx.createGain();
+    var filt = actx.createBiquadFilter(); filt.type = "lowpass"; filt.frequency.value = 1300; filt.Q.value = 0.6;
+    g.connect(filt); filt.connect(actx.destination);
+    function mk(det) { var o = actx.createOscillator(); o.type = "sine"; o.detune.value = det || 0; o.connect(g); return o; }
+    var a = mk(0), b = mk(6), peak = 0.05, glide = Math.min(secs, kind === "out" ? 4 : 3);
+    if (kind === "in") {            // gentle rising warmth
+      a.frequency.setValueAtTime(174.6, t); a.frequency.exponentialRampToValueAtTime(261.6, t + glide);
+      b.frequency.setValueAtTime(261.6, t); b.frequency.exponentialRampToValueAtTime(392.0, t + glide);
+      peak = 0.05;
+    } else if (kind === "out") {    // slow falling release
+      a.frequency.setValueAtTime(261.6, t); a.frequency.exponentialRampToValueAtTime(146.8, t + glide);
+      b.frequency.setValueAtTime(392.0, t); b.frequency.exponentialRampToValueAtTime(220.0, t + glide);
+      peak = 0.055;
+    } else {                        // hold: soft steady chord
+      a.frequency.setValueAtTime(196.0, t); b.frequency.setValueAtTime(293.7, t);
+      peak = 0.03;
+    }
+    var atk = Math.min(0.6, secs * 0.3), rel = Math.min(1.1, secs * 0.4);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + atk);
+    g.gain.setValueAtTime(peak, t + Math.max(atk, secs - rel));
+    g.gain.exponentialRampToValueAtTime(0.0001, t + secs);
+    a.start(t); b.start(t); a.stop(t + secs + 0.1); b.stop(t + secs + 0.1);
+    activeVoice = { g: g, oscs: [a, b] };
+  }
+
   // ---------- mode switching ----------
   var modeBtns = document.querySelectorAll(".mode-btn");
   modeBtns.forEach(function (b) {
@@ -267,6 +331,7 @@
   };
   var curPat = "box", running = false, phaseTimer = null, countTimer = null, cycles = 0;
   var orb = document.getElementById("orb"), countEl = document.getElementById("count"),
+      orbHolder = document.getElementById("orb-holder"),
       phaseEl = document.getElementById("phase"), cycleEl = document.getElementById("cyclecount"),
       toggleBtn = document.getElementById("breathe-toggle"), patDesc = document.getElementById("pat-desc");
 
@@ -293,8 +358,9 @@
     orb.style.transition = "transform " + secs + "s ease-in-out";
     if (kind === "in") orb.style.transform = "scale(1)";
     else if (kind === "out") orb.style.transform = "scale(0.55)";
-    if (kind === "in") { tone(396, 0.7, 0.045); buzz(35); }
-    else if (kind === "out") { tone(297, 0.9, 0.05); buzz([22, 60, 22]); }
+    phaseSound(kind, secs);
+    if (kind === "in") buzz(35);
+    else if (kind === "out") buzz([22, 60, 22]);
     else buzz(12);
     var remaining = secs; countEl.textContent = remaining;
     clearInterval(countTimer);
@@ -307,10 +373,12 @@
   }
   function startBreathing() {
     ensureAudio(); running = true; cycles = 0; cycleEl.textContent = "";
+    orbHolder.classList.add("running");
     toggleBtn.textContent = "Stop"; runPhase(0);
   }
   function stopBreathing() {
     running = false; clearTimeout(phaseTimer); clearInterval(countTimer);
+    orbHolder.classList.remove("running"); stopVoice();
     if (hasVibrate) { try { navigator.vibrate(0); } catch (e) {} }
     orb.style.transition = "transform .8s ease"; orb.style.transform = "scale(.55)";
     countEl.textContent = ""; phaseEl.textContent = "Ready when you are"; toggleBtn.textContent = "Begin";
