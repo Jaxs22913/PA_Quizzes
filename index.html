@@ -684,20 +684,21 @@
 
     /* Relax: standalone calming button (its own element under the stats card) */
     .relax-cta {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: #e7f2ef; color: #2f7d6b;
-      border: 1px solid var(--border, #e5e7ef); border-radius: 999px;
-      padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none;
+      display: flex; width: 100%; box-sizing: border-box;
+      align-items: center; justify-content: center; gap: 9px;
+      background: #e3eff0; color: #2c7079;
+      border: 1px solid var(--border, #e5e7ef); border-radius: 14px;
+      padding: 13px 18px; font-size: 14.5px; font-weight: 700; text-decoration: none;
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
-    .relax-cta svg { width: 17px; height: 17px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+    .relax-cta svg { width: 18px; height: 18px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
     .relax-cta .leaf-blade { fill: transparent; transition: fill .5s ease; }
-    .relax-cta:hover { border-color: #2f7d6b; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(47,125,107,.18); }
-    .relax-cta:hover svg { transform: scale(1.18) rotate(-6deg); }
-    .relax-cta:hover .leaf-blade { fill: rgba(47,125,107,.28); }
-    :root[data-theme="dark"] .relax-cta { background: #16261f; color: #6fc0a8; }
-    :root[data-theme="dark"] .relax-cta:hover { border-color: #6fc0a8; box-shadow: 0 6px 16px rgba(0,0,0,.4); }
-    :root[data-theme="dark"] .relax-cta:hover .leaf-blade { fill: rgba(111,192,168,.30); }
+    .relax-cta:hover { border-color: #2c7079; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(44,112,121,.16); }
+    .relax-cta:hover svg { transform: scale(1.14) rotate(-6deg); }
+    .relax-cta:hover .leaf-blade { fill: rgba(44,112,121,.24); }
+    :root[data-theme="dark"] .relax-cta { background: #16262a; color: #74bcc4; }
+    :root[data-theme="dark"] .relax-cta:hover { border-color: #74bcc4; box-shadow: 0 6px 16px rgba(0,0,0,.4); }
+    :root[data-theme="dark"] .relax-cta:hover .leaf-blade { fill: rgba(116,188,196,.30); }
     @media (prefers-reduced-motion: reduce) {
       .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
       .my-progress-link:hover .mp-line { animation: none; }
@@ -1417,7 +1418,7 @@
 
     <div id="relax-cta-row" class="relax-cta-row">
       <a href="relax.html" class="relax-cta">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="leaf-blade" d="M11 20.5A7.5 7.5 0 0 1 9.7 5.8C15 4.7 16.7 4.2 19 2c1 2.2 2 4.5 2 8.2 0 5.7-4.5 10.3-10 10.3Z"/><path d="M2 21.5c0-3.2 2-5.7 5.4-6.4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="leaf-blade" d="M12 2.5C15.5 7 17.5 9.5 17.5 12.5 17.5 16 15 19 12 20.5 9 19 6.5 16 6.5 12.5 6.5 9.5 8.5 7 12 2.5Z"/><path d="M12 6.5v10.5M12 11.5l2.7-2M12 14l2.9-2.1"/></svg>
         <span>Relax</span>
       </a>
     </div>
