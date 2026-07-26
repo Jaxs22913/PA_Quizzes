@@ -686,19 +686,16 @@
     .relax-cta {
       display: flex; width: 100%; box-sizing: border-box;
       align-items: center; justify-content: center; gap: 9px;
-      background: #e3eff0; color: #2c7079;
+      background: var(--accent-soft, #eef0fd); color: var(--accent, #2563eb);
       border: 1px solid var(--border, #e5e7ef); border-radius: 14px;
       padding: 13px 18px; font-size: 14.5px; font-weight: 700; text-decoration: none;
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
     .relax-cta svg { width: 18px; height: 18px; flex: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
     .relax-cta .leaf-blade { fill: transparent; transition: fill .5s ease; }
-    .relax-cta:hover { border-color: #2c7079; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(44,112,121,.16); }
+    .relax-cta:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.16); }
     .relax-cta:hover svg { transform: scale(1.14) rotate(-6deg); }
-    .relax-cta:hover .leaf-blade { fill: rgba(44,112,121,.24); }
-    :root[data-theme="dark"] .relax-cta { background: #16262a; color: #74bcc4; }
-    :root[data-theme="dark"] .relax-cta:hover { border-color: #74bcc4; box-shadow: 0 6px 16px rgba(0,0,0,.4); }
-    :root[data-theme="dark"] .relax-cta:hover .leaf-blade { fill: rgba(116,188,196,.30); }
+    .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
     @media (prefers-reduced-motion: reduce) {
       .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
       .my-progress-link:hover .mp-line { animation: none; }
