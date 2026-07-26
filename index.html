@@ -660,6 +660,11 @@
       transition: border-color .15s, transform .15s;
     }
     .my-progress-link:hover { border-color: var(--accent, #2563eb); transform: translateY(-1px); }
+    .stats-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .relax-link { background: #e7f2ef; color: #2f7d6b; }
+    :root[data-theme="dark"] .relax-link { background: #16261f; color: #6fc0a8; }
+    .relax-link:hover { border-color: #2f7d6b; }
+    :root[data-theme="dark"] .relax-link:hover { border-color: #6fc0a8; }
 
     .tabs {
       display: flex;
@@ -1366,7 +1371,10 @@
         <span class="cc-num" id="class-counter-value">0</span>
         <span class="cc-label">questions answered by the Class of 2028</span>
       </div>
-      <a href="progress.html" class="my-progress-link">📊 My Progress</a>
+      <div class="stats-links">
+        <a href="progress.html" class="my-progress-link">📊 My Progress</a>
+        <a href="relax.html" class="my-progress-link relax-link">🌿 Relax</a>
+      </div>
     </div>
 
     <div class="mobile-widgets-row">
