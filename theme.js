@@ -3882,3 +3882,68 @@ window.openPauseOverlay = function (opts) {
     }, 3000);
   }
 })();
+
+/* ============================================================
+   Quiz keyboard hint (2026-07-27)
+   ------------------------------------------------------------
+   The engine already supports A-D / 1-4 to answer, arrows to move,
+   Enter to continue, F to flag and ? for the full list -- but nothing
+   said so unless you happened to plug in a game controller, which got
+   its own toast. One quiet line on the start screen instead.
+   ============================================================ */
+(function () {
+  var start = document.getElementById("start");
+  if (!start || document.getElementById("kbd-hint")) return;
+  var startBtn = start.querySelector("button");
+  if (!startBtn) return;
+  // Pointer-only devices get nothing -- the hint would just be noise.
+  if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  var p = document.createElement("p");
+  p.id = "kbd-hint";
+  p.className = "kbd-hint";
+  p.innerHTML = 'Keyboard: <kbd>A</kbd>&ndash;<kbd>D</kbd> to answer &middot; ' +
+                '<kbd>&rarr;</kbd> next &middot; <kbd>F</kbd> flag &middot; ' +
+                '<kbd>?</kbd> all shortcuts';
+  startBtn.parentNode.insertBefore(p, startBtn.nextSibling);
+})();
+
+/* ============================================================
+   Connection state (2026-07-27)
+   ------------------------------------------------------------
+   The site is an installed PWA with a service worker, so a student on
+   a train or in a basement lecture hall WILL hit this -- and until now
+   nothing said so. Quizzes and guides are cached and keep working;
+   sign-in, Group Study and the class counter don't. A quiet bar makes
+   the difference legible instead of looking broken.
+   ============================================================ */
+(function () {
+  if (!("onLine" in navigator)) return;
+  var bar = null;
+
+  function ensure() {
+    if (bar) return bar;
+    bar = document.createElement("div");
+    bar.id = "net-bar";
+    bar.setAttribute("role", "status");
+    bar.innerHTML =
+      '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" ' +
+      'stroke-width="2" stroke-linecap="round"><path d="M1 1l22 22"/>' +
+      '<path d="M16.7 13.7a5 5 0 0 0-7.4 0"/><path d="M5 10.5a11 11 0 0 1 3.5-2.3"/>' +
+      '<path d="M19 10.5a11 11 0 0 0-4.3-2.6"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>' +
+      "<span>Offline &mdash; your saved quizzes and guides still work</span>";
+    document.body.appendChild(bar);
+    return bar;
+  }
+
+  function sync() {
+    if (navigator.onLine) {
+      if (bar) bar.classList.remove("show");
+    } else {
+      ensure().classList.add("show");
+    }
+  }
+  window.addEventListener("online", sync);
+  window.addEventListener("offline", sync);
+  if (!navigator.onLine) sync();
+})();

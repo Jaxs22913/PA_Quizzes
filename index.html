@@ -170,10 +170,23 @@
        ordered here; a future new direct child needs an explicit order added
        too, or it defaults to 0 and floats above the header. */
     @media (max-width: 640px) {
+      /* row-wrap rather than column so the two CTA rows can share a line.
+         Every other direct child is flex:1 1 100% below, so it still
+         occupies a full row exactly as it did under column flex -- the
+         existing `order` values keep working unchanged. */
       .page {
         display: flex;
-        flex-direction: column;
+        flex-flow: row wrap;
+        column-gap: 8px;
+        align-items: flex-start;
       }
+      .page > * { flex: 1 1 100%; min-width: 0; }
+      /* Relax + Group Study pair up, matching the Arcade/Guides pair
+         above them -- two full-width bars became one row. */
+      .page > #relax-cta-row,
+      .page > #group-cta-row { flex: 1 1 calc(50% - 4px); }
+      .page > #relax-cta-row .relax-cta,
+      .page > #group-cta-row .relax-cta { width: 100%; justify-content: center; }
       .page > header { order: 10; }
       .mobile-widgets-row {
         display: flex;
@@ -499,7 +512,7 @@
        so it wins the cascade at this breakpoint (media queries don't add
        specificity -- plain source order decides ties, and these selectors
        are otherwise equally specific). */
-    @media (min-width: 1180px) {
+    @media (min-width: 1220px) {
       .continue-widget {
         position: absolute;
         top: 0;

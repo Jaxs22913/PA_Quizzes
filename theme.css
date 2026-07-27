@@ -2382,3 +2382,134 @@ figure.fig.fig-in { opacity: 1; transform: none; }
   .opt.correct, .opt.wrong { animation: none !important; }
   figure.fig, figure.fig.fig-pending { opacity: 1 !important; transform: none !important; }
 }
+
+/* ============================================================
+   8. FORM CONTROLS + CHROME (2026-07-27)
+   ------------------------------------------------------------
+   The quiz start screen shipped four raw browser checkboxes -- the
+   OS default grey square, on the last screen you see before every
+   one of the 431 quizzes. `appearance` was used exactly once in the
+   whole stylesheet and `accent-color` never.
+
+   Styled here rather than in the template so no generated page needs
+   regenerating. The width/height need !important purely because the
+   template sets them inline.
+   ============================================================ */
+:root { accent-color: var(--accent, var(--a-blue)); }
+
+input[type="checkbox"]:not([data-native]) {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px !important;
+  height: 18px !important;
+  flex: none;
+  margin: 0;
+  border: 1.5px solid var(--border, var(--line, #d3d7de));
+  border-radius: 5px;
+  background-color: var(--card, #fff);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+  cursor: pointer;
+  transition: background-color var(--dur-1) var(--ease),
+              border-color var(--dur-1) var(--ease),
+              transform var(--dur-1) var(--ease);
+}
+input[type="checkbox"]:not([data-native]):hover {
+  border-color: var(--accent, var(--a-blue));
+}
+input[type="checkbox"]:not([data-native]):checked {
+  background-color: var(--accent, var(--a-blue));
+  border-color: var(--accent, var(--a-blue));
+  /* drawn tick, so it matches the site's 1.75px icon stroke rather than
+     whatever the platform draws */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+input[type="checkbox"]:not([data-native]):active { transform: scale(.92); }
+input[type="checkbox"]:not([data-native]):disabled { opacity: .5; cursor: default; }
+
+/* Text inputs and selects: consistent focus + hover, one radius. */
+input[type="text"], input[type="search"], input[type="email"], textarea, select {
+  transition: border-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+input[type="text"]:hover, input[type="search"]:hover, textarea:hover, select:hover {
+  border-color: color-mix(in oklab, var(--accent, var(--a-blue)) 40%, var(--border, var(--line, #d3d7de)));
+}
+
+/* ------------------------------------------------------------
+   Selection + scrollbars -- there were no rules for either.
+   ------------------------------------------------------------ */
+::selection {
+  background-color: color-mix(in oklab, var(--accent, var(--a-blue)) 24%, transparent);
+}
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--accent, var(--a-blue)) 34%, transparent) transparent;
+}
+nav.toc, .table-scroll, .search-results, pre, .cram-table-wrap {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--accent, var(--a-blue)) 40%, transparent) transparent;
+}
+nav.toc::-webkit-scrollbar,
+.table-scroll::-webkit-scrollbar,
+.search-results::-webkit-scrollbar { width: 9px; height: 9px; }
+nav.toc::-webkit-scrollbar-track,
+.table-scroll::-webkit-scrollbar-track,
+.search-results::-webkit-scrollbar-track { background: transparent; }
+nav.toc::-webkit-scrollbar-thumb,
+.table-scroll::-webkit-scrollbar-thumb,
+.search-results::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--accent, var(--a-blue)) 34%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+nav.toc::-webkit-scrollbar-thumb:hover,
+.table-scroll::-webkit-scrollbar-thumb:hover,
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--accent, var(--a-blue)) 58%, transparent);
+  background-clip: content-box;
+}
+
+/* Quiz start-screen keyboard hint (see theme.js) */
+.kbd-hint {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: var(--muted, #6b7280);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+}
+.kbd-hint kbd {
+  font: 600 11px/1 var(--font-sans, ui-sans-serif);
+  padding: 3px 6px;
+  border: 1px solid var(--border, var(--line, #d3d7de));
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--card, #fff);
+  color: var(--ink, #1f2937);
+}
+
+/* Offline bar (see theme.js). Bottom-anchored so it never covers a
+   question stem or a sticky header. */
+#net-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 140%);
+  z-index: 3500;
+  display: flex; align-items: center; gap: 8px;
+  max-width: calc(100vw - 32px);
+  padding: 9px 15px;
+  border-radius: var(--r-pill, 999px);
+  background: #1f2430;
+  color: #f3f4f6;
+  font: 600 13px/1.3 var(--font-sans, ui-sans-serif);
+  box-shadow: var(--e-3);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--dur-2) var(--ease), opacity var(--dur-2) var(--ease);
+}
+#net-bar.show { transform: translate(-50%, 0); opacity: 1; }
+#net-bar svg { flex: none; opacity: .85; }
+@media (prefers-reduced-motion: reduce) {
+  #net-bar { transition: none; }
+}

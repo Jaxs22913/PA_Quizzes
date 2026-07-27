@@ -59,6 +59,23 @@
     padding:40px 24px;text-align:center;color:var(--muted);}
   .empty a{color:var(--acc);font-weight:700;text-decoration:none;}
   .note{font-size:12px;color:var(--muted);margin-top:26px;text-align:center;}
+
+  /* --- empty state ------------------------------------------------- */
+  .empty-state { text-align:center; padding:44px 24px 40px; }
+  .empty-art { width:190px; height:92px; margin:0 auto 6px; display:block; overflow:visible; }
+  .empty-art line { stroke:var(--line,#e5e7eb); stroke-width:2; stroke-linecap:round; }
+  .empty-art .b { fill:var(--acc,#218640); opacity:.16; transform-box:fill-box; transform-origin:bottom;
+                  animation:bar-grow .62s cubic-bezier(.2,.8,.2,1) both; }
+  .empty-art .b2 { opacity:.26; animation-delay:.07s }
+  .empty-art .b3 { opacity:.38; animation-delay:.14s }
+  .empty-art .b4 { opacity:.55; animation-delay:.21s }
+  @keyframes bar-grow { from { transform:scaleY(.05); } }
+  .empty-title { margin:14px 0 4px; font-size:17px; font-weight:700; color:var(--ink,#1f2937); }
+  .empty-sub { margin:0 auto 20px; max-width:38ch; font-size:14px; color:var(--muted,#6b7280); line-height:1.55; }
+  .empty-cta { display:inline-block; padding:10px 20px; border-radius:999px; text-decoration:none;
+               background:var(--acc,#218640); color:#fff; font-weight:700; font-size:14px; }
+  .empty-cta:hover { filter:brightness(1.08); }
+  @media (prefers-reduced-motion: reduce) { .empty-art .b { animation:none; } }
 </style>
 </head>
 <body>
@@ -123,9 +140,23 @@
     var quizzes = readCompletions();
     var dash = document.getElementById("dash");
     if (!quizzes.length) {
-      dash.innerHTML = '<div class="empty">No completed quizzes yet.<br><br>' +
-        '<a href="index.html">Take a quiz &rarr;</a><br><br>' +
-        'Finish any quiz and your accuracy, focus areas, and streak show up here.</div>';
+      // An empty progress page is often someone's first impression of
+      // whether any of this works, so show what it WILL look like rather
+      // than a bare line of text in a white box.
+      dash.innerHTML =
+        '<div class="empty-state">' +
+          '<svg class="empty-art" viewBox="0 0 200 96" aria-hidden="true">' +
+            '<line x1="12" y1="84" x2="188" y2="84"/>' +
+            '<rect class="b b1" x="26"  y="58" width="22" height="26" rx="4"/>' +
+            '<rect class="b b2" x="60"  y="44" width="22" height="40" rx="4"/>' +
+            '<rect class="b b3" x="94"  y="30" width="22" height="54" rx="4"/>' +
+            '<rect class="b b4" x="128" y="20" width="22" height="64" rx="4"/>' +
+          '</svg>' +
+          '<p class="empty-title">No quizzes finished yet</p>' +
+          '<p class="empty-sub">Finish any quiz and your accuracy, weakest topics and ' +
+            'streak all show up here \u2014 no setup needed.</p>' +
+          '<a class="empty-cta" href="index.html">Take a quiz &rarr;</a>' +
+        '</div>';
       return;
     }
     var log = []; try { log = JSON.parse(localStorage.getItem("progressLog")) || []; } catch (e) {}
