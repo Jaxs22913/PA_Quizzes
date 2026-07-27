@@ -13,6 +13,22 @@
 // incremented (see the group_study/presence rules pattern):
 //   match /stats/global { allow read: if true; allow write: if request.auth != null; }
 // Until such a rule is published, writes/reads fail silently (counter stays 0).
+//
+// EVENT LOG (added 2026-07-27). The running total is a single integer with no
+// history, so when it jumped ~18k in a day there was no way to attribute the
+// delta after the fact -- only to confirm the increment path was sound. Every
+// increment now also appends one immutable row to stats_events, which makes a
+// future jump traceable to when it happened, which quiz produced it, and
+// whether it came from one browser session or many. Needs its own rule, and
+// it must be append-only -- a log anything can rewrite is not evidence:
+//   match /stats_events/{id} {
+//     allow read: if true;
+//     allow create: if request.auth != null;
+//     allow update, delete: if false;
+//   }
+// The session id is a random per-tab value; it is NOT tied to any account and
+// identifies nobody. Its only job is to show that N completions shared one
+// origin, which is exactly the shape automated or inflated traffic has.
 (function () {
   "use strict";
 
@@ -22,6 +38,40 @@
 
   function statRef() { return db.collection("stats").doc("global"); }
 
+  // Random per-tab id so a burst of completions from a single session is
+  // visible as such in the log. Regenerated every tab; not linked to any user.
+  var sessionId = (function () {
+    try {
+      var k = "__statsSession";
+      var v = sessionStorage.getItem(k);
+      if (!v) {
+        v = Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
+        sessionStorage.setItem(k, v);
+      }
+      return v;
+    } catch (e) {
+      return "nostore";
+    }
+  })();
+
+  // One immutable row per increment. Written alongside the running total, not
+  // derived from it, so the two can be reconciled: summing the log's n values
+  // from a known baseline should reproduce questionsCompleted. A divergence is
+  // itself the signal that something wrote the total directly.
+  function logEvent(n, kind) {
+    if (!db) return;
+    try {
+      db.collection("stats_events").add({
+        n: n,
+        kind: kind || "quiz-complete",
+        // pathname only -- which quiz, never anything about who.
+        path: (location.pathname || "").slice(-120),
+        session: sessionId,
+        at: firebase.firestore.FieldValue.serverTimestamp()
+      }).catch(function () { /* rule not published yet -- total still works */ });
+    } catch (e) { /* never let logging break the counter */ }
+  }
+
   function flush() {
     if (!ready || pending <= 0) return;
     var n = pending;
@@ -29,7 +79,9 @@
     statRef().set({
       questionsCompleted: firebase.firestore.FieldValue.increment(n),
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-    }, { merge: true }).catch(function () { /* permission-denied / offline -- drop silently */ });
+    }, { merge: true }).then(function () {
+      logEvent(n);
+    }).catch(function () { /* permission-denied / offline -- drop silently */ });
   }
 
   window.ClassStats = {
