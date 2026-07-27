@@ -3464,3 +3464,69 @@ window.addEventListener("gamepadconnected", function () { showToast("🎮 Contro
   }
   requestAnimationFrame(poll);
 })();
+
+/* ============================================================
+   Marquee bulbs (2026-07-27)
+   ------------------------------------------------------------
+   Built as real <circle> elements rather than a repeating
+   <pattern>. Animating children of a <pattern> forces the tile to
+   be re-rasterised every frame, and Chrome staggers that work per
+   referencing element -- so the left and right columns visibly
+   drifted out of sync, showing different colours at the same
+   height. Real elements repaint on the normal compositor path and
+   stay locked together.
+
+   Both columns are filled from the same loop with the same class
+   sequence, so bulb N is the same colour and phase on each side.
+   ============================================================ */
+(function () {
+  var cols = document.querySelectorAll(".edge-decor");
+  if (!cols.length) return;
+
+  var PITCH = 32;      // 8px grid
+  var CX = 37;         // centre of the 74px column
+  var NS = "http://www.w3.org/2000/svg";
+  var TONE = ["", "2", "3", "4"];   // --accent, --accent2, --accent3, --accent4
+
+  function circle(cls, cy, r, tone) {
+    var c = document.createElementNS(NS, "circle");
+    c.setAttribute("class", cls);
+    c.setAttribute("cx", CX);
+    c.setAttribute("cy", cy);
+    c.setAttribute("r", r);
+    c.setAttribute("fill", "var(--accent" + tone + ")");
+    return c;
+  }
+
+  function fill() {
+    var h = window.innerHeight;
+    var count = Math.ceil(h / PITCH) + 2;
+    cols.forEach(function (svg) {
+      if (svg.dataset.bulbs === String(count)) return;   // already the right length
+      svg.dataset.bulbs = String(count);
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      var frag = document.createDocumentFragment();
+      for (var k = 0; k < count; k++) {
+        var i = (k % 4);
+        var idx = "i" + (i + 1);
+        var cy = k * PITCH;
+        frag.appendChild(circle("mq-halo " + idx, cy, 17, TONE[i]));
+      }
+      for (var k2 = 0; k2 < count; k2++) {
+        var i2 = (k2 % 4);
+        frag.appendChild(circle("mq-bulb i" + (i2 + 1), k2 * PITCH, 9, TONE[i2]));
+        // small filler bulb halfway to the next one, carrying the next colour
+        var nx = (k2 + 1) % 4;
+        frag.appendChild(circle("mq-fill i" + (nx + 1), k2 * PITCH + PITCH / 2, 3, TONE[nx]));
+      }
+      svg.appendChild(frag);
+    });
+  }
+
+  fill();
+  var t;
+  window.addEventListener("resize", function () {
+    clearTimeout(t);
+    t = setTimeout(fill, 200);
+  }, { passive: true });
+})();

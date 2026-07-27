@@ -64,7 +64,7 @@ body.guides-page #refresh-btn { display: flex; }
   gap: 8px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .15s ease;
+  transition: opacity .15s var(--ease);
 }
 #corner-actions-left.visible {
   opacity: 1;
@@ -297,7 +297,7 @@ mark.search-hit-current {
   background: #ffffff;
   color: #1f2937;
   border: 1px solid #e5e7eb;
-  transition: transform .2s cubic-bezier(.3,.6,.3,1.5);
+  transition: transform .2s var(--ease-spring);
 }
 .corner-btn:hover { transform: scale(1.1) rotate(-8deg); }
 .corner-btn:active { transform: scale(0.92); }
@@ -684,7 +684,7 @@ mark.search-hit-current {
   inset: 0;
   background: #e5e7eb;
   border-radius: 999px;
-  transition: background .15s ease;
+  transition: background .15s var(--ease);
   pointer-events: none;
 }
 .settings-switch .thumb {
@@ -696,7 +696,7 @@ mark.search-hit-current {
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-  transition: transform .15s ease;
+  transition: transform .15s var(--ease);
   pointer-events: none;
 }
 :root[data-theme="dark"] .settings-switch .track { background: #2a2e37; }
@@ -1035,7 +1035,7 @@ mark.search-hit-current {
   box-shadow: 0 0 0 9999px rgba(0, 0, 0, .55);
   z-index: 4501;
   pointer-events: none;
-  transition: top .2s ease, left .2s ease, width .2s ease, height .2s ease;
+  transition: top .2s var(--ease), left .2s var(--ease), width .2s var(--ease), height .2s var(--ease);
 }
 .tour-tooltip {
   position: fixed;
@@ -1048,7 +1048,7 @@ mark.search-hit-current {
   border-radius: 14px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
   padding: 16px 16px 14px;
-  transition: top .2s ease, left .2s ease;
+  transition: top .2s var(--ease), left .2s var(--ease);
 }
 :root[data-theme="dark"] .tour-tooltip {
   background: #191c22;
@@ -1159,7 +1159,7 @@ mark.search-hit-current {
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
-  transition: transform .25s ease;
+  transition: transform .25s var(--ease);
 }
 :root[data-theme="dark"] .tts-bar {
   background: #191c22;
@@ -1277,7 +1277,7 @@ mark.search-hit-current {
 .tts-active {
   background: rgba(255, 213, 79, .35) !important;
   border-radius: 6px;
-  transition: background .2s ease;
+  transition: background .2s var(--ease);
   /* Padding + matching negative margin expands the visible highlight beyond
      tightly-set text (e.g. TOC card descriptions with no padding of their
      own) without shifting surrounding layout -- margin is a no-op on <td>,
@@ -1850,7 +1850,7 @@ mark.user-hl.hl-flash {
   z-index: 5000;
   box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
   opacity: 0;
-  transition: opacity .2s ease;
+  transition: opacity .2s var(--ease);
   max-width: 80vw;
   text-align: center;
   pointer-events: none;
@@ -2223,4 +2223,91 @@ body.quiz-running header .sub,
 body.quiz-running header .pill { display: none; }
 @media (prefers-reduced-motion: reduce) {
   body.quiz-running .wrap > header { transition: none; }
+}
+
+/* ============================================================
+   6. MOTION LAYER (2026-07-27)
+   ------------------------------------------------------------
+   The site had 52 transitions on bare `ease` -- the browser default,
+   which is what makes motion read as unconsidered -- plus five
+   different ad-hoc cubic-beziers. One small set of curves instead,
+   each with a job.
+   ============================================================ */
+:root {
+  /* standard: decisive start, soft landing. Everything that moves
+     between two states uses this unless it has a reason not to. */
+  --ease: cubic-bezier(.2,.8,.2,1);
+  /* entrances that should feel alive -- a small overshoot */
+  --ease-spring: cubic-bezier(.34,1.4,.64,1);
+  /* looping ambient motion, symmetric so the loop point is invisible */
+  --ease-amb: cubic-bezier(.45,0,.55,1);
+  --dur-1: 160ms;   /* hover / colour */
+  --dur-2: 240ms;   /* panels, reveals */
+  --dur-3: 420ms;   /* page-level entrances */
+}
+
+/* ------------------------------------------------------------
+   Focus. There was not one :focus-visible rule on the whole site,
+   so keyboard users got whatever the browser felt like drawing.
+   One ring, in the surface's own accent, that animates in.
+   ------------------------------------------------------------ */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent, var(--a-blue));
+  outline-offset: 2px;
+  border-radius: var(--r-sm, 8px);
+  animation: focus-in var(--dur-1) var(--ease) 1;
+}
+@keyframes focus-in {
+  from { outline-color: transparent; outline-offset: 6px; }
+}
+/* Mouse users never see it; only remove the default for pointer focus. */
+:where(a, button, summary):focus:not(:focus-visible) { outline: none; }
+
+/* ------------------------------------------------------------
+   Press feedback. A control that doesn't acknowledge the press
+   feels dead on touch, where there's no hover to fall back on.
+   ------------------------------------------------------------ */
+:where(button, .btn, .tab-btn, .quiz-link, .guide-card, .deck-card,
+       .test-yourself-btn, .relax-cta):active {
+  transform: scale(.985);
+  transition-duration: 80ms;
+}
+
+/* ------------------------------------------------------------
+   Staggered reveal. Used for lists that appear as a group -- guide
+   cards, quiz links inside an opened exam, arcade decks. The delay
+   is set inline by theme.js (--i) so it works for any list length.
+   ------------------------------------------------------------ */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to   { opacity: 1; transform: none; }
+}
+.stagger-in {
+  animation: rise-in var(--dur-3) var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 38ms);
+}
+
+/* Exam accordions: the panel used to appear instantly. */
+@keyframes panel-open {
+  from { opacity: 0; transform: translateY(-4px); }
+}
+.exam-section[open] .exam-content,
+details[open] > *:not(summary) {
+  animation: panel-open var(--dur-2) var(--ease) both;
+}
+
+/* Tab panels: crossfade instead of a hard cut. */
+.tab-panel.active { animation: rise-in var(--dur-2) var(--ease) both; }
+
+/* ------------------------------------------------------------
+   One switch turns all of it off.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .stagger-in,
+  .tab-panel.active,
+  .exam-section[open] .exam-content,
+  details[open] > *:not(summary) { animation: none !important; }
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { animation: none; }
+  :where(button, .btn, .tab-btn, .quiz-link, .guide-card, .deck-card,
+         .test-yourself-btn, .relax-cta):active { transform: none; }
 }

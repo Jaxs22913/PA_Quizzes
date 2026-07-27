@@ -3754,3 +3754,55 @@ window.openPauseOverlay = function (opts) {
   document.addEventListener("click", function () { setTimeout(sync, 60); }, true);
   sync();
 })();
+
+/* ============================================================
+   Staggered reveal (2026-07-27)
+   ------------------------------------------------------------
+   Lists that appear as a group -- guide cards on load, quiz links
+   when an exam accordion opens, arcade decks -- come in on a short
+   stagger instead of all at once. Purely additive: the class only
+   drives an animation, so if anything here fails the content is
+   already in the DOM and visible.
+
+   Capped at 14 items so a long list never crawls, and skipped
+   entirely under prefers-reduced-motion.
+   ============================================================ */
+(function () {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var MAX = 14;
+
+  function stagger(items) {
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].classList.contains("stagger-in")) continue;
+      items[i].style.setProperty("--i", Math.min(i, MAX));
+      items[i].classList.add("stagger-in");
+    }
+  }
+
+  function onReady() {
+    // guides.html card grid
+    stagger(document.querySelectorAll(".guide-grid > .guide-card"));
+    // arcade deck grid / exam list
+    stagger(document.querySelectorAll(".deck-grid > .deck-card"));
+
+    // Quiz links reveal as their exam accordion is opened.
+    var sections = document.querySelectorAll("details.exam-section");
+    for (var s = 0; s < sections.length; s++) {
+      (function (sec) {
+        sec.addEventListener("toggle", function () {
+          if (!sec.open) return;
+          var links = sec.querySelectorAll(".quiz-link");
+          for (var i = 0; i < links.length; i++) links[i].classList.remove("stagger-in");
+          // next frame, so removing and re-adding actually restarts it
+          requestAnimationFrame(function () { stagger(links); });
+        });
+      })(sections[s]);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", onReady);
+  } else {
+    onReady();
+  }
+})();

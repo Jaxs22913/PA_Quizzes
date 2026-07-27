@@ -269,7 +269,7 @@ body {
   background: linear-gradient(135deg, var(--accent), var(--accent3));
   color: #fff; display: flex; align-items: center; justify-content: center; flex: none;
   box-shadow: 0 3px 10px -2px color-mix(in srgb, var(--accent3) 55%, transparent);
-  transition: transform .25s cubic-bezier(.3,.6,.3,1.5);
+  transition: transform .25s var(--ease-spring);
 }
 .brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); }
 .brand-text h1 {
@@ -308,7 +308,7 @@ body {
 .deck-card {
   background: var(--card); border: 1px solid var(--border); border-top-width: 4px;
   border-radius: 18px; padding: 18px; margin-bottom: 14px; box-shadow: var(--shadow);
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform .15s var(--ease), box-shadow .15s var(--ease);
 }
 .deck-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
 .deck-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
@@ -316,7 +316,7 @@ body {
 .deck-icon {
   width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center;
   justify-content: center; flex: none;
-  transition: transform .25s cubic-bezier(.3,.6,.3,1.5);
+  transition: transform .25s var(--ease-spring);
 }
 .deck-card:hover .deck-icon { transform: rotate(-8deg) scale(1.1); }
 @media (prefers-reduced-motion: reduce) {
@@ -334,7 +334,7 @@ body {
 .due-badge.none { background: var(--accent2-soft); color: var(--accent2); }
 
 .mastery-bar { display: flex; height: 9px; border-radius: 999px; overflow: hidden; margin: 16px 0 7px; background: var(--border); }
-.mastery-seg { transition: width .4s ease; }
+.mastery-seg { transition: width .4s var(--ease); }
 .mastery-seg.new { background: var(--muted); opacity: .45; }
 .mastery-seg.learning { background: #f59e0b; }
 .mastery-seg.mastered { background: var(--accent2); }
@@ -347,7 +347,7 @@ body {
 .btn {
   flex: 1; border: none; border-radius: 12px; padding: 13px 16px; font-weight: 700;
   font-size: 15px; cursor: pointer; font-family: inherit; display: flex; align-items: center;
-  justify-content: center; gap: 7px; transition: transform .18s cubic-bezier(.3,.6,.3,1.5), filter .12s, opacity .12s, box-shadow .18s;
+  justify-content: center; gap: 7px; transition: transform .18s var(--ease-spring), filter .12s, opacity .12s, box-shadow .18s;
   text-decoration: none;
 }
 .btn.primary { background: var(--accent); color: #fff; }
@@ -395,18 +395,18 @@ body {
   display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: .03em;
 }
 .progress-track { height: 7px; border-radius: 999px; background: var(--border); overflow: hidden; }
-.progress-fill { height: 100%; background: var(--accent); border-radius: 999px; transition: width .3s ease; width: 0%; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 999px; transition: width .3s var(--ease); width: 0%; }
 
 .card-scene {
   perspective: 1200px; margin-bottom: 20px;
-  transition: transform .3s cubic-bezier(.3,.6,.3,1), opacity .3s ease;
+  transition: transform .3s var(--ease), opacity .3s var(--ease);
 }
 .card-scene.no-anim { transition: none; }
 .card-scene.exit-right { transform: translateX(130%) rotate(10deg); opacity: 0; }
 .card-scene.exit-left { transform: translateX(-130%) rotate(-10deg); opacity: 0; }
 .card-flip {
   position: relative; width: 100%; height: 560px; transform-style: preserve-3d;
-  transition: transform .5s cubic-bezier(.4,.2,.2,1); cursor: pointer;
+  transition: transform .5s var(--ease); cursor: pointer;
 }
 .card-flip.no-anim { transition: none; }
 .card-flip.flipped { transform: rotateY(180deg); }
@@ -537,7 +537,7 @@ body {
   background: var(--card); border: 2px solid var(--border); border-radius: 16px;
   padding: 22px 22px; min-height: 78px; display: flex; align-items: center; justify-content: center;
   text-align: center; font-size: 19px; font-weight: 700; color: var(--ink); cursor: pointer;
-  line-height: 1.35; transition: border-color .15s, background .15s, color .15s, transform .2s ease, opacity .25s ease;
+  line-height: 1.35; transition: border-color .15s, background .15s, color .15s, transform .2s var(--ease), opacity .25s var(--ease);
 }
 .match-item:hover:not(.matched):not(:disabled) { border-color: var(--accent4); }
 .match-item.selected { border-color: var(--accent4); background: var(--accent4-soft); }
