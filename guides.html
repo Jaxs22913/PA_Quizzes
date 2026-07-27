@@ -237,20 +237,25 @@
   /* Cram Sheets — one condensed night-before reference per exam, distinct
      from the amber "Quick Reference" treatment so it reads as its own kind
      of companion (a compressed version of THIS exam's own guide, not a
-     standalone cross-cutting reference). */
-  .guide-card.cram { border-left-color: var(--a-violet); }
-  .guide-card.cram:hover { border-color: var(--a-violet); }
+     standalone cross-cutting reference).
+     Green rather than the original violet: violet sits only ~40 degrees from
+     the Study Guide blue on the hue ring, so the two badges read as near
+     neighbours in the same grid. Green is ~113 degrees from blue and ~91
+     from the reference amber, which is the widest separation available
+     without inventing a hue outside the ring. */
+  .guide-card.cram { border-left-color: var(--a-green); }
+  .guide-card.cram:hover { border-color: var(--a-green); }
   .cram-badge {
     display: inline-block; align-self: flex-start;
     font: 700 9.5px/1 var(--font-sans, ui-sans-serif);
-    text-transform: uppercase; letter-spacing: .06em; color: var(--a-violet);
-    background: var(--a-violet-soft); border: 1px solid color-mix(in oklab, var(--a-violet) 22%, transparent); padding: 3px 8px;
+    text-transform: uppercase; letter-spacing: .06em; color: var(--a-green);
+    background: var(--a-green-soft); border: 1px solid color-mix(in oklab, var(--a-green) 22%, transparent); padding: 3px 8px;
     border-radius: 999px; margin: 0 0 7px;
   }
 
   /* Filter-by-type chips (added 2026-07-23). Toggle which kinds of study aid
      show in the grid; the active chip borrows each type's own accent
-     (blue = all/guides, purple = cram, amber = reference) to tie the control
+     (blue = all/guides, green = cram, amber = reference) to tie the control
      to the card colors it filters. */
   .guide-filter-nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 24px; }
   .guide-filter-label {
@@ -269,7 +274,7 @@
   .guide-filter-chip.active { color: #fff; border-color: var(--accent); background: var(--accent); }
   .guide-filter-chip.active:hover { color: #fff; transform: none; }
   .guide-filter-chip.active .fc-count { opacity: .8; }
-  .guide-filter-chip[data-filter="cram"].active { background: #7c3aed; border-color: #7c3aed; }
+  .guide-filter-chip[data-filter="cram"].active { background: var(--a-green); border-color: var(--a-green); }
   .guide-filter-chip[data-filter="ref"].active { background: var(--a-amber); border-color: var(--a-amber); }
 
   .empty-state {
