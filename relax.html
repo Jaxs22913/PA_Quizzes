@@ -186,7 +186,7 @@
     border:1px solid var(--r-line);transition:transform .2s cubic-bezier(.3,.6,.3,1.5);}
   .r-corner-btn:hover{transform:scale(1.1) rotate(-8deg);}
   .r-corner-btn:active{transform:scale(.92);}
-  .r-corner-btn svg{width:19px;height:19px;}
+  .r-corner-btn svg{width:17px;height:17px;}   /* matches theme.js corner buttons */
   .r-settings{position:fixed;top:60px;right:14px;z-index:601;background:var(--r-card);border:1px solid var(--r-line);
     border-radius:14px;box-shadow:var(--r-shadow);padding:14px 16px;min-width:210px;display:none;}
   .r-settings.open{display:block;animation:fade .25s ease;}
@@ -217,8 +217,8 @@
 <body>
 <div class="r-bg" aria-hidden="true"></div>
 <div id="relax-corner" aria-label="Page actions">
-  <button class="r-corner-btn" id="relax-reload" type="button" aria-label="Refresh / check for updates" title="Refresh / check for updates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button>
   <button class="r-corner-btn" id="relax-settings-btn" type="button" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+  <button class="r-corner-btn" id="relax-reload" type="button" aria-label="Refresh / check for updates" title="Refresh / check for updates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></button>
 </div>
 <div class="r-settings" id="relax-settings" role="dialog" aria-label="Settings">
   <h3>Settings</h3>

@@ -499,7 +499,9 @@
     inkBtn.className = "corner-btn";
     inkBtn.setAttribute("aria-label", "Draw on this guide");
     inkBtn.title = "Draw on this guide (stylus, Apple Pencil, or mouse)";
-    inkBtn.innerHTML = TOOL_ICONS.pen;
+    // the corner cluster draws its icons at 17px; the same glyph is reused
+    // at 16px inside the ink toolbar, so bump just this instance
+    inkBtn.innerHTML = TOOL_ICONS.pen.replace('width="16" height="16"', 'width="17" height="17"');
     inkBtn.addEventListener("click", toggle);
     cornerGroup.appendChild(inkBtn);
   }
