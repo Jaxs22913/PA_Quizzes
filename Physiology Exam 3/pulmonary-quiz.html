@@ -354,28 +354,28 @@ const DECK = "Pulmonary Physiology I & II";
 const questions = [
  /* ===== Respiratory muscles ===== */
  {obj:"Respiratory muscles", s:18, q:"During quiet (resting) breathing, how is expiration accomplished?",
-  o:["By active contraction of the diaphragm","Passively, through elastic recoil of the lungs and chest wall","By contraction of the abdominal muscles","By contraction of the external intercostals"],
+  o:["By active contraction of the diaphragm","Passively, through elastic recoil of the lungs and chest wall","By contraction of the abdominal muscles","By active contraction of the external intercostal muscles"],
   a:1, e:"In quiet breathing the inspiratory muscles simply relax and the stretched lung recoils, expelling air passively \u2014 no active expiratory effort is needed. Diaphragm and external-intercostal contraction produce inspiration, and the abdominals are recruited only for forced expiration."},
 
  {obj:"Respiratory muscles", s:14, q:"What happens to pleural (intrapleural) pressure during inspiration?",
-  o:["It becomes positive","It stays constant throughout the breath","It becomes more negative (about \u20135 to \u20138 cm H\u2082O)","It rises toward zero"],
+  o:["It becomes positive","It stays entirely constant throughout the breath","It becomes more negative (about \u20135 to \u20138 cm H\u2082O)","It rises toward zero"],
   a:2, e:"As the chest expands, intrapleural pressure falls further below atmospheric (roughly \u20135 to \u20138 cm H\u2082O), pulling the lungs open. It does not turn positive or move toward zero during inspiration \u2014 those occur in expiration \u2014 and it clearly changes across the breath."},
 
  {obj:"Respiratory muscles", s:18, q:"How does forced expiration differ from quiet expiration?",
-  o:["It uses active muscle effort, and pleural pressure can become positive","It relies solely on relaxation of the diaphragm","It makes pleural pressure more negative","It requires surfactant to push air out"],
+  o:["It uses active muscle effort, and pleural pressure can become positive","It relies solely on passive relaxation of the diaphragm muscle","It makes pleural pressure more negative","It requires surfactant to push air out"],
   a:0, e:"Forced expiration recruits expiratory muscles (e.g., abdominals), which can drive intrapleural pressure positive to expel air rapidly. Passive relaxation and a more-negative pleural pressure describe quiet breathing and inspiration, and surfactant lowers surface tension rather than expelling air."},
 
  /* ===== Compliance & elasticity ===== */
  {obj:"Compliance & elasticity", s:14, q:"Lung compliance is best defined as...",
-  o:["The pressure needed to overcome airway resistance","The tendency of the lung to recoil after stretch","The rate of airflow through the bronchioles","The change in lung volume per unit change in pressure (\u0394V/\u0394P)"],
+  o:["The pressure needed to overcome resistance in the conducting airways","The tendency of the lung to recoil after stretch","The rate of airflow through the bronchioles","The change in lung volume per unit change in pressure (\u0394V/\u0394P)"],
   a:3, e:"Compliance measures how much lung volume changes for a given change in pressure (\u0394V/\u0394P) \u2014 its distensibility. Recoil tendency is elasticity (the opposite idea), while airway resistance and airflow rate describe how easily air moves, not how easily the lung stretches."},
 
  {obj:"Compliance & elasticity", s:19, q:"Something described as \u201chighly elastic,\u201d like lung tissue, will...",
-  o:["Stretch easily and stay stretched","Resist being stretched and tend to recoil to its original shape","Have very high compliance","Lose its shape permanently after stretching"],
+  o:["Stretch easily and stay stretched","Resist being stretched and tend to recoil to its original shape","Have very high compliance","Lose its original shape permanently once it has been stretched"],
   a:1, e:"Elasticity is the tendency to return to the original shape after stretch, so a highly elastic structure resists deformation and recoils. Stretching easily or staying deformed describes low elasticity / high compliance \u2014 the opposite property."},
 
  {obj:"Compliance & elasticity", s:19, q:"Which TWO factors are chiefly responsible for the lung's elastic recoil?",
-  o:["Airway resistance and dead space","Blood flow and lymphatic drainage","Elastic tissue (collagen/elastin) and alveolar surface tension","Surfactant and mucus production"],
+  o:["Airway resistance and dead space","Pulmonary blood flow and lymphatic drainage through the lung","Elastic tissue (collagen/elastin) and alveolar surface tension","Surfactant and mucus production"],
   a:2, e:"The lung's recoil comes from its elastic fibers (collagen and elastin) plus the surface tension of the alveolar lining fluid. Resistance, dead space, blood flow, and mucus are unrelated to recoil, and surfactant actually reduces the surface-tension component."},
 
  {obj:"Compliance & elasticity", s:19, q:"How does surface tension at the air\u2013water interface affect the alveoli?",
@@ -383,7 +383,7 @@ const questions = [
   a:0, e:"Surface tension pulls the water-lined alveolar walls inward, tending to collapse the alveolus and lowering compliance. It does not push walls apart or leave stability unaffected \u2014 counteracting it is exactly why surfactant is needed."},
 
  {obj:"Compliance & elasticity", s:16, q:"Because airflow varies with r\u2074, a small decrease in airway radius will...",
-  o:["Barely change resistance","Decrease resistance","Only matter in the alveoli, not the airways","Sharply increase resistance, since radius is raised to the fourth power"],
+  o:["Barely change resistance","Decrease resistance","Only matter within the alveoli themselves, never in the conducting airways","Sharply increase resistance, since radius is raised to the fourth power"],
   a:3, e:"With resistance proportional to 1/r\u2074, even slight narrowing greatly increases resistance to airflow. It does not decrease or barely change resistance, and the effect is greatest in the airways (the upper airways carry the major resistance), not the alveoli."},
 
  {obj:"Compliance & elasticity", s:16, q:"How does a decrease in lung volume affect airway resistance?",
@@ -396,11 +396,11 @@ const questions = [
   a:2, e:"A lung capacity is defined as the sum of two or more lung volumes (e.g., vital capacity = IRV + TV + ERV). Capacities are therefore larger than individual volumes, are not synonymous with them, and are measured at rest."},
 
  {obj:"Volumes & capacities", s:29, q:"Vital capacity is the sum of which volumes?",
-  o:["Tidal volume + residual volume","Inspiratory reserve + tidal volume + expiratory reserve","Expiratory reserve + residual volume","Inspiratory reserve + residual volume"],
+  o:["Tidal volume + residual volume","Inspiratory reserve + tidal volume + expiratory reserve","Expiratory reserve + residual volume","Inspiratory reserve volume + the residual volume"],
   a:1, e:"Vital capacity \u2014 the maximum air expired after a maximal inspiration \u2014 equals IRV + TV + ERV. Any combination that includes residual volume is wrong, because residual volume cannot be exhaled and is not part of vital capacity."},
 
  {obj:"Volumes & capacities", s:30, q:"Functional residual capacity (FRC) represents the...",
-  o:["Maximum air inspired after a normal expiration","Maximum air expired after a maximal inspiration","Air moved in one normal breath","Air remaining in the lungs after a normal (resting) expiration"],
+  o:["Maximum air inspired after a normal expiration","The maximum air expired following a maximal inspiration","Air moved in one normal breath","Air remaining in the lungs after a normal (resting) expiration"],
   a:3, e:"FRC (= ERV + RV) is the volume left in the lungs after a normal, resting expiration. The maximum inspired after a normal expiration is inspiratory capacity, the maximum expired after maximal inspiration is vital capacity, and one normal breath is tidal volume."},
 
  {obj:"Volumes & capacities", s:31, q:"Residual volume is the air that...",
@@ -425,20 +425,20 @@ const questions = [
   a:2, e:"With P = 2T/r, a smaller radius demands a higher pressure to stay open, so small alveoli are inherently less stable \u2014 which is why surfactant is essential. The other options reverse or ignore this radius relationship."},
 
  {obj:"Surfactant", s:23, q:"Without surfactant, what would happen to a small alveolus connected to a larger one?",
-  o:["The small alveolus would tend to collapse and empty into the larger one","The large alveolus would empty into the small one","Both would remain perfectly stable","Surface tension would disappear"],
+  o:["The small alveolus would tend to collapse and empty into the larger one","The large alveolus would collapse and empty into the smaller one","Both would remain perfectly stable","Surface tension would disappear"],
   a:0, e:"Without surfactant, the higher collapse pressure of the small alveolus (Laplace) drives its air into the larger, lower-pressure alveolus \u2014 atelectasis. The reverse flow, perfect stability, and disappearance of surface tension are all incorrect."},
 
  {obj:"Surfactant", s:23, q:"How does surfactant help stabilize alveoli of different sizes?",
-  o:["By increasing surface tension in large alveoli","By enlarging all alveoli equally","By blocking airflow to small alveoli","By reducing surface tension, which lessens the collapse tendency of small alveoli"],
+  o:["By increasing the surface tension inside the larger alveoli of the lung instead","By enlarging all alveoli equally","By blocking airflow to small alveoli","By reducing surface tension, which lessens the collapse tendency of small alveoli"],
   a:3, e:"Surfactant lowers surface tension \u2014 most effectively in small alveoli \u2014 reducing their collapse tendency and equalizing stability across alveolar sizes. It does not raise tension, resize alveoli uniformly, or block airflow."},
 
  /* ===== Gas exchange in the lungs ===== */
  {obj:"Gas exchange (lungs)", s:51, q:"In what direction does a gas diffuse across the respiratory membrane?",
-  o:["From lower to higher partial pressure","Down its partial pressure gradient, from higher to lower","Always from blood to alveolus","Independent of any pressure gradient"],
+  o:["From lower to higher partial pressure, against the gradient","Down its partial pressure gradient, from higher to lower","Always from blood to alveolus","Independent of any pressure gradient"],
   a:1, e:"A gas diffuses passively from higher to lower partial pressure. It cannot move up a gradient without energy, and its direction depends on that gradient (O\u2082 into blood, CO\u2082 out) \u2014 so \u201calways blood to alveolus\u201d and \u201cindependent of gradient\u201d are wrong."},
 
  {obj:"Gas exchange (lungs)", s:62, q:"According to Fick's law, gas diffusion increases when...",
-  o:["The membrane is thicker","The surface area is smaller","The partial pressure gradient and surface area are larger","The solubility of the gas is lower"],
+  o:["The membrane is thicker","The surface area is smaller","The partial pressure gradient and surface area are larger","The solubility of the gas in plasma is much lower"],
   a:2, e:"Fick's law makes diffusion proportional to the pressure gradient, surface area, and solubility, and inversely proportional to membrane thickness. So a bigger gradient and area speed diffusion, while a thicker membrane, smaller area, or lower solubility slow it."},
 
  {obj:"Gas exchange (lungs)", s:61, q:"Although CO\u2082 and O\u2082 have similar molecular weights, CO\u2082 diffuses much faster mainly because...",
@@ -450,29 +450,29 @@ const questions = [
   a:3, e:"Greater alveolar ventilation washes out CO\u2082 faster than metabolism produces it, so alveolar (and arterial) PCO\u2082 falls. Ventilation and PCO\u2082 are inversely related, so raising PCO\u2082 or \u201cno effect\u201d is incorrect."},
 
  {obj:"Gas exchange (lungs)", s:52, q:"Alveolar air is replaced only slowly (a fraction with each breath). What is the physiological benefit?",
-  o:["It lets CO\u2082 accumulate to high levels","It keeps alveolar gas concentrations stable, preventing sudden swings","It speeds oxygen loss from the blood","It prevents any gas exchange from occurring"],
+  o:["It lets CO\u2082 accumulate to high levels","It keeps alveolar gas concentrations stable, preventing sudden swings","It speeds oxygen loss from the blood","It prevents gas exchange from occurring across the membrane"],
   a:1, e:"Because only about one-seventh of alveolar air is exchanged per breath, alveolar O\u2082 and CO\u2082 stay relatively constant, buffering blood gases against breath-to-breath swings. It does not let CO\u2082 build up, speed O\u2082 loss, or halt exchange."},
 
  /* ===== Respiratory membrane ===== */
  {obj:"Respiratory membrane", s:60, q:"Why is the respiratory (alveolar) membrane extremely thin (~0.2 \u00b5m)?",
-  o:["To increase surface tension","To slow gas diffusion for regulation","To minimize diffusion distance and speed gas exchange","To store surfactant"],
+  o:["To increase surface tension","To slow gas diffusion down so it can be regulated","To minimize diffusion distance and speed gas exchange","To store surfactant"],
   a:2, e:"At ~0.2 \u00b5m thick, the membrane keeps the diffusion distance tiny, allowing rapid gas exchange (Fick's law favors short distances). It is not there to raise surface tension, slow diffusion, or store surfactant."},
 
  {obj:"Respiratory membrane", s:57, q:"The lungs contain roughly 300 million alveoli. How does this aid gas exchange?",
-  o:["It provides an enormous surface area for diffusion","It reduces the total surface area","It increases the diffusion distance","It decreases compliance"],
+  o:["It provides an enormous surface area for diffusion","It reduces the total surface area","It increases the distance that gas must diffuse","It decreases compliance"],
   a:0, e:"Hundreds of millions of alveoli create a vast total surface area, which \u2014 per Fick's law \u2014 greatly increases gas exchange. This increases (not reduces) surface area and does not lengthen the diffusion distance or lower compliance."},
 
  {obj:"Respiratory membrane", s:60, q:"Which sequence correctly lists layers a gas crosses in the respiratory membrane, from air to blood?",
-  o:["Capillary endothelium \u2192 alveolar epithelium \u2192 surfactant","Interstitial space \u2192 surfactant \u2192 capillary endothelium","Alveolar epithelium \u2192 surfactant \u2192 red blood cell","Surfactant/fluid \u2192 alveolar epithelium \u2192 basement membranes \u2192 capillary endothelium"],
+  o:["Capillary endothelium \u2192 basement membranes \u2192 alveolar epithelium \u2192 surfactant","Interstitial space \u2192 surfactant \u2192 capillary endothelium","Alveolar epithelium \u2192 surfactant \u2192 red blood cell","Surfactant/fluid \u2192 alveolar epithelium \u2192 basement membranes \u2192 capillary endothelium"],
   a:3, e:"Moving from air to blood, a gas crosses the surfactant/fluid layer, the alveolar epithelium, the fused basement membranes and interstitium, and finally the capillary endothelium. The other sequences scramble this air-to-blood order."},
 
  {obj:"Respiratory membrane", s:62, q:"If the respiratory membrane becomes thickened, gas exchange is impaired because...",
-  o:["Surface area increases too much","The diffusion distance increases, slowing gas transfer","The partial pressure gradient reverses","The solubility of the gases changes"],
+  o:["Surface area increases too much","The diffusion distance increases, slowing gas transfer","The partial pressure gradient across it reverses direction","The solubility of the gases changes"],
   a:1, e:"A thicker membrane lengthens the path a gas must diffuse, and by Fick's law greater distance slows transfer (e.g., in edema or fibrosis). Thickening does not add useful surface area, reverse the gradient, or change gas solubility."},
 
  /* ===== Respiratory control ===== */
  {obj:"Respiratory control", s:88, q:"Respiratory regulation is organized as which three-part system?",
-  o:["Sensors, a central controller, and effector muscles","Arteries, veins, and capillaries","Alveoli, bronchioles, and pleura","Surfactant, mucus, and cilia"],
+  o:["Sensors, a central controller, and effector muscles","Arteries, veins, capillaries, and lymphatics","Alveoli, bronchioles, and pleura","Surfactant, mucus, and cilia"],
   a:0, e:"Respiratory control is a feedback loop: sensors (chemoreceptors) gather data, the central controller (brainstem) integrates it, and effectors (respiratory muscles) act. The other trios list vascular, structural, or airway-lining parts, not the control loop."},
 
  {obj:"Respiratory control", s:96, q:"The central chemoreceptors are located in the brainstem and respond mainly to...",
@@ -480,19 +480,19 @@ const questions = [
   a:2, e:"The central chemoreceptors sense CO\u2082 and H\u207a (via H\u207a generated in the CSF). Oxygen sensing is the job of the peripheral chemoreceptors, while blood pressure and lung stretch are detected by other receptors."},
 
  {obj:"Respiratory control", s:97, q:"The peripheral chemoreceptors of the carotid and aortic bodies are especially important for sensing...",
-  o:["Lung compliance","Airway resistance","Pleural pressure","Low arterial oxygen (PO\u2082)"],
+  o:["Lung compliance","Airway resistance in the bronchi","Pleural pressure","Low arterial oxygen (PO\u2082)"],
   a:3, e:"The carotid and aortic bodies are the main sensors of low arterial PO\u2082 (they also respond to CO\u2082/H\u207a). Compliance, resistance, and pleural pressure are mechanical properties, not what these chemoreceptors detect."},
 
  {obj:"Respiratory control", s:91, q:"Increased arterial PCO\u2082 stimulates the central chemoreceptors indirectly by...",
-  o:["Binding directly to oxygen sensors","Generating H\u207a after CO\u2082 crosses into the brain/CSF","Reducing blood flow to the medulla","Constricting the airways"],
+  o:["Binding directly to the peripheral oxygen sensors","Generating H\u207a after CO\u2082 crosses into the brain/CSF","Reducing blood flow to the medulla","Constricting the airways"],
   a:1, e:"CO\u2082 crosses into the brain/CSF, forms carbonic acid, and releases H\u207a; the central chemoreceptors actually respond to that H\u207a. They are not oxygen sensors, and CO\u2082 does not drive breathing by cutting medullary blood flow or narrowing airways."},
 
  {obj:"Respiratory control", s:92, q:"Under normal resting conditions, the most important minute-to-minute stimulus driving ventilation is...",
-  o:["Arterial PCO\u2082 (and the resulting H\u207a)","A small fall in arterial PO\u2082","Blood glucose level","Body temperature"],
+  o:["Arterial PCO\u2082 (and the resulting H\u207a)","A small fall in the arterial PO\u2082","Blood glucose level","Body temperature"],
   a:0, e:"Minute-to-minute ventilation is governed most tightly by arterial PCO\u2082 and the H\u207a it generates. Modest drops in PO\u2082 have little effect until PO\u2082 falls substantially, and glucose and temperature are not the primary respiratory stimulus."},
 
  {obj:"Respiratory control", s:99, q:"When arterial PO\u2082 falls substantially (PCO\u2082 held constant), ventilation...",
-  o:["Decreases","Stays exactly the same","Increases, driven by the peripheral chemoreceptors","Stops entirely"],
+  o:["Decreases","Stays at exactly the same rate as it was before","Increases, driven by the peripheral chemoreceptors","Stops entirely"],
   a:2, e:"A substantial fall in PO\u2082 stimulates the carotid and aortic bodies, increasing ventilation (the hypoxic drive). Ventilation does not fall, stay flat, or stop when oxygen drops."},
 
  /* ===== Oxygen transport ===== */
@@ -501,7 +501,7 @@ const questions = [
   a:3, e:"Each gram of hemoglobin binds about 1.34 ml of O\u2082. The 0.3 ml figure is dissolved O\u2082 per 100 ml of blood, and ~20 ml is the total O\u2082-carrying capacity per 100 ml \u2014 not the per-gram value."},
 
  {obj:"Oxygen transport", s:77, q:"Why does hemoglobin matter so much for oxygen transport?",
-  o:["Hemoglobin dissolves oxygen directly into plasma","Dissolved O\u2082 alone (~0.3 ml/100 ml) is far too little; Hb raises capacity to ~20 ml/100 ml","Dissolved oxygen carries most of the O\u2082 in blood","Hemoglobin only carries CO\u2082, not O\u2082"],
+  o:["Hemoglobin dissolves oxygen directly into the plasma, raising dissolved content greatly","Dissolved O\u2082 alone (~0.3 ml/100 ml) is far too little; Hb raises capacity to ~20 ml/100 ml","Dissolved oxygen carries most of the O\u2082 in blood","Hemoglobin only carries CO\u2082, not O\u2082"],
   a:1, e:"Physically dissolved O\u2082 is tiny (~0.3 ml/100 ml); binding to hemoglobin lifts capacity to about 20 ml/100 ml, so Hb carries the vast majority of oxygen. It does not dissolve O\u2082 into plasma, and it carries O\u2082 as well as some CO\u2082."},
 
  {obj:"Oxygen transport", s:76, q:"\u201cPercent saturation\u201d of hemoglobin refers to...",
@@ -517,7 +517,7 @@ const questions = [
   a:3, e:"A right shift (lower O\u2082 affinity, better unloading) results from increased CO\u2082, increased H\u207a/lower pH, higher temperature, and increased 2,3-BPG \u2014 the conditions of active tissue. Lower temperature, higher pH, and less 2,3-BPG shift the curve left."},
 
  {obj:"Oxygen transport", s:82, q:"Carbon monoxide is dangerous to oxygen transport because it...",
-  o:["Increases the oxygen-carrying capacity of blood","Binds hemoglobin far more tightly than O\u2082, blocking O\u2082 binding","Cannot bind hemoglobin at all","Only affects dissolved oxygen"],
+  o:["Increases the oxygen-carrying capacity of the blood markedly","Binds hemoglobin far more tightly than O\u2082, blocking O\u2082 binding","Cannot bind hemoglobin at all","Only affects dissolved oxygen"],
   a:1, e:"Carbon monoxide binds hemoglobin with far greater affinity than oxygen, occupying binding sites and preventing O\u2082 transport. It reduces (not increases) usable capacity, definitely binds hemoglobin, and acts on hemoglobin rather than dissolved O\u2082."},
 
  /* ===== CO2 transport ===== */
@@ -530,20 +530,20 @@ const questions = [
   a:0, e:"Carbonic anhydrase in red cells rapidly converts CO\u2082 + H\u2082O to carbonic acid, which dissociates to H\u207a and bicarbonate. The other enzymes act on peptides, lactate, and ATP production respectively, not on CO\u2082 hydration."},
 
  {obj:"CO\u2082 transport", s:86, q:"As bicarbonate leaves the red cell in exchange for chloride entering, this exchange is called the...",
-  o:["Bohr shift","Haldane shift","Sodium shift","Chloride (Hamburger) shift"],
+  o:["Bohr shift","The Haldane shift effect","Sodium shift","Chloride (Hamburger) shift"],
   a:3, e:"As bicarbonate leaves the red cell, chloride moves in to preserve electrical neutrality \u2014 the chloride (Hamburger) shift. The Bohr and Haldane effects describe how pH/O\u2082 change gas affinities, and there is no \u201csodium shift\u201d here."},
 
  {obj:"CO\u2082 transport", s:86, q:"About 23% of CO\u2082 is transported...",
-  o:["Dissolved in plasma","Bound to hemoglobin (carbaminohemoglobin)","As free carbonic acid","Inside white blood cells"],
+  o:["Dissolved in plasma","Bound to hemoglobin (carbaminohemoglobin)","As free carbonic acid","Inside the circulating white blood cells"],
   a:1, e:"Roughly 23% of CO\u2082 is carried bound to hemoglobin as carbaminohemoglobin. Only ~7% is dissolved, most is bicarbonate, and CO\u2082 is not stored as free carbonic acid or within white cells."},
 
  {obj:"CO\u2082 transport", s:85, q:"The Haldane effect describes how...",
-  o:["Low pH increases O\u2082 unloading","CO\u2082 increases hemoglobin's O\u2082 affinity","Binding of O\u2082 to hemoglobin in the lungs promotes CO\u2082 release","Chloride enters the red cell at the tissues"],
+  o:["Low pH increases O\u2082 unloading","CO\u2082 increases hemoglobin's O\u2082 affinity","Binding of O\u2082 to hemoglobin in the lungs promotes CO\u2082 release","Chloride ions enter the red blood cell out in the tissues"],
   a:2, e:"The Haldane effect: when hemoglobin binds O\u2082 in the lungs, it releases CO\u2082 more readily, aiding CO\u2082 elimination. Low pH increasing O\u2082 unloading is the Bohr effect, and the other options misstate CO\u2082's effect on O\u2082 affinity and the chloride shift."},
 
  /* ===== Respiration & pH ===== */
  {obj:"Respiration & pH", s:86, q:"How does rising blood CO\u2082 lower blood pH?",
-  o:["CO\u2082 combines with water to form carbonic acid, which releases H\u207a","CO\u2082 directly binds and removes bicarbonate","CO\u2082 destroys hemoglobin's buffering ability","CO\u2082 has no relationship to pH"],
+  o:["CO\u2082 combines with water to form carbonic acid, which releases H\u207a","CO\u2082 directly binds and removes bicarbonate","CO\u2082 destroys the buffering ability of the hemoglobin molecule","CO\u2082 has no relationship to pH"],
   a:0, e:"Dissolved CO\u2082 forms carbonic acid, which dissociates into H\u207a and bicarbonate, so rising CO\u2082 raises H\u207a and lowers pH. CO\u2082 does not remove bicarbonate directly or destroy hemoglobin buffering, and it is tightly linked to pH."},
 
  {obj:"Respiration & pH", s:92, q:"If a person hyperventilates and \u201cblows off\u201d CO\u2082, blood pH will...",
@@ -556,11 +556,11 @@ const questions = [
 
  /* ===== Tissue gas exchange ===== */
  {obj:"Tissue gas exchange", s:72, q:"Tissue PO\u2082 is determined by the balance between...",
-  o:["Surfactant production and surface tension","Alveolar ventilation and dead space","The rate of blood flow (O\u2082 delivery) and the rate of O\u2082 consumption","Pleural pressure and compliance"],
+  o:["Surfactant production and the alveolar surface tension it creates","Alveolar ventilation and dead space","The rate of blood flow (O\u2082 delivery) and the rate of O\u2082 consumption","Pleural pressure and compliance"],
   a:2, e:"Tissue PO\u2082 reflects the balance between O\u2082 delivered by blood flow and O\u2082 used by the cells \u2014 more flow raises it, more consumption lowers it. Surfactant, ventilation/dead space, and pleural mechanics govern the lung, not tissue PO\u2082."},
 
  {obj:"Tissue gas exchange", s:80, q:"During exercise, more oxygen is released to active muscle largely because...",
-  o:["Tissue PO\u2082 falls and local acidity/CO\u2082 promote O\u2082 unloading","Hemoglobin loses its ability to bind oxygen","Blood flow to muscle stops","Surfactant increases O\u2082 release"],
+  o:["Tissue PO\u2082 falls and local acidity/CO\u2082 promote O\u2082 unloading","Hemoglobin permanently loses its ability to bind oxygen","Blood flow to muscle stops","Surfactant increases O\u2082 release"],
   a:0, e:"In exercising muscle, PO\u2082 drops and the higher CO\u2082/H\u207a and temperature right-shift the curve (Bohr effect), so hemoglobin releases far more O\u2082. Hemoglobin doesn't lose function, muscle blood flow rises rather than stops, and surfactant has no role in tissue O\u2082 release."}
 ];
 

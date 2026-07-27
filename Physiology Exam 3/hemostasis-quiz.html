@@ -371,7 +371,7 @@ const questions = [
   a:1, e:"Platelets are cell fragments released by megakaryocytes in the bone marrow. (A), (C), and (D) name unrelated cells \u2014 endothelium, monocytes, and reticulocytes (which mature into red cells) do not produce platelets."},
 
  {obj:"Hematocrit & hemoglobin", s:6, q:"The hematocrit ('packed cell volume') measures which of the following?",
-  o:["Grams of hemoglobin per 100 mL of blood","The number of red cells per cubic millimeter","The oxygen carried per gram of hemoglobin","The percentage of blood volume made up of packed red cells"],
+  o:["Grams of hemoglobin per 100 mL of blood","The number of red blood cells per cubic millimeter","The oxygen carried per gram of hemoglobin","The percentage of blood volume made up of packed red cells"],
   a:3, e:"Hematocrit is the fraction of blood volume occupied by packed red cells (normally ~40\u201345%). (A) describes hemoglobin concentration, (B) the RBC count, and (C) oxygen-carrying capacity \u2014 all distinct measurements."},
 
  {obj:"Hematocrit & hemoglobin", s:21, q:"How many oxygen molecules can a single hemoglobin molecule carry, and why?",
@@ -403,7 +403,7 @@ const questions = [
   a:0, e:"Plasma iron is carried loosely bound to transferrin, which can release it to any tissue cell. (B) and (D) are intracellular storage forms, and (C) is wrong \u2014 free ionic iron is not the normal transport form."},
 
  {obj:"Hematocrit & hemoglobin", s:25, q:"What is the main intracellular storage form of iron?",
-  o:["Transferrin","Ceruloplasmin","Ferritin, formed when iron combines with apoferritin","Apotransferrin"],
+  o:["Transferrin","Ceruloplasmin","Ferritin, formed when iron combines with apoferritin","Apotransferrin, the plasma iron carrier"],
   a:2, e:"Inside cells, iron combines with apoferritin to form ferritin, the principal storage form. (A) and (D) are transport-related proteins, and (B) is a copper-carrying protein, not an iron store."},
 
  {obj:"Hematocrit & hemoglobin", s:24, q:"Where is the largest share of the body's iron located?",
@@ -411,7 +411,7 @@ const questions = [
   a:1, e:"Most body iron (~65%) is in hemoglobin. Liver ferritin stores, myoglobin, and transferrin-bound iron each hold much smaller fractions."},
 
  {obj:"Hematocrit & hemoglobin", s:25, q:"A low plasma transferrin level (poor iron transport) tends to produce which result?",
-  o:["Enlarged, macrocytic red cells","Iron overload deposited in tissues","Increased oxygen affinity of hemoglobin","Hypochromic red cells containing too little hemoglobin"],
+  o:["Enlarged, macrocytic red cells","Iron overload deposited in tissues","Increased oxygen affinity of the hemoglobin molecule","Hypochromic red cells containing too little hemoglobin"],
   a:3, e:"With too little transferrin to deliver iron, red cells are made with less hemoglobin than normal \u2014 hypochromic anemia. (A) reflects B12/folate problems; (B) is the opposite of poor transport; (C) is unrelated."},
 
  {obj:"Hematocrit & hemoglobin", s:28, q:"After hemoglobin is broken down, what happens to its porphyrin ring?",
@@ -443,7 +443,7 @@ const questions = [
   a:0, e:"Low tissue oxygen (hypoxia) is the key trigger for EPO release. (B), (C), and (D) do not drive EPO; excessive viscosity is a consequence the system tries to avoid, not a stimulus."},
 
  {obj:"Hematopoiesis", s:14, q:"Which molecule links low oxygen to increased erythropoietin gene transcription?",
-  o:["Thrombomodulin","Hypoxia-inducible factor-1 (HIF-1)","Carbonic anhydrase","Antithrombin III"],
+  o:["Thrombomodulin","Hypoxia-inducible factor-1 (HIF-1)","Carbonic anhydrase in the tubule","Antithrombin III"],
   a:1, e:"Hypoxia raises HIF-1, which binds hypoxia-response elements in the EPO promoter to increase EPO transcription. (A) and (D) are coagulation regulators, and (C) is a CO\u2082-handling enzyme \u2014 none control EPO transcription."},
 
  {obj:"Hematopoiesis", s:13, q:"The relationship between tissue oxygenation, EPO, and red cell mass is an example of what kind of control?",
@@ -451,23 +451,23 @@ const questions = [
   a:3, e:"More red cells improve oxygenation, which then reduces the hypoxic drive for EPO \u2014 classic negative feedback. (A) would be self-amplifying (the opposite), and (B)/(C) do not describe this self-correcting system."},
 
  {obj:"Hematopoiesis", s:15, q:"Why do individuals without functioning kidneys typically become anemic?",
-  o:["The liver overproduces EPO and suppresses the marrow","Residual EPO (mostly hepatic) is too little for normal red-cell production","The bone marrow is destroyed without a renal signal","Iron can no longer be absorbed without a kidney hormone"],
+  o:["The liver overproduces EPO and suppresses the marrow","Residual EPO (mostly hepatic) is too little for normal red-cell production","The bone marrow is destroyed without a renal signal","Iron can no longer be absorbed at all without a hormone from the kidney"],
   a:1, e:"The kidney makes ~90% of EPO; the ~10% residual (mainly liver) is insufficient, so hematocrit falls toward 23\u201325%. (A) is wrong \u2014 hepatic EPO is too low, not excessive; (C) is wrong \u2014 the marrow isn't destroyed; (D) misstates iron absorption."},
 
  {obj:"Hematopoiesis", s:17, q:"Why are vitamin B12 and folate essential for red blood cell production?",
-  o:["They form the heme ring of hemoglobin","They carry iron into the mitochondria","They are required for DNA synthesis during rapid cell proliferation","They directly stimulate erythropoietin release"],
+  o:["They form the heme ring of hemoglobin","They carry iron into the mitochondria","They are required for DNA synthesis during rapid cell proliferation","They directly stimulate release of erythropoietin from the kidney"],
   a:2, e:"Both vitamins are needed to make thymidine triphosphate and therefore DNA, which rapidly dividing red-cell precursors require. (A) is wrong \u2014 heme synthesis is a separate pathway; (B) describes transferrin's role; (D) is wrong \u2014 they don't trigger EPO."},
 
  {obj:"Hematopoiesis", s:18, q:"Why can reticulocytes still synthesize hemoglobin even though they are nearly mature?",
-  o:["They still contain a functional nucleus","They retain mitochondria and centrioles","They retain some endoplasmic reticulum and mRNA","They store erythropoietin internally"],
+  o:["They still contain a fully functional nucleus","They retain mitochondria and centrioles","They retain some endoplasmic reticulum and mRNA","They store erythropoietin internally"],
   a:2, e:"Reticulocytes keep a small amount of endoplasmic reticulum and mRNA, allowing continued hemoglobin synthesis. (A) is wrong \u2014 they have no nucleus; (B) and (D) name structures/substances not responsible for this synthesis."},
 
  {obj:"Coagulation mechanisms", s:29, q:"What is the correct sequence of events in hemostasis?",
-  o:["Platelet plug \u2192 vascular constriction \u2192 blood clot \u2192 healing","Vascular constriction \u2192 platelet plug \u2192 blood clot \u2192 healing and recanalization","Blood clot \u2192 platelet plug \u2192 vascular constriction \u2192 healing","Vascular constriction \u2192 blood clot \u2192 platelet plug \u2192 healing"],
+  o:["Platelet plug \u2192 vascular constriction \u2192 blood clot \u2192 healing and recanalization","Vascular constriction \u2192 platelet plug \u2192 blood clot \u2192 healing and recanalization","Blood clot \u2192 platelet plug \u2192 vascular constriction \u2192 healing","Vascular constriction \u2192 blood clot \u2192 platelet plug \u2192 healing"],
   a:1, e:"Hemostasis proceeds as vascular constriction, then a platelet plug, then a blood clot, then healing/recanalization. The other orders misplace one or more steps \u2014 constriction comes first and the clot forms after the platelet plug."},
 
  {obj:"Coagulation mechanisms", s:30, q:"Which mechanism is most important for constricting large blood vessels after injury?",
-  o:["Myogenic contraction from direct damage to the vessel wall","Thromboxane A2 released by platelets","Sympathetic nervous reflexes from pain fibers","Local autacoids from traumatized tissue"],
+  o:["Myogenic contraction from direct damage to the vessel wall","Thromboxane A2 released by platelets","Sympathetic nervous reflexes triggered by local pain fibers","Local autacoids from traumatized tissue"],
   a:0, e:"For large vessels, direct injury triggers myogenic contraction, the most important constriction mechanism. Thromboxane A2 (B) matters most for small vessels, while nervous reflexes (C) and autacoids (D) contribute but aren't dominant for large vessels."},
 
  {obj:"Coagulation mechanisms", s:30, q:"Thromboxane A2 released from platelets is especially important for which action?",
@@ -475,15 +475,15 @@ const questions = [
   a:3, e:"Thromboxane A2 from platelets is particularly important for constricting smaller vessels. (A) describes fibrinolysis, (B) is unrelated to TXA2, and (C) is the opposite \u2014 TXA2 promotes, not inhibits, platelet activation."},
 
  {obj:"Coagulation mechanisms", s:33, q:"Why do platelets stick to injured vessel areas but not to normal, intact endothelium?",
-  o:["Intact endothelium constantly releases thromboxane A2","Platelets can bind only to nucleated cells","Their surface glycoproteins repel intact endothelium but adhere to exposed collagen","Intact endothelium lacks tissue factor"],
+  o:["Intact endothelium constantly releases thromboxane A2 to attract platelets","Platelets can bind only to nucleated cells","Their surface glycoproteins repel intact endothelium but adhere to exposed collagen","Intact endothelium lacks tissue factor"],
   a:2, e:"Platelet surface glycoproteins repel normal intact endothelium yet adhere to injured endothelium and exposed collagen. (A) and (D) misattribute the selectivity, and (B) is false \u2014 platelets bind collagen and matrix, not nucleated cells specifically."},
 
  {obj:"Coagulation mechanisms", s:34, q:"What is the role of von Willebrand factor in forming the platelet plug?",
-  o:["It converts prothrombin into thrombin","It helps platelets adhere to exposed collagen","It cross-links fibrin monomers into a mesh","It inhibits platelets to keep the plug small"],
+  o:["It converts circulating prothrombin into thrombin","It helps platelets adhere to exposed collagen","It cross-links fibrin monomers into a mesh","It inhibits platelets to keep the plug small"],
   a:1, e:"Von Willebrand factor bridges platelets to collagen, facilitating adhesion. (A) is the job of prothrombin activator, (C) is factor XIII's role, and (D) is the opposite of vWF's pro-adhesive function."},
 
  {obj:"Coagulation mechanisms", s:34, q:"Activated platelets secrete ADP and thromboxane A2. What do these substances accomplish?",
-  o:["They activate additional platelets through positive feedback","They dissolve the forming platelet plug","They convert fibrinogen into fibrin","They inhibit vascular constriction"],
+  o:["They activate additional platelets through positive feedback","They dissolve the platelet plug as it is forming","They convert fibrinogen into fibrin","They inhibit vascular constriction"],
   a:0, e:"ADP and thromboxane A2 recruit and activate more platelets, a positive-feedback loop that builds the plug. (B) is the opposite effect, (C) is thrombin's action, and (D) is wrong \u2014 these promote hemostasis."},
 
  {obj:"Coagulation mechanisms", s:40, q:"Which step is the rate-limiting step of blood coagulation?",
@@ -491,23 +491,23 @@ const questions = [
   a:3, e:"Forming prothrombin activator is the rate-limiting step; once formed, it rapidly converts prothrombin to thrombin. (A) and (B) occur downstream, and (C) is part of clot breakdown, not formation."},
 
  {obj:"Coagulation mechanisms", s:40, q:"What does prothrombin activator do?",
-  o:["It converts fibrinogen directly into fibrin","It converts prothrombin to thrombin in the presence of calcium","It cross-links adjacent fibrin fibers","It activates plasminogen to plasmin"],
+  o:["It converts fibrinogen directly into fibrin strands","It converts prothrombin to thrombin in the presence of calcium","It cross-links adjacent fibrin fibers","It activates plasminogen to plasmin"],
   a:1, e:"Prothrombin activator, with Ca\u00B2\u207A, converts prothrombin to thrombin. (A) is thrombin's downstream action, (C) is factor XIII's role, and (D) belongs to tissue plasminogen activator in fibrinolysis."},
 
  {obj:"Coagulation mechanisms", s:40, q:"How does thrombin act on fibrinogen?",
-  o:["It cleaves small peptides from fibrinogen, forming fibrin monomers that polymerize","It directly cross-links fibrinogen into a stable mesh","It converts fibrinogen back into prothrombin","It degrades fibrinogen into soluble fragments"],
+  o:["It cleaves small peptides from fibrinogen, forming fibrin monomers that polymerize","It directly cross-links fibrinogen molecules into a stable insoluble mesh","It converts fibrinogen back into prothrombin","It degrades fibrinogen into soluble fragments"],
   a:0, e:"Thrombin removes small peptides from fibrinogen to create fibrin monomers, which polymerize into fibrin fibers. (B) is factor XIII's cross-linking step, (C) reverses the pathway, and (D) describes plasmin's degradative action."},
 
  {obj:"Coagulation mechanisms", s:40, q:"What is the function of factor XIII (fibrin-stabilizing factor)?",
-  o:["It converts prothrombin to thrombin","It initiates the extrinsic pathway","It covalently cross-links fibrin, strengthening the clot","It dissolves the clot after healing"],
+  o:["It converts prothrombin into active thrombin","It initiates the extrinsic pathway","It covalently cross-links fibrin, strengthening the clot","It dissolves the clot after healing"],
   a:2, e:"Factor XIII, activated by thrombin, covalently cross-links fibrin monomers and fibers, so the clot is weak without it. (A) is prothrombin activator's role, (B) is tissue factor's role, and (D) describes plasmin."},
 
  {obj:"Coagulation mechanisms", s:42, q:"How does thrombin promote clot extension through positive feedback?",
-  o:["By inactivating factor V to slow the reaction","By acting on prothrombin and other factors to generate still more thrombin","By dissolving fibrin at the clot's edge","By blocking recruitment of additional platelets"],
+  o:["By inactivating factor V to slow the reaction","By acting on prothrombin and other factors to generate still more thrombin","By dissolving fibrin at the clot's edge","By blocking the recruitment of any additional platelets to the site"],
   a:1, e:"Thrombin feeds back to produce more thrombin and more prothrombin activator, extending the clot. (A) is the opposite \u2014 thrombin activates factor V; (C) and (D) would limit the clot, not extend it."},
 
  {obj:"Coagulation mechanisms", s:43, q:"Clot retraction depends on which cells, acting through what mechanism?",
-  o:["Platelets contracting via actin, myosin, and thrombosthenin","Red cells contracting by osmotic shrinkage","No cells \u2014 retraction is purely spontaneous","White cells engulfing and compacting fibrin"],
+  o:["Platelets contracting via actin, myosin, and thrombosthenin","Red cells contracting by osmotic shrinkage","No cells at all \u2014 the retraction is purely spontaneous","White cells engulfing and compacting fibrin"],
   a:0, e:"Platelets bound to fibrin contract using actin/myosin/thrombosthenin, tightening the clot; retraction will not occur without platelets. (B), (C), and (D) are incorrect \u2014 red cells, spontaneous action, and white cells do not drive retraction."},
 
  {obj:"Coagulation mechanisms", s:45, q:"What initiates the extrinsic pathway of coagulation?",
@@ -515,31 +515,31 @@ const questions = [
   a:3, e:"The extrinsic pathway begins when injured tissue releases tissue factor (factor III). (A) and (B) start the intrinsic pathway, and (C) is a later, common-pathway event."},
 
  {obj:"Coagulation mechanisms", s:45, q:"In the extrinsic pathway, tissue factor forms a complex that activates which clotting factor?",
-  o:["Factor XII","Factor VII (converting it to VIIa)","Factor IX","Factor XIII"],
+  o:["Factor XII","Factor VII (converting it to VIIa)","Factor IX","Factor XIII in the plasma"],
   a:1, e:"Tissue factor acts as a high-affinity receptor for factor VII, activating it to VIIa; the TF\u2013VIIa complex then activates factor X. (A) and (C) belong to the intrinsic pathway, and (D) is the fibrin-stabilizing factor."},
 
  {obj:"Coagulation mechanisms", s:46, q:"What triggers the intrinsic pathway of coagulation?",
-  o:["Release of tissue factor from injured tissue","Thrombin cleaving fibrinogen","Contact of blood and factor XII with collagen or a wettable surface","Binding of von Willebrand factor to platelets"],
+  o:["Release of tissue factor from injured tissue","Thrombin cleaving fibrinogen","Contact of blood and factor XII with collagen or a wettable surface","Binding of von Willebrand factor to circulating platelets"],
   a:2, e:"The intrinsic pathway starts when blood/factor XII contacts collagen or a wettable surface (e.g., glass), activating factor XII. (A) initiates the extrinsic pathway, (B) is a common-pathway step, and (D) relates to platelet adhesion."},
 
  {obj:"Coagulation mechanisms", s:47, q:"Where do the intrinsic and extrinsic pathways converge?",
-  o:["At the activation of factor X (the common pathway)","At the activation of factor XII","At the release of tissue factor","At the cross-linking of fibrin"],
+  o:["At the activation of factor X (the common pathway)","At the activation of factor XII by collagen","At the release of tissue factor","At the cross-linking of fibrin"],
   a:0, e:"Both pathways meet at the activation of factor X, entering the common pathway toward thrombin and fibrin. (B) and (C) are pathway-specific starting points, and (D) is a later step after thrombin has acted."},
 
  {obj:"Coagulation mechanisms", s:47, q:"Why is the extrinsic pathway able to produce a clot faster than the intrinsic pathway?",
-  o:["It requires many more sequential steps","It does not require calcium","It has fewer steps and can clot in under about 15 seconds","It bypasses factor X entirely"],
+  o:["It requires many more sequential enzymatic steps","It does not require calcium","It has fewer steps and can clot in under about 15 seconds","It bypasses factor X entirely"],
   a:2, e:"The extrinsic pathway is 'explosive,' clotting in as little as ~15 seconds because it has fewer steps; the intrinsic pathway is slower (1\u20136 minutes). (A) is the opposite, (B) is false (Ca\u00B2\u207A is still needed), and (D) is wrong \u2014 both pathways activate factor X."},
 
  {obj:"Coagulation mechanisms", s:48, q:"How does thrombomodulin help limit clotting?",
-  o:["It directly digests fibrin fibers","It binds thrombin and activates protein C, which inactivates factors Va and VIIIa","It potentiates antithrombin III","It blocks the release of tissue factor"],
+  o:["It directly digests fibrin fibers","It binds thrombin and activates protein C, which inactivates factors Va and VIIIa","It potentiates antithrombin III","It blocks release of tissue factor from the damaged vessel wall"],
   a:1, e:"Thrombomodulin binds thrombin; the complex activates protein C, which inactivates factors Va and VIIIa, slowing coagulation. (A) describes plasmin, (C) describes heparin's mechanism, and (D) is not thrombomodulin's action."},
 
  {obj:"Coagulation mechanisms", s:49, q:"What is the role of antithrombin III in controlling coagulation?",
-  o:["It combines with and inactivates thrombin not bound to fibrin","It converts prothrombin into thrombin","It cross-links fibrin fibers","It activates the extrinsic pathway"],
+  o:["It combines with and inactivates thrombin not bound to fibrin","It converts circulating prothrombin into thrombin","It cross-links fibrin fibers","It activates the extrinsic pathway"],
   a:0, e:"Antithrombin III binds and inactivates the thrombin not already trapped on fibrin, limiting clot spread. (B), (C), and (D) describe pro-coagulant steps \u2014 the opposite of antithrombin III's inhibitory role."},
 
  {obj:"Coagulation mechanisms", s:54, q:"What is vitamin K's essential role in coagulation?",
-  o:["It cross-links fibrin monomers into a stable clot","It converts plasminogen into plasmin","It directly activates platelets at the injury site","It is needed to carboxylate glutamic acid in prothrombin and factors VII, IX, and X"],
+  o:["It cross-links fibrin monomers into a stable clot","It converts plasminogen into plasmin","It directly activates the platelets arriving at the site of vessel injury","It is needed to carboxylate glutamic acid in prothrombin and factors VII, IX, and X"],
   a:3, e:"Vitamin K is required to carboxylate glutamic acid residues on prothrombin and factors VII, IX, X (and protein C), making them functional. (A) is factor XIII's role, (B) is tPA's role, and (C) is unrelated to vitamin K."},
 
  {obj:"Coagulation mechanisms", s:51, q:"How is a clot eventually broken down during healing?",

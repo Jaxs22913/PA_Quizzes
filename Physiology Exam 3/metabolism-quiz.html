@@ -350,15 +350,15 @@ const DECK = "Metabolism, Nutrition & Thermoregulation";
 const questions = [
  /* ===== Ch. 68 — Carbohydrate metabolism & ATP ===== */
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 4", q:"Glucose enters most cells of the body by...",
-  o:["Facilitated diffusion \u2014 a carrier is needed but energy is not","Primary active transport that directly uses ATP","Simple diffusion straight through the lipid bilayer","Receptor-mediated endocytosis"],
+  o:["Facilitated diffusion \u2014 a carrier is needed but energy is not","Primary active transport that directly uses ATP","Simple diffusion straight through the lipid bilayer, unaided","Receptor-mediated endocytosis"],
   a:0, e:"Glucose crosses most cell membranes by facilitated diffusion: a carrier protein (GLUT) moves it down its concentration gradient without using ATP. It is not pumped by primary active transport, does not dissolve through the bilayer, and is not taken up by endocytosis."},
 
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 4", q:"Which statement about insulin and cellular glucose uptake is correct?",
-  o:["All cellular glucose uptake requires insulin","Most glucose uptake uses insulin-independent carriers (e.g., GLUT-1); GLUT-4 in muscle and fat is insulin-dependent","No glucose transporter responds to insulin at all","Insulin is required for glucose uptake only in the liver"],
+  o:["All cellular glucose uptake requires insulin","Most glucose uptake uses insulin-independent carriers (e.g., GLUT-1); GLUT-4 in muscle and fat is insulin-dependent","No glucose transporter responds to insulin at all","Insulin is required for glucose uptake in every tissue of the body, including brain and liver, with no insulin-independent carriers"],
   a:1, e:"Most post-absorptive glucose uptake uses insulin-independent transporters like GLUT-1, while GLUT-4 in muscle and adipose is the insulin-dependent carrier. So not all uptake needs insulin, some transporters clearly respond to it, and the liver is not the special case."},
 
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 7", q:"Why does phosphorylating glucose to glucose-6-phosphate \u201ctrap\u201d it inside a cell?",
-  o:["It makes the glucose molecule much smaller","It binds the glucose to the cell's DNA","The charged phosphate group prevents it from crossing the membrane back out","It immediately converts the glucose into fat"],
+  o:["It makes the glucose molecule much smaller","It binds the glucose to the cell's DNA","The charged phosphate group prevents it from crossing the membrane back out","It immediately converts the trapped glucose into stored fat instead"],
   a:2, e:"Adding a phosphate gives glucose-6-phosphate a charge that keeps it from recrossing the membrane, trapping it for use; tissues that export glucose need glucose-6-phosphatase to remove it. Phosphorylation does not shrink glucose, bind it to DNA, or turn it into fat."},
 
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 14", q:"The net product of glycolysis (per glucose) is...",
@@ -374,61 +374,61 @@ const questions = [
   a:2, e:"NADH delivers electrons entering high in the chain (~3 ATP), while FADH\u2082 enters lower (~2 ATP). They do not yield equal amounts, and the last option reverses the two."},
 
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 25", q:"During intense exercise, the main reason muscle converts pyruvate to lactate is to...",
-  o:["produce extra ATP directly from the lactate","regenerate NAD\u207a so glycolysis can continue producing ATP","store oxygen for later use","make new glucose from pyruvate in the muscle"],
+  o:["produce extra ATP directly from the lactate","regenerate NAD\u207a so glycolysis can continue producing ATP","store oxygen for later use","make new glucose from pyruvate within the muscle fibre"],
   a:1, e:"Converting pyruvate to lactate reoxidizes NADH to NAD\u207a, which glycolysis needs to keep running when oxygen or mitochondrial capacity is limiting. Lactate formation makes no extra ATP itself, stores no oxygen, and gluconeogenesis happens later in the liver, not the muscle."},
 
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 29", q:"The pentose phosphate (hexose monophosphate) shunt is important because it produces...",
-  o:["large amounts of ATP","lactate to send to the liver","ketone bodies for energy","NADPH and ribose-5-phosphate for biosynthesis and nucleic acids"],
+  o:["large amounts of ATP","lactate that is exported to the liver for recycling into glucose","ketone bodies for energy","NADPH and ribose-5-phosphate for biosynthesis and nucleic acids"],
   a:3, e:"The pentose phosphate shunt generates NADPH (for reductive biosynthesis) and ribose-5-phosphate (for nucleic acids), not ATP. It does not make lactate or ketone bodies."},
 
  {obj:"Carbohydrate metabolism & ATP", s:"Ch. 68, Slide 30", q:"Which condition favors gluconeogenesis?",
-  o:["A high glucagon-to-insulin ratio (as in fasting)","A high insulin-to-glucagon ratio","High blood glucose right after a meal","Low cortisol levels"],
+  o:["A high glucagon-to-insulin ratio (as in fasting)","A high insulin-to-glucagon ratio","High blood glucose right after a large meal","Low cortisol levels"],
   a:0, e:"Gluconeogenesis (mainly hepatic) is favored by a high glucagon:insulin ratio, high mitochondrial NADH and acetyl-CoA, and high cortisol \u2014 the fasting state. A high insulin ratio, post-meal hyperglycemia, and low cortisol all suppress it."},
 
  /* ===== Ch. 69 — Lipid metabolism ===== */
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 6", q:"Chylomicrons and VLDL differ in that...",
-  o:["both are made only in the liver","chylomicrons carry dietary fat from the intestine, while VLDL is made in the liver","chylomicrons are made in the liver and VLDL in the gut","neither particle carries triglyceride"],
+  o:["both are made only in the liver","chylomicrons carry dietary fat from the intestine, while VLDL is made in the liver","chylomicrons are assembled in the liver, while VLDL is made in the gut wall","neither particle carries triglyceride"],
   a:1, e:"Chylomicrons are assembled in intestinal mucosa to carry absorbed dietary fat, while VLDL is synthesized in the liver (its triglyceride made largely from carbohydrate). The other options misplace their origins or deny that they carry triglyceride."},
 
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 13", q:"Lipoprotein lipase, attached to capillary endothelium, functions to...",
-  o:["synthesize triglycerides inside adipocytes","package cholesterol into HDL","hydrolyze triglycerides in chylomicrons and VLDL, releasing fatty acids to tissues","make ketone bodies in the liver"],
+  o:["synthesize new triglycerides inside the adipocytes for long-term fat storage","package cholesterol into HDL","hydrolyze triglycerides in chylomicrons and VLDL, releasing fatty acids to tissues","make ketone bodies in the liver"],
   a:2, e:"Lipoprotein lipase hydrolyzes the triglycerides carried in chylomicrons and VLDL, freeing fatty acids for uptake by tissues (adipose, muscle, heart). It does not synthesize triglycerides, build HDL, or make ketones."},
 
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 17", q:"Beta-oxidation of fatty acids breaks them down into...",
-  o:["glucose molecules","amino acids","pyruvate directly","acetyl-CoA units that can enter the TCA cycle"],
+  o:["free glucose molecules released to the blood","amino acids","pyruvate directly","acetyl-CoA units that can enter the TCA cycle"],
   a:3, e:"Beta-oxidation sequentially cleaves fatty acids into acetyl-CoA units that feed the TCA cycle (and ketone-body synthesis). It does not yield glucose, amino acids, or pyruvate directly."},
 
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 15", q:"Ketone bodies are produced by the liver mainly...",
-  o:["from glucose during a carbohydrate-rich meal","from fatty acids, to serve as an energy source for other tissues","to store excess dietary protein","only during the well-fed state"],
+  o:["from glucose absorbed during a large carbohydrate-rich meal","from fatty acids, to serve as an energy source for other tissues","to store excess dietary protein","only during the well-fed state"],
   a:1, e:"The liver makes ketone bodies from fatty acid\u2013derived acetyl-CoA (especially when fat oxidation is high, as in fasting) and exports them as fuel for other tissues. They are not made from glucose in the fed state or used to store protein."},
 
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 2", q:"Which is a normal function of cholesterol?",
-  o:["Serving as a precursor for bile acids and steroid hormones","Acting as the body's main energy currency","Carrying oxygen in the blood","Functioning as a digestive enzyme"],
+  o:["Serving as a precursor for bile acids and steroid hormones","Acting as the body's main circulating energy currency","Carrying oxygen in the blood","Functioning as a digestive enzyme"],
   a:0, e:"Cholesterol is a membrane component and the precursor for bile acids and steroid hormones. ATP is the energy currency, hemoglobin carries oxygen, and cholesterol is not an enzyme."},
 
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 36", q:"How does increasing bile acid excretion (e.g., by fiber that traps bile salts) affect plasma cholesterol?",
-  o:["It raises plasma cholesterol","It has no effect on plasma cholesterol","It converts cholesterol directly into glucose","It lowers plasma cholesterol, because bile acids are made from cholesterol"],
+  o:["It raises plasma cholesterol","It has no effect on plasma cholesterol","It converts the stored cholesterol directly into glucose for use as fuel","It lowers plasma cholesterol, because bile acids are made from cholesterol"],
   a:3, e:"Excreting bile acids forces the liver to consume cholesterol to make more, lowering plasma cholesterol; fecal loss is the only route of cholesterol removal. So it does not raise cholesterol, have no effect, or make glucose."},
 
  {obj:"Lipid metabolism", s:"Ch. 69, Slide 22", q:"Insulin promotes fat storage by...",
-  o:["stimulating hormone-sensitive lipase","blocking glucose uptake into cells","stimulating lipoprotein lipase and inhibiting hormone-sensitive lipase","promoting beta-oxidation of fat"],
+  o:["stimulating hormone-sensitive lipase so that stored fat is released","blocking glucose uptake into cells","stimulating lipoprotein lipase and inhibiting hormone-sensitive lipase","promoting beta-oxidation of fat"],
   a:2, e:"Insulin stores fat by activating lipoprotein lipase (loading fatty acids into adipocytes) and inhibiting hormone-sensitive lipase (blocking breakdown of stored triglyceride). It promotes glucose uptake and opposes fat mobilization and beta-oxidation."},
 
  /* ===== Ch. 70 — Protein metabolism ===== */
  {obj:"Protein metabolism", s:"Ch. 70, Slide 7", q:"To synthesize a non-essential amino acid, a cell needs a carbon skeleton (\u03b1-keto acid), an amino group, and...",
-  o:["an aminotransferase enzyme (a vitamin B6 derivative)","intrinsic factor","bile salts","a fatty acid"],
+  o:["an aminotransferase enzyme (a vitamin B6 derivative)","intrinsic factor secreted by the gastric mucosa","bile salts","a fatty acid"],
   a:0, e:"Making a non-essential amino acid requires a carbon skeleton (\u03b1-keto acid), an amino group (from glutamate/glutamine), and an aminotransferase, which is a vitamin B6\u2013derived enzyme. Intrinsic factor, bile salts, and fatty acids play no role in transamination."},
 
  {obj:"Protein metabolism", s:"Ch. 70, Slide 13", q:"Transamination is the process of...",
-  o:["removing a phosphate from glucose","transferring an amino group from one molecule (e.g., glutamate) to an \u03b1-keto acid","breaking a peptide bond by adding water","oxidizing fatty acids to acetyl-CoA"],
+  o:["removing a phosphate from glucose","transferring an amino group from one molecule (e.g., glutamate) to an \u03b1-keto acid","breaking a peptide bond by adding a molecule of water directly across it","oxidizing fatty acids to acetyl-CoA"],
   a:1, e:"Transamination moves an amino group from a donor (often glutamate) onto an \u03b1-keto acid, forming a new amino acid \u2014 the core reaction for making non-essential amino acids. Dephosphorylation, peptide-bond hydrolysis, and beta-oxidation are unrelated."},
 
  {obj:"Protein metabolism", s:"Ch. 70, Slide 16", q:"Oxidative deamination of an amino acid removes the amino group, generating...",
-  o:["glucose","a fatty acid","a ketone body","ammonia, which must be detoxified"],
+  o:["glucose","a fatty acid","a ketone body for use as fuel","ammonia, which must be detoxified"],
   a:3, e:"Deamination strips the amino group off an amino acid, releasing ammonia (which the liver converts to urea). It does not directly yield glucose, a fatty acid, or a ketone body \u2014 those may come from the remaining carbon skeleton."},
 
  {obj:"Protein metabolism", s:"Ch. 70, Slide 16", q:"The urea cycle, which occurs essentially only in the liver, serves to...",
-  o:["synthesize new proteins","produce ATP directly","convert toxic ammonia into urea for excretion","store nitrogen as glycogen"],
+  o:["synthesize new proteins","produce ATP directly","convert toxic ammonia into urea for excretion","store the excess nitrogen away as glycogen"],
   a:2, e:"The urea cycle (ornithine\u2013citrulline\u2013arginine) packages toxic ammonia into urea for renal excretion; excess ammonia is dangerous partly because it depletes \u03b1-ketoglutarate and stalls the TCA cycle. It does not build proteins, make ATP directly, or store nitrogen as glycogen."},
 
  {obj:"Protein metabolism", s:"Ch. 70, Slide 18", q:"Amino acids that are broken down to acetyl-CoA or acetoacetyl-CoA are called...",
@@ -436,24 +436,24 @@ const questions = [
   a:0, e:"Amino acids degraded to acetyl-CoA or acetoacetyl-CoA are ketogenic (they can form ketone bodies), whereas those forming glucose or TCA intermediates are glucogenic. 'Essential' vs 'non-essential' refers to whether the body can synthesize them \u2014 a different classification."},
 
  {obj:"Protein metabolism", s:"Ch. 70, Slide 19", q:"Which hormone causes breakdown of tissue protein, providing amino acids for gluconeogenesis?",
-  o:["Insulin","Growth hormone","Testosterone","Cortisol (glucocorticoids)"],
+  o:["Insulin","Growth hormone from the pituitary","Testosterone","Cortisol (glucocorticoids)"],
   a:3, e:"Cortisol promotes breakdown of extrahepatic tissue protein, raising plasma amino acids for gluconeogenesis. Insulin, growth hormone, and testosterone all promote protein synthesis instead."},
 
  /* ===== Ch. 71 — The liver ===== */
  {obj:"The liver", s:"Ch. 71, Slide 3", q:"Regarding the liver's blood supply...",
-  o:["It is supplied almost entirely by the hepatic artery","It receives about 30% of cardiac output, most of it from the portal vein","It receives less than 5% of cardiac output","It has no venous inflow"],
+  o:["It is supplied almost entirely by the hepatic artery, not the portal vein","It receives about 30% of cardiac output, most of it from the portal vein","It receives less than 5% of cardiac output","It has no venous inflow"],
   a:1, e:"About 30% of cardiac output flows through the liver, roughly 75% via the portal vein and 25% via the hepatic artery, at low pressure and resistance. It is not chiefly arterial, is far more than 5% of output, and has major portal venous inflow."},
 
  {obj:"The liver", s:"Ch. 71, Slide 5", q:"The liver acts as a blood reservoir, normally holding about...",
-  o:["50% of total blood volume","less than 1% of blood volume","10% of total blood volume (~450 mL), expandable in heart failure","no blood between meals"],
+  o:["50% of total blood volume","less than 1% of the total circulating blood volume at any time","10% of total blood volume (~450 mL), expandable in heart failure","no blood between meals"],
   a:2, e:"The liver normally holds about 10% of blood volume (~450 mL) and can expand by up to a liter in heart failure or release blood during hemorrhage/exercise. The other figures are far off."},
 
  {obj:"The liver", s:"Ch. 71, Slide 7", q:"Kupffer cells in the liver sinusoids function to...",
-  o:["remove bacteria and particulate matter (about 99% of gut bacteria) from portal blood","synthesize bile salts","store vitamin B12","produce erythropoietin"],
+  o:["remove bacteria and particulate matter (about 99% of gut bacteria) from portal blood","synthesize bile salts","store vitamin B12","produce the erythropoietin that drives red blood cell output in the marrow"],
   a:0, e:"Kupffer cells are sinusoidal macrophages that clear ~99% of bacteria arriving from the gut via the portal blood. Bile-salt synthesis is a hepatocyte function, B12 storage is separate, and erythropoietin is chiefly renal."},
 
  {obj:"The liver", s:"Ch. 71, Slide 9", q:"The liver's \u201cglucose buffer\u201d function means it...",
-  o:["prevents any glucose from entering the blood","only stores glucose and never releases it","converts all absorbed glucose immediately to fat","stores glucose as glycogen after meals and releases glucose between meals"],
+  o:["prevents any glucose from entering the blood","only stores glucose and never releases it","converts all of the absorbed glucose immediately into stored fat","stores glucose as glycogen after meals and releases glucose between meals"],
   a:3, e:"As a glucose buffer, the liver stores glucose as glycogen after meals and releases glucose (via glycogenolysis, then gluconeogenesis) between meals, stabilizing blood glucose. The other options describe one-way or nonexistent handling."},
 
  {obj:"The liver", s:"Ch. 71, Slide 11", q:"The liver requires which vitamin to manufacture prothrombin and several clotting factors?",
@@ -465,11 +465,11 @@ const questions = [
   a:2, e:"Of the hepatic steps \u2014 uptake, conjugation with glucuronic acid, and excretion \u2014 excretion of conjugated bilirubin into bile is rate-limiting. Albumin binding happens in the blood before uptake, not within the hepatocyte."},
 
  {obj:"The liver", s:"Ch. 71, Slide 20", q:"The amphipathic nature of bile salts allows them to...",
-  o:["emulsify fats and carry lipids to the intestinal wall in micelles","chemically digest triglycerides into fatty acids","neutralize stomach acid","absorb water in the colon"],
+  o:["emulsify fats and carry lipids to the intestinal wall in micelles","chemically digest the triglycerides into free fatty acids","neutralize stomach acid","absorb water in the colon"],
   a:0, e:"Being amphipathic, bile salts act as detergents that emulsify fat and ferry lipids to the mucosa in micelles. Chemical digestion of triglyceride is lipase's role, and bile salts neither neutralize acid nor absorb colonic water."},
 
  {obj:"The liver", s:"Ch. 71, Slide 25", q:"In the enterohepatic circulation, about 95% of secreted bile salts are...",
-  o:["excreted in the feces","destroyed by pancreatic enzymes","converted to cholesterol in the gut","reabsorbed (mostly in the ileum) and returned to the liver for reuse"],
+  o:["excreted in the feces","destroyed by pancreatic enzymes","converted back into free cholesterol within the intestinal lumen","reabsorbed (mostly in the ileum) and returned to the liver for reuse"],
   a:3, e:"About 95% of secreted bile salts are reabsorbed, chiefly in the ileum, and returned via portal blood to the liver; only the small fraction lost in feces is replaced by new synthesis. They are not mostly excreted, digested, or turned back into cholesterol in the gut."},
 
  /* ===== Ch. 72 — Diet, feeding & vitamins ===== */
@@ -478,7 +478,7 @@ const questions = [
   a:1, e:"Fat yields about 9 kcal/g, more than double carbohydrate or protein (~4 kcal/g each). They are not equal per gram."},
 
  {obj:"Diet, feeding & vitamins", s:"Ch. 72, Slide 3", q:"The body's largest energy reserve is stored as...",
-  o:["triglyceride in adipose tissue","glycogen in the liver","glucose in the blood","protein in muscle"],
+  o:["triglyceride in adipose tissue","glycogen stored in the liver","glucose in the blood","protein in muscle"],
   a:0, e:"Adipose triglyceride is by far the largest energy reserve (~120,000 kcal in a lean adult). Liver glycogen and blood glucose hold only small amounts, and although protein is abundant, little is used as an energy store."},
 
  {obj:"Diet, feeding & vitamins", s:"Ch. 72, Slide 6", q:"A respiratory quotient (RQ) of about 1.0 indicates the body is burning mainly...",
@@ -502,7 +502,7 @@ const questions = [
   a:2, e:"Fat-soluble vitamins (A, D, E, K) can be stored, notably A and D in the liver, whereas water-soluble vitamins (C and most Bs) are not stored significantly and must be supplied regularly."},
 
  {obj:"Diet, feeding & vitamins", s:"Ch. 72, Slide 27", q:"Vitamin C (ascorbic acid) is essential for...",
-  o:["blood clotting factor synthesis","collagen formation and normal connective tissue","calcium absorption","visual pigment formation"],
+  o:["synthesis of the plasma blood clotting factors","collagen formation and normal connective tissue","calcium absorption","visual pigment formation"],
   a:1, e:"Vitamin C is required for collagen synthesis, so its deficiency (scurvy) causes connective-tissue breakdown and poor wound healing. Clotting-factor synthesis needs vitamin K, calcium handling needs vitamin D, and visual pigments need vitamin A."},
 
  {obj:"Diet, feeding & vitamins", s:"Ch. 72, Slide 28", q:"Vitamin D is essential for...",
@@ -511,11 +511,11 @@ const questions = [
 
  /* ===== Ch. 73 — Energetics & metabolic rate ===== */
  {obj:"Energetics & metabolic rate", s:"Ch. 73, Slide 2", q:"Phosphocreatine in muscle functions as...",
-  o:["a rapid reserve to regenerate ATP during short bursts of activity","the body's main long-term energy store","a direct source of glucose","a heat-producing hormone"],
+  o:["a rapid reserve to regenerate ATP during short bursts of activity","the body's principal long-term store of usable energy","a direct source of glucose","a heat-producing hormone"],
   a:0, e:"Phosphocreatine acts as an immediate high-energy buffer, rephosphorylating ADP to ATP during brief, intense activity. It is not a long-term store, a glucose source, or a hormone."},
 
  {obj:"Energetics & metabolic rate", s:"Ch. 73, Slide 8", q:"Basal metabolic rate (BMR) is measured under which conditions?",
-  o:["Immediately after exercise","During digestion of a large meal","After a 12-hour fast, at rest, in a comfortable temperature, without excitement","In a cold environment while shivering"],
+  o:["Immediately after exercise","During digestion of a large meal","After a 12-hour fast, at rest, in a comfortable temperature, without excitement","In a cold environment while actively shivering hard to keep warm"],
   a:2, e:"BMR is measured under standardized resting conditions \u2014 a 12-hour fast, physical and mental rest, and a neutral temperature \u2014 so exercise, digestion, and shivering do not inflate it. The other conditions all raise metabolic rate."},
 
  {obj:"Energetics & metabolic rate", s:"Ch. 73, Slide 10", q:"Which nutrient produces the greatest thermic effect (rise in metabolic rate during digestion)?",
@@ -527,7 +527,7 @@ const questions = [
   a:3, e:"Thyroid hormone \u2014 like exercise, greater lean mass, sympathetic activity, fever, and cold \u2014 raises metabolic rate. Sleep, less muscle, and a warm resting fasted state lower it."},
 
  {obj:"Energetics & metabolic rate", s:"Ch. 73, Slide 6", q:"The \u201coxygen debt\u201d repaid after strenuous exercise is used to...",
-  o:["convert lactate back to glucose and restore ATP, phosphocreatine, and oxygen stores","digest the next meal","produce more lactate","lower body temperature"],
+  o:["convert lactate back to glucose and restore ATP, phosphocreatine, and oxygen stores","digest the next meal","produce more lactate","lower the core body temperature back toward its normal set point after exertion"],
   a:0, e:"The oxygen debt is the extra O\u2082 consumed afterward to reconvert lactate to glucose, rebuild ATP and phosphocreatine, and reload hemoglobin/myoglobin and lung oxygen. It is not for digestion, making lactate, or cooling."},
 
  {obj:"Energetics & metabolic rate", s:"Ch. 73, Slide 7", q:"Indirect calorimetry estimates metabolic rate by measuring...",
@@ -536,11 +536,11 @@ const questions = [
 
  /* ===== Ch. 74 — Temperature & fever ===== */
  {obj:"Temperature & fever", s:"Ch. 74, Slide 2", q:"How do core and skin temperature differ?",
-  o:["Both vary widely with the environment","Core temperature stays nearly constant, while skin temperature varies with the environment","Skin temperature is the most tightly regulated value","Core temperature swings more than skin temperature"],
+  o:["Both vary widely with the environment","Core temperature stays nearly constant, while skin temperature varies with the environment","Skin temperature is the one value that the body regulates most tightly of all","Core temperature swings more than skin temperature"],
   a:1, e:"Deep (core) temperature is held nearly constant (varying <1\u00b0F normally), whereas skin temperature rises and falls with the surroundings. The other options misstate which is regulated."},
 
  {obj:"Temperature & fever", s:"Ch. 74, Slide 5", q:"The body's main temperature-control center is located in the...",
-  o:["cerebellum","medulla's respiratory center","spinal cord alone","hypothalamus (preoptic/anterior area)"],
+  o:["cerebellum","the medulla's respiratory centre","spinal cord alone","hypothalamus (preoptic/anterior area)"],
   a:3, e:"The hypothalamus, especially the preoptic/anterior area with its heat- and cold-sensitive neurons, is the body's thermostat. The cerebellum, medullary respiratory center, and spinal cord are not the control center."},
 
  {obj:"Temperature & fever", s:"Ch. 74, Slide 6", q:"Which is a mechanism of heat LOSS from the body?",
@@ -552,7 +552,7 @@ const questions = [
   a:2, e:"Sweating is driven by the anterior hypothalamus via sympathetic fibers that are cholinergic \u2014 they release acetylcholine even though they travel in sympathetic nerves. It is not parasympathetic, somatic, or insulin-mediated."},
 
  {obj:"Temperature & fever", s:"Ch. 74, Slide 14", q:"When the body is cold, which response increases heat production?",
-  o:["Cutaneous vasodilation","Sweating","Inhibition of the sympathetic nervous system","Shivering, which can raise heat production several-fold"],
+  o:["Cutaneous vasodilation","Sweating","Inhibition of sympathetic nervous system outflow","Shivering, which can raise heat production several-fold"],
   a:3, e:"In the cold, shivering (plus vasoconstriction, sympathetic excitation, and thyroxine) raises heat production up to 4\u20135-fold. Vasodilation, sweating, and sympathetic inhibition all promote heat loss, not gain."}
 ];
 
