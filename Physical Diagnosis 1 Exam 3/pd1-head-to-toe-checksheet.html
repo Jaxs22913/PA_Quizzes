@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAJ 5300 — Combined Head-to-Toe Checksheet</title>
+<style>
+:root{
+  --ink:#16202b; --ink2:#4a5a6a; --line:#d8dee5;
+  --petrol:#1b4965; --teal:#4f8f8b; --clay:#a8562f;
+  --say:#eaecee; --sayline:#9fb0bd; --paper:#fff;
+  --page:#f2f4f6; --sheetline:#d8dee5;
+  --bannerbg:#fbf4f0; --bannerink:#5c3a28;
+  --refbg:#f1f7f6; --refink:#2b4b49;
+  --navbg:rgba(255,255,255,.97); --sumbg:#f7f9fa; --scriptink:#3d5265;
+  --tagcn:#e8eef3; --tagcnline:#c3d3de; --tagdup:#f1f7f6; --tagdupline:#bcd8d5;
+  --tagnew:#fbf4f0; --tagnewline:#e5c9bb; --btnbg:#fff;
+}
+/* Dark mode. Structure and type are untouched -- only the palette variables
+   above are re-pointed, so the sheet reads identically, just inverted. The
+   petrol/teal/clay accents are lightened just enough to stay legible on a dark
+   ground rather than being replaced with different hues. */
+:root[data-theme="dark"]{
+  --ink:#e6ebf1; --ink2:#9fb0bd; --line:#2b3440;
+  --petrol:#7fb3d5; --teal:#6fbdb6; --clay:#d98f6a;
+  --say:#212a35; --sayline:#4a6070; --paper:#161c24;
+  --page:#0f141a; --sheetline:#2b3440;
+  --bannerbg:#2a1f19; --bannerink:#e8c3ac;
+  --refbg:#152624; --refink:#a9d8d3;
+  --navbg:rgba(22,28,36,.97); --sumbg:#1b222b; --scriptink:#a8bccd;
+  --tagcn:#1e2a35; --tagcnline:#38506180; --tagdup:#152624; --tagdupline:#2f4f4b;
+  --tagnew:#2a1f19; --tagnewline:#5a4033; --btnbg:#161c24;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font:16px/1.55 Georgia,"Times New Roman",serif;-webkit-text-size-adjust:100%}
+.sheet{max-width:940px;margin:0 auto;background:var(--paper);
+  box-shadow:0 0 0 1px var(--sheetline);padding:0 0 64px}
+
+/* ---------- masthead ---------- */
+header.mast{padding:40px 40px 28px;border-bottom:3px double var(--petrol)}
+.eyebrow{font:600 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal);margin:0 0 12px}
+h1{font:700 32px/1.15 ui-sans-serif,system-ui,sans-serif;margin:0 0 8px;
+  letter-spacing:-.015em;color:var(--petrol)}
+.sub{margin:0;color:var(--ink2);font-size:15px}
+
+/* ---------- legend ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:18px 40px;border-bottom:1px solid var(--line);
+  align-items:center;font:13px/1.4 ui-sans-serif,system-ui,sans-serif}
+.key{display:flex;align-items:center;gap:8px;color:var(--ink2)}
+.sw{width:26px;height:16px;border:1px solid var(--sayline);display:inline-block}
+.sw.grey{background:var(--say)}
+.sw.white{background:var(--paper)}
+.legend .spacer{flex:1}
+button{font:600 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.04em;
+  padding:8px 12px;border:1px solid var(--petrol);background:var(--btnbg);color:var(--petrol);
+  border-radius:2px;cursor:pointer}
+button:hover{background:var(--petrol);color:#fff}
+button[aria-pressed="true"]{background:var(--petrol);color:#fff}
+button:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:20;background:var(--navbg);
+  border-bottom:1px solid var(--line);padding:10px 40px;
+  backdrop-filter:blur(6px)}
+nav ol{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+nav a{font:600 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  text-decoration:none;color:var(--ink2);border:1px solid var(--line);
+  padding:6px 9px;border-radius:2px;display:block}
+nav a:hover{color:#fff;background:var(--teal);border-color:var(--teal)}
+#progress{font:600 12px/1 ui-sans-serif,system-ui,sans-serif;color:var(--teal);
+  margin-left:auto;white-space:nowrap;align-self:center}
+
+/* ---------- structure ---------- */
+.part{margin:44px 40px 0;padding-top:10px;border-top:1px solid var(--line)}
+.part h2{font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--clay);margin:0}
+section{margin:26px 40px 0;scroll-margin-top:64px}
+section h3{font:700 21px/1.2 ui-sans-serif,system-ui,sans-serif;margin:0 0 4px;
+  color:var(--petrol);display:flex;gap:10px;align-items:baseline}
+section h3 .num{font-size:12px;letter-spacing:.1em;color:var(--teal);
+  border:1px solid var(--teal);padding:3px 6px;border-radius:2px;flex:none}
+.src{font:400 12px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--ink2);
+  margin:0 0 12px 0}
+h4{font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink2);margin:20px 0 8px}
+
+/* ---------- callouts ---------- */
+.banner{border-left:3px solid var(--clay);background:var(--bannerbg);padding:10px 14px;
+  margin:14px 0;font-size:14px;color:var(--bannerink)}
+.banner b{color:var(--clay)}
+.ref{border-left:3px solid var(--teal);background:var(--refbg);padding:10px 14px;
+  margin:14px 0;font-size:14px;color:var(--refink)}
+
+/* ---------- checklist rows ---------- */
+ul.ck{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+ul.ck li{display:grid;grid-template-columns:34px 26px 1fr;gap:0 10px;
+  align-items:start;padding:9px 10px 9px 8px;border-bottom:1px solid var(--line);
+  background:var(--paper)}
+ul.ck li.say{background:var(--say);box-shadow:inset 3px 0 0 var(--sayline)}
+ul.ck li.done .t{opacity:.45;text-decoration:line-through}
+.n{font:600 12px/1.7 ui-sans-serif,system-ui,sans-serif;color:var(--ink2);
+  text-align:right;-webkit-user-select:none;user-select:none}
+input[type=checkbox]{width:17px;height:17px;margin:4px 0 0;accent-color:var(--petrol);cursor:pointer}
+.t{font-size:15px}
+.script{display:block;margin-top:4px;font-style:italic;color:var(--scriptink)}
+.hint{display:block;margin-top:3px;font:400 13px/1.45 ui-sans-serif,system-ui,sans-serif;color:var(--ink2)}
+.tag{display:inline-block;font:600 10px/1 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 5px;border-radius:2px;
+  vertical-align:1px;margin-right:6px}
+.tag.cn{background:var(--tagcn);color:var(--petrol);border:1px solid var(--tagcnline)}
+.tag.dup{background:var(--tagdup);color:var(--refink);border:1px solid var(--tagdupline)}
+.tag.new{background:var(--tagnew);color:var(--clay);border:1px solid var(--tagnewline)}
+
+/* ---------- notes ---------- */
+details.merge{margin:26px 40px 0;border:1px solid var(--line);padding:0}
+details.merge summary{cursor:pointer;padding:14px 18px;background:var(--sumbg);
+  font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--petrol)}
+details.merge .body{padding:4px 18px 18px}
+details.merge table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+details.merge th{text-align:left;font:700 11px/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);
+  border-bottom:1px solid var(--line);padding:8px 8px 8px 0;vertical-align:bottom}
+details.merge td{border-bottom:1px solid var(--line);padding:8px 8px 8px 0;vertical-align:top}
+details.merge td:first-child{white-space:nowrap;color:var(--petrol);font-weight:bold}
+
+.filtered{display:none !important}
+.cnflag{font:600 10px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;
+  background:var(--tagcn);color:var(--petrol);border:1px solid var(--tagcnline);padding:4px 6px;
+  border-radius:2px;align-self:center}
+.cnindex{margin:32px 40px 0;border:1px solid var(--petrol);border-top:3px solid var(--petrol);padding:20px 22px}
+.cnindex h3{font:700 15px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--petrol);margin:0 0 6px;letter-spacing:.02em}
+.cnindex p{margin:0;font-size:14px;color:var(--ink2)}
+.cnindex table{width:100%;border-collapse:collapse;font-size:14px;margin-top:14px}
+.cnindex th{text-align:left;font:700 10px/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);
+  border-bottom:1px solid var(--line);padding:6px 10px 6px 0}
+.cnindex td{border-bottom:1px solid var(--line);padding:7px 10px 7px 0;vertical-align:top}
+.cnindex td:first-child{white-space:nowrap;font-weight:bold;color:var(--petrol)}
+.cnindex td:last-child{white-space:nowrap;font:600 13px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--teal)}
+
+@media (max-width:640px){
+  header.mast,.legend,nav,.part,section,details.merge,.cnindex{margin-left:0;margin-right:0}
+  header.mast{padding:26px 18px 20px}
+  .legend,nav{padding-left:18px;padding-right:18px}
+  .part,section,details.merge,.cnindex{margin-left:18px;margin-right:18px}
+  h1{font-size:24px}
+  ul.ck li{grid-template-columns:26px 24px 1fr}
+}
+@media print{
+  body{background:#fff}
+  .sitebar,.reportline{display:none}
+  .sheet{box-shadow:none;max-width:none}
+  nav,.legend button,#progress{display:none}
+  ul.ck li{break-inside:avoid;padding:5px 8px}
+  section{break-inside:auto}
+  section h3{break-after:avoid}
+  ul.ck li.say{background:var(--say) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.merge{break-before:page}
+  .cnindex{break-inside:avoid}
+  details.merge[open] .body{display:block}
+}
+.sitebar{margin:0;padding:14px 40px 0;font:600 13px/1 ui-sans-serif,system-ui,sans-serif}
+.sitebar a{color:var(--ink2);text-decoration:none}
+.sitebar a:hover{color:var(--petrol)}
+.reportline{margin:34px 40px 0;text-align:center;font-size:13px;font-style:italic;color:var(--ink2)}
+.reportline a{color:inherit;text-decoration:underline;cursor:pointer}
+@media (max-width:640px){.sitebar{padding-left:18px;padding-right:18px}.reportline{margin-left:18px;margin-right:18px}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<p class="sitebar"><a href="../index.html">&larr; Back to Homepage</a></p>
+
+<header class="mast">
+  <p class="eyebrow">PAJ 5300 · Physical Diagnosis I · Summer 2026</p>
+  <h1>Combined Head-to-Toe Physical Examination</h1>
+  <p class="sub">All nine lab checksheets merged into a single top-down sequence, de-duplicated and re-ordered. The cranial nerve exam is distributed into the regional exams that already test it, so each nerve is named and tested in one pass. Every graded item from the source sheets is present exactly once.</p>
+</header>
+
+<div class="legend">
+  <span class="key"><span class="sw grey"></span> Must be said out loud</span>
+  <span class="key"><span class="sw white"></span> Performed — inspect / palpate / percuss / auscultate</span>
+  <span class="spacer"></span>
+  <button id="fSay" aria-pressed="false">Spoken only</button>
+  <button id="fDo" aria-pressed="false">Hands-on only</button>
+  <button id="reset">Clear ticks</button>
+  <button onclick="window.print()">Print</button>
+</div>
+
+<nav>
+  <ol>
+    <li><a href="#s1">1 Intro</a></li>
+    <li><a href="#s2">2 Survey</a></li>
+    <li><a href="#s3">3 LOC</a></li>
+    <li><a href="#s4">4 Vitals</a></li>
+    <li><a href="#s5">5 Skin</a></li>
+    <li><a href="#s6">6 Head · CN V·VII</a></li>
+    <li><a href="#s7">7 Eyes · CN II–VI</a></li>
+    <li><a href="#s8">8 Ears · CN VIII</a></li>
+    <li><a href="#s9">9 Nose · CN I</a></li>
+    <li><a href="#s10">10 Mouth · CN IX·X·XII</a></li>
+    <li><a href="#s11">11 Neck · CN XI</a></li>
+    <li><a href="#s12">12 Nodes</a></li>
+    <li><a href="#cnindex">CN audit</a></li>
+    <li><a href="#s13">13 Lungs</a></li>
+    <li><a href="#s14">14 Cardiac</a></li>
+    <li><a href="#s15">15 Abdomen</a></li>
+    <li><a href="#s16">16 Vascular</a></li>
+    <li><a href="#s17">17 MSK</a></li>
+    <li><a href="#s18">18 Motor</a></li>
+    <li><a href="#s19">19 Reflexes</a></li>
+    <li><a href="#s20">20 Sensory</a></li>
+    <li><a href="#s21">21 Gait</a></li>
+    <li><a href="#s22">22 Close</a></li>
+    <li id="progress">0 / 0</li>
+  </ol>
+</nav>
+
+<!-- ============ PART I ============ -->
+<div class="part"><h2>Part I · Opening — patient seated</h2></div>
+
+<section id="s1">
+  <h3><span class="num">01</span> Introduction &amp; Preparation</h3>
+  <p class="src">Merged from four sheets — General Survey, Neurological, MSK, and Abdominal all open with the same block. Run it once.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">1</span><input type="checkbox"><span class="t">Introduces self to patient — includes first and last name</span></li>
+    <li class="say"><span class="n">2</span><input type="checkbox"><span class="t">Identifies the patient with two patient identifiers (name and DOB)</span></li>
+    <li class="say"><span class="n">3</span><input type="checkbox"><span class="t">Explains purpose of examination</span></li>
+    <li class="say"><span class="n">4</span><input type="checkbox"><span class="t">Asks patient if he/she emptied his/her bladder prior to examination<span class="hint">Abdominal sheet only — but harmless to include in every run-through.</span></span></li>
+    <li class="say"><span class="n">5</span><input type="checkbox"><span class="t">Asks patient to undress for proper visualization (shirt, shoes, socks)</span></li>
+    <li class="say"><span class="n">6</span><input type="checkbox"><span class="t">Student verbalizes they would ensure proper lighting</span></li>
+    <li class="say"><span class="n">7</span><input type="checkbox"><span class="t">Verbalizes and/or demonstrates washing of the hands prior to examination</span></li>
+    <li><span class="n">8</span><input type="checkbox"><span class="t">Demonstrates professionalism throughout the examination<span class="hint">Graded continuously; also appears at the close.</span></span></li>
+  </ul>
+</section>
+
+<section id="s2">
+  <h3><span class="num">02</span> General Survey</h3>
+  <p class="src">General Survey / Vital Signs sheet.</p>
+  <ul class="ck">
+    <li><span class="n">9</span><input type="checkbox"><span class="t">Inspects for general health status, body habitus, physical deformities</span></li>
+    <li><span class="n">10</span><input type="checkbox"><span class="t">Inspects facial expression and observes for signs of distress</span></li>
+    <li><span class="n">11</span><input type="checkbox"><span class="t">Inspects if stated age matches apparent age</span></li>
+    <li><span class="n">12</span><input type="checkbox"><span class="t">Inspects grooming and hygiene</span></li>
+  </ul>
+</section>
+
+<section id="s3">
+  <h3><span class="num">03</span> Level of Consciousness &amp; Orientation</h3>
+  <p class="src">The General Survey sheet names these in one line; the Neurological sheet grades the full definitions. The Neuro version is used here — it satisfies both.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">13</span><input type="checkbox"><span class="t">Verbalizes intent to evaluate level of consciousness<span class="script">"I will evaluate the patient for the following levels of consciousness."</span></span></li>
+    <li class="say"><span class="n">14</span><input type="checkbox"><span class="t">Verbalizes and defines <b>each</b> LOC level, then selects the appropriate one<span class="hint"><b>Alert</b> — opens eyes, responds fully and appropriately to stimuli · <b>Lethargic</b> — opens eyes to loud voice, back to sleep after appropriately answering questions · <b>Obtunded</b> — eyes open to tactile stimulus, slow and confused responses · <b>Stupor</b> — responds only to painful/noxious stimulus · <b>Coma</b> — unconscious</span></span></li>
+    <li class="say"><span class="n">15</span><input type="checkbox"><span class="t">Verbalizes intent to evaluate orientation<span class="script">"I will evaluate the patient for the following levels of orientation."</span></span></li>
+    <li class="say"><span class="n">16</span><input type="checkbox"><span class="t">Verbalizes questions for person, place, time, and event = AOx4</span></li>
+    <li class="say"><span class="n">17</span><input type="checkbox"><span class="t">Verbalizes and defines <b>each</b> orientation level, then selects the appropriate one<span class="hint"><b>Oriented</b> — answers all questions correctly · <b>Confused</b> — one or more answers incorrect · <b>Inappropriate</b> — manner of response is inappropriate · <b>Incomprehensible</b> — mumbling or moaning, speech cannot be understood · <b>Coma</b> — non-responsive</span></span></li>
+  </ul>
+</section>
+
+<section id="s4">
+  <h3><span class="num">04</span> Vital Signs</h3>
+  <p class="src">General Survey / Vital Signs sheet. The full peripheral pulse set has been moved down to §17 so pulses are palpated once.</p>
+  <h4>Height, weight, temperature</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">18</span><input type="checkbox"><span class="t">Verbalizes they would obtain height, weight, and calculate BMI</span></li>
+    <li class="say"><span class="n">19</span><input type="checkbox"><span class="t">Verbalizes they would obtain a temperature and pulse oximetry</span></li>
+  </ul>
+  <h4>Heart rate</h4>
+  <ul class="ck">
+    <li><span class="n">20</span><input type="checkbox"><span class="t">Locates the radial artery to check the heart rate</span></li>
+    <li><span class="n">21</span><input type="checkbox"><span class="t">Assesses pulse with the pads of the index and middle fingers</span></li>
+    <li class="say"><span class="n">22</span><input type="checkbox"><span class="t">Verbalizes the calculation used to assess the pulse — must verbalize <b>30 seconds × 2</b></span></li>
+  </ul>
+  <h4>Respiratory rate</h4>
+  <ul class="ck">
+    <li><span class="n">23</span><input type="checkbox"><span class="t">Ensures adequate exposure of the chest</span></li>
+    <li><span class="n">24</span><input type="checkbox"><span class="t">Maintains position as if counting pulse rate</span></li>
+    <li class="say"><span class="n">25</span><input type="checkbox"><span class="t">Verbalizes the calculation used to assess the respiratory rate</span></li>
+  </ul>
+  <h4>Blood pressure</h4>
+  <ul class="ck">
+    <li><span class="n">26</span><input type="checkbox"><span class="t">Positions patient properly — seated, back supported, feet on floor, legs uncrossed</span></li>
+    <li class="say"><span class="n">27</span><input type="checkbox"><span class="t">Assesses for appropriate cuff size — <b>must verbalize</b></span></li>
+    <li><span class="n">28</span><input type="checkbox"><span class="t">Locates the brachial artery</span></li>
+    <li><span class="n">29</span><input type="checkbox"><span class="t">Properly positions BP cuff 2.5 cm above antecubital fossa, artery line properly placed</span></li>
+    <li><span class="n">30</span><input type="checkbox"><span class="t">Supports the arm with the brachial artery at or slightly above heart level</span></li>
+    <li class="say"><span class="n">31</span><input type="checkbox"><span class="t">Determines the palpable radial pulse obliteration pressure and verbalizes the reading<span class="hint">Inflate while palpating the radial artery until the pulse is no longer palpable.</span></span></li>
+    <li><span class="n">32</span><input type="checkbox"><span class="t">Deflates cuff completely and waits 15–30 seconds</span></li>
+    <li><span class="n">33</span><input type="checkbox"><span class="t">Re-inflates cuff to 30 mmHg above palpable systolic pressure</span></li>
+    <li><span class="n">34</span><input type="checkbox"><span class="t">Assesses for onset of Korotkoff sounds to determine systolic blood pressure</span></li>
+    <li><span class="n">35</span><input type="checkbox"><span class="t">Deflates cuff slowly</span></li>
+    <li><span class="n">36</span><input type="checkbox"><span class="t">Assesses for cessation of Korotkoff sounds to determine diastolic blood pressure</span></li>
+    <li><span class="n">37</span><input type="checkbox"><span class="t">Repeats measurement on the opposite arm</span></li>
+    <li class="say"><span class="n">38</span><input type="checkbox"><span class="t">Verbalizes that if orthostatic measurement were indicated, they would also assess blood pressure supine and standing, waiting 1–3 minutes between positions</span></li>
+  </ul>
+</section>
+
+<!-- ============ PART II ============ -->
+<div class="part"><h2>Part II · Integument — full-body survey</h2></div>
+
+<section id="s5">
+  <h3><span class="num">05</span> Skin, Hair &amp; Nails</h3>
+  <p class="src">Skin, Hair and Nails sheet. This is itself a top-down sweep, so it stays intact and sits here — before you start working region by region. Items that also appear on HENT, Eye, Lung, or Peripheral Vascular sheets are tagged; perform them once, here.</p>
+  <div class="ref"><b>Reference — what you are looking and feeling for.</b><br>
+    <b>Skin, inspect:</b> color, uniformity, thickness, symmetry, hygiene, lesions, rashes, dryness, odors. <b>Palpate:</b> moisture, temperature, texture, turgor, mobility.<br>
+    <b>Nails, inspect:</b> color, condition, cleanliness, length, lesions, redness/swelling of nail folds, nail base angle. <b>Palpate:</b> texture, firmness, thickness, uniformity, adherence to nail bed.<br>
+    <b>Hair, inspect:</b> color, distribution, quantity. <b>Palpate:</b> texture.</div>
+  <div class="banner"><b>Position —</b> items 39–50 with the patient <b>sitting</b>; items 51–54 with the patient <b>standing</b>.</div>
+  <ul class="ck">
+    <li class="say"><span class="n">39</span><input type="checkbox"><span class="t"><span class="tag dup">also HENT</span>Inspects and palpates the hair and scalp — must part hair in multiple locations<span class="script">"I am inspecting the hair for color, distribution and quantity. I am inspecting the scalp for hygiene, lesions, dandruff, nits or lice. I am palpating the hair for texture…"</span></span></li>
+    <li class="say"><span class="n">40</span><input type="checkbox"><span class="t"><span class="tag dup">also Eye</span>Inspects the eyebrows and eyelashes for color, distribution and quantity</span></li>
+    <li class="say"><span class="n">41</span><input type="checkbox"><span class="t"><span class="tag dup">also HENT</span>Inspects the skin of the head, face and neck</span></li>
+    <li class="say"><span class="n">42</span><input type="checkbox"><span class="t">Inspects the upper back</span></li>
+    <li><span class="n">43</span><input type="checkbox"><span class="t">Inspects the shoulders, axillae, and upper extremities</span></li>
+    <li><span class="n">44</span><input type="checkbox"><span class="t">Inspects the hands and fingers — all surfaces and between digits</span></li>
+    <li class="say"><span class="n">45</span><input type="checkbox"><span class="t"><span class="tag dup">also Lungs · PV</span>Inspects and palpates the fingernails<span class="hint">Covers the lung sheet's "nail beds for cyanosis and clubbing" and the PV sheet's "inspect the nail beds."</span></span></li>
+    <li><span class="n">46</span><input type="checkbox"><span class="t">Inspects the chest</span></li>
+    <li><span class="n">47</span><input type="checkbox"><span class="t">Inspects the abdomen</span></li>
+    <li><span class="n">48</span><input type="checkbox"><span class="t">Inspects the anterior, medial and lateral thighs and lower legs</span></li>
+    <li><span class="n">49</span><input type="checkbox"><span class="t">Inspects the feet and toes — all surfaces and between digits</span></li>
+    <li><span class="n">50</span><input type="checkbox"><span class="t">Inspects and palpates the toenails</span></li>
+    <li><span class="n">51</span><input type="checkbox"><span class="t">Inspects the lower back and posterior legs</span></li>
+    <li class="say"><span class="n">52</span><input type="checkbox"><span class="t">Verbalizes examination of the buttocks, breasts, and genitalia<span class="script">"For a full-body examination, the buttocks, breasts, and genitalia would also be assessed."</span></span></li>
+    <li class="say"><span class="n">53</span><input type="checkbox"><span class="t">Palpates skin temperature using the dorsal surface of the hands, bilaterally over upper and lower extremities, anterior and posterior<span class="script">"I am palpating the skin for temperature and evaluating for symmetry in the extremities."</span></span></li>
+    <li class="say"><span class="n">54</span><input type="checkbox"><span class="t">Palpates skin for texture, mobility and turgor, bilaterally over upper and lower extremities, anterior and posterior<span class="script">"I am palpating the skin to assess texture, mobility and turgor."</span></span></li>
+  </ul>
+</section>
+
+<!-- ============ PART III ============ -->
+<div class="part"><h2>Part III · Head &amp; neck</h2></div>
+
+<section id="s6">
+  <h3><span class="num">06</span> Head, Face &amp; Scalp <span class="cnflag">CN V · VII</span></h3>
+  <p class="src">HENT sheet, with <b>CN V trigeminal</b> and <b>CN VII facial</b> testing from the Neurological sheet folded in — masseter, temporalis, facial sensation and facial expression all belong to the face exam.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">55</span><input type="checkbox"><span class="t">Inspects face for symmetry, edema, masses, and hair growth<span class="script">"I am inspecting the face for symmetry, edema, masses, or hair growth."</span></span></li>
+    <li class="say"><span class="n">56</span><input type="checkbox"><span class="t">Inspects head for position, size, shape, symmetry, contour, and deformity<span class="script">"I am inspecting the head/skull for position, size, shape, symmetry, contour, or deformity."</span></span></li>
+    <li class="say"><span class="n">57</span><input type="checkbox"><span class="t"><span class="tag dup">done at 39</span>Palpates hair texture — restate here if HENT is being graded separately<span class="script">"I am palpating the hair for texture."</span></span></li>
+    <li class="say"><span class="n">58</span><input type="checkbox"><span class="t">Palpates the scalp for mobility, tenderness and masses<span class="script">"I am palpating the scalp for mobility, tenderness or masses."</span></span></li>
+    <li class="say"><span class="n">59</span><input type="checkbox"><span class="t">Palpates the parotid glands bilaterally for tenderness and edema<span class="script">"I am palpating the parotid glands for tenderness or edema."</span></span></li>
+  </ul>
+  <h4>Cranial nerve V — Trigeminal</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">60</span><input type="checkbox"><span class="t"><span class="tag cn">CN V</span>Correctly states cranial nerve number and name — <b>V, Trigeminal</b></span></li>
+    <li><span class="n">61</span><input type="checkbox"><span class="t">Asks patient to clench teeth while palpating the <b>temporalis</b> muscle</span></li>
+    <li><span class="n">62</span><input type="checkbox"><span class="t">Asks patient to clench teeth while palpating the <b>masseter</b> muscle</span></li>
+    <li class="say"><span class="n">63</span><input type="checkbox"><span class="t">Tests light touch with a cotton ball over all three divisions and names each — V1 ophthalmic, V2 maxillary, V3 mandibular</span></li>
+  </ul>
+  <h4>Cranial nerve VII — Facial</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">64</span><input type="checkbox"><span class="t"><span class="tag cn">CN VII</span>Correctly states cranial nerve number and name — <b>VII, Facial</b></span></li>
+    <li><span class="n">65</span><input type="checkbox"><span class="t">Assesses for facial asymmetry<span class="hint">Pairs with item 55 — you are already looking at the face.</span></span></li>
+    <li><span class="n">66</span><input type="checkbox"><span class="t">Instructs patient to raise both eyebrows — resistance not required</span></li>
+    <li><span class="n">67</span><input type="checkbox"><span class="t">Instructs patient to close eyes, then keep eyes closed against resistance</span></li>
+    <li><span class="n">68</span><input type="checkbox"><span class="t">Asks and observes patient to smile and show teeth</span></li>
+    <li><span class="n">69</span><input type="checkbox"><span class="t">Instructs patient to puff out cheeks, then percusses cheeks lightly</span></li>
+  </ul>
+</section>
+
+<section id="s7">
+  <h3><span class="num">07</span> Eyes <span class="cnflag">CN II · III · IV · VI</span></h3>
+  <p class="src">Eye sheet, with the <b>CN II, III, IV and VI</b> naming and verbalizations placed at the maneuver that tests them. All techniques bilateral.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">70</span><input type="checkbox"><span class="t">Inspects the eyebrows, eyelashes and eyelids — symmetry, erythema, lesions<span class="script">"I am inspecting the eyebrows, eyelashes, and eyelids noting any asymmetry, erythema, or lesions."</span></span></li>
+    <li class="say"><span class="n">71</span><input type="checkbox"><span class="t">Inspects the eyelids for position and closure<span class="script">"I am inspecting the eyelids for position and closure."</span></span></li>
+    <li class="say"><span class="n">72</span><input type="checkbox"><span class="t">Inspects the area over the lacrimal apparatus for edema and lesions<span class="script">"I am inspecting over the lacrimal apparatus for edema and lesions."</span></span></li>
+    <li class="say"><span class="n">73</span><input type="checkbox"><span class="t">Palpates the area over the lacrimal apparatus for tenderness<span class="script">"I am palpating over the lacrimal apparatus for tenderness."</span></span></li>
+    <li class="say"><span class="n">74</span><input type="checkbox"><span class="t">Inspects the bulbar and palpebral conjunctivae — injection, lesions<span class="script">"I am inspecting the bulbar and palpebral conjunctivae, noting any areas of injection or lesions."</span></span></li>
+    <li class="say"><span class="n">75</span><input type="checkbox"><span class="t">Inspects the sclera — color, injection, or blood<span class="script">"I am inspecting the sclera for color, injection, or blood."</span></span></li>
+  </ul>
+  <h4>Cranial nerve II — Optic</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">76</span><input type="checkbox"><span class="t"><span class="tag cn">CN II</span>Correctly states cranial nerve number and name — <b>II, Optic</b></span></li>
+    <li class="say"><span class="n">77</span><input type="checkbox"><span class="t">Verbalizes the four tests for this nerve<span class="script">"To evaluate cranial nerve II, I would test the following: visual acuity, pupillary light reflex, visual fields, and the ophthalmoscopic exam."</span></span></li>
+    <li><span class="n">78</span><input type="checkbox"><span class="t">Tests visual acuity of each eye using an eye chart — one at a time, then together<span class="hint">Must be done <b>before</b> shining any light into the eyes.</span></span></li>
+    <li class="say"><span class="n">79</span><input type="checkbox"><span class="t">Verbalizes that vision is tested with and without corrective lenses if used by the patient<span class="script">"I would test the patient's vision with and without corrective lenses if present."</span></span></li>
+    <li class="say"><span class="n">80</span><input type="checkbox"><span class="t">Measures pupil size and inspects for symmetry<span class="script">"I am measuring pupil size and inspecting for symmetry."</span></span></li>
+    <li><span class="n">81</span><input type="checkbox"><span class="t">Tests visual fields by confrontation — monocular technique, standing level with the patient, 4 points per eye. Do not rush.</span></li>
+  </ul>
+  <ul class="ck">
+    <li class="say"><span class="n">82</span><input type="checkbox"><span class="t">Tests corneal light reflex — penlight held at midline, 2 feet away<span class="script">"I am assessing the corneal light reflex for symmetry."</span></span></li>
+  </ul>
+  <h4>Cranial nerves III, IV and VI — Oculomotor, Trochlear, Abducens</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">83</span><input type="checkbox"><span class="t"><span class="tag cn">CN III · IV · VI</span>Correctly states cranial nerve numbers and names — <b>III Oculomotor, IV Trochlear, VI Abducens</b></span></li>
+    <li class="say"><span class="n">84</span><input type="checkbox"><span class="t">Verbalizes the test for these three nerves<span class="script">"I would test extraocular movements in the six cardinal gazes to evaluate cranial nerves III, IV, and VI."</span></span></li>
+    <li><span class="n">85</span><input type="checkbox"><span class="t">Tests extraocular movements in the six cardinal directions of gaze (H pattern), pausing at extreme gazes to check for nystagmus</span></li>
+  </ul>
+  <ul class="ck">
+    <li><span class="n">86</span><input type="checkbox"><span class="t">Tests convergence by moving an object toward the bridge of the nose</span></li>
+    <li class="say"><span class="n">87</span><input type="checkbox"><span class="t">Uses oblique lighting to inspect the cornea and lens for opacities and assess anterior chamber depth<span class="script">"I will use oblique lighting to inspect the cornea and lens for opacities, and assess the depth of the anterior chamber — noting any crescent shadows in the medial aspects."</span></span></li>
+    <li><span class="n">88</span><input type="checkbox"><span class="t"><span class="tag cn">CN II · III</span>Tests direct and consensual pupillary light reaction — places hand over the bridge of the nose to block light</span></li>
+    <li class="say"><span class="n">89</span><input type="checkbox"><span class="t"><span class="tag cn">CN III</span>Verbalizes that pupillary constriction for CN III was tested with the pupillary light reflex and examined for <b>PERRL</b></span></li>
+  </ul>
+  <h4>Fundoscopic exam <span style="font-weight:400;text-transform:none;letter-spacing:0">— completes CN II</span></h4>
+  <ul class="ck">
+    <li class="say"><span class="n">90</span><input type="checkbox"><span class="t">Verbalizes proper lighting<span class="script">"I would dim the room light before fundoscopic examination."</span></span></li>
+    <li><span class="n">91</span><input type="checkbox"><span class="t">Adjusts light beam and diopter setting before beginning examination</span></li>
+    <li><span class="n">92</span><input type="checkbox"><span class="t">Uses right hand and right eye for the patient's right eye; left hand and left eye for the left eye</span></li>
+    <li><span class="n">93</span><input type="checkbox"><span class="t">Assesses the eye for the presence of red reflex</span></li>
+    <li class="say"><span class="n">94</span><input type="checkbox"><span class="t">Assesses retina — moves into proper position and verbalizes the structures observed, adjusting the diopter wheel to focus<span class="script">"I am assessing the optic disc and margins; the cup to disc ratio; the retinal arteries and veins; and the condition of the retina."</span></span></li>
+    <li class="say"><span class="n">95</span><input type="checkbox"><span class="t">Assesses fovea and macula — asks the patient to look into the light<span class="script">"I am assessing the fovea and macula."</span></span></li>
+    <li class="say"><span class="n">96</span><input type="checkbox"><span class="t">Assesses anterior structures before backing away from the patient<span class="script">"I am adjusting the diopter to focus on the anterior structures."</span></span></li>
+  </ul>
+</section>
+
+<section id="s8">
+  <h3><span class="num">08</span> Ears <span class="cnflag">CN VIII</span></h3>
+  <p class="src">HENT sheet with <b>CN VIII vestibulocochlear</b> folded in — the whisper test appears on both sheets and is performed once, here.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">97</span><input type="checkbox"><span class="t">Inspects the auricle for deformities, discharge, and lesions<span class="script">"I am inspecting the auricle for deformities, discharge, or lesions."</span></span></li>
+    <li class="say"><span class="n">98</span><input type="checkbox"><span class="t">Palpates the auricle, tragus, and mastoid for tenderness<span class="script">"I am palpating the auricle, tragus, or mastoid for tenderness."</span></span></li>
+  </ul>
+  <h4>Otoscopic exam — bilateral</h4>
+  <ul class="ck">
+    <li><span class="n">99</span><input type="checkbox"><span class="t">Chooses appropriate size speculum for the patient</span></li>
+    <li><span class="n">100</span><input type="checkbox"><span class="t">Pulls auricle upward, outward, and back to straighten the ear canal</span></li>
+    <li class="say"><span class="n">101</span><input type="checkbox"><span class="t">Verbalizes structures assessed in the ear canal<span class="script">"I am noting the condition of the external canal, noting the amount of cerumen, the presence of any inflammation, edema, or foreign bodies."</span></span></li>
+    <li class="say"><span class="n">102</span><input type="checkbox"><span class="t">Notes the color and contour of the tympanic membrane<span class="script">"I am noting the color and contour of the tympanic membrane as 'pearly gray.'"</span></span></li>
+    <li class="say"><span class="n">103</span><input type="checkbox"><span class="t">Identifies the light reflex and landmarks of the tympanic membrane<span class="script">"I am visualizing the landmarks of the tympanic membrane including malleus, umbo, pars tensa, pars flaccida and the light reflex (cone of light)."</span></span></li>
+  </ul>
+  <h4>Cranial nerve VIII — Vestibulocochlear</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">104</span><input type="checkbox"><span class="t"><span class="tag cn">CN VIII</span>Correctly states cranial nerve number and name — <b>VIII, Vestibulocochlear</b></span></li>
+    <li class="say"><span class="n">105</span><input type="checkbox"><span class="t">Verbalizes intent to assess for patent ear canals first, with an otoscope<span class="hint">Already done at items 99–103 — say it out loud here so the CN VIII sequence is complete.</span></span></li>
+    <li><span class="n">106</span><input type="checkbox"><span class="t">Performs the whispered hearing test bilaterally while standing two feet away</span></li>
+    <li class="say"><span class="n">107</span><input type="checkbox"><span class="t">Verbalizes the follow-up if the gross hearing test is abnormal<span class="script">"If this test was abnormal, I would perform a Rinne and Weber test for bone vs. air conduction."</span></span></li>
+    <li class="say"><span class="n">108</span><input type="checkbox"><span class="t">Verbalizes that vestibular function is assessed during the Romberg test<span class="hint">Romberg itself is performed later, at item 390 — this is just the attribution.</span></span></li>
+  </ul>
+</section>
+
+<section id="s9">
+  <h3><span class="num">09</span> Nose &amp; Sinuses <span class="cnflag">CN I</span></h3>
+  <p class="src">HENT sheet with <b>CN I olfactory</b> folded in — both sheets test nasal patency, so it happens once. Do the CN I scent testing while you already have the patient occluding nostrils.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">109</span><input type="checkbox"><span class="t">Inspects the nose for deformities<span class="script">"I am inspecting the nose for deformities."</span></span></li>
+  </ul>
+  <h4>Cranial nerve I — Olfactory</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">110</span><input type="checkbox"><span class="t"><span class="tag cn">CN I</span>Correctly states cranial nerve number and name — <b>I, Olfactory</b></span></li>
+    <li><span class="n">111</span><input type="checkbox"><span class="t">Evaluates nasal patency bilaterally — occludes one nostril and has the patient sniff through the other</span></li>
+    <li><span class="n">112</span><input type="checkbox"><span class="t">Asks patient to close eyes and occludes the nostril not being tested</span></li>
+    <li><span class="n">113</span><input type="checkbox"><span class="t">Tests one nostril at a time using one scent for each nostril</span></li>
+  </ul>
+  <ul class="ck">
+    <li><span class="n">114</span><input type="checkbox"><span class="t">Palpates the nose for tenderness</span></li>
+    <li class="say"><span class="n">115</span><input type="checkbox"><span class="t">Uses otoscope with appropriate size speculum to inspect the nares<span class="script">"I am inspecting the condition of the nasal mucosa, the turbinates for polyps, and the nasal septum for septal deviation or perforations."</span></span></li>
+    <li><span class="n">116</span><input type="checkbox"><span class="t">Palpates the frontal and maxillary sinuses</span></li>
+  </ul>
+</section>
+
+<section id="s10">
+  <h3><span class="num">10</span> Oral Cavity &amp; Pharynx <span class="cnflag">CN IX · X · XII</span></h3>
+  <p class="src">HENT sheet with <b>CN IX glossopharyngeal, CN X vagus</b> and <b>CN XII hypoglossal</b> folded in. The gag reflex, "say AHH" and tongue testing are done here, once, with the nerve named as you do them.</p>
+  <ul class="ck">
+    <li><span class="n">117</span><input type="checkbox"><span class="t">Uses penlight and tongue depressor for the examination, and gloves for palpating the tongue</span></li>
+    <li class="say"><span class="n">118</span><input type="checkbox"><span class="t">Inspects the nasolabial fold, lips, buccal mucosa, gingiva, floor of mouth, and teeth<span class="script">"I am inspecting the nasolabial fold, lips, buccal mucosa, gingiva, floor of mouth, and teeth."</span></span></li>
+    <li><span class="n">119</span><input type="checkbox"><span class="t">Inspects Wharton's and Stensen's ducts<span class="hint"><b>Heads up —</b> the HENT sheet labels these the other way around. Standard anatomy: <b>Stensen's</b> = parotid duct (opposite the upper 2nd molar), <b>Wharton's</b> = submandibular duct (floor of mouth). Verbalize whichever pairing your facilitator is grading.</span></span></li>
+    <li class="say"><span class="n">120</span><input type="checkbox"><span class="t">Notes inflammation, lesions, and condition of dentition<span class="script">"I am noting any inflammation or lesions and condition of dentition."</span></span></li>
+    <li class="say"><span class="n">121</span><input type="checkbox"><span class="t">Inspects the palate and oropharynx for inflammation and lesions<span class="script">"I am inspecting the palate and oropharynx for inflammation or lesions."</span></span></li>
+    <li class="say"><span class="n">122</span><input type="checkbox"><span class="t">Inspects the posterior pharynx, noting the condition of the tonsils<span class="script">"I am inspecting the posterior pharynx noting the condition of the tonsils."</span></span></li>
+  </ul>
+  <h4>Cranial nerves IX and X — Glossopharyngeal and Vagus</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">123</span><input type="checkbox"><span class="t"><span class="tag cn">CN IX · X</span>Correctly states cranial nerve numbers and names — <b>IX Glossopharyngeal, X Vagus</b></span></li>
+    <li class="say"><span class="n">124</span><input type="checkbox"><span class="t">Asks the patient to "say AHH" while observing and listening<span class="script">"I am noting the phonation and symmetrical rise and fall of the soft palate and uvula."</span></span></li>
+    <li class="say"><span class="n">125</span><input type="checkbox"><span class="t">Verbalizes performance of the <b>gag reflex</b><span class="hint">You have the tongue depressor in hand from item 117 — this is its natural moment.</span></span></li>
+    <li><span class="n">126</span><input type="checkbox"><span class="t">Observes the patient swallow — mouth need not be open, but watch the anterior neck</span></li>
+  </ul>
+  <h4>Cranial nerve XII — Hypoglossal</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">127</span><input type="checkbox"><span class="t"><span class="tag cn">CN XII</span>Correctly states cranial nerve number and name — <b>XII, Hypoglossal</b></span></li>
+    <li class="say"><span class="n">128</span><input type="checkbox"><span class="t">Asks the patient to "stick out tongue" and notes color, texture, and whether it is midline<span class="script">"I am noting the color and texture of the tongue and assessing if it is midline."</span></span></li>
+    <li><span class="n">129</span><input type="checkbox"><span class="t">Asks the patient to move the tongue side to side, then push against the inside of each cheek while palpating externally for strength — evaluates symmetry, deviation, atrophy, and fasciculations</span></li>
+  </ul>
+  <ul class="ck">
+    <li><span class="n">130</span><input type="checkbox"><span class="t">Uses gauze to hold the tongue and palpates all sides for induration and masses with the opposite gloved hand</span></li>
+  </ul>
+</section>
+
+<section id="s11">
+  <h3><span class="num">11</span> Neck <span class="cnflag">CN XI</span></h3>
+  <p class="src">HENT sheet with <b>CN XI spinal accessory</b> folded in — trapezius and sternocleidomastoid are neck muscles, and your hands are already there.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">131</span><input type="checkbox"><span class="t"><span class="tag dup">also Cardiac</span>Inspects the anterior neck for masses, asymmetry, thyromegaly, or jugular vein distention<span class="script">"I am inspecting the anterior neck for masses, asymmetry, thyromegaly, or jugular vein distention."</span></span></li>
+    <li class="say"><span class="n">132</span><input type="checkbox"><span class="t">Inspects and palpates the position of the trachea<span class="script">"I am inspecting and palpating the position of the trachea."</span></span></li>
+    <li class="say"><span class="n">133</span><input type="checkbox"><span class="t">Inspects the area over the thyroid gland and isthmus for edema and masses — asks patient to swallow while observing anteriorly<span class="script">"I am inspecting the area over the thyroid gland and isthmus for edema and masses."</span></span></li>
+    <li><span class="n">134</span><input type="checkbox"><span class="t">Stands facing the patient and palpates the isthmus and each thyroid lobe for size, shape and consistency</span></li>
+    <li><span class="n">135</span><input type="checkbox"><span class="t">Stands behind the patient and palpates the isthmus and each thyroid lobe, displacing the trachea laterally to reach each lobe</span></li>
+    <li><span class="n">136</span><input type="checkbox"><span class="t">Asks the patient to swallow while palpating the thyroid isthmus from behind</span></li>
+  </ul>
+  <h4>Cranial nerve XI — Spinal Accessory</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">137</span><input type="checkbox"><span class="t"><span class="tag cn">CN XI</span>Correctly states cranial nerve number and name — <b>XI, Spinal Accessory</b></span></li>
+    <li><span class="n">138</span><input type="checkbox"><span class="t">Tests strength of the trapezius and sternocleidomastoid muscles bilaterally against resistance<span class="hint">You are already standing behind the patient from item 135.</span></span></li>
+  </ul>
+</section>
+
+<section id="s12">
+  <h3><span class="num">12</span> Lymph Nodes — Head &amp; Neck</h3>
+  <p class="src">HENT sheet. Epitrochlear and inguinal nodes are on the Peripheral Vascular sheet and are palpated later, at §16.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">139</span><input type="checkbox"><span class="t">Verbalizes the names of the lymph nodes as they are palpated</span></li>
+    <li><span class="n">140</span><input type="checkbox"><span class="t">Palpates lymph nodes using the pads of the fingers in a circular motion</span></li>
+    <li><span class="n">141</span><input type="checkbox"><span class="t">Preauricular</span></li>
+    <li><span class="n">142</span><input type="checkbox"><span class="t">Posterior auricular</span></li>
+    <li><span class="n">143</span><input type="checkbox"><span class="t">Occipital</span></li>
+    <li><span class="n">144</span><input type="checkbox"><span class="t">Tonsillar</span></li>
+    <li><span class="n">145</span><input type="checkbox"><span class="t">Submandibular</span></li>
+    <li><span class="n">146</span><input type="checkbox"><span class="t">Submental</span></li>
+    <li><span class="n">147</span><input type="checkbox"><span class="t">Superficial cervical chain</span></li>
+    <li><span class="n">148</span><input type="checkbox"><span class="t">Posterior cervical chain</span></li>
+    <li><span class="n">149</span><input type="checkbox"><span class="t">Deep cervical chain — one side at a time, displacing the sternocleidomastoid muscle</span></li>
+    <li><span class="n">150</span><input type="checkbox"><span class="t">Supraclavicular — ask the patient to take a deep breath during palpation</span></li>
+  </ul>
+</section>
+
+<div class="cnindex" id="cnindex">
+  <h3>Cranial nerve audit — I through XII</h3>
+  <p>Before you leave the head and neck, check that all twelve were named and tested. This is a lookup, not a separate exam — every item below was already ticked above.</p>
+  <table>
+    <tr><th>Nerve</th><th>Tested during</th><th>Items</th></tr>
+    <tr><td>I — Olfactory</td><td>Nose &amp; sinuses</td><td>110–113</td></tr>
+    <tr><td>II — Optic</td><td>Eyes: acuity, fields, PLR, fundoscopy</td><td>76–81, 88, 90–96</td></tr>
+    <tr><td>III — Oculomotor</td><td>Eyes: EOM, pupillary constriction, PERRL</td><td>83–85, 88–89</td></tr>
+    <tr><td>IV — Trochlear</td><td>Eyes: EOM</td><td>83–85</td></tr>
+    <tr><td>V — Trigeminal</td><td>Face: temporalis, masseter, V1/V2/V3 light touch</td><td>60–63</td></tr>
+    <tr><td>VI — Abducens</td><td>Eyes: EOM</td><td>83–85</td></tr>
+    <tr><td>VII — Facial</td><td>Face: expression, eye closure, cheeks</td><td>64–69</td></tr>
+    <tr><td>VIII — Vestibulocochlear</td><td>Ears: whisper test · vestibular at Romberg</td><td>104–108, 390</td></tr>
+    <tr><td>IX — Glossopharyngeal</td><td>Oral cavity: "say AHH", gag reflex</td><td>123–125</td></tr>
+    <tr><td>X — Vagus</td><td>Oral cavity: "say AHH", gag reflex, swallow</td><td>123–126</td></tr>
+    <tr><td>XI — Spinal Accessory</td><td>Neck: trapezius and SCM strength</td><td>137–138</td></tr>
+    <tr><td>XII — Hypoglossal</td><td>Oral cavity: tongue protrusion and strength</td><td>127–129</td></tr>
+  </table>
+</div>
+
+<!-- ============ PART IV ============ -->
+<div class="part"><h2>Part IV · Thorax</h2></div>
+
+<section id="s13">
+  <h3><span class="num">13</span> Thorax &amp; Lungs</h3>
+  <p class="src">Lungs and Thorax sheet. Performed seated, before you recline the patient for the cardiac exam.</p>
+  <h4>Inspection</h4>
+  <ul class="ck">
+    <li><span class="n">151</span><input type="checkbox"><span class="t">Inspects for the shape and movement of the thorax and any unilateral lag in movement</span></li>
+    <li><span class="n">152</span><input type="checkbox"><span class="t">Inspects for rate, rhythm, and effort of respiration</span></li>
+    <li><span class="n">153</span><input type="checkbox"><span class="t">Inspects for deformities, asymmetry, abnormal retractions, lesions, and areas of ecchymosis</span></li>
+    <li><span class="n">154</span><input type="checkbox"><span class="t">Inspects for use of accessory muscles</span></li>
+    <li><span class="n">155</span><input type="checkbox"><span class="t">Inspects lips for cyanosis</span></li>
+    <li><span class="n">156</span><input type="checkbox"><span class="t"><span class="tag dup">done at 45</span>Inspects bilateral nail beds for cyanosis and clubbing</span></li>
+    <li><span class="n">157</span><input type="checkbox"><span class="t">Inspects anterior-posterior (AP) diameter</span></li>
+  </ul>
+  <h4>Palpation</h4>
+  <ul class="ck">
+    <li><span class="n">158</span><input type="checkbox"><span class="t">Palpates posterior chest wall for tenderness or deformities</span></li>
+    <li><span class="n">159</span><input type="checkbox"><span class="t">Palpates lateral chest wall for tenderness or deformities</span></li>
+    <li><span class="n">160</span><input type="checkbox"><span class="t">Palpates anterior chest wall for tenderness or deformities</span></li>
+    <li><span class="n">161</span><input type="checkbox"><span class="t">Palpates thoracic expansion for symmetry of respiratory effort — <b>posteriorly</b></span></li>
+    <li><span class="n">162</span><input type="checkbox"><span class="t">Palpates tactile fremitus bilaterally — <b>posteriorly, laterally, and anteriorly</b></span></li>
+  </ul>
+  <h4>Percussion</h4>
+  <ul class="ck">
+    <li><span class="n">163</span><input type="checkbox"><span class="t">Percusses <b>posterior</b> chest wall, alternating sides</span></li>
+    <li><span class="n">164</span><input type="checkbox"><span class="t">Percusses <b>lateral</b> chest wall, alternating sides</span></li>
+    <li><span class="n">165</span><input type="checkbox"><span class="t">Percusses upper lobes, <b>anterior</b> chest wall, alternating sides</span></li>
+    <li><span class="n">166</span><input type="checkbox"><span class="t">Measures diaphragmatic excursion in centimeters (4–6 cm)<span class="hint">Distance between the level of dullness on full expiration and on full inspiration.</span></span></li>
+  </ul>
+  <h4>Auscultation</h4>
+  <ul class="ck">
+    <li><span class="n">167</span><input type="checkbox"><span class="t">Asks patient to breathe through the mouth during auscultation</span></li>
+    <li><span class="n">168</span><input type="checkbox"><span class="t">Asks the patient to cross arms for the posterior examination</span></li>
+    <li class="say"><span class="n">169</span><input type="checkbox"><span class="t">Verbalizes <em>and</em> demonstrates performing one full cycle of inhalation and expiration at each point</span></li>
+    <li><span class="n">170</span><input type="checkbox"><span class="t">Auscultates <b>posterior</b> chest wall, alternating sides bilaterally in a ladder pattern</span></li>
+    <li><span class="n">171</span><input type="checkbox"><span class="t">Auscultates <b>lateral</b> chest wall, alternating sides bilaterally in a ladder pattern</span></li>
+    <li><span class="n">172</span><input type="checkbox"><span class="t">Auscultates upper lobes, <b>anterior</b> chest wall, alternating sides bilaterally in a ladder pattern</span></li>
+    <li class="say"><span class="n">173</span><input type="checkbox"><span class="t">Verbalizes whether breath sounds are appropriate for the area auscultated — vesicular, bronchovesicular, bronchial, tracheal</span></li>
+    <li class="say"><span class="n">174</span><input type="checkbox"><span class="t">Verbalizes listening for crackles, rhonchi, wheezes, and pleural rubs</span></li>
+    <li class="say"><span class="n">175</span><input type="checkbox"><span class="t">Verbalizes the follow-up if adventitious sounds are present<span class="script">"I will perform one of three tests, egophony, bronchophony, and/or whispered pectoriloquy."</span></span></li>
+  </ul>
+</section>
+
+<section id="s14">
+  <h3><span class="num">14</span> Cardiovascular</h3>
+  <p class="src">Cardiovascular sheet. Its introduction and hand-hygiene items were folded into §1; the jugular/carotid inspection overlaps §11.</p>
+  <div class="banner"><b>Position change —</b> patient <b>supine with the head of the bed elevated 30°</b>. Stand on the patient's right if you are right-handed, left if left-handed.</div>
+  <ul class="ck">
+    <li><span class="n">176</span><input type="checkbox"><span class="t">Places the patient supine with the head elevated 30 degrees</span></li>
+    <li><span class="n">177</span><input type="checkbox"><span class="t">Stands on the correct side of the patient for handedness</span></li>
+    <li class="say"><span class="n">178</span><input type="checkbox"><span class="t">Obtains appropriate history questions and interprets vitals</span></li>
+    <li><span class="n">179</span><input type="checkbox"><span class="t"><span class="tag dup">also §11</span>Visualizes/identifies the carotid and jugular pulses</span></li>
+  </ul>
+  <h4>Inspection</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">180</span><input type="checkbox"><span class="t">Inspects the precordium for abnormal wall motion and apical impulse using tangential lighting</span></li>
+  </ul>
+  <h4>Carotid pulse</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">181</span><input type="checkbox"><span class="t">Inspects the carotid pulses in the neck<span class="hint">Indication: carotid upstroke, its amplitude and contour, and the presence of thrills.</span></span></li>
+    <li><span class="n">182</span><input type="checkbox"><span class="t">Asks the patient to hold their breath for ten seconds; auscultates the carotids with the diaphragm <em>and</em> bell</span></li>
+    <li><span class="n">183</span><input type="checkbox"><span class="t">With the head of the bed still at 30°, palpates each carotid artery in the lower one-third of the neck using index and middle fingers — bilaterally, one carotid at a time</span></li>
+  </ul>
+  <h4>Palpation of the precordium for heaves and lifts — finger pads</h4>
+  <div class="ref">Indication for 184–188: heaves, palpable S1, S2, S3 or S4, the apical impulse, and the PMI.</div>
+  <ul class="ck">
+    <li><span class="n">184</span><input type="checkbox"><span class="t">2nd intercostal space, right sternal border — <b>Aortic</b></span></li>
+    <li><span class="n">185</span><input type="checkbox"><span class="t">2nd intercostal space, left sternal border — <b>Pulmonic</b></span></li>
+    <li><span class="n">186</span><input type="checkbox"><span class="t">3rd intercostal space, left sternal border — <b>Erb's point</b></span></li>
+    <li><span class="n">187</span><input type="checkbox"><span class="t">4th intercostal space, left sternal border — <b>Tricuspid</b></span></li>
+    <li><span class="n">188</span><input type="checkbox"><span class="t">5th intercostal space, left midclavicular line — <b>Mitral</b></span></li>
+    <li class="say"><span class="n">189</span><input type="checkbox"><span class="t">Notes the size and intensity of the apical impulse by palpation, using the palmar surface of several fingers — should be described as a light tap</span></li>
+    <li class="say"><span class="n">190</span><input type="checkbox"><span class="t">Notes the location of the point of maximal impulse (PMI)</span></li>
+  </ul>
+  <h4>Palpation of the precordium for thrills — ball of the hand</h4>
+  <ul class="ck">
+    <li><span class="n">191</span><input type="checkbox"><span class="t">2nd ICS, right sternal border — Aortic</span></li>
+    <li><span class="n">192</span><input type="checkbox"><span class="t">2nd ICS, left sternal border — Pulmonic</span></li>
+    <li><span class="n">193</span><input type="checkbox"><span class="t">3rd ICS, left sternal border — Erb's point</span></li>
+    <li><span class="n">194</span><input type="checkbox"><span class="t">4th ICS, left sternal border — Tricuspid</span></li>
+    <li><span class="n">195</span><input type="checkbox"><span class="t">5th ICS, left midclavicular line — Mitral</span></li>
+  </ul>
+  <h4>Auscultation of the precordium — diaphragm and bell</h4>
+  <ul class="ck">
+    <li><span class="n">196</span><input type="checkbox"><span class="t">2nd ICS, right sternal border — Aortic</span></li>
+    <li><span class="n">197</span><input type="checkbox"><span class="t">2nd ICS, left sternal border — Pulmonic</span></li>
+    <li><span class="n">198</span><input type="checkbox"><span class="t">3rd ICS, left sternal border — Erb's point</span></li>
+    <li><span class="n">199</span><input type="checkbox"><span class="t">4th ICS, left sternal border — Tricuspid</span></li>
+    <li><span class="n">200</span><input type="checkbox"><span class="t">5th ICS, left midclavicular line — Mitral</span></li>
+    <li class="say"><span class="n">201</span><input type="checkbox"><span class="t">Verbalizes what is being listened for — rate, rhythm, intensities of S1 and S2, systole, diastole, any extra sounds, any murmurs</span></li>
+  </ul>
+</section>
+
+<!-- ============ PART V ============ -->
+<div class="part"><h2>Part V · Abdomen</h2></div>
+
+<section id="s15">
+  <h3><span class="num">15</span> Abdomen</h3>
+  <p class="src">Abdominal sheet. Its nine-item introduction was folded into §1; the two positioning items remain here because they are abdomen-specific.</p>
+  <div class="banner"><b>Position change —</b> patient <b>supine, knees flexed</b>, arms at sides or across the chest. Order is <b>inspect → auscultate → percuss → palpate</b>, which is deliberately not the usual IPPA.</div>
+  <ul class="ck">
+    <li><span class="n">202</span><input type="checkbox"><span class="t">Places patient supine, knees flexed, arms at sides or across chest</span></li>
+    <li class="say"><span class="n">203</span><input type="checkbox"><span class="t">Verbalizes they would expose the patient from xiphoid to symphysis pubis</span></li>
+  </ul>
+  <h4>Inspection</h4>
+  <ul class="ck">
+    <li><span class="n">204</span><input type="checkbox"><span class="t">Inspects the abdomen — striae, rash, dilated veins, telangiectasia</span></li>
+    <li><span class="n">205</span><input type="checkbox"><span class="t">Inspection performed prior to auscultation, percussion, and palpation</span></li>
+  </ul>
+  <h4>Auscultation</h4>
+  <ul class="ck">
+    <li><span class="n">206</span><input type="checkbox"><span class="t">Auscultates in all 4 quadrants for 1 minute</span></li>
+    <li class="say"><span class="n">207</span><input type="checkbox"><span class="t">Verbalizes the follow-up for absent bowel sounds<span class="script">"If bowel sounds are absent in a quadrant, then I will auscultate for 3–5 minutes in that quadrant."</span></span></li>
+    <li><span class="n">208</span><input type="checkbox"><span class="t">Bruits with the <b>diaphragm</b> — abdominal aorta</span></li>
+    <li><span class="n">209</span><input type="checkbox"><span class="t">Bruits with the <b>diaphragm</b> — renal arteries, bilaterally</span></li>
+    <li><span class="n">210</span><input type="checkbox"><span class="t">Bruits with the <b>diaphragm</b> — iliac arteries, bilaterally</span></li>
+    <li><span class="n">211</span><input type="checkbox"><span class="t">Bruits with the <b>diaphragm</b> — femoral arteries, bilaterally<span class="hint">Credit given if the student verbalizes "under clothing" but performs over clothing.</span></span></li>
+    <li><span class="n">212</span><input type="checkbox"><span class="t">Bruits with the <b>bell</b>, checking for low-pitched bruits — abdominal aorta</span></li>
+    <li><span class="n">213</span><input type="checkbox"><span class="t">Bruits with the <b>bell</b> — renal arteries, bilaterally</span></li>
+    <li><span class="n">214</span><input type="checkbox"><span class="t">Bruits with the <b>bell</b> — iliac arteries, bilaterally</span></li>
+    <li><span class="n">215</span><input type="checkbox"><span class="t">Bruits with the <b>bell</b> — femoral arteries, bilaterally</span></li>
+    <li><span class="n">216</span><input type="checkbox"><span class="t">Auscultates before palpation or percussion</span></li>
+  </ul>
+  <h4>Percussion</h4>
+  <ul class="ck">
+    <li><span class="n">217</span><input type="checkbox"><span class="t">Observes and notes the patient's facial expression during percussion</span></li>
+    <li><span class="n">218</span><input type="checkbox"><span class="t">Leaves the tender or painful area for last</span></li>
+    <li class="say"><span class="n">219</span><input type="checkbox"><span class="t">Percusses 4 quadrants "for tympany or dullness"</span></li>
+    <li><span class="n">220</span><input type="checkbox"><span class="t">Percusses liver span at the midclavicular line</span></li>
+    <li><span class="n">221</span><input type="checkbox"><span class="t">Measures liver span in centimeters — 6–12 cm at the MCL</span></li>
+    <li><span class="n">222</span><input type="checkbox"><span class="t">Percusses the spleen — Traube's space <b>or</b> the splenic percussion sign; choose one</span></li>
+    <li><span class="n">223</span><input type="checkbox"><span class="t">Percusses before palpation</span></li>
+  </ul>
+  <h4>Palpation</h4>
+  <ul class="ck">
+    <li><span class="n">224</span><input type="checkbox"><span class="t">Observes and notes the patient's facial expression during palpation</span></li>
+    <li><span class="n">225</span><input type="checkbox"><span class="t">Palpates lightly in 4 quadrants (1 cm)</span></li>
+    <li><span class="n">226</span><input type="checkbox"><span class="t">Palpates deeply in 4 quadrants (3–4 cm)</span></li>
+    <li><span class="n">227</span><input type="checkbox"><span class="t">Palpates the liver edge as the patient breathes in, <b>or</b> uses the hooking technique; choose one</span></li>
+    <li><span class="n">228</span><input type="checkbox"><span class="t">Palpates for the spleen</span></li>
+    <li class="say"><span class="n">229</span><input type="checkbox"><span class="t">Palpates the size of the abdominal aorta and states it should be less than 3.0 cm wide</span></li>
+    <li><span class="n">230</span><input type="checkbox"><span class="t"><span class="tag dup">also §17</span>Palpates for inguinal nodes<span class="hint">The PV sheet grades vertical and horizontal inguinal chains separately — see items 248–249. Palpate once.</span></span></li>
+    <li><span class="n">231</span><input type="checkbox"><span class="t">Attempts to palpate the right kidney using the capture technique</span></li>
+    <li><span class="n">232</span><input type="checkbox"><span class="t">Attempts to palpate the left kidney using the capture technique from the patient's left side</span></li>
+    <li><span class="n">233</span><input type="checkbox"><span class="t">Assesses CVA tenderness, bilaterally</span></li>
+  </ul>
+</section>
+
+<!-- ============ PART VI ============ -->
+<div class="part"><h2>Part VI · Peripheral vascular &amp; extremities</h2></div>
+
+<section id="s16">
+  <h3><span class="num">16</span> Peripheral Vascular</h3>
+  <p class="src">Peripheral Vascular sheet, with the carotid, ulnar, brachial and radial pulses from the Vital Signs sheet's "complete peripheral vascular exam" line merged in so the full set is in one place.</p>
+  <h4>Inspection</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">234</span><input type="checkbox"><span class="t">Inspects for size, symmetry, and edema of the extremities<span class="hint">Indication for 234–238: size, symmetry, swelling, venous pattern, skin color, skin texture, temperature of feet and legs, hair growth, ulcerations, and nail beds — upper and lower extremities.</span></span></li>
+    <li><span class="n">235</span><input type="checkbox"><span class="t">Inspects for venous pattern and hair growth</span></li>
+    <li><span class="n">236</span><input type="checkbox"><span class="t">Inspects skin color for erythema, cyanosis, and jaundice</span></li>
+    <li><span class="n">237</span><input type="checkbox"><span class="t">Inspects for pigmentation changes and ulcerations</span></li>
+    <li><span class="n">238</span><input type="checkbox"><span class="t"><span class="tag dup">done at 45</span>Inspects the nail beds</span></li>
+  </ul>
+  <h4>Pulses — bilaterally, assessing amplitude, rate, rhythm and quality</h4>
+  <ul class="ck">
+    <li><span class="n">239</span><input type="checkbox"><span class="t"><span class="tag dup">done at 183</span>Carotid<span class="hint">Palpated during the cardiac exam — one side at a time.</span></span></li>
+    <li><span class="n">240</span><input type="checkbox"><span class="t">Brachial</span></li>
+    <li><span class="n">241</span><input type="checkbox"><span class="t"><span class="tag dup">done at 20</span>Radial</span></li>
+    <li><span class="n">242</span><input type="checkbox"><span class="t"><span class="tag new">from Vitals sheet</span>Ulnar</span></li>
+    <li><span class="n">243</span><input type="checkbox"><span class="t">Femoral</span></li>
+    <li><span class="n">244</span><input type="checkbox"><span class="t">Popliteal</span></li>
+    <li><span class="n">245</span><input type="checkbox"><span class="t">Posterior tibialis</span></li>
+    <li><span class="n">246</span><input type="checkbox"><span class="t">Dorsalis pedis</span></li>
+  </ul>
+  <h4>Lymph nodes — bilaterally</h4>
+  <div class="ref">Indication: presence of nodes, discreteness, size, consistency, and tenderness.</div>
+  <ul class="ck">
+    <li><span class="n">247</span><input type="checkbox"><span class="t">Epitrochlear</span></li>
+    <li><span class="n">248</span><input type="checkbox"><span class="t">Vertical inguinal</span></li>
+    <li><span class="n">249</span><input type="checkbox"><span class="t">Horizontal inguinal</span></li>
+  </ul>
+  <h4>Capillary refill — bilaterally</h4>
+  <ul class="ck">
+    <li><span class="n">250</span><input type="checkbox"><span class="t">Palpates the nail beds of the upper extremities for capillary refill</span></li>
+    <li><span class="n">251</span><input type="checkbox"><span class="t">Palpates the nail beds of the lower extremities for capillary refill</span></li>
+    <li class="say"><span class="n">252</span><input type="checkbox"><span class="t">Notes that color typically returns within 2–3 seconds</span></li>
+  </ul>
+</section>
+
+<!-- ============ PART VII ============ -->
+<div class="part"><h2>Part VII · Musculoskeletal</h2></div>
+
+<section id="s17">
+  <h3><span class="num">17</span> Musculoskeletal</h3>
+  <p class="src">MSK checksheet. Its six-item introduction was folded into §1. This sheet is already a top-down joint sequence, so it runs intact.</p>
+  <div class="banner"><b>Position —</b> TMJ sitting or standing · cervical, thoracic and lumbar spine <b>standing</b> · shoulder, elbow, wrist and hand sitting or standing · hip, knee, ankle and foot <b>supine or seated</b>.</div>
+  <div class="ref"><b>Pairs with §19.</b> This section grades <em>range of motion</em>; §18 grades <em>strength against resistance with nerve roots</em> at many of the same joints. In practice you can test both at once — just make sure you verbalize the nerve roots when you do.</div>
+  <ul class="ck">
+    <li class="say"><span class="n">253</span><input type="checkbox"><span class="t"><b>Inspection</b> — verbalizes an introductory phrase before or during the examination<span class="script">"For every joint, I will be inspecting for symmetry, signs of inflammation, deformities or malalignment of bones, conditions of surrounding tissues, bony landmarks, and ease of range of motion."</span></span></li>
+    <li class="say"><span class="n">254</span><input type="checkbox"><span class="t"><b>Palpation</b> — verbalizes an introductory phrase before or during the examination<span class="script">"For every joint, I will be palpating for clicking, popping, tenderness, symmetry, signs of inflammation, deformities or malalignment of bones, conditions of surrounding tissues and muscles, and ease of range of motion."</span></span></li>
+  </ul>
+  <h4>Temporomandibular joint</h4>
+  <ul class="ck">
+    <li><span class="n">255</span><input type="checkbox"><span class="t">Inspects the TMJ — sitting or standing</span></li>
+    <li><span class="n">256</span><input type="checkbox"><span class="t">Palpates the TMJ during range of motion</span></li>
+    <li><span class="n">257</span><input type="checkbox"><span class="t">Has the patient open and close the jaw</span></li>
+    <li><span class="n">258</span><input type="checkbox"><span class="t">Has the patient perform protrusion and retraction</span></li>
+    <li><span class="n">259</span><input type="checkbox"><span class="t">Has the patient perform lateral movement, right and left, bilaterally</span></li>
+  </ul>
+  <h4>Cervical spine</h4>
+  <ul class="ck">
+    <li><span class="n">260</span><input type="checkbox"><span class="t">Inspects the cervical spine, paravertebral muscles, trapezius, shoulder posture and scapular position from posterior and from the lateral sides, patient standing</span></li>
+    <li><span class="n">261</span><input type="checkbox"><span class="t">Palpates the cervical spine, paravertebral muscles, trapezius and spinous processes from the posterior</span></li>
+    <li><span class="n">262</span><input type="checkbox"><span class="t">ROM — flexion</span></li>
+    <li><span class="n">263</span><input type="checkbox"><span class="t">ROM — hyperextension</span></li>
+    <li><span class="n">264</span><input type="checkbox"><span class="t">ROM — lateral bending, right and left</span></li>
+    <li><span class="n">265</span><input type="checkbox"><span class="t">ROM — rotation, right and left</span></li>
+  </ul>
+  <h4>Thoracic and lumbar spine</h4>
+  <ul class="ck">
+    <li><span class="n">266</span><input type="checkbox"><span class="t">Inspects the pelvis from posterior and from the right or left side for symmetry of the iliac crests and posterior superior iliac spines, patient standing</span></li>
+    <li><span class="n">267</span><input type="checkbox"><span class="t">Inspects the thoracic and lumbar spine from the posterior and from the right or left side</span></li>
+    <li><span class="n">268</span><input type="checkbox"><span class="t">Palpates the thoracic and lumbar spinous processes, paraspinal muscles, and lumbosacral junction from the posterior</span></li>
+    <li><span class="n">269</span><input type="checkbox"><span class="t">ROM — flexion</span></li>
+    <li><span class="n">270</span><input type="checkbox"><span class="t">ROM — hyperextension</span></li>
+    <li><span class="n">271</span><input type="checkbox"><span class="t">ROM — lateral bending, right and left</span></li>
+    <li><span class="n">272</span><input type="checkbox"><span class="t">ROM — rotation, right and left</span></li>
+  </ul>
+  <h4>Shoulder</h4>
+  <ul class="ck">
+    <li><span class="n">273</span><input type="checkbox"><span class="t">Inspects the shoulders bilaterally — standing or sitting</span></li>
+    <li><span class="n">274</span><input type="checkbox"><span class="t">Locates and palpates the sternoclavicular joint, bilaterally</span></li>
+    <li><span class="n">275</span><input type="checkbox"><span class="t">Locates and palpates the clavicle, bilaterally</span></li>
+    <li><span class="n">276</span><input type="checkbox"><span class="t">Locates and palpates the acromioclavicular joint, bilaterally</span></li>
+    <li><span class="n">277</span><input type="checkbox"><span class="t">Locates and palpates the coracoid process, bilaterally</span></li>
+    <li><span class="n">278</span><input type="checkbox"><span class="t">Locates and palpates the greater tubercle of the humerus, bilaterally</span></li>
+    <li><span class="n">279</span><input type="checkbox"><span class="t">Locates and palpates the bicipital groove and tendon, bilaterally</span></li>
+    <li><span class="n">280</span><input type="checkbox"><span class="t">ROM — flexion</span></li>
+    <li><span class="n">281</span><input type="checkbox"><span class="t">ROM — extension</span></li>
+    <li><span class="n">282</span><input type="checkbox"><span class="t">ROM — abduction</span></li>
+    <li><span class="n">283</span><input type="checkbox"><span class="t">ROM — adduction</span></li>
+    <li><span class="n">284</span><input type="checkbox"><span class="t">ROM — internal rotation</span></li>
+    <li><span class="n">285</span><input type="checkbox"><span class="t">ROM — external rotation</span></li>
+  </ul>
+  <h4>Elbow</h4>
+  <ul class="ck">
+    <li><span class="n">286</span><input type="checkbox"><span class="t">Inspects the elbow in flexion at 70°, supported by your hand, bilaterally</span></li>
+    <li><span class="n">287</span><input type="checkbox"><span class="t">Palpates the elbows, bilaterally</span></li>
+    <li><span class="n">288</span><input type="checkbox"><span class="t">Palpates the olecranon processes, medial epicondyles, and lateral epicondyles, bilaterally</span></li>
+    <li><span class="n">289</span><input type="checkbox"><span class="t">Palpates the biceps brachii, triceps brachii, and ulnar nerves, bilaterally</span></li>
+    <li><span class="n">290</span><input type="checkbox"><span class="t">ROM — flexion</span></li>
+    <li><span class="n">291</span><input type="checkbox"><span class="t">ROM — extension</span></li>
+    <li><span class="n">292</span><input type="checkbox"><span class="t">ROM — pronation, elbow isolated and flexed to 90°<span class="hint">Hold the arm to the side supporting one at a time, or pin the elbow to the waist.</span></span></li>
+    <li><span class="n">293</span><input type="checkbox"><span class="t">ROM — supination, elbow isolated and flexed to 90°</span></li>
+  </ul>
+  <h4>Wrists, hands and fingers</h4>
+  <ul class="ck">
+    <li><span class="n">294</span><input type="checkbox"><span class="t">Inspects the dorsal and ventral aspects of the wrists, bilaterally</span></li>
+    <li><span class="n">295</span><input type="checkbox"><span class="t">Palpates the distal radius, distal ulna, radial styloid, and ulnar styloid, bilaterally</span></li>
+    <li><span class="n">296</span><input type="checkbox"><span class="t">Inspects the dorsal and palmar aspects of the hands, bilaterally</span></li>
+    <li><span class="n">297</span><input type="checkbox"><span class="t">Palpates the carpals, metacarpals, MCP joints, IP joints, PIP joints and DIP joints on the dorsal and palmar aspects, bilaterally</span></li>
+    <li><span class="n">298</span><input type="checkbox"><span class="t">Wrist ROM — flexion</span></li>
+    <li><span class="n">299</span><input type="checkbox"><span class="t">Wrist ROM — extension</span></li>
+    <li><span class="n">300</span><input type="checkbox"><span class="t">Wrist ROM — radial deviation</span></li>
+    <li><span class="n">301</span><input type="checkbox"><span class="t">Wrist ROM — ulnar deviation</span></li>
+    <li><span class="n">302</span><input type="checkbox"><span class="t">Finger flexion — patient makes a fist with the thumb across the knuckles</span></li>
+    <li><span class="n">303</span><input type="checkbox"><span class="t">Finger extension — patient opens the fist</span></li>
+    <li><span class="n">304</span><input type="checkbox"><span class="t">Finger abduction — patient spreads the fingers apart</span></li>
+    <li><span class="n">305</span><input type="checkbox"><span class="t">Finger adduction — patient brings the fingers back together</span></li>
+    <li><span class="n">306</span><input type="checkbox"><span class="t">Thumb flexion — thumb across the palm to the base of the 5th finger<span class="hint">Credit if combined with finger flexion, but only if the thumb is across the fist.</span></span></li>
+    <li><span class="n">307</span><input type="checkbox"><span class="t">Thumb extension — thumb away from the fingers, farthest from the 5th digit<span class="hint">Credit if combined with finger extension, but only if the thumb is farthest from the 5th digit.</span></span></li>
+    <li><span class="n">308</span><input type="checkbox"><span class="t">Thumb abduction — thumb moves anteriorly away from the palm, hand neutral and palm up</span></li>
+    <li><span class="n">309</span><input type="checkbox"><span class="t">Thumb adduction — thumb returns from abduction</span></li>
+    <li><span class="n">310</span><input type="checkbox"><span class="t">Thumb opposition — thumb to the tip of the 5th digit</span></li>
+  </ul>
+  <h4>Hip</h4>
+  <ul class="ck">
+    <li><span class="n">311</span><input type="checkbox"><span class="t">Inspects the anterior hip joint, bilaterally — supine or standing<span class="hint">Posterior and lateral views were completed with the spine exam.</span></span></li>
+    <li><span class="n">312</span><input type="checkbox"><span class="t">Palpates the iliac crest, bilaterally</span></li>
+    <li><span class="n">313</span><input type="checkbox"><span class="t">Palpates the anterior superior iliac spine, bilaterally</span></li>
+    <li><span class="n">314</span><input type="checkbox"><span class="t">Palpates the sacroiliac joints, bilaterally</span></li>
+    <li><span class="n">315</span><input type="checkbox"><span class="t">Palpates the greater trochanter, bilaterally</span></li>
+    <li><span class="n">316</span><input type="checkbox"><span class="t">ROM — flexion<span class="hint">Supine preferred; may be combined with knee flexion while standing after lumbar ROM, with support.</span></span></li>
+    <li><span class="n">317</span><input type="checkbox"><span class="t">ROM — extension, standing or lateral decubitus</span></li>
+    <li><span class="n">318</span><input type="checkbox"><span class="t">ROM — adduction, supine (or actively standing with support)</span></li>
+    <li><span class="n">319</span><input type="checkbox"><span class="t">ROM — abduction, supine (or actively standing with support)</span></li>
+    <li><span class="n">320</span><input type="checkbox"><span class="t">ROM — internal rotation, supine</span></li>
+    <li><span class="n">321</span><input type="checkbox"><span class="t">ROM — external rotation, supine</span></li>
+  </ul>
+  <h4>Knee</h4>
+  <ul class="ck">
+    <li><span class="n">322</span><input type="checkbox"><span class="t">Inspects the knee in flexion and extension, bilaterally — supine or seated</span></li>
+    <li><span class="n">323</span><input type="checkbox"><span class="t">Palpates the patella and patellar tendon, bilaterally, with the knee in extension</span></li>
+    <li><span class="n">324</span><input type="checkbox"><span class="t">Palpates the medial and lateral condyles, bilaterally</span></li>
+    <li><span class="n">325</span><input type="checkbox"><span class="t">Palpates the tibial tuberosity, bilaterally</span></li>
+    <li><span class="n">326</span><input type="checkbox"><span class="t">Palpates the medial and lateral tibial plateaus and the medial and lateral joint lines, bilaterally, knee flexed</span></li>
+    <li><span class="n">327</span><input type="checkbox"><span class="t">ROM — flexion, supine or standing with hip flexion</span></li>
+    <li><span class="n">328</span><input type="checkbox"><span class="t">ROM — extension, supine or seated</span></li>
+  </ul>
+  <h4>Ankles, feet and toes</h4>
+  <ul class="ck">
+    <li><span class="n">329</span><input type="checkbox"><span class="t">Inspects the dorsal and ventral aspects of the ankles, bilaterally</span></li>
+    <li><span class="n">330</span><input type="checkbox"><span class="t">Inspects the dorsal and plantar aspects of the feet, bilaterally</span></li>
+    <li><span class="n">331</span><input type="checkbox"><span class="t">Palpates the anterior talofibular, calcaneofibular, and posterior talofibular ligaments, bilaterally</span></li>
+    <li><span class="n">332</span><input type="checkbox"><span class="t">Palpates the Achilles tendon, bilaterally</span></li>
+    <li><span class="n">333</span><input type="checkbox"><span class="t">Palpates the medial and lateral malleoli, bilaterally</span></li>
+    <li><span class="n">334</span><input type="checkbox"><span class="t">Palpates the tarsals, tarsometatarsal joints, metatarsals, interphalangeal joints and metatarsophalangeal joints, bilaterally</span></li>
+    <li><span class="n">335</span><input type="checkbox"><span class="t">ROM — dorsiflexion, stabilizing the leg</span></li>
+    <li><span class="n">336</span><input type="checkbox"><span class="t">ROM — plantarflexion, stabilizing the leg</span></li>
+    <li><span class="n">337</span><input type="checkbox"><span class="t">ROM — inversion, stabilizing the leg</span></li>
+    <li><span class="n">338</span><input type="checkbox"><span class="t">ROM — eversion, stabilizing the leg</span></li>
+    <li><span class="n">339</span><input type="checkbox"><span class="t">ROM — flexion of toes, stabilizing the ankle</span></li>
+    <li><span class="n">340</span><input type="checkbox"><span class="t">ROM — extension of toes, stabilizing the ankle</span></li>
+  </ul>
+</section>
+
+<!-- ============ PART VIII ============ -->
+<div class="part"><h2>Part VIII · Neurologic — motor, reflex, sensory, gait</h2></div>
+
+<section id="s18">
+  <h3><span class="num">18</span> Motor &amp; Muscle Strength</h3>
+  <p class="src">Neurological sheet. Every strength item is shaded — the sheet requires you to verbalize the motion <em>and</em> its nerve roots while providing resistance. Muscles are listed for reference only and do not need to be verbalized.</p>
+  <ul class="ck">
+    <li><span class="n">341</span><input type="checkbox"><span class="t">Inspects upper and lower extremities for muscle bulk</span></li>
+    <li><span class="n">342</span><input type="checkbox"><span class="t">Examines muscle tone (baseline muscle tension) — cursory passive ROM of all four extremities; may stand for the upper extremities</span></li>
+    <li class="say"><span class="n">343</span><input type="checkbox"><span class="t">Verbalizes the 0–5 muscle strength scale, defining <b>each</b> grade, then selects the appropriate one<span class="hint"><b>0</b> no muscular contraction detected · <b>1</b> barely detectable flicker or trace of contraction · <b>2</b> active movement with gravity eliminated · <b>3</b> active movement against gravity · <b>4</b> active movement against gravity and some resistance · <b>5</b> active movement against full resistance without evident fatigue (normal)</span></span></li>
+  </ul>
+  <h4>Cervical spine innervation C5–T1</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">344</span><input type="checkbox"><span class="t">Shoulder <b>abduction</b> — C5, C6 <span class="hint">deltoid</span></span></li>
+    <li class="say"><span class="n">345</span><input type="checkbox"><span class="t">Shoulder <b>adduction</b> — C5–T1 <span class="hint">pectoralis major</span></span></li>
+    <li class="say"><span class="n">346</span><input type="checkbox"><span class="t">Elbow <b>flexion</b> — C5, C6 <span class="hint">biceps brachii, brachioradialis</span></span></li>
+    <li class="say"><span class="n">347</span><input type="checkbox"><span class="t">Elbow <b>extension</b> — C6, C7, C8 <span class="hint">triceps brachii</span></span></li>
+    <li class="say"><span class="n">348</span><input type="checkbox"><span class="t">Wrist <b>extension</b> — C6, C7, C8 <span class="hint">extensor carpi radialis longus and brevis, extensor carpi ulnaris</span></span></li>
+    <li class="say"><span class="n">349</span><input type="checkbox"><span class="t">Wrist <b>flexion</b> — C6, C7, C8 <span class="hint">flexor carpi radialis, flexor carpi ulnaris</span></span></li>
+    <li class="say"><span class="n">350</span><input type="checkbox"><span class="t">Hand <b>grip strength</b> — C7, C8, T1</span></li>
+    <li class="say"><span class="n">351</span><input type="checkbox"><span class="t"><b>Opposition of thumb</b> — C8, T1</span></li>
+    <li class="say"><span class="n">352</span><input type="checkbox"><span class="t">Finger <b>abduction</b> — C8, T1 <span class="hint">first dorsal interosseous, abductor digiti minimi</span></span></li>
+  </ul>
+  <h4>Lumbar spine innervation L2–S1</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">353</span><input type="checkbox"><span class="t">Hip <b>abduction</b> — L4, L5, S1 <span class="hint">gluteus medius and minimus</span></span></li>
+    <li class="say"><span class="n">354</span><input type="checkbox"><span class="t">Hip <b>adduction</b> — L2, L3, L4 <span class="hint">adductors</span></span></li>
+    <li class="say"><span class="n">355</span><input type="checkbox"><span class="t">Hip <b>flexion</b> — L2, L3, L4 <span class="hint">iliopsoas; if seated, do not hold the table</span></span></li>
+    <li class="say"><span class="n">356</span><input type="checkbox"><span class="t">Hip <b>extension</b> — S1 <span class="hint">gluteus maximus; if seated, do not hold the table</span></span></li>
+    <li class="say"><span class="n">357</span><input type="checkbox"><span class="t">Knee <b>flexion</b> — L5, S1, S2 <span class="hint">hamstrings</span></span></li>
+    <li class="say"><span class="n">358</span><input type="checkbox"><span class="t">Knee <b>extension</b> — L2, L3, L4 <span class="hint">quadriceps</span></span></li>
+    <li class="say"><span class="n">359</span><input type="checkbox"><span class="t">Ankle <b>dorsiflexion</b> — L4, L5 <span class="hint">tibialis anterior</span></span></li>
+    <li class="say"><span class="n">360</span><input type="checkbox"><span class="t">Ankle <b>plantar flexion</b> — S1 <span class="hint">gastrocnemius and soleus</span></span></li>
+  </ul>
+</section>
+
+<section id="s19">
+  <h3><span class="num">19</span> Reflexes</h3>
+  <p class="src">Neurological sheet. You must name the reflex and its nerve roots aloud for each.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">361</span><input type="checkbox"><span class="t">Verbalizes the reflex grading scale, defining <b>each</b> grade<span class="hint"><b>4+</b> very brisk, hyperactive, with clonus · <b>3+</b> brisker than average, possibly but not necessarily indicative of disease · <b>2+</b> average, normal · <b>1+</b> somewhat diminished, low normal · <b>0</b> no response</span></span></li>
+    <li class="say"><span class="n">362</span><input type="checkbox"><span class="t">Biceps reflex — C5, C6 — bilaterally</span></li>
+    <li class="say"><span class="n">363</span><input type="checkbox"><span class="t">Triceps reflex — C6, C7 — bilaterally</span></li>
+    <li class="say"><span class="n">364</span><input type="checkbox"><span class="t">Brachioradialis reflex — C5, C6 — bilaterally</span></li>
+    <li class="say"><span class="n">365</span><input type="checkbox"><span class="t">Patellar reflex — L2, L3, L4 — bilaterally</span></li>
+    <li class="say"><span class="n">366</span><input type="checkbox"><span class="t">Ankle reflex — S1 — bilaterally</span></li>
+    <li class="say"><span class="n">367</span><input type="checkbox"><span class="t">Abdominal reflexes — T8, T9, T10 above the umbilicus; T10, T11, T12 below</span></li>
+    <li class="say"><span class="n">368</span><input type="checkbox"><span class="t">Plantar reflex (Babinski) — L5, S1 — bilaterally<span class="hint">Down-going toe is normal.</span></span></li>
+  </ul>
+</section>
+
+<section id="s20">
+  <h3><span class="num">20</span> Sensory</h3>
+  <p class="src">Neurological sheet. Any area of the dermatome will suffice, but the root must be verbalized. May run proximal to distal, alternating pain and light touch.</p>
+  <h4>Pain (sharp vs dull) and light touch — bilaterally</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">369</span><input type="checkbox"><span class="t"><b>C3</b> — anterior, lateral and posterior mid-neck</span></li>
+    <li class="say"><span class="n">370</span><input type="checkbox"><span class="t"><b>C5</b> — anterolateral arm (regimental badge)</span></li>
+    <li class="say"><span class="n">371</span><input type="checkbox"><span class="t"><b>C6</b> — lateral wrist and thumb, or 1st digit</span></li>
+    <li class="say"><span class="n">372</span><input type="checkbox"><span class="t"><b>C7</b> — middle finger, 3rd digit</span></li>
+    <li class="say"><span class="n">373</span><input type="checkbox"><span class="t"><b>C8</b> — little finger, 5th digit</span></li>
+    <li class="say"><span class="n">374</span><input type="checkbox"><span class="t"><b>T4</b> — nipple line; verbalizes would assess under garments</span></li>
+    <li class="say"><span class="n">375</span><input type="checkbox"><span class="t"><b>T10</b> — umbilicus</span></li>
+    <li class="say"><span class="n">376</span><input type="checkbox"><span class="t"><b>L1</b> — inguinal area; verbalizes would assess under garments</span></li>
+    <li class="say"><span class="n">377</span><input type="checkbox"><span class="t"><b>L4</b> — lateral thigh, over the knee, or down the medial lower leg</span></li>
+    <li class="say"><span class="n">378</span><input type="checkbox"><span class="t"><b>L5</b> — lateral calf or hallux</span></li>
+    <li class="say"><span class="n">379</span><input type="checkbox"><span class="t"><b>S1</b> — lateral foot or 5th digit</span></li>
+  </ul>
+  <h4>Discriminative (fine touch) — facilitator chooses ONE</h4>
+  <ul class="ck">
+    <li><span class="n">380</span><input type="checkbox"><span class="t">Stereognosis — a different object for each hand (coin, pen, paperclip)</span></li>
+    <li><span class="n">381</span><input type="checkbox"><span class="t">Graphesthesia — a different number in each hand, right-side-up for the patient, no lifting while drawing</span></li>
+    <li><span class="n">382</span><input type="checkbox"><span class="t">Two-point discrimination — palmar surface of the index fingertip and plantar surface of the hallux, once in each location bilaterally</span></li>
+    <li><span class="n">383</span><input type="checkbox"><span class="t">Extinction — touch one lower extremity and ask which was touched, repeat on the opposite side, then touch both simultaneously and ask; repeat for upper extremities</span></li>
+  </ul>
+  <h4>Position and vibration sense</h4>
+  <ul class="ck">
+    <li><span class="n">384</span><input type="checkbox"><span class="t">Upper extremity joint position sense, bilaterally — distal phalanx of the index finger, grasping the sides</span></li>
+    <li><span class="n">385</span><input type="checkbox"><span class="t">Lower extremity joint position sense, bilaterally — distal phalanx of the great toe, grasping the sides</span></li>
+    <li><span class="n">386</span><input type="checkbox"><span class="t">Upper extremity vibration sense, bilaterally — over the DIP joint of the index finger</span></li>
+    <li><span class="n">387</span><input type="checkbox"><span class="t">Lower extremity vibration sense, bilaterally — over the IP joint of the great toe</span></li>
+  </ul>
+</section>
+
+<section id="s21">
+  <h3><span class="num">21</span> Balance, Coordination &amp; Gait</h3>
+  <p class="src">Neurological sheet — cerebellar, posterior columns, equilibrium and vestibular function. This is also where the CN VIII vestibular component named at item 108 is satisfied.</p>
+  <div class="banner"><b>Position change —</b> patient <b>standing</b> and walking.</div>
+  <ul class="ck">
+    <li><span class="n">388</span><input type="checkbox"><span class="t">Observes posture and stance</span></li>
+    <li><span class="n">389</span><input type="checkbox"><span class="t">Observes regular and tandem gait, including symmetry, balance and length of stride</span></li>
+    <li class="say"><span class="n">390</span><input type="checkbox"><span class="t">Performs the <b>Romberg</b> test — feet close together, eyes closed; verbalizes they would watch for 30–60 seconds and observes for significant sway or loss of balance<span class="hint">You do not have to observe for the full 30 seconds, but you must verbalize the time.</span></span></li>
+    <li><span class="n">391</span><input type="checkbox"><span class="t">Performs <b>pronator drift</b> — both arms extended forward, palms up, eyes closed, then briskly tap the arms downward (may be done simultaneously bilaterally)</span></li>
+    <li><span class="n">392</span><input type="checkbox"><span class="t">Completes <b>one</b> coordination test, chosen by the facilitator<span class="hint">Rapid alternating hand movements (wrist-flipping with alternating supination and pronation) · finger-to-thumb tapping · toe-tapping · heel-to-shin · finger-to-nose</span></span></li>
+  </ul>
+</section>
+
+<section id="s22">
+  <h3><span class="num">22</span> Closing</h3>
+  <p class="src">The deferred-exam verbalizations from the Skin and Abdominal sheets, plus the professionalism item that all four introduction blocks carry.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">393</span><input type="checkbox"><span class="t">Verbalizes the deferred examinations<span class="script">"I will then perform a rectal exam and the appropriate genitalia exam."</span><span class="hint">The skin sheet phrases this as buttocks, breasts and genitalia — item 52. Cover both sets if you are running the full combined exam.</span></span></li>
+    <li><span class="n">394</span><input type="checkbox"><span class="t">Exhibits professionalism throughout the examination</span></li>
+  </ul>
+</section>
+
+<details class="merge">
+  <summary>What was merged, moved, or flagged</summary>
+  <div class="body">
+    <p style="font-size:14px;color:#4a5a6a;margin:12px 0 0">Every graded item from all nine sheets is in this document. Nothing was deleted — repeats were collapsed to a single occurrence and tagged at the point of performance.</p>
+    <table>
+      <tr><th>Item</th><th>Appeared on</th><th>Resolution</th></tr>
+      <tr><td>Introduction block</td><td>General Survey, Neuro, MSK, Abdominal</td><td>Collapsed to &sect;1, items 1&ndash;8. Union of all four &mdash; the bladder question and the shoes/socks detail were kept.</td></tr>
+      <tr><td>LOC &amp; orientation</td><td>General Survey (named), Neuro (defined)</td><td>Neuro version used at &sect;3 &mdash; it satisfies both.</td></tr>
+      <tr><td><b>Cranial nerve exam</b></td><td>Neurological sheet, items 11&ndash;42</td><td><b>Dissolved into the regional exams.</b> Each nerve is now named and tested at the maneuver that tests it &mdash; CN I in the nose exam, II/III/IV/VI in the eye exam, V and VII in the face exam, VIII in the ear exam, IX/X/XII in the oral cavity exam, XI in the neck exam. The audit table after &sect;12 maps all twelve back to their item numbers.</td></tr>
+      <tr><td>Gag reflex, "say AHH", swallow</td><td>HENT, Neuro CN IX/X</td><td>Items 123&ndash;126, done with the tongue depressor already in hand.</td></tr>
+      <tr><td>Tongue protrusion &amp; strength</td><td>HENT, Neuro CN XII</td><td>Items 127&ndash;129, in the same breath as CN IX/X.</td></tr>
+      <tr><td>Whisper test</td><td>HENT, Neuro CN VIII</td><td>Item 106, immediately after the otoscopic exam that CN VIII requires anyway.</td></tr>
+      <tr><td>Nasal patency</td><td>HENT, Neuro CN I</td><td>Item 111, rolled straight into the scent testing at 112&ndash;113.</td></tr>
+      <tr><td>Acuity, fields, PLR, EOM, fundoscopy</td><td>Eye, Neuro CN II/III/IV/VI</td><td>Each maneuver now carries its own nerve attribution inside &sect;7 &mdash; no separate pass.</td></tr>
+      <tr><td>Trapezius &amp; SCM strength</td><td>Neuro CN XI</td><td>Item 138, right after you finish palpating the thyroid from behind the patient.</td></tr>
+      <tr><td>Vestibular function</td><td>Neuro CN VIII</td><td>Attributed at item 108; the Romberg itself is performed at item 390.</td></tr>
+      <tr><td>Hair &amp; scalp</td><td>Skin (39), HENT (57&ndash;58)</td><td>Inspected once at 39. Scalp mobility/tenderness/masses is HENT-only and stays at 58.</td></tr>
+      <tr><td>Eyebrows &amp; eyelashes</td><td>Skin (40), Eye (70)</td><td>Both retained &mdash; the Eye sheet adds eyelids, erythema and lesions.</td></tr>
+      <tr><td>Nail beds</td><td>Skin (45), Lungs (156), PV (238)</td><td>Inspected once at 45; the other two are tagged as already done.</td></tr>
+      <tr><td>Facial symmetry</td><td>HENT (55), Neuro CN VII (65)</td><td>Both kept &mdash; they sit adjacent now, so it is one look.</td></tr>
+      <tr><td>Jugular / carotid inspection</td><td>HENT (131), Cardiac (179)</td><td>Both kept &mdash; HENT inspects the neck broadly, Cardiac specifically identifies the pulses at 30&deg;.</td></tr>
+      <tr><td>Radial &amp; brachial pulse</td><td>Vitals (20, 28), PV (240&ndash;241)</td><td>Located in &sect;4 for HR and BP; the full quality assessment happens once in &sect;16.</td></tr>
+      <tr><td>Carotid &amp; ulnar pulses</td><td>Vitals (complete-exam line only)</td><td>Added to the &sect;16 pulse list so all eight pulses sit together.</td></tr>
+      <tr><td>Inguinal nodes</td><td>Abdominal (230), PV (248&ndash;249)</td><td>Palpate once. The PV sheet splits vertical and horizontal chains; the abdominal sheet does not.</td></tr>
+      <tr><td>Femoral artery</td><td>Abdominal (211, 215), PV (243)</td><td>Both kept &mdash; different maneuvers. Abdomen auscultates for bruits; PV palpates the pulse.</td></tr>
+      <tr><td>Skin temperature of extremities</td><td>Skin (53), PV (234 indication)</td><td>Palpated once at 53.</td></tr>
+      <tr><td>Buttocks / breasts / genitalia / rectal</td><td>Skin (52), Abdominal</td><td>Both phrasings collected at &sect;22, item 393.</td></tr>
+      <tr><td>Professionalism</td><td>General Survey, Neuro, Abdominal</td><td>Item 8 at the open, item 394 at the close.</td></tr>
+      <tr><td>Still separate on purpose</td><td>MSK &sect;17, Neuro motor &sect;18</td><td>ROM and strength-with-nerve-roots are graded differently, so they remain distinct sections &mdash; but they can be run together joint by joint if you want them merged too.</td></tr>
+      <tr><td>Neuro sheet numbering</td><td>Neurological</td><td>The original skips item 24 (goes 23 &rarr; 25). Nothing is missing.</td></tr>
+      <tr><td>PV sheet numbering</td><td>Peripheral Vascular</td><td>The original skips items 8 and 13. Nothing is missing.</td></tr>
+      <tr><td>Wharton's / Stensen's</td><td>HENT (119)</td><td>The sheet's parenthetical labels are swapped relative to standard anatomy. Flagged in place &mdash; verbalize what your facilitator grades.</td></tr>
+    </table>
+  </div>
+</details>
+
+</div>
+
+<script>
+// Self-contained report-a-mistake. This page intentionally does not load
+// theme.js/theme.css -- same decision as relax.html -- so that the sheet's own
+// typography and palette are never overridden by the site stylesheet. That
+// means window.reportMistake has to be provided locally; it posts to the same
+// Formspree endpoint the rest of the site uses.
+window.reportMistake = function(){
+  var what = window.prompt("What's wrong? Include the section or item number if you can.");
+  if (!what) return;
+  fetch("https://formspree.io/f/xdaqleod", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({ page: location.pathname, message: what })
+  }).then(function(){ alert("Thanks \u2014 report sent."); })
+    .catch(function(){ alert("Couldn't send that \u2014 check your connection and try again."); });
+};
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('ul.ck input[type=checkbox]'));
+  var prog = document.getElementById('progress');
+  function tally(){
+    var n = boxes.filter(function(b){return b.checked}).length;
+    prog.textContent = n + ' / ' + boxes.length;
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      b.closest('li').classList.toggle('done', b.checked);
+      save(); tally();
+    });
+  });
+  // Ticks persist. A head-to-toe run is long enough that losing every tick to
+  // an accidental reload mid-practicum is the difference between the sheet
+  // being usable and not. Stored as a single index list rather than per-item
+  // keys so the payload stays tiny and clears in one call.
+  var SAVE_KEY = "pd1HeadToToe:ticks";
+  function save(){
+    try {
+      var on = [];
+      boxes.forEach(function(b,i){ if(b.checked) on.push(i); });
+      if (on.length) localStorage.setItem(SAVE_KEY, JSON.stringify(on));
+      else localStorage.removeItem(SAVE_KEY);
+    } catch(e){}
+  }
+  function restore(){
+    try {
+      var on = JSON.parse(localStorage.getItem(SAVE_KEY) || "[]");
+      // Index-addressed, so a future edit to the sheet could shift items. Only
+      // restore when the count still matches what was saved against.
+      var n = parseInt(localStorage.getItem(SAVE_KEY + ":len") || boxes.length, 10);
+      if (n !== boxes.length) { localStorage.removeItem(SAVE_KEY); return; }
+      on.forEach(function(i){
+        if (boxes[i]) { boxes[i].checked = true; boxes[i].closest('li').classList.add('done'); }
+      });
+    } catch(e){}
+  }
+  try { localStorage.setItem(SAVE_KEY + ":len", boxes.length); } catch(e){}
+
+  document.getElementById('reset').addEventListener('click', function(){
+    boxes.forEach(function(b){ b.checked=false; b.closest('li').classList.remove('done'); });
+    save(); tally();
+  });
+  var fSay = document.getElementById('fSay'), fDo = document.getElementById('fDo');
+  function filter(mode){
+    document.querySelectorAll('ul.ck li').forEach(function(li){
+      var say = li.classList.contains('say');
+      li.classList.toggle('filtered', mode==='say' ? !say : mode==='do' ? say : false);
+    });
+  }
+  function setMode(btn, other, mode){
+    var on = btn.getAttribute('aria-pressed')==='true';
+    btn.setAttribute('aria-pressed', on?'false':'true');
+    other.setAttribute('aria-pressed','false');
+    filter(on ? 'all' : mode);
+  }
+  fSay.addEventListener('click', function(){ setMode(fSay, fDo, 'say'); });
+  fDo.addEventListener('click', function(){ setMode(fDo, fSay, 'do'); });
+  restore();
+  tally();
+})();
+</script>
+</body>
+</html>
