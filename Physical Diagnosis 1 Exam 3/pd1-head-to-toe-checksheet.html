@@ -152,7 +152,7 @@ details.merge td:first-child{white-space:nowrap;color:var(--petrol);font-weight:
 }
 @media print{
   body{background:#fff}
-  .sitebar,.reportline{display:none}
+  .sitebar,.reportline,#h2t-corner,#h2t-settings,#quiz-footer-logo{display:none}
   .sheet{box-shadow:none;max-width:none}
   nav,.legend button,#progress{display:none}
   ul.ck li{break-inside:avoid;padding:5px 8px}
@@ -169,10 +169,67 @@ details.merge td:first-child{white-space:nowrap;color:var(--petrol);font-weight:
 .reportline{margin:34px 40px 0;text-align:center;font-size:13px;font-style:italic;color:var(--ink2)}
 .reportline a{color:inherit;text-decoration:underline;cursor:pointer}
 @media (max-width:640px){.sitebar{padding-left:18px;padding-right:18px}.reportline{margin-left:18px;margin-right:18px}}
+
+/* ---------- corner buttons + settings (self-contained; no theme.js) ---------- */
+#h2t-corner{position:fixed;top:14px;right:14px;z-index:600;display:flex;gap:8px}
+.h2t-corner-btn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;padding:0;background:var(--paper);color:var(--ink);
+  border:1px solid var(--line);box-shadow:0 2px 8px rgba(20,35,50,.15);
+  transition:transform .2s cubic-bezier(.3,.6,.3,1.5)}
+.h2t-corner-btn:hover{transform:scale(1.1) rotate(-8deg);background:var(--paper);color:var(--petrol)}
+.h2t-corner-btn:active{transform:scale(.92)}
+.h2t-corner-btn svg{width:17px;height:17px}   /* matches the site's corner buttons */
+#h2t-settings{position:fixed;top:60px;right:14px;z-index:601;background:var(--paper);
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(20,35,50,.18);
+  padding:14px 16px;min-width:220px;display:none;
+  font:14px/1.5 ui-sans-serif,system-ui,sans-serif;color:var(--ink)}
+#h2t-settings.open{display:block}
+#h2t-settings h3{margin:0 0 10px;font:700 11px/1 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.h2t-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0}
+.h2t-seg{display:inline-flex;gap:4px;flex:none}
+.h2t-seg button{border:1px solid var(--line);background:transparent;color:var(--ink);
+  border-radius:8px;min-width:32px;height:28px;cursor:pointer;line-height:1;padding:0 7px;
+  font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:0}
+.h2t-seg button[aria-pressed="true"]{background:var(--petrol);border-color:var(--petrol);color:var(--paper)}
+.h2t-seg.ts button:nth-child(1){font-size:11px}
+.h2t-seg.ts button:nth-child(2){font-size:13px}
+.h2t-seg.ts button:nth-child(3){font-size:16px}
+
+/* ---------- footer mark ---------- */
+/* Fixed like the rest of the site, but this sheet is very long, so it is
+   revealed only once the reader actually reaches the bottom -- otherwise it
+   floats over checklist rows the whole way down. Same gating theme.js applies
+   site-wide, reimplemented here since this page deliberately omits theme.js. */
+#quiz-footer-logo{opacity:0;transition:opacity .34s cubic-bezier(.2,.8,.2,1)}
+#quiz-footer-logo.mark-visible{opacity:1}
+.footer-mark-ink{stroke:var(--petrol)}
+.footer-mark-accent{stroke:var(--teal)}
+@media (prefers-reduced-motion:reduce){#quiz-footer-logo{transition:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
 </style>
 </head>
 <body>
+<div id="h2t-corner" aria-label="Page actions">
+  <button class="h2t-corner-btn" id="h2t-settings-btn" type="button" aria-label="Settings" title="Settings" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+  <button class="h2t-corner-btn" id="h2t-reload" type="button" aria-label="Refresh / check for updates" title="Refresh / check for updates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></button>
+</div>
+<div id="h2t-settings" role="dialog" aria-label="Settings">
+  <h3>Settings</h3>
+  <div class="h2t-row"><span>Appearance</span>
+    <div class="h2t-seg" id="h2t-theme">
+      <button type="button" data-theme="light">Light</button>
+      <button type="button" data-theme="dark">Dark</button>
+    </div>
+  </div>
+  <div class="h2t-row"><span>Text size</span>
+    <div class="h2t-seg ts" id="h2t-tsize">
+      <button type="button" data-ts="normal" aria-label="Normal text">A</button>
+      <button type="button" data-ts="large" aria-label="Large text">A</button>
+      <button type="button" data-ts="xl" aria-label="Larger text">A</button>
+    </div>
+  </div>
+</div>
 <div class="sheet">
 
 <p class="sitebar"><a href="../index.html">&larr; Back to Homepage</a></p>
@@ -1002,6 +1059,18 @@ details.merge td:first-child{white-space:nowrap;color:var(--petrol);font-weight:
 
 </div>
 
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, var(--line), transparent);"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, var(--line), transparent);"></span>
+</div>
+
 <script>
 // Self-contained report-a-mistake. This page intentionally does not load
 // theme.js/theme.css -- same decision as relax.html -- so that the sheet's own
@@ -1080,6 +1149,78 @@ window.reportMistake = function(){
   restore();
   tally();
 })();
+
+// ---------- corner buttons, settings, footer mark ----------
+(function(){
+  var TS_KEY = "siteTextSize", THEME_KEY = "siteTheme";
+  var root = document.documentElement;
+
+  // Text size scales the sheet only. Everything in this stylesheet is sized in
+  // px, so a rem-based scale would do nothing -- zoom the container instead.
+  // The fixed corner buttons and footer mark sit OUTSIDE .sheet, so they keep
+  // their real size and hit targets at every setting.
+  var SCALE = { normal: 1, large: 1.12, xl: 1.25 };
+  function applyTextSize(v){
+    var sheet = document.querySelector(".sheet");
+    if (sheet) sheet.style.zoom = SCALE[v] || 1;
+    mark(document.getElementById("h2t-tsize"), "ts", v);
+  }
+  function applyTheme(v){
+    root.setAttribute("data-theme", v);
+    mark(document.getElementById("h2t-theme"), "theme", v);
+  }
+  function mark(group, attr, v){
+    if (!group) return;
+    group.querySelectorAll("button").forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-" + attr) === v ? "true" : "false");
+    });
+  }
+  // Both keys are the site-wide ones, so a choice made here carries to the rest
+  // of the site and vice versa.
+  var savedTheme = null, savedTs = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); savedTs = localStorage.getItem(TS_KEY); } catch(e){}
+  applyTheme(savedTheme || root.getAttribute("data-theme") || "light");
+  applyTextSize(savedTs || "normal");
+
+  var panel = document.getElementById("h2t-settings");
+  var btn = document.getElementById("h2t-settings-btn");
+  function setOpen(on){
+    panel.classList.toggle("open", on);
+    btn.setAttribute("aria-expanded", on ? "true" : "false");
+  }
+  btn.addEventListener("click", function(e){ e.stopPropagation(); setOpen(!panel.classList.contains("open")); });
+  document.addEventListener("click", function(e){
+    if (panel.classList.contains("open") && !panel.contains(e.target) && e.target !== btn) setOpen(false);
+  });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") setOpen(false); });
+
+  document.getElementById("h2t-theme").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-theme]"); if (!b) return;
+    var v = b.getAttribute("data-theme");
+    applyTheme(v); try { localStorage.setItem(THEME_KEY, v); } catch(err){}
+  });
+  document.getElementById("h2t-tsize").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-ts]"); if (!b) return;
+    var v = b.getAttribute("data-ts");
+    applyTextSize(v); try { localStorage.setItem(TS_KEY, v); } catch(err){}
+  });
+  document.getElementById("h2t-reload").addEventListener("click", function(){ location.reload(); });
+
+  // Reveal the footer mark only at the bottom -- on a 394-item sheet a
+  // permanently fixed mark would sit over checklist rows the whole way down.
+  var logo = document.getElementById("quiz-footer-logo");
+  function syncMark(){
+    if (!logo) return;
+    var doc = document.documentElement;
+    var atBottom = (window.innerHeight + window.scrollY) >= (doc.scrollHeight - 90);
+    var tooShortToScroll = doc.scrollHeight <= window.innerHeight + 8;
+    logo.classList.toggle("mark-visible", atBottom || tooShortToScroll);
+  }
+  window.addEventListener("scroll", syncMark, { passive: true });
+  window.addEventListener("resize", syncMark);
+  syncMark();
+})();
+
 </script>
 </body>
 </html>
