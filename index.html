@@ -443,10 +443,13 @@
         width: 26px; height: 26px; padding: 6px; border-radius: 8px;
         background: var(--accent-soft); color: var(--accent); box-sizing: border-box;
       }
-      /* Guides & Study Aids gets the standalone full-width row (a real,
-         working destination), with its icon+label centered as a group --
-         Group Study and Flashcards share the 2-up row above it instead. */
-      .guides-btn.wide-row { flex: 1 1 100%; justify-content: center; }
+      /* Arcade and Guides pair up on one row. `.wide-row` used to give Guides
+         a full-width row of its own while Arcade + Group Study shared the row
+         above -- but Group Study moved to the left rail, leaving Arcade alone
+         on a row it grew to fill, so both buttons rendered as identical
+         stacked bars (the exact thing the 2-up cards above exist to avoid).
+         Both are flex: 1 1 calc(50% - 4px) now; .search-wrap stretches them to
+         equal height when the longer label wraps to two lines. */
       .guides-btn span { font-size: 13px; line-height: 1.25; }
     }
     .search-results {
