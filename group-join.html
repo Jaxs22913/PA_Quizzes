@@ -4,7 +4,8 @@
 <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
 <link rel="stylesheet" href="theme.css">
 <script src="theme.js" defer></script>
-<script src="group-questions.js" defer></script>
+<!-- not deferred: inline blocks below call loadGroupQuiz() during parsing -->
+<script src="group-loader.js"></script>
 <script src="group-study.js" defer></script>
 
 <!-- Google tag (gtag.js) -->
@@ -333,9 +334,16 @@
   }
 
   function enterRoom(code, quizId, uid) {
+    // A joiner needs exactly one quiz's questions -- the one the host picked --
+    // so the chunk is fetched here rather than shipping the whole bank up
+    // front. Re-enters once it lands.
+    if (quizId && !(window.GROUP_QUIZZES || {})[quizId]) {
+      window.loadGroupQuiz(quizId, function () { enterRoom(code, quizId, uid); });
+      return;
+    }
     roomCode = code;
     myUid = uid;
-    currentQuiz = window.GROUP_QUIZZES[quizId];
+    currentQuiz = (window.GROUP_QUIZZES || {})[quizId];
     hideAllScreens();
     sessionStorage.setItem(JOIN_SESSION_KEY, JSON.stringify({ code: code }));
     if (heartbeatInterval) clearInterval(heartbeatInterval);
@@ -413,7 +421,13 @@
   function onRoomUpdate(room) {
     var questionChanged = !lastRoomState || lastRoomState.currentQuestionIndex !== room.currentQuestionIndex;
     lastRoomState = room;
-    if (!currentQuiz) currentQuiz = window.GROUP_QUIZZES[room.quizId];
+    if (!currentQuiz) {
+      currentQuiz = (window.GROUP_QUIZZES || {})[room.quizId];
+      if (!currentQuiz && room.quizId) {
+        window.loadGroupQuiz(room.quizId, function () { onRoomUpdate(room); });
+        return;   // loader records failures, so this cannot loop forever
+      }
+    }
 
     if (room.status === "lobby") {
       hideAllScreens();
@@ -531,7 +545,7 @@
       box.innerHTML = '<div class="big">⌛</div><div>Time’s up — no answer submitted.</div>';
     }
     // Same "why" + source citation shown on the site's regular quizzes after
-    // answering -- exp/cite come straight from group-questions.js (ported
+    // answering -- exp/cite come straight from the group-quizzes chunk (ported
     // from each quiz's own question bank), not written separately for
     // Group Study, so it stays consistent with the solo-quiz experience.
     if (q.exp) {

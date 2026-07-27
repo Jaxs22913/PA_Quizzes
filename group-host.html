@@ -4,7 +4,11 @@
 <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
 <link rel="stylesheet" href="theme.css">
 <script src="theme.js" defer></script>
-<script src="group-questions.js" defer></script>
+<!-- loader is NOT deferred: the inline blocks below call whenGroupIndex()
+     and loadGroupQuiz() while the document is still parsing, which is before
+     any deferred script has run. It is ~2.5 KB of function definitions. -->
+<script src="group-loader.js"></script>
+<script src="group-quizzes/index.js" defer></script>
 <script src="group-study.js" defer></script>
 
 <!-- Google tag (gtag.js) -->
@@ -314,10 +318,13 @@
   var selectedQuizId = null;
   var groupStudyReady = false;
 
+  // Reads the manifest (group-quizzes/index.js), not the question bank --
+  // the picker needs only title/class/count, and pulling the questions of all
+  // 264 quizzes just to render a list was the entire 5.8 MB problem.
   function quizList() {
-    var quizzes = window.GROUP_QUIZZES || {};
-    return Object.keys(quizzes).map(function (id) {
-      return { id: id, title: quizzes[id].title, count: quizzes[id].questions.length, category: quizzes[id].category || "Other" };
+    var index = window.GROUP_INDEX || {};
+    return Object.keys(index).map(function (id) {
+      return { id: id, title: index[id].title, count: index[id].n, category: index[id].category || "Other" };
     });
   }
 
@@ -330,7 +337,7 @@
   var CATEGORY_ORDER = ["Physiology", "Pharmacodynamics", "Anatomy", "Anatomy Practicum",
     "Physical Diagnosis", "CAM / Nutrition", "Nutrition", "Intro to PA", "Other"];
   function quizCategory(id) {
-    var q = (window.GROUP_QUIZZES || {})[id];
+    var q = (window.GROUP_INDEX || {})[id];
     return (q && q.category) || "Other";
   }
 
@@ -452,13 +459,16 @@
   }
 
   function selectQuiz(id) {
-    var quizzes = window.GROUP_QUIZZES || {};
-    if (!quizzes[id]) return;
+    var index = window.GROUP_INDEX || {};
+    if (!index[id]) return;
     selectedQuizId = id;
     hide("quiz-picker");
     show("quiz-selected-box");
-    $("quiz-selected-title").textContent = quizzes[id].title;
-    $("quiz-selected-count").textContent = quizzes[id].questions.length + " questions";
+    $("quiz-selected-title").textContent = index[id].title;
+    $("quiz-selected-count").textContent = index[id].n + " questions";
+    // Warm the chunk now, while the host is still reading the lobby, so
+    // pressing Create doesn't wait on a fetch.
+    window.loadGroupQuiz(id);
     updateCreateBtnState();
   }
 
@@ -494,22 +504,17 @@
     setTimeout(function () { waitForGroupStudy(cb); }, 150);
   }
 
-  // group-questions.js is a separate `defer` script -- deferred scripts run
-  // in document order right before DOMContentLoaded, which is AFTER this
-  // inline (non-deferred) script block has already executed. So GROUP_QUIZZES
-  // is not guaranteed to exist yet at this point; poll for it instead of
-  // assuming it's ready, or the picker permanently shows "no quizzes" until
-  // something else (e.g. typing in the search box) forces a re-render.
-  function waitForGroupQuizzes(cb) {
-    if (window.GROUP_QUIZZES) { cb(); return; }
-    setTimeout(function () { waitForGroupQuizzes(cb); }, 50);
-  }
-
-  waitForGroupQuizzes(function () {
+  // group-quizzes/index.js is a `defer` script -- deferred scripts run in
+  // document order right before DOMContentLoaded, which is AFTER this inline
+  // (non-deferred) block has already executed. So GROUP_INDEX is not
+  // guaranteed to exist yet; whenGroupIndex() polls for it, or the picker
+  // permanently shows "no quizzes" until something else (e.g. typing in the
+  // search box) forces a re-render.
+  window.whenGroupIndex(function (index) {
     renderQuizResults("");
     var urlParams = new URLSearchParams(location.search);
     var preselectId = urlParams.get("quiz");
-    if (preselectId && window.GROUP_QUIZZES[preselectId]) {
+    if (preselectId && index[preselectId]) {
       selectQuiz(preselectId);
     }
     updateCreateBtnState();
@@ -581,8 +586,15 @@
   }
 
   function enterRoom(code, quizId) {
+    // The questions live in a per-quiz chunk now. selectQuiz() usually warmed
+    // it already, but a page reload restoring a live session from
+    // sessionStorage has loaded nothing -- fetch, then re-enter.
+    if (quizId && !(window.GROUP_QUIZZES || {})[quizId]) {
+      window.loadGroupQuiz(quizId, function () { enterRoom(code, quizId); });
+      return;
+    }
     roomCode = code;
-    currentQuiz = window.GROUP_QUIZZES[quizId];
+    currentQuiz = (window.GROUP_QUIZZES || {})[quizId];
     $("room-code-display").textContent = code;
     $("host-code-badge-value").textContent = code;
     show("host-code-badge");
@@ -740,7 +752,13 @@
   var lastRoomState = null;
   function onRoomUpdate(room) {
     lastRoomState = room;
-    if (!currentQuiz) currentQuiz = window.GROUP_QUIZZES[room.quizId];
+    if (!currentQuiz) {
+      currentQuiz = (window.GROUP_QUIZZES || {})[room.quizId];
+      if (!currentQuiz && room.quizId) {
+        window.loadGroupQuiz(room.quizId, function () { onRoomUpdate(room); });
+        return;   // loader records failures, so this cannot loop forever
+      }
+    }
 
     if (room.status === "lobby") {
       hide("question-screen"); hide("reveal-screen"); hide("finished-screen"); show("lobby");
@@ -850,7 +868,7 @@
       box.appendChild(d);
     });
     // Same "why" + source citation shown on the site's regular quizzes after
-    // answering -- exp/cite come straight from group-questions.js (ported
+    // answering -- exp/cite come straight from the group-quizzes chunk (ported
     // from each quiz's own question bank), so this is the same explanation
     // text a solo quiz-taker would see, not something written separately
     // for Group Study.
