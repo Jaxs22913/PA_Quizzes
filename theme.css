@@ -2311,3 +2311,74 @@ details[open] > *:not(summary) {
   :where(button, .btn, .tab-btn, .quiz-link, .guide-card, .deck-card,
          .test-yourself-btn, .relax-cta):active { transform: none; }
 }
+
+/* ============================================================
+   7. CONTENT-PAGE MOTION (2026-07-27)
+   ------------------------------------------------------------
+   The 431 quiz/exam pages, 12 study guides and 12 cram sheets carried
+   three transitions and one keyframe between them -- all the motion
+   work so far had landed on the app-shell pages, which is not where
+   the time is actually spent.
+
+   Everything here hangs off classes the existing engines already set
+   (.opt.correct/.wrong, .expl.show, #results) or off a MutationObserver
+   in theme.js, so no generated page needs regenerating.
+   ============================================================ */
+
+/* --- question change ------------------------------------------------
+   renderQ() swapped the stem and options instantly. theme.js flags the
+   card when #qtext changes; stem and options come in on a short offset
+   so the eye lands on the question first. */
+@keyframes q-enter {
+  from { opacity: 0; transform: translateY(6px); }
+}
+.q-enter #qtext { animation: q-enter var(--dur-2) var(--ease) both; }
+.q-enter #opts  { animation: q-enter var(--dur-2) var(--ease) 60ms both; }
+
+/* --- answer feedback ------------------------------------------------
+   A right answer settles; a wrong one nudges. Both are small: this is
+   a study tool, not a slot machine. */
+@keyframes opt-correct {
+  0%   { transform: none; }
+  38%  { transform: scale(1.014); }
+  100% { transform: none; }
+}
+@keyframes opt-wrong {
+  0%,100% { transform: none; }
+  22%     { transform: translateX(-3px); }
+  58%     { transform: translateX(3px); }
+  82%     { transform: translateX(-1.5px); }
+}
+.opt.correct { animation: opt-correct 380ms var(--ease) 1; }
+.opt.wrong   { animation: opt-wrong  260ms var(--ease) 1; }
+/* the eliminated options recede rather than just dimming */
+.opt.dim { transition: opacity var(--dur-2) var(--ease), filter var(--dur-2) var(--ease); }
+
+/* --- explanation ---------------------------------------------------- */
+.expl.show { animation: q-enter var(--dur-2) var(--ease) both; }
+
+/* --- results --------------------------------------------------------- */
+@keyframes results-in {
+  from { opacity: 0; transform: translateY(10px) scale(.995); }
+}
+#results { animation: results-in var(--dur-3) var(--ease-spring) both; }
+
+/* --- progress bar ---------------------------------------------------- */
+#barfill { transition: width var(--dur-2) var(--ease) !important; }
+
+/* --- guides & cram sheets -------------------------------------------- */
+/* figures settle in as they're scrolled to; theme.js adds .fig-in */
+figure.fig { transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); }
+figure.fig.fig-pending { opacity: 0; transform: translateY(10px); }
+figure.fig.fig-in { opacity: 1; transform: none; }
+
+/* cram rows respond to the pointer, so a dense table is easier to track */
+.cram-table tbody tr, table tbody tr {
+  transition: background-color var(--dur-1) var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .q-enter #qtext, .q-enter #opts, .expl.show, #results,
+  .opt.correct, .opt.wrong { animation: none !important; }
+  figure.fig, figure.fig.fig-pending { opacity: 1 !important; transform: none !important; }
+}

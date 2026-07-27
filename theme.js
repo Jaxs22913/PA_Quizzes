@@ -3806,3 +3806,79 @@ window.openPauseOverlay = function (opts) {
     onReady();
   }
 })();
+
+/* ============================================================
+   Content-page motion hooks (2026-07-27)
+   ------------------------------------------------------------
+   Drives the quiz/guide animations defined in theme.css. Both hooks
+   are observers over markup the existing engines already produce, so
+   none of the 431 generated quiz pages had to be regenerated.
+   ============================================================ */
+(function () {
+  var reduce = window.matchMedia &&
+               window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+
+  /* --- quiz: replay the entrance whenever the stem changes --------- */
+  var qtext = document.getElementById("qtext");
+  var quiz = document.getElementById("quiz");
+  if (qtext && quiz && typeof MutationObserver === "function") {
+    var pending = false;
+    new MutationObserver(function () {
+      if (pending) return;
+      pending = true;
+      quiz.classList.remove("q-enter");
+      // force a reflow so removing and re-adding actually restarts the run
+      void quiz.offsetWidth;
+      requestAnimationFrame(function () {
+        pending = false;
+        quiz.classList.add("q-enter");
+      });
+    }).observe(qtext, { childList: true, characterData: true, subtree: true });
+    quiz.classList.add("q-enter");
+  }
+
+  /* --- guides/cram: figures settle in as they're reached -----------
+     Scroll-driven rather than IntersectionObserver. IO only fires for
+     elements that actually cross the viewport, so jumping via a TOC
+     anchor (or Cmd+End, or a restored scroll position) skipped every
+     figure in between and left them at opacity 0. A scroll pass reveals
+     anything at or above the fold regardless of how you got there. */
+  var figs = [].slice.call(document.querySelectorAll("figure.fig"));
+  if (figs.length && document.documentElement.scrollHeight > window.innerHeight * 1.6) {
+    var pending = [];
+    for (var i = 0; i < figs.length; i++) {
+      if (figs[i].getBoundingClientRect().top < window.innerHeight) continue; // already visible
+      figs[i].classList.add("fig-pending");
+      pending.push(figs[i]);
+    }
+
+    var ticking = false;
+    function reveal() {
+      ticking = false;
+      for (var j = pending.length - 1; j >= 0; j--) {
+        if (pending[j].getBoundingClientRect().top < window.innerHeight * 1.05) {
+          pending[j].classList.remove("fig-pending");
+          pending[j].classList.add("fig-in");
+          pending.splice(j, 1);
+        }
+      }
+      if (!pending.length) window.removeEventListener("scroll", onScroll);
+    }
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(reveal);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+
+    // Absolute backstop: never leave a figure hidden, whatever happens.
+    setTimeout(function () {
+      document.querySelectorAll("figure.fig.fig-pending").forEach(function (f) {
+        f.classList.remove("fig-pending");
+      });
+      pending.length = 0;
+    }, 3000);
+  }
+})();
