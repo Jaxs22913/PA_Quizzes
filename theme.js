@@ -3947,3 +3947,125 @@ window.openPauseOverlay = function (opts) {
   window.addEventListener("offline", sync);
   if (!navigator.onLine) sync();
 })();
+
+/* ============================================================
+   QUIZ ACCESSIBILITY
+   ------------------------------------------------------------
+   The generated quiz engine ships with exactly one aria-label and no
+   live region, so a screen reader announced nothing when an answer was
+   marked right or wrong -- the verdict text just appeared silently.
+
+   Done here rather than in the templates so none of the ~254 generated
+   quiz pages need regenerating, same as the motion layer above. Kept in
+   its OWN IIFE deliberately: the motion block early-returns under
+   prefers-reduced-motion, and a screen-reader user may well have that
+   set -- accessibility must not ride along with animation.
+
+   Two engines exist on the site and both are handled: the current
+   exam-navigator one (#opts / #expl, 245 files) and an older variant
+   (#options / #explain / #qcount, 9 files, all Physiology Exam 3).
+   They render identical `button.opt` elements with the same
+   correct/wrong/selected-exam state classes, so only the container id
+   and the position readout differ.
+   ============================================================ */
+(function () {
+  var quiz = document.getElementById("quiz");
+  if (!quiz) return;
+  var opts = document.getElementById("opts") || document.getElementById("options");
+  if (!opts) return;
+
+  var qtext = document.getElementById("qtext");
+  var verdict = document.getElementById("verdict");
+  var expl = document.getElementById("expl") || document.getElementById("explain");
+  var qcount = document.getElementById("qcount");
+
+  /* The engine already writes "Correct." / "Not quite -- the correct answer
+     is B." into #verdict. Making it a live region is all that is needed for
+     that to be spoken, with no second copy of the wording to keep in sync. */
+  if (verdict) {
+    verdict.setAttribute("role", "status");
+    verdict.setAttribute("aria-live", "polite");
+    verdict.setAttribute("aria-atomic", "true");
+  }
+  /* Revealed at the same moment as the verdict; announcing it too would talk
+     over that, so it is reachable as a landmark but not auto-read. */
+  if (expl) {
+    expl.setAttribute("role", "region");
+    expl.setAttribute("aria-label", "Explanation");
+  }
+
+  opts.setAttribute("role", "group");
+  opts.setAttribute("aria-label", "Answer choices");
+
+  /* Position readout. The older engine already renders "Question 1 of 50"
+     into #qcount, so that element is promoted to the live region rather than
+     adding a second one that would say the same thing twice. The current
+     engine has no such element, so one is created. */
+  var pos = qcount;
+  if (!pos) {
+    pos = document.createElement("div");
+    pos.className = "sr-only";
+    quiz.insertBefore(pos, quiz.firstChild);
+  }
+  pos.setAttribute("role", "status");
+  pos.setAttribute("aria-live", "polite");
+
+  function announcePosition() {
+    if (qcount) return;            // engine keeps it current itself
+    var n, t;
+    try { n = (typeof idx === "number" ? idx : -1) + 1; } catch (e) { n = 0; }
+    try { t = (typeof QUESTIONS !== "undefined" && QUESTIONS.length) || 0; } catch (e) { t = 0; }
+    pos.textContent = (n && t) ? "Question " + n + " of " + t : "";
+  }
+
+  /* Re-labels the option buttons after each render. The engine rebuilds the
+     options wholesale per question, so this runs on every change -- and it
+     reads state off the classes the engine already sets rather than
+     duplicating its answer logic. */
+  /* Both engines build each option as
+        <span class="ltr">B</span><span class="optlabel">text</span>
+     plus, while the question is live, a .cross-toggle button whose glyph is
+     part of button.textContent. Reading textContent wholesale gave a screen
+     reader "BThe myenteric plexus...\u2715" -- so pull the letter and the
+     label from their own spans and skip the toggle entirely. */
+  function optText(b) {
+    var label = b.querySelector(".optlabel");
+    var ltr = b.querySelector(".ltr");
+    var body = ((label || b).textContent || "").trim();
+    var l = ltr ? (ltr.textContent || "").trim() : "";
+    return l ? l + ". " + body : body;
+  }
+
+  function relabel() {
+    var list = opts.querySelectorAll(".opt");
+    for (var i = 0; i < list.length; i++) {
+      var b = list[i], txt = optText(b);
+      b.setAttribute("aria-posinset", i + 1);
+      b.setAttribute("aria-setsize", list.length);
+      if (b.classList.contains("locked") || b.classList.contains("correct") ||
+          b.classList.contains("wrong") || b.classList.contains("dim")) {
+        b.setAttribute("aria-disabled", "true");
+      } else {
+        b.removeAttribute("aria-disabled");
+      }
+      if (b.classList.contains("correct")) b.setAttribute("aria-label", txt + ", correct answer");
+      else if (b.classList.contains("wrong")) b.setAttribute("aria-label", txt + ", your answer, incorrect");
+      else if (b.classList.contains("selected-exam")) b.setAttribute("aria-label", txt + ", selected");
+      else b.removeAttribute("aria-label");
+    }
+  }
+
+  if (typeof MutationObserver === "function") {
+    if (qtext) {
+      new MutationObserver(function () { announcePosition(); relabel(); })
+        .observe(qtext, { childList: true, characterData: true, subtree: true });
+    }
+    /* The options mutate on their own when an answer is revealed (classes
+       change on the existing buttons), which a #qtext observer never sees. */
+    new MutationObserver(relabel).observe(opts, {
+      childList: true, subtree: true, attributes: true, attributeFilter: ["class"]
+    });
+  }
+  announcePosition();
+  relabel();
+})();

@@ -2513,3 +2513,17 @@ nav.toc::-webkit-scrollbar-thumb:hover,
 @media (prefers-reduced-motion: reduce) {
   #net-bar { transition: none; }
 }
+
+/* Visually hidden but available to screen readers. Used by the quiz
+   accessibility layer in theme.js for the "Question 4 of 50" live region.
+   Not `display:none` / `visibility:hidden` -- both remove the node from the
+   accessibility tree, which would defeat the point. */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
