@@ -15,7 +15,15 @@
 // majority of real increments. The tradeoff is that anyone can write any
 // value with no credentials, which is acceptable for a casual engagement
 // metric and would not be for anything load-bearing.
-//   match /stats/global { allow read, write: if true; }
+//   match /stats/global {
+//     allow read: if true;
+//     allow write: if request.resource.data.questionsCompleted is number;
+//     allow delete: if false;
+//   }
+// It is shape-guarded rather than wide open: unauthenticated writes ARE
+// allowed, but only ones that set questionsCompleted to a number, so the doc
+// cannot be used as arbitrary storage. Anyone can still set the counter to any
+// value without signing in.
 // Until such a rule is published, writes/reads fail silently (counter stays 0).
 //
 // EVENT LOG (added 2026-07-27). The running total is a single integer with no
@@ -30,13 +38,10 @@
 // minority, so the log and the total would disagree by design and the
 // reconciliation check below would be worthless. The bounds on `n` stop the
 // log being poisoned with absurd values even though it is open:
-//   match /stats_events/{id} {
-//     allow read: if true;
-//     allow create: if request.resource.data.n is int
-//                   && request.resource.data.n >= 0
-//                   && request.resource.data.n <= 200;
-//     allow update, delete: if false;
-//   }
+// The rule lives in firestore.rules in this repo (match /stats_events), which
+// is the source of truth -- but that file is NOT auto-deployed; it has to be
+// published in the Firebase console or via the Firebase CLI before the log
+// records anything.
 // The session id is a random per-tab value; it is NOT tied to any account and
 // identifies nobody. Its only job is to show that N completions shared one
 // origin, which is exactly the shape automated or inflated traffic has.

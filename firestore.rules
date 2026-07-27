@@ -65,5 +65,30 @@ service cloud.firestore {
       allow write: if request.resource.data.questionsCompleted is number;
       allow delete: if false;
     }
+
+    // Append-only audit log for the counter above (class-stats.js). The total
+    // is a single integer with no history, so a jump in it could be shown
+    // sound but never attributed. One immutable row per increment fixes that.
+    //
+    // create is OPEN for the same reason the counter's write is: most visitors
+    // are not signed in, and gating the log on auth while the total stays open
+    // would log only the signed-in minority -- the two would then disagree by
+    // design and the reconciliation check (sum of n from a baseline should
+    // reproduce questionsCompleted) would be worthless.
+    //
+    // update and delete are denied outright: a log that anything can rewrite
+    // is not evidence. The shape guard bounds n and caps the free-text fields
+    // so an open collection can't be used as arbitrary storage or poisoned
+    // with absurd values.
+    match /stats_events/{eventId} {
+      allow read: if true;
+      allow create: if request.resource.data.n is number
+                    && request.resource.data.n >= 0
+                    && request.resource.data.n <= 200
+                    && request.resource.data.path.size() <= 200
+                    && request.resource.data.session.size() <= 40
+                    && request.resource.data.kind.size() <= 40;
+      allow update, delete: if false;
+    }
   }
 }
