@@ -699,6 +699,16 @@
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
     .my-progress-link svg { width: 15px; height: 15px; flex: none; opacity: .95; }
+    /* Two pills share the row when there is something to review; the Review
+       one carries the Review page's own accent so the colours agree with
+       where the link goes. */
+    .stat-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .review-link { background: var(--a-crimson-soft, #faf2f2); color: var(--a-crimson, #df2a44); }
+    .review-link:hover { border-color: var(--a-crimson, #df2a44); box-shadow: 0 4px 12px rgba(223,42,68,.16); }
+    .review-link b { font-weight: 800; }
+    .review-link svg { transition: transform .45s var(--ease-spring, ease); }
+    .review-link:hover svg { transform: rotate(-160deg); }
+    @media (prefers-reduced-motion: reduce) { .review-link svg, .review-link:hover svg { transition: none; transform: none; } }
     .my-progress-link:hover { border-color: var(--accent, #2a6df2); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,.14); }
     /* Playful icon hovers -------------------------------------------------- */
     /* Cap tips its hat when you hover the counter */

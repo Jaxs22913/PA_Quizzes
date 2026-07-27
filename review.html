@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review Missed Questions — PA Quizzes</title>
+<link rel="stylesheet" href="theme.css">
+<!-- not deferred: the inline block below calls loadGroupQuiz()/whenGroupIndex()
+     while the document is still parsing, before deferred scripts run. -->
+<script src="group-loader.js"></script>
+<script src="group-quizzes/index.js" defer></script>
+<script src="theme.js" defer></script>
+<style>
+  :root{
+    --ink:#1b2030; --muted:#6b7280; --line:#e6e8ef; --paper:#f6f7fb; --card:#fff;
+    --acc:var(--a-crimson,#df2a44); --acc-soft:var(--a-crimson-soft,#faf2f2);
+    --good:#218640; --good-soft:#e9f7ef;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
+      --good:#4ade80;--good-soft:#12241a;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
+  }
+  :root[data-theme="dark"]{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
+    --good:#4ade80;--good-soft:#12241a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
+  :root[data-theme="light"]{--ink:#1b2030;--muted:#6b7280;--line:#e6e8ef;--paper:#f6f7fb;--card:#fff;
+    --good:#218640;--good-soft:#e9f7ef;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:840px;margin:0 auto;padding:28px 18px 72px;}
+
+  .back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);
+    text-decoration:none;font-size:14px;font-weight:600;margin-bottom:14px;}
+  .back:hover{color:var(--acc);}
+  .back svg{width:15px;height:15px;}
+
+  h1{font-family:var(--font-display,Georgia,serif);font-size:30px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 22px;max-width:60ch;}
+
+  .summary{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+  .stat{flex:1 1 150px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r-lg,16px);padding:14px 16px;box-shadow:var(--shadow);}
+  .stat-n{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1;}
+  .stat-n.accent{color:var(--acc);}
+  .stat-l{font-size:12.5px;color:var(--muted);margin-top:2px;}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    border-radius:var(--r-pill,999px);padding:11px 20px;font-size:14.5px;font-weight:700;
+    text-decoration:none;cursor:pointer;border:1px solid transparent;
+    transition:background var(--dur-1,160ms) var(--ease,ease),border-color var(--dur-1,160ms) var(--ease,ease),transform var(--dur-1,160ms) var(--ease,ease);}
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--acc);color:#fff;}
+  .btn-primary:hover{background:var(--a-crimson-hover,#c2233a);}
+  .btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--acc);color:var(--acc);}
+  .btn svg{width:16px;height:16px;flex:none;}
+  .btn[disabled]{opacity:.5;pointer-events:none;}
+
+  .class-group{margin-bottom:26px;}
+  .class-name{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;
+    color:var(--muted);margin:0 0 9px;}
+
+  .qz{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg,16px);
+    box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden;
+    border-left:3px solid var(--acc);}
+  .qz > summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;
+    align-items:center;gap:12px;}
+  .qz > summary::-webkit-details-marker{display:none}
+  .qz-title{flex:1;min-width:0;font-size:15px;font-weight:650;}
+  .qz-when{font-size:12px;color:var(--muted);margin-top:2px;font-weight:400;}
+  .pill{flex:none;background:var(--acc-soft);color:var(--acc);border-radius:var(--r-pill,999px);
+    padding:4px 11px;font-size:12.5px;font-weight:800;white-space:nowrap;}
+  .chev{flex:none;width:17px;height:17px;color:var(--muted);
+    transition:transform var(--dur-1,160ms) var(--ease,ease);}
+  .qz[open] .chev{transform:rotate(180deg);}
+  .qz-body{padding:0 16px 6px;border-top:1px solid var(--line);}
+
+  .q{padding:14px 0;border-bottom:1px solid var(--line);}
+  .q:last-child{border-bottom:0;}
+  .q-text{font-size:14.5px;font-weight:600;margin-bottom:9px;line-height:1.45;}
+  .row{display:flex;gap:8px;font-size:13.5px;line-height:1.45;margin-top:5px;align-items:flex-start;}
+  .row .tag{flex:none;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+    padding:2px 7px;border-radius:6px;margin-top:2px;}
+  .row.yours .tag{background:var(--acc-soft);color:var(--acc);}
+  .row.right .tag{background:var(--good-soft);color:var(--good);}
+  .exp{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;}
+
+  .empty{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg,16px);
+    box-shadow:var(--shadow);padding:34px 26px;text-align:center;}
+  .empty h2{font-size:19px;margin:14px 0 8px;}
+  .empty p{color:var(--muted);font-size:14.5px;margin:0 auto 6px;max-width:46ch;}
+  .empty svg{width:52px;height:52px;color:var(--acc);opacity:.85;}
+
+  /* ---- drill ---- */
+  #drill{display:none;}
+  #drill.on{display:block;}
+  .drill-bar{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .drill-prog{flex:1;height:7px;background:var(--line);border-radius:999px;overflow:hidden;}
+  .drill-prog i{display:block;height:100%;background:var(--acc);width:0;border-radius:999px;
+    transition:width var(--dur-2,240ms) var(--ease,ease);}
+  .drill-count{font-size:13px;color:var(--muted);font-weight:700;white-space:nowrap;}
+  .drill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg,16px);
+    box-shadow:var(--shadow);padding:20px;}
+  .drill-src{font-size:12px;color:var(--muted);margin-bottom:8px;}
+  .drill-q{font-size:17px;font-weight:650;line-height:1.45;margin-bottom:16px;}
+  .opt{display:flex;width:100%;text-align:left;gap:11px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--r-md,12px);
+    padding:12px 14px;margin-bottom:9px;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;
+    transition:border-color var(--dur-1,160ms) var(--ease,ease),background var(--dur-1,160ms) var(--ease,ease);}
+  .opt:hover:not(.locked){border-color:var(--acc);}
+  .opt .ltr{flex:none;font-weight:800;color:var(--muted);}
+  .opt.locked{cursor:default;}
+  .opt.correct{border-color:var(--good);background:var(--good-soft);}
+  .opt.correct .ltr{color:var(--good);}
+  .opt.wrong{border-color:var(--acc);background:var(--acc-soft);}
+  .opt.wrong .ltr{color:var(--acc);}
+  .opt.dim{opacity:.55;}
+  .drill-exp{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:13.5px;color:var(--muted);line-height:1.5;}
+  .drill-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;}
+
+  @media (max-width:560px){
+    h1{font-size:25px}
+    .wrap{padding:20px 14px 60px}
+    .stat{flex:1 1 calc(50% - 5px)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .chev,.drill-prog i,.opt,.btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Home
+  </a>
+
+  <div id="list-view">
+    <h1>Review missed questions</h1>
+    <p class="sub">Every question you have gotten wrong, kept per quiz. Drill them until they
+      stop showing up here — a question leaves this list once you answer it correctly.</p>
+
+    <div class="summary" id="summary"></div>
+    <div class="actions" id="actions"></div>
+    <div id="groups"></div>
+  </div>
+
+  <div id="drill">
+    <h1 style="margin-bottom:14px">Drill</h1>
+    <div class="drill-bar">
+      <div class="drill-prog"><i id="drill-fill"></i></div>
+      <span class="drill-count" id="drill-count"></span>
+    </div>
+    <div class="drill-card" id="drill-card"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var PREFIX = "qm:";
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- read the records theme.js writes on quiz completion ---------- */
+  function loadRecords() {
+    var out = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k || k.indexOf(PREFIX) !== 0) continue;
+      try {
+        var v = JSON.parse(localStorage.getItem(k));
+        if (!v || !v.slug || !v.m || !v.m.length) continue;
+        v.key = k;
+        v.path = k.slice(PREFIX.length);
+        out.push(v);
+      } catch (e) { /* ignore a corrupt entry rather than blanking the page */ }
+    }
+    out.sort(function (a, b) { return (b.t || 0) - (a.t || 0); });
+    return out;
+  }
+
+  function writeRecord(rec) {
+    try {
+      if (!rec.m.length) localStorage.removeItem(rec.key);
+      else localStorage.setItem(rec.key, JSON.stringify({
+        t: rec.t, slug: rec.slug, title: rec.title, total: rec.total, m: rec.m
+      }));
+    } catch (e) {}
+  }
+
+  function relTime(ms) {
+    if (!ms) return "";
+    var d = Math.floor((Date.now() - ms) / 86400000);
+    if (d <= 0) return "today";
+    if (d === 1) return "yesterday";
+    if (d < 30) return d + " days ago";
+    var mo = Math.floor(d / 30);
+    return mo === 1 ? "a month ago" : mo + " months ago";
+  }
+
+  function classOf(rec) {
+    var meta = (window.GROUP_INDEX || {})[rec.slug];
+    return (meta && meta.category) || "Other";
+  }
+  function titleOf(rec) {
+    var meta = (window.GROUP_INDEX || {})[rec.slug];
+    return (meta && meta.title) || rec.title || rec.slug;
+  }
+
+  var CLASS_ORDER = ["Physiology", "Pharmacodynamics", "Anatomy", "Anatomy Practicum",
+    "Physical Diagnosis", "CAM / Nutrition", "Nutrition", "Intro to PA", "Other"];
+
+  /* ---------- rendering ---------- */
+  var records = [];
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+
+  var CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+
+  function render() {
+    records = loadRecords();
+    var totalMissed = records.reduce(function (a, r) { return a + r.m.length; }, 0);
+
+    if (!records.length) {
+      $("summary").innerHTML = "";
+      $("actions").innerHTML = "";
+      $("groups").innerHTML =
+        '<div class="empty">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>' +
+        '<h2>Nothing to review</h2>' +
+        '<p>Finish a quiz and anything you get wrong is collected here automatically, ' +
+        'grouped by class, ready to drill.</p>' +
+        '<p style="margin-top:12px"><a class="btn btn-ghost" href="index.html">Browse quizzes</a></p>' +
+        '</div>';
+      return;
+    }
+
+    $("summary").innerHTML = "";
+    [[totalMissed, "questions to review", true],
+     [records.length, "quizzes affected", false],
+     [relTime(records[0].t), "last attempt", false]].forEach(function (s) {
+      var c = el("div", "stat");
+      var n = el("div", "stat-n" + (s[2] ? " accent" : ""), String(s[0]));
+      c.appendChild(n);
+      c.appendChild(el("div", "stat-l", s[1]));
+      $("summary").appendChild(c);
+    });
+
+    $("actions").innerHTML = "";
+    var drillAll = el("button", "btn btn-primary");
+    drillAll.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>' +
+      '<span>Drill all ' + totalMissed + '</span>';
+    drillAll.onclick = function () { startDrill(records.slice()); };
+    $("actions").appendChild(drillAll);
+
+    var byClass = {};
+    records.forEach(function (r) {
+      var c = classOf(r);
+      (byClass[c] = byClass[c] || []).push(r);
+    });
+    var names = Object.keys(byClass).sort(function (a, b) {
+      var ia = CLASS_ORDER.indexOf(a), ib = CLASS_ORDER.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+
+    var groups = $("groups");
+    groups.innerHTML = "";
+    names.forEach(function (name) {
+      var g = el("div", "class-group");
+      g.appendChild(el("p", "class-name", name));
+      byClass[name].forEach(function (rec) { g.appendChild(quizCard(rec)); });
+      groups.appendChild(g);
+    });
+  }
+
+  function quizCard(rec) {
+    var d = el("details", "qz");
+    var s = document.createElement("summary");
+    var t = el("div", "qz-title");
+    t.appendChild(document.createTextNode(titleOf(rec)));
+    var w = el("div", "qz-when", rec.m.length + " of " + rec.total + " missed · " + relTime(rec.t));
+    t.appendChild(w);
+    s.appendChild(t);
+    s.appendChild(el("span", "pill", String(rec.m.length)));
+    s.insertAdjacentHTML("beforeend", CHEV);
+    d.appendChild(s);
+
+    var body = el("div", "qz-body");
+    body.innerHTML = '<p style="color:var(--muted);font-size:13.5px;padding:12px 0">Loading questions…</p>';
+    d.appendChild(body);
+
+    /* Chunks are fetched only when a card is actually opened -- opening one
+       quiz must not pull the other 263. */
+    var filled = false;
+    d.addEventListener("toggle", function () {
+      if (!d.open || filled) return;
+      filled = true;
+      window.loadGroupQuiz(rec.slug, function (quiz) { fillBody(body, rec, quiz); });
+    });
+    return d;
+  }
+
+  function fillBody(body, rec, quiz) {
+    body.innerHTML = "";
+    if (!quiz || !quiz.questions) {
+      body.innerHTML = '<p style="color:var(--muted);font-size:13.5px;padding:12px 0">' +
+        'Couldn\'t load this quiz\'s questions.</p>';
+      return;
+    }
+    /* Guard against an index drift between the saved record and the generated
+       chunk (a quiz edited after the attempt). Showing the WRONG question would
+       be worse than showing none. */
+    if (quiz.questions.length !== rec.total) {
+      body.innerHTML = '<p style="color:var(--muted);font-size:13.5px;padding:12px 0">' +
+        'This quiz has changed since you took it, so these answers can no longer be ' +
+        'matched up. Retake it and the list will refresh.</p>';
+      return;
+    }
+    rec.m.forEach(function (pair) {
+      var q = quiz.questions[pair[0]];
+      if (!q) return;
+      // Only misses are ever recorded, so chosen === answer should be
+      // impossible; skip rather than render a row claiming you both picked
+      // and missed the same choice if the data ever drifts.
+      if (pair[1] === q.answer) return;
+      var box = el("div", "q");
+      box.appendChild(el("div", "q-text", q.q));
+      var yours = el("div", "row yours");
+      yours.appendChild(el("span", "tag", "you"));
+      yours.appendChild(el("span", "", q.choices[pair[1]] !== undefined ? q.choices[pair[1]] : "(no answer)"));
+      box.appendChild(yours);
+      var right = el("div", "row right");
+      right.appendChild(el("span", "tag", "answer"));
+      right.appendChild(el("span", "", q.choices[q.answer]));
+      box.appendChild(right);
+      if (q.exp) box.appendChild(el("div", "exp", q.exp));
+      body.appendChild(box);
+    });
+  }
+
+  /* ---------- drill ---------- */
+  var drill = null;
+
+  function startDrill(recs) {
+    var slugs = recs.map(function (r) { return r.slug; });
+    var loaded = 0;
+    $("list-view").style.display = "none";
+    $("drill").classList.add("on");
+    $("drill-card").innerHTML = '<p style="color:var(--muted)">Loading questions…</p>';
+
+    slugs.forEach(function (s) {
+      window.loadGroupQuiz(s, function () {
+        if (++loaded < slugs.length) return;
+        buildDrill(recs);
+      });
+    });
+  }
+
+  function buildDrill(recs) {
+    var bank = window.GROUP_QUIZZES || {};
+    var items = [];
+    recs.forEach(function (rec) {
+      var quiz = bank[rec.slug];
+      if (!quiz || !quiz.questions || quiz.questions.length !== rec.total) return;
+      rec.m.forEach(function (pair) {
+        var q = quiz.questions[pair[0]];
+        if (q) items.push({ rec: rec, qi: pair[0], q: q, title: quiz.title });
+      });
+    });
+    // shuffle so the same class doesn't come in one block
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = items[i];
+      items[i] = items[j]; items[j] = t;
+    }
+    if (!items.length) {
+      $("drill-card").innerHTML = '<p style="color:var(--muted)">These quizzes have changed since ' +
+        'you took them, so their saved answers can no longer be matched up.</p>' +
+        '<div class="drill-foot"><span></span><button class="btn btn-ghost" id="drill-exit">Back</button></div>';
+      $("drill-exit").onclick = exitDrill;
+      return;
+    }
+    drill = { items: items, i: 0, fixed: 0 };
+    showDrillQuestion();
+  }
+
+  function showDrillQuestion() {
+    var it = drill.items[drill.i];
+    $("drill-count").textContent = (drill.i + 1) + " / " + drill.items.length;
+    $("drill-fill").style.width = (100 * drill.i / drill.items.length) + "%";
+
+    var card = $("drill-card");
+    card.innerHTML = "";
+    card.appendChild(el("div", "drill-src", it.title));
+    card.appendChild(el("div", "drill-q", it.q.q));
+
+    var LTR = ["A", "B", "C", "D", "E", "F"];
+    var buttons = [];
+    it.q.choices.forEach(function (choice, ci) {
+      var b = el("button", "opt");
+      b.type = "button";
+      b.appendChild(el("span", "ltr", LTR[ci]));
+      b.appendChild(el("span", "", choice));
+      b.onclick = function () { answer(it, ci, buttons); };
+      buttons.push(b);
+      card.appendChild(b);
+    });
+  }
+
+  function answer(it, chosen, buttons) {
+    if (drill.answered) return;
+    drill.answered = true;
+    var correct = it.q.answer;
+    buttons.forEach(function (b, ci) {
+      b.classList.add("locked");
+      b.onclick = null;
+      if (ci === correct) b.classList.add("correct");
+      else if (ci === chosen) b.classList.add("wrong");
+      else b.classList.add("dim");
+    });
+
+    if (chosen === correct) {
+      drill.fixed++;
+      /* Answering correctly retires the question -- that is the whole point of
+         the page, and it is why the list shrinks as you work. */
+      it.rec.m = it.rec.m.filter(function (p) { return p[0] !== it.qi; });
+      writeRecord(it.rec);
+    }
+
+    var card = $("drill-card");
+    if (it.q.exp) card.appendChild(el("div", "drill-exp", it.q.exp));
+
+    var foot = el("div", "drill-foot");
+    var status = el("span", "drill-count", chosen === correct ? "Correct — retired" : "Still on the list");
+    foot.appendChild(status);
+    var next = el("button", "btn btn-primary");
+    next.textContent = (drill.i + 1 < drill.items.length) ? "Next →" : "Finish";
+    next.onclick = function () {
+      drill.answered = false;
+      drill.i++;
+      if (drill.i < drill.items.length) showDrillQuestion();
+      else finishDrill();
+    };
+    foot.appendChild(next);
+    card.appendChild(foot);
+    next.focus();
+  }
+
+  function finishDrill() {
+    $("drill-fill").style.width = "100%";
+    $("drill-count").textContent = drill.items.length + " / " + drill.items.length;
+    var card = $("drill-card");
+    card.innerHTML = "";
+    card.appendChild(el("div", "drill-q",
+      "Retired " + drill.fixed + " of " + drill.items.length + "."));
+    card.appendChild(el("div", "drill-exp", drill.fixed === drill.items.length
+      ? "Everything you drilled is off the list."
+      : "The ones you missed again are still waiting for you."));
+    var foot = el("div", "drill-foot");
+    foot.appendChild(el("span", ""));
+    var back = el("button", "btn btn-primary", "Back to the list");
+    back.onclick = exitDrill;
+    foot.appendChild(back);
+    card.appendChild(foot);
+    back.focus();
+  }
+
+  function exitDrill() {
+    drill = null;
+    $("drill").classList.remove("on");
+    $("list-view").style.display = "";
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  /* GROUP_INDEX is deferred, so wait for it -- class names and canonical
+     titles come from the manifest. */
+  window.whenGroupIndex(function () { render(); });
+})();
+</script>
+</body>
+</html>

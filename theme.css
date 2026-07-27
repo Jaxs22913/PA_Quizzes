@@ -2095,6 +2095,10 @@ mark.user-hl.hl-flash {
   --a-amber:       #ad631e;  --a-amber-hover:  #9b5301;  --a-amber-soft:  #fff2e8;
   --a-teal:        #228283;  --a-teal-hover:   #007172;  --a-teal-soft:   #defbfb;
   --a-green:       #218640;  --a-green-hover:  #007630;  --a-green-soft:  #e7fbea;
+  /* Review (added 2026-07-27). Sixth hue in the ring, derived with the same
+     recipe: the lightness that lands hue 20 on 4.60:1 against its background
+     at ~90% of the maximum chroma sRGB holds there. Verified 4.61:1. */
+  --a-crimson:     #df2a44;  --a-crimson-hover:#c2233a;  --a-crimson-soft:#faf2f2;
 }
 :root[data-theme="dark"] {
   --a-blue:        #4981ee;  --a-blue-hover:   #6a99f2;  --a-blue-soft:   #14223d;
@@ -2102,6 +2106,7 @@ mark.user-hl.hl-flash {
   --a-amber:       #c0722d;  --a-amber-hover:  #d08a4e;  --a-amber-soft:  #361b04;
   --a-teal:        #329293;  --a-teal-hover:   #4fa8a9;  --a-teal-soft:   #00292a;
   --a-green:       #31974d;  --a-green-hover:  #4fac68;  --a-green-soft:  #0c2a13;
+  --a-crimson:     #f53c52;  --a-crimson-hover:#f76f74;  --a-crimson-soft:#3c1718;
 }
 
 /* ------------------------------------------------------------

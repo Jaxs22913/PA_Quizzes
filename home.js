@@ -1136,3 +1136,21 @@ function buildHomeTourSteps() {
         btn.addEventListener("mouseenter", function () { joinAtButton(btn); });
       });
     })();
+
+/* ---- Review link: reveal only when there is something to review ---- */
+(function () {
+  var link = document.getElementById("review-link");
+  if (!link) return;
+  var n = 0;
+  try {
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k || k.indexOf("qm:") !== 0) continue;
+      var rec = JSON.parse(localStorage.getItem(k));
+      if (rec && rec.m) n += rec.m.length;
+    }
+  } catch (e) { return; }
+  if (!n) return;
+  document.getElementById("review-count").textContent = n;
+  link.hidden = false;
+})();

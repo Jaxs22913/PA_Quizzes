@@ -25,6 +25,22 @@
   :root[data-theme="light"]{--ink:#1b2030;--muted:#6b7280;--line:#e6e8ef;--paper:#f6f7fb;--card:#fff;
     --acc:#218640;--acc-soft:#eef0fd;--good:#218640;--good-soft:#e9f7ef;--warn:#b7791f;--warn-soft:#fdf6e3;
     --bad:#dc2626;--bad-soft:#fdecec;--shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);}
+  .review-cta{display:flex;align-items:center;gap:13px;background:var(--card);
+    border:1px solid var(--line);border-left:3px solid var(--a-crimson,#df2a44);
+    border-radius:14px;box-shadow:var(--shadow);padding:14px 16px;margin:18px 0 4px;
+    text-decoration:none;color:var(--ink);
+    transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;}
+  .review-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(223,42,68,.16);}
+  .rc-icon{flex:none;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;
+    justify-content:center;background:var(--a-crimson-soft,#faf2f2);color:var(--a-crimson,#df2a44);}
+  .rc-icon svg{width:18px;height:18px;transition:transform .45s cubic-bezier(.34,1.4,.64,1);}
+  .review-cta:hover .rc-icon svg{transform:rotate(-160deg);}
+  .rc-text{flex:1;min-width:0;display:flex;flex-direction:column;}
+  .rc-text b{font-size:15px;font-weight:700;}
+  .rc-sub{font-size:12.5px;color:var(--muted);}
+  .rc-go{flex:none;color:var(--a-crimson,#df2a44);font-size:19px;font-weight:700;}
+  @media (prefers-reduced-motion: reduce){.review-cta,.rc-icon svg{transition:none;}
+    .review-cta:hover{transform:none;} .review-cta:hover .rc-icon svg{transform:none;}}
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
     font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
@@ -189,6 +205,26 @@
         '<div class="meta">' + d.count + ' quiz' + (d.count === 1 ? '' : 'zes') + ' · ' + d.c + '/' + d.n + ' correct</div>' +
         '<div class="bar"><i class="fill-' + g + '" style="width:' + pct + '%"></i></div></div>';
     });
+
+    // Review call-to-action. "Focus areas" below tells you which QUIZZES went
+    // badly; this points at the individual questions you actually missed,
+    // which is the part you can do something about right now.
+    var missedTotal = 0, missedQuizzes = 0;
+    try {
+      for (var mi = 0; mi < localStorage.length; mi++) {
+        var mk = localStorage.key(mi);
+        if (!mk || mk.indexOf("qm:") !== 0) continue;
+        var mrec = JSON.parse(localStorage.getItem(mk));
+        if (mrec && mrec.m && mrec.m.length) { missedTotal += mrec.m.length; missedQuizzes++; }
+      }
+    } catch (e) {}
+    if (missedTotal) {
+      html += '<a class="review-cta" href="review.html">' +
+        '<span class="rc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span>' +
+        '<span class="rc-text"><b>' + missedTotal + ' question' + (missedTotal === 1 ? '' : 's') + ' to review</b>' +
+        '<span class="rc-sub">across ' + missedQuizzes + ' quiz' + (missedQuizzes === 1 ? '' : 'zes') + ' &middot; drill them one by one</span></span>' +
+        '<span class="rc-go" aria-hidden="true">&rarr;</span></a>';
+    }
 
     // Focus areas: lowest-accuracy quizzes
     var worst = quizzes.slice().map(function (q) { return { q: q, pct: Math.round(q.score / q.total * 100) }; })

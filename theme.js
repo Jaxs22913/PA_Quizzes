@@ -4069,3 +4069,107 @@ window.openPauseOverlay = function (opts) {
   announcePosition();
   relabel();
 })();
+
+/* ============================================================
+   MISSED-QUESTION RECORDER
+   ------------------------------------------------------------
+   The quiz engine calls clearProgress() the instant results are shown
+   (template.html line ~520), which removes the "qp:" entry holding the
+   per-question answers. So a COMPLETED quiz kept only {score, total,
+   timeMs} -- the record of which questions were actually missed was
+   discarded at exactly the moment it became useful, and nothing on the
+   site could tell a student what to go back and drill.
+
+   This writes a compact record just before that happens:
+
+     qm:<pathname> = { t, slug, title, total, m: [[questionIndex, chosen], ...] }
+
+   `slug` matches the id used by tools/build_group_quizzes.py, which is a
+   slug of "<folder>/<file>" -- every quiz on the site is exactly one
+   directory deep (verified: 537 of 537), so the last two path segments
+   reproduce it whether the site is served from / or /PA_Quizzes/. That
+   is what lets review.html pull the question text from a
+   group-quizzes/<slug>.js chunk instead of re-parsing quiz HTML.
+
+   Done from theme.js so none of the ~254 generated quiz pages change.
+   ============================================================ */
+(function () {
+  var results = document.getElementById("results");
+  if (!results || typeof MutationObserver !== "function") return;
+
+  function slugFromPath() {
+    var parts = decodeURIComponent(location.pathname).split("/").filter(Boolean);
+    if (!parts.length) return "";
+    var rel = parts.slice(-2).join("/").replace(/\.html$/i, "");
+    return rel.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  }
+
+  function globalOf(name) {
+    try { return eval("typeof " + name + " !== 'undefined' ? " + name + " : null"); }
+    catch (e) { return null; }
+  }
+
+  /* Both engines shuffle QUESTION order into an `order` array and keep the
+     option order fixed, so a stored choice index is directly comparable to
+     the question's own answer index. */
+  function collect() {
+    var order = globalOf("order");
+    if (!order || !order.length) return null;
+
+    // current engine (245 files): QUESTIONS + answers[], parallel to order
+    var Q = globalOf("QUESTIONS"), answers = globalOf("answers");
+    if (Q && answers && answers.length) {
+      var miss = [];
+      for (var i = 0; i < answers.length; i++) {
+        var qi = order[i];
+        if (answers[i] === null || answers[i] === undefined) continue;
+        if (Q[qi] && answers[i] !== Q[qi].c) miss.push([qi, answers[i]]);
+      }
+      return { total: Q.length, m: miss };
+    }
+
+    // older engine (9 files, Physiology Exam 3): questions + responses[]
+    var q2 = globalOf("questions"), resp = globalOf("responses");
+    if (q2 && resp && resp.length) {
+      var miss2 = [];
+      for (var j = 0; j < resp.length; j++) {
+        var r = resp[j];
+        if (!r || r.isCorrect) continue;
+        var qi2 = order[r.i];               // r.i is a position, not an index
+        if (typeof qi2 === "number" && q2[qi2]) miss2.push([qi2, r.choice]);
+      }
+      return { total: q2.length, m: miss2 };
+    }
+    return null;
+  }
+
+  var written = false;
+  function record() {
+    if (written) return;
+    var data = collect();
+    if (!data) return;
+    written = true;
+    try {
+      localStorage.setItem("qm:" + location.pathname, JSON.stringify({
+        t: Date.now(),
+        slug: slugFromPath(),
+        title: (document.title || "").replace(/\s*[-—|]\s*Class of 2028.*$/i, "").trim(),
+        total: data.total,
+        m: data.m
+      }));
+    } catch (e) { /* quota or private mode -- reviewing is optional */ }
+  }
+
+  /* Trigger on VISIBILITY, not on children being appended. The current engine
+     builds #results by writing into an empty container, but the older one
+     ships a populated <section id="results" class="hidden"> and simply drops
+     the class -- a childList-only observer never fired for those 9 files. */
+  function visible() {
+    return !!(results.offsetWidth || results.offsetHeight || results.getClientRects().length);
+  }
+  function check() { if (visible()) record(); }
+  new MutationObserver(check).observe(results, {
+    childList: true, attributes: true, attributeFilter: ["class", "style", "hidden"]
+  });
+  check();
+})();
