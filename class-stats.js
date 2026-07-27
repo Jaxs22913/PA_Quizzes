@@ -7,11 +7,15 @@
 // shared markCompleted() finish signal) and displays on any page that has a
 // #class-counter-value element (the homepage).
 //
-// Like presence.js, scoring here is client-trusted -- a determined student
-// could inflate the count, which is fine for a casual class engagement metric,
-// not a leaderboard. Needs a Firestore rule allowing this doc to be read and
-// incremented (see the group_study/presence rules pattern):
-//   match /stats/global { allow read: if true; allow write: if request.auth != null; }
+// Scoring here is client-trusted. The published rule on this doc is fully
+// open -- verified 2026-07-27 by a successful UNAUTHENTICATED write, so it is
+// `allow read, write: if true`, not the auth-gated form an earlier version of
+// this comment claimed. That is deliberate: most quiz-page visitors are not
+// signed in (Google sign-in is optional), so an auth gate would drop the
+// majority of real increments. The tradeoff is that anyone can write any
+// value with no credentials, which is acceptable for a casual engagement
+// metric and would not be for anything load-bearing.
+//   match /stats/global { allow read, write: if true; }
 // Until such a rule is published, writes/reads fail silently (counter stays 0).
 //
 // EVENT LOG (added 2026-07-27). The running total is a single integer with no
@@ -20,10 +24,17 @@
 // increment now also appends one immutable row to stats_events, which makes a
 // future jump traceable to when it happened, which quiz produced it, and
 // whether it came from one browser session or many. Needs its own rule, and
-// it must be append-only -- a log anything can rewrite is not evidence:
+// it must be append-only -- a log anything can rewrite is not evidence.
+// `create: if true` deliberately matches the counter's own open rule: gating
+// the log on auth while the total stays open would log only the signed-in
+// minority, so the log and the total would disagree by design and the
+// reconciliation check below would be worthless. The bounds on `n` stop the
+// log being poisoned with absurd values even though it is open:
 //   match /stats_events/{id} {
 //     allow read: if true;
-//     allow create: if request.auth != null;
+//     allow create: if request.resource.data.n is int
+//                   && request.resource.data.n >= 0
+//                   && request.resource.data.n <= 200;
 //     allow update, delete: if false;
 //   }
 // The session id is a random per-tab value; it is NOT tied to any account and
