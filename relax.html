@@ -79,7 +79,7 @@
   .pat-desc{text-align:center;color:var(--r-muted);font-size:0.8125rem;min-height:18px;margin:2px 0 6px;}
 
   .stage{display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:24px 0 8px;min-height:320px;}
+    padding:16px 0 6px;min-height:290px;}
   .orb-holder{width:260px;height:260px;display:flex;align-items:center;justify-content:center;position:relative;}
   .orb{width:220px;height:220px;border-radius:50%;transform:scale(.55);position:relative;z-index:1;
     background:radial-gradient(circle at 38% 32%, rgba(255,255,255,.92), rgba(var(--r-glow),.9) 52%, rgba(var(--r-glow),.62) 100%);
@@ -99,6 +99,34 @@
   .cyclecount{color:var(--r-muted);font-size:0.8125rem;min-height:18px;}
 
   .controls{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap;}
+
+  /* --- wide screens: use the width instead of stacking down a 640px column ---
+     The page was a 640px strip in a 1440px viewport with the orb floating in a
+     tall empty band, so the Begin button sat ~760px down. On desktop the
+     breathing panel becomes two columns -- pattern controls on the left, orb
+     and its status on the right -- which fills the space and brings everything
+     back into one screen. Below 900px it stays exactly as it was. */
+  @media (min-width: 900px){
+    .wrap{max-width:1000px;padding-bottom:56px;}
+    .sub{max-width:62ch;}
+    #p-breathe{
+      display:grid;
+      grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+      grid-template-rows:auto auto 1fr;
+      column-gap:44px;
+      align-items:start;
+      min-height:300px;
+    }
+    #p-breathe .chips{grid-column:1;grid-row:1;justify-content:flex-start;margin-top:4px;}
+    #p-breathe .pat-desc{grid-column:1;grid-row:2;text-align:left;}
+    #p-breathe .controls{grid-column:1;grid-row:3;justify-content:flex-start;margin-top:26px;align-self:start;}
+    #p-breathe .stage{grid-column:2;grid-row:1 / span 3;min-height:0;padding:0;align-self:center;justify-content:flex-start;}
+    /* the holder is sized for the orb at full inflation; on desktop it can
+       sit a little tighter without clipping the breath animation */
+    #p-breathe .orb-holder{width:230px;height:230px;}
+    /* the other two modes are short lists -- just centre them in the wider column */
+    #p-meditate,#p-ground{max-width:720px;margin-inline:auto;}
+  }
   .btn{border:0;border-radius:999px;padding:12px 26px;font:700 0.9375rem/1 inherit;cursor:pointer;
     background:var(--r-a1);color:#fff;box-shadow:var(--r-shadow);transition:transform .15s,opacity .15s;}
   .btn:hover{transform:translateY(-1px)}

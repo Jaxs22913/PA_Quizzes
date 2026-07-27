@@ -272,11 +272,14 @@
        point in the cascade and would otherwise win by source order despite
        equal specificity. */
 
-    /* Retired in the 2026-07-27 polish pass: three dashes between the
-       logo and the tagline that divided nothing, and cost 24px of the
-       fold. Rule kept (display:none) so the markup can stay put. */
+    /* Restored 2026-07-27 at Jaxon's request, now with a reveal: the centre
+       dot lands first, then the two rules draw outward from it. */
     .brand-bars {
-      display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 auto 20px;
     }
     .brand-bars span {
       display: block;
@@ -284,9 +287,31 @@
       background: var(--ink);
       border-radius: 2px;
     }
-    .brand-bars span:nth-child(1) { width: 100px; }
+    .brand-bars span:nth-child(1) { width: 100px; transform-origin: right center; }
     .brand-bars span:nth-child(2) { width: 28px; }
-    .brand-bars span:nth-child(3) { width: 100px; }
+    .brand-bars span:nth-child(3) { width: 100px; transform-origin: left center; }
+
+    /* The dot drops in first... */
+    @keyframes mark-dot-in {
+      from { transform: scaleX(.14); opacity: 0; }
+      55%  { opacity: 1; }
+      to   { transform: none; opacity: 1; }
+    }
+    /* ...then each rule draws outward from it. */
+    @keyframes mark-rule-out {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .brand-bars span:nth-child(2) {
+      animation: mark-dot-in .46s var(--ease-spring) both;
+    }
+    .brand-bars span:nth-child(1),
+    .brand-bars span:nth-child(3) {
+      animation: mark-rule-out .58s var(--ease) .40s both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .brand-bars span { animation: none !important; transform: none !important; opacity: 1 !important; }
+    }
 
     @media (max-width: 640px) {
       body { padding: 32px 16px; }
