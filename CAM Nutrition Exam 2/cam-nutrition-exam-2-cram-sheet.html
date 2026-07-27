@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — CAM/Nutrition Exam 2</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#7a3b6a;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">CAM/Nutrition Exam 2 · Class of 2028</div>
+    <h1>CAM/Nutrition Exam 2 Cram Sheet</h1>
+    <p class="sub">Introduction to Complementary and Alternative Medicine — definitions, the five domains, and the highest-yield facts for each.</p>
+    <div class="toc">
+      <a href="#defs" style="color:#5f2e53"><span class="dot" style="background:#7a3b6a"></span>Definitions & the Landscape</a>
+      <a href="#why" style="color:#7e4821"><span class="dot" style="background:#a15c2a"></span>Why Patients Use It & Counseling</a>
+      <a href="#domains" style="color:#254f4b"><span class="dot" style="background:#2f6560"></span>The Five Domains</a>
+      <a href="#whole" style="color:#6c3047"><span class="dot" style="background:#8a3d5b"></span>1 · Whole Medical Systems</a>
+      <a href="#mindbody" style="color:#314681"><span class="dot" style="background:#3f5aa6"></span>2 · Mind-Body Medicine</a>
+      <a href="#bio" style="color:#255f36"><span class="dot" style="background:#2f7a45"></span>3 · Biologically Based Practices</a>
+      <a href="#manip" style="color:#7e5116"><span class="dot" style="background:#a2681c"></span>4 · Manipulative & Body-Based</a>
+      <a href="#energy" style="color:#5f2e6c"><span class="dot" style="background:#7a3b8a"></span>5 · Energy Therapies</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cam-nutrition-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="defs" style="--acc:#7a3b6a;--acc-bg:#ece4ea;--acc-zebra:#f6f1f5;--acc-ink:#5f2e53">
+    <div class="shead"><span class="dot" style="background:#7a3b6a"></span><h2>Definitions & the Landscape</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Conventional healthcare</td><td>Professionals treat symptoms and disease using DRUGS, RADIATION, or SURGERY. Also called allopathic, biomedicine, mainstream, orthodox, and Western medicine.</td></tr>
+          <tr><td class="h">Complementary medicine</td><td>A non-conventional approach used TOGETHER WITH conventional medicine. The therapy itself does not decide this — whether conventional care continues does.</td></tr>
+          <tr><td class="h">Alternative medicine</td><td>A non-conventional approach used IN PLACE OF conventional medicine. This is the higher-risk pattern the counseling checklist screens for.</td></tr>
+          <tr><td class="h">Integrative medicine</td><td>Patient-centered, whole-person care combining conventional medicine with evidence-based complementary therapies. Emphasizes wellness, prevention, and the therapeutic relationship.</td></tr>
+          <tr><td class="h">Functional medicine</td><td>Whole-person approach focused on underlying CONTRIBUTORS to disease: lifestyle, nutrition, environment, genetics, psychosocial factors. An approach to practice, usable by physicians, physician assistants, and nurse practitioners.</td></tr>
+          <tr><td class="h">Functional vs naturopathic</td><td>Functional medicine is a WAY CLINICIANS PRACTICE. Naturopathic medicine is a PROFESSION with its own philosophy and training, practiced by naturopathic doctors.</td></tr>
+          <tr><td class="h">Hippocrates</td><td>“Father of Medicine.” Credited with “Let food be thy medicine.”</td></tr>
+          <tr><td class="h">National center (NCCIH / formerly NCCAM)</td><td>Federal lead agency for scientific research on complementary and integrative health. Sits within the NIH, under Health and Human Services. Researches safety, effectiveness, and mechanisms; provides evidence-based information. Does NOT license, approve products, or accredit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="why" style="--acc:#a15c2a;--acc-bg:#f2e8e1;--acc-zebra:#f8f4f0;--acc-ink:#7e4821">
+    <div class="shead"><span class="dot" style="background:#a15c2a"></span><h2>Why Patients Use It & Counseling</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">6 reasons for popularity</td><td>Perceived natural/safe; desire for control; dissatisfaction with conventional outcomes; interest in holistic care; easy access; value on practitioner time and relationship.</td></tr>
+          <tr><td class="h">The disclosure gap</td><td>Many patients do not disclose unless asked. Some think providers will disapprove; others DO NOT CONSIDER SUPPLEMENTS OR HERBS TO BE “MEDICATIONS.” Ask specifically, nonjudgmentally.</td></tr>
+          <tr><td class="h">Clinician role</td><td>Open nonjudgmental dialogue; routinely ask; evaluate with best available evidence; direct to reliable sources (the national center, NIH, CDC, peer-reviewed literature); monitor herb-drug and supplement-drug interactions.</td></tr>
+          <tr><td class="h">Counseling checklist</td><td>Is there research? Does it require stopping conventional treatment? Substantial side effects? Unfounded claims (e.g. curing cancer)? Travel to another country? State-licensed for that therapy? Offered by an established institution? How expensive / out-of-pocket?</td></tr>
+          <tr><td class="h">Most-used approaches (2012 survey)</td><td>Natural products 17.7% > deep breathing 10.9% > yoga/tai chi/qi gong 10.1% > chiropractic or osteopathic manipulation 8.4% > meditation 8.0%.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="domains" style="--acc:#2f6560;--acc-bg:#e2e9e9;--acc-zebra:#f0f4f4;--acc-ink:#254f4b">
+    <div class="shead"><span class="dot" style="background:#2f6560"></span><h2>The Five Domains</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">The five domains</td><td>(1) Whole medical systems (2) Mind-body medicine (3) Biologically based practices (4) Manipulative and body-based practices (5) Energy therapies.</td></tr>
+          <tr><td class="h">The stated caveat</td><td>Commonly used for teaching, but MANY THERAPIES OVERLAP CATEGORIES. Current efforts emphasize evaluating evidence, safety, and effectiveness of specific practices over classification.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="whole" style="--acc:#8a3d5b;--acc-bg:#efe4e8;--acc-zebra:#f7f1f4;--acc-ink:#6c3047">
+    <div class="shead"><span class="dot" style="background:#8a3d5b"></span><h2>1 · Whole Medical Systems</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Complete systems with their own philosophy and explanation of disease, diagnosis, and therapy, evolved SEPARATELY from conventional medicine. Examples: Ayurveda, homeopathy, naturopathy, traditional Chinese medicine.</td></tr>
+          <tr><td class="h">Ayurveda</td><td>Traditional system of India. Sanskrit ayur (life) + veda (knowledge/science). Health = balance of the doshas; illness = imbalance. Treats with diet, herbs, massage, meditation, yoga, internal cleansing.</td></tr>
+          <tr><td class="h">The 3 doshas</td><td>VATA = space/ether + air → movement, circulation, communication. PITTA = fire + water → digestion, metabolism, temperature. KAPHA = water + earth → structure, stability, lubrication.</td></tr>
+          <tr><td class="h">Ayurveda safety</td><td>Some preparations contain metals, minerals, or gems. 1 IN 4 supplements tested had high LEAD; ALMOST HALF had high MERCURY. FDA warns some products may be harmful.</td></tr>
+          <tr><td class="h">Homeopathy origin</td><td>Germany, late 1700s. Greek homeo (like) + pathos (disease).</td></tr>
+          <tr><td class="h">Law of similars</td><td>“Like cures like” — a substance producing symptoms in the healthy treats those symptoms in illness. Example: cutting onions → burning teary eyes, runny nose → Allium cepa for colds/hay fever.</td></tr>
+          <tr><td class="h">Law of minimum dose</td><td>The LOWER the dose, the GREATER the effect. Repeated dilution and shaking = SUCCUSSION. Sources: plants (red onion, poison ivy, belladonna), minerals (arsenic), animals (crushed whole bees).</td></tr>
+          <tr><td class="h">Homeopathy evidence</td><td>Theories not consistent with established chemistry, pharmacology, biology. Little convincing evidence for most conditions. CAUTION: some products labeled homeopathic are NOT highly diluted and may contain substantial active ingredient.</td></tr>
+          <tr><td class="h">Naturopathy</td><td>Founded on the healing power of nature; body's inherent capacity to heal. Finds the CAUSE rather than treating symptoms. Uses hydrotherapy, dietary counseling, supplements, herbs, acupuncture, physical and mind-body therapies, exercise.</td></tr>
+          <tr><td class="h">Traditional Chinese medicine</td><td>Qi (“chee”) = vital force flowing along MERIDIANS. Disease = disrupted/imbalanced Qi. Health = balance of YIN and YANG. Five elements: EARTH, FIRE, WATER, WOOD, METAL. Practices: acupuncture, herbal medicine, dietary therapy, massage, tai chi, qigong.</td></tr>
+          <tr><td class="h">TCM safety</td><td>Some Chinese herbal products contain HEAVY METALS, PESTICIDES, and MICROORGANISMS. Evidence varies by product and condition. Consider herb-drug interactions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="mindbody" style="--acc:#3f5aa6;--acc-bg:#e4e8f3;--acc-zebra:#f2f3f9;--acc-ink:#314681">
+    <div class="shead"><span class="dot" style="background:#3f5aa6"></span><h2>2 · Mind-Body Medicine</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition & uses</td><td>Interactions between BRAIN, MIND, BODY, and BEHAVIOR and their influence on health. Used for chronic pain, anxiety and stress disorders, insomnia, headache, cancer-related symptoms.</td></tr>
+          <tr><td class="h">Biofeedback</td><td>Principle: “ANYTHING THAT CAN BE MEASURED CAN BE CHANGED.” Electronic monitoring of heart rate, blood pressure, muscle activity, skin temperature, breathing, brain activity. GOAL = self-regulation WITHOUT the equipment.</td></tr>
+          <tr><td class="h">Biofeedback types</td><td>ELECTROMYOGRAPHIC: skin sensors detect muscle-tension electrical activity → tension headache, migraine, rehabilitation, pelvic floor dysfunction. BREATHING: chest/abdomen sensors → anxiety, stress; develops diaphragmatic breathing.</td></tr>
+          <tr><td class="h">Guided imagery vs visualization</td><td>VISUALIZATION = “seeing” images in the mind's eye. GUIDED IMAGERY = uses ONE OR MORE SENSES to create a detailed mental experience. May reduce stress, anxiety, pain.</td></tr>
+          <tr><td class="h">Hypnosis</td><td>Focused attention + reduced peripheral awareness + enhanced response to suggestion. NOT SLEEP. Mechanism poorly understood; responsiveness varies.</td></tr>
+          <tr><td class="h">Hypnosis indications</td><td>Acute/chronic pain, anxiety, stress, phobias, irritable bowel syndrome, nausea and vomiting, procedure-related distress, habit disorders, insomnia, childbirth support.</td></tr>
+          <tr><td class="h">Hypnosis myths</td><td>NOT only entertainment; people do NOT lose consciousness or memory; the therapist does NOT control the patient; it is NOT sleep.</td></tr>
+          <tr><td class="h">Meditation</td><td>Intentionally focusing attention and awareness. TRANSCENDENTAL = silent MANTRA, 20 MINUTES TWICE DAILY. MINDFULNESS = present-moment awareness WITHOUT interpretation or judgment.</td></tr>
+          <tr><td class="h">Relaxation therapy</td><td>Promotes the relaxation response, counteracting stress: SLOWER BREATHING, DECREASED HEART RATE, LOWER BLOOD PRESSURE. Techniques: progressive muscle relaxation (tense/relax groups), guided imagery.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="bio" style="--acc:#2f7a45;--acc-bg:#e2ece5;--acc-zebra:#f0f6f2;--acc-ink:#255f36">
+    <div class="shead"><span class="dot" style="background:#2f7a45"></span><h2>3 · Biologically Based Practices</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">The four practices</td><td>Botanical medicine, natural products and supplements, chelation therapy, diet therapies.</td></tr>
+          <tr><td class="h">Botanical medicine</td><td>Plants or plant extracts used medicinally — plant materials, algae, macroscopic fungi. Forms: tea, powder, tablet, capsule, elixir, topical, injection. (Opiates from poppy, digoxin from foxglove, vincristine from periwinkle.)</td></tr>
+          <tr><td class="h">Dietary supplements</td><td>Among the MOST COMMONLY USED complementary approaches; available without prescription. Vitamins, minerals, probiotics, botanicals, specialty products. Often used without telling clinicians — consider adverse effects and drug-supplement interactions.</td></tr>
+          <tr><td class="h">Chelation mechanism & uses</td><td>Chelating drugs BIND METALS and ENHANCE THEIR EXCRETION. Established: lead poisoning, iron overload, other heavy metal toxicity. Exposures: LEAD (old paint, plumbing), ARSENIC (well water, rice), MERCURY (fish).</td></tr>
+          <tr><td class="h">Chelation controversy</td><td>EDTA infusions marketed for cardiovascular disease: evidence LIMITED and CONTROVERSIAL; NOT a substitute for evidence-based treatment. Risks: kidney injury, hypocalcemia, infusion-related complications.</td></tr>
+          <tr><td class="h">Diet therapies</td><td>Mediterranean, plant-based, intermittent fasting. May support prevention/management of chronic disease. Evidence varies by pattern and condition; weigh nutritional adequacy and patient-specific factors.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="manip" style="--acc:#a2681c;--acc-bg:#f2eadf;--acc-zebra:#f8f4ef;--acc-ink:#7e5116">
+    <div class="shead"><span class="dot" style="background:#a2681c"></span><h2>4 · Manipulative & Body-Based</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Focus on the MUSCULOSKELETAL SYSTEM AND SOFT TISSUES — bones, joints, muscles, connective tissue — using hands-on technique to improve function and reduce pain.</td></tr>
+          <tr><td class="h">Chiropractic</td><td>Diagnosis and management of musculoskeletal conditions, PARTICULARLY THE SPINE. Spinal manipulation plus exercise therapy, rehabilitation, heat/cold, massage, lifestyle counseling.</td></tr>
+          <tr><td class="h">Doctor of osteopathic medicine</td><td>A FULLY LICENSED PHYSICIAN — prescribes, performs procedures, practices any specialty. Four years of medical school plus residency, with extra musculoskeletal and osteopathic training. OMT commonly for low back and neck pain.</td></tr>
+          <tr><td class="h">Cupping</td><td>Vacuum created inside a cup on the skin; suction ELEVATES skin and underlying tissue. Thought to increase local blood flow. Evidence limited; benefits primarily SHORT TERM.</td></tr>
+          <tr><td class="h">Massage</td><td>Manipulation of the body's soft tissues; practiced in most cultures throughout history. Types: Swedish, deep tissue, hot stone.</td></tr>
+          <tr><td class="h">Reflexology</td><td>Pressure to specific areas of the FEET, HANDS, or EARS believed to correspond to organs or body systems. Evidence limited and inconsistent.</td></tr>
+          <tr><td class="h">Gua sha</td><td>Also SCRAPING, COINING, SPOONING. Repeated strokes with a smooth-edged instrument. May increase local blood flow and reduce muscle tension. Used for neck and back pain; evidence limited.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="energy" style="--acc:#7a3b8a;--acc-bg:#ece4ef;--acc-zebra:#f6f1f7;--acc-ink:#5f2e6c">
+    <div class="shead"><span class="dot" style="background:#7a3b8a"></span><h2>5 · Energy Therapies</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Basis</td><td>Belief that BIOFIELDS (energy fields) influence health and healing; traditions describe a vital life force such as Qi. The EXISTENCE AND CLINICAL SIGNIFICANCE OF SUBTLE BIOFIELDS HAVE NOT BEEN CONCLUSIVELY DEMONSTRATED scientifically.</td></tr>
+          <tr><td class="h">Acupuncture</td><td>Thin needles inserted at specific points. In TCM, stimulation influences the flow of Qi along meridians. Modern research suggests it may influence PAIN-PROCESSING PATHWAYS; benefits selected pain and symptom-management uses.</td></tr>
+          <tr><td class="h">Reiki</td><td>Biofield therapy; practitioners believe energy is directed THROUGH THE HANDS, placed lightly on or just above the body. Used for relaxation, stress reduction, well-being. Evidence limited and inconclusive.</td></tr>
+          <tr><td class="h">Tai chi</td><td>Slow controlled movements + breathing + focused attention, based on balancing Qi. “MEDITATION IN MOTION.” May improve BALANCE, physical function, and well-being.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the CAM/Nutrition Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide. More topics will be added as later Exam 2 lecture decks are posted.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

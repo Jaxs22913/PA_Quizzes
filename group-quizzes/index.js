@@ -129,6 +129,8 @@ window.GROUP_INDEX = {
 "cam-nutrition-exam-1-special-topics-nutrition-quiz-version-2":{"title":"Special Topics in Nutrition (Set 2) — CAM/Nutrition Exam 1","category":"CAM / Nutrition","n":30},
 "cam-nutrition-exam-1-weight-control-quiz":{"title":"Weight Control — CAM/Nutrition Exam 1","category":"CAM / Nutrition","n":30},
 "cam-nutrition-exam-1-weight-control-quiz-version-2":{"title":"Weight Control (Set 2) — CAM/Nutrition Exam 1","category":"CAM / Nutrition","n":30},
+"cam-nutrition-exam-2-introduction-to-cam-quiz":{"title":"Introduction to CAM — CAM/Nutrition Exam 2","category":"CAM / Nutrition","n":30},
+"cam-nutrition-exam-2-introduction-to-cam-quiz-version-2":{"title":"Introduction to CAM (Set 2) — CAM/Nutrition Exam 2","category":"CAM / Nutrition","n":30},
 "intro-to-pa-profession-pa-intro-comprehensive-quiz-a":{"title":"Intro to the PA Profession — Form A","category":"Intro to PA","n":60},
 "intro-to-pa-profession-pa-intro-comprehensive-quiz-b":{"title":"Intro to the PA Profession — Form B","category":"Intro to PA","n":60},
 "intro-to-pa-profession-pa-intro-comprehensive-quiz-c":{"title":"Intro to the PA Profession — Form C","category":"Intro to PA","n":60},
