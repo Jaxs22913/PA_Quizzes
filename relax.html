@@ -120,10 +120,17 @@
     #p-breathe .chips{grid-column:1;grid-row:1;justify-content:flex-start;margin-top:4px;}
     #p-breathe .pat-desc{grid-column:1;grid-row:2;text-align:left;}
     #p-breathe .controls{grid-column:1;grid-row:3;justify-content:flex-start;margin-top:26px;align-self:start;}
-    #p-breathe .stage{grid-column:2;grid-row:1 / span 3;min-height:0;padding:0;align-self:center;justify-content:flex-start;}
-    /* the holder is sized for the orb at full inflation; on desktop it can
-       sit a little tighter without clipping the breath animation */
-    #p-breathe .orb-holder{width:230px;height:230px;}
+    #p-breathe .stage{grid-column:2;grid-row:1 / span 3;min-height:0;padding:0;align-self:center;}
+    /* a bigger orb now that it has its own column to live in */
+    #p-breathe .orb-holder{width:330px;height:330px;}
+    #p-breathe .orb{width:300px;height:300px;}
+    /* Everything in the left column shares one edge -- the mode tabs and the
+       ambient row were centred while the chips, description and button below
+       them were left-aligned, which is what made the page read lopsided. */
+    .modes{margin-left:0;margin-right:auto;}
+    .scape{justify-content:flex-start;margin-left:0;margin-right:auto;}
+    .scape-opts{justify-content:flex-start;}
+    .sos-btn{margin-left:0;}
     /* the other two modes are short lists -- just centre them in the wider column */
     #p-meditate,#p-ground{max-width:720px;margin-inline:auto;}
   }
