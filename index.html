@@ -532,6 +532,8 @@
        before the >=1180px block, so that block's `margin: 0` wins on desktop). */
     .relax-cta-row, .group-cta-row { text-align: center; margin: 14px 0 0; }
     .guides-btn-floating { display: none; }
+    /* Arcade lives inline beside the search box until the rail exists. */
+    .arcade-cta-row { display: none; }
 
     /* Must come after both base `margin: 18px 0`/`display: none` rules above
        so it wins the cascade at this breakpoint (media queries don't add
@@ -559,9 +561,11 @@
          so shrink it here just enough to hold one line (~208px in a ~210px
          content box). */
       .stats-widget .cc-label { font-size: 10.5px; letter-spacing: -.2px; }
-      /* Left rail (top -> bottom): #relax-cta-row -> stats card -> #group-cta-row
-         -> #continue-widget. Exact tops set by alignSidebars() (dynamic heights). */
-      .relax-cta-row, .group-cta-row {
+      /* Left rail (top -> bottom): #relax-cta-row -> #group-cta-row ->
+         #arcade-cta-row -> stats card -> #continue-widget. Exact tops set by
+         alignSidebars() (dynamic heights). */
+      .arcade-cta-row { display: block; }
+      .relax-cta-row, .group-cta-row, .arcade-cta-row {
         position: absolute;
         right: calc(100% + 24px);
         width: 260px;
@@ -590,10 +594,10 @@
         right: calc(100% + 24px);
         width: 260px;
       }
-      /* Arcade has no floating sidebar counterpart (no widget to pair it
-         with) -- :not() keeps it inline next to search here instead of
-         disappearing along with the other two. */
-      .search-wrap .guides-btn:not(.arcade-btn), .search-wrap .group-btn { display: none; }
+      /* Every nav button has a rail counterpart at this width (Arcade gained
+         one 2026-07-27), so the search input gets the whole row to itself --
+         .search-input-box is already flex:1, so it simply stretches. */
+      .search-wrap .guides-btn, .search-wrap .group-btn { display: none; }
     }
     .continue-widget.hidden { display: none; }
     .continue-title {
@@ -750,12 +754,12 @@
     @media (prefers-reduced-motion: reduce) {
       .relax-cta:hover .sprig .vine { animation: none; stroke-dashoffset: 0; }
       .relax-cta:hover .sprig .leaf { animation: none; transform: scale(1); }
-      .relax-cta:not(.group-cta):hover { animation: none; box-shadow: 0 8px 22px rgba(37,99,235,.3); }
+      .relax-cta:not(.group-cta):not(.arcade-cta):hover { animation: none; box-shadow: 0 8px 22px rgba(37,99,235,.3); }
     }
     .relax-cta .leaf-blade { fill: rgba(37,99,235,.15); transition: fill .5s var(--ease); }
     .relax-cta:hover { border-color: var(--accent, #2a6df2); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.16); }
     /* Relax widget only: a blue aura that gently pulses/exudes on hover */
-    .relax-cta:not(.group-cta):hover { animation: relax-aura 2s ease-in-out infinite; }
+    .relax-cta:not(.group-cta):not(.arcade-cta):hover { animation: relax-aura 2s ease-in-out infinite; }
     @keyframes relax-aura {
       0%, 100% { box-shadow: 0 6px 16px rgba(37,99,235,.18), 0 0 12px rgba(37,99,235,.16); }
       50% { box-shadow: 0 9px 26px rgba(37,99,235,.32), 0 0 34px rgba(37,99,235,.42); }
@@ -766,6 +770,19 @@
     /* Group Study widget: icon springs on hover (its own effect, since it has no leaf/branches) */
     .group-cta svg { transition: transform .3s var(--ease-spring); }
     .group-cta:hover svg { transform: scale(1.14); }
+    /* Arcade widget: the two stacked cabinet screens spread apart on hover,
+       like a deck of cards being fanned -- its own effect, matching the
+       colour burst the JS already fires from this button. */
+    .arcade-cta .cab-back, .arcade-cta .cab-front {
+      transition: transform .32s var(--ease-spring);
+      transform-box: fill-box; transform-origin: center;
+    }
+    .arcade-cta:hover .cab-back { transform: translate(-1.6px, 1.6px); }
+    .arcade-cta:hover .cab-front { transform: translate(1.6px, -1.6px); }
+    @media (prefers-reduced-motion: reduce) {
+      .arcade-cta .cab-back, .arcade-cta .cab-front { transition: none; }
+      .arcade-cta:hover .cab-back, .arcade-cta:hover .cab-front { transform: none; }
+    }
     .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
     @media (prefers-reduced-motion: reduce) {
       .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
@@ -1497,6 +1514,17 @@
       <a href="group-join.html" class="relax-cta group-cta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
         <span>Group Study</span>
+      </a>
+    </div>
+
+    <!-- Arcade's rail counterpart. Below 1220px this is hidden and the inline
+         .search-wrap button is used instead (same pattern as Guides' floating
+         button); above it, the inline button hides and the search input takes
+         the full row. -->
+    <div id="arcade-cta-row" class="arcade-cta-row">
+      <a href="arcade.html" class="relax-cta arcade-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="cab-back" x="3" y="8" width="14" height="10" rx="2"/><rect class="cab-front" x="7" y="4" width="14" height="10" rx="2"/></svg>
+        <span>Arcade</span>
       </a>
     </div>
 
@@ -2966,6 +2994,7 @@
         if (weekEl) weekEl.style.top = offset + "px";
         const relaxEl = document.getElementById("relax-cta-row");
         const groupEl = document.getElementById("group-cta-row");
+        const arcadeEl = document.getElementById("arcade-cta-row");
         const guidesFloatBtn = document.getElementById("guides-btn-floating");
         const searchInput = document.getElementById("site-search");
         const searchWrap = document.querySelector(".search-wrap");
@@ -2980,13 +3009,16 @@
             guidesFloatBtn.style.top = btnTop + "px";
           }
         }
-        // Left rail (top -> bottom): Relax -> Group Study -> stats card -> Continue.
+        // Left rail (top -> bottom): Relax -> Group Study -> Arcade -> stats card -> Continue.
         if (relaxEl) relaxEl.style.top = btnTop + "px";
         var relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
         var groupTop = btnTop + (relaxH ? relaxH + 18 : 0);
         if (groupEl) groupEl.style.top = groupTop + "px";
         var groupH = groupEl ? groupEl.getBoundingClientRect().height / zoom : 0;
-        var statsTop = groupTop + (groupH ? groupH + 18 : 0);
+        var arcadeTop = groupTop + (groupH ? groupH + 18 : 0);
+        if (arcadeEl) arcadeEl.style.top = arcadeTop + "px";
+        var arcadeH = arcadeEl ? arcadeEl.getBoundingClientRect().height / zoom : 0;
+        var statsTop = arcadeTop + (arcadeH ? arcadeH + 18 : 0);
         if (statsEl) statsEl.style.top = statsTop + "px";
         var statsH = statsEl ? statsEl.getBoundingClientRect().height / zoom : 0;
         if (continueEl) continueEl.style.top = (statsTop + (statsH ? statsH + 18 : 0)) + "px";
@@ -3817,9 +3849,8 @@
     // 2026-07-18. Purely decorative; skipped under prefers-reduced-motion.
     // Guides' book-icon crossfade is pure CSS (.guides-icon-wrap), no JS
     // needed. href-based selectors grab both the inline .search-wrap button
-    // and the >=1180px floating counterpart in one query (Arcade has no
-    // floating counterpart, see the CSS comment above .guides-btn-floating,
-    // so its selector only ever matches one element).
+    // and the rail counterpart in one query -- only one of the pair is ever
+    // displayed at a given width, so binding both is harmless.
     (function () {
       function reducedMotion() {
         return window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -3857,7 +3888,7 @@
           })(i);
         }
       }
-      document.querySelectorAll('a.guides-btn[href="arcade.html"]').forEach(function (btn) {
+      document.querySelectorAll('a[href="arcade.html"]').forEach(function (btn) {
         btn.addEventListener("mouseenter", function () { burstFromButton(btn); });
       });
 
