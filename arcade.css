@@ -1,20 +1,25 @@
 :root {
   --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; --ink: #1f2937; --muted: #6b7280;
-  --accent: #2563eb; --accent-soft: #eff6ff;
-  --accent2: #16a34a; --accent2-soft: #f0fdf4;
-  --accent3: #9333ea; --accent3-soft: #f3e8ff;
-  --accent4: #d97706; --accent4-soft: #fffbeb;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-  --shadow-lift: 0 4px 10px rgba(0,0,0,0.07), 0 14px 32px rgba(0,0,0,0.09);
+  /* The four mode lights, all on the shared accent recipe (4.60:1).
+     Study=blue  Learn=green  Sprint=violet  Match=amber. The marquee
+     down each edge chases these same four, so it doubles as the legend. */
+  --accent: #2a6df2; --accent-soft: #eff5ff;
+  --accent2: #218640; --accent2-soft: #e7fbea;
+  --accent3: #9c46f3; --accent3-soft: #f7f2ff;
+  --accent4: #ad631e; --accent4-soft: #fff2e8;
+  --surface-accent: #9c46f3;   /* Arcade's own identity hue: violet = play */
+  --shadow: 0 2px 4px rgba(16,20,28,.04), 0 8px 20px rgba(16,20,28,.06);
+  --shadow-lift: 0 6px 12px rgba(16,20,28,.06), 0 20px 44px rgba(16,20,28,.09);
 }
 :root[data-theme="dark"] {
   --bg: #0f1115; --card: #191c22; --border: #2a2e37; --ink: #e5e7eb; --muted: #9aa1ac;
-  --accent: #60a5fa; --accent-soft: #16213a;
-  --accent2: #4ade80; --accent2-soft: #12251a;
-  --accent3: #c084fc; --accent3-soft: #2e1a47;
-  --accent4: #fbbf24; --accent4-soft: #2e2410;
-  --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
-  --shadow-lift: 0 6px 14px rgba(0,0,0,0.35), 0 18px 36px rgba(0,0,0,0.4);
+  --accent: #4981ee; --accent-soft: #14223d;
+  --accent2: #31974d; --accent2-soft: #0c2a13;
+  --accent3: #a465ee; --accent3-soft: #281c39;
+  --accent4: #c0722d; --accent4-soft: #361b04;
+  --surface-accent: #a465ee;
+  --shadow: 0 2px 4px rgba(0,0,0,.40), 0 8px 20px rgba(0,0,0,.46);
+  --shadow-lift: 0 6px 12px rgba(0,0,0,.46), 0 20px 44px rgba(0,0,0,.56);
 }
 /* Ambient background gradient drift (added 2026-07-17), covers Arcade +
    all 4 modes since they share this stylesheet. Wins over the plain `body
@@ -30,25 +35,37 @@
    against black in dark mode, bold candy tones in light mode -- instead of
    their pre-muted -soft counterparts, while still cycling through the same
    four mode colors for consistency with the marquee lights/badges. */
+/* Interpolated in oklab, not srgb. Mixing saturated hues through sRGB
+   drags every midpoint toward grey -- that muddy band between the stops was
+   what made this read cheap, not the saturation itself. oklab keeps the
+   transitions clean, so the colour stays vivid the whole way round.
+   A second, static layer adds a vertical lightness falloff so the page has
+   depth instead of sitting at one flat mid-tone. */
 :root[data-theme="dark"] body {
-  background: linear-gradient(120deg,
-    color-mix(in srgb, var(--accent) 35%, black),
-    color-mix(in srgb, var(--accent2) 35%, black),
-    color-mix(in srgb, var(--accent3) 35%, black),
-    color-mix(in srgb, var(--accent4) 35%, black),
-    color-mix(in srgb, var(--accent) 35%, black));
-  background-size: 400% 400%;
-  animation: bg-drift 16s ease-in-out infinite;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,.05), rgba(0,0,0,.20)),
+    linear-gradient(in oklab 120deg,
+      color-mix(in oklab, var(--accent) 35%, black),
+      color-mix(in oklab, var(--accent2) 35%, black),
+      color-mix(in oklab, var(--accent3) 35%, black),
+      color-mix(in oklab, var(--accent4) 35%, black),
+      color-mix(in oklab, var(--accent) 35%, black));
+  background-size: 100% 100%, 400% 400%;
+  background-attachment: fixed, scroll;
+  animation: bg-drift 26s ease-in-out infinite;
 }
 :root[data-theme="light"] body {
-  background: linear-gradient(120deg,
-    color-mix(in srgb, var(--accent) 42%, white),
-    color-mix(in srgb, var(--accent2) 42%, white),
-    color-mix(in srgb, var(--accent3) 42%, white),
-    color-mix(in srgb, var(--accent4) 42%, white),
-    color-mix(in srgb, var(--accent) 42%, white));
-  background-size: 400% 400%;
-  animation: bg-drift 16s ease-in-out infinite;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,.34), rgba(255,255,255,0) 42%, rgba(20,14,40,.07)),
+    linear-gradient(in oklab 120deg,
+      color-mix(in oklab, var(--accent) 42%, white),
+      color-mix(in oklab, var(--accent2) 42%, white),
+      color-mix(in oklab, var(--accent3) 42%, white),
+      color-mix(in oklab, var(--accent4) 42%, white),
+      color-mix(in oklab, var(--accent) 42%, white));
+  background-size: 100% 100%, 400% 400%;
+  background-attachment: fixed, scroll;
+  animation: bg-drift 26s ease-in-out infinite;
 }
 @keyframes bg-drift {
   0%, 100% { background-position: 0% 50%; }
@@ -128,10 +145,14 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 32%, black 68%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 32%, black 68%, transparent 100%);
 }
-.edge-decor circle { animation: dot-twinkle 2.4s ease-in-out infinite; }
-.edge-decor circle:nth-of-type(2) { animation-delay: .3s; }
-.edge-decor circle:nth-of-type(3) { animation-delay: .6s; }
-.edge-decor circle:nth-of-type(4) { animation-delay: .9s; }
+/* Bulbs are addressed by class, not nth-of-type -- the pattern now holds
+   halos and filler bulbs as well, so positional selectors no longer line up
+   with the four mode lights. .i1-.i4 stagger the chase down the column. */
+.edge-decor .mq-bulb, .edge-decor .mq-fill { animation: dot-twinkle 2.4s ease-in-out infinite; }
+.edge-decor .mq-halo { opacity: 0; }
+.edge-decor .i2 { animation-delay: .3s; }
+.edge-decor .i3 { animation-delay: .6s; }
+.edge-decor .i4 { animation-delay: .9s; }
 @media (prefers-reduced-motion: reduce) {
   .edge-decor, .edge-decor circle { animation: none; }
 }
@@ -151,19 +172,39 @@ body {
   50% { opacity: 0.9; }
 }
 @keyframes dot-flash-strong {
-  0%, 100% { opacity: .22; filter: brightness(1); }
-  45% { opacity: 1; filter: brightness(1.7); }
+  0%, 100% { opacity: .22; }
+  45% { opacity: 1; }
+}
+/* The halo swells and fades as the chase passes, so a lit bulb reads as
+   actually glowing rather than just brightening -- geometry, not a filter,
+   because filters on <pattern> children don't render reliably. */
+@keyframes bulb-halo {
+  0%, 100% { opacity: 0; transform: scale(.55); }
+  45%      { opacity: .38; transform: scale(1); }
+}
+@keyframes fill-flash {
+  0%, 100% { opacity: .14; }
+  45%      { opacity: .55; }
 }
 .edge-decor.flash-strong {
   animation: homescreen-edge-glow 2.6s ease-in-out infinite;
 }
-.edge-decor.flash-strong circle { animation: dot-flash-strong 1.8s ease-in-out infinite; }
-.edge-decor.flash-strong circle:nth-of-type(1) { animation-delay: 0s; }
-.edge-decor.flash-strong circle:nth-of-type(2) { animation-delay: .45s; }
-.edge-decor.flash-strong circle:nth-of-type(3) { animation-delay: .9s; }
-.edge-decor.flash-strong circle:nth-of-type(4) { animation-delay: 1.35s; }
+.edge-decor.flash-strong .mq-bulb { animation: dot-flash-strong 1.8s ease-in-out infinite; }
+.edge-decor.flash-strong .mq-fill { animation: fill-flash 1.8s ease-in-out infinite; }
+.edge-decor.flash-strong .mq-halo {
+  animation: bulb-halo 1.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.edge-decor.flash-strong .i1 { animation-delay: 0s; }
+.edge-decor.flash-strong .i2 { animation-delay: .45s; }
+.edge-decor.flash-strong .i3 { animation-delay: .9s; }
+.edge-decor.flash-strong .i4 { animation-delay: 1.35s; }
 @media (prefers-reduced-motion: reduce) {
-  .edge-decor.flash-strong, .edge-decor.flash-strong circle { animation: none; opacity: .18; }
+  .edge-decor.flash-strong,
+  .edge-decor.flash-strong .mq-bulb,
+  .edge-decor.flash-strong .mq-fill { animation: none; opacity: .18; }
+  .edge-decor.flash-strong .mq-halo { animation: none; opacity: 0; }
 }
 .page {
   max-width: 640px; margin: 0 auto; padding: 28px 22px 60px; position: relative;
@@ -246,11 +287,14 @@ body {
 }
 
 .streak-pill {
-  display: inline-flex; align-items: center; gap: 7px; background: var(--card);
+  /* gap:0 -- the flex gap used to fall between the count and the "-day
+     streak" label, rendering as "0 -day streak". Only the flame needs
+     separating from the text, so it carries the spacing itself. */
+  display: inline-flex; align-items: center; gap: 0; background: var(--card);
   border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px 7px 12px;
   font-weight: 700; font-size: 14px; box-shadow: var(--shadow); margin: 16px 0 22px;
 }
-.streak-pill .flame { font-size: 15px; display: inline-block; animation: flame-pulse 1.6s ease-in-out infinite; }
+.streak-pill .flame { font-size: 15px; display: inline-block; margin-right: 7px; animation: flame-pulse 1.6s ease-in-out infinite; }
 @keyframes flame-pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }
@@ -389,7 +433,7 @@ body {
 .rating-btn:hover { filter: brightness(1.07); }
 .rating-btn span.k { font-size: 13px; opacity: .82; font-weight: 700; letter-spacing: .02em; }
 .rating-again { background: #dc2626; }
-.rating-good { background: #16a34a; }
+.rating-good { background: #218640; }
 .rating-btn:active { transform: scale(0.95); }
 
 .keyhint { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; line-height: 1.5; }

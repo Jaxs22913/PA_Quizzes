@@ -16,7 +16,7 @@
   }
   #pull-refresh svg { width: 100%; height: 44px; }
   #pull-refresh path {
-    fill: none; stroke: #2563eb; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    fill: none; stroke: #ad631e; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
     stroke-dasharray: 420; stroke-dashoffset: 420;
   }
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
@@ -36,7 +36,7 @@
 <style>
   :root {
     --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; --ink: #1f2937; --muted: #6b7280;
-    --accent: #2563eb; --accent-soft: #eff6ff;
+    --accent: #ad631e; --accent-soft: #fff2e8;   /* amber: the library surface */
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
   }
   /* Ambient background gradient drift (added 2026-07-17), light mode only --
@@ -51,7 +51,7 @@
      already used for "reference guide" cards below, evoking a
      library/reading-lamp feel that fits a study-guide page specifically. */
   :root[data-theme="light"] body {
-    background: linear-gradient(120deg, #f6f1e6, #eaf0fb, #fbecd2, #f6f1e6);
+    background: linear-gradient(in oklab 120deg, #f7f2e7, #f3ead9, #fbeed4, #f7f2e7);
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
@@ -173,14 +173,46 @@
     letter-spacing: .05em; color: var(--muted); margin: 0 0 12px;
   }
   .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  /* Every card type now carries the same two signals -- a coloured left
+     edge and a badge -- so the set reads as one system. Previously only
+     cram and reference cards had them, which made those look like
+     exceptions rather than members of a family. */
   .guide-card {
-    display: block; background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 4px solid var(--a-blue);
+    border-radius: 14px; padding: 15px 18px 16px; box-shadow: var(--shadow);
     text-decoration: none; color: var(--ink);
+    transition: border-color var(--dur-1,160ms) var(--ease, ease),
+                box-shadow var(--dur-1,160ms) var(--ease, ease),
+                transform var(--dur-1,160ms) var(--ease, ease);
   }
-  .guide-card:hover { border-color: var(--accent); }
+  .guide-card:hover {
+    border-color: var(--a-blue);
+    box-shadow: var(--e-3);
+    transform: translateY(-2px);
+  }
+  .guide-badge {
+    display: inline-block; align-self: flex-start;
+    font: 700 9.5px/1 var(--font-sans, ui-sans-serif);
+    text-transform: uppercase; letter-spacing: .06em;
+    color: var(--a-blue); background: var(--a-blue-soft);
+    border: 1px solid color-mix(in oklab, var(--a-blue) 22%, transparent);
+    padding: 3px 8px; border-radius: 999px; margin: 0 0 7px;
+  }
   .guide-card-title { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
-  .guide-card-desc { font-size: 13px; color: var(--muted); margin: 0; }
+  /* Descriptions were running to full paragraphs, which left every grid row
+     ragged. Two lines, then ellipsis -- the card is a doorway, not the
+     content. */
+  .guide-card-desc {
+    font-size: 13px; color: var(--muted); margin: 0;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .guide-card { transition: none; }
+    .guide-card:hover { transform: none; }
+  }
 
   /* Within each class group, always order the cards Study Guides -> Cram
      Sheets -> Quick References, regardless of their source order (grid items
@@ -192,12 +224,13 @@
   /* Quick-reference guides (non-cumulative — hormones, blood flow, peritoneum,
      flow sequences, etc.) get a distinct amber treatment so they read as
      companion references rather than the main cumulative exam guide. */
-  .guide-card.ref { border-left: 4px solid #d97706; background: #fffaf3; }
-  .guide-card.ref:hover { border-color: #d97706; }
+  .guide-card.ref { border-left-color: var(--a-amber); }
+  .guide-card.ref:hover { border-color: var(--a-amber); }
   .ref-badge {
-    display: inline-block; font: 700 9.5px/1 ui-sans-serif, -apple-system, sans-serif;
-    text-transform: uppercase; letter-spacing: .06em; color: #b45309;
-    background: #fef3e2; border: 1px solid #fde3b8; padding: 3px 8px;
+    display: inline-block; align-self: flex-start;
+    font: 700 9.5px/1 var(--font-sans, ui-sans-serif);
+    text-transform: uppercase; letter-spacing: .06em; color: var(--a-amber);
+    background: var(--a-amber-soft); border: 1px solid color-mix(in oklab, var(--a-amber) 22%, transparent); padding: 3px 8px;
     border-radius: 999px; margin: 0 0 7px;
   }
 
@@ -205,12 +238,13 @@
      from the amber "Quick Reference" treatment so it reads as its own kind
      of companion (a compressed version of THIS exam's own guide, not a
      standalone cross-cutting reference). */
-  .guide-card.cram { border-left: 4px solid #7c3aed; background: #faf8ff; }
-  .guide-card.cram:hover { border-color: #7c3aed; }
+  .guide-card.cram { border-left-color: var(--a-violet); }
+  .guide-card.cram:hover { border-color: var(--a-violet); }
   .cram-badge {
-    display: inline-block; font: 700 9.5px/1 ui-sans-serif, -apple-system, sans-serif;
-    text-transform: uppercase; letter-spacing: .06em; color: #6d28d9;
-    background: #f1eafe; border: 1px solid #ded0fb; padding: 3px 8px;
+    display: inline-block; align-self: flex-start;
+    font: 700 9.5px/1 var(--font-sans, ui-sans-serif);
+    text-transform: uppercase; letter-spacing: .06em; color: var(--a-violet);
+    background: var(--a-violet-soft); border: 1px solid color-mix(in oklab, var(--a-violet) 22%, transparent); padding: 3px 8px;
     border-radius: 999px; margin: 0 0 7px;
   }
 
@@ -236,7 +270,7 @@
   .guide-filter-chip.active:hover { color: #fff; transform: none; }
   .guide-filter-chip.active .fc-count { opacity: .8; }
   .guide-filter-chip[data-filter="cram"].active { background: #7c3aed; border-color: #7c3aed; }
-  .guide-filter-chip[data-filter="ref"].active { background: #d97706; border-color: #d97706; }
+  .guide-filter-chip[data-filter="ref"].active { background: var(--a-amber); border-color: var(--a-amber); }
 
   .empty-state {
     background: var(--card); border: 1px solid var(--border); border-radius: 16px;
@@ -252,10 +286,10 @@
 <body class="guides-page">
 <style>
   .footer-mark-ink { stroke: #1f2937; }
-  .footer-mark-accent { stroke: #2563eb; }
+  .footer-mark-accent { stroke: #ad631e; }
   @media (prefers-color-scheme: dark) {
     .footer-mark-ink { stroke: #e5e7eb; }
-    .footer-mark-accent { stroke: #60a5fa; }
+    .footer-mark-accent { stroke: #c0722d; }
   }
 </style>
 <div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
@@ -280,7 +314,7 @@
   <h1>Guides &amp; Study Aids</h1>
   <p class="sub">Reference material and quick-review guides for each class, in one place — separate from the timed quizzes.</p>
 
-  <p class="ai-disclaimer">Study materials made by AI, use at you're own risk. Check info if unsure.</p>
+  <p class="ai-disclaimer">Study materials made by AI, use at your own risk. Check info if unsure.</p>
 
   <div class="search-wrap">
     <input type="text" id="guide-search" class="guide-search-input" placeholder="Search guides…" autocomplete="off" spellcheck="false">
@@ -307,6 +341,7 @@
     <p class="guide-group-title">Physiology</p>
     <div class="guide-grid">
       <a class="guide-card" href="Physiology%20Exam%201/physiology-exam-1-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 1 Study Guide</p>
         <p class="guide-card-desc">Cell Physiology &amp; Membranes, Membrane Potentials &amp; Action Potentials (with muscle physiology), Nervous System Sensory &amp; Motor divisions, and Central Nervous System Function — homeostasis, transport, EC coupling, somatosensory pathways, reflexes, the cerebellum/basal ganglia, the ANS, and memory/the limbic system, with figures and objective-by-objective coverage.</p>
       </a>
@@ -316,6 +351,7 @@
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Physiology%20Exam%202/physiology-exam-2-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 2 Study Guide</p>
         <p class="guide-card-desc">Hearing/Taste/Smell, Cardiac Physiology, Circulatory Physiology I &amp; II, and Physiology of Vision — cochlear mechanics, the cardiac cycle &amp; conduction system, Starling forces &amp; local blood flow control, the renin-angiotensin system &amp; baroreceptor reflex, and phototransduction/the visual pathway, with figures and objective-by-objective coverage.</p>
       </a>
@@ -325,6 +361,7 @@
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Physiology%20Exam%203/physiology-exam-3-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 3 Field Guide</p>
         <p class="guide-card-desc">All 7 systems — Hemostasis, Immunology, GI, Metabolism &amp; the Liver, Nutrition &amp; Thermoregulation, and Respiration I &amp; II — with figures and objective-by-objective coverage.</p>
       </a>
@@ -334,6 +371,7 @@
         <p class="guide-card-desc">All 7 systems condensed to their one-glance recap facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Physiology%20Exam%204/physiology-exam-4-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 4 Study Guide</p>
         <p class="guide-card-desc">Endocrine &amp; Renal Physiology — Endocrine I (pituitary &amp; thyroid), Endocrine II (adrenal, pancreas, calcium/PTH), Endocrine III (male &amp; female reproduction, pregnancy, lactation), Renal I (glomerular filtration &amp; GFR), and Renal II (tubular reabsorption, countercurrent system, RAAS, acid-base) — with 50 fully explained slide figures, objective-by-objective.</p>
       </a>
@@ -354,6 +392,7 @@
     <p class="guide-group-title">Anatomy</p>
     <div class="guide-grid">
       <a class="guide-card" href="Anatomy%20Exam%201/anatomy-exam-1-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 1 Guide</p>
         <p class="guide-card-desc">Intro to Anatomy, Histology, Brain and ANS, Nervous Tissue &amp; Cerebral Blood Flow, Spinal Cord &amp; Sensory Receptors, and Peripheral/Cranial Nerves — terminology, tissue types, brain divisions, CNS vasculature, and all twelve cranial nerves, with figures and objective-by-objective coverage.</p>
       </a>
@@ -363,6 +402,7 @@
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Anatomy%20Exam%202/anatomy-exam-2-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 2 Guide</p>
         <p class="guide-card-desc">Integumentary System, Eye and Ear Anatomy, Heart and Great Vessels, Arteries/Veins/Lymphatics, and Pulmonary Anatomy — skin layers, special-sense organs, cardiac conduction &amp; the aorta's full branching, vessel histology, and the respiratory tract, with figures and objective-by-objective coverage.</p>
       </a>
@@ -372,6 +412,7 @@
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Anatomy%20Exam%203/anatomy-exam-3-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 3 Guide</p>
         <p class="guide-card-desc">Gastrointestinal, Endocrine, Male &amp; Female Reproductive, and Urinary/Nephrology (kidney) — organs, relationships, blood supply, innervation, and histology, objective-by-objective.</p>
       </a>
@@ -381,6 +422,7 @@
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Anatomy%20Exam%204/anatomy-exam-4-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 4 Guide</p>
         <p class="guide-card-desc">Appendicular Skeleton, Axial Skeleton, Appendicular Musculature, and Axial Musculature — bones, landmarks, cranial foramina, and muscle origins/insertions/actions/innervation, with labeled figures.</p>
       </a>
@@ -416,6 +458,7 @@
     <p class="guide-group-title">Intro to PA Profession</p>
     <div class="guide-grid">
       <a class="guide-card" href="Intro%20to%20PA%20Profession/intro-pa-profession-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Intro to PA Profession — Master Guide</p>
         <p class="guide-card-desc">History of the profession, PA organizations (ARC-PA, PAEA, NCCPA, AAPA, SAAAPA, PAF, FAPA), certification &amp; licensure, reimbursement, Optimal Team Practice, interprofessional teamwork, clinical practice settings, professionalism &amp; academic integrity, and difficult-conversation frameworks (NURSE, SPIKES, CUS/DESC, SHARE) — all 7 lecture decks plus quick-reference tables.</p>
       </a>
@@ -431,6 +474,7 @@
     <p class="guide-group-title">CAM/Nutrition</p>
     <div class="guide-grid">
       <a class="guide-card" href="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">CAM/Nutrition Exam 1 Study Guide</p>
         <p class="guide-card-desc">Human Nutrition (nutrient classes, kcal &amp; calorie math, metric conversions, obesity &amp; BMI, the Standard American Diet, MyPlate, and the Nutrition Facts label) and Macronutrients, Micronutrients &amp; Water (carbohydrate metabolism &amp; glycemic response, fiber, saturated/mono/polyunsaturated &amp; omega-3/omega-6 fatty acids, lipoproteins &amp; cardiovascular disease, protein balance &amp; protein-calorie malnutrition, vegetarian/vegan diets, fat- &amp; water-soluble vitamins, major &amp; trace minerals, hydration, electrolytes, and the DASH diet) — with real slide figures and objective-by-objective coverage.</p>
       </a>
@@ -446,6 +490,7 @@
     <p class="guide-group-title">Physical Diagnosis 1</p>
     <div class="guide-grid">
       <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%202/pd1-exam2-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physical Diagnosis 1 Exam 2 Study Guide</p>
         <p class="guide-card-desc">All 9 Exam 2 topics: Anus &amp; Rectum, Male GU (genitourinary) &amp; Prostate, Abdominal Exam, Lung &amp; Thorax Exam, Skin/Hair/Nail Exam, Eye Exam, General Survey &amp; Vital Signs, Cardiovascular &amp; Peripheral Vascular Exam, and HENT (Head, Ears, Nose, Throat) &mdash; technique-focused coverage of history, positioning, inspection/palpation/percussion/auscultation, and normal vs. abnormal findings for each system, with quick-reference tables and test-yourself questions per section.</p>
       </a>
@@ -455,10 +500,12 @@
         <p class="guide-card-desc">Every exam topic condensed to its highest-yield technique and findings — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
       <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%203/pd1-exam3-study-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physical Diagnosis 1 Exam 3 Study Guide</p>
         <p class="guide-card-desc">Pelvic Exam (Female Genitalia) and Breast Examination &mdash; genital/breast anatomy, lymphatic drainage, Tanner staging, exam preparation and positioning, and full technique for external/speculum/bimanual/rectovaginal and breast inspection/palpation exams, with quick-reference tables and test-yourself questions.</p>
       </a>
       <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%203/pd1-msk-palpation-guide.html">
+        <span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">MSK with Images for Palpations</p>
         <p class="guide-card-desc">Musculoskeletal Exam &mdash; every palpation landmark on the MSK lab checksheet mapped onto labeled photographs, joint by joint: temporomandibular joint, cervical spine, thoracic/lumbar spine, shoulder, elbow, wrist and hand, hip, knee, and ankle and foot. Includes what your fingers should feel at each landmark, the range-of-motion movements required, and the full 94-item checklist in order.</p>
       </a>

@@ -314,11 +314,23 @@
   // (per explicit user request) -- reuses the .tour-overlay/.tour-prompt
   // shell for visual consistency with the site's other one-time prompts.
   var PROMPT_SEEN_KEY = "cloudSyncPromptSeen";
+
+  // Never surface this on a quiz page. The prompt fires on a timer after
+  // load, so gating on "is a question on screen right now" isn't enough --
+  // it would fire while the reader is still on the start screen and then
+  // sit there covering question 1 the moment they begin. A page carrying a
+  // quiz is a page where they came to work; the homepage, guides and arcade
+  // all still show it.
+  function onQuizPage() {
+    return !!document.getElementById("quiz");
+  }
+
   function maybeShowSignInPrompt() {
     if (localStorage.getItem(PROMPT_SEEN_KEY)) return;
     if (currentUser) { localStorage.setItem(PROMPT_SEEN_KEY, "1"); return; }
     setTimeout(function () {
       if (currentUser) return; // signed in via some other path while we waited
+      if (onQuizPage()) return;
       var overlay = el("div", "tour-overlay open");
       var card = el("div", "tour-prompt");
       card.appendChild(el("p", "tour-prompt-title", "Save your progress across devices"));

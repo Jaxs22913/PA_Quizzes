@@ -3690,3 +3690,67 @@ window.openPauseOverlay = function (opts) {
     show();
   };
 })();
+
+/* ============================================================
+   Footer mark: reveal only at the end of the page.
+   See the "POLISH PASS" note in theme.css -- the mark is fixed at
+   bottom-centre on 83 pages and was drawing over table cells, guide
+   cards and paragraphs on any page long enough to scroll. Show it
+   when the reader reaches the bottom, or immediately if the page
+   doesn't scroll at all (where it was always fine).
+   ============================================================ */
+(function () {
+  var mark = document.getElementById("quiz-footer-logo");
+  if (!mark) return;
+  var SLACK = 48; // px from the bottom that counts as "arrived"
+  var ticking = false;
+
+  function apply() {
+    ticking = false;
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    // A page that barely scrolls never had the collision problem.
+    var atBottom = scrollable <= SLACK ||
+      (window.scrollY || doc.scrollTop) >= scrollable - SLACK;
+    mark.classList.toggle("mark-visible", atBottom);
+  }
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(apply);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  // Content can load in late (lazy images, generated question banks),
+  // which changes scrollHeight -- re-check when it does.
+  if (typeof ResizeObserver === "function") {
+    try { new ResizeObserver(onScroll).observe(document.body); } catch (e) {}
+  }
+  apply();
+})();
+
+/* ============================================================
+   Quiz banner collapse. Flags <body class="quiz-running"> while a
+   question is on screen so theme.css can shrink the title banner --
+   see the note there. Purely presentational; the engine is untouched.
+   ============================================================ */
+(function () {
+  var quiz = document.getElementById("quiz");
+  if (!quiz) return;
+  var results = document.getElementById("results");
+
+  function sync() {
+    var answering = quiz.offsetParent !== null &&
+                    !(results && results.offsetParent !== null);
+    document.body.classList.toggle("quiz-running", answering);
+  }
+  if (typeof MutationObserver === "function") {
+    var mo = new MutationObserver(sync);
+    var opts = { attributes: true, attributeFilter: ["style", "class", "hidden"] };
+    mo.observe(quiz, opts);
+    if (results) mo.observe(results, opts);
+  }
+  document.addEventListener("click", function () { setTimeout(sync, 60); }, true);
+  sync();
+})();
