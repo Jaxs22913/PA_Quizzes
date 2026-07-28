@@ -327,6 +327,9 @@ mark.search-hit-current {
    --shadow) with different values -- a blanket override here would win by
    specificity over every one of those pages' own declarations and corrupt
    their light-mode color logic before the invert filter below even runs. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
+
 :root[data-theme="dark"] body.homepage {
   --bg: #121116;
   --card: #1c1b21;
@@ -375,11 +378,13 @@ mark.search-hit-current {
    seasonal windows should drift too, not just override to a flat color). */
 :root[data-theme="dark"] body.homepage {
   background: linear-gradient(120deg, #121116, #131a28, #191216, #121116);
+  background-color: #121116;   /* see note below: the shorthand above resets this to transparent */
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.homepage {
   background: linear-gradient(120deg, #f8f6f2, #eef1f6, #faf3ec, #f8f6f2);
+  background-color: #f8f6f2;   /* see note below: the shorthand above resets this to transparent */
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -396,6 +401,7 @@ mark.search-hit-current {
   --card: #fff8fa;
   --border: #f0cddb;
   background: linear-gradient(120deg, #fbe7ee, #fef0f7, #f5d3e0, #fbe7ee);
+  background-color: #fbe7ee;   /* see note below: the shorthand above resets this to transparent */
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -406,6 +412,7 @@ mark.search-hit-current {
   --card: #fffaf3;
   --border: #f0dcc0;
   background: linear-gradient(120deg, #fdf1e4, #fef8ef, #f8dfc0, #fdf1e4);
+  background-color: #fdf1e4;   /* see note below: the shorthand above resets this to transparent */
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -416,6 +423,7 @@ mark.search-hit-current {
   --card: #eefaf1;
   --border: #a9dab8;
   background: linear-gradient(120deg, #d7f0dd, #e9f9ec, #bfe8ca, #d7f0dd);
+  background-color: #d7f0dd;   /* see note below: the shorthand above resets this to transparent */
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -426,6 +434,7 @@ mark.search-hit-current {
   --card: #fffdf7;
   --border: #ece0c4;
   background: linear-gradient(120deg, #faf3e3, #fffcf3, #f3e4c4, #faf3e3);
+  background-color: #faf3e3;   /* see note below: the shorthand above resets this to transparent */
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -2587,3 +2596,29 @@ body.homepage .continue-item:hover {
   .guide-card:hover, body.homepage .relax-cta:hover,
   body.homepage .guides-btn:hover, body.homepage .continue-item:hover { transform: none; }
 }
+
+/* ============================================================
+   WHY THE PAGE BOTTOM WENT WHITE (fixed 2026-07-28)
+   ------------------------------------------------------------
+   `background: linear-gradient(...)` is a SHORTHAND, so every one of those
+   declarations silently reset background-color to transparent. The gradient
+   image covers the document box, but anything outside it -- most visibly the
+   overscroll/rubber-band region when you scroll past the end, and the canvas
+   during load -- had no colour to fall back on, so the browser painted its
+   default white. In dark mode that reads as a white strip at the bottom.
+
+   Two fixes, deliberately both:
+   1. background-color beside each gradient, so the canvas always has a solid
+      colour underneath the image.
+   2. `color-scheme` on :root, which is the actual root cause fix: it tells
+      the browser the document is dark, so every UA-painted surface -- canvas,
+      overscroll, scrollbars, form controls -- matches instead of defaulting
+      to light. This was never declared anywhere on the site.
+
+   NOTE: do NOT write `html { background-color: var(--bg) }` here. --bg is
+   declared on body.<surface>, and custom properties inherit DOWNWARD only,
+   so at :root it resolves to the fallback -- pinning every page, in both
+   themes, to one hardcoded colour. color-scheme is what makes the UA canvas
+   correct generically; the per-gradient background-color handles the
+   document box. Between them nothing needs a value on html at all.
+   ============================================================ */

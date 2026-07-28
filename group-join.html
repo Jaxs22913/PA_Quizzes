@@ -31,6 +31,7 @@
      body > .wrap invert filter instead), matching the seasonal tints' scope. */
   :root[data-theme="light"] body {
     background: linear-gradient(120deg, #f6f7fb, #e9eefa, #faeef3, #f6f7fb);
+    background-color: #f6f7fb;   /* the shorthand above resets this to transparent */
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
@@ -45,24 +46,28 @@
   :root[data-theme="light"] body.vday-theme {
     --paper:#fbe7ee; --card:#fff8fa; --line:#f0cddb;
     background: linear-gradient(120deg, #fbe7ee, #fef0f7, #f5d3e0, #fbe7ee);
+    background-color: #fbe7ee;   /* the shorthand above resets this to transparent */
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
   :root[data-theme="light"] body.fall-theme {
     --paper:#fdf1e4; --card:#fffaf3; --line:#f0dcc0;
     background: linear-gradient(120deg, #fdf1e4, #fef8ef, #f8dfc0, #fdf1e4);
+    background-color: #fdf1e4;   /* the shorthand above resets this to transparent */
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
   :root[data-theme="light"] body.stpatricks-theme {
     --paper:#d7f0dd; --card:#eefaf1; --line:#a9dab8;
     background: linear-gradient(120deg, #d7f0dd, #e9f9ec, #bfe8ca, #d7f0dd);
+    background-color: #d7f0dd;   /* the shorthand above resets this to transparent */
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
   :root[data-theme="light"] body.xmas-theme {
     --paper:#faf3e3; --card:#fffdf7; --line:#ece0c4;
     background: linear-gradient(120deg, #faf3e3, #fffcf3, #f3e4c4, #faf3e3);
+    background-color: #faf3e3;   /* the shorthand above resets this to transparent */
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
