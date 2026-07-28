@@ -257,25 +257,6 @@
      show in the grid; the active chip borrows each type's own accent
      (blue = all/guides, green = cram, amber = reference) to tie the control
      to the card colors it filters. */
-  /* Class chips carry the same per-class hues the homepage tab row uses, so
-     a class is recognisable by colour across both pages rather than only on
-     the homepage. Keyed off href (the existing markup) so no HTML changes are
-     needed. Same 4.60:1 recipe as the accent ring -- no new colour. */
-  .class-jump-chip[href="#group-physiology"]           { --tab-hue: #2a6df2; }
-  .class-jump-chip[href="#group-anatomy"]              { --tab-hue: #df2a44; }
-  .class-jump-chip[href="#group-intro-pa"]             { --tab-hue: #228283; }
-  .class-jump-chip[href="#group-cam-nutrition"]        { --tab-hue: #218640; }
-  .class-jump-chip[href="#group-physical-diagnosis-1"] { --tab-hue: #ad631e; }
-  .class-jump-chip {
-    background: color-mix(in oklab, var(--tab-hue, var(--a-blue)) 9%, var(--card));
-    color: color-mix(in oklab, var(--tab-hue, var(--a-blue)) 76%, var(--ink));
-    border-color: color-mix(in oklab, var(--tab-hue, var(--a-blue)) 28%, transparent);
-  }
-  .class-jump-chip:hover {
-    background: color-mix(in oklab, var(--tab-hue, var(--a-blue)) 17%, var(--card));
-    border-color: var(--tab-hue, var(--a-blue));
-    color: var(--tab-hue, var(--a-blue));
-  }
   .guide-filter-nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 24px; }
   .guide-filter-label {
     font-size: 12px; font-weight: 700; text-transform: uppercase;

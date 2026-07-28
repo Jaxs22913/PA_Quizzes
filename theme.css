@@ -328,9 +328,9 @@ mark.search-hit-current {
    specificity over every one of those pages' own declarations and corrupt
    their light-mode color logic before the invert filter below even runs. */
 :root[data-theme="dark"] body.homepage {
-  --bg: #121116;
-  --card: #1c1b21;
-  --border: #302d36;
+  --bg: #0f1115;
+  --card: #191c22;
+  --border: #2a2e37;
   --ink: #e5e7eb;
   --muted: #9aa1ac;
   --accent: var(--a-blue);
@@ -344,12 +344,9 @@ mark.search-hit-current {
   --tab-border: rgba(96, 165, 250, 0.3);
 }
 :root[data-theme="light"] body.homepage {
-  /* Warm paper rather than the old cold #f3f4f6. The blue accent already
-     supplies all the cool in this page; a cool GROUND under it was most of
-     what made the homepage read as sterile next to guides.html's cream. */
-  --bg: #f9f6f1;
+  --bg: #f3f4f6;
   --card: #ffffff;
-  --border: #e9e4dc;
+  --border: #e5e7eb;
   --ink: #1f2937;
   --muted: #6b7280;
   --accent: var(--a-blue);
@@ -374,12 +371,12 @@ mark.search-hit-current {
    default one -- see [[pa-quizzes-seasonal-themes]] (confirmed 2026-07-17:
    seasonal windows should drift too, not just override to a flat color). */
 :root[data-theme="dark"] body.homepage {
-  background: linear-gradient(120deg in oklab, #121116, #141a26, #1a1219, #121116);
+  background: linear-gradient(120deg, #0f1115, #131a28, #150f14, #0f1115);
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.homepage {
-  background: linear-gradient(120deg in oklab, #f9f6f1, #f2f0ea, #fbf4ea, #f9f6f1);
+  background: linear-gradient(120deg, #f3f4f6, #e6ecf7, #f7eef2, #f3f4f6);
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -2535,94 +2532,3 @@ nav.toc::-webkit-scrollbar-thumb:hover,
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-/* ============================================================
-   SURFACE CHARACTER (2026-07-28)
-   ------------------------------------------------------------
-   The 2026-07-27 polish pass unified radius, elevation and accent into one
-   scale each. That bought coherence and cost personality: every surface
-   became the same white card, the same 16px corner and a shadow at 4-6%
-   alpha -- i.e. effectively no shadow. These add weight and texture back
-   WITHOUT reintroducing ad-hoc values; the accent recipe is untouched.
-   ============================================================ */
-
-/* --- responsive elevation ------------------------------------------------
-   Flat at rest, genuinely tactile on hover. --e-2 (the resting default) is
-   deliberately still soft; --e-hover is tighter and ~3x the alpha so that
-   picking something up actually reads as picking it up. */
-:root {
-  --e-hover: 0 2px 6px rgba(16,20,28,.10), 0 10px 24px rgba(16,20,28,.16);
-  --e-press: 0 1px 2px rgba(16,20,28,.12), 0 3px 8px rgba(16,20,28,.10);
-}
-:root[data-theme="dark"] {
-  --e-hover: 0 2px 6px rgba(0,0,0,.44), 0 12px 28px rgba(0,0,0,.52);
-  --e-press: 0 1px 2px rgba(0,0,0,.5), 0 3px 8px rgba(0,0,0,.4);
-}
-
-/* --- 2-3% grain ----------------------------------------------------------
-   Flat vector fills are most of what reads as "sterile"; a little luminance
-   noise makes them read as a surface instead. Inline feTurbulence, so no
-   network request and nothing to cache. Fixed and pointer-events:none, and
-   dropped entirely for print and reduced-motion-sensitive contexts. */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  pointer-events: none;
-  opacity: .028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-:root[data-theme="dark"] body::after { opacity: .042; }
-@media print { body::after { display: none; } }
-
-/* --- make things feel liftable -------------------------------------------
-   Scoped to elements that are actually interactive. A card that lifts when
-   it is not clickable is a lie, so plain content cards are left alone. */
-.guide-card,
-body.homepage .relax-cta,
-body.homepage .guides-btn,
-body.homepage .my-progress-link,
-body.homepage .continue-item,
-body.homepage .quiz-link {
-  transition: transform var(--dur-1, 160ms) var(--ease, ease),
-              box-shadow var(--dur-1, 160ms) var(--ease, ease),
-              border-color var(--dur-1, 160ms) var(--ease, ease);
-}
-.guide-card:hover,
-body.homepage .relax-cta:hover,
-body.homepage .guides-btn:hover,
-body.homepage .continue-item:hover {
-  box-shadow: var(--e-hover);
-  transform: translateY(-2px);
-}
-.guide-card:active,
-body.homepage .relax-cta:active,
-body.homepage .guides-btn:active,
-body.homepage .continue-item:active {
-  box-shadow: var(--e-press);
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .guide-card, body.homepage .relax-cta, body.homepage .guides-btn,
-  body.homepage .continue-item, body.homepage .my-progress-link,
-  body.homepage .quiz-link { transition: none; }
-  .guide-card:hover, body.homepage .relax-cta:hover,
-  body.homepage .guides-btn:hover, body.homepage .continue-item:hover {
-    transform: none;
-  }
-}
-
-/* --- 6. serif numerals ---------------------------------------------------
-   The display serif appeared exactly twice on the whole site. Numbers are
-   where it earns the most personality per character, so the class counter
-   and the semester week count take it, with tabular figures so the counter
-   does not jitter while it animates upward. */
-body.homepage .cc-num,
-body.homepage #semester-progress-label,
-body.homepage .week-day {
-  font-family: var(--font-display, Georgia, "Times New Roman", serif);
-  font-variant-numeric: tabular-nums lining-nums;
-  letter-spacing: -.01em;
-}
-body.homepage .cc-num { font-size: 30px; font-weight: 600; }
