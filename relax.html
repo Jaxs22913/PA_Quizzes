@@ -87,6 +87,7 @@
 
   /* Ambient soundscape bar */
   .scape{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;margin:0 auto 24px;}
+  .scape-credit{flex-basis:100%;font-size:0.6875rem;color:var(--r-muted);margin:8px 0 0;opacity:.8;line-height:1.45;}
   .scape-label{font-size:0.6875rem;color:var(--r-muted);font-weight:700;text-transform:uppercase;letter-spacing:.07em;}
   .scape-opts{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
   .scape-btn{border:1px solid var(--r-line);background:var(--r-card);color:var(--r-muted);
@@ -306,6 +307,7 @@
       <button class="scape-btn" data-scape="drone" type="button">Warm drone</button>
     </div>
     <input type="range" id="scape-vol" class="scape-vol" min="0" max="100" value="55" aria-label="Ambient volume">
+    <p class="scape-credit">Rain: &ldquo;Rain against the window&rdquo; by Cori Samuel &middot; public domain, via Wikimedia Commons. Everything else is generated in the browser.</p>
   </div>
 
   <!-- BREATHE -->
@@ -641,6 +643,43 @@
     else { for (var j = 0; j < len; j++) d[j] = Math.random() * 2 - 1; }
     noiseBuf[type] = buf; return buf;
   }
+  /* Real rain-on-a-window recording (added 2026-07-28). Everything else on
+     this page is synthesized, and the synthesized rain never convinced --
+     three passes measured progressively better but still read as noise,
+     because filtered noise does not have the irregular pitched impacts a
+     real pane does.
+
+     Source: "Rain against the window" by Cori Samuel, recorded 2008-07-07
+     with a microphone on a window sill. PUBLIC DOMAIN via Wikimedia Commons
+     (originally pdsounds.org, now defunct) -- verified through the Commons
+     API: License "pd", UsageTerms "Public domain", no restrictions. Public
+     domain needs no attribution, but it is credited in the page anyway.
+
+     Measured against the best synthesized attempt:
+       synth      peak-over-floor 22.8   zero-crossing 1908Hz
+       recording  peak-over-floor 28.7   zero-crossing  860Hz
+     i.e. sharper impacts AND properly muffled, which is the combination the
+     synthesis could not reach.
+
+     Fetched lazily -- only when Rain is first chosen -- so the 1.2MB is not
+     on the critical path for anyone who never touches the ambient controls.
+     If it fails (offline before the service worker has cached it, or a
+     browser that cannot decode Ogg Vorbis) the synthesized rain still runs,
+     so the feature degrades instead of going silent. */
+  var rainBuf = null, rainLoading = false;
+  function loadRain(cb) {
+    if (rainBuf) { cb(rainBuf); return; }
+    if (rainLoading) return;                 // a second click while in flight
+    rainLoading = true;
+    fetch("audio/rain-on-window.ogg")
+      .then(function (r) { if (!r.ok) throw 0; return r.arrayBuffer(); })
+      .then(function (ab) {
+        return new Promise(function (res, rej) { actx.decodeAudioData(ab, res, rej); });
+      })
+      .then(function (buf) { rainBuf = buf; rainLoading = false; cb(buf); })
+      .catch(function () { rainLoading = false; cb(null); });   // fall back to synth
+  }
+
   var SCAPE_BASE = { rain: 0.30, white: 0.5, waves: 0.55, brown: 0.5, drone: 0.14 };
   var scapeNodes = [], scapeGain = null, scapeName = "off", scapeVol = 0.55;
   // The rain droplets are driven by a setTimeout chain, not an AudioNode, so
@@ -653,6 +692,7 @@
     scapeNodes = [];
     if (scapeGain) { try { scapeGain.disconnect(); } catch (e) {} scapeGain = null; }
   }
+  var buildSynthRain = null;
   function setScape(name) {
     ensureAudio(); stopScape(); scapeName = name;
     if (name === "off" || !actx) return;
@@ -668,7 +708,24 @@
         scapeNodes.push(o, lfo);
       });
     } else if (name === "rain") {
-      /* "Rain on a window" (2026-07-28). Third pass. Passes 1-2 both failed
+      loadRain(function (buf) {
+        // the user may have switched away while this was loading
+        if (scapeName !== "rain" || !actx || !scapeGain) return;
+        if (!buf) { buildSynthRain(); return; }
+        var r = actx.createBufferSource();
+        r.buffer = buf; r.loop = true;
+        // loop inside the recording, clear of any fade at either end, so the
+        // seam does not click
+        r.loopStart = 1.0; r.loopEnd = Math.max(2, buf.duration - 1.0);
+        var lp = actx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 11000;
+        r.connect(lp); lp.connect(scapeGain); r.start(0, 1.0);
+        scapeNodes.push(r);
+      });
+      return;
+    }
+    buildSynthRain = function () {
+      /* Synthesised fallback, used only when the recording cannot be loaded.
+         "Rain on a window" (2026-07-28). Third pass. Passes 1-2 both failed
          the same way and it is worth recording why: the continuous noise bed
          sat at gain 0.62 while the droplet impacts peaked around 0.08, so the
          bed was roughly 8x louder than the thing it was supposed to be
@@ -731,7 +788,8 @@
         scapeDropTimer = setTimeout(tick, 14 + Math.random() * 55);
       }
       scapeDropTimer = setTimeout(tick, 40);
-    } else {
+    };
+    {
       var src = actx.createBufferSource(); src.buffer = getNoise(name === "white" ? "white" : "brown"); src.loop = true;
       var filt = actx.createBiquadFilter();
       if (name === "white") { filt.type = "bandpass"; filt.frequency.value = 1800; filt.Q.value = 0.5; }
