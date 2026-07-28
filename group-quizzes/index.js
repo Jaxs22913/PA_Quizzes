@@ -173,6 +173,8 @@ window.GROUP_INDEX = {
 "physical-diagnosis-1-exam-2-skin-hair-nail-exam-quiz-version-2":{"title":"Skin, Hair & Nail Examination — Set 2 (Physical Diagnosis 1)","category":"Physical Diagnosis","n":30},
 "physical-diagnosis-1-exam-3-breast-exam-quiz":{"title":"Breast Examination — Set 1 (Physical Diagnosis 1)","category":"Physical Diagnosis","n":30},
 "physical-diagnosis-1-exam-3-breast-exam-quiz-version-2":{"title":"Breast Examination — Set 2 (Physical Diagnosis 1)","category":"Physical Diagnosis","n":30},
+"physical-diagnosis-1-exam-3-history-physical-documentation-quiz":{"title":"History and Physical Documentation — Physical Diagnosis 1 Exam 3","category":"Physical Diagnosis","n":30},
+"physical-diagnosis-1-exam-3-history-physical-documentation-quiz-version-2":{"title":"History and Physical Documentation (Set 2) — Physical Diagnosis 1 Exam 3","category":"Physical Diagnosis","n":30},
 "physical-diagnosis-1-exam-3-musculoskeletal-exam-quiz":{"title":"Musculoskeletal Physical Examination — Set 1 (Physical Diagnosis 1)","category":"Physical Diagnosis","n":30},
 "physical-diagnosis-1-exam-3-musculoskeletal-exam-quiz-version-2":{"title":"Musculoskeletal Physical Examination — Set 2 (Physical Diagnosis 1)","category":"Physical Diagnosis","n":30},
 "physical-diagnosis-1-exam-3-neuro-exam-quiz":{"title":"Neurological Exam (Central & Peripheral Nervous System) — Set 1 (Physical Diagnosis 1)","category":"Physical Diagnosis","n":30},

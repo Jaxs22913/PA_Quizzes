@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #5c8a72; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #2f6690; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History and Physical Documentation — Physical Diagnosis 1 Exam 3</title>
+<style>
+  :root{
+    --navy:#33235c; --indigo:#5b46a3; --gold:#b0862b; --ice:#ece8f7;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Writing the History and Physical and Progress Notes — Set 1</h1>
+    <div class="sub">30 questions from Prof. Finck's &ldquo;Writing the History and Physical and Progress Notes&rdquo; lecture &middot; Interpersonal communication &middot; History and physical format &middot; Chief complaint, history of present illness, past medical, social and family history &middot; Documenting the physical examination &middot; Differential diagnoses, assessment and plan &middot; The progress note &middot; Documentation errors</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Four choices, instant feedback, and a full explanation of every option so you learn from each answer. Turn on Exam Mode for a timer, question flagging, and jump-to-question navigation, closer to real test conditions.</p>
+    <div class="chips"><span class="chip">Review central and peripheral nervous system anatomy, sensory and motor tracts, and dermatomes.</span><span class="chip">Assess mental status and level of consciousness, the twelve cranial nerves, motor strength, and deep tendon reflexes.</span><span class="chip">Perform the sensory exam, discriminative sensations, coordination, Romberg, pronator drift, and gait assessment.</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Progress Note", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "Compared with a history and physical, the progress note is:", "opts": [["Broader, because it must restate the entire presenting history", "The lecture says it is not a comprehensive retelling of the history of present illness."], ["More focused", "Correct. The lecture describes the progress note as a more focused document than a history and physical."], ["Identical in scope but written in a different section order", "Scope differs; it is not merely a reordering."], ["Longer, because it accumulates every previous day's entries", "No accumulation of prior entries is described in the lecture."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 54"}, {"topic": "H&P — HPI", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "What does the history of present illness contain, according to the lecture?", "opts": [["The three-generation account of relatives and their health status", "That is the family history."], ["A head-to-toe survey covering every body system in full detail", "That describes the review of systems."], ["A ranked list of potential diagnoses with supporting evidence", "That describes the differential diagnoses."], ["What the patient says about their chief complaint", "Correct. The lecture defines it as what the patient says about the chief complaint, with symptom description, the seven attributes, pain assessment, and pertinent positives and negatives drawn from other history components."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 21"}, {"topic": "H&P — Medications", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "Which details does the lecture require for each medication?", "opts": [["Dosage, route, frequency, indication, and compliance", "Correct. The lecture requires all five, and includes prescription, over-the-counter, and vitamins or supplements."], ["Manufacturer, cost, pharmacy, and insurance coverage", "None of these commercial details appear in the lecture's medication requirements."], ["Only the drug names, since doses change frequently anyway", "The lecture explicitly requires dosage alongside the other elements."], ["Prescribing clinician, start date, and planned stop date", "These are not the attributes the lecture lists, though dates are required elsewhere in past medical history."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 23"}, {"topic": "Plan", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "Which element belongs in the plan rather than the assessment?", "opts": [["Referrals", "Correct. The plan covers disposition, testing, treatment, referrals, patient education, and follow-up; the assessment is a simple list of diagnoses."], ["The final diagnosis reached after history, examination and testing", "The final diagnosis is the assessment."], ["Chronic conditions that also require ongoing assessment or treatment", "Chronic conditions are listed within the assessment."], ["Concurrent diagnoses identified alongside the presenting problem", "Concurrent diagnoses also belong to the assessment."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 47"}, {"topic": "Plan", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "What does the lecture require for a pharmacologic entry in the plan?", "opts": [["The drug class and an alternative agent if the first fails", "Neither drug class nor a contingency agent is among the required elements."], ["A prescription number and the dispensing pharmacy", "Administrative dispensing details are not part of the lecture's requirement."], ["Only the drug name, since dosing is set by the pharmacist", "The lecture requires dosage explicitly, and dosing is not delegated in this way."], ["Indications, drug name, dosage, route, and frequency", "Correct. The lecture lists these, and its worked example gives drug, dose, route, frequency, duration, and indication together."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 47"}, {"topic": "Differential Diagnosis", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "How many differential diagnoses does the lecture suggest aiming for?", "opts": [["Exactly one, so that the plan stays focused", "A single diagnosis would be an assessment, not a differential."], ["At least ten, to demonstrate breadth of reading", "No such number appears in the lecture, and it would work against a focused argument."], ["Three or more", "Correct. The lecture says to try to have three or more, with the first being the most likely."], ["Two, one common and one dangerous", "This pairing is a reasonable clinical habit but is not the number the lecture gives."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 43"}, {"topic": "H&P — Social History", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "Which topic does the lecture place in the social history?", "opts": [["Age-appropriate cancer screenings together with their results", "Screenings belong to the past medical history."], ["Immunizations and any childhood illnesses", "Both belong to the past medical history."], ["Safety", "Correct. The social history covers substance use, diet and caffeine, exercise, occupation and socioeconomic status, travel, sexual history, support systems, stresses, safety, and life experiences."], ["The reaction and severity associated with each known allergy", "Allergies are documented in their own section."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 24"}, {"topic": "H&P — Past Medical History", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "What does the lecture require alongside each past medical history entry?", "opts": [["The name of the facility where the care was delivered", "Facility names are not among the required details."], ["A copy of the discharge summary for every hospitalization", "No supporting documents are required by the lecture."], ["Specific dates and timelines", "Correct. The lecture asks for specific dates and timelines across major illnesses, surgeries, hospitalizations, childhood illnesses, immunizations, and screenings."], ["Confirmation that the patient consented to each treatment given", "Consent records are not part of this section in the lecture."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 22"}, {"topic": "Communication", "io": "IO 1 — Interpersonal communication skills for effective information exchange", "q": "What does the lecture identify as the value of validation as a technique?", "opts": [["It confirms the accuracy of the facts the patient has given", "Confirming factual accuracy is closer to clarification or summarization."], ["It signals that the interview is moving to a new section", "Signalling a change of section is signposting."], ["It invites the patient to keep expanding, using their own last words as the prompt", "That describes echoing."], ["It helps the patient feel their emotions are legitimate and understandable", "Correct. That is the lecture's definition of validation."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 14"}, {"topic": "Documentation Quality", "io": "IO 3 — The implications of errors in medical documentation", "q": "What does the lecture say about your signature on a note?", "opts": [["It records only that you were physically present at some point during the encounter", "Presence is not the meaning the lecture attaches to a signature."], ["It may be added by a supervising clinician on your behalf", "No delegation of signature is described anywhere in the lecture."], ["It is required only for inpatient documentation", "The lecture draws no inpatient-only distinction for signing."], ["This is a legal document, and your signature makes you responsible for the accuracy of the content", "Correct. The lecture closes on exactly this point."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 66"}, {"topic": "Documentation Quality", "io": "IO 2 — The importance of consistency in medical documentation", "q": "Which item does the lecture list under technical issues?", "opts": [["Difficulty following the progression of the physical examination through the note", "That is listed under organization issues rather than technical issues."], ["Inconsistency", "Correct. Technical issues cover missing components, terminology, word errors, and inconsistency."], ["Describing a finding only as normal without any supporting detail", "Vague description is listed under content issues."], ["Confusion between whether the document is a history and physical or a progress note", "That confusion is listed under content issues."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 63"}, {"topic": "Differential Diagnosis", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "In the lecture's worked differential for painful urination, why is pyelonephritis judged less likely?", "opts": [["Because the urinalysis was negative for nitrates", "The example describes urine positive for nitrates, which supported the leading diagnosis."], ["Because the patient reported no prior history of any urinary tract infection", "Prior history is not the reasoning used to downgrade pyelonephritis in the example."], ["Because the patient is not sexually active", "That reasoning is used for vaginitis, not pyelonephritis."], ["Because the patient has none of the signs of ascending infection such as fever, chills, or flank pain", "Correct. The example lists fever, chills, flank pain, costovertebral angle pain, abdominal pain, and nausea or vomiting as absent."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 45"}, {"topic": "Communication", "io": "IO 1 — Interpersonal communication skills for effective information exchange", "q": "The lecture warns about directing the conversation too tightly. What is the stated risk?", "opts": [["The encounter will exceed the time allocated for the visit", "Time pressure is not the risk the lecture names in this passage."], ["The patient's story is affected, which can lead to omissions and errors", "Correct. The lecture says to direct the conversation but not control it in a way that affects the patient's story, because that can cause omissions and errors."], ["The clinician will be unable to complete the review of systems", "The review of systems is not mentioned as the casualty of over-direction."], ["The patient will refuse to answer any further questions", "Outright refusal is not the consequence the lecture describes."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 8"}, {"topic": "Progress Note", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "For which setting does the lecture say progress notes are usually used?", "opts": [["Daily evaluation of hospitalized inpatients", "Correct. The lecture describes the progress note as a standardized way to document encounters, usually for daily evaluation of hospitalized inpatients."], ["Initial evaluation of a new outpatient referral", "A new comprehensive evaluation is the role of the history and physical."], ["Emergency department triage before a clinician review", "Triage documentation is not discussed in the lecture."], ["Annual preventive visits in primary care", "Annual preventive visits are not named as the progress note's setting."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 54"}, {"topic": "History Taking", "io": "IO 1 — Interpersonal communication skills for effective information exchange", "q": "What does the lecture say about the order in which information is obtained versus documented?", "opts": [["Information is not always obtained in the order it needs to be documented", "Correct. The lecture notes documentation has guidelines for organizing information while the interview is more freeform, usually moving from general to more specific."], ["Information must be obtained in exactly the order it will be written", "This would force the interview into the note's structure, which the lecture warns against."], ["The note should be written in the order the patient volunteered facts", "The lecture requires the documented order to follow guidelines, not the order of disclosure."], ["Documentation order is left entirely to individual preference", "The lecture states there are guidelines for organizing the information."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 12"}, {"topic": "H&P — Allergies", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "Beyond naming the allergen, what does the lecture require be documented for allergies?", "opts": [["The date the allergy was first diagnosed by a clinician", "A diagnosis date is not among the required allergy elements in the lecture."], ["The reaction and its severity", "Correct. The lecture requires the reaction and severity, covering medication, food, and environmental allergies, and says to verify at every appointment."], ["Whether a substitute medication was tolerated afterwards", "Tolerance of substitutes is not part of the lecture's allergy documentation."], ["The result of any formal allergy testing performed", "Allergy testing results are not listed among the required elements."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 23"}, {"topic": "Communication", "io": "IO 1 — Interpersonal communication skills for effective information exchange", "q": "What does the lecture recommend about body language during a first encounter?", "opts": [["Take notes continuously so nothing the patient says is missed", "Continuous note-taking works against the focus and eye contact the lecture asks for."], ["Remain seated behind a desk to maintain professional distance", "No such positioning instruction appears in the lecture."], ["Open posture and appropriate eye contact, with distractions avoided", "Correct. The lecture pairs these with making a good first impression and learning about patients rather than only their problems."], ["Mirror the patient's posture exactly throughout the interview", "Exact mirroring is not among the lecture's recommendations."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 11"}, {"topic": "Documentation Quality", "io": "IO 2 — The importance of consistency in medical documentation", "q": "Which question appears on the lecture's checklist for reviewing a completed note?", "opts": [["Is the tone professional and does the note convey neutrality?", "Correct. The checklist asks about organisation, whether the picture is clear, whether pertinent positives and negatives are specifically described, whether anything is missing, whether it is too wordy, and about professional neutral tone."], ["Has the note been countersigned by a second clinician?", "Countersignature does not appear on the lecture's checklist."], ["Does the note fit within a single printed page?", "Length in pages is not one of the checklist criteria."], ["Have all abbreviations been expanded in a glossary?", "The lecture asks you to avoid abbreviations rather than to gloss them."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 51"}, {"topic": "Plan", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "Which element does the lecture list as part of the plan?", "opts": [["The seven attributes of the presenting symptom", "The seven attributes belong to the history of present illness."], ["The three-generation family tree", "Family history is its own section earlier in the note."], ["Disposition, meaning inpatient or outpatient", "Correct. The lecture lists disposition, testing, treatment (pharmacologic and non-pharmacologic), referrals, patient education, and follow-up."], ["The reliability of the source of the history", "Source reliability is recorded with the identifying data."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 47"}, {"topic": "H&P — Family History", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "How does the lecture say family history should be structured?", "opts": [["Only first-degree relatives, listed alphabetically by name", "The lecture calls for three generations, and never orders relatives by name."], ["Only relatives with a confirmed genetic diagnosis", "Restricting to confirmed genetic diagnoses would defeat the stated purpose of identifying possible patterns."], ["Three generations, listed oldest to youngest, with age and health status", "Correct. The lecture specifies three generations oldest to youngest, with age, living or deceased status, health status and diseases, to identify possible genetic patterns."], ["Two generations, listed youngest to oldest, with cause of death", "Both the number of generations and the ordering are wrong against the lecture."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 25"}, {"topic": "Progress Note", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "What does the acronym structure of the progress note stand for, and how does it compare to a full history and physical?", "opts": [["Symptoms, observations, analysis, prescription; broader than a history and physical", "Neither the expansion nor the comparison matches the lecture."], ["Subjective, objective, assessment, plan; more focused than a history and physical", "Correct. The lecture describes the progress note as a standardized way to document encounters, usually for daily evaluation of hospitalized inpatients, and more focused than a full history and physical."], ["Subjective, objective, assessment, plan; identical in scope to a history and physical", "The structure is right but the lecture explicitly calls the progress note more focused."], ["Source, onset, aggravators, palliators; used only in outpatient clinics", "This expansion does not appear in the lecture and the setting is wrong."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 54"}, {"topic": "Progress Note", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "How does the lecture describe the physical examination within the objective portion of a progress note?", "opts": [["A full head-to-toe examination repeated identically each day", "The progress note is described as more focused than a comprehensive examination."], ["Omitted entirely, on the basis that it was already documented in the history and physical", "The objective section explicitly includes an updated physical examination."], ["Limited strictly to the vital signs", "Vitals are updated, but the examination itself is also part of the objective section."], ["Focused and detailed, covering systems pertinent to the complaint and positive history", "Correct. The lecture calls for a focused, detailed examination of systems pertinent to the chief complaint and positive history, alongside updated vitals and labs."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 56"}, {"topic": "H&P — HPI", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "Which list matches the seven attributes of a symptom given in the lecture?", "opts": [["Onset, duration, severity, frequency, laterality, radiation, relief", "Several of these are plausible descriptors but this is not the lecture's list; laterality and radiation do not appear in it."], ["Location, quality, quantity or severity, timing, onset, palliative or provocative factors, associated manifestations", "Correct. These are the seven attributes the lecture names for describing a symptom in the history of present illness."], ["Site, character, radiation, associations, timing, exacerbating and relieving factors, and overall severity", "This is a similar clinical mnemonic but not the seven attributes as this lecture lists them."], ["Position, pattern, precipitant, progression, pain score, prior episodes, plan", "This alliterative set does not appear in the lecture in any form."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 21"}, {"topic": "H&P — HPI", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "What is the stated purpose of documenting pertinent negatives in the history of present illness?", "opts": [["They record findings that the patient could not recall clearly", "Uncertain recall is a reliability issue noted under the source of history, not the purpose of a pertinent negative."], ["They demonstrate that a full review of systems was completed", "Completeness of the review of systems is a separate matter from the argument a pertinent negative makes."], ["They shorten the note by replacing the review of systems entirely", "The lecture never presents pertinent negatives as a replacement for any section."], ["They help rule out alternative diagnoses", "Correct. The lecture pairs them with pertinent positives, which argue for a diagnosis, while negatives help rule out alternatives."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 21"}, {"topic": "Communication", "io": "IO 1 — Interpersonal communication skills for effective information exchange", "q": "According to the lecture, guided questioning should move in which direction?", "opts": [["From focused questions toward broad open-ended ones", "This reverses the lecture's direction; opening with narrow questions risks closing off the patient's own account."], ["From written intake questionnaires toward spoken follow-up questions later in the visit", "The lecture does not describe questionnaires as part of guided questioning at all."], ["From general toward specific, and from open-ended toward focused", "Correct. The lecture defines guided questioning as moving from general to specific and from open-ended to focused."], ["From family history toward the chief complaint", "This describes an ordering of history sections rather than a questioning technique."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 13"}, {"topic": "H&P — Physical Exam", "io": "IO 3 — The implications of errors in medical documentation", "q": "Why does the lecture tell you to avoid terms such as \"normal\" or \"appropriate\" in exam documentation?", "opts": [["Because you should describe findings in enough detail that another provider reaches the same conclusion", "Correct. The lecture calls these vague terms and conclusions, and asks for description detailed enough that other providers would come to the same conclusion."], ["Because those particular words are reserved for use in the assessment section of the note", "No such sectional restriction on those words appears in the lecture."], ["Because insurers will not reimburse notes containing them", "Reimbursement is not the reason the lecture gives for avoiding vague terms."], ["Because they are abbreviations of longer clinical phrases", "These are ordinary words rather than abbreviations, so this misstates the objection."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 27"}, {"topic": "Plan", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "In the lecture's worked plan for a urinary infection, what is documented about follow-up?", "opts": [["The patient is asked to return in roughly six months for a routine scheduled review", "A six-month routine interval does not appear in the worked example."], ["Follow-up is deferred until culture sensitivities are reported", "The example says the antibiotic will be adjusted when sensitivities return, but sets its own follow-up interval."], ["Follow up if symptoms do not resolve in three days, and call immediately if anything worsens", "Correct. The worked example gives both the interval and the instruction to call immediately for new, worsening, or otherwise concerning symptoms."], ["No follow-up is required for an uncomplicated infection", "The example explicitly includes follow-up instructions."]], "c": 2, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 49"}, {"topic": "Assessment", "io": "IO 5 — The importance of documenting diagnoses, testing, disposition and education", "q": "Besides the final diagnosis, what else belongs in the assessment?", "opts": [["Only conditions that were newly diagnosed at this visit", "Restricting to new diagnoses would omit the chronic and concurrent conditions the lecture requires."], ["Other conditions requiring assessment or treatment, including chronic and concurrent diagnoses", "Correct. The lecture includes chronic conditions and concurrent diagnoses alongside the final diagnosis."], ["Only conditions that will be treated pharmacologically", "Treatment modality is not the criterion the lecture uses for inclusion."], ["Only those conditions the patient mentioned when giving the chief complaint", "The chief complaint is one input, not the boundary of the assessment."]], "c": 1, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 46"}, {"topic": "H&P — Social History", "io": "IO 4 — The use and format of the history and physical and the progress note", "q": "What does the lecture say the social history should convey overall?", "opts": [["Who your patient is and what risk factors they have", "Correct. The lecture closes the social history slide with exactly this, after listing substance use, diet, exercise, occupation, travel, sexual history, support systems, stresses, safety, and life experiences."], ["A chronological account of every previous hospital admission", "Admissions belong to the past medical history."], ["The patient's insurance status and ability to pay", "Financial stress is mentioned, but insurance status is not the section's stated purpose."], ["A list of relatives with heritable conditions", "Heritable conditions belong in the family history."]], "c": 0, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 24"}, {"topic": "Documentation Quality", "io": "IO 3 — The implications of errors in medical documentation", "q": "Why does the lecture's closing summary say to avoid acronyms and abbreviations?", "opts": [["They make notes harder for billing staff to code accurately", "Coding is not the reason the lecture gives."], ["They are prohibited by the Centers for Medicare and Medicaid Services", "The lecture cites those guidelines for note formats, not as an abbreviation ban."], ["They lengthen the time required to dictate a note", "Dictation time is never raised in the lecture."], ["They may cause misunderstandings and medical errors", "Correct. The lecture gives exactly this reason and repeats the rule: when in doubt, spell it out."]], "c": 3, "cite": "PAJ 5300 History and Physical mbf2026sc.pptx, Slide 66"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
