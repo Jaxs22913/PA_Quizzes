@@ -328,9 +328,9 @@ mark.search-hit-current {
    specificity over every one of those pages' own declarations and corrupt
    their light-mode color logic before the invert filter below even runs. */
 :root[data-theme="dark"] body.homepage {
-  --bg: #0f1115;
-  --card: #191c22;
-  --border: #2a2e37;
+  --bg: #121116;
+  --card: #1c1b21;
+  --border: #302d36;
   --ink: #e5e7eb;
   --muted: #9aa1ac;
   --accent: var(--a-blue);
@@ -344,9 +344,12 @@ mark.search-hit-current {
   --tab-border: rgba(96, 165, 250, 0.3);
 }
 :root[data-theme="light"] body.homepage {
-  --bg: #f3f4f6;
+  /* Warm off-white rather than the old cold #f3f4f6. The blue accent already
+     supplies all the cool on this page; a cool ground underneath it is the
+     main thing that separated the homepage's feel from guides.html's cream. */
+  --bg: #f8f6f2;
   --card: #ffffff;
-  --border: #e5e7eb;
+  --border: #e8e4dd;
   --ink: #1f2937;
   --muted: #6b7280;
   --accent: var(--a-blue);
@@ -371,12 +374,12 @@ mark.search-hit-current {
    default one -- see [[pa-quizzes-seasonal-themes]] (confirmed 2026-07-17:
    seasonal windows should drift too, not just override to a flat color). */
 :root[data-theme="dark"] body.homepage {
-  background: linear-gradient(120deg, #0f1115, #131a28, #150f14, #0f1115);
+  background: linear-gradient(120deg, #121116, #131a28, #191216, #121116);
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.homepage {
-  background: linear-gradient(120deg, #f3f4f6, #e6ecf7, #f7eef2, #f3f4f6);
+  background: linear-gradient(120deg, #f8f6f2, #eef1f6, #faf3ec, #f8f6f2);
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
@@ -2531,4 +2534,56 @@ nav.toc::-webkit-scrollbar-thumb:hover,
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* ============================================================
+   SURFACE TEXTURE + RESPONSIVE ELEVATION (2026-07-28, take 2)
+   ------------------------------------------------------------
+   Take 1 put the grain on body::after at z-index 9998 -- i.e. a noise layer
+   OVER every glyph on the page, which softened text and is why the fonts
+   looked wrong. It belongs behind content, texturing the ground only. This
+   version uses ::before at z-index -1, so it can never touch type.
+   ============================================================ */
+body.homepage::before,
+body.guides-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;                /* behind all content, above the page background */
+  pointer-events: none;
+  opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:root[data-theme="dark"] body.homepage::before,
+:root[data-theme="dark"] body.guides-page::before { opacity: .07; }
+@media print { body.homepage::before, body.guides-page::before { display: none; } }
+
+/* Flat at rest, tactile on hover. --e-2 (the resting default) sits at 4-6%
+   alpha, i.e. effectively no shadow; this is ~3x that and tighter. Scoped to
+   things that are actually clickable -- a card that lifts when it is not
+   interactive is a lie. Invisible until the pointer is on it, so it cannot
+   make the page look busier at rest. */
+:root { --e-hover: 0 2px 6px rgba(16,20,28,.10), 0 10px 24px rgba(16,20,28,.15); }
+:root[data-theme="dark"] { --e-hover: 0 2px 6px rgba(0,0,0,.42), 0 12px 28px rgba(0,0,0,.5); }
+
+.guide-card,
+body.homepage .relax-cta,
+body.homepage .guides-btn,
+body.homepage .continue-item {
+  transition: transform var(--dur-1, 160ms) var(--ease, ease),
+              box-shadow var(--dur-1, 160ms) var(--ease, ease),
+              border-color var(--dur-1, 160ms) var(--ease, ease);
+}
+.guide-card:hover,
+body.homepage .relax-cta:hover,
+body.homepage .guides-btn:hover,
+body.homepage .continue-item:hover {
+  box-shadow: var(--e-hover);
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-card, body.homepage .relax-cta, body.homepage .guides-btn,
+  body.homepage .continue-item { transition: none; }
+  .guide-card:hover, body.homepage .relax-cta:hover,
+  body.homepage .guides-btn:hover, body.homepage .continue-item:hover { transform: none; }
 }

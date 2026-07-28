@@ -1395,3 +1395,34 @@
     @media (min-width: 1600px) {
       .page { max-width: 760px; }
     }
+
+/* ============================================================
+   ACTIVE-TAB CLASS COLOUR (2026-07-28, take 2)
+   ------------------------------------------------------------
+   Take 1 gave all seven tabs a coloured wash at once, which read as a
+   rainbow rather than as identity. Here the inactive tabs stay exactly as
+   they were, and only the ACTIVE tab takes its class colour -- so the page
+   picks up the colour of whatever class you are actually in, and the row
+   itself stays calm. Every hue is solved on the same 4.60:1 recipe as the
+   site accent ring; no off-system colour is introduced.
+   ============================================================ */
+.tab-btn[data-tab="physio"]              { --tab-hue: #2a6df2; }
+.tab-btn[data-tab="pharmacodynamics"]    { --tab-hue: #9c46f3; }
+.tab-btn[data-tab="anatomy"]             { --tab-hue: #df2a44; }
+.tab-btn[data-tab="anatomy-practicum"]   { --tab-hue: #d3299c; }
+.tab-btn[data-tab="intro-pa"]            { --tab-hue: #228283; }
+.tab-btn[data-tab="cam-nutrition"]       { --tab-hue: #218640; }
+.tab-btn[data-tab="physical-diagnosis"]  { --tab-hue: #ad631e; }
+:root[data-theme="dark"] .tab-btn[data-tab="physio"]             { --tab-hue: #4580f3; }
+:root[data-theme="dark"] .tab-btn[data-tab="pharmacodynamics"]   { --tab-hue: #a562f4; }
+:root[data-theme="dark"] .tab-btn[data-tab="anatomy"]            { --tab-hue: #f53c52; }
+:root[data-theme="dark"] .tab-btn[data-tab="anatomy-practicum"]  { --tab-hue: #ed30b0; }
+:root[data-theme="dark"] .tab-btn[data-tab="intro-pa"]           { --tab-hue: #279394; }
+:root[data-theme="dark"] .tab-btn[data-tab="cam-nutrition"]      { --tab-hue: #279849; }
+:root[data-theme="dark"] .tab-btn[data-tab="physical-diagnosis"] { --tab-hue: #c37024; }
+
+/* Inactive tabs are untouched. Only the active one changes. */
+.tab-btn.active {
+  background: var(--tab-hue, var(--accent));
+  box-shadow: 0 4px 14px color-mix(in oklab, var(--tab-hue, var(--accent)) 30%, transparent);
+}
