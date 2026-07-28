@@ -301,6 +301,7 @@
       <button class="scape-btn active" data-scape="off" type="button">Off</button>
       <button class="scape-btn" data-scape="rain" type="button">Rain</button>
       <button class="scape-btn" data-scape="waves" type="button">Waves</button>
+      <button class="scape-btn" data-scape="white" type="button">White noise</button>
       <button class="scape-btn" data-scape="brown" type="button">Soft noise</button>
       <button class="scape-btn" data-scape="drone" type="button">Warm drone</button>
     </div>
@@ -640,9 +641,14 @@
     else { for (var j = 0; j < len; j++) d[j] = Math.random() * 2 - 1; }
     noiseBuf[type] = buf; return buf;
   }
-  var SCAPE_BASE = { rain: 0.5, waves: 0.55, brown: 0.5, drone: 0.14 };
+  var SCAPE_BASE = { rain: 0.42, white: 0.5, waves: 0.55, brown: 0.5, drone: 0.14 };
   var scapeNodes = [], scapeGain = null, scapeName = "off", scapeVol = 0.55;
+  // The rain droplets are driven by a setTimeout chain, not an AudioNode, so
+  // stopScape() has to clear it explicitly or drops keep firing into a
+  // disconnected graph after you switch away.
+  var scapeDropTimer = null;
   function stopScape() {
+    if (scapeDropTimer) { clearTimeout(scapeDropTimer); scapeDropTimer = null; }
     scapeNodes.forEach(function (n) { try { n.stop && n.stop(); } catch (e) {} try { n.disconnect(); } catch (e) {} });
     scapeNodes = [];
     if (scapeGain) { try { scapeGain.disconnect(); } catch (e) {} scapeGain = null; }
@@ -661,10 +667,69 @@
         o.connect(g); g.connect(scapeGain); o.start(); lfo.start();
         scapeNodes.push(o, lfo);
       });
+    } else if (name === "rain") {
+      /* "Rain on a window" (2026-07-28, to Jaxon's brief). Rebuilt twice: the
+         original was one white-noise source through a single bandpass, which
+         is literally just filtered white noise and read as static -- that
+         patch now lives on as the honest "White noise" option.
+
+         Rain heard through glass is NOT open-field rain. Three things define
+         it: the outside downpour arrives MUFFLED (glass is a lowpass), the
+         drops that land on the pane are close, sharp and slightly pitched,
+         and they arrive in uneven clusters rather than a steady wash. So the
+         broadband hiss is deliberately kept low here and the transients do
+         the work -- that is the difference between "rain" and "hiss". */
+      function bed(buf, type, freq, q, gain) {
+        var n = actx.createBufferSource(); n.buffer = getNoise(buf); n.loop = true;
+        var f = actx.createBiquadFilter(); f.type = type; f.frequency.value = freq;
+        if (q != null) f.Q.value = q;
+        var g = actx.createGain(); g.gain.value = gain;
+        n.connect(f); f.connect(g); g.connect(scapeGain);
+        n.start(); scapeNodes.push(n);
+        return g;
+      }
+      // the storm outside, heard through the pane: rolled off hard
+      var outside = bed("brown", "lowpass", 400, null, 0.62);
+      // a thin sheet of water actually running on the glass
+      bed("white", "bandpass", 2100, 0.7, 0.085);
+
+      // weather rolls in and out; perfectly steady rain sounds like a machine
+      var gust = actx.createOscillator(); gust.frequency.value = 0.045;
+      var gustG = actx.createGain(); gustG.gain.value = 0.2;
+      gust.connect(gustG); gustG.connect(outside.gain); gust.start(); scapeNodes.push(gust);
+
+      /* Impacts on the pane. Higher Q than open rain so each one keeps a
+         little pitched "tick" off the glass, and they arrive in CLUSTERS --
+         evenly spaced drops read as a dripping tap, not weather. Occasional
+         fatter, lower drops are the ones running down the glass. */
+      var dropBuf = getNoise("white");
+      function tick() {
+        if (scapeName !== "rain" || !actx) return;
+        var burst = 1 + (Math.random() < 0.35 ? 1 + Math.floor(Math.random() * 3) : 0);
+        for (var k = 0; k < burst; k++) {
+          var fat = Math.random() < 0.12;
+          var d = actx.createBufferSource(); d.buffer = dropBuf;
+          var bp = actx.createBiquadFilter(); bp.type = "bandpass";
+          bp.frequency.value = fat ? 700 + Math.random() * 700 : 1700 + Math.random() * 3200;
+          bp.Q.value = fat ? 3 + Math.random() * 3 : 6 + Math.random() * 6;
+          var g = actx.createGain();
+          var t = actx.currentTime + k * (0.012 + Math.random() * 0.03);
+          var amp = (fat ? 0.16 + Math.random() * 0.12 : 0.05 + Math.random() * 0.08);
+          var dec = (fat ? 0.09 + Math.random() * 0.10 : 0.022 + Math.random() * 0.04);
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(amp, t + 0.002);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + dec);
+          d.connect(bp); bp.connect(g); g.connect(scapeGain);
+          d.start(t, Math.random() * (dropBuf.duration - 0.1), 0.2);
+          d.stop(t + dec + 0.06);
+        }
+        scapeDropTimer = setTimeout(tick, 45 + Math.random() * 190);
+      }
+      scapeDropTimer = setTimeout(tick, 60);
     } else {
-      var src = actx.createBufferSource(); src.buffer = getNoise(name === "rain" ? "white" : "brown"); src.loop = true;
+      var src = actx.createBufferSource(); src.buffer = getNoise(name === "white" ? "white" : "brown"); src.loop = true;
       var filt = actx.createBiquadFilter();
-      if (name === "rain") { filt.type = "bandpass"; filt.frequency.value = 1800; filt.Q.value = 0.5; }
+      if (name === "white") { filt.type = "bandpass"; filt.frequency.value = 1800; filt.Q.value = 0.5; }
       else if (name === "waves") { filt.type = "lowpass"; filt.frequency.value = 520; }
       else { filt.type = "lowpass"; filt.frequency.value = 440; }
       src.connect(filt); filt.connect(scapeGain); src.start(); scapeNodes.push(src);
