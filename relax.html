@@ -7,7 +7,19 @@
 <!-- Intentionally self-contained: no theme.js / theme.css, so the site's
      light/dark theme, settings gear, and sign-in prompt never touch this page.
      It's a fixed, low-distraction calm space. -->
-<script>(function(){var m={normal:1,large:1.13,xl:1.28}[localStorage.getItem('relaxTextSize')]||1;document.documentElement.style.fontSize=(16*m)+'px';})();</script>
+<script>(function(){
+  var m={normal:1,large:1.13,xl:1.28}[localStorage.getItem('relaxTextSize')]||1;
+  document.documentElement.style.fontSize=(16*m)+'px';
+  /* Theme resolution, before first paint so there is no flash. Order matters:
+     this page's OWN setting wins, then the site-wide choice (someone who put
+     the whole site in dark mode expects Relax to be dark too), then the OS.
+     Still no theme.js here -- the page stays self-contained, it just stops
+     pretending the rest of the site does not exist. */
+  var t=null;
+  try{ t=localStorage.getItem('relaxTheme')||localStorage.getItem('siteTheme'); }catch(e){}
+  if(!t) t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  document.documentElement.setAttribute('data-theme',t);
+})();</script>
 <style>  html{font-size:16px;}
 
   /* One fixed, calming LIGHT palette — this page ignores the site's light/dark
@@ -18,6 +30,23 @@
     --r-a1:#3f9098; --r-a2:#4a86c8; --r-a3:#7d6fc0; --r-soft:#e8eff2;
     --r-glow:120,165,225; --r-shadow:0 1px 2px rgba(40,70,80,.05),0 14px 36px rgba(40,70,80,.10);
   }
+  /* Dark mode (added 2026-07-28). Relax is the page you are most likely to
+     open at night, so this matters more here than almost anywhere else.
+     Same hues, moved to a deep cool ground rather than swapped for new ones,
+     so the page still feels like itself. Accents are lightened until they
+     clear 6.5:1 on the dark card; --r-on-accent exists because #fff on the
+     lightened teal is only 2.53:1 -- the active button label has to go dark
+     (6.97:1) instead of white. */
+  :root[data-theme="dark"]{
+    --r-ink:#dde8ea; --r-muted:#93a8af; --r-line:#26363c; --r-card:#152025;
+    --r-a1:#57b0b6; --r-a2:#6ea6e2; --r-a3:#a394e0; --r-soft:#0d161a;
+    --r-glow:96,150,205; --r-shadow:0 1px 2px rgba(0,0,0,.34),0 14px 36px rgba(0,0,0,.46);
+    --r-on-accent:#0c171b;
+    --r-sos-ink:#e5a173; --r-sos-strong:#f0b98f; --r-sos-line:rgba(214,148,104,.34);
+    --r-sos-bg:rgba(242,170,96,.10);
+  }
+  :root{ --r-on-accent:#0e1a22; --r-sos-ink:#b26235; --r-sos-strong:#8f4a22;
+         --r-sos-line:rgba(214,148,104,.5); --r-sos-bg:rgba(242,170,96,.20); }
 
   *{box-sizing:border-box}
   body{margin:0;color:var(--r-ink);
@@ -31,6 +60,13 @@
       radial-gradient(50% 46% at 84% 20%, rgba(196,180,234,.32), transparent 62%),
       radial-gradient(72% 64% at 50% 108%, rgba(140,206,206,.36), transparent 66%);
     animation:drift 26s ease-in-out infinite alternate;}
+  /* The same three lights, dimmed and deepened for night. Kept as an aurora
+     rather than a flat dark field so the page still drifts and breathes. */
+  :root[data-theme="dark"] .r-bg{
+    background:
+      radial-gradient(55% 50% at 18% 12%, rgba(58,104,158,.34), transparent 62%),
+      radial-gradient(50% 46% at 84% 20%, rgba(96,80,150,.30), transparent 62%),
+      radial-gradient(72% 64% at 50% 108%, rgba(44,120,124,.32), transparent 66%);}
   @keyframes drift{from{transform:translate3d(-2%,-1%,0) scale(1.05)}to{transform:translate3d(2%,2%,0) scale(1.12)}}
 
   .wrap{max-width:640px;margin:0 auto;padding:24px 18px 80px;}
@@ -41,11 +77,11 @@
 
   /* SOS quick-reset (physiological sigh) — a gentle warm cue that stands apart */
   .sos-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
-    background:linear-gradient(135deg, rgba(242,170,96,.20), rgba(232,120,120,.15));
-    color:#b26235;border:1px solid rgba(214,148,104,.5);border-radius:14px;
+    background:linear-gradient(135deg, var(--r-sos-bg), rgba(232,120,120,.15));
+    color:var(--r-sos-ink);border:1px solid var(--r-sos-line);border-radius:14px;
     padding:13px 16px;font:600 0.875rem/1.3 inherit;cursor:pointer;margin:0 0 20px;
     transition:transform .15s, box-shadow .15s, border-color .15s;}
-  .sos-btn strong{font-weight:800;color:#8f4a22;}
+  .sos-btn strong{font-weight:800;color:var(--r-sos-strong);}
   .sos-btn svg{width:20px;height:20px;flex:none;}
   .sos-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(160,110,70,.22);border-color:rgba(214,148,104,.85);}
 
@@ -57,14 +93,14 @@
     border-radius:999px;padding:6px 13px;font:600 0.7812rem/1 inherit;cursor:pointer;
     transition:background .15s,color .15s,border-color .15s;}
   .scape-btn:hover{color:var(--r-ink);}
-  .scape-btn.active{background:var(--r-a1);border-color:var(--r-a1);color:#0e1a22;}
+  .scape-btn.active{background:var(--r-a1);border-color:var(--r-a1);color:var(--r-on-accent);}
   .scape-vol{width:94px;accent-color:var(--r-a1);cursor:pointer;}
 
   .modes{display:flex;gap:6px;background:var(--r-card);border:1px solid var(--r-line);
     border-radius:999px;padding:5px;box-shadow:var(--r-shadow);margin:0 auto 26px;max-width:420px;}
   .mode-btn{flex:1;border:0;background:transparent;color:var(--r-muted);cursor:pointer;
     font:600 0.875rem/1 inherit;padding:10px 8px;border-radius:999px;transition:background .2s,color .2s;}
-  .mode-btn.active{background:var(--r-a1);color:#fff;}
+  .mode-btn.active{background:var(--r-a1);color:var(--r-on-accent);}
   .panel{display:none;animation:fade .4s ease;}
   .panel.active{display:block;}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -135,7 +171,7 @@
     #p-meditate,#p-ground{max-width:720px;margin-inline:auto;}
   }
   .btn{border:0;border-radius:999px;padding:12px 26px;font:700 0.9375rem/1 inherit;cursor:pointer;
-    background:var(--r-a1);color:#fff;box-shadow:var(--r-shadow);transition:transform .15s,opacity .15s;}
+    background:var(--r-a1);color:var(--r-on-accent);box-shadow:var(--r-shadow);transition:transform .15s,opacity .15s;}
   .btn:hover{transform:translateY(-1px)}
   .btn.ghost{background:var(--r-card);color:var(--r-ink);border:1px solid var(--r-line);}
   .toggles{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:16px;}
@@ -196,6 +232,8 @@
   .r-tsize{display:inline-flex;gap:4px;flex:none;}
   .r-tsize button{border:1px solid var(--r-line);background:transparent;color:var(--r-ink);border-radius:8px;
     width:30px;height:28px;cursor:pointer;line-height:1;padding:0;font-weight:700;transition:border-color .15s,color .15s,background .15s;}
+  #r-theme button{width:auto;padding:0 9px;font-size:11px;font-weight:700;}
+  .r-tsize button[aria-pressed="true"]{background:var(--r-a1);border-color:var(--r-a1);color:var(--r-on-accent);}
   .r-tsize button:nth-child(1){font-size:11px}
   .r-tsize button:nth-child(2){font-size:14px}
   .r-tsize button:nth-child(3){font-size:17px}
@@ -222,6 +260,13 @@
 </div>
 <div class="r-settings" id="relax-settings" role="dialog" aria-label="Settings">
   <h3>Settings</h3>
+  <div class="r-set-row">
+    <span>Appearance</span>
+    <div class="r-tsize" id="r-theme">
+      <button type="button" data-theme-set="light" aria-label="Light">Light</button>
+      <button type="button" data-theme-set="dark" aria-label="Dark">Dark</button>
+    </div>
+  </div>
   <div class="r-set-row">
     <span>Text size</span>
     <div class="r-tsize" id="r-tsize">
@@ -466,6 +511,30 @@
     b.addEventListener("click", function () { applyTextSize(b.dataset.ts); });
   });
   applyTextSize(localStorage.getItem("relaxTextSize") || "normal");
+
+  // appearance — writes relaxTheme, which the head bootstrap reads FIRST (ahead
+  // of siteTheme and the OS), so an explicit choice here sticks for this page
+  // without dragging the rest of the site with it.
+  function applyRelaxTheme(t) {
+    if (t !== "dark" && t !== "light") t = "light";
+    document.documentElement.setAttribute("data-theme", t);
+    try { localStorage.setItem("relaxTheme", t); } catch (e) {}
+    document.querySelectorAll("#r-theme button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.themeSet === t ? "true" : "false");
+      b.classList.toggle("active", b.dataset.themeSet === t);
+    });
+  }
+  document.querySelectorAll("#r-theme button").forEach(function (b) {
+    b.addEventListener("click", function () { applyRelaxTheme(b.dataset.themeSet); });
+  });
+  // reflect whatever the bootstrap already resolved, without re-persisting it
+  (function () {
+    var cur = document.documentElement.getAttribute("data-theme") || "light";
+    document.querySelectorAll("#r-theme button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.themeSet === cur ? "true" : "false");
+      b.classList.toggle("active", b.dataset.themeSet === cur);
+    });
+  })();
 
   // ---------- BREATHE ----------
   var PATTERNS = {
