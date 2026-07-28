@@ -7,7 +7,7 @@ const CACHE_NAME = "pa-quizzes-v1";
    point is working when you are offline and unwinding, and it is fetched
    lazily by relax.html -- so without this it would only be cached AFTER you
    had already played it online at least once, which is exactly backwards. */
-const PRECACHE = ["audio/rain-on-window.ogg"];
+const PRECACHE = ["audio/rain-on-window.mp3"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

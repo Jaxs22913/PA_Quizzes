@@ -307,7 +307,7 @@
       <button class="scape-btn" data-scape="drone" type="button">Warm drone</button>
     </div>
     <input type="range" id="scape-vol" class="scape-vol" min="0" max="100" value="55" aria-label="Ambient volume">
-    <p class="scape-credit">Rain: &ldquo;Rain against the window&rdquo; by Cori Samuel &middot; public domain, via Wikimedia Commons. Everything else is generated in the browser.</p>
+    <p class="scape-credit">Rain: &ldquo;rain against window 2&rdquo; by bastipictures &middot; CC0 / public domain, via Freesound. Everything else is generated in the browser.</p>
   </div>
 
   <!-- BREATHE -->
@@ -649,17 +649,22 @@
      because filtered noise does not have the irregular pitched impacts a
      real pane does.
 
-     Source: "Rain against the window" by Cori Samuel, recorded 2008-07-07
-     with a microphone on a window sill. PUBLIC DOMAIN via Wikimedia Commons
-     (originally pdsounds.org, now defunct) -- verified through the Commons
-     API: License "pd", UsageTerms "Public domain", no restrictions. Public
-     domain needs no attribution, but it is credited in the page anyway.
+     Source: "rain against window 2" by bastipictures (Freesound #243781),
+     described as intense rain drops against a small window pane. CC0 /
+     public domain -- verified on the sound's own page, not just from a
+     search filter. MP3 rather than Ogg, so it also plays on older iPadOS
+     where Ogg Vorbis needs Safari 17+.
 
-     Measured against the best synthesized attempt:
-       synth      peak-over-floor 22.8   zero-crossing 1908Hz
-       recording  peak-over-floor 28.7   zero-crossing  860Hz
-     i.e. sharper impacts AND properly muffled, which is the combination the
-     synthesis could not reach.
+     Chosen by measuring six public-domain candidates on the same rig:
+       taps/sec   zero-crossing (lower = more muffled, i.e. through glass)
+         5.6          347Hz   <- this one
+         0.8          860Hz   previous pick (Wikimedia, Cori Samuel)
+         0.6          884Hz   gusty rain on window
+         0.3         2835Hz   heavy rain on window
+         0.0         2258Hz   rain window closed
+     It has ~7x the droplet impacts of the previous pick AND is the most
+     muffled of the set -- the combination three passes of synthesis could
+     not reach, because filtering noise to be sharper also makes it brighter.
 
      Fetched lazily -- only when Rain is first chosen -- so the 1.2MB is not
      on the critical path for anyone who never touches the ambient controls.
@@ -671,7 +676,7 @@
     if (rainBuf) { cb(rainBuf); return; }
     if (rainLoading) return;                 // a second click while in flight
     rainLoading = true;
-    fetch("audio/rain-on-window.ogg")
+    fetch("audio/rain-on-window.mp3")
       .then(function (r) { if (!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function (ab) {
         return new Promise(function (res, rej) { actx.decodeAudioData(ab, res, rej); });
@@ -692,38 +697,7 @@
     scapeNodes = [];
     if (scapeGain) { try { scapeGain.disconnect(); } catch (e) {} scapeGain = null; }
   }
-  var buildSynthRain = null;
-  function setScape(name) {
-    ensureAudio(); stopScape(); scapeName = name;
-    if (name === "off" || !actx) return;
-    var base = SCAPE_BASE[name] || 0.4;
-    scapeGain = actx.createGain(); scapeGain.gain.value = scapeVol * base; scapeGain.connect(masterGain);
-    if (name === "drone") {
-      [110, 164.8, 220].forEach(function (f, i) {
-        var o = actx.createOscillator(); o.type = "sine"; o.frequency.value = f;
-        var g = actx.createGain(); g.gain.value = [1, 0.5, 0.38][i];
-        var lfo = actx.createOscillator(); lfo.frequency.value = 0.05 + i * 0.02;
-        var lg = actx.createGain(); lg.gain.value = 3.5; lfo.connect(lg); lg.connect(o.detune);
-        o.connect(g); g.connect(scapeGain); o.start(); lfo.start();
-        scapeNodes.push(o, lfo);
-      });
-    } else if (name === "rain") {
-      loadRain(function (buf) {
-        // the user may have switched away while this was loading
-        if (scapeName !== "rain" || !actx || !scapeGain) return;
-        if (!buf) { buildSynthRain(); return; }
-        var r = actx.createBufferSource();
-        r.buffer = buf; r.loop = true;
-        // loop inside the recording, clear of any fade at either end, so the
-        // seam does not click
-        r.loopStart = 1.0; r.loopEnd = Math.max(2, buf.duration - 1.0);
-        var lp = actx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 11000;
-        r.connect(lp); lp.connect(scapeGain); r.start(0, 1.0);
-        scapeNodes.push(r);
-      });
-      return;
-    }
-    buildSynthRain = function () {
+  function buildSynthRain() {
       /* Synthesised fallback, used only when the recording cannot be loaded.
          "Rain on a window" (2026-07-28). Third pass. Passes 1-2 both failed
          the same way and it is worth recording why: the continuous noise bed
@@ -788,7 +762,38 @@
         scapeDropTimer = setTimeout(tick, 14 + Math.random() * 55);
       }
       scapeDropTimer = setTimeout(tick, 40);
-    };
+    }
+
+  function setScape(name) {
+    ensureAudio(); stopScape(); scapeName = name;
+    if (name === "off" || !actx) return;
+    var base = SCAPE_BASE[name] || 0.4;
+    scapeGain = actx.createGain(); scapeGain.gain.value = scapeVol * base; scapeGain.connect(masterGain);
+    if (name === "drone") {
+      [110, 164.8, 220].forEach(function (f, i) {
+        var o = actx.createOscillator(); o.type = "sine"; o.frequency.value = f;
+        var g = actx.createGain(); g.gain.value = [1, 0.5, 0.38][i];
+        var lfo = actx.createOscillator(); lfo.frequency.value = 0.05 + i * 0.02;
+        var lg = actx.createGain(); lg.gain.value = 3.5; lfo.connect(lg); lg.connect(o.detune);
+        o.connect(g); g.connect(scapeGain); o.start(); lfo.start();
+        scapeNodes.push(o, lfo);
+      });
+    } else if (name === "rain") {
+      loadRain(function (buf) {
+        // the user may have switched away while this was loading
+        if (scapeName !== "rain" || !actx || !scapeGain) return;
+        if (!buf) { buildSynthRain(); return; }
+        var r = actx.createBufferSource();
+        r.buffer = buf; r.loop = true;
+        // loop inside the recording, clear of any fade at either end, so the
+        // seam does not click
+        r.loopStart = 1.0; r.loopEnd = Math.max(2, buf.duration - 1.0);
+        var lp = actx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 11000;
+        r.connect(lp); lp.connect(scapeGain); r.start(0, 1.0);
+        scapeNodes.push(r);
+      });
+      return;
+    }
     {
       var src = actx.createBufferSource(); src.buffer = getNoise(name === "white" ? "white" : "brown"); src.loop = true;
       var filt = actx.createBiquadFilter();
