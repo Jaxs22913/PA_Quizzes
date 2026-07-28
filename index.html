@@ -38,6 +38,20 @@
     </svg>
   </div>
 
+  <!-- Hero ECG. The trace is the site's signature but only ever appeared as a
+       faint repeating tile in the outer margins at .17 opacity, i.e. wallpaper.
+       Here it is one confident sweep across the hero that draws itself once on
+       load, then rests. Behind the logo (z-index 0, pointer-events none) so it
+       frames the mark rather than competing with it. -->
+  <svg class="hero-ecg" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+    <path class="hero-ecg-line" pathLength="100" fill="none" stroke-linecap="round" stroke-linejoin="round"
+      d="M0,72 L150,72 L168,72 L176,58 L186,86 L196,72 L232,72 L246,44 L258,100 L270,60 L280,72 L300,72
+         L318,72 L326,66 L338,72 L420,72 L438,72 L446,56 L456,88 L466,72 L520,72
+         L536,40 L548,104 L560,56 L570,72 L640,72 L658,72 L666,64 L678,72 L760,72
+         L778,46 L790,98 L802,58 L812,72 L860,72 L878,72 L886,62 L898,72 L980,72
+         L996,42 L1008,102 L1020,58 L1030,72 L1200,72" />
+  </svg>
+
   <div class="brand-mark">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="AP logo Class of 2028">
       <title>AP Logo - Class of 2028 - Blue + White</title>
