@@ -236,9 +236,33 @@
       width: 380px;
       max-width: 85%;
       margin: 0 auto -34px;
-      transition: transform .25s var(--ease-spring);
     }
-    .brand-mark:hover { transform: rotate(-3deg) scale(1.02); }
+    /* Hover re-draws the monogram instead of tilting it (2026-07-28).
+       The mark is line art that already draws itself on load, so a rotate +
+       scale was fighting its own idiom -- it moved the logo rather than
+       doing anything WITH it. Hovering now re-runs that same gesture: the A
+       strokes back in, the P traces just behind it. Reuses the load
+       animation's pathLength=100 setup, so there is no second source of
+       truth for the geometry.
+
+       The redraw keyframes restate opacity:1 deliberately. Overriding
+       `animation` on hover discards the load animation's `forwards` fill,
+       which would otherwise drop .p-fade back to its base opacity:0 and
+       make the P vanish the moment you point at it. */
+    .brand-mark { transition: filter .3s var(--ease); }
+    .brand-mark:hover { filter: saturate(1.12); }
+    .brand-mark:hover .a-draw { animation: mark-redraw .78s cubic-bezier(.32,.72,.28,1) both; }
+    .brand-mark:hover .p-fade { animation: mark-redraw .78s cubic-bezier(.32,.72,.28,1) .14s both; }
+    @keyframes mark-redraw {
+      from { stroke-dashoffset: 100; opacity: 1; }
+      to   { stroke-dashoffset: 0;   opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .brand-mark { transition: none; }
+      .brand-mark:hover { filter: none; }
+      .brand-mark:hover .a-draw,
+      .brand-mark:hover .p-fade { animation: none; stroke-dashoffset: 0; opacity: 1; }
+    }
     .brand-mark svg { width: 100%; height: auto; display: block; }
 
     /* Compact mobile header: the full-height logo + title + two-line
