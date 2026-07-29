@@ -19,23 +19,6 @@
   }
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
-
-  .wordbank-row{gap:18px}
-  .retype-row{background:#eef7f6;border:1px solid rgba(15,118,110,.22);border-radius:12px;
-              padding:14px 16px;margin-bottom:14px}
-  .retype-lead{margin:0 0 8px;font-size:13.5px;font-weight:700;color:var(--teal-dk);
-               letter-spacing:.02em}
-  .retype-target{margin:0 0 10px;font-size:19px;font-weight:800;color:var(--ink);
-                 letter-spacing:.02em;background:#fff;border:1px dashed rgba(15,118,110,.35);
-                 border-radius:8px;padding:8px 12px;user-select:none}
-  .retype-row input{width:100%;font-family:inherit;font-size:16px;padding:11px 13px;
-                    border:1.5px solid var(--line);border-radius:10px;background:#fff;
-                    color:var(--ink)}
-  .retype-row input:focus{outline:none;border-color:var(--teal)}
-  .retype-row input:disabled{background:#eef2f1;color:var(--muted)}
-  .retype-hint{margin:8px 0 0;font-size:13px;color:var(--muted);min-height:18px;font-weight:600}
-  .retype-hint .ok{color:#0b7a4b}
-  .retype-hint .no{color:#b45309}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
@@ -132,6 +115,26 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: #14b8a6; }
   }
+
+  .wordbank-row{gap:18px}
+  .retype-row{background:#eef7f6;border:1px solid rgba(15,118,110,.22);border-radius:12px;
+              padding:14px 16px;margin-bottom:14px}
+  .retype-lead{margin:0 0 8px;font-size:13.5px;font-weight:700;color:var(--teal-dk);
+               letter-spacing:.02em}
+  .retype-target{margin:0 0 10px;font-size:19px;font-weight:800;color:var(--ink);
+                 letter-spacing:.02em;background:#fff;border:1px dashed rgba(15,118,110,.35);
+                 border-radius:8px;padding:8px 12px;user-select:none}
+  .retype-row input{width:100%;font-family:inherit;font-size:16px;padding:11px 13px;
+                    border:1.5px solid var(--line);border-radius:10px;background:#fff;
+                    color:var(--ink)}
+  .retype-row input:focus{outline:none;border-color:var(--teal)}
+  .retype-row input:disabled{background:#eef2f1;color:var(--muted)}
+  .retype-hint{margin:8px 0 0;font-size:13px;color:var(--muted);min-height:18px;font-weight:600}
+  .retype-hint .ok{color:#0b7a4b}
+  .retype-hint .no{color:#b45309}
+
+  .start-toggles{justify-content:flex-start;margin:-6px 0 22px}
+  .start-toggles .switch-label{font-size:14px}
 </style>
 </head>
 <body>
@@ -170,8 +173,17 @@
     <div class="meta">
       <span class="chip"><b>24</b> structures</span>
       <span class="chip">Type-in answers</span>
-      <span class="chip">Word bank toggle</span>
       <span class="chip">Override option</span>
+    </div>
+    <div class="wordbank-row start-toggles">
+      <label class="switch-label">
+        <span class="switch"><input type="checkbox" id="start-wordbank-toggle" onchange="toggleStartWordBank()"><span class="slider"></span></span>
+        Show word bank
+      </label>
+      <label class="switch-label">
+        <span class="switch"><input type="checkbox" id="start-retype-toggle" onchange="toggleStartRetype()"><span class="slider"></span></span>
+        Retype misses
+      </label>
     </div>
     <div id="resume-banner" class="obj hidden" style="background:#fdf1e2;border-color:rgba(180,83,9,.2)">
       <p style="color:#9a5b0a">Progress saved</p>
@@ -289,19 +301,34 @@ function buildWordBank(){
   $("wordbank").innerHTML = shuffled.map(t=>`<span class="term">${t}</span>`).join('');
 }
 buildWordBank();
-function toggleWordBank(){ $("wordbank").classList.toggle("hidden", !$("wordbank-toggle").checked); }
+
 function normalize(s){ return s.trim().toLowerCase().replace(/\s+/g,' '); }
 
 /* ---- retype-the-miss spelling drill ---------------------------------- */
-const RKEY = "practicumRetype";
+const RKEY = "practicumRetype", WBKEY = "practicumWordBank";
 function retypeOn(){ return localStorage.getItem(RKEY) === "1"; }
-function toggleRetype(){
-  localStorage.setItem(RKEY, $("retype-toggle").checked ? "1" : "0");
+function wordBankOn(){ return localStorage.getItem(WBKEY) === "1"; }
+/* Both settings live on the start screen and in the quiz toolbar; whichever
+   switch is used, the pair is kept in step and the choice is remembered. */
+function setWordBank(on){
+  localStorage.setItem(WBKEY, on ? "1" : "0");
+  ["wordbank-toggle","start-wordbank-toggle"].forEach(function(id){
+    const el = $(id); if(el) el.checked = on;
+  });
+  const wb = $("wordbank"); if(wb) wb.classList.toggle("hidden", !on);
 }
-(function(){
-  const t = $("retype-toggle");
-  if(t) t.checked = retypeOn();
-})();
+function setRetype(on){
+  localStorage.setItem(RKEY, on ? "1" : "0");
+  ["retype-toggle","start-retype-toggle"].forEach(function(id){
+    const el = $(id); if(el) el.checked = on;
+  });
+}
+function toggleWordBank(){ setWordBank($("wordbank-toggle").checked); }
+function toggleStartWordBank(){ setWordBank($("start-wordbank-toggle").checked); }
+function toggleRetype(){ setRetype($("retype-toggle").checked); }
+function toggleStartRetype(){ setRetype($("start-retype-toggle").checked); }
+setWordBank(wordBankOn());
+setRetype(retypeOn());
 let wrongResolved = false, retypeDone = false;
 function resetRetype(){
   wrongResolved = false; retypeDone = false;
