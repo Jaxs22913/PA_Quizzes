@@ -19,6 +19,23 @@
   }
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+  .wordbank-row{gap:18px}
+  .retype-row{background:#eef7f6;border:1px solid rgba(15,118,110,.22);border-radius:12px;
+              padding:14px 16px;margin-bottom:14px}
+  .retype-lead{margin:0 0 8px;font-size:13.5px;font-weight:700;color:var(--teal-dk);
+               letter-spacing:.02em}
+  .retype-target{margin:0 0 10px;font-size:19px;font-weight:800;color:var(--ink);
+                 letter-spacing:.02em;background:#fff;border:1px dashed rgba(15,118,110,.35);
+                 border-radius:8px;padding:8px 12px;user-select:none}
+  .retype-row input{width:100%;font-family:inherit;font-size:16px;padding:11px 13px;
+                    border:1.5px solid var(--line);border-radius:10px;background:#fff;
+                    color:var(--ink)}
+  .retype-row input:focus{outline:none;border-color:var(--teal)}
+  .retype-row input:disabled{background:#eef2f1;color:var(--muted)}
+  .retype-hint{margin:8px 0 0;font-size:13px;color:var(--muted);min-height:18px;font-weight:600}
+  .retype-hint .ok{color:#0b7a4b}
+  .retype-hint .no{color:#b45309}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
@@ -178,6 +195,10 @@
         <span class="switch"><input type="checkbox" id="wordbank-toggle" onchange="toggleWordBank()"><span class="slider"></span></span>
         Show word bank
       </label>
+      <label class="switch-label">
+        <span class="switch"><input type="checkbox" id="retype-toggle" onchange="toggleRetype()"><span class="slider"></span></span>
+        Retype misses
+      </label>
     </div>
     <div id="wordbank" class="wordbank hidden"></div>
     <div class="diagram-wrap">
@@ -218,6 +239,14 @@
       <button class="btn ghost" onclick="overrideCorrect()">I got this right</button>
       <button class="btn ghost" onclick="keepWrong()">No, continue</button>
     </div>
+    <div class="retype-row hidden" id="retype-row">
+      <p class="retype-lead">Type it out correctly to lock it in</p>
+      <p class="retype-target" id="retype-target"></p>
+      <input type="text" id="retype-input" placeholder="Retype the answer..." autocomplete="off"
+             autocapitalize="off" spellcheck="false" oninput="checkRetype()"
+             onpaste="return false" ondrop="return false">
+      <p class="retype-hint" id="retype-hint"></p>
+    </div>
     <button class="btn hidden" id="next-btn" onclick="nextQuestion()">Next &rarr;</button>
   </section>
 
@@ -252,6 +281,64 @@ function buildWordBank(){
 buildWordBank();
 function toggleWordBank(){ $("wordbank").classList.toggle("hidden", !$("wordbank-toggle").checked); }
 function normalize(s){ return s.trim().toLowerCase().replace(/\s+/g,' '); }
+
+/* ---- retype-the-miss spelling drill ---------------------------------- */
+const RKEY = "practicumRetype";
+function retypeOn(){ return localStorage.getItem(RKEY) === "1"; }
+function toggleRetype(){
+  localStorage.setItem(RKEY, $("retype-toggle").checked ? "1" : "0");
+}
+(function(){
+  const t = $("retype-toggle");
+  if(t) t.checked = retypeOn();
+})();
+let wrongResolved = false, retypeDone = false;
+function resetRetype(){
+  wrongResolved = false; retypeDone = false;
+  const r = $("retype-row");
+  r.classList.add("hidden");
+  $("retype-input").value = ""; $("retype-input").disabled = false;
+  $("retype-hint").innerHTML = "";
+}
+function startRetype(item){
+  retypeDone = false;
+  $("retype-target").textContent = item.answer;
+  const inp = $("retype-input");
+  inp.value = ""; inp.disabled = false;
+  $("retype-hint").innerHTML = "";
+  $("retype-row").classList.remove("hidden");
+  setTimeout(function(){ inp.focus(); }, 40);
+}
+function recordWrong(){
+  if(wrongResolved) return;
+  wrongResolved = true;
+  const {item, given} = pendingWrong;
+  revealAnswer(item, 'wrong');
+  results.push({num:item.num, answer:item.answer, given, status:'wrong'});
+  saveProgress();
+}
+function checkRetype(){
+  if(!pendingWrong) return;
+  const item = pendingWrong.item;
+  const v = $("retype-input").value;
+  const hint = $("retype-hint");
+  if(normalize(v) === normalize(item.answer)){
+    retypeDone = true;
+    $("retype-input").disabled = true;
+    hint.innerHTML = '<span class="ok">&#10004; Spelled correctly.</span>';
+    recordWrong();
+    $("override-row").classList.add("hidden");
+    $("next-btn").classList.remove("hidden");
+    $("next-btn").focus();
+  } else if(!v.trim()){
+    hint.innerHTML = "";
+  } else if(normalize(item.answer).startsWith(normalize(v))){
+    hint.innerHTML = '<span class="ok">Keep going&hellip;</span>';
+  } else {
+    hint.innerHTML = '<span class="no">Not matching yet &mdash; check it letter by letter.</span>';
+  }
+}
+
 
 const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
 function saveProgress(){
@@ -312,6 +399,7 @@ function renderCurrent(){
   $("override-row").classList.add("hidden");
   $("next-btn").classList.add("hidden");
   $("feedback").classList.add("hidden");
+  resetRetype();
   input.focus();
   saveProgress();
 }
@@ -334,12 +422,17 @@ function checkAnswer(){
     $("next-btn").classList.remove("hidden");
     saveProgress();
   } else {
-    fb.innerHTML = `<div class="verdict no">Not quite &mdash; correct answer: <b>${item.answer}</b></div>`;
+    fb.innerHTML = `<div class="verdict no">Incorrect &mdash; correct answer: <b>${item.answer}</b></div>`;
     pendingWrong = {item, given};
+    wrongResolved = false; retypeDone = false;
     $("override-row").classList.remove("hidden");
+    if(retypeOn()) startRetype(item);
   }
 }
 function overrideCorrect(){
+  if(wrongResolved) return;
+  wrongResolved = true;
+  $("retype-row").classList.add("hidden");
   const {item, given} = pendingWrong;
   revealAnswer(item, 'overridden');
   score++;
@@ -350,12 +443,10 @@ function overrideCorrect(){
   saveProgress();
 }
 function keepWrong(){
-  const {item, given} = pendingWrong;
-  revealAnswer(item, 'wrong');
-  results.push({num:item.num, answer:item.answer, given, status:'wrong'});
+  recordWrong();
   $("override-row").classList.add("hidden");
+  if(retypeOn() && !retypeDone){ $("retype-input").focus(); return; }
   $("next-btn").classList.remove("hidden");
-  saveProgress();
 }
 function skipQuestion(){
   const item = quizOrder[current];
