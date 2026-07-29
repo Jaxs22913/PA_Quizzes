@@ -2,3 +2,12 @@
 
 # audio audition candidates -- kept locally for listening, not shipped
 audio/_cands/
+
+# iCloud Drive conflict copies. This repo sits under ~/Documents, which has
+# iCloud Desktop & Documents sync on, so a build that rewrites hundreds of
+# files at once leaves "<name> 2.js" / "<name> 3.html" copies behind. They have
+# twice nearly been committed as junk. No real file here has a space in its
+# name, so these patterns are safe. Clean them with:
+#   python3 tools/clean_sync_dupes.py --apply
+* [0-9].*
+* [0-9][0-9].*
