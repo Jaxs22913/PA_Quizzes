@@ -88,16 +88,32 @@
     } catch (e) { /* never let logging break the counter */ }
   }
 
+  var pendingKind = null;
+
   function flush() {
     if (!ready || pending <= 0) return;
-    var n = pending;
-    pending = 0;
+    var n = pending, kind = pendingKind;
+    pending = 0; pendingKind = null;
+    if (flushTimer) { clearTimeout(flushTimer); flushTimer = null; }
     statRef().set({
       questionsCompleted: firebase.firestore.FieldValue.increment(n),
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
     }, { merge: true }).then(function () {
-      logEvent(n);
+      logEvent(n, kind);
     }).catch(function () { /* permission-denied / offline -- drop silently */ });
+  }
+
+  // The practicums count one question per answer rather than a lump at the
+  // finish, so a page can produce 30+ increments instead of one. Coalescing
+  // them over a few seconds keeps that from becoming 30 Firestore writes and
+  // 30 log rows, and a pagehide flush means a half-finished attempt still
+  // counts.
+  var flushTimer = null;
+  var COALESCE_MS = 4000;
+
+  function flushSoon() {
+    if (flushTimer) return;
+    flushTimer = setTimeout(function () { flushTimer = null; flush(); }, COALESCE_MS);
   }
 
   window.ClassStats = {
@@ -107,8 +123,21 @@
       if (!n) return;
       pending += n;
       flush();
+    },
+    // Record a single answered question, batched. `kind` tags the log row.
+    recordAnswer: function (kind) {
+      pending += 1;
+      pendingKind = kind || "practicum-answer";
+      flushSoon();
     }
   };
+
+  ["pagehide", "beforeunload"].forEach(function (evt) {
+    window.addEventListener(evt, function () { flush(); });
+  });
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") flush();
+  });
 
   // Hook the quiz engines: markCompleted(score, total, timeMs) is their shared
   // finish signal (a top-level function, so it's on window). Wrapping it here --
@@ -119,7 +148,12 @@
   if (typeof window.markCompleted === "function") {
     var orig = window.markCompleted;
     window.markCompleted = function (score, total, timeMs) {
-      try { window.ClassStats.record(total); } catch (e) {}
+      // Pages that count per answer (the practicums) opt out of the lump sum
+      // here, otherwise every attempt would be counted twice.
+      try {
+        if (!window.CLASS_STATS_PER_ANSWER) window.ClassStats.record(total);
+        else flush();
+      } catch (e) {}
       return orig.apply(this, arguments);
     };
   }

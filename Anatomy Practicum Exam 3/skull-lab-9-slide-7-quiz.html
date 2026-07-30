@@ -307,6 +307,14 @@ function buildWordBank(){
 buildWordBank();
 
 function normalize(s){ return s.trim().toLowerCase().replace(/\s+/g,' '); }
+/* Each structure counts toward the class-wide question counter as it is
+   answered, so an abandoned attempt still counts what was actually done. This
+   flag tells class-stats.js not to also add the total at the finish. */
+window.CLASS_STATS_PER_ANSWER = true;
+function countAnswered(){
+  try { if (window.ClassStats && window.ClassStats.recordAnswer) window.ClassStats.recordAnswer("practicum-answer"); } catch (e) {}
+}
+
 
 /* ---- retype-the-miss spelling drill ---------------------------------- */
 const RKEY = "practicumRetype", WBKEY = "practicumWordBank";
@@ -456,6 +464,7 @@ function checkAnswer(){
   fb.classList.remove("hidden");
   if(correct){
     fb.innerHTML = `<div class="verdict ok">Correct!</div>`;
+    countAnswered();
     revealAnswer(item, 'correct');
     score++;
     results.push({num:item.num, answer:item.answer, given, status:'correct'});
@@ -464,6 +473,7 @@ function checkAnswer(){
     saveProgress();
   } else {
     fb.innerHTML = `<div class="verdict no">Incorrect &mdash; correct answer: <b>${item.answer}</b></div>`;
+    countAnswered();
     pendingWrong = {item, given};
     wrongResolved = false; retypeDone = false;
     $("override-row").classList.remove("hidden");
