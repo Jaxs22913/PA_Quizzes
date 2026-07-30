@@ -1471,3 +1471,9 @@
 .semester-empty-title{ font-size:17px; font-weight:800; color:var(--ink);
   margin:0 0 6px; }
 .semester-empty p{ margin:0 auto; max-width:44ch; font-size:14px; line-height:1.6; }
+
+/* The site has no global .hidden rule -- every one is scoped to its own
+   component -- so the semester blocks need their own. Without this all four
+   terms render stacked down the page, each with its own heading, progress bar
+   and picker, which reads as duplicated content rather than as a bug. */
+.semester.hidden { display: none; }

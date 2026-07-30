@@ -144,6 +144,14 @@ if __name__ == "__main__":
         print("\n--- FLAGGED ---")
         for f, errs in results.items():
             print(f"  {f}")
-            for kind, text in errs[:3]:
-                print(f"      [{kind}] {text}")
-    json.dump(results, open("/private/tmp/claude-501/-Users-jaxonluke/ae8f0558-14e4-422b-ba9b-93a8fb810900/scratchpad/sweep2/console_errors.json", "w"), indent=1)
+            # entries are (kind, text) pairs, but be defensive: a malformed one
+            # used to crash the whole report AFTER the 20-minute sweep, losing
+            # every result -- the one moment the report actually matters
+            for e in errs[:3]:
+                if isinstance(e, (list, tuple)) and len(e) == 2:
+                    print(f"      [{e[0]}] {e[1]}")
+                else:
+                    print(f"      {e!r}")
+    out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "console_errors.json")
+    json.dump(results, open(out_path, "w"), indent=1)
+    print(f"\nwrote {out_path}")
