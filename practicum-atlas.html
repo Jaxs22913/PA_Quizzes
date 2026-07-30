@@ -62,6 +62,12 @@
          border-radius:999px;padding:7px 13px;white-space:nowrap}
 
   /* ---- picker */
+  .exam-head{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);
+             font-weight:800;margin:22px 0 10px;padding:0 0 6px;border-bottom:2px solid var(--line);
+             display:flex;align-items:baseline;gap:10px}
+  .exam-head:first-child{margin-top:4px}
+  .exam-head .exam-tally{margin-left:auto;font-size:12px;letter-spacing:0;text-transform:none;
+                         font-weight:600;color:var(--muted)}
   details.grp{border:1px solid var(--line);border-radius:12px;margin:0 0 10px;
               background:var(--card);overflow:hidden}
   details.grp>summary{cursor:pointer;padding:12px 14px;font-weight:800;color:var(--teal-dk);
@@ -89,9 +95,18 @@
   .plate h3{margin:0 0 4px;font-size:18px;color:var(--teal-dk)}
   .plate .meta{font-size:12px;color:var(--muted);margin:0 0 14px}
   .plate .meta a{margin-left:8px}
+  /* Contents is sticky, so on a long run of plates it eats image space --
+     collapsible, and the collapsed state is remembered. */
   #toc{position:sticky;top:66px;z-index:10;background:var(--card);border:1px solid var(--line);
-       border-radius:12px;padding:10px 14px;margin:0 0 18px;font-size:13px;max-height:28vh;
-       overflow:auto;-webkit-overflow-scrolling:touch}
+       border-radius:12px;padding:0;margin:0 0 18px;font-size:13px;overflow:hidden}
+  #toc>summary{cursor:pointer;padding:10px 14px;font-weight:800;color:var(--teal-dk);
+               display:flex;align-items:center;gap:8px;list-style:none}
+  #toc>summary::-webkit-details-marker{display:none}
+  #toc>summary:before{content:"\25BE";color:var(--teal);font-size:11px}
+  #toc:not([open])>summary:before{content:"\25B8"}
+  #toc>summary .hint{margin-left:auto;font-weight:600;color:var(--muted);font-size:12px}
+  #toc .toc-list{padding:2px 14px 12px;max-height:26vh;overflow:auto;
+                 -webkit-overflow-scrolling:touch}
   #toc a{display:block;padding:3px 0;text-decoration:none}
   #toc a:hover{text-decoration:underline}
 
@@ -121,6 +136,18 @@
 </head>
 <body>
 <div class="wrap">
+
+  <div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 22px;">
+    <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, var(--line), transparent);"></span>
+    <a href="index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:70px;height:auto;display:block;">
+      <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+      <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+      <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+    </svg>
+    </a>
+    <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, var(--line), transparent);"></span>
+  </div>
 
   <div class="eyebrow">Anatomy Practicum</div>
   <h1>Practicum Atlas</h1>
@@ -165,12 +192,21 @@
     });
     var html = "";
     Object.keys(byExam).sort().forEach(function (exam) {
+      // Exam 2 and Exam 3 are separate bodies of material and get their own
+      // heading, rather than being told apart by a suffix on every group.
+      var examTotal = 0;
+      Object.keys(byExam[exam]).forEach(function (sec) {
+        Object.keys(byExam[exam][sec]).forEach(function (rg) {
+          examTotal += byExam[exam][sec][rg].length;
+        });
+      });
+      html += '<h2 class="exam-head">' + esc(exam) +
+              '<span class="exam-tally">' + examTotal + ' plates</span></h2>';
       Object.keys(byExam[exam]).forEach(function (sec) {
         var regions = byExam[exam][sec];
         var total = Object.keys(regions).reduce(function (n, k) { return n + regions[k].length; }, 0);
         html += '<details class="grp" data-exam="' + esc(exam) + '"><summary>' +
-                esc(sec) + ' <span style="font-weight:600;color:var(--muted)">&middot; ' +
-                esc(exam) + '</span><span class="tally">' + total + '</span></summary>' +
+                esc(sec) + '<span class="tally">' + total + '</span></summary>' +
                 '<div class="reg"><div class="pick-actions">' +
                 '<button class="mini" data-all="1">Select all</button>' +
                 '<button class="mini" data-all="0">None</button></div>';
@@ -244,6 +280,14 @@
       d.style.display = shown ? "" : "none";
       if (q && shown) d.open = true;
     });
+    document.querySelectorAll("#picker h2.exam-head").forEach(function (hd) {
+      var any = false, n = hd.nextElementSibling;
+      while (n && n.tagName !== "H2") {
+        if (n.classList.contains("grp") && n.style.display !== "none") any = true;
+        n = n.nextElementSibling;
+      }
+      hd.style.display = any ? "" : "none";
+    });
   };
 
   /* ---------- viewer ---------- */
@@ -278,16 +322,23 @@
       return a.exam.localeCompare(b.exam) || a.section.localeCompare(b.section) ||
              a.region.localeCompare(b.region) || a.title.localeCompare(b.title);
     });
-    var toc = '<div id="toc"><b>' + chosen.length + " plates</b>" +
+    var tocOpen = localStorage.getItem("atlasTocOpen") !== "0";
+    var toc = '<details id="toc"' + (tocOpen ? " open" : "") + ">" +
+      "<summary>" + chosen.length + ' plates <span class="hint">contents</span></summary>' +
+      '<div class="toc-list">' +
       chosen.map(function (r) {
         return '<a href="#p-' + esc(r.slug) + '">' + esc(r.title || r.slug) + "</a>";
-      }).join("") + "</div>";
+      }).join("") + "</div></details>";
     $("viewer").innerHTML = toc + chosen.map(plateHTML).join("");
     $("picker").style.display = "none";
     $("viewer").style.display = "block";
     $("back-btn").style.display = "";
     $("open-btn").style.display = "none";
     $("search").style.display = "none";
+    var t = document.getElementById("toc");
+    if (t) t.addEventListener("toggle", function () {
+      try { localStorage.setItem("atlasTocOpen", t.open ? "1" : "0"); } catch (e) {}
+    });
     window.scrollTo(0, 0);
     layoutAll();
   };

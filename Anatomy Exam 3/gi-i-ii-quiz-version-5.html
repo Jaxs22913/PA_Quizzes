@@ -306,6 +306,13 @@ function applyExamModeUI(){
 }
 
 const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Every question counts toward the class-wide counter the moment it is first
+   answered, so an unfinished attempt still counts what was actually done. This
+   flag tells class-stats.js not to also add the total at submit. */
+window.CLASS_STATS_PER_ANSWER = true;
+function countAnswered(){
+  try { if (window.ClassStats && window.ClassStats.recordAnswer) window.ClassStats.recordAnswer("quiz-answer"); } catch (e) {}
+}
 function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), examMode, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
 function clearProgress(){ localStorage.removeItem(PKEY); }
 function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
@@ -416,6 +423,7 @@ function choose(sel){
   }
   if(answers[idx]!==null) return;
   answers[idx]=sel;
+  countAnswered();
   if(sel===q.c) score++;
   if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
   saveProgress();

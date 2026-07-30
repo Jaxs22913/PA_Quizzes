@@ -69,6 +69,13 @@ const responses = new Array(QUESTIONS.length).fill(null);
 const quiz=document.getElementById('quiz');
 const pf=document.getElementById('pf'), pos=document.getElementById('pos'), sc=document.getElementById('sc');
 const LETTERS=['A','B','C','D'];
+/* Every question counts toward the class-wide counter the moment it is first
+   answered, so an unfinished attempt still counts what was actually done. This
+   flag tells class-stats.js not to also add the total at submit. */
+window.CLASS_STATS_PER_ANSWER = true;
+function countAnswered(){
+  try { if (window.ClassStats && window.ClassStats.recordAnswer) window.ClassStats.recordAnswer("quiz-answer"); } catch (e) {}
+}
 
 function render(){
   const q=QUESTIONS[idx];
@@ -106,6 +113,7 @@ function render(){
 }
 function pick(i){
   if(responses[idx]!==null) return;
+  countAnswered();
   const q=QUESTIONS[idx];
   const correct=(i===q.a);
   responses[idx]={pick:i,correct};

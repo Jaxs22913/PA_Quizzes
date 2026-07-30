@@ -1441,3 +1441,17 @@
   background: var(--tab-hue, var(--accent));
   box-shadow: 0 4px 14px color-mix(in oklab, var(--tab-hue, var(--accent)) 30%, transparent);
 }
+
+
+/* Practicum Atlas entry point inside each practicum section. Same shell as the
+   other feature buttons (.guides-btn) so it reads as part of the set rather
+   than a bare link, with a second line for what it actually does. */
+.atlas-btn{ margin: 2px 0 14px; align-items: center; }
+.atlas-btn .atlas-btn-note{
+  font-weight: 600; font-size: 12.5px; color: var(--muted);
+  padding-left: 10px; margin-left: 2px; border-left: 1px solid var(--border);
+}
+@media (max-width: 560px){
+  .atlas-btn{ white-space: normal; align-items: flex-start; }
+  .atlas-btn .atlas-btn-note{ display: block; border-left: 0; padding-left: 0; margin: 2px 0 0; }
+}
