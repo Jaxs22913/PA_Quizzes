@@ -37,7 +37,7 @@ converter did because the old schema didn't have per-option text.
 
 ```python
 import sys
-sys.path.insert(0, "/Users/jaxonluke/Documents/PA_Quizzes/tools/quiz-template")
+sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/quiz-template")
 from render import render
 
 html = render(

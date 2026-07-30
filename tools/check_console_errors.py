@@ -5,7 +5,9 @@ Usage: python3 check_console_errors.py [path-prefix-filter]
 """
 import json, os, subprocess, sys, time, urllib.request, urllib.parse, websocket
 
-ROOT = "/Users/jaxonluke/Documents/PA_Quizzes"
+# derived, not hardcoded: the repo moved once already (out of iCloud)
+import os
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HTTP_PORT = 8850
 CDP_PORT = 9450
 

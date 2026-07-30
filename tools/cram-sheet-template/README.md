@@ -62,7 +62,7 @@ cram sheets are unaffected.
 
 ```python
 import sys
-sys.path.insert(0, "/Users/jaxonluke/Documents/PA_Quizzes/tools/cram-sheet-template")
+sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/cram-sheet-template")
 from render import render
 
 html = render(

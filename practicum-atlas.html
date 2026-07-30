@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practicum Atlas — PA Quizzes</title>
+<link rel="stylesheet" href="theme.css">
+<script src="practicum-atlas-data.js"></script>
+<script src="theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<style>
+  :root{
+    --ink:#132321; --muted:#5b6f6c; --line:#dbe8e6; --paper:#f4f8f7; --card:#fff;
+    --teal:#0f766e; --teal-dk:#0b5c56; --teal-soft:#e6f5f3;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
+      --teal:#5eead4;--teal-dk:#99f6e4;--teal-soft:#0f2a28;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
+  }
+  :root[data-theme="dark"]{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;
+    --card:#161a22;--teal:#5eead4;--teal-dk:#99f6e4;--teal-soft:#0f2a28;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
+  :root[data-theme="light"]{--ink:#132321;--muted:#5b6f6c;--line:#dbe8e6;--paper:#f4f8f7;
+    --card:#fff;--teal:#0f766e;--teal-dk:#0b5c56;--teal-soft:#e6f5f3;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.06);}
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--paper);color:var(--ink);line-height:1.5;padding:24px 16px 80px}
+  .wrap{max-width:1100px;margin:0 auto}
+  a{color:var(--teal-dk)}
+  h1{font-size:26px;margin:0 0 6px;color:var(--teal-dk);font-weight:800}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 20px}
+  .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:700;
+           color:var(--teal);margin-bottom:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+        box-shadow:var(--shadow);padding:20px 22px;margin:0 0 18px}
+
+  /* ---- toolbar */
+  .bar{position:sticky;top:0;z-index:20;background:var(--paper);
+       padding:10px 0 12px;margin:0 0 14px;border-bottom:1px solid var(--line);
+       display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn{font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;border:none;
+       background:var(--teal);color:#fff;border-radius:10px;padding:10px 16px}
+  .btn:disabled{opacity:.45;cursor:default}
+  .btn.ghost{background:transparent;color:var(--teal-dk);border:1.5px solid var(--teal)}
+  #search{flex:1;min-width:180px;font-family:inherit;font-size:14px;padding:10px 12px;
+          border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+  #search:focus{outline:none;border-color:var(--teal)}
+  .count{font-size:13px;font-weight:700;color:var(--teal-dk);background:var(--teal-soft);
+         border-radius:999px;padding:7px 13px;white-space:nowrap}
+
+  /* ---- picker */
+  details.grp{border:1px solid var(--line);border-radius:12px;margin:0 0 10px;
+              background:var(--card);overflow:hidden}
+  details.grp>summary{cursor:pointer;padding:12px 14px;font-weight:800;color:var(--teal-dk);
+                      font-size:15px;display:flex;align-items:center;gap:10px}
+  details.grp>summary::-webkit-details-marker{display:none}
+  details.grp>summary:before{content:"▸";color:var(--teal);font-size:12px}
+  details.grp[open]>summary:before{content:"▾"}
+  .grp .tally{font-size:12px;font-weight:700;color:var(--muted);margin-left:auto}
+  .reg{padding:0 14px 12px}
+  .reg h4{margin:10px 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+          color:var(--muted)}
+  .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:4px}
+  .items label{display:flex;gap:9px;align-items:flex-start;font-size:14px;padding:6px 8px;
+               border-radius:8px;cursor:pointer}
+  .items label:hover{background:var(--teal-soft)}
+  .items input{margin:3px 0 0;flex:none;accent-color:var(--teal)}
+  .pick-actions{display:flex;gap:8px;margin:2px 0 0}
+  .mini{font-size:12px;font-weight:700;color:var(--teal-dk);background:transparent;
+        border:1px solid var(--line);border-radius:8px;padding:4px 9px;cursor:pointer}
+
+  /* ---- viewer */
+  #viewer{display:none}
+  .plate{background:var(--card);border:1px solid var(--line);border-radius:16px;
+         box-shadow:var(--shadow);padding:18px 20px 22px;margin:0 0 20px}
+  .plate h3{margin:0 0 4px;font-size:18px;color:var(--teal-dk)}
+  .plate .meta{font-size:12px;color:var(--muted);margin:0 0 14px}
+  .plate .meta a{margin-left:8px}
+  #toc{position:sticky;top:66px;z-index:10;background:var(--card);border:1px solid var(--line);
+       border-radius:12px;padding:10px 14px;margin:0 0 18px;font-size:13px;max-height:28vh;
+       overflow:auto;-webkit-overflow-scrolling:touch}
+  #toc a{display:block;padding:3px 0;text-decoration:none}
+  #toc a:hover{text-decoration:underline}
+
+  /* label overlays — same geometry as the study pages */
+  .pm-outer{padding:0 clamp(72px,20vw,220px)}
+  .pm-wrap{position:relative;display:block;width:100%}
+  .pm-wrap img{display:block;width:100%;height:auto;border-radius:12px}
+  .pm-links{position:absolute;inset:0;width:100%;height:100%;overflow:visible;
+            pointer-events:none;z-index:1}
+  .pm-links path{stroke:rgba(15,118,110,.55);stroke-width:1;fill:none}
+  .pm-dot{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;
+          background:#f59e0b;box-shadow:0 0 0 2px #fff,0 1px 3px rgba(0,0,0,.55);
+          pointer-events:none;z-index:3}
+  .pm-lab{position:absolute;font-size:12px;font-weight:700;color:#132321;
+          background:rgba(255,255,255,.96);border:1px solid rgba(15,118,110,.3);
+          border-radius:6px;padding:2px 6px;box-shadow:0 1px 4px rgba(0,0,0,.2);
+          line-height:1.25;pointer-events:none;z-index:2;
+          width:max-content;max-width:clamp(70px,17vw,190px)}
+  .plain img{display:block;width:100%;height:auto;border-radius:12px}
+  @media (max-width:640px){
+    .pm-lab{font-size:9px;padding:1px 4px} .pm-dot{width:6px;height:6px;margin:-3px 0 0 -3px}
+    .pm-outer{padding:0 clamp(56px,22vw,120px)}
+  }
+  .empty{color:var(--muted);font-size:15px;padding:20px 0}
+  .mistake-note{text-align:center;color:var(--muted);font-size:13px;margin:26px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Anatomy Practicum</div>
+  <h1>Practicum Atlas</h1>
+  <p class="sub">Tick the plates you want, then open them together as one scrollable page &mdash;
+     handy for comparing several images side by side instead of clicking through one at a time.</p>
+
+  <div class="bar">
+    <input type="search" id="search" placeholder="Filter by name, e.g. skull, femur, uterus&hellip;"
+           autocomplete="off" oninput="applyFilter()">
+    <span class="count" id="count">0 selected</span>
+    <button class="btn" id="open-btn" onclick="openSelected()" disabled>Open selected &rarr;</button>
+    <button class="btn ghost" onclick="clearAll()">Clear</button>
+    <button class="btn ghost" id="back-btn" style="display:none" onclick="backToPicker()">&larr; Change selection</button>
+  </div>
+
+  <div id="picker"></div>
+  <div id="viewer"></div>
+
+  <p class="mistake-note">&#9733; <a href="#" onclick="event.preventDefault(); window.reportMistake && window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  <p style="margin:18px 0 0"><a href="index.html">&larr; Back to Class Quizzes</a></p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var DATA = (window.ATLAS || []).slice();
+  var KEY = "atlasPick";
+  var picked = new Set();
+  try { (JSON.parse(localStorage.getItem(KEY) || "[]") || []).forEach(function (s) { picked.add(s); }); }
+  catch (e) {}
+
+  var $ = function (id) { return document.getElementById(id); };
+  function key(r) { return r.folder + "/" + r.slug; }
+
+  /* ---------- picker, grouped exactly as the homepage lists them ---------- */
+  function build() {
+    var byExam = {};
+    DATA.forEach(function (r) {
+      (((byExam[r.exam] = byExam[r.exam] || {})[r.section] =
+        byExam[r.exam][r.section] || {})[r.region] =
+        byExam[r.exam][r.section][r.region] || []).push(r);
+    });
+    var html = "";
+    Object.keys(byExam).sort().forEach(function (exam) {
+      Object.keys(byExam[exam]).forEach(function (sec) {
+        var regions = byExam[exam][sec];
+        var total = Object.keys(regions).reduce(function (n, k) { return n + regions[k].length; }, 0);
+        html += '<details class="grp" data-exam="' + esc(exam) + '"><summary>' +
+                esc(sec) + ' <span style="font-weight:600;color:var(--muted)">&middot; ' +
+                esc(exam) + '</span><span class="tally">' + total + '</span></summary>' +
+                '<div class="reg"><div class="pick-actions">' +
+                '<button class="mini" data-all="1">Select all</button>' +
+                '<button class="mini" data-all="0">None</button></div>';
+        Object.keys(regions).forEach(function (reg) {
+          html += '<h4>' + esc(reg) + '</h4><div class="items">';
+          regions[reg].sort(function (a, b) { return a.title.localeCompare(b.title); })
+            .forEach(function (r) {
+              var k = key(r);
+              html += '<label><input type="checkbox" value="' + esc(k) + '"' +
+                      (picked.has(k) ? " checked" : "") + '>' +
+                      '<span>' + esc(r.title || r.slug) + '</span></label>';
+            });
+          html += "</div>";
+        });
+        html += "</div></details>";
+      });
+    });
+    $("picker").innerHTML = html;
+
+    $("picker").addEventListener("change", function (e) {
+      if (e.target.type !== "checkbox") return;
+      if (e.target.checked) picked.add(e.target.value); else picked.delete(e.target.value);
+      save();
+    });
+    $("picker").addEventListener("click", function (e) {
+      var b = e.target.closest("button.mini");
+      if (!b) return;
+      var on = b.dataset.all === "1";
+      b.closest("details").querySelectorAll('input[type=checkbox]').forEach(function (c) {
+        if (c.closest("label").style.display === "none") return;   // respect the filter
+        c.checked = on;
+        if (on) picked.add(c.value); else picked.delete(c.value);
+      });
+      save();
+    });
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify([].concat(Array.from(picked)))); } catch (e) {}
+    var n = picked.size;
+    $("count").textContent = n + " selected";
+    $("open-btn").disabled = !n;
+  }
+
+  window.clearAll = function () {
+    picked.clear();
+    document.querySelectorAll('#picker input[type=checkbox]').forEach(function (c) { c.checked = false; });
+    save();
+  };
+
+  window.applyFilter = function () {
+    var q = $("search").value.trim().toLowerCase();
+    document.querySelectorAll("#picker details.grp").forEach(function (d) {
+      var shown = 0;
+      d.querySelectorAll(".items label").forEach(function (l) {
+        var hit = !q || l.textContent.toLowerCase().indexOf(q) >= 0;
+        l.style.display = hit ? "" : "none";
+        if (hit) shown++;
+      });
+      d.querySelectorAll(".reg h4").forEach(function (hd) {
+        var grid = hd.nextElementSibling, any = false;
+        grid.querySelectorAll("label").forEach(function (l) { if (l.style.display !== "none") any = true; });
+        hd.style.display = grid.style.display = any ? "" : "none";
+      });
+      d.style.display = shown ? "" : "none";
+      if (q && shown) d.open = true;
+    });
+  };
+
+  /* ---------- viewer ---------- */
+  function plateHTML(r) {
+    var base = r.folder + "/";
+    var head = '<h3 id="p-' + esc(r.slug) + '">' + esc(r.title || r.slug) + "</h3>" +
+               '<p class="meta">' + esc(r.section) + " &middot; " + esc(r.region) +
+               " &middot; " + esc(r.exam) +
+               '<a href="' + esc(encodeURI(base + r.slug + "-study.html")) + '">open on its own page</a>' +
+               '<a href="' + esc(encodeURI(base + r.slug + "-quiz.html")) + '">quiz me on it</a></p>';
+    if (r.kind === "overlay") {
+      var dots = "", labs = "";
+      r.markers.forEach(function (m) {
+        dots += '<span class="pm-dot" style="left:' + m.x + '%;top:' + m.y + '%"></span>';
+        labs += '<span class="pm-lab pm-' + (m.x < 50 ? "l" : "r") + '" data-x="' + m.x +
+                '" data-y="' + m.y + '">' + esc(m.t) + "</span>";
+      });
+      return '<section class="plate">' + head +
+             '<div class="pm-outer"><div class="pm-wrap"><img loading="lazy" src="' +
+             esc(encodeURI(base + r.img)) + '" alt="' + esc(r.title) + ', labeled">' +
+             '<svg class="pm-links" aria-hidden="true"></svg>' + dots + labs +
+             "</div></div></section>";
+    }
+    return '<section class="plate">' + head + '<div class="plain"><img loading="lazy" src="' +
+           esc(encodeURI(base + r.img)) + '" alt="' + esc(r.title) + ', labeled"></div></section>';
+  }
+
+  window.openSelected = function () {
+    var chosen = DATA.filter(function (r) { return picked.has(key(r)); });
+    if (!chosen.length) return;
+    chosen.sort(function (a, b) {
+      return a.exam.localeCompare(b.exam) || a.section.localeCompare(b.section) ||
+             a.region.localeCompare(b.region) || a.title.localeCompare(b.title);
+    });
+    var toc = '<div id="toc"><b>' + chosen.length + " plates</b>" +
+      chosen.map(function (r) {
+        return '<a href="#p-' + esc(r.slug) + '">' + esc(r.title || r.slug) + "</a>";
+      }).join("") + "</div>";
+    $("viewer").innerHTML = toc + chosen.map(plateHTML).join("");
+    $("picker").style.display = "none";
+    $("viewer").style.display = "block";
+    $("back-btn").style.display = "";
+    $("open-btn").style.display = "none";
+    $("search").style.display = "none";
+    window.scrollTo(0, 0);
+    layoutAll();
+  };
+
+  window.backToPicker = function () {
+    if (ro) ro.disconnect();
+    $("viewer").style.display = "none";
+    $("viewer").innerHTML = "";
+    $("picker").style.display = "";
+    $("back-btn").style.display = "none";
+    $("open-btn").style.display = "";
+    $("search").style.display = "";
+    window.scrollTo(0, 0);
+  };
+
+  /* Label placement: identical column packing to the study pages, so a plate
+     reads the same here as it does on its own page. */
+  function pack(list, top, bottom, gap) {
+    list.sort(function (a, b) { return a.pref - b.pref; });
+    var y = top;
+    list.forEach(function (it) { it.y = Math.max(it.pref, y); y = it.y + it.h + gap; });
+    if ((y - gap) > bottom) {
+      var limit = bottom;
+      for (var i = list.length - 1; i >= 0; i--) {
+        list[i].y = Math.min(list[i].y, limit - list[i].h);
+        limit = list[i].y - gap;
+      }
+    }
+  }
+
+  function layoutWrap(wrap) {
+    var svg = wrap.querySelector(".pm-links");
+    var labs = [].slice.call(wrap.querySelectorAll(".pm-lab"));
+    if (!labs.length || !svg) return;
+    var W = wrap.clientWidth, H = wrap.clientHeight;
+    if (!W || !H) return;
+    var gap = 3, cols = { l: [], r: [] };
+    labs.forEach(function (el) {
+      var ax = parseFloat(el.dataset.x) / 100 * W, ay = parseFloat(el.dataset.y) / 100 * H;
+      var left = el.classList.contains("pm-l");
+      el.style.left = "0px"; el.style.top = "0px";
+      cols[left ? "l" : "r"].push({ el: el, ax: ax, ay: ay, left: left,
+        w: el.offsetWidth, h: el.offsetHeight, pref: ay - el.offsetHeight / 2 });
+    });
+    ["l", "r"].forEach(function (k) {
+      var list = cols[k];
+      if (!list.length) return;
+      var need = list.reduce(function (s, it) { return s + it.h + gap; }, -gap);
+      var slack = Math.max(0, need - H);
+      pack(list, -slack / 2, H + slack / 2, gap);
+      list.forEach(function (it) { it.x = (k === "l") ? -(it.w + 12) : W + 12; });
+    });
+    var parts = [];
+    [].concat(cols.l, cols.r).forEach(function (it) {
+      it.el.style.left = it.x + "px";
+      it.el.style.top = it.y + "px";
+      var cx = it.left ? it.x + it.w : it.x, cy = it.y + it.h / 2;
+      var mx = it.left ? cx + 6 : cx - 6;
+      parts.push('<path d="M' + cx.toFixed(1) + "," + cy.toFixed(1) +
+                 " L" + mx.toFixed(1) + "," + cy.toFixed(1) +
+                 " L" + it.ax.toFixed(1) + "," + it.ay.toFixed(1) + '"/>');
+    });
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.innerHTML = parts.join("");
+  }
+
+  /* Images are lazy, so most plates have no height when the viewer first
+     renders and a single layout pass would leave their labels unplaced. Watch
+     each wrapper and lay it out whenever it actually gains a size. */
+  var ro = window.ResizeObserver ? new ResizeObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.target.clientHeight > 0) layoutWrap(en.target);
+    });
+  }) : null;
+
+  function layoutAll() {
+    document.querySelectorAll("#viewer .pm-wrap").forEach(function (w) {
+      var img = w.querySelector("img");
+      if (img && !img.complete) {
+        img.addEventListener("load", function () { layoutWrap(w); }, { once: true });
+      }
+      if (ro) ro.observe(w);
+      layoutWrap(w);
+    });
+  }
+
+  window.addEventListener("resize", function () {
+    clearTimeout(window.__atlasT);
+    window.__atlasT = setTimeout(layoutAll, 140);
+  });
+
+  if (!DATA.length) {
+    $("picker").innerHTML = '<p class="empty">No practicum plates found.</p>';
+  } else {
+    build();
+  }
+  save();
+})();
+</script>
+</body>
+</html>
