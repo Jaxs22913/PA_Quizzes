@@ -157,8 +157,8 @@
 </div>
 <div class="wrap">
   <section id="start" class="card">
-    <div class="eyebrow">Anatomy Practicum &middot; Other</div>
-    <h1>Breast</h1>
+    <div class="eyebrow">Anatomy Practicum &middot; Bones</div>
+    <h1>Cranial Floor (internal base) — Petrous part of temporal bone</h1>
     <p class="sub">Identify each numbered structure on the dissection image by typing its name.</p>
     <div class="obj">
       <p>How it works</p>
@@ -171,7 +171,7 @@
       </ul>
     </div>
     <div class="meta">
-      <span class="chip"><b>10</b> structures</span>
+      <span class="chip"><b>17</b> structures</span>
       <span class="chip">Type-in answers</span>
       <span class="chip">Override option</span>
     </div>
@@ -198,7 +198,7 @@
 
   <section id="quiz" class="card hidden">
     <div class="topbar">
-      <span class="qcount" id="progress">Structure 1 of 10</span>
+      <span class="qcount" id="progress">Structure 1 of 17</span>
       <span class="scorepill" id="scorepill">Score: 0</span>
       <button class="btn ghost" style="padding:6px 12px;font-size:12px" onclick="if(confirm('Restart this quiz from the beginning?')) startQuiz();">&#8635; Restart</button>
     </div>
@@ -214,24 +214,31 @@
     </div>
     <div id="wordbank" class="wordbank hidden"></div>
     <div class="diagram-wrap">
-      <svg viewBox="0 0 327 500" xmlns="http://www.w3.org/2000/svg">
-        <image href="breast.jpg" x="0" y="0" width="327" height="500"/>
+      <svg viewBox="0 0 500 346" xmlns="http://www.w3.org/2000/svg">
+        <image href="cranial-floor-internal-base-petrous-part-of-temporal-bone.jpg" x="0" y="0" width="500" height="346"/>
         <g id="highlight" transform="translate(0,0)" opacity="0">
           <g id="highlight-arrow">
             <line x1="-130" y1="0" x2="-32" y2="0" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
             <polygon points="-40,-26 -40,26 0,0" fill="#f59e0b"/>
           </g>
         </g>
-        <text id="reveal-1" x="194" y="76" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-2" x="235" y="116" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-3" x="276" y="161" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-4" x="12" y="181" text-anchor="end" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-5" x="310" y="197" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-6" x="13" y="235" text-anchor="end" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-7" x="317" y="240" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-8" x="297" y="396" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-9" x="307" y="429" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-10" x="299" y="474" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-1" x="177" y="18" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-2" x="374" y="23" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-3" x="152" y="51" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-4" x="135" y="84" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-5" x="408" y="102" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-6" x="120" y="115" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-7" x="409" y="140" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-8" x="115" y="157" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-9" x="359" y="185" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-10" x="116" y="186" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-11" x="409" y="210" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-12" x="114" y="220" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-13" x="126" y="252" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-14" x="401" y="260" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-15" x="318" y="277" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-16" x="154" y="296" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-17" x="181" y="323" text-anchor="end" class="reveal-text" visibility="hidden"></text>
       </svg>
     </div>
     <p class="instruction">Name the structure of the number the arrow is point to.</p>
@@ -272,7 +279,7 @@
 </div>
 
 <script>
-const ITEMS = [{"num": 1, "answer": "Superficial fat layer", "cx": 186, "cy": 75, "side": "left"}, {"num": 2, "answer": "Lobules", "cx": 227, "cy": 115, "side": "left"}, {"num": 3, "answer": "Lactiferous duct", "cx": 268, "cy": 160, "side": "left"}, {"num": 4, "answer": "Ribs", "cx": 20, "cy": 180, "side": "right"}, {"num": 5, "answer": "Ampulla", "cx": 302, "cy": 196, "side": "left"}, {"num": 6, "answer": "Pectoralis major muscle", "cx": 21, "cy": 234, "side": "right"}, {"num": 7, "answer": "Nipple", "cx": 309, "cy": 239, "side": "left"}, {"num": 8, "answer": "Lactiferous duct", "cx": 289, "cy": 395, "side": "left"}, {"num": 9, "answer": "Lobules", "cx": 299, "cy": 428, "side": "left"}, {"num": 10, "answer": "Ampulla", "cx": 291, "cy": 473, "side": "left"}];
+const ITEMS = [{"num": 1, "answer": "Anterior clinoid process", "cx": 185, "cy": 17, "side": "right"}, {"num": 2, "answer": "Crista galli of ethmoid", "cx": 366, "cy": 22, "side": "left"}, {"num": 3, "answer": "Superior orbital fissure", "cx": 160, "cy": 50, "side": "right"}, {"num": 4, "answer": "Foramen rotundum", "cx": 143, "cy": 83, "side": "right"}, {"num": 5, "answer": "Optic canal", "cx": 400, "cy": 101, "side": "left"}, {"num": 6, "answer": "Posterior clinoid process", "cx": 128, "cy": 114, "side": "right"}, {"num": 7, "answer": "Sella turcica", "cx": 401, "cy": 139, "side": "left"}, {"num": 8, "answer": "Foramen ovale", "cx": 123, "cy": 156, "side": "right"}, {"num": 9, "answer": "Middle cranial fossa", "cx": 351, "cy": 184, "side": "left"}, {"num": 10, "answer": "Foramen spinosum", "cx": 124, "cy": 185, "side": "right"}, {"num": 11, "answer": "Hypoglossal canal", "cx": 401, "cy": 209, "side": "left"}, {"num": 12, "answer": "Foramen lacerum", "cx": 122, "cy": 219, "side": "right"}, {"num": 13, "answer": "Petrous part of temporal bone", "cx": 134, "cy": 251, "side": "right"}, {"num": 14, "answer": "Foramen magnum", "cx": 393, "cy": 259, "side": "left"}, {"num": 15, "answer": "Posterior cranial fossa", "cx": 310, "cy": 276, "side": "left"}, {"num": 16, "answer": "Internal acoustic canal", "cx": 162, "cy": 295, "side": "right"}, {"num": 17, "answer": "Jugular foramen", "cx": 189, "cy": 322, "side": "right"}];
 const $ = id => document.getElementById(id);
 let current = 0, score = 0, results = [], pendingWrong = null, quizOrder = ITEMS;
 
@@ -419,7 +426,7 @@ function renderCurrent(){
   $("scorepill").textContent = `Score: ${score}`;
   const marker = $("highlight");
   const flip = item.side === 'right' ? -1 : 1;
-  const AK = 0.1200;
+  const AK = 0.1578;
   marker.setAttribute('transform', `translate(${item.cx},${item.cy}) scale(${flip*AK},${AK})`);
   marker.setAttribute('opacity', '1');
   const input = $("answer-input");

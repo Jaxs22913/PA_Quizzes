@@ -158,7 +158,7 @@
 <div class="wrap">
   <section id="start" class="card">
     <div class="eyebrow">Anatomy Practicum &middot; Bones</div>
-    <h1>Tibia &amp; Fibula</h1>
+    <h1>Bony Pelvis</h1>
     <p class="sub">Identify each numbered structure on the dissection image by typing its name.</p>
     <div class="obj">
       <p>How it works</p>
@@ -171,7 +171,7 @@
       </ul>
     </div>
     <div class="meta">
-      <span class="chip"><b>8</b> structures</span>
+      <span class="chip"><b>26</b> structures</span>
       <span class="chip">Type-in answers</span>
       <span class="chip">Override option</span>
     </div>
@@ -198,7 +198,7 @@
 
   <section id="quiz" class="card hidden">
     <div class="topbar">
-      <span class="qcount" id="progress">Structure 1 of 8</span>
+      <span class="qcount" id="progress">Structure 1 of 26</span>
       <span class="scorepill" id="scorepill">Score: 0</span>
       <button class="btn ghost" style="padding:6px 12px;font-size:12px" onclick="if(confirm('Restart this quiz from the beginning?')) startQuiz();">&#8635; Restart</button>
     </div>
@@ -214,22 +214,40 @@
     </div>
     <div id="wordbank" class="wordbank hidden"></div>
     <div class="diagram-wrap">
-      <svg viewBox="0 0 292 500" xmlns="http://www.w3.org/2000/svg">
-        <image href="tibia-fibula.jpg" x="0" y="0" width="292" height="500"/>
+      <svg viewBox="0 0 500 342" xmlns="http://www.w3.org/2000/svg">
+        <image href="bony-pelvis.jpg" x="0" y="0" width="500" height="342"/>
         <g id="highlight" transform="translate(0,0)" opacity="0">
           <g id="highlight-arrow">
             <line x1="-130" y1="0" x2="-32" y2="0" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
             <polygon points="-40,-26 -40,26 0,0" fill="#f59e0b"/>
           </g>
         </g>
-        <text id="reveal-1" x="133" y="53" text-anchor="end" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-2" x="126" y="162" text-anchor="end" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-3" x="136" y="209" text-anchor="end" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-4" x="155" y="280" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-5" x="133" y="332" text-anchor="end" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-6" x="157" y="374" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-7" x="181" y="413" text-anchor="start" class="reveal-text" visibility="hidden"></text>
-        <text id="reveal-8" x="191" y="478" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-1" x="75" y="24" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-2" x="197" y="54" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-3" x="35" y="65" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-4" x="135" y="67" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-5" x="405" y="74" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-6" x="116" y="92" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-7" x="35" y="100" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-8" x="407" y="104" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-9" x="157" y="122" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-10" x="407" y="146" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-11" x="407" y="170" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-12" x="158" y="171" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-13" x="405" y="196" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-14" x="158" y="208" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-15" x="405" y="215" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-16" x="402" y="227" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-17" x="158" y="230" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-18" x="403" y="240" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-19" x="159" y="246" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-20" x="403" y="257" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-21" x="158" y="265" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-22" x="403" y="279" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-23" x="404" y="295" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-24" x="158" y="300" text-anchor="end" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-25" x="405" y="311" text-anchor="start" class="reveal-text" visibility="hidden"></text>
+        <text id="reveal-26" x="401" y="323" text-anchor="start" class="reveal-text" visibility="hidden"></text>
       </svg>
     </div>
     <p class="instruction">Name the structure of the number the arrow is point to.</p>
@@ -270,7 +288,7 @@
 </div>
 
 <script>
-const ITEMS = [{"num": 1, "answer": "Os coxae (pelvic bone)", "cx": 141, "cy": 52, "side": "right"}, {"num": 2, "answer": "Femur", "cx": 134, "cy": 161, "side": "right"}, {"num": 3, "answer": "Patella", "cx": 144, "cy": 208, "side": "right"}, {"num": 4, "answer": "Tibia", "cx": 147, "cy": 279, "side": "left"}, {"num": 5, "answer": "Fibula", "cx": 141, "cy": 331, "side": "right"}, {"num": 6, "answer": "Tarsal bones", "cx": 149, "cy": 373, "side": "left"}, {"num": 7, "answer": "Metatarsal bones", "cx": 173, "cy": 412, "side": "left"}, {"num": 8, "answer": "Phalanges", "cx": 183, "cy": 477, "side": "left"}];
+const ITEMS = [{"num": 1, "answer": "Ilium", "cx": 83, "cy": 23, "side": "right"}, {"num": 2, "answer": "Iliac crest", "cx": 205, "cy": 53, "side": "right"}, {"num": 3, "answer": "Anterior end", "cx": 43, "cy": 64, "side": "right"}, {"num": 4, "answer": "Posterior end", "cx": 143, "cy": 66, "side": "right"}, {"num": 5, "answer": "Iliac fossa", "cx": 397, "cy": 73, "side": "left"}, {"num": 6, "answer": "Ischium", "cx": 124, "cy": 91, "side": "right"}, {"num": 7, "answer": "Pubis", "cx": 43, "cy": 99, "side": "right"}, {"num": 8, "answer": "Iliac tuberosity", "cx": 399, "cy": 103, "side": "left"}, {"num": 9, "answer": "Anterior superior iliac spine", "cx": 165, "cy": 121, "side": "right"}, {"num": 10, "answer": "Posterior superior iliac spine", "cx": 399, "cy": 145, "side": "left"}, {"num": 11, "answer": "Auricular surface for articulation with sacrum", "cx": 399, "cy": 169, "side": "left"}, {"num": 12, "answer": "Anterior inferior iliac spine", "cx": 166, "cy": 170, "side": "right"}, {"num": 13, "answer": "Posterior inferior iliac spine", "cx": 397, "cy": 195, "side": "left"}, {"num": 14, "answer": "Obturator groove", "cx": 166, "cy": 207, "side": "right"}, {"num": 15, "answer": "Greater sciatic notch", "cx": 397, "cy": 214, "side": "left"}, {"num": 16, "answer": "Arcuate line", "cx": 394, "cy": 226, "side": "left"}, {"num": 17, "answer": "Superior pubic ramus", "cx": 166, "cy": 229, "side": "right"}, {"num": 18, "answer": "Spine of ischium", "cx": 395, "cy": 239, "side": "left"}, {"num": 19, "answer": "Pectineal line", "cx": 167, "cy": 245, "side": "right"}, {"num": 20, "answer": "Lesser sciatic notch", "cx": 395, "cy": 256, "side": "left"}, {"num": 21, "answer": "Pubic tubercle", "cx": 166, "cy": 264, "side": "right"}, {"num": 22, "answer": "Obturator foramen", "cx": 395, "cy": 278, "side": "left"}, {"num": 23, "answer": "Ischial tuberosity", "cx": 396, "cy": 294, "side": "left"}, {"num": 24, "answer": "Pubic symphysis (symphyseal surface)", "cx": 166, "cy": 299, "side": "right"}, {"num": 25, "answer": "Ischial ramus", "cx": 397, "cy": 310, "side": "left"}, {"num": 26, "answer": "Inferior pubic ramus", "cx": 393, "cy": 322, "side": "left"}];
 const $ = id => document.getElementById(id);
 let current = 0, score = 0, results = [], pendingWrong = null, quizOrder = ITEMS;
 
@@ -417,7 +435,7 @@ function renderCurrent(){
   $("scorepill").textContent = `Score: ${score}`;
   const marker = $("highlight");
   const flip = item.side === 'right' ? -1 : 1;
-  const AK = 0.1200;
+  const AK = 0.1578;
   marker.setAttribute('transform', `translate(${item.cx},${item.cy}) scale(${flip*AK},${AK})`);
   marker.setAttribute('opacity', '1');
   const input = $("answer-input");
