@@ -124,6 +124,7 @@
   .lb-row .score{font-weight:800;color:var(--acc)}
   .status-toast{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
   .field-label{display:block;font-size:14.5px;font-weight:600;margin-bottom:8px}
+  .quiz-sem-note{ margin:0 0 10px; font-size:13px; color:var(--muted); font-style:italic; }
   .quiz-search-input{width:100%;font:inherit;font-size:15px;padding:11px 14px;border-radius:10px;
     border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
   .quiz-search-input:focus{outline:none;border-color:var(--acc)}
@@ -236,6 +237,7 @@
     <label class="field-label">Quiz</label>
     <div id="quiz-picker">
       <input type="text" id="quiz-search" class="quiz-search-input" placeholder="Search quizzes…" autocomplete="off">
+      <p id="quiz-sem-note" class="quiz-sem-note hidden"></p>
       <div id="quiz-results" class="quiz-results"></div>
     </div>
     <div id="quiz-selected-box" class="quiz-selected hidden" style="margin-bottom:14px">
@@ -324,6 +326,9 @@
   var selectedQuizId = null;
   var groupStudyReady = false;
 
+  // set by quizList() when the chosen semester had nothing of its own
+  var fellBack = false;
+
   // Reads the manifest (group-quizzes/index.js), not the question bank --
   // the picker needs only title/class/count, and pulling the questions of all
   // 264 quizzes just to render a list was the entire 5.8 MB problem.
@@ -335,9 +340,11 @@
       // unreachable from every semester
       return !sem || !index[id].sem || index[id].sem === sem;
     });
-    // never hand back an empty picker: a semester with no quizzes of its own
-    // falls back to the whole bank rather than looking broken
-    if (!ids.length) ids = Object.keys(index);
+    // Never hand back an empty picker -- you cannot host a room from nothing.
+    // A semester with no quizzes of its own falls back to the whole bank, but
+    // says so above the list rather than quietly ignoring your choice.
+    fellBack = false;
+    if (!ids.length) { ids = Object.keys(index); fellBack = true; }
     return ids.map(function (id) {
       return { id: id, title: index[id].title, count: index[id].n, category: index[id].category || "Other" };
     });
@@ -412,6 +419,19 @@
     var box = $("quiz-results");
     box.innerHTML = "";
     var list = quizList();
+
+    // after quizList(), which is what decides whether it fell back
+    var note = $("quiz-sem-note");
+    if (note) {
+      var reg = window.Semesters;
+      var sem = reg && reg.byId(activeSemester());
+      note.classList.toggle("hidden", !(fellBack && sem));
+      if (fellBack && sem) {
+        note.textContent = "No " + (sem.short || sem.label) +
+          " quizzes yet \u2014 showing every quiz on the site.";
+      }
+    }
+
     var term = (filterText || "").trim().toLowerCase();
     if (term) list = list.filter(function (q) { return q.title.toLowerCase().indexOf(term) !== -1; });
     if (list.length === 0) {

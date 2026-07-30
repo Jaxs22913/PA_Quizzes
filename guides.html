@@ -557,14 +557,33 @@
   <p class="mistake-note">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
 </div>
 <script>
-// Filter the guides grid by resource type (Study Guide / Cram Sheet / Quick
-// Reference). Card types are read from the same .cram/.ref classes that drive
-// their visual treatment; a class group with no visible cards under the
-// current filter hides itself so there are no empty section headers.
+/* One owner for guide-card visibility.
+
+   Two things decide whether a card shows: the semester you have picked and the
+   resource-type filter (Study Guide / Cram Sheet / Quick Reference). They used
+   to be separate scripts that each wrote card.style.display, so whichever ran
+   last won -- clicking "Cram Sheets" re-showed cards from every semester. They
+   are one function now, and the type counts are scoped to the semester so the
+   pills never advertise material the current term doesn't have.
+
+   Card types come from the same .cram/.ref classes that drive their visual
+   treatment. A class group with no visible cards hides itself, along with the
+   jump-nav chip that points at it, so there are no empty section headers and no
+   chips that scroll to nothing. */
 (function () {
   var chips = Array.prototype.slice.call(document.querySelectorAll(".guide-filter-chip"));
   var cards = Array.prototype.slice.call(document.querySelectorAll(".guide-card"));
-  if (!chips.length || !cards.length) return;
+  var jumpChips = Array.prototype.slice.call(document.querySelectorAll(".class-jump-chip"));
+  var groups = Array.prototype.slice.call(document.querySelectorAll(".guide-group"));
+  if (!cards.length) return;
+
+  var reg = window.Semesters;
+  cards.forEach(function (c) {
+    var sem = reg && reg.semesterOfPath(c.getAttribute("href") || "");
+    if (sem) c.setAttribute("data-semester", sem.id);
+  });
+
+  var state = { type: "all", semester: null };
 
   function typeOf(card) {
     if (card.classList.contains("cram")) return "cram";
@@ -572,32 +591,85 @@
     return "guide";
   }
 
-  var counts = { all: cards.length, guide: 0, cram: 0, ref: 0 };
-  cards.forEach(function (c) { counts[typeOf(c)]++; });
-  chips.forEach(function (chip) {
-    var span = chip.querySelector(".fc-count");
-    if (span) span.textContent = counts[chip.getAttribute("data-filter")] || 0;
-  });
+  // a card whose class the registry doesn't know stays visible rather than
+  // vanishing from every semester
+  function inSemester(card) {
+    var own = card.getAttribute("data-semester");
+    return !state.semester || !own || own === state.semester;
+  }
 
-  function apply(filter) {
+  var empty = document.createElement("div");
+  empty.className = "semester-empty hidden";
+  if (groups.length) {
+    groups[groups.length - 1].parentElement.insertBefore(
+      empty, groups[groups.length - 1].nextSibling);
+  }
+
+  function apply() {
+    var shown = 0;
     cards.forEach(function (c) {
-      c.style.display = (filter === "all" || typeOf(c) === filter) ? "" : "none";
+      var on = inSemester(c) && (state.type === "all" || typeOf(c) === state.type);
+      c.style.display = on ? "" : "none";
+      if (on) shown++;
     });
-    Array.prototype.forEach.call(document.querySelectorAll(".guide-group"), function (g) {
-      var anyVisible = Array.prototype.some.call(g.querySelectorAll(".guide-card"), function (c) {
+
+    groups.forEach(function (g) {
+      var live = Array.prototype.some.call(g.querySelectorAll(".guide-card"), function (c) {
         return c.style.display !== "none";
       });
-      g.style.display = anyVisible ? "" : "none";
+      g.style.display = live ? "" : "none";
+      jumpChips.forEach(function (ch) {
+        if (ch.getAttribute("href") === "#" + g.id) ch.style.display = live ? "" : "none";
+      });
+    });
+
+    // counts follow the semester, not the whole site
+    var counts = { all: 0, guide: 0, cram: 0, ref: 0 };
+    cards.forEach(function (c) {
+      if (!inSemester(c)) return;
+      counts.all++;
+      counts[typeOf(c)]++;
     });
     chips.forEach(function (chip) {
-      chip.classList.toggle("active", chip.getAttribute("data-filter") === filter);
+      var f = chip.getAttribute("data-filter");
+      var span = chip.querySelector(".fc-count");
+      if (span) span.textContent = counts[f] || 0;
+      chip.classList.toggle("active", f === state.type);
+      // a pill for a type this semester has none of is dead weight
+      chip.style.display = (f === "all" || counts[f]) ? "" : "none";
     });
+
+    empty.classList.toggle("hidden", shown > 0);
+    if (!shown) {
+      var what = state.type === "cram" ? "Cram sheets"
+               : state.type === "ref" ? "Quick references"
+               : state.type === "guide" ? "Study guides"
+               : "Study guides and cram sheets";
+      empty.innerHTML = '<p class="semester-empty-title">Nothing here yet</p><p></p>';
+      empty.querySelector("p:last-child").textContent =
+        what + " for this semester appear here once its lectures start.";
+    }
   }
 
   chips.forEach(function (chip) {
-    chip.addEventListener("click", function () { apply(chip.getAttribute("data-filter")); });
+    chip.addEventListener("click", function () {
+      state.type = chip.getAttribute("data-filter");
+      apply();
+    });
   });
-  apply("all");
+
+  // the semester picker drives this rather than touching display itself
+  window.__guidesShowSemester = function (id) {
+    state.semester = id;
+    // a type filter that this semester has nothing for would look broken
+    if (state.type !== "all") {
+      var any = cards.some(function (c) { return inSemester(c) && typeOf(c) === state.type; });
+      if (!any) state.type = "all";
+    }
+    apply();
+  };
+  window.__guidesApply = apply;
+  apply();
 })();
 </script>
 <script>
@@ -619,7 +691,10 @@
       resultsBox.innerHTML = "";
       return;
     }
-    const cards = Array.from(document.querySelectorAll("a.guide-card"));
+    // only what the current semester and type filter are showing -- offering a
+    // result you then can't find on the page is worse than no result
+    const cards = Array.from(document.querySelectorAll("a.guide-card"))
+      .filter(a => a.style.display !== "none");
     const matches = cards.filter(a => {
       const title = (a.querySelector(".guide-card-title")?.textContent || "").toLowerCase();
       const desc = (a.querySelector(".guide-card-desc")?.textContent || "").toLowerCase();
@@ -630,7 +705,7 @@
     if (matches.length === 0) {
       const empty = document.createElement("div");
       empty.className = "search-no-results";
-      empty.textContent = "No guides match “" + query.trim() + "”";
+      empty.textContent = "Nothing in this semester matches “" + query.trim() + "”";
       resultsBox.appendChild(empty);
     } else {
       matches.forEach((a, i) => {
@@ -662,6 +737,9 @@
     }
     resultsBox.classList.remove("hidden");
   }
+
+  // exposed so switching semester re-scopes results already on screen
+  window.__runGuideSearch = () => { if (input.value.trim()) runSearch(input.value); };
 
   input.addEventListener("input", () => runSearch(input.value));
   input.addEventListener("focus", () => { if (input.value.trim()) runSearch(input.value); });
@@ -740,58 +818,16 @@
   </script>
 
 <script>
-/* Tag each guide/cram card with the semester its class belongs to, and switch
-   between semesters from the heading. The class-to-semester mapping comes from
-   semesters.js and the menu from semester-picker.js, so this page can't drift
-   from the homepage on either.
+/* The semester picker for this page. Visibility is owned by the filter script
+   above -- this only tells it which semester is active, so the two can't fight
+   over card.style.display the way they used to.
 
-   Cards are grouped by class, and the jump nav links to those groups -- both
-   have to follow the cards, or switching leaves behind empty "Physiology"
-   headings and chips that scroll to nothing. */
+   The choice is the same localStorage key the homepage writes, so picking a
+   semester there carries to here and to the Arcade. */
 (function () {
   var reg = window.Semesters;
-  if (!reg || !window.SemesterPicker) return;
-
-  var cards = [].slice.call(document.querySelectorAll("a.guide-card"));
-  cards.forEach(function (c) {
-    var sem = reg.semesterOfPath(c.getAttribute("href") || "");
-    if (sem) c.setAttribute("data-semester", sem.id);
-  });
-
-  var groups = [].slice.call(document.querySelectorAll(".guide-group"));
-  var chips = [].slice.call(document.querySelectorAll(".class-jump-chip"));
   var host = document.querySelector(".semester-header");
-  if (!host || !groups.length) return;
-
-  var empty = document.createElement("div");
-  empty.className = "semester-empty hidden";
-  empty.innerHTML = '<p class="semester-empty-title">Nothing here yet</p>' +
-    "<p>Study guides and cram sheets for this semester appear here once its " +
-    "lectures start.</p>";
-  groups[groups.length - 1].parentElement.insertBefore(
-    empty, groups[groups.length - 1].nextSibling);
-
-  function show(id) {
-    var shown = 0;
-    cards.forEach(function (c) {
-      // a card whose class the registry doesn't know stays visible rather than
-      // vanishing from every semester
-      var own = c.getAttribute("data-semester");
-      var on = !own || own === id;
-      c.style.display = on ? "" : "none";
-      if (on) shown++;
-    });
-    groups.forEach(function (g) {
-      var live = [].slice.call(g.querySelectorAll("a.guide-card"))
-        .some(function (c) { return c.style.display !== "none"; });
-      g.style.display = live ? "" : "none";
-      // and the chip that jumps to it
-      chips.forEach(function (ch) {
-        if (ch.getAttribute("href") === "#" + g.id) ch.style.display = live ? "" : "none";
-      });
-    });
-    empty.classList.toggle("hidden", shown > 0);
-  }
+  if (!reg || !host || !window.SemesterPicker || !window.__guidesShowSemester) return;
 
   var saved = null;
   try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
@@ -802,11 +838,12 @@
     activeId: initial,
     onPick: function (id) {
       try { localStorage.setItem("activeSemester", id); } catch (e) {}
-      show(id);
+      window.__guidesShowSemester(id);
+      if (window.__runGuideSearch) window.__runGuideSearch();
     }
   });
   if (picker) host.appendChild(picker.el);
-  show(initial);
+  window.__guidesShowSemester(initial);
 })();
 </script>
 </body>
