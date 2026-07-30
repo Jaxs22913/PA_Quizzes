@@ -108,7 +108,9 @@ def collect():
             info = parse_study(os.path.join(d, f))
             if not info:
                 continue
-            exam, section, region = groups.get(slug, (exam_label, "Other", "General"))
+            # a distinct sentinel, because "Other" is itself a real section name
+            # and using it as the fallback made the check below cry wolf
+            exam, section, region = groups.get(slug, (exam_label, "(unlisted)", "General"))
             rows.append(dict(slug=slug, folder=folder, exam=exam, section=section,
                              region=region, **info))
     return rows
@@ -129,7 +131,7 @@ def main():
     missing = [r["slug"] for r in rows if not r["w"]]
     if missing:
         print(f"  !! {len(missing)} entries with no image dimensions: {missing[:4]}")
-    unmapped = [r["slug"] for r in rows if r["section"] == "Other"]
+    unmapped = [r["slug"] for r in rows if r["section"] == "(unlisted)"]
     if unmapped:
         print(f"  !! {len(unmapped)} not found in the homepage listing: {unmapped[:4]}")
 
