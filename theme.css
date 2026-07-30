@@ -2622,3 +2622,53 @@ body.homepage .continue-item:hover {
    correct generically; the per-gradient background-color handles the
    document box. Between them nothing needs a value on html at all.
    ============================================================ */
+
+
+/* Semester picker. The card heading is the control: it reads as the heading it
+   replaced until you hover it, then shows it is clickable. Only rendered when
+   there is more than one semester to pick -- otherwise the heading stays plain
+   text, so nothing invites a click that does nothing. */
+.semester-picker{ position: relative; display: inline-block; }
+.semester-picker-btn{
+  font: inherit; color: inherit; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid transparent; background: transparent;
+  padding: 4px 10px 4px 12px; border-radius: 10px;
+  transition: background var(--dur-1, 160ms) var(--ease, ease),
+              border-color var(--dur-1, 160ms) var(--ease, ease);
+}
+.semester-picker-btn:hover{ background: var(--accent-soft); border-color: var(--border); }
+.semester-picker-btn:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }
+.sem-chevron{ flex: none; color: var(--muted); transition: transform var(--dur-1, 160ms) var(--ease, ease); }
+.semester-picker.open .sem-chevron{ transform: rotate(180deg); }
+.semester-picker.open .semester-picker-btn{ background: var(--accent-soft); border-color: var(--border); }
+
+.semester-menu{
+  display: none; position: absolute; z-index: 40;
+  top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  min-width: max(100%, 240px); padding: 6px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: var(--shadow);
+  text-align: left;
+}
+.semester-picker.open .semester-menu{ display: block; }
+.sem-option{
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  font: inherit; font-size: 14.5px; font-weight: 600; line-height: 1.35;
+  color: var(--ink); background: transparent; border: 0;
+  padding: 9px 12px; border-radius: 8px;
+}
+.sem-option:hover{ background: var(--accent-soft); }
+.sem-option.active{ background: var(--accent); color: #fff; }
+.sem-option-name{ display: block; }
+/* the estimated-dates note rides along under the name so the heading itself
+   can stay short */
+.sem-option-note{
+  display: block; font-size: 11.5px; font-weight: 600; margin-top: 2px;
+  color: var(--muted); font-style: italic;
+}
+.sem-option.active .sem-option-note{ color: rgba(255,255,255,.82); }
+@media (max-width: 560px){
+  .semester-menu{ min-width: max(100%, 200px); }
+  .sem-option{ font-size: 14px; }
+}

@@ -22,24 +22,13 @@
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
 
-  /* Semester switcher — this page doesn't load home.css, so the pill styles
-     are repeated here rather than pulling in the whole homepage stylesheet. */
-  .semester-switch{ display:flex; gap:6px; margin:0 0 16px; padding:4px;
-    background:var(--card,#fff); border:1px solid var(--line,var(--border,#e6e8ef));
-    border-radius:999px; width:max-content; }
-  .semester-switch .sem-btn{ font:inherit; font-size:13.5px; font-weight:700;
-    cursor:pointer; border:0; background:transparent; color:var(--muted,#6b7280);
-    padding:7px 16px; border-radius:999px; }
-  .semester-switch .sem-btn.active{ background:var(--a-teal,#329293); color:#fff; }
-  @media (max-width:560px){
-    .semester-switch{ width:100%; overflow-x:auto; scrollbar-width:none; }
-    .semester-switch::-webkit-scrollbar{ display:none; }
-    .semester-switch .sem-btn{ flex:0 0 auto; text-align:center; padding:8px 13px; } }
-
   .semester-empty{ text-align:center; padding:38px 20px 44px; color:var(--muted,#6b7280); }
   .semester-empty.hidden{ display:none; }
   .semester-empty-title{ font-size:17px; font-weight:800; color:var(--ink,#1f2937); margin:0 0 6px; }
   .semester-empty p{ margin:0 auto; max-width:44ch; font-size:14px; line-height:1.6; }
+
+  .semester-header{ font-size:15px; font-weight:800; color:var(--muted,#6b7280);
+    text-transform:uppercase; letter-spacing:.06em; margin:22px 0 14px; text-align:center; }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
@@ -312,6 +301,7 @@
   .mistake-note { text-align: center; font-size: 13.5px; color: var(--muted); margin-top: 30px; font-style: italic; }
 </style>
 <script src="semesters.js"></script>
+<script src="semester-picker.js"></script>
 </head>
 <body class="guides-page">
 <style>
@@ -350,6 +340,8 @@
     <input type="text" id="guide-search" class="guide-search-input" placeholder="Search guides…" autocomplete="off" spellcheck="false">
     <div id="guide-search-results" class="search-results hidden"></div>
   </div>
+
+  <h2 class="semester-header"></h2>
 
   <nav class="class-jump-nav" aria-label="Jump to class">
     <a class="class-jump-chip" href="#group-physiology">Physiology</a>
@@ -749,16 +741,16 @@
 
 <script>
 /* Tag each guide/cram card with the semester its class belongs to, and switch
-   between semesters. The class-to-semester mapping comes from semesters.js
-   rather than being restated here, so this page can never drift from the
-   homepage's idea of which class sits in which term.
+   between semesters from the heading. The class-to-semester mapping comes from
+   semesters.js and the menu from semester-picker.js, so this page can't drift
+   from the homepage on either.
 
-   Every semester in the registry gets a tab, not just the ones with cards, so
-   the shape of the year is the same on every page; a term with nothing in it
-   yet shows an empty state. */
+   Cards are grouped by class, and the jump nav links to those groups -- both
+   have to follow the cards, or switching leaves behind empty "Physiology"
+   headings and chips that scroll to nothing. */
 (function () {
   var reg = window.Semesters;
-  if (!reg || reg.all.length < 2) return;
+  if (!reg || !window.SemesterPicker) return;
 
   var cards = [].slice.call(document.querySelectorAll("a.guide-card"));
   cards.forEach(function (c) {
@@ -766,20 +758,18 @@
     if (sem) c.setAttribute("data-semester", sem.id);
   });
 
-  var grid = cards.length ? cards[0].parentElement : null;
-  if (!grid) return;
+  var groups = [].slice.call(document.querySelectorAll(".guide-group"));
+  var chips = [].slice.call(document.querySelectorAll(".class-jump-chip"));
+  var host = document.querySelector(".semester-header");
+  if (!host || !groups.length) return;
 
   var empty = document.createElement("div");
   empty.className = "semester-empty hidden";
   empty.innerHTML = '<p class="semester-empty-title">Nothing here yet</p>' +
     "<p>Study guides and cram sheets for this semester appear here once its " +
     "lectures start.</p>";
-  grid.parentElement.insertBefore(empty, grid.nextSibling);
-
-  var bar = document.createElement("div");
-  bar.className = "semester-switch";
-  bar.setAttribute("role", "tablist");
-  bar.setAttribute("aria-label", "Semester");
+  groups[groups.length - 1].parentElement.insertBefore(
+    empty, groups[groups.length - 1].nextSibling);
 
   function show(id) {
     var shown = 0;
@@ -791,30 +781,32 @@
       c.style.display = on ? "" : "none";
       if (on) shown++;
     });
-    empty.classList.toggle("hidden", shown > 0);
-    bar.querySelectorAll(".sem-btn").forEach(function (b) {
-      var on = b.dataset.sem === id;
-      b.classList.toggle("active", on);
-      b.setAttribute("aria-selected", on ? "true" : "false");
+    groups.forEach(function (g) {
+      var live = [].slice.call(g.querySelectorAll("a.guide-card"))
+        .some(function (c) { return c.style.display !== "none"; });
+      g.style.display = live ? "" : "none";
+      // and the chip that jumps to it
+      chips.forEach(function (ch) {
+        if (ch.getAttribute("href") === "#" + g.id) ch.style.display = live ? "" : "none";
+      });
     });
-    try { localStorage.setItem("activeSemester", id); } catch (e) {}
+    empty.classList.toggle("hidden", shown > 0);
   }
-
-  reg.all.forEach(function (sem) {
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "sem-btn";
-    b.dataset.sem = sem.id;
-    b.setAttribute("role", "tab");
-    b.textContent = sem.short || sem.label;
-    b.addEventListener("click", function () { show(sem.id); });
-    bar.appendChild(b);
-  });
-  grid.parentElement.insertBefore(bar, grid);
 
   var saved = null;
   try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
-  show(reg.byId(saved) ? saved : reg.current().id);
+  var initial = reg.byId(saved) ? saved : reg.current().id;
+
+  var picker = window.SemesterPicker({
+    semesters: reg.all,
+    activeId: initial,
+    onPick: function (id) {
+      try { localStorage.setItem("activeSemester", id); } catch (e) {}
+      show(id);
+    }
+  });
+  if (picker) host.appendChild(picker.el);
+  show(initial);
 })();
 </script>
 </body>

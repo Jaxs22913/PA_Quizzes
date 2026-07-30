@@ -357,13 +357,17 @@ document.querySelectorAll(".semester").forEach(semester => {
 
 
     (function () {
-      /* Semester switcher. Renders only the semesters that actually have a
-         .semester block in the page, and stays hidden while there is just one
-         -- a one-option switcher is noise, not navigation. Selection persists,
+      /* Semester switcher. The card's own heading IS the control -- clicking
+         "Summer Semester 1 - 2026" opens a menu of the terms, and switching
+         swaps the whole card (tabs, quizzes, progress bar) underneath it. A
+         separate row of pills above the heading said the same thing twice.
+
+         The menu itself is semester-picker.js, shared with the guides page and
+         the Arcade. Only semesters that actually have a .semester block are
+         offered, and with one the heading stays plain text. Selection persists
          and defaults to whichever semester today falls in. */
       var reg = window.Semesters;
-      var mount = document.getElementById("semester-switch");
-      if (!reg || !mount) return;
+      if (!reg || !window.SemesterPicker) return;
 
       var blocks = {};
       document.querySelectorAll(".semester").forEach(function (b) {
@@ -372,15 +376,15 @@ document.querySelectorAll(".semester").forEach(semester => {
       var present = reg.all.filter(function (sem) { return blocks[sem.id]; });
       window.__semesterBlocks = blocks;
 
+      var pickers = [];
+
       function show(id) {
         Object.keys(blocks).forEach(function (k) {
           blocks[k].classList.toggle("hidden", k !== id);
         });
-        mount.querySelectorAll(".sem-btn").forEach(function (b) {
-          var on = b.dataset.sem === id;
-          b.classList.toggle("active", on);
-          b.setAttribute("aria-selected", on ? "true" : "false");
-        });
+        // every block carries its own picker; keep them all in step so the
+        // heading is right whichever block you land on
+        pickers.forEach(function (p) { p.setActive(id); });
         window.__activeSemester = id;
         try { localStorage.setItem("activeSemester", id); } catch (e) {}
         // search results are scoped to the visible semester, so re-run them
@@ -389,29 +393,30 @@ document.querySelectorAll(".semester").forEach(semester => {
       }
       window.__showSemester = show;
 
-      if (present.length < 2) {
-        // single semester: no switcher, but still record which one is active so
-        // search scoping and everything downstream has an answer
-        window.__activeSemester = present.length ? present[0].id : null;
-        return;
-      }
-
-      mount.classList.remove("hidden");
-      present.forEach(function (sem) {
-        var b = document.createElement("button");
-        b.type = "button";
-        b.className = "sem-btn";
-        b.dataset.sem = sem.id;
-        b.setAttribute("role", "tab");
-        b.textContent = sem.short || sem.label;
-        b.addEventListener("click", function () { show(sem.id); });
-        mount.appendChild(b);
-      });
-
       var saved = null;
       try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
       var initial = (saved && blocks[saved]) ? saved : reg.current().id;
-      if (!blocks[initial]) initial = present[0].id;
+      if (!blocks[initial]) initial = present.length ? present[0].id : null;
+
+      if (present.length < 2) {
+        // single semester: leave the heading as plain text, but still record
+        // which one is active so search scoping has an answer
+        window.__activeSemester = initial;
+        return;
+      }
+
+      present.forEach(function (sem) {
+        var header = blocks[sem.id].querySelector(".semester-header");
+        if (!header) return;
+        var picker = window.SemesterPicker({
+          semesters: present, activeId: initial, onPick: show
+        });
+        if (!picker) return;
+        header.textContent = "";
+        header.appendChild(picker.el);
+        pickers.push(picker);
+      });
+
       show(initial);
     })();
 

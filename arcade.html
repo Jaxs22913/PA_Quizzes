@@ -32,7 +32,6 @@
 
   <div class="semester">
     <h2 class="semester-header">Summer Semester 1 &ndash; 2026</h2>
-    <div class="semester-switch hidden" id="semester-switch" role="tablist" aria-label="Semester"></div>
     <div class="tabs" id="class-tabs"></div>
     <div id="class-panels"></div>
   </div>
@@ -41,6 +40,7 @@
 <div id="toast"></div>
 
 <script src="semesters.js"></script>
+<script src="semester-picker.js"></script>
 <script src="arcade.js"></script>
 <script src="theme.js" defer></script>
 <script>
@@ -108,31 +108,26 @@
     });
   }
 
+  /* The card heading is the semester control, same as the homepage; the menu
+     itself is semester-picker.js. Built once -- switching re-renders the tabs
+     below it, not the picker. */
+  var semPicker = null;
+
   function renderSemesterSwitch() {
-    var bar = document.getElementById("semester-switch");
+    var host = document.querySelector(".semester-header");
     var reg = window.Semesters;
-    if (!bar || !reg) return;
-    var present = {};
-    DEMO_CLASSES.forEach(function (c) {
-      var s = semesterOfClass(c.id);
-      if (s) present[s] = true;
-    });
-    // every registry semester gets a tab, matching the homepage; an empty one
-    // shows an empty state rather than being left out
-    var sems = reg.all;
-    if (sems.length < 2) { bar.classList.add("hidden"); return; }
-    var active = activeSemesterId();
-    bar.classList.remove("hidden");
-    bar.innerHTML = sems.map(function (s) {
-      return '<button type="button" class="sem-btn' + (s.id === active ? " active" : "") +
-             '" data-sem="' + s.id + '">' + (s.short || s.label) + "</button>";
-    }).join("");
-    bar.querySelectorAll(".sem-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        try { localStorage.setItem(SEMESTER_KEY, btn.dataset.sem); } catch (e) {}
+    if (!host || !reg || !window.SemesterPicker || semPicker) return;
+    semPicker = window.SemesterPicker({
+      semesters: reg.all,
+      activeId: activeSemesterId(),
+      onPick: function (id) {
+        try { localStorage.setItem(SEMESTER_KEY, id); } catch (e) {}
         renderHome();
-      });
+      }
     });
+    if (!semPicker) return;
+    host.textContent = "";
+    host.appendChild(semPicker.el);
   }
 
   function renderHome() {

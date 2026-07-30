@@ -4,6 +4,7 @@
 <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
 <link rel="stylesheet" href="theme.css">
 <script src="semesters.js"></script>
+<script src="semester-picker.js"></script>
 <script src="home.js" defer></script>
 <script src="theme.js" defer></script>
 
@@ -185,7 +186,6 @@
       </div>
     </div>
 
-    <div id="semester-switch" class="semester-switch hidden" role="tablist" aria-label="Semester"></div>
     <div id="semester-card" class="card">
       <div class="semester" data-semester="summer-1-2026">
       <h2 class="semester-header">Summer Semester 1 &ndash; 2026</h2>
