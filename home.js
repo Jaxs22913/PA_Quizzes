@@ -46,74 +46,67 @@ document.querySelectorAll(".semester").forEach(semester => {
     });
 
     (function () {
-      // Semester progress bar -- update SEMESTER_START/SEMESTER_END by hand
-      // each new semester, same maintenance pattern as EXAM_EVENTS below.
-      // SEMESTER_END confirmed against the academic calendar (2026-07-17,
-      // same date as the last EXAM_EVENTS entry, "Physiology Course
-      // Remediation Exam"); SEMESTER_START confirmed directly by the user
-      // (2026-07-17, "our start date was the 18th of may") -- do NOT derive
-      // it from a fixed week count again, the real span isn't a clean
-      // multiple of 7 days. TOTAL_WEEKS is intentionally derived from the
-      // two dates (Math.ceil, so a partial trailing week still counts as a
-      // whole week) rather than hardcoded, so the "Week N of TOTAL" label
-      // can never drift out of sync with the actual date range the way a
-      // separate hand-maintained constant could.
-      const SEMESTER_START = new Date(2026, 4, 18); // May 18, 2026
-      // 23:59:59, not midnight -- SEMESTER_END is the last real day of the
-      // semester (remediation exams happen ON Aug 14 itself), so the whole
-      // day needs to still read as "in progress," not flip to "Semester
-      // complete!" the instant that day begins.
-      const SEMESTER_END = new Date(2026, 7, 14, 23, 59, 59); // Aug 14, 2026
-      // Last actual CLASS day, distinct from SEMESTER_END: the final week
-      // (Aug 10-14) is exam/remediation week, not class days. The "class days
-      // left" count runs to here, while the progress bar % still runs to
-      // SEMESTER_END. Confirmed by the user 2026-07-23 ("11 days of school
-      // left, not 16") -- 16 was the weekday count through Aug 14; excluding
-      // the Aug 10-14 exam week (5 weekdays) gives the correct 11.
-      const LAST_CLASS_DAY = new Date(2026, 7, 7, 23, 59, 59); // Aug 7, 2026 (Fri)
+      /* Semester progress bar. Dates now come from semesters.js rather than
+         hand-edited constants here, and the bar is rendered per .semester
+         block, so a second semester needs no change to this code.
 
-      const fill = document.getElementById("semester-progress-fill");
-      const label = document.getElementById("semester-progress-label");
-      if (fill && label) {
-        const now = new Date();
-        const totalMs = SEMESTER_END - SEMESTER_START;
-        const elapsedMs = now - SEMESTER_START;
-        const pct = Math.max(0, Math.min(100, (elapsedMs / totalMs) * 100));
-        const dayMs = 24 * 60 * 60 * 1000;
-        // Hardcoded, not derived from the date span -- confirmed directly
-        // by the user (2026-07-17, "theres 12 weeks") after an earlier
-        // Math.ceil-based derivation gave 13. The May 18 - Aug 14 calendar
-        // span is ~12.6 weeks, but the program counts it as a 12-week
-        // semester regardless, so trust that over the raw date math.
-        const TOTAL_WEEKS = 12;
-        const weekNum = Math.max(1, Math.min(TOTAL_WEEKS, Math.floor(elapsedMs / (7 * dayMs)) + 1));
+         The behaviours the old constants documented are preserved: `end` is
+         the last REAL day (remediation exams happen on it, so the whole day
+         still reads as in progress), `lastClassDay` is distinct from it
+         because the final exam week is not class days, and totalWeeks is the
+         program's own count rather than derived from the span. */
+      var reg = window.Semesters;
+      if (!reg) return;
 
-        // "Class days left" counts weekdays only, strictly after today
-        // through LAST_CLASS_DAY inclusive (not SEMESTER_END -- the final
-        // Aug 10-14 exam/remediation week is excluded), so today itself is
-        // never counted as one of the days still remaining.
+      document.querySelectorAll(".semester").forEach(function (block) {
+        var sem = reg.byId(block.dataset.semester);
+        var fill = block.querySelector(".semester-progress-fill, #semester-progress-fill");
+        var label = block.querySelector(".semester-progress-label, #semester-progress-label");
+        if (!sem || !fill || !label) return;
+
+        var start = reg.startOf(sem);
+        var end = reg.endOf(sem);
+        var lastClass = reg.parseLocal(sem.lastClassDay, true);
+        var now = new Date();
+        var elapsedMs = now - start;
+        var pct = Math.max(0, Math.min(100, (elapsedMs / (end - start)) * 100));
+        var dayMs = 24 * 60 * 60 * 1000;
+        var weekNum = Math.max(1, Math.min(sem.totalWeeks,
+                        Math.floor(elapsedMs / (7 * dayMs)) + 1));
+
+        // weekdays strictly AFTER today through the last class day, so today
+        // is never counted among the days still remaining
         function countWeekdaysLeft(fromExclusive, toInclusive) {
-          let count = 0;
-          const d = new Date(fromExclusive.getFullYear(), fromExclusive.getMonth(), fromExclusive.getDate() + 1);
-          const end = new Date(toInclusive.getFullYear(), toInclusive.getMonth(), toInclusive.getDate());
-          while (d <= end) {
-            const dow = d.getDay();
+          var count = 0;
+          var d = new Date(fromExclusive.getFullYear(), fromExclusive.getMonth(),
+                           fromExclusive.getDate() + 1);
+          var stop = new Date(toInclusive.getFullYear(), toInclusive.getMonth(),
+                              toInclusive.getDate());
+          while (d <= stop) {
+            var dow = d.getDay();
             if (dow !== 0 && dow !== 6) count++;
             d.setDate(d.getDate() + 1);
           }
           return count;
         }
-        const classDaysLeft = countWeekdaysLeft(now, LAST_CLASS_DAY);
+        var classDaysLeft = countWeekdaysLeft(now, lastClass);
 
-        requestAnimationFrame(() => { fill.style.width = pct + "%"; });
-        if (now < SEMESTER_START) {
-          label.textContent = "Semester starts soon";
-        } else if (now > SEMESTER_END) {
+        requestAnimationFrame(function () { fill.style.width = pct + "%"; });
+        if (now < start) {
+          // "starts soon" was fine when the only future term was weeks away;
+          // with the whole didactic year listed, say WHEN -- and don't state an
+          // estimated date as though it were on a syllabus
+          var when = start.toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" });
+          label.textContent = sem.estimated
+            ? "Starts around " + when + " · dates to be confirmed"
+            : "Starts " + when;
+        } else if (now > end) {
           label.textContent = "Semester complete!";
         } else {
-          label.textContent = `Week ${weekNum} of ${TOTAL_WEEKS} · ${classDaysLeft} class day${classDaysLeft === 1 ? "" : "s"} left`;
+          label.textContent = "Week " + weekNum + " of " + sem.totalWeeks + " \u00b7 " +
+            classDaysLeft + " class day" + (classDaysLeft === 1 ? "" : "s") + " left";
         }
-      }
+      });
     })();
 
     (function () {
@@ -362,6 +355,66 @@ document.querySelectorAll(".semester").forEach(semester => {
       });
     });
 
+
+    (function () {
+      /* Semester switcher. Renders only the semesters that actually have a
+         .semester block in the page, and stays hidden while there is just one
+         -- a one-option switcher is noise, not navigation. Selection persists,
+         and defaults to whichever semester today falls in. */
+      var reg = window.Semesters;
+      var mount = document.getElementById("semester-switch");
+      if (!reg || !mount) return;
+
+      var blocks = {};
+      document.querySelectorAll(".semester").forEach(function (b) {
+        if (b.dataset.semester) blocks[b.dataset.semester] = b;
+      });
+      var present = reg.all.filter(function (sem) { return blocks[sem.id]; });
+      window.__semesterBlocks = blocks;
+
+      function show(id) {
+        Object.keys(blocks).forEach(function (k) {
+          blocks[k].classList.toggle("hidden", k !== id);
+        });
+        mount.querySelectorAll(".sem-btn").forEach(function (b) {
+          var on = b.dataset.sem === id;
+          b.classList.toggle("active", on);
+          b.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        window.__activeSemester = id;
+        try { localStorage.setItem("activeSemester", id); } catch (e) {}
+        // search results are scoped to the visible semester, so re-run them
+        var input = document.getElementById("site-search");
+        if (input && input.value.trim() && window.__runSearch) window.__runSearch(input.value);
+      }
+      window.__showSemester = show;
+
+      if (present.length < 2) {
+        // single semester: no switcher, but still record which one is active so
+        // search scoping and everything downstream has an answer
+        window.__activeSemester = present.length ? present[0].id : null;
+        return;
+      }
+
+      mount.classList.remove("hidden");
+      present.forEach(function (sem) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "sem-btn";
+        b.dataset.sem = sem.id;
+        b.setAttribute("role", "tab");
+        b.textContent = sem.short || sem.label;
+        b.addEventListener("click", function () { show(sem.id); });
+        mount.appendChild(b);
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
+      var initial = (saved && blocks[saved]) ? saved : reg.current().id;
+      if (!blocks[initial]) initial = present[0].id;
+      show(initial);
+    })();
+
     (function () {
       const input = document.getElementById("site-search");
       const resultsBox = document.getElementById("search-results");
@@ -393,17 +446,30 @@ document.querySelectorAll(".semester").forEach(semester => {
           return;
         }
         const links = Array.from(document.querySelectorAll("a.quiz-link"));
-        const matches = links.filter(a => {
-          const label = (a.dataset.quizLabel || a.textContent).trim().toLowerCase();
-          return label.includes(q);
-        }).slice(0, 40);
+        const hit = a => (a.dataset.quizLabel || a.textContent).trim().toLowerCase().includes(q);
+        // Results are scoped to the semester you are looking at. Exams are
+        // cumulative and board prep reaches back, so a hit in the other
+        // semester is offered rather than silently dropped.
+        const semOf = a => {
+          const block = a.closest("[data-semester]");
+          return block ? block.getAttribute("data-semester") : null;
+        };
+        const active = window.__activeSemester || null;
+        const all = links.filter(hit);
+        const matches = (active ? all.filter(a => semOf(a) === active) : all).slice(0, 40);
+        const elsewhere = active ? all.filter(a => semOf(a) !== active) : [];
 
         resultsBox.innerHTML = "";
-        if (matches.length === 0) {
+        if (matches.length === 0 && elsewhere.length === 0) {
           const empty = document.createElement("div");
           empty.className = "search-no-results";
           empty.textContent = "No quizzes match “" + query.trim() + "”";
           resultsBox.appendChild(empty);
+        } else if (matches.length === 0) {
+          const none = document.createElement("div");
+          none.className = "search-no-results";
+          none.textContent = "Nothing in this semester matches “" + query.trim() + "”";
+          resultsBox.appendChild(none);
         } else {
           matches.forEach((a, i) => {
             const label = (a.dataset.quizLabel || a.textContent).trim();
@@ -422,8 +488,31 @@ document.querySelectorAll(".semester").forEach(semester => {
             resultsBox.appendChild(r);
           });
         }
+
+        // One line out to the other semester, so a scoped search is never a
+        // dead end for material you genuinely have.
+        if (elsewhere.length) {
+          const reg = window.Semesters;
+          const otherId = elsewhere[0].closest("[data-semester]").getAttribute("data-semester");
+          const other = reg && reg.byId(otherId);
+          const jump = document.createElement("button");
+          jump.type = "button";
+          jump.className = "search-other-sem";
+          jump.textContent = elsewhere.length + " more in " +
+            ((other && (other.short || other.label)) || "another semester") + " \u2192";
+          jump.addEventListener("mousedown", e => e.preventDefault());
+          jump.addEventListener("click", () => {
+            if (window.__showSemester) window.__showSemester(otherId);
+          });
+          resultsBox.appendChild(jump);
+        }
         resultsBox.classList.remove("hidden");
       }
+
+      // Exposed so switching semesters can re-scope results that are already
+      // on screen -- without this the "N more in Semester 1 →" jump changes the
+      // semester but leaves the old "nothing matches" list sitting there.
+      window.__runSearch = runSearch;
 
       input.addEventListener("input", () => runSearch(input.value));
       input.addEventListener("focus", () => { if (input.value.trim()) runSearch(input.value); });

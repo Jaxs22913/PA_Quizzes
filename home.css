@@ -1455,3 +1455,51 @@
   .atlas-btn{ white-space: normal; align-items: flex-start; }
   .atlas-btn .atlas-btn-note{ display: block; border-left: 0; padding-left: 0; margin: 2px 0 0; }
 }
+
+
+/* Semester switcher. Sits above the semester card and is hidden entirely while
+   only one semester exists — a one-option switcher is noise, not navigation.
+   Same shell as the other pill controls so it reads as part of the set. */
+.semester-switch{
+  display: flex; gap: 6px; margin: 0 0 12px; padding: 4px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 999px; box-shadow: var(--shadow); width: max-content;
+}
+.semester-switch.hidden{ display: none; }
+.semester-switch .sem-btn{
+  font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+  border: 0; background: transparent; color: var(--muted);
+  padding: 7px 16px; border-radius: 999px;
+  transition: background var(--dur-1, 160ms) var(--ease, ease),
+              color var(--dur-1, 160ms) var(--ease, ease);
+}
+.semester-switch .sem-btn:hover{ color: var(--ink); }
+.semester-switch .sem-btn.active{ background: var(--a-teal, #329293); color: #fff; }
+@media (max-width: 560px){
+  /* Four "Semester N" pills do not fit a phone if they share the width evenly,
+     so they keep their natural size and the strip scrolls instead of squeezing
+     the labels to unreadable. */
+  .semester-switch{
+    width: 100%; overflow-x: auto; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .semester-switch::-webkit-scrollbar{ display: none; }
+  .semester-switch .sem-btn{
+    flex: 0 0 auto; text-align: center; padding: 8px 13px; font-size: 13px;
+  }
+}
+
+/* "3 more in Semester 1 →" under scoped search results */
+.search-other-sem{
+  display: block; width: 100%; text-align: left; font: inherit; font-size: 13px;
+  font-weight: 700; cursor: pointer; border: 0; border-top: 1px solid var(--border);
+  background: transparent; color: var(--a-teal, #329293); padding: 10px 14px;
+}
+.search-other-sem:hover{ background: var(--paper, rgba(0,0,0,.03)); }
+
+/* Empty state for a semester that has no content yet. Kept quiet -- it is a
+   placeholder, not a call to action. */
+.semester-empty{ text-align:center; padding:38px 20px 44px; color:var(--muted); }
+.semester-empty-title{ font-size:17px; font-weight:800; color:var(--ink);
+  margin:0 0 6px; }
+.semester-empty p{ margin:0 auto; max-width:44ch; font-size:14px; line-height:1.6; }

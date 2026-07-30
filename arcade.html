@@ -32,6 +32,7 @@
 
   <div class="semester">
     <h2 class="semester-header">Summer Semester 1 &ndash; 2026</h2>
+    <div class="semester-switch hidden" id="semester-switch" role="tablist" aria-label="Semester"></div>
     <div class="tabs" id="class-tabs"></div>
     <div id="class-panels"></div>
   </div>
@@ -39,6 +40,7 @@
 
 <div id="toast"></div>
 
+<script src="semesters.js"></script>
 <script src="arcade.js"></script>
 <script src="theme.js" defer></script>
 <script>
@@ -82,17 +84,77 @@
 
   var ACTIVE_TAB_KEY = "fc_active_tab";
 
+  /* Semester currently being shown. Shared with the homepage through the same
+     localStorage key, so picking a semester there carries into the Arcade. */
+  var SEMESTER_KEY = "activeSemester";
+
+  function activeSemesterId() {
+    var reg = window.Semesters;
+    if (!reg) return null;
+    var saved = null;
+    try { saved = localStorage.getItem(SEMESTER_KEY); } catch (e) {}
+    if (saved && reg.byId(saved)) return saved;
+    return reg.current().id;
+  }
+
+  /* Classes for the shown semester. A class the registry doesn't know about is
+     kept visible rather than silently disappearing from the Arcade. */
+  function visibleClasses() {
+    var id = activeSemesterId();
+    if (!id) return DEMO_CLASSES;
+    return DEMO_CLASSES.filter(function (c) {
+      var s = semesterOfClass(c.id);
+      return !s || s === id;
+    });
+  }
+
+  function renderSemesterSwitch() {
+    var bar = document.getElementById("semester-switch");
+    var reg = window.Semesters;
+    if (!bar || !reg) return;
+    var present = {};
+    DEMO_CLASSES.forEach(function (c) {
+      var s = semesterOfClass(c.id);
+      if (s) present[s] = true;
+    });
+    // every registry semester gets a tab, matching the homepage; an empty one
+    // shows an empty state rather than being left out
+    var sems = reg.all;
+    if (sems.length < 2) { bar.classList.add("hidden"); return; }
+    var active = activeSemesterId();
+    bar.classList.remove("hidden");
+    bar.innerHTML = sems.map(function (s) {
+      return '<button type="button" class="sem-btn' + (s.id === active ? " active" : "") +
+             '" data-sem="' + s.id + '">' + (s.short || s.label) + "</button>";
+    }).join("");
+    bar.querySelectorAll(".sem-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        try { localStorage.setItem(SEMESTER_KEY, btn.dataset.sem); } catch (e) {}
+        renderHome();
+      });
+    });
+  }
+
   function renderHome() {
     var tabsEl = document.getElementById("class-tabs");
     var panelsEl = document.getElementById("class-panels");
+    renderSemesterSwitch();
+    var classes = visibleClasses();
+    if (!classes.length) {
+      tabsEl.innerHTML = "";
+      panelsEl.innerHTML =
+        '<div class="empty-state"><div class="big">\uD83D\uDCC5</div>' +
+        "<p>Decks for this semester appear here once its lectures start.</p></div>";
+      return;
+    }
     var savedTab = localStorage.getItem(ACTIVE_TAB_KEY);
-    var activeId = DEMO_CLASSES.some(function (c) { return c.id === savedTab; }) ? savedTab : DEMO_CLASSES[0].id;
+    var activeId = classes.some(function (c) { return c.id === savedTab; }) ? savedTab : classes[0].id;
 
-    tabsEl.innerHTML = DEMO_CLASSES.map(function (cls) {
+    tabsEl.innerHTML = classes.map(function (cls) {
       return '<button class="tab-btn' + (cls.id === activeId ? " active" : "") + '" data-tab="' + cls.id + '">' + cls.name + '</button>';
     }).join("");
 
-    panelsEl.innerHTML = DEMO_CLASSES.map(function (cls) {
+    panelsEl.innerHTML = classes.map(function (cls) {
       var examsHTML = cls.exams.map(function (exam) {
         var decksHTML = exam.deckIds.length
           ? exam.deckIds.map(function (id) { return deckCardHTML(findDeck(id)); }).join("")

@@ -3575,6 +3575,16 @@ var DEMO_DECKS = [
     ]}
 ];
 
+/* Which semester a class tab belongs to. Read from semesters.js so the
+   Arcade never carries its own copy of the term layout; falls back to showing
+   everything if the registry has not loaded. */
+function semesterOfClass(classId) {
+  var reg = window.Semesters;
+  if (!reg) return null;
+  var s = reg.ofClass(classId);
+  return s ? s.id : null;
+}
+
 function findDeck(id) { return DEMO_DECKS.find(function (d) { return d.id === id; }); }
 function deckIdFromURL() { return new URLSearchParams(location.search).get("deck"); }
 

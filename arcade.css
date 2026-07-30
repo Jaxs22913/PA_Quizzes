@@ -601,3 +601,29 @@ body {
     right: 74px;
   }
 }
+
+/* Semester switcher — same shell as the homepage's, repeated here because the
+   Arcade does not load home.css. */
+.semester-switch{
+  display: flex; gap: 6px; margin: 0 0 12px; padding: 4px;
+  background: var(--card, #fff); border: 1px solid var(--border, #e6e8ef);
+  border-radius: 999px; box-shadow: var(--shadow); width: max-content;
+}
+.semester-switch.hidden{ display: none; }
+.semester-switch .sem-btn{
+  font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+  border: 0; background: transparent; color: var(--muted);
+  padding: 7px 16px; border-radius: 999px;
+  transition: background var(--dur-1, 160ms) var(--ease, ease),
+              color var(--dur-1, 160ms) var(--ease, ease);
+}
+.semester-switch .sem-btn:hover{ color: var(--ink); }
+.semester-switch .sem-btn.active{ background: var(--a-teal, #329293); color: #fff; }
+@media (max-width: 560px){
+  .semester-switch{
+    width: 100%; overflow-x: auto; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .semester-switch::-webkit-scrollbar{ display: none; }
+  .semester-switch .sem-btn{ flex: 0 0 auto; text-align: center; padding: 8px 13px; font-size: 13px; }
+}

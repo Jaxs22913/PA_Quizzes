@@ -88,6 +88,40 @@ def category_from_path(path):
     return fixups.get(cat, cat) or "Other"
 
 
+def _semester_map():
+    """Folder -> semester id, read out of semesters.js.
+
+    The mapping is duplicated nowhere: this parses the same registry the pages
+    use, so adding a class to a semester in one place updates the group manifest
+    too. If the file ever moves or its shape changes, every quiz simply comes
+    back with no semester and the picker shows them all -- the failure mode is
+    "unfiltered", not "wrong semester".
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "semesters.js")
+    try:
+        js = open(path, encoding="utf-8").read()
+    except OSError:
+        return [], {}
+    folder_class = re.findall(r'\[/\^([^/]+)/i,\s*"([^"]+)"\]', js)
+    class_sem = {}
+    for block in re.finditer(r'id:\s*"([^"]+)".*?classes:\s*\[(.*?)\]', js, re.S):
+        sid, classes = block.group(1), re.findall(r'"([^"]+)"', block.group(2))
+        for c in classes:
+            class_sem.setdefault(c, sid)
+    return folder_class, class_sem
+
+
+_FOLDER_CLASS, _CLASS_SEM = _semester_map()
+
+
+def semester_from_path(path):
+    folder = path.split(os.sep)[0]
+    for pattern, class_id in _FOLDER_CLASS:
+        if re.match(pattern, folder, re.I):
+            return _CLASS_SEM.get(class_id)
+    return None
+
+
 def slug(s):
     return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
 
@@ -222,6 +256,7 @@ def main():
         bank[qid] = {
             "title": clean_title(src, os.path.basename(f)[:-5]),
             "category": category_from_path(f),
+            "sem": semester_from_path(f),
             "questions": out_qs,
         }
         stats["quizzes"] += 1
@@ -251,7 +286,8 @@ def main():
         total_bytes += len(blob.encode("utf-8"))
         open(os.path.join(outdir, k + ".js"), "w", encoding="utf-8").write(blob)
 
-    index = {k: {"title": v["title"], "category": v["category"], "n": len(v["questions"])}
+    index = {k: {"title": v["title"], "category": v["category"],
+                 "sem": v["sem"], "n": len(v["questions"])}
              for k, v in sorted(bank.items())}
     index_body = ",\n".join(
         json.dumps(k, ensure_ascii=False) + ":" + json.dumps(v, ensure_ascii=False, separators=(",", ":"))

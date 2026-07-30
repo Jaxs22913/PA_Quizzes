@@ -206,6 +206,7 @@
     .podium-score { font-size: 10.5px; }
   }
 </style>
+<script src="semesters.js"></script>
 </head>
 <body>
 <div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
@@ -328,9 +329,29 @@
   // 264 quizzes just to render a list was the entire 5.8 MB problem.
   function quizList() {
     var index = window.GROUP_INDEX || {};
-    return Object.keys(index).map(function (id) {
+    var sem = activeSemester();
+    var ids = Object.keys(index).filter(function (id) {
+      // a quiz the builder couldn't place stays listed rather than being
+      // unreachable from every semester
+      return !sem || !index[id].sem || index[id].sem === sem;
+    });
+    // never hand back an empty picker: a semester with no quizzes of its own
+    // falls back to the whole bank rather than looking broken
+    if (!ids.length) ids = Object.keys(index);
+    return ids.map(function (id) {
       return { id: id, title: index[id].title, count: index[id].n, category: index[id].category || "Other" };
     });
+  }
+
+  /* Which semester the picker is showing. Shares the homepage's stored choice,
+     so hosting a room offers the quizzes from the semester you were just
+     browsing. Returns null (= show everything) if the registry is missing. */
+  function activeSemester() {
+    var reg = window.Semesters;
+    if (!reg) return null;
+    var saved = null;
+    try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
+    return (saved && reg.byId(saved)) ? saved : reg.current().id;
   }
 
   // Subject grouping keeps the picker from being one long scroll. The bank is
