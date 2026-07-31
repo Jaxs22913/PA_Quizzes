@@ -659,9 +659,10 @@
        as every quiz's own question-progress .track/#bar (see e.g.
        "Anatomy Exam 4/appendicular-skeleton-quiz.html"'s .track{height:6px}
        rule), just using the homepage's own --accent/--accent3 instead of a
-       quiz's per-topic accent pair. Filled in by JS (see SEMESTER_START/
-       SEMESTER_END below) -- starts at width:0 so the transition below
-       animates it filling in on page load. */
+       quiz's per-topic accent pair. Filled in by JS from the dates in
+       semesters.js (the SEMESTER_START/SEMESTER_END constants this used to
+       point at are gone) -- starts at width:0 so the transition below animates
+       it filling in on page load. */
     .semester-progress { margin: 0 0 16px; }
     .semester-progress-track {
       height: 8px;
