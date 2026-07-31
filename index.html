@@ -188,7 +188,10 @@
 
     <div id="semester-card" class="card">
       <div class="semester" data-semester="summer-1-2026">
-      <h2 class="semester-header">Summer Semester 1 &ndash; 2026</h2>
+      <!-- Filled in from semesters.js: the picker when there is more than one
+           term, otherwise just that term's name. Hardcoding it here meant a
+           second copy of the label to go stale. -->
+      <h2 class="semester-header"></h2>
       <div class="semester-progress" id="semester-progress">
         <div class="semester-progress-track"><i id="semester-progress-fill" class="semester-progress-fill"></i></div>
         <div class="semester-progress-label" id="semester-progress-label"></div>

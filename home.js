@@ -399,8 +399,13 @@ document.querySelectorAll(".semester").forEach(semester => {
       if (!blocks[initial]) initial = present.length ? present[0].id : null;
 
       if (present.length < 2) {
-        // single semester: leave the heading as plain text, but still record
-        // which one is active so search scoping has an answer
+        // Single semester: no menu, but the heading still has to say something
+        // -- it is empty in the markup precisely so this is the only place the
+        // label comes from. Still record which one is active so search scoping
+        // has an answer.
+        var only = reg.byId(initial);
+        var lone = only && blocks[initial] && blocks[initial].querySelector(".semester-header");
+        if (lone) lone.textContent = only.label;
         window.__activeSemester = initial;
         return;
       }

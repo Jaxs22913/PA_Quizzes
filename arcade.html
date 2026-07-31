@@ -31,7 +31,10 @@
   <div class="streak-pill" id="streak-pill"><span class="flame">🔥</span><b id="streak-count">0</b><span>-day streak</span></div>
 
   <div class="semester">
-    <h2 class="semester-header">Summer Semester 1 &ndash; 2026</h2>
+    <!-- Filled in from semesters.js: the picker when there is more than one
+         term, otherwise just that term's name. Hardcoding it here meant a
+         second copy of the label to go stale. -->
+    <h2 class="semester-header"></h2>
     <div class="tabs" id="class-tabs"></div>
     <div id="class-panels"></div>
   </div>
@@ -125,8 +128,14 @@
         renderHome();
       }
     });
-    if (!semPicker) return;
     host.textContent = "";
+    if (!semPicker) {
+      // fewer than two terms: no menu, but the heading is empty in the markup
+      // so this is the only place its label can come from
+      var only = reg.byId(activeSemesterId());
+      if (only) host.textContent = only.label;
+      return;
+    }
     host.appendChild(semPicker.el);
   }
 
