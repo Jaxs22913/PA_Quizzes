@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #5c8a72; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #2f6690; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAM/Nutrition Exam 2 Comprehensive Master Exam — Form A</title>
+<style>
+  :root{
+    --navy:#642634; --indigo:#5c8a72; --gold:#2f6690; --ice:#e4ede8;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>CAM/Nutrition Exam 2 Master Exam — Form A</h1>
+    <div class="sub">60 questions cumulative across all 5 CAM/Nutrition Exam 2 topics &middot; Introduction to CAM, Herbal Medicines &amp; Medical Marijuana, Animal-Assisted Therapy, Acupuncture, Chiropractic/Massage/Homeopathy</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Four choices, instant feedback, and a full explanation of every option so you learn from each answer. Turn on Exam Mode for a timer, question flagging, and jump-to-question navigation, closer to real test conditions.</p>
+    <div class="chips"><span class="chip">Demonstrate comprehensive recall across all 9 PD1 Exam 2 physical exam topics.</span><span class="chip">Apply correct technique, landmarks, and terminology across multiple organ systems.</span><span class="chip">Distinguish normal from abnormal physical exam findings across systems.</span><span class="chip">Identify the correct exam sequence and maneuvers for each system covered.</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Mind-Body Medicine", "io": "IO 5 — Define hypnosis, meditation, imagery, relaxation therapy, and biofeedback", "q": "Which principle does the lecture give for biofeedback?", "opts": [["\"Anything that can be measured can be changed\"", "Correct. The lecture states this as the biofeedback principle, supported by electronic monitoring that lets patients gain control over physiologic responses through training and practice."], ["\"Let food be thy medicine\"", "This saying is attributed to Hippocrates in the lecture's history section and has nothing to do with biofeedback."], ["\"Like cures like\" in matched symptom patterns", "This is the homeopathic law of similars, from a different domain entirely."], ["\"Health is balance between opposing forces\"", "This paraphrases the yin and yang concept from traditional Chinese medicine rather than the biofeedback principle."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 35"}, {"topic": "History", "io": "IO 1 — Discuss the history of Acupuncture", "q": "About how many acupuncture points had been described by 300 AD?", "opts": [["About 600 points", "This exceeds even the modern standardized count of 361 points."], ["About 100 points", "This is well below the figure the lecture gives."], ["About 200 points", "This is below the figure the lecture gives."], ["About 350 points", "Correct. The lecture says roughly 350 points were described by 300 AD."]], "c": 3, "cite": "Acupuncture 2026 Mattox.pptx, Slide 4"}, {"topic": "Organs", "io": "IO 5 — Describe the organs and elements of the body", "q": "How does Traditional Chinese Medicine use the word organ, according to the lecture?", "opts": [["As the element to which that organ belongs", "The elements group the organs; they are not what the word organ means."], ["Strictly as the anatomical structure of that organ", "The lecture says the concept is not confined to anatomical structure."], ["As a synonym for the meridian that shares its name", "The meridians are named after organs, but the concepts are distinct."], ["As all the functions ascribed to that organ by Traditional Chinese Medicine", "Correct. The concept extends beyond the anatomical structure to its ascribed functions."]], "c": 3, "cite": "Acupuncture 2026 Mattox.pptx, Slide 27"}, {"topic": "Commonly Used Supplements", "io": "IO a — Describe commonly used herbal medicines", "q": "Which dietary supplements does the lecture identify as the most widely used of all?", "opts": [["Probiotic and enzyme preparations", "Neither probiotics nor enzyme products are given this ranking anywhere in the lecture."], ["Omega-3 fatty acid preparations", "Fish oil is called the most common natural product, which is a narrower category than dietary supplements overall."], ["Multivitamins and minerals", "Correct. The lecture states multivitamins and minerals are the most widely used dietary supplements, and that patients should take only one per day."], ["Adaptogenic herbs such as ashwagandha", "Adaptogens are described as a class that helps the body adapt to stress, not as the most widely used supplement."]], "c": 2, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 24"}, {"topic": "Organs", "io": "IO 5 — Describe the organs and elements of the body", "q": "Which of the following is a Fu organ in the lecture's classification?", "opts": [["Kidney", "The kidney is a solid Zang organ."], ["Gallbladder", "Correct. The Fu organs are hollow and yang: large intestine, small intestine, stomach, bladder, gallbladder, and Sanjiao."], ["Spleen", "The spleen is a solid Zang organ."], ["Liver", "The liver is a solid Zang organ."]], "c": 1, "cite": "Acupuncture 2026 Mattox.pptx, Slide 28"}, {"topic": "Chiropractic — Safety", "io": "IO 1 — Explain Chiropractic Medicine", "q": "Which complication does the lecture link specifically to manipulation of the upper cervical region?", "opts": [["Cauda equina syndrome", "That follows lumbar manipulation."], ["Pneumothorax", "Pneumothorax is the risk named in the acupuncture lecture."], ["Vertebral compression fracture", "This complication is not discussed in the lecture."], ["Cerebrovascular accident", "Correct. The estimated frequency is 1 in 5.85 million manipulations, from a study of arterial dissections."]], "c": 3, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 30"}, {"topic": "Whole Medical Systems", "io": "IO 3 — Examine the five domains of CAM", "q": "Which five elements form the basis of many traditional Chinese medicine concepts, per the lecture?", "opts": [["Space, air, fire, water, and earth", "These are the five elements of Ayurvedic theory from which the three doshas are derived, not the traditional Chinese medicine set."], ["Blood, phlegm, bile, lymph, and marrow", "This list does not appear anywhere in the lecture and belongs to no system it describes."], ["Wind, heat, cold, damp, and dryness", "These terms are not presented in the lecture as the elemental basis of traditional Chinese medicine."], ["Earth, fire, water, wood, and metal", "Correct. The lecture lists earth, fire, water, wood, and metal as the five elements believed to represent patterns and relationships within nature and the human body."]], "c": 3, "cite": "Introduction to CAM 2026.pptx, Slide 29"}, {"topic": "Massage — Techniques", "io": "IO 5 — Compare and contrast different types of Massage Therapy", "q": "What does petrissage involve?", "opts": [["Deep circular or crosswise movement with the thumbs or elbows", "That describes friction."], ["Smooth gliding strokes performed with oil", "That describes effleurage."], ["Lifting and kneading of skin, subcutaneous tissue and muscle", "Correct. It frees adhesions by stretching and separating muscle fibre, fascia and scar tissue, and is often performed without lotion."], ["Beating or tapping with the side of the hand or the fingertips", "That describes tapotement."]], "c": 2, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 61"}, {"topic": "Adverse Effects & Interactions", "io": "IO b — Discuss adverse effects and drug interactions of commonly used herbal medicines", "q": "Which patients should avoid glucosamine, and why?", "opts": [["Patients with sulfa allergy, because glucosamine is a sulfur donor", "Caution with sulfa allergy is advised for methylsulfonylmethane, not glucosamine."], ["Patients with shellfish allergy, because glucosamine is derived from proteins and shellfish", "Correct. The lecture says glucosamine is derived from proteins and shellfish and to avoid it in those with shellfish allergies, reading labels carefully."], ["Patients with soy allergy, because glucosamine is extracted from soy protein", "The lecture derives glucosamine from proteins and shellfish, not from soy."], ["Patients with pineapple allergy, because glucosamine is a proteolytic enzyme", "Pineapple allergy is the caution attached to bromelain, a proteolytic enzyme."]], "c": 1, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 27"}, {"topic": "Massage — Principles", "io": "IO 4 — Describe the principles of Massage Therapy", "q": "In which direction should forces typically be applied?", "opts": [["In whichever direction the patient finds most comfortable", "Comfort matters, but it is not the rule given for direction."], ["Along the muscle fibres, though cross fibre is also used", "Correct. The lecture also directs pressure to be in line with venous flow."], ["Always perpendicular to the direction of the muscle fibres", "Cross fibre exists as a technique but is not the typical direction."], ["Always from proximal to distal along the limb", "This contradicts the uncorking principle for swelling."]], "c": 1, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 58"}, {"topic": "Chiropractic — Definition", "io": "IO 1 — Explain Chiropractic Medicine", "q": "Which relationship does chiropractic focus on?", "opts": [["The relationship between diet and inflammation in the joints", "Diet is not part of the relationship the lecture describes."], ["The relationship between spinal structure and nervous system function", "Correct. The lecture adds that this relationship affects health."], ["The relationship between muscle strength and joint stability", "This is narrower than the structure and function relationship described."], ["The relationship between posture and respiratory capacity", "Posture analysis is a diagnostic step, not the defining relationship."]], "c": 1, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 4"}, {"topic": "Whole Medical Systems", "io": "IO 3 — Examine the five domains of CAM", "q": "What does the law of minimum dose hold, and what process accompanies it?", "opts": [["The lower the dose, the greater the therapeutic effect, achieved through repeated dilution and shaking called succussion", "Correct. The lecture defines the law of minimum dose as the belief that lower doses produce greater therapeutic effect, and notes that many remedies undergo repeated dilution and shaking, a process called succussion."], ["The dose must be calculated by body weight, with adjustment through titration", "Weight-based dosing is a conventional pharmacologic practice and is not part of homeopathic theory as the lecture presents it."], ["The smallest clinically effective dose should first be identified and then maintained by continuous steady infusion", "This describes a conventional dosing strategy rather than the homeopathic belief that greater dilution increases potency."], ["The dose should be doubled at each visit until symptoms resolve completely", "Escalating doses run directly opposite to the homeopathic principle, which holds that dilution increases rather than decreases effect."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 23"}, {"topic": "Homeopathy", "io": "IO 7 — Describe the principles of Homeopathy, Reiki, and Aromatherapy", "q": "What is the simillimum?", "opts": [["A close match between the patient's picture and a known drug picture", "Correct. The homeopath takes a detailed physical, mental and emotional history to find it."], ["The first remedy tried in any new patient", "No such default remedy is described."], ["The alcohol base in which the remedy is fixed", "The alcohol carries the final product but is not the simillimum."], ["The most dilute preparation available of a given remedy", "Dilution relates to potency rather than to this term."]], "c": 0, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 96"}, {"topic": "Meridians", "io": "IO 4 — Discuss the meridians of the body", "q": "Which body standardized the numbering and naming of acupuncture points?", "opts": [["The National Institutes of Health", "The National Institutes of Health appear in the timeline for other reasons."], ["The National Certification Commission for Acupuncture and Oriental Medicine", "That body administers the certification examinations in the lecture's licensure slide."], ["The World Health Organization", "Correct. The lecture gives examples such as Sanyinjiao (SP6) and Fengchi (GB20)."], ["The Food and Drug Administration", "The Food and Drug Administration appears in the timeline for 1993, not for point nomenclature."]], "c": 2, "cite": "Acupuncture 2026 Mattox.pptx, Slide 20"}, {"topic": "Equine-Facilitated Learning", "io": "IO 6 — Discuss different types of equine assisted therapies", "q": "Beyond individual work, what group application does the lecture give for equine-facilitated learning?", "opts": [["Groups and corporate leadership for team-building experiences", "Correct. The lecture states equine-facilitated learning may be used for groups and corporate leadership for team-building experiences."], ["Family therapy for bereavement", "Grief and loss are listed under equine-assisted psychotherapy indications."], ["School physical education curricula", "No school physical education application is described."], ["Competitive equestrian training", "Competition is not among the applications listed."]], "c": 0, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 37"}, {"topic": "Chiropractic — Safety", "io": "IO 1 — Explain Chiropractic Medicine", "q": "How does the lecture put the stroke risk from spinal manipulation in perspective?", "opts": [["It is roughly equal to the risk of general anaesthesia", "No comparison with anaesthesia is made."], ["It is 400 times less than the death rate from bleeding on anti-inflammatories", "Correct. The lecture uses this comparison directly."], ["It is 40 times greater than the risk from physiotherapy", "No such comparison appears, and the direction is wrong."], ["It is the leading cause of stroke in adults under 45", "The lecture makes no such claim."]], "c": 1, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 31"}, {"topic": "Law & Regulation", "io": "IO 4 — Describe commonly used animals for animal assisted therapy", "q": "What does the lecture say about breed restrictions for service dogs?", "opts": [["Only retrievers and shepherds qualify as service dogs", "No breed list is imposed; any breed may serve."], ["A service dog can be any breed, and entry cannot be refused solely because of breed", "Correct. The lecture states a service dog can be any type of dog breed and that a public establishment or landlord may not prohibit entry solely because it is a certain breed."], ["Breed restrictions apply in housing but not in public accommodations", "For a qualifying emotional support animal the landlord may not enforce breed restrictions, and for service dogs breed cannot bar entry."], ["Breeds over 50 pounds require additional certification", "No weight-based rule appears in the lecture."]], "c": 1, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 22"}, {"topic": "Defining CAM", "io": "IO 1 — Define complementary and alternative medicine", "q": "How does the lecture define conventional healthcare?", "opts": [["A system whose practitioners treat symptoms and disease using drugs, radiation, or surgery", "Correct. The lecture defines conventional healthcare as a system in which professionals such as physicians, physician assistants, nurse practitioners, pharmacists, physical therapists, and nurses treat symptoms and diseases using drugs, radiation, or surgery."], ["A system whose practitioners treat the whole person using diet, herbs, and manual therapy", "Whole-person care using diet, herbs, and manual therapy describes naturopathy and related systems, which the lecture contrasts against conventional care."], ["A system whose practitioners restore balance among the body's three fundamental energies", "Restoring balance among three fundamental energies describes the Ayurvedic dosha framework rather than conventional medicine."], ["A system whose practitioners direct healing energy through the hands toward the body", "Directing healing energy through the hands describes Reiki, a biofield therapy in the fifth domain."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 3"}, {"topic": "Manipulative Practices", "io": "IO 3 — Examine the five domains of CAM", "q": "Gua sha is also known by which other names, and what is it used for?", "opts": [["Coining or spooning, used mainly for anxiety and insomnia in adult patients", "The alternate names are right but the indications are wrong; the lecture ties gua sha to musculoskeletal pain rather than to anxiety or insomnia."], ["Scraping, coining, or spooning, used commonly for neck and back musculoskeletal pain", "Correct. The lecture gives scraping, coining, and spooning as alternate names, describes repeated strokes with a smooth-edged instrument, and lists musculoskeletal pain of the neck and back as common uses."], ["Cupping or suctioning, used commonly for improving balance and physical function", "Cupping is a separate practice, and balance and physical function are benefits the lecture attributes to tai chi."], ["Tapping or percussing, used mainly for nausea and procedure-related distress in adults", "These names do not appear in the lecture, and nausea and procedural distress are listed as hypnotherapy indications."]], "c": 1, "cite": "Introduction to CAM 2026.pptx, Slide 73"}, {"topic": "Companion, Emotional Support & Service Animals", "io": "IO 4 — Describe commonly used animals for animal assisted therapy", "q": "What distinguishes a companion animal from an assistive animal?", "opts": [["A companion animal must be certified by a licensed professional", "Certification is not required for a companion animal; a letter from a licensed professional relates to emotional support animals."], ["A companion animal has no special training in helping an individual cope with a disability", "Correct. The lecture defines a companion animal, also called a pet, as having no special training in helping an individual cope with a disability, used for company, amusement, psychological support and extrovert display."], ["A companion animal is limited to dogs and miniature horses", "That limitation applies to service animals under the Americans with Disabilities Act."], ["A companion animal is trained to perform specific tasks on command", "Task training is the defining feature of a service animal, not a companion animal."]], "c": 1, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 8"}, {"topic": "Cannabis Adverse Effects", "io": "IO i — Discuss adverse effects and drug interactions of medical marijuana", "q": "Which explanations does the lecture offer for why hot showers relieve cannabinoid hyperemesis syndrome?", "opts": [["Possible disruption of hypothalamic thermoregulation, heat countering CB1 hyperstimulation, or cutaneous steal syndrome redistributing blood away from the gut", "Correct. The lecture offers all three of these explanations, including CB1 receptors in the splanchnic circulation slowing gastric emptying."], ["Direct antiemetic action of heat on the vomiting centre", "A direct action on the vomiting centre is not among the theories given."], ["Increased hepatic blood flow that speeds cannabis clearance", "Hepatic clearance is not offered as an explanation for the hot water behaviour."], ["Reduced absorption of cannabinoids from subcutaneous fat", "Fat deposits are cited to explain slow clearance after stopping, not the effect of hot water."]], "c": 0, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 73"}, {"topic": "Manipulative Practices", "io": "IO 3 — Examine the five domains of CAM", "q": "On what does chiropractic medicine primarily focus, according to the lecture?", "opts": [["Diagnosis and management of musculoskeletal conditions, particularly those involving the spine", "Correct. The lecture describes chiropractic medicine as focused on musculoskeletal conditions especially of the spine, using spinal manipulation and other manual therapy to improve mobility and reduce pain."], ["Diagnosis and management of nutritional deficiency, particularly of vitamins and minerals", "Nutritional assessment belongs to diet therapy and supplement counseling, not to the lecture's description of chiropractic practice."], ["Diagnosis and management of stress-related disorders, particularly anxiety and insomnia", "Stress-related conditions are targets of mind-body interventions rather than of chiropractic care."], ["Diagnosis and management of heavy metal toxicity, particularly lead and mercury", "Heavy metal toxicity is managed with chelation therapy in the biologically based domain."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 66"}, {"topic": "Moxibustion", "io": "IO 2 — Describe Traditional Chinese Medicine", "q": "What is moxibustion intended to do, according to the lecture?", "opts": [["Remove dead cells from the surface of the skin", "That effect is attributed to massage."], ["Stimulate the flow of Qi and blood", "Correct. The lecture gives pain, tendonitis, digestive issues, and menstrual problems as the conditions treated."], ["Reduce the number of needles required", "No such purpose is described."], ["Sterilise the needle before insertion", "Needles are single use; moxibustion is a therapy in its own right."]], "c": 1, "cite": "Acupuncture 2026 Mattox.pptx, Slide 75"}, {"topic": "Cannabis Pharmacology", "io": "IO h — Discuss the pharmacokinetics and pharmacodynamics of medical marijuana", "q": "Above roughly what single dose of THC does the lecture say euphoria can be produced?", "opts": [["Over 4 mg", "Four milligrams three times daily is offered as a possible starting dose, not the euphoria threshold."], ["Over 350 mg", "Three hundred fifty milligrams is the aggregate daily THC cap for non-smoking routes in Florida."], ["Over 60 mg", "Sixty milligrams is the daily edible dispensing limit rather than a euphoria threshold."], ["Over 10 mg", "Correct. The lecture states that over 10 mg of THC at one time can produce euphoria."]], "c": 3, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 61"}, {"topic": "History", "io": "IO 1 — Discuss the history of Acupuncture", "q": "How far back does the lecture date the development of acupuncture?", "opts": [["Roughly 150 years, beginning with Chinese immigration to the United States", "Chinese immigrants brought it to the United States in the 1850s, long after its origin."], ["Roughly 4,000 years, as part of the system of Traditional Chinese Medicine", "Correct. The lecture dates it to about 4,000 years ago within Traditional Chinese Medicine."], ["Roughly 400 years, beginning with European contact in the 1600s", "Europeans practised it in the 1500s to 1700s, but that is not its origin."], ["Roughly 1,000 years, beginning in Korea and Japan", "It spread to Korea and Japan between 600 and 900 AD, well after its origin."]], "c": 1, "cite": "Acupuncture 2026 Mattox.pptx, Slide 3"}, {"topic": "Definitions", "io": "IO 4 — Describe commonly used animals for animal assisted therapy", "q": "What is the primary role of an emotional support animal?", "opts": [["Performing trained tasks that mitigate a disability", "Task performance defines a service animal rather than an emotional support animal."], ["Alerting the public that the owner has a disability", "No signalling role of that kind is described."], ["Delivering goal-directed treatment alongside a therapist", "Goal-directed treatment describes animal-assisted therapy."], ["Providing emotional comfort, companionship, friendship and affection to their owner", "Correct. The lecture gives this as the primary role of an emotional support animal."]], "c": 3, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 9"}, {"topic": "Commonly Used Supplements", "io": "IO a — Describe commonly used herbal medicines", "q": "From which plant source is the drug digitalis (digoxin) derived?", "opts": [["Willow bark", "Willow bark is given as the origin of aspirin, not digitalis."], ["Cinchona tree", "The cinchona tree is named as the source of the antiarrhythmic quinidine."], ["Periwinkle", "Periwinkle is the source of the vinca alkaloids used in chemotherapy."], ["Foxglove", "Correct. The lecture lists digitalis (digoxin) as a derivative of foxglove."]], "c": 3, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 20"}, {"topic": "Why Patients Use CAM", "io": "IO 6 — Describe appropriate patient education for common CAM", "q": "A patient describes a clinic offering an infusion that \"cures cancer,\" available only at a facility abroad. Based on the lecture's counseling questions, which feature is the strongest warning sign?", "opts": [["The practitioner makes unfounded claims such as the ability to cure cancer", "Correct. The lecture lists unfounded claims such as curing cancer among the specific questions clinicians should raise with patients, alongside travel requirements and cost."], ["The therapy is delivered by infusion rather than by mouth", "Route of administration is not one of the lecture's warning signs. The lecture describes botanical products in many forms including injections without treating that as a red flag by itself."], ["The therapy has been studied in more than one clinical trial", "Supporting research is presented as a reassuring feature. The lecture's first counseling question asks whether research supports the therapy."], ["The treatment is being offered through an established academic medical institution", "This is also reassuring rather than alarming. The lecture asks whether the treatment is offered by an established medical institution as a point in its favor."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 15"}, {"topic": "Organs", "io": "IO 5 — Describe the organs and elements of the body", "q": "Which organs does the lecture classify as Zang?", "opts": [["The hollow yang organs: large intestine, small intestine, stomach, bladder, gallbladder", "Those are the Fu organs."], ["Only the organs belonging to the fire element", "The fire element covers small intestine, heart, pericardium, and Sanjiao across both groups."], ["The organs with no meridian of their own", "Every listed organ has an associated channel."], ["The solid yin organs: lung, heart, spleen, kidney, liver", "Correct. The pericardium and the conception vessel are also listed with them."]], "c": 3, "cite": "Acupuncture 2026 Mattox.pptx, Slide 28"}, {"topic": "Chiropractic — Safety", "io": "IO 1 — Explain Chiropractic Medicine", "q": "What is the estimated frequency of cauda equina syndrome following manipulation?", "opts": [["About 1 per 1,000 manipulations", "This is far more frequent than the figure given."], ["About 1 per 100,000 manipulations", "This is far more frequent than the figure given."], ["About 1 per 5.85 million manipulations", "That figure belongs to cerebrovascular accident after upper cervical manipulation."], ["About 1 per 100 million manipulations", "Correct. It may follow lumbar manipulation with disc herniation, bowel and bladder disturbance, saddle anaesthesia, and leg weakness."]], "c": 3, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 28"}, {"topic": "Florida Law & Qualifying Conditions", "io": "IO f — Identify medical conditions that may benefit from medical marijuana use", "q": "For which indications did the 2015 meta-analysis cited in the lecture include randomised controlled trials?", "opts": [["Only chronic pain and spasticity due to multiple sclerosis", "The list in the lecture is considerably broader than these two indications."], ["Nausea and vomiting with chemotherapy, appetite stimulation in HIV/AIDS, chronic pain, spasticity in multiple sclerosis, depression, anxiety, sleep disorder, and glaucoma", "Correct. The lecture lists all of these indications for the 2015 meta-analysis and notes most studies showed only modest symptom improvements."], ["Only psychiatric indications such as depression, anxiety, and sleep disorder", "Psychiatric indications are part of the list but not the whole of it."], ["Only conditions on the Florida automatic qualifying list", "The meta-analysis indications and the Florida automatic list are presented as separate things."]], "c": 1, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 70"}, {"topic": "Chiropractic — Rationale", "io": "IO 1 — Explain Chiropractic Medicine", "q": "In the lecture's chain of reasoning, what does loss of normal movement lead to first?", "opts": [["Immediate mechanical failure of the joint", "Mechanical failure is the end of the chain, not the beginning."], ["Chemical changes within the tissues", "Chemical changes follow the change in how tissues are stressed and replenished."], ["Changes in how the tissues are stressed and replenished", "Correct. Those changes then cause chemical changes, which predispose the tissues to mechanical failure."], ["Compression of the spinal cord", "Cord compression is not part of the chain described."]], "c": 2, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 23"}, {"topic": "Yin and Yang", "io": "IO 3 — Discuss Yin and Yang", "q": "How does the lecture describe the relationship between yin and yang?", "opts": [["Independent of one another, acting separately", "The lecture describes them as interdependent."], ["Identical forces under two different names", "They are described as two opposites, not as the same thing."], ["Interdependent, interconsuming, and intertransforming", "Correct. The lecture adds that they should always be in balance to maintain health."], ["Permanently opposed, with one always dominant", "Permanent dominance contradicts the balance the lecture describes."]], "c": 2, "cite": "Acupuncture 2026 Mattox.pptx, Slide 14"}, {"topic": "Canine-Assisted Therapies", "io": "IO 5 — Discuss different types of canine assisted therapies", "q": "Which tasks does the lecture list for a psychiatric service dog?", "opts": [["Pressing alarm buttons and breaking a person's fall", "Those tasks are listed for a seizure response dog."], ["Guiding a handler around obstacles and reading traffic signals", "Navigation tasks belong to guide dogs."], ["Reminding the handler to take medication, safety checks or room searches, interrupting self-injurious behaviours, and assisting disoriented individuals to safety", "Correct. The lecture lists exactly these tasks for a psychiatric service dog."], ["Signalling the handler when a doorbell or telephone rings", "Sound alerting is the hearing or signal dog role."]], "c": 2, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 18"}, {"topic": "Equine-Assisted Psychotherapy", "io": "IO 2 — List the benefits of animal assisted therapy", "q": "Why does the lecture say horsemanship duties themselves can be therapeutic?", "opts": [["Because the physical labour substitutes for prescribed exercise", "The benefit described is psychological rather than a substitute for exercise prescription."], ["Because it demonstrates the client's authority over the animal", "Dominance is not the described therapeutic mechanism."], ["Because feeding, watering, exercising and grooming establish routine and structure, and caring for something else builds empathy", "Correct. The lecture states horses must be fed, watered, exercised and groomed, and that providing care is therapeutic by establishing routines and structure while the act of caring and nurturing builds empathy."], ["Because it reduces the cost of the therapy programme", "Cost is not discussed as a therapeutic benefit."]], "c": 2, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 35"}, {"topic": "Mind-Body Medicine", "io": "IO 5 — Define hypnosis, meditation, imagery, relaxation therapy, and biofeedback", "q": "What physiologic changes does the lecture associate with the relaxation response?", "opts": [["Faster breathing, increased heart rate, and higher blood pressure", "These are the physiologic effects of stress that the relaxation response is described as counteracting, so this reverses the direction of change."], ["Slower breathing, decreased heart rate, and lower blood pressure", "Correct. The lecture states that relaxation therapy promotes the relaxation response, which counteracts the physiologic effects of stress and is associated with slower breathing, decreased heart rate, and lower blood pressure."], ["Unchanged vital signs with improvement only in reported mood", "The lecture describes measurable physiologic changes rather than mood change alone."], ["Rising body temperature with a fall in measured muscle tension", "Temperature elevation is not among the described features of the relaxation response."]], "c": 1, "cite": "Introduction to CAM 2026.pptx, Slide 55"}, {"topic": "Chiropractic — Guidelines", "io": "IO 1 — Explain Chiropractic Medicine", "q": "What did the Agency for Health Care Policy and Research conclude in 1994?", "opts": [["That spinal manipulation should be avoided in acute back pain", "This reverses the conclusion."], ["That spinal manipulation was equivalent to bed rest", "Bed rest is not the comparison drawn."], ["That spinal manipulation topped the options for certain back pain", "Correct. Among 23 options for low back pain, spinal manipulation and non-steroidal anti-inflammatory drugs had the most beneficial effect."], ["That spinal manipulation required specialist referral in all cases", "No referral requirement was set out."]], "c": 2, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 32"}, {"topic": "Equine-Facilitated Learning", "io": "IO 6 — Discuss different types of equine assisted therapies", "q": "How does the lecture define equine-facilitated learning?", "opts": [["A treatment strategy that uses equine movement to reach functional goals", "That is the hippotherapy definition."], ["A certification pathway for therapy animal handlers", "It is a learning approach rather than a certification pathway."], ["A mental health treatment addressing psychological disorders", "That describes equine-assisted psychotherapy."], ["An experiential learning approach that promotes development of life skills for educational, professional and personal goals through equine-assisted activities", "Correct. This is the lecture's definition of equine-facilitated learning."]], "c": 3, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 36"}, {"topic": "Commonly Used Supplements", "io": "IO a — Describe commonly used herbal medicines", "q": "Which mechanism does the lecture give for capsaicin's pain-relieving effect on the skin?", "opts": [["It blocks sodium channels in peripheral nerve endings", "Sodium channel blockade is not the mechanism described."], ["It reduces the amount of substance P, a chemical that carries pain messages to the brain", "Correct. The lecture states capsaicin reduces substance P, which carries pain messages to the brain, and also has a thermogenic effect that increases local circulation."], ["It stops the release of inflammatory cytokines and interleukins", "That mechanism is attributed to arnica."], ["It inhibits 5-alpha-reductase in the dermis", "5-alpha-reductase inhibition is the mechanism given for saw palmetto."]], "c": 1, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 52"}, {"topic": "History", "io": "IO 1 — Discuss the history of animal assisted therapy", "q": "Which use of animals in therapy does the lecture date to 600 BC?", "opts": [["Companionship with dogs for soldiers with post-traumatic stress disorder", "Human-animal interaction for soldiers with post-traumatic stress disorder is dated to 1919 in the United States."], ["Florence Nightingale recommending small companion animals for the chronically ill", "Nightingale's recommendation of small companion animals such as birds is dated to 1860."], ["Integration of animals into a German community for people with disabilities", "That programme is dated to 1867 in Germany."], ["Ancient Greeks documenting horse-assisted therapy to raise the spirits of the incurably ill", "Correct. The lecture dates horse-assisted therapy to raise the spirits of the incurably ill to the ancient Greeks at 600 BC."]], "c": 3, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 4"}, {"topic": "Ear Acupuncture", "io": "IO 7 — Identify the major energy moving acupuncture points of the body", "q": "What does the NADA protocol refer to in the lecture?", "opts": [["A scalp needling protocol used in rehabilitation after a stroke", "Scalp acupuncture is mentioned separately."], ["A cosmetic facial protocol used to soften lines and scars", "Facial cosmetic acupuncture is a separate topic in the lecture."], ["A needle-free technique that relies only on ear seeds and tacks", "The lecture describes ear acupuncture as using needles as well as seeds and tacks."], ["The National Acupuncture Detoxification Association ear protocol, for anxiety, depression, and substance abuse", "Correct. The lecture also notes military use for stress, post-traumatic stress disorder, and pain control."]], "c": 3, "cite": "Acupuncture 2026 Mattox.pptx, Slide 58"}, {"topic": "Homeopathy", "io": "IO 7 — Describe the principles of Homeopathy, Reiki, and Aromatherapy", "q": "When and by whom was homeopathy founded, according to the lecture?", "opts": [["In 1895, by Daniel Palmer in Iowa", "That is the founding of chiropractic."], ["In the early 1900s, in Japan", "That is the development of Reiki."], ["In the early 19th century, by a Swedish physician", "Per Ling founded modern Swedish massage."], ["Around 1814, by a German physician", "Correct. The lecture describes it as having been around for more than 200 years and working side by side with conventional medicine."]], "c": 3, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 82"}, {"topic": "Western Acupuncture", "io": "IO 2 — Describe Traditional Chinese Medicine", "q": "How does the lecture characterise Western or medical acupuncture?", "opts": [["A formal rejection of acupuncture as an ineffective and unproven therapy", "It is presented as a way of practising acupuncture, not a rejection of it."], ["Less holistic, using a Western diagnostic model, and more likely used by Western-trained clinicians", "Correct. The lecture includes dry needling for musculoskeletal pain within this approach."], ["An approach restricted by law to fully licensed acupuncturists only", "The lecture describes it as more likely to be used by medical, osteopathic, and chiropractic physicians."], ["Identical to Traditional Chinese Medicine in both its theory and its practice", "The lecture describes it as less holistic, though with a common background."]], "c": 1, "cite": "Acupuncture 2026 Mattox.pptx, Slide 36"}, {"topic": "Adverse Effects & Interactions", "io": "IO b — Discuss adverse effects and drug interactions of commonly used herbal medicines", "q": "Why should patients taking multiminerals avoid salt substitutes?", "opts": [["To avoid an interaction with nonsteroidal anti-inflammatory drugs", "NSAIDs are listed among drugs whose effects multivitamins and minerals can alter, but they are not the reason for avoiding salt substitutes."], ["To avoid reducing the effect of blood pressure medications", "Altered blood pressure medication effect is listed separately from the salt substitute warning."], ["To prevent the supplement from binding to milk or antacids", "Not taking supplements with milk or antacids is separate advice about absorption."], ["To prevent elevated potassium levels", "Correct. The lecture states that to prevent elevated potassium levels, patients taking multiminerals should not use salt substitutes."]], "c": 3, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 24"}, {"topic": "Commonly Used Supplements", "io": "IO a — Describe commonly used herbal medicines", "q": "How does the lecture define adaptogens?", "opts": [["Herbs that reliably raise blood pressure and heart rate under stress", "Adaptogens are described as normalizing rather than pushing a parameter in one fixed direction."], ["Natural substances that help the body adapt to stress, support metabolic function, and restore balance", "Correct. The lecture defines adaptogens this way and notes they restore endocrine balance, modulate immunity, and support homeostasis."], ["Plant compounds that act only on the central nervous system to induce sedation", "Sedation is not the defining action; adaptogens are described as balancing across systems."], ["Concentrated plant extracts standardized by the FDA for potency", "No supplement class is FDA-standardized for potency, and that is not part of the adaptogen definition."]], "c": 1, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 44"}, {"topic": "Defining CAM", "io": "IO 1 — Define complementary and alternative medicine", "q": "Which description best matches the lecture's account of functional medicine?", "opts": [["A whole-person approach focused on potential underlying contributors to disease, considering lifestyle, nutrition, environment, genetics, and psychosocial factors", "Correct. The lecture describes functional medicine as whole-person and patient-centered, focused on underlying contributors to disease and weighing lifestyle, nutrition, environment, genetics, and psychosocial factors."], ["A system of care organized around balancing three fundamental body energies determined at birth", "This describes Ayurveda and its doshas, one of the whole medical systems, not functional medicine."], ["A therapy that uses electronic monitoring so patients can learn to control physiologic responses", "This describes biofeedback, a mind-body practice, rather than functional medicine."], ["An approach built entirely on the principle that a substance capable of producing symptoms in a healthy person can be used to treat those same symptoms in someone who is ill", "This is the law of similars from homeopathy, not a description of functional medicine."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 6"}, {"topic": "Delivery Methods", "io": "IO g — Differentiate the delivery methods of medical marijuana", "q": "Which route does the lecture recommend for breakthrough symptoms, and in whom is it a poor choice?", "opts": [["Inhalation, and it is a poor choice in people with chronic obstructive pulmonary disease or asthma triggered by inhalants", "Correct. The lecture calls inhalation good for breakthrough symptoms and poor for people with chronic obstructive pulmonary disease or asthma triggered by inhalants."], ["Oral, and it is a poor choice in people with malabsorption", "Oral is described as good for chronic long-term effects, and malabsorption is indeed its limitation, but it is not the breakthrough route."], ["Topical cream, and it is a poor choice in people with skin disease", "Topical cream is listed as a route but is not tied to breakthrough dosing in the lecture."], ["Suppository, and it is a poor choice in people with constipation", "Suppository is offered as an alternative when absorption is a problem, not as the breakthrough route."]], "c": 0, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 68"}, {"topic": "Whole Medical Systems", "io": "IO 3 — Examine the five domains of CAM", "q": "Which treatment methods does the lecture list as part of an Ayurvedic treatment plan?", "opts": [["Diet, herbs, massage, meditation, yoga, and internal cleansing", "Correct. The lecture states that after determining the balance of doshas, practitioners design an individualized plan using diet, herbs, massage, meditation, yoga, and internal cleansing, also called therapeutic elimination."], ["Needles, cupping vessels, scraping tools, and spinal adjustment", "These belong to acupuncture and to manipulative and body-based practices, not to Ayurvedic treatment planning."], ["Diluted remedies, succussion, and matched symptom prescribing", "Dilution, succussion, and symptom matching are the defining features of homeopathy, a different whole medical system."], ["Sensors, monitors, real-time displays, and guided practice sessions", "Sensors and real-time displays describe biofeedback, which belongs to the mind-body domain."]], "c": 0, "cite": "Introduction to CAM 2026.pptx, Slide 20"}, {"topic": "The Adjustment", "io": "IO 2 — Describe components of Chiropractic Medicine", "q": "Which technique uses a segmental table?", "opts": [["Sacro Occipital Technique, using cranial sacral procedures", "That technique combines soft tissue analysis with cranial sacral procedures."], ["Activator Method, using a handheld instrument", "The Activator Method uses a handheld low force adjusting instrument."], ["Flexion and distraction", "Correct. The lecture pairs flexion and distraction with a segmental table."], ["Logan, which treats muscle and soft tissue with gentle pressure", "Logan is a soft tissue technique using gentle pressure."]], "c": 2, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 17"}, {"topic": "Mind-Body Medicine", "io": "IO 5 — Define hypnosis, meditation, imagery, relaxation therapy, and biofeedback", "q": "How does the lecture define the focus of mind-body medicine?", "opts": [["The use of naturally occurring substances to promote health or manage disease", "This defines biologically based practices, the third domain, not mind-body medicine."], ["The application of hands-on technique to the musculoskeletal system and soft tissues", "This defines manipulative and body-based practices, the fourth domain."], ["The interactions between the brain, mind, body, and behavior and their influence on health", "Correct. The lecture defines mind-body medicine as focusing on interactions among the brain, mind, body, and behavior and how those interactions influence health."], ["The manipulation of proposed energy fields believed to surround and permeate the body", "This defines energy therapies, the fifth domain, which rest on the biofield concept."]], "c": 2, "cite": "Introduction to CAM 2026.pptx, Slide 33"}, {"topic": "Whole Medical Systems", "io": "IO 3 — Examine the five domains of CAM", "q": "From which language and meaning is the term Ayurveda derived, according to the lecture?", "opts": [["Greek, from words meaning \"like\" and \"disease\"", "These are the Greek roots homeo and pathos, which the lecture gives for homeopathy rather than Ayurveda."], ["Chinese, from separate words meaning \"vital force\" and \"energy pathway\"", "The lecture gives Chinese-origin terms such as Qi and meridians under traditional Chinese medicine, not as the roots of Ayurveda."], ["Latin, from words meaning \"nature\" and \"healing power\"", "The lecture describes naturopathy as founded on the healing power of nature but does not give it Latin roots or connect that phrasing to Ayurveda."], ["Sanskrit, from ayur meaning life and veda meaning knowledge or science", "Correct. The lecture states that Ayurveda comes from the Sanskrit words ayur, meaning life, and veda, meaning knowledge or science."]], "c": 3, "cite": "Introduction to CAM 2026.pptx, Slide 18"}, {"topic": "Commonly Used Supplements", "io": "IO a — Describe commonly used herbal medicines", "q": "Which supplement is described as a precursor to glutathione and used to treat acetaminophen toxicity?", "opts": [["Alpha lipoic acid", "Alpha lipoic acid is an antioxidant that recycles other nutrients and chelates heavy metals, but it is not the glutathione precursor described."], ["Methylsulfonylmethane", "Methylsulfonylmethane is used mainly for osteoarthritis rather than for acetaminophen toxicity."], ["N-acetylcysteine", "Correct. The lecture describes N-acetylcysteine as a precursor to glutathione, an antioxidant and a mucolytic, used to treat or prevent acetaminophen overdose and toxicity."], ["Bromelain", "Bromelain is a proteolytic enzyme discussed under gastrointestinal herbs."]], "c": 2, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 38"}, {"topic": "Law & Regulation", "io": "IO 4 — Describe commonly used animals for animal assisted therapy", "q": "What must an emotional support animal letter document to secure Fair Housing Act protections?", "opts": [["The individual's need for the animal as part of mental health treatment", "Correct. The lecture states the letter documents the individual's need for an emotional support animal as part of mental health treatment, and is required to be eligible for Fair Housing Act protections."], ["The animal's completed training hours", "Training is not required by law for an emotional support animal."], ["The animal's breed and weight for the landlord's records", "Breed restrictions may not be enforced against a qualifying animal, and no such record is required."], ["The owner's diagnosis in full clinical detail", "The lecture describes documenting need rather than disclosing full diagnostic detail."]], "c": 0, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 10"}, {"topic": "History", "io": "IO 1 — Discuss the history of animal assisted therapy", "q": "In what year, and for which group, was human-animal interaction first used in the United States?", "opts": [["1867, for people with disabilities in a German community", "The 1867 programme was in Germany rather than the United States."], ["1944, for wounded and disabled veterans working with farm animals", "The 1944 date belongs to the Pawling Convalescent Hospital rehabilitation programme."], ["1919, for soldiers with post-traumatic stress disorder", "Correct. The lecture dates the first United States use of human-animal interaction, companionship with dogs, to 1919 for soldiers with post-traumatic stress disorder."], ["1860, for patients with chronic illness", "1860 is the year of Nightingale's recommendation, and it was not a United States programme."]], "c": 2, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 5"}, {"topic": "Massage — Education", "io": "IO 4 — Describe the principles of Massage Therapy", "q": "What does the lecture give as the licensure requirement for massage therapists?", "opts": [["No formal requirement in most states", "The lecture states most states, including Florida, require licensure."], ["500 to 1,000 hours by state, plus a Federation licensing examination", "Correct. Continuing education is also required, and most states including Florida require licensure to practise."], ["2,700 hours and the national certification examinations", "Those figures belong to acupuncture licensure in Florida."], ["A bachelor's degree followed by national board parts one to four", "That describes the chiropractic pathway."]], "c": 1, "cite": "ChiropracticHomeopathicMassageAromatherapy 2026 Mattox.pptx, Slide 53"}, {"topic": "Certification", "io": "IO 3 — Outline the training requirements and certification to use animals as therapy", "q": "Which examination format does hippotherapy certification use?", "opts": [["A practical riding assessment", "A riding assessment is not the examination described."], ["A multiple-choice examination", "Correct. The lecture states applicants must have passed a multiple-choice examination, in addition to the practice-hour requirements."], ["An oral board examination", "No oral examination is mentioned."], ["A portfolio of documented cases", "Case hours are required, but the assessment itself is a multiple-choice examination."]], "c": 1, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 32"}, {"topic": "Traditional Chinese Medicine", "io": "IO 2 — Describe Traditional Chinese Medicine", "q": "Which statement reflects how Traditional Chinese Medicine approaches illness, according to the lecture?", "opts": [["It treats the disease in isolation from the person", "The lecture states the opposite."], ["It separates psyche from soma so each can be treated", "The lecture states it does not separate psyche and soma."], ["It rejects illness that cannot yet be explained", "The lecture states it does not reject unexplained illness."], ["It considers the person in association with the rest of nature and the social setting", "Correct. The lecture describes holistic patterns of illness and interrelated organ patterns."]], "c": 3, "cite": "Acupuncture 2026 Mattox.pptx, Slide 13"}, {"topic": "Cannabis Adverse Effects", "io": "IO i — Discuss adverse effects and drug interactions of medical marijuana", "q": "What does the lecture say about cannabis use in young adults and psychosis?", "opts": [["Studies show it prevents psychosis in high risk individuals", "The stated direction of risk is the opposite."], ["Studies suggest it increases the risk of developing psychosis in high risk individuals", "Correct. The lecture notes studies suggest cannabis use in young adults increases the risk of developing psychosis in high risk individuals."], ["No association has been examined in young adults", "An association is explicitly described in the lecture."], ["The risk applies only to products high in cannabidiol", "Psychiatric effects such as paranoid ideation are linked to high THC, and cannabidiol is described as reducing them."]], "c": 1, "cite": "Herbal Medicines and Medical Marijuana- HAUSER 2026.pptx, Slide 62"}, {"topic": "Tai Chi", "io": "IO 2 — Describe Traditional Chinese Medicine", "q": "How does the lecture describe Tai Chi?", "opts": [["A competitive martial sport organised around graded belts", "The lecture describes it as noncompetitive."], ["A Chinese internal martial art performed slowly with deep breathing", "Correct. The lecture describes it as noncompetitive and self-paced, with each posture flowing into the next without pause."], ["A vigorous aerobic routine performed to music in a class", "The lecture describes it as low impact and self-paced."], ["A seated meditation practice involving no physical movement", "The lecture emphasises constant motion."]], "c": 1, "cite": "Acupuncture 2026 Mattox.pptx, Slide 95"}, {"topic": "Law & Regulation", "io": "IO 3 — Outline the training requirements and certification to use animals as therapy", "q": "Does the Americans with Disabilities Act require service animals to be professionally trained?", "opts": [["Yes, through an accredited service dog organisation", "The lecture explicitly rejects a professional training requirement."], ["No. People with disabilities have the right to train the dog themselves", "Correct. The lecture states the Act does not require professional training and that people with disabilities may train the dog themselves without using a professional program."], ["Yes, with annual recertification", "No recertification requirement is described."], ["Only for psychiatric service dogs", "No task-specific training mandate is carved out in the lecture."]], "c": 1, "cite": "STUDENT Animal-Assisted Therapy Dr. McInnis 2026.pptx, Slide 22"}];const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Every question counts toward the class-wide counter the moment it is first
+   answered, so an unfinished attempt still counts what was actually done. This
+   flag tells class-stats.js not to also add the total at submit. */
+window.CLASS_STATS_PER_ANSWER = true;
+function countAnswered(){
+  try { if (window.ClassStats && window.ClassStats.recordAnswer) window.ClassStats.recordAnswer("quiz-answer"); } catch (e) {}
+}
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    const __firstAnswer = answers[idx]===null;
+    answers[idx]=sel;
+    if(__firstAnswer) countAnswered();
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  countAnswered();
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

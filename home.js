@@ -668,6 +668,15 @@ document.querySelectorAll(".semester").forEach(semester => {
       // Update this list (and the "What's New" panel below) whenever new
       // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
+        "CAM%20Nutrition%20Exam%202/acupuncture-quiz.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/acupuncture-quiz-version-2.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/chiropractic-massage-homeopathy-quiz.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/chiropractic-massage-homeopathy-quiz-version-2.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/cam-nutrition-exam2-master-exam-form-a.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/cam-nutrition-exam2-master-exam-form-b.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/cam-nutrition-exam2-master-exam-form-c.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/cam-nutrition-exam2-master-exam-form-d.html": "2026-08-01",
+        "CAM%20Nutrition%20Exam%202/cam-nutrition-exam2-master-exam-form-e.html": "2026-08-01",
         "Physical%20Diagnosis%201%20Exam%203/soap-case-presentations-quiz.html": "2026-08-01",
         "Physical%20Diagnosis%201%20Exam%203/soap-case-presentations-quiz-version-2.html": "2026-08-01",
         "Physical%20Diagnosis%201%20Exam%203/pd1-exam3-master-exam-form-a.html": "2026-08-01",
