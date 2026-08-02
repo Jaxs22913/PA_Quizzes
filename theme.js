@@ -3894,17 +3894,29 @@ window.openPauseOverlay = function (opts) {
 (function () {
   var start = document.getElementById("start");
   if (!start || document.getElementById("kbd-hint")) return;
-  var startBtn = start.querySelector("button");
+  // Prefer the real start button: a page may put other buttons above it (the
+  // practicum builder's topic picker does), and the hint belongs beside the
+  // control that begins the quiz, not beside whatever button happens to be first.
+  var startBtn = document.getElementById("start-btn") || start.querySelector("button");
   if (!startBtn) return;
   // Pointer-only devices get nothing -- the hint would just be noise.
   if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
+  // Practicum pages are type-in identification. Their only key binding is
+  // Enter on the answer field, so the multiple-choice hint was advertising four
+  // shortcuts that do not exist there. Enter does NOT advance either -- the
+  // input is disabled after checking and nothing takes focus -- so the hint
+  // claims only what is actually wired up.
+  var typeIn = !!document.getElementById("answer-input");
+
   var p = document.createElement("p");
   p.id = "kbd-hint";
   p.className = "kbd-hint";
-  p.innerHTML = 'Keyboard: <kbd>A</kbd>&ndash;<kbd>D</kbd> to answer &middot; ' +
-                '<kbd>&rarr;</kbd> next &middot; <kbd>F</kbd> flag &middot; ' +
-                '<kbd>?</kbd> all shortcuts';
+  p.innerHTML = typeIn
+    ? 'Keyboard: <kbd>Enter</kbd> to check your answer'
+    : 'Keyboard: <kbd>A</kbd>&ndash;<kbd>D</kbd> to answer &middot; ' +
+      '<kbd>&rarr;</kbd> next &middot; <kbd>F</kbd> flag &middot; ' +
+      '<kbd>?</kbd> all shortcuts';
   startBtn.parentNode.insertBefore(p, startBtn.nextSibling);
 })();
 

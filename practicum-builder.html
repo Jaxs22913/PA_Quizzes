@@ -28,6 +28,15 @@
     background:var(--card,#fff);color:var(--muted);border-radius:999px;padding:8px 15px}
   .pick-tab.on{background:var(--accent,#0d7d6c);border-color:var(--accent,#0d7d6c);color:#fff}
   .pick-groups{display:flex;flex-direction:column;gap:8px;margin:0 0 16px}
+  .exam-head{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#0d7d6c);
+    font-weight:800;margin:20px 0 4px;padding:0 0 6px;border-bottom:2px solid var(--line,#e5e7ef);
+    display:flex;align-items:baseline;gap:10px}
+  .exam-head:first-child{margin-top:2px}
+  .exam-head .exam-tally{margin-left:auto;font-size:12px;letter-spacing:0;text-transform:none;
+    font-weight:600;color:var(--muted)}
+  .exam-head .exam-pick{margin-left:0;font-size:11.5px;letter-spacing:0;text-transform:none;
+    font-weight:700;color:var(--accent,#0d7d6c);background:none;border:0;cursor:pointer;
+    text-decoration:underline;padding:0}
   .pick-group{border:1px solid var(--line,#e5e7ef);border-radius:12px;overflow:hidden;background:var(--card,#fff)}
   .pick-head{display:flex;align-items:center;gap:10px;padding:11px 13px;cursor:pointer}
   .pick-head:hover{background:rgba(127,127,127,.06)}
@@ -646,15 +655,26 @@ let examFilter = "all";
 let wantLen = 20;
 const chosen = new Set();
 
-function bankGroups(){
+/* Exam 2 and Exam 3 are kept apart: each gets its own heading with its own
+   select-all, and section names sit underneath rather than being prefixed with
+   the exam. Mixing them in one flat list made it easy to pick Exam 2 content by
+   accident when revising for Exam 3. */
+function bankByExam(){
   const out = new Map();
   BANK.forEach(p => {
     if (examFilter !== "all" && p.exam !== examFilter) return;
-    const key = p.exam + " · " + p.sec;
-    if (!out.has(key)) out.set(key, []);
-    out.get(key).push(p);
+    if (!out.has(p.exam)) out.set(p.exam, new Map());
+    const secs = out.get(p.exam);
+    if (!secs.has(p.sec)) secs.set(p.sec, []);
+    secs.get(p.sec).push(p);
   });
   return out;
+}
+
+function bankGroups(){
+  const flat = new Map();
+  bankByExam().forEach((secs, exam) => secs.forEach((plates, sec) => flat.set(exam + " · " + sec, plates)));
+  return flat;
 }
 
 function renderTabs(){
@@ -674,7 +694,30 @@ const CARET = '<svg class="pick-caret" viewBox="0 0 24 24" fill="none" stroke="c
 function renderGroups(){
   const host = document.getElementById("pick-groups");
   host.innerHTML = "";
-  bankGroups().forEach((plates, key) => {
+  bankByExam().forEach((secs, exam) => {
+    let examPlates = 0, examItems = 0;
+    secs.forEach(plates => {
+      examPlates += plates.length;
+      examItems += plates.reduce((s, p) => s + p.items.length, 0);
+    });
+    const hd = document.createElement("h2");
+    hd.className = "exam-head";
+    hd.innerHTML = '<span>' + exam + '</span>' +
+      '<button type="button" class="exam-pick">select all</button>' +
+      '<span class="exam-tally">' + examPlates + ' plates · ' + examItems + ' structures</span>';
+    hd.querySelector(".exam-pick").addEventListener("click", () => {
+      let all = true;
+      secs.forEach(plates => plates.forEach(p => { if (!chosen.has(p.slug)) all = false; }));
+      secs.forEach(plates => plates.forEach(p => all ? chosen.delete(p.slug) : chosen.add(p.slug)));
+      renderGroups(); updateSummary();
+    });
+    host.appendChild(hd);
+    renderSections(host, secs);
+  });
+}
+
+function renderSections(host, secs){
+  secs.forEach((plates, key) => {
     const n = plates.reduce((s, p) => s + p.items.length, 0);
     const wrap = document.createElement("div");
     wrap.className = "pick-group";
