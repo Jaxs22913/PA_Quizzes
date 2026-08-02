@@ -1222,5 +1222,67 @@ window.reportMistake = function(){
 })();
 
 </script>
+
+<!-- Report a mistake. This page deliberately omits theme.js (see the note at
+     the top), so the site's reporter is reimplemented here in miniature rather
+     than pulling the whole theme in. Same Formspree endpoint, same payload
+     shape, so reports land in the same place. -->
+<script>
+(function () {
+  var FORMSPREE = "https://formspree.io/f/xdaqleod";
+  var wrap = document.createElement("p");
+  wrap.style.cssText = "text-align:center;margin:26px 0 20px;";
+  var a = document.createElement("a");
+  a.href = "#";
+  a.textContent = "\u2605 See a mistake on this page? Report it \u2605";
+  a.style.cssText = "color:#6b7280;font-size:12.5px;font-style:italic;text-decoration:underline;cursor:pointer;";
+  wrap.appendChild(a);
+  (document.querySelector("footer") || document.body).appendChild(wrap);
+
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    var ov = document.createElement("div");
+    ov.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;" +
+      "align-items:center;justify-content:center;z-index:9000;padding:16px;";
+    ov.innerHTML =
+      '<div style="background:#fff;color:#111827;max-width:440px;width:100%;border-radius:14px;' +
+      'padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.35);font:14px system-ui,-apple-system,Segoe UI,sans-serif;">' +
+      '<h3 style="margin:0 0 4px;font-size:17px;">Report a mistake</h3>' +
+      '<p style="margin:0 0 12px;font-size:13px;color:#6b7280;">Tell us what looks wrong on this page and it will get fixed. Thanks!</p>' +
+      '<textarea rows="4" placeholder="Describe the mistake\u2026" style="width:100%;box-sizing:border-box;' +
+      'border:1px solid #d1d5db;border-radius:9px;padding:10px;font:14px inherit;resize:vertical;"></textarea>' +
+      '<input type="email" placeholder="Your email (optional, for a reply)" style="width:100%;box-sizing:border-box;' +
+      'border:1px solid #d1d5db;border-radius:9px;padding:9px 10px;font:14px inherit;margin-top:8px;">' +
+      '<div class="st" style="font-size:13px;margin-top:8px;min-height:18px;"></div>' +
+      '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">' +
+      '<button class="cancel" style="border:0;background:#eceef6;color:#111827;border-radius:9px;padding:9px 14px;font:600 14px inherit;cursor:pointer;">Cancel</button>' +
+      '<button class="send" style="border:0;background:#228283;color:#fff;border-radius:9px;padding:9px 14px;font:600 14px inherit;cursor:pointer;">Send report</button>' +
+      "</div></div>";
+    document.body.appendChild(ov);
+    var msg = ov.querySelector("textarea"), em = ov.querySelector("input"),
+        st = ov.querySelector(".st"), send = ov.querySelector(".send");
+    function close() { ov.remove(); }
+    ov.querySelector(".cancel").addEventListener("click", close);
+    ov.addEventListener("click", function (ev) { if (ev.target === ov) close(); });
+    send.addEventListener("click", function () {
+      var text = (msg.value || "").trim();
+      if (!text) { st.style.color = "#c93a3a"; st.textContent = "Please describe the mistake first."; return; }
+      send.disabled = true; send.textContent = "Sending\u2026";
+      var data = { message: text, page: location.href, quiz: document.title,
+                   _subject: "PA Quizzes Bug Report: " + document.title };
+      if (em.value.trim()) data.email = em.value.trim();
+      fetch(FORMSPREE, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                         body: JSON.stringify(data) })
+        .then(function (r) { if (!r.ok) throw new Error("bad");
+          st.style.color = "#127a3d"; st.textContent = "Thank you \u2014 your report was sent.";
+          setTimeout(close, 1500); })
+        .catch(function () { st.style.color = "#c93a3a";
+          st.textContent = "Could not send \u2014 please email jaxonluke22913@gmail.com."; })
+        .finally(function () { send.disabled = false; send.textContent = "Send report"; });
+    });
+    msg.focus();
+  });
+})();
+</script>
 </body>
 </html>

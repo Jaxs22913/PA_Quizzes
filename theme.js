@@ -3661,12 +3661,34 @@ window.openPauseOverlay = function (opts) {
     var btn = document.getElementById("report-send"); btn.disabled = true; btn.textContent = "Sending…";
     status.style.color = "#6b7280"; status.textContent = "";
     var data = { message: msg, page: location.href, quiz: document.title, _subject: "PA Quizzes Bug Report: " + document.title };
+    // Whatever question is on screen goes with the report. A student who spots
+    // a wrong answer should not have to describe which question they mean.
+    var ctx = reportContext();
+    if (ctx) data.question = ctx;
     if (email) data.email = email;
     fetch(FORMSPREE, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
       .then(function (r) { if (!r.ok) throw new Error("bad"); status.style.color = "#1f8f52"; status.textContent = "Thanks! Your report was sent."; setTimeout(hide, 1500); })
       .catch(function () { status.style.color = "#c93a3a"; status.textContent = "Could not send — please email jaxonluke22913@gmail.com."; })
       .finally(function () { btn.disabled = false; btn.textContent = "Send report"; });
   }
+  /* Reads whatever the page is currently showing, so a report carries the
+     question with it. Works off the DOM rather than engine variables: the
+     quiz engines declare QUESTIONS/current with const, which never become
+     window properties, so there is nothing for this to read otherwise. */
+  function reportContext() {
+    var bits = [];
+    function vis(el) { return el && el.offsetParent !== null && el.textContent.trim(); }
+    var prog = document.getElementById("progress");
+    if (vis(prog)) bits.push(prog.textContent.trim());
+    var plate = document.getElementById("source-chip");        // practicum plates
+    if (vis(plate)) bits.push("Plate: " + plate.textContent.trim());
+    var qt = document.getElementById("qtext");                 // multiple choice
+    if (vis(qt)) bits.push("Q: " + qt.textContent.trim().slice(0, 400));
+    var topic = document.getElementById("qtopic");
+    if (vis(topic)) bits.push("Topic: " + topic.textContent.trim());
+    return bits.join(" \u00b7 ");
+  }
+
   window.reportMistake = function () {
     if (document.getElementById("report-modal-overlay")) { show(); return; }
     var ov = document.createElement("div");
@@ -4184,4 +4206,79 @@ window.openPauseOverlay = function (opts) {
     childList: true, attributes: true, attributeFilter: ["class", "style", "hidden"]
   });
   check();
+})();
+
+/* ============================================================
+   Report entry points, guaranteed (2026-08-02)
+   ------------------------------------------------------------
+   A student found a wrong answer mid-quiz and had nowhere to report it: the
+   quiz pages carried the report link only inside #resultsfoot, which stays
+   hidden until you finish. Reporting a bad question should not require
+   completing the quiz containing it first.
+
+   Two guarantees, applied here so every page gets them without being touched
+   and so anything built later inherits them:
+
+     1. While a quiz is running, a report link sits under the question. It
+        carries the question with it (see reportContext).
+     2. Any page with no report affordance at all gets one in the footer.
+
+   Both no-op on pages that already show a visible link.
+   ============================================================ */
+(function () {
+  if (!window.reportMistake) return;
+
+  function styleLink(a, extra) {
+    a.href = "#";
+    a.className = "report-link-auto";
+    a.style.cssText = "color:var(--muted,#6b7280);font-size:12.5px;font-style:italic;" +
+                      "text-decoration:underline;cursor:pointer;" + (extra || "");
+    a.addEventListener("click", function (e) { e.preventDefault(); window.reportMistake(); });
+    return a;
+  }
+
+  // 1. in-quiz link, so a bad question can be reported while you are looking at it
+  var quiz = document.getElementById("quiz");
+  if (quiz && !quiz.querySelector(".report-link-auto")) {
+    var row = document.createElement("p");
+    row.style.cssText = "text-align:center;margin:14px 0 2px;";
+    var a = styleLink(document.createElement("a"));
+    a.textContent = "\u2605 Something wrong with this question? Report it \u2605";
+    row.appendChild(a);
+    quiz.appendChild(row);
+  }
+
+  // 2. every page gets at least one way in
+  function hasVisibleReport() {
+    var found = false;
+    document.querySelectorAll("a,button").forEach(function (el) {
+      if (found || el.classList.contains("report-link-auto")) return;
+      var oc = el.getAttribute("onclick") || "";
+      if (oc.indexOf("reportMistake") !== -1 && el.offsetParent !== null) found = true;
+    });
+    return found;
+  }
+
+  function ensureFooterLink() {
+    if (document.querySelector("footer .report-link-auto")) return;
+    if (hasVisibleReport()) return;
+    var host = document.querySelector("footer") || document.body;
+    var p = document.createElement("p");
+    p.className = "report-foot-auto";
+    p.style.cssText = "text-align:center;margin:26px 0 18px;";
+    var a = styleLink(document.createElement("a"));
+    a.textContent = "\u2605 See a mistake on this page? Report it \u2605";
+    p.appendChild(a);
+    host.appendChild(p);
+  }
+
+  // the results footer only becomes visible at the end, so re-check then
+  ensureFooterLink();
+  var results = document.getElementById("resultsfoot") || document.getElementById("results");
+  if (results && window.MutationObserver) {
+    new MutationObserver(function () {
+      var foot = document.querySelector(".report-foot-auto");
+      if (foot && hasVisibleReport()) foot.remove();
+    }).observe(results, { attributes: true, attributeFilter: ["style", "class"] });
+  }
 })();
