@@ -669,7 +669,6 @@ document.querySelectorAll(".semester").forEach(semester => {
       // Update this list (and the "What's New" panel below) whenever new
       // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
-        "Remediation/physiology-remediation-review.pdf": "2026-08-06",
         "CAM%20Nutrition%20Exam%202/acupuncture-quiz.html": "2026-08-01",
         "CAM%20Nutrition%20Exam%202/acupuncture-quiz-version-2.html": "2026-08-01",
         "CAM%20Nutrition%20Exam%202/chiropractic-massage-homeopathy-quiz.html": "2026-08-01",

@@ -38,7 +38,7 @@
       // span is ~12.6 weeks; trust the program's number over the date math
       totalWeeks: 12,
       classes: ["physio", "pharmacodynamics", "anatomy", "anatomy-practicum",
-                "intro-pa", "cam-nutrition", "physical-diagnosis", "remediation"]
+                "intro-pa", "cam-nutrition", "physical-diagnosis"]
     },
 
     /* The remaining three didactic terms. Only Summer I has a syllabus so far,
