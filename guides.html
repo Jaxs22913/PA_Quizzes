@@ -233,17 +233,27 @@
   .guide-card { order: 1; }
   .guide-card.cram { order: 2; }
   .guide-card.ref { order: 3; }
+  .guide-card.remediation { order: 4; }
 
   /* Quick-reference guides (non-cumulative — hormones, blood flow, peritoneum,
      flow sequences, etc.) get a distinct amber treatment so they read as
      companion references rather than the main cumulative exam guide. */
   .guide-card.ref { border-left-color: var(--a-amber); }
+  .guide-card.remediation { border-left-color: var(--a-violet); }
   .guide-card.ref:hover { border-color: var(--a-amber); }
+  .guide-card.remediation:hover { border-color: var(--a-violet); }
   .ref-badge {
     display: inline-block; align-self: flex-start;
     font: 700 9.5px/1 var(--font-sans, ui-sans-serif);
     text-transform: uppercase; letter-spacing: .06em; color: var(--a-amber);
     background: var(--a-amber-soft); border: 1px solid color-mix(in oklab, var(--a-amber) 22%, transparent); padding: 3px 8px;
+    border-radius: 999px; margin: 0 0 7px;
+  }
+  .remediation-badge {
+    display: inline-block; align-self: flex-start;
+    font: 700 9.5px/1 var(--font-sans, ui-sans-serif);
+    text-transform: uppercase; letter-spacing: .06em; color: var(--a-violet);
+    background: var(--a-violet-soft); border: 1px solid color-mix(in oklab, var(--a-violet) 22%, transparent); padding: 3px 8px;
     border-radius: 999px; margin: 0 0 7px;
   }
 
@@ -289,6 +299,7 @@
   .guide-filter-chip.active .fc-count { opacity: .8; }
   .guide-filter-chip[data-filter="cram"].active { background: var(--a-green); border-color: var(--a-green); }
   .guide-filter-chip[data-filter="ref"].active { background: var(--a-amber); border-color: var(--a-amber); }
+  .guide-filter-chip[data-filter="remediation"].active { background: var(--a-violet); border-color: var(--a-violet); }
 
   .empty-state {
     background: var(--card); border: 1px solid var(--border); border-radius: 16px;
@@ -358,6 +369,7 @@
     <button type="button" class="guide-filter-chip" data-filter="guide">Study Guides <span class="fc-count"></span></button>
     <button type="button" class="guide-filter-chip" data-filter="cram">Cram Sheets <span class="fc-count"></span></button>
     <button type="button" class="guide-filter-chip" data-filter="ref">Quick References <span class="fc-count"></span></button>
+    <button type="button" class="guide-filter-chip" data-filter="remediation">Remediation <span class="fc-count"></span></button>
   </nav>
 
   <div class="guide-group" id="group-physiology">
@@ -557,8 +569,8 @@
   <div class="guide-group" id="group-remediation">
     <p class="guide-group-title">Remediation</p>
     <div class="guide-grid">
-      <a class="guide-card ref" href="Remediation/physiology-remediation-review.pdf" target="_blank" rel="noopener">
-        <span class="ref-badge">Remediation &middot; PDF</span>
+      <a class="guide-card remediation" data-semester="summer-1-2026" href="Remediation/physiology-remediation-review.pdf" target="_blank" rel="noopener">
+        <span class="remediation-badge">Remediation &middot; PDF</span>
         <p class="guide-card-title">Physiology Remediation</p>
         <p class="guide-card-desc">Fourteen pages of handwritten review notes, colour-coded and diagrammed, shared by Sydnee. Covers cardiovascular, blood, respiration, acid&ndash;base, gastrointestinal/metabolism/nutrition, endocrine (parathyroid and pancreas), reproductive, neuro intro, vision and special senses, and motor/involuntary control &mdash; each with its weighting. Opens as a PDF.</p>
       </a>
@@ -599,6 +611,7 @@
   var state = { type: "all", semester: null };
 
   function typeOf(card) {
+    if (card.classList.contains("remediation")) return "remediation";
     if (card.classList.contains("cram")) return "cram";
     if (card.classList.contains("ref")) return "ref";
     return "guide";
@@ -637,7 +650,7 @@
     });
 
     // counts follow the semester, not the whole site
-    var counts = { all: 0, guide: 0, cram: 0, ref: 0 };
+    var counts = { all: 0, guide: 0, cram: 0, ref: 0, remediation: 0 };
     cards.forEach(function (c) {
       if (!inSemester(c)) return;
       counts.all++;
@@ -654,7 +667,8 @@
 
     empty.classList.toggle("hidden", shown > 0);
     if (!shown) {
-      var what = state.type === "cram" ? "Cram sheets"
+      var what = state.type === "remediation" ? "Remediation material"
+               : state.type === "cram" ? "Cram sheets"
                : state.type === "ref" ? "Quick references"
                : state.type === "guide" ? "Study guides"
                : "Study guides and cram sheets";
