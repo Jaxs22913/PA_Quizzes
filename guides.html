@@ -604,6 +604,10 @@
 
   var reg = window.Semesters;
   cards.forEach(function (c) {
+    // A card may declare its own semester in the markup -- remediation material
+    // does, because Remediation/ is not a class folder and later semesters will
+    // share it. An explicit tag always wins over the path lookup.
+    if (c.hasAttribute("data-semester")) return;
     var sem = reg && reg.semesterOfPath(c.getAttribute("href") || "");
     if (sem) c.setAttribute("data-semester", sem.id);
   });
