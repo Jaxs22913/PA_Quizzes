@@ -5,7 +5,11 @@
 <link rel="stylesheet" href="theme.css">
 <script src="semesters.js"></script>
 <script src="semester-picker.js"></script>
+<!-- Not deferred: home.js reads window.CalendarData while building the week
+     widget and the countdown, so the data has to exist before it runs. -->
+<script src="calendar-data.js"></script>
 <script src="home.js" defer></script>
+<script src="class-schedule.js" defer></script>
 <script src="theme.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
@@ -183,6 +187,7 @@
           <span class="week-range" id="week-range"></span>
         </div>
         <div id="week-list" class="week-list"></div>
+        <a class="week-all-link" href="calendar.html">Full academic calendar &rarr;</a>
       </div>
     </div>
 
@@ -196,6 +201,7 @@
         <div class="semester-progress-track"><i id="semester-progress-fill" class="semester-progress-fill"></i></div>
         <div class="semester-progress-label" id="semester-progress-label"></div>
       </div>
+      <div class="semester-countdown" hidden></div>
       <div class="tabs">
         <button class="tab-btn active" data-tab="physio">Physiology</button>
         <button class="tab-btn" data-tab="pharmacodynamics">Pharmaco&shy;dynamics</button>
@@ -1920,20 +1926,36 @@
 
       </div>
 
-      <!-- Fall Semester - 2026: dates are confirmed from the academic calendar, but no
-           lectures have been posted yet, so there is still nothing to study. The block
-           fills in the same way Summer 1 did, one class at a time. -->
+      <!-- Fall Semester - 2026. Dates and the exam schedule are confirmed from the
+           academic calendar; no lectures are posted yet, so each tab shows that
+           course's exam roadmap until real quizzes replace it. Panels are left empty
+           on purpose -- class-schedule.js fills any panel that has no .exam-section
+           in it, and stands aside once one does. -->
       <div class="semester hidden" data-semester="fall-2026">
       <h2 class="semester-header">Fall Semester &ndash; 2026</h2>
       <div class="semester-progress">
         <div class="semester-progress-track"><i class="semester-progress-fill"></i></div>
         <div class="semester-progress-label"></div>
       </div>
-      <div class="semester-empty">
-        <p class="semester-empty-title">Nothing here yet</p>
-        <p>Classes start Monday, August 17. Quizzes, guides and Arcade decks appear
-           here as each course&rsquo;s lectures are posted.</p>
+      <div class="semester-countdown" hidden></div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="cms-1">CMS I</button>
+        <button class="tab-btn" data-tab="pdm-1">PDM I</button>
+        <button class="tab-btn" data-tab="microbiology">Micro&shy;biology</button>
+        <button class="tab-btn" data-tab="pharm-1">Pharma&shy;cology I</button>
+        <button class="tab-btn" data-tab="physical-diagnosis-2">Physical Diagnosis 2</button>
+        <button class="tab-btn" data-tab="clin-path-1">Clinical Patho&shy;physiology I</button>
+        <button class="tab-btn" data-tab="med-lit">Medical Literature</button>
       </div>
+      <p class="ai-disclaimer">Quizzes/Exams made by AI, use at your own risk. Check info if unsure.</p>
+
+      <div class="tab-panel active" id="cms-1" data-class="cms-1"></div>
+      <div class="tab-panel" id="pdm-1" data-class="pdm-1"></div>
+      <div class="tab-panel" id="microbiology" data-class="microbiology"></div>
+      <div class="tab-panel" id="pharm-1" data-class="pharm-1"></div>
+      <div class="tab-panel" id="physical-diagnosis-2" data-class="physical-diagnosis-2"></div>
+      <div class="tab-panel" id="clin-path-1" data-class="clin-path-1"></div>
+      <div class="tab-panel" id="med-lit" data-class="med-lit"></div>
       </div>
 
       <!-- Spring Semester - 2027: no content yet. The block exists so the semester is visible
@@ -1944,6 +1966,7 @@
         <div class="semester-progress-track"><i class="semester-progress-fill"></i></div>
         <div class="semester-progress-label"></div>
       </div>
+      <div class="semester-countdown" hidden></div>
       <div class="semester-empty">
         <p class="semester-empty-title">Nothing here yet</p>
         <p>Quizzes, guides and Arcade decks appear here once this semester&rsquo;s
@@ -1959,6 +1982,7 @@
         <div class="semester-progress-track"><i class="semester-progress-fill"></i></div>
         <div class="semester-progress-label"></div>
       </div>
+      <div class="semester-countdown" hidden></div>
       <div class="semester-empty">
         <p class="semester-empty-title">Nothing here yet</p>
         <p>Quizzes, guides and Arcade decks appear here once this semester&rsquo;s

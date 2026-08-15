@@ -61,7 +61,12 @@
       end: "2026-12-11",
       lastClassDay: "2026-12-03",
       totalWeeks: 17,
-      classes: []
+      /* Ordered by how much of the term each course actually takes up — CMS I
+         is 51 lectures and eight block exams, Clin Path I is ten lectures and
+         two. That puts the tab you reach for most first, the same way
+         Physiology leads Summer I. */
+      classes: ["cms-1", "pdm-1", "microbiology", "pharm-1",
+                "physical-diagnosis-2", "clin-path-1", "med-lit"]
     },
 
     /* The last two didactic terms have no syllabus yet, so these dates are
@@ -156,11 +161,21 @@
     [/^Anatomy Practicum/i, "anatomy-practicum"],
     [/^Anatomy/i, "anatomy"],
     [/^Physiology/i, "physio"],
+    // Physical Diagnosis 2 must be tested before Physical Diagnosis, which
+    // would otherwise swallow it and file every Fall folder under Summer I.
+    [/^Physical Diagnosis 2/i, "physical-diagnosis-2"],
     [/^Physical Diagnosis/i, "physical-diagnosis"],
     [/^CAM.?Nutrition/i, "cam-nutrition"],
     [/^Nutrition Class/i, "cam-nutrition"],
+    // Likewise Pharmacology I vs Pharmacodynamics: both start "Pharma".
     [/^Pharmacodynamics/i, "pharmacodynamics"],
-    [/^Intro to PA/i, "intro-pa"]
+    [/^Pharmacology/i, "pharm-1"],
+    [/^Intro to PA/i, "intro-pa"],
+    [/^CMS/i, "cms-1"],
+    [/^Clinical Path/i, "clin-path-1"],
+    [/^PDM/i, "pdm-1"],
+    [/^Microbiology/i, "microbiology"],
+    [/^Interpretation of Medical Literature/i, "med-lit"]
   ];
 
   function classOfPath(path) {

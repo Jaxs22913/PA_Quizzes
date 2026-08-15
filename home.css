@@ -200,6 +200,7 @@
         text-overflow: ellipsis;
       }
       .mobile-widgets-row .week-range { font-size: 9.5px; }
+      .mobile-widgets-row .week-all-link { font-size: 10.5px; margin-top: 7px; }
       .mobile-widgets-row .week-list { gap: 4px; }
       .mobile-widgets-row .week-item { padding: 5px 7px; gap: 5px; border-radius: 7px; }
       .mobile-widgets-row .week-day { width: 27px; font-size: 8.5px; padding: 2px 0; border-radius: 5px; }
@@ -488,6 +489,12 @@
       margin: 0;
     }
     .week-range { font-size: 12.5px; color: var(--muted); }
+    /* The widget only ever shows five days; this is the way out to the term. */
+    .week-all-link {
+      display: inline-block; margin-top: 10px;
+      font-size: 12.5px; font-weight: 700; color: var(--accent); text-decoration: none;
+    }
+    .week-all-link:hover { text-decoration: underline; }
     .week-list { display: flex; flex-direction: column; gap: 8px; }
     .week-item {
       display: flex;
@@ -1465,6 +1472,68 @@
   background: transparent; color: var(--a-teal, #329293); padding: 10px 14px;
 }
 .search-other-sem:hover{ background: var(--paper, rgba(0,0,0,.03)); }
+
+/* Semester countdown, directly under the progress bar. The bar answers "where
+   am I", this answers "how much longer" -- so the number carries the weight and
+   everything else stays quiet. Colours are the existing accent pair; no new
+   hues enter the palette for one component. */
+.semester-countdown{
+  display:flex; align-items:center; gap:14px;
+  margin:14px 0 4px; padding:12px 16px;
+  background:var(--accent-soft);
+  border:1px solid color-mix(in oklab, var(--accent) 18%, transparent);
+  border-radius:12px;
+}
+.semester-countdown .cd-num{
+  font-size:34px; font-weight:800; line-height:1;
+  color:var(--accent);
+  /* tabular figures so the number does not jitter as it ticks down */
+  font-variant-numeric:tabular-nums;
+}
+.semester-countdown .cd-text{ min-width:0; }
+.semester-countdown .cd-main{
+  font-size:14.5px; font-weight:700; color:var(--ink); line-height:1.3;
+}
+.semester-countdown .cd-sub{
+  font-size:12.5px; color:var(--muted); line-height:1.45; margin-top:2px;
+}
+@media (max-width:560px){
+  .semester-countdown{ gap:11px; padding:10px 12px; }
+  .semester-countdown .cd-num{ font-size:27px; }
+  .semester-countdown .cd-main{ font-size:13px; }
+  .semester-countdown .cd-sub{ font-size:11.5px; }
+}
+
+/* Exam roadmap shown in a class tab that has no quizzes in it yet. Reads as
+   reference material rather than something to click, because none of it is
+   clickable -- no hover, no link colour. */
+.class-schedule{ padding:6px 2px 14px; }
+.cs-lead{
+  margin:0 0 14px; font-size:13.5px; line-height:1.6; color:var(--muted);
+  max-width:62ch;
+}
+.cs-lead b{ color:var(--ink); font-weight:700; }
+.cs-list{ list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:6px; }
+.cs-row{
+  display:flex; align-items:baseline; gap:12px;
+  padding:9px 12px; border:1px solid var(--line, rgba(127,127,127,.18));
+  border-radius:9px; background:var(--card);
+}
+.cs-date{
+  flex:0 0 auto; min-width:8.5em;
+  font-size:12.5px; font-weight:700; color:var(--accent);
+  font-variant-numeric:tabular-nums;
+}
+.cs-title{ font-size:13.5px; color:var(--ink); line-height:1.4; }
+/* A date already gone by stays listed -- the roadmap is the whole term -- but
+   stops competing with the ones still ahead. */
+.cs-row.past{ opacity:.5; }
+.cs-row.past .cs-date{ color:var(--muted); }
+@media (max-width:560px){
+  .cs-row{ flex-direction:column; gap:3px; padding:8px 10px; }
+  .cs-date{ min-width:0; }
+}
 
 /* Empty state for a semester that has no content yet. Kept quiet -- it is a
    placeholder, not a call to action. */

@@ -110,44 +110,104 @@ document.querySelectorAll(".semester").forEach(semester => {
     })();
 
     (function () {
-      // Every Exam/Practicum event for the rest of Summer Semester 1 &ndash; 2026, pulled
-      // from the printed academic calendar (2026-07-08). Update this list by hand
-      // whenever the school revises the schedule -- see feedback_new_exam_structure_match
-      // memory for the maintenance note.
-      const EXAM_EVENTS = [
-        { date: "2026-07-02", title: "Patient-Centered Healthcare Quiz (Lectures 1-6)" },
-        { date: "2026-07-06", title: "Anatomy Practicum #2 (Labs 6-10)" },
-        { date: "2026-07-08", title: "Pharmacodynamics - Exam #2 (Lectures 5-7)" },
-        { date: "2026-07-10", title: "Physiology - Exam #3 (Lectures 11-17)" },
-        { date: "2026-07-13", title: "PD I Practicum #4 - Thorax & Abdominal Exam" },
-        { date: "2026-07-15", title: "Intro to PA Profession - Quiz" },
-        { date: "2026-07-15", title: "PD I - Practicum Retest (Practicum #1-3)" },
-        { date: "2026-07-16", title: "PD I - Practicum Retest (Practicum #1-3)" },
-        { date: "2026-07-17", title: "Anatomy - Exam #3 (Lectures 12-17)" },
-        { date: "2026-07-22", title: "PD I Exam #2 (Lectures 7-15)" },
-        { date: "2026-07-24", title: "Anatomy - Exam #4 (Lectures 18-21)" },
-        { date: "2026-07-25", title: "RETEST: Anatomy Computer Exam #3" },
-        { date: "2026-07-25", title: "RETEST: Physio #2" },
-        { date: "2026-07-27", title: "PD I - Practicum #5 - Musculoskeletal" },
-        { date: "2026-07-28", title: "RETEST: Anatomy Computerized Exam #2" },
-        { date: "2026-07-29", title: "CAM/Nutrition - Exam #1 (1-8)" },
-        { date: "2026-07-31", title: "PD I - Neuro Practicum #6" },
-        { date: "2026-08-01", title: "RETEST: Physio #1" },
-        { date: "2026-08-01", title: "RETEST: Anatomy Computerized Exam #1" },
-        { date: "2026-08-03", title: "Anatomy Practicum #3 (Labs 11-17)" },
-        { date: "2026-08-04", title: "PD I - Exam #3 (Lectures 16-21)" },
-        { date: "2026-08-04", title: "PD I - Practical Exam Retests (4-6)" },
-        { date: "2026-08-05", title: "PD I - Head to Toe Practicum #8" },
-        { date: "2026-08-06", title: "CAM/Nutrition Exam #2 (9-13)" },
-        { date: "2026-08-07", title: "Physiology - Exam #4 (Lectures 18-23)" },
-        { date: "2026-08-08", title: "RETEST: Anatomy Computerized Exam #3" },
-        { date: "2026-08-08", title: "RETEST: Anatomy Practicum #3" },
-        { date: "2026-08-10", title: "RETEST: Physio #4" },
-        { date: "2026-08-10", title: "Anatomy Course Remediation Exam" },
-        { date: "2026-08-10", title: "RETEST: Anatomy Computerized Exam #4" },
-        { date: "2026-08-12", title: "Pharmacodynamics Remediation Exam" },
-        { date: "2026-08-14", title: "Physiology Course Remediation Exam" }
-      ];
+      /* Semester countdown: first day of class through the last exam on the
+         calendar. It answers the one question the progress bar above does not
+         -- "how much longer is this" -- in whole days rather than weeks.
+
+         The target is the LAST GRADED DATE in calendar-data.js, not the
+         semester's `end`. They happen to be the same day for Fall 2026, but
+         `end` is a hand-set boundary while the graded list is generated from
+         the school's own PDFs, so keying off the data means a rescheduled
+         final moves the countdown without anyone editing the registry.
+
+         Rendered per .semester block from the same markup, so Spring and
+         Summer II get it for free once their calendars land. */
+      var reg = window.Semesters;
+      var cal = window.CalendarData;
+      if (!reg) return;
+
+      var DAY = 24 * 60 * 60 * 1000;
+      function midnight(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+      function daysBetween(a, b) { return Math.round((midnight(b) - midnight(a)) / DAY); }
+      function longDate(d) {
+        return d.toLocaleDateString("en-US",
+          { weekday: "long", month: "long", day: "numeric" });
+      }
+
+      document.querySelectorAll(".semester").forEach(function (block) {
+        var el = block.querySelector(".semester-countdown");
+        var sem = reg.byId(block.dataset.semester);
+        if (!el || !sem) return;
+
+        var now = new Date();
+        var start = reg.startOf(sem);
+
+        // last graded date for this term, else fall back to the registry's end
+        var lastEvent = null;
+        if (cal) {
+          cal.forSemester(sem.id).forEach(function (e) {
+            if (cal.isGraded(e) && (!lastEvent || e.d > lastEvent.d)) lastEvent = e;
+          });
+        }
+        var target = lastEvent ? reg.parseLocal(lastEvent.d) : reg.endOf(sem);
+
+        var toStart = daysBetween(now, start);
+        var toEnd = daysBetween(now, target);
+
+        /* A term whose dates are still guesses shouldn't display a precise day
+           count -- that would read as fact. The progress bar already says
+           "dates to be confirmed"; here we simply stay out of the way.
+
+           Retire the countdown only once the last exam is genuinely PAST.
+           Comparing `now > target` instead hid it from midnight on the morning
+           of the final exam -- target is local midnight, so every hour of the
+           day it counts down to compares as later than it. */
+        if (sem.estimated || toEnd < 0) return;
+        var num, main, sub;
+
+        if (toStart > 0) {
+          num = toStart;
+          main = "day" + (toStart === 1 ? "" : "s") + " until classes start";
+          sub = longDate(start);
+        } else {
+          num = toEnd;
+          main = toEnd === 0
+            ? "the last exam is today"
+            : "day" + (toEnd === 1 ? "" : "s") + " until the last exam";
+          sub = longDate(target) + (lastEvent ? " · " + lastEvent.t : "");
+          var elapsed = daysBetween(start, now) + 1;
+          var span = daysBetween(start, target) + 1;
+          sub = "Day " + elapsed + " of " + span + " · " + sub;
+        }
+
+        el.innerHTML = "";
+        var n = document.createElement("div");
+        n.className = "cd-num";
+        n.textContent = String(num);
+        var text = document.createElement("div");
+        text.className = "cd-text";
+        var m = document.createElement("div");
+        m.className = "cd-main";
+        m.textContent = main;
+        var s = document.createElement("div");
+        s.className = "cd-sub";
+        s.textContent = sub;
+        text.appendChild(m);
+        text.appendChild(s);
+        el.appendChild(n);
+        el.appendChild(text);
+        el.hidden = false;
+      });
+    })();
+
+    (function () {
+      /* Every graded date in the didactic year -- exams, retests and course
+         remediation -- read from calendar-data.js rather than retyped here.
+         This list used to be a hand-maintained array, and it silently went
+         stale when the school moved three August dates; see calendar-data.js
+         for that story. Regenerate with tools/gen_calendar_data.py. */
+      const EXAM_EVENTS = (window.CalendarData ? window.CalendarData.graded() : [])
+        .map(e => ({ date: e.d, title: e.t }));
 
       function displayWeekMonday(now) {
         const day = now.getDay(); // 0 Sun .. 6 Sat
