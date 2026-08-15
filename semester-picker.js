@@ -49,6 +49,22 @@
     var sems = (opts && opts.semesters) || [];
     if (sems.length < 2) return null;
 
+    /* The term you are in leads the menu; everything else keeps calendar order
+       behind it. Callers hand the list over chronologically, which is right for
+       a timeline and wrong for a menu -- it put a finished Summer I above the
+       Fall term actually in progress, so the one option you almost always want
+       was the one you had to look past.
+
+       Hoisted by date rather than by name, so this stays true at every
+       rollover. sort() is stable, so the rest of the list is undisturbed. */
+    var reg = window.Semesters;
+    var currentId = reg && reg.current ? reg.current().id : null;
+    if (currentId) {
+      sems = sems.slice().sort(function (a, b) {
+        return (b.id === currentId) - (a.id === currentId);
+      });
+    }
+
     var activeId = opts.activeId || sems[0].id;
 
     var wrap = document.createElement("span");
