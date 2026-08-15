@@ -192,7 +192,47 @@
     </div>
 
     <div id="semester-card" class="card">
-      <div class="semester" data-semester="summer-1-2026">
+      <!-- THE TERM IN PROGRESS LEADS THIS CARD, and is the one block that does not
+           start `hidden`. Everything here is toggled by home.js, but only after it
+           runs -- so whichever block is unhidden in the markup is what actually
+           paints first. Summer I used to hold that spot and kept painting its own
+           heading, progress bar and seven tabs for a beat before being swapped out
+           for Fall. At each rollover, move the new term's block up here and hand
+           `hidden` back to the old one; see semesters.js.
+
+           Fall Semester - 2026. Dates and the exam schedule are confirmed from the
+           academic calendar; no lectures are posted yet, so each tab shows that
+           course's exam roadmap until real quizzes replace it. Panels are left empty
+           on purpose -- class-schedule.js fills any panel that has no .exam-section
+           in it, and stands aside once one does. -->
+      <div class="semester" data-semester="fall-2026">
+      <h2 class="semester-header">Fall Semester &ndash; 2026</h2>
+      <div class="semester-progress">
+        <div class="semester-progress-track"><i class="semester-progress-fill"></i></div>
+        <div class="semester-progress-label"></div>
+      </div>
+      <div class="semester-countdown" hidden></div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="cms-1">Clinical Medicine and Surgery I</button>
+        <button class="tab-btn" data-tab="pdm-1">Principles of Diagnostic Medicine I</button>
+        <button class="tab-btn" data-tab="microbiology">Micro&shy;biology</button>
+        <button class="tab-btn" data-tab="pharm-1">Pharma&shy;cology I</button>
+        <button class="tab-btn" data-tab="physical-diagnosis-2">Physical Diagnosis 2</button>
+        <button class="tab-btn" data-tab="clin-path-1">Clinical Patho&shy;physiology I</button>
+        <button class="tab-btn" data-tab="med-lit">Medical Literature</button>
+      </div>
+      <p class="ai-disclaimer">Quizzes/Exams made by AI, use at your own risk. Check info if unsure.</p>
+
+      <div class="tab-panel active" id="cms-1" data-class="cms-1"></div>
+      <div class="tab-panel" id="pdm-1" data-class="pdm-1"></div>
+      <div class="tab-panel" id="microbiology" data-class="microbiology"></div>
+      <div class="tab-panel" id="pharm-1" data-class="pharm-1"></div>
+      <div class="tab-panel" id="physical-diagnosis-2" data-class="physical-diagnosis-2"></div>
+      <div class="tab-panel" id="clin-path-1" data-class="clin-path-1"></div>
+      <div class="tab-panel" id="med-lit" data-class="med-lit"></div>
+      </div>
+
+      <div class="semester hidden" data-semester="summer-1-2026">
       <!-- Filled in from semesters.js: the picker when there is more than one
            term, otherwise just that term's name. Hardcoding it here meant a
            second copy of the label to go stale. -->
@@ -1926,37 +1966,6 @@
 
       </div>
 
-      <!-- Fall Semester - 2026. Dates and the exam schedule are confirmed from the
-           academic calendar; no lectures are posted yet, so each tab shows that
-           course's exam roadmap until real quizzes replace it. Panels are left empty
-           on purpose -- class-schedule.js fills any panel that has no .exam-section
-           in it, and stands aside once one does. -->
-      <div class="semester hidden" data-semester="fall-2026">
-      <h2 class="semester-header">Fall Semester &ndash; 2026</h2>
-      <div class="semester-progress">
-        <div class="semester-progress-track"><i class="semester-progress-fill"></i></div>
-        <div class="semester-progress-label"></div>
-      </div>
-      <div class="semester-countdown" hidden></div>
-      <div class="tabs">
-        <button class="tab-btn active" data-tab="cms-1">Clinical Medicine and Surgery I</button>
-        <button class="tab-btn" data-tab="pdm-1">Principles of Diagnostic Medicine I</button>
-        <button class="tab-btn" data-tab="microbiology">Micro&shy;biology</button>
-        <button class="tab-btn" data-tab="pharm-1">Pharma&shy;cology I</button>
-        <button class="tab-btn" data-tab="physical-diagnosis-2">Physical Diagnosis 2</button>
-        <button class="tab-btn" data-tab="clin-path-1">Clinical Patho&shy;physiology I</button>
-        <button class="tab-btn" data-tab="med-lit">Medical Literature</button>
-      </div>
-      <p class="ai-disclaimer">Quizzes/Exams made by AI, use at your own risk. Check info if unsure.</p>
-
-      <div class="tab-panel active" id="cms-1" data-class="cms-1"></div>
-      <div class="tab-panel" id="pdm-1" data-class="pdm-1"></div>
-      <div class="tab-panel" id="microbiology" data-class="microbiology"></div>
-      <div class="tab-panel" id="pharm-1" data-class="pharm-1"></div>
-      <div class="tab-panel" id="physical-diagnosis-2" data-class="physical-diagnosis-2"></div>
-      <div class="tab-panel" id="clin-path-1" data-class="clin-path-1"></div>
-      <div class="tab-panel" id="med-lit" data-class="med-lit"></div>
-      </div>
 
       <!-- Spring Semester - 2027: no content yet. The block exists so the semester is visible
            in the switcher; it fills in the same way Summer 1 did. -->

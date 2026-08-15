@@ -13,6 +13,15 @@
      3. That's it — the switcher, the progress bar, search scoping, the guides
         page, Arcade's class tabs and the Group Study picker all follow.
 
+   Once a term actually STARTS, one more manual step: move its block to the top
+   of #semester-card in index.html and give `hidden` back to the term that just
+   ended. Everything is toggled by home.js, but only after it runs, so whichever
+   block is unhidden in the markup is what paints first — leave a finished term
+   there and it flashes its heading and tabs on every load before being swapped
+   out. Sorting order elsewhere (the picker menu, `preferred()`) is derived from
+   the dates and needs no such upkeep; this one spot cannot be, because it has
+   to be right before any JavaScript has run.
+
    `classes` holds the tab ids used by index.html (data-tab / tab-panel id),
    arcade.js (DEMO_CLASSES id) and the group manifest's class field, so one
    name works everywhere. A class that runs across two terms is listed in both;
