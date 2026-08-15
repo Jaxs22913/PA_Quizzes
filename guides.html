@@ -867,7 +867,9 @@
 
   var saved = null;
   try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
-  var initial = reg.byId(saved) ? saved : reg.current().id;
+  // Registry decides, so this page agrees with the homepage and the Arcade
+  // about which term a returning visitor lands on.
+  var initial = reg.preferred(saved);
 
   var picker = window.SemesterPicker({
     semesters: reg.all,

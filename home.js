@@ -467,7 +467,11 @@ document.querySelectorAll(".semester").forEach(semester => {
 
       var saved = null;
       try { saved = localStorage.getItem("activeSemester"); } catch (e) {}
-      var initial = (saved && blocks[saved]) ? saved : reg.current().id;
+
+      // Which term to open on -- the rule lives in the registry, because the
+      // guides page and the Arcade share this same saved key and have to agree.
+      var initial = reg.preferred(saved);
+      if (!blocks[initial]) initial = reg.current().id;
       if (!blocks[initial]) initial = present.length ? present[0].id : null;
 
       if (present.length < 2) {

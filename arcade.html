@@ -96,8 +96,9 @@
     if (!reg) return null;
     var saved = null;
     try { saved = localStorage.getItem(SEMESTER_KEY); } catch (e) {}
-    if (saved && reg.byId(saved)) return saved;
-    return reg.current().id;
+    // Registry decides, so a term that has ended does not keep the Arcade
+    // pinned to it after the next one starts.
+    return reg.preferred(saved);
   }
 
   /* Classes for the shown semester. A class the registry doesn't know about is

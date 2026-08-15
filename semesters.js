@@ -136,6 +136,29 @@
     return null;
   }
 
+  /* Which term a page should open on, given whatever the visitor last picked.
+
+     The homepage, the guides page and the Arcade all share one localStorage
+     key, and all three used to let the saved value win outright. That quietly
+     became wrong the moment a term ended: everyone in the cohort had used the
+     site all summer, so every one of them had "summer-1-2026" saved and would
+     have opened onto a finished semester on the first day of Fall.
+
+     A saved term outranks the current one only while it is still running. Pick
+     a FUTURE term and it sticks -- that is a real choice about where you are
+     headed. Pick one that is already over and it holds for that visit but does
+     not follow you to the next, because reviewing old material is a detour,
+     not a new home.
+
+     Nothing needs editing at the next rollover; the dates already say which
+     term is which. Callers still have to check that they can actually DISPLAY
+     the answer -- a page may not have a block for every term. */
+  function preferred(saved, now) {
+    var sem = saved ? byId(saved) : null;
+    if (sem && (now || new Date()) <= endOf(sem)) return sem.id;
+    return current(now).id;
+  }
+
   /* Two surfaces spell the same class differently: the Arcade's tab id for
      Physiology is "physiology" while index.html's is "physio". Renaming either
      would strand the saved active tab in every existing visitor's
@@ -194,6 +217,7 @@
   window.Semesters = {
     all: SEMESTERS,
     current: current,
+    preferred: preferred,
     byId: byId,
     ofClass: ofClass,
     classOfPath: classOfPath,
