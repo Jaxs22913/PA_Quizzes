@@ -41,26 +41,38 @@
                 "intro-pa", "cam-nutrition", "physical-diagnosis"]
     },
 
-    /* The remaining three didactic terms. Only Summer I has a syllabus so far,
-       so these dates are ESTIMATED from the usual academic calendar and are
-       marked `estimated` — the UI says "dates to be confirmed" rather than
-       stating them as fact. Replace them with the real ones (and drop the
-       flag) as each syllabus arrives; nothing else needs to change.
-
-       `classes` is empty until a term's courses are known. A semester with no
-       classes still appears in the switcher, showing an empty state, so the
-       shape of the year is visible before any content exists for it. */
+    /* Fall 2026 dates are REAL, taken from the Class of 2028 academic calendar
+       (~/Desktop/Calendars/Fall Semester - 2026, five monthly PDFs), so the
+       `estimated` flag is gone. Same shape as Summer I:
+         start        Aug 17, the Start of Semester Talk and first lectures
+         lastClassDay Dec 3, the last regular course final (Microbiology #3);
+                      Dec 4-11 is retests and course remediation, which is not
+                      class time — the same distinction Summer I draws
+         end          Dec 11, the last remediation exam, so that day still
+                      reads as "in progress"
+       totalWeeks is 17 counted off the calendar (Aug 17 -> Dec 11). Summer I's
+       note applies here too: if the syllabus states a different number, trust
+       the program's over the date math. */
     {
       id: "fall-2026",
       label: "Fall Semester – 2026",
       short: "Semester 2",
-      estimated: true,
-      start: "2026-08-24",
-      end: "2026-12-18",
-      lastClassDay: "2026-12-11",
-      totalWeeks: 16,
+      start: "2026-08-17",
+      end: "2026-12-11",
+      lastClassDay: "2026-12-03",
+      totalWeeks: 17,
       classes: []
     },
+
+    /* The last two didactic terms have no syllabus yet, so these dates are
+       ESTIMATED from the usual academic calendar and are marked `estimated` —
+       the UI says "dates to be confirmed" rather than stating them as fact.
+       Replace them with the real ones (and drop the flag) as each calendar
+       arrives; nothing else needs to change.
+
+       `classes` is empty until a term's courses are known. A semester with no
+       classes still appears in the switcher, showing an empty state, so the
+       shape of the year is visible before any content exists for it. */
     {
       id: "spring-2027",
       label: "Spring Semester – 2027",
