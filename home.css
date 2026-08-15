@@ -1485,6 +1485,9 @@
   border-radius:12px;
 }
 .semester-countdown .cd-num{
+  /* never let a long detail line squeeze or wrap the number -- an estimated
+     term's "~275" is four characters wide where a live one is often one */
+  flex:0 0 auto; white-space:nowrap;
   font-size:34px; font-weight:800; line-height:1;
   color:var(--accent);
   /* tabular figures so the number does not jitter as it ticks down */

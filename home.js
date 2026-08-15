@@ -154,30 +154,42 @@ document.querySelectorAll(".semester").forEach(semester => {
         var toStart = daysBetween(now, start);
         var toEnd = daysBetween(now, target);
 
-        /* A term whose dates are still guesses shouldn't display a precise day
-           count -- that would read as fact. The progress bar already says
-           "dates to be confirmed"; here we simply stay out of the way.
-
-           Retire the countdown only once the last exam is genuinely PAST.
+        /* Retire the countdown only once the last exam is genuinely PAST.
            Comparing `now > target` instead hid it from midnight on the morning
            of the final exam -- target is local midnight, so every hour of the
            day it counts down to compares as later than it. */
-        if (sem.estimated || toEnd < 0) return;
+        if (toEnd < 0) return;
+
+        /* One shape for every term, whichever side of it you are standing on:
+           a number, what the number counts, then "Day X of N" and the date it
+           refers to. Before the term starts the number counts to the first day;
+           once it has started, to the last exam. Holding the detail line to the
+           same shape is the point -- four cards each phrasing this their own way
+           read as four unrelated widgets rather than one. */
+        var span = daysBetween(start, target) + 1;
         var num, main, sub;
 
         if (toStart > 0) {
           num = toStart;
           main = "day" + (toStart === 1 ? "" : "s") + " until classes start";
-          sub = longDate(start);
+          sub = "Day 0 of " + span + " · " + longDate(start);
         } else {
           num = toEnd;
           main = toEnd === 0
             ? "the last exam is today"
             : "day" + (toEnd === 1 ? "" : "s") + " until the last exam";
-          sub = longDate(target) + (lastEvent ? " · " + lastEvent.t : "");
-          var elapsed = daysBetween(start, now) + 1;
-          var span = daysBetween(start, target) + 1;
-          sub = "Day " + elapsed + " of " + span + " · " + sub;
+          sub = "Day " + (daysBetween(start, now) + 1) + " of " + span + " · " +
+                longDate(target) + (lastEvent ? " · " + lastEvent.t : "");
+        }
+
+        /* A term whose dates are still guesses gets the same countdown rather
+           than none at all, but the number is marked approximate and the detail
+           line says so. Printing "Day 0 of 116" off an invented start date would
+           state a guess as fact, which is the one thing the estimated flag
+           exists to prevent. */
+        if (sem.estimated) {
+          num = "~" + num;
+          sub = "dates to be confirmed";
         }
 
         el.innerHTML = "";
