@@ -171,8 +171,13 @@
     [/^Pharmacodynamics/i, "pharmacodynamics"],
     [/^Pharmacology/i, "pharm-1"],
     [/^Intro to PA/i, "intro-pa"],
+    // Both spellings for the two courses the school abbreviates: content
+    // folders use the full name, but the calendar and the school's own
+    // paperwork say CMS and PDM, so either can turn up in a path.
+    [/^Clinical Medicine( and | ?& ?)Surgery/i, "cms-1"],
     [/^CMS/i, "cms-1"],
     [/^Clinical Path/i, "clin-path-1"],
+    [/^Principles of Diagnostic Medicine/i, "pdm-1"],
     [/^PDM/i, "pdm-1"],
     [/^Microbiology/i, "microbiology"],
     [/^Interpretation of Medical Literature/i, "med-lit"]
