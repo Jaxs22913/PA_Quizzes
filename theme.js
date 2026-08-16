@@ -3713,7 +3713,7 @@ window.openPauseOverlay = function (opts) {
   };
 })();
 
-/* ---- Report a problem with an EXAM question -> Formspree (2026-08-15) ----
+/* ---- Report a problem with an EXAM question -> Forminit (2026-08-15) ----
 
    Separate from report-a-mistake above, which is for the site: a broken link,
    a typo, a page that will not load. This one is for the real exam -- a key
@@ -3721,31 +3721,29 @@ window.openPauseOverlay = function (opts) {
    was never lectured -- so it collects the evidence needed to actually take it
    to a professor.
 
-   MOVING TO FORMINIT: paste the Forminit form URL into ENDPOINT below and both
-   things happen at once -- these reports stop sharing an inbox with the site
-   issues, and the slide-photo upload turns itself back on.
+   Its own Forminit form, so these no longer share an inbox with the site
+   issues. That separation was the point of moving.
 
-   The upload field is tied to the endpoint on purpose (see acceptsUploads).
-   Formspree only takes files on a paid plan and rejects the whole submission on
-   the free one, so a photo field pointed at it is a trap: fill it in and you
-   lose the report you just wrote, after typing every other box. Forminit's free
-   plan does take files, so the field is safe there and only there. Tying the
-   two together means they can never drift apart.
+   NO PHOTO UPLOAD, and it is not an oversight. Forminit's pricing page lists
+   file upload on the free plan, but the API disagrees -- it answers 403
+   PERMISSION_DENIED, "File upload not supported on free plan". Formspree is
+   the same. So a photo field here would be the trap it always was: you fill in
+   every box, attach a slide, and lose the lot on submit. Evidence is text, and
+   the form points at email for pictures. UPLOADS_SUPPORTED below is the single
+   switch if a plan ever changes -- confirm with a real submission before
+   flipping it, since the pricing page cannot be trusted on this.
 
-   Until the endpoint changes, evidence is text only and the form points at
-   email for photos. Both kinds of report land in the one Formspree inbox, but
-   every submission from here is tagged `reportType: test-question` with a
-   subject line starting "EXAM QUESTION", so they stay filterable meanwhile. */
+   FORMINIT'S WIRE FORMAT is not Formspree's flat keys. Every field must be
+   named `fi-{blockType}-{name}` -- `fi-text-problem`, `fi-sender-email` -- and
+   a body of plain names is rejected outright as EMPTY_SUBMISSION. There is no
+   `_subject`; `fi-text-summary` carries the one-line headline instead. */
 (function () {
-  /* >>> Paste the Forminit form URL here (looks like https://forminit.com/f/xxxxx).
-         Nothing else needs changing -- uploads and the separate inbox both
-         follow from it. <<< */
-  var ENDPOINT = "https://formspree.io/f/xdaqleod";
+  var ENDPOINT = "https://forminit.com/f/q1jz9v74p78";
 
-  /* Which backends can actually accept a file on the plan we are on. Kept as a
-     test on the URL rather than a second flag, so there is no way to end up
-     with the field showing and an endpoint that will reject it. */
-  function acceptsUploads() { return /(^|\/\/)([^/]*\.)?forminit\.com\//i.test(ENDPOINT); }
+  /* Free plan rejects files (see above). Verified against the live API, not
+     the pricing page. */
+  var UPLOADS_SUPPORTED = false;
+  function acceptsUploads() { return UPLOADS_SUPPORTED; }
 
   var PHOTO_EMAIL = "jl3692@mynsu.nova.edu";
   var ID = "tq-modal-overlay";
@@ -3846,39 +3844,31 @@ window.openPauseOverlay = function (opts) {
     status.style.color = "#6b7280"; status.textContent = "";
 
     var exam = val("tq-exam"), qnum = val("tq-qnum");
-    var data = {
-      _subject: "EXAM QUESTION ISSUE — " + cls +
-                (exam ? " " + exam : "") + (qnum ? " Q" + qnum : ""),
-      reportType: "test-question",
-      "class": cls,
-      problem: problem,
-      page: location.href
-    };
-    if (exam) data.exam = exam;
-    if (qnum) data.questionNumber = qnum;
-    if (val("tq-qtext")) data.questionWording = val("tq-qtext");
-    if (val("tq-evidence")) data.evidence = val("tq-evidence");
-    if (val("tq-email")) data.email = val("tq-email");
+
+    /* Forminit block format: `fi-{blockType}-{name}`. A body of plain field
+       names comes back 400 EMPTY_SUBMISSION, so the prefixes are load-bearing,
+       not decoration. `summary` stands in for the subject line Formspree had. */
+    var fd = new FormData();
+    fd.append("fi-text-summary", cls + (exam ? " · " + exam : "") +
+                                 (qnum ? " · Q" + qnum : ""));
+    fd.append("fi-text-class", cls);
+    fd.append("fi-text-problem", problem);
+    fd.append("fi-text-page", location.href);
+    if (exam) fd.append("fi-text-exam", exam);
+    if (qnum) fd.append("fi-text-questionNumber", qnum);
+    if (val("tq-qtext")) fd.append("fi-text-questionWording", val("tq-qtext"));
+    if (val("tq-evidence")) fd.append("fi-text-evidence", val("tq-evidence"));
+    // sender is Forminit's own block for who submitted it, so replies work
+    if (val("tq-email")) fd.append("fi-sender-email", val("tq-email"));
 
     var fileEl = document.getElementById("tq-file");
     var file = fileEl && fileEl.files && fileEl.files[0];
+    if (file) fd.append("fi-file-slideImage", file);
 
-    /* Multipart when there is a photo to carry, JSON otherwise. Content-Type is
-       deliberately left unset on the multipart branch -- the browser has to
-       write the boundary itself, and setting it by hand produces a body the
+    /* Content-Type is deliberately unset: the browser has to write the
+       multipart boundary itself, and setting it by hand yields a body the
        server cannot parse. */
-    var opts = { method: "POST", headers: { Accept: "application/json" } };
-    if (file) {
-      var fd = new FormData();
-      Object.keys(data).forEach(function (k) { fd.append(k, data[k]); });
-      fd.append("slideImage", file);
-      opts.body = fd;
-    } else {
-      opts.headers["Content-Type"] = "application/json";
-      opts.body = JSON.stringify(data);
-    }
-
-    fetch(ENDPOINT, opts)
+    fetch(ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } })
       .then(function (r) { if (!r.ok) throw new Error(String(r.status)); })
       .then(function () {
         status.style.color = "#1f8f52";
@@ -3886,12 +3876,12 @@ window.openPauseOverlay = function (opts) {
         setTimeout(hide, 2200);
       })
       .catch(function (err) {
-        /* Forminit rate-limits browser-side posts to one every 30 seconds, so
+        /* Forminit rate-limits unauthenticated posts to one every 5 seconds, so
            reporting two questions back to back trips it. That is a wait, not a
            failure, and must not read like one -- the report is still sitting in
            the form, and telling someone to email instead would be wrong. */
         if (String(err.message) === "429") {
-          fail(status, "One report every 30 seconds — give it a moment and press send again. Nothing you typed is lost.");
+          fail(status, "One report every few seconds — give it a moment and press send again. Nothing you typed is lost.");
           return;
         }
         /* With a photo attached, that is much the likeliest cause -- too large,
