@@ -246,18 +246,34 @@
   // -- so scraping #results.textContent with a plain regex works across all
   // of them without needing per-template special-casing or touching any of
   // the ~440 individual quiz files.
-  function burstConfetti(count) {
+  /* `spread` is how many seconds the pieces are released over. The default
+     0.3 is the original snap-burst, right for a quiz result where the whole
+     celebration is over in a moment. Pass something longer for a shower that
+     keeps falling -- at 0.3 every piece is in the air at once, which reads as
+     one clump dropping rather than confetti.
+
+     Cleanup has to account for it: the fixed 3.2s timeout was fine when
+     nothing started later than 0.3s in, but a piece released at 2s would
+     otherwise be yanked out of the air mid-fall. */
+  function burstConfetti(count, spread) {
     var colors = ["#2563eb", "#16a34a", "#9333ea", "#f59e0b", "#dc2626"];
+    var release = typeof spread === "number" ? spread : 0.3;
+    var lifetime = (release + 3.2) * 1000;
     for (var i = 0; i < count; i++) {
       (function () {
         var piece = document.createElement("div");
         piece.className = "confetti-piece";
         piece.style.left = Math.random() * 100 + "vw";
         piece.style.background = colors[i % colors.length];
-        piece.style.animationDuration = (1.6 + Math.random() * 1.2) + "s";
-        piece.style.animationDelay = (Math.random() * 0.3) + "s";
+        piece.style.animationDuration = (1.6 + Math.random() * 1.6) + "s";
+        piece.style.animationDelay = (Math.random() * release) + "s";
+        // a little size variation so a wide spread does not read as rows of
+        // identical tickets
+        var scale = 0.75 + Math.random() * 0.6;
+        piece.style.width = (8 * scale).toFixed(1) + "px";
+        piece.style.height = (14 * scale).toFixed(1) + "px";
         document.body.appendChild(piece);
-        setTimeout(function () { piece.remove(); }, 3200);
+        setTimeout(function () { piece.remove(); }, lifetime);
       })();
     }
   }

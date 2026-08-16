@@ -213,9 +213,8 @@ document.querySelectorAll(".semester").forEach(semester => {
     })();
 
     (function () {
-      /* First day of a semester: a short banner above the semester card and one
-         burst of confetti. Day one only -- it is a milestone, not a mood, and a
-         thing that greeted you all week would be wallpaper by Wednesday.
+      /* Opening week of a semester: a short banner above the semester card, and
+         a burst of confetti once a day for the first seven days.
 
          Keyed off `start` in the registry rather than a hardcoded date, so every
          future term gets its own without an edit. Terms still marked `estimated`
@@ -224,14 +223,26 @@ document.querySelectorAll(".semester").forEach(semester => {
       var reg = window.Semesters;
       if (!reg) return;
 
+      var KICKOFF_DAYS = 7;
+
       function ymd(d) {
         return d.getFullYear() + "-" +
           String(d.getMonth() + 1).padStart(2, "0") + "-" +
           String(d.getDate()).padStart(2, "0");
       }
-      var today = ymd(new Date());
-      var sem = null;
-      reg.all.forEach(function (s) { if (!s.estimated && s.start === today) sem = s; });
+      var now = new Date();
+      var today = ymd(now);
+
+      /* Which day of the term this is, counted in whole local days so the
+         number does not turn over at the wrong moment -- the same midnight
+         discipline the countdown above uses. */
+      function midnight(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+      var sem = null, dayNum = 0;
+      reg.all.forEach(function (s) {
+        if (s.estimated) return;
+        var n = Math.round((midnight(now) - midnight(reg.startOf(s))) / 86400000) + 1;
+        if (n >= 1 && n <= KICKOFF_DAYS) { sem = s; dayNum = n; }
+      });
       if (!sem) return;
 
       var card = document.getElementById("semester-card");
@@ -251,7 +262,9 @@ document.querySelectorAll(".semester").forEach(semester => {
       box.className = "semester-kickoff";
       var h = document.createElement("p");
       h.className = "kickoff-title";
-      h.textContent = "Day one of " + sem.label;
+      // Day one is the milestone and says so; after that it is the week that
+      // is notable, not the ordinal -- "Day 4 of" reads like a countdown.
+      h.textContent = (dayNum === 1 ? "Day one of " : "First week of ") + sem.label;
       box.appendChild(h);
       var p = document.createElement("p");
       p.className = "kickoff-sub";
@@ -261,11 +274,10 @@ document.querySelectorAll(".semester").forEach(semester => {
       box.appendChild(p);
       card.parentNode.insertBefore(box, card);
 
-      /* Confetti once a day, not once a page load -- the banner stays all day,
-         but refreshing the homepage should not keep setting it off.
-         burstConfetti lives in theme.js, which is deferred AFTER this file, so
-         it does not exist yet; DOMContentLoaded fires once every deferred
-         script has run. */
+      /* Everything from here down -- the drop, the confetti, the fireworks --
+         runs once a day rather than once a page load. The banner itself stays
+         up all day, but refreshing the homepage should not keep setting the
+         whole show off again. */
       var key = "kickoff:" + sem.id;
       var seen = null;
       try { seen = localStorage.getItem(key); } catch (e) {}
@@ -279,7 +291,70 @@ document.querySelectorAll(".semester").forEach(semester => {
          that branch fired immediately and called a function that did not
          exist yet. "complete" is the only state where the event has already
          gone and calling straight through is right. */
-      function pop() { if (window.burstConfetti) window.burstConfetti(60); }
+      var reduced = window.matchMedia &&
+                    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      /* Drop the banner and the card into place. The banner leads and the card
+         follows a beat later, so they land as a sequence rather than one slab
+         of page moving. */
+      if (!reduced) {
+        box.classList.add("kickoff-drop");
+        card.classList.add("kickoff-drop", "kickoff-drop-late");
+      }
+
+      var SPARK_COLORS = ["#2563eb", "#16a34a", "#9333ea", "#f59e0b", "#dc2626", "#0ea5e9"];
+
+      /* One firework: sparks fly out evenly around a circle, each with its own
+         distance so the ring is ragged rather than a perfect wheel. */
+      function firework(x, y) {
+        var n = 26;
+        for (var i = 0; i < n; i++) {
+          (function (i) {
+            var angle = (Math.PI * 2 * i) / n + Math.random() * 0.22;
+            var dist = 62 + Math.random() * 96;
+            var spark = document.createElement("div");
+            spark.className = "firework-spark";
+            spark.style.left = x + "px";
+            spark.style.top = y + "px";
+            spark.style.background = SPARK_COLORS[i % SPARK_COLORS.length];
+            spark.style.setProperty("--dx", (Math.cos(angle) * dist).toFixed(1) + "px");
+            spark.style.setProperty("--dy", (Math.sin(angle) * dist).toFixed(1) + "px");
+            spark.style.animationDelay = (Math.random() * 0.06).toFixed(2) + "s";
+            document.body.appendChild(spark);
+            setTimeout(function () { spark.remove(); }, 1500);
+          })(i);
+        }
+      }
+
+      /* A few of them, staggered across the upper part of the screen. Fired off
+         the viewport rather than off any element, so nothing depends on where
+         the layout happens to have put the card. */
+      function fireworks(rounds) {
+        if (reduced) return;
+        for (var r = 0; r < rounds; r++) {
+          (function (r) {
+            setTimeout(function () {
+              var x = window.innerWidth * (0.18 + Math.random() * 0.64);
+              var y = window.innerHeight * (0.16 + Math.random() * 0.28);
+              firework(x, y);
+            }, 260 + r * 620 + Math.random() * 180);
+          })(r);
+        }
+      }
+
+      /* Released over a couple of seconds rather than all at once, so it falls
+         as a shower instead of one clump. Day one gets more of everything than
+         the rest of the week -- it should still feel like something on the
+         Thursday without being the same blast daily. */
+      function pop() {
+        if (dayNum === 1) {
+          if (window.burstConfetti) window.burstConfetti(150, 2.4);
+          fireworks(3);
+        } else {
+          if (window.burstConfetti) window.burstConfetti(70, 1.8);
+          fireworks(1);
+        }
+      }
       if (document.readyState === "complete") pop();
       else document.addEventListener("DOMContentLoaded", pop);
     })();
