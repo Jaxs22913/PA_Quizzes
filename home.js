@@ -314,7 +314,18 @@ document.querySelectorAll(".semester").forEach(semester => {
            adding a link to this chain -- CSS alone leaves it stacked on
            whatever was there before. */
         var issueEl = document.getElementById("question-issue-row");
-        if (issueEl) issueEl.style.top = btnTop + "px";
+        if (issueEl) {
+          issueEl.style.top = btnTop + "px";
+          /* Match the search input's height the way the Guides button opposite
+             it does, so the three read as one line across the page rather than
+             a tall row with a short tag beside it. searchHeight is only in
+             scope when the search row was measurable; when it is not, btnTop
+             falls back to `offset` and the natural height is right anyway. */
+          var issueBtn = issueEl.querySelector(".question-issue-pill");
+          if (issueBtn && searchInput && searchWrap) {
+            issueBtn.style.height = Math.round(searchInput.getBoundingClientRect().height / zoom) + "px";
+          }
+        }
         if (relaxEl) relaxEl.style.top = offset + "px";
         var relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
         var groupTop = offset + (relaxH ? relaxH + 18 : 0);

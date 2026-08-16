@@ -549,15 +549,20 @@
        "attention, not alarm" hue; crimson would read as an error on the page
        itself. */
     .question-issue-row { text-align: center; margin: 14px 0 0; }
+    /* Sized to the search input and the Guides button it shares a line with --
+       full width of its slot, same height. It was a small centred pill before,
+       which read as a stray tag floating next to a full-width row. Still a
+       pill in shape; only the footprint changed. */
     .question-issue-pill {
-      display: inline-flex; align-items: center; gap: 7px;
-      font: 600 13px inherit; cursor: pointer;
-      padding: 7px 14px; border-radius: var(--r-pill, 999px);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; box-sizing: border-box;
+      font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+      padding: 12px 16px; border-radius: var(--r-pill, 999px);
       color: var(--a-amber); background: var(--a-amber-soft);
       border: 1px solid color-mix(in oklab, var(--a-amber) 26%, transparent);
       transition: background .15s ease, border-color .15s ease, transform .15s ease;
     }
-    .question-issue-pill svg { width: 15px; height: 15px; flex: 0 0 auto; }
+    .question-issue-pill svg { width: 16px; height: 16px; flex: 0 0 auto; }
     .question-issue-pill:hover {
       background: color-mix(in oklab, var(--a-amber) 14%, var(--card));
       border-color: var(--a-amber);
