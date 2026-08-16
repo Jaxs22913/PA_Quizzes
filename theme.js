@@ -261,6 +261,12 @@
       })();
     }
   }
+  /* Exposed so the homepage's first-day-of-semester celebration can reuse it
+     rather than carry a second copy of the same effect. Note the load order:
+     home.js is deferred BEFORE theme.js, so anything in home.js must wait for
+     DOMContentLoaded before reaching for this. */
+  window.burstConfetti = burstConfetti;
+
   function celebrateScore(results) {
     var match = results.textContent.match(/(\d{1,3})\s*%/);
     var pct = match ? parseInt(match[1], 10) : NaN;

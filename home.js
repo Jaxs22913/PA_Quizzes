@@ -213,6 +213,78 @@ document.querySelectorAll(".semester").forEach(semester => {
     })();
 
     (function () {
+      /* First day of a semester: a short banner above the semester card and one
+         burst of confetti. Day one only -- it is a milestone, not a mood, and a
+         thing that greeted you all week would be wallpaper by Wednesday.
+
+         Keyed off `start` in the registry rather than a hardcoded date, so every
+         future term gets its own without an edit. Terms still marked `estimated`
+         are skipped: throwing confetti on a guessed date would be celebrating
+         nothing. */
+      var reg = window.Semesters;
+      if (!reg) return;
+
+      function ymd(d) {
+        return d.getFullYear() + "-" +
+          String(d.getMonth() + 1).padStart(2, "0") + "-" +
+          String(d.getDate()).padStart(2, "0");
+      }
+      var today = ymd(new Date());
+      var sem = null;
+      reg.all.forEach(function (s) { if (!s.estimated && s.start === today) sem = s; });
+      if (!sem) return;
+
+      var card = document.getElementById("semester-card");
+      if (!card) return;
+
+      /* What is actually on today, so the banner earns its space instead of
+         only cheering. First timed thing on the calendar is the useful line. */
+      var first = null;
+      var cal = window.CalendarData;
+      if (cal) {
+        cal.onDate(today).forEach(function (e) {
+          if (!first && e.h && e.k !== "holiday") first = e;
+        });
+      }
+
+      var box = document.createElement("div");
+      box.className = "semester-kickoff";
+      var h = document.createElement("p");
+      h.className = "kickoff-title";
+      h.textContent = "Day one of " + sem.label;
+      box.appendChild(h);
+      var p = document.createElement("p");
+      p.className = "kickoff-sub";
+      p.textContent = first
+        ? "First up: " + first.t + (first.h ? " at " + first.h.replace(/:00/, "").toLowerCase() : "") + ". Good luck."
+        : "Good luck with this one.";
+      box.appendChild(p);
+      card.parentNode.insertBefore(box, card);
+
+      /* Confetti once a day, not once a page load -- the banner stays all day,
+         but refreshing the homepage should not keep setting it off.
+         burstConfetti lives in theme.js, which is deferred AFTER this file, so
+         it does not exist yet; DOMContentLoaded fires once every deferred
+         script has run. */
+      var key = "kickoff:" + sem.id;
+      var seen = null;
+      try { seen = localStorage.getItem(key); } catch (e) {}
+      if (seen === today) return;
+      try { localStorage.setItem(key, today); } catch (e) {}
+
+      /* Wait for DOMContentLoaded, which is AFTER every deferred script has
+         run and so after theme.js has defined burstConfetti. Testing for
+         readyState === "loading" first does not work here: by the time a
+         deferred script executes the document is already "interactive", so
+         that branch fired immediately and called a function that did not
+         exist yet. "complete" is the only state where the event has already
+         gone and calling straight through is right. */
+      function pop() { if (window.burstConfetti) window.burstConfetti(60); }
+      if (document.readyState === "complete") pop();
+      else document.addEventListener("DOMContentLoaded", pop);
+    })();
+
+    (function () {
       /* Every graded date in the didactic year -- exams, retests and course
          remediation -- read from calendar-data.js rather than retyped here.
          This list used to be a hand-maintained array, and it silently went
