@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #6a4fa3; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inflammation — Quiz 2</title>
+<style>
+  :root{
+    --navy:#3b2a5e; --indigo:#6a4fa3; --gold:#c08a2e; --ice:#efeaf8;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Inflammation</h1>
+    <div class="sub">Clinical Pathophysiology I &middot; Exam 1 &middot; Lecture 1 &middot; Set 2</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Lecture 1 of Clinical Pathophysiology I. Thirty questions on the mechanism of inflammation, across all six instructional objectives from the syllabus, every one cited to the slide it came from. Mechanism throughout — what is happening in the tissue and why.</p>
+    <div class="chips"><span class="chip">Acute vs chronic</span><span class="chip">Patterns of inflammation</span><span class="chip">Vascular changes</span><span class="chip">Cellular changes</span><span class="chip">Leukocytes</span><span class="chip">Mediators & opsonins</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Granulocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Which three cell types does the lecture list as granulocytes?", "opts": [["Lymphocytes, monocytes and macrophages", "These are the agranulocytes, or mononuclear leucocytes."], ["Neutrophils, basophils and eosinophils", "Correct. These are the three granulocytes; polymorphonuclear leukocyte refers to all granulocytes."], ["Neutrophils, monocytes and B lymphocytes", "Monocytes and B lymphocytes are agranulocytes."], ["Basophils, eosinophils and natural killer cells", "Natural killer cells are described among the T lymphocyte subsets rather than as granulocytes."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 14"}, {"topic": "Agranulocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "The term agranulocyte is described as somewhat misleading. Why?", "opts": [["Because these cells acquire granules only after activation", "The lecture does not describe granule acquisition on activation; it says the granules are present but non-specific."], ["Because their granules are visible only in chronic inflammation", "Visibility is attributed to the nature of the granules, not to the phase of inflammation."], ["Because these cells do contain non-specific azurophilic granules — lysosomes", "Correct. The name implies an absence of granules, but non-specific azurophilic granules (lysosomes) are present."], ["Because they are actually a subtype of polymorphonuclear leukocyte", "Polymorphonuclear leukocyte refers to all granulocytes, which is the opposite grouping."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 15"}, {"topic": "Neutrophils", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "How does the lecture describe the neutrophil's nucleus and cytoplasm?", "opts": [["Bi-lobed nucleus with pink-orange granules", "That is the eosinophil."], ["Kidney-shaped nucleus with abundant cytoplasm that is usually agranulated when it is viewed on light microscopy", "That is the monocyte."], ["Multilobed nucleus that may appear like multiple nuclei, with cytoplasm looking transparent because of fine pale lilac granules", "Correct. Both the multilobed nucleus and the fine pale lilac granules are given."], ["Bi- or tri-lobed nucleus with a number of coarse granules", "That is the basophil."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 16"}, {"topic": "Leukocyte comparison", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Which leukocyte is described as the first responder to microbial infection?", "opts": [["The macrophage", "Macrophages derive from monocytes that have left the bloodstream, and dominate chronic rather than earliest inflammation."], ["The eosinophil", "Eosinophils primarily address parasitic infection and allergic reactions."], ["The B lymphocyte", "B lymphocytes act through antibody production in the humoral response."], ["The neutrophil", "Correct. The neutrophil is named as the first responder to microbial infection, defending against bacterial and fungal infection."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 16"}, {"topic": "Acute vs chronic", "io": "Describe the various types and etiologies of inflammation", "q": "The lecture contrasts trauma with a bee sting to illustrate which distinction within acute inflammation?", "opts": [["Damage that is purely physical versus damage that involves activation of an immune response", "Correct. Both produce acute inflammation, but only one recruits an immune response, which is the point of the pairing."], ["Inflammation that resolves completely versus inflammation that becomes chronic", "Chronicity is determined by persistent infection, toxic agents or autoimmunity rather than by this contrast."], ["Serous versus fibrinous exudate", "The exudate patterns are a separate axis and are not what this pairing illustrates."], ["Endogenous versus exogenous toxic agents", "That contrast is drawn with atherosclerosis and silica, under chronic inflammation."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 6"}, {"topic": "Acute vs chronic", "io": "Describe the various types and etiologies of inflammation", "q": "Which pair of conditions does the lecture give as examples of autoimmunity causing chronic inflammation?", "opts": [["Atherosclerosis and silicosis", "Atherosclerosis is the endogenous toxic-agent example and silica is the exogenous one."], ["Asthma and hay fever", "These are allergic conditions used to illustrate eosinophil predominance."], ["Trauma and bee sting", "These illustrate purely physical damage versus damage involving an immune response, in acute inflammation."], ["Rheumatoid arthritis and lupus", "Correct. Both are named as autoimmune causes of chronic inflammation."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 7"}, {"topic": "Biomaterials", "io": "Compare and contrast mediators of inflammation and their functions", "q": "The lecture defines a biomaterial in this context as which of the following?", "opts": [["Any tissue harvested from the patient's own body", "Autologous tissue is not what the parenthetical describes."], ["Any protein produced during the inflammatory response", "Mediators and opsonins are proteins of the response, not biomaterials."], ["Anything not human that is put into a human", "Correct. That is the working definition given, and it is why the opsonisation point generalises across implanted devices."], ["Any material that has been sterilised before implantation", "Sterility is a separate property; the example turns on the response occurring despite it."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 29"}, {"topic": "Monocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Which property distinguishes the monocyte from the neutrophil in terms of sustained phagocytic capacity?", "opts": [["The monocyte has a multilobed nucleus permitting repeated division", "The multilobed nucleus is the neutrophil's feature, and is not linked to division here."], ["The monocyte can replace its lysosomal contents", "Correct. The neutrophil cannot renew its lysosomes and dies after a few pathogens; the monocyte can replace its lysosomal contents and so keeps working."], ["The monocyte does not require opsonisation of its targets", "Opsonins enhance recognition and attachment generally rather than being required by one cell and not the other."], ["The monocyte carries T cell receptors for direct antigen binding", "T cell receptors are carried by T lymphocytes."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 24"}, {"topic": "Sequence of events", "io": "Describe the vascular changes associated with acute inflammation", "q": "In the reviewed sequence of acute inflammation, which vascular event comes FIRST?", "opts": [["Vasoconstriction", "Correct. The sequence opens with vasoconstriction, followed by vasodilation, increased vascular permeability, then haemoconcentration and stasis."], ["Vasodilation", "Vasodilation is second, following the initial vasoconstriction."], ["Increased vascular permeability", "Permeability rises third, after both vascular calibre changes."], ["Haemoconcentration and stasis", "These follow the permeability change, as fluid leaves the vessel."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 30"}, {"topic": "Acute vs chronic", "io": "Describe the various types and etiologies of inflammation", "q": "The lecture distinguishes endogenous from exogenous toxic agents in chronic inflammation. Which pairing is correct?", "opts": [["Endogenous — silica; exogenous — atherosclerosis", "These are transposed: silica is an inhaled particulate and therefore exogenous."], ["Endogenous — rheumatoid arthritis; exogenous — lupus", "Both are given as examples of autoimmunity, a separate cause from toxic agents."], ["Endogenous — atherosclerosis; exogenous — particulates such as silica", "Correct. The lecture uses atherosclerosis as the endogenous example and particulates such as silica as the exogenous one."], ["Endogenous — bacterial infection; exogenous — viral infection", "Both bacteria and viruses fall under persistent infection, which is listed separately from toxic agents."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 7"}, {"topic": "Eosinophils", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Eosinophils primarily deal with which category of infection, and predominate in which reactions?", "opts": [["Bacterial infection; predominating in suppurative inflammation", "Bacterial defence and pus formation are neutrophil functions."], ["Parasitic infection; predominating in allergic reactions such as asthma, hay fever and hives", "Correct. The lecture pairs parasitic infection with predominance in allergic reactions, naming those three examples."], ["Viral infection; predominating in cell-mediated immunity", "Virus-infected cells are handled by CD8+ cytotoxic T cells and natural killer cells."], ["Fungal infection; predominating in chronic granulomatous inflammatory processes", "Neutrophils are described as defending against fungal as well as bacterial infection."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 18"}, {"topic": "Opsonins", "io": "Compare and contrast mediators of inflammation and their functions", "q": "How do phagocytic cells recognise immunoglobulin G bound to foreign material?", "opts": [["Through the complement receptors that bind to the C3b fragment", "Complement receptors recognise C3b, which is the other opsonin, not immunoglobulin G."], ["Through T cell receptors on the phagocyte surface", "T cell receptors are carried by T lymphocytes, not phagocytes."], ["Through histamine receptors on the endothelium", "Histamine acts on the vasculature and is unrelated to opsonin recognition."], ["Through Fc receptors that recognise the Fc portion of immunoglobulin G", "Correct. Macrophages and neutrophils carry Fc receptors that bind the Fc portion of the antibody."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 29"}, {"topic": "Acute vs chronic", "io": "Describe the various types and etiologies of inflammation", "q": "Over what timescale does acute inflammation occur, and when does it begin?", "opts": [["Over days to months, beginning once macrophages arrive", "That timescale belongs to chronic inflammation, which is characterised by macrophages and lymphocytes."], ["Over weeks, beginning after antibody production starts", "Antibody-mediated reactions are a feature of chronic inflammation in this lecture."], ["Over minutes to hours only, beginning after a full 24 hours have elapsed since the injury", "The stated range is wider than this, and onset is immediate rather than delayed."], ["Over seconds, minutes, hours or days, beginning within seconds of tissue injury", "Correct. Acute inflammation begins immediately — within seconds — following injury of tissues."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 6"}, {"topic": "Vascular changes", "io": "Describe the vascular changes associated with acute inflammation", "q": "Which vascular change is directly responsible for allowing fluid and blood proteins to enter the interstitium?", "opts": [["Vasodilation of the supplying arterioles", "Vasodilation increases blood flow into the region but does not itself open the vessel wall."], ["Vasoconstriction of the draining venules", "Vasoconstriction is the transient opening event of the sequence and does not increase permeability."], ["Endothelial contraction increasing capillary permeability", "Correct. Endothelial contraction is what allows the increased permeability through which exudation occurs."], ["Haemoconcentration occurring within the capillary bed", "Haemoconcentration is a consequence of fluid loss rather than its cause."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 12"}, {"topic": "Histamine", "io": "Compare and contrast mediators of inflammation and their functions", "q": "Histamine is described as which mediator in the inflammatory response, with what effects?", "opts": [["The final mediator released during the whole response, causing fibrosis and the formation of dense scar tissue at the site", "Fibrosis is a healing outcome rather than a histamine effect, and histamine acts first rather than last."], ["The first mediator of the initial inflammatory response, causing dilation of arterioles and increased permeability of capillaries and venules", "Correct. Both the primacy and the two vascular effects are given."], ["A chemotactic factor drawing neutrophils to the site", "Chemotaxis to neutrophils and monocytes is attributed to complement components."], ["An opsonin that coats foreign material for recognition", "The opsonins named are immunoglobulin G and complement fragment C3b."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 28"}, {"topic": "Complement", "io": "Compare and contrast mediators of inflammation and their functions", "q": "What proportion of circulating serum proteins do complement components represent, and what are their listed actions?", "opts": [["10%; chemotactic to neutrophils and monocytes, with the cascade able to damage bacteria", "Correct. All three points are given together."], ["50%; primarily responsible for oncotic pressure", "No such figure or role is given for complement here."], ["1%; acting solely as opsonins", "C3b is an opsonin, but the complement components are credited with chemotaxis and bacterial damage as well."], ["25%; responsible for the formation of a clot at the site of the injury or lesion", "Clot formation is the coagulation system's role."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 28"}, {"topic": "Definition of inflammation", "io": "Describe the molecular mechanisms of inflammatory processes", "q": "Through which two routes can the inflammatory process heal an injury or implant site?", "opts": [["Vasoconstriction of the supplying arterioles, or lymphatic drainage of the exudate", "Vasoconstriction is a transient early vascular event and lymphatic drainage is not offered as a healing route here."], ["Generation of new tissue by native parenchymal cells, or formation of fibroblastic scar tissue", "Correct. The lecture gives exactly these two outcomes for the sequence of events that heals the site."], ["Phagocytosis by neutrophils alone, or opsonisation by immunoglobulin G", "Both are steps within the response rather than the tissue outcomes of healing."], ["Hemoconcentration followed by stasis, or leukocyte transmigration", "Both appear in the sequence of acute inflammation, but neither is a mode of healing."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 4"}, {"topic": "B lymphocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Which set of functions does the lecture assign to B lymphocytes?", "opts": [["Cell-mediated killing of virus-infected cells through T cell receptors", "That is the role of CD8+ cytotoxic T cells and natural killer cells."], ["Returning immune function to its normal operation after infection, and preventing autoimmunity", "That is the regulatory (suppressor) T cell."], ["Releasing histamine to increase vascular permeability", "Histamine release is attributed to basophils among the leukocytes."], ["Making antibodies against antigens, acting as antigen-presenting cells, and developing into memory B cells", "Correct. All three are listed, and the B lymphocyte is described as playing a large role in the humoral immune response and being essential to adaptive immunity."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 21"}, {"topic": "Mediator comparison", "io": "Compare and contrast mediators of inflammation and their functions", "q": "Which mediator is distinguished from histamine and serotonin by also producing pain?", "opts": [["Complement component C3b", "C3b acts as an opsonin, binding foreign material for recognition."], ["Immunoglobulin G", "Immunoglobulin G is the antibody opsonin recognised through Fc receptors."], ["Fibrinogen", "Fibrinogen forms the meshwork of the fibrinous pattern."], ["Bradykinin", "Correct. All three raise permeability, but pain is listed only for bradykinin — along with a possible increase in leukocyte chemotaxis."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 28"}, {"topic": "Acute inflammation review", "io": "Describe the cellular changes associated with acute inflammation", "q": "Recognition and attachment during phagocytosis are enhanced by the presence of what?", "opts": [["Serum factors known as opsonins", "Correct. The review names opsonins explicitly, with immunoglobulin G and complement fragment C3b as the examples."], ["Histamine released from basophils", "Histamine acts on the vasculature, causing dilation and increased permeability."], ["Fibrinogen deposited by the coagulation system", "The coagulation system traps material in a fibrous network rather than enhancing recognition."], ["Bradykinin generated from plasma proteins", "Bradykinin increases capillary permeability, causes pain, and may increase chemotaxis."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 31"}, {"topic": "Bradykinin", "io": "Compare and contrast mediators of inflammation and their functions", "q": "Which combination of effects does bradykinin produce?", "opts": [["Vasoconstriction, reduced capillary permeability, and analgesia at the site", "Each of these is the opposite of what is described."], ["Antibody production and antigen presentation", "These are lymphocyte and monocyte functions rather than mediator effects."], ["Coagulation and trapping of exudate", "That is the coagulation system's role."], ["Increased capillary permeability, pain, and possibly increased leukocyte chemotaxis", "Correct. Bradykinin is the plasma-protein mediator that adds pain to the permeability effect."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 28"}, {"topic": "Patterns", "io": "Describe the various types and etiologies of inflammation", "q": "Which description matches the serous pattern of inflammation?", "opts": [["Largely plasma with low protein content, occurring early or with mild inflammation", "Correct. Serous inflammation is largely plasma, low in protein, and occurs early or when inflammation is mild."], ["Large amounts of fibrinogen forming a thick meshwork", "That is the fibrinous pattern, removable only by fibrolytic enzymes."], ["Remnants of white blood cells, protein and tissue debris", "That describes suppurative or purulent inflammation — pus."], ["Mucus hypersecretion accompanying inflammation of a mucous membrane surface", "That is the catarrhal pattern."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 8"}, {"topic": "Monocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Beyond phagocytosis, what is the monocyte's role in the immune response?", "opts": [["Secreting histamine to open the capillary bed", "Histamine is attributed to basophils among the leukocytes."], ["Producing the fibrous network that traps exudate", "That is the coagulation system's contribution."], ["Presenting pieces of pathogens to T cells so the pathogen may be recognised again and killed", "Correct. This antigen-presenting role is what links the monocyte to later, faster responses against the same organism."], ["Restoring the immune system to its normal function once the infection has resolved", "That is the regulatory (suppressor) T cell's role."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 24"}, {"topic": "Agranulocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Which cells does the lecture group as agranulocytes (mononuclear leucocytes)?", "opts": [["Neutrophils, eosinophils and basophils", "These are the three granulocytes."], ["Erythrocytes, platelets and circulating plasma cells", "Erythrocytes and platelets are not leukocytes at all."], ["Basophils, mast cells and macrophages", "Basophils are granulocytes, and mast cells are not among the listed groups."], ["Lymphocytes (B cells and T cells), monocytes and macrophages", "Correct. These three are grouped as the agranulocytes or mononuclear leucocytes."]], "c": 3, "cite": "1. Inflammation.pptx, Slide 15"}, {"topic": "Neutrophils", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Which statement about neutrophils matches the lecture?", "opts": [["They are the predominant inflammatory cell in allergic reactions and in parasitic infection", "Eosinophils are the predominant inflammatory cells in allergic reactions."], ["They are first responders to microbial infection, and their activity and death in large numbers forms pus", "Correct. Both properties are given, and the second explains the composition of the suppurative pattern."], ["They mature in the thymus and carry T cell receptors", "That describes the T lymphocyte."], ["They present antigen to T cells after phagocytosis", "Antigen presentation after phagocytosis is described for monocytes."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 16"}, {"topic": "Acute inflammation review", "io": "Describe the cellular changes associated with acute inflammation", "q": "Digestion of foreign material by activated neutrophils and macrophages involves which four steps?", "opts": [["Vasodilation, exudation, stasis, and repair", "These are vascular events rather than the steps of cellular digestion."], ["Adhesion, transmigration, aggregation, and chemotaxis", "These are the steps that bring the cell to the site, before digestion begins."], ["Recognition, attachment, engulfment, and degradation", "Correct. The lecture lists exactly these four, and notes that recognition and attachment are enhanced when opsonins are present."], ["Opsonisation, complement fixation, lysis, and clearance", "Opsonisation enhances the process but is not one of the four named steps."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 31"}, {"topic": "Chronic inflammation", "io": "Describe the various types and etiologies of inflammation", "q": "In chronic inflammation, what roles do lymphocytes and plasma cells versus macrophages play?", "opts": [["Lymphocytes phagocytose the cellular debris at the site, while macrophages produce and secrete the antibody", "This reverses both roles — antibody production is the lymphocyte and plasma cell contribution."], ["Both populations act solely to proliferate blood vessels", "Vascular proliferation accompanies chronic inflammation but is not the function attributed to either cell type."], ["Lymphocytes and plasma cells mediate antibody production; macrophages process and deliver antigen to immunocompetent cells", "Correct. The lecture assigns antibody production to lymphocytes and plasma cells, and antigen processing and delivery to macrophages."], ["Lymphocytes release histamine; macrophages release serotonin", "Histamine is attributed to basophils, and neither mediator is assigned to these cells here."]], "c": 2, "cite": "1. Inflammation.pptx, Slide 32"}, {"topic": "T lymphocytes", "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response", "q": "Where do T lymphocytes mature, and what surface structure do they carry?", "opts": [["The thymus; T cell receptors", "Correct. The lecture makes the mnemonic explicit — matures in the Thymus, hence T lymphocyte — and names the T cell receptor."], ["The bone marrow; Fc receptors", "Fc receptors are described on phagocytic cells recognising immunoglobulin G."], ["The spleen; complement receptors", "Complement receptors are described on immune cells recognising C3b."], ["The lymph nodes; major histocompatibility complexes", "Neither the site nor that structure is given for T cell maturation here."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 22"}, {"topic": "Patterns", "io": "Describe the various types and etiologies of inflammation", "q": "Ulcerative inflammation is characterised by which change?", "opts": [["Necrosis and sloughing of surface epithelium, exposing underlying connective tissue", "Correct. That exposure of the underlying connective tissue is what defines the ulcerative pattern."], ["Formation of a membrane-like covering over intact and otherwise viable mucosa", "That is the pseudomembranous pattern, in which the necrotic layer forms a covering rather than exposing tissue beneath."], ["Damage to blood vessels occurring with other exudates", "That is the haemorrhagic pattern."], ["Coagulative necrosis of an entire limb segment", "Dry gangrene involves coagulative necrosis, a separate and more severe pattern."]], "c": 0, "cite": "1. Inflammation.pptx, Slide 10"}, {"topic": "Acute vs chronic", "io": "Describe the various types and etiologies of inflammation", "q": "Which three causes of chronic inflammation does the lecture list?", "opts": [["Trauma, thermal injury, and radiation exposure", "These are acute physical insults rather than the listed causes of chronicity."], ["Persistent infection, prolonged exposure to potentially toxic agents, and autoimmunity", "Correct. These are the three given, with rheumatoid arthritis and lupus offered as the autoimmune examples."], ["Vasodilation, increased permeability, and exudation", "These are the vascular mechanisms of acute inflammation."], ["Opsonisation of foreign material, phagocytosis by neutrophils, and enzymatic degradation", "These are steps in the cellular handling of foreign material rather than causes of chronic inflammation."]], "c": 1, "cite": "1. Inflammation.pptx, Slide 6"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
