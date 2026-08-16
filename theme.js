@@ -3724,19 +3724,24 @@ window.openPauseOverlay = function (opts) {
    Its own Forminit form, so these no longer share an inbox with the site
    issues. That separation was the point of moving.
 
-   PHOTO UPLOAD IS ON, BUT NEVER TRUSTED. Forminit's pricing page lists file
-   upload on the free plan; testing the live form on 2026-08-16 says otherwise,
-   and it fails in the worst way available -- posting a file returns 200
-   success and the stored submission simply has no file in it. Not an error.
-   Silently discarded. Left alone, a student attaches their slide, watches the
-   form say "sent", and never learns the evidence was thrown away.
+   PHOTO UPLOAD WORKS on the free plan, confirmed by uploading real images and
+   finding them in the dashboard.
 
-   So the send checks. Forminit echoes back the blocks it actually stored, and
-   if a photo went up and did not come back, the form says so and points at
-   email -- the written report is saved either way, which is the part that
-   matters. That turns a silent loss into a visible one, and it stays correct
-   whichever plan this account is on: the day uploads really work, the warning
-   simply stops appearing. Nothing to remember to switch off.
+   DO NOT TRY TO VERIFY AN UPLOAD FROM THE RESPONSE. Forminit's submit reply
+   echoes a `submission.blocks` object listing the text fields it stored, and
+   files are never in it -- not when they fail, and not when they succeed. It
+   is tempting to read that as "the photo was dropped". This code did exactly
+   that for one commit, which would have told every student their screenshot
+   had failed while it sat safely in the dashboard, and sent them off to email
+   a duplicate. The absence of a file in `blocks` means nothing at all.
+
+   Two other things that look like evidence and are not:
+   - The read API answers 403 "File upload not supported on free plan". That
+     message is wrong; uploads plainly work. It appears for any key, valid or
+     bogus, so it is about the API-read permission, not about files.
+   - An upload posted with a malformed image, or from curl, can come back
+     stored-but-not-echoed just the same. Only the dashboard tells you the
+     truth about whether a file arrived.
 
    FORMINIT'S WIRE FORMAT is not Formspree's flat keys. Every field must be
    named `fi-{blockType}-{name}` -- `fi-text-problem`, `fi-sender-email` -- and
@@ -3748,13 +3753,11 @@ window.openPauseOverlay = function (opts) {
   var UPLOADS_SUPPORTED = true;
   function acceptsUploads() { return UPLOADS_SUPPORTED; }
 
-  /* Field name for the photo, and the key Forminit echoes it back under --
-     `fi-file-slideImage` in, `blocks.slideImage` out, the same way
-     `fi-text-class` comes back as `blocks.class`. Both spellings live here
-     because the send-time check depends on them lining up. */
+  /* Field name for the photo. Goes up as `fi-file-slideImage`, the same
+     `fi-{blockType}-{name}` shape as the text fields. It does NOT come back in
+     the response -- see the note above before writing anything that expects
+     it to. */
   var FILE_FIELD = "slideImage";
-
-  var PHOTO_EMAIL = "jl3692@mynsu.nova.edu";
   var ID = "tq-modal-overlay";
 
   /* Class list comes from the homepage's own tab strip rather than a fourth
@@ -3825,9 +3828,8 @@ window.openPauseOverlay = function (opts) {
              '<div ' + note + '>A photo of the slide, if you have one — up to about 10 MB. ' +
              'Pasting the text above works too.</div>';
     }
-    return '<div ' + note + '>Got a photo of the slide? Send the report first, then email the ' +
-           'picture to <a href="mailto:' + PHOTO_EMAIL + '" style="color:#2563eb;">' + PHOTO_EMAIL +
-           '</a> with the class and question number.</div>';
+    return '<div ' + note + '>Photos cannot be attached at the moment — paste the wording of ' +
+           'the slide above instead, with the lecture and slide number.</div>';
   }
 
   function hide() { var ov = document.getElementById(ID); if (ov) ov.style.display = "none"; }
@@ -3882,25 +3884,8 @@ window.openPauseOverlay = function (opts) {
        multipart boundary itself, and setting it by hand yields a body the
        server cannot parse. */
     fetch(ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } })
-      .then(function (r) {
-        if (!r.ok) throw new Error(String(r.status));
-        // Body is only needed to see whether the photo survived; a parse
-        // failure must not turn a saved report into an error.
-        return r.json().catch(function () { return null; });
-      })
-      .then(function (body) {
-        var blocks = body && body.submission && body.submission.blocks;
-        /* Forminit echoes the blocks it stored. If a photo went up and did not
-           come back, it was dropped -- say so instead of reporting success and
-           letting the evidence disappear. Only claim this when the echo is
-           actually readable; no body means no evidence either way, and crying
-           wolf over a report that went through fine is its own failure. */
-        if (file && blocks && !blocks[FILE_FIELD]) {
-          status.style.color = "#b4690e";
-          status.textContent = "Report sent — but the photo did not go through. " +
-            "Please email it to " + PHOTO_EMAIL + " with the class and question number.";
-          return;   // deliberately left open: this needs reading, not dismissing
-        }
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); })
+      .then(function () {
         status.style.color = "#1f8f52";
         status.textContent = "Thanks — sent. I'll look at it and take it up if it holds.";
         setTimeout(hide, 2200);
@@ -3914,12 +3899,12 @@ window.openPauseOverlay = function (opts) {
           fail(status, "One report every few seconds — give it a moment and press send again. Nothing you typed is lost.");
           return;
         }
-        /* With a photo attached, that is much the likeliest cause -- too large,
-           or a plan that will not take it. Say so, rather than making someone
-           retype a report that was fine. */
+        /* A photo is much the likeliest reason a send fails -- an oversized
+           one especially. Point at the fix that keeps the writing, rather than
+           making someone retype a report that was fine. */
         fail(status, file
-          ? "Could not send with that photo — it may be too large. Send the report without it, then email the picture to " + PHOTO_EMAIL + "."
-          : "Could not send — please email " + PHOTO_EMAIL + ".");
+          ? "Could not send with that photo — it may be too large. Remove it and send the report on its own; the wording is what matters most."
+          : "Could not send — check your connection and try again in a moment. Nothing you typed is lost.");
       })
       .finally(function () { btn.disabled = false; btn.textContent = "Send report"; });
   }
