@@ -3721,24 +3721,33 @@ window.openPauseOverlay = function (opts) {
    was never lectured -- so it collects the evidence needed to actually take it
    to a professor.
 
-   Evidence is TEXT ONLY, deliberately. Formspree takes file uploads on a paid
-   plan and rejects the whole submission on the free one, so a slide-photo field
-   would have been a trap: fill it in and you lose the report you just wrote.
-   The form points at email for photos instead.
+   MOVING TO FORMINIT: paste the Forminit form URL into ENDPOINT below and both
+   things happen at once -- these reports stop sharing an inbox with the site
+   issues, and the slide-photo upload turns itself back on.
 
-   SEPARATING THE TWO INBOXES: the cleanest split is a second Formspree form,
-   which gets its own inbox, its own exports and its own notification rules.
-   Create one at formspree.io and drop its id into ENDPOINT below; that is the
-   whole change. Until then both kinds land in the one form, and every
-   submission from here is tagged `reportType: test-question` with a subject
-   line that starts "EXAM QUESTION" -- so they are still filterable, just not
-   physically separate. */
+   The upload field is tied to the endpoint on purpose (see acceptsUploads).
+   Formspree only takes files on a paid plan and rejects the whole submission on
+   the free one, so a photo field pointed at it is a trap: fill it in and you
+   lose the report you just wrote, after typing every other box. Forminit's free
+   plan does take files, so the field is safe there and only there. Tying the
+   two together means they can never drift apart.
+
+   Until the endpoint changes, evidence is text only and the form points at
+   email for photos. Both kinds of report land in the one Formspree inbox, but
+   every submission from here is tagged `reportType: test-question` with a
+   subject line starting "EXAM QUESTION", so they stay filterable meanwhile. */
 (function () {
-  /* Point this at a dedicated form id to split the inboxes. Same id as the
-     site-issue form for now, so nothing is lost while that is set up. */
+  /* >>> Paste the Forminit form URL here (looks like https://forminit.com/f/xxxxx).
+         Nothing else needs changing -- uploads and the separate inbox both
+         follow from it. <<< */
   var ENDPOINT = "https://formspree.io/f/xdaqleod";
-  var SEPARATE_FORM = false;   // flip to true once ENDPOINT is its own form
 
+  /* Which backends can actually accept a file on the plan we are on. Kept as a
+     test on the URL rather than a second flag, so there is no way to end up
+     with the field showing and an endpoint that will reject it. */
+  function acceptsUploads() { return /(^|\/\/)([^/]*\.)?forminit\.com\//i.test(ENDPOINT); }
+
+  var PHOTO_EMAIL = "jl3692@mynsu.nova.edu";
   var ID = "tq-modal-overlay";
 
   /* Class list comes from the homepage's own tab strip rather than a fourth
@@ -3795,15 +3804,29 @@ window.openPauseOverlay = function (opts) {
              'border-radius:9px;padding:10px;font:14px inherit;resize:vertical;background:#fff;color:#111827;"';
   var LABEL = 'style="display:block;font:600 12px inherit;color:#374151;margin:10px 0 4px;"';
 
+  /* Either a real upload field, or directions to email the photo -- whichever
+     the endpoint can actually honour. */
+  function evidenceHint() {
+    var note = 'style="font-size:11.5px;color:#6b7280;margin-top:3px;"';
+    if (acceptsUploads()) {
+      return '<input id="tq-file" type="file" accept="image/*" ' +
+             'style="margin-top:8px;font:12px inherit;color:#374151;max-width:100%;">' +
+             '<div ' + note + '>A photo of the slide, if you have one — up to about 10 MB. ' +
+             'Pasting the text above works too.</div>';
+    }
+    return '<div ' + note + '>Got a photo of the slide? Send the report first, then email the ' +
+           'picture to <a href="mailto:' + PHOTO_EMAIL + '" style="color:#2563eb;">' + PHOTO_EMAIL +
+           '</a> with the class and question number.</div>';
+  }
+
   function hide() { var ov = document.getElementById(ID); if (ov) ov.style.display = "none"; }
 
   function show() {
     var ov = document.getElementById(ID);
     ov.style.display = "flex";
     document.getElementById("tq-status").textContent = "";
-    ["tq-exam", "tq-qnum", "tq-qtext", "tq-problem", "tq-evidence", "tq-email"].forEach(function (id) {
-      var el = document.getElementById(id); if (el) el.value = "";
-    });
+    ["tq-exam", "tq-qnum", "tq-qtext", "tq-problem", "tq-evidence", "tq-email", "tq-file"]
+      .forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ""; });
     var c = document.getElementById("tq-class"); if (c) { c.value = ""; c.focus(); }
   }
 
@@ -3823,12 +3846,6 @@ window.openPauseOverlay = function (opts) {
     status.style.color = "#6b7280"; status.textContent = "";
 
     var exam = val("tq-exam"), qnum = val("tq-qnum");
-    /* Plain JSON, like the site-issue form above. There was a slide-photo
-       upload here briefly, which needed a multipart FormData body -- but
-       Formspree only accepts file uploads on a paid plan and rejects the whole
-       submission on the free one, so the field could only ever have lost
-       people their report. Evidence is text; photos go by email, which the
-       form says under that field. */
     var data = {
       _subject: "EXAM QUESTION ISSUE — " + cls +
                 (exam ? " " + exam : "") + (qnum ? " Q" + qnum : ""),
@@ -3843,11 +3860,25 @@ window.openPauseOverlay = function (opts) {
     if (val("tq-evidence")) data.evidence = val("tq-evidence");
     if (val("tq-email")) data.email = val("tq-email");
 
-    fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(data)
-    })
+    var fileEl = document.getElementById("tq-file");
+    var file = fileEl && fileEl.files && fileEl.files[0];
+
+    /* Multipart when there is a photo to carry, JSON otherwise. Content-Type is
+       deliberately left unset on the multipart branch -- the browser has to
+       write the boundary itself, and setting it by hand produces a body the
+       server cannot parse. */
+    var opts = { method: "POST", headers: { Accept: "application/json" } };
+    if (file) {
+      var fd = new FormData();
+      Object.keys(data).forEach(function (k) { fd.append(k, data[k]); });
+      fd.append("slideImage", file);
+      opts.body = fd;
+    } else {
+      opts.headers["Content-Type"] = "application/json";
+      opts.body = JSON.stringify(data);
+    }
+
+    fetch(ENDPOINT, opts)
       .then(function (r) { if (!r.ok) throw new Error(String(r.status)); })
       .then(function () {
         status.style.color = "#1f8f52";
@@ -3855,7 +3886,12 @@ window.openPauseOverlay = function (opts) {
         setTimeout(hide, 2200);
       })
       .catch(function () {
-        fail(status, "Could not send — please email jaxonluke22913@gmail.com.");
+        /* With a photo attached, that is much the likeliest cause -- too large,
+           or a plan that will not take it. Say so, rather than making someone
+           retype a report that was fine. */
+        fail(status, file
+          ? "Could not send with that photo — it may be too large. Send the report without it, then email the picture to " + PHOTO_EMAIL + "."
+          : "Could not send — please email " + PHOTO_EMAIL + ".");
       })
       .finally(function () { btn.disabled = false; btn.textContent = "Send report"; });
   }
@@ -3892,9 +3928,7 @@ window.openPauseOverlay = function (opts) {
       '<textarea id="tq-problem" rows="3" placeholder="What is wrong — which answer was marked correct, and why you think it is not…" ' + AREA + '></textarea>' +
       '<label ' + LABEL + '>Supporting evidence</label>' +
       '<textarea id="tq-evidence" rows="3" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
-      '<div style="font-size:11.5px;color:#6b7280;margin-top:3px;">Got a photo of the slide? Send the report first, ' +
-      'then email the picture to <a href="mailto:jl3692@mynsu.nova.edu" style="color:#2563eb;">jl3692@mynsu.nova.edu</a> ' +
-      'with the class and question number.</div>' +
+      evidenceHint() +
       '<label ' + LABEL + '>Your email (optional)</label>' +
       '<input id="tq-email" type="email" placeholder="Only if you want a reply" ' + INPUT + '>' +
       '<div id="tq-status" style="font-size:13px;margin-top:10px;min-height:18px;"></div>' +

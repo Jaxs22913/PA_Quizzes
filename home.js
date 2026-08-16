@@ -299,16 +299,25 @@ document.querySelectorAll(".semester").forEach(semester => {
           }
         }
         /* Left rail (top -> bottom): report-a-question pill -> Relax -> Group
-           Study -> Arcade -> stats card -> Continue. Each link measures the one
-           above it, so inserting a widget means adding a link to this chain --
-           CSS alone leaves it stacked on whatever was there before. */
+           Study -> Arcade -> stats card -> Continue.
+
+           The two rails mirror each other, which is what makes them read as one
+           frame around the semester card rather than two lists that happen to
+           sit beside it. The pill takes the search-input line (btnTop) opposite
+           the Guides button; Relax then starts at `offset`, level with the top
+           of the semester card, opposite the week widget. Relax used to hang
+           off the bottom of the pill instead, which left the left rail starting
+           a few pixels higher than the right and everything below it out of
+           step.
+
+           Each link below measures the one above, so inserting a widget means
+           adding a link to this chain -- CSS alone leaves it stacked on
+           whatever was there before. */
         var issueEl = document.getElementById("question-issue-row");
         if (issueEl) issueEl.style.top = btnTop + "px";
-        var issueH = issueEl ? issueEl.getBoundingClientRect().height / zoom : 0;
-        var relaxTop = btnTop + (issueH ? issueH + 14 : 0);
-        if (relaxEl) relaxEl.style.top = relaxTop + "px";
+        if (relaxEl) relaxEl.style.top = offset + "px";
         var relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
-        var groupTop = relaxTop + (relaxH ? relaxH + 18 : 0);
+        var groupTop = offset + (relaxH ? relaxH + 18 : 0);
         if (groupEl) groupEl.style.top = groupTop + "px";
         var groupH = groupEl ? groupEl.getBoundingClientRect().height / zoom : 0;
         var arcadeTop = groupTop + (groupH ? groupH + 18 : 0);
