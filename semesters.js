@@ -50,18 +50,22 @@
                 "intro-pa", "cam-nutrition", "physical-diagnosis"]
     },
 
-    /* Fall 2026 dates are REAL, taken from the Class of 2028 academic calendar
-       (~/Desktop/Calendars/Fall Semester - 2026, five monthly PDFs), so the
-       `estimated` flag is gone. Same shape as Summer I:
+    /* Fall 2026 dates are REAL — the academic calendar PDFs for the schedule
+       (~/Desktop/Calendars/Fall Semester - 2026) and the course syllabi for the
+       term itself. Same shape as Summer I:
          start        Aug 17, the Start of Semester Talk and first lectures
          lastClassDay Dec 3, the last regular course final (Microbiology #3);
                       Dec 4-11 is retests and course remediation, which is not
                       class time — the same distinction Summer I draws
          end          Dec 11, the last remediation exam, so that day still
                       reads as "in progress"
-       totalWeeks is 17 counted off the calendar (Aug 17 -> Dec 11). Summer I's
-       note applies here too: if the syllabus states a different number, trust
-       the program's over the date math. */
+
+       totalWeeks is 16, and it comes from the syllabi rather than from the
+       dates above: all five state the course as 08/17/2026 - 12/06/2026, which
+       is 112 days, exactly 16 weeks. Counting to Dec 11 instead gives 16.7 and
+       rounds to 17, which is what this said before the syllabi arrived — the
+       remediation week is not part of the program's own term. Summer I's note
+       applies here too: trust the program's number over the date math. */
     {
       id: "fall-2026",
       label: "Fall Semester – 2026",
@@ -69,7 +73,7 @@
       start: "2026-08-17",
       end: "2026-12-11",
       lastClassDay: "2026-12-03",
-      totalWeeks: 17,
+      totalWeeks: 16,
       /* Ordered by how much of the term each course actually takes up — CMS I
          is 51 lectures and eight block exams, Clin Path I is ten lectures and
          two. That puts the tab you reach for most first, the same way
