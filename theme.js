@@ -3885,7 +3885,15 @@ window.openPauseOverlay = function (opts) {
         status.textContent = "Thanks — sent. I'll look at it and take it up if it holds.";
         setTimeout(hide, 2200);
       })
-      .catch(function () {
+      .catch(function (err) {
+        /* Forminit rate-limits browser-side posts to one every 30 seconds, so
+           reporting two questions back to back trips it. That is a wait, not a
+           failure, and must not read like one -- the report is still sitting in
+           the form, and telling someone to email instead would be wrong. */
+        if (String(err.message) === "429") {
+          fail(status, "One report every 30 seconds — give it a moment and press send again. Nothing you typed is lost.");
+          return;
+        }
         /* With a photo attached, that is much the likeliest cause -- too large,
            or a plan that will not take it. Say so, rather than making someone
            retype a report that was fine. */
