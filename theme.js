@@ -3805,19 +3805,23 @@ window.openPauseOverlay = function (opts) {
     return html + '<option>Other</option></select>';
   }
 
+  /* 16px on the inputs is not just legibility -- iOS Safari zooms the whole
+     page in when a focused field is under 16px, and this form is mostly fields,
+     so the old 14px meant the layout lurched on the first tap. */
   var INPUT = 'style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;' +
-              'border-radius:9px;padding:9px 10px;font:14px inherit;background:#fff;color:#111827;"';
+              'border-radius:10px;padding:11px 12px;font-size:16px;font-family:inherit;background:#fff;color:#111827;"';
   var AREA = 'style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;' +
-             'border-radius:9px;padding:10px;font:14px inherit;resize:vertical;background:#fff;color:#111827;"';
-  var LABEL = 'style="display:block;font:600 12px inherit;color:#374151;margin:10px 0 4px;"';
+             'border-radius:10px;padding:12px;font-size:16px;font-family:inherit;line-height:1.5;resize:vertical;' +
+             'background:#fff;color:#111827;"';
+  var LABEL = 'style="display:block;font-weight:600;font-size:13.5px;font-family:inherit;color:#374151;margin:14px 0 5px;"';
 
   /* Either a real upload field, or directions to email the photo -- whichever
      the endpoint can actually honour. */
   function evidenceHint() {
-    var note = 'style="font-size:11.5px;color:#6b7280;margin-top:3px;"';
+    var note = 'style="font-size:13px;line-height:1.5;color:#6b7280;margin-top:5px;"';
     if (acceptsUploads()) {
       return '<input id="tq-file" type="file" accept="image/*" ' +
-             'style="margin-top:8px;font:12px inherit;color:#374151;max-width:100%;">' +
+             'style="margin-top:10px;font-size:14px;font-family:inherit;color:#374151;max-width:100%;">' +
              '<div ' + note + '>A photo of the slide, if you have one — up to about 10 MB. ' +
              'Pasting the text above works too.</div>';
     }
@@ -3930,35 +3934,35 @@ window.openPauseOverlay = function (opts) {
       "align-items:center;justify-content:center;z-index:6000;padding:16px;";
     ov.innerHTML =
       '<div role="dialog" aria-modal="true" aria-label="Report a problem with an exam question" ' +
-      'style="background:#fff;color:#111827;max-width:520px;width:100%;max-height:calc(100dvh - 32px);' +
-      'overflow:auto;border-radius:14px;padding:22px 22px 18px;box-shadow:0 12px 40px rgba(0,0,0,.35);' +
+      'style="background:#fff;color:#111827;max-width:660px;width:100%;max-height:calc(100dvh - 28px);' +
+      'overflow:auto;border-radius:16px;padding:28px 28px 22px;box-shadow:0 12px 40px rgba(0,0,0,.35);' +
       'font-family:system-ui,-apple-system,Segoe UI,sans-serif;">' +
-      '<h3 style="margin:0 0 4px;font-size:17px;">Issue with a test question</h3>' +
-      '<p style="margin:0 0 4px;font-size:13px;color:#6b7280;">For a question on a <b>real class exam</b> — a key you ' +
-      'think is wrong, wording that reads two ways, or something that was never lectured. The more of this you ' +
-      'fill in, the easier it is to take to the professor.</p>' +
-      '<p style="margin:0 0 4px;font-size:12.5px;color:#9ca3af;">Not for quizzes on this site — if one of those has a ' +
-      'mistake in it, use <b>Report a mistake</b> at the bottom of the quiz instead.</p>' +
+      '<h3 style="margin:0 0 7px;font-size:23px;line-height:1.25;">Issue with a test question</h3>' +
+      '<p style="margin:0 0 6px;font-size:15px;line-height:1.55;color:#6b7280;">For a question on a ' +
+      '<b>real class exam</b> — a key you think is wrong, wording that reads two ways, or something that was ' +
+      'never lectured. The more of this you fill in, the easier it is to take to the professor.</p>' +
+      '<p style="margin:0 0 4px;font-size:14px;line-height:1.5;color:#9ca3af;">Not for quizzes on this site — ' +
+      'if one of those has a mistake in it, use <b>Report a mistake</b> at the bottom of the quiz instead.</p>' +
       '<label ' + LABEL + '>Class</label>' + classField() +
-      '<div style="display:flex;gap:8px;">' +
+      '<div style="display:flex;gap:12px;">' +
         '<div style="flex:1;"><label ' + LABEL + '>Exam</label>' +
         '<input id="tq-exam" type="text" placeholder="e.g. Exam 3" ' + INPUT + '></div>' +
         '<div style="flex:1;"><label ' + LABEL + '>Question number</label>' +
         '<input id="tq-qnum" type="text" placeholder="e.g. 14" ' + INPUT + '></div>' +
       '</div>' +
       '<label ' + LABEL + '>The question, as worded</label>' +
-      '<textarea id="tq-qtext" rows="3" placeholder="Type the question as it appeared, and the answer choices if you have them…" ' + AREA + '></textarea>' +
+      '<textarea id="tq-qtext" rows="4" placeholder="Type the question as it appeared, and the answer choices if you have them…" ' + AREA + '></textarea>' +
       '<label ' + LABEL + '>What is wrong with it</label>' +
-      '<textarea id="tq-problem" rows="3" placeholder="What is wrong — which answer was marked correct, and why you think it is not…" ' + AREA + '></textarea>' +
+      '<textarea id="tq-problem" rows="4" placeholder="What is wrong — which answer was marked correct, and why you think it is not…" ' + AREA + '></textarea>' +
       '<label ' + LABEL + '>Supporting evidence</label>' +
-      '<textarea id="tq-evidence" rows="3" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
+      '<textarea id="tq-evidence" rows="4" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
       evidenceHint() +
       '<label ' + LABEL + '>Your email (optional)</label>' +
       '<input id="tq-email" type="email" placeholder="Only if you want a reply" ' + INPUT + '>' +
-      '<div id="tq-status" style="font-size:13px;margin-top:10px;min-height:18px;"></div>' +
-      '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">' +
-      '<button id="tq-cancel" style="border:none;background:#e5e7eb;color:#111827;border-radius:9px;padding:9px 16px;font:600 14px inherit;cursor:pointer;">Cancel</button>' +
-      '<button id="tq-send" style="border:none;background:#2563eb;color:#fff;border-radius:9px;padding:9px 18px;font:600 14px inherit;cursor:pointer;">Send report</button>' +
+      '<div id="tq-status" style="font-size:14.5px;line-height:1.5;margin-top:14px;min-height:20px;"></div>' +
+      '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:10px;">' +
+      '<button id="tq-cancel" style="border:none;background:#e5e7eb;color:#111827;border-radius:10px;padding:12px 20px;font-weight:600;font-size:15.5px;font-family:inherit;cursor:pointer;">Cancel</button>' +
+      '<button id="tq-send" style="border:none;background:#2563eb;color:#fff;border-radius:10px;padding:12px 24px;font-weight:600;font-size:15.5px;font-family:inherit;cursor:pointer;">Send report</button>' +
       '</div></div>';
     document.body.appendChild(ov);
     ov.addEventListener("click", function (e) { if (e.target === ov) hide(); });
