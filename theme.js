@@ -3724,20 +3724,19 @@ window.openPauseOverlay = function (opts) {
    Its own Forminit form, so these no longer share an inbox with the site
    issues. That separation was the point of moving.
 
-   NO PHOTO UPLOAD, and it is not an oversight. Forminit's pricing page lists
-   file upload on the free plan. It does not work, and it fails in the worst
-   way available: posting a file returns 200 success, and the stored submission
-   simply has no file in it. Not an error -- silently discarded. A student
-   would attach their slide, watch the form say "sent", and never know the
-   evidence was thrown away.
+   PHOTO UPLOAD IS ON, BUT NEVER TRUSTED. Forminit's pricing page lists file
+   upload on the free plan; testing the live form on 2026-08-16 says otherwise,
+   and it fails in the worst way available -- posting a file returns 200
+   success and the stored submission simply has no file in it. Not an error.
+   Silently discarded. Left alone, a student attaches their slide, watches the
+   form say "sent", and never learns the evidence was thrown away.
 
-   Tested directly against the live form on 2026-08-16, twice. Formspree
-   rejects outright on its free plan, which is at least honest. Either way
-   evidence is text, and the form points at email for pictures.
-
-   UPLOADS_SUPPORTED below is the single switch if a plan ever changes. Do not
-   flip it on the strength of a pricing page -- send a real submission with a
-   file and confirm the file comes back in the stored blocks.
+   So the send checks. Forminit echoes back the blocks it actually stored, and
+   if a photo went up and did not come back, the form says so and points at
+   email -- the written report is saved either way, which is the part that
+   matters. That turns a silent loss into a visible one, and it stays correct
+   whichever plan this account is on: the day uploads really work, the warning
+   simply stops appearing. Nothing to remember to switch off.
 
    FORMINIT'S WIRE FORMAT is not Formspree's flat keys. Every field must be
    named `fi-{blockType}-{name}` -- `fi-text-problem`, `fi-sender-email` -- and
@@ -3746,10 +3745,14 @@ window.openPauseOverlay = function (opts) {
 (function () {
   var ENDPOINT = "https://forminit.com/f/q1jz9v74p78";
 
-  /* Free plan rejects files (see above). Verified against the live API, not
-     the pricing page. */
-  var UPLOADS_SUPPORTED = false;
+  var UPLOADS_SUPPORTED = true;
   function acceptsUploads() { return UPLOADS_SUPPORTED; }
+
+  /* Field name for the photo, and the key Forminit echoes it back under --
+     `fi-file-slideImage` in, `blocks.slideImage` out, the same way
+     `fi-text-class` comes back as `blocks.class`. Both spellings live here
+     because the send-time check depends on them lining up. */
+  var FILE_FIELD = "slideImage";
 
   var PHOTO_EMAIL = "jl3692@mynsu.nova.edu";
   var ID = "tq-modal-overlay";
@@ -3869,14 +3872,31 @@ window.openPauseOverlay = function (opts) {
 
     var fileEl = document.getElementById("tq-file");
     var file = fileEl && fileEl.files && fileEl.files[0];
-    if (file) fd.append("fi-file-slideImage", file);
+    if (file) fd.append("fi-file-" + FILE_FIELD, file);
 
     /* Content-Type is deliberately unset: the browser has to write the
        multipart boundary itself, and setting it by hand yields a body the
        server cannot parse. */
     fetch(ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } })
-      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); })
-      .then(function () {
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        // Body is only needed to see whether the photo survived; a parse
+        // failure must not turn a saved report into an error.
+        return r.json().catch(function () { return null; });
+      })
+      .then(function (body) {
+        var blocks = body && body.submission && body.submission.blocks;
+        /* Forminit echoes the blocks it stored. If a photo went up and did not
+           come back, it was dropped -- say so instead of reporting success and
+           letting the evidence disappear. Only claim this when the echo is
+           actually readable; no body means no evidence either way, and crying
+           wolf over a report that went through fine is its own failure. */
+        if (file && blocks && !blocks[FILE_FIELD]) {
+          status.style.color = "#b4690e";
+          status.textContent = "Report sent — but the photo did not go through. " +
+            "Please email it to " + PHOTO_EMAIL + " with the class and question number.";
+          return;   // deliberately left open: this needs reading, not dismissing
+        }
         status.style.color = "#1f8f52";
         status.textContent = "Thanks — sent. I'll look at it and take it up if it holds.";
         setTimeout(hide, 2200);
