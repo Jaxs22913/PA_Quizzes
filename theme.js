@@ -3893,7 +3893,7 @@ window.openPauseOverlay = function (opts) {
       '<label ' + LABEL + '>Supporting evidence</label>' +
       '<textarea id="tq-evidence" rows="3" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
       '<div style="font-size:11.5px;color:#6b7280;margin-top:3px;">Got a photo of the slide? Send the report first, ' +
-      'then email the picture to <a href="mailto:jaxonluke22913@gmail.com" style="color:#2563eb;">jaxonluke22913@gmail.com</a> ' +
+      'then email the picture to <a href="mailto:jl3692@mynsu.nova.edu" style="color:#2563eb;">jl3692@mynsu.nova.edu</a> ' +
       'with the class and question number.</div>' +
       '<label ' + LABEL + '>Your email (optional)</label>' +
       '<input id="tq-email" type="email" placeholder="Only if you want a reply" ' + INPUT + '>' +
