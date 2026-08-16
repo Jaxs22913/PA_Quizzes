@@ -3725,13 +3725,19 @@ window.openPauseOverlay = function (opts) {
    issues. That separation was the point of moving.
 
    NO PHOTO UPLOAD, and it is not an oversight. Forminit's pricing page lists
-   file upload on the free plan, but the API disagrees -- it answers 403
-   PERMISSION_DENIED, "File upload not supported on free plan". Formspree is
-   the same. So a photo field here would be the trap it always was: you fill in
-   every box, attach a slide, and lose the lot on submit. Evidence is text, and
-   the form points at email for pictures. UPLOADS_SUPPORTED below is the single
-   switch if a plan ever changes -- confirm with a real submission before
-   flipping it, since the pricing page cannot be trusted on this.
+   file upload on the free plan. It does not work, and it fails in the worst
+   way available: posting a file returns 200 success, and the stored submission
+   simply has no file in it. Not an error -- silently discarded. A student
+   would attach their slide, watch the form say "sent", and never know the
+   evidence was thrown away.
+
+   Tested directly against the live form on 2026-08-16, twice. Formspree
+   rejects outright on its free plan, which is at least honest. Either way
+   evidence is text, and the form points at email for pictures.
+
+   UPLOADS_SUPPORTED below is the single switch if a plan ever changes. Do not
+   flip it on the strength of a pricing page -- send a real submission with a
+   file and confirm the file comes back in the stored blocks.
 
    FORMINIT'S WIRE FORMAT is not Formspree's flat keys. Every field must be
    named `fi-{blockType}-{name}` -- `fi-text-problem`, `fi-sender-email` -- and
