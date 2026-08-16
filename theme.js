@@ -3744,7 +3744,7 @@ window.openPauseOverlay = function (opts) {
      truth about whether a file arrived.
 
    FORMINIT'S WIRE FORMAT is not Formspree's flat keys. Every field must be
-   named `fi-{blockType}-{name}` -- `fi-text-problem`, `fi-sender-email` -- and
+   named `fi-{blockType}-{name}` -- `fi-text-problem`, `fi-text-class` -- and
    a body of plain names is rejected outright as EMPTY_SUBMISSION. There is no
    `_subject`; `fi-text-summary` carries the one-line headline instead. */
 (function () {
@@ -3838,7 +3838,7 @@ window.openPauseOverlay = function (opts) {
     var ov = document.getElementById(ID);
     ov.style.display = "flex";
     document.getElementById("tq-status").textContent = "";
-    ["tq-exam", "tq-qnum", "tq-qtext", "tq-problem", "tq-evidence", "tq-email", "tq-file"]
+    ["tq-exam", "tq-qnum", "tq-qtext", "tq-problem", "tq-evidence", "tq-file"]
       .forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ""; });
     var c = document.getElementById("tq-class"); if (c) { c.value = ""; c.focus(); }
   }
@@ -3873,8 +3873,10 @@ window.openPauseOverlay = function (opts) {
     if (qnum) fd.append("fi-text-questionNumber", qnum);
     if (val("tq-qtext")) fd.append("fi-text-questionWording", val("tq-qtext"));
     if (val("tq-evidence")) fd.append("fi-text-evidence", val("tq-evidence"));
-    // sender is Forminit's own block for who submitted it, so replies work
-    if (val("tq-email")) fd.append("fi-sender-email", val("tq-email"));
+    /* No sender block: reports are anonymous by design. Nobody replies to
+       these individually, so asking for an address only implied otherwise --
+       and a question is either wrong on the evidence or it is not, whoever
+       raised it. */
 
     var fileEl = document.getElementById("tq-file");
     var file = fileEl && fileEl.files && fileEl.files[0];
@@ -3942,8 +3944,6 @@ window.openPauseOverlay = function (opts) {
       '<label ' + LABEL + '>Supporting evidence</label>' +
       '<textarea id="tq-evidence" rows="4" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
       evidenceHint() +
-      '<label ' + LABEL + '>Your email (optional)</label>' +
-      '<input id="tq-email" type="email" placeholder="Only if you want a reply" ' + INPUT + '>' +
       '<div id="tq-status" style="font-size:14.5px;line-height:1.5;margin-top:14px;min-height:20px;"></div>' +
       '<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:10px;">' +
       '<button id="tq-cancel" style="border:none;background:#e5e7eb;color:#111827;border-radius:10px;padding:12px 20px;font-weight:600;font-size:15.5px;font-family:inherit;cursor:pointer;">Cancel</button>' +
