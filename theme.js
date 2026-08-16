@@ -3721,6 +3721,11 @@ window.openPauseOverlay = function (opts) {
    was never lectured -- so it collects the evidence needed to actually take it
    to a professor.
 
+   Evidence is TEXT ONLY, deliberately. Formspree takes file uploads on a paid
+   plan and rejects the whole submission on the free one, so a slide-photo field
+   would have been a trap: fill it in and you lose the report you just wrote.
+   The form points at email for photos instead.
+
    SEPARATING THE TWO INBOXES: the cleanest split is a second Formspree form,
    which gets its own inbox, its own exports and its own notification rules.
    Create one at formspree.io and drop its id into ENDPOINT below; that is the
@@ -3799,7 +3804,6 @@ window.openPauseOverlay = function (opts) {
     ["tq-exam", "tq-qnum", "tq-qtext", "tq-problem", "tq-evidence", "tq-email"].forEach(function (id) {
       var el = document.getElementById(id); if (el) el.value = "";
     });
-    var f = document.getElementById("tq-file"); if (f) f.value = "";
     var c = document.getElementById("tq-class"); if (c) { c.value = ""; c.focus(); }
   }
 
@@ -3819,28 +3823,31 @@ window.openPauseOverlay = function (opts) {
     status.style.color = "#6b7280"; status.textContent = "";
 
     var exam = val("tq-exam"), qnum = val("tq-qnum");
-    /* FormData rather than JSON because of the screenshot: a slide photo is
-       the whole point of the evidence field, and a file can only ride along on
-       a multipart body. Content-Type is deliberately NOT set -- the browser
-       has to add the multipart boundary itself. */
-    var fd = new FormData();
-    fd.append("_subject", "EXAM QUESTION ISSUE — " + cls +
-              (exam ? " " + exam : "") + (qnum ? " Q" + qnum : ""));
-    fd.append("reportType", "test-question");
-    fd.append("class", cls);
-    if (exam) fd.append("exam", exam);
-    if (qnum) fd.append("questionNumber", qnum);
-    if (val("tq-qtext")) fd.append("questionWording", val("tq-qtext"));
-    fd.append("problem", problem);
-    if (val("tq-evidence")) fd.append("evidence", val("tq-evidence"));
-    if (val("tq-email")) fd.append("email", val("tq-email"));
-    fd.append("page", location.href);
+    /* Plain JSON, like the site-issue form above. There was a slide-photo
+       upload here briefly, which needed a multipart FormData body -- but
+       Formspree only accepts file uploads on a paid plan and rejects the whole
+       submission on the free one, so the field could only ever have lost
+       people their report. Evidence is text; photos go by email, which the
+       form says under that field. */
+    var data = {
+      _subject: "EXAM QUESTION ISSUE — " + cls +
+                (exam ? " " + exam : "") + (qnum ? " Q" + qnum : ""),
+      reportType: "test-question",
+      "class": cls,
+      problem: problem,
+      page: location.href
+    };
+    if (exam) data.exam = exam;
+    if (qnum) data.questionNumber = qnum;
+    if (val("tq-qtext")) data.questionWording = val("tq-qtext");
+    if (val("tq-evidence")) data.evidence = val("tq-evidence");
+    if (val("tq-email")) data.email = val("tq-email");
 
-    var file = document.getElementById("tq-file");
-    var hasFile = file && file.files && file.files[0];
-    if (hasFile) fd.append("slideImage", file.files[0]);
-
-    fetch(ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } })
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data)
+    })
       .then(function (r) { if (!r.ok) throw new Error(String(r.status)); })
       .then(function () {
         status.style.color = "#1f8f52";
@@ -3848,13 +3855,7 @@ window.openPauseOverlay = function (opts) {
         setTimeout(hide, 2200);
       })
       .catch(function () {
-        /* An attached image is the likeliest reason a send fails: Formspree
-           only accepts file uploads on a paid plan, and rejects the whole
-           submission on the free one. Say so specifically, rather than making
-           someone retype a report that was fine. */
-        fail(status, hasFile
-          ? "Could not send with an image attached. Remove it and paste the slide text instead, or email jaxonluke22913@gmail.com."
-          : "Could not send — please email jaxonluke22913@gmail.com.");
+        fail(status, "Could not send — please email jaxonluke22913@gmail.com.");
       })
       .finally(function () { btn.disabled = false; btn.textContent = "Send report"; });
   }
@@ -3891,8 +3892,9 @@ window.openPauseOverlay = function (opts) {
       '<textarea id="tq-problem" rows="3" placeholder="What is wrong — which answer was marked correct, and why you think it is not…" ' + AREA + '></textarea>' +
       '<label ' + LABEL + '>Supporting evidence</label>' +
       '<textarea id="tq-evidence" rows="3" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
-      '<input id="tq-file" type="file" accept="image/*" style="margin-top:8px;font:12px inherit;color:#374151;max-width:100%;">' +
-      '<div style="font-size:11.5px;color:#6b7280;margin-top:3px;">A photo of the slide, if you have one. Pasting the text above always works.</div>' +
+      '<div style="font-size:11.5px;color:#6b7280;margin-top:3px;">Got a photo of the slide? Send the report first, ' +
+      'then email the picture to <a href="mailto:jaxonluke22913@gmail.com" style="color:#2563eb;">jaxonluke22913@gmail.com</a> ' +
+      'with the class and question number.</div>' +
       '<label ' + LABEL + '>Your email (optional)</label>' +
       '<input id="tq-email" type="email" placeholder="Only if you want a reply" ' + INPUT + '>' +
       '<div id="tq-status" style="font-size:13px;margin-top:10px;min-height:18px;"></div>' +
