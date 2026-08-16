@@ -177,6 +177,9 @@
         align-items: stretch;
       }
       .page > .search-wrap { order: 30; }
+      /* Every direct child of .page needs an explicit order at this width or it
+         floats above the header. Sits just under the search row, above Relax. */
+      .page > #question-issue-row { order: 32; }
       .page > #relax-cta-row { order: 33; }
       .page > #group-cta-row { order: 34; }
       .page > #stats-widget { order: 35; }
@@ -538,6 +541,32 @@
        before the >=1180px block, so that block's `margin: 0` wins on desktop). */
     .relax-cta-row, .group-cta-row { text-align: center; margin: 14px 0 0; }
     .guides-btn-floating { display: none; }
+
+    /* Report an exam question. A pill, not one of the white rail cards -- it is
+       something you need a few times a semester, so it should be findable
+       without competing with Relax/Group Study/Arcade for attention. Amber
+       because it is a flag being raised, and amber is already the site's
+       "attention, not alarm" hue; crimson would read as an error on the page
+       itself. */
+    .question-issue-row { text-align: center; margin: 14px 0 0; }
+    .question-issue-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      font: 600 13px inherit; cursor: pointer;
+      padding: 7px 14px; border-radius: var(--r-pill, 999px);
+      color: var(--a-amber); background: var(--a-amber-soft);
+      border: 1px solid color-mix(in oklab, var(--a-amber) 26%, transparent);
+      transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    }
+    .question-issue-pill svg { width: 15px; height: 15px; flex: 0 0 auto; }
+    .question-issue-pill:hover {
+      background: color-mix(in oklab, var(--a-amber) 14%, var(--card));
+      border-color: var(--a-amber);
+      transform: translateY(-1px);
+    }
+    .question-issue-pill:active { transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .question-issue-pill, .question-issue-pill:hover { transition: none; transform: none; }
+    }
     /* Arcade lives inline beside the search box until the rail exists. */
     .arcade-cta-row { display: none; }
 
@@ -571,7 +600,7 @@
          #arcade-cta-row -> stats card -> #continue-widget. Exact tops set by
          alignSidebars() (dynamic heights). */
       .arcade-cta-row { display: block; }
-      .relax-cta-row, .group-cta-row, .arcade-cta-row {
+      .relax-cta-row, .group-cta-row, .arcade-cta-row, .question-issue-row {
         position: absolute;
         right: calc(100% + 24px);
         width: 260px;

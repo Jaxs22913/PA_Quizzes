@@ -298,10 +298,17 @@ document.querySelectorAll(".semester").forEach(semester => {
             guidesFloatBtn.style.top = btnTop + "px";
           }
         }
-        // Left rail (top -> bottom): Relax -> Group Study -> Arcade -> stats card -> Continue.
-        if (relaxEl) relaxEl.style.top = btnTop + "px";
+        /* Left rail (top -> bottom): report-a-question pill -> Relax -> Group
+           Study -> Arcade -> stats card -> Continue. Each link measures the one
+           above it, so inserting a widget means adding a link to this chain --
+           CSS alone leaves it stacked on whatever was there before. */
+        var issueEl = document.getElementById("question-issue-row");
+        if (issueEl) issueEl.style.top = btnTop + "px";
+        var issueH = issueEl ? issueEl.getBoundingClientRect().height / zoom : 0;
+        var relaxTop = btnTop + (issueH ? issueH + 14 : 0);
+        if (relaxEl) relaxEl.style.top = relaxTop + "px";
         var relaxH = relaxEl ? relaxEl.getBoundingClientRect().height / zoom : 0;
-        var groupTop = btnTop + (relaxH ? relaxH + 18 : 0);
+        var groupTop = relaxTop + (relaxH ? relaxH + 18 : 0);
         if (groupEl) groupEl.style.top = groupTop + "px";
         var groupH = groupEl ? groupEl.getBoundingClientRect().height / zoom : 0;
         var arcadeTop = groupTop + (groupH ? groupH + 18 : 0);

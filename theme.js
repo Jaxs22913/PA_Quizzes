@@ -3713,6 +3713,213 @@ window.openPauseOverlay = function (opts) {
   };
 })();
 
+/* ---- Report a problem with an EXAM question -> Formspree (2026-08-15) ----
+
+   Separate from report-a-mistake above, which is for the site: a broken link,
+   a typo, a page that will not load. This one is for the real exam -- a key
+   the class thinks is wrong, wording that reads two ways, something asked that
+   was never lectured -- so it collects the evidence needed to actually take it
+   to a professor.
+
+   SEPARATING THE TWO INBOXES: the cleanest split is a second Formspree form,
+   which gets its own inbox, its own exports and its own notification rules.
+   Create one at formspree.io and drop its id into ENDPOINT below; that is the
+   whole change. Until then both kinds land in the one form, and every
+   submission from here is tagged `reportType: test-question` with a subject
+   line that starts "EXAM QUESTION" -- so they are still filterable, just not
+   physically separate. */
+(function () {
+  /* Point this at a dedicated form id to split the inboxes. Same id as the
+     site-issue form for now, so nothing is lost while that is set up. */
+  var ENDPOINT = "https://formspree.io/f/xdaqleod";
+  var SEPARATE_FORM = false;   // flip to true once ENDPOINT is its own form
+
+  var ID = "tq-modal-overlay";
+
+  /* Class list comes from the homepage's own tab strip rather than a fourth
+     hand-kept copy of the course names (index.html's tabs, calendar.html's
+     COURSE_LABEL and semesters.js already each hold one). The student then
+     picks from exactly the labels they see on the page. Off the homepage there
+     are no tabs, so the field falls back to free text. */
+  function classOptions() {
+    var out = [];
+    document.querySelectorAll(".semester").forEach(function (block) {
+      var semLabel = "";
+      var reg = window.Semesters;
+      var sem = reg && reg.byId ? reg.byId(block.dataset.semester) : null;
+      if (sem) semLabel = sem.label;
+      block.querySelectorAll(".tab-btn[data-tab]").forEach(function (btn) {
+        /* Tab labels carry invisible wrapping hints -- soft hyphens in
+           "Micro­biology", a zero-width space in "CAM/​Nutrition". They are
+           right in a tab and wrong in an email subject line, so drop both. */
+        var name = btn.textContent.replace(/[­​]/g, "").trim();
+        if (name) out.push({ group: semLabel, name: name });
+      });
+    });
+    return out;
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function classField() {
+    var opts = classOptions();
+    if (!opts.length) {
+      return '<input id="tq-class" type="text" placeholder="Which class?" ' + INPUT + '>';
+    }
+    var groups = [], seen = {};
+    opts.forEach(function (o) {
+      if (!seen[o.group]) { seen[o.group] = []; groups.push(o.group); }
+      seen[o.group].push(o.name);
+    });
+    var html = '<select id="tq-class" ' + INPUT + '><option value="">Which class?</option>';
+    groups.forEach(function (g) {
+      html += g ? '<optgroup label="' + esc(g) + '">' : "";
+      seen[g].forEach(function (n) { html += '<option>' + esc(n) + '</option>'; });
+      html += g ? "</optgroup>" : "";
+    });
+    return html + '<option>Other</option></select>';
+  }
+
+  var INPUT = 'style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;' +
+              'border-radius:9px;padding:9px 10px;font:14px inherit;background:#fff;color:#111827;"';
+  var AREA = 'style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;' +
+             'border-radius:9px;padding:10px;font:14px inherit;resize:vertical;background:#fff;color:#111827;"';
+  var LABEL = 'style="display:block;font:600 12px inherit;color:#374151;margin:10px 0 4px;"';
+
+  function hide() { var ov = document.getElementById(ID); if (ov) ov.style.display = "none"; }
+
+  function show() {
+    var ov = document.getElementById(ID);
+    ov.style.display = "flex";
+    document.getElementById("tq-status").textContent = "";
+    ["tq-exam", "tq-qnum", "tq-qtext", "tq-problem", "tq-evidence", "tq-email"].forEach(function (id) {
+      var el = document.getElementById(id); if (el) el.value = "";
+    });
+    var f = document.getElementById("tq-file"); if (f) f.value = "";
+    var c = document.getElementById("tq-class"); if (c) { c.value = ""; c.focus(); }
+  }
+
+  function send() {
+    var val = function (id) {
+      var el = document.getElementById(id);
+      return el ? (el.value || "").trim() : "";
+    };
+    var status = document.getElementById("tq-status");
+    var cls = val("tq-class"), problem = val("tq-problem");
+
+    if (!cls) { fail(status, "Please pick which class the exam is from."); return; }
+    if (!problem) { fail(status, "Please say what is wrong with the question."); return; }
+
+    var btn = document.getElementById("tq-send");
+    btn.disabled = true; btn.textContent = "Sending…";
+    status.style.color = "#6b7280"; status.textContent = "";
+
+    var exam = val("tq-exam"), qnum = val("tq-qnum");
+    /* FormData rather than JSON because of the screenshot: a slide photo is
+       the whole point of the evidence field, and a file can only ride along on
+       a multipart body. Content-Type is deliberately NOT set -- the browser
+       has to add the multipart boundary itself. */
+    var fd = new FormData();
+    fd.append("_subject", "EXAM QUESTION ISSUE — " + cls +
+              (exam ? " " + exam : "") + (qnum ? " Q" + qnum : ""));
+    fd.append("reportType", "test-question");
+    fd.append("class", cls);
+    if (exam) fd.append("exam", exam);
+    if (qnum) fd.append("questionNumber", qnum);
+    if (val("tq-qtext")) fd.append("questionWording", val("tq-qtext"));
+    fd.append("problem", problem);
+    if (val("tq-evidence")) fd.append("evidence", val("tq-evidence"));
+    if (val("tq-email")) fd.append("email", val("tq-email"));
+    fd.append("page", location.href);
+
+    var file = document.getElementById("tq-file");
+    var hasFile = file && file.files && file.files[0];
+    if (hasFile) fd.append("slideImage", file.files[0]);
+
+    fetch(ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); })
+      .then(function () {
+        status.style.color = "#1f8f52";
+        status.textContent = "Thanks — sent. I'll look at it and take it up if it holds.";
+        setTimeout(hide, 2200);
+      })
+      .catch(function () {
+        /* An attached image is the likeliest reason a send fails: Formspree
+           only accepts file uploads on a paid plan, and rejects the whole
+           submission on the free one. Say so specifically, rather than making
+           someone retype a report that was fine. */
+        fail(status, hasFile
+          ? "Could not send with an image attached. Remove it and paste the slide text instead, or email jaxonluke22913@gmail.com."
+          : "Could not send — please email jaxonluke22913@gmail.com.");
+      })
+      .finally(function () { btn.disabled = false; btn.textContent = "Send report"; });
+  }
+
+  function fail(status, msg) { status.style.color = "#c93a3a"; status.textContent = msg; }
+
+  window.reportTestQuestion = function () {
+    if (document.getElementById(ID)) { show(); return; }
+    var ov = document.createElement("div");
+    ov.id = ID;
+    ov.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;" +
+      "align-items:center;justify-content:center;z-index:6000;padding:16px;";
+    ov.innerHTML =
+      '<div role="dialog" aria-modal="true" aria-label="Report a problem with an exam question" ' +
+      'style="background:#fff;color:#111827;max-width:520px;width:100%;max-height:calc(100dvh - 32px);' +
+      'overflow:auto;border-radius:14px;padding:22px 22px 18px;box-shadow:0 12px 40px rgba(0,0,0,.35);' +
+      'font-family:system-ui,-apple-system,Segoe UI,sans-serif;">' +
+      '<h3 style="margin:0 0 4px;font-size:17px;">Issue with a test question</h3>' +
+      '<p style="margin:0 0 4px;font-size:13px;color:#6b7280;">For a question on a <b>real class exam</b> — a key you ' +
+      'think is wrong, wording that reads two ways, or something that was never lectured. The more of this you ' +
+      'fill in, the easier it is to take to the professor.</p>' +
+      '<p style="margin:0 0 4px;font-size:12.5px;color:#9ca3af;">Not for quizzes on this site — if one of those has a ' +
+      'mistake in it, use <b>Report a mistake</b> at the bottom of the quiz instead.</p>' +
+      '<label ' + LABEL + '>Class</label>' + classField() +
+      '<div style="display:flex;gap:8px;">' +
+        '<div style="flex:1;"><label ' + LABEL + '>Exam</label>' +
+        '<input id="tq-exam" type="text" placeholder="e.g. Exam 3" ' + INPUT + '></div>' +
+        '<div style="flex:1;"><label ' + LABEL + '>Question number</label>' +
+        '<input id="tq-qnum" type="text" placeholder="e.g. 14" ' + INPUT + '></div>' +
+      '</div>' +
+      '<label ' + LABEL + '>The question, as worded</label>' +
+      '<textarea id="tq-qtext" rows="3" placeholder="Type the question as it appeared, and the answer choices if you have them…" ' + AREA + '></textarea>' +
+      '<label ' + LABEL + '>What is wrong with it</label>' +
+      '<textarea id="tq-problem" rows="3" placeholder="What is wrong — which answer was marked correct, and why you think it is not…" ' + AREA + '></textarea>' +
+      '<label ' + LABEL + '>Supporting evidence</label>' +
+      '<textarea id="tq-evidence" rows="3" placeholder="Paste the slide text, or cite the lecture and slide number…" ' + AREA + '></textarea>' +
+      '<input id="tq-file" type="file" accept="image/*" style="margin-top:8px;font:12px inherit;color:#374151;max-width:100%;">' +
+      '<div style="font-size:11.5px;color:#6b7280;margin-top:3px;">A photo of the slide, if you have one. Pasting the text above always works.</div>' +
+      '<label ' + LABEL + '>Your email (optional)</label>' +
+      '<input id="tq-email" type="email" placeholder="Only if you want a reply" ' + INPUT + '>' +
+      '<div id="tq-status" style="font-size:13px;margin-top:10px;min-height:18px;"></div>' +
+      '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">' +
+      '<button id="tq-cancel" style="border:none;background:#e5e7eb;color:#111827;border-radius:9px;padding:9px 16px;font:600 14px inherit;cursor:pointer;">Cancel</button>' +
+      '<button id="tq-send" style="border:none;background:#2563eb;color:#fff;border-radius:9px;padding:9px 18px;font:600 14px inherit;cursor:pointer;">Send report</button>' +
+      '</div></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener("click", function (e) { if (e.target === ov) hide(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && ov.style.display === "flex") hide();
+    });
+    document.getElementById("tq-cancel").onclick = hide;
+    document.getElementById("tq-send").onclick = send;
+    show();
+  };
+
+  // Anything can open it by carrying this class, so the pill is not the only
+  // possible entry point later.
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest && e.target.closest(".report-question-btn");
+    if (!t) return;
+    e.preventDefault();
+    window.reportTestQuestion();
+  });
+})();
+
 /* ============================================================
    Footer mark: reveal only at the end of the page.
    See the "POLISH PASS" note in theme.css -- the mark is fixed at
