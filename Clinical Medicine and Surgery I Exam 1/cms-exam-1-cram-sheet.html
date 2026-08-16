@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Clinical Medicine and Surgery I Exam 1</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#17494b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Medicine and Surgery I · Exam 1 · Class of 2028</div>
+    <h1>Clinical Medicine and Surgery I Exam 1 Cram Sheet</h1>
+    <p class="sub">Lecture 1 — Clinical Reasoning and Problem Solving. The reasoning every later block exam tests through cases.</p>
+    <div class="toc">
+      <a href="#sens-spec" style="color:#12393a"><span class="dot" style="background:#17494b"></span>Sensitivity & Specificity</a>
+      <a href="#probability" style="color:#22605c"><span class="dot" style="background:#2c7b76"></span>Pretest & Posttest Probability</a>
+      <a href="#testing" style="color:#97692d"><span class="dot" style="background:#c1873a"></span>Screening vs Diagnostic Testing</a>
+      <a href="#reasoning" style="color:#2e467d"><span class="dot" style="background:#3b5aa0"></span>Clinical Reasoning & Decision Making</a>
+      <a href="#naturalistic" style="color:#6c3a7a"><span class="dot" style="background:#8a4a9c"></span>The Naturalistic Approach</a>
+      <a href="#treatment" style="color:#803e21"><span class="dot" style="background:#a4502a"></span>Implications for Treatment</a>
+      <a href="#counselling" style="color:#175341"><span class="dot" style="background:#1d6b53"></span>Counselling & Adherence</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-1-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="sens-spec" style="--acc:#17494b;--acc-bg:#dfe6e6;--acc-zebra:#eff2f2;--acc-ink:#12393a">
+    <div class="shead"><span class="dot" style="background:#17494b"></span><h2>Sensitivity & Specificity</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sensitivity</td><td>Probability the test shows a person HAS the condition when they do have it. How well a test DETECTS disease. Related to fewer false-negatives; says nothing about false-positives.</td></tr>
+          <tr><td class="h">Specificity</td><td>Probability the test shows a person DOES NOT have the condition when they do not. How well a test EXCLUDES disease. Related to fewer false-positives; says nothing about false-negatives.</td></tr>
+          <tr><td class="h">SnNout</td><td>High Sensitivity + Negative result = rules the disease OUT. “With sensitivity, a negative is a negative.”</td></tr>
+          <tr><td class="h">SpPin</td><td>High Specificity + Positive result = rules the disease IN. “With specificity, a positive is a positive.”</td></tr>
+          <tr><td class="h">The two questions</td><td>Sensitivity: how good is the test at FINDING disease? Specificity: how good is it at EXCLUDING people without disease?</td></tr>
+          <tr><td class="h">Human immunodeficiency virus (HIV) example</td><td>Screening is highly sensitive so few infected people are missed; confirmatory (supplemental) testing is highly specific to minimise false-positive diagnoses.</td></tr>
+          <tr><td class="h">When a false-positive is catastrophic</td><td>Acceptable in HIV screening because confirmation corrects it. NOT acceptable for serious, non-curable disease — e.g. a cancer diagnosis.</td></tr>
+          <tr><td class="h">Conditional probability</td><td>Probability of disease or event IF another event, test result, or condition is present.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="probability" style="--acc:#2c7b76;--acc-bg:#e1edec;--acc-zebra:#f0f6f5;--acc-ink:#22605c">
+    <div class="shead"><span class="dot" style="background:#2c7b76"></span><h2>Pretest & Posttest Probability</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Pretest probability</td><td>Likelihood of the condition BEFORE the result is known.</td></tr>
+          <tr><td class="h">Built from</td><td>Signs and symptoms · history and risk factors · how common the condition is in the population.</td></tr>
+          <tr><td class="h">Posttest probability</td><td>Likelihood of the condition AFTER the result is known. Depends on sensitivity and specificity.</td></tr>
+          <tr><td class="h">Why it matters</td><td>The same result means different things for two patients who started at different pretest probabilities.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="testing" style="--acc:#c1873a;--acc-bg:#f6eee3;--acc-zebra:#fbf7f1;--acc-ink:#97692d">
+    <div class="shead"><span class="dot" style="background:#c1873a"></span><h2>Screening vs Diagnostic Testing</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Screening testing</td><td>Identifies the likelihood of OCCULT disease.</td></tr>
+          <tr><td class="h">Diagnostic testing</td><td>Complements the history and physical; reduces uncertainty about diagnosis and/or prognosis; helps decide management.</td></tr>
+          <tr><td class="h">Which property, which job</td><td>Highly SENSITIVE test = best for SCREENING. Highly SPECIFIC test = best for CONFIRMING a diagnosis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="reasoning" style="--acc:#3b5aa0;--acc-bg:#e4e8f2;--acc-zebra:#f1f3f8;--acc-ink:#2e467d">
+    <div class="shead"><span class="dot" style="background:#3b5aa0"></span><h2>Clinical Reasoning & Decision Making</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Six-step process</td><td>1 Gather initial information → 2 Organize and interpret → 3 Synthesize / problem representation → 4 Generate hypotheses → 5 Test hypotheses, working diagnosis → 6 Plan diagnostic and treatment strategy.</td></tr>
+          <tr><td class="h">The three questions</td><td>What disease does the patient have? Should testing be done? Should this patient be treated?</td></tr>
+          <tr><td class="h">VINDICATE</td><td>Vascular, Infectious, Neoplastic, Degenerative, Iatrogenic, Congenital, Autoimmune, Trauma, Endocrine (metabolic).</td></tr>
+          <tr><td class="h">Hypothetico-deductive method</td><td>Propose hypotheses, test whether the observed data is consistent. Cues → generation → evaluation (confirm/exclude) → refinement (add new) → verification (confirm fit) → management (monitor response).</td></tr>
+          <tr><td class="h">Pattern recognition</td><td>LOWEST level of decision making. Easy to use, but errs because other possibilities are never considered.</td></tr>
+          <tr><td class="h">Analytic methods (complex cases)</td><td>Evidence-based medicine, clinical guidelines, quantitative techniques.</td></tr>
+          <tr><td class="h">Evidence-based medicine</td><td>Formulate question → gather evidence → evaluate quality/validity → decide how to use it. Limits: time consuming; many questions have no relevant studies.</td></tr>
+          <tr><td class="h">Clinical guidelines</td><td>Often “if–then” (febrile + neutropenic → broad-spectrum antibiotics). Cost-effective, the “standard of care” — but apply only to patients with similar characteristics.</td></tr>
+          <tr><td class="h">Diagnostic principles</td><td>Common things occur commonly. Hear hoof beats, think horses not zebras. Bet on UNCOMMON manifestations of COMMON conditions.</td></tr>
+          <tr><td class="h">Treatment principles</td><td>Working → keep doing it. Not working → stop doing it. Don't know what to do → do nothing.</td></tr>
+          <tr><td class="h">Good decision-making</td><td>Slow down; know the base rate; consider what data is truly relevant; seek alternatives; ask questions to DISPROVE your hypothesis; remember you are often wrong.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="naturalistic" style="--acc:#8a4a9c;--acc-bg:#efe6f1;--acc-zebra:#f7f2f8;--acc-ink:#6c3a7a">
+    <div class="shead"><span class="dot" style="background:#8a4a9c"></span><h2>The Naturalistic Approach</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Event-driven: treat signs and symptoms BEFORE a definitive diagnosis.</td></tr>
+          <tr><td class="h">Where</td><td>Mostly emergency medicine.</td></tr>
+          <tr><td class="h">When</td><td>Unstable patients · atypical presentations · rule out the worst-case scenario · follow responses to interventions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="treatment" style="--acc:#a4502a;--acc-bg:#f2e6e1;--acc-zebra:#f9f3f0;--acc-ink:#803e21">
+    <div class="shead"><span class="dot" style="background:#a4502a"></span><h2>Implications for Treatment</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Value of treatment</td><td>A LINEAR function of the probability of disease.</td></tr>
+          <tr><td class="h">Also weighed</td><td>Likelihood of success · the patient's ability to tolerate treatment.</td></tr>
+          <tr><td class="h">Risk vs benefit</td><td>Balance the benefit of treating a sick person against the risk of erroneously treating a well person, or one with a different disorder.</td></tr>
+          <tr><td class="h">What that encompasses</td><td>Both financial AND medical consequences — accounting for the likelihood of disease and the magnitude of benefit and risk.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="counselling" style="--acc:#1d6b53;--acc-bg:#dfeae7;--acc-zebra:#eff5f3;--acc-ink:#175341">
+    <div class="shead"><span class="dot" style="background:#1d6b53"></span><h2>Counselling & Adherence</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Five As</td><td>Ask · Advise · Assess · Assist · Arrange.</td></tr>
+          <tr><td class="h">FRAMES</td><td>Feedback about personal risk · Responsibility of the patient · Advice to change · Menu of options · Empathetic style · promote Self-efficacy.</td></tr>
+          <tr><td class="h">Behaviour change</td><td>Identify where the patient sits on the continuum; tailor to their readiness and self-efficacy. Behavioural counselling is one of the most important skills.</td></tr>
+          <tr><td class="h">Barriers to adherence</td><td>Cost/affordability · low health literacy · cultural or religious beliefs · fear of side effects or mistrust · transportation or time · mental health or cognitive impairment · poor communication or follow-up.</td></tr>
+          <tr><td class="h">Specific guidelines</td><td>Bates' Chapter 7 — unhealthy alcohol use, tobacco smoking cessation, sexually transmitted infections.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Clinical Medicine and Surgery I Exam 1 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide. More topics are added as each Exam 1 lecture is posted.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

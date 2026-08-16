@@ -3718,7 +3718,75 @@ var DEMO_DECKS = [
       ["Rolfing", "Structural integration, ten sessions"],
       ["Simillimum", "Closest matching remedy picture"],
       ["Reiki", "Japanese laying on of hands"],
-    ]}
+    ]},
+  { id: "cms-clinical-reasoning", name: "Clinical Reasoning and Problem Solving", color: "accent2",
+    icon: '<path d="M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z"/><path d="M9 20h6"/>',
+    cards: [
+      ["What is sensitivity?", "The probability that the test shows a person has the condition when they do have the condition."],
+      ["Sensitivity measures how well a test does what?", "Detects a condition or disease."],
+      ["Sensitivity is related to fewer of which errors?", "False-negatives."],
+      ["What does sensitivity say nothing about?", "False-positives."],
+      ["What does SnNout mean?", "A test with high Sensitivity and a Negative result helps rule OUT a disease."],
+      ["What is specificity?", "The probability that the test shows a person does not have the condition when they do not have it."],
+      ["Specificity measures how well a test does what?", "Excludes disease."],
+      ["Specificity is related to fewer of which errors?", "False-positives."],
+      ["What does specificity say nothing about?", "False-negatives."],
+      ["What does SpPin mean?", "A test with high Specificity and a Positive result helps rule IN a disease."],
+      ["Which test property is best for screening?", "High sensitivity."],
+      ["Which test property is best for confirming a diagnosis?", "High specificity."],
+      ["Why do human immunodeficiency virus (HIV) screening tests have high sensitivity?", "So that very few individuals who have the virus are missed."],
+      ["Why is confirmatory testing for human immunodeficiency virus (HIV) highly specific?", "To minimise false-positive diagnoses."],
+      ["What is conditional probability?", "The probability of disease or an event if another event, test result, or condition is present."],
+      ["What is pretest probability?", "The likelihood of the condition before the test result is known."],
+      ["What three things build pretest probability?", "Signs and symptoms, history and risk factors, and how common the condition is in the population."],
+      ["What is posttest probability?", "The likelihood of the condition after the test result is known."],
+      ["What does posttest probability depend on?", "The sensitivity and specificity of the test."],
+      ["What is the purpose of screening testing?", "To identify the likelihood of occult disease."],
+      ["What are the three purposes of diagnostic testing?", "Complements the history and physical, reduces uncertainty about diagnosis or prognosis, and helps decide management."],
+      ["What is step 1 of the clinical reasoning process?", "Gather initial patient information."],
+      ["What is step 3 of the clinical reasoning process?", "Synthesize clinical information and develop the problem representation."],
+      ["What is step 6 of the clinical reasoning process?", "Plan the diagnostic and treatment strategy."],
+      ["What three questions must a clinician answer?", "What disease does the patient have, should testing be done, and should this patient be treated?"],
+      ["What does VINDICATE stand for?", "Vascular, Infectious, Neoplastic, Degenerative, Iatrogenic, Congenital, Autoimmune, Trauma, Endocrine (metabolic)."],
+      ["What is the hypothetico-deductive method?", "Proposing hypotheses and testing whether they are acceptable by deciding if the data is consistent with what is observed."],
+      ["What does hypothesis evaluation do?", "Gathers data to confirm or exclude the diagnostic hypotheses."],
+      ["What does hypothesis refinement do?", "Adds new diagnostic hypotheses triggered by data gathering to the differential list."],
+      ["What does hypothesis verification do?", "Confirms the fit of the diagnostic hypotheses with the assembled data."],
+      ["How is pattern recognition described?", "The lowest level of decision making: easy to use, but subject to error because other possibilities are not considered."],
+      ["What three analytic methods suit complex situations?", "Principles of evidence-based medicine, clinical guidelines, and quantitative techniques."],
+      ["What is the first step of evidence-based medicine?", "Formulate a clinical question."],
+      ["What are the two limitations of evidence-based medicine?", "It is time consuming, and many clinical questions have no relevant studies in the literature."],
+      ["What caution applies to clinical guidelines?", "They should be applied to patients with similar characteristics."],
+      ["What is the naturalistic (event-driven) approach?", "Treating signs and symptoms before a definitive diagnosis."],
+      ["Where is the naturalistic approach mostly used?", "Emergency medicine."],
+      ["Which patients suit the naturalistic approach?", "Unstable patients and atypical presentations."],
+      ["What are the three clinical principles for diagnosis?", "Common things occur commonly; think horses not zebras; bet on uncommon manifestations of common conditions."],
+      ["What are the three clinical principles during treatment?", "If it is working keep doing it; if it is not working stop doing it; if you do not know what to do, do not do anything."],
+      ["The value of treatment versus no treatment is what kind of function?", "A linear function of the probability of disease."],
+      ["What two other factors weigh into treating?", "Likelihood of success and the patient's ability to tolerate treatment."],
+      ["What balance does diagnostic uncertainty force?", "The benefit of treating a sick person against the risk of erroneously treating a well person or one with a different disorder."],
+      ["What do benefit and risk encompass?", "Both financial and medical consequences."],
+      ["What are the Five As?", "Ask, advise, assess, assist, and arrange."],
+      ["What does FRAMES stand for?", "Feedback about personal risk, responsibility of the patient, advice to change, menu of options, empathetic style, and promote self-efficacy."],
+      ["What should you identify before tailoring a behaviour-change intervention?", "Where the patient is on the continuum of behaviour change, and their readiness and self-efficacy."],
+      ["Name four barriers to medication adherence.", "Cost, low health literacy, cultural or religious beliefs, and fear of side effects or mistrust of providers."]
+    ],
+    matchCards: [
+      ["Sensitivity", "Detects disease; fewer false-negatives"],
+      ["Specificity", "Excludes disease; fewer false-positives"],
+      ["SnNout", "High sensitivity + negative = rule out"],
+      ["SpPin", "High specificity + positive = rule in"],
+      ["Pretest probability", "Likelihood before the result is known"],
+      ["Posttest probability", "Likelihood after the result is known"],
+      ["Screening testing", "Identifies likelihood of occult disease"],
+      ["Diagnostic testing", "Reduces uncertainty; guides management"],
+      ["Naturalistic approach", "Treat before a definitive diagnosis"],
+      ["Pattern recognition", "Lowest level of decision making"],
+      ["VINDICATE", "Differential checklist mnemonic"],
+      ["Five As", "Ask, advise, assess, assist, arrange"],
+      ["FRAMES", "Feedback, responsibility, advice, menu, empathy, self-efficacy"],
+      ["Hypothesis verification", "Confirm fit with assembled data"]
+    ] },
 ];
 
 /* Which semester a class tab belongs to. Read from semesters.js so the
@@ -3738,6 +3806,10 @@ function deckIdFromURL() { return new URLSearchParams(location.search).get("deck
 // tab/exam-section pattern. deckIds fill in as real decks are authored per
 // class/exam.
 var DEMO_CLASSES = [
+  { id: "cms-1", name: "Clinical Medicine and Surgery I", exams: [
+    { id: "exam1", name: "Exam 1", deckIds: ["cms-clinical-reasoning"] }
+  ]},
+
   { id: "anatomy", name: "Anatomy", exams: [
     { id: "exam1", name: "Exam 1", deckIds: [
       "anatomy-intro", "anatomy-histology", "anatomy-brain-ans",

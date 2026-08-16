@@ -1,0 +1,391 @@
+#!/usr/bin/env python3
+"""Build the Clinical Medicine and Surgery I, Exam 1 study guide.
+
+Lifts the head/CSS/script skeleton from the PD1 Exam 3 guide (which carries the
+site's guide design system) and splices in new TOC + body + TEST_YOURSELF, per
+the established pattern for starting a guide on a brand-new exam.
+
+Two deliberate departures:
+  * The deck's embedded figures are NOT reused. Slide 7's diagnostic-threshold
+    chart is credited "Copyright (c) McGraw Hill. All rights reserved." and the
+    rest are Bates' textbook figures; this repo is public, so committing them
+    would republish them. The two diagrams here are drawn from scratch instead.
+  * data-audio-dir is removed. The rule is never to point at an audio folder
+    that has no mp3s in it -- an empty one breaks read-aloud on iPad, because
+    the 404 pushes speech synthesis outside the original tap. Without the
+    attribute the reader falls straight through to live speech, in-gesture.
+"""
+import os, re, json
+
+ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-exam3-study-guide.html")
+OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1/cms-exam-1-study-guide.html")
+
+# ---------------------------------------------------------------- diagrams
+# Both authored here, so they are ours to publish.
+SVG_2x2 = '''
+<figure class="fig">
+<svg viewBox="0 0 560 250" width="560" height="250" role="img"
+     aria-label="Two by two table of test result against disease state, showing true positives, false positives, false negatives and true negatives, with sensitivity read down the disease column and specificity down the no-disease column."
+     style="max-width:100%;height:auto;">
+  <style>
+    .cell{stroke:#8a8f98;stroke-width:1;}
+    .lbl{font:600 12px system-ui,sans-serif;fill:#3b414a;}
+    .cap{font:700 13px system-ui,sans-serif;fill:#17494b;}
+    .big{font:700 15px system-ui,sans-serif;}
+    .note{font:600 11.5px system-ui,sans-serif;fill:#2c7b76;}
+  </style>
+  <text x="150" y="20" class="cap">Disease PRESENT</text>
+  <text x="330" y="20" class="cap">Disease ABSENT</text>
+  <text x="8" y="66" class="lbl">Test</text><text x="8" y="80" class="lbl">POSITIVE</text>
+  <text x="8" y="146" class="lbl">Test</text><text x="8" y="160" class="lbl">NEGATIVE</text>
+
+  <rect x="80" y="32" width="180" height="70" class="cell" fill="#d9efe8"/>
+  <text x="170" y="72" class="big" fill="#1d6b53" text-anchor="middle">True positive</text>
+  <rect x="260" y="32" width="180" height="70" class="cell" fill="#fbe3d8"/>
+  <text x="350" y="72" class="big" fill="#a4502a" text-anchor="middle">False positive</text>
+  <rect x="80" y="102" width="180" height="70" class="cell" fill="#fbe3d8"/>
+  <text x="170" y="142" class="big" fill="#a4502a" text-anchor="middle">False negative</text>
+  <rect x="260" y="102" width="180" height="70" class="cell" fill="#d9efe8"/>
+  <text x="350" y="142" class="big" fill="#1d6b53" text-anchor="middle">True negative</text>
+
+  <path d="M170 180 L170 196 M120 196 L220 196" stroke="#2c7b76" stroke-width="2" fill="none"/>
+  <text x="170" y="214" class="note" text-anchor="middle">SENSITIVITY reads down this column</text>
+  <text x="170" y="230" class="note" text-anchor="middle" fill="#5b6169">few false-negatives &middot; SnNout</text>
+  <path d="M350 180 L350 196 M300 196 L400 196" stroke="#2c7b76" stroke-width="2" fill="none"/>
+  <text x="350" y="214" class="note" text-anchor="middle">SPECIFICITY reads down this column</text>
+  <text x="350" y="230" class="note" text-anchor="middle" fill="#5b6169">few false-positives &middot; SpPin</text>
+</svg>
+<figcaption>Why the two properties never trade against each other directly: each is calculated down a
+different column. Sensitivity is judged only among people who <em>have</em> the disease, so the error it
+controls is the false-negative — which is why a negative on a very sensitive test is the one that lets you
+rule out (SnNout). Specificity is judged only among people who <em>do not</em>, so the error it controls is
+the false-positive — which is why a positive on a very specific test is the one that lets you rule in
+(SpPin). Reading the wrong column is the single most common way this gets confused on an exam.</figcaption>
+</figure>
+'''
+
+SVG_FLOW = '''
+<figure class="fig">
+<svg viewBox="0 0 620 150" width="620" height="150" role="img"
+     aria-label="Flow from pretest probability through a test result to posttest probability, showing which inputs feed each stage."
+     style="max-width:100%;height:auto;">
+  <style>
+    .bx{stroke:#2c7b76;stroke-width:1.5;fill:#e7f3f1;}
+    .t{font:700 13px system-ui,sans-serif;fill:#17494b;}
+    .s{font:11.5px system-ui,sans-serif;fill:#5b6169;}
+    .ar{stroke:#17494b;stroke-width:2;fill:none;marker-end:url(#a);}
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+    orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#17494b"/></marker></defs>
+
+  <rect x="6" y="34" width="176" height="56" rx="8" class="bx"/>
+  <text x="94" y="58" class="t" text-anchor="middle">Pretest probability</text>
+  <text x="94" y="76" class="s" text-anchor="middle">before the result is known</text>
+  <text x="94" y="112" class="s" text-anchor="middle">signs &amp; symptoms &middot; history</text>
+  <text x="94" y="127" class="s" text-anchor="middle">risk factors &middot; how common</text>
+
+  <path d="M188 62 L232 62" class="ar"/>
+
+  <rect x="238" y="34" width="140" height="56" rx="8" class="bx" fill="#fff6e6" stroke="#c1873a"/>
+  <text x="308" y="58" class="t" text-anchor="middle" fill="#8a5f1e">The test result</text>
+  <text x="308" y="76" class="s" text-anchor="middle">positive or negative</text>
+  <text x="308" y="112" class="s" text-anchor="middle">weighted by sensitivity</text>
+  <text x="308" y="127" class="s" text-anchor="middle">and specificity</text>
+
+  <path d="M384 62 L428 62" class="ar"/>
+
+  <rect x="434" y="34" width="180" height="56" rx="8" class="bx"/>
+  <text x="524" y="58" class="t" text-anchor="middle">Posttest probability</text>
+  <text x="524" y="76" class="s" text-anchor="middle">after the result is known</text>
+  <text x="524" y="112" class="s" text-anchor="middle">what you actually act on</text>
+</svg>
+<figcaption>A test does not hand you a diagnosis; it moves a probability. The same result means different
+things for two patients who started in different places, which is the practical reason pretest probability
+is worth estimating before you order anything. It also explains the treatment principle later in this
+lecture: because the value of treating is a linear function of the probability of disease, moving that
+probability is the whole point of testing.</figcaption>
+</figure>
+'''
+
+# ---------------------------------------------------------------- content
+TOC = '''<nav class="toc">
+  <h2>Contents</h2>
+  <a class="top-link" href="#clinical-reasoning">1 &middot; Clinical Reasoning and Problem Solving</a>
+  <a href="#cr-sensspec">1.1 Objective a &mdash; Sensitivity &amp; specificity</a>
+  <a href="#cr-pretest">1.2 Objectives b &amp; c &mdash; Pretest &amp; posttest probability</a>
+  <a href="#cr-screening">1.3 Objective f &mdash; Screening vs diagnostic testing</a>
+  <a href="#cr-decision">1.4 Objective d &mdash; Clinical principles &amp; decision-making</a>
+  <a href="#cr-naturalistic">1.5 Objective e &mdash; The naturalistic approach</a>
+  <a href="#cr-treatment">1.6 Objective g &mdash; Implications for treatment</a>
+  <a href="#cr-counselling">1.7 Objective h &mdash; Counselling &amp; adherence</a>
+  <a class="top-link" href="#how-course-works" style="color:#8a6508">2 &middot; How this course is built</a>
+</nav>'''
+
+BODY = '''<main>
+
+<!-- ============ 1 CLINICAL REASONING ============ -->
+<section class="deck" id="clinical-reasoning">
+  <h2 class="deck-title">1 &middot; Clinical Reasoning and Problem Solving</h2>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol type="a">
+      <li>Compare and contrast sensitivity and specificity.</li>
+      <li>Define pretest probability.</li>
+      <li>Define posttest probability.</li>
+      <li>Discuss clinical principles and decision-making.</li>
+      <li>Discuss the naturalistic approach.</li>
+      <li>Compare and contrast screening and diagnostic testing.</li>
+      <li>Discuss the implications for treatment.</li>
+      <li>Recall counseling strategies to help patients adhere to treatment plans, including behavior modifications</li>
+    </ol>
+  </div>
+
+  <h3 class="sub" id="cr-sensspec">1.1 &middot; Objective a &mdash; Compare and contrast sensitivity and specificity</h3>
+  <table>
+    <tr><th></th><th>Sensitivity</th><th>Specificity</th></tr>
+    <tr><td>Definition</td>
+        <td>Probability the test shows a person <strong>has</strong> the condition when they do have it</td>
+        <td>Probability the test shows a person <strong>does not have</strong> the condition when they do not have it</td></tr>
+    <tr><td>In one phrase</td><td>How well a test <strong>detects</strong> disease</td><td>How well a test <strong>excludes</strong> disease</td></tr>
+    <tr><td>Reduces</td><td>False-negatives</td><td>False-positives</td></tr>
+    <tr><td>Says nothing about</td><td>False-positives</td><td>False-negatives</td></tr>
+    <tr><td>Memory aid</td><td><strong>SnNout</strong> &mdash; high <em>Sn</em>, <em>N</em>egative result, rules <em>out</em></td>
+        <td><strong>SpPin</strong> &mdash; high <em>Sp</em>, <em>P</em>ositive result, rules <em>in</em></td></tr>
+    <tr><td>Best used for</td><td>Screening</td><td>Confirming a diagnosis</td></tr>
+  </table>
+  ''' + SVG_2x2 + '''
+  <div class="callout"><strong>The paired questions to memorise.</strong> Sensitivity answers
+  &ldquo;how good is the test at finding disease?&rdquo; Specificity answers &ldquo;how good is the test at
+  excluding people without disease?&rdquo;</div>
+  <p><strong>The worked example.</strong> Screening for human immunodeficiency virus (HIV) uses a highly
+  sensitive test so that very few infected individuals are missed; confirmatory (supplemental) testing is
+  highly specific, which minimises false-positive diagnoses. The lecture's justification is worth keeping,
+  because it is a judgement rather than a rule: it is better to accept a few false-positives that a
+  confirmatory test can later correct than to fail to identify people who might unknowingly infect others.
+  <em>That trade flips</em> for a disease that is serious and not curable &mdash; in cancer diagnosis a
+  false-positive is catastrophic for the patient.</p>
+  <p><strong>Conditional probability</strong> is the umbrella idea underneath all of this: the probability of
+  a disease or event <em>if</em> another event, test result, or condition is present.</p>
+
+  <h3 class="sub" id="cr-pretest">1.2 &middot; Objectives b &amp; c &mdash; Define pretest and posttest probability</h3>
+  <table>
+    <tr><th></th><th>Pretest probability</th><th>Posttest probability</th></tr>
+    <tr><td>Definition</td><td>Likelihood of the condition <strong>before</strong> the test result is known</td>
+        <td>Likelihood of the condition <strong>after</strong> the test result is known</td></tr>
+    <tr><td>Built from</td><td>Signs and symptoms &middot; history and risk factors &middot; how common the condition is in the population</td>
+        <td>The pretest estimate, revised by the test's sensitivity and specificity</td></tr>
+  </table>
+  ''' + SVG_FLOW + '''
+
+  <h3 class="sub" id="cr-screening">1.3 &middot; Objective f &mdash; Compare and contrast screening and diagnostic testing</h3>
+  <table>
+    <tr><th>Screening testing</th><th>Diagnostic testing</th></tr>
+    <tr><td>Identifies the likelihood of <strong>occult</strong> disease</td>
+        <td>Complements the history and physical examination<br>Reduces uncertainty about diagnosis and/or prognosis<br>Helps decide management</td></tr>
+  </table>
+  <div class="pearl">A highly <strong>sensitive</strong> test is best for <strong>screening</strong>; a highly
+  <strong>specific</strong> test is best for <strong>confirming</strong> a diagnosis. This is the single line
+  that ties objectives a and f together, and it is the one most likely to be asked in either direction.</div>
+
+  <h3 class="sub" id="cr-decision">1.4 &middot; Objective d &mdash; Discuss clinical principles and decision-making</h3>
+  <p><strong>The clinical reasoning process, in six steps.</strong></p>
+  <table>
+    <tr><th>Step</th><th>What happens</th></tr>
+    <tr><td>1</td><td>Gather initial patient information</td></tr>
+    <tr><td>2</td><td>Organize and interpret clinical information</td></tr>
+    <tr><td>3</td><td>Synthesize clinical information and develop the problem representation</td></tr>
+    <tr><td>4</td><td>Generate hypotheses</td></tr>
+    <tr><td>5</td><td>Test hypotheses and establish a working diagnosis</td></tr>
+    <tr><td>6</td><td>Plan the diagnostic and treatment strategy</td></tr>
+  </table>
+  <p><strong>The three questions</strong> a clinician has to answer: what disease does the patient have,
+  should testing be done, and should this patient be treated? Clinical decision-making covers what
+  information to gather, what diagnostics to order, how to interpret and integrate what comes back, and
+  what management the patient needs.</p>
+
+  <p><strong>Building a differential.</strong> Start from the signs and symptoms and ask which organ or
+  system is involved &mdash; for shortness of breath, is this cardiac, pulmonary or haematologic? Then
+  consider the anatomy of those systems. When stuck, run a checklist mnemonic.</p>
+  <table>
+    <tr><th>VINDICATE</th><th>Worked example &mdash; chief complaint of &ldquo;confusion&rdquo;</th></tr>
+    <tr><td><strong>V</strong>ascular</td><td>Stroke, transient ischaemic attack, subarachnoid haemorrhage</td></tr>
+    <tr><td><strong>I</strong>nfectious</td><td>Meningitis, encephalitis, sepsis</td></tr>
+    <tr><td><strong>N</strong>eoplastic</td><td>Primary brain tumour or metastasis</td></tr>
+    <tr><td><strong>D</strong>egenerative</td><td>Alzheimer's disease, Huntington's disease, other dementias</td></tr>
+    <tr><td><strong>I</strong>atrogenic / intoxication</td><td>Narcotics, alcohol intoxication or withdrawal</td></tr>
+    <tr><td><strong>C</strong>ongenital</td><td>Epilepsy (post-ictal state)</td></tr>
+    <tr><td><strong>A</strong>utoimmune</td><td>Central nervous system lupus, neurosarcoidosis, anti-NMD encephalitis</td></tr>
+    <tr><td><strong>T</strong>rauma</td><td>Traumatic brain injury, traumatic epidural or subdural haematoma</td></tr>
+    <tr><td><strong>E</strong>ndocrine (metabolic)</td><td>Hypoglycaemia, hypo- or hyperthyroidism, hypo- or hypernatraemia, hypercalcaemia, hepatic or uraemic encephalopathy</td></tr>
+  </table>
+  <p>The alternative organ-system checklist is <strong>&ldquo;Tom G. Prince, MD, Psychiatrist, General
+  Hospital&rdquo;</strong>: Toxin/Trauma (including medications), Oncologic, Musculoskeletal/rheumatologic,
+  Gastrointestinal, Pulmonary, Renal, Infectious, Neurologic, Cardiovascular, Endocrine, Metabolic/Genetic,
+  Dermatologic, Psychiatric, Genitourinary/Gynecologic, Hematologic.</p>
+
+  <p><strong>The hypothetico-deductive method</strong> &mdash; proposing hypotheses and testing whether they
+  are acceptable by deciding whether the data is consistent with what is observed.</p>
+  <table>
+    <tr><th>Stage</th><th>What it does</th></tr>
+    <tr><td>Cues</td><td>Initial history &middot; initial examination &middot; screening diagnostic testing</td></tr>
+    <tr><td>Hypothesis generation</td><td>List potential diagnoses triggered by patient cues</td></tr>
+    <tr><td>Hypothesis evaluation</td><td>Gather data to confirm or exclude those hypotheses</td></tr>
+    <tr><td>Hypothesis refinement</td><td>Add new hypotheses triggered by the data gathered</td></tr>
+    <tr><td>Hypothesis verification</td><td>Confirm the &ldquo;fit&rdquo; of the hypotheses with the assembled data</td></tr>
+    <tr><td>Patient management</td><td>Gather data to monitor the patient's response</td></tr>
+  </table>
+
+  <p><strong>Two modes of thinking.</strong> In straightforward or common situations clinicians use an
+  intuitive system &mdash; quick, automatic, pattern-based. Pattern recognition is easy to use but is the
+  <em>lowest level</em> of decision making, and it errs precisely because other possibilities are never
+  considered. Complex situations call for a deliberate, controlled process using logic and probabilities:
+  evidence-based medicine, clinical guidelines, and quantitative techniques.</p>
+  <table>
+    <tr><th>Analytic method</th><th>How it runs, and where it falls short</th></tr>
+    <tr><td>Evidence-based medicine</td><td>Formulate a clinical question &rarr; gather evidence (literature review, MEDLINE, UpToDate) &rarr; evaluate its quality and validity &rarr; decide how to use it. <em>Limitations:</em> time consuming, and many clinical questions have no relevant studies.</td></tr>
+    <tr><td>Clinical guidelines</td><td>Common practice, often an &ldquo;if&nbsp;then&rdquo; rule &mdash; if a patient is febrile and neutropenic, then use broad-spectrum antibiotics. Straightforward, cost-effective, the &ldquo;standard of care&rdquo;. <em>Caution:</em> apply only to patients with similar characteristics.</td></tr>
+    <tr><td>Quantitative techniques</td><td>Odds and probability &mdash; the sensitivity, specificity and pre/posttest material above.</td></tr>
+  </table>
+
+  <div class="callout"><strong>Clinical principles, verbatim.</strong>
+  For the differential and final diagnosis: common things occur commonly; when you hear hoof beats think
+  of horses, not zebras; place your bets on uncommon manifestations of common conditions rather than common
+  manifestations of uncommon conditions. During treatment: if what you are doing is working, keep on doing
+  it; if what you are doing is not working, stop doing it; if you don't know what to do, don't do anything.</div>
+
+  <p><strong>Suggestions for good decision-making:</strong> slow down; be aware of the base rate of disease
+  for the diagnoses on your differential; consider what data is truly relevant; actively seek alternative
+  diagnoses; ask questions to <em>disprove</em> rather than confirm your current hypothesis; and remember
+  you are often wrong, considering the immediate implications of that.</p>
+
+  <h3 class="sub" id="cr-naturalistic">1.5 &middot; Objective e &mdash; Discuss the naturalistic approach</h3>
+  <p>The naturalistic (event-driven) approach means <strong>treating signs and symptoms before a definitive
+  diagnosis</strong>. It is used mostly in <strong>emergency medicine</strong>, for:</p>
+  <ul>
+    <li>Unstable patients</li>
+    <li>Atypical presentations</li>
+    <li>Ruling out the worst-case scenario</li>
+    <li>Following responses to interventions</li>
+  </ul>
+  <div class="pearl">Set this against the hypothetico-deductive method deliberately: one withholds action
+  until the data fits a hypothesis, the other acts first and uses the response as data. Which is correct
+  depends entirely on how much time the patient's stability allows.</div>
+
+  <h3 class="sub" id="cr-treatment">1.6 &middot; Objective g &mdash; Discuss the implications for treatment</h3>
+  <p><strong>To treat versus not to treat.</strong> The value of treatment versus no treatment is a
+  <strong>linear function of the probability of disease</strong>, weighed alongside the likelihood of
+  success and the patient's ability to tolerate treatment.</p>
+  <p><strong>Risk versus benefit.</strong> Because a diagnosis almost always carries some uncertainty, the
+  decision to treat has to balance the benefit of treating a sick person against the risk of erroneously
+  treating a well person, or one with a different disorder. Benefit and risk encompass both financial and
+  medical consequences, and the balance must account for both the likelihood of disease and the
+  <em>magnitude</em> of the benefit and the risk.</p>
+
+  <h3 class="sub" id="cr-counselling">1.7 &middot; Objective h &mdash; Recall counseling strategies to help patients adhere to treatment plans</h3>
+  <p>Providers must be able to communicate evidence on prognosis, treatments, diagnostic testing and
+  prevention, so patients understand their risks and options.</p>
+  <table>
+    <tr><th>Framework</th><th>Elements</th></tr>
+    <tr><td><strong>Five As</strong></td><td>Ask &middot; Advise &middot; Assess &middot; Assist &middot; Arrange</td></tr>
+    <tr><td><strong>FRAMES</strong></td><td><strong>F</strong>eedback about personal risk &middot; <strong>R</strong>esponsibility of the patient &middot; <strong>A</strong>dvice to change &middot; <strong>M</strong>enu of options &middot; <strong>E</strong>mpathetic style &middot; promote <strong>S</strong>elf-efficacy</td></tr>
+  </table>
+  <p>Specific counselling guidelines for adults on unhealthy alcohol use, tobacco smoking cessation and
+  sexually transmitted infections are in Bates' Chapter 7.</p>
+  <p><strong>Behaviour modification.</strong> Changing behaviours is difficult, and behavioural counselling
+  is one of the most important skills for helping patients make those changes. Identify where your patient
+  sits on the continuum of behaviour change, and tailor interventions to their readiness and self-efficacy.</p>
+  <table>
+    <tr><th colspan="2">Barriers to treatment and medication adherence</th></tr>
+    <tr><td>Cost and affordability of medications or services</td><td>Low health literacy or lack of understanding</td></tr>
+    <tr><td>Cultural or religious beliefs about treatment</td><td>Fear of side effects or mistrust of providers</td></tr>
+    <tr><td>Transportation or time constraints</td><td>Mental health challenges or cognitive impairment</td></tr>
+    <tr><td colspan="2">Poor communication or follow-up by the care team</td></tr>
+  </table>
+  <button type="button" class="test-yourself-btn" style="--acc:#17494b" onclick="window.openTestYourself('Test yourself — Clinical Reasoning', TEST_YOURSELF.clinicalReasoning)">Test yourself! &rarr;</button>
+</section>
+
+<!-- ============ 2 HOW THE COURSE WORKS ============ -->
+<section class="deck" id="how-course-works">
+  <h2 class="deck-title">2 &middot; How this course is built</h2>
+  <p>Clinical Medicine and Surgery I covers six areas &mdash; <strong>dermatology, ophthalmology,
+  otorhinolaryngology (ear, nose and throat), cardiology, pulmonology, and haematology-oncology</strong> &mdash;
+  emphasising etiology, clinical manifestations, appropriate diagnostic evaluation, and management.</p>
+  <p>For every condition, the course compares and contrasts the same nine things. Worth learning as a
+  checklist now, because it is the shape every later lecture and every vignette question takes:</p>
+  <table>
+    <tr><td>Etiology</td><td>Epidemiology</td><td>Risk factors</td></tr>
+    <tr><td>Clinical manifestations (signs and symptoms)</td><td>Diagnostic evaluation</td><td>Management</td></tr>
+    <tr><td>Patient education</td><td>Referrals / consults</td><td>Monitoring / follow-up</td></tr>
+  </table>
+  <div class="callout"><strong>Why this lecture has no disease in it.</strong> Lecture 1 is the method, not
+  the material &mdash; it teaches the reasoning that every later block exam tests through cases. From
+  General Dermatology I onward each topic has a named disease list, and the guide sections for those follow
+  the clinical shape: definition, who gets it, risk factors, classic signs and symptoms, physical exam
+  findings, diagnostics, first-line treatment, and complications.</div>
+  <p class="src">Source: <em>1. svClinical Reasoning and Problem Solving.pptx</em> (Professor Lauren M.
+  Reynolds), Slides 1&ndash;30, and the PAJ 5500 syllabus instructional objectives. Further reading the
+  lecture points to: Bates' Chapter 5 (clinical reasoning, diagnostic errors, documentation), Chapter 7
+  (health maintenance and screening), and Chapter 8 (evaluating clinical evidence).</p>
+</section>
+
+</main>'''
+
+TEST_YOURSELF = '''  var TEST_YOURSELF = {
+    clinicalReasoning: [
+      {q:"A screening test comes back negative in a patient. Which test property makes that negative result most useful for ruling the disease out?",
+       choices:["High specificity","High sensitivity","A low pretest probability","A high posttest probability"],correct:1,
+       explain:"SnNout — a test with high Sensitivity and a Negative result helps rule out a disease, because sensitivity is the property related to fewer false-negatives."},
+      {q:"Sensitivity says nothing about which type of erroneous result?",
+       choices:["False-positives","False-negatives","True-positives","True-negatives"],correct:0,
+       explain:"The lecture footnotes this directly: sensitivity is related to fewer false-negatives and does not address false-positives. Specificity is the property that speaks to false-positives."},
+      {q:"Which three inputs build a pretest probability?",
+       choices:["Sensitivity, specificity, and the result","Signs and symptoms, history and risk factors, and how common the condition is","Cost, availability, and turnaround time","Likelihood of success, tolerance, and risk"],correct:1,
+       explain:"Pretest probability is the likelihood before the result is known, built from the clinical picture, the patient's history and risk, and the frequency of the condition in the population."},
+      {q:"A patient is unstable with an atypical presentation, and you begin treating the symptoms before a definitive diagnosis. Which approach is this?",
+       choices:["The hypothetico-deductive method","Evidence-based medicine","The naturalistic (event-driven) approach","Pattern recognition"],correct:2,
+       explain:"The naturalistic approach treats signs and symptoms before a definitive diagnosis, used mostly in emergency medicine for unstable patients and atypical presentations, ruling out the worst case and following the response."},
+      {q:"How does the lecture describe the value of treatment versus no treatment?",
+       choices:["Independent of the probability of disease","A linear function of the probability of disease","Determined only by cost","Fixed once a working diagnosis exists"],correct:1,
+       explain:"It is a linear function of the probability of disease, weighed with the likelihood of success and the patient's ability to tolerate treatment — and balanced against the risk of treating a well person."}
+    ],'''
+
+# ---------------------------------------------------------------- assemble
+donor = open(DONOR, encoding="utf-8").read()
+head = donor[:donor.index('<div class="layout wrap"')]
+tail = donor[donor.index("</main>") + len("</main>"):]
+
+# swap the donor's TEST_YOURSELF object for ours
+ty_start = tail.index("var TEST_YOURSELF = {")
+ty_end = tail.index("\n  };", ty_start)
+tail = tail[:ty_start] + TEST_YOURSELF.lstrip() + tail[ty_end:]
+
+# retheme: PD1 Exam 3's rose-plum palette -> the teal identity used by the quizzes
+for old, new in (("#8a3f5c", "#17494b"), ("#b8842f", "#c1873a"), ("#5c4a7d", "#2c7b76"),
+                 ("#5e2a41", "#0f3436"), ("#ac5c78", "#3c9c95"),
+                 ("#231d22", "#1b2a2b"), ("#e0a8bd", "#8fd0c9")):
+    head = head.replace(old, new)
+
+head = head.replace("<title>Physical Diagnosis 1 &middot; Exam 3 &mdash; Study Guide</title>",
+                    "<title>Clinical Medicine and Surgery I &middot; Exam 1 &mdash; Study Guide</title>")
+head = re.sub(r"<title>.*?</title>",
+              "<title>Clinical Medicine and Surgery I &middot; Exam 1 &mdash; Study Guide</title>",
+              head, count=1, flags=re.S)
+head = re.sub(r"<header class=\"top\">.*?</header>",
+  '<header class="top">\n'
+  '  <h1>Clinical Medicine and Surgery I &middot; Exam 1 &mdash; Study Guide</h1>\n'
+  '  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>\n'
+  '  <p>Covers Lecture 1, Clinical Reasoning and Problem Solving &middot; further sections are added as each '
+  'Exam 1 lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n'
+  '</header>', head, count=1, flags=re.S)
+
+# No audio folder exists for this guide yet, and pointing at an empty one breaks
+# read-aloud on iPad. Omitting the attribute lets live speech run in-gesture.
+layout_open = '<div class="layout wrap" data-readable>'
+
+html = head + layout_open + "\n" + TOC + "\n\n" + BODY + tail
+os.makedirs(os.path.dirname(OUT), exist_ok=True)
+open(OUT, "w", encoding="utf-8").write(html)
+print("wrote %s (%d KB)" % (os.path.basename(OUT), len(html) // 1024))
+print("data-audio-dir present:", "data-audio-dir" in html)
+print("donor palette left over:", [c for c in ("#8a3f5c", "#b8842f", "#5c4a7d") if c in html])
