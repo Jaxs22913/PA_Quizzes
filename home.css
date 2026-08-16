@@ -1511,6 +1511,27 @@
 }
 .search-other-sem:hover{ background: var(--paper, rgba(0,0,0,.03)); }
 
+/* Everyday entrance: the homepage's cards settle into place on load. Much
+   smaller than the first-week drop below -- this one runs every visit, so it
+   has to read as the page arriving rather than as an effect. A touch of
+   overshoot and one correction; no wobble you could count.
+
+   Only transform and opacity, so it never moves anything in layout. That
+   matters: alignSidebars() positions the left and right rails by measuring the
+   semester card, and a transform DOES shift what getBoundingClientRect
+   reports -- see the note there about when this is allowed to start. */
+@keyframes card-settle{
+  0%   { transform:translateY(-17px) rotate(-.35deg); opacity:0; }
+  62%  { transform:translateY(3px)   rotate(.14deg);  opacity:1; }
+  84%  { transform:translateY(-1.5px) rotate(-.06deg); }
+  100% { transform:translateY(0)     rotate(0);       opacity:1; }
+}
+.card-settle{ animation:card-settle .6s cubic-bezier(.2,.8,.3,1) both; }
+
+@media (prefers-reduced-motion:reduce){
+  .card-settle{ animation:none; }
+}
+
 /* Fireworks for the opening of a term. Each spark is given an angle and a
    distance as custom properties and flies out along it, so one keyframe covers
    every direction. The end position drops a little further than it rises,

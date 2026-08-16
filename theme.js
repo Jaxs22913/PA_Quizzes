@@ -204,6 +204,34 @@
     osc.start(t0);
     osc.stop(t0 + duration + 0.02);
   }
+  /* Filtered noise burst. Every other sound here is a pure oscillator, which
+     can make a chime but not a crack -- a firework is mostly noise, so it
+     needs a buffer of random samples pushed through a bandpass. */
+  function noise(ctx, startTime, duration, centreHz, peakGain, sweepToHz) {
+    var frames = Math.max(1, Math.floor(ctx.sampleRate * duration));
+    var buf = ctx.createBuffer(1, frames, ctx.sampleRate);
+    var data = buf.getChannelData(0);
+    for (var i = 0; i < frames; i++) {
+      // taper the tail so the burst decays instead of stopping dead
+      data[i] = (Math.random() * 2 - 1) * (1 - i / frames);
+    }
+    var src = ctx.createBufferSource();
+    src.buffer = buf;
+    var filter = ctx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.Q.value = 0.8;
+    var gain = ctx.createGain();
+    var t0 = ctx.currentTime + startTime;
+    filter.frequency.setValueAtTime(centreHz, t0);
+    if (sweepToHz) filter.frequency.exponentialRampToValueAtTime(sweepToHz, t0 + duration);
+    gain.gain.setValueAtTime(0, t0);
+    gain.gain.linearRampToValueAtTime(peakGain, t0 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t0 + duration);
+    src.connect(filter).connect(gain).connect(ctx.destination);
+    src.start(t0);
+    src.stop(t0 + duration + 0.02);
+  }
+
   var SOUNDS = {
     select: function (ctx) { tone(ctx, 700, 0, 0.05, "sine", 0.07); },
     correct: function (ctx) {
@@ -226,6 +254,28 @@
       [523.25, 659.25, 783.99, 1046.5, 1318.5].forEach(function (freq, i) {
         tone(ctx, freq, i * 0.1, i === 4 ? 0.35 : 0.12, "sine", 0.13);
       });
+    },
+    /* Firework: a rising whistle, the crack of the shell, then the crackle of
+       the sparks trailing off. Three parts because two just sounds like a
+       thud -- the tail is what makes it read as fireworks rather than a door
+       slamming. Kept quieter than the quiz sounds since several can overlap. */
+    firework: function (ctx) {
+      var launch = ctx.createOscillator();
+      var lg = ctx.createGain();
+      var t0 = ctx.currentTime;
+      launch.type = "sine";
+      launch.frequency.setValueAtTime(420, t0);
+      launch.frequency.exponentialRampToValueAtTime(1150, t0 + 0.32);
+      lg.gain.setValueAtTime(0.0001, t0);
+      lg.gain.exponentialRampToValueAtTime(0.05, t0 + 0.18);
+      lg.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.34);
+      launch.connect(lg).connect(ctx.destination);
+      launch.start(t0);
+      launch.stop(t0 + 0.36);
+
+      tone(ctx, 110, 0.34, 0.28, "sine", 0.11);              // the shell going off
+      noise(ctx, 0.34, 0.22, 1400, 0.10, 500);               // the crack
+      noise(ctx, 0.46, 0.85, 2600, 0.045, 1200);             // sparks trailing
     }
   };
   function playSound(name) {

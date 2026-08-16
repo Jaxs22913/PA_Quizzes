@@ -334,9 +334,18 @@ document.querySelectorAll(".semester").forEach(semester => {
         for (var r = 0; r < rounds; r++) {
           (function (r) {
             setTimeout(function () {
-              var x = window.innerWidth * (0.18 + Math.random() * 0.64);
-              var y = window.innerHeight * (0.16 + Math.random() * 0.28);
-              firework(x, y);
+              /* Sound first, sparks a beat later. The firework sound opens with
+                 a rising whistle and only cracks at 0.34s, so firing both at
+                 once would put the bang after the flash. Starting the audio
+                 early lands the crack on the burst.
+
+                 playSiteSound no-ops unless sound is switched on in settings,
+                 so this is silent for anyone who has not asked for it. */
+              if (window.playSiteSound) window.playSiteSound("firework");
+              setTimeout(function () {
+                firework(window.innerWidth * (0.18 + Math.random() * 0.64),
+                         window.innerHeight * (0.16 + Math.random() * 0.28));
+              }, 340);
             }, 260 + r * 620 + Math.random() * 180);
           })(r);
         }
@@ -489,6 +498,39 @@ document.querySelectorAll(".semester").forEach(semester => {
       alignSidebars();
       window.addEventListener("resize", alignSidebars);
       window.addEventListener("load", alignSidebars);
+
+      /* Everyday entrance: the cards settle in on load, top to bottom.
+
+         Started from a `load` listener registered AFTER the alignSidebars one
+         above, which is the whole trick. alignSidebars measures the semester
+         card with getBoundingClientRect to place both rails, and a transform
+         changes what that returns -- so if the animation were already running
+         when it measured, the rails would be pinned a few pixels out and stay
+         there. Listeners fire in registration order, so alignment is finished
+         before the first card moves.
+
+         Only transform and opacity animate, so nothing reflows and no second
+         measurement is needed afterwards. */
+      window.addEventListener("load", function () {
+        if (window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        // Already animating something bigger on the first day of term; two
+        // entrances on one element would fight over the same transform.
+        if (document.querySelector(".kickoff-drop")) return;
+
+        var order = ["question-issue-row", "relax-cta-row", "group-cta-row",
+                     "arcade-cta-row", "stats-widget", "week-widget",
+                     "semester-card", "continue-widget"];
+        var step = 0;
+        order.forEach(function (id) {
+          var el = document.getElementById(id);
+          if (!el || el.classList.contains("hidden") ||
+              getComputedStyle(el).display === "none") return;
+          el.style.animationDelay = (step * 55) + "ms";
+          el.classList.add("card-settle");
+          step++;
+        });
+      });
 
       const items = EXAM_EVENTS.filter(e => weekKeys.includes(e.date))
         .sort((a, b) => a.date.localeCompare(b.date));
