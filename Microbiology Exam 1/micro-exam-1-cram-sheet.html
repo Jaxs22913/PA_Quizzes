@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Microbiology Exam 1</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#1f4d2b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Microbiology · Exam 1 · Class of 2028</div>
+    <h1>Microbiology Exam 1 Cram Sheet</h1>
+    <p class="sub">Lecture 1 — Review of General Microbiology. Thirteen objectives condensed.</p>
+    <div class="toc">
+      <a href="#pathogens" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>Types of Pathogens</a>
+      <a href="#structures" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>Bacterial Structures</a>
+      <a href="#gram" style="color:#25576c"><span class="dot" style="background:#2f6f8a"></span>Morphology & Gram Stain</a>
+      <a href="#culture" style="color:#6c5325"><span class="dot" style="background:#8a6a2f"></span>Identification & Media</a>
+      <a href="#curves" style="color:#803e21"><span class="dot" style="background:#a4502a"></span>Growth & Death Curves</a>
+      <a href="#viruses" style="color:#533e7f"><span class="dot" style="background:#6a4fa3"></span>Viruses & Phages</a>
+      <a href="#mutations" style="color:#892d3a"><span class="dot" style="background:#b03a4a"></span>Mutations & Control</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="micro-exam-1-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="pathogens" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>Types of Pathogens</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Prokaryotic vs eukaryotic</td><td>PRO: no nuclear membrane, few organelles, circular naked DNA, peptidoglycan wall, 70S ribosomes. EU: nuclear membrane, many organelles, linear DNA + histones, carbohydrate wall, 80S ribosomes.</td></tr>
+          <tr><td class="h">The five types</td><td>Bacteria (prokaryotic) · fungi, protozoa, helminths (eukaryotic) · viruses (noncellular infectious agents).</td></tr>
+          <tr><td class="h">Chlamydias vs Rickettsias</td><td>Both tiny obligate intracellular. Rickettsias ARE arthropod-transmitted (fleas, ticks, lice); Chlamydias are NOT.</td></tr>
+          <tr><td class="h">Mycoplasmas</td><td>Tiny, pleomorphic, LACK A CELL WALL. M. pneumoniae.</td></tr>
+          <tr><td class="h">Fungi</td><td>Yeasts unicellular (Candida albicans) · molds multicellular and filamentous (Penicillium notatum). Differentiated by spore type.</td></tr>
+          <tr><td class="h">Protozoa</td><td>Trophozoite = motile feeding stage; cyst = dormant resistant stage. Mastigophora (flagellates), Sarcodina (amoebas), Ciliophora (ciliates), Apicomplexa (nonmotile — Plasmodium).</td></tr>
+          <tr><td class="h">Helminths</td><td>Flatworms: no body cavity, blind-pouch gut — cestodes, trematodes. Roundworms: complete gut, cuticle, spines and hooks.</td></tr>
+          <tr><td class="h">Prion vs viroid</td><td>PRION = misfolded protein, NO nucleic acid → spongiform encephalopathy. VIROID = short RNA, NO protein coat, plants only. Exact opposites.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="structures" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>Bacterial Structures</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Flagellum</td><td>True directional motility.</td></tr>
+          <tr><td class="h">Pilus</td><td>Coded by a PLASMID; used in CONJUGATION.</td></tr>
+          <tr><td class="h">Fimbriae</td><td>Adhesion to membrane surfaces.</td></tr>
+          <tr><td class="h">Glycocalyx</td><td>Capsule/slime layer. Biofilms · prevents desiccation · prevents phagocytosis (pathogenicity factor). S. pneumoniae.</td></tr>
+          <tr><td class="h">Plasmids</td><td>Small circular dsDNA, free or integrated, NOT essential. May encode antibiotic resistance, metal tolerance, enzymes, toxins.</td></tr>
+          <tr><td class="h">Endospores</td><td>Survival mechanism, resistant coat, very low metabolism. BACILLUS and CLOSTRIDIUM.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="gram" style="--acc:#2f6f8a;--acc-bg:#e2ebef;--acc-zebra:#f0f5f7;--acc-ink:#25576c">
+    <div class="shead"><span class="dot" style="background:#2f6f8a"></span><h2>Morphology & Gram Stain</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Three shapes</td><td>Cocci (spherical) · bacilli (rod) · spiral (helical, comma, twisted rod, spirochete). Matters for IDENTIFICATION.</td></tr>
+          <tr><td class="h">Peptidoglycan</td><td>Alternating N-acetyl glucosamine + N-acetyl muramic acid, crosslinked by a short peptide bridge. Crosslinking by TRANSPEPTIDASES = target of beta lactams.</td></tr>
+          <tr><td class="h">Gram stain steps</td><td>Crystal violet 1min → iodine 1min → DECOLORIZE acetone alcohol ~10sec (MOST CRITICAL) → safranin 1min.</td></tr>
+          <tr><td class="h">Gram positive</td><td>Thick homogenous peptidoglycan 20-80nm + teichoic/lipoteichoic acid. RETAINS crystal violet → purple. PHYSICALLY strong (temp, pH, osmotic).</td></tr>
+          <tr><td class="h">Gram negative</td><td>Outer membrane (LPS outermost) + periplasmic space + thin peptidoglycan + inner membrane. LOSES crystal violet → red. CHEMICALLY strong (disinfectants, antibiotics).</td></tr>
+          <tr><td class="h">Lipopolysaccharide</td><td>3 parts: LIPID A (endotoxin activity) · core polysaccharide · O-POLYSACCHARIDE (classification).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="culture" style="--acc:#8a6a2f;--acc-bg:#efeae2;--acc-zebra:#f7f5f0;--acc-ink:#6c5325">
+    <div class="shead"><span class="dot" style="background:#8a6a2f"></span><h2>Identification & Media</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">6 identification methods</td><td>Microscopic morphology · macroscopic (colony) morphology · physiological/biochemical · chemical · serological · genetic and molecular (G+C composition, probes, sequencing/rRNA).</td></tr>
+          <tr><td class="h">Growth requirements</td><td>CHEMICAL: water, energy nutrients, vitamins, minerals, oxygen. PHYSICAL: temperature, pH, osmotic pressure.</td></tr>
+          <tr><td class="h">Synthetic vs complex</td><td>Synthetic = pure compounds, exact formula. Complex = ≥1 ingredient not chemically definable.</td></tr>
+          <tr><td class="h">Enriched</td><td>Blood, serum, haemoglobin or growth factors for FASTIDIOUS microbes.</td></tr>
+          <tr><td class="h">Selective vs differential</td><td>SELECTIVE inhibits some / encourages desired. DIFFERENTIAL lets several grow and SHOWS visible differences.</td></tr>
+          <tr><td class="h">Combinations</td><td>Blood agar = enriched + differential (gamma/beta/alpha haemolysis). Mannitol salt agar = selective + differential.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="curves" style="--acc:#a4502a;--acc-bg:#f2e6e1;--acc-zebra:#f9f3f0;--acc-ink:#803e21">
+    <div class="shead"><span class="dot" style="background:#a4502a"></span><h2>Growth & Death Curves</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Growth = ?</td><td>Increase in NUMBER, not size. Binary fission → exponential, not arithmetic.</td></tr>
+          <tr><td class="h">Lag</td><td>Flat period of adjustment and enlargement; little growth.</td></tr>
+          <tr><td class="h">Exponential</td><td>Maximum growth while nutrients/environment allow. MOST VULNERABLE to control here — e.g. penicillin.</td></tr>
+          <tr><td class="h">Stationary</td><td>Growth rate = death rate. Depleted nutrients and oxygen; organic acids and pollutants excreted.</td></tr>
+          <tr><td class="h">Death</td><td>Limiting factors intensify; cells die exponentially in their own wastes.</td></tr>
+          <tr><td class="h">Death curve</td><td>Rate of death under a control method is CONSTANT. Decimal reduction time = time to kill 90%. 4.9M → 486K → 48.6K → 4,860.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="viruses" style="--acc:#6a4fa3;--acc-bg:#eae6f2;--acc-zebra:#f5f3f9;--acc-ink:#533e7f">
+    <div class="shead"><span class="dot" style="background:#6a4fa3"></span><h2>Viruses & Phages</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">All viruses have</td><td>CAPSIDS — protein coats enclosing the nucleic acid. Helical, icosahedral or complex. DNA or RNA. May have envelope or spikes.</td></tr>
+          <tr><td class="h">6 phage steps</td><td>Adsorption → penetration → replication → assembly → maturation → release.</td></tr>
+          <tr><td class="h">Lytic</td><td>Rapid takeover, multiple copies, host destroyed. GENERALIZED transduction (random host DNA).</td></tr>
+          <tr><td class="h">Lysogenic</td><td>Integrates as PROPHAGE. May gain new traits (e.g. toxin production). Immune to reinfection. Replicated with host. SPECIALIZED transduction (same DNA in all cells).</td></tr>
+          <tr><td class="h">Animal vs phage</td><td>Entire virion ENGULFED · UNCOATING required (cytoplasmic vs extracellular pH) · release by BUDDING, which may give an envelope.</td></tr>
+          <tr><td class="h">Cytopathic effects</td><td>Size/shape change · cytoplasmic and nuclear inclusion bodies · multinucleated fusion · lysis · DNA alteration ACTIVATING ONCOGENES · cancerous transformation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="mutations" style="--acc:#b03a4a;--acc-bg:#f4e3e6;--acc-zebra:#f9f1f2;--acc-ink:#892d3a">
+    <div class="shead"><span class="dot" style="background:#b03a4a"></span><h2>Mutations & Control</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Mutation</td><td>Change in the base sequence of the genome that may impact phenotype. Induced by radiation, chemicals, viruses. May be beneficial, neutral or deleterious.</td></tr>
+          <tr><td class="h">3 routes of bacterial gene transfer</td><td>TRANSFORMATION (naked DNA from environment) · CONJUGATION (plasmid, cell to cell) · TRANSDUCTION (viral vector).</td></tr>
+          <tr><td class="h">Viral mutation implications</td><td>Changed surface properties may weaken/eliminate immunity from vaccine or prior exposure; animal viruses may cross to humans where no immunity exists.</td></tr>
+          <tr><td class="h">Aseptic vs disinfection</td><td>Aseptic/sterile = removal of ALL contamination. Disinfection = elimination of SOME.</td></tr>
+          <tr><td class="h">2 control mechanisms</td><td>Alteration of membrane permeability · denaturation of proteins and nucleic acids.</td></tr>
+          <tr><td class="h">Temperature</td><td>HIGH can kill; LOW will NOT — only slows growth. Dry heat, wet heat (boiling, autoclave, pasteurization); refrigeration/freezing preserve.</td></tr>
+          <tr><td class="h">Disinfectant vs antiseptic</td><td>Disinfectant on INANIMATE objects (Lysol). Antiseptic on TISSUES (Listerine).</td></tr>
+          <tr><td class="h">True chemical sterilants</td><td>Very few: ethylene oxide (plastics, spices) · beta propiolactone (vaccines, tissue grafts, instruments).</td></tr>
+          <tr><td class="h">Selective toxicity</td><td>Antimicrobials should act on the microbe without harming the host. Sulfa drugs = synthetic (coal tar dyes); penicillin = from Penicillium, active against Gram-positives.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Microbiology Exam 1 Study Guide (Class of 2028). For the full explanation and the cell wall, growth curve and phage figures, see the full guide. More topics are added as each Exam 1 lecture is posted.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
