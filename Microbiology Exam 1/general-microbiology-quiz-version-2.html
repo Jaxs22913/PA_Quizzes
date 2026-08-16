@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review of General Microbiology — Quiz 2</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Review of General Microbiology</h1>
+    <div class="sub">Microbiology &middot; Exam 1 &middot; Lecture 1 &middot; Set 2</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Lecture 1 of Microbiology — Review of General Microbiology. Thirty questions across all thirteen instructional objectives from the syllabus, every one cited to the slide it came from. A large lecture: bacteriology, virology, mycology, parasitology, genetics and control.</p>
+    <div class="chips"><span class="chip">Pathogen types</span><span class="chip">Bacterial structures</span><span class="chip">Gram staining</span><span class="chip">Culture media</span><span class="chip">Growth & death curves</span><span class="chip">Viruses & phages</span><span class="chip">Mutations</span><span class="chip">Microbial control</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Culture media", "io": "Review the types of culture media used to identify pathogens", "q": "What is the difference between selective and differential media?", "opts": [["Selective supports fastidious organisms; differential defines every ingredient", "Supporting fastidious organisms describes enriched media, and defined ingredients describe synthetic media."], ["Selective allows several types of microbes to grow and displays visible differences between them; differential contains agents that inhibit some microbes and encourage others", "Growing a broad range describes general purpose media, and differential media permit several types to grow."], ["Selective contains agents that inhibit some microbes and encourage the desired ones; differential allows several types to grow and displays visible differences between them", "Correct. One narrows what grows, the other makes what grows distinguishable."], ["Selective is always synthetic; differential is always complex", "The synthetic and complex axis is independent of the selective and differential one."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 44"}, {"topic": "Lytic vs lysogenic", "io": "Differentiate the different processes of phage replication", "q": "Which consequence does the lecture attribute to lysogeny that has direct clinical relevance?", "opts": [["The host bacterial cell is destroyed, releasing multiple copies of the virus", "That is the lytic outcome."], ["The bacterium may acquire new traits, such as the ability to make a toxin", "Correct. Integration as prophage can hand the bacterium a new capability, and it also becomes immune to reinfection."], ["The bacterium becomes unable to divide", "Viral genes are replicated along with the host cell, so division continues."], ["The bacterium loses its plasmids", "Nothing in the lecture links lysogeny to plasmid loss."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"}, {"topic": "Culture media", "io": "Review the types of culture media used to identify pathogens", "q": "What distinguishes a synthetic (chemically defined) medium from a complex one?", "opts": [["Synthetic contains pure organic and inorganic compounds in an exact chemical formula; complex contains at least one ingredient that is not chemically definable", "Correct. That is the whole distinction — whether every ingredient can be written as a formula."], ["Synthetic inhibits unwanted organisms; complex encourages them", "Inhibiting some organisms while encouraging others describes selective media."], ["Synthetic shows visible differences between organisms; complex does not", "Displaying visible differences describes differential media."], ["Synthetic contains at least one ingredient that is not chemically definable; complex contains pure organic and inorganic compounds in an exact chemical formula", "Blood, serum and haemoglobin are features of enriched media."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 43"}, {"topic": "Molecular mechanisms", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "Influenza virus binds host cells using which molecule, and to which receptor?", "opts": [["Hemagglutinin protein, binding sialic acid receptors on host cells", "Correct. The lecture gives this as its example of a specific molecular interaction between a pathogen surface protein and a host cell receptor."], ["Type I fimbriae, binding mannose receptors on host cells", "That is the Escherichia coli adhesion example, used to illustrate colonisation of the urinary tract."], ["Panton-Valentine leucocidin, binding receptors on neutrophils", "That is a Staphylococcus aureus toxin, not the influenza attachment mechanism."], ["Lipid A, binding pattern recognition receptors on white blood cells", "Lipid A is the endotoxin portion of lipopolysaccharide in Gram-negative cell walls."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 10"}, {"topic": "Animal viruses", "io": "Compare and contrast phage replication to animal virus replication", "q": "Which three differences does the lecture give between animal virus and phage replication?", "opts": [["Animal viruses lack a capsid, replicate in the nucleus, and never integrate", "All viruses have capsids, and none of these three are the stated differences."], ["Animal viruses bind only protein receptors, use no enzymes, and kill every host cell", "None of these appear as the listed contrasts."], ["The entire virion is engulfed, uncoating is required to release the genetic material, and release is by budding — which may assist acquisition of an envelope", "Correct. Uncoating is driven by the difference between cytoplasmic and extracellular pH."], ["The entire virion is engulfed, no uncoating is required at any point, and release occurs only by lysis of the host cell membrane rather than by budding", "Assembly is part of viral replication generally."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 58"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "Which internal bacterial structures does the lecture list?", "opts": [["A defined nuclear membrane, mitochondria, and 80S ribosomes within the cytoplasm", "All three are eukaryotic features; bacteria have no defined nuclear membrane and carry 70S ribosomes."], ["Cytoplasm, organelles, a nuclear area with circular chromosome, 70S ribosomes, and inclusions", "Correct. Inclusions store products such as phosphate and oil droplets."], ["Capsule, slime layer, and biofilm matrix", "These are glycocalyx components, which sit outside the cell."], ["Flagella, pili and fimbriae", "These are projections from the wall rather than internal structures."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 37"}, {"topic": "Death curve", "io": "Review the bacterial death curve", "q": "When a microbial control method is applied to a bacterial population, what does the lecture say about the rate of death?", "opts": [["It is constant", "Correct. That constant rate is what makes decimal reduction time a usable measure."], ["It accelerates as the population falls", "A constant rate is stated, not an accelerating one."], ["It slows as resistant organisms are selected", "Selection of resistance is discussed under mutation, not as a feature of the death curve."], ["It varies unpredictably with population size", "The constancy is precisely what allows the calculation posed on the same slide."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"}, {"topic": "Growth curve", "io": "Review the phases of the bacterial growth curve", "q": "During which phase are bacteria most vulnerable to control methods, and what example does the lecture give?", "opts": [["Lag phase; example, refrigeration", "The lag phase is one of adjustment with little growth, and refrigeration is a physical control rather than the example given."], ["Stationary phase; example, autoclaving", "The stationary phase is where growth and death rates balance."], ["Exponential growth phase; example, penicillin", "Correct. Penicillin acts on wall synthesis, so it bites hardest while cells are actively dividing."], ["Death phase; example, ultraviolet radiation", "In the death phase cells are already dying exponentially in their own wastes."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"}, {"topic": "Growth curve", "io": "Review the phases of the bacterial growth curve", "q": "What causes the stationary phase?", "opts": [["Cells adjusting and enlarging before division begins", "That is the lag phase."], ["Adequate nutrients and favourable environment, plus removal of organic acids and pollutants, so growth continues unchecked", "Those conditions sustain the exponential growth phase."], ["Intensifying limiting factors killing cells exponentially", "That is the death phase."], ["Depleted nutrients and oxygen, plus excretion of organic acids and pollutants, so growth rate equals death rate", "Correct. The balance point between division and death is what makes the curve flatten."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"}, {"topic": "Growth requirements", "io": "Review the methods utilized in bacterial identification", "q": "How does the lecture divide the requirements for bacterial growth?", "opts": [["Aerobic versus anaerobic oxygen requirements only — with temperature, pH and osmotic pressure counted as chemical rather than physical", "Oxygen level is one chemical requirement among several."], ["Selective versus differential", "Those are types of culture media, not growth requirements."], ["Synthetic versus complex", "Those also describe media, by whether every ingredient is chemically definable."], ["Chemical requirements — water, energy nutrients, vitamins, minerals, oxygen levels — and physical requirements — temperature, pH, osmotic pressure", "Correct. Energy nutrients are given as carbohydrates, proteins and lipids."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 42"}, {"topic": "Lytic vs lysogenic", "io": "Differentiate the different processes of phage replication", "q": "Which features belong to the lytic cycle rather than the lysogenic?", "opts": [["Integration of viral genes as a prophage, replication alongside the host cell, and immunity to reinfection", "Those are lysogenic features."], ["Viral genes replicated along with the host cell", "That is lysogenic — the genome is carried passively."], ["Specialized transduction, in which all cells carry the same host DNA", "Specialized transduction is listed under the lysogenic cycle."], ["Rapid takeover of bacterial metabolism, production of multiple virus copies, and destruction of the host cell", "Correct. The lytic cycle also produces generalized transduction, in which random pieces of host DNA may be transmitted to other bacteria."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"}, {"topic": "Peptidoglycan", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Peptidoglycan is a polymer of which alternating units?", "opts": [["Lipid A and core polysaccharide", "Those are components of lipopolysaccharide in the Gram-negative outer membrane."], ["N-acetyl glucosamine and N-acetyl muramic acid, crosslinked by a short peptide bridge", "Correct. The crosslink runs between the terminal D-alanine and the penultimate diamino-containing amino acid."], ["Teichoic acid and lipoteichoic acid, crosslinked by an outer bridge of lipopolysaccharide", "These are acidic polysaccharides bound within the Gram-positive wall, not the polymer backbone."], ["Crystal violet and safranin", "Those are Gram stain reagents, not structural molecules."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 29"}, {"topic": "Noncellular agents", "io": "Describe the types of infectious pathogens", "q": "Viroids differ from prions in which way?", "opts": [["Viroids are misfolded proteins; prions are nucleic acid", "This reverses the two entirely."], ["Viroids cause spongiform encephalopathies; prions infect plants", "Spongiform encephalopathies are the prion diseases, and viroids are the plant agents."], ["Viroids have a protein coat; prions do not", "Viroids are explicitly described as having no protein coat."], ["Viroids are short pieces of RNA; prions contain no nucleic acid at all", "Correct. Viroids have so far been identified only in plants."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 60"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "A Gram-positive cell wall consists of which features?", "opts": [["A thick homogenous sheath of peptidoglycan 20-80 nm thick, with teichoic and lipoteichoic acid, retaining crystal violet and staining purple", "Correct. It is described as physically strong — resistant to stresses such as temperature, pH and osmotic pressure."], ["An asymmetric outer bilayer of lipopolysaccharide over a periplasmic space and a thin shell of peptidoglycan, losing crystal violet and staining red", "That is the Gram-negative wall."], ["No cell wall at all, giving a pleomorphic shape", "That describes Mycoplasmas."], ["A carbohydrate-based wall with 80S ribosomes", "Those are eukaryotic features."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 33"}, {"topic": "Lytic vs lysogenic", "io": "Differentiate the different processes of phage replication", "q": "How does the lecture distinguish generalized from specialized transduction?", "opts": [["Generalized transmits random pieces of host DNA; specialized means all cells carry the same host DNA", "Correct. Generalized is listed under the lytic cycle, specialized under the lysogenic."], ["Generalized occurs in the lysogenic cycle; specialized in the lytic", "This reverses which cycle each belongs to."], ["Generalized transduction transfers plasmid DNA cell to cell; specialized takes up naked DNA", "Those describe conjugation and transformation, which are not viral processes."], ["Generalized requires a pilus; specialized requires a capsule", "A pilus is used in conjugation, and a capsule is a glycocalyx structure."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"}, {"topic": "Peptidoglycan", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Crosslinking of peptidoglycan is catalyzed by transpeptidases. Why does that matter clinically?", "opts": [["Because transpeptidases are the receptor for bacterial conjugation", "Conjugation uses a pilus, coded by a plasmid."], ["Because transpeptidases determine whether a cell retains crystal violet", "Crystal violet retention depends on the thickness of the peptidoglycan sheath, not on the enzyme."], ["Because transpeptidases are the target of beta lactam antibiotics", "Correct. The lecture states this directly, which is what connects wall synthesis to antibiotic action."], ["Because transpeptidases produce the endospore coat", "The spore coat is a survival structure formed by Bacillus and Clostridium."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 29"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "Which three mechanisms allow bacteria to acquire new genetic information?", "opts": [["Binary fission — division of the parent cell into two; sporulation — formation of a resistant endospore coat; and budding — release of virions through the host membrane", "Binary fission is reproduction, sporulation is survival, and budding is a viral release mechanism."], ["Adsorption, penetration and release", "Those are steps of phage replication."], ["Lag, exponential and stationary phases", "Those are growth curve phases."], ["Transformation — taking up naked DNA from the environment; conjugation — cell to cell transmission of DNA from a plasmid; and transduction — transmission of genetic material by viral vector", "Correct. All three are routes to traits such as antibiotic resistance or toxin production."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 62"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "How does the lecture distinguish aseptic or sterile condition from disinfection?", "opts": [["Aseptic applies to tissues; disinfection applies to inanimate objects", "That distinction is between antiseptics and disinfectants, which are chemical agents."], ["Aseptic uses heat; disinfection uses chemicals", "Both physical and chemical methods exist for either goal."], ["Aseptic or sterile means removal of ALL forms of microbial contamination; disinfection means elimination of SOME forms", "Correct. The lecture adds that lowering numbers rather than total elimination may be good enough depending on circumstances."], ["Aseptic or sterile means elimination of SOME forms of microbial contamination; disinfection means removal of ALL forms", "No such restriction is given."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 65"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "The lecture contrasts the two wall types as physically versus chemically strong. Which way round?", "opts": [["Gram-negative is physically strong — resistant to temperature, pH and osmotic pressure; Gram-positive is chemically strong — resistant to disinfectants and antibiotics", "This reverses the pairing given."], ["Both are described as physically strong only", "Each is given a different kind of strength, which is the point of the contrast."], ["Both are described as chemically strong only", "Again, the contrast assigns one property to each."], ["Gram-positive is physically strong — resistant to temperature, pH and osmotic pressure; Gram-negative is chemically strong — resistant to disinfectants and antibiotics", "Correct. That difference follows from the thick peptidoglycan sheath versus the outer membrane barrier."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "Which projection from the bacterial wall provides true directional motility?", "opts": [["Flagellum", "Correct. The flagellum is listed as a specialized feature providing true directional motility."], ["Pilus", "The pilus is coded by a plasmid and used in bacterial conjugation."], ["Fimbriae", "Fimbriae are used for adhesion to membrane surfaces."], ["Glycocalyx", "The glycocalyx is a capsule or slime layer, involved in biofilms and preventing phagocytosis."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 27"}, {"topic": "Death curve", "io": "Review the bacterial death curve", "q": "A culture of roughly 4,865,321 organisms is exposed to a control method with a decimal reduction time of 10 minutes. What does the constant death rate imply about clearing it?", "opts": [["Each successive 10-minute interval removes a fixed NUMBER of organisms, so the count falls in equal steps each time", "One interval removes 90%, leaving roughly 486,000 organisms behind."], ["Nothing can be predicted, because death rate varies with population size", "The rate is stated to be constant, which is what makes prediction possible."], ["Each successive 10-minute interval removes 90% of whatever remains, so the count falls by an order of magnitude each time", "Correct. From about 4.9 million, successive intervals give roughly 486,000, then 48,600, then 4,860 — which is why sterilisation is defined by probability rather than by a moment when the last organism dies."], ["The population reaches zero after exactly two intervals", "Two intervals leave roughly 48,600 organisms."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Which portion of lipopolysaccharide carries endotoxin activity, and which is used in bacterial classification?", "opts": [["Core polysaccharide carries endotoxin; Lipid A is used in classification", "This reverses both roles."], ["O-polysaccharide carries endotoxin; core polysaccharide is used in classification", "Endotoxin activity is attributed to Lipid A, not the O-polysaccharide."], ["Lipid A carries endotoxin activity; O-polysaccharide is used in classification", "Correct. Both attributions are given explicitly in the description of the outer membrane."], ["Both functions belong to the core polysaccharide", "The three parts are given distinct roles."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}, {"topic": "Environmental factors", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "Under which environmental conditions does the lecture say influenza virus is more stable and transmissible?", "opts": [["High temperatures and low humidity", "This reverses both conditions given."], ["Low temperatures and high humidity", "Correct. The lecture pairs low temperature with high humidity for influenza stability and transmission."], ["High temperatures and high humidity", "Temperature is stated as low, not high."], ["Low temperatures and low humidity", "Humidity is stated as high, not low."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 12"}, {"topic": "Protozoa", "io": "Describe the types of infectious pathogens", "q": "Protozoa may exist in two forms. What are they?", "opts": [["Yeast and hyphal forms", "That dimorphism belongs to fungi, not to the protozoan forms given here."], ["Trophozoite and endospore — the two alternating stages of the protozoan life cycle", "Endospores are a bacterial survival structure, produced by Bacillus and Clostridium."], ["Prophage and virion", "Those are viral states, from the lysogenic and lytic cycles."], ["Trophozoite — the motile feeding stage — and cyst, a dormant resistant stage", "Correct. Protozoa are also differentiated by motility: flagella, cilia, pseudopods, or nonmotile."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 18"}, {"topic": "Cytopathic effects", "io": "Describe the cytopathic effects of viruses", "q": "Which of the following is listed as a cytopathic effect of viruses?", "opts": [["Cells fusing to form multinucleated cells", "Correct. The full list also includes changes in size and shape, cytoplasmic and nuclear inclusion bodies, cell lysis, alteration of deoxyribonucleic acid, and transformation into cancerous cells."], ["Formation of an endospore coat", "Endospores are a bacterial survival structure."], ["Crosslinking of peptidoglycan", "That is bacterial cell wall synthesis."], ["Conversion of a trophozoite to a cyst", "That is a protozoan life-stage change."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 59"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "What is the difference between a disinfectant and an antiseptic?", "opts": [["Disinfectants are chemical; antiseptics are physical", "Both are chemical control methods."], ["Disinfectants are used on inanimate objects; antiseptics are used on tissues", "Correct. The lecture's examples are Lysol for the disinfectant and Listerine mouthwash for the antiseptic."], ["Disinfectants sterilise completely; antiseptics do not affect microbes at all", "Very few true chemical sterilants exist, and antiseptics do act on microbes."], ["Disinfectants are naturally produced; antiseptics are synthetic", "That natural-versus-synthetic distinction is drawn for antibiotics and sulfa drugs."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 69"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "What health implications does the lecture attach to high mutation rates in viruses?", "opts": [["Changing surface properties may weaken or eliminate immunity from vaccination or previous exposure, and animal viruses that were host specific can cross to humans", "Correct. Human hosts are unlikely to have immunity to viruses crossed from animal hosts."], ["Viruses lose the ability to replicate in host cells", "Nothing in the lecture suggests mutation abolishes replication."], ["Viruses become uniformly less transmissible over time", "Mutation is described as changing factors affecting transmission, not reliably reducing it."], ["Viruses can no longer be identified by nucleic acid sequencing, and previously host-specific animal viruses lose the ability to cross to humans", "Sequencing is listed as an identification method and is not said to fail."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 62"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "Which health implications does the lecture give for genetic mutations in HUMAN hosts?", "opts": [["Acquisition of resistance to antibiotics and other control methods, the ability to produce toxins, and other virulence factors enhancing pathogenicity", "Those are the implications given for bacterial mutation."], ["Chemical or radiation exposure transforming normal cells to cancer cells, oncogenic viruses causing the same transformation, and viruses affecting immune cells", "Correct. Human immunodeficiency virus with acquired immunodeficiency syndrome, and autoimmune disorders, are the examples given."], ["Loss of resident flora and overgrowth of pathogens", "Resident flora belongs to a later lecture in this course."], ["Changes to surface antigens that evade vaccination", "That is the implication of viral mutation, not human."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 63"}, {"topic": "Fungi", "io": "Describe the types of infectious pathogens", "q": "How does the lecture distinguish yeasts from molds?", "opts": [["Yeasts are macroscopic; molds are microscopic", "Both yeasts and molds fall under microscopic fungi; mushrooms and puffballs are the macroscopic group."], ["Yeasts are photosynthetic; molds are not", "Photosynthesis is attributed to algae among the protozoan groups."], ["Yeasts are unicellular; molds are multicellular and filamentous", "Correct. Candida albicans and Saccharomyces cerevisiae are the yeast examples; Penicillium notatum the mold."], ["Yeasts lack a cell wall entirely; molds have a wall built of chitin", "The lecture does not draw this distinction, and lacking a cell wall describes Mycoplasmas."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 17"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Lipopolysaccharide in the Gram-negative outer membrane consists of which three parts?", "opts": [["Teichoic acid, lipoteichoic acid, and surface proteins", "Those are Gram-positive wall components."], ["Lipid A, core polysaccharide, and O-polysaccharide", "Correct. Lipid A carries the endotoxin activity, and the O-polysaccharide is used in bacterial classification."], ["N-acetyl glucosamine, N-acetyl muramic acid, and a pentaglycine spacer", "Those are peptidoglycan components; the pentaglycine spacer is the indirect crosslink in Staphylococcus aureus."], ["Crystal violet, iodine, and safranin", "Those are stain reagents."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
