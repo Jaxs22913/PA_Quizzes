@@ -3770,12 +3770,12 @@ window.openPauseOverlay = function (opts) {
       '<div style="background:#fff;color:#111827;max-width:440px;width:100%;border-radius:14px;padding:22px 22px 18px;box-shadow:0 12px 40px rgba(0,0,0,.35);font-family:system-ui,-apple-system,Segoe UI,sans-serif;">' +
       '<h3 style="margin:0 0 4px;font-size:17px;">Report a mistake</h3>' +
       '<p style="margin:0 0 12px;font-size:13px;color:#6b7280;">Tell us what looks wrong on this page and it will get fixed. Thanks!</p>' +
-      '<textarea id="report-msg" rows="4" placeholder="Describe the mistake (which question, what is wrong)…" style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;border-radius:9px;padding:10px;font:14px inherit;resize:vertical;"></textarea>' +
-      '<input id="report-email" type="email" placeholder="Your email (optional, for a reply)" style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;border-radius:9px;padding:9px 10px;font:14px inherit;margin-top:8px;">' +
+      '<textarea id="report-msg" rows="4" placeholder="Describe the mistake (which question, what is wrong)…" style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;border-radius:9px;padding:10px;font-size:14px;font-family:inherit;resize:vertical;"></textarea>' +
+      '<input id="report-email" type="email" placeholder="Your email (optional, for a reply)" style="width:100%;box-sizing:border-box;border:1px solid #d1d5db;border-radius:9px;padding:9px 10px;font-size:14px;font-family:inherit;margin-top:8px;">' +
       '<div id="report-status" style="font-size:13px;margin-top:8px;min-height:18px;"></div>' +
       '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">' +
-      '<button id="report-cancel" style="border:none;background:#e5e7eb;color:#111827;border-radius:9px;padding:9px 16px;font:600 14px inherit;cursor:pointer;">Cancel</button>' +
-      '<button id="report-send" style="border:none;background:#2563eb;color:#fff;border-radius:9px;padding:9px 18px;font:600 14px inherit;cursor:pointer;">Send report</button>' +
+      '<button id="report-cancel" style="border:none;background:#e5e7eb;color:#111827;border-radius:9px;padding:9px 16px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;">Cancel</button>' +
+      '<button id="report-send" style="border:none;background:#2563eb;color:#fff;border-radius:9px;padding:9px 18px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;">Send report</button>' +
       '</div></div>';
     document.body.appendChild(ov);
     ov.addEventListener("click", function (e) { if (e.target === ov) hide(); });
