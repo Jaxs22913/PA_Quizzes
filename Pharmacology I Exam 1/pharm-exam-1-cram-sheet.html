@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Pharmacology I Exam 1</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#6b3524;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 1 &middot; Class of 2028</div>
+    <h1>Pharmacology I Exam 1 Cram Sheet</h1>
+    <p class="sub">Lecture 1: Antibiotics, Antivirals and Antifungals — class identity and mechanism first, then black box warnings and high-yield adverse effects. Drug dosages are not tested.</p>
+    <div class="toc">
+      <a href="#principles" style="color:#53291c"><span class="dot" style="background:#6b3524"></span>Principles &amp; Modes of Action</a>
+      <a href="#betalactams" style="color:#7a4025"><span class="dot" style="background:#9c5230"></span>Beta-lactams</a>
+      <a href="#glyco" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Glycopeptides &amp; Lipopeptides</a>
+      <a href="#protein" style="color:#5f3a2d"><span class="dot" style="background:#7a4a3a"></span>Protein Synthesis Inhibitors</a>
+      <a href="#dna" style="color:#7d5322"><span class="dot" style="background:#a06a2c"></span>DNA, Folate &amp; Membrane Agents</a>
+      <a href="#antivirals" style="color:#6c3a46"><span class="dot" style="background:#8a4a5a"></span>Antivirals</a>
+      <a href="#antifungals" style="color:#4a531c"><span class="dot" style="background:#5f6b24"></span>Antifungals</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pharm-exam-1-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="principles" style="--acc:#6b3524;--acc-bg:#eae3e0;--acc-zebra:#f5f1f0;--acc-ink:#53291c">
+    <div class="shead"><span class="dot" style="background:#6b3524"></span><h2>Principles &amp; Modes of Action</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Bacteriostatic</td><td>Inhibits a vital growth pathway without directly killing. Erythromycin, tetracyclines, sulfonamides, trimethoprim, clindamycin.</td></tr>
+          <tr><td class="h">Bactericidal</td><td>Disrupts function enough that death occurs. Penicillins, cephalosporins, aminoglycosides, vancomycin, fluoroquinolones, metronidazole.</td></tr>
+          <tr><td class="h">Concentration-dependent</td><td>Higher concentration, greater killing. Post-antibiotic effect present. Favours large, widely spaced doses — why aminoglycosides went once daily.</td></tr>
+          <tr><td class="h">Time-dependent</td><td>Killing plateaus; what matters is time above the minimal inhibitory concentration, target 40–70% of the interval. No post-antibiotic effect. Favours continuous or frequent infusion.</td></tr>
+          <tr><td class="h">Ribosome selectivity</td><td>Bacterial 70S (50S + 30S) versus mammalian 80S (60S + 40S). A difference of degree, not an absolute barrier — hence dose-related toxicity.</td></tr>
+          <tr><td class="h">50S binders</td><td>Macrolides, clindamycin, chloramphenicol, streptogramins.</td></tr>
+          <tr><td class="h">30S binders</td><td>Aminoglycosides, tetracyclines.</td></tr>
+          <tr><td class="h">Six toxicity systems</td><td>Gastrointestinal, integument, hematologic, central nervous system, hepatic, renal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="betalactams" style="--acc:#9c5230;--acc-bg:#f1e7e2;--acc-zebra:#f8f3f1;--acc-ink:#7a4025">
+    <div class="shead"><span class="dot" style="background:#9c5230"></span><h2>Beta-lactams</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Penicillin mechanism</td><td>The beta-lactam ring mimics two D-alanine residues; the penicillin-binding protein binds it by mistake and is covalently inactivated. Chains still form, cross-links do not.</td></tr>
+          <tr><td class="h">Penicillin G</td><td>Syphilis, gas gangrene, meningococcus. Good Gram-positive cocci, NO Staphylococcus, no aerobic Gram-negatives.</td></tr>
+          <tr><td class="h">Dosage forms</td><td>Penicillin V potassium oral (acid stable) · penicillin G intravenous · penicillin G benzathine intramuscular depot, one-time dose.</td></tr>
+          <tr><td class="h">Aminopenicillins</td><td>Ampicillin, amoxicillin. Enterococcus, Listeria, endocarditis prophylaxis, upper respiratory infection, community-acquired pneumonia.</td></tr>
+          <tr><td class="h">Beta-lactamase inhibitors</td><td>Sulbactam + ampicillin (Unasyn) · tazobactam + piperacillin (Zosyn) · clavulanate + amoxicillin (Augmentin). NO antibacterial activity of their own; irreversibly inactivate the enzyme.</td></tr>
+          <tr><td class="h">What the inhibitor buys</td><td>Bacteroides and methicillin-susceptible Staphylococcus aureus. Drug of choice for skin/soft tissue, diabetic foot, animal and human bites.</td></tr>
+          <tr><td class="h">Penicillinase-resistant</td><td>Nafcillin, oxacillin, dicloxacillin — built solely for methicillin-susceptible Staphylococcus aureus. Defeated by methicillin resistance; vancomycin is then the choice.</td></tr>
+          <tr><td class="h">Cephalosporin generations</td><td>Up the generations = more Gram-negative, less Gram-positive — EXCEPT the 4th, which gains Gram-negative without losing Gram-positive.</td></tr>
+          <tr><td class="h">Penicillin cross-sensitivity</td><td>Less than 1%. A reported penicillin allergy does not by itself exclude a cephalosporin.</td></tr>
+          <tr><td class="h">Cephalosporins to know</td><td>Cefazolin/cephalexin 1st · cefepime 4th (neutropenic fever, nosocomial, pseudomonal) · ceftaroline 5th is the one with methicillin-resistant coverage · ceftolozane 5th is the antipseudomonal one.</td></tr>
+          <tr><td class="h">Ceftriaxone versus cefotaxime</td><td>Ceftriaxone needs no renal adjustment but is barred in the first 30 days of life; cefotaxime is preferred in neonatal fever or sepsis.</td></tr>
+          <tr><td class="h">Aztreonam</td><td>Gram-negative ONLY, spectrum resembling the aminoglycosides. No cross-reactivity with other beta-lactams — usable in true penicillin allergy.</td></tr>
+          <tr><td class="h">Carbapenems</td><td>Very broad: Gram-positive (not methicillin-resistant), Gram-negative, Pseudomonas EXCEPT ertapenem, anaerobes. For extended-spectrum beta-lactamase producers, multidrug-resistant Gram-negatives, meningitis. Seizures with imipenem.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="glyco" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Glycopeptides &amp; Lipopeptides</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Vancomycin mechanism</td><td>Not a beta-lactam. Binds the two D-alanine residues to block cross-linking — covers the substrate rather than disabling the enzyme, so resistance is harder to develop.</td></tr>
+          <tr><td class="h">Vancomycin coverage</td><td>Gram-positive ONLY. Penicillin-allergy infection, methicillin-resistant Staphylococcus aureus, Clostridium difficile by mouth, endocarditis, osteomyelitis.</td></tr>
+          <tr><td class="h">Vancomycin monitoring</td><td>Trough drawn 15–30 minutes before the next dose, around the 3rd or 4th dose. Watch renal clearance, ototoxicity, nephrotoxicity.</td></tr>
+          <tr><td class="h">Red man syndrome</td><td>Infusion-related reaction, with fever, chills and phlebitis.</td></tr>
+          <tr><td class="h">Minimal inhibitory concentration ≥ 2 mg/L</td><td>Target ratio becomes hard to achieve — consider an alternative such as linezolid rather than pushing the dose.</td></tr>
+          <tr><td class="h">Daptomycin</td><td>Bacterial depolarization inhibiting DNA, RNA and protein synthesis. CANNOT be used in pneumonia. Monitor muscle pain and creatine phosphokinase.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="protein" style="--acc:#7a4a3a;--acc-bg:#ece6e3;--acc-zebra:#f6f2f1;--acc-ink:#5f3a2d">
+    <div class="shead"><span class="dot" style="background:#7a4a3a"></span><h2>Protein Synthesis Inhibitors</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Macrolides</td><td>50S, blocks transpeptidation. Gram-positive aerobes plus ATYPICALS (Legionella, Mycoplasma, Chlamydophila, Chlamydia). QT prolongation and torsades.</td></tr>
+          <tr><td class="h">Macrolide interactions</td><td>Cytochrome P450 3A inhibition, erythromycin &gt; clarithromycin &gt; azithromycin. Azithromycin is the one to reach for when interactions matter.</td></tr>
+          <tr><td class="h">Clindamycin</td><td>Gram-positive aerobes including methicillin-resistant Staphylococcus aureus, plus Gram-positive AND Gram-negative anaerobes. NO Gram-negative aerobic coverage. Toxin-mediated disease. Clostridium difficile.</td></tr>
+          <tr><td class="h">Tetracyclines</td><td>30S, binds 16S ribosomal RNA and blocks transfer RNA at the A site. Bacteriostatic. Excellent for atypicals and animal-borne organisms.</td></tr>
+          <tr><td class="h">Tetracycline cautions</td><td>Chelate iron and calcium. Photosensitivity, tooth discoloration, skeletal growth depression — avoid under 8 years and in the 2nd and 3rd trimesters.</td></tr>
+          <tr><td class="h">Aminoglycosides</td><td>Gram-negatives including Pseudomonas; Enterococcus only at synergy dosing. Post-antibiotic effect → once daily. NEPHROTOXIC and OTOTOXIC.</td></tr>
+          <tr><td class="h">Linezolid</td><td>50S. Resistant Gram-positives — multidrug-resistant pneumococcus, methicillin-resistant Staphylococcus aureus, vancomycin-resistant Enterococcus. No Gram-negatives. Thrombocytopenia; serotonin syndrome with selective serotonin reuptake inhibitors, tyramine, pseudoephedrine.</td></tr>
+          <tr><td class="h">Tigecycline</td><td>Glycylcycline, 30S, bacteriostatic. Complicated skin and intra-abdominal infection. Covers Enterococcus faecalis but NOT vancomycin-resistant Enterococcus.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="dna" style="--acc:#a06a2c;--acc-bg:#f2eae1;--acc-zebra:#f8f5f0;--acc-ink:#7d5322">
+    <div class="shead"><span class="dot" style="background:#a06a2c"></span><h2>DNA, Folate &amp; Membrane Agents</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Fluoroquinolone mechanism</td><td>DUAL: inhibits DNA gyrase (topoisomerase II) forming a quinolone-DNA-gyrase complex with induced cleavage, and inhibits topoisomerase IV.</td></tr>
+          <tr><td class="h">Levofloxacin versus moxifloxacin</td><td>Levofloxacin HAS Pseudomonas coverage; moxifloxacin does not and must NOT be used for urinary tract infection.</td></tr>
+          <tr><td class="h">Fluoroquinolone harms</td><td>Tendonitis and Achilles rupture, peripheral neuropathy, central nervous system toxicity, QT prolongation, photosensitivity. Caution under 18. Chelated by iron, antacids, calcium, dairy.</td></tr>
+          <tr><td class="h">Septra mechanism</td><td>Two sequential steps: sulfamethoxazole blocks para-aminobenzoic acid → dihydrofolic acid; trimethoprim blocks dihydrofolic acid → tetrahydrofolic acid.</td></tr>
+          <tr><td class="h">Septra uses and harms</td><td>Covers methicillin-resistant Staphylococcus aureus, NOT enterococci. Pneumocystis jirovecii treatment and prophylaxis. Stevens-Johnson syndrome, blood dyscrasias, raises the international normalised ratio with warfarin.</td></tr>
+          <tr><td class="h">Metronidazole</td><td>Interacts with bacterial DNA causing helical structure loss and strand breakage. Anaerobes and parasites. Drug of choice for Clostridium difficile. DISULFIRAM-LIKE REACTION with ethanol.</td></tr>
+          <tr><td class="h">Polymyxins — BLACK BOX</td><td>Nephrotoxicity, neurotoxicity, neuromuscular blockade. The only warnings this deck labels black box. Detergent-like disruption of the Gram-negative outer membrane.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="antivirals" style="--acc:#8a4a5a;--acc-bg:#efe6e8;--acc-zebra:#f7f2f3;--acc-ink:#6c3a46">
+    <div class="shead"><span class="dot" style="background:#8a4a5a"></span><h2>Antivirals</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Herpes simplex 1 versus 2</td><td>Type 1: mouth, face, skin, esophagus, brain. Type 2: genitals, rectum, hands, meninges.</td></tr>
+          <tr><td class="h">Varicella-zoster / cytomegalovirus</td><td>Varicella-zoster: chickenpox and shingles. Cytomegalovirus: retinitis, esophagitis, colitis.</td></tr>
+          <tr><td class="h">Acyclovir mechanism</td><td>Guanine analog LACKING the sugar moiety. Selectively phosphorylated by VIRAL THYMIDINE KINASE, incorporated into viral DNA; the missing sugar prevents elongation.</td></tr>
+          <tr><td class="h">Acyclovir / valacyclovir</td><td>Herpes simplex and varicella-zoster. Valacyclovir is the prodrug with far better oral absorption.</td></tr>
+          <tr><td class="h">Acyclovir harms</td><td>Nausea, vomiting, rash, bone marrow suppression, central nervous system effects (seizures, delirium, tremor), CRYSTALLISES IN THE RENAL TUBULE — maintain hydration.</td></tr>
+          <tr><td class="h">Ganciclovir / valganciclovir</td><td>CYTOMEGALOVIRUS in transplant and immunocompromised patients. Neutropenia and thrombocytopenia; about a THIRD must stop intravenous treatment for side effects.</td></tr>
+          <tr><td class="h">Oseltamivir</td><td>Prodrug → carboxylate. Inhibits NEURAMINIDASE so budding progeny cannot be cleaved free. Influenza A and B. Oral only, renally adjusted.</td></tr>
+          <tr><td class="h">The 48-hour window</td><td>Oseltamivir must start within 48 hours — it blocks release of new virus, so late treatment has little to act on. Acyclovir within 24 hours of chickenpox shortens the illness but does NOT cure it.</td></tr>
+          <tr><td class="h">Four prodrugs</td><td>Valacyclovir, famciclovir, valganciclovir, oseltamivir — each exists to solve poor oral absorption of its parent.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="antifungals" style="--acc:#5f6b24;--acc-bg:#e9eae0;--acc-zebra:#f4f5f0;--acc-ink:#4a531c">
+    <div class="shead"><span class="dot" style="background:#5f6b24"></span><h2>Antifungals</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Fungal cell</td><td>Eukaryotic. Chitin cell wall, ERGOSTEROL membrane, different ribosomes, distinct nuclear membrane. Resistant to antibiotics.</td></tr>
+          <tr><td class="h">Sort in two questions</td><td>Wall or membrane? Echinocandins are the only wall agents. Then: bind ergosterol (polyenes) or block its synthesis (azoles, allylamines)? Griseofulvin and flucytosine sit outside both.</td></tr>
+          <tr><td class="h">Polyenes</td><td>Amphotericin B, nystatin, natamycin. Bind ergosterol and form channels — potassium and magnesium leak out.</td></tr>
+          <tr><td class="h">Amphotericin B harms</td><td>Fever and chills from interleukin-1 and tumour necrosis factor (pretreat). Hypokalaemia, hypomagnesaemia, hypotension, renal tubule damage — hydrate with normal saline. Lipid formulations cost 20–50× more, less toxic.</td></tr>
+          <tr><td class="h">Azoles</td><td>Inhibit fungal cytochrome P450 14-alpha-demethylase (lanosterol → ergosterol). Because the target is a cytochrome P450 enzyme, they interact with human ones too.</td></tr>
+          <tr><td class="h">Which azole</td><td>Fluconazole: best oral absorption, enters the central nervous system, cryptococcal meningitis. Voriconazole: systemic aspergillosis, VISION effects ~30%. Posaconazole: the ONLY azole for Zygomycetes. Itraconazole: blastomycosis, histoplasmosis. Ketoconazole: rarely used.</td></tr>
+          <tr><td class="h">Echinocandins</td><td>Caspofungin, micafungin, anidulafungin. Inhibit 1,3-beta-D-glucan synthase — the one target with no mammalian counterpart. Largely a salvage role.</td></tr>
+          <tr><td class="h">Allylamines</td><td>Naftifine (topical), terbinafine (oral and topical). Inhibit squalene epoxidase. Superficial dermatophytes.</td></tr>
+          <tr><td class="h">Griseofulvin</td><td>Interrupts mitotic spindles. From Penicillium griseofulvum. Deposited in keratin precursor cells — scalp ~1 month, fingernails 6–9 months, toenails up to 12. High-fat meal increases absorption. NOT Candida; fungistatic. INDUCES cytochrome P450 1A2 and 2C9.</td></tr>
+          <tr><td class="h">Flucytosine</td><td>Converted by CYTOSINE DEAMINASE, which human cells lack — that is the selectivity. Inhibits thymidylate synthase. With amphotericin B in cryptococcal meningitis. Bone marrow suppression.</td></tr>
+          <tr><td class="h">Tinea names</td><td>Pedis = athlete's foot · corporis = ringworm · cruris = jock itch · unguium = onychomycosis (nails).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Pharmacology I Exam 1 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide. Drug dosages are omitted deliberately — Dr. Wood does not test them.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
