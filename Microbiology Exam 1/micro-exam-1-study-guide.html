@@ -181,7 +181,7 @@
 <header class="top">
   <h1>Microbiology &middot; Exam 1 &mdash; Study Guide</h1>
   <p>PAJ 5200 Microbiology &middot; Class of 2028</p>
-  <p>Covers Lecture 1, Review of General Microbiology &middot; further sections are added as each Exam 1 lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>
+  <p>Covers Lectures 1&ndash;2: Review of General Microbiology, and Antibiotics and Resistance &middot; further sections are added as each Exam 1 lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>
 </header>
 
 <div class="layout wrap" data-readable>
@@ -198,6 +198,14 @@
   <a href="#gm-cpe">1.8 Objective 10 &mdash; Cytopathic effects</a>
   <a href="#gm-mutations">1.9 Objective 11 &mdash; Nucleic acid mutations</a>
   <a href="#gm-control">1.10 Objectives 12 &amp; 13 &mdash; Microbial control &amp; the death curve</a>
+  <a class="top-link" href="#antibiotics-resistance">2 &middot; Antibiotics and Resistance</a>
+  <a href="#ar-history">2.1 Objective 1 &mdash; History of microbial control</a>
+  <a href="#ar-selection">2.2 Objective 2 &mdash; Criteria for drug selection</a>
+  <a href="#ar-index">2.3 Objectives 3 &amp; 4 &mdash; Therapeutic index &amp; clearance</a>
+  <a href="#ar-lines">2.4 Objective 5 &mdash; Drug lines &amp; their organisms</a>
+  <a href="#ar-mechanisms">2.5 Objective 6 &mdash; Mechanisms of action</a>
+  <a href="#ar-resistance">2.6 Objective 7 &mdash; Mechanisms of resistance</a>
+  <a href="#ar-problems">2.7 Objective 8 &mdash; Other problems with therapy</a>
 </nav>
 
 <main>
@@ -433,12 +441,231 @@
   and the PAJ 5200 syllabus instructional objectives.</p>
 </section>
 
+
+<!-- ============ 2 ANTIBIOTICS AND RESISTANCE ============ -->
+<section class="deck" id="antibiotics-resistance">
+  <h2 class="deck-title">2 &middot; Antibiotics and Resistance</h2>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol>
+      <li>Describe major historical events in microbial control.</li>
+      <li>Describe criteria for drug selection for prokaryotes and eukaryotes.</li>
+      <li>Define therapeutic index including calculations and significance.</li>
+      <li>Discuss the effect of drug clearance on dosing schedule.</li>
+      <li>Compare and contrast antibiotics and the organisms of major antibiotic drug lines.</li>
+      <li>Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each.</li>
+      <li>Describe mechanisms of drug resistance.</li>
+      <li>Describe other potential problems with antimicrobial therapy.</li>
+    </ol>
+  </div>
+
+  <h3 class="sub" id="ar-history">2.1 &middot; Objective 1 &mdash; Major historical events in microbial control</h3>
+  <table>
+    <tr><th>When</th><th>Who / what</th></tr>
+    <tr><td>350&ndash;550 AD</td><td>Tetracycline traces in Sudanese Nubian skeletal remains &mdash; from beer made with fermented grain containing <em>Streptomyces</em></td></tr>
+    <tr><td>1600s</td><td>Cinchona bark used for malaria and febrile conditions (quinine)</td></tr>
+    <tr><td>1870</td><td>Burdon-Sanderson: culture fluid covered with mould did not grow bacteria</td></tr>
+    <tr><td>1877</td><td>Pasteur: anthrax bacilli inhibited by mould growth</td></tr>
+    <tr><td>1897</td><td>Duchesne healed typhoid-infected guinea pigs with <em>Penicillium</em></td></tr>
+    <tr><td>1909</td><td><strong>Ehrlich</strong> &mdash; drugs as &ldquo;magic bullets&rdquo;; developed arsphenamine (salvarsan) against <em>Treponema pallidum</em></td></tr>
+    <tr><td>1928</td><td><strong>Fleming</strong> &mdash; inhibition of <em>Staphylococcus</em> on plates contaminated with <em>Penicillium</em></td></tr>
+    <tr><td>1935</td><td>Domagk &mdash; sulfonamides from coal tar dyes</td></tr>
+    <tr><td>1939</td><td><strong>Florey and Chain</strong> &mdash; produced a stable clinical form of penicillin</td></tr>
+    <tr><td>1943</td><td><strong>Waksman</strong> &mdash; <em>Streptomyces</em> produce antibiotics; coined the term, discovered over twenty</td></tr>
+    <tr><td>1945</td><td>Fleming, Florey and Chain share the Nobel prize in medicine (Waksman's follows in 1952)</td></tr>
+  </table>
+  <div class="pearl">Ehrlich's &ldquo;magic bullet&rdquo; is the same idea later formalised as <strong>selective
+  toxicity</strong>, and the string of pre-Fleming observations &mdash; Burdon-Sanderson, Pasteur, Duchesne, Gosio
+  &mdash; is worth noticing: the phenomenon was seen repeatedly for decades before anyone made a drug from it.</div>
+
+  <h3 class="sub" id="ar-selection">2.2 &middot; Objective 2 &mdash; Criteria for drug selection</h3>
+  <table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td>Chemotherapy</td><td>The use of drugs to treat a disease</td></tr>
+    <tr><td>Antimicrobial drug</td><td>Interferes with the growth of microbes within a host</td></tr>
+    <tr><td><strong>Antibiotic</strong></td><td>A substance <strong>produced by a microbe</strong> that, in small amounts, inhibits another microbe</td></tr>
+    <tr><td>Selective toxicity</td><td>Kills harmful microbes without damaging the host &mdash; achieved by targeting processes or structures the pathogen has and the host does not</td></tr>
+  </table>
+  <table>
+    <tr><th></th><th>Bactericidal</th><th>Bacteriostatic</th></tr>
+    <tr><td>Effect</td><td>Kills organisms directly</td><td>Inhibits growth</td></tr>
+    <tr><td>Measure</td><td><strong>Minimal bactericidal concentration</strong> &mdash; the minimum level killing <strong>99.9%</strong> of test organisms</td>
+        <td><strong>Minimal inhibitory concentration</strong> &mdash; the minimum level inhibiting growth</td></tr>
+  </table>
+  <p><strong>What makes a good agent</strong> &mdash; there is no perfect drug, but the lecture lists: selective
+  toxicity &middot; favourable pharmacokinetics (reaching the target site at an effective concentration) &middot;
+  appropriate spectrum of activity (broad = large range of organisms, narrow = small) &middot; lack of side effects
+  &middot; low direct toxicity &middot; low potential for hypersensitivity &middot; good therapeutic index &middot;
+  little resistance development.</p>
+  <div class="callout"><strong>Why eukaryotic pathogens are harder.</strong> There are not as many drugs in the
+  pharmacopeia, and treatment is more difficult because cell structure and some physiology resemble the human host's
+  &mdash; so there is a great possibility of toxic side effects. Selective toxicity is the whole problem.</div>
+  <p><strong>Choosing the agent in practice:</strong> the <strong>disk-diffusion (Kirby Bauer)</strong> method reads a
+  zone of inhibition against a chart correcting for concentration, molecular weight and other diffusion factors. The
+  <strong>E test</strong> (&ldquo;minimal inhibitory concentration on a stick&rdquo;) reads that value directly in
+  micrograms per millilitre, where the zone of inhibition meets the strip.</p>
+
+  <h3 class="sub" id="ar-index">2.3 &middot; Objectives 3 &amp; 4 &mdash; Therapeutic index and drug clearance</h3>
+  <table>
+    <tr><td><strong>Therapeutic window</strong></td><td>The range of plasma concentrations spanning the minimum concentration for clinical efficacy and toxicity</td></tr>
+    <tr><td><strong>Therapeutic index</strong></td><td>A calculation assessing the safety and efficacy of a drug:<br>
+        TI = maximum tolerated dose &divide; minimum inhibitory concentration<br>
+        &nbsp;&nbsp;&nbsp;= TD<sub>50</sub> (median toxic dose) &divide; ED<sub>50</sub> (median effective dose)</td></tr>
+    <tr><td><strong>Drug clearance</strong></td><td>Renal clearance + hepatic clearance + clearance from all other tissues</td></tr>
+  </table>
+  <div class="pearl">A <em>higher</em> therapeutic index means a wider margin between the dose that works and the dose
+  that harms &mdash; the safer drug. And clearance drives the dosing schedule for one reason: <strong>you must not let
+  the concentration fall below the minimal inhibitory concentration</strong>, remembering that it takes time for the
+  drug to enter the system in the first place.</div>
+
+  <h3 class="sub" id="ar-lines">2.4 &middot; Objective 5 &mdash; Drug lines and their producing organisms</h3>
+  <figure class="fig"><img width="760" height="839" loading="lazy" src="micro-exam-1-study-guide-images/004.jpg" alt="Table listing representative sources of antibiotics, grouped by Gram-positive rods, actinomycetes and fungi, pairing each producing microorganism with the antibiotic it yields."><figcaption>Objective 5 asks for the antibiotics <em>and the organisms</em> of the major drug lines, and this is that objective in one table. Note the grouping, which is the part worth learning rather than the individual rows: the <strong>actinomycetes</strong> — overwhelmingly <em>Streptomyces</em> — give the protein synthesis inhibitors, the <strong>fungi</strong> give the beta-lactams and griseofulvin, and only two agents come from <strong>Gram-positive rods</strong>. The exceptions are what get tested: gentamicin comes from <em>Micromonospora</em>, not a <em>Streptomyces</em>, and erythromycin from <em>Saccharopolyspora</em>. <span class="src">Table 20.1, copyright &copy; 2010 Pearson Education. Reproduced from the lecture slides (Slide 11).</span></figcaption></figure>
+  
+  <table>
+    <tr><th>Drug</th><th>Produced by</th></tr>
+    <tr><td>Penicillin</td><td><em>Penicillium chrysogenum</em> (now <em>P. notatum</em>)</td></tr>
+    <tr><td>Cephalosporins</td><td><em>Cephalosporium acremonium</em></td></tr>
+    <tr><td>Bacitracin</td><td><em>Bacillus subtilis</em></td></tr>
+    <tr><td>Vancomycin</td><td><em>Amycolatopsis orientalis</em> (formerly <em>Nocardia orientalis</em>)</td></tr>
+    <tr><td>Chloramphenicol</td><td><em>Streptomyces venezuelae</em></td></tr>
+    <tr><td>Streptomycin</td><td><em>Streptomyces griseus</em></td></tr>
+    <tr><td>Neomycin</td><td><em>Streptomyces fradiae</em></td></tr>
+    <tr><td><strong>Gentamycin</strong></td><td><strong><em>Micromonospora purpurea</em></strong> &mdash; not a <em>Streptomyces</em></td></tr>
+    <tr><td>Tetracyclines</td><td><em>Streptomyces aurofaciens</em></td></tr>
+    <tr><td><strong>Erythromycin</strong></td><td><strong><em>Saccharopolyspora erythraea</em></strong></td></tr>
+    <tr><td>Polymyxin B</td><td><em>Paenibacillus polymyxa</em></td></tr>
+    <tr><td>Rifamycin</td><td><em>Amycolatopsis rifamycinica</em></td></tr>
+    <tr><td>Amphotericin B</td><td><em>Streptomyces nodosus</em></td></tr>
+    <tr><td>Nystatin</td><td><em>Streptomyces noursei</em></td></tr>
+    <tr><td>Quinolones, sulfonamides</td><td><strong>Artificially produced</strong> &mdash; sulfonamides from coal tar dyes</td></tr>
+  </table>
+
+  <h3 class="sub" id="ar-mechanisms">2.5 &middot; Objective 6 &mdash; Mechanisms of action</h3>
+  <figure class="fig"><img width="1050" height="859" loading="lazy" src="micro-exam-1-study-guide-images/005.jpg" alt="Diagram of a bacterial cell showing the five ways antimicrobial drugs act, each labelled with example drugs: cell wall synthesis, protein synthesis, nucleic acid replication and transcription, plasma membrane injury, and synthesis of essential metabolites."><figcaption>Every mechanism in this lecture reduces to one of five targets, and this diagram places each on the cell with its example drugs attached. Read it as a map of where selective toxicity comes from: the cell wall and the 70S ribosome are structures the human host does not share, which is why those two categories hold most of the antibacterials. The metabolite pathway is the subtlest — sulfonamides work because bacteria must synthesise folate while humans absorb it. <span class="src">Copyright &copy; 2010 Pearson Education. Reproduced from the lecture slides (Slide 17).</span></figcaption></figure>
+  
+  <table>
+    <tr><th>Target</th><th>Agent</th><th>Precise mechanism</th></tr>
+    <tr><td rowspan="5"><strong>Cell wall synthesis</strong></td><td>Penicillins</td><td>Bind penicillin-binding proteins; inhibit transpeptidase (blocking cross links); produce autolysins (breakdown without synthesis)</td></tr>
+    <tr><td>Cephalosporins</td><td>Similar to penicillin's transpeptidase action. 1st gen narrow/Gram-positive &rarr; 2nd extended to Gram-negative &rarr; 3rd includes pseudomonads, injected &rarr; 4th oral</td></tr>
+    <tr><td>Bacitracin</td><td>Interferes with bactoprenol, the transporter carrying peptidoglycan monomers across the membrane, preventing dephosphorylation &rarr; osmotic lysis. Topical only, too toxic parenterally</td></tr>
+    <tr><td>Vancomycin</td><td>Glycopeptide binding NAG/NAM subunits, preventing incorporation. &ldquo;Last line&rdquo; against resistant <em>Staphylococcus aureus</em></td></tr>
+    <tr><td>Isoniazid / ethambutol</td><td>Mycobacteria have different walls: isoniazid inhibits mycolic acid <em>synthesis</em>, ethambutol its <em>incorporation</em></td></tr>
+    <tr><td rowspan="5"><strong>Protein synthesis</strong></td><td>Chloramphenicol</td><td>Binds <strong>50S</strong>; inhibits peptide bond formation. Broad spectrum</td></tr>
+    <tr><td>Aminoglycosides</td><td>Change the shape of the <strong>30S</strong> subunit &rarr; inaccurate reading of messenger RNA codons. Broad spectrum</td></tr>
+    <tr><td>Tetracyclines</td><td>Interfere with transfer RNA attachment. Broad spectrum</td></tr>
+    <tr><td>Streptogramins</td><td><strong>Two components acting together</strong> on the 50S subunit. Gram-positives</td></tr>
+    <tr><td>Erythromycin</td><td>Binds 50S; prevents amino acid <em>translocation</em> from transfer RNA to the ribosomal binding site. Gram-positives</td></tr>
+    <tr><td><strong>Plasma membrane</strong></td><td>Polymyxin B</td><td>Disrupts the outer membrane of Gram-negatives and the inner membrane by attaching to lipid components. Topical, with bacitracin and neomycin over the counter</td></tr>
+    <tr><td rowspan="2"><strong>Nucleic acid synthesis</strong></td><td>Rifamycin</td><td>Inhibits RNA polymerase. Antituberculosis</td></tr>
+    <tr><td>Quinolones / fluoroquinolones</td><td>Inhibit <strong>DNA gyrase</strong>, preventing unwinding. Urinary tract and hospital acquired infections</td></tr>
+    <tr><td><strong>Essential metabolites</strong></td><td>Sulfonamides</td><td>Competitive inhibitors &mdash; resemble para-aminobenzoic acid, inhibiting folic acid synthesis. Broad spectrum</td></tr>
+  </table>
+  <table>
+    <tr><th>Antifungal class</th><th>Mechanism</th></tr>
+    <tr><td>Polyenes (amphotericin B, nystatin)</td><td>High affinity for <strong>ergosterol</strong> in fungal membranes &rarr; pore formation, ergosterol sequestration, reactive oxygen species</td></tr>
+    <tr><td>Echinocandins</td><td>Block synthesis of <strong>beta-glucan</strong>, an essential <em>cell wall</em> component. Intravenous; <em>Candida</em> and <em>Pneumocystis</em></td></tr>
+    <tr><td>Azoles</td><td>Inhibit ergosterol <em>synthesis</em> &mdash; membrane</td></tr>
+    <tr><td>Allylamines</td><td>For azole-resistant infections</td></tr>
+    <tr><td>Griseofulvin</td><td>Inhibits microtubule formation during cell division. Superficial dermatophytes</td></tr>
+    <tr><td>Tolnaftate</td><td>Inhibits squalene epoxidase &rarr; blocks ergosterol synthesis; distorts hyphae</td></tr>
+    <tr><td>Flucytosine</td><td>Cytosine analog &mdash; interferes with RNA synthesis and causes miscoding</td></tr>
+  </table>
+  <div class="pearl"><strong>Polyenes versus azoles is the classic pairing.</strong> Both concern ergosterol, but
+  polyenes <em>bind</em> ergosterol that is already in the membrane, while azoles <em>block its synthesis</em>.
+  Echinocandins are the odd one out &mdash; they act on the cell wall, not the membrane at all.</div>
+  <table>
+    <tr><th>Antiviral strategy</th><th>Example / detail</th></tr>
+    <tr><td>Nucleoside and nucleotide analogs</td><td><strong>Remdesivir</strong> binds viral RNA-dependent RNA polymerase and terminates transcription prematurely. Broad activity against Ebola, respiratory syncytial virus and coronaviruses</td></tr>
+    <tr><td>Protease inhibitors</td><td>Block cleavage of viral polypeptide precursors into mature enzymes and structural proteins. Human immunodeficiency virus &mdash; indinavir, amprenavir</td></tr>
+    <tr><td>Integrase inhibitors</td><td>Prevent viral DNA entering the host chromosome, so it is ultimately degraded</td></tr>
+    <tr><td>Attachment / fusion</td><td>Block CCR5 &mdash; human immunodeficiency virus</td></tr>
+    <tr><td>Neuraminidase inhibitors</td><td>Prevent the virus escaping the host to infect others &mdash; influenza</td></tr>
+    <tr><td>Uncoating inhibitors</td><td>Amantadine &mdash; influenza</td></tr>
+    <tr><td>Interferon</td><td>Prevents spread to new cells. Alpha interferon in viral hepatitis induces a transition from the replicating to the nonreplicating form. Adding polyethylene glycol gives a <em>finite treatment duration</em> but <em>greater adverse effects</em></td></tr>
+  </table>
+
+  <h3 class="sub" id="ar-resistance">2.6 &middot; Objective 7 &mdash; Mechanisms of drug resistance</h3>
+  <p><strong>Resistance</strong> is the ability of a microorganism to avoid an antibiotic's harmful effects by
+  <em>destroying it</em>, <em>transporting it out of the cell</em>, or <em>undergoing changes that block its
+  effects</em> &mdash; three routes that reappear below as the biochemical mechanisms.</p>
+  <div class="callout"><strong>Why resistance occurs, precisely.</strong> Genetic variation means some members of the
+  population are already less susceptible, and the presence of the antibiotic <strong>selects</strong> for those
+  organisms. The drug does not create resistance; it selects what is already there. That distinction is examinable and
+  is also why Fleming's 1945 warning about sub-therapeutic self-medication was correct.</div>
+  <table>
+    <tr><th>Genetic mechanisms</th><th>Cellular and biochemical mechanisms</th></tr>
+    <tr><td>Random genetic mutation<br>Plasmid swapping during conjugation<br>Movement of transposons to plasmids or chromosomes<br>Transduction by bacteriophages<br>Transformation (genes from a recently killed cell)<br>Binary fission shares any of the above</td>
+        <td><strong>Drug does not reach the active site:</strong> decreased permeability (beta-lactams, quinolones) &middot; decreased transport (aminoglycosides) &middot; increased efflux (tetracyclines, quinolones)<br><strong>Drug inactivation:</strong> beta-lactamases, aminoglycoside modifying enzymes<br><strong>Target modification:</strong> gyrase modification<br><strong>Bypass of target:</strong> vanA, vanB, trimethoprim resistance</td></tr>
+  </table>
+  <p><strong>Biofilms</strong> enhance resistance three ways: a physical and chemical barrier limiting dissemination
+  and sequestering antibiotics; organisms within are metabolically <em>less</em> active and so less susceptible; and
+  close spatial relationship <em>enhances</em> resistance gene transfer.</p>
+  <div class="pearl"><strong>ESKAPE</strong> &mdash; the clinically relevant biofilm producers:
+  <em>Enterococcus faecium</em>, <em>Staphylococcus aureus</em>, <em>Klebsiella pneumoniae</em>,
+  <em>Acinetobacter baumannii</em>, <em>Pseudomonas aeruginosa</em>, <em>Enterobacter</em> species. They colonise
+  urinary catheters, ventilators, prosthetic joints and cardiac implants, and host tissues such as chronic wounds and
+  the lungs of cystic fibrosis patients &mdash; promoting persistent infection.</div>
+  <p><strong>Behaviours that drive resistance:</strong> misuse or overuse &middot; outdated or weakened antibiotics
+  &middot; using antibiotics for the common cold and other inappropriate conditions &middot; failing to complete the
+  prescribed regimen &middot; using someone else's leftover prescription. Wider contributors include antibiotics in
+  animal feed, environmental warming, and possible correlations with pesticide use and microplastic contamination.
+  Tracking is via the <strong>National Antimicrobial Resistance Monitoring System</strong> &mdash; an interagency
+  partnership monitoring humans (Centers for Disease Control and Prevention), retail meats (Food and Drug
+  Administration) and food animals (United States Department of Agriculture).</p>
+
+  <h3 class="sub" id="ar-problems">2.7 &middot; Objective 8 &mdash; Other problems with antimicrobial therapy</h3>
+  <table>
+    <tr><th>Problem</th><th>Detail</th></tr>
+    <tr><td><strong>Superinfection</strong></td><td>Secondary infection following broad spectrum antibiotics, which reduce normal flora and let opportunists take hold. Predisposed by corticosteroids, leukaemia, human immunodeficiency virus, systemic lupus, diabetes. Typical organisms: <em>Candida albicans</em>, <em>Clostridioides difficile</em>, hepatitis C virus, human immunodeficiency virus, <em>Aspergillus</em>, resistant staphylococci</td></tr>
+    <tr><td><strong>Hypersensitivity</strong></td><td>Most often beta lactams (penicillin, cephalosporins), also quinolones. Immediate or delayed; hives through to anaphylactic shock</td></tr>
+    <tr><td><strong>Resistance</strong></td><td>See 2.6 above</td></tr>
+  </table>
+  <table>
+    <tr><th colspan="2"><strong>Direct toxicity</strong> &mdash; high serum levels of some antibiotics are directly toxic</th></tr>
+    <tr><td>Aminoglycosides</td><td>Renal and <strong>auditory</strong> toxicity</td></tr>
+    <tr><td>Sulfamethoxazole</td><td>Hyperkalaemia</td></tr>
+    <tr><td>Ciprofloxacin</td><td>Seizures</td></tr>
+    <tr><td>Doxycycline</td><td>Oesophageal ulcerations</td></tr>
+    <tr><td>Tetracycline</td><td>Tooth discoloration &mdash; binds calcium <em>during tooth development</em></td></tr>
+    <tr><td>Chloramphenicol</td><td>Aplastic anaemia</td></tr>
+    <tr><td>Amphotericin B</td><td>Renal and hepatic toxicity</td></tr>
+    <tr><td>Chloroquine</td><td>Cardiovascular effects, electrolyte derangements with dysrhythmias</td></tr>
+  </table>
+  <p><strong>Drug combinations</strong> are one approach to resistant organisms, with three possible results:
+  <strong>indifference</strong> (no interaction), <strong>synergism</strong> (combined effect greater than either
+  alone) and <strong>antagonism</strong> (combined effect less than either alone).</p>
+  <p><strong>The future:</strong> antimicrobial peptides (nisin from lactic acid bacteria, magainin from frogs,
+  cecropin from moths) &middot; targeting biofilm organisms &middot; antisense agents &mdash; complementary DNA
+  binding a pathogen's virulence genes to prevent transcription, such as fomivirsen for cytomegalovirus retinitis
+  &middot; phage therapy.</p>
+  <button type="button" class="test-yourself-btn" style="--acc:#2f6f8a" onclick="window.openTestYourself('Test yourself — Antibiotics and Resistance', TEST_YOURSELF.antibioticsResistance)">Test yourself! &rarr;</button>
+  <p class="src">Source: <em>Lecture Number 2 &mdash; Antibiotics and Resistance</em> (Dr. Webster), Slides 1&ndash;81,
+  and the PAJ 5200 syllabus instructional objectives.</p>
+</section>
+
 </main>
 </div>
 <script>
   // High-yield "Test yourself" question sets, one per lecture topic, fed to
   // window.openTestYourself (theme.js) by each section's button.
   var TEST_YOURSELF = {
+    antibioticsResistance: [
+      {q:"Which value is defined as the minimum level that kills 99.9% of test organisms?",
+       choices:["Minimal inhibitory concentration","Minimal bactericidal concentration","Therapeutic index","Decimal reduction time"],correct:1,
+       explain:"Minimal BACTERICIDAL concentration carries the 99.9% definition. Minimal INHIBITORY concentration is the level that merely inhibits growth, and is what a bacteriostatic drug is measured by."},
+      {q:"Gentamycin is produced by which organism?",
+       choices:["Streptomyces griseus","Streptomyces fradiae","Micromonospora purpurea","Saccharopolyspora erythraea"],correct:2,
+       explain:"Most of the protein synthesis inhibitors come from Streptomyces, which is exactly why gentamycin is asked about — it comes from a Micromonospora. Erythromycin's Saccharopolyspora is the other exception worth knowing."},
+      {q:"A drug with a HIGHER therapeutic index is which of the following?",
+       choices:["Safer, with a wider margin between effective and toxic dose","Broader in spectrum","Faster to reach the target site","Less likely to select for resistance"],correct:0,
+       explain:"The index is toxic dose over effective dose (TD50/ED50), so a higher value means a wider gap between the dose that works and the dose that harms."},
+      {q:"Beta-lactamases are an example of which resistance mechanism?",
+       choices:["Increased efflux","Target modification","Drug inactivation","Bypass of target"],correct:2,
+       explain:"Beta-lactamases and aminoglycoside modifying enzymes destroy the drug. Efflux pumps it out, gyrase modification changes the target, and vanA/vanB bypass it."},
+      {q:"Which pairing of drug to direct toxicity is correct?",
+       choices:["Chloramphenicol — seizures","Aminoglycosides — renal and auditory toxicity","Doxycycline — aplastic anaemia","Tetracycline — hyperkalaemia"],correct:1,
+       explain:"Aminoglycosides are renal and auditory. Chloramphenicol causes aplastic anaemia, ciprofloxacin seizures, doxycycline oesophageal ulcerations, and tetracycline tooth discoloration by binding calcium during development."}
+    ],
     generalMicro: [
       {q:"Which step of the Gram stain does the lecture call the most critical?",
        choices:["Crystal violet","Gram's iodine","Decolorization with acetone alcohol","Safranin counterstain"],correct:2,

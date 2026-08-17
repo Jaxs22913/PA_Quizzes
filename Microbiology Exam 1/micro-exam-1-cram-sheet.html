@@ -120,15 +120,18 @@
   <header class="hero">
     <div class="kicker">Microbiology · Exam 1 · Class of 2028</div>
     <h1>Microbiology Exam 1 Cram Sheet</h1>
-    <p class="sub">Lecture 1 — Review of General Microbiology. Thirteen objectives condensed.</p>
+    <p class="sub">Lectures 1–2 — Review of General Microbiology, and Antibiotics and Resistance.</p>
     <div class="toc">
-      <a href="#pathogens" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>Types of Pathogens</a>
-      <a href="#structures" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>Bacterial Structures</a>
-      <a href="#gram" style="color:#25576c"><span class="dot" style="background:#2f6f8a"></span>Morphology & Gram Stain</a>
-      <a href="#culture" style="color:#6c5325"><span class="dot" style="background:#8a6a2f"></span>Identification & Media</a>
-      <a href="#curves" style="color:#803e21"><span class="dot" style="background:#a4502a"></span>Growth & Death Curves</a>
-      <a href="#viruses" style="color:#533e7f"><span class="dot" style="background:#6a4fa3"></span>Viruses & Phages</a>
-      <a href="#mutations" style="color:#892d3a"><span class="dot" style="background:#b03a4a"></span>Mutations & Control</a>
+      <a href="#pathogens" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L1 · Types of Pathogens</a>
+      <a href="#structures" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L1 · Bacterial Structures</a>
+      <a href="#gram" style="color:#25576c"><span class="dot" style="background:#2f6f8a"></span>L1 · Gram Stain</a>
+      <a href="#curves" style="color:#803e21"><span class="dot" style="background:#a4502a"></span>L1 · Growth & Death Curves</a>
+      <a href="#viruses" style="color:#533e7f"><span class="dot" style="background:#6a4fa3"></span>L1 · Viruses & Phages</a>
+      <a href="#l2-selection" style="color:#5f316c"><span class="dot" style="background:#7a3f8a"></span>L2 · Terms & Drug Selection</a>
+      <a href="#l2-index" style="color:#892d3a"><span class="dot" style="background:#b03a4a"></span>L2 · Therapeutic Index & Clearance</a>
+      <a href="#l2-lines" style="color:#6c5325"><span class="dot" style="background:#8a6a2f"></span>L2 · Drug Lines & Their Organisms</a>
+      <a href="#l2-moa" style="color:#25625c"><span class="dot" style="background:#2f7d76"></span>L2 · Mechanisms of Action</a>
+      <a href="#l2-resistance" style="color:#97692d"><span class="dot" style="background:#c1873a"></span>L2 · Resistance & Problems</a>
     </div>
     <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
       replacement for the full study guide — it assumes you've already learned the material and just need
@@ -137,7 +140,7 @@
   </header>
 
   <section class="topic" id="pathogens" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
-    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>Types of Pathogens</h2></div>
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L1 · Types of Pathogens</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -146,122 +149,160 @@
           <tr><td class="h">The five types</td><td>Bacteria (prokaryotic) · fungi, protozoa, helminths (eukaryotic) · viruses (noncellular infectious agents).</td></tr>
           <tr><td class="h">Chlamydias vs Rickettsias</td><td>Both tiny obligate intracellular. Rickettsias ARE arthropod-transmitted (fleas, ticks, lice); Chlamydias are NOT.</td></tr>
           <tr><td class="h">Mycoplasmas</td><td>Tiny, pleomorphic, LACK A CELL WALL. M. pneumoniae.</td></tr>
-          <tr><td class="h">Fungi</td><td>Yeasts unicellular (Candida albicans) · molds multicellular and filamentous (Penicillium notatum). Differentiated by spore type.</td></tr>
-          <tr><td class="h">Protozoa</td><td>Trophozoite = motile feeding stage; cyst = dormant resistant stage. Mastigophora (flagellates), Sarcodina (amoebas), Ciliophora (ciliates), Apicomplexa (nonmotile — Plasmodium).</td></tr>
-          <tr><td class="h">Helminths</td><td>Flatworms: no body cavity, blind-pouch gut — cestodes, trematodes. Roundworms: complete gut, cuticle, spines and hooks.</td></tr>
-          <tr><td class="h">Prion vs viroid</td><td>PRION = misfolded protein, NO nucleic acid → spongiform encephalopathy. VIROID = short RNA, NO protein coat, plants only. Exact opposites.</td></tr>
+          <tr><td class="h">Fungi</td><td>Yeasts unicellular (Candida albicans) · molds multicellular and filamentous (Penicillium notatum).</td></tr>
+          <tr><td class="h">Protozoa</td><td>Trophozoite = motile feeding; cyst = dormant resistant. Apicomplexa essentially nonmotile — Plasmodium.</td></tr>
+          <tr><td class="h">Helminths</td><td>Flatworms: no body cavity, blind-pouch gut. Roundworms: complete gut, cuticle, spines and hooks.</td></tr>
+          <tr><td class="h">Prion vs viroid</td><td>PRION = misfolded protein, NO nucleic acid. VIROID = short RNA, NO protein coat, plants only.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section class="topic" id="structures" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
-    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>Bacterial Structures</h2></div>
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L1 · Bacterial Structures</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
         <tbody>
-          <tr><td class="h">Flagellum</td><td>True directional motility.</td></tr>
-          <tr><td class="h">Pilus</td><td>Coded by a PLASMID; used in CONJUGATION.</td></tr>
-          <tr><td class="h">Fimbriae</td><td>Adhesion to membrane surfaces.</td></tr>
-          <tr><td class="h">Glycocalyx</td><td>Capsule/slime layer. Biofilms · prevents desiccation · prevents phagocytosis (pathogenicity factor). S. pneumoniae.</td></tr>
-          <tr><td class="h">Plasmids</td><td>Small circular dsDNA, free or integrated, NOT essential. May encode antibiotic resistance, metal tolerance, enzymes, toxins.</td></tr>
-          <tr><td class="h">Endospores</td><td>Survival mechanism, resistant coat, very low metabolism. BACILLUS and CLOSTRIDIUM.</td></tr>
+          <tr><td class="h">Flagellum / pilus / fimbriae</td><td>Motility · plasmid-coded, CONJUGATION · adhesion to membranes.</td></tr>
+          <tr><td class="h">Glycocalyx</td><td>Biofilms · prevents desiccation · prevents phagocytosis (pathogenicity factor).</td></tr>
+          <tr><td class="h">Plasmids</td><td>Small circular dsDNA, NOT essential. May encode antibiotic resistance, metal tolerance, enzymes, toxins.</td></tr>
+          <tr><td class="h">Endospores</td><td>Survival mechanism. BACILLUS and CLOSTRIDIUM.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section class="topic" id="gram" style="--acc:#2f6f8a;--acc-bg:#e2ebef;--acc-zebra:#f0f5f7;--acc-ink:#25576c">
-    <div class="shead"><span class="dot" style="background:#2f6f8a"></span><h2>Morphology & Gram Stain</h2></div>
+    <div class="shead"><span class="dot" style="background:#2f6f8a"></span><h2>L1 · Gram Stain</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
         <tbody>
-          <tr><td class="h">Three shapes</td><td>Cocci (spherical) · bacilli (rod) · spiral (helical, comma, twisted rod, spirochete). Matters for IDENTIFICATION.</td></tr>
-          <tr><td class="h">Peptidoglycan</td><td>Alternating N-acetyl glucosamine + N-acetyl muramic acid, crosslinked by a short peptide bridge. Crosslinking by TRANSPEPTIDASES = target of beta lactams.</td></tr>
-          <tr><td class="h">Gram stain steps</td><td>Crystal violet 1min → iodine 1min → DECOLORIZE acetone alcohol ~10sec (MOST CRITICAL) → safranin 1min.</td></tr>
-          <tr><td class="h">Gram positive</td><td>Thick homogenous peptidoglycan 20-80nm + teichoic/lipoteichoic acid. RETAINS crystal violet → purple. PHYSICALLY strong (temp, pH, osmotic).</td></tr>
-          <tr><td class="h">Gram negative</td><td>Outer membrane (LPS outermost) + periplasmic space + thin peptidoglycan + inner membrane. LOSES crystal violet → red. CHEMICALLY strong (disinfectants, antibiotics).</td></tr>
-          <tr><td class="h">Lipopolysaccharide</td><td>3 parts: LIPID A (endotoxin activity) · core polysaccharide · O-POLYSACCHARIDE (classification).</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="culture" style="--acc:#8a6a2f;--acc-bg:#efeae2;--acc-zebra:#f7f5f0;--acc-ink:#6c5325">
-    <div class="shead"><span class="dot" style="background:#8a6a2f"></span><h2>Identification & Media</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">6 identification methods</td><td>Microscopic morphology · macroscopic (colony) morphology · physiological/biochemical · chemical · serological · genetic and molecular (G+C composition, probes, sequencing/rRNA).</td></tr>
-          <tr><td class="h">Growth requirements</td><td>CHEMICAL: water, energy nutrients, vitamins, minerals, oxygen. PHYSICAL: temperature, pH, osmotic pressure.</td></tr>
-          <tr><td class="h">Synthetic vs complex</td><td>Synthetic = pure compounds, exact formula. Complex = ≥1 ingredient not chemically definable.</td></tr>
-          <tr><td class="h">Enriched</td><td>Blood, serum, haemoglobin or growth factors for FASTIDIOUS microbes.</td></tr>
-          <tr><td class="h">Selective vs differential</td><td>SELECTIVE inhibits some / encourages desired. DIFFERENTIAL lets several grow and SHOWS visible differences.</td></tr>
-          <tr><td class="h">Combinations</td><td>Blood agar = enriched + differential (gamma/beta/alpha haemolysis). Mannitol salt agar = selective + differential.</td></tr>
+          <tr><td class="h">Peptidoglycan</td><td>NAG + NAM alternating, crosslinked by a short peptide bridge. TRANSPEPTIDASES = target of beta lactams.</td></tr>
+          <tr><td class="h">Steps</td><td>Crystal violet → iodine → DECOLORIZE acetone alcohol ~10s (MOST CRITICAL) → safranin.</td></tr>
+          <tr><td class="h">Gram positive</td><td>Thick peptidoglycan + teichoic acids. RETAINS crystal violet → purple. PHYSICALLY strong.</td></tr>
+          <tr><td class="h">Gram negative</td><td>Outer membrane (LPS) + periplasm + thin peptidoglycan. LOSES it → red. CHEMICALLY strong.</td></tr>
+          <tr><td class="h">Lipopolysaccharide</td><td>LIPID A (endotoxin) · core polysaccharide · O-POLYSACCHARIDE (classification).</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section class="topic" id="curves" style="--acc:#a4502a;--acc-bg:#f2e6e1;--acc-zebra:#f9f3f0;--acc-ink:#803e21">
-    <div class="shead"><span class="dot" style="background:#a4502a"></span><h2>Growth & Death Curves</h2></div>
+    <div class="shead"><span class="dot" style="background:#a4502a"></span><h2>L1 · Growth & Death Curves</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
         <tbody>
-          <tr><td class="h">Growth = ?</td><td>Increase in NUMBER, not size. Binary fission → exponential, not arithmetic.</td></tr>
-          <tr><td class="h">Lag</td><td>Flat period of adjustment and enlargement; little growth.</td></tr>
-          <tr><td class="h">Exponential</td><td>Maximum growth while nutrients/environment allow. MOST VULNERABLE to control here — e.g. penicillin.</td></tr>
-          <tr><td class="h">Stationary</td><td>Growth rate = death rate. Depleted nutrients and oxygen; organic acids and pollutants excreted.</td></tr>
-          <tr><td class="h">Death</td><td>Limiting factors intensify; cells die exponentially in their own wastes.</td></tr>
-          <tr><td class="h">Death curve</td><td>Rate of death under a control method is CONSTANT. Decimal reduction time = time to kill 90%. 4.9M → 486K → 48.6K → 4,860.</td></tr>
+          <tr><td class="h">Growth</td><td>Increase in NUMBER, not size, by binary fission → exponential.</td></tr>
+          <tr><td class="h">Four phases</td><td>Lag (adjustment) → exponential (MOST VULNERABLE, e.g. penicillin) → stationary (growth = death) → death (exponential, in own wastes).</td></tr>
+          <tr><td class="h">Death curve</td><td>Rate of death under a control method is CONSTANT. Decimal reduction time = time to kill 90%.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section class="topic" id="viruses" style="--acc:#6a4fa3;--acc-bg:#eae6f2;--acc-zebra:#f5f3f9;--acc-ink:#533e7f">
-    <div class="shead"><span class="dot" style="background:#6a4fa3"></span><h2>Viruses & Phages</h2></div>
+    <div class="shead"><span class="dot" style="background:#6a4fa3"></span><h2>L1 · Viruses & Phages</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
         <tbody>
-          <tr><td class="h">All viruses have</td><td>CAPSIDS — protein coats enclosing the nucleic acid. Helical, icosahedral or complex. DNA or RNA. May have envelope or spikes.</td></tr>
           <tr><td class="h">6 phage steps</td><td>Adsorption → penetration → replication → assembly → maturation → release.</td></tr>
-          <tr><td class="h">Lytic</td><td>Rapid takeover, multiple copies, host destroyed. GENERALIZED transduction (random host DNA).</td></tr>
-          <tr><td class="h">Lysogenic</td><td>Integrates as PROPHAGE. May gain new traits (e.g. toxin production). Immune to reinfection. Replicated with host. SPECIALIZED transduction (same DNA in all cells).</td></tr>
-          <tr><td class="h">Animal vs phage</td><td>Entire virion ENGULFED · UNCOATING required (cytoplasmic vs extracellular pH) · release by BUDDING, which may give an envelope.</td></tr>
-          <tr><td class="h">Cytopathic effects</td><td>Size/shape change · cytoplasmic and nuclear inclusion bodies · multinucleated fusion · lysis · DNA alteration ACTIVATING ONCOGENES · cancerous transformation.</td></tr>
+          <tr><td class="h">Lytic vs lysogenic</td><td>LYTIC: host destroyed, generalized transduction. LYSOGENIC: prophage, may gain a toxin gene, immune to reinfection, specialized transduction.</td></tr>
+          <tr><td class="h">Animal vs phage</td><td>Entire virion ENGULFED · UNCOATING required · release by BUDDING.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section class="topic" id="mutations" style="--acc:#b03a4a;--acc-bg:#f4e3e6;--acc-zebra:#f9f1f2;--acc-ink:#892d3a">
-    <div class="shead"><span class="dot" style="background:#b03a4a"></span><h2>Mutations & Control</h2></div>
+  <section class="topic" id="l2-selection" style="--acc:#7a3f8a;--acc-bg:#ece4ef;--acc-zebra:#f6f2f7;--acc-ink:#5f316c">
+    <div class="shead"><span class="dot" style="background:#7a3f8a"></span><h2>L2 · Terms & Drug Selection</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
         <tbody>
-          <tr><td class="h">Mutation</td><td>Change in the base sequence of the genome that may impact phenotype. Induced by radiation, chemicals, viruses. May be beneficial, neutral or deleterious.</td></tr>
-          <tr><td class="h">3 routes of bacterial gene transfer</td><td>TRANSFORMATION (naked DNA from environment) · CONJUGATION (plasmid, cell to cell) · TRANSDUCTION (viral vector).</td></tr>
-          <tr><td class="h">Viral mutation implications</td><td>Changed surface properties may weaken/eliminate immunity from vaccine or prior exposure; animal viruses may cross to humans where no immunity exists.</td></tr>
-          <tr><td class="h">Aseptic vs disinfection</td><td>Aseptic/sterile = removal of ALL contamination. Disinfection = elimination of SOME.</td></tr>
-          <tr><td class="h">2 control mechanisms</td><td>Alteration of membrane permeability · denaturation of proteins and nucleic acids.</td></tr>
-          <tr><td class="h">Temperature</td><td>HIGH can kill; LOW will NOT — only slows growth. Dry heat, wet heat (boiling, autoclave, pasteurization); refrigeration/freezing preserve.</td></tr>
-          <tr><td class="h">Disinfectant vs antiseptic</td><td>Disinfectant on INANIMATE objects (Lysol). Antiseptic on TISSUES (Listerine).</td></tr>
-          <tr><td class="h">True chemical sterilants</td><td>Very few: ethylene oxide (plastics, spices) · beta propiolactone (vaccines, tissue grafts, instruments).</td></tr>
-          <tr><td class="h">Selective toxicity</td><td>Antimicrobials should act on the microbe without harming the host. Sulfa drugs = synthetic (coal tar dyes); penicillin = from Penicillium, active against Gram-positives.</td></tr>
+          <tr><td class="h">Antibiotic (precisely)</td><td>A substance PRODUCED BY A MICROBE that in small amounts inhibits another microbe. Antimicrobial drug = interferes with microbial growth in a host. Chemotherapy = use of drugs to treat disease.</td></tr>
+          <tr><td class="h">MBC vs MIC</td><td>MBC = minimum level killing 99.9% of test organisms (bactericidal). MIC = minimum level inhibiting growth (bacteriostatic).</td></tr>
+          <tr><td class="h">What makes a good agent</td><td>Selective toxicity · favourable pharmacokinetics · appropriate spectrum · few side effects · low toxicity · low hypersensitivity · good therapeutic index · LITTLE resistance development.</td></tr>
+          <tr><td class="h">Eukaryotic pathogens</td><td>Harder — cell structure and physiology resemble the host, so great possibility of toxic side effects. Fewer drugs available.</td></tr>
+          <tr><td class="h">Choosing the agent</td><td>Kirby Bauer disk diffusion (zone corrected for concentration, molecular weight, diffusion). E test = MIC read directly in µg/ml where the zone meets the strip.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l2-index" style="--acc:#b03a4a;--acc-bg:#f4e3e6;--acc-zebra:#f9f1f2;--acc-ink:#892d3a">
+    <div class="shead"><span class="dot" style="background:#b03a4a"></span><h2>L2 · Therapeutic Index & Clearance</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Therapeutic window</td><td>Range of plasma concentrations spanning minimum concentration for efficacy and for toxicity.</td></tr>
+          <tr><td class="h">Therapeutic index</td><td>TI = max tolerated dose ÷ MIC = TD50 ÷ ED50. HIGHER = wider safety margin = safer drug.</td></tr>
+          <tr><td class="h">Drug clearance</td><td>Renal + hepatic + all other tissues. Drives dosing: do NOT let concentration fall below MIC, and remember onset is not instant.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l2-lines" style="--acc:#8a6a2f;--acc-bg:#efeae2;--acc-zebra:#f7f5f0;--acc-ink:#6c5325">
+    <div class="shead"><span class="dot" style="background:#8a6a2f"></span><h2>L2 · Drug Lines & Their Organisms</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Fungi produce</td><td>Penicillin ← Penicillium chrysogenum · cephalosporins ← Cephalosporium acremonium · griseofulvin ← Penicillium griseofulvum.</td></tr>
+          <tr><td class="h">Gram-positive rods produce</td><td>Bacitracin ← Bacillus subtilis · polymyxin ← Paenibacillus polymyxa.</td></tr>
+          <tr><td class="h">Actinomycetes produce (most)</td><td>Chloramphenicol ← S. venezuelae · streptomycin ← S. griseus · neomycin ← S. fradiae · tetracycline ← S. aurofaciens · amphotericin B ← S. nodosus · nystatin ← S. noursei.</td></tr>
+          <tr><td class="h">THE TWO EXCEPTIONS</td><td>Gentamycin ← MICROMONOSPORA purpurea. Erythromycin ← SACCHAROPOLYSPORA erythraea. Both non-Streptomyces — high yield.</td></tr>
+          <tr><td class="h">Other</td><td>Vancomycin ← Amycolatopsis orientalis · rifamycin ← Amycolatopsis rifamycinica. Quinolones and sulfonamides are ARTIFICIAL (sulfa from coal tar dyes, Domagk 1935).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l2-moa" style="--acc:#2f7d76;--acc-bg:#e2edec;--acc-zebra:#f0f6f5;--acc-ink:#25625c">
+    <div class="shead"><span class="dot" style="background:#2f7d76"></span><h2>L2 · Mechanisms of Action</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">5 targets</td><td>Cell wall · protein synthesis · nucleic acid · plasma membrane · essential metabolites.</td></tr>
+          <tr><td class="h">Cell wall</td><td>Penicillins (PBPs, transpeptidase, autolysins) · cephalosporins (1st Gram+ → 4th oral) · bacitracin (bactoprenol; TOPICAL only) · vancomycin (binds NAG/NAM; last line vs resistant S. aureus) · isoniazid (mycolic synthesis) vs ethambutol (its incorporation).</td></tr>
+          <tr><td class="h">Protein synthesis</td><td>Chloramphenicol 50S peptide bond · aminoglycosides 30S codon misreading · tetracyclines tRNA attachment · streptogramins TWO components on 50S · erythromycin 50S translocation.</td></tr>
+          <tr><td class="h">Nucleic acid</td><td>Rifamycin — RNA polymerase (TB). Quinolones — DNA GYRASE (UTI, hospital-acquired).</td></tr>
+          <tr><td class="h">Membrane / metabolites</td><td>Polymyxin B — attaches lipid components of outer + inner membrane (topical). Sulfonamides — mimic PABA, block folate.</td></tr>
+          <tr><td class="h">Antifungals</td><td>POLYENES bind ergosterol → pores. AZOLES block ergosterol SYNTHESIS. ECHINOCANDINS block beta-glucan (CELL WALL, not membrane). Griseofulvin — microtubules. Tolnaftate — squalene epoxidase.</td></tr>
+          <tr><td class="h">Antivirals</td><td>Remdesivir — nucleotide analog, terminates RNA transcription · protease inhibitors · integrase inhibitors · CCR5 block (attachment) · neuraminidase (escape) · amantadine (uncoating) · interferon (alpha in hepatitis; PEG = finite duration BUT greater adverse effects).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l2-resistance" style="--acc:#c1873a;--acc-bg:#f6eee3;--acc-zebra:#fbf7f1;--acc-ink:#97692d">
+    <div class="shead"><span class="dot" style="background:#c1873a"></span><h2>L2 · Resistance & Problems</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Resistance defined</td><td>Avoiding an antibiotic's effects by DESTROYING it, TRANSPORTING it out, or CHANGING to block it.</td></tr>
+          <tr><td class="h">Why it occurs</td><td>Genetic variation means some are already less susceptible; the antibiotic SELECTS them. The drug does not create resistance.</td></tr>
+          <tr><td class="h">Genetic mechanisms</td><td>Random mutation · plasmid swapping (conjugation) · transposons · transduction · transformation · binary fission shares all.</td></tr>
+          <tr><td class="h">Biochemical mechanisms</td><td>No access: decreased permeability (beta-lactams, quinolones), decreased transport (aminoglycosides), increased efflux (tetracyclines, quinolones). Inactivation: beta-lactamases. Target modification: gyrase. Bypass: vanA, vanB, TMP.</td></tr>
+          <tr><td class="h">Biofilms + ESKAPE</td><td>Barrier sequesters drug · organisms metabolically LESS active · proximity ENHANCES gene transfer. ESKAPE = E. faecium, S. aureus, K. pneumoniae, A. baumannii, P. aeruginosa, Enterobacter.</td></tr>
+          <tr><td class="h">4 problems with therapy</td><td>SUPERINFECTION · DIRECT TOXICITY · HYPERSENSITIVITY · RESISTANCE.</td></tr>
+          <tr><td class="h">Direct toxicity (high yield)</td><td>Aminoglycosides = renal + AUDITORY · chloramphenicol = aplastic anaemia · ciprofloxacin = seizures · doxycycline = oesophageal ulcers · tetracycline = tooth discoloration (binds calcium during development) · amphotericin B = renal + hepatic · sulfamethoxazole = hyperkalaemia · chloroquine = dysrhythmias.</td></tr>
+          <tr><td class="h">Hypersensitivity</td><td>Mostly BETA LACTAMS (penicillin, cephalosporins) and quinolones. Immediate or delayed; hives → anaphylaxis.</td></tr>
+          <tr><td class="h">Drug combinations</td><td>Indifference (no interaction) · SYNERGISM (greater than either) · ANTAGONISM (less than either).</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <footer>
-    Condensed from the Microbiology Exam 1 Study Guide (Class of 2028). For the full explanation and the cell wall, growth curve and phage figures, see the full guide. More topics are added as each Exam 1 lecture is posted.
+    Condensed from the Microbiology Exam 1 Study Guide (Class of 2028). For the full explanation and the figures, see the full guide. More topics are added as each Exam 1 lecture is posted.
     <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
     <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
   </footer>
