@@ -61,7 +61,14 @@ DEFAULT_SINCE = "2026-08-17"
 # Extend as you learn each professor's phrasing; that is the point of keeping
 # it a plain list.
 EMPHASIS = [
-    r"on the (exam|test)", r"will be tested", r"(exam|test) question",
+    # "on the exam/test" alone is a FALSE FRIEND in this curriculum: a lecture
+    # about diagnostic testing says "the test is going to say it's negative"
+    # and "on the physical exam" constantly. Require the future-assessment
+    # framing a professor actually uses, or the second person.
+    # \w+ allows an adverb -- "will ABSOLUTELY be on the exam"
+    r"(will|gonna|going to|might|may) (\w+ )?be on the (exam|test)",
+    r"on (your|the next|the first) (exam|test)",
+    r"will be tested", r"(exam|test) question",
     r"i(?:'ll| will) ask", r"you(?:'ll| will) see this",
     r"know this", r"you need to know", r"make sure you (know|understand)",
     r"remember (this|that)", r"if you remember one thing",
