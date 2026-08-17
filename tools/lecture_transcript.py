@@ -70,8 +70,14 @@ EMPHASIS = [
     r"on (your|the next|the first) (exam|test)",
     r"will be tested", r"(exam|test) question",
     r"i(?:'ll| will) ask", r"you(?:'ll| will) see this",
-    r"know this", r"you need to know", r"make sure you (know|understand)",
-    r"remember (this|that)", r"if you remember one thing",
+    r"know this", r"make sure you (know|understand)",
+    # "we are going to need to know these words" is a real cue and the earlier
+    # "you need to know" missed it; allow the subject and tense to vary
+    r"(need|needs|going to need|will need)\s+to know",
+    # "remember that" is a complementizer, not an instruction -- it fired on
+    # "a memory B cell ... I'm going to remember that". Only the imperative.
+    r"remember this", r"if you remember one thing",
+    r"teaching moment",
     r"high[- ]yield", r"cannot stress", r"can(?:'t| not) stress",
     r"pay attention", r"write (this|that) down", r"listen up", r"now listen",
     r"this is (key|important|critical)", r"the key (thing|point)",
@@ -165,7 +171,22 @@ def transcribe(audio, model_name, language="en"):
     segments, info = model.transcribe(audio, beam_size=5, language=language,
                                       vad_filter=True,
                                       vad_parameters=dict(min_silence_duration_ms=700))
-    segs = [{"start": s.start, "end": s.end, "text": s.text.strip()} for s in segments]
+    # transcribe() returns a GENERATOR -- nothing runs until it is consumed, and
+    # consuming it silently means a run that has stalled looks identical to one
+    # that is working. A 40-minute lecture once sat for 54 minutes with no way
+    # to tell which it was doing. Report position and pace as segments arrive.
+    segs = []
+    total = info.duration
+    last = 0.0
+    for s in segments:
+        segs.append({"start": s.start, "end": s.end, "text": s.text.strip()})
+        if s.end - last >= 120:          # roughly every 2 minutes of audio
+            el = time.time() - t0
+            pace = s.end / el if el > 0 else 0
+            eta = (total - s.end) / pace if pace > 0 else 0
+            print(f"  {hhmmss(s.end)} / {hhmmss(total)}  ({pace:.1f}x realtime, "
+                  f"~{hhmmss(eta)} left)", flush=True)
+            last = s.end
     took = time.time() - t0
     dur = info.duration
     print(f"done: {hhmmss(dur)} of audio in {hhmmss(took)} "

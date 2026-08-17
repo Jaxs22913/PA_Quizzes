@@ -148,6 +148,31 @@
   }
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  /* Professor-emphasised content — same convention as the CMS I guide, with the
+     dark-mode variants the CAM original lacked. Marks derive from the
+     2026-08-17 lecture recording: her explicit cues, time spent, and prosody. */
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  .prof-flag .callout,.prof-flag .pearl{margin-bottom:10px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
 </style>
 </head>
 <body>
@@ -261,17 +286,19 @@
   <h3 class="sub" id="inf-patterns">1.3 &middot; Objective b &mdash; Patterns of inflammation</h3>
   <p>Chronicity and pattern are two independent axes. A process is acute <em>or</em> chronic, and
   separately shows one of these patterns:</p>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
   <table>
     <tr><th>Pattern</th><th>What defines it</th></tr>
     <tr><td>Serous</td><td>Largely plasma, low protein; occurs early or with mild inflammation</td></tr>
     <tr><td>Fibrinous</td><td>Large amounts of fibrinogen forming a thick meshwork; removable only by fibrolytic enzymes &mdash; failure of that results in scar tissue formation</td></tr>
-    <tr><td>Suppurative (purulent)</td><td>Remnants of white blood cells, protein and tissue debris &mdash; that is, pus</td></tr>
+    <tr><td><mark class="prof-highlight">Suppurative (purulent)</mark></td><td>Remnants of white blood cells, protein and tissue debris &mdash; that is, pus</td></tr>
     <tr><td>Hemorrhagic</td><td>Damage to blood vessels; occurs alongside other exudates</td></tr>
     <tr><td>Catarrhal</td><td>Mucus hypersecretion accompanying inflammation of a mucous membrane</td></tr>
     <tr><td>Ulcerative</td><td>Necrosis and sloughing of surface epithelium, exposing underlying connective tissue</td></tr>
     <tr><td>Pseudomembranous</td><td>Superficial necrotic layer of fibrin, inflammatory cells and debris forming a membrane-like covering over the affected mucosa</td></tr>
     <tr><td>Gangrenous</td><td>Severe necrosis with or without superimposed bacterial infection &mdash; <strong>dry</strong> is coagulative necrosis, <strong>wet</strong> is liquefactive necrosis from infection</td></tr>
   </table>
+  </div>
 
   <div class="fig-grid" style="display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;">
     <figure class="fig" style="flex:1 1 260px;min-width:240px;margin:0;"><img width="620" height="538" loading="lazy" src="cp-exam-1-study-guide-images/002.jpg" alt="Gross clinical or pathological specimen illustrating the serous pattern of inflammation."><figcaption><strong>Serous.</strong> A skin blister. Clear, low-protein plasma has collected beneath the epidermis — the thin watery fluid is the whole identity of this pattern, and it is what mild or early inflammation produces before protein and cells follow. <span class="src">Copyright Trustees of Boston University 1997; reproduced from the lecture slides (Slide 8).</span></figcaption></figure>
@@ -299,11 +326,11 @@
   <table>
     <tr><th>Cell</th><th>Nucleus &amp; granules</th><th>Role</th></tr>
     <tr><td>Neutrophil</td><td>Multilobed nucleus that may look like multiple nuclei; cytoplasm appears transparent from fine pale lilac granules</td>
-        <td>First responder to microbial infection; bacterial and fungal defence; very active phagocyte. <strong>Cannot renew its lysosomes</strong>, so dies after a few pathogens &mdash; their death in large numbers forms pus</td></tr>
+        <td><mark class="prof-highlight">First responder to microbial infection; bacterial and fungal defence</mark>; very active phagocyte. <strong>Cannot renew its lysosomes</strong>, so dies after a few pathogens &mdash; their death in large numbers forms pus</td></tr>
     <tr><td>Basophil</td><td>Bi- or tri-lobed nucleus; coarse granules</td>
         <td>Allergic and antigen response via <strong>histamine</strong></td></tr>
     <tr><td>Eosinophil</td><td>Bi-lobed nucleus; granules a characteristic pink-orange</td>
-        <td>Parasitic infections; predominant cell in allergic reactions &mdash; asthma, hay fever, hives</td></tr>
+        <td><mark class="prof-highlight">Parasitic infections; predominant cell in allergic reactions &mdash; asthma, hay fever, hives</mark></td></tr>
     <tr><td>B lymphocyte</td><td>Agranulocyte</td>
         <td>Humoral immunity: makes antibodies, acts as antigen-presenting cell, becomes memory B cells. Essential to adaptive immunity</td></tr>
     <tr><td>T lymphocyte</td><td>Matures in the <strong>T</strong>hymus; carries T cell receptors</td>
@@ -326,8 +353,8 @@
   <h3 class="sub" id="inf-vascular">1.5 &middot; Objective d &mdash; Vascular changes in acute inflammation</h3>
   <p>The reviewed sequence opens with four vascular events, in this order:</p>
   <table>
-    <tr><td>1</td><td>Vasoconstriction</td></tr>
-    <tr><td>2</td><td>Vasodilation</td></tr>
+    <tr><td>1</td><td><mark class="prof-highlight">Vasoconstriction</mark></td></tr>
+    <tr><td>2</td><td><mark class="prof-highlight">Vasodilation</mark></td></tr>
     <tr><td>3</td><td>Increased vascular permeability</td></tr>
     <tr><td>4</td><td>Haemoconcentration and stasis</td></tr>
   </table>
@@ -370,6 +397,7 @@
   the effects and asks for the mediator.</div>
   <p><strong>Opsonins</strong> are proteins that adhere to foreign material and make it easier for
   immune cells to recognise and attach to it.</p>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
   <table>
     <tr><th>Opsonin</th><th>What it is</th><th>Recognised by</th></tr>
     <tr><td>Immunoglobulin G (IgG)</td><td>An antibody</td><td><strong>Fc receptors</strong> on macrophages and neutrophils, which recognise the Fc portion</td></tr>
@@ -380,6 +408,7 @@
   cells recognise that coating and attach to the material, which is why <em>an implanted medical
   device can provoke an inflammatory response even when it is completely sterile</em>. The response
   is to the opsonised surface, not to infection.</div>
+  </div>
   <button type="button" class="test-yourself-btn" style="--acc:#6a4fa3" onclick="window.openTestYourself('Test yourself — Inflammation', TEST_YOURSELF.inflammation)">Test yourself! &rarr;</button>
   <p class="src">Source: <em>1. Inflammation.pptx</em> (Professor Lauren Reynolds), Slides 1&ndash;35, and the
   PAJ 5101 syllabus instructional objectives. Course text: Robbins &amp; Cotran <em>Pathologic Basis of
