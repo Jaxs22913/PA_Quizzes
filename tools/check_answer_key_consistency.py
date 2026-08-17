@@ -58,9 +58,25 @@ def negating_idx(opts):
         return negs.index(False)
     return None
 
+AFFIRM = re.compile(r'^\s*correct\b', re.I)
+
+def affirming_idx(opts):
+    """Return the index of the single explanation that opens by affirming, else None.
+
+    Style 3, "affirming-prefix". Content authored to the current template gives
+    every option its own real explanation, so neither of the two styles above
+    can see it -- the Pharmacology I build came back 60/60 unclassified, which
+    reads as "0 mismatches" while actually checking nothing. Those banks mark
+    the answer by opening its explanation with "Correct", so exactly one
+    affirming opener identifies the key.
+    """
+    hits = [i for i, o in enumerate(opts)
+            if isinstance(o, list) and len(o) > 1 and AFFIRM.match(o[1])]
+    return hits[0] if len(hits) == 1 else None
+
 def derived_correct(opts):
-    """Best explanation-derived correct index, or None if the question matches neither style."""
-    for fn in (negating_idx, unique_idx):
+    """Best explanation-derived correct index, or None if no style matches."""
+    for fn in (negating_idx, unique_idx, affirming_idx):
         i = fn(opts)
         if i is not None:
             return i

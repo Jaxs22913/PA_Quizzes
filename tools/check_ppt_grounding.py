@@ -37,10 +37,27 @@ def deck_text(path):
     return ' '.join(' '.join(re.findall(r'<a:t>(.*?)</a:t>', z.read(n).decode('utf-8', 'ignore'))) for n in sl)
 
 def inbox_dir(repo_folder):
-    for cls, ib in INBOX.items():
-        m = re.match(re.escape(cls) + r'\s*Exam\s*(\d+)', repo_folder)
-        if m:
-            return os.path.join(HOME, "Desktop", ib, "Exam " + m.group(1))
+    """Locate the source deck folder for a repo exam folder.
+
+    Two layouts exist. Semester 1 sat flat at ~/Desktop/<X> Inbox/Exam N, with
+    a couple of irregular names (CAM-Nutrition) that INBOX still maps. From
+    Fall 2026 the inboxes moved under ~/Desktop/Semester <n>/. The old
+    hardcoded map silently returned None for every Fall class, so grounding
+    screened 0 questions and still printed a clean result -- a check that
+    passes by doing nothing is worse than no check.
+    """
+    m = re.match(r'(.+?)\s*Exam\s*(\d+)\s*$', repo_folder)
+    if not m:
+        return None
+    cls, num = m.group(1).strip(), m.group(2)
+    names = [INBOX.get(cls, cls + " Inbox"), cls + " Inbox"]
+    roots = [os.path.join(HOME, "Desktop")] + sorted(
+        glob.glob(os.path.join(HOME, "Desktop", "Semester *")))
+    for root in roots:
+        for name in names:
+            p = os.path.join(root, name, "Exam " + num)
+            if os.path.isdir(p):
+                return p
     return None
 
 def toks(s):
