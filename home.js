@@ -950,6 +950,10 @@ document.querySelectorAll(".semester").forEach(semester => {
       // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
         "Pharmacology%20I%20Exam%201/antibacterials-quiz.html": "2026-08-17",
+        "Pharmacology%20I%20Exam%201/antivirals-quiz.html": "2026-08-17",
+        "Pharmacology%20I%20Exam%201/antivirals-quiz-version-2.html": "2026-08-17",
+        "Pharmacology%20I%20Exam%201/antifungals-quiz.html": "2026-08-17",
+        "Pharmacology%20I%20Exam%201/antifungals-quiz-version-2.html": "2026-08-17",
         "Pharmacology%20I%20Exam%201/antibacterials-quiz-version-2.html": "2026-08-17",
         "Microbiology%20Exam%201/antibiotics-resistance-quiz.html": "2026-08-17",
         "Microbiology%20Exam%201/antibiotics-resistance-quiz-version-2.html": "2026-08-17",
