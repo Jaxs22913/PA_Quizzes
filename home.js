@@ -961,6 +961,8 @@ document.querySelectorAll(".semester").forEach(semester => {
       // Update this list (and the "What's New" panel below) whenever new
       // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
+        "Microbiology%20Exam%201/antibiotics-resistance-quiz.html": "2026-08-17",
+        "Microbiology%20Exam%201/antibiotics-resistance-quiz-version-2.html": "2026-08-17",
         "Microbiology%20Exam%201/general-microbiology-quiz.html": "2026-08-16",
         "Microbiology%20Exam%201/general-microbiology-quiz-version-2.html": "2026-08-16",
         "Clinical%20Pathophysiology%20I%20Exam%201/inflammation-quiz.html": "2026-08-16",

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antibiotics and Resistance — Quiz 2</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Antibiotics and Resistance</h1>
+    <div class="sub">Microbiology &middot; Exam 1 &middot; Lecture 2 &middot; Set 2</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Lecture 2 of Microbiology — Antibiotics and Resistance. Thirty questions across all eight instructional objectives from the syllabus, every one cited to the slide it came from. Includes the producing organism for each major drug line, which objective 5 asks for by name.</p>
+    <div class="chips"><span class="chip">History of antimicrobials</span><span class="chip">Drug selection criteria</span><span class="chip">Therapeutic index</span><span class="chip">Drug lines & producing organisms</span><span class="chip">Mechanisms of action</span><span class="chip">Resistance</span><span class="chip">Problems with therapy</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Protein synthesis", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "Streptogramins are distinctive among the protein synthesis inhibitors because they do what?", "opts": [["Bind the 30S subunit and cause codon misreading", "That is the aminoglycoside mechanism."], ["Interfere with transfer RNA attachment", "That is the tetracyclines."], ["Use two different components that work together to bind the 50S subunit and inhibit protein translation", "Correct. They are produced by Streptomyces species and work against Gram-positives."], ["Inhibit folic acid synthesis because their structure closely resembles that of para-aminobenzoic acid", "That is the sulfonamides, which are competitive inhibitors rather than protein synthesis inhibitors."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 30"}, {"topic": "History", "io": "Describe major historical events in microbial control", "q": "What did Sir John Scott Burdon-Sanderson observe in 1870?", "opts": [["That guinea pigs infected with typhoid could be healed with Penicillium", "That was Ernest Duchesne in 1897."], ["That cultures of anthrax bacilli are inhibited by mould growth", "That was Louis Pasteur in 1877."], ["That culture fluid covered with mould did not grow bacteria", "Correct. It sits among a series of pre-Fleming observations of the same phenomenon."], ["That mycophenolic acid from Penicillium was active against Bacillus anthracis", "That was Bartolomeo Gosio in 1893, work that was never translated."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 6"}, {"topic": "Why resistance occurs", "io": "Describe mechanisms of drug resistance", "q": "According to the lecture, resistance occurs because of which two things?", "opts": [["Antibiotics actively mutate bacterial DNA on contact, and the mutations that result then spread through the population by conjugation and transduction", "The antibiotic selects rather than causes the variation."], ["Genetic variation means some members of the population are less susceptible, and the presence of the antibiotic selects for resistant organisms already present", "Correct. The distinction matters: the drug does not create resistance, it selects the organisms that already carry it."], ["Overuse alone, independent of any genetic factor", "Genetic variation is given as the first reason; misuse then accelerates selection."], ["Biofilm formation alone", "Biofilms enhance resistance but are listed separately from why resistance arises."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 67"}, {"topic": "Drug combinations", "io": "Describe other potential problems with antimicrobial therapy", "q": "When two drugs are used together, what are the three possible interactions the lecture names?", "opts": [["Indifference — no interaction; synergism — the combined effect is greater than either alone; antagonism — the combined effect is less than either alone", "Correct. Using a cocktail is one approach to resistant organisms, but antagonism is the risk that makes the choice matter."], ["Additive effects, in which the two simply sum; multiplicative effects, in which each amplifies the other; and subtractive effects between the agents", "These are not the terms used."], ["Bactericidal, bacteriostatic and neutral effects", "Those describe a single drug's effect on an organism."], ["Potentiation, inhibition and tolerance", "None of these three are the terms given."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 78"}, {"topic": "Drivers of resistance", "io": "Describe mechanisms of drug resistance", "q": "What does the National Antimicrobial Resistance Monitoring System for Enteric Bacteria monitor, and through which agencies?", "opts": [["Only hospital-acquired infections, through the Centers for Disease Control and Prevention alone, with data drawn from inpatient isolates and reported annually to state health departments for regional comparison", "It is an interagency partnership covering more than hospitals."], ["Only retail meats, through the Food and Drug Administration", "Retail meats are the Food and Drug Administration's portion of a wider programme."], ["Antibiotic prescribing rates in outpatient clinics", "The system monitors resistance in enteric bacteria, not prescribing volumes."], ["Antimicrobial resistance of enteric bacteria from humans (Centers for Disease Control and Prevention), retail meats (Food and Drug Administration) and food animals (United States Department of Agriculture), with state and local health departments", "Correct. It is an interagency partnership spanning all three sources."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 75"}, {"topic": "History", "io": "Describe major historical events in microbial control", "q": "Who coined the term “antibiotics”, and from which genus did his discoveries come?", "opts": [["Alexander Fleming; Penicillium", "Fleming discovered penicillin's effect but did not coin the term."], ["Selman Waksman; Streptomyces", "Correct. Waksman discovered over twenty antibiotics from Streptomyces species and won the Nobel prize in 1952."], ["Paul Ehrlich; Treponema", "Ehrlich coined “magic bullets” and worked against Treponema pallidum, which is a pathogen rather than a source."], ["Gerhard Domagk; Penicillium", "Domagk developed the sulfonamides from coal tar dyes in 1935."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 10"}, {"topic": "Direct toxicity", "io": "Describe other potential problems with antimicrobial therapy", "q": "Which drug is correctly paired with its direct toxicity?", "opts": [["Aminoglycosides — renal and auditory toxicity", "Correct. The auditory component is what makes this pairing distinctive among the listed toxicities."], ["Ciprofloxacin — aplastic anaemia", "Aplastic anaemia is chloramphenicol's listed toxicity; ciprofloxacin's is seizures."], ["Doxycycline — hyperkalaemia", "Hyperkalaemia belongs to sulfamethoxazole; doxycycline causes oesophageal ulcerations."], ["Tetracycline — renal and hepatic toxicity", "Renal and hepatic toxicity is amphotericin B's; tetracycline causes tooth discoloration."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 60"}, {"topic": "Terminology", "io": "Describe criteria for drug selection for prokaryotes and eukaryotes", "q": "Chemotherapy is defined in this lecture as which of the following?", "opts": [["The treatment of malignancy with cytotoxic agents", "The lecture uses the term in its original, broader sense rather than the oncologic one."], ["The use of drugs to treat a disease", "Correct. Antimicrobial drugs are then the subset that interferes with microbial growth within a host."], ["The use of microbial products to stimulate host immunity", "That describes immune stimulants such as interferon, covered later in the lecture."], ["The combination of two or more drugs to overcome resistance", "That describes drug combinations, discussed under combatting resistance."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 4"}, {"topic": "Antimycobacterials", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "Isoniazid and ethambutol both act on mycobacterial cell walls. How do they differ?", "opts": [["Isoniazid binds the 30S subunit; ethambutol binds the 50S", "Neither acts on the ribosome; both target mycolic acid."], ["Isoniazid inhibits DNA gyrase; ethambutol inhibits bacterial RNA polymerase", "Rifamycin inhibits RNA polymerase; neither of these acts on nucleic acid synthesis."], ["Isoniazid inhibits mycolic acid synthesis; ethambutol inhibits its incorporation", "Correct. Mycobacteria have different cell walls, which is why they need their own agents."], ["Isoniazid is topical; ethambutol is parenteral", "Route is not the distinction drawn."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 25"}, {"topic": "Bacitracin", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "Bacitracin works by which mechanism, and why is it topical only?", "opts": [["It interferes with bactoprenol, the membrane transporter carrying peptidoglycan monomers to the growing wall, preventing dephosphorylation so no new monomers are inserted; it is too toxic for parenteral use", "Correct. The wall weakens and the bacterium bursts from osmotic lysis. It is produced by Bacillus subtilis and used against Gram-positives."], ["Amycolatopsis orientalis; a polyene that binds ergosterol in the fungal membrane and forms pores through it, causing leakage of cell contents, which is why it is too toxic for routine systemic use", "That is the polyene mechanism, used by amphotericin B and nystatin."], ["It inhibits DNA gyrase; it is restricted to urinary tract use", "That is the quinolone mechanism."], ["It binds the 30S subunit and causes misreading; it is nephrotoxic", "That is the aminoglycoside mechanism."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 23"}, {"topic": "Cephalosporins", "io": "Compare and contrast antibiotics and the organisms of major antibiotic drug lines", "q": "Cephalosporins were originally isolated from which organism, and how does their generation ordering work?", "opts": [["Streptomyces griseus; first generation broad spectrum and Gram-negative, second narrowed to Gram-positive, third oral, fourth injected against pseudomonads", "Streptomyces griseus produces streptomycin, and the generation trend runs the other way."], ["Penicillium chrysogenum; all generations are equivalent in spectrum", "That organism produces penicillin, and the generations differ markedly."], ["Bacillus subtilis; later generations are topical only", "Bacillus subtilis produces bacitracin, which is the topical-only agent."], ["Cephalosporium acremonium; first generation narrow spectrum and Gram-positive, second extended to include Gram-negative, third including pseudomonads and injected, fourth oral", "Correct. Their mechanism is similar to the transpeptidase activity of penicillin."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 22"}, {"topic": "Biofilms", "io": "Describe mechanisms of drug resistance", "q": "What does the ESKAPE group refer to, and why does it matter clinically?", "opts": [["Clinically relevant biofilm producers — Enterococcus faecium, Staphylococcus aureus, Klebsiella pneumoniae, Acinetobacter baumannii, Pseudomonas aeruginosa and Enterobacter species — which colonise medical devices and host tissues, promoting persistent infection", "Correct. The devices named are urinary catheters, ventilators, prosthetic joints and cardiac implants; the tissues are chronic wounds and the lungs of cystic fibrosis patients."], ["The six antibiotic classes most often rendered useless by beta-lactamase enzymes — penicillins, cephalosporins, monobactams, carbapenems, glycopeptides and macrolides — which together account for most treatment failure in hospital-acquired infection worldwide", "ESKAPE names organisms, not drugs."], ["A monitoring programme for resistance in enteric bacteria", "That describes the National Antimicrobial Resistance Monitoring System."], ["The six genetic mechanisms by which resistance develops", "Those are mutation, conjugation, transposons, transduction, transformation and binary fission."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 71"}, {"topic": "Drug clearance", "io": "Discuss the effect of drug clearance on dosing schedule", "q": "What is the practical consequence of drug clearance for the dosage schedule?", "opts": [["Doses should be spaced as widely apart as the patient will tolerate, since the drug persists in tissue long after the plasma level falls", "Spacing doses too widely is exactly the risk the lecture warns about."], ["Clearance affects only the loading dose, not the interval", "The lecture ties clearance directly to the dosage schedule."], ["You must not let the concentration fall below the minimal inhibitory concentration — and it takes time for the drug to enter the system in the first place", "Correct. Both halves matter: the trough must stay above the minimal inhibitory concentration, and onset is not instantaneous."], ["Clearance determines the spectrum of activity", "Spectrum is a property of the drug's targets, not of its elimination."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 15"}, {"topic": "Direct toxicity", "io": "Describe other potential problems with antimicrobial therapy", "q": "Why does tetracycline cause tooth discoloration?", "opts": [["It stains enamel on contact during oral administration", "The mechanism given is incorporation rather than surface staining."], ["It binds with calcium during tooth development", "Correct — which is why the timing of exposure, during development, is what matters."], ["It inhibits enamel-forming protein synthesis via the 30S subunit", "Its antibacterial mechanism is transfer RNA interference, and that is not the stated cause here."], ["It causes chronic gingival inflammation", "No such mechanism is described."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 60"}, {"topic": "Therapeutic index", "io": "Define therapeutic index including calculations and significance", "q": "What is the therapeutic window?", "opts": [["The interval between doses at which plasma concentration falls below the minimal inhibitory concentration", "That describes a dosing failure, which the lecture warns against under clearance."], ["The period during which a drug remains detectable in serum", "Detectability is not what the window measures."], ["The range of plasma concentrations spanning the minimum concentration for clinical efficacy and toxicity", "Correct. The therapeutic index is then the calculation used to assess safety and efficacy against that window."], ["The range of organisms against which a drug is effective", "That is spectrum of activity."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 15"}, {"topic": "Future agents", "io": "Describe other potential problems with antimicrobial therapy", "q": "How do antisense agents work, and what example is given?", "opts": [["They bind bacterial ribosomes to halt translation; example, nisin", "Nisin is an antimicrobial peptide, and the antisense mechanism acts on transcription."], ["They deliver bacteriophages to lyse the pathogen; example, phage therapy", "Phage therapy is listed separately as its own future approach."], ["They are complementary DNA that binds a pathogen's virulence genes and prevents transcription; example, fomivirsen for cytomegalovirus retinitis", "Correct. Targeting virulence genes rather than the organism itself is what makes the approach distinctive."], ["They sequester the iron that a pathogen requires for its metabolism; example, diiodohydroxyquinoline used in amoebic disease", "Iron chelation is the possible mechanism of diiodohydroxyquinoline in amoebic disease."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 81"}, {"topic": "Protein synthesis", "io": "Compare and contrast antibiotics and the organisms of major antibiotic drug lines", "q": "Which pairing of aminoglycoside to producing organism is correct?", "opts": [["Streptomycin from Streptomyces griseus; neomycin from Streptomyces fradiae; gentamycin from Micromonospora purpurea", "Correct. Note that gentamycin's producer is a Micromonospora rather than a Streptomyces."], ["Streptomycin from Streptomyces fradiae; neomycin from Micromonospora purpurea; gentamycin from Streptomyces griseus", "All three producers are shuffled here."], ["All three are produced by Streptomyces griseus", "Only streptomycin comes from Streptomyces griseus."], ["All three are produced synthetically from coal tar dyes", "That is the origin of the sulfonamides."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 28"}, {"topic": "Drug selection", "io": "Describe criteria for drug selection for prokaryotes and eukaryotes", "q": "Minimal bactericidal concentration is defined as the minimum level that does what?", "opts": [["Kills 99.9% of test organisms", "Correct. Minimal inhibitory concentration, by contrast, is the minimum level that inhibits growth."], ["Inhibits the growth of an organism", "That is minimal inhibitory concentration."], ["Reaches the target site in the body", "That describes favourable pharmacokinetics."], ["Produces a measurable zone of inhibition on disk diffusion", "Zone of inhibition is how susceptibility is read, not the definition of this value."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 12"}, {"topic": "Superinfection", "io": "Describe other potential problems with antimicrobial therapy", "q": "Which organisms does the lecture name as typically involved in superinfection?", "opts": [["Streptococcus pyogenes, Neisseria meningitidis, Haemophilus influenzae, Streptococcus pneumoniae and Moraxella catarrhalis", "Neither is listed."], ["Mycobacterium tuberculosis and Treponema pallidum", "Neither is listed among the superinfection organisms."], ["Escherichia coli and Salmonella enterica", "Neither is listed here."], ["Candida albicans, Clostridioides difficile, hepatitis C virus, human immunodeficiency virus, Aspergillus and resistant staphylococci", "Correct. The mix of fungi, bacteria and viruses is the point — reduced normal flora opens the door broadly."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 59"}, {"topic": "Penicillins", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "What is the effect of penicillin's action on penicillin-binding proteins?", "opts": [["It prevents peptidoglycan monomers from being transported across the cell membrane", "That is bacitracin's mechanism, acting on bactoprenol."], ["It inactivates proteins on the cell membrane involved in cell wall synthesis and maintenance", "Correct. Inhibition of transpeptidase then blocks formation of the peptide cross links specifically."], ["It binds NAG and NAM subunits so they cannot be incorporated", "That is vancomycin's mechanism."], ["It prevents dephosphorylation of the membrane transporter", "That again describes bacitracin."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 20"}, {"topic": "Drivers of resistance", "io": "Describe mechanisms of drug resistance", "q": "Which of these does the lecture list as a behaviour that increases resistance?", "opts": [["Completing a prescribed regimen in full", "Failing to complete the regimen is the listed problem; completing it is protective."], ["Using antibiotics for the common cold and other inappropriate conditions", "Correct. The list also includes misuse or overuse, using outdated or weakened antibiotics, failing to complete a regimen, and using someone else's leftover prescription."], ["Using a narrow spectrum agent once the causative organism is known", "Narrow-spectrum targeted therapy is not listed as a driver."], ["Susceptibility testing before prescribing", "Testing informs drug choice rather than driving resistance."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 73"}, {"topic": "Membrane injury", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "Polymyxin B acts how, and how is it typically used?", "opts": [["Inhibiting bacterial RNA polymerase and so preventing transcription; used chiefly against tuberculosis and other mycobacterial infections, always in combination with a second agent to limit resistance", "That is rifamycin."], ["It blocks beta-glucan synthesis; given intravenously", "That is the echinocandins, which are antifungals."], ["It inhibits squalene epoxidase; applied to skin", "That is tolnaftate, an antifungal."], ["It disrupts both the outer membrane of Gram-negative cells and the inner membrane by attaching to lipid components; used topically, combined with bacitracin and neomycin in over-the-counter preparations", "Correct. It is produced by Paenibacillus polymyxa."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 32"}, {"topic": "Antivirals", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "How do integrase inhibitors work?", "opts": [["They prevent the viral genes from entering the host chromosome, so the viral DNA is ultimately degraded", "Correct. After reverse transcription the integrase forms a stable complex with viral DNA and mediates integration; blocking it leaves the DNA unintegrated."], ["They block the proteolytic cleavage of viral polypeptide precursors into mature proteins", "That is the protease inhibitors."], ["They prevent the virus escaping the host cell to infect others", "That is neuraminidase inhibition, used in influenza."], ["They inhibit uncoating of the virion", "That is amantadine, against influenza."]], "c": 0, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 55"}, {"topic": "Biochemical mechanisms", "io": "Describe mechanisms of drug resistance", "q": "The resistance mechanisms are grouped under a heading describing what problem?", "opts": [["The organism grows faster than the drug can act", "Growth rate is not the organising idea."], ["The host clears the drug before it can work", "Clearance is a pharmacokinetic issue covered under dosing."], ["The antimicrobial does not get to the active site — by decreased permeability, decreased transport, or increased efflux", "Correct. Those three are grouped together as failures of access, before the separate categories of inactivation, target modification and bypass."], ["The drug is inherently bacteriostatic rather than bactericidal, so it slows the organism without ever clearing it from the host", "That distinction concerns the drug's effect, not resistance."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 70"}, {"topic": "Drug selection", "io": "Describe criteria for drug selection for prokaryotes and eukaryotes", "q": "Why does the lecture say treatment of eukaryotic pathogens is often more difficult than treatment of bacteria?", "opts": [["Because eukaryotic pathogens replicate considerably faster than bacteria do, so they outpace the drug before an effective concentration is reached", "Replication rate is not the reason given."], ["Because cell structure and some physiology resemble those of the human host, so there is great possibility of toxic side effects", "Correct. There are also not as many drugs in the pharmacopeia for them, precisely because selective toxicity is harder to achieve."], ["Because eukaryotic pathogens are always intracellular", "No such claim is made."], ["Because eukaryotic pathogens lack a cell wall to target", "Fungi do have cell walls, and antifungals target them — echinocandins block beta-glucan synthesis."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 38"}, {"topic": "Protein synthesis", "io": "Compare and contrast the basic mechanisms of action of antimicrobial agents and give examples of each", "q": "Aminoglycosides act by which mechanism?", "opts": [["Binding the 50S subunit and inhibiting peptide bond formation", "That is chloramphenicol."], ["Interfering with transfer RNA attachment", "That is the tetracyclines."], ["Preventing amino acid translocation from transfer RNA to the ribosomal binding site", "That is erythromycin."], ["Changing the shape of the 30S subunit so messenger RNA codons are not read accurately", "Correct. Streptomycin, neomycin and gentamycin are the broad-spectrum examples given."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 28"}, {"topic": "Therapeutic index", "io": "Define therapeutic index including calculations and significance", "q": "Which expressions does the lecture give for the therapeutic index?", "opts": [["Renal clearance plus hepatic clearance, divided by total clearance", "That is the composition of drug clearance, a separate calculation."], ["Minimal inhibitory concentration divided by minimal bactericidal concentration, equivalently the trough over the peak plasma level", "Neither ratio is given as the therapeutic index."], ["Zone of inhibition divided by disk concentration", "That relates to reading disk diffusion susceptibility."], ["Maximum tolerated dose over minimum inhibitory concentration, equivalently median toxic dose (TD50) over median effective dose (ED50)", "Correct. Both forms are given, and it is a calculation used to assess the safety and efficacy of a drug."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 15"}, {"topic": "Susceptibility testing", "io": "Describe criteria for drug selection for prokaryotes and eukaryotes", "q": "What does the E test (epsilometer test) read, and in what units?", "opts": [["The zone diameter in millimetres, corrected for the molecular weight and diffusion rate of the agent tested", "Zone diameter corrected for concentration, molecular weight and diffusion factors describes the disk-diffusion (Kirby Bauer) method."], ["The therapeutic index, as a ratio", "The therapeutic index is calculated from doses, not read off a plate."], ["The minimal bactericidal concentration, as a percentage kill", "The E test reads the inhibitory rather than the bactericidal value."], ["The minimal inhibitory concentration in micrograms per millilitre, at the point where the zone of inhibition meets the strip", "Correct — which is why the lecture calls it “MIC on a stick”."]], "c": 3, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 37"}, {"topic": "Future agents", "io": "Describe other potential problems with antimicrobial therapy", "q": "Which of these is described as an antimicrobial peptide isolated from an organism?", "opts": [["Fomivirsen, from bacteriophage", "Fomivirsen is an antisense agent used for cytomegalovirus retinitis."], ["Magainin, from frogs", "Correct. The examples given are nisin from lactic acid bacteria, magainin from frogs, and cecropin from moths."], ["Remdesivir, from Streptomyces", "Remdesivir is a nucleotide analog and is not described as a peptide."], ["Imiquimod, from moths", "Imiquimod is a topical imidazoquinoline that promotes interferon production."]], "c": 1, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 80"}, {"topic": "History", "io": "Describe major historical events in microbial control", "q": "Traces of which antibiotic were found in human skeletal remains from Sudanese Nubia dating to 350-550 AD, and from what source?", "opts": [["Penicillin, from mouldy bread stored alongside the remains in the burial chambers", "Penicillin's story begins much later, with Fleming in 1928."], ["Streptomycin, from soil contamination of the remains", "Streptomycin belongs to Waksman's work on Streptomyces in 1943."], ["Tetracycline, from Nubian beer made with fermented grain containing Streptomyces", "Correct. The fermented grain carried Streptomyces, which is why the skeletal remains carry tetracycline."], ["Quinine, from cinchona bark traded along the Nile", "Cinchona bark for malaria belongs to the 1600s."]], "c": 2, "cite": "Lecture Number 2  - Antibiotics and Resistance - Dr. Webster.pptx, Slide 5"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
