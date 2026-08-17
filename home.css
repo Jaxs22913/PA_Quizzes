@@ -1595,6 +1595,11 @@
    am I", this answers "how much longer" -- so the number carries the weight and
    everything else stays quiet. Colours are the existing accent pair; no new
    hues enter the palette for one component. */
+/* `display:flex` below beats the UA stylesheet's `[hidden]{display:none}`, so
+   the attribute alone will NOT hide this element -- it would paint as an empty
+   26px strip of background and border. This matters now that an in-progress
+   term deliberately leaves the countdown hidden. */
+.semester-countdown[hidden]{ display:none; }
 .semester-countdown{
   display:flex; align-items:center; gap:14px;
   margin:14px 0 4px; padding:12px 16px;

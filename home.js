@@ -152,35 +152,23 @@ document.querySelectorAll(".semester").forEach(semester => {
         var target = lastEvent ? reg.parseLocal(lastEvent.d) : reg.endOf(sem);
 
         var toStart = daysBetween(now, start);
-        var toEnd = daysBetween(now, target);
 
-        /* Retire the countdown only once the last exam is genuinely PAST.
-           Comparing `now > target` instead hid it from midnight on the morning
-           of the final exam -- target is local midnight, so every hour of the
-           day it counts down to compares as later than it. */
-        if (toEnd < 0) return;
+        /* Once a term has STARTED there is no countdown. The
+           days-until-the-last-exam version was removed at Jaxon's request
+           2026-08-17: a number ticking down to the final exam is not something
+           you want on the homepage every day of a semester you are already in.
+           The progress bar immediately above still gives the useful form of the
+           same fact -- "Week 1 of 16 · 84 class days left" -- without naming an
+           exam to dread.
 
-        /* One shape for every term, whichever side of it you are standing on:
-           a number, what the number counts, then "Day X of N" and the date it
-           refers to. Before the term starts the number counts to the first day;
-           once it has started, to the last exam. Holding the detail line to the
-           same shape is the point -- four cards each phrasing this their own way
-           read as four unrelated widgets rather than one. */
+           The countdown survives only for a term that has not begun, where it
+           answers a question worth asking. */
+        if (toStart <= 0) return;
+
         var span = daysBetween(start, target) + 1;
-        var num, main, sub;
-
-        if (toStart > 0) {
-          num = toStart;
-          main = "day" + (toStart === 1 ? "" : "s") + " until classes start";
-          sub = "Day 0 of " + span + " · " + longDate(start);
-        } else {
-          num = toEnd;
-          main = toEnd === 0
-            ? "the last exam is today"
-            : "day" + (toEnd === 1 ? "" : "s") + " until the last exam";
-          sub = "Day " + (daysBetween(start, now) + 1) + " of " + span + " · " +
-                longDate(target) + (lastEvent ? " · " + lastEvent.t : "");
-        }
+        var num = toStart;
+        var main = "day" + (toStart === 1 ? "" : "s") + " until classes start";
+        var sub = "Day 0 of " + span + " · " + longDate(start);
 
         /* A term whose dates are still guesses gets the same countdown rather
            than none at all, but the number is marked approximate and the detail
