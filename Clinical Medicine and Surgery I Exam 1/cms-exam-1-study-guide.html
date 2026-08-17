@@ -152,6 +152,30 @@
 </head>
 <body>
 <style>
+  /* Professor-emphasised content. Star + highlight, per the convention set by
+     the CAM/Nutrition guide. Here the marks are derived from the 2026-08-17
+     lecture recording: prosodic weight, time spent, and repetition. */
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
   .footer-mark-ink { stroke: #1b2a2b; }
   .footer-mark-accent { stroke: #17494b; }
   @media (prefers-color-scheme: dark) {
@@ -226,8 +250,8 @@
     <tr><td>In one phrase</td><td>How well a test <strong>detects</strong> disease</td><td>How well a test <strong>excludes</strong> disease</td></tr>
     <tr><td>Reduces</td><td>False-negatives</td><td>False-positives</td></tr>
     <tr><td>Says nothing about</td><td>False-positives</td><td>False-negatives</td></tr>
-    <tr><td>Memory aid</td><td><strong>SnNout</strong> &mdash; high <em>Sn</em>, <em>N</em>egative result, rules <em>out</em></td>
-        <td><strong>SpPin</strong> &mdash; high <em>Sp</em>, <em>P</em>ositive result, rules <em>in</em></td></tr>
+    <tr><td>Memory aid</td><td><mark class="prof-highlight"><strong>SnNout</strong> &mdash; high <em>Sn</em>, <em>N</em>egative result, rules <em>out</em></mark></td>
+        <td><mark class="prof-highlight"><strong>SpPin</strong> &mdash; high <em>Sp</em>, <em>P</em>ositive result, rules <em>in</em></mark></td></tr>
     <tr><td>Best used for</td><td>Screening</td><td>Confirming a diagnosis</td></tr>
   </table>
   
@@ -402,15 +426,15 @@ probability is the whole point of testing.</figcaption>
   evidence-based medicine, clinical guidelines, and quantitative techniques.</p>
   <table>
     <tr><th>Analytic method</th><th>How it runs, and where it falls short</th></tr>
-    <tr><td>Evidence-based medicine</td><td>Formulate a clinical question &rarr; gather evidence (literature review, MEDLINE, UpToDate) &rarr; evaluate its quality and validity &rarr; decide how to use it. <em>Limitations:</em> time consuming, and many clinical questions have no relevant studies.</td></tr>
-    <tr><td>Clinical guidelines</td><td>Common practice, often an &ldquo;if&nbsp;then&rdquo; rule &mdash; if a patient is febrile and neutropenic, then use broad-spectrum antibiotics. Straightforward, cost-effective, the &ldquo;standard of care&rdquo;. <em>Caution:</em> apply only to patients with similar characteristics.</td></tr>
+    <tr><td>Evidence-based medicine</td><td>Formulate a clinical question &rarr; gather evidence <mark class="prof-highlight">(literature review, MEDLINE, UpToDate)</mark> &rarr; evaluate its quality and validity &rarr; decide how to use it. <em>Limitations:</em> time consuming, and many clinical questions have no relevant studies.</td></tr>
+    <tr><td>Clinical guidelines</td><td>Common practice, often an <mark class="prof-highlight">&ldquo;if&nbsp;then&rdquo; rule &mdash; if a patient is febrile and neutropenic, then use broad-spectrum antibiotics</mark>. Straightforward, cost-effective, the <mark class="prof-highlight">&ldquo;standard of care&rdquo;</mark>. <em>Caution:</em> apply only to patients with similar characteristics.</td></tr>
     <tr><td>Quantitative techniques</td><td>Odds and probability &mdash; the sensitivity, specificity and pre/posttest material above.</td></tr>
   </table>
 
   <div class="callout"><strong>Clinical principles, verbatim.</strong>
   For the differential and final diagnosis: common things occur commonly; when you hear hoof beats think
-  of horses, not zebras; place your bets on uncommon manifestations of common conditions rather than common
-  manifestations of uncommon conditions. During treatment: if what you are doing is working, keep on doing
+  of horses, not zebras; <mark class="prof-highlight">place your bets on uncommon manifestations of common conditions rather than common
+  manifestations of uncommon conditions</mark>. During treatment: if what you are doing is working, keep on doing
   it; if what you are doing is not working, stop doing it; if you don't know what to do, don't do anything.</div>
 
   <p><strong>Suggestions for good decision-making:</strong> slow down; be aware of the base rate of disease
@@ -444,11 +468,13 @@ probability is the whole point of testing.</figcaption>
   <h3 class="sub" id="cr-counselling">1.7 &middot; Objective h &mdash; Recall counseling strategies to help patients adhere to treatment plans</h3>
   <p>Providers must be able to communicate evidence on prognosis, treatments, diagnostic testing and
   prevention, so patients understand their risks and options.</p>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
   <table>
     <tr><th>Framework</th><th>Elements</th></tr>
     <tr><td><strong>Five As</strong></td><td>Ask &middot; Advise &middot; Assess &middot; Assist &middot; Arrange</td></tr>
     <tr><td><strong>FRAMES</strong></td><td><strong>F</strong>eedback about personal risk &middot; <strong>R</strong>esponsibility of the patient &middot; <strong>A</strong>dvice to change &middot; <strong>M</strong>enu of options &middot; <strong>E</strong>mpathetic style &middot; promote <strong>S</strong>elf-efficacy</td></tr>
   </table>
+  </div>
 <figure class="fig"><img width="610" height="780" loading="lazy" src="cms-exam-1-study-guide-images/004.png" alt="A table comparing the Five As approach and the FRAMES approach step by step, each with example dialogue a clinician might use."><figcaption>The same two frameworks as the table above, but with the words a clinician would actually say — which is the part that is hard to invent under exam pressure. Read the two columns across rather than down: step 3 is &ldquo;assess&rdquo; in the Five As but &ldquo;advice&rdquo; in FRAMES, because FRAMES front-loads feedback and responsibility before it advises anything. That ordering is the substantive difference between them, not a relabelling. <span class="src">Bates' Box 7-8. Source: Searight R. Realistic approaches to counseling in the office setting. <em>Am Fam Physician.</em> 2009;79(4):277&ndash;284. Reproduced from the lecture slides (Slide 29).</span></figcaption></figure>
     <p>Specific counselling guidelines for adults on unhealthy alcohol use, tobacco smoking cessation and
   sexually transmitted infections are in Bates' Chapter 7.</p>
