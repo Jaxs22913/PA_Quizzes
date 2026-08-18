@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Principles of Diagnostic Medicine I Exam 1</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#69406c;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Principles of Diagnostic Medicine I Exam 1 · Class of 2028</div>
+    <h1>Principles of Diagnostic Medicine I Exam 1 Cram Sheet</h1>
+    <p class="sub">Lecture 1, Principles of Laboratory Diagnostics — the phases, the order of draw, the specimen studies, point-of-care testing and its regulation, and the statistics. Opens with how Professor Reynolds said this exam is written.</p>
+    <div class="toc">
+      <a href="#scope" style="color:#523254"><span class="dot" style="background:#69406c"></span>How This Exam Is Written</a>
+      <a href="#phases" style="color:#704a72"><span class="dot" style="background:#8f5f92"></span>The Three Phases</a>
+      <a href="#tubes" style="color:#5f4624"><span class="dot" style="background:#7a5a2e"></span>Order of Draw & Tubes</a>
+      <a href="#specimens" style="color:#315346"><span class="dot" style="background:#3f6b5a"></span>Stool, Blood, Sputum & Throat</a>
+      <a href="#poct" style="color:#254757"><span class="dot" style="background:#2f5b70"></span>Point-of-Care Testing & Regulation</a>
+      <a href="#stats" style="color:#6c313a"><span class="dot" style="background:#8a3f4a"></span>Sensitivity, Specificity & Predictive Value</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pdm-exam-1-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="scope" style="--acc:#69406c;--acc-bg:#eae4ea;--acc-zebra:#f4f2f5;--acc-ink:#523254">
+    <div class="shead"><span class="dot" style="background:#69406c"></span><h2>How This Exam Is Written</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Reference ranges are GIVEN</td><td>“I'm not going to just throw a random number at you” — normal ranges are always supplied, on this exam and in every class. Do not spend the night memorising cutoffs; spend it on what a value means.</td></tr>
+          <tr><td class="h">Tests, not diagnoses</td><td>“More related to the tests themselves rather than maybe the specific diagnosis.” What to order, why, its limits, how to read it. The instructional objectives are the blueprint.</td></tr>
+          <tr><td class="h">No predictive-value math</td><td>“We're not gonna do math, I'm not gonna make you do math.” Know which DIRECTION prevalence pushes positive predictive value and why — never the formula.</td></tr>
+          <tr><td class="h">Question style</td><td>Vignette and next-best-test: “which of the following laboratory tests would be best to evaluate…”, “what would be the next test that you would order?” Images (x-ray, CT, rhythm strip) may accompany the vignette.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="phases" style="--acc:#8f5f92;--acc-bg:#efe9f0;--acc-zebra:#f7f4f7;--acc-ink:#704a72">
+    <div class="shead"><span class="dot" style="background:#8f5f92"></span><h2>The Three Phases</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Pretest = preanalytical</td><td>Begins with patient preparation, extends until the test begins. History and risk, contraindications, coping styles and fears, universal precautions, documentation, cost, education, consent.</td></tr>
+          <tr><td class="h">MOST ERRORS ARE PRETEST</td><td>The single most testable fact here. Communication errors, medication administration, labeling; technical errors — inadequate tube fill, transport delay, wrong storage; inappropriate preparation — fasting.</td></tr>
+          <tr><td class="h">Variables affecting results</td><td>Patient preparation · current drug therapy · time of collection · physical activity · hydration · age · sex · body mass index.</td></tr>
+          <tr><td class="h">Intratest = analytical</td><td>Performing the test: collection, monitoring the environment, comfort, analgesics and sedatives, vital signs, universal precautions, minimising delays, watching for complications.</td></tr>
+          <tr><td class="h">Posttest = postanalytical</td><td>Aftercare. Complications: bleeding, infection, respiratory difficulty, perforation, sedation effects. Interpret, IDENTIFY AND TREAT CRITICAL VALUES, communicate clearly and sensitively.</td></tr>
+          <tr><td class="h">Integration & follow-up</td><td>Diagnosis, acceptance, healing, health-promoting behaviour. Education, follow-up labs and appointments, referrals, emotional well-being. “If it wasn't documented, it wasn't done.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="tubes" style="--acc:#7a5a2e;--acc-bg:#ece8e2;--acc-zebra:#f6f3f0;--acc-ink:#5f4624">
+    <div class="shead"><span class="dot" style="background:#7a5a2e"></span><h2>Order of Draw & Tubes</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Stop Light Red Stay Put Green Light Go</td><td>Yellow (sterile/blood culture) → Light blue (citrate/COAGS) → Red (non-additive) → Gold SST → Green PST → Green (heparin) → Lavender (EDTA/CBC) → Gray (glycolytic inhibitor). She wants THE ORDER and the broad category, not the full additive table.</td></tr>
+          <tr><td class="h">The four pairings to know cold</td><td>Light blue = coagulation. Lavender = complete blood count. Yellow = blood cultures. Gray = glucose.</td></tr>
+          <tr><td class="h">Why the order exists</td><td>To avoid cross-contamination of additives between tubes. Carry EDTA into a chemistry tube and the potassium reads wrong.</td></tr>
+          <tr><td class="h">Clear tube</td><td>Nonadditive discard tube — fills the collection set's dead space before the coagulation tube when no royal blue is drawn.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="specimens" style="--acc:#3f6b5a;--acc-bg:#e4eae8;--acc-zebra:#f2f5f3;--acc-ink:#315346">
+    <div class="shead"><span class="dot" style="background:#3f6b5a"></span><h2>Stool, Blood, Sputum & Throat</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Get it BEFORE antibiotics</td><td>Stated for blood, sputum and throat cultures alike. The single rule spanning them.</td></tr>
+          <tr><td class="h">Ova & parasites</td><td>DO NOT REFRIGERATE — warm stool is best. THREE separate random specimens, because of the parasite life cycle. Specimen free of urine or other secretions, dry clean container.</td></tr>
+          <tr><td class="h">Guaiac</td><td>Heme oxidises hydrogen peroxide in the guaiac → BLUE = POSITIVE. Use a SMALL sample; a large one obscures the result. Can be done off the gloved finger after digital rectal exam.</td></tr>
+          <tr><td class="h">Blood cultures</td><td>Acute febrile illness with suspected septicemia. Diagnostic AND therapeutic (pathogen + sensitivities). TWO samples from OPPOSITE ARMS, ideally pre-antibiotic. AEROBIC FIRST. Scrub, let dry, and do not palpate after disinfection unless sterile-gloved.</td></tr>
+          <tr><td class="h">Sputum culture</td><td>Two steps: GRAM STAIN first (positive vs negative), then culture for identification and sensitivities. Upright, rinse mouth with water, three deep breaths, deep cough. Aerosols may assist. Acid-fast bacilli from the same specimen.</td></tr>
+          <tr><td class="h">Throat culture</td><td>Streptococci, because of beta-hemolytic streptococcal pharyngitis; commonest ages 3–15. Tongue blade improves view, relaxes throat, reduces gag. Swab posterior throat, BOTH tonsils, any exudate — AVOID tongue and lips.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="poct" style="--acc:#2f5b70;--acc-bg:#e2e8eb;--acc-zebra:#f0f4f5;--acc-ink:#254757">
+    <div class="shead"><span class="dot" style="background:#2f5b70"></span><h2>Point-of-Care Testing & Regulation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Testing completed OUTSIDE the centralized laboratory, at or close to the site of patient care. Near-patient, remote, satellite, rapid diagnostics.</td></tr>
+          <tr><td class="h">Primary care menu</td><td>Glucose · hemoglobin A1c · urinalysis · rapid influenza · rapid strep · fecal occult blood · pregnancy · cholesterol · PT/INR · drug screening. Rapidly increasing: fentanyl and HIV testing.</td></tr>
+          <tr><td class="h">Acute care menu</td><td>Venous blood gas · glucose · TROPONIN · brain natriuretic peptide · D-dimer · PT/INR · hemoglobin/hematocrit · rapid antigen · urine hCG · UA dipstick. Machines: portable x-ray, ECG, pulse oximetry, ultrasound.</td></tr>
+          <tr><td class="h">Advantages vs limitations</td><td>FOR: convenient, rapid, less manpower, fewer visits, fingerstick not needle stick, better care where resources are limited. AGAINST: expensive, quality assurance hard to control, operator and manufacturer variability, non-standard vocabulary, LESS PRECISE, supply needs.</td></tr>
+          <tr><td class="h">Qualitative / semi-quant / quantitative</td><td>Qualitative = rapid strep, flu, pregnancy (positive or negative). SEMI-QUANTITATIVE = urinalysis dipstick (matched to a chart). Quantitative = glucose (highest volume), chemistries, coags, cardiac markers — needs a reader.</td></tr>
+          <tr><td class="h">CLIA complexity</td><td>WAIVED = little harm from a false result; the Joint Commission calls all testing outside a traditional lab waived, i.e. POCT. MODERATELY COMPLEX = ~75% of the 12,000 tests, usually automated. HIGHLY COMPLEX = operator skill, e.g. cross match. PROVIDER-PERFORMED MICROSCOPY = provider reads a fresh slide.</td></tr>
+          <tr><td class="h">Who does what</td><td>CMS issues certificates, inspects, enforces. FDA categorizes tests by complexity. CDC provides standards, research, quality studies.</td></tr>
+          <tr><td class="h">Regulation goes one way</td><td>CLIA is the MINIMUM and cannot be downgraded, so state and city rules are always STRICTER. Every site licensed for ANY testing; licence matches complexity; reapply EVERY TWO YEARS.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="stats" style="--acc:#8a3f4a;--acc-bg:#efe4e6;--acc-zebra:#f7f2f2;--acc-ink:#6c313a">
+    <div class="shead"><span class="dot" style="background:#8a3f4a"></span><h2>Sensitivity, Specificity & Predictive Value</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">SnNout / SpPin</td><td>High SENSITIVITY + Negative rules OUT (fewer false negatives; good at DETECTING; best for SCREENING). High SPECIFICITY + Positive rules IN (fewer false positives; good at EXCLUDING; best for CONFIRMING).</td></tr>
+          <tr><td class="h">One dial, two costs</td><td>Move the threshold down to catch every case → false positives. Move it up to exclude cleanly → false negatives. You cannot maximise both, which is why HIV screening is sensitive first, confirmatory testing specific second.</td></tr>
+          <tr><td class="h">Test-centered vs patient-centered</td><td>Sensitivity and specificity belong to THE TEST. Positive and negative predictive value belong to THE POPULATION being tested.</td></tr>
+          <tr><td class="h">The named trap</td><td>“My patient's test is positive — do they have it?” feels like sensitivity. It is POSITIVE PREDICTIVE VALUE. Sensitivity = P(test+ | disease); PPV = P(disease | test+). That reversal is Bayes' theorem.</td></tr>
+          <tr><td class="h">Frostbite — same test, two states</td><td>95% sensitivity and specificity throughout. Michigan, prevalence 10% → PPV ~68%. Florida, prevalence 0.1% → PPV ~2%. Shark bite reverses the geography and the logic holds.</td></tr>
+          <tr><td class="h">Pre-test vs post-test probability</td><td>PRE-TEST = likelihood before the result, from signs, symptoms, history, risk factors, how common it is. POST-TEST = likelihood after, depending on sensitivity and specificity.</td></tr>
+          <tr><td class="h">Prevalence vs incidence</td><td>PREVALENCE = how COMMONLY something occurs (existing cases, usually a percentage). INCIDENCE = how OFTEN it happens.</td></tr>
+          <tr><td class="h">Screening vs diagnostic</td><td>SCREENING: asymptomatic, cheap, easy, indicates whether more testing is needed. DIAGNOSTIC: symptomatic, may be invasive, confirms. A screening test BECOMES diagnostic if an abnormality is found during it — e.g. colonoscopy.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Principles of Diagnostic Medicine I Exam 1 Study Guide (Class of 2028). Covers Lecture 1; Exam 1 spans Lectures 1–6 and Lab 1, and topics are added as each deck is posted. Exam-scope rows are quoted from the 2026-08-18 lecture recording.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
