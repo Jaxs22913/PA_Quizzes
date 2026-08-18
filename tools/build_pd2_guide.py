@@ -18,6 +18,9 @@ rather than skipped, with a pointer to the PD I guide that covers them at
 length.
 """
 import os, re
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from extract_pd2_derm_figures import figure_html
 
 ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
 DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-exam3-study-guide.html")
@@ -187,9 +190,9 @@ BODY = '''<main>
   expect different facilitators to give different feedback. The variation is anticipated rather than
   a contradiction to be resolved.</p>
   <button type="button" class="test-yourself-btn" style="--acc:#4a5c24" onclick="window.openTestYourself('Test yourself — Clinical Reasoning &amp; Documentation', TEST_YOURSELF.clinicalreasoning)">Test yourself! &rarr;</button>
-  <p class="guide-foot">Source: <em>Intro to PD II - Elwaya .pdf</em> (Professor Ayelet Elwaya), Pages 1&ndash;23,
+  <footer class="guide-foot">Source: <em>Intro to PD II - Elwaya .pdf</em> (Professor Ayelet Elwaya), Pages 1&ndash;23,
   and the PAJ 5310 syllabus instructional objectives. Documentation content carried forward from
-  Physical Diagnosis I.</p>
+  Physical Diagnosis I.</footer>
 </section>
 
 <section class="deck" id="dermatology">
@@ -215,6 +218,7 @@ BODY = '''<main>
   <p><strong>Five functions:</strong> protection of internal structures &middot; prevention of entry
   of microorganisms &middot; temperature regulation &middot; excretion &middot; production of
   vitamin D.</p>
+  [[FIG:skin-layers]]
   <table>
     <tr><th>Gland</th><th>Secretes</th><th>Notes</th></tr>
     <tr><td>Sudoriferous (eccrine)</td><td>Sweat</td><td>Maintains body temperature</td></tr>
@@ -290,6 +294,9 @@ BODY = '''<main>
   the only transient one &mdash; if it is gone by the next visit, that is the finding, not a missed
   examination. A <strong>cyst</strong> is the only encapsulated one, which is what separates it from
   a nodule you can feel at the same depth.</div>
+  [[GRID:macule-freckles,patch-cafe-au-lait,papule-nevi,plaque-psoriasis]]
+  [[GRID:nodule-measured,wheal-urticaria,vesicle-herpes-simplex,bulla]]
+  [[GRID:pustule-acne,cyst-diagram]]
 
   <h3 class="sub" id="derm-secondary">2.4 &middot; Objective b &mdash; Secondary morphology</h3>
   <p>A <strong>secondary lesion</strong> is a change in a primary lesion over time &mdash; from
@@ -312,6 +319,9 @@ BODY = '''<main>
   <div class="pearl"><strong>Erosion versus ulcer</strong> is the discrimination worth being certain
   about: an erosion stops at the epidermis, is moist, and does not bleed or scar; an ulcer reaches
   the dermis, may bleed, and may scar. Depth determines all three consequences at once.</div>
+  [[GRID:crust-impetigo,erosion,ulcer-stasis,fissure-tinea-pedis]]
+  [[GRID:scale-scalp,excoriation,scar-linear,lichenification]]
+  [[GRID:collarette-scale]]
   <table>
     <tr><th>Also worth knowing</th><th>Detail</th></tr>
     <tr><td>Verrucae (warts)</td><td>Caused by <strong>human papillomavirus</strong>. Small harmless tumors of the skin; grey to flesh coloured nodules raised from the surface, sometimes with rough hornlike projections</td></tr>
@@ -351,6 +361,7 @@ BODY = '''<main>
   <strong>diascopy</strong>: press a piece of clear glass or plastic against the skin and look at the
   lesion under pressure. <strong>If the colour fades, there is vascular engorgement; if it does not
   fade, it is hemorrhage in the skin.</strong></p>
+  [[FIG:diascopy]]
   <table>
     <tr><th>Lesion</th><th>Appearance</th><th>Size</th><th>Blanches?</th></tr>
     <tr><td>Petechiae</td><td>Reddish-purple macules</td><td>&lt; 3 mm</td><td>No</td></tr>
@@ -363,6 +374,7 @@ BODY = '''<main>
   <div class="pearl">Petechiae, purpura and ecchymosis are the same finding at three sizes, and none
   of them blanches &mdash; because the blood is outside the vessels. Under 3 mm, 3 mm to 1 cm, over
   1 cm.</div>
+  [[GRID:petechiae-purpura,ecchymosis,cherry-angioma]]
   <p><strong>Dermatographism</strong> &mdash; &ldquo;writing on skin&rdquo;, an urticarial type
   allergic reaction. Firm stroking produces the <strong>triple response of Lewis</strong>:</p>
   <table>
@@ -382,6 +394,7 @@ BODY = '''<main>
   <div class="pearl">The stage I / stage II line is whether the skin is broken; the stage III /
   stage IV line is whether muscle and bone are destroyed. &ldquo;Reaches muscle but does not go
   through it&rdquo; is still stage III.</div>
+  [[GRID:pressure-ulcer-stage-1,pressure-ulcer-stage-2,pressure-ulcer-stage-3,pressure-ulcer-stage-4]]
   <p><strong>Tinea infections</strong>, named by site: corporis (body) &middot; pedis (foot) &middot;
   barbae (beard) &middot; cruris (groin) &middot; capitis (scalp) &middot; unguium (nails).</p>
   <table>
@@ -390,6 +403,7 @@ BODY = '''<main>
     <tr><td>Tinea corporis</td><td>Scaling, sharply demarcated round plaques with <strong>central clearing</strong></td></tr>
     <tr><td>Tinea capitis</td><td>Round scaling patches of alopecia with <strong>hairs broken off close to the scalp</strong></td></tr>
   </table>
+  [[GRID:tinea-capitis,tinea-pedis,tinea-corporis]]
   <p><strong>Malignancies of the skin.</strong></p>
   <table>
     <tr><th>Malignancy</th><th>Common site</th><th>Appearance</th></tr>
@@ -408,6 +422,8 @@ BODY = '''<main>
     <tr><td>F</td><td>Family history</td></tr>
     <tr><td>G</td><td>Growing</td></tr>
   </table>
+  [[GRID:basal-cell-carcinoma,squamous-cell-carcinoma,kaposi-sarcoma]]
+  [[GRID:melanoma-diameter,melanoma]]
 
   <h3 class="sub" id="derm-hairnails">2.7 &middot; Objective d &mdash; Abnormal findings: hair and nails</h3>
   <table>
@@ -423,6 +439,7 @@ BODY = '''<main>
   tinea capitis leaves <em>scaling</em> patches with hairs broken close to the scalp; alopecia areata
   leaves smooth patches with <em>exclamation point</em> hairs; trichotillomania leaves patches from
   pulling, with neither scale nor exclamation point hairs.</div>
+  [[FIG:alopecia-areata]]
   <p><strong>Nails.</strong> Inspect for shape, size, colour, brittleness, hemorrhages, lines and
   grooves, clubbing, and pitting.</p>
   <table>
@@ -443,6 +460,8 @@ BODY = '''<main>
   <div class="pearl">Beau's lines are a clock. The nail grows out at a roughly known rate, so a
   transverse depression halfway up dates the insult to about three months before the visit &mdash;
   which is the sort of finding that sends you back to the history with a specific date in mind.</div>
+  [[GRID:koilonychia,onycholysis,nail-pitting,nail-transverse-line]]
+  [[GRID:clubbing,paronychia]]
 
   <h3 class="sub" id="derm-technique">2.8 &middot; Objective e &mdash; Performing the examination</h3>
   <p>The four principles are <strong>inspection, palpation, percussion and auscultation</strong>.
@@ -477,10 +496,11 @@ BODY = '''<main>
   occiput</strong>. The scalp should be clean, with no lesions, discolorations, flaking or
   parasites.</p>
   <button type="button" class="test-yourself-btn" style="--acc:#4a5c24" onclick="window.openTestYourself('Test yourself — Dermatology', TEST_YOURSELF.dermatology)">Test yourself! &rarr;</button>
-  <p class="guide-foot">Source: <em>PD II Derm - Beck.pptx</em> (Valerie Beck, DMSc, PA-C), Slides 1&ndash;103,
+  <footer class="guide-foot">Source: <em>PD II Derm - Beck.pptx</em> (Valerie Beck, DMSc, PA-C), Slides 1&ndash;103,
   and the PAJ 5310 syllabus instructional objectives. Course texts: Bickley, <em>Bates' Guide to
   Physical Examination and History Taking</em>; Wolff &amp; Johnson, <em>Fitzpatrick's Color Atlas
-  &amp; Synopsis of Clinical Dermatology</em>.</p>
+  &amp; Synopsis of Clinical Dermatology</em>. All 43 figures are reproduced from the lecture
+  slides and each is cited to the slide it came from.</footer>
 </section>
 
 </main>'''
@@ -549,8 +569,53 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
   'posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n'
   '</header>', head, count=1, flags=re.S)
 
+# ---- figures -------------------------------------------------------------
+# Slide images are cleared for use provided the slide is cited; every figure
+# carries its deck and slide number. See tools/extract_pd2_derm_figures.py,
+# where each was viewed before it was captioned.
+IMGDIR = "pd2-exam-1-study-guide-images"
+FIGS = figure_html(IMGDIR)
+
+# A 43-figure guide cannot stack every plate full width, so related findings sit
+# in a responsive grid and are read side by side -- which is also how you learn
+# them, since almost every one of these is defined against its neighbour.
+FIGCSS = """
+  .figgrid{display:grid;gap:16px;margin:18px 0 6px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .figgrid figure.fig{margin:0;}
+  .figgrid figure.fig img{width:100%;height:auto;}
+  figure.fig .tag{display:block;margin-top:5px;font-style:normal;}
+  @media(max-width:520px){.figgrid{grid-template-columns:1fr;}}
+"""
+
+import re as _re
+
+
+def _expand(body):
+    def one(m):
+        stem = m.group(1)
+        assert stem in FIGS, "no figure named %r" % stem
+        return FIGS[stem]
+
+    def grid(m):
+        stems = [x.strip() for x in m.group(1).split(",")]
+        for st in stems:
+            assert st in FIGS, "no figure named %r" % st
+        return '<div class="figgrid">%s</div>' % "".join(FIGS[st] for st in stems)
+
+    body = _re.sub(r"\[\[GRID:([^\]]+)\]\]", grid, body)
+    body = _re.sub(r"\[\[FIG:([^\]]+)\]\]", one, body)
+    assert "[[" not in body, "unexpanded figure token remains"
+    return body
+
+
+BODY = _expand(BODY)
+head = head.replace("</style>", FIGCSS + "</style>", 1)
+
 html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + BODY + tail
 open(OUT, "w", encoding="utf-8").write(html)
 print("wrote %s (%d KB)" % (os.path.basename(OUT), len(html) // 1024))
+print("figures embedded:", html.count('<figure class="fig">'),
+      "| grids:", html.count('<div class="figgrid">'))
 print("audio dir attr:", "data-audio-dir" in html, "| donor palette left:",
       [c for c in ("#8a3f5c", "#b8842f", "#5c4a7d", "#5e2a41", "#ac5c78", "#e0a8bd") if c in html])
