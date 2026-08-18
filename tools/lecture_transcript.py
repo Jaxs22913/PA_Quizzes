@@ -205,11 +205,17 @@ def find_flags(segs):
 
 
 def write_outputs(dest, name, segs, dur, audio_src):
+    """Write the transcript FIRST, then the flags, then copy the audio.
+
+    Order is deliberate and was learned the hard way. The audio copy used to run
+    first, and on a 145-minute lecture it raised SameFileError -- the source was
+    already sitting at the destination path -- which threw away ninety minutes of
+    completed transcription that only existed in memory. Never let a cheap,
+    repeatable step run ahead of an expensive, irreplaceable one, and never let
+    it take the expensive one down with it.
+    """
     os.makedirs(dest, exist_ok=True)
     stem = os.path.join(dest, name)
-
-    ext = os.path.splitext(audio_src)[1] or ".m4a"
-    shutil.copy2(audio_src, stem + ext)
 
     with open(stem + ".transcript.txt", "w", encoding="utf-8") as f:
         f.write(f"# {name}\n# {hhmmss(dur)} · transcribed {date.today()}\n\n")
@@ -230,6 +236,18 @@ def write_outputs(dest, name, segs, dur, audio_src):
         for start, label, cue, text in flags:
             mark = "**EXAM**" if label == "EMPHASIS" else "_skip_"
             f.write(f"### [{hhmmss(start)}] {mark} — “{cue}”\n{text}\n\n")
+
+    # Audio last, and never fatally. A file supplied with --file may already BE
+    # the destination, in which case there is nothing to copy; and a failure
+    # here must not discard the transcript written above.
+    ext = os.path.splitext(audio_src)[1] or ".m4a"
+    dst = stem + ext
+    try:
+        if not (os.path.exists(dst) and os.path.samefile(audio_src, dst)):
+            shutil.copy2(audio_src, dst)
+    except Exception as e:
+        print(f"  note: could not place a copy of the audio ({e.__class__.__name__}); "
+              f"the transcript is written and safe", flush=True)
     return stem, len(flags)
 
 
