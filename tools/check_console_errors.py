@@ -124,7 +124,28 @@ if __name__ == "__main__":
         f"--remote-allow-origins=http://localhost:{CDP_PORT}",
         "--user-data-dir=/tmp/console-sweep-chrome-profile"
     ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(1.5)
+
+    # Wait for Chrome to actually bind the debugging port instead of guessing.
+    # This used to be time.sleep(1.5), which is fine on an idle machine and not
+    # fine on a busy one -- every page then failed with "tab-open-failed:
+    # Connection refused" and the whole sweep reported garbage. A sweep that
+    # fails loudly is recoverable; one that reports every page as flagged for an
+    # environmental reason is worse than not running, because it looks like a
+    # finding. Poll instead, and abort with a clear message if it never comes up.
+    deadline = time.time() + 30
+    while True:
+        try:
+            urllib.request.urlopen(f"http://localhost:{CDP_PORT}/json/version", timeout=1).read()
+            break
+        except Exception as e:
+            if chrome.poll() is not None:
+                sys.exit("chrome exited during startup (code %s) -- sweep aborted, "
+                         "nothing was checked" % chrome.poll())
+            if time.time() > deadline:
+                chrome.terminate(); srv.terminate()
+                sys.exit("chrome never opened the debugging port on %d after 30s (%s) -- "
+                         "sweep aborted, nothing was checked" % (CDP_PORT, e))
+            time.sleep(0.25)
 
     results = {}
     try:
