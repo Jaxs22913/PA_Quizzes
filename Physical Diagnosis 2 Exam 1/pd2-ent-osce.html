@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENT OSCE — Focused Encounter Run-Sheet</title>
+<style>
+:root{
+  --ink:#16202b; --ink2:#4a5a6a; --line:#d8dee5;
+  --petrol:#1b4965; --teal:#4f8f8b; --clay:#a8562f;
+  --say:#eaecee; --sayline:#9fb0bd; --paper:#fff;
+  --page:#f2f4f6; --sheetline:#d8dee5;
+  --bannerbg:#fbf4f0; --bannerink:#5c3a28;
+  --refbg:#f1f7f6; --refink:#2b4b49;
+  --navbg:rgba(255,255,255,.97); --sumbg:#f7f9fa; --scriptink:#3d5265;
+  --tagcn:#e8eef3; --tagcnline:#c3d3de; --tagdup:#f1f7f6; --tagdupline:#bcd8d5;
+  --tagnew:#fbf4f0; --tagnewline:#e5c9bb; --btnbg:#fff;
+}
+/* Dark mode. Structure and type are untouched -- only the palette variables
+   above are re-pointed, so the sheet reads identically, just inverted. The
+   petrol/teal/clay accents are lightened just enough to stay legible on a dark
+   ground rather than being replaced with different hues. */
+:root[data-theme="dark"]{
+  --ink:#e6ebf1; --ink2:#9fb0bd; --line:#2b3440;
+  --petrol:#7fb3d5; --teal:#6fbdb6; --clay:#d98f6a;
+  --say:#212a35; --sayline:#4a6070; --paper:#161c24;
+  --page:#0f141a; --sheetline:#2b3440;
+  --bannerbg:#2a1f19; --bannerink:#e8c3ac;
+  --refbg:#152624; --refink:#a9d8d3;
+  --navbg:rgba(22,28,36,.97); --sumbg:#1b222b; --scriptink:#a8bccd;
+  --tagcn:#1e2a35; --tagcnline:#38506180; --tagdup:#152624; --tagdupline:#2f4f4b;
+  --tagnew:#2a1f19; --tagnewline:#5a4033; --btnbg:#161c24;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font:16px/1.55 Georgia,"Times New Roman",serif;-webkit-text-size-adjust:100%}
+.sheet{max-width:940px;margin:0 auto;background:var(--paper);
+  box-shadow:0 0 0 1px var(--sheetline);padding:0 0 64px}
+
+/* ---------- masthead ---------- */
+header.mast{padding:40px 40px 28px;border-bottom:3px double var(--petrol)}
+.eyebrow{font:600 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal);margin:0 0 12px}
+h1{font:700 32px/1.15 ui-sans-serif,system-ui,sans-serif;margin:0 0 8px;
+  letter-spacing:-.015em;color:var(--petrol)}
+.sub{margin:0;color:var(--ink2);font-size:15px}
+
+/* ---------- legend ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:18px 40px;border-bottom:1px solid var(--line);
+  align-items:center;font:13px/1.4 ui-sans-serif,system-ui,sans-serif}
+.key{display:flex;align-items:center;gap:8px;color:var(--ink2)}
+.sw{width:26px;height:16px;border:1px solid var(--sayline);display:inline-block}
+.sw.grey{background:var(--say)}
+.sw.white{background:var(--paper)}
+.legend .spacer{flex:1}
+button{font:600 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.04em;
+  padding:8px 12px;border:1px solid var(--petrol);background:var(--btnbg);color:var(--petrol);
+  border-radius:2px;cursor:pointer}
+button:hover{background:var(--petrol);color:#fff}
+button[aria-pressed="true"]{background:var(--petrol);color:#fff}
+button:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:20;background:var(--navbg);
+  border-bottom:1px solid var(--line);padding:10px 40px;
+  backdrop-filter:blur(6px)}
+nav ol{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+nav a{font:600 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  text-decoration:none;color:var(--ink2);border:1px solid var(--line);
+  padding:6px 9px;border-radius:2px;display:block}
+nav a:hover{color:#fff;background:var(--teal);border-color:var(--teal)}
+#progress{font:600 12px/1 ui-sans-serif,system-ui,sans-serif;color:var(--teal);
+  margin-left:auto;white-space:nowrap;align-self:center}
+
+/* ---------- structure ---------- */
+.part{margin:44px 40px 0;padding-top:10px;border-top:1px solid var(--line)}
+.part h2{font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--clay);margin:0}
+section{margin:26px 40px 0;scroll-margin-top:64px}
+section h3{font:700 21px/1.2 ui-sans-serif,system-ui,sans-serif;margin:0 0 4px;
+  color:var(--petrol);display:flex;gap:10px;align-items:baseline}
+section h3 .num{font-size:12px;letter-spacing:.1em;color:var(--teal);
+  border:1px solid var(--teal);padding:3px 6px;border-radius:2px;flex:none}
+.src{font:400 12px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--ink2);
+  margin:0 0 12px 0}
+h4{font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink2);margin:20px 0 8px}
+
+/* ---------- callouts ---------- */
+.banner{border-left:3px solid var(--clay);background:var(--bannerbg);padding:10px 14px;
+  margin:14px 0;font-size:14px;color:var(--bannerink)}
+.banner b{color:var(--clay)}
+.ref{border-left:3px solid var(--teal);background:var(--refbg);padding:10px 14px;
+  margin:14px 0;font-size:14px;color:var(--refink)}
+
+/* ---------- checklist rows ---------- */
+ul.ck{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+ul.ck li{display:grid;grid-template-columns:34px 26px 1fr;gap:0 10px;
+  align-items:start;padding:9px 10px 9px 8px;border-bottom:1px solid var(--line);
+  background:var(--paper)}
+ul.ck li.say{background:var(--say);box-shadow:inset 3px 0 0 var(--sayline)}
+ul.ck li.done .t{opacity:.45;text-decoration:line-through}
+.n{font:600 12px/1.7 ui-sans-serif,system-ui,sans-serif;color:var(--ink2);
+  text-align:right;-webkit-user-select:none;user-select:none}
+input[type=checkbox]{width:17px;height:17px;margin:4px 0 0;accent-color:var(--petrol);cursor:pointer}
+.t{font-size:15px}
+.script{display:block;margin-top:4px;font-style:italic;color:var(--scriptink)}
+.hint{display:block;margin-top:3px;font:400 13px/1.45 ui-sans-serif,system-ui,sans-serif;color:var(--ink2)}
+.tag{display:inline-block;font:600 10px/1 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 5px;border-radius:2px;
+  vertical-align:1px;margin-right:6px}
+.tag.cn{background:var(--tagcn);color:var(--petrol);border:1px solid var(--tagcnline)}
+.tag.dup{background:var(--tagdup);color:var(--refink);border:1px solid var(--tagdupline)}
+.tag.new{background:var(--tagnew);color:var(--clay);border:1px solid var(--tagnewline)}
+
+/* ---------- notes ---------- */
+details.merge{margin:26px 40px 0;border:1px solid var(--line);padding:0}
+details.merge summary{cursor:pointer;padding:14px 18px;background:var(--sumbg);
+  font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--petrol)}
+details.merge .body{padding:4px 18px 18px}
+details.merge table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+details.merge th{text-align:left;font:700 11px/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);
+  border-bottom:1px solid var(--line);padding:8px 8px 8px 0;vertical-align:bottom}
+details.merge td{border-bottom:1px solid var(--line);padding:8px 8px 8px 0;vertical-align:top}
+details.merge td:first-child{white-space:nowrap;color:var(--petrol);font-weight:bold}
+
+.filtered{display:none !important}
+.cnflag{font:600 10px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;
+  background:var(--tagcn);color:var(--petrol);border:1px solid var(--tagcnline);padding:4px 6px;
+  border-radius:2px;align-self:center}
+.cnindex{margin:32px 40px 0;border:1px solid var(--petrol);border-top:3px solid var(--petrol);padding:20px 22px}
+.cnindex h3{font:700 15px/1.2 ui-sans-serif,system-ui,sans-serif;color:var(--petrol);margin:0 0 6px;letter-spacing:.02em}
+.cnindex p{margin:0;font-size:14px;color:var(--ink2)}
+.cnindex table{width:100%;border-collapse:collapse;font-size:14px;margin-top:14px}
+.cnindex th{text-align:left;font:700 10px/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);
+  border-bottom:1px solid var(--line);padding:6px 10px 6px 0}
+.cnindex td{border-bottom:1px solid var(--line);padding:7px 10px 7px 0;vertical-align:top}
+.cnindex td:first-child{white-space:nowrap;font-weight:bold;color:var(--petrol)}
+.cnindex td:last-child{white-space:nowrap;font:600 13px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--teal)}
+
+@media (max-width:640px){
+  header.mast,.legend,nav,.part,section,details.merge,.cnindex{margin-left:0;margin-right:0}
+  header.mast{padding:26px 18px 20px}
+  .legend,nav{padding-left:18px;padding-right:18px}
+  .part,section,details.merge,.cnindex{margin-left:18px;margin-right:18px}
+  h1{font-size:24px}
+  ul.ck li{grid-template-columns:26px 24px 1fr}
+}
+@media print{
+  body{background:#fff}
+  .sitebar,.reportline,#h2t-corner,#h2t-settings,#quiz-footer-logo{display:none}
+  .sheet{box-shadow:none;max-width:none}
+  nav,.legend button,#progress{display:none}
+  ul.ck li{break-inside:avoid;padding:5px 8px}
+  section{break-inside:auto}
+  section h3{break-after:avoid}
+  ul.ck li.say{background:var(--say) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.merge{break-before:page}
+  .cnindex{break-inside:avoid}
+  details.merge[open] .body{display:block}
+}
+.sitebar{margin:0;padding:14px 40px 0;font:600 13px/1 ui-sans-serif,system-ui,sans-serif}
+.sitebar a{color:var(--ink2);text-decoration:none}
+.sitebar a:hover{color:var(--petrol)}
+.reportline{margin:34px 40px 0;text-align:center;font-size:13px;font-style:italic;color:var(--ink2)}
+.reportline a{color:inherit;text-decoration:underline;cursor:pointer}
+@media (max-width:640px){.sitebar{padding-left:18px;padding-right:18px}.reportline{margin-left:18px;margin-right:18px}}
+
+/* ---------- corner buttons + settings (self-contained; no theme.js) ---------- */
+#h2t-corner{position:fixed;top:14px;right:14px;z-index:600;display:flex;gap:8px}
+.h2t-corner-btn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;padding:0;background:var(--paper);color:var(--ink);
+  border:1px solid var(--line);box-shadow:0 2px 8px rgba(20,35,50,.15);
+  transition:transform .2s cubic-bezier(.3,.6,.3,1.5)}
+.h2t-corner-btn:hover{transform:scale(1.1) rotate(-8deg);background:var(--paper);color:var(--petrol)}
+.h2t-corner-btn:active{transform:scale(.92)}
+.h2t-corner-btn svg{width:17px;height:17px}   /* matches the site's corner buttons */
+#h2t-settings{position:fixed;top:60px;right:14px;z-index:601;background:var(--paper);
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(20,35,50,.18);
+  padding:14px 16px;min-width:220px;display:none;
+  font:14px/1.5 ui-sans-serif,system-ui,sans-serif;color:var(--ink)}
+#h2t-settings.open{display:block}
+#h2t-settings h3{margin:0 0 10px;font:700 11px/1 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.h2t-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0}
+.h2t-seg{display:inline-flex;gap:4px;flex:none}
+.h2t-seg button{border:1px solid var(--line);background:transparent;color:var(--ink);
+  border-radius:8px;min-width:32px;height:28px;cursor:pointer;line-height:1;padding:0 7px;
+  font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:0}
+.h2t-seg button[aria-pressed="true"]{background:var(--petrol);border-color:var(--petrol);color:var(--paper)}
+.h2t-seg.ts button:nth-child(1){font-size:11px}
+.h2t-seg.ts button:nth-child(2){font-size:13px}
+.h2t-seg.ts button:nth-child(3){font-size:16px}
+
+/* ---------- footer mark ---------- */
+/* Fixed like the rest of the site, but this sheet is very long, so it is
+   revealed only once the reader actually reaches the bottom -- otherwise it
+   floats over checklist rows the whole way down. Same gating theme.js applies
+   site-wide, reimplemented here since this page deliberately omits theme.js. */
+#quiz-footer-logo{opacity:0;transition:opacity .34s cubic-bezier(.2,.8,.2,1)}
+#quiz-footer-logo.mark-visible{opacity:1}
+.footer-mark-ink{stroke:var(--petrol)}
+.footer-mark-accent{stroke:var(--teal)}
+@media (prefers-reduced-motion:reduce){#quiz-footer-logo{transition:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+<div id="h2t-corner" aria-label="Page actions">
+  <button class="h2t-corner-btn" id="h2t-settings-btn" type="button" aria-label="Settings" title="Settings" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+  <button class="h2t-corner-btn" id="h2t-reload" type="button" aria-label="Refresh / check for updates" title="Refresh / check for updates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></button>
+</div>
+<div id="h2t-settings" role="dialog" aria-label="Settings">
+  <h3>Settings</h3>
+  <div class="h2t-row"><span>Appearance</span>
+    <div class="h2t-seg" id="h2t-theme">
+      <button type="button" data-theme="light">Light</button>
+      <button type="button" data-theme="dark">Dark</button>
+    </div>
+  </div>
+  <div class="h2t-row"><span>Text size</span>
+    <div class="h2t-seg ts" id="h2t-tsize">
+      <button type="button" data-ts="normal" aria-label="Normal text">A</button>
+      <button type="button" data-ts="large" aria-label="Large text">A</button>
+      <button type="button" data-ts="xl" aria-label="Larger text">A</button>
+    </div>
+  </div>
+</div>
+<div class="sheet">
+
+<p class="sitebar"><a href="../index.html">&larr; Back to Homepage</a></p>
+
+<header class="mast">
+  <p class="eyebrow">PAJ 5310 &middot; Physical Diagnosis II &middot; Fall 2026</p>
+  <h1>ENT OSCE &mdash; Focused Encounter Run-Sheet</h1>
+  <p class="sub">The whole station in order, from the introduction through the one-minute case presentation. Examination maneuvers come from the PD1 Head, Ears, Nose and Throat lab checksheet, reduced to what a focused ENT encounter grades.</p>
+</header>
+
+<div class="legend">
+  <span class="key"><span class="sw grey"></span> Must be said out loud</span>
+  <span class="key"><span class="sw white"></span> Performed &mdash; inspect / palpate / percuss / auscultate</span>
+  <span class="spacer"></span>
+  <button id="fSay" aria-pressed="false">Spoken only</button>
+  <button id="fDo" aria-pressed="false">Hands-on only</button>
+  <button id="reset">Clear ticks</button>
+  <button onclick="window.print()">Print</button>
+</div>
+
+<div class="banner"><b>Station &mdash;</b> Tuesday 16 September 2026, 20&ndash;25 minutes. The chief complaint and
+vital signs are given on a separate form. You may bring <b>diagnostic equipment and a pen</b>,
+nothing else. The &ldquo;patient&rdquo; gives no verbal responses except identifying data &mdash;
+the facilitator answers for them, and you should <b>always be looking at and interacting with the
+patient, not the facilitator</b>. Faculty do not answer questions about the exam or technique once
+testing has started.</div>
+
+<nav>
+  <ol>
+    <li><a href="#s1">1 Open</a></li>
+    <li><a href="#s2">2 HPI</a></li>
+    <li><a href="#s3">3 History</a></li>
+    <li><a href="#s4">4 Vitals</a></li>
+    <li><a href="#s5">5 ENT Exam</a></li>
+    <li><a href="#s6">6 Reasoning</a></li>
+    <li><a href="#s7">7 Plan</a></li>
+    <li><a href="#s8">8 Present</a></li>
+    <li id="progress">0 / 0</li>
+  </ol>
+</nav>
+
+<section id="s1">
+  <h3><span class="num">01</span> Opening &amp; Preparation</h3>
+  <p class="src">Every station opens the same way. The chief complaint and vital signs are given to you on a separate form &mdash; read them before you enter.</p>
+  <ul class="ck">
+    <li><span class="n">1</span><input type="checkbox"><span class="t">Reviews the chief complaint and vital signs on the form before entering the room</span></li>
+    <li class="say"><span class="n">2</span><input type="checkbox"><span class="t">Knocks, enters, and introduces self by name and role<span class="script">"Hello, I am [name], a physician assistant student. I will be taking care of you today."</span></span></li>
+    <li class="say"><span class="n">3</span><input type="checkbox"><span class="t">Confirms the patient's identity<span class="hint">Patient identifying data is the one thing the &ldquo;patient&rdquo; will answer directly. Everything else comes from the facilitator.</span></span></li>
+    <li><span class="n">4</span><input type="checkbox"><span class="t">Performs hand hygiene</span></li>
+    <li class="say"><span class="n">5</span><input type="checkbox"><span class="t">States the purpose of the visit and obtains permission to proceed<span class="script">"I am going to ask you some questions about what brought you in, and then examine you. Is that all right?"</span></span></li>
+    <li><span class="n">6</span><input type="checkbox"><span class="t">Ensures patient comfort and privacy before beginning</span></li>
+    <li class="say"><span class="n">7</span><input type="checkbox"><span class="t">Interprets the vital signs out loud<span class="hint">Do not just read them back. Say whether each is normal and what an abnormal one would mean for an ear, nose and throat complaint.</span></span></li>
+  </ul>
+</section>
+
+<section id="s2">
+  <h3><span class="num">02</span> Focused History of Present Illness</h3>
+  <p class="src">Take it focused. The chief complaint is on the form; this is where you build the story around it.</p>
+  <div class="ref">OLD CHARTS &mdash; Onset &middot; Location &middot; Duration &middot; Character &middot; Alleviating and aggravating factors &middot; Radiation &middot; Temporal pattern &middot; Symptoms associated. Any of the four pain mnemonics is acceptable; use one and use it completely.</div>
+  <h4>The seven attributes, applied to the chief complaint</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">8</span><input type="checkbox"><span class="t">Onset &mdash; when it began, and what the patient was doing</span></li>
+    <li class="say"><span class="n">9</span><input type="checkbox"><span class="t">Location &mdash; where it is, and whether the patient can point to it</span></li>
+    <li class="say"><span class="n">10</span><input type="checkbox"><span class="t">Duration &mdash; constant or intermittent, and how long each episode lasts</span></li>
+    <li class="say"><span class="n">11</span><input type="checkbox"><span class="t">Character &mdash; what it feels like, in the patient's own words</span></li>
+    <li class="say"><span class="n">12</span><input type="checkbox"><span class="t">Alleviating and aggravating factors &mdash; what makes it better, what makes it worse</span></li>
+    <li class="say"><span class="n">13</span><input type="checkbox"><span class="t">Radiation &mdash; whether it moves anywhere</span></li>
+    <li class="say"><span class="n">14</span><input type="checkbox"><span class="t">Severity &mdash; on a scale of one to ten<span class="hint">Anchor the scale. The number is meaningless until you ask what a ten is for this patient.</span></span></li>
+    <li class="say"><span class="n">15</span><input type="checkbox"><span class="t">Temporal pattern &mdash; better or worse at any time of day, or with any activity</span></li>
+  </ul>
+  <h4>Associated symptoms &mdash; Ear, nose and throat</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">16</span><input type="checkbox"><span class="t">Ear pain &mdash; one side or both, and whether anything makes it worse</span></li>
+    <li class="say"><span class="n">17</span><input type="checkbox"><span class="t">Ear discharge &mdash; and its character</span></li>
+    <li class="say"><span class="n">18</span><input type="checkbox"><span class="t">Hearing change, and whether it came on suddenly or gradually</span></li>
+    <li class="say"><span class="n">19</span><input type="checkbox"><span class="t">Tinnitus</span></li>
+    <li class="say"><span class="n">20</span><input type="checkbox"><span class="t">Vertigo or dizziness<span class="hint">Make the patient describe it rather than accepting the word &ldquo;dizzy&rdquo;.</span></span></li>
+    <li class="say"><span class="n">21</span><input type="checkbox"><span class="t">Nasal congestion or obstruction</span></li>
+    <li class="say"><span class="n">22</span><input type="checkbox"><span class="t">Rhinorrhea &mdash; and its character</span></li>
+    <li class="say"><span class="n">23</span><input type="checkbox"><span class="t">Epistaxis</span></li>
+    <li class="say"><span class="n">24</span><input type="checkbox"><span class="t">Facial pain or pressure, and whether it worsens on bending forward</span></li>
+    <li class="say"><span class="n">25</span><input type="checkbox"><span class="t">Sore throat, and whether swallowing makes it worse</span></li>
+    <li class="say"><span class="n">26</span><input type="checkbox"><span class="t">Dysphagia or odynophagia</span></li>
+    <li class="say"><span class="n">27</span><input type="checkbox"><span class="t">Hoarseness or voice change</span></li>
+    <li class="say"><span class="n">28</span><input type="checkbox"><span class="t">Fever</span></li>
+    <li class="say"><span class="n">29</span><input type="checkbox"><span class="t">Recent upper respiratory infection, or sick contacts<span class="hint">Bugs, drugs, contact applies here as much as in dermatology.</span></span></li>
+  </ul>
+</section>
+
+<section id="s3">
+  <h3><span class="num">03</span> Focused Review of Systems, Past Medical, Social &amp; Family History</h3>
+  <p class="src">All of these are FOCUSED, not comprehensive. Ask what bears on this complaint and on your differential &mdash; that selection is itself part of what is being graded.</p>
+  <h4>Focused review of systems</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">30</span><input type="checkbox"><span class="t">Constitutional &mdash; fever, chills, fatigue, weight loss</span></li>
+    <li class="say"><span class="n">31</span><input type="checkbox"><span class="t">Head and neck &mdash; headache, neck stiffness, neck swelling</span></li>
+    <li class="say"><span class="n">32</span><input type="checkbox"><span class="t">Respiratory &mdash; cough, shortness of breath</span></li>
+    <li class="say"><span class="n">33</span><input type="checkbox"><span class="t">Gastrointestinal &mdash; nausea, vomiting, reflux<span class="hint">Reflux is a genuine cause of hoarseness and chronic sore throat.</span></span></li>
+    <li class="say"><span class="n">34</span><input type="checkbox"><span class="t">Denies symptoms outside the focused set, and says so out loud</span></li>
+  </ul>
+  <h4>Focused past medical history</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">35</span><input type="checkbox"><span class="t">Prior episodes of the same problem, and what was done about them</span></li>
+    <li class="say"><span class="n">36</span><input type="checkbox"><span class="t">Chronic medical conditions</span></li>
+    <li class="say"><span class="n">37</span><input type="checkbox"><span class="t">Previous surgeries or procedures</span></li>
+    <li class="say"><span class="n">38</span><input type="checkbox"><span class="t">Hospitalisations</span></li>
+  </ul>
+  <h4>Medications and allergies</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">39</span><input type="checkbox"><span class="t">Prescription medications, with dose and how long they have been taken</span></li>
+    <li class="say"><span class="n">40</span><input type="checkbox"><span class="t">Over-the-counter medications, supplements and herbal products<span class="hint">Easy to skip and easy to lose a point on. Ask it explicitly.</span></span></li>
+    <li class="say"><span class="n">41</span><input type="checkbox"><span class="t">Allergies, and the reaction to each<span class="hint">&ldquo;No known drug allergies&rdquo; is an answer; &ldquo;allergies?&rdquo; with no follow-up is not.</span></span></li>
+  </ul>
+  <h4>Focused social history</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">42</span><input type="checkbox"><span class="t">Tobacco use &mdash; current or past, and how much</span></li>
+    <li class="say"><span class="n">43</span><input type="checkbox"><span class="t">Alcohol and recreational drug use</span></li>
+    <li class="say"><span class="n">44</span><input type="checkbox"><span class="t">Occupation and relevant exposures</span></li>
+    <li class="say"><span class="n">45</span><input type="checkbox"><span class="t">Living situation and who is at home</span></li>
+  </ul>
+  <h4>Focused family history</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">46</span><input type="checkbox"><span class="t">Conditions in first-degree relatives that bear on this complaint</span></li>
+  </ul>
+  <h4>Close the history</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">47</span><input type="checkbox"><span class="t">Summarises the history back to the patient and asks whether anything was missed<span class="script">"Let me make sure I have this right &mdash; [summary]. Is there anything else I should know?"</span></span></li>
+    <li class="say"><span class="n">48</span><input type="checkbox"><span class="t">Signals the transition to the examination and obtains permission<span class="script">"I would like to examine you now. Is that all right?"</span></span></li>
+  </ul>
+</section>
+
+<section id="s4">
+  <h3><span class="num">04</span> Vital Signs &amp; General Survey</h3>
+  <p class="src">Vitals are handed to you on the form. Interpreting them out loud is the graded part.</p>
+  <ul class="ck">
+    <li class="say"><span class="n">49</span><input type="checkbox"><span class="t">Restates the vital signs and interprets each one</span></li>
+    <li class="say"><span class="n">50</span><input type="checkbox"><span class="t">Comments on any fever and what it adds to the differential</span></li>
+    <li class="say"><span class="n">51</span><input type="checkbox"><span class="t">Performs a general survey &mdash; level of distress, hydration, voice, work of breathing</span></li>
+  </ul>
+</section>
+
+<section id="s5">
+  <h3><span class="num">05</span> Focused Physical Examination &mdash; Ear, Nose &amp; Throat</h3>
+  <p class="src">Maneuvers from the PD1 Head, Ears, Nose and Throat lab checksheet, reduced to what a focused ENT station grades and ordered as you would perform it. Narrate as you go.</p>
+  <h4>General</h4>
+  <ul class="ck">
+    <li><span class="n">52</span><input type="checkbox"><span class="t">Performs hand hygiene before touching the patient</span></li>
+    <li class="say"><span class="n">53</span><input type="checkbox"><span class="t">Performs a general survey &mdash; distress, voice quality, audible stridor or mouth breathing<span class="hint">Hoarseness or a muffled &ldquo;hot potato&rdquo; voice is a finding you get for free before you touch anything.</span></span></li>
+    <li><span class="n">54</span><input type="checkbox"><span class="t">Gathers equipment &mdash; otoscope with speculum, penlight, tongue depressor, gloves</span></li>
+  </ul>
+  <h4>Ears</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">55</span><input type="checkbox"><span class="t">Inspects the auricle for deformities, discharge and lesions<span class="script">"I am inspecting the auricle for deformities, discharge, or lesions."</span></span></li>
+    <li class="say"><span class="n">56</span><input type="checkbox"><span class="t">Palpates the auricle, tragus and mastoid for tenderness<span class="script">"I am palpating the auricle, tragus, and mastoid for tenderness."</span><span class="hint">Tragal tenderness points outward to the canal; mastoid tenderness points inward and is the worrying one.</span></span></li>
+    <li><span class="n">57</span><input type="checkbox"><span class="t">Chooses an appropriately sized speculum</span></li>
+    <li><span class="n">58</span><input type="checkbox"><span class="t">Pulls the auricle upward, outward and back to straighten the canal</span></li>
+    <li class="say"><span class="n">59</span><input type="checkbox"><span class="t">Verbalizes the structures assessed in the ear canal<span class="script">"I am noting the condition of the external canal, the amount of cerumen, and the presence of any inflammation, edema, or foreign bodies."</span></span></li>
+    <li class="say"><span class="n">60</span><input type="checkbox"><span class="t">Notes the colour and contour of the tympanic membrane<span class="script">"I am noting the color and contour of the tympanic membrane as pearly gray."</span></span></li>
+    <li class="say"><span class="n">61</span><input type="checkbox"><span class="t">Identifies the landmarks and the light reflex<span class="script">"I am visualizing the malleus, umbo, pars tensa, pars flaccida, and the cone of light."</span></span></li>
+    <li><span class="n">62</span><input type="checkbox"><span class="t">Examines both ears &mdash; the unaffected side first</span></li>
+  </ul>
+  <h4>Hearing &mdash; cranial nerve VIII</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">63</span><input type="checkbox"><span class="t"><span class="tag cn">CN VIII</span>States the cranial nerve number and name &mdash; <b>VIII, Vestibulocochlear</b></span></li>
+    <li class="say"><span class="n">64</span><input type="checkbox"><span class="t">Verbalizes that the canals were confirmed patent first, with the otoscope</span></li>
+    <li><span class="n">65</span><input type="checkbox"><span class="t">Performs the whispered hearing test bilaterally, standing two feet away</span></li>
+    <li class="say"><span class="n">66</span><input type="checkbox"><span class="t">Verbalizes the follow-up if gross hearing is abnormal<span class="script">"If this test was abnormal, I would perform a Rinne and Weber test for bone versus air conduction."</span></span></li>
+  </ul>
+  <h4>Nose &amp; sinuses</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">67</span><input type="checkbox"><span class="t">Inspects the external nose for deformities<span class="script">"I am inspecting the nose for deformities."</span></span></li>
+    <li><span class="n">68</span><input type="checkbox"><span class="t">Evaluates nasal patency bilaterally &mdash; occludes one nostril and has the patient sniff</span></li>
+    <li><span class="n">69</span><input type="checkbox"><span class="t">Palpates the nose for tenderness</span></li>
+    <li class="say"><span class="n">70</span><input type="checkbox"><span class="t">Uses the otoscope with an appropriate speculum to inspect the nares<span class="script">"I am inspecting the condition of the nasal mucosa, the turbinates for polyps, and the nasal septum for septal deviation or perforations."</span></span></li>
+    <li><span class="n">71</span><input type="checkbox"><span class="t">Palpates the frontal and maxillary sinuses for tenderness</span></li>
+    <li class="say"><span class="n">72</span><input type="checkbox"><span class="t">Verbalizes transillumination of the sinuses if sinusitis is suspected</span></li>
+    <li class="say"><span class="n">73</span><input type="checkbox"><span class="t"><span class="tag cn">CN I</span>States the cranial nerve number and name &mdash; <b>I, Olfactory</b><span class="hint">Test it here if the complaint involves smell; otherwise verbalize that you would.</span></span></li>
+  </ul>
+  <h4>Oral cavity &amp; pharynx</h4>
+  <ul class="ck">
+    <li><span class="n">74</span><input type="checkbox"><span class="t">Uses a penlight and tongue depressor, and gloves to palpate</span></li>
+    <li class="say"><span class="n">75</span><input type="checkbox"><span class="t">Inspects the lips, buccal mucosa, gingiva, floor of mouth and teeth<span class="script">"I am inspecting the nasolabial fold, lips, buccal mucosa, gingiva, floor of mouth, and teeth."</span></span></li>
+    <li class="say"><span class="n">76</span><input type="checkbox"><span class="t">Notes inflammation, lesions and the condition of the dentition<span class="script">"I am noting any inflammation or lesions and condition of dentition."</span></span></li>
+    <li class="say"><span class="n">77</span><input type="checkbox"><span class="t">Inspects the palate and oropharynx for inflammation and lesions<span class="script">"I am inspecting the palate and oropharynx for inflammation or lesions."</span></span></li>
+    <li class="say"><span class="n">78</span><input type="checkbox"><span class="t">Inspects the posterior pharynx, noting the condition of the tonsils<span class="script">"I am inspecting the posterior pharynx noting the condition of the tonsils."</span><span class="hint">Note tonsillar size, exudate, and whether the uvula is midline &mdash; deviation is the finding that changes the plan.</span></span></li>
+    <li class="say"><span class="n">79</span><input type="checkbox"><span class="t"><span class="tag cn">CN IX &middot; X</span>States the cranial nerve numbers and names &mdash; <b>IX Glossopharyngeal, X Vagus</b></span></li>
+    <li class="say"><span class="n">80</span><input type="checkbox"><span class="t">Asks the patient to say &ldquo;AHH&rdquo; while observing and listening<span class="script">"I am noting the phonation and symmetrical rise and fall of the soft palate and uvula."</span></span></li>
+    <li class="say"><span class="n">81</span><input type="checkbox"><span class="t">Verbalizes performance of the gag reflex</span></li>
+    <li class="say"><span class="n">82</span><input type="checkbox"><span class="t"><span class="tag cn">CN XII</span>States the cranial nerve number and name &mdash; <b>XII, Hypoglossal</b></span></li>
+    <li class="say"><span class="n">83</span><input type="checkbox"><span class="t">Asks the patient to protrude the tongue and notes colour, texture and whether it is midline<span class="script">"I am noting the color and texture of the tongue and assessing if it is midline."</span></span></li>
+  </ul>
+  <h4>Neck &amp; lymph nodes</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">84</span><input type="checkbox"><span class="t">Inspects the anterior neck for masses, asymmetry and thyromegaly<span class="script">"I am inspecting the anterior neck for masses, asymmetry, or thyromegaly."</span></span></li>
+    <li class="say"><span class="n">85</span><input type="checkbox"><span class="t">Inspects and palpates the position of the trachea<span class="script">"I am inspecting and palpating the position of the trachea."</span></span></li>
+    <li><span class="n">86</span><input type="checkbox"><span class="t">Palpates the thyroid isthmus and each lobe</span></li>
+    <li class="say"><span class="n">87</span><input type="checkbox"><span class="t">Verbalizes the names of the lymph nodes as they are palpated</span></li>
+    <li><span class="n">88</span><input type="checkbox"><span class="t">Palpates using the pads of the fingers in a circular motion</span></li>
+    <li><span class="n">89</span><input type="checkbox"><span class="t">Preauricular &middot; posterior auricular &middot; occipital</span></li>
+    <li><span class="n">90</span><input type="checkbox"><span class="t">Tonsillar &middot; submandibular &middot; submental</span></li>
+    <li><span class="n">91</span><input type="checkbox"><span class="t">Superficial cervical &middot; posterior cervical &middot; deep cervical chains</span></li>
+    <li><span class="n">92</span><input type="checkbox"><span class="t">Supraclavicular &mdash; asks the patient to take a deep breath during palpation</span></li>
+    <li class="say"><span class="n">93</span><input type="checkbox"><span class="t">Describes any node found &mdash; size, consistency, mobility, tenderness<span class="hint">A tender, mobile, soft node reads infectious; a hard, fixed, non-tender one does not.</span></span></li>
+  </ul>
+</section>
+
+<section id="s6">
+  <h3><span class="num">06</span> Differentials, Studies &amp; Diagnosis</h3>
+  <p class="src">Spoken, not performed. This is the part that separates a strong station from a complete one, and it is where the small groups have been training you: every request needs a reason attached.</p>
+  <h4>Differential diagnosis</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">94</span><input type="checkbox"><span class="t">States a differential diagnosis out loud<span class="hint">Three is a reasonable floor for an ENT station. Say them; do not leave them implied.</span></span></li>
+    <li class="say"><span class="n">95</span><input type="checkbox"><span class="t">Includes the worst-case diagnosis that must be excluded, even if it is unlikely<span class="hint">&ldquo;What must be examined to rule out the worst-case scenario?&rdquo; is one of the two questions that decide the scope of a focused encounter.</span></span></li>
+    <li class="say"><span class="n">96</span><input type="checkbox"><span class="t">Justifies each differential against a specific finding from the history or examination<span class="script">"[Diagnosis] is on my differential because of [finding], and against it is [finding]."</span></span></li>
+  </ul>
+  <h4>Laboratory and imaging studies</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">97</span><input type="checkbox"><span class="t">States which studies would be ordered</span></li>
+    <li class="say"><span class="n">98</span><input type="checkbox"><span class="t">Justifies each one &mdash; why it is needed and what it would tell you about the patient<span class="hint">This is the exact standard the small groups apply: a facilitator will not release information until the justification is given.</span></span></li>
+    <li class="say"><span class="n">99</span><input type="checkbox"><span class="t">States which differential each study would rule in or rule out</span></li>
+  </ul>
+  <h4>Diagnosis</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">100</span><input type="checkbox"><span class="t">States the working diagnosis</span></li>
+    <li class="say"><span class="n">101</span><input type="checkbox"><span class="t">States the evidence from this encounter that supports it</span></li>
+  </ul>
+</section>
+
+<section id="s7">
+  <h3><span class="num">07</span> Treatment Plan &amp; Patient Education</h3>
+  <p class="src">The plan is a graded component in its own right, and patient education is named explicitly in the station's component list &mdash; it is not optional garnish.</p>
+  <h4>Treatment plan</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">102</span><input type="checkbox"><span class="t">States whether the condition is managed symptomatically or requires directed treatment</span></li>
+    <li class="say"><span class="n">103</span><input type="checkbox"><span class="t">Addresses pain control</span></li>
+    <li class="say"><span class="n">104</span><input type="checkbox"><span class="t">States whether an antimicrobial is indicated, and why or why not<span class="hint">Being able to justify NOT prescribing is as gradeable as prescribing.</span></span></li>
+    <li class="say"><span class="n">105</span><input type="checkbox"><span class="t">States any red flags that would change the plan or prompt referral</span></li>
+    <li class="say"><span class="n">106</span><input type="checkbox"><span class="t">States what would prompt referral to ear, nose and throat surgery</span></li>
+  </ul>
+  <h4>Patient education</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">107</span><input type="checkbox"><span class="t">Explains the diagnosis in plain language, without medical jargon<span class="hint">Adapting style and content to the patient is a graded professional behaviour.</span></span></li>
+    <li class="say"><span class="n">108</span><input type="checkbox"><span class="t">Explains what the treatment is and why it is being recommended</span></li>
+    <li class="say"><span class="n">109</span><input type="checkbox"><span class="t">States return precautions &mdash; what would bring the patient back sooner</span></li>
+    <li class="say"><span class="n">110</span><input type="checkbox"><span class="t">Confirms understanding and invites questions<span class="script">"What questions do you have for me?"</span></span></li>
+  </ul>
+  <h4>Closure</h4>
+  <ul class="ck">
+    <li class="say"><span class="n">111</span><input type="checkbox"><span class="t">States the follow-up interval</span></li>
+    <li class="say"><span class="n">112</span><input type="checkbox"><span class="t">Thanks the patient and closes the encounter</span></li>
+    <li><span class="n">113</span><input type="checkbox"><span class="t">Performs hand hygiene on the way out</span></li>
+  </ul>
+</section>
+
+<section id="s8">
+  <h3><span class="num">08</span> One-Minute Case Presentation</h3>
+  <p class="src">Delivered at the end of the station. A well-organised vignette that describes the patient and the clinical problem &mdash; not the note read aloud.</p>
+  <div class="banner"><b>The test of a good presentation &mdash;</b> it leads your facilitator to the <b>same differential you formulated</b>. If they reach a different one, the presentation failed even if every fact in it was true.</div>
+  <ul class="ck">
+    <li class="say"><span class="n">114</span><input type="checkbox"><span class="t">Opens with the past medical history and the chief complaint<span class="script">"This is a [age]-year-old [patient] with a history of [past medical history] presenting with [chief complaint]."</span></span></li>
+    <li class="say"><span class="n">115</span><input type="checkbox"><span class="t">Gives the pertinent positives from the history</span></li>
+    <li class="say"><span class="n">116</span><input type="checkbox"><span class="t">Gives the pertinent negatives from the history<span class="hint">Negatives carry as much weight as positives. They are how the listener sees what you ruled out.</span></span></li>
+    <li class="say"><span class="n">117</span><input type="checkbox"><span class="t">Gives the pertinent positives and negatives from the ear, nose and throat examination</span></li>
+    <li class="say"><span class="n">118</span><input type="checkbox"><span class="t">Presents mostly in the order the history was obtained and the examination performed</span></li>
+    <li class="say"><span class="n">119</span><input type="checkbox"><span class="t">States the differential</span></li>
+    <li class="say"><span class="n">120</span><input type="checkbox"><span class="t">States the studies and the diagnosis</span></li>
+    <li class="say"><span class="n">121</span><input type="checkbox"><span class="t">States the plan</span></li>
+    <li><span class="n">122</span><input type="checkbox"><span class="t">Delivers it without reading from notes<span class="hint">Reading works directly against helping the listener visualise the patient.</span></span></li>
+    <li><span class="n">123</span><input type="checkbox"><span class="t">Keeps it to about one minute</span></li>
+  </ul>
+</section>
+
+</div>
+
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, var(--line), transparent);"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, var(--line), transparent);"></span>
+</div>
+
+<script>
+// Self-contained report-a-mistake. This page intentionally does not load
+// theme.js/theme.css -- same decision as relax.html -- so that the sheet's own
+// typography and palette are never overridden by the site stylesheet. That
+// means window.reportMistake has to be provided locally; it posts to the same
+// Formspree endpoint the rest of the site uses.
+window.reportMistake = function(){
+  var what = window.prompt("What's wrong? Include the section or item number if you can.");
+  if (!what) return;
+  fetch("https://formspree.io/f/xdaqleod", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({ page: location.pathname, message: what })
+  }).then(function(){ alert("Thanks \u2014 report sent."); })
+    .catch(function(){ alert("Couldn't send that \u2014 check your connection and try again."); });
+};
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('ul.ck input[type=checkbox]'));
+  var prog = document.getElementById('progress');
+  function tally(){
+    var n = boxes.filter(function(b){return b.checked}).length;
+    prog.textContent = n + ' / ' + boxes.length;
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      b.closest('li').classList.toggle('done', b.checked);
+      save(); tally();
+    });
+  });
+  // Ticks persist. A head-to-toe run is long enough that losing every tick to
+  // an accidental reload mid-practicum is the difference between the sheet
+  // being usable and not. Stored as a single index list rather than per-item
+  // keys so the payload stays tiny and clears in one call.
+  var SAVE_KEY = "pd2EntOsce:ticks";
+  function save(){
+    try {
+      var on = [];
+      boxes.forEach(function(b,i){ if(b.checked) on.push(i); });
+      if (on.length) localStorage.setItem(SAVE_KEY, JSON.stringify(on));
+      else localStorage.removeItem(SAVE_KEY);
+    } catch(e){}
+  }
+  function restore(){
+    try {
+      var on = JSON.parse(localStorage.getItem(SAVE_KEY) || "[]");
+      // Index-addressed, so a future edit to the sheet could shift items. Only
+      // restore when the count still matches what was saved against.
+      var n = parseInt(localStorage.getItem(SAVE_KEY + ":len") || boxes.length, 10);
+      if (n !== boxes.length) { localStorage.removeItem(SAVE_KEY); return; }
+      on.forEach(function(i){
+        if (boxes[i]) { boxes[i].checked = true; boxes[i].closest('li').classList.add('done'); }
+      });
+    } catch(e){}
+  }
+  try { localStorage.setItem(SAVE_KEY + ":len", boxes.length); } catch(e){}
+
+  document.getElementById('reset').addEventListener('click', function(){
+    boxes.forEach(function(b){ b.checked=false; b.closest('li').classList.remove('done'); });
+    save(); tally();
+  });
+  var fSay = document.getElementById('fSay'), fDo = document.getElementById('fDo');
+  function filter(mode){
+    document.querySelectorAll('ul.ck li').forEach(function(li){
+      var say = li.classList.contains('say');
+      li.classList.toggle('filtered', mode==='say' ? !say : mode==='do' ? say : false);
+    });
+  }
+  function setMode(btn, other, mode){
+    var on = btn.getAttribute('aria-pressed')==='true';
+    btn.setAttribute('aria-pressed', on?'false':'true');
+    other.setAttribute('aria-pressed','false');
+    filter(on ? 'all' : mode);
+  }
+  fSay.addEventListener('click', function(){ setMode(fSay, fDo, 'say'); });
+  fDo.addEventListener('click', function(){ setMode(fDo, fSay, 'do'); });
+  restore();
+  tally();
+})();
+
+// ---------- corner buttons, settings, footer mark ----------
+(function(){
+  var TS_KEY = "siteTextSize", THEME_KEY = "siteTheme";
+  var root = document.documentElement;
+
+  // Text size scales the sheet only. Everything in this stylesheet is sized in
+  // px, so a rem-based scale would do nothing -- zoom the container instead.
+  // The fixed corner buttons and footer mark sit OUTSIDE .sheet, so they keep
+  // their real size and hit targets at every setting.
+  var SCALE = { normal: 1, large: 1.12, xl: 1.25 };
+  function applyTextSize(v){
+    var sheet = document.querySelector(".sheet");
+    if (sheet) sheet.style.zoom = SCALE[v] || 1;
+    mark(document.getElementById("h2t-tsize"), "ts", v);
+  }
+  function applyTheme(v){
+    root.setAttribute("data-theme", v);
+    mark(document.getElementById("h2t-theme"), "theme", v);
+  }
+  function mark(group, attr, v){
+    if (!group) return;
+    group.querySelectorAll("button").forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-" + attr) === v ? "true" : "false");
+    });
+  }
+  // Both keys are the site-wide ones, so a choice made here carries to the rest
+  // of the site and vice versa.
+  var savedTheme = null, savedTs = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); savedTs = localStorage.getItem(TS_KEY); } catch(e){}
+  applyTheme(savedTheme || root.getAttribute("data-theme") || "light");
+  applyTextSize(savedTs || "normal");
+
+  var panel = document.getElementById("h2t-settings");
+  var btn = document.getElementById("h2t-settings-btn");
+  function setOpen(on){
+    panel.classList.toggle("open", on);
+    btn.setAttribute("aria-expanded", on ? "true" : "false");
+  }
+  btn.addEventListener("click", function(e){ e.stopPropagation(); setOpen(!panel.classList.contains("open")); });
+  document.addEventListener("click", function(e){
+    if (panel.classList.contains("open") && !panel.contains(e.target) && e.target !== btn) setOpen(false);
+  });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") setOpen(false); });
+
+  document.getElementById("h2t-theme").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-theme]"); if (!b) return;
+    var v = b.getAttribute("data-theme");
+    applyTheme(v); try { localStorage.setItem(THEME_KEY, v); } catch(err){}
+  });
+  document.getElementById("h2t-tsize").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-ts]"); if (!b) return;
+    var v = b.getAttribute("data-ts");
+    applyTextSize(v); try { localStorage.setItem(TS_KEY, v); } catch(err){}
+  });
+  document.getElementById("h2t-reload").addEventListener("click", function(){ location.reload(); });
+
+  // Reveal the footer mark only at the bottom -- on a 394-item sheet a
+  // permanently fixed mark would sit over checklist rows the whole way down.
+  var logo = document.getElementById("quiz-footer-logo");
+  function syncMark(){
+    if (!logo) return;
+    var doc = document.documentElement;
+    var atBottom = (window.innerHeight + window.scrollY) >= (doc.scrollHeight - 90);
+    var tooShortToScroll = doc.scrollHeight <= window.innerHeight + 8;
+    logo.classList.toggle("mark-visible", atBottom || tooShortToScroll);
+  }
+  window.addEventListener("scroll", syncMark, { passive: true });
+  window.addEventListener("resize", syncMark);
+  syncMark();
+})();
+
+</script>
+
+<!-- Report a mistake. This page deliberately omits theme.js (see the note at
+     the top), so the site's reporter is reimplemented here in miniature rather
+     than pulling the whole theme in. Same Formspree endpoint, same payload
+     shape, so reports land in the same place. -->
+<script>
+(function () {
+  var FORMSPREE = "https://formspree.io/f/xdaqleod";
+  var wrap = document.createElement("p");
+  wrap.style.cssText = "text-align:center;margin:26px 0 20px;";
+  var a = document.createElement("a");
+  a.href = "#";
+  a.textContent = "\u2605 See a mistake on this page? Report it \u2605";
+  a.style.cssText = "color:#6b7280;font-size:12.5px;font-style:italic;text-decoration:underline;cursor:pointer;";
+  wrap.appendChild(a);
+  (document.querySelector("footer") || document.body).appendChild(wrap);
+
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    var ov = document.createElement("div");
+    ov.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;" +
+      "align-items:center;justify-content:center;z-index:9000;padding:16px;";
+    ov.innerHTML =
+      '<div style="background:#fff;color:#111827;max-width:440px;width:100%;border-radius:14px;' +
+      'padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.35);font:14px system-ui,-apple-system,Segoe UI,sans-serif;">' +
+      '<h3 style="margin:0 0 4px;font-size:17px;">Report a mistake</h3>' +
+      '<p style="margin:0 0 12px;font-size:13px;color:#6b7280;">Tell us what looks wrong on this page and it will get fixed. Thanks!</p>' +
+      '<textarea rows="4" placeholder="Describe the mistake\u2026" style="width:100%;box-sizing:border-box;' +
+      'border:1px solid #d1d5db;border-radius:9px;padding:10px;font-size:14px;font-family:inherit;resize:vertical;"></textarea>' +
+      '<input type="email" placeholder="Your email (optional, for a reply)" style="width:100%;box-sizing:border-box;' +
+      'border:1px solid #d1d5db;border-radius:9px;padding:9px 10px;font-size:14px;font-family:inherit;margin-top:8px;">' +
+      '<div class="st" style="font-size:13px;margin-top:8px;min-height:18px;"></div>' +
+      '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">' +
+      '<button class="cancel" style="border:0;background:#eceef6;color:#111827;border-radius:9px;padding:9px 14px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;">Cancel</button>' +
+      '<button class="send" style="border:0;background:#228283;color:#fff;border-radius:9px;padding:9px 14px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;">Send report</button>' +
+      "</div></div>";
+    document.body.appendChild(ov);
+    var msg = ov.querySelector("textarea"), em = ov.querySelector("input"),
+        st = ov.querySelector(".st"), send = ov.querySelector(".send");
+    function close() { ov.remove(); }
+    ov.querySelector(".cancel").addEventListener("click", close);
+    ov.addEventListener("click", function (ev) { if (ev.target === ov) close(); });
+    send.addEventListener("click", function () {
+      var text = (msg.value || "").trim();
+      if (!text) { st.style.color = "#c93a3a"; st.textContent = "Please describe the mistake first."; return; }
+      send.disabled = true; send.textContent = "Sending\u2026";
+      var data = { message: text, page: location.href, quiz: document.title,
+                   _subject: "PA Quizzes Bug Report: " + document.title };
+      if (em.value.trim()) data.email = em.value.trim();
+      fetch(FORMSPREE, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                         body: JSON.stringify(data) })
+        .then(function (r) { if (!r.ok) throw new Error("bad");
+          st.style.color = "#127a3d"; st.textContent = "Thank you \u2014 your report was sent.";
+          setTimeout(close, 1500); })
+        .catch(function () { st.style.color = "#c93a3a";
+          st.textContent = "Could not send \u2014 please email jaxonluke22913@gmail.com."; })
+        .finally(function () { send.disabled = false; send.textContent = "Send report"; });
+    });
+    msg.focus();
+  });
+})();
+</script>
+</body>
+</html>
