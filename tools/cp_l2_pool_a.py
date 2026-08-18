@@ -1,0 +1,342 @@
+# Clinical Pathophysiology I, Lecture 2 (Dermatology) — pool part A
+# Objective a (integumentary anatomy) and objective b (primary skin lesions).
+#
+# SCOPE GUARD: this class is pathophysiology only. The same Dermatology material
+# appears in Clinical Medicine and Surgery I Exam 1, taught in the same term.
+# Every question here asks what is happening in the tissue and why. No first-line
+# treatment, no drug of choice, no next step -- a question that would sit equally
+# well in the CMS exam is pitched wrong for this one.
+#
+# Correct answer always written first; the partition script rotates.
+SRC = "Pathophys Dermatology - Gopal 2026 SV.pptx"
+def c(n): return f"{SRC}, Slide {n}"
+
+IOA = "Objective a — Anatomy of the integumentary system"
+IOB = "Objective b — Pathophysiology of primary skin lesions"
+
+POOL_A = [
+ dict(topic="Skin functions", io=IOA,
+   q="Where does each step of vitamin D activation take place, beginning in the skin?",
+   opts=[
+     ["Cholecalciferol is produced in the skin under ultraviolet B light, then hydroxylated first in the liver and then in the kidneys to the active form calcitriol",
+      "Correct. The skin only starts the process; two further hydroxylation steps in separate organs are needed before the hormone is active."],
+     ["Calcitriol is produced directly in the skin under ultraviolet B light and requires no further modification",
+      "The skin produces cholecalciferol, which is inactive until hydroxylated twice elsewhere."],
+     ["Cholecalciferol is produced in the liver, then hydroxylated in the skin and finally in the kidneys",
+      "This reverses the order; production begins in the skin."],
+     ["Cholecalciferol is produced in the skin and hydroxylated entirely within the kidneys in a single step",
+      "Two organs are involved in activation, the liver first and then the kidney."]],
+   c=0, cite=c(3)),
+
+ dict(topic="Skin functions", io=IOA,
+   q="Which receptors does the lecture name for the sensations of touch and pressure?",
+   opts=[
+     ["Meissner's corpuscles, Pacinian corpuscles and Merkel cells",
+      "Correct. Meissner's serve fine discriminative touch and low-frequency vibration, Pacinian respond to deep pressure and vibration, and Merkel cells serve light touch."],
+     ["Ruffini endings, Krause bulbs and free nerve endings only",
+      "Free nerve endings are named for touch, pain and temperature, but the three receptors listed for touch and pressure are different."],
+     ["Golgi tendon organs and muscle spindles",
+      "Those are proprioceptive receptors of muscle and tendon, not of skin."],
+     ["Langerhans cells and melanocytes",
+      "Langerhans cells are immune sentinels and melanocytes produce pigment; neither is a mechanoreceptor."]],
+   c=0, cite=c(3)),
+
+ dict(topic="Epidermis", io=IOA,
+   q="Which four cell types make up the epidermis, and which predominates?",
+   opts=[
+     ["Keratinocytes, melanocytes, Merkel cells and Langerhans cells, with keratinocytes about 90 percent",
+      "Correct. Because keratinocytes dominate so heavily, most epidermal pathology is fundamentally a keratinocyte problem."],
+     ["Fibroblasts, macrophages, adipocytes and mast cells, with fibroblasts predominating",
+      "Those are dermal cells; the dermis is where fibroblasts and mast cells live."],
+     ["Melanocytes, Merkel cells, fibroblasts and histiocytes, with melanocytes predominating",
+      "Fibroblasts and histiocytes are dermal, and melanocytes are a minority population."],
+     ["Keratinocytes and melanocytes only, in roughly equal proportion",
+      "Four cell types are named, and the proportions are far from equal."]],
+   c=0, cite=c(6)),
+
+ dict(topic="Epidermis", io=IOA,
+   q="How often does the epidermis turn over, and what modifies that rate?",
+   opts=[
+     ["Every 30 to 60 days, and turnover is more rapid in younger patients",
+      "Correct. Age-dependent turnover matters because it sets how quickly the epidermis can repair itself."],
+     ["Every 24 to 48 hours, with no age dependence",
+      "That is far faster than the stated rate."],
+     ["Every 6 to 12 months, more rapid in older patients",
+      "Both the interval and the direction of the age effect are wrong."],
+     ["Turnover ceases after adolescence",
+      "The epidermis renews throughout life."]],
+   c=0, cite=c(6)),
+
+ dict(topic="Epidermis", io=IOA,
+   q="Which layer of the epidermis is the site of cellular division?",
+   opts=[
+     ["The basal layer, or stratum basale, the deepest layer",
+      "Correct. A single layer of rapidly dividing columnar keratinocytes, which also contains melanocytes and Merkel cells."],
+     ["The stratum corneum, the outermost layer",
+      "The stratum corneum is 20 to 30 layers of keratin and dead keratinocytes; nothing divides there."],
+     ["The granular layer, or stratum granulosum",
+      "That layer contains keratohyalin granules and sits above the dividing layer."],
+     ["The stratum lucidum",
+      "That is 2 to 3 layers of flattened dead keratinocytes."]],
+   c=0, cite=c(7)),
+
+ dict(topic="Epidermis", io=IOA,
+   q="What gives the spinous layer its alternative name of prickle cell layer?",
+   opts=[
+     ["Keratinocytes connected by intercellular connections called desmosomes, which form a spiny appearance",
+      "Correct. This layer also contains the dendritic and Langerhans cells that act as immune sentinels."],
+     ["Keratohyalin granules that give the cells a rough outline",
+      "Those granules define the granular layer above it."],
+     ["Melanin granules transferred from melanocytes",
+      "Pigment transfer does not produce the spiny appearance."],
+     ["Dead flattened keratinocytes packed into scales",
+      "That describes the stratum corneum."]],
+   c=0, cite=c(7)),
+
+ dict(topic="Epidermis", io=IOA,
+   q="Which epidermal layer forms the semi-impermeable barrier, and what is it made of?",
+   opts=[
+     ["The stratum corneum, 20 to 30 layers of keratin and dead keratinocytes cemented together",
+      "Correct. That packing is what makes callused skin, and losing it is what makes barrier-defect conditions possible."],
+     ["The stratum basale, a single layer of dividing columnar keratinocytes",
+      "That is the germinative layer, not the barrier."],
+     ["The stratum granulosum, 3 to 5 layers of diamond-shaped cells",
+      "Those cells contain keratohyalin but do not themselves form the barrier."],
+     ["The papillary dermis, a thin superficial connective tissue layer",
+      "That is dermis rather than epidermis."]],
+   c=0, cite=c(8)),
+
+ dict(topic="Dermis", io=IOA,
+   q="What is the primary component of the dermis, which cell produces it, and what does it provide?",
+   opts=[
+     ["Collagen, produced by fibroblasts, providing tensile strength",
+      "Correct, with elastic fibres of elastin and fibrillin providing elastic recoil and flexibility alongside it."],
+     ["Keratin, produced by keratinocytes, providing an impermeable barrier",
+      "Keratin is an epidermal product."],
+     ["Elastin, produced by mast cells, providing tensile strength",
+      "Elastin provides recoil rather than tensile strength, and mast cells do not produce it."],
+     ["Melanin, produced by melanocytes, providing ultraviolet protection",
+      "Melanin is a pigment made in the epidermis."]],
+   c=0, cite=c(11)),
+
+ dict(topic="Dermis", io=IOA,
+   q="What are the two connective tissue layers of the dermis?",
+   opts=[
+     ["Papillary, the thin superficial layer, and reticular, the dense deeper layer",
+      "Correct. The dermis is also where the blood vessels and mechanoreceptors sit."],
+     ["Basale and spinosum",
+      "Those are epidermal layers."],
+     ["Corneum and lucidum",
+      "Those are also epidermal layers."],
+     ["Papillary and subcutaneous",
+      "The subcutaneous layer, or hypodermis, is the third layer of skin rather than part of the dermis."]],
+   c=0, cite=c(11)),
+
+ dict(topic="Dermis", io=IOA,
+   q="Which dermal cell mediates immunoglobulin E-mediated inflammation?",
+   opts=[
+     ["The mast cell",
+      "Correct, and its degranulation is the mechanism behind both the wheal and urticaria."],
+     ["The fibroblast",
+      "Fibroblasts produce collagen."],
+     ["The melanocyte",
+      "Melanocytes produce pigment and sit in the epidermis."],
+     ["The keratinocyte",
+      "Keratinocytes form the bulk of the epidermis and produce keratin."]],
+   c=0, cite=c(13)),
+
+ dict(topic="Appendages", io=IOA,
+   q="How do eccrine and apocrine sweat glands differ in secretion and function?",
+   opts=[
+     ["Eccrine open onto the skin surface and secrete water and electrolytes for cooling by evaporation; apocrine sit mainly in the axilla and anogenital areas and secrete protein and fatty lipids, functioning as scent glands",
+      "Correct. Body odour comes from bacterial degradation of apocrine sweat, not from the sweat itself."],
+     ["Eccrine sit in the axilla and secrete lipids; apocrine open onto the surface and secrete water and electrolytes",
+      "This reverses the two glands entirely."],
+     ["Both secrete sebum, differing only in the body regions they occupy",
+      "Sebum is the product of the sebaceous glands, which are a third type."],
+     ["Eccrine secrete keratin and apocrine secrete melanin",
+      "Neither gland secretes either of those."]],
+   c=0, cite=c(14)),
+
+ dict(topic="Appendages", io=IOA,
+   q="What is sebum primarily composed of?",
+   opts=[
+     ["Triglycerides, wax esters and squalene",
+      "Correct, produced by the sebaceous glands associated with hair follicles to lubricate skin and hair."],
+     ["Water, sodium and chloride",
+      "That is eccrine sweat."],
+     ["Keratin and keratohyalin",
+      "Those are epidermal structural proteins."],
+     ["Collagen and elastin",
+      "Those are dermal structural proteins."]],
+   c=0, cite=c(15)),
+
+ dict(topic="Appendages", io=IOA,
+   q="Which hair type is regulated by androgens, and which grows independently of them?",
+   opts=[
+     ["Terminal hair is androgen-regulated; vellus hair grows independently of androgens",
+      "Correct. Lanugo is the third type, the fine hair of newborns."],
+     ["Vellus hair is androgen-regulated; terminal hair grows independently",
+      "This reverses the two."],
+     ["Lanugo hair is androgen-regulated; terminal hair is not",
+      "Lanugo is newborn hair and is not the androgen-dependent type."],
+     ["All three types are equally androgen-dependent",
+      "The lecture distinguishes them specifically on androgen regulation."]],
+   c=0, cite=c(15)),
+
+ dict(topic="Lesion categories", io=IOB,
+   q="What distinguishes a primary from a secondary skin lesion?",
+   opts=[
+     ["A primary lesion is the direct result of the underlying disease and retains its original unmodified appearance; a secondary lesion has been modified over time",
+      "Correct, and a secondary lesion may or may not still resemble the lesion it came from."],
+     ["A primary lesion is palpable and a secondary lesion is flat",
+      "Palpability separates macules from papules within the primary group; it is not the primary-versus-secondary distinction."],
+     ["A primary lesion is benign and a secondary lesion is malignant",
+      "Neither category carries any implication about malignancy."],
+     ["A primary lesion appears first in time and a secondary lesion appears elsewhere on the body",
+      "The distinction is about modification, not location or sequence of appearance."]],
+   c=0, cite=c(17)),
+
+ dict(topic="Macules", io=IOB,
+   q="What separates a macule from a patch, and what do both share?",
+   opts=[
+     ["Size — a macule is up to 5 millimetres and a patch greater than 5 — and both are circumscribed, flat discolorations that are NOT palpable",
+      "Correct. Impalpability is the defining feature of this pair."],
+     ["Size — a macule is greater than 5 millimetres and a patch up to 5 — and both are palpable",
+      "The sizes are reversed and both are impalpable."],
+     ["Depth — a macule is epidermal and a patch is dermal — and both are elevated",
+      "Neither is elevated; the distinction is size, not depth."],
+     ["Colour — a macule is hyperpigmented and a patch hypopigmented — and both are palpable",
+      "Either can be hyper- or hypopigmented, and neither is palpable."]],
+   c=0, cite=c(20)),
+
+ dict(topic="Macules", io=IOB,
+   q="What is the mechanism of a hypopigmented macule such as vitiligo, against a hyperpigmented one?",
+   opts=[
+     ["Loss of melanocytes, against increased melanin production in the basal layer of the epidermis",
+      "Correct. Ephelides, café au lait spots and Mongolian spots are the hyperpigmented examples given."],
+     ["Increased melanin production, against loss of melanocytes",
+      "This reverses the two mechanisms."],
+     ["Capillary rupture with blood deposition in the dermis",
+      "That is the mechanism of petechiae and purpura."],
+     ["Dilatation and thinning of superficial dermal vessels",
+      "That is telangiectasia."]],
+   c=0, cite=c(20)),
+
+ dict(topic="Papules", io=IOB,
+   q="What is the tissue basis of a papule?",
+   opts=[
+     ["Hyperplasia of the epidermis with hyperkeratosis, plus inflammation and dense collagen fibres in the dermis",
+      "Correct, and seborrhoeic keratosis is the example given. A papule is elevated, solid, and under 5 millimetres."],
+     ["Fluid containing inflammatory cells collecting within or beneath the epidermis",
+      "That is a vesicle."],
+     ["Separation of epidermis from dermis with fluid accumulation",
+      "That is a bulla."],
+     ["Focal loss of the epidermis without penetration below the dermal-epidermal junction",
+      "That is an erosion, and it is a secondary lesion."]],
+   c=0, cite=c(22)),
+
+ dict(topic="Papules", io=IOB,
+   q="A nodule is greater than 5 millimetres. What tissue does it arise from?",
+   opts=[
+     ["Dermal-based tissue with dense collagen bundles, extending into subcutaneous tissue",
+      "Correct. Epidermoid cysts are keratin-filled, dermatofibroma is fibrous tissue, and a rheumatoid nodule is fibrinoid necrosis surrounded by histiocytes."],
+     ["Superficial epidermis only, with no dermal involvement",
+      "A nodule is defined by its dermal and subcutaneous depth."],
+     ["Fluid accumulating between epidermis and dermis",
+      "That describes a bulla."],
+     ["Dilated superficial capillaries without inflammatory infiltration",
+      "That is telangiectasia."]],
+   c=0, cite=c(22)),
+
+ dict(topic="Papules", io=IOB,
+   q="How does a plaque form, and what is seen in the tissue?",
+   opts=[
+     ["By confluence of papules, with marked epidermal thickening and dilated blood vessels in the dermis",
+      "Correct. It is elevated, superficial and greater than 1 centimetre — plaque psoriasis is the example."],
+     ["By separation of the epidermis from the dermis with fluid accumulation",
+      "That is a bulla."],
+     ["By loss of melanocytes across a broad area",
+      "That produces a hypopigmented patch."],
+     ["By long-term scratching thickening the epidermis",
+      "That is lichenification, a secondary lesion."]],
+   c=0, cite=c(22)),
+
+ dict(topic="Vesicles", io=IOB,
+   q="What distinguishes a vesicle from a bulla, mechanistically as well as by size?",
+   opts=[
+     ["A vesicle is up to 5 millimetres with fluid containing inflammatory cells collecting within or directly beneath the epidermis; a bulla is greater than 5 millimetres and involves separation of epidermis from dermis",
+      "Correct. The bulla represents a deeper plane of cleavage, not merely a bigger blister."],
+     ["A vesicle is greater than 5 millimetres and a bulla up to 5, with identical mechanisms",
+      "The sizes are reversed and the mechanisms differ."],
+     ["A vesicle is solid and a bulla is fluid-filled",
+      "Both are fluid-filled lesions."],
+     ["A vesicle contains purulent material and a bulla contains serous fluid",
+      "Purulent content defines a pustule."]],
+   c=0, cite=c(25)),
+
+ dict(topic="Vesicles", io=IOB,
+   q="Which causes are given for bullae?",
+   opts=[
+     ["Mechanical factors, infections, toxins, chemical exposure and autoimmune reactions",
+      "Correct, with bullous impetigo as the bacterial example and bullous pemphigoid as the autoimmune one."],
+     ["Increased melanin production and ultraviolet exposure only",
+      "Those produce pigmented macules rather than bullae."],
+     ["Capillary rupture and thrombocytopenia",
+      "Those produce petechiae and purpura."],
+     ["Androgen stimulation of sebaceous glands",
+      "That relates to sebum production rather than blister formation."]],
+   c=0, cite=c(25)),
+
+ dict(topic="Wheal", io=IOB,
+   q="Trace the mechanism of a wheal from trigger to itch.",
+   opts=[
+     ["An immune trigger causes mast cells to release histamine; histamine induces vasodilation and vascular permeability so plasma leaks into the dermis, and it acts on cutaneous nerve endings to create pruritus",
+      "Correct. One mediator produces both the swelling and the itch, which is why the lesion is transient."],
+     ["Neutrophils release proteases that digest dermal collagen, producing a depression",
+      "That is closer to ulceration than to a wheal."],
+     ["Keratinocytes proliferate and thicken the epidermis, raising the surface",
+      "That produces a papule or plaque, and it is not transient."],
+     ["Capillaries rupture and blood accumulates in the dermis",
+      "That produces petechiae or purpura, which are non-blanchable."]],
+   c=0, cite=c(28)),
+
+ dict(topic="Pustule", io=IOB,
+   q="What does a pustule contain, and what organisms are typically involved?",
+   opts=[
+     ["Purulent material of leukocytes, cellular debris, serous fluid and possibly microorganisms, typically Gram-positive bacteria such as Staphylococcus aureus or Streptococcus pyogenes",
+      "Correct, and the lecture notes a pustule may also be sterile, as in rosacea."],
+     ["Clear serous fluid only, always sterile",
+      "Pustules contain purulent material, though they may sometimes be sterile."],
+     ["Blood deposited in the dermis from ruptured capillaries",
+      "That produces petechiae or purpura."],
+     ["Keratin arising from a hair follicle",
+      "That describes an epidermal inclusion cyst."]],
+   c=0, cite=c(29)),
+
+ dict(topic="Cyst and tumor", io=IOB,
+   q="What does an epidermal inclusion cyst arise from and contain?",
+   opts=[
+     ["A hair follicle, and it contains keratin",
+      "Correct. A cyst is an elevated, circumscribed, encapsulated lesion in the dermis or subcutaneous layer with liquid or semisolid contents."],
+     ["A sweat gland, and it contains sodium and chloride",
+      "Eccrine sweat contains those, but the cyst described arises from a follicle."],
+     ["A sebaceous gland, and it contains only squalene",
+      "The stated origin is the hair follicle and the content is keratin."],
+     ["A blood vessel, and it contains clotted blood",
+      "No such origin is described for this lesion."]],
+   c=0, cite=c(30)),
+
+ dict(topic="Cyst and tumor", io=IOB,
+   q="How are dermatofibroma and lipoma characterised in the tissue?",
+   opts=[
+     ["Dermatofibroma is a benign overgrowth of fibrous tissue in the dermis; lipoma is a benign enclosed capsule of adipocytes",
+      "Correct. Both sit under the general term tumor, which describes rapid cellular growth and may or may not be malignant."],
+     ["Dermatofibroma is a benign capsule of adipocytes; lipoma is fibrous overgrowth",
+      "This reverses the two lesions."],
+     ["Both are malignant proliferations of keratinocytes",
+      "Both are described as benign, and neither arises from keratinocytes."],
+     ["Dermatofibroma is keratin-filled and lipoma is fluid-filled",
+      "Keratin filling describes an epidermal inclusion cyst."]],
+   c=0, cite=c(30)),
+]

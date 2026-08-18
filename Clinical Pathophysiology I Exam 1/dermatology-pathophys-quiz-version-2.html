@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #6a4fa3; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dermatology Pathophysiology Quiz 2 — Clinical Pathophysiology I Exam 1</title>
+<style>
+  :root{
+    --navy:#3b2a5e; --indigo:#6a4fa3; --gold:#c08a2e; --ice:#f2eefb;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Dermatology: Pathophysiology of the Skin &mdash; Quiz 2</h1>
+    <div class="sub">Clinical Pathophysiology I &middot; Exam 1 &middot; Lecture 2</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Dermatology from Lecture 2 &mdash; the strata of the integument, the pathophysiology of primary and secondary skin lesions, and the molecular mechanisms behind common dermatological conditions. All four syllabus objectives. <strong>Mechanism only</strong>: this is the pathophysiology course, so nothing here asks how a condition is managed &mdash; that belongs to Clinical Medicine and Surgery I. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Integumentary anatomy</span><span class="chip">Primary lesions</span><span class="chip">Secondary lesions</span><span class="chip">Wound healing</span><span class="chip">Molecular mechanisms</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="flag-nav-toggle" style="width:16px;height:16px">
+      Flag questions &amp; jump between them
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Skin functions", "io": "Objective a — Anatomy of the integumentary system", "q": "Which receptors does the lecture name for the sensations of touch and pressure?", "opts": [["Golgi tendon organs and muscle spindles", "Those are proprioceptive receptors of muscle and tendon, not of skin."], ["Langerhans cells and melanocytes", "Langerhans cells are immune sentinels and melanocytes produce pigment; neither is a mechanoreceptor."], ["Meissner's corpuscles, Pacinian corpuscles and Merkel cells", "Correct. Meissner's serve fine discriminative touch and low-frequency vibration, Pacinian respond to deep pressure and vibration, and Merkel cells serve light touch."], ["Ruffini endings, Krause bulbs and free nerve endings only", "Free nerve endings are named for touch, pain and temperature, but the three receptors listed for touch and pressure are different."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 3"}, {"topic": "Contact dermatitis", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What are the two phases of allergic contact dermatitis?", "opts": [["Irritation, then hyperkeratosis of the stratum corneum", "That describes irritant contact dermatitis and lichenification respectively."], ["Radial growth, then vertical growth", "Those are the growth phases of melanoma."], ["Sensitization, in which Langerhans cells present haptens to T cells to create specialised memory; and elicitation, in which re-exposure to the same hapten promotes T cell migration and cutaneous inflammation", "Correct — a delayed hypersensitivity reaction occurring 48 to 72 hours after exposure. Nickel and poison ivy are the examples."], ["Sensitization by mast cell degranulation, followed by elicitation through the release of histamine into the surrounding dermal tissue on every subsequent exposure to that same allergen thereafter", "That is the immunoglobulin E pathway of urticaria, not the T cell pathway here."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 49"}, {"topic": "Nails", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What is the main pathologic finding in nail clubbing, and what mediates it?", "opts": [["Incomplete keratinization at the nail bed", "That is leukonychia."], ["Increased capillary density, with increased release of vascular endothelial growth factor", "Correct, and it is associated with lung, cardiovascular, liver and inflammatory bowel disease."], ["Overgrowth of the connective tissue within the nail bed itself over a period of time", "That is Terry's nails."], ["A halt of keratin production at the matrix", "That is Beau's lines."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 74"}, {"topic": "Psoriasis", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "Which cells drive psoriasis, and which cytokines does the lecture name?", "opts": [["Melanocytes proliferate at the dermal-epidermal junction", "That is the origin of melanoma."], ["Active T cells infiltrating the epidermis stimulate keratinocyte proliferation and excessive cytokine production, particularly tumour necrosis factor alpha, interferon gamma and interleukin-12", "Correct. It is a chronic autoimmune inflammatory dermatosis, and skin cells multiply up to ten times faster than normal."], ["Mast cells release histamine which drives keratinocyte proliferation", "That is the urticaria pathway and does not produce psoriasis."], ["Langerhans cells present haptens to T cells, producing a delayed hypersensitivity reaction 48 to 72 hours after each exposure to the allergen in question every single time", "That is allergic contact dermatitis."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 62"}, {"topic": "Seborrheic dermatitis", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "Which factors contribute to seborrhoeic dermatitis, and where does it occur?", "opts": [["Cutaneous microbiome dysbiosis, altered immune response and epidermal barrier dysfunction, affecting regions rich in sebaceous glands — scalp, face and upper trunk", "Correct, and the lecture is explicit that the cause is incompletely understood. Dandruff is the non-inflammatory form."], ["A single fungal pathogen acting alone, affecting mainly the palms of the hands and the soles of the feet rather than the sebaceous areas of the skin", "The cause is described as multifactorial and incompletely understood, and the distribution follows sebaceous glands."], ["Autoimmune T cell activation, affecting the elbows and knees", "That distribution and mechanism belong to psoriasis."], ["Ultraviolet damage, affecting sun-exposed skin", "That is actinic keratosis."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 55"}, {"topic": "Lichenification", "io": "Objective c — Pathophysiology of secondary skin lesions", "q": "What produces lichenification, and what changes occur in the tissue?", "opts": [["Loss of melanocytes across a circumscribed area", "That produces a hypopigmented macule such as vitiligo."], ["Separation of the epidermis from the dermis with accumulation of fluid between the two layers, forming a large blister that lifts the surface away", "That is a bulla."], ["Slowing of keratinocyte division with elastin degradation", "That is atrophy, which thins rather than thickens the skin."], ["Long-term scratching or rubbing of a pruritic area in an itch-scratch cycle, producing hyperplasia and hyperkeratosis with solid, firm, thick plaques without scaling", "Correct, and lichen simplex chronicus is the named condition."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 33"}, {"topic": "Vesicles", "io": "Objective b — Pathophysiology of primary skin lesions", "q": "Which causes are given for bullae?", "opts": [["Capillary rupture and thrombocytopenia", "Those produce petechiae and purpura."], ["Androgen stimulation of sebaceous glands", "That relates to sebum production rather than blister formation."], ["Mechanical factors, infections, toxins, chemical exposure and autoimmune reactions", "Correct, with bullous impetigo as the bacterial example and bullous pemphigoid as the autoimmune one."], ["Increased melanin production and cumulative ultraviolet light exposure alone", "Those produce pigmented macules rather than bullae."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 25"}, {"topic": "Secondary lesions", "io": "Objective c — Pathophysiology of secondary skin lesions", "q": "A patient has thick, leathery plaques on the neck and forearms with no scaling, after months of scratching. Which secondary lesion is this, mechanistically?", "opts": [["Ulcer, arising from focal loss of both the epidermis and the dermis beneath it", "There is no tissue loss described here; the tissue is thickened."], ["Atrophy, from slowed keratinocyte division", "Atrophy thins the skin, and this description is of thickening."], ["Lichenification, from hyperplasia and hyperkeratosis driven by the itch-scratch cycle", "Correct. The absence of scaling is what separates it from psoriasis, whose plaques do scale."], ["Scale, from desquamating stratum corneum", "Scaling is specifically absent in the description given."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 33"}, {"topic": "Melanoma", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What are the growth phases of melanoma, in order?", "opts": [["Vertical growth down into the dermis first, then radial spread within the epidermis afterwards once the tumour has thickened sufficiently to invade", "This reverses the first two phases."], ["Inflammatory, proliferative, then remodelling", "Those are the phases of wound healing."], ["Sensitization then elicitation", "Those are the phases of allergic contact dermatitis."], ["Radial growth within the epidermis, then vertical growth penetrating the dermis, then increasing tumour thickness, then metastatic invasion of lymphatics and blood vessels", "Correct. The shift from radial to vertical is the point at which depth begins to matter."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 80"}, {"topic": "Wound healing", "io": "Objective c — Pathophysiology of secondary skin lesions", "q": "What forms during the proliferative phase, and what is it made of?", "opts": [["A fibrin haemostatic plug, over days 1 to 3", "That is the inflammatory phase."], ["Type I collagen laid down in parallel bundles, over days 21 to one year of remodelling", "That is remodelling."], ["Keratohyalin granules within the granular layer", "That is normal epidermal maturation, not wound healing."], ["Granulation tissue, comprised of macrophages, fibroblasts and endothelial cells, over days 4 to 21", "Correct. Those three cell types supply clearance, matrix and new vessels respectively."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 36"}, {"topic": "Nails", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What is the suspected mechanism of koilonychia?", "opts": [["Impaired keratin synthesis associated with deficiency anaemia, weakening the nail plate into raised ridges that are thin and concave", "Correct, and the lecture notes the exact pathophysiology is unknown."], ["A halt of keratin production producing horizontal transverse grooves across the surface of the nail plate itself", "That is Beau's lines."], ["Overgrowth of connective tissue producing an opaque nail", "That is Terry's nails."], ["Incomplete keratinization producing white spots", "That is leukonychia."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 72"}, {"topic": "Epidermis", "io": "Objective a — Anatomy of the integumentary system", "q": "Which epidermal layer forms the semi-impermeable barrier, and what is it made of?", "opts": [["The papillary dermis, a thin superficial connective tissue layer", "That is dermis rather than epidermis."], ["The stratum corneum, 20 to 30 layers of keratin and dead keratinocytes cemented together", "Correct. That packing is what makes callused skin, and losing it is what makes barrier-defect conditions possible."], ["The stratum basale, a single layer of rapidly dividing columnar keratinocytes at the base", "That is the germinative layer, not the barrier."], ["The stratum granulosum, 3 to 5 layers of diamond-shaped cells", "Those cells contain keratohyalin but do not themselves form the barrier."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 8"}, {"topic": "Eczema", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "Which protein deficiency contributes to atopic dermatitis, and what does it reflect?", "opts": [["Insufficient collagen, reflecting fibroblast failure", "Collagen loss relates to atrophy and ulceration rather than eczema."], ["Insufficient elastin, reflecting loss of recoil", "Elastin degradation is part of atrophy."], ["Insufficient keratohyalin, reflecting loss of the granular layer", "Loss of the stratum granulosum is described for psoriasis."], ["Insufficient filaggrin, reflecting a compromised epidermal barrier", "Correct, alongside an overactive immune system and genetic, environmental and psychogenic factors."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 52"}, {"topic": "Urticaria", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What is the mechanism of urticaria?", "opts": [["T cell-mediated delayed hypersensitivity 48 to 72 hours after exposure", "That is allergic contact dermatitis."], ["Dysplastic keratinocyte proliferation from ultraviolet damage", "That is actinic keratosis."], ["Capillary rupture with extravasation of blood", "That produces petechiae and purpura."], ["Mast cell degranulation releasing histamine, producing wheals", "Correct, and it may be acute or chronic with a wide range of triggers."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 46"}, {"topic": "Epidermis", "io": "Objective a — Anatomy of the integumentary system", "q": "What gives the spinous layer its alternative name of prickle cell layer?", "opts": [["Keratohyalin granules that give the cells a rough and irregular outline when viewed on microscopy", "Those granules define the granular layer above it."], ["Melanin granules transferred from melanocytes", "Pigment transfer does not produce the spiny appearance."], ["Dead flattened keratinocytes packed into scales", "That describes the stratum corneum."], ["Keratinocytes connected by intercellular connections called desmosomes, which form a spiny appearance", "Correct. This layer also contains the dendritic and Langerhans cells that act as immune sentinels."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 7"}, {"topic": "Cyst and tumor", "io": "Objective b — Pathophysiology of primary skin lesions", "q": "What does an epidermal inclusion cyst arise from and contain?", "opts": [["A sebaceous gland, and it contains only squalene", "The stated origin is the hair follicle and the content is keratin."], ["A blood vessel, and it contains clotted blood", "No such origin is described for this lesion."], ["A hair follicle, and it contains keratin", "Correct. A cyst is an elevated, circumscribed, encapsulated lesion in the dermis or subcutaneous layer with liquid or semisolid contents."], ["A sweat gland, and it contains sodium and chloride", "Eccrine sweat contains those, but the cyst described arises from a follicle."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 30"}, {"topic": "Dermatophytes", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "How do dermatophytes obtain nutrition, and in which layer do they typically live?", "opts": [["They proliferate within the dermis, digesting collagen", "The stated location is the stratum corneum, and the substrate is keratin."], ["Spores secrete keratinases and proteases to metabolise and digest keratin in skin, hair and nails, typically within the stratum corneum", "Correct — Trichophyton, Microsporum and Epidermophyton are the three most common, and the annular patch with central clearing follows from this."], ["They invade epidermal basal cells through microabrasions and drive proliferation of the epidermis above them over time", "That is human papillomavirus."], ["They release histamine from mast cells producing wheals", "That is urticaria."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 65"}, {"topic": "Appendages", "io": "Objective a — Anatomy of the integumentary system", "q": "How do eccrine and apocrine sweat glands differ in secretion and function?", "opts": [["Eccrine secrete keratin and apocrine secrete melanin", "Neither gland secretes either of those."], ["Eccrine open onto the skin surface and secrete water and electrolytes for cooling by evaporation; apocrine sit mainly in the axilla and anogenital areas and secrete protein and fatty lipids, functioning as scent glands", "Correct. Body odour comes from bacterial degradation of apocrine sweat, not from the sweat itself."], ["Eccrine glands sit in the axilla and anogenital areas and secrete protein and fatty lipids; apocrine glands open onto the surface of the skin and secrete water and electrolytes for cooling the body", "This reverses the two glands entirely."], ["Both secrete sebum, differing only in the body regions they occupy", "Sebum is the product of the sebaceous glands, which are a third type."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 14"}, {"topic": "Melanoma", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "Where do melanocytes normally sit, and what drives their malignant transformation?", "opts": [["Within the stratum corneum, transformed by keratinase digestion", "That describes dermatophyte behaviour, not melanocyte biology."], ["In the reticular layer of the dermis, transformed by dysregulation of the fibroblasts that reside within it over a long period of time", "Fibroblast dysregulation is the keloid mechanism."], ["In the basal layer, transformed by Hedgehog pathway activation", "Hedgehog activation is the basal cell carcinoma mechanism."], ["At the dermal-epidermal junction, with ultraviolet light and oxidative stress damaging melanocyte DNA and leading to uninhibited growth", "Correct, and the risk is inherited as an autosomal dominant trait with variable penetrance."]], "c": 3, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 80"}, {"topic": "Melanoma", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "How is melanoma risk inherited, according to the lecture?", "opts": [["As an autosomal dominant trait with variable penetrance", "Correct, though ultraviolet light and oxidative stress remain the primary driving factor."], ["As an autosomal recessive trait with complete penetrance", "Neither the pattern nor the penetrance matches."], ["As an X-linked trait", "No such inheritance is described."], ["It is entirely environmental with no inherited component", "An inherited component is described explicitly."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 80"}, {"topic": "Contact dermatitis", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "A patient reacts to a nickel earring 48 to 72 hours after wearing it. Which mechanism does the delay reflect?", "opts": [["Viral proliferation within basal keratinocytes", "That is verrucae vulgaris."], ["Delayed hypersensitivity requiring T cell migration after re-exposure to a hapten previously presented by Langerhans cells", "Correct. The delay is the time the cellular response takes, which is what distinguishes it from an immediate mast cell reaction."], ["An immediate immunoglobulin E-mediated mast cell degranulation occurring upon the very first contact with the metal", "That reaction occurs within minutes and produces wheals."], ["Direct chemical injury requiring no prior exposure", "That is irritant contact dermatitis, which does not require sensitization."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 49"}, {"topic": "Nails", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What causes Beau's lines, and what are they associated with?", "opts": [["Increased capillary density, associated with lung disease", "That is clubbing."], ["Impaired keratin synthesis, associated with deficiency anaemia", "That is koilonychia."], ["A halt of keratin production producing horizontal or transverse grooves, associated with illness, stress, injury to the nail and malnourishment", "Correct — the groove marks the period during which the nail stopped being made."], ["Overgrowth of connective tissue within the nail bed, associated with chronic liver disease and with diabetes mellitus in particular", "That is Terry's nails."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 73"}, {"topic": "Skin cancers", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "Which skin cancer is described as the most common malignancy in humans, and how does it behave?", "opts": [["Actinic keratosis, which is by far the most common malignancy occurring in human beings", "Actinic keratosis is a precancer rather than a malignancy."], ["Basal cell carcinoma, slow growing and rarely metastasising, typically on the head and neck", "Correct. Squamous cell carcinoma is the second most common."], ["Squamous cell carcinoma, rapidly metastasising", "Squamous cell carcinoma is second most common."], ["Melanoma, slow growing and rarely metastasising", "Melanoma progresses through radial to vertical growth and can metastasise."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 76"}, {"topic": "Nails", "io": "Objective d — Molecular mechanisms of common dermatological conditions", "q": "What produces Terry's nails, and what conditions is it associated with?", "opts": [["Overgrowth of connective tissue in the nail bed, associated with aging, liver disease, congestive heart failure or diabetes", "Correct — the nail is opaque except for a dark band at the tip."], ["Increased capillary density together with vascular endothelial growth factor release into the tissue locally over time", "That is clubbing."], ["Impaired keratin synthesis with deficiency anaemia", "That is koilonychia."], ["Temporary incomplete keratinization at the nail bed", "That is leukonychia."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 73"}, {"topic": "Secondary lesions", "io": "Objective c — Pathophysiology of secondary skin lesions", "q": "Why does an ulcer scar while an erosion generally does not?", "opts": [["An ulcer destroys collagen in the dermis, so healing must lay down new collagen; an erosion spares the dermal-epidermal junction and the dermis beneath it", "Correct. Scarring is a dermal repair process, so a lesion confined above the junction has nothing to scar."], ["An ulcer is infected and an erosion is sterile", "Infection is not what defines either lesion."], ["An ulcer is larger, and size alone determines scarring", "Depth rather than size is the operative difference."], ["An ulcer involves a loss of melanocytes from the basal layer which cannot be reversed once it has occurred in the tissue at any point afterwards", "Melanocyte loss produces hypopigmentation and is not the ulcer mechanism."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 34"}, {"topic": "Papules", "io": "Objective b — Pathophysiology of primary skin lesions", "q": "What is the tissue basis of a papule?", "opts": [["Separation of epidermis from dermis with fluid accumulation", "That is a bulla."], ["Focal loss of the epidermis that does not penetrate below the dermal-epidermal junction beneath it", "That is an erosion, and it is a secondary lesion."], ["Hyperplasia of the epidermis with hyperkeratosis, plus inflammation and dense collagen fibres in the dermis", "Correct, and seborrhoeic keratosis is the example given. A papule is elevated, solid, and under 5 millimetres."], ["Fluid containing inflammatory cells collecting within or beneath the epidermis", "That is a vesicle."]], "c": 2, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 22"}, {"topic": "Dermis", "io": "Objective a — Anatomy of the integumentary system", "q": "What is the primary component of the dermis, which cell produces it, and what does it provide?", "opts": [["Collagen, produced by fibroblasts, providing tensile strength", "Correct, with elastic fibres of elastin and fibrillin providing elastic recoil and flexibility alongside it."], ["Keratin, produced by keratinocytes, providing an impermeable barrier", "Keratin is an epidermal product."], ["Elastin, produced by mast cells, providing tensile strength", "Elastin provides recoil rather than tensile strength, and mast cells do not produce it."], ["Melanin, produced by melanocytes, providing ultraviolet protection", "Melanin is a pigment made in the epidermis."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 11"}, {"topic": "Epidermis", "io": "Objective a — Anatomy of the integumentary system", "q": "How often does the epidermis turn over, and what modifies that rate?", "opts": [["Turnover ceases after adolescence", "The epidermis renews throughout life."], ["Every 30 to 60 days, and turnover is more rapid in younger patients", "Correct. Age-dependent turnover matters because it sets how quickly the epidermis can repair itself."], ["Every 24 to 48 hours, with no age dependence", "That is far faster than the stated rate."], ["Every 6 to 12 months, and considerably more rapid in older patients", "Both the interval and the direction of the age effect are wrong."]], "c": 1, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 6"}, {"topic": "Macules", "io": "Objective b — Pathophysiology of primary skin lesions", "q": "What is the mechanism of a hypopigmented macule such as vitiligo, against a hyperpigmented one?", "opts": [["Loss of melanocytes, against increased melanin production in the basal layer of the epidermis", "Correct. Ephelides, café au lait spots and Mongolian spots are the hyperpigmented examples given."], ["Increased melanin production within the epidermis, as against loss of melanocytes entirely", "This reverses the two mechanisms."], ["Capillary rupture with blood deposition in the dermis", "That is the mechanism of petechiae and purpura."], ["Dilatation and thinning of superficial dermal vessels", "That is telangiectasia."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 20"}, {"topic": "Erosion and ulcer", "io": "Objective c — Pathophysiology of secondary skin lesions", "q": "What is the tissue distinction between an erosion and an ulcer?", "opts": [["An erosion is focal loss of epidermis that does not penetrate below the dermal-epidermal junction; an ulcer is focal loss of epidermis AND dermis, with destruction of collagen and infiltration of inflammatory cells", "Correct. The junction is the boundary that separates them, and crossing it is what brings collagen destruction into play."], ["An erosion involves both the epidermis and the dermis beneath it; an ulcer is limited to the epidermis alone and spares the dermal-epidermal junction entirely, so it never destroys collagen at all", "This reverses the two."], ["An erosion is fluid-filled and an ulcer is solid", "Neither is a fluid-filled lesion."], ["An erosion is a primary lesion and an ulcer is a secondary lesion", "Both are secondary lesions."]], "c": 0, "cite": "Pathophys Dermatology - Gopal 2026 SV.pptx, Slide 34"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = QUESTIONS.map((_,i)=>i);
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = !!(document.getElementById('flag-nav-toggle') && document.getElementById('flag-nav-toggle').checked);
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? QUESTIONS.length*60000 : 0;
+  idx=0; score=0; answers=new Array(QUESTIONS.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length===QUESTIONS.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+QUESTIONS.length+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (QUESTIONS.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (QUESTIONS.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===QUESTIONS.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: QUESTIONS.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = QUESTIONS.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<QUESTIONS.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
