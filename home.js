@@ -949,6 +949,9 @@ document.querySelectorAll(".semester").forEach(semester => {
       // Update this list (and the "What's New" panel below) whenever new
       // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
+        "Physical%20Diagnosis%202%20Exam%201/clinical-reasoning-documentation-quiz.html": "2026-08-18",
+        "Physical%20Diagnosis%202%20Exam%201/dermatology-quiz.html": "2026-08-18",
+        "Physical%20Diagnosis%202%20Exam%201/dermatology-quiz-version-2.html": "2026-08-18",
         "Clinical%20Pathophysiology%20I%20Exam%201/dermatology-pathophys-quiz.html": "2026-08-18",
         "Clinical%20Pathophysiology%20I%20Exam%201/dermatology-pathophys-quiz-version-2.html": "2026-08-18",
         "Pharmacology%20I%20Exam%201/antibacterials-quiz.html": "2026-08-17",

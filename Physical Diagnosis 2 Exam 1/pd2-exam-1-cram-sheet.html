@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Physical Diagnosis 2 Exam 1</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#4a5c24;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Physical Diagnosis 2 Exam 1 · Class of 2028</div>
+    <h1>Physical Diagnosis 2 Exam 1 Cram Sheet</h1>
+    <p class="sub">The encounter, the oral presentation and documentation; then the skin — structure, the descriptive vocabulary, abnormal findings of skin, hair and nails, and the examination itself.</p>
+    <div class="toc">
+      <a href="#encounter" style="color:#3a481c"><span class="dot" style="background:#4a5c24"></span>The Encounter, Presentation & Documentation</a>
+      <a href="#skin-structure" style="color:#536329"><span class="dot" style="background:#6b7f35"></span>Skin — Structure & Function</a>
+      <a href="#vocabulary" style="color:#6c5b1e"><span class="dot" style="background:#8a7526"></span>Descriptive Vocabulary — Distribution & Configuration</a>
+      <a href="#morphology" style="color:#704721"><span class="dot" style="background:#8f5b2a"></span>Primary & Secondary Morphology</a>
+      <a href="#abnormal" style="color:#623140"><span class="dot" style="background:#7d3f52"></span>Abnormal Findings — Skin, Hair & Nails</a>
+      <a href="#technique" style="color:#314753"><span class="dot" style="background:#3f5b6b"></span>Performing the Skin Examination</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pd2-exam-1-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="encounter" style="--acc:#4a5c24;--acc-bg:#e6e8e0;--acc-zebra:#f2f4f0;--acc-ink:#3a481c">
+    <div class="shead"><span class="dot" style="background:#4a5c24"></span><h2>The Encounter, Presentation & Documentation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Oral presentation — opening</td><td>Open with the past medical history and the chief complaint. Then pertinent positives and negatives from BOTH history and physical. Follow mostly the order you obtained them. Try not to read your notes.</td></tr>
+          <tr><td class="h">Oral presentation — the test</td><td>A good presentation leads your facilitator to the same differential you formulated. It is a well-organised vignette, not the written note read aloud; the goal is to help listeners visualise the patient.</td></tr>
+          <tr><td class="h">Focused vs comprehensive</td><td>A focused encounter narrows BOTH the history and the examination — history of present illness, review of systems, past medical history, social history, family history, medications and allergies are all focused. It is not a comprehensive encounter written up more briefly.</td></tr>
+          <tr><td class="h">Focused encounter — required output</td><td>Differentials, laboratory and imaging studies, a diagnosis, and a treatment plan including patient education. Narrowing the data gathered does not narrow what you must conclude.</td></tr>
+          <tr><td class="h">History and physical vs SOAP</td><td>The history and physical is comprehensive (whole history, head-to-toe). The SOAP note is problem-focused: Subjective (what the patient said), Objective (what you found, always with a general impression), Assessment (what you concluded), Plan (what you will do).</td></tr>
+          <tr><td class="h">Documentation rules that cost marks</td><td>Describe findings — never 'normal', 'abnormal' or 'unremarkable'. NO abbreviations, with no exceptions. Keep subjective and objective in their own sections. If you did not do it, document why — never invent a finding. Never write a note with another student.</td></tr>
+          <tr><td class="h">Communication</td><td>Adapt style and content for each patient. When someone else supplies the answers, ALWAYS look at and interact with the patient, not the person answering. Accept feedback and modify behaviour; different facilitators give different feedback, and that is expected.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="skin-structure" style="--acc:#6b7f35;--acc-bg:#eaede3;--acc-zebra:#f5f6f1;--acc-ink:#536329">
+    <div class="shead"><span class="dot" style="background:#6b7f35"></span><h2>Skin — Structure & Function</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Five functions</td><td>Protection of internal structures · prevention of entry of microorganisms · temperature regulation · excretion · production of vitamin D.</td></tr>
+          <tr><td class="h">Sudoriferous (eccrine) glands</td><td>Secrete sweat to maintain body temperature.</td></tr>
+          <tr><td class="h">Apocrine glands</td><td>Become active during PUBERTY; secrete pheromones.</td></tr>
+          <tr><td class="h">Sebaceous glands</td><td>Surround hair follicles; secrete sebum to keep hair and skin moist.</td></tr>
+          <tr><td class="h">Vellus vs terminal hair</td><td>Vellus is short, fine hair covering the body. Terminal is coarse — scalp, pubic, axillary, beard.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="vocabulary" style="--acc:#8a7526;--acc-bg:#efece1;--acc-zebra:#f7f5f0;--acc-ink:#6c5b1e">
+    <div class="shead"><span class="dot" style="background:#8a7526"></span><h2>Descriptive Vocabulary — Distribution & Configuration</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Five features of any lesion</td><td>Distribution (location) · configuration (shape) · morphology (form and structure) · colour · texture.</td></tr>
+          <tr><td class="h">Distribution → diagnosis</td><td>Generalised/diffuse = allergic reactions. Regional = tinea capitis. Sun-exposed (photodistribution) = skin cancers. Dermatome = herpes zoster. Extensor = psoriasis. Flexor = intertrigo. Intertriginous = skin creases and folds.</td></tr>
+          <tr><td class="h">Configuration terms</td><td>Annular = ring. Arciform = arcs or curves. Confluent = run together. Discrete = remain separate. Grouped = a cluster. Gyrate = twisted, coiled, spiral. Iris/target = bull's eye. Linear = line or stripe. Reticular = lacy or networked. Serpiginous = snake-like.</td></tr>
+          <tr><td class="h">Herpetiform vs zosteriform</td><td>Herpetiform = grouped papules or vesicles arranged as in herpes SIMPLEX. Zosteriform = clustered in a DERMATOMAL distribution, as in herpes zoster. The pair most often swapped.</td></tr>
+          <tr><td class="h">Primary vs secondary lesion</td><td>Primary forms first and results directly from the disease — identifying it is the key to the whole description. Secondary is a change in the primary over time, from disease progression, TREATMENT, or MANIPULATION (picking, scratching).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="morphology" style="--acc:#8f5b2a;--acc-bg:#efe8e1;--acc-zebra:#f7f4f0;--acc-ink:#704721">
+    <div class="shead"><span class="dot" style="background:#8f5b2a"></span><h2>Primary & Secondary Morphology</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">The 1 cm hinge — three matched pairs</td><td>Flat: macule (<1 cm) / patch (>1 cm). Solid elevated: papule (<1 cm) / plaque (>1 cm). Fluid-filled: vesicle (<1 cm) / bulla (>1 cm). Six terms from three pairs — this is why a ruler is on the equipment list.</td></tr>
+          <tr><td class="h">Nodule vs papule vs tumor</td><td>Nodule: elevated, firm, circumscribed, round or ellipsoid, DEEPER in the dermis than a papule, 1–2 cm (Bates: >0.5 cm). Tumor: solid mass >2 cm. Papule: solid, <1 cm.</td></tr>
+          <tr><td class="h">Plaque</td><td>Elevated, flat-topped, firm, rough; plateau-like, occupying a large area compared with its elevation; >1 cm; may be coalesced papules. Example: psoriasis.</td></tr>
+          <tr><td class="h">Wheal, pustule, cyst</td><td>Wheal: elevated irregular cutaneous edema, solid, TRANSIENT, variable diameter (the only transient one). Pustule: superficial elevation filled with PURULENT material, usually <1 cm. Cyst: elevated, circumscribed, ENCAPSULATED, in dermis or subcutis, liquid or semisolid (the only encapsulated one).</td></tr>
+          <tr><td class="h">Erosion vs ulcer</td><td>Erosion: loss of superficial epidermis, does NOT involve dermis; moist but does NOT bleed. Ulcer: deeper loss of epidermis and/or dermis; MAY bleed and scar. Depth determines all three consequences at once.</td></tr>
+          <tr><td class="h">Crust, fissure, scale, excoriation</td><td>Crust: cellular debris, dried serum and blood — a scab; antecedent lesion usually a vesicle, bulla or pustule. Fissure: linear crack (athlete's foot). Scale: thin flake of exfoliated epidermis (dandruff). Excoriation: abrasion or scratch mark, linear or rounded.</td></tr>
+          <tr><td class="h">Scar vs keloid</td><td>Scar (cicatrix): fibrous tissue replacing destroyed tissue; hypertrophic = thick and pink, atrophic = thin and white; does NOT extend beyond the injured area. Keloid: a scar that GROWS BEYOND the wound.</td></tr>
+          <tr><td class="h">Lichenification & collarette scale</td><td>Lichenification: thickening with skin line accentuation from chronic irritation (atopic dermatitis). Collarette scale: fine scale peripherally attached and centrally detached at a lesion's edge (pityriasis rosea).</td></tr>
+          <tr><td class="h">Corn vs callus; warts</td><td>Corn: smaller, usually over a NON-weight-bearing area of the foot, conical keratin pointing toward the dermis. Callus: thickened epidermal keratin, usually on the sole at ball or heel. Verrucae (warts) are caused by human papillomavirus.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="abnormal" style="--acc:#7d3f52;--acc-bg:#ede4e7;--acc-zebra:#f6f2f3;--acc-ink:#623140">
+    <div class="shead"><span class="dot" style="background:#7d3f52"></span><h2>Abnormal Findings — Skin, Hair & Nails</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Diascopy</td><td>Press clear glass or plastic against the skin and look at the lesion under pressure. Colour FADES = vascular engorgement. Does NOT fade = hemorrhage in the skin.</td></tr>
+          <tr><td class="h">Petechiae / purpura / ecchymosis</td><td>Same finding at three sizes, NONE blanching. Petechiae <3 mm. Purpura 3 mm–1 cm. Ecchymosis >1 cm, purple or purplish-blue, fades over time.</td></tr>
+          <tr><td class="h">Angiomas & telangiectasia</td><td>Cherry angioma (Campbell De Morgan spots): dome shaped, bright red to violet/black, ± blanching. Telangiectasia: fine irregular vessels, blanches. Spider angioma: central red macule with radiating arms, blanches.</td></tr>
+          <tr><td class="h">Triple response of Lewis</td><td>Firm stroking (dermatographism) produces: initial red line (capillary dilatation) → reflex flare with broadening erythema (arteriolar dilatation) → linear wheal (transudation of fluid, i.e. edema).</td></tr>
+          <tr><td class="h">Pressure ulcer stages</td><td>I: INTACT skin, erythema failing to blanch, plus change in temperature, consistency, sensation, colour. II: PARTIAL thickness loss (epidermis, dermis or both). III: FULL thickness, subcutaneous necrosis, may extend to but NOT through muscle. IV: full thickness with destruction of tissue, muscle and/or bone.</td></tr>
+          <tr><td class="h">Tinea by site</td><td>Corporis (body) · pedis (foot) · barbae (beard) · cruris (groin) · capitis (scalp) · unguium (nails). Pedis: dry/scaling or macerated fissuring of interdigital spaces. Corporis: sharply demarcated round plaques with CENTRAL CLEARING. Capitis: round scaling patches of alopecia, hairs broken off close to scalp.</td></tr>
+          <tr><td class="h">Skin malignancies</td><td>Basal cell carcinoma: face; translucent PEARLY nodule, depressed centre, raised borders; may ulcerate; non-healing ulcer. Squamous cell carcinoma: face and sun-exposed; red scaling, crusting nodule or plaque that ulcerates and bleeds. Melanoma: irregularly coloured plaque with sharp notches and pigment variation.</td></tr>
+          <tr><td class="h">Melanoma warning letters</td><td>A asymmetry or shape · B border irregularity · C colour variation · D diameter larger than 6 mm · E evolving, elevation · F family history · G growing.</td></tr>
+          <tr><td class="h">Kaposi's sarcoma</td><td>The most frequent neoplasm in patients with acquired immunodeficiency syndrome. Light-coloured lesions coalescing into darker ones; dark blue-purple macules, papules, nodules and plaques; widely disseminated on legs, trunk, arms, neck and head.</td></tr>
+          <tr><td class="h">Patchy hair loss — three causes</td><td>Tinea capitis: SCALING patches, hairs broken close to scalp. Alopecia areata: round patches, 'EXCLAMATION POINT' hairs, chronic inflammatory disease of follicles, associated with autoimmune disorders. Trichotillomania: from an urge to pull, single or multiple patches. Also: androgenic alopecia = male pattern baldness; hirsutism = increased hair in women in a male pattern.</td></tr>
+          <tr><td class="h">Nail findings</td><td>Koilonychia: spoon-shaped concave, plate thins and inverts. Onycholysis: PAINLESS separation of plate from bed starting DISTALLY (chemicals, immersion, fungal, psoriasis, tetracycline, trauma). Pitting: dystrophy of the plate. Terry's nails: proximal white, distal dark. Green = pseudomonas. Brown–black = MELANOMA.</td></tr>
+          <tr><td class="h">Nail lines, hemorrhages, clubbing</td><td>Beau's lines: transverse DEPRESSIONS — halfway up the nail suggests illness about 3 MONTHS ago. Mee's lines: transverse lines. Splinter hemorrhages: distal capillary loop. Subungual hematoma: hemorrhage to the nail plate. Clubbing: nail base-to-finger angle GREATER THAN 180°, fingertip rounded and bulbous. Paronychia: soft tissue infection at cuticle or nail fold; acute is painful and purulent.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="technique" style="--acc:#3f5b6b;--acc-bg:#e4e8ea;--acc-zebra:#f2f4f5;--acc-ink:#314753">
+    <div class="shead"><span class="dot" style="background:#3f5b6b"></span><h2>Performing the Skin Examination</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">IPPA</td><td>Inspection, palpation, percussion, auscultation — the same order for EVERY body system except the ABDOMINAL examination. Some systems do not use all four.</td></tr>
+          <tr><td class="h">Equipment & environment</td><td>Ruler, light source, magnifying lens, gloves for open lesions. Patient in a gown so hair, anterior and posterior surfaces, palms and soles, nails and interdigital spaces can all be inspected. Good light, preferably NATURAL — artificial light may distort skin tone.</td></tr>
+          <tr><td class="h">Six characteristics assessed</td><td>Colour · moisture (dryness, sweating, oiliness) · temperature (warmth, coolness) · texture (roughness, smoothness) · mobility and turgor · lesions.</td></tr>
+          <tr><td class="h">Temperature technique</td><td>Use the DORSAL aspect of the hands.</td></tr>
+          <tr><td class="h">Mobility vs turgor</td><td>Mobility: normal skin lifts with ease; reduced mobility = EDEMA. Turgor: normal skin quickly resumes its shape; skin that remains elevated = DEHYDRATION.</td></tr>
+          <tr><td class="h">Central vs peripheral cyanosis</td><td>Central: often inadequate oxygenation IN THE LUNGS. Peripheral: usually inadequate CIRCULATION. Same colour, different organ.</td></tr>
+          <tr><td class="h">Hair & scalp</td><td>Inspect colour, distribution and quantity; palpate for texture. Separate the hair into sections to see the scalp, and inspect BEHIND THE EARS and the OCCIPUT. Should be clean — no lesions, discolorations, flaking or parasites. A magnifying glass aids inspection for lice (nits are tiny white ovoid granules adherent to hairs).</td></tr>
+          <tr><td class="h">Pruritus is not a diagnosis</td><td>It is the sensation causing the desire to scratch. Generalised itching with no obvious reason: dry skin, ageing, pregnancy, uremia, jaundice, lymphomas, leukemias, drug reaction, lice.</td></tr>
+          <tr><td class="h">History — bugs, drugs, contact</td><td>Bugs: family members or contacts with the same, travel. Drugs: systemic medications, over-the-counter AND prescription. Contact: allergens and irritants from hobbies, occupation, environment. Core questions: where it first appeared, what it looked like, how it progressed, associated symptoms, what treatment was tried.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Physical Diagnosis 2 Exam 1 Study Guide (Class of 2028). Covers Lectures 1 and 2; Ophthalmology and ENT are added as those decks are posted. For the full explanation behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
