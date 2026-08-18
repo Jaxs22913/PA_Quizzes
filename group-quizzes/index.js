@@ -310,5 +310,7 @@ window.GROUP_INDEX = {
 "physiology-exam-4-renal-physiology-1-quiz-version-2":{"title":"Renal I: Fluid Regulation & GFR — Quiz Set 2 (30 Questions)","category":"Physiology","sem":"summer-1-2026","n":30},
 "physiology-exam-4-renal-physiology-2-quiz":{"title":"Renal II: Tubular Transport & Regulation — Quiz (30 Questions)","category":"Physiology","sem":"summer-1-2026","n":30},
 "physiology-exam-4-renal-physiology-2-quiz-version-2":{"title":"Renal II: Tubular Transport & Regulation — Quiz Set 2 (30 Questions)","category":"Physiology","sem":"summer-1-2026","n":30},
-"physiology-exam-4-renal-physiology-i-quiz":{"title":"Renal Physiology I — Quiz (65 Questions)","category":"Physiology","sem":"summer-1-2026","n":65}
+"physiology-exam-4-renal-physiology-i-quiz":{"title":"Renal Physiology I — Quiz (65 Questions)","category":"Physiology","sem":"summer-1-2026","n":65},
+"principles-of-diagnostic-medicine-i-exam-1-lab-diagnostics-quiz":{"title":"Principles of Laboratory Diagnostics Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-1-lab-diagnostics-quiz-version-2":{"title":"Principles of Laboratory Diagnostics Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30}
 };
