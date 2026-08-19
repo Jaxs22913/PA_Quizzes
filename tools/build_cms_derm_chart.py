@@ -262,7 +262,7 @@ ROWS += [
   "<b>1st:</b> identify and discontinue or substitute the offending agent where feasible. Strict photoprotection &mdash; SPF 50+ broad-spectrum, physical blockers (zinc oxide, titanium dioxide).<br><b>2nd:</b> phototoxicity &mdash; supportive care. Photoallergy &mdash; topical or short systemic corticosteroid, antihistamine. Persistent light reaction &mdash; narrowband ultraviolet B desensitisation.",
   "Phototoxic drugs: tetracyclines (especially doxycycline), fluoroquinolones, amiodarone, thiazides, furosemide, voriconazole, nonsteroidals, psoralens, St John's Wort. Photoallergic: sunscreen chemicals (oxybenzone), sulfonamides, topical antihistamines, phenothiazines. Avoid medication during peak sun hours."),
 
- ("l3_s093_2.jpg", "Photodermatitis (phytophotodermatitis)",
+ (None, "Photodermatitis (phytophotodermatitis)",
   "Furanocoumarins from limes, celery, parsley, wild parsnip or fig plus ultraviolet A. <b>Linear or streaked hyperpigmentation</b> after lime juice and sun &mdash; &ldquo;margarita dermatitis&rdquo;. Painful blistering in the acute phase.<br>Berloque dermatitis: drip-pattern hyperpigmentation on the neck from bergamot oil.<br>Chronic actinic dermatitis: persistent eczematous eruption in chronically exposed skin in older males.",
   "Detailed exposure history &mdash; plants, topicals, fragrances, medications. <b>Photopatch testing</b> for photocontact allergy. Antinuclear antibody panel if lupus suspected. Biopsy if uncertain.<br><span class=warn>Photodermatitis spares the nasolabial folds; seborrhoeic dermatitis involves them.</span>",
   "<b>1st:</b> avoid the contactant and ultraviolet exposure concurrently. Acute blistering &mdash; cool compresses, wound care, mid-potency topical corticosteroid.<br><b>2nd:</b> hyperpigmentation &mdash; reassurance, it fades over months; hydroquinone or azelaic acid if persistent. Chronic actinic dermatitis &mdash; potent steroids, tacrolimus, hydroxychloroquine, narrowband ultraviolet B or PUVA, azathioprine.",
@@ -529,13 +529,13 @@ ROWS += [
   "<b>Best left untreated.</b><br><b>If treatment is wanted:</b> excision, curettage or laser.<br><span class=warn>AVOID CRYOTHERAPY &mdash; post-inflammatory hyperpigmentation.</span>",
   "Likely genetic, and believed to be a <b>developmental defect of the hair follicle</b>. Benign."),
 
- ("l8_s029_2.jpg", "Vitiligo",
+ ("l8_s022_1.jpg", "Vitiligo",
   "Common autoimmune disease causing depigmentation through <b>T-cell mediated destruction of melanocytes</b>. Can begin at any age but usually starts before the thirties &mdash; half before 20, a third before 12. Males and females equally affected.<br><b>Asymptomatic white, non-scaly macules and patches with distinct margins that FLUORESCE under a Wood's lamp.</b> Usually symmetrical; face, acral and genital areas are often the initial sites.<br><b>Segmental variant:</b> unilateral, does not cross the midline, block-like patterns, with unpredictable cycles of flare and stabilisation.<br><span class=pt>&ldquo;White patches are spreading and people stare &mdash; I've stopped going out.&rdquo;</span>",
   "<b>Clinical diagnosis.</b> <b>Wood's lamp examination in a DARK ROOM.</b><br><b>Labs</b> to correlate with associated autoimmune disease: complete blood count and antinuclear antibody.<br><span class=warn>Distinguishing segmental from non-segmental matters &mdash; they differ in diagnostic tools and treatment.</span>",
   "<b>Under 5% body surface (with phototherapy):</b> topical steroids (good efficacy, easy, cheap &mdash; watch skin atrophy and intraocular pressure) <i>or</i> topical calcineurin inhibitors &mdash; tacrolimus, pimecrolimus &mdash; safe and good for face, neck, intertriginous areas and children, but with <span class=warn>increased cancer risk</span>.<br><b>Over 5% body surface: PHOTOTHERAPY is first line &mdash; narrowband ultraviolet B, preferred over PUVA</b> (PUVA raises skin cancer risk). <b>Combination of topical + phototherapy is ideal.</b><br><b>Surgical (tissue and cellular grafting): only for highly stable disease.</b>",
   "<span class=warn>Do not dismiss it as &ldquo;cosmetic&rdquo;.</span> It affects patients psychologically and socially through low self-esteem and poor body image. <b>Psychological intervention is part of management</b>, alongside cosmetic and non-traditional therapies. Management is multifactorial &mdash; take a thorough medical, social and family history."),
 
- ("l8_s047_1.jpg", "Congenital melanocytic naevus",
+ ("l8_s029_2.jpg", "Congenital melanocytic naevus",
   "Pigmented neoplasms of melanocytes evident <b>at birth or shortly after</b>, from somatic mutations. Flat brown patches or plaques with smooth or slightly uneven borders; may be pebbly, rugose, verrucous or lobular. Small, medium or large. Most commonly trunk and extremities, though scalp and face are affected.<br><b>The larger the lesion, the higher the risk for melanoma.</b>",
   "<b>Clinical diagnosis</b>; sometimes biopsy.<br><span class=warn>If on the cranium or axial midline, consider NEUROCUTANEOUS MELANOSIS &mdash; get MRI brain with or without total spine, concordant with the anatomic location of the naevus.</span>",
   "<b>Depends on melanoma risk plus cosmetic and functional considerations.</b> The goal is to remove as much as possible while preserving function and improving appearance. <b>Observation versus surgical &mdash; ideally surgical, but if there is little skin for a graft site, observation may be the better option.</b> Symptoms are another indication.",
@@ -686,6 +686,35 @@ SECTION_LABELS = {
 }
 
 
+# Slides whose title marks them as non-content -- section dividers, the closing
+# "Questions?" slide, references, case studies. An image was taken from Lecture
+# 8 slide 47 ("Questions?") and shipped as congenital melanocytic naevus; it was
+# a photograph of a dog. This makes that class of error fail the build.
+NON_CONTENT = re.compile(r"^\s*(questions\??|resources?|case stud(y|ies)|references?|"
+                         r"thank you|acknowledg\w*)\s*$", re.I)
+
+
+def non_content_slides():
+    import os as _os
+    SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad"
+    files = {"l2": "cms_l2.txt", "l3": "cms_l3.txt", "l4": "cms_l4.txt",
+             "l5": "cms_l5.txt", "l8": "cms_l8.txt"}
+    out = {}
+    for tag, fn in files.items():
+        path = _os.path.join(SCRATCH, fn)
+        if not _os.path.exists(path):
+            continue                      # extraction not present; skip the guard
+        txt = open(path, encoding="utf-8").read()
+        parts = re.split(r"=== SLIDE (\d+) ===", txt)
+        bad = set()
+        for i in range(1, len(parts), 2):
+            head = parts[i + 1].strip().split("\n")[0] if parts[i + 1].strip() else ""
+            if NON_CONTENT.match(head):
+                bad.add(int(parts[i]))
+        out[tag] = bad
+    return out
+
+
 def prep_images():
     os.makedirs(OUT_DIR, exist_ok=True)
     mapping, missing = {}, []
@@ -772,14 +801,30 @@ HTML = """<!DOCTYPE html>
 <title>Dermatology Comparison Chart &mdash; CMS I Exam 1</title>
 <link rel="stylesheet" href="../theme.css">
 <style>
-  :root{--acc:#17494b;--acc2:#3f7d7a;--gold:#c08a2e;--ice:#eef5f4;}
+  /* LIGHT PALETTE ONLY, deliberately.
+     theme.css gives every non-index page dark mode by inverting the content
+     wrapper -- `:root[data-theme="dark"] body > .wrap { filter: invert(1)
+     hue-rotate(180deg) }` -- and re-inverting img/video so photographs are not
+     rendered as negatives. A page that ALSO ships its own dark palette gets
+     both, and the two cancel: an earlier draft here darkened the table and
+     theme.css then inverted it back to light while the rest of the site went
+     dark, leaving the "How to use this" panel as dark text on a dark ground.
+     So there is one mechanism, not two, and it is the site's. */
+  :root{
+    --acc:#17494b; --acc2:#3f7d7a; --gold:#c08a2e;
+    --c-line:#cfdcdb; --c-tbl:#fff; --c-zebra:#f7fbfa; --c-fg:#1b2b2a;
+    --c-name:#17494b; --c-b:#123c3d; --c-pt:#4a5f5e; --c-warn:#8c3b12;
+    --c-panel:#eef5f4; --c-panel-fg:#1b2b2a; --c-labs-h:#8a6508;
+    --c-btn-bg:#fff; --c-dup:#8a6508; --c-mute:#4c5f5e; --c-mute2:#5f7170;
+  }
   body{margin:0;}
   .wrap{max-width:1700px;margin:0 auto;padding:18px 14px 90px;}
   header.top{text-align:center;padding:26px 12px 6px;}
   header.top h1{margin:0 0 6px;font-size:clamp(1.4rem,3.4vw,2.1rem);color:var(--acc);}
-  header.top p{margin:3px 0;opacity:.85;font-size:.95rem;}
+  header.top p{margin:3px 0;color:var(--c-mute);font-size:.95rem;}
   .howto{max-width:900px;margin:14px auto 22px;padding:12px 14px;border-left:4px solid var(--gold);
-    background:var(--ice);border-radius:0 8px 8px 0;font-size:.92rem;line-height:1.55;}
+    background:var(--c-panel);color:var(--c-panel-fg);border-radius:0 8px 8px 0;
+    font-size:.92rem;line-height:1.55;}
   .filterbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 16px;}
   /* Print / Download-as-PDF. theme.css only un-clips `.table-scroll`; this page
      is a wide table in its own scroll box, so without these it exports as a
@@ -807,50 +852,35 @@ HTML = """<!DOCTYPE html>
     @page{size:A4 landscape;margin:10mm 8mm;}
   }
   .filterbar button{font:inherit;font-size:.85rem;font-weight:600;padding:6px 13px;border-radius:999px;
-    border:1.5px solid var(--acc2);background:#fff;color:var(--acc);cursor:pointer;}
+    border:1.5px solid var(--acc2);background:var(--c-btn-bg);color:var(--c-name);cursor:pointer;}
   .filterbar button[aria-pressed="true"]{background:var(--acc);color:#fff;border-color:var(--acc);}
-  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #cfdcdb;border-radius:12px;}
-  table{border-collapse:collapse;width:100%;min-width:1180px;background:#fff;}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--c-line);border-radius:12px;}
+  table{border-collapse:collapse;width:100%;min-width:1180px;background:var(--c-tbl);}
   thead th{position:sticky;top:0;z-index:3;background:var(--acc);color:#fff;font-size:.86rem;
     letter-spacing:.02em;text-align:left;padding:10px 11px;border-right:1px solid rgba(255,255,255,.18);}
   thead th:last-child{border-right:0;}
-  td{vertical-align:top;padding:11px;border-top:1px solid #dbe6e5;font-size:.87rem;line-height:1.5;}
+  td{vertical-align:top;padding:11px;border-top:1px solid var(--c-line);color:var(--c-fg);
+    font-size:.87rem;line-height:1.5;}
   tr.sec td{background:var(--acc2);color:#fff;font-weight:700;font-size:.95rem;padding:8px 12px;
     position:sticky;left:0;}
-  tbody tr:not(.sec):nth-child(even) td{background:#f7fbfa;}
+  tbody tr:not(.sec):nth-child(even) td{background:var(--c-zebra);}
   td.pic{width:230px;min-width:230px;}
-  td.pic img{width:100%;height:auto;border-radius:7px;display:block;border:1px solid #cfdcdb;}
-  td.pic figcaption{font-size:.68rem;opacity:.72;margin-top:4px;line-height:1.35;}
-  td.pic figcaption .deck{display:block;font-style:italic;opacity:.8;}
+  td.pic img{width:100%;height:auto;border-radius:7px;display:block;border:1px solid var(--c-line);}
+  td.pic figcaption{font-size:.68rem;color:var(--c-mute2);margin-top:4px;line-height:1.35;}
+  td.pic figcaption .deck{display:block;font-style:italic;color:var(--c-mute2);}
   td.pic figure{margin:0;}
-  .nopic{font-size:.72rem;opacity:.6;font-style:italic;padding:14px 6px;border:1px dashed #b9cbc9;
+  .nopic{font-size:.72rem;color:var(--c-mute2);font-style:italic;padding:14px 6px;border:1px dashed var(--c-line);
     border-radius:7px;text-align:center;}
-  td.name{width:150px;min-width:150px;font-weight:700;color:var(--acc);font-size:.95rem;}
-  .pt{display:block;margin-top:6px;font-style:italic;opacity:.9;color:#4a5f5e;}
-  .warn{color:#8c3b12;font-weight:600;}
-  .labs{margin-top:9px;padding:7px 9px;border-radius:7px;background:#eef5f4;
-    border-left:3px solid var(--gold);font-size:.83rem;line-height:1.45;}
+  td.name{width:150px;min-width:150px;font-weight:700;color:var(--c-name);font-size:.95rem;}
+  .pt{display:block;margin-top:6px;font-style:italic;color:var(--c-pt);}
+  .warn{color:var(--c-warn);font-weight:600;}
+  .labs{margin-top:9px;padding:7px 9px;border-radius:7px;background:var(--c-panel);
+    color:var(--c-panel-fg);border-left:3px solid var(--gold);font-size:.83rem;line-height:1.45;}
   .labs-h{display:block;font-size:.66rem;font-weight:800;letter-spacing:.07em;
-    text-transform:uppercase;color:#8a6508;margin-bottom:3px;}
-  .dup{display:block;font-weight:600;font-size:.68rem;color:var(--gold);
+    text-transform:uppercase;color:var(--c-labs-h);margin-bottom:3px;}
+  .dup{display:block;font-weight:600;font-size:.68rem;color:var(--c-dup);
     text-transform:uppercase;letter-spacing:.04em;margin-top:3px;}
-  b{color:#123c3d;}
-  @media (prefers-color-scheme: dark){
-    .scroll{border-color:#2b3d3c;}
-    table{background:#141b1b;}
-    tbody tr:not(.sec):nth-child(even) td{background:#182120;}
-    td{border-top-color:#2b3d3c;color:#dbe7e6;}
-    td.name{color:#8fd3cd;}
-    b{color:#a9e0da;}
-    .pt{color:#9fb5b3;}
-    .warn{color:#f0a878;}
-    .labs{background:#1d2726;border-left-color:#c08a2e;}
-    .labs-h{color:#e0b463;}
-    .dup{color:#e0b463;}
-    .howto{background:#16211f;}
-    .filterbar button{background:#141b1b;color:#8fd3cd;}
-    td.pic img{border-color:#2b3d3c;}
-  }
+  b{color:var(--c-b);}
 </style>
 </head><body>
 <!-- theme.js gates its corner "Download as PDF" button on .guide-back-bar. -->
@@ -862,7 +892,7 @@ HTML = """<!DOCTYPE html>
   <h1>Dermatology Comparison Chart</h1>
   <p>Clinical Medicine and Surgery I &middot; Exam 1 &middot; Class of 2028</p>
   <p>__NROWS__ conditions across Lectures 2, 3, 4, 5 and 8 &middot; __NIMGS__ images from the lecture slides</p>
-  <p style="margin-top:10px;font-size:.82rem;opacity:.8">Use the <b>Download as PDF</b> button, top
+  <p style="margin-top:10px;font-size:.82rem;color:var(--c-mute)">Use the <b>Download as PDF</b> button, top
   right, to keep this offline &mdash; it prints landscape with every row and every photograph intact.</p>
 </header>
 
@@ -881,7 +911,7 @@ clinical diagnosis, and knowing which ones are the exception is the point of rea
 <div class="scroll">
 <table>
 <thead><tr>
-  <th>Picture</th><th>Name</th><th>Common manifestation<br><span style="font-weight:400;opacity:.8">and how a patient may describe it</span></th>
+  <th>Picture</th><th>Name</th><th>Common manifestation<br><span style="font-weight:400;color:#cfe3e1">and how a patient may describe it</span></th>
   <th>First test &amp; gold standard</th><th>First line &rarr; second line treatment</th><th>Patient education</th>
 </tr></thead>
 <tbody>
@@ -950,6 +980,29 @@ def main():
     assert html.count("<img ") == n_imgs, "image count mismatch"
     assert 'class="guide-back-bar"' in html, "no back bar, so theme.js adds no PDF button"
     assert "@media print" in html, "no print rules"
+    bad_slides = non_content_slides()
+    for row in ROWS:
+        if row[0] == "SECTION" or not row[0]:
+            continue
+        tag, sl = slide_of(row[0])
+        assert sl not in bad_slides.get(tag, ()), (
+            "%s takes its image from %s slide %d, which is a non-content slide"
+            % (row[1], tag, sl))
+    print("  no image taken from a title / questions / resources slide")
+    # theme.css dark mode is filter:invert on body > .wrap, and text dimmed
+    # with `opacity` under that filter rendered near-black on near-black.
+    # Dim with an explicit colour instead.
+    import re as _o
+    bad = _o.findall(r"opacity:\.?\d", html)
+    assert not bad, "opacity-dimmed text will misbehave under the wrap invert: %r" % bad
+    # See the palette comment in the stylesheet: theme.css already does dark
+    # mode for this page by inverting body > .wrap. A page-level dark palette
+    # fights it and the two cancel out.
+    assert "prefers-color-scheme" not in html, (
+        "page-level dark palette fights theme.css's wrap inversion")
+    import re as _r
+    assert not _r.search(r':root\[data-theme=[^\]]*\]\s*\{', html), (
+        "page-level data-theme palette fights theme.css's wrap inversion")
     assert html.count('class="labs"') == n_rows, "every row needs a labs block"
     print("  images eager, back bar present, print rules present")
 
