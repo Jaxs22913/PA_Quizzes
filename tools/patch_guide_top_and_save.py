@@ -22,8 +22,13 @@
    its own, which would have shipped a worse duplicate of a tested feature next
    to the real one.
 
-   The chart does need print rules of its own on top of theme.css: it is a wide
-   table in a horizontal scroll box, and theme.css only un-clips `.table-scroll`.
+   The chart needs print rules of its own on top of theme.css -- it is a wide
+   table in a horizontal scroll box and theme.css only un-clips `.table-scroll`
+   -- and it must NOT lazy-load its photographs: an export before that was
+   fixed carried 10 of 84 images, because a lazy image that never entered the
+   viewport is absent from the print output. Both of those live in
+   build_cms_derm_chart.py, because the chart is generated and anything patched
+   in here would be wiped by the next build. This script only verifies them.
 """
 import os, re
 
@@ -64,65 +69,34 @@ HEADER_CSS = """
 """
 
 # The chart is a wide table inside its own scroll box; theme.css only un-clips
-# `.table-scroll`, so it needs these to export as anything but a clipped strip.
-CHART_PRINT_CSS = """
-  @media print{
-    .filterbar, .savehint{display:none !important;}
-    .wrap{max-width:none !important;padding:0 !important;}
-    .scroll{overflow:visible !important;border:0 !important;}
-    table{min-width:0 !important;width:100% !important;font-size:7.4pt !important;
-      table-layout:fixed;}
-    td,th{padding:4px 5px !important;}
-    thead th{position:static !important;background:#17494b !important;color:#fff !important;
-      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    tr.sec td{position:static !important;background:#3f7d7a !important;color:#fff !important;
-      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    td.pic{width:150px !important;min-width:150px !important;}
-    td.pic img{max-height:96px !important;width:auto !important;}
-    td.pic figcaption{font-size:5.6pt !important;}
-    .pt{font-size:7pt !important;}
-    td.name{width:110px !important;min-width:110px !important;}
-    tr,figure{break-inside:avoid;page-break-inside:avoid;}
-    .howto{break-inside:avoid;}
-    @page{size:A4 landscape;margin:10mm 8mm;}
-  }
-"""
 
-# theme.js gates the Download-as-PDF corner button on this element.
-BACKBAR = """<div class="guide-back-bar">
-  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
-</div>
-"""
 
 
 def main():
     # ---- 1. guide header
     s = open(GUIDE, encoding="utf-8").read()
     old = re.search(r'<header class="top">.*?</header>', s, re.S).group()
-    assert "hdr-links" not in old, "guide header already updated"
-    s = s.replace(old, NEW_HEADER, 1)
-    anchor = "  header.top p{margin:2px 0;color:#f5e6ec;font-size:.95rem;}"
-    assert s.count(anchor) == 1, "guide header css anchor not found"
-    s = s.replace(anchor, anchor + HEADER_CSS, 1)
-    open(GUIDE, "w", encoding="utf-8").write(s)
-    print("guide header: lecture list, star explanation, 3 companion links, save hint")
+    if "hdr-links" in old:
+        print("guide header: already applied")
+    else:
+        s = s.replace(old, NEW_HEADER, 1)
+        anchor = "  header.top p{margin:2px 0;color:#f5e6ec;font-size:.95rem;}"
+        assert s.count(anchor) == 1, "guide header css anchor not found"
+        s = s.replace(anchor, anchor + HEADER_CSS, 1)
+        open(GUIDE, "w", encoding="utf-8").write(s)
+        print("guide header: lecture list, star explanation, 3 companion links, save hint")
+    # the guide's figures must not lazy-load either, for the same reason
+    g = open(GUIDE, encoding="utf-8").read()
+    assert 'loading="lazy"' not in g, "guide has lazy images; they will not print"
 
-    # ---- 2. opt the chart in to the existing corner Download-as-PDF button
+    # ---- 2. the chart is a GENERATED file
+    # Its back bar, print rules and save hint used to be injected here, which
+    # meant the next run of build_cms_derm_chart.py silently wiped them. They
+    # now live in that builder's own template, where regeneration keeps them.
     c = open(CHART, encoding="utf-8").read()
-    assert "guide-back-bar" not in c, "chart already opted in"
-    marker = '<div class="wrap">'
-    assert c.count(marker) == 1, "chart wrap not found"
-    c = c.replace(marker, BACKBAR + marker, 1)
-    css_anchor = "  .filterbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 16px;}"
-    assert c.count(css_anchor) == 1, "chart css anchor not found"
-    c = c.replace(css_anchor, css_anchor + CHART_PRINT_CSS, 1)
-    c = c.replace("<p>__NROWS__", "<p>__NROWS__")   # no-op guard, template already rendered
-    hint = ('<p style="margin-top:10px;font-size:.82rem;opacity:.8">Use the '
-            '<b>Download as PDF</b> button, top right, to keep this offline '
-            '&mdash; it prints landscape with every row intact.</p>')
-    c = c.replace("</header>", hint + "\n</header>", 1)
-    open(CHART, "w", encoding="utf-8").write(c)
-    print("chart: opted in to the existing corner Download-as-PDF button + landscape print rules")
+    assert 'class="guide-back-bar"' in c and "@media print" in c, (
+        "chart is missing its back bar or print rules -- re-run build_cms_derm_chart.py")
+    print("chart: back bar and print rules confirmed (owned by build_cms_derm_chart.py)")
 
     # ---- verification
     for path in (GUIDE, CHART):

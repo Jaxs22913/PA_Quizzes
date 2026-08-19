@@ -639,8 +639,12 @@ def render(mapping):
             tag, sl = slide_of(src)
             cite = "%s &middot; Slide %d" % (LECTURE[tag], sl)
             deck = H.escape(DECK[tag])
+            # NOT loading="lazy". A lazy image that never entered the viewport
+            # is absent from the print output -- a test export carried 10 of 84
+            # photographs. This page exists to be downloaded, so the images load
+            # eagerly and `decoding="async"` keeps scrolling smooth instead.
             pic = ('<figure><img src="cms-derm-chart-images/%s" alt="%s, from the lecture slides" '
-                   'loading="lazy"><figcaption>%s<span class="deck">%s</span></figcaption></figure>'
+                   'decoding="async"><figcaption>%s<span class="deck">%s</span></figcaption></figure>'
                    % (mapping[src], H.escape(name.replace("&mdash;", "-")), cite, deck))
             n_imgs += 1
         else:
@@ -674,6 +678,29 @@ HTML = """<!DOCTYPE html>
   .howto{max-width:900px;margin:14px auto 22px;padding:12px 14px;border-left:4px solid var(--gold);
     background:var(--ice);border-radius:0 8px 8px 0;font-size:.92rem;line-height:1.55;}
   .filterbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 16px;}
+  /* Print / Download-as-PDF. theme.css only un-clips `.table-scroll`; this page
+     is a wide table in its own scroll box, so without these it exports as a
+     clipped strip. Landscape, repeating header, no row split across a break. */
+  @media print{
+    .filterbar, .savehint{display:none !important;}
+    .wrap{max-width:none !important;padding:0 !important;}
+    .scroll{overflow:visible !important;border:0 !important;}
+    table{min-width:0 !important;width:100% !important;font-size:7.4pt !important;
+      table-layout:fixed;}
+    td,th{padding:4px 5px !important;}
+    thead th{position:static !important;background:#17494b !important;color:#fff !important;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    tr.sec td{position:static !important;background:#3f7d7a !important;color:#fff !important;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    td.pic{width:150px !important;min-width:150px !important;}
+    td.pic img{max-height:96px !important;width:auto !important;}
+    td.pic figcaption{font-size:5.6pt !important;}
+    .pt{font-size:7pt !important;}
+    td.name{width:110px !important;min-width:110px !important;}
+    tr,figure{break-inside:avoid;page-break-inside:avoid;}
+    .howto{break-inside:avoid;}
+    @page{size:A4 landscape;margin:10mm 8mm;}
+  }
   .filterbar button{font:inherit;font-size:.85rem;font-weight:600;padding:6px 13px;border-radius:999px;
     border:1.5px solid var(--acc2);background:#fff;color:var(--acc);cursor:pointer;}
   .filterbar button[aria-pressed="true"]{background:var(--acc);color:#fff;border-color:var(--acc);}
@@ -715,11 +742,17 @@ HTML = """<!DOCTYPE html>
   }
 </style>
 </head><body>
+<!-- theme.js gates its corner "Download as PDF" button on .guide-back-bar. -->
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
 <div class="wrap">
 <header class="top">
   <h1>Dermatology Comparison Chart</h1>
   <p>Clinical Medicine and Surgery I &middot; Exam 1 &middot; Class of 2028</p>
   <p>__NROWS__ conditions across Lectures 2, 3, 4, 5 and 8 &middot; __NIMGS__ images from the lecture slides</p>
+  <p style="margin-top:10px;font-size:.82rem;opacity:.8">Use the <b>Download as PDF</b> button, top
+  right, to keep this offline &mdash; it prints landscape with every row and every photograph intact.</p>
 </header>
 
 <div class="howto"><b>How to use this.</b> Read it left to right for one condition: what it looks like,
@@ -794,6 +827,13 @@ def main():
         for i, cell in enumerate(row[1:], 1):
             assert cell and cell.strip(), "empty cell %d in %r" % (i, row[1])
     print("  every cell populated")
+    # A lazy-loaded image that never entered the viewport is missing from the
+    # print output. An export before this check carried 10 of 84 photographs.
+    assert 'loading="lazy"' not in html, "lazy images will not survive Download as PDF"
+    assert html.count("<img ") == n_imgs, "image count mismatch"
+    assert 'class="guide-back-bar"' in html, "no back bar, so theme.js adds no PDF button"
+    assert "@media print" in html, "no print rules"
+    print("  images eager, back bar present, print rules present")
 
 
 if __name__ == "__main__":
