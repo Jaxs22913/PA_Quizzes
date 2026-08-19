@@ -46,6 +46,15 @@
     font-weight:800;
   }
   header.top p{margin:2px 0;color:#f5e6ec;font-size:.95rem;}
+  header.top .hdr-note{margin-top:12px;font-size:.86rem;background:rgba(255,255,255,.14);
+    display:inline-block;padding:7px 13px;border-radius:9px;}
+  header.top .hdr-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  header.top .hdr-links a{font-size:.83rem;font-weight:700;color:#fff;text-decoration:none;
+    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;}
+  header.top .hdr-links a:hover{background:rgba(255,255,255,.16);}
+  header.top .hdr-save{margin-top:12px;font-size:.8rem;opacity:.85;}
+  @media print{ header.top .hdr-links, header.top .hdr-save{display:none !important;} }
+
   .layout{display:flex;max-width:1180px;margin:0 auto;}
   nav.toc{
     position:sticky;top:38px;align-self:flex-start;
@@ -204,8 +213,22 @@
 </div>
 <header class="top">
   <h1>Clinical Medicine and Surgery I &middot; Exam 1 &mdash; Study Guide</h1>
-  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>
-  <p>Covers Lectures 1&ndash;5 and 8 &middot; further sections are added as each Exam 1 lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>
+  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028 &middot; Exam 28 August</p>
+  <p><b>Lecture 1</b> clinical reasoning, then the dermatology block &mdash;
+     <b>2</b> General Dermatology I &middot; <b>3</b> Dermatology II &middot;
+     <b>4</b> Cutaneous Bacterial Infections &middot; <b>5</b> Dermatological Infestations &middot;
+     <b>8</b> Pigmented Skin Lesions</p>
+  <p style="opacity:.9">Sections 6, 7 and 9 are added when those decks are posted &middot;
+     Instructional Objectives quoted verbatim from the syllabus and answered in order</p>
+  <p class="hdr-note">&#9733; <b>Starred blocks are things the professor said out loud</b> in the
+     lecture recordings &mdash; what she will and will not ask, and the questions she said she would
+     write. They are not on the slides.</p>
+  <div class="hdr-links">
+    <a href="cms-derm-comparison-chart.html">Dermatology Comparison Chart &rarr;</a>
+    <a href="cms-exam-1-cram-sheet.html">Cram Sheet &rarr;</a>
+    <a href="../index.html#cms-1">Quizzes &rarr;</a>
+  </div>
+  <p class="hdr-save">Use the <b>Download as PDF</b> button, top right, to keep this offline.</p>
 </header>
 
 <div class="layout wrap" data-readable>
