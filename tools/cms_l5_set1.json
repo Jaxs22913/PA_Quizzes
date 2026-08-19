@@ -1,54 +1,55 @@
 {
  "set1": [
   {
-   "topic": "Lyme disease",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "When is intravenous antibiotic therapy used in Lyme disease?",
+   "topic": "Primary and secondary lesions",
+   "io": "Objective b — Differentiate primary from secondary skin lesions",
+   "q": "What does the presence of crusting or scaling on a lesion indicate?",
    "opts": [
     [
-     "For some cutaneous manifestations, acrodermatitis chronica atrophicans and arthritis",
-     "Correct — ceftriaxone, cefotaxime or penicillin G are the agents named."
+     "That the epidermis has been affected",
+     "Correct — that inference is what makes crust and scale useful morphological information."
     ],
     [
-     "For every patient at the moment the erythema migrans lesion is first recognised",
-     "Early erythema migrans is treated orally."
+     "That the subcutaneous tissue is involved",
+     "Deeper involvement is not what crusting signals."
     ],
     [
-     "For prophylaxis in anyone bitten by a tick in an endemic region of the country",
-     "Prophylaxis is not the described indication."
+     "That the lesion is infectious in origin",
+     "Crust and scale do not by themselves indicate infection."
     ],
     [
-     "For patients who cannot tolerate doxycycline, in place of a macrolide antibiotic",
-     "Macrolides are the second-line oral option in that situation."
+     "That the lesion has begun to resolve",
+     "Crusting does not indicate resolution."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 80"
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 3"
   },
   {
-   "topic": "Hobo spider",
+   "topic": "Pediculosis",
    "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How does a hobo spider bite present?",
+   "slot": "escalation",
+   "q": "Head lice have recurred after two pediculicide courses. Which approach is described?",
    "opts": [
     [
-     "An immediately painful sting with erythema, swelling and urticaria developing at the site",
-     "That describes a Hymenoptera sting."
+     "A third course of the same pediculicide at double the concentration",
+     "Repeating the same agent at higher strength is not described."
     ],
     [
-     "A slowly advancing serpentine trail that progresses two to three centimetres each day",
-     "That describes cutaneous larva migrans."
+     "Occlusive home remedies such as mayonnaise or mineral oil alone",
+     "Those may not be lethal to lice."
     ],
     [
-     "A painless bite with induration and paraesthesia within thirty minutes, a large red area, and vesicles within thirty-six hours",
-     "Correct — eschar may follow, and systemic symptoms include headache, nausea and memory impairment."
+     "Oral ivermectin given as a single dose to the whole household",
+     "That is not the described approach here."
     ],
     [
-     "A painful bite with sweating and piloerection within thirty minutes, then crampy abdominal pain and muscle spasms",
-     "That describes a black widow bite."
+     "A multimodal approach combining physical methods with adjuvant chemical therapy",
+     "Correct — increasing resistance is the stated reason."
     ]
    ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 64"
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 30"
   },
   {
    "topic": "Hymenoptera",
@@ -76,160 +77,14 @@
    "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 42"
   },
   {
-   "topic": "Scabies",
-   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
-   "q": "In which patients might scabies excoriations be seen along the head and neck?",
-   "opts": [
-    [
-     "Patients who have already been treated once",
-     "Prior treatment does not change the distribution."
-    ],
-    [
-     "Infants, the elderly and the immunocompromised",
-     "Correct — healthy adults have head and neck sparing."
-    ],
-    [
-     "Adolescents and young adults in shared housing",
-     "Crowding aids transmission but does not change the distribution."
-    ],
-    [
-     "Pregnant patients in their third trimester",
-     "Pregnancy affects treatment choice, not distribution."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 7"
-  },
-  {
-   "topic": "Black widow spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which patients are at increased risk of complications from a black widow bite, and how is envenomation treated?",
-   "opts": [
-    [
-     "The very old, the very young and those with cardiovascular disease; treat with calcium gluconate, narcotics, muscle relaxants and benzodiazepines",
-     "Correct, and tetanus vaccination status must be up to date."
-    ],
-    [
-     "Pregnant patients and children under eight years of age; treat with doxycycline given through a graded desensitisation protocol",
-     "That protocol belongs to Rocky Mountain spotted fever."
-    ],
-    [
-     "Immunosuppressed patients and the elderly; treat with ivermectin every two weeks for three doses",
-     "That regimen belongs to hyperkeratotic scabies."
-    ],
-    [
-     "Patients with a positive skin test; treat with subcutaneous epinephrine and desensitisation therapy",
-     "That belongs to Hymenoptera hypersensitivity."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 58"
-  },
-  {
-   "topic": "Caterpillars",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "By which mechanisms do caterpillars produce skin disease?",
-   "opts": [
-    [
-     "Burrowing into the stratum corneum where the organism deposits its eggs and faeces",
-     "That describes the scabies mite."
-    ],
-    [
-     "Mechanical irritation by pointed hairs, toxin injection through hollow hairs, and hypersensitivity to hairs",
-     "Correct — the aggregate of these effects is called lepidopterism."
-    ],
-    [
-     "Direct penetration of the skin by larvae that then migrate through the epidermal layer of the skin",
-     "That describes cutaneous larva migrans."
-    ],
-    [
-     "Injection of a neurotoxin through a modified ovipositor when the insect is threatened",
-     "That describes Hymenoptera stings."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 46"
-  },
-  {
-   "topic": "Pediculosis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "In whom is body louse infestation typically found, and how does it persist?",
-   "opts": [
-    [
-     "Schoolchildren sharing hats and hair accessories, persisting through repeated close head contact",
-     "That describes head lice."
-    ],
-    [
-     "Sexually active adults across all social levels, often with a concurrent sexually transmitted infection",
-     "That describes pubic lice."
-    ],
-    [
-     "Long-term care residents who are elderly and immunosuppressed, persisting through staff carriage",
-     "That describes facility-associated scabies."
-    ],
-    [
-     "Homeless people, refugees, war victims and those in crowded conditions, persisting via unwashed clothing",
-     "Correct — transmission is through contaminated clothing and bedding."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 24"
-  },
-  {
-   "topic": "Pediculosis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which three lice cause pediculosis, and which body regions do they affect?",
-   "opts": [
-    [
-     "Phthirus pubis on the scalp, Pediculus humanus capitis on pubic skin, and Cimex pilosellus on the trunk",
-     "None of those pairings is correct."
-    ],
-    [
-     "Pediculus humanus capitis on the scalp, Pediculus humanus humanus on the trunk, Phthirus pubis on pubic skin",
-     "Correct. The body louse is about 30% larger than the head louse."
-    ],
-    [
-     "Pediculus humanus capitis on the trunk, Pediculus humanus humanus on the scalp, Phthirus pubis on the eyelashes",
-     "The first two are the wrong way round."
-    ],
-    [
-     "Sarcoptes scabiei on the scalp, Cimex lectularius on the trunk, and Phthirus pubis on pubic skin",
-     "The first two organisms are the scabies mite and the bedbug."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 23"
-  },
-  {
-   "topic": "Cutaneous larva migrans",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is hookworm folliculitis?",
-   "opts": [
-    [
-     "Pustules on an erythematous base each pierced by a single central hair shaft",
-     "That is ordinary bacterial folliculitis."
-    ],
-    [
-     "Indurated crusted nodules on the trunk of an infant with heavy infestation",
-     "Those nodules occur in infantile scabies."
-    ],
-    [
-     "Follicular papules and pustules confined to one location, usually the buttock",
-     "Correct — it may need repeated courses of treatment."
-    ],
-    [
-     "Follicular pustules over the trunk and buttocks after hot tub exposure",
-     "That is Pseudomonas folliculitis from the previous lecture."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 51"
-  },
-  {
    "topic": "Pediculosis",
    "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
    "q": "Which age group is most affected by head lice, and how is it usually transmitted?",
    "opts": [
+    [
+     "Adults over forty years, primarily by sexual contact and shared towels or bedding",
+     "That describes pubic lice."
+    ],
     [
      "Homeless adults, primarily by contaminated clothing that cannot be washed or changed",
      "That describes body lice."
@@ -241,1091 +96,10 @@
     [
      "Children between three and twelve years, primarily by direct head-to-head contact",
      "Correct. Indirect spread through combs, brushes, bedding and headgear is less common."
-    ],
-    [
-     "Adults over forty years, primarily by sexual contact and shared towels or bedding",
-     "That describes pubic lice."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 24"
-  },
-  {
-   "topic": "Lyme disease",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which organism causes Lyme disease, and how is it maintained in the environment?",
-   "opts": [
-    [
-     "Borrelia burgdorferi, a spirochete, maintained by transstadial passage through tick life stages with birds and deer as dispersal animals",
-     "Correct — it occurs across the northern hemisphere in North America, Europe and Asia."
-    ],
-    [
-     "Rickettsia rickettsii, a bacterium, maintained in dog ticks, wood ticks and rodents across the southeastern and south central states",
-     "That organism causes Rocky Mountain spotted fever."
-    ],
-    [
-     "Sarcoptes scabiei, maintained by close contact between humans in crowded living conditions",
-     "That organism causes scabies."
-    ],
-    [
-     "A parasitic flatworm, maintained in snails and waterfowl in fresh water and released as cercariae",
-     "That organism causes cercarial dermatitis."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 68"
-  },
-  {
-   "topic": "Primary and secondary lesions",
-   "io": "Objective b — Differentiate primary from secondary skin lesions",
-   "q": "Once a reaction pattern has been recognised, how is the differential narrowed further?",
-   "opts": [
-    [
-     "By the duration of the eruption, the patient's age, and whether treatment has been tried",
-     "Those are useful clinically but are not the characteristics named here."
-    ],
-    [
-     "By culture and sensitivity of the lesion together with a complete blood count",
-     "Laboratory testing is not what refines the morphological differential."
-    ],
-    [
-     "By whether the patient reports pruritus and whether there is regional lymphadenopathy",
-     "Symptoms and nodes are helpful but are not the named characteristics."
-    ],
-    [
-     "By colour, shape, configuration of lesions relative to one another, and distribution on the body",
-     "Correct. Those characteristics tune the differential the reaction pattern generated."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 3"
-  },
-  {
-   "topic": "Rocky Mountain spotted fever",
-   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
-   "q": "How is Rocky Mountain spotted fever treated, including in pregnancy and young children?",
-   "opts": [
-    [
-     "Intravenous ceftriaxone for all patients, with oral therapy reserved for prophylaxis",
-     "That is not the described regimen."
-    ],
-    [
-     "Doxycycline for adults, pregnant patients and children, with desensitisation where it is contraindicated",
-     "Correct — 100 mg twice daily for adults and 2.2 mg per kilogram twice daily for children, for 5 to 10 days."
-    ],
-    [
-     "Amoxicillin for children and pregnant patients, with doxycycline reserved for adults only",
-     "That substitution belongs to Lyme disease rather than this one."
-    ],
-    [
-     "Azithromycin for all patients, since doxycycline is contraindicated below eight years of age",
-     "Desensitisation allows doxycycline to be used even in those groups."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 86"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which distribution is typical of scabies in a healthy adult?",
-   "opts": [
-    [
-     "Back, neck, shoulders and waist as linear excoriations, with post-inflammatory pigmentation",
-     "That is the distribution of body lice."
-    ],
-    [
-     "Interdigital webs, sides of fingers, volar wrists, elbows, axillae and genitalia, sparing head and neck",
-     "Correct. The areolae are also involved in women."
-    ],
-    [
-     "Scalp and hairline first, then spreading down the neck and onto the upper back over weeks",
-     "Head and neck are spared in healthy adults."
-    ],
-    [
-     "Ankles and wrists first, then spreading centripetally to involve the palms and the soles",
-     "That is the spread of the Rocky Mountain spotted fever rash."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 7"
-  },
-  {
-   "topic": "Pediculosis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What are maculae caeruleae and which infestation produces them?",
-   "opts": [
-    [
-     "Linear excoriations on the back, neck, shoulders and waist with post-inflammatory pigmentation, in body lice",
-     "Those are the signs of body lice rather than this finding."
-    ],
-    [
-     "Two millimetre erythematous macules or papules with scaling and excoriation, seen in head lice",
-     "Those are the lesions of head lice."
-    ],
-    [
-     "A central violaceous area ringed by blanched skin and then by asymmetric erythema, in spider bites",
-     "That is the red, white and blue sign of the brown recluse."
-    ],
-    [
-     "Slate-grey to bluish irregular macules about 1 cm across representing haemorrhage, seen in pubic lice",
-     "Correct, alongside papular urticaria at the feeding sites, commonly periumbilical."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 26"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How is hyperkeratotic scabies in an immunosuppressed patient treated?",
-   "opts": [
-    [
-     "Topical permethrin applied overnight on a single occasion with no repeat application at all",
-     "That is inadequate even for ordinary scabies, which needs a second application."
-    ],
-    [
-     "Oral albendazole 400 mg daily for three days with no topical therapy given alongside it",
-     "That is the treatment of cutaneous larva migrans."
-    ],
-    [
-     "Oral doxycycline 100 mg twice daily for ten to fourteen days as monotherapy",
-     "That regimen belongs to tick-borne illness."
-    ],
-    [
-     "Ivermectin every two weeks for two to three doses, with topical permethrin every three days to weekly",
-     "Correct — that combination is used when individual therapy fails."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 19"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which organism causes scabies and how is it usually transmitted?",
-   "opts": [
-    [
-     "Pediculus humanus capitis, by direct head-to-head contact between two individuals",
-     "That organism and route belong to head lice."
-    ],
-    [
-     "Cimex lectularius, by spread in the clothing and baggage of travellers and visitors",
-     "That organism and route belong to bedbugs."
-    ],
-    [
-     "Borrelia burgdorferi, by the blood meal of a tick that has fed on a reservoir animal",
-     "That organism and route belong to Lyme disease."
-    ],
-    [
-     "Sarcoptes scabiei variety hominis, by close physical contact for fifteen to twenty minutes",
-     "Correct. It may also be acquired from the bedding or underclothing of an infested person."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 5"
-  },
-  {
-   "topic": "Hymenoptera",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How should a honeybee sting be removed and why?",
-   "opts": [
-    [
-     "Apply ice for twenty minutes first, then remove it once the swelling has settled",
-     "Delay allows more venom to be pumped in."
-    ],
-    [
-     "Scrape it off with a card edge or dull knife held parallel to the skin, as fast as possible",
-     "Correct — the barbed ovipositor stays impaled and continues to pump venom."
-    ],
-    [
-     "Grasp it with fine forceps and pull it straight out with steady traction on the shaft",
-     "Scraping parallel to the surface is the described technique."
-    ],
-    [
-     "Leave it in place, since removing it releases the remaining venom into the tissue",
-     "It should be removed as fast as possible."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 42"
-  },
-  {
-   "topic": "Brown recluse spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is the hallmark sign of a brown recluse bite?",
-   "opts": [
-    [
-     "The bull's eye sign — a lesion over 5 cm with central clearing and a darker punctate centre",
-     "That is erythema migrans in Lyme disease."
-    ],
-    [
-     "The train-track sign — two parallel rows of purpura at the site of contact with the skin",
-     "That is the asp or puss caterpillar sting."
-    ],
-    [
-     "The red, white and blue sign — a central violaceous area, a blanched rim, then large asymmetric erythema",
-     "Correct. Reactions range from mild and local to severe ulcerative necrosis."
-    ],
-    [
-     "The delta-wing jet sign — a dense dark head with the body, eggs and burrow trailing behind it",
-     "That is a dermoscopic sign in scabies."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 60"
-  },
-  {
-   "topic": "Pediculosis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which physical methods are described for head lice, and what is their limitation?",
-   "opts": [
-    [
-     "Weekly application of an occlusive agent such as mayonnaise or mineral oil to smother the live lice and eggs",
-     "Those alternatives may not be lethal to lice."
-    ],
-    [
-     "Head shaving, or combing nits out after two minutes of hair moisturiser every few days; effective but slow and painful",
-     "Correct — they need adjuvant therapy alongside them."
-    ],
-    [
-     "Head shaving alone, which is completely curative and requires no further treatment at all",
-     "Physical methods need adjuvant therapy."
-    ],
-    [
-     "Daily hot air drying of the scalp, which kills both the live lice and the attached eggs",
-     "Hair is dried after combing rather than used as the treatment itself."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 30"
-  },
-  {
-   "topic": "Caterpillars",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which specific physical measure is used in caterpillar exposure?",
-   "opts": [
-    [
-     "Stripping the hairs off the skin with adhesive tape",
-     "Correct, alongside symptomatic therapy and antivenom for certain categories."
-    ],
-    [
-     "Scraping the site with a card edge held parallel to the skin",
-     "That is the technique for removing a honeybee stinger."
-    ],
-    [
-     "Applying blue or black ink and looking for a zigzag line",
-     "That is the burrow ink test for scabies."
-    ],
-    [
-     "Combing the area after applying a hair moisturiser for two minutes",
-     "That is a physical method used for head lice."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 48"
-  },
-  {
-   "topic": "Cercarial dermatitis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What causes cercarial dermatitis, also called swimmer's itch?",
-   "opts": [
-    [
-     "Penetration of the stratum corneum by a mite that tunnels through it as it moves",
-     "That describes scabies."
-    ],
-    [
-     "Penetration of the skin by the cercarial larval form of certain parasitic flatworms",
-     "Correct — the cercaria passes from an intermediate host such as a snail to another host."
-    ],
-    [
-     "Penetration of the skin by the larva of an animal hookworm from contaminated soil",
-     "That describes cutaneous larva migrans."
-    ],
-    [
-     "Penetration of the skin by an adult female flea that then lays her eggs within it",
-     "That describes tungiasis."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 88"
-  },
-  {
-   "topic": "Cutaneous larva migrans",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Describe the classic lesion of cutaneous larva migrans.",
-   "opts": [
-    [
-     "A large expanding round lesion over 5 cm with central clearing at the site of a bite",
-     "That is erythema migrans in Lyme disease."
-    ],
-    [
-     "Erythematous papules in linear streaks after brushing against a caterpillar's hairs",
-     "That is caterpillar dermatitis."
-    ],
-    [
-     "An erythematous, raised, vesicular, linear or serpentine trail advancing 2 to 3 cm each day",
-     "Correct — intensely pruritic and painful, lasting two to eight weeks, with rare systemic symptoms."
-    ],
-    [
-     "A thin thread-like linear or J-shaped tunnel 1 to 10 mm long in the interdigital webs",
-     "That is the scabies burrow."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 51"
-  },
-  {
-   "topic": "Primary and secondary lesions",
-   "io": "Objective b — Differentiate primary from secondary skin lesions",
-   "q": "How do primary and secondary skin lesions differ in the depth they affect?",
-   "opts": [
-    [
-     "Primary lesions affect the epidermis and superficial dermis; secondary lesions infiltrate the dermis or subcutaneous tissue",
-     "Correct. Their combination determines the diagnostic category, also called the reaction pattern."
-    ],
-    [
-     "Primary lesions infiltrate the dermis and subcutaneous tissue; secondary lesions affect only the superficial epidermis",
-     "That reverses the two definitions."
-    ],
-    [
-     "Primary lesions arise from infection while secondary lesions arise from an immune reaction to that infection",
-     "The distinction is anatomical rather than causal."
-    ],
-    [
-     "Primary lesions appear first in time while secondary lesions appear only after treatment has been started",
-     "The distinction is not about the order in which they appear."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 3"
-  },
-  {
-   "topic": "Bedbugs",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What draws bedbugs out to feed, and where do they hide during the day?",
-   "opts": [
-    [
-     "Warmth and carbon dioxide draw them out; they hide in cracks and crevices of headboards and picture frames",
-     "Correct — they also hide behind loose wallpaper and in other dark places."
-    ],
-    [
-     "Light and movement draw them out; they hide in the seams of clothing worn close to the skin",
-     "Clothing seams are where body lice and their nits are found."
-    ],
-    [
-     "Perspiration and body odour draw them out; they burrow into the stratum corneum of the skin",
-     "Burrowing into the stratum corneum describes the scabies mite."
-    ],
-    [
-     "Blood on the skin surface draws them out; they live permanently attached to the hair shaft",
-     "Attachment to the hair shaft describes lice and their nits."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 32"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
-   "q": "Why is facility-associated scabies a particular concern?",
-   "opts": [
-    [
-     "Residents are homeless or displaced, in whom infestation persists through unwashed clothing",
-     "That describes body lice."
-    ],
-    [
-     "Residents travel frequently, carrying the organism between facilities in luggage and bedding",
-     "That describes bedbug spread."
-    ],
-    [
-     "Residents are elderly and immunosuppressed, and a hospital epidemic can follow their admission",
-     "Correct, and it is difficult to eradicate once healthcare workers are infested."
-    ],
-    [
-     "Residents are children under twelve, in whom the infestation spreads through shared headgear",
-     "That describes head lice in schoolchildren."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 5"
-  },
-  {
-   "topic": "Bedbugs",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How often do bedbugs need a blood meal, and how long can they survive without one?",
-   "opts": [
-    [
-     "Every one to two days, and they die within a week without one",
-     "That underestimates both the interval and the survival."
-    ],
-    [
-     "Once a month, and they can survive for up to three months",
-     "That is not the interval the lecture gives."
-    ],
-    [
-     "Twice daily, and they cannot survive more than forty-eight hours",
-     "That is far more frequent than described."
-    ],
-    [
-     "Every five to ten days, but they can survive for up to a year",
-     "Correct, which is why an unoccupied room does not clear an infestation."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 32"
-  },
-  {
-   "topic": "Hobo spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is the prognosis and treatment of a hobo spider bite?",
-   "opts": [
-    [
-     "Wounds require surgical reconstruction and healing takes months; treatment is operative",
-     "That is the course of a severe brown recluse bite."
-    ],
-    [
-     "Wounds resolve within hours; treatment is calcium gluconate with muscle relaxants",
-     "That is envenomation treatment for a black widow bite."
-    ],
-    [
-     "Wounds resolve within days; treatment is a ten-day course of oral doxycycline",
-     "Antibiotics have no role in this envenomation."
-    ],
-    [
-     "Wounds heal within several weeks and headaches may last a week; treatment is supportive",
-     "Correct — death from severe systemic effects, including aplastic anaemia, is rare."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 65"
-  },
-  {
-   "topic": "Fleas and tungiasis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which diseases do rat fleas and cat fleas transmit?",
-   "opts": [
-    [
-     "Rat fleas transmit bubonic plague; cat fleas are a vector for bubonic plague and endemic typhus",
-     "Correct — both belong to the family Pulicidae."
-    ],
-    [
-     "Rat fleas transmit Lyme disease; cat fleas are a vector for Rocky Mountain spotted fever",
-     "Those are both tick-borne rather than flea-borne."
-    ],
-    [
-     "Rat fleas transmit tungiasis; cat fleas are a vector for cutaneous larva migrans",
-     "Tungiasis is caused by a different flea family and larva migrans by hookworms."
-    ],
-    [
-     "Rat fleas transmit endemic typhus only; cat fleas transmit no human disease at all",
-     "Cat fleas are a vector for two named diseases."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 37"
-  },
-  {
-   "topic": "Lyme disease",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "When is serological testing for Lyme disease most useful?",
-   "opts": [
-    [
-     "In patients who do not live in an endemic region and present with signs possibly consistent with it",
-     "Correct — a patient with erythema migrans is diagnosed and treated clinically."
-    ],
-    [
-     "In every patient who reports a tick bite, regardless of whether any rash has developed",
-     "Testing is not indicated for every tick bite."
-    ],
-    [
-     "In patients with erythema migrans, in whom the result determines whether to treat",
-     "Those patients are diagnosed and treated on clinical grounds."
-    ],
-    [
-     "In patients from endemic regions, in whom a negative result excludes the diagnosis",
-     "Testing is described as most helpful outside endemic regions."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 77"
-  }
- ],
- "set2": [
-  {
-   "topic": "Black widow spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How does a black widow spider bite present within the first thirty minutes?",
-   "opts": [
-    [
-     "A painless bite with induration and paraesthesia at the site, then a large area of erythema around it",
-     "That describes the hobo spider bite."
-    ],
-    [
-     "A central violaceous area ringed by blanched skin and then a large asymmetric red area",
-     "That is the red, white and blue sign of the brown recluse."
-    ],
-    [
-     "Immediate burning and pain with local erythema, swelling and urticaria at the site",
-     "That is the typical Hymenoptera sting reaction."
-    ],
-    [
-     "Localised erythema, piloerection and sweating around the bite, then crampy abdominal pain and muscle spasm",
-     "Correct — headache, paraesthesia, nausea, vomiting, hypertension and seizures may follow."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 57"
-  },
-  {
-   "topic": "Brown recluse spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is the time course of a severe brown recluse bite?",
-   "opts": [
-    [
-     "Necrosis at six weeks, eschar at eight weeks, with no systemic symptoms at any stage",
-     "That is far slower than the described course."
-    ],
-    [
-     "Vesicle formation in the first thirty-six hours, then healing over several weeks",
-     "That is the course of a hobo spider bite."
-    ],
-    [
-     "Necrosis at two to three days, eschar between days five and seven, then deep ulcers; systemic symptoms at one to two days",
-     "Correct — nausea, vomiting, headache, fever and chills make up the systemic picture."
-    ],
-    [
-     "Necrosis within thirty minutes, eschar within six hours, then deep ulcers by the end of the first day; systemic symptoms at once",
-     "That is far faster than the described course."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 61"
-  },
-  {
-   "topic": "Lyme disease",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is the classic manifestation of stage 3, late persistent Lyme disease?",
-   "opts": [
-    [
-     "Cranial nerve palsies, meningitis and radiculopathies developing over days to weeks",
-     "Those belong to stage 2, early disseminated disease."
-    ],
-    [
-     "A single expanding erythematous lesion with central clearing at the site of the bite",
-     "That is the stage 1 lesion."
-    ],
-    [
-     "A blanching rash spreading centripetally from the ankles and wrists to the trunk",
-     "That is Rocky Mountain spotted fever."
-    ],
-    [
-     "Monoarticular or oligoarticular arthritis affecting the knee or weight-bearing joints",
-     "Correct — subacute encephalopathy and acrodermatitis chronica atrophicans also occur."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 75"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which complications of scabies are named, and how are the persistent papules treated?",
-   "opts": [
-    [
-     "Necrotic ulceration requiring surgical reconstruction once the wound has become stable",
-     "That belongs to brown recluse spider bites."
-    ],
-    [
-     "Staphylococcal superinfection, post-scabietic papules treated with potent or intralesional steroid, and psychological effects",
-     "Correct — intralesional triamcinolone acetonide is given at 2.5 to 5 mg per millilitre."
-    ],
-    [
-     "Post-streptococcal glomerulonephritis, treated with supportive care while the kidney function recovers on its own",
-     "That complication follows impetigo in the previous lecture."
-    ],
-    [
-     "Acrodermatitis chronica atrophicans, treated with intravenous ceftriaxone over several weeks",
-     "That complication belongs to late Lyme disease."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 21"
-  },
-  {
-   "topic": "Cutaneous larva migrans",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What does light microscopy with mineral oil show in cutaneous larva migrans?",
-   "opts": [
-    [
-     "Live and dead larvae, particularly in patients with folliculitis",
-     "Correct — histology shows larvae with an eosinophilic infiltrate."
-    ],
-    [
-     "Mites, ova and faecal pellets scraped from an unexcoriated burrow",
-     "That is what the scabies scraping shows."
-    ],
-    [
-     "Ovoid eggs visible within the lesion when viewed on dermoscopy",
-     "That describes the diagnosis of tungiasis."
-    ],
-    [
-     "Nits attached at the base of hairs plucked from the affected area",
-     "That describes the confirmation of pubic lice."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 53"
-  },
-  {
-   "topic": "Hobo spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Where is the hobo spider found and what is it often mistaken for?",
-   "opts": [
-    [
-     "The Great Lakes region, where it is mistaken for a harmless house spider entirely",
-     "That region is associated with cercarial dermatitis."
-    ],
-    [
-     "The Pacific Northwest, where it is the predominant cause of necrotic arachnidism and is mistaken for the brown recluse",
-     "Correct — it is brown with a grey herringbone pattern and bites from July to September."
-    ],
-    [
-     "The American Midwest and Southeast, where it is the predominant necrotic spider and is mistaken for the tarantula",
-     "That geography belongs to the brown recluse."
-    ],
-    [
-     "All but the most northern states, where it is mistaken for the black widow spider",
-     "That geography belongs to the black widow."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 63"
-  },
-  {
-   "topic": "Rocky Mountain spotted fever",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is the position on prophylactic antibiotics after a tick bite in a Rocky Mountain spotted fever area?",
-   "opts": [
-    [
-     "A single dose of doxycycline is recommended for every tick bite",
-     "Prophylaxis is specifically not recommended."
-    ],
-    [
-     "A five-day course of doxycycline is recommended in endemic areas",
-     "Prophylaxis is specifically not recommended."
-    ],
-    [
-     "Prophylaxis is recommended only for children under ten years of age",
-     "Prophylaxis is not recommended for any group here."
-    ],
-    [
-     "Prophylactic antibiotic therapy is not recommended",
-     "Correct — prevention rests on avoiding exposure, protective clothing, tick checks and DEET."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 86"
-  },
-  {
-   "topic": "Rocky Mountain spotted fever",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which organism causes Rocky Mountain spotted fever, and what are its vectors and risk factors?",
-   "opts": [
-    [
-     "Rickettsia rickettsii, carried by dog ticks, wood ticks and rodents; risk is higher in males, adults 40 to 64, children under 10 and rural dwellers",
-     "Correct — it is prevalent in southeastern and south central states in spring and early summer."
-    ],
-    [
-     "Borrelia burgdorferi, carried by ticks with birds and deer as dispersal animals; risk is higher in the northeastern and upper midwestern states",
-     "That organism causes Lyme disease."
-    ],
-    [
-     "Xenopsylla cheopis, carried by rats; risk is higher in crowded conditions with poor sanitation",
-     "That flea transmits bubonic plague."
-    ],
-    [
-     "Cimex lectularius, carried in luggage and second-hand mattresses; risk is higher among travellers",
-     "That is the bedbug."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 81"
-  },
-  {
-   "topic": "Rocky Mountain spotted fever",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How does the Rocky Mountain spotted fever rash spread?",
-   "opts": [
-    [
-     "It starts in the interdigital webs and wrists and spreads to the axillae and genitalia",
-     "That is the distribution of scabies."
-    ],
-    [
-     "It starts on the ankles and wrists and spreads centripetally over six to eighteen hours, involving palms and soles but sparing the face",
-     "Correct — blanching macules or papules that may become petechial and purpuric."
-    ],
-    [
-     "It starts on the trunk and spreads outward centrifugally over several days, sparing the palms and the soles entirely",
-     "That reverses the direction and the palm and sole involvement."
-    ],
-    [
-     "It starts at the site of the bite as a single expanding lesion with a clear centre",
-     "That describes erythema migrans in Lyme disease."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 82"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which non-pharmacologic measures are required in scabies?",
-   "opts": [
-    [
-     "Engage a professional exterminator to eradicate the organism from the living space",
-     "That is the requirement for bedbugs."
-    ],
-    [
-     "Wash bedding and clothing at 60 degrees Celsius or bag them for fourteen days, and treat all contacts",
-     "Correct — high heat is needed to kill both mites and ova."
-    ],
-    [
-     "Wash bedding at any temperature and treat only the patients who are currently symptomatic",
-     "High heat is specified, and all infested persons in the group are treated."
-    ],
-    [
-     "Fumigate the home and vacuum all floors, carpets, upholstery and furniture thoroughly",
-     "Fumigation is specifically not recommended for lice, and is not named here."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 18"
-  },
-  {
-   "topic": "Fleas and tungiasis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is tungiasis?",
-   "opts": [
-    [
-     "Infestation caused by an adult female flea penetrating human skin to lay her eggs",
-     "Correct — it is caused by the family Tungidae."
-    ],
-    [
-     "Infestation caused by an animal hookworm larva migrating through human epidermis",
-     "That describes cutaneous larva migrans."
-    ],
-    [
-     "Infestation caused by a mite tunnelling through the stratum corneum of the skin",
-     "That describes scabies."
-    ],
-    [
-     "Infestation caused by a flatworm larva penetrating skin during freshwater exposure",
-     "That describes cercarial dermatitis."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 37"
-  },
-  {
-   "topic": "Pediculosis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How is body louse infestation diagnosed?",
-   "opts": [
-    [
-     "Skin scraping of an unexcoriated papule with mineral oil, examined under a microscope",
-     "That is the method for scabies."
-    ],
-    [
-     "Close examination of clothing seams for nits, and shaking clothing over white paper to see lice move",
-     "Correct. Head lice are found by combing and pubic lice by locating nits at the base of hairs."
-    ],
-    [
-     "Wet combing of the scalp with water and conditioner using a fine-toothed nit comb",
-     "That is the method for head lice."
-    ],
-    [
-     "Microscopic examination of a plucked pubic hair to confirm nits at the hair base",
-     "That is the confirmatory method for pubic lice."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 28"
-  },
-  {
-   "topic": "Lyme disease",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Describe erythema migrans and when it appears.",
-   "opts": [
-    [
-     "A lesion over 5 cm, expanding, round or oval, with central clearing and a darker punctate centre, one week after the bite",
-     "Correct — also called the bull's eye rash, with fever, myalgia, arthralgia and lymphadenopathy."
-    ],
-    [
-     "A lesion under 1 cm, thread-like, linear or J-shaped, appearing four to six weeks after the infestation began",
-     "That describes the scabies burrow."
-    ],
-    [
-     "A blanching macular rash starting at ankles and wrists two to four days after fever onset",
-     "That describes the Rocky Mountain spotted fever rash."
-    ],
-    [
-     "A serpentine raised trail advancing two to three centimetres a day with intense itch",
-     "That describes cutaneous larva migrans."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 72"
-  },
-  {
-   "topic": "Hymenoptera",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How does a severe local reaction to a sting differ from the typical reaction?",
-   "opts": [
-    [
-     "It produces extensive oedema at the site with induration lasting up to one week",
-     "Correct — the typical reaction is immediate burning, erythema, swelling and urticaria."
-    ],
-    [
-     "It produces generalised urticaria, angio-oedema and bronchospasm within minutes",
-     "That describes a generalised systemic reaction."
-    ],
-    [
-     "It produces central necrosis with an eschar forming between days five and seven",
-     "That describes a brown recluse bite."
-    ],
-    [
-     "It produces cramping abdominal pain and muscle spasm within thirty minutes",
-     "That describes a black widow bite."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 43"
-  },
-  {
-   "topic": "Lyme disease",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which serological tests are used for Lyme disease and what does each add?",
-   "opts": [
-    [
-     "Skin scraping with mineral oil examined microscopically for the organism, ova and faeces",
-     "That is the scabies diagnostic method."
-    ],
-    [
-     "Dermoscopy looking for ovoid eggs within the lesion in an area of endemic exposure",
-     "That is the diagnostic method for tungiasis."
-    ],
-    [
-     "Enzyme-linked immunosorbent assay for immunoglobulin M and G, with the C6 peptide test more specific, and Western blot more specific still",
-     "Correct — the immunoglobulin G assay carries the greater specificity."
-    ],
-    [
-     "Indirect immunofluorescence assay as the gold standard, though it is rarely diagnostic before the seventh day of illness",
-     "That is the test for Rocky Mountain spotted fever."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 77"
-  },
-  {
-   "topic": "Cercarial dermatitis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How is cercarial dermatitis managed?",
-   "opts": [
-    [
-     "With albendazole 400 mg by mouth daily for a course of three days, or ivermectin by mouth for one to two days",
-     "That is the treatment of cutaneous larva migrans."
-    ],
-    [
-     "With overnight topical permethrin to the whole skin surface and a repeat dose at one week",
-     "That is the treatment of scabies."
-    ],
-    [
-     "With surgical excision or cryotherapy of each lesion together with tetanus prophylaxis",
-     "That is the treatment of tungiasis."
-    ],
-    [
-     "Symptomatically, with antihistamines, oatmeal baths, antipruritic lotions, aspirin for pain and topical or oral glucocorticoids",
-     "Correct — proper washing and hygiene are also advised."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 91"
-  },
-  {
-   "topic": "Fleas and tungiasis",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How does tungiasis present?",
-   "opts": [
-    [
-     "A slowly advancing serpentine trail on the foot with intense pruritus for weeks",
-     "That describes cutaneous larva migrans."
-    ],
-    [
-     "Papules enlarging over weeks to 4 to 10 mm, sometimes a yellow translucent nodule, on the feet and web spaces",
-     "Correct — pain, pruritus and even autoamputation of toes can follow."
-    ],
-    [
-     "Linear or clustered urticarial papules usually on the lower legs, with bullae in sensitised people",
-     "That describes the reaction to Pulicidae flea bites."
-    ],
-    [
-     "A row of grouped painless bites with a haemorrhagic punctum appearing overnight",
-     "That describes bedbug bites."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 38"
-  },
-  {
-   "topic": "Scabies",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What constitutes a positive burrow ink test?",
-   "opts": [
-    [
-     "Complete failure of the ink to adhere to the surface of the lesion at all",
-     "Failure to adhere is not the described positive result."
-    ],
-    [
-     "Coral-red fluorescence of the inked area seen under a Wood's lamp",
-     "That fluorescence identifies erythrasma."
-    ],
-    [
-     "A zigzag line running across and away from the lesion after ink is applied",
-     "Correct — blue or black ink is applied to the suspected lesion."
-    ],
-    [
-     "Uniform uptake of ink across the whole surface of the suspected lesion",
-     "Uniform staining does not indicate a burrow."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 14"
-  },
-  {
-   "topic": "Brown recluse spider",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How is the brown recluse spider identified and where is it abundant?",
-   "opts": [
-    [
-     "A dense covering of urticating hairs; kept widely as a pet across the country",
-     "That describes the tarantula."
-    ],
-    [
-     "A dark fiddle or violin marking on the cephalothorax; abundant in the American Midwest and Southeast",
-     "Correct — it is non-aggressive and shelters in closets, attics and stored bedding."
-    ],
-    [
-     "A red hourglass on the underside of the abdomen; found in all but the most northern states",
-     "That describes the black widow spider."
-    ],
-    [
-     "A grey herringbone pattern on the abdomen; predominant in the Pacific Northwest",
-     "That describes the hobo spider."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 59"
-  },
-  {
-   "topic": "Pediculosis",
-   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
-   "q": "What is the recommended position on school exclusion for head lice?",
-   "opts": [
-    [
-     "Children must remain out of school for two weeks after the treatment has been completed",
-     "No such exclusion period is recommended."
-    ],
-    [
-     "Children must remain out of school until a repeat wet comb is entirely negative",
-     "Exclusion of that kind is not recommended."
-    ],
-    [
-     "A no-nit policy is not recommended by the American Academy of Pediatrics because of school absence",
-     "Correct — nits may remain in the hair for months after successful treatment."
-    ],
-    [
-     "Children must remain out of school until every nit has been removed from the hair",
-     "That is the no-nit policy that is specifically not recommended."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 30"
-  },
-  {
-   "topic": "Primary and secondary lesions",
-   "io": "Objective b — Differentiate primary from secondary skin lesions",
-   "q": "What does the presence of crusting or scaling on a lesion indicate?",
-   "opts": [
-    [
-     "That the epidermis has been affected",
-     "Correct — that inference is what makes crust and scale useful morphological information."
-    ],
-    [
-     "That the subcutaneous tissue is involved",
-     "Deeper involvement is not what crusting signals."
-    ],
-    [
-     "That the lesion is infectious in origin",
-     "Crust and scale do not by themselves indicate infection."
-    ],
-    [
-     "That the lesion has begun to resolve",
-     "Crusting does not indicate resolution."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 3"
-  },
-  {
-   "topic": "Rocky Mountain spotted fever",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What is the clinical triad of Rocky Mountain spotted fever, and how often is it present?",
-   "opts": [
-    [
-     "Fever, abdominal cramping and muscle spasm, present in nearly all patients",
-     "Those are features of a black widow spider bite."
-    ],
-    [
-     "Fever, pruritus and a serpentine rash, present in about 30% of patients",
-     "Those mix features of cutaneous larva migrans."
-    ],
-    [
-     "Fever above 39.5 degrees Celsius, headache and rash, present in only about 60% of patients",
-     "Correct — fever comes first, with the rash two to four days after fever onset."
-    ],
-    [
-     "Fever, arthritis and an expanding annular rash, present in about 90% of patients",
-     "That mixes features of Lyme disease."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 82"
-  },
-  {
-   "topic": "Caterpillars",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "Which caterpillar is described as the most poisonous, and what does its sting produce?",
-   "opts": [
-    [
-     "The processionary caterpillar, producing urticaria, angio-oedema and anaphylaxis",
-     "That species causes those reactions but is not named the most poisonous."
-    ],
-    [
-     "The tarantula, producing pruritus and granulomatous reactions from embedded hairs",
-     "A tarantula is a spider rather than a caterpillar."
-    ],
-    [
-     "The asp or puss caterpillar, producing an intensely painful sting and train-track purpura",
-     "Correct. The gypsy moth caterpillar causes erucism and processionary caterpillars cause anaphylaxis."
-    ],
-    [
-     "The gypsy moth caterpillar, producing pruritic papules arranged in linear streaks",
-     "That is erucism, or caterpillar dermatitis, and is not the most poisonous."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 47"
   },
   {
    "topic": "Lyme disease",
@@ -1353,110 +127,115 @@
    "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 79"
   },
   {
-   "topic": "Black widow spider",
+   "topic": "Ticks",
    "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How is the southern black widow spider identified, and what is in its venom?",
+   "slot": "risk factors",
+   "q": "Which risk factors are named for Rocky Mountain spotted fever?",
    "opts": [
     [
-     "A red hourglass on the underside of the abdomen; the venom contains the neurotoxin alpha-latrotoxin",
-     "Correct — Latrodectus mactans is found in all but the most northern part of the country."
+     "Male sex, adults aged 40 to 64, children under 10, and rural dwelling",
+     "Correct — it is prevalent in southeastern and south central states in spring and early summer."
     ],
     [
-     "A dark violin-shaped marking on the cephalothorax; the venom is cytotoxic and locally necrotising",
-     "That describes the brown recluse spider."
+     "Female sex, adults over 65 years, urban dwelling, and winter exposure",
+     "That reverses most of the named factors."
     ],
     [
-     "A grey herringbone pattern on the abdomen; the venom causes necrotic arachnidism regionally",
-     "That describes the hobo spider."
+     "Immunosuppression, renal failure, alcoholism and injection drug use",
+     "Those are risk factors for necrotizing fasciitis."
     ],
     [
-     "Barbed hairs shed from the abdomen; these embed in skin and eyes causing local reactions",
-     "That describes the tarantula."
+     "Obesity, diabetes and nasal carriage of Staphylococcus aureus",
+     "Those are risk factors for recurrent furunculosis."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 56"
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 81"
   },
   {
-   "topic": "Scabies",
+   "topic": "Lyme disease",
    "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What characterises crusted, also called hyperkeratotic, scabies?",
+   "q": "When is intravenous antibiotic therapy used in Lyme disease?",
    "opts": [
     [
-     "Widespread urticarial wheals appearing within minutes of contact and resolving within hours",
-     "That pattern belongs to an immediate hypersensitivity reaction."
+     "For some cutaneous manifestations, acrodermatitis chronica atrophicans and arthritis",
+     "Correct — ceftriaxone, cefotaxime or penicillin G are the agents named."
     ],
     [
-     "Thick flaking scale containing millions of mites, with thickened nails and often no pruritus",
-     "Correct. These patients are highly infectious despite the absence of itch."
+     "For every patient at the moment the erythema migrans lesion is first recognised",
+     "Early erythema migrans is treated orally."
     ],
     [
-     "A few discrete burrows in the finger webs with intense nocturnal itch and no visible scale",
-     "That describes ordinary scabies."
+     "For prophylaxis in anyone bitten by a tick in an endemic region of the country",
+     "Prophylaxis is not the described indication."
     ],
     [
-     "Indurated crusted nodules on the trunk and intertriginous areas of an infant or young child",
-     "Those nodules occur in infants but do not define crusted scabies."
+     "For patients who cannot tolerate doxycycline, in place of a macrolide antibiotic",
+     "Macrolides are the second-line oral option in that situation."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 80"
+  },
+  {
+   "topic": "Caterpillars",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "By which mechanisms do caterpillars produce skin disease?",
+   "opts": [
+    [
+     "Burrowing into the stratum corneum where the organism deposits its eggs and faeces",
+     "That describes the scabies mite."
+    ],
+    [
+     "Mechanical irritation by pointed hairs, toxin injection through hollow hairs, and hypersensitivity to hairs",
+     "Correct — the aggregate of these effects is called lepidopterism."
+    ],
+    [
+     "Direct penetration of the skin by larvae that then migrate through the epidermal layer of the skin",
+     "That describes cutaneous larva migrans."
+    ],
+    [
+     "Injection of a neurotoxin through a modified ovipositor when the insect is threatened",
+     "That describes Hymenoptera stings."
     ]
    ],
    "c": 1,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 12"
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 46"
   },
   {
    "topic": "Scabies",
    "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "How soon does pruritus appear after a first scabies infestation, and after a reinfestation?",
+   "q": "Which distribution is typical of scabies in a healthy adult?",
    "opts": [
     [
-     "Two to three days after the first infestation, but four to six weeks after reinfestation",
-     "That reverses the two intervals."
+     "Scalp and hairline first, then spreading down the neck and onto the upper back over weeks",
+     "Head and neck are spared in healthy adults."
     ],
     [
-     "Within twenty-four hours of either the first infestation or any later reinfestation",
-     "Onset after a first infestation is delayed by weeks."
+     "Ankles and wrists first, then spreading centripetally to involve the palms and the soles",
+     "That is the spread of the Rocky Mountain spotted fever rash."
     ],
     [
-     "Three to twelve days after the first infestation and the same after reinfestation",
-     "That is the incubation period given for Rocky Mountain spotted fever."
+     "Back, neck, shoulders and waist as linear excoriations, with post-inflammatory pigmentation",
+     "That is the distribution of body lice."
     ],
     [
-     "Four to six weeks after the first infestation, but within two to three days after reinfestation",
-     "Correct. Many patients do not develop symptoms for three months."
+     "Interdigital webs, sides of fingers, volar wrists, elbows, axillae and genitalia, sparing head and neck",
+     "Correct. The areolae are also involved in women."
     ]
    ],
    "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 6"
-  },
-  {
-   "topic": "Hymenoptera",
-   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
-   "q": "What proportion of Hymenoptera stings produce a generalised systemic reaction?",
-   "opts": [
-    [
-     "Between 10% and 15%",
-     "That substantially overstates the stated range."
-    ],
-    [
-     "Between 25% and 30%",
-     "That is far higher than the stated range."
-    ],
-    [
-     "Fewer than 1 in 10,000",
-     "That understates the stated range."
-    ],
-    [
-     "Between 0.4% and 3%",
-     "Correct — anaphylactic reactions include urticaria, angio-oedema and bronchospasm."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 43"
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 7"
   },
   {
    "topic": "Bedbugs",
    "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
    "q": "How is a bedbug infestation diagnosed and managed?",
    "opts": [
+    [
+     "Diagnosis is by serology; management is oral doxycycline for ten to fourteen days",
+     "That is the approach to Lyme disease."
+    ],
     [
      "Diagnosis is by physical examination; management is symptomatic with a professional exterminator required",
      "Correct — topical antiseptic or antibiotic for secondary infection, steroids or antihistamines for itch."
@@ -1468,24 +247,905 @@
     [
      "Diagnosis is by dermoscopy showing ovoid eggs; management is surgical excision or cryotherapy",
      "That is the approach to tungiasis."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 35"
+  },
+  {
+   "topic": "Rocky Mountain spotted fever",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which organism causes Rocky Mountain spotted fever, and what are its vectors and risk factors?",
+   "opts": [
+    [
+     "Cimex lectularius, carried in luggage and second-hand mattresses; risk is higher among travellers",
+     "That is the bedbug."
     ],
     [
-     "Diagnosis is by serology; management is oral doxycycline for ten to fourteen days",
-     "That is the approach to Lyme disease."
+     "Rickettsia rickettsii, carried by dog ticks, wood ticks and rodents; risk is higher in males, adults 40 to 64, children under 10 and rural dwellers",
+     "Correct — it is prevalent in southeastern and south central states in spring and early summer."
+    ],
+    [
+     "Borrelia burgdorferi, carried by ticks with birds and deer as dispersal animals; risk is higher in the northeastern and upper midwestern states",
+     "That organism causes Lyme disease."
+    ],
+    [
+     "Xenopsylla cheopis, carried by rats; risk is higher in crowded conditions with poor sanitation",
+     "That flea transmits bubonic plague."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 81"
+  },
+  {
+   "topic": "Cercarial dermatitis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which populations and regions are particularly affected by cercarial dermatitis?",
+   "opts": [
+    [
+     "The Great Lakes region, and paddy workers and rice farmers of the Far East",
+     "Correct — exposure to cercaria-infested water is what all of them share."
+    ],
+    [
+     "The American Midwest and Southeast, particularly people using attics and storage areas",
+     "That is the range of the brown recluse spider."
+    ],
+    [
+     "The Pacific Northwest, particularly people working in basements and around wood piles",
+     "That is the range of the hobo spider."
+    ],
+    [
+     "The southeastern and south central states, particularly rural dwellers in spring",
+     "That is the epidemiology of Rocky Mountain spotted fever."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 35"
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 89"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "prognosis",
+   "q": "How soon do most patients feel relief after scabies treatment, and how long may symptoms linger?",
+   "opts": [
+    [
+     "Relief within hours, with all symptoms gone within three days",
+     "That is faster than the described course."
+    ],
+    [
+     "Relief only after six weeks, with itch persisting for several months",
+     "That is slower than the described course."
+    ],
+    [
+     "No relief until a second course has been given at four weeks",
+     "The second application is at one week, and relief comes sooner."
+    ],
+    [
+     "Relief in about three days, though rash and itch may last up to four weeks",
+     "Correct — triamcinolone can be used for the residual itch."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 19"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
+   "slot": "avoid",
+   "q": "Which scabies patients are treated only where the diagnosis is documented?",
+   "opts": [
+    [
+     "Immunosuppressed patients of any age",
+     "Those patients get more intensive rather than more restricted treatment."
+    ],
+    [
+     "Pregnant patients",
+     "Correct — otherwise all infested persons in a family or group are treated."
+    ],
+    [
+     "Children under two years of age",
+     "No such restriction is stated for children."
+    ],
+    [
+     "Patients over sixty-five years of age",
+     "No such restriction is stated for the elderly."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 19"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "escalation",
+   "q": "A patient's scabies has not cleared after individual therapy. Which regimen is described?",
+   "opts": [
+    [
+     "A mid-potency topical corticosteroid applied twice daily for a month",
+     "That treats persistent post-scabietic papules rather than the infestation."
+    ],
+    [
+     "Ivermectin every two weeks for two to three doses, with topical permethrin every three days to weekly",
+     "Correct — the same regimen used for hyperkeratotic or immunosuppressed disease."
+    ],
+    [
+     "A third overnight application of topical permethrin given one week after the second one",
+     "That is not the described escalation."
+    ],
+    [
+     "Oral albendazole for three days, repeated if there is no response",
+     "That is the treatment of cutaneous larva migrans."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 19"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which complications of scabies are named, and how are the persistent papules treated?",
+   "opts": [
+    [
+     "Necrotic ulceration requiring surgical reconstruction once the wound has become stable",
+     "That belongs to brown recluse spider bites."
+    ],
+    [
+     "Staphylococcal superinfection, post-scabietic papules treated with potent or intralesional steroid, and psychological effects",
+     "Correct — intralesional triamcinolone acetonide is given at 2.5 to 5 mg per millilitre."
+    ],
+    [
+     "Post-streptococcal glomerulonephritis, treated with supportive care while the kidney function recovers on its own",
+     "That complication follows impetigo in the previous lecture."
+    ],
+    [
+     "Acrodermatitis chronica atrophicans, treated with intravenous ceftriaxone over several weeks",
+     "That complication belongs to late Lyme disease."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 21"
+  },
+  {
+   "topic": "Pediculosis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which three lice cause pediculosis, and which body regions do they affect?",
+   "opts": [
+    [
+     "Sarcoptes scabiei on the scalp, Cimex lectularius on the trunk, and Phthirus pubis on pubic skin",
+     "The first two organisms are the scabies mite and the bedbug."
+    ],
+    [
+     "Phthirus pubis on the scalp, Pediculus humanus capitis on pubic skin, and Cimex pilosellus on the trunk",
+     "None of those pairings is correct."
+    ],
+    [
+     "Pediculus humanus capitis on the scalp, Pediculus humanus humanus on the trunk, Phthirus pubis on pubic skin",
+     "Correct. The body louse is about 30% larger than the head louse."
+    ],
+    [
+     "Pediculus humanus capitis on the trunk, Pediculus humanus humanus on the scalp, Phthirus pubis on the eyelashes",
+     "The first two are the wrong way round."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 23"
+  },
+  {
+   "topic": "Cutaneous larva migrans",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "test finding",
+   "q": "What do the pathological findings show in cutaneous larva migrans?",
+   "opts": [
+    [
+     "Larvae trapped within the follicular canal, stratum corneum or dermis, with an eosinophilic infiltrate",
+     "Correct — light microscopy with mineral oil shows live and dead larvae in the folliculitic form."
+    ],
+    [
+     "Full-thickness epidermal necrosis with separation right at the dermal-epidermal junction",
+     "That is Stevens-Johnson syndrome and toxic epidermal necrolysis."
+    ],
+    [
+     "Granular immunoglobulin A deposits at the tips of the dermal papillae",
+     "That is dermatitis herpetiformis."
+    ],
+    [
+     "A band-like infiltration of lymphocytes filling the papillary dermis",
+     "That is lichen planus."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 53"
+  },
+  {
+   "topic": "Cutaneous larva migrans",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "gold standard",
+   "q": "On what basis is cutaneous larva migrans diagnosed?",
+   "opts": [
+    [
+     "On serology for antibodies against the animal hookworm",
+     "Serology is not the described method."
+    ],
+    [
+     "On stool microscopy for hookworm ova and parasites",
+     "The human is a dead-end host, so stool testing does not help."
+    ],
+    [
+     "On dermoscopy showing ovoid eggs within the lesion",
+     "That is the diagnostic method for tungiasis."
+    ],
+    [
+     "Clinically, on the presence of the serpentine rash",
+     "Correct — histology shows larvae with an eosinophilic infiltrate if biopsy is done."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 53"
+  },
+  {
+   "topic": "Cercarial dermatitis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How is cercarial dermatitis managed?",
+   "opts": [
+    [
+     "Symptomatically, with antihistamines, oatmeal baths, antipruritic lotions, aspirin for pain and topical or oral glucocorticoids",
+     "Correct — proper washing and hygiene are also advised."
+    ],
+    [
+     "With albendazole 400 mg by mouth daily for a course of three days, or ivermectin by mouth for one to two days",
+     "That is the treatment of cutaneous larva migrans."
+    ],
+    [
+     "With overnight topical permethrin to the whole skin surface and a repeat dose at one week",
+     "That is the treatment of scabies."
+    ],
+    [
+     "With surgical excision or cryotherapy of each lesion together with tetanus prophylaxis",
+     "That is the treatment of tungiasis."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 91"
+  },
+  {
+   "topic": "Lyme disease",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What is the classic manifestation of stage 3, late persistent Lyme disease?",
+   "opts": [
+    [
+     "A single expanding erythematous lesion with central clearing at the site of the bite",
+     "That is the stage 1 lesion."
+    ],
+    [
+     "A blanching rash spreading centripetally from the ankles and wrists to the trunk",
+     "That is Rocky Mountain spotted fever."
+    ],
+    [
+     "Monoarticular or oligoarticular arthritis affecting the knee or weight-bearing joints",
+     "Correct — subacute encephalopathy and acrodermatitis chronica atrophicans also occur."
+    ],
+    [
+     "Cranial nerve palsies, meningitis and radiculopathies developing over days to weeks",
+     "Those belong to stage 2, early disseminated disease."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 75"
+  },
+  {
+   "topic": "Brown recluse spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How is the brown recluse spider identified and where is it abundant?",
+   "opts": [
+    [
+     "A dark fiddle or violin marking on the cephalothorax; abundant in the American Midwest and Southeast",
+     "Correct — it is non-aggressive and shelters in closets, attics and stored bedding."
+    ],
+    [
+     "A red hourglass on the underside of the abdomen; found in all but the most northern states",
+     "That describes the black widow spider."
+    ],
+    [
+     "A grey herringbone pattern on the abdomen; predominant in the Pacific Northwest",
+     "That describes the hobo spider."
+    ],
+    [
+     "A dense covering of urticating hairs; kept widely as a pet across the country",
+     "That describes the tarantula."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 59"
+  },
+  {
+   "topic": "Black widow spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How is the southern black widow spider identified, and what is in its venom?",
+   "opts": [
+    [
+     "A dark violin-shaped marking on the cephalothorax; the venom is cytotoxic and locally necrotising",
+     "That describes the brown recluse spider."
+    ],
+    [
+     "A grey herringbone pattern on the abdomen; the venom causes necrotic arachnidism regionally",
+     "That describes the hobo spider."
+    ],
+    [
+     "Barbed hairs shed from the abdomen; these embed in skin and eyes causing local reactions",
+     "That describes the tarantula."
+    ],
+    [
+     "A red hourglass on the underside of the abdomen; the venom contains the neurotoxin alpha-latrotoxin",
+     "Correct — Latrodectus mactans is found in all but the most northern part of the country."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 56"
+  },
+  {
+   "topic": "Cutaneous larva migrans",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Describe the classic lesion of cutaneous larva migrans.",
+   "opts": [
+    [
+     "Erythematous papules in linear streaks after brushing against a caterpillar's hairs",
+     "That is caterpillar dermatitis."
+    ],
+    [
+     "An erythematous, raised, vesicular, linear or serpentine trail advancing 2 to 3 cm each day",
+     "Correct — intensely pruritic and painful, lasting two to eight weeks, with rare systemic symptoms."
+    ],
+    [
+     "A thin thread-like linear or J-shaped tunnel 1 to 10 mm long in the interdigital webs",
+     "That is the scabies burrow."
+    ],
+    [
+     "A large expanding round lesion over 5 cm with central clearing at the site of a bite",
+     "That is erythema migrans in Lyme disease."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 51"
+  },
+  {
+   "topic": "Hobo spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How does a hobo spider bite present?",
+   "opts": [
+    [
+     "An immediately painful sting with erythema, swelling and urticaria developing at the site",
+     "That describes a Hymenoptera sting."
+    ],
+    [
+     "A slowly advancing serpentine trail that progresses two to three centimetres each day",
+     "That describes cutaneous larva migrans."
+    ],
+    [
+     "A painless bite with induration and paraesthesia within thirty minutes, a large red area, and vesicles within thirty-six hours",
+     "Correct — eschar may follow, and systemic symptoms include headache, nausea and memory impairment."
+    ],
+    [
+     "A painful bite with sweating and piloerection within thirty minutes, then crampy abdominal pain and muscle spasms",
+     "That describes a black widow bite."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 64"
+  },
+  {
+   "topic": "Lyme disease",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "escalation",
+   "q": "Which intravenous agents are used for the later manifestations of Lyme disease?",
+   "opts": [
+    [
+     "Vancomycin, linezolid or daptomycin",
+     "Those cover resistant Gram-positive skin infection."
+    ],
+    [
+     "Amphotericin B or liposomal amphotericin",
+     "Those are antifungals."
+    ],
+    [
+     "Intravenous immunoglobulin or cyclosporine",
+     "Those are used in severe cutaneous drug reactions."
+    ],
+    [
+     "Ceftriaxone, cefotaxime or penicillin G",
+     "Correct — used for some cutaneous manifestations, acrodermatitis chronica atrophicans and arthritis."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 80"
+  },
+  {
+   "topic": "Cutaneous larva migrans",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "avoid",
+   "q": "Which two procedures are specifically not recommended for cutaneous larva migrans?",
+   "opts": [
+    [
+     "Surgical excision and cryotherapy",
+     "Correct — topical therapy is also described as less effective than oral."
+    ],
+    [
+     "Oral albendazole and oral ivermectin",
+     "Those are the recommended treatments."
+    ],
+    [
+     "Photoprotection and emollient application",
+     "Neither is contraindicated."
+    ],
+    [
+     "Wound dressing and simple analgesia",
+     "Neither is contraindicated."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 54"
+  },
+  {
+   "topic": "Bedbugs",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "complication",
+   "q": "Which reaction to bedbug bites occurs particularly in sensitised patients?",
+   "opts": [
+    [
+     "A serpentine advancing trail",
+     "That describes cutaneous larva migrans."
+    ],
+    [
+     "Cramping abdominal pain and spasm",
+     "That describes a black widow spider bite."
+    ],
+    [
+     "A bullous reaction",
+     "Correct — the usual reaction is wheals and papules with a haemorrhagic punctum."
+    ],
+    [
+     "A necrotic ulcer with an eschar",
+     "That describes a brown recluse spider bite."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 33"
+  },
+  {
+   "topic": "Cercarial dermatitis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "complication",
+   "q": "Which systemic features can accompany cercarial dermatitis?",
+   "opts": [
+    [
+     "Cranial nerve palsy and meningitis",
+     "Those belong to disseminated Lyme disease."
+    ],
+    [
+     "Aplastic anaemia and memory impairment",
+     "Those belong to a hobo spider bite."
+    ],
+    [
+     "Headaches, fever and lymphangitis",
+     "Correct — pain and swelling peak at forty-eight to seventy-two hours."
+    ],
+    [
+     "Cramping abdominal pain and muscle spasm",
+     "Those belong to a black widow spider bite."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 90"
+  },
+  {
+   "topic": "Fleas and tungiasis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "complication",
+   "q": "Which severe local complication of tungiasis is named?",
+   "opts": [
+    [
+     "Chronic lymphoedema of the whole leg",
+     "That is not a described complication."
+    ],
+    [
+     "Autoamputation of toes",
+     "Correct, alongside pain and pruritus at the affected sites."
+    ],
+    [
+     "Compartment syndrome of the foot",
+     "That complication belongs to necrotizing fasciitis."
+    ],
+    [
+     "Permanent depigmentation of the sole",
+     "That is not a described complication."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 38"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Cutaneous larva migrans",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How is cutaneous larva migrans treated?",
+   "opts": [
+    [
+     "Surgical excision or cryotherapy of the advancing edge of the lesion under local anaesthesia",
+     "Those are specifically not recommended for this condition."
+    ],
+    [
+     "Doxycycline 100 mg by mouth twice daily for a course of ten to fourteen days",
+     "That regimen belongs to tick-borne illness."
+    ],
+    [
+     "Albendazole 400 mg by mouth daily for three days, or ivermectin 200 micrograms per kilogram for one to two days",
+     "Correct — topical therapy is less effective and surgical excision or cryotherapy is not recommended."
+    ],
+    [
+     "Topical permethrin applied overnight to the whole skin surface with a repeat application at one week",
+     "That is the treatment of scabies."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 54"
+  },
+  {
+   "topic": "Pediculosis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "risk factors",
+   "q": "Which living circumstances predispose to body louse infestation?",
+   "opts": [
+    [
+     "Working outdoors in hot humid weather with occlusive clothing",
+     "Those are risk factors for folliculitis."
+    ],
+    [
+     "Homelessness, displacement by war or disaster, and crowded conditions with poor hygiene",
+     "Correct — the inability to wash or change clothes is what allows it to persist."
+    ],
+    [
+     "Regular use of shared hot tubs, whirlpools and public water slides in summer",
+     "That exposure causes Pseudomonas folliculitis."
+    ],
+    [
+     "Frequent international travel with stays in hotels and hostels",
+     "That exposure pattern belongs to bedbugs."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 24"
+  },
+  {
+   "topic": "Rocky Mountain spotted fever",
+   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
+   "q": "How is Rocky Mountain spotted fever treated, including in pregnancy and young children?",
+   "opts": [
+    [
+     "Amoxicillin for children and pregnant patients, with doxycycline reserved for adults only",
+     "That substitution belongs to Lyme disease rather than this one."
+    ],
+    [
+     "Azithromycin for all patients, since doxycycline is contraindicated below eight years of age",
+     "Desensitisation allows doxycycline to be used even in those groups."
+    ],
+    [
+     "Intravenous ceftriaxone for all patients, with oral therapy reserved for prophylaxis",
+     "That is not the described regimen."
+    ],
+    [
+     "Doxycycline for adults, pregnant patients and children, with desensitisation where it is contraindicated",
+     "Correct — 100 mg twice daily for adults and 2.2 mg per kilogram twice daily for children, for 5 to 10 days."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 86"
+  },
+  {
+   "topic": "Pediculosis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How are nits distinguished from dandruff, and what does each finding indicate?",
+   "opts": [
+    [
+     "Nits are found only at the hair tips; finding them anywhere along the shaft excludes infestation",
+     "Nits are located at the base of hairs in pubic lice."
+    ],
+    [
+     "Nits cannot be removed from the hair shaft; live lice indicate active infestation while nits indicate past or present",
+     "Correct — viable eggs are tan to brown and hatched remains are clear, white or light."
+    ],
+    [
+     "Nits brush off the hair shaft easily; live lice indicate past infestation while nits indicate active disease",
+     "That reverses both halves of the distinction."
+    ],
+    [
+     "Nits fluoresce under a Wood's lamp; their presence alone confirms that the infestation is still active",
+     "Fluorescence is not how nits are identified."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 28"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
+   "q": "In which patients might scabies excoriations be seen along the head and neck?",
+   "opts": [
+    [
+     "Infants, the elderly and the immunocompromised",
+     "Correct — healthy adults have head and neck sparing."
+    ],
+    [
+     "Adolescents and young adults in shared housing",
+     "Crowding aids transmission but does not change the distribution."
+    ],
+    [
+     "Pregnant patients in their third trimester",
+     "Pregnancy affects treatment choice, not distribution."
+    ],
+    [
+     "Patients who have already been treated once",
+     "Prior treatment does not change the distribution."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 7"
+  },
+  {
+   "topic": "Hobo spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What is the prognosis and treatment of a hobo spider bite?",
+   "opts": [
+    [
+     "Wounds heal within several weeks and headaches may last a week; treatment is supportive",
+     "Correct — death from severe systemic effects, including aplastic anaemia, is rare."
+    ],
+    [
+     "Wounds require surgical reconstruction and healing takes months; treatment is operative",
+     "That is the course of a severe brown recluse bite."
+    ],
+    [
+     "Wounds resolve within hours; treatment is calcium gluconate with muscle relaxants",
+     "That is envenomation treatment for a black widow bite."
+    ],
+    [
+     "Wounds resolve within days; treatment is a ten-day course of oral doxycycline",
+     "Antibiotics have no role in this envenomation."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 65"
+  },
+  {
+   "topic": "Lyme disease",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What characterises stage 2, early disseminated Lyme disease?",
+   "opts": [
+    [
+     "One week after the bite, with a single expanding lesion and constitutional symptoms",
+     "That is stage 1, early localised infection."
+    ],
+    [
+     "Months to years later, with monoarticular or oligoarticular arthritis of weight-bearing joints",
+     "That is stage 3, late persistent infection."
+    ],
+    [
+     "Within thirty minutes of the bite, with sweating, piloerection and muscle cramping",
+     "That describes a black widow spider bite."
+    ],
+    [
+     "Days to weeks later, involving skin, central nervous system, heart, musculoskeletal system and eyes",
+     "Correct — cranial nerve palsies, meningitis, radiculopathies, arthralgias and stiff neck."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 74"
+  },
+  {
+   "topic": "Black widow spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How does a black widow spider bite present within the first thirty minutes?",
+   "opts": [
+    [
+     "Localised erythema, piloerection and sweating around the bite, then crampy abdominal pain and muscle spasm",
+     "Correct — headache, paraesthesia, nausea, vomiting, hypertension and seizures may follow."
+    ],
+    [
+     "A painless bite with induration and paraesthesia at the site, then a large area of erythema around it",
+     "That describes the hobo spider bite."
+    ],
+    [
+     "A central violaceous area ringed by blanched skin and then a large asymmetric red area",
+     "That is the red, white and blue sign of the brown recluse."
+    ],
+    [
+     "Immediate burning and pain with local erythema, swelling and urticaria at the site",
+     "That is the typical Hymenoptera sting reaction."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 57"
+  },
+  {
+   "topic": "Lyme disease",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "When is serological testing for Lyme disease most useful?",
+   "opts": [
+    [
+     "In patients from endemic regions, in whom a negative result excludes the diagnosis",
+     "Testing is described as most helpful outside endemic regions."
+    ],
+    [
+     "In patients who do not live in an endemic region and present with signs possibly consistent with it",
+     "Correct — a patient with erythema migrans is diagnosed and treated clinically."
+    ],
+    [
+     "In every patient who reports a tick bite, regardless of whether any rash has developed",
+     "Testing is not indicated for every tick bite."
+    ],
+    [
+     "In patients with erythema migrans, in whom the result determines whether to treat",
+     "Those patients are diagnosed and treated on clinical grounds."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 77"
+  },
+  {
+   "topic": "Rocky Mountain spotted fever",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How does the Rocky Mountain spotted fever rash spread?",
+   "opts": [
+    [
+     "It starts in the interdigital webs and wrists and spreads to the axillae and genitalia",
+     "That is the distribution of scabies."
+    ],
+    [
+     "It starts on the ankles and wrists and spreads centripetally over six to eighteen hours, involving palms and soles but sparing the face",
+     "Correct — blanching macules or papules that may become petechial and purpuric."
+    ],
+    [
+     "It starts on the trunk and spreads outward centrifugally over several days, sparing the palms and the soles entirely",
+     "That reverses the direction and the palm and sole involvement."
+    ],
+    [
+     "It starts at the site of the bite as a single expanding lesion with a clear centre",
+     "That describes erythema migrans in Lyme disease."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 82"
+  },
+  {
+   "topic": "Rocky Mountain spotted fever",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "test finding",
+   "q": "What does cerebrospinal fluid show in Rocky Mountain spotted fever?",
+   "opts": [
+    [
+     "Leukocytosis with markedly low glucose and very high protein",
+     "That pattern would suggest bacterial meningitis."
+    ],
+    [
+     "Entirely normal cell count, protein and glucose in every case",
+     "A characteristic abnormal pattern is described."
+    ],
+    [
+     "Eosinophilia with raised immunoglobulin E in the fluid",
+     "That pattern is not described here."
+    ],
+    [
+     "Leukocytosis with moderately raised protein and normal glucose",
+     "Correct — blood shows thrombocytopenia, anaemia, mild hyponatraemia and transaminitis."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 85"
+  },
+  {
+   "topic": "Black widow spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which patients are at increased risk of complications from a black widow bite, and how is envenomation treated?",
+   "opts": [
+    [
+     "Pregnant patients and children under eight years of age; treat with doxycycline given through a graded desensitisation protocol",
+     "That protocol belongs to Rocky Mountain spotted fever."
+    ],
+    [
+     "Immunosuppressed patients and the elderly; treat with ivermectin every two weeks for three doses",
+     "That regimen belongs to hyperkeratotic scabies."
+    ],
+    [
+     "Patients with a positive skin test; treat with subcutaneous epinephrine and desensitisation therapy",
+     "That belongs to Hymenoptera hypersensitivity."
+    ],
+    [
+     "The very old, the very young and those with cardiovascular disease; treat with calcium gluconate, narcotics, muscle relaxants and benzodiazepines",
+     "Correct, and tetanus vaccination status must be up to date."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 58"
+  },
+  {
+   "topic": "Rocky Mountain spotted fever",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What is the position on prophylactic antibiotics after a tick bite in a Rocky Mountain spotted fever area?",
+   "opts": [
+    [
+     "Prophylactic antibiotic therapy is not recommended",
+     "Correct — prevention rests on avoiding exposure, protective clothing, tick checks and DEET."
+    ],
+    [
+     "A single dose of doxycycline is recommended for every tick bite",
+     "Prophylaxis is specifically not recommended."
+    ],
+    [
+     "A five-day course of doxycycline is recommended in endemic areas",
+     "Prophylaxis is specifically not recommended."
+    ],
+    [
+     "Prophylaxis is recommended only for children under ten years of age",
+     "Prophylaxis is not recommended for any group here."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 86"
+  },
+  {
+   "topic": "Pediculosis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which physical methods are described for head lice, and what is their limitation?",
+   "opts": [
+    [
+     "Weekly application of an occlusive agent such as mayonnaise or mineral oil to smother the live lice and eggs",
+     "Those alternatives may not be lethal to lice."
+    ],
+    [
+     "Head shaving, or combing nits out after two minutes of hair moisturiser every few days; effective but slow and painful",
+     "Correct — they need adjuvant therapy alongside them."
+    ],
+    [
+     "Head shaving alone, which is completely curative and requires no further treatment at all",
+     "Physical methods need adjuvant therapy."
+    ],
+    [
+     "Daily hot air drying of the scalp, which kills both the live lice and the attached eggs",
+     "Hair is dried after combing rather than used as the treatment itself."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 30"
+  },
+  {
+   "topic": "Hymenoptera",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which long-term measures are offered after a sting-induced anaphylactic reaction?",
+   "opts": [
+    [
+     "Carry an epinephrine auto-injector, and desensitisation therapy where the skin test is positive",
+     "Correct — immunotherapy is specified for fire ant hypersensitivity."
+    ],
+    [
+     "Carry oral antihistamines, with a short course of prednisolone kept for emergencies",
+     "Those do not replace epinephrine in anaphylaxis."
+    ],
+    [
+     "Carry a topical corticosteroid, with local anaesthetic injection for pain control",
+     "Those address mild local cutaneous reactions."
+    ],
+    [
+     "Carry oral doxycycline, to be started at the first sign of any systemic symptoms",
+     "Antibiotics have no role in a venom reaction."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 44"
   },
   {
    "topic": "Tarantula",
    "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
    "q": "How do tarantulas cause human disease, and how is it managed?",
    "opts": [
-    [
-     "Injected neurotoxin causes muscle spasm and abdominal pain; treat with calcium gluconate, narcotics and benzodiazepines",
-     "That is the black widow spider."
-    ],
     [
      "Injected cytotoxin causes central necrosis and eschar; treat with delayed surgical reconstruction",
      "That is the brown recluse spider."
@@ -1497,10 +1157,367 @@
     [
      "Shed hairs embed in skin or eyes causing pruritus, granulomas or conjunctivitis; treat with topical steroid and refer eyes to ophthalmology",
      "Correct — symptoms are generally mild and local."
+    ],
+    [
+     "Injected neurotoxin causes muscle spasm and abdominal pain; treat with calcium gluconate, narcotics and benzodiazepines",
+     "That is the black widow spider."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 66"
+  },
+  {
+   "topic": "Cercarial dermatitis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What causes cercarial dermatitis, also called swimmer's itch?",
+   "opts": [
+    [
+     "Penetration of the skin by an adult female flea that then lays her eggs within it",
+     "That describes tungiasis."
+    ],
+    [
+     "Penetration of the stratum corneum by a mite that tunnels through it as it moves",
+     "That describes scabies."
+    ],
+    [
+     "Penetration of the skin by the cercarial larval form of certain parasitic flatworms",
+     "Correct — the cercaria passes from an intermediate host such as a snail to another host."
+    ],
+    [
+     "Penetration of the skin by the larva of an animal hookworm from contaminated soil",
+     "That describes cutaneous larva migrans."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 88"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "risk factors",
+   "q": "Which patients are at particular risk in facility-associated scabies?",
+   "opts": [
+    [
+     "Homeless people and refugees living in crowded conditions",
+     "That is the risk group for body lice."
+    ],
+    [
+     "Travellers staying in hotels and using second-hand furniture",
+     "That is the risk pattern for bedbugs."
+    ],
+    [
+     "Elderly and immunosuppressed residents of long-term care facilities",
+     "Correct — a hospital epidemic can follow their admission."
+    ],
+    [
+     "Children between three and twelve years in school settings",
+     "That is the risk group for head lice."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 5"
+  },
+  {
+   "topic": "Bedbugs",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What draws bedbugs out to feed, and where do they hide during the day?",
+   "opts": [
+    [
+     "Perspiration and body odour draw them out; they burrow into the stratum corneum of the skin",
+     "Burrowing into the stratum corneum describes the scabies mite."
+    ],
+    [
+     "Blood on the skin surface draws them out; they live permanently attached to the hair shaft",
+     "Attachment to the hair shaft describes lice and their nits."
+    ],
+    [
+     "Warmth and carbon dioxide draw them out; they hide in cracks and crevices of headboards and picture frames",
+     "Correct — they also hide behind loose wallpaper and in other dark places."
+    ],
+    [
+     "Light and movement draw them out; they hide in the seams of clothing worn close to the skin",
+     "Clothing seams are where body lice and their nits are found."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 32"
+  },
+  {
+   "topic": "Pediculosis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Why is a multimodal approach recommended for pediculosis?",
+   "opts": [
+    [
+     "Because of increasing resistance, with pediculicidal effect read twenty-four hours after application",
+     "Correct — that reading interval is the World Health Organization recommendation."
+    ],
+    [
+     "Because the infestation always recurs within a month regardless of the treatment used",
+     "Recurrence is not the stated reason."
+    ],
+    [
+     "Because no single treatment is licensed for children under twelve years of age",
+     "Licensing is not the stated reason."
+    ],
+    [
+     "Because nits cannot be killed by any chemical agent currently available anywhere",
+     "That is not what the lecture states."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 30"
+  },
+  {
+   "topic": "Hobo spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Where is the hobo spider found and what is it often mistaken for?",
+   "opts": [
+    [
+     "The American Midwest and Southeast, where it is the predominant necrotic spider and is mistaken for the tarantula",
+     "That geography belongs to the brown recluse."
+    ],
+    [
+     "All but the most northern states, where it is mistaken for the black widow spider",
+     "That geography belongs to the black widow."
+    ],
+    [
+     "The Great Lakes region, where it is mistaken for a harmless house spider entirely",
+     "That region is associated with cercarial dermatitis."
+    ],
+    [
+     "The Pacific Northwest, where it is the predominant cause of necrotic arachnidism and is mistaken for the brown recluse",
+     "Correct — it is brown with a grey herringbone pattern and bites from July to September."
     ]
    ],
    "c": 3,
-   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 66"
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 63"
+  },
+  {
+   "topic": "Caterpillars",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "Which caterpillar is described as the most poisonous, and what does its sting produce?",
+   "opts": [
+    [
+     "The tarantula, producing pruritus and granulomatous reactions from embedded hairs",
+     "A tarantula is a spider rather than a caterpillar."
+    ],
+    [
+     "The asp or puss caterpillar, producing an intensely painful sting and train-track purpura",
+     "Correct. The gypsy moth caterpillar causes erucism and processionary caterpillars cause anaphylaxis."
+    ],
+    [
+     "The gypsy moth caterpillar, producing pruritic papules arranged in linear streaks",
+     "That is erucism, or caterpillar dermatitis, and is not the most poisonous."
+    ],
+    [
+     "The processionary caterpillar, producing urticaria, angio-oedema and anaphylaxis",
+     "That species causes those reactions but is not named the most poisonous."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 47"
+  },
+  {
+   "topic": "Fleas and tungiasis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "etiology",
+   "q": "Which two flea families are named, and what does each cause?",
+   "opts": [
+    [
+     "Pulicidae causes tungiasis; Tungidae includes the rat and cat fleas that transmit plague",
+     "That reverses the two families."
+    ],
+    [
+     "Cimicidae causes tungiasis; Pediculidae includes the fleas transmitting endemic typhus",
+     "Those are the bedbug and louse families."
+    ],
+    [
+     "Sarcoptidae causes tungiasis; Theraphosidae includes the fleas transmitting plague",
+     "Those are the scabies mite and tarantula families."
+    ],
+    [
+     "Tungidae causes tungiasis; Pulicidae includes the rat and cat fleas that transmit plague and typhus",
+     "Correct — fleas jump to a height of about 18 centimetres."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 37"
+  },
+  {
+   "topic": "Brown recluse spider",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How is a necrotic brown recluse wound managed?",
+   "opts": [
+    [
+     "Calcium gluconate with muscle relaxants and benzodiazepines given intravenously on arrival",
+     "That is envenomation treatment for a black widow bite."
+    ],
+    [
+     "Albendazole for three days with repeated courses if the lesion has not resolved",
+     "That is the treatment of cutaneous larva migrans."
+    ],
+    [
+     "Pain control, warm compresses and avoiding strenuous exercise, with surgery delayed until the wound is stable",
+     "Correct — antibiotics are for secondary bacterial infection, and healing is very slow."
+    ],
+    [
+     "Immediate wide surgical excision of the affected area followed by reconstruction and grafting",
+     "Surgery is delayed until the wound has stabilised."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 62"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "slot": "differential",
+   "q": "Which conditions are named in the differential for scabies?",
+   "opts": [
+    [
+     "Bullous pemphigoid, pemphigus, thermal burn and herpes zoster infection",
+     "That is a blistering differential."
+    ],
+    [
+     "Atopic dermatitis, body and pubic lice, other arthropod bites, dermatitis herpetiformis, fungal infection and psoriasis",
+     "Correct — all can produce an intensely itchy eruption."
+    ],
+    [
+     "Cellulitis, erysipelas, necrotizing fasciitis and a deep vein thrombosis of the whole affected lower leg",
+     "That is a differential for a red swollen limb."
+    ],
+    [
+     "Lentigo maligna, seborrheic keratosis, café-au-lait macule and freckles",
+     "That is the differential for solar lentigo."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 17"
+  },
+  {
+   "topic": "Hymenoptera",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "How should a honeybee sting be removed and why?",
+   "opts": [
+    [
+     "Scrape it off with a card edge or dull knife held parallel to the skin, as fast as possible",
+     "Correct — the barbed ovipositor stays impaled and continues to pump venom."
+    ],
+    [
+     "Grasp it with fine forceps and pull it straight out with steady traction on the shaft",
+     "Scraping parallel to the surface is the described technique."
+    ],
+    [
+     "Leave it in place, since removing it releases the remaining venom into the tissue",
+     "It should be removed as fast as possible."
+    ],
+    [
+     "Apply ice for twenty minutes first, then remove it once the swelling has settled",
+     "Delay allows more venom to be pumped in."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 42"
+  },
+  {
+   "topic": "Primary and secondary lesions",
+   "io": "Objective b — Differentiate primary from secondary skin lesions",
+   "q": "How do primary and secondary skin lesions differ in the depth they affect?",
+   "opts": [
+    [
+     "Primary lesions arise from infection while secondary lesions arise from an immune reaction to that infection",
+     "The distinction is anatomical rather than causal."
+    ],
+    [
+     "Primary lesions appear first in time while secondary lesions appear only after treatment has been started",
+     "The distinction is not about the order in which they appear."
+    ],
+    [
+     "Primary lesions affect the epidermis and superficial dermis; secondary lesions infiltrate the dermis or subcutaneous tissue",
+     "Correct. Their combination determines the diagnostic category, also called the reaction pattern."
+    ],
+    [
+     "Primary lesions infiltrate the dermis and subcutaneous tissue; secondary lesions affect only the superficial epidermis",
+     "That reverses the two definitions."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 3"
+  },
+  {
+   "topic": "Scabies",
+   "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations",
+   "q": "Why is facility-associated scabies a particular concern?",
+   "opts": [
+    [
+     "Residents travel frequently, carrying the organism between facilities in luggage and bedding",
+     "That describes bedbug spread."
+    ],
+    [
+     "Residents are elderly and immunosuppressed, and a hospital epidemic can follow their admission",
+     "Correct, and it is difficult to eradicate once healthcare workers are infested."
+    ],
+    [
+     "Residents are children under twelve, in whom the infestation spreads through shared headgear",
+     "That describes head lice in schoolchildren."
+    ],
+    [
+     "Residents are homeless or displaced, in whom infestation persists through unwashed clothing",
+     "That describes body lice."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 5"
+  },
+  {
+   "topic": "Pediculosis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "In whom is body louse infestation typically found, and how does it persist?",
+   "opts": [
+    [
+     "Schoolchildren sharing hats and hair accessories, persisting through repeated close head contact",
+     "That describes head lice."
+    ],
+    [
+     "Sexually active adults across all social levels, often with a concurrent sexually transmitted infection",
+     "That describes pubic lice."
+    ],
+    [
+     "Long-term care residents who are elderly and immunosuppressed, persisting through staff carriage",
+     "That describes facility-associated scabies."
+    ],
+    [
+     "Homeless people, refugees, war victims and those in crowded conditions, persisting via unwashed clothing",
+     "Correct — transmission is through contaminated clothing and bedding."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 24"
+  },
+  {
+   "topic": "Cercarial dermatitis",
+   "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations",
+   "q": "What is the time course of cercarial dermatitis after exposure?",
+   "opts": [
+    [
+     "Urticaria-like lesions and prickling for about 30 minutes, severe itch at 10 to 12 hours, papules within 24 hours, peaking at 48 to 72 hours",
+     "Correct — papules progress to vesicles and pustules, sometimes with headache, fever and lymphangitis."
+    ],
+    [
+     "Pruritus first appearing four to six weeks after exposure, then insidious and severe nocturnal itching that persists for months",
+     "That is the course of a first scabies infestation."
+    ],
+    [
+     "Fever for the first three days followed by a rash two to four days after the fever begins",
+     "That is Rocky Mountain spotted fever."
+    ],
+    [
+     "A single lesion appearing about one week after exposure and expanding steadily thereafter",
+     "That is erythema migrans in Lyme disease."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 90"
   }
  ]
 }
