@@ -22,7 +22,7 @@ Every image was viewed on a contact sheet before being assigned to a row.
 Conditions with no suitable slide image get a labelled placeholder rather than
 a picture of something else.
 """
-import os, html as H
+import os, re, html as H
 from PIL import Image, PngImagePlugin
 PngImagePlugin.MAX_TEXT_CHUNK = 100 * 1024 * 1024
 
@@ -579,6 +579,102 @@ ROWS += [
 ]
 
 
+
+# Labs to send, per condition, taken from the decks. "None" is a real answer
+# here and is stated rather than left blank -- most of dermatology is a clinical
+# diagnosis, and knowing which conditions genuinely need bloods is the point of
+# the column. Keyed by the row's name with any badge markup stripped.
+LABS = {
+ # ---- Lecture 2
+ "Atopic dermatitis": "<b>None routinely.</b> Raised immunoglobulin E supports it but is not routinely tested. Culture purulent, pustular or crusted lesions; herpes simplex polymerase chain reaction for painful monomorphic erosions.",
+ "Dyshidrotic eczema": "<b>None</b> &mdash; clinical diagnosis.",
+ "Nummular eczema": "<b>No bloods.</b> Potassium hydroxide preparation if tinea cannot be ruled out; bacterial culture if secondarily infected; patch testing if chronic or recurrent.",
+ "Irritant contact dermatitis": "<b>None</b> &mdash; clinical diagnosis from the exposure.",
+ "Allergic contact dermatitis": "<b>No bloods.</b> Patch testing identifies the allergen.",
+ "Seborrheic dermatitis": "<b>None</b> &mdash; clinical diagnosis.",
+ "Perioral dermatitis": "<b>No bloods.</b> Potassium hydroxide if tinea or Candida suspected; bacterial culture if pustules, crusting or drainage; patch testing; biopsy if persistent or atypical.",
+ "Diaper dermatitis": "<b>No bloods.</b> Potassium hydroxide if Candida suspected; bacterial culture if purulence, bullae, crusting or perianal disease.",
+ "Stasis dermatitis": "<b>No bloods.</b> Ankle-brachial index or toe pressure before compression; venous duplex ultrasound if reflux, obstruction or thrombosis suspected.",
+ "Bullous pemphigoid": "<b>Serum indirect immunofluorescence or ELISA</b> for anti-basement membrane zone antibodies, alongside the biopsy and direct immunofluorescence.",
+ "Pemphigus (vulgaris)": "<b>Serum ELISA</b> for pathogenic antibodies, plus immunofluorescence studies &mdash; both confirmatory after the biopsy.",
+ "Psoriasis &mdash; plaque": "<b>None for diagnosis.</b> Systemic agents carry their own monitoring &mdash; methotrexate always with folic acid.",
+ "Psoriasis &mdash; guttate": "<b>None</b> &mdash; clinical diagnosis.",
+ "Psoriasis &mdash; pustular": "<b>None for diagnosis.</b> Acitretin is contraindicated in pregnancy, so establish pregnancy status before prescribing.",
+ "Pityriasis rosea": "<b>None</b> &mdash; clinical, on the herald patch and the pattern.",
+ "Lichen planus": "<b>No bloods.</b> Biopsy is the test.",
+ "Lichen simplex chronicus": "<b>None for the plaque itself.</b> <span class=warn>Generalised or unexplained pruritus triggers a targeted systemic evaluation</span> guided by history, medications and review of systems.",
+ "Alopecia areata": "<b>None</b> &mdash; clinical with dermoscopy; scalp biopsy only if scarring, diffuse atypical loss or persisting uncertainty.",
+ "Androgenetic alopecia": "<b>None routinely.</b> Additional testing can be done to exclude other causes of alopecia.",
+ "Xeroderma (xerosis)": "<b>None</b> &mdash; clinical diagnosis.",
+ # ---- Lecture 3
+ "Erythema multiforme": "<b>Complete blood count, comprehensive metabolic panel and liver function tests</b> if erythema multiforme major or systemic involvement is a concern. Herpes simplex polymerase chain reaction; <b>Mycoplasma serology / immunoglobulin M</b>.",
+ "Dermatitis herpetiformis": "<b>Immunoglobulin A anti-tissue transglutaminase and anti-endomysial antibody</b>, plus small bowel biopsy. Screen thyroid function given the association.",
+ "Acanthosis nigricans": "<b>Haemoglobin A1c, fasting insulin and a lipid panel</b>, plus a polycystic ovarian syndrome workup.",
+ "Epidermolysis bullosa": "<b>Genetic panel and nutritional labs</b>, alongside the electron microscopy and antigen mapping.",
+ "Urticaria": "<b>Thyroid-stimulating hormone, complement C4, serum tryptase and specific immunoglobulin E.</b>",
+ "Erythema nodosum": "<b>Antistreptolysin O titre, inflammatory markers, chest radiograph, tuberculin or interferon gamma release assay</b>; colonoscopy; <b>pregnancy test</b> where relevant.",
+ "Granuloma annulare": "<b>Screen for diabetes (haemoglobin A1c), thyroid disease and dyslipidaemia</b> &mdash; and in generalised disease in an adult over fifty, workup for lymphoma.",
+ "Pyoderma gangrenosum": "<b>Serum protein electrophoresis, antineutrophil cytoplasmic and antinuclear antibodies</b>, inflammatory markers; colonoscopy. Wound cultures to exclude infection.",
+ "Acne rosacea": "<b>Antinuclear antibody</b> only if lupus is a consideration &mdash; it helps rule autoimmune disease OUT; a positive result means more testing, not a diagnosis.",
+ "Hyperhidrosis": "<b>Only in suspected SECONDARY disease</b> &mdash; generalised or nocturnal sweating: <b>24-hour urine metanephrines and catecholamines, thyroid-stimulating hormone</b>, glucose.",
+ "Stevens-Johnson syndrome": "<b>Complete blood count, comprehensive metabolic panel, liver function tests, urea and creatinine.</b> Blood cultures if secondary infection suspected. Chest radiograph.",
+ "Toxic epidermal necrolysis": "The same, plus the <b>SCORTEN variables: urea, bicarbonate and glucose</b>, with heart rate and detachment area, within 24 hours and repeated day 3.",
+ "Sunburn": "<b>None</b> &mdash; clinical diagnosis.",
+ "Drug-induced photosensitivity": "<b>No bloods.</b> Phototesting (minimal erythema dose) and photopatch testing are the investigations.",
+ "Photodermatitis (phytophotodermatitis)": "<b>Antinuclear antibody panel</b> if lupus is suspected. Otherwise exposure history and photopatch testing.",
+ "Polymorphous light eruption": "<b>Antinuclear antibody panel is MANDATORY</b> to exclude lupus, especially anti-Ro/SSA and anti-La/SSB. <b>Porphyrin screen</b> (urine, stool, red cell) if erythropoietic protoporphyria is suspected.",
+ "Actinic keratosis": "<b>None</b> &mdash; clinical, with biopsy for concerning features.",
+ "Dermatoheliosis (photoaging)": "<b>None routinely.</b> Genetic testing and a DNA repair assay only if xeroderma pigmentosum is suspected.",
+ # ---- Lecture 4
+ "Acne vulgaris": "<b>None</b> &mdash; clinical. Culture only if there is no response to treatment. Isotretinoin requires <b>pregnancy tests before, monthly during, and 5 weeks after</b>.",
+ "Folliculitis": "<b>No bloods.</b> Culture and Gram stain of unroofed pustule material; potassium hydroxide on a plucked hair; nasal swab for staphylococcal carriage.",
+ "Pseudomonas (&ldquo;hot tub&rdquo;) folliculitis": "<b>None usually.</b> Bacterial culture from a pustule or the contaminated water if unclear or resistant.",
+ "Pseudofolliculitis barbae": "<b>None</b> &mdash; clinical diagnosis.",
+ "Furuncle": "<b>No bloods.</b> Culture the material obtained at aspiration or incision and drainage, to identify the organism and check for resistance.",
+ "Carbuncle": "<b>No bloods.</b> Culture from aspiration or incision and drainage.",
+ "Hidradenitis suppurativa": "<b>None</b> &mdash; clinical, on lesions plus distribution plus recurrence. Biopsy is not usually required.",
+ "Erythrasma": "<b>None</b> &mdash; Wood's lamp coral-red fluorescence is the test.",
+ "Impetigo &mdash; non-bullous": "<b>Culture</b> if high risk for methicillin-resistant Staphylococcus aureus (health-care worker, teacher) or if post-streptococcal glomerulonephritis is present. Otherwise none.",
+ "Impetigo &mdash; bullous": "As for non-bullous &mdash; <b>culture only on the stated indications</b>.",
+ "Ecthyma": "As for impetigo &mdash; <b>culture on the stated indications</b>.",
+ "Erysipelas": "<b>Leukocytosis, raised erythrocyte sedimentation rate and C-reactive protein are common but not diagnostic.</b> <span class=warn>Blood and tissue cultures are NOT cost effective &mdash; extremely low yield.</span>",
+ "Cellulitis": "<b>No workup at all</b> in limited disease with no systemic signs and no risk factor. <b>Serious infection: blood cultures, skin punch biopsy, complete blood count (leukocytosis) and creatine phosphokinase</b> for muscle damage.",
+ "Abscess": "<b>No bloods.</b> Culture the drained material, considering methicillin-resistant Staphylococcus aureus, then narrow to the result.",
+ "Acute paronychia": "<b>No bloods.</b> Gram stain and culture for the bacterial cause; potassium hydroxide to rule out Candida; Tzanck smear to rule out herpetic whitlow.",
+ "Chronic paronychia": "<b>None</b> &mdash; clinical, on the immersion or chemical exposure history.",
+ "Necrotizing fasciitis": "<b>Complete blood count with differential, chemistry, arterial blood gas, urinalysis, and blood and tissue cultures.</b> <span class=warn>They must NOT delay surgery.</span>",
+ # ---- Lecture 5
+ "Scabies": "<b>None</b> &mdash; microscopic identification of the organism, ova or faeces is the diagnosis.",
+ "Crusted (hyperkeratotic) scabies": "<b>None</b> &mdash; as for scabies, but scrapings are strongly positive given the mite burden.",
+ "Pediculosis capitis (head lice)": "<b>None</b> &mdash; visualising nits or live lice.",
+ "Pediculosis corporis (body lice)": "<b>None</b> &mdash; examine clothing seams; shake clothing over white paper.",
+ "Pediculosis pubis (crabs)": "<b>None for the infestation.</b> <span class=warn>Screen for concurrent sexually transmitted infection</span> &mdash; patients often have one.",
+ "Bedbugs": "<b>None</b> &mdash; physical examination.",
+ "Tungiasis (fleas)": "<b>None</b> &mdash; dermoscopy visualises the ovoid eggs.",
+ "Caterpillars (lepidopterism)": "<b>None</b> &mdash; clinical, from the exposure and the pattern.",
+ "Cutaneous larva migrans": "<b>None</b> &mdash; clinical if the serpiginous rash is present. Light microscopy with mineral oil shows larvae in the folliculitic form.",
+ "Black widow spider": "<b>None diagnostic.</b> Clinical, from the exposure and the systemic picture.",
+ "Brown recluse spider": "<b>None diagnostic.</b> Clinical, from the appearance and the exposure history.",
+ "Hobo spider": "<b>None diagnostic.</b> Clinical, from geography, season and appearance.",
+ "Lyme disease": "<b>Enzyme-linked immunosorbent assay for immunoglobulin M and G; the C6 peptide test (immunoglobulin G) is more specific; Western blot more specific still.</b> <span class=warn>If erythema migrans is present, diagnose and treat CLINICALLY &mdash; do not wait.</span>",
+ "Rocky Mountain spotted fever": "<b>Complete blood count (thrombocytopenia, anaemia, normal white count with increased bands), chemistry (mild hyponatraemia), liver function (mild transaminitis).</b> Cerebrospinal fluid: leukocytosis, moderately raised protein, normal glucose. <b>Gold standard: indirect immunofluorescence assay</b> &mdash; rarely diagnostic before day 7, so <span class=warn>treat by day 5 while waiting.</span>",
+ "Cercarial dermatitis (swimmer's itch)": "<b>None</b> &mdash; clinical, from the freshwater exposure and the time course.",
+ # ---- Lecture 8
+ "Ephelides (freckles)": "<b>None</b> &mdash; clinical diagnosis.",
+ "Lentigines": "<b>None</b> &mdash; clinical diagnosis.",
+ "Solar lentigo": "<b>None</b> &mdash; dermoscopy, with biopsy only if atypical.",
+ "Seborrheic keratosis": "<b>None</b> &mdash; clinical diagnosis.",
+ "Dermatosis papulosa nigrans": "<b>None</b> &mdash; clinical, with biopsy only if uncertain.",
+ "Vitiligo": "<b>Complete blood count and antinuclear antibody</b>, to correlate with the other autoimmune diseases associated with it.",
+ "Congenital melanocytic naevus": "<b>No bloods.</b> Magnetic resonance imaging of brain, with or without total spine, if cranial or axial &mdash; for neurocutaneous melanosis.",
+ "Naevus spilus": "<b>None</b> &mdash; clinical, with periodic evaluation.",
+ "Common acquired melanocytic naevus (mole)": "<b>None</b> &mdash; clinical diagnosis.",
+ "Blue naevus": "<b>None</b> &mdash; clinical for small lesions, biopsy for larger ones.",
+ "Pigmented spindle cell naevus (Reed)": "<b>None</b> &mdash; biopsy confirms it.",
+ "Spitz naevus": "<b>None</b> &mdash; biopsy or wide excision.",
+ "Dysplastic melanocytic naevus": "<b>None</b> &mdash; diagnosis is by biopsy.",
+}
+
 SECTION_LABELS = {
  "Lecture 2 &middot; General Dermatology I &mdash; eczema and dermatitis": "L2 eczema",
  "Lecture 2 &middot; Vesiculobullous, papulosquamous, alopecia and xerosis": "L2 bullous + papulosquamous",
@@ -635,6 +731,13 @@ def render(mapping):
                         % (H.escape(label), row[1]))
             continue
         src, name, manif, tests, tx, edu = row
+        # strip the "also Lecture N" badge as well as the tags around it, so
+        # the two solar lentigo rows share one labs entry
+        key = re.sub(r"<span class=\"dup\">.*?</span>", "", name)
+        key = re.sub(r"<[^>]+>", "", key).strip()
+        assert key in LABS, "no labs entry for %r" % key
+        tests = tests + ('<div class="labs"><span class="labs-h">Labs to order</span>%s</div>'
+                         % LABS[key])
         if src:
             tag, sl = slide_of(src)
             cite = "%s &middot; Slide %d" % (LECTURE[tag], sl)
@@ -696,6 +799,8 @@ HTML = """<!DOCTYPE html>
     td.pic img{max-height:96px !important;width:auto !important;}
     td.pic figcaption{font-size:5.6pt !important;}
     .pt{font-size:7pt !important;}
+    .labs{background:#f2f6f5 !important;padding:3px 5px !important;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
     td.name{width:110px !important;min-width:110px !important;}
     tr,figure{break-inside:avoid;page-break-inside:avoid;}
     .howto{break-inside:avoid;}
@@ -723,6 +828,10 @@ HTML = """<!DOCTYPE html>
   td.name{width:150px;min-width:150px;font-weight:700;color:var(--acc);font-size:.95rem;}
   .pt{display:block;margin-top:6px;font-style:italic;opacity:.9;color:#4a5f5e;}
   .warn{color:#8c3b12;font-weight:600;}
+  .labs{margin-top:9px;padding:7px 9px;border-radius:7px;background:#eef5f4;
+    border-left:3px solid var(--gold);font-size:.83rem;line-height:1.45;}
+  .labs-h{display:block;font-size:.66rem;font-weight:800;letter-spacing:.07em;
+    text-transform:uppercase;color:#8a6508;margin-bottom:3px;}
   .dup{display:block;font-weight:600;font-size:.68rem;color:var(--gold);
     text-transform:uppercase;letter-spacing:.04em;margin-top:3px;}
   b{color:#123c3d;}
@@ -735,6 +844,8 @@ HTML = """<!DOCTYPE html>
     b{color:#a9e0da;}
     .pt{color:#9fb5b3;}
     .warn{color:#f0a878;}
+    .labs{background:#1d2726;border-left-color:#c08a2e;}
+    .labs-h{color:#e0b463;}
     .dup{color:#e0b463;}
     .howto{background:#16211f;}
     .filterbar button{background:#141b1b;color:#8fd3cd;}
@@ -758,10 +869,12 @@ HTML = """<!DOCTYPE html>
 <div class="howto"><b>How to use this.</b> Read it left to right for one condition: what it looks like,
 what it is called, how it presents and how a patient will actually describe it, what you order first and
 what confirms it, what you give first and what comes next, and what you tell them. Read it top to bottom
-down one column to compare across conditions &mdash; the first-test column is the fastest way to see how
-much of dermatology is a clinical diagnosis. <b>Everything here comes from the lecture PowerPoints</b>,
-and every picture cites its deck and slide. Where a deck does not state something, the cell says so
-rather than being filled in from elsewhere.</div>
+down one column to compare across conditions. <b>Everything here comes from the lecture PowerPoints</b>, and every
+picture cites its deck and slide. Where a deck does not state something, the cell says so rather than
+being filled in from elsewhere.<br><br><b>The gold &ldquo;Labs to order&rdquo; block</b> in the testing
+column tells you what blood work to send &mdash; and, just as often, that there is none to send.
+<b>__NNOLABS__ of the __NROWS__ conditions here need no blood work at all</b>; dermatology is mostly a
+clinical diagnosis, and knowing which ones are the exception is the point of reading down that column.</div>
 
 <div class="filterbar" id="fb"></div>
 
@@ -812,8 +925,12 @@ __BODY__
 def main():
     mapping = prep_images()
     body, n_rows, n_imgs = render(mapping)
+    import re as _re
+    nolabs = sum(1 for b in _re.findall(r'<div class="labs">.*?</div>', body, _re.S)
+                 if _re.search(r"<b>(None|No bloods|No workup)", b))
     html = (HTML.replace("__BODY__", body)
                 .replace("__NROWS__", str(n_rows))
+                .replace("__NNOLABS__", str(nolabs))
                 .replace("__NIMGS__", str(n_imgs)))
     open(OUT_HTML, "w", encoding="utf-8").write(html)
     kb = sum(os.path.getsize(os.path.join(OUT_DIR, f)) for f in os.listdir(OUT_DIR)) // 1024
@@ -826,13 +943,14 @@ def main():
             continue
         for i, cell in enumerate(row[1:], 1):
             assert cell and cell.strip(), "empty cell %d in %r" % (i, row[1])
-    print("  every cell populated")
+    print("  every cell populated; %d of %d need no blood work" % (nolabs, n_rows))
     # A lazy-loaded image that never entered the viewport is missing from the
     # print output. An export before this check carried 10 of 84 photographs.
     assert 'loading="lazy"' not in html, "lazy images will not survive Download as PDF"
     assert html.count("<img ") == n_imgs, "image count mismatch"
     assert 'class="guide-back-bar"' in html, "no back bar, so theme.js adds no PDF button"
     assert "@media print" in html, "no print rules"
+    assert html.count('class="labs"') == n_rows, "every row needs a labs block"
     print("  images eager, back bar present, print rules present")
 
 
