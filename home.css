@@ -183,10 +183,6 @@
       .page > #relax-cta-row { order: 33; }
       .page > #group-cta-row { order: 34; }
       .page > #stats-widget { order: 35; }
-      /* Injected by home.js on the first day of a term, directly before the
-         semester card -- a new direct child of .page, so it needs its own
-         order or it lands above the header. */
-      .page > .semester-kickoff { order: 39; }
       .page > #semester-card { order: 40; }
       .page > #continue-widget { order: 45; }
       .page > .more-links { order: 50; }
@@ -1532,64 +1528,6 @@
   .card-settle{ animation:none; }
 }
 
-/* Fireworks for the opening of a term. Each spark is given an angle and a
-   distance as custom properties and flies out along it, so one keyframe covers
-   every direction. The end position drops a little further than it rises,
-   which is what reads as gravity rather than a flat starburst. Homepage only,
-   so it lives here rather than in theme.css where every quiz page would carry
-   it. */
-.firework-spark{
-  position:fixed; width:6px; height:6px; border-radius:50%;
-  z-index:9998; pointer-events:none;
-  animation:firework-fly 1.05s cubic-bezier(.15,.7,.35,1) forwards;
-}
-@keyframes firework-fly{
-  0%   { transform:translate(0,0) scale(1); opacity:1; }
-  60%  { opacity:1; }
-  100% { transform:translate(var(--dx,0), calc(var(--dy,0) + 34px)) scale(.3); opacity:0; }
-}
-
-/* The semester card drops in and settles on the first day back. Overshoot then
-   two smaller corrections -- a single ease would land dead and read as a slide
-   rather than a drop. */
-@keyframes kickoff-drop{
-  0%   { transform:translateY(-46px) rotate(-1.4deg); opacity:0; }
-  50%  { transform:translateY(9px)   rotate(.7deg);   opacity:1; }
-  70%  { transform:translateY(-5px)  rotate(-.4deg); }
-  86%  { transform:translateY(2px)   rotate(.15deg); }
-  100% { transform:translateY(0)     rotate(0); opacity:1; }
-}
-.kickoff-drop{ animation:kickoff-drop 1.05s cubic-bezier(.2,.8,.3,1) both; }
-.kickoff-drop.kickoff-drop-late{ animation-delay:.14s; }
-
-@media (prefers-reduced-motion:reduce){
-  .firework-spark{ animation:none; display:none; }
-  .kickoff-drop, .kickoff-drop.kickoff-drop-late{ animation:none; }
-}
-
-/* First day of a semester. Sits above the semester card for that one day.
-   Deliberately warm rather than loud -- the confetti is the celebration, this
-   just says what day it is and what is first. Uses the site accent, so it
-   still reads as part of the page and not a pasted-on notice. */
-.semester-kickoff{
-  margin:0 0 14px; padding:15px 18px;
-  background:var(--accent-soft);
-  border:1px solid color-mix(in oklab, var(--accent) 20%, transparent);
-  border-radius:var(--r-md, 12px);
-  text-align:center;
-}
-.kickoff-title{
-  margin:0; font-size:16.5px; font-weight:800; color:var(--ink); line-height:1.3;
-}
-.kickoff-title::before{ content:"🎉 "; }
-.kickoff-sub{
-  margin:4px 0 0; font-size:13.5px; line-height:1.5; color:var(--muted);
-}
-@media (max-width:560px){
-  .semester-kickoff{ padding:12px 14px; }
-  .kickoff-title{ font-size:15px; }
-  .kickoff-sub{ font-size:12.5px; }
-}
 
 /* Semester countdown, directly under the progress bar. The bar answers "where
    am I", this answers "how much longer" -- so the number carries the weight and
