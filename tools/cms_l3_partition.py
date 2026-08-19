@@ -23,10 +23,11 @@ from cms_l3_pool_a import POOL_A
 from cms_l3_pool_b import POOL_B
 from cms_l3_pool_c import POOL_C
 from cms_l3_pool_d import POOL_D
+from cms_l3_pool_e import POOL_E
 from cms_l3_lengthfix import SLOT_FIXES
 
 # Pool D appended -- SLOT_FIXES is keyed by index into the first three pools.
-POOL = POOL_A + POOL_B + POOL_C + POOL_D
+POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E
 
 for (_qi, _oi), _t in SLOT_FIXES.items():
     assert _oi != POOL[_qi]["c"], "length fix %d would overwrite the correct option" % _qi

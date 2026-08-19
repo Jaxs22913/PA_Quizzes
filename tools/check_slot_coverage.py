@@ -82,7 +82,7 @@ LECTURES = OrderedDict([
  ("l2", ("Lecture 2 - General Dermatology I",
          ["cms_l2_pool_a", "cms_l2_pool_b", "cms_l2_pool_c", "cms_l2_pool_d", "cms_l2_pool_e"])),
  ("l3", ("Lecture 3 - Dermatology II",
-         ["cms_l3_pool_a", "cms_l3_pool_b", "cms_l3_pool_c", "cms_l3_pool_d"])),
+         ["cms_l3_pool_a", "cms_l3_pool_b", "cms_l3_pool_c", "cms_l3_pool_d", "cms_l3_pool_e"])),
  ("l4", ("Lecture 4 - Cutaneous Bacterial Infections",
          ["cms_l4_pool_a", "cms_l4_pool_b", "cms_l4_pool_c", "cms_l4_pool_d"])),
  ("l5", ("Lecture 5 - Dermatological Infestations",
