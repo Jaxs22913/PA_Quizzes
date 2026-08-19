@@ -146,6 +146,8 @@ window.GROUP_INDEX = {
 "cam-nutrition-exam-2-introduction-to-cam-quiz-version-2":{"title":"Introduction to CAM (Set 2) — CAM/Nutrition Exam 2","category":"CAM / Nutrition","sem":"summer-1-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-1-clinical-reasoning-quiz":{"title":"Clinical Reasoning and Problem Solving — Quiz 1","category":"Clinical Medicine and Surgery I","sem":"fall-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-1-clinical-reasoning-quiz-version-2":{"title":"Clinical Reasoning and Problem Solving — Quiz 2","category":"Clinical Medicine and Surgery I","sem":"fall-2026","n":30},
+"clinical-medicine-and-surgery-i-exam-1-general-dermatology-i-quiz":{"title":"General Dermatology I Quiz 1 — CMS I Exam 1","category":"Clinical Medicine and Surgery I","sem":"fall-2026","n":30},
+"clinical-medicine-and-surgery-i-exam-1-general-dermatology-i-quiz-version-2":{"title":"General Dermatology I Quiz 2 — CMS I Exam 1","category":"Clinical Medicine and Surgery I","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-dermatology-pathophys-quiz":{"title":"Dermatology Pathophysiology Quiz 1 — Clinical Pathophysiology I Exam 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-dermatology-pathophys-quiz-version-2":{"title":"Dermatology Pathophysiology Quiz 2 — Clinical Pathophysiology I Exam 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-inflammation-quiz":{"title":"Inflammation — Quiz 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},

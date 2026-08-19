@@ -791,6 +791,8 @@ document.querySelectorAll(".semester").forEach(semester => {
       // Update this list (and the "What's New" panel below) whenever new
       // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
+        "Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/general-dermatology-i-quiz.html": "2026-08-19",
+        "Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/general-dermatology-i-quiz-version-2.html": "2026-08-19",
         "Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/lab-diagnostics-quiz.html": "2026-08-18",
         "Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/lab-diagnostics-quiz-version-2.html": "2026-08-18",
         "Physical%20Diagnosis%202%20Exam%201/clinical-reasoning-documentation-quiz.html": "2026-08-18",
