@@ -23,8 +23,12 @@ sys.path.insert(0, HERE)
 from cms_l2_pool_a import POOL_A
 from cms_l2_pool_b import POOL_B
 from cms_l2_pool_c import POOL_C
+from cms_l2_pool_d import POOL_D
 
-POOL = POOL_A + POOL_B + POOL_C
+# Pool D is APPENDED, never prepended. The length-fix maps below are keyed by
+# index into POOL_A + POOL_B + POOL_C, so anything inserted ahead of them would
+# silently rewrite the wrong questions.
+POOL = POOL_A + POOL_B + POOL_C + POOL_D
 
 import difflib
 from cms_l2_lengthfix import FIXES, SLOT_FIXES

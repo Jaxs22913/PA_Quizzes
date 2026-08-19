@@ -22,9 +22,12 @@ sys.path.insert(0, HERE)
 from cms_l2_vig_a import POOL_A
 from cms_l2_vig_b import POOL_B
 from cms_l2_vig_c import POOL_C
+from cms_l2_vig_d import POOL_D
 from cms_l2_vig_lengthfix import SLOT_FIXES
 
-POOL = POOL_A + POOL_B + POOL_C
+# Pool D is APPENDED, never prepended -- SLOT_FIXES is keyed by index into the
+# first three pools.
+POOL = POOL_A + POOL_B + POOL_C + POOL_D
 for (_qi, _oi), _t in SLOT_FIXES.items():
     assert _oi != POOL[_qi]["c"], "length fix %d would overwrite the correct option" % _qi
     POOL[_qi]["opts"][_oi][0] = _t
