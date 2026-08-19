@@ -22,8 +22,15 @@ import re, os, glob, json, sys, html
 try:
     import json5  # tolerant parser: handles JS-object literals (unquoted keys, trailing commas)
     _loads = json5.loads
-except Exception:
-    _loads = json.loads  # falls back to strict JSON (misses older JS-literal quizzes)
+except ImportError:
+    # Do NOT fall back to strict json.loads. On 2026-08-19 a run without json5
+    # parsed only the quizzes whose banks are strict JSON and silently dropped
+    # five older JS-literal ones (Physiology Exam 3 gi/hemostasis/immunology/
+    # metabolism/pulmonary) out of Group Study. The run looked successful --
+    # "skipped: 0" -- because those files never reached the skip counters.
+    # A missing parser must stop the build, not quietly shrink the bank.
+    sys.exit("build_group_quizzes needs json5 (pip install json5). Refusing to run "
+             "without it: strict JSON silently drops every JS-object-literal quiz.")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
