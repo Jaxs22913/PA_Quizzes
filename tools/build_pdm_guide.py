@@ -371,7 +371,7 @@ FIGCSS = """
   :root[data-theme="dark"] mark.prof-highlight{background:#4a3a12;color:#f7ecc8;
     box-shadow:inset 0 0 0 1px #7a6220;}
 </style>"""
-head = head.replace("</style>", FIGCSS + "</style>", 1)
+head = head.replace("</style>", FIGCSS.replace("</style>", "") + "</style>", 1)
 head = re.sub(r"<title>.*?</title>",
               "<title>Principles of Diagnostic Medicine I &middot; Exam 1 &mdash; Study Guide</title>",
               head, count=1, flags=re.S)
