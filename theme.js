@@ -1269,27 +1269,100 @@
     if (document.querySelector(".guide-back-bar")) {
       var pdfBtn = makeCornerBtn("pdf-btn", "Download as PDF");
       pdfBtn.innerHTML = PDF_ICON;
+
+      // LAZY IMAGES DO NOT SURVIVE THE EXPORT. Measured 2026-08-20 on the
+      // Anatomy Exam 3 guide, which carries 87 figures: on load only the two
+      // in the opening viewport have decoded, and neither window.print() nor
+      // switching to print media loads the rest -- the counts stay at 2. A
+      // reader who lands on a guide and taps this button without scrolling the
+      // whole page gets a 108-page PDF containing two pictures. Flipping every
+      // lazy image to eager loads all 87.
+      //
+      // So the images are warmed BEFORE printing rather than made eager in the
+      // markup, because eager markup would pull 9.3 MB on every page view to
+      // serve the much rarer export. Warm-up starts on hover or touch, which
+      // is usually enough on its own; the click path below covers the case
+      // where it is not.
+      function warmPrintImages() {
+        var imgs = [].slice.call(document.images);
+        var pending = imgs.filter(function (i) { return !i.complete || !i.naturalWidth; });
+        pending.forEach(function (i) {
+          if (i.loading === "lazy") i.loading = "eager";
+          if (!i.complete) i.src = i.src;   // nudge one already past the lazy gate
+        });
+        return pending;
+      }
+      function printImagesReady() {
+        return [].slice.call(document.images).every(function (i) {
+          return i.complete && i.naturalWidth > 0;
+        });
+      }
+      ["pointerenter", "touchstart", "focus"].forEach(function (evt) {
+        pdfBtn.addEventListener(evt, function () { warmPrintImages(); },
+                                { passive: true, once: true });
+      });
+
       pdfBtn.addEventListener("click", function () {
         var root = document.documentElement;
-        var prev = root.getAttribute("data-theme");
-        var done = false;
-        function restore() {
-          if (done) return;
-          done = true;
-          if (prev) root.setAttribute("data-theme", prev);
-          else root.removeAttribute("data-theme");
-          window.removeEventListener("afterprint", restore);
+
+        function doPrint() {
+          // Back to the resting look: once the figures are in, every later tap
+          // takes the fast path and the button should stop advertising a wait.
+          pdfBtn.classList.remove("is-preparing", "is-ready");
+          pdfBtn.title = "Download as PDF";
+          pdfBtn.setAttribute("aria-label", pdfBtn.title);
+          var prev = root.getAttribute("data-theme");
+          var done = false;
+          function restore() {
+            if (done) return;
+            done = true;
+            if (prev) root.setAttribute("data-theme", prev);
+            else root.removeAttribute("data-theme");
+            window.removeEventListener("afterprint", restore);
+          }
+          window.addEventListener("afterprint", restore);
+          // CRITICAL: window.print() must run SYNCHRONOUSLY inside the tap
+          // gesture -- iOS Safari silently ignores a print() call deferred out
+          // of the user-activation context (a setTimeout here broke it on
+          // mobile). Set the light theme synchronously first (print() flushes
+          // styles, so it's reflected), then print; afterprint restores the
+          // theme, with a fallback timeout for browsers that don't fire it.
+          root.setAttribute("data-theme", "light");
+          window.print();
+          setTimeout(restore, 1000);
         }
-        window.addEventListener("afterprint", restore);
-        // CRITICAL: window.print() must run SYNCHRONOUSLY inside the tap
-        // gesture -- iOS Safari silently ignores a print() call deferred out
-        // of the user-activation context (a setTimeout here broke it on
-        // mobile). Set the light theme synchronously first (print() flushes
-        // styles, so it's reflected), then print; afterprint restores the
-        // theme, with a fallback timeout for browsers that don't fire it.
-        root.setAttribute("data-theme", "light");
-        window.print();
-        setTimeout(restore, 1000);
+
+        if (printImagesReady()) { doPrint(); return; }
+
+        // Images still loading. We cannot await them and then print, because
+        // that leaves the gesture and iOS drops the call -- so tell the reader
+        // what is happening and arm the next tap, which will be in-gesture and
+        // instant. Better one extra tap than a PDF with no pictures in it.
+        var pending = warmPrintImages();
+        pdfBtn.classList.add("is-preparing");
+        pdfBtn.title = "Preparing " + pending.length + " images\u2026";
+        pdfBtn.setAttribute("aria-label", pdfBtn.title);
+        var left = pending.length, settled = false;
+        function ready() {
+          if (settled) return;
+          settled = true;
+          pdfBtn.classList.remove("is-preparing");
+          pdfBtn.classList.add("is-ready");
+          pdfBtn.title = "Images ready \u2014 tap to download the PDF";
+          pdfBtn.setAttribute("aria-label", pdfBtn.title);
+          // Desktop keeps working in one tap: doPrint() opens the dialog and
+          // resets the button. iOS ignores a print() this far out of the tap
+          // gesture, so there the ready cue is what the reader sees and the
+          // second tap -- now in-gesture, with every figure decoded -- is the
+          // one that exports.
+          doPrint();
+        }
+        pending.forEach(function (i) {
+          function tick() { if (--left <= 0) ready(); }
+          i.addEventListener("load", tick, { once: true });
+          i.addEventListener("error", tick, { once: true });
+        });
+        setTimeout(ready, 15000);   // never leave the button stuck
       });
       group.appendChild(pdfBtn);
     }

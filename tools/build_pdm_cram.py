@@ -65,16 +65,69 @@ topics = [
    ["Prevalence vs incidence", "PREVALENCE = how COMMONLY something occurs (existing cases, usually a percentage). INCIDENCE = how OFTEN it happens."],
    ["Screening vs diagnostic", "SCREENING: asymptomatic, cheap, easy, indicates whether more testing is needed. DIAGNOSTIC: symptomatic, may be invasive, confirms. A screening test BECOMES diagnostic if an abnormality is found during it — e.g. colonoscopy."],
  ]},
+ # ---------------- Lecture 2: Principles of Medical Imaging ----------------
+ {"id": "modalities", "label": "The Modalities at a Glance", "color": "#3e5f8a", "rows": [
+   ["Radiography", "Ionizing radiation, viewed in 2-D. Quick, cheap, available anywhere, portable — the most widely obtained study. Against: only FIVE densities, structures overlap, ionizing radiation (relatively low dose)."],
+   ["Computed tomography", "Rotating fan beam, thousands of transmission points. EXPANDS THE GREY SCALE beyond five densities, reduces overlap, works with implanted devices, 3-D reconstruction. THE CORNERSTONE OF CROSS-SECTIONAL IMAGING. Against: not portable, a LOT of radiation, needs space and processing."],
+   ["Ultrasound", "High-frequency sound from a transducer, bounced back. NO radiation — the SAFEST modality, and real time, so it is for MOVING structures: heart, vasculature, obstetrics. Colour Doppler adds flow DIRECTION and VELOCITY. Often first choice in the FEMALE PELVIS and in PAEDIATRICS. Against: cannot penetrate bone, gas disrupts it, deep structures are hard, OPERATOR-DEPENDENT."],
+   ["Magnetic resonance", "Magnetic field aligns hydrogen; release emits radio waves — essentially a HYDROGEN MAP. Contrast is GADOLINIUM. Best for SOFT TISSUE, i.e. anything but bone; cornerstone of NEUROIMAGING and orthopaedic soft tissue. Calcium emits NO signal, so tissue inside bone is visible. Diffusion-weighted imaging for STROKE. Against: not widely available, expensive, slow, magnetic implants and ferromagnetic projectiles. Not recommended in pregnancy or infants despite no radiation."],
+   ["PET vs SPECT", "PET = positrons, FDG-18 (radioactive glucose), 2-D, gamma camera — CANCER STAGING, brain disorders, cardiac blood flow; shows who is EATING GLUCOSE. SPECT = single photons, rotating gantry, 3-D, technetium-99 — heart disease, BONE SCANS, brain; shows WHERE BLOOD FLOWS."],
+   ["Angiographic studies", "NOT one test — any modality can image vessels. X-ray → angiogram. Ultrasound → colour Doppler. CT angiography → iodine injected quickly. MR angiography → NO DYE NEEDED. Veins = venogram."],
+   ["Fluoroscopy", "Ionizing radiation giving REAL-TIME video: motion, positioning, and barium or iodine moving through gut, urinary tract and vessels. Needs a specially fitted unit with a tilting table."],
+ ]},
+ {"id": "density", "label": "Density, Attenuation & Hounsfield", "color": "#7a5a2e", "rows": [
+   ["Five densities, whitest → blackest", "METAL · CALCIUM (bone) · FLUID/SOFT TISSUE · FAT · AIR. Fluid and soft tissue have THE SAME DENSITY on a plain film — that is the pair you cannot separate."],
+   ["Hounsfield numbers (SLIDE 13 — an IMAGE, not text)", "Air −1000 · Fat ~−40 to −120 · WATER = 0 BY CONVENTION · Soft tissue ~+20 to +100 · Bone ~+400 to +600 · Metal ~+1000 or higher. CT pulls WATER APART from soft tissue — the asterisk on the deck's “Five*”."],
+   ["The vocabulary", "RADIOLUCENT = hypodense = DARKER, because MORE beam passed through (less absorbed). RADIOPAQUE = hyperdense = radiodense = WHITER, because LESS passed through (more absorbed)."],
+   ["Attenuation", "INCREASED attenuation = high Hounsfield number = whiter (metal, calcium). DECREASED attenuation = low number = blacker (air, fat). Same substances read the same way on a plain film."],
+   ["The WINDOW", "A pre-selected RANGE of Hounsfield numbers (e.g. −100 to +300) spread over the available grey scale. It is a DISPLAY choice, so POST-PROCESSING can re-window the same scan to show different pathology WITHOUT repeating the study or re-exposing the patient."],
+   ["Units", "Radiation is measured in milliSieverts (mSv) and milliGrays (mGy). One gray = one joule per kilogram. For x-ray radiation, 1 mSv = 1 mGy."],
+ ]},
+ {"id": "mri-weights", "label": "T1 vs T2 — the always-asked one", "color": "#2f5b70", "rows": [
+   ["T2: water is WHITE", "High water content is BRIGHT — fat, oedema, infection, blood (hyperemia), cerebrospinal fluid. Low water content is dark grey."],
+   ["T1: water is DARK", "Exactly the inverse. High water content is DARK; low water content is BRIGHT (white). Same list of tissues, opposite appearance."],
+   ["How to check yourself", "Look at the ventricles. Bright CSF = T2. Dark CSF = T1."],
+ ]},
+ {"id": "positioning", "label": "Positioning & Planes", "color": "#3f6b5a", "rows": [
+   ["Projections are named for THE BEAM", "From what it strikes FIRST to the most distal portion. Posterior-anterior = beam enters the back, exits the front."],
+   ["Why PA is preferred", "REDUCES MAGNIFICATION OF THE HEART, so cardiomegaly is not misread (the heart is anterior, so on PA it sits near the detector). Also: lower dose to radiation-sensitive organs, maximum lung visualisation, better apices, posterior ribs well seen."],
+   ["Standard chest exam", "PA AND LATERAL, READ TOGETHER. PA is viewed as if the patient stood in front of you — THEIR RIGHT ON YOUR LEFT. On the lateral the patient faces LEFT. Comparison films are “old gold”: old PA beside new PA, old lateral beside new lateral."],
+   ["Position → indication", "DECUBITUS = PLEURAL EFFUSION (gravity levels the fluid out). KUB = supine, AP, genitourinary tract. ABDOMINAL SERIES = STANDING, AP, gastrointestinal tract — air-fluid levels, free air, small bowel obstruction, perforation, volvulus."],
+   ["Three planes", "AXIAL (transverse) = upper/lower, much the commonest. CORONAL = anterior/posterior. SAGITTAL = right/left; in the midline it is MIDSAGITTAL (median), off to either side PARASAGITTAL."],
+   ["Cross-sectional viewing convention", "CT/MRI/nuclear: patient SUPINE, transverse sections viewed AS IF LOOKING AT THE PATIENT'S FEET — so the PATIENT'S LEFT IS ON THE READER'S RIGHT. Note this is the OPPOSITE of how a PA chest film is oriented."],
+   ["Ultrasound indicator — “crucial”", "Cardiac imaging: indicator on the RIGHT of the screen. EVERY other ultrasound: on the LEFT. Get it wrong and left and right are mirrored."],
+ ]},
+ {"id": "radiation", "label": "Radiation Risk", "color": "#8a3f4a", "rows": [
+   ["The highest emitters", "Marked IMPORTANT in the deck: CT, PET and SPECT are the HIGHEST-EMITTING medical imaging devices currently in existence. Ultrasound and MRI emit NONE."],
+   ["Organ doses (SLIDE 21 — an IMAGE; the text extracts as EMPTY)", "Dental 0.005 · PA chest 0.01 · lateral chest 0.15 · screening mammography 3 · ADULT abdominal CT 10 · barium enema 15 · NEONATAL abdominal CT 20 (mGy or mSv). FOUR ORDERS OF MAGNITUDE across the table."],
+   ["The neonatal point", "Neonatal abdominal CT doses TWICE the adult study. Smaller patient, larger organ dose for the same scan — which is exactly why the diagnostic approach asks whether something with less radiation would do."],
+   ["Nuclear medicine is different in KIND", "The tracer is inside the patient, so for a while THE PATIENT IS THE SOURCE and can briefly expose other people. No other modality does this."],
+ ]},
+ {"id": "contrast", "label": "Contrast Media", "color": "#69406c", "rows": [
+   ["CT intravenous — Omnipaque (iohexol)", "A radioactive form of IODINE. NEPHROTOXIC → CHECK BUN AND CREATININE, give 1 L NORMAL SALINE to protect the kidneys. For inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm."],
+   ["CT oral — barium or Gastrografin", "BARIUM IS CONTRAINDICATED IF PERFORATION IS SUSPECTED — it is toxic to extra-intestinal tissue and causes alkaline burns. USE GASTROGRAFIN instead. For the intraluminal space, upper oesophagus to rectum."],
+   ["MRI — gadolinium", "Assess BUN and creatinine regardless, but it is NOT as harmful as CT contrast; renal function matters mainly for clearance. For CNS tumours (typically characterised WITHOUT biopsy), metastases, soft tissue masses, arthrograms. MRA and MRV are done WITHOUT contrast."],
+   ["PET — fluorodeoxyglucose-18", "NO contraindications, NOT known to be nephrotoxic. May cause HYPERGLYCAEMIA. Renally cleared, so the genitourinary tract is ALWAYS contrast positive."],
+   ["SPECT — technetium-99", "Travels to areas of higher blood flow and cellular activity. Bone scans, myocardial perfusion, functional brain imaging, immunoscintigraphy, sentinel node, white cell uptake. Allergic reactions RARE, NO organ damage documented."],
+   ["SHELLFISH IS NOT IODINE", "There should be NO CROSS-REACTIVITY between shellfish allergy and iodinated radiocontrast. The real high-risk marker is a documented ANAPHYLACTIC REACTION TO ANY MEDICATION. Pre-treatment exists when contrast is necessary."],
+   ["The stated takeaway", "ALWAYS ASK ABOUT ALLERGIES AND ASSESS KIDNEY FUNCTION. Also: all contrast is technically radioactive, so the deck names CANCER as a risk factor for all of it."],
+   ["Other routes", "Joints = arthrogram. Central nervous system = intrathecal. Bladder = retrograde pyelogram."],
+ ]},
+ {"id": "radiology-team", "label": "The Radiology Relationship", "color": "#5a6b3a", "rows": [
+   ["They have not seen the patient", "Whatever clinical information you give is what guides the read. A vague report is a CONVERSATION — contact the radiologist and discuss the patient."],
+   ["Unsure which study?", "Tell them WHAT YOU ARE LOOKING FOR and they can guide the choice."],
+   ["Multiple regions = multiple orders", "MRI brain, C-spine, T-spine and L-spine is FOUR requests, not one."],
+ ]},
 ]
 
 html = render(
     title="Cram Sheet — Principles of Diagnostic Medicine I Exam 1",
     kicker="Principles of Diagnostic Medicine I Exam 1 · Class of 2028",
     h1="Principles of Diagnostic Medicine I Exam 1 Cram Sheet",
-    sub="Lecture 1, Principles of Laboratory Diagnostics — the phases, the order of draw, the specimen studies, point-of-care testing and its regulation, and the statistics. Opens with how Professor Reynolds said this exam is written.",
+    sub="Lectures 1 and 2. Laboratory diagnostics — the phases, the order of draw, the specimen studies, point-of-care testing and its regulation, and the statistics. Then medical imaging — the modalities, density and the Hounsfield scale, T1 against T2, positioning and the planes, radiation dose and contrast media. Opens with how Professor Reynolds said this exam is written.",
     topics=topics,
     guide_href="pdm-exam-1-study-guide.html",
-    footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 1 Study Guide (Class of 2028). Covers Lecture 1; Exam 1 spans Lectures 1–6 and Lab 1, and topics are added as each deck is posted. Exam-scope rows are quoted from the 2026-08-18 lecture recording.",
+    footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 1 Study Guide (Class of 2028). Covers Lectures 1 and 2; Exam 1 spans Lectures 1–6 and Lab 1, and topics are added as each deck is posted. Exam-scope rows are quoted from the 2026-08-18 lecture recording. Two imaging rows are flagged as coming from slides that exist only as images — their content is in no text version of the deck.",
 )
 open(OUT, "w", encoding="utf-8").write(html)
 print("wrote %s (%d KB, %d topics, %d rows)" % (os.path.basename(OUT), len(html)//1024,

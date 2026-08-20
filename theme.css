@@ -2065,6 +2065,16 @@ mark.user-hl.hl-flash {
   a { text-decoration: none !important; color: inherit !important; }
 }
 
+/* Download-as-PDF button states while it warms lazy figures before printing
+   (see theme.js). Purely a status cue -- the button stays clickable. */
+#pdf-btn.is-preparing { opacity: .62; cursor: progress; }
+#pdf-btn.is-preparing svg { animation: pdf-warm 1.1s ease-in-out infinite; }
+@keyframes pdf-warm { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+#pdf-btn.is-ready { box-shadow: 0 0 0 2px var(--accent, #2f6f6b); }
+@media (prefers-reduced-motion: reduce) {
+  #pdf-btn.is-preparing svg { animation: none; }
+}
+
 /* ============================================================
    POLISH PASS (2026-07-27)
    ------------------------------------------------------------

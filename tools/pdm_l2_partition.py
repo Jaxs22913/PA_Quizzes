@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Partition the Principles of Diagnostic Medicine I Lecture 2 pool into two 30s.
 
+POOL D COVERS IMAGE-ONLY CONTENT. Slides 13 and 21 carry tables that exist only
+as pictures -- the Hounsfield numbers and the typical organ radiation doses --
+and the text extraction reported slide 21 as entirely EMPTY. They were found by
+looking at all 56 of the deck's images while choosing the guide's figures, after
+pools A to C had already been written from text alone.
+
 House format for this class is 2x30 per topic plus 5x60 masters per exam.
 Masters wait until the whole Exam 1 block is in -- Exam 1 covers Lectures 1-6
 and Lab 1, and only Lectures 1 and 2 exist so far.
@@ -33,9 +39,12 @@ sys.path.insert(0, HERE)
 from pdm_l2_pool_a import POOL_A
 from pdm_l2_pool_b import POOL_B
 from pdm_l2_pool_c import POOL_C
+from pdm_l2_pool_d import POOL_D
 from pdm_l2_lengthfix import FIXES
 
-POOL = POOL_A + POOL_B + POOL_C
+# D is APPENDED, never prepended: the length-fix keys are indices into A + B + C
+# and prepending would silently retarget every one of them.
+POOL = POOL_A + POOL_B + POOL_C + POOL_D
 
 for (_qi, _oi), _txt in FIXES.items():
     _q = POOL[_qi]
