@@ -448,6 +448,26 @@ def main():
         assert src.count(old) == 1, "renumber target not found exactly once: %r" % old
         src = src.replace(old, new, 1)
 
+    # The header blurb lists the decks the guide covers, and it had gone stale
+    # BEFORE this build: Benign Skin Lesions was already written as section 6 but
+    # the header still advertised it as pending. Rewrite the whole pair of lines
+    # rather than patching a number, so the list and the "still to come" note can
+    # never disagree again. Idempotent -- skipped once it is already correct.
+    OLD_HDR = ("""  <p><b>Lecture 1</b> clinical reasoning, then the dermatology block &mdash;\n"""
+               """     <b>2</b> General Dermatology I &middot; <b>3</b> Dermatology II &middot;\n"""
+               """     <b>4</b> Cutaneous Bacterial Infections &middot; <b>5</b> Dermatological Infestations &middot;\n"""
+               """     <b>8</b> Pigmented Skin Lesions</p>\n"""
+               """  <p style="opacity:.9">Sections 6, 7 and 9 are added when those decks are posted &middot;\n""")
+    NEW_HDR = ("""  <p><b>Lecture 1</b> clinical reasoning, then the dermatology block &mdash;\n"""
+               """     <b>2</b> General Dermatology I &middot; <b>3</b> Dermatology II &middot;\n"""
+               """     <b>4</b> Cutaneous Bacterial Infections &middot; <b>5</b> Dermatological Infestations &middot;\n"""
+               """     <b>6</b> Cutaneous Viral and Fungal Infections &middot; <b>7</b> Benign Skin Lesions &middot;\n"""
+               """     <b>8</b> Pigmented Skin Lesions</p>\n"""
+               """  <p style="opacity:.9">Pre-Malignant and Malignant Skin Lesions is added when that deck is posted &middot;\n""")
+    if NEW_HDR not in src:
+        assert src.count(OLD_HDR) == 1, "header blurb not found in its expected form"
+        src = src.replace(OLD_HDR, NEW_HDR, 1)
+
     toc_anchor = "  <!--CMSL7TOC-->"
     assert src.count(toc_anchor) == 1
     src = src.replace(toc_anchor, TOC_OPEN + "\n" + TOC + TOC_CLOSE + "\n" + toc_anchor, 1)
