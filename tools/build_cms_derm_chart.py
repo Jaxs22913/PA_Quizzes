@@ -715,6 +715,33 @@ def non_content_slides():
     return out
 
 
+# Vertical bands removed from an extracted image, as (start, end) fractions of
+# its height. The rest of the image is rejoined, so the source citation printed
+# at the foot of a textbook figure is KEPT -- that strip is the attribution and
+# must survive any crop.
+#
+# l5_s027_4 (pubic lice) is the only entry. The slide is a male lower abdomen
+# and every diagnostic feature -- the scattered bite macules and the coarse
+# terminal hair the louse lives in -- sits above the band that is dropped. This
+# repo is a public website, so the genitalia below it is exposure with no
+# teaching value attached. Removing it costs the image nothing.
+DROP_BAND = {
+    "l5_s027_4.jpg": (0.75, 0.885),
+}
+
+
+def apply_crop(im, stem):
+    band = DROP_BAND.get(stem)
+    if not band:
+        return im
+    a, b = (int(im.height * f) for f in band)
+    assert 0 < a < b < im.height, "crop band outside the image"
+    keep = Image.new(im.mode, (im.width, im.height - (b - a)))
+    keep.paste(im.crop((0, 0, im.width, a)), (0, 0))
+    keep.paste(im.crop((0, b, im.width, im.height)), (0, a))
+    return keep
+
+
 def prep_images():
     os.makedirs(OUT_DIR, exist_ok=True)
     mapping, missing = {}, []
@@ -738,11 +765,14 @@ def prep_images():
         im = Image.open(p)
         if im.mode in ("RGBA", "P", "LA"):
             im = im.convert("RGB")
+        im = apply_crop(im, stem)
         if im.width > MAXW:
             im = im.resize((MAXW, round(im.height * MAXW / im.width)), Image.LANCZOS)
         im.save(out, "JPEG", quality=82, optimize=True)
         mapping[src] = stem
     assert not missing, "images not found: %r" % missing
+    unused = set(DROP_BAND) - set(mapping.values())
+    assert not unused, "DROP_BAND names an image no row uses: %r" % unused
     return mapping
 
 

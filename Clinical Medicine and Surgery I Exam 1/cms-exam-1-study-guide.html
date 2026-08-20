@@ -157,6 +157,39 @@
   }
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+
+  /* Disease photograph strips (added 2026-08-20). Images are shared with the
+     dermatology comparison chart -- same directory, same files, no duplicates.
+     Images here are eager, never lazy: an image that never scrolled into view
+     is absent from Download as PDF, which cost 74 of 84 photographs on the
+     chart before it was caught. */
+  .figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));
+    gap:12px;margin:16px 0;padding:14px;background:#f2e9eb;border-radius:10px;
+    border:1px solid var(--line)}
+  .figgrid figure{margin:0;text-align:center;display:flex;flex-direction:column}
+  .figgrid img{width:100%;height:132px;object-fit:contain;border-radius:6px;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .figgrid .fg-nopic{width:100%;height:132px;border-radius:6px;background:#fff;
+    border:1px dashed var(--line);display:flex;align-items:center;
+    justify-content:center;font-size:11.5px;color:var(--soft);padding:8px;
+    line-height:1.35;box-sizing:border-box}
+  .figgrid figcaption{margin-top:7px;font-size:12px;line-height:1.35;color:var(--soft)}
+  .figgrid .fg-name{display:block;font-weight:700;color:var(--ink);font-size:12.5px;
+    margin-bottom:2px}
+  .figgrid .fg-cite{display:block;font-size:10.5px;margin-top:3px;opacity:1;color:var(--soft)}
+  .figgrid-h{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--soft);margin:0 0 4px}
+  @media (max-width:520px){.figgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+    .figgrid img,.figgrid .fg-nopic{height:112px}}
+  /* The GRID must be allowed to break -- a ten-condition strip is taller than a
+     page, so `break-inside:avoid` on the grid cannot be honoured and Chrome
+     splits it through the middle of a figure instead, clipping the photograph
+     and orphaning its caption. Let the grid fragment between rows and protect
+     the individual figure, which always fits. */
+  @media print{.figgrid{break-inside:auto;background:#f7f2f3}
+    .figgrid figure{break-inside:avoid;page-break-inside:avoid}
+    .figgrid img,.figgrid .fg-nopic{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -626,6 +659,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Xeroderma</td><td>Shins and forearms, worse in winter</td><td>Dry cracked skin from impaired barrier function</td></tr>
   </table>
 
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l2_s050_1.jpg" decoding="async" alt="Atopic dermatitis &mdash; Ill-defined erythema in a flexure, excoriated and lichenified from scratching"><figcaption><span class="fg-name">Atopic dermatitis</span>Ill-defined erythema in a flexure, excoriated and lichenified from scratching<span class="fg-cite">Lecture 2 &middot; Slide 50</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s080_1.jpg" decoding="async" alt="Irritant contact dermatitis &mdash; Erythema confined to the exposed surface, no spread beyond it"><figcaption><span class="fg-name">Irritant contact dermatitis</span>Erythema confined to the exposed surface, no spread beyond it<span class="fg-cite">Lecture 2 &middot; Slide 80</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s088_1.jpg" decoding="async" alt="Allergic contact dermatitis &mdash; Sharp geometric margins in the shape of the contactant"><figcaption><span class="fg-name">Allergic contact dermatitis</span>Sharp geometric margins in the shape of the contactant<span class="fg-cite">Lecture 2 &middot; Slide 88</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s092_2.jpg" decoding="async" alt="Seborrheic dermatitis &mdash; Greasy yellow scale on erythema in a sebum-rich site"><figcaption><span class="fg-name">Seborrheic dermatitis</span>Greasy yellow scale on erythema in a sebum-rich site<span class="fg-cite">Lecture 2 &middot; Slide 92</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s070_1.jpg" decoding="async" alt="Nummular eczema &mdash; Discrete coin-shaped plaques with a clear edge"><figcaption><span class="fg-name">Nummular eczema</span>Discrete coin-shaped plaques with a clear edge<span class="fg-cite">Lecture 2 &middot; Slide 70</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s065_1.jpg" decoding="async" alt="Dyshidrotic eczema &mdash; Deep-seated tapioca-like vesicles along the sides of the fingers"><figcaption><span class="fg-name">Dyshidrotic eczema</span>Deep-seated tapioca-like vesicles along the sides of the fingers<span class="fg-cite">Lecture 2 &middot; Slide 65</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s111_3.jpg" decoding="async" alt="Stasis dermatitis &mdash; Gaiter-area pigmentation and oedema, bilateral"><figcaption><span class="fg-name">Stasis dermatitis</span>Gaiter-area pigmentation and oedema, bilateral<span class="fg-cite">Lecture 2 &middot; Slide 111</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s104_2.jpg" decoding="async" alt="Diaper dermatitis &mdash; Involves convex surfaces and spares the folds"><figcaption><span class="fg-name">Diaper dermatitis</span>Involves convex surfaces and spares the folds<span class="fg-cite">Lecture 2 &middot; Slide 104</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s097_1.jpg" decoding="async" alt="Perioral dermatitis &mdash; Papules around the mouth that spare the vermilion border"><figcaption><span class="fg-name">Perioral dermatitis</span>Papules around the mouth that spare the vermilion border<span class="fg-cite">Lecture 2 &middot; Slide 97</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s151_2.jpg" decoding="async" alt="Xeroderma (xerosis) &mdash; Dry cracked plating of the skin, worst on shins"><figcaption><span class="fg-name">Xeroderma (xerosis)</span>Dry cracked plating of the skin, worst on shins<span class="fg-cite">Lecture 2 &middot; Slide 151</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
+
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; recognising these across skin types</span>
   <p>She spent real time on this and was direct about why. &ldquo;All the descriptions, all the
   textbooks, and <mark class="prof-highlight">what you're gonna be tested on, is gonna describe the
@@ -661,6 +703,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Mucosal involvement</td><td>Uncommon</td><td>Common, often the first site</td></tr>
     <tr><td>Prognosis</td><td>Better</td><td>Worse; was frequently fatal before corticosteroids</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l2_s121_1.jpg" decoding="async" alt="Bullous pemphigoid &mdash; Tense bullae on an urticarial base; they do not rupture easily"><figcaption><span class="fg-name">Bullous pemphigoid</span>Tense bullae on an urticarial base; they do not rupture easily<span class="fg-cite">Lecture 2 &middot; Slide 121</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s127_2.jpg" decoding="async" alt="Pemphigus (vulgaris) &mdash; Flaccid bullae and erosions, mucosa involved"><figcaption><span class="fg-name">Pemphigus (vulgaris)</span>Flaccid bullae and erosions, mucosa involved<span class="fg-cite">Lecture 2 &middot; Slide 127</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <div class="callout"><strong>Deeper split, tougher blister.</strong> Bullous pemphigoid separates
   <em>below</em> the epidermis, so the roof of the blister is the full thickness of epidermis and the
   blister is tense. Pemphigus separates <em>within</em> the epidermis, so the roof is a few cell layers
@@ -675,6 +726,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Lichen planus</td><td>Purple, polygonal, pruritic, planar papules; Wickham striae on the surface</td><td>Flexor wrists, ankles, oral mucosa</td></tr>
     <tr><td>Lichen simplex chronicus</td><td>Thickened lichenified plaque with accentuated skin markings</td><td>Wherever the patient can reach to scratch; the itch-scratch cycle sustains it</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l2_s156_3.jpg" decoding="async" alt="Psoriasis &amp;mdash; plaque &mdash; Sharply marginated plaques with thick silvery scale on extensors"><figcaption><span class="fg-name">Psoriasis &mdash; plaque</span>Sharply marginated plaques with thick silvery scale on extensors<span class="fg-cite">Lecture 2 &middot; Slide 156</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s157_1.jpg" decoding="async" alt="Psoriasis &amp;mdash; guttate &mdash; Small drop-like papules scattered over the trunk"><figcaption><span class="fg-name">Psoriasis &mdash; guttate</span>Small drop-like papules scattered over the trunk<span class="fg-cite">Lecture 2 &middot; Slide 157</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s158_2.jpg" decoding="async" alt="Psoriasis &amp;mdash; pustular &mdash; Sterile pustules on an erythematous base"><figcaption><span class="fg-name">Psoriasis &mdash; pustular</span>Sterile pustules on an erythematous base<span class="fg-cite">Lecture 2 &middot; Slide 158</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s167_1.jpg" decoding="async" alt="Pityriasis rosea &mdash; Herald patch, then a scaly eruption along skin lines"><figcaption><span class="fg-name">Pityriasis rosea</span>Herald patch, then a scaly eruption along skin lines<span class="fg-cite">Lecture 2 &middot; Slide 167</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s175_1.jpg" decoding="async" alt="Lichen planus &mdash; Flat-topped violaceous polygonal papules"><figcaption><span class="fg-name">Lichen planus</span>Flat-topped violaceous polygonal papules<span class="fg-cite">Lecture 2 &middot; Slide 175</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s181_2.jpg" decoding="async" alt="Lichen simplex chronicus &mdash; Thickened skin with exaggerated markings from chronic rubbing"><figcaption><span class="fg-name">Lichen simplex chronicus</span>Thickened skin with exaggerated markings from chronic rubbing<span class="fg-cite">Lecture 2 &middot; Slide 181</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p>The <strong>six Ps</strong> for lichen planus &mdash; purple, polygonal, pruritic, planar, papules
   and plaques &mdash; is worth memorising because the description alone is close to diagnostic.</p>
 
@@ -687,6 +747,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Scarring</td><td>Non-scarring &mdash; regrowth is possible</td><td>Non-scarring, but the miniaturisation is progressive</td></tr>
     <tr><td>Treatment</td><td>Intralesional or topical corticosteroid; associated with other autoimmune disease</td><td>Topical minoxidil; finasteride in men</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l2_s136_2.jpg" decoding="async" alt="Alopecia areata &mdash; Smooth round patch of loss with no scarring or scale"><figcaption><span class="fg-name">Alopecia areata</span>Smooth round patch of loss with no scarring or scale<span class="fg-cite">Lecture 2 &middot; Slide 136</span></figcaption></figure><figure><img src="cms-derm-chart-images/l2_s142_2.jpg" decoding="async" alt="Androgenetic alopecia &mdash; Patterned thinning, temples and vertex in men, part width in women"><figcaption><span class="fg-name">Androgenetic alopecia</span>Patterned thinning, temples and vertex in men, part width in women<span class="fg-cite">Lecture 2 &middot; Slide 142</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
 
   <h3 class="sub" id="gd1-pharm">2.6 &middot; Common dermatologic pharmacology</h3>
   <p>Four families carry most of the treatment in this lecture: <strong>emollients and barrier
@@ -736,6 +805,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Acne rosacea</td><td>Central facial erythema with flushing and telangiectasias, no comedones</td><td>Absence of comedones separates it from acne vulgaris</td></tr>
     <tr><td>Hyperhidrosis</td><td>Primary is bilateral, focal, adolescent onset, absent in sleep</td><td>Generalised or nocturnal sweating means look for a secondary cause</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l3_s006_3.jpg" decoding="async" alt="Erythema multiforme &mdash; Target lesions with three zones, acral first"><figcaption><span class="fg-name">Erythema multiforme</span>Target lesions with three zones, acral first<span class="fg-cite">Lecture 3 &middot; Slide 6</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s035_1.jpg" decoding="async" alt="Urticaria &mdash; Transient oedematous wheals; each one moves within a day"><figcaption><span class="fg-name">Urticaria</span>Transient oedematous wheals; each one moves within a day<span class="fg-cite">Lecture 3 &middot; Slide 35</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s041_1.jpg" decoding="async" alt="Erythema nodosum &mdash; Tender red nodules on the shins that never ulcerate"><figcaption><span class="fg-name">Erythema nodosum</span>Tender red nodules on the shins that never ulcerate<span class="fg-cite">Lecture 3 &middot; Slide 41</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s047_1.jpg" decoding="async" alt="Granuloma annulare &mdash; Ring of firm papules with an intact, non-scaly centre"><figcaption><span class="fg-name">Granuloma annulare</span>Ring of firm papules with an intact, non-scaly centre<span class="fg-cite">Lecture 3 &middot; Slide 47</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s056_2.jpg" decoding="async" alt="Pyoderma gangrenosum &mdash; Ulcer with a violaceous undermined border"><figcaption><span class="fg-name">Pyoderma gangrenosum</span>Ulcer with a violaceous undermined border<span class="fg-cite">Lecture 3 &middot; Slide 56</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s063_1.jpg" decoding="async" alt="Acne rosacea &mdash; Central facial erythema with telangiectasia, no comedones"><figcaption><span class="fg-name">Acne rosacea</span>Central facial erythema with telangiectasia, no comedones<span class="fg-cite">Lecture 3 &middot; Slide 63</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s071_1.jpg" decoding="async" alt="Hyperhidrosis &mdash; Visible sweat beyond thermal need, focal and symmetric"><figcaption><span class="fg-name">Hyperhidrosis</span>Visible sweat beyond thermal need, focal and symmetric<span class="fg-cite">Lecture 3 &middot; Slide 71</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s014_1.jpg" decoding="async" alt="Dermatitis herpetiformis &mdash; Grouped intensely itchy vesicles on extensor surfaces"><figcaption><span class="fg-name">Dermatitis herpetiformis</span>Grouped intensely itchy vesicles on extensor surfaces<span class="fg-cite">Lecture 3 &middot; Slide 14</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s021_2.jpg" decoding="async" alt="Acanthosis nigricans &mdash; Velvety thickened hyperpigmentation in a flexure"><figcaption><span class="fg-name">Acanthosis nigricans</span>Velvety thickened hyperpigmentation in a flexure<span class="fg-cite">Lecture 3 &middot; Slide 21</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s027_2.jpg" decoding="async" alt="Epidermolysis bullosa &mdash; Blistering and erosions at sites of mechanical friction"><figcaption><span class="fg-name">Epidermolysis bullosa</span>Blistering and erosions at sites of mechanical friction<span class="fg-cite">Lecture 3 &middot; Slide 27</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <div class="pearl"><strong>Pyoderma gangrenosum is the one that punishes the reflex.</strong> Every
   instinct with a necrotic ulcer says debride. Here debridement enlarges it. The bowel disease history
   and the undermined violaceous border are the signals to stop and think.</div>
@@ -762,6 +840,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Epidermal detachment</td><td>Under 10% body surface</td><td>10 to 30%</td><td>Over 30%</td></tr>
     <tr><td>Mortality</td><td>1 to 5%</td><td>Intermediate</td><td>30 to 35%</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l3_s081_2.jpg" decoding="async" alt="Stevens-Johnson syndrome &mdash; Dusky macules and mucosal erosion, under a tenth of the surface"><figcaption><span class="fg-name">Stevens-Johnson syndrome</span>Dusky macules and mucosal erosion, under a tenth of the surface<span class="fg-cite">Lecture 3 &middot; Slide 81</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s086_1.jpg" decoding="async" alt="Toxic epidermal necrolysis &mdash; Sheet-like detachment of the epidermis, over three tenths"><figcaption><span class="fg-name">Toxic epidermal necrolysis</span>Sheet-like detachment of the epidermis, over three tenths<span class="fg-cite">Lecture 3 &middot; Slide 86</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p>Both are severe type IV hypersensitivity reactions, drug-induced in over 80% of cases. The leading
   culprits are the <strong>aromatic anticonvulsants</strong> (carbamazepine, phenytoin, lamotrigine,
   phenobarbital), <strong>sulfonamide antibiotics</strong>, <strong>allopurinol</strong> (the commonest
@@ -794,6 +881,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Drugs</td><td>Tetracyclines (doxycycline), fluoroquinolones, amiodarone, thiazides, furosemide, voriconazole</td><td>Sunscreen chemicals (oxybenzone), sulfonamides, topical antihistamines, phenothiazines</td></tr>
     <tr><td>Test</td><td>Minimal erythema dose testing</td><td>Photopatch testing &mdash; the gold standard</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l3_s092_1.jpg" decoding="async" alt="Sunburn &mdash; Erythema sharply limited to exposed skin, tender to touch"><figcaption><span class="fg-name">Sunburn</span>Erythema sharply limited to exposed skin, tender to touch<span class="fg-cite">Lecture 3 &middot; Slide 92</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s097_1.jpg" decoding="async" alt="Drug-induced photosensitivity &mdash; Exaggerated burn in exposed areas after a drug"><figcaption><span class="fg-name">Drug-induced photosensitivity</span>Exaggerated burn in exposed areas after a drug<span class="fg-cite">Lecture 3 &middot; Slide 97</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s103_1.jpg" decoding="async" alt="Polymorphous light eruption &mdash; Itchy papules appearing hours to days after the first strong sun"><figcaption><span class="fg-name">Polymorphous light eruption</span>Itchy papules appearing hours to days after the first strong sun<span class="fg-cite">Lecture 3 &middot; Slide 103</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s115_1.jpg" decoding="async" alt="Dermatoheliosis (photoaging) &mdash; Deep furrowing and yellow leathering of chronically exposed skin"><figcaption><span class="fg-name">Dermatoheliosis (photoaging)</span>Deep furrowing and yellow leathering of chronically exposed skin<span class="fg-cite">Lecture 3 &middot; Slide 115</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s117_3.jpg" decoding="async" alt="Actinic keratosis &mdash; Rough sandpaper texture, easier to feel than to see"><figcaption><span class="fg-name">Actinic keratosis</span>Rough sandpaper texture, easier to feel than to see<span class="fg-cite">Lecture 3 &middot; Slide 117</span></figcaption></figure><figure><img src="cms-derm-chart-images/l3_s108_1.jpg" decoding="async" alt="Solar lentigo &mdash; Uniform tan macule on chronically exposed skin"><figcaption><span class="fg-name">Solar lentigo</span>Uniform tan macule on chronically exposed skin<span class="fg-cite">Lecture 3 &middot; Slide 108</span></figcaption></figure><figure><div class="fg-nopic">No image of this in the deck</div><figcaption><span class="fg-name">Photodermatitis (phytophotodermatitis)</span>Bizarre streaks and drips where plant sap met sun</figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p><strong>Photopatch reading:</strong> a reaction on the irradiated patch <em>only</em> is
   photoallergy; a reaction on <em>both</em> patches is ordinary contact allergy.</p>
   <table>
@@ -837,6 +933,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Moderate papulopustular and mixed</td><td>Topical retinoid <em>and</em> oral antibiotic <em>and</em> topical benzoyl peroxide</td></tr>
     <tr><td>Severe (nodular)</td><td>The same triple combination, <em>or</em> oral isotretinoin as monotherapy</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l4_s004_1.jpg" decoding="async" alt="Acne vulgaris &mdash; Comedones alongside papules and pustules in sebaceous areas"><figcaption><span class="fg-name">Acne vulgaris</span>Comedones alongside papules and pustules in sebaceous areas<span class="fg-cite">Lecture 4 &middot; Slide 4</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p><strong>Benzoyl peroxide goes with every antibiotic</strong>, topical or oral, to reduce resistance.
   Oral tetracyclines are kept to three to four months for the same reason.</p>
   <div class="callout"><strong>Isotretinoin safety is examinable in detail.</strong> Negative pregnancy
@@ -858,6 +963,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Hidradenitis suppurativa</td><td>Inflammation of apocrine glands</td><td>Three criteria: typical lesions, axilla and groin distribution, recurrence more than twice in six months</td></tr>
     <tr><td>Erythrasma</td><td>Corynebacterium minutissimum in the upper stratum corneum</td><td>Coral-red fluorescence under a Wood's lamp</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l4_s041_1.jpg" decoding="async" alt="Folliculitis &mdash; Pustules centred on hair follicles"><figcaption><span class="fg-name">Folliculitis</span>Pustules centred on hair follicles<span class="fg-cite">Lecture 4 &middot; Slide 41</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s050_1.jpg" decoding="async" alt="Pseudomonas (&amp;ldquo;hot tub&amp;rdquo;) folliculitis &mdash; Follicular pustules under the swimsuit area after a tub"><figcaption><span class="fg-name">Pseudomonas (&ldquo;hot tub&rdquo;) folliculitis</span>Follicular pustules under the swimsuit area after a tub<span class="fg-cite">Lecture 4 &middot; Slide 50</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s054_1.jpg" decoding="async" alt="Pseudofolliculitis barbae &mdash; Papules in the beard from hairs re-entering the skin"><figcaption><span class="fg-name">Pseudofolliculitis barbae</span>Papules in the beard from hairs re-entering the skin<span class="fg-cite">Lecture 4 &middot; Slide 54</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s060_1.jpg" decoding="async" alt="Furuncle &mdash; One tender nodule around a single follicle"><figcaption><span class="fg-name">Furuncle</span>One tender nodule around a single follicle<span class="fg-cite">Lecture 4 &middot; Slide 60</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s060_2.jpg" decoding="async" alt="Carbuncle &mdash; Several furuncles coalescing, draining from multiple points"><figcaption><span class="fg-name">Carbuncle</span>Several furuncles coalescing, draining from multiple points<span class="fg-cite">Lecture 4 &middot; Slide 60</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s074_1.jpg" decoding="async" alt="Hidradenitis suppurativa &mdash; Nodules, sinus tracts and scarring in apocrine-bearing skin"><figcaption><span class="fg-name">Hidradenitis suppurativa</span>Nodules, sinus tracts and scarring in apocrine-bearing skin<span class="fg-cite">Lecture 4 &middot; Slide 74</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s083_1.jpg" decoding="async" alt="Erythrasma &mdash; Well-demarcated brown patch in a fold; coral-red under Wood&#x27;s lamp"><figcaption><span class="fg-name">Erythrasma</span>Well-demarcated brown patch in a fold; coral-red under Wood's lamp<span class="fg-cite">Lecture 4 &middot; Slide 83</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p><strong>Recurrent folliculitis or furunculosis</strong> means looking for nasal carriage of
   Staphylococcus aureus &mdash; mupirocin ointment in the nasal vestibule twice daily for five days
   &mdash; alongside obesity and diabetes.</p>
@@ -874,6 +988,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Border</td><td>Crusted erosion</td><td><strong>Raised, sharply demarcated</strong></td><td><strong>Not raised, not demarcated</strong></td></tr>
     <tr><td>Treatment</td><td>Mupirocin topically; cephalexin orally, the drug of choice in children</td><td>Penicillin V; clindamycin if penicillin allergic</td><td>Dicloxacillin or cephalexin; cover MRSA if purulent</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l4_s087_1.jpg" decoding="async" alt="Impetigo &amp;mdash; non-bullous &mdash; Honey-coloured crust on a superficial erosion"><figcaption><span class="fg-name">Impetigo &mdash; non-bullous</span>Honey-coloured crust on a superficial erosion<span class="fg-cite">Lecture 4 &middot; Slide 87</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s089_1.jpg" decoding="async" alt="Impetigo &amp;mdash; bullous &mdash; Flaccid bullae leaving a collarette of scale"><figcaption><span class="fg-name">Impetigo &mdash; bullous</span>Flaccid bullae leaving a collarette of scale<span class="fg-cite">Lecture 4 &middot; Slide 89</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s091_1.jpg" decoding="async" alt="Ecthyma &mdash; Punched-out ulcer under the crust, deeper than impetigo"><figcaption><span class="fg-name">Ecthyma</span>Punched-out ulcer under the crust, deeper than impetigo<span class="fg-cite">Lecture 4 &middot; Slide 91</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s098_1.jpg" decoding="async" alt="Erysipelas &mdash; Raised, sharply demarcated bright erythema"><figcaption><span class="fg-name">Erysipelas</span>Raised, sharply demarcated bright erythema<span class="fg-cite">Lecture 4 &middot; Slide 98</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s105_1.jpg" decoding="async" alt="Cellulitis &mdash; Erythema with an indistinct border, warm and tender"><figcaption><span class="fg-name">Cellulitis</span>Erythema with an indistinct border, warm and tender<span class="fg-cite">Lecture 4 &middot; Slide 105</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s114_1.jpg" decoding="async" alt="Abscess &mdash; Fluctuant collection, often with a pointing head"><figcaption><span class="fg-name">Abscess</span>Fluctuant collection, often with a pointing head<span class="fg-cite">Lecture 4 &middot; Slide 114</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p>Impetigo comes in three forms: <strong>non-bullous</strong> (commonest, honey-coloured adherent
   crust, lymphadenopathy common), <strong>bullous</strong> (exclusively Staphylococcus aureus through
   epidermolytic toxins, tense bullae leaving collarettes, lymphadenopathy uncommon) and
@@ -896,6 +1019,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Timing</td><td>2 to 5 days after trauma</td><td>At least 6 weeks</td></tr>
     <tr><td>Treatment</td><td>Warm soaks; incision and drainage if purulent. Clindamycin if nail biting, for oral flora</td><td>Keep hands dry; topical antifungal; oral fluconazole if severe</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l4_s117_1.jpg" decoding="async" alt="Acute paronychia &mdash; Painful erythematous swelling of one nail fold"><figcaption><span class="fg-name">Acute paronychia</span>Painful erythematous swelling of one nail fold<span class="fg-cite">Lecture 4 &middot; Slide 117</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s120_1.jpg" decoding="async" alt="Chronic paronychia &mdash; Retracted cuticle and nail dystrophy over months"><figcaption><span class="fg-name">Chronic paronychia</span>Retracted cuticle and nail dystrophy over months<span class="fg-cite">Lecture 4 &middot; Slide 120</span></figcaption></figure><figure><img src="cms-derm-chart-images/l4_s124_2.jpg" decoding="async" alt="Necrotizing fasciitis &mdash; Skin changes that lag far behind the pain, with dusky discolouration"><figcaption><span class="fg-name">Necrotizing fasciitis</span>Skin changes that lag far behind the pain, with dusky discolouration<span class="fg-cite">Lecture 4 &middot; Slide 124</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <div class="pearl"><strong>Necrotizing fasciitis: unrelenting pain out of proportion to
   examination.</strong> Patients are commonly diagnosed with cellulitis, sent home, and return worse.
   No response at 48 hours is the other clue. Later the area stops being tender, because the superficial
@@ -943,6 +1075,15 @@ probability is the whole point of testing.</figcaption>
     <tr><th></th><th>First infestation</th><th>Reinfestation</th></tr>
     <tr><td>Pruritus appears</td><td>4 to 6 weeks &mdash; many not for 3 months</td><td>2 to 3 days</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l5_s009_1.jpg" decoding="async" alt="Scabies &mdash; Burrows in web spaces and wrists, itch worst at night"><figcaption><span class="fg-name">Scabies</span>Burrows in web spaces and wrists, itch worst at night<span class="fg-cite">Lecture 5 &middot; Slide 9</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s011_4.jpg" decoding="async" alt="Crusted (hyperkeratotic) scabies &mdash; Thick hyperkeratotic crusting, enormous mite burden"><figcaption><span class="fg-name">Crusted (hyperkeratotic) scabies</span>Thick hyperkeratotic crusting, enormous mite burden<span class="fg-cite">Lecture 5 &middot; Slide 11</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s027_2.jpg" decoding="async" alt="Pediculosis capitis (head lice) &mdash; Nits cemented to hair shafts near the scalp"><figcaption><span class="fg-name">Pediculosis capitis (head lice)</span>Nits cemented to hair shafts near the scalp<span class="fg-cite">Lecture 5 &middot; Slide 27</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s027_1.jpg" decoding="async" alt="Pediculosis corporis (body lice) &mdash; Excoriations on the trunk; the louse lives in clothing"><figcaption><span class="fg-name">Pediculosis corporis (body lice)</span>Excoriations on the trunk; the louse lives in clothing<span class="fg-cite">Lecture 5 &middot; Slide 27</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s027_4.jpg" decoding="async" alt="Pediculosis pubis (crabs) &mdash; Bite macules scattered over the lower abdomen and coarse hair"><figcaption><span class="fg-name">Pediculosis pubis (crabs)</span>Bite macules scattered over the lower abdomen and coarse hair<span class="fg-cite">Lecture 5 &middot; Slide 27</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p>Distribution favours interdigital webs, sides of fingers, volar wrists, elbows, axillae, scrotum,
   penis, labia and areolae, with <strong>head and neck spared in healthy adults</strong>. In
   <strong>infants, the elderly and the immunocompromised</strong>, head and neck may be involved, and
@@ -983,6 +1124,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Caterpillars</td><td>Gypsy moth &rarr; papules in linear streaks. Asp or puss caterpillar (most poisonous) &rarr; intense pain, train-track purpura</td><td>Strip the hairs off with adhesive tape; antihistamines, steroids, narcotic analgesia, antivenom for some</td></tr>
   </table>
 
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l5_s034_2.jpg" decoding="async" alt="Bedbugs &mdash; Grouped bites on skin left uncovered overnight, classically in a line"><figcaption><span class="fg-name">Bedbugs</span>Grouped bites on skin left uncovered overnight, classically in a line<span class="fg-cite">Lecture 5 &middot; Slide 34</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s039_2.jpg" decoding="async" alt="Tungiasis (fleas) &mdash; Papule with a central black dot, usually on the foot"><figcaption><span class="fg-name">Tungiasis (fleas)</span>Papule with a central black dot, usually on the foot<span class="fg-cite">Lecture 5 &middot; Slide 39</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s047_1.jpg" decoding="async" alt="Caterpillars (lepidopterism) &mdash; Linear urticarial streaks where the hairs brushed the skin"><figcaption><span class="fg-name">Caterpillars (lepidopterism)</span>Linear urticarial streaks where the hairs brushed the skin<span class="fg-cite">Lecture 5 &middot; Slide 47</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
+
   <h3 class="sub" id="di-larva">5.3 &middot; Objective a &mdash; Cutaneous larva migrans and cercarial dermatitis</h3>
   <table>
     <tr><th></th><th>Cutaneous larva migrans</th><th>Cercarial dermatitis</th></tr>
@@ -991,6 +1141,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Lesion</td><td>Raised serpentine trail advancing <strong>2 to 3 cm a day</strong>, lasting 2 to 8 weeks</td><td>Prickling 30 minutes, itch at 10 to 12 hours, papules by 24 hours, peak at 48 to 72 hours</td></tr>
     <tr><td>Treatment</td><td>Albendazole 400 mg daily for 3 days, or ivermectin. <strong>No excision, no cryotherapy</strong></td><td>Symptomatic &mdash; antihistamines, oatmeal baths, aspirin, glucocorticoids</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l5_s052_1.jpg" decoding="async" alt="Cutaneous larva migrans &mdash; Serpiginous raised track that advances day to day"><figcaption><span class="fg-name">Cutaneous larva migrans</span>Serpiginous raised track that advances day to day<span class="fg-cite">Lecture 5 &middot; Slide 52</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s090_1.jpg" decoding="async" alt="Cercarial dermatitis (swimmer&#x27;s itch) &mdash; Itchy papules on skin that was uncovered in the water"><figcaption><span class="fg-name">Cercarial dermatitis (swimmer's itch)</span>Itchy papules on skin that was uncovered in the water<span class="fg-cite">Lecture 5 &middot; Slide 90</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
 
   <h3 class="sub" id="di-spiders">5.4 &middot; Objective a &mdash; Spider bites</h3>
   <table>
@@ -1001,6 +1160,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Venom</td><td>Alpha-latrotoxin, a neurotoxin</td><td>Local cytotoxic effect</td><td>Local, with systemic symptoms</td></tr>
     <tr><td>Treatment</td><td>Calcium gluconate, narcotics, muscle relaxants, benzodiazepines; check tetanus</td><td>Pain control, warm compresses; <strong>delay surgery until the wound is stable</strong></td><td>Supportive; heals over weeks, headache up to a week</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l5_s056_1.jpg" decoding="async" alt="Black widow spider &mdash; The slide shows the spider: glossy black, red hourglass underneath"><figcaption><span class="fg-name">Black widow spider</span>The slide shows the spider: glossy black, red hourglass underneath<span class="fg-cite">Lecture 5 &middot; Slide 56</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s060_1.jpg" decoding="async" alt="Brown recluse spider &mdash; Red, white and blue lesion progressing to a necrotic eschar"><figcaption><span class="fg-name">Brown recluse spider</span>Red, white and blue lesion progressing to a necrotic eschar<span class="fg-cite">Lecture 5 &middot; Slide 60</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s063_1.jpg" decoding="async" alt="Hobo spider &mdash; The slide shows the spider: brown, and with no violin on its back"><figcaption><span class="fg-name">Hobo spider</span>The slide shows the spider: brown, and with no violin on its back<span class="fg-cite">Lecture 5 &middot; Slide 63</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p><strong>Tarantulas</strong> shed urticating hairs that embed in skin and eyes &mdash; topical
   corticosteroid for the skin, ophthalmology for the eye.</p>
 
@@ -1013,6 +1181,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Diagnosis</td><td>Clinical if erythema migrans present. Otherwise enzyme-linked immunosorbent assay, C6 peptide, Western blot</td><td>Indirect immunofluorescence assay is the gold standard but rarely diagnostic before day 7</td></tr>
     <tr><td>Treatment</td><td>Doxycycline first line; <strong>amoxicillin</strong> in children and pregnancy; macrolide second line; 10 to 14 days</td><td><strong>Doxycycline for everyone</strong>, including pregnancy and children, with desensitisation where contraindicated; 5 to 10 days</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l5_s073_5.jpg" decoding="async" alt="Lyme disease &mdash; Erythema migrans: an expanding red patch, often clearing centrally"><figcaption><span class="fg-name">Lyme disease</span>Erythema migrans: an expanding red patch, often clearing centrally<span class="fg-cite">Lecture 5 &middot; Slide 73</span></figcaption></figure><figure><img src="cms-derm-chart-images/l5_s084_1.jpg" decoding="async" alt="Rocky Mountain spotted fever &mdash; Rash starting at wrists and ankles and moving inwards, palms and soles"><figcaption><span class="fg-name">Rocky Mountain spotted fever</span>Rash starting at wrists and ankles and moving inwards, palms and soles<span class="fg-cite">Lecture 5 &middot; Slide 84</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <div class="pearl"><strong>The two tick illnesses diverge on the paediatric antibiotic.</strong> Lyme
   disease in a child gets amoxicillin. Rocky Mountain spotted fever in a child gets doxycycline anyway,
   because the risk of untreated disease outweighs tooth staining. <strong>Start by day 5</strong> &mdash;
@@ -1067,6 +1244,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Sun behaviour</td><td><strong>Fade when exposure stops</strong>; darker in summer</td><td><strong>Do not fade</strong>; occur on protected skin too</td><td>Do not fade; associated with actinic keratosis and skin cancers</td></tr>
     <tr><td>Treatment</td><td>Sun protection, depigmenting agents, laser. <strong>Not cryotherapy</strong> &mdash; lesions too small</td><td>None needed; cryotherapy or quality-switched laser for cosmesis</td><td>None needed; retinoids, cryotherapy or laser for cosmesis</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l8_s006_1.jpg" decoding="async" alt="Ephelides (freckles) &mdash; Small tan macules that darken with sun and fade without it"><figcaption><span class="fg-name">Ephelides (freckles)</span>Small tan macules that darken with sun and fade without it<span class="fg-cite">Lecture 8 &middot; Slide 6</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s011_3.jpg" decoding="async" alt="Lentigines &mdash; Uniform brown macules that do not fade in winter"><figcaption><span class="fg-name">Lentigines</span>Uniform brown macules that do not fade in winter<span class="fg-cite">Lecture 8 &middot; Slide 11</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s014_1.jpg" decoding="async" alt="Solar lentigo &mdash; Larger tan patch on chronically exposed skin"><figcaption><span class="fg-name">Solar lentigo</span>Larger tan patch on chronically exposed skin<span class="fg-cite">Lecture 8 &middot; Slide 14</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <div class="pearl"><strong>The whole ephelides-versus-lentigines question is one clinical fact:
   freckles fade when the sun goes, age spots do not.</strong> Everything else follows.</div>
   <p><strong>MCR-1</strong> is the receptor for alpha-melanocyte-stimulating hormone, activating
@@ -1086,6 +1272,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Origin</td><td>Benign epidermal proliferation</td><td>Genetic; a developmental defect of the hair follicle</td></tr>
     <tr><td>Management</td><td>Supportive; cryotherapy if itchy or inflamed, though it recurs</td><td>Best left untreated; excision, curettage or laser. <strong>Avoid cryotherapy</strong> &mdash; post-inflammatory hyperpigmentation</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l8_s017_2.jpg" decoding="async" alt="Seborrheic keratosis &mdash; Waxy stuck-on plaque with visible follicular plugging"><figcaption><span class="fg-name">Seborrheic keratosis</span>Waxy stuck-on plaque with visible follicular plugging<span class="fg-cite">Lecture 8 &middot; Slide 17</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s019_2.jpg" decoding="async" alt="Dermatosis papulosa nigrans &mdash; Small dark papules on the malar cheeks, skin of colour"><figcaption><span class="fg-name">Dermatosis papulosa nigrans</span>Small dark papules on the malar cheeks, skin of colour<span class="fg-cite">Lecture 8 &middot; Slide 19</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <p>Seborrheic keratoses are <strong>easily mistaken for neoplasms</strong>, which is exactly why they
   matter in an older adult presenting with a new dark growth.</p>
 
@@ -1100,6 +1295,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Distribution</td><td>Well defined, <strong>symmetrical</strong>; prefers face (periorificial), genitals, acral areas</td><td><strong>Unilateral</strong>, does not cross the midline, block-like patterns</td></tr>
     <tr><td>Course</td><td>Progressive</td><td>Unpredictable cycles of flare and stabilisation</td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l8_s022_1.jpg" decoding="async" alt="Vitiligo &mdash; Sharply marginated depigmented, not merely hypopigmented, patches"><figcaption><span class="fg-name">Vitiligo</span>Sharply marginated depigmented, not merely hypopigmented, patches<span class="fg-cite">Lecture 8 &middot; Slide 22</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <table>
     <tr><th>Extent</th><th>Treatment</th></tr>
     <tr><td>Under 5% body surface</td><td>Topical steroid (cheap, effective; watch skin atrophy and intraocular pressure) <em>or</em> topical calcineurin inhibitor &mdash; tacrolimus, pimecrolimus &mdash; for face, neck, intertriginous areas and children (increased cancer risk), combined with phototherapy</td></tr>
@@ -1127,6 +1331,15 @@ probability is the whole point of testing.</figcaption>
     <tr><td>Spitz</td><td>Solitary pink or red hairless firm dome-shaped lesion; growth phase then stable; spares palms, soles, mucosae</td><td><strong>Sometimes resembles melanoma</strong> &mdash; biopsy or wide excision. Multiple lesions can indicate a familial cancer syndrome</td></tr>
     <tr><td>Dysplastic</td><td>At least 5 mm, irregular indistinct borders, variable tan to brown, smooth or pebbly; sun-exposed skin</td><td>Commonest in Caucasians with a family history. Over 100 by adolescence defines the syndrome. <strong>May progress to melanoma</strong></td></tr>
   </table>
+
+  <!--DERMFIG-->
+  <p class="figgrid-h">What these look like</p>
+  <div class="figgrid"><figure><img src="cms-derm-chart-images/l8_s036_1.jpg" decoding="async" alt="Common acquired melanocytic naevus (mole) &mdash; Small, symmetric, one uniform colour, stable"><figcaption><span class="fg-name">Common acquired melanocytic naevus (mole)</span>Small, symmetric, one uniform colour, stable<span class="fg-cite">Lecture 8 &middot; Slide 36</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s029_2.jpg" decoding="async" alt="Congenital melanocytic naevus &mdash; Present at birth, often large and hair-bearing"><figcaption><span class="fg-name">Congenital melanocytic naevus</span>Present at birth, often large and hair-bearing<span class="fg-cite">Lecture 8 &middot; Slide 29</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s033_1.jpg" decoding="async" alt="Naevus spilus &mdash; Tan patch with darker speckles inside it"><figcaption><span class="fg-name">Naevus spilus</span>Tan patch with darker speckles inside it<span class="fg-cite">Lecture 8 &middot; Slide 33</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s039_1.jpg" decoding="async" alt="Blue naevus &mdash; Blue-grey papule, colour from pigment deep in the dermis"><figcaption><span class="fg-name">Blue naevus</span>Blue-grey papule, colour from pigment deep in the dermis<span class="fg-cite">Lecture 8 &middot; Slide 39</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s042_1.jpg" decoding="async" alt="Spitz naevus &mdash; Pink to red-brown dome, typically in a child, rapid onset"><figcaption><span class="fg-name">Spitz naevus</span>Pink to red-brown dome, typically in a child, rapid onset<span class="fg-cite">Lecture 8 &middot; Slide 42</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s041_1.jpg" decoding="async" alt="Pigmented spindle cell naevus (Reed) &mdash; Very dark, sharply circumscribed, symmetric"><figcaption><span class="fg-name">Pigmented spindle cell naevus (Reed)</span>Very dark, sharply circumscribed, symmetric<span class="fg-cite">Lecture 8 &middot; Slide 41</span></figcaption></figure><figure><img src="cms-derm-chart-images/l8_s043_1.jpg" decoding="async" alt="Dysplastic melanocytic naevus &mdash; Larger than 6mm with irregular borders and mixed colours"><figcaption><span class="fg-name">Dysplastic melanocytic naevus</span>Larger than 6mm with irregular borders and mixed colours<span class="fg-cite">Lecture 8 &middot; Slide 43</span></figcaption></figure></div>
+  <!--/DERMFIG-->
+
+  
+
+  
   <div class="pearl"><strong>Three naevi in this lecture get a knife rather than a follow-up
   appointment:</strong> pigmented spindle cell (excise with negative margins), Spitz (biopsy or wide
   excision, then excise) and any dysplastic naevus that is changing. The rest are observed.</div>

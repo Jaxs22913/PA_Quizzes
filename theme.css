@@ -2046,6 +2046,11 @@ mark.user-hl.hl-flash {
   #corner-actions, #corner-actions-left, .guide-back-bar, #presence-pill,
   #pull-refresh, #quiz-footer-logo, #guide-ink-svg, .ink-overlay, .tour-overlay,
   .toc-fab, #install-app-btn, .guide-search-bar, canvas { display: none !important; }
+  /* The read-aloud transport is position:fixed, so without this it paints in
+     the same corner of EVERY printed page, on top of whatever body text is
+     there. Found 2026-08-20 in the CMS guide's PDF export; it affected every
+     guide and cram sheet on the site, not just that one. */
+  #tts-bar, .tts-bar { display: none !important; }
   /* the guide's Contents sidebar is navigation -- drop it, give the body the
      full page width */
   nav.toc { display: none !important; }
