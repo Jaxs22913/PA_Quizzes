@@ -21,6 +21,10 @@ BLOCK = '''%s
   <div class="prof-flag"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 19 August 2026</span>
   <p>73 minutes of audio. One heuristic, one slide flagged out loud, and several prescribing details
   that are not on any slide.</p>
+  <p><b>Standing rule: where the audio and the slide disagree on a fact, THE SLIDE WINS.</b> Every
+  factual claim below was checked against the deck before being recorded here &mdash; the
+  microbiology, the antibiotics and the demographics all hold. What the recording is authoritative
+  for is <b>emphasis</b>, and for the prescribing detail that never reaches a slide at all.</p>
   <table>
     <tr><th>She said</th><th>What it means for you</th></tr>
     <tr><td><em>&ldquo;Staph aureus also for this is most common. If you guys know, this is the theme. The staph aureus, it causes a lot of these conditions. <mark class="prof-highlight">You don&rsquo;t know the answer, guess staph aureus.</mark>&rdquo;</em> [1:04:05]</td><td><b>Exam-taking advice from the person teaching the exam.</b> Across this whole lecture &mdash; folliculitis, furuncle, carbuncle, abscess, impetigo, cellulitis &mdash; <em>Staphylococcus aureus</em> is the recurring answer. Know the exceptions properly (erysipelas and ecthyma lean streptococcal, hot tub folliculitis is <em>Pseudomonas</em>), and let staph be the default everywhere else.</td></tr>

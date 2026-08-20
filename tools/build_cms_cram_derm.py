@@ -47,7 +47,7 @@ TOPICS = [
  ]),
  ("sjs-ten", "SJS / TEN & Photodermatology", "#a4502a", "#f2e6e1", "#f9f3f0", "#803e21", [
    ("The percentages", "SJS under 10% detachment · overlap 10–30% · TEN over 30%. Mortality 1–5% vs 30–35%."),
-   ("Drugs", "Aromatic anticonvulsants (carbamazepine, phenytoin, lamotrigine, phenobarbital) · sulfonamides · ALLOPURINOL (commonest worldwide) · oxicam NSAIDs · nevirapine."),
+   ("Drugs", "Aromatic anticonvulsants (carbamazepine, phenytoin, lamotrigine, phenobarbital) · sulfonamides · ALLOPURINOL (the slide says commonest IN ASIA) · oxicam NSAIDs · nevirapine."),
    ("HLA", "B*15:02 with carbamazepine · B*58:01 with allopurinol."),
    ("SCORTEN (1 point each)", "Age over 40 · malignancy · heart rate over 120 · detachment over 10% · urea over 28 mg/dL · bicarbonate under 20 · glucose over 252. Score 5+ → 90% mortality."),
    ("The single action", "STOP THE DRUG. Earlier withdrawal = better survival; each day of delay worsens it."),

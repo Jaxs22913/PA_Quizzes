@@ -4601,7 +4601,7 @@ var DEMO_DECKS = [
       ["What percentage of body surface detachment defines Stevens-Johnson syndrome?", "Less than ten percent."],
       ["What percentage of body surface detachment defines toxic epidermal necrolysis?", "More than thirty percent."],
       ["What range of detachment defines Stevens-Johnson and toxic epidermal necrolysis overlap?", "Ten to thirty percent."],
-      ["Which drug is the commonest cause of toxic epidermal necrolysis worldwide?", "Allopurinol."],
+      ["Which drug does the deck name as the commonest cause of toxic epidermal necrolysis in Asia?", "Allopurinol."],
       ["Which human leukocyte antigen is linked to carbamazepine-induced Stevens-Johnson syndrome?", "HLA-B*15:02."],
       ["Which human leukocyte antigen is linked to allopurinol reactions?", "HLA-B*58:01."],
       ["Which single action most improves survival in Stevens-Johnson syndrome?", "Immediate withdrawal of the causative drug."],
