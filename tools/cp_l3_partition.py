@@ -14,6 +14,14 @@ ANSWER and moving the mechanism into its own explanation, which the student
 reads immediately after answering -- 25 single edits took pool C from 66% to 0%.
 All three pools finish at 0%.
 
+POOL D IS FROM THE 2026-08-20 RECORDING. This lecture SIGNPOSTS NOTHING -- 84
+minutes across two independent transcriptions with no statement about what is or
+is not on the exam. So pool D is not a re-weighting; it is the teaching that
+never reaches a slide. Professor Rappa explains almost every term through a
+clinical example (Barrett's oesophagus for metaplasia, cervical dysplasia for
+dysplasia, weight training for hypertrophy) and states one link the deck does
+not make at all: falling differentiation means a MORE AGGRESSIVE tumour.
+
 SLIDE 43 IS AN IMAGE and is deliberately not asked from. It is a lung-cancer-
 specific 7th-edition TNM table, and the deck's own point on slide 42 is that TNM
 definitions are CANCER-SPECIFIC. Asking its lung cut-offs would be inventing
@@ -29,8 +37,9 @@ sys.path.insert(0, HERE)
 from cp_l3_pool_a import POOL_A
 from cp_l3_pool_b import POOL_B
 from cp_l3_pool_c import POOL_C
+from cp_l3_pool_d import POOL_D
 
-POOL = POOL_A + POOL_B + POOL_C
+POOL = POOL_A + POOL_B + POOL_C + POOL_D
 
 # SCOPE GUARD: Clinical Pathophysiology is mechanism, never management. The
 # same oncology material is taught elsewhere in the curriculum, so the line has

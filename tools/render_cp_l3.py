@@ -17,7 +17,7 @@ INTRO = ("Thirty questions on abnormal cell growth and differentiation, drawn fr
          "carcinoma, the four categories of gene alteration, chemical carcinogenesis, the "
          "microbial causes with their exact mechanisms, heredity, and the TNM system. "
          "<b>Pathophysiology only</b> &mdash; every question asks what is happening in the tissue "
-         "and why, never what you would do about it. Every question cites its slide.")
+         "and why, never what you would do about it. <b>The 20 August lecture recording is folded in</b> &mdash; this lecture signposts nothing about the exam, so those questions carry the teaching that never reaches a slide instead: Barrett&rsquo;s oesophagus for metaplasia, cervical dysplasia for dysplasia, weight training for hypertrophy, and the vascular reasoning that predicts where a cancer will spread. Every question cites its slide, or the recording timestamp it came from.")
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "abnormal-cell-growth-quiz.html" if n == 1 else "abnormal-cell-growth-quiz-version-2.html"
     html = render(title=f"Abnormal Cell Growth and Differentiation Quiz {n} &mdash; Clin Path I Exam 1",
