@@ -38,11 +38,12 @@ DECK = {
  "l3": "3. Dermatology  II.pptx",
  "l4": "4.  Cutaneous Bacterial Infections.pptx",
  "l5": "CMS I Dermatological Infestations - Shahsv.pptx",
+ "l6": "6. Fungal and Viral Skin Infections - Jaquith.pptx",
  "l7": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx",
  "l8": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx",
 }
 LECTURE = {"l2": "Lecture 2", "l3": "Lecture 3", "l4": "Lecture 4",
-           "l5": "Lecture 5", "l7": "Lecture 7", "l8": "Lecture 8"}
+           "l5": "Lecture 5", "l6": "Lecture 6", "l7": "Lecture 7", "l8": "Lecture 8"}
 
 # (img, name, manifestation, tests, treatment, education)
 # img is "tag_sNNN_K.ext" or None
@@ -497,6 +498,174 @@ ROWS += [
 ]
 
 ROWS += [
+ # ================= LECTURE 6 =================
+ # Every image below was audited at full size first. See METAPHOR_IMAGES,
+ # WRONG_DISEASE_IMAGES and MICROGRAPH_IMAGES for what that audit rejected.
+ ("SECTION", "Lecture 6 &middot; Cutaneous Fungal Infections"),
+
+ ("l6_s009_1.jpg", "Tinea capitis (scalp)",
+  "<b>Predominantly preadolescent children</b> &mdash; after puberty, changes in the fatty acid content of sebum are believed to inhibit growth. The commonest fungal infection in children; <i>Trichophyton tonsurans</i> is commonest in the United States. Red papules progressing to <b>greyish ring-formed patches with perifollicular papules</b>, scaly patches, and <b>lymphadenopathy is often present</b>.<br><span class=pt>&ldquo;He has a scaly bald patch on his head and he keeps scratching it.&rdquo;</span>",
+  "<b>Potassium hydroxide microscopy and fungal culture</b> where feasible &mdash; especially <b>before prolonged systemic therapy</b>. <b>Wood lamp</b> may rapidly support <i>Microsporum</i>, but <b><i>T. tonsurans</i> usually does not fluoresce</b>, so a negative lamp excludes nothing. Bacterial culture if a kerion has purulent drainage.",
+  "<b>Oral therapy is required</b> &mdash; topical agents do not penetrate the infected hair shaft.<br><b>Terbinafine</b> generally favored for <i>Trichophyton</i>; <b>griseofulvin</b> often favored for <i>Microsporum</i>.<br>Review interactions and hepatic disease; baseline liver tests when indicated by the agent and patient risk.<br><b>Adjunct:</b> selenium sulfide 1&ndash;2.5% or ketoconazole 2% shampoo, 2&ndash;3 times weekly &mdash; reduces spore shedding but <b>does not replace oral therapy</b>.",
+  "Complete the whole oral course even when itching settles early. Do not share combs, brushes, hats, towels or hair accessories; clean tools and washable fomites. <b>Fungal particles stay viable for months.</b> Evaluate symptomatic contacts and consider pets where a zoophilic source is suspected. <b>School exclusion is generally unnecessary once effective therapy has begun</b>; follow local policy. Treat inflammatory disease promptly to reduce scarring alopecia."),
+
+ ("l6_s011_1.jpg", "Black dot tinea capitis",
+  "The pattern in which the <b>hair fractures at the scalp surface</b>, leaving patches of alopecia studded with visible black dots.<br><span class=pt>&ldquo;There are little black specks where the hair broke off.&rdquo;</span>",
+  "As for tinea capitis &mdash; <b>potassium hydroxide microscopy and culture</b>.",
+  "As for tinea capitis: <b>oral</b> antifungal therapy.",
+  "Distinguish from <b>alopecia areata</b>, where the skin is smooth and shiny without inflammation, and from <b>seborrheic dermatitis</b>, where hair may be lost but is <b>not broken</b>."),
+
+ ("l6_s020_1.jpg", "Tinea barbae &mdash; inflammatory",
+  "<i>Trichophyton</i> species. <b>Usually acquired from animals.</b> Tender, boggy, pustular <b>kerion-like plaques</b>; <b>infected hairs are loose and easily removed</b>. <b>Scarring alopecia may occur.</b><br><span class=pt>&ldquo;My beard is swollen and sore, and the hairs just pull straight out.&rdquo;</span>",
+  "<b>Potassium hydroxide and culture.</b> <b>Bacterial culture</b> to rule out bacterial folliculitis &mdash; in tinea barbae the hair is easily removed, unlike folliculitis. Biopsy for refractory cases.",
+  "<b>Oral antifungal therapy is required</b> &mdash; topicals do not penetrate the hair follicle.<br><b>Griseofulvin</b> or <b>terbinafine</b>.<br>Shave or remove hair; warm compresses to remove crusts and debris.",
+  "Differential also includes <b>acne, rosacea and seborrheic dermatitis</b>. The animal source is worth tracing."),
+
+ ("l6_s019_1.jpg", "Tinea barbae &mdash; noninflammatory",
+  "<b>Usually acquired from another person.</b> Annular scaly plaques, or a folliculitis-like eruption; <b>hairs may break near the skin surface</b>. Asymptomatic or mildly pruritic.",
+  "<b>Potassium hydroxide and culture</b>; bacterial culture to exclude folliculitis.",
+  "As for the inflammatory form &mdash; <b>oral</b> antifungal therapy.",
+  "Person-to-person acquisition, so shared razors and clippers matter."),
+
+ ("l6_s024_2.jpg", "Tinea corporis (body) &mdash; &ldquo;ringworm&rdquo;",
+  "<i>Trichophyton rubrum</i> is the common pathogen. One or more <b>circular, sharply circumscribed, slightly erythematous, dry scaly patches or plaques</b> with <b>progressive central clearing</b> producing the annular outline.<br><span class=pt>&ldquo;It started as a small ring and it's been growing outwards, clearing in the middle.&rdquo;</span>",
+  "<b>Potassium hydroxide from the ACTIVE BORDER</b> &mdash; not the cleared centre. <b>Culture</b> where clinical suspicion is high and the preparation is negative, and for refractory cases.",
+  "<b>Localized:</b> topical terbinafine, butenafine or an azole, applied to the lesion <b>and 1&ndash;2&nbsp;cm beyond its border</b>, for the product-specific duration and continued past visible improvement.<br><b>Systemic:</b> consider oral therapy for extensive, follicular, immunocompromised, refractory or recurrent disease &mdash; terbinafine commonly, or itraconazole or fluconazole by organism and interactions.",
+  "<b>Avoid corticosteroid&ndash;antifungal combination products</b>: steroids mask and worsen dermatophytosis (tinea incognito). Differential is psoriasis, <b>nummular eczema</b> (commonly confused with it), discoid lupus and fixed drug eruption. <b>Suspect resistance</b> when disease is widespread, intensely inflammatory, epidemiologically linked, or fails an adequate terbinafine course &mdash; then get species identification and susceptibility testing."),
+
+ ("l6_s032_1.jpg", "Tinea cruris (groin) &mdash; &ldquo;jock itch&rdquo;",
+  "Involves the <b>crural fold</b>. <b>More common in men</b>; often coexists with tinea pedis. <i>T. rubrum</i> and <i>Epidermophyton floccosum</i>. Pruritic, <b>sharply demarcated plaque on the proximal medial thigh &mdash; the SCROTUM IS TYPICALLY SPARED</b>.<br><span class=pt>&ldquo;The itch is in the crease of my groin, and it's spreading down my inner thigh.&rdquo;</span>",
+  "<b>Potassium hydroxide from the active border</b> for uncertain cases.",
+  "<b>Localized:</b> topical allylamine (terbinafine) or azole (ketoconazole).<br>Reserve <b>oral</b> therapy for extensive or refractory disease.",
+  "Predisposing: <b>warm moist environment, obesity, diabetes, tight clothing worn for long periods, sharing clothes</b>. <b>Scrotal involvement points elsewhere</b> &mdash; candidal intertrigo commonly involves the scrotum and throws satellite papules or pustules; erythrasma may fluoresce coral-red."),
+
+ ("l6_s038_2.jpg", "Tinea pedis &mdash; interdigital",
+  "<b>The most common form</b>, and tinea pedis is <b>the most common dermatophyte infection in adults</b> (men more than women). Pruritic. <b>Maceration, erythematous erosions or scaling between the toes</b>, especially the <b>third and fourth interspaces</b>, with associated fissures.<br><span class=pt>&ldquo;It's raw and peeling between my toes and it itches.&rdquo;</span>",
+  "<b>Clinical.</b> Confirm uncertain cases with <b>potassium hydroxide from the advancing scale</b>. Culture for atypical, recurrent, severe or refractory disease. <b>Add bacterial studies for marked maceration, malodor, erosion, drainage, ulceration or cellulitis.</b>",
+  "<b>Topical terbinafine or butenafine, or an azole.</b><br>Consider <b>oral</b> therapy for extensive, recurrent, refractory or immunocompromised disease. <b>Treat coexisting onychomycosis</b> and reinforce moisture control.",
+  "<b>Drying between the toes after bathing is essential.</b> Antifungal foot powder in shoes; open-toed sandals where possible; sandals in communal showers; change socks frequently. Spread is by contact with infected desquamated skin &mdash; shoes, locker room floors, sweating."),
+
+ ("l6_s040_2.jpg", "Tinea pedis &mdash; hyperkeratotic",
+  "<i>Trichophyton</i> species. Asymptomatic or pruritic. <b>Plantar erythema with slight scaling through to diffuse thickening</b>, involving the soles and the medial and lateral surfaces &mdash; <b>resembling a shoe distribution</b>.<br><span class=pt>&ldquo;The bottoms of my feet are thick and dry all over.&rdquo;</span>",
+  "As for interdigital disease &mdash; <b>potassium hydroxide</b>, culture if atypical or refractory.",
+  "<b>Antifungal plus a KERATOLYTIC</b> for the thickening.<br>Oral therapy for extensive, recurrent, refractory or immunocompromised disease.",
+  "Often bilateral and long-standing; patients frequently put it down to dry skin."),
+
+ ("l6_s041_1.png", "Tinea pedis &mdash; vesiculobullous",
+  "<i>Trichophyton</i> species. The <b>moist, acute form</b> &mdash; pruritic <b>and painful</b>. Vesicular or bullous eruption on underlying erythema.<br><span class=pt>&ldquo;Blisters came up on my foot and they hurt.&rdquo;</span>",
+  "<b>Potassium hydroxide</b>; bacterial studies if macerated, malodorous or draining.",
+  "Topical antifungal; <b>oral</b> therapy for extensive or refractory disease.",
+  "Distinguish from contact dermatitis and psoriasis, both of which sit in the tinea pedis differential."),
+
+ ("l6_s048_1.jpg", "Onychomycosis (tinea unguium)",
+  "<b>Dermatophytes &mdash; especially <i>T. rubrum</i> &mdash; cause most cases</b>; yeast and molds also occur. Distal lateral disease produces <b>debris, onycholysis, thickening, discoloration and crumbling</b>.<br><span class=pt>&ldquo;My toenails are thick, yellow and crumbling.&rdquo;</span>",
+  "<b>Confirm fungus BEFORE oral therapy &mdash; many dystrophic nails are not fungal.</b><br>Potassium hydroxide microscopy, <b>periodic acid&ndash;Schiff stain of nail clippings</b>, fungal culture, or polymerase chain reaction where available.<br><b>Sample the most PROXIMAL accessible diseased nail bed or subungual debris</b>, after trimming the onycholytic nail.",
+  "<b>Oral terbinafine is first-line</b> for most dermatophyte disease: usually <b>6 weeks for fingernails, 12 weeks for toenails</b>. Review hepatic disease and interactions; baseline liver tests per labeling and risk.<br><b>Itraconazole</b> is an alternative; <b>fluconazole is off label in the United States</b>.<br><b>Limited disease:</b> topical efinaconazole, tavaborole or ciclopirox &mdash; <b>lower cure rates</b>.",
+  "<b>Improvement requires nail growth</b>, so appearance lags well behind treatment. Manage concomitant tinea pedis or it will recur. Risks: <b>tinea pedis, age, diabetes, trauma, occlusive footwear, psoriasis and vascular disease</b>."),
+
+ ("l6_s054_1.jpg", "Tinea manuum (hand)",
+  "Associated with tinea pedis, with <b>high recurrence</b>. <b>Dorsal hand</b> looks like tinea corporis (annular plaque); <b>palm</b> looks like tinea pedis (hyperkeratotic, thickened, dry, scaly). <b>Two feet&ndash;one hand syndrome</b>: the hand used to scratch the foot is the one affected.<br><span class=pt>&ldquo;My palm has been dry and thick for months &mdash; I assumed it was from work.&rdquo;</span>",
+  "<b>Potassium hydroxide</b> and culture, as for the corresponding body site.",
+  "<b>Same as tinea pedis</b> &mdash; topical for localized disease; oral for extensive, recurrent, refractory or immunocompromised disease. Treat coexisting onychomycosis; reinforce moisture control.",
+  "<b>Patients are often unaware they have an infection</b>, believing the change is dry skin or hard physical labour. Check both feet and both palms."),
+
+ ("l6_s060_1.jpg", "Id (dermatophytid) reaction",
+  "An inflammatory dermatitis <b>at a site DISTANT from the primary dermatophytosis</b> &mdash; occurs with any dermatophyte infection, tinea pedis commonly. Mechanism <b>unknown</b>; possibly delayed-type hypersensitivity. Appears <b>1&ndash;2 weeks after the primary infection</b>, <b>extremely pruritic</b>, papules or papulovesicular eruptions, <b>commonly on the fingers</b>.<br><span class=pt>&ldquo;My hands broke out in itchy little blisters after my foot was treated.&rdquo;</span>",
+  "<b>Potassium hydroxide POSITIVE at the primary site, NEGATIVE at the id site.</b><br>Three criteria: (1) dermatophyte infection elsewhere on the body, (2) <b>absence of fungal elements at the reaction site</b>, (3) resolution when the primary infection is treated.",
+  "<b>Treat the primary dermatophyte infection</b> &mdash; the id reaction resolves with it.",
+  "Examine carefully for an <b>asymptomatic fissure or maceration in the toe webs</b>; the patient may not know the foot is infected."),
+
+ ("l6_s064_1.jpg", "Tinea incognito",
+  "Tinea with a <b>clinically altered appearance due to inappropriate treatment, usually topical steroids</b>. Steroids get used on anything that looks inflammatory; when they are stopped the lesion flares, and more steroid follows.<br><span class=pt>&ldquo;It settles while I use the cream and comes back worse every time I stop.&rdquo;</span>",
+  "<b>Stop the corticosteroid or calcineurin inhibitor</b>, then <b>potassium hydroxide and culture from an active edge</b>. Warn that <b>inflammation may rebound after withdrawal</b>.",
+  "<b>Topical</b> antifungal for localized disease; <b>systemic</b> for extensive, follicular or refractory infection.",
+  "The reason combination steroid&ndash;antifungal products are to be avoided in the first place."),
+
+ ("l6_s069_2.jpg", "Cutaneous candidiasis and intertrigo",
+  "<b>Intertrigo</b> is an inflammatory rash from <b>friction, moisture and heat trapped in body folds</b>; <b>Candida may secondarily infect it</b>. <i>Candida albicans</i> is the commonest species, an opportunistic <b>yeast</b> (unicellular fungi reproducing by budding); males equal females. <b>Well-demarcated erythematous patches with SATELLITE papules or pustules.</b> Pruritus and burning pain.<br><span class=pt>&ldquo;Under my breasts is raw, red and burning.&rdquo;</span>",
+  "<b>Clinical</b>, supported by <b>potassium hydroxide preparation</b> and culture. <b>Satellite papules or pustules support Candida</b>; <b>malodor, erosions or drainage raise concern for bacterial coinfection</b>.",
+  "<b>Correct the environment first:</b> gently dry the folds, reduce friction and occlusion, use moisture-wicking or absorbent material, address incontinence or hyperhidrosis.<br><b>Topical nystatin treats Candida ONLY; topical azoles treat Candida AND many dermatophytes.</b><br>Consider a <b>low-potency corticosteroid briefly</b> for marked inflammation, and <b>only</b> alongside adequate antifungal treatment.",
+  "Common sites: <b>inframammary, axillary, abdominal, inguinal, perineal and interdigital folds</b>. Risks: obesity, diabetes, incontinence, occlusion, immobility, recent antibiotics, immunosuppression. <b>Recurrent or extensive disease warrants evaluation for diabetes and immunosuppression.</b>"),
+
+ ("l6_s076_1.jpg", "Pityriasis versicolor (tinea versicolor)",
+  "<b>Overgrowth of lipid-dependent <i>Malassezia</i></b> species that normally inhabit the skin &mdash; <b>NOT considered contagious</b>. Velvety tan, pink or white <b>finely scaling macules 4&ndash;5&nbsp;mm to large confluent areas</b> on the <b>neck, upper arms, trunk and groin</b>. Usually asymptomatic or mildly pruritic.<br><span class=pt>&ldquo;I get these pale patches every summer and they won't tan.&rdquo;</span>",
+  "<b>Usually clinical</b> &mdash; scrape or stretch the lesion to reveal fine scale.<br><b>Potassium hydroxide shows short hyphae with clusters of yeast &mdash; &ldquo;spaghetti and meatballs&rdquo;.</b><br>Wood lamp may show <b>yellow-gold fluorescence, but sensitivity is limited</b>. Biopsy rarely needed.",
+  "<b>Topical therapy is first-line:</b> ketoconazole shampoo or cream, selenium sulfide, zinc pyrithione, ciclopirox, or topical terbinafine. One common selenium sulfide approach is <b>daily for 7 days with a 10-minute contact time</b>.<br><b>Systemic</b> for extensive, recurrent or refractory disease: oral fluconazole or itraconazole.<br><b>Oral terbinafine is INEFFECTIVE</b> &mdash; adequate levels are not achieved in sweat (topical terbinafine does work).<br><b>Do NOT use oral ketoconazole</b> &mdash; hepatic and adrenal toxicity outweigh benefit in a superficial infection.",
+  "<b>Scale resolves before pigment normalises</b>, and recovery can lag months. <b>Colour change alone does not prove treatment failure</b> &mdash; look for scale or confirm with microscopy. Recurrence is common in warm climates; intermittent prophylactic topical therapy may help. Differential: seborrheic dermatitis (yellowish tint, soft greasy scale), pityriasis rosea (herald patch, Christmas-tree distribution), <b>vitiligo (completely depigmented)</b>."),
+
+ ("SECTION", "Lecture 6 &middot; Cutaneous Viral Infections"),
+
+ ("l6_s084_1.jpg", "Varicella (chickenpox)",
+  "Primary varicella-zoster infection. Generalized pruritic eruption <b>in multiple stages of healing</b>: macules &rarr; papules &rarr; vesicles &rarr; crusts, with <b>several stages present SIMULTANEOUSLY</b>. Lesions concentrate on the <b>trunk, scalp and face</b>.<br><span class=pt>&ldquo;He has spots everywhere &mdash; some are blisters and some have already scabbed.&rdquo;</span>",
+  "<b>Usually clinical</b>; <b>lesion polymerase chain reaction</b> is preferred when confirmation is needed.",
+  "<b>Supportive care; AVOID ASPIRIN in children</b> and use caution with non-steroidal anti-inflammatories.<br>Consider <b>early oral antivirals for higher-risk patients</b>; <b>intravenous acyclovir for severe or disseminated disease</b>.",
+  "<b>Adults, pregnancy, newborn age and immunocompromise increase complication risk.</b> Promptly consult for pregnancy, neonatal exposure, immunocompromise or severe complications. <b>Contagious from 1&ndash;2 days before the rash until all lesions crust</b>; in breakthrough disease without crusts, until no new lesions for 24 hours. In healthcare settings use <b>standard, airborne AND contact precautions</b>. <b>Two-dose varicella vaccination</b> is primary prevention."),
+
+ ("l6_s100_1.jpg", "Herpes zoster (shingles)",
+  "<b>Reactivation of latent varicella-zoster virus</b>; risk rises with <b>age and impaired cell-mediated immunity</b>. Latent in <b>cranial-nerve or dorsal-root ganglia</b>, travelling along a sensory nerve to the skin.<br><b>Pre-eruptive:</b> dysesthesia or pain in the dermatome, lesions by <b>48&ndash;72 hours</b>.<br><b>Acute eruptive:</b> erythematous macules and papules, then <b>grouped herpetiform vesicles on an erythematous base</b> (classic); new lesions over 3&ndash;5 days.<br><b>Blisters confined to one or two adjacent dermatomes and STOP ABRUPTLY AT THE MIDLINE.</b> Thoracic 55%, cranial 20%, lumbar 15%, sacral 5%.<br><span class=pt>&ldquo;A burning band of blisters across one side of my chest.&rdquo;</span>",
+  "<b>Typical unilateral dermatomal vesicles are diagnosed clinically.</b><br><b>Polymerase chain reaction from vesicle fluid, scab, or cells from the lesion base</b> is preferred for <b>atypical, disseminated, vaccine-modified or immunocompromised</b> presentations.<br>Differential: herpes simplex, contact dermatitis, impetigo, folliculitis, insect bites, dermatitis herpetiformis, varicella.",
+  "<b>Preferred oral agents: valacyclovir, famciclovir or acyclovir</b>; adjust for renal function.<br><b>Start as soon as possible &mdash; ideally within 72 hours of rash onset.</b><br><b>Treat AFTER 72 hours when new lesions are forming</b>, or there is ophthalmic, neurologic, disseminated, severe or immunocompromised disease.<br><b>Intravenous acyclovir</b> and specialist or hospital management for severe disseminated, visceral, central nervous system or sight-threatening disease.<br>Acetaminophen or a non-steroidal for mild pain; cool compresses, calamine, loose clothing, lesion coverage.",
+  "<b>A susceptible contact does not &ldquo;catch shingles&rdquo;</b> &mdash; exposure to vesicular fluid, or airborne virus from disseminated disease, can cause <b>varicella</b>. Cover lesions, do not scratch, hand hygiene, and <b>avoid susceptible pregnant people, premature infants and immunocompromised people until crusted</b>. <b>Infectious until lesions have dried.</b> Some have pain without eruption (<b>zoster sine herpete</b>). Resolves over 10&ndash;15 days; complete healing may take a month, <b>typically without visible sequelae</b> &mdash; it scars only when deeper layers are compromised by excoriation or secondary infection.<br><b>Prevention: two doses of recombinant zoster vaccine (Shingrix)</b> for immunocompetent adults 50 and over, and for adults 19 and over who are or will be immunodeficient or immunosuppressed. Standard interval <b>2&ndash;6 months</b>; for immunocompromised patients the second dose may be given <b>1&ndash;2 months</b> after the first."),
+
+ (None, "Postherpetic neuralgia",
+  "<b>The most common complication of herpes zoster</b>, and very debilitating. <b>Pain persisting 90 days or more after rash onset</b> is the commonly used definition. Burning, aching, stabbing, electric shock-like, or <b>evoked by light touch (allodynia)</b> &mdash; neuropathic pain from injury of peripheral nerves. <b>May last months to years</b> and impairs sleep, mood and function.<br><span class=pt>&ldquo;The rash cleared months ago but I still can't bear my shirt touching it.&rdquo;</span>",
+  "<b>Clinical</b>, from the history of a preceding zoster eruption.",
+  "<b>First line: gabapentin or pregabalin, an appropriate tricyclic antidepressant, or topical lidocaine.</b> A <b>capsaicin patch</b> may help.<br>Individualize for kidney function, falls, anticholinergic burden and interactions.<br><b>Avoid routine long-term opioids</b>; refer severe, persistent or disabling pain.",
+  "Risk rises with <b>age, severe acute pain, severe rash, ophthalmic involvement and immunocompromise</b>. <b>Topical and systemic corticosteroids do NOT prevent it and must never replace antiviral therapy.</b>"),
+
+ ("l6_s103_1.jpg", "Herpes zoster ophthalmicus",
+  "Zoster involving the <b>ophthalmic division (V1) of the trigeminal nerve</b>. <b>Hutchinson sign</b> &mdash; lesions on the <b>tip or side of the nose</b> &mdash; increases ocular risk, <b>but its ABSENCE does NOT exclude eye involvement</b>.<br><span class=pt>&ldquo;The rash is over my forehead and eyelid, and my eye hurts.&rdquo;</span>",
+  "<b>Clinical.</b> Evaluate urgently for ophthalmic, otic, neurologic, disseminated or visceral disease.",
+  "<b>Start systemic antiviral therapy IMMEDIATELY.</b><br><b>Same-day ophthalmology evaluation</b> for eye pain, visual symptoms, red eye, photophobia, Hutchinson sign, or eyelid or ocular involvement.",
+  "Do not wait for the ophthalmology review before starting the antiviral. A negative Hutchinson sign is not reassurance."),
+
+ ("l6_s104_1.jpg", "Ramsay Hunt syndrome (herpes zoster oticus)",
+  "<b>Peripheral facial palsy with painful vesicles of the ear canal, auricle or oropharynx</b>; <b>hearing loss, tinnitus or vertigo may occur</b>.<br><span class=pt>&ldquo;My face has dropped on one side and there are painful blisters in my ear.&rdquo;</span>",
+  "<b>Clinical.</b>",
+  "<b>Antiviral therapy PLUS a systemic corticosteroid, started early when not contraindicated</b> &mdash; one of the few places a steroid is added.<br><b>Urgent ear, nose and throat or neurology evaluation.</b>",
+  "<b>Protect the cornea if eyelid closure is impaired.</b>"),
+
+ # s113_1 is severe primary gingivostomatitis -- correct for HSV, but the
+ # hemorrhagic lip crusting reads like Stevens-Johnson syndrome, which is
+ # taught in Lecture 3 of this same exam. s113_3 is unambiguous herpes labialis.
+ ("l6_s113_3.jpg", "Herpes simplex virus (HSV-1 and HSV-2)",
+  "<b>Either type can cause oral or genital infection &mdash; lesion location does NOT reliably determine type.</b> Double-stranded DNA <b>Herpesviridae</b>; <b>neurovirulent</b>, producing <b>latent but lifelong infection</b> with episodic reactivation.<br><b>First episode</b> is more prominent and longer; <b>recurrences</b> are milder and shorter. Prodrome of tenderness, pain, paresthesias or burning &mdash; with <b>localized pain, tender lymphadenopathy, headache, generalized aching and fever</b> characteristic; some have no prodrome.<br><b>Grouped vesicles on an erythematous base breaking down to a shallow painful ulcer</b>; dysuria in women with genital lesions; last about two weeks, <b>heal without scarring</b>.<br><span class=pt>&ldquo;It tingled for a day, then painful blisters came up and burst.&rdquo;</span>",
+  "<b>Swab a FRESH vesicle, ulcer base or crust for type-specific nucleic acid amplification &mdash; the preferred test.</b><br><b>Culture is less sensitive</b>, especially in healing or recurrent lesions; a negative result does not exclude HSV. A <b>negative older-lesion swab does not exclude infection because shedding is intermittent</b>.<br><b>Do NOT use HSV immunoglobulin M.</b> Confirm low-positive HSV-2 serology with a second method. <b>Routine serologic screening of asymptomatic adults is not recommended.</b> Evaluate genital ulcers for other causes including syphilis, by risk.",
+  "<b>Treat EVERY first clinical episode</b> with oral acyclovir, valacyclovir or famciclovir.<br><b>Recurrent genital HSV:</b> patient-initiated episodic <b>or</b> daily suppressive therapy.<br><b>Topical antivirals provide minimal benefit</b> for genital herpes.",
+  "<b>Suppressive valacyclovir lowers HSV-2 transmission; condoms reduce but do not eliminate risk.</b> <b>Avoid sexual or direct lesion contact during the prodrome or while lesions are active.</b> Reactivation triggers: <b>stress, illness, menstruation, ultraviolet light</b>. Differential: chancroid (painful necrotizing ulcers, <i>Haemophilus ducreyi</i>, inguinal nodes), syphilis (solitary raised papules that erode, <b>usually painless</b>), trauma, candidiasis."),
+
+ ("l6_s127_1.jpg", "Herpetic whitlow",
+  "<b>Painful herpes simplex infection of the DISTAL FINGER</b>, often after inoculation through broken skin. Prodromal burning or tingling, then <b>grouped vesicles on an erythematous, swollen digit</b>; fever or lymphangitis may occur.<br><span class=pt>&ldquo;My fingertip is swollen and throbbing, with little blisters on it.&rdquo;</span>",
+  "<b>Confirm atypical cases with HSV amplification testing from a fresh vesicle or the lesion base.</b><br>Mimics <b>bacterial felon or paronychia, contact dermatitis, and blistering dactylitis</b>.",
+  "<b>DO NOT INCISE AND DRAIN</b> &mdash; it does not treat HSV and can delay healing.<br><b>Early oral acyclovir, valacyclovir or famciclovir</b> may shorten symptoms; consider suppression for frequent recurrence.<br><b>Treat bacterial superinfection only when it is present.</b>",
+  "<b>Cover the lesions, use hand hygiene, and avoid contact with mucosa or broken skin until healed.</b> An occupational risk for anyone whose hands are near other people's mouths."),
+
+ ("l6_s131_1.jpg", "Molluscum contagiosum",
+  "<b>Benign POXVIRUS infection.</b> <b>Discrete, smooth-surfaced, firm, flesh-coloured, dome-shaped pearly papules averaging 3&ndash;5&nbsp;mm</b>; <b>CENTRAL UMBILICATION is characteristic</b>. Asymptomatic, or tender or pruritic.<br><span class=pt>&ldquo;He's got little pearly bumps with a dimple in the middle.&rdquo;</span>",
+  "<b>Clinical diagnosis</b>; <b>biopsy if uncertain</b>.<br>Differential: <b>basal cell carcinoma, sebaceous hyperplasia, condyloma acuminatum</b>.",
+  "<b>Observation is appropriate for many patients</b> &mdash; procedures may blister, pigment or scar.<br><b>Berdazimer 10.3% gel (Zelsuvmi)</b>, once daily at home, <b>age 1 and over</b>.<br><b>Cantharidin 0.7% (Ycanth)</b>, applied by a clinician, <b>age 2 and over</b>.<br>Others: curettage or cryotherapy; <b>topical retinoids are off label</b>. Treat associated dermatitis.",
+  "Spread by <b>direct skin contact, shared contaminated objects, and autoinoculation</b>; sexual contact is common in adults with genital lesions. <b>Most immunocompetent patients clear spontaneously, though it may take months to several years</b>; lesions are more numerous, larger or atypical with immunosuppression.<br><b>Genital lesions in a child require context-sensitive assessment &mdash; location alone does NOT prove abuse.</b> Genital lesions in adolescents or adults may be sexually transmitted; assess for other infections as appropriate. <b>Extensive or giant facial lesions warrant evaluation for immunosuppression, including HIV where appropriate.</b>"),
+
+ ("l6_s142_1.jpg", "Verruca vulgaris (common warts)",
+  "<b>Human papillomavirus</b> infecting keratinocytes; <b>confined to the epidermis</b>, though it expands and displaces the dermis, giving a false impression of depth. The underside is <b>round and smooth with NO ROOTS</b>.<br>Frequently <b>ages 5&ndash;20</b>; usually on the hands, favouring fingers and palms. Usually under 1&nbsp;cm, <b>elevated round papules with a rough greyish surface</b>. <b>Tiny red or black dots are thrombosed dilated capillaries &mdash; trimming the surface makes them more prominent.</b> <b>Periungual, lip and tongue warts are more common in nail biters.</b><br><span class=pt>&ldquo;Rough bumps on my fingers with little black dots in them.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> <b>Biopsy is generally unnecessary</b> but may suit <b>immunocompromised patients</b> or <b>lesions of uncertain etiology (ruling out squamous cell carcinoma)</b>.<br>Differential: <b>squamous cell carcinoma, molluscum contagiosum, seborrheic keratosis</b>.",
+  "<b>Observation is reasonable &mdash; many resolve spontaneously.</b><br><b>Salicylic acid.</b><br><b>Cryotherapy every 2&ndash;3 weeks</b> &mdash; may cause pain, blistering and pigment change.<br><b>Biopsy or refer atypical, bleeding, ulcerated, growing or refractory lesions.</b>",
+  "Transmitted by <b>skin-to-skin contact, autoinoculation and contaminated surfaces</b>. <b>No therapy eradicates the virus with certainty, and recurrence can occur.</b> Choose treatment by <b>location, symptoms, age, pregnancy status, immune status, and risk of scarring or dyspigmentation</b>. <b>Avoid excessive freezing or destructive therapy for benign lesions likely to resolve.</b> <b>Refer periungual, facial, extensive, recalcitrant, diagnostically uncertain or immunocompromised cases.</b>"),
+
+ ("l6_s144_2.jpg", "Verruca plana (flat warts)",
+  "<b>Multiple smooth, slightly elevated, FLAT-TOPPED, skin-coloured to light-brown papules.</b> Common on the <b>face, forehead, dorsal hands and shins</b>.<br><span class=pt>&ldquo;Lots of small flat bumps across my forehead and shins.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b>",
+  "<b>Observation is reasonable because spontaneous resolution is common.</b><br>Options include carefully selected <b>salicylic acid, topical retinoids, or cryotherapy</b>.",
+  "<b>Shaving can spread lesions through autoinoculation.</b> <b>Balance treatment against the risk of dyspigmentation and scarring</b> &mdash; particularly on the face."),
+
+ ("l6_s146_1.jpg", "Verruca plantaris (plantar warts)",
+  "On the <b>weight-bearing surface</b> of the foot. May <b>cluster together to form a MOSAIC wart</b>.<br><span class=pt>&ldquo;It feels like I'm walking on a stone.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> Distinguish from a <b>callus</b>, which does not interrupt the skin lines and has no capillary dots.",
+  "<b>Plantar warts do not require therapy unless they are PAINFUL.</b><br><b>Salicylic acid 40%</b><br><b>Cryotherapy</b>",
+  "Acquired from contaminated surfaces &mdash; communal floors and showers. Recurrence is common, and no treatment guarantees eradication."),
+]
+
+ROWS += [
  # ================= LECTURE 8 =================
  ("SECTION", "Lecture 8 &middot; Pigmented Skin Lesions"),
 
@@ -586,6 +755,36 @@ ROWS += [
 # diagnosis, and knowing which conditions genuinely need bloods is the point of
 # the column. Keyed by the row's name with any badge markup stripped.
 LABS = {
+ # ---- Lecture 6 (Jaquith). Almost nothing here needs blood work; the two
+ # places it does are both about the DRUG rather than the disease, which is the
+ # distinction worth carrying into the exam.
+ "Tinea capitis (scalp)": "<b>No bloods for the diagnosis.</b> But <b>baseline liver tests when indicated by the selected systemic agent, its labeling and patient risk</b> &mdash; oral therapy is mandatory here, so this is where it comes up. Review drug interactions and hepatic disease.",
+ "Black dot tinea capitis": "<b>None</b> &mdash; the same scalp workup; potassium hydroxide and culture.",
+ "Tinea barbae &mdash; inflammatory": "<b>No bloods.</b> <b>Bacterial culture</b> to exclude bacterial folliculitis; biopsy for refractory cases.",
+ "Tinea barbae &mdash; noninflammatory": "<b>No bloods.</b> Potassium hydroxide and culture; bacterial culture to exclude folliculitis.",
+ "Tinea corporis (body) &mdash; &ldquo;ringworm&rdquo;": "<b>None.</b> Potassium hydroxide from the active border; culture when suspicion is high and the preparation is negative. <b>Species identification and susceptibility testing</b> where resistance is suspected.",
+ "Tinea cruris (groin) &mdash; &ldquo;jock itch&rdquo;": "<b>None</b> &mdash; potassium hydroxide from the active border for uncertain cases.",
+ "Tinea pedis &mdash; interdigital": "<b>No bloods.</b> <b>Add bacterial studies</b> for marked maceration, malodor, erosion, drainage, ulceration or cellulitis.",
+ "Tinea pedis &mdash; hyperkeratotic": "<b>None</b> &mdash; potassium hydroxide from the advancing scale; culture if atypical or refractory.",
+ "Tinea pedis &mdash; vesiculobullous": "<b>None</b> &mdash; potassium hydroxide; bacterial studies if macerated or draining.",
+ "Onychomycosis (tinea unguium)": "<b>No bloods for the diagnosis</b> &mdash; but <b>baseline liver tests per labeling and patient risk before oral terbinafine</b>, with a review of hepatic disease and interactions. Confirm fungus first: potassium hydroxide, periodic acid&ndash;Schiff of clippings, culture, or polymerase chain reaction.",
+ "Tinea manuum (hand)": "<b>None</b> &mdash; potassium hydroxide and culture, as for the corresponding site.",
+ "Id (dermatophytid) reaction": "<b>None.</b> The diagnosis is made by the <b>pattern of potassium hydroxide results</b> &mdash; positive at the primary site, <b>negative at the reaction site</b>.",
+ "Tinea incognito": "<b>None</b> &mdash; potassium hydroxide and culture from an active edge, after stopping the corticosteroid.",
+ "Cutaneous candidiasis and intertrigo": "<b>No bloods routinely.</b> But <b>recurrent or extensive disease warrants evaluation for diabetes and immunosuppression</b>.",
+ "Pityriasis versicolor (tinea versicolor)": "<b>None.</b> Potassium hydroxide shows short hyphae with clusters of yeast. <b>Review hepatic risk, pregnancy status and drug interactions before oral fluconazole or itraconazole.</b>",
+ "Varicella (chickenpox)": "<b>None routinely</b> &mdash; usually clinical; <b>lesion polymerase chain reaction</b> when confirmation is needed.",
+ "Herpes zoster (shingles)": "<b>None routinely</b> &mdash; typical dermatomal disease is clinical. <b>Polymerase chain reaction from vesicle fluid, scab or lesion base</b> for atypical, disseminated, vaccine-modified or immunocompromised presentations. Adjust antiviral dosing for <b>renal function</b>.",
+ "Postherpetic neuralgia": "<b>None</b> &mdash; clinical. Individualize treatment for <b>kidney function</b>, falls risk, anticholinergic burden and interactions.",
+ "Herpes zoster ophthalmicus": "<b>None</b> &mdash; clinical; the urgency is the <b>same-day ophthalmology evaluation</b>, not a test.",
+ "Ramsay Hunt syndrome (herpes zoster oticus)": "<b>None</b> &mdash; clinical; urgent ear, nose and throat or neurology evaluation.",
+ "Herpes simplex virus (HSV-1 and HSV-2)": "<b>Type-specific serology has selected uses</b>, but <b>low-positive results may be false positive</b> &mdash; confirm with a second method. <b>Do NOT use immunoglobulin M.</b> <b>Routine serologic screening of asymptomatic adults is not recommended.</b> The diagnosis is made by <b>lesion amplification testing</b>, not by blood.",
+ "Herpetic whitlow": "<b>None</b> &mdash; confirm atypical cases with amplification testing from a fresh vesicle or the lesion base.",
+ "Molluscum contagiosum": "<b>No bloods routinely.</b> <b>Extensive or giant facial lesions warrant evaluation for immunosuppression, including HIV testing where appropriate.</b>",
+ "Verruca vulgaris (common warts)": "<b>None</b> &mdash; clinical. Biopsy is generally unnecessary but may suit immunocompromised patients or lesions of uncertain etiology.",
+ "Verruca plana (flat warts)": "<b>None</b> &mdash; clinical diagnosis.",
+ "Verruca plantaris (plantar warts)": "<b>None</b> &mdash; clinical diagnosis.",
+
  # ---- Lecture 2
  "Atopic dermatitis": "<b>None routinely.</b> Raised immunoglobulin E supports it but is not routinely tested. Culture purulent, pustular or crusted lesions; herpes simplex polymerase chain reaction for painful monomorphic erosions.",
  "Dyshidrotic eczema": "<b>None</b> &mdash; clinical diagnosis.",
@@ -866,6 +1065,8 @@ SECTION_LABELS = {
  "Lecture 3 &middot; Severe drug reactions and photodermatology": "L3 drug + photo",
  "Lecture 4 &middot; Cutaneous Bacterial Infections": "L4 bacterial",
  "Lecture 5 &middot; Dermatological Infestations": "L5 infestations",
+ "Lecture 6 &middot; Cutaneous Fungal Infections": "L6 fungal",
+ "Lecture 6 &middot; Cutaneous Viral Infections": "L6 viral",
  "Lecture 7 &middot; Benign Skin Lesions": "L7 benign",
  "Lecture 8 &middot; Pigmented Skin Lesions": "L8 pigmented",
 }
@@ -886,6 +1087,50 @@ METAPHOR_IMAGES = {
     "l7_s004_1", "l7_s004_2",   # corn on the cob, for "corns"
     "l7_s050_1",                # a volcano, for the keratin-filled crater
     "l7_s110_1",                # a doughnut, for the central umbilication
+
+    # Lecture 6 (Jaquith) audited 2026-08-20. This deck is not metaphorical but
+    # it is full of pictures that are not of a patient, and every one of them
+    # sits on a slide with a perfectly ordinary clinical title. Four distinct
+    # classes turned up; all would have shipped looking as authoritative as the
+    # Lecture 8 dog did.
+    #
+    # 1. PRODUCT PACKAGING -- a photograph of the box, not the disease.
+    "l6_s005_1", "l6_s005_2", "l6_s005_3", "l6_s005_4",   # terbinafine, clotrimazole, ketoconazole
+    "l6_s044_1", "l6_s057_1",                             # a tub of CeraVe
+    "l6_s045_1",                                          # Zeasorb AF powder
+    "l6_s148_2",                                          # Compound W wart remover
+    # 2. THE SOURCE, NOT THE LESION -- the tinea capitis transmission slide is
+    #    four photographs of household PETS, and the tinea pedis epidemiology
+    #    slide is a photograph of an empty communal shower room.
+    "l6_s010_1", "l6_s010_2", "l6_s010_3", "l6_s010_4",
+    "l6_s035_1",
+    # 3. STOCK ART AND DIAGRAMS -- a stock photograph of a woman holding her
+    #    head (for the zoster prodrome), a cartoon of a cryotherapy gun, and a
+    #    line drawing of pseudohyphae. None is a clinical photograph.
+    "l6_s097_1", "l6_s148_1", "l6_s067_1",
+    # 4. BROKEN OR SELF-ANSWERING -- s064_2 extracts as a solid black rectangle;
+    #    s055_3 has "TINEA MANUUM" burned into the picture, which hands the
+    #    student the answer before they have looked at it.
+    "l6_s064_2", "l6_s055_3",
+}
+
+# Images that ARE clinical photographs but are photographs of a DIFFERENT
+# disease -- they sit on differential-diagnosis slides, or on a slide whose
+# whole point is that the thing shown is NOT the condition being taught. Filing
+# one of these under the lecture's own condition would be a factual error in the
+# chart, not merely an ugly picture.
+WRONG_DISEASE_IMAGES = {
+    "l6_s027_1", "l6_s027_2", "l6_s027_3",   # "Clinical Pearl": nummular eczema, the tinea corporis mimic
+    "l6_s042_1", "l6_s042_2", "l6_s042_3",   # tinea pedis differential: candidiasis, contact dermatitis, psoriasis
+    "l6_s050_1", "l6_s050_2",                # slide title is literally "Dystrophic nails: NOT Onychomycosis"
+    "l6_s121_1", "l6_s121_2",                # herpes simplex differential: chancroid and syphilis
+}
+
+# Micrographs. Legitimate teaching images, and the potassium hydroxide ones
+# answer Objective a directly -- but they are not what the DISEASE looks like,
+# so they must never fill a "what this looks like" cell.
+MICROGRAPH_IMAGES = {
+    "l6_s043_1", "l6_s071_1", "l6_s080_1",
 }
 
 NON_CONTENT = re.compile(r"^\s*(questions\??|resources?|case stud(y|ies)|references?|"
@@ -896,7 +1141,8 @@ def non_content_slides():
     import os as _os
     SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad"
     files = {"l2": "cms_l2.txt", "l3": "cms_l3.txt", "l4": "cms_l4.txt",
-             "l5": "cms_l5.txt", "l7": "cms_l7.txt", "l8": "cms_l8.txt"}
+             "l5": "cms_l5.txt", "l6": "cms_l6.txt",
+             "l7": "cms_l7.txt", "l8": "cms_l8.txt"}
     out = {}
     for tag, fn in files.items():
         path = _os.path.join(SCRATCH, fn)
@@ -1208,10 +1454,16 @@ def main():
     assert html.count("<img ") == n_imgs, "image count mismatch"
     assert 'class="guide-back-bar"' in html, "no back bar, so theme.js adds no PDF button"
     assert "@media print" in html, "no print rules"
-    used_metaphor = sorted(METAPHOR_IMAGES & {r[0].rsplit(".", 1)[0]
-                                              for r in ROWS if r[0] and r[0] != "SECTION"})
+    used_stems = {r[0].rsplit(".", 1)[0] for r in ROWS if r[0] and r[0] != "SECTION"}
+    used_metaphor = sorted(METAPHOR_IMAGES & used_stems)
     assert not used_metaphor, ("a row takes its image from a visual metaphor rather than a "
                                "clinical photograph: %r" % used_metaphor)
+    used_wrong = sorted(WRONG_DISEASE_IMAGES & used_stems)
+    assert not used_wrong, ("a row takes its image from a differential-diagnosis slide, so the "
+                            "picture is of a DIFFERENT disease: %r" % used_wrong)
+    used_micro = sorted(MICROGRAPH_IMAGES & used_stems)
+    assert not used_micro, ("a row illustrates a disease with a micrograph rather than a "
+                            "clinical photograph: %r" % used_micro)
     bad_slides = non_content_slides()
     for row in ROWS:
         if row[0] == "SECTION" or not row[0]:
