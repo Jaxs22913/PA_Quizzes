@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f7d7a; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutaneous Viral and Fungal Infections Vignettes 2 &mdash; CMS I Exam 1</title>
+<style>
+  :root{
+    --navy:#17494b; --indigo:#3f7d7a; --gold:#c08a2e; --ice:#eef5f4;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Cutaneous Viral and Fungal Infections</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 1 &middot; Lecture 6 &middot; Vignettes</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Thirty patient vignettes on cutaneous viral and fungal infections. Each one gives you a presentation and asks for the diagnosis, the next step, the test, the treatment or the counselling point &mdash; and the lead-in decides the answer, so read it before you read the choices. The wrong options are the neighbouring condition in the same differential or the right condition at the wrong phase, not obviously absurd. <b>Where the lecture audio and the slide disagree on a fact, the slide wins.</b> This is the vignette set; the objective questions are separate. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Tinea by site</span><span class="chip">Nail &amp; fold disease</span><span class="chip">Varicella &amp; zoster</span><span class="chip">Herpes simplex</span><span class="chip">Molluscum &amp; warts</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Varicella", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "next step", "q": "You are covering a clinic and several patients with varicella are booked in. Which of these situations does the lecture say warrants prompt consultation?", "opts": [["Any patient who has previously received one dose of vaccine", "Prior vaccination is not itself a consultation trigger."], ["Pregnancy, neonatal exposure, immunocompromise, or severe complications", "Correct — four named triggers for prompt consultation."], ["A preadolescent child with a typical eruption and no fever", "That is the usual host with typical disease."], ["Any patient whose lesions have already crusted over completely", "Crusted lesions mark the end of contagiousness."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 87"}, {"topic": "Herpes zoster ophthalmicus", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "next step", "q": "A 68-year-old has a zoster eruption over the forehead and upper eyelid, with lesions on the tip of the nose. He reports eye pain and photophobia. Which is the most appropriate next step?", "opts": [["Arrange ophthalmology evaluation within two weeks and withhold antivirals until then", "Antiviral therapy starts immediately, and the review is same-day."], ["Start a topical antiviral eye ointment and review the patient in one week", "Systemic therapy is what is indicated."], ["Start a systemic corticosteroid alone and arrange same-day ophthalmology evaluation", "Steroids never replace antiviral therapy."], ["Start systemic antiviral therapy immediately and arrange same-day ophthalmology evaluation", "Correct — do not delay the antiviral while awaiting the eye review."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 103"}, {"topic": "Herpes zoster", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "education", "q": "A patient with acute herpes zoster asks how long he remains infectious. Which is the most appropriate response?", "opts": [["He was never infectious at any point", "Vesicular fluid can transmit varicella to a susceptible contact."], ["Until the lesions have dried", "Correct — infectious until the lesions dry."], ["Until the pain has resolved completely", "Pain may outlast infectivity by months."], ["For 21 days from the onset of the rash", "The deck ties it to drying of the lesions."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 98"}, {"topic": "Herpetic whitlow", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "diagnosis", "q": "A 31-year-old dental hygienist has a painful, swollen, erythematous index fingertip with grouped vesicles. She had burning and tingling in the finger the day before. Which is the most likely diagnosis?", "opts": [["Contact dermatitis", "A mimic, but it would not follow a tingling prodrome in one digit."], ["Onychomycosis", "That is a chronic nail disease, not an acute painful eruption."], ["Herpetic whitlow", "Correct — a prodrome followed by grouped vesicles on a swollen digit."], ["Bacterial felon", "A mimic, but it does not produce grouped vesicles after a burning prodrome."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 126"}, {"topic": "Tinea capitis", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "diagnosis", "q": "A 7-year-old boy is brought in with an itchy scalp and a patch of hair loss. On examination there is a scaly grey ring-shaped patch with visible black dots where hairs have broken off at the surface, and there is tender posterior cervical lymphadenopathy. Which is the most likely diagnosis?", "opts": [["Psoriasis", "Psoriasis gives a well-demarcated erythematous plaque with white or silver scale."], ["Tinea capitis", "Correct — broken hairs, scale and lymphadenopathy in a preadolescent child."], ["Alopecia areata", "In alopecia areata the skin is smooth and shiny, with no inflammation or broken hairs."], ["Seborrheic dermatitis", "Scales are fine, dry or greasy, and hair may be lost but is not broken."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 12"}, {"topic": "Tinea pedis", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "diagnosis", "q": "A 30-year-old man who uses a communal gym shower has itching between his toes. There is maceration with erythematous erosions between the third and fourth interspaces, with fissuring. Which variant of tinea pedis is this?", "opts": [["Vesiculobullous, which is the moist acute form with vesicles or bullae", "That variant is pruritic and painful with an underlying erythema."], ["Mosaic, which is a cluster of confluent lesions on weight-bearing surfaces", "That describes clustered plantar warts, not a tinea pedis variant."], ["Interdigital, the most common form", "Correct — maceration and erosion in the third and fourth interspaces."], ["Hyperkeratotic, which produces plantar erythema with diffuse thickening", "That variant involves the soles in a shoe-like distribution."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 39"}, {"topic": "Warts", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "next step", "q": "A patient has an asymptomatic plantar wart found incidentally. Which is the most appropriate approach?", "opts": [["Salicylic acid 40% daily for twelve weeks in every patient found to have one", "Treatment is not required unless the wart is painful."], ["No therapy is required, since plantar warts need treatment only when painful", "Correct — and many warts resolve spontaneously."], ["Cryotherapy every two to three weeks until the lesion has fully resolved", "Treatment is reserved for painful lesions."], ["Immediate surgical excision to prevent it clustering into a mosaic wart", "Excision is not the described approach."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 145"}, {"topic": "Herpes simplex virus", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "diagnosis", "q": "A 24-year-old has a first episode of painful grouped vesicles on an erythematous base on the vulva, which have broken down into shallow ulcers. She has fever, headache and tender inguinal nodes. Which is the most likely diagnosis?", "opts": [["Herpes simplex virus infection", "Correct — grouped vesicles becoming shallow painful ulcers, with a systemic prodrome."], ["Primary syphilis", "The syphilitic lesion starts as a raised papule that erodes and is usually painless."], ["Chancroid ulceration", "Chancroid causes painful necrotizing ulcers rather than grouped vesicles."], ["Vulvovaginal candidiasis", "In the differential, but it does not produce grouped vesicles and ulcers."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 119"}, {"topic": "Cutaneous candidiasis", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "diagnosis", "q": "A 61-year-old woman with obesity has a sore rash under both breasts and asks what intertrigo means and whether she has a yeast infection. What is intertrigo, and how does Candida relate to it?", "opts": [["A hypersensitivity reaction to a distant fungal infection, which appears in the body folds", "That describes an id reaction."], ["An inflammatory rash caused by friction, moisture and heat trapped in body folds, which Candida may secondarily infect", "Correct — Candida is a secondary invader of an existing intertrigo."], ["A primary Candida infection of the body folds, which trapped friction, moisture and heat then worsen over time", "The deck describes Candida as the secondary infection, not the primary event."], ["A dermatophyte infection of the body folds, which yeast may secondarily infect once treated", "Intertrigo is not a dermatophyte infection."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 68"}, {"topic": "Pityriasis versicolor", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A patient has pityriasis versicolor over the upper trunk. Which is the most appropriate first-line treatment?", "opts": [["Topical therapy, such as ketoconazole shampoo or cream, selenium sulfide, zinc pyrithione, ciclopirox, or topical terbinafine", "Correct — topical therapy is first-line."], ["Oral therapy, such as fluconazole or itraconazole, given to every patient at presentation whatever the extent of disease", "Systemic therapy is reserved for extensive, recurrent or refractory disease."], ["Oral terbinafine, given for six weeks because it concentrates well in sweat", "Oral terbinafine is ineffective here for exactly the opposite reason."], ["Topical nystatin, applied twice daily until the scale has fully resolved", "Nystatin treats Candida only."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 81"}, {"topic": "Pityriasis versicolor", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A 30-year-old with extensive pityriasis versicolor asks about an oral tablet a friend was given. Which oral agent does the lecture say must NOT be used here, and why?", "opts": [["Oral itraconazole, because it achieves inadequate levels in sweat to clear the organism", "That objection belongs to oral terbinafine."], ["Oral griseofulvin, because it has no activity against Malassezia species at any dose", "Griseofulvin is not the agent singled out with this warning."], ["Oral ketoconazole, because serious hepatic and adrenal toxicity outweighs the benefit in a superficial infection", "Correct — the risk-benefit balance fails for superficial disease."], ["Oral fluconazole, because serious hepatic and adrenal toxicity outweighs the benefit in superficial infection", "Fluconazole is one of the permitted systemic options."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 82"}, {"topic": "Warts", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "education", "q": "A patient with a few small asymptomatic common warts asks for aggressive freezing to remove them quickly. Which is the most appropriate response?", "opts": [["Aggressive freezing is appropriate, because common warts do not resolve without treatment", "Spontaneous resolution is the natural history."], ["Avoid freezing entirely, because cryotherapy is never an appropriate wart treatment", "Cryotherapy is a listed option; the caution is against excess."], ["Avoid excessive freezing or destructive therapy for benign lesions likely to resolve spontaneously", "Correct — weigh the harms against a self-limiting lesion."], ["Aggressive freezing is appropriate, because it eradicates the virus and prevents recurrence", "No therapy eradicates the virus with certainty."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 149"}, {"topic": "Tinea corporis", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "education", "q": "A patient asks why you will not prescribe the combination steroid and antifungal cream that a friend recommended. Which is the most appropriate response?", "opts": [["Corticosteroids can mask and worsen a dermatophyte infection, producing tinea incognito", "Correct — that is exactly the mechanism of tinea incognito."], ["Combination products are less effective because the two drugs chemically inactivate each other", "No such interaction is described."], ["Combination products cannot be used on the trunk because of the risk of systemic absorption", "Absorption is not the reason given."], ["Corticosteroids prevent the antifungal from reaching the stratum corneum where the fungus lives", "The concern is masking and worsening, not blocked delivery."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 28"}, {"topic": "Varicella", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "diagnosis", "q": "A 6-year-old has fever and a generalized itchy eruption. On the trunk, scalp and face there are macules, papules, vesicles and crusts all present at the same time. Which is the most likely diagnosis?", "opts": [["Herpes zoster", "Zoster is a unilateral dermatomal eruption that stops at the midline."], ["Molluscum contagiosum", "Molluscum gives umbilicated pearly papules, not vesicles and crusts."], ["Herpes simplex", "Herpes simplex gives grouped vesicles at one site, not a generalized eruption."], ["Varicella", "Correct — several stages appearing simultaneously is the defining feature."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 84"}, {"topic": "Cutaneous candidiasis", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "next step", "q": "A patient has recurrent, extensive candidal intertrigo. Which is the most appropriate next step?", "opts": [["Evaluate for diabetes and immunosuppression", "Correct — recurrent or extensive disease prompts this."], ["Repeat the same topical course for a further six months", "Recurrence is a reason to look for an underlying cause."], ["Switch to a systemic corticosteroid to control the inflammation", "A systemic steroid would worsen a fungal infection."], ["Refer for surgical excision of the affected skin folds", "Not a management step described in the deck."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 72"}, {"topic": "Id reaction", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "diagnosis", "q": "A patient with a confirmed id reaction asks what is causing the eruption on his hands. What is the proposed mechanism, and which primary infection is commonly responsible?", "opts": [["The mechanism is unknown, possibly a delayed-type hypersensitivity; tinea pedis is the common primary infection", "Correct — the deck is explicit that the mechanism is unknown."], ["The mechanism is direct fungal spread through the bloodstream; tinea capitis is the common primary infection", "Fungal elements are absent from the reaction site."], ["The mechanism is an immediate immunoglobulin E reaction; tinea cruris is the common primary infection", "The deck suggests a delayed-type mechanism, not immediate."], ["The mechanism is toxin-mediated; onychomycosis is the common primary infection", "No toxin mechanism is described."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 59"}, {"topic": "Tinea capitis", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "Culture from a child's scalp grows a Trichophyton species. Which oral agent does the lecture say is generally favored?", "opts": [["Selenium sulfide", "That is an adjunctive shampoo, not an oral agent."], ["Terbinafine", "Correct — terbinafine is generally favored for Trichophyton."], ["Griseofulvin", "Griseofulvin is often favored for Microsporum infection."], ["Ketoconazole", "Not the agent paired with Trichophyton in the deck."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 15"}, {"topic": "Herpes zoster", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "next step", "q": "An immunocompromised patient has had the first dose of recombinant zoster vaccine and needs faster completion. What interval is permitted for the second dose?", "opts": [["1 to 2 months after the first dose", "Correct — a permitted shortening from the standard 2 to 6 months."], ["2 to 6 months after the first dose, with no shortening permitted", "That is the standard interval, which may be shortened here."], ["6 to 12 months after the first dose", "Longer than any interval given."], ["At least 12 months after the first dose", "No such interval appears in the deck."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 110"}, {"topic": "Tinea capitis", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "diagnosis", "q": "A mother asks why her 6-year-old daughter developed a scalp fungal infection when she herself has never had one. Which explanation best fits the epidemiology in the lecture?", "opts": [["It is predominantly a disease of preadolescent children, because the scalp skin is thinner before puberty and offers less of a mechanical barrier", "The deck attributes the age pattern to sebum, not to skin thickness."], ["It is predominantly a disease of preadolescent children, because school-age immunity to dermatophytes has not yet developed at that age", "No such acquired-immunity explanation is given in the deck."], ["It is equally common at all ages, and the difference here is simply exposure at school rather than anything about the child", "The deck describes a clear preadolescent predominance."], ["It is predominantly a disease of preadolescent children, because after puberty changes in the fatty acid content of sebum are believed to inhibit dermatophyte growth", "Correct — sebum fatty acids after puberty are the proposed reason."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 9"}, {"topic": "Tinea cruris", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A man has a localized tinea cruris plaque. Which is the most appropriate first-line treatment?", "opts": [["A topical corticosteroid to relieve the itch, with an antifungal added only if it fails", "A steroid alone risks tinea incognito."], ["A topical allylamine such as terbinafine, or a topical azole such as ketoconazole", "Correct — oral therapy is reserved for extensive or refractory disease."], ["An oral azole such as ketoconazole, given for a minimum of twelve weeks", "Oral therapy is not first-line for localized disease."], ["Topical nystatin applied twice daily until the plaque has fully resolved", "Nystatin treats Candida only, not dermatophytes."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 33"}, {"topic": "Herpes zoster", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "next step", "q": "A patient with zoster has severe disseminated disease with visceral involvement. Which is the most appropriate management?", "opts": [["A systemic corticosteroid alone with close outpatient review", "Steroids never replace antiviral therapy."], ["Topical antiviral therapy with cool compresses and calamine", "Those are comfort measures, not treatment for severe disease."], ["Intravenous acyclovir with specialist or hospital management", "Correct — also for central nervous system or sight-threatening disease."], ["Oral valacyclovir at standard dose as an outpatient", "Severe disseminated disease needs intravenous therapy."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 106"}, {"topic": "Tinea incognito", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "diagnosis", "q": "A patient has an unusual, poorly defined, extensive eruption on the trunk. She has been applying a topical corticosteroid for months; it settles while she uses it and flares when she stops, prompting more steroid. Which is the most likely diagnosis?", "opts": [["Psoriasis", "Psoriasis is in the tinea corporis differential but does not follow this steroid cycle."], ["An id reaction", "That is a distant eruption with no fungal elements at the site."], ["Tinea incognito", "Correct — tinea whose appearance is altered by inappropriate steroid treatment."], ["Nummular eczema", "That is commonly confused with tinea corporis but is not steroid-altered tinea."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 64"}, {"topic": "Postherpetic neuralgia", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "education", "q": "A patient asks whether taking a corticosteroid during his shingles rash would have prevented his current neuralgia. Which is the most appropriate response?", "opts": [["Corticosteroids prevent it and may be given in place of antiviral therapy in mild disease", "They must never replace antiviral therapy."], ["Topical and systemic corticosteroids do not prevent postherpetic neuralgia and should never replace antiviral therapy", "Correct — a common misconception the deck addresses directly."], ["Topical and systemic corticosteroids reliably prevent postherpetic neuralgia when given within 72 hours", "They do not prevent it."], ["Systemic corticosteroids prevent it, though topical ones do not, so it should have been offered", "Neither route prevents it."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 107"}, {"topic": "Postherpetic neuralgia", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A patient with postherpetic neuralgia needs pain control. Which is the most appropriate first-line option?", "opts": [["A long-acting opioid titrated to effect over several months, with a capsaicin patch", "The deck says to avoid routine long-term opioids."], ["A systemic corticosteroid tapered over three months", "Steroids do not prevent or treat this."], ["Continued antiviral therapy at a suppressive dose", "Antivirals do not treat established neuralgia."], ["Gabapentin or pregabalin, an appropriate tricyclic antidepressant, or topical lidocaine", "Correct — a capsaicin patch may also help."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 109"}, {"topic": "Onychomycosis", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "diagnosis", "q": "A 68-year-old man with diabetes has thickened, discoloured, crumbling great toenails with subungual debris and separation of the nail from its bed. Which risk factors in his history does the lecture specifically link to this condition?", "opts": [["Obesity, incontinence, immobility, recent antibiotics, and immunosuppression", "Those are the intertrigo risk factors."], ["Heat, humidity, oily skin, sweating, and corticosteroid exposure", "Those favour pityriasis versicolor."], ["Sharing combs and hats, contact with pets, and exposure to fallen hairs", "Those are the tinea capitis transmission routes."], ["Tinea pedis, age, diabetes, trauma, occlusive footwear, psoriasis, and vascular disease", "Correct — seven named risk factors."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 47"}, {"topic": "Id reaction", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A patient has a confirmed id reaction on the hands secondary to tinea pedis. Which is the most appropriate management?", "opts": [["Treat the primary dermatophyte infection, since the id reaction resolves when it is treated", "Correct — the distant eruption follows the primary site."], ["Treat the hand eruption with a topical antifungal, since fungus is present at both sites", "The id reaction site has no fungal elements."], ["Treat the hand eruption with an oral antibiotic, since the reaction is bacterial in origin", "The reaction is a hypersensitivity phenomenon, not bacterial."], ["Observe both sites without treatment, since the reaction and the primary infection both self-resolve", "The primary infection needs treating for the reaction to clear."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 62"}, {"topic": "Tinea barbae", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A 50-year-old man is diagnosed with tinea barbae. Which is the most appropriate management?", "opts": [["Topical antifungal cream alone applied twice daily to the beard area, plus shaving or hair removal and warm compresses to remove crusts", "Topical agents do not penetrate the hair follicle."], ["Oral antibiotic therapy with a first-generation cephalosporin, plus shaving and warm compresses", "That treats bacterial folliculitis, not a dermatophyte."], ["Topical corticosteroid to settle the inflammation first, followed by an oral antifungal after two weeks", "Steroids risk tinea incognito and are not the described approach."], ["Oral antifungal therapy with griseofulvin or terbinafine, plus shaving or hair removal and warm compresses to remove crusts", "Correct — topicals do not penetrate the follicle."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 22"}, {"topic": "Tinea manuum", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A patient is diagnosed with tinea manuum affecting one palm. Which is the most appropriate treatment approach?", "opts": [["The same as for tinea pedis: topical for localized disease, oral for extensive, recurrent, refractory or immunocompromised disease", "Correct — the deck routes tinea manuum to the tinea pedis approach."], ["The same as for tinea capitis: oral therapy in every patient with hand disease, because topical agents cannot penetrate the affected skin", "Penetration of the hair shaft is the capitis problem, not this one."], ["The same as for candidal intertrigo: topical nystatin with correction of the local environment", "Nystatin treats Candida only."], ["The same as for pityriasis versicolor: selenium sulfide lotion applied daily for seven days", "That regimen is for Malassezia, not a dermatophyte."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 56"}, {"topic": "Molluscum contagiosum", "io": "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "lead": "education", "q": "The parents of a child with molluscum contagiosum want it treated immediately. Which is the most appropriate response?", "opts": [["Immediate destruction of every lesion is required, because untreated molluscum progresses to malignancy", "No malignant potential is described."], ["Observation is appropriate, because the lesions always resolve within two to three weeks without treatment", "Resolution may take months to several years."], ["Immediate oral antiviral therapy is required, because the lesions will otherwise spread to the whole family", "Oral antivirals are not used for molluscum."], ["Observation is appropriate for many patients, because most clear spontaneously and procedures may blister, pigment, or scar", "Correct — although resolution may take months to years."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 136"}, {"topic": "Warts", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "treatment", "q": "A 30-year-old runner has a painful plantar wart on the ball of the foot. Which treatments does the lecture give?", "opts": [["Berdazimer 10.3% gel or a topical retinoid", "Those are molluscum treatments."], ["Oral terbinafine or topical ciclopirox", "Those are antifungals."], ["Salicylic acid 40% or cryotherapy", "Correct — the two named options for plantar warts."], ["Cantharidin 0.7% or curettage", "Those are molluscum treatments."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 146"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', deferFeedback);
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic">' + q.topic + '</span>' +
+      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
+      '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', deferFeedback); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function chooseAt(i, oi){
+  if(!deferFeedback && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!deferFeedback && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!deferFeedback && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(deferFeedback){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !deferFeedback && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(deferFeedback) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = deferFeedback ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
