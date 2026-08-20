@@ -1365,7 +1365,7 @@ HTML = """<!DOCTYPE html>
 <header class="top">
   <h1>Dermatology Comparison Chart</h1>
   <p>Clinical Medicine and Surgery I &middot; Exam 1 &middot; Class of 2028</p>
-  <p>__NROWS__ conditions across Lectures 2, 3, 4, 5 and 8 &middot; __NIMGS__ images from the lecture slides</p>
+  <p>__NROWS__ conditions across Lectures __LECTURES__ &middot; __NIMGS__ images from the lecture slides</p>
   <p style="margin-top:10px;font-size:.82rem;color:var(--c-mute)">Use the <b>Download as PDF</b> button, top
   right, to keep this offline &mdash; it prints landscape with every row and every photograph intact.</p>
 </header>
@@ -1432,7 +1432,15 @@ def main():
     import re as _re
     nolabs = sum(1 for b in _re.findall(r'<div class="labs">.*?</div>', body, _re.S)
                  if _re.search(r"<b>(None|No bloods|No workup)", b))
+    # Lecture list DERIVED from the rows, never hardcoded. It used to read
+    # "Lectures 2, 3, 4, 5 and 8" and had already gone stale before Lecture 6
+    # was added -- Lecture 7 was in the chart but missing from that sentence.
+    lec_nums = sorted({int(r[0].split("_")[0][1:]) for r in ROWS
+                       if r[0] and r[0] != "SECTION"})
+    lec_str = (", ".join(str(x) for x in lec_nums[:-1]) + " and " + str(lec_nums[-1])
+               if len(lec_nums) > 1 else str(lec_nums[0]))
     html = (HTML.replace("__BODY__", body)
+                .replace("__LECTURES__", lec_str)
                 .replace("__NROWS__", str(n_rows))
                 .replace("__NNOLABS__", str(nolabs))
                 .replace("__NIMGS__", str(n_imgs)))
