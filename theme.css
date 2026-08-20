@@ -299,6 +299,11 @@ mark.search-hit-current {
   border: 1px solid #e5e7eb;
   transition: transform .2s var(--ease-spring);
 }
+/* #word-btn is an <a download> rather than a <button>, so it needs the anchor
+   defaults stripped or it inherits link colour and an underline. */
+a.corner-btn { text-decoration: none; }
+a.corner-btn:hover { text-decoration: none; }
+
 .corner-btn:hover { transform: scale(1.1) rotate(-8deg); }
 .corner-btn:active { transform: scale(0.92); }
 :root[data-theme="dark"] .corner-btn {
