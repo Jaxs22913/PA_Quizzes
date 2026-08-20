@@ -18,9 +18,10 @@ answering: 18 single edits took pool D from 53% to 0%. Trimming is roughly a
 third of the work for the same result, and it is the direction to reach for
 first. All five pools finish at 0%.
 
-SLIDES 33, 34, 42 AND 9 ARE IMAGES. The pressure injury staging system, the
-sinus-versus-fistula distinction and the keratolytic table exist nowhere in this
-deck's text -- slides 33, 34 and 42 extract as bare titles. They were read at
+SLIDES 9, 24, 33, 34 AND 42 ARE IMAGES. The pressure injury staging system, the
+keloid-versus-hypertrophic-scar comparison table, the sinus-versus-fistula
+distinction and the keratolytic table exist nowhere in this deck's text --
+slides 24, 33, 34 and 42 extract as bare titles or as "(no text)". They were read at
 full size and are asked from here. See [[image-only-slides]].
 
 Every question is authored with its correct answer first, because choosing the

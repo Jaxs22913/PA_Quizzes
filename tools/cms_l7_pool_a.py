@@ -450,6 +450,74 @@ POOL_A = [
       "That is nevus flammeus."]],
    c=0, cite=c(21)),
 
+ # ---- SLIDE 24 is an IMAGE: "TABLE 1. Clinical Features of Hypertrophic Scars
+ # and Keloids". It extracts as "(no text)". Everything below is read off that
+ # table and appears nowhere else in the deck.
+ dict(topic="Keloid", io=IOA, slot="manifestation",
+   q="Where do keloids occur predominantly, and where do they rarely develop?",
+   opts=[
+     ["Predominantly on the ear lobe, shoulders and sternal notch; they rarely develop across joints",
+      "Correct — hypertrophic scars are the ones that occur where a scar crosses a joint."],
+     ["Predominantly across joints and skin creases; they rarely develop on the ear lobe or shoulders",
+      "That is the hypertrophic scar's distribution, and it is the contrast being drawn."],
+     ["Predominantly on the palms and the soles; they rarely develop on the trunk or face",
+      "Neither site is named for keloids in this table."],
+     ["Predominantly on sun-exposed skin of the head and neck; they rarely develop on covered skin",
+      "Sun exposure is a keratoacanthoma and cutaneous horn risk, not a keloid one."]],
+   c=0, cite=c(24)),
+
+ dict(topic="Hypertrophic scar", io=IOA, slot="manifestation",
+   q="In what circumstance do hypertrophic scars characteristically occur?",
+   opts=[
+     ["When scars cross joints or skin creases at a right angle",
+      "Correct — and they develop soon after surgery rather than months later."],
+     ["When a wound is left to heal by secondary intention rather than closed",
+      "Method of closure is not what the table names."],
+     ["When the patient has dark skin, which is strongly associated with them",
+      "Dark skin colour is associated with keloids; hypertrophic scars have no such association."],
+     ["When a wound becomes infected during the proliferative phase of healing",
+      "Infection is not the circumstance given."]],
+   c=0, cite=c(24)),
+
+ dict(topic="Keloid", io=IOA, slot="differential",
+   q="How do keloids and hypertrophic scars differ in incidence and in their relationship to skin colour?",
+   opts=[
+     ["Keloids are of rare incidence and are associated with dark skin colour; hypertrophic scars are frequent and have no association with skin colour",
+      "Correct — the association with skin colour runs one way only."],
+     ["Keloids are frequent and have no association with skin colour; hypertrophic scars are rare and are associated with dark skin colour",
+      "This reverses both halves of the comparison."],
+     ["Both are of frequent incidence, and both are associated with dark skin colour equally",
+      "Only the keloid carries the skin-colour association, and it is the rarer of the two."],
+     ["Both are of rare incidence, and neither shows any association with skin colour at all",
+      "Hypertrophic scars are described as frequent, and keloids do carry the association."]],
+   c=0, cite=c(24)),
+
+ dict(topic="Keloid", io=IOA, slot="escalation",
+   q="How do keloids and hypertrophic scars respond differently to surgery?",
+   opts=[
+     ["Hypertrophic scars improve with appropriate surgery; keloids are often worsened by it",
+      "Correct — which is why keloid excision is always paired with another modality."],
+     ["Keloids improve with appropriate surgery; hypertrophic scars are often worsened by it",
+      "This reverses the two responses."],
+     ["Both improve reliably with appropriate surgery performed at the right time",
+      "The keloid is often made worse rather than better."],
+     ["Both are worsened by surgery, so neither should ever be excised",
+      "Hypertrophic scars are described as improving with appropriate surgery."]],
+   c=0, cite=c(24)),
+
+ dict(topic="Keloid", io=IOA, slot="prognosis",
+   q="How soon after the injury does each of these scars appear, and what happens with time?",
+   opts=[
+     ["Hypertrophic scars develop soon after surgery and usually improve with time; keloids may develop months after the trauma and rarely improve",
+      "Correct — timing and trajectory both separate them."],
+     ["Hypertrophic scars develop months after the trauma and rarely improve; keloids develop soon after surgery and usually improve",
+      "This reverses both the timing and the trajectory."],
+     ["Both develop within four weeks of the injury and both flatten over the following year",
+      "Only the hypertrophic scar follows that course."],
+     ["Both develop months after the trauma and neither improves without treatment",
+      "The hypertrophic scar develops soon after surgery and does improve."]],
+   c=0, cite=c(24)),
+
  dict(topic="Hypertrophic scar", io=IOA, slot="first-line",
    q="Which treatments are listed for a hypertrophic scar?",
    opts=[

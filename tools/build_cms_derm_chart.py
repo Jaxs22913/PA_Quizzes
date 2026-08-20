@@ -38,10 +38,11 @@ DECK = {
  "l3": "3. Dermatology  II.pptx",
  "l4": "4.  Cutaneous Bacterial Infections.pptx",
  "l5": "CMS I Dermatological Infestations - Shahsv.pptx",
+ "l7": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx",
  "l8": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx",
 }
 LECTURE = {"l2": "Lecture 2", "l3": "Lecture 3", "l4": "Lecture 4",
-           "l5": "Lecture 5", "l8": "Lecture 8"}
+           "l5": "Lecture 5", "l7": "Lecture 7", "l8": "Lecture 8"}
 
 # (img, name, manifestation, tests, treatment, education)
 # img is "tag_sNNN_K.ext" or None
@@ -659,6 +660,33 @@ LABS = {
  "Lyme disease": "<b>Enzyme-linked immunosorbent assay for immunoglobulin M and G; the C6 peptide test (immunoglobulin G) is more specific; Western blot more specific still.</b> <span class=warn>If erythema migrans is present, diagnose and treat CLINICALLY &mdash; do not wait.</span>",
  "Rocky Mountain spotted fever": "<b>Complete blood count (thrombocytopenia, anaemia, normal white count with increased bands), chemistry (mild hyponatraemia), liver function (mild transaminitis).</b> Cerebrospinal fluid: leukocytosis, moderately raised protein, normal glucose. <b>Gold standard: indirect immunofluorescence assay</b> &mdash; rarely diagnostic before day 7, so <span class=warn>treat by day 5 while waiting.</span>",
  "Cercarial dermatitis (swimmer's itch)": "<b>None</b> &mdash; clinical, from the freshwater exposure and the time course.",
+ # ---- Lecture 7
+ "Clavus (corn) &mdash; hard": "<b>None.</b> Purely clinical. In a diabetic patient the relevant work-up is a foot risk assessment &mdash; sensation, pulses, glycaemic control &mdash; not blood tests for the lesion.",
+ "Clavus (corn) &mdash; soft": "<b>None.</b> Clinical. Potassium hydroxide preparation only if an interdigital fungal infection is the real question.",
+ "Callus": "<b>None</b> &mdash; clinical diagnosis.",
+ "Keloid": "<b>None.</b> Clinical diagnosis. <b>Biopsy is actively discouraged unless there is real doubt, because it may induce new scarring.</b>",
+ "Hypertrophic scar": "<b>None.</b> Clinical diagnosis, with the same biopsy caution as keloid.",
+ "Cutaneous horn": "<b>No bloods, but tissue is essential.</b> <b>Deep shave biopsy</b> to sample the base &mdash; the only way to know whether the underlying lesion is benign or malignant.",
+ "Acrochordon (skin tag)": "<b>None.</b> Clinical.",
+ "Pressure injury (pressure ulcer)": "<b>No test diagnoses or stages it &mdash; staging is visual.</b> Bloods support management rather than diagnosis: <b>nutritional markers (albumin, prealbumin)</b> because nutrition assessment is part of prevention, and inflammatory markers plus culture <b>only if infection is suspected</b>. Deep or non-healing wounds over bone may warrant imaging for osteomyelitis.",
+ "Pilonidal cyst": "<b>None usually needed.</b> Clinical diagnosis. Culture of drainage is not routine.",
+ "Dermatofibroma": "<b>No bloods.</b> Dermoscopy supports it; shave or punch biopsy is both diagnostic and therapeutic in a small lesion.",
+ "Keratoacanthoma": "<b>No bloods, but BIOPSY IS MANDATORY</b> &mdash; it is the only reliable method of diagnosis, because the lesion cannot be separated from squamous cell carcinoma clinically.",
+ "Epidermoid (epidermal) cyst": "<b>Lab tests usually unnecessary.</b> Culture only if an inflamed cyst is thought to be secondarily infected.",
+ "Syringoma": "<b>None.</b> Usually clinical; biopsy only if malignancy is a concern.",
+ "Infantile hemangioma": "<b>None for a typical lesion</b> &mdash; most are diagnosed clinically. Referral to a vascular anomalies specialist replaces testing when the diagnosis is in question; imaging is that specialist's decision, not a screening test.",
+ "Nevus flammeus (port-wine stain)": "<b>None</b> &mdash; clinical diagnosis.",
+ "Nevus simplex (stork bite)": "<b>None</b> &mdash; clinical diagnosis.",
+ "Cherry angioma": "<b>None</b> &mdash; clinical diagnosis.",
+ "Telangiectasia": "<b>None for the lesion itself.</b> Because telangiectasias are associated with numerous diseases, any testing follows the <b>suspected underlying condition</b> rather than the skin finding.",
+ "Nevus araneus (spider angioma)": "<b>The history is the test</b> &mdash; pregnancy, hormone use, alcohol, hepatotoxic drugs. Where liver disease is suspected on that history, <b>liver function tests</b> are the reasonable follow-on. The lesion itself needs none.",
+ "Pyogenic granuloma": "<b>None.</b> Usually a clinical diagnosis &mdash; though surgical excision has the advantage of providing histopathologic analysis, which matters because melanoma and squamous cell carcinoma are in the differential.",
+ "Neurofibromatosis type 1": "<b>No routine bloods.</b> Diagnosis is clinical on the recognised criteria. Genetic testing exists but is not what this lecture asks for; surveillance is by cutaneous examination at every visit.",
+ "Xanthelasma": "<b>YES &mdash; SCREEN FOR HYPERLIPIDEMIA.</b> A fasting lipid panel. This is the one lesion in the lecture whose blood work is the whole point: it may signify increased risk of cardiac disease.",
+ "Lipoma": "<b>None</b> &mdash; typically a clinical diagnosis.",
+ "Digital mucous cyst": "<b>None.</b> Clinical. The association is with osteoarthritis of the distal interphalangeal joint.",
+ "Sebaceous hyperplasia": "<b>No bloods.</b> <b>Dermoscopy</b> distinguishes it from basal cell carcinoma; biopsy only if that concern remains.",
+
  # ---- Lecture 8
  "Ephelides (freckles)": "<b>None</b> &mdash; clinical diagnosis.",
  "Lentigines": "<b>None</b> &mdash; clinical diagnosis.",
@@ -675,13 +703,170 @@ LABS = {
  "Dysplastic melanocytic naevus": "<b>None</b> &mdash; diagnosis is by biopsy.",
 }
 
+ROWS += [
+ # ================= LECTURE 7 =================
+ ("SECTION", "Lecture 7 &middot; Benign Skin Lesions"),
+
+ ("l7_s005_1.png", "Clavus (corn) &mdash; hard",
+  "<b>Focal</b> mechanical trauma (ill-fitting shoes) &rarr; hyperkeratosis with a <b>cone-shaped central core of hard keratin pointing into the skin</b>. Well defined, <b>&lt;1.5&nbsp;cm</b>, <b>painful on direct downward pressure</b>. Skin lines <b>run through</b> it. Clavus durum favours the <b>dorsal and lateral fifth toe</b>.<br><span class=pt>&ldquo;It's like walking on a pebble &mdash; right on this one spot.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> No testing needed.<br><b>Differential: callus</b> (larger, irregular, painless, no core) and <b>verruca vulgaris</b> (interrupts skin lines, blackened centre, hurts on <em>side</em> pressure, not confined to pressure areas).",
+  "<b>1st: remove the pressure</b> &mdash; padding, and stop wearing poorly fitting footwear.<br><b>2nd:</b> over-the-counter keratolytic products. Every one in the deck's table is <b>salicylic acid</b>, 12.6&ndash;40%, as a disk, liquid or plaster.<br><b>Diabetic patient &rarr; refer to podiatry.</b>",
+  "Caused by shoes too tight or too loose, shoes without socks, going barefoot, and tools or sports equipment rubbing the skin. To heal and prevent: properly fitting shoes and socks, avoid high heels, avoid barefoot, use pads inside the shoe."),
+
+ ("l7_s005_2.png", "Clavus (corn) &mdash; soft",
+  "Same pressure mechanism, but sited in the <b>fourth-to-fifth toe web space</b>, where trapped moisture <b>macerates</b> it &mdash; hence clavus mollum, &ldquo;soft&rdquo;. Still has the central core.<br><span class=pt>&ldquo;There's a sore white patch between my little toes.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br>Distinguish from an interdigital fungal infection, which is scaly and itchy rather than cored and tender.",
+  "<b>1st:</b> as for hard corn &mdash; padding and footwear change, plus <b>keeping the web space dry</b>.<br><b>2nd:</b> salicylic acid keratolytics.<br><b>Diabetic &rarr; podiatry.</b>",
+  "Dry carefully between the toes after washing. Wear socks that wick moisture. The same footwear advice as for any corn."),
+
+ ("l7_s006_1.png", "Callus",
+  "<b>Broad-area</b> pressure and friction &rarr; <b>diffuse</b> hyperkeratosis with <b>no central core</b>. Larger than a corn, <b>irregular and poorly defined</b>, and <b>usually painless</b>. Typically the <b>palms</b> or the <b>balls of the feet</b>. If the process is acute and severe, a <b>blister</b> forms instead.<br><span class=pt>&ldquo;The skin on my hands has gone thick and yellow, but it doesn't hurt.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br>The three-way differential is corn (cored, tender, small), callus (diffuse, painless, large) and wart (skin lines interrupted, blackened centre).",
+  "<b>1st:</b> padding and better-fitting footwear or gloves.<br><b>2nd:</b> over-the-counter salicylic acid keratolytics.<br><b>Diabetic &rarr; podiatry.</b>",
+  "Same prevention as corns. A callus is protective as well as symptomatic &mdash; the aim is to reduce it, not to remove the protection entirely."),
+
+ ("l7_s013_1.png", "Keloid",
+  "A <b>fibroproliferative</b> disorder; pathophysiology remains unclear. Overgrowth of dense fibrous tissue that <b>extends beyond the margins of the original wound</b>, develops <b>slowly</b> and <b>keeps enlarging for months to years</b>, with <b>no regression</b> and a tendency to recur. Firm bulbous nodules or markedly elevated plaques. Predominantly <b>ear lobe, shoulders, sternal notch</b>; rarely across joints. <b>Rare</b> incidence but <b>associated with dark skin colour</b> &mdash; African American, Hispanic and Asian patients. Triggers: surgical incisions, traumatic wounds, vaccination sites, burns, chickenpox, acne, even minor scratches.<br><span class=pt>&ldquo;I got my ears pierced and this lump keeps growing &mdash; it's way bigger than the hole was.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br><b>Biopsy only if there is genuine clinical doubt, because it may induce new scarring.</b><br>Differential: hypertrophic scar, dermatofibroma, foreign-body granuloma.",
+  "<b>Most important treatment is PREVENTION</b> &mdash; advise high-risk patients to avoid cosmetic procedures such as ear piercing. No single modality is best; <b>combination therapy has the best success rates</b>.<br><b>Occlusive silicone gel sheets</b> 12&ndash;24&nbsp;h/day for up to a year. <b>Compression</b> at 25&nbsp;mmHg, 24&nbsp;h/day, 6&ndash;12 months. <b>Intralesional steroid</b> (flattens; may cause tissue atrophy). <b>Surgical removal</b> &mdash; but <b>50&ndash;100% recurrence, often larger</b>, so always follow with intralesional steroid. <b>Radiation</b> in the first two weeks after excision. <b>Cryotherapy</b> (flattens; causes hypopigmentation). <b>Laser</b>, best combined with intralesional steroid. <b>Intralesional fluorouracil</b> &mdash; inhibits fibroblast proliferation.",
+  "Post-surgery: <b>avoid stretching the immature scar</b>, avoid hot baths (they aggravate surgery-induced inflammation), keep the wound clean. <b>Avoid body piercings.</b> Adolescents with acne should seek early, appropriate acne treatment &mdash; it greatly increases the chance of scar-free healing."),
+
+ ("l7_s021_1.jpg", "Hypertrophic scar",
+  "The <b>active proliferative phase</b> of wound healing overshooting. Develops <b>rapidly, within four weeks</b> of the event, and stays <b>confined to the wound margins</b>. Remains stable and then <b>regresses (flattens) with time</b>. Asymptomatic. Occurs where scars <b>cross joints or skin creases at a right angle</b>. <b>Frequent</b> incidence, and <b>no association with skin colour</b>.<br><span class=pt>&ldquo;My scar went thick and red about a month after the operation, but it stops right at the edges.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> Biopsy only if there is clinical doubt, as it may induce new scarring.<br>Differential: keloid, dermatofibroma, foreign-body granuloma.",
+  "<b>Intralesional injection</b> &mdash; corticosteroid or fluorouracil.<br><b>Compression therapy and silicone sheeting.</b><br><b>Surgical excision</b> &mdash; unlike keloid, hypertrophic scars <b>improve with appropriate surgery</b>.<br><b>Pulsed dye laser</b> &mdash; reduces erythema by reducing neovascularization.",
+  "Reassure: this is the scar that gets better. It should flatten on its own over months. Distinguish it plainly from keloid, which does not."),
+
+ ("l7_s025_1.png", "Cutaneous horn",
+  "A hard <b>conical exophytic projection composed of keratin</b>, with the appearance of an animal horn. <b>It arises from the surface of another lesion &mdash; benign or malignant</b>: actinic keratosis, wart, seborrheic keratosis, keratoacanthoma, or basal or squamous cell carcinoma. <b>The process at the base of the lesion is what matters.</b> Caucasians <b>over 50</b>, males = females, on <b>head, neck and upper extremities</b>, commonly sun-exposed face, ears and hands. May bleed or hurt from trauma.<br><span class=pt>&ldquo;There's a hard little horn growing out of my ear.&rdquo;</span>",
+  "<b>Often NO clinical feature distinguishes benign from malignant.</b><br><b>Gold standard: deep shave biopsy to sample the underlying tissue.</b><br>Differential: wart, actinic keratosis, squamous cell carcinoma.",
+  "<b>Depends entirely on the underlying etiology.</b> An underlying malignancy frequently requires <b>excision to the standard practice for that tumour type and location</b>. Removing the horn alone treats nothing.",
+  "Explain that the horn itself is only keratin, and the reason for biopsy is what lies beneath it. Counsel on sun protection and periodic skin examination."),
+
+ ("l7_s029_1.png", "Acrochordon (skin tag)",
+  "A <b>fibroepithelial pedunculated papilloma</b> &mdash; a <b>narrow stalk with a broad tip</b>. Soft, skin-coloured papules from about <b>1&nbsp;mm to 10&nbsp;mm</b>. Asymptomatic. Increased in <b>females and obese patients</b>, in <b>areas of friction</b> &mdash; neck, axilla, groin. Very common: present in <b>60% of people by age 70</b>.<br><span class=pt>&ldquo;I've got these little flaps of skin under my arms and they catch on my clothes.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> No testing needed.",
+  "<b>Usually for cosmesis only.</b><br><b>Scissor excision, cryotherapy, or electrodesiccation.</b><br><b>Anesthesia is not necessary.</b>",
+  "Harmless growths of normal skin. They form where skin rubs together &mdash; armpit, neck, under the breasts, groin &mdash; and become more likely with age and with excess weight. <b>Never cut or pull one off yourself: they bleed.</b> A new tag often forms in the same area after removal."),
+
+ ("l7_s033_1.png", "Pressure injury (pressure ulcer)",
+  "<b>Unrelieved pressure</b> damaging underlying tissue, generally soft tissue compressed <b>between a bony prominence and an external surface</b> for a prolonged time. Extent ranges from non-blanchable intact skin to deep ulcers reaching bone.<br><b>STAGING (from the slide's images):</b><br><b>1</b> &mdash; localised <b>non-blanchable erythema of intact skin</b>.<br><b>2</b> &mdash; <b>partial-thickness</b> loss with <b>exposed dermis</b>; bed viable, pink/red, moist, shiny or dry.<br><b>3</b> &mdash; <b>full thickness</b>; <b>adipose tissue visible</b>.<br><b>4</b> &mdash; full thickness skin AND tissue loss; <b>fascia, muscle, tendon, ligament, cartilage or bone exposed</b>.<br><b>Unstageable</b> &mdash; obscured by <b>slough or eschar</b>, extent cannot be determined.<br><b>Deep tissue</b> &mdash; persistent <b>non-blanchable deep red/purple discolouration</b>; skin intact or not.",
+  "<b>Clinical diagnosis and staging.</b> The staging tables illustrate every stage in <b>both lightly and darkly pigmented skin</b> &mdash; non-blanchable erythema is harder to see and easier to miss on darker skin.",
+  "<b>Best measure is PREVENTION:</b> frequent skin assessment, nutrition assessment, moisture control and skin care (keep clean and dry, manage incontinence, barrier creams), <b>reposition every two hours</b>, manage pain, improve mobility, specialty mattresses.<br><b>Management depends on stage.</b> <b>Refer to a wound care specialist.</b> Control infection risk. Silicone and hydrocolloid dressings. <b>Surgical referral for debridement</b> &mdash; removes necrotic tissue, eschar and slough, which promote infection, delay granulation and impede healing &mdash; and for wound closure.",
+  "For carers: reposition two-hourly, keep skin clean and dry, manage incontinence promptly, and check the skin over every bony prominence at every opportunity. Report any non-blanching red area at once."),
+
+ ("l7_s040_1.png", "Pilonidal cyst",
+  "Disruption of the skin over the <b>coccyx</b> leaves a <b>dimple (pit)</b> that draws in hair and debris &rarr; <b>follicular plugging</b>; ingrown hairs prevent drainage and promote <b>abscess</b> formation. <b>Male to female 3:1.</b> Originally thought congenital, now believed <b>acquired</b>. <b>Recurrence is common.</b><br><b>Risk factors:</b> obesity, local trauma or irritation, sedentary lifestyle, <b>increased hair density in the natal cleft</b>, family history.<br><b>Acute abscess:</b> sudden pain and swelling in the gluteal cleft; warm, tender, erythematous, purulent or bloody drainage, may be <b>fluctuant</b>. <b>Chronic:</b> recurrent drainage and pain from one or more <b>sinus tracts</b>; a hair may be seen protruding from a sinus opening.<br><span class=pt>&ldquo;I get a painful swelling at the top of my bum crack, and sometimes it bursts and drains.&rdquo;</span>",
+  "<b>No diagnostic testing usually needed.</b><br><b>Sinus vs fistula</b> (from the slide's diagram): a <b>sinus is a BLIND track</b>; a <b>fistula connects TWO epithelium-lined surfaces</b>. Both usually arise from a preceding abscess.",
+  "<b>1st:</b> keep the area <b>clean and free of debris</b>; shaving or laser hair therapy may help.<br><b>Acute abscess &rarr; incision and drainage.</b><br><b>Chronic disease &rarr; refer to a surgeon for excision.</b>",
+  "Maintain good hygiene of the natal cleft, and seek care if an abscess occurs. Recurrence is common, so hair control and hygiene are ongoing rather than one-off."),
+
+ ("l7_s045_1.png", "Dermatofibroma",
+  "<b>Fibroblasts in the dermis</b> forming small dense clusters &rarr; a firm <b>0.5&ndash;1&nbsp;cm nodule</b>. <b>Legs are the commonest site</b>, then arms. Male to female <b>1:2</b>, all races. Etiology uncertain &mdash; may follow <b>trauma, viral infection or insect bites</b>. Usually asymptomatic; if symptomatic, slight pruritus or pain &mdash; it is the <b>most common painful skin tumour</b>. Firm nodule with a <b>hyperpigmented brown halo</b>, pink hue, raised centre, scaly surface.<br><b>DIMPLE SIGN: the lesion retracts beneath the skin surface with lateral compression.</b><br><span class=pt>&ldquo;There's a hard little brown bump on my shin &mdash; I think it started after a bug bite.&rdquo;</span>",
+  "<b>Clinical diagnosis, supported by dermoscopy</b> &mdash; often shows a <b>peripheral pigment network with a central white mass</b>.<br>Differential: basal cell carcinoma, hypertrophic scar, <b>cutaneous melanoma</b>, keratoacanthoma.",
+  "<b>Often no treatment</b> unless the diagnosis is questioned or symptoms warrant it.<br><b>Small lesions: shave or punch biopsy &mdash; both diagnostic AND therapeutic.</b><br><b>Larger lesions:</b> may require surgical excision.",
+  "Benign. The dimple sign is what distinguishes it from the pigmented lesions it can resemble. Return if it changes in size, colour or shape."),
+
+ ("l7_s049_1.png", "Keratoacanthoma",
+  "Believed to arise from the <b>pilosebaceous unit</b>. <b>Rapid, abundant growth then spontaneous resolution</b> &mdash; but it may keep growing or rarely metastasize. <b>Histopathologically similar to squamous cell carcinoma; strong arguments support classifying it as a VARIANT of invasive squamous cell carcinoma.</b> Classic in middle-aged, light-skinned people in hair-bearing sun-exposed areas. Males &gt; females.<br><b>Risk factors:</b> age &gt;40, sun exposure, very fair skin that always burns and never tans, male sex, <b>tattoos (red ink)</b>, <b>skin trauma such as lasers, surgery or cryotherapy</b>, human papillomavirus infection.<br><b>Triphasic:</b> rapid growth in <b>6&ndash;8 weeks</b>, stabilization, regression after <b>3&ndash;6 months</b>.<br>Solitary, smooth, shiny, <b>dome-shaped red papule or nodule with a central keratin-filled crater &mdash; resembles a volcano</b>.<br><span class=pt>&ldquo;This came up out of nowhere in about six weeks and it's got a crusty plug in the middle.&rdquo;</span>",
+  "<b>Biopsy is the ONLY reliable method to make the diagnosis.</b><br>Differential: <b>squamous cell carcinoma</b>, basal cell carcinoma, amelanotic melanoma, molluscum contagiosum.",
+  "<b>Surgical &mdash; standard of care is to excise or destroy the tumour, preferred because of possible malignancy.</b><br><b>Elliptical excision with 5&nbsp;mm margins.</b><br><b>Mohs surgery</b> for large or recurrent lesions, or lesions in areas with cosmetic or functional considerations.<br><b>Intralesional methotrexate</b> may be given before excision to reduce the size &mdash; it inhibits deoxyribonucleic acid synthesis in actively dividing cells.",
+  "Do not wait for it to regress. Even though many do, it cannot be told from a squamous cell carcinoma without histology, so it is treated as one. Counsel on sun protection."),
+
+ ("l7_s053_1.png", "Epidermoid (epidermal) cyst",
+  "<b>Cystic enclosure of epithelium within the dermis</b>, filling with <b>KERATIN</b>. Often called a &ldquo;sebaceous cyst&rdquo; because the contents look like sebum &mdash; <b>it is not one</b>. Males &gt; females <b>2:1</b>; very common, on <b>face, scalp, neck and trunk</b>. Usually asymptomatic; may drain foul-smelling material. Single firm papule or nodule, <b>movable, round, protruding</b>, with a <b>central pore or punctum communicating with the skin surface</b>. Expresses <b>cream-coloured pasty material with the odour of rancid cheese</b>.<br><span class=pt>&ldquo;There's a lump on my back with a little hole in the middle, and if I squeeze it something white and awful comes out.&rdquo;</span>",
+  "<b>Clinical diagnosis. Lab tests usually unnecessary.</b><br>Differential: cystic acne, lipoma, neurofibroma, keratoacanthoma, basal cell carcinoma.",
+  "<b>Asymptomatic: no treatment necessary.</b><br><b>If inflamed: POSTPONE excision for a few weeks</b>, reduce inflammation with <b>intralesional triamcinolone</b>, add antibiotics if needed.<br><b>Standard of care is surgical removal of the ENTIRE capsule, performed when the cyst is not inflamed.</b> A small cyst (1&ndash;3&nbsp;cm) can be treated with a punch incision and removal of the cystic contents.",
+  "The lump is keratin, not oil, and it is benign. Squeezing it risks rupture and inflammation. If it becomes red and painful, come in &mdash; that is the point at which surgery is delayed rather than brought forward."),
+
+ ("l7_s058_1.png", "Syringoma",
+  "<b>Benign neoplasms of ECCRINE ducts</b> (sweat glands). Appear at <b>puberty</b>; females &gt; males. Usually asymptomatic. <b>Multiple 1&ndash;2&nbsp;mm skin-coloured, pink or brown papules</b>, most frequently on the <b>eyelids (periorbital region) and upper cheeks</b>.<br><span class=pt>&ldquo;I've got these tiny bumps under my eyes &mdash; they came up in my teens.&rdquo;</span>",
+  "<b>Usually clinical; biopsy if there is concern about malignancy.</b><br>Differential: <b>milia</b>, <b>xanthelasma</b>, basal cell carcinoma.",
+  "<b>For cosmesis only, and every option has a trade-off.</b><br><b>Drugs</b> (e.g. oral isotretinoin) &mdash; <b>increased risk of recurrence</b>.<br><b>Removal procedures</b> (curettage and electrodesiccation, laser therapy, cryotherapy, surgical excision) &mdash; <b>possible poor cosmetic results</b>.",
+  "Benign and harmless. Any treatment is elective, and the periorbital skin makes cosmetic outcome the main consideration. Recurrence is common with medical treatment."),
+
+ ("l7_s067_1.png", "Infantile hemangioma",
+  "<b>Congenital vascular lesion; the most common tumour of infancy</b>, and most are medically insignificant. A <b>benign neoplasm</b> from <b>rapid proliferation of endothelial cells</b>, from mutations in the genes regulating it. Usually noticed in the first days to weeks; usually single; typical maximum size <b>0.5&ndash;5&nbsp;cm</b>. More common in <b>preterm infants, females 3:1, Caucasians</b>. <b>Head and neck 60%</b>, trunk 25%, extremities 15%.<br><b>Earliest sign: blanching of the involved skin, then fine telangiectasias, then a red/crimson macule.</b> 50% present at birth.<br><b>Growth:</b> rapid birth&ndash;4 weeks, most growth in the first <b>4&ndash;6 months</b>, slowing 6&ndash;12 months. <b>Involution: 50% by age 5, 70% by 7, 90% by 9.</b><br><b>Superficial</b> (most common) &mdash; dilated vessels in dermis, bright red papule/plaque/nodule, once called &ldquo;strawberry&rdquo;. <b>Deep</b> (least common) &mdash; deep dermis and subcutis, pale/skin-coloured/red/blue nodule.",
+  "<b>Most are diagnosed clinically.</b> If the diagnosis is in question, <b>refer to an appropriate and experienced vascular anomalies specialist</b>.<br>Differential: <b>nevus flammeus</b> (present at birth, present for life) and <b>pyogenic granuloma</b> (due to minor trauma).",
+  "<b>No treatment may be needed &mdash; serial observation</b>, since most involute.<br><b>Indications to treat: cosmetic, functional involvement, deep ulceration, infection.</b><br><b>First line: BETA-BLOCKERS</b> &mdash; oral propranolol or topical timolol (mechanism not well understood).<br><b>Also first line: corticosteroids</b> &mdash; topical, intralesional or oral; slow growth and decrease size.<br><b>Pulsed dye laser</b> for superficial lesions (depth ~1.2&nbsp;mm). <b>Surgical excision.</b>",
+  "Most disappear on their own over years, and the natural history is the reassurance. Watch for anything that blocks vision, interferes with feeding or breathing, obstructs the ear canal, ulcerates or bleeds &mdash; those are the reasons to treat rather than wait."),
+
+ ("l7_s078_1.png", "Nevus flammeus (port-wine stain)",
+  "<b>Congenital vascular lesion.</b> <b>Dilated superficial dermal capillaries through the entire depth of the dermis, with NO proliferation of endothelial cells</b> &mdash; which is why it never involutes. More common in Caucasians, male = female. <b>Present at birth, grows in proportion with the child, NO involution, becomes darker and thicker.</b> Painless expanding lesion.<br><b>Early:</b> flat (macular) well-circumscribed <b>blanchable</b> patches, pink to red to purple; <b>colour darkens with crying, fever or overheating</b>; usually <b>unilateral with fairly sharp midline cutoffs</b>. <b>Later:</b> vasculature dilates and it may evolve into a raised, thickened plaque of deep red to purple.<br>Psychosocial disability from facial disfigurement can be overwhelming.<br><span class=pt>&ldquo;He's had this red mark on one side of his face since the day he was born, and it's got darker as he's grown.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br>The critical contrast is with <b>infantile hemangioma</b>: hemangioma proliferates then involutes; nevus flammeus does neither.",
+  "<b>No treatment</b> is required.<br><b>Cosmetics</b> &mdash; tinted waterproof makeup.<br><b>Pulsed dye laser therapy</b> &mdash; causes selective destruction of superficial target blood vessels, inducing intravascular coagulation; the vessel is later absorbed and replaced by collagen.",
+  "This is permanent and will darken and thicken with time, unlike a hemangioma. Discuss the psychosocial impact openly. Camouflage cosmetics and laser are both legitimate options and neither is compulsory."),
+
+ ("l7_s083_2.png", "Nevus simplex (stork bite)",
+  "<b>Congenital vascular lesion</b>, a <b>more superficial variant of nevus flammeus</b> involving dermal capillaries. Present at birth; <b>becomes more noticeable when the baby cries</b>. Most common on the <b>head and neck</b>. Pink to erythematous, irregular, <b>blanchable</b> macules and/or patches, single or multiple.<br><span class=pt>&ldquo;There's a pink patch on the back of her neck that goes bright red when she cries.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br>Distinguish from nevus flammeus, which is usually unilateral with a sharp midline cutoff and does <em>not</em> fade.",
+  "<b>No treatment.</b> <b>Fades within one year</b>, or may persist for life on the neck.",
+  "Reassure: this is the common birthmark that usually goes away in the first year. The one on the nape may stay, which is why it is nicknamed a stork bite."),
+
+ ("l7_s086_1.jpg", "Cherry angioma",
+  "<b>Acquired vascular lesion</b>, formed by <b>capillary (venule) proliferation</b>. Very common, and <b>increases with age</b> &mdash; previously known as senile angioma. <b>Cause unknown.</b> Most common on the <b>trunk</b>; may bleed after trauma. <b>&lt;5&nbsp;mm</b>, smooth, firm, deep red papules that <b>blanch with pressure</b> (a fibrotic one may not blanch completely).<br><span class=pt>&ldquo;I keep getting these little bright red spots on my chest and back as I get older.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br>Differential includes petechiae (do not blanch, not papular) and pyogenic granuloma (moist, exophytic, grows fast).",
+  "<b>Not necessary unless it bothers the patient.</b><br><b>Laser therapy</b> for superficial lesions.<br><b>Shave excision and electrocauterization</b> for large lesions.",
+  "Benign, and strongly age-related. <b>New lesions will likely develop and there is no way to prevent them</b> &mdash; removing existing ones does not stop new ones forming."),
+
+ ("l7_s088_1.png", "Telangiectasia",
+  "<b>Acquired vascular lesion.</b> A <b>permanently dilated capillary, &lt;1&nbsp;mm</b>. <b>Blanchable.</b> Occurs singly, in groups, or with a <b>central punctum</b>. May be <b>primary or secondary</b>, and is <b>associated with numerous diseases</b>.<br><span class=pt>&ldquo;I've got tiny red lines on my cheeks that don't go away.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> Because telangiectasias are secondary to many conditions, the work-up follows the suspected cause rather than the lesion.",
+  "Treat the <b>underlying cause</b> where there is one. Cosmetic treatment where wanted follows the same options as other superficial vascular lesions &mdash; laser being the mainstay.",
+  "Explain that these are dilated existing vessels, not new growths. Their significance is as a possible sign of something else, which is why the history matters more than the lesion."),
+
+ ("l7_s089_2.png", "Nevus araneus (spider angioma)",
+  "<b>Acquired vascular lesion.</b> <b>NO vascular proliferation &mdash; dilation of preexisting vessels.</b> <b>Estrogen excess states may be the cause:</b> pregnancy or oral contraceptive use (<b>resolve after delivery or after stopping the pill</b>), and <b>cirrhosis or liver failure</b>. Location: <b>hands and fingers in children</b>; <b>face, neck, upper trunk and arms in adults</b>. Asymptomatic. Central arteriole with radiating capillaries; <b>lesion blanches</b>; <b>&lt;10&nbsp;mm</b>.<br><span class=pt>&ldquo;There's a little red spot with legs coming off it, like a spider.&rdquo;</span>",
+  "<b>Clinical diagnosis &mdash; but the HISTORY is the test.</b> Ask about <b>pregnancies, hormone use, alcohol history, and medications carrying a risk of liver damage</b>.",
+  "<b>No treatment may be needed</b> &mdash; pregnancy- and pill-related lesions resolve on their own.<br><b>Pulsed dye laser resolves most lesions.</b>",
+  "The lesion itself is harmless; its value is as a clue. Several spider angiomas in a non-pregnant adult warrant a conversation about alcohol and liver health."),
+
+ ("l7_s092_1.png", "Pyogenic granuloma",
+  "<b>Acquired vascular lesion &mdash; MISNAMED: neither infectious nor granulomatous.</b> Exact cause unknown; a response to <b>injury or hormonal factors</b>. Common in <b>children, young adults and pregnancy</b>. A benign vascular tumour of skin and mucous membrane appearing as a <b>rapidly growing vascular papule or nodule</b>, from overgrowth of blood vessels in response to <b>irritation, trauma or hormonal change</b>. Most common on <b>head, neck and fingers</b>. <b>Bright red exophytic papule or nodule with a MOIST surface and an EPITHELIAL COLLARETTE at the base.</b> Bleeding, erosion, ulceration, purulence and crusting all possible. Average <b>6.5&nbsp;mm</b>; may reach several centimetres.<br><span class=pt>&ldquo;It came up really fast after I cut my finger, and it bleeds every time I knock it.&rdquo;</span>",
+  "<b>Usually a clinical diagnosis.</b><br>Differential: cherry angioma, <b>malignant melanoma</b>, <b>squamous cell carcinoma</b> &mdash; two malignancies, which is why many are excised.",
+  "<b>Spontaneous resolution may occur</b>, but patients often opt for treatment for cosmesis or because of bleeding.<br><b>Surgical excision</b> &mdash; provides histopathologic analysis, <b>lowest recurrence rate</b>, <b>highest rate of scarring</b>.<br><b>Other modalities:</b> shave excision followed by curettage and electrodesiccation, laser, cryotherapy.",
+  "These lesions are benign and often resolve spontaneously over months to years. Effective treatments exist if wanted for appearance or to stop bleeding. <b>If it recurs, come back early &mdash; small lesions are easier to treat than large ones.</b>"),
+
+ ("l7_s100_1.jpg", "Neurofibromatosis type 1",
+  "Also <b>von Recklinghausen disease</b>. A common <b>neurocutaneous genetic disorder</b> causing tumours to form on nerve tissue. <b>NF1: NF1 gene, chromosome 17. NF2: NF2 gene, chromosome 22. Schwannomatosis (NF3): SMARCB1 and LZTR1, chromosome 22.</b><br><b>NF1 skin manifestations, all four:</b><br><b>Caf&eacute; au lait spots</b> &mdash; light tan to brown macules, <b>&gt;5&nbsp;mm prepubertal, &gt;15&nbsp;mm postpubertal</b>; often the first manifestation; usually present at birth or in the first year; grow in proportion with the child. <b>Six or more are diagnostic &mdash; but the macules alone do not establish the diagnosis.</b><br><b>Cutaneous neurofibromas</b> &mdash; benign nerve sheath tumours from peripheral nerves; well-circumscribed, sessile or pedunculated; protrude just above the skin or lie just under it with a violaceous hue; <b>begin at puberty and increase in number and size with age</b>; a few to hundreds.<br><b>Plexiform neurofibromas</b> &mdash; tumour in the tissue covering nerves; anywhere except brain and spinal cord; large and extensive; may be locally invasive.<br><b>Intertriginous freckling (Crowe's sign)</b> &mdash; freckles <b>&lt;5&nbsp;mm</b>, smaller than caf&eacute; au lait spots, grouped, more prominent with sun exposure; <b>axillary and inguinal</b> (may be seen under the breasts, but that site is not a diagnostic criterion).",
+  "<b>Clinical diagnosis</b> on the recognised criteria. Six or more caf&eacute; au lait macules of the size threshold, plus the other features.",
+  "<b>Surveillance.</b> A <b>cutaneous examination at every visit</b>, assessing for new neurofibromas or progression of existing lesions.<br><b>Plexiform neurofibromas</b> may be locally invasive; clinical evaluation should be directed at determining the extent of involvement.",
+  "Point patients to <b>national and regional support groups</b> &mdash; for continuous updates on treatment advances and for emotional support. This is the education point the lecture names."),
+
+ ("l7_s104_1.jpg", "Xanthelasma",
+  "<b>Soft, yellow cholesterol plaques</b> &mdash; a collection of <b>lipid-laden macrophages</b>. <b>Associated with lipid disorders.</b> Asymptomatic. Most common location: the <b>medial eyelids</b>.<br><span class=pt>&ldquo;I've got soft yellow patches on my eyelids near my nose.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b><br><b>SCREEN FOR HYPERLIPIDEMIA</b> &mdash; it may signify an increased risk of cardiac disease.<br>Differential includes syringoma and milia, which share the periorbital site.",
+  "<b>Laser or surgical excision.</b><br><b>Recurrence is common.</b><br>Treating the lipid disorder is the part that matters medically; removing the plaque is cosmetic.",
+  "The plaque itself is harmless, but it can be a marker of a lipid disorder and of cardiac risk &mdash; which is why a cholesterol check is part of the visit. Recurrence after removal is common."),
+
+ ("l7_s105_1.png", "Lipoma",
+  "<b>The most common soft tissue tumour.</b> A benign <b>localised overgrowth of fat cells in the subcutaneous tissue</b>; single or multiple. Asymptomatic unless adjoining structures are invaded; can occur anywhere on the body. <b>Soft, painless subcutaneous nodules of rubbery consistency, usually &lt;5&nbsp;cm.</b><br><span class=pt>&ldquo;There's a soft squishy lump under my skin &mdash; it moves when I push it and doesn't hurt.&rdquo;</span>",
+  "<b>Typically a clinical diagnosis.</b><br>Differential: epidermal cyst, dermatofibroma, abscess.",
+  "<b>Asymptomatic tumours can be observed.</b><br><b>Cosmetically deforming enlarged masses, and uncertain diagnosis, can be treated surgically with excision.</b>",
+  "Benign and very common. Excision is for appearance, for symptoms from pressure on nearby structures, or to settle a diagnosis &mdash; not because the lump is dangerous."),
+
+ ("l7_s108_1.png", "Digital mucous cyst",
+  "A <b>PSEUDO-cyst &mdash; it does not have a cellular lining (a true capsule)</b>. Represents an <b>extrusion of mucinous contents from a local joint space into the surrounding dermis</b>; as the mucin collects it compacts the cells at the margin, <b>mimicking</b> a capsule. Females &gt; males. Asymptomatic unless large. <b>Associated with osteoarthritis.</b> Typically located over the <b>distal interphalangeal (DIP) joint</b> &mdash; a translucent skin-coloured cyst papule on the distal digit, over the proximal nail matrix or the nail bed. <b>May cause a longitudinal groove in the nail</b> from pressure on the matrix.<br><span class=pt>&ldquo;There's a clear little blister by my fingernail and the nail has a line down it now.&rdquo;</span>",
+  "<b>Clinical diagnosis.</b> The association with osteoarthritis of the distal interphalangeal joint is part of the picture.",
+  "<b>Asymptomatic lesions may be observed.</b><br><b>Symptomatic cysts, or those causing nail dystrophy, can be excised.</b>",
+  "The nail groove is caused by the cyst pressing on the nail matrix and usually resolves once the cyst is dealt with. Otherwise no treatment is needed."),
+
+ ("l7_s110_2.png", "Sebaceous hyperplasia",
+  "A common benign condition of the <b>sebaceous glands</b>, with <b>NO known potential for malignant transformation</b>. With age, <b>turnover of sebocytes slows</b>, crowding them and <b>enlarging the gland</b>. <b>Immunosuppression is high risk.</b> Asymptomatic; the patient usually presents about appearance or about cancer. Single or multiple <b>whitish-yellow or skin-coloured papules, soft, 2&ndash;9&nbsp;mm</b>, with <b>CENTRAL UMBILICATION</b> &mdash; a very small globule of sebum can sometimes be expressed. Common on the <b>face</b>.<br><span class=pt>&ldquo;I've got small yellowish bumps on my forehead with a dip in the middle &mdash; is it skin cancer?&rdquo;</span>",
+  "<b>Dermoscopy can distinguish between basal cell carcinoma and sebaceous hyperplasia.</b><br><b>Biopsy if concern about malignancy (basal cell carcinoma) remains.</b><br>Differential: <b>basal cell skin cancer</b> &mdash; and that is exactly what the patient is worried about.",
+  "<b>Does not require treatment.</b> Lesions <b>tend to recur</b> and treatment carries a <b>risk of scarring</b>.<br><b>Light electrocautery</b> can be used if treatment is wanted.",
+  "Benign, with no potential to become cancerous. The main reason to see a clinician is to have it distinguished from a basal cell carcinoma, which dermoscopy can usually do without a biopsy."),
+]
+
 SECTION_LABELS = {
+
  "Lecture 2 &middot; General Dermatology I &mdash; eczema and dermatitis": "L2 eczema",
  "Lecture 2 &middot; Vesiculobullous, papulosquamous, alopecia and xerosis": "L2 bullous + papulosquamous",
  "Lecture 3 &middot; Dermatology II &mdash; reactive and immune-mediated": "L3 reactive",
  "Lecture 3 &middot; Severe drug reactions and photodermatology": "L3 drug + photo",
  "Lecture 4 &middot; Cutaneous Bacterial Infections": "L4 bacterial",
  "Lecture 5 &middot; Dermatological Infestations": "L5 infestations",
+ "Lecture 7 &middot; Benign Skin Lesions": "L7 benign",
  "Lecture 8 &middot; Pigmented Skin Lesions": "L8 pigmented",
 }
 
@@ -690,6 +875,19 @@ SECTION_LABELS = {
 # "Questions?" slide, references, case studies. An image was taken from Lecture
 # 8 slide 47 ("Questions?") and shipped as congenital melanocytic naevus; it was
 # a photograph of a dog. This makes that class of error fail the build.
+# Slides whose image is a VISUAL METAPHOR rather than a clinical photograph.
+# The non-content guard cannot catch these -- their slide titles are ordinary
+# ("Clavi or Clavus (Corns)", "Keratoacanthoma: Clinical Presentation",
+# "Sebaceous Hyperplasia: Clinical Presentation") and only the picture gives it
+# away. Lecture 7 alone contains a photograph of corn on the cob, a photograph
+# of an erupting volcano, and a photograph of a doughnut. Any of the three would
+# have shipped looking exactly as authoritative as the dog did.
+METAPHOR_IMAGES = {
+    "l7_s004_1", "l7_s004_2",   # corn on the cob, for "corns"
+    "l7_s050_1",                # a volcano, for the keratin-filled crater
+    "l7_s110_1",                # a doughnut, for the central umbilication
+}
+
 NON_CONTENT = re.compile(r"^\s*(questions\??|resources?|case stud(y|ies)|references?|"
                          r"thank you|acknowledg\w*)\s*$", re.I)
 
@@ -698,7 +896,7 @@ def non_content_slides():
     import os as _os
     SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad"
     files = {"l2": "cms_l2.txt", "l3": "cms_l3.txt", "l4": "cms_l4.txt",
-             "l5": "cms_l5.txt", "l8": "cms_l8.txt"}
+             "l5": "cms_l5.txt", "l7": "cms_l7.txt", "l8": "cms_l8.txt"}
     out = {}
     for tag, fn in files.items():
         path = _os.path.join(SCRATCH, fn)
@@ -1010,6 +1208,10 @@ def main():
     assert html.count("<img ") == n_imgs, "image count mismatch"
     assert 'class="guide-back-bar"' in html, "no back bar, so theme.js adds no PDF button"
     assert "@media print" in html, "no print rules"
+    used_metaphor = sorted(METAPHOR_IMAGES & {r[0].rsplit(".", 1)[0]
+                                              for r in ROWS if r[0] and r[0] != "SECTION"})
+    assert not used_metaphor, ("a row takes its image from a visual metaphor rather than a "
+                               "clinical photograph: %r" % used_metaphor)
     bad_slides = non_content_slides()
     for row in ROWS:
         if row[0] == "SECTION" or not row[0]:
