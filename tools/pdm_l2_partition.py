@@ -40,11 +40,12 @@ from pdm_l2_pool_a import POOL_A
 from pdm_l2_pool_b import POOL_B
 from pdm_l2_pool_c import POOL_C
 from pdm_l2_pool_d import POOL_D
+from pdm_l2_pool_e import POOL_E
 from pdm_l2_lengthfix import FIXES
 
 # D is APPENDED, never prepended: the length-fix keys are indices into A + B + C
 # and prepending would silently retarget every one of them.
-POOL = POOL_A + POOL_B + POOL_C + POOL_D
+POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E
 
 for (_qi, _oi), _txt in FIXES.items():
     _q = POOL[_qi]

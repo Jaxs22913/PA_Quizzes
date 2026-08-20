@@ -18,8 +18,7 @@ INTRO = ("Thirty questions on the principles of medical imaging: how each modali
          "media &mdash; which agent, which check before giving it, and which one is "
          "contraindicated when perforation is suspected. Numbers always appear with the scale "
          "that makes them readable and no question asks you to calculate anything, matching how "
-         "Professor Reynolds said this course is examined. Every question cites the slide it "
-         "came from.")
+         "Professor Reynolds said this course is examined. <b>The 19 August lecture recording is folded in</b> &mdash; including the one thing she said outright would not be on the test, the phrase she named as a buzzword, and the places where she refined what a slide says. Every question cites the slide, or the recording timestamp, it came from.")
 
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "medical-imaging-quiz.html" if n == 1 else "medical-imaging-quiz-version-2.html"

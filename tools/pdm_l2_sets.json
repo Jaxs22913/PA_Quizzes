@@ -1,82 +1,56 @@
 {
  "set1": [
   {
-   "topic": "Fluoroscopy",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "agent/regimen",
-   "q": "What equipment does fluoroscopy require?",
+   "topic": "Hounsfield units",
+   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
+   "slot": "differential",
+   "q": "How does the Hounsfield table refine the five basic radiographic densities?",
    "opts": [
     [
-     "A superconducting magnet requiring dedicated site construction beforehand and high ongoing cost",
-     "That describes magnetic resonance imaging."
+     "It separates fat from air, which a conventional radiograph cannot tell apart",
+     "Fat and air are already distinguishable on a plain film."
     ],
     [
-     "A handheld transducer connected to a portable processing unit, needing neither a tilting table nor a shielded examination room",
-     "That describes ultrasound."
+     "It merges bone and soft tissue, which a conventional radiograph shows separately",
+     "The table separates tissues rather than merging them."
     ],
     [
-     "An x-ray unit fitted for controlled motion of the source, the imaging sensor and the patient, with a tilting table",
-     "Correct — the tube moves freely back and forth to image the patient."
+     "It separates water from soft tissue, which a conventional radiograph cannot tell apart",
+     "Correct — the deck's asterisk on “Five*” marks exactly that exception."
     ],
     [
-     "A gamma camera mounted on a rotating gantry that circles the patient, with a fixed table and a detector housing that does not move",
-     "That describes single photon emission computed tomography."
+     "It separates calcium from metal, which a conventional radiograph cannot tell apart",
+     "Calcium and metal are already distinct among the five basic densities."
     ]
    ],
    "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 57"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 13"
   },
   {
-   "topic": "Contrast media",
-   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
-   "slot": "complication",
-   "q": "Why does the deck name cancer as a risk factor for all contrast material?",
+   "topic": "Hounsfield units",
+   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
+   "slot": "differential",
+   "q": "Ordered from the most negative Hounsfield number to the most positive, what is the sequence of tissues?",
    "opts": [
     [
-     "Because the dyes provoke chronic inflammation, and chronic inflammation is carcinogenic",
-     "Inflammation is not the pathway named here for contrast-associated risk."
+     "Fat, air, water, bone, soft tissue, metal",
+     "Air is more negative than fat, and bone is denser than soft tissue."
     ],
     [
-     "Because the dyes are technically radioactive, as are the imaging techniques themselves",
-     "Correct — the deck states the risk in exactly those terms."
+     "Air, fat, water, soft tissue, bone, metal",
+     "Correct — and it runs blackest to whitest in exactly that order."
     ],
     [
-     "Because the dyes are nephrotoxic, and chronic renal injury raises malignancy risk over time",
-     "Nephrotoxicity is a real risk of iodinated contrast, but it is not the reason given."
+     "Air, water, fat, soft tissue, bone, metal",
+     "Fat is negative and water is zero, so fat comes first."
     ],
     [
-     "Because the dyes are retained in tissue indefinitely, and retained foreign material transforms",
-     "Indefinite tissue retention is not the mechanism the deck describes."
+     "Metal, bone, soft tissue, water, fat, air",
+     "This is the correct sequence reversed."
     ]
    ],
    "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 50"
-  },
-  {
-   "topic": "Angiographic studies",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "manifestation",
-   "q": "What is a vasculogram?",
-   "opts": [
-    [
-     "Not one specific test — any of the modalities can be used to image the vessels",
-     "Correct — x-ray, ultrasound, computed tomography and magnetic resonance all can."
-    ],
-    [
-     "A specific x-ray study in which iodine is injected directly into a peripheral vein",
-     "Angiographic studies are not confined to one modality or one route."
-    ],
-    [
-     "A specific nuclear study in which technetium is used to map perfusion to an organ",
-     "Perfusion tracers are used in nuclear medicine, but that is not what this term means."
-    ],
-    [
-     "A specific ultrasound study in which the transducer is placed within the vessel",
-     "Intravascular placement is not what the deck describes for these studies."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 32"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 13"
   },
   {
    "topic": "Computed tomography",
@@ -85,76 +59,128 @@
    "q": "Which substance is assigned a Hounsfield number of zero by convention?",
    "opts": [
     [
-     "Fat",
-     "Fat sits below water on the scale but is not the zero reference."
-    ],
-    [
-     "Water",
-     "Correct — other tissues take a range of Hounsfield numbers according to their density."
-    ],
-    [
      "Air",
      "Air sits at the low, negative end of the scale."
     ],
     [
      "Bone",
      "Bone sits at the high, positive end of the scale."
+    ],
+    [
+     "Fat",
+     "Fat sits below water on the scale but is not the zero reference."
+    ],
+    [
+     "Water",
+     "Correct — other tissues take a range of Hounsfield numbers according to their density."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 12"
   },
   {
-   "topic": "Conventional radiography",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "etiology",
-   "q": "How is a conventional radiograph produced?",
+   "topic": "Contrast media",
+   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
+   "slot": "education",
+   "q": "What does the deck say about shellfish allergy and iodinated contrast?",
    "opts": [
     [
-     "Ionizing radiation and light strike a photosensitive surface, producing a latent image that is then processed to become visible",
-     "Correct — it requires a source, a method to record the image, and a way to process it."
+     "There is cross-reactivity only with the iso-osmolal agents such as iodixanol",
+     "The deck draws no agent-specific exception of this kind."
     ],
     [
-     "High-frequency sound waves bounce off the tissue and return to a transducer, which then builds up the whole image",
-     "That describes ultrasound."
+     "There should be no cross-reactivity between shellfish and iodinated radiocontrast",
+     "Correct — the cross-reactivity idea is explicitly rejected."
     ],
     [
-     "A magnetic field aligns hydrogen atoms, which emit radio waves when the field is released",
-     "That describes magnetic resonance imaging."
+     "There is well-established cross-reactivity, so the two allergies must be treated as one",
+     "This is the belief the deck corrects rather than the position it takes."
     ],
     [
-     "A gamma camera detects photons emitted by an injected radioisotope within the patient",
-     "That describes nuclear medicine imaging."
+     "There is partial cross-reactivity, so contrast may be given at a reduced concentration",
+     "No such graded approach is described; the cross-reactivity itself is denied."
     ]
    ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 6"
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 53"
   },
   {
-   "topic": "Contrast media",
-   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
-   "slot": "agent/regimen",
-   "q": "What are the named indications for intravenous contrast in computed tomography?",
+   "topic": "History",
+   "io": "Objective a — Identify the fundamental properties of medical imaging",
+   "slot": "etiology",
+   "q": "Who discovered x-rays, and what recognition followed?",
    "opts": [
     [
-     "Inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis and aneurysms",
-     "Correct — the vascular indications and the oncological ones are listed together."
+     "Wilhelm Roentgen, in Germany in 1895, awarded the first Nobel Prize for Physics in 1901",
+     "Correct — the technique is still called roentgenography after him."
     ],
     [
-     "Fracture, dislocation, foreign body, joint effusion, bone tumour, osteomyelitis and arthritis",
-     "Musculoskeletal indications of this kind are not what contrast is listed for."
+     "Godfrey Hounsfield, in Britain in 1972, awarded the Nobel Prize for Medicine in 1979",
+     "He developed the first computed tomography scanner, with Allan Cormack."
     ],
     [
-     "Stroke, demyelination, cord compression, disc herniation, meningitis and hydrocephalus",
-     "Central nervous system tumour characterisation is listed under magnetic resonance."
+     "Allan Cormack, in South Africa in 1963, awarded the first Nobel Prize for Physics",
+     "He shared the 1979 Medicine prize for computed tomography."
     ],
     [
-     "Pneumonia, effusion, pneumothorax, atelectasis, emphysema and interstitial lung disease",
-     "These parenchymal lung findings are not the contrast indications named."
+     "Marie Curie, in France in 1898, awarded the Nobel Prize for Physics in 1903",
+     "Her work was on radioactivity rather than the discovery of x-rays."
     ]
    ],
    "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 52"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 4"
+  },
+  {
+   "topic": "Abdominal series",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "test finding",
+   "q": "Which phrase did Professor Reynolds call out as a buzzword, and what does it mean?",
+   "opts": [
+    [
+     "Coral-red fluorescence — erythrasma",
+     "That is a dermatology finding from a different course."
+    ],
+    [
+     "Increased attenuation — a metallic foreign body",
+     "Attenuation is computed tomography vocabulary rather than the buzzword named."
+    ],
+    [
+     "Free air under the diaphragm — perforated bowel",
+     "Correct — unless there has been recent laparoscopic surgery and the insufflated gas is not yet absorbed."
+    ],
+    [
+     "Air-fluid levels in dilated loops — small bowel obstruction",
+     "Obstruction is a named indication for the series, but it is not the phrase she flagged."
+    ]
+   ],
+   "c": 2,
+   "cite": "2026-08-19 lecture recording, 1:22:50"
+  },
+  {
+   "topic": "Radiodensity",
+   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
+   "slot": "manifestation",
+   "q": "Which term describes tissue that appears white because it absorbs more of the beam?",
+   "opts": [
+    [
+     "Radiopaque, also called hyperdense or radiodense",
+     "Correct — less passage of x-ray photons produces the whiter appearance."
+    ],
+    [
+     "Radiolucent, also called hypodense",
+     "That describes darker tissue with greater photon passage."
+    ],
+    [
+     "Isodense, matching the density of the surrounding tissue",
+     "That term is not the one for a white appearance."
+    ],
+    [
+     "Attenuated, meaning the beam has been scattered away",
+     "Increased attenuation is a computed tomography term for the same idea."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 9"
   },
   {
    "topic": "Computed tomography",
@@ -163,388 +189,102 @@
    "q": "What is the window in computed tomography?",
    "opts": [
     [
-     "The range of Hounsfield numbers pre-selected for display, spread over the available grey scale",
-     "Correct — for example only those densities between −100 and +300."
-    ],
-    [
-     "The physical aperture of the gantry through which the patient passes",
-     "That is the bore rather than the window."
-    ],
-    [
      "The interval during which the contrast sits at its peak concentration in the vessel",
      "That is a timing concept rather than the display window."
     ],
     [
      "The slice thickness selected before the scan is acquired",
      "Slice thickness is a separate acquisition parameter."
+    ],
+    [
+     "The range of Hounsfield numbers pre-selected for display, spread over the available grey scale",
+     "Correct — for example only those densities between −100 and +300."
+    ],
+    [
+     "The physical aperture of the gantry through which the patient passes",
+     "That is the bore rather than the window."
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 14"
   },
   {
-   "topic": "Nuclear medicine",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "etiology",
-   "q": "What does a positron emission tomography scanner use in place of an x-ray tube?",
-   "opts": [
-    [
-     "A rotating fan beam, recording transmission through the patient at thousands of points",
-     "That describes computed tomography, which does transmit a beam through the patient."
-    ],
-    [
-     "A transducer, recording high-frequency sound waves reflected back from the tissue",
-     "That describes ultrasonography, which uses no ionizing radiation at all."
-    ],
-    [
-     "A varying magnetic field, recording radio waves emitted as hydrogen atoms realign",
-     "That describes magnetic resonance imaging, which is a hydrogen map."
-    ],
-    [
-     "A gamma camera, recording emissions from an injected dye in two dimensions",
-     "Correct — the radiation comes from the patient, not from the machine."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 16"
-  },
-  {
-   "topic": "Conventional radiography",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "manifestation",
-   "q": "What defines a conventional radiograph as distinct from other x-ray studies?",
-   "opts": [
-    [
-     "It uses ionizing radiation together with an intravenous iodinated contrast agent",
-     "Added contrast is what a conventional radiograph lacks."
-    ],
-    [
-     "It uses no ionizing radiation at all and relies on acoustic properties instead",
-     "That describes ultrasound."
-    ],
-    [
-     "It uses a rotating fan beam and computer reconstruction into cross-sections",
-     "That describes computed tomography."
-    ],
-    [
-     "It uses ionizing radiation without any added contrast material such as barium or iodine",
-     "Correct — adding contrast makes it a different study."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 6"
-  },
-  {
-   "topic": "Densities",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "manifestation",
-   "q": "What are the five basic radiographic densities, ordered from whitest to blackest?",
-   "opts": [
-    [
-     "Metal, fluid (soft tissue), calcium (bone), air, fat",
-     "Calcium is denser than fluid, and fat is lighter than air on the scale."
-    ],
-    [
-     "Metal, calcium (bone), fluid (soft tissue), fat, air",
-     "Correct — metal usually absorbs all x-rays and air absorbs the least."
-    ],
-    [
-     "Air, fat, fluid (soft tissue), calcium (bone), metal",
-     "That is the same list reversed — blackest to whitest."
-    ],
-    [
-     "Calcium, metal, fat, fluid (soft tissue), air",
-     "Metal is whiter than calcium, and fat is darker than fluid."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 60"
-  },
-  {
-   "topic": "Ultrasonography",
-   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "topic": "Contrast media",
+   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
    "slot": "initial test",
-   "q": "In which patients is ultrasound named as often the first study of choice?",
+   "q": "What must be checked before giving intravenous iodinated contrast, and why?",
    "opts": [
     [
-     "Oncology and post-operative patients, and it is also used to stage known disease",
-     "Staging is a computed tomography and positron emission tomography role."
+     "Blood urea nitrogen and creatinine, because the agent is nephrotoxic",
+     "Correct — and a litre of normal saline is given to protect the kidneys."
     ],
     [
-     "Female pelvis and paediatric patients, and it is also used to guide procedures",
-     "Correct — no radiation is the reason it leads in both groups."
+     "Liver function tests and bilirubin, because the agent is cleared hepatically",
+     "The concern named is renal rather than hepatic."
     ],
     [
-     "Adult chest and geriatric patients, and it is also used to screen for fractures",
-     "Air in the lung and bone both defeat ultrasound; these are radiographic studies."
+     "Thyroid function tests, because the iodine load can precipitate thyrotoxicosis",
+     "Thyroid effects are real clinically but are not what this deck requires checking."
     ],
     [
-     "Head-injured and intoxicated patients, and it is also used to exclude a bleed",
-     "Intracranial haemorrhage is a computed tomography question in the adult skull."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 24"
-  },
-  {
-   "topic": "Radiodensity",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "test finding",
-   "q": "On the deck's labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
-   "opts": [
-    [
-     "Bone is radiopaque, gas is radiolucent, and the metal prosthesis is very opaque",
-     "Correct — one image showing three of the five densities at once."
-    ],
-    [
-     "Bone is radiolucent, gas is radiopaque, and the metal prosthesis is very lucent",
-     "Each of the three labels is inverted here."
-    ],
-    [
-     "Bone is very opaque, gas is radiopaque, and the metal prosthesis is radiolucent",
-     "Metal is the most opaque of the three, not the most lucent."
-    ],
-    [
-     "Bone is radiopaque, gas is very opaque, and the metal prosthesis is radiolucent",
-     "Gas absorbs least of anything on the film, so it is lucent."
+     "Complete blood count and platelets, because the agent affects coagulation",
+     "Coagulation is not the risk the deck attaches to iodinated contrast."
     ]
    ],
    "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 10"
-  },
-  {
-   "topic": "Radiation dose",
-   "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
-   "slot": "manifestation",
-   "q": "How is radiation dose defined and expressed?",
-   "opts": [
-    [
-     "Ionizing energy absorbed per unit of volume, in sieverts only, where one sievert is one joule per litre",
-     "The unit of absorbed dose is the gray, and it is defined per kilogram."
-    ],
-    [
-     "Ionizing energy delivered per exposure, in millisieverts only, where one millisievert is one milliwatt",
-     "A millisievert is not a unit of power and dose is not defined per exposure."
-    ],
-    [
-     "Ionizing energy absorbed per unit of mass, in grays or milligrays, where one gray is one joule per kilogram",
-     "Correct — and equivalent dose is then expressed in sieverts or millisieverts."
-    ],
-    [
-     "Ionizing energy emitted per unit of time, in grays or milligrays, where one gray is one joule per second",
-     "Dose is absorbed energy per mass, not emitted energy per time."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 21"
-  },
-  {
-   "topic": "Magnetic resonance imaging",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "avoid",
-   "q": "What is the stated trade-off of an open magnetic resonance scanner?",
-   "opts": [
-    [
-     "Decreased quality of imaging, which is the price paid for the open configuration",
-     "Correct — it is available, but the deck flags the loss of quality."
-    ],
-    [
-     "Increased scan duration, which is the price paid for the open configuration",
-     "Time is listed as a general disadvantage, not as the open scanner's trade-off."
-    ],
-    [
-     "Increased radiation dose, which is the price paid for the open configuration",
-     "No magnetic resonance scanner emits ionizing radiation, open or closed."
-    ],
-    [
-     "Decreased soft tissue contrast only, with spatial resolution otherwise preserved",
-     "The deck says quality generally, without limiting it to soft tissue contrast."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 27"
-  },
-  {
-   "topic": "Contrast media",
-   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
-   "slot": "agent/regimen",
-   "q": "Which agent is used for magnetic resonance contrast, and what are its indications?",
-   "opts": [
-    [
-     "Barium, for luminal structures anywhere from the upper oesophagus down to the rectum",
-     "Barium is an enteral agent and has no role in magnetic resonance imaging."
-    ],
-    [
-     "Gadolinium, for central nervous system tumours, metastases, soft tissue masses and arthrograms",
-     "Correct — and central nervous system tumours are typically characterised without biopsy."
-    ],
-    [
-     "Iohexol, for central nervous system tumours, metastases, soft tissue masses and arthrograms",
-     "Iohexol is the iodinated agent used in computed tomography and angiography."
-    ],
-    [
-     "Technetium-99, for bone scans, myocardial perfusion and functional brain imaging",
-     "Those are the single photon emission tomography indications, not magnetic resonance."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 54"
-  },
-  {
-   "topic": "Contrast media",
-   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
-   "slot": "first-line",
-   "q": "What is given alongside intravenous iodinated contrast to protect the kidneys?",
-   "opts": [
-    [
-     "One gram of acetylcysteine",
-     "Acetylcysteine is not mentioned in this lecture."
-    ],
-    [
-     "One dose of intravenous furosemide",
-     "Forcing diuresis is not what the deck describes for renal protection here."
-    ],
-    [
-     "One litre of normal saline",
-     "Correct — the only volume the deck specifies, and it is renal protection."
-    ],
-    [
-     "One litre of lactated Ringer's",
-     "The deck names normal saline specifically rather than a balanced solution."
-    ]
-   ],
-   "c": 2,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 52"
-  },
-  {
-   "topic": "Contrast media",
-   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
-   "slot": "prognosis",
-   "q": "What is the stated safety record of technetium-99?",
-   "opts": [
-    [
-     "Allergic reactions are rare, though documented nephrotoxicity requires pre-hydration",
-     "No nephrotoxicity has been documented for this agent."
-    ],
-    [
-     "Allergic reactions are rare, though documented hepatotoxicity requires liver monitoring",
-     "Hepatotoxicity is specifically listed as not documented."
-    ],
-    [
-     "Allergic reactions are rare, and no organ damage has previously been documented",
-     "Correct — neither nephrotoxicity nor hepatotoxicity is documented."
-    ],
-    [
-     "Allergic reactions are common, though no organ damage has previously been documented",
-     "The deck describes allergic reactions as rare rather than common."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 56"
-  },
-  {
-   "topic": "Magnetic resonance imaging",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "test finding",
-   "q": "On a T1-weighted image, how does tissue with low water content appear?",
-   "opts": [
-    [
-     "Bright, which is the reverse of the same tissue on a T2-weighted image",
-     "Correct — on T1, low water is white and high water is dark."
-    ],
-    [
-     "Dark, which is the same as that tissue would appear on a T2-weighted image",
-     "Low water content is dark on T2, and T1 reverses it rather than repeating it."
-    ],
-    [
-     "Bright, which is the same as that tissue would appear on a T2-weighted image",
-     "The two weightings invert; they do not agree on low water content."
-    ],
-    [
-     "Dark, which is the reverse of the same tissue on a T2-weighted image",
-     "This inverts both halves of the answer and is wrong on each."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 28"
-  },
-  {
-   "topic": "Positioning",
-   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
-   "slot": "education",
-   "q": "What does the deck call the most important thing to remember about ultrasound orientation?",
-   "opts": [
-    [
-     "Which frequency is selected: high for superficial structures, low for deeper structures",
-     "Transducer frequency is a resolution and penetration trade-off, not orientation."
-    ],
-    [
-     "Where the indicator is: on the right of the screen in cardiac imaging, on the left for everything else",
-     "Correct — it is called crucial, because the whole image flips with it."
-    ],
-    [
-     "Where the indicator is: on the left of the screen in cardiac imaging, on the right for everything else",
-     "This reverses the convention the deck gives for the heart."
-    ],
-    [
-     "How deep the focus is set: shallow for superficial structures, deep for abdominal structures",
-     "Focal depth matters for image quality but is not the orientation rule stated."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 48"
-  },
-  {
-   "topic": "Densities",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "manifestation",
-   "q": "Which density is described as the most dense naturally occurring material?",
-   "opts": [
-    [
-     "Fluid",
-     "Fluid and soft tissue share a middle density."
-    ],
-    [
-     "Fat",
-     "Fat is less dense than soft tissue."
-    ],
-    [
-     "Calcium",
-     "Correct — it absorbs most x-rays, though metal absorbs essentially all of them."
-    ],
-    [
-     "Metal",
-     "Metal is denser but is not naturally occurring in the body."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 8"
   },
   {
    "topic": "Radiation dose",
    "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
    "slot": "differential",
-   "q": "How does the organ dose of neonatal abdominal computed tomography compare with the adult study?",
+   "q": "In the deck's table of typical organ radiation doses, which listed study delivers the highest dose?",
    "opts": [
     [
-     "It is twice as high, twenty against ten",
-     "Correct — the smaller the patient, the higher the organ dose."
+     "Barium enema, to the colon",
+     "Fifteen, which is high but is not the top of the table."
     ],
     [
-     "It is half as high, ten against twenty",
-     "This reverses them; the neonatal figure is the larger of the two."
+     "Adult abdominal computed tomography, to the stomach",
+     "Ten, which is half the neonatal figure."
     ],
     [
-     "It is the same, since the scanner protocol is identical",
-     "The table gives two different numbers for the two studies."
+     "Screening mammography, to the breast",
+     "Three, well below the abdominal tomography studies."
     ],
     [
-     "It is a tenth as high, since paediatric protocols are dose-reduced",
-     "Dose reduction is good practice, but it is not what this table shows."
+     "Neonatal abdominal computed tomography, to the stomach",
+     "Correct — twenty, the largest figure in the table."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 21"
+  },
+  {
+   "topic": "Nuclear medicine",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "agent/regimen",
+   "q": "Which tracer does positron emission tomography typically use, and why that one?",
+   "opts": [
+    [
+     "Gadolinium, a paramagnetic metal, because tumours disrupt the local magnetic environment",
+     "Gadolinium is the magnetic resonance contrast agent and emits no radiation."
+    ],
+    [
+     "Fluorodeoxyglucose-18, a radioactive glucose, because tumours have a higher metabolic rate",
+     "Correct — the scan asks which tissues are consuming more glucose."
+    ],
+    [
+     "Technetium-99, a metastable isotope, because tumours retain it far longer than normal tissue",
+     "Technetium-99 is the usual single photon emission tomography agent, tracking blood flow."
+    ],
+    [
+     "Iodixanol, an iso-osmolal agent, because tumours take up iodine more avidly than muscle",
+     "Iodixanol is an intravascular iodinated contrast for angiography, not a nuclear tracer."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 55"
   },
   {
    "topic": "Ultrasonography",
@@ -553,23 +293,23 @@
    "q": "What does the colour Doppler setting add to a standard ultrasound image?",
    "opts": [
     [
-     "Metabolic uptake and intensity, on an image otherwise showing only anatomical structure",
-     "Uptake displayed by intensity is how the positron emission studies are read."
-    ],
-    [
-     "Direction of flow and velocity, on an image otherwise made of white, grey and black",
-     "Correct — colour is the flow overlay, and blood is what it is used for."
-    ],
-    [
      "Depth of penetration and resolution, on an image otherwise limited to superficial planes",
      "Colour Doppler does not extend depth; poor deep visualisation remains a limitation."
     ],
     [
      "Density in Hounsfield units and windowing, on an image otherwise showing five densities",
      "Hounsfield units and windowing belong to computed tomography, not to ultrasound."
+    ],
+    [
+     "Metabolic uptake and intensity, on an image otherwise showing only anatomical structure",
+     "Uptake displayed by intensity is how the positron emission studies are read."
+    ],
+    [
+     "Direction of flow and velocity, on an image otherwise made of white, grey and black",
+     "Correct — colour is the flow overlay, and blood is what it is used for."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 23"
   },
   {
@@ -599,216 +339,6 @@
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 45"
   },
   {
-   "topic": "Positioning",
-   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
-   "slot": "manifestation",
-   "q": "How is a posterior-anterior chest film oriented when you look at it?",
-   "opts": [
-    [
-     "As if the patient were standing behind you, with their right side on your right",
-     "The convention places the patient's right on your left, not your right."
-    ],
-    [
-     "As if you were looking at the patient's feet, with their left side on your right",
-     "That is the cross-sectional convention for tomography and magnetic resonance."
-    ],
-    [
-     "As if you were looking down from above, with their right side nearest the top",
-     "No such overhead convention is described for chest radiography."
-    ],
-    [
-     "As if the patient were standing in front of you, with their right side on your left",
-     "Correct — the same convention as facing a patient in the room."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 36"
-  },
-  {
-   "topic": "Hounsfield units",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "differential",
-   "q": "How does the Hounsfield table refine the five basic radiographic densities?",
-   "opts": [
-    [
-     "It separates calcium from metal, which a conventional radiograph cannot tell apart",
-     "Calcium and metal are already distinct among the five basic densities."
-    ],
-    [
-     "It separates fat from air, which a conventional radiograph cannot tell apart",
-     "Fat and air are already distinguishable on a plain film."
-    ],
-    [
-     "It merges bone and soft tissue, which a conventional radiograph shows separately",
-     "The table separates tissues rather than merging them."
-    ],
-    [
-     "It separates water from soft tissue, which a conventional radiograph cannot tell apart",
-     "Correct — the deck's asterisk on “Five*” marks exactly that exception."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 13"
-  },
-  {
-   "topic": "Radiology team",
-   "io": "Objective i — Discuss the importance of communication between the physician assistant and radiology team",
-   "slot": "referral",
-   "q": "What should you do if you are unsure which modality to order?",
-   "opts": [
-    [
-     "Order the study with the widest range of densities, and narrow down afterwards",
-     "Defaulting to the broadest study is not the advice the deck gives."
-    ],
-    [
-     "Order the study with the lowest radiation dose, and escalate only if it is negative",
-     "Dose matters in the diagnostic approach, but this is not the stated advice."
-    ],
-    [
-     "Order both the plain film and the cross-sectional study at the same visit",
-     "Ordering in parallel is not what the deck recommends for uncertainty."
-    ],
-    [
-     "Tell the radiologist what you are looking for, and they can guide the choice",
-     "Correct — the question you are asking is the useful thing to communicate."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 58"
-  },
-  {
-   "topic": "Positioning",
-   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
-   "slot": "differential",
-   "q": "Which enteric pathologies is the abdominal series named as evaluating?",
-   "opts": [
-    [
-     "Cholelithiasis, pancreatitis and hepatic abscess",
-     "These hepatobiliary conditions are not named for this study."
-    ],
-    [
-     "Peptic ulceration, gastritis and oesophageal stricture",
-     "Luminal mucosal disease is assessed with oral contrast rather than a plain series."
-    ],
-    [
-     "Small bowel obstruction, perforation and volvulus",
-     "Correct — the three named examples of enteric pathology."
-    ],
-    [
-     "Appendicitis, diverticulitis and inflammatory bowel disease",
-     "These are not the examples the deck gives for the plain abdominal series."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 43"
-  },
-  {
-   "topic": "Positioning",
-   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
-   "slot": "education",
-   "q": "What does the deck say about comparison films?",
-   "opts": [
-    [
-     "They should be displayed only when the radiologist specifically requests them for a read",
-     "No such condition is placed on using comparison films."
-    ],
-    [
-     "They must be matched by modality but not by projection, so any old film may be paired",
-     "The pairing is projection-specific: old lateral goes beside new lateral."
-    ],
-    [
-     "They can be invaluable — old gold — and the old film is displayed adjacent to the matching new one",
-     "Correct — old posterior-anterior beside new, old lateral beside new."
-    ],
-    [
-     "They are rarely useful once a current study exists, and should be archived rather than displayed",
-     "The deck takes the opposite view of their value."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 36"
-  },
-  {
-   "topic": "History",
-   "io": "Objective a — Identify the fundamental properties of medical imaging",
-   "slot": "etiology",
-   "q": "Who discovered x-rays, and what recognition followed?",
-   "opts": [
-    [
-     "Godfrey Hounsfield, in Britain in 1972, awarded the Nobel Prize for Medicine in 1979",
-     "He developed the first computed tomography scanner, with Allan Cormack."
-    ],
-    [
-     "Allan Cormack, in South Africa in 1963, awarded the first Nobel Prize for Physics",
-     "He shared the 1979 Medicine prize for computed tomography."
-    ],
-    [
-     "Marie Curie, in France in 1898, awarded the Nobel Prize for Physics in 1903",
-     "Her work was on radioactivity rather than the discovery of x-rays."
-    ],
-    [
-     "Wilhelm Roentgen, in Germany in 1895, awarded the first Nobel Prize for Physics in 1901",
-     "Correct — the technique is still called roentgenography after him."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 4"
-  },
-  {
-   "topic": "Radiation units",
-   "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
-   "slot": "manifestation",
-   "q": "In which units is radiation measured?",
-   "opts": [
-    [
-     "Hertz and decibels",
-     "Those describe sound waves in ultrasound."
-    ],
-    [
-     "Millisieverts and milligrays",
-     "Correct — x-ray radiation is low compared with other radiographic modalities."
-    ],
-    [
-     "Hounsfield units and pixels",
-     "Hounsfield units measure computed tomography attenuation rather than radiation dose."
-    ],
-    [
-     "Tesla and gauss",
-     "Those measure magnetic field strength in magnetic resonance imaging."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 9"
-  }
- ],
- "set2": [
-  {
-   "topic": "Positioning",
-   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
-   "slot": "initial test",
-   "q": "What is the decubitus position used to evaluate?",
-   "opts": [
-    [
-     "Aortic calcification, because gravity displaces the overlying bowel gas out of the field",
-     "The decubitus view is not described for vascular calcification here."
-    ],
-    [
-     "Pleural effusion, because gravity lets the fluid around the lung level out and be seen",
-     "Correct — fluid in the pleural space moves when the patient is laid on their side."
-    ],
-    [
-     "Free air under the diaphragm, because gravity lets the air rise to the highest point",
-     "Free intraperitoneal air is sought on an upright abdominal series."
-    ],
-    [
-     "Bowel obstruction, because gravity separates the air from the fluid within the loops",
-     "Air-fluid levels within bowel are assessed on the abdominal series."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 41"
-  },
-  {
    "topic": "Conventional radiography",
    "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
    "slot": "avoid",
@@ -835,56 +365,526 @@
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 7"
   },
   {
-   "topic": "Radiodensity",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "manifestation",
-   "q": "Which term describes tissue that appears white because it absorbs more of the beam?",
+   "topic": "Nuclear medicine",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "differential",
+   "q": "What does single photon emission computed tomography measure, and what does it show?",
    "opts": [
     [
-     "Isodense, matching the density of the surrounding tissue",
-     "That term is not the one for a white appearance."
+     "Attenuated x-rays on a rotating detector ring, giving cross-sectional images by density",
+     "Attenuation by density is computed tomography, which measures the beam it transmits."
     ],
     [
-     "Attenuated, meaning the beam has been scattered away",
-     "Increased attenuation is a computed tomography term for the same idea."
+     "Single photons on rotating gamma cameras, giving three-dimensional images of where blood flows",
+     "Correct — the deck's stated indication is seeing where blood flows to."
     ],
     [
-     "Radiopaque, also called hyperdense or radiodense",
-     "Correct — less passage of x-ray photons produces the whiter appearance."
+     "Paired positrons on a stationary gamma camera, giving two-dimensional images of glucose uptake",
+     "Positrons and glucose uptake are positron emission tomography, not this study."
     ],
     [
-     "Radiolucent, also called hypodense",
-     "That describes darker tissue with greater photon passage."
+     "Reflected sound on a hand-held transducer, giving real-time images of moving structures",
+     "Reflected sound in real time is ultrasonography, which injects no tracer."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 16"
+  },
+  {
+   "topic": "Computed tomography",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "first-line",
+   "q": "Which advantages are named for computed tomography?",
+   "opts": [
+    [
+     "It is superior to magnetic resonance imaging for differentiating soft tissues",
+     "Magnetic resonance imaging is superior for soft tissue."
+    ],
+    [
+     "It expands the grey scale beyond the five basic densities, reduces overlapping of structures, works with implantable devices, and allows three-dimensional reconstruction",
+     "Correct — it is described as the cornerstone of cross-sectional imaging."
+    ],
+    [
+     "It uses no ionizing radiation at all and is described as being the safest of all of the imaging modalities that are currently available anywhere",
+     "That describes ultrasound."
+    ],
+    [
+     "It is fully portable, inexpensive, and can be brought to the patient's bedside",
+     "It is described as not truly portable."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 20"
+  },
+  {
+   "topic": "Positioning",
+   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
+   "slot": "education",
+   "q": "What does the deck call the most important thing to remember about ultrasound orientation?",
+   "opts": [
+    [
+     "Which frequency is selected: high for superficial structures, low for deeper structures",
+     "Transducer frequency is a resolution and penetration trade-off, not orientation."
+    ],
+    [
+     "Where the indicator is: on the right of the screen in cardiac imaging, on the left for everything else",
+     "Correct — it is called crucial, because the whole image flips with it."
+    ],
+    [
+     "Where the indicator is: on the left of the screen in cardiac imaging, on the right for everything else",
+     "This reverses the convention the deck gives for the heart."
+    ],
+    [
+     "How deep the focus is set: shallow for superficial structures, deep for abdominal structures",
+     "Focal depth matters for image quality but is not the orientation rule stated."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 48"
+  },
+  {
+   "topic": "Magnetic resonance imaging",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "first-line",
+   "q": "Why can magnetic resonance imaging show tissues that are surrounded by bone better than computed tomography can?",
+   "opts": [
+    [
+     "Bone is windowed out during acquisition, so only the soft tissue range is displayed",
+     "Windowing is a computed tomography display technique, not a magnetic resonance one."
+    ],
+    [
+     "Bone absorbs the radio waves, so the surrounding soft tissue returns a relatively brighter signal",
+     "Bone does not absorb the radiofrequency signal in the way this describes."
+    ],
+    [
+     "Calcium emits no signal, so the bone does not obscure what sits inside it",
+     "Correct — silence from calcium is an advantage rather than a gap."
+    ],
+    [
+     "Calcium emits a strong signal, so the bone can be subtracted from the image afterwards",
+     "Calcium is silent on magnetic resonance; there is no strong signal to subtract."
     ]
    ],
    "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 9"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 30"
   },
   {
-   "topic": "Nuclear medicine",
-   "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
-   "slot": "education",
-   "q": "What is unique about radiation exposure in nuclear medicine compared with other modalities that use ionizing radiation?",
+   "topic": "Contrast media",
+   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
+   "slot": "initial test",
+   "q": "Professor Reynolds said renal function must be checked before gadolinium, but for a different reason from iodinated contrast. What is that reason?",
    "opts": [
     [
-     "The exposure is delivered entirely in a single pulse rather than over a continuous scan",
-     "Exposure duration is not the distinction the deck draws for nuclear medicine."
+     "Gadolinium is far more nephrotoxic than iodinated contrast, so the threshold for withholding it is lower",
+     "She said the opposite: gadolinium is not necessarily nephrotoxic."
     ],
     [
-     "The exposure is confined to the organ being studied rather than reaching adjacent tissue",
-     "A tracer distributes systemically; it is not confined to the target organ."
+     "Gadolinium is cleared hepatically, so renal function predicts the hepatic reserve",
+     "The clearance route in question is renal."
     ],
     [
-     "The exposure is measured in different units from those used for conventional radiography",
-     "Radiation is measured in the same units, milli Sieverts and milli Grays, throughout."
+     "Gadolinium interferes with the creatinine assay, so a baseline is needed for comparison",
+     "No assay interference is described."
     ],
     [
-     "The patient can briefly become the source of radiation exposure to other people",
-     "Correct — the tracer is inside the patient, so the emission travels with them."
+     "It is a clearance problem — poor function lets it build up in tissue",
+     "Correct — gadolinium is not necessarily nephrotoxic itself, but if the kidney cannot clear it, it accumulates in tissue and that accumulation is toxic. With iodinated contrast the agent itself is nephrotoxic."
     ]
    ],
    "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 61"
+   "cite": "2026-08-19 lecture recording, 1:40:24"
+  },
+  {
+   "topic": "Diagnostic approach",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "first-line",
+   "q": "What method did Professor Reynolds give for choosing a modality when you are not certain of the diagnosis?",
+   "opts": [
+    [
+     "Always order both a plain film and a cross-sectional study at the same visit",
+     "Ordering in parallel is not what she recommended."
+    ],
+    [
+     "Memorise a protocol for each presenting complaint and follow it exactly",
+     "She allowed that this works, but named reasoning from the tissue as the fallback."
+    ],
+    [
+     "Reason from the tissue rather than from a memorised protocol",
+     "Correct — bone points to x-ray or computed tomography; soft tissue often starts with ultrasound. Memorised protocols are fine, but reasoning from the tissue is what generalises."
+    ],
+    [
+     "Always begin with the study carrying the least radiation and escalate only if negative",
+     "Dose matters in the diagnostic approach, but this is not the method she described."
+    ]
+   ],
+   "c": 2,
+   "cite": "2026-08-19 lecture recording, 1:10:31"
+  },
+  {
+   "topic": "Positioning",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "differential",
+   "q": "Which enteric pathologies is the abdominal series named as evaluating?",
+   "opts": [
+    [
+     "Small bowel obstruction, perforation and volvulus",
+     "Correct — the three named examples of enteric pathology."
+    ],
+    [
+     "Appendicitis, diverticulitis and inflammatory bowel disease",
+     "These are not the examples the deck gives for the plain abdominal series."
+    ],
+    [
+     "Cholelithiasis, pancreatitis and hepatic abscess",
+     "These hepatobiliary conditions are not named for this study."
+    ],
+    [
+     "Peptic ulceration, gastritis and oesophageal stricture",
+     "Luminal mucosal disease is assessed with oral contrast rather than a plain series."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 43"
+  },
+  {
+   "topic": "Magnetic resonance imaging",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "manifestation",
+   "q": "What determines the frequency of the radio waves a magnetic resonance scanner reads?",
+   "opts": [
+    [
+     "The chemical environment of the hydrogen atoms, together with their location",
+     "Correct — both, which is what lets the computer build a spatial map."
+    ],
+    [
+     "The strength of the magnet in Tesla, together with the duration of the scan",
+     "Field strength changes image quality, but it is not what the deck names here."
+    ],
+    [
+     "The density of the tissue in Hounsfield units, together with the chosen window",
+     "Hounsfield units and windows belong to computed tomography."
+    ],
+    [
+     "The metabolic rate of the tissue, together with the dose of tracer given",
+     "Metabolic rate and tracer dose describe nuclear medicine studies."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 26"
+  },
+  {
+   "topic": "Densities",
+   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
+   "slot": "manifestation",
+   "q": "Which density is described as the most dense naturally occurring material?",
+   "opts": [
+    [
+     "Calcium",
+     "Correct — it absorbs most x-rays, though metal absorbs essentially all of them."
+    ],
+    [
+     "Metal",
+     "Metal is denser but is not naturally occurring in the body."
+    ],
+    [
+     "Fluid",
+     "Fluid and soft tissue share a middle density."
+    ],
+    [
+     "Fat",
+     "Fat is less dense than soft tissue."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 8"
+  },
+  {
+   "topic": "Contrast media",
+   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
+   "slot": "differential",
+   "q": "Which vascular magnetic resonance studies are performed without contrast?",
+   "opts": [
+    [
+     "Coronary angiography and retrograde pyelography",
+     "Both of these are performed with injected contrast material."
+    ],
+    [
+     "Arthrography and intrathecal myelography",
+     "Both are defined by contrast being injected into a space."
+    ],
+    [
+     "Magnetic resonance angiography and magnetic resonance venography",
+     "Correct — both are done without a contrast agent."
+    ],
+    [
+     "Computed tomography angiography and computed tomography venography",
+     "The computed tomography vascular studies do require an iodinated injection."
+    ]
+   ],
+   "c": 2,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 54"
+  },
+  {
+   "topic": "Ultrasonography",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "initial test",
+   "q": "In which patients is ultrasound named as often the first study of choice?",
+   "opts": [
+    [
+     "Female pelvis and paediatric patients, and it is also used to guide procedures",
+     "Correct — no radiation is the reason it leads in both groups."
+    ],
+    [
+     "Adult chest and geriatric patients, and it is also used to screen for fractures",
+     "Air in the lung and bone both defeat ultrasound; these are radiographic studies."
+    ],
+    [
+     "Head-injured and intoxicated patients, and it is also used to exclude a bleed",
+     "Intracranial haemorrhage is a computed tomography question in the adult skull."
+    ],
+    [
+     "Oncology and post-operative patients, and it is also used to stage known disease",
+     "Staging is a computed tomography and positron emission tomography role."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 24"
+  },
+  {
+   "topic": "Positioning",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "initial test",
+   "q": "What does an abdominal series evaluate, and how is the patient positioned?",
+   "opts": [
+    [
+     "The gastrointestinal tract, with the patient standing, to assess air-fluid levels or free air",
+     "Correct — upright is what makes free air and air-fluid levels visible."
+    ],
+    [
+     "The genitourinary tract, with the patient supine, to assess stones within the collecting system",
+     "Supine and urinary describes the kidney-ureter-bladder film instead."
+    ],
+    [
+     "The gastrointestinal tract, with the patient supine, to assess bowel wall thickness and oedema",
+     "The series is shot standing, and wall thickness is not what it is described as assessing."
+    ],
+    [
+     "The retroperitoneum, with the patient in decubitus, to assess the psoas shadows and the flanks",
+     "Decubitus positioning is described for pleural effusion, not for this study."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 43"
+  },
+  {
+   "topic": "Contrast media",
+   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
+   "slot": "first-line",
+   "q": "What is given alongside intravenous iodinated contrast to protect the kidneys?",
+   "opts": [
+    [
+     "One dose of intravenous furosemide",
+     "Forcing diuresis is not what the deck describes for renal protection here."
+    ],
+    [
+     "One litre of normal saline",
+     "Correct — the only volume the deck specifies, and it is renal protection."
+    ],
+    [
+     "One litre of lactated Ringer's",
+     "The deck names normal saline specifically rather than a balanced solution."
+    ],
+    [
+     "One gram of acetylcysteine",
+     "Acetylcysteine is not mentioned in this lecture."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 52"
+  },
+  {
+   "topic": "Radiology team",
+   "io": "Objective i — Discuss the importance of communication between the physician assistant and radiology team",
+   "slot": "education",
+   "q": "What practical ordering point does the deck make about imaging several body regions?",
+   "opts": [
+    [
+     "Multiple body parts must be imaged on separate days to limit cumulative radiation dose",
+     "Magnetic resonance emits no ionizing radiation, and no such rule is stated."
+    ],
+    [
+     "Multiple body parts or sections may mean multiple orders, giving brain, cervical, thoracic and lumbar spine as the example",
+     "Correct — one clinical question can require four separate requests."
+    ],
+    [
+     "Multiple body parts should be combined into one single order, so that the patient is scanned once and the radiologist reads the whole study together",
+     "The deck makes the opposite point about how these studies are requested."
+    ],
+    [
+     "Multiple body parts require the radiologist to countersign the request before booking",
+     "No countersignature requirement is described."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 58"
+  },
+  {
+   "topic": "Computed tomography",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "etiology",
+   "q": "How does a computed tomography scanner acquire its data?",
+   "opts": [
+    [
+     "A gamma camera mounted on a rotating gantry detects the photons that are emitted from an injected isotope",
+     "That describes single photon emission computed tomography."
+    ],
+    [
+     "High-frequency sound waves released from a transducer bounce off tissue and return",
+     "That describes ultrasound."
+    ],
+    [
+     "A varying magnetic field aligns hydrogen atoms which then emit radio waves",
+     "That describes magnetic resonance imaging."
+    ],
+    [
+     "Powerful x-ray beams pass through the patient via a rotating fan beam, measuring transmission at thousands of data points",
+     "Correct — a computer then processes the data through algorithms into diagnostic images."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 16"
+  },
+  {
+   "topic": "Radiation dose",
+   "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
+   "slot": "differential",
+   "q": "How does the lung dose of a lateral chest radiograph compare with the posterior-anterior view?",
+   "opts": [
+    [
+     "It is identical, because both views expose the same volume of lung tissue",
+     "The table gives two different values for the two projections."
+    ],
+    [
+     "It is higher, but only in children, because the chest wall is thinner",
+     "The table is not stratified by age for the chest views."
+    ],
+    [
+     "It is higher, which is one reason the posterior-anterior view is the preferred projection",
+     "Correct — the deck also credits the posterior-anterior view with lower dose to sensitive organs."
+    ],
+    [
+     "It is lower, which is one reason the lateral view is taken first in a standard series",
+     "The lateral figure in the table is the larger of the two."
+    ]
+   ],
+   "c": 2,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 21"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Positioning",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "initial test",
+   "q": "What is the decubitus position used to evaluate?",
+   "opts": [
+    [
+     "Pleural effusion, because gravity lets the fluid around the lung level out and be seen",
+     "Correct — fluid in the pleural space moves when the patient is laid on their side."
+    ],
+    [
+     "Free air under the diaphragm, because gravity lets the air rise to the highest point",
+     "Free intraperitoneal air is sought on an upright abdominal series."
+    ],
+    [
+     "Bowel obstruction, because gravity separates the air from the fluid within the loops",
+     "Air-fluid levels within bowel are assessed on the abdominal series."
+    ],
+    [
+     "Aortic calcification, because gravity displaces the overlying bowel gas out of the field",
+     "The decubitus view is not described for vascular calcification here."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 41"
+  },
+  {
+   "topic": "Radiology team",
+   "io": "Objective i — Discuss the importance of communication between the physician assistant and radiology team",
+   "slot": "referral",
+   "q": "Why does the deck stress giving the radiologist relevant clinical information?",
+   "opts": [
+    [
+     "The radiologist selects the modality, so the history determines which scanner is booked",
+     "They can guide the choice, but the reason stated here is the quality of the read."
+    ],
+    [
+     "The radiologist repeats the study otherwise, so the history prevents duplicate imaging",
+     "Avoiding repeat imaging is described as a benefit of post-processing instead."
+    ],
+    [
+     "The radiologist has not seen the patient, so the history is what guides their read",
+     "Correct — the report is only as good as the question it is answering."
+    ],
+    [
+     "The radiologist bills separately, so the indication must be documented for the claim",
+     "Billing is not the reason the deck gives for communicating."
+    ]
+   ],
+   "c": 2,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 58"
+  },
+  {
+   "topic": "Ultrasonography",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "first-line",
+   "q": "What are ultrasonography's stated indications?",
+   "opts": [
+    [
+     "Assessment of bony structures, naming the skull, the vertebrae and the long bones",
+     "Ultrasound cannot penetrate bone, so these are radiographic or tomographic studies."
+    ],
+    [
+     "Assessment of aerated structures, naming the lungs, the sinuses and the bowel gas pattern",
+     "Large gas-filled structures disrupt the signal, which is a stated limitation."
+    ],
+    [
+     "Assessment of metabolic activity, naming tumour staging, brain function and perfusion",
+     "Metabolic activity is what the nuclear medicine studies are indicated for."
+    ],
+    [
+     "Assessment of moving structures, naming the heart, the vasculature and obstetrics",
+     "Correct — it records in real time, which is what suits it to motion."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 23"
+  },
+  {
+   "topic": "Positioning",
+   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
+   "slot": "manifestation",
+   "q": "Which patient does Professor Reynolds say will get an anterior-posterior chest film rather than a posterior-anterior one?",
+   "opts": [
+    [
+     "A sick inpatient who cannot get out of bed",
+     "Correct — they cannot stand against a wall, so they are filmed anterior-posterior in bed. Which is exactly why reading the view label matters in practice."
+    ],
+    [
+     "Any patient in whom cardiomegaly is suspected",
+     "The anterior-posterior view magnifies the heart, so it is the worse view for that question."
+    ],
+    [
+     "Any paediatric patient, because of the lower dose",
+     "The posterior-anterior view is the one credited with lower dose to sensitive organs."
+    ],
+    [
+     "Any patient having a follow-up rather than a first study",
+     "Follow-up status is not what determines the projection."
+    ]
+   ],
+   "c": 0,
+   "cite": "2026-08-19 lecture recording, 1:14:21"
   },
   {
    "topic": "Magnetic resonance imaging",
@@ -893,50 +893,76 @@
    "q": "Which safety issues are named for magnetic resonance imaging?",
    "opts": [
     [
-     "Magnetic implanted devices and ferromagnetic projectiles, and it is still not recommended in pregnancy or infants",
-     "Correct — no radiation is emitted, but the magnet itself creates hazards."
-    ],
-    [
-     "Cumulative ionizing dose and radiation-sensitive organs, and it is still not recommended in pregnancy or infants",
-     "Magnetic resonance emits no ionizing radiation, so there is no dose to accumulate."
-    ],
-    [
      "Nephrotoxicity and anaphylaxis to iodine, and it is still not recommended in renal impairment",
      "Iodinated contrast belongs to computed tomography; this study uses gadolinium."
     ],
     [
      "Operator dependence and poor penetration of bone, and it is still not recommended in obesity",
      "Those are ultrasound limitations rather than magnetic resonance safety issues."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 27"
-  },
-  {
-   "topic": "Computed tomography",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "prognosis",
-   "q": "How is computed tomography's place among imaging modalities described?",
-   "opts": [
-    [
-     "It is the cornerstone of neuroimaging specifically",
-     "That description belongs to magnetic resonance imaging."
     ],
     [
-     "It is the most widely obtained imaging study performed",
-     "That description belongs to conventional radiographs."
+     "Magnetic implanted devices and ferromagnetic projectiles, and it is still not recommended in pregnancy or infants",
+     "Correct — no radiation is emitted, but the magnet itself creates hazards."
     ],
     [
-     "It is the cornerstone of cross-sectional imaging",
-     "Correct — magnetic resonance imaging is described as the cornerstone of neuroimaging."
-    ],
-    [
-     "It is the safest of all the radioimaging modalities",
-     "That description belongs to ultrasound."
+     "Cumulative ionizing dose and radiation-sensitive organs, and it is still not recommended in pregnancy or infants",
+     "Magnetic resonance emits no ionizing radiation, so there is no dose to accumulate."
     ]
    ],
    "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 20"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 27"
+  },
+  {
+   "topic": "Contrast media",
+   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
+   "slot": "agent/regimen",
+   "q": "Into which spaces can contrast be injected, and what is each study called?",
+   "opts": [
+    [
+     "Joints for a venogram, the central nervous system intravenously, and the bladder for a cystogram",
+     "A venogram images veins, and intrathecal is the route named for the nervous system."
+    ],
+    [
+     "Muscle for a myogram, the pleural space directly, and the ureter for an antegrade pyelogram",
+     "None of these three routes is described in the deck."
+    ],
+    [
+     "Bowel for an arthrogram, the epidural space, and the renal pelvis for a cystogram",
+     "The names are attached to the wrong spaces throughout."
+    ],
+    [
+     "Joints for an arthrogram, the central nervous system intrathecally, and the bladder for a retrograde pyelogram",
+     "Correct — three routes named besides the intravascular and enteral ones."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 50"
+  },
+  {
+   "topic": "Positioning",
+   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
+   "slot": "manifestation",
+   "q": "How are radiographic projections named?",
+   "opts": [
+    [
+     "In the position of the detector, from the cassette's near edge to its furthest corner",
+     "The detector's own geometry does not supply the name of the projection."
+    ],
+    [
+     "In the direction the beam travels, from what it strikes first to the most distal portion",
+     "Correct — so posterior-anterior means the beam enters the back and exits the front."
+    ],
+    [
+     "In the direction the patient faces, from the side nearest the film to the side furthest away",
+     "The naming follows the beam rather than which way the patient is turned."
+    ],
+    [
+     "In the order the structures appear, from the most superficial down to the deepest tissue",
+     "Projections are not named for the order in which structures are encountered on the image."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 35"
   },
   {
    "topic": "Diagnostic approach",
@@ -944,10 +970,6 @@
    "slot": "first-line",
    "q": "Which four questions frame the choice of an imaging modality?",
    "opts": [
-    [
-     "Which modality is cheapest, which is fastest, which is closest, and which the patient prefers",
-     "Cost and availability matter but are not the framing questions given."
-    ],
     [
      "Which modality the radiologist prefers, which is available today, which the insurer covers, and which is quickest",
      "Those are practical constraints rather than the diagnostic framing."
@@ -959,36 +981,196 @@
     [
      "Which modality best rules the diagnosis in or out, is there a lower-radiation alternative, what is the risk against benefit for this patient, and is contrast needed",
      "Correct — those are the four the lecture opens with."
+    ],
+    [
+     "Which modality is cheapest, which is fastest, which is closest, and which the patient prefers",
+     "Cost and availability matter but are not the framing questions given."
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 3"
   },
   {
-   "topic": "Contrast media",
-   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
-   "slot": "avoid",
-   "q": "Which oral contrast agent is contraindicated when perforation is suspected, and what is used instead?",
+   "topic": "Nuclear medicine",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "test finding",
+   "q": "On a bone scan, why are the kidneys visible?",
    "opts": [
     [
-     "Barium is contraindicated because it is toxic to extra-intestinal tissue; use gastrografin",
-     "Correct — barium outside the bowel causes alkaline burns."
+     "Uptake in the kidneys occurs only when renal function is impaired and clearance is slowed",
+     "Normal kidneys take up and clear the tracer; impairment is not required."
     ],
     [
-     "Gastrografin is contraindicated because it is toxic to extra-intestinal tissue; use barium",
-     "This reverses them; gastrografin is the agent chosen when perforation is possible."
+     "Uptake in the kidneys is normal, and the same is true of tracer on positron emission scans",
+     "Correct — the deck labels renal uptake normal on both studies."
     ],
     [
-     "Iohexol is contraindicated because it is toxic to extra-intestinal tissue; use barium",
-     "Iohexol is the intravascular agent and is not the oral contrast in question."
+     "Uptake in the kidneys indicates the tracer dose given was higher than the study required",
+     "Renal visibility is expected and says nothing about the dose administered."
     ],
     [
-     "Both are contraindicated because either is toxic to extra-intestinal tissue; use none",
-     "Gastrografin exists precisely so that a study can still be done."
+     "Uptake in the kidneys suggests metastatic disease has reached the retroperitoneal organs",
+     "Normal renal uptake is not a finding of metastasis on either study."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 18"
+  },
+  {
+   "topic": "Fluoroscopy",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "agent/regimen",
+   "q": "What equipment does fluoroscopy require?",
+   "opts": [
+    [
+     "A gamma camera mounted on a rotating gantry that circles the patient, with a fixed table and a detector housing that does not move",
+     "That describes single photon emission computed tomography."
+    ],
+    [
+     "A superconducting magnet requiring dedicated site construction beforehand and high ongoing cost",
+     "That describes magnetic resonance imaging."
+    ],
+    [
+     "A handheld transducer connected to a portable processing unit, needing neither a tilting table nor a shielded examination room",
+     "That describes ultrasound."
+    ],
+    [
+     "An x-ray unit fitted for controlled motion of the source, the imaging sensor and the patient, with a tilting table",
+     "Correct — the tube moves freely back and forth to image the patient."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 57"
+  },
+  {
+   "topic": "Positioning",
+   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
+   "slot": "first-line",
+   "q": "Beyond the heart, what else is better seen on the posterior-anterior chest view?",
+   "opts": [
+    [
+     "Maximum visualisation of the mediastinum, better visualisation of the hila, and well visualised anterior ribs",
+     "The deck names the lung fields, apices and posterior ribs rather than these."
+    ],
+    [
+     "Maximum visualisation of the diaphragm, better visualisation of free air, and well visualised gastric bubble",
+     "Free air beneath the diaphragm is what an upright abdominal series is for."
+    ],
+    [
+     "Maximum visualisation of the pleura, better visualisation of layering fluid, and well visualised costophrenic angles",
+     "Layering fluid with gravity is the decubitus view's stated purpose."
+    ],
+    [
+     "Maximum visualisation of the lung, better visualisation of the apices, and well visualised posterior ribs",
+     "Correct — all three are listed alongside the cardiac and dose advantages."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 40"
+  },
+  {
+   "topic": "Contrast media",
+   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
+   "slot": "agent/regimen",
+   "q": "Which agent is used for fluoroscopic swallow studies, and how is the study performed?",
+   "opts": [
+    [
+     "Oral technetium, with sequential gamma camera images taken as the patient swallows",
+     "Technetium is a nuclear medicine tracer rather than a swallow-study agent."
+    ],
+    [
+     "Oral barium, with sequential x-rays taken as the patient swallows it",
+     "Correct — real-time imaging is what makes fluoroscopy suit a swallow study."
+    ],
+    [
+     "Oral gadolinium, with sequential magnetic resonance images taken as the patient swallows",
+     "Gadolinium is intravenous and belongs to magnetic resonance, not fluoroscopy."
+    ],
+    [
+     "Intravenous iohexol, with sequential computed tomography images taken during swallowing",
+     "An intravascular agent does not opacify the swallowed bolus."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 51"
+  },
+  {
+   "topic": "Abdominal series",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "differential",
+   "q": "A patient has free air under the diaphragm. Which history would make perforation NOT the explanation?",
+   "opts": [
+    [
+     "Recent upper gastrointestinal endoscopy without biopsy",
+     "That is not the exception Professor Reynolds named."
+    ],
+    [
+     "A barium swallow performed the previous week",
+     "Barium in the lumen is not free air, and this is not the named exception."
+    ],
+    [
+     "Chronic constipation with a heavy stool burden",
+     "Stool burden does not produce free intraperitoneal air."
+    ],
+    [
+     "Recent laparoscopic surgery, with the gas not yet absorbed",
+     "Correct — insufflation of the abdomen puts gas there deliberately. With belly pain, fever, nausea and vomiting and no recent surgery, it is perforation."
+    ]
+   ],
+   "c": 3,
+   "cite": "2026-08-19 lecture recording, 1:22:55"
+  },
+  {
+   "topic": "Contrast media",
+   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
+   "slot": "agent/regimen",
+   "q": "Which agent is named for intravenous contrast in computed tomography, and what is it?",
+   "opts": [
+    [
+     "Omnipaque (iohexol), a radioactive form of iodine given into the vein",
+     "Correct — the same agent is used, at higher concentration, for angiography."
+    ],
+    [
+     "Visipaque (iodixanol), a barium salt suspension given into the vein",
+     "Iodixanol is iodinated and iso-osmolal; barium is enteral and never intravenous."
+    ],
+    [
+     "Gadolinium, a paramagnetic metal chelate given into the vein",
+     "Gadolinium is the magnetic resonance agent, not the computed tomography one."
+    ],
+    [
+     "Gastrografin, a water-soluble iodinated agent given into the vein",
+     "Gastrografin is an oral agent used when perforation is suspected."
     ]
    ],
    "c": 0,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 52"
+  },
+  {
+   "topic": "Densities",
+   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
+   "slot": "differential",
+   "q": "Which two of the five basic densities cannot be distinguished from one another on a conventional radiograph?",
+   "opts": [
+    [
+     "Fat and air, which both appear black on the image",
+     "Fat is grey and somewhat darker than soft tissue, while air is blackest."
+    ],
+    [
+     "Calcium and metal, which both absorb all of the beam",
+     "Metal usually absorbs all x-rays while calcium absorbs most; they are distinguishable."
+    ],
+    [
+     "Fat and calcium, which occupy adjacent points on the scale",
+     "They sit at opposite ends of the middle range and are distinguishable."
+    ],
+    [
+     "Fluid and soft tissue, which have the same density",
+     "Correct — that limitation is one reason computed tomography expands the grey scale."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 8"
   },
   {
    "topic": "Hounsfield units",
@@ -1017,19 +1199,63 @@
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 13"
   },
   {
+   "topic": "Positioning",
+   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
+   "slot": "manifestation",
+   "q": "How is a posterior-anterior chest film oriented when you look at it?",
+   "opts": [
+    [
+     "As if you were looking at the patient's feet, with their left side on your right",
+     "That is the cross-sectional convention for tomography and magnetic resonance."
+    ],
+    [
+     "As if you were looking down from above, with their right side nearest the top",
+     "No such overhead convention is described for chest radiography."
+    ],
+    [
+     "As if the patient were standing in front of you, with their right side on your left",
+     "Correct — the same convention as facing a patient in the room."
+    ],
+    [
+     "As if the patient were standing behind you, with their right side on your right",
+     "The convention places the patient's right on your left, not your right."
+    ]
+   ],
+   "c": 2,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 36"
+  },
+  {
+   "topic": "Magnetic resonance imaging",
+   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
+   "slot": "first-line",
+   "q": "Which programmable magnetic resonance technique is named as useful in stroke?",
+   "opts": [
+    [
+     "Diffusion-weighted imaging, which evaluates the diffusion of water within tissue",
+     "Correct — the scanner can also be programmed to evaluate blood velocity."
+    ],
+    [
+     "Fat-suppressed imaging, which removes the signal from adipose tissue in the field",
+     "Fat suppression is not the technique the deck names for stroke."
+    ],
+    [
+     "Post-processing windowing, which re-displays the raw data over a narrower range",
+     "Post-processing and windowing are computed tomography techniques."
+    ],
+    [
+     "Gadolinium-enhanced imaging, which highlights vascular structures after injection",
+     "Contrast enhancement is used for tumours and masses rather than for stroke here."
+    ]
+   ],
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 30"
+  },
+  {
    "topic": "Computed tomography",
    "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
    "slot": "manifestation",
    "q": "What is a computed tomography image composed of, and what is each unit assigned?",
    "opts": [
-    [
-     "A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
-     "Millisieverts measure radiation dose rather than image density."
-    ],
-    [
-     "A hydrogen map, each point assigned a relaxation time in milliseconds reflecting the local chemical environment of that tissue",
-     "That describes magnetic resonance imaging."
-    ],
     [
      "A matrix of thousands of tiny squares called pixels, each assigned a computed tomography number from −1000 to +1000 in Hounsfield units",
      "Correct — water is assigned a Hounsfield number of zero by convention."
@@ -1037,36 +1263,96 @@
     [
      "A matrix of thousands of tiny cubes called voxels, each assigned a greyscale signal intensity on a fixed scale running from zero to two hundred and fifty five",
      "That is not how the lecture describes the image."
+    ],
+    [
+     "A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
+     "Millisieverts measure radiation dose rather than image density."
+    ],
+    [
+     "A hydrogen map, each point assigned a relaxation time in milliseconds reflecting the local chemical environment of that tissue",
+     "That describes magnetic resonance imaging."
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 12"
   },
   {
    "topic": "Magnetic resonance imaging",
-   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
-   "slot": "first-line",
-   "q": "Which tissues is magnetic resonance imaging described as the best modality for?",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "test finding",
+   "q": "On a T2-weighted image, how does tissue with high water content appear?",
    "opts": [
     [
-     "Bone and calcified structures, essentially anything mineralised, with high spatial detail",
-     "Calcium emits no signal on magnetic resonance, which is the opposite of this claim."
+     "Bright, and the examples given are fat, oedema, infection, blood and cerebrospinal fluid",
+     "Correct — remember T2 as the sequence where water is white."
     ],
     [
-     "Air-containing structures, essentially the lungs and sinuses, with high contrast detail",
-     "Aerated structures are a radiographic and tomographic strength, not this one."
+     "Dark, and the examples given are fat, oedema, infection, blood and cerebrospinal fluid",
+     "That is the T1-weighted image; the same list simply inverts between the two."
     ],
     [
-     "Metabolically active tissue, essentially tumour and infection, with high functional detail",
-     "Metabolic activity is what the nuclear medicine studies are indicated for."
+     "Bright, and the examples given are cortical bone, tendon, ligament and calcified plaque",
+     "Those are low in water and in signal, and calcium emits no signal at all."
     ],
     [
-     "Soft tissue, essentially anything other than bone, with extremely high anatomical detail",
-     "Correct — the deck states it in exactly those terms."
+     "Dark, and the examples given are cortical bone, tendon, ligament and calcified plaque",
+     "This is true of those tissues but does not answer what high water content does."
     ]
    ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 27"
+   "c": 0,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 28"
+  },
+  {
+   "topic": "Contrast media",
+   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
+   "slot": "complication",
+   "q": "What did Professor Reynolds say about the carcinogenicity of contrast media, and what does it justify?",
+   "opts": [
+    [
+     "None of them is carcinogenic, which is why contrast is used freely",
+     "She stated the opposite."
+    ],
+    [
+     "Only the nuclear medicine tracers are carcinogenic, because they are radioactive",
+     "She described the contrast media generally as technically radioactive."
+    ],
+    [
+     "It is all carcinogenic",
+     "Correct — which is exactly why the diagnostic approach asks whether the study can be done without contrast. She tied the risk straight back to the four framing questions."
+    ],
+    [
+     "Only the iodinated agents are carcinogenic, which is why gadolinium is preferred",
+     "She said the risk applies to contrast media generally."
+    ]
+   ],
+   "c": 2,
+   "cite": "2026-08-19 lecture recording, 27:38"
+  },
+  {
+   "topic": "Radiation dose",
+   "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
+   "slot": "manifestation",
+   "q": "How is radiation dose defined and expressed?",
+   "opts": [
+    [
+     "Ionizing energy delivered per exposure, in millisieverts only, where one millisievert is one milliwatt",
+     "A millisievert is not a unit of power and dose is not defined per exposure."
+    ],
+    [
+     "Ionizing energy absorbed per unit of mass, in grays or milligrays, where one gray is one joule per kilogram",
+     "Correct — and equivalent dose is then expressed in sieverts or millisieverts."
+    ],
+    [
+     "Ionizing energy emitted per unit of time, in grays or milligrays, where one gray is one joule per second",
+     "Dose is absorbed energy per mass, not emitted energy per time."
+    ],
+    [
+     "Ionizing energy absorbed per unit of volume, in sieverts only, where one sievert is one joule per litre",
+     "The unit of absorbed dose is the gray, and it is defined per kilogram."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 21"
   },
   {
    "topic": "Imaging planes",
@@ -1074,10 +1360,6 @@
    "slot": "manifestation",
    "q": "Which three standard planes are used in cross-sectional imaging, and how does each divide the body?",
    "opts": [
-    [
-     "Axial into upper and lower, coronal into right and left, sagittal into anterior and posterior",
-     "Coronal and sagittal are swapped; coronal separates front from back."
-    ],
     [
      "Axial into upper and lower, coronal into anterior and posterior, sagittal into right and left",
      "Correct — axial is also called transverse and is the commonest of the three."
@@ -1089,478 +1371,196 @@
     [
      "Axial into right and left, coronal into upper and lower, sagittal into anterior and posterior",
      "This rotates all three assignments and is wrong on each one."
+    ],
+    [
+     "Axial into upper and lower, coronal into right and left, sagittal into anterior and posterior",
+     "Coronal and sagittal are swapped; coronal separates front from back."
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 45"
   },
   {
-   "topic": "Contrast media",
-   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
-   "slot": "initial test",
-   "q": "What must be checked before giving intravenous iodinated contrast, and why?",
-   "opts": [
-    [
-     "Blood urea nitrogen and creatinine, because the agent is nephrotoxic",
-     "Correct — and a litre of normal saline is given to protect the kidneys."
-    ],
-    [
-     "Liver function tests and bilirubin, because the agent is cleared hepatically",
-     "The concern named is renal rather than hepatic."
-    ],
-    [
-     "Thyroid function tests, because the iodine load can precipitate thyrotoxicosis",
-     "Thyroid effects are real clinically but are not what this deck requires checking."
-    ],
-    [
-     "Complete blood count and platelets, because the agent affects coagulation",
-     "Coagulation is not the risk the deck attaches to iodinated contrast."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 52"
-  },
-  {
-   "topic": "Computed tomography",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "etiology",
-   "q": "Who is credited with developing the first computed tomography scanner, and what recognition followed?",
-   "opts": [
-    [
-     "Paul Lauterbur, who won the Nobel Prize for developing magnetic resonance imaging",
-     "That work was on magnetic resonance rather than computed tomography."
-    ],
-    [
-     "Sir Godfrey Hounsfield, who won the 1979 Nobel Prize in Medicine along with Allan Cormack",
-     "Correct — the unit of attenuation is named after him."
-    ],
-    [
-     "Wilhelm Roentgen, who won the first Nobel Prize for Physics in 1901",
-     "He discovered x-rays rather than computed tomography."
-    ],
-    [
-     "Allan Cormack alone, who won the 1979 Nobel Prize for Physics",
-     "He shared the 1979 Medicine prize with Hounsfield."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 12"
-  },
-  {
-   "topic": "Contrast media",
-   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
-   "slot": "risk factors",
-   "q": "Which patients are described as high risk before contrast administration?",
-   "opts": [
-    [
-     "Patients with a documented anaphylactic reaction to any medication",
-     "Correct — the history that matters is anaphylaxis to anything, not to iodine alone."
-    ],
-    [
-     "Patients with a documented allergy to shellfish or to dietary iodine",
-     "The deck states there should be no cross-reactivity from shellfish."
-    ],
-    [
-     "Patients with a documented reaction to any topical antiseptic containing iodine",
-     "Topical iodine reactions are not the risk marker named."
-    ],
-    [
-     "Patients with a documented history of asthma or of seasonal allergic rhinitis",
-     "Atopy generally is not the specific high-risk marker the deck gives."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 53"
-  },
-  {
-   "topic": "Positioning",
-   "io": "Objective e — Discuss the importance of patient positioning in medical imaging",
-   "slot": "manifestation",
-   "q": "How are radiographic projections named?",
-   "opts": [
-    [
-     "In the direction the patient faces, from the side nearest the film to the side furthest away",
-     "The naming follows the beam rather than which way the patient is turned."
-    ],
-    [
-     "In the order the structures appear, from the most superficial down to the deepest tissue",
-     "Projections are not named for the order in which structures are encountered on the image."
-    ],
-    [
-     "In the position of the detector, from the cassette's near edge to its furthest corner",
-     "The detector's own geometry does not supply the name of the projection."
-    ],
-    [
-     "In the direction the beam travels, from what it strikes first to the most distal portion",
-     "Correct — so posterior-anterior means the beam enters the back and exits the front."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 35"
-  },
-  {
-   "topic": "Hounsfield units",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "manifestation",
-   "q": "On the Hounsfield scale, where water is assigned zero, what value is air given?",
-   "opts": [
-    [
-     "Minus one thousand, the bottom of the scale",
-     "Correct — air absorbs least, so it takes the most negative number."
-    ],
-    [
-     "Minus one hundred and twenty, the bottom of the scale",
-     "That is the fat end of the fat range, not the value for air."
-    ],
-    [
-     "Plus one thousand, the top of the scale",
-     "Plus one thousand and above is metal, which absorbs most."
-    ],
-    [
-     "Plus four hundred, the upper middle of the scale",
-     "The four hundred to six hundred band is bone."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 13"
-  },
-  {
-   "topic": "Radiation dose",
+   "topic": "Radiation units",
    "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
-   "slot": "differential",
-   "q": "In that same table, which listed study delivers the lowest organ dose?",
+   "slot": "manifestation",
+   "q": "In which units is radiation measured?",
    "opts": [
     [
-     "Screening mammography, to the breast",
-     "Three, far above any of the plain radiographic studies."
+     "Tesla and gauss",
+     "Those measure magnetic field strength in magnetic resonance imaging."
     ],
     [
-     "Dental radiography, to the brain",
-     "Correct — five thousandths, the smallest figure in the table."
+     "Hertz and decibels",
+     "Those describe sound waves in ultrasound."
     ],
     [
-     "Posterior-anterior chest radiography, to the lung",
-     "One hundredth, which is low but is twice the dental figure."
+     "Millisieverts and milligrays",
+     "Correct — x-ray radiation is low compared with other radiographic modalities."
     ],
     [
-     "Lateral chest radiography, to the lung",
-     "Fifteen hundredths, higher than either of the two above it."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 21"
-  },
-  {
-   "topic": "Computed tomography",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "first-line",
-   "q": "What does the deck's three-panel chest example illustrate about post-processing?",
-   "opts": [
-    [
-     "The same anatomy imaged on three different modalities, compared for their relative strengths",
-     "The panels are computed tomography windows rather than different modalities."
-    ],
-    [
-     "Three consecutive time points after contrast, compared to show the pattern of enhancement",
-     "Windowing is not a timing technique."
-    ],
-    [
-     "The same acquired data re-windowed to bring out different pathology, without re-scanning the patient",
-     "Correct — that is the benefit digital imaging markedly advanced."
-    ],
-    [
-     "Three separate acquisitions at different dose settings, compared side by side for quality",
-     "Post-processing works on one acquisition; it does not require three."
+     "Hounsfield units and pixels",
+     "Hounsfield units measure computed tomography attenuation rather than radiation dose."
     ]
    ],
    "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 15"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 9"
   },
   {
    "topic": "Angiographic studies",
    "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "differential",
-   "q": "How do computed tomography angiography and magnetic resonance angiography differ in their use of dye?",
+   "slot": "manifestation",
+   "q": "Which term names an angiographic study of the veins rather than the arteries?",
    "opts": [
     [
-     "Computed tomography angiography injects iodine quickly; magnetic resonance angiography needs no dye",
-     "Correct — magnetic resonance angiography images the arterial walls without contrast."
+     "Arthrogram, performed as either a computed tomography arthrogram or a magnetic one",
+     "An arthrogram is contrast injected into a joint, not a vascular study at all."
     ],
     [
-     "Computed tomography angiography needs no dye; magnetic resonance angiography injects gadolinium quickly",
-     "This reverses them; the iodinated injection belongs to the computed tomography study."
+     "Venogram, performed as either a magnetic resonance venogram or a computed tomography venogram",
+     "Correct — the same modalities, aimed at the venous side."
     ],
     [
-     "Both inject iodine, but computed tomography angiography uses a much lower concentration",
-     "Magnetic resonance angiography is performed without contrast, so both do not inject."
+     "Doppler study, performed as either a colour Doppler examination or a duplex examination",
+     "Colour Doppler shows flow in either vessel type; it is not the venous-specific term."
     ],
     [
-     "Neither injects dye, because both reconstruct the vessels from the raw data afterwards",
-     "The computed tomography study does require a rapid iodinated injection."
+     "Coronary angiogram, performed as either a diagnostic catheterisation or an intervention",
+     "The coronary angiogram is the x-ray-based arterial study of the heart."
+    ]
+   ],
+   "c": 1,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 32"
+  },
+  {
+   "topic": "Magnetic resonance imaging",
+   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
+   "slot": "avoid",
+   "q": "What is the stated trade-off of an open magnetic resonance scanner?",
+   "opts": [
+    [
+     "Decreased quality of imaging, which is the price paid for the open configuration",
+     "Correct — it is available, but the deck flags the loss of quality."
+    ],
+    [
+     "Increased scan duration, which is the price paid for the open configuration",
+     "Time is listed as a general disadvantage, not as the open scanner's trade-off."
+    ],
+    [
+     "Increased radiation dose, which is the price paid for the open configuration",
+     "No magnetic resonance scanner emits ionizing radiation, open or closed."
+    ],
+    [
+     "Decreased soft tissue contrast only, with spatial resolution otherwise preserved",
+     "The deck says quality generally, without limiting it to soft tissue contrast."
     ]
    ],
    "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 32"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 27"
+  },
+  {
+   "topic": "Radiodensity",
+   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
+   "slot": "test finding",
+   "q": "On the deck's labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
+   "opts": [
+    [
+     "Bone is radiolucent, gas is radiopaque, and the metal prosthesis is very lucent",
+     "Each of the three labels is inverted here."
+    ],
+    [
+     "Bone is very opaque, gas is radiopaque, and the metal prosthesis is radiolucent",
+     "Metal is the most opaque of the three, not the most lucent."
+    ],
+    [
+     "Bone is radiopaque, gas is very opaque, and the metal prosthesis is radiolucent",
+     "Gas absorbs least of anything on the film, so it is lucent."
+    ],
+    [
+     "Bone is radiopaque, gas is radiolucent, and the metal prosthesis is very opaque",
+     "Correct — one image showing three of the five densities at once."
+    ]
+   ],
+   "c": 3,
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 10"
   },
   {
    "topic": "Radiology team",
    "io": "Objective i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "referral",
-   "q": "Why does the deck stress giving the radiologist relevant clinical information?",
+   "q": "What does the deck advise when a radiology report comes back vague?",
    "opts": [
     [
-     "The radiologist repeats the study otherwise, so the history prevents duplicate imaging",
-     "Avoiding repeat imaging is described as a benefit of post-processing instead."
+     "Refer the patient to the relevant specialist",
+     "Onward referral is not the response the deck names to a vague report."
     ],
     [
-     "The radiologist has not seen the patient, so the history is what guides their read",
-     "Correct — the report is only as good as the question it is answering."
+     "Contact the radiologist to discuss the patient",
+     "Correct — the relationship is described as interprofessional and team-based."
     ],
     [
-     "The radiologist bills separately, so the indication must be documented for the claim",
-     "Billing is not the reason the deck gives for communicating."
+     "Repeat the study using a different modality",
+     "Repeating the study is not the first response the deck advises."
     ],
     [
-     "The radiologist selects the modality, so the history determines which scanner is booked",
-     "They can guide the choice, but the reason stated here is the quality of the read."
+     "Order the next test in the diagnostic sequence",
+     "Moving on without clarifying the report is not what is advised."
     ]
    ],
    "c": 1,
    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 58"
-  },
-  {
-   "topic": "Magnetic resonance imaging",
-   "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "manifestation",
-   "q": "What determines the frequency of the radio waves a magnetic resonance scanner reads?",
-   "opts": [
-    [
-     "The density of the tissue in Hounsfield units, together with the chosen window",
-     "Hounsfield units and windows belong to computed tomography."
-    ],
-    [
-     "The metabolic rate of the tissue, together with the dose of tracer given",
-     "Metabolic rate and tracer dose describe nuclear medicine studies."
-    ],
-    [
-     "The chemical environment of the hydrogen atoms, together with their location",
-     "Correct — both, which is what lets the computer build a spatial map."
-    ],
-    [
-     "The strength of the magnet in Tesla, together with the duration of the scan",
-     "Field strength changes image quality, but it is not what the deck names here."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 26"
-  },
-  {
-   "topic": "Magnetic resonance imaging",
-   "io": "Objective c — Discuss anatomical structures best visualized by each imaging modality",
-   "slot": "first-line",
-   "q": "Why can magnetic resonance imaging show tissues that are surrounded by bone better than computed tomography can?",
-   "opts": [
-    [
-     "Calcium emits no signal, so the bone does not obscure what sits inside it",
-     "Correct — silence from calcium is an advantage rather than a gap."
-    ],
-    [
-     "Calcium emits a strong signal, so the bone can be subtracted from the image afterwards",
-     "Calcium is silent on magnetic resonance; there is no strong signal to subtract."
-    ],
-    [
-     "Bone is windowed out during acquisition, so only the soft tissue range is displayed",
-     "Windowing is a computed tomography display technique, not a magnetic resonance one."
-    ],
-    [
-     "Bone absorbs the radio waves, so the surrounding soft tissue returns a relatively brighter signal",
-     "Bone does not absorb the radiofrequency signal in the way this describes."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 30"
-  },
-  {
-   "topic": "Radiodensity",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "manifestation",
-   "q": "What do the terms radiolucent and hypodense describe?",
-   "opts": [
-    [
-     "A whiter image, from less passage of x-ray photons through the tissue and therefore greater absorption",
-     "That describes radiopaque or hyperdense tissue."
-    ],
-    [
-     "A brighter signal on a T2-weighted magnetic resonance image of the same tissue",
-     "That terminology belongs to magnetic resonance imaging."
-    ],
-    [
-     "A region of increased uptake of an injected radioisotope on nuclear imaging",
-     "That terminology belongs to nuclear medicine."
-    ],
-    [
-     "A darker image, from greater passage of x-ray photons through the tissue and therefore less absorption",
-     "Correct — radiopaque and hyperdense describe the opposite."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 9"
-  },
-  {
-   "topic": "Nuclear medicine",
-   "io": "Objective f — Compare and contrast the risks and benefits associated with radiation exposure",
-   "slot": "avoid",
-   "q": "Which imaging devices does the deck flag as the highest-emitting currently in existence?",
-   "opts": [
-    [
-     "Magnetic resonance imaging, magnetic resonance angiography and magnetic resonance venography",
-     "None of the magnetic resonance studies emit ionizing radiation at all."
-    ],
-    [
-     "Ultrasonography, colour Doppler ultrasonography and the hand-held bedside ultrasound units",
-     "Ultrasound uses sound waves and is called the safest of these modalities."
-    ],
-    [
-     "Computed tomography, positron emission tomography and single photon emission tomography",
-     "Correct — the deck marks this IMPORTANT, and all three use ionizing radiation."
-    ],
-    [
-     "Conventional radiography, fluoroscopy and the angiographic studies performed with x-rays",
-     "These do use ionizing radiation, but the deck calls plain films relatively low dose."
-    ]
-   ],
-   "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 17"
   },
   {
    "topic": "Contrast media",
-   "io": "Objective g — Compare and contrast the risks and benefits associated with contrast administration",
-   "slot": "first-line",
-   "q": "What is oral contrast indicated for?",
+   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
+   "slot": "initial test",
+   "q": "What must be assessed before a magnetic resonance study with contrast, and why?",
    "opts": [
     [
-     "Structure or disease of the intraluminal space, anywhere from the upper oesophagus to the rectum",
-     "Correct — it outlines the lumen of the gastrointestinal tract."
+     "Thyroid function, because gadolinium chelates iodine and can precipitate a thyroid storm",
+     "Gadolinium contains no iodine and this mechanism does not apply."
     ],
     [
-     "Structure or disease of the vascular space, anywhere from the aortic root to the digital arteries",
-     "Vascular imaging requires an intravascular injection, not an oral agent."
+     "Nothing beforehand, because gadolinium is inert and is excreted unchanged in the bile",
+     "The deck requires assessing renal function regardless."
     ],
     [
-     "Structure or disease of the pleural space, anywhere from the apex to the costophrenic angle",
-     "Oral contrast does not reach the pleural space."
+     "Blood urea nitrogen and creatinine, because renal function matters primarily for clearance",
+     "Correct — gadolinium can damage kidneys, though less than iodinated contrast."
     ],
     [
-     "Structure or disease of the urinary space, anywhere from the renal pelvis to the urethra",
-     "The urinary tract is imaged with an injected or retrograde agent instead."
-    ]
-   ],
-   "c": 0,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 52"
-  },
-  {
-   "topic": "Radiology team",
-   "io": "Objective i — Discuss the importance of communication between the physician assistant and radiology team",
-   "slot": "education",
-   "q": "What practical ordering point does the deck make about imaging several body regions?",
-   "opts": [
-    [
-     "Multiple body parts require the radiologist to countersign the request before booking",
-     "No countersignature requirement is described."
-    ],
-    [
-     "Multiple body parts must be imaged on separate days to limit cumulative radiation dose",
-     "Magnetic resonance emits no ionizing radiation, and no such rule is stated."
-    ],
-    [
-     "Multiple body parts or sections may mean multiple orders, giving brain, cervical, thoracic and lumbar spine as the example",
-     "Correct — one clinical question can require four separate requests."
-    ],
-    [
-     "Multiple body parts should be combined into one single order, so that the patient is scanned once and the radiologist reads the whole study together",
-     "The deck makes the opposite point about how these studies are requested."
+     "Blood urea nitrogen and creatinine, because gadolinium is more nephrotoxic than iodine",
+     "The deck says the opposite: it is not as harmful as computed tomography contrast."
     ]
    ],
    "c": 2,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 58"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 54"
   },
   {
-   "topic": "Fluoroscopy",
+   "topic": "Magnetic resonance imaging",
    "io": "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies",
-   "slot": "manifestation",
-   "q": "What does fluoroscopy let a clinician evaluate?",
+   "slot": "etiology",
+   "q": "How are magnetic resonance images generated?",
    "opts": [
     [
-     "Direction and velocity of blood flow, viewed as colour superimposed on grey scale",
-     "Colour flow mapping is the Doppler setting on an ultrasound machine."
+     "A pulse of sound leaves the transducer; the echo returning from tissue is timed and plotted",
+     "That is ultrasonography, and it needs no magnetic field of any kind."
     ],
     [
-     "Motion of body parts and positioning changes of bones and joints, viewed in real time",
-     "Correct — real-time visualisation is the point of the study."
+     "A varying magnetic field aligns hydrogen atoms; releasing it produces radio waves the computer maps",
+     "Correct — the deck calls the resulting images essentially hydrogen maps."
     ],
     [
-     "Metabolic activity in organs and tissues, viewed as intensities after tracer injection",
-     "Intensity mapping of uptake is a nuclear medicine study rather than fluoroscopy."
+     "A varying magnetic field aligns iron atoms; releasing it produces heat the computer measures",
+     "Hydrogen is the nucleus imaged, and the signal read out is radiofrequency, not thermal."
     ],
     [
-     "Water content in soft tissue and oedema, viewed on differently weighted sequences",
-     "Weighted sequences and water content belong to magnetic resonance imaging."
+     "A rotating x-ray beam passes through tissue; detectors measure how much of it is absorbed",
+     "That is computed tomography, which is why it uses ionizing radiation and this does not."
     ]
    ],
    "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 57"
-  },
-  {
-   "topic": "Densities",
-   "io": "Objective d — Compare and contrast the concepts of radiographic density and contrast",
-   "slot": "manifestation",
-   "q": "Which density appears blackest on a conventional radiograph, and why?",
-   "opts": [
-    [
-     "Metal, because it absorbs the most x-rays of any material",
-     "Metal usually absorbs all x-rays and appears whitest."
-    ],
-    [
-     "Calcium, because it is the densest naturally occurring material",
-     "Calcium absorbs most x-rays and appears near-white."
-    ],
-    [
-     "Fat, because it is less dense than the surrounding soft tissue",
-     "Fat is grey and somewhat darker than soft tissue, but not blackest."
-    ],
-    [
-     "Air, because it absorbs the least x-rays",
-     "Correct — greater passage of photons means a darker image."
-    ]
-   ],
-   "c": 3,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 8"
-  },
-  {
-   "topic": "Ultrasonography",
-   "io": "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities",
-   "slot": "prognosis",
-   "q": "How does the deck summarise ultrasound's safety?",
-   "opts": [
-    [
-     "Safe once screened, though implanted metallic devices must be excluded beforehand",
-     "Implanted-device screening is a magnetic resonance requirement."
-    ],
-    [
-     "Very safe, without any known major side effects at medically diagnostic levels",
-     "Correct — it is called the safest of these modalities."
-    ],
-    [
-     "Broadly safe, though a cumulative dose limit applies across repeated examinations",
-     "There is no cumulative dose, because there is no ionizing radiation."
-    ],
-    [
-     "Safe in adults, though it is avoided in pregnancy and in infants as a precaution",
-     "That caution is stated for magnetic resonance imaging, not for ultrasound."
-    ]
-   ],
-   "c": 1,
-   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 24"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 26"
   }
  ]
 }
