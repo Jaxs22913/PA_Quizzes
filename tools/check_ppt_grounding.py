@@ -53,11 +53,25 @@ def inbox_dir(repo_folder):
     names = [INBOX.get(cls, cls + " Inbox"), cls + " Inbox"]
     roots = [os.path.join(HOME, "Desktop")] + sorted(
         glob.glob(os.path.join(HOME, "Desktop", "Semester *")))
+    # A directory EXISTING is not enough -- it has to contain slides. Found
+    # 2026-08-20: ~/Desktop/<Class> Inbox/Exam 1/ still existed from the
+    # Semester-1 flat layout but held only a "recordings" folder, and because
+    # ~/Desktop is searched before ~/Desktop/Semester */, it shadowed the real
+    # inbox. Grounding then screened ZERO slides and printed a clean result --
+    # exactly the "passes by doing nothing" failure this function was written to
+    # stop, reintroduced by an empty leftover directory.
+    empty = []
     for root in roots:
         for name in names:
             p = os.path.join(root, name, "Exam " + num)
-            if os.path.isdir(p):
+            if not os.path.isdir(p):
+                continue
+            if glob.glob(os.path.join(p, "*.pptx")):
                 return p
+            empty.append(p)
+    if empty:
+        print("  NOTE: %s -- found inbox dir(s) with no .pptx, ignored: %s"
+              % (repo_folder, ", ".join(empty)), file=sys.stderr)
     return None
 
 def toks(s):
