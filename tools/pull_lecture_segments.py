@@ -197,15 +197,52 @@ def main():
     print("wrote %s.notability.txt (%d of %d segments had one)" % (a.name, got, len(segs)))
 
     from lecture_transcript import transcribe, write_outputs, EMPHASIS, DEEMPHASIS  # noqa
+
+    # PER-SEGMENT TRANSCRIPT CACHE. A lecture routinely arrives in halves -- the
+    # class breaks, or it is still being recorded when the first half is pulled.
+    # Re-running this tool to pick up the new half used to re-transcribe every
+    # earlier segment from scratch, which is ~24 minutes of compute per 43-minute
+    # half for a result that cannot have changed.
+    #
+    # Keyed on the Notability blob hash (content-addressed, so a given hash is
+    # always the same audio) PLUS the model name, because a different model
+    # produces a different transcript and must not reuse the old one.
+    cache_dir = os.path.join(dest, ".transcript-cache")
+    os.makedirs(cache_dir, exist_ok=True)
+
     all_segs, offset, total = [], 0.0, 0.0
-    for i, path in enumerate(copied, 1):
-        print("\n--- transcribing segment %d of %d ---" % (i, len(copied)))
-        s2, dur = transcribe(path, a.model)
+    reused = 0
+    for i, (path, meta) in enumerate(zip(copied, segs), 1):
+        ckey = os.path.join(cache_dir, "%s-%s.json" % (meta["hash"], a.model))
+        cached = None
+        if os.path.exists(ckey):
+            try:
+                with open(ckey, encoding="utf-8") as fh:
+                    cached = json.load(fh)
+            except Exception:
+                cached = None          # a corrupt cache entry just means re-transcribe
+        if cached:
+            print("\n--- segment %d of %d: reusing cached transcript (%.1f min) ---"
+                  % (i, len(copied), cached["dur"] / 60))
+            s2, dur = cached["segs"], cached["dur"]
+            reused += 1
+        else:
+            print("\n--- transcribing segment %d of %d ---" % (i, len(copied)))
+            s2, dur = transcribe(path, a.model)
+            s2 = [dict(x) if isinstance(x, dict) else x for x in s2]
+            try:
+                with open(ckey, "w", encoding="utf-8") as fh:
+                    json.dump({"dur": dur, "segs": s2}, fh)
+            except Exception as e:
+                print("  (could not cache this segment: %s)" % e)
         for seg in s2:
             seg = dict(seg) if isinstance(seg, dict) else seg
             all_segs.append(_shift(seg, offset))
         offset += dur
         total += dur
+    if reused:
+        print("\nreused %d cached segment transcript(s); transcribed %d new"
+              % (reused, len(copied) - reused))
     stem, nflags = write_outputs(dest, a.name, all_segs, total, copied[0])
     print("\nwrote %s.transcript.txt (%.1f min across %d segments)" % (stem, total / 60, len(copied)))
     print("wrote %s.flags.md  (%d cue(s))" % (stem, nflags))
