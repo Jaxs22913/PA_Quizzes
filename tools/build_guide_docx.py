@@ -40,6 +40,7 @@ try:
     from docx.shared import Pt, Inches, RGBColor, Emu
     from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
     from docx.enum.table import WD_TABLE_ALIGNMENT
+    from docx.enum.section import WD_ORIENT
     from docx.oxml.ns import qn
     from docx.oxml import OxmlElement
     from PIL import Image
@@ -80,19 +81,29 @@ CLASS_DIRS = {
 
 
 def in_scope_documents():
+    """Every document CARDED ON guides.html that belongs to a Semester 2+ class.
+
+    Jaxon, 2026-08-20: "I wanted for all the guides pages even the derm chart."
+    So the list is taken from guides.html itself rather than from filename
+    patterns -- that page IS the definition of "the guides pages", and driving
+    off it means a new reference sheet is picked up the moment it is carded,
+    with no pattern here to remember to extend. The earlier version matched
+    *study-guide* / *cram-sheet* and silently skipped the comparison chart and
+    the three OSCE sheets.
+    """
     slugs = semester_scope()
-    docs = []
-    for slug in sorted(slugs):
-        prefix = CLASS_DIRS.get(slug)
-        if not prefix:
+    prefixes = tuple(CLASS_DIRS[s] for s in slugs if s in CLASS_DIRS)
+    page = open(os.path.join(ROOT, "guides.html"), encoding="utf-8").read()
+    seen, docs = set(), []
+    for m in re.finditer(r'class="guide-card[^"]*"\s+href="([^"]+)"', page):
+        href = urllib.parse.unquote(m.group(1))
+        if not href.endswith(".html") or not href.startswith(prefixes):
             continue
-        for d in sorted(os.listdir(ROOT)):
-            if not d.startswith(prefix) or not os.path.isdir(os.path.join(ROOT, d)):
-                continue
-            for f in sorted(os.listdir(os.path.join(ROOT, d))):
-                if f.endswith(".html") and ("study-guide" in f or "cram-sheet" in f):
-                    docs.append((slug, os.path.join(d, f)))
-    return docs
+        if href in seen or not os.path.exists(os.path.join(ROOT, href)):
+            continue
+        seen.add(href)
+        docs.append((href.split("/")[0], href))
+    return sorted(docs, key=lambda t: t[1])
 
 
 # ---------------------------------------------------------------- helpers
@@ -162,6 +173,20 @@ def has_block_child(node):
     return any(isinstance(c, Tag) and c.name in BLOCK_TAGS for c in node.children)
 
 
+# Spans the site styles as display:block (or as a label heading). Emitted as
+# plain inline runs they weld onto the text beside them -- ".deck" turned
+# "Lecture 2 | Slide 50" + "2. General Dermatology I.pptx" into "Slide 502.
+# General Dermatology I.pptx", and ".labs-h" produced "Labs to orderNone
+# routinely." Word has no CSS, so the line break has to be made explicit.
+BREAK_BEFORE = {"deck", "labs", "labs-h", "pt", "fg-name", "fg-cite", "dup", "tag"}
+LABEL_CLASSES = {"labs-h", "fg-name"}
+NUMBER_CLASSES = {"n", "num", "step"}
+# .script is the say-this-out-loud line and .hint the coaching note; both sit
+# straight after the step text and weld to it ("...by name and role\"Hello, I am").
+BREAK_BEFORE = BREAK_BEFORE | {"key", "script", "hint"}
+QUOTE_CLASSES = {"script"}
+
+
 def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
     """Walk inline content, preserving bold/italic/highlight rather than
     flattening it -- the highlights are the professor-emphasis marks and carry
@@ -185,11 +210,37 @@ def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
         if n == "br":
             par.add_run().add_break()
             continue
+        kls = set(child.get("class") or [])
+        if n == "input":
+            # A run-sheet's checkboxes are the point of it. Keep them as real
+            # boxes so the Word copy stays tickable.
+            if child.get("type", "").lower() == "checkbox":
+                r = par.add_run("\u2610 ")
+                r.font.size = Pt(11)
+            continue
+        if kls & BREAK_BEFORE and par.runs:
+            par.add_run().add_break()
+        if kls & QUOTE_CLASSES:
+            r = par.add_run(" ".join(child.get_text(" ", strip=True).split()))
+            r.italic = True
+            r.font.color.rgb = RGBColor(0x33, 0x55, 0x66)
+            continue
+        if kls & NUMBER_CLASSES:
+            # <span class="n">1</span> butts straight against the step text --
+            # "1Reviews the chief complaint". Give it a separator.
+            r = par.add_run(child.get_text(" ", strip=True) + ".  ")
+            r.bold = True
+            continue
         emit_runs(par, child,
-                  bold or n in ("b", "strong", "th"),
+                  bold or bool(kls & LABEL_CLASSES) or n in ("b", "strong", "th"),
                   italic or n in ("i", "em", "cite"),
                   hilite or (n == "mark"),
                   mono or n in ("code", "kbd", "samp"))
+        # A label span needs a break on BOTH sides: breaking only before it
+        # still welds it to what follows -- "Labs to order" + "None routinely."
+        # came out as "Labs to orderNone routinely."
+        if kls & LABEL_CLASSES:
+            par.add_run().add_break()
 
 
 def fit(path, max_w, max_h):
@@ -275,6 +326,23 @@ class Builder:
                 if ci < len(cells):
                     src = cells[ci]
                     p = cell.paragraphs[0]
+                    # PICTURES INSIDE CELLS. The dermatology comparison chart is
+                    # 133 photographs in a <td class="pic">, and emit_runs only
+                    # emits text -- so every one of them was silently dropped and
+                    # the word-coverage gate passed at 100%, because an image is
+                    # not a word. Handle the picture first, then the text.
+                    pics = src.find_all("img")
+                    if pics:
+                        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                        for im in pics:
+                            path = self.resolve(im.get("src") or "")
+                            if not path: continue
+                            try:
+                                p.add_run().add_picture(path, **fit(path, 1.35, 1.15))
+                            except Exception:
+                                pass
+                        for im in pics: im.extract()
+                        p = cell.add_paragraph()
                     emit_runs(p, src)
                     p.paragraph_format.space_after = Pt(2)
                     for r in p.runs: r.font.size = Pt(9)
@@ -513,8 +581,12 @@ def convert(relpath):
     # Posttest Probability...") because the anchors carry no separators.
     # `.toc` covers both the guide's <nav class="toc"> and the cram sheet's
     # <div class="toc"> rail.
+    # The OSCE run-sheets are self-contained pages that reimplement the theme
+    # controls locally (see the self-contained-pages convention), so they carry
+    # their own settings drawer and back link that theme.js's selectors miss.
     for sel in (".toc", "nav.toc", ".guide-back-bar", "#corner-actions", "#tts-bar",
-                ".tts-bar", ".back-bar", "#back-link", ".jump", ".quicklinks"):
+                ".tts-bar", ".back-bar", "#back-link", ".jump", ".quicklinks",
+                "#h2t-corner", "#h2t-settings", ".h2t-corner", ".sitebar"):
         for el in soup.select(sel):
             el.decompose()
 
@@ -523,12 +595,35 @@ def convert(relpath):
     st.font.name = "Calibri"; st.font.size = Pt(10.5)
     st.paragraph_format.space_after = Pt(6)
     st.paragraph_format.line_spacing = 1.12
+
+    # LANDSCAPE for wide documents. The dermatology comparison chart is a
+    # six-column table -- picture, condition, manifestation, testing, treatment,
+    # education -- and on portrait letter every column becomes a ribbon two words
+    # wide. Decided from the content, not from a filename, so any future wide
+    # reference sheet gets the same treatment.
+    widest = max([len(r.find_all(["td", "th"]))
+                  for t in soup.find_all("table") for r in t.find_all("tr")] or [0])
+    landscape = widest >= 5
     for sec in doc.sections:
-        sec.left_margin = sec.right_margin = Inches(0.7)
-        sec.top_margin = sec.bottom_margin = Inches(0.6)
+        if landscape:
+            sec.orientation = WD_ORIENT.LANDSCAPE
+            sec.page_width, sec.page_height = sec.page_height, sec.page_width
+            sec.left_margin = sec.right_margin = Inches(0.45)
+            sec.top_margin = sec.bottom_margin = Inches(0.45)
+        else:
+            sec.left_margin = sec.right_margin = Inches(0.7)
+            sec.top_margin = sec.bottom_margin = Inches(0.6)
 
     accent = accent_of(soup, html)
     imgdirs = [os.path.dirname(src), ROOT]
+    # Count source images NOW. The builder extract()s <img> tags out of the soup
+    # as it consumes them, so counting afterwards returns zero and the image gate
+    # silently passes -- which is what it did on the first run, reporting
+    # "133/0 images" for the chart. A gate that measures after the fact measures
+    # nothing.
+    want_imgs = len([i for i in soup.find_all("img")
+                     if i.get("src") and not i["src"].startswith("data:")])
+    src_words = words_of(soup.get_text(" ", strip=True))
 
     title = soup.find("h1")
     tt = doc.add_heading(level=0)
@@ -559,11 +654,21 @@ def convert(relpath):
     # happened to a <div class="callout"> before the block/inline rule was added.
     # So compare the words actually present in the .docx against the words in the
     # source page, and refuse to ship a lossy conversion.
-    lost, cov = coverage(soup, out)
+    lost, cov = coverage(src_words, out)
     if cov < 0.985:
         raise SystemExit("LOSSY CONVERSION for %s: only %.1f%% of source words survived.\n"
                          "  first missing: %s" % (relpath, cov * 100, lost[:12]))
-    return out, os.path.getsize(out), cov
+
+    # IMAGES NEED THEIR OWN GATE. The word check above passed at 100% on the
+    # comparison chart while every one of its 133 photographs was being dropped,
+    # because an image is not a word. Anything that can go missing needs to be
+    # counted, not assumed.
+    want = want_imgs
+    from docx import Document as _D
+    got = len(_D(out).inline_shapes)
+    if want and got < want * 0.95:
+        raise SystemExit("IMAGES LOST for %s: %d of %d embedded." % (relpath, got, want))
+    return out, os.path.getsize(out), cov, got, want
 
 
 def docx_words(path):
@@ -583,9 +688,7 @@ def words_of(text):
     return [w for w in re.findall(r"[A-Za-z][A-Za-z'-]{2,}", text.lower())]
 
 
-def coverage(soup, docx_path):
-    src_txt = soup.get_text(" ", strip=True)
-    src = words_of(src_txt)
+def coverage(src, docx_path):
     got = set(words_of(" ".join(docx_words(docx_path))))
     from collections import Counter
     missing = [w for w in Counter(src) if w not in got]
@@ -603,10 +706,10 @@ def main():
     os.makedirs(TMP, exist_ok=True)
     total = 0
     for slug, rel in docs:
-        out, size, cov = convert(rel)
+        out, size, cov, got, want = convert(rel)
         total += size
-        print("  %-64s %6.2f MB   %.1f%% of source words" %
-              (os.path.relpath(out, ROOT), size / 1048576, cov * 100))
+        print("  %-58s %6.2f MB  %.1f%% words  %d/%d images" %
+              (os.path.relpath(out, ROOT), size / 1048576, cov * 100, got, want))
     print("\n%d Word document(s), %.1f MB total" % (len(docs), total / 1048576))
 
 
