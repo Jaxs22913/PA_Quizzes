@@ -74,7 +74,13 @@ NOTE_CLASS = [
                               "pd 2", "physical diagnosis 2"]),
     ("cms-1", ["cms", "clinical medicine"]),
     ("pharm-1", ["pharm"]),
-    ("microbiology", ["micro", "bacteri", "virus", "fungi", "parasite"]),
+    # TOPIC words are not COURSE names. "bacteri", "virus", "fungi" and
+    # "parasite" all describe things CMS teaches too, and "bacteri" routed CMS's
+    # "4. Cutaneous Bacterial Infections" recording to Microbiology, where no
+    # lecture claimed it -- so CMS Lecture 4 reported no audio while the file sat
+    # on disk. Hints must identify the COURSE; anything unlabelled now competes
+    # across every class on title overlap anyway, so a narrow hint costs nothing.
+    ("microbiology", ["micro", "microbiology"]),
     ("med-lit", ["literature", "med lit", "evidence"]),
 ]
 
@@ -91,7 +97,10 @@ DECK_EXT = (".pptx", ".ppt", ".pdf", ".docx", ".doc", ".key")
 # Words that appear in nearly every title and so discriminate nothing.
 STOP = set("""lecture lec class session student sv copy final draft updated new
 the a an and or of for to in on with de la 2024 2025 2026 2027 fall spring summer
-i ii iii iv v vi vii viii ix x tbd part pt professor prof dr am pm""".split())
+i ii iii iv v vi vii viii ix x tbd part pt professor prof dr am pm
+note notes jan feb mar apr may jun jul aug sep sept oct nov dec
+january february march april june july august september october november
+december""".split())
 CLASS_TOKENS = set("""pdm pd cms micro microbiology pharm pharmacology path
 pathophysiology pathophys clin clinical diagnosis diagnostic medicine surgery
 literature""".split())
@@ -122,6 +131,37 @@ def overlap(a, b):
         return 0.0
     hits = sum(1 for x in ta if any(_same(x, y) for y in tb))
     return hits / min(len(ta), len(tb))
+
+
+# THE LECTURE NUMBER IS THE DISCRIMINATOR, and toks() throws it away: digits and
+# roman numerals are shorter than the 3-character floor or sit in STOP. So
+# "2. General Dermatology I" and "3. Dermatology II" both reduce to
+# {general, dermatology} / {dermatology}, tie against both lectures, and one
+# lecture ends up with two decks while the next reports none -- which is what
+# 2026-08-19 did, flagging a deck and two recordings that were all on disk.
+_ROMAN = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7,
+          "viii": 8, "ix": 9, "x": 10, "xi": 11, "xii": 12}
+
+
+def lecture_no(text):
+    """The lecture number a title claims, or None."""
+    t = (text or "").lower()
+    m = re.search(r"lecture\s*#?\s*(\d{1,2})", t)
+    if m:
+        return int(m.group(1))
+    m = re.match(r"\s*(\d{1,2})\s*[.)-]", t)          # "6. Fungal and Viral..."
+    if m:
+        return int(m.group(1))
+    return None
+
+
+def number_agreement(a, b):
+    """+1 when both name the same lecture, -1 when they disagree, 0 if unknown."""
+    na, nb = lecture_no(a), lecture_no(b)
+    if na is None or nb is None:
+        return 0
+    return 1 if na == nb else -1
+
 
 
 def parse_hhmm(s, day):
@@ -170,7 +210,12 @@ def decks_today(cid, today):
                 continue
             p = os.path.join(dirpath, f)
             try:
-                if datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat() == today:
+                # ON OR BEFORE the lecture day, not ON it. Professors post slides
+                # in advance -- that is the normal case, not an anomaly. Requiring
+                # mtime == today reported three decks as missing on 2026-08-20
+                # that had been sitting in the inbox since the 19th, which is most
+                # of what this check is supposed to reassure you about.
+                if datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat() <= today:
                     hits.append(f)
             except OSError:
                 pass
@@ -262,9 +307,27 @@ def assign(lectures, items, key):
             s = overlap(text, l["title"])
             if not isinstance(it, str) and window_overlaps(l, it):
                 s += 0.15
+            # A stated lecture number outranks fuzzy word overlap: agreeing is
+            # near-proof, disagreeing is near-disproof.
+            s += 0.60 * number_agreement(text, l["title"])
             scored.append((s, l))
         scored.sort(key=lambda x: -x[0])
         best, lec = scored[0]
+
+        # AN UNTITLED RECORDING STILL HAPPENED. Notability's default name is
+        # "Note Aug 17, 2026", which carries no content words at all -- title
+        # overlap is 0 for every lecture, so it matched nothing and three
+        # lectures reported no audio while their recordings sat on disk. When
+        # there is no title to go on, the time window is the only signal, and it
+        # is a good one: fall back to it rather than discarding the clip.
+        if not isinstance(it, str) and not (toks(text) - CLASS_TOKENS):
+            inwin = [l for l in lectures if window_overlaps(l, it)]
+            if len(inwin) == 1:
+                out[id(inwin[0])].append(it)
+            else:
+                unmatched.append("%s (%s min)" % (it["note"], it["minutes"]))
+            continue
+
         if best >= 0.30:
             out[id(lec)].append(it)
         elif len(lectures) == 1 and best > 0:
@@ -273,6 +336,30 @@ def assign(lectures, items, key):
             unmatched.append(text if isinstance(it, str) else
                              "%s (%s min)" % (it["note"], it["minutes"]))
     return out, unmatched
+
+
+def arrived_today(cid, today):
+    """Decks whose mtime is the lecture day itself."""
+    folder = CLASS_INBOX.get(cid)
+    if not folder:
+        return set()
+    base = os.path.join(INBOX_ROOT, folder)
+    out = set()
+    for dirpath, _d, files in os.walk(base):
+        low = os.path.basename(dirpath).lower()
+        if low.startswith("syllabus") or low == "recordings":
+            continue
+        for f in files:
+            if f.startswith(".") or not f.lower().endswith(DECK_EXT):
+                continue
+            try:
+                if datetime.date.fromtimestamp(
+                        os.path.getmtime(os.path.join(dirpath, f))).isoformat() == today:
+                    out.add(f)
+            except OSError:
+                pass
+    return out
+
 
 
 def main():
@@ -291,18 +378,30 @@ def main():
         clips = []
     for c in clips:
         c["cid"] = clip_class(c["note"])
-    rep["unmatched_audio"] += ["(no course in title) %s (%s min)" % (c["note"], c["minutes"])
-                               for c in clips if c["cid"] is None]
     by_class = {}
     for l in lectures:
         by_class.setdefault(l["class"], []).append(l)
 
+    claimed = set()
     for cid, lecs in by_class.items():
         deck_map, deck_left = assign(lecs, decks_today(cid, today), "deck")
-        mine = [c for c in clips if c.get("cid") == cid]
+        # A recording whose title names no course still competes here on title
+        # overlap. Notability names a note after the deck imported into it, so
+        # "6. Fungal and Viral Skin Infections - Jaquith" carries no course word
+        # at all -- and dropping those made every lecture on 2026-08-20 report
+        # "no audio" while the recordings sat on disk. Course hints now narrow
+        # the field when present and are simply absent when they are not.
+        mine = [c for c in clips if c.get("cid") in (cid, None)]
         clip_map, clip_left = assign(lecs, mine, "audio")
-        rep["unmatched_files"] += ["%s: %s" % (CLASS_LABEL.get(cid, cid), x) for x in deck_left]
-        rep["unmatched_audio"] += ["%s: %s" % (CLASS_LABEL.get(cid, cid), x) for x in clip_left]
+        for l in lecs:
+            for c in clip_map[id(l)]:
+                claimed.add(id(c))
+        # Only flag a deck that ARRIVED TODAY and matched nothing. Now that the
+        # pool is every deck in the inbox rather than only today's, the folder
+        # legitimately holds slides for other lectures, and listing those every
+        # evening is precisely the always-fires ping this tool exists to avoid.
+        rep["unmatched_files"] += ["%s: %s" % (CLASS_LABEL.get(cid, cid), x)
+                                   for x in deck_left if x in arrived_today(cid, today)]
 
         for l in lecs:
             label = "%s — %s" % (CLASS_LABEL.get(cid, cid), l["title"][:72])
@@ -319,6 +418,10 @@ def main():
                 mins = sum(c["minutes"] or 0 for c in got_clips)
                 rep["ok"].append("%s%s" % (label,
                     "" if exempt else "  [%d segment(s), %.0f min]" % (len(got_clips), mins)))
+    # Report a recording as unmatched only after EVERY class has had a chance at
+    # it -- reporting per class listed the same clip once per course.
+    rep["unmatched_audio"] += ["%s (%s min)" % (c["note"], c["minutes"])
+                               for c in clips if id(c) not in claimed]
     print(json.dumps(rep, indent=1, ensure_ascii=False))
     return 0
 

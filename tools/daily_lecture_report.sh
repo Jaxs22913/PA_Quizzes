@@ -36,8 +36,13 @@ for label, key in (("no slides", "missing_deck"), ("no audio", "missing_audio"))
         who = item.split(" — ")[0]
         what = item.split(" — ")[-1]
         gaps.append("%s: %s (%s)" % (who, what[:44], label))
-for x in d.get("unmatched_audio", []) + d.get("unmatched_files", []):
-    gaps.append("unmatched: %s" % x[:60])
+# Unmatched DECKS are not a gap. Slides for a future lecture routinely land in
+# the inbox days early, and reporting those every evening is the always-fires
+# ping this notifier exists to avoid. They stay in the JSON for inspection.
+# An unmatched RECORDING is different -- audio that belongs to no lecture is
+# worth a look.
+for x in d.get("unmatched_audio", []):
+    gaps.append("unmatched recording: %s" % x[:60])
 if gaps:
     print("GAP|" + "\n".join(gaps[:6]))
 else:
