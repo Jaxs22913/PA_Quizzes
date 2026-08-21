@@ -202,6 +202,48 @@
       btn.textContent = group.value;
       defsEl.appendChild(btn);
     });
+    scheduleEqualise();
+  }
+
+  // UNIFORM CARD HEIGHT. Cards grow to their text, so a deck whose definitions
+  // are full sentences -- the subject-wide flashcard decks especially -- gives a
+  // board of wildly different sized tiles and two columns that drift out of step.
+  //
+  // A fixed height in CSS would clip the long ones, so instead every card is
+  // measured and they all take the height of the tallest. Nothing is hidden and
+  // the grid lines up. Recomputed on every render and on resize, because the
+  // tallest card changes with the board and with the window width.
+  var sizeRaf = 0;
+  function equaliseCards() {
+    var items = document.querySelectorAll("#match-terms .match-item, #match-defs .match-item");
+    if (!items.length) return;
+    var i, tallest = 0;
+    for (i = 0; i < items.length; i++) items[i].style.height = "auto";
+    for (i = 0; i < items.length; i++) {
+      var h = items[i].getBoundingClientRect().height;
+      if (h > tallest) tallest = h;
+    }
+    for (i = 0; i < items.length; i++) items[i].style.height = tallest + "px";
+  }
+  function scheduleEqualise() {
+    cancelAnimationFrame(sizeRaf);
+    sizeRaf = requestAnimationFrame(equaliseCards);
+  }
+  // Resizing needs a settling delay, not just a frame. Measuring on the first
+  // frame of a width change catches the text mid-rewrap and locks in a height
+  // for a layout that no longer exists -- restoring the window from 900px back
+  // to full width left every card 151px tall when 128 was correct, until the
+  // next render happened to fix it.
+  var sizeTimer = 0;
+  function equaliseSoon() {
+    clearTimeout(sizeTimer);
+    sizeTimer = setTimeout(scheduleEqualise, 120);
+  }
+  window.addEventListener("resize", equaliseSoon);
+  // The site's text-size control rewrites a root font size; re-measure when it
+  // does, or the cards keep a height computed for the old size.
+  if (window.ResizeObserver) {
+    new ResizeObserver(equaliseSoon).observe(document.documentElement);
   }
 
   function updateStats() {

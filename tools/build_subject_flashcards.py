@@ -91,9 +91,30 @@ def sentences(desc):
     return [p.replace('<DOT>', '.') for p in re.split(r'(?<=[.!?])\s+', guarded)]
 
 
+# A leading sentence that only POINTS somewhere else -- "The same spectrum, at
+# its severe end.", "Also called acne inversa.", "The more common form." -- reads
+# fine in a chart where the row above supplies the referent, and says nothing on
+# a standalone card. Dropped, but only when SHORT: the soft-corn entry opens
+# "Same pressure mechanism, but sited in the fourth-to-fifth toe web space...",
+# which is anaphoric and also the defining fact, so a blanket rule would delete
+# the answer.
+_POINTER = re.compile(r"^(the same|same\b|this|these|those|it|they|also called|"
+                      r"also known|the more common|the most common form|"
+                      r"the commonest form|the commonest|a variant|a form of|"
+                      r"hence|as above|likewise)\b", re.I)
+POINTER_MAX_WORDS = 8
+
+
+def drop_pointer_opener(parts):
+    while (len(parts) > 1 and _POINTER.match(parts[0].strip())
+           and len(parts[0].split()) <= POINTER_MAX_WORDS):
+        parts = parts[1:]
+    return parts
+
+
 def card_back(desc):
     """First sentence or two of the description, capped for a card back."""
-    parts = sentences(desc)
+    parts = drop_pointer_opener(sentences(desc))
     out = parts[0]
     if len(out.split()) < 12 and len(parts) > 1:
         out = out + " " + parts[1]
