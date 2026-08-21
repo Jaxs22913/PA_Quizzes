@@ -39,6 +39,22 @@
       <div class="match-stat"><span class="num" id="match-progress">0 / 0</span><span class="lbl">Matched</span></div>
       <div class="match-stat best"><span class="num" id="match-best">—</span><span class="lbl">Best</span></div>
     </div>
+    <div class="match-bar">
+      <div class="match-bar-track"><div class="match-bar-fill" id="match-bar-fill"></div></div>
+      <span class="match-bar-count" id="match-bar-count">0 / 0</span>
+    </div>
+
+    <div class="match-controls">
+      <label class="match-size" for="match-size">
+        <span>Pairs on screen</span>
+        <input type="number" id="match-size" min="2" step="1" inputmode="numeric">
+      </label>
+      <button type="button" class="match-fs" id="match-fs" hidden>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+        <span id="match-fs-label">Fullscreen</span>
+      </button>
+    </div>
+
     <div class="match-columns">
       <div class="match-col" id="match-terms"><div class="match-col-label">Terms</div></div>
       <div class="match-col" id="match-defs"><div class="match-col-label">Definitions</div></div>
@@ -70,11 +86,26 @@
 (function () {
   "use strict";
 
-  // Board stays capped at WINDOW_SIZE pairs at once -- when you clear one,
-  // the next pair waiting in the pool pops in to take its place, same as
-  // Notability's Mix and Match ("correct matches turn green and advance the
-  // quiz with new terms") rather than dumping the whole deck on screen.
-  var WINDOW_SIZE = 5;
+  // How many pairs sit on the board at once. When you clear one, the next pair
+  // waiting in the pool pops in to take its place, same as Notability's Mix and
+  // Match ("correct matches turn green and advance the quiz with new terms")
+  // rather than dumping the whole deck on screen.
+  //
+  // Requested by David via Jaxon, 2026-08-20: "make it so people can type a
+  // number and that many terms (with their corresponding def) will populate the
+  // page." So it is a control rather than a constant, and it is remembered --
+  // someone who wants ten rows wants ten rows next time too.
+  var DEFAULT_WINDOW = 5;
+  var WINDOW_KEY = "arcadeMatchWindow";
+
+  function readWindowSize() {
+    var n = parseInt(localStorage.getItem(WINDOW_KEY), 10);
+    return (n && n >= 2) ? n : DEFAULT_WINDOW;
+  }
+  function writeWindowSize(n) {
+    try { localStorage.setItem(WINDOW_KEY, String(n)); } catch (e) {}
+  }
+  var WINDOW_SIZE = readWindowSize();
   var deck = findDeck(deckIdFromURL());
   var pool = [], active = [], matchedCount = 0, totalPairs = 0;
   var selectedTermId = null, selectedDefIndex = null;
@@ -175,6 +206,12 @@
 
   function updateStats() {
     document.getElementById("match-progress").textContent = matchedCount + " / " + totalPairs;
+    // Notability shows a filling bar with "1/12" above the cards; the timer and
+    // best-time stay because this is still a speed run, the bar just makes
+    // "how much is left" readable at a glance.
+    var pct = totalPairs ? (matchedCount / totalPairs) * 100 : 0;
+    document.getElementById("match-bar-fill").style.width = pct.toFixed(1) + "%";
+    document.getElementById("match-bar-count").textContent = matchedCount + " / " + totalPairs;
     var best = getMatchBest(deck.id);
     document.getElementById("match-best").textContent = best ? formatMs(best) : "—";
   }
@@ -184,7 +221,62 @@
     el.textContent = formatMs(Date.now() - startTime);
   }
 
+  // ---- pair-count control -------------------------------------------------
+  function syncSizeInput() {
+    var input = document.getElementById("match-size");
+    if (!input) return;
+    var max = (deck.matchCards || deck.cards || []).length;
+    input.max = String(max);
+    // Never offer a number larger than the deck: typing 40 into a 14-pair deck
+    // should land on 14, not silently do nothing.
+    if (WINDOW_SIZE > max) WINDOW_SIZE = max;
+    input.value = String(WINDOW_SIZE);
+  }
+
+  function applySize(raw) {
+    var max = (deck.matchCards || deck.cards || []).length;
+    var n = parseInt(raw, 10);
+    if (!n || n < 2) n = 2;
+    if (n > max) n = max;
+    if (n === WINDOW_SIZE) { syncSizeInput(); return; }
+    WINDOW_SIZE = n;
+    writeWindowSize(n);
+    syncSizeInput();
+    startGame();          // re-deal: the board size changed under the player
+  }
+
+  // ---- fullscreen ---------------------------------------------------------
+  // Desktop only, and hidden entirely where the API is unavailable -- iOS
+  // Safari has no element fullscreen, so showing a button that does nothing
+  // would be worse than not showing one.
+  function fullscreenSupported() {
+    var el = document.documentElement;
+    return !!(el.requestFullscreen || el.webkitRequestFullscreen);
+  }
+  function isFullscreen() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement);
+  }
+  function toggleFullscreen() {
+    var el = document.documentElement;
+    if (isFullscreen()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+    }
+  }
+  function syncFullscreenBtn() {
+    var btn = document.getElementById("match-fs");
+    if (!btn) return;
+    var wide = window.matchMedia("(min-width: 820px)").matches;
+    var coarse = window.matchMedia("(pointer: coarse)").matches;
+    btn.hidden = !(wide && !coarse && fullscreenSupported());
+    document.getElementById("match-fs-label").textContent =
+      isFullscreen() ? "Exit fullscreen" : "Fullscreen";
+    document.body.classList.toggle("is-fullscreen", isFullscreen());
+  }
+
   function startGame() {
+    syncSizeInput();
     buildPool(deck);
     selectedTermId = null;
     selectedDefIndex = null;
@@ -286,6 +378,24 @@
     SOUNDS.win();
     burstConfetti();
   }
+
+  var sizeInput = document.getElementById("match-size");
+  if (sizeInput) {
+    sizeInput.addEventListener("change", function () { applySize(this.value); });
+    // Enter commits without waiting for blur, and stops the keypress reaching
+    // the board.
+    sizeInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); this.blur(); applySize(this.value); }
+      e.stopPropagation();
+    });
+  }
+  var fsBtn = document.getElementById("match-fs");
+  if (fsBtn) fsBtn.addEventListener("click", toggleFullscreen);
+  ["fullscreenchange", "webkitfullscreenchange"].forEach(function (evt) {
+    document.addEventListener(evt, syncFullscreenBtn);
+  });
+  window.addEventListener("resize", syncFullscreenBtn);
+  syncFullscreenBtn();
 
   document.addEventListener("click", function (e) {
     var termBtn = e.target.closest("#match-terms [data-pair-id]");
