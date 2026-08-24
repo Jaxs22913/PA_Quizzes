@@ -23,8 +23,9 @@ from cms_l9_pool_b import POOL_B
 from cms_l9_pool_c import POOL_C
 from cms_l9_pool_d import POOL_D
 from cms_l9_pool_e import POOL_E
+from cms_l9_pool_f import POOL_F
 
-POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E
+POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E + POOL_F
 
 # CMS scope guard: Set 1 is objective-style, NOT vignettes. A stem that opens
 # with a patient age and presentation belongs in Set 2, and mixing them would
@@ -106,10 +107,21 @@ if __name__ == "__main__":
     print()
 
     answer_text = {id(q): q["opts"][q["c"]][0] for q in POOL}
-    best, idx = None, list(range(len(POOL)))
+
+    # POOL F IS GUARANTEED A PLACE. Its questions cover content that exists only
+    # as pictures -- the Clark level diagram, the Stages of Melanoma diagram and
+    # the TNM staging table, all on slides whose text extracts as empty. A
+    # student cannot pick that up by re-reading the deck, which is precisely why
+    # it must not be left to a random 60-of-84 draw. On the first run it was:
+    # the Clark questions were written and then sampled straight back out again.
+    must = [i for i, q in enumerate(POOL) if q in POOL_F]
+    rest = [i for i in range(len(POOL)) if i not in set(must)]
+    assert len(must) <= 60, "more guaranteed questions than places"
+
+    best, idx = None, list(rest)
     for _ in range(30000):
         random.shuffle(idx)
-        chosen = idx[:60]
+        chosen = must + idx[:60 - len(must)]
         s1 = [POOL[i] for i in chosen[:30]]
         s2 = [POOL[i] for i in chosen[30:]]
         total = score(s1) + score(s2)
