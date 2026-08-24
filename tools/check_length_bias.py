@@ -24,6 +24,7 @@ Exits non-zero if any file exceeds THRESHOLD on gameable%.
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -58,6 +59,20 @@ EXTRACT = r"""
     var opts = q.opts || q.choices || q.options || q.o;
     var c = (q.c !== undefined) ? q.c : (q.answer !== undefined ? q.answer : q.a);
     if (!opts) continue;
+    // SOME QUIZZES FLAG THE CORRECT OPTION INSIDE THE OPTION, with no
+    // question-level index at all: {"t":"Pituitary gland","c":true}. Those fell
+    // through the typeof check below and every question was dropped, so the
+    // whole file returned an empty array and was skipped as unreadable. At
+    // least one quiz on this site (Anatomy Exam 3 endocrine) had therefore
+    // never been checked for length bias at all.
+    if (c === undefined && Object.prototype.toString.call(opts) === '[object Array]') {
+      for (var f = 0; f < opts.length; f++) {
+        var of_ = opts[f];
+        if (of_ && typeof of_ === 'object' && (of_.c === true || of_.correct === true)) {
+          c = f; break;
+        }
+      }
+    }
     var texts = [];
     if (Object.prototype.toString.call(opts) === '[object Array]') {
       for (var k = 0; k < opts.length; k++) {
@@ -192,16 +207,29 @@ def main():
     flagged = [r for r in results if r["gameable_pct"] > args.threshold]
     flagged.sort(key=lambda r: -r["gameable_pct"])
     print("\n" + "=" * 62)
-    # A file that could not be read is REPORTED, never silently dropped. Anything
-    # listed here has not been checked for length bias at all.
-    if unread:
-        print("\nCOULD NOT READ A QUESTION BANK FROM %d FILE(S) -- these were NOT checked:"
-              % len(unread))
-        for rel in unread[:20]:
+    # A file that could not be read is REPORTED, never silently dropped -- but
+    # only if it LOOKS like a quiz. The first version of this listing named 598
+    # files, nearly all of them study guides, cram sheets and reference pages
+    # that legitimately have no question bank, which buried the one entry that
+    # mattered. A warning nobody can read is not a warning.
+    suspect = []
+    for rel in unread:
+        try:
+            src = open(os.path.join(root, rel), encoding="utf-8", errors="replace").read()
+        except OSError:
+            continue
+        if re.search(r"(?:var|const|let)?\s*QUESTIONS\s*=\s*\[", src):
+            suspect.append(rel)
+
+    if suspect:
+        print("\nHAS A QUESTION BANK IN ITS SOURCE BUT COULD NOT BE READ -- NOT CHECKED:")
+        for rel in suspect:
             print("   %s" % rel)
-        if len(unread) > 20:
-            print("   ... and %d more" % (len(unread) - 20))
         print()
+    if unread:
+        print("(%d further file(s) returned no question bank and carry none in their "
+              "source -- guides, cram sheets and reference pages)\n"
+              % (len(unread) - len(suspect)))
 
     print(f"files with a question bank : {len(results)}")
     print(f"questions                  : {tot_q}")
