@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f7d7a; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS I Exam 1 Master Exam &mdash; Form C</title>
+<style>
+  :root{
+    --navy:#17494b; --indigo:#3f7d7a; --gold:#c08a2e; --ice:#eef5f4;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Medicine and Surgery I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 1 &middot; Dermatology block, Lectures 1&ndash;9 &middot; Form C</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from every lecture in the Exam 1 dermatology block, in exam proportions rather than at random &mdash; each of the nine lectures contributes to every form, so this is a genuine cumulative rehearsal and not a sample of whichever topic had the most questions written for it. Questions are reused verbatim from the topic quizzes, so nothing here can drift from the material it is summarising. <b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Clinical reasoning</span><span class="chip">General Derm I</span><span class="chip">Derm II</span><span class="chip">Bacterial</span><span class="chip">Infestations</span><span class="chip">Viral &amp; fungal</span><span class="chip">Benign lesions</span><span class="chip">Pigmented lesions</span><span class="chip">Pre-malignant &amp; malignant</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Scabies", "io": "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations", "q": "Why is facility-associated scabies a particular concern?", "opts": [["Residents are children under twelve, in whom the infestation spreads through shared headgear", "That describes head lice in schoolchildren."], ["Residents are homeless or displaced, in whom infestation persists through unwashed clothing", "That describes body lice."], ["Residents travel frequently, carrying the organism between facilities in luggage and bedding", "That describes bedbug spread."], ["Residents are elderly and immunosuppressed, and a hospital epidemic can follow their admission", "Correct, and it is difficult to eradicate once healthcare workers are infested."]], "c": 3, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 5"}, {"topic": "Vitiligo", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions", "q": "What is first-line treatment for vitiligo involving more than 5% of the body surface?", "opts": [["Topical corticosteroid applied twice daily to all affected areas of skin", "Topical therapy suits limited involvement below 5%."], ["Surgical tissue or cellular grafting to repopulate the depigmented skin", "Grafting is reserved for highly stable disease."], ["Systemic immunosuppression with a calcineurin inhibitor taken orally", "Calcineurin inhibitors are used topically here."], ["Phototherapy, with narrow band ultraviolet B preferred over PUVA", "Correct — PUVA carries adverse effects including increased skin cancer risk."]], "c": 3, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 25"}, {"topic": "Herpes simplex virus", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "slot": "test finding", "q": "What should be done with a low-positive herpes simplex type 2 serology result?", "opts": [["Confirm it with a second method when one is available", "Correct — low-positive results may be false positives."], ["Accept it as diagnostic and begin suppressive therapy", "A low-positive result needs confirmation first."], ["Discard it and repeat the identical assay in six months", "The deck advises a second method, not the same one."], ["Confirm it with an immunoglobulin M level on the same sample", "The deck says not to use IgM."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 123"}, {"topic": "Ticks", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations", "slot": "risk factors", "q": "Which risk factors are named for Rocky Mountain spotted fever?", "opts": [["Immunosuppression, renal failure, alcoholism and injection drug use", "Those are risk factors for necrotizing fasciitis."], ["Obesity, diabetes and nasal carriage of Staphylococcus aureus", "Those are risk factors for recurrent furunculosis."], ["Male sex, adults aged 40 to 64, children under 10, and rural dwelling", "Correct — it is prevalent in southeastern and south central states in spring and early summer."], ["Female sex, adults over 65 years, urban dwelling, and winter exposure", "That reverses most of the named factors."]], "c": 2, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 81"}, {"topic": "Scabies", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations", "q": "A 29-year-old woman has suspected scabies with several unexcoriated papules on the wrist. Which is the most appropriate next step?", "opts": [["Potassium hydroxide preparation of a plucked hair examined under a microscope", "That test identifies dermatophyte infection."], ["Skin scraping of an unexcoriated burrow with mineral oil on a number 15 blade", "Correct — microscopic identification of the organism, ova or faeces is the definitive diagnosis."], ["Serological testing for immunoglobulin M and immunoglobulin G against the mite", "Serology belongs to Lyme disease rather than scabies."], ["Punch biopsy of an active lesion sent for direct immunofluorescence studies", "Immunofluorescence addresses autoimmune blistering disease."]], "c": 1, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 13"}, {"topic": "Warts", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "slot": "prognosis", "q": "What does the deck say about eradicating human papillomavirus with wart therapy?", "opts": [["Salicylic acid eradicates it reliably when used for six weeks", "The deck makes no such claim."], ["Surgical excision eradicates it reliably in immunocompetent patients", "Excision is not offered as curative here."], ["No therapy eradicates it with certainty, and recurrence can occur", "Correct — set expectations accordingly."], ["Cryotherapy eradicates it reliably, so recurrence does not occur", "No therapy eradicates it with certainty."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 149"}, {"topic": "Naevus spilus", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions", "q": "With what other anomalies can naevus spilus be associated?", "opts": [["Anomalies of vascular, central nervous system or connective tissue origin", "Correct — it is a variant of congenital naevus present at birth or in the first years of life."], ["Anomalies of the endocrine system with insulin resistance and hyperandrogenism", "Those associations belong to acanthosis nigricans."], ["Anomalies of the gastrointestinal tract with malabsorption and coeliac disease", "That association belongs to dermatitis herpetiformis."], ["Anomalies of the haematologic system with monoclonal gammopathy and myeloma", "That association belongs to pyoderma gangrenosum."]], "c": 0, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 33"}, {"topic": "Folliculitis", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "A 28-year-old man with folliculitis has failed topical mupirocin. Scraping and culture are being arranged. Which additional test excludes fungal folliculitis?", "opts": [["A Tzanck smear taken from an unroofed pustule on the thigh", "That test is used to exclude herpetic whitlow at the finger."], ["A punch biopsy of normal skin adjacent to an affected follicle", "Biopsy is available but is not the test for dermatophytes."], ["A potassium hydroxide wet mount using a plucked hair", "Correct — that is the specific test named for dermatophyte folliculitis."], ["A Wood's lamp examination looking for coral-red fluorescence", "That fluorescence identifies erythrasma."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 44"}, {"topic": "Perioral dermatitis", "io": "Objective c — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What is the most important modifiable association of perioral dermatitis?", "opts": [["Topical corticosteroid exposure", "Correct — and treatment begins by stopping it, with a warning that the eruption may temporarily worsen on withdrawal."], ["Sun exposure", "Photoreactions are covered in General Dermatology II rather than being this association."], ["Overgrowth of Malassezia yeast", "That is seborrhoeic dermatitis."], ["Nickel exposure", "Nickel causes allergic contact dermatitis."]], "c": 0, "cite": "2. General Dermatology I.pptx, Slide 98"}, {"topic": "Molluscum contagiosum", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "slot": "manifestation", "q": "Which single feature is characteristic of the molluscum lesion?", "opts": [["Central umbilication", "Correct — the deck calls it characteristic."], ["An advancing scaly border", "That is the dermatophyte pattern."], ["A thrombosed capillary dot", "Those are seen in common warts."], ["A shallow painful ulcer", "Ulceration describes herpes simplex."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 134"}, {"topic": "Pilonidal cyst", "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A patient has a blind-ending track opening onto the skin over the coccyx. Which term describes it, and how does it differ from the alternative?", "opts": [["A fistula; a sinus instead connects two epithelium-lined surfaces", "This reverses the two definitions."], ["A sinus; a fistula instead is always congenital in origin", "The difference is where the track ends, not its origin."], ["A fistula; a sinus instead is lined with keratin", "Lining is not the distinction being drawn."], ["A sinus; a fistula instead connects two epithelium-lined surfaces", "Correct — both usually arise from a preceding abscess."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 42"}, {"topic": "Sunburn", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "avoid", "q": "Which measure is specifically advised against in the management of sunburn?", "opts": [["Applying aloe vera or a soy-based topical moisturiser", "Those are soothing, though they do not alter healing."], ["Giving oral or intravenous fluids for systemic symptoms", "Hydration is part of management."], ["Popping blisters, because intact blisters are protective", "Correct — cool rather than cold water is also specified."], ["Starting a nonsteroidal anti-inflammatory drug early in the course", "Early nonsteroidals are recommended."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 96"}, {"topic": "Common acquired naevus", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions", "q": "A 26-year-old man asks why he has more moles than his sister when they grew up in the same house. Which risk factors are named?", "opts": [["Older age, cumulative sun damage, tanning and use of hormonal contraception", "Those are the associations of solar lentigo."], ["Ultraviolet radiation exposure, male sex and a genetic component, with more lesions in light skin that sunburns", "Correct — numbers peak in the thirties then decline."], ["Ultraviolet radiation exposure, female sex and a purely environmental cause, with more lesions in darker skin", "That reverses the sex and skin-type relationships."], ["Autoimmune disease, immunosuppression and a family history of thyroid or coeliac disease", "Those associations belong to vitiligo and dermatitis herpetiformis."]], "c": 1, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 35"}, {"topic": "Keloid", "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "A patient's keloid has been treated with laser. Which addition does the lecture say gives the best result?", "opts": [["Combining the laser with over-the-counter keratolytics", "Keratolytics have no role in keloid treatment."], ["Combining the laser with oral antibiotics", "Antibiotics are used for an inflamed epidermoid cyst, not here."], ["Combining the laser with beta-blockade", "Beta-blockade is the infantile hemangioma treatment."], ["Combining the laser with intralesional steroids", "Correct — laser works by shrinking collagen or inducing microvascular thrombosis."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 19"}, {"topic": "Acne vulgaris", "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "slot": "first-line", "q": "Which slides did Professor Jaquith name out loud as really important, and what are they?", "opts": [["The necrotizing fasciitis red flags", "Not the slides she flagged."], ["The acne treatment ladder, slides 32 and 33", "Correct — she said 'make sure you know this', which is as direct a flag as the lecture gives."], ["The MRSA risk factor list, slides 44 and 45", "Not the slides she named."], ["The cellulitis versus erysipelas comparison", "Important content, but not the slides she flagged."]], "c": 1, "cite": "2026-08-19 lecture recording, 15:40"}, {"topic": "MRSA considerations", "io": "Objective b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections", "q": "Which trait is shared by the oral agents named across this lecture for methicillin-resistant Staphylococcus aureus skin infection?", "opts": [["Trimethoprim-sulfamethoxazole, clindamycin and doxycycline recur as the core options", "Correct, with linezolid and ciprofloxacin added in particular settings."], ["Dicloxacillin, cephalexin and amoxicillin-clavulanate recur as the core options", "Those are the agents for methicillin-sensitive disease."], ["Penicillin V, erythromycin and clarithromycin recur as the core options", "Those cover streptococcal and corynebacterial infection."], ["Mupirocin, retapamulin and fusidic acid recur as the core options", "Those are topical agents rather than oral ones."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 66"}, {"topic": "Keloid", "io": "Objective b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "education", "q": "A 15-year-old with moderate acne has a family history of keloids. Which is the most appropriate counselling point?", "opts": [["Wait until the acne resolves on its own before starting any treatment", "Delay is the opposite of what is advised."], ["Begin silicone sheeting over the acne-prone areas now", "Silicone sheeting treats an existing scar rather than preventing acne."], ["Avoid all topical acne therapy, since it provokes fibrous overgrowth", "No such avoidance is described."], ["Treat the acne early and appropriately", "Correct — acne is one of the named keloid triggers, and early appropriate treatment greatly increases the chance of scar-free healing."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 20"}, {"topic": "Allergic contact dermatitis", "io": "Objective c — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "A 30-year-old has extensive urushiol contact dermatitis covering both arms, the neck and part of the trunk. Which is the most appropriate treatment?", "opts": [["High-potency topical corticosteroids alone", "Topical therapy suits mild eruptions on limited body surface area."], ["A five-day course of oral prednisone without any taper", "Right drug, wrong duration: stopping early results in high rates of rebounding."], ["Oral antihistamines alone", "Antihistamines address itch but will not control an extensive eruption."], ["High-dose oral corticosteroids tapered over two to three weeks", "Correct — extensive disease needs systemic therapy, and early discontinuation causes high rates of rebound."]], "c": 3, "cite": "2. General Dermatology I.pptx, Slide 89"}, {"topic": "Malignant melanoma", "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "lead": "test", "q": "A 61-year-old's melanoma measures 0.9 mm Breslow thickness, but her report notes ulceration and a high mitotic rate. Which is the most appropriate interpretation?", "opts": [["Sentinel lymph node biopsy is mandatory, because ulceration alone converts this to advanced disease", "It is offered and discussed rather than mandatory, and ulceration does not itself mean advanced disease."], ["Sentinel lymph node biopsy should be deferred until the lesion recurs locally after re-excision", "It is a staging decision taken at diagnosis."], ["Sentinel lymph node biopsy should be offered or discussed, because additional histologic risk factors lower the threshold to 0.8 mm", "Correct — ulceration, high mitotic rate and lymphovascular invasion are the three named factors."], ["Sentinel lymph node biopsy is not indicated, because the threshold is a fixed 1.0 mm regardless of other features", "The threshold drops to 0.8 mm with risk factors."]], "c": 2, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 51"}, {"topic": "Keloid", "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "slot": "escalation", "q": "When may radiation be used for a keloid?", "opts": [["Only in patients who cannot tolerate silicone sheeting or compression garments", "Tolerance of other therapies is not the stated indication."], ["During the first two weeks after the keloid has been excised", "Correct — it is an adjunct to surgery rather than a primary treatment."], ["As a first-line treatment before any surgery is attempted", "Radiation is not offered first here."], ["Only once intralesional steroid and compression have both failed over a year", "The deck ties radiation to the post-excision window rather than to failure."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 18"}, {"topic": "Impetigo", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "A parent asks whether antibiotics given earlier would have prevented their child's post-streptococcal glomerulonephritis. Which is the most appropriate response?", "opts": [["Antibiotics prevent it only when the causative organism has been confirmed by culture", "Culture status does not change the lack of prevention."], ["Antibiotics worsen it, which is why topical therapy is preferred in young children", "Antibiotics do not worsen the complication."], ["Antibiotics do not prevent it, because the immune activation usually precedes treatment", "Correct — that is stated explicitly for this complication."], ["Antibiotics prevent it reliably if started within the first forty-eight hours of the rash", "Prevention is specifically stated not to occur."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 97"}, {"topic": "Acne rosacea", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "A 46-year-old fair-skinned woman has eighteen months of central facial redness with visible fine vessels across both cheeks and the nose. She flushes with red wine and hot drinks. There are no papules, pustules or comedones. Which subtype is this?", "opts": [["Phymatous rosacea affecting the nose", "That produces skin thickening and nodular enlargement, predominantly in males."], ["Acne vulgaris of adult onset", "That would show open or closed comedones, which are absent in rosacea."], ["Erythematotelangiectatic rosacea", "Correct — persistent central erythema, flushing and telangiectasias without papules or pustules, and the most common subtype."], ["Papulopustular rosacea in its early phase", "That subtype has transient central papules and pustules on a background of erythema."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 66"}, {"topic": "Lichen simplex chronicus", "io": "Objective c — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological conditions", "slot": "complication", "q": "When should a lichen simplex chronicus plaque be biopsied?", "opts": [["When emollients alone have failed to settle the plaque completely", "Failure of emollients alone is not the stated trigger."], ["When it is atypical, unilateral, nodular, ulcerated or treatment-resistant", "Correct — the purpose is to exclude neoplasia or another inflammatory disorder."], ["When it has been present for longer than six weeks in any location", "Duration alone is not the stated trigger."], ["When the patient reports that the itch is worse at night than by day", "Nocturnal itch is characteristic rather than a biopsy indication."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 182"}, {"topic": "Erythema multiforme", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What triggers the majority of erythema multiforme cases?", "opts": [["Sulfonamide antibiotics, accounting for over 50% of cases", "Drugs including sulfonamides are triggers, but they are far from the majority."], ["Mycoplasma pneumoniae, accounting for over 50% of cases", "Mycoplasma is a recognised infectious trigger but not the leading one."], ["Idiopathic causes, accounting for over 50% of cases", "Idiopathic causes account for roughly 10% of cases."], ["Herpes simplex virus, accounting for over 50% of cases", "Correct. Other infectious causes include Mycoplasma pneumoniae, histoplasmosis, Epstein-Barr virus and coxsackievirus."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 8"}, {"topic": "Pityriasis versicolor", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "slot": "first-line", "q": "What is first-line therapy for pityriasis versicolor, and what is one named regimen?", "opts": [["Oral terbinafine taken for a course of two weeks", "Oral terbinafine is ineffective for this infection."], ["Topical nystatin applied twice daily for a fortnight", "Nystatin covers Candida only."], ["Topical therapy; selenium sulfide daily for seven days", "Correct — regimens vary by product. Ketoconazole shampoo or cream, zinc pyrithione, ciclopirox and topical terbinafine are the other options."], ["Oral fluconazole for seven days, in every case regardless of extent", "Systemic therapy is reserved for extensive, recurrent or refractory disease."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 81"}, {"topic": "Actinic keratosis", "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "slot": "manifestation", "q": "Describe the actinic keratosis lesion, including the finding the deck says may be more apparent by touch than by sight.", "opts": [["Large 2 to 6 cm deeply pigmented plaques, flesh-coloured at the edge, with a smooth waxy stuck-on surface that is more apparent by sight than by touch", "A stuck-on waxy plaque describes seborrheic keratosis."], ["Small 0.2 to 0.6 cm pearly translucent or pink papules with visible telangiectasias that become more apparent when the skin is stretched", "Pearly papules with telangiectasias describe nodular basal cell carcinoma."], ["Small violaceous or purple macules and plaques, flesh-coloured early on, that are softer than surrounding skin and more apparent by sight than by touch", "Violaceous lesions suggest Kaposi sarcoma."], ["Small 0.2 to 0.6 cm flesh-coloured, pink or slightly hyperpigmented papules with a characteristic sandpaper texture on palpation", "Correct — the sandpaper texture is often felt before it is seen."]], "c": 3, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 12"}, {"topic": "Androgenetic alopecia", "io": "Objective c — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What is finasteride, and what are its cautions?", "opts": [["An oral antiandrogen used first line in women", "Finasteride is not indicated in women; oral antiandrogens such as combined oral contraceptives may be considered instead."], ["A topical 5-alpha-reductase inhibitor applied to the crown, whose effects on libido and erectile function are permanent and do not reverse at all when the drug is stopped", "The effects are reversible when the drug is stopped."], ["An oral 5-alpha-reductase type 2 inhibitor; about 2% of men report reduced libido and erectile function, reversible on stopping, and it is not indicated in women and contraindicated in pregnancy", "Correct, and it works best combined with minoxidil."], ["A topical vasodilator effective mainly at the crown", "That describes minoxidil."]], "c": 2, "cite": "2. General Dermatology I.pptx, Slide 148"}, {"topic": "Alopecia areata", "io": "Objective c — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological conditions", "slot": "referral", "q": "Which supportive measure is described as one of the most important considerations in alopecia areata?", "opts": [["Referral to a wig service before starting any medical therapy", "That is not what the lecture names."], ["Psychological support, with support groups offered", "Correct — the visible nature of the condition carries real psychological weight."], ["Referral to endocrinology for thyroid function assessment", "Autoimmune associations exist but this is not what is named here."], ["Referral for hair transplantation early in the disease course", "Transplantation is discussed for androgenetic rather than areata."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 140"}, {"topic": "Squamous cell carcinoma", "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "slot": "agent/regimen", "q": "Which chemoprevention does the deck give for squamous cell carcinoma, at what dose, and with what effect?", "opts": [["Nicotinamide 500 mg orally twice daily, reducing new squamous cell carcinoma development by approximately 20% in high-risk patients", "20% is the figure the deck gives for basal cell carcinoma."], ["Oral acitretin 25 mg daily, reducing new squamous cell carcinoma development by approximately 30% in high-risk patients", "The agent named is nicotinamide."], ["Topical fluorouracil twice daily, reducing new squamous cell carcinoma development by approximately 50% in high-risk patients", "Fluorouracil treats existing disease; it is not the chemoprevention named."], ["Nicotinamide 500 mg orally twice daily, reducing new squamous cell carcinoma development by approximately 30% in high-risk patients", "Correct — the corresponding figure for basal cell carcinoma is about 20%."]], "c": 3, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 21"}, {"topic": "Actinic keratosis", "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "lead": "next step", "q": "One of that 71-year-old's scalp lesions is now thickened, indurated and has bled twice. Which is the most appropriate next step?", "opts": [["Reassure and review in a year, since actinic keratoses commonly involute without treatment", "Involution is possible but does not explain induration and bleeding."], ["Order a shave or punch biopsy, because induration and bleeding raise concern for squamous cell carcinoma", "Correct — those features are not part of a typical actinic keratosis."], ["Treat with liquid nitrogen cryotherapy and review in three months, since these are expected features", "Bleeding and induration are explicitly not typical and warrant tissue."], ["Begin field-directed fluorouracil to the whole scalp and review at the end of the course", "Field therapy does not address a lesion behaving like a carcinoma."]], "c": 1, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 13"}, {"topic": "Cercarial dermatitis", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations", "slot": "complication", "q": "Which systemic features can accompany cercarial dermatitis?", "opts": [["Headaches, fever and lymphangitis", "Correct — pain and swelling peak at forty-eight to seventy-two hours."], ["Cramping abdominal pain and muscle spasm", "Those belong to a black widow spider bite."], ["Cranial nerve palsy and meningitis", "Those belong to disseminated Lyme disease."], ["Aplastic anaemia and memory impairment", "Those belong to a hobo spider bite."]], "c": 0, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 90"}, {"topic": "Erysipelas", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Which laboratory and imaging studies are appropriate in classic erysipelas?", "opts": [["Computed tomography of the affected limb to define the depth of tissue involvement", "Imaging is of low yield and not indicated in classic presentation."], ["Punch biopsy of the leading edge to distinguish erysipelas from contact dermatitis", "Biopsy is not part of the routine erysipelas workup."], ["None routinely — the diagnosis is clinical, and blood and tissue cultures have very low yield", "Correct. Leukocytosis and raised inflammatory markers are common but not diagnostic."], ["Blood and tissue cultures in every case, since organism identification guides the antibiotic", "Their yield is described as extremely low and not cost effective."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 103"}, {"topic": "Diaper dermatitis", "io": "Objective c — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "An 8-month-old has erythema, scaling and small erosions over the convex surfaces of the buttocks and upper thighs, with the inguinal folds clearly spared. There is no purulence. Which is the most appropriate initial management?", "opts": [["Frequent diaper changes, gentle cleansing, air exposure and a thick zinc oxide or petrolatum barrier at each change", "Correct — reducing moisture and irritant exposure is the foundation, and the fold sparing indicates irritant rather than candidal disease."], ["A topical antifungal at every change", "An antifungal is added when candidal disease is suspected, which fold involvement and satellite lesions would indicate."], ["Oral antibiotics", "Antibiotics are used only when bacterial infection is clinically supported."], ["A high-potency topical corticosteroid applied at every change until the rash has completely cleared", "Only a brief course of a low-potency steroid is used, and only for significant inflammation."]], "c": 0, "cite": "2. General Dermatology I.pptx, Slide 109"}, {"topic": "Basal cell carcinoma", "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "lead": "diagnosis", "q": "A 59-year-old has an ivory-white, scar-like plaque on the cheek. He has had no injury there. On careful inspection the pink edge seems to extend further than the visible lesion. Which subtype is this, and what is the concern?", "opts": [["Superficial basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment", "Superficial disease is a reddish shiny plaque on back or chest."], ["Nodular basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment", "Nodular disease has a defined pearly border."], ["Pigmented basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment", "Pigmented disease mimics melanocytic lesions rather than scar."], ["Morpheaform or sclerosing basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment", "Correct — the invisible extension is what makes it dangerous."]], "c": 3, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 35"}, {"topic": "Antifungal classes", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "slot": "agent/regimen", "q": "How does the imidazole class work, and which two examples does the deck give?", "opts": [["It blocks synthesis of chitin in the fungal cell wall; nystatin and amphotericin", "Chitin synthesis is not the mechanism described, and those agents are not imidazoles."], ["It inhibits fungal deoxyribonucleic acid synthesis; griseofulvin and fluconazole", "Neither the mechanism nor the pairing matches the slide."], ["It blocks ergosterol synthesis; clotrimazole and ketoconazole", "Correct — ergosterol is a vital component of the fungal cell membrane, so blocking it halts growth and replication. The names end in -azole."], ["It destroys the fungal cell membrane directly; terbinafine and naftifine", "That is the allylamine class."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 5"}, {"topic": "Tinea corporis", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "lead": "education", "q": "A patient asks why you will not prescribe the combination steroid and antifungal cream that a friend recommended. Which is the most appropriate response?", "opts": [["Combination products cannot be used on the trunk because of the risk of systemic absorption", "Absorption is not the reason given."], ["Corticosteroids prevent the antifungal from reaching the stratum corneum where the fungus lives", "The concern is masking and worsening, not blocked delivery."], ["Corticosteroids can mask and worsen a dermatophyte infection, producing tinea incognito", "Correct — that is exactly the mechanism of tinea incognito."], ["Combination products are less effective because the two drugs chemically inactivate each other", "No such interaction is described."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 28"}, {"topic": "Warts", "io": "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "slot": "manifestation", "q": "Where do plantar warts occur, and what do they form when they cluster?", "opts": [["On the dorsal foot, and clustered together they form a giant condyloma", "Plantar warts sit on weight-bearing surfaces."], ["On weight-bearing surfaces, and clustered together they form a single deep abscess", "Clustering produces a mosaic wart, not an abscess."], ["On the fingers and palms, and clustered together they form a periungual band", "That distribution describes common warts."], ["On weight-bearing surfaces, and clustered together they form a mosaic wart", "Correct — mosaic warts are clustered plantar warts."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 145"}, {"topic": "Erythema multiforme", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "differential", "q": "Which features separate a fixed drug eruption from erythema multiforme?", "opts": [["It produces extensive epidermal detachment with mucosal involvement and systemic toxicity", "That describes Stevens-Johnson syndrome and toxic epidermal necrolysis."], ["It produces tender nodules on the anterior shins that never go on to ulcerate", "That describes erythema nodosum."], ["It recurs at the same site, leaves residual hyperpigmentation, and has few lesions without three concentric zones", "Correct — the three-zone target is what defines an erythema multiforme lesion."], ["It produces wheals that migrate, blanch fully and resolve within twenty-four hours of first appearing", "That describes urticaria."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 10"}, {"topic": "Naturalistic approach", "io": "Discuss the naturalistic approach", "q": "Beyond treating before diagnosis, which two actions does the lecture associate with the naturalistic approach?", "opts": [["Ruling out the worst-case scenario and following responses to interventions", "Correct. Both are listed under the naturalistic, event-driven approach."], ["Calculating pretest probability and applying sensitivity and specificity", "These are the quantitative techniques used in analytic decision making."], ["Assessing readiness to change and arranging follow-up", "These belong to behaviour-change counselling and the Five As."], ["Formulating a clinical question and appraising the literature", "These belong to evidence-based medicine."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 24"}, {"topic": "Cutaneous T-cell lymphoma", "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "slot": "manifestation", "q": "What is the early morphology of cutaneous T-cell lymphoma, and what is it commonly mistaken for?", "opts": [["Localised or generalised erythematous patches or scaly plaques, usually on the trunk and frequently larger than 5 cm; it may resemble psoriasis, eczema or tinea", "Correct — which is why diagnosis is often delayed."], ["Localised pearly papules with telangiectasias, usually on the face and frequently smaller than 5 mm; it may resemble sebaceous hyperplasia", "Those are basal cell carcinoma features."], ["Red or purple macules and nodules, usually on the lower limbs and oral mucosa; it may resemble bacillary angiomatosis", "Those are Kaposi sarcoma features."], ["Rough sandpaper papules on sun-exposed skin, usually under 6 mm; it may resemble seborrheic keratosis", "Those are actinic keratosis features."]], "c": 0, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 70"}, {"topic": "Solar lentigo", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions", "q": "A 64-year-old woman with several solar lentigines wants them removed. Which options are appropriate?", "opts": [["Narrow band ultraviolet B phototherapy three times weekly", "That is used in vitiligo and polymorphous light eruption."], ["Retinoids, cryotherapy or quality-switched laser", "Correct — treatment is not necessary, and removal is for cosmetic reasons."], ["Topical fluorouracil, imiquimod or tirbanibulin", "Those are field therapies for actinic keratosis."], ["Excision with clear margins under local anaesthetic", "That is the management of pigmented spindle cell naevus."]], "c": 1, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 15"}, {"topic": "Lentigines", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions", "slot": "epidemiology", "q": "Which forms of lentigines are named?", "opts": [["Lentigo simplex, acral lentigo, agminated lentigo and generalised lentigo", "Correct — they follow a bimodal age distribution."], ["Superficial, nodular, acral lentiginous and lentigo maligna forms", "Those are the subtypes of melanoma."], ["Common, cellular, combined and atypical cellular forms of the lesion", "Those are the subtypes of blue naevus."], ["Erythematotelangiectatic, papulopustular, phymatous and ocular forms", "Those are the subtypes of rosacea."]], "c": 0, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 9"}, {"topic": "Solar lentigo", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "A 68-year-old man has several uniformly tan, well-demarcated macules 5 to 12 mm across on the dorsal hands and forearms, with no scale or induration. Dermoscopy shows finger-like projections and a moth-eaten border. Which is the most likely diagnosis?", "opts": [["Lentigo maligna", "That is asymmetric with irregular border and structureless pigment on dermoscopy."], ["Seborrheic keratosis", "That is stuck-on with comedone-like openings on dermoscopy."], ["Pigmented actinic keratosis", "That has a rough scaly texture rather than a smooth macular surface."], ["Solar lentigo", "Correct — uniform pigment on chronically exposed skin with those dermoscopic features."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 111"}, {"topic": "Scabies", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations", "slot": "prognosis", "q": "How soon do most patients feel relief after scabies treatment, and how long may symptoms linger?", "opts": [["No relief until a second course has been given at four weeks", "The second application is at one week, and relief comes sooner."], ["Relief in about three days, though rash and itch may last up to four weeks", "Correct — triamcinolone can be used for the residual itch."], ["Relief within hours, with all symptoms gone within three days", "That is faster than the described course."], ["Relief only after six weeks, with itch persisting for several months", "That is slower than the described course."]], "c": 1, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 19"}, {"topic": "Cellulitis", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "slot": "gold standard", "q": "Which specimens are taken in serious cellulitis?", "opts": [["Blood cultures and a skin punch biopsy", "Correct, alongside a complete blood count and creatine phosphokinase."], ["A superficial swab of the intact affected skin", "A surface swab is not among the described tests."], ["Perilesional tissue for direct immunofluorescence", "That investigates autoimmune blistering disease."], ["A potassium hydroxide preparation of the leading edge", "That would investigate a fungal cause."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 109"}, {"topic": "Bedbugs", "io": "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations", "slot": "complication", "q": "Which reaction to bedbug bites occurs particularly in sensitised patients?", "opts": [["A bullous reaction", "Correct — the usual reaction is wheals and papules with a haemorrhagic punctum."], ["A necrotic ulcer with an eschar", "That describes a brown recluse spider bite."], ["A serpentine advancing trail", "That describes cutaneous larva migrans."], ["Cramping abdominal pain and spasm", "That describes a black widow spider bite."]], "c": 0, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 33"}, {"topic": "Xanthelasma", "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "slot": "etiology", "q": "What is xanthelasma made of, and where does it sit?", "opts": [["A crowding of sebocytes within an enlarged gland, most commonly on the face", "That is sebaceous hyperplasia."], ["A collection of lipid-laden macrophages forming soft yellow cholesterol plaques, most commonly on the medial eyelids", "Correct — and it is asymptomatic."], ["A collection of keratin within an enclosed epithelial sac, most commonly on the face, scalp and trunk", "That is the epidermoid cyst."], ["A collection of mucin extruded from a joint space, most commonly over a distal finger joint", "That is the digital mucous cyst."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 104"}, {"topic": "Seborrheic keratosis", "io": "Objective b — Medical care strategies for pigmented skin lesions in adult and elderly populations", "q": "A 74-year-old woman has several beige to dark brown papules 5 to 15 mm on the trunk that feel warty and look pasted onto the skin. She is worried they are cancers. Which is the most appropriate response?", "opts": [["They are benign seborrheic keratoses, diagnosed clinically, and management is supportive", "Correct — they are common in older adults and easily mistaken for neoplasms."], ["They are premalignant lesions requiring biopsy of each one before any reassurance", "The diagnosis is clinical and the lesions are benign."], ["They are dysplastic naevi requiring excision because of the risk of melanoma", "Those are melanocytic lesions over 5 mm with irregular borders."], ["They are solar lentigines requiring cryotherapy for cosmetic improvement", "Those are macular rather than raised and velvety."]], "c": 0, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 17"}, {"topic": "Primary and secondary lesions", "io": "Objective b — Differentiate primary from secondary skin lesions", "q": "A 33-year-old woman presents with a rash that shows discrete circumscribed papules and, in the older areas, crusting and scaling. Which conclusion follows from the crusting?", "opts": [["The epidermis has been affected", "Correct — crust and scale indicate epidermal involvement, which narrows the reaction pattern."], ["The infection is bacterial in origin", "Crust does not by itself indicate an infectious cause."], ["The lesions are resolving spontaneously", "Crusting does not indicate resolution."], ["The subcutaneous tissue is involved", "Deeper involvement is not what crust signals."]], "c": 0, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 3"}, {"topic": "Squamous cell carcinoma", "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations", "slot": "referral", "q": "Which findings make referral URGENT in squamous cell carcinoma?", "opts": [["Only confirmed nodal disease, since high-risk site, size, recurrence and immune status can all be managed routinely", "Site, size and immune status are each urgency triggers."], ["Only failure of two courses of topical therapy, whatever the site, size, histology, immune status or symptoms", "Urgency does not wait on topical therapy."], ["High-risk site, size, recurrence, aggressive histology, immunosuppression, neurologic symptoms, or nodal disease", "Correct — neurologic symptoms suggest perineural invasion."], ["Cosmetic concern, patient anxiety, a lesion older than one year, a lesion on the trunk, or any pigmented lesion", "None of these is an urgency criterion."]], "c": 2, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 26"}, {"topic": "Impetigo", "io": "Objective d — Medical care strategies across infant, adolescent, adult and elderly populations", "q": "Which oral antibiotic is described as the drug of choice for impetigo in children?", "opts": [["Cephalexin", "Correct. Clindamycin is used where there is penicillin allergy."], ["Doxycycline", "Doxycycline is limited to children over eight years old."], ["Dicloxacillin", "It is listed as an option but not the paediatric drug of choice."], ["Erythromycin", "It is not the agent named for children here."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 95"}, {"topic": "Lentigines", "io": "Objective b — Medical care strategies for pigmented skin lesions in adult and elderly populations", "q": "A 62-year-old woman with several lentigines on the hands asks whether they need treating. Which is the most appropriate response?", "lead": "treatment", "opts": [["Sun protection alone will make the lesions fade over the course of the following winter", "Lentigines do not fade when sun exposure stops."], ["No treatment is necessary; cosmetic removal by cryotherapy or quality-switched laser is an option if she prefers", "Correct — the diagnosis is clinical and the lesions are benign."], ["Excision with clear margins is needed on every single lesion, because of the risk of transformation", "The lesions are benign and excision is not required."], ["Topical depigmenting agents are the only option, since cryotherapy cannot be used at all", "Cryotherapy is an option for lentigines."]], "c": 1, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 12"}, {"topic": "Clinical decision making", "io": "Discuss clinical principles and decision-making", "q": "The lecture contrasts an intuitive system of thinking with what alternative?", "opts": [["A system that applies only to unstable patients presenting to emergency medicine", "Unstable patients are the domain of the naturalistic approach, a separate concept."], ["A system that avoids all use of probability", "The deliberate alternative explicitly makes use of logic and probabilities."], ["A system driven entirely by patient preference", "Patient preference is addressed under counselling and adherence, not as the counterpart to intuitive thinking."], ["A more deliberate and controlled thought process using logic and probabilities", "Correct. The lecture pairs quick, automatic thinking against a deliberate, controlled process that uses logic and probabilities."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 20"}, {"topic": "Androgenetic alopecia", "io": "Objective c — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "A 36-year-old man wishes to treat male-pattern hair loss and asks about finasteride. Which is the most appropriate counselling point?", "opts": [["It can safely be shared with a female partner who is also experiencing hair thinning at the crown", "Finasteride is not indicated in women and is contraindicated in pregnancy."], ["About 2% of men report reduced libido and erectile function, and these effects reverse when the drug is stopped", "Correct. It works best combined with minoxidil, and it is not indicated in women and contraindicated in pregnancy."], ["The sexual side effects are permanent once they occur", "They are reversible on stopping the drug."], ["It is most effective at the frontal hairline", "Minoxidil is primarily effective in the crown region; finasteride prevents further loss and may give some regrowth."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 148"}, {"topic": "Toxic epidermal necrolysis", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What is the mortality of toxic epidermal necrolysis, and what predicts it at presentation?", "opts": [["Around 50%, predicted by the presence of the Nikolsky sign", "The Nikolsky sign is present across the spectrum and is not a prognostic score."], ["Up to 30 to 35%, predicted by the SCORTEN score calculated within 24 hours", "Correct, and SCORTEN is repeated on day three."], ["Between 1 and 5%, predicted by the extent of mucosal involvement", "That mortality figure belongs to Stevens-Johnson syndrome alone."], ["Under 1%, predicted by the number of drugs the patient was taking", "Toxic epidermal necrolysis carries substantially higher mortality than this."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 89"}, {"topic": "Keratoacanthoma", "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "slot": "agent/regimen", "q": "What is intralesional methotrexate used for in keratoacanthoma, and how does it work?", "opts": [["Given topically over several months; it slows the turnover of sebocytes within the enlarged sebaceous gland", "No such agent or mechanism is described for this lesion."], ["Given before excision to reduce the size of the lesion; it inhibits deoxyribonucleic acid synthesis in actively dividing cells", "Correct — a chemotherapeutic agent used as a surgical adjunct."], ["Given after excision in order to prevent recurrence; it inhibits fibroblast proliferation within the healing wound bed", "Fibroblast inhibition is fluorouracil's action in keloid."], ["Given instead of excision in frail patients; it induces microvascular thrombosis within the vessels feeding the lesion", "Microvascular thrombosis is a proposed laser mechanism."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 52"}, {"topic": "Nevus flammeus", "io": "Objective b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "diagnosis", "q": "A 2-year-old boy has a flat, blanchable, pink-purple patch on one side of his face that stops sharply at the midline. His parents say it has been there since birth, has grown in proportion with him, and is darker when he cries. Which is the most likely diagnosis?", "opts": [["Cherry angioma", "That is an acquired adult lesion, a small firm deep red papule."], ["Nevus flammeus", "Correct — present at birth, unilateral with sharp midline cutoff, no involution."], ["Infantile hemangioma", "That proliferates and then involutes, and is not present in this form at birth."], ["Nevus simplex", "A stork bite sits on the head and neck and usually fades within a year."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 80"}, {"topic": "Stevens-Johnson syndrome", "io": "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "A 36-year-old man with Stevens-Johnson syndrome reports gritty, painful eyes on the day of admission. Which is the most appropriate next step?", "opts": [["Reassure and reassess the eyes once the skin has re-epithelialised", "Delay is what permits permanent ocular scarring."], ["Begin topical antibiotic eye drops and review in seventy-two hours", "Empirical drops without examination miss the extent of corneal involvement."], ["Patch both eyes closed until the acute skin disease has settled", "Patching does not prevent adhesions and delays daily assessment."], ["Urgent ophthalmology consultation with slit-lamp examination", "Correct — ocular involvement drives the blinding sequelae of symblepharon and corneal scarring."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 83"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "Confirmatory (supplemental) testing for human immunodeficiency virus (HIV) is highly specific in order to accomplish what?", "opts": [["Detect as many infected individuals as possible", "Maximising detection is the goal of the highly sensitive screening step that comes first."], ["Shorten the time needed to obtain a result", "Speed is not the property specificity describes."], ["Identify the virus before antibodies have developed", "Timing of antibody development is not what the lecture attributes to specificity."], ["Minimise false-positive diagnoses", "Correct. The lecture states confirmatory supplemental testing is highly specific, minimising false-positive diagnoses."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"}, {"topic": "Hypothetico-deductive method", "io": "Discuss clinical principles and decision-making", "q": "What does the hypothesis verification stage accomplish?", "opts": [["It gathers data to monitor the patient's response to treatment", "Monitoring response is the patient management stage that follows."], ["It selects which screening test to order first", "Screening test cues feed into the beginning of the sequence rather than being chosen at verification."], ["It confirms the fit of the diagnostic hypotheses with the assembled data", "Correct. Verification is defined as confirming the fit of the diagnostic hypotheses with the data assembled."], ["It generates the first list of possible diagnoses", "Generating the initial list is the role of hypothesis generation."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"}];
+const LTR = ["A","B","C","D"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic">' + q.topic + '</span>' +
+      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
+      '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.getElementById('qtopic').textContent = q.topic;
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
