@@ -39,11 +39,13 @@ DECK = {
  "l4": "4.  Cutaneous Bacterial Infections.pptx",
  "l5": "CMS I Dermatological Infestations - Shahsv.pptx",
  "l6": "6. Fungal and Viral Skin Infections - Jaquith.pptx",
+ "l9": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx",
  "l7": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx",
  "l8": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx",
 }
 LECTURE = {"l2": "Lecture 2", "l3": "Lecture 3", "l4": "Lecture 4",
-           "l5": "Lecture 5", "l6": "Lecture 6", "l7": "Lecture 7", "l8": "Lecture 8"}
+           "l5": "Lecture 5", "l6": "Lecture 6", "l7": "Lecture 7", "l8": "Lecture 8",
+           "l9": "Lecture 9"}
 
 # (img, name, manifestation, tests, treatment, education)
 # img is "tag_sNNN_K.ext" or None
@@ -75,7 +77,7 @@ ROWS = [
   "<b>1st:</b> avoid the exposure and repair the barrier with emollients.<br><b>2nd:</b> antihistamines for itch (hydroxyzine, diphenhydramine).",
   "Sleep in cotton gloves after applying a heavy emollient such as petroleum jelly."),
 
- ("l2_s088_1.jpg", "Allergic contact dermatitis",
+ ("l2_s087_1.jpg", "Allergic contact dermatitis",
   "Well-demarcated rash at the site of contact. With urushiol sap (poison ivy) &mdash; <b>linear vesicular lesions in multiple stages of healing</b> with excoriation.<br><span class=pt>&ldquo;I got these streaks of blisters after I was clearing the yard.&rdquo;</span>",
   "<b>Clinical diagnosis</b> from the history and the typical appearance. <b>Patch testing</b> identifies the allergen.",
   "<b>1st (limited):</b> soothing measures &mdash; oatmeal baths, cool wet compresses, topical astringents &mdash; plus a high-potency topical steroid.<br><b>2nd (extensive):</b> high-dose oral corticosteroid.",
@@ -119,7 +121,7 @@ ROWS = [
   "<b>Urgent treatment needed.</b><br><b>1st:</b> rituximab, or high-dose oral prednisone.<br><b>2nd:</b> steroid given with azathioprine or mycophenolate so the patient can be transitioned off. Antibiotics as needed.<br><b>Supportive:</b> cleansing baths, wet dressings, topical or intralesional glucocorticoids, correction of fluid and electrolyte imbalance.",
   "Worse prognosis than bullous pemphigoid; frequently fatal before corticosteroids."),
 
- ("l2_s156_3.jpg", "Psoriasis &mdash; plaque",
+ ("l2_s156_1.jpg", "Psoriasis &mdash; plaque",
   "Well-demarcated plaques with thick <b>silvery scale</b>; Auspitz sign on removing scale. Extensor surfaces, scalp, nails. Psoriatic arthritis goes hand in hand with it.<br><span class=pt>&ldquo;Thick scaly patches on my elbows and knees that flake off.&rdquo;</span>",
   "<b>Generally clinical</b>, though biopsy may be needed for definitive diagnosis.",
   "<b>1st (mild):</b> emollients, topical steroids, <b>calcipotriene</b> (vitamin D analogue &mdash; quickest action, caution with nephrotoxicity), ultraviolet B phototherapy for smaller stubborn areas.<br><b>2nd:</b> salicylic acid, coal tar.<br><b>Moderate-severe or after failure:</b> methotrexate (with folic acid), acitretin, apremilast, or a biologic &mdash; etanercept, infliximab, adalimumab, ixekizumab.",
@@ -131,7 +133,7 @@ ROWS = [
   "<b>No treatment needed</b>, though phototherapy and topical steroids may be used.",
   "Distinct from plaque psoriasis in its management &mdash; the default is observation."),
 
- ("l2_s158_2.jpg", "Psoriasis &mdash; pustular",
+ ("l2_s158_1.jpg", "Psoriasis &mdash; pustular",
   "Sterile pustules, often on palms and soles.<br><span class=pt>&ldquo;My palms and soles have come up in little pus-filled spots.&rdquo;</span>",
   "<b>Clinical</b>, as above.",
   "<b>1st:</b> acitretin (<span class=warn>contraindicated in pregnancy</span>) or methotrexate.<br><b>If pregnant:</b> high-potency topical steroids.",
@@ -149,7 +151,7 @@ ROWS = [
   "<b>1st:</b> superpotent topical steroids.<br><b>2nd:</b> topical tacrolimus for oral and vaginal disease; oral steroids in severe cases; PUVA or phototherapy in refractory cases.",
   "Certain medications produce lichenoid reactions &mdash; take a drug history."),
 
- ("l2_s181_2.jpg", "Lichen simplex chronicus",
+ ("l2_s181_1.jpg", "Lichen simplex chronicus",
   "Thickened lichenified plaque with accentuated skin markings, wherever the patient can reach to scratch. Sustained by the itch-scratch cycle.<br><span class=pt>&ldquo;I scratch it without thinking, especially at night, and now the skin has gone thick and leathery.&rdquo;</span>",
   "<b>Clinical.</b> <b>Biopsy</b> atypical, unilateral, nodular, ulcerated or treatment-resistant plaques to exclude neoplasia.<br><span class=warn>Generalised or unexplained pruritus &rarr; targeted systemic evaluation.</span>",
   "<b>1st:</b> break the itch-scratch cycle &mdash; education, treat the trigger, emollients, behavioural substitution, nail care, safe physical occlusion. Appropriate potent topical corticosteroid for a limited course.<br><b>2nd:</b> calcineurin inhibitor for sensitive sites or maintenance.",
@@ -389,7 +391,7 @@ ROWS += [
   "<b>1st (mild):</b> warm water compresses or soaks, 20 minutes 3&times; daily.<br><b>Severe:</b> incise and drain; obtain cultures to rule out MRSA. Oral antibiotics &mdash; amoxicillin-clavulanate, cephalexin, or <b>clindamycin if exposed to oral flora from nail biting</b>.",
   "Predisposing: manicure, ingrown nail, hangnail, nail biting. Differential: onychomycosis, felon, herpetic whitlow, pseudomonal nail infection, squamous cell cancer of the nail."),
 
- ("l4_s120_1.jpg", "Chronic paronychia",
+ (None, "Chronic paronychia",
   "An <b>inflammatory reaction of the proximal nail fold to irritants and allergens</b>, possibly eczematous. <b>Candida albicans</b> is the commonest organism. Oedematous, erythematous, tender nail folds <b>without fluctuance</b>; nail plates thicken and discolour; cuticles separate from the plate. <b>Present at least 6 weeks.</b><br><span class=pt>&ldquo;My nail folds have been puffy and sore for months and my nails look ruined.&rdquo;</span>",
   "<b>Clinical</b>, with a history of continuous hand immersion in water or chemical contact.",
   "<b>1st:</b> treat the underlying inflammation and infection; <b>keep the hands as dry as possible</b>; broad-spectrum topical antifungal (miconazole).<br><b>2nd:</b> oral antifungal in severe cases (fluconazole).",
@@ -666,6 +668,80 @@ ROWS += [
 ]
 
 ROWS += [
+ # ================= LECTURE 9 =================
+ # All 81 embedded images were audited at full size. NOTE: 39 of this deck's 120
+ # pictures are LINKED rather than embedded and do not exist inside the file, so
+ # some conditions are illustrated from a neighbouring slide of the same module.
+ ("SECTION", "Lecture 9 &middot; Pre-Malignant and Malignant Cutaneous Lesions"),
+
+ ("l9_s008_2.jpg", "Actinic keratosis",
+  "<b>Premalignant</b>, on a biologic continuum with keratinocyte carcinoma &mdash; not a separate entity. Small <b>0.2&ndash;0.6&nbsp;cm</b> flesh-coloured, pink or slightly hyperpigmented papules with a <b>sandpaper texture</b>; <b>more apparent by touch than by sight</b>. Sun-exposed face, scalp, ears, forearms, dorsal hands.<br><span class=pt>&ldquo;Rough patches that keep coming back, and I feel them more than I see them.&rdquo;</span>",
+  "<b>Usually clinical</b>; dermoscopy supports it when the clinician is trained.<br><b>Shave or punch biopsy</b> when morphology or behaviour raises concern for squamous cell carcinoma, or the lesion persists or recurs after therapy. Interpretation must separate <b>actinic keratosis vs carcinoma in situ vs invasive carcinoma</b>.<br><b>Not features of a typical lesion</b> &mdash; bleeding, induration, ulceration or rapid enlargement.",
+  "<b>Lesion-directed</b> (isolated, clear borders): liquid nitrogen cryotherapy &mdash; crusts and disappears over <b>10&ndash;14 days</b>.<br><b>Field-directed</b> (multiple lesions in one region &mdash; field cancerization): topical <b>fluorouracil</b>, <b>imiquimod</b>, <b>photodynamic therapy</b>; fluorouracil plus calcipotriene possibly.",
+  "Daily broad-spectrum sun protection and protective clothing. Expect erythema and crusting from field therapy and complete the course. <b>About 1 in 1,000 lesions per year progresses to squamous cell carcinoma</b>, and cumulative FIELD risk matters more than any single lesion. Treatment reduces lesion burden but the field stays at risk &mdash; surveillance continues."),
+
+ ("l9_s019_1.jpg", "Squamous cell carcinoma",
+  "<b>The second most common skin cancer.</b> Prolonged CUMULATIVE sun exposure; may arise from an actinic keratosis. Small <b>red, conical, hard nodule that may ulcerate</b>; also a <b>non-healing ulcer</b>, warty nodule, or irregular pink plaque with haemorrhagic crust.<br><span class=pt>&ldquo;A sore on my lip that just won&rsquo;t heal.&rdquo;</span>",
+  "<b>Biopsy.</b> Use <b>time course, firmness or induration, ulceration, site, immune status and pathology</b> &mdash; not morphology alone.<br><b>Red flags:</b> rapid growth, pain, bleeding, ulceration, induration, fixation, palpable regional nodes.<br><b>Differential:</b> actinic keratosis, carcinoma in situ (Bowen), keratoacanthoma, verruca, inflamed seborrheic keratosis, basal cell carcinoma, amelanotic melanoma, chronic ulcer.",
+  "<b>In situ</b> (no high-risk features): imiquimod, topical fluorouracil, or curettage and electrodesiccation.<br><b>Invasive:</b> surgical excision or <b>Mohs</b>.<br><b>Advanced/metastatic:</b> programmed death 1 blockade; cetuximab.<br><b>Mohs indications:</b> lips, temples, ears, nose, genitalia; recurrent; perineural or perivascular invasion; <b>&gt;1&nbsp;cm on face or &gt;2&nbsp;cm on trunk/extremities</b>; immunosuppression; tumours in scars; genetic disease.",
+  "<b>High-risk sites:</b> mucosal surfaces, lip, ear, scalp, temple, nose, genitalia. <b>&gt;10 tumours</b> means higher local recurrence and nodal metastasis. Common and often aggressive after transplant, with multiple tumours typically at <b>~5 years</b>. <b>Nicotinamide 500&nbsp;mg twice daily cuts new tumours by ~30%.</b> At least <b>annual skin AND node examination</b>. Metastatic rate <b>3&ndash;7%</b>."),
+
+ ("l9_s029_1.jpg", "Basal cell carcinoma &mdash; nodular",
+  "<b>The most common form of cancer.</b> INTERMITTENT intense ultraviolet exposure in fair skin. Papule or nodule with <b>central erosion</b>, slow growth over years to 1&ndash;2&nbsp;cm; <b>pearly or translucent</b> with <b>telangiectasias accentuated by STRETCHING the skin</b>.<br><span class=pt>&ldquo;A shiny bump by my nose that scabs and comes back.&rdquo;</span>",
+  "<b>Shave or punch biopsy.</b> The <b>HISTOLOGIC</b> subtype determines behaviour and dictates treatment.<br>Clinical subtypes: superficial, nodular, pigmented, morpheaform. Histologic: superficial, nodular, micronodular, infiltrative.<br><b>Differential:</b> intradermal naevus, sebaceous hyperplasia, squamous cell carcinoma, actinic keratosis, scar/morphea, pigmented melanoma or seborrheic keratosis.",
+  "<b>Superficial, selected:</b> imiquimod 5 nights weekly for 6&ndash;10 weeks, or fluorouracil twice daily up to 12 weeks &mdash; <b>confirm clearance afterwards</b>.<br><b>Surgery:</b> curettage and electrodesiccation, excision, or Mohs by size, site and histologic risk. <b>Excision recurrence &le;5%; Mohs cure ~98%.</b><br><b>Advanced/metastatic:</b> hedgehog inhibitors &mdash; vismodegib or sonidegib.",
+  "<b>A second basal cell carcinoma develops in up to 50%</b> &mdash; at least annual full-skin examination is mandatory. <b>Nicotinamide 500&nbsp;mg twice daily cuts new tumours by ~20%</b> (the squamous figure is 30%). Slow-growing and highly curable early; morbidity comes from <b>local destruction</b>, recurrence and delayed diagnosis. <b>Mohs</b> for eyelids, nasolabial folds, canthi, external ear, temple; recurrence; tissue-sparing need; aggressive histology."),
+
+ ("l9_s034_2.jpg", "Basal cell carcinoma &mdash; superficial",
+  "Reddish, shiny, <b>scaly thin papules or plaques on back or chest</b>, sometimes with a <b>thready pearly border</b> and spotty edge pigmentation.<br><span class=pt>&ldquo;A dry red patch on my back that never quite clears.&rdquo;</span>",
+  "<b>Shave or punch biopsy</b>, as for any basal cell carcinoma.<br>Distinguish from a <b>superficial inflammatory dermatosis</b> &mdash; which is why a &ldquo;patch of eczema&rdquo; that fails treatment gets sampled.",
+  "The subtype most often suitable for <b>topical</b> therapy: imiquimod or fluorouracil, with clearance confirmed. Curettage and electrodesiccation also used.",
+  "Warning patterns for basal cell carcinoma generally: <b>a pearly papule, an erythematous patch &gt;6&nbsp;mm, or a non-healing ulcer</b> &mdash; commonly face, trunk or lower legs."),
+
+ ("l9_s030_2.jpg", "Basal cell carcinoma &mdash; pigmented and morpheaform",
+  "<b>Pigmented:</b> stippled or focal pigmentation that <b>may mimic melanocytic disease</b>; the <b>pearly border and slow growth</b> discriminate.<br><b>Morpheaform/sclerosing:</b> a <b>scar-like or ivory-white</b> lesion whose extension beyond the visible pink segment is <b>clinically subtle</b>.<br><span class=pt>&ldquo;A scar on my cheek, but I never cut myself there.&rdquo;</span>",
+  "<b>Biopsy.</b> Morpheaform disease carries a <b>higher risk of subclinical spread</b>, which is what makes margin control matter.",
+  "<b>Mohs</b> for aggressive histology &mdash; morpheaform, micronodular or infiltrative &mdash; and for recurrent tumours or where tissue sparing matters.",
+  "A scar with no history of injury deserves a second look. Pigmented disease is the one that gets mistaken for a melanocytic lesion."),
+
+ ("l9_s044_2.jpg", "Malignant melanoma",
+  "<b>4th most common cancer in the United States</b> and the <b>leading cause of death due to skin disease</b>; incidence doubled over 30 years. 2023: ~97,610 new invasive melanomas, ~7,990 deaths, <b>two-thirds of deaths in men</b>. Lifetime risk <b>~2% in white individuals; 0.1&ndash;0.5% in persons of colour</b>.<br><b>Subtypes:</b> superficial spreading (~2/3, radial then vertical growth); lentigo maligna (chronically sun-exposed skin, older adults); <b>nodular &mdash; rapid, often amelanotic, may LACK the classic features</b>; acral lentiginous.<br><span class=pt>&ldquo;This mole has changed shape and colour this year.&rdquo;</span>",
+  "<b>ABCDE:</b> Asymmetry &middot; Border irregular, notched or poorly defined &middot; Colour variegation &middot; Diameter &gt;6&nbsp;mm &mdash; <b>though smaller lesions can be melanoma</b> &middot; Evolution.<br><b>Initial test: biopsy or excision.</b><br><b>Sentinel node biopsy</b> offered/discussed at <b>&ge;1.0&nbsp;mm</b> Breslow, or <b>&ge;0.8&nbsp;mm</b> with ulceration, high mitotic rate or lymphovascular invasion. It is a <b>STAGING</b> procedure and <b>may not itself improve overall survival</b>.<br><b>Clark level</b> is the anatomic layer reached (I epidermis &rarr; V subcutis); <b>Breslow thickness is the dominant prognostic variable</b>.",
+  "<b>Re-excision margins:</b> in situ <b>0.5&ndash;1&nbsp;cm</b>; <b>&lt;1&nbsp;mm &rarr; 1&nbsp;cm</b>; <b>&gt;1&nbsp;mm &rarr; 1&ndash;2&nbsp;cm</b>.<br><b>Refer to an expert centre</b> for melanoma deeper than 1&nbsp;mm or with nodal/other-site spread.",
+  "<b>Monthly self-examination</b> using ABCDE and ugly-duckling principles &mdash; <b>including scalp, back, palms, soles and nails</b>. Consistent ultraviolet protection; adhere to the specialist surveillance schedule. Breslow thickness must be measured accurately at the initial biopsy; ulceration and mitotic activity further modify stage-based prognosis."),
+
+ ("l9_s045_1.jpg", "Nail unit melanoma",
+  "Rare acral melanoma arising most often in the <b>MATRIX</b>. <b>Not clearly ultraviolet-driven; may occur in any skin tone.</b> <b>Thumb and great toe</b> are high-yield sites.<br><b>Signs:</b> new or evolving <b>longitudinal melanonychia in ONE digit</b>; increasing width; irregular colour, thickness or spacing of lines; <b>proximal widening or triangular shape</b>; blurred borders; nail splitting or dystrophy; ulceration or a subungual mass.<br><span class=pt>&ldquo;A dark stripe in one nail that&rsquo;s getting wider.&rdquo;</span>",
+  "<b>Hutchinson sign</b> &mdash; periungual pigment extending onto the <b>proximal nail fold</b> &mdash; is highly concerning and should prompt <b>urgent expert evaluation regardless of other features</b>.<br><b>Amelanotic nail melanoma</b> may be red, pink, eroded or mass-like <b>with no dark band; absence of pigment does NOT exclude melanoma</b>.<br>Remove polish and inspect <b>every</b> nail, periungual skin, palms, soles and regional nodes. Onychoscopy.",
+  "Coordinate dermatology, nail surgery and surgical oncology.<br><b>Digit-sparing wide excision or Mohs with immunostaining</b> for in situ and selected invasive tumours when margins can be reliably assessed.<br><b>Amputation is NOT automatic</b> &mdash; reserved for deep, extensive or bone-involving disease. Sentinel node discussion and systemic therapy follow melanoma stage and Breslow principles.",
+  "<b>Delayed recognition contributes to advanced-stage presentation.</b> Check nails during self-examination. <b>Urgent referral:</b> new or changing single-digit melanonychia, proximal widening, Hutchinson sign, nail dystrophy with pigment; unexplained subungual mass or persistent ulceration/bleeding; a chronic &ldquo;wart&rdquo; or &ldquo;infection&rdquo; failing appropriate therapy."),
+
+ ("l9_s082_1.jpg", "Nail unit squamous cell carcinoma / Bowen disease",
+  "<b>The most common malignant nail tumour.</b> Chronic <b>unilateral verrucous periungual papule or plaque</b>, subungual hyperkeratosis, onycholysis, oozing, bleeding, ulceration, nail-plate destruction, longitudinal erythronychia, or pain &mdash; often <b>repeatedly labelled a wart, paronychia or fungal infection</b>.<br><span class=pt>&ldquo;They&rsquo;ve treated this as a wart three times and it&rsquo;s still there.&rdquo;</span>",
+  "Associations: <b>high-risk human papillomavirus</b>, immunosuppression, chronic inflammation or trauma, prior radiation, older age. Periungual disease may be <b>multifocal</b>.<br>Biopsy any chronic lesion that fails appropriate therapy.",
+  "<b>Complete margin-controlled surgery preferred</b> &mdash; Mohs or wide surgical excision. <b>Partial or limited destructive treatment carries a higher recurrence risk.</b><br>Distal phalanx or digital amputation reserved for bone invasion or disease that cannot otherwise be cleared.",
+  "The recurring theme of this module is <b>diagnostic delay as a preventable harm</b>. A nail lesion that has been treated as something benign more than once is the one to biopsy."),
+
+ ("l9_s087_1.jpg", "Glomus tumour and the benign nail tumours",
+  "<b>Glomus tumour:</b> small <b>red-blue subungual focus</b> with <b>severe paroxysmal pain, exquisite point tenderness and cold sensitivity</b> &mdash; the nail may look nearly normal.<br><b>Onychopapilloma / onychomatricoma:</b> a single nail with <b>longitudinal erythronychia or leukonychia</b>, distal subungual hyperkeratosis, splinter haemorrhages or localised plate abnormality.<br><span class=pt>&ldquo;It&rsquo;s agony in cold water and I can point to the exact spot.&rdquo;</span>",
+  "The glomus <b>triad strongly suggests</b> the diagnosis but <b>does not replace imaging or specialist evaluation</b>.<br>Other benign tumours that mimic malignancy: acquired digital fibrokeratoma, melanocytic naevus or lentigo, pyogenic granuloma, digital myxoid cyst, subungual exostosis.",
+  "<b>Diagnosis-specific surgical removal</b> when symptoms, growth or diagnostic uncertainty warrant it.",
+  "These matter <b>because they mimic malignancy</b> &mdash; and because a painful nail with a normal-looking plate is easy to dismiss."),
+
+ ("l9_s062_4.jpg", "Kaposi sarcoma",
+  "Caused by <b>human herpesvirus 8 combined with a weakened immune system</b>, arising in the cells lining <b>blood and lymph vessels</b>. <b>Red or purple macules, plaques or nodules</b> on skin or mucous membranes.<br><b>Four forms:</b> <b>classic</b> (older men, chronic, rarely fatal); <b>endemic</b> (young Black men in equatorial Africa, often aggressive); <b>iatrogenic</b> (immunosuppressive therapy); <b>epidemic</b> (acquired immunodeficiency).<br><span class=pt>&ldquo;Purple patches on my legs, and my mouth is sore.&rdquo;</span>",
+  "<b>ORAL EXAMINATION IS ESSENTIAL</b> when Kaposi sarcoma is suspected &mdash; <b>hard palate lesions are common and may be the presenting site</b>.<br><b>Marked oedema may occur with few or no visible skin lesions &mdash; do not use oedema severity to gauge disease burden.</b><br><b>Differential:</b> bacillary angiomatosis, angioma/haemangioma, purpura, venous stasis, pyogenic granuloma, lymphoma, metastatic disease.",
+  "<b>Epidemic (AIDS-associated) &mdash; FIRST PRIORITY: begin or optimise antiretroviral therapy.</b> Immune restoration is the cornerstone.<br><b>Classic/older adult:</b> palliative local therapy &mdash; intralesional vincristine, vinblastine or bleomycin, or radiation.<br><b>Iatrogenic:</b> reduce immunosuppressive doses where feasible &mdash; <b>coordinate with the transplant team first</b>.<br><b>Systemic first-line:</b> liposomal doxorubicin and paclitaxel. <b>Antiretroviral therapy plus chemotherapy beats antiretroviral therapy alone in advanced disease.</b>",
+  "Report respiratory or gastrointestinal symptoms &mdash; visceral disease. Referral spans dermatology for biopsy, human immunodeficiency virus care, medical oncology, pulmonology or gastroenterology, the transplant team before any dose change, and palliative care."),
+
+ ("l9_s072_1.jpg", "Cutaneous T-cell lymphoma (mycosis fungoides)",
+  "A cutaneous T-cell lymphoma that <b>begins in the skin and may remain confined there for years or decades</b>. Early: localised or generalised <b>erythematous patches or scaly plaques, usually on the trunk</b>, <b>frequently &gt;5&nbsp;cm</b>. <b>May resemble psoriasis, eczema or tinea</b>, which is why diagnosis is often delayed.<br><span class=pt>&ldquo;They&rsquo;ve called it eczema for four years and nothing works.&rdquo;</span>",
+  "<b>Two clues:</b> <b>itch out of proportion</b> to the apparent inflammatory activity, and <b>follicular involvement with hair loss</b> &mdash; folliculotropism discriminates from routine eczema or psoriasis.<br><b>Discriminators:</b> chronicity, treatment resistance, large or oddly distributed plaques, severe pruritus, tumours or erythroderma, nodes, and histology.<br>Enlarged nodes <b>may be benign dermatopathic change OR lymphoma</b> &mdash; directed biopsy or imaging is required.",
+  "<b>Stage-directed, skin-first.</b> <b>Early aggressive treatment has NOT been proven to cure or prevent progression, and may cause complications and premature death.</b><br><b>Initial skin-directed:</b> topical corticosteroids, topical mechlorethamine, bexarotene gel, ultraviolet phototherapy.<br><b>Progressive:</b> PUVA &plusmn; retinoids or interferon; methotrexate; extracorporeal photopheresis; systemic bexarotene; romidepsin or vorinostat; brentuximab or mogamulizumab; total-skin electron-beam treatment.",
+  "Diagnosis may take repeated biopsies over time. Referral: dermatology/dermatopathology early for persistent suspicious disease; a cutaneous lymphoma centre once blood, node, tumour or erythrodermic involvement is suspected."),
+]
+
+ROWS += [
  # ================= LECTURE 8 =================
  ("SECTION", "Lecture 8 &middot; Pigmented Skin Lesions"),
 
@@ -755,6 +831,21 @@ ROWS += [
 # diagnosis, and knowing which conditions genuinely need bloods is the point of
 # the column. Keyed by the row's name with any badge markup stripped.
 LABS = {
+ # ---- Lecture 9 (Jaquith). Skin cancer is a TISSUE diagnosis, not a blood one:
+ # every entry here turns on biopsy and histology. The blood work that does
+ # appear is about the HOST -- immune status -- rather than the tumour.
+ "Actinic keratosis": "<b>None.</b> Usually a clinical diagnosis; <b>shave or punch biopsy</b> when behaviour or morphology raises concern for squamous cell carcinoma, or when a lesion persists or recurs after therapy.",
+ "Squamous cell carcinoma": "<b>No routine bloods.</b> Diagnosis is by <b>biopsy</b>. Investigate the HOST where relevant &mdash; transplant, chronic lymphocytic leukaemia, or human immunodeficiency virus status all raise risk and aggressiveness, and coordinate transplant, haematology or HIV care.",
+ "Basal cell carcinoma &mdash; nodular": "<b>None.</b> <b>Shave or punch biopsy</b>; the histologic subtype determines behaviour and dictates treatment.",
+ "Basal cell carcinoma &mdash; superficial": "<b>None</b> &mdash; biopsy as for any basal cell carcinoma.",
+ "Basal cell carcinoma &mdash; pigmented and morpheaform": "<b>None</b> &mdash; biopsy, with margin control the issue rather than any laboratory test.",
+ "Malignant melanoma": "<b>No blood test makes the diagnosis</b> &mdash; it is <b>biopsy or excision</b>, and <b>Breslow thickness</b> from that specimen is the dominant prognostic variable. <b>Sentinel lymph node biopsy</b> is a staging procedure offered at &ge;1.0&nbsp;mm, or &ge;0.8&nbsp;mm with ulceration, high mitotic rate or lymphovascular invasion.",
+ "Nail unit melanoma": "<b>None.</b> Diagnosis is by <b>nail unit biopsy</b> after onychoscopy; staging follows melanoma principles.",
+ "Nail unit squamous cell carcinoma / Bowen disease": "<b>No routine bloods.</b> Biopsy any chronic lesion failing appropriate therapy. Associations worth noting in the history: <b>high-risk human papillomavirus</b> and <b>immunosuppression</b>.",
+ "Glomus tumour and the benign nail tumours": "<b>None.</b> The clinical triad suggests it; <b>imaging and specialist evaluation</b> are still required, and the triad does not replace them.",
+ "Kaposi sarcoma": "<b>Human immunodeficiency virus testing and staging matter here</b> &mdash; immune status defines the clinical form and drives treatment. Diagnosis itself is by <b>biopsy</b>. In epidemic disease the first priority is starting or optimising <b>antiretroviral therapy</b>.",
+ "Cutaneous T-cell lymphoma (mycosis fungoides)": "<b>Histology</b> is the diagnosis, and it often takes <b>repeated biopsies over time</b>. Blood involvement is assessed when S&eacute;zary syndrome or erythroderma is suspected; enlarged nodes need <b>directed biopsy or imaging</b> rather than assumption.",
+
  # ---- Lecture 6 (Jaquith). Almost nothing here needs blood work; the two
  # places it does are both about the DRUG rather than the disease, which is the
  # distinction worth carrying into the exam.
@@ -1069,6 +1160,7 @@ SECTION_LABELS = {
  "Lecture 6 &middot; Cutaneous Viral Infections": "L6 viral",
  "Lecture 7 &middot; Benign Skin Lesions": "L7 benign",
  "Lecture 8 &middot; Pigmented Skin Lesions": "L8 pigmented",
+ "Lecture 9 &middot; Pre-Malignant and Malignant Cutaneous Lesions": "L9 malignant",
 }
 
 
@@ -1112,6 +1204,22 @@ METAPHOR_IMAGES = {
     #    s055_3 has "TINEA MANUUM" burned into the picture, which hands the
     #    student the answer before they have looked at it.
     "l6_s064_2", "l6_s055_3",
+
+    # Lecture 9 (Jaquith) audited 2026-08-24. Same four classes again, plus a
+    # new one: this deck leans on SCHEMATIC DIAGRAMS and DATA TABLES to teach
+    # staging, and those are content -- pool F asks about them -- but they are
+    # not what a lesion looks like.
+    "l9_s005_1",                        # skin-cancer cross-section schematic
+    "l9_s025_1", "l9_s025_2",           # Mohs surgery diagrams
+    "l9_s050_1", "l9_s053_1",           # Clark level and Stages of Melanoma diagrams
+    "l9_s054_1", "l9_s055_1",           # TNM staging table; survival bar chart
+    "l9_s047_1", "l9_s048_1",           # captioned ABCDE and early-detection figures
+    "l9_s058_1",                        # line drawing of legs
+    "l9_s035_5", "l9_s046_6", "l9_s074_1",   # stray icons, not photographs
+    # BAKED-IN ANSWER TEXT -- the label hands the student the diagnosis.
+    "l9_s020_1",                        # "SCC on the leg" burned into the image
+    "l9_s031_1",                        # side-by-side captioned BASAL / SQUAMOUS
+    "l9_s091_1",                        # nail figure with its findings labelled
 }
 
 # Images that ARE clinical photographs but are photographs of a DIFFERENT
@@ -1142,7 +1250,7 @@ def non_content_slides():
     SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad"
     files = {"l2": "cms_l2.txt", "l3": "cms_l3.txt", "l4": "cms_l4.txt",
              "l5": "cms_l5.txt", "l6": "cms_l6.txt",
-             "l7": "cms_l7.txt", "l8": "cms_l8.txt"}
+             "l7": "cms_l7.txt", "l8": "cms_l8.txt", "l9": "cms_l9.txt"}
     out = {}
     for tag, fn in files.items():
         path = _os.path.join(SCRATCH, fn)
