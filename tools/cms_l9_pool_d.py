@@ -192,8 +192,8 @@ POOL_D = [
  dict(topic="Malignant melanoma", io=IOA, slot="differential",
    q="Which entities does the deck list in the melanoma differential?",
    opts=[
-     ["Dysplastic or changing naevus, seborrheic keratosis, solar lentigo or lentigo maligna spectrum, pigmented basal cell carcinoma, dermatofibroma, subungual haematoma, benign longitudinal melanonychia, and amelanotic mimics",
-      "Correct — note both nail entries."],
+     ["Dysplastic or changing naevus, seborrheic keratosis, solar lentigo, pigmented basal cell carcinoma, dermatofibroma, and amelanotic mimics",
+      "Correct — the list also includes the lentigo maligna spectrum and two nail entries, subungual haematoma and benign longitudinal melanonychia."],
      ["Actinic keratosis, carcinoma in situ, keratoacanthoma, verruca, inflamed seborrheic keratosis, basal cell carcinoma, amelanotic melanoma and chronic inflammatory or infectious ulcer",
       "That is the squamous cell carcinoma differential."],
      ["Bacillary angiomatosis, angioma or haemangioma, purpura and ecchymosis, venous stasis lesions, pyogenic granuloma, lymphoma, metastatic disease and other violaceous inflammatory lesions",
