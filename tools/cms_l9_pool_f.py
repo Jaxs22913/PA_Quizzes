@@ -4,8 +4,14 @@
 Three slides in this deck extract as empty and carry real, examinable content
 in the image alone:
 
-  Slide 50  the CLARK LEVEL diagram, levels I-V against epidermis, papillary
-            dermis, reticular dermis and subcutaneous tissue
+  Slide 50  the LEVEL OF INVASION diagram, levels I-V against epidermis,
+            papillary dermis, reticular dermis and subcutaneous tissue. NOTE the
+            deck labels these only "Level I" to "Level V" -- the word "Clark"
+            appears NOWHERE in the deck, not on the slide and not inside the
+            figure. It is the conventional name and is given in parentheses so
+            students recognise it elsewhere, but the questions lead with the
+            deck's own wording, because that is what an exam written from this
+            deck will use.
   Slide 53  the "Stages of Melanoma" diagram, stage 0 through stage IV
   Slide 54  the full TNM MELANOMA STAGING OVERVIEW table
 
@@ -30,10 +36,10 @@ IOA = "Objective 1 — Compare and contrast the etiologies, epidemiology, risk f
 
 POOL_F = [
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",
-   q="The Clark level diagram maps invasion against skin anatomy. Which layers do levels I through V correspond to?",
+   q="Slide 50's diagram maps levels I to V against skin anatomy (this is the system conventionally called the Clark level). Which layers do they correspond to?",
    opts=[
      ["I confined to the epidermis; II into the papillary dermis; III filling the papillary dermis; IV into the reticular dermis; V into the subcutaneous tissue",
-      "Correct — Clark level is an ANATOMIC level, unlike Breslow thickness which is a measurement."],
+      "Correct — the level of invasion is an ANATOMIC layer, unlike Breslow thickness which is a measurement."],
      ["I confined to the epidermis; II into the reticular dermis; III filling the reticular dermis; IV into the papillary dermis; V into the subcutaneous tissue",
       "The papillary and reticular dermis are the wrong way round."],
      ["I into the papillary dermis; II into the reticular dermis; III into subcutaneous tissue; IV into muscle; V into bone",
@@ -43,15 +49,15 @@ POOL_F = [
    c=0, cite=c(50)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",
-   q="How does Clark level differ from Breslow thickness, and which does the deck call the dominant prognostic variable?",
+   q="How does the level of invasion (Clark) differ from Breslow thickness, and which does the deck call the dominant prognostic variable?",
    opts=[
-     ["Clark level is the anatomic layer reached; Breslow thickness is a measured depth, and Breslow is the dominant prognostic variable",
-      "Correct — Breslow is measured in millimetres and drives margins and staging."],
-     ["Clark level is a measured depth; Breslow thickness is the anatomic layer reached, and Clark is the dominant prognostic variable",
+     ["The level of invasion is the anatomic layer reached; Breslow thickness is a measured depth, and Breslow is the dominant prognostic variable",
+      "Correct — Breslow is measured in millimetres and drives margins and staging. Note the deck labels these only \u201cLevel I\u201d to \u201cLevel V\u201d and never uses the word Clark; that is the conventional outside name for the same system."],
+     ["The level of invasion is a measured depth; Breslow thickness is the anatomic layer reached, and the level is the dominant prognostic variable",
       "The two definitions are swapped, and Breslow dominates."],
      ["Both describe the same measurement on different scales, and either may be used as the dominant prognostic variable",
       "They are different concepts."],
-     ["Clark level is the anatomic layer reached; Breslow thickness is a measured depth, and Clark is the dominant prognostic variable",
+     ["The level of invasion is the anatomic layer reached; Breslow thickness is a measured depth, and the level is the dominant prognostic variable",
       "The definitions are right but the deck names Breslow as dominant."]],
    c=0, cite=c(55)),
 

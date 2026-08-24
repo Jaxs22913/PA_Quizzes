@@ -24,8 +24,13 @@ INTRO = ("Thirty questions on the complete blood count: what is on the panel and
          "deck. Those questions are marked as image-only in their citation. "
          "<b>Where the deck gives a reference range two different ways</b> &mdash; lymphocytes, "
          "platelets and red cell distribution width all appear twice with different numbers "
-         "&mdash; no question is built on the disputed figure. The study guide sets the two "
-         "versions side by side. Every question cites its slide.")
+         "&mdash; no question is built on the disputed figure. The 24 August lecture explains "
+         "why that happens: Professor Shah teaches reference ranges as <b>approximate and "
+         "lab-dependent on purpose</b> &mdash; <i>&ldquo;it doesn&rsquo;t matter what the range "
+         "is, it just matters what the range is for where you&rsquo;re working&rdquo;</i> "
+         "&mdash; so the disagreement is her position rather than a mistake. Learn the "
+         "approximate figure and the direction of abnormality. The study guide sets every "
+         "version side by side. Every question cites its slide.")
 
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "cbc-hematology-quiz.html" if n == 1 else "cbc-hematology-quiz-version-2.html"
