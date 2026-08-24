@@ -25,6 +25,8 @@ from cms_l9_pool_d import POOL_D
 from cms_l9_pool_e import POOL_E
 from cms_l9_pool_f import POOL_F
 from cms_l9_pool_g import POOL_G
+from cms_l9_pool_h import POOL_H
+from cms_l9_h_lengthfix import FIXES as H_FIXES
 from cms_l9_g_lengthfix import FIXES as G_FIXES
 
 # Pool G is APPENDED (never prepended) so the G length-fix indices, which are
@@ -33,7 +35,11 @@ for (_gi, _oi), _txt in G_FIXES.items():
     assert _oi != POOL_G[_gi]["c"], "pool G length fix %d/%d targets the CORRECT option" % (_gi, _oi)
     POOL_G[_gi]["opts"][_oi][0] = _txt
 
-POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E + POOL_F + POOL_G
+for (_hi, _oi), _txt in H_FIXES.items():
+    assert _oi != POOL_H[_hi]["c"], "pool H length fix %d/%d targets the CORRECT option" % (_hi, _oi)
+    POOL_H[_hi]["opts"][_oi][0] = _txt
+
+POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E + POOL_F + POOL_G + POOL_H
 
 # CMS scope guard: Set 1 is objective-style, NOT vignettes. A stem that opens
 # with a patient age and presentation belongs in Set 2, and mixing them would
@@ -73,7 +79,8 @@ ALL_TOPICS = set(q["topic"] for q in POOL)
 # The two forms should be comparable. Without this the optimiser is indifferent
 # to which form a slot lands in, and the back-half slots -- the ones the
 # corrective pool exists to supply -- can pile into one paper.
-BALANCED_SLOTS = ("avoid", "education", "complication", "referral", "escalation")
+BALANCED_SLOTS = ("avoid", "education", "complication", "referral", "escalation",
+                  "initial test", "gold standard")
 
 
 def slot_imbalance(s1, s2):
@@ -159,7 +166,13 @@ if __name__ == "__main__":
     # across what to avoid, what to tell the patient, and what goes wrong. Pool
     # G is written to those slots, so leaving it to a random draw would reopen
     # the gap it exists to close.
-    must = [i for i, q in enumerate(POOL) if q in POOL_F or q in POOL_G]
+    # POOL H IS GUARANTEED TOO. In the 24 August lecture she said repeatedly
+    # that she was going to set "how do you diagnose this?" questions -- "you
+    # guys know that question for everyone for this lecture at least". Measured
+    # against the pools, Lecture 9 had the THINNEST diagnostic-test coverage of
+    # any lecture on the exam, 2 questions in 108. Pool H is written to exactly
+    # the question type she named, so it must not be left to a random draw.
+    must = [i for i, q in enumerate(POOL) if q in POOL_F or q in POOL_G or q in POOL_H]
     rest = [i for i in range(len(POOL)) if i not in set(must)]
     assert len(must) <= 60, "more guaranteed questions than places"
 

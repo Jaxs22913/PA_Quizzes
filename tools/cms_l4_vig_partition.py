@@ -78,7 +78,17 @@ def score(s):
     leads = Counter(lead_of(q) for q in s)
     missing = len(ALL_TOPICS - set(tops))
     lumpy = sum(max(0, n - 4) for n in tops.values())
-    skew = sum(max(0, n - len(s) * 0.34) for n in leads.values())
+    # HER DESCRIPTION OF THE EXAM, 24 August 2026: "there's gonna be like
+    # clinical vignettes or pretty much all clinical vignettes. There might be
+    # SOME question, what's the most likely diagnosis, but A LOT OF THEM are --
+    # what's the next management plan? What's your first line treatment plan?
+    # ... what's the proper patient education?"
+    #
+    # The old guard capped every lead-in at 34% symmetrically, which let
+    # diagnosis sit level with management. She puts diagnosis in the minority,
+    # so it now carries a tighter cap of its own while the rest keep 34%.
+    skew = sum(max(0, n - len(s) * 0.34) for k, n in leads.items() if k != "diagnosis")
+    skew += max(0, leads.get("diagnosis", 0) - len(s) * 0.20) * 2.5
     return missing * 14 + lumpy * 3 + skew * 6 + gameable_pct(s) * 1.2
 
 
@@ -99,10 +109,36 @@ if __name__ == "__main__":
     print("pool lead-in mix:", dict(Counter(lead_of(q) for q in POOL)))
     print()
     answer_text = {id(q): q["opts"][q["c"]][0] for q in POOL}
-    best, idx = None, list(range(len(POOL)))
+    # THE DIAGNOSIS CAP IS ENFORCED BY CONSTRUCTION, not hoped for.
+    #
+    # Adding a diagnosis penalty to score() was not enough. score() also pays 14
+    # per uncovered topic, and with 60-odd vignettes across 20-odd topics that
+    # term dominates, so the optimiser kept buying topic coverage with
+    # diagnosis-heavy sets -- Lecture 8 still shipped at 37% and Lecture 9 at
+    # 40%, the old cap exactly. Several POOLS are themselves diagnosis-heavy
+    # (Lecture 8 is 41%), and no amount of scoring fixes a pool.
+    #
+    # So the draw now takes at most DX_CAP diagnosis vignettes per set. If the
+    # pool cannot supply enough non-diagnosis stems to fill both sets, this
+    # FAILS rather than quietly shipping a skewed paper -- the honest signal
+    # that more management, treatment and education vignettes need writing.
+    DX_CAP = int(30 * 0.20)          # 6 of 30, matching "there might be SOME"
+    dx_idx = [i for i, q in enumerate(POOL) if lead_of(q) == "diagnosis"]
+    other_idx = [i for i in range(len(POOL)) if i not in set(dx_idx)]
+    need_other = 60 - 2 * DX_CAP
+    assert len(other_idx) >= need_other, (
+        "pool has only %d non-diagnosis vignettes but two sets need %d at the %d%% cap -- "
+        "write more management/treatment/education stems rather than relaxing the cap"
+        % (len(other_idx), need_other, 20))
+
+    best = None
     for _ in range(30000):
-        random.shuffle(idx)
-        ch = idx[:60]
+        random.shuffle(dx_idx)
+        random.shuffle(other_idx)
+        take_dx = dx_idx[:2 * DX_CAP]
+        take_ot = other_idx[:60 - len(take_dx)]
+        ch = take_dx[:DX_CAP] + take_ot[:30 - DX_CAP] + \
+             take_dx[DX_CAP:] + take_ot[30 - DX_CAP:]
         s1, s2 = [POOL[i] for i in ch[:30]], [POOL[i] for i in ch[30:]]
         t = score(s1) + score(s2)
         if best is None or t < best[0]:
@@ -125,6 +161,13 @@ if __name__ == "__main__":
         leads = Counter(lead_of(q) for q in s)
         top = max(leads.values())
         assert top <= len(s) * 0.40, "%s is %d/%d one lead-in type -- too skewed" % (name, top, len(s))
+        # And diagnosis specifically stays a minority, per her 24 August
+        # description of the exam: "there might be SOME question, what's the
+        # most likely diagnosis, but A LOT OF THEM are ... next management
+        # plan ... first line treatment ... patient education".
+        dx = leads.get("diagnosis", 0)
+        assert dx <= DX_CAP, ("%s carries %d diagnosis lead-ins of %d; she puts diagnosis in "
+                              "the minority, cap is %d" % (name, dx, len(s), DX_CAP))
     json.dump({"set1": s1, "set2": s2}, open(os.path.join(HERE, "cms_l4_set2.json"), "w"),
               ensure_ascii=False, indent=1)
     print("wrote cms_l4_set2.json")
