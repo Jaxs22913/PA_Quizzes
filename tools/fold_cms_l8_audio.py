@@ -5,13 +5,26 @@
 Professor Shah, Pigmented Skin Lesions. Cross-examined against Notability's
 independent transcript; every quote below appears in BOTH.
 
-THE RECORDING IS INCOMPLETE AT BOTH ENDS and the guide says so. It opens
-mid-sentence, already discussing ephelides and the MCR1 gene, so the start of
-the lecture is missing; and it stops mid-case at the end -- "here's a picture
-... I'm gonna ask you for a question, right? So based". 33.6 minutes across two
-segments with a forty-minute gap between them, and Notability holds no part 1.
-Absence of emphasis on a topic here is therefore NOT evidence she passed over
-it.
+WHERE THE RECORDING IS ACTUALLY MISSING, measured rather than guessed. My first
+account of this was wrong in three ways and the corrected one matters more.
+
+  FRONT: negligible. It opens "Okay, at some capacity a lot of patients will
+  have [ephelides]" -- deck slide 3 or 4 of 47. Only the title and instructional
+  objectives slides are absent.
+
+  MIDDLE: a TWELVE-minute hole, not the forty I first claimed. Segment 1 runs
+  13:14:13 to 13:44:43; segment 2 starts 13:56:40. I had mistaken the span from
+  the start of one segment to the start of the next for the gap between them.
+
+  END: it stops mid-sentence in the practice cases -- "here's a picture ... I'm
+  gonna ask you for a question, right? So based".
+
+THE TWELVE-MINUTE HOLE SITS EXACTLY ON SPITZ. Segment 1 cuts off mid-sentence
+inside Reed naevus ("because of the risk of it turning" -- malignant, unsaid),
+and segment 2 resumes already mid-description of a dome-shaped lesion that
+resembles melanoma. So she named the second exception during the minutes that
+were not captured. That, and not garbled transcription, is why the word "Spitz"
+appears in neither transcript.
 
 NOTHING WAS MISSING FROM THE BUILT CONTENT. Blue naevus, Reed, Spitz, the
 neurocutaneous melanosis magnetic resonance indication -- all already in the
@@ -72,9 +85,13 @@ BOX = """<!--CMSL8AUDIO-->
   the deck says excision with negative margins. And the one she reaches immediately after, a
   <i>&ldquo;<b>dome shape</b> &hellip; sometimes it can <b>resemble melanoma</b>&rdquo;</i> managed
   by <i>&ldquo;<b>wide excision</b>, so not just removing part of the lesion &hellip; but the entire
-  area surrounding it too&rdquo;</i>. <b>Neither transcript contains the word Spitz in any form</b>,
-  so that identification comes from the deck &mdash; slide 42 describes exactly this lesion, dome
-  shaped, resembling melanoma, diagnosed by biopsy versus wide excision. If you remember one frame
+  area surrounding it too&rdquo;</i>. <b>She almost certainly named it, but the recording was not
+  running.</b> Segment&nbsp;1 cuts off mid-sentence inside Reed &mdash; <i>&ldquo;because of the
+  risk of it turning&rdquo;</i>, malignant never said &mdash; and segment&nbsp;2 resumes already
+  mid-description of the dome-shaped lesion. The name falls in the twelve-minute hole between them,
+  which is why <b>the word Spitz is in neither transcript</b>. The identification is the deck's:
+  slide&nbsp;42 describes exactly this lesion, dome shaped, resembling melanoma, diagnosed by biopsy
+  versus wide excision. If you remember one frame
   for this lecture, make it <b>&ldquo;watch them all, cut out the two that look like melanoma&rdquo;</b>.</p>
   <p><b>The ephelides-versus-lentigines discriminator, in her words.</b> On lentigines:
   <i>&ldquo;<b>these do not go away</b> as sun exposure gets less and less&rdquo;</i> &mdash;
@@ -84,11 +101,13 @@ BOX = """<!--CMSL8AUDIO-->
   <p><b>A counselling point she framed as self-protection.</b> On cryotherapy for a seborrhoeic
   keratosis: it can come back, so tell them beforehand &mdash; <i>&ldquo;otherwise they&rsquo;ll be
   <b>pretty upset at you</b>&rdquo;</i>.</p>
-  <p><b><mark class="prof-highlight">This recording is incomplete at both ends.</mark></b> It begins
-  mid-sentence, already in the middle of ephelides and the MCR1 gene, and it stops mid-case during
-  the practice questions at the end &mdash; 33.6 minutes across two segments with a forty-minute gap,
-  and no part one exists. <b>If a topic below carries no emphasis note, that is not evidence she
-  passed over it.</b> Everything on the slides is covered in the sections that follow regardless.</p>
+  <p><b><mark class="prof-highlight">What the recording actually misses.</mark></b> Less than it
+  first appears at the front, and more than it appears in the middle. It starts at roughly
+  <b>slide 3 or 4 of 47</b>, so only the title and objectives slides are gone. It stops
+  <b>mid-sentence in the practice cases</b> at the end. And between the two segments there is a
+  <b>twelve-minute hole</b> &mdash; 13:44:43 to 13:56:40 &mdash; which is where the second exception
+  above was named. <b>If a topic below carries no emphasis note, that is not evidence she passed
+  over it.</b> Everything on the slides is covered in the sections that follow regardless.</p>
   </div>
 <!--/CMSL8AUDIO-->"""
 
@@ -99,8 +118,8 @@ CRAM_ROWS = [
   "On lentigines: “THESE DO NOT GO AWAY as sun exposure gets less and less” — “that will be one way that you will be able to DIFFERENTIATE LENTIGINES, SUNSPOTS, FROM EPHELIDES, FRECKLES.”"),
  ("Counselling — cryotherapy recurrence",
   "Warn BEFORE you freeze a seborrhoeic keratosis that it can come back, “OTHERWISE THEY'LL BE PRETTY UPSET AT YOU.”"),
- ("⚠ The recording is PARTIAL",
-  "Starts MID-SENTENCE inside ephelides/MCR1 and stops MID-CASE at the end; 33.6 min, no part one exists. NO emphasis note on a topic does NOT mean she skipped it. Deck content is covered in full regardless."),
+ ("⚠ What the recording misses",
+  "Starts at about SLIDE 3 OF 47 (only title + objectives lost), stops MID-SENTENCE in the practice cases, and has a TWELVE-MINUTE HOLE between its two segments, 13:44 to 13:56. That hole is exactly where SPITZ was named — which is why neither transcript contains the word. NO emphasis note on a topic does NOT mean she skipped it; the deck content is covered in full regardless."),
 ]
 
 
