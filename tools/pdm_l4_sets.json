@@ -1,0 +1,1566 @@
+{
+ "set1": [
+  {
+   "topic": "Anemia algorithm",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "first-line",
+   "q": "In the picture-only algorithm, what is obtained in the normocytic branch, and what determines subsequent testing?",
+   "opts": [
+    [
+     "Iron studies in all individuals, with all subsequent testing based on the ferritin and on the transferrin saturation",
+     "That is the microcytic branch."
+    ],
+    [
+     "A peripheral smear, with subsequent testing based on megaloblastic change",
+     "That is the macrocytic branch."
+    ],
+    [
+     "Hemoglobin analysis, with subsequent testing based on family history",
+     "That belongs to the microcytic branch."
+    ],
+    [
+     "A reticulocyte count and a chemistry panel with kidney and liver function tests, with subsequent testing based on the clinical scenario",
+     "Correct — and hematology referral follows if initial testing is unrevealing."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 71 (image only)"
+  },
+  {
+   "topic": "Red blood cell count",
+   "io": "Objective c — Discuss red blood cell indices",
+   "slot": "etiology",
+   "q": "Which three conditions does the deck give as examples of chronic hypoxia?",
+   "opts": [
+    [
+     "Chronic kidney disease, cancer and dilution by intravenous fluid",
+     "Those are decreased-value causes."
+    ],
+    [
+     "Chronic obstructive pulmonary disease, sleep apnea and high altitude",
+     "Correct — the three examples given."
+    ],
+    [
+     "Asthma, pulmonary embolism and anemia",
+     "None of these three is the example given."
+    ],
+    [
+     "Heart failure, pneumonia and smoking",
+     "Smoking appears under hematocrit but the trio does not match."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 50"
+  },
+  {
+   "topic": "Evaluating anemia",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "first-line",
+   "q": "What does the deck say to look at in addition to the four evaluation steps?",
+   "opts": [
+    [
+     "A direct antiglobulin test in every single case",
+     "Not mentioned in the deck's evaluation."
+    ],
+    [
+     "The peripheral blood smear, if one can be obtained",
+     "Correct — from the speaker notes."
+    ],
+    [
+     "A bone marrow biopsy in every case",
+     "Far beyond what the deck advises at this stage."
+    ],
+    [
+     "Hemoglobin electrophoresis in every case",
+     "The algorithm reserves hemoglobin analysis for specific circumstances."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 59 (speaker notes)"
+  },
+  {
+   "topic": "What a CBC is",
+   "io": "Objective a — Explain the components of a complete blood count",
+   "slot": "first-line",
+   "q": "What does a complete blood count provide information about?",
+   "opts": [
+    [
+     "The hematologic system only",
+     "The slide says the hematologic system and other organ systems."
+    ],
+    [
+     "Bone marrow function only",
+     "Marrow function is inferred, not the stated scope."
+    ],
+    [
+     "Clotting function and platelet activity",
+     "Coagulation studies are a separate panel."
+    ],
+    [
+     "The hematologic system and other organ systems",
+     "Correct — the deck is explicit that it reports beyond blood alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 3"
+  },
+  {
+   "topic": "Bands",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "test finding",
+   "q": "What combination does the deck say indicates bacterial infection?",
+   "opts": [
+    [
+     "Neutrophils plus eosinophils",
+     "Eosinophils are not part of this combination."
+    ],
+    [
+     "Neutrophils plus bands",
+     "Correct — the deck writes the two together as the bacterial signature."
+    ],
+    [
+     "Lymphocytes plus monocytes",
+     "That pairing is not given as a bacterial signature."
+    ],
+    [
+     "Eosinophils plus basophils",
+     "Those are attached to allergy and parasites."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 18"
+  },
+  {
+   "topic": "Hematocrit",
+   "io": "Objective b — Explain the difference between hemoglobin and hematocrit",
+   "slot": "differential",
+   "q": "Which four causes of a decreased hematocrit does the deck list?",
+   "opts": [
+    [
+     "Anemias, acute or chronic blood loss, hemolysis and dilution",
+     "Correct — hemolysis is on the hematocrit list specifically."
+    ],
+    [
+     "Polycythemia vera, smoking, chronic obstructive pulmonary disease and dehydration",
+     "Those all raise the hematocrit."
+    ],
+    [
+     "Bone marrow disorders, cancer, chronic kidney disease and dehydration",
+     "Dehydration raises rather than lowers it."
+    ],
+    [
+     "Trauma, iron deficiency, polycythemia vera and acute hemorrhage",
+     "That is the raised platelet list."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 52"
+  },
+  {
+   "topic": "Absolute counts",
+   "io": "Objective d — Calculate absolute white blood cell counts",
+   "slot": "test finding",
+   "q": "Which alternative absolute neutrophil count formula is used when the white cell count is expressed in thousands?",
+   "opts": [
+    [
+     "Ten multiplied by the white cell count in thousands, multiplied by the percentage of neutrophils plus bands",
+     "Correct — the second of the two equivalent standard forms on the slide image."
+    ],
+    [
+     "One hundred multiplied by the white cell count in thousands, multiplied by the percentage of neutrophils plus bands",
+     "The multiplier in this form is ten, not one hundred."
+    ],
+    [
+     "The white cell count in thousands divided by the percentage of neutrophils plus bands",
+     "Dividing inverts the relationship."
+    ],
+    [
+     "The white cell count in thousands multiplied by the percentage of neutrophils, with bands excluded",
+     "Bands are included in both forms."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 20 (image only)"
+  },
+  {
+   "topic": "Basophils",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "test finding",
+   "q": "What do basophil granules contain?",
+   "opts": [
+    [
+     "Heparin, histamine and other mediators of inflammation",
+     "Correct — heparin is what distinguishes basophil granules from eosinophil ones."
+    ],
+    [
+     "Histamines only",
+     "That is how the deck describes the eosinophil's granules."
+    ],
+    [
+     "Enzymes that digest bacterial cell walls",
+     "Not what the deck attributes to basophil granules."
+    ],
+    [
+     "Denatured hemoglobin and residual nuclear material",
+     "Those are red cell inclusions, not white cell granules."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 24"
+  },
+  {
+   "topic": "White blood cells",
+   "io": "Objective f — Discuss indications for ordering a complete blood count",
+   "slot": "first-line",
+   "q": "Which non-specific constitutional symptoms does the deck list as a reason to check a white cell count?",
+   "opts": [
+    [
+     "Pallor, dyspnoea on exertion, palpitations, dizziness and cold intolerance",
+     "Those are anemia symptoms and are not the list given."
+    ],
+    [
+     "Unexplained fatigue, weakness, unexplained bruising or bleeding, and weight loss",
+     "Correct — the four constitutional symptoms as listed."
+    ],
+    [
+     "Fever, chills, body aches and headaches",
+     "Those are the signs and symptoms listed under concern for infection."
+    ],
+    [
+     "Night sweats, lymphadenopathy, splenomegaly and pruritus",
+     "None of these four is on the slide."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 12"
+  },
+  {
+   "topic": "Size",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "What mean corpuscular volume defines microcytosis, and what causes it?",
+   "opts": [
+    [
+     "Less than eighty femtolitres, from vitamin B12 or folate deficiency",
+     "Those two deficiencies cause macrocytosis."
+    ],
+    [
+     "Between eighty and one hundred femtolitres, from iron deficiency anemia",
+     "That is the normal range."
+    ],
+    [
+     "Less than eighty femtolitres, from iron deficiency anemia or thalassemia",
+     "Correct — the threshold and the two examples the deck gives."
+    ],
+    [
+     "Greater than one hundred femtolitres, from iron deficiency anemia or thalassemia",
+     "That threshold defines macrocytosis."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 34"
+  },
+  {
+   "topic": "Schistocytes",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "What is a schistocyte, and what other names does the deck give it?",
+   "opts": [
+    [
+     "A teardrop-shaped red cell, also called a dacrocyte",
+     "That is the teardrop cell."
+    ],
+    [
+     "A fragmented red cell, also called a helmet cell or a horn cell",
+     "Correct — fragments of widely varying shapes and sizes."
+    ],
+    [
+     "A perfectly round red cell, also called a spherocyte or a microspherocyte",
+     "Those are separate entities, though the picture-only figure does list microspherocyte as a schistocyte form."
+    ],
+    [
+     "A crescent-shaped red cell, also called a drepanocyte",
+     "That is the sickled cell."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 38"
+  },
+  {
+   "topic": "Acanthocyte vs echinocyte",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "differential",
+   "q": "What are the two features separating an acanthocyte from an echinocyte?",
+   "opts": [
+    [
+     "The acanthocyte occurs in chronic renal disease and the echinocyte in chronic liver disease, and neither one has central pallor",
+     "The two associations are the other way round."
+    ],
+    [
+     "The acanthocyte contains inclusions and the echinocyte does not",
+     "Neither is defined by inclusions."
+    ],
+    [
+     "The acanthocyte's spikes are irregular and it lacks the echinocyte's central pallor; the echinocyte's are regular with blunter tips",
+     "Correct — regularity of the spikes and presence of central pallor."
+    ],
+    [
+     "The acanthocyte is microcytic and the echinocyte is macrocytic",
+     "Size is not what separates them in this deck."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 37"
+  },
+  {
+   "topic": "Anemia algorithm",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "differential",
+   "q": "Which cause appears in BOTH the microcytic and the normocytic branches of the picture-only algorithm?",
+   "opts": [
+    [
+     "Iron deficiency",
+     "Correct — it is listed under both, which is why iron studies are obtained even when the volume is normal."
+    ],
+    [
+     "Thalassemia",
+     "Thalassemia appears only in the microcytic branch."
+    ],
+    [
+     "Hypothyroidism",
+     "Hypothyroidism appears in the normocytic and macrocytic branches."
+    ],
+    [
+     "Myelodysplastic syndrome",
+     "That appears only in the macrocytic branch."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 71 (image only)"
+  },
+  {
+   "topic": "Target cells",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "etiology",
+   "q": "Why does splenectomy increase target cells, according to the speaker notes?",
+   "opts": [
+    [
+     "Because the spleen normally produces target cells",
+     "The spleen removes abnormal cells rather than producing them."
+    ],
+    [
+     "Because iron is no longer stored efficiently",
+     "Not the mechanism the notes give."
+    ],
+    [
+     "Because hemoglobin denatures without splenic clearance",
+     "Denatured hemoglobin gives Heinz bodies."
+    ],
+    [
+     "Because of altered filtration dynamics",
+     "Correct — the spleen normally remodels the membrane as cells pass through."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 43 (speaker notes)"
+  },
+  {
+   "topic": "Red cell indices",
+   "io": "Objective c — Discuss red blood cell indices",
+   "slot": "test finding",
+   "q": "What are the formulas for mean corpuscular hemoglobin and mean corpuscular hemoglobin concentration?",
+   "opts": [
+    [
+     "Mean corpuscular hemoglobin is hemoglobin times ten over the red cell count; the concentration is hemoglobin times one hundred over hematocrit",
+     "Correct — both from the formula images, and the denominator is what tells them apart."
+    ],
+    [
+     "Mean corpuscular hemoglobin is hemoglobin times one hundred over hematocrit; the concentration is hemoglobin times ten over the red cell count",
+     "The two formulas are swapped."
+    ],
+    [
+     "Both are hemoglobin times ten over the red cell count, differing only in units",
+     "They have different denominators."
+    ],
+    [
+     "Both are calculated from hematocrit and the red cell count, without using hemoglobin",
+     "Hemoglobin is the numerator in both."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 54 (image only)"
+  },
+  {
+   "topic": "Iron comparison table",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "test finding",
+   "q": "In the iron comparison table, what happens to transferrin and total iron binding capacity in IRON DEFICIENCY?",
+   "opts": [
+    [
+     "Both fall, while transferrin saturation rises",
+     "That is closer to the inflammatory anaemia pattern."
+    ],
+    [
+     "Both stay normal, while transferrin saturation falls",
+     "That is the thalassaemia minor row, where saturation is also normal."
+    ],
+    [
+     "Both rise, while transferrin saturation also rises",
+     "Saturation falls in iron deficiency."
+    ],
+    [
+     "Both rise, while transferrin saturation falls",
+     "Correct — more carrier, less cargo, so saturation drops."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 63 (image only)"
+  },
+  {
+   "topic": "Neutrophils",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "test finding",
+   "q": "What is the normal neutrophil percentage, and what is the neutrophil's rank among white cells?",
+   "opts": [
+    [
+     "Fifty-four to sixty-two per cent, and the second most abundant white blood cell",
+     "The deck calls the neutrophil the most abundant."
+    ],
+    [
+     "Three to seven per cent, and the largest white blood cell",
+     "Those figures describe the monocyte."
+    ],
+    [
+     "Fifty-four to sixty-two per cent, and the most abundant white blood cell",
+     "Correct — both the range and the rank, and the reference table agrees with this figure."
+    ],
+    [
+     "Twenty-four to forty-four per cent, and the most abundant white blood cell",
+     "That range is the one the deck gives for lymphocytes."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 18"
+  },
+  {
+   "topic": "Teardrop cells",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "What is a teardrop cell also called, where does it form, and what is it associated with?",
+   "opts": [
+    [
+     "A dacrocyte, formed within bone marrow infiltrated by scar tissue or cancerous cells, associated with bone marrow disease",
+     "Correct — the shape reflects the marrow the cell had to squeeze out of."
+    ],
+    [
+     "A drepanocyte, formed within the circulation under low oxygen tension, associated with sickle cell anemia",
+     "That is the sickled cell."
+    ],
+    [
+     "A codocyte, formed from redundant membrane, associated with liver disease",
+     "That is the target cell."
+    ],
+    [
+     "An echinocyte, formed from membrane changes, associated with renal disease",
+     "That is the burr cell."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 44"
+  },
+  {
+   "topic": "Macrocytic anemia",
+   "io": "Objective g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
+   "slot": "differential",
+   "q": "Which three drugs does the deck name as impairing DNA synthesis?",
+   "opts": [
+    [
+     "Chemotherapy, alcohol and radiation",
+     "Those are the platelet suppression causes."
+    ],
+    [
+     "Steroids, methotrexate and hydroxyurea",
+     "Steroids raise the neutrophil count and are not on this list."
+    ],
+    [
+     "Methotrexate, antiretrovirals and hydroxyurea",
+     "Correct — the three named examples."
+    ],
+    [
+     "Cyclosporine, methotrexate and benzene",
+     "Cyclosporine is named for schistocytes and benzene for neutropenia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 65"
+  },
+  {
+   "topic": "Evaluating anemia",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "test finding",
+   "q": "What does a decreased reticulocyte count suggest, and what does an increased one suggest?",
+   "opts": [
+    [
+     "Decreased suggests hemolysis; increased suggests underproduction of red cells",
+     "The two are swapped."
+    ],
+    [
+     "Decreased suggests iron deficiency; increased suggests a vitamin B12 deficiency",
+     "Neither is what the reticulocyte count indicates."
+    ],
+    [
+     "Decreased suggests acute blood loss; increased suggests bone marrow failure",
+     "Both are the wrong way round."
+    ],
+    [
+     "Decreased suggests underproduction of red cells; increased suggests hemolysis or blood loss",
+     "Correct — from the speaker notes."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 59 (speaker notes)"
+  },
+  {
+   "topic": "Ordering a CBC",
+   "io": "Objective f — Discuss indications for ordering a complete blood count",
+   "slot": "first-line",
+   "q": "Which four things does a complete blood count without differential include?",
+   "opts": [
+    [
+     "Red blood cell count, red blood cell indices, the white cell differential, and platelets",
+     "The differential is exactly what this version omits."
+    ],
+    [
+     "Hemoglobin, hematocrit, platelets, and the reticulocyte count",
+     "The reticulocyte count is ordered separately."
+    ],
+    [
+     "Total white blood cell count, platelets, coagulation studies, and red cell indices",
+     "Coagulation studies are not part of a complete blood count."
+    ],
+    [
+     "Red blood cell count, red blood cell indices, total white blood cell count, and platelets",
+     "Correct — the four components as listed."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 6"
+  },
+  {
+   "topic": "Poikilocytosis",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "etiology",
+   "q": "What does poikilocytosis mean?",
+   "opts": [
+    [
+     "Abnormal inclusions within red blood cells",
+     "Inclusions are a separate category in this deck."
+    ],
+    [
+     "Abnormal clumping of red blood cells",
+     "That is agglutination."
+    ],
+    [
+     "Abnormally shaped red blood cells",
+     "Correct — the umbrella term for the shape variants."
+    ],
+    [
+     "Abnormal variation in red blood cell size",
+     "That is anisocytosis, measured by red cell distribution width."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 33"
+  },
+  {
+   "topic": "Normocytic anemia",
+   "io": "Objective g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
+   "slot": "differential",
+   "q": "Which hypo-proliferative causes of normocytic anemia does the deck list?",
+   "opts": [
+    [
+     "Vitamin B12 deficiency, folate deficiency, alcohol use and liver disease",
+     "Those are macrocytic causes."
+    ],
+    [
+     "Iron deficiency, thalassemia, lead poisoning and sideroblastic anemia",
+     "Those are microcytic causes."
+    ],
+    [
+     "Aplastic anemia, anemia of chronic disease, infiltration of bone marrow by tumor, and hypometabolic states",
+     "Correct — the four hypo-proliferative causes."
+    ],
+    [
+     "Acute blood loss, intrinsic hemolytic anemia, extrinsic hemolytic anemia and sickle cell anemia",
+     "Those are the hemolysis and hemorrhage branch."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 68"
+  },
+  {
+   "topic": "Anemia algorithm",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "first-line",
+   "q": "In the normocytic branch of the algorithm, which test is obtained next?",
+   "opts": [
+    [
+     "Hemoglobin analysis",
+     "That is reserved for suspected thalassemia."
+    ],
+    [
+     "The reticulocyte count",
+     "Correct — a normal mean corpuscular volume sends you to the reticulocyte count."
+    ],
+    [
+     "Iron studies",
+     "Iron studies belong to the microcytic branch."
+    ],
+    [
+     "A peripheral smear looking for megaloblastic change",
+     "That belongs to the macrocytic branch."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 70"
+  },
+  {
+   "topic": "WBC morphology",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "manifestation",
+   "q": "Which cell has a large spherical nucleus with a thin rim of pale blue cytoplasm, and which has a kidney-shaped nucleus with abundant pale blue cytoplasm?",
+   "opts": [
+    [
+     "Basophil spherical, neutrophil kidney-shaped",
+     "Neither description matches those cells."
+    ],
+    [
+     "Lymphocyte spherical, monocyte kidney-shaped",
+     "Correct — the two agranulocytes, from the picture-only morphology figure."
+    ],
+    [
+     "Monocyte spherical, lymphocyte kidney-shaped",
+     "The two are swapped."
+    ],
+    [
+     "Neutrophil spherical, eosinophil kidney-shaped",
+     "Both of those are granulocytes with lobed nuclei."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 10 (image only)"
+  },
+  {
+   "topic": "Monocytes",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "differential",
+   "q": "Which causes of increased monocytes does the deck list, and what decreases them?",
+   "opts": [
+    [
+     "Increased by chronic inflammation, stress and viral infection; decreased by bone marrow injury",
+     "Correct — three causes up and one down."
+    ],
+    [
+     "Increased by parasitic infection, allergy and cancer; decreased by bone marrow injury",
+     "Those three increases are the eosinophil causes."
+    ],
+    [
+     "Increased by bacterial infection, burns and steroids; decreased by radiation",
+     "Those are neutrophil causes."
+    ],
+    [
+     "Increased by acute bacterial infection only; decreased by viral infection",
+     "Neither matches the deck's list."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 25"
+  },
+  {
+   "topic": "Hemoglobin distribution",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "In which cell is hyperchromia observed, and what are its index values?",
+   "opts": [
+    [
+     "Spherocytes, with mean corpuscular hemoglobin above thirty-three picograms and concentration above thirty-six grams per decilitre",
+     "Correct — which is why the concentration flags hereditary spherocytosis."
+    ],
+    [
+     "Target cells, with mean corpuscular hemoglobin above thirty-three picograms",
+     "Target cells are associated with liver disease and splenectomy, not hyperchromia."
+    ],
+    [
+     "Schistocytes, with mean corpuscular hemoglobin concentration above thirty-six grams per decilitre of packed cells",
+     "Schistocytes are described as usually microcytic and lacking central pallor."
+    ],
+    [
+     "Echinocytes, with mean corpuscular hemoglobin above thirty-three picograms",
+     "Echinocytes are described as having central pallor."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 35"
+  },
+  {
+   "topic": "Size",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "What mean corpuscular volume defines macrocytosis, and what causes it?",
+   "opts": [
+    [
+     "Greater than one hundred femtolitres, from iron deficiency or thalassemia",
+     "Those two cause microcytosis."
+    ],
+    [
+     "Greater than eighty femtolitres, from vitamin B12 deficiency",
+     "Eighty is the lower end of normal, not the macrocytic threshold."
+    ],
+    [
+     "Greater than one hundred femtolitres, from vitamin B12 or folate deficiency",
+     "Correct — the threshold and the two examples given."
+    ],
+    [
+     "Less than eighty femtolitres, from vitamin B12 or folate deficiency",
+     "That threshold defines microcytosis."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 34"
+  },
+  {
+   "topic": "Left shift",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "etiology",
+   "q": "Why does a left shift occur during an acute bacterial infection?",
+   "opts": [
+    [
+     "Bacteria selectively destroy mature neutrophils in the tissue",
+     "Not the mechanism given."
+    ],
+    [
+     "Neutrophils are increasingly consumed, so the marrow releases both mature and immature forms to keep up",
+     "Correct — the mechanism the deck spells out."
+    ],
+    [
+     "The marrow is suppressed, so only immature forms can be produced",
+     "Marrow suppression causes a decreased count, not a left shift."
+    ],
+    [
+     "Immature cells survive considerably longer in the circulation than the fully mature ones do",
+     "Not the mechanism given."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 19"
+  },
+  {
+   "topic": "Platelets",
+   "io": "Objective e(iii) — Discuss the clinical significance of abnormalities in platelets",
+   "slot": "differential",
+   "q": "Which causes of INCREASED platelets does the deck list?",
+   "opts": [
+    [
+     "Trauma, chemotherapy, alcohol and aplastic anemia",
+     "The last three are causes of marrow suppression and a decreased count."
+    ],
+    [
+     "Radiation, drugs, alcohol and iron deficiency",
+     "Only iron deficiency is on the increased list."
+    ],
+    [
+     "Bone marrow failure, acute hemorrhage and polycythemia vera",
+     "Bone marrow failure decreases platelets."
+    ],
+    [
+     "Trauma, acute hemorrhage, iron deficiency and polycythemia vera",
+     "Correct — note that iron deficiency raises platelets while lowering red cells."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 30"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Platelets",
+   "io": "Objective e(iii) — Discuss the clinical significance of abnormalities in platelets",
+   "slot": "etiology",
+   "q": "What is the platelet's primary role, and what does that mean?",
+   "opts": [
+    [
+     "Oxygen transport, meaning carrying oxygen bound to hemoglobin",
+     "That is the red cell's role."
+    ],
+    [
+     "Hemostasis, meaning stopping the bleeding and repairing damaged blood vessels",
+     "Correct — the deck defines the term rather than assuming it."
+    ],
+    [
+     "Coagulation, meaning activating the clotting cascade",
+     "Coagulation is listed as a contribution, but hemostasis is the primary role."
+    ],
+    [
+     "Immune defense, meaning encapsulating and destroying foreign organisms",
+     "That is a white cell role."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 28"
+  },
+  {
+   "topic": "Monocytes",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "test finding",
+   "q": "What is the monocyte's normal percentage, size and granule status?",
+   "opts": [
+    [
+     "Twenty-four to forty-four per cent, the largest white blood cell, and no granules",
+     "That percentage belongs to lymphocytes."
+    ],
+    [
+     "One to three per cent, the largest white blood cell, and granules containing histamine",
+     "Those figures and granules describe the eosinophil."
+    ],
+    [
+     "Three to seven per cent, the largest white blood cell, and no granules",
+     "Correct — and the reference table agrees on the percentage."
+    ],
+    [
+     "Three to seven per cent, the smallest white blood cell, and no granules",
+     "The monocyte is described as the largest."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 25"
+  },
+  {
+   "topic": "Fishbone diagram",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "test finding",
+   "q": "In the CBC fishbone diagram, which value goes in each position?",
+   "opts": [
+    [
+     "Hemoglobin on the left, white cell count above the centre line, platelets below it, and hematocrit on the right",
+     "The diagram does not arrange the values this way."
+    ],
+    [
+     "Red cell count on the left, hemoglobin above the centre line, hematocrit below it, and platelets on the right",
+     "The left arm carries the white cell count, not the red cell count."
+    ],
+    [
+     "White cell count on the left, hemoglobin above the centre line, hematocrit below it, and platelets on the right",
+     "Correct — from the picture-only diagram on the summary slide."
+    ],
+    [
+     "Platelets on the left, hematocrit above the centre line, hemoglobin below it, and white cell count on the right",
+     "Every position is reversed."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 72 (image only)"
+  },
+  {
+   "topic": "Absolute counts",
+   "io": "Objective d — Calculate absolute white blood cell counts",
+   "slot": "escalation",
+   "q": "A patient has a white cell count of 2,000 per microlitre with 20% neutrophils and no bands. What is the absolute neutrophil count, and how is the neutropenia categorised?",
+   "opts": [
+    [
+     "4,000 per microlitre, which is a normal count",
+     "That is ten times the correct value."
+    ],
+    [
+     "200 per microlitre, which is severe neutropenia",
+     "The category is right but the arithmetic is not."
+    ],
+    [
+     "400 per microlitre, which is severe neutropenia",
+     "Correct — 2,000 x 20 / 100 = 400, and severe is below 500 cells per microlitre."
+    ],
+    [
+     "400 per microlitre, which is moderate neutropenia",
+     "The arithmetic is right but 400 falls below the 500 threshold, so it is severe."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 21 (image only)"
+  },
+  {
+   "topic": "Red blood cell count",
+   "io": "Objective c — Discuss red blood cell indices",
+   "slot": "test finding",
+   "q": "What does the deck say about using the red blood cell count to diagnose anemia?",
+   "opts": [
+    [
+     "It does not accurately measure oxygen carrying capacity and is not directly used to diagnose anemia, though it is still used to evaluate it",
+     "Correct — a distinction worth holding, since the count is on every panel."
+    ],
+    [
+     "It is the single most accurate measure of the blood's oxygen carrying capacity that is available anywhere on the panel today",
+     "The deck states the opposite."
+    ],
+    [
+     "It is the definitive test for anemia and replaces hemoglobin",
+     "The deck says it is not directly used to diagnose anemia."
+    ],
+    [
+     "It has no role at all in evaluating anemia",
+     "The deck says it is still important and used in evaluation."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 50"
+  },
+  {
+   "topic": "Hematocrit",
+   "io": "Objective b — Explain the difference between hemoglobin and hematocrit",
+   "slot": "differential",
+   "q": "Which causes of a raised hematocrit does the deck list that do not appear on the hemoglobin slide?",
+   "opts": [
+    [
+     "Chronic kidney disease and cancer",
+     "Those are causes of a decreased value."
+    ],
+    [
+     "Trauma and acute hemorrhage",
+     "Those raise platelets rather than hematocrit."
+    ],
+    [
+     "Iron deficiency and thalassemia",
+     "Those are microcytic anemia causes."
+    ],
+    [
+     "Smoking and hypoventilation",
+     "Correct — the hematocrit slide adds these two alongside polycythemia vera and dehydration."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 52"
+  },
+  {
+   "topic": "Heinz bodies",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "etiology",
+   "q": "What does the deck's note say G6PD is and does?",
+   "opts": [
+    [
+     "Glucose-6-phosphate dehydrogenase, an enzyme that carries oxygen within the red cell",
+     "Oxygen carriage is hemoglobin's job."
+    ],
+    [
+     "Glycogen-6-phosphatase, an enzyme that stores glucose in the red cell",
+     "Not the enzyme named."
+    ],
+    [
+     "An enzyme that removes nuclear remnants from red cells",
+     "The spleen does that, not an enzyme."
+    ],
+    [
+     "Glucose-6-phosphate dehydrogenase, an enzyme that protects red cells from harmful substances",
+     "Correct — deficiency arises when the gene driving the enzyme mutates."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 47 (speaker notes)"
+  },
+  {
+   "topic": "What a CBC is",
+   "io": "Objective a — Explain the components of a complete blood count",
+   "slot": "first-line",
+   "q": "Which four red cell indices does a complete blood count report?",
+   "opts": [
+    [
+     "Mean corpuscular volume, mean corpuscular hemoglobin, mean corpuscular hemoglobin concentration, and red blood cell distribution width",
+     "Correct — the four indices as the deck lists them."
+    ],
+    [
+     "Mean corpuscular volume, hemoglobin concentration, hematocrit percentage, and the red blood cell distribution width",
+     "Hemoglobin and hematocrit are separate measurements, not indices."
+    ],
+    [
+     "Mean corpuscular volume, mean platelet volume, hematocrit, and reticulocyte count",
+     "Mean platelet volume is a platelet measure and the reticulocyte count is not part of the panel."
+    ],
+    [
+     "Red blood cell count, hemoglobin, hematocrit, and mean corpuscular volume",
+     "The first three are measurements rather than indices."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 3"
+  },
+  {
+   "topic": "Iron comparison table",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "differential",
+   "q": "In the iron comparison table, which two conditions share a LOW mean corpuscular volume with RAISED ferritin?",
+   "opts": [
+    [
+     "Inflammatory anaemia and iron overload",
+     "Both of those have a normal mean corpuscular volume."
+    ],
+    [
+     "Thalassaemia major and sideroblastic anaemia",
+     "Correct — sideroblastic anaemia also shows raised serum iron."
+    ],
+    [
+     "Iron deficiency and inflammatory anaemia",
+     "Iron deficiency has low ferritin and inflammatory anaemia a normal volume."
+    ],
+    [
+     "Thalassaemia minor and iron overload",
+     "Thalassaemia minor has normal ferritin and iron overload a normal volume."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 63 (image only)"
+  },
+  {
+   "topic": "Iron studies",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "test finding",
+   "q": "Which iron study pattern indicates ANEMIA OF CHRONIC DISEASE?",
+   "opts": [
+    [
+     "Ferritin decreased, serum iron decreased, total iron binding capacity increased",
+     "That is iron deficiency."
+    ],
+    [
+     "Ferritin increased, serum iron increased, total iron binding capacity increased",
+     "Not a pattern the deck gives."
+    ],
+    [
+     "Ferritin normal, serum iron normal, total iron binding capacity normal",
+     "That routes to thalassemia trait or lead poisoning."
+    ],
+    [
+     "Ferritin increased, serum iron decreased, total iron binding capacity decreased",
+     "Correct — ferritin is an acute phase reactant, so it rises despite iron being unavailable."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 62"
+  },
+  {
+   "topic": "Neutrophils",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "etiology",
+   "q": "What is the neutrophil's role?",
+   "opts": [
+    [
+     "Immune surveillance and differentiation into macrophages",
+     "Those are monocyte functions."
+    ],
+    [
+     "The body's main defense against bacteria and its primary defense against microbial invasion, by phagocytosis",
+     "Correct — the deck's wording, with phagocytosis as the mechanism."
+    ],
+    [
+     "The body's main defense against parasites and its primary defense against allergens, by releasing granule contents",
+     "That role is attributed to eosinophils elsewhere."
+    ],
+    [
+     "Antibody production and cellular immune response",
+     "Those are lymphocyte functions."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 18"
+  },
+  {
+   "topic": "Platelets",
+   "io": "Objective e(iii) — Discuss the clinical significance of abnormalities in platelets",
+   "slot": "test finding",
+   "q": "Below what platelet count does the deck say the risk of hemorrhage increases?",
+   "opts": [
+    [
+     "Fifty thousand",
+     "Higher than the threshold given."
+    ],
+    [
+     "One hundred thousand",
+     "That is still well within the range the deck treats as lower risk."
+    ],
+    [
+     "One hundred and fifty thousand",
+     "That is the lower limit of the normal range, not the hemorrhage threshold."
+    ],
+    [
+     "Twenty thousand",
+     "Correct — the threshold the deck gives for increased hemorrhage risk."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 29"
+  },
+  {
+   "topic": "Neutrophil abnormalities",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "differential",
+   "q": "Which causes of INCREASED neutrophils does the deck list?",
+   "opts": [
+    [
+     "Parasitic infection, allergic reaction, cancer, and pregnancy",
+     "The first three are eosinophil causes."
+    ],
+    [
+     "Bacterial infection, myocardial infarction, burns, steroids, rheumatoid arthritis, and physiologic causes such as pregnancy, labor and surgery",
+     "Correct — the full list, including the physiologic causes."
+    ],
+    [
+     "Bacterial infection, radiation exposure, severe burns, benzene and other toxic chemicals, and an overwhelming systemic infection",
+     "Radiation, benzene and overwhelming infection are causes of DECREASED neutrophils."
+    ],
+    [
+     "Viral infection, folate deficiency, bone marrow damage, and steroids",
+     "The first three decrease the count."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 22"
+  },
+  {
+   "topic": "Mean platelet volume",
+   "io": "Objective e(iii) — Discuss the clinical significance of abnormalities in platelets",
+   "slot": "differential",
+   "q": "What does an increased mean platelet volume represent, and what lowers it?",
+   "opts": [
+    [
+     "An increase in platelet number; lowered by a decrease in number",
+     "Volume and number are separate measurements."
+    ],
+    [
+     "An increase in immature platelets, as after recent blood loss; lowered by bone marrow failure",
+     "Correct — the deck pairs the raised and lowered readings this way."
+    ],
+    [
+     "An increase in mature platelets, as in polycythemia; lowered by recent blood loss",
+     "Recent blood loss raises rather than lowers the value."
+    ],
+    [
+     "Platelet clumping in the sample; lowered by prolonged storage",
+     "Neither is what the deck attributes the change to."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 30"
+  },
+  {
+   "topic": "Acanthocytes",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "etiology",
+   "q": "Why do acanthocytes form?",
+   "opts": [
+    [
+     "From loss of surface membrane during splenic passage",
+     "That is closer to spherocyte formation."
+    ],
+    [
+     "From denaturation of hemoglobin within the cell",
+     "That produces Heinz bodies."
+    ],
+    [
+     "From abnormalities in lipid metabolism or alterations in the red cell membrane",
+     "Correct — from the speaker notes."
+    ],
+    [
+     "From mechanical shearing as the cells pass through fibrin strands in vessels",
+     "That is how schistocytes form."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 36 (speaker notes)"
+  },
+  {
+   "topic": "Evaluating anemia",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "first-line",
+   "q": "What does the reticulocyte count tell you, and when is it most helpful?",
+   "opts": [
+    [
+     "Whether hemolysis is immune or mechanical, and it is most helpful when the smear is normal",
+     "The count does not distinguish the mechanism of hemolysis."
+    ],
+    [
+     "Whether the bone marrow is functioning appropriately, and it is most helpful when very elevated or very decreased",
+     "Correct — the middle of the range is the least informative part."
+    ],
+    [
+     "Whether the bone marrow is functioning appropriately, and it is most helpful when in the middle of its range",
+     "The deck says the extremes are what help."
+    ],
+    [
+     "Whether iron stores are adequate, and it is most helpful when ferritin is normal",
+     "Iron stores are assessed by ferritin, not the reticulocyte count."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 59"
+  },
+  {
+   "topic": "Hemoglobin vs hematocrit",
+   "io": "Objective b — Explain the difference between hemoglobin and hematocrit",
+   "slot": "test finding",
+   "q": "What is the difference between hemoglobin and hematocrit?",
+   "opts": [
+    [
+     "Hemoglobin is the amount of hemoglobin in a volume of blood; hematocrit is the percentage of that blood which is red cells",
+     "Correct — one is a concentration of protein, the other a proportion of volume."
+    ],
+    [
+     "Hemoglobin is the percentage of blood which is red cells; hematocrit is the amount of hemoglobin per volume",
+     "The two definitions are swapped."
+    ],
+    [
+     "Hemoglobin is the number of red cells per volume; hematocrit is their average size",
+     "Those describe the red cell count and mean corpuscular volume."
+    ],
+    [
+     "Hemoglobin is measured directly; hematocrit is a marker of oxygen saturation",
+     "Hematocrit is a packed cell volume, not a saturation."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 51"
+  },
+  {
+   "topic": "Ordering a CBC",
+   "io": "Objective f — Discuss indications for ordering a complete blood count",
+   "slot": "first-line",
+   "q": "What is the difference between a complete blood count with and without differential?",
+   "opts": [
+    [
+     "The version with differential adds the breakdown of white cell types to everything the version without it contains",
+     "Correct — one is a strict superset of the other."
+    ],
+    [
+     "The version with differential adds platelet indices to everything the version without it contains",
+     "Platelets are in both; the differential adds white cell types."
+    ],
+    [
+     "The version without differential omits the red cell indices",
+     "Red cell indices are present in both."
+    ],
+    [
+     "The version without differential omits the total white cell count",
+     "It gives a total white cell count, just not the breakdown."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 6"
+  },
+  {
+   "topic": "Anemia algorithm",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "test finding",
+   "q": "At what hemoglobin does the deck's algorithm define a low value for men and for women?",
+   "opts": [
+    [
+     "Under sixteen grams per decilitre for men, under fourteen for women",
+     "Both figures sit within the normal range."
+    ],
+    [
+     "Under fourteen grams per decilitre for men, under twelve for women",
+     "Correct — note this differs from the reference table's lower limit of thirteen point five for men."
+    ],
+    [
+     "Under twelve grams per decilitre for men, under fourteen for women",
+     "The two are swapped."
+    ],
+    [
+     "Under thirteen point five grams per decilitre for men, under twelve for women",
+     "That is the reference table's figure, not the algorithm's."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 70"
+  },
+  {
+   "topic": "Iron transport",
+   "io": "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia",
+   "slot": "test finding",
+   "q": "In the iron transport analogy, what do the home and the percentage saturation represent?",
+   "opts": [
+    [
+     "The home is ferritin, which can be measured directly; the percentage saturation is transferrin, the protein that carries iron in the blood",
+     "Ferritin is the bus stop in this analogy."
+    ],
+    [
+     "The home is the red blood cell; the percentage saturation is the reticulocyte count",
+     "The red blood cell is the school."
+    ],
+    [
+     "The home is the bone marrow; the percentage saturation is serum iron",
+     "Not the mapping the notes give."
+    ],
+    [
+     "The home is hemosiderin storage, which cannot be measured; the percentage saturation is total iron binding capacity, how many iron atoms can sit on the bus",
+     "Correct — and ferritin is measurable precisely because it is outside the marrow."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 69 (speaker notes)"
+  },
+  {
+   "topic": "Eosinophils",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "test finding",
+   "q": "What is the eosinophil's normal percentage, nucleus, and granule content?",
+   "opts": [
+    [
+     "Less than one per cent, a two-lobed nucleus, and granules containing histamines",
+     "Less than one per cent is the basophil figure."
+    ],
+    [
+     "One to three per cent, a two-lobed nucleus, and granules containing histamines",
+     "Correct — and the reference table agrees on the percentage."
+    ],
+    [
+     "One to three per cent, a three-lobed nucleus, and granules containing heparin",
+     "Heparin is in the basophil's granules and the eosinophil nucleus is bilobed."
+    ],
+    [
+     "Twenty-four to forty-four per cent, a two-lobed nucleus, and granules containing histamines",
+     "That percentage is the one the deck gives for lymphocytes."
+    ]
+   ],
+   "c": 1,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 23"
+  },
+  {
+   "topic": "Macrocytic anemia",
+   "io": "Objective g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
+   "slot": "differential",
+   "q": "Which causes of MEGALOBLASTIC macrocytic anemia does the deck list?",
+   "opts": [
+    [
+     "Alcohol use, liver disease, hypothyroidism and reticulocytosis",
+     "Those are the non-megaloblastic causes."
+    ],
+    [
+     "Iron deficiency, thalassemia, lead poisoning and the anemia of chronic renal disease",
+     "Those are microcytic causes."
+    ],
+    [
+     "Aplastic anemia, hemolysis, acute blood loss and sickle cell anemia",
+     "Those are normocytic causes."
+    ],
+    [
+     "Vitamin B12 deficiency, folate deficiency, drugs impairing DNA synthesis, and copper deficiency",
+     "Correct — with methotrexate, antiretrovirals and hydroxyurea as the named drugs."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 65"
+  },
+  {
+   "topic": "Macrocytic anemia",
+   "io": "Objective g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
+   "slot": "differential",
+   "q": "A macrocytic anemia shows NO megaloblastic changes on the smear. Which two diagnoses does the deck's flowchart offer?",
+   "opts": [
+    [
+     "Vitamin B12 deficiency and dietary folate deficiency",
+     "Those sit on the branch WITH megaloblastic changes."
+    ],
+    [
+     "Iron deficiency and thalassemia",
+     "Those are microcytic."
+    ],
+    [
+     "Hemolysis and acute hemorrhage",
+     "Those sit on the high reticulocyte branch of the normocytic arm."
+    ],
+    [
+     "Chronic liver disease and acute hematologic malignancy",
+     "Correct — the two arms on the no-megaloblastic-change branch."
+    ]
+   ],
+   "c": 3,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 66"
+  },
+  {
+   "topic": "Lymphocytes",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "differential",
+   "q": "What increases lymphocytes, and what decreases them?",
+   "opts": [
+    [
+     "Increased by parasitic infections and allergy; decreased by an acute allergic reaction",
+     "Those relate to eosinophils."
+    ],
+    [
+     "Increased by chronic inflammation; decreased by acute bleeding",
+     "Chronic inflammation is a monocyte cause."
+    ],
+    [
+     "Increased by viral infections; decreased by human immunodeficiency virus and bone marrow suppression",
+     "Correct — note that a virus appears on both sides, which is the point worth holding."
+    ],
+    [
+     "Increased by bacterial infections; decreased by viral infections",
+     "Bacterial infection raises neutrophils."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 26"
+  },
+  {
+   "topic": "Hemoglobin distribution",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "How much of a normal red cell's diameter is central pallor?",
+   "opts": [
+    [
+     "One third",
+     "Correct — the reference point the hypochromic and hyperchromic definitions depend on."
+    ],
+    [
+     "One half",
+     "More than one third would be hypochromic."
+    ],
+    [
+     "One quarter",
+     "Less than one third suggests hyperchromia."
+    ],
+    [
+     "Two thirds",
+     "Far greater than the normal proportion."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 35"
+  },
+  {
+   "topic": "White blood cells",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "test finding",
+   "q": "What is the normal white blood cell range, and what are the terms for values outside it?",
+   "opts": [
+    [
+     "Four thousand to ten thousand cells per microlitre, with leukopenia below and leukocytosis above",
+     "The terms are right but the range does not match the deck."
+    ],
+    [
+     "Eleven thousand to fifteen thousand cells per microlitre, with leukopenia below and leukocytosis above",
+     "That range sits entirely above normal."
+    ],
+    [
+     "Four thousand five hundred to eleven thousand cells per microlitre, with leukopenia below and leukocytosis above",
+     "Correct — the range and both terms, which the deck's reference table also gives."
+    ],
+    [
+     "Four thousand five hundred to eleven thousand cells per microlitre, with leukocytosis below and leukopenia above",
+     "The two terms are the wrong way round."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 12"
+  },
+  {
+   "topic": "Macrocytic anemia",
+   "io": "Objective g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
+   "slot": "differential",
+   "q": "Which causes of NON-MEGALOBLASTIC macrocytic anemia does the deck list?",
+   "opts": [
+    [
+     "Alcohol use, liver disease, hypothyroidism, reticulocytosis, primary bone marrow disorders and chronic kidney disorders",
+     "Correct — all six as listed."
+    ],
+    [
+     "Vitamin B12 deficiency, folate deficiency, copper deficiency, and methotrexate or hydroxyurea therapy",
+     "Those are the megaloblastic causes."
+    ],
+    [
+     "Iron deficiency, thalassemia, sideroblastic anemia and lead poisoning",
+     "Those are microcytic causes."
+    ],
+    [
+     "Acute blood loss, hemolysis, aplastic anemia and infiltration of bone marrow",
+     "Those are normocytic causes."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 65"
+  },
+  {
+   "topic": "White blood cell groups",
+   "io": "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
+   "slot": "etiology",
+   "q": "What defines the agranulocytes, and which cells are they?",
+   "opts": [
+    [
+     "No distinctive granules and a non-lobular nucleus, comprising monocytes and lymphocytes",
+     "Correct — both defining features and both cell types."
+    ],
+    [
+     "No distinctive granules and a lobed nucleus, comprising monocytes and lymphocytes",
+     "The nucleus is described as non-lobular."
+    ],
+    [
+     "No distinctive granules and a non-lobular nucleus, comprising eosinophils and basophils",
+     "Those two are granulocytes."
+    ],
+    [
+     "Granules that do not stain, comprising neutrophils and monocytes",
+     "Neutrophils are granulocytes."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 17"
+  },
+  {
+   "topic": "Howell-Jolly bodies",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "Which other abnormal cell does the deck point out alongside Howell-Jolly bodies in the same image, and why?",
+   "opts": [
+    [
+     "Spherocytes, because they share the same inherited defect",
+     "Spherocytes are associated with hereditary spherocytosis."
+    ],
+    [
+     "Teardrop cells, because both reflect bone marrow disease",
+     "Teardrop cells reflect marrow infiltration, not splenectomy."
+    ],
+    [
+     "Target cells, because they are another consequence of splenectomy",
+     "Correct — the deck labels the Howell-Jolly body with a blue circle and the target cell with a pink square."
+    ],
+    [
+     "Schistocytes, because they are another consequence of splenectomy",
+     "Schistocytes are associated with mechanical trauma and hemolysis."
+    ]
+   ],
+   "c": 2,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 46"
+  },
+  {
+   "topic": "Schistocytes",
+   "io": "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells",
+   "slot": "test finding",
+   "q": "What size and central pallor do schistocytes usually have, and what are they associated with?",
+   "opts": [
+    [
+     "Usually microcytic and lacking central pallor, associated with hemolysis, mechanical trauma and medications",
+     "Correct — with mechanical heart valves and cyclosporine as the named examples."
+    ],
+    [
+     "Usually macrocytic with prominent central pallor, associated with vitamin B12 or folate deficiency",
+     "Macrocytosis with B12 deficiency is a different picture entirely."
+    ],
+    [
+     "Usually normocytic with normal central pallor, associated with acute blood loss",
+     "The deck describes them as usually microcytic and lacking pallor."
+    ],
+    [
+     "Usually microcytic with prominent central pallor, associated with iron deficiency",
+     "Iron deficiency gives hypochromic microcytes, not fragments."
+    ]
+   ],
+   "c": 0,
+   "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 38"
+  }
+ ]
+}
