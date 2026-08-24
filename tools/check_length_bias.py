@@ -149,19 +149,33 @@ def main():
 
     send("Page.enable"); send("Runtime.enable")
 
-    results = []
+    results, unread = [], []
     tot_q = tot_long = tot_game = 0
     print(f"Scanning {len(files)} file(s)...")
     for n, rel in enumerate(files, 1):
         url = "http://127.0.0.1:%d/%s" % (PORT, urllib.parse.quote(rel))
         send("Page.navigate", {"url": url})
-        time.sleep(0.55)
-        try:
-            r = send("Runtime.evaluate", {"expression": EXTRACT, "returnByValue": True})
-            qs = r.get("result", {}).get("result", {}).get("value")
-        except Exception:
-            qs = None
+        # RETRY INSTEAD OF SILENTLY SKIPPING. This used to be a single fixed
+        # 0.55s sleep followed by `if not qs: continue`, which meant any page
+        # that had not finished running its inline script in time was dropped
+        # from the scan WITHOUT A WORD -- it simply never appeared in the
+        # totals. Two consecutive runs reported 314 files/13,040 questions and
+        # 319 files/12,819 questions off an unchanged site, which is how it was
+        # noticed. The danger is not the wobbly count: it is that a genuinely
+        # gameable quiz could be skipped and the summary would still say
+        # "0 files over 35% gameable".
+        qs = None
+        for wait in (0.55, 1.2, 2.5):
+            time.sleep(wait)
+            try:
+                r = send("Runtime.evaluate", {"expression": EXTRACT, "returnByValue": True})
+                qs = r.get("result", {}).get("result", {}).get("value")
+            except Exception:
+                qs = None
+            if qs:
+                break
         if not qs:
+            unread.append(rel)
             continue
         nl = ng = 0
         for q in qs:
@@ -178,6 +192,17 @@ def main():
     flagged = [r for r in results if r["gameable_pct"] > args.threshold]
     flagged.sort(key=lambda r: -r["gameable_pct"])
     print("\n" + "=" * 62)
+    # A file that could not be read is REPORTED, never silently dropped. Anything
+    # listed here has not been checked for length bias at all.
+    if unread:
+        print("\nCOULD NOT READ A QUESTION BANK FROM %d FILE(S) -- these were NOT checked:"
+              % len(unread))
+        for rel in unread[:20]:
+            print("   %s" % rel)
+        if len(unread) > 20:
+            print("   ... and %d more" % (len(unread) - 20))
+        print()
+
     print(f"files with a question bank : {len(results)}")
     print(f"questions                  : {tot_q}")
     if tot_q:
