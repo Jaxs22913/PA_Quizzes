@@ -1,370 +1,6 @@
 {
  "set1": [
   {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "The Clark level diagram maps invasion against skin anatomy. Which layers do levels I through V correspond to?",
-   "opts": [
-    [
-     "I into the papillary dermis; II into the reticular dermis; III into subcutaneous tissue; IV into muscle; V into bone",
-     "Level I is confined to the epidermis, and the scale stops at subcutaneous tissue."
-    ],
-    [
-     "I confined to the stratum corneum; II into the epidermis; III into the papillary dermis; IV into the reticular dermis; V into the dermis-subcutaneous junction",
-     "Level I is the whole epidermis, not the stratum corneum alone."
-    ],
-    [
-     "I confined to the epidermis; II into the papillary dermis; III filling the papillary dermis; IV into the reticular dermis; V into the subcutaneous tissue",
-     "Correct — Clark level is an ANATOMIC level, unlike Breslow thickness which is a measurement."
-    ],
-    [
-     "I confined to the epidermis; II into the reticular dermis; III filling the reticular dermis; IV into the papillary dermis; V into the subcutaneous tissue",
-     "The papillary and reticular dermis are the wrong way round."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 50"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "How does Clark level differ from Breslow thickness, and which does the deck call the dominant prognostic variable?",
-   "opts": [
-    [
-     "Clark level is the anatomic layer reached; Breslow thickness is a measured depth, and Breslow is the dominant prognostic variable",
-     "Correct — Breslow is measured in millimetres and drives margins and staging."
-    ],
-    [
-     "Clark level is a measured depth; Breslow thickness is the anatomic layer reached, and Clark is the dominant prognostic variable",
-     "The two definitions are swapped, and Breslow dominates."
-    ],
-    [
-     "Both describe the same measurement on different scales, and either may be used as the dominant prognostic variable",
-     "They are different concepts."
-    ],
-    [
-     "Clark level is the anatomic layer reached; Breslow thickness is a measured depth, and Clark is the dominant prognostic variable",
-     "The definitions are right but the deck names Breslow as dominant."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 55"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "In the TNM melanoma staging overview, what do the three letters denote?",
-   "opts": [
-    [
-     "T is primary tumour thickness; N is the number of tumour-involved regional lymph nodes; M is the number of metastases at a distant site",
-     "Correct — the footnote of the staging table defines all three."
-    ],
-    [
-     "T is the tumour's anatomic level; N is the number of naevi present; M is the number of mitoses per high-power field",
-     "None of the three is defined that way."
-    ],
-    [
-     "T is the time since onset; N is the number of tumour-involved regional lymph nodes; M is the number of distant metastases",
-     "T is primary tumour thickness, not duration."
-    ],
-    [
-     "T is primary tumour thickness; N is the nodal diameter in centimetres; M is the mitotic rate",
-     "N counts involved nodes and M counts distant metastases."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 54"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "Which TNM combination defines stage 0 melanoma?",
-   "opts": [
-    [
-     "Tis, N1a, M0",
-     "Nodal involvement takes it out of stage 0."
-    ],
-    [
-     "T0, N0, M1",
-     "Distant metastasis is stage IV."
-    ],
-    [
-     "Tis, N0, M0",
-     "Correct — carcinoma in situ with no nodal or distant disease."
-    ],
-    [
-     "T1a, N0, M0",
-     "That combination is stage IA."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 54"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "What defines stage IV melanoma in the staging overview?",
-   "opts": [
-    [
-     "Any T, any N, with M1 — that is, distant metastasis present whatever the primary or nodal status",
-     "Correct — M1 alone determines it."
-    ],
-    [
-     "T4b, N3a/b/c, with M0 — the deepest primary with extensive nodal disease but no distant spread",
-     "That combination is stage IIID."
-    ],
-    [
-     "Any T with N0 and M0 — a thick primary with no nodal or distant disease",
-     "Without nodal or distant disease it cannot be stage IV."
-    ],
-    [
-     "Tis with any N and any M — in situ disease with any degree of spread",
-     "Stage IV is defined by M1."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 54"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "prognosis",
-   "q": "In the Stages of Melanoma diagram, what distinguishes stage III from stage IV?",
-   "opts": [
-    [
-     "Stage III is melanoma confined to the epidermis; stage IV is localised disease in the skin",
-     "Epidermis-confined disease is stage 0."
-    ],
-    [
-     "Stage III is spread to the lymph nodes; stage IV is spread to other organs",
-     "Correct — nodal against distant spread."
-    ],
-    [
-     "Stage III is spread to other organs; stage IV is spread to the lymph nodes",
-     "The two are the wrong way round."
-    ],
-    [
-     "Stage III is localised disease thicker than stage II; stage IV is spread to the lymph nodes",
-     "Localised thicker disease is stage II."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 53"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "prognosis",
-   "q": "In the Stages of Melanoma diagram, what are stage 0, stage I and stage II?",
-   "opts": [
-    [
-     "Stage 0 is localised disease only in the skin and very thin; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to the lymph nodes",
-     "Stage 0 is the epidermis-confined disease and stage II remains localised."
-    ],
-    [
-     "Stage 0 is disease that has spread to the lymph nodes; stage I is melanoma confined to the epidermal region; stage II is localised disease that is very thin",
-     "Nodal spread is stage III."
-    ],
-    [
-     "Stage 0 is localised disease thicker than stage I; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to other organs",
-     "Distant spread is stage IV."
-    ],
-    [
-     "Stage 0 is melanoma confined to the epidermal region of the skin; stage I is localised disease, only in skin and very thin; stage II is localised disease thicker than stage I",
-     "Correct — 0, I and II are all still local."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 53"
-  },
-  {
-   "topic": "Nail unit neoplasms",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "avoid",
-   "q": "A single nail abnormality has persisted despite treatment. What does the deck say to avoid?",
-   "opts": [
-    [
-     "Repeated empiric antifungal, antibiotic or wart treatment",
-     "Correct — repeating empiric therapy on a solitary persistent nail lesion is how diagnostic delay happens."
-    ],
-    [
-     "Photographing the concerning nail before any referral is made",
-     "Photography is encouraged, so long as it does not delay referral."
-    ],
-    [
-     "Examining the other nine nails",
-     "Every nail should be examined, not avoided."
-    ],
-    [
-     "Removing the nail polish before examination",
-     "Removing polish is required, not avoided."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
-  },
-  {
-   "topic": "Nail unit neoplasms",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "avoid",
-   "q": "The deck says to photograph a concerning pigmented band. What caution comes with that?",
-   "opts": [
-    [
-     "Do not photograph it at all, because nail pigment renders inaccurately on a phone camera",
-     "The deck recommends photographing it."
-    ],
-    [
-     "Do not photograph it until the polish has regrown",
-     "Polish is removed for examination, and this is not a stated caution."
-    ],
-    [
-     "Do not photograph more than one nail at a time",
-     "No such restriction is given."
-    ],
-    [
-     "Do not let photographing it delay referral",
-     "Correct — documentation is for tracking change, not for postponing the specialist."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
-  },
-  {
-   "topic": "Cutaneous T-cell lymphoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "avoid",
-   "q": "What harm does the deck attribute to overly aggressive cutaneous T-cell lymphoma therapy?",
-   "opts": [
-    [
-     "Permanent phototherapy intolerance",
-     "Not a harm the deck states."
-    ],
-    [
-     "Loss of eligibility for a cutaneous lymphoma centre",
-     "Not a claim the deck makes."
-    ],
-    [
-     "Complications and premature death",
-     "Correct — and early aggressive treatment has not been proven to cure disease or prevent progression."
-    ],
-    [
-     "Accelerated transformation into a systemic non-Hodgkin lymphoma",
-     "Not the harm the deck names."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 76"
-  },
-  {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "avoid",
-   "q": "Why must oedema severity not be used to judge Kaposi sarcoma burden?",
-   "opts": [
-    [
-     "Oedema in Kaposi sarcoma is always caused by the antiretroviral therapy itself",
-     "Not a claim the deck makes."
-    ],
-    [
-     "Oedema only appears once visceral disease is established",
-     "The deck does not tie oedema to visceral disease this way."
-    ],
-    [
-     "Oedema resolves within days of starting treatment",
-     "Not stated, and it would not make severity a valid gauge."
-    ],
-    [
-     "Marked oedema may occur with few or no visible skin lesions",
-     "Correct — the deck says explicitly not to use oedema severity alone."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 60"
-  },
-  {
-   "topic": "Actinic keratosis",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "avoid",
-   "q": "A course of field therapy has cleared a patient's actinic keratoses. What must not be assumed?",
-   "opts": [
-    [
-     "That the treatment reactions of erythema and crusting were abnormal and should not recur",
-     "Those are expected local reactions the patient is warned about."
-    ],
-    [
-     "That daily sun protection is still required",
-     "Sun protection remains part of the education, so this is not the false assumption."
-    ],
-    [
-     "That a nonhealing lesion should be reviewed promptly",
-     "Prompt review of a nonhealing or changing lesion is exactly what is advised."
-    ],
-    [
-     "That surveillance can stop, because the surrounding field remains at risk",
-     "Correct — ongoing surveillance remains necessary despite successful therapy."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
-  },
-  {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "complication",
-   "q": "What is Kaposi sarcoma immune reconstitution inflammatory syndrome?",
-   "opts": [
-    [
-     "An allergic reaction to liposomal doxorubicin",
-     "It is an immune phenomenon related to starting antiretroviral therapy."
-    ],
-    [
-     "Kaposi sarcoma present when antiretroviral therapy begins can worsen as the immune system recovers",
-     "Correct — the treatment itself can make the disease worse before it improves."
-    ],
-    [
-     "Kaposi sarcoma appearing for the first time several years after antiretroviral therapy begins",
-     "The syndrome concerns disease already present when therapy starts."
-    ],
-    [
-     "Kaposi sarcoma that fails to respond to antiretroviral therapy at all",
-     "Non-response is not what this syndrome describes."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 63"
-  },
-  {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "complication",
-   "q": "In which patients is Kaposi sarcoma immune reconstitution inflammatory syndrome especially dangerous?",
-   "opts": [
-    [
-     "Those with classic Kaposi sarcoma, which is indolent",
-     "Classic disease is usually indolent and rarely fatal."
-    ],
-    [
-     "Those with only oral lesions",
-     "The deck singles out visceral disease."
-    ],
-    [
-     "Those over seventy years old",
-     "Age is not the risk the deck names here."
-    ],
-    [
-     "Those with visceral disease",
-     "Correct — endemic or visceral disease and this syndrome can be aggressive and rapidly fatal."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 63"
-  },
-  {
    "topic": "Basal cell carcinoma",
    "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
    "slot": "complication",
@@ -391,19 +27,141 @@
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 38"
   },
   {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
+   "slot": "risk factors",
+   "q": "How does organ transplantation affect squamous cell carcinoma risk, and when do multiple tumours typically appear?",
+   "opts": [
+    [
+     "It is unchanged by transplantation, since immunosuppressive therapy does not influence keratinocyte carcinoma risk",
+     "Immunosuppression substantially raises both risk and aggressiveness."
+    ],
+    [
+     "It is common and often aggressive in transplant recipients, with multiple tumours typically emerging about 5 years after transplant",
+     "Correct — chronic lymphocytic leukaemia and human immunodeficiency virus also raise risk."
+    ],
+    [
+     "It is uncommon and usually indolent in transplant recipients, with single tumours typically emerging about 5 years after transplant",
+     "It is common and often aggressive, not uncommon and indolent."
+    ],
+    [
+     "It is common and often aggressive in transplant recipients, with multiple tumours typically emerging within 6 weeks of transplant",
+     "The interval given is about five years."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 21"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "prognosis",
+   "q": "What are the four possible fates of an individual actinic keratosis?",
+   "opts": [
+    [
+     "It may persist, progress, metastasise to nodes, or recur after treatment",
+     "Actinic keratoses do not metastasise; involution is the missing fourth."
+    ],
+    [
+     "It may only persist or progress",
+     "That leaves out involution and recurrence."
+    ],
+    [
+     "It will always progress if left untreated",
+     "About one in a thousand per year progresses; most do not."
+    ],
+    [
+     "It may persist, involute, recur, or progress",
+     "Correct — including involution, which is why individual lesion behaviour is unpredictable."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
+   "slot": "education",
+   "q": "What patient education does the deck give for actinic keratosis?",
+   "opts": [
+    [
+     "Avoid all sun exposure permanently rather than using broad-spectrum protection or protective clothing; stop field therapy at the first sign of erythema or crusting; attend annual review regardless of any change in a lesion",
+     "Stopping at the first erythema would abort effective therapy."
+    ],
+    [
+     "No specific education is needed once the lesions have been treated successfully, since the surrounding field carries no further risk and reactions to therapy are not expected",
+     "The field remains at risk, so education continues."
+    ],
+    [
+     "Daily broad-spectrum sun protection and protective clothing; expect local treatment reactions such as erythema and crusting and adhere to the field therapy duration; seek prompt review of any non-healing or changing lesion",
+     "Correct — warning about the expected reaction protects adherence."
+    ],
+    [
+     "Sun protection in the summer months only and no protective clothing; expect no local reaction to field treatment; return only if an entirely new lesion appears",
+     "Protection is daily, and reactions are expected."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
+  },
+  {
+   "topic": "Cutaneous T-cell lymphoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "first-line",
+   "q": "What treatment philosophy does the deck set out for cutaneous T-cell lymphoma?",
+   "opts": [
+    [
+     "Total-skin electron-beam treatment as the initial therapy for every patient regardless of stage, because skin-directed topical therapy has no demonstrated benefit",
+     "That is reserved for progressive disease."
+    ],
+    [
+     "A stage-directed, skin-first approach for most early disease, because early aggressive treatment has not been proven to cure or prevent progression and may cause complications and premature death",
+     "Correct — aggression is a harm here, not a virtue."
+    ],
+    [
+     "Immediate aggressive systemic chemotherapy for all stages regardless of extent, because early aggressive treatment reliably cures the disease and prevents progression to systemic involvement",
+     "The deck explicitly rejects this."
+    ],
+    [
+     "Observation alone at every stage without skin-directed treatment, because no therapy has been shown to alter the course of the disease or to relieve symptoms",
+     "Skin-directed therapy is offered for early disease."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 75"
+  },
+  {
+   "topic": "Basal cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "prognosis",
+   "q": "What is the overall prognosis of basal cell carcinoma, and where does its morbidity come from?",
+   "opts": [
+    [
+     "Usually rapidly growing and rarely curable even when treated early; morbidity comes chiefly from early distant metastasis to lung and liver, with local destruction uncommon",
+     "It is slow-growing and highly curable, and metastasis is rare."
+    ],
+    [
+     "Usually slow-growing and highly curable when treated early; morbidity comes chiefly from nodal metastasis, which occurs in 3 to 7% of cases, rather than from local destruction",
+     "That metastatic rate belongs to squamous cell carcinoma."
+    ],
+    [
+     "Usually slow-growing but uniformly fatal without systemic therapy; morbidity comes from delayed hedgehog inhibitor treatment rather than from local destruction or recurrence",
+     "It is highly curable when treated early."
+    ],
+    [
+     "Usually slow-growing and highly curable when treated early; morbidity comes from local destruction, recurrence, delayed diagnosis and anatomically complex sites, with metastatic disease rare but serious",
+     "Correct — the danger is local destruction rather than spread."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 38"
+  },
+  {
    "topic": "Nail unit neoplasms",
    "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
    "slot": "complication",
    "q": "What increases recurrence and functional morbidity in nail unit squamous cell carcinoma?",
    "opts": [
-    [
-     "Incomplete excision, immunosuppression, delayed diagnosis and bone invasion",
-     "Correct — it is often curable with complete surgery, which is why incompleteness matters."
-    ],
-    [
-     "Complete margin-controlled surgery with clear histologic margins",
-     "That is the treatment that reduces recurrence."
-    ],
     [
      "Photographing the lesion before referral",
      "Documentation does not affect recurrence."
@@ -411,88 +169,18 @@
     [
      "A negative human papillomavirus result",
      "Not a factor the deck names."
+    ],
+    [
+     "Incomplete excision, immunosuppression, delayed diagnosis and bone invasion",
+     "Correct — it is often curable with complete surgery, which is why incompleteness matters."
+    ],
+    [
+     "Complete margin-controlled surgery with clear histologic margins",
+     "That is the treatment that reduces recurrence."
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
-  },
-  {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "education",
-   "q": "What must a patient starting antiretroviral therapy for Kaposi sarcoma be told?",
-   "opts": [
-    [
-     "That the lesions will always begin improving within the first two weeks of therapy",
-     "The deck warns of possible early worsening instead."
-    ],
-    [
-     "That antiretroviral therapy should be stopped if lesions enlarge",
-     "Stopping therapy is not what the deck advises."
-    ],
-    [
-     "That oral lesions never respond to therapy",
-     "Not a claim the deck makes."
-    ],
-    [
-     "That the lesions may worsen early, as immune reconstitution inflammatory syndrome",
-     "Correct — warning them beforehand stops early worsening being read as treatment failure."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 67"
-  },
-  {
-   "topic": "Melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "education",
-   "q": "Which melanoma subtype does the deck say is frequently delayed in diagnosis, making early reporting critical?",
-   "opts": [
-    [
-     "Acral lentiginous melanoma",
-     "Correct — which is why patients are told to report new pigment, widening bands or periungual pigment promptly."
-    ],
-    [
-     "Superficial spreading melanoma, the commonest subtype overall",
-     "The commonest subtype, but not the one flagged for diagnostic delay."
-    ],
-    [
-     "Lentigo maligna melanoma",
-     "Not the subtype flagged here."
-    ],
-    [
-     "Nodular melanoma",
-     "Nodular melanoma is flagged for rapid growth and lacking classic features, not for reporting delay."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 56"
-  },
-  {
-   "topic": "Cutaneous T-cell lymphoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "education",
-   "q": "What does the deck say patients should be told about establishing the cutaneous T-cell lymphoma diagnosis?",
-   "opts": [
-    [
-     "Blood testing establishes the diagnosis before any biopsy",
-     "Not what the deck states."
-    ],
-    [
-     "It may require repeated biopsies, and the disease is usually chronic",
-     "Correct — setting that expectation early matters, because the diagnosis is often slow to confirm."
-    ],
-    [
-     "A single biopsy is definitive in nearly all cases, and the disease is self-limiting",
-     "The deck says repeated biopsies may be needed."
-    ],
-    [
-     "The diagnosis is made clinically and biopsy is unnecessary",
-     "Biopsy is central to the diagnosis."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 76"
   },
   {
    "topic": "Basal cell carcinoma",
@@ -521,30 +209,82 @@
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 38"
   },
   {
-   "topic": "Actinic keratosis",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "education",
-   "q": "Which local reactions should an actinic keratosis patient be warned to expect from field therapy?",
+   "topic": "Nail unit neoplasms",
+   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
+   "slot": "escalation",
+   "q": "What does the deck say about amputation in nail unit melanoma?",
    "opts": [
     [
-     "Blistering that requires the course to be abandoned",
-     "The deck emphasises adherence to the duration."
+     "It is the automatic first treatment for any nail unit melanoma whatever the depth or extent, since margins cannot be reliably assessed in the nail unit",
+     "The deck explicitly says amputation is not automatic."
     ],
     [
-     "No visible reaction at all if the therapy is working",
-     "A local reaction is expected."
+     "It is never indicated at all, since digit-sparing wide excision clears every nail unit melanoma regardless of depth, extent or bone involvement",
+     "It is reserved for deep, extensive or bone-involving disease."
     ],
     [
-     "Erythema and crusting, alongside adherence to the full treatment duration",
-     "Correct — patients who are not warned stop the course early."
+     "It is reserved for benign nail unit tumours such as glomus tumour or onychomatricoma that recur after local removal",
+     "Amputation is not used for benign disease."
     ],
     [
-     "Permanent hypopigmentation at every treated site, which is expected and harmless",
-     "Not the expected reaction the deck names."
+     "It is NOT automatic — digit-sparing wide excision or Mohs with immunostaining is contemporary care, with amputation reserved for deep, extensive or bone-involving disease",
+     "Correct — the digit is preserved where margins can be reliably assessed."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 94"
+  },
+  {
+   "topic": "Kaposi sarcoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "complication",
+   "q": "What is Kaposi sarcoma immune reconstitution inflammatory syndrome?",
+   "opts": [
+    [
+     "Kaposi sarcoma that fails to respond to antiretroviral therapy at all",
+     "Non-response is not what this syndrome describes."
+    ],
+    [
+     "An allergic reaction to liposomal doxorubicin",
+     "It is an immune phenomenon related to starting antiretroviral therapy."
+    ],
+    [
+     "Kaposi sarcoma present when antiretroviral therapy begins can worsen as the immune system recovers",
+     "Correct — the treatment itself can make the disease worse before it improves."
+    ],
+    [
+     "Kaposi sarcoma appearing for the first time several years after antiretroviral therapy begins",
+     "The syndrome concerns disease already present when therapy starts."
     ]
    ],
    "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 63"
+  },
+  {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "risk factors",
+   "q": "Besides sun exposure and immunosuppression, which risk factors does the deck list for squamous cell carcinoma?",
+   "opts": [
+    [
+     "Red tattoo ink, laser treatment and cryotherapy",
+     "Those are keratoacanthoma risk factors from Lecture 7."
+    ],
+    [
+     "Chronic wounds, scars or prior radiation fields; certain genetic diseases; and mucosal or genital disease",
+     "Correct — the three additional categories as listed."
+    ],
+    [
+     "Tanning bed use, fair skin that burns easily, male sex, and outdoor occupation without protection",
+     "Those fall under the sun-exposure and population description."
+    ],
+    [
+     "Chronic lymphocytic leukaemia and human immunodeficiency virus only",
+     "Those are named under immunosuppression."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 21"
   },
   {
    "topic": "Basal cell carcinoma",
@@ -570,6 +310,684 @@
     ]
    ],
    "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 33"
+  },
+  {
+   "topic": "Cutaneous T-cell lymphoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "education",
+   "q": "What does the deck say patients should be told about establishing the cutaneous T-cell lymphoma diagnosis?",
+   "opts": [
+    [
+     "It may require repeated biopsies, and the disease is usually chronic",
+     "Correct — setting that expectation early matters, because the diagnosis is often slow to confirm."
+    ],
+    [
+     "A single biopsy is definitive in nearly all cases, and the disease is self-limiting",
+     "The deck says repeated biopsies may be needed."
+    ],
+    [
+     "The diagnosis is made clinically and biopsy is unnecessary",
+     "Biopsy is central to the diagnosis."
+    ],
+    [
+     "Blood testing establishes the diagnosis before any biopsy",
+     "Not what the deck states."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 76"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "differential",
+   "q": "Which melanoma subtype is described as rapidly growing, often amelanotic, and may LACK the classic recognition features?",
+   "opts": [
+    [
+     "Nodular melanoma",
+     "Correct — it may lack ABCDE features, which makes it high-risk."
+    ],
+    [
+     "Superficial spreading melanoma",
+     "That subtype evolves radially and usually shows the classic features."
+    ],
+    [
+     "Lentigo maligna melanoma",
+     "That has a slow radial growth phase on chronically sun-exposed skin."
+    ],
+    [
+     "Acral lentiginous melanoma",
+     "That arises on palms, soles and nail units."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 41"
+  },
+  {
+   "topic": "Kaposi sarcoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "avoid",
+   "q": "Why must oedema severity not be used to judge Kaposi sarcoma burden?",
+   "opts": [
+    [
+     "Oedema only appears once visceral disease is established",
+     "The deck does not tie oedema to visceral disease this way."
+    ],
+    [
+     "Oedema resolves within days of starting treatment",
+     "Not stated, and it would not make severity a valid gauge."
+    ],
+    [
+     "Marked oedema may occur with few or no visible skin lesions",
+     "Correct — the deck says explicitly not to use oedema severity alone."
+    ],
+    [
+     "Oedema in Kaposi sarcoma is always caused by the antiretroviral therapy itself",
+     "Not a claim the deck makes."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 60"
+  },
+  {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "first-line",
+   "q": "How is squamous cell carcinoma in situ managed when there are no high-risk features?",
+   "opts": [
+    [
+     "Liquid nitrogen cryotherapy alone, with no role for topical therapy, curettage or electrodesiccation",
+     "Cryotherapy is the actinic keratosis lesion-directed option."
+    ],
+    [
+     "Imiquimod, topical fluorouracil, or curettage and electrodesiccation in appropriately selected disease",
+     "Correct — three options for in situ disease without high-risk features."
+    ],
+    [
+     "Surgical excision or Mohs micrographic surgery in every case, whatever the features and whatever the site",
+     "Those are preferred for invasive disease."
+    ],
+    [
+     "Programmed death 1 blockade or cetuximab in every case, whatever the features and whatever the site",
+     "Those are for advanced or metastatic disease."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 24"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "initial test",
+   "q": "Which lesion features make early squamous cell carcinoma the distinction to exclude in an actinic keratosis?",
+   "opts": [
+    [
+     "Thick, indurated, ulcerated, enlarging, painful, bleeding, persistent or recurrent",
+     "Correct — the deck's full list of features that shift the concern to carcinoma."
+    ],
+    [
+     "Rough, flat, flesh-coloured, and more apparent by touch than it is by sight",
+     "That is a typical actinic keratosis."
+    ],
+    [
+     "Pearly, translucent, with telangiectasias",
+     "That describes nodular basal cell carcinoma."
+    ],
+    [
+     "Scaly, symmetric and under two millimetres",
+     "Nothing in that combination raises the concern."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 13"
+  },
+  {
+   "topic": "Basal cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "etiology",
+   "q": "Which clinical and histologic subtypes of basal cell carcinoma does the deck list, and which determines behaviour?",
+   "opts": [
+    [
+     "Clinical: classic, endemic, iatrogenic, epidemic. Histologic: patch, plaque, tumour. The clinical form determines behaviour",
+     "Those forms belong to Kaposi sarcoma."
+    ],
+    [
+     "Clinical: superficial, nodular, pigmented, morpheaform. Histologic: superficial, nodular, micronodular, infiltrative. The HISTOLOGIC subtype determines behaviour and dictates treatment selection",
+     "Correct — histology drives the treatment decision."
+    ],
+    [
+     "Clinical: superficial, nodular, pigmented, morpheaform. Histologic: superficial, nodular, micronodular, infiltrative. The CLINICAL subtype determines behaviour and dictates treatment selection",
+     "The deck gives that role to the histologic subtype."
+    ],
+    [
+     "Clinical: superficial spreading, nodular, lentigo maligna, acral. Histologic: in situ, invasive, metastatic. The histologic subtype determines behaviour",
+     "Those clinical subtypes belong to melanoma."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 33"
+  },
+  {
+   "topic": "Clinical approach",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "manifestation",
+   "q": "What does the deck say you should do before assigning a diagnosis to a skin lesion?",
+   "opts": [
+    [
+     "Biopsy every pigmented lesion before any description of type, colour, texture, border or evolution, since morphology is unreliable in premalignant disease",
+     "Biopsy is triggered by concerning features, not used in place of describing."
+    ],
+    [
+     "Characterise it systematically — primary lesion type, colour, surface texture, border definition, size, distribution, palpability, ulceration, bleeding, induration and temporal evolution",
+     "Correct — describe before naming."
+    ],
+    [
+     "Assign the most likely diagnosis first, then look for the features that confirm it — colour, texture, border, size and evolution — and discard those that do not fit",
+     "That reverses the order the deck insists on."
+    ],
+    [
+     "Photograph the lesion and defer all description — type, colour, texture, border, size, distribution and evolution — until the dermatology referral has been accepted",
+     "Description is the first step, not something deferred."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 4"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "test finding",
+   "q": "The Clark level diagram maps invasion against skin anatomy. Which layers do levels I through V correspond to?",
+   "opts": [
+    [
+     "I confined to the epidermis; II into the papillary dermis; III filling the papillary dermis; IV into the reticular dermis; V into the subcutaneous tissue",
+     "Correct — Clark level is an ANATOMIC level, unlike Breslow thickness which is a measurement."
+    ],
+    [
+     "I confined to the epidermis; II into the reticular dermis; III filling the reticular dermis; IV into the papillary dermis; V into the subcutaneous tissue",
+     "The papillary and reticular dermis are the wrong way round."
+    ],
+    [
+     "I into the papillary dermis; II into the reticular dermis; III into subcutaneous tissue; IV into muscle; V into bone",
+     "Level I is confined to the epidermis, and the scale stops at subcutaneous tissue."
+    ],
+    [
+     "I confined to the stratum corneum; II into the epidermis; III into the papillary dermis; IV into the reticular dermis; V into the dermis-subcutaneous junction",
+     "Level I is the whole epidermis, not the stratum corneum alone."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 50"
+  },
+  {
+   "topic": "Nail unit neoplasms",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "avoid",
+   "q": "The deck says to photograph a concerning pigmented band. What caution comes with that?",
+   "opts": [
+    [
+     "Do not photograph it at all, because nail pigment renders inaccurately on a phone camera",
+     "The deck recommends photographing it."
+    ],
+    [
+     "Do not photograph it until the polish has regrown",
+     "Polish is removed for examination, and this is not a stated caution."
+    ],
+    [
+     "Do not photograph more than one nail at a time",
+     "No such restriction is given."
+    ],
+    [
+     "Do not let photographing it delay referral",
+     "Correct — documentation is for tracking change, not for postponing the specialist."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "test finding",
+   "q": "What caveat does the deck attach to the 6 mm diameter criterion?",
+   "opts": [
+    [
+     "The threshold applies only to lesions on the trunk",
+     "No such site restriction is given."
+    ],
+    [
+     "The threshold applies only to patients over 50",
+     "No such age restriction is given."
+    ],
+    [
+     "Smaller lesions can be melanoma",
+     "Correct — the threshold is a prompt, not a rule-out."
+    ],
+    [
+     "Larger lesions are never melanoma",
+     "Size does not exclude in either direction."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 46"
+  },
+  {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
+   "slot": "referral",
+   "q": "Which findings make referral URGENT in squamous cell carcinoma?",
+   "opts": [
+    [
+     "High-risk site, size, recurrence, aggressive histology, immunosuppression, neurologic symptoms, or nodal disease",
+     "Correct — neurologic symptoms suggest perineural invasion."
+    ],
+    [
+     "Cosmetic concern, patient anxiety, a lesion older than one year, a lesion on the trunk, or any pigmented lesion",
+     "None of these is an urgency criterion."
+    ],
+    [
+     "Only confirmed nodal disease, since high-risk site, size, recurrence and immune status can all be managed routinely",
+     "Site, size and immune status are each urgency triggers."
+    ],
+    [
+     "Only failure of two courses of topical therapy, whatever the site, size, histology, immune status or symptoms",
+     "Urgency does not wait on topical therapy."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 26"
+  },
+  {
+   "topic": "Nail unit neoplasms",
+   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
+   "slot": "referral",
+   "q": "Which findings does the deck list as urgent referral triggers in the nail unit?",
+   "opts": [
+    [
+     "Only a subungual mass confirmed on imaging, since clinical features such as pigment, widening, dystrophy or bleeding cannot themselves indicate urgency",
+     "The clinical features listed are exactly what drives urgency."
+    ],
+    [
+     "New or changing single-digit longitudinal melanonychia, proximal widening, Hutchinson sign, or nail dystrophy with pigment",
+     "Correct — the list also includes an unexplained subungual mass, persistent ulceration or bleeding, and a chronic wart or infection that fails appropriate therapy. That failed-wart history is the one most easily dismissed."
+    ],
+    [
+     "Longitudinal pigmented bands present in several nails since childhood, unchanged in width, colour, thickness and spacing over many years, with no nail dystrophy",
+     "That pattern is reassuring rather than urgent."
+    ],
+    [
+     "Any nail change at all in a patient over 65, and any nail that has been abnormal for more than a month, whatever the appearance or the number of digits involved",
+     "Age and duration alone are not the triggers."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "epidemiology",
+   "q": "Approximately what proportion of actinic keratosis lesions progresses to squamous cell carcinoma each year?",
+   "opts": [
+    [
+     "About 1 in 1,000 lesions per year",
+     "Correct — and cumulative field risk matters more than any single lesion."
+    ],
+    [
+     "About 1 in 10 lesions per year",
+     "That is far higher than the figure given."
+    ],
+    [
+     "About 1 in 100 lesions per year",
+     "The deck gives 1 in 1,000."
+    ],
+    [
+     "About 1 in 100,000 lesions per year",
+     "The deck gives 1 in 1,000."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 11"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "test finding",
+   "q": "In the TNM melanoma staging overview, what do the three letters denote?",
+   "opts": [
+    [
+     "T is primary tumour thickness; N is the number of tumour-involved regional lymph nodes; M is the number of metastases at a distant site",
+     "Correct — the footnote of the staging table defines all three."
+    ],
+    [
+     "T is the tumour's anatomic level; N is the number of naevi present; M is the number of mitoses per high-power field",
+     "None of the three is defined that way."
+    ],
+    [
+     "T is the time since onset; N is the number of tumour-involved regional lymph nodes; M is the number of distant metastases",
+     "T is primary tumour thickness, not duration."
+    ],
+    [
+     "T is primary tumour thickness; N is the nodal diameter in centimetres; M is the mitotic rate",
+     "N counts involved nodes and M counts distant metastases."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 54"
+  },
+  {
+   "topic": "Basal cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "manifestation",
+   "q": "Which warning patterns does the deck give for basal cell carcinoma, and where do they commonly appear?",
+   "opts": [
+    [
+     "A sandpaper-textured papule, a pigmented macule larger than 6 mm, or a warty nodule — commonly on the scalp, ears and dorsal hands",
+     "Sandpaper texture describes actinic keratosis."
+    ],
+    [
+     "A pearly papule, an erythematous patch larger than 6 mm, or a non-healing ulcer — commonly on the palms, soles and nail units",
+     "Acral sites belong to melanoma and nail unit disease."
+    ],
+    [
+     "A violaceous macule, a purple plaque, or an oral lesion — commonly on the hard palate and lower limbs",
+     "Those describe Kaposi sarcoma."
+    ],
+    [
+     "A pearly papule, an erythematous patch larger than 6 mm, or a non-healing ulcer — commonly on the face, trunk or lower legs",
+     "Correct — three patterns, three common sites."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 35"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "epidemiology",
+   "q": "What lifetime melanoma risk does the deck give by skin colour?",
+   "opts": [
+    [
+     "About 2% in white individuals; 0.1 to 0.5% in persons of colour",
+     "Correct — lower risk in persons of colour, but not zero."
+    ],
+    [
+     "About 20% in white individuals; 1 to 5% in persons of colour",
+     "Both figures are ten times too high."
+    ],
+    [
+     "About 2% in white individuals; an equal 2% in persons of colour",
+     "The deck gives a substantially lower figure for persons of colour."
+    ],
+    [
+     "About 0.1 to 0.5% in white individuals; about 2% in persons of colour",
+     "The two figures are the wrong way round."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 40"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "prognosis",
+   "q": "In the Stages of Melanoma diagram, what are stage 0, stage I and stage II?",
+   "opts": [
+    [
+     "Stage 0 is localised disease only in the skin and very thin; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to the lymph nodes",
+     "Stage 0 is the epidermis-confined disease and stage II remains localised."
+    ],
+    [
+     "Stage 0 is disease that has spread to the lymph nodes; stage I is melanoma confined to the epidermal region; stage II is localised disease that is very thin",
+     "Nodal spread is stage III."
+    ],
+    [
+     "Stage 0 is localised disease thicker than stage I; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to other organs",
+     "Distant spread is stage IV."
+    ],
+    [
+     "Stage 0 is melanoma confined to the epidermal region of the skin; stage I is localised disease, only in skin and very thin; stage II is localised disease thicker than stage I",
+     "Correct — 0, I and II are all still local."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 53"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "prognosis",
+   "q": "In the Stages of Melanoma diagram, what distinguishes stage III from stage IV?",
+   "opts": [
+    [
+     "Stage III is localised disease thicker than stage II; stage IV is spread to the lymph nodes",
+     "Localised thicker disease is stage II."
+    ],
+    [
+     "Stage III is melanoma confined to the epidermis; stage IV is localised disease in the skin",
+     "Epidermis-confined disease is stage 0."
+    ],
+    [
+     "Stage III is spread to the lymph nodes; stage IV is spread to other organs",
+     "Correct — nodal against distant spread."
+    ],
+    [
+     "Stage III is spread to other organs; stage IV is spread to the lymph nodes",
+     "The two are the wrong way round."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 53"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Nail unit neoplasms",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "epidemiology",
+   "q": "Which is the MOST COMMON malignant nail tumour, and what is it associated with?",
+   "opts": [
+    [
+     "Nail unit squamous cell carcinoma or Bowen disease, associated with high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, and older age",
+     "Correct — periungual disease may be multifocal."
+    ],
+    [
+     "Nail unit melanoma, associated with high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, and older age, and often multifocal",
+     "Melanoma is not the commonest malignant nail tumour."
+    ],
+    [
+     "Nail unit basal cell carcinoma, associated with cumulative ultraviolet exposure, fair skin, chronic trauma, prior radiation and older age",
+     "The deck calls nail unit basal cell carcinoma exceptionally uncommon."
+    ],
+    [
+     "Glomus tumour, associated with chronic inflammation or trauma, immunosuppression, prior radiation and older age",
+     "The glomus tumour is benign."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 79"
+  },
+  {
+   "topic": "Basal cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "first-line",
+   "q": "Which topical regimens does the deck give for selected superficial basal cell carcinoma?",
+   "opts": [
+    [
+     "Vismodegib or sonidegib taken orally for 6 to 10 weeks, with clinical clearance confirmed afterwards",
+     "Hedgehog inhibitors are reserved for advanced or metastatic disease."
+    ],
+    [
+     "Liquid nitrogen cryotherapy every two to three weeks for 6 to 10 weeks, with clearance confirmed afterwards",
+     "Cryotherapy is not the topical regimen given here."
+    ],
+    [
+     "Imiquimod five nights weekly for 6 to 10 weeks, or fluorouracil twice daily for up to 12 weeks, with clinical clearance confirmed afterwards",
+     "Correct — confirming clearance is part of the regimen."
+    ],
+    [
+     "Imiquimod twice daily for 6 to 10 weeks, or fluorouracil five nights weekly for up to 12 weeks, with clearance assumed once inflammation settles",
+     "The two schedules are swapped and clearance must be confirmed."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 37"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "test finding",
+   "q": "Which features are NOT part of a typical actinic keratosis and should prompt biopsy consideration?",
+   "opts": [
+    [
+     "Tenderness on palpation and a rough surface texture",
+     "Lesions may be tender, and roughness is characteristic."
+    ],
+    [
+     "Flesh-coloured or pink colour and a size under a centimetre",
+     "Both are typical features."
+    ],
+    [
+     "Location on the dorsal hand and the presence of surrounding sun damage",
+     "Both are the expected setting."
+    ],
+    [
+     "Bleeding, induration, ulceration or rapid enlargement",
+     "Correct — none of these belong to a typical lesion."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 12"
+  },
+  {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "escalation",
+   "q": "Which indications does the deck give for Mohs micrographic surgery in squamous cell carcinoma?",
+   "opts": [
+    [
+     "Any lesion on the trunk, any lesion in a patient over 65, any lesion present more than a year, any pigmented lesion, and any lesion the patient finds unsightly",
+     "None of these is a Mohs indication in the deck."
+    ],
+    [
+     "Only recurrent tumours and only after two failed courses of topical therapy, since site, size and immune status do not alter the surgical choice",
+     "Site, size and immune status are all explicit indications."
+    ],
+    [
+     "High-risk sites (lips, temples, ears, nose, genitalia), recurrent tumours, aggressive histology with perineural or perivascular invasion, lesions over 1 cm on the face or over 2 cm on trunk or extremities, immunosuppression, tumours within scars, and genetic disease-associated tumours",
+     "Correct — note the two different size thresholds by site."
+    ],
+    [
+     "High-risk sites (lips, temples, ears, nose, genitalia), recurrent tumours, aggressive histology with perineural or perivascular invasion, lesions over 2 cm on the face or over 1 cm on trunk or extremities, immunosuppression, and tumours within scars",
+     "The two size thresholds are the wrong way round."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 24"
+  },
+  {
+   "topic": "Melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "education",
+   "q": "Which melanoma subtype does the deck say is frequently delayed in diagnosis, making early reporting critical?",
+   "opts": [
+    [
+     "Superficial spreading melanoma, the commonest subtype overall",
+     "The commonest subtype, but not the one flagged for diagnostic delay."
+    ],
+    [
+     "Lentigo maligna melanoma",
+     "Not the subtype flagged here."
+    ],
+    [
+     "Nodular melanoma",
+     "Nodular melanoma is flagged for rapid growth and lacking classic features, not for reporting delay."
+    ],
+    [
+     "Acral lentiginous melanoma",
+     "Correct — which is why patients are told to report new pigment, widening bands or periungual pigment promptly."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 56"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "test finding",
+   "q": "Which TNM combination defines stage 0 melanoma?",
+   "opts": [
+    [
+     "T1a, N0, M0",
+     "That combination is stage IA."
+    ],
+    [
+     "Tis, N1a, M0",
+     "Nodal involvement takes it out of stage 0."
+    ],
+    [
+     "T0, N0, M1",
+     "Distant metastasis is stage IV."
+    ],
+    [
+     "Tis, N0, M0",
+     "Correct — carcinoma in situ with no nodal or distant disease."
+    ]
+   ],
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 54"
+  },
+  {
+   "topic": "Basal cell carcinoma",
+   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
+   "slot": "complication",
+   "q": "What proportion of patients develop a second basal cell carcinoma, and what does that mandate?",
+   "opts": [
+    [
+     "Up to 50%, which makes examination every five years sufficient",
+     "The figure is right but annual examination is mandated."
+    ],
+    [
+     "Under 1%, which makes routine surveillance unnecessary after excision",
+     "Second primaries are common, not rare."
+    ],
+    [
+     "Up to 50%, which makes at least annual full-skin examination mandatory",
+     "Correct — the second-primary risk is what drives surveillance."
+    ],
+    [
+     "Up to 5%, which makes examination every five years sufficient",
+     "The figure is up to 50%."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 33"
+  },
+  {
+   "topic": "Basal cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "risk factors",
+   "q": "In which three immunosuppressed groups is basal cell carcinoma more common and more likely to recur?",
+   "opts": [
+    [
+     "Pregnancy, and long-term oral contraceptive or corticosteroid use",
+     "Not the groups the deck names."
+    ],
+    [
+     "Non-Hodgkin lymphoma, solid-organ transplant, and allogeneic stem cell transplant",
+     "Correct — the three groups named on the risk factor slide."
+    ],
+    [
+     "Chronic lymphocytic leukaemia, human immunodeficiency virus, and organ transplantation",
+     "That trio is the one given for squamous cell carcinoma."
+    ],
+    [
+     "Diabetes, chronic kidney disease and cirrhosis",
+     "None of these is named."
+    ]
+   ],
+   "c": 1,
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 33"
   },
   {
@@ -601,105 +1019,27 @@
   {
    "topic": "Actinic keratosis",
    "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "initial test",
-   "q": "Which lesion features make early squamous cell carcinoma the distinction to exclude in an actinic keratosis?",
+   "slot": "education",
+   "q": "Which local reactions should an actinic keratosis patient be warned to expect from field therapy?",
    "opts": [
     [
-     "Thick, indurated, ulcerated, enlarging, painful, bleeding, persistent or recurrent",
-     "Correct — the deck's full list of features that shift the concern to carcinoma."
+     "Permanent hypopigmentation at every treated site, which is expected and harmless",
+     "Not the expected reaction the deck names."
     ],
     [
-     "Rough, flat, flesh-coloured, and more apparent by touch than it is by sight",
-     "That is a typical actinic keratosis."
+     "Blistering that requires the course to be abandoned",
+     "The deck emphasises adherence to the duration."
     ],
     [
-     "Pearly, translucent, with telangiectasias",
-     "That describes nodular basal cell carcinoma."
+     "No visible reaction at all if the therapy is working",
+     "A local reaction is expected."
     ],
     [
-     "Scaly, symmetric and under two millimetres",
-     "Nothing in that combination raises the concern."
+     "Erythema and crusting, alongside adherence to the full treatment duration",
+     "Correct — patients who are not warned stop the course early."
     ]
    ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 13"
-  },
-  {
-   "topic": "Squamous cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "risk factors",
-   "q": "Besides sun exposure and immunosuppression, which risk factors does the deck list for squamous cell carcinoma?",
-   "opts": [
-    [
-     "Red tattoo ink, laser treatment and cryotherapy",
-     "Those are keratoacanthoma risk factors from Lecture 7."
-    ],
-    [
-     "Chronic wounds, scars or prior radiation fields; certain genetic diseases; and mucosal or genital disease",
-     "Correct — the three additional categories as listed."
-    ],
-    [
-     "Tanning bed use, fair skin that burns easily, male sex, and outdoor occupation without protection",
-     "Those fall under the sun-exposure and population description."
-    ],
-    [
-     "Chronic lymphocytic leukaemia and human immunodeficiency virus only",
-     "Those are named under immunosuppression."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 21"
-  },
-  {
-   "topic": "Basal cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "risk factors",
-   "q": "In which three immunosuppressed groups is basal cell carcinoma more common and more likely to recur?",
-   "opts": [
-    [
-     "Diabetes, chronic kidney disease and cirrhosis",
-     "None of these is named."
-    ],
-    [
-     "Pregnancy, and long-term oral contraceptive or corticosteroid use",
-     "Not the groups the deck names."
-    ],
-    [
-     "Non-Hodgkin lymphoma, solid-organ transplant, and allogeneic stem cell transplant",
-     "Correct — the three groups named on the risk factor slide."
-    ],
-    [
-     "Chronic lymphocytic leukaemia, human immunodeficiency virus, and organ transplantation",
-     "That trio is the one given for squamous cell carcinoma."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 33"
-  },
-  {
-   "topic": "Actinic keratosis",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "prognosis",
-   "q": "What are the four possible fates of an individual actinic keratosis?",
-   "opts": [
-    [
-     "It may persist, involute, recur, or progress",
-     "Correct — including involution, which is why individual lesion behaviour is unpredictable."
-    ],
-    [
-     "It may persist, progress, metastasise to nodes, or recur after treatment",
-     "Actinic keratoses do not metastasise; involution is the missing fourth."
-    ],
-    [
-     "It may only persist or progress",
-     "That leaves out involution and recurrence."
-    ],
-    [
-     "It will always progress if left untreated",
-     "About one in a thousand per year progresses; most do not."
-    ]
-   ],
-   "c": 0,
+   "c": 3,
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
   },
   {
@@ -708,10 +1048,6 @@
    "slot": "prognosis",
    "q": "Which cutaneous T-cell lymphoma features worsen prognosis, and which carries the best?",
    "opts": [
-    [
-     "Only lymphadenopathy worsens it; skin findings do not affect prognosis",
-     "Tumours and erythroderma also worsen it."
-    ],
     [
      "Prognosis is uniformly poor regardless of stage",
      "The deck describes it as usually slowly progressive over decades."
@@ -723,36 +1059,222 @@
     [
      "Patch and plaque disease worsen it; tumour-stage disease carries the better prognosis",
      "That reverses the deck entirely."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 76"
-  },
-  {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "prognosis",
-   "q": "Which Kaposi sarcoma form may REGRESS, and what makes it do so?",
-   "opts": [
-    [
-     "Epidemic disease, which regresses once chemotherapy stops",
-     "Epidemic disease responds to immune restoration, not to stopping chemotherapy."
     ],
     [
-     "Iatrogenic disease, which may regress when immunosuppression is reduced",
-     "Correct — which is why the transplant team is consulted before any reduction."
-    ],
-    [
-     "Classic disease, which regresses spontaneously after a course of local radiation",
-     "Classic disease is indolent and managed palliatively, not described as regressing this way."
-    ],
-    [
-     "Endemic disease, which regresses with antiretroviral therapy",
-     "Endemic disease is often aggressive and can be rapidly fatal."
+     "Only lymphadenopathy worsens it; skin findings do not affect prognosis",
+     "Tumours and erythroderma also worsen it."
     ]
    ],
    "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 67"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 76"
+  },
+  {
+   "topic": "Malignant melanoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "test finding",
+   "q": "What defines stage IV melanoma in the staging overview?",
+   "opts": [
+    [
+     "Any T with N0 and M0 — a thick primary with no nodal or distant disease",
+     "Without nodal or distant disease it cannot be stage IV."
+    ],
+    [
+     "Tis with any N and any M — in situ disease with any degree of spread",
+     "Stage IV is defined by M1."
+    ],
+    [
+     "Any T, any N, with M1 — that is, distant metastasis present whatever the primary or nodal status",
+     "Correct — M1 alone determines it."
+    ],
+    [
+     "T4b, N3a/b/c, with M0 — the deepest primary with extensive nodal disease but no distant spread",
+     "That combination is stage IIID."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 54"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "avoid",
+   "q": "A course of field therapy has cleared a patient's actinic keratoses. What must not be assumed?",
+   "opts": [
+    [
+     "That surveillance can stop, because the surrounding field remains at risk",
+     "Correct — ongoing surveillance remains necessary despite successful therapy."
+    ],
+    [
+     "That the treatment reactions of erythema and crusting were abnormal and should not recur",
+     "Those are expected local reactions the patient is warned about."
+    ],
+    [
+     "That daily sun protection is still required",
+     "Sun protection remains part of the education, so this is not the false assumption."
+    ],
+    [
+     "That a nonhealing lesion should be reviewed promptly",
+     "Prompt review of a nonhealing or changing lesion is exactly what is advised."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
+  },
+  {
+   "topic": "Actinic keratosis",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "risk factors",
+   "q": "Which factors does the deck list as amplifying actinic keratosis risk?",
+   "opts": [
+    [
+     "Atopic dermatitis, asthma and allergic rhinitis in a young adult, with a family history of atopy and frequent emollient use",
+     "Atopy is not a listed risk factor here."
+    ],
+    [
+     "Advanced age, cumulative ultraviolet exposure with outdoor work or recreation, prior actinic keratosis or keratinocyte carcinoma, male sex with bald scalp exposure, and immunosuppression",
+     "Correct — five amplifiers."
+    ],
+    [
+     "Young age, intermittent ultraviolet exposure with indoor occupation, no prior actinic keratosis or keratinocyte carcinoma, female sex with full scalp hair, and a fully competent immune system",
+     "These are the opposite of the listed amplifiers."
+    ],
+    [
+     "Obesity, diabetes with vascular disease, incontinence and immobility in a hospitalised patient, and recent antibiotic exposure",
+     "Those are pressure injury and intertrigo risks."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 11"
+  },
+  {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "first-line",
+   "q": "How often should a patient treated for squamous cell carcinoma be examined, and how does immunosuppression change it?",
+   "opts": [
+    [
+     "At least annual skin and lymph-node examination, with closer intervals if high-risk or immunosuppressed",
+     "Correct — the interval tightens rather than the examination changing."
+    ],
+    [
+     "At least an annual skin examination alone, at an interval unchanged by immunosuppression",
+     "Lymph nodes are included, and the interval does change."
+    ],
+    [
+     "Every three months for life in all patients",
+     "The deck's baseline is at least annual."
+    ],
+    [
+     "Only when the patient reports a new lesion",
+     "Scheduled surveillance is required."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 26"
+  },
+  {
+   "topic": "Clinical approach",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "risk factors",
+   "q": "Which history elements does the deck ask you to elicit?",
+   "opts": [
+    [
+     "Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational or recreational ultraviolet exposure and tanning-bed use; prior skin cancer, immunosuppression or transplant, human immunodeficiency virus risk; chronic scars, wounds or radiation sites; family history",
+     "Correct — note chronic scars and radiation sites among them."
+    ],
+    [
+     "Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational exposure and tanning-bed use; chronic scars, wounds and radiation sites; family history — but not prior skin cancer, immunosuppression, transplant or human immunodeficiency virus status, which the dermatologist obtains at the time of biopsy",
+     "The deck asks for a full history at the first encounter."
+    ],
+    [
+     "Onset and change; sunburns, occupational exposure and tanning-bed use; chronic scars and radiation sites; family history — but not immunosuppression or transplant status, which do not alter cutaneous malignancy risk",
+     "Immunosuppression is explicitly listed and matters greatly."
+    ],
+    [
+     "Onset and change, pain or pruritus; occupational and recreational ultraviolet exposure and tanning-bed use; immunosuppression and family history — but not prior skin cancer, which does not predict a second primary",
+     "Prior skin cancer is listed and is a strong predictor."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 4"
+  },
+  {
+   "topic": "Squamous cell carcinoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "manifestation",
+   "q": "What is the classic presentation of cutaneous squamous cell carcinoma?",
+   "opts": [
+    [
+     "Red or purple macules, plaques and nodules on skin or mucous membranes; also marked edema with few visible lesions",
+     "Those describe Kaposi sarcoma."
+    ],
+    [
+     "A small red, conical, hard nodule that may ulcerate; also a non-healing ulcer, a warty nodule, or an irregular pink plaque with haemorrhagic crust",
+     "Correct — four presentations to recognise."
+    ],
+    [
+     "A pearly translucent papule with visible telangiectasias and a rolled border; also a scar-like ivory-white plaque with subtle extension",
+     "Those are the basal cell carcinoma patterns."
+    ],
+    [
+     "An asymmetric pigmented macule with irregular borders and colour variegation; also an amelanotic nodule lacking classic features",
+     "Those describe melanoma."
+    ]
+   ],
+   "c": 1,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 22"
+  },
+  {
+   "topic": "Nail unit neoplasms",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "avoid",
+   "q": "A single nail abnormality has persisted despite treatment. What does the deck say to avoid?",
+   "opts": [
+    [
+     "Repeated empiric antifungal, antibiotic or wart treatment",
+     "Correct — repeating empiric therapy on a solitary persistent nail lesion is how diagnostic delay happens."
+    ],
+    [
+     "Photographing the concerning nail before any referral is made",
+     "Photography is encouraged, so long as it does not delay referral."
+    ],
+    [
+     "Examining the other nine nails",
+     "Every nail should be examined, not avoided."
+    ],
+    [
+     "Removing the nail polish before examination",
+     "Removing polish is required, not avoided."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
+  },
+  {
+   "topic": "Cutaneous T-cell lymphoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "avoid",
+   "q": "What harm does the deck attribute to overly aggressive cutaneous T-cell lymphoma therapy?",
+   "opts": [
+    [
+     "Complications and premature death",
+     "Correct — and early aggressive treatment has not been proven to cure disease or prevent progression."
+    ],
+    [
+     "Accelerated transformation into a systemic non-Hodgkin lymphoma",
+     "Not the harm the deck names."
+    ],
+    [
+     "Permanent phototherapy intolerance",
+     "Not a harm the deck states."
+    ],
+    [
+     "Loss of eligibility for a cutaneous lymphoma centre",
+     "Not a claim the deck makes."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 76"
   },
   {
    "topic": "Kaposi sarcoma",
@@ -779,476 +1301,110 @@
    ],
    "c": 1,
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 67"
-  }
- ],
- "set2": [
-  {
-   "topic": "Squamous cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "first-line",
-   "q": "How often should a patient treated for squamous cell carcinoma be examined, and how does immunosuppression change it?",
-   "opts": [
-    [
-     "Every three months for life in all patients",
-     "The deck's baseline is at least annual."
-    ],
-    [
-     "Only when the patient reports a new lesion",
-     "Scheduled surveillance is required."
-    ],
-    [
-     "At least annual skin and lymph-node examination, with closer intervals if high-risk or immunosuppressed",
-     "Correct — the interval tightens rather than the examination changing."
-    ],
-    [
-     "At least an annual skin examination alone, at an interval unchanged by immunosuppression",
-     "Lymph nodes are included, and the interval does change."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 26"
-  },
-  {
-   "topic": "Cutaneous T-cell lymphoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "Which two clinical clues does the deck give for suspecting cutaneous T-cell lymphoma in a chronic eruption?",
-   "opts": [
-    [
-     "Annular plaques with progressive central clearing, and a positive potassium hydroxide preparation from the border",
-     "That describes tinea, one of the mimics."
-    ],
-    [
-     "Itch out of proportion to the apparent inflammatory activity, and follicular involvement with hair loss",
-     "Correct — folliculotropism discriminates from routine eczema or psoriasis."
-    ],
-    [
-     "Itch that is entirely absent even in extensive disease, and complete sparing of the hair follicles",
-     "Pruritus is common and may be severe, and follicular involvement is a clue."
-    ],
-    [
-     "Sharp demarcation with thick silvery scale, and rapid complete response to a topical corticosteroid",
-     "Rapid response argues against it; treatment resistance is a discriminator."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 70"
-  },
-  {
-   "topic": "Actinic keratosis",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "prognosis",
-   "q": "What is the prognosis of an individual actinic keratosis, and what does treatment achieve?",
-   "opts": [
-    [
-     "Individual lesions may persist, involute, recur or progress; treatment reduces lesion burden but the surrounding field remains at risk, so surveillance remains necessary",
-     "Correct — treating lesions does not treat the field."
-    ],
-    [
-     "Individual lesions always progress to carcinoma if left untreated; treatment eradicates both the lesion and the surrounding field, which ends the need for any further surveillance",
-     "Lesions may also involute, and the field stays at risk."
-    ],
-    [
-     "Individual lesions always involute spontaneously within a year; treatment is therefore cosmetic only, the field carries no residual risk, and surveillance is unnecessary",
-     "Progression is possible, which is why they are treated."
-    ],
-    [
-     "Individual lesions persist indefinitely without involuting or progressing; treatment eradicates them permanently with no recurrence and no residual field risk",
-     "Recurrence is explicitly possible."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 15"
-  },
-  {
-   "topic": "Squamous cell carcinoma",
-   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
-   "slot": "risk factors",
-   "q": "How does organ transplantation affect squamous cell carcinoma risk, and when do multiple tumours typically appear?",
-   "opts": [
-    [
-     "It is unchanged by transplantation, since immunosuppressive therapy does not influence keratinocyte carcinoma risk",
-     "Immunosuppression substantially raises both risk and aggressiveness."
-    ],
-    [
-     "It is common and often aggressive in transplant recipients, with multiple tumours typically emerging about 5 years after transplant",
-     "Correct — chronic lymphocytic leukaemia and human immunodeficiency virus also raise risk."
-    ],
-    [
-     "It is uncommon and usually indolent in transplant recipients, with single tumours typically emerging about 5 years after transplant",
-     "It is common and often aggressive, not uncommon and indolent."
-    ],
-    [
-     "It is common and often aggressive in transplant recipients, with multiple tumours typically emerging within 6 weeks of transplant",
-     "The interval given is about five years."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 21"
   },
   {
    "topic": "Malignant melanoma",
    "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "At what Breslow thickness is sentinel lymph node biopsy offered or discussed, and what lowers that threshold?",
+   "slot": "prognosis",
+   "q": "Which variable does the deck call the dominant prognostic factor in melanoma, and what modifies it?",
    "opts": [
     [
-     "At 4.0 mm or greater; or at 2.0 mm or greater when additional histologic risk factors are present — ulceration or high mitotic rate",
-     "Both thresholds are far higher than the deck gives."
+     "Patient age, with ulceration and mitotic activity further modifying stage-based prognosis",
+     "Age is not the dominant prognostic variable."
     ],
     [
-     "At any thickness once the diagnosis is confirmed, since thickness does not influence the decision to stage the nodes",
-     "Thickness is precisely what drives the decision."
+     "The anatomic site of the primary, with ulceration and mitotic activity further modifying prognosis",
+     "Site is not what the deck names as dominant."
     ],
     [
-     "At 1.0 mm or greater; or at 0.8 mm or greater when additional histologic risk factors are present — ulceration, high mitotic rate, or lymphovascular invasion",
-     "Correct — three risk factors lower the threshold."
+     "Breslow thickness, which must be accurately measured at the time of initial biopsy; ulceration and mitotic activity further modify stage-based prognosis",
+     "Correct — which is why the initial biopsy technique matters."
     ],
     [
-     "At 0.8 mm or greater; or at 1.0 mm or greater when additional histologic risk factors are present — ulceration, high mitotic rate, or lymphovascular invasion",
-     "The two thresholds are the wrong way round."
+     "Lesion diameter, which must be accurately measured at the time of initial biopsy; ulceration and mitotic activity further modify prognosis",
+     "Diameter is a recognition criterion, not the prognostic variable."
     ]
    ],
    "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 51"
-  },
-  {
-   "topic": "Clinical approach",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "initial test",
-   "q": "Which examination priorities does the deck list for a suspected malignant cutaneous lesion?",
-   "opts": [
-    [
-     "Good lighting and dermoscopy in every patient regardless of training; palms, soles and nails; oral mucosa in every patient; a total-body survey reserved for those who already have a skin cancer diagnosis",
-     "The survey is done when indicated, not only after diagnosis."
-    ],
-    [
-     "Wood lamp examination and potassium hydroxide preparation of any scale; palms, soles and nails; oral mucosa when tinea is possible; regional nodes in every patient regardless of risk",
-     "Neither the lamp nor the preparation is part of this workup."
-    ],
-    [
-     "Dermoscopy alone, since the total-body survey, the palms, soles and nails, the oral mucosa and the regional nodes all belong to the dermatologist rather than the referring clinician",
-     "The deck asks the examining clinician to do these."
-    ],
-    [
-     "Good lighting, dermoscopy when trained, and a total-body skin survey when indicated; palms, soles and nails; oral mucosa when Kaposi sarcoma is possible; regional nodes for invasive or high-risk disease",
-     "Correct — note the oral mucosa is tied specifically to Kaposi sarcoma."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 4"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 55"
   },
   {
    "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "test finding",
-   "q": "What warning does the deck give about oedema in Kaposi sarcoma?",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "education",
+   "q": "What must a patient starting antiretroviral therapy for Kaposi sarcoma be told?",
    "opts": [
     [
-     "Marked oedema occurs only in advanced disease with many visible lesions, so its severity reliably indicates the cutaneous disease burden",
-     "The deck says the opposite."
+     "That the lesions may worsen early, as immune reconstitution inflammatory syndrome",
+     "Correct — warning them beforehand stops early worsening being read as treatment failure."
     ],
     [
-     "Marked oedema is never a feature of Kaposi sarcoma at any stage, and its presence should prompt a search for venous thrombosis instead",
-     "Marked oedema is an explicit feature."
+     "That the lesions will always begin improving within the first two weeks of therapy",
+     "The deck warns of possible early worsening instead."
     ],
     [
-     "Marked oedema occurs only in the classic form of the disease, and its severity can therefore be used to distinguish classic from epidemic Kaposi sarcoma",
-     "No such form-specific rule is given."
+     "That antiretroviral therapy should be stopped if lesions enlarge",
+     "Stopping therapy is not what the deck advises."
     ],
     [
-     "Marked oedema may occur even with few or no visible skin lesions, so oedema severity must not be used to gauge disease burden",
-     "Correct — the skin can look almost clear while disease is extensive."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 64"
-  },
-  {
-   "topic": "Actinic keratosis",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "etiology",
-   "q": "What is the core mechanism of actinic keratosis, and how does the deck position it relative to keratinocyte carcinoma?",
-   "opts": [
-    [
-     "Chronic ultraviolet injury producing dysplastic keratinocytic change in a field of sun-damaged skin; it is premalignant and lies on a biologic continuum with keratinocyte carcinoma, not a distinct separate entity",
-     "Correct — a continuum, not a separate disease."
-    ],
-    [
-     "Chronic ultraviolet injury producing dysplastic melanocytic change in a field of sun-damaged skin; it is premalignant but a distinct entity quite separate from keratinocyte carcinoma, with no biologic continuum between them",
-     "The change is keratinocytic, and the deck rejects \"separate entity\"."
-    ],
-    [
-     "Human papillomavirus infection of keratinocytes in a field of sun-damaged skin; it is a benign lesion lying on a continuum with verruca rather than with keratinocyte carcinoma",
-     "Ultraviolet injury, not a virus, and it is premalignant."
-    ],
-    [
-     "Chronic thermal injury producing dysplastic keratinocytic change in a field of scarred skin; it is premalignant and lies on a continuum with keratinocyte carcinoma but is unrelated to ultraviolet exposure",
-     "Ultraviolet exposure is the driver."
+     "That oral lesions never respond to therapy",
+     "Not a claim the deck makes."
     ]
    ],
    "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 11"
-  },
-  {
-   "topic": "Basal cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "manifestation",
-   "q": "Which basal cell carcinoma subtype is scar-like and carries the highest risk of subclinical spread?",
-   "opts": [
-    [
-     "Pigmented — a stippled lesion whose extension beyond the visible segment is clinically subtle",
-     "Pigmented disease mimics melanocytic lesions but is not the high-spread subtype."
-    ],
-    [
-     "Morpheaform or sclerosing — a scar-like or ivory-white lesion whose extension beyond the visible pink segment is clinically subtle",
-     "Correct — the invisible extension is what makes it high-risk."
-    ],
-    [
-     "Superficial — a reddish shiny scaly thin plaque whose extension beyond the visible segment is clinically subtle",
-     "Superficial disease sits on the back and chest and is not the high-spread subtype."
-    ],
-    [
-     "Nodular — a pearly papule with central erosion whose extension beyond the visible segment is clinically subtle",
-     "Nodular disease has a visible pearly border."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 35"
-  },
-  {
-   "topic": "Basal cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "escalation",
-   "q": "Which indications does the deck give for Mohs surgery in basal cell carcinoma?",
-   "opts": [
-    [
-     "Eyelids, nasolabial folds, canthi, external ear and temple; recurrent tumours; a tissue-sparing or cosmetic need; and low-risk histology — superficial or nodular disease",
-     "Superficial and nodular are the LOW-risk histologies here."
-    ],
-    [
-     "The trunk, back, chest and shoulders; first presentations only; a purely cosmetic need; and any pigmented lesion whatever its histology",
-     "None of these matches the deck's indications."
-    ],
-    [
-     "Any lesion in a patient over 65; any lesion larger than 6 mm; any lesion present more than a year; and any lesion the patient finds unsightly",
-     "Age and duration are not Mohs indications."
-    ],
-    [
-     "Eyelids, nasolabial folds, canthi, external ear and temple; recurrent tumours; a tissue-sparing or cosmetic need; and aggressive histology — morpheaform, micronodular or infiltrative",
-     "Correct — four groupings, with the histologic subtypes named."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 37"
-  },
-  {
-   "topic": "Clinical approach",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "risk factors",
-   "q": "Which history elements does the deck ask you to elicit?",
-   "opts": [
-    [
-     "Onset and change; sunburns, occupational exposure and tanning-bed use; chronic scars and radiation sites; family history — but not immunosuppression or transplant status, which do not alter cutaneous malignancy risk",
-     "Immunosuppression is explicitly listed and matters greatly."
-    ],
-    [
-     "Onset and change, pain or pruritus; occupational and recreational ultraviolet exposure and tanning-bed use; immunosuppression and family history — but not prior skin cancer, which does not predict a second primary",
-     "Prior skin cancer is listed and is a strong predictor."
-    ],
-    [
-     "Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational or recreational ultraviolet exposure and tanning-bed use; prior skin cancer, immunosuppression or transplant, human immunodeficiency virus risk; chronic scars, wounds or radiation sites; family history",
-     "Correct — note chronic scars and radiation sites among them."
-    ],
-    [
-     "Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational exposure and tanning-bed use; chronic scars, wounds and radiation sites; family history — but not prior skin cancer, immunosuppression, transplant or human immunodeficiency virus status, which the dermatologist obtains at the time of biopsy",
-     "The deck asks for a full history at the first encounter."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 4"
-  },
-  {
-   "topic": "Basal cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "manifestation",
-   "q": "Describe NODULAR basal cell carcinoma, including the manoeuvre that accentuates its vessels.",
-   "opts": [
-    [
-     "A papule or nodule with central erosion, growing rapidly over weeks to 1 to 2 cm or larger, with a pearly quality and telangiectasias accentuated by pressing the lesion firmly",
-     "Growth is slow, over years, and the manoeuvre is stretching."
-    ],
-    [
-     "A reddish shiny scaly thin plaque on the back or chest, growing slowly, with a thready pearly border accentuated by stretching the skin",
-     "That describes the superficial subtype."
-    ],
-    [
-     "A scar-like ivory-white plaque with subtle extension beyond the visible segment, accentuated by stretching the skin",
-     "That describes the morpheaform subtype."
-    ],
-    [
-     "A papule or nodule with central erosion, growing slowly over years to 1 to 2 cm or larger, with a pearly or translucent quality and visible telangiectasias accentuated by STRETCHING the skin",
-     "Correct — stretching brings the telangiectasias out."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 35"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 67"
   },
   {
    "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "manifestation",
-   "q": "What does Kaposi sarcoma look like, and which examination does the deck call essential when it is suspected?",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "prognosis",
+   "q": "Which Kaposi sarcoma form may REGRESS, and what makes it do so?",
    "opts": [
     [
-     "Red or purple macules, plaques or nodules on skin or mucous membranes; ORAL examination is essential, since hard palate lesions are common and may be the presenting site",
-     "Correct — the mouth may be where it declares itself."
+     "Classic disease, which regresses spontaneously after a course of local radiation",
+     "Classic disease is indolent and managed palliatively, not described as regressing this way."
     ],
     [
-     "Red or purple macules, plaques or nodules on skin only; NAIL examination is essential, since subungual lesions are common and may be the presenting site",
-     "The deck emphasises the oral cavity, not the nails."
+     "Endemic disease, which regresses with antiretroviral therapy",
+     "Endemic disease is often aggressive and can be rapidly fatal."
     ],
     [
-     "Pearly translucent papules with telangiectasias; ocular examination is essential, since eyelid lesions are the usual presenting site",
-     "Those are basal cell carcinoma features."
+     "Epidemic disease, which regresses once chemotherapy stops",
+     "Epidemic disease responds to immune restoration, not to stopping chemotherapy."
     ],
     [
-     "Erythematous scaly patches and plaques on the trunk; scalp examination is essential, since follicular involvement is the presenting sign",
-     "Those are cutaneous T-cell lymphoma features."
+     "Iatrogenic disease, which may regress when immunosuppression is reduced",
+     "Correct — which is why the transplant team is consulted before any reduction."
     ]
    ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 64"
+   "c": 3,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 67"
   },
   {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "epidemiology",
-   "q": "Which clinical forms of Kaposi sarcoma does the deck describe?",
-   "opts": [
-    [
-     "Patch, plaque, tumour and erythrodermic disease, each occurring in a different population and each representing a successive stage of the same underlying process",
-     "That is closer to the cutaneous T-cell lymphoma progression."
-    ],
-    [
-     "Classic in older men with a chronic course; endemic, often aggressive in young Black men in equatorial Africa; iatrogenic with immunosuppressive therapy; and epidemic in acquired immunodeficiency",
-     "Correct — four forms, each with a different population and course."
-    ],
-    [
-     "Superficial, nodular, pigmented and morpheaform disease, each occurring in a different population and each with a different histologic behaviour and course",
-     "Those are basal cell carcinoma subtypes."
-    ],
-    [
-     "Superficial spreading, lentigo maligna, nodular and acral lentiginous disease, each occurring in a different population and each with a different growth pattern and course",
-     "Those are melanoma subtypes."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 63"
-  },
-  {
-   "topic": "Nail unit neoplasms",
+   "topic": "Malignant melanoma",
    "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
    "slot": "referral",
-   "q": "Which findings does the deck list as urgent referral triggers in the nail unit?",
+   "q": "What is the referral threshold for melanoma to an expert centre?",
    "opts": [
     [
-     "Only a subungual mass confirmed on imaging, since clinical features such as pigment, widening, dystrophy or bleeding cannot themselves indicate urgency",
-     "The clinical features listed are exactly what drives urgency."
+     "Only melanoma that has already failed immunotherapy",
+     "Referral comes at diagnosis, not after treatment failure."
     ],
     [
-     "New or changing single-digit longitudinal melanonychia, proximal widening, Hutchinson sign, or nail dystrophy with pigment",
-     "Correct — the list also includes an unexplained subungual mass, persistent ulceration or bleeding, and a chronic wart or infection that fails appropriate therapy. That failed-wart history is the one most easily dismissed."
+     "Melanoma deeper than 1 mm, or with lymph-node or other-site spread",
+     "Correct — confirmed melanoma warrants coordinated dermatology and surgical oncology care."
     ],
     [
-     "Longitudinal pigmented bands present in several nails since childhood, unchanged in width, colour, thickness and spacing over many years, with no nail dystrophy",
-     "That pattern is reassuring rather than urgent."
+     "Melanoma deeper than 4 mm only, since thinner disease is managed entirely in primary care",
+     "The threshold is 1 mm."
     ],
     [
-     "Any nail change at all in a patient over 65, and any nail that has been abnormal for more than a month, whatever the appearance or the number of digits involved",
-     "Age and duration alone are not the triggers."
+     "Any melanoma in a patient over 65, regardless of thickness or spread",
+     "Age is not the referral criterion."
     ]
    ],
    "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 95"
-  },
-  {
-   "topic": "Squamous cell carcinoma",
-   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
-   "slot": "referral",
-   "q": "What follow-up schedule does the deck specify after squamous cell carcinoma?",
-   "opts": [
-    [
-     "No scheduled follow-up once the lesion has been completely excised with clear histologic margins",
-     "Surveillance continues because second primaries are common."
-    ],
-    [
-     "At least annual skin AND lymph-node examination, at closer intervals for high-risk or immunosuppressed patients",
-     "Correct — the node examination is part of the routine, not an extra."
-    ],
-    [
-     "At least annual skin examination alone, with lymph nodes assessed only once metastasis is suspected clinically",
-     "Nodes are examined at every routine visit."
-    ],
-    [
-     "Examination every five years, at closer intervals only for patients who have had more than ten tumours",
-     "The interval is at least annual for everyone."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 26"
-  },
-  {
-   "topic": "Actinic keratosis",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "differential",
-   "q": "What is the most important distinction to make when assessing an actinic keratosis, and what raises that concern?",
-   "opts": [
-    [
-     "Solar lentigo — raised when a lesion is uniformly pigmented, flat, non-indurated, painless and stable over many years",
-     "Solar lentigo is in the differential but carries no malignant urgency here."
-    ],
-    [
-     "Early squamous cell carcinoma or carcinoma in situ — raised when a lesion is thick, indurated, ulcerated, enlarging, painful, bleeding, persistent or recurrent",
-     "Correct — that list is the biopsy trigger."
-    ],
-    [
-     "Seborrheic keratosis — raised when a lesion is thick, waxy, stuck-on, sharply demarcated, enlarging, persistent or recurrent",
-     "Seborrheic keratosis is in the differential but is not the important distinction."
-    ],
-    [
-     "Superficial basal cell carcinoma — raised when a lesion is pearly with rolled borders, visible telangiectasias, ulceration, bleeding or slow enlargement",
-     "Superficial basal cell carcinoma is listed, but squamous cell carcinoma is the critical call."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 13"
-  },
-  {
-   "topic": "Nail unit neoplasms",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "manifestation",
-   "q": "What is the Hutchinson sign in the nail unit, and what should it prompt?",
-   "opts": [
-    [
-     "Periungual pigment extending onto the proximal nail fold — highly concerning for nail unit melanoma, prompting urgent expert evaluation regardless of other features",
-     "Correct — it outranks the rest of the picture."
-    ],
-    [
-     "Pigment confined strictly beneath the nail plate without any periungual extension — reassuring, and allowing routine follow-up whatever the other features",
-     "The sign is defined by extension ONTO the nail fold."
-    ],
-    [
-     "Vesicles on the tip or side of the nose — concerning for ocular involvement in herpes zoster, prompting same-day ophthalmology review",
-     "That is the Hutchinson sign of zoster ophthalmicus, a different sign of the same name."
-    ],
-    [
-     "A small red-blue subungual focus with paroxysmal pain and cold sensitivity — concerning for a glomus tumour, prompting imaging and specialist review",
-     "That is the glomus triad."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 84"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 52"
   },
   {
    "topic": "Nail unit neoplasms",
@@ -1256,10 +1412,6 @@
    "slot": "manifestation",
    "q": "What is the classic triad of a glomus tumour?",
    "opts": [
-    [
-     "A longitudinal pigmented band with proximal widening, blurred borders and nail splitting",
-     "That is the melanoma pattern."
-    ],
     [
      "A rapidly growing friable bleeding papule with an epithelial collarette",
      "That describes pyogenic granuloma."
@@ -1271,36 +1423,14 @@
     [
      "A verrucous periungual plaque with subungual hyperkeratosis, onycholysis and painless bleeding",
      "That is the squamous cell carcinoma or Bowen pattern."
+    ],
+    [
+     "A longitudinal pigmented band with proximal widening, blurred borders and nail splitting",
+     "That is the melanoma pattern."
     ]
    ],
-   "c": 2,
+   "c": 1,
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 86"
-  },
-  {
-   "topic": "Basal cell carcinoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "prognosis",
-   "q": "What is the overall prognosis of basal cell carcinoma, and where does its morbidity come from?",
-   "opts": [
-    [
-     "Usually slow-growing and highly curable when treated early; morbidity comes from local destruction, recurrence, delayed diagnosis and anatomically complex sites, with metastatic disease rare but serious",
-     "Correct — the danger is local destruction rather than spread."
-    ],
-    [
-     "Usually rapidly growing and rarely curable even when treated early; morbidity comes chiefly from early distant metastasis to lung and liver, with local destruction uncommon",
-     "It is slow-growing and highly curable, and metastasis is rare."
-    ],
-    [
-     "Usually slow-growing and highly curable when treated early; morbidity comes chiefly from nodal metastasis, which occurs in 3 to 7% of cases, rather than from local destruction",
-     "That metastatic rate belongs to squamous cell carcinoma."
-    ],
-    [
-     "Usually slow-growing but uniformly fatal without systemic therapy; morbidity comes from delayed hedgehog inhibitor treatment rather than from local destruction or recurrence",
-     "It is highly curable when treated early."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 38"
   },
   {
    "topic": "Squamous cell carcinoma",
@@ -1308,10 +1438,6 @@
    "slot": "test finding",
    "q": "Which red flags does the deck list for squamous cell carcinoma?",
    "opts": [
-    [
-     "Rapid growth, pain, bleeding, ulceration, induration, fixation, or palpable regional nodes",
-     "Correct — seven features."
-    ],
     [
      "Slow growth, painlessness, a stable size, soft consistency, free mobility, and no palpable nodes",
      "Those are reassuring features, not red flags."
@@ -1323,244 +1449,118 @@
     [
      "Sandpaper texture, tenderness on palpation, flesh-coloured hue, and a size under 6 mm",
      "Those describe a typical actinic keratosis."
+    ],
+    [
+     "Rapid growth, pain, bleeding, ulceration, induration, fixation, or palpable regional nodes",
+     "Correct — seven features."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 22"
   },
   {
-   "topic": "Squamous cell carcinoma",
+   "topic": "Malignant melanoma",
    "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "agent/regimen",
-   "q": "Which chemoprevention does the deck give for squamous cell carcinoma, at what dose, and with what effect?",
+   "slot": "test finding",
+   "q": "How does Clark level differ from Breslow thickness, and which does the deck call the dominant prognostic variable?",
    "opts": [
     [
-     "Nicotinamide 500 mg orally twice daily, reducing new squamous cell carcinoma development by approximately 30% in high-risk patients",
-     "Correct — the corresponding figure for basal cell carcinoma is about 20%."
+     "Both describe the same measurement on different scales, and either may be used as the dominant prognostic variable",
+     "They are different concepts."
     ],
     [
-     "Nicotinamide 500 mg orally twice daily, reducing new squamous cell carcinoma development by approximately 20% in high-risk patients",
-     "20% is the figure the deck gives for basal cell carcinoma."
+     "Clark level is the anatomic layer reached; Breslow thickness is a measured depth, and Clark is the dominant prognostic variable",
+     "The definitions are right but the deck names Breslow as dominant."
     ],
     [
-     "Oral acitretin 25 mg daily, reducing new squamous cell carcinoma development by approximately 30% in high-risk patients",
-     "The agent named is nicotinamide."
+     "Clark level is the anatomic layer reached; Breslow thickness is a measured depth, and Breslow is the dominant prognostic variable",
+     "Correct — Breslow is measured in millimetres and drives margins and staging."
     ],
     [
-     "Topical fluorouracil twice daily, reducing new squamous cell carcinoma development by approximately 50% in high-risk patients",
-     "Fluorouracil treats existing disease; it is not the chemoprevention named."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 21"
-  },
-  {
-   "topic": "Cutaneous T-cell lymphoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "manifestation",
-   "q": "What is the early morphology of cutaneous T-cell lymphoma, and what is it commonly mistaken for?",
-   "opts": [
-    [
-     "Localised or generalised erythematous patches or scaly plaques, usually on the trunk and frequently larger than 5 cm; it may resemble psoriasis, eczema or tinea",
-     "Correct — which is why diagnosis is often delayed."
-    ],
-    [
-     "Localised pearly papules with telangiectasias, usually on the face and frequently smaller than 5 mm; it may resemble sebaceous hyperplasia",
-     "Those are basal cell carcinoma features."
-    ],
-    [
-     "Red or purple macules and nodules, usually on the lower limbs and oral mucosa; it may resemble bacillary angiomatosis",
-     "Those are Kaposi sarcoma features."
-    ],
-    [
-     "Rough sandpaper papules on sun-exposed skin, usually under 6 mm; it may resemble seborrheic keratosis",
-     "Those are actinic keratosis features."
-    ]
-   ],
-   "c": 0,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 70"
-  },
-  {
-   "topic": "Nail unit neoplasms",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "differential",
-   "q": "What does the deck say about amelanotic nail melanoma?",
-   "opts": [
-    [
-     "It occurs only in patients who already have multiple pigmented bands across several nails, so a single unexplained lesion can be observed",
-     "Single-nail disease is the concerning pattern."
-    ],
-    [
-     "It is a benign variant of longitudinal melanonychia requiring no biopsy, provided the nail plate itself remains intact and unsplit",
-     "It is melanoma and warrants biopsy."
-    ],
-    [
-     "It may appear red, pink, eroded or mass-like without a dark band, and the absence of pigment does NOT exclude melanoma",
-     "Correct — a pigment-free nail lesion can still be melanoma, so consider biopsy for any unexplained, progressive single-nail lesion."
-    ],
-    [
-     "It always shows at least a faint pigmented band somewhere in the nail, so the complete absence of pigment reliably excludes melanoma from the differential",
-     "The deck says absence of pigment does not exclude it."
+     "Clark level is a measured depth; Breslow thickness is the anatomic layer reached, and Clark is the dominant prognostic variable",
+     "The two definitions are swapped, and Breslow dominates."
     ]
    ],
    "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 84"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "gold standard",
-   "q": "What is the initial diagnostic test for a lesion suspicious for melanoma?",
-   "opts": [
-    [
-     "Dermoscopy alone, with biopsy reserved for lesions that change",
-     "Dermoscopy supports assessment but does not confirm."
-    ],
-    [
-     "Serum lactate dehydrogenase and whole-body imaging",
-     "Those are not the initial diagnostic step."
-    ],
-    [
-     "Biopsy or excision to confirm the diagnosis",
-     "Correct — tissue is required."
-    ],
-    [
-     "Sentinel lymph node biopsy before any skin sampling",
-     "Node biopsy is a staging step that follows diagnosis."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 49"
-  },
-  {
-   "topic": "Clinical approach",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "manifestation",
-   "q": "What does the deck say you should do before assigning a diagnosis to a skin lesion?",
-   "opts": [
-    [
-     "Photograph the lesion and defer all description — type, colour, texture, border, size, distribution and evolution — until the dermatology referral has been accepted",
-     "Description is the first step, not something deferred."
-    ],
-    [
-     "Biopsy every pigmented lesion before any description of type, colour, texture, border or evolution, since morphology is unreliable in premalignant disease",
-     "Biopsy is triggered by concerning features, not used in place of describing."
-    ],
-    [
-     "Characterise it systematically — primary lesion type, colour, surface texture, border definition, size, distribution, palpability, ulceration, bleeding, induration and temporal evolution",
-     "Correct — describe before naming."
-    ],
-    [
-     "Assign the most likely diagnosis first, then look for the features that confirm it — colour, texture, border, size and evolution — and discard those that do not fit",
-     "That reverses the order the deck insists on."
-    ]
-   ],
-   "c": 2,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 4"
-  },
-  {
-   "topic": "Kaposi sarcoma",
-   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
-   "slot": "escalation",
-   "q": "Which systemic agents are first-line in Kaposi sarcoma, and what does the deck say about combining them with antiretroviral therapy?",
-   "opts": [
-    [
-     "Liposomal doxorubicin and paclitaxel; antiretroviral therapy alone is more effective than the combination in advanced disease",
-     "The deck says the combination is more effective."
-    ],
-    [
-     "Vismodegib and sonidegib; antiretroviral therapy plus a hedgehog inhibitor is more effective than antiretroviral therapy alone",
-     "Hedgehog inhibitors belong to basal cell carcinoma."
-    ],
-    [
-     "Romidepsin and vorinostat; antiretroviral therapy plus a histone deacetylase inhibitor is more effective than antiretroviral therapy alone",
-     "Those agents belong to cutaneous T-cell lymphoma."
-    ],
-    [
-     "Liposomal doxorubicin and paclitaxel; antiretroviral therapy plus chemotherapy is more effective than antiretroviral therapy alone in advanced disease",
-     "Correct — combination beats antiretroviral therapy alone once disease is advanced."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 66"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "initial test",
-   "q": "What does the deck say about what sentinel lymph node biopsy achieves?",
-   "opts": [
-    [
-     "It replaces re-excision of the primary lesion when nodes are negative",
-     "Re-excision margins are a separate requirement."
-    ],
-    [
-     "It is a STAGING procedure, and may not itself improve overall survival",
-     "Correct — an important expectation to set with a patient."
-    ],
-    [
-     "It is a THERAPEUTIC procedure that reliably improves overall survival",
-     "The deck explicitly says it may not improve overall survival."
-    ],
-    [
-     "It is a screening procedure used before any biopsy of the primary lesion",
-     "It follows diagnosis of the primary."
-    ]
-   ],
-   "c": 1,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 51"
-  },
-  {
-   "topic": "Malignant melanoma",
-   "io": "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations",
-   "slot": "education",
-   "q": "What self-examination does the deck ask melanoma patients to perform, and which sites must be included?",
-   "opts": [
-    [
-     "Annual self-examination using the recognition mnemonic alone, limited to the sun-exposed skin of the face, arms and upper chest",
-     "It is monthly, and the sun-protected sites are explicitly included."
-    ],
-    [
-     "Monthly self-examination of the trunk and limbs only, since acral, nail and scalp melanoma are too rare to warrant routine checking",
-     "Palms, soles, nails and scalp are named specifically."
-    ],
-    [
-     "No self-examination at all, since surveillance of the skin, scalp, nails and acral sites is entirely the specialist team's responsibility",
-     "The deck asks for monthly self-examination."
-    ],
-    [
-     "Monthly self-examination using the recognition mnemonic and ugly-duckling principles, including the scalp, back, palms, soles and nails",
-     "Correct — the acral and scalp sites are easy to miss."
-    ]
-   ],
-   "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 56"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 55"
   },
   {
    "topic": "Actinic keratosis",
    "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
-   "slot": "risk factors",
-   "q": "Which factors does the deck list as amplifying actinic keratosis risk?",
+   "slot": "etiology",
+   "q": "What is the core mechanism of actinic keratosis, and how does the deck position it relative to keratinocyte carcinoma?",
    "opts": [
     [
-     "Young age, intermittent ultraviolet exposure with indoor occupation, no prior actinic keratosis or keratinocyte carcinoma, female sex with full scalp hair, and a fully competent immune system",
-     "These are the opposite of the listed amplifiers."
+     "Human papillomavirus infection of keratinocytes in a field of sun-damaged skin; it is a benign lesion lying on a continuum with verruca rather than with keratinocyte carcinoma",
+     "Ultraviolet injury, not a virus, and it is premalignant."
     ],
     [
-     "Obesity, diabetes with vascular disease, incontinence and immobility in a hospitalised patient, and recent antibiotic exposure",
-     "Those are pressure injury and intertrigo risks."
+     "Chronic thermal injury producing dysplastic keratinocytic change in a field of scarred skin; it is premalignant and lies on a continuum with keratinocyte carcinoma but is unrelated to ultraviolet exposure",
+     "Ultraviolet exposure is the driver."
     ],
     [
-     "Atopic dermatitis, asthma and allergic rhinitis in a young adult, with a family history of atopy and frequent emollient use",
-     "Atopy is not a listed risk factor here."
+     "Chronic ultraviolet injury producing dysplastic keratinocytic change in a field of sun-damaged skin; it is premalignant and lies on a biologic continuum with keratinocyte carcinoma, not a distinct separate entity",
+     "Correct — a continuum, not a separate disease."
     ],
     [
-     "Advanced age, cumulative ultraviolet exposure with outdoor work or recreation, prior actinic keratosis or keratinocyte carcinoma, male sex with bald scalp exposure, and immunosuppression",
-     "Correct — five amplifiers."
+     "Chronic ultraviolet injury producing dysplastic melanocytic change in a field of sun-damaged skin; it is premalignant but a distinct entity quite separate from keratinocyte carcinoma, with no biologic continuum between them",
+     "The change is keratinocytic, and the deck rejects \"separate entity\"."
+    ]
+   ],
+   "c": 2,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 11"
+  },
+  {
+   "topic": "Kaposi sarcoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "complication",
+   "q": "In which patients is Kaposi sarcoma immune reconstitution inflammatory syndrome especially dangerous?",
+   "opts": [
+    [
+     "Those with classic Kaposi sarcoma, which is indolent",
+     "Classic disease is usually indolent and rarely fatal."
+    ],
+    [
+     "Those with only oral lesions",
+     "The deck singles out visceral disease."
+    ],
+    [
+     "Those over seventy years old",
+     "Age is not the risk the deck names here."
+    ],
+    [
+     "Those with visceral disease",
+     "Correct — endemic or visceral disease and this syndrome can be aggressive and rapidly fatal."
     ]
    ],
    "c": 3,
-   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 11"
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 63"
+  },
+  {
+   "topic": "Cutaneous T-cell lymphoma",
+   "io": "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions",
+   "slot": "agent/regimen",
+   "q": "Which initial skin-directed therapies does the deck list for cutaneous T-cell lymphoma?",
+   "opts": [
+    [
+     "Topical corticosteroids, topical mechlorethamine, bexarotene gel, and ultraviolet phototherapy",
+     "Correct — four skin-directed options."
+    ],
+    [
+     "Topical corticosteroids, topical fluorouracil, imiquimod, and photodynamic therapy",
+     "Those are the actinic keratosis field-directed options."
+    ],
+    [
+     "Intralesional vincristine, vinblastine, bleomycin, and radiation",
+     "Those are palliative options in classic Kaposi sarcoma."
+    ],
+    [
+     "Liposomal doxorubicin, paclitaxel, romidepsin and vorinostat",
+     "Those are systemic agents rather than skin-directed ones."
+    ]
+   ],
+   "c": 0,
+   "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 75"
   }
  ]
 }

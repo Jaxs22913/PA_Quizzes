@@ -70,6 +70,24 @@ ALL_IOS = set(q["io"] for q in POOL)
 ALL_TOPICS = set(q["topic"] for q in POOL)
 
 
+# The two forms should be comparable. Without this the optimiser is indifferent
+# to which form a slot lands in, and the back-half slots -- the ones the
+# corrective pool exists to supply -- can pile into one paper.
+BALANCED_SLOTS = ("avoid", "education", "complication", "referral", "escalation")
+
+
+def slot_imbalance(s1, s2):
+    pen = 0
+    for name in BALANCED_SLOTS:
+        a = sum(1 for q in s1 if q["slot"] == name)
+        b = sum(1 for q in s2 if q["slot"] == name)
+        if a + b >= 2:
+            pen += abs(a - b) * 6        # split them
+            if min(a, b) == 0:
+                pen += 25                # and never leave a form with none
+    return pen
+
+
 def score(setqs):
     ios = Counter(q["io"] for q in setqs)
     tops = Counter(q["topic"] for q in setqs)
@@ -145,13 +163,21 @@ if __name__ == "__main__":
     rest = [i for i in range(len(POOL)) if i not in set(must)]
     assert len(must) <= 60, "more guaranteed questions than places"
 
+    # THE GUARANTEED QUESTIONS MUST BE SHUFFLED INTO THE SPLIT, NOT PREPENDED
+    # TO IT. `chosen = must + rest` followed by chosen[:30] / chosen[30:] puts
+    # every guaranteed question in SET 1 whenever there are fewer than thirty of
+    # them -- which is exactly what happened: set 1 came out with avoid=5,
+    # education=5, complication=4 and set 2 with avoid=0, education=1,
+    # complication=0. A student who only ever took Quiz 2 would have got none of
+    # the coverage the corrective pool exists to provide.
     best, idx = None, list(rest)
     for _ in range(30000):
         random.shuffle(idx)
         chosen = must + idx[:60 - len(must)]
+        random.shuffle(chosen)
         s1 = [POOL[i] for i in chosen[:30]]
         s2 = [POOL[i] for i in chosen[30:]]
-        total = score(s1) + score(s2)
+        total = score(s1) + score(s2) + slot_imbalance(s1, s2)
         if best is None or total < best[0]:
             best = (total, list(chosen))
 

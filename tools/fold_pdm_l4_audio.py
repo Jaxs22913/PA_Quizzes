@@ -173,9 +173,17 @@ def main():
     c = open(CRAM, encoding="utf-8").read()
     c = re.sub(r'\n  <section class="topic" id="l4-lecture".*?</section>\n', "", c, flags=re.S)
     c = re.sub(r'      <a href="#l4-lecture".*?</a>\n', "", c)
-    acc, bg, zeb, ink = "#5a3a5e", "#e9e1ec", "#f4f0f6", "#452c48"
-    used = set(re.findall(r"--acc:(#[0-9a-f]{6})", c))
-    assert acc not in used, "accent %s already used" % acc
+    # THE LECTURE-EMPHASIS SECTIONS SHARE ONE ACCENT ON PURPOSE. Every
+    # "From Prof. X's Lecture" block across the cram sheets uses #8a3f4a --
+    # derm2-lecture, bacterial-lecture, infest-lecture and imaging-lecture all
+    # do. So this must NOT assert accent uniqueness the way a new topic section
+    # does; it must assert the opposite, that it matches the house colour for
+    # this kind of section.
+    acc, bg, zeb, ink = "#8a3f4a", "#f4e3e6", "#faf1f3", "#6b2f38"
+    siblings = re.findall(r'<section class="topic" id="[a-z0-9-]*lecture"[^>]*--acc:(#[0-9a-f]{6})', c)
+    assert not siblings or all(x == acc for x in siblings), (
+        "lecture-emphasis sections already use %r, not %s -- follow the house "
+        "convention rather than introducing a second colour" % (sorted(set(siblings)), acc))
     rows = "\n".join('          <tr><td class="h">%s</td><td>%s</td></tr>'
                      % (H.escape(a), H.escape(b)) for a, b in CRAM_ROWS)
     sec = ('\n  <section class="topic" id="l4-lecture" style="--acc:%s;--acc-bg:%s;--acc-zebra:%s;--acc-ink:%s">\n'
