@@ -300,7 +300,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Pediculosis", io=IOA,
-   q="What are maculae caeruleae and which infestation produces them?",
+   q="What are maculae caerulae and which infestation produces them?",
    opts=[
      ["Slate-grey to bluish irregular macules about 1 cm across representing haemorrhage, seen in pubic lice",
       "Correct, alongside papular urticaria at the feeding sites, commonly periumbilical."],

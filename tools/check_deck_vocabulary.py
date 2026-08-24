@@ -30,7 +30,21 @@ import os, re, sys, glob
 # Terms a writer reaches for automatically. Extend as new ones are caught.
 WATCH = ["Clark", "Breslow", "TNM", "Fitzpatrick", "Nikolsky", "Auspitz",
          "Koebner", "Wickham", "Gottron", "Darier", "Asboe-Hansen",
-         "Tzanck", "Wood lamp", "ABCDE", "Hutchinson"]
+         "Tzanck", "Wood lamp", "ABCDE", "Hutchinson",
+         # Added after the comparison chart's "vignette giveaway" column was
+         # written. Two imported buzzwords got through a hand review of 146
+         # rows: "moccasin" for hyperkeratotic tinea pedis, where the deck
+         # actually says "resembles a shoe distribution", and "maculae
+         # CAERULEAE", where the deck spells it "caerulae". A student searching
+         # their slides for either finds nothing. These are the named signs and
+         # set-piece phrases most likely to be typed from memory rather than
+         # read off a slide.
+         "moccasin", "caeruleae", "dew drop", "herald patch", "Christmas tree",
+         "tapioca", "coin-shaped", "glazed", "honey-colored", "serpiginous",
+         "exclamation-mark", "collarette", "pathergy", "dimple sign",
+         "cutis rhomboidalis", "Crowe", "kerion", "Auspitz", "erythema migrans",
+         "spaghetti and meatballs", "umbilication", "Ghon", "Darier sign",
+         "Leser-Trelat", "apple-jelly", "string of pearls", "shawl sign"]
 
 # Phrasings that count as introducing a term rather than assuming it.
 INTRODUCED = re.compile(

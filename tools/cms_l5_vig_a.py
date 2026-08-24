@@ -179,7 +179,7 @@ POOL_A = [
      ["Head louse infestation",
       "That is confined to the scalp and affects children between three and twelve."],
      ["Pubic louse infestation",
-      "That produces maculae caeruleae and periumbilical papular urticaria."],
+      "That produces maculae caerulae and periumbilical papular urticaria."],
      ["Scabies of the trunk and back",
       "Scabies favours the finger webs, wrists, axillae and genitalia."]],
    c=0, cite=c(26)),
@@ -201,7 +201,7 @@ POOL_A = [
    q="A 26-year-old man has mild pubic itching, slate-grey to bluish irregular macules about 1 cm across on the lower abdomen, and papules around the umbilicus. Which additional step is most appropriate?",
    opts=[
      ["Screen for concurrent sexually transmitted infection, since pubic lice often coexist with one",
-      "Correct — the macules are maculae caeruleae, representing haemorrhage at feeding sites."],
+      "Correct — the macules are maculae caerulae, representing haemorrhage at feeding sites."],
      ["Screen for diabetes, since the intertriginous distribution suggests an underlying metabolic cause",
       "That association belongs to erythrasma in the previous lecture."],
      ["Screen for immunosuppression, since the massive mite burden indicates impaired immunity",

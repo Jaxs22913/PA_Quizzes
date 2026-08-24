@@ -31,7 +31,7 @@ TOPICS = [
    ("Psoriasis", "Well-demarcated plaques, thick silvery scale, Auspitz sign. Extensors, scalp, nails."),
    ("Pityriasis rosea", "Herald patch, then collarette-scaled ovals in a Christmas-tree pattern. Self-limiting 6–8 weeks."),
    ("Lichen planus", "Six Ps: purple, polygonal, pruritic, planar papules and plaques. Wickham striae."),
-   ("Alopecia areata vs androgenetic", "Areata = discrete smooth patches, exclamation-mark hairs, autoimmune. Androgenetic = gradual miniaturisation, temporal/vertex in men."),
+   ("Alopecia areata vs androgenetic", "Areata = discrete smooth patches, exclamation point hairs, autoimmune. Androgenetic = gradual miniaturisation, temporal/vertex in men."),
  ]),
  ("derm2-reactive", "Dermatology II — Reactive & Systemic", "#c1873a", "#f6eee3", "#fbf7f1", "#97692d", [
    ("Erythema multiforme", "Target lesions, acral. Herpes simplex virus triggers OVER 50%."),
@@ -99,7 +99,7 @@ TOPICS = [
    ("Diagnosis", "Skin scraping (number 15 blade + mineral oil, unexcoriated burrow) · dermoscopy DELTA-WING JET · burrow ink test = zigzag line."),
    ("Treatment", "Permethrin overnight to the ENTIRE skin surface + SECOND APPLICATION AT ONE WEEK. Wash at 60°C or bag 14 days. Treat all contacts. Ivermectin for crusted/immunosuppressed. Itch may last 4 weeks after cure."),
    ("Nits vs dandruff", "Nits CANNOT be removed from the hair shaft. Live lice = active; nits = past or present."),
-   ("Lice sites", "Head = children 3–12, head-to-head. Body = homeless/crowded, clothing seams. Pubic = MACULAE CAERULEAE, often a concurrent sexually transmitted infection."),
+   ("Lice sites", "Head = children 3–12, head-to-head. Body = homeless/crowded, clothing seams. Pubic = MACULAE CAERULAE, often a concurrent sexually transmitted infection."),
    ("School policy", "A NO-NIT POLICY IS NOT RECOMMENDED (American Academy of Pediatrics) — nits persist for months. Fumigation not recommended."),
    ("Bedbugs", "PAINLESS bites in a linear ROW OF THREE (breakfast, lunch, dinner). Blood flecks on linen. Survive a year without a meal. PROFESSIONAL EXTERMINATOR required."),
    ("Tungiasis", "Female flea burrows into the skin. Feet/web spaces after barefoot beach exposure. Dermoscopy shows ovoid eggs. Excision or cryotherapy + tetanus + antibiotics."),
