@@ -36,7 +36,14 @@ WATCH = ["Clark", "Breslow", "TNM", "Fitzpatrick", "Nikolsky", "Auspitz",
 INTRODUCED = re.compile(
     r"does not appear anywhere in this deck|the deck never says|"
     r"conventionally called|the conventional name|deck labels these|"
-    r"deck&rsquo;s own wording|not the deck's term", re.I)
+    r"deck&rsquo;s own wording|not the deck's term|"
+    # A DISTRACTOR that names something absent, with an explanation saying so,
+    # is a legitimate use -- arguably the best one, since it teaches that the
+    # thing is not on the slide. Two real cases were flagged: "Wood lamp is not
+    # on this slide's bedside list" and "the stated reason is Breslow depth,
+    # not Clark level".
+    r"is not on this slide|not on this slide's|is not on the list|"
+    r"the stated reason is|are not on this list|is not one of the", re.I)
 
 
 def deck_text(inbox):

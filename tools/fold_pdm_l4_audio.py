@@ -70,7 +70,16 @@ def verify_quotes():
     assert os.path.exists(mine), ("my own transcript is not written yet -- do not fold in "
                                   "quotes from Notability alone")
     def norm(p):
-        return re.sub(r"\s+", " ", open(p, encoding="utf-8", errors="replace").read()).lower()
+        t = open(p, encoding="utf-8", errors="replace").read()
+        # STRIP THE TIMESTAMP MARKERS FIRST. My transcripts interleave [MM:SS]
+        # every couple of seconds and Notability's do not, so a quote spanning
+        # one -- "not seen be very different [26:19] from lab to lab" -- failed
+        # to match even though both transcripts plainly contain it. That is a
+        # defect in the comparison, not evidence the quote was not said, and
+        # loosening the guard instead of fixing the normaliser would have been
+        # the wrong repair.
+        t = re.sub(r"\[\d{1,2}:\d{2}(?::\d{2})?\]", " ", t)
+        return re.sub(r"\s+", " ", t).lower()
     a, b = norm(mine), norm(theirs)
     both, only = [], []
     for q in QUOTES:
@@ -151,16 +160,25 @@ def main():
     assert g.count(anchor) == 1, "section 4.1 anchor not found once"
     g = g.replace(anchor, GUIDE_BOX + "\n\n" + anchor, 1)
 
-    OLDFOOT = ("<b>No lecture recording exists for this topic yet</b> &mdash; everything here is "
-               "from the slides, and where the\n  deck states a value two different ways both are "
-               "shown rather than one being chosen silently.")
+    # Matched as a WHITESPACE-TOLERANT pattern, not an exact string: the source
+    # wraps this sentence across lines and the break falls inside "No lecture
+    # recording", so an exact match failed on a sentence that was plainly there.
+    OLDFOOT_RX = re.compile(
+        r"<b>No\s+lecture\s+recording exists for this topic yet</b>\s*&mdash;\s*everything here is\s+"
+        r"from the slides, and where the\s+deck states a value two different ways both are\s+"
+        r"shown rather than one being chosen silently\.")
     NEWFOOT = ("The 24 August 2026 lecture recording (Professor Chand Shah, 63 minutes) has been "
                "folded in &mdash; see the emphasis box at the top of this section &mdash; and was "
                "cross-examined against Notability&rsquo;s independent transcript. Where the deck "
                "states a value two different ways both are shown, because the recording confirms "
                "that is deliberate.")
-    assert OLDFOOT in g, "the 'no recording' footer sentence was not found to replace"
-    g = g.replace(OLDFOOT, NEWFOOT, 1)
+    # Idempotent: the emphasis box is fenced and stripped on re-run, but this
+    # footer edit is one-way, so a second run must recognise its own output
+    # rather than assert. (It did assert, after a later step in the same run
+    # failed and left the guide edited but the cram sheet not.)
+    if NEWFOOT not in g:
+        assert OLDFOOT_RX.search(g), "the 'no recording' footer sentence was not found to replace"
+        g = OLDFOOT_RX.sub(lambda _m: NEWFOOT, g, count=1)
     assert "No lecture recording exists" not in g, "stale 'no recording' claim survived"
 
     for tag in ("section", "table", "tr", "td", "th", "div", "p"):
@@ -197,7 +215,11 @@ def main():
     link = ('      <a href="#l4-lecture" style="color:%s"><span class="dot" style="background:%s">'
             '</span>&#9733; From Prof. Shah&rsquo;s Lecture</a>\n' % (ink, acc))
     c = c[:end] + sec + c[end:]
-    la = c.rindex("</a>\n", 0, c.index("</nav>")) + len("</a>\n")
+    # The cram sheets have no </nav>; the jump rail is a bare run of <a> tags.
+    # Anchoring on it unconditionally raised ValueError on a file that was
+    # otherwise fine, so fall back to the last link on the page.
+    _stop = c.index("</nav>") if "</nav>" in c else len(c)
+    la = c.rindex("</a>\n", 0, _stop) + len("</a>\n")
     c = c[:la] + link + c[la:]
     ids = set(re.findall(r'id="([^"]+)"', c))
     dang = [a for a in re.findall(r'<a[^>]*href="#([^"]+)"', c) if a and a not in ids]
