@@ -78,27 +78,48 @@ FLOORS = {"etiology": 5, "epidemiology": 3, "risk factors": 3, "manifestation": 
           "first-line": 5, "escalation": 3, "agent/regimen": 3, "avoid": 3,
           "education": 3, "referral": 2, "complication": 2, "prognosis": 2}
 
-LECTURES = OrderedDict([
- ("l2", ("Lecture 2 - General Dermatology I",
-         ["cms_l2_pool_a", "cms_l2_pool_b", "cms_l2_pool_c", "cms_l2_pool_d", "cms_l2_pool_e"])),
- ("l3", ("Lecture 3 - Dermatology II",
-         ["cms_l3_pool_a", "cms_l3_pool_b", "cms_l3_pool_c", "cms_l3_pool_d", "cms_l3_pool_e"])),
- ("l4", ("Lecture 4 - Cutaneous Bacterial Infections",
-         ["cms_l4_pool_a", "cms_l4_pool_b", "cms_l4_pool_c", "cms_l4_pool_d"])),
- ("l5", ("Lecture 5 - Dermatological Infestations",
-         ["cms_l5_pool_a", "cms_l5_pool_b", "cms_l5_pool_c", "cms_l5_pool_d"])),
- ("l6", ("Lecture 6 - Cutaneous Viral and Fungal Infections",
-         ["cms_l6_pool_a", "cms_l6_pool_b", "cms_l6_pool_c", "cms_l6_pool_d"])),
- ("l7", ("Lecture 7 - Benign Skin Lesions",
-         ["cms_l7_pool_a", "cms_l7_pool_b", "cms_l7_pool_c", "cms_l7_pool_d",
-          "cms_l7_pool_e"])),
- ("l8", ("Lecture 8 - Pigmented Skin Lesions",
-         ["cms_l8_pool_a", "cms_l8_pool_b", "cms_l8_pool_c", "cms_l8_pool_d"])),
- ("l9", ("Lecture 9 - Pre-Malignant and Malignant Cutaneous Lesions",
-         ["cms_l9_pool_a", "cms_l9_pool_b", "cms_l9_pool_c", "cms_l9_pool_d"])),
-])
+# THE MAP IS DISCOVERED FROM DISK, NOT HAND-MAINTAINED.
+#
+# It used to be a literal list of module names, and it went stale exactly as you
+# would expect: Lecture 9 grew pools E, F and G while the map still named only
+# A to D, so this tool kept reporting Lecture 9's ORIGINAL slot counts -- it
+# went on printing "avoid: 0" after a whole corrective pool had been written to
+# fix precisely that. Lectures 4 and 6 had drifted the same way, and Lecture 1
+# was not listed at all. A checker that silently reads a subset of the thing it
+# is checking is worse than no checker, because it reports success.
+#
+# Titles stay here because they are not derivable from a filename.
+TITLES = {
+ "l1": "Lecture 1 - Clinical Reasoning and Problem Solving",
+ "l2": "Lecture 2 - General Dermatology I",
+ "l3": "Lecture 3 - Dermatology II",
+ "l4": "Lecture 4 - Cutaneous Bacterial Infections",
+ "l5": "Lecture 5 - Dermatological Infestations",
+ "l6": "Lecture 6 - Cutaneous Viral and Fungal Infections",
+ "l7": "Lecture 7 - Benign Skin Lesions",
+ "l8": "Lecture 8 - Pigmented Skin Lesions",
+ "l9": "Lecture 9 - Pre-Malignant and Malignant Cutaneous Lesions",
+}
 
 
+def _discover():
+    import glob, os.path as _p
+    here = _p.dirname(_p.abspath(__file__))
+    found = {}
+    for path in glob.glob(_p.join(here, "cms_l*_pool_*.py")):
+        m = re.match(r"cms_(l\d+)_pool_([a-z])$", _p.basename(path)[:-3])
+        if m:
+            found.setdefault(m.group(1), []).append("cms_%s_pool_%s" % m.groups())
+    out = OrderedDict()
+    for key in sorted(found, key=lambda k: int(k[1:])):
+        title = TITLES.get(key)
+        assert title, ("pools exist for %s but it has no title here -- add one rather "
+                       "than letting the lecture go unchecked" % key)
+        out[key] = (title, sorted(found[key]))
+    return out
+
+
+LECTURES = _discover()
 def load(mods):
     out = []
     for m in mods:
@@ -123,8 +144,22 @@ def slot_of(q):
     return "unclassified"
 
 
+# LECTURES THAT THE DISEASE-SHAPED FLOORS DO NOT APPLY TO.
+#
+# Lecture 1 is Clinical Reasoning and Problem Solving -- sensitivity, pretest
+# probability, the naturalistic approach. It has no organism, no first-line
+# agent, no prognosis, because it is not about a disease. It only started
+# appearing in this report when the lecture map switched from a hand-written
+# list to disk discovery, and reporting "avoid: 0/3" against it would be
+# demanding questions that cannot honestly be written. Its slot distribution is
+# still PRINTED; it is just not failed against the floors.
+NO_DISEASE_FLOORS = {"l1"}
+
+
 def report(key, apply_floors):
     label, mods = LECTURES[key]
+    if key in NO_DISEASE_FLOORS:
+        apply_floors = False
     pool = load(mods)
     if not pool:
         return []
@@ -138,8 +173,12 @@ def report(key, apply_floors):
         bar = "#" * min(n, 40)
         flag = ""
         if n < floor:
-            flag = "   <-- under floor of %d" % floor
-            misses.append((label, name, n, floor))
+            # apply_floors was accepted as a parameter but never consulted here,
+            # so --floors and the exemption above both had no effect on what got
+            # reported as a miss.
+            flag = "   <-- under floor of %d" % floor if apply_floors else "   (floors n/a)"
+            if apply_floors:
+                misses.append((label, name, n, floor))
         print("   %-14s %3d  %-40s%s" % (name, n, bar, flag))
     if c.get("unclassified"):
         print("   %-14s %3d   (add slot=\"...\" to these)" % ("unclassified", c["unclassified"]))

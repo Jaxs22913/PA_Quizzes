@@ -24,8 +24,16 @@ from cms_l9_pool_c import POOL_C
 from cms_l9_pool_d import POOL_D
 from cms_l9_pool_e import POOL_E
 from cms_l9_pool_f import POOL_F
+from cms_l9_pool_g import POOL_G
+from cms_l9_g_lengthfix import FIXES as G_FIXES
 
-POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E + POOL_F
+# Pool G is APPENDED (never prepended) so the G length-fix indices, which are
+# offsets into POOL_G itself, stay independent of everything before it.
+for (_gi, _oi), _txt in G_FIXES.items():
+    assert _oi != POOL_G[_gi]["c"], "pool G length fix %d/%d targets the CORRECT option" % (_gi, _oi)
+    POOL_G[_gi]["opts"][_oi][0] = _txt
+
+POOL = POOL_A + POOL_B + POOL_C + POOL_D + POOL_E + POOL_F + POOL_G
 
 # CMS scope guard: Set 1 is objective-style, NOT vignettes. A stem that opens
 # with a patient age and presentation belongs in Set 2, and mixing them would
@@ -106,6 +114,19 @@ if __name__ == "__main__":
     print("scope guard: no vignette stems in Set 1; every question carries a slot")
     print()
 
+    # ---- slot floors, checked BEFORE partitioning -------------------------
+    # The standing rule for this class, and the step that was skipped the first
+    # time round: a slot that is empty in the POOL can never be filled by any
+    # choice the partitioner makes.
+    _FLOORS = {"avoid": 3, "education": 3, "complication": 2, "referral": 2,
+               "prognosis": 2, "initial test": 3, "gold standard": 2}
+    _have = Counter(q["slot"] for q in POOL)
+    _under = {k: (_have.get(k, 0), v) for k, v in _FLOORS.items() if _have.get(k, 0) < v}
+    assert not _under, ("pool is under the slot floor before partitioning -- write the "
+                        "questions, do not hope the draw finds them: %r" % _under)
+    print("slot floors met before partitioning:",
+          {k: _have.get(k, 0) for k in sorted(_FLOORS)})
+
     answer_text = {id(q): q["opts"][q["c"]][0] for q in POOL}
 
     # POOL F IS GUARANTEED A PLACE. Its questions cover content that exists only
@@ -114,7 +135,13 @@ if __name__ == "__main__":
     # student cannot pick that up by re-reading the deck, which is precisely why
     # it must not be left to a random 60-of-84 draw. On the first run it was:
     # the Clark questions were written and then sampled straight back out again.
-    must = [i for i, q in enumerate(POOL) if q in POOL_F]
+    # POOL G IS GUARANTEED TOO, for a different reason. check_slot_coverage.py
+    # --floors found Lecture 9 under floor on nine slots, `avoid` at ZERO: pools
+    # A to F had covered what a lesion is and how it is treated, and thinned out
+    # across what to avoid, what to tell the patient, and what goes wrong. Pool
+    # G is written to those slots, so leaving it to a random draw would reopen
+    # the gap it exists to close.
+    must = [i for i, q in enumerate(POOL) if q in POOL_F or q in POOL_G]
     rest = [i for i in range(len(POOL)) if i not in set(must)]
     assert len(must) <= 60, "more guaranteed questions than places"
 
