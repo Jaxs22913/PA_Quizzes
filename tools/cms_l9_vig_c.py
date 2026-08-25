@@ -21,7 +21,7 @@ VIG_C = [
    c=0, cite=c(64)),
 
  dict(topic="Kaposi sarcoma", io=IOB, lead="treatment",
-   q="That same patient is not yet on antiretroviral therapy. Which is the first priority in his Kaposi sarcoma management?",
+   q="A 34-year-old man newly diagnosed with human immunodeficiency virus has several red-purple plaques on his legs and is not yet on antiretroviral therapy. Which is the first priority in his Kaposi sarcoma management?",
    opts=[
      ["Begin or optimise antiretroviral therapy, since immune restoration is the cornerstone of treatment for epidemic disease",
       "Correct — antiretroviral therapy comes before local or systemic cancer treatment."],

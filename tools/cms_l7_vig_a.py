@@ -123,7 +123,7 @@ VIG_A = [
    c=0, cite=c(21)),
 
  dict(topic="Hypertrophic scar", io=IOA, lead="education",
-   q="The same patient asks what will happen to his scar over the next year. Which is the most appropriate answer?",
+   q="A 30-year-old man had an appendicectomy five weeks ago. The scar is raised, firm and red but stops exactly at the edges of the original incision. He asks what will happen to it over the next year. Which is the most appropriate answer?",
    opts=[
      ["It should stay stable and then flatten with time",
       "Correct — that natural history is the reason observation is reasonable."],
@@ -266,7 +266,7 @@ VIG_A = [
    c=0, cite=c(29)),
 
  dict(topic="Acrochordon", io=IOA, lead="treatment",
-   q="The same patient wants the lesions removed for cosmetic reasons. Which is the most appropriate approach?",
+   q="A 58-year-old woman with obesity has several soft, skin-coloured, pedunculated papules on a thin stalk in both axillae and on her neck. She wants them removed for cosmetic reasons. Which is the most appropriate approach?",
    opts=[
      ["Scissor excision, cryotherapy or electrodesiccation, without anesthesia",
       "Correct — anesthesia is stated not to be necessary."],

@@ -32,7 +32,7 @@ VIG_C = [
    c=0, cite=c(65)),
 
  dict(topic="Infantile hemangioma", io=IOB, lead="education",
-   q="The same mother asks whether the lesion will need surgery. Which is the most appropriate answer?",
+   q="A 6-week-old former preterm girl has a bright red raised plaque on her scalp. Her mother says the area first looked pale, then developed fine red lines, and now asks whether it will need surgery. Which is the most appropriate answer?",
    opts=[
      ["Most involute on their own over several years",
       "Correct — complete involution in fifty per cent by age five, seventy per cent by seven and ninety per cent by nine, so serial observation is often all that is needed."],
@@ -58,7 +58,7 @@ VIG_C = [
    c=0, cite=c(73)),
 
  dict(topic="Infantile hemangioma", io=IOB, lead="treatment",
-   q="That infant is to be treated medically. Which is the first-line option?",
+   q="A 4-month-old has a rapidly enlarging periorbital hemangioma that is beginning to obstruct the visual axis, and is to be treated medically. Which is the first-line option?",
    opts=[
      ["A beta-blocker",
       "Correct — oral propranolol or topical timolol, whose mechanism is not well understood. Corticosteroids are the other named first-line treatment."],
@@ -136,7 +136,7 @@ VIG_C = [
    c=0, cite=c(86)),
 
  dict(topic="Cherry angioma", io=IOA, lead="education",
-   q="The same patient asks whether removing them will stop new ones appearing. Which is the most appropriate response?",
+   q="A 61-year-old man has several smooth, firm, deep red papules under 5 mm on his trunk that blanch with pressure and have accumulated over recent years. He asks whether removing them will stop new ones appearing. Which is the most appropriate response?",
    opts=[
      ["New lesions will likely develop and there is no way to prevent them",
       "Correct — treatment is not necessary unless they bother him."],
@@ -188,7 +188,7 @@ VIG_C = [
    c=0, cite=c(92)),
 
  dict(topic="Pyogenic granuloma", io=IOA, lead="treatment",
-   q="That patient wants the lesion removed and asks which option is least likely to come back. Which is the most appropriate answer?",
+   q="A 16-year-old has a moist, bright red papule with an epithelial collarette on the finger pad of her left fourth digit that bleeds readily. She wants it removed and asks which option is least likely to come back. Which is the most appropriate answer?",
    opts=[
      ["Surgical excision, though it scars the most",
       "Correct — it has the lowest recurrence rate and also provides histopathologic analysis, at the cost of the highest rate of scarring."],
@@ -266,7 +266,7 @@ VIG_C = [
    c=0, cite=c(104)),
 
  dict(topic="Xanthelasma", io=IOA, lead="next step",
-   q="What should be done for that patient beyond addressing the lesion itself?",
+   q="A 55-year-old woman has soft, yellow plaques on both medial upper eyelids. Beyond addressing the plaques themselves, what should be done for her?",
    opts=[
      ["Screen for hyperlipidemia",
       "Correct — xanthelasma is associated with lipid disorders, and may signify an increased risk of cardiac disease."],
@@ -292,7 +292,7 @@ VIG_C = [
    c=0, cite=c(105)),
 
  dict(topic="Lipoma", io=IOA, lead="treatment",
-   q="The same patient is not troubled by the lesion. Which is the most appropriate management?",
+   q="A 48-year-old man has a soft, painless, rubbery subcutaneous nodule about 4 cm across on his back. It is mobile with no overlying pore, and he is not troubled by it. Which is the most appropriate management?",
    opts=[
      ["Observation",
       "Correct — excision is for a cosmetically deforming mass or diagnostic uncertainty."],
@@ -318,7 +318,7 @@ VIG_C = [
    c=0, cite=c(108)),
 
  dict(topic="Digital mucous cyst", io=IOA, lead="treatment",
-   q="That patient finds the nail deformity troublesome. Which is the most appropriate management?",
+   q="A 66-year-old woman with osteoarthritis has a translucent skin-coloured papule over a distal interphalangeal joint, with a groove in the adjacent nail that she finds troublesome. Which is the most appropriate management?",
    opts=[
      ["Excision, since nail dystrophy is an indication",
       "Correct — asymptomatic lesions can simply be observed."],

@@ -38,8 +38,19 @@ _VIG = re.compile(r"^A[n]? \d+[- ]?(year|month|week|day)[- ]old|^(A|The) (mother
 _bad = [q["q"][:60] for q in POOL if not _VIG.match(q["q"])]
 assert not _bad, "non-vignette stem in Set 2: %r" % _bad
 
-_DEP = re.compile(r"previous question|question above|as in the last|earlier question", re.I)
-assert not [q for q in POOL if _DEP.search(q["q"])], "a stem depends on another question"
+# A stem must stand alone: the partitioner shuffles, so there is no "previous
+# question". The original version of this pattern listed only the phrasings I
+# imagined -- "previous question", "question above" -- and missed the one I had
+# actually written thirteen times, "The same patient". A student found it before
+# the guard did. It now matches back-references anywhere in the stem, and it is
+# present in EVERY vignette partition; Lecture 2's had no dependency guard at all.
+_DEP = re.compile(r"previous question|question above|as in the last|earlier question"
+                  r"|\b(?:that|the same|this same) (?:patient|man|woman|girl|boy|mother|"
+                  r"father|child|infant|lesion|nodule|plaque|rash|scar)\b"
+                  r"|\bthe patient (?:above|described above)\b", re.I)
+assert not [q for q in POOL if _DEP.search(q["q"])], (
+    "a stem leans on another question; the draw shuffles, so it must stand alone: %r"
+    % [q["q"][:70] for q in POOL if _DEP.search(q["q"])][:3])
 
 LEAD = {
  "diagnosis": r"most likely diagnosis|most likely underlying diagnosis|most likely explanation|best explains|best describes|which spider is most likely|which caterpillar is responsible|which stage of lyme|which mechanism explains|which is the most likely complication|which pattern is expected|which conclusion follows|which characteristics are used|most appropriate interpretation",

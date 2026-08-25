@@ -122,7 +122,7 @@ VIG_B = [
    c=0, cite=c(41)),
 
  dict(topic="Pilonidal cyst", io=IOA, lead="treatment",
-   q="The same patient's abscess is tense and fluctuant. Which is the most appropriate immediate management?",
+   q="A 22-year-old lorry driver has sudden pain and swelling over his sacrum. There is a warm, tender, erythematous swelling that is now tense and fluctuant. Which is the most appropriate immediate management?",
    opts=[
      ["Incision and drainage",
       "Correct — an acute abscess requires drainage."],
@@ -187,7 +187,7 @@ VIG_B = [
    c=0, cite=c(45)),
 
  dict(topic="Dermatofibroma", io=IOA, lead="test",
-   q="Dermoscopy is performed on that patient's leg lesion. Which finding would support the diagnosis?",
+   q="A 34-year-old woman has a firm brown nodule on her lower leg that appeared after an insect bite. Dermoscopy is performed. Which finding would support a diagnosis of dermatofibroma?",
    opts=[
      ["A peripheral pigment network with a central white mass",
       "Correct — the white centre corresponds to the fibrous core."],
@@ -200,7 +200,7 @@ VIG_B = [
    c=0, cite=c(46)),
 
  dict(topic="Dermatofibroma", io=IOA, lead="treatment",
-   q="The same patient is not bothered by her lesion but wants to know her options. Which is the most appropriate answer?",
+   q="A 34-year-old woman has a firm 8 mm brown nodule on her lower leg that retracts beneath the skin when compressed from the sides. She is not bothered by it but wants to know her options. Which is the most appropriate answer?",
    opts=[
      ["No treatment is needed; a shave or punch biopsy would remove it",
       "Correct — in a small lesion that biopsy is both diagnostic and therapeutic. Larger lesions may need surgical excision instead."],
@@ -226,7 +226,7 @@ VIG_B = [
    c=0, cite=c(50)),
 
  dict(topic="Keratoacanthoma", io=IOA, lead="next step",
-   q="The patient asks whether you can simply watch that lesion, since he has read they go away. Which is the most appropriate next step?",
+   q="A 67-year-old man with very fair skin has a dome-shaped lesion with a central keratin-filled crater on his forearm that appeared six weeks ago and grew fast. He asks whether you can simply watch it, since he has read they go away. Which is the most appropriate next step?",
    opts=[
      ["Excise or destroy it, because of possible malignancy",
       "Correct — strong arguments support classifying keratoacanthoma as a variant of invasive squamous cell carcinoma, so the standard of care is not observation."],
@@ -278,7 +278,7 @@ VIG_B = [
    c=0, cite=c(54)),
 
  dict(topic="Epidermoid cyst", io=IOA, lead="education",
-   q="The patient asks whether his lesion is a sebaceous cyst full of oil. Which is the most appropriate response?",
+   q="A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-coloured pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?",
    opts=[
      ["The contents are keratin, not sebum",
       "Correct — it is often called a sebaceous cyst because the material looks like sebum, but the deck states outright that it is not one."],
@@ -330,7 +330,7 @@ VIG_B = [
    c=0, cite=c(58)),
 
  dict(topic="Syringoma", io=IOA, lead="education",
-   q="The same patient asks about having them removed. Which is the most appropriate counselling point?",
+   q="A 17-year-old girl has multiple 1 to 2 mm skin-coloured papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counselling point?",
    opts=[
      ["Treatment is for cosmesis only, and every option has a trade-off",
       "Correct — drugs such as oral isotretinoin carry an increased risk of recurrence, and removal procedures carry a risk of poor cosmetic results."],
