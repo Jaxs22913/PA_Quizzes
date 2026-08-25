@@ -389,7 +389,11 @@ function renderQ(){
   document.getElementById('counter').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
   document.getElementById('barfill').style.width = (100*idx/QUESTIONS.length)+'%';
   document.getElementById('scoretxt').textContent = `Score ${score}`;
-  document.getElementById('qtopic').textContent = q.topic;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
   document.getElementById('qio').textContent = 'Objective '+q.io;
   document.getElementById('qtext').textContent = q.q;
   document.getElementById('prevbtn').disabled = (idx===0);
@@ -478,6 +482,8 @@ function revealAnswer(sel, scroll){
     r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
     rows.appendChild(r);
   });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
   document.getElementById('cite').textContent='Source: '+q.cite;
   document.getElementById('expl').classList.add('show');
   document.getElementById('nextbtn').style.display='inline-block';
