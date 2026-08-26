@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medicine and Surgery I &middot; Exam 2 &mdash; Cram Sheet</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#2d3f7a;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">PAJ 5500 &middot; Class of 2028</div>
+    <h1>Clinical Medicine and Surgery I &middot; Exam 2</h1>
+    <p class="sub">Ophthalmology block &mdash; everything that has to be recallable cold</p>
+    <div class="toc">
+      <a href="#how" style="color:#23315f"><span class="dot" style="background:#2d3f7a"></span>How This Exam Is Written</a>
+      <a href="#redeye" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ THE RED EYE — Before You Name It</a>
+      <a href="#lids" style="color:#42508d"><span class="dot" style="background:#5566b5"></span>Eyelids</a>
+      <a href="#lacrimal" style="color:#255346"><span class="dot" style="background:#2f6b5a"></span>Lacrimal</a>
+      <a href="#surface" style="color:#5f4624"><span class="dot" style="background:#7a5a2e"></span>Conjunctiva & Surface</a>
+      <a href="#conj" style="color:#704683"><span class="dot" style="background:#8f5aa8"></span>Conjunctivitis — All Of It</a>
+      <a href="#sclera" style="color:#803e21"><span class="dot" style="background:#a4502a"></span>Episcleritis vs Scleritis</a>
+      <a href="#cornea" style="color:#25625c"><span class="dot" style="background:#2f7d76"></span>Cornea</a>
+      <a href="#uveitis" style="color:#5f254a"><span class="dot" style="background:#7a2f5f"></span>Uveitis</a>
+      <a href="#cellulitis" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Cellulitis & Diagnostics</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="how" style="--acc:#2d3f7a;--acc-bg:#e2e4ec;--acc-zebra:#f0f2f6;--acc-ink:#23315f">
+    <div class="shead"><span class="dot" style="background:#2d3f7a"></span><h2>How This Exam Is Written</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Almost all vignettes</td><td>“Pretty much all clinical vignettes… recognize conditions by the vignette.” Read for the DEFINING FEATURE, not the disease name.</td></tr>
+          <tr><td class="h">What the lead-in asks</td><td>“SOME diagnosis, but A LOT are next management plan, first line treatment, patient education.” The lead-in decides the answer — read it before the options.</td></tr>
+          <tr><td class="h">Pictures</td><td>“Way more non-pictures than pictures.” Do not bank on recognising a photograph.</td></tr>
+          <tr><td class="h">Which half is this?</td><td>CMS = MANAGEMENT. Clin Path I Lecture 4 = MECHANISM, on the same condition list. If the question asks WHY the tissue fails, that is the other course.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="redeye" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ THE RED EYE — Before You Name It</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">The first 60 seconds</td><td>VISUAL ACUITY each eye with correction · PUPILS (shape, reactivity, afferent defect) · EXTRAOCULAR MOVEMENTS (pain? restriction?) · CORNEAL CLARITY + FLUORESCEIN · pattern of INJECTION and DISCHARGE · history of CONTACT LENS, TRAUMA, SURGERY, STEROIDS.</td></tr>
+          <tr><td class="h">THE TWO RED FLAGS</td><td>REDUCED VISION or an ABNORMAL PUPIL. “Do not let obvious redness substitute for an eye examination.”</td></tr>
+          <tr><td class="h">Danger signs — NOT conjunctivitis</td><td>Moderate-severe pain or CONSENSUAL PHOTOPHOBIA · reduced acuity/RAPD/abnormal pupil · corneal opacity, infiltrate, ulcer or DENDRITE · CILIARY FLUSH, hypopyon, high pressure · proptosis, diplopia, painful restricted movement · chemical or penetrating injury, recent surgery · CONTACT LENS WEARER WITH PAIN.</td></tr>
+          <tr><td class="h">Localise by pattern</td><td>CONJUNCTIVA: itch/discharge, diffuse, VISION PRESERVED. CORNEA: pain/photophobia, fluorescein defect. ANTERIOR CHAMBER: CONSENSUAL photophobia, ciliary flush, irregular pupil. SCLERA/ORBIT: deep pain or painful movement, violaceous, proptosis. ANGLE CLOSURE: pain+headache+halos+nausea, cloudy cornea, MID-DILATED pupil.</td></tr>
+          <tr><td class="h">TWO EXCEPTIONS TO THE SEQUENCE</td><td>CHEMICAL — IRRIGATE FIRST, before history or exam, then check pH normalised. OPEN GLOBE — rigid shield, NO pressure, NO TONOMETRY, nil by mouth, emergency consult.</td></tr>
+          <tr><td class="h">Referral timing</td><td>EMERGENT NOW: chemical injury, open globe, angle closure, ORBITAL cellulitis, endophthalmitis. SAME DAY: keratitis/corneal ulcer, ANTERIOR UVEITIS, SCLERITIS, ocular herpes zoster. URGENT 24–48h: unexplained vision loss, persistent pain/photophobia, atypical red eye. ROUTINE: uncomplicated conjunctivitis, chronic lid disease.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="lids" style="--acc:#5566b5;--acc-bg:#e7eaf5;--acc-zebra:#f3f4fa;--acc-ink:#42508d">
+    <div class="shead"><span class="dot" style="background:#5566b5"></span><h2>Eyelids</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">ENTROPION vs ECTROPION</td><td>ENTROPION turns IN → foreign body sensation → TRICHIASIS → corneal abrasion. ECTROPION turns OUT → tearing → EXPOSURE KERATOPATHY. CN VII palsy causes ECTROPION only. SURGERY IS DEFINITIVE for both.</td></tr>
+          <tr><td class="h">DERMATOCHALASIS</td><td>Excess loose skin + orbital fat prolapse, from AGEING. “Heaviness,” “looking through lashes.” EXAMINE VISUAL FIELDS — a deficit is what gets BLEPHAROPLASTY covered by insurance.</td></tr>
+          <tr><td class="h">XANTHELASMA</td><td>Oval YELLOWISH plaques, asymptomatic. WORK UP THE METABOLISM: lipid profile + fasting glucose/HbA1C + liver function. Treat the underlying issue. Local: cryotherapy, laser, peel, excision. RECURRENCES ARE COMMON. Caveat: many patients have NORMAL lipids.</td></tr>
+          <tr><td class="h">BLEPHARITIS / MEIBOMITIS</td><td>ROSACEA · SEBORRHOEIC DERMATITIS · STAPH AUREUS. Crusting/scaling at LASH BASES, thick TOOTHPASTE-LIKE meibomian secretion, decreased or frothy tear film. LID HYGIENE FIRST → if no better at 2 WEEKS, topical abx → then oral. CHRONIC: CONTROLLED, NOT CURED.</td></tr>
+          <tr><td class="h">CHALAZION vs HORDEOLUM</td><td>CHALAZION: STERILE meibomian obstruction, days–weeks, NON-TENDER. HORDEOLUM: acute INFECTION (staph), 24h/overnight, TENDER. Both: warm compresses + massage.</td></tr>
+          <tr><td class="h">When to refer a lid lump</td><td>HORDEOLUM: no better in 2 WEEKS → ophtho for I&D. CHALAZION: no resolution → ophtho for steroid injection or curettage; IMPROVEMENT MAY TAKE MONTHS. RECURRENT, or persisting >2–3 MONTHS → REFER TO RULE OUT SEBACEOUS CARCINOMA.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="lacrimal" style="--acc:#2f6b5a;--acc-bg:#e2eae8;--acc-zebra:#f0f5f3;--acc-ink:#255346">
+    <div class="shead"><span class="dot" style="background:#2f6b5a"></span><h2>Lacrimal</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">DACRYOADENITIS = GLAND</td><td>LATERAL ⅓ of the UPPER lid. INFLAMMATORY MOST COMMON (bacterial rare, viral usually bilateral). ± ipsilateral PREAURICULAR node, temporal injection, fever, leukocytosis. Inflammatory → CORTICOSTEROIDS, response in 48h.</td></tr>
+          <tr><td class="h">DACRYOCYSTITIS = SAC</td><td>NASAL aspect of the LOWER lid, BELOW the medial canthal tendon. From NASOLACRIMAL DUCT OBSTRUCTION. Mucoid/purulent discharge EXPRESSIBLE FROM THE LOWER PUNCTUM.</td></tr>
+          <tr><td class="h">A mass ABOVE the tendon</td><td>NOT dacryocystitis — suspect a LACRIMAL SAC TUMOUR (rare).</td></tr>
+          <tr><td class="h">Dacryocystitis management</td><td>Afebrile, well, reliable → OUTPATIENT ORAL ABX ×10 DAYS. Febrile, ill, unreliable → ADMIT, IV 48–72h then oral to complete 10–14 days. Improvement expected 24–48h. Afterwards: PROBING AND IRRIGATION often needed, may need surgery.</td></tr>
+          <tr><td class="h">THE HEDGES</td><td>Imaging is NOT automatic for either — reserve CT for severe disease, orbital findings, chronicity, atypical presentation, suspected abscess/mass, or failure to improve. DO NOT START STEROIDS until infection is reasonably excluded.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="surface" style="--acc:#7a5a2e;--acc-bg:#ece8e2;--acc-zebra:#f6f3f0;--acc-ink:#5f4624">
+    <div class="shead"><span class="dot" style="background:#7a5a2e"></span><h2>Conjunctiva & Surface</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">PINGUECULA vs PTERYGIUM</td><td>Both from SUN and WIND, almost always at 3 or 9 O’CLOCK. PTERYGIUM EXTENDS ONTO THE CORNEA; PINGUECULA DOES NOT. “Pterodactyls fly (into cornea), penguins can’t.”</td></tr>
+          <tr><td class="h">Pterygium management</td><td>Sun/dust/wind protection + lubricating drops — but CONSERVATIVE MANAGEMENT WILL NOT RESOLVE IT. NON-URGENT referral if GROWING or VISION AFFECTED. Surgery if distorting vision.</td></tr>
+          <tr><td class="h">SUBCONJUNCTIVAL HAEMORRHAGE</td><td>VALSALVA · bleeding disorder · ANTIPLATELET/ANTICOAGULANT · HYPERTENSION. Painless, vision/pupil/cornea NORMAL. HISTORY IS THE WORKUP — CHECK THE BP if unexplained. Reassurance; resolves 2–4 WEEKS.</td></tr>
+          <tr><td class="h">Recurrent haemorrhage — the hedge</td><td>NOT automatic haematology referral. Medication review, blood pressure, TARGETED evaluation for haematologic disease.</td></tr>
+          <tr><td class="h">CHEMOSIS</td><td>Conjunctival SWELLING — a SIGN, not a diagnosis. Allergy, infection, thyroid eye disease, angioedema, trauma, orbital cellulitis, impaired venous drainage. URGENT if with PROPTOSIS, RESTRICTED MOVEMENT, REDUCED VISION or an AFFERENT PUPILLARY DEFECT.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="conj" style="--acc:#8f5aa8;--acc-bg:#efe8f3;--acc-zebra:#f7f3f9;--acc-ink:#704683">
+    <div class="shead"><span class="dot" style="background:#8f5aa8"></span><h2>Conjunctivitis — All Of It</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Acute vs chronic</td><td>ACUTE ≤ 4 WEEKS. CHRONIC > 4 WEEKS.</td></tr>
+          <tr><td class="h">PAPILLAE vs FOLLICLES</td><td>PAPILLAE: RED at surface, PALER at base → BACTERIAL (except chlamydia) and ALLERGIC. FOLLICLES: PALE at surface, REDDER at base → CHLAMYDIAL and VIRAL. PREAURICULAR NODE → chlamydial, GONOCOCCAL, viral.</td></tr>
+          <tr><td class="h">ALLERGIC</td><td>ITCH · bilateral · watery/stringy · chemosis · papillae · NO NODE · vision preserved. Avoid allergen, cool compresses, artificial tears, topical H1 ± mast cell stabiliser — OLOPATADINE DOES BOTH — plus systemic H1.</td></tr>
+          <tr><td class="h">VIRAL</td><td>ADENOVIRUS. Profuse WATERY discharge, FOLLICLES, TENDER PREAURICULAR NODE, starts one eye then the other, recent URI. Cool compresses, artificial tears, CONTAGIOUS PRECAUTIONS. Often WORSE OVER WEEK ONE, resolves 2–3 WEEKS. Refer if >3 wks, or photophobia/vision loss after onset.</td></tr>
+          <tr><td class="h">BACTERIAL</td><td>THICK YELLOW/WHITE discharge, often UNILATERAL, papillae, usually NO node. Immunocompetent adult → TOPICAL BROAD-SPECTRUM (fluoroquinolone) + contagious precautions.</td></tr>
+          <tr><td class="h">URGENT REFERRAL in bacterial</td><td>Immunocompromised · CONTACT LENS WEARER · recent eye surgery · foreign body · corneal opacity or suspected keratitis · NO IMPROVEMENT IN 24 HOURS.</td></tr>
+          <tr><td class="h">GONOCOCCAL — the exception</td><td>SEVERE purulent discharge WITH a PALPABLE PREAURICULAR NODE. NEWBORN = EMERGENCY: hospitalise, SYSTEMIC CEFTRIAXONE, cultures + Gram stain, test for chlamydia and dissemination. Untreated → CORNEAL PERFORATION.</td></tr>
+          <tr><td class="h">CHLAMYDIAL — adult</td><td>Serotypes D–K. CHRONIC (a month+), stringy mucoid, FOLLICLES, UNRESPONSIVE TO TOPICALS. Confirm: conjunctival NAAT or DFA. DOXYCYCLINE 100 mg BD × 7 DAYS. Avoid sun, full glass of water, stay upright, separate from antacids/iron/calcium/magnesium. EVALUATE FOR OTHER STIs, NOTIFY PARTNERS.</td></tr>
+          <tr><td class="h">CHLAMYDIAL — neonate</td><td>ERYTHROMYCIN 50 mg/kg/day divided QID × 14 DAYS. MONITOR UNDER 6 WEEKS FOR INFANTILE HYPERTROPHIC PYLORIC STENOSIS — erythromycin is a MOTILIN RECEPTOR AGONIST. Often admitted because of concomitant PNEUMONIA.</td></tr>
+          <tr><td class="h">TRACHOMA</td><td>Serotypes A, B, C. ***LEADING INFECTIOUS CAUSE OF BLINDNESS WORLDWIDE. Most active cases ASYMPTOMATIC. MDA: AZITHROMYCIN 1 g PO SINGLE DOSE where prevalence ≥5%. CHAIN: inflammation → LID SCARRING → ENTROPION → TRICHIASIS → blindness. TRICHIASIS NEEDS SURGERY.</td></tr>
+          <tr><td class="h">AUTOIMMUNE</td><td>Recurrent/chronic hyperaemia, MINIMAL PAIN, NO DISCHARGE, systemic complaints. Pemphigoid, Stevens–Johnson, Sjögren, GVHD. ROUTINE ophtho referral.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="sclera" style="--acc:#a4502a;--acc-bg:#f2e6e1;--acc-zebra:#f9f3f0;--acc-ink:#803e21">
+    <div class="shead"><span class="dot" style="background:#a4502a"></span><h2>Episcleritis vs Scleritis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">EPISCLERITIS</td><td>Often IDIOPATHIC. MILD acute pain, FOCAL/SECTORAL redness, NO discharge, NO photophobia. Vessels CAN be moved with a cotton tip.</td></tr>
+          <tr><td class="h">THE TEST</td><td>2.5% PHENYLEPHRINE, WAIT 15 MINUTES → EPISCLERAL VESSELS BLANCH.</td></tr>
+          <tr><td class="h">Episcleritis treatment</td><td>Artificial tears + ORAL NSAID TAKEN WITH FOOD. No response in 2 DAYS → refer. Usually self-limited; may recur in either eye.</td></tr>
+          <tr><td class="h">SCLERITIS</td><td>Often SYSTEMIC AUTOIMMUNE. SEVERE BORING PAIN, WORSE AT NIGHT, radiating to face. VIOLACEOUS HUE = choroid through THINNED sclera. Vessels CANNOT be moved. Pain WITH EYE MOVEMENT.</td></tr>
+          <tr><td class="h">Scleritis management</td><td>URGENT REFERRAL — SCLERA AT RISK OF PERFORATION, may need a surgical patch. Slit lamp + fundoscopy, work up the systemic cause.</td></tr>
+          <tr><td class="h">THE FIRST SIGN OF RESPONSE</td><td>DECREASED PAIN — even if the inflammation looks unchanged.</td></tr>
+          <tr><td class="h">The hedges</td><td>Non-infectious ANTERIOR scleritis commonly BEGINS with systemic NSAIDs; steroids/immunomodulators for severe, NECROTISING, posterior or refractory disease. PERFORATION RISK IS GREATEST IN NECROTISING DISEASE, not uniformly.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="cornea" style="--acc:#2f7d76;--acc-bg:#e2edec;--acc-zebra:#f0f6f5;--acc-ink:#25625c">
+    <div class="shead"><span class="dot" style="background:#2f7d76"></span><h2>Cornea</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">CILIARY FLUSH</td><td>Ring of red vessels from the LIMBUS around the cornea (anterior ciliary arteries). Means inflammation of CORNEA, IRIS or CILIARY BODY. Seen in: CORNEAL INFLAMMATION (ulcer, keratitis) · ANTERIOR UVEITIS · ACUTE GLAUCOMA. It RULES OUT simple conjunctivitis.</td></tr>
+          <tr><td class="h">KERATITIS</td><td>Risks: corneal trauma, DRY EYES, CONTACT LENS OVERWEAR, topical ocular STEROIDS. Signs: corneal OPACIFICATION, “BROKEN UP” corneal light reflection, CILIARY FLUSH. URGENT REFERRAL WITHIN 24h for slit lamp + fluorescein.</td></tr>
+          <tr><td class="h">The ring infiltrate</td><td>ACANTHAMOEBA — contact lens wearers with POOR HYGIENE, e.g. RINSING LENSES IN TAP WATER.</td></tr>
+          <tr><td class="h">Undertreated keratitis</td><td>CORNEAL SCARRING or PERFORATION → ENDOPHTHALMITIS → POSSIBLE REMOVAL OF THE EYE. Bacterial prognosis: good for small–moderate, POOR for severe, WORSE INSIDE THE VISUAL AXIS.</td></tr>
+          <tr><td class="h">HSV vs HZV keratitis</td><td>SIMPLEX: TRUE DENDRITE — tree-branching, ELEVATED EDGES, TERMINAL END BULBS. PATHOGNOMONIC. Younger. Skin NOT dermatomal, may cross midline. ZOSTER: PSEUDODENDRITE — lacks all three. Older. DERMATOMAL, usually V1, RESPECTS THE MIDLINE, often spares lower lid.</td></tr>
+          <tr><td class="h">HUTCHINSON SIGN</td><td>Vesicle on the TIP OF THE NOSE = NASOCILIARY branch = HIGHER RISK OF OCULAR INVOLVEMENT.</td></tr>
+          <tr><td class="h">Herpetic treatment</td><td>ORAL ANTIVIRALS (aciclovir/valaciclovir/famciclovir) ×10 DAYS, ideally within 72h of rash onset. IV aciclovir for severe, disseminated, orbital, retinal, CNS or significantly immunocompromised. NO TOPICAL GLUCOCORTICOIDS BY THE PCP IN ACTIVE HSV EPITHELIAL DISEASE.</td></tr>
+          <tr><td class="h">CORNEAL ULCER</td><td>CONTACT LENS USE = MAJOR RISK. Patient RESISTS OPENING THE EYE. Ciliary flush + corneal defect. EMERGENT REFERRAL — a step above keratitis. Swab central/large ulcers. Start BROAD-SPECTRUM TOPICAL (4th-gen fluoroquinolone). STEROIDS CAN WORSEN INFECTION IF STARTED TOO EARLY, especially FUNGAL or HERPETIC — leave to ophtho. NEXT-DAY follow-up; most heal 2–3 WEEKS.</td></tr>
+          <tr><td class="h">The contact lens case</td><td>REMOVE LENSES, DO NOT PATCH · NO take-home ANAESTHETIC (delays healing, masks progression) · NO empiric STEROID · SAME-DAY ophthalmology · PRESERVE LENSES AND CASE for culture. Do NOT delay treatment solely to obtain a culture.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="uveitis" style="--acc:#7a2f5f;--acc-bg:#ece2e9;--acc-zebra:#f6f0f4;--acc-ink:#5f254a">
+    <div class="shead"><span class="dot" style="background:#7a2f5f"></span><h2>Uveitis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">ANTERIOR (iritis/iridocyclitis)</td><td>PAIN, photophobia, redness AT THE CORNEAL EDGE, VISION OFTEN PRESERVED. CELLS IN THE ANTERIOR CHAMBER, CONSENSUAL PHOTOPHOBIA, CILIARY FLUSH, variable IOP, IRREGULAR PUPIL stuck to lens/cornea, KERATIC PRECIPITATES (WBC on the corneal endothelium).</td></tr>
+          <tr><td class="h">Anterior management</td><td>URGENT REFERRAL WITHIN 24h for slit lamp + dilated fundoscopy — DELAY MAY COST VISION. Infectious → treat organism. Non-infectious → TOPICAL CORTICOSTEROIDS. Recurrent or systemic features → THOROUGH SYSTEMIC EVALUATION.</td></tr>
+          <tr><td class="h">POSTERIOR (choroiditis/retinitis)</td><td>Blurred vision, FLOATERS, SCOTOMAS, METAMORPHOPSIA — and NO PAIN if isolated. CELLS IN THE POSTERIOR VITREOUS, vitreous haze. Idiopathic, autoimmune, INFECTIOUS: TOXOPLASMOSIS, CMV.</td></tr>
+          <tr><td class="h">Posterior management — THE DIFFERENCE</td><td>DOES NOT RESPOND TO TOPICAL TREATMENT — may need an INTRAOCULAR CORTICOSTEROID INJECTION. Fluorescein angiography helps separate ACTIVE from INACTIVE lesions. Develops far more slowly, may last YEARS. INFECTION MUST BE EXCLUDED BEFORE IMMUNOSUPPRESSION.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="cellulitis" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Cellulitis & Diagnostics</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Both forms</td><td>DIRECT EXTENSION from bacterial SINUS, SKIN or DENTAL infection. In DIABETIC/ELDERLY/IMMUNOCOMPROMISED consider FUNGUS — ASPERGILLOSIS, MUCORMYCOSIS.</td></tr>
+          <tr><td class="h">THE GIVEAWAY</td><td>PRE-SEPTAL: THE EYE ITSELF IS WHITE, movements FULL and PAINLESS, vision normal. POST-SEPTAL: eye RED, PROPTOSIS, PAINFUL RESTRICTED MOVEMENT, DIPLOPIA, reduced vision, possible AFFERENT PUPILLARY DEFECT.</td></tr>
+          <tr><td class="h">Workup</td><td>CT ORBITS + PARANASAL SINUSES WITH CONTRAST · complete ocular exam with fundoscopy · Gram stain and culture of drainage · CBC with differential · BLOOD CULTURES.</td></tr>
+          <tr><td class="h">Management</td><td>MILD PRE-SEPTAL → outpatient ORAL abx 10–14 DAYS vs STAPH (±MRSA) and STREP. ADMIT + IV 48–72h then oral ≥1 week if: moderate-severe/toxic, poor compliance, CHILD ≤5 YEARS, no improvement on orals — AND ALL POST-SEPTAL.</td></tr>
+          <tr><td class="h">Untreated</td><td>INTRACRANIAL SPREAD → MENINGITIS or CAVERNOUS SINUS THROMBOSIS. Expect improvement 24–48h. May need ENT, OMFS, and/or ID consults.</td></tr>
+          <tr><td class="h">The hedge</td><td>MILD, CLEARLY PRE-SEPTAL disease with normal vision, pupils and painless full movements may be managed CLINICALLY WITHOUT ROUTINE CT.</td></tr>
+          <tr><td class="h">The four modalities</td><td>SLIT LAMP: anterior — lids, cornea, conjunctiva, sclera, iris. OPHTHALMOSCOPY: direct / indirect / SLIT-LAMP (most common). FLUORESCEIN EXAM: dye INSTILLED, Wood lamp — abrasions, ulcers, foreign bodies. FLUORESCEIN ANGIOGRAPHY: dye INJECTED, reaches eye in 10–15 SEC, blue flash, NO IODINE — retina and choroid blood flow.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    The study guide carries the reasoning; this is the night-before sheet. Where a slide reads as an absolute and its own speaker notes say otherwise, the hedge is written out rather than the slide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
