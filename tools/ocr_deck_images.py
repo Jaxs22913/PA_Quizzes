@@ -42,6 +42,7 @@ over nothing.
 import argparse
 import os
 import re
+import struct
 import sys
 import tempfile
 import zipfile
@@ -65,7 +66,16 @@ MIN_PX = 48
 
 # Media that is not a still image at all. Reported separately and loudly --
 # an embedded video is lecture content that no text extractor has ever seen.
-NON_IMAGE = (".mp4", ".mov", ".m4a", ".mp3", ".wav", ".avi", ".wmv", ".emf", ".wmf")
+NON_IMAGE = (".mp4", ".mov", ".m4a", ".mp3", ".wav", ".avi", ".wmv")
+
+# Windows metafiles. These ARE images and must never be lumped in with video:
+# the CMS ophthalmology deck stores 16 CLINICAL PHOTOGRAPHS this way, one per
+# eyelid and conjunctival condition, and CoreGraphics cannot open a single one.
+# In practice PowerPoint writes them as a lone EMR_STRETCHDIBITS record wrapping
+# an ordinary DIB, so the bitmap can be lifted straight back out (see emf_dib).
+METAFILE = (".emf", ".wmf")
+
+EMR_STRETCHDIBITS = 81
 # A slide whose real <a:t> text is shorter than this is "effectively empty".
 THIN_TEXT = 40
 
@@ -79,6 +89,36 @@ BOILERPLATE = re.compile(
 MIN_RECOVERED = 25
 
 
+def emf_dib(path):
+    """Lift the bitmap out of a Windows metafile, as .bmp bytes, or None.
+
+    An EMF is a list of drawing records. PowerPoint's "paste as picture" writes
+    one EMR_STRETCHDIBITS holding a device-independent bitmap, which becomes a
+    readable .bmp by prepending a 14-byte BITMAPFILEHEADER. Anything genuinely
+    vector (real line art) has no such record and returns None honestly rather
+    than a blank image.
+    """
+    try:
+        d = open(path, "rb").read()
+    except OSError:
+        return None
+    off = 0
+    while off + 8 <= len(d):
+        itype, nsize = struct.unpack_from("<II", d, off)
+        if nsize < 8:
+            break
+        if itype == EMR_STRETCHDIBITS and off + 64 <= len(d):
+            off_bmi, cb_bmi, off_bits, cb_bits = struct.unpack_from(
+                "<IIII", d, off + 48)
+            if cb_bmi and cb_bits and off + off_bits + cb_bits <= len(d):
+                bmi = d[off + off_bmi: off + off_bmi + cb_bmi]
+                bits = d[off + off_bits: off + off_bits + cb_bits]
+                return (b"BM" + struct.pack("<IHHI", 14 + len(bmi) + len(bits),
+                                            0, 0, 14 + len(bmi)) + bmi + bits)
+        off += nsize
+    return None
+
+
 def ocr_image(path):
     """OCR one picture.
 
@@ -90,6 +130,13 @@ def ocr_image(path):
     An earlier version returned "" for both "too small" and "no words found",
     which made the report claim a 2048px plate had been skipped as an icon.
     """
+    if path.lower().endswith(METAFILE):
+        dib = emf_dib(path)
+        if dib is None:
+            return "fail", "", 0, 0
+        path = path + ".bmp"
+        with open(path, "wb") as fh:
+            fh.write(dib)
     src = Quartz.CGImageSourceCreateWithURL(
         NSURL.fileURLWithPath_(path), None)
     if src is None:
@@ -162,7 +209,7 @@ def main(argv=None):
     tmp = tempfile.mkdtemp(prefix="deckocr-")
     cache, report = {}, []
     n_img = n_ocr = 0
-    skipped, notext, failed, nonimage = [], [], [], []
+    skipped, notext, failed, nonimage, metafiles = [], [], [], [], []
     recovered, thin_no_gain = [], []
 
     for i in range(1, nslides + 1):
@@ -197,6 +244,12 @@ def main(argv=None):
             elif status == "fail":
                 if name not in failed:
                     failed.append(name)
+            elif name.lower().endswith(METAFILE) and status != "fail":
+                if name not in [x for x, _ in metafiles]:
+                    metafiles.append((name, i))
+                if text.strip():
+                    n_ocr += 1
+                    found.append((name, w, h, text))
             elif status == "small":
                 if name not in [x for x, _, _ in skipped]:
                     skipped.append((name, w, h))
@@ -245,6 +298,10 @@ def main(argv=None):
     if failed:
         print("  UNREADABLE    : %d  %s   <-- go look at these"
               % (len(failed), ", ".join(failed)))
+    if metafiles:
+        print("  metafile images: %d decoded via EMF->DIB (invisible to every"
+              " other extractor here)" % len(metafiles))
+        print("      %s" % ", ".join("%s(sl %d)" % (n, sl) for n, sl in metafiles))
     if nonimage:
         print("  EMBEDDED VIDEO/AUDIO: %d  <-- lecture content no extractor sees"
               % len(nonimage))
