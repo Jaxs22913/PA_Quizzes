@@ -352,6 +352,8 @@ window.GROUP_INDEX = {
 "physiology-exam-4-renal-physiology-i-quiz":{"title":"Renal Physiology I — Quiz (65 Questions)","category":"Physiology","sem":"summer-1-2026","n":65},
 "principles-of-diagnostic-medicine-i-exam-1-cbc-hematology-quiz":{"title":"Complete Blood Count & Hematology Diagnostics Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-cbc-hematology-quiz-version-2":{"title":"Complete Blood Count & Hematology Diagnostics Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-1-chemistry-panels-quiz":{"title":"Chemistry Panels, Renal Function & Electrolytes Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-1-chemistry-panels-quiz-version-2":{"title":"Chemistry Panels, Renal Function & Electrolytes Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-derm-ent-ophtho-testing-quiz":{"title":"Diagnostic Testing for Derm, Ophtho & ENT Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-derm-ent-ophtho-testing-quiz-version-2":{"title":"Diagnostic Testing for Derm, Ophtho & ENT Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-lab-diagnostics-quiz":{"title":"Principles of Laboratory Diagnostics Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","sem":"fall-2026","n":30},
