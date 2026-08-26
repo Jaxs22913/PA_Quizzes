@@ -1,290 +1,82 @@
 {
  "set1": [
   {
-   "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "etiology",
-   "q": "What underlies dacryocystitis?",
-   "opts": [
-    [
-     "Meibomian gland obstruction",
-     "That produces a chalazion."
-    ],
-    [
-     "Direct extension from a sinus infection",
-     "That is the cellulitis route."
-    ],
-    [
-     "Chronic ultraviolet exposure",
-     "That drives pinguecula and pterygium."
-    ],
-    [
-     "Nasolacrimal duct obstruction",
-     "Correct — the deck's stated aetiology."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 24"
-  },
-  {
-   "topic": "Red eye triage",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "education",
-   "q": "What warning do the speaker notes attach to the red-eye examination?",
-   "opts": [
-    [
-     "Do not measure acuity in a painful eye",
-     "Acuity is the first thing the deck asks for."
-    ],
-    [
-     "Do not let obvious redness substitute for an eye examination",
-     "Correct — the notes' phrasing, and the whole point of the sequence."
-    ],
-    [
-     "Do not examine the eye until acuity is documented by an optometrist",
-     "Not the notes' warning."
-    ],
-    [
-     "Do not use fluorescein before ophthalmology has been consulted",
-     "Fluorescein is part of the first-60-seconds sequence."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 67 (speaker notes)"
-  },
-  {
-   "topic": "Pinguecula and pterygium",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "risk factors",
-   "q": "What causes pinguecula and pterygium?",
-   "opts": [
-    [
-     "Nasolacrimal duct obstruction",
-     "That is dacryocystitis."
-    ],
-    [
-     "Reaction to a systemic allergen",
-     "That is allergic conjunctivitis."
-    ],
-    [
-     "Chronic exposure to sunlight and wind",
-     "Correct — the deck's aetiology."
-    ],
-    [
-     "Colonisation with Staphylococcus aureus",
-     "That is blepharitis."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
-  },
-  {
-   "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "Which single examination finding separates a chalazion from a hordeolum?",
-   "opts": [
-    [
-     "Tenderness — the hordeolum is tender and the chalazion is not",
-     "Correct — the deck's discriminating sign."
-    ],
-    [
-     "Size — the hordeolum is always larger",
-     "Size is not the deck's discriminator."
-    ],
-    [
-     "Colour — the chalazion is yellow and the hordeolum is red",
-     "The deck does not separate them by colour."
-    ],
-    [
-     "Laterality — the chalazion is always bilateral",
-     "Neither is defined by laterality."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 20"
-  },
-  {
-   "topic": "Contact lens keratitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "avoid",
-   "q": "Why do the speaker notes forbid dispensing a topical anaesthetic for home use?",
-   "opts": [
-    [
-     "It interferes with culture results",
-     "Not the notes' stated reason."
-    ],
-    [
-     "It delays healing and masks progression",
-     "Correct — the notes give both reasons."
-    ],
-    [
-     "It causes an allergic reaction in most patients",
-     "Not the notes' reason."
-    ],
-    [
-     "It raises intraocular pressure",
-     "That is a corticosteroid effect."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 71 (speaker notes)"
-  },
-  {
-   "topic": "Dacryoadenitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "avoid",
-   "q": "What caution do the speaker notes give before starting corticosteroids in dacryoadenitis?",
-   "opts": [
-    [
-     "Do not begin them until a contrast-enhanced computed tomography scan is available",
-     "The notes say imaging is not automatically required."
-    ],
-    [
-     "Do not begin them in any patient over sixty-five",
-     "Age is not the caution the notes raise."
-    ],
-    [
-     "Do not begin them without an ophthalmology consultation",
-     "The notes raise infection exclusion rather than consultation."
-    ],
-    [
-     "Do not begin them until bacterial and other infectious causes have been reasonably excluded",
-     "Correct — the notes are explicit about the sequence."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 23 (speaker notes)"
-  },
-  {
-   "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "manifestation",
-   "q": "Which sign does the deck describe at the meibomian glands in meibomitis?",
-   "opts": [
-    [
-     "Thick, sometimes toothpaste-like lipid secretion",
-     "Correct — the deck's distinctive description."
-    ],
-    [
-     "Clear watery secretion in excess",
-     "The deck describes a thickened, not a thinned, secretion."
-    ],
-    [
-     "Complete absence of any meibomian secretion",
-     "The deck describes abnormal secretion, not absence."
-    ],
-    [
-     "Blood-tinged secretion",
-     "Not described by the deck."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 18"
-  },
-  {
-   "topic": "Entropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "complication",
-   "q": "Which complication follows the inward-turning lid margin of entropion?",
-   "opts": [
-    [
-     "Exposure keratopathy, because the lid no longer closes over the surface",
-     "That is the ectropion complication."
-    ],
-    [
-     "Scleral thinning and perforation",
-     "That is scleritis."
-    ],
-    [
-     "Nasolacrimal duct obstruction",
-     "That underlies dacryocystitis."
-    ],
-    [
-     "Corneal abrasion, because the lashes are pushed onto the globe (trichiasis)",
-     "Correct — trichiasis is the mechanism and abrasion the result."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 12"
-  },
-  {
    "topic": "Trachoma",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "epidemiology",
-   "q": "What does the deck say about trachoma's global significance?",
+   "slot": "escalation",
+   "q": "What does trichiasis from trachoma require?",
    "opts": [
     [
-     "It is the leading infectious cause of blindness worldwide",
-     "Correct — the deck marks this with three asterisks."
+     "Surgical treatment",
+     "Correct — the deck states this outright."
     ],
     [
-     "It is the leading cause of blindness in United States adults over 75",
-     "That is macular degeneration, and a different course."
+     "A further course of azithromycin",
+     "Antibiotics do not reverse the scarring."
     ],
     [
-     "It is the leading cause of new-onset blindness in adults 20 to 74",
-     "That is diabetic retinopathy."
+     "Lubricating drops alone",
+     "Insufficient for lashes abrading the cornea."
     ],
     [
-     "It is now eradicated worldwide",
-     "The deck describes ongoing elimination campaigns."
+     "Observation only",
+     "The deck requires surgery."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 45"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 46"
   },
   {
-   "topic": "Pinguecula and pterygium",
+   "topic": "Subconjunctival haemorrhage",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "test finding",
-   "q": "Where on the eye do these lesions almost always sit?",
+   "slot": "initial test",
+   "q": "What does the deck emphasise most in evaluating a subconjunctival haemorrhage?",
    "opts": [
     [
-     "Centrally, over the pupil",
-     "These are limbal lesions."
+     "Computed tomography of the orbits and sinuses with contrast",
+     "Imaging is not part of this workup."
     ],
     [
-     "At three o'clock or nine o'clock",
-     "Correct — the deck's classic positions, nasally or temporally."
+     "Immediate slit lamp with fluorescein",
+     "Not what the deck emphasises here."
     ],
     [
-     "At twelve o'clock, under the upper lid",
-     "Not the deck's described position."
+     "Serum lipid profile",
+     "That belongs to xanthelasma."
     ],
     [
-     "At six o'clock, on the lower limbus",
-     "Not the deck's described position."
+     "History — and check the blood pressure if there is no explanation",
+     "Correct — the deck says history is super important and names the blood pressure check."
     ]
    ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 30"
   },
   {
    "topic": "Conjunctivitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "How does the deck divide acute from chronic conjunctivitis?",
+   "slot": "test finding",
+   "q": "Preauricular lymph node enlargement in conjunctivitis points to which three causes?",
    "opts": [
     [
-     "Acute is 48 hours or less; chronic is longer",
-     "Not the deck's division."
+     "Ordinary bacterial and allergic",
+     "The deck says ordinary bacterial conjunctivitis usually has no preauricular node."
     ],
     [
-     "Acute is three months or less; chronic is longer",
-     "Longer than the deck's cut-off."
+     "Fungal and parasitic",
+     "Not causes the deck lists for conjunctivitis."
     ],
     [
-     "Acute is four weeks or less; chronic is more than four weeks",
-     "Correct — the deck's cut-off."
+     "Chlamydial, gonococcal and viral",
+     "Correct — the deck's three."
     ],
     [
-     "Acute is one week or less; chronic is more than one week",
-     "Shorter than the deck's cut-off."
+     "Allergic, autoimmune and toxic",
+     "None of these enlarges the node in the deck."
     ]
    ],
    "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 32"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 33"
   },
   {
    "topic": "Chalazion and hordeolum",
@@ -313,290 +105,82 @@
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 20"
   },
   {
-   "topic": "Trachoma",
+   "topic": "Entropion and ectropion",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "etiology",
-   "q": "Which Chlamydia trachomatis serotypes cause trachoma, and how does that differ from adult inclusion conjunctivitis?",
+   "slot": "escalation",
+   "q": "What is the definitive treatment for entropion or ectropion?",
    "opts": [
     [
-     "Both are caused by serotypes D to K",
-     "The deck separates them."
+     "Long-term lubricating ointment",
+     "That is conservative, not definitive."
     ],
     [
-     "Trachoma is serotypes A, B and C; adult inclusion conjunctivitis is serotypes D to K",
-     "Correct — same organism, different serotypes and different disease."
+     "Botulinum toxin injection",
+     "Not given by the deck."
     ],
     [
-     "Trachoma is serotypes D to K; adult inclusion conjunctivitis is A, B and C",
-     "This reverses the two."
+     "Topical antibiotic ointment",
+     "Not the definitive treatment."
     ],
     [
-     "Both are caused by serotypes A, B and C",
-     "The deck separates them."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 45"
-  },
-  {
-   "topic": "Dermatochalasis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "first-line",
-   "q": "What is the treatment for dermatochalasis?",
-   "opts": [
-    [
-     "Warm compresses and massage",
-     "That is chalazion management."
-    ],
-    [
-     "Blepharoplasty",
-     "Correct — surgical removal of the excess skin."
-    ],
-    [
-     "Lid hygiene twice daily",
-     "That is blepharitis management."
-    ],
-    [
-     "Cryotherapy with liquid nitrogen",
-     "That is one of the xanthelasma options."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 15"
-  },
-  {
-   "topic": "Corneal ulcer",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "risk factors",
-   "q": "Which single risk factor does the deck call major for a corneal ulcer?",
-   "opts": [
-    [
-     "Contact lens use",
-     "Correct — the deck marks it as the major risk factor."
-    ],
-    [
-     "Sunlight exposure",
-     "That drives pterygium."
-    ],
-    [
-     "Hypertension",
-     "That is a subconjunctival haemorrhage risk."
-    ],
-    [
-     "Rosacea",
-     "That is a blepharitis and chalazion association."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 60"
-  },
-  {
-   "topic": "Herpetic keratitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "agent/regimen",
-   "q": "What is the systemic treatment for herpes simplex or zoster keratitis?",
-   "opts": [
-    [
-     "A topical fluoroquinolone given four times daily for ten days",
-     "That is chlamydial conjunctivitis."
-    ],
-    [
-     "A topical fluoroquinolone for ten days",
-     "That is bacterial conjunctivitis or an ulcer starter."
-    ],
-    [
-     "Systemic corticosteroids for ten days",
-     "Steroids are specifically restricted here."
-    ],
-    [
-     "Oral antivirals — aciclovir, valaciclovir or famciclovir — for ten days",
-     "Correct — the deck's agents and duration for both."
+     "Surgery",
+     "Correct — the deck calls surgery definitive."
     ]
    ],
    "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 13"
   },
   {
-   "topic": "Pinguecula and pterygium",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "What separates a pinguecula from a pterygium?",
+   "topic": "Chlamydial conjunctivitis",
+   "io": "Objective b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
+   "slot": "complication",
+   "q": "Why does the deck say neonates with chlamydial conjunctivitis are often treated in hospital?",
    "opts": [
     [
-     "The pterygium is always bilateral",
-     "Laterality does not separate them."
+     "Because the eye disease itself perforates the cornea",
+     "That risk belongs to gonococcal disease."
     ],
     [
-     "The pterygium extends into the cornea; the pinguecula does not involve it",
-     "Correct — corneal involvement is the whole distinction, and the deck's mnemonic is that pterodactyls fly into the cornea and penguins cannot."
+     "Because intravenous access is required for erythromycin",
+     "The regimen is oral."
     ],
     [
-     "The pinguecula extends into the cornea; the pterygium does not",
-     "This reverses the two."
+     "Because the diagnosis can only be confirmed in hospital",
+     "Not the deck's reason."
     ],
     [
-     "The pterygium is yellow and the pinguecula is fleshy",
-     "Colour is not the deck's discriminator."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
-  },
-  {
-   "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "prognosis",
-   "q": "Once antibiotics are started for dacryocystitis, when should improvement be expected?",
-   "opts": [
-    [
-     "Within 24 to 48 hours",
-     "Correct — the deck's stated response window."
-    ],
-    [
-     "Within 2 to 3 weeks",
-     "That is the healing time for a corneal ulcer."
-    ],
-    [
-     "Within 2 to 4 weeks",
-     "That is a subconjunctival haemorrhage resolving."
-    ],
-    [
-     "Within several months",
-     "That is chalazion improvement."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"
-  },
-  {
-   "topic": "Xanthelasma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "initial test",
-   "q": "Which laboratory workup does the deck order for xanthelasma?",
-   "opts": [
-    [
-     "Complete blood count with differential, blood cultures and wound Gram stain",
-     "That is the cellulitis workup."
-    ],
-    [
-     "Conjunctival nucleic acid amplification testing",
-     "That is for chlamydial conjunctivitis."
-    ],
-    [
-     "Serum lipid profile, plus tests for diabetes mellitus and liver function",
-     "Correct — the deck's full workup, because the lesion flags a metabolic disorder."
-    ],
-    [
-     "Serum lipid profile alone",
-     "The deck adds diabetes and liver testing."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 17"
-  },
-  {
-   "topic": "Corneal ulcer",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "referral",
-   "q": "How urgently does a corneal ulcer need ophthalmology?",
-   "opts": [
-    [
-     "Routinely",
-     "Far too slow."
-    ],
-    [
-     "Non-urgently, if it does not improve in two weeks",
-     "Much too slow for sight-threatening disease."
-    ],
-    [
-     "Emergently",
-     "Correct — the deck escalates the ulcer above keratitis's 24-hour urgency."
-    ],
-    [
-     "Urgently, within 24 hours",
-     "That is the keratitis threshold; the ulcer is emergent."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 61"
-  },
-  {
-   "topic": "Ectropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "etiology",
-   "q": "Which cause does the deck give for ectropion but NOT for entropion?",
-   "opts": [
-    [
-     "Congenital",
-     "The deck lists this for both."
-    ],
-    [
-     "Seventh cranial nerve palsy",
-     "Correct — the deck marks this one as ectropion only."
-    ],
-    [
-     "Aging",
-     "The deck lists ageing for both."
-    ],
-    [
-     "Cicatricial change from burn, surgery or trauma",
-     "The deck lists this for both."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 12"
-  },
-  {
-   "topic": "Viral conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "manifestation",
-   "q": "Which combination distinguishes acute viral conjunctivitis on examination?",
-   "opts": [
-    [
-     "Conjunctival papillae with thick yellow discharge and no preauricular node",
-     "That is bacterial conjunctivitis."
-    ],
-    [
-     "Chemosis and papillae with itching and no node",
-     "That is allergic conjunctivitis."
-    ],
-    [
-     "A violaceous scleral hue with deep pain",
-     "That is scleritis."
-    ],
-    [
-     "Conjunctival follicles, tender preauricular nodes, and profuse watery discharge",
-     "Correct — the deck's triad, with follicles especially inferiorly."
+     "Because there is often concomitant pneumonia or pneumonitis",
+     "Correct — the lung involvement is what drives admission."
     ]
    ],
    "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 36"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 44"
   },
   {
-   "topic": "Chalazion and hordeolum",
+   "topic": "Chlamydial conjunctivitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "referral",
-   "q": "Why does the deck refer a chalazion that recurs or persists more than two to three months?",
+   "slot": "education",
+   "q": "Which counselling points does the deck attach to doxycycline?",
    "opts": [
     [
-     "To rule out basal cell carcinoma",
-     "The deck names sebaceous carcinoma."
+     "Double the dose if symptoms persist",
+     "Not advice the deck gives."
     ],
     [
-     "To rule out orbital cellulitis",
-     "Not the deck's reason for this referral."
+     "Avoid the sun, and read which foods cannot be taken with it",
+     "Correct — the deck's counselling, expanded in the notes to a full glass of water, staying upright, and separating from antacids and iron, calcium or magnesium."
     ],
     [
-     "To rule out a lacrimal sac tumour",
-     "That concern belongs to a mass above the medial canthal tendon."
+     "Take it on an empty stomach and lie down afterwards",
+     "The notes advise staying upright, and separating from certain supplements."
     ],
     [
-     "To rule out sebaceous carcinoma",
-     "Correct — the deck names the malignancy explicitly."
+     "Avoid all dairy for a month after the course",
+     "The advice concerns timing around supplements, not a month-long ban."
     ]
    ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 43"
   },
   {
    "topic": "Allergic conjunctivitis",
@@ -605,193 +189,213 @@
    "q": "Which single agent does the deck name that both blocks histamine and stabilises mast cells?",
    "opts": [
     [
-     "Olopatadine",
-     "Correct — the deck names it as doing both."
-    ],
-    [
-     "Ketotifen",
-     "Not the agent the deck names here."
-    ],
-    [
      "Erythromycin",
      "That is an antibiotic, used in neonatal chlamydial disease."
     ],
     [
      "Doxycycline",
      "That is for adult chlamydial conjunctivitis."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 35"
-  },
-  {
-   "topic": "Corneal ulcer",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "manifestation",
-   "q": "Which examination behaviour does the deck describe in corneal ulcer?",
-   "opts": [
-    [
-     "The patient reports no discomfort at all",
-     "The deck describes a painful eye."
     ],
     [
-     "The patient reports itching rather than pain",
-     "Itch points to allergy."
+     "Olopatadine",
+     "Correct — the deck names it as doing both."
     ],
     [
-     "The patient resists opening the affected eye",
-     "Correct — the deck notes this specifically, from photophobia and foreign body sensation."
-    ],
-    [
-     "The patient holds the eye wide open to relieve pressure",
-     "The deck describes reluctance to open it."
+     "Ketotifen",
+     "Not the agent the deck names here."
     ]
    ],
    "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 60"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 35"
+  },
+  {
+   "topic": "Posterior uveitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "avoid",
+   "q": "What do the speaker notes say must happen before immunosuppression in posterior uveitis?",
+   "opts": [
+    [
+     "Infection must be excluded",
+     "Correct — the notes are explicit about the sequence."
+    ],
+    [
+     "A lipid profile must be obtained",
+     "Unrelated to this decision."
+    ],
+    [
+     "Intraocular pressure must be normalised",
+     "Not the notes' precondition."
+    ],
+    [
+     "The patient must have failed topical therapy",
+     "The notes say posterior disease does not respond to topical therapy anyway."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 65 (speaker notes)"
+  },
+  {
+   "topic": "Conjunctivitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "differential",
+   "q": "How does the deck divide acute from chronic conjunctivitis?",
+   "opts": [
+    [
+     "Acute is 48 hours or less; chronic is longer",
+     "Not the deck's division."
+    ],
+    [
+     "Acute is three months or less; chronic is longer",
+     "Longer than the deck's cut-off."
+    ],
+    [
+     "Acute is four weeks or less; chronic is more than four weeks",
+     "Correct — the deck's cut-off."
+    ],
+    [
+     "Acute is one week or less; chronic is more than one week",
+     "Shorter than the deck's cut-off."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 32"
+  },
+  {
+   "topic": "Trachoma",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "agent/regimen",
+   "q": "What is the mass drug administration regimen for trachoma, and at what prevalence threshold?",
+   "opts": [
+    [
+     "Doxycycline 100 milligrams twice daily for seven days, whatever the local prevalence",
+     "That is adult inclusion conjunctivitis."
+    ],
+    [
+     "Topical erythromycin to affected individuals only",
+     "The deck describes mass administration to the whole eligible unit."
+    ],
+    [
+     "Azithromycin one gram weekly for four weeks",
+     "The deck gives a single dose."
+    ],
+    [
+     "Azithromycin one gram orally as a single dose, in units with prevalence at or above five per cent",
+     "Correct — the deck's agent, dose and threshold."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 46"
+  },
+  {
+   "topic": "Herpetic keratitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "agent/regimen",
+   "q": "What is the systemic treatment for herpes simplex or zoster keratitis?",
+   "opts": [
+    [
+     "Systemic corticosteroids for ten days",
+     "Steroids are specifically restricted here."
+    ],
+    [
+     "Oral antivirals — aciclovir, valaciclovir or famciclovir — for ten days",
+     "Correct — the deck's agents and duration for both."
+    ],
+    [
+     "A topical fluoroquinolone given four times daily for ten days",
+     "That is chlamydial conjunctivitis."
+    ],
+    [
+     "A topical fluoroquinolone for ten days",
+     "That is bacterial conjunctivitis or an ulcer starter."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"
+  },
+  {
+   "topic": "Pinguecula and pterygium",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "first-line",
+   "q": "What is the conservative management, and what should the patient be told about it?",
+   "opts": [
+    [
+     "Topical antibiotics for ten days",
+     "There is no infection to treat."
+    ],
+    [
+     "Immediate surgical excision in every case",
+     "Surgery is indicated only when vision is threatened."
+    ],
+    [
+     "Sun, dust and wind protection with lubricating eyedrops — but it will not make the lesion resolve",
+     "Correct — the deck is explicit that conservative care does not resolve it."
+    ],
+    [
+     "Sun protection and lubricating drops, which usually resolve the lesion within weeks",
+     "The deck says conservative management will NOT result in resolution."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 28"
   },
   {
    "topic": "Dacryocystitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "first-line",
-   "q": "How does the deck manage an afebrile, systemically well, reliable patient with mild dacryocystitis?",
+   "slot": "differential",
+   "q": "A mass sits ABOVE the medial canthal tendon rather than below it. What does the deck say to suspect?",
    "opts": [
     [
-     "Warm compresses alone with no antibiotic",
-     "Compresses are adjunctive, not the whole treatment."
+     "Orbital cellulitis with proptosis",
+     "That produces diffuse swelling and proptosis."
     ],
     [
-     "Immediate surgical drainage",
-     "Incision and drainage is only considered for an abscess."
+     "A pterygium",
+     "That is a conjunctival lesion at the limbus."
     ],
     [
-     "Outpatient oral antibiotics for ten days",
-     "Correct — the deck's outpatient pathway."
+     "A lacrimal sac tumour, which is rare",
+     "Correct — the deck flags position relative to the tendon as the discriminator."
     ],
     [
-     "Hospital admission with intravenous antibiotics for 48 to 72 hours",
-     "That is for the febrile, acutely ill or unreliable patient."
+     "A chalazion",
+     "Chalazia sit in the lid, not at the medial canthus."
     ]
    ],
    "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 24"
   },
   {
-   "topic": "Subconjunctival haemorrhage",
+   "topic": "Blepharitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "initial test",
-   "q": "What does the deck emphasise most in evaluating a subconjunctival haemorrhage?",
+   "slot": "manifestation",
+   "q": "Which sign does the deck describe at the meibomian glands in meibomitis?",
    "opts": [
     [
-     "History — and check the blood pressure if there is no explanation",
-     "Correct — the deck says history is super important and names the blood pressure check."
+     "Thick, sometimes toothpaste-like lipid secretion",
+     "Correct — the deck's distinctive description."
     ],
     [
-     "Computed tomography of the orbits and sinuses with contrast",
-     "Imaging is not part of this workup."
+     "Clear watery secretion in excess",
+     "The deck describes a thickened, not a thinned, secretion."
     ],
     [
-     "Immediate slit lamp with fluorescein",
-     "Not what the deck emphasises here."
+     "Complete absence of any meibomian secretion",
+     "The deck describes abnormal secretion, not absence."
     ],
     [
-     "Serum lipid profile",
-     "That belongs to xanthelasma."
+     "Blood-tinged secretion",
+     "Not described by the deck."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 30"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 18"
   },
-  {
-   "topic": "Cellulitis",
-   "io": "Objective b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
-   "slot": "escalation",
-   "q": "Which patients with PRE-septal cellulitis does the deck hospitalise?",
-   "opts": [
-    [
-     "Every patient with pre-septal disease, whatever the severity",
-     "Mild disease is managed as an outpatient."
-    ],
-    [
-     "Only patients over sixty-five",
-     "Age five is the threshold the deck names, at the other end."
-    ],
-    [
-     "Only contact lens wearers",
-     "Not a criterion for cellulitis."
-    ],
-    [
-     "Moderate to severe or toxic disease, concern for poor compliance, a child of five years or younger, or no improvement after oral antibiotics were started",
-     "Correct — the deck's four admission criteria, and age five is the paediatric cut-off."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 53"
-  },
-  {
-   "topic": "Scleritis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "complication",
-   "q": "Which patients carry the greatest perforation risk in scleritis, per the speaker notes?",
-   "opts": [
-    [
-     "Only contact lens wearers",
-     "That risk factor belongs to keratitis."
-    ],
-    [
-     "Those with necrotising disease, rather than all scleritis uniformly",
-     "Correct — the notes qualify the slide's blanket warning."
-    ],
-    [
-     "All patients with scleritis equally",
-     "The notes specifically push back on that."
-    ],
-    [
-     "Only patients who also have an identified systemic autoimmune disease",
-     "Not the notes' distinction."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50 (speaker notes)"
-  },
-  {
-   "topic": "Dacryoadenitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "etiology",
-   "q": "Which cause of dacryoadenitis does the deck say is most common?",
-   "opts": [
-    [
-     "Viral",
-     "Viral is listed, and is usually bilateral, but is not named most common."
-    ],
-    [
-     "Fungal",
-     "Not among the deck's causes for this condition."
-    ],
-    [
-     "Inflammatory",
-     "Correct — the deck ranks inflammatory as most common, bacterial as rare."
-    ],
-    [
-     "Bacterial",
-     "The deck calls bacterial causes rare."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 22"
-  }
- ],
- "set2": [
   {
    "topic": "Episcleritis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "test finding",
    "q": "What happens when the vessels are touched with a cotton-tip applicator after anaesthesia in episcleritis?",
    "opts": [
-    [
-     "They blanch permanently",
-     "Blanching is the phenylephrine test, and it is temporary."
-    ],
     [
      "They bleed immediately",
      "Not a finding the deck describes."
@@ -803,36 +407,66 @@
     [
      "They cannot be moved at all",
      "That is the scleritis finding."
+    ],
+    [
+     "They blanch permanently",
+     "Blanching is the phenylephrine test, and it is temporary."
     ]
    ],
-   "c": 2,
+   "c": 1,
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 47"
   },
   {
-   "topic": "Fluorescein angiography",
+   "topic": "Blepharitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "education",
-   "q": "What does the deck note about the safety of fluorescein angiography dye?",
+   "slot": "escalation",
+   "q": "How long does the deck give lid hygiene before escalating in blepharitis?",
    "opts": [
     [
-     "It contains iodine and is contraindicated in renal impairment",
-     "The deck says it has no iodine."
+     "Two weeks",
+     "Correct — the deck's stated trial period before topical antibiotics."
     ],
     [
-     "It is radioactive and requires shielding",
-     "It is not radioactive."
+     "Two days",
+     "Shorter than the deck's period."
     ],
     [
-     "It commonly causes anaphylaxis",
-     "The deck describes it as relatively safe."
+     "Two months",
+     "Longer than the deck's period."
     ],
     [
-     "It is relatively safe and has no iodine",
-     "Correct — the deck notes the absence of iodine explicitly."
+     "Six weeks",
+     "Not the deck's interval."
     ]
    ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 10"
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 19"
+  },
+  {
+   "topic": "Dacryoadenitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "etiology",
+   "q": "Which cause of dacryoadenitis does the deck say is most common?",
+   "opts": [
+    [
+     "Fungal",
+     "Not among the deck's causes for this condition."
+    ],
+    [
+     "Inflammatory",
+     "Correct — the deck ranks inflammatory as most common, bacterial as rare."
+    ],
+    [
+     "Bacterial",
+     "The deck calls bacterial causes rare."
+    ],
+    [
+     "Viral",
+     "Viral is listed, and is usually bilateral, but is not named most common."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 22"
   },
   {
    "topic": "Ectropion",
@@ -861,186 +495,30 @@
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 12"
   },
   {
-   "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "escalation",
-   "q": "How long does the deck give lid hygiene before escalating in blepharitis?",
-   "opts": [
-    [
-     "Six weeks",
-     "Not the deck's interval."
-    ],
-    [
-     "Two weeks",
-     "Correct — the deck's stated trial period before topical antibiotics."
-    ],
-    [
-     "Two days",
-     "Shorter than the deck's period."
-    ],
-    [
-     "Two months",
-     "Longer than the deck's period."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 19"
-  },
-  {
-   "topic": "Xanthelasma",
+   "topic": "Dermatochalasis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "first-line",
-   "q": "Beyond local treatment, what does the deck say to do for xanthelasma?",
+   "q": "What is the treatment for dermatochalasis?",
    "opts": [
     [
-     "Treat the underlying metabolic issue",
-     "Correct — the plaques are a marker, and the deck directs treatment at the cause."
+     "Blepharoplasty",
+     "Correct — surgical removal of the excess skin."
     ],
     [
-     "Nothing further, since the lesions are cosmetic",
-     "The deck treats them as a metabolic signal."
+     "Lid hygiene twice daily",
+     "That is blepharitis management."
     ],
     [
-     "Start a topical antibiotic",
-     "There is no infection to treat."
+     "Cryotherapy with liquid nitrogen",
+     "That is one of the xanthelasma options."
     ],
     [
-     "Refer urgently to ophthalmology",
-     "The deck does not make this urgent."
+     "Warm compresses and massage",
+     "That is chalazion management."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 17"
-  },
-  {
-   "topic": "Chlamydial conjunctivitis",
-   "io": "Objective b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
-   "slot": "complication",
-   "q": "Why does the deck say neonates with chlamydial conjunctivitis are often treated in hospital?",
-   "opts": [
-    [
-     "Because intravenous access is required for erythromycin",
-     "The regimen is oral."
-    ],
-    [
-     "Because the diagnosis can only be confirmed in hospital",
-     "Not the deck's reason."
-    ],
-    [
-     "Because there is often concomitant pneumonia or pneumonitis",
-     "Correct — the lung involvement is what drives admission."
-    ],
-    [
-     "Because the eye disease itself perforates the cornea",
-     "That risk belongs to gonococcal disease."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 44"
-  },
-  {
-   "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "first-line",
-   "q": "What is the initial management of both a chalazion and a hordeolum?",
-   "opts": [
-    [
-     "Immediate incision and drainage",
-     "That is reserved for a persistent hordeolum, by ophthalmology."
-    ],
-    [
-     "Oral antibiotics for ten days",
-     "Reserved for associated preseptal cellulitis."
-    ],
-    [
-     "Topical corticosteroid drops",
-     "Not the deck's first step."
-    ],
-    [
-     "Warm compresses with gentle massage",
-     "Correct — the deck's shared conservative first step."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
-  },
-  {
-   "topic": "Conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "test finding",
-   "q": "Preauricular lymph node enlargement in conjunctivitis points to which three causes?",
-   "opts": [
-    [
-     "Fungal and parasitic",
-     "Not causes the deck lists for conjunctivitis."
-    ],
-    [
-     "Chlamydial, gonococcal and viral",
-     "Correct — the deck's three."
-    ],
-    [
-     "Allergic, autoimmune and toxic",
-     "None of these enlarges the node in the deck."
-    ],
-    [
-     "Ordinary bacterial and allergic",
-     "The deck says ordinary bacterial conjunctivitis usually has no preauricular node."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 33"
-  },
-  {
-   "topic": "Entropion and ectropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "initial test",
-   "q": "Which examination does the deck specify for entropion and ectropion, and what is it looking for?",
-   "opts": [
-    [
-     "Fluorescein angiography",
-     "That is used in posterior uveitis and retinal vascular disease."
-    ],
-    [
-     "Serum lipid profile",
-     "That belongs to xanthelasma."
-    ],
-    [
-     "Slit lamp examination, to assess corneal involvement",
-     "Correct — the question is whether the cornea has been damaged."
-    ],
-    [
-     "Computed tomography of the orbits with contrast",
-     "That is for cellulitis, dacryocystitis and dacryoadenitis."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 13"
-  },
-  {
-   "topic": "Posterior uveitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "avoid",
-   "q": "What do the speaker notes say must happen before immunosuppression in posterior uveitis?",
-   "opts": [
-    [
-     "Intraocular pressure must be normalised",
-     "Not the notes' precondition."
-    ],
-    [
-     "The patient must have failed topical therapy",
-     "The notes say posterior disease does not respond to topical therapy anyway."
-    ],
-    [
-     "Infection must be excluded",
-     "Correct — the notes are explicit about the sequence."
-    ],
-    [
-     "A lipid profile must be obtained",
-     "Unrelated to this decision."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 65 (speaker notes)"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 15"
   },
   {
    "topic": "Dacryoadenitis",
@@ -1069,160 +547,30 @@
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 22"
   },
   {
-   "topic": "Herpetic keratitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "test finding",
-   "q": "What is Hutchinson sign and what does it predict?",
-   "opts": [
-    [
-     "A dendrite with end bulbs, predicting recurrence",
-     "That is the simplex corneal finding."
-    ],
-    [
-     "A violaceous scleral patch, predicting perforation",
-     "That is scleritis."
-    ],
-    [
-     "Involvement of the tip of the nose, predicting a higher risk of ocular involvement",
-     "Correct — the deck's sign and its significance."
-    ],
-    [
-     "Involvement of the lower eyelid, predicting subsequent corneal scarring",
-     "The deck notes zoster often SPARES the lower lid."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 58"
-  },
-  {
    "topic": "Posterior uveitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "etiology",
-   "q": "Which infectious causes does the deck give for posterior uveitis?",
+   "slot": "prognosis",
+   "q": "How does the time course of posterior uveitis compare with anterior uveitis?",
    "opts": [
     [
-     "Toxoplasmosis and cytomegalovirus",
-     "Correct — the deck's two named organisms."
+     "It always resolves completely within two to three weeks",
+     "That is the corneal ulcer healing time."
     ],
     [
-     "Adenovirus and Staphylococcus aureus",
-     "Those are conjunctivitis causes."
+     "It develops a lot more slowly and may last several years",
+     "Correct — the deck's comparison, though the notes add it can also be acute and rapidly vision-threatening."
     ],
     [
-     "Chlamydia trachomatis and Neisseria gonorrhoeae",
-     "Those cause conjunctivitis."
+     "It develops faster and resolves within days",
+     "The deck describes the opposite."
     ],
     [
-     "Pseudomonas and Acanthamoeba",
-     "Those cause keratitis."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 64"
-  },
-  {
-   "topic": "Red eye triage",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "test finding",
-   "q": "Which two findings does the deck single out as red flags in a red eye?",
-   "opts": [
-    [
-     "Reduced vision or an abnormal pupil",
-     "Correct — the deck highlights exactly these two."
-    ],
-    [
-     "Watery discharge or itching",
-     "Those point toward benign causes."
-    ],
-    [
-     "Bilateral involvement or crusting",
-     "Neither is a red flag in the deck."
-    ],
-    [
-     "Preauricular node or follicles",
-     "Those indicate a cause rather than danger."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 67"
-  },
-  {
-   "topic": "Red eye localisation",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "Which pattern localises the problem to the CONJUNCTIVA?",
-   "opts": [
-    [
-     "Pain and photophobia with a fluorescein defect or infiltrate",
-     "That localises to the cornea."
-    ],
-    [
-     "Consensual photophobia with ciliary flush and an irregular pupil",
-     "That localises to the anterior chamber."
-    ],
-    [
-     "Deep pain or painful eye movement with a violaceous sclera",
-     "That localises to sclera or orbit."
-    ],
-    [
-     "Itch or discharge with diffuse injection and preserved vision",
-     "Correct — the deck's conjunctival pattern."
-    ]
-   ],
-   "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 69"
-  },
-  {
-   "topic": "Trachoma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "agent/regimen",
-   "q": "What is the mass drug administration regimen for trachoma, and at what prevalence threshold?",
-   "opts": [
-    [
-     "Azithromycin one gram orally as a single dose, in units with prevalence at or above five per cent",
-     "Correct — the deck's agent, dose and threshold."
-    ],
-    [
-     "Doxycycline 100 milligrams twice daily for seven days, whatever the local prevalence",
-     "That is adult inclusion conjunctivitis."
-    ],
-    [
-     "Topical erythromycin to affected individuals only",
-     "The deck describes mass administration to the whole eligible unit."
-    ],
-    [
-     "Azithromycin one gram weekly for four weeks",
-     "The deck gives a single dose."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 46"
-  },
-  {
-   "topic": "Entropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "manifestation",
-   "q": "Which symptom does the deck give for entropion?",
-   "opts": [
-    [
-     "Itching with stringy discharge",
-     "That is allergic conjunctivitis."
-    ],
-    [
-     "Foreign body sensation",
-     "Correct — the inward-turned lashes rub the globe."
-    ],
-    [
-     "Tearing",
-     "That is the symptom the deck gives for ectropion."
-    ],
-    [
-     "Severe boring pain worse at night",
-     "That is scleritis."
+     "Both follow an identical course",
+     "The deck contrasts them."
     ]
    ],
    "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 12"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 65"
   },
   {
    "topic": "Chalazion and hordeolum",
@@ -1251,110 +599,6 @@
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
   },
   {
-   "topic": "Red eye localisation",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "Which pattern localises the problem to ANGLE CLOSURE?",
-   "opts": [
-    [
-     "Deep boring pain radiating to the face",
-     "That is scleritis."
-    ],
-    [
-     "Pain or headache with halos and nausea, a cloudy cornea and a mid-dilated pupil",
-     "Correct — the deck's angle closure pattern."
-    ],
-    [
-     "Itch with stringy discharge and preserved vision",
-     "That is allergic conjunctivitis."
-    ],
-    [
-     "Foreign body sensation with a fluorescein-staining epithelial defect",
-     "That is corneal."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 69"
-  },
-  {
-   "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "A mass sits ABOVE the medial canthal tendon rather than below it. What does the deck say to suspect?",
-   "opts": [
-    [
-     "A lacrimal sac tumour, which is rare",
-     "Correct — the deck flags position relative to the tendon as the discriminator."
-    ],
-    [
-     "A chalazion",
-     "Chalazia sit in the lid, not at the medial canthus."
-    ],
-    [
-     "Orbital cellulitis with proptosis",
-     "That produces diffuse swelling and proptosis."
-    ],
-    [
-     "A pterygium",
-     "That is a conjunctival lesion at the limbus."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 24"
-  },
-  {
-   "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "prognosis",
-   "q": "What does the deck say about the long-term course of blepharitis?",
-   "opts": [
-    [
-     "It progresses to corneal ulceration if untreated",
-     "The deck does not describe this course."
-    ],
-    [
-     "It resolves spontaneously without any treatment",
-     "The deck prescribes ongoing management."
-    ],
-    [
-     "It is chronic and can be controlled rather than cured",
-     "Correct — an important expectation to set with the patient."
-    ],
-    [
-     "It resolves completely within two weeks of lid hygiene",
-     "The deck expects improvement but not cure."
-    ]
-   ],
-   "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 19"
-  },
-  {
-   "topic": "Chlamydial conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "agent/regimen",
-   "q": "What is the treatment for adult chlamydial conjunctivitis?",
-   "opts": [
-    [
-     "A topical fluoroquinolone for seven days",
-     "The deck treats this systemically."
-    ],
-    [
-     "Doxycycline 100 milligrams orally twice daily for seven days",
-     "Correct — the deck's regimen, dose and duration."
-    ],
-    [
-     "Erythromycin 50 milligrams per kilogram per day for fourteen days",
-     "That is the neonatal regimen."
-    ],
-    [
-     "Azithromycin one gram orally as a single dose",
-     "That is the trachoma mass-treatment dose."
-    ]
-   ],
-   "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 43"
-  },
-  {
    "topic": "Herpetic keratitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "escalation",
@@ -1381,56 +625,396 @@
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"
   },
   {
-   "topic": "Red eye localisation",
+   "topic": "Viral conjunctivitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "differential",
-   "q": "Which pattern localises the problem to the ANTERIOR CHAMBER?",
+   "slot": "etiology",
+   "q": "Which organism most commonly causes acute viral conjunctivitis?",
    "opts": [
     [
-     "Consensual photophobia, ciliary flush and an irregular pupil",
-     "Correct — the deck's anterior chamber pattern."
+     "Staphylococcus aureus",
+     "That is a bacterial cause."
     ],
     [
-     "Itch and discharge with diffuse injection",
-     "That is conjunctival."
+     "Adenovirus",
+     "Correct — the deck names it as most common."
     ],
     [
-     "Pain with headache, halos and nausea, with a cloudy cornea",
-     "That is angle closure."
+     "Herpes simplex virus",
+     "That causes keratitis in this deck."
     ],
     [
-     "Proptosis with restricted movement",
-     "That is orbital."
+     "Chlamydia trachomatis",
+     "That is a bacterium and causes a chronic picture."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 36"
+  },
+  {
+   "topic": "Blepharitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "manifestation",
+   "q": "What does the deck say about the tear film in blepharitis?",
+   "opts": [
+    [
+     "It is increased, watery and overflowing",
+     "The deck describes a decreased or abnormal film."
+    ],
+    [
+     "It is unaffected",
+     "The deck lists tear film change as a sign."
+    ],
+    [
+     "It is purulent",
+     "Purulent discharge belongs to bacterial conjunctivitis."
+    ],
+    [
+     "It is decreased, or frothy and foamy",
+     "Correct — the deck gives both descriptions."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 18"
+  },
+  {
+   "topic": "Xanthelasma",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "education",
+   "q": "What does the deck say about the prognosis of locally treated xanthelasma?",
+   "opts": [
+    [
+     "Recurrences are common even after effective local treatment",
+     "Correct — the deck flags recurrence explicitly."
+    ],
+    [
+     "Local treatment is curative and recurrence is rare",
+     "The deck says the opposite."
+    ],
+    [
+     "The lesions resolve spontaneously within two to four weeks",
+     "That is a subconjunctival haemorrhage."
+    ],
+    [
+     "The lesions progress to sebaceous carcinoma if untreated",
+     "That concern belongs to recurrent chalazion."
     ]
    ],
    "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 69"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 17"
+  },
+  {
+   "topic": "Pinguecula and pterygium",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "risk factors",
+   "q": "What causes pinguecula and pterygium?",
+   "opts": [
+    [
+     "Nasolacrimal duct obstruction",
+     "That is dacryocystitis."
+    ],
+    [
+     "Reaction to a systemic allergen",
+     "That is allergic conjunctivitis."
+    ],
+    [
+     "Chronic exposure to sunlight and wind",
+     "Correct — the deck's aetiology."
+    ],
+    [
+     "Colonisation with Staphylococcus aureus",
+     "That is blepharitis."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
+  },
+  {
+   "topic": "Pinguecula and pterygium",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "differential",
+   "q": "What separates a pinguecula from a pterygium?",
+   "opts": [
+    [
+     "The pterygium is always bilateral",
+     "Laterality does not separate them."
+    ],
+    [
+     "The pterygium extends into the cornea; the pinguecula does not involve it",
+     "Correct — corneal involvement is the whole distinction, and the deck's mnemonic is that pterodactyls fly into the cornea and penguins cannot."
+    ],
+    [
+     "The pinguecula extends into the cornea; the pterygium does not",
+     "This reverses the two."
+    ],
+    [
+     "The pterygium is yellow and the pinguecula is fleshy",
+     "Colour is not the deck's discriminator."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
+  },
+  {
+   "topic": "Xanthelasma",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "manifestation",
+   "q": "How does xanthelasma appear and how does it feel?",
+   "opts": [
+    [
+     "Crusting and scaling around the lash bases",
+     "That is blepharitis."
+    ],
+    [
+     "A triangular fleshy wedge growing onto the cornea",
+     "That is a pterygium."
+    ],
+    [
+     "Oval-shaped yellowish plaques, and typically asymptomatic",
+     "Correct — the deck's sign and symptom pairing."
+    ],
+    [
+     "Tender red nodules at the lid margin",
+     "That is a hordeolum."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 16"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Dacryoadenitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "avoid",
+   "q": "What caution do the speaker notes give before starting corticosteroids in dacryoadenitis?",
+   "opts": [
+    [
+     "Do not begin them until bacterial and other infectious causes have been reasonably excluded",
+     "Correct — the notes are explicit about the sequence."
+    ],
+    [
+     "Do not begin them until a contrast-enhanced computed tomography scan is available",
+     "The notes say imaging is not automatically required."
+    ],
+    [
+     "Do not begin them in any patient over sixty-five",
+     "Age is not the caution the notes raise."
+    ],
+    [
+     "Do not begin them without an ophthalmology consultation",
+     "The notes raise infection exclusion rather than consultation."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 23 (speaker notes)"
+  },
+  {
+   "topic": "Blepharitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "prognosis",
+   "q": "What does the deck say about the long-term course of blepharitis?",
+   "opts": [
+    [
+     "It resolves completely within two weeks of lid hygiene",
+     "The deck expects improvement but not cure."
+    ],
+    [
+     "It progresses to corneal ulceration if untreated",
+     "The deck does not describe this course."
+    ],
+    [
+     "It resolves spontaneously without any treatment",
+     "The deck prescribes ongoing management."
+    ],
+    [
+     "It is chronic and can be controlled rather than cured",
+     "Correct — an important expectation to set with the patient."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 19"
+  },
+  {
+   "topic": "Corneal ulcer",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "referral",
+   "q": "How urgently does a corneal ulcer need ophthalmology?",
+   "opts": [
+    [
+     "Emergently",
+     "Correct — the deck escalates the ulcer above keratitis's 24-hour urgency."
+    ],
+    [
+     "Urgently, within 24 hours",
+     "That is the keratitis threshold; the ulcer is emergent."
+    ],
+    [
+     "Routinely",
+     "Far too slow."
+    ],
+    [
+     "Non-urgently, if it does not improve in two weeks",
+     "Much too slow for sight-threatening disease."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 61"
   },
   {
    "topic": "Trachoma",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "escalation",
-   "q": "What does trichiasis from trachoma require?",
+   "slot": "etiology",
+   "q": "Which Chlamydia trachomatis serotypes cause trachoma, and how does that differ from adult inclusion conjunctivitis?",
    "opts": [
     [
-     "Lubricating drops alone",
-     "Insufficient for lashes abrading the cornea."
+     "Both are caused by serotypes A, B and C",
+     "The deck separates them."
     ],
     [
-     "Observation only",
-     "The deck requires surgery."
+     "Both are caused by serotypes D to K",
+     "The deck separates them."
     ],
     [
-     "Surgical treatment",
-     "Correct — the deck states this outright."
+     "Trachoma is serotypes A, B and C; adult inclusion conjunctivitis is serotypes D to K",
+     "Correct — same organism, different serotypes and different disease."
     ],
     [
-     "A further course of azithromycin",
-     "Antibiotics do not reverse the scarring."
+     "Trachoma is serotypes D to K; adult inclusion conjunctivitis is A, B and C",
+     "This reverses the two."
     ]
    ],
    "c": 2,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 46"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 45"
+  },
+  {
+   "topic": "Conjunctivitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "test finding",
+   "q": "Conjunctival FOLLICLES point to which causes?",
+   "opts": [
+    [
+     "Autoimmune only",
+     "Not the deck's assignment."
+    ],
+    [
+     "Chlamydial and viral",
+     "Correct — the deck's assignment for follicles."
+    ],
+    [
+     "Bacterial and allergic",
+     "Those produce papillae."
+    ],
+    [
+     "Allergic only",
+     "Allergic disease produces papillae."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 33"
+  },
+  {
+   "topic": "Fluorescein angiography",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "education",
+   "q": "What does the deck note about the safety of fluorescein angiography dye?",
+   "opts": [
+    [
+     "It contains iodine and is contraindicated in renal impairment",
+     "The deck says it has no iodine."
+    ],
+    [
+     "It is radioactive and requires shielding",
+     "It is not radioactive."
+    ],
+    [
+     "It commonly causes anaphylaxis",
+     "The deck describes it as relatively safe."
+    ],
+    [
+     "It is relatively safe and has no iodine",
+     "Correct — the deck notes the absence of iodine explicitly."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 10"
+  },
+  {
+   "topic": "Entropion",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "manifestation",
+   "q": "Which symptom does the deck give for entropion?",
+   "opts": [
+    [
+     "Severe boring pain worse at night",
+     "That is scleritis."
+    ],
+    [
+     "Itching with stringy discharge",
+     "That is allergic conjunctivitis."
+    ],
+    [
+     "Foreign body sensation",
+     "Correct — the inward-turned lashes rub the globe."
+    ],
+    [
+     "Tearing",
+     "That is the symptom the deck gives for ectropion."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 12"
+  },
+  {
+   "topic": "Xanthelasma",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "initial test",
+   "q": "Which laboratory workup does the deck order for xanthelasma?",
+   "opts": [
+    [
+     "Serum lipid profile, plus tests for diabetes mellitus and liver function",
+     "Correct — the deck's full workup, because the lesion flags a metabolic disorder."
+    ],
+    [
+     "Serum lipid profile alone",
+     "The deck adds diabetes and liver testing."
+    ],
+    [
+     "Complete blood count with differential, blood cultures and wound Gram stain",
+     "That is the cellulitis workup."
+    ],
+    [
+     "Conjunctival nucleic acid amplification testing",
+     "That is for chlamydial conjunctivitis."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 17"
+  },
+  {
+   "topic": "Herpetic keratitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "test finding",
+   "q": "What is Hutchinson sign and what does it predict?",
+   "opts": [
+    [
+     "A violaceous scleral patch, predicting perforation",
+     "That is scleritis."
+    ],
+    [
+     "Involvement of the tip of the nose, predicting a higher risk of ocular involvement",
+     "Correct — the deck's sign and its significance."
+    ],
+    [
+     "Involvement of the lower eyelid, predicting subsequent corneal scarring",
+     "The deck notes zoster often SPARES the lower lid."
+    ],
+    [
+     "A dendrite with end bulbs, predicting recurrence",
+     "That is the simplex corneal finding."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 58"
   },
   {
    "topic": "Blepharitis",
@@ -1459,15 +1043,63 @@
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 18"
   },
   {
+   "topic": "Dacryocystitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "prognosis",
+   "q": "Once antibiotics are started for dacryocystitis, when should improvement be expected?",
+   "opts": [
+    [
+     "Within 24 to 48 hours",
+     "Correct — the deck's stated response window."
+    ],
+    [
+     "Within 2 to 3 weeks",
+     "That is the healing time for a corneal ulcer."
+    ],
+    [
+     "Within 2 to 4 weeks",
+     "That is a subconjunctival haemorrhage resolving."
+    ],
+    [
+     "Within several months",
+     "That is chalazion improvement."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"
+  },
+  {
+   "topic": "Cellulitis",
+   "io": "Objective b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
+   "slot": "escalation",
+   "q": "Which patients with PRE-septal cellulitis does the deck hospitalise?",
+   "opts": [
+    [
+     "Every patient with pre-septal disease, whatever the severity",
+     "Mild disease is managed as an outpatient."
+    ],
+    [
+     "Only patients over sixty-five",
+     "Age five is the threshold the deck names, at the other end."
+    ],
+    [
+     "Only contact lens wearers",
+     "Not a criterion for cellulitis."
+    ],
+    [
+     "Moderate to severe or toxic disease, concern for poor compliance, a child of five years or younger, or no improvement after oral antibiotics were started",
+     "Correct — the deck's four admission criteria, and age five is the paediatric cut-off."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 53"
+  },
+  {
    "topic": "Anterior uveitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
    "q": "What does the deck say about vision in anterior uveitis?",
    "opts": [
-    [
-     "It is often preserved",
-     "Correct — which is why the other signs matter so much."
-    ],
     [
      "It is always severely reduced",
      "The deck says vision is often preserved."
@@ -1479,36 +1111,222 @@
     [
      "It is only affected at night",
      "Not a distinction the deck makes."
-    ]
-   ],
-   "c": 0,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 62"
-  },
-  {
-   "topic": "Posterior uveitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "prognosis",
-   "q": "How does the time course of posterior uveitis compare with anterior uveitis?",
-   "opts": [
-    [
-     "It develops faster and resolves within days",
-     "The deck describes the opposite."
     ],
     [
-     "Both follow an identical course",
-     "The deck contrasts them."
-    ],
-    [
-     "It always resolves completely within two to three weeks",
-     "That is the corneal ulcer healing time."
-    ],
-    [
-     "It develops a lot more slowly and may last several years",
-     "Correct — the deck's comparison, though the notes add it can also be acute and rapidly vision-threatening."
+     "It is often preserved",
+     "Correct — which is why the other signs matter so much."
     ]
    ],
    "c": 3,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 65"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 62"
+  },
+  {
+   "topic": "Chlamydial conjunctivitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "agent/regimen",
+   "q": "What is the treatment for adult chlamydial conjunctivitis?",
+   "opts": [
+    [
+     "Azithromycin one gram orally as a single dose",
+     "That is the trachoma mass-treatment dose."
+    ],
+    [
+     "A topical fluoroquinolone for seven days",
+     "The deck treats this systemically."
+    ],
+    [
+     "Doxycycline 100 milligrams orally twice daily for seven days",
+     "Correct — the deck's regimen, dose and duration."
+    ],
+    [
+     "Erythromycin 50 milligrams per kilogram per day for fourteen days",
+     "That is the neonatal regimen."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 43"
+  },
+  {
+   "topic": "Pinguecula and pterygium",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "test finding",
+   "q": "Where on the eye do these lesions almost always sit?",
+   "opts": [
+    [
+     "Centrally, over the pupil",
+     "These are limbal lesions."
+    ],
+    [
+     "At three o'clock or nine o'clock",
+     "Correct — the deck's classic positions, nasally or temporally."
+    ],
+    [
+     "At twelve o'clock, under the upper lid",
+     "Not the deck's described position."
+    ],
+    [
+     "At six o'clock, on the lower limbus",
+     "Not the deck's described position."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
+  },
+  {
+   "topic": "Dacryocystitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "first-line",
+   "q": "How does the deck manage an afebrile, systemically well, reliable patient with mild dacryocystitis?",
+   "opts": [
+    [
+     "Immediate surgical drainage",
+     "Incision and drainage is only considered for an abscess."
+    ],
+    [
+     "Outpatient oral antibiotics for ten days",
+     "Correct — the deck's outpatient pathway."
+    ],
+    [
+     "Hospital admission with intravenous antibiotics for 48 to 72 hours",
+     "That is for the febrile, acutely ill or unreliable patient."
+    ],
+    [
+     "Warm compresses alone with no antibiotic",
+     "Compresses are adjunctive, not the whole treatment."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"
+  },
+  {
+   "topic": "Chalazion and hordeolum",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "differential",
+   "q": "Which single examination finding separates a chalazion from a hordeolum?",
+   "opts": [
+    [
+     "Laterality — the chalazion is always bilateral",
+     "Neither is defined by laterality."
+    ],
+    [
+     "Tenderness — the hordeolum is tender and the chalazion is not",
+     "Correct — the deck's discriminating sign."
+    ],
+    [
+     "Size — the hordeolum is always larger",
+     "Size is not the deck's discriminator."
+    ],
+    [
+     "Colour — the chalazion is yellow and the hordeolum is red",
+     "The deck does not separate them by colour."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 20"
+  },
+  {
+   "topic": "Dacryocystitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "etiology",
+   "q": "What underlies dacryocystitis?",
+   "opts": [
+    [
+     "Direct extension from a sinus infection",
+     "That is the cellulitis route."
+    ],
+    [
+     "Chronic ultraviolet exposure",
+     "That drives pinguecula and pterygium."
+    ],
+    [
+     "Nasolacrimal duct obstruction",
+     "Correct — the deck's stated aetiology."
+    ],
+    [
+     "Meibomian gland obstruction",
+     "That produces a chalazion."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 24"
+  },
+  {
+   "topic": "Scleritis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "referral",
+   "q": "How urgently does scleritis need ophthalmology, and why?",
+   "opts": [
+    [
+     "Never — scleritis is managed in primary care with lubricating tears",
+     "The deck refers it urgently."
+    ],
+    [
+     "Urgently — the sclera is at risk of perforation and may need a surgical patch",
+     "Correct — the deck's urgency and its reason."
+    ],
+    [
+     "Routinely, since it is usually self-limited",
+     "That is episcleritis."
+    ],
+    [
+     "Non-urgently, unless vision changes",
+     "The deck makes this urgent regardless."
+    ]
+   ],
+   "c": 1,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50"
+  },
+  {
+   "topic": "Corneal ulcer",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "manifestation",
+   "q": "Which examination behaviour does the deck describe in corneal ulcer?",
+   "opts": [
+    [
+     "The patient reports no discomfort at all",
+     "The deck describes a painful eye."
+    ],
+    [
+     "The patient reports itching rather than pain",
+     "Itch points to allergy."
+    ],
+    [
+     "The patient resists opening the affected eye",
+     "Correct — the deck notes this specifically, from photophobia and foreign body sensation."
+    ],
+    [
+     "The patient holds the eye wide open to relieve pressure",
+     "The deck describes reluctance to open it."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 60"
+  },
+  {
+   "topic": "Xanthelasma",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "first-line",
+   "q": "Beyond local treatment, what does the deck say to do for xanthelasma?",
+   "opts": [
+    [
+     "Nothing further, since the lesions are cosmetic",
+     "The deck treats them as a metabolic signal."
+    ],
+    [
+     "Start a topical antibiotic",
+     "There is no infection to treat."
+    ],
+    [
+     "Refer urgently to ophthalmology",
+     "The deck does not make this urgent."
+    ],
+    [
+     "Treat the underlying metabolic issue",
+     "Correct — the plaques are a marker, and the deck directs treatment at the cause."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 17"
   },
   {
    "topic": "Chalazion and hordeolum",
@@ -1516,10 +1334,6 @@
    "slot": "referral",
    "q": "When does the deck refer a hordeolum to ophthalmology, and for what?",
    "opts": [
-    [
-     "Immediately at first presentation, for an intralesional steroid injection",
-     "Steroid injection or curettage is the chalazion pathway."
-    ],
     [
      "Only if the patient also has rosacea",
      "Rosacea matters for recurrence, not for the initial referral."
@@ -1531,36 +1345,222 @@
     [
      "If persistent — for example no improvement in two weeks — for incision and drainage",
      "Correct — the deck's threshold and procedure."
+    ],
+    [
+     "Immediately at first presentation, for an intralesional steroid injection",
+     "Steroid injection or curettage is the chalazion pathway."
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
   },
   {
-   "topic": "Pinguecula and pterygium",
+   "topic": "Posterior uveitis",
    "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
-   "slot": "first-line",
-   "q": "What is the conservative management, and what should the patient be told about it?",
+   "slot": "etiology",
+   "q": "Which infectious causes does the deck give for posterior uveitis?",
    "opts": [
     [
-     "Immediate surgical excision in every case",
-     "Surgery is indicated only when vision is threatened."
+     "Toxoplasmosis and cytomegalovirus",
+     "Correct — the deck's two named organisms."
     ],
     [
-     "Sun, dust and wind protection with lubricating eyedrops — but it will not make the lesion resolve",
-     "Correct — the deck is explicit that conservative care does not resolve it."
+     "Adenovirus and Staphylococcus aureus",
+     "Those are conjunctivitis causes."
     ],
     [
-     "Sun protection and lubricating drops, which usually resolve the lesion within weeks",
-     "The deck says conservative management will NOT result in resolution."
+     "Chlamydia trachomatis and Neisseria gonorrhoeae",
+     "Those cause conjunctivitis."
     ],
     [
-     "Topical antibiotics for ten days",
-     "There is no infection to treat."
+     "Pseudomonas and Acanthamoeba",
+     "Those cause keratitis."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 64"
+  },
+  {
+   "topic": "Scleritis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "complication",
+   "q": "Which patients carry the greatest perforation risk in scleritis, per the speaker notes?",
+   "opts": [
+    [
+     "All patients with scleritis equally",
+     "The notes specifically push back on that."
+    ],
+    [
+     "Only patients who also have an identified systemic autoimmune disease",
+     "Not the notes' distinction."
+    ],
+    [
+     "Only contact lens wearers",
+     "That risk factor belongs to keratitis."
+    ],
+    [
+     "Those with necrotising disease, rather than all scleritis uniformly",
+     "Correct — the notes qualify the slide's blanket warning."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50 (speaker notes)"
+  },
+  {
+   "topic": "Entropion and ectropion",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "initial test",
+   "q": "Which examination does the deck specify for entropion and ectropion, and what is it looking for?",
+   "opts": [
+    [
+     "Slit lamp examination, to assess corneal involvement",
+     "Correct — the question is whether the cornea has been damaged."
+    ],
+    [
+     "Computed tomography of the orbits with contrast",
+     "That is for cellulitis, dacryocystitis and dacryoadenitis."
+    ],
+    [
+     "Fluorescein angiography",
+     "That is used in posterior uveitis and retinal vascular disease."
+    ],
+    [
+     "Serum lipid profile",
+     "That belongs to xanthelasma."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 13"
+  },
+  {
+   "topic": "Corneal ulcer",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "risk factors",
+   "q": "Which single risk factor does the deck call major for a corneal ulcer?",
+   "opts": [
+    [
+     "Contact lens use",
+     "Correct — the deck marks it as the major risk factor."
+    ],
+    [
+     "Sunlight exposure",
+     "That drives pterygium."
+    ],
+    [
+     "Hypertension",
+     "That is a subconjunctival haemorrhage risk."
+    ],
+    [
+     "Rosacea",
+     "That is a blepharitis and chalazion association."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 60"
+  },
+  {
+   "topic": "Chalazion and hordeolum",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "referral",
+   "q": "Why does the deck refer a chalazion that recurs or persists more than two to three months?",
+   "opts": [
+    [
+     "To rule out a lacrimal sac tumour",
+     "That concern belongs to a mass above the medial canthal tendon."
+    ],
+    [
+     "To rule out sebaceous carcinoma",
+     "Correct — the deck names the malignancy explicitly."
+    ],
+    [
+     "To rule out basal cell carcinoma",
+     "The deck names sebaceous carcinoma."
+    ],
+    [
+     "To rule out orbital cellulitis",
+     "Not the deck's reason for this referral."
     ]
    ],
    "c": 1,
-   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 28"
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
+  },
+  {
+   "topic": "Viral conjunctivitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "manifestation",
+   "q": "Which combination distinguishes acute viral conjunctivitis on examination?",
+   "opts": [
+    [
+     "Chemosis and papillae with itching and no node",
+     "That is allergic conjunctivitis."
+    ],
+    [
+     "A violaceous scleral hue with deep pain",
+     "That is scleritis."
+    ],
+    [
+     "Conjunctival follicles, tender preauricular nodes, and profuse watery discharge",
+     "Correct — the deck's triad, with follicles especially inferiorly."
+    ],
+    [
+     "Conjunctival papillae with thick yellow discharge and no preauricular node",
+     "That is bacterial conjunctivitis."
+    ]
+   ],
+   "c": 2,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 36"
+  },
+  {
+   "topic": "Dacryoadenitis",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "first-line",
+   "q": "How does the deck treat INFLAMMATORY dacryoadenitis, and how fast should it respond?",
+   "opts": [
+    [
+     "Oral antibiotics, with a response expected within 48 hours",
+     "Antibiotics are the empiric option when the cause is unclear."
+    ],
+    [
+     "Cool compresses, with resolution over two weeks",
+     "Cool compresses are the viral measure."
+    ],
+    [
+     "Intravenous antibiotics for 48 to 72 hours",
+     "That is the regimen for severe dacryocystitis or postseptal cellulitis."
+    ],
+    [
+     "Corticosteroids, with a response expected within 48 hours",
+     "Correct — the deck gives both the agent and the expected response time."
+    ]
+   ],
+   "c": 3,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 23"
+  },
+  {
+   "topic": "Trachoma",
+   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "slot": "epidemiology",
+   "q": "What does the deck say about trachoma's global significance?",
+   "opts": [
+    [
+     "It is the leading infectious cause of blindness worldwide",
+     "Correct — the deck marks this with three asterisks."
+    ],
+    [
+     "It is the leading cause of blindness in United States adults over 75",
+     "That is macular degeneration, and a different course."
+    ],
+    [
+     "It is the leading cause of new-onset blindness in adults 20 to 74",
+     "That is diabetic retinopathy."
+    ],
+    [
+     "It is now eradicated worldwide",
+     "The deck describes ongoing elimination campaigns."
+    ]
+   ],
+   "c": 0,
+   "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 45"
   }
  ]
 }

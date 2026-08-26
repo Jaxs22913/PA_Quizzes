@@ -43,6 +43,18 @@ OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-ophtho-comp
 # displays them at 180 px, so this is well above what the page needs, and
 # it takes the folder from 4.7 MB to 1.7 MB -- comparable, per image, with
 # the derm chart's 153.
+# HER OWN CHART INSTRUCTION, from the end of the 26 August lecture:
+#   "My recommendation to you guys for those is again use your resources, MAKE A
+#    CHART -- which ones cause PAIN, which ones don't cause pain. Which ones are
+#    UNILATERAL, which ones are BILATERAL. Which ones will cause which PHYSICAL
+#    EXAM ABNORMALITIES, like FIXED PUPILS for example. That's how you're gonna
+#    differentiate these ... That's definitely gonna be on your exam. AT LEAST
+#    TWO QUESTIONS MINIMUM."
+# So those three are their own columns, placed immediately after the name, and
+# the filter row lets you pull out just the painful ones or just the bilateral
+# ones -- which is the comparison she actually asked for.
+DIFF = {'Entropion': ('No &mdash; irritation, foreign body sensation', 'Either', 'Lid margin turns <b>IN</b>; lashes on the globe (trichiasis)'), 'Ectropion': ('No &mdash; tearing', 'Either', 'Lid margin turns <b>OUT</b>; inner surface exposed'), 'Dermatochalasis': ('No', 'Bilateral', 'Excess skin folds; <b>visual field deficit</b>'), 'Xanthelasma': ('No &mdash; asymptomatic', 'Usually bilateral', 'Oval <b>yellow plaques</b>, nasal lid'), 'Blepharitis / Meibomitis': ('No &mdash; burning, grittiness', 'Bilateral', '<b>Crusting at the lash bases</b>; toothpaste-like secretion'), 'Chalazion': ('<b>NO &mdash; non-tender</b>', 'Unilateral', 'Nodule that <b>points inside the lid</b>'), 'Hordeolum (stye)': ('<b>YES &mdash; tender</b>', 'Unilateral', 'Tender nodule <b>at the lid margin</b>'), 'Dacryoadenitis': ('<b>YES</b>', 'Unilateral (viral often bilateral)', 'Swelling <b>outer &frac13; of the UPPER lid</b> + preauricular node'), 'Dacryocystitis': ('<b>YES</b>', 'Unilateral', 'Swelling <b>below the medial canthal tendon</b>; pus from the punctum'), 'Pinguecula': ('No &mdash; irritation', 'Either', 'Yellow nodule that <b>stops at the limbus</b>'), 'Pterygium': ('No &mdash; irritation', 'Either', 'Wing of tissue <b>crossing onto the cornea</b>'), 'Subconjunctival haemorrhage': ('<b>NO &mdash; absent</b>', 'Unilateral', 'Blood under the conjunctiva; <b>vision, pupil and cornea all normal</b>'), 'Chemosis': ('Varies with the cause', 'Either', '<b>Swelling of the conjunctiva itself</b>'), 'Allergic conjunctivitis': ('No &mdash; <b>ITCH</b>', '<b>Bilateral</b>', '<b>Papillae</b> (&ldquo;like a strawberry&rdquo;), chemosis, <b>no node</b>'), 'Viral conjunctivitis': ('No &mdash; uncomfortable, tight', '<b>Bilateral</b> (starts in one eye)', '<b>Follicles</b> + <b>TENDER preauricular node</b> + watery discharge'), 'Bacterial conjunctivitis': ('Soreness rather than pain', '<b>Often UNILATERAL</b>', '<b>Papillae</b> + thick yellow discharge, usually <b>no node</b>'), 'Gonococcal conjunctivitis': ('<b>YES &mdash; severe</b>', 'Either; neonate often bilateral', '<b>Severe purulent discharge WITH a palpable preauricular node</b>'), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('No', 'Unilateral, sometimes bilateral', '<b>Follicles</b>, chronic beyond a month, topical treatment failed'), 'Chlamydial conjunctivitis &mdash; neonatal': ('&mdash;', 'Bilateral', 'Neonate; may also have <b>pneumonia</b>'), 'Trachoma': ('Mostly <b>asymptomatic</b>', 'Bilateral', '<b>Upper lid follicles</b>, then scarring, entropion, trichiasis'), 'Autoimmune conjunctivitis': ('<b>Minimal or none</b>, and <b>no discharge</b>', 'Bilateral', 'Recurrent redness with <b>systemic complaints</b>'), 'Episcleritis': ('<b>MILD</b>', 'Unilateral (may recur in either eye)', 'Sectoral redness; vessels <b>MOVE</b>; <b>blanch with phenylephrine</b>'), 'Scleritis': ('<b>SEVERE, boring, WORSE AT NIGHT</b>', 'Unilateral', '<b>Violaceous hue</b>; vessels do <b>NOT</b> move; pain on eye movement'), 'Pre-septal (periorbital) cellulitis': ('<b>YES</b> &mdash; periocular', 'Unilateral', '<b>THE EYE ITSELF IS WHITE</b>; movements full and painless'), 'Post-septal (orbital) cellulitis': ('<b>YES</b>, and <b>pain ON EYE MOVEMENT</b>', 'Unilateral', '<b>PROPTOSIS</b>, restricted painful movement, &plusmn; <b>afferent pupillary defect</b>'), 'Keratitis': ('<b>YES</b>', 'Unilateral', 'Corneal opacification, <b>CILIARY FLUSH</b>, &ldquo;broken up&rdquo; light reflection'), 'Herpes simplex keratitis': ('<b>YES</b>', 'Unilateral', '<b>Dendrite with TERMINAL END BULBS</b> on fluorescein'), 'Herpes zoster keratitis': ('<b>YES</b> &mdash; and skin pain', 'Unilateral, <b>dermatomal V1</b>', '<b>Pseudodendrite</b> (no end bulbs); <b>Hutchinson sign</b>'), 'Corneal ulcer': ('<b>YES</b> &mdash; resists opening the eye', 'Unilateral', '<b>White corneal infiltrate</b> + ciliary flush'), 'Anterior uveitis (iritis, iridocyclitis)': ('<b>YES</b>', 'Unilateral', '<b>CONSENSUAL photophobia</b>, ciliary flush, <b>IRREGULAR pupil</b>, cells in the anterior chamber'), 'Posterior uveitis (choroiditis, retinitis)': ('<b>NO</b> if isolated', 'Either', '<b>Cells in the vitreous</b>, vitreous haze, floaters')}
+
 IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('s052_2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
 
 # Viewed and REJECTED. These are the deck's OWN differential images -- filing
@@ -320,14 +332,22 @@ def main():
                     % (fn, H.escape(re.sub("&[a-z]+;", " ", name)), sl))
         else:
             cell = '<span class="nopic">no image<br>on the slide</span>'
+        pain, side, sign = DIFF[name]
+        # data-* attributes drive the filter row, so "show me only the painful
+        # ones" is one click -- which is the comparison she actually asked for.
+        painful = "yes" if pain.upper().startswith(("<B>YES", "<B>SEVERE", "<B>MILD")) \
+            or "YES" in pain.upper() else ("no" if "NO" in pain.upper() else "var")
+        lat = ("bi" if "Bilateral" in side and "Unilateral" not in side else
+               "uni" if side.startswith("Unilateral") else "either")
         body_rows.append(
-            '<tr data-g="%s">'
+            '<tr data-g="%s" data-pain="%s" data-lat="%s">'
             '<td class="pic">%s</td>'
             '<td class="nm"><b>%s</b><span class="grp" style="background:%s">%s</span></td>'
+            '<td class="d pain">%s</td><td class="d side">%s</td><td class="d sign">%s</td>'
             '<td class="gv">%s</td><td>%s</td><td>%s</td><td>%s</td>'
             '<td class="u %s">%s</td><td>%s</td><td class="sl">%s</td></tr>'
-            % (H.escape(grp), cell, name, GROUP_COLOUR[grp], H.escape(grp),
-               give, pres, test, tx, urg_cls, urg, edu, slide))
+            % (H.escape(grp), painful, lat, cell, name, GROUP_COLOUR[grp], H.escape(grp),
+               pain, side, sign, give, pres, test, tx, urg_cls, urg, edu, slide))
 
     html = head + """</head><body>
 <div class="guide-back-bar">
@@ -346,6 +366,14 @@ def main():
 <b>the words a question will use to hand it to you</b>, how it presents and what you find on
 examination, what you order, what you give, <b>how fast the patient has to be seen</b>, and what you
 tell them. Read it top to bottom down one column to compare across conditions.<br><br>
+<b>The three grey columns are Professor Jaquith&rsquo;s own instruction.</b> At the end of the
+26 August lecture she said: <i>&ldquo;My recommendation to you guys for those is again, use your
+resources, <b>make a chart</b> &mdash; which ones cause pain, which ones don&rsquo;t cause pain?
+Which ones are unilateral, which ones are bilateral? Which ones will cause which physical exam
+abnormalities, like fixed pupils, for example. <b>That&rsquo;s how you&rsquo;re gonna differentiate
+these</b> &mdash; particularly your pink eye &hellip; that&rsquo;s definitely gonna be on your exam,
+<b>at least two questions minimum</b>.&rdquo;</i> So those three are their own columns, and the
+buttons above let you pull out just the painful ones or just the bilateral ones and read down.<br><br>
 <b>The gold &ldquo;Vignette giveaway&rdquo; column</b> is the one to scan when a stem is in front of you.
 Professor Jaquith described this exam as <i>&ldquo;pretty much all clinical vignettes &hellip; recognize
 conditions by the vignette&rdquo;</i>, and a vignette gives itself away in a handful of words &mdash;
@@ -370,11 +398,22 @@ pre-septal cellulitis, and a recurrent subconjunctival haemorrhage does not mean
 haematology referral.</div>
 
 <div class="filters"><button class="filt on" data-g="__all__">All</button>__GROUPS__</div>
+<div class="filters filters2">
+  <span class="flabel">Her three:</span>
+  <button class="filt2" data-pain="yes">Painful</button>
+  <button class="filt2" data-pain="no">Painless</button>
+  <button class="filt2" data-lat="uni">Unilateral</button>
+  <button class="filt2" data-lat="bi">Bilateral</button>
+  <button class="filt2 on" data-clear="1">Show all</button>
+</div>
 
 <div class="tblwrap"><table>
 <thead><tr>
   <th>Picture</th>
   <th>Condition</th>
+  <th class="d-h">Pain?</th>
+  <th class="d-h">One eye or both?</th>
+  <th class="d-h">Key exam abnormality</th>
   <th class="gv-h">Vignette giveaway<br><span style="font-weight:400;opacity:.75">the words that hand it to you</span></th>
   <th>Presentation &amp; exam findings</th>
   <th>Testing &amp; what causes it</th>
@@ -389,14 +428,30 @@ __ROWS__
 </div>
 <script src="../theme.js"></script>
 <script>
+  // Two independent filters: region (top row) and her three discriminators
+  // (second row). Both apply at once, so "cornea AND painful" works.
+  var curG = '__all__', curPain = null, curLat = null;
+  function apply(){
+    document.querySelectorAll('tbody tr').forEach(function(tr){
+      var ok = (curG === '__all__' || tr.dataset.g === curG)
+            && (!curPain || tr.dataset.pain === curPain)
+            && (!curLat  || tr.dataset.lat === curLat || tr.dataset.lat === 'either');
+      tr.style.display = ok ? '' : 'none';
+    });
+  }
   document.querySelectorAll('.filt').forEach(function(b){
     b.addEventListener('click', function(){
       document.querySelectorAll('.filt').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on'); curG = b.dataset.g; apply();
+    });
+  });
+  document.querySelectorAll('.filt2').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.filt2').forEach(function(x){x.classList.remove('on');});
       b.classList.add('on');
-      var g = b.dataset.g;
-      document.querySelectorAll('tbody tr').forEach(function(tr){
-        tr.style.display = (g === '__all__' || tr.dataset.g === g) ? '' : 'none';
-      });
+      curPain = b.dataset.pain || null;
+      curLat  = b.dataset.lat  || null;
+      apply();
     });
   });
 </script>
@@ -415,6 +470,14 @@ __ROWS__
              border:1px solid var(--c-line);}
   td.pic .picite{display:block;margin-top:4px;font-size:.66rem;color:var(--c-mute);}
   td.pic .nopic{display:inline-block;font-size:.7rem;color:var(--c-mute);line-height:1.3;}
+  th.d-h{background:var(--c-panel);color:var(--c-panel-fg);}
+  td.d{background:var(--c-panel);font-size:.82rem;}
+  td.pain{min-width:130px;} td.side{min-width:120px;} td.sign{min-width:200px;}
+  .filters2{margin-top:-4px;align-items:center;}
+  .flabel{font-size:.8rem;color:var(--c-mute);margin-right:4px;}
+  .filt2{font:inherit;font-size:.8rem;padding:4px 11px;border-radius:999px;cursor:pointer;
+         border:1px solid var(--c-line);background:var(--c-btn-bg);color:var(--c-fg);}
+  .filt2.on{background:var(--gold);color:#241a02;border-color:var(--gold);}
   td.u{font-weight:700;font-size:.8rem;}
   td.u.emerg{color:#8c1d12;} td.u.sameday{color:#8c4a12;}
   td.u.urg{color:#7a5a08;} td.u.rout{color:#3f5c46;font-weight:600;}
@@ -430,6 +493,9 @@ __ROWS__
     for fn in re.findall(r'src="cms-ophtho-chart-images/([^"]+)"', html):
         assert fn not in REJECTED, "a rejected DDX image reached the page: %s" % fn
         assert os.path.exists(os.path.join(imgdir, fn)), fn
+    missing = [r[0] for r in ROWS if r[0] not in DIFF]
+    assert not missing, ("every row needs her three discriminators -- pain, laterality "
+                         "and the key exam sign: %r" % missing)
     names = [r[0] for r in ROWS]
     assert len(names) == len(set(names)), "duplicate condition row"
     for r in ROWS:

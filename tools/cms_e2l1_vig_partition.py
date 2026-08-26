@@ -37,6 +37,8 @@ from cms_e2l1_vig_b import VIG_B
 
 POOL = VIG_A + VIG_B
 
+
+
 try:
     from cms_e2l1_vig_lengthfix import FIXES
 except ImportError:
@@ -45,6 +47,30 @@ for (_qi, _oi), _txt in FIXES.items():
     _q = POOL[_qi]
     assert _oi != _q["c"], "length fix %d/%d targets the CORRECT option" % (_qi, _oi)
     _q["opts"][_oi][0] = _txt
+
+# ---- Guard 0, applied AFTER the length fixes because their keys are INDICES
+# ---- into the full pool and filtering first would silently retarget them.
+# ---- The RED-EYE TRIAGE section is NOT examinable ----------------
+# Slides 66-71 (the first-60-seconds sequence, danger signs, localisation, the
+# disposition table and the contact-lens case) were NEVER TAUGHT. She reached
+# posterior uveitis on slide 65, gave her chart advice, and then said of what
+# came next:
+#
+#   "This is extra material. You can write that. I'm NOT going to pull test
+#    questions from this. This is not instructional objective."
+#
+# Both transcripts agree word for word, and the closing segment contains ZERO
+# mentions of any triage content -- no "60 seconds", no danger signs, no
+# emergent/same-day disposition. It also fits the syllabus: objective (a) lists
+# twenty named CONDITIONS, and a triage framework is not one of them.
+#
+# The questions are KEPT in the pools, because the content is real, on the
+# slides, and clinically the most useful thing in the deck -- but they are held
+# out of the draw. The guide and cram sheet carry the section clearly marked as
+# extra. If she later says it is fair game, delete these four lines.
+_TRIAGE = re.compile(r"Slide (?:6[6-9]|7[01])\b")
+_EXTRA = [q for q in POOL if _TRIAGE.search(q["cite"])]
+POOL = [q for q in POOL if not _TRIAGE.search(q["cite"])]
 
 # ---- Guard 1: every stem opens on a patient -------------------------------
 # Allow a describing word or two between the article and the age --
@@ -159,7 +185,8 @@ def validate(pool):
 
 
 if __name__ == "__main__":
-    print("vignette pool:", len(POOL))
+    print("vignette pool:", len(POOL), "  (held out as NOT examinable: %d "
+          "red-eye triage vignettes, slides 66-71)" % len(_EXTRA))
     print("schema problems:", validate(POOL) or "none")
     print("topics:", len(ALL_TOPICS), " lead types:", len(set(q["lead"] for q in POOL)))
     print("diagnosis leads: %d   other leads: %d   (cap is %d per set)"
