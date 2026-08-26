@@ -10,11 +10,14 @@ Donor is the CMS I Exam 1 guide, so the two blocks share their structure. The
 palette is retheme d from Exam 1's TEAL to INDIGO -- a near-identical teal
 would make the two blocks indistinguishable in the guide list.
 
-NO DECK FIGURES ARE COMMITTED, following the precedent set for Exam 1 in
-build_cms_guide.py. This deck's images come from The Wills Eye Manual, the
-Kellogg Eye Center and EyeRounds, all third-party; this repository is public,
-so committing them would republish them. See [[media_asset_licensing]]. The
-comparison tables carry the discriminating features in words instead.
+FIGURES ARE USED AND CITED, per the standing rule in [[media_asset_licensing]]:
+any course-slide image may be used so long as the slide is cited, and marks
+baked into the pixels are left visible rather than cropped. The four pairs
+chosen here are the ones the exam actually turns on visually -- pinguecula
+against pterygium, pre-septal against post-septal cellulitis, the herpes simplex
+dendrite against the zoster pseudodendrite, and the ciliary flush. Each was
+viewed before being used, and they are shared with the comparison chart rather
+than extracted twice.
 
 Objectives are quoted VERBATIM from the syllabus, whose population list
 includes CHILD -- the slide's version omits it. [[guide_verbatim_io_rule]].
@@ -28,6 +31,28 @@ import os, re
 ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1/cms-exam-1-study-guide.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-exam-2-study-guide.html")
+
+
+IMGDIR = "cms-ophtho-chart-images"
+
+
+def figpair(a, b, cap, slide):
+    """Two slide images side by side -- the visual discriminations that matter."""
+    for fn in (a, b):
+        assert os.path.exists(os.path.join(os.path.dirname(OUT), IMGDIR, fn)), \
+            "missing %s -- run extract_cms_e2_chart_images.py" % fn
+    return ('<figure class="fig figpair">'
+            '<img src="%s/%s" loading="lazy" alt="Left half of the comparison.">'
+            '<img src="%s/%s" loading="lazy" alt="Right half of the comparison.">'
+            '<figcaption>%s <span class="cite">Slide %d</span></figcaption></figure>'
+            % (IMGDIR, a, IMGDIR, b, cap, slide))
+
+
+def figone(fn, cap, slide):
+    assert os.path.exists(os.path.join(os.path.dirname(OUT), IMGDIR, fn)), fn
+    return ('<figure class="fig"><img src="%s/%s" loading="lazy" alt="%s">'
+            '<figcaption>%s <span class="cite">Slide %d</span></figcaption></figure>'
+            % (IMGDIR, fn, cap.replace('"', ""), cap, slide))
 
 TOC = """<nav class="toc">
   <a class="top-link" href="#ophthalmology-i">1 &middot; Common Ophthalmological Disorders</a>
@@ -199,6 +224,7 @@ BODY = """<main class="content">
   </div>
 
   <h3 class="sub" id="e2l1-surface">1.5 &middot; Conjunctiva and ocular surface</h3>
+  @@PINGPTER@@
   <p><strong>Pinguecula and pterygium</strong> both come from chronic sun and wind exposure and sit
   almost always at <b>3 o'clock or 9 o'clock</b>. The whole distinction:
   <strong>the pterygium extends onto the cornea, the pinguecula does not.</strong> The deck's
@@ -267,6 +293,7 @@ BODY = """<main class="content">
   risk is greatest in <em>necrotising</em> disease, not uniformly.</p>
 
   <h3 class="sub" id="e2l1-cornea">1.8 &middot; Keratitis and corneal ulcer</h3>
+  @@FLUSH@@
   <p><strong>Ciliary flush</strong> &mdash; a ring of red vessels spreading from the limbus around
   the cornea, from the anterior ciliary arteries. It means inflammation of <b>cornea, iris or
   ciliary body</b>, and appears in <b>corneal inflammation (ulcer, keratitis), anterior uveitis,
@@ -280,6 +307,7 @@ BODY = """<main class="content">
   <strong>Urgent referral within 24 hours</strong> for slit lamp with fluorescein.
   <strong>Undertreated &rarr; corneal scarring or perforation &rarr; endophthalmitis &rarr;
   possible removal of the eye.</strong></p>
+  @@HERPES@@
   <table class="tbl">
     <tr><th></th><th>Herpes SIMPLEX keratitis</th><th>Herpes ZOSTER keratitis</th></tr>
     <tr><td>Corneal sign</td><td><b>TRUE DENDRITE</b> &mdash; tree-branching, elevated edges, <b>terminal end bulbs</b>. <b>Pathognomonic</b></td><td><b>PSEUDODENDRITE</b> &mdash; lacks the branch pattern, the elevated edges and the end bulbs</td></tr>
@@ -318,6 +346,7 @@ BODY = """<main class="content">
   <strong>infection must be excluded before immunosuppression.</strong></p>
 
   <h3 class="sub" id="e2l1-cellulitis">1.10 &middot; Pre-septal and post-septal cellulitis</h3>
+  @@CELLULITIS@@
   <p>Both come from <b>direct extension from a bacterial sinus, skin or dental infection</b>. In
   diabetic, elderly or immunocompromised patients, <b>consider fungus &mdash; aspergillosis,
   mucormycosis</b>.</p>
@@ -416,15 +445,40 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
   '&middot; Instructional Objectives taken verbatim from the syllabus</p>\n'
   '</header>', head, count=1, flags=re.S)
 
-html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + BODY + tail
+body = BODY
+body = body.replace("@@PINGPTER@@", figpair(
+    "s027_1.jpg", "s027_2.jpg",
+    "<b>Left, pinguecula</b> &mdash; the yellowish nodule stops at the limbus. "
+    "<b>Right, pterygium</b> &mdash; the growth crosses onto the cornea. That crossing is the "
+    "entire distinction.", 27))
+body = body.replace("@@CELLULITIS@@", figpair(
+    "s052_1.jpg", "s052_2.jpg",
+    "<b>Left, pre-septal</b> &mdash; the lid is swollen and red but <b>the eye itself is white</b>, "
+    "and movements are full and painless. <b>Right, post-septal</b> &mdash; the globe is involved. "
+    "This is the single most useful visual discrimination in the lecture.", 52))
+body = body.replace("@@HERPES@@", figpair(
+    "s057_1.jpg", "s057_2.jpg",
+    "<b>Left, herpes simplex</b> &mdash; a true dendrite: tree-branching, elevated edges, and "
+    "<b>terminal end bulbs</b>. Pathognomonic. <b>Right, herpes zoster</b> &mdash; a "
+    "pseudodendrite, which lacks all three.", 57))
+body = body.replace("@@FLUSH@@", figone(
+    "s054_1.jpg",
+    "Ciliary flush &mdash; a ring of vessels radiating from the limbus around the cornea. This is "
+    "the finding that rules OUT simple conjunctivitis.", 54))
+assert "@@" not in body, "unfilled figure token"
+
+html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + body + tail
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 open(OUT, "w", encoding="utf-8").write(html)
 
-for tag in ("section", "table", "tr", "td", "th", "div", "p", "ol", "ul", "li", "nav"):
+for fn in re.findall(r'src="%s/([^"]+)"' % IMGDIR, html):
+    assert os.path.exists(os.path.join(os.path.dirname(OUT), IMGDIR, fn)), fn
+for tag in ("section", "table", "tr", "td", "th", "div", "p", "ol", "ul", "li", "nav",
+            "figure", "figcaption"):
     o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
     assert o == c, "%s unbalanced: %d open, %d close" % (tag, o, c)
 assert "data-audio-dir" not in html, "audio dir must stay absent until mp3s exist"
 assert "#17494b" not in html, "donor teal left in the Exam 2 guide"
 print("wrote %s (%d KB)" % (os.path.basename(OUT), len(html) // 1024))
-print("subsections: %d   test-yourself questions: %d"
-      % (html.count('class="sub"'), TEST_YOURSELF.count("{q:")))
+print("subsections: %d   figures: %d   test-yourself questions: %d"
+      % (html.count('class="sub"'), html.count("<figure"), TEST_YOURSELF.count("{q:")))

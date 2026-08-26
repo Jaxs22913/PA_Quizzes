@@ -97,6 +97,8 @@ BODY = """
   eye is the <b>only place in the body where live neural tissue and native microcirculation can be
   seen directly</b>, without cutting anything.</p>
 
+  @@ANATOMY@@
+
   <p><b>The three tunics, outside in:</b></p>
   <table class="tbl">
     <tr><th>Tunic</th><th>Structures</th><th>Role</th></tr>
@@ -319,6 +321,10 @@ TESTS = """    ophthalmic: [
 """
 
 FIGS = {
+    "@@ANATOMY@@": ("anatomy", "png",
+                    "The eye in cross-section, fully labelled &mdash; chambers and their fluids, "
+                    "the canal of Schlemm and the outflow route, the suspensory zonules, and the "
+                    "fovea, macula and optic disc at the back.", 5),
     "@@DETACH@@": ("detachment", "png",
                    "Rhegmatogenous detachment: liquefied vitreous passing through a "
                    "retinal tear and peeling the neurosensory retina off the pigment "

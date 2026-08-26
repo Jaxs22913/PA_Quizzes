@@ -14,11 +14,13 @@ size before being chosen, per [[image_only_slides]].
   oct             slide 30 -- optical coherence tomography showing the retinal
                   layers in section.
 
-DELIBERATELY NOT INCLUDED: the deck's labelled eye-anatomy diagram on slide 5.
-It carries a third-party vendor watermark across the bottom, and this repository
-is public, so committing it would republish someone's marked asset. The anatomy
-it teaches is carried in prose and in the tunics table instead.
-See [[media_asset_licensing]].
+  anatomy       slide 5 -- the fully labelled eye in cross-section: chambers,
+                canal of Schlemm, zonules, fovea, macula, optic disc. This was
+                left out of the first version on licensing grounds, which was
+                wrong: [[media_asset_licensing]] clears any course-slide image
+                so long as the slide is cited, and says explicitly not to crop
+                marks out. Its vendor watermark stays visible and the caption
+                cites the slide.
 """
 import os, zipfile
 
@@ -29,7 +31,8 @@ DECK = os.path.expanduser(
     "~/Desktop/Semester 2/Clinical Pathophysiology I Inbox/Exam 1/"
     "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx")
 
-WANTED = [("ppt/media/image105.png", "visual-fields", "png", 34),
+WANTED = [("ppt/media/image6.png",   "anatomy",       "png", 5),
+          ("ppt/media/image105.png", "visual-fields", "png", 34),
           ("ppt/media/image114.png", "detachment",    "png", 35),
           ("ppt/media/image93.jpg",  "normal-fundus", "jpg", 29),
           ("ppt/media/image92.jpg",  "oct",           "jpg", 30)]

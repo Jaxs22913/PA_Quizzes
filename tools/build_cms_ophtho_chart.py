@@ -5,18 +5,24 @@
 The Exam 2 counterpart to the Exam 1 dermatology chart: every condition in the
 ophthalmology block in one sortable table, read left to right.
 
-TWO DELIBERATE DIFFERENCES FROM THE DERM CHART
-----------------------------------------------
-1. NO PICTURE COLUMN. The derm chart carries 143 photographs from Prof.
-   Jaquith's dermatology decks, and those images carry no attribution marks.
-   THIS deck's clinical photographs do: they are stamped "EYEROUNDS.ORG" and
-   "(c) 2011 Logical Images, Inc." across the image itself, and the deck's own
-   reference slide credits The Wills Eye Manual, the Kellogg Eye Center and
-   EyeRounds. This repository is PUBLIC, so committing them would republish
-   somebody's marked asset. See [[media_asset_licensing]]. A SLIDE column is
-   given instead, so the picture can be found in your own copy of the deck.
+IMAGES ARE USED AND CITED, per the standing rule in [[media_asset_licensing]]:
+any image in a course PowerPoint may be used as long as the slide is cited.
+Several of this deck's photographs carry marks baked into the pixels --
+EYEROUNDS.ORG, the University of Michigan Kellogg Eye Center, "(c) 2011 Logical
+Images, Inc." -- and those are LEFT VISIBLE on purpose. They ride along as part
+of citing the slide. Every picture cell prints its slide number.
 
-2. A REFERRAL URGENCY COLUMN. In dermatology the useful axis was first-line
+EVERY IMAGE WAS VIEWED BEFORE BEING ASSIGNED. This deck labels several pictures
+"DDX" in its own captions, and two would have been outright factual errors in a
+chart cell:
+  * slide 29 image 1 is a HYPHAEMA, captioned as a differential -- not the
+    subconjunctival haemorrhage that row is about
+  * slide 27 image 3 is CONJUNCTIVAL INTRAEPITHELIAL NEOPLASIA, the fan-shaped
+    differential -- not the pterygium
+Both are in REJECTED below and the exclusion is asserted, so a later edit
+cannot quietly reintroduce them.
+
+THE ONE DIFFERENCE FROM THE DERM CHART IS A REFERRAL URGENCY COLUMN. In dermatology the useful axis was first-line
    against second-line treatment. In ophthalmology the decision that actually
    changes an outcome is how fast the patient is seen, and the deck ends with
    an explicit emergent / same-day / urgent / routine table. That column is the
@@ -32,6 +38,20 @@ import os, re, html as H
 ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1/cms-derm-comparison-chart.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-ophtho-comparison-chart.html")
+
+# Downscaled to 600 px wide and re-encoded as JPEG at quality 80. The chart
+# displays them at 180 px, so this is well above what the page needs, and
+# it takes the folder from 4.7 MB to 1.7 MB -- comparable, per image, with
+# the derm chart's 153.
+IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('s052_2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
+
+# Viewed and REJECTED. These are the deck's OWN differential images -- filing
+# one under the row's condition would be a factual error in the chart, not
+# merely an ugly picture. See [[image_only_slides]].
+REJECTED = {
+  "s029_1.jpg": "a HYPHAEMA, captioned DDX on slide 29 -- not a subconjunctival haemorrhage",
+  "s027_3.jpg": "CONJUNCTIVAL INTRAEPITHELIAL NEOPLASIA, the fan-shaped DDX on slide 27 -- not a pterygium",
+}
 
 # name, group, giveaway, presentation, testing, treatment, urgency, education, slides
 ROWS = [
@@ -281,17 +301,32 @@ def main():
         groups.append('<button class="filt" data-g="%s" style="--g:%s">%s</button>'
                       % (H.escape(g), GROUP_COLOUR[g], H.escape(g)))
 
-    body_rows = []
+    imgdir = os.path.join(os.path.dirname(OUT), "cms-ophtho-chart-images")
+    body_rows, n_pics = [], 0
     for name, grp, give, pres, test, tx, urg, edu, slide in ROWS:
         urg_cls = ("emerg" if "EMERGENT" in urg else
                    "sameday" if "SAME DAY" in urg else
                    "urg" if urg.startswith("Urgent") or "URGENT" in urg else "rout")
+        pic = IMGS.get(name)
+        if pic:
+            fn, sl = pic
+            assert fn not in REJECTED, ("row %r uses %s, which is %s"
+                                        % (name, fn, REJECTED[fn]))
+            assert os.path.exists(os.path.join(imgdir, fn)), \
+                "missing %s -- run extract_cms_e2_chart_images.py" % fn
+            n_pics += 1
+            cell = ('<img src="cms-ophtho-chart-images/%s" loading="lazy" '
+                    'alt="%s, from the lecture slides."><span class="picite">Slide %d</span>'
+                    % (fn, H.escape(re.sub("&[a-z]+;", " ", name)), sl))
+        else:
+            cell = '<span class="nopic">no image<br>on the slide</span>'
         body_rows.append(
             '<tr data-g="%s">'
+            '<td class="pic">%s</td>'
             '<td class="nm"><b>%s</b><span class="grp" style="background:%s">%s</span></td>'
             '<td class="gv">%s</td><td>%s</td><td>%s</td><td>%s</td>'
             '<td class="u %s">%s</td><td>%s</td><td class="sl">%s</td></tr>'
-            % (H.escape(grp), name, GROUP_COLOUR[grp], H.escape(grp),
+            % (H.escape(grp), cell, name, GROUP_COLOUR[grp], H.escape(grp),
                give, pres, test, tx, urg_cls, urg, edu, slide))
 
     html = head + """</head><body>
@@ -321,12 +356,14 @@ axis was first-line against second-line treatment; here the decision that change
 quickly the patient is seen, and the deck ends with an explicit emergent / same-day / urgent / routine
 table. <span class="u emerg" style="padding:1px 6px">EMERGENT</span> means now.
 <span class="u sameday" style="padding:1px 6px">SAME DAY</span> means before the end of the day.<br><br>
-<b>Why there are no photographs here.</b> The Exam 1 dermatology chart carries a picture for every
-condition, taken from those lecture decks. This deck&rsquo;s clinical photographs are stamped with
-their source &mdash; <i>EYEROUNDS.ORG</i>, <i>&copy; Logical Images, Inc.</i> &mdash; and its reference
-slide credits The Wills Eye Manual, the Kellogg Eye Center and EyeRounds. This site is public, so
-committing them would republish somebody else&rsquo;s marked asset. The <b>Slide</b> column on the
-right points at the picture in your own copy of the deck instead.<br><br>
+<b>Every picture comes from the lecture deck and cites its slide.</b> Some carry their source
+stamped into the image &mdash; <i>EyeRounds.org</i>, the <i>Kellogg Eye Center</i>,
+<i>&copy; Logical Images</i> &mdash; and those marks are left visible on purpose; they are part of
+the citation.<br><br>
+<b>Two of the deck&rsquo;s pictures are deliberately NOT used.</b> Slide 29&rsquo;s first image is a
+<b>hyphaema</b> and slide 27&rsquo;s third is <b>conjunctival intraepithelial neoplasia</b> &mdash;
+both are captioned <i>DDX</i> on the slide itself. Putting either in a chart cell would say
+&ldquo;this is what the condition looks like&rdquo; about a picture of something else.<br><br>
 <b>Where a slide reads as an absolute and its own speaker notes soften it, the hedge is what is
 written here</b> &mdash; imaging is not automatic for the lacrimal infections or for clearly
 pre-septal cellulitis, and a recurrent subconjunctival haemorrhage does not mean an automatic
@@ -336,6 +373,7 @@ haematology referral.</div>
 
 <div class="tblwrap"><table>
 <thead><tr>
+  <th>Picture</th>
   <th>Condition</th>
   <th class="gv-h">Vignette giveaway<br><span style="font-weight:400;opacity:.75">the words that hand it to you</span></th>
   <th>Presentation &amp; exam findings</th>
@@ -372,6 +410,11 @@ __ROWS__
              border-radius:999px;width:fit-content;letter-spacing:.02em;}
   td.gv{background:var(--c-gv-bg);color:var(--c-gv-b);font-weight:600;}
   td.sl{text-align:center;color:var(--c-mute);white-space:nowrap;font-variant-numeric:tabular-nums;}
+  td.pic{width:190px;min-width:190px;text-align:center;vertical-align:top;padding:8px;}
+  td.pic img{width:100%;max-width:180px;height:auto;border-radius:6px;display:block;margin:0 auto;
+             border:1px solid var(--c-line);}
+  td.pic .picite{display:block;margin-top:4px;font-size:.66rem;color:var(--c-mute);}
+  td.pic .nopic{display:inline-block;font-size:.7rem;color:var(--c-mute);line-height:1.3;}
   td.u{font-weight:700;font-size:.8rem;}
   td.u.emerg{color:#8c1d12;} td.u.sameday{color:#8c4a12;}
   td.u.urg{color:#7a5a08;} td.u.rout{color:#3f5c46;font-weight:600;}
@@ -384,7 +427,9 @@ __ROWS__
     for tag in ("table", "thead", "tbody", "tr", "td", "th", "div", "p", "header"):
         o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
         assert o == c, "%s unbalanced: %d open, %d close" % (tag, o, c)
-    assert "cms-ophtho-chart-images" not in html, "chart must not reference deleted images"
+    for fn in re.findall(r'src="cms-ophtho-chart-images/([^"]+)"', html):
+        assert fn not in REJECTED, "a rejected DDX image reached the page: %s" % fn
+        assert os.path.exists(os.path.join(imgdir, fn)), fn
     names = [r[0] for r in ROWS]
     assert len(names) == len(set(names)), "duplicate condition row"
     for r in ROWS:
@@ -393,8 +438,9 @@ __ROWS__
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
-    print("wrote %s (%d KB, %d conditions, %d groups)"
-          % (os.path.basename(OUT), len(html) // 1024, len(ROWS), len(GROUP_COLOUR)))
+    print("wrote %s (%d KB, %d conditions, %d with a picture, %d groups)"
+          % (os.path.basename(OUT), len(html) // 1024, len(ROWS), n_pics, len(GROUP_COLOUR)))
+    print("rejected DDX images kept out: %s" % ", ".join(sorted(REJECTED)))
 
 
 if __name__ == "__main__":
