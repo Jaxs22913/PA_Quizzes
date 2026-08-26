@@ -13,14 +13,45 @@ THE HEDGED SLIDES GET THEIR OWN ROWS. Several slides read as absolutes and are
 softened by their own speaker notes; a cram sheet that repeated only the slide
 would drill the wrong reflex.
 """
-import sys, os
+import sys, os, re
 sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/cram-sheet-template")
+sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools")
 from render import render
+from cms_e2_ophtho_diff import DIFF, bucket
+
+
+def names(key):
+    """Her four lists, GENERATED from the same table the chart uses.
+
+    These were hand-written once and drifted within the hour -- the painless
+    list was missing four conditions and the bilateral list had one the chart
+    bucketed differently. Same fact, two places, no guard. Now there is one
+    place.
+    """
+    out = []
+    for n in bucket(key):
+        n = re.sub(r"&mdash;", "-", n)
+        n = re.sub(r"\s*\([^)]*\)", "", n).strip()       # drop parenthetical
+        out.append(n.upper())
+    return " \u00b7 ".join(out)
 
 OUT = ("/Users/jaxonluke/Developer/PA_Quizzes/Clinical Medicine and Surgery I Exam 2/"
        "cms-exam-2-cram-sheet.html")
 
 topics = [
+ {"id": "herchart", "label": "★ HER OWN INSTRUCTION — MAKE THIS CHART", "color": "#b8860b", "rows": [
+   ("What she said, verbatim", "“My recommendation to you guys for those is again, use your resources, MAKE A CHART — which ones cause PAIN, which ones don’t cause pain? Which ones are UNILATERAL, which ones are BILATERAL? Which ones will cause which PHYSICAL EXAM ABNORMALITIES, like FIXED PUPILS, for example. That’s how you’re gonna differentiate these.”"),
+   ("How hard she committed to it", "“Particularly your PINK EYE — know the difference and how to differentiate those. That’s a thousand percent on the exam because that’s on your boards. So that’s definitely gonna be on your exam. AT LEAST TWO QUESTIONS MINIMUM. Haven’t made those questions yet, but I guarantee you those are gonna be on the exam.”"),
+   ("PAINLESS", names("no") + "."),
+   ("PAINFUL", names("yes") + ". Note EPISCLERITIS is MILD pain and SCLERITIS is SEVERE, BORING and WORSE AT NIGHT — that contrast is the whole point of the pair. POST-SEPTAL cellulitis adds PAIN ON EYE MOVEMENT."),
+   ("PAIN VARIES / depends", names("var") + ". BACTERIAL conjunctivitis is soreness rather than true pain; CHEMOSIS depends entirely on its cause."),
+   ("BILATERAL", names("lat_bi") + ". VIRAL starts in ONE eye and spreads to the other — do not let the first day fool you."),
+   ("UNILATERAL", names("lat_uni") + ". DACRYOADENITIS is unilateral EXCEPT the viral form, which is usually bilateral."),
+   ("EITHER / not defined by side", names("lat_either") + "."),
+   ("PUPIL abnormalities — she named these", "ANTERIOR UVEITIS: pupil small and IRREGULAR, may be stuck to lens or cornea. POST-SEPTAL CELLULITIS: possible AFFERENT PUPILLARY DEFECT. ACUTE GLAUCOMA (on the red-eye chart): DILATED and FIXED. Everything else on the list leaves the pupil alone — and that is itself the discriminator."),
+   ("PINK EYE — the one she guaranteed", "ALLERGIC: ITCH, bilateral, watery/stringy, PAPILLAE (“looks like a strawberry”), NO node. VIRAL: adenovirus, profuse WATERY, FOLLICLES, TENDER preauricular node, one eye then the other. BACTERIAL: thick YELLOW/WHITE, often UNILATERAL, PAPILLAE, usually NO node. GONOCOCCAL: SEVERE purulent WITH a palpable node. CHLAMYDIAL: CHRONIC >1 month, stringy mucoid, FOLLICLES, failed topicals."),
+   ("Findings are SUGGESTIVE, not definitive", "Her caveat about papillae and follicles: “There are some findings that could be suggestive, but they’re NOT DEFINITIVE.”"),
+ ]},
  {"id": "how", "label": "How This Exam Is Written", "color": "#2d3f7a", "rows": [
    ["Almost all vignettes", "“Pretty much all clinical vignettes… recognize conditions by the vignette.” Read for the DEFINING FEATURE, not the disease name."],
    ["What the lead-in asks", "“SOME diagnosis, but A LOT are next management plan, first line treatment, patient education.” The lead-in decides the answer — read it before the options."],

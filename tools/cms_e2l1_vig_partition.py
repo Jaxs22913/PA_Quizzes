@@ -131,6 +131,19 @@ assert len(_other) >= _need_other, (
 assert len(_dx) >= 2 * DX_CAP, ("pool has only %d diagnosis vignettes but two sets can "
                                 "take %d" % (len(_dx), 2 * DX_CAP))
 
+# ---- Guard 5: the differentiation she GUARANTEED will be on the exam -------
+# "Particularly your PINK EYE -- know the difference and how to differentiate
+#  those. That's definitely gonna be on your exam, AT LEAST TWO QUESTIONS
+#  MINIMUM. Haven't made those questions yet, but I guarantee you those are
+#  gonna be on the exam."
+_CONJ_TOPICS = {"Conjunctivitis", "Allergic conjunctivitis", "Viral conjunctivitis",
+                "Bacterial conjunctivitis", "Chlamydial conjunctivitis",
+                "Conjunctivitis type", "Conjunctivitis pattern",
+                "Gonococcal conjunctivitis", "Autoimmune conjunctivitis"}
+_conj = [q for q in POOL if q["topic"] in _CONJ_TOPICS]
+assert len(_conj) >= 8, ("she guaranteed at least two pink-eye differentiation questions "
+                         "per set -- the pool needs enough to place them, found %d" % len(_conj))
+
 random.seed(20260826 + 22)
 MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
 
@@ -231,6 +244,9 @@ if __name__ == "__main__":
     for name, s in (("SET 1", s1), ("SET 2", s2)):
         ndx = sum(1 for q in s if q["lead"] == "diagnosis")
         assert ndx <= DX_CAP, "%s has %d diagnosis questions, cap is %d" % (name, ndx, DX_CAP)
+        nconj = sum(1 for q in s if q["topic"] in _CONJ_TOPICS)
+        assert nconj >= 2, ("%s carries only %d conjunctivitis-differentiation vignettes; "
+                            "she guaranteed at least two on the exam" % (name, nconj))
         pos = Counter(q["c"] for q in s)
         print("%s  n=%d  positions %s  gameable %.1f%%  topics %d  diagnosis %d/%d  leads %d"
               % (name, len(s), dict(sorted(pos.items())), gameable_pct(s),

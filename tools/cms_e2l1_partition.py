@@ -95,6 +95,20 @@ _bad = [q["q"][:60] for q in POOL
 assert not _bad, ("a correct answer states an absolute on a topic the speaker notes "
                   "explicitly hedge: %r" % _bad[:3])
 
+# ---- Guard 5: the differentiation she GUARANTEED will be on the exam -------
+# "Particularly your PINK EYE -- know the difference and how to differentiate
+#  those. That's definitely gonna be on your exam, AT LEAST TWO QUESTIONS
+#  MINIMUM. Haven't made those questions yet, but I guarantee you those are
+#  gonna be on the exam."
+# So every set must carry at least two questions that actually discriminate
+# between the conjunctivitis types, not merely mention one of them.
+_CONJ_TOPICS = {"Conjunctivitis", "Allergic conjunctivitis", "Viral conjunctivitis",
+                "Bacterial conjunctivitis", "Chlamydial conjunctivitis",
+                "Conjunctivitis type", "Conjunctivitis pattern"}
+_conj = [q for q in POOL if q["topic"] in _CONJ_TOPICS]
+assert len(_conj) >= 8, ("she guaranteed at least two pink-eye differentiation questions "
+                         "per set -- the pool needs enough to place them, found %d" % len(_conj))
+
 random.seed(20260826 + 21)
 MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
 
@@ -204,6 +218,12 @@ if __name__ == "__main__":
     for q in s1 + s2:
         assert q["opts"][q["c"]][0] == answer_text[id(q)], "rotation moved an answer!"
     print("rotation check: every correct answer still points at its own text\n")
+
+    for name, s in (("SET 1", s1), ("SET 2", s2)):
+        nconj = sum(1 for q in s if q["topic"] in _CONJ_TOPICS)
+        assert nconj >= 2, ("%s carries only %d conjunctivitis-differentiation questions; "
+                            "she guaranteed at least two on the exam" % (name, nconj))
+    print("pink-eye check: both sets carry the differentiation she guaranteed\n")
 
     for name, s in (("SET 1", s1), ("SET 2", s2)):
         pos = Counter(q["c"] for q in s)

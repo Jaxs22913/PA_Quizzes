@@ -114,6 +114,13 @@ BODY = """<main class="content">
   </div>
 
   <h3 class="sub" id="e2l1-approach">1.1 &middot; The red eye, before you name a diagnosis</h3>
+  <div class="callout warn">
+    <p><strong>She said she will not test this section.</strong> After finishing posterior uveitis
+    she moved on and said: <em>&ldquo;This is extra material. You can write that. I&rsquo;m not
+    going to pull test questions from this. This is not instructional objective.&rdquo;</em> It is
+    kept here because it is the most clinically useful part of the deck and it is on the slides
+    &mdash; but <b>no quiz question is built on it</b>. Read it for the ward, not for the exam.</p>
+  </div>
   <p>The single most transferable thing in this lecture is a sequence rather than a fact.
   <strong>Complete this before naming the diagnosis:</strong></p>
   <ol>
@@ -237,7 +244,18 @@ BODY = """<main class="content">
   antiplatelet or anticoagulant medication, hypertension. Blood under the conjunctiva, no pain,
   normal vision and pupil, clear cornea. <strong>History is the whole workup</strong>, and
   <strong>check the blood pressure if there is no explanation.</strong> Reassurance; resolves in
-  <b>2&ndash;4 weeks</b>. For recurrence, the notes ask for medication review, blood pressure and
+  <b>2&ndash;4 weeks</b>.</p>
+  <div class="callout">
+    <p><strong>The patient-education point she spent time on.</strong> The eye clears the way a
+    bruise does &mdash; red, then purplish, then brown, then <b>yellow</b>. Warn them about the
+    yellow stage: <em>&ldquo;there will be a point that they look like they&rsquo;re jaundiced
+    &hellip; so they don&rsquo;t come thinking that they&rsquo;re in liver failure. People do know
+    yellow eyes and liver failure, they seem to know that association.&rdquo;</em></p>
+    <p>And a general rule she gave alongside it: <b>anybody who comes in with any eye condition,
+    check their vision</b> &mdash; with their contacts or glasses in, because what you want to know
+    is whether it has <em>changed</em>.</p>
+  </div>
+  <p> For recurrence, the notes ask for medication review, blood pressure and
   targeted evaluation &mdash; <em>not</em> automatic haematology referral.</p>
 
   <p><strong>Chemosis</strong> is conjunctival swelling &mdash; a <em>sign</em>, not a diagnosis.
@@ -250,7 +268,7 @@ BODY = """<main class="content">
   findings do most of the sorting:</p>
   <table class="tbl">
     <tr><th>Finding</th><th>Appearance</th><th>Points to</th></tr>
-    <tr><td><b>Papillae</b></td><td>Red at the surface, paler at the base</td><td>Bacterial (except chlamydial), allergic</td></tr>
+    <tr><td><b>Papillae</b></td><td>Red at the surface, paler at the base &mdash; her analogy: <b>&ldquo;it almost looks like a strawberry&rdquo;</b></td><td>Bacterial (except chlamydial), allergic</td></tr>
     <tr><td><b>Follicles</b></td><td>Pale at the surface, redder at the base</td><td>Chlamydial, viral</td></tr>
     <tr><td><b>Preauricular node</b></td><td>&mdash;</td><td>Chlamydial, <b>gonococcal</b>, viral</td></tr>
   </table>
@@ -370,6 +388,8 @@ BODY = """<main class="content">
   painless full movements may be managed clinically <em>without</em> routine imaging.</p>
 
   <h3 class="sub" id="e2l1-disposition">1.11 &middot; Referral timing &mdash; explicit disposition</h3>
+  <p class="muted"><b>Same caveat as 1.1</b> &mdash; this table comes from the section she called
+  extra material and said she would not pull test questions from. Worth knowing; not examinable.</p>
   <table class="tbl">
     <tr><th>Urgency</th><th>Conditions</th></tr>
     <tr><td><b>EMERGENT &mdash; now</b></td><td>Chemical injury (irrigate first), open globe, acute angle closure, orbital cellulitis, endophthalmitis</td></tr>
