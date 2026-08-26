@@ -189,6 +189,8 @@ window.GROUP_INDEX = {
 "clinical-pathophysiology-i-exam-1-dermatology-pathophys-quiz-version-2":{"title":"Dermatology Pathophysiology Quiz 2 — Clinical Pathophysiology I Exam 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-inflammation-quiz":{"title":"Inflammation — Quiz 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-inflammation-quiz-version-2":{"title":"Inflammation — Quiz 2","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
+"clinical-pathophysiology-i-exam-1-ophthalmic-pathophys-quiz":{"title":"Ophthalmic Pathophysiology Quiz 1 — Clin Path I Exam 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
+"clinical-pathophysiology-i-exam-1-ophthalmic-pathophys-quiz-version-2":{"title":"Ophthalmic Pathophysiology Quiz 2 — Clin Path I Exam 1","category":"Clinical Pathophysiology I","sem":"fall-2026","n":30},
 "intro-to-pa-profession-pa-intro-comprehensive-quiz-a":{"title":"Intro to the PA Profession — Form A","category":"Intro to PA","sem":"summer-1-2026","n":60},
 "intro-to-pa-profession-pa-intro-comprehensive-quiz-b":{"title":"Intro to the PA Profession — Form B","category":"Intro to PA","sem":"summer-1-2026","n":60},
 "intro-to-pa-profession-pa-intro-comprehensive-quiz-c":{"title":"Intro to the PA Profession — Form C","category":"Intro to PA","sem":"summer-1-2026","n":60},
