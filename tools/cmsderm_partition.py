@@ -79,6 +79,20 @@ def build():
         assert len({x[0].strip().lower() for x in q["opts"]}) == 5, f"{key}:{qi} trim collided"
     print(f"correct answers trimmed of trailing descriptor: {len(trims)}")
 
+    splits = _load(os.path.join(HERE, "cmsderm_splitfix.py"), "SPLIT")
+    for (key, qi), spec in splits.items():
+        q = pools[key][qi]
+        parts = re.split(r"(?<=[.!?])\s+", q["q"].strip())
+        assert parts[-1].endswith("?"), f"{key}:{qi}"
+        q["q"] = " ".join(parts[:-1] + [spec["lead"]])
+        texts = spec["opts"]
+        assert len(texts) == 5 and len({t.lower() for t in texts}) == 5, f"{key}:{qi}"
+        q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(texts)]
+        for oi, e in spec.get("expl", {}).items():
+            assert oi != q["c"], f"{key}:{qi} split expl would overwrite the key"
+            q["opts"][oi][1] = e
+    print(f"two-part options split to a single concept: {len(splits)}")
+
     expl = _load(os.path.join(HERE, "cmsderm_explfix.py"), "EXPL")
     for (key, qi, oi), new_e in expl.items():
         q = pools[key][qi]
