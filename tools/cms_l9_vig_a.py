@@ -117,16 +117,23 @@ VIG_A = [
    c=0, cite=c(35)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="diagnosis",
-   q="A 59-year-old has an ivory-white, scar-like plaque on the cheek. He has had no injury there. On careful inspection the pink edge seems to extend further than the visible lesion. Which subtype is this, and what is the concern?",
+   # Same defect class as the squamous cell item in cms_l9_vig_d.py, found by scanning for it:
+   # the stem asked "and what is the concern?" while ALL FOUR options ended with the identical
+   # clause "which carries a higher risk of subclinical spread beyond the visible segment", so
+   # that half of the question decided nothing -- and it asserted of superficial, nodular and
+   # pigmented disease something that is only true of morpheaform.
+   q="A 59-year-old man has an ivory-white, scar-like plaque on his cheek with no injury to account for it. On careful inspection the pink edge appears to extend further than the visible lesion. Which subtype is this?",
    opts=[
-     ["Morpheaform or sclerosing basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment",
-      "Correct — the invisible extension is what makes it dangerous."],
-     ["Superficial basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment",
-      "Superficial disease is a reddish shiny plaque on back or chest."],
-     ["Nodular basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment",
-      "Nodular disease has a defined pearly border."],
-     ["Pigmented basal cell carcinoma, which carries a higher risk of subclinical spread beyond the visible segment",
-      "Pigmented disease mimics melanocytic lesions rather than scar."]],
+     ["Morpheaform basal cell carcinoma",
+      "Correct. A scar-like, ivory-white plaque with no injury to explain it is the morpheaform (sclerosing) subtype, and the "
+      "edge running past the visible lesion is the concern: it spreads subclinically beyond what you can see, which "
+      "is why it is an indication for Mohs micrographic surgery."],
+     ["Superficial basal cell carcinoma",
+      "Superficial disease is a reddish, shiny, scaly thin plaque, typically on the back or chest."],
+     ["Nodular basal cell carcinoma",
+      "Nodular disease is a pearly papule with a rolled border and central erosion, not a scar-like plaque."],
+     ["Pigmented basal cell carcinoma",
+      "Pigmented disease carries stippled pigment that mimics a melanocytic lesion rather than a scar."]],
    c=0, cite=c(35)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="test",

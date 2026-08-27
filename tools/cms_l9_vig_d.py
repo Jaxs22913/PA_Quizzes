@@ -57,16 +57,26 @@ VIG_D = [
    c=0, cite=c(13)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, lead="diagnosis",
-   q="A 69-year-old has an ulcer on the ear that has not healed in three months, with a firm indurated base. Which diagnosis should be excluded first, and which feature makes the site significant?",
+   # Reported 2026-08-27 as "worded wrong". It was: "Which diagnosis should be excluded
+   # first, and which feature makes the site significant?" -- "excluded" reads backwards,
+   # and the second ask was dead, because the correct answer and the basal cell distractor
+   # carried the SAME site clause verbatim. The actinic keratosis and Kaposi options also
+   # invented site claims the deck never makes. Now one ask, one concept per option, and
+   # the high-risk-site fact lives in the explanation where it belongs.
+   q="A 69-year-old man has an ulcer on his ear that has not healed in three months. The base is firm and indurated. Which is the most likely diagnosis?",
    opts=[
-     ["Squamous cell carcinoma — the ear is one of the named high-risk sites for recurrence and metastasis",
-      "Correct — a non-healing ulcer is one of its presentations."],
-     ["Basal cell carcinoma — the ear is one of the named high-risk sites for recurrence and metastasis",
-      "The ear is a high-risk site, but the non-healing indurated ulcer is the squamous pattern."],
-     ["Actinic keratosis — the ear is one of the named high-risk sites for progression",
-      "Ulceration and induration are explicitly not features of actinic keratosis."],
-     ["Kaposi sarcoma — the ear is one of the named high-risk sites for visceral spread",
-      "Kaposi lesions are red-purple macules, plaques or nodules."]],
+     ["Squamous cell carcinoma",
+      "Correct. A non-healing ulcer with an indurated base is one of the presentations the deck lists, and "
+      "induration is on its red-flag list. The ear is also one of its named high-risk sites — with mucosal "
+      "surfaces, lip, scalp, temple, nose and genitalia — all of which carry higher recurrence and metastatic risk."],
+     ["Basal cell carcinoma",
+      "Basal cell carcinoma is usually a pearly papule with telangiectasias and a rolled border. It can erode "
+      "centrally, but a firm, indurated, non-healing ulcer is the squamous pattern."],
+     ["Actinic keratosis",
+      "Ulceration and induration are not features of an actinic keratosis, which is a rough, sandpaper-like scaly "
+      "lesion. Induration developing in one is a sign it has progressed to squamous cell carcinoma."],
+     ["Kaposi sarcoma",
+      "Kaposi sarcoma appears as red or purple macules, plaques or nodules, not as a solitary indurated ulcer."]],
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, lead="treatment",
