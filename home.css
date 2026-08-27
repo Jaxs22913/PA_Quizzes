@@ -990,7 +990,7 @@
       flex-shrink: 0;
       transition: transform .25s var(--ease-spring);
     }
-    /* Quiz tags. "New" is self-expiring -- home.js removes it after TAG_DAYS,
+    /* Quiz tags. "New" is self-expiring -- home.js removes it after 3 days,
        because a New badge that never clears stops carrying information and
        eventually sits on everything. Colours reuse the existing accent tokens
        rather than introducing a hue (see [[site_design_tokens]]). */
