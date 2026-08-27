@@ -1427,3 +1427,32 @@ function buildHomeTourSteps() {
   document.getElementById("review-count").textContent = n;
   link.hidden = false;
 })();
+
+/* ---------------------------------------------------------------------------
+   Self-expiring "New" tags.
+
+   A quiz link may carry <span class="quiz-tag quiz-tag--new" data-added="YYYY-MM-DD">.
+   This drops it once it is older than TAG_DAYS, so the badge means "added
+   recently" rather than "added at some point". Without this every quiz ends up
+   permanently New and the tag tells the cohort nothing.
+
+   Dates are parsed as local midnight, not with new Date("YYYY-MM-DD"), which
+   parses as UTC and reads a day early west of Greenwich -- the same bug that
+   bit the Bulk Tracker weights (see [[bulking_tracker_pwa_gotchas]]).
+--------------------------------------------------------------------------- */
+(function () {
+  var TAG_DAYS = 21;
+  var tags = document.querySelectorAll(".quiz-tag--new[data-added]");
+  if (!tags.length) return;
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  tags.forEach(function (el) {
+    var p = (el.getAttribute("data-added") || "").split("-");
+    if (p.length !== 3) return;
+    var added = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (isNaN(added)) return;
+    var days = Math.floor((today - added) / 86400000);
+    if (days > TAG_DAYS) el.remove();
+  });
+})();
+

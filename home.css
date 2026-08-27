@@ -990,6 +990,26 @@
       flex-shrink: 0;
       transition: transform .25s var(--ease-spring);
     }
+    /* Quiz tags. "New" is self-expiring -- home.js removes it after TAG_DAYS,
+       because a New badge that never clears stops carrying information and
+       eventually sits on everything. Colours reuse the existing accent tokens
+       rather than introducing a hue (see [[site_design_tokens]]). */
+    .quiz-tag {
+      margin-left: auto;
+      flex-shrink: 0;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      line-height: 1.4;
+    }
+    .quiz-tag + .quiz-tag { margin-left: 6px; }
+    .quiz-tag--new     { background: var(--accent); color: #fff; }
+    .quiz-tag--updated { background: var(--accent-soft); color: var(--accent); border-color: var(--tab-border); }
+
     a.quiz-link:hover {
       background: var(--accent-soft);
       border-color: var(--accent);
