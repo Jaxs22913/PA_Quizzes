@@ -9,7 +9,7 @@ SRC = "3. svDerm, ENT, Ophtho.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOF = "Objective f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing"
+IOF = "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing"
 
 POOL_C = [
  dict(topic="Ophthalmic examination", io=IOF, slot="first-line",

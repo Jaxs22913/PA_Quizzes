@@ -17,8 +17,8 @@
 SRC = "2. General Dermatology I.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Anatomy of the integumentary system"
-IOC = "Objective c — Etiologies, manifestations, diagnosis and management of dermatological conditions"
+IOA = "a — Anatomy of the integumentary system"
+IOC = "c — Etiologies, manifestations, diagnosis and management of dermatological conditions"
 
 POOL_A = [
  dict(topic="Describing a rash", io=IOA,

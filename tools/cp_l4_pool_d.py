@@ -28,11 +28,11 @@ SRC = "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def au(): return "Lecture recording, 26 August 2026"
 
-IO6 = "Objective f — Describe the pathogenesis of glaucoma"
-IO8 = "Objective h — Compare and contrast the pathogenesis of retinal detachment"
-IO9 = "Objective i — Describe the pathologic process of macular degeneration"
-IO10 = "Objective j — Describe visual field deficits according to the area of pathology"
-IO3 = "Objective c — Describe the molecular mechanisms of common ocular pathologies"
+IO6 = "f — Describe the pathogenesis of glaucoma"
+IO8 = "h — Compare and contrast the pathogenesis of retinal detachment"
+IO9 = "i — Describe the pathologic process of macular degeneration"
+IO10 = "j — Describe visual field deficits according to the area of pathology"
+IO3 = "c — Describe the molecular mechanisms of common ocular pathologies"
 
 POOL_D = [
  # ---- glaucoma ----

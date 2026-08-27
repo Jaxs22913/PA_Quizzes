@@ -4,13 +4,13 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO9  = "Objective 9 — Antifungal classes"
-IO9A = "Objective 9a — Echinocandins"
-IO9B = "Objective 9b — Polyenes"
-IO9C = "Objective 9c — Azoles"
-IO9D = "Objective 9d — Allylamines"
-IO9E = "Objective 9e — Mitotic inhibitors"
-IO2  = "Objective 2 — Common modes of action of antimicrobial agents"
+IO9  = "9 — Antifungal classes"
+IO9A = "9a — Echinocandins"
+IO9B = "9b — Polyenes"
+IO9C = "9c — Azoles"
+IO9D = "9d — Allylamines"
+IO9E = "9e — Mitotic inhibitors"
+IO2  = "2 — Common modes of action of antimicrobial agents"
 
 POOL_D = [
  dict(topic="Azoles", io=IO9C,

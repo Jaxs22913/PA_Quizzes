@@ -15,10 +15,10 @@ def c(n): return f"{SRC}, Slide {n}"
 def ci(n): return f"{SRC}, Slide {n} (image only)"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOB1 = "Objective b(i) — Discuss the physiological role of sodium"
-IOB2 = "Objective b(ii) — Discuss the physiological role of potassium"
-IOB3 = "Objective b(iii) — Discuss the physiological role of chloride"
-IOB4 = "Objective b(iv) — Discuss the physiological role of bicarbonate"
+IOB1 = "b(i) — Discuss the physiological role of sodium"
+IOB2 = "b(ii) — Discuss the physiological role of potassium"
+IOB3 = "b(iii) — Discuss the physiological role of chloride"
+IOB4 = "b(iv) — Discuss the physiological role of bicarbonate"
 
 POOL_B = [
  # ---- sodium ----

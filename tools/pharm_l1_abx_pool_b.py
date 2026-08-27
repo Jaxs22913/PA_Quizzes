@@ -8,10 +8,10 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO4B = "Objective 4b — Cephalosporins"
-IO4C = "Objective 4c — Monobactams"
-IO4D = "Objective 4d — Carbapenems"
-IO4J = "Objective 4j — Glycopeptides & lipopeptides"
+IO4B = "4b — Cephalosporins"
+IO4C = "4c — Monobactams"
+IO4D = "4d — Carbapenems"
+IO4J = "4j — Glycopeptides & lipopeptides"
 
 POOL_B = [
  dict(topic="Cephalosporins", io=IO4B,

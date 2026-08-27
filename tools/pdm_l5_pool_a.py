@@ -18,8 +18,8 @@ def ci(n): return f"{SRC}, Slide {n} (image only)"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 def au(): return "Lecture recording, 26 August 2026"
 
-IOA = "Objective a — Explain the components of a chemistry panel"
-IOG = "Objective g — Discuss indications for ordering chemistry panels"
+IOA = "a — Explain the components of a chemistry panel"
+IOG = "g — Discuss indications for ordering chemistry panels"
 
 POOL_A = [
  dict(topic="What a chemistry panel is", io=IOA, slot="initial test",

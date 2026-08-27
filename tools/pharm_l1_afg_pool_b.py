@@ -8,11 +8,11 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO9  = "Objective 9 — Antifungal classes"
-IO9A = "Objective 9a — Echinocandins"
-IO9C = "Objective 9c — Azoles"
-IO9D = "Objective 9d — Allylamines"
-IO9E = "Objective 9e — Mitotic inhibitors"
+IO9  = "9 — Antifungal classes"
+IO9A = "9a — Echinocandins"
+IO9C = "9c — Azoles"
+IO9D = "9d — Allylamines"
+IO9E = "9e — Mitotic inhibitors"
 
 POOL_B = [
  dict(topic="Azoles", io=IO9C,

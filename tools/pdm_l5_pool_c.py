@@ -13,10 +13,10 @@ SRC = "5. Chemistry Panels, Renal Fxn, Elytes.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOB5 = "Objective b(v) — Discuss the physiological role of glucose"
-IOB6 = "Objective b(vi) — Discuss the physiological role of blood urea nitrogen"
-IOB7 = "Objective b(vii) — Discuss the physiological role of creatinine"
-IOC = "Objective c — Discuss basic liver function studies included in chemistry testing"
+IOB5 = "b(v) — Discuss the physiological role of glucose"
+IOB6 = "b(vi) — Discuss the physiological role of blood urea nitrogen"
+IOB7 = "b(vii) — Discuss the physiological role of creatinine"
+IOC = "c — Discuss basic liver function studies included in chemistry testing"
 
 POOL_C = [
  # ---- glucose ----

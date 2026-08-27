@@ -14,10 +14,10 @@
 SRC = "Abnormal Cell Growth for posting.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOC = "Objective c — Describe neoplastic abnormalities of cell growth"
-IOD = "Objective d — Compare and contrast the routes of tumor spread"
-IOE = "Objective e — Compare and contrast the different types of benign tumors according to origin"
-IOF = "Objective f — Compare and contrast the different types of malignant tumors according to origin"
+IOC = "c — Describe neoplastic abnormalities of cell growth"
+IOD = "d — Compare and contrast the routes of tumor spread"
+IOE = "e — Compare and contrast the different types of benign tumors according to origin"
+IOF = "f — Compare and contrast the different types of malignant tumors according to origin"
 
 POOL_B = [
  dict(topic="Benign vs malignant", io=IOC,

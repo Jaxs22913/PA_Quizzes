@@ -22,9 +22,9 @@ SRC = "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def au(): return "Lecture recording, 26 August 2026"
 
-IO4 = "Objective d — Compare and contrast the conditions caused by abnormal shapes of the eye"
-IO5 = "Objective e — Compare and contrast the conditions of the eye that are age related"
-IO7 = "Objective g — Describe the pathogenesis of cataracts"
+IO4 = "d — Compare and contrast the conditions caused by abnormal shapes of the eye"
+IO5 = "e — Compare and contrast the conditions of the eye that are age related"
+IO7 = "g — Describe the pathogenesis of cataracts"
 
 POOL_B = [
  dict(topic="Myopia", io=IO4, slot="etiology", kfe=True,

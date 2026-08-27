@@ -9,7 +9,7 @@
 SRC = "3. Dermatology  II.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions"
+IOA = "a — Etiologies, manifestations, diagnosis and management of dermatological conditions"
 
 POOL_C = [
  dict(topic="Stevens-Johnson syndrome", io=IOA,

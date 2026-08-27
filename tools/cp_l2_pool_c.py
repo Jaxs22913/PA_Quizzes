@@ -7,7 +7,7 @@
 SRC = "Pathophys Dermatology - Gopal 2026 SV.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOD = "Objective d — Molecular mechanisms of common dermatological conditions"
+IOD = "d — Molecular mechanisms of common dermatological conditions"
 
 POOL_C = [
  dict(topic="Vascular lesions", io=IOD,

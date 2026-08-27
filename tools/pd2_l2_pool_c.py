@@ -6,8 +6,8 @@
 SRC = "PD II Derm - Beck.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOD = "Objective d — Physical examination findings of abnormal conditions of skin, hair and nails"
-IOE = "Objective e — Clinical skills for a complete and focused skin examination"
+IOD = "d — Physical examination findings of abnormal conditions of skin, hair and nails"
+IOE = "e — Clinical skills for a complete and focused skin examination"
 
 POOL_C = [
  dict(topic="Vascular lesions", io=IOE,

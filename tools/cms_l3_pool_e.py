@@ -26,7 +26,7 @@
 SRC = "3. Dermatology  II.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Etiologies, manifestations, diagnosis and management of dermatological conditions"
+IOA = "a — Etiologies, manifestations, diagnosis and management of dermatological conditions"
 
 POOL_E = [
  dict(topic="Acne rosacea", io=IOA, slot="first-line",

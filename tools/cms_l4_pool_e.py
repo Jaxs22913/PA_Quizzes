@@ -11,8 +11,8 @@ REC = "2026-08-19 lecture recording"
 def c(n): return f"{SRC}, Slide {n}"
 def r(t): return f"{REC}, {t}"
 
-IOA = "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections"
-IOB = "Objectives b, c & d — MRSA, primary versus secondary infection, and care across the age range"
+IOA = "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections"
+IOB = "b, c & d — MRSA, primary versus secondary infection, and care across the age range"
 
 POOL_E = [
  dict(topic="Acne vulgaris", io=IOA, slot="first-line",

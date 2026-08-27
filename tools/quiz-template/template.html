@@ -315,6 +315,17 @@
 <script>
 const QUESTIONS = __QUESTIONS_JSON__;
 const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  return /^objectives?\b/i.test(io) ? io : "Objective " + io;
+}
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
 let crossedOut = {};
@@ -679,7 +690,7 @@ function renderQ(){
   // the explanation, where it is useful for looking the condition up.
   var _tp = document.getElementById('qtopic');
   _tp.textContent = ''; _tp.style.display = 'none';
-  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qio').textContent = ioLabel(q.io);
   document.getElementById('qtext').textContent = q.q;
   document.getElementById('prevbtn').disabled = (idx===0);
 

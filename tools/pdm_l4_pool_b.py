@@ -18,10 +18,10 @@ SRC = "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def ci(n): return f"{SRC}, Slide {n} (image only)"
 
-IOB = "Objective b — Explain the difference between hemoglobin and hematocrit"
-IOC = "Objective c — Discuss red blood cell indices"
-IOD = "Objective d — Calculate absolute white blood cell counts"
-IOE3 = "Objective e(iii) — Discuss the clinical significance of abnormalities in platelets"
+IOB = "b — Explain the difference between hemoglobin and hematocrit"
+IOC = "c — Discuss red blood cell indices"
+IOD = "d — Calculate absolute white blood cell counts"
+IOE3 = "e(iii) — Discuss the clinical significance of abnormalities in platelets"
 
 POOL_B = [
  dict(topic="Absolute counts", io=IOD, slot="test finding",

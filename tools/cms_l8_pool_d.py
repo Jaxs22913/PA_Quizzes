@@ -8,8 +8,8 @@
 SRC = "CMS I Pigmented Skin Lesions - Shahsv-2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions"
-IOB = "Objective b — Medical care strategies for pigmented skin lesions in adult and elderly populations"
+IOA = "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of pigmented skin lesions"
+IOB = "b — Medical care strategies for pigmented skin lesions in adult and elderly populations"
 
 POOL_D = [
  dict(topic="Ephelides", io=IOA, slot="etiology",

@@ -6,9 +6,9 @@
 SRC = "6. Fungal and Viral Skin Infections - Jaquith.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Interpret a potassium hydroxide (KOH) wet mount preparation"
-IOB = "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections"
-IOC = "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations"
+IOA = "a — Interpret a potassium hydroxide (KOH) wet mount preparation"
+IOB = "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections"
+IOC = "c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations"
 
 POOL_C = [
  dict(topic="Onychomycosis", io=IOB, slot="etiology",

@@ -18,7 +18,7 @@ def c(n): return f"{SRC}, Slide {n}"
 def ci(n): return f"{SRC}, Slide {n} (image only)"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOE1 = "Objective e(i) — Discuss the clinical significance of abnormalities in red blood cells"
+IOE1 = "e(i) — Discuss the clinical significance of abnormalities in red blood cells"
 
 POOL_C = [
  dict(topic="Morphology framework", io=IOE1, slot="first-line",

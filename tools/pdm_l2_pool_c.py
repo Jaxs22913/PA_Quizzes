@@ -13,11 +13,11 @@
 SRC = "2. svPrinciples of Medical Imaging.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOC = "Objective c — Discuss anatomical structures best visualized by each imaging modality"
-IOE = "Objective e — Discuss the importance of patient positioning in medical imaging"
-IOG = "Objective g — Compare and contrast the risks and benefits associated with contrast administration"
-IOH = "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities"
-IOI = "Objective i — Discuss the importance of communication between the physician assistant and radiology team"
+IOC = "c — Discuss anatomical structures best visualized by each imaging modality"
+IOE = "e — Discuss the importance of patient positioning in medical imaging"
+IOG = "g — Compare and contrast the risks and benefits associated with contrast administration"
+IOH = "h — Discuss contraindications and safety considerations of commonly used imaging modalities"
+IOI = "i — Discuss the importance of communication between the physician assistant and radiology team"
 
 POOL_C = [
  dict(topic="Positioning", io=IOE, slot="manifestation",

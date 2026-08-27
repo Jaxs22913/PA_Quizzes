@@ -19,9 +19,9 @@ def c(n): return f"{SRC}, Slide {n}"
 def ci(n): return f"{SRC}, Slide {n} (image only)"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOA = "Objective a — Explain the components of a complete blood count"
-IOE2 = "Objective e(ii) — Discuss the clinical significance of abnormalities in white blood cells"
-IOF = "Objective f — Discuss indications for ordering a complete blood count"
+IOA = "a — Explain the components of a complete blood count"
+IOE2 = "e(ii) — Discuss the clinical significance of abnormalities in white blood cells"
+IOF = "f — Discuss indications for ordering a complete blood count"
 
 POOL_A = [
  dict(topic="What a CBC is", io=IOA, slot="first-line",

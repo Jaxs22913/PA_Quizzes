@@ -11,8 +11,8 @@
 SRC = "Pathophys Dermatology - Gopal 2026 SV.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Anatomy of the integumentary system"
-IOB = "Objective b — Pathophysiology of primary skin lesions"
+IOA = "a — Anatomy of the integumentary system"
+IOB = "b — Pathophysiology of primary skin lesions"
 
 POOL_A = [
  dict(topic="Skin functions", io=IOA,

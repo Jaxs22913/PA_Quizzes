@@ -15,10 +15,10 @@
 SRC = "Abnormal Cell Growth for posting.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Describe the molecular mechanisms of abnormal cell growth and differentiation"
-IOB = "Objective b — Describe non-neoplastic abnormalities of cell growth"
-IOC = "Objective c — Describe neoplastic abnormalities of cell growth"
-IOK = "Objective k — Describe the histological grading of cancer"
+IOA = "a — Describe the molecular mechanisms of abnormal cell growth and differentiation"
+IOB = "b — Describe non-neoplastic abnormalities of cell growth"
+IOC = "c — Describe neoplastic abnormalities of cell growth"
+IOK = "k — Describe the histological grading of cancer"
 
 POOL_A = [
  dict(topic="Agenesis", io=IOB,

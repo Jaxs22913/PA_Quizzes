@@ -15,7 +15,7 @@ SRC = "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def au(): return "Lecture recording, 26 August 2026"
 
-IO3 = "Objective c — Describe the molecular mechanisms of common ocular pathologies"
+IO3 = "c — Describe the molecular mechanisms of common ocular pathologies"
 
 POOL_C = [
  dict(topic="Where the -itis is", io=IO3, slot="etiology",

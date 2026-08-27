@@ -12,7 +12,7 @@ SRC = "3. svDerm, ENT, Ophtho.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOG = "Objective g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry"
+IOG = "g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry"
 
 POOL_D = [
  dict(topic="Rapid strep testing", io=IOG, slot="initial test",

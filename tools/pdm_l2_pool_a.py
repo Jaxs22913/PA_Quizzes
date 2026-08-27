@@ -21,10 +21,10 @@
 SRC = "2. svPrinciples of Medical Imaging.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Identify the fundamental properties of medical imaging"
-IOB = "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies"
-IOD = "Objective d — Compare and contrast the concepts of radiographic density and contrast"
-IOF = "Objective f — Compare and contrast the risks and benefits associated with radiation exposure"
+IOA = "a — Identify the fundamental properties of medical imaging"
+IOB = "b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies"
+IOD = "d — Compare and contrast the concepts of radiographic density and contrast"
+IOF = "f — Compare and contrast the risks and benefits associated with radiation exposure"
 
 POOL_A = [
  dict(topic="History", io=IOA, slot="etiology",

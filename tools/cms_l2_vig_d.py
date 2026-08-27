@@ -11,7 +11,7 @@
 SRC = "2. General Dermatology I.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOC = "Objective c — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological conditions"
+IOC = "c — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological conditions"
 
 POOL_D = [
  dict(topic="Stasis dermatitis", io=IOC,

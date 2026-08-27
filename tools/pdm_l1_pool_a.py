@@ -14,10 +14,10 @@
 SRC = "1. Principles of Laboratory Diagnostics sv.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Importance and role of laboratory testing in evaluating a patient"
-IOB = "Objective b — Patient counseling for diagnostic testing to reduce medical errors"
-IOC = "Objective c — Phases of the diagnostic testing process"
-IOD = "Objective d — Components of the pretest, intratest and posttest phases"
+IOA = "a — Importance and role of laboratory testing in evaluating a patient"
+IOB = "b — Patient counseling for diagnostic testing to reduce medical errors"
+IOC = "c — Phases of the diagnostic testing process"
+IOD = "d — Components of the pretest, intratest and posttest phases"
 
 POOL_A = [
  dict(topic="Role of testing", io=IOA,

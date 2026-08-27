@@ -17,8 +17,8 @@
 SRC = "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions"
-IOB = "Objective b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly"
+IOA = "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions"
+IOB = "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly"
 
 POOL_A = [
  dict(topic="Clavus (corn)", io=IOA, slot="etiology",

@@ -8,10 +8,10 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO1 = "Objective 1 — Categorizations of antimicrobial drugs"
-IO2 = "Objective 2 — Common modes of action of antimicrobial agents"
-IO3 = "Objective 3 — Bacteriostatic versus bactericidal"
-IO4A = "Objective 4a — Penicillins"
+IO1 = "1 — Categorizations of antimicrobial drugs"
+IO2 = "2 — Common modes of action of antimicrobial agents"
+IO3 = "3 — Bacteriostatic versus bactericidal"
+IO4A = "4a — Penicillins"
 
 POOL_A = [
  dict(topic="Principles", io=IO3,

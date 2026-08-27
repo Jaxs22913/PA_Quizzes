@@ -7,9 +7,9 @@
 SRC = "PD II Derm - Beck.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Review the anatomical structure and function of the skin"
-IOC = "Objective c — Elements of the history that identify skin, hair and nail disorders"
-IOE = "Objective e — Clinical skills for a complete and focused skin examination"
+IOA = "a — Review the anatomical structure and function of the skin"
+IOC = "c — Elements of the history that identify skin, hair and nail disorders"
+IOE = "e — Clinical skills for a complete and focused skin examination"
 
 POOL_A = [
  dict(topic="Structure and function", io=IOA,

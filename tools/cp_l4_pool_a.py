@@ -21,8 +21,8 @@ SRC = "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def ci(n): return f"{SRC}, Slide {n} (image only)"
 
-IO1 = "Objective a — Compare and contrast the neurological anatomy of the eye"
-IO2 = "Objective b — Describe the physiological processes of vision"
+IO1 = "a — Compare and contrast the neurological anatomy of the eye"
+IO2 = "b — Describe the physiological processes of vision"
 
 POOL_A = [
  dict(topic="Unique features of the eye", io=IO1, slot="etiology",

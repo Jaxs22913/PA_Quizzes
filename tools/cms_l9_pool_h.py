@@ -27,7 +27,7 @@
 SRC = "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO = "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions"
+IO = "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions"
 
 POOL_H = [
  dict(topic="Squamous cell carcinoma", io=IO, slot="initial test",

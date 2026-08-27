@@ -18,11 +18,11 @@ REC = "2026-08-20 lecture recording"
 def c(n): return f"{SRC}, Slide {n}"
 def r(t): return f"{REC}, {t}"
 
-IOA = "Objective a — Describe the molecular mechanisms of abnormal cell growth and differentiation"
-IOB = "Objective b — Describe non-neoplastic abnormalities of cell growth"
-IOD = "Objective d — Compare and contrast the routes of tumor spread"
-IOF = "Objective f — Compare and contrast the different types of malignant tumors according to origin"
-IOK = "Objective k — Describe the histological grading of cancer"
+IOA = "a — Describe the molecular mechanisms of abnormal cell growth and differentiation"
+IOB = "b — Describe non-neoplastic abnormalities of cell growth"
+IOD = "d — Compare and contrast the routes of tumor spread"
+IOF = "f — Compare and contrast the different types of malignant tumors according to origin"
+IOK = "k — Describe the histological grading of cancer"
 
 POOL_D = [
  dict(topic="Metaplasia", io=IOB,

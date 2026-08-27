@@ -3,8 +3,8 @@
 # Set 2 has enough distinct stems for two 30-question forms without overlap.
 SRC = "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx"
 def c(n): return f"{SRC}, Slide {n}"
-IOA = "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions"
-IOB = "Objective 11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations"
+IOA = "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions"
+IOB = "11 — Identify medical care strategies for pre-malignant and malignant cutaneous lesions for adult and elderly populations"
 
 VIG_D = [
  dict(topic="Clinical approach", io=IOA, lead="next step",

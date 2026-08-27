@@ -15,11 +15,11 @@ REC = "2026-08-19 lecture recording"
 def c(n): return f"{SRC}, Slide {n}"
 def r(t): return f"{REC}, {t}"
 
-IOB = "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies"
-IOC = "Objective c — Discuss anatomical structures best visualized by each imaging modality"
-IOE = "Objective e — Discuss the importance of patient positioning in medical imaging"
-IOG = "Objective g — Compare and contrast the risks and benefits associated with contrast administration"
-IOH = "Objective h — Discuss contraindications and safety considerations of commonly used imaging modalities"
+IOB = "b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies"
+IOC = "c — Discuss anatomical structures best visualized by each imaging modality"
+IOE = "e — Discuss the importance of patient positioning in medical imaging"
+IOG = "g — Compare and contrast the risks and benefits associated with contrast administration"
+IOH = "h — Discuss contraindications and safety considerations of commonly used imaging modalities"
 
 POOL_E = [
  dict(topic="Positioning", io=IOE, slot="test finding",

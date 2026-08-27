@@ -7,10 +7,10 @@
 SRC = "4.  Cutaneous Bacterial Infections.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections"
-IOB = "Objective b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections"
-IOC = "Objective c — Differentiate primary from secondary bacterial infection of the skin"
-IOD = "Objective d — Medical care strategies across infant, adolescent, adult and elderly populations"
+IOA = "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections"
+IOB = "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections"
+IOC = "c — Differentiate primary from secondary bacterial infection of the skin"
+IOD = "d — Medical care strategies across infant, adolescent, adult and elderly populations"
 
 POOL_B = [
  dict(topic="Hidradenitis suppurativa", io=IOA,

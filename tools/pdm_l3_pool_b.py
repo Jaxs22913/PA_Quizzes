@@ -12,9 +12,9 @@
 SRC = "3. svDerm, ENT, Ophtho.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOB = "Objective b — Describe indications for skin cultures and wound cultures"
-IOD = "Objective d — Discuss indications for skin biopsy and common biopsy techniques"
-IOE = "Objective e — Discuss the role of diagnostic testing in evaluation of soft tissue infections and abscesses"
+IOB = "b — Describe indications for skin cultures and wound cultures"
+IOD = "d — Discuss indications for skin biopsy and common biopsy techniques"
+IOE = "e — Discuss the role of diagnostic testing in evaluation of soft tissue infections and abscesses"
 
 POOL_B = [
  dict(topic="Skin biopsy", io=IOD, slot="initial test",

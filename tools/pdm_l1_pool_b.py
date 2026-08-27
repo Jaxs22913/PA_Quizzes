@@ -14,10 +14,10 @@
 SRC = "1. Principles of Laboratory Diagnostics sv.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOE = "Objective e — Colored laboratory collection tubes and their corresponding tests"
-IOF = "Objective f — Purpose and appropriate use of stool, throat, sputum and blood studies"
-IOG = "Objective g — Definition of point-of-care testing"
-IOH = "Objective h — Common point-of-care tests in primary care and acute care"
+IOE = "e — Colored laboratory collection tubes and their corresponding tests"
+IOF = "f — Purpose and appropriate use of stool, throat, sputum and blood studies"
+IOG = "g — Definition of point-of-care testing"
+IOH = "h — Common point-of-care tests in primary care and acute care"
 
 POOL_B = [
  dict(topic="Collection tubes", io=IOE,

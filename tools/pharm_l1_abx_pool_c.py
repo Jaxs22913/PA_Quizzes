@@ -12,16 +12,16 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO4E = "Objective 4e — Macrolides/ketolides"
-IO4F = "Objective 4f — Lincosamides"
-IO4H = "Objective 4h — Tetracyclines"
-IO4I = "Objective 4i — Aminoglycosides"
-IO4K = "Objective 4k — Fluoroquinolones"
-IO4L = "Objective 4l — Oxazolidinones"
-IO4M = "Objective 4m — Polypeptides"
-IO4N = "Objective 4n — Folate synthesis inhibitors"
-IO4O = "Objective 4o — Nitroimidazoles"
-IO2 = "Objective 2 — Common modes of action of antimicrobial agents"
+IO4E = "4e — Macrolides/ketolides"
+IO4F = "4f — Lincosamides"
+IO4H = "4h — Tetracyclines"
+IO4I = "4i — Aminoglycosides"
+IO4K = "4k — Fluoroquinolones"
+IO4L = "4l — Oxazolidinones"
+IO4M = "4m — Polypeptides"
+IO4N = "4n — Folate synthesis inhibitors"
+IO4O = "4o — Nitroimidazoles"
+IO2 = "2 — Common modes of action of antimicrobial agents"
 
 POOL_C = [
  dict(topic="Protein synthesis", io=IO2,

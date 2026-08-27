@@ -14,10 +14,10 @@
 SRC = "Intro to PD II - Elwaya .pdf"
 def c(n): return f"{SRC}, Page {n}"
 
-IOC = "Objective c — Clinical reasoning in oral presentations"
-IOE = "Objective e — Comprehensive versus focused history and examination"
-IOG = "Objective g — Documentation of a complete history and physical examination"
-IOH = "Objective h — Involving the patient in healthcare communication"
+IOC = "c — Clinical reasoning in oral presentations"
+IOE = "e — Comprehensive versus focused history and examination"
+IOG = "g — Documentation of a complete history and physical examination"
+IOH = "h — Involving the patient in healthcare communication"
 
 POOL_A = [
  dict(topic="Oral presentation", io=IOC,

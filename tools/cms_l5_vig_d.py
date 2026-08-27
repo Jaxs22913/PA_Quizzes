@@ -14,9 +14,9 @@
 SRC = "CMS I Dermatological Infestations - Shahsv.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOA = "Objective a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations"
-IOB = "Objective b — Differentiate primary from secondary skin lesions"
-IOC = "Objective c — Medical care strategies across infant, child, adolescent, adult and elderly populations"
+IOA = "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis of dermatological infestations"
+IOB = "b — Differentiate primary from secondary skin lesions"
+IOC = "c — Medical care strategies across infant, child, adolescent, adult and elderly populations"
 
 POOL_D = [
  dict(topic="Scabies", io=IOA,

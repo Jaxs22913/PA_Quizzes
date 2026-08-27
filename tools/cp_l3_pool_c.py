@@ -22,11 +22,11 @@
 SRC = "Abnormal Cell Growth for posting.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOG = "Objective g — Compare and contrast the categories of gene alterations in carcinogenesis"
-IOH = "Objective h — Describe the steps of chemical carcinogenesis"
-IOI = "Objective i — Describe microorganisms' role in carcinogenesis"
-IOJ = "Objective j — Compare and contrast the theories of heredity and carcinogenesis"
-IOL = "Objective l — Describe the tumor, nodes, metastases (TNM) staging system"
+IOG = "g — Compare and contrast the categories of gene alterations in carcinogenesis"
+IOH = "h — Describe the steps of chemical carcinogenesis"
+IOI = "i — Describe microorganisms' role in carcinogenesis"
+IOJ = "j — Compare and contrast the theories of heredity and carcinogenesis"
+IOL = "l — Describe the tumor, nodes, metastases (TNM) staging system"
 
 POOL_C = [
  dict(topic="Carcinogenesis", io=IOG,

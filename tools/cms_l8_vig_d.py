@@ -21,8 +21,8 @@
 # fifth time tests nothing.
 SRC = "CMS I Pigmented Skin Lesions - Shahsv-2.pptx"
 def c(n): return f"{SRC}, Slide {n}"
-IOA = "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic), appropriate referrals, patient education, and prognosis of pigmented skin lesions"
-IOB = "Objective 11 — Identify medical care strategies for pigmented skin lesions for adult and elderly populations"
+IOA = "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic), appropriate referrals, patient education, and prognosis of pigmented skin lesions"
+IOB = "11 — Identify medical care strategies for pigmented skin lesions for adult and elderly populations"
 
 VIG_D = [
  dict(topic="Ephelides", io=IOA, lead="treatment",

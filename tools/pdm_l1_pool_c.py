@@ -16,13 +16,13 @@
 SRC = "1. Principles of Laboratory Diagnostics sv.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOI = "Objective i — Qualitative versus quantitative diagnostic tests"
-IOJ = "Objective j — Availability, advantages and limitations of point-of-care testing"
-IOK = "Objective k — Quality assurance measures for point-of-care testing"
-IOL = "Objective l — Accreditation and regulatory considerations"
-IOM = "Objective m — Sensitivity, specificity, positive and negative predictive value"
-ION = "Objective n — Screening versus diagnostic tests"
-IOO = "Objective o — Pretest and posttest probability"
+IOI = "i — Qualitative versus quantitative diagnostic tests"
+IOJ = "j — Availability, advantages and limitations of point-of-care testing"
+IOK = "k — Quality assurance measures for point-of-care testing"
+IOL = "l — Accreditation and regulatory considerations"
+IOM = "m — Sensitivity, specificity, positive and negative predictive value"
+ION = "n — Screening versus diagnostic tests"
+IOO = "o — Pretest and posttest probability"
 
 POOL_C = [
  dict(topic="Qualitative vs quantitative", io=IOI,

@@ -32,7 +32,7 @@ Correct answer first (c=0); distractors written to the answer's shape.
 """
 SRC = "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx"
 def c(n): return f"{SRC}, Slide {n}"
-IOA = "Objective 1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions"
+IOA = "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions"
 
 POOL_F = [
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",

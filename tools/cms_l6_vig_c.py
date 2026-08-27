@@ -9,8 +9,8 @@
 SRC = "6. Fungal and Viral Skin Infections - Jaquith.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOB = "Objective b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections"
-IOC = "Objective c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations"
+IOB = "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections"
+IOC = "c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations"
 
 VIG_C = [
  dict(topic="Varicella", io=IOC, lead="diagnosis",

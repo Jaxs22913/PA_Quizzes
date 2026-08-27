@@ -21,8 +21,8 @@ def c(n): return f"{SRC}, Slide {n}"
 def ci(n): return f"{SRC}, Slide {n} (image only)"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOG = "Objective g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia"
-IOH = "Objective h — Compare and contrast laboratory tests used in the evaluation of anemia"
+IOG = "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia"
+IOH = "h — Compare and contrast laboratory tests used in the evaluation of anemia"
 
 POOL_D = [
  dict(topic="Classifying anemia", io=IOG, slot="first-line",

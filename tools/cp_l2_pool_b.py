@@ -6,7 +6,7 @@
 SRC = "Pathophys Dermatology - Gopal 2026 SV.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOC = "Objective c — Pathophysiology of secondary skin lesions"
+IOC = "c — Pathophysiology of secondary skin lesions"
 
 POOL_B = [
  dict(topic="Secondary lesions", io=IOC,

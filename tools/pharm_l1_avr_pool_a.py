@@ -10,10 +10,10 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO5 = "Objective 5 — Antiviral classes"
-IO6 = "Objective 6 — Anti-herpes agents"
-IO7 = "Objective 7 — Anti-cytomegalovirus agents"
-IO8 = "Objective 8 — Anti-influenza agents"
+IO5 = "5 — Antiviral classes"
+IO6 = "6 — Anti-herpes agents"
+IO7 = "7 — Anti-cytomegalovirus agents"
+IO8 = "8 — Anti-influenza agents"
 
 POOL_A = [
  dict(topic="Principles", io=IO5,

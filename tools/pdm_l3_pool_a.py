@@ -20,8 +20,8 @@ SRC = "3. svDerm, ENT, Ophtho.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOA = "Objective a — Discuss indications, advantages, and limitations of common diagnostic tests used in dermatologic disorders"
-IOC = "Objective c — Interpret potassium hydroxide (KOH) preparations"
+IOA = "a — Discuss indications, advantages, and limitations of common diagnostic tests used in dermatologic disorders"
+IOC = "c — Interpret potassium hydroxide (KOH) preparations"
 
 POOL_A = [
  dict(topic="Diagnostic approach", io=IOA, slot="first-line",

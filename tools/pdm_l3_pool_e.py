@@ -15,11 +15,11 @@ SRC = "3. svDerm, ENT, Ophtho.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 
-IOH = "Objective h — Compare and contrast CT and MRI applications in head and neck pathology"
-IOI = "Objective i — Select appropriate imaging studies for common ophthalmologic and ENT disorders"
-IOJ = "Objective j — Identify common abnormalities of the orbit, sinuses, and neck on diagnostic imaging"
-IOK = "Objective k — Discuss imaging evaluation of neck masses and deep neck infections"
-IOL = "Objective l — Apply diagnostic test selection principles to common dermatologic, ophthalmologic, and otolaryngologic presentations"
+IOH = "h — Compare and contrast CT and MRI applications in head and neck pathology"
+IOI = "i — Select appropriate imaging studies for common ophthalmologic and ENT disorders"
+IOJ = "j — Identify common abnormalities of the orbit, sinuses, and neck on diagnostic imaging"
+IOK = "k — Discuss imaging evaluation of neck masses and deep neck infections"
+IOL = "l — Apply diagnostic test selection principles to common dermatologic, ophthalmologic, and otolaryngologic presentations"
 
 POOL_E = [
  dict(topic="CT versus MRI", io=IOH, slot="first-line",

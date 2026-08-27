@@ -20,11 +20,11 @@ def c(n): return f"{SRC}, Slide {n}"
 def cn(n): return f"{SRC}, Slide {n} (speaker notes)"
 def au(): return "Lecture recording, 26 August 2026"
 
-IOD = "Objective d — Interpret abnormal chemistry values and their clinical significance"
-IOE = "Objective e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders"
-IOF = "Objective f — Explain the relationship between electrolyte abnormalities and acid-base disorders"
-IOH = "Objective h — Correlate chemistry findings with other diagnostic modalities when appropriate"
-IOI = "Objective i — Explain laboratory evaluation of fluid and electrolyte homeostasis"
+IOD = "d — Interpret abnormal chemistry values and their clinical significance"
+IOE = "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders"
+IOF = "f — Explain the relationship between electrolyte abnormalities and acid-base disorders"
+IOH = "h — Correlate chemistry findings with other diagnostic modalities when appropriate"
+IOI = "i — Explain laboratory evaluation of fluid and electrolyte homeostasis"
 
 POOL_D = [
  # ---- hepatic patterns (objective d/e) ----

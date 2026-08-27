@@ -28,8 +28,9 @@ What it checks, and why each one is here:
                is a real bug that has now happened twice.
   DIAGNOSIS    about a quarter pure diagnosis.
   CITE         every question cites its slide.
-  IO PREFIX    the engine prepends "Objective ", so a stored io starting with
-               "Objective" renders as "Objective Objective a - ...".
+  (The io-prefix check was retired on 2026-08-27: the engine's ioLabel() no
+   longer double-prefixes, and the 2,075 affected Semester 2 questions were
+   repaired, so a stored prefix is no longer a rendering defect.)
 
 Legacy quizzes predate all of this and are reported, never failed: --new limits
 the run to files carrying a New tag, which is what a fresh build looks like.
@@ -165,9 +166,6 @@ def check(path, qs, html):
 
     if sum(1 for q in qs if not q.get("cite")):
         soft.append("some questions carry no slide citation")
-
-    if sum(1 for q in qs if str(q.get("io", "")).startswith("Objective")):
-        soft.append('io starts with "Objective" -- renders as "Objective Objective ..."')
 
     return hard, soft
 

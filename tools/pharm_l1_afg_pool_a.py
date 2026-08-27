@@ -7,9 +7,9 @@
 SRC = "Antibiotics, Antivirals, and Antifungals.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IO9  = "Objective 9 — Antifungal classes"
-IO9B = "Objective 9b — Polyenes"
-IO2  = "Objective 2 — Common modes of action of antimicrobial agents"
+IO9  = "9 — Antifungal classes"
+IO9B = "9b — Polyenes"
+IO2  = "2 — Common modes of action of antimicrobial agents"
 
 POOL_A = [
  dict(topic="Fungal biology", io=IO2,

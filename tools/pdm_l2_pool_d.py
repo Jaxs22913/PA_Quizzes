@@ -28,10 +28,10 @@
 SRC = "2. svPrinciples of Medical Imaging.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
-IOB = "Objective b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies"
-IOD = "Objective d — Compare and contrast the concepts of radiographic density and contrast"
-IOE = "Objective e — Discuss the importance of patient positioning in medical imaging"
-IOF = "Objective f — Compare and contrast the risks and benefits associated with radiation exposure"
+IOB = "b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies"
+IOD = "d — Compare and contrast the concepts of radiographic density and contrast"
+IOE = "e — Discuss the importance of patient positioning in medical imaging"
+IOF = "f — Compare and contrast the risks and benefits associated with radiation exposure"
 
 POOL_D = [
  dict(topic="Hounsfield units", io=IOD, slot="manifestation",
