@@ -24,6 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FORMS = ["A", "B", "C", "D", "E"]
 PER_FORM = 65
+DIAG_PER_FORM = 16          # about a quarter, per Jaxon 2026-08-27
 SEED = 20260826
 
 MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
@@ -71,6 +72,13 @@ def build():
         q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(texts)]
     print(f"option sets cut to reference length: {len(short)}  (lead-ins narrowed: {len(leads)})")
 
+    trims = _load(os.path.join(HERE, "cmsderm_shortfix.py"), "TRIM")
+    for (key, qi, oi), t in trims.items():
+        q = pools[key][qi]
+        q["opts"][oi][0] = t
+        assert len({x[0].strip().lower() for x in q["opts"]}) == 5, f"{key}:{qi} trim collided"
+    print(f"correct answers trimmed of trailing descriptor: {len(trims)}")
+
     expl = _load(os.path.join(HERE, "cmsderm_explfix.py"), "EXPL")
     for (key, qi, oi), new_e in expl.items():
         q = pools[key][qi]
@@ -85,6 +93,11 @@ def build():
     _ = fixes
 
 
+    # The diagnosis pool joins here, BEFORE the option permutation. Loading it
+    # after meant its 66 questions kept the correct answer in position A, which
+    # skewed every form toward A -- the [[answer_position_bias_check]] bug, twice.
+    diag_extra = _load(os.path.join(HERE, "cmsderm_diag_pool.py"), "QUESTIONS")
+    pools["diag"] = diag_extra
     flat = [(k, i, q) for k, v in pools.items() for i, q in enumerate(v)]
     vig = [q for _, _, q in flat if re.match(r"A(n)? \d+-(year|month|week|day)-old|A newborn|The mother of a \d+", q["q"])]
     print(f"patient vignettes: {len(vig)}/{len(flat)} = {len(vig)/len(flat):.0%}")
@@ -108,26 +121,40 @@ def build():
     assert after == before, "permutation must not change the length-bias count"
     print("answer positions:", dict(collections.Counter("ABCDE"[q["c"]] for _, _, q in flat)))
 
-    # --- stratified partition, no repeats ---
-    by_pool = collections.defaultdict(list)
-    for k, i, q in flat:
-        by_pool[k].append(q)
-    for k in by_pool:
-        rng.shuffle(by_pool[k])
+    # --- partition: a quarter of every form is pure diagnosis ---
+    # Jaxon asked for about 1/4 pure-diagnosis per form. The lecture pools only
+    # yielded 21 such items between them, so cmsderm_diag_pool.py supplies the
+    # rest. DIAG_PER_FORM is enforced as a quota rather than left to chance,
+    # because stratifying by lecture alone gave forms with as few as one.
+    DIAG_RE = re.compile(r"most likely diagnosis|what is the diagnosis", re.I)
 
-    total = sum(len(v) for v in by_pool.values())
-    quota = {k: round(len(v) / total * PER_FORM) for k, v in by_pool.items()}
+    diag, rest_by_pool = [], collections.defaultdict(list)
+    for k, i, q in flat:
+        (diag if DIAG_RE.search(q["q"]) else rest_by_pool[k]).append(q)
+    rng.shuffle(diag)
+    for k in rest_by_pool:
+        rng.shuffle(rest_by_pool[k])
+
+    need_diag = DIAG_PER_FORM * len(FORMS)
+    assert len(diag) >= need_diag, f"only {len(diag)} diagnosis questions for {need_diag} slots"
+    print(f"pure-diagnosis pool: {len(diag)} available, {need_diag} needed "
+          f"({DIAG_PER_FORM} per form = {DIAG_PER_FORM/PER_FORM:.0%})")
+
+    per_rest = PER_FORM - DIAG_PER_FORM
+    total_rest = sum(len(v) for v in rest_by_pool.values())
+    quota = {k: round(len(v) / total_rest * per_rest) for k, v in rest_by_pool.items()}
     forms = {f: [] for f in FORMS}
-    cursor = {k: 0 for k in by_pool}
+    cursor = collections.defaultdict(int)
+    dcur = 0
     for f in FORMS:
+        forms[f].extend(diag[dcur:dcur + DIAG_PER_FORM]); dcur += DIAG_PER_FORM
         for k, n in quota.items():
-            take = by_pool[k][cursor[k]:cursor[k] + n]
+            take = rest_by_pool[k][cursor[k]:cursor[k] + n]
             cursor[k] += len(take)
             forms[f].extend(take)
-        # top up or trim to exactly PER_FORM from the deepest remaining pool
         while len(forms[f]) < PER_FORM:
-            k = max(by_pool, key=lambda k: len(by_pool[k]) - cursor[k])
-            forms[f].append(by_pool[k][cursor[k]]); cursor[k] += 1
+            k = max(rest_by_pool, key=lambda k: len(rest_by_pool[k]) - cursor[k])
+            forms[f].append(rest_by_pool[k][cursor[k]]); cursor[k] += 1
         forms[f] = forms[f][:PER_FORM]
         rng.shuffle(forms[f])
 
@@ -138,7 +165,8 @@ def build():
         pos = collections.Counter(q["c"] for q in forms[f])
         gm = sum(gameable(q["opts"], q["c"]) for q in forms[f])
         lec = len({q["cite"].split(",")[0] for q in forms[f]})
-        print(f"  Form {f}: {len(forms[f])}q  decks={lec}  gameable={gm/PER_FORM:.0%}  "
+        dg = sum(1 for q in forms[f] if DIAG_RE.search(q["q"]))
+        print(f"  Form {f}: {len(forms[f])}q  diagnosis={dg}  decks={lec}  gameable={gm/PER_FORM:.0%}  "
               f"positions={ {'ABCDE'[k]: v for k, v in sorted(pos.items())} }")
 
     out = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1", "master-exams-updated.json")
