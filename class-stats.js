@@ -116,6 +116,51 @@
     flushTimer = setTimeout(function () { flushTimer = null; flush(); }, COALESCE_MS);
   }
 
+  // ---------------------------------------------------------------------
+  // PER-OPTION RESPONSE DISTRIBUTION  (added 2026-08-27)
+  //
+  // Jaxon's reference exam items show, beside every choice, what share of the
+  // class picked it -- which is the most useful thing on the page, because it
+  // tells you which distractor fooled people rather than just that you were
+  // wrong. The engine only ever recorded a right/wrong boolean, so we could not
+  // reproduce it. These two calls store and read the distribution.
+  //
+  // OPT-IN BY CONSTRUCTION. Every quiz page bakes its own copy of the engine at
+  // render time, so only pages rendered from tools/quiz-template on or after
+  // this date call recordPick(). Existing quizzes never invoke it and are
+  // completely unaffected -- which is what Jaxon asked for.
+  //
+  // One doc per question: answer_picks/<quizslug>__<hash of the stem>. Keying on
+  // the stem rather than its index means re-rendering a quiz, or reshuffling a
+  // master exam, does not orphan the counts.
+  //
+  // FIRST ANSWER PER DEVICE ONLY. The class total already has the problem that
+  // Jaxon's own repeat testing inflates it. Here a localStorage marker means a
+  // retake never re-counts, so the percentages stay a picture of what people
+  // chose the first time -- which is the only reading that means anything.
+  // ---------------------------------------------------------------------
+  var pickQueue = [];
+
+  function flushPicks() {
+    if (!db) return;
+    var q = pickQueue; pickQueue = [];
+    q.forEach(function (a) { writePick(a[0], a[1], a[2]); });
+  }
+
+  function writePick(qid, oi, nOpts) {
+    if (!db) { if (pickQueue.length < 200) pickQueue.push([qid, oi, nOpts]); return; }
+    try {
+      var patch = {
+        total: firebase.firestore.FieldValue.increment(1),
+        opts: nOpts
+      };
+      patch["c" + oi] = firebase.firestore.FieldValue.increment(1);
+      db.collection("answer_picks").doc(qid)
+        .set(patch, { merge: true })
+        .catch(function () { /* rule not published yet -- quiz still works */ });
+    } catch (e) { /* never let stats break a quiz */ }
+  }
+
   window.ClassStats = {
     // Record n newly-completed questions toward the class total.
     record: function (n) {
@@ -129,6 +174,40 @@
       pending += 1;
       pendingKind = kind || "practicum-answer";
       flushSoon();
+    },
+
+    // Returns true if this counted (first time this device answered this
+    // question), so the caller can add its own +1 to what it displays without
+    // waiting for the write to land.
+    recordPick: function (qid, oi, nOpts) {
+      if (!qid || typeof oi !== "number" || oi < 0) return false;
+      var key = "ap:" + qid, fresh = true;
+      try {
+        fresh = !localStorage.getItem(key);
+        if (fresh) localStorage.setItem(key, String(oi));
+      } catch (e) { /* private mode -- fall through and count it */ }
+      if (!fresh) return false;
+      writePick(qid, oi, nOpts);
+      return true;
+    },
+
+    // Resolves to {total, c0..cN} or null. Never rejects: a missing rule, an
+    // offline device, or a question nobody has answered all resolve null and
+    // the caller simply shows nothing.
+    getPicks: function (qid) {
+      if (!qid) return Promise.resolve(null);
+      return new Promise(function (resolve) {
+        function go() {
+          try {
+            db.collection("answer_picks").doc(qid).get()
+              .then(function (s) { resolve((s.exists && s.data()) || null); })
+              .catch(function () { resolve(null); });
+          } catch (e) { resolve(null); }
+        }
+        if (ready && db) return go();
+        window.addEventListener("firebaseReady", function () { setTimeout(go, 0); }, { once: true });
+        setTimeout(function () { if (!ready) resolve(null); }, 6000);
+      });
     }
   };
 
@@ -175,6 +254,7 @@
     db = firebase.firestore();
     ready = true;
     flush();
+    flushPicks();
 
     var el = document.getElementById("class-counter-value");
     if (!el) return; // this page doesn't display the counter

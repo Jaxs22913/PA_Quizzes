@@ -90,5 +90,43 @@ service cloud.firestore {
                     && request.resource.data.kind.size() <= 40;
       allow update, delete: if false;
     }
+
+    // Per-option response distribution (class-stats.js recordPick/getPicks).
+    // One doc per question -- answer_picks/<quizslug>__<stem hash> -- holding a
+    // running count per option index plus a total. This is what lets a quiz
+    // show "72% of the class picked B" beside each choice, the way the
+    // reference exam items Jaxon works from do.
+    //
+    // Open for the same reason the counter and its log are: most quiz-page
+    // visitors are never signed in, so an auth gate would record only a
+    // minority and the percentages would describe the wrong population.
+    //
+    // The guard is shape and direction, not identity. hasOnly() stops the
+    // collection being used as arbitrary storage; the totals must stay whole,
+    // non-negative and bounded; and an update may never LOWER the total, so
+    // the distribution can only ever be added to. Deletion is denied outright.
+    // Nothing here prevents someone deliberately stuffing a count -- these are
+    // study percentages, not a graded record, and the same tradeoff was already
+    // accepted for the class counter.
+    match /answer_picks/{questionId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(
+                         ['total','opts','c0','c1','c2','c3','c4','c5'])
+                    && request.resource.data.total is int
+                    && request.resource.data.total >= 1
+                    && request.resource.data.total <= 5
+                    && request.resource.data.opts is int
+                    && request.resource.data.opts >= 2
+                    && request.resource.data.opts <= 6;
+      allow update: if request.resource.data.keys().hasOnly(
+                         ['total','opts','c0','c1','c2','c3','c4','c5'])
+                    && request.resource.data.total is int
+                    && request.resource.data.total >= resource.data.total
+                    && request.resource.data.total <= 200000
+                    && request.resource.data.opts is int
+                    && request.resource.data.opts >= 2
+                    && request.resource.data.opts <= 6;
+      allow delete: if false;
+    }
   }
 }
