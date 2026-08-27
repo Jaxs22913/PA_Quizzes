@@ -413,16 +413,21 @@ function pickOrder(n){
     r++;
   }
 
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
   /* Answer-position rebalance. Count letters, then for each over-represented
      letter try to swap a question out for an unpicked one with a scarce letter
      from the SAME objective, so coverage is never traded away for balance. */
   var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
   function counts(){
-    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
   }
   for(var pass=0; pass<40; pass++){
     var c = counts(), hi=0, lo=0;
-    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
     if(c[hi]-c[lo] <= 1) break;
     var swapped=false;
     for(var p=0;p<picked.length && !swapped;p++){
