@@ -413,6 +413,14 @@ def build():
   }
 </style>
 </head><body>
+<!-- .guide-back-bar is not decoration: theme.js gates the whole guide toolkit on
+     it -- the corner Download-as-PDF button, the search-this-guide bar, text
+     highlighting, the guide-ink drawing layer and the "share my highlights"
+     row in Settings all check for this element before they initialise. A chart
+     without it silently loses every one of them. -->
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
 <div class="wrap">
 <header class="top">
   <h1>Dermatology Staging &amp; Grading Chart</h1>
@@ -441,6 +449,9 @@ def build():
 
 <nav class="toc">{{TOC}}</nav>
 {{ROWS}}
+
+<p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+<p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
 </div>
 <script src="../theme.js"></script>
 </body></html>"""
