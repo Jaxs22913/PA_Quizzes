@@ -110,7 +110,7 @@ STEM = {
 ("l4",29): "A 42-year-old woman has central facial papules and pustules, and the clinician looks for the one lesion type that would settle whether this is acne. What is the hallmark lesion of acne vulgaris, and why does it matter diagnostically?",
 ("l4",30): "An 18-year-old boy is prescribed a topical antibiotic for acne, and benzoyl peroxide is added to the regimen. Why is benzoyl peroxide recommended alongside topical or oral antibiotic therapy for acne?",
 ("l4",31): "A 16-year-old girl starting treatment for acne of the face and back asks how quickly it will work. What education is accurate?",
-("l4",33): "Four women of similar age present with acne of differing severity and history. For which patient is a combined oral contraceptive most appropriate as acne therapy?",
+("l4",33): "Four women in their twenties present on the same clinic list with acne of differing severity and history. For which patient is a combined oral contraceptive most appropriate as acne therapy?",
 ("l4",34): "A 31-year-old man has folliculitis that has recurred repeatedly despite topical treatment, and cultures grow Staphylococcus aureus each time. What additional measure addresses the likely reservoir?",
 ("l4",35): "A 27-year-old woman has folliculitis of the thighs that has failed to respond to antibacterial treatment, and a hair is plucked from an affected follicle. What test should be performed on it?",
 ("l4",36): "A 44-year-old man has a purulent collection in the axilla at the site of an old puncture wound, and a student asks how this differs from a furuncle. How does a cutaneous abscess differ in origin from a furuncle?",

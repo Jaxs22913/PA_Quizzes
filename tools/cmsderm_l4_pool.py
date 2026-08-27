@@ -181,7 +181,7 @@ Q("Pseudofolliculitis barbae",
     "Apocrine gland involvement describes hidradenitis suppurativa, which affects the axilla, groin, breasts, and "
     "perineum with recurrent nodules and sinus tracts rather than the shaved beard area."],
    ["Follicular hyperkeratinisation with increased sebum production",
-    "Follicular hyperkeratinisation and increased sebum are two of the four factors in acne vulgaris, whose hallmark "
+    "Follicular hyperkeratinisation, increased sebum, and proliferation of Cutibacterium acnes are three of the four factors in acne vulgaris, whose hallmark "
     "lesion is the comedone. There is no comedone in pseudofolliculitis barbae."]],
   0, 55),
 

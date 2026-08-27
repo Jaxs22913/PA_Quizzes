@@ -57,6 +57,14 @@ def build():
         q["q"] = new_stem
     print(f"stems rewritten as patient vignettes: {len(stems)}")
 
+    expl = _load(os.path.join(HERE, "cmsderm_explfix.py"), "EXPL")
+    for (key, qi, oi), new_e in expl.items():
+        q = pools[key][qi]
+        assert oi != q["c"], f"explfix would rewrite the KEYED answer at {key}:{qi}"
+        assert not new_e.startswith("Correct"), f"{key}:{qi}:{oi} distractor must not read as correct"
+        q["opts"][oi][1] = new_e
+    print(f"thin refutations strengthened: {len(expl)}")
+
     applied = 0
     for (key, qi, oi), new in fixes.items():
         q = pools[key][qi]
