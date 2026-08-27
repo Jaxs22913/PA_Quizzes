@@ -1,0 +1,136 @@
+# -*- coding: utf-8 -*-
+"""Assemble the five Updated CMS derm Master Exams (65 questions each).
+
+Loads every cmsderm_l*_pool.py, applies the distractor padding in
+cmsderm_lengthfix.py, then does three things the source pools cannot do for
+themselves:
+
+  ANSWER POSITIONS. Every question was authored with the correct choice first,
+  which would make all five forms answerable without reading (see
+  [[answer_position_bias_check]] -- this is exactly the PD1 bug). Options are
+  permuted so the key lands on a balanced A-E cycle.
+
+  STRATIFICATION. Each form draws proportionally from all nine lectures, so all
+  five are genuinely cumulative and comparable rather than over-weighting
+  whichever lecture happened to get the most questions.
+
+  NO REPEATS. 326 questions, 325 slots -- no question appears in two forms.
+
+    python3 tools/cmsderm_partition.py
+"""
+import importlib.util, glob, os, json, random, collections
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+FORMS = ["A", "B", "C", "D", "E"]
+PER_FORM = 65
+SEED = 20260826
+
+MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
+
+
+def _load(path, attr):
+    spec = importlib.util.spec_from_file_location("m", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return getattr(mod, attr)
+
+
+def gameable(opts, c):
+    L = [len(o[0]) for o in opts]
+    runner = max(L[:c] + L[c + 1:])
+    return L[c] > runner and (L[c] - runner) >= MARGIN_CHARS and L[c] >= runner * (1 + MARGIN_FRAC)
+
+
+def build():
+    fixes = _load(os.path.join(HERE, "cmsderm_lengthfix.py"), "FIX")
+    pools = {}
+    for f in sorted(glob.glob(os.path.join(HERE, "cmsderm_l*_pool.py"))):
+        key = os.path.basename(f).replace("cmsderm_", "").replace("_pool.py", "")
+        pools[key] = _load(f, "QUESTIONS")
+
+    stems = _load(os.path.join(HERE, "cmsderm_stemfix.py"), "STEM")
+    for (key, qi), new_stem in stems.items():
+        q = pools[key][qi]
+        assert q["q"].endswith("?"), f"{key}:{qi} stem has no lead-in"
+        assert new_stem.rstrip().endswith("?"), f"{key}:{qi} rewrite has no lead-in"
+        q["q"] = new_stem
+    print(f"stems rewritten as patient vignettes: {len(stems)}")
+
+    applied = 0
+    for (key, qi, oi), new in fixes.items():
+        q = pools[key][qi]
+        if oi == "ALL":
+            assert len(new) == 5
+            q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(new)]
+        else:
+            assert oi != q["c"], f"fix would rewrite the KEYED answer at {key}:{qi}"
+            q["opts"][oi][0] = new
+        applied += 1
+    print(f"padding applied to {applied} questions")
+
+    import re
+    flat = [(k, i, q) for k, v in pools.items() for i, q in enumerate(v)]
+    vig = [q for _, _, q in flat if re.match(r"A(n)? \d+-(year|month|week|day)-old|A newborn|The mother of a \d+", q["q"])]
+    print(f"patient vignettes: {len(vig)}/{len(flat)} = {len(vig)/len(flat):.0%}")
+    before = sum(gameable(q["opts"], q["c"]) for _, _, q in flat)
+    print(f"gameable after padding: {before}/{len(flat)} = {before/len(flat):.1%}  (bar 35%)")
+
+    # --- permute options onto a balanced A-E cycle ---
+    rng = random.Random(SEED)
+    order = list(range(5)) * (len(flat) // 5 + 1)
+    rng.shuffle(order)
+    for n, (_, _, q) in enumerate(flat):
+        target = order[n]
+        correct = q["opts"][q["c"]]
+        rest = [o for i, o in enumerate(q["opts"]) if i != q["c"]]
+        rng.shuffle(rest)
+        q["opts"] = rest[:target] + [correct] + rest[target:]
+        q["c"] = target
+        assert q["opts"][q["c"]] is correct
+
+    after = sum(gameable(q["opts"], q["c"]) for _, _, q in flat)
+    assert after == before, "permutation must not change the length-bias count"
+    print("answer positions:", dict(collections.Counter("ABCDE"[q["c"]] for _, _, q in flat)))
+
+    # --- stratified partition, no repeats ---
+    by_pool = collections.defaultdict(list)
+    for k, i, q in flat:
+        by_pool[k].append(q)
+    for k in by_pool:
+        rng.shuffle(by_pool[k])
+
+    total = sum(len(v) for v in by_pool.values())
+    quota = {k: round(len(v) / total * PER_FORM) for k, v in by_pool.items()}
+    forms = {f: [] for f in FORMS}
+    cursor = {k: 0 for k in by_pool}
+    for f in FORMS:
+        for k, n in quota.items():
+            take = by_pool[k][cursor[k]:cursor[k] + n]
+            cursor[k] += len(take)
+            forms[f].extend(take)
+        # top up or trim to exactly PER_FORM from the deepest remaining pool
+        while len(forms[f]) < PER_FORM:
+            k = max(by_pool, key=lambda k: len(by_pool[k]) - cursor[k])
+            forms[f].append(by_pool[k][cursor[k]]); cursor[k] += 1
+        forms[f] = forms[f][:PER_FORM]
+        rng.shuffle(forms[f])
+
+    seen = collections.Counter(id(q) for v in forms.values() for q in v)
+    assert max(seen.values()) == 1, "a question landed in two forms"
+    for f in FORMS:
+        assert len(forms[f]) == PER_FORM, (f, len(forms[f]))
+        pos = collections.Counter(q["c"] for q in forms[f])
+        gm = sum(gameable(q["opts"], q["c"]) for q in forms[f])
+        lec = len({q["cite"].split(",")[0] for q in forms[f]})
+        print(f"  Form {f}: {len(forms[f])}q  decks={lec}  gameable={gm/PER_FORM:.0%}  "
+              f"positions={ {'ABCDE'[k]: v for k, v in sorted(pos.items())} }")
+
+    out = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1", "master-exams-updated.json")
+    json.dump({f: forms[f] for f in FORMS}, open(out, "w"), indent=1, ensure_ascii=False)
+    print("wrote", out)
+    return forms
+
+
+if __name__ == "__main__":
+    build()

@@ -250,10 +250,12 @@ def main():
                 stats["skipped_bad"] += 1
                 continue
             qtext, choices, ans, exp = conv
-            if not qtext or not isinstance(choices, list) or len(choices) != 4:
+            # 4 or 5 choices: the CMS derm Updated masters are five-option A-E, and both
+            # Group Study clients render choices generically with forEach.
+            if not qtext or not isinstance(choices, list) or len(choices) not in (4, 5):
                 stats["skipped_bad"] += 1
                 continue
-            if not isinstance(ans, int) or not (0 <= ans < 4):
+            if not isinstance(ans, int) or not (0 <= ans < len(choices)):
                 stats["skipped_bad"] += 1
                 continue
             out_qs.append({"q": str(qtext), "choices": [str(c) for c in choices], "answer": ans, "exp": str(exp)})

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f7d7a; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS I Exam 1 Master Exam (Updated) &mdash; Form E</title>
+<style>
+  :root{
+    --navy:#17494b; --indigo:#3f7d7a; --gold:#c08a2e; --ice:#eef5f4;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Medicine and Surgery I &mdash; Comprehensive Master Exam (Updated)</h1>
+    <div class="sub">Exam 1 &middot; Dermatology block, Lectures 1&ndash;9 &middot; Form E</div>
+    <span class="pill">65 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty-five newly written questions drawn from every lecture in the Exam 1 dermatology block, in exam proportions rather than at random &mdash; each of the nine lectures contributes to every form, so this is a genuine cumulative rehearsal and not a sample of whichever topic had the most questions written for it. <b>Five options, A&ndash;E</b>, and every wrong choice gets its own explanation saying why it is wrong rather than a shared note. <b>No question appears in more than one form</b>, so working through all five gives you 325 distinct questions. Every question cites the slide it came from.</p>
+    <div class="chips"><span class="chip">Clinical reasoning</span><span class="chip">General Derm I</span><span class="chip">Derm II</span><span class="chip">Bacterial</span><span class="chip">Infestations</span><span class="chip">Viral &amp; fungal</span><span class="chip">Benign lesions</span><span class="chip">Pigmented lesions</span><span class="chip">Pre-malignant &amp; malignant</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Allergic contact dermatitis", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 19-year-old man develops an intensely pruritic vesicular eruption in linear streaks two days after clearing brush. What immunological mechanism underlies allergic contact dermatitis, and what is its most common cause in the United States?", "opts": [["An immune complex mediated type III hypersensitivity reaction to a topical allergen", "Immune complex deposition is a type III mechanism seen in vasculitic and serum sickness reactions. Allergic contact dermatitis is a delayed cell-mediated type IV reaction."], ["A cell-mediated, delayed type IV hypersensitivity reaction, most commonly to urushiol sap", "Correct. Allergic contact dermatitis is an immunologic cell-mediated, delayed, type IV hypersensitivity reaction. Urushiol sap of Toxicodendron species, found in poison ivy, poison sumac, and poison oak, is the most common cause, and roughly 50 to 75 percent of people in the United States are allergic to these plants."], ["An immunoglobulin E mediated, immediate type I hypersensitivity reaction, most commonly to urushiol sap", "The allergen is right but the mechanism is wrong. Immediate immunoglobulin E mediated reactions are what skin-prick testing evaluates, whereas allergic contact dermatitis is delayed and cell-mediated — which is why patch testing, not prick testing, diagnoses it."], ["Direct chemical disruption of the skin barrier without immune involvement", "Direct barrier disruption without immunological sensitisation describes irritant contact dermatitis, which is the other major type of contact dermatitis and the more common of the two."], ["A cell-mediated, delayed type IV hypersensitivity reaction, most commonly to nickel", "The mechanism is right and nickel is genuinely the most common metal allergen, but urushiol sap is the most common cause overall."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 85"}, {"topic": "Dermatitis herpetiformis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 35-year-old woman with dermatitis herpetiformis achieves rapid relief on dapsone and asks whether that is the whole treatment. What is the most important additional element of management?", "opts": [["Lifelong systemic corticosteroids", "Systemic corticosteroids are not part of the described management of this condition, and long-term use would add substantial toxicity without addressing the gluten drive."], ["A strict gluten-free diet for six weeks, after which gluten may be reintroduced", "The dietary restriction is lifelong rather than a time-limited trial. Reintroducing gluten restores the antigen and with it the eruption and the celiac disease risk."], ["A strict lifelong gluten-free diet, since the condition is intrinsically linked to gluten sensitivity", "Correct. Dapsone provides rapid symptom relief but the long-term management is a strict gluten-free diet, because the disease is driven by immunoglobulin A antibodies against epidermal transglutaminase in patients consuming dietary gluten. All patients should also be screened for celiac disease."], ["High-potency topical steroids as the sole long-term therapy", "Topical high-potency steroids are used for localised flares, not as the long-term strategy. They do nothing about the systemic gluten-driven process or the associated celiac disease."], ["Indefinite dapsone monotherapy alone, since dietary change does not affect the cutaneous disease", "This is directly contrary to the mechanism: removing gluten removes the antigenic drive. Committing the patient to indefinite dapsone with its haematological toxicity while leaving the cause in place is the wrong trade."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 19"}, {"topic": "Molluscum contagiosum", "io": "c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "q": "A 6-year-old has fifteen discrete, smooth, firm, flesh-coloured dome-shaped papules averaging 4 mm on the trunk and arms, each with a central dimple. His parents ask about treatment. What is a reasonable approach?", "opts": [["Aggressive curettage of every lesion at the first visit, whatever the number of lesions or the child's age", "Destructive procedures carry risks of blistering, pigment change, and scarring, which is the specific reason observation is offered first in a child with asymptomatic lesions."], ["Oral acyclovir", "Acyclovir treats herpesvirus infections. Molluscum contagiosum is caused by a poxvirus and does not respond to it."], ["Observation is appropriate for many patients, since procedures may blister, pigment, or scar", "Correct. Molluscum contagiosum is a benign poxvirus infection, and observation is appropriate for many patients because procedures may blister, pigment, or scar. Approved options such as berdazimer gel and cantharidin exist when treatment is chosen."], ["Topical mupirocin to each lesion", "Mupirocin is an antibacterial used for impetigo. There is no bacterial infection here."], ["Salicylic acid 40 percent to each lesion", "Salicylic acid 40 percent is a treatment for plantar warts. It is not among the options given for molluscum."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 136"}, {"topic": "Cellulitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 66-year-old man with cellulitis of the leg has an area that is tense, cyanotic, and bronzed with blanching. What is the significance of this finding?", "opts": [["The antibiotic dose should be increased and the area observed", "Increasing the dose does not solve the problem, which is that no blood is reaching the tissue to carry any dose of any antibiotic there."], ["This indicates a drug reaction to the antibiotic", "A drug reaction would not produce localised bronzed, cyanotic, non-perfused tissue within the area of infection."], ["The tissue is devitalised and will not be perfused, so antibiotics cannot reach it and surgical debridement is needed", "Correct. Devitalised tissue that is tense, cyanotic, necrotic, bronzed, and blanched will not be perfused, so antibiotics will not get to the site. Surgical debridement is required."], ["This indicates a deep vein thrombosis and therapeutic anticoagulation should be started immediately without imaging", "Deep vein thrombosis produces swelling and pain but not bronzed necrotic skin, and anticoagulation would not address non-perfused devitalised tissue."], ["This is the expected appearance of resolving cellulitis", "Resolving cellulitis fades from erythema without becoming tense, cyanotic, or bronzed. Mistaking necrosis for improvement is the error that delays the surgery this patient needs."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 111"}, {"topic": "Neurofibromatosis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis for benign skin lesions", "q": "A 14-year-old boy with neurofibromatosis type 1 has a large, diffuse soft tissue mass running along a nerve in the thigh. What is a plexiform neurofibroma, and what is the concern with it?", "opts": [["A discrete benign nerve sheath tumour protruding just above the skin surface, sessile or pedunculated", "That describes a cutaneous neurofibroma, which is a well-circumscribed solid tumour arising from peripheral nerves, sessile or pedunculated. Plexiform lesions are the larger, more extensive form."], ["A pigmented macule that grows in proportion to the child", "Growth in proportion to the child describes café au lait macules."], ["A cluster of freckles smaller than 5 mm in intertriginous areas", "Intertriginous freckling under 5 mm is Crowe's sign."], ["A tumour in the tissue covering nerves that is large and extensive and may be locally invasive", "Correct. Plexiform neurofibromas are tumours in the tissue covering nerves, occurring anywhere except the brain and spinal cord. They are large and extensive and may be locally invasive, so clinical evaluation is needed."], ["A tumour arising exclusively within the brain and spinal cord", "Plexiform neurofibromas occur anywhere except the brain and spinal cord."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 101"}, {"topic": "Diagnostic tools", "io": "4 — Discuss clinical principles and decision-making", "q": "A 55-year-old man with no symptoms attends for a routine health check, while a 55-year-old woman attends the same clinic with a specific complaint requiring evaluation. How does screening testing differ in purpose from diagnostic testing?", "opts": [["Screening confirms a diagnosis already suspected from the history and examination, whereas diagnostic testing looks for occult disease in people without symptoms", "The purposes are reversed. Screening looks for disease not yet apparent; diagnostic testing addresses a question the clinical encounter has already raised."], ["Diagnostic testing replaces the history and physical examination", "Diagnostic testing complements the history and physical examination rather than replacing them."], ["Both have identical purposes and are interchangeable", "They answer different questions, and applying a screening test to a symptomatic patient or a diagnostic test to an asymptomatic population misuses both."], ["Screening identifies the likelihood of occult disease, whereas diagnostic testing complements history and examination to reduce uncertainty and guide management", "Correct. Screening testing identifies the likelihood of occult disease. Diagnostic testing complements the history and physical examination, reduces uncertainty about diagnosis or prognosis, and helps decide management."], ["Screening is used only in emergency medicine", "Emergency medicine is the setting most associated with the naturalistic, event-driven approach rather than with screening."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 10"}, {"topic": "Ephelides", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pigmented skin lesions", "q": "A 10-year-old girl with red hair has multiple freckles across the nose and cheeks, and her mother asks what can be done about them. What is the cornerstone of management for ephelides?", "opts": [["No management is possible or appropriate for these pigmented lesions", "Sun protection, counselling, and topical depigmenting agents are all available, so the condition is not simply untreatable."], ["Systemic depigmenting therapy", "Depigmenting agents used are topical rather than systemic."], ["Sun protection, with patient education and counselling as the key element", "Correct. Sun protection is the cornerstone of management for ephelides, with proper patient education and counselling described as key. Topical depigmenting agents such as hydroquinone, retinoids, alpha-hydroxy acids, and botanicals may be used, and intense pulsed light is an option."], ["Surgical excision of each macule", "Excising freckles would leave scars more conspicuous than the pigment, and the lesions regress later in life."], ["Cryotherapy applied to each lesion", "Cryotherapy is specifically excluded because it is difficult given the small size of the lesions."]], "c": 2, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 7"}, {"topic": "Cutaneous T-cell lymphoma", "io": "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "q": "A 61-year-old man has had erythematous scaly patches and plaques on the trunk for four years, several larger than 5 cm, that have been treated as psoriasis and eczema without lasting response. Pruritus is prominent. What features discriminate this from the inflammatory conditions it resembles?", "opts": [["The presence of scale", "Scaly plaques occur in psoriasis, eczematous dermatitis, and tinea corporis alike."], ["Chronicity, treatment resistance, and large or oddly distributed lesions", "Correct. Mycosis fungoides may resemble psoriasis, eczema, or tinea, and the discriminators are chronicity, treatment resistance, and large or oddly distributed lesions. Early morphology is localised or generalised erythematous patches or scaly plaques, usually on the trunk, frequently greater than 5 cm."], ["Involvement of the trunk", "Truncal involvement is typical of the early disease but is also seen in the inflammatory conditions on the differential."], ["The presence of pruritus", "Pruritus is common in cutaneous T-cell lymphoma but is shared with psoriasis, eczema, and tinea, so it separates none of them."], ["A positive potassium hydroxide preparation taken from an advancing scaly edge", "A positive potassium hydroxide preparation would indicate tinea corporis, which is one of the alternatives being excluded rather than a feature of lymphoma."]], "c": 1, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 74"}, {"topic": "Bedbugs", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological infestations", "q": "A 33-year-old man returns from a hotel stay with several itchy welts on exposed skin. Examination shows wheals and papules with a haemorrhagic punctum, arranged in rows of three. He did not feel the bites occur. What organism is responsible, and what is the classic descriptive term?", "opts": [["Cimex lectularius, with rows of three bites known as breakfast, lunch, and dinner", "Correct. Bedbugs are nocturnal feeders that hide in cracks and crevices of headboards, picture frames, and behind loose wallpaper. Bites are painless, multiple, and grouped in a linear fashion, and a row of three bites is known as breakfast, lunch, and dinner."], ["Cercariae, producing urticaria-like lesions after water exposure", "Cercarial dermatitis follows exposure to cercaria-infested water, with prickling within 30 minutes and severe pruritus 10 to 12 hours later."], ["Pediculus humanus corporis, producing linear excoriations on the back and waist", "Body lice produce linear excoriations on the back, neck, shoulders, and waist and are associated with clothing rather than furniture."], ["Sarcoptes scabiei, with the burrow known as the delta-wing jet", "The delta-wing jet is a dermoscopic sign of the scabies mite within its burrow, not a bite pattern. Scabies produces intense nocturnal itching in the finger webs and flexures rather than painless welts on exposed skin."], ["Tunga penetrans, producing translucent nodules on the feet", "Tungiasis follows penetration of the adult female flea into human skin, producing enlarging papules and translucent nodules over the feet, and requires a travel history."]], "c": 0, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 33"}, {"topic": "Necrotizing fasciitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 47-year-old man with alcohol use disorder develops severe leg pain and rapidly progressive skin changes after a minor injury. Which set of risk factors is associated with necrotizing fasciitis?", "opts": [["Obesity, poor hygiene, occlusive clothing, and hot humid temperatures", "That set belongs to folliculitis, along with immunocompromised states, corticosteroids, diabetes, and nasal carriage of Staphylococcus aureus."], ["Continuous immersion of the hands in water and contact with chemicals", "That is the occupational history behind chronic paronychia in dishwashers, bartenders, cleaners, and cooks."], ["Manicure, ingrown nail, hangnail, and nail biting", "Those are the predisposing factors for acute paronychia."], ["Trauma, burns, surgery, immunosuppression, renal failure, alcoholism, odontogenic infection, and intravenous drug use, with male predominance", "Correct. Those are the listed risk factors, and the condition is more common in males than females."], ["Impaired lymphatic drainage after mastectomy, athlete's foot as a portal of entry, obesity, trauma, and a pre-existing skin infection such as impetigo", "Those are erysipelas risk factors, where impaired lymphatic drainage and tinea pedis as a portal of entry are prominent."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 125"}, {"topic": "Actinic keratosis", "io": "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "q": "A 69-year-old man who has worked outdoors for forty years is examined. Several pink papules 0.3 to 0.5 cm are visible on the scalp, and running a hand across the skin reveals further lesions that could not be seen at all. What is the characteristic tactile finding of an actinic keratosis, and what does it imply for examination technique?", "opts": [["A pearly translucent quality with visible telangiectasias, most apparent when the skin is stretched", "Pearly translucency with telangiectasias accentuated by stretching the skin is the hallmark of nodular basal cell carcinoma."], ["A stuck-on quality that lifts at the edge", "A stuck-on or pasted-on appearance describes seborrheic keratosis, which is benign."], ["A velvety texture, best appreciated on inspection alone", "A velvety texture describes acanthosis nigricans and seborrheic keratosis. Inspection alone would miss the lesions this condition is known for."], ["A boggy fluctuant quality on palpation", "Bogginess suggests an inflammatory or infective process such as a kerion in tinea barbae rather than a dysplastic keratinocytic lesion."], ["A sandpaper texture, meaning a lesion may be more apparent by touch than by sight", "Correct. Actinic keratoses are small 0.2 to 0.6 cm flesh-coloured, pink, or slightly hyperpigmented papules with a characteristic sandpaper texture on palpation, and a lesion may be more apparent by touch than by sight. The skin must therefore be palpated, not only inspected."]], "c": 4, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 12"}, {"topic": "Scabies", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological infestations", "q": "A 22-year-old woman is treated for scabies and asks what she should do with her sheets and clothing. What environmental measure is specified for bedding and clothing?", "opts": [["Wash them, or set them aside for 14 days in a plastic bag in a warm area, with high heat of 60 degrees Celsius needed to kill mites", "Correct. Bedding and clothing should be washed or set aside for 14 days in a plastic bag in a warm area, and high heat at 60 degrees Celsius is needed to kill mites."], ["No environmental measures are needed because transmission requires prolonged direct skin-to-skin contact for 15 to 20 minutes", "Scabies may also be acquired from the bedding or underclothing of an infested person, which is why the environmental step exists."], ["Wash them in cold water, since detergent alone kills the mites", "High heat at 60 degrees Celsius is specified. Cold washing does not reliably kill mites."], ["Set them aside for 24 hours, after which the mites die", "A day is not long enough. The 14-day isolation period reflects how long mites can survive off the host."], ["Discard all bedding and clothing", "Laundering at high heat or bagging for 14 days is sufficient, so discarding possessions imposes cost without added benefit."]], "c": 0, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 18"}, {"topic": "Stasis dermatitis", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 68-year-old woman presents with chronic bilateral lower-leg swelling, pruritus, and skin discoloration. Examination demonstrates poorly demarcated erythematous plaques, pitting edema, and brown hyperpigmentation around both medial ankles. Pedal pulses are diminished. What is the most appropriate next step before prescribing compression therapy?", "opts": [["Begin oral cephalexin", "Cephalexin treats cellulitis, and the chief clinical priority in this presentation is distinguishing stasis dermatitis from cellulitis — bilateral, chronic, pruritic, hyperpigmented disease is stasis dermatitis, not infection."], ["Perform an ankle-brachial index", "Correct. Compression is the cornerstone of management only once adequate arterial circulation has been established. An ankle-brachial index or toe pressure should be obtained when peripheral arterial disease is suspected — as the diminished pulses here suggest — before initiating substantial compression."], ["Order patch testing", "Patch testing diagnoses allergic contact dermatitis, which is worth considering in chronically treated legs but is not the priority. It does not establish arterial status, and compression would still be unsafe if arterial disease were present."], ["Perform a skin biopsy", "Biopsy is reserved for atypical or diagnostically uncertain disease and would delay care in a presentation that is clinically characteristic. It also leaves the arterial question that governs compression safety unanswered."], ["Obtain a bacterial wound culture", "A culture is indicated when infection is suspected, and no ulcer, purulence, warmth, or fever is described. It also would not answer the question the diminished pulses raise, which is whether compression is safe."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 116"}, {"topic": "Acne vulgaris", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 17-year-old boy starting topical tretinoin and benzoyl peroxide for acne asks how to use them. What education should be given?", "opts": [["Apply the two together to improve penetration and speed the response", "Applying them simultaneously produces the irritation the separation is designed to avoid, and irritation is the main reason patients abandon topical acne therapy."], ["Apply both twice daily and expect clearance within one week", "Improvement takes 4 to 6 weeks, clinical response is measured by new lesion counts after 6 to 8 weeks, and the back and chest may take 3 to 4 months. A one-week expectation guarantees perceived failure."], ["Use only one of the two, since they cannot be used in the same regimen", "They can and often should both be used, just not applied at the same time. Discarding one removes a component of the recommended regimen."], ["Do not apply the two together; wait at least three hours between them because of the risk of skin irritation", "Correct. Topical tretinoin and benzoyl peroxide should not be applied together because of the risk of skin irritation, and at least three hours should separate them."], ["Apply the two together but wash the face vigorously with hot water between the two applications each day", "Vigorous washing is itself discouraged; the advice is to wash no more than twice daily with a gentle cleanser and warm rather than hot water. This compounds irritation instead of preventing it."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 35"}, {"topic": "Folliculitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 31-year-old man has folliculitis that has recurred repeatedly despite topical treatment, and cultures grow Staphylococcus aureus each time. What additional measure addresses the likely reservoir?", "opts": [["Switching to an antibacterial soap alone", "Antibacterial soaps such as Dial or Lever 2000 are part of general treatment along with good hygiene and loose clean clothing. They do not eradicate nasal carriage."], ["Oral ciprofloxacin", "Ciprofloxacin is used for widespread or resistant Pseudomonas folliculitis after water exposure. It is not the agent for staphylococcal carriage."], ["Mupirocin ointment applied to the nares to address the Staphylococcus aureus carrier state", "Correct. Recurrent or recalcitrant folliculitis raises the Staphylococcus aureus carrier state, and mupirocin ointment is used for it. Nasal swabs of the patient and family members are taken to evaluate carriage."], ["A potassium hydroxide wet mount of a plucked hair", "A potassium hydroxide wet mount using a plucked hair is done to rule out dermatophyte folliculitis, which is a reasonable step in resistant cases. But the cultures have already identified the organism."], ["A longer course of the same topical antibiotic cream applied twice daily for a further six weeks", "Extending a treatment that has already failed repeatedly does not address why it keeps returning, which is recolonisation from a reservoir."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 46"}, {"topic": "Wound healing", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis for benign skin lesions", "q": "A 28-year-old man has a healing surgical wound and asks why the scar keeps getting stronger over months. What are the four phases of wound healing, and what accounts for the improving tensile strength of a maturing scar?", "opts": [["Hemostasis, inflammation, proliferation, and remodeling, with tensile strength fixed at the time of wound closure and unchanged thereafter", "The phases are right, which makes this the closest wrong answer, but tensile strength continues to improve as cross-linking progresses rather than being fixed at closure."], ["Hemostasis, proliferation, contraction, and epithelialisation, with strength from fibroblast proliferation", "Fibroblast activity occurs during proliferation, but the four named phases are hemostasis, inflammation, proliferation, and remodeling."], ["Inflammation, proliferation, remodeling, and contracture, with strength from new elastin deposition", "Hemostasis is the first phase and contracture is not one of the four, and it is collagen cross-linking rather than elastin that confers strength."], ["Inflammation, granulation, maturation, and involution, with strength from vascular ingrowth", "Involution describes the natural history of an infantile hemangioma rather than a phase of wound healing, and vascular ingrowth does not confer tensile strength."], ["Hemostasis, inflammation, proliferation, and remodeling, with tensile strength improving through progressive cross-linking of collagen fibres", "Correct. The four phases are hemostasis, inflammation, proliferation, and remodeling. As the scar matures its tensile strength improves because of progressive cross-linking of collagen fibres."]], "c": 4, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 11"}, {"topic": "Epidermolysis bullosa", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 3-month-old infant with blistering at sites of minor friction is being investigated to establish where in the skin the split is occurring. What diagnostic test is considered the gold standard for establishing the level of cleavage in epidermolysis bullosa?", "opts": [["Potassium hydroxide preparation of blister fluid", "A potassium hydroxide preparation detects fungal elements and has no role in a mechanobullous genetic disorder."], ["Direct immunofluorescence for immunoglobulin A deposits", "Granular immunoglobulin A in the dermal papillae is the finding of dermatitis herpetiformis. Epidermolysis bullosa is an inherited structural protein disorder rather than an immune deposition disease."], ["Immunofluorescence antigen mapping", "Immunofluorescence antigen mapping is genuinely part of the workup and localises missing or reduced proteins, which makes it the closest wrong answer. But the gold standard for the cleavage plane itself is electron microscopy."], ["Skin biopsy with transmission electron microscopy", "Correct. Skin biopsy with transmission electron microscopy is the gold standard for determining the cleavage plane. Immunofluorescence antigen mapping localises missing or reduced proteins, and genetic testing is confirmatory and guides prognosis and family counselling."], ["Genetic testing alone", "Genetic testing is confirmatory and guides prognosis and family counselling, but it is not the test that establishes where in the skin the split occurs."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 31"}, {"topic": "Onychomycosis", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 60-year-old man with diabetes has three thickened, discoloured, crumbling toenails with distal onycholysis. He asks for oral terbinafine. What must be done first?", "opts": [["Remove the affected nails surgically before medical therapy", "Nail avulsion is not the described first step. Confirming the diagnosis governs whether systemic therapy is justified."], ["Start terbinafine empirically, since dermatophytes cause most cases", "Dermatophytes, especially Trichophyton rubrum, do cause most cases, which makes empiric treatment tempting. But confirming first avoids months of hepatically monitored therapy for a nail that was never fungal."], ["Obtain a Wood's lamp examination of the nails", "A Wood lamp evaluates pigment change in selected fungal and bacterial infections and may support Microsporum scalp infection. It is not the confirmatory test for nail disease."], ["Begin topical antifungal therapy, which is adequate for most nail infections without oral therapy", "Topical therapy is inadequate for most nail infections, which is why the question of oral therapy arises at all."], ["Confirm fungal infection before oral therapy, because many dystrophic nails are not fungal", "Correct. Fungus must be confirmed before oral therapy, since many dystrophic nails are not fungal. Testing options include potassium hydroxide microscopy, periodic acid-Schiff stain of nail clippings, fungal culture, or polymerase chain reaction, sampling the most proximal accessible diseased nail bed."]], "c": 4, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 51"}, {"topic": "Pityriasis versicolor", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 19-year-old presents in summer with numerous well-defined hypopigmented macules over the upper back and shoulders that do not tan. Scraping the surface reveals fine scale. What does potassium hydroxide microscopy show?", "opts": [["Long septate branching hyphae without yeast forms", "Long septate branching hyphae are the dermatophyte pattern seen in tinea corporis and other tinea infections. Pityriasis versicolor is caused by a yeast rather than a dermatophyte."], ["Budding yeast with pseudohyphae only", "Budding yeast and pseudohyphae support candidal infection, which is what a potassium hydroxide preparation looks for in candidal diaper dermatitis or intertrigo."], ["No organisms at all, since the diagnosis is made only by skin biopsy", "Biopsy is rarely needed. The diagnosis is usually clinical, supported by scraping or stretching the lesion to reveal fine scale and by the characteristic potassium hydroxide appearance."], ["Short hyphae with clusters of yeast, described as spaghetti and meatballs", "Correct. Potassium hydroxide microscopy in pityriasis versicolor shows short hyphae with clusters of yeast, classically described as spaghetti and meatballs. The condition is caused by overgrowth of lipid-dependent Malassezia species that normally inhabit the skin."], ["Mites, eggs, and fecal pellets", "Those are the findings of a mineral oil preparation in scabies, which is a mite infestation rather than a fungal one."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 80"}, {"topic": "Ramsay Hunt syndrome", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 58-year-old woman presents with right-sided facial weakness, painful vesicles in the right ear canal, and vertigo. What is the diagnosis, and what treatment is added beyond antivirals?", "opts": [["Ramsay Hunt syndrome, treated with an antiviral plus a systemic corticosteroid started early when not contraindicated", "Correct. Ramsay Hunt syndrome, or herpes zoster oticus, is peripheral facial palsy with painful vesicles of the ear canal, auricle, or oropharynx, sometimes with hearing loss, tinnitus, or vertigo. Antiviral therapy plus a systemic corticosteroid is started early when not contraindicated."], ["Ramsay Hunt syndrome, treated with an antiviral alone", "The diagnosis is right but the regimen is incomplete, and the corticosteroid is the part specifically added in this syndrome rather than in uncomplicated zoster."], ["Otitis externa, treated with topical antibiotic drops", "Otitis externa does not cause facial palsy or grouped vesicles, and antibacterial drops would leave a viral reactivation untreated."], ["Bell palsy, treated with a corticosteroid alone", "Idiopathic facial palsy does not produce painful vesicles in the ear canal. The vesicles identify a zoster reactivation and mandate antiviral therapy."], ["Herpes zoster ophthalmicus, treated with a systemic antiviral and urgent ophthalmology referral for corneal assessment", "Herpes zoster ophthalmicus involves the ophthalmic division of the trigeminal nerve, with Hutchinson sign on the nose raising ocular risk. The ear canal and facial nerve are a different territory."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 104"}, {"topic": "Infantile hemangioma", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "q": "A 5-month-old girl has a large hemangioma of the face lying close to the eye and the corner of the mouth. What complications should be considered?", "opts": [["Malignant transformation to angiosarcoma", "Hemangiomas of infancy are benign and most are medically insignificant. Malignant transformation is not among the described complications."], ["Compression of vital structures, blocked vision, interference with feeding or respiration, obstruction of the external auditory canal, and extracutaneous lesions", "Correct. Hemangiomas may compress vital structures, block vision, interfere with feeding or respiration, obstruct the external auditory canal, and occur at extracutaneous sites."], ["Progressive darkening and thickening of the lesion throughout life, with growth in proportion to the child and no involution at any stage of childhood or adolescence", "Darkening and thickening over life describes nevus flammeus, which does not involute."], ["No complications occur, since all lesions involute", "Involution does occur, but the proliferative phase can produce functional compromise before it, which is why specific indications for treatment exist."], ["Systemic hypertension from arteriovenous shunting", "This is not among the listed complications; the concerns are local mass effect and extracutaneous involvement."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 71"}, {"topic": "Psoriasis", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 9-year-old girl develops an abrupt eruption of numerous small raindrop-shaped scaly papules and plaques over the trunk and proximal limbs. Her mother reports she was treated for a sore throat about two and a half weeks ago. She is otherwise well. What is the most appropriate management?", "opts": [["Oral methotrexate", "Methotrexate belongs to moderate-to-severe disease or to plaque psoriasis that has failed topical therapy. Committing a child with a self-limited post-streptococcal eruption to an antimetabolite is treating far above the disease."], ["Topical mupirocin to the affected areas", "Mupirocin is a topical antibacterial. The streptococcal infection that triggered this eruption was in the throat and has already been treated; the skin lesions are an immune-mediated psoriatic response rather than a cutaneous bacterial infection."], ["Oral acitretin", "Acitretin is used in pustular psoriasis and moderate-to-severe disease, and it is contraindicated in pregnancy with a prolonged period of concern afterwards. It is not indicated for guttate disease in a child."], ["Reassurance, with phototherapy or topical steroids only if needed", "Correct. Guttate psoriasis presents as raindrop-shaped erythematous papules and plaques, typically in children 2 to 3 weeks following a streptococcal infection or upper respiratory infection. No treatment is needed, though phototherapy and topical steroids may be used."], ["A tapering course of systemic corticosteroids given over four weeks", "Systemic steroids are specifically hazardous in psoriasis: pustular psoriasis may follow systemic steroid withdrawal, and that form is abrupt and life-threatening. Prescribing them here risks converting a self-limited eruption into a dangerous one."]], "c": 3, "cite": "2. General Dermatology I.pptx, Slide 164"}, {"topic": "Scabies", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological infestations", "q": "A 26-year-old man develops severe nocturnal itching six weeks after his partner was treated for scabies. How is scabies typically transmitted, and how long after infestation does pruritus appear?", "opts": [["Brief casual contact, with pruritus appearing within 24 hours", "Both halves fail. Transmission requires sustained contact, and the long sensitisation delay is why contacts are treated even when asymptomatic."], ["Contact with contaminated water, with pruritus and a prickling sensation appearing within hours of exposure", "Skin penetration from contaminated water within hours describes cercarial dermatitis, or swimmer's itch."], ["Close physical contact for 15 to 20 minutes, with pruritus appearing 4 to 6 weeks after initial infestation", "Correct. Scabies is transmitted by close physical contact for 15 to 20 minutes and may also be acquired from the bedding or underclothing of an infested individual. Pruritus appears 4 to 6 weeks after initial infestation, and many patients do not develop symptoms for up to 3 months."], ["Direct head-to-head contact, with symptoms after 4 to 6 weeks", "Direct head-to-head contact is the primary mode of transmission for head lice. The incubation interval is similar, which is what makes this partially plausible, but the route is wrong."], ["Airborne spread, with pruritus appearing after 1 week", "Scabies is not airborne. It requires direct skin contact or contact with contaminated bedding or clothing."]], "c": 2, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 5"}, {"topic": "Erythema nodosum", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 34-year-old woman with tender pretibial nodules undergoes a deep incisional biopsy. What finding confirms the diagnosis?", "opts": [["Full-thickness epidermal necrosis", "Full-thickness epidermal necrosis is the biopsy finding of Stevens-Johnson syndrome and toxic epidermal necrolysis. It is an epidermal process rather than a disease of the subcutaneous fat."], ["Septal panniculitis without vasculitis, with Miescher's granulomas", "Correct. Biopsy shows septal panniculitis without vasculitis and Miescher's granulomas. A deep incisional biopsy is needed because the pathology lies in the subcutaneous fat."], ["Palisading granulomas with central necrobiosis and mucin", "Palisading granulomas around degenerating collagen with mucin deposition is the granuloma annulare finding. That condition produces annular surface plaques rather than deep tender nodules."], ["A dense dermal neutrophilic infiltrate with no organisms", "A sterile neutrophilic dermatosis suggests pyoderma gangrenosum, which ulcerates. Erythema nodosum nodules characteristically do not ulcerate."], ["Lobular panniculitis with vasculitis", "The pattern is inverted on both counts. Erythema nodosum is specifically a septal panniculitis and specifically without vasculitis, which is how it is distinguished from other panniculitides."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 44"}, {"topic": "Stasis dermatitis", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 72-year-old man is referred with a red, warm, tender left lower leg. He has bilateral chronic ankle swelling and brown discoloration of both gaiter regions, but the left leg has become acutely more swollen and painful over two days. He is afebrile. What consideration should most urgently shape the evaluation?", "opts": [["Compression therapy should be started immediately to relieve the swelling", "Starting compression before excluding deep venous thrombosis and confirming arterial adequacy is exactly the sequence the lecture warns against. Compression is the cornerstone of management only after those questions are settled."], ["Bilateral involvement makes cellulitis the most likely explanation", "This inverts the reasoning. Bilateral chronic change argues against cellulitis, which is characteristically unilateral; distinguishing stasis dermatitis from cellulitis is one of the two primary clinical priorities in this condition."], ["The brown discoloration indicates active infection requiring culture", "Brown discoloration is hemosiderin deposition from chronic capillary leakage, a marker of long-standing venous disease rather than infection. It is a chronic finding and says nothing about the acute change."], ["Absence of fever excludes an acute vascular event", "Fever is neither required for nor exclusive to venous thrombosis, and this patient is indeed afebrile. Using a normal temperature to rule out a thrombotic event would be a serious error."], ["Acute unilateral swelling or pain should raise concern for deep venous thrombosis", "Correct. The differential for stasis dermatitis explicitly flags that acute unilateral swelling or pain should raise concern for deep venous thrombosis. Chronic bilateral changes with a new unilateral acute change is precisely that pattern."]], "c": 4, "cite": "2. General Dermatology I.pptx, Slide 115"}, {"topic": "Primary morphology", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 6-year-old boy is brought in with fever and a rash. Examination shows non-blanching deposits of blood in the skin, several measuring 6 mm across. What is the most appropriate interpretation of this finding?", "opts": [["Ecchymosis from minor trauma, requiring no further action", "Attributing non-blanching blood deposits in a febrile child to incidental trauma without evaluation dismisses the finding that most requires urgency."], ["A wheal produced by fluid infiltration into the dermis", "A wheal is a firm edematous plaque from fluid infiltration and it blanches. These lesions are non-blanching deposits of blood, which is the opposite finding."], ["Purpura, which should be treated as a medical emergency until proven otherwise", "Correct. Purpura is a deposit of blood 4 mm or greater, and the lecture flags it explicitly as a medical emergency until proven otherwise. Combined with fever in a child this demands immediate evaluation."], ["Petechiae, which should be treated as a medical emergency until proven otherwise", "The urgency is right but the term is wrong: petechiae are deposits of blood 1 to 2 mm, and these lesions are 6 mm. Precision matters here because the size defines which term is being used to communicate the finding."], ["Purpura, which is a benign finding that can be observed", "This applies the correct term to the wrong conclusion. Purpura carries the emergency designation, and treating it as benign in a febrile child is the error most likely to cause harm."]], "c": 2, "cite": "2. General Dermatology I.pptx, Slide 15"}, {"topic": "Diaper dermatitis", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 9-month-old boy is brought in for a diaper rash of one week. Examination shows beefy erythema involving the inguinal folds, with peripheral scale and several small papules and pustules on the thighs a short distance beyond the main area of redness. He completed a course of amoxicillin two weeks ago. What finding most strongly indicates the infectious complication rather than simple irritant disease?", "opts": [["The presence of erythema in the diaper area", "Erythema is common to every form of diaper dermatitis and is the reason the child presented. A finding shared by the irritant and candidal forms alike cannot separate them."], ["The one-week duration of the eruption", "A week is unremarkable for either form. Duration would matter if the question were whether to reassess a treatment failure, but it does not identify a candidal complication."], ["Involvement of the inguinal folds with satellite lesions beyond the main area", "Correct. Whether the skin folds are involved is the finding that distinguishes irritant from candidal disease. Irritant diaper dermatitis affects the convex surfaces and generally spares the inguinal folds because they are less exposed to urine and feces; candidal disease produces beefy erythema in the folds with satellite papules and pustules."], ["The presence of peripheral scaling at the outer edge of the area of erythema", "Peripheral scale accompanies candidal disease, but scaling is also produced by irritant dermatitis, which causes erythema, scaling, papules, or erosions. On its own it does not identify the organism."], ["The recent course of amoxicillin", "Antibiotic exposure genuinely raises the risk and belongs in the history, but it is a risk factor rather than a physical finding. Plenty of infants develop irritant dermatitis after antibiotics without any candidal component."]], "c": 2, "cite": "2. General Dermatology I.pptx, Slide 107"}, {"topic": "Pilonidal cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis for benign skin lesions", "q": "A 23-year-old man presents with a painful swelling in the natal cleft, and the clinician reviews what predisposed him to it. Which set of risk factors is associated with pilonidal disease?", "opts": [["Fair skin, sun exposure, and age over 40", "Fair skin, sun exposure, and age over 40 are risk factors for keratoacanthoma."], ["Obesity, local trauma or irritation, sedentary lifestyle, increased hair density in the natal cleft, and family history, with a male to female ratio of about 3 to 1", "Correct. Those are the listed risk factors, and the male to female ratio is 3 to 1."], ["Chronic venous insufficiency, impaired lymphatic drainage after mastectomy, obesity, and a previous episode of cellulitis, with a female predominance of about 3 to 1", "Those relate to stasis dermatitis and erysipelas rather than to a follicular disease of the natal cleft."], ["Prematurity, low birth weight, and multiple gestation", "Those are the birth history factors associated with infantile hemangiomas."], ["Female sex, pregnancy, and oestrogen excess", "Oestrogen excess states are associated with nevus araneus, the spider angioma, which resolves after delivery or cessation of hormonal contraception."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 39"}, {"topic": "Psoriasis", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 36-year-old man with plaque psoriasis reports painful, stiff finger joints. He describes more than thirty minutes of morning stiffness that improves as he uses his hands during the day. Examination shows diffuse swelling of the entire second and third digits of the right hand. What additional finding is most characteristic of the associated condition?", "opts": [["A positive rheumatoid factor in most patients", "Psoriatic arthritis is a spondyloarthropathy in the seronegative group and is defined by its human leukocyte antigen B27 association rather than by rheumatoid factor."], ["Association with human leukocyte antigen Cw6", "Human leukocyte antigen Cw6 is seen in 90 percent of early-onset psoriasis and 50 percent of late-onset cases, so it is a psoriasis association rather than the arthritis association. It is the most tempting wrong answer because both antigens genuinely belong to this disease family."], ["Stiffness that worsens with activity through the day", "This reverses the described pattern. Psoriatic stiffness is relieved with activity, and stiffness that worsens with use points instead toward a mechanical or degenerative joint problem."], ["Symmetric involvement of the small joints with sparing of the distal joints", "That distribution describes rheumatoid arthritis. Psoriatic arthritis characteristically involves the hands with diffuse whole-digit swelling rather than sparing the distal interphalangeal joints."], ["Association with human leukocyte antigen B27", "Correct. Psoriatic arthritis is associated with human leukocyte antigen B27. The presentation described — psoriasis with joint pains frequently of the hands, stiffness lasting more than thirty minutes that is relieved with activity, and sausage digits — is the classic picture."]], "c": 4, "cite": "2. General Dermatology I.pptx, Slide 161"}, {"topic": "Tinea pedis", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 42-year-old man has maceration and erythematous erosions between the third and fourth toes with associated fissuring. What form of tinea pedis is this, and is it the commonest?", "opts": [["Interdigital tinea pedis, which is the most common form", "Correct. Interdigital tinea pedis is the most common form, caused by Trichophyton species, producing maceration and erythematous erosions or scales between the toes, especially in the third and fourth interspaces, with associated fissures."], ["Interdigital tinea pedis, which is the least common form", "The classification is right but the frequency is wrong. Naming it the least common would misdirect the index of suspicion for the presentation clinicians see most often."], ["Hyperkeratotic tinea pedis, which is the most common form", "Hyperkeratotic disease produces plantar erythema with scaling to diffuse thickening involving the soles and the medial and lateral surfaces in a shoe-like distribution. It is a different pattern and not the commonest."], ["Vesiculobullous tinea pedis, which is the most common form", "The vesiculobullous form is the moist acute variant with a vesicular or bullous eruption on underlying erythema. It is pruritic and painful rather than macerated and eroded."], ["Candidal intertrigo of the toe webs", "Candidiasis and mixed toe web infection are on the differential, and bacterial studies are added for marked maceration, malodour, or drainage. But the described pattern is the classic dermatophyte presentation."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 39"}, {"topic": "Lyme disease", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological infestations", "q": "A 36-year-old pregnant woman and her 7-year-old son both develop erythema migrans after a camping trip. What is first-line oral antibiotic therapy for Lyme disease, and what alternative applies to children and pregnant women with early disease?", "opts": [["Permethrin applied topically to the bite site", "Permethrin is a topical treatment for scabies, not an antibiotic for a spirochaetal infection."], ["Doxycycline first line, with amoxicillin as an alternative first-line agent for early disease in children and pregnant women", "Correct. Antibiotics are indicated in all stages. Doxycycline is first line, with amoxicillin as an alternative first-line agent for early disease including erythema migrans, particularly in children and pregnant women."], ["Amoxicillin first line for all patients including adults, with doxycycline reserved for treatment failure or late disease", "The hierarchy is reversed. Doxycycline is the first-line agent generally, with amoxicillin as the alternative in specific populations."], ["No antibiotics for stage 1, since erythema migrans is self-limited", "Antibiotics are indicated in all stages, and treating early disease is what prevents dissemination."], ["Intravenous ceftriaxone for all stages", "Intravenous ceftriaxone, cefotaxime, or penicillin G is used for certain manifestations including acrodermatitis chronica atrophicans and arthritis, rather than for all patients."]], "c": 1, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 79"}, {"topic": "Erythema multiforme", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 30-year-old woman with erythema multiforme triggered by recurrent herpes simplex virus has had four episodes in twelve months. What management addresses the recurrences?", "opts": [["Suppressive oral acyclovir or valacyclovir", "Correct. Oral acyclovir or valacyclovir is used when the eruption is triggered by herpes simplex virus, and a prior episode is itself a risk factor for recurrence. Suppressing the trigger is what prevents the next episode."], ["Topical corticosteroids applied continuously to previously affected sites", "Topical corticosteroids are used for localised lesions during an episode. Applying them prophylactically to clear skin exposes her to atrophy without preventing anything."], ["Oral antihistamines taken continuously between episodes", "Oral antihistamines are used for pruritus during an acute episode. They relieve a symptom without touching the viral trigger, so the eruptions would continue at the same rate."], ["A short course of oral prednisone at the first sign of each episode", "Systemic corticosteroids are not the described approach, and treating each episode as it starts does nothing to reduce how often they occur."], ["Avoidance of non-steroidal anti-inflammatory drugs and sulfonamides", "Those drugs are genuine triggers in other patients and the history should be reviewed, but this woman's trigger is already identified as herpes simplex virus. Avoiding an unrelated exposure would not help."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 12"}, {"topic": "Cutaneous horn", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis for benign skin lesions", "q": "A 68-year-old man has a hard, conical keratotic projection on the dorsum of his hand. What is the key principle in evaluating this lesion?", "opts": [["A conical shape reliably indicates a benign process", "Shape does not indicate behaviour. That is precisely why the underlying lesion must be identified rather than inferred."], ["The horn itself should be sent for histology and the lesion at its base left undisturbed and unsampled for the time being", "The horn is composed of keratin. It is the lesion at its base that carries the diagnosis, so sampling only the projection risks missing an underlying malignancy."], ["Cryotherapy should be applied without histological assessment", "Destroying the lesion without knowing what lies beneath forfeits the opportunity to diagnose an underlying malignancy, which frequently requires excision according to standard practice for the tumour type."], ["The lesion can be reassured about if it is painless", "History may include bleeding or pain but symptoms do not separate benign from malignant underlying lesions."], ["There is often no clinical feature distinguishing benign from malignant, so the underlying lesion at the base must be diagnosed", "Correct. A cutaneous horn arises from the surface of another lesion, which may be benign or malignant — actinic keratosis, warts, and squamous cell carcinoma among them. There is often no clinical feature to distinguish them, so the underlying lesion must be diagnosed."]], "c": 4, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 27"}, {"topic": "Topical corticosteroids", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 34-year-old woman has been applying a topical corticosteroid to the same area of eyelid skin for several months. What adverse effects should be anticipated?", "opts": [["Permanent loss of hair follicles at the treated site", "Follicular destruction with permanent hair loss characterises scarring alopecias. Topical corticosteroid atrophy affects epidermal and dermal thickness rather than destroying the follicular stem cell compartment."], ["Atrophy, striae, telangiectasia, and hypopigmentation", "Correct. Prolonged use of topical corticosteroids may cause atrophy, striae, telangiectasia, and hypopigmentation. This is why potency is selected according to site and severity and why the usual course is twice daily for two weeks."], ["Nephrotoxicity with prolonged application", "Caution regarding nephrotoxicity is attached to calcipotriene, the vitamin D analogue used in psoriasis, rather than to topical corticosteroids."], ["Photosensitivity, dryness, and irritation", "Irritation, dryness, and photosensitivity are the important clinical considerations for topical retinoids such as adapalene, tretinoin, and tazarotene. They belong to a different topical class."], ["Hyperpigmentation, hypertrichosis, and thickening of the dermis", "This reverses the pigment and thickness changes. Prolonged corticosteroid exposure thins rather than thickens the skin and produces hypopigmentation rather than hyperpigmentation."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 41"}, {"topic": "Nevus spilus", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pigmented skin lesions", "q": "A 4-year-old boy has a circumscribed light brown patch on the trunk resembling a café au lait spot, within which several darker pigmented macules and papules are visible. What is this lesion and how is it managed?", "opts": [["A dysplastic naevus requiring biopsy", "A dysplastic naevus is at least 5 mm with irregular indistinct borders and is diagnosed by biopsy. Its appearance does not include discrete darker spots on a café au lait background."], ["Nevus spilus, requiring immediate complete surgical excision because of a high risk of progression to melanoma during childhood", "The lesion is identified correctly but it rarely progresses to melanoma, so routine excision is not warranted."], ["A café au lait macule of neurofibromatosis type 1", "Café au lait macules are uniform light tan to brown macules without darker macules within them, and their size thresholds define significance in neurofibromatosis."], ["A blue nevus arising in adolescence", "Blue naevi are blue, blue-grey, or blue-black lesions of the dorsal hands and feet, scalp, buttocks, or sacral region."], ["Nevus spilus, a variant of congenital naevus, managed with observation, periodic clinical evaluation, and sun protection counselling", "Correct. Nevus spilus, the spotted nevus, is a variant of congenital naevus present at birth or in the first years of life, most commonly on the trunk and extremities. Darkly pigmented macules or papules sit within a background that is circumscribed and similar in appearance to a café au lait spot, and it rarely progresses to melanoma. Management is observation, periodic evaluation, and sun protection."]], "c": 4, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 34"}, {"topic": "Kaposi sarcoma", "io": "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "q": "A 27-year-old man in equatorial Africa presents with rapidly progressive violaceous nodules on both legs. He is not known to have human immunodeficiency virus infection and is not taking immunosuppressive therapy. Which clinical form of Kaposi sarcoma is described as often aggressive and potentially rapidly fatal in young Black men in equatorial Africa?", "opts": [["The classic form", "The classic form affects older men with a chronic course and is rarely fatal, associated with human herpesvirus 8 in the setting of age-related immune senescence."], ["The endemic form", "Correct. The endemic form is often aggressive disease in young Black men in equatorial Africa and can be rapidly fatal, in contrast to the classic form in older men, which follows a chronic course and is rarely fatal."], ["The epidemic form", "The epidemic form is associated with acquired immunodeficiency syndrome, and its cornerstone of treatment is immune restoration with antiretroviral therapy."], ["The iatrogenic form", "The iatrogenic form occurs in the setting of immunosuppressive therapy, notably after transplantation, and is addressed in part by discussing immunosuppression reduction with the transplant team."], ["The nodular form", "Nodular describes lesion morphology rather than one of the clinical forms of the disease."]], "c": 1, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 63"}, {"topic": "Pyogenic granuloma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis for benign skin lesions", "q": "A 16-year-old girl is evaluated for a lesion on the finger pad that appeared rapidly after she injured the finger and bleeds easily when bumped. Examination shows a bright red, friable, pedunculated papule. What is the diagnosis, and what is notable about its name?", "opts": [["Pyogenic granuloma, which is misnamed because it is neither infectious nor granulomatous", "Correct. Pyogenic granuloma is an acquired vascular lesion that is misnamed, being neither infectious nor granulomatous. It is a benign vascular tumour common in children, young adults, and pregnancy, arising as a response to injury or hormonal factors, most often on the head, neck, and fingers."], ["Pyogenic granuloma, so named because it is a granulomatous response to bacterial infection", "This accepts the name at face value, which is the misconception the lecture corrects. The lesion is neither infectious nor granulomatous."], ["Dermatofibroma", "A dermatofibroma is a firm nodule with a brown halo and a positive dimple sign, most commonly on the legs, and it does not bleed spontaneously."], ["Cherry angioma", "Cherry angiomas are smooth firm deep red papules under 5 mm that occur with increasing age on the trunk. They do not appear rapidly after trauma on a finger in an adolescent."], ["Amelanotic melanoma", "Malignant melanoma is on the differential and is the reason histology may be sent, but the classic history of rapid growth after trauma with easy bleeding in a young patient fits the benign lesion."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 95"}, {"topic": "Dyshidrotic eczema", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 29-year-old hairdresser reports recurrent episodes of intensely itchy blisters on her hands. Examination shows multiple grouped 1 to 2 mm vesicles on the lateral aspects of the fingers and the adjacent interdigital surfaces, some coalescing, on a poorly defined pink base with surrounding dryness. She reports previous episodes that persisted for several weeks, dried up, and then peeled. What is the most likely diagnosis?", "opts": [["Irritant contact dermatitis", "Irritant contact dermatitis from frequent hand washing produces a glazed, well-demarcated eruption with erythema and scaling on the hands and forearms. It does not typically produce crops of deep-seated vesicles that desiccate and desquamate over weeks."], ["Dyshidrotic eczema", "Correct. Dyshidrotic eczema is a chronic, relapsing eruption of intensely pruritic vesicles on the hands and feet, classically described as tapioca vesicles. They may coalesce into bullae, persist for several weeks, then desiccate and resolve with desquamation — the exact course she describes."], ["Atopic dermatitis of the hands", "Adult atopic dermatitis does affect the hands, but it produces dry, lichenified plaques at flexures, hands, and neck rather than recurrent crops of vesicles on the lateral fingers that resolve by desquamation."], ["Nummular eczema", "Nummular eczema produces well-demarcated coin-shaped plaques 1 to 10 cm across, most often on the extremities, with prominent scale and crusting. Its lesions are plaques rather than grouped millimetre vesicles on the finger margins."], ["Allergic contact dermatitis", "Allergic contact dermatitis is plausible in a hairdresser exposed to dyes, but it produces a well-demarcated eruption at the site of allergen contact rather than grouped tapioca vesicles confined to the lateral fingers and interdigital surfaces with a relapsing weeks-long cycle."]], "c": 1, "cite": "2. General Dermatology I.pptx, Slide 65"}, {"topic": "Abscess", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 39-year-old woman has a tender fluctuant abscess of the buttock that has not drained spontaneously. What is the appropriate management?", "opts": [["Observation until the lesion drains on its own", "Waiting allows the collection to enlarge and risks extension into surrounding tissue. Incision and drainage is the indicated step."], ["Oral antibiotics selected by culture of the intact skin surface", "A surface culture samples colonising flora rather than the organism inside the abscess, and it delays the drainage that is the definitive treatment."], ["Squeezing the lesion to express its contents", "Patients are instructed not to squeeze such lesions, which risks deeper inoculation and spread rather than controlled evacuation."], ["Warm soaks and broad-spectrum antibiotics alone", "That is the management once a lesion has drained spontaneously. An undrained collection will not resolve on antibiotics, because the drug does not penetrate a walled-off cavity of pus."], ["Surgical incision and drainage", "Correct. If the lesion does not spontaneously drain, surgical incision and drainage is required. If it drains spontaneously, warm soaks and broad-spectrum antibiotics with consideration of methicillin-resistant Staphylococcus aureus are used, adjusted by culture."]], "c": 4, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 115"}, {"topic": "Nevus araneus", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis for benign skin lesions", "q": "A 27-year-old pregnant woman has several lesions on the upper trunk consisting of a central arteriole with radiating capillaries. What is the mechanism, and what should be asked in the history?", "opts": [["Proliferation of capillaries occurring with increasing age; no specific history of pregnancy, hormone use, alcohol, or hepatotoxic medication is required", "Capillary proliferation with increasing age describes cherry angioma. The spider angioma is a dilation of existing vessels, and its associations are exactly what make the history important."], ["Dilation of pre-existing vessels without proliferation, possibly from oestrogen excess; ask about pregnancy, hormone use, alcohol, and hepatotoxic medications", "Correct. Nevus araneus involves no vascular proliferation and is due to dilation of pre-existing vessels. Oestrogen excess states may be the cause, and lesions resolve after delivery or cessation of hormonal contraception. History should cover pregnancies, hormone use, alcohol, and high-risk medications for liver damage."], ["A benign vascular tumour arising after minor trauma", "A rapidly growing vascular lesion after trauma that bleeds easily describes pyogenic granuloma."], ["Extravasation of blood into the dermis", "Deposits of blood in the skin are petechiae and purpura, which are non-blanching. Spider angiomas blanch and refill from the centre."], ["Dilated superficial dermal capillaries present from birth", "Congenital dilated dermal capillaries describe nevus flammeus, which is present at birth and persists for life."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 89"}, {"topic": "Androgenetic alopecia", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 46-year-old woman reports gradual hair thinning over several years. Examination shows diffuse thinning across the central and parietal scalp with preservation of the frontal hairline. There are no bald patches, no scaling, no scarring, and no exclamation point hairs. Several of her male relatives began balding in their twenties. What is the most likely diagnosis?", "opts": [["Female-pattern hair loss", "Correct. Female-pattern hair loss produces diffuse thinning of the central and parietal scalp without significant change to the frontal hairline. There is an increased frequency of balding among first-degree male relatives, which the family history here supplies."], ["Lichen planopilaris", "Scarring alopecias destroy the follicle and leave loss of follicular openings with scarring. The examination specifically records no scarring, and the distribution follows a recognised androgenetic pattern instead."], ["Tinea capitis", "Tinea capitis produces scaling, broken hairs, and often inflammation of the scalp, and is predominantly a condition of children. The examination records no scaling and the pattern is a diffuse adult thinning."], ["Male-pattern hair loss", "Male-pattern hair loss begins with recession of the frontal hairline in a triangular frontotemporal pattern followed by vertex loss. This patient's frontal hairline is specifically preserved, which is the finding that separates the two patterns."], ["Alopecia areata", "Alopecia areata produces sudden, round, smooth 1 to 4 cm patches with exclamation point hairs, all of which are recorded as absent. It is patchy and abrupt rather than diffuse and gradual."]], "c": 0, "cite": "2. General Dermatology I.pptx, Slide 146"}, {"topic": "Caterpillars", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological infestations", "q": "An 8-year-old boy develops multiple erythematous papules arranged in linear streaks after handling a caterpillar. What is the term for the aggregate of medical effects caused by caterpillars, moths, and butterflies, and what is a specific step in management?", "opts": [["Tungiasis, treated with excision", "Tungiasis is flea penetration of the skin producing nodules on the feet."], ["Erucism, treated only with high-potency systemic corticosteroids and analgesia", "Erucism is the specific caterpillar dermatitis rather than the umbrella term, and management extends beyond corticosteroids to antihistamines, topical menthol or camphor preparations, analgesia, and hair removal."], ["Arachnidism, treated with antivenom", "Necrotic arachnidism refers to spider bites. Antivenom is used in selected black widow envenomations."], ["Cercarial dermatitis, treated with oatmeal baths", "Cercarial dermatitis follows exposure to cercaria-infested water and is managed symptomatically with antihistamines and oatmeal baths."], ["Lepidopterism, with removal of the hairs by stripping the affected area", "Correct. Lepidopterism is the aggregate of medical effects caused by caterpillars, moths, and butterflies. Gypsy moth caterpillar contact causes erucism, a pruritic dermatitis with erythematous papules in linear streaks. Management is symptomatic, and the hairs are removed by stripping."]], "c": 4, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 48"}, {"topic": "Impetigo", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 5-year-old boy has several lesions around the nose and mouth. Examination shows golden-yellow adherent crusts over shallow erosions, with palpable regional lymphadenopathy. He is afebrile and there are only four lesions. What is the most appropriate treatment?", "opts": [["Topical mupirocin ointment, with crusts removed before application", "Correct. Topical therapy is used for a single or limited number of non-bullous lesions, and mupirocin ointment is adequate for most cases of impetigo and as effective as oral therapy with fewer side effects. Crusts should be removed before applying it."], ["Oral penicillin V", "Treatment should cover both staphylococci and streptococci, and penicillin V does not cover Staphylococcus aureus. Penicillin V is the drug for erysipelas, where group A streptococcus is the organism."], ["Oral cephalexin", "Cephalexin is the oral drug of choice for children, but oral therapy is reserved for more extensive disease. Four lesions is a limited number, so topical treatment is preferred and carries fewer side effects."], ["Oral trimethoprim-sulfamethoxazole for presumed methicillin-resistant Staphylococcus aureus", "Coverage for methicillin-resistant Staphylococcus aureus is used when it is cultured or suspected, and cultures are obtained for high-risk patients such as healthcare workers or teachers. Nothing here suggests that risk."], ["Topical mupirocin ointment applied over the intact crusts", "The agent and route are right but the technique is wrong, and it matters: crusts must be removed first or the ointment cannot reach the infected erosion beneath."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 94"}, {"topic": "Acanthosis nigricans", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 34-year-old woman with obesity, type 2 diabetes, and polycystic ovary syndrome has velvety hyperpigmented plaques of the neck and axillae. What is the primary management?", "opts": [["Topical retinoids as the primary treatment", "Topical retinoids, salicylic acid, and ammonium lactate are used for cosmetic improvement. They address the appearance while leaving the insulin resistance that produced it untreated, which is why they are secondary."], ["Reassurance with no intervention, since the condition is purely cosmetic", "The lesion is a visible cutaneous marker of insulin resistance and underlying systemic disease. Treating it as purely cosmetic discards the diagnostic signal it carries."], ["Topical corticosteroids twice daily", "Acanthosis nigricans is a proliferative response to hyperinsulinaemia rather than an inflammatory dermatosis, so there is no inflammation for a corticosteroid to suppress."], ["Treat the underlying cause with weight loss and glycaemic control", "Correct. Primary management is treating the underlying cause through weight loss and glycaemic control, discontinuing any offending drug. Metformin reduces insulin resistance and may improve the skin findings."], ["Laser therapy or dermabrasion as the primary treatment", "Dermabrasion and laser are cosmetic measures listed alongside the topicals. Choosing a procedure over metabolic management treats the marker rather than the disease it marks."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 25"}, {"topic": "Photosensitivity", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 42-year-old man develops an exaggerated sunburn-like reaction on sun-exposed skin within hours of starting a new medication. The reaction is dose-dependent and occurred on the very first exposure. What mechanism is responsible, and what test is the gold standard for the alternative mechanism?", "opts": [["Phototoxicity, which is non-immunologic and dose-dependent; photopatch testing is the gold standard for photoallergy", "Correct. Phototoxicity is non-immunologic and dose-dependent — the drug absorbs ultraviolet energy, generating reactive oxygen species and direct cellular damage that resembles an exaggerated sunburn. Photopatch testing is the gold standard for photoallergy, the other mechanism."], ["Phytophotodermatitis from furanocoumarin contact; a thorough drug history is the gold standard", "Phytophotodermatitis follows contact with furanocoumarins in plants such as limes, celery, and parsley. It requires a chemical contactant rather than a systemic drug."], ["Phototoxicity, which is immunologic and dose-independent; minimal erythema dose testing is the gold standard for photoallergy", "The name is right but the mechanism description inverts it. Phototoxicity is specifically non-immunologic and dose-dependent, and minimal erythema dose testing measures ultraviolet sensitivity rather than confirming photoallergy."], ["Polymorphous light eruption, which appears 30 minutes to hours after exposure; antinuclear antibody testing is the gold standard", "Polymorphous light eruption is idiopathic rather than drug-induced, and antinuclear antibody testing is performed to exclude lupus rather than to confirm the eruption. The temporal link to a new medication points to a drug reaction."], ["Photoallergy, which is immunologic and requires prior sensitisation; photopatch testing is the gold standard for phototoxicity", "The two mechanisms are swapped. A reaction on first exposure that is dose-dependent cannot be an immunologic photoallergy, which requires prior sensitisation, and photopatch testing is aimed at photoallergy rather than phototoxicity."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 98"}, {"topic": "Tinea capitis", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "An 8-year-old boy has culture-confirmed tinea capitis and the species result will determine which drug he receives. Which oral agent is generally favoured for Trichophyton infection, and which for Microsporum?", "opts": [["Griseofulvin for Trichophyton and terbinafine for Microsporum", "The two are reversed. Because the pairing determines the drug choice, getting it backwards means selecting the less effective agent for the organism actually present."], ["Terbinafine for Trichophyton and griseofulvin for Microsporum", "Correct. Terbinafine is generally favoured for Trichophyton infection and griseofulvin is often favoured for Microsporum infection, which is why identifying the organism by culture matters before prolonged systemic therapy."], ["Terbinafine for both organisms", "Terbinafine is favoured for Trichophyton but griseofulvin is often preferred for Microsporum, so a single agent for both discards the species-specific preference."], ["Fluconazole for both organisms", "Fluconazole and itraconazole appear as alternatives in other dermatophyte infections, but they are not the two agents paired with these organisms in tinea capitis."], ["Topical ketoconazole for both organisms", "Ketoconazole 2 percent shampoo is an adjunct that reduces spore shedding. Topical therapy of any kind does not penetrate the infected hair shaft."]], "c": 1, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 15"}, {"topic": "Impetigo", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 3-year-old has several tense, clear-to-cloudy blisters on the trunk arising on intact skin. Some have ruptured, leaving shallow moist erosions ringed by a collarette of scale. There is no lymphadenopathy. What organism and mechanism are responsible?", "opts": [["Staphylococcus aureus or Streptococcus pyogenes, invading through a break in the skin", "That description belongs to non-bullous impetigo, which is the more common form and follows a break in the skin. Bullous disease is exclusively staphylococcal and arises on intact skin."], ["An autoimmune antibody against the epithelial basement membrane", "Antibodies against the basement membrane produce bullous pemphigoid, a disease of adults over 60 with tense 1 to 3 cm bullae. This is a toxin-mediated infection in a young child."], ["Staphylococcus aureus exclusively, releasing epidermolytic toxins that cause epidermal splitting", "Correct. Bullous impetigo is caused exclusively by Staphylococcus aureus, which releases epidermolytic toxins producing epidermal splitting. Bullae occur on intact skin, rupture to leave collarettes, and lymphadenopathy is uncommon — in contrast to non-bullous disease, where it is common."], ["Streptococcus pyogenes exclusively, through direct dermal invasion", "Streptococcus pyogenes contributes to non-bullous impetigo and is the main organism in erysipelas, but bullous impetigo is exclusively staphylococcal."], ["Corynebacterium minutissimum invading the stratum corneum", "Corynebacterium minutissimum causes erythrasma, an asymptomatic intertriginous patch with coral-red fluorescence. It does not produce bullae."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 89"}, {"topic": "Pediculosis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological infestations", "q": "A 52-year-old man living in a shelter has linear excoriations of the back and waist, while a 6-year-old girl in the same clinic has an itchy scalp. How does the presentation of pediculosis corporis differ from that of pediculosis capitis?", "opts": [["Pediculosis corporis produces burrows in the interdigital webs", "Burrows in the finger webs are the pathognomonic lesion of scabies."], ["Pediculosis corporis is transmitted by direct head-to-head contact", "Direct head-to-head contact is the primary route for head lice."], ["Pediculosis corporis affects the scalp with pruritus, low-grade fever, regional lymphadenopathy, and irritability rather than the trunk in children", "Scalp involvement with regional lymphadenopathy is head lice. Body lice affect the trunk."], ["Pediculosis corporis produces linear excoriations primarily on the back, neck, shoulders, and waist, with post-inflammatory pigmentation in chronic cases", "Correct. Body lice produce pruritus with linear excoriations primarily on the back, neck, shoulders, and waist, and post-inflammatory pigmentation in chronic cases. Head lice affect the scalp with pruritus, low-grade fever, regional lymphadenopathy, and irritability."], ["Pediculosis corporis is always asymptomatic", "Pubic lice are often asymptomatic or produce mild symptoms; body lice cause pruritus with excoriation."]], "c": 3, "cite": "CMS I Dermatological Infestations - Shahsv.pptx, Slide 26"}, {"topic": "Dermatoheliosis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 55-year-old woman asks about treatment for photoaging. What topical agent is approved for this indication, and what should she be told to expect?", "opts": [["Calcipotriene, a vitamin D analogue", "Calcipotriene is a first-line topical for plaque psoriasis with a caution regarding nephrotoxicity. It has no role in photoaging."], ["Tretinoin, with visible results expected within two weeks and no initial irritation at all", "The agent is right but the expectations are wrong in both directions. Promising rapid results without warning about retinoid dermatitis is the counselling failure that makes patients stop before the minimum 6 to 12 months of use required."], ["Tretinoin, with initial retinoid dermatitis expected and a minimum of 6 to 12 months of use", "Correct. Tretinoin 0.025 to 0.1 percent is the only approved topical agent for photoaging. It stimulates collagen synthesis, inhibits matrix metalloproteinase activity, and reduces fine lines and dyspigmentation; therapy is started low and titrated, with initial retinoid dermatitis expected."], ["Topical corticosteroids applied nightly", "Prolonged topical corticosteroid use causes atrophy, striae, and telangiectasia, which would compound rather than treat photoaged skin."], ["Hydroquinone, which reverses the structural changes of photoaging", "Pigment-directed agents address dyspigmentation but do not reverse the dermal structural damage. Tretinoin is the agent named for the photoaging indication."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 119"}, {"topic": "Photodermatitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 22-year-old bartender develops streaky, bizarrely shaped erythema and blistering on the forearms two days after an outdoor shift squeezing limes. The affected areas later become hyperpigmented. What is the most likely diagnosis?", "opts": [["Phytophotodermatitis", "Correct. Phytophotodermatitis follows contact with furanocoumarins, also called psoralens, found in limes, celery, parsley, and related plants, followed by ultraviolet exposure. The streaky shapes trace where the juice ran, and postinflammatory hyperpigmentation follows."], ["Polymorphous light eruption", "Polymorphous light eruption produces 2 to 5 mm papules on the décolletage and forearms within 30 minutes to hours of the first sunny days of spring. It is idiopathic and does not follow a chemical contactant in streaks."], ["Allergic contact dermatitis to citrus", "Allergic contact dermatitis is a delayed hypersensitivity requiring prior sensitisation, and it does not need ultraviolet light to appear. The interaction of the chemical with light is what defines this reaction."], ["Drug-induced phototoxicity", "Drug-induced phototoxicity resembles an exaggerated sunburn across sun-exposed skin in a patient taking a systemic drug. No medication is reported, and the streaky distribution reflects topical contact."], ["Ordinary sunburn", "Sunburn occurs without a chemical contactant history and follows the pattern of exposure rather than the drip marks of a liquid. The differential lists it precisely on the grounds of that missing contactant."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 100"}, {"topic": "Clinical principles", "io": "4 — Discuss clinical principles and decision-making", "q": "A student proposes a rare diagnosis to explain a very typical presentation in a 30-year-old woman. What does the principle 'place your bets on uncommon manifestations of common conditions rather than common manifestations of uncommon conditions' mean in practice?", "opts": [["A typical presentation of a rare disease should be favoured over an atypical presentation of a common one", "This inverts the principle and is precisely the reasoning error it exists to prevent."], ["An atypical presentation of a frequent disease is more likely than a typical presentation of a rare one", "Correct. Common things occur commonly — when you hear hoof beats think of horses, not zebras. An unusual presentation of a common condition is more probable than a textbook presentation of something rare."], ["Rare diagnoses should never be considered", "The principle orders probabilities rather than forbidding rare diagnoses, and clinicians are also advised to actively seek alternative diagnoses."], ["The most serious diagnosis should always be assumed first", "Ruling out the worst-case scenario belongs to the naturalistic approach in unstable patients rather than being the general principle of probability."], ["All diagnoses on a differential are equally likely until tested", "Being aware of the base rate of disease for diagnoses on the differential is explicitly recommended, so they are not treated as equally likely."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 25"}, {"topic": "Actinic keratosis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 73-year-old man has multiple actinic keratoses scattered across a bald scalp, and the clinician explains that treating only the individual visible lesions may be insufficient. What concept does this reflect?", "opts": [["Koebner phenomenon, in which lesions arise at sites of trauma", "Koebner phenomenon occurs in psoriasis and lichen planus, where new lesions develop where the skin has been injured. It is not what makes actinic keratoses multifocal."], ["Paraneoplastic change, in which an internal malignancy drives the skin findings", "Paraneoplastic cutaneous change describes malignant acanthosis nigricans. Actinic keratoses arise from direct cumulative ultraviolet damage to the skin itself."], ["Photoallergy, in which sensitisation spreads to unexposed skin", "Photoallergy is an immunologic drug-induced mechanism confirmed by photopatch testing. It is unrelated to the distribution of premalignant keratinocytic lesions."], ["Field cancerisation, in which the surrounding sun-damaged skin also carries mutations", "Correct. Actinic keratoses represent a field cancerisation process, meaning the ultraviolet-induced mutations extend through the surrounding skin rather than being confined to the visible lesions."], ["Pathergy, in which trauma to the skin provokes new lesions", "Pathergy is the worsening of pyoderma gangrenosum with trauma or debridement. It has no bearing on ultraviolet-induced keratinocytic dysplasia."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 112"}, {"topic": "Postherpetic neuralgia", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 74-year-old man still has burning, stabbing pain four months after a thoracic zoster eruption cleared. How is postherpetic neuralgia defined, and what are the first-line treatments?", "opts": [["Pain persisting at least 90 days after rash onset, treated first with long-term opioids", "The definition is right but routine long-term opioid therapy is specifically to be avoided, and it carries dependence and falls risk in the elderly patients most affected."], ["Pain persisting at least 7 days after rash onset, treated with antivirals", "Seven days is far too short a threshold, and antivirals are acute-phase therapy rather than treatment for established neuropathic pain."], ["Pain persisting at least 30 days after rash onset, treated first with systemic corticosteroids and a tapering course of oral prednisone over several weeks", "The interval is wrong and corticosteroids are not among the first-line agents for this neuropathic pain."], ["Pain persisting at least 90 days after rash onset, treated first with gabapentin or pregabalin, an appropriate tricyclic antidepressant, or topical lidocaine", "Correct. Pain persisting 90 days or more after rash onset is the commonly used definition. First-line treatment is gabapentin or pregabalin, an appropriate tricyclic antidepressant, or topical lidocaine, with a capsaicin patch as a further option."], ["Any pain during the acute eruptive phase, treated with acetaminophen", "Almost all patients have pain during the acute eruptive phase, and acetaminophen or a non-steroidal agent is used for mild acute pain. That is not postherpetic neuralgia, which is defined by persistence."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 109"}, {"topic": "Erysipelas", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 59-year-old woman has a classic presentation of erysipelas with a sharply demarcated raised plaque of the shin and a fever of 39 degrees Celsius. What laboratory and imaging approach is appropriate?", "opts": [["Clinical diagnosis, with blood and tissue cultures not cost effective and imaging of low yield", "Correct. Erysipelas is a clinical diagnosis in a classic presentation. Leukocytosis and raised erythrocyte sedimentation rate and C-reactive protein are common, but blood and tissue cultures are not cost effective because of extremely low organism yield, and imaging studies are of low yield and not indicated."], ["Skin biopsy in every patient to confirm the diagnosis", "Biopsy is not part of the routine evaluation of a classic erysipelas presentation and would delay prompt treatment."], ["Blood and tissue cultures in every patient before antibiotics are started, whatever the presentation", "Cultures have extremely low yield in erysipelas and are not cost effective. Delaying treatment for them is particularly unhelpful given that prompt treatment matters because of potentially rapid progression."], ["Magnetic resonance imaging to define the depth of involvement", "Imaging is of low yield and not indicated in a classic presentation. Depth is inferred clinically from the raised, sharply demarcated plaque."], ["No laboratory testing of any kind is ever useful", "Leukocytosis and raised inflammatory markers are common and can support the clinical impression; it is cultures and imaging specifically that add little."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 103"}, {"topic": "Molluscum contagiosum", "io": "c — Identify medical care strategies for cutaneous viral and fungal infections for infant, child, adolescent, adult and elderly populations", "q": "A 15-year-old presents with molluscum lesions confined to the genital area. What is the appropriate approach?", "opts": [["Assess for sexually transmitted infections as appropriate, since genital lesions in adolescents and adults may be sexually transmitted", "Correct. Genital lesions in adolescents and adults may be sexually transmitted and assessment for other infections is appropriate. In a child, genital lesions require context-sensitive assessment, and location alone does not prove abuse."], ["Assume sexual abuse on the basis of the genital location alone", "Location alone does not prove abuse, and the assessment is described as context-sensitive. Drawing that conclusion from site alone is both clinically and ethically wrong."], ["Refer immediately for surgical excision of all lesions", "Observation is appropriate for many patients, and procedures may blister, pigment, or scar. Excision is not the first response."], ["Reassure that genital molluscum is never sexually transmitted", "Sexual contact is common in adults with genital lesions, so this would miss an opportunity to screen for coexisting infections."], ["Treat with oral acyclovir and screen for herpes simplex virus only, since no other infection needs to be considered in an adolescent", "Molluscum contagiosum is a poxvirus infection and does not respond to acyclovir, and screening should not be limited to a single organism."]], "c": 0, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 133"}, {"topic": "Infantile hemangioma", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "q": "A 6-week-old infant has a bright red papule on the shoulder, and the clinician classifies the lesion by the depth of vessel involvement. What are the three types of infantile hemangioma, and which is the most common?", "opts": [["Superficial, which is the most common, presenting as a bright red papule, plaque, or nodule, plus mixed and deep types", "Correct. The superficial type is the most common, with dilated vessels in the dermis surrounded by proliferating endothelial cells, presenting as a bright red papule, plaque, or nodule and previously called a strawberry hemangioma. The deep type is the least common."], ["Capillary, cavernous, and arteriovenous, with capillary the most common", "That older terminology is not the classification used here, which divides lesions by depth into superficial, mixed, and deep."], ["Proliferative, involuting, and involuted, with the proliferative type being the most common of the three at presentation", "Those terms describe phases of the natural history rather than morphological types."], ["Congenital, infantile, and acquired, with congenital the most common", "Infantile hemangiomas are congenital vascular lesions as a group; the subtypes are defined by the depth of vessel involvement."], ["Deep, which is the most common, presenting as a pale or blue nodule", "The deep type involves dilated vessels in the deep dermis and subcutaneous tissue presenting as a pale, skin-coloured, red, or blue nodule, plaque, or tumour, and it is described as the least common."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 67"}, {"topic": "Nail unit neoplasms", "io": "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "q": "A 55-year-old woman has a new pigmented longitudinal band in the nail of one thumb that has widened over six months and is broader proximally than distally. Pigment extends onto the proximal nail fold. What is the concern, and what is the sign at the nail fold called?", "opts": [["Nail unit melanoma, with pigment extending onto the periungual skin known as Hutchinson sign", "Correct. New or evolving longitudinal melanonychia in one digit with increasing width, irregular colour or spacing, and proximal widening or a triangular shape raises nail unit melanoma. Pigment on the periungual skin is Hutchinson sign, and the thumb and great toe are high-yield sites."], ["Subungual haematoma, which migrates distally with nail growth", "Subungual haematoma is on the melanoma differential and does migrate distally as the nail grows, which is what distinguishes it. A band that is widening proximally over months is behaving in the opposite way."], ["Benign longitudinal melanonychia, which typically affects multiple digits and does not widen proximally", "Benign longitudinal melanonychia appears on the differential, and single-digit involvement with proximal widening is the pattern that argues against it."], ["Onychomycosis, causing discoloration of the nail plate", "Onychomycosis produces thickening, crumbling, debris, and onycholysis rather than a discrete pigmented longitudinal band with periungual extension."], ["Glomus tumour, causing pain and cold sensitivity", "Glomus tumour is a nail unit neoplasm characterised by pain and cold sensitivity rather than by pigmented longitudinal bands."]], "c": 0, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 84"}, {"topic": "Lichen planus", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 47-year-old woman presents with an intensely itchy eruption on both wrists and ankles that has been present for two months. Examination shows small, flat-topped, shiny violaceous papules, some coalescing into plaques, over the volar wrists and ankles. Fine white lines are visible across the surface of the plaques. She also has lacy white streaks on the buccal mucosa. What are the surface lines called?", "opts": [["Civatte bodies", "Civatte bodies are apoptotic keratinocytes seen in the lower epidermis on histopathology of lichen planus. They are a microscopic finding, not something visible at the bedside."], ["Koebner phenomenon", "Koebner phenomenon is the development of lesions at sites of trauma, and it does occur in lichen planus. But it describes where new lesions appear, not the white lines on the surface of existing ones."], ["Wickham striae", "Correct. Fine white lines visible on the surface of lichen planus plaques are known as Wickham striae. Oral lichen planus can occur with or without cutaneous disease and often presents with erosive lesions or Wickham striae, as it does here."], ["Collarette of scale", "A collarette of scale is the trailing rim of scale seen in the herald patch of pityriasis rosea after central clearing. It is a peripheral rim rather than fine lines crossing the lesion surface."], ["Auspitz sign", "Auspitz sign is pinpoint bleeding after scale is removed from a psoriatic plaque. It is a response to manipulation rather than a surface pattern visible on inspection."]], "c": 2, "cite": "2. General Dermatology I.pptx, Slide 176"}, {"topic": "Secondary morphology", "io": "c — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of dermatological conditions", "q": "A 62-year-old woman has a chronic plaque on the ankle showing thickening and hardening of the skin with exaggerated surface markings, and adjacent skin showing accumulation of loose grey-white cornified fragments. What are these two secondary changes called?", "opts": [["Erosion and ulceration, respectively", "Erosion is partial loss of the epidermis and ulceration is full-thickness loss extending to the dermis or deeper. Both are losses of tissue, whereas the findings described are additive."], ["Scaling and lichenification, respectively", "The two terms are correct but assigned to the wrong findings. Reversing them would describe the thickened plaque as a surface scale and understate the chronicity the lichenification records."], ["Lichenification and scaling, respectively", "Correct. Lichenification is thickening and hardening of the skin, and scaling is accumulation of loose or adherent cornified fragments of the epidermis, typically grey or white."], ["Scar and fissure, respectively", "A scar is abnormal formation of connective tissue and a fissure is a break in the skin. Both represent structural disruption rather than thickening or scale."], ["Excoriation and crust, respectively", "An excoriation is a scratch or abrasion where the top layer of skin wears off, and crust is dried serum. Neither describes epidermal thickening or cornified accumulation."]], "c": 2, "cite": "2. General Dermatology I.pptx, Slide 18"}, {"topic": "Herpes zoster", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 67-year-old woman presents on day four of a dermatomal vesicular eruption with new lesions still appearing. Within what window should antiviral therapy ideally be started, and when should it still be given beyond that window?", "opts": [["Only if postherpetic neuralgia has already developed", "Postherpetic neuralgia is the chronic complication defined as pain persisting at least 90 days after rash onset. Antivirals are an acute-phase treatment."], ["Within 7 days of rash onset, with no exceptions", "The stated target is 72 hours. Waiting a week loses the window in which antivirals most reduce acute severity."], ["Ideally within 72 hours of rash onset, and still given after 72 hours when new lesions are forming or the ophthalmic division is involved", "Correct. Antivirals should be started as soon as possible, ideally within 72 hours of rash onset, and treatment is still given after 72 hours when new lesions are forming or there is ophthalmic involvement."], ["Ideally within 72 hours of rash onset, with no benefit and no indication for antiviral therapy at any point beyond that window at all", "This is the closest wrong answer because the 72-hour target is correct. But refusing treatment beyond it would deny antivirals to patients with active new lesion formation or ophthalmic disease, who still benefit."], ["Only after polymerase chain reaction confirmation, whenever that returns", "Typical unilateral dermatomal vesicles are diagnosed clinically, and polymerase chain reaction is reserved for atypical, disseminated, vaccine-modified, or immunocompromised presentations. Waiting for it forfeits the treatment window."]], "c": 2, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 106"}, {"topic": "Malignant melanoma", "io": "1 — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of pre-malignant and malignant cutaneous lesions", "q": "A 49-year-old woman is being counselled after a melanoma diagnosis and asks what most determines her outlook. What is the dominant prognostic variable in melanoma, and what must be ensured about it?", "opts": [["The presence of asymmetry, graded at initial assessment", "Asymmetry is a recognition feature used to select lesions for biopsy rather than a prognostic measurement."], ["Lesion diameter, which must exceed 6 mm at the time of the initial biopsy to be significant", "Diameter is the D of the ABCDE rule and a screening feature, but it is not the prognostic variable that drives survival."], ["Breslow thickness, which must be accurately measured at the time of the initial biopsy", "Correct. Survival drops sharply with increasing Breslow thickness and with nodal or distant spread. Breslow thickness is the dominant prognostic variable and must be accurately measured at the time of initial biopsy — which is why a shave biopsy that transects the base can compromise staging."], ["The anatomic subtype of the melanoma", "Subtype describes the growth pattern and typical site. Thickness remains the dominant prognostic variable across subtypes."], ["The patient's Fitzpatrick skin type", "Skin type predicts baseline ultraviolet sensitivity and contributes to risk, but it does not determine prognosis once a melanoma is diagnosed."]], "c": 2, "cite": "Premalignant and Malignant Cutaneous Lesions - Jaquith.pptx, Slide 55"}, {"topic": "Clinical approach", "io": "4 — Discuss clinical principles and decision-making", "q": "A student is seeing a 46-year-old woman with an undifferentiated complaint and is unsure how to begin working through it. What are the first three steps of the clinical reasoning process?", "opts": [["Order diagnostic tests, interpret them, then take a history", "Diagnostic testing complements the history and physical examination rather than preceding them."], ["Gather initial patient information, organise and interpret clinical information, then synthesise it into a problem representation", "Correct. The process begins with gathering initial patient information, then organising and interpreting it, then synthesising the information into a problem representation, before hypotheses are generated and tested."], ["Generate hypotheses, gather information, then test the hypotheses", "Generating hypotheses before gathering and organising information inverts the sequence and invites premature anchoring on a diagnosis."], ["Treat the presenting signs and symptoms, observe the response to intervention, then arrive at the definitive diagnosis afterwards", "Treating signs and symptoms before a definitive diagnosis describes the naturalistic or event-driven approach, used mostly in emergency medicine for unstable patients and atypical presentations."], ["Apply a clinical guideline, then confirm it fits the patient", "Guidelines are common practice and often follow an if-then rule, but they should be applied appropriately to the individual rather than substituted for the reasoning process."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 11"}, {"topic": "Tinea corporis", "io": "b — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of cutaneous viral and fungal infections", "q": "A 26-year-old woman has two round, sharply circumscribed, slightly erythematous scaly plaques on the forearm, each with an advancing scaly border and a clearer centre. Where should the specimen for potassium hydroxide microscopy be taken from?", "opts": [["A plucked hair from within the plaque", "A plucked hair is used for potassium hydroxide microscopy when dermatophyte folliculitis is suspected. This is a glabrous skin lesion with an advancing scaly edge."], ["Normal skin adjacent to the lesion", "Uninvolved skin contains no organism. Perilesional sampling belongs to direct immunofluorescence in autoimmune blistering disease, not to fungal microscopy."], ["The centre of the lesion, where the change began", "The centre has cleared, which means the organism has moved outward. Sampling there yields the lowest density of fungal elements and produces false negatives."], ["The active advancing border of the lesion", "Correct. The potassium hydroxide specimen is taken from the active border, where the viable organism is concentrated. Culture is added for high clinical suspicion when the potassium hydroxide preparation is negative."], ["A nail clipping from the same limb", "Nail clippings with periodic acid-Schiff stain evaluate onychomycosis. They do not sample a body lesion."]], "c": 3, "cite": "6. Fungal and Viral Skin Infections - Jaquith.pptx, Slide 26"}, {"topic": "Dysplastic naevus", "io": "b — Identify medical care strategies for pigmented skin lesions in adult and elderly populations", "q": "A 38-year-old man with a family history of melanoma has more than 100 naevi, several at least 5 mm with irregular, indistinct borders. How is a dysplastic naevus diagnosed, and what is the management?", "opts": [["Diagnosis is by biopsy, with observation, biopsy of all changing or developing lesions, excision where melanoma is a concern, and sun protection", "Correct. Diagnosis of a dysplastic melanocytic nevus is by biopsy. Management includes observation, biopsy of all changing or developing lesions, excision where there is concern for melanoma, and sun protection. Family history is a risk factor, and dysplastic nevus syndrome may produce over 100 naevi by adolescence."], ["Diagnosis is by dermoscopy alone, with no histology needed", "Dermoscopy assists assessment but biopsy is what establishes this diagnosis."], ["Diagnosis is by biopsy, and all naevi should be excised prophylactically regardless of whether they are changing or developing over time at all", "The diagnostic method is right but excising more than a hundred lesions is neither practical nor indicated. Excision is directed at lesions where melanoma is a concern."], ["Diagnosis is clinical, and no biopsy is required at any point", "Clinical suspicion prompts the biopsy that establishes the diagnosis. Relying on inspection alone in a patient with dysplastic nevus syndrome and a family history of melanoma forfeits the histology that distinguishes dysplasia from melanoma."], ["No follow-up is needed once the lesions are documented", "Changing or developing lesions must be biopsied, which requires ongoing surveillance rather than a single documentation visit."]], "c": 0, "cite": "CMS I Pigmented Skin Lesions - Shahsv-2.pptx, Slide 44"}, {"topic": "Acne vulgaris", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "q": "A 17-year-old girl has moderate papulopustular and mixed acne of the face and upper back that has not responded to eight weeks of a topical antimicrobial. What regimen is recommended?", "opts": [["Oral isotretinoin as monotherapy", "Isotretinoin monotherapy sits alongside the triple regimen for severe nodular acne. Moving to it before trying the recommended combination escalates past an effective and much safer option."], ["A topical retinoid together with an oral antibiotic, without benzoyl peroxide", "Two-thirds correct, and the missing third matters: benzoyl peroxide is recommended alongside antibiotic therapy to reduce resistance. Omitting it is the commonest way a correct-looking regimen goes wrong."], ["An oral antibiotic alone continued indefinitely", "Oral antibiotics should be prescribed for the shortest time necessary, and monotherapy without benzoyl peroxide invites resistance in Cutibacterium acnes. It also leaves the follicular hyperkeratinisation untreated."], ["A topical retinoid alone", "A topical retinoid alone is the regimen for comedonal disease. Moderate inflammatory acne that has already failed topical therapy needs systemic treatment added."], ["A topical retinoid together with an oral antibiotic and topical benzoyl peroxide", "Correct. Moderate papulopustular and mixed acne is treated with a topical retinoid and an oral antibiotic and topical benzoyl peroxide. Benzoyl peroxide is specifically added whenever an antibiotic is used, to reduce the risk of bacterial resistance."]], "c": 4, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 33"}];
+const LTR = ["A","B","C","D","E"];
+let order=[], idx=0, score=0, answers=[];
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
+      '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
