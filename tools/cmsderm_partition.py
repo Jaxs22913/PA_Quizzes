@@ -18,7 +18,7 @@ themselves:
 
     python3 tools/cmsderm_partition.py
 """
-import importlib.util, glob, os, json, random, collections
+import importlib.util, glob, os, json, random, re, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -57,6 +57,20 @@ def build():
         q["q"] = new_stem
     print(f"stems rewritten as patient vignettes: {len(stems)}")
 
+    short = _load(os.path.join(HERE, "cmsderm_shortfix.py"), "OPTS")
+    leads = _load(os.path.join(HERE, "cmsderm_shortfix.py"), "LEAD")
+    for (key, qi), new_lead in leads.items():
+        q = pools[key][qi]
+        parts = re.split(r"(?<=[.!?])\s+", q["q"].strip())
+        assert parts[-1].endswith("?"), f"{key}:{qi} final sentence is not the lead-in"
+        q["q"] = " ".join(parts[:-1] + [new_lead])
+    for (key, qi), texts in short.items():
+        q = pools[key][qi]
+        assert len(texts) == 5, f"{key}:{qi}"
+        assert len({t.strip().lower() for t in texts}) == 5, f"{key}:{qi} duplicate option"
+        q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(texts)]
+    print(f"option sets cut to reference length: {len(short)}  (lead-ins narrowed: {len(leads)})")
+
     expl = _load(os.path.join(HERE, "cmsderm_explfix.py"), "EXPL")
     for (key, qi, oi), new_e in expl.items():
         q = pools[key][qi]
@@ -65,19 +79,12 @@ def build():
         q["opts"][oi][1] = new_e
     print(f"thin refutations strengthened: {len(expl)}")
 
-    applied = 0
-    for (key, qi, oi), new in fixes.items():
-        q = pools[key][qi]
-        if oi == "ALL":
-            assert len(new) == 5
-            q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(new)]
-        else:
-            assert oi != q["c"], f"fix would rewrite the KEYED answer at {key}:{qi}"
-            q["opts"][oi][0] = new
-        applied += 1
-    print(f"padding applied to {applied} questions")
+    # Padding retired 2026-08-27. It was the wrong fix: the bias came from
+    # over-long CORRECT answers, so cmsderm_shortfix.py cures both at once.
+    # cmsderm_lengthfix.py is kept in the tree only as a record of what was tried.
+    _ = fixes
 
-    import re
+
     flat = [(k, i, q) for k, v in pools.items() for i, q in enumerate(v)]
     vig = [q for _, _, q in flat if re.match(r"A(n)? \d+-(year|month|week|day)-old|A newborn|The mother of a \d+", q["q"])]
     print(f"patient vignettes: {len(vig)}/{len(flat)} = {len(vig)/len(flat):.0%}")
