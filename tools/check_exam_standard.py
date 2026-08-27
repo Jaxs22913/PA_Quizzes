@@ -38,6 +38,27 @@ Exit code is non-zero only if a checked file breaks a HARD rule.
 import argparse, collections, glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Frozen: Jaxon called SEMESTER 1 finished on 2026-08-27 -- "the exams from
+# semester 1 never need to be touched again". That term ended 14 August 2026, so
+# its quizzes are settled and are skipped rather than warned about, keeping a
+# future sweep from proposing helpful edits to material nobody will sit again.
+#
+# The class list is Semester 1 in semesters.js (physio, pharmacodynamics,
+# anatomy, anatomy-practicum, intro-pa, cam-nutrition, physical-diagnosis)
+# mapped to their repo folders. Physical Diagnosis 1 is Semester 1; Physical
+# Diagnosis 2 is Semester 2 and is NOT frozen. Pass --include-frozen to look
+# anyway.
+FROZEN = (
+    "Anatomy Exam",
+    "Anatomy Practicum Exam",
+    "CAM Nutrition Exam",
+    "Intro to PA Profession",
+    "Nutrition Class",
+    "Pharmacodynamics Exam",
+    "Physical Diagnosis 1 Exam",
+    "Physiology Exam",
+)
 REF_MEDIAN, REF_MAX = 19, 66          # measured from the 40 reference items
 GAMEABLE_BAR = 0.35                   # house bar; reference itself is 0.13
 DIAG_MIN = 0.20                       # "about a quarter", with slack
@@ -155,14 +176,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("target", nargs="?", default=None)
     ap.add_argument("--new", action="store_true", help="only files carrying a New tag in index.html")
+    ap.add_argument("--include-frozen", action="store_true", help="also check folders marked FROZEN")
     args = ap.parse_args()
 
-    files = []
+    files, frozen_skipped = [], []
     for f in glob.glob(os.path.join(ROOT, "*", "*.html")):
         rel = os.path.relpath(f, ROOT)
         if rel.startswith(("tools", "group-quizzes", "icons", "audio")):
             continue
         if args.target and args.target not in rel:
+            continue
+        if not args.include_frozen and any(rel.startswith(d) for d in FROZEN):
+            frozen_skipped.append(rel)
             continue
         files.append(f)
 
@@ -189,7 +214,9 @@ def main():
         if hard:
             failed += 1
 
-    print(f"\nchecked {checked} quiz file(s); {failed} broke a hard rule")
+    if frozen_skipped:
+        print(f"\nskipped {len(frozen_skipped)} file(s) in frozen folders: {', '.join(FROZEN)}")
+    print(f"checked {checked} quiz file(s); {failed} broke a hard rule")
     return 1 if failed else 0
 
 
