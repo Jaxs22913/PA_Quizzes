@@ -607,7 +607,7 @@ Q("Sebaceous hyperplasia",
     "sebaceous hyperplasia from basal cell carcinoma."],
    ["Serum lipid measurement",
     "Lipid screening is indicated for xanthelasma, which is associated with lipid disorders. Sebaceous hyperplasia "
-    "reflects sebocyte turnover changes with age rather than a lipid disorder."],
+    "reflects sebocyte turnover slowing with age rather than a lipid disorder."],
    ["No test is available, so all lesions must be excised",
     "Dermoscopy is available and non-invasive, and biopsy is reserved for continuing malignancy concern. Excising "
     "every lesion is unnecessary."]],
@@ -772,9 +772,15 @@ Q("Sebaceous hyperplasia",
   "What is the pathophysiology of sebaceous hyperplasia, and what is its malignant potential?",
   [["Reduced turnover of sebocytes with age causing gland enlargement, with no known potential for malignant "
     "transformation",
-    "Correct. Sebaceous hyperplasia is a common benign condition in which the turnover of sebocytes, the sebum-"
-    "producing epithelial cells, changes with age. It has no known potential for malignant transformation, though "
-    "patients often present with malignancy concern."],
+    # Deck slide 109 says turnover SLOWS, crowding the gland. The earlier wording said it merely
+    # "changes", which a student read backwards -- hyperplasia sounds like faster division.
+    # Plain text, no tags/entities: every other explanation in these pools is plain, and the
+    # group-study bank renders through a different engine than the quiz template.
+    "Correct. With age the turnover of sebocytes, the sebum-producing epithelial cells, slows down; the cells "
+    "then crowd inside the gland and the gland enlarges. The \u201chyperplasia\u201d is sebocytes accumulating "
+    "because they are not being replaced, not dividing faster \u2014 slower turnover and a bigger gland are not "
+    "a contradiction. No known potential for malignant transformation, though patients commonly present fearing "
+    "skin cancer."],
    ["Proliferation of eccrine ducts, with a low risk of malignant transformation",
     "Eccrine duct proliferation describes syringoma. Neither lesion carries a described malignant potential, but the "
     "gland of origin here is sebaceous."],

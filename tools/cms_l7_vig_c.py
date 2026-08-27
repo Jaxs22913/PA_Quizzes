@@ -84,7 +84,7 @@ VIG_C = [
    c=0, cite=c(80)),
 
  dict(topic="Nevus flammeus", io=IOB, lead="education",
-   q="The parents ask what the lesion will do as their son grows. Which is the most appropriate answer?",
+   q="A 2-year-old boy has a flat, blanchable, pink-purple patch on one cheek that has been present since birth and stops sharply at the midline. His parents ask what it will do as he grows. Which is the most appropriate answer?",
    opts=[
      ["It will grow with him, darken and thicken, and will not involute",
       "Correct — the vasculature dilates over time and the lesion may become a raised plaque. Psychosocial disability from facial disfigurement can be overwhelming."],
@@ -97,7 +97,7 @@ VIG_C = [
    c=0, cite=c(78)),
 
  dict(topic="Nevus flammeus", io=IOB, lead="treatment",
-   q="The parents want to know what can be done about it. Which is the most appropriate answer?",
+   q="A 2-year-old boy has a flat, blanchable, pink-purple patch on one cheek that has been present since birth and stops sharply at the midline. His parents ask what can be done about it. Which is the most appropriate answer?",
    opts=[
      ["No treatment is required; tinted waterproof makeup, or pulsed dye laser",
       "Correct — the laser selectively destroys the superficial target vessels."],
