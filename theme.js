@@ -4705,3 +4705,311 @@ window.openPauseOverlay = function (opts) {
     }).observe(results, { attributes: true, attributeFilter: ["style", "class"] });
   }
 })();
+
+/* ==========================================================================
+   Image lightbox
+   --------------------------------------------------------------------------
+   Jaxon, 2026-08-27: "add so we can click on the images on this and future
+   guide and it blowes it up so we can really see it in good detail and then
+   press escape or a X to go back."
+
+   Lives here rather than in any one page so every guide, chart and cram sheet
+   that already loads theme.js picks it up with no markup changes, and anything
+   built from the templates later gets it for free.
+
+   WHAT IS DELIBERATELY EXCLUDED:
+   - .pm-wrap images (practicum study/drill photographs). Their labels are
+     percent-positioned SIBLINGS of the <img>, not part of the pixels, so
+     enlarging the image on its own would show an unlabelled photo -- strictly
+     worse than not zooming. They also already own the click for the drill.
+   - images inside a link/button/label, which have their own click meaning.
+   - anything marked [data-nozoom] or .nozoom, for future opt-outs.
+   - icons and rules under 80px, which have no detail to reveal.
+   ========================================================================== */
+(function () {
+  "use strict";
+  if (!document.querySelector || !document.body) return;
+  if (!Element.prototype.closest) return;           // ancient browser: skip quietly
+
+  var cands = [];
+  var imgs = [];
+  var idx = -1;
+  var lastFocus = null;
+  var overlay, stage, big, cap, count, btnPrev, btnNext, btnZoom;
+
+  function eligible(im) {
+    if (im.closest(".pm-wrap")) return false;
+    if (im.closest("a, button, label")) return false;
+    if (im.hasAttribute("data-nozoom")) return false;
+    if ((" " + im.className + " ").indexOf(" nozoom ") > -1) return false;
+    return true;
+  }
+
+  /* An icon or a hairline rule has no detail to reveal, so it should not get a
+     zoom cursor. Size can only be judged once the bitmap is in, and figures far
+     down a chart are loading="lazy", so this is re-evaluated rather than fixed
+     at startup: naturalWidth when the image has loaded, the laid-out box while
+     it has not. */
+  function isBig(im) {
+    var w = im.naturalWidth || im.offsetWidth || 0;
+    var h = im.naturalHeight || im.offsetHeight || 0;
+    return w >= 80 && h >= 80;
+  }
+
+  /* Rebuilt on every open so the counter and arrow keys only ever walk images
+     that actually resolved -- a broken or still-pending figure would otherwise
+     leave a dead slot in the sequence. */
+  function refresh() {
+    imgs = [];
+    for (var i = 0; i < cands.length; i++) {
+      if (isBig(cands[i])) imgs.push(cands[i]);
+    }
+  }
+
+  function captionFor(im) {
+    var fig = im.closest("figure");
+    var fc = fig && fig.querySelector("figcaption");
+    var text = fc ? fc.textContent : (im.getAttribute("alt") || "");
+    return text.replace(/\s+/g, " ").trim();
+  }
+
+  function build() {
+    overlay = document.createElement("div");
+    overlay.className = "lb-overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Enlarged image");
+
+    var bar = document.createElement("div");
+    bar.className = "lb-bar";
+
+    count = document.createElement("span");
+    count.className = "lb-count";
+
+    btnPrev = document.createElement("button");
+    btnPrev.type = "button";
+    btnPrev.className = "lb-btn";
+    btnPrev.innerHTML = "&larr;";
+    btnPrev.title = "Previous image (left arrow)";
+    btnPrev.setAttribute("aria-label", "Previous image");
+
+    btnNext = document.createElement("button");
+    btnNext.type = "button";
+    btnNext.className = "lb-btn";
+    btnNext.innerHTML = "&rarr;";
+    btnNext.title = "Next image (right arrow)";
+    btnNext.setAttribute("aria-label", "Next image");
+
+    btnZoom = document.createElement("button");
+    btnZoom.type = "button";
+    btnZoom.className = "lb-btn";
+    btnZoom.textContent = "Zoom in";
+    btnZoom.title = "Toggle magnification";
+
+    var spacer = document.createElement("span");
+    spacer.className = "lb-spacer";
+
+    var btnX = document.createElement("button");
+    btnX.type = "button";
+    btnX.className = "lb-btn lb-x";
+    btnX.innerHTML = "&#10005;";
+    btnX.title = "Close (Esc)";
+    btnX.setAttribute("aria-label", "Close");
+
+    bar.appendChild(count);
+    bar.appendChild(btnPrev);
+    bar.appendChild(btnNext);
+    bar.appendChild(btnZoom);
+    bar.appendChild(spacer);
+    bar.appendChild(btnX);
+
+    stage = document.createElement("div");
+    stage.className = "lb-stage";
+    big = document.createElement("img");
+    big.alt = "";
+    stage.appendChild(big);
+
+    cap = document.createElement("div");
+    cap.className = "lb-cap";
+
+    overlay.appendChild(bar);
+    overlay.appendChild(stage);
+    overlay.appendChild(cap);
+    document.body.appendChild(overlay);
+
+    btnX.addEventListener("click", close);
+    btnPrev.addEventListener("click", function () { step(-1); });
+    btnNext.addEventListener("click", function () { step(1); });
+    btnZoom.addEventListener("click", function () { toggleZoom(); });
+    // backdrop click closes; clicks on the image itself are handled separately
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay || e.target === stage) close();
+    });
+    big.addEventListener("click", function (e) { toggleZoom(e); });
+    wirePan();
+  }
+
+  function isZoomed() { return overlay.classList.contains("zoomed"); }
+
+  /* Magnify to twice the size the image is currently displayed at, keeping the
+     point that was clicked under the cursor. Natural size is NOT the target --
+     several of these figures are downscaled slide captures, so "actual size"
+     could be smaller than the fitted view and zooming in would shrink them. */
+  function toggleZoom(e) {
+    if (isZoomed()) {
+      overlay.classList.remove("zoomed");
+      big.style.width = "";
+      btnZoom.textContent = "Zoom in";
+      return;
+    }
+    var r = big.getBoundingClientRect();
+    var target = r.width * 2;
+    // relative position of the click within the image, 0..1
+    var fx = e && e.clientX != null ? (e.clientX - r.left) / r.width : 0.5;
+    var fy = e && e.clientY != null ? (e.clientY - r.top) / r.height : 0.5;
+    if (!isFinite(fx)) fx = 0.5;
+    if (!isFinite(fy)) fy = 0.5;
+    overlay.classList.add("zoomed");
+    big.style.width = target + "px";
+    btnZoom.textContent = "Zoom out";
+    // re-centre after layout settles
+    var sr = stage.getBoundingClientRect();
+    stage.scrollLeft = fx * big.offsetWidth - sr.width / 2;
+    stage.scrollTop = fy * big.offsetHeight - sr.height / 2;
+  }
+
+  /* Drag to pan while magnified. */
+  function wirePan() {
+    var down = false, sx = 0, sy = 0, sl = 0, st = 0;
+    big.addEventListener("mousedown", function (e) {
+      if (!isZoomed()) return;
+      down = true; sx = e.clientX; sy = e.clientY;
+      sl = stage.scrollLeft; st = stage.scrollTop;
+      big.classList.add("dragging");
+      e.preventDefault();
+    });
+    window.addEventListener("mousemove", function (e) {
+      if (!down) return;
+      stage.scrollLeft = sl - (e.clientX - sx);
+      stage.scrollTop = st - (e.clientY - sy);
+    });
+    window.addEventListener("mouseup", function (e) {
+      if (!down) return;
+      down = false;
+      big.classList.remove("dragging");
+      // a drag should not also count as the click that zooms back out
+      if (Math.abs(e.clientX - sx) > 4 || Math.abs(e.clientY - sy) > 4) {
+        var swallow = function (ev) { ev.stopPropagation(); };
+        big.addEventListener("click", swallow, true);
+        setTimeout(function () { big.removeEventListener("click", swallow, true); }, 0);
+      }
+    });
+  }
+
+  function show(i) {
+    if (i < 0 || i >= imgs.length) return;
+    idx = i;
+    var src = imgs[i];
+    overlay.classList.remove("zoomed");
+    big.style.width = "";
+    btnZoom.textContent = "Zoom in";
+    big.src = src.currentSrc || src.src;
+    big.alt = src.getAttribute("alt") || "";
+    cap.textContent = captionFor(src);
+    count.textContent = imgs.length > 1 ? (i + 1) + " / " + imgs.length : "";
+    btnPrev.disabled = imgs.length < 2;
+    btnNext.disabled = imgs.length < 2;
+    stage.scrollLeft = 0;
+    stage.scrollTop = 0;
+  }
+
+  function step(d) {
+    if (imgs.length < 2) return;
+    show((idx + d + imgs.length) % imgs.length);
+  }
+
+  function open(i) {
+    lastFocus = document.activeElement;
+    overlay.classList.add("open");
+    document.documentElement.style.overflow = "hidden";
+    show(i);
+    setTimeout(function () { overlay.querySelector(".lb-x").focus(); }, 0);
+  }
+
+  function close() {
+    overlay.classList.remove("open");
+    overlay.classList.remove("zoomed");
+    big.removeAttribute("src");
+    big.style.width = "";
+    document.documentElement.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function arm(im) {
+    if (im.__lb || !eligible(im)) return;
+    im.__lb = 1;
+    cands.push(im);
+    function mark() {
+      if (!isBig(im)) return;
+      im.classList.add("lb-able");
+      if (!im.getAttribute("title")) im.setAttribute("title", "Click to enlarge");
+    }
+    mark();
+    if (!im.complete) im.addEventListener("load", mark, { once: true });
+    im.addEventListener("click", function () {
+      if (!isBig(im)) return;
+      ensure();
+      refresh();
+      var n = imgs.indexOf(im);
+      if (n > -1) open(n);
+    });
+  }
+
+  /* Built on first use rather than on every page: most quiz pages carry no
+     content images at all and have no business growing a hidden overlay. */
+  function ensure() {
+    if (overlay) return;
+    build();
+    document.addEventListener("keydown", function (e) {
+      if (!overlay.classList.contains("open")) return;
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }
+    });
+  }
+
+  function init() {
+    var found = document.querySelectorAll("body > .wrap img");
+    for (var i = 0; i < found.length; i++) arm(found[i]);
+    if (cands.length) ensure();
+
+    /* The Practicum Atlas renders its plates from JS after load, and re-renders
+       them on every filter change, so a one-shot scan at DOMContentLoaded would
+       arm nothing there. Re-arming is idempotent via the __lb flag. */
+    if (window.MutationObserver) {
+      new MutationObserver(function (muts) {
+        for (var m = 0; m < muts.length; m++) {
+          var added = muts[m].addedNodes;
+          for (var n = 0; n < added.length; n++) {
+            var node = added[n];
+            if (node.nodeType !== 1) continue;
+            if (node.tagName === "IMG") {
+              if (node.closest("body > .wrap")) { arm(node); ensure(); }
+            } else if (node.querySelectorAll) {
+              var sub = node.querySelectorAll("img");
+              for (var k = 0; k < sub.length; k++) {
+                if (sub[k].closest("body > .wrap")) { arm(sub[k]); ensure(); }
+              }
+            }
+          }
+        }
+      }).observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
