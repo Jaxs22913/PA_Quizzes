@@ -59,19 +59,38 @@ def chart_treatments():
             continue
         name = " ".join(re.sub("<[^>]+>", " ", tds[1]).split())
         first = SECOND_LINE.sub("", tds[5]).strip()
-        # Under a heading that already reads "First-line treatment", a bare "1st:"
-        # label is noise -- but "1st (mild):" is not, because the band is the
-        # choice being tested. So drop the bare label and keep the qualifier,
-        # promoted to a heading of its own: "1st (mild):" -> "Mild:".
-        first = re.sub(r"<b>1st:</b>\s*", "", first)
-        # deliberately does NOT require the closing </b> straight after the colon:
-        # the chart had one cell where it sat at the end of the sentence instead,
-        # and a label left as "1st (preventive):" under a First-line heading reads
-        # like a second thing rather than a band
+        # STRIPPING THE "1st" LABEL IS FIDDLIER THAN IT LOOKS. The chart writes it
+        # 27 different ways: sometimes the bold span holds only the label
+        # (<b>1st:</b>), sometimes the label AND the sentence (<b>1st: penicillin
+        # V.</b>), sometimes a band (<b>1st (mild):</b>), sometimes a qualifier
+        # (<b>1st oral:</b>, <b>1st and most important:</b>). Matching only the
+        # first form left a literal "1st:" sitting in 14 rows of a table already
+        # headed "First-line treatment".
+        #
+        # Bands and qualifiers are KEPT and promoted, because they are the choice
+        # being tested; only the redundant "1st" is dropped.
         first = re.sub(r"<b>1st \(([^)]+)\):",
-                       lambda m: "<b>%s:" % (m.group(1)[0].upper() + m.group(1)[1:]),
-                       first)
-        first = first.strip().lstrip("&mdash;").strip()
+                       lambda m: "<b>%s:" % (m.group(1)[0].upper() + m.group(1)[1:]), first)
+        first = re.sub(r"<b>1st and most important:\s*", "<b>Most important: ", first)
+        first = re.sub(r"<b>1st (oral|systemic|drug):\s*",
+                       lambda m: "<b>%s: " % m.group(1).capitalize(), first)
+        first = re.sub(r"<b>1st:\s*</b>\s*", "", first)   # span holding only the label
+        first = re.sub(r"<b>1st:\s*", "<b>", first)        # label sharing a span with its text
+        first = re.sub(r"<b>\s*</b>", "", first)           # tidy an emptied span
+        # NOT lstrip("&mdash;") -- that strips CHARACTERS in that set, so it ate the
+        # leading letter of anything starting with a/d/h/m/s: "site-appropriate"
+        # became "ite-appropriate", "medium" became "edium", "dapsone" became
+        # "psone". Remove a leading dash as a whole token instead.
+        first = re.sub(r"^(?:&mdash;|&ndash;|\u2014|\u2013|-)\s*", "", first.strip()).strip()
+
+        # Removing the label can leave a segment starting mid-sentence in lower
+        # case -- erysipelas read "...can be rapid. penicillin V." Each cell is a
+        # <br>-separated list, so capitalise the first letter of the cell and of
+        # every segment after a <br>, stepping over any opening tags first.
+        def _cap_segment(seg):
+            m = re.match(r"((?:<[^>]+>|\s)*)([a-z])", seg)
+            return seg if not m else seg[:m.start(2)] + m.group(2).upper() + seg[m.end(2):]
+        first = "<br>".join(_cap_segment(part) for part in first.split("<br>"))
         assert re.sub("<[^>]+>", "", first).strip(), "no first line for %r" % name
         out.append((lecture, name, first))
     assert len(out) >= 140, "only parsed %d chart rows -- markup changed?" % len(out)
