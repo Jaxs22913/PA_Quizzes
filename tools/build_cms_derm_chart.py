@@ -1303,6 +1303,47 @@ def apply_crop(im, stem):
     return keep
 
 
+# ---------------------------------------------------------------------------
+# EXTERNALLY SOURCED IMAGES
+#
+# Jaxon, 2026-08-27: "if a disease process doesnt have an image for it find a
+# reputable sourced images of it to include on charts/guides and cite your
+# source." These are the conditions this lecture block never illustrates.
+#
+# THE REPO IS PUBLIC, so every one of these is republished by committing it --
+# see [[media_asset_licensing]]. Each licence below was read on the asset's own
+# page, not inferred from the host: CDC's Public Health Image Library is NOT
+# uniformly public domain (PHIL #15193, the classic chlamydial conjunctivitis
+# photograph, says in terms "This image is copyright protected"), so it is not
+# used. Attribution renders visibly under each picture, as the licences require.
+#
+# Postherpetic neuralgia is deliberately absent. It is pain that persists after
+# the rash has healed; there is nothing to photograph, and any picture would
+# show acute zoster -- the wrong phase -- which is worse than no picture.
+# The one row that is deliberately left without a picture, and why -- so the gap
+# reads as a decision rather than an oversight.
+NO_IMAGE_REASON = {
+ "Postherpetic neuralgia": "No image, deliberately &mdash; this is pain that persists "
+                           "<i>after</i> the rash has healed, so there is nothing to "
+                           "photograph. A picture here would show acute zoster, the "
+                           "wrong phase.",
+}
+
+EXTERNAL = {
+ "Photodermatitis (phytophotodermatitis)": dict(
+   file="ext-phytophotodermatitis-lime.jpg",
+   alt="Phytophotodermatitis of the hands after lime juice and sun, photographed from day 2 to day 10",
+   note="Lime juice plus sun, followed from day 2 to day 10 &mdash; erythema, then blistering, then the streaked hyperpigmentation that persists.",
+   by="Katykidk", where="Wikimedia Commons", lic="CC BY-SA 4.0",
+   url="https://commons.wikimedia.org/wiki/File:Phytophotodermatitis_from_exposure_to_lime_juice.jpg"),
+ "Chronic paronychia": dict(
+   file="ext-chronic-paronychia.jpg",
+   alt="Chronic paronychia with a swollen proximal nail fold, absent cuticle and ridged nail plate",
+   note="The swollen proximal nail fold with <b>no cuticle</b> and transverse ridging of the plate &mdash; and no fluctuance, which is what separates it from acute paronychia.",
+   by="Daifallah M. Al Aboud, MD", where="via Wikimedia Commons, from StatPearls", lic="CC BY 4.0",
+   url="https://commons.wikimedia.org/wiki/File:ChronicParonychia.jpg"),
+}
+
 def prep_images():
     os.makedirs(OUT_DIR, exist_ok=True)
     mapping, missing = {}, []
@@ -1372,7 +1413,7 @@ assert not _clash, ("two DIFFERENT conditions lead with the same giveaway, so it
 
 
 def render(mapping):
-    body, n_rows, n_imgs = [], 0, 0
+    body, n_rows, n_imgs, n_ext = [], 0, 0, 0
     for row in ROWS:
         if row[0] == "SECTION":
             label = SECTION_LABELS[row[1]]
@@ -1399,6 +1440,17 @@ def render(mapping):
                    'decoding="async"><figcaption>%s<span class="deck">%s</span></figcaption></figure>'
                    % (mapping[src], H.escape(name.replace("&mdash;", "-")), cite, deck))
             n_imgs += 1
+        elif key in EXTERNAL:
+            e = EXTERNAL[key]
+            pic = ('<figure><img src="cms-derm-chart-images/%s" alt="%s" decoding="async">'
+                   '<figcaption>%s<span class="deck">Not in the deck &mdash; '
+                   '<a href="%s" target="_blank" rel="noopener">%s</a>, %s &middot; %s</span>'
+                   '</figcaption></figure>'
+                   % (e["file"], H.escape(e["alt"]), e["note"], e["url"],
+                      H.escape(e["by"]), H.escape(e["where"]), e["lic"]))
+            n_ext += 1
+        elif key in NO_IMAGE_REASON:
+            pic = '<div class="nopic">%s</div>' % NO_IMAGE_REASON[key]
         else:
             pic = '<div class="nopic">No suitable slide image in the deck</div>'
         # A condition with no giveaway fails the build rather than shipping a
@@ -1421,7 +1473,7 @@ def render(mapping):
             '<td>%s</td>'
             '</tr>' % (pic, name, gv, manif, tests, tx, edu))
         n_rows += 1
-    return "\n".join(body), n_rows, n_imgs
+    return "\n".join(body), n_rows, n_imgs, n_ext
 
 
 HTML = """<!DOCTYPE html>
@@ -1528,7 +1580,7 @@ HTML = """<!DOCTYPE html>
 <header class="top">
   <h1>Dermatology Comparison Chart</h1>
   <p>Clinical Medicine and Surgery I &middot; Exam 1 &middot; Class of 2028</p>
-  <p>__NROWS__ conditions across Lectures __LECTURES__ &middot; __NIMGS__ images from the lecture slides</p>
+  <p>__NROWS__ conditions across Lectures __LECTURES__ &middot; __NIMGS__ images from the lecture slides &middot; __NEXT__ sourced elsewhere and credited, for conditions the decks never illustrate</p>
   <p style="margin-top:10px;font-size:.82rem;color:var(--c-mute)">Use the <b>Download as PDF</b> button, top
   right, to keep this offline &mdash; it prints landscape with every row and every photograph intact.</p>
 </header>
@@ -1544,9 +1596,12 @@ handful of words &mdash; <i>coin-shaped</i>, <i>glazed appearing</i>, <i>tapioca
 patch</i>, <i>spares the scrotum</i>. Those words are in that column, per condition, so you can read the
 chart in the direction the question actually arrives: <b>phrase first, diagnosis second</b>. Every phrase
 there is language the lecture decks themselves use &mdash; classic buzzwords that are NOT in your decks are
-deliberately left out. <b>Everything here comes from the lecture PowerPoints</b>, and every
-picture cites its deck and slide. Where a deck does not state something, the cell says so rather than
-being filled in from elsewhere.<br><br><b>The gold &ldquo;Labs to order&rdquo; block</b> in the testing
+deliberately left out. <b>Every fact here comes from the lecture PowerPoints</b>, and every
+slide picture cites its deck and slide. Where a deck does not state something, the cell says so rather
+than being filled in from elsewhere. <b>Two conditions the decks never illustrate</b> &mdash;
+phytophotodermatitis and chronic paronychia &mdash; carry an openly licensed photograph from elsewhere,
+credited under the picture. Postherpetic neuralgia has no picture on purpose: it is pain after the rash
+has gone, so there is nothing to photograph.<br><br><b>The gold &ldquo;Labs to order&rdquo; block</b> in the testing
 column tells you what blood work to send &mdash; and, just as often, that there is none to send.
 <b>__NNOLABS__ of the __NROWS__ conditions here need no blood work at all</b>; dermatology is mostly a
 clinical diagnosis, and knowing which ones are the exception is the point of reading down that column.</div>
@@ -1599,7 +1654,7 @@ __BODY__
 
 def main():
     mapping = prep_images()
-    body, n_rows, n_imgs = render(mapping)
+    body, n_rows, n_imgs, n_ext = render(mapping)
     import re as _re
     nolabs = sum(1 for b in _re.findall(r'<div class="labs">.*?</div>', body, _re.S)
                  if _re.search(r"<b>(None|No bloods|No workup)", b))
@@ -1614,7 +1669,8 @@ def main():
                 .replace("__LECTURES__", lec_str)
                 .replace("__NROWS__", str(n_rows))
                 .replace("__NNOLABS__", str(nolabs))
-                .replace("__NIMGS__", str(n_imgs)))
+                .replace("__NIMGS__", str(n_imgs))
+                .replace("__NEXT__", str(n_ext)))
     open(OUT_HTML, "w", encoding="utf-8").write(html)
     kb = sum(os.path.getsize(os.path.join(OUT_DIR, f)) for f in os.listdir(OUT_DIR)) // 1024
     print("wrote %s" % os.path.basename(OUT_HTML))
@@ -1630,7 +1686,7 @@ def main():
     # A lazy-loaded image that never entered the viewport is missing from the
     # print output. An export before this check carried 10 of 84 photographs.
     assert 'loading="lazy"' not in html, "lazy images will not survive Download as PDF"
-    assert html.count("<img ") == n_imgs, "image count mismatch"
+    assert html.count("<img ") == n_imgs + n_ext, "image count mismatch"
     assert 'class="guide-back-bar"' in html, "no back bar, so theme.js adds no PDF button"
     assert "@media print" in html, "no print rules"
     used_stems = {r[0].rsplit(".", 1)[0] for r in ROWS if r[0] and r[0] != "SECTION"}

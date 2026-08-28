@@ -28,9 +28,13 @@ CHART = os.path.join(DIR, "cms-derm-comparison-chart.html")
 IMGDIR = os.path.join(DIR, "cms-derm-chart-images")
 
 # ---------------------------------------------------------------- the mapping
+# The trailing <span class="deck"> is captured, not discarded, because it is the
+# only place the ATTRIBUTION lives for the pictures that did not come from a
+# slide. Those are CC BY / CC BY-SA and the credit has to travel with the image
+# into the guide -- dropping it here would republish them unattributed.
 ROW = re.compile(
     r'<tr><td class="pic">(?:<figure><img src="cms-derm-chart-images/([^"]+)"[^>]*>'
-    r'<figcaption>(.*?)<span class="deck">.*?</span></figcaption></figure>'
+    r'<figcaption>(.*?)<span class="deck">(.*?)</span></figcaption></figure>'
     r'|<div class="nopic">.*?</div>)</td><td class="name">(.*?)</td>', re.S)
 
 
@@ -38,11 +42,24 @@ def chart_images():
     """{condition name: (image filename, 'Lecture N &middot; Slide M')}."""
     src = open(CHART, encoding="utf-8").read()
     out = {}
-    for img, cite, name in ROW.findall(src):
+    for img, cite, deck, name in ROW.findall(src):
+        # slide pictures cite "Lecture N - Slide M"; sourced pictures cite their
+        # author, source and licence instead, carried over verbatim with its link
+        if img.startswith("ext-"):
+            cite = deck
         # keep the "also Lecture N" badge text -- it is the only thing that
         # tells the two solar lentigo rows apart
         name = " ".join(re.sub(r"<[^>]+>", " ", name).split())
-        assert name not in out, "two chart rows named %r" % name
+        # Actinic keratosis genuinely occupies two chart rows, Lecture 3 and
+        # Lecture 9, and unlike solar lentigo it carries no "also Lecture N"
+        # badge to tell them apart. Both rows hold a real actinic keratosis
+        # photograph, so the first is kept rather than failing the run -- this
+        # assert had quietly made the whole script unrunnable, which is why the
+        # guide's pictures had stopped tracking the chart.
+        if name in out:
+            assert out[name] is not None and img, \
+                "duplicate chart row %r and one of them has no image" % name
+            continue
         out[name] = (img, cite) if img else None
     assert len(out) >= 80, "only parsed %d chart rows -- markup changed?" % len(out)
     return out

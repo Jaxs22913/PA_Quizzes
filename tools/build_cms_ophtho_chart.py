@@ -292,6 +292,43 @@ GROUP_COLOUR = {
 }
 
 
+# ---------------------------------------------------------------------------
+# EXTERNALLY SOURCED IMAGES
+#
+# Jaxon, 2026-08-27: "if a disease process doesnt have an image for it find a
+# reputable sourced images of it to include on charts/guides and cite your
+# source." Four conjunctivitis rows had no picture on any slide.
+#
+# THE REPO IS PUBLIC, so committing these republishes them -- see
+# [[media_asset_licensing]]. Every licence below was read on the asset's own
+# page. That matters here: CDC's Public Health Image Library is NOT uniformly
+# public domain. PHIL #15193, the classic chlamydial inclusion conjunctivitis
+# photograph, states "This image is copyright protected", so it is NOT used --
+# the open-access Cureus case report stands in for it instead. PHIL #3766
+# (gonococcal) does carry the public-domain notice, and is used.
+EXTERNAL = {
+ "Gonococcal conjunctivitis": dict(
+   file="ext-gonococcal-conjunctivitis.jpg",
+   alt="Newborn with gonococcal ophthalmia neonatorum: marked bilateral lid oedema and copious purulent discharge",
+   by="CDC / J. Pledger", where="Public Health Image Library #3766", lic="public domain",
+   url="https://commons.wikimedia.org/wiki/File:Gonococcal_ophthalmia_neonatorum.jpg"),
+ "Chlamydial conjunctivitis &mdash; neonatal": dict(
+   file="ext-chlamydial-conjunctivitis-neonatal.jpg",
+   alt="Neonate with chlamydial conjunctivitis: lid oedema, erythema and discharge at the lid margin",
+   by="Nwokeji I, Ding K, Ketner S", where="Cureus 2024;16(7):e64463", lic="CC BY 4.0",
+   url="https://pmc.ncbi.nlm.nih.gov/articles/PMC11318493/"),
+ "Trachoma": dict(
+   file="ext-trachoma-stages.jpg",
+   alt="Four stages of trachoma: follicles, tarsal conjunctival scarring, entropion with trichiasis, and corneal opacity",
+   by="Hu VH and colleagues", where="Trop Med Int Health 2010;15(6):673&ndash;91", lic="CC BY 2.5",
+   url="https://commons.wikimedia.org/wiki/File:Trachoma_1.png"),
+ "Autoimmune conjunctivitis": dict(
+   file="ext-autoimmune-conjunctivitis-mmp.jpg",
+   alt="Ocular mucous membrane pemphigoid: inflamed lower palpebral conjunctiva with subconjunctival fibrosis",
+   by="Nguyen CDT, Cao J, Dominguez AR", where="JAAD Case Rep 2025;64:95&ndash;99", lic="CC BY 4.0",
+   url="https://pmc.ncbi.nlm.nih.gov/articles/PMC12418853/"),
+}
+
 def main():
     donor = open(DONOR, encoding="utf-8").read()
     head = donor[:donor.index("</head>")]
@@ -314,7 +351,7 @@ def main():
                       % (H.escape(g), GROUP_COLOUR[g], H.escape(g)))
 
     imgdir = os.path.join(os.path.dirname(OUT), "cms-ophtho-chart-images")
-    body_rows, n_pics = [], 0
+    body_rows, n_pics, n_ext = [], 0, 0
     for name, grp, give, pres, test, tx, urg, edu, slide in ROWS:
         urg_cls = ("emerg" if "EMERGENT" in urg else
                    "sameday" if "SAME DAY" in urg else
@@ -330,6 +367,15 @@ def main():
             cell = ('<img src="cms-ophtho-chart-images/%s" loading="lazy" '
                     'alt="%s, from the lecture slides."><span class="picite">Slide %d</span>'
                     % (fn, H.escape(re.sub("&[a-z]+;", " ", name)), sl))
+        elif name in EXTERNAL:
+            e = EXTERNAL[name]
+            assert os.path.exists(os.path.join(imgdir, e["file"])), e["file"]
+            n_ext += 1
+            cell = ('<img src="cms-ophtho-chart-images/%s" loading="lazy" alt="%s">'
+                    '<span class="picite">not on a slide &mdash; '
+                    '<a href="%s" target="_blank" rel="noopener">%s</a>, %s &middot; %s</span>'
+                    % (e["file"], H.escape(e["alt"]), e["url"], H.escape(e["by"]),
+                       e["where"], e["lic"]))
         else:
             cell = '<span class="nopic">no image<br>on the slide</span>'
         pain, side, sign = DIFF[name]
@@ -381,10 +427,15 @@ axis was first-line against second-line treatment; here the decision that change
 quickly the patient is seen, and the deck ends with an explicit emergent / same-day / urgent / routine
 table. <span class="u emerg" style="padding:1px 6px">EMERGENT</span> means now.
 <span class="u sameday" style="padding:1px 6px">SAME DAY</span> means before the end of the day.<br><br>
-<b>Every picture comes from the lecture deck and cites its slide.</b> Some carry their source
+<b>Most pictures come from the lecture deck and cite their slide.</b> Some carry their source
 stamped into the image &mdash; <i>EyeRounds.org</i>, the <i>Kellogg Eye Center</i>,
 <i>&copy; Logical Images</i> &mdash; and those marks are left visible on purpose; they are part of
 the citation.<br><br>
+<b>Four conditions have no picture anywhere in the deck</b> &mdash; gonococcal conjunctivitis,
+neonatal chlamydial conjunctivitis, trachoma and autoimmune conjunctivitis. Each of those carries an
+openly licensed photograph from elsewhere instead, credited by author, source and licence beneath the
+picture. The classic CDC chlamydial conjunctivitis photograph is <i>not</i> among them: its own library
+page marks it copyright protected, so an open-access case report stands in for it.<br><br>
 <b>Two of the deck&rsquo;s pictures are deliberately NOT used.</b> Slide 29&rsquo;s first image is a
 <b>hyphaema</b> and slide 27&rsquo;s third is <b>conjunctival intraepithelial neoplasia</b> &mdash;
 both are captioned <i>DDX</i> on the slide itself. Putting either in a chart cell would say
@@ -488,6 +539,8 @@ __ROWS__
         o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
         assert o == c, "%s unbalanced: %d open, %d close" % (tag, o, c)
     for fn in re.findall(r'src="cms-ophtho-chart-images/([^"]+)"', html):
+        if fn.startswith("ext-"):
+            continue        # sourced outside the deck; REJECTED only lists slide blobs
         assert fn not in REJECTED, "a rejected DDX image reached the page: %s" % fn
         assert os.path.exists(os.path.join(imgdir, fn)), fn
     missing = [r[0] for r in ROWS if r[0] not in DIFF]
@@ -502,7 +555,8 @@ __ROWS__
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
     print("wrote %s (%d KB, %d conditions, %d with a picture, %d groups)"
-          % (os.path.basename(OUT), len(html) // 1024, len(ROWS), n_pics, len(GROUP_COLOUR)))
+          % (os.path.basename(OUT), len(html) // 1024, len(ROWS), n_pics, len(GROUP_COLOUR))
+          + ("; %d sourced outside the deck and credited" % n_ext if n_ext else ""))
     print("rejected DDX images kept out: %s" % ", ".join(sorted(REJECTED)))
 
 
