@@ -221,6 +221,8 @@ window.GROUP_INDEX = {
 "pharmacodynamics-exam-2-pharmacodynamics-master-exam":{"title":"Pharmacodynamics Comprehensive Quiz — Set 1","category":"Pharmacodynamics","sem":"summer-1-2026","n":30},
 "pharmacodynamics-exam-2-pharmacodynamics-master-exam-version-2":{"title":"Pharmacodynamics Comprehensive Quiz — Set 2","category":"Pharmacodynamics","sem":"summer-1-2026","n":30},
 "pharmacodynamics-exam-2-pharmacodynamics-master-exam-version-3":{"title":"Pharmacodynamics Comprehensive Quiz — Set 3","category":"Pharmacodynamics","sem":"summer-1-2026","n":30},
+"pharmacology-i-exam-1-ans-cholinergic-quiz":{"title":"ANS and Cholinergic Drugs Quiz 1 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
+"pharmacology-i-exam-1-ans-cholinergic-quiz-version-2":{"title":"ANS and Cholinergic Drugs Quiz 2 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-antibacterials-quiz":{"title":"Antibacterials Quiz 1 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-antibacterials-quiz-version-2":{"title":"Antibacterials Quiz 2 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-antifungals-quiz":{"title":"Antifungals Quiz 1 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
