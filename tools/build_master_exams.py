@@ -146,10 +146,12 @@ def build(folder, seed=20260824):
 
 
 def main():
-    if "--list" in sys.argv or len(sys.argv) < 2:
-        folder = "Clinical Medicine and Surgery I Exam 1"
-    else:
-        folder = sys.argv[1]
+    # The folder is read independently of the flags. Previously "--list" forced
+    # the CMS folder no matter what was passed, so a dry run on any other block
+    # silently previewed the wrong exam -- which is exactly the case --list
+    # exists for.
+    positional = [a for a in sys.argv[1:] if not a.startswith("--")]
+    folder = positional[0] if positional else "Clinical Medicine and Surgery I Exam 1"
     per_lecture, quota, forms = build(folder)
 
     print("pool: %d unique questions across %d lectures"
