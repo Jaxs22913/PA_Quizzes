@@ -40,11 +40,14 @@ if TOPIC == "chol":
 elif TOPIC == "adren":
     from pharm_l3_adren_pool import POOL as _A
     from pharm_l3_adren_pool_b import POOL_B as _B
-    POOL, OUT_JSON = _A + _B, "pharm_l3_adren_sets.json"
-    try:
-        from pharm_l3_adren_lengthfix import FIXES
-    except ImportError:
-        FIXES = {}
+    from pharm_l3_adren_pool_c import POOL_C as _C
+    POOL, OUT_JSON = _A + _B + _C, "pharm_l3_adren_sets.json"
+    FIXES = {}
+    from pharm_l3_adren_shortfix import SHORTEN
+    for _i, _new in SHORTEN.items():
+        _q = POOL[_i]
+        assert len(_new) < len(_q["opts"][_q["c"]][0]), "shorten %d is not shorter" % _i
+        _q["opts"][_q["c"]][0] = _new
 else:
     sys.exit("unknown topic %r -- use chol or adren" % TOPIC)
 
