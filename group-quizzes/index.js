@@ -227,6 +227,8 @@ window.GROUP_INDEX = {
 "pharmacology-i-exam-1-antifungals-quiz-version-2":{"title":"Antifungals Quiz 2 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-antivirals-quiz":{"title":"Antivirals Quiz 1 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":20},
 "pharmacology-i-exam-1-antivirals-quiz-version-2":{"title":"Antivirals Quiz 2 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":20},
+"pharmacology-i-exam-1-dermatology-medications-quiz":{"title":"Dermatology Medications Quiz 1 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
+"pharmacology-i-exam-1-dermatology-medications-quiz-version-2":{"title":"Dermatology Medications Quiz 2 — Pharmacology I Exam 1","category":"Pharmacology I","sem":"fall-2026","n":30},
 "physical-diagnosis-1-exam-2-abdominal-exam-quiz":{"title":"Abdominal Examination — Set 1 (Physical Diagnosis 1)","category":"Physical Diagnosis","sem":"summer-1-2026","n":30},
 "physical-diagnosis-1-exam-2-abdominal-exam-quiz-version-2":{"title":"Abdominal Examination — Set 2 (Physical Diagnosis 1)","category":"Physical Diagnosis","sem":"summer-1-2026","n":30},
 "physical-diagnosis-1-exam-2-anus-rectum-quiz":{"title":"Anus & Rectum Examination — Set 1 (Physical Diagnosis 1)","category":"Physical Diagnosis","sem":"summer-1-2026","n":30},
