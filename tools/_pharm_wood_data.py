@@ -180,11 +180,11 @@ STRATEGY = [
 # (drug or topic, what he flagged, timestamp, lecture, verify)
 STARRED = [
  ("<i>Staphylococcus aureus</i>", "&ldquo;A very notable bug&hellip; especially when we talk about the dreaded MRSA.&rdquo;",
-  "0:37", L1, ["a very notable bug", "the dreaded MRSA"]),
+  "28:40", L1, ["a very notable bug", "the dreaded MRSA"]),
  ("<i>Pseudomonas</i>", "&ldquo;A really important bug from the gram-negative category&rdquo; &mdash; watch for which agents carry anti-pseudomonal cover.",
-  "0:50", L1, ["another notable bacteria", "pseudomonas is a really important bug"]),
+  "42:41", L1, ["another notable bacteria", "pseudomonas is a really important bug"]),
  ("Aztreonam", "Notable because there is <b>no documented cross-sensitivity with beta-lactams</b> &mdash; usable in a true penicillin allergy.",
-  "1:00", L1, ["no documented cross sensitivity with beta lactams"]),
+  "57:45", L1, ["no documented cross sensitivity with beta lactams"]),
  ("Imipenem", "&ldquo;A very notable unique side effect just for imipenem&rdquo; &mdash; <b>seizures</b>, and the first time seizures appear in the lecture.",
   "1:00:16", L1, ["very notable unique side effect just for imipenem",
                   "first time we've seen seizures pop up"]),

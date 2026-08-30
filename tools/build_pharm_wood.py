@@ -14,6 +14,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from _pharm_ref_shell import page
 import _pharm_wood_data as D
+from measure_pharm_time import measure, hhmm
 
 OUT = os.path.join(ROOT, "Pharmacology I Exam 1", "pharm-exam-1-what-to-star.html")
 LEC = {1: "Lecture 1 &mdash; Antibiotics, Antivirals &amp; Antifungals",
@@ -77,6 +78,53 @@ def main():
                 '</span><h2>How he says he writes the test <span class="tag">asked directly, answered directly</span>'
                 '</h2></div>' + "".join(body) + '</section>')
 
+    # --- time spent per topic, which is his own stated signal ---
+    LECNAME = {1: "Lecture 1 &mdash; Antibiotics, Antivirals &amp; Antifungals",
+               2: "Lecture 2 &mdash; Dermatology Medications",
+               3: "Lecture 3 &mdash; ANS Pharmacology"}
+    tblocks = []
+    for lec in (1, 2, 3):
+        rows_t, total = measure(lec)
+        # If the topic list ever misses a whole section of a lecture the blocks stop
+        # adding up -- fail the build rather than publish a ranking with a hole in it.
+        # The shortfall that IS expected is the housekeeping before the first topic,
+        # which is reported on the page rather than hidden.
+        covered = sum(d for _l, _s, _e, d in rows_t)
+        assert covered / total >= 0.90, (
+            'lecture %d: topic blocks cover only %.0f%% of the recording'
+            % (lec, 100 * covered / total))
+        head = min(s for _l, s, _e, _d in rows_t)
+        ranked = sorted(rows_t, key=lambda r: -r[3])
+        top = ranked[0][3]
+        body_t = "".join(
+            '<tr><td class="dn">%s</td>'
+            '<td class="ct"><span class="bar" style="width:%.1f%%"></span>'
+            '<span class="mins">%.0f min</span></td>'
+            '<td class="sl">%s<br><span class="g">to %s</span></td></tr>'
+            % (label, 100.0 * dur / top, dur / 60.0, hhmm(st), hhmm(en))
+            for label, st, en, dur in ranked)
+        tblocks.append(
+            '<h3 class="lechead">%s <span class="said">%s total &middot; first %s is housekeeping</span></h3>'
+            '<div class="scroll"><table><thead><tr><th class="dn-h">Topic</th>'
+            '<th>Time spent</th><th class="sl-h">From</th></tr></thead>'
+            '<tbody>%s</tbody></table></div>' % (LECNAME[lec], hhmm(total), hhmm(head), body_t))
+    secs.append(
+        '<section id="time"><div class="shead"><span class="dot" style="background:#9c5230"></span>'
+        '<h2>Where the time actually went <span class="tag">his own stated signal, measured</span>'
+        '</h2></div>'
+        '<div class="note"><b>He told you to use this.</b> &ldquo;If I spend a lot of time talking '
+        'about something, I&rsquo;m probably thinking about that when writing test questions.&rdquo; '
+        'So here is the measurement, taken from the word-level timings in the recordings rather than '
+        'estimated. <b>Penicillins and antifungals got 20 minutes each; monobactams got 54 seconds.</b>'
+        '</div>'
+        '<div class="note warn"><b>Read this as weight, not as a syllabus.</b> A topic runs from its '
+        'first substantive mention to the next topic&rsquo;s, so a digression inside a block counts '
+        'toward that block, and the boundaries are good to roughly the nearest segment. It also does '
+        'not mean a short topic is safe &mdash; monobactams take under a minute and he still flagged '
+        'aztreonam&rsquo;s lack of beta-lactam cross-reactivity as notable. Use it to decide what to '
+        'revise <em>longest</em>, not what to skip.</div>'
+        + "".join(tblocks) + '</section>')
+
     rows = "".join(
         '<tr><td class="dn">%s</td><td class="ct">%s</td>'
         '<td class="sl">L%d<br><span class="g">%s</span></td></tr>' % (d, w, lec, at)
@@ -100,6 +148,10 @@ def main():
     padding:16px 18px;margin:0 0 14px;box-shadow:var(--shadow);}
   .rule h3{margin:0 0 4px;font-size:17px;color:var(--ink);letter-spacing:-.01em;}
   .rule > p{margin:6px 0 0;font-size:14.5px;}
+  .bar{display:inline-block;height:9px;border-radius:5px;background:var(--indigo);
+    vertical-align:middle;margin-right:9px;min-width:3px;max-width:74%;}
+  .mins{font-variant-numeric:tabular-nums;font-weight:700;font-size:13.5px;}
+  .lechead{margin:20px 0 8px;font-size:15px;color:var(--ink);letter-spacing:-.005em;}
   .said{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-left:6px;}
 """
     legend = ('<span>Everything on this page is a <b>direct quote</b> with the lecture and timestamp '
@@ -116,7 +168,7 @@ def main():
     text so the check cannot be fooled by the cleanup.</div>"""
     toc = "".join('<a href="#%s">%s</a>' % (i, t) for i, t in
                   (("marker", "His emphasis marker"), ("rules", "The four standing rules"),
-                   ("patterns", "Test-question shapes"), ("strategy", "How he writes the test"),
+                   ("patterns", "Test-question shapes"), ("strategy", "How he writes the test"), ("time", "Where the time went"),
                    ("starred", "Everything else he marked")))
 
     html = page(
