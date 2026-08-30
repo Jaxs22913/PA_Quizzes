@@ -58,17 +58,13 @@ CSS = r"""<style>
   tr.t-abs td,tr.t-bbw td{background:#fff6f5}
   tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
   footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
-  :root[data-theme="dark"] body{background:#12141a;color:#d7dae3}
-  :root[data-theme="dark"] .hero,:root[data-theme="dark"] .scroll,
-  :root[data-theme="dark"] .toc a{background:#1a1d25;border-color:#2a2e39}
-  :root[data-theme="dark"] h1,:root[data-theme="dark"] h2,:root[data-theme="dark"] .dn{color:#eef1f6}
-  :root[data-theme="dark"] td{border-color:#2a2e39}
-  :root[data-theme="dark"] tbody tr:nth-child(even){background:#1e2129}
-  :root[data-theme="dark"] tr.t-abs td,:root[data-theme="dark"] tr.t-bbw td{background:#2a1a19}
-  :root[data-theme="dark"] tr.t-abs:nth-child(even) td,
-  :root[data-theme="dark"] tr.t-bbw:nth-child(even) td{background:#301d1c}
-  :root[data-theme="dark"] .note{background:#241c16;border-color:#4a3324}
-  :root[data-theme="dark"] .note.warn{background:#2a1a19;border-color:#5c2723}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
   @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
 </style>"""
 

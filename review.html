@@ -9,6 +9,7 @@
 <!-- not deferred: the inline block below calls loadGroupQuiz()/whenGroupIndex()
      while the document is still parsing, before deferred scripts run. -->
 <script src="group-loader.js"></script>
+<script src="semesters.js" defer></script>
 <script src="group-quizzes/index.js" defer></script>
 <script src="theme.js" defer></script>
 <style>
@@ -18,17 +19,14 @@
     --good:#218640; --good-soft:#e9f7ef;
     --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);
   }
-  @media (prefers-color-scheme: dark){
-    :root{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
-      --good:#4ade80;--good-soft:#12241a;
-      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
-  }
-  :root[data-theme="dark"]{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
-    --good:#4ade80;--good-soft:#12241a;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
-  :root[data-theme="light"]{--ink:#1b2030;--muted:#6b7280;--line:#e6e8ef;--paper:#f6f7fb;--card:#fff;
-    --good:#218640;--good-soft:#e9f7ef;
-    --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. This page used to declare its own
+     dark palette as well, which meant dark mode was applied twice: --ink went
+     light, the filter turned it dark again, and the headings ended up dark-on-
+     dark at a measured 1.1:1 contrast -- invisible. The page background is set
+     on <body>, which sits OUTSIDE .wrap and is therefore not inverted, so the
+     two never cancelled out. Verified with tools/check_dark_contrast.py. */
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
@@ -62,6 +60,31 @@
   .btn-ghost:hover{border-color:var(--acc);color:var(--acc);}
   .btn svg{width:16px;height:16px;flex:none;}
   .btn[disabled]{opacity:.5;pointer-events:none;}
+
+  /* Semester -> class -> exam tree. Missed questions pile up across terms,
+     so without the split a student revising for one exam scrolls past
+     everything they ever got wrong. */
+  .sem-group{margin-bottom:34px;}
+  .sem-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    padding:0 0 9px;margin-bottom:14px;border-bottom:2px solid var(--line);}
+  .sem-name{font-family:var(--font-display,Georgia,serif);font-size:19px;font-weight:700;
+    letter-spacing:-.01em;margin:0;flex:1;min-width:0;}
+  .sem-name .sem-sub{display:block;font-family:inherit;font-size:12px;font-weight:600;
+    color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:2px;}
+  .sem-count{font-size:12.5px;color:var(--muted);font-weight:600;white-space:nowrap;}
+  .mini{background:none;border:1px solid var(--line);color:var(--muted);border-radius:var(--r-pill,999px);
+    font:600 12px/1 inherit;padding:6px 11px;cursor:pointer;white-space:nowrap;}
+  .mini:hover{border-color:var(--acc);color:var(--acc);}
+
+  .exam-group{margin:0 0 14px;}
+  .exam-head{display:flex;align-items:center;gap:9px;padding:7px 10px;margin-bottom:6px;
+    border-radius:var(--r-md,11px);cursor:pointer;user-select:none;}
+  .exam-head:hover{background:var(--acc-soft);}
+  .exam-head input{width:16px;height:16px;flex:none;accent-color:var(--acc);cursor:pointer;margin:0;}
+  .exam-label{font-size:13.5px;font-weight:750;letter-spacing:.01em;flex:1;min-width:0;}
+  .exam-n{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap;}
+  .exam-group .qz{margin-left:25px;}
+  @media(max-width:520px){.exam-group .qz{margin-left:0}}
 
   .class-group{margin-bottom:26px;}
   .class-name{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;
@@ -207,17 +230,51 @@
     return mo === 1 ? "a month ago" : mo + " months ago";
   }
 
-  function classOf(rec) {
-    var meta = (window.GROUP_INDEX || {})[rec.slug];
-    return (meta && meta.category) || "Other";
-  }
+  function metaOf(rec) { return (window.GROUP_INDEX || {})[rec.slug] || null; }
+  function classOf(rec) { var m = metaOf(rec); return (m && m.category) || "Other"; }
+  function examOf(rec) { var m = metaOf(rec); return (m && m.exam) || "General"; }
+  function semOf(rec) { var m = metaOf(rec); return (m && m.sem) || "unknown"; }
   function titleOf(rec) {
-    var meta = (window.GROUP_INDEX || {})[rec.slug];
-    return (meta && meta.title) || rec.title || rec.slug;
+    var m = metaOf(rec);
+    return (m && m.title) || rec.title || rec.slug;
+  }
+
+  /* Semester ordering and labels come from semesters.js, the registry the rest
+     of the site already reads, rather than a list restated here that could
+     drift. Newest term first, because that is the one being revised for. */
+  function semList() {
+    var all = (window.Semesters && window.Semesters.all) || [];
+    return all.map(function (s) { return s.id; }).reverse();
+  }
+  function semLabel(id) {
+    var s = window.Semesters && window.Semesters.byId && window.Semesters.byId(id);
+    if (!s) return { short: "Other quizzes", label: "not matched to a semester" };
+    return { short: s.short || s.label, label: s.label };
+  }
+  function semRank(id) {
+    var i = semList().indexOf(id);
+    return i < 0 ? 99 : i;
   }
 
   var CLASS_ORDER = ["Physiology", "Pharmacodynamics", "Anatomy", "Anatomy Practicum",
     "Physical Diagnosis", "CAM / Nutrition", "Nutrition", "Intro to PA", "Other"];
+  function classRank(n) { var i = CLASS_ORDER.indexOf(n); return i < 0 ? 50 : i; }
+  function examRank(e) {
+    var m = /(\d+)/.exec(e);
+    return m ? parseInt(m[1], 10) : 99;   /* "General" sorts last */
+  }
+
+  /* Which exams are ticked. Keyed "<sem>||<class>||<exam>" so two classes with
+     an "Exam 1" cannot collide. Everything starts ticked, so the default action
+     is exactly what the page did before this grouping existed. */
+  var picked = {};
+  function bucketKey(rec) { return semOf(rec) + "||" + classOf(rec) + "||" + examOf(rec); }
+  function selectedRecords() {
+    return records.filter(function (r) { return picked[bucketKey(r)] !== false; });
+  }
+  function countMissed(rs) {
+    return rs.reduce(function (a, r) { return a + r.m.length; }, 0);
+  }
 
   /* ---------- rendering ---------- */
   var records = [];
@@ -261,31 +318,123 @@
       $("summary").appendChild(c);
     });
 
-    $("actions").innerHTML = "";
-    var drillAll = el("button", "btn btn-primary");
-    drillAll.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>' +
-      '<span>Drill all ' + totalMissed + '</span>';
-    drillAll.onclick = function () { startDrill(records.slice()); };
-    $("actions").appendChild(drillAll);
+    renderActions();
 
-    var byClass = {};
+    /* semester -> class -> exam */
+    var tree = {};
     records.forEach(function (r) {
-      var c = classOf(r);
-      (byClass[c] = byClass[c] || []).push(r);
-    });
-    var names = Object.keys(byClass).sort(function (a, b) {
-      var ia = CLASS_ORDER.indexOf(a), ib = CLASS_ORDER.indexOf(b);
-      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+      var s = semOf(r), c = classOf(r), e = examOf(r);
+      ((tree[s] = tree[s] || {})[c] = tree[s][c] || {});
+      (tree[s][c][e] = tree[s][c][e] || []).push(r);
     });
 
     var groups = $("groups");
     groups.innerHTML = "";
-    names.forEach(function (name) {
-      var g = el("div", "class-group");
-      g.appendChild(el("p", "class-name", name));
-      byClass[name].forEach(function (rec) { g.appendChild(quizCard(rec)); });
-      groups.appendChild(g);
+    Object.keys(tree).sort(function (a, b) { return semRank(a) - semRank(b); })
+      .forEach(function (semId) {
+        groups.appendChild(semSection(semId, tree[semId]));
+      });
+    syncAll();
+  }
+
+  /* ---------- the drill button, kept in sync with the tick boxes ---------- */
+  function renderActions() {
+    $("actions").innerHTML = "";
+    var b = el("button", "btn btn-primary");
+    b.id = "drill-btn";
+    b.onclick = function () {
+      var sel = selectedRecords();
+      if (sel.length) startDrill(sel);
+    };
+    $("actions").appendChild(b);
+
+    var none = el("button", "btn btn-ghost", "Select none");
+    none.onclick = function () { setAll(false); };
+    var all = el("button", "btn btn-ghost", "Select all");
+    all.onclick = function () { setAll(true); };
+    $("actions").appendChild(all);
+    $("actions").appendChild(none);
+  }
+
+  function setAll(on) {
+    records.forEach(function (r) { picked[bucketKey(r)] = on; });
+    Array.prototype.forEach.call(document.querySelectorAll(".exam-head input"),
+      function (cb) { cb.checked = on; });
+    syncAll();
+  }
+
+  /* Refresh every count that depends on the ticks: the drill button, each
+     semester header, and the top summary. */
+  function syncAll() {
+    var sel = selectedRecords(), n = countMissed(sel);
+    var b = $("drill-btn");
+    if (b) {
+      b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>' +
+        '<span>' + (n ? "Drill " + n + " question" + (n === 1 ? "" : "s") : "Nothing selected") + '</span>';
+      b.disabled = !n;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll("[data-semcount]"), function (node) {
+      var id = node.getAttribute("data-semcount");
+      var k = countMissed(sel.filter(function (r) { return semOf(r) === id; }));
+      node.textContent = k + " selected";
     });
+  }
+
+  function semSection(semId, classes) {
+    var lab = semLabel(semId);
+    var wrap = el("div", "sem-group");
+    var head = el("div", "sem-head");
+    var h = el("h2", "sem-name");
+    h.appendChild(document.createTextNode(lab.short));
+    var sub = el("span", "sem-sub", lab.label);
+    h.appendChild(sub);
+    head.appendChild(h);
+    var cnt = el("span", "sem-count");
+    cnt.setAttribute("data-semcount", semId);
+    head.appendChild(cnt);
+    var only = el("button", "mini", "Only this term");
+    only.onclick = function () {
+      records.forEach(function (r) { picked[bucketKey(r)] = (semOf(r) === semId); });
+      Array.prototype.forEach.call(document.querySelectorAll(".exam-head input"), function (cb) {
+        cb.checked = cb.getAttribute("data-sem") === semId;
+      });
+      syncAll();
+    };
+    head.appendChild(only);
+    wrap.appendChild(head);
+
+    Object.keys(classes).sort(function (a, b) {
+      return classRank(a) - classRank(b) || a.localeCompare(b);
+    }).forEach(function (cls) {
+      var g = el("div", "class-group");
+      g.appendChild(el("p", "class-name", cls));
+      Object.keys(classes[cls]).sort(function (a, b) {
+        return examRank(a) - examRank(b) || a.localeCompare(b);
+      }).forEach(function (exam) {
+        g.appendChild(examGroup(semId, cls, exam, classes[cls][exam]));
+      });
+      wrap.appendChild(g);
+    });
+    return wrap;
+  }
+
+  function examGroup(semId, cls, exam, recs) {
+    var key = semId + "||" + cls + "||" + exam;
+    var g = el("div", "exam-group");
+    var head = el("label", "exam-head");
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.checked = picked[key] !== false;
+    cb.setAttribute("data-sem", semId);
+    cb.onchange = function () { picked[key] = cb.checked; syncAll(); };
+    head.appendChild(cb);
+    head.appendChild(el("span", "exam-label", exam));
+    var n = countMissed(recs);
+    head.appendChild(el("span", "exam-n",
+      n + " missed \u00b7 " + recs.length + (recs.length === 1 ? " quiz" : " quizzes")));
+    g.appendChild(head);
+    recs.forEach(function (rec) { g.appendChild(quizCard(rec)); });
+    return g;
   }
 
   function quizCard(rec) {

@@ -84,6 +84,17 @@ def clean_title(src, fallback):
     return t or fallback
 
 
+def exam_from_path(path):
+    """The exam a quiz belongs to, taken from its folder rather than guessed
+    from the slug. review.html groups by it so a student can drill just the
+    exam they are sitting, and the folder is the only place that is authoritative
+    -- "Anatomy Practicum Exam 3" and "Physical Diagnosis 1 Exam 2" do not share
+    a slug shape."""
+    folder = path.split(os.sep)[0]
+    m = re.search(r'\bExam\s*(\d+)\s*$', folder)
+    return ("Exam " + m.group(1)) if m else "General"
+
+
 def category_from_path(path):
     folder = path.split(os.sep)[0]
     cat = re.sub(r'\s*Exam\s*\d+\s*$', '', folder).strip()
@@ -265,6 +276,7 @@ def main():
         bank[qid] = {
             "title": clean_title(src, os.path.basename(f)[:-5]),
             "category": category_from_path(f),
+            "exam": exam_from_path(f),
             "sem": semester_from_path(f),
             "questions": out_qs,
         }
@@ -296,7 +308,7 @@ def main():
         open(os.path.join(outdir, k + ".js"), "w", encoding="utf-8").write(blob)
 
     index = {k: {"title": v["title"], "category": v["category"],
-                 "sem": v["sem"], "n": len(v["questions"])}
+                 "exam": v["exam"], "sem": v["sem"], "n": len(v["questions"])}
              for k, v in sorted(bank.items())}
     index_body = ",\n".join(
         json.dumps(k, ensure_ascii=False) + ":" + json.dumps(v, ensure_ascii=False, separators=(",", ":"))
