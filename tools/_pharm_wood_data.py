@@ -112,6 +112,29 @@ PATTERNS = [
       verify=["test question, a patient was getting an antibiotic",
               "read from head to toe and complaining of some itching",
               "medication was infused over 30 minutes", "vancomycin infusion syndrome"]),
+ dict(title="Toxic shock after a retained tampon &rarr; clindamycin",
+      quote="This can also be used for things like toxin-mediated diseases, because the clindamycin "
+            "can actually bind to the toxin. So if you ever hear of toxic shock syndrome &mdash; or "
+            "the classic sort of presentation is, a girl left in a tampon for too long and then all "
+            "of a sudden gets septic shock from that, due to toxins being released by bacteria "
+            "&mdash; clindamycin can be utilised for that.",
+      lec=L1, at="1:41:19",
+      body="He calls it <b>&ldquo;a unique sort of point&rdquo;</b> for clindamycin. The mechanism "
+           "is the thing to carry: it <b>binds the toxin</b>, which is why it beats an agent that "
+           "merely kills the organism in a toxin-mediated illness.",
+      verify=["toxin mediated diseases", "clindamycin can actually bind to the toxin",
+              "toxic shock syndrome", "left in a tampon for too long"]),
+ dict(title="Acne, benzoyl peroxide too irritating &rarr; topical retinoid",
+      quote="If I say on a test question &mdash; hey, they&rsquo;re presenting for treatment for "
+            "acne, they say they use benzoyl peroxide but it&rsquo;s just that their skin got so "
+            "irritated they didn&rsquo;t want to continue it. What do you go to next? Topical "
+            "retinoids kind of makes sense from that standpoint.",
+      lec=L2, at="48:20",
+      body="A <b>next-step</b> stem rather than a diagnosis one. He set it up by saying that if the "
+           "patient has <b>not</b> tried anything yet, starting with benzoyl peroxide is perfectly "
+           "reasonable &mdash; so the stem turns on <b>what they already failed and why</b>.",
+      verify=["if i say on a test question", "presenting for treatment for acne",
+              "they say they use benzoyl peroxide", "what do you go to next"]),
 ]
 
 # ----------------------------------------------------- how he writes the test
@@ -218,4 +241,19 @@ STARRED = [
   "1:58:30", L1, ["amphotericin B as a pretty notable one"]),
  ("Azoles", "&ldquo;Anytime you see the azole&hellip; you kind of know it fits in&rdquo; &mdash; the naming tells you the class.",
   "2:08:46", L1, ["anytime you see the azole"]),
+ ("Ceftaroline", "&ldquo;Just notable about it&rdquo; &mdash; it <b>does</b> carry MRSA coverage, but he would <b>not start with it</b> for known MRSA when tried-and-true options exist.",
+  "56:29", L1, ["actually does have MRSA coverage", "just notable about it there"]),
+ ("Polymyxins", "&ldquo;It&rsquo;s just a <b>nasty set of drugs</b>. Really rough on the kidneys too&rdquo; &mdash; nephrotoxicity, neurotoxicity, and neuromuscular blockade interacting with paralytics. &ldquo;Don&rsquo;t use it too often.&rdquo;",
+  "1:52:42", L1, ["nephrotoxicity, neurotoxicity issues with neuromuscular",
+                  "It's just a nasty set of drugs", "don't use it too often"]),
+ ("Fluconazole", "&ldquo;Watch out for <b>CYP3A4</b> interactions for sure&rdquo; &mdash; 3A4 being the interaction he says matters for this exam.",
+  "2:07:24", L1, ["watch out for CYP3-4 interactions for sure"]),
+ ("Acyclovir", "The crystals <b>pierce the renal tubules</b> &mdash; &ldquo;good hydration, really critical there.&rdquo; Then <b>CNS seizures and delirium</b>, and <b>bone marrow suppression</b> because it hits rapidly dividing cells.",
+  "2:18:28", L1, ["those little crystals can start to pierce through the renal tubules",
+                  "good hydration, really critical there", "seizures, delirium"]),
+ ("Isotretinoin", "&ldquo;One of the <b>most notable examples of a REMS program</b>&rdquo; &mdash; this is iPledge, and he ties it straight to the pregnancy contraindication.",
+  "39:36", L2, ["most notable examples of a rems program", "eye pledged"]),
+ ("Topical corticosteroids", "The <b>gold standard</b> for atopic dermatitis &mdash; selection then turns on the product, and the <b>severity and site</b> of disease.",
+  "54:20", L2, ["topical corticosteroids are gonna be kind of the gold standard",
+                "severity and site of the disease"]),
 ]

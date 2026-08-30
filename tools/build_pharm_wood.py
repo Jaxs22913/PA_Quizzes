@@ -65,8 +65,8 @@ def main():
         body.append('<div class="rule"><h3>%s</h3>%s<p>%s</p></div>'
                     % (p_["title"], quote_block(p_["quote"], p_["at"], p_["lec"]), p_["body"]))
     secs.append('<section id="patterns"><div class="shead"><span class="dot" style="background:#1f5d3a">'
-                '</span><h2>Test-question shapes he gave outright <span class="tag">he wrote the stem for you</span>'
-                '</h2></div>' + "".join(body) + '</section>')
+                '</span><h2>Test-question shapes he gave outright <span class="tag">%d of them &mdash; he wrote the stem for you</span>'
+                '</h2></div>' % len(D.PATTERNS) + "".join(body) + '</section>')
 
     body = []
     for s_ in D.STRATEGY:
@@ -125,9 +125,10 @@ def main():
         h1="What Dr. Wood Told You to Star",
         sub="Taken from the lecture recordings, not the slides. He stated his own emphasis marker "
             "out loud, then said &ldquo;notable&rdquo; 45 times in Lecture 1 alone and gave 22 explicit "
-            "instructions to star or underline something. Four standing rules, two complete "
-            "test-question shapes, %d quotes, each with its timestamp."
-            % (1 + len(D.RULES) + len(D.PATTERNS) + len(D.STRATEGY) + len(D.STARRED)),
+            "instructions to star or underline something. Four standing rules, %d complete "
+            "test-question shapes he handed over, %d quotes, each with its timestamp."
+            % (len(D.PATTERNS),
+               1 + len(D.RULES) + len(D.PATTERNS) + len(D.STRATEGY) + len(D.STARRED)),
         legend=legend, notes=notes, toc=toc, body="\n".join(secs),
         footer_note="Every quote is verified against the lecture transcript by "
                     "<code>tools/check_pharm_wood.py</code> before this page is written. "
