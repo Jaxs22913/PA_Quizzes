@@ -65,8 +65,14 @@ RULES = [
       lec=L1, at="2:05:51",
       body="The teratogens on this exam are <b>itraconazole</b>, <b>fluconazole</b> and "
            "<b>voriconazole</b> (the last two &ldquo;teratogenic in animals&rdquo;), plus "
-           "<b>isotretinoin</b>, which he called <i>extremely</i> teratogenic in Lecture 2. "
-           "<b>Tetracyclines</b> are avoided in the second and third trimesters.",
+           "<b>isotretinoin</b>, which he called <i>extremely</i> teratogenic in Lecture 2 "
+           "and placed in <b>pregnancy category X</b> &mdash; his definition: &ldquo;no situation "
+           "in which the benefits of this drug outweigh the risk to a developing fetus,&rdquo; with "
+           "effects running from malformation to fetal death. <b>Topical retinoids</b> are avoided "
+           "in pregnancy as well, and <b>tetracyclines</b> in the second and third trimesters &mdash; "
+           "stated as an outright contraindication when he restated it in Lecture 2. The action he "
+           "wants is the same every time: check a pregnancy test before you prescribe to anyone of "
+           "childbearing potential.",
       verify=["a drug that is tritogenic", "cause harm to a fetus", "check a pregnancy",
               "also note that because it can be very significant"]),
  dict(title="Rebound after three days", said="and he said students always miss it",

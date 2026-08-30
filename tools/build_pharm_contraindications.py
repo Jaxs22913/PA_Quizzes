@@ -192,6 +192,14 @@ __CSSBLOCK__
   <section id="pregnancy">
     <div class="shead"><span class="dot" style="background:#b3261e"></span>
       <h2>Pregnancy, breastfeeding and teratogenicity <span class="tag">the highest-yield group</span></h2></div>
+    <div class="note">Three different strengths sit in this one table, and a question can turn on which one
+    a drug gets. <b>Isotretinoin</b> is an absolute contraindication in pregnancy <i>and</i> breastfeeding,
+    with men told to avoid it too. <b>Itraconazole</b> is flagged teratogenic outright, while
+    <b>fluconazole</b> and <b>voriconazole</b> are only &ldquo;teratogenic in animals&rdquo;. Everything
+    else is worded as avoid. Read the wording, not just the drug name.<br><br>
+    Related but not the same thing: <b>aminopenicillins</b> reduce the effectiveness of oral contraceptives
+    &mdash; that is a risk of a pregnancy <i>happening</i>, not a risk to a fetus, so it sits under
+    beta-lactams rather than here.</div>
     __PREGTBL__
   </section>
 
