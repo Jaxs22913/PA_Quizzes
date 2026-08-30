@@ -21,7 +21,11 @@ INTRO = ("Sixty questions drawn from every topic in the Exam 1 block, in proport
          "gives you 300 distinct questions. Every question cites its slide. "
          "<b>Weighted the way the course asked for</b>: Dr. McInnis told the class that mechanism is "
          "over-studied, so indications, patient education, side effects and contraindications carry "
-         "the count. <b>No question turns on a drug dose</b>, per Dr. Wood.")
+         "the count. <b>No question turns on a drug dose</b>, per Dr. Wood. "
+         "This rebuild (v2, 30 August) folds in the new <b>short clinical vignettes</b> and is "
+         "written to be more to the point &mdash; brief stems, and answer choices short enough "
+         "to scan, with the reasoning moved into the explanation. The five v1 forms are kept "
+         "under Archived quizzes for extra practice.")
 
 for name in ("A", "B", "C", "D", "E"):
     fn = "pharm-exam-1-master-exam-form-%s.html" % name.lower()
