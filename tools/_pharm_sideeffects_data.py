@@ -63,7 +63,7 @@ ROWS = [
   "adults</b>, because it stimulates motility. <b>Cholestatic hepatitis</b> (rare, more with estolate). "
   "<b>Transient hearing loss</b> with large intravenous doses or renal insufficiency. <b>QT prolongation and "
   "Torsades de pointes.</b>",
-  "Worse with <b>class Ia and III antiarrhythmics</b> and <b>electrolyte abnormalities</b>. Check the ECG risk "
+  "Worse with <b>class Ia and III antiarrhythmics</b> and <b>electrolyte abnormalities</b>. Check the ECG (electrocardiogram) risk "
   "before adding.",
   "Gastrointestinal / Cardiac", L1, 57, ["Nausea, diarrhea, abdominal pain", "Stimulates motility",
                                          "Cholestatic hepatitis", "Transient hearing loss",
@@ -91,7 +91,8 @@ ROWS = [
                                         "Serotonin Syndrome"]),
  ("Fluoroquinolones<br><span class=g>class</span>",
   "<b>Tendonitis and Achilles tendon rupture.</b> <b>QT prolongation and Torsades de Pointes.</b> "
-  "<b>Photosensitivity.</b> <b>Peripheral neuropathies.</b> <b>CNS toxicity &mdash; dizziness, insomnia, "
+  "<b>Photosensitivity.</b> <b>Peripheral neuropathies.</b> <b>Central nervous system toxicity &mdash; "
+  "dizziness, insomnia, "
   "somnolence.</b>",
   "<b>Caution under 18 years.</b> Inhibits <b>CYP1A2</b>; complexes with cations; renally eliminated.",
   "Musculoskeletal / Cardiac / Neurologic", L1, 79, ["Tendonitis/Tendon", "achilles", "QT prolongation",
@@ -109,7 +110,7 @@ ROWS = [
   "hyperbilirubinaemia.</b> Nausea, vomiting, diarrhoea, anorexia.",
   "Interactions matter as much as the toxicity: raises <b>phenytoin, rifampin, digoxin</b>; reduces renal "
   "clearance of <b>methotrexate (pancytopenia)</b>; <b>hypoglycaemia with sulfonylureas</b>; <b>significantly "
-  "increases INR with warfarin</b>.",
+  "increases INR (international normalised ratio) with warfarin</b>.",
   "Skin / Haematologic / Hepatic", L1, 85, ["Hypersensitivity-rash", "SJS", "TEN", "Blood dyscrasias",
                                             "agranulocytosis", "hepatotoxicity"]),
  ("Metronidazole<br><span class=g>Flagyl</span>",
@@ -167,28 +168,29 @@ ROWS = [
                                    "Induces microsomal enzymes"]),
 
  # ---------------- ANTIVIRALS / ANTHELMINTHICS ----------------
- ("Aciclovir, valaciclovir<br><span class=g>Zovirax, Valtrex</span>",
-  "Nausea, vomiting, rash. <b>CNS &mdash; seizures, delirium, tremor.</b> <b>Bone marrow suppression.</b> "
+ ("Acyclovir, valacyclovir<br><span class=g>Zovirax, Valtrex</span>",
+  "Nausea, vomiting, rash. <b>Central nervous system &mdash; seizures, delirium, tremor.</b> <b>Bone marrow suppression.</b> "
   "<b>Crystallizes in the renal tubule.</b>",
   "<b>Maintain hydration and renal function</b> &mdash; the counselling point that prevents the renal injury.",
   "Renal / Neurologic", L1, 123, ["nausea, vomiting, rash", "maintain hydration", "seizures",
                                   "delirium", "bone marrow suppression", "crystallizes in renal tubule"]),
  ("Ganciclovir, valganciclovir<br><span class=g>Cytovene, Valcyte</span>",
-  "<b>Neutropenia in 15&ndash;40%.</b> <b>Thrombocytopenia.</b> <b>CNS in 5&ndash;15% &mdash; confusion, ataxia, "
+  "<b>Neutropenia in 15&ndash;40%.</b> <b>Thrombocytopenia.</b> <b>Central nervous system in 5&ndash;15% "
+  "&mdash; confusion, ataxia, "
   "seizures, coma.</b>",
   "<b>33% of patients must stop intravenous treatment because of side effects</b> &mdash; the highest "
   "discontinuation rate in the lecture.",
   "Haematologic / Neurologic", L1, 125, ["neutropenia", "thrombocytopenia", "confusion, ataxia, seizures",
                                          "33%", "stop intravenous treatment"]),
  ("Penciclovir, famciclovir<br><span class=g>Denavir, Famvir</span>",
-  "<b>Actions and toxicity similar to aciclovir</b> &mdash; the deck does not list a separate profile.",
+  "<b>Actions and toxicity similar to acyclovir</b> &mdash; the deck does not list a separate profile.",
   "Bioavailability differs sharply: <b>penciclovir 5% (intravenous), famciclovir 77% (oral prodrug)</b>.",
   "Renal / Neurologic", L1, 124, ["Actions and toxicity similar to acyclovir", "Penciclovir (5%)",
                                   "Famciclovir"]),
  ("Albendazole, mebendazole",
   "<b>Very well tolerated</b> &mdash; gastrointestinal upset, hypersensitivity, and rash including "
   "<b>Stevens-Johnson syndrome and toxic epidermal necrolysis</b>.",
-  "The SJS/TEN note is the only serious entry for an otherwise benign class.",
+  "The Stevens-Johnson and toxic epidermal necrolysis note is the only serious entry for an otherwise benign class.",
   "Gastrointestinal / Skin", L1, 115, ["very well tolerated", "GI upset", "hypersensitivity", "SJS", "TEN"]),
  ("Pyrantel pamoate<br><span class=g>Pin-X</span>",
   "<b>Dizziness, headache and gastrointestinal upset.</b>",
@@ -226,7 +228,7 @@ ROWS = [
                                         "hyperglycemia", "glaucoma, cataracts", "growth retardation"]),
  ("Tacrolimus, pimecrolimus",
   "<b>Burning sensation.</b> <b>Possible cancer risk.</b>",
-  "<b>Use a high-SPF sunscreen.</b> Avoid in immunosuppressed patients.",
+  "<b>Use a high-SPF (sun protection factor) sunscreen.</b> Avoid in immunosuppressed patients.",
   "Skin", L2, 43, ["Possible cancer risk", "burning sensation", "Use high SP"]),
  ("Topical azoles<br><span class=g>clotrimazole, miconazole, sertaconazole</span>",
   "<b>Local irritation.</b>",
@@ -236,7 +238,7 @@ ROWS = [
   "<b>Local irritation</b> &mdash; the only adverse reaction the deck records for the topical form.",
   "No systemic contraindication is given for this class.",
   "Skin", L2, 53, ["Adverse reactions", "local irritation"]),
- ("Topical aciclovir, penciclovir",
+ ("Topical acyclovir, penciclovir",
   "<b>Local irritation.</b>",
   "Used for recurrent orolabial herpes simplex.",
   "Skin", L2, 56, ["Adverse reactions", "local irritation", "recurrent orolabial herpes"]),
@@ -292,7 +294,8 @@ ROWS = [
                                  "Pralidoxime", "Does not penetrate CNS"]),
  ("Atropine",
   "<b>Dry mouth, blurred vision, &ldquo;sandy eyes&rdquo;.</b> <b>Bradycardia at lower doses, tachycardia at "
-  "higher doses.</b> <b>Urinary retention and constipation.</b> <b>CNS &mdash; restlessness, confusion, "
+  "higher doses.</b> <b>Urinary retention and constipation.</b> <b>Central nervous system &mdash; "
+  "restlessness, confusion, "
   "hallucinations, delirium.</b>",
   "The dose-dependent heart rate reversal is the trap: low dose slows, high dose speeds.",
   "Anticholinergic", L3, 52, ["Dry mouth", "Blurred vision", "Sandy eyes", "Bradycardia (lower doses)",
@@ -311,13 +314,13 @@ ROWS = [
 
  # ---------------- ANS: ADRENERGIC ----------------
  ("Epinephrine",
-  "<b>CNS &mdash; anxiety, fear, tension, headache, tremor.</b> <b>Cerebral haemorrhage from the rise in blood "
+  "<b>Central nervous system &mdash; anxiety, fear, tension, headache, tremor.</b> <b>Cerebral haemorrhage from the rise in blood "
   "pressure.</b> <b>Cardiac arrhythmias.</b> <b>Pulmonary oedema.</b>",
   "<b>Oral is ineffective</b> &mdash; inactivated by intestinal enzymes. Rapid onset, brief duration.",
   "Cardiac / Neurologic", L3, 86, ["anxiety, fear, tension, headache, tremor", "cerebral hemorrhage",
                                    "Cardiac arrhythmias", "Pulmonary edema", "Oral ineffective"]),
  ("Catecholamines &mdash; class<br><span class=g>epinephrine, norepinephrine, isoproterenol, dopamine</span>",
-  "<b>Anxiety, tremor and headache</b> &mdash; CNS-like adverse effects despite <b>poor penetration into the "
+  "<b>Anxiety, tremor and headache</b> &mdash; central nervous system-like adverse effects despite <b>poor penetration into the "
   "central nervous system</b>, because they are too polar to enter it.",
   "Rapidly inactivated by <b>COMT postsynaptically and MAO intraneuronally</b>, which is why they are infusions "
   "rather than tablets.",
@@ -334,7 +337,8 @@ ROWS = [
   "Watch the rhythm as the rate climbs into the alpha-1 range.",
   "Cardiac / Gastrointestinal", L3, 93, ["Nausea", "Hypertension", "Arrhythmias"]),
  ("Dobutamine",
-  "<b>Increases AV conduction &mdash; caution in atrial fibrillation.</b> Otherwise the same as epinephrine.",
+  "<b>Increases atrioventricular conduction &mdash; caution in atrial fibrillation.</b> Otherwise the same as "
+  "epinephrine.",
   "<b>Tolerance may develop with prolonged use.</b>",
   "Cardiac", L3, 94, ["Increases AV conduction", "caution use in atrial fibrillation", "Tolerance"]),
  ("Albuterol",
@@ -362,7 +366,8 @@ ROWS = [
                                     "Increases CNS activity"]),
  ("Tyramine",
   "<b>May cause serious vasopressor effects if the patient is taking a monoamine oxidase inhibitor.</b>",
-  "Normally oxidised by MAO in the gastrointestinal tract; on an MAOI it <b>enters the nerve terminal and "
+  "Normally oxidised by MAO (monoamine oxidase) in the gastrointestinal tract; on an MAOI (monoamine oxidase inhibitor) it <b>enters the nerve "
+  "terminal and "
   "displaces stored norepinephrine</b>. Found in <b>fermented foods such as cheese and wine</b>.",
   "Cardiovascular", L3, 101, ["serious vasopressor effects", "MAOI", "displaces stored norepinephrine",
                               "cheese and wine"]),
@@ -392,7 +397,7 @@ ROWS = [
   "Cardiovascular", L3, 122, ["orthostatic hypotension", "blockade"]),
  ("Nicotine",
   "Increases blood pressure, heart rate, peristalsis and secretions; <b>at higher doses blood pressure falls</b> "
-  "from ganglionic blockade and <b>GI and bladder activity ceases</b>.",
+  "from ganglionic blockade and <b>gastrointestinal and bladder activity ceases</b>.",
   "Biphasic &mdash; stimulation first, then paralysis of all ganglia.",
   "Autonomic", L3, 59, ["increased BP, HR, peristalsis", "BP falls", "ganglionic blockade", "ceases"]),
 ]

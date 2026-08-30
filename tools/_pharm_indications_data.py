@@ -56,7 +56,7 @@ ROWS = [
   "IND", L1, 26, ["Designed solely to cover S. aureus", "Vancomycin treatment of choice for MRSA",
                   "Hepatic Function"]),
  ("Ceftolozane/tazobactam<br><span class=g>Zerbaxa</span>",
-  "FDA approved for <b>complicated intra-abdominal infections (plus metronidazole)</b> and <b>complicated "
+  "FDA (Food and Drug Administration) approved for <b>complicated intra-abdominal infections (plus metronidazole)</b> and <b>complicated "
   "urinary tract infections</b>.",
   "Anti-pseudomonal with some anaerobic activity, but <b>no MRSA and no Enterococcus</b>. The "
   "&ldquo;plus metronidazole&rdquo; pairing is the detail to carry.",
@@ -95,7 +95,7 @@ ROWS = [
  ("Vancomycin",
   "Target trough <b>10&ndash;15 or 15&ndash;20 mcg/mL depending on the indication</b>. A loading dose of "
   "25&ndash;30 mg/kg may be used to reach target quickly.",
-  "If the <b>MIC is 2 mg/L or above</b>, the target is hard to achieve and <b>alternative therapy such as "
+  "If the <b>MIC (minimum inhibitory concentration) is 2 mg/L or above</b>, the target is hard to achieve and <b>alternative therapy such as "
   "linezolid may be needed</b>.",
   "MON", L1, 48, ["Goal trough", "Depends on indication", "loading dose", "alternative therapy", "linezolid"]),
 
@@ -117,7 +117,7 @@ ROWS = [
                   "Chelate with cations"]),
  ("Tigecycline<br><span class=g>Tygacil</span>",
   "<b>Complicated skin infections</b> and <b>complicated intra-abdominal infections</b>. Covers MRSA and "
-  "<i>E. faecalis</i>, but <b>NOT VRE</b>.",
+  "<i>E. faecalis</i>, but <b>NOT VRE (vancomycin-resistant <i>Enterococcus</i>)</b>.",
   "Bacteriostatic. The &ldquo;not VRE&rdquo; exclusion is stated twice on the slide.",
   "IND", L1, 65, ["Complicated skin infections", "Complicated intra-abdominal", "not VRE", "MRSA"]),
  ("Aminoglycosides<br><span class=g>gentamicin, tobramycin, amikacin</span>",
@@ -129,7 +129,7 @@ ROWS = [
                   "Post antibiotic effect"]),
  ("Linezolid<br><span class=g>Zyvox</span>",
   "<b>DRUG OF CHOICE for hospital-acquired and community-acquired MRSA.</b> Covers resistant gram-positives "
-  "including multidrug-resistant pneumococcus, MRSA and <b>VRE</b>. <b>No gram-negative or anaerobic cover.</b>",
+  "including multidrug-resistant pneumococcus, MRSA and <b>VRE (vancomycin-resistant <i>Enterococcus</i>)</b>. <b>No gram-negative or anaerobic cover.</b>",
   "Counsel on <b>tyramine-containing foods</b> and check for <b>SSRIs and pseudoephedrine</b> &mdash; serotonin "
   "syndrome risk.",
   "DOC", L1, 71, ["Drug of Choice", "HAP-MRSA", "CA-MRSA", "VRE", "No gram - or anaerobes"]),
@@ -162,7 +162,7 @@ ROWS = [
   "<b><i>Pneumocystis jirovecii</i> pneumonia &mdash; treatment AND prophylaxis.</b> Urinary tract infection, "
   "bacterial prostatitis, orchitis and epididymitis; respiratory tract infection; and gastrointestinal infection "
   "including <b>traveller's diarrhoea</b> and <i>Shigella</i> enteritis.",
-  "The PJP indication is the flagship one. Check for <b>warfarin (raises INR), phenytoin, digoxin and "
+  "The PJP (<i>Pneumocystis jirovecii</i> pneumonia) indication is the flagship one. Check for <b>warfarin (raises the INR, the international normalised ratio), phenytoin, digoxin and "
   "sulfonylureas (hypoglycaemia)</b>.",
   "IND", L1, 84, ["PJP", "Pneumocystic jiroveci", "prophylaxis", "prostatitis", "Traveler’s diarrhea"]),
  ("Metronidazole<br><span class=g>Flagyl</span>",
@@ -234,12 +234,12 @@ ROWS = [
   "EDU", L1, 112, ["Superficial dermatophyte", "Fingernails", "Toenails", "12 months"]),
 
  # ---------------- ANTIVIRALS ----------------
- ("Aciclovir, valaciclovir<br><span class=g>Zovirax, Valtrex</span>",
+ ("Acyclovir, valacyclovir<br><span class=g>Zovirax, Valtrex</span>",
   "<b>Herpes simplex and varicella-zoster.</b>",
-  "<b>Valaciclovir is the prodrug with far better bioavailability &mdash; 70% against aciclovir's 22%</b>, which "
+  "<b>Valacyclovir is the prodrug with far better bioavailability &mdash; 70% against acyclovir's 22%</b>, which "
   "is why it is dosed less often. <b>Maintain hydration</b>: it crystallizes in the renal tubule.",
   "EDU", L1, 122, ["Herpes simplex", "Varicella-zoster", "Acyclovir (22%)", "Valacyclovir", "prodrug"]),
- ("Aciclovir<br><span class=g>chickenpox timing</span>",
+ ("Acyclovir<br><span class=g>chickenpox timing</span>",
   "For chickenpox, <b>if given in the first 24 hours it shortens the acute illness &mdash; but it does not cure "
   "the infection.</b>",
   "That distinction (shortens, does not cure) is exactly the kind of patient-education wording a stem will test.",
@@ -296,7 +296,7 @@ ROWS = [
  ("Tacrolimus, pimecrolimus<br><span class=g>Protopic, Elidel</span>",
   "<b>Second-line agents after topical steroids</b> for atopic dermatitis &mdash; they reduce extent, severity "
   "and symptoms by inhibiting T cells, mast cells and keratinocytes.",
-  "<b>Use a high-SPF sunscreen.</b> Expect a <b>burning sensation</b>. Avoid in immunosuppressed patients.",
+  "<b>Use a high-SPF (sun protection factor) sunscreen.</b> Expect a <b>burning sensation</b>. Avoid in immunosuppressed patients.",
   "EDU", L2, 43, ["Second line agents after topical steroids", "Use high SP", "burning sensation"]),
  ("Topical azoles<br><span class=g>clotrimazole, miconazole, sertaconazole</span>",
   "<b>Topical and vaginal use &mdash; vulvovaginal candidiasis.</b> Sometimes combined with corticosteroids for "
@@ -304,7 +304,7 @@ ROWS = [
   "<b>Treatment is generally prolonged &mdash; 2 to 3 weeks.</b> Tell them to finish the course.",
   "EDU", L2, 51, ["topical and vaginal uses", "vulvovaginal candidiasis", "combined with corticosteroids",
                   "2-3 weeks"]),
- ("Topical aciclovir, penciclovir<br><span class=g>Zovirax, Denavir</span>",
+ ("Topical acyclovir, penciclovir<br><span class=g>Zovirax, Denavir</span>",
   "<b>Recurrent orolabial herpes simplex infection.</b> Active against herpesvirus simplex 1 and 2.",
   "Expect local irritation.",
   "IND", L2, 56, ["recurrent orolabial herpes simplex", "simplex 1 and 2", "local irritation"]),
@@ -389,7 +389,7 @@ ROWS = [
   "<b>Wash hands thoroughly after placing the patch</b> &mdash; touching an eye afterwards causes blurred vision.",
   "EDU", L3, 54, ["Prevention of motion sickness", "Transderm Scop", "wash hands thoroughly"]),
  ("Ipratropium, tiotropium, glycopyrrolate<br><span class=g>Atrovent, Spiriva, Robinul</span>",
-  "<b>Inhaled bronchodilators for maintenance treatment of bronchospasm in COPD.</b> Glycopyrrolate also reduces "
+  "<b>Inhaled bronchodilators for maintenance treatment of bronchospasm in COPD (chronic obstructive pulmonary disease).</b> Glycopyrrolate also reduces "
   "pre-surgical secretions, <b>excessive drooling in cerebral palsy</b>, stomach acid, and <b>hyperhidrosis</b>.",
   "<b>Adverse effects are limited because they cannot enter the systemic circulation or the central nervous "
   "system</b> &mdash; the reason inhaled antimuscarinics are well tolerated.",
@@ -458,7 +458,7 @@ ROWS = [
   "<b>NO therapeutic use.</b> A normal by-product of tyrosine metabolism, <b>found in fermented foods such as "
   "cheese and wine</b>.",
   "<b>May cause serious vasopressor effects if the patient is taking a monoamine oxidase inhibitor</b> &mdash; "
-  "normally it is oxidised by MAO in the gut. This is the food-interaction counselling point.",
+  "normally it is oxidised by MAO (monoamine oxidase) in the gut. This is the food-interaction counselling point.",
   "EDU", L3, 101, ["Normal by-product of tyrosine metabolism", "serious vasopressor effects",
                    "MAOI", "fermented foods", "cheese and wine"]),
  ("Cocaine",
@@ -494,7 +494,7 @@ ROWS = [
  ("Dobutamine",
   "<b>Increase cardiac output in acute heart failure</b>, and inotropic support after cardiac surgery.",
   "Its selling point: <b>it does not significantly increase myocardial oxygen demand</b> the way other "
-  "sympathomimetics do. <b>Caution in atrial fibrillation</b> &mdash; it increases AV conduction.",
+  "sympathomimetics do. <b>Caution in atrial fibrillation</b> &mdash; it increases atrioventricular conduction.",
   "IND", L3, 94, ["acute heart failure", "Inotropic support after cardiac surgery",
                   "Does not significantly increase oxygen demand"]),
  ("Albuterol",

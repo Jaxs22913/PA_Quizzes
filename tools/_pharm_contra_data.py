@@ -100,7 +100,7 @@ ROWS = [
  # ---------------- FLUOROQUINOLONES ----------------
  ("Fluoroquinolones<br><span class=g>ciprofloxacin, levofloxacin, moxifloxacin</span>",
   "<u><b>Tendonitis and Achilles tendon rupture.</b></u> <b>Caution if under 18 years old.</b> Also peripheral "
-  "neuropathy and CNS toxicity &mdash; dizziness, insomnia, somnolence.",
+  "neuropathy and central nervous system toxicity &mdash; dizziness, insomnia, somnolence.",
   "NAMED", L1, 79, ["Tendonitis/Tendon", "achilles", "rupture", "18"]),
  ("Fluoroquinolones<br><span class=g>ciprofloxacin, levofloxacin, moxifloxacin</span>",
   "<u><b>QT prolongation and Torsades de Pointes.</b></u> Photosensitivity, and they <b>complex with cations</b> "
@@ -122,7 +122,7 @@ ROWS = [
   "NAMED", L1, 85, ["SJS", "TEN", "agranulocytosis", "megaloblastic anemia"]),
  ("Trimethoprim / sulfamethoxazole<br><span class=g>Septra, Bactrim</span>",
   "Raises phenytoin, rifampin and digoxin levels; causes <b>hypoglycaemia with sulfonylureas</b>; and "
-  "<b>significantly increases INR with warfarin</b> by inhibiting CYP2C9.",
+  "<b>significantly increases INR (international normalised ratio) with warfarin</b> by inhibiting CYP2C9.",
   "CAUT", L1, 85, ["phenytoin", "Hypoglycemia with sulfonylureas", "INR", "warfarin"]),
  ("Metronidazole<br><span class=g>Flagyl</span>",
   "<u><b>Disulfiram-like reaction with ethanol.</b></u> The single most testable fact about this drug &mdash; "
@@ -175,7 +175,7 @@ ROWS = [
   "CAUT", L1, 111, ["Induces microsomal enzymes", "1A2", "Headache", "high-fat meal"]),
 
  # ---------------- ANTIVIRALS / ANTHELMINTHICS ----------------
- ("Acyclovir, valaciclovir<br><span class=g>Zovirax, Valtrex</span>",
+ ("Acyclovir, valacyclovir<br><span class=g>Zovirax, Valtrex</span>",
   "<b>Crystallizes in the renal tubule &mdash; maintain hydration and renal function.</b> Central nervous system "
   "effects include seizures, delirium and tremor; also bone marrow suppression.",
   "CAUT", L1, 123, ["crystallizes in renal tubule", "maintain hydration", "seizures", "delirium"]),
@@ -209,7 +209,7 @@ ROWS = [
                    "growth retardation", "ointment"]),
  ("Topical immunomodulators<br><span class=g>tacrolimus (Protopic), pimecrolimus (Elidel)</span>",
   "<b>Possible cancer risk.</b> <b>Avoid in patients with weakened immune systems.</b> Second line after topical "
-  "steroids; use a high-SPF sunscreen.",
+  "steroids; use a high-SPF (sun protection factor) sunscreen.",
   "AVOID", L2, 43, ["Possible cancer risk", "Avoid in patients", "weakened immune systems", "SPF"]),
  ("Polymyxin B<br><span class=g>topical</span>",
   "<b>Avoid using on open wounds or denuded skin in high doses</b> &mdash; risk of <b>neurotoxicity and "
@@ -325,6 +325,6 @@ ROWS = [
   "CAUT", L3, 122, ["orthostatic hypotension", "blockade"]),
  ("Nicotine",
   "Depolarizes autonomic ganglia &mdash; <b>stimulation first, then paralysis of all ganglia</b>. At higher doses "
-  "<b>blood pressure falls</b> and GI and bladder activity <b>ceases</b>.",
+  "<b>blood pressure falls</b> and gastrointestinal and bladder activity <b>ceases</b>.",
   "CAUT", L3, 59, ["stimulation, then paralysis", "BP falls", "ceases"]),
 ]
