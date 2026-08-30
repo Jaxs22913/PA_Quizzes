@@ -47,6 +47,13 @@ def classify(pain, side):
     # was being bucketed as bilateral -- so an explicit "either" wins first.
     if s.startswith("either"):
         lat = "either"
+    elif "unilateral" in s and "bilateral" not in s:
+        # Catches the hedged forms too -- "Usually unilateral", "Often
+        # UNILATERAL". Before this, only a leading "Unilateral" counted, so
+        # those fell through to 'either' while "Usually bilateral" was
+        # correctly bucketed. The asymmetry hid bacterial conjunctivitis and
+        # amaurosis fugax from the unilateral filter.
+        lat = "uni"
     elif s.startswith("unilateral"):
         lat = "uni"
     elif "bilateral" in s and "unilateral" not in s:

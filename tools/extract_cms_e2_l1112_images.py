@@ -11,6 +11,12 @@ WRONG clinical photographs under the right filenames in a derm build, and the
 only reason it was caught was a git diff on the image folder.
 
 EVERY IMAGE IS VIEWED BEFORE IT IS PLACED IN THE GUIDE.
+
+Extracting everything put 47 MB of full-size originals in a folder the
+chart keeps under 3 MB. After viewing, the twelve that are actually used
+were downscaled to 600 px JPEG at quality 80 -- the same treatment the
+Lecture 10 images get -- and the rest deleted. Re-running this script
+writes the originals again; run tools/prune_cms_e2_l1112_images.sh after.
 """
 import os, re, struct, zipfile
 

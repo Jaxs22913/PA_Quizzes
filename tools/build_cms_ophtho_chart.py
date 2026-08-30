@@ -55,6 +55,11 @@ OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-ophtho-comp
 # the filter row lets you pull out just the painful ones or just the bilateral
 # ones -- which is the comparison she actually asked for.
 from cms_e2_ophtho_diff import DIFF, classify
+# Lectures 11 and 12 were added on 2026-08-29. Their rows carry a tenth
+# field naming the deck, because with three decks in this exam a bare
+# slide number no longer identifies anything on its own.
+from _cms_e2_chart_l1112 import ROWS_NEW, DIFF_NEW, IMGS_NEW
+DIFF = dict(DIFF, **DIFF_NEW)
 IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('s052_2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
 
 # Viewed and REJECTED. These are the deck's OWN differential images -- filing
@@ -285,7 +290,11 @@ ROWS = [
   "Develops far more slowly than anterior disease and may last several years. <b>Infection must be excluded before immunosuppression.</b>", "64&ndash;65"),
 ]
 
+ROWS = ROWS + ROWS_NEW
+IMGS = dict(IMGS, **IMGS_NEW)
+
 GROUP_COLOUR = {
+ "Acute vision loss": "#b8860b", "Neuro-ophthalmology": "#5f3a8a",
  "Eyelid": "#5566b5", "Lacrimal": "#2f6b5a", "Surface": "#7a5a2e",
  "Conjunctivitis": "#8f5aa8", "Sclera": "#a4502a", "Orbit": "#8a5a2b",
  "Cornea": "#2f7d76", "Uvea": "#7a2f5f",
@@ -352,7 +361,8 @@ def main():
 
     imgdir = os.path.join(os.path.dirname(OUT), "cms-ophtho-chart-images")
     body_rows, n_pics, n_ext = [], 0, 0
-    for name, grp, give, pres, test, tx, urg, edu, slide in ROWS:
+    for row in ROWS:
+        name, grp, give, pres, test, tx, urg, edu, slide = row[:9]
         urg_cls = ("emerg" if "EMERGENT" in urg else
                    "sameday" if "SAME DAY" in urg else
                    "urg" if urg.startswith("Urgent") or "URGENT" in urg else "rout")
@@ -378,6 +388,10 @@ def main():
                        e["where"], e["lic"]))
         else:
             cell = '<span class="nopic">no image<br>on the slide</span>'
+        deck = row[9] if len(row) > 9 else "CMS I Common Ophthalmological Disorders"
+        lect = {"11. Neuro-Ophthalmology": "L11",
+                "12. Acute Vision Loss": "L12"}.get(deck, "L10")
+        slide = '<b class="lect">%s</b><br>%s' % (lect, slide)
         pain, side, sign = DIFF[name]
         # data-* attributes drive the filter row, so "show me only the painful
         # ones" is one click -- which is the comparison she actually asked for.
@@ -431,7 +445,18 @@ table. <span class="u emerg" style="padding:1px 6px">EMERGENT</span> means now.
 stamped into the image &mdash; <i>EyeRounds.org</i>, the <i>Kellogg Eye Center</i>,
 <i>&copy; Logical Images</i> &mdash; and those marks are left visible on purpose; they are part of
 the citation.<br><br>
-<b>Four conditions have no picture anywhere in the deck</b> &mdash; gonococcal conjunctivitis,
+<b>The Slide column names the lecture.</b> This chart now spans three decks &mdash;
+<b>L10</b> Common Ophthalmological Disorders, <b>L11</b> Neuro-Ophthalmology and <b>L12</b> Acute
+Vision Loss &mdash; so a bare slide number no longer identifies anything on its own. Lecture 11 and
+12 pictures are filed under <i>l11-</i> and <i>l12-</i> filenames for the same reason: the three
+decks number their slides independently, and without the prefix four figures resolved to the wrong
+Lecture 10 photographs.<br><br>
+<b>Sixteen of the Lecture 11 and 12 rows have no picture.</b> Those decks illustrate the pathways
+and the classic fundus findings rather than every named condition, so the rows that carry a
+photograph are the ones the deck actually photographs &mdash; the glaucomatous disc, the detached
+retina, the swollen papilledematous disc, the demyelinating lesions on MRI. Nothing was sourced
+from outside those two decks.<br><br>
+<b>Four Lecture 10 conditions have no picture anywhere in that deck</b> &mdash; gonococcal conjunctivitis,
 neonatal chlamydial conjunctivitis, trachoma and autoimmune conjunctivitis. Each of those carries an
 openly licensed photograph from elsewhere instead, credited by author, source and licence beneath the
 picture. The classic CDC chlamydial conjunctivitis photograph is <i>not</i> among them: its own library

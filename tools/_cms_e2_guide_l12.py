@@ -90,7 +90,7 @@ SECTION = """
   </table>
 
   <h3 class="sub" id="e2l3-glaucoma">3.3 &middot; Glaucoma &mdash; acute closed-angle and chronic open-angle <span class="cite">Objective a2</span></h3>
-  <figure class="fig"><img src="%(IMG)ss012_1.png" loading="lazy" alt="Cross-sections contrasting the open drainage angle with the closed one."><figcaption>Both forms raise intraocular pressure. In <b>open-angle</b> the angle is patent but the trabecular meshwork drains poorly; in <b>angle-closure</b> the iris mechanically shuts the circuit. <span class="cite">Slide 12</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss012_1.jpg" loading="lazy" alt="Cross-sections contrasting the open drainage angle with the closed one."><figcaption>Both forms raise intraocular pressure. In <b>open-angle</b> the angle is patent but the trabecular meshwork drains poorly; in <b>angle-closure</b> the iris mechanically shuts the circuit. <span class="cite">Slide 12</span></figcaption></figure>
   <table class="tbl">
     <tr><th></th><th>ACUTE &mdash; closed angle</th><th>CHRONIC &mdash; open angle</th></tr>
     <tr><td><b>Mechanism</b></td><td>The <b>iris blocks the drainage circuit</b> &rarr; intraocular pressure rises dramatically</td><td><b>Trabecular meshwork abnormality</b> next to the canal of Schlemm, secondary to <b>aging</b> &rarr; optic nerve damage, <b>with or without raised pressure</b></td></tr>
@@ -130,7 +130,7 @@ SECTION = """
     <tr><td><b>Prognosis</b></td><td><b>Spontaneous recovery is the rule.</b> Without treatment vision begins improving <b>within a few weeks</b>, may continue for months, and is usually <b>normal within a year</b></td></tr>
     <tr><td><b>Education</b></td><td><b>Recurrence carries a greater risk of multiple sclerosis.</b> Do not treat the episode and stop &mdash; find out why it happened, or you miss the bigger problem</td></tr>
   </table>
-  <figure class="fig"><img src="%(IMG)ss023_3.png" loading="lazy" alt="Axial FLAIR MRI of the brain with periventricular white-matter lesions, one arrowed."><figcaption>Periventricular demyelinating lesions on MRI. <b>Two or more</b> is the threshold that sends the patient on to neurology. <span class="cite">Slide 23</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss023_3.jpg" loading="lazy" alt="Axial FLAIR MRI of the brain with periventricular white-matter lesions, one arrowed."><figcaption>Periventricular demyelinating lesions on MRI. <b>Two or more</b> is the threshold that sends the patient on to neurology. <span class="cite">Slide 23</span></figcaption></figure>
 
   <h3 class="sub" id="e2l3-detachment">3.5 &middot; Retinal detachment <span class="cite">Objective a4</span></h3>
   <table class="tbl">
@@ -145,7 +145,7 @@ SECTION = """
     <tr><td><b>Diagnosis</b></td><td>Direct and dilated ophthalmoscopy: retina <b>elevated, grey cloud with folds</b>, a <b>pigmented well-demarcated area</b>, and tears that are <b>orange and crescent shaped</b>. <b>Ultrasound is MORE SENSITIVE than the fundoscopic exam</b> and determines the type</td></tr>
     <tr><td><b>Treatment</b></td><td><b>EMERGENCY &mdash; refer immediately.</b> Surgical repair urgently or within a week depending on type. Options: <b>laser photocoagulation, cryotherapy, pneumatic retinopexy, vitrectomy, scleral buckle</b></td></tr>
   </table>
-  <figure class="fig"><img src="%(IMG)ss028_1.png" loading="lazy" alt="Fundus photograph of a detached retina showing pale billowy folds, arrowed."><figcaption>The detached upper retina &mdash; opaque and cloudy, vessels no longer visible, with the <b>&ldquo;billowy folds&rdquo;</b> the deck names. <span class="cite">Slide 28</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss028_1.jpg" loading="lazy" alt="Fundus photograph of a detached retina showing pale billowy folds, arrowed."><figcaption>The detached upper retina &mdash; opaque and cloudy, vessels no longer visible, with the <b>&ldquo;billowy folds&rdquo;</b> the deck names. <span class="cite">Slide 28</span></figcaption></figure>
   <div class="callout warn">
     <p><strong>Her disposition, verbatim in substance:</strong> this one needs to be seen
     <em>right now</em>. If no ophthalmologist can take them, they go to a hospital that has one.
@@ -197,8 +197,8 @@ SECTION = """
     <tr><td><b>Diagnosis</b></td><td><b>Lumbar puncture</b> &mdash; an increased opening pressure confirms raised intracranial pressure. <b>MRI and/or CT head to rule out a mass lesion</b></td></tr>
     <tr><td><b>Treatment</b></td><td><b>Treat the underlying disorder</b></td></tr>
   </table>
-  <figure class="fig figpair"><img src="%(IMG)ss045_1.png" loading="lazy" alt="Swollen optic disc with flame haemorrhages, arrowed."><img src="%(IMG)ss045_4.png" loading="lazy" alt="Swollen optic disc with a cotton wool spot, arrowed."><figcaption><b>Acute papilledema.</b> Left, <b>haemorrhages</b>; right, a <b>cotton wool spot</b>. <span class="cite">Slide 45 A and B</span></figcaption></figure>
-  <figure class="fig figpair"><img src="%(IMG)ss045_3.png" loading="lazy" alt="Elevated optic disc with blurred margins and no haemorrhage."><img src="%(IMG)ss045_2.png" loading="lazy" alt="Pale optic disc with tortuous vessels, arrowed."><figcaption><b>Left, chronic papilledema</b> &mdash; disc elevation and blurred margins, <b>but no haemorrhages or cotton wool spots</b>. <b>Right, the atrophic phase</b> &mdash; the optic nerve axons have died. <span class="cite">Slide 45 C and D</span></figcaption></figure>
+  <figure class="fig figpair"><img src="%(IMG)ss045_1.jpg" loading="lazy" alt="Swollen optic disc with flame haemorrhages, arrowed."><img src="%(IMG)ss045_4.jpg" loading="lazy" alt="Swollen optic disc with a cotton wool spot, arrowed."><figcaption><b>Acute papilledema.</b> Left, <b>haemorrhages</b>; right, a <b>cotton wool spot</b>. <span class="cite">Slide 45 A and B</span></figcaption></figure>
+  <figure class="fig figpair"><img src="%(IMG)ss045_3.jpg" loading="lazy" alt="Elevated optic disc with blurred margins and no haemorrhage."><img src="%(IMG)ss045_2.jpg" loading="lazy" alt="Pale optic disc with tortuous vessels, arrowed."><figcaption><b>Left, chronic papilledema</b> &mdash; disc elevation and blurred margins, <b>but no haemorrhages or cotton wool spots</b>. <b>Right, the atrophic phase</b> &mdash; the optic nerve axons have died. <span class="cite">Slide 45 C and D</span></figcaption></figure>
   <div class="callout">
     <p><strong>Papilledema pushes the disc OUT. Glaucoma cups it IN.</strong> She stressed how
     distinctly different the two look, and it is the single most reliable way to tell them apart

@@ -64,7 +64,7 @@ SECTION = """
   the FAST beat</b> &mdash; vertical, horizontal or torsional. It <b>increases with gaze in the
   direction of the fast phase</b>. <b>Horizontal jerk nystagmus is the most common form</b>: the
   eyes drift slowly to one side and snap quickly back.</p>
-  <figure class="fig"><img src="%(IMG)ss004_1.png" loading="lazy" alt="Diagram of horizontal, vertical and torsional eye movement."><figcaption>The three trajectories &mdash; <b>horizontal</b>, <b>vertical</b> and <b>torsional (rotary)</b>. Jerk nystagmus is classified by trajectory and named for the direction of the <b>fast</b> beat. <span class="cite">Slide 4</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss004_1.jpg" loading="lazy" alt="Diagram of horizontal, vertical and torsional eye movement."><figcaption>The three trajectories &mdash; <b>horizontal</b>, <b>vertical</b> and <b>torsional (rotary)</b>. Jerk nystagmus is classified by trajectory and named for the direction of the <b>fast</b> beat. <span class="cite">Slide 4</span></figcaption></figure>
   <div class="callout warn">
     <p><strong>Who gets referred and worked up.</strong> Infants and young children with
     nystagmus; nystagmus <b>acquired</b> during adolescence or adulthood; and concerning or
@@ -116,7 +116,7 @@ SECTION = """
   <p><strong>The governing principle.</strong> The efferent limb of the pupillary reflex is
   <b>bilateral</b>, so both pupils receive the same command and should always be the same size.
   They should only be unequal <b>when the efferent pathways are not working properly</b>.</p>
-  <figure class="fig"><img src="%(IMG)ss020_1.png" loading="lazy" alt="Four panels showing pupil behaviour in dark, light and near gaze."><figcaption><b>A</b> normal &mdash; symmetric in light and dark. <b>B</b> the <b>small</b> pupil is abnormal &mdash; the right pupil does not dilate well <em>in the dark</em>. <b>C</b> the <b>large</b> pupil is abnormal &mdash; the right pupil does not react well <em>to light</em>. <b>D</b> physiologic anisocoria. <span class="cite">Slide 20</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss020_1.jpg" loading="lazy" alt="Four panels showing pupil behaviour in dark, light and near gaze."><figcaption><b>A</b> normal &mdash; symmetric in light and dark. <b>B</b> the <b>small</b> pupil is abnormal &mdash; the right pupil does not dilate well <em>in the dark</em>. <b>C</b> the <b>large</b> pupil is abnormal &mdash; the right pupil does not react well <em>to light</em>. <b>D</b> physiologic anisocoria. <span class="cite">Slide 20</span></figcaption></figure>
   <table class="tbl">
     <tr><th>Ask</th><th>If yes</th><th>Then the abnormal pupil is</th></tr>
     <tr><td>Is the difference <b>greater in the DARK</b>?</td><td>The smaller pupil is failing to dilate</td><td>The <b>SMALL</b> one &mdash; think Horner, opioids, Argyll Robertson</td></tr>
@@ -206,7 +206,7 @@ SECTION = """
     so an external compression reaches them first, while microvascular disease infarcts the core
     and spares them. <span class="cite">Slide 41</span></p>
   </div>
-  <figure class="fig"><img src="%(IMG)ss039_2.png" loading="lazy" alt="Diagram of the third cranial nerve's course from midbrain to orbit, with six numbered lesion sites."><figcaption>The course of CN III and where it can be struck: <b>1</b> nuclear, <b>2</b> fascicle, <b>3</b> uncal herniation, <b>4</b> <b>posterior communicating artery aneurysm</b>, <b>5</b> cavernous sinus, <b>6</b> orbital. Site 4 is the one the pupil-involved rule is built around. <span class="cite">Slide 39</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss039_2.jpg" loading="lazy" alt="Diagram of the third cranial nerve's course from midbrain to orbit, with six numbered lesion sites."><figcaption>The course of CN III and where it can be struck: <b>1</b> nuclear, <b>2</b> fascicle, <b>3</b> uncal herniation, <b>4</b> <b>posterior communicating artery aneurysm</b>, <b>5</b> cavernous sinus, <b>6</b> orbital. Site 4 is the one the pupil-involved rule is built around. <span class="cite">Slide 39</span></figcaption></figure>
   <p><strong>CN IV is the odd one out anatomically:</strong> it is the <b>only nerve arising from
   the dorsal surface of the brainstem</b>, and it <b>crosses</b> &mdash; the <b>left trochlear
   nucleus sends fibres to the RIGHT eye</b>. Clinically the patient <b>tilts the head to the
@@ -242,7 +242,7 @@ SECTION = """
   </div>
 
   <h3 class="sub" id="e2l2-chiasm">2.8 &middot; Pre- and post-chiasm lesions <span class="cite">Objective g</span></h3>
-  <figure class="fig"><img src="%(IMG)ss052_1.png" loading="lazy" alt="Visual pathway from retina to striate cortex with the field defect produced by a lesion at each point."><figcaption>Lesion site <b>A</b> optic nerve, <b>B</b> chiasm, <b>C</b> optic tract, <b>D</b> optic radiation, <b>E</b> striate cortex &mdash; with the monocular field defect each produces. <span class="cite">Slides 51&ndash;52</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss052_1.jpg" loading="lazy" alt="Visual pathway from retina to striate cortex with the field defect produced by a lesion at each point."><figcaption>Lesion site <b>A</b> optic nerve, <b>B</b> chiasm, <b>C</b> optic tract, <b>D</b> optic radiation, <b>E</b> striate cortex &mdash; with the monocular field defect each produces. <span class="cite">Slides 51&ndash;52</span></figcaption></figure>
   <table class="tbl">
     <tr><th>Lesion site</th><th>Field defect</th><th>Pre- or post-chiasm</th></tr>
     <tr><td><b>Optic nerve</b></td><td><b>Total blindness of that eye</b></td><td><b>PRE</b> &mdash; monocular, because the fibres have not crossed yet</td></tr>
