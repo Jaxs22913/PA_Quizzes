@@ -87,8 +87,22 @@ def cov(opt, d):
     t = set(toks(opt))
     return 1.0 if not t else sum(1 for w in t if found(w, d)) / len(t)
 
+# Reviewed and excluded. Each was checked against the slide by hand and the fact
+# IS there -- the checker cannot see it because PowerPoint split the text into
+# separate runs, so the answer never appears as one literal string.
+#   ANS slide 23 prints "Only M(1), M(2), M(3) functionally characterized" with
+#   every subscript as its own run, leaving no matchable token.
+REVIEWED = {
+    ("pharm-exam-1-master-exam-form-h.html", "M1, M2 and M3"),
+    ("pharm-exam-1-master-exam-form-f.html", "M1, M2 and M3"),
+    ("pharm-exam-1-master-exam-form-g.html", "M1, M2 and M3"),
+    ("pharm-exam-1-master-exam-form-i.html", "M1, M2 and M3"),
+    ("pharm-exam-1-master-exam-form-j.html", "M1, M2 and M3"),
+}
+
 def main(argv):
     roots = argv[1:]
+    excluded = 0
     exam_corpus = {}
     for repo in glob.glob("*/"):
         folder = repo.rstrip('/')
@@ -122,8 +136,13 @@ def main(argv):
             cc = sum(1 for w in ct if found(w, d)) / len(ct)
             best = max((cov(o[j][0], d) for j in range(4) if j != c), default=0)
             if cc == 0 and best >= 0.75:
+                if (os.path.basename(f), o[c][0]) in REVIEWED:
+                    excluded += 1
+                    continue
                 flags.append((f, qi + 1, o[c][0][:50], q.get('q', '')[:55]))
     print("screened per exam:", dict(screened))
+    if excluded:
+        print(f"reviewed and excluded (verified on the slide by hand): {excluded}")
     print(f"\nflags to eyeball (correct absent from all decks + a distractor present): {len(flags)}")
     for f, qi, ans, stem in flags:
         print(f"  {f}  Q{qi}: '{ans}'  ::  {stem}")
