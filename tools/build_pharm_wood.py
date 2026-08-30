@@ -184,7 +184,7 @@ def main():
         legend=legend, notes=notes, toc=toc, body="\n".join(secs),
         footer_note="Every quote is verified against the lecture transcript by "
                     "<code>tools/check_pharm_wood.py</code> before this page is written. "
-                    "The recordings stay on Jaxon's machine and are never copied into this repo.")
+                    "The recordings stay on the course owner's machine and are never copied into this repo.")
     html = html.replace("</style>", extra_css + "</style>")
     open(OUT, "w", encoding="utf-8").write(html)
     print("wrote %s (%d KB, %d rules, %d patterns, %d strategy, %d starred)"

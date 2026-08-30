@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Rewritten stems for the Pharmacology I topic quizzes.
 
-Jaxon, 2026-08-30: the exams were to be rewritten, not just trimmed. 175 of the
+Brief, 2026-08-30: the exams were to be rewritten, not just trimmed. 175 of the
 340 stems either opened with lecture-preamble ("what does the lecture say
 about X") or ran past 95 characters. No exam question is phrased that way.
 

@@ -6,7 +6,7 @@ Four options, matching the rest of Pharmacology I. Answer position is set by
 ROTATION, never chosen while authoring -- the "always A" bug has happened twice
 on this site.
 
-Also enforces the length targets Jaxon set for this bank, so a future addition
+Also enforces the length targets set for this bank, so a future addition
 that reverts to paragraph-length options fails the build instead of shipping.
 """
 import io, json, os, random, statistics, sys
@@ -95,9 +95,8 @@ def main():
     CHIPS = ["Short clinical stems", "Antibacterials", "Antifungals &amp; antivirals",
              "Dermatology", "Autonomic"]
     INTRO = ("Short clinical vignettes for Pharmacology I Exam 1 &mdash; one or two sentences, four "
-             "options, and options short enough to scan. Built to the shape Jaxon asked for on "
-             "2026-08-30: to the point, with the reasoning in the answer explanation rather than "
-             "crammed into the choices.")
+             "options, and options short enough to scan. Written to be to the point, with the "
+             "reasoning in the answer explanation rather than crammed into the choices.")
     for n, (key, fname) in enumerate((("set1", "pharm-vignettes.html"),
                                       ("set2", "pharm-vignettes-version-2.html")), start=1):
         qs = [{"topic": q["topic"], "io": "Clinical application &mdash; Exam 1 lectures",

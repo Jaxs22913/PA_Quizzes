@@ -9,7 +9,7 @@ This page is the last of those, pulled out of all three decks into one place.
 REFUSES TO WRITE unless check_pharm_contra.py passes -- every row is verified
 against the slide it cites before the file is touched.
 
-Named reactions and syndromes are bold AND underlined, per Jaxon's request, so
+Named reactions and syndromes are bold AND underlined, as requested, so
 "Red Man Syndrome" style facts can be found by scanning rather than reading.
 """
 import html as H

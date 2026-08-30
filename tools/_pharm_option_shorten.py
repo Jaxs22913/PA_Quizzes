@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Shortened replacements for the long Pharmacology I answer options.
 
-Jaxon, 2026-08-30: "shorten the questions and make them more to the point".
+Brief, 2026-08-30: "shorten the questions and make them more to the point".
 The bank's median option ran 48 characters and a quarter passed 66, because the
 reasoning had been written INTO the choice. The explanation already carries the
 reasoning, so the choice only has to be identifiable.

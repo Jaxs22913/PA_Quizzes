@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Short clinical vignettes for Pharmacology I Exam 1.
 
-House style for THIS bank, set by Jaxon on 2026-08-30: a stem of one or two
+House style for THIS bank, set 2026-08-30: a stem of one or two
 sentences, FOUR options, and options short enough to scan. The reasoning lives
 in the per-option explanation, not in the option text -- which is what went
 wrong with the original pharm bank, where the median option ran 48 characters

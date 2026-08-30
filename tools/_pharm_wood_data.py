@@ -80,8 +80,7 @@ RULES = [
       body="This is <b>oxymetazoline (Afrin)</b> and the condition is <b>rhinitis medicamentosa</b> "
            "&mdash; rebound congestion from overstimulated alpha receptors downregulating, so the "
            "congestion returns when the drug stops. He notes it needs a <b>taper</b>, not an abrupt "
-           "stop. Jaxon: this one is not in the list you sent, and he flagged it harder than any "
-           "other single fact in Lecture 3.",
+           "stop. Worth noting: he flagged this harder than any other single fact in Lecture 3.",
       verify=["rebound nasal stuffiness", "rebound", "when used for more than three days",
               "students have a really tough time with this one",
               "I should have underlined it, starred it"]),
