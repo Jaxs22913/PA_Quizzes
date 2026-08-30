@@ -348,6 +348,10 @@ def main():
                      ("#eef5f4", "#eef0fa"), ("#4c5f5e", "#525c78"),
                      ("#5f7170", "#646d88"), ("#4a5f5e", "#4f5872")):
         head = head.replace(old, new)
+    # The donor chart has 7 columns and can afford a 1180px floor; this one had
+    # 12 and could not, which is what forced the sideways scroll. Nine columns
+    # with percentage widths fit any container, so the floor goes.
+    head = head.replace("min-width:1180px;", "")
     head = re.sub(r"<title>.*?</title>",
                   "<title>Ophthalmology Comparison Chart &mdash; CMS I Exam 2</title>",
                   head, count=1, flags=re.S)
@@ -399,12 +403,13 @@ def main():
         body_rows.append(
             '<tr data-g="%s" data-pain="%s" data-lat="%s">'
             '<td class="pic">%s</td>'
-            '<td class="nm"><b>%s</b><span class="grp" style="background:%s">%s</span></td>'
-            '<td class="d pain">%s</td><td class="d side">%s</td><td class="d sign">%s</td>'
-            '<td class="gv">%s</td><td>%s</td><td>%s</td><td>%s</td>'
-            '<td class="u %s">%s</td><td>%s</td><td class="sl">%s</td></tr>'
+            '<td class="nm"><b>%s</b><span class="grp" style="background:%s">%s</span>'
+            '<span class="sl">%s</span></td>'
+            '<td class="d pain">%s<span class="side">%s</span></td><td class="d sign">%s</td>'
+            '<td class="gv">%s</td><td>%s</td><td>%s</td>'
+            '<td>%s<span class="u %s">%s</span></td><td>%s</td></tr>'
             % (H.escape(grp), painful, lat, cell, name, GROUP_COLOUR[grp], H.escape(grp),
-               pain, side, sign, give, pres, test, tx, urg_cls, urg, edu, slide))
+               slide, pain, side, sign, give, pres, test, tx, urg_cls, urg, edu))
 
     html = head + """</head><body>
 <div class="guide-back-bar">
@@ -481,19 +486,21 @@ haematology referral.</div>
 </div>
 
 <div class="tblwrap"><table>
+<colgroup>
+  <col style="width:11%"><col style="width:10%"><col style="width:9%"><col style="width:11%">
+  <col style="width:12%"><col style="width:14%"><col style="width:12%"><col style="width:11%">
+  <col style="width:10%">
+</colgroup>
 <thead><tr>
   <th>Picture</th>
   <th>Condition</th>
-  <th class="d-h">Pain?</th>
-  <th class="d-h">One eye or both?</th>
+  <th class="d-h">Pain &amp; side</th>
   <th class="d-h">Key exam abnormality</th>
   <th class="gv-h">Vignette giveaway<br><span style="font-weight:400;opacity:.75">the words that hand it to you</span></th>
   <th>Presentation &amp; exam findings</th>
   <th>Testing &amp; what causes it</th>
-  <th>Treatment</th>
-  <th>How fast</th>
+  <th>Treatment &amp; how fast</th>
   <th>Patient education &amp; prognosis</th>
-  <th>Slide</th>
 </tr></thead>
 <tbody>
 __ROWS__
@@ -533,27 +540,32 @@ __ROWS__
   .filt{font:inherit;font-size:.82rem;padding:5px 12px;border-radius:999px;cursor:pointer;
         border:1px solid var(--c-line);background:var(--c-btn-bg);color:var(--c-fg);}
   .filt.on{background:var(--acc);color:#fff;border-color:var(--acc);}
-  td.nm{white-space:normal;min-width:180px;}
+  table{table-layout:fixed;}
+  td, th{overflow-wrap:break-word;}
+  td.nm{white-space:normal;}
+  td.nm .sl{display:block;margin-top:5px;font-size:.66rem;color:var(--c-mute);
+            font-variant-numeric:tabular-nums;line-height:1.35;}
   td.nm .grp{display:block;margin-top:4px;font-size:.66rem;color:#fff;padding:1px 7px;
              border-radius:999px;width:fit-content;letter-spacing:.02em;}
   td.gv{background:var(--c-gv-bg);color:var(--c-gv-b);font-weight:600;}
   td.sl{text-align:center;color:var(--c-mute);white-space:nowrap;font-variant-numeric:tabular-nums;}
-  td.pic{width:190px;min-width:190px;text-align:center;vertical-align:top;padding:8px;}
+  td.pic{text-align:center;vertical-align:top;padding:8px;}
   td.pic img{width:100%;max-width:180px;height:auto;border-radius:6px;display:block;margin:0 auto;
              border:1px solid var(--c-line);}
   td.pic .picite{display:block;margin-top:4px;font-size:.66rem;color:var(--c-mute);}
   td.pic .nopic{display:inline-block;font-size:.7rem;color:var(--c-mute);line-height:1.3;}
   th.d-h{background:var(--c-panel);color:var(--c-panel-fg);}
   td.d{background:var(--c-panel);font-size:.82rem;}
-  td.pain{min-width:130px;} td.side{min-width:120px;} td.sign{min-width:200px;}
+  td.pain .side{display:block;margin-top:3px;opacity:.85;}
+  td .u{display:block;margin-top:6px;}
   .filters2{margin-top:-4px;align-items:center;}
   .flabel{font-size:.8rem;color:var(--c-mute);margin-right:4px;}
   .filt2{font:inherit;font-size:.8rem;padding:4px 11px;border-radius:999px;cursor:pointer;
          border:1px solid var(--c-line);background:var(--c-btn-bg);color:var(--c-fg);}
   .filt2.on{background:var(--gold);color:#241a02;border-color:var(--gold);}
-  td.u{font-weight:700;font-size:.8rem;}
-  td.u.emerg{color:#8c1d12;} td.u.sameday{color:#8c4a12;}
-  td.u.urg{color:#7a5a08;} td.u.rout{color:#3f5c46;font-weight:600;}
+  td .u{font-weight:700;font-size:.78rem;}
+  td .u.emerg{color:#8c1d12;} td .u.sameday{color:#8c4a12;}
+  td .u.urg{color:#7a5a08;} td .u.rout{color:#3f5c46;font-weight:600;}
 </style>
 </body></html>"""
     html = (html.replace("__ROWS__", "\n".join(body_rows))
