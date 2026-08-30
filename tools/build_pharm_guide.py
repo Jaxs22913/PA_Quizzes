@@ -272,6 +272,26 @@ BODY = '''<main>
     <tr><td>Oxazolidinones (4l)<br>linezolid</td><td>50S</td><td>Resistant Gram-positives &mdash; multidrug-resistant pneumococcus, methicillin-resistant <em>Staphylococcus aureus</em>, vancomycin-resistant <em>Enterococcus</em>. No Gram-negatives or anaerobes. Thrombocytopenia; <strong>serotonin syndrome</strong> with selective serotonin reuptake inhibitors, tyramine foods, pseudoephedrine</td></tr>
     <tr><td>Streptogramins (4g)</td><td>50S</td><td>Named in the syllabus and on the mechanism slide; the deck gives no dedicated agent slides</td></tr>
   </table>
+  <div class="callout"><strong>QT prolongation &mdash; the one property that crosses classes.</strong>
+  It turns up three times on this exam, in three unrelated groups: <strong>macrolides</strong> here,
+  <strong>fluoroquinolones</strong> under Objective 4, and <strong>posaconazole</strong> among the
+  antifungals. Worth understanding once rather than memorising three times.
+  <br><br>
+  The QT interval measures how long the ventricle takes to <strong>repolarise</strong>. Repolarisation
+  depends on potassium leaving the cell, and these drugs block the potassium channel that lets it out
+  &mdash; the <strong>hERG</strong> channel, named in the figure on the drug-induced QT slide. Block it,
+  repolarisation takes longer, and the QT stretches. Stretch it far enough and the rhythm degenerates
+  into <mark class="prof-highlight">torsades de pointes</mark> &mdash; French for &ldquo;twisting of the
+  points&rdquo;, which is exactly what the tracing does, the amplitude waxing and waning around the
+  baseline.
+  <br><br>
+  <strong>What raises the risk</strong> is stacking, not any single dose: a congenital long QT, several
+  QT-prolonging drugs at once, or an electrolyte disturbance. This is why posaconazole is on the list at
+  all &mdash; its own hypokalaemia and hypomagnesaemia are what push the QT out. A single course of
+  azithromycin in a healthy patient is a different proposition from the same drug added to an
+  antiarrhythmic in someone whose potassium is low. <strong>The treatment of choice for torsades is
+  magnesium sulfate, two grams</strong> &mdash; described in lecture as the &ldquo;two gram slam&rdquo;
+  and called out as worth remembering.</div>
   <p><strong>Tigecycline</strong>, a glycylcycline, binds the 30S subunit and is bacteriostatic.
   It is approved for complicated skin and complicated intra-abdominal infection, covering
   methicillin-resistant <em>Staphylococcus aureus</em> and <em>Enterococcus faecalis</em>

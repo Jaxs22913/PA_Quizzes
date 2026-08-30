@@ -40,8 +40,18 @@ RULES = [
       lec=L1, at="1:13:45 and 1:16:26",
       body="It spans three classes on this exam: <b>macrolides</b> (worse with class Ia and III "
            "antiarrhythmics and with electrolyte abnormalities), <b>fluoroquinolones</b>, and "
-           "<b>posaconazole</b>. He flagged it the first time it appeared and again three minutes "
-           "later.",
+           "<b>posaconazole</b> (whose QT risk runs mostly through the hypokalaemia and "
+           "hypomagnesaemia it causes). He flagged it the first time it appeared and again three "
+           "minutes later.<br><br>What he actually taught around it: the QT interval is how long "
+           "the ventricle takes to <b>repolarise</b>, and it lengthens because the drug blocks the "
+           "potassium channel that lets K<sup>+</sup> out of the cell &mdash; the slide names it the "
+           "<b>hERG</b> channel. A long enough QT degenerates into <b>torsades de pointes</b>, "
+           "French for &ldquo;twisting of the points&rdquo;, a ventricular arrhythmia he called "
+           "<i>not compatible with life</i>. Three things multiply the risk: a <b>congenital long "
+           "QT</b>, <b>several QT-prolonging drugs stacked together</b>, and <b>electrolyte "
+           "disturbance</b> &mdash; a single Z-Pak in a healthy person did not worry him. The "
+           "treatment of choice for torsades is <b>magnesium sulfate</b>, two grams, which he "
+           "called the &ldquo;two gram slam&rdquo; and said was worth remembering.",
       verify=["Anytime we see QT prolongation", "you should star that", "underline it",
               "star it, underline it, it's good to know"]),
  dict(title="MRSA coverage", said="once, emphatically",
