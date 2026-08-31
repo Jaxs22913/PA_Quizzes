@@ -303,7 +303,767 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Granuloma annulare", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which variant of granuloma annulare carries the strongest systemic associations?", "opts": [["Localised disease, which predominates at about 75% of cases and affects children and young adults", "Localised disease accounts for about 75% of cases and is asymptomatic."], ["Subcutaneous, occurring almost exclusively in children under six", "This variant may mimic rheumatoid nodules but lacks those systemic links."], ["Perforating, with central umbilication and extrusion of collagen", "This variant may scar but is not the one with systemic associations."], ["Generalised or disseminated, associated with diabetes, thyroid disease, dyslipidaemia and lymphoma", "Correct, and it is more common in adults over forty."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 50"}, {"topic": "Photoprotection", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What does the lecture say about patients with Fitzpatrick types IV to VI?", "opts": [["They are not immune to ultraviolet damage or skin cancer, and melanoma is frequently diagnosed at advanced stages", "Correct — delayed diagnosis is common because of a lower index of suspicion."], ["They carry no meaningful skin cancer risk and need no routine photoprotection", "Risk is lower but explicitly not absent."], ["They burn more readily than types I to III but tan more deeply afterwards", "Types IV to VI burn minimally or never."], ["They should use SPF 15 rather than SPF 30, on the basis that higher factors confer no additional benefit", "The guidance is broad-spectrum SPF 30 or above for daily use across all types."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 122"}, {"topic": "Epidermolysis bullosa", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "etiology", "q": "What causes epidermolysis bullosa?", "opts": [["Autoantibodies against the epidermal basement membrane", "That is bullous pemphigoid."], ["A mutation in structural proteins", "Correct — the level at which the skin separates follows from which protein is affected."], ["Immunoglobulin A deposition in the dermal papillae", "That is dermatitis herpetiformis."], ["A type IV hypersensitivity reaction to a drug", "That is Stevens-Johnson syndrome and toxic epidermal necrolysis."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 27"}, {"topic": "Epidermolysis bullosa", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "referral", "q": "How broad is the referral requirement in epidermolysis bullosa?", "opts": [["Essentially every specialty, given the multisystem burden", "Correct — palliative care, genetics and family support are all involved."], ["Dermatology alone, since the disease is confined to the skin", "The disease burden is multisystem."], ["Genetics alone, since the diagnosis is made on a genetic panel", "Genetics is one referral among many."], ["No routine referral, since the condition is managed in primary care", "The condition requires broad specialist involvement."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 31"}, {"topic": "Polymorphous light eruption", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "How does polymorphous light eruption typically present?", "opts": [["Painful erythema developing within minutes of ultraviolet exposure and resolving within an hour of moving into the shade", "That immediate pattern suggests solar urticaria."], ["An exaggerated sunburn on first exposure to a new medication", "That describes phototoxicity."], ["Persistent eczematous change in chronically exposed skin of older males", "That describes chronic actinic dermatitis."], ["Papules appearing thirty minutes to hours after exposure on the décolletage, forearms and dorsal hands, sparing chronically exposed skin", "Correct, resolving in seven to ten days without scarring and recurring each spring."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 105"}, {"topic": "Acne rosacea", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "avoid", "q": "Why does azelaic acid need care in rosacea despite being effective?", "opts": [["It is contraindicated in pregnancy because of teratogenic risk", "That caution belongs to oral isotretinoin."], ["It raises intraocular pressure with prolonged facial application", "That caution belongs to topical corticosteroids."], ["It is more drying, and these patients already have an impaired skin barrier and dry skin", "Correct — that is why metronidazole is preferred first."], ["It causes marked photosensitivity, so daily sun protection becomes mandatory", "Photosensitivity is not the caution given for this agent here."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 69"}, {"topic": "Toxic epidermal necrolysis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What is the mortality of toxic epidermal necrolysis, and what predicts it at presentation?", "opts": [["Up to 30 to 35%, predicted by the SCORTEN score calculated within 24 hours", "Correct, and SCORTEN is repeated on day three."], ["Between 1 and 5%, predicted by the extent of mucosal involvement", "That mortality figure belongs to Stevens-Johnson syndrome alone."], ["Under 1%, predicted by the number of drugs the patient was taking", "Toxic epidermal necrolysis carries substantially higher mortality than this."], ["Around 50%, predicted by the presence of the Nikolsky sign", "The Nikolsky sign is present across the spectrum and is not a prognostic score."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 89"}, {"topic": "Erythema multiforme", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What triggers the majority of erythema multiforme cases?", "opts": [["Mycoplasma pneumoniae, accounting for over 50% of cases", "Mycoplasma is a recognised infectious trigger but not the leading one."], ["Idiopathic causes, accounting for over 50% of cases", "Idiopathic causes account for roughly 10% of cases."], ["Herpes simplex virus, accounting for over 50% of cases", "Correct. Other infectious causes include Mycoplasma pneumoniae, histoplasmosis, Epstein-Barr virus and coxsackievirus."], ["Sulfonamide antibiotics, accounting for over 50% of cases", "Drugs including sulfonamides are triggers, but they are far from the majority."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 8"}, {"topic": "Acanthosis nigricans", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What mechanism underlies the most common form of acanthosis nigricans?", "opts": [["Autoantibody deposition along the epithelial basement membrane zone", "That mechanism produces bullous pemphigoid."], ["Hyperinsulinaemia stimulating keratinocyte and fibroblast proliferation through insulin-like growth factor 1 receptor cross-activation", "Correct — the insulin-resistant or benign form is the commonest."], ["A paraneoplastic process driven by an underlying gastric adenocarcinoma secreting growth factors that act on the epidermis", "Malignant acanthosis nigricans is rare, at under 1% of cases."], ["A delayed type IV hypersensitivity reaction to a contacted allergen", "That mechanism produces allergic contact dermatitis."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 22"}, {"topic": "Sunburn", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "first-line", "q": "Which measures are named for acute sunburn?", "opts": [["Silver sulfadiazine dressings applied twice daily under occlusion", "That is a burn dressing agent not used in ordinary sunburn."], ["Cool compresses, an early nonsteroidal anti-inflammatory drug, and oral hydration", "Correct — ibuprofen or naproxen reduce the prostaglandin-mediated pain."], ["Warm compresses, an oral antihistamine, and a topical corticosteroid cream", "Warm compresses are used for furuncles and paronychia."], ["Ice packs applied directly, with a systemic corticosteroid taper", "Cool rather than cold is advised, and steroids are not part of this."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 96"}, {"topic": "Hyperhidrosis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What is the principal risk a patient must understand before endoscopic thoracic sympathectomy?", "opts": [["Compensatory sweating elsewhere, occurring in over 30%", "Correct — the procedure is permanent, so the trade-off has to be discussed thoroughly beforehand."], ["The need for retreatment every three to six months", "That applies to botulinum toxin rather than sympathectomy."], ["Dry mouth and urinary retention as ongoing side effects", "Those are the anticholinergic effects of oral therapy."], ["Permanent destruction of axillary glands by microwave energy", "That describes microwave thermolysis rather than sympathectomy."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 75"}, {"topic": "Urticaria", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which biologic is approved for refractory chronic urticaria?", "opts": [["Dupilumab, an interleukin-4 receptor antagonist given subcutaneously", "Dupilumab has been reported in refractory granuloma annulare rather than approved here."], ["Etanercept, a tumour necrosis factor inhibitor given subcutaneously", "Etanercept is described as an emerging adjunct in Stevens-Johnson syndrome."], ["Omalizumab, an anti-immunoglobulin E antibody given every four weeks", "Correct, at 300 mg subcutaneously."], ["Infliximab, a tumour necrosis factor alpha inhibitor given intravenously", "Infliximab is approved for pyoderma gangrenosum in inflammatory bowel disease."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 39"}, {"topic": "Pyoderma gangrenosum", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What is pyoderma gangrenosum, despite its name?", "opts": [["A neutrophilic dermatosis that is not infectious", "Correct — dysregulated innate immune activation with neutrophil recruitment causes the tissue destruction."], ["A deep bacterial infection requiring prolonged antibiotics", "The name is misleading; wound cultures are obtained precisely to exclude infection."], ["A vasculitis of medium-sized vessels with immune complex deposition", "Vasculitis is among the differentials that must be excluded."], ["A malignant ulcerating tumour of keratinocyte origin", "Squamous cell carcinoma is a differential requiring biopsy to exclude."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 57"}, {"topic": "Dermatitis herpetiformis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What must be checked before starting dapsone for dermatitis herpetiformis?", "opts": [["Thyroid-stimulating hormone and anti-thyroid peroxidase antibodies", "Autoimmune thyroid disease is an association but is not the pre-treatment check."], ["Serum immunoglobulin A level to exclude selective deficiency", "This affects serological interpretation rather than dapsone safety."], ["HLA-DQ2 and HLA-DQ8 typing to confirm susceptibility", "Typing is used when serology is equivocal rather than before dapsone."], ["Glucose-6-phosphate dehydrogenase status", "Correct, and the blood count is then monitored for haemolytic anaemia and methaemoglobinaemia."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 19"}, {"topic": "Photosensitivity", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "How is a positive photopatch test interpreted?", "opts": [["Any reaction indicates phototoxicity regardless of which patch responds", "The test is designed specifically to separate photoallergy from contact allergy."], ["A reaction only on the irradiated patch indicates photoallergy; a reaction on both indicates contact allergy", "Correct — the suspected photohaptens are applied in duplicate and one set irradiated with ultraviolet A."], ["A reaction on both patches indicates photoallergy; a reaction on one indicates phototoxicity", "Reaction on both patches indicates ordinary contact allergy."], ["A reaction on the non-irradiated patch alone indicates photoallergy", "That result would indicate contact allergy independent of light."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 99"}, {"topic": "Epidermolysis bullosa", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which epidermolysis bullosa subtype carries the highest mortality?", "opts": [["Epidermolysis bullosa acquisita, the autoimmune acquired form", "This acquired form is autoimmune rather than genetic and is not the highest-mortality type."], ["Junctional epidermolysis bullosa, especially the Herlitz subtype", "Correct, which is why early palliative care integration is appropriate in severe Herlitz disease."], ["Epidermolysis bullosa simplex, especially the localised palmoplantar form", "Simplex disease is localised to palms and soles and heals without scarring."], ["Dystrophic epidermolysis bullosa, especially the dominant form", "Dystrophic disease causes severe scarring and squamous cell carcinoma risk rather than the highest mortality."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 29"}, {"topic": "Photodermatitis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What causes phytophotodermatitis, and how does it present?", "opts": [["Furanocoumarins in plants such as lime, celery and parsley plus ultraviolet A, producing linear streaked hyperpigmentation", "Correct — classically after lime juice and sun exposure, with painful blistering acutely."], ["Bergapten in bergamot oil used in fragrances and cosmetics, producing drip-pattern hyperpigmentation of the neck", "That describes berloque dermatitis, a separate subtype."], ["A persistent eczematous eruption in chronically exposed skin of older males", "That describes chronic actinic dermatitis."], ["A delayed hypersensitivity response to an ultraviolet-induced photoantigen", "That describes polymorphous light eruption."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 100"}, {"topic": "Dermatitis herpetiformis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "epidemiology", "q": "Which human leukocyte antigen haplotypes are strongly associated with dermatitis herpetiformis?", "opts": [["HLA-B*15:02 and HLA-B*58:01", "Those are the severe cutaneous drug reaction associations."], ["HLA-B27 and HLA-DR4", "Those are associated with other rheumatological conditions."], ["HLA-Cw6 and HLA-DR3", "HLA-Cw6 is associated with early-onset psoriasis."], ["HLA-DQ2 and HLA-DQ8", "Correct — the same haplotypes that underlie coeliac disease."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 16"}, {"topic": "Dermatitis herpetiformis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "manifestation", "q": "Where is the eruption of dermatitis herpetiformis distributed?", "opts": [["On the anterior shins bilaterally as tender nodules that do not ulcerate", "That is erythema nodosum."], ["On the face in the central third, sparing the nasolabial folds", "That is a lupus butterfly rash, which she said she is not testing."], ["On sun-exposed skin, sparing the chronically exposed face and hands", "That is polymorphous light eruption."], ["Symmetrically on the knees, elbows, buttocks and back", "Correct — intensely pruritic papules and vesicles that group in a herpetiform pattern."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 18"}, {"topic": "Stevens-Johnson syndrome", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "referral", "q": "Which services should a patient with Stevens-Johnson syndrome be under?", "opts": [["Intensive care or a burn unit, with dermatology involved", "Correct — nasogastric feeding is often needed because mucosal involvement prevents eating."], ["A general medical ward with dermatology review the following day", "That level of care is inadequate for this condition."], ["Outpatient dermatology with a review appointment in one week", "That level of care is inadequate for this condition."], ["Ambulatory wound care with daily dressing changes at home", "That level of care is inadequate for this condition."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 83"}, {"topic": "Hyperhidrosis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "risk factors", "q": "Which features should raise suspicion of secondary rather than primary hyperhidrosis?", "opts": [["Bilateral palmar sweating that has been present since adolescence", "That pattern describes primary focal disease."], ["Sweating that worsens with anxiety and improves in a cool room", "Anxiety exacerbates primary disease without indicating a secondary cause."], ["Sweating confined to the axillae with a family history of the same", "That pattern describes primary focal disease."], ["Generalised sweating, nocturnal sweating, or an asymmetric distribution", "Correct — primary disease is bilateral, focal and absent during sleep."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 74"}, {"topic": "Actinic keratosis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which molecular event is critical in actinic keratosis?", "opts": [["Overactivation of the hedgehog signalling pathway", "That pathway is implicated in basal cell carcinoma."], ["Loss of keratinocyte adhesion through autoantibody binding", "That mechanism produces pemphigus."], ["Reduced filaggrin production impairing the epidermal barrier", "That defect underlies atopic dermatitis."], ["Ultraviolet-induced mutation of TP53", "Correct, and the surrounding normal-looking skin harbours subclinical mutations, called field cancerisation."]], "c": 3, "cite": "3. Dermatology  II.pptx, Slide 112"}, {"topic": "Erythema multiforme", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "slot": "escalation", "q": "A patient has had four episodes of herpes-associated erythema multiforme this year. Which chronic measure is appropriate?", "opts": [["Annual phototherapy given as a five-week course each spring", "That is preventive therapy for polymorphous light eruption."], ["Suppressive antiviral therapy, such as aciclovir 400 mg twice daily", "Correct — preventing the herpes recurrence prevents the eruption."], ["A standing prescription for oral prednisone to take at each episode", "Steroid at each episode does not prevent recurrence."], ["Long-term oral antihistamines taken continuously through the year", "Antihistamines address pruritus rather than recurrence."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 12"}, {"topic": "Erythema nodosum", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which single feature most usefully distinguishes erythema nodosum from nodular vasculitis?", "opts": [["Erythema nodosum nodules are painless on palpation", "The nodules are tender, which is part of the classic description."], ["Erythema nodosum nodules occur exclusively in men", "There is a female predominance of three to six to one."], ["Erythema nodosum nodules do not ulcerate", "Correct, and they sit on the anterior shins whereas nodular vasculitis favours the posterior legs and ulcerates."], ["Erythema nodosum nodules appear only on the posterior legs", "The anterior shins are the characteristic site."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 43"}, {"topic": "Actinic keratosis", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "How is an isolated actinic keratosis usually treated?", "opts": [["Photodynamic therapy using aminolevulinic acid and light", "This is excellent for field treatment rather than an isolated lesion."], ["Cryotherapy with two to three freeze-thaw cycles", "Correct — the standard of care for isolated lesions, with shave excision or curettage as alternatives."], ["5-fluorouracil cream applied for two to four weeks", "That is a field-directed treatment for multiple or confluent lesions."], ["Imiquimod applied twice weekly for sixteen weeks", "That is also field-directed rather than lesion-directed."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 113"}, {"topic": "Photosensitivity", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which drug classes are classic causes of phototoxicity?", "opts": [["Aromatic anticonvulsants, allopurinol and nevirapine", "Those are the leading triggers of Stevens-Johnson syndrome."], ["Oral contraceptives, sulfonamides and bromides", "Those are drug triggers of erythema nodosum."], ["Tetracyclines, fluoroquinolones, amiodarone and thiazides", "Correct, alongside furosemide, voriconazole, some nonsteroidal anti-inflammatory drugs and psoralens."], ["Sunscreen chemicals, sulfonamides and phenothiazines", "Those are the classic photoallergens rather than phototoxic agents."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 98"}, {"topic": "Stevens-Johnson syndrome", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "How are Stevens-Johnson syndrome, the overlap state and toxic epidermal necrolysis separated?", "opts": [["By whether the Nikolsky sign is positive or negative at presentation", "The Nikolsky sign is positive across the spectrum."], ["By body surface area of epidermal detachment: under 10%, 10 to 30%, and over 30%", "Correct — the same disease spectrum divided by extent of detachment."], ["By the presence of mucosal involvement, which occurs only in the severe form", "Mucosal erosions occur in over 90% of Stevens-Johnson syndrome and are nearly universal in toxic epidermal necrolysis."], ["By whether the trigger was a drug or an infection in each case", "Both share the same causative agents, with drugs predominating."]], "c": 1, "cite": "3. Dermatology  II.pptx, Slide 80"}, {"topic": "Urticaria", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "What single feature most reliably separates urticaria from its differentials?", "opts": [["Lesions appear symmetrically on the palms and soles", "That acral distribution is characteristic of erythema multiforme."], ["Lesions leave residual bruising as they resolve", "Residual bruising suggests urticarial vasculitis rather than simple urticaria."], ["Individual lesions last less than twenty-four hours", "Correct — this is called the key diagnostic feature, and lesions persisting beyond it suggest urticarial vasculitis."], ["Individual lesions are intensely pruritic and blanch under pressure", "Both are typical of urticaria but neither separates it from the differentials as reliably."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 37"}, {"topic": "Acne rosacea", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which feature separates papulopustular rosacea from acne vulgaris?", "opts": [["Rosacea has no comedones", "Correct — open or closed comedones point to acne vulgaris instead."], ["Rosacea produces pustules and acne vulgaris does not", "Both produce pustules; the comedones are what differ."], ["Rosacea occurs only in patients over the age of sixty", "Peak onset is between thirty and sixty."], ["Rosacea spares the central face entirely", "Central facial involvement is characteristic of rosacea."]], "c": 0, "cite": "3. Dermatology  II.pptx, Slide 68"}, {"topic": "Acne rosacea", "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions", "q": "Which rosacea complication requires urgent ophthalmology referral?", "opts": [["Persistent central facial erythema unresponsive to topical therapy", "This is treated with laser or light therapy rather than urgent referral."], ["Papules and pustules spreading beyond the central face", "This warrants dermatology input rather than urgent ophthalmology."], ["Ocular rosacea with keratitis, visual symptoms or corneal involvement", "Correct — untreated ocular disease risks corneal scarring."], ["Rhinophyma causing nasal airway narrowing over several years", "This is managed by dermatologic or plastic surgery rather than urgently."]], "c": 2, "cite": "3. Dermatology  II.pptx, Slide 70"}];
+const QUESTIONS = [
+  {
+    "topic": "Granuloma annulare",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which variant of granuloma annulare carries the strongest systemic associations?",
+    "opts": [
+      [
+        "Localised disease, which predominates at about 75% of cases and affects children and young adults",
+        "Localised disease accounts for about 75% of cases and is asymptomatic."
+      ],
+      [
+        "Subcutaneous, occurring almost exclusively in children under six",
+        "This variant may mimic rheumatoid nodules but lacks those systemic links."
+      ],
+      [
+        "Perforating, with central umbilication and extrusion of collagen",
+        "This variant may scar but is not the one with systemic associations."
+      ],
+      [
+        "Generalised or disseminated, associated with diabetes, thyroid disease, dyslipidaemia and lymphoma",
+        "Correct, and it is more common in adults over forty."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 50"
+  },
+  {
+    "topic": "Photoprotection",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What is true of patients with Fitzpatrick types IV to VI?",
+    "opts": [
+      [
+        "They are not immune to ultraviolet damage or skin cancer, and melanoma is frequently diagnosed at advanced stages",
+        "Correct — delayed diagnosis is common because of a lower index of suspicion."
+      ],
+      [
+        "They carry no meaningful skin cancer risk and need no routine photoprotection",
+        "Risk is lower but explicitly not absent."
+      ],
+      [
+        "They burn more readily than types I to III but tan more deeply afterwards",
+        "Types IV to VI burn minimally or never."
+      ],
+      [
+        "They should use SPF 15 rather than SPF 30, on the basis that higher factors confer no additional benefit",
+        "The guidance is broad-spectrum SPF 30 or above for daily use across all types."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 122"
+  },
+  {
+    "topic": "Epidermolysis bullosa",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "etiology",
+    "q": "What causes epidermolysis bullosa?",
+    "opts": [
+      [
+        "Autoantibodies against the epidermal basement membrane",
+        "That is bullous pemphigoid."
+      ],
+      [
+        "A mutation in structural proteins",
+        "Correct — the level at which the skin separates follows from which protein is affected."
+      ],
+      [
+        "Immunoglobulin A deposition in the dermal papillae",
+        "That is dermatitis herpetiformis."
+      ],
+      [
+        "A type IV hypersensitivity reaction to a drug",
+        "That is Stevens-Johnson syndrome and toxic epidermal necrolysis."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 27"
+  },
+  {
+    "topic": "Epidermolysis bullosa",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "referral",
+    "q": "How broad is the referral requirement in epidermolysis bullosa?",
+    "opts": [
+      [
+        "Essentially every specialty, given the multisystem burden",
+        "Correct — palliative care, genetics and family support are all involved."
+      ],
+      [
+        "Dermatology alone, since the disease is confined to the skin",
+        "The disease burden is multisystem."
+      ],
+      [
+        "Genetics alone, since the diagnosis is made on a genetic panel",
+        "Genetics is one referral among many."
+      ],
+      [
+        "No routine referral, since the condition is managed in primary care",
+        "The condition requires broad specialist involvement."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 31"
+  },
+  {
+    "topic": "Polymorphous light eruption",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "How does polymorphous light eruption typically present?",
+    "opts": [
+      [
+        "Painful erythema developing within minutes of ultraviolet exposure and resolving within an hour of moving into the shade",
+        "That immediate pattern suggests solar urticaria."
+      ],
+      [
+        "An exaggerated sunburn on first exposure to a new medication",
+        "That describes phototoxicity."
+      ],
+      [
+        "Persistent eczematous change in chronically exposed skin of older males",
+        "That describes chronic actinic dermatitis."
+      ],
+      [
+        "Papules appearing thirty minutes to hours after exposure on the décolletage, forearms and dorsal hands, sparing chronically exposed skin",
+        "Correct, resolving in seven to ten days without scarring and recurring each spring."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 105"
+  },
+  {
+    "topic": "Acne rosacea",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "avoid",
+    "q": "Why does azelaic acid need care in rosacea despite being effective?",
+    "opts": [
+      [
+        "It is contraindicated in pregnancy because of teratogenic risk",
+        "That caution belongs to oral isotretinoin."
+      ],
+      [
+        "It raises intraocular pressure with prolonged facial application",
+        "That caution belongs to topical corticosteroids."
+      ],
+      [
+        "It is more drying, and these patients already have an impaired skin barrier and dry skin",
+        "Correct — that is why metronidazole is preferred first."
+      ],
+      [
+        "It causes marked photosensitivity, so daily sun protection becomes mandatory",
+        "Photosensitivity is not the caution given for this agent here."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 69"
+  },
+  {
+    "topic": "Toxic epidermal necrolysis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What is the mortality of toxic epidermal necrolysis, and what predicts it at presentation?",
+    "opts": [
+      [
+        "Up to 30 to 35%, predicted by the SCORTEN score calculated within 24 hours",
+        "Correct, and SCORTEN is repeated on day three."
+      ],
+      [
+        "Between 1 and 5%, predicted by the extent of mucosal involvement",
+        "That mortality figure belongs to Stevens-Johnson syndrome alone."
+      ],
+      [
+        "Under 1%, predicted by the number of drugs the patient was taking",
+        "Toxic epidermal necrolysis carries substantially higher mortality than this."
+      ],
+      [
+        "Around 50%, predicted by the presence of the Nikolsky sign",
+        "The Nikolsky sign is present across the spectrum and is not a prognostic score."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 89"
+  },
+  {
+    "topic": "Erythema multiforme",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What triggers the majority of erythema multiforme cases?",
+    "opts": [
+      [
+        "Mycoplasma pneumoniae, accounting for over 50% of cases",
+        "Mycoplasma is a recognised infectious trigger but not the leading one."
+      ],
+      [
+        "Idiopathic causes, accounting for over 50% of cases",
+        "Idiopathic causes account for roughly 10% of cases."
+      ],
+      [
+        "Herpes simplex virus, accounting for over 50% of cases",
+        "Correct. Other infectious causes include Mycoplasma pneumoniae, histoplasmosis, Epstein-Barr virus and coxsackievirus."
+      ],
+      [
+        "Sulfonamide antibiotics, accounting for over 50% of cases",
+        "Drugs including sulfonamides are triggers, but they are far from the majority."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 8"
+  },
+  {
+    "topic": "Acanthosis nigricans",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What mechanism underlies the most common form of acanthosis nigricans?",
+    "opts": [
+      [
+        "Autoantibody deposition along the epithelial basement membrane zone",
+        "That mechanism produces bullous pemphigoid."
+      ],
+      [
+        "Hyperinsulinaemia stimulating keratinocyte and fibroblast proliferation through insulin-like growth factor 1 receptor cross-activation",
+        "Correct — the insulin-resistant or benign form is the commonest."
+      ],
+      [
+        "A paraneoplastic process driven by an underlying gastric adenocarcinoma secreting growth factors that act on the epidermis",
+        "Malignant acanthosis nigricans is rare, at under 1% of cases."
+      ],
+      [
+        "A delayed type IV hypersensitivity reaction to a contacted allergen",
+        "That mechanism produces allergic contact dermatitis."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 22"
+  },
+  {
+    "topic": "Sunburn",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "first-line",
+    "q": "Which measures are named for acute sunburn?",
+    "opts": [
+      [
+        "Silver sulfadiazine dressings applied twice daily under occlusion",
+        "That is a burn dressing agent not used in ordinary sunburn."
+      ],
+      [
+        "Cool compresses, an early nonsteroidal anti-inflammatory drug, and oral hydration",
+        "Correct — ibuprofen or naproxen reduce the prostaglandin-mediated pain."
+      ],
+      [
+        "Warm compresses, an oral antihistamine, and a topical corticosteroid cream",
+        "Warm compresses are used for furuncles and paronychia."
+      ],
+      [
+        "Ice packs applied directly, with a systemic corticosteroid taper",
+        "Cool rather than cold is advised, and steroids are not part of this."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 96"
+  },
+  {
+    "topic": "Hyperhidrosis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What is the principal risk a patient must understand before endoscopic thoracic sympathectomy?",
+    "opts": [
+      [
+        "Compensatory sweating elsewhere, occurring in over 30%",
+        "Correct — the procedure is permanent, so the trade-off has to be discussed thoroughly beforehand."
+      ],
+      [
+        "The need for retreatment every three to six months",
+        "That applies to botulinum toxin rather than sympathectomy."
+      ],
+      [
+        "Dry mouth and urinary retention as ongoing side effects",
+        "Those are the anticholinergic effects of oral therapy."
+      ],
+      [
+        "Permanent destruction of axillary glands by microwave energy",
+        "That describes microwave thermolysis rather than sympathectomy."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 75"
+  },
+  {
+    "topic": "Urticaria",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which biologic is approved for refractory chronic urticaria?",
+    "opts": [
+      [
+        "Dupilumab, an interleukin-4 receptor antagonist given subcutaneously",
+        "Dupilumab has been reported in refractory granuloma annulare rather than approved here."
+      ],
+      [
+        "Etanercept, a tumour necrosis factor inhibitor given subcutaneously",
+        "Etanercept is described as an emerging adjunct in Stevens-Johnson syndrome."
+      ],
+      [
+        "Omalizumab, an anti-immunoglobulin E antibody given every four weeks",
+        "Correct, at 300 mg subcutaneously."
+      ],
+      [
+        "Infliximab, a tumour necrosis factor alpha inhibitor given intravenously",
+        "Infliximab is approved for pyoderma gangrenosum in inflammatory bowel disease."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 39"
+  },
+  {
+    "topic": "Pyoderma gangrenosum",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What is pyoderma gangrenosum, despite its name?",
+    "opts": [
+      [
+        "A neutrophilic dermatosis that is not infectious",
+        "Correct — dysregulated innate immune activation with neutrophil recruitment causes the tissue destruction."
+      ],
+      [
+        "A deep bacterial infection requiring prolonged antibiotics",
+        "The name is misleading; wound cultures are obtained precisely to exclude infection."
+      ],
+      [
+        "A vasculitis of medium-sized vessels with immune complex deposition",
+        "Vasculitis is among the differentials that must be excluded."
+      ],
+      [
+        "A malignant ulcerating tumour of keratinocyte origin",
+        "Squamous cell carcinoma is a differential requiring biopsy to exclude."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 57"
+  },
+  {
+    "topic": "Dermatitis herpetiformis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What must be checked before starting dapsone for dermatitis herpetiformis?",
+    "opts": [
+      [
+        "Thyroid-stimulating hormone and anti-thyroid peroxidase antibodies",
+        "Autoimmune thyroid disease is an association but is not the pre-treatment check."
+      ],
+      [
+        "Serum immunoglobulin A level to exclude selective deficiency",
+        "This affects serological interpretation rather than dapsone safety."
+      ],
+      [
+        "HLA-DQ2 and HLA-DQ8 typing to confirm susceptibility",
+        "Typing is used when serology is equivocal rather than before dapsone."
+      ],
+      [
+        "Glucose-6-phosphate dehydrogenase status",
+        "Correct, and the blood count is then monitored for haemolytic anaemia and methaemoglobinaemia."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 19"
+  },
+  {
+    "topic": "Photosensitivity",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "How is a positive photopatch test interpreted?",
+    "opts": [
+      [
+        "Any reaction indicates phototoxicity regardless of which patch responds",
+        "The test is designed specifically to separate photoallergy from contact allergy."
+      ],
+      [
+        "A reaction only on the irradiated patch indicates photoallergy; a reaction on both indicates contact allergy",
+        "Correct — the suspected photohaptens are applied in duplicate and one set irradiated with ultraviolet A."
+      ],
+      [
+        "A reaction on both patches indicates photoallergy; a reaction on one indicates phototoxicity",
+        "Reaction on both patches indicates ordinary contact allergy."
+      ],
+      [
+        "A reaction on the non-irradiated patch alone indicates photoallergy",
+        "That result would indicate contact allergy independent of light."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 99"
+  },
+  {
+    "topic": "Epidermolysis bullosa",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which epidermolysis bullosa subtype carries the highest mortality?",
+    "opts": [
+      [
+        "Epidermolysis bullosa acquisita, the autoimmune acquired form",
+        "This acquired form is autoimmune rather than genetic and is not the highest-mortality type."
+      ],
+      [
+        "Junctional epidermolysis bullosa, especially the Herlitz subtype",
+        "Correct, which is why early palliative care integration is appropriate in severe Herlitz disease."
+      ],
+      [
+        "Epidermolysis bullosa simplex, especially the localised palmoplantar form",
+        "Simplex disease is localised to palms and soles and heals without scarring."
+      ],
+      [
+        "Dystrophic epidermolysis bullosa, especially the dominant form",
+        "Dystrophic disease causes severe scarring and squamous cell carcinoma risk rather than the highest mortality."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 29"
+  },
+  {
+    "topic": "Photodermatitis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What causes phytophotodermatitis, and how does it present?",
+    "opts": [
+      [
+        "Furanocoumarins in plants such as lime, celery and parsley plus ultraviolet A, producing linear streaked hyperpigmentation",
+        "Correct — classically after lime juice and sun exposure, with painful blistering acutely."
+      ],
+      [
+        "Bergapten in bergamot oil used in fragrances and cosmetics, producing drip-pattern hyperpigmentation of the neck",
+        "That describes berloque dermatitis, a separate subtype."
+      ],
+      [
+        "A persistent eczematous eruption in chronically exposed skin of older males",
+        "That describes chronic actinic dermatitis."
+      ],
+      [
+        "A delayed hypersensitivity response to an ultraviolet-induced photoantigen",
+        "That describes polymorphous light eruption."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 100"
+  },
+  {
+    "topic": "Dermatitis herpetiformis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "epidemiology",
+    "q": "Which human leukocyte antigen haplotypes are strongly associated with dermatitis herpetiformis?",
+    "opts": [
+      [
+        "HLA-B*15:02 and HLA-B*58:01",
+        "Those are the severe cutaneous drug reaction associations."
+      ],
+      [
+        "HLA-B27 and HLA-DR4",
+        "Those are associated with other rheumatological conditions."
+      ],
+      [
+        "HLA-Cw6 and HLA-DR3",
+        "HLA-Cw6 is associated with early-onset psoriasis."
+      ],
+      [
+        "HLA-DQ2 and HLA-DQ8",
+        "Correct — the same haplotypes that underlie coeliac disease."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 16"
+  },
+  {
+    "topic": "Dermatitis herpetiformis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "manifestation",
+    "q": "Where is the eruption of dermatitis herpetiformis distributed?",
+    "opts": [
+      [
+        "On the anterior shins bilaterally as tender nodules that do not ulcerate",
+        "That is erythema nodosum."
+      ],
+      [
+        "On the face in the central third, sparing the nasolabial folds",
+        "That is a lupus butterfly rash, which she said she is not testing."
+      ],
+      [
+        "On sun-exposed skin, sparing the chronically exposed face and hands",
+        "That is polymorphous light eruption."
+      ],
+      [
+        "Symmetrically on the knees, elbows, buttocks and back",
+        "Correct — intensely pruritic papules and vesicles that group in a herpetiform pattern."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 18"
+  },
+  {
+    "topic": "Stevens-Johnson syndrome",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "referral",
+    "q": "Which services should a patient with Stevens-Johnson syndrome be under?",
+    "opts": [
+      [
+        "Intensive care or a burn unit, with dermatology involved",
+        "Correct — nasogastric feeding is often needed because mucosal involvement prevents eating."
+      ],
+      [
+        "A general medical ward with dermatology review the following day",
+        "That level of care is inadequate for this condition."
+      ],
+      [
+        "Outpatient dermatology with a review appointment in one week",
+        "That level of care is inadequate for this condition."
+      ],
+      [
+        "Ambulatory wound care with daily dressing changes at home",
+        "That level of care is inadequate for this condition."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 83"
+  },
+  {
+    "topic": "Hyperhidrosis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "risk factors",
+    "q": "Which features should raise suspicion of secondary rather than primary hyperhidrosis?",
+    "opts": [
+      [
+        "Bilateral palmar sweating that has been present since adolescence",
+        "That pattern describes primary focal disease."
+      ],
+      [
+        "Sweating that worsens with anxiety and improves in a cool room",
+        "Anxiety exacerbates primary disease without indicating a secondary cause."
+      ],
+      [
+        "Sweating confined to the axillae with a family history of the same",
+        "That pattern describes primary focal disease."
+      ],
+      [
+        "Generalised sweating, nocturnal sweating, or an asymmetric distribution",
+        "Correct — primary disease is bilateral, focal and absent during sleep."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 74"
+  },
+  {
+    "topic": "Actinic keratosis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which molecular event is critical in actinic keratosis?",
+    "opts": [
+      [
+        "Overactivation of the hedgehog signalling pathway",
+        "That pathway is implicated in basal cell carcinoma."
+      ],
+      [
+        "Loss of keratinocyte adhesion through autoantibody binding",
+        "That mechanism produces pemphigus."
+      ],
+      [
+        "Reduced filaggrin production impairing the epidermal barrier",
+        "That defect underlies atopic dermatitis."
+      ],
+      [
+        "Ultraviolet-induced mutation of TP53",
+        "Correct, and the surrounding normal-looking skin harbours subclinical mutations, called field cancerisation."
+      ]
+    ],
+    "c": 3,
+    "cite": "3. Dermatology  II.pptx, Slide 112"
+  },
+  {
+    "topic": "Erythema multiforme",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "slot": "escalation",
+    "q": "A patient has had four episodes of herpes-associated erythema multiforme this year. Which chronic measure is appropriate?",
+    "opts": [
+      [
+        "Annual phototherapy given as a five-week course each spring",
+        "That is preventive therapy for polymorphous light eruption."
+      ],
+      [
+        "Suppressive antiviral therapy, such as aciclovir 400 mg twice daily",
+        "Correct — preventing the herpes recurrence prevents the eruption."
+      ],
+      [
+        "A standing prescription for oral prednisone to take at each episode",
+        "Steroid at each episode does not prevent recurrence."
+      ],
+      [
+        "Long-term oral antihistamines taken continuously through the year",
+        "Antihistamines address pruritus rather than recurrence."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 12"
+  },
+  {
+    "topic": "Erythema nodosum",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which single feature most usefully distinguishes erythema nodosum from nodular vasculitis?",
+    "opts": [
+      [
+        "Erythema nodosum nodules are painless on palpation",
+        "The nodules are tender, which is part of the classic description."
+      ],
+      [
+        "Erythema nodosum nodules occur exclusively in men",
+        "There is a female predominance of three to six to one."
+      ],
+      [
+        "Erythema nodosum nodules do not ulcerate",
+        "Correct, and they sit on the anterior shins whereas nodular vasculitis favours the posterior legs and ulcerates."
+      ],
+      [
+        "Erythema nodosum nodules appear only on the posterior legs",
+        "The anterior shins are the characteristic site."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 43"
+  },
+  {
+    "topic": "Actinic keratosis",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "How is an isolated actinic keratosis usually treated?",
+    "opts": [
+      [
+        "Photodynamic therapy using aminolevulinic acid and light",
+        "This is excellent for field treatment rather than an isolated lesion."
+      ],
+      [
+        "Cryotherapy with two to three freeze-thaw cycles",
+        "Correct — the standard of care for isolated lesions, with shave excision or curettage as alternatives."
+      ],
+      [
+        "5-fluorouracil cream applied for two to four weeks",
+        "That is a field-directed treatment for multiple or confluent lesions."
+      ],
+      [
+        "Imiquimod applied twice weekly for sixteen weeks",
+        "That is also field-directed rather than lesion-directed."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 113"
+  },
+  {
+    "topic": "Photosensitivity",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which drug classes are classic causes of phototoxicity?",
+    "opts": [
+      [
+        "Aromatic anticonvulsants, allopurinol and nevirapine",
+        "Those are the leading triggers of Stevens-Johnson syndrome."
+      ],
+      [
+        "Oral contraceptives, sulfonamides and bromides",
+        "Those are drug triggers of erythema nodosum."
+      ],
+      [
+        "Tetracyclines, fluoroquinolones, amiodarone and thiazides",
+        "Correct, alongside furosemide, voriconazole, some nonsteroidal anti-inflammatory drugs and psoralens."
+      ],
+      [
+        "Sunscreen chemicals, sulfonamides and phenothiazines",
+        "Those are the classic photoallergens rather than phototoxic agents."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 98"
+  },
+  {
+    "topic": "Stevens-Johnson syndrome",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "How are Stevens-Johnson syndrome, the overlap state and toxic epidermal necrolysis separated?",
+    "opts": [
+      [
+        "By whether the Nikolsky sign is positive or negative at presentation",
+        "The Nikolsky sign is positive across the spectrum."
+      ],
+      [
+        "By body surface area of epidermal detachment: under 10%, 10 to 30%, and over 30%",
+        "Correct — the same disease spectrum divided by extent of detachment."
+      ],
+      [
+        "By the presence of mucosal involvement, which occurs only in the severe form",
+        "Mucosal erosions occur in over 90% of Stevens-Johnson syndrome and are nearly universal in toxic epidermal necrolysis."
+      ],
+      [
+        "By whether the trigger was a drug or an infection in each case",
+        "Both share the same causative agents, with drugs predominating."
+      ]
+    ],
+    "c": 1,
+    "cite": "3. Dermatology  II.pptx, Slide 80"
+  },
+  {
+    "topic": "Urticaria",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "What single feature most reliably separates urticaria from its differentials?",
+    "opts": [
+      [
+        "Lesions appear symmetrically on the palms and soles",
+        "That acral distribution is characteristic of erythema multiforme."
+      ],
+      [
+        "Lesions leave residual bruising as they resolve",
+        "Residual bruising suggests urticarial vasculitis rather than simple urticaria."
+      ],
+      [
+        "Individual lesions last less than twenty-four hours",
+        "Correct — this is called the key diagnostic feature, and lesions persisting beyond it suggest urticarial vasculitis."
+      ],
+      [
+        "Individual lesions are intensely pruritic and blanch under pressure",
+        "Both are typical of urticaria but neither separates it from the differentials as reliably."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 37"
+  },
+  {
+    "topic": "Acne rosacea",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which feature separates papulopustular rosacea from acne vulgaris?",
+    "opts": [
+      [
+        "Rosacea has no comedones",
+        "Correct — open or closed comedones point to acne vulgaris instead."
+      ],
+      [
+        "Rosacea produces pustules and acne vulgaris does not",
+        "Both produce pustules; the comedones are what differ."
+      ],
+      [
+        "Rosacea occurs only in patients over the age of sixty",
+        "Peak onset is between thirty and sixty."
+      ],
+      [
+        "Rosacea spares the central face entirely",
+        "Central facial involvement is characteristic of rosacea."
+      ]
+    ],
+    "c": 0,
+    "cite": "3. Dermatology  II.pptx, Slide 68"
+  },
+  {
+    "topic": "Acne rosacea",
+    "io": "a — Etiologies, manifestations, diagnosis and management of dermatological conditions",
+    "q": "Which rosacea complication requires urgent ophthalmology referral?",
+    "opts": [
+      [
+        "Persistent central facial erythema unresponsive to topical therapy",
+        "This is treated with laser or light therapy rather than urgent referral."
+      ],
+      [
+        "Papules and pustules spreading beyond the central face",
+        "This warrants dermatology input rather than urgent ophthalmology."
+      ],
+      [
+        "Ocular rosacea with keratitis, visual symptoms or corneal involvement",
+        "Correct — untreated ocular disease risks corneal scarring."
+      ],
+      [
+        "Rhinophyma causing nasal airway narrowing over several years",
+        "This is managed by dermatologic or plastic surgery rather than urgently."
+      ]
+    ],
+    "c": 2,
+    "cite": "3. Dermatology  II.pptx, Slide 70"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

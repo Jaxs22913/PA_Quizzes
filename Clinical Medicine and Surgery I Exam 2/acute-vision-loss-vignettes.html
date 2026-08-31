@@ -325,7 +325,938 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "AAION", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "next step", "q": "A 79-year-old man has sudden vision loss in one eye. Which referral threshold does the lecture apply?", "opts": [["Emergent referral for anyone over 50", "Correct, any patient over 50 with sudden visual loss."], ["Routine referral within a month", "That delay risks the eye."], ["Referral only with a headache", "Age and sudden loss are enough."], ["Referral only if markers are raised", "Referral precedes the results."], ["Referral only if both eyes are involved", "One eye is enough."]], "c": 0, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 51", "qid": "1iafz56"}, {"topic": "Retinal detachment", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "reasoning", "q": "A 71-year-old man with a retinal detachment suddenly loses vision in the whole eye rather than just a segment. Which development explains this?", "opts": [["The optic nerve has demyelinated", "That is optic neuritis."], ["A second tear has formed anteriorly", "Anterior tears affect peripheral field."], ["The vitreous has cleared", "That would not cause loss of vision."], ["The macula has become involved", "Correct; macular involvement causes sudden loss in the affected eye."], ["The intraocular pressure has risen", "Pressure is not the mechanism here."]], "c": 3, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 27", "qid": "1os5jkj"}, {"topic": "CRVO", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 58-year-old man with obesity and poorly controlled hypertension notices his vision in one eye has blurred progressively over about a week, without pain. The fundus is filled with haemorrhage. Which is the most likely diagnosis?", "opts": [["Central retinal artery occlusion", "That comes on over seconds."], ["Amaurosis fugax", "That lasts seconds to minutes."], ["Angle-closure glaucoma", "That is acutely painful."], ["Retinal detachment", "That follows flashes and floaters."], ["Central retinal vein occlusion", "Correct; loss may be gradual over days to weeks in some patients."]], "c": 4, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 33", "qid": "ba6eot"}, {"topic": "Papilledema", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "next step", "q": "A 45-year-old woman has papilledema. Which imaging does the lecture obtain, and why?", "opts": [["Orbital ultrasound, to type a detachment", "That is the detachment workup."], ["MRI of the orbits, to find demyelination", "That is the optic neuritis workup."], ["Carotid Doppler, to find plaque", "That is the embolic workup."], ["No imaging is required", "A mass lesion must be excluded."], ["MRI or CT of the head, to exclude a mass", "Correct."]], "c": 4, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 46", "qid": "1a50kd9"}, {"topic": "CRAO", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 72-year-old man with atrial fibrillation has profound painless loss of vision in the right eye that came on over a few seconds. He can only count fingers. The retina is pale and swollen with a cherry-red spot at the fovea. Which is the most likely diagnosis?", "opts": [["Central retinal vein occlusion", "That shows haemorrhages and a swollen disc."], ["Amaurosis fugax", "That resolves within minutes."], ["Retinal detachment", "That advances over days with flashes and floaters."], ["Optic neuritis", "That builds over hours to days and is painful."], ["Central retinal artery occlusion", "Correct. Sudden profound loss with the cherry-red fovea."]], "c": 4, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 39", "qid": "1dwl98d"}, {"topic": "CRAO", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "next step", "q": "A 68-year-old man with a central retinal artery occlusion asks about his general health risk. What does the lecture emphasise?", "opts": [["His stroke risk is markedly increased", "Correct; plaque reaching the retinal artery implies more in the carotids."], ["His stroke risk is unchanged", "It rises at the onset of the occlusion."], ["His risk is confined to the other eye", "The systemic risk is the concern."], ["His risk falls once vision is lost", "It does not."], ["His risk depends on intraocular pressure", "Pressure is not the driver here."]], "c": 0, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 37", "qid": "pnojbn"}, {"topic": "NAION", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 49-year-old man with sleep apnea wakes to find the upper half of vision in one eye missing. He has no pain, no headache and no scalp tenderness. Inflammatory markers are normal. Which is the most likely diagnosis?", "opts": [["Branch retinal vein occlusion", "That shows sectoral haemorrhage."], ["Amaurosis fugax", "That resolves within minutes."], ["Non-arteritic anterior ischemic optic neuropathy", "Correct; painless altitudinal loss with normal markers."], ["Arteritic anterior ischemic optic neuropathy", "Markers would be raised and symptoms present."], ["Optic neuritis", "That is painful on eye movement."]], "c": 2, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 48", "qid": "1lkfmo7"}, {"topic": "Optic neuritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "education", "q": "A 30-year-old woman has had a second episode of optic neuritis in two years. Which point should you raise with her?", "opts": [["Recurrence means the first episode was misdiagnosed", "Recurrence is a recognised pattern."], ["Recurrence means she will go blind", "Recovery is still usually good."], ["Recurrence indicates glaucoma", "That is a different disease entirely."], ["Recurrence requires no further workup", "It is precisely what prompts further workup."], ["Recurrence raises her risk of multiple sclerosis", "Correct, which is why the underlying cause is pursued."]], "c": 4, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 24", "qid": "12cv6x5"}, {"topic": "AAION", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "treatment", "q": "A 74-year-old man is starting a long corticosteroid course for arteritic optic neuropathy. Which additional drug does the lecture add?", "opts": [["Pilocarpine", "That is a topical agent for angle closure."], ["Famotidine", "Correct, for gastrointestinal ulcer prophylaxis."], ["Acetazolamide", "That lowers intraocular pressure."], ["Latanoprost", "That is glaucoma therapy."], ["Warfarin", "Anticoagulation is not part of this regimen."]], "c": 1, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 51", "qid": "1k10ipo"}, {"topic": "Open-angle glaucoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 69-year-old woman keeps bumping into door frames on her left. She has noticed nothing wrong with her reading vision and has no pain. Both intraocular pressures are 27 mmHg. Which is the most likely diagnosis?", "opts": [["Optic neuritis", "That is unilateral, painful and affects central vision."], ["Retinal detachment", "That advances quickly with flashes and floaters."], ["Papilledema", "That follows raised intracranial pressure with headache."], ["Chronic open-angle glaucoma", "Correct; peripheral field goes first while central vision is preserved."], ["Acute angle-closure glaucoma", "That is painful and sudden."]], "c": 3, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 16", "qid": "1euatdz"}, {"topic": "Papilledema", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "test", "q": "A 36-year-old man has bilateral disc swelling. Which test does the lecture use to confirm that intracranial pressure is raised?", "opts": [["Carotid Doppler", "That looks for an embolic source."], ["Lumbar puncture opening pressure", "Correct, after imaging has excluded a mass lesion."], ["Tonometry", "That measures intraocular pressure."], ["Fluorescein angiography", "That assesses retinal perfusion."], ["Erythrocyte sedimentation rate", "That screens for arteritis."]], "c": 1, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 46", "qid": "1yoa49j"}, {"topic": "Retinal detachment", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 63-year-old myopic man reports a shower of floaters and flashing lights three days ago. Since yesterday a dark shadow has spread across the outer half of his vision. There is no pain. Which is the most likely diagnosis?", "opts": [["Angle-closure glaucoma", "That is acutely painful with halos and vomiting."], ["Retinal detachment", "Correct. Flashes and floaters from the tear, then an advancing field defect."], ["Amaurosis fugax", "That lasts seconds to minutes and clears completely."], ["Central retinal vein occlusion", "That causes sudden painless loss without preceding flashes."], ["Optic neuritis", "That is painful on eye movement with colour loss."]], "c": 1, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 27", "qid": "gzsi8u"}, {"topic": "Optic neuritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 24-year-old woman had numbness in one leg last year that resolved. She now has aching behind one eye that worsens when she looks around, with vision fading over two days. Which is the most likely diagnosis?", "opts": [["Angle-closure glaucoma", "That is acutely painful at rest with halos."], ["Central retinal vein occlusion", "That is painless with widespread haemorrhage."], ["Papilledema", "That is bilateral with headache and vomiting."], ["Optic neuritis", "Correct; the prior neurological episode points to a demyelinating cause."], ["Anterior ischemic optic neuropathy", "That occurs in an older group and is painless."]], "c": 3, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 23", "qid": "hynqxc"}, {"topic": "Retinal detachment", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "test", "q": "A 66-year-old man has a suspected retinal detachment but the view on fundoscopy is poor. Which study does the lecture prefer?", "opts": [["Gonioscopy", "That assesses the drainage angle."], ["Lumbar puncture", "That assesses intracranial pressure."], ["Ocular ultrasound", "Correct, more sensitive than fundoscopy and it types the detachment."], ["Fluorescein angiography", "That is used in the vascular occlusions."], ["MRI of the orbits", "That is the optic neuritis study."]], "c": 2, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 29", "qid": "1offgqi"}, {"topic": "Amaurosis fugax", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "treatment", "q": "A 69-year-old man has amaurosis fugax and you want to reduce his stroke risk. Which therapy does the lecture name?", "opts": [["Oral acetazolamide", "That lowers intraocular pressure, not stroke risk."], ["High-dose vitamin A", "Vitamin A toxicity is a cause of papilledema."], ["Pilocarpine drops", "That is a topical agent for angle-closure glaucoma."], ["Aspirin and clopidogrel", "Correct, given to reduce cerebrovascular accident risk."], ["Topical timolol", "That lowers intraocular pressure in glaucoma."]], "c": 3, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 8", "qid": "lywez6"}, {"topic": "Open-angle glaucoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "finding", "q": "A 67-year-old man with optic nerve changes has an intraocular pressure of 18 mmHg. How does the lecture describe pressure in the chronic open-angle form?", "opts": [["It is always below normal", "Low pressure is not a feature."], ["It cannot be measured in this form", "Tonometry and gonioscopy are both used."], ["It may be normal or elevated", "Correct; nerve damage occurs with or without raised pressure."], ["It is always above 40 mmHg", "That range belongs to acute angle closure."], ["It is always normal", "It may well be elevated."]], "c": 2, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 18", "qid": "4je7pz"}, {"topic": "Angle-closure glaucoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "finding", "q": "A 65-year-old man with a painful eye has tonometry performed. Which pressure range does the lecture give for acute angle closure?", "opts": [["Pressure is characteristically normal", "It is dramatically elevated."], ["40 to 80 mmHg", "Correct."], ["10 to 21 mmHg", "That is the normal range."], ["22 to 30 mmHg", "Too low for the acute presentation described."], ["90 to 120 mmHg", "Above the range the lecture gives."]], "c": 1, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 17", "qid": "30zhr1"}, {"topic": "CRVO", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 63-year-old man with hypertension and diabetes has sudden painless loss of vision in one eye. Fundoscopy shows a swollen disc, dilated veins, cotton wool spots and haemorrhages across all four quadrants. Which is the most likely diagnosis?", "opts": [["Papilledema", "That is bilateral and follows raised intracranial pressure."], ["Optic neuritis", "That is painful on eye movement, usually with a normal disc."], ["Central retinal vein occlusion", "Correct. The blood and thunder fundus with disc swelling."], ["Central retinal artery occlusion", "That gives a pale retina with a cherry-red spot."], ["Retinal detachment", "That shows an elevated grey retina with folds."]], "c": 2, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 34", "qid": "1hobmn9"}, {"topic": "CRAO", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "reasoning", "q": "A 74-year-old woman presents 40 minutes after sudden painless monocular vision loss. Why is she treated immediately?", "opts": [["Retinal damage is irreversible after 24 hours", "Far beyond the stated window."], ["Damage is reversible at any point", "It is not."], ["Damage occurs only if both eyes are affected", "One eye is enough."], ["Retinal damage is irreversible after 90 minutes", "Correct; this is the window the lecture gives."], ["Retinal damage is irreversible after 8 hours", "Eight hours is the thrombolysis window, not the damage threshold."]], "c": 3, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 37", "qid": "1ddjsp3"}, {"topic": "Amaurosis fugax", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "test", "q": "A 70-year-old man has transient monocular vision loss and you suspect a carotid source. Which study does the lecture pair with that suspicion?", "opts": [["Carotid Doppler ultrasound", "Correct. Echocardiography is the study when a cardiac source is suspected."], ["Echocardiogram", "That is the study for a suspected cardiac source."], ["Tonometry", "That measures intraocular pressure."], ["Lumbar puncture", "That is used when raised intracranial pressure is suspected."], ["Temporal artery biopsy", "That is the gold standard for giant cell arteritis."]], "c": 0, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 7", "qid": "dp6rs"}, {"topic": "Differential diagnosis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "reasoning", "q": "A 60-year-old woman has bilateral optic disc swelling. Which diagnosis does bilateral involvement most suggest?", "opts": [["Retinal detachment", "That is monocular."], ["Optic neuritis", "That is usually unilateral."], ["Amaurosis fugax", "That is usually monocular."], ["Papilledema", "Correct; the vascular occlusions and detachment are monocular."], ["Central retinal artery occlusion", "That is monocular."]], "c": 3, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 44", "qid": "zidgev"}, {"topic": "Open-angle glaucoma", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "treatment", "q": "A 64-year-old woman is newly diagnosed with chronic open-angle glaucoma. Which does the lecture list as first-line?", "opts": [["Anterior chamber paracentesis", "That is used in central retinal artery occlusion."], ["Latanoprost", "Correct, with tafluprost and timolol drops."], ["Laser peripheral iridotomy", "That is definitive treatment for the angle-closure form."], ["Intravenous mannitol", "That is used acutely for a very high pressure."], ["Oral corticosteroids", "Those treat arteritic optic neuropathy."]], "c": 1, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 21", "qid": "6gk6xh"}, {"topic": "CRVO", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "pathophysiology", "q": "A 70-year-old man with a hypercoagulable disorder develops a central retinal vein occlusion. What has occurred?", "opts": [["An embolus has lodged in the artery", "That is arterial occlusion."], ["The iris has closed the drainage angle", "That is angle-closure glaucoma."], ["The retina has separated from its bed", "That is detachment."], ["Intracranial pressure has risen", "That is papilledema."], ["A thrombus has occluded the vein", "Correct, preventing the retina from draining."]], "c": 4, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 32", "qid": "izt3p"}, {"topic": "Angle-closure glaucoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 62-year-old woman has sudden severe right eye pain, a headache, nausea and vomiting. She sees coloured halos around lights and her cornea looks hazy. Which is the most likely diagnosis?", "opts": [["Central retinal artery occlusion", "That is painless."], ["Amaurosis fugax", "That is painless and lasts seconds to minutes."], ["Acute angle-closure glaucoma", "Correct. Pain, halos and systemic upset with a hazy cornea."], ["Chronic open-angle glaucoma", "That is painless and gradual in most patients."], ["Optic neuritis", "Pain there is on eye movement, without halos or vomiting."]], "c": 2, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 16", "qid": "17xugh6"}, {"topic": "Angle-closure glaucoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "pathophysiology", "q": "A 58-year-old man has acute angle-closure glaucoma. What is happening inside his eye?", "opts": [["The iris blocks the drainage circuit", "Correct, and intraocular pressure rises dramatically."], ["The trabecular meshwork ages abnormally", "That is the mechanism of the chronic open-angle form."], ["The retina separates from its bed", "That is retinal detachment."], ["Intracranial pressure compresses the disc", "That is papilledema."], ["A thrombus occludes the central vein", "That is central retinal vein occlusion."]], "c": 0, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 14", "qid": "1jesf"}, {"topic": "Amaurosis fugax", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "prognosis", "q": "A 67-year-old woman with amaurosis fugax asks what happens next. What does the lecture give as the outlook?", "opts": [["The second eye is always affected", "That is not stated."], ["About 85% recover fully", "Correct, and the remainder progress to a central retinal artery occlusion."], ["Nearly all progress to permanent blindness", "The large majority recover fully."], ["About half lose vision permanently", "The figure given is far more favourable."], ["Recovery depends on surgery", "Recovery is usually spontaneous once the cause is treated."]], "c": 1, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 8", "qid": "cnx0ou"}, {"topic": "CRAO", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "finding", "q": "A 69-year-old man has a central retinal artery occlusion. His affected pupil is sluggish to direct light but constricts briskly when the other eye is illuminated. What did the lecturer say about this finding?", "opts": [["It is a major clinical clue", "Correct; she singled out this sentence in the lecture."], ["It excludes an arterial cause", "It is characteristic of one."], ["It indicates raised intracranial pressure", "That gives disc swelling, not this pupil pattern."], ["It indicates a detached retina", "Detachment does not produce this pupil response."], ["It is a normal finding", "It reflects an afferent defect."]], "c": 0, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 38", "qid": "is07yp"}, {"topic": "Optic neuritis", "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations", "lead": "next step", "q": "A 33-year-old woman with optic neuritis has an MRI showing three characteristic demyelinating lesions. What does the lecture say happens next?", "opts": [["Temporal artery biopsy", "That investigates giant cell arteritis."], ["Lumbar puncture to lower pressure", "That belongs to the papilledema workup."], ["Referral to neurology or neuro-ophthalmology", "Correct, once at least two such lesions are present."], ["Reassurance and discharge", "Those lesions require onward referral."], ["Immediate laser iridotomy", "That treats angle-closure glaucoma."]], "c": 2, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 24", "qid": "1sb50x0"}, {"topic": "Amaurosis fugax", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "diagnosis", "q": "A 65-year-old woman with sickle cell disease describes brief episodes in which the lower half of the vision in one eye fogs over and then clears within a minute. Which is the most likely diagnosis?", "opts": [["Branch retinal artery occlusion", "That produces a fixed wedge of loss."], ["Retinal detachment", "That defect advances rather than clearing."], ["Optic neuritis", "That develops over hours to days."], ["Papilledema", "That produces persistent non-specific change."], ["Amaurosis fugax", "Correct; sickle cell is a listed risk factor and the episodes are transient."]], "c": 4, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 5", "qid": "1urhwsn"}, {"topic": "Open-angle glaucoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders", "lead": "symptom", "q": "A 66-year-old man with untreated chronic open-angle glaucoma says he feels as though he is looking down a tube. Which finding does this describe?", "opts": [["Loss of peripheral vision first", "Correct; patients call it tunnel vision, and central sight is preserved longest."], ["Loss of central vision first", "Peripheral field is lost before central."], ["Loss of colour vision", "That belongs to optic neuritis."], ["A curtain descending from above", "That suggests detachment or amaurosis fugax."], ["Transient blackout", "That is amaurosis fugax."]], "c": 0, "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 16", "qid": "1p7li1k"}];
+const QUESTIONS = [
+  {
+    "topic": "AAION",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "next step",
+    "q": "A 79-year-old man has sudden vision loss in one eye. Which referral threshold applies?",
+    "opts": [
+      [
+        "Emergent referral for anyone over 50",
+        "Correct, any patient over 50 with sudden visual loss."
+      ],
+      [
+        "Routine referral within a month",
+        "That delay risks the eye."
+      ],
+      [
+        "Referral only with a headache",
+        "Age and sudden loss are enough."
+      ],
+      [
+        "Referral only if markers are raised",
+        "Referral precedes the results."
+      ],
+      [
+        "Referral only if both eyes are involved",
+        "One eye is enough."
+      ]
+    ],
+    "c": 0,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 51",
+    "qid": "1iafz56"
+  },
+  {
+    "topic": "Retinal detachment",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "reasoning",
+    "q": "A 71-year-old man with a retinal detachment suddenly loses vision in the whole eye rather than just a segment. Which development explains this?",
+    "opts": [
+      [
+        "The optic nerve has demyelinated",
+        "That is optic neuritis."
+      ],
+      [
+        "A second tear has formed anteriorly",
+        "Anterior tears affect peripheral field."
+      ],
+      [
+        "The vitreous has cleared",
+        "That would not cause loss of vision."
+      ],
+      [
+        "The macula has become involved",
+        "Correct; macular involvement causes sudden loss in the affected eye."
+      ],
+      [
+        "The intraocular pressure has risen",
+        "Pressure is not the mechanism here."
+      ]
+    ],
+    "c": 3,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 27",
+    "qid": "1os5jkj"
+  },
+  {
+    "topic": "CRVO",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 58-year-old man with obesity and poorly controlled hypertension notices his vision in one eye has blurred progressively over about a week, without pain. The fundus is filled with haemorrhage. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Central retinal artery occlusion",
+        "That comes on over seconds."
+      ],
+      [
+        "Amaurosis fugax",
+        "That lasts seconds to minutes."
+      ],
+      [
+        "Angle-closure glaucoma",
+        "That is acutely painful."
+      ],
+      [
+        "Retinal detachment",
+        "That follows flashes and floaters."
+      ],
+      [
+        "Central retinal vein occlusion",
+        "Correct; loss may be gradual over days to weeks in some patients."
+      ]
+    ],
+    "c": 4,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 33",
+    "qid": "ba6eot"
+  },
+  {
+    "topic": "Papilledema",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "next step",
+    "q": "A 45-year-old woman has papilledema. Which imaging is obtained, and why?",
+    "opts": [
+      [
+        "Orbital ultrasound, to type a detachment",
+        "That is the detachment workup."
+      ],
+      [
+        "MRI of the orbits, to find demyelination",
+        "That is the optic neuritis workup."
+      ],
+      [
+        "Carotid Doppler, to find plaque",
+        "That is the embolic workup."
+      ],
+      [
+        "No imaging is required",
+        "A mass lesion must be excluded."
+      ],
+      [
+        "MRI or CT of the head, to exclude a mass",
+        "Correct."
+      ]
+    ],
+    "c": 4,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 46",
+    "qid": "1a50kd9"
+  },
+  {
+    "topic": "CRAO",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 72-year-old man with atrial fibrillation has profound painless loss of vision in the right eye that came on over a few seconds. He can only count fingers. The retina is pale and swollen with a cherry-red spot at the fovea. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Central retinal vein occlusion",
+        "That shows haemorrhages and a swollen disc."
+      ],
+      [
+        "Amaurosis fugax",
+        "That resolves within minutes."
+      ],
+      [
+        "Retinal detachment",
+        "That advances over days with flashes and floaters."
+      ],
+      [
+        "Optic neuritis",
+        "That builds over hours to days and is painful."
+      ],
+      [
+        "Central retinal artery occlusion",
+        "Correct. Sudden profound loss with the cherry-red fovea."
+      ]
+    ],
+    "c": 4,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 39",
+    "qid": "1dwl98d"
+  },
+  {
+    "topic": "CRAO",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "next step",
+    "q": "A 68-year-old man with a central retinal artery occlusion asks about his general health risk. What should he be told?",
+    "opts": [
+      [
+        "His stroke risk is markedly increased",
+        "Correct; plaque reaching the retinal artery implies more in the carotids."
+      ],
+      [
+        "His stroke risk is unchanged",
+        "It rises at the onset of the occlusion."
+      ],
+      [
+        "His risk is confined to the other eye",
+        "The systemic risk is the concern."
+      ],
+      [
+        "His risk falls once vision is lost",
+        "It does not."
+      ],
+      [
+        "His risk depends on intraocular pressure",
+        "Pressure is not the driver here."
+      ]
+    ],
+    "c": 0,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 37",
+    "qid": "pnojbn"
+  },
+  {
+    "topic": "NAION",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 49-year-old man with sleep apnea wakes to find the upper half of vision in one eye missing. He has no pain, no headache and no scalp tenderness. Inflammatory markers are normal. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Branch retinal vein occlusion",
+        "That shows sectoral haemorrhage."
+      ],
+      [
+        "Amaurosis fugax",
+        "That resolves within minutes."
+      ],
+      [
+        "Non-arteritic anterior ischemic optic neuropathy",
+        "Correct; painless altitudinal loss with normal markers."
+      ],
+      [
+        "Arteritic anterior ischemic optic neuropathy",
+        "Markers would be raised and symptoms present."
+      ],
+      [
+        "Optic neuritis",
+        "That is painful on eye movement."
+      ]
+    ],
+    "c": 2,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 48",
+    "qid": "1lkfmo7"
+  },
+  {
+    "topic": "Optic neuritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "education",
+    "q": "A 30-year-old woman has had a second episode of optic neuritis in two years. Which point should you raise with her?",
+    "opts": [
+      [
+        "Recurrence means the first episode was misdiagnosed",
+        "Recurrence is a recognised pattern."
+      ],
+      [
+        "Recurrence means she will go blind",
+        "Recovery is still usually good."
+      ],
+      [
+        "Recurrence indicates glaucoma",
+        "That is a different disease entirely."
+      ],
+      [
+        "Recurrence requires no further workup",
+        "It is precisely what prompts further workup."
+      ],
+      [
+        "Recurrence raises her risk of multiple sclerosis",
+        "Correct, which is why the underlying cause is pursued."
+      ]
+    ],
+    "c": 4,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 24",
+    "qid": "12cv6x5"
+  },
+  {
+    "topic": "AAION",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "treatment",
+    "q": "A 74-year-old man is starting a long corticosteroid course for arteritic optic neuropathy. Which additional drug is added?",
+    "opts": [
+      [
+        "Pilocarpine",
+        "That is a topical agent for angle closure."
+      ],
+      [
+        "Famotidine",
+        "Correct, for gastrointestinal ulcer prophylaxis."
+      ],
+      [
+        "Acetazolamide",
+        "That lowers intraocular pressure."
+      ],
+      [
+        "Latanoprost",
+        "That is glaucoma therapy."
+      ],
+      [
+        "Warfarin",
+        "Anticoagulation is not part of this regimen."
+      ]
+    ],
+    "c": 1,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 51",
+    "qid": "1k10ipo"
+  },
+  {
+    "topic": "Open-angle glaucoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 69-year-old woman keeps bumping into door frames on her left. She has noticed nothing wrong with her reading vision and has no pain. Both intraocular pressures are 27 mmHg. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Optic neuritis",
+        "That is unilateral, painful and affects central vision."
+      ],
+      [
+        "Retinal detachment",
+        "That advances quickly with flashes and floaters."
+      ],
+      [
+        "Papilledema",
+        "That follows raised intracranial pressure with headache."
+      ],
+      [
+        "Chronic open-angle glaucoma",
+        "Correct; peripheral field goes first while central vision is preserved."
+      ],
+      [
+        "Acute angle-closure glaucoma",
+        "That is painful and sudden."
+      ]
+    ],
+    "c": 3,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 16",
+    "qid": "1euatdz"
+  },
+  {
+    "topic": "Papilledema",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "test",
+    "q": "A 36-year-old man has bilateral disc swelling. Which test confirms that intracranial pressure is raised?",
+    "opts": [
+      [
+        "Carotid Doppler",
+        "That looks for an embolic source."
+      ],
+      [
+        "Lumbar puncture opening pressure",
+        "Correct, after imaging has excluded a mass lesion."
+      ],
+      [
+        "Tonometry",
+        "That measures intraocular pressure."
+      ],
+      [
+        "Fluorescein angiography",
+        "That assesses retinal perfusion."
+      ],
+      [
+        "Erythrocyte sedimentation rate",
+        "That screens for arteritis."
+      ]
+    ],
+    "c": 1,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 46",
+    "qid": "1yoa49j"
+  },
+  {
+    "topic": "Retinal detachment",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 63-year-old myopic man reports a shower of floaters and flashing lights three days ago. Since yesterday a dark shadow has spread across the outer half of his vision. There is no pain. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Angle-closure glaucoma",
+        "That is acutely painful with halos and vomiting."
+      ],
+      [
+        "Retinal detachment",
+        "Correct. Flashes and floaters from the tear, then an advancing field defect."
+      ],
+      [
+        "Amaurosis fugax",
+        "That lasts seconds to minutes and clears completely."
+      ],
+      [
+        "Central retinal vein occlusion",
+        "That causes sudden painless loss without preceding flashes."
+      ],
+      [
+        "Optic neuritis",
+        "That is painful on eye movement with colour loss."
+      ]
+    ],
+    "c": 1,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 27",
+    "qid": "gzsi8u"
+  },
+  {
+    "topic": "Optic neuritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 24-year-old woman had numbness in one leg last year that resolved. She now has aching behind one eye that worsens when she looks around, with vision fading over two days. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Angle-closure glaucoma",
+        "That is acutely painful at rest with halos."
+      ],
+      [
+        "Central retinal vein occlusion",
+        "That is painless with widespread haemorrhage."
+      ],
+      [
+        "Papilledema",
+        "That is bilateral with headache and vomiting."
+      ],
+      [
+        "Optic neuritis",
+        "Correct; the prior neurological episode points to a demyelinating cause."
+      ],
+      [
+        "Anterior ischemic optic neuropathy",
+        "That occurs in an older group and is painless."
+      ]
+    ],
+    "c": 3,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 23",
+    "qid": "hynqxc"
+  },
+  {
+    "topic": "Retinal detachment",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "test",
+    "q": "A 66-year-old man has a suspected retinal detachment but the view on fundoscopy is poor. Which study is preferred?",
+    "opts": [
+      [
+        "Gonioscopy",
+        "That assesses the drainage angle."
+      ],
+      [
+        "Lumbar puncture",
+        "That assesses intracranial pressure."
+      ],
+      [
+        "Ocular ultrasound",
+        "Correct, more sensitive than fundoscopy and it types the detachment."
+      ],
+      [
+        "Fluorescein angiography",
+        "That is used in the vascular occlusions."
+      ],
+      [
+        "MRI of the orbits",
+        "That is the optic neuritis study."
+      ]
+    ],
+    "c": 2,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 29",
+    "qid": "1offgqi"
+  },
+  {
+    "topic": "Amaurosis fugax",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "treatment",
+    "q": "A 69-year-old man has amaurosis fugax and you want to reduce his stroke risk. Which therapy is indicated?",
+    "opts": [
+      [
+        "Oral acetazolamide",
+        "That lowers intraocular pressure, not stroke risk."
+      ],
+      [
+        "High-dose vitamin A",
+        "Vitamin A toxicity is a cause of papilledema."
+      ],
+      [
+        "Pilocarpine drops",
+        "That is a topical agent for angle-closure glaucoma."
+      ],
+      [
+        "Aspirin and clopidogrel",
+        "Correct, given to reduce cerebrovascular accident risk."
+      ],
+      [
+        "Topical timolol",
+        "That lowers intraocular pressure in glaucoma."
+      ]
+    ],
+    "c": 3,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 8",
+    "qid": "lywez6"
+  },
+  {
+    "topic": "Open-angle glaucoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "finding",
+    "q": "A 67-year-old man with optic nerve changes has an intraocular pressure of 18 mmHg. How does pressure behave in the chronic open-angle form?",
+    "opts": [
+      [
+        "It is always below normal",
+        "Low pressure is not a feature."
+      ],
+      [
+        "It cannot be measured in this form",
+        "Tonometry and gonioscopy are both used."
+      ],
+      [
+        "It may be normal or elevated",
+        "Correct; nerve damage occurs with or without raised pressure."
+      ],
+      [
+        "It is always above 40 mmHg",
+        "That range belongs to acute angle closure."
+      ],
+      [
+        "It is always normal",
+        "It may well be elevated."
+      ]
+    ],
+    "c": 2,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 18",
+    "qid": "4je7pz"
+  },
+  {
+    "topic": "Angle-closure glaucoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "finding",
+    "q": "A 65-year-old man with a painful eye has tonometry performed. Which pressure range fits acute angle closure?",
+    "opts": [
+      [
+        "Pressure is characteristically normal",
+        "It is dramatically elevated."
+      ],
+      [
+        "40 to 80 mmHg",
+        "Correct."
+      ],
+      [
+        "10 to 21 mmHg",
+        "That is the normal range."
+      ],
+      [
+        "22 to 30 mmHg",
+        "Too low for the acute presentation described."
+      ],
+      [
+        "90 to 120 mmHg",
+        "Above the range seen in acute angle closure."
+      ]
+    ],
+    "c": 1,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 17",
+    "qid": "30zhr1"
+  },
+  {
+    "topic": "CRVO",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 63-year-old man with hypertension and diabetes has sudden painless loss of vision in one eye. Fundoscopy shows a swollen disc, dilated veins, cotton wool spots and haemorrhages across all four quadrants. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Papilledema",
+        "That is bilateral and follows raised intracranial pressure."
+      ],
+      [
+        "Optic neuritis",
+        "That is painful on eye movement, usually with a normal disc."
+      ],
+      [
+        "Central retinal vein occlusion",
+        "Correct. The blood and thunder fundus with disc swelling."
+      ],
+      [
+        "Central retinal artery occlusion",
+        "That gives a pale retina with a cherry-red spot."
+      ],
+      [
+        "Retinal detachment",
+        "That shows an elevated grey retina with folds."
+      ]
+    ],
+    "c": 2,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 34",
+    "qid": "1hobmn9"
+  },
+  {
+    "topic": "CRAO",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "reasoning",
+    "q": "A 74-year-old woman presents 40 minutes after sudden painless monocular vision loss. Why is she treated immediately?",
+    "opts": [
+      [
+        "Retinal damage is irreversible after 24 hours",
+        "Far beyond the stated window."
+      ],
+      [
+        "Damage is reversible at any point",
+        "It is not."
+      ],
+      [
+        "Damage occurs only if both eyes are affected",
+        "One eye is enough."
+      ],
+      [
+        "Retinal damage is irreversible after 90 minutes",
+        "Correct; beyond 90 minutes the retinal damage is irreversible."
+      ],
+      [
+        "Retinal damage is irreversible after 8 hours",
+        "Eight hours is the thrombolysis window, not the damage threshold."
+      ]
+    ],
+    "c": 3,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 37",
+    "qid": "1ddjsp3"
+  },
+  {
+    "topic": "Amaurosis fugax",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "test",
+    "q": "A 70-year-old man has transient monocular vision loss and you suspect a carotid source. Which study confirms that suspicion?",
+    "opts": [
+      [
+        "Carotid Doppler ultrasound",
+        "Correct. Echocardiography is the study when a cardiac source is suspected."
+      ],
+      [
+        "Echocardiogram",
+        "That is the study for a suspected cardiac source."
+      ],
+      [
+        "Tonometry",
+        "That measures intraocular pressure."
+      ],
+      [
+        "Lumbar puncture",
+        "That is used when raised intracranial pressure is suspected."
+      ],
+      [
+        "Temporal artery biopsy",
+        "That is the gold standard for giant cell arteritis."
+      ]
+    ],
+    "c": 0,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 7",
+    "qid": "dp6rs"
+  },
+  {
+    "topic": "Differential diagnosis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "reasoning",
+    "q": "A 60-year-old woman has bilateral optic disc swelling. Which diagnosis does bilateral involvement most suggest?",
+    "opts": [
+      [
+        "Retinal detachment",
+        "That is monocular."
+      ],
+      [
+        "Optic neuritis",
+        "That is usually unilateral."
+      ],
+      [
+        "Amaurosis fugax",
+        "That is usually monocular."
+      ],
+      [
+        "Papilledema",
+        "Correct; the vascular occlusions and detachment are monocular."
+      ],
+      [
+        "Central retinal artery occlusion",
+        "That is monocular."
+      ]
+    ],
+    "c": 3,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 44",
+    "qid": "zidgev"
+  },
+  {
+    "topic": "Open-angle glaucoma",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "treatment",
+    "q": "A 64-year-old woman is newly diagnosed with chronic open-angle glaucoma. Which agent is first-line?",
+    "opts": [
+      [
+        "Anterior chamber paracentesis",
+        "That is used in central retinal artery occlusion."
+      ],
+      [
+        "Latanoprost",
+        "Correct, with tafluprost and timolol drops."
+      ],
+      [
+        "Laser peripheral iridotomy",
+        "That is definitive treatment for the angle-closure form."
+      ],
+      [
+        "Intravenous mannitol",
+        "That is used acutely for a very high pressure."
+      ],
+      [
+        "Oral corticosteroids",
+        "Those treat arteritic optic neuropathy."
+      ]
+    ],
+    "c": 1,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 21",
+    "qid": "6gk6xh"
+  },
+  {
+    "topic": "CRVO",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "pathophysiology",
+    "q": "A 70-year-old man with a hypercoagulable disorder develops a central retinal vein occlusion. What has occurred?",
+    "opts": [
+      [
+        "An embolus has lodged in the artery",
+        "That is arterial occlusion."
+      ],
+      [
+        "The iris has closed the drainage angle",
+        "That is angle-closure glaucoma."
+      ],
+      [
+        "The retina has separated from its bed",
+        "That is detachment."
+      ],
+      [
+        "Intracranial pressure has risen",
+        "That is papilledema."
+      ],
+      [
+        "A thrombus has occluded the vein",
+        "Correct, preventing the retina from draining."
+      ]
+    ],
+    "c": 4,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 32",
+    "qid": "izt3p"
+  },
+  {
+    "topic": "Angle-closure glaucoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 62-year-old woman has sudden severe right eye pain, a headache, nausea and vomiting. She sees coloured halos around lights and her cornea looks hazy. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Central retinal artery occlusion",
+        "That is painless."
+      ],
+      [
+        "Amaurosis fugax",
+        "That is painless and lasts seconds to minutes."
+      ],
+      [
+        "Acute angle-closure glaucoma",
+        "Correct. Pain, halos and systemic upset with a hazy cornea."
+      ],
+      [
+        "Chronic open-angle glaucoma",
+        "That is painless and gradual in most patients."
+      ],
+      [
+        "Optic neuritis",
+        "Pain there is on eye movement, without halos or vomiting."
+      ]
+    ],
+    "c": 2,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 16",
+    "qid": "17xugh6"
+  },
+  {
+    "topic": "Angle-closure glaucoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "pathophysiology",
+    "q": "A 58-year-old man has acute angle-closure glaucoma. What is happening inside his eye?",
+    "opts": [
+      [
+        "The iris blocks the drainage circuit",
+        "Correct, and intraocular pressure rises dramatically."
+      ],
+      [
+        "The trabecular meshwork ages abnormally",
+        "That is the mechanism of the chronic open-angle form."
+      ],
+      [
+        "The retina separates from its bed",
+        "That is retinal detachment."
+      ],
+      [
+        "Intracranial pressure compresses the disc",
+        "That is papilledema."
+      ],
+      [
+        "A thrombus occludes the central vein",
+        "That is central retinal vein occlusion."
+      ]
+    ],
+    "c": 0,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 14",
+    "qid": "1jesf"
+  },
+  {
+    "topic": "Amaurosis fugax",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "prognosis",
+    "q": "A 67-year-old woman with amaurosis fugax asks what happens next. What is the outlook?",
+    "opts": [
+      [
+        "The second eye is always affected",
+        "That is not stated."
+      ],
+      [
+        "About 85% recover fully",
+        "Correct, and the remainder progress to a central retinal artery occlusion."
+      ],
+      [
+        "Nearly all progress to permanent blindness",
+        "The large majority recover fully."
+      ],
+      [
+        "About half lose vision permanently",
+        "The figure given is far more favourable."
+      ],
+      [
+        "Recovery depends on surgery",
+        "Recovery is usually spontaneous once the cause is treated."
+      ]
+    ],
+    "c": 1,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 8",
+    "qid": "cnx0ou"
+  },
+  {
+    "topic": "CRAO",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "finding",
+    "q": "A 69-year-old man has a central retinal artery occlusion. His affected pupil is sluggish to direct light but constricts briskly when the other eye is illuminated. What is the significance of this finding?",
+    "opts": [
+      [
+        "It is a major clinical clue",
+        "Correct — a relative afferent pupillary defect is a major clinical clue."
+      ],
+      [
+        "It excludes an arterial cause",
+        "It is characteristic of one."
+      ],
+      [
+        "It indicates raised intracranial pressure",
+        "That gives disc swelling, not this pupil pattern."
+      ],
+      [
+        "It indicates a detached retina",
+        "Detachment does not produce this pupil response."
+      ],
+      [
+        "It is a normal finding",
+        "It reflects an afferent defect."
+      ]
+    ],
+    "c": 0,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 38",
+    "qid": "is07yp"
+  },
+  {
+    "topic": "Optic neuritis",
+    "io": "b — Identify medical care strategies for acute vision loss in adult and elderly populations",
+    "lead": "next step",
+    "q": "A 33-year-old woman with optic neuritis has an MRI showing three characteristic demyelinating lesions. What happens next?",
+    "opts": [
+      [
+        "Temporal artery biopsy",
+        "That investigates giant cell arteritis."
+      ],
+      [
+        "Lumbar puncture to lower pressure",
+        "That belongs to the papilledema workup."
+      ],
+      [
+        "Referral to neurology or neuro-ophthalmology",
+        "Correct, once at least two such lesions are present."
+      ],
+      [
+        "Reassurance and discharge",
+        "Those lesions require onward referral."
+      ],
+      [
+        "Immediate laser iridotomy",
+        "That treats angle-closure glaucoma."
+      ]
+    ],
+    "c": 2,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 24",
+    "qid": "1sb50x0"
+  },
+  {
+    "topic": "Amaurosis fugax",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "diagnosis",
+    "q": "A 65-year-old woman with sickle cell disease describes brief episodes in which the lower half of the vision in one eye fogs over and then clears within a minute. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Branch retinal artery occlusion",
+        "That produces a fixed wedge of loss."
+      ],
+      [
+        "Retinal detachment",
+        "That defect advances rather than clearing."
+      ],
+      [
+        "Optic neuritis",
+        "That develops over hours to days."
+      ],
+      [
+        "Papilledema",
+        "That produces persistent non-specific change."
+      ],
+      [
+        "Amaurosis fugax",
+        "Correct; sickle cell is a listed risk factor and the episodes are transient."
+      ]
+    ],
+    "c": 4,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 5",
+    "qid": "1urhwsn"
+  },
+  {
+    "topic": "Open-angle glaucoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, patient education, and prognosis of the acute vision loss disorders",
+    "lead": "symptom",
+    "q": "A 66-year-old man with untreated chronic open-angle glaucoma says he feels as though he is looking down a tube. Which finding does this describe?",
+    "opts": [
+      [
+        "Loss of peripheral vision first",
+        "Correct; patients call it tunnel vision, and central sight is preserved longest."
+      ],
+      [
+        "Loss of central vision first",
+        "Peripheral field is lost before central."
+      ],
+      [
+        "Loss of colour vision",
+        "That belongs to optic neuritis."
+      ],
+      [
+        "A curtain descending from above",
+        "That suggests detachment or amaurosis fugax."
+      ],
+      [
+        "Transient blackout",
+        "That is amaurosis fugax."
+      ]
+    ],
+    "c": 0,
+    "cite": "12. Acute Vision Loss current - Jaquith.pptx, Slide 16",
+    "qid": "1p7li1k"
+  }
+];
 const LTR = ["A","B","C","D","E"];
 /* The objective chip used to be built as ioLabel(q.io) unconditionally,
    so any quiz whose stored io already began with "Objective" rendered as

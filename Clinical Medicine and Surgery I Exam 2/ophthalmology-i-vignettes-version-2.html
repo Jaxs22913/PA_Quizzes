@@ -303,7 +303,818 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Episcleritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "first-line", "slot": "first-line", "q": "A 29-year-old man is diagnosed with episcleritis. Which is the most appropriate initial management?", "opts": [["Artificial tears and an oral non-steroidal anti-inflammatory taken with food", "Correct — the deck's treatment, and it specifically instructs taking the anti-inflammatory with food."], ["Systemic corticosteroids started immediately at diagnosis", "That is the scleritis pathway, and even there the notes start with anti-inflammatories."], ["Topical antibiotic drops four times daily", "There is no infection."], ["Urgent same-day ophthalmology referral", "Episcleritis is usually self-limited; referral follows failure at two days."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 48"}, {"topic": "Corneal ulcer", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "education", "slot": "prognosis", "q": "A 41-year-old man has begun treatment for a corneal ulcer. What should he be told about follow-up and healing?", "opts": [["He needs review in one month, and it should heal within a year", "Far too slow on both counts."], ["He needs review in two weeks, and it will not heal without surgery", "Most heal medically."], ["He needs review the next day, and most ulcers heal over two to three weeks", "Correct — next-day follow-up after starting an anti-infective, with a two to three week course."], ["He needs no follow-up, and it should heal in 48 hours", "Both halves are wrong for an ulcer."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 61"}, {"topic": "Episcleritis vs scleritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "diagnosis", "slot": "differential", "q": "A 33-year-old woman has a sectoral patch of redness in one eye with mild ache, no discharge and no photophobia. After topical anaesthesia the redness moves slightly when nudged with a cotton-tip applicator. Which is the most likely diagnosis?", "opts": [["Anterior uveitis", "That gives ciliary flush, photophobia and an irregular pupil."], ["Episcleritis", "Correct — mobile vessels, mild pain and no photophobia point to the superficial layer."], ["Scleritis", "Scleral vessels cannot be moved, and the pain would be severe and boring."], ["Bacterial conjunctivitis", "That gives diffuse redness with thick discharge."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 47"}, {"topic": "Allergic conjunctivitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "first-line", "slot": "agent/regimen", "q": "A 17-year-old has bilateral itchy red eyes every spring with swollen lids and stringy watery discharge. Vision is normal. Which single topical agent both blocks histamine and stabilises mast cells?", "opts": [["Artificial tears alone", "Useful adjunct, but not the dual-action agent asked for."], ["Olopatadine", "Correct — the deck names it as doing both."], ["A topical fluoroquinolone", "That is an antibiotic and treats nothing here."], ["A topical corticosteroid", "Not the deck's first-line for seasonal allergy."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 35"}, {"topic": "Keratitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "diagnosis", "slot": "differential", "q": "A 21-year-old woman who sleeps in her contact lenses has severe unilateral eye pain, photophobia and blurred vision. The cornea is hazy so the iris details cannot be seen clearly, and there is a ring of redness at the corneal edge that does not spare the limbus. Which is the most likely diagnosis?", "opts": [["Bacterial keratitis", "Correct — corneal haze with ciliary flush in a lens overwearer."], ["Viral conjunctivitis", "That gives watery discharge and follicles with a clear cornea."], ["Subconjunctival haemorrhage", "That is painless with a clear cornea and normal vision."], ["Episcleritis", "That gives mild sectoral redness with a clear cornea and no photophobia."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 55"}, {"topic": "Fluorescein angiography", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "education", "slot": "education", "q": "A 60-year-old woman is anxious about the dye for fluorescein angiography because she reacted to contrast for a scan once. What is accurate to tell her?", "opts": [["It is injected into the eye itself", "It is injected into the hand or arm."], ["Fluorescein contains no iodine and is relatively safe", "Correct — the deck notes the absence of iodine explicitly."], ["It contains iodine, so her previous reaction is a contraindication", "The deck states it has no iodine."], ["It is radioactive and requires shielding", "It is not radioactive."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 10"}, {"topic": "Scleritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "education", "slot": "prognosis", "q": "A 58-year-old man started treatment for scleritis three days ago. His eye still looks just as inflamed, but his pain is much better. How should this be interpreted?", "opts": [["Treatment has failed and should be changed immediately", "The deck says appearance lags behind pain."], ["The diagnosis was wrong and this is episcleritis", "Pain improving on treatment does not reclassify the disease."], ["He is at imminent risk of scleral perforation and needs surgery now", "Improving pain points the other way."], ["This is the expected first sign of response — decreased pain comes before any change in appearance", "Correct — the deck flags exactly this, so that an unchanged-looking eye is not read as failure."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50"}, {"topic": "Chlamydial conjunctivitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "confirmatory test", "slot": "gold standard", "q": "A 24-year-old man has had a red left eye with stringy mucoid discharge for six weeks. Topical antibiotics have not helped, and the lower palpebral conjunctiva shows follicles (pale bumps that are redder at the base). Which test confirms the diagnosis?", "opts": [["Slit lamp examination with fluorescein staining", "That shows corneal defects, not the organism."], ["Computed tomography of the orbits with contrast", "Imaging plays no part in diagnosing conjunctivitis."], ["Conjunctival scraping for potassium hydroxide preparation", "That is a fungal preparation, and is not used here."], ["Conjunctival nucleic acid amplification testing", "Correct — the chronic course, the follicles and the failure of topical therapy point to chlamydial disease."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 43"}, {"topic": "Anterior uveitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "referral", "q": "A 31-year-old man has a painful red eye with a ring of redness at the corneal edge (ciliary flush) and pain in that eye when light is shone into the OTHER eye (consensual photophobia). His pupil is small and irregular. Which is the most appropriate next step?", "opts": [["Oral antivirals for ten days", "There is no dendrite or vesicular rash described."], ["Urgent referral to ophthalmology within 24 hours for slit lamp and dilated fundoscopy", "Correct — anterior uveitis, where delayed diagnosis may cost vision."], ["Topical antibiotic drops with a review appointment in 48 hours", "Ciliary flush and an irregular pupil rule out simple conjunctivitis."], ["Reassurance and artificial tears", "These are danger signs, not benign ones."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 63"}, {"topic": "Dacryocystitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "first-line", "slot": "first-line", "q": "A 62-year-old woman has a tender red swelling at the inner corner of her lower eyelid, with purulent material expressible from the lower punctum. She is afebrile, systemically well and reliable. Which is the most appropriate management?", "opts": [["Outpatient oral antibiotics for ten days with warm compresses", "Correct — mild dacryocystitis in a well, reliable patient is managed as an outpatient."], ["Hospital admission for intravenous antibiotics for 48 to 72 hours", "Reserved for the febrile, acutely ill or unreliable patient."], ["Topical antibiotic drops alone", "Drops do not reach the lacrimal sac."], ["Immediate surgical dacryocystorhinostomy", "Surgery follows the acute infection, once patency is assessed."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"}, {"topic": "Dacryocystitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "education", "slot": "prognosis", "q": "A 58-year-old man's acute dacryocystitis has settled on antibiotics. What should he be told about what comes next?", "opts": [["No further action is needed now that the acute infection has cleared", "The obstruction that caused it remains."], ["He will need lifelong daily antibiotics", "Not the deck's plan."], ["He will need annual computed tomography scanning", "Not what the deck describes."], ["Probing and irrigation are often needed to assess whether the tear drainage system is open, and surgery may follow", "Correct — the underlying obstruction still has to be addressed."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"}, {"topic": "Hordeolum with cellulitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "escalation", "q": "A 32-year-old man has a tender lid margin nodule, and the surrounding lid and periorbital skin are now diffusely swollen, red and warm. The globe is white with full painless movements. Which is the most appropriate management?", "opts": [["Continue warm compresses alone for another two weeks", "Compresses alone will not treat a spreading soft tissue infection."], ["Refer for immediate incision and drainage of the nodule", "The cellulitis is what now drives management."], ["Start topical antibiotic drops", "Drops do not treat a soft tissue infection."], ["Treat as pre-septal cellulitis with systemic antibiotics", "Correct — the deck says to treat an associated pre-septal cellulitis per that pathway."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"}, {"topic": "Orbital vs pre-septal cellulitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "diagnosis", "slot": "differential", "q": "A 34-year-old man has a swollen, red, tender left eyelid and fever after sinusitis. The globe is white, the pupil reacts normally, and eye movements are full and painless with normal vision. Which is the most likely diagnosis?", "opts": [["Pre-septal (periorbital) cellulitis", "Correct — a white globe with full painless movements and normal vision places the infection in front of the septum."], ["Post-septal (orbital) cellulitis", "That would show proptosis, painful restricted movement, and often reduced vision."], ["Dacryocystitis", "That is localised to the lacrimal sac at the inner lower lid."], ["Allergic conjunctivitis", "That itches, is bilateral, and does not cause fever."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 52"}, {"topic": "Dacryoadenitis vs dacryocystitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "diagnosis", "slot": "differential", "q": "A 39-year-old man has pain, redness and swelling confined to the outer third of his upper eyelid, with an enlarged node in front of the ear on the same side. Which is the most likely diagnosis?", "opts": [["Pre-septal cellulitis", "That produces diffuse balloon-like lid swelling, not a localised outer-third mass."], ["Hordeolum", "That is a small tender nodule at the lash line."], ["Dacryoadenitis", "Correct — the lacrimal gland sits superotemporally, and preauricular nodes are described."], ["Dacryocystitis", "That produces swelling over the lacrimal sac, at the inner lower lid."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 22"}, {"topic": "Slit lamp", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "initial test", "slot": "initial test", "q": "A 48-year-old woman needs the front of her eye examined in magnified detail — the lids, cornea, conjunctiva, sclera and iris. Which instrument is designed for this?", "opts": [["A tonometer pen", "That measures intraocular pressure."], ["A Wood lamp", "That provides the ultraviolet light for a fluorescein examination."], ["A slit lamp", "Correct — a low-power microscope with a high-intensity slit beam for the anterior structures."], ["A direct ophthalmoscope", "That is for the innermost structures, including the retina and optic disc."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 7"}, {"topic": "Herpes simplex keratitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "avoid", "slot": "avoid", "q": "A 33-year-old woman has an active herpes simplex epithelial dendrite. Which action should specifically NOT be taken by the primary care provider?", "opts": [["Staining the cornea with fluorescein", "That is how the dendrite was found."], ["Prescribing topical glucocorticoid drops", "Correct — the deck puts this prohibition in capitals and leaves the decision to ophthalmology."], ["Prescribing an oral antiviral", "That is the correct treatment."], ["Referring for slit lamp examination", "Appropriate and expected."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"}, {"topic": "Fluorescein", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "initial test", "slot": "initial test", "q": "A 35-year-old man may have a corneal abrasion after a fingernail injury. Which examination will best demonstrate it?", "opts": [["Inject fluorescein intravenously and photograph the retina with a blue flash", "That is fluorescein ANGIOGRAPHY, which images the posterior circulation."], ["Instil phenylephrine and observe for blanching", "That is the episcleritis test."], ["Measure intraocular pressure", "That does not show a surface defect."], ["Instil fluorescein and examine under a Wood lamp with ultraviolet light", "Correct — the surface fluorescein examination detects abrasions, ulcers and foreign bodies."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 9"}, {"topic": "Bacterial conjunctivitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "referral", "q": "A 45-year-old woman treated for bacterial conjunctivitis 24 hours ago returns with no improvement. She wears contact lenses daily. Which is the most appropriate next step?", "opts": [["Continue the same drops and review in one week", "Failure to improve at 24 hours is itself a referral trigger."], ["Switch to an oral antibiotic and review in 48 hours", "The deck refers rather than escalating orally here."], ["Add a topical corticosteroid to settle the inflammation", "Steroids risk worsening an unrecognised keratitis."], ["Urgent referral to ophthalmology", "Correct — both lens wear and failure to improve in 24 hours are on the deck's urgent-referral list."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 41"}, {"topic": "Episcleritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "initial test", "slot": "gold standard", "q": "A 34-year-old woman has two days of mild ache and a sectoral patch of redness in one eye, with no discharge and no photophobia. Which bedside test best confirms the diagnosis?", "opts": [["Measure the intraocular pressure with a tonometer pen", "Pressure is not the question in a mildly sore sectoral red eye."], ["Obtain computed tomography of the orbits with contrast", "Imaging plays no part here."], ["Instil 2.5 per cent phenylephrine and look for blanching of the vessels after 15 minutes", "Correct — episcleral vessels blanch; the mild painless sectoral redness fits episcleritis."], ["Instil fluorescein and examine under cobalt blue light for a corneal dendrite", "That looks for herpes simplex keratitis."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 48"}, {"topic": "Herpes simplex keratitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "first-line", "slot": "agent/regimen", "q": "A 26-year-old man has a painful red eye with photophobia. Fluorescein under cobalt blue light shows a branching corneal lesion with small knobs at the ends of each branch (terminal end bulbs). Which is the most appropriate treatment?", "opts": [["A topical fluoroquinolone for ten days", "That treats bacterial disease; this is viral."], ["Oral doxycycline for seven days", "That treats chlamydial conjunctivitis."], ["Oral antiviral therapy for ten days", "Correct — a true dendrite with terminal end bulbs is pathognomonic for herpes simplex."], ["Topical corticosteroid drops started today", "Specifically prohibited by the primary care provider in active epithelial disease."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"}, {"topic": "Pterygium", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "diagnosis", "slot": "differential", "q": "A 44-year-old fisherman has a fleshy triangular growth on the nasal conjunctiva of one eye that now extends a short distance onto the cornea. Which is the most likely diagnosis?", "opts": [["Corneal ulcer", "That is a painful open sore, not a fleshy growth."], ["Chalazion", "That is a lid nodule."], ["Pterygium", "Correct — corneal extension is what makes it a pterygium rather than a pinguecula."], ["Pinguecula", "A pinguecula stops at the limbus and does not involve the cornea."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"}, {"topic": "Subconjunctival haemorrhage", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "diagnosis", "slot": "differential", "q": "A 66-year-old man on warfarin notices a bright red patch on the white of one eye after a coughing fit. There is no pain, vision is normal, the pupil is normal and the cornea is clear. Which is the most likely diagnosis?", "opts": [["Scleritis", "That is severely painful with a violaceous rather than bright red appearance."], ["Subconjunctival haemorrhage", "Correct — Valsalva plus anticoagulation, and the eye is otherwise entirely normal."], ["Bacterial conjunctivitis", "That has discharge and diffuse hyperaemia rather than a discrete blood patch."], ["Anterior uveitis", "That is painful, with ciliary flush and photophobia."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 29"}, {"topic": "Scleritis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "referral", "q": "A 52-year-old woman with rheumatoid arthritis has severe deep boring eye pain that wakes her at night and radiates to her cheek. The sclera has a bluish-purple hue (violaceous discolouration, the choroid showing through thinned sclera). Which is the most appropriate next step?", "opts": [["Topical antibiotic drops and review in one week", "There is no infection to treat."], ["Reassurance that it is self-limited", "Episcleritis is self-limited; scleritis is not."], ["Urgent referral to ophthalmology", "Correct — the sclera is at risk of perforation and may need a surgical patch."], ["Artificial tears and an oral non-steroidal anti-inflammatory, review in two days", "That is the episcleritis pathway; this presentation is far more serious."]], "c": 2, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50"}, {"topic": "Herpes zoster ophthalmicus", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "first-line", "slot": "first-line", "q": "A 71-year-old woman presents 48 hours after a dermatomal vesicular rash appeared over her forehead and upper lid. Which is the most appropriate initial management?", "opts": [["Reassure her that no treatment is needed for a dermatomal rash", "Ocular zoster is a same-day condition."], ["Start an oral antiviral now and refer for slit lamp examination and dilated fundoscopy", "Correct — within the ideal 72-hour window, and the eye still needs examining."], ["Wait for ophthalmology to confirm ocular involvement before starting any antiviral", "Delaying wastes the antiviral window."], ["Start a topical corticosteroid to reduce inflammation", "That decision belongs to ophthalmology."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"}, {"topic": "Dacryoadenitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "avoid", "slot": "avoid", "q": "A 41-year-old man has dacryoadenitis and the cause is not yet clear. Which action should be avoided?", "opts": [["Starting corticosteroids before bacterial and other infectious causes have been reasonably excluded", "Correct — the speaker notes are explicit about this sequence."], ["Giving paracetamol for pain", "The deck gives analgesia as needed."], ["Reassessing him after 24 hours of empiric oral antibiotic treatment", "That is exactly what the deck suggests when the cause is unclear."], ["Monitoring for signs of orbital involvement", "The deck requires this."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 23 (speaker notes)"}, {"topic": "Ectropion", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "education", "slot": "escalation", "q": "A 77-year-old woman with ectropion asks what will actually fix it. What is the most accurate answer?", "opts": [["Surgery is the definitive treatment; lubrication only protects the surface in the meantime", "Correct — the deck names surgery as definitive."], ["Lubricating ointment used consistently will gradually correct the lid position", "Lubrication protects but does not reposition the lid."], ["It will resolve on its own within two to four weeks", "That timescale belongs to a subconjunctival haemorrhage."], ["A course of oral antibiotics will resolve it", "There is no infection."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 13"}, {"topic": "Corneal ulcer", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "referral", "q": "A 38-year-old contact lens wearer resists opening a painful watering eye. There is a ring of redness at the corneal edge (ciliary flush) and a white spot on the cornea with surrounding irregularity. Which is the most appropriate next step?", "opts": [["Urgent referral within 24 hours", "That is the keratitis threshold; an ulcer is emergent."], ["Routine referral within two weeks", "Far too slow for a sight-threatening lesion."], ["Reassurance and lubricating drops", "This is an open corneal sore, not dry eye."], ["Emergent referral to ophthalmology", "Correct — the deck escalates a corneal ulcer above keratitis's 24-hour urgency to emergent."]], "c": 3, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 61"}, {"topic": "Blepharitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "escalation", "q": "A 49-year-old woman has completed a two-week lid hygiene regimen for blepharitis with no improvement. Which is the most appropriate next step?", "opts": [["Try a topical antibiotic", "Correct — the deck escalates from lid hygiene to topical antibiotics, then to oral if needed."], ["Go straight to oral antibiotics", "The deck tries topical first."], ["Refer urgently to ophthalmology today", "Referral follows several weeks without improvement."], ["Start a topical corticosteroid", "Not in the deck's sequence."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 19"}, {"topic": "Posterior uveitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "first-line", "slot": "first-line", "q": "A 45-year-old woman has blurred vision, floaters and a patch of missing vision in one eye, with no pain at all. Ophthalmology finds cells in the posterior vitreous and vitreous haze. Which statement about treatment is correct?", "opts": [["No treatment is required as it resolves spontaneously", "It can last years and threaten vision."], ["Topical treatment will not work here — an intraocular corticosteroid injection may be required", "Correct — this is the key management difference from anterior uveitis."], ["Topical corticosteroid drops are the first-line treatment for this", "Posterior disease does not respond to topical therapy."], ["Oral doxycycline for seven days is first-line", "That treats chlamydial conjunctivitis."]], "c": 1, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 65"}, {"topic": "Chalazion", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders", "lead": "next step", "slot": "referral", "q": "A 44-year-old woman has had a lid nodule in the same spot for four months, and it has recurred twice in the past year. Which is the most appropriate next step?", "opts": [["Refer to ophthalmology to rule out sebaceous carcinoma", "Correct — recurrence, or persistence beyond two to three months, triggers this specific concern."], ["Continue warm compresses for another three months", "Persistence at four months is itself the referral trigger."], ["Start oral antibiotics for two weeks", "There is no infection."], ["Reassure her that recurrence is normal and no action is needed", "Recurrence is precisely what the deck says to act on."]], "c": 0, "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"}];
+const QUESTIONS = [
+  {
+    "topic": "Episcleritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "first-line",
+    "slot": "first-line",
+    "q": "A 29-year-old man is diagnosed with episcleritis. Which is the most appropriate initial management?",
+    "opts": [
+      [
+        "Artificial tears and an oral non-steroidal anti-inflammatory taken with food",
+        "Correct — and the anti-inflammatory should be taken with food."
+      ],
+      [
+        "Systemic corticosteroids started immediately at diagnosis",
+        "That is the scleritis pathway, and even there anti-inflammatories come first."
+      ],
+      [
+        "Topical antibiotic drops four times daily",
+        "There is no infection."
+      ],
+      [
+        "Urgent same-day ophthalmology referral",
+        "Episcleritis is usually self-limited; referral follows failure at two days."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 48"
+  },
+  {
+    "topic": "Corneal ulcer",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "education",
+    "slot": "prognosis",
+    "q": "A 41-year-old man has begun treatment for a corneal ulcer. What should he be told about follow-up and healing?",
+    "opts": [
+      [
+        "He needs review in one month, and it should heal within a year",
+        "Far too slow on both counts."
+      ],
+      [
+        "He needs review in two weeks, and it will not heal without surgery",
+        "Most heal medically."
+      ],
+      [
+        "He needs review the next day, and most ulcers heal over two to three weeks",
+        "Correct — next-day follow-up after starting an anti-infective, with a two to three week course."
+      ],
+      [
+        "He needs no follow-up, and it should heal in 48 hours",
+        "Both halves are wrong for an ulcer."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 61"
+  },
+  {
+    "topic": "Episcleritis vs scleritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "diagnosis",
+    "slot": "differential",
+    "q": "A 33-year-old woman has a sectoral patch of redness in one eye with mild ache, no discharge and no photophobia. After topical anaesthesia the redness moves slightly when nudged with a cotton-tip applicator. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Anterior uveitis",
+        "That gives ciliary flush, photophobia and an irregular pupil."
+      ],
+      [
+        "Episcleritis",
+        "Correct — mobile vessels, mild pain and no photophobia point to the superficial layer."
+      ],
+      [
+        "Scleritis",
+        "Scleral vessels cannot be moved, and the pain would be severe and boring."
+      ],
+      [
+        "Bacterial conjunctivitis",
+        "That gives diffuse redness with thick discharge."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 47"
+  },
+  {
+    "topic": "Allergic conjunctivitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "first-line",
+    "slot": "agent/regimen",
+    "q": "A 17-year-old has bilateral itchy red eyes every spring with swollen lids and stringy watery discharge. Vision is normal. Which single topical agent both blocks histamine and stabilises mast cells?",
+    "opts": [
+      [
+        "Artificial tears alone",
+        "Useful adjunct, but not the dual-action agent asked for."
+      ],
+      [
+        "Olopatadine",
+        "Correct — olopatadine carries both actions in one drop."
+      ],
+      [
+        "A topical fluoroquinolone",
+        "That is an antibiotic and treats nothing here."
+      ],
+      [
+        "A topical corticosteroid",
+        "Steroids are not first-line for seasonal allergy."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 35"
+  },
+  {
+    "topic": "Keratitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "diagnosis",
+    "slot": "differential",
+    "q": "A 21-year-old woman who sleeps in her contact lenses has severe unilateral eye pain, photophobia and blurred vision. The cornea is hazy so the iris details cannot be seen clearly, and there is a ring of redness at the corneal edge that does not spare the limbus. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Bacterial keratitis",
+        "Correct — corneal haze with ciliary flush in a lens overwearer."
+      ],
+      [
+        "Viral conjunctivitis",
+        "That gives watery discharge and follicles with a clear cornea."
+      ],
+      [
+        "Subconjunctival haemorrhage",
+        "That is painless with a clear cornea and normal vision."
+      ],
+      [
+        "Episcleritis",
+        "That gives mild sectoral redness with a clear cornea and no photophobia."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 55"
+  },
+  {
+    "topic": "Fluorescein angiography",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "education",
+    "slot": "education",
+    "q": "A 60-year-old woman is anxious about the dye for fluorescein angiography because she reacted to contrast for a scan once. What is accurate to tell her?",
+    "opts": [
+      [
+        "It is injected into the eye itself",
+        "It is injected into the hand or arm."
+      ],
+      [
+        "Fluorescein contains no iodine and is relatively safe",
+        "Correct — fluorescein is iodine-free, so a contrast reaction does not carry over."
+      ],
+      [
+        "It contains iodine, so her previous reaction is a contraindication",
+        "Fluorescein contains no iodine."
+      ],
+      [
+        "It is radioactive and requires shielding",
+        "It is not radioactive."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 10"
+  },
+  {
+    "topic": "Scleritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "education",
+    "slot": "prognosis",
+    "q": "A 58-year-old man started treatment for scleritis three days ago. His eye still looks just as inflamed, but his pain is much better. How should this be interpreted?",
+    "opts": [
+      [
+        "Treatment has failed and should be changed immediately",
+        "Appearance lags behind pain."
+      ],
+      [
+        "The diagnosis was wrong and this is episcleritis",
+        "Pain improving on treatment does not reclassify the disease."
+      ],
+      [
+        "He is at imminent risk of scleral perforation and needs surgery now",
+        "Improving pain points the other way."
+      ],
+      [
+        "This is the expected first sign of response — decreased pain comes before any change in appearance",
+        "Correct — pain settles first, so an unchanged-looking eye is not failure."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50"
+  },
+  {
+    "topic": "Chlamydial conjunctivitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "confirmatory test",
+    "slot": "gold standard",
+    "q": "A 24-year-old man has had a red left eye with stringy mucoid discharge for six weeks. Topical antibiotics have not helped, and the lower palpebral conjunctiva shows follicles (pale bumps that are redder at the base). Which test confirms the diagnosis?",
+    "opts": [
+      [
+        "Slit lamp examination with fluorescein staining",
+        "That shows corneal defects, not the organism."
+      ],
+      [
+        "Computed tomography of the orbits with contrast",
+        "Imaging plays no part in diagnosing conjunctivitis."
+      ],
+      [
+        "Conjunctival scraping for potassium hydroxide preparation",
+        "That is a fungal preparation, and is not used here."
+      ],
+      [
+        "Conjunctival nucleic acid amplification testing",
+        "Correct — the chronic course, the follicles and the failure of topical therapy point to chlamydial disease."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 43"
+  },
+  {
+    "topic": "Anterior uveitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "referral",
+    "q": "A 31-year-old man has a painful red eye with a ring of redness at the corneal edge (ciliary flush) and pain in that eye when light is shone into the OTHER eye (consensual photophobia). His pupil is small and irregular. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Oral antivirals for ten days",
+        "There is no dendrite or vesicular rash described."
+      ],
+      [
+        "Urgent referral to ophthalmology within 24 hours for slit lamp and dilated fundoscopy",
+        "Correct — anterior uveitis, where delayed diagnosis may cost vision."
+      ],
+      [
+        "Topical antibiotic drops with a review appointment in 48 hours",
+        "Ciliary flush and an irregular pupil rule out simple conjunctivitis."
+      ],
+      [
+        "Reassurance and artificial tears",
+        "These are danger signs, not benign ones."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 63"
+  },
+  {
+    "topic": "Dacryocystitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "first-line",
+    "slot": "first-line",
+    "q": "A 62-year-old woman has a tender red swelling at the inner corner of her lower eyelid, with purulent material expressible from the lower punctum. She is afebrile, systemically well and reliable. Which is the most appropriate management?",
+    "opts": [
+      [
+        "Outpatient oral antibiotics for ten days with warm compresses",
+        "Correct — mild dacryocystitis in a well, reliable patient is managed as an outpatient."
+      ],
+      [
+        "Hospital admission for intravenous antibiotics for 48 to 72 hours",
+        "Reserved for the febrile, acutely ill or unreliable patient."
+      ],
+      [
+        "Topical antibiotic drops alone",
+        "Drops do not reach the lacrimal sac."
+      ],
+      [
+        "Immediate surgical dacryocystorhinostomy",
+        "Surgery follows the acute infection, once patency is assessed."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"
+  },
+  {
+    "topic": "Dacryocystitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "education",
+    "slot": "prognosis",
+    "q": "A 58-year-old man's acute dacryocystitis has settled on antibiotics. What should he be told about what comes next?",
+    "opts": [
+      [
+        "No further action is needed now that the acute infection has cleared",
+        "The obstruction that caused it remains."
+      ],
+      [
+        "He will need lifelong daily antibiotics",
+        "Lifelong antibiotics are not the plan."
+      ],
+      [
+        "He will need annual computed tomography scanning",
+        "Annual scanning is not part of follow-up."
+      ],
+      [
+        "Probing and irrigation are often needed to assess whether the tear drainage system is open, and surgery may follow",
+        "Correct — the underlying obstruction still has to be addressed."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 25"
+  },
+  {
+    "topic": "Hordeolum with cellulitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "escalation",
+    "q": "A 32-year-old man has a tender lid margin nodule, and the surrounding lid and periorbital skin are now diffusely swollen, red and warm. The globe is white with full painless movements. Which is the most appropriate management?",
+    "opts": [
+      [
+        "Continue warm compresses alone for another two weeks",
+        "Compresses alone will not treat a spreading soft tissue infection."
+      ],
+      [
+        "Refer for immediate incision and drainage of the nodule",
+        "The cellulitis is what now drives management."
+      ],
+      [
+        "Start topical antibiotic drops",
+        "Drops do not treat a soft tissue infection."
+      ],
+      [
+        "Treat as pre-septal cellulitis with systemic antibiotics",
+        "Correct — an associated pre-septal cellulitis takes that pathway."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
+  },
+  {
+    "topic": "Orbital vs pre-septal cellulitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "diagnosis",
+    "slot": "differential",
+    "q": "A 34-year-old man has a swollen, red, tender left eyelid and fever after sinusitis. The globe is white, the pupil reacts normally, and eye movements are full and painless with normal vision. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Pre-septal (periorbital) cellulitis",
+        "Correct — a white globe with full painless movements and normal vision places the infection in front of the septum."
+      ],
+      [
+        "Post-septal (orbital) cellulitis",
+        "That would show proptosis, painful restricted movement, and often reduced vision."
+      ],
+      [
+        "Dacryocystitis",
+        "That is localised to the lacrimal sac at the inner lower lid."
+      ],
+      [
+        "Allergic conjunctivitis",
+        "That itches, is bilateral, and does not cause fever."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 52"
+  },
+  {
+    "topic": "Dacryoadenitis vs dacryocystitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "diagnosis",
+    "slot": "differential",
+    "q": "A 39-year-old man has pain, redness and swelling confined to the outer third of his upper eyelid, with an enlarged node in front of the ear on the same side. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Pre-septal cellulitis",
+        "That produces diffuse balloon-like lid swelling, not a localised outer-third mass."
+      ],
+      [
+        "Hordeolum",
+        "That is a small tender nodule at the lash line."
+      ],
+      [
+        "Dacryoadenitis",
+        "Correct — the lacrimal gland sits superotemporally, and preauricular nodes are described."
+      ],
+      [
+        "Dacryocystitis",
+        "That produces swelling over the lacrimal sac, at the inner lower lid."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 22"
+  },
+  {
+    "topic": "Slit lamp",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "initial test",
+    "slot": "initial test",
+    "q": "A 48-year-old woman needs the front of her eye examined in magnified detail — the lids, cornea, conjunctiva, sclera and iris. Which instrument is designed for this?",
+    "opts": [
+      [
+        "A tonometer pen",
+        "That measures intraocular pressure."
+      ],
+      [
+        "A Wood lamp",
+        "That provides the ultraviolet light for a fluorescein examination."
+      ],
+      [
+        "A slit lamp",
+        "Correct — a low-power microscope with a high-intensity slit beam for the anterior structures."
+      ],
+      [
+        "A direct ophthalmoscope",
+        "That is for the innermost structures, including the retina and optic disc."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 7"
+  },
+  {
+    "topic": "Herpes simplex keratitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "avoid",
+    "slot": "avoid",
+    "q": "A 33-year-old woman has an active herpes simplex epithelial dendrite. Which action should specifically NOT be taken by the primary care provider?",
+    "opts": [
+      [
+        "Staining the cornea with fluorescein",
+        "That is how the dendrite was found."
+      ],
+      [
+        "Prescribing topical glucocorticoid drops",
+        "Correct — steroids over an active dendrite risk corneal melt, so that decision belongs to ophthalmology."
+      ],
+      [
+        "Prescribing an oral antiviral",
+        "That is the correct treatment."
+      ],
+      [
+        "Referring for slit lamp examination",
+        "Appropriate and expected."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"
+  },
+  {
+    "topic": "Fluorescein",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "initial test",
+    "slot": "initial test",
+    "q": "A 35-year-old man may have a corneal abrasion after a fingernail injury. Which examination will best demonstrate it?",
+    "opts": [
+      [
+        "Inject fluorescein intravenously and photograph the retina with a blue flash",
+        "That is fluorescein ANGIOGRAPHY, which images the posterior circulation."
+      ],
+      [
+        "Instil phenylephrine and observe for blanching",
+        "That is the episcleritis test."
+      ],
+      [
+        "Measure intraocular pressure",
+        "That does not show a surface defect."
+      ],
+      [
+        "Instil fluorescein and examine under a Wood lamp with ultraviolet light",
+        "Correct — the surface fluorescein examination detects abrasions, ulcers and foreign bodies."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 9"
+  },
+  {
+    "topic": "Bacterial conjunctivitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "referral",
+    "q": "A 45-year-old woman treated for bacterial conjunctivitis 24 hours ago returns with no improvement. She wears contact lenses daily. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Continue the same drops and review in one week",
+        "Failure to improve at 24 hours is itself a referral trigger."
+      ],
+      [
+        "Switch to an oral antibiotic and review in 48 hours",
+        "Lens wear plus failure at 24 hours calls for referral, not oral escalation."
+      ],
+      [
+        "Add a topical corticosteroid to settle the inflammation",
+        "Steroids risk worsening an unrecognised keratitis."
+      ],
+      [
+        "Urgent referral to ophthalmology",
+        "Correct — lens wear and failure to improve in 24 hours are both urgent-referral criteria."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 41"
+  },
+  {
+    "topic": "Episcleritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "initial test",
+    "slot": "gold standard",
+    "q": "A 34-year-old woman has two days of mild ache and a sectoral patch of redness in one eye, with no discharge and no photophobia. Which bedside test best confirms the diagnosis?",
+    "opts": [
+      [
+        "Measure the intraocular pressure with a tonometer pen",
+        "Pressure is not the question in a mildly sore sectoral red eye."
+      ],
+      [
+        "Obtain computed tomography of the orbits with contrast",
+        "Imaging plays no part here."
+      ],
+      [
+        "Instil 2.5 per cent phenylephrine and look for blanching of the vessels after 15 minutes",
+        "Correct — episcleral vessels blanch; the mild painless sectoral redness fits episcleritis."
+      ],
+      [
+        "Instil fluorescein and examine under cobalt blue light for a corneal dendrite",
+        "That looks for herpes simplex keratitis."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 48"
+  },
+  {
+    "topic": "Herpes simplex keratitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "first-line",
+    "slot": "agent/regimen",
+    "q": "A 26-year-old man has a painful red eye with photophobia. Fluorescein under cobalt blue light shows a branching corneal lesion with small knobs at the ends of each branch (terminal end bulbs). Which is the most appropriate treatment?",
+    "opts": [
+      [
+        "A topical fluoroquinolone for ten days",
+        "That treats bacterial disease; this is viral."
+      ],
+      [
+        "Oral doxycycline for seven days",
+        "That treats chlamydial conjunctivitis."
+      ],
+      [
+        "Oral antiviral therapy for ten days",
+        "Correct — a true dendrite with terminal end bulbs is pathognomonic for herpes simplex."
+      ],
+      [
+        "Topical corticosteroid drops started today",
+        "Specifically prohibited by the primary care provider in active epithelial disease."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"
+  },
+  {
+    "topic": "Pterygium",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "diagnosis",
+    "slot": "differential",
+    "q": "A 44-year-old fisherman has a fleshy triangular growth on the nasal conjunctiva of one eye that now extends a short distance onto the cornea. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Corneal ulcer",
+        "That is a painful open sore, not a fleshy growth."
+      ],
+      [
+        "Chalazion",
+        "That is a lid nodule."
+      ],
+      [
+        "Pterygium",
+        "Correct — corneal extension is what makes it a pterygium rather than a pinguecula."
+      ],
+      [
+        "Pinguecula",
+        "A pinguecula stops at the limbus and does not involve the cornea."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 27"
+  },
+  {
+    "topic": "Subconjunctival haemorrhage",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "diagnosis",
+    "slot": "differential",
+    "q": "A 66-year-old man on warfarin notices a bright red patch on the white of one eye after a coughing fit. There is no pain, vision is normal, the pupil is normal and the cornea is clear. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Scleritis",
+        "That is severely painful with a violaceous rather than bright red appearance."
+      ],
+      [
+        "Subconjunctival haemorrhage",
+        "Correct — Valsalva plus anticoagulation, and the eye is otherwise entirely normal."
+      ],
+      [
+        "Bacterial conjunctivitis",
+        "That has discharge and diffuse hyperaemia rather than a discrete blood patch."
+      ],
+      [
+        "Anterior uveitis",
+        "That is painful, with ciliary flush and photophobia."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 29"
+  },
+  {
+    "topic": "Scleritis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "referral",
+    "q": "A 52-year-old woman with rheumatoid arthritis has severe deep boring eye pain that wakes her at night and radiates to her cheek. The sclera has a bluish-purple hue (violaceous discolouration, the choroid showing through thinned sclera). Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Topical antibiotic drops and review in one week",
+        "There is no infection to treat."
+      ],
+      [
+        "Reassurance that it is self-limited",
+        "Episcleritis is self-limited; scleritis is not."
+      ],
+      [
+        "Urgent referral to ophthalmology",
+        "Correct — the sclera is at risk of perforation and may need a surgical patch."
+      ],
+      [
+        "Artificial tears and an oral non-steroidal anti-inflammatory, review in two days",
+        "That is the episcleritis pathway; this presentation is far more serious."
+      ]
+    ],
+    "c": 2,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 50"
+  },
+  {
+    "topic": "Herpes zoster ophthalmicus",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "first-line",
+    "slot": "first-line",
+    "q": "A 71-year-old woman presents 48 hours after a dermatomal vesicular rash appeared over her forehead and upper lid. Which is the most appropriate initial management?",
+    "opts": [
+      [
+        "Reassure her that no treatment is needed for a dermatomal rash",
+        "Ocular zoster is a same-day condition."
+      ],
+      [
+        "Start an oral antiviral now and refer for slit lamp examination and dilated fundoscopy",
+        "Correct — within the ideal 72-hour window, and the eye still needs examining."
+      ],
+      [
+        "Wait for ophthalmology to confirm ocular involvement before starting any antiviral",
+        "Delaying wastes the antiviral window."
+      ],
+      [
+        "Start a topical corticosteroid to reduce inflammation",
+        "That decision belongs to ophthalmology."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 59"
+  },
+  {
+    "topic": "Dacryoadenitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "avoid",
+    "slot": "avoid",
+    "q": "A 41-year-old man has dacryoadenitis and the cause is not yet clear. Which action should be avoided?",
+    "opts": [
+      [
+        "Starting corticosteroids before bacterial and other infectious causes have been reasonably excluded",
+        "Correct — bacterial and neoplastic causes must be excluded before steroids."
+      ],
+      [
+        "Giving paracetamol for pain",
+        "Analgesia as needed is appropriate."
+      ],
+      [
+        "Reassessing him after 24 hours of empiric oral antibiotic treatment",
+        "That is exactly right when the cause is unclear."
+      ],
+      [
+        "Monitoring for signs of orbital involvement",
+        "Monitoring for orbital involvement is required."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 23 (speaker notes)"
+  },
+  {
+    "topic": "Ectropion",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "education",
+    "slot": "escalation",
+    "q": "A 77-year-old woman with ectropion asks what will actually fix it. What is the most accurate answer?",
+    "opts": [
+      [
+        "Surgery is the definitive treatment; lubrication only protects the surface in the meantime",
+        "Correct — only surgery restores lid position permanently."
+      ],
+      [
+        "Lubricating ointment used consistently will gradually correct the lid position",
+        "Lubrication protects but does not reposition the lid."
+      ],
+      [
+        "It will resolve on its own within two to four weeks",
+        "That timescale belongs to a subconjunctival haemorrhage."
+      ],
+      [
+        "A course of oral antibiotics will resolve it",
+        "There is no infection."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 13"
+  },
+  {
+    "topic": "Corneal ulcer",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "referral",
+    "q": "A 38-year-old contact lens wearer resists opening a painful watering eye. There is a ring of redness at the corneal edge (ciliary flush) and a white spot on the cornea with surrounding irregularity. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Urgent referral within 24 hours",
+        "That is the keratitis threshold; an ulcer is emergent."
+      ],
+      [
+        "Routine referral within two weeks",
+        "Far too slow for a sight-threatening lesion."
+      ],
+      [
+        "Reassurance and lubricating drops",
+        "This is an open corneal sore, not dry eye."
+      ],
+      [
+        "Emergent referral to ophthalmology",
+        "Correct — a corneal ulcer outranks keratitis's 24-hour window and goes emergently."
+      ]
+    ],
+    "c": 3,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 61"
+  },
+  {
+    "topic": "Blepharitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "escalation",
+    "q": "A 49-year-old woman has completed a two-week lid hygiene regimen for blepharitis with no improvement. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Try a topical antibiotic",
+        "Correct — the escalation runs lid hygiene, then topical antibiotics, then oral."
+      ],
+      [
+        "Go straight to oral antibiotics",
+        "Topical comes before oral."
+      ],
+      [
+        "Refer urgently to ophthalmology today",
+        "Referral follows several weeks without improvement."
+      ],
+      [
+        "Start a topical corticosteroid",
+        "Steroids are not part of the escalation."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 19"
+  },
+  {
+    "topic": "Posterior uveitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "first-line",
+    "slot": "first-line",
+    "q": "A 45-year-old woman has blurred vision, floaters and a patch of missing vision in one eye, with no pain at all. Ophthalmology finds cells in the posterior vitreous and vitreous haze. Which statement about treatment is correct?",
+    "opts": [
+      [
+        "No treatment is required as it resolves spontaneously",
+        "It can last years and threaten vision."
+      ],
+      [
+        "Topical treatment will not work here — an intraocular corticosteroid injection may be required",
+        "Correct — this is the key management difference from anterior uveitis."
+      ],
+      [
+        "Topical corticosteroid drops are the first-line treatment for this",
+        "Posterior disease does not respond to topical therapy."
+      ],
+      [
+        "Oral doxycycline for seven days is first-line",
+        "That treats chlamydial conjunctivitis."
+      ]
+    ],
+    "c": 1,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 65"
+  },
+  {
+    "topic": "Chalazion",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+    "lead": "next step",
+    "slot": "referral",
+    "q": "A 44-year-old woman has had a lid nodule in the same spot for four months, and it has recurred twice in the past year. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Refer to ophthalmology to rule out sebaceous carcinoma",
+        "Correct — recurrence, or persistence beyond two to three months, triggers this specific concern."
+      ],
+      [
+        "Continue warm compresses for another three months",
+        "Persistence at four months is itself the referral trigger."
+      ],
+      [
+        "Start oral antibiotics for two weeks",
+        "There is no infection."
+      ],
+      [
+        "Reassure her that recurrence is normal and no action is needed",
+        "Recurrence is precisely what must be acted on."
+      ]
+    ],
+    "c": 0,
+    "cite": "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx, Slide 21"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

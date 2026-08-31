@@ -303,7 +303,766 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Cellulitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What is the expected course of cellulitis on antibiotic therapy?", "opts": [["It improves visibly within hours, fever resolves within six hours, and erythema clears within three days", "That is faster than the described course."], ["It worsens for the first week before any improvement, with fever expected to persist throughout", "Fever persisting beyond forty-eight hours is a reason to change therapy."], ["It resolves without any change in appearance, since the erythema is not caused by the infection", "The erythema is part of the infection."], ["It may look worse on day one, fever usually resolves within twenty-four hours, inflammation over one to two weeks", "Correct. Fever beyond forty-eight hours prompts a change guided by culture."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 112"}, {"topic": "Acne vulgaris", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Which finding in a woman with persistent acne points toward polycystic ovarian syndrome?", "opts": [["Pustules pierced by a central hair over the thighs and trunk", "That points toward folliculitis."], ["Premenstrual flares of acne with an otherwise normal cycle", "Premenstrual flares are a common feature of ordinary acne."], ["Hirsutism together with irregular or absent menses", "Correct. That combination indicates androgen hypersecretion."], ["Flushing with hot drinks and visible facial telangiectasias", "That points toward rosacea instead."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 17"}, {"topic": "Acne vulgaris", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "slot": "first-line", "q": "Which slides did Professor Jaquith name out loud as really important, and what are they?", "opts": [["The cellulitis versus erysipelas comparison", "Important content, but not the slides she flagged."], ["The necrotizing fasciitis red flags", "Not the slides she flagged."], ["The acne treatment ladder, slides 32 and 33", "Correct — she said 'make sure you know this', which is as direct a flag as the lecture gives."], ["The MRSA risk factor list, slides 44 and 45", "Not the slides she named."]], "c": 2, "cite": "2026-08-19 lecture recording, 15:40"}, {"topic": "Acne vulgaris", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Which class is the typical first-line topical therapy for comedonal and inflammatory acne?", "opts": [["Topical antimicrobials, which act against Cutibacterium acnes in the follicle", "Those are used with benzoyl peroxide but are not comedolytic."], ["Topical dapsone gel, which is anti-inflammatory by an unknown mechanism", "Dapsone gel is an option but not the typical first-line choice."], ["Topical azelaic acid, which is antimicrobial, comedolytic and anti-inflammatory", "Azelaic acid is approved by the Food and Drug Administration for rosacea only."], ["Topical retinoids, which are comedolytic and normalise hyperkeratinisation", "Correct — adapalene, tazarotene and tretinoin, generally the most effective for mild disease."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 20"}, {"topic": "Impetigo", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "slot": "complication", "q": "How does acute post-streptococcal glomerulonephritis present after impetigo?", "opts": [["Migratory arthritis, a new heart murmur and subcutaneous nodules over the elbows", "That describes acute rheumatic fever."], ["Fever with a sandpaper rash, strawberry tongue and circumoral pallor", "That describes scarlet fever."], ["Painless jaundice with pale stools and progressive weight loss", "That picture is unrelated to this complication."], ["Sudden oedema, haematuria with smoky or tea-coloured urine, proteinuria and hypertension", "Correct — especially in three to seven year olds."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 97"}, {"topic": "Pseudomonas folliculitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What is the typical timing and distribution of hot tub folliculitis?", "opts": [["Onset three to seven days after a sore throat, on the face and extremities", "That timing belongs to post-streptococcal glomerulonephritis after impetigo."], ["Onset eight hours to five days after exposure, on the trunk, extremities and buttocks", "Correct. It usually spares the face, neck, soles and palms."], ["Onset two to five days after trauma, around the fingernail folds of the hand", "That is the timing and site of acute paronychia."], ["Onset within forty-eight hours, on the lower extremity with a demarcated border", "That describes erysipelas."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 49"}, {"topic": "Folliculitis", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections", "slot": "agent/regimen", "q": "Professor Jaquith said to write Bactroban as the ointment rather than the cream. Why?", "opts": [["The cream causes more contact irritation on inflamed skin", "Irritation was not the reason she gave."], ["The cream is not licensed for use on the face", "No licensing restriction was described."], ["The cream costs far more and is never covered", "Correct — roughly a hundred times the price, and the ointment is covered. A prescribing detail that appears on no slide."], ["The cream is less effective against Staphylococcus aureus", "The reason she gave was cost and coverage, not potency."]], "c": 2, "cite": "2026-08-19 lecture recording, 22:12"}, {"topic": "Pseudomonas folliculitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What causes hot tub folliculitis and why does it occur?", "opts": [["Streptococcus pyogenes, a Gram-positive organism, from a break in the skin", "That organism causes erysipelas and non-bullous impetigo."], ["Pseudomonas aeruginosa, a Gram-negative organism, from inadequately chlorinated water", "Correct. Whirlpools, hot tubs, water slides and physiotherapy pools are the named sources."], ["Staphylococcus aureus, a Gram-positive organism, from shared towels and razors", "That organism causes ordinary bacterial folliculitis."], ["Corynebacterium minutissimum, a Gram-positive organism, from heat and humidity", "That organism causes erythrasma in intertriginous skin."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 48"}, {"topic": "Impetigo", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Describe the classic appearance of non-bullous impetigo.", "opts": [["A vesicle over inflamed skin deepens into a dermal ulcer with a thick grey-yellow crust", "That is ecthyma."], ["Papules and pustules on an erythematous base, each pierced by a single central hair", "That is folliculitis."], ["A macule evolves into a vesicle or pustule that ruptures, leaving a honey-coloured adherent crust", "Correct, typically on the face and extremities, with regional lymphadenopathy common."], ["Tense clear or cloudy bullae appear on intact skin and leave a collarette after they rupture", "That is bullous impetigo."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 87"}, {"topic": "Cellulitis", "io": "c — Differentiate primary from secondary bacterial infection of the skin", "q": "Which portals of entry are named for cellulitis?", "opts": [["Tinea pedis, open lesion, trauma, surgical wound, insect bite, fissure and radiation therapy", "Correct. Those are distinct from the risk factors, which include diabetes and lymphoedema."], ["Nasal carriage of Staphylococcus aureus, shaving, occlusive clothing and hot humid weather", "Those are risk factors for folliculitis and furuncles."], ["Manicure, ingrown nail, hangnail and nail biting affecting the soft tissue of the finger", "Those are predisposing factors for acute paronychia."], ["Contaminated whirlpools, hot tubs, water slides and inadequately chlorinated pools", "Those are the exposures for Pseudomonas folliculitis."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 106"}, {"topic": "Cellulitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "When can cellulitis be managed without any diagnostic workup?", "opts": [["Limited area of involvement, minimal pain, no systemic signs and no risk factor for serious illness", "Correct. Serious infections warrant blood cultures, punch biopsy, blood count and creatine phosphokinase."], ["Any case in which the patient is afebrile, regardless of the extent of the affected area", "Extent of involvement and risk factors both matter, not fever alone."], ["Any case occurring in a patient under fifty years of age with no history of diabetes", "Age and diabetes are two considerations among several."], ["Only after blood cultures have returned negative and inflammatory markers are normal", "The point is that no workup is needed in that group at all."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 109"}, {"topic": "Chronic paronychia", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What causes chronic paronychia and who is at risk?", "opts": [["A bacterial infection of the soft tissue around the nail, with Staphylococcus aureus commonest", "That describes acute paronychia."], ["A dermatophyte infection of the nail plate itself, with Trichophyton rubrum commonest", "That describes onychomycosis, one of the differentials."], ["A foreign body reaction to a cut hair entering the skin, commonest in those who shave", "That describes pseudofolliculitis barbae."], ["An inflammatory reaction of the proximal nail fold to irritants and allergens, with Candida albicans commonest", "Correct — diabetics, laundry workers, cleaners, cooks, bartenders, dishwashers and swimmers."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 120"}, {"topic": "Chronic paronychia", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "How is chronic paronychia treated?", "opts": [["Topical mupirocin applied to the nail fold three times daily until the swelling settles", "Mupirocin is an antibacterial used for impetigo and staphylococcal carriage."], ["Keep the hands dry and use a broad-spectrum topical antifungal, with oral fluconazole in severe cases", "Correct — treat the underlying inflammation and infection together."], ["Warm soaks three times daily with incision and drainage if purulent material has collected", "That is the treatment of acute paronychia."], ["Oral cephalexin for ten days with removal of the nail plate if there is no early response", "Antibacterial therapy does not address the usual candidal cause."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 123"}, {"topic": "Folliculitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "slot": "escalation", "q": "A patient with folliculitis has not responded to a topical antibiotic and the infection is now extensive. Which oral agents apply?", "opts": [["Doxycycline or minocycline", "Those are the oral tetracyclines used in acne."], ["Cephalexin or dicloxacillin", "Correct — trimethoprim-sulfamethoxazole, ciprofloxacin or linezolid if resistance is suspected."], ["Penicillin V or amoxicillin", "Those are not the agents named for extensive folliculitis."], ["Erythromycin or clarithromycin", "Those are the agents for widespread erythrasma."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 47"}, {"topic": "Erysipelas", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "slot": "initial test", "q": "Which laboratory abnormalities are common in erysipelas, and what do they contribute?", "opts": [["Thrombocytopenia with mild hyponatraemia and transaminitis — and diagnostic in almost every case", "That is the Rocky Mountain spotted fever pattern."], ["Eosinophilia with a raised immunoglobulin E — diagnostic when combined with the rash", "That pattern is not described for erysipelas."], ["Entirely normal inflammatory markers — which is what confirms the diagnosis", "Inflammatory markers are commonly raised."], ["Leukocytosis with raised erythrocyte sedimentation rate and C-reactive protein — common but not diagnostic", "Correct. The diagnosis remains clinical in a classic presentation."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 103"}, {"topic": "Folliculitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What defines folliculitis?", "opts": [["Inflammatory cells within the wall and ostia of the hair follicle, forming a follicular pustule", "Correct. The causes include infection, physical injury and chemical irritation."], ["A deep-seated abscess of the hair follicle and the adjacent subcutaneous tissue", "That defines a furuncle."], ["Inflammation of the cutaneous apocrine glands of the axilla, groin or perineum", "That defines hidradenitis suppurativa."], ["A foreign body reaction to a cut hair that curves back into the wall of the follicle", "That defines pseudofolliculitis barbae."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 38"}, {"topic": "Erysipelas", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Which laboratory and imaging studies are appropriate in classic erysipelas?", "opts": [["None routinely — the diagnosis is clinical, and blood and tissue cultures have very low yield", "Correct. Leukocytosis and raised inflammatory markers are common but not diagnostic."], ["Blood and tissue cultures in every case, since organism identification guides the antibiotic", "Their yield is described as extremely low and not cost effective."], ["Computed tomography of the affected limb to define the depth of tissue involvement", "Imaging is of low yield and not indicated in classic presentation."], ["Punch biopsy of the leading edge to distinguish erysipelas from contact dermatitis", "Biopsy is not part of the routine erysipelas workup."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 103"}, {"topic": "Necrotizing fasciitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "slot": "referral", "q": "Where should a patient with necrotizing fasciitis be admitted?", "opts": [["A surgical intensive care unit, ideally a burn or trauma centre", "Correct — a team approach with consultations is required."], ["A general medical ward with hourly observations", "That level of care is inadequate for this condition."], ["A dermatology inpatient unit for wound management", "The disease is deeper than skin and needs surgical care."], ["An ambulatory unit for daily dressing changes and review", "That is far below the level of care required."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 131"}, {"topic": "Impetigo", "io": "d — Medical care strategies across infant, adolescent, adult and elderly populations", "q": "What isolation advice is given for a child with impetigo?", "opts": [["Isolate until treatment has been underway for twenty-four to forty-eight hours", "Correct, and do not share towels, clothing, bath water, washcloths or razors."], ["Isolate until every crusted lesion has completely healed and the skin is clear", "The stated interval is tied to starting treatment, not to healing."], ["No isolation is needed at any point, since impetigo does not spread person to person", "Impetigo is described as very contagious and autoinoculable."], ["Isolate for a full ten days from the appearance of the very first crusted lesion", "That is longer than the interval given."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 96"}, {"topic": "Cellulitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Which layers does cellulitis involve, and which organisms cause it?", "opts": [["The superficial epidermis alone, from Staphylococcus aureus or Streptococcus pyogenes", "That describes impetigo."], ["The stratum corneum of intertriginous skin, from Corynebacterium minutissimum", "That describes erythrasma."], ["The deeper dermis and subcutaneous tissue, from Group A streptococci or Staphylococcus aureus", "Correct. It may be purulent or non-purulent, which changes the antibiotic choice."], ["The upper dermis and superficial lymphatics, almost always from Group A streptococci", "That describes erysipelas."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 105"}, {"topic": "Erythrasma", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "Where does erythrasma most commonly appear?", "opts": [["Lower extremity in most patients, almost never affecting both legs", "That is the distribution of cellulitis."], ["Inner thighs, crural region, scrotum, and between the fourth and fifth toes", "Correct. Less common sites are the axilla, under the breasts and intergluteal folds."], ["Back of the neck, face, axillae and buttocks, favouring areas of friction", "That is the distribution of furuncles and carbuncles."], ["Face and extremities, spreading by scratching and self-inoculation", "That is the distribution of non-bullous impetigo."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 81"}, {"topic": "Pseudofolliculitis barbae", "io": "b, c & d — MRSA, primary versus secondary infection, and care across the age range", "slot": "epidemiology", "q": "In whom did Professor Jaquith say pseudofolliculitis barbae most commonly occurs?", "opts": [["Adolescents of any background during puberty", "Age was not the factor she described."], ["Black and brown males, or anyone with curlier facial or body hair", "Correct — hair curvature is the mechanism, not hygiene, and she called it very common."], ["Fair-skinned males who shave daily with a multi-blade razor", "Skin tone is not the driver; hair curvature is."], ["Females who wax rather than shave", "Not the group she named."]], "c": 1, "cite": "2026-08-19 lecture recording, 26:14"}, {"topic": "Cellulitis", "io": "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections", "q": "How does purulence change the antibiotic choice in cellulitis?", "opts": [["Purulent cellulitis prompts cover for methicillin-resistant Staphylococcus aureus", "Correct — trimethoprim-sulfamethoxazole, doxycycline, clindamycin or linezolid."], ["Purulent cellulitis prompts a switch to penicillin V to cover Group A streptococcus", "Penicillin V is the erysipelas treatment."], ["Purulent cellulitis prompts topical mupirocin in addition to the oral antibiotic", "Topical mupirocin is used in impetigo and for nasal decolonisation."], ["Purulent cellulitis prompts oral fluconazole because yeast is likely to be present", "Antifungal therapy belongs to chronic paronychia."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 110"}, {"topic": "Impetigo", "io": "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections", "q": "When should cultures be obtained in impetigo?", "opts": [["Only when the lesions have failed to respond after a full two-week course of topical mupirocin", "Culture is directed by resistance risk and complications, not treatment duration."], ["Only in children under three years of age, since they are the group at highest risk of complications", "Post-streptococcal glomerulonephritis particularly affects three to seven year olds."], ["When the patient is at high risk for methicillin-resistant Staphylococcus aureus, or when post-streptococcal glomerulonephritis is present", "Correct — a health-care worker or teacher is the example given of high risk."], ["In every case at first presentation, since staphylococcal and streptococcal disease are treated differently from one another", "Impetigo is most often diagnosed by clinical appearance alone."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 93"}, {"topic": "Cellulitis", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "slot": "differential", "q": "Which feature distinguishes contact dermatitis from cellulitis?", "opts": [["Warmth and tenderness with a rapidly expanding border", "Those are the features of cellulitis itself."], ["A raised plaque with a sharply demarcated edge", "That points to erysipelas."], ["Pain out of proportion to the physical examination", "That points to necrotizing fasciitis."], ["Itching and vesicles with an absence of fever", "Correct — cellulitis is tender and warm rather than itchy."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 108"}, {"topic": "Hidradenitis suppurativa", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What is hidradenitis suppurativa and where does it occur?", "opts": [["Inflammation of the eccrine sweat glands, most often on the palms, soles and the axillary vault", "Eccrine glands are the ones involved in hyperhidrosis, not this condition."], ["Infection of the upper third of the stratum corneum in intertriginous skin under heat and humidity", "That describes erythrasma."], ["Infection of the hair follicle extending into the adjacent subcutaneous fat of the neck and back", "That describes a furuncle."], ["Inflammation of cutaneous apocrine glands, most often in the axilla, and also groin, breasts or perineum", "Correct. It is also called acne inversa because it resembles acne vulgaris."]], "c": 3, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 68"}, {"topic": "Furuncles and carbuncles", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "How does a carbuncle differ from a furuncle at presentation?", "opts": [["It presents as a plaque raised above the skin with a demarcated edge", "That describes erysipelas."], ["It is extremely painful and more often produces malaise, chills and fever", "Correct. Systemic symptoms are more common with a carbuncle."], ["It is painless and produces no systemic symptoms of any kind at all", "Carbuncles are described as extremely painful."], ["It presents as a single opening with a surrounding zone of erythema", "That is the furuncle. Carbuncles have sieve-like multiple openings."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 63"}, {"topic": "MRSA considerations", "io": "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections", "q": "Which trait is shared by the oral agents named across this lecture for methicillin-resistant Staphylococcus aureus skin infection?", "opts": [["Penicillin V, erythromycin and clarithromycin recur as the core options", "Those cover streptococcal and corynebacterial infection."], ["Mupirocin, retapamulin and fusidic acid recur as the core options", "Those are topical agents rather than oral ones."], ["Trimethoprim-sulfamethoxazole, clindamycin and doxycycline recur as the core options", "Correct, with linezolid and ciprofloxacin added in particular settings."], ["Dicloxacillin, cephalexin and amoxicillin-clavulanate recur as the core options", "Those are the agents for methicillin-sensitive disease."]], "c": 2, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 66"}, {"topic": "Acute paronychia", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "How is acute paronychia treated?", "opts": [["Warm soaks for twenty minutes three times daily in mild cases; incision and drainage in severe cases", "Correct, with oral antibiotics and cultures to rule out resistant organisms where appropriate."], ["A broad-spectrum topical antifungal in all cases, with oral fluconazole if the disease is severe", "That is the treatment of chronic paronychia."], ["Immediate nail plate removal in all cases, since the nail harbours the responsible organism", "Nail removal is not the described treatment."], ["Oral antibiotics alone in all cases, since incision of the nail fold risks permanent deformity", "Incision and drainage is used in severe cases."]], "c": 0, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 119"}, {"topic": "Impetigo", "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections", "q": "What level of the skin does impetigo infect, and which organisms cause it?", "opts": [["An infection of the tissue surrounding muscle and fascia, usually polymicrobial in nature", "That describes necrotizing fasciitis."], ["A superficial epidermal infection, most often Staphylococcus aureus or Streptococcus pyogenes", "Correct. It is very contagious and autoinoculable, and common in infants and children."], ["An infection of the upper dermis and superficial lymphatics, most often Streptococcus pyogenes", "That describes erysipelas."], ["An infection of the deeper dermis and subcutaneous tissue, streptococcal or staphylococcal", "That describes cellulitis."]], "c": 1, "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 85"}];
+const QUESTIONS = [
+  {
+    "topic": "Cellulitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What is the expected course of cellulitis on antibiotic therapy?",
+    "opts": [
+      [
+        "It improves visibly within hours, fever resolves within six hours, and erythema clears within three days",
+        "That is faster than the described course."
+      ],
+      [
+        "It worsens for the first week before any improvement, with fever expected to persist throughout",
+        "Fever persisting beyond forty-eight hours is a reason to change therapy."
+      ],
+      [
+        "It resolves without any change in appearance, since the erythema is not caused by the infection",
+        "The erythema is part of the infection."
+      ],
+      [
+        "It may look worse on day one, fever usually resolves within twenty-four hours, inflammation over one to two weeks",
+        "Correct. Fever beyond forty-eight hours prompts a change guided by culture."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 112"
+  },
+  {
+    "topic": "Acne vulgaris",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "Which finding in a woman with persistent acne points toward polycystic ovarian syndrome?",
+    "opts": [
+      [
+        "Pustules pierced by a central hair over the thighs and trunk",
+        "That points toward folliculitis."
+      ],
+      [
+        "Premenstrual flares of acne with an otherwise normal cycle",
+        "Premenstrual flares are a common feature of ordinary acne."
+      ],
+      [
+        "Hirsutism together with irregular or absent menses",
+        "Correct. That combination indicates androgen hypersecretion."
+      ],
+      [
+        "Flushing with hot drinks and visible facial telangiectasias",
+        "That points toward rosacea instead."
+      ]
+    ],
+    "c": 2,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 17"
+  },
+  {
+    "topic": "Acne vulgaris",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections",
+    "slot": "first-line",
+    "q": "A patient's acne has papules and pustules that have not settled on a topical retinoid with benzoyl peroxide. What is added next?",
+    "opts": [
+      [
+        "Oral isotretinoin straight away",
+        "Isotretinoin is reserved for severe nodular disease."
+      ],
+      [
+        "A stronger topical retinoid",
+        "Escalating the retinoid does not address the inflammatory component."
+      ],
+      [
+        "An oral antibiotic",
+        "Correct — an oral antibiotic joins the topical retinoid and benzoyl peroxide at this rung."
+      ],
+      [
+        "A six-week oral corticosteroid",
+        "Systemic steroids have no place in routine acne management."
+      ]
+    ],
+    "c": 2,
+    "cite": "2026-08-19 lecture recording, 15:40"
+  },
+  {
+    "topic": "Acne vulgaris",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "Which class is the typical first-line topical therapy for comedonal and inflammatory acne?",
+    "opts": [
+      [
+        "Topical antimicrobials, which act against Cutibacterium acnes in the follicle",
+        "Those are used with benzoyl peroxide but are not comedolytic."
+      ],
+      [
+        "Topical dapsone gel, which is anti-inflammatory by an unknown mechanism",
+        "Dapsone gel is an option but not the typical first-line choice."
+      ],
+      [
+        "Topical azelaic acid, which is antimicrobial, comedolytic and anti-inflammatory",
+        "Azelaic acid is approved by the Food and Drug Administration for rosacea only."
+      ],
+      [
+        "Topical retinoids, which are comedolytic and normalise hyperkeratinisation",
+        "Correct — adapalene, tazarotene and tretinoin, generally the most effective for mild disease."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 20"
+  },
+  {
+    "topic": "Impetigo",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "slot": "complication",
+    "q": "How does acute post-streptococcal glomerulonephritis present after impetigo?",
+    "opts": [
+      [
+        "Migratory arthritis, a new heart murmur and subcutaneous nodules over the elbows",
+        "That describes acute rheumatic fever."
+      ],
+      [
+        "Fever with a sandpaper rash, strawberry tongue and circumoral pallor",
+        "That describes scarlet fever."
+      ],
+      [
+        "Painless jaundice with pale stools and progressive weight loss",
+        "That picture is unrelated to this complication."
+      ],
+      [
+        "Sudden oedema, haematuria with smoky or tea-coloured urine, proteinuria and hypertension",
+        "Correct — especially in three to seven year olds."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 97"
+  },
+  {
+    "topic": "Pseudomonas folliculitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What is the typical timing and distribution of hot tub folliculitis?",
+    "opts": [
+      [
+        "Onset three to seven days after a sore throat, on the face and extremities",
+        "That timing belongs to post-streptococcal glomerulonephritis after impetigo."
+      ],
+      [
+        "Onset eight hours to five days after exposure, on the trunk, extremities and buttocks",
+        "Correct. It usually spares the face, neck, soles and palms."
+      ],
+      [
+        "Onset two to five days after trauma, around the fingernail folds of the hand",
+        "That is the timing and site of acute paronychia."
+      ],
+      [
+        "Onset within forty-eight hours, on the lower extremity with a demarcated border",
+        "That describes erysipelas."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 49"
+  },
+  {
+    "topic": "Folliculitis",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis of cutaneous bacterial infections",
+    "slot": "agent/regimen",
+    "q": "Why is Bactroban written as the ointment rather than the cream?",
+    "opts": [
+      [
+        "The cream causes more contact irritation on inflamed skin",
+        "Irritation was not the reason she gave."
+      ],
+      [
+        "The cream is not licensed for use on the face",
+        "No licensing restriction was described."
+      ],
+      [
+        "The cream costs far more and is never covered",
+        "Correct — roughly a hundred times the price, and the ointment is covered. A prescribing detail that appears on no slide."
+      ],
+      [
+        "The cream is less effective against Staphylococcus aureus",
+        "The reason she gave was cost and coverage, not potency."
+      ]
+    ],
+    "c": 2,
+    "cite": "2026-08-19 lecture recording, 22:12"
+  },
+  {
+    "topic": "Pseudomonas folliculitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What causes hot tub folliculitis and why does it occur?",
+    "opts": [
+      [
+        "Streptococcus pyogenes, a Gram-positive organism, from a break in the skin",
+        "That organism causes erysipelas and non-bullous impetigo."
+      ],
+      [
+        "Pseudomonas aeruginosa, a Gram-negative organism, from inadequately chlorinated water",
+        "Correct. Whirlpools, hot tubs, water slides and physiotherapy pools are the named sources."
+      ],
+      [
+        "Staphylococcus aureus, a Gram-positive organism, from shared towels and razors",
+        "That organism causes ordinary bacterial folliculitis."
+      ],
+      [
+        "Corynebacterium minutissimum, a Gram-positive organism, from heat and humidity",
+        "That organism causes erythrasma in intertriginous skin."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 48"
+  },
+  {
+    "topic": "Impetigo",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "Describe the classic appearance of non-bullous impetigo.",
+    "opts": [
+      [
+        "A vesicle over inflamed skin deepens into a dermal ulcer with a thick grey-yellow crust",
+        "That is ecthyma."
+      ],
+      [
+        "Papules and pustules on an erythematous base, each pierced by a single central hair",
+        "That is folliculitis."
+      ],
+      [
+        "A macule evolves into a vesicle or pustule that ruptures, leaving a honey-coloured adherent crust",
+        "Correct, typically on the face and extremities, with regional lymphadenopathy common."
+      ],
+      [
+        "Tense clear or cloudy bullae appear on intact skin and leave a collarette after they rupture",
+        "That is bullous impetigo."
+      ]
+    ],
+    "c": 2,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 87"
+  },
+  {
+    "topic": "Cellulitis",
+    "io": "c — Differentiate primary from secondary bacterial infection of the skin",
+    "q": "Which portals of entry are named for cellulitis?",
+    "opts": [
+      [
+        "Tinea pedis, open lesion, trauma, surgical wound, insect bite, fissure and radiation therapy",
+        "Correct. Those are distinct from the risk factors, which include diabetes and lymphoedema."
+      ],
+      [
+        "Nasal carriage of Staphylococcus aureus, shaving, occlusive clothing and hot humid weather",
+        "Those are risk factors for folliculitis and furuncles."
+      ],
+      [
+        "Manicure, ingrown nail, hangnail and nail biting affecting the soft tissue of the finger",
+        "Those are predisposing factors for acute paronychia."
+      ],
+      [
+        "Contaminated whirlpools, hot tubs, water slides and inadequately chlorinated pools",
+        "Those are the exposures for Pseudomonas folliculitis."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 106"
+  },
+  {
+    "topic": "Cellulitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "When can cellulitis be managed without any diagnostic workup?",
+    "opts": [
+      [
+        "Limited area of involvement, minimal pain, no systemic signs and no risk factor for serious illness",
+        "Correct. Serious infections warrant blood cultures, punch biopsy, blood count and creatine phosphokinase."
+      ],
+      [
+        "Any case in which the patient is afebrile, regardless of the extent of the affected area",
+        "Extent of involvement and risk factors both matter, not fever alone."
+      ],
+      [
+        "Any case occurring in a patient under fifty years of age with no history of diabetes",
+        "Age and diabetes are two considerations among several."
+      ],
+      [
+        "Only after blood cultures have returned negative and inflammatory markers are normal",
+        "The point is that no workup is needed in that group at all."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 109"
+  },
+  {
+    "topic": "Chronic paronychia",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What causes chronic paronychia and who is at risk?",
+    "opts": [
+      [
+        "A bacterial infection of the soft tissue around the nail, with Staphylococcus aureus commonest",
+        "That describes acute paronychia."
+      ],
+      [
+        "A dermatophyte infection of the nail plate itself, with Trichophyton rubrum commonest",
+        "That describes onychomycosis, one of the differentials."
+      ],
+      [
+        "A foreign body reaction to a cut hair entering the skin, commonest in those who shave",
+        "That describes pseudofolliculitis barbae."
+      ],
+      [
+        "An inflammatory reaction of the proximal nail fold to irritants and allergens, with Candida albicans commonest",
+        "Correct — diabetics, laundry workers, cleaners, cooks, bartenders, dishwashers and swimmers."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 120"
+  },
+  {
+    "topic": "Chronic paronychia",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "How is chronic paronychia treated?",
+    "opts": [
+      [
+        "Topical mupirocin applied to the nail fold three times daily until the swelling settles",
+        "Mupirocin is an antibacterial used for impetigo and staphylococcal carriage."
+      ],
+      [
+        "Keep the hands dry and use a broad-spectrum topical antifungal, with oral fluconazole in severe cases",
+        "Correct — treat the underlying inflammation and infection together."
+      ],
+      [
+        "Warm soaks three times daily with incision and drainage if purulent material has collected",
+        "That is the treatment of acute paronychia."
+      ],
+      [
+        "Oral cephalexin for ten days with removal of the nail plate if there is no early response",
+        "Antibacterial therapy does not address the usual candidal cause."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 123"
+  },
+  {
+    "topic": "Folliculitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "slot": "escalation",
+    "q": "A patient with folliculitis has not responded to a topical antibiotic and the infection is now extensive. Which oral agents apply?",
+    "opts": [
+      [
+        "Doxycycline or minocycline",
+        "Those are the oral tetracyclines used in acne."
+      ],
+      [
+        "Cephalexin or dicloxacillin",
+        "Correct — trimethoprim-sulfamethoxazole, ciprofloxacin or linezolid if resistance is suspected."
+      ],
+      [
+        "Penicillin V or amoxicillin",
+        "Those are not the agents named for extensive folliculitis."
+      ],
+      [
+        "Erythromycin or clarithromycin",
+        "Those are the agents for widespread erythrasma."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 47"
+  },
+  {
+    "topic": "Erysipelas",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "slot": "initial test",
+    "q": "Which laboratory abnormalities are common in erysipelas, and what do they contribute?",
+    "opts": [
+      [
+        "Thrombocytopenia with mild hyponatraemia and transaminitis — and diagnostic in almost every case",
+        "That is the Rocky Mountain spotted fever pattern."
+      ],
+      [
+        "Eosinophilia with a raised immunoglobulin E — diagnostic when combined with the rash",
+        "That pattern is not described for erysipelas."
+      ],
+      [
+        "Entirely normal inflammatory markers — which is what confirms the diagnosis",
+        "Inflammatory markers are commonly raised."
+      ],
+      [
+        "Leukocytosis with raised erythrocyte sedimentation rate and C-reactive protein — common but not diagnostic",
+        "Correct. The diagnosis remains clinical in a classic presentation."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 103"
+  },
+  {
+    "topic": "Folliculitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What defines folliculitis?",
+    "opts": [
+      [
+        "Inflammatory cells within the wall and ostia of the hair follicle, forming a follicular pustule",
+        "Correct. The causes include infection, physical injury and chemical irritation."
+      ],
+      [
+        "A deep-seated abscess of the hair follicle and the adjacent subcutaneous tissue",
+        "That defines a furuncle."
+      ],
+      [
+        "Inflammation of the cutaneous apocrine glands of the axilla, groin or perineum",
+        "That defines hidradenitis suppurativa."
+      ],
+      [
+        "A foreign body reaction to a cut hair that curves back into the wall of the follicle",
+        "That defines pseudofolliculitis barbae."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 38"
+  },
+  {
+    "topic": "Erysipelas",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "Which laboratory and imaging studies are appropriate in classic erysipelas?",
+    "opts": [
+      [
+        "None routinely — the diagnosis is clinical, and blood and tissue cultures have very low yield",
+        "Correct. Leukocytosis and raised inflammatory markers are common but not diagnostic."
+      ],
+      [
+        "Blood and tissue cultures in every case, since organism identification guides the antibiotic",
+        "Their yield is described as extremely low and not cost effective."
+      ],
+      [
+        "Computed tomography of the affected limb to define the depth of tissue involvement",
+        "Imaging is of low yield and not indicated in classic presentation."
+      ],
+      [
+        "Punch biopsy of the leading edge to distinguish erysipelas from contact dermatitis",
+        "Biopsy is not part of the routine erysipelas workup."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 103"
+  },
+  {
+    "topic": "Necrotizing fasciitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "slot": "referral",
+    "q": "Where should a patient with necrotizing fasciitis be admitted?",
+    "opts": [
+      [
+        "A surgical intensive care unit, ideally a burn or trauma centre",
+        "Correct — a team approach with consultations is required."
+      ],
+      [
+        "A general medical ward with hourly observations",
+        "That level of care is inadequate for this condition."
+      ],
+      [
+        "A dermatology inpatient unit for wound management",
+        "The disease is deeper than skin and needs surgical care."
+      ],
+      [
+        "An ambulatory unit for daily dressing changes and review",
+        "That is far below the level of care required."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 131"
+  },
+  {
+    "topic": "Impetigo",
+    "io": "d — Medical care strategies across infant, adolescent, adult and elderly populations",
+    "q": "What isolation advice is given for a child with impetigo?",
+    "opts": [
+      [
+        "Isolate until treatment has been underway for twenty-four to forty-eight hours",
+        "Correct, and do not share towels, clothing, bath water, washcloths or razors."
+      ],
+      [
+        "Isolate until every crusted lesion has completely healed and the skin is clear",
+        "The stated interval is tied to starting treatment, not to healing."
+      ],
+      [
+        "No isolation is needed at any point, since impetigo does not spread person to person",
+        "Impetigo is described as very contagious and autoinoculable."
+      ],
+      [
+        "Isolate for a full ten days from the appearance of the very first crusted lesion",
+        "That is longer than the interval given."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 96"
+  },
+  {
+    "topic": "Cellulitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "Which layers does cellulitis involve, and which organisms cause it?",
+    "opts": [
+      [
+        "The superficial epidermis alone, from Staphylococcus aureus or Streptococcus pyogenes",
+        "That describes impetigo."
+      ],
+      [
+        "The stratum corneum of intertriginous skin, from Corynebacterium minutissimum",
+        "That describes erythrasma."
+      ],
+      [
+        "The deeper dermis and subcutaneous tissue, from Group A streptococci or Staphylococcus aureus",
+        "Correct. It may be purulent or non-purulent, which changes the antibiotic choice."
+      ],
+      [
+        "The upper dermis and superficial lymphatics, almost always from Group A streptococci",
+        "That describes erysipelas."
+      ]
+    ],
+    "c": 2,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 105"
+  },
+  {
+    "topic": "Erythrasma",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "Where does erythrasma most commonly appear?",
+    "opts": [
+      [
+        "Lower extremity in most patients, almost never affecting both legs",
+        "That is the distribution of cellulitis."
+      ],
+      [
+        "Inner thighs, crural region, scrotum, and between the fourth and fifth toes",
+        "Correct. Less common sites are the axilla, under the breasts and intergluteal folds."
+      ],
+      [
+        "Back of the neck, face, axillae and buttocks, favouring areas of friction",
+        "That is the distribution of furuncles and carbuncles."
+      ],
+      [
+        "Face and extremities, spreading by scratching and self-inoculation",
+        "That is the distribution of non-bullous impetigo."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 81"
+  },
+  {
+    "topic": "Pseudofolliculitis barbae",
+    "io": "b, c & d — MRSA, primary versus secondary infection, and care across the age range",
+    "slot": "epidemiology",
+    "q": "In whom does pseudofolliculitis barbae most commonly occur?",
+    "opts": [
+      [
+        "Adolescents of any background during puberty",
+        "Age was not the factor she described."
+      ],
+      [
+        "Black and brown males, or anyone with curlier facial or body hair",
+        "Correct — hair curvature is the mechanism, not hygiene, and she called it very common."
+      ],
+      [
+        "Fair-skinned males who shave daily with a multi-blade razor",
+        "Skin tone is not the driver; hair curvature is."
+      ],
+      [
+        "Females who wax rather than shave",
+        "Not the group she named."
+      ]
+    ],
+    "c": 1,
+    "cite": "2026-08-19 lecture recording, 26:14"
+  },
+  {
+    "topic": "Cellulitis",
+    "io": "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections",
+    "q": "How does purulence change the antibiotic choice in cellulitis?",
+    "opts": [
+      [
+        "Purulent cellulitis prompts cover for methicillin-resistant Staphylococcus aureus",
+        "Correct — trimethoprim-sulfamethoxazole, doxycycline, clindamycin or linezolid."
+      ],
+      [
+        "Purulent cellulitis prompts a switch to penicillin V to cover Group A streptococcus",
+        "Penicillin V is the erysipelas treatment."
+      ],
+      [
+        "Purulent cellulitis prompts topical mupirocin in addition to the oral antibiotic",
+        "Topical mupirocin is used in impetigo and for nasal decolonisation."
+      ],
+      [
+        "Purulent cellulitis prompts oral fluconazole because yeast is likely to be present",
+        "Antifungal therapy belongs to chronic paronychia."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 110"
+  },
+  {
+    "topic": "Impetigo",
+    "io": "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections",
+    "q": "When should cultures be obtained in impetigo?",
+    "opts": [
+      [
+        "Only when the lesions have failed to respond after a full two-week course of topical mupirocin",
+        "Culture is directed by resistance risk and complications, not treatment duration."
+      ],
+      [
+        "Only in children under three years of age, since they are the group at highest risk of complications",
+        "Post-streptococcal glomerulonephritis particularly affects three to seven year olds."
+      ],
+      [
+        "When the patient is at high risk for methicillin-resistant Staphylococcus aureus, or when post-streptococcal glomerulonephritis is present",
+        "Correct — a health-care worker or teacher is the example given of high risk."
+      ],
+      [
+        "In every case at first presentation, since staphylococcal and streptococcal disease are treated differently from one another",
+        "Impetigo is most often diagnosed by clinical appearance alone."
+      ]
+    ],
+    "c": 2,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 93"
+  },
+  {
+    "topic": "Cellulitis",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "slot": "differential",
+    "q": "Which feature distinguishes contact dermatitis from cellulitis?",
+    "opts": [
+      [
+        "Warmth and tenderness with a rapidly expanding border",
+        "Those are the features of cellulitis itself."
+      ],
+      [
+        "A raised plaque with a sharply demarcated edge",
+        "That points to erysipelas."
+      ],
+      [
+        "Pain out of proportion to the physical examination",
+        "That points to necrotizing fasciitis."
+      ],
+      [
+        "Itching and vesicles with an absence of fever",
+        "Correct — cellulitis is tender and warm rather than itchy."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 108"
+  },
+  {
+    "topic": "Hidradenitis suppurativa",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What is hidradenitis suppurativa and where does it occur?",
+    "opts": [
+      [
+        "Inflammation of the eccrine sweat glands, most often on the palms, soles and the axillary vault",
+        "Eccrine glands are the ones involved in hyperhidrosis, not this condition."
+      ],
+      [
+        "Infection of the upper third of the stratum corneum in intertriginous skin under heat and humidity",
+        "That describes erythrasma."
+      ],
+      [
+        "Infection of the hair follicle extending into the adjacent subcutaneous fat of the neck and back",
+        "That describes a furuncle."
+      ],
+      [
+        "Inflammation of cutaneous apocrine glands, most often in the axilla, and also groin, breasts or perineum",
+        "Correct. It is also called acne inversa because it resembles acne vulgaris."
+      ]
+    ],
+    "c": 3,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 68"
+  },
+  {
+    "topic": "Furuncles and carbuncles",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "How does a carbuncle differ from a furuncle at presentation?",
+    "opts": [
+      [
+        "It presents as a plaque raised above the skin with a demarcated edge",
+        "That describes erysipelas."
+      ],
+      [
+        "It is extremely painful and more often produces malaise, chills and fever",
+        "Correct. Systemic symptoms are more common with a carbuncle."
+      ],
+      [
+        "It is painless and produces no systemic symptoms of any kind at all",
+        "Carbuncles are described as extremely painful."
+      ],
+      [
+        "It presents as a single opening with a surrounding zone of erythema",
+        "That is the furuncle. Carbuncles have sieve-like multiple openings."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 63"
+  },
+  {
+    "topic": "MRSA considerations",
+    "io": "b — Unique considerations of methicillin-resistant Staphylococcus aureus skin infections",
+    "q": "Which trait is shared by the oral agents used for methicillin-resistant Staphylococcus aureus skin infection?",
+    "opts": [
+      [
+        "Penicillin V, erythromycin and clarithromycin recur as the core options",
+        "Those cover streptococcal and corynebacterial infection."
+      ],
+      [
+        "Mupirocin, retapamulin and fusidic acid recur as the core options",
+        "Those are topical agents rather than oral ones."
+      ],
+      [
+        "Trimethoprim-sulfamethoxazole, clindamycin and doxycycline recur as the core options",
+        "Correct, with linezolid and ciprofloxacin added in particular settings."
+      ],
+      [
+        "Dicloxacillin, cephalexin and amoxicillin-clavulanate recur as the core options",
+        "Those are the agents for methicillin-sensitive disease."
+      ]
+    ],
+    "c": 2,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 66"
+  },
+  {
+    "topic": "Acute paronychia",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "How is acute paronychia treated?",
+    "opts": [
+      [
+        "Warm soaks for twenty minutes three times daily in mild cases; incision and drainage in severe cases",
+        "Correct, with oral antibiotics and cultures to rule out resistant organisms where appropriate."
+      ],
+      [
+        "A broad-spectrum topical antifungal in all cases, with oral fluconazole if the disease is severe",
+        "That is the treatment of chronic paronychia."
+      ],
+      [
+        "Immediate nail plate removal in all cases, since the nail harbours the responsible organism",
+        "Nail removal is not the described treatment."
+      ],
+      [
+        "Oral antibiotics alone in all cases, since incision of the nail fold risks permanent deformity",
+        "Incision and drainage is used in severe cases."
+      ]
+    ],
+    "c": 0,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 119"
+  },
+  {
+    "topic": "Impetigo",
+    "io": "a — Etiologies, epidemiology, risk factors, manifestations, differential diagnosis, testing, management, referrals, education and prognosis for cutaneous bacterial infections",
+    "q": "What level of the skin does impetigo infect, and which organisms cause it?",
+    "opts": [
+      [
+        "An infection of the tissue surrounding muscle and fascia, usually polymicrobial in nature",
+        "That describes necrotizing fasciitis."
+      ],
+      [
+        "A superficial epidermal infection, most often Staphylococcus aureus or Streptococcus pyogenes",
+        "Correct. It is very contagious and autoinoculable, and common in infants and children."
+      ],
+      [
+        "An infection of the upper dermis and superficial lymphatics, most often Streptococcus pyogenes",
+        "That describes erysipelas."
+      ],
+      [
+        "An infection of the deeper dermis and subcutaneous tissue, streptococcal or staphylococcal",
+        "That describes cellulitis."
+      ]
+    ],
+    "c": 1,
+    "cite": "4.  Cutaneous Bacterial Infections.pptx, Slide 85"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

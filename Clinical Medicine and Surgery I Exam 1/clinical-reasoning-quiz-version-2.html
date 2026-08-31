@@ -303,7 +303,758 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Clinical guidelines", "io": "Discuss clinical principles and decision-making", "q": "\"If a patient is febrile and neutropenic, then use broad-spectrum antibiotics\" is given as an example of what?", "opts": [["The naturalistic, event-driven approach", "The naturalistic approach treats signs and symptoms before a definitive diagnosis in unstable patients, rather than applying a published rule."], ["A clinical guideline following an if-then rule", "Correct. The lecture offers this as its example of a guideline built on an if-then rule."], ["A quantitative technique using odds and probability", "No probability calculation is involved in applying this rule."], ["A counselling strategy for treatment adherence", "Counselling strategies concern helping patients adhere to plans, not selecting antibiotics."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 23"}, {"topic": "Posttest probability", "io": "Define posttest probability", "q": "Two clinicians order the same test with identical sensitivity and specificity, for two patients whose pretest probabilities differ substantially. What follows?", "opts": [["The test result means the same thing for both patients", "It does not. Posttest probability depends on where you started as well as on the test's characteristics."], ["The sensitivity and specificity of the test will differ between the two patients being evaluated", "Sensitivity and specificity are properties of the test itself and do not change between patients."], ["Neither patient's probability changes once the result is known", "The purpose of testing is precisely to move from a pretest to a posttest probability."], ["Their posttest probabilities will differ, because posttest probability builds on the pretest estimate", "Correct. Posttest probability is the likelihood after the result is known, and it is the pretest likelihood revised by the test's sensitivity and specificity."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 9"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "Specificity is related to fewer of which type of erroneous result, and is silent about which other?", "opts": [["Fewer false-negatives; silent about false-positives", "This describes sensitivity. The two properties are reversed here."], ["Fewer false-positives; silent about false-negatives", "Correct. Specificity is related to fewer false-positives, and the lecture notes that specificity does not address false-negatives."], ["Fewer true-positives; silent about true-negatives", "Neither property is defined in terms of reducing correct results."], ["Fewer false-positives; silent about true-positives", "The first half is right, but the lecture's stated blind spot for specificity is false-negatives, not true-positives."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"}, {"topic": "Course framework", "io": "Discuss clinical principles and decision-making", "q": "Which body systems does the course description list as the focus of Clinical Medicine and Surgery I?", "opts": [["Neurology, psychiatry, endocrinology, and nephrology", "None of these are the six areas named for this course."], ["Dermatology, ophthalmology, otorhinolaryngology, cardiology, pulmonology, and haematology-oncology", "Correct. These six are listed, with emphasis on etiology, clinical manifestations, diagnostic evaluation and management."], ["Musculoskeletal medicine, rheumatology, gastroenterology, urology, and reproductive endocrinology", "These appear only as categories within the differential-diagnosis mnemonic, not as course topics."], ["Obstetrics, gynaecology, paediatrics, and geriatrics", "These are not among the systems listed for this course."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 2"}, {"topic": "Pretest probability", "io": "Define pretest probability", "q": "The lecture advises placing your bets on which of the following?", "opts": [["Uncommon manifestations of common conditions", "Correct. The lecture states this explicitly, in preference to common manifestations of uncommon conditions."], ["Common manifestations of uncommon conditions", "This is the option the lecture advises against betting on."], ["Uncommon manifestations of uncommon conditions", "Neither half of this is favoured; it compounds two low-probability assumptions."], ["Whichever diagnosis the pattern most quickly suggests", "Rapid pattern recognition is described as the lowest level of decision-making and prone to error."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 25"}, {"topic": "Clinical reasoning process", "io": "Discuss clinical principles and decision-making", "q": "What is the first step of the clinical reasoning process as presented in the lecture?", "opts": [["Gather initial patient information", "Correct. Step 1 is gathering initial patient information; interpretation, synthesis and hypothesis generation all follow it."], ["Generate hypotheses", "Hypothesis generation is Step 4, after information has been gathered, organised and synthesised."], ["Plan the diagnostic and treatment strategy", "Planning strategy is the final step, Step 6."], ["Establish a working diagnosis", "A working diagnosis is established at Step 5, once hypotheses have been tested."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 11"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "A test is described as able to correctly identify patients who do NOT have the disease. Which property is being described?", "opts": [["Pretest probability", "Pretest probability is a property of the patient and population before testing, not an ability of the test itself."], ["Sensitivity", "Sensitivity is the ability to correctly identify patients who DO have the disease."], ["Specificity", "Correct. The lecture's paired prompt defines specificity as the ability to correctly identify patients who do not have the disease or condition."], ["Posttest probability", "Posttest probability is the revised likelihood after a result is known, not the test's ability to classify well patients."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 8"}, {"topic": "Implications for treatment", "io": "Discuss the implications for treatment", "q": "Besides the probability of disease, which two factors does the lecture list in the decision to treat?", "opts": [["Sensitivity and specificity of the diagnostic test", "These determine posttest probability rather than being separate treatment factors."], ["Likelihood of success and the patient's ability to tolerate treatment", "Correct. Both are listed under the to-treat-versus-not-to-treat heading."], ["The base rate of the disease and the availability of a published clinical guideline", "Base rate informs pretest probability, and guidelines are an analytic tool rather than a treatment factor here."], ["Health literacy and transportation", "These are barriers to adherence, discussed under counselling."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 27"}, {"topic": "Counselling and adherence", "io": "Recall counseling strategies to help patients adhere to treatment plans", "q": "Mental health challenges or cognitive impairment appear in the lecture under which heading?", "opts": [["Elements of the FRAMES strategy", "FRAMES consists of feedback, responsibility, advice, a menu of options, empathetic style and promoting self-efficacy."], ["Steps of the clinical reasoning process", "The six steps run from gathering information to planning the diagnostic and treatment strategy."], ["Barriers to treatment and medication adherence", "Correct. They are listed among the barriers, alongside cost, low health literacy, cultural or religious beliefs, fear of side effects, transportation and poor follow-up."], ["Indications for the naturalistic approach", "The naturalistic approach is indicated by instability and atypical presentation."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 29"}, {"topic": "Pretest probability", "io": "Define pretest probability", "q": "Being aware of the base rate of disease for the diagnoses on your differential list is recommended for what reason?", "opts": [["It removes the need to gather further data", "The same slide recommends actively seeking alternatives and asking disproving questions, so data gathering continues."], ["It guarantees the working diagnosis will be correct", "The lecture explicitly advises remembering that you are often wrong."], ["It is one of the suggestions for good decision-making", "Correct. \"Be aware of base rate of disease for diagnoses on your differential list\" is listed among the suggestions for good decision-making, and base rate is how common a condition is."], ["It replaces the need for clinical guidelines", "Clinical guidelines are presented as a separate analytic tool, not something base rates replace."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 26"}, {"topic": "Differential diagnosis", "io": "Discuss clinical principles and decision-making", "q": "Applying VINDICATE to a chief complaint of confusion, which pairing matches the lecture's worked example?", "opts": [["Vascular — stroke, transient ischaemic attack, subarachnoid haemorrhage", "Correct. These are the vascular causes the lecture lists for confusion."], ["Neoplastic — meningitis and encephalitis", "Meningitis and encephalitis are given under Infectious; Neoplastic covers primary brain tumour or metastasis."], ["Congenital — Alzheimer's disease and other dementias", "Dementias are listed under Degenerative. Congenital is illustrated by epilepsy in the post-ictal state."], ["Endocrine — traumatic brain injury and traumatic subdural haematoma", "Those are Traumatic. Endocrine and metabolic causes given include hypoglycaemia and sodium and calcium disturbances."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 17"}, {"topic": "Hypothetico-deductive method", "io": "Discuss clinical principles and decision-making", "q": "Which stage of the hypothetico-deductive method involves adding new diagnostic hypotheses to the differential list?", "opts": [["Hypothesis verification", "Verification confirms the fit of the hypotheses with the assembled data rather than adding new ones."], ["Hypothesis refinement", "Correct. Refinement adds new diagnostic hypotheses triggered by data gathering to the differential list."], ["Hypothesis generation", "Generation produces the initial list from patient cues; adding to it after data gathering is refinement."], ["Patient management", "Management gathers data to monitor the patient's response, after the diagnostic work."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"}, {"topic": "Counselling and adherence", "io": "Recall counseling strategies to help patients adhere to treatment plans", "q": "For which specific behaviours does the lecture point to counselling guidelines in Bates' Chapter 7?", "opts": [["Diet, exercise, and sleep hygiene", "These are reasonable health behaviours but are not the three named."], ["Medication timing, appointment keeping, and the sharing of records between providers", "None of these are the behaviours for which specific guidelines are cited."], ["Weight control, hydration, and screen time", "These are not referenced in this lecture."], ["Unhealthy alcohol use, tobacco smoking cessation, and sexually transmitted infections", "Correct. The lecture directs students to specific counselling guidelines for adults on these three."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 28"}, {"topic": "Screening and diagnostic testing", "io": "Compare and contrast screening and diagnostic testing", "q": "Which test property is best suited to screening, and which to confirming a diagnosis?", "opts": [["Specificity for screening; sensitivity for confirming", "This reverses the pairing the lecture gives."], ["Sensitivity for both purposes", "The lecture assigns a different property to each purpose."], ["Sensitivity for screening; specificity for confirming", "Correct. A highly sensitive test is best for screening, while a highly specific test is best for confirming a diagnosis."], ["Neither property matters once pretest probability is known", "Posttest probability depends on sensitivity and specificity, so both continue to matter."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 8"}, {"topic": "Clinical decision making", "io": "Discuss clinical principles and decision-making", "q": "Which of the following is NOT one of the questions the lecture says clinicians will need to answer?", "opts": [["What disease or underlying condition does this patient have?", "This is listed as one of the three questions."], ["Should testing be done?", "This is listed as one of the three questions."], ["Should this patient be treated?", "This is listed as one of the three questions."], ["Which clinician should take over the patient's care?", "Correct. The lecture lists three questions — what disease, should testing be done, and should this patient be treated. Transfer of care is not among them."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 13"}, {"topic": "Clinical principles", "io": "Discuss clinical principles and decision-making", "q": "Among the suggestions for good decision-making, which does the lecture explicitly recommend regarding your own hypothesis?", "opts": [["Ask questions designed to disprove it rather than confirm it", "Correct. The lecture advises asking questions to disprove rather than confirm your current hypothesis, and actively seeking alternative diagnoses."], ["Ask questions designed to confirm it as quickly as possible", "This is the tendency the advice is written to counter."], ["Avoid revisiting it once a working diagnosis is set", "The lecture advises actively seeking alternatives, which means revisiting it."], ["Accept it if it matches a familiar pattern", "Pattern matching is described as error-prone because other possibilities go unconsidered."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 26"}, {"topic": "Counselling and adherence", "io": "Recall counseling strategies to help patients adhere to treatment plans", "q": "Which of the following is listed as a barrier to treatment and medication adherence?", "opts": [["Cost and affordability of medications or services", "Correct. Cost and affordability heads the list of barriers carried over from Patient-Centered Healthcare."], ["High health literacy", "Low health literacy, not high, is listed as a barrier."], ["Strong communication and follow-up by the care team", "Poor communication and follow-up is the barrier; strong communication is protective."], ["Ready access to transportation", "Transportation or time constraints are listed as a barrier, so ready access is the opposite."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 29"}, {"topic": "Clinical principles", "io": "Discuss clinical principles and decision-making", "q": "Which treatment principle does the lecture state?", "opts": [["If what you are doing is not working, increase the dose", "The stated principle is to stop doing it, not to intensify it."], ["If you do not know what to do, choose the most aggressive option", "The lecture advises doing nothing when you do not know what to do."], ["If what you are doing is working, change to something better", "The principle is to keep on doing what is working."], ["If what you are doing is not working, stop doing it", "Correct. The three treatment principles are: if it is working keep doing it, if it is not working stop doing it, and if you do not know what to do, do not do anything."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 25"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "Sensitivity is specifically related to fewer of which type of erroneous result?", "opts": [["Fewer false-positives", "Fewer false-positives is the property associated with specificity, not sensitivity."], ["Fewer true-positives", "True-positives are correct results. A test is not valued for producing fewer of them."], ["Fewer true-negatives", "True-negatives are correct results, and are maximised by specificity rather than reduced by sensitivity."], ["Fewer false-negatives", "Correct. The lecture states sensitivity is related to fewer false-negatives, and notes explicitly that sensitivity does not address false-positives."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "Conditional probability, as introduced in this lecture, refers to which of the following?", "opts": [["The proportion of a population that will develop a disease over a lifetime", "Lifetime risk is an epidemiological measure, not the definition given here."], ["The probability of disease if another event, test result, or condition is present", "Correct. The lecture defines conditional probability as the probability of disease or event given that another event, test result, or condition is present."], ["The probability that a treatment will be tolerated by the patient", "Tolerance of treatment is one of the treat-versus-not-treat considerations, not conditional probability."], ["The probability that two clinicians reach the same diagnosis", "Agreement between observers is a reproducibility concept, not what is defined here."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"}, {"topic": "Counselling and adherence", "io": "Recall counseling strategies to help patients adhere to treatment plans", "q": "Which element of FRAMES places the decision to change with the patient?", "opts": [["Responsibility of the patient", "Correct. FRAMES includes responsibility of the patient as a distinct element, alongside feedback, advice, a menu of options, an empathetic style and promoting self-efficacy."], ["Feedback about personal risk", "Feedback conveys the patient's own risk rather than assigning responsibility."], ["Empathetic style", "Empathetic style describes how the clinician communicates."], ["Promote self-efficacy", "Self-efficacy is the patient's belief in their ability to change, which supports but does not assign responsibility."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 28"}, {"topic": "Clinical decision making", "io": "Discuss clinical principles and decision-making", "q": "Clinical decision making, as framed in the lecture, covers all of the following EXCEPT which?", "opts": [["Setting the sensitivity and specificity of the tests available", "Correct. Sensitivity and specificity are fixed properties of a test, not decisions a clinician makes at the bedside."], ["What information should be gathered from the patient at the outset", "This is listed as part of clinical decision making."], ["What diagnostics to order", "This is listed as part of clinical decision making."], ["What management a patient needs", "This is listed as part of clinical decision making."]], "c": 0, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 12"}, {"topic": "Hypothetico-deductive method", "io": "Discuss clinical principles and decision-making", "q": "What does the hypothesis verification stage accomplish?", "opts": [["It generates the first list of possible diagnoses", "Generating the initial list is the role of hypothesis generation."], ["It gathers data to monitor the patient's response to treatment", "Monitoring response is the patient management stage that follows."], ["It selects which screening test to order first", "Screening test cues feed into the beginning of the sequence rather than being chosen at verification."], ["It confirms the fit of the diagnostic hypotheses with the assembled data", "Correct. Verification is defined as confirming the fit of the diagnostic hypotheses with the data assembled."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"}, {"topic": "Implications for treatment", "io": "Discuss the implications for treatment", "q": "What does the lecture say benefit and risk encompass?", "opts": [["Only the medical consequences of treatment", "Financial consequences are included alongside medical ones."], ["Only the financial consequences of treatment", "Medical consequences are included as well."], ["Neither, since benefit and risk are judged by the patient alone", "The lecture frames this as a clinical balance that must account for likelihood and magnitude."], ["Both financial and medical consequences", "Correct. The lecture states benefit and risk encompass both, and the balance must take into account the likelihood of disease and the magnitude of benefit and risk."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 27"}, {"topic": "Course framework", "io": "Discuss clinical principles and decision-making", "q": "Which aspects does the course say it will compare and contrast across conditions?", "opts": [["Only etiology and management", "The list is considerably longer than these two."], ["Only signs, symptoms, and diagnosis", "Risk factors, patient education, referrals and follow-up are included as well."], ["Etiology, epidemiology, risk factors, clinical manifestations, diagnostic evaluation, management, patient education, referrals, and follow-up", "Correct. This is the full list given in the course description."], ["Cost, local availability, expected turnaround time, and laboratory reporting format of every diagnostic test ordered for a given patient", "These practical considerations are not part of the stated comparison."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 2"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "The memory aid \"SpPin\" is intended to remind you of which relationship?", "opts": [["A highly sensitive test with a negative result rules the disease out", "That is SnNout, the companion rule — sensitivity paired with a negative result."], ["A highly specific test with a negative result rules the disease out", "Specificity does not address false-negatives, so a negative result on a specific test does not rule disease out."], ["A highly specific test with a positive result rules the disease in", "Correct. SpPin: a test with high Specificity and a Positive result helps rule in a disease — with specificity, a positive is a positive."], ["A highly sensitive test with a positive result rules the disease in", "Sensitivity does not address false-positives, so a positive on a sensitive test does not by itself rule disease in."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"}, {"topic": "Sensitivity and specificity", "io": "Compare and contrast sensitivity and specificity", "q": "A highly sensitive test with a negative result is most useful for which purpose?", "opts": [["Confirming that the disease is present in that patient", "Confirmation is the role of a highly specific test with a positive result — the SpPin rule."], ["Ruling the disease out in that patient", "Correct. The lecture's SnNout rule: a test with high Sensitivity and a Negative result helps rule out a disease."], ["Establishing how common the disease is in the population", "Population frequency is a component of pretest probability, not something a single test result establishes."], ["Determining whether the patient can tolerate treatment", "Tolerance of treatment is one of the treatment-decision factors, unrelated to what a negative test result rules out."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"}, {"topic": "Hypothetico-deductive method", "io": "Discuss clinical principles and decision-making", "q": "Which three cue sources feed the start of the hypothetico-deductive sequence?", "opts": [["Published guidelines, a literature review, and the cost data for each test", "These belong to evidence-based practice rather than the initial cues in this sequence."], ["Risk, benefit, and likelihood of success", "These are the considerations weighed when deciding whether to treat."], ["Initial history, initial examination, and screening diagnostic testing", "Correct. The sequence opens with initial history cues, initial examination cues and screening diagnostic testing cues."], ["Ask, advise, and assess", "These are three of the Five As used in counselling."]], "c": 2, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"}, {"topic": "Hypothetico-deductive method", "io": "Discuss clinical principles and decision-making", "q": "The hypothetico-deductive method is best described as which of the following?", "opts": [["Treating the presenting signs and symptoms before a definitive diagnosis", "That is the naturalistic, event-driven approach used largely in emergency medicine."], ["Applying an if-then rule drawn from a published guideline", "That describes the use of clinical guidelines, a separate analytic tool."], ["Recognising a familiar disease pattern and acting on it quickly", "That is pattern recognition, described as the lowest level of decision making."], ["Proposing hypotheses and testing whether the data observed is consistent with them", "Correct. The lecture defines it as proposing hypotheses and testing whether they are acceptable by deciding if the data is consistent with what is observed."]], "c": 3, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 18"}, {"topic": "Naturalistic approach", "io": "Discuss the naturalistic approach", "q": "Beyond treating before diagnosis, which two actions does the lecture associate with the naturalistic approach?", "opts": [["Formulating a clinical question and appraising the literature", "These belong to evidence-based medicine."], ["Ruling out the worst-case scenario and following responses to interventions", "Correct. Both are listed under the naturalistic, event-driven approach."], ["Calculating pretest probability and applying sensitivity and specificity", "These are the quantitative techniques used in analytic decision making."], ["Assessing readiness to change and arranging follow-up", "These belong to behaviour-change counselling and the Five As."]], "c": 1, "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 24"}];
+const QUESTIONS = [
+  {
+    "topic": "Clinical guidelines",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "\"If a patient is febrile and neutropenic, then use broad-spectrum antibiotics\" is given as an example of what?",
+    "opts": [
+      [
+        "The naturalistic, event-driven approach",
+        "The naturalistic approach treats signs and symptoms before a definitive diagnosis in unstable patients, rather than applying a published rule."
+      ],
+      [
+        "A clinical guideline following an if-then rule",
+        "Correct. That is a guideline built on an if-then rule."
+      ],
+      [
+        "A quantitative technique using odds and probability",
+        "No probability calculation is involved in applying this rule."
+      ],
+      [
+        "A counselling strategy for treatment adherence",
+        "Counselling strategies concern helping patients adhere to plans, not selecting antibiotics."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 23"
+  },
+  {
+    "topic": "Posttest probability",
+    "io": "Define posttest probability",
+    "q": "Two clinicians order the same test with identical sensitivity and specificity, for two patients whose pretest probabilities differ substantially. What follows?",
+    "opts": [
+      [
+        "The test result means the same thing for both patients",
+        "It does not. Posttest probability depends on where you started as well as on the test's characteristics."
+      ],
+      [
+        "The sensitivity and specificity of the test will differ between the two patients being evaluated",
+        "Sensitivity and specificity are properties of the test itself and do not change between patients."
+      ],
+      [
+        "Neither patient's probability changes once the result is known",
+        "The purpose of testing is precisely to move from a pretest to a posttest probability."
+      ],
+      [
+        "Their posttest probabilities will differ, because posttest probability builds on the pretest estimate",
+        "Correct. Posttest probability is the likelihood after the result is known, and it is the pretest likelihood revised by the test's sensitivity and specificity."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 9"
+  },
+  {
+    "topic": "Sensitivity and specificity",
+    "io": "Compare and contrast sensitivity and specificity",
+    "q": "Specificity is related to fewer of which type of erroneous result, and is silent about which other?",
+    "opts": [
+      [
+        "Fewer false-negatives; silent about false-positives",
+        "This describes sensitivity. The two properties are reversed here."
+      ],
+      [
+        "Fewer false-positives; silent about false-negatives",
+        "Correct. Specificity is related to fewer false-positives, and does not address false-negatives."
+      ],
+      [
+        "Fewer true-positives; silent about true-negatives",
+        "Neither property is defined in terms of reducing correct results."
+      ],
+      [
+        "Fewer false-positives; silent about true-positives",
+        "The first half is right, but specificity's blind spot is false-negatives, not true-positives."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"
+  },
+  {
+    "topic": "Course framework",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Which body systems does the course description list as the focus of Clinical Medicine and Surgery I?",
+    "opts": [
+      [
+        "Neurology, psychiatry, endocrinology, and nephrology",
+        "None of these are among the six areas covered."
+      ],
+      [
+        "Dermatology, ophthalmology, otorhinolaryngology, cardiology, pulmonology, and haematology-oncology",
+        "Correct. These six are listed, with emphasis on etiology, clinical manifestations, diagnostic evaluation and management."
+      ],
+      [
+        "Musculoskeletal medicine, rheumatology, gastroenterology, urology, and reproductive endocrinology",
+        "These appear only as categories within the differential-diagnosis mnemonic, not as course topics."
+      ],
+      [
+        "Obstetrics, gynaecology, paediatrics, and geriatrics",
+        "These are not among the systems covered."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 2"
+  },
+  {
+    "topic": "Pretest probability",
+    "io": "Define pretest probability",
+    "q": "When weighing a differential, which is the better bet?",
+    "opts": [
+      [
+        "Uncommon manifestations of common conditions",
+        "Correct. Uncommon manifestations of common conditions beat common manifestations of uncommon ones."
+      ],
+      [
+        "Common manifestations of uncommon conditions",
+        "This is the bet to avoid."
+      ],
+      [
+        "Uncommon manifestations of uncommon conditions",
+        "Neither half of this is favoured; it compounds two low-probability assumptions."
+      ],
+      [
+        "Whichever diagnosis the pattern most quickly suggests",
+        "Rapid pattern recognition is described as the lowest level of decision-making and prone to error."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 25"
+  },
+  {
+    "topic": "Clinical reasoning process",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "What is the first step of the clinical reasoning process?",
+    "opts": [
+      [
+        "Gather initial patient information",
+        "Correct. Step 1 is gathering initial patient information; interpretation, synthesis and hypothesis generation all follow it."
+      ],
+      [
+        "Generate hypotheses",
+        "Hypothesis generation is Step 4, after information has been gathered, organised and synthesised."
+      ],
+      [
+        "Plan the diagnostic and treatment strategy",
+        "Planning strategy is the final step, Step 6."
+      ],
+      [
+        "Establish a working diagnosis",
+        "A working diagnosis is established at Step 5, once hypotheses have been tested."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 11"
+  },
+  {
+    "topic": "Sensitivity and specificity",
+    "io": "Compare and contrast sensitivity and specificity",
+    "q": "A test is described as able to correctly identify patients who do NOT have the disease. Which property is being described?",
+    "opts": [
+      [
+        "Pretest probability",
+        "Pretest probability is a property of the patient and population before testing, not an ability of the test itself."
+      ],
+      [
+        "Sensitivity",
+        "Sensitivity is the ability to correctly identify patients who DO have the disease."
+      ],
+      [
+        "Specificity",
+        "Correct. Specificity is the ability to correctly identify patients who do not have the disease or condition."
+      ],
+      [
+        "Posttest probability",
+        "Posttest probability is the revised likelihood after a result is known, not the test's ability to classify well patients."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 8"
+  },
+  {
+    "topic": "Implications for treatment",
+    "io": "Discuss the implications for treatment",
+    "q": "Besides the probability of disease, which two factors enter the decision to treat?",
+    "opts": [
+      [
+        "Sensitivity and specificity of the diagnostic test",
+        "These determine posttest probability rather than being separate treatment factors."
+      ],
+      [
+        "Likelihood of success and the patient's ability to tolerate treatment",
+        "Correct. Both are listed under the to-treat-versus-not-to-treat heading."
+      ],
+      [
+        "The base rate of the disease and the availability of a published clinical guideline",
+        "Base rate informs pretest probability, and guidelines are an analytic tool rather than a treatment factor here."
+      ],
+      [
+        "Health literacy and transportation",
+        "These are barriers to adherence, discussed under counselling."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 27"
+  },
+  {
+    "topic": "Counselling and adherence",
+    "io": "Recall counseling strategies to help patients adhere to treatment plans",
+    "q": "Mental health challenges or cognitive impairment fall under which heading?",
+    "opts": [
+      [
+        "Elements of the FRAMES strategy",
+        "FRAMES consists of feedback, responsibility, advice, a menu of options, empathetic style and promoting self-efficacy."
+      ],
+      [
+        "Steps of the clinical reasoning process",
+        "The six steps run from gathering information to planning the diagnostic and treatment strategy."
+      ],
+      [
+        "Barriers to treatment and medication adherence",
+        "Correct. They are listed among the barriers, alongside cost, low health literacy, cultural or religious beliefs, fear of side effects, transportation and poor follow-up."
+      ],
+      [
+        "Indications for the naturalistic approach",
+        "The naturalistic approach is indicated by instability and atypical presentation."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 29"
+  },
+  {
+    "topic": "Pretest probability",
+    "io": "Define pretest probability",
+    "q": "Being aware of the base rate of disease for the diagnoses on your differential list is recommended for what reason?",
+    "opts": [
+      [
+        "It removes the need to gather further data",
+        "The same slide recommends actively seeking alternatives and asking disproving questions, so data gathering continues."
+      ],
+      [
+        "It guarantees the working diagnosis will be correct",
+        "You are often wrong, so nothing guarantees the working diagnosis."
+      ],
+      [
+        "It is one of the suggestions for good decision-making",
+        "Correct. \"Be aware of base rate of disease for diagnoses on your differential list\" is listed among the suggestions for good decision-making, and base rate is how common a condition is."
+      ],
+      [
+        "It replaces the need for clinical guidelines",
+        "Clinical guidelines are presented as a separate analytic tool, not something base rates replace."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 26"
+  },
+  {
+    "topic": "Differential diagnosis",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Applying VINDICATE to a chief complaint of confusion, which pairing is correct?",
+    "opts": [
+      [
+        "Vascular — stroke, transient ischaemic attack, subarachnoid haemorrhage",
+        "Correct. These are the vascular causes of confusion."
+      ],
+      [
+        "Neoplastic — meningitis and encephalitis",
+        "Meningitis and encephalitis are given under Infectious; Neoplastic covers primary brain tumour or metastasis."
+      ],
+      [
+        "Congenital — Alzheimer's disease and other dementias",
+        "Dementias are listed under Degenerative. Congenital is illustrated by epilepsy in the post-ictal state."
+      ],
+      [
+        "Endocrine — traumatic brain injury and traumatic subdural haematoma",
+        "Those are Traumatic. Endocrine and metabolic causes given include hypoglycaemia and sodium and calcium disturbances."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 17"
+  },
+  {
+    "topic": "Hypothetico-deductive method",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Which stage of the hypothetico-deductive method involves adding new diagnostic hypotheses to the differential list?",
+    "opts": [
+      [
+        "Hypothesis verification",
+        "Verification confirms the fit of the hypotheses with the assembled data rather than adding new ones."
+      ],
+      [
+        "Hypothesis refinement",
+        "Correct. Refinement adds new diagnostic hypotheses triggered by data gathering to the differential list."
+      ],
+      [
+        "Hypothesis generation",
+        "Generation produces the initial list from patient cues; adding to it after data gathering is refinement."
+      ],
+      [
+        "Patient management",
+        "Management gathers data to monitor the patient's response, after the diagnostic work."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"
+  },
+  {
+    "topic": "Counselling and adherence",
+    "io": "Recall counseling strategies to help patients adhere to treatment plans",
+    "q": "For which specific behaviours do the Bates' Chapter 7 counselling guidelines apply?",
+    "opts": [
+      [
+        "Diet, exercise, and sleep hygiene",
+        "These are reasonable health behaviours but are not the three named."
+      ],
+      [
+        "Medication timing, appointment keeping, and the sharing of records between providers",
+        "None of these are the behaviours for which specific guidelines are cited."
+      ],
+      [
+        "Weight control, hydration, and screen time",
+        "These three are not the behaviours covered."
+      ],
+      [
+        "Unhealthy alcohol use, tobacco smoking cessation, and sexually transmitted infections",
+        "Correct. Specific counselling guidelines for adults exist for these three."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 28"
+  },
+  {
+    "topic": "Screening and diagnostic testing",
+    "io": "Compare and contrast screening and diagnostic testing",
+    "q": "Which test property is best suited to screening, and which to confirming a diagnosis?",
+    "opts": [
+      [
+        "Specificity for screening; sensitivity for confirming",
+        "That reverses the pairing."
+      ],
+      [
+        "Sensitivity for both purposes",
+        "Each purpose takes a different property."
+      ],
+      [
+        "Sensitivity for screening; specificity for confirming",
+        "Correct. A highly sensitive test is best for screening, while a highly specific test is best for confirming a diagnosis."
+      ],
+      [
+        "Neither property matters once pretest probability is known",
+        "Posttest probability depends on sensitivity and specificity, so both continue to matter."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 8"
+  },
+  {
+    "topic": "Clinical decision making",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Which of the following is NOT one of the three questions a clinician must answer?",
+    "opts": [
+      [
+        "What disease or underlying condition does this patient have?",
+        "This is listed as one of the three questions."
+      ],
+      [
+        "Should testing be done?",
+        "This is listed as one of the three questions."
+      ],
+      [
+        "Should this patient be treated?",
+        "This is listed as one of the three questions."
+      ],
+      [
+        "Which clinician should take over the patient's care?",
+        "Correct. The three questions are what disease, should testing be done, and should this patient be treated. Transfer of care is not among them."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 13"
+  },
+  {
+    "topic": "Clinical principles",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Among the suggestions for good decision-making, what should you do with your own hypothesis?",
+    "opts": [
+      [
+        "Ask questions designed to disprove it rather than confirm it",
+        "Correct. Ask questions to disprove rather than confirm your current hypothesis, and actively seek alternative diagnoses."
+      ],
+      [
+        "Ask questions designed to confirm it as quickly as possible",
+        "This is the tendency the advice is written to counter."
+      ],
+      [
+        "Avoid revisiting it once a working diagnosis is set",
+        "Actively seeking alternatives means revisiting it."
+      ],
+      [
+        "Accept it if it matches a familiar pattern",
+        "Pattern matching is described as error-prone because other possibilities go unconsidered."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 26"
+  },
+  {
+    "topic": "Counselling and adherence",
+    "io": "Recall counseling strategies to help patients adhere to treatment plans",
+    "q": "Which of the following is listed as a barrier to treatment and medication adherence?",
+    "opts": [
+      [
+        "Cost and affordability of medications or services",
+        "Correct. Cost and affordability heads the list of barriers carried over from Patient-Centered Healthcare."
+      ],
+      [
+        "High health literacy",
+        "Low health literacy, not high, is listed as a barrier."
+      ],
+      [
+        "Strong communication and follow-up by the care team",
+        "Poor communication and follow-up is the barrier; strong communication is protective."
+      ],
+      [
+        "Ready access to transportation",
+        "Transportation or time constraints are listed as a barrier, so ready access is the opposite."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 29"
+  },
+  {
+    "topic": "Clinical principles",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Which treatment principle applies?",
+    "opts": [
+      [
+        "If what you are doing is not working, increase the dose",
+        "The stated principle is to stop doing it, not to intensify it."
+      ],
+      [
+        "If you do not know what to do, choose the most aggressive option",
+        "When you do not know what to do, do nothing."
+      ],
+      [
+        "If what you are doing is working, change to something better",
+        "The principle is to keep on doing what is working."
+      ],
+      [
+        "If what you are doing is not working, stop doing it",
+        "Correct. The three treatment principles are: if it is working keep doing it, if it is not working stop doing it, and if you do not know what to do, do not do anything."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 25"
+  },
+  {
+    "topic": "Sensitivity and specificity",
+    "io": "Compare and contrast sensitivity and specificity",
+    "q": "Sensitivity is specifically related to fewer of which type of erroneous result?",
+    "opts": [
+      [
+        "Fewer false-positives",
+        "Fewer false-positives is the property associated with specificity, not sensitivity."
+      ],
+      [
+        "Fewer true-positives",
+        "True-positives are correct results. A test is not valued for producing fewer of them."
+      ],
+      [
+        "Fewer true-negatives",
+        "True-negatives are correct results, and are maximised by specificity rather than reduced by sensitivity."
+      ],
+      [
+        "Fewer false-negatives",
+        "Correct. Sensitivity is related to fewer false-negatives, and does not address false-positives."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"
+  },
+  {
+    "topic": "Sensitivity and specificity",
+    "io": "Compare and contrast sensitivity and specificity",
+    "q": "Conditional probability refers to which of the following?",
+    "opts": [
+      [
+        "The proportion of a population that will develop a disease over a lifetime",
+        "Lifetime risk is an epidemiological measure, not the definition given here."
+      ],
+      [
+        "The probability of disease if another event, test result, or condition is present",
+        "Correct. Conditional probability is the probability of disease or event given that another event, test result, or condition is present."
+      ],
+      [
+        "The probability that a treatment will be tolerated by the patient",
+        "Tolerance of treatment is one of the treat-versus-not-treat considerations, not conditional probability."
+      ],
+      [
+        "The probability that two clinicians reach the same diagnosis",
+        "Agreement between observers is a reproducibility concept, not what is defined here."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"
+  },
+  {
+    "topic": "Counselling and adherence",
+    "io": "Recall counseling strategies to help patients adhere to treatment plans",
+    "q": "Which element of FRAMES places the decision to change with the patient?",
+    "opts": [
+      [
+        "Responsibility of the patient",
+        "Correct. FRAMES includes responsibility of the patient as a distinct element, alongside feedback, advice, a menu of options, an empathetic style and promoting self-efficacy."
+      ],
+      [
+        "Feedback about personal risk",
+        "Feedback conveys the patient's own risk rather than assigning responsibility."
+      ],
+      [
+        "Empathetic style",
+        "Empathetic style describes how the clinician communicates."
+      ],
+      [
+        "Promote self-efficacy",
+        "Self-efficacy is the patient's belief in their ability to change, which supports but does not assign responsibility."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 28"
+  },
+  {
+    "topic": "Clinical decision making",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Clinical decision making covers all of the following EXCEPT which?",
+    "opts": [
+      [
+        "Setting the sensitivity and specificity of the tests available",
+        "Correct. Sensitivity and specificity are fixed properties of a test, not decisions a clinician makes at the bedside."
+      ],
+      [
+        "What information should be gathered from the patient at the outset",
+        "This is listed as part of clinical decision making."
+      ],
+      [
+        "What diagnostics to order",
+        "This is listed as part of clinical decision making."
+      ],
+      [
+        "What management a patient needs",
+        "This is listed as part of clinical decision making."
+      ]
+    ],
+    "c": 0,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 12"
+  },
+  {
+    "topic": "Hypothetico-deductive method",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "What does the hypothesis verification stage accomplish?",
+    "opts": [
+      [
+        "It generates the first list of possible diagnoses",
+        "Generating the initial list is the role of hypothesis generation."
+      ],
+      [
+        "It gathers data to monitor the patient's response to treatment",
+        "Monitoring response is the patient management stage that follows."
+      ],
+      [
+        "It selects which screening test to order first",
+        "Screening test cues feed into the beginning of the sequence rather than being chosen at verification."
+      ],
+      [
+        "It confirms the fit of the diagnostic hypotheses with the assembled data",
+        "Correct. Verification is defined as confirming the fit of the diagnostic hypotheses with the data assembled."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"
+  },
+  {
+    "topic": "Implications for treatment",
+    "io": "Discuss the implications for treatment",
+    "q": "What do benefit and risk encompass?",
+    "opts": [
+      [
+        "Only the medical consequences of treatment",
+        "Financial consequences are included alongside medical ones."
+      ],
+      [
+        "Only the financial consequences of treatment",
+        "Medical consequences are included as well."
+      ],
+      [
+        "Neither, since benefit and risk are judged by the patient alone",
+        "This is a clinical balance that must account for likelihood and magnitude."
+      ],
+      [
+        "Both financial and medical consequences",
+        "Correct. Benefit and risk encompass both, and the balance must take into account the likelihood of disease and the magnitude of benefit and risk."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 27"
+  },
+  {
+    "topic": "Course framework",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Which aspects does the course say it will compare and contrast across conditions?",
+    "opts": [
+      [
+        "Only etiology and management",
+        "The list is considerably longer than these two."
+      ],
+      [
+        "Only signs, symptoms, and diagnosis",
+        "Risk factors, patient education, referrals and follow-up are included as well."
+      ],
+      [
+        "Etiology, epidemiology, risk factors, clinical manifestations, diagnostic evaluation, management, patient education, referrals, and follow-up",
+        "Correct. This is the full list given in the course description."
+      ],
+      [
+        "Cost, local availability, expected turnaround time, and laboratory reporting format of every diagnostic test ordered for a given patient",
+        "These practical considerations are not part of the stated comparison."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 2"
+  },
+  {
+    "topic": "Sensitivity and specificity",
+    "io": "Compare and contrast sensitivity and specificity",
+    "q": "The memory aid \"SpPin\" is intended to remind you of which relationship?",
+    "opts": [
+      [
+        "A highly sensitive test with a negative result rules the disease out",
+        "That is SnNout, the companion rule — sensitivity paired with a negative result."
+      ],
+      [
+        "A highly specific test with a negative result rules the disease out",
+        "Specificity does not address false-negatives, so a negative result on a specific test does not rule disease out."
+      ],
+      [
+        "A highly specific test with a positive result rules the disease in",
+        "Correct. SpPin: a test with high Specificity and a Positive result helps rule in a disease — with specificity, a positive is a positive."
+      ],
+      [
+        "A highly sensitive test with a positive result rules the disease in",
+        "Sensitivity does not address false-positives, so a positive on a sensitive test does not by itself rule disease in."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"
+  },
+  {
+    "topic": "Sensitivity and specificity",
+    "io": "Compare and contrast sensitivity and specificity",
+    "q": "A highly sensitive test with a negative result is most useful for which purpose?",
+    "opts": [
+      [
+        "Confirming that the disease is present in that patient",
+        "Confirmation is the role of a highly specific test with a positive result — the SpPin rule."
+      ],
+      [
+        "Ruling the disease out in that patient",
+        "Correct. SnNout: a test with high Sensitivity and a Negative result helps rule out a disease."
+      ],
+      [
+        "Establishing how common the disease is in the population",
+        "Population frequency is a component of pretest probability, not something a single test result establishes."
+      ],
+      [
+        "Determining whether the patient can tolerate treatment",
+        "Tolerance of treatment is one of the treatment-decision factors, unrelated to what a negative test result rules out."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 6"
+  },
+  {
+    "topic": "Hypothetico-deductive method",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "Which three cue sources feed the start of the hypothetico-deductive sequence?",
+    "opts": [
+      [
+        "Published guidelines, a literature review, and the cost data for each test",
+        "These belong to evidence-based practice rather than the initial cues in this sequence."
+      ],
+      [
+        "Risk, benefit, and likelihood of success",
+        "These are the considerations weighed when deciding whether to treat."
+      ],
+      [
+        "Initial history, initial examination, and screening diagnostic testing",
+        "Correct. The sequence opens with initial history cues, initial examination cues and screening diagnostic testing cues."
+      ],
+      [
+        "Ask, advise, and assess",
+        "These are three of the Five As used in counselling."
+      ]
+    ],
+    "c": 2,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 19"
+  },
+  {
+    "topic": "Hypothetico-deductive method",
+    "io": "Discuss clinical principles and decision-making",
+    "q": "The hypothetico-deductive method is best described as which of the following?",
+    "opts": [
+      [
+        "Treating the presenting signs and symptoms before a definitive diagnosis",
+        "That is the naturalistic, event-driven approach used largely in emergency medicine."
+      ],
+      [
+        "Applying an if-then rule drawn from a published guideline",
+        "That describes the use of clinical guidelines, a separate analytic tool."
+      ],
+      [
+        "Recognising a familiar disease pattern and acting on it quickly",
+        "That is pattern recognition, described as the lowest level of decision making."
+      ],
+      [
+        "Proposing hypotheses and testing whether the data observed is consistent with them",
+        "Correct. It proposes hypotheses and tests whether they are acceptable by deciding if the data is consistent with what is observed."
+      ]
+    ],
+    "c": 3,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 18"
+  },
+  {
+    "topic": "Naturalistic approach",
+    "io": "Discuss the naturalistic approach",
+    "q": "Beyond treating before diagnosis, which two actions characterise the naturalistic approach?",
+    "opts": [
+      [
+        "Formulating a clinical question and appraising the literature",
+        "These belong to evidence-based medicine."
+      ],
+      [
+        "Ruling out the worst-case scenario and following responses to interventions",
+        "Correct. Both are listed under the naturalistic, event-driven approach."
+      ],
+      [
+        "Calculating pretest probability and applying sensitivity and specificity",
+        "These are the quantitative techniques used in analytic decision making."
+      ],
+      [
+        "Assessing readiness to change and arranging follow-up",
+        "These belong to behaviour-change counselling and the Five As."
+      ]
+    ],
+    "c": 1,
+    "cite": "1. svClinical Reasoning and Problem Solving.pptx, Slide 24"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

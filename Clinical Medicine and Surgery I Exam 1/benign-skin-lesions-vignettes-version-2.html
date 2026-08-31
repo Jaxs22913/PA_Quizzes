@@ -303,7 +303,788 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Digital mucous cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "diagnosis", "q": "A 66-year-old woman with osteoarthritis has a translucent skin-coloured papule over the distal interphalangeal joint of her index finger. The nail beyond it has a longitudinal groove. Which is the most likely diagnosis?", "opts": [["Digital mucous cyst", "Correct — pressure on the nail matrix causes the groove."], ["Epidermoid cyst", "That has a central punctum and is not associated with a joint."], ["Chronic paronychia", "That involves the nail fold with a retracted cuticle."], ["Acrochordon", "That is a stalked papule in a friction site."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 108"}, {"topic": "Dermatofibroma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "diagnosis", "q": "A 33-year-old woman has a firm 8 mm brown nodule on her lower leg. She thinks it appeared after an insect bite two years ago. Squeezing it laterally makes it retract beneath the surface. Which is the most likely diagnosis?", "opts": [["Dermatofibroma", "Correct — the dimple sign, on the commonest site, after a bite."], ["Cutaneous melanoma", "That is in the differential, but the dimple sign points away from it."], ["Keloid", "A keloid extends beyond a wound margin and is a fibroproliferative scar."], ["Epidermoid cyst", "That is movable with a central punctum, and does not dimple."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 45"}, {"topic": "Pilonidal cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "diagnosis", "q": "A 22-year-old man who drives a lorry presents with sudden pain and swelling over his sacrum. There is a warm, tender, erythematous fluctuant swelling in the gluteal cleft with a hair protruding from a small opening. Which is the most likely diagnosis?", "opts": [["Stage 2 pressure injury", "A pressure injury is a wound rather than a fluctuant abscess with a sinus."], ["Epidermoid cyst", "That is a movable nodule with a central punctum, most often face, scalp, neck or trunk."], ["Hidradenitis suppurativa", "That involves apocrine-bearing skin with sinus tracts and scarring."], ["Pilonidal abscess", "Correct — the natal cleft, the sinus opening and the protruding hair."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 41"}, {"topic": "Acrochordon", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "diagnosis", "q": "A 58-year-old woman with obesity has several soft, skin-coloured, pedunculated papules on a thin stalk in both axillae and on her neck. They are asymptomatic. Which is the most likely diagnosis?", "opts": [["Sebaceous hyperplasia", "Those are whitish-yellow papules with central umbilication, on the face."], ["Acrochordon", "Correct — friction sites, obesity, female, and a narrow stalk with a broad tip."], ["Cutaneous neurofibroma", "Those begin at puberty and are nerve sheath tumours, not friction-related."], ["Seborrheic keratosis", "Those are waxy stuck-on plaques rather than stalked papules."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 29"}, {"topic": "Verruca vulgaris", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "diagnosis", "q": "A 19-year-old has a rough lesion on the back of his hand with a cauliflower-like surface and small black dots at the centre. The skin lines stop at its edge. Squeezing it from the sides hurts more than pressing on it. Which is the most likely diagnosis?", "opts": [["Clavus", "A corn preserves the skin lines and hurts on direct downward pressure."], ["Callus", "A callus is diffuse, painless, and lets the skin lines run through."], ["Cutaneous horn", "A horn is a hard conical projection rather than a cauliflower-like plaque."], ["Verruca vulgaris", "Correct — interrupted skin lines, blackened centre, and pain on side pressure."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 8"}, {"topic": "Hypertrophic scar", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "diagnosis", "q": "A 30-year-old man had an appendicectomy five weeks ago. The scar is raised, firm and red but stops exactly at the edges of the original incision. Which is the most likely diagnosis?", "opts": [["Dermatofibroma", "That is a discrete nodule, usually on a limb, rather than a linear scar."], ["Hypertrophic scar", "Correct — it developed within four weeks and is confined to the wound margins."], ["Keloid", "A keloid develops slowly and extends beyond the wound site."], ["Foreign-body granuloma", "That would suggest retained suture material rather than this pattern."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 21"}, {"topic": "Nevus flammeus", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "treatment", "q": "A 2-year-old boy has a flat, blanchable, pink-purple patch on one cheek that has been present since birth and stops sharply at the midline. His parents ask what can be done about it. Which is the most appropriate answer?", "opts": [["No treatment is required; tinted waterproof makeup, or pulsed dye laser", "Correct — the laser selectively destroys the superficial target vessels."], ["Oral propranolol as first line, with corticosteroids as an alternative", "Those are infantile hemangioma treatments."], ["Surgical excision in infancy before it thickens", "Excision in infancy is not what is described."], ["Observation only, because it fades during the first year", "Nevus flammeus does not fade."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 81"}, {"topic": "Keloid", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "education", "q": "A 15-year-old with moderate acne has a family history of keloids. Which is the most appropriate counselling point?", "opts": [["Wait until the acne resolves on its own before starting any treatment", "Delay is the opposite of what is advised."], ["Begin silicone sheeting over the acne-prone areas now", "Silicone sheeting treats an existing scar rather than preventing acne."], ["Avoid all topical acne therapy, since it provokes fibrous overgrowth", "No such avoidance is described."], ["Treat the acne early and appropriately", "Correct — acne is one of the named keloid triggers, and early appropriate treatment greatly increases the chance of scar-free healing."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 20"}, {"topic": "Wound healing", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A patient asks why her surgical scar has become stronger over the past year. Which explanation is most appropriate?", "opts": [["Progressive replacement of collagen by adipose tissue", "That is not part of normal wound healing."], ["Progressive cross-linking of collagen fibers as the scar matures", "Correct — the remodeling phase of wound healing."], ["Progressive proliferation of endothelial cells within the scar", "That process drives infantile hemangioma."], ["Progressive accumulation of keratin beneath the scar surface", "That describes an epidermoid cyst."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 11"}, {"topic": "Keloid", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "A patient is offered compression therapy for a keloid. Which regimen matches the lecture?", "opts": [["Fifteen millimetres of mercury, continuously, for one month", "Both the pressure and the duration are below what is specified."], ["Twenty-five millimetres of mercury, round the clock, six to twelve months", "Correct — the mechanism is not understood, but it possibly induces tissue hypoxia with fibroblast degeneration and subsequent collagen degradation."], ["Twenty-five millimetres of mercury, twelve hours a day, for six weeks", "The pressure is right but the schedule is far shorter than described."], ["Forty millimetres of mercury, overnight, for three months", "Neither the pressure nor the duration matches."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 17"}, {"topic": "Cutaneous horn", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "next step", "q": "A 71-year-old man has a firm, hard, conical projection on the helix of his ear that looks like a small animal horn. Which is the most appropriate next step?", "opts": [["Cryotherapy to the projection, with review in three months", "Freezing the horn does not address the process at its base."], ["Dermoscopy alone, which will identify the underlying lesion", "Dermoscopy is not what the deck offers for this lesion."], ["Deep shave biopsy, to sample the tissue at the base", "Correct — there is often no clinical feature separating benign from malignant."], ["Reassure him, since a cutaneous horn is a benign keratin projection", "The horn is keratin, but what sits under it may be a carcinoma."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 27"}, {"topic": "Epidermoid cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "Six weeks later the cyst is quiet and the patient wants it gone permanently. Which is the most appropriate management?", "opts": [["Repeated intralesional steroid until it disappears", "Steroid settles inflammation; it does not remove the cyst."], ["Cryotherapy to the overlying skin", "Cryotherapy does not remove a dermal cyst."], ["Surgical removal of the entire capsule", "Correct — a small cyst of one to three centimetres can instead be punched and emptied."], ["Aspiration of the contents with a wide-bore needle", "Aspiration leaves the capsule behind."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 57"}, {"topic": "Keratoacanthoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "A 74-year-old man has a large keratoacanthoma on the nasal tip. Which approach does the lecture indicate?", "opts": [["Standard elliptical excision with five-millimetre margins regardless of site", "The site is precisely why Mohs is preferred here."], ["Cryotherapy, which spares the nasal cartilage", "Cryotherapy is not offered for this lesion."], ["Intralesional methotrexate as definitive treatment", "Methotrexate is used before excision to shrink the lesion."], ["Mohs surgery", "Correct — it is indicated for large or recurrent lesions, and for lesions in anatomic areas with cosmetic or functional considerations. This lesion is both."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 52"}, {"topic": "Pilonidal cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A patient has a blind-ending track opening onto the skin over the coccyx. Which term describes it, and how does it differ from the alternative?", "opts": [["A fistula; a sinus instead is lined with keratin", "Lining is not the distinction being drawn."], ["A sinus; a fistula instead connects two epithelium-lined surfaces", "Correct — both usually arise from a preceding abscess."], ["A fistula; a sinus instead connects two epithelium-lined surfaces", "This reverses the two definitions."], ["A sinus; a fistula instead is always congenital in origin", "The difference is where the track ends, not its origin."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 42"}, {"topic": "Dermatofibroma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "A 34-year-old woman has a firm 8 mm brown nodule on her lower leg that retracts beneath the skin when compressed from the sides. She is not bothered by it but wants to know her options. Which is the most appropriate answer?", "opts": [["Wide local excision is required in every case because of melanoma risk", "Observation is acceptable when the diagnosis is not in doubt."], ["Intralesional corticosteroid will flatten it over several months", "That is a scar treatment."], ["Cryotherapy is the treatment of choice for pigmented dermal nodules", "Cryotherapy is not what is described for this lesion."], ["No treatment is needed; a shave or punch biopsy would remove it", "Correct — in a small lesion that biopsy is both diagnostic and therapeutic. Larger lesions may need surgical excision instead."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 47"}, {"topic": "Xanthelasma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "next step", "q": "A 55-year-old woman has soft, yellow plaques on both medial upper eyelids. Beyond addressing the plaques themselves, what should be done for her?", "opts": [["Screen for hyperlipidemia", "Correct — xanthelasma is associated with lipid disorders, and may signify an increased risk of cardiac disease."], ["Screen for diabetes mellitus and check a haemoglobin A1c", "The named association is with lipid disorders."], ["Check thyroid function tests", "No thyroid association is described."], ["Check liver function tests and a coagulation screen", "Liver disease is the association drawn for spider angioma."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 104"}, {"topic": "Infantile hemangioma", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "education", "q": "A 6-week-old former preterm girl has a bright red raised plaque on her scalp. Her mother says the area first looked pale, then developed fine red lines, and now asks whether it will need surgery. Which is the most appropriate answer?", "opts": [["Most involute on their own over several years", "Correct — complete involution in fifty per cent by age five, seventy per cent by seven and ninety per cent by nine, so serial observation is often all that is needed."], ["It will grow with her throughout life and will not involute", "That is nevus flammeus."], ["It will fade within her first year without any treatment", "That is nevus simplex."], ["It will regress over three to six months after a period of stability", "That is the keratoacanthoma's triphasic course."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 66"}, {"topic": "Corns and calluses", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "A 63-year-old man with type 2 diabetes mellitus has a painful corn on his fifth toe. Which is the most appropriate management?", "opts": [["Pare the lesion down in clinic and advise wider footwear", "Padding and footwear help, but the diabetic patient needs specialist care."], ["Excise the lesion with a five-millimetre margin", "Those margins belong to keratoacanthoma."], ["Refer him to podiatry", "Correct — the deck flags the diabetic patient specifically for podiatry referral."], ["Start an over-the-counter salicylic acid product and review in a month", "Keratolytics are reasonable in general, but the diabetic foot is referred."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 9"}, {"topic": "Pilonidal cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "test", "q": "Which diagnostic testing does this patient's pilonidal disease require?", "opts": [["None; the diagnosis is clinical", "Correct — no testing is usually needed."], ["Magnetic resonance imaging to map any sinus tracts", "Imaging is not part of the described work-up."], ["Punch biopsy of the sinus opening", "Biopsy is not required for this diagnosis."], ["Wound culture before any intervention", "Culture is not stated as a requirement."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 43"}, {"topic": "Pressure injury", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "test", "q": "A 74-year-old man who uses a wheelchair has an ischial wound whose base is covered entirely by thick black eschar. You cannot see how deep it goes. Which stage is this?", "opts": [["Stage 4", "Stage 4 requires that deeper structures actually be visible."], ["Deep tissue pressure injury", "That is discolouration of skin rather than an eschar-covered wound."], ["Stage 3", "Stage 3 requires adipose tissue to be visible in the bed."], ["Unstageable", "Correct — full-thickness loss whose extent is obscured by slough or eschar."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 34"}, {"topic": "Neurofibromatosis", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "test", "q": "You are counting café au lait macules on that same 9-year-old. How many are described as diagnostic, and what caveat applies?", "opts": [["Six or more; and the macules alone establish the diagnosis", "The count is right, but the caveat is the opposite of what is stated."], ["Three or more; but only if they appear after puberty", "The number is six, and timing is not the criterion."], ["Six or more; but the macules alone do not establish the diagnosis", "Correct — over five millimetres prepubertal, over fifteen postpubertal."], ["Two or more; and the macules alone establish the diagnosis", "Neither the count nor the caveat matches."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 99"}, {"topic": "Benign lesions overall", "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly", "lead": "education", "q": "A patient elects to have a benign lesion removed purely for appearance. What must she be told first?", "opts": [["That the lesion would become malignant if left in place", "These are benign lesions, so that would be untrue."], ["That lifelong surveillance of the site will be needed", "Lifelong surveillance is not what the slide requires."], ["The risk of pigmentary changes and the chance of recurrence", "Correct — both must be fully explained beforehand."], ["That histology is required on every excised specimen", "Histology is not mandated for every cosmetic removal."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 112"}, {"topic": "Syringoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A 17-year-old girl has multiple 1 to 2 mm skin-coloured papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counselling point?", "opts": [["The lesions will resolve on their own within a year", "They do not spontaneously resolve."], ["Removal is curative and recurrence does not occur", "Recurrence risk is explicitly part of the counselling."], ["Treatment is for cosmesis only, and every option has a trade-off", "Correct — drugs such as oral isotretinoin carry an increased risk of recurrence, and removal procedures carry a risk of poor cosmetic results."], ["The lesions must be removed because they can become malignant", "Syringomas are benign neoplasms of eccrine ducts."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 59"}, {"topic": "Cherry angioma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A 61-year-old man has several smooth, firm, deep red papules under 5 mm on his trunk that blanch with pressure and have accumulated over recent years. He asks whether removing them will stop new ones appearing. Which is the most appropriate response?", "opts": [["Each one should be biopsied because they are premalignant", "Cherry angiomas are benign."], ["New lesions will likely develop and there is no way to prevent them", "Correct — treatment is not necessary unless they bother him."], ["Removing them prevents further lesions from forming", "There is no way to prevent new ones."], ["They will fade on their own within a year", "Fading within a year belongs to nevus simplex."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 87"}, {"topic": "Epidermoid cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-coloured pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?", "opts": [["It is a collection of lipid-laden macrophages", "That is xanthelasma."], ["It is mucin extruded from a nearby joint", "That is the digital mucous cyst."], ["The contents are keratin, not sebum", "Correct — it is often called a sebaceous cyst because the material looks like sebum, but the deck states outright that it is not one."], ["Yes, it is a blocked sebaceous gland filled with sebum", "This is the misconception the lecture exists to correct."]], "c": 2, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 53"}, {"topic": "Keloid", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "treatment", "q": "A 26-year-old with a keloid on the sternum wants it removed. Which is the most appropriate advice about surgical excision alone?", "opts": [["Recurrence is fifty to one hundred per cent, so steroid injection follows", "Correct — the recurrent lesion is often larger than the original, which is why excision is never done alone. Combination therapy has the best success rates."], ["Recurrence is under five per cent, so excision alone is usually curative", "That figure is far below what the deck reports."], ["Excision is contraindicated in keloids because it always causes bleeding", "Bleeding is not the reason excision alone is avoided."], ["Excision is preferred over all other options because it removes the fibrous tissue completely", "It removes the tissue, but the recurrence rate is the problem."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 18"}, {"topic": "Nevus araneus", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "test", "q": "A 44-year-old man has several small vascular lesions with a central punctum and radiating vessels across his upper chest and arms. Which history is most important to take?", "opts": [["Birth history, feeding and family history of birthmarks", "That is the infantile hemangioma history."], ["Alcohol use, liver-damaging medications, and hormone use", "Correct — the deck also says to ask about pregnancies. Spider angiomas are associated with estrogen excess and with cirrhosis and liver failure."], ["Footwear, occupation and use of hand tools", "That is the corn and callus history."], ["Immobility, incontinence and nutritional status", "Those are pressure injury questions."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 90"}, {"topic": "Epidermoid cyst", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "next step", "q": "A patient's epidermoid cyst is red, hot and tender. Which is the most appropriate next step?", "opts": [["Postpone excision and settle the inflammation first", "Correct — reduce it with an intralesional injection of triamcinolone, add antibiotics if needed, and operate a few weeks later when the cyst is quiet."], ["Excise it today, including the entire capsule", "Excision is delayed until the inflammation has settled."], ["Incise and drain it, and take no further action", "Drainage leaves the capsule, which is the part that matters."], ["Biopsy it to exclude basal cell carcinoma", "Biopsy is not required for this diagnosis."]], "c": 0, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 56"}, {"topic": "Keratoacanthoma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "next step", "q": "A 67-year-old man with very fair skin has a dome-shaped lesion with a central keratin-filled crater on his forearm that appeared six weeks ago and grew fast. He asks whether you can simply watch it, since he has read they go away. Which is the most appropriate next step?", "opts": [["Observe for three to six months, since regression is the natural history", "Regression does occur, but the possibility of malignancy overrides it."], ["Take a dermoscopy image and review in three months", "Dermoscopy does not settle this diagnosis."], ["Apply a topical keratolytic to flatten the crater", "Keratolytics have no role here."], ["Excise or destroy it, because of possible malignancy", "Correct — strong arguments support classifying keratoacanthoma as a variant of invasive squamous cell carcinoma, so the standard of care is not observation."]], "c": 3, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 52"}, {"topic": "Pyogenic granuloma", "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions", "lead": "education", "q": "A patient with a pyogenic granuloma opts against treatment. Which is the most appropriate advice?", "opts": [["It will resolve within two weeks without any follow-up", "Resolution takes months to years."], ["It is benign and often resolves over months to years", "Correct — effective treatments exist if she changes her mind. If it recurs, early follow-up is appropriate, because small lesions are easier to treat than large ones."], ["It is premalignant and must be excised within a month", "The lesion is benign."], ["It is infectious and household contacts should be checked", "It is neither infectious nor granulomatous."]], "c": 1, "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 96"}];
+const QUESTIONS = [
+  {
+    "topic": "Digital mucous cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "diagnosis",
+    "q": "A 66-year-old woman with osteoarthritis has a translucent skin-coloured papule over the distal interphalangeal joint of her index finger. The nail beyond it has a longitudinal groove. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Digital mucous cyst",
+        "Correct — pressure on the nail matrix causes the groove."
+      ],
+      [
+        "Epidermoid cyst",
+        "That has a central punctum and is not associated with a joint."
+      ],
+      [
+        "Chronic paronychia",
+        "That involves the nail fold with a retracted cuticle."
+      ],
+      [
+        "Acrochordon",
+        "That is a stalked papule in a friction site."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 108"
+  },
+  {
+    "topic": "Dermatofibroma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "diagnosis",
+    "q": "A 33-year-old woman has a firm 8 mm brown nodule on her lower leg. She thinks it appeared after an insect bite two years ago. Squeezing it laterally makes it retract beneath the surface. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Dermatofibroma",
+        "Correct — the dimple sign, on the commonest site, after a bite."
+      ],
+      [
+        "Cutaneous melanoma",
+        "That is in the differential, but the dimple sign points away from it."
+      ],
+      [
+        "Keloid",
+        "A keloid extends beyond a wound margin and is a fibroproliferative scar."
+      ],
+      [
+        "Epidermoid cyst",
+        "That is movable with a central punctum, and does not dimple."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 45"
+  },
+  {
+    "topic": "Pilonidal cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "diagnosis",
+    "q": "A 22-year-old man who drives a lorry presents with sudden pain and swelling over his sacrum. There is a warm, tender, erythematous fluctuant swelling in the gluteal cleft with a hair protruding from a small opening. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Stage 2 pressure injury",
+        "A pressure injury is a wound rather than a fluctuant abscess with a sinus."
+      ],
+      [
+        "Epidermoid cyst",
+        "That is a movable nodule with a central punctum, most often face, scalp, neck or trunk."
+      ],
+      [
+        "Hidradenitis suppurativa",
+        "That involves apocrine-bearing skin with sinus tracts and scarring."
+      ],
+      [
+        "Pilonidal abscess",
+        "Correct — the natal cleft, the sinus opening and the protruding hair."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 41"
+  },
+  {
+    "topic": "Acrochordon",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "diagnosis",
+    "q": "A 58-year-old woman with obesity has several soft, skin-coloured, pedunculated papules on a thin stalk in both axillae and on her neck. They are asymptomatic. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Sebaceous hyperplasia",
+        "Those are whitish-yellow papules with central umbilication, on the face."
+      ],
+      [
+        "Acrochordon",
+        "Correct — friction sites, obesity, female, and a narrow stalk with a broad tip."
+      ],
+      [
+        "Cutaneous neurofibroma",
+        "Those begin at puberty and are nerve sheath tumours, not friction-related."
+      ],
+      [
+        "Seborrheic keratosis",
+        "Those are waxy stuck-on plaques rather than stalked papules."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 29"
+  },
+  {
+    "topic": "Verruca vulgaris",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "diagnosis",
+    "q": "A 19-year-old has a rough lesion on the back of his hand with a cauliflower-like surface and small black dots at the centre. The skin lines stop at its edge. Squeezing it from the sides hurts more than pressing on it. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Clavus",
+        "A corn preserves the skin lines and hurts on direct downward pressure."
+      ],
+      [
+        "Callus",
+        "A callus is diffuse, painless, and lets the skin lines run through."
+      ],
+      [
+        "Cutaneous horn",
+        "A horn is a hard conical projection rather than a cauliflower-like plaque."
+      ],
+      [
+        "Verruca vulgaris",
+        "Correct — interrupted skin lines, blackened centre, and pain on side pressure."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 8"
+  },
+  {
+    "topic": "Hypertrophic scar",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "diagnosis",
+    "q": "A 30-year-old man had an appendicectomy five weeks ago. The scar is raised, firm and red but stops exactly at the edges of the original incision. Which is the most likely diagnosis?",
+    "opts": [
+      [
+        "Dermatofibroma",
+        "That is a discrete nodule, usually on a limb, rather than a linear scar."
+      ],
+      [
+        "Hypertrophic scar",
+        "Correct — it developed within four weeks and is confined to the wound margins."
+      ],
+      [
+        "Keloid",
+        "A keloid develops slowly and extends beyond the wound site."
+      ],
+      [
+        "Foreign-body granuloma",
+        "That would suggest retained suture material rather than this pattern."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 21"
+  },
+  {
+    "topic": "Nevus flammeus",
+    "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly",
+    "lead": "treatment",
+    "q": "A 2-year-old boy has a flat, blanchable, pink-purple patch on one cheek that has been present since birth and stops sharply at the midline. His parents ask what can be done about it. Which is the most appropriate answer?",
+    "opts": [
+      [
+        "No treatment is required; tinted waterproof makeup, or pulsed dye laser",
+        "Correct — the laser selectively destroys the superficial target vessels."
+      ],
+      [
+        "Oral propranolol as first line, with corticosteroids as an alternative",
+        "Those are infantile hemangioma treatments."
+      ],
+      [
+        "Surgical excision in infancy before it thickens",
+        "Excision in infancy is not what is described."
+      ],
+      [
+        "Observation only, because it fades during the first year",
+        "Nevus flammeus does not fade."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 81"
+  },
+  {
+    "topic": "Keloid",
+    "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly",
+    "lead": "education",
+    "q": "A 15-year-old with moderate acne has a family history of keloids. Which is the most appropriate counselling point?",
+    "opts": [
+      [
+        "Wait until the acne resolves on its own before starting any treatment",
+        "Delay is the opposite of what is advised."
+      ],
+      [
+        "Begin silicone sheeting over the acne-prone areas now",
+        "Silicone sheeting treats an existing scar rather than preventing acne."
+      ],
+      [
+        "Avoid all topical acne therapy, since it provokes fibrous overgrowth",
+        "No such avoidance is described."
+      ],
+      [
+        "Treat the acne early and appropriately",
+        "Correct — acne is one of the named keloid triggers, and early appropriate treatment greatly increases the chance of scar-free healing."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 20"
+  },
+  {
+    "topic": "Wound healing",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "education",
+    "q": "A patient asks why her surgical scar has become stronger over the past year. Which explanation is most appropriate?",
+    "opts": [
+      [
+        "Progressive replacement of collagen by adipose tissue",
+        "That is not part of normal wound healing."
+      ],
+      [
+        "Progressive cross-linking of collagen fibers as the scar matures",
+        "Correct — the remodeling phase of wound healing."
+      ],
+      [
+        "Progressive proliferation of endothelial cells within the scar",
+        "That process drives infantile hemangioma."
+      ],
+      [
+        "Progressive accumulation of keratin beneath the scar surface",
+        "That describes an epidermoid cyst."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 11"
+  },
+  {
+    "topic": "Keloid",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "treatment",
+    "q": "A patient is offered compression therapy for a keloid. Which regimen is correct?",
+    "opts": [
+      [
+        "Fifteen millimetres of mercury, continuously, for one month",
+        "Both the pressure and the duration are below what is specified."
+      ],
+      [
+        "Twenty-five millimetres of mercury, round the clock, six to twelve months",
+        "Correct — the mechanism is not understood, but it possibly induces tissue hypoxia with fibroblast degeneration and subsequent collagen degradation."
+      ],
+      [
+        "Twenty-five millimetres of mercury, twelve hours a day, for six weeks",
+        "The pressure is right but the schedule is far shorter than described."
+      ],
+      [
+        "Forty millimetres of mercury, overnight, for three months",
+        "Neither the pressure nor the duration matches."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 17"
+  },
+  {
+    "topic": "Cutaneous horn",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "next step",
+    "q": "A 71-year-old man has a firm, hard, conical projection on the helix of his ear that looks like a small animal horn. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Cryotherapy to the projection, with review in three months",
+        "Freezing the horn does not address the process at its base."
+      ],
+      [
+        "Dermoscopy alone, which will identify the underlying lesion",
+        "Dermoscopy cannot establish what lies beneath a cutaneous horn."
+      ],
+      [
+        "Deep shave biopsy, to sample the tissue at the base",
+        "Correct — there is often no clinical feature separating benign from malignant."
+      ],
+      [
+        "Reassure him, since a cutaneous horn is a benign keratin projection",
+        "The horn is keratin, but what sits under it may be a carcinoma."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 27"
+  },
+  {
+    "topic": "Epidermoid cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "treatment",
+    "q": "Six weeks later the cyst is quiet and the patient wants it gone permanently. Which is the most appropriate management?",
+    "opts": [
+      [
+        "Repeated intralesional steroid until it disappears",
+        "Steroid settles inflammation; it does not remove the cyst."
+      ],
+      [
+        "Cryotherapy to the overlying skin",
+        "Cryotherapy does not remove a dermal cyst."
+      ],
+      [
+        "Surgical removal of the entire capsule",
+        "Correct — a small cyst of one to three centimetres can instead be punched and emptied."
+      ],
+      [
+        "Aspiration of the contents with a wide-bore needle",
+        "Aspiration leaves the capsule behind."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 57"
+  },
+  {
+    "topic": "Keratoacanthoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "treatment",
+    "q": "A 74-year-old man has a large keratoacanthoma on the nasal tip. Which approach is indicated?",
+    "opts": [
+      [
+        "Standard elliptical excision with five-millimetre margins regardless of site",
+        "The site is precisely why Mohs is preferred here."
+      ],
+      [
+        "Cryotherapy, which spares the nasal cartilage",
+        "Cryotherapy is not offered for this lesion."
+      ],
+      [
+        "Intralesional methotrexate as definitive treatment",
+        "Methotrexate is used before excision to shrink the lesion."
+      ],
+      [
+        "Mohs surgery",
+        "Correct — it is indicated for large or recurrent lesions, and for lesions in anatomic areas with cosmetic or functional considerations. This lesion is both."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 52"
+  },
+  {
+    "topic": "Pilonidal cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "education",
+    "q": "A patient has a blind-ending track opening onto the skin over the coccyx. Which term describes it, and how does it differ from the alternative?",
+    "opts": [
+      [
+        "A fistula; a sinus instead is lined with keratin",
+        "Lining is not the distinction being drawn."
+      ],
+      [
+        "A sinus; a fistula instead connects two epithelium-lined surfaces",
+        "Correct — both usually arise from a preceding abscess."
+      ],
+      [
+        "A fistula; a sinus instead connects two epithelium-lined surfaces",
+        "This reverses the two definitions."
+      ],
+      [
+        "A sinus; a fistula instead is always congenital in origin",
+        "The difference is where the track ends, not its origin."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 42"
+  },
+  {
+    "topic": "Dermatofibroma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "treatment",
+    "q": "A 34-year-old woman has a firm 8 mm brown nodule on her lower leg that retracts beneath the skin when compressed from the sides. She is not bothered by it but wants to know her options. Which is the most appropriate answer?",
+    "opts": [
+      [
+        "Wide local excision is required in every case because of melanoma risk",
+        "Observation is acceptable when the diagnosis is not in doubt."
+      ],
+      [
+        "Intralesional corticosteroid will flatten it over several months",
+        "That is a scar treatment."
+      ],
+      [
+        "Cryotherapy is the treatment of choice for pigmented dermal nodules",
+        "Cryotherapy is not what is described for this lesion."
+      ],
+      [
+        "No treatment is needed; a shave or punch biopsy would remove it",
+        "Correct — in a small lesion that biopsy is both diagnostic and therapeutic. Larger lesions may need surgical excision instead."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 47"
+  },
+  {
+    "topic": "Xanthelasma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "next step",
+    "q": "A 55-year-old woman has soft, yellow plaques on both medial upper eyelids. Beyond addressing the plaques themselves, what should be done for her?",
+    "opts": [
+      [
+        "Screen for hyperlipidemia",
+        "Correct — xanthelasma is associated with lipid disorders, and may signify an increased risk of cardiac disease."
+      ],
+      [
+        "Screen for diabetes mellitus and check a haemoglobin A1c",
+        "The named association is with lipid disorders."
+      ],
+      [
+        "Check thyroid function tests",
+        "No thyroid association is described."
+      ],
+      [
+        "Check liver function tests and a coagulation screen",
+        "Liver disease is the association drawn for spider angioma."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 104"
+  },
+  {
+    "topic": "Infantile hemangioma",
+    "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly",
+    "lead": "education",
+    "q": "A 6-week-old former preterm girl has a bright red raised plaque on her scalp. Her mother says the area first looked pale, then developed fine red lines, and now asks whether it will need surgery. Which is the most appropriate answer?",
+    "opts": [
+      [
+        "Most involute on their own over several years",
+        "Correct — complete involution in fifty per cent by age five, seventy per cent by seven and ninety per cent by nine, so serial observation is often all that is needed."
+      ],
+      [
+        "It will grow with her throughout life and will not involute",
+        "That is nevus flammeus."
+      ],
+      [
+        "It will fade within her first year without any treatment",
+        "That is nevus simplex."
+      ],
+      [
+        "It will regress over three to six months after a period of stability",
+        "That is the keratoacanthoma's triphasic course."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 66"
+  },
+  {
+    "topic": "Corns and calluses",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "treatment",
+    "q": "A 63-year-old man with type 2 diabetes mellitus has a painful corn on his fifth toe. Which is the most appropriate management?",
+    "opts": [
+      [
+        "Pare the lesion down in clinic and advise wider footwear",
+        "Padding and footwear help, but the diabetic patient needs specialist care."
+      ],
+      [
+        "Excise the lesion with a five-millimetre margin",
+        "Those margins belong to keratoacanthoma."
+      ],
+      [
+        "Refer him to podiatry",
+        "Correct — a diabetic foot lesion goes to podiatry."
+      ],
+      [
+        "Start an over-the-counter salicylic acid product and review in a month",
+        "Keratolytics are reasonable in general, but the diabetic foot is referred."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 9"
+  },
+  {
+    "topic": "Pilonidal cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "test",
+    "q": "Which diagnostic testing does this patient's pilonidal disease require?",
+    "opts": [
+      [
+        "None; the diagnosis is clinical",
+        "Correct — no testing is usually needed."
+      ],
+      [
+        "Magnetic resonance imaging to map any sinus tracts",
+        "Imaging is not part of the described work-up."
+      ],
+      [
+        "Punch biopsy of the sinus opening",
+        "Biopsy is not required for this diagnosis."
+      ],
+      [
+        "Wound culture before any intervention",
+        "Culture is not stated as a requirement."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 43"
+  },
+  {
+    "topic": "Pressure injury",
+    "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly",
+    "lead": "test",
+    "q": "A 74-year-old man who uses a wheelchair has an ischial wound whose base is covered entirely by thick black eschar. You cannot see how deep it goes. Which stage is this?",
+    "opts": [
+      [
+        "Stage 4",
+        "Stage 4 requires that deeper structures actually be visible."
+      ],
+      [
+        "Deep tissue pressure injury",
+        "That is discolouration of skin rather than an eschar-covered wound."
+      ],
+      [
+        "Stage 3",
+        "Stage 3 requires adipose tissue to be visible in the bed."
+      ],
+      [
+        "Unstageable",
+        "Correct — full-thickness loss whose extent is obscured by slough or eschar."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 34"
+  },
+  {
+    "topic": "Neurofibromatosis",
+    "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly",
+    "lead": "test",
+    "q": "You are counting café au lait macules on that same 9-year-old. How many are described as diagnostic, and what caveat applies?",
+    "opts": [
+      [
+        "Six or more; and the macules alone establish the diagnosis",
+        "The count is right, but the caveat is the opposite of what is stated."
+      ],
+      [
+        "Three or more; but only if they appear after puberty",
+        "The number is six, and timing is not the criterion."
+      ],
+      [
+        "Six or more; but the macules alone do not establish the diagnosis",
+        "Correct — over five millimetres prepubertal, over fifteen postpubertal."
+      ],
+      [
+        "Two or more; and the macules alone establish the diagnosis",
+        "Neither the count nor the caveat matches."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 99"
+  },
+  {
+    "topic": "Benign lesions overall",
+    "io": "b — Identify medical strategies for common benign skin lesions in infants, adolescents, adults and the elderly",
+    "lead": "education",
+    "q": "A patient elects to have a benign lesion removed purely for appearance. What must she be told first?",
+    "opts": [
+      [
+        "That the lesion would become malignant if left in place",
+        "These are benign lesions, so that would be untrue."
+      ],
+      [
+        "That lifelong surveillance of the site will be needed",
+        "Lifelong surveillance is not required after removing a benign lesion."
+      ],
+      [
+        "The risk of pigmentary changes and the chance of recurrence",
+        "Correct — both must be fully explained beforehand."
+      ],
+      [
+        "That histology is required on every excised specimen",
+        "Histology is not mandated for every cosmetic removal."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 112"
+  },
+  {
+    "topic": "Syringoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "education",
+    "q": "A 17-year-old girl has multiple 1 to 2 mm skin-coloured papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counselling point?",
+    "opts": [
+      [
+        "The lesions will resolve on their own within a year",
+        "They do not spontaneously resolve."
+      ],
+      [
+        "Removal is curative and recurrence does not occur",
+        "Recurrence risk is explicitly part of the counselling."
+      ],
+      [
+        "Treatment is for cosmesis only, and every option has a trade-off",
+        "Correct — drugs such as oral isotretinoin carry an increased risk of recurrence, and removal procedures carry a risk of poor cosmetic results."
+      ],
+      [
+        "The lesions must be removed because they can become malignant",
+        "Syringomas are benign neoplasms of eccrine ducts."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 59"
+  },
+  {
+    "topic": "Cherry angioma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "education",
+    "q": "A 61-year-old man has several smooth, firm, deep red papules under 5 mm on his trunk that blanch with pressure and have accumulated over recent years. He asks whether removing them will stop new ones appearing. Which is the most appropriate response?",
+    "opts": [
+      [
+        "Each one should be biopsied because they are premalignant",
+        "Cherry angiomas are benign."
+      ],
+      [
+        "New lesions will likely develop and there is no way to prevent them",
+        "Correct — treatment is not necessary unless they bother him."
+      ],
+      [
+        "Removing them prevents further lesions from forming",
+        "There is no way to prevent new ones."
+      ],
+      [
+        "They will fade on their own within a year",
+        "Fading within a year belongs to nevus simplex."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 87"
+  },
+  {
+    "topic": "Epidermoid cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "education",
+    "q": "A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-coloured pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?",
+    "opts": [
+      [
+        "It is a collection of lipid-laden macrophages",
+        "That is xanthelasma."
+      ],
+      [
+        "It is mucin extruded from a nearby joint",
+        "That is the digital mucous cyst."
+      ],
+      [
+        "The contents are keratin, not sebum",
+        "Correct — it is often called a sebaceous cyst because the material looks like sebum, but the contents are keratin."
+      ],
+      [
+        "Yes, it is a blocked sebaceous gland filled with sebum",
+        "This is exactly the misconception to correct."
+      ]
+    ],
+    "c": 2,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 53"
+  },
+  {
+    "topic": "Keloid",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "treatment",
+    "q": "A 26-year-old with a keloid on the sternum wants it removed. Which is the most appropriate advice about surgical excision alone?",
+    "opts": [
+      [
+        "Recurrence is fifty to one hundred per cent, so steroid injection follows",
+        "Correct — the recurrent lesion is often larger than the original, which is why excision is never done alone. Combination therapy has the best success rates."
+      ],
+      [
+        "Recurrence is under five per cent, so excision alone is usually curative",
+        "Recurrence after excision alone runs far higher than that."
+      ],
+      [
+        "Excision is contraindicated in keloids because it always causes bleeding",
+        "Bleeding is not the reason excision alone is avoided."
+      ],
+      [
+        "Excision is preferred over all other options because it removes the fibrous tissue completely",
+        "It removes the tissue, but the recurrence rate is the problem."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 18"
+  },
+  {
+    "topic": "Nevus araneus",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "test",
+    "q": "A 44-year-old man has several small vascular lesions with a central punctum and radiating vessels across his upper chest and arms. Which history is most important to take?",
+    "opts": [
+      [
+        "Birth history, feeding and family history of birthmarks",
+        "That is the infantile hemangioma history."
+      ],
+      [
+        "Alcohol use, liver-damaging medications, and hormone use",
+        "Correct — ask about pregnancies too. Spider angiomas track estrogen excess and cirrhosis or liver failure."
+      ],
+      [
+        "Footwear, occupation and use of hand tools",
+        "That is the corn and callus history."
+      ],
+      [
+        "Immobility, incontinence and nutritional status",
+        "Those are pressure injury questions."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 90"
+  },
+  {
+    "topic": "Epidermoid cyst",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "next step",
+    "q": "A patient's epidermoid cyst is red, hot and tender. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Postpone excision and settle the inflammation first",
+        "Correct — reduce it with an intralesional injection of triamcinolone, add antibiotics if needed, and operate a few weeks later when the cyst is quiet."
+      ],
+      [
+        "Excise it today, including the entire capsule",
+        "Excision is delayed until the inflammation has settled."
+      ],
+      [
+        "Incise and drain it, and take no further action",
+        "Drainage leaves the capsule, which is the part that matters."
+      ],
+      [
+        "Biopsy it to exclude basal cell carcinoma",
+        "Biopsy is not required for this diagnosis."
+      ]
+    ],
+    "c": 0,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 56"
+  },
+  {
+    "topic": "Keratoacanthoma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "next step",
+    "q": "A 67-year-old man with very fair skin has a dome-shaped lesion with a central keratin-filled crater on his forearm that appeared six weeks ago and grew fast. He asks whether you can simply watch it, since he has read they go away. Which is the most appropriate next step?",
+    "opts": [
+      [
+        "Observe for three to six months, since regression is the natural history",
+        "Regression does occur, but the possibility of malignancy overrides it."
+      ],
+      [
+        "Take a dermoscopy image and review in three months",
+        "Dermoscopy does not settle this diagnosis."
+      ],
+      [
+        "Apply a topical keratolytic to flatten the crater",
+        "Keratolytics have no role here."
+      ],
+      [
+        "Excise or destroy it, because of possible malignancy",
+        "Correct — strong arguments support classifying keratoacanthoma as a variant of invasive squamous cell carcinoma, so the standard of care is not observation."
+      ]
+    ],
+    "c": 3,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 52"
+  },
+  {
+    "topic": "Pyogenic granuloma",
+    "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for benign skin lesions",
+    "lead": "education",
+    "q": "A patient with a pyogenic granuloma opts against treatment. Which is the most appropriate advice?",
+    "opts": [
+      [
+        "It will resolve within two weeks without any follow-up",
+        "Resolution takes months to years."
+      ],
+      [
+        "It is benign and often resolves over months to years",
+        "Correct — effective treatments exist if she changes her mind. If it recurs, early follow-up is appropriate, because small lesions are easier to treat than large ones."
+      ],
+      [
+        "It is premalignant and must be excised within a month",
+        "The lesion is benign."
+      ],
+      [
+        "It is infectious and household contacts should be checked",
+        "It is neither infectious nor granulomatous."
+      ]
+    ],
+    "c": 1,
+    "cite": "7. Benign Skin Lesions Prof Griffenkranz 8-25-2025-2.pptx, Slide 96"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
