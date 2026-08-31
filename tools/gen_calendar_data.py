@@ -52,6 +52,42 @@ def tidy(title):
     return title.strip()
 
 
+# Changes the school announced in class but has not reprinted in the PDFs yet.
+# Without this they survive exactly one regeneration and then silently revert to
+# whatever the stale PDF says, which is worse than never having fixed them --
+# the calendar would look authoritative and be wrong.
+#
+# Each entry is  (date_in_pdf, title_substring) -> {what to change}
+# Delete an entry once the reprinted PDF carries the change itself.
+MOVED = {
+    ("2026-08-31", "Pharm I EXAM #1"): {
+        "date": "2026-09-04",          # moved to the Friday, told to the class
+        "start": "8:00AM", "end": "10:00AM",
+        "why": "announced in class 2026-08-31; August PDF still prints the 31st",
+    },
+}
+
+
+def apply_moves(out):
+    """Re-date events the school moved verbally. Loud if one stops matching."""
+    unused = set(MOVED)
+    for e in out:
+        for key in list(unused):
+            d, frag = key
+            if e["date"] == d and frag.lower() in e["title"].lower():
+                mv = MOVED[key]
+                e["date"] = mv.get("date", e["date"])
+                if mv.get("start"):
+                    e["start"], e["end"] = mv["start"], mv.get("end")
+                unused.discard(key)
+                print("  moved: %s  %s -> %s  (%s)" % (frag, d, e["date"], mv["why"]))
+    for d, frag in unused:
+        # the PDF has caught up, or the title changed -- either way, look
+        print("  NOTE: no event matched the override %r on %s; if the reprinted "
+              "calendar now carries the change, delete it from MOVED." % (frag, d))
+    return out
+
+
 def main():
     evs = parse()
     out = []
@@ -91,6 +127,7 @@ def main():
             h += 12
         return h * 60 + int(m.group(2))
 
+    out = apply_moves(out)
     out.sort(key=lambda x: (x["date"], minutes(x["start"]), x["title"]))
 
     lines = []

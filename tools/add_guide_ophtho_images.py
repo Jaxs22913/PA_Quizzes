@@ -92,6 +92,14 @@ PLACEMENT = [
  ("e2l3-papilledema", ["Papilledema"]),
 ]
 
+# Slide 20 carries BOTH systems at once: "Hordeolum. LEFT External hordeolum,
+# RIGHT Internal hordeolum" and separately "A, B Chalazion". The shipped
+# hordeolum picture is the RIGHT one, so it is the INTERNAL hordeolum pointing on
+# the conjunctival surface -- not a stye at the lash line, which is what its
+# caption used to claim. The chalazion picture is external lid swelling rather
+# than a nodule everted into view. Both captions now describe their own
+# photograph, and the tender / non-tender distinction the exam turns on is kept.
+#
 # A caption is a name plus a one-line "what you are looking at". Recognition is
 # the skill being taught, so the caption says what to LOOK for rather than
 # repeating the diagnosis the label already gives. Each is the finding the
@@ -102,8 +110,8 @@ LOOK = {
  "Dermatochalasis": "Excess folds of upper lid skin hanging over the lashes",
  "Xanthelasma": "Oval yellow plaques on the nasal side of the lid",
  "Blepharitis / Meibomitis": "Crusting and collarettes at the base of the lashes",
- "Chalazion": "Painless nodule pointing INSIDE the lid, away from the margin",
- "Hordeolum (stye)": "Tender nodule sitting AT the lid margin",
+ "Chalazion": "Focal, NON-tender lid swelling built over days to weeks",
+ "Hordeolum (stye)": "TENDER nodule &mdash; internal, pointing on the inner lid surface",
  "Dacryoadenitis": "Swelling of the outer third of the UPPER lid",
  "Dacryocystitis": "Swelling BELOW the medial canthal tendon, pus from the punctum",
  "Pinguecula": "Yellow nodule on the conjunctiva that STOPS at the limbus",
@@ -133,7 +141,7 @@ LOOK = {
  "Cranial nerve III palsy": "Ptosis with the eye down and out, pupil dilated",
  "Acute angle-closure glaucoma": "HAZY cornea with a fixed mid-dilated pupil",
  "Chronic open-angle glaucoma": "OPTIC NERVE CUPPING, with the rim thinned",
- "Optic neuritis": "Often a NORMAL-looking disc despite the vision loss",
+ "Optic neuritis": "Disc swelling &mdash; but it looks like any swollen disc, so it is not diagnostic",
  "Retinal detachment": "Elevated grey retina thrown into folds",
  "Papilledema": "Acute: blurred disc margins with flame haemorrhages",
 }
@@ -145,6 +153,12 @@ EXTRA = {
  "Papilledema": [("l12-s045_3.jpg", "Slide 45",
                   "Chronic: disc elevation and blurred margins, no haemorrhages",
                   "Papilledema &mdash; chronic")],
+ # Slide 23 is labelled ABOVE / MIDDLE / BELOW. The disc photograph is the
+ # ophthalmoscopic finding; the FLAIR is the demyelination behind it, and the
+ # slide's own point is that the disc alone is not diagnostic.
+ "Optic neuritis": [("l12-s023_3.jpg", "Slide 23",
+                     "Periventricular T2 FLAIR lesions &mdash; the demyelination behind it",
+                     "Optic neuritis &mdash; the MRI")],
 }
 
 CSS = """
@@ -192,7 +206,8 @@ def build_strip(names, imgs):
             continue
         img, cite = imgs[n]
         look = LOOK[n]
-        label = "Papilledema &mdash; acute" if n == "Papilledema" else n
+        label = {"Papilledema": "Papilledema &mdash; acute",
+                 "Optic neuritis": "Optic neuritis &mdash; the disc"}.get(n, n)
         figs.append(fig(img, label, look, cite))
         for x_img, x_cite, x_look, x_name in EXTRA.get(n, []):
             figs.append(fig(x_img, x_name, x_look, x_cite))

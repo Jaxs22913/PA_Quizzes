@@ -233,7 +233,10 @@ IMGS_NEW = {
  "Cranial nerve III palsy": ("l11-s039_2.jpg", 39),
  "Acute angle-closure glaucoma": ("l12-s012_1.jpg", 12),
  "Chronic open-angle glaucoma": ("l12-s019_1.jpg", 19),
- "Optic neuritis": ("l12-s023_3.jpg", 23),
+ # slide 23 is labelled ABOVE / MIDDLE / BELOW: _1 is the fundus photograph of
+ # optic nerve swelling, _3 is the periventricular FLAIR. A comparison chart of
+ # eye findings wants the eye.
+ "Optic neuritis": ("l12-s023_1.jpg", 23),
  "Retinal detachment": ("l12-s028_1.jpg", 28),
  "Papilledema": ("l12-s045_1.jpg", 45),
 }

@@ -6,8 +6,12 @@
 # this folder from 2.5 MB to 47 MB. Run this straight after it.
 set -e
 D="$(dirname "$0")/../Clinical Medicine and Surgery I Exam 2/cms-ophtho-chart-images"
+# l12-s023 slide 23 labels its pictures ABOVE / MIDDLE / BELOW. _1 is the ABOVE
+# one -- the fundus photograph of optic nerve swelling -- and _3 is BELOW, the
+# periventricular FLAIR. Keeping only _3 left the guide showing a brain MRI
+# under a caption about the optic disc, so both are kept now.
 KEEP="l11-s004_1 l11-s020_1 l11-s039_2 l11-s052_1 l12-s012_1 l12-s019_1 \
-l12-s023_3 l12-s028_1 l12-s045_1 l12-s045_2 l12-s045_3 l12-s045_4"
+l12-s023_1 l12-s023_3 l12-s028_1 l12-s045_1 l12-s045_2 l12-s045_3 l12-s045_4"
 cd "$D"
 for b in $KEEP; do
   src=$(ls "$b".* 2>/dev/null | grep -v '\.jpg$' | head -1) || true
