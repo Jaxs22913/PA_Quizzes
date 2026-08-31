@@ -25,7 +25,11 @@ OUT = os.path.join(os.path.dirname(HERE), "Clinical Medicine and Surgery I Exam 
                    "cms-ophtho-chart-images")
 BASE = os.path.expanduser("~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2/")
 DECKS = {"l11": "11. Neuro-Ophthalmology STUDENT VERSION 2026.pptx",
-         "l12": "12. Acute Vision Loss current - Jaquith.pptx"}
+         "l12": "12. Acute Vision Loss current - Jaquith.pptx",
+         # Lecture 13's deck carries no number in its filename, so without an
+         # explicit prefix its images would be written bare -- and collide with
+         # Lecture 10's, which are. Slide 52 exists in both decks.
+         "l13": "Chronic Vision Loss & Tumors - Dr Rappa.pptx"}
 EMR_STRETCHDIBITS = 81
 
 

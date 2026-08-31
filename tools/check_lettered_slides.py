@@ -45,6 +45,11 @@ INBOX = os.path.expanduser("~/Desktop")
 
 # "A. Something", "A) Something", "(A) Something" -- a label followed by prose.
 LABEL = re.compile(r'(?:^|\s|\()([A-F])[\.\)\:]\s+(?=[A-Za-z])')
+# The same thing with NO punctuation. PowerPoint keeps each figure label in its
+# own text run, so a slide reading "A / soft drusen / B / hard drusen" joins to
+# "A soft drusen B hard drusen" and the punctuated pattern above finds nothing.
+# This missed every lettered slide in the Chronic Vision Loss deck.
+BARE = re.compile(r'(?:^|\|\s*|\s)([A-F])\s+(?=[a-z])')
 # "ABOVE x, BELOW y" -- a position used as the pointer instead of a letter.
 POS = re.compile(r'\b(ABOVE|BELOW|TOP|BOTTOM|LEFT|RIGHT|UPPER|LOWER|MIDDLE|CENTER|CENTRE)\b', re.I)
 OPPOSITES = (("ABOVE", "BELOW"), ("TOP", "BOTTOM"), ("UPPER", "LOWER"), ("LEFT", "RIGHT"))
@@ -131,6 +136,12 @@ def lettered(path):
             nimg = len(re.findall(r'Target="\.\./(media/[^"]+)"',
                                   z.read(rels).decode("utf8", "ignore")))
         letters = sorted(set(m.group(1) for m in LABEL.finditer(txt)))
+        if len(letters) < 2:
+            bare = sorted(set(m.group(1) for m in BARE.finditer(txt)))
+            # require the run to start at A and be contiguous, or it is just prose
+            if len(bare) >= 2 and bare[0] == "A" and \
+               bare == [chr(ord("A") + i) for i in range(len(bare))]:
+                letters = bare
         words = set(m.group(0).upper() for m in POS.finditer(txt))
         positional = [w for a, b in OPPOSITES if a in words and b in words for w in (a, b)]
         if positional:
@@ -222,6 +233,9 @@ def main(argv):
                 print("      resolved by position: %s" % ",  ".join(bits))
             if in_use:
                 print("      used by: %s" % ", ".join(sorted(set(where))))
+                print("      CHECK the filenames: slide numbers repeat across a "
+                      "course's decks,\n           so this can be another lecture's "
+                      "slide %d rather than this one's." % sl)
                 kept = kept_count(course, sl)
                 if kept and kept < nimg:
                     print("      ONLY %d of the %d pictures on this slide were kept. If the "

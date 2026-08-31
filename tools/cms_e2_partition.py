@@ -28,6 +28,12 @@ SPECS = {
             "cms_e2l2_pool_a:POOL_A", "cms_e2l2_pool_b:POOL_B"], "cms_e2l2_sets.json"),
  "l3vig": (["cms_e2l3_vig_a:POOL_A", "cms_e2l3_vig_b:POOL_B"], "cms_e2l3_vig_sets.json"),
  "l3io":  (["cms_e2l3_pool_a:POOL_A", "cms_e2l3_pool_b:POOL_B"], "cms_e2l3_sets.json"),
+ # Lecture 13, Chronic Vision Loss & Tumors. Its pools export QUESTIONS rather
+ # than POOL_A, which the loader below handles.
+ "l4vig": (["cms_e2l13_vig_a:QUESTIONS", "cms_e2l13_vig_b:QUESTIONS"],
+           "cms_e2l13_vig_sets.json"),
+ "l4io":  (["cms_e2l13_pool_a:QUESTIONS", "cms_e2l13_pool_b:QUESTIONS"],
+           "cms_e2l13_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))
@@ -36,7 +42,13 @@ mods, OUT_JSON = SPECS[WHICH]
 POOL = []
 for spec in mods:
     m, attr = spec.split(":")
-    POOL += getattr(__import__(m), attr)
+    for q in getattr(__import__(m), attr):
+        # Pools may author the correct answer FIRST and leave the key implicit --
+        # that is the convention that stops an author drifting toward a favourite
+        # position. Rotation below moves it regardless, so a missing key means 0.
+        if "c" not in q:
+            q = dict(q, c=0)
+        POOL.append(q)
 
 # Lecture 11 authored one pool; the pathway-and-anatomy items are routed to the
 # objective set and kept out of the vignettes, which the standard judges on

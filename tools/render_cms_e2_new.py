@@ -44,6 +44,20 @@ SPEC = {
    sub="Clinical Medicine and Surgery I &middot; Exam 2 &middot; Lecture 12",
    chips=["Amaurosis fugax", "Glaucoma", "Optic neuritis",
           "Retinal detachment", "CRAO &amp; CRVO"]),
+ "l4vig": dict(sets="cms_e2l13_vig_sets.json",
+   files=["chronic-vision-loss-vignettes.html", "chronic-vision-loss-vignettes-version-2.html"],
+   title="Chronic Vision Loss Vignettes %d — CMS I Exam 2",
+   h1="Chronic Vision Loss &amp; Tumors &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 2 &middot; Lecture 13",
+   chips=["Cataract", "Macular degeneration", "Open-angle glaucoma",
+          "Amblyopia &amp; strabismus", "Ocular tumors"]),
+ "l4io": dict(sets="cms_e2l13_sets.json",
+   files=["chronic-vision-loss-quiz.html", "chronic-vision-loss-quiz-version-2.html"],
+   title="Chronic Vision Loss Quiz %d — CMS I Exam 2",
+   h1="Chronic Vision Loss &amp; Tumors &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 2 &middot; Lecture 13",
+   chips=["Cataract", "Macular degeneration", "Glaucoma",
+          "Refractive errors", "Retinoblastoma &amp; melanoma"]),
 }[sys.argv[1] if len(sys.argv) > 1 else "l2vig"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
