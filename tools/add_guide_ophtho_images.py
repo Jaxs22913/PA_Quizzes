@@ -90,6 +90,14 @@ PLACEMENT = [
  ("e2l3-neuritis", ["Optic neuritis"]),
  ("e2l3-detachment", ["Retinal detachment"]),
  ("e2l3-papilledema", ["Papilledema"]),
+ # ---- Lecture 13, Chronic Vision Loss & Tumors ----
+ ("e2l4-amd", ["Age-related macular degeneration &mdash; dry",
+               "Age-related macular degeneration &mdash; wet"]),
+ ("e2l4-amblyopia", ["Amblyopia"]),
+ ("e2l4-cataract", ["Cataract &mdash; nuclear", "Cataract &mdash; cortical",
+                    "Cataract &mdash; pediatric"]),
+ ("e2l4-retinoblastoma", ["Retinoblastoma"]),
+ ("e2l4-melanoma", ["Uveal melanoma", "Iris nevus", "Conjunctival melanoma"]),
 ]
 
 # Slide 20 carries BOTH systems at once: "Hordeolum. LEFT External hordeolum,
@@ -144,6 +152,21 @@ LOOK = {
  "Optic neuritis": "Disc swelling &mdash; but it looks like any swollen disc, so it is not diagnostic",
  "Retinal detachment": "Elevated grey retina thrown into folds",
  "Papilledema": "Acute: blurred disc margins with flame haemorrhages",
+ # Lecture 13. Each picture was matched to its slide's own A/B/C/D or ABOVE/BELOW
+ # label by geometry -- on the drusen slide the extraction order maps to labels
+ # A, D, C, B, so picking by number would caption soft drusen as a scar.
+ "Age-related macular degeneration &mdash; dry":
+   "Soft drusen &mdash; large, pale, indistinct deposits at the macula",
+ "Age-related macular degeneration &mdash; wet":
+   "Haemorrhage from new choroidal vessels bleeding into the retina",
+ "Amblyopia": "Occlusion objection &mdash; content until the GOOD eye is covered",
+ "Cataract &mdash; nuclear": "The lens centre yellowed and dense",
+ "Cataract &mdash; cortical": "Spokes running in from the lens edge",
+ "Cataract &mdash; pediatric": "Polar cataract &mdash; a discrete opacity at the lens pole",
+ "Retinoblastoma": "Leukocoria &mdash; one pupil red, the other white",
+ "Uveal melanoma": "Choroidal melanoma &mdash; a dome of pigment under the retina",
+ "Iris nevus": "Flat, under 3 mm, and no vessel of its own",
+ "Conjunctival melanoma": "Raised and vascular, unlike the flat cystic nevus",
 }
 
 # Figures the chart cannot supply because it holds one row per condition while
