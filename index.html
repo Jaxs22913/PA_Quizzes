@@ -11,6 +11,7 @@
 <script src="home.js" defer></script>
 <script src="class-schedule.js" defer></script>
 <script src="exam-countdown.js" defer></script>
+<script src="medals.js" defer></script>
 <script src="theme.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
@@ -102,6 +103,16 @@
   .ec-none{font-size:11.5px;color:var(--muted,#6b7280);margin-top:6px;font-style:italic}
   @media (prefers-reduced-motion: reduce){
     .ec-ring .ec-fill,.ec-bar i{transition:none}}
+
+  /* --- personal-best medals ---------------------------------------------- */
+  /* .quiz-link is display:flex, which blockifies its children and would stretch
+     this disc to the row height -- align-self keeps it a circle. */
+  .medal{display:inline-block;width:11px;height:11px;border-radius:50%;
+    margin-left:7px;vertical-align:middle;flex:0 0 auto;align-self:center;
+    box-shadow:inset 0 -1px 1px rgba(0,0,0,.28), 0 0 0 1px rgba(0,0,0,.12);}
+  .medal-gold{background:linear-gradient(160deg,#f5d67a,#c9a227)}
+  .medal-silver{background:linear-gradient(160deg,#e8ecf1,#a9b2bd)}
+  .medal-bronze{background:linear-gradient(160deg,#e0a878,#a9702f)}
 </style>
       <g id="logo-mark">
         <polyline class="mark-line a-draw" pathLength="100" points="148,171 198,88 218,125" stroke="var(--ink)" stroke-width="5.8" />
