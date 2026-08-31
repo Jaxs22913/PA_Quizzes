@@ -77,6 +77,18 @@
   .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
   .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
   .qbody{padding:24px 26px}
   .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
   .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
@@ -327,6 +339,8 @@ function ioLabel(io){
   return /^objectives?\b/i.test(io) ? io : "Objective " + io;
 }
 let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
 let crossedOut = {};
 function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
@@ -767,6 +781,15 @@ function showClassPicks(q, sel){
   ClassStats.getPicks(qid).then(function(d){
     var c=[], total=0;
     for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
     if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
     if(!total) return;
     document.querySelectorAll('#opts .opt').forEach(function(el){
@@ -894,6 +917,27 @@ function examReviewHTML(){
   });
   return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
 }
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
 function showResults(){
   stopTimerInterval();
   const finalMs=currentElapsedMs();
@@ -946,6 +990,7 @@ function showResults(){
         <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
       </div>
     </div>
+    ${classCompareHTML(pct)}
     <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
     ${missBlock}
     <div class="resbtns">
