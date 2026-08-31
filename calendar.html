@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="theme.css">
 <script src="semesters.js"></script>
 <script src="calendar-data.js"></script>
+<script src="exam-countdown.js" defer></script>
 <script src="theme.js" defer></script>
 
 <!-- Google tag (gtag.js) -->
@@ -23,6 +24,15 @@
   /* Teal is this page's surface hue -- the sixth accent in theme.css's ring and
      the one no other page had claimed. Same recipe as the rest, no new hex. */
   :root { --accent: var(--a-teal); --accent-soft: var(--a-teal-soft); }
+  /* AUTHOR IN LIGHT. theme.css applies filter:invert(1) hue-rotate(180deg) to
+     body > .wrap in dark mode, so anything inside it must carry LIGHT-mode
+     colours and let the filter flip them. --ink is only ever defined for
+     body.homepage, so on this page it was unset: the heading fell back to the
+     white that theme.css gives dark mode, the filter inverted that white to
+     black, and it sat on the dark body -- 1.1:1, and unreadable. Same defect as
+     progress.html, reached by a different route. */
+  .wrap { color: #1f2937; }
+  .wrap { --ink:#1f2937; --muted:#6b7280; --line:#e6e8ef; --card:#ffffff; }
 
   html, body { overscroll-behavior-y: contain; }
   html { scroll-behavior: smooth; }
@@ -127,6 +137,37 @@
     .ev { flex-direction: column; gap: 1px; }
     .ev-time { min-width: 0; }
   }
+
+  /* --- next up ------------------------------------------------------------ */
+  .next-up{border:1px solid var(--line,#e6e8ef);border-radius:14px;
+    background:var(--card,#fff);padding:14px 16px 6px;margin:0 0 20px;}
+  .nu-head{font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--muted,#6b7280);margin:0 0 4px;display:flex;justify-content:space-between;
+    align-items:baseline;gap:12px;font-weight:700;}
+  .nu-note{text-transform:none;letter-spacing:0;font-weight:400;font-size:12px;}
+  .nu-row{display:flex;gap:13px;align-items:center;padding:11px 0;
+    border-bottom:1px solid var(--line,#e6e8ef);}
+  .nu-row:last-child{border-bottom:0}
+  .nu-ring{width:46px;height:46px;flex:none;transform:rotate(-90deg)}
+  .nu-ring circle{fill:none;stroke-width:4;stroke-linecap:round}
+  .nu-ring .nu-track{stroke:rgba(127,127,127,.18)}
+  .nu-ring .nu-fill{stroke:var(--accent,#2a6df2);
+    transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1)}
+  .nu-ring text{transform:rotate(90deg);transform-origin:23px 23px;text-anchor:middle;
+    fill:currentColor;font-weight:800}
+  .nu-ring .nu-d{font-size:14px}
+  .nu-ring .nu-u{font-size:7px;font-weight:600;opacity:.6;text-transform:uppercase;
+    letter-spacing:.06em}
+  .nu-body{flex:1;min-width:0}
+  .nu-name{font-size:14px;font-weight:700;line-height:1.3}
+  .nu-when{font-size:12px;color:var(--muted,#6b7280);margin-top:1px}
+  .nu-bar{height:6px;border-radius:4px;background:rgba(127,127,127,.16);
+    overflow:hidden;margin-top:7px}
+  .nu-bar i{display:block;height:100%;border-radius:4px;background:var(--accent,#2a6df2);
+    width:0;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+  .nu-pct{font-size:11.5px;color:var(--muted,#6b7280);margin-top:4px}
+  .nu-none{font-size:11.5px;color:var(--muted,#6b7280);margin-top:6px;font-style:italic}
+  @media (prefers-reduced-motion: reduce){.nu-ring .nu-fill,.nu-bar i{transition:none}}
 </style>
 </head>
 <body>
@@ -135,6 +176,14 @@
   <div class="eyebrow">Class of 2028</div>
   <h1>Academic Calendar</h1>
   <p class="lede" id="lede"></p>
+
+  <!-- Readiness for the next graded dates. It lived briefly on the homepage and
+       duplicated the week widget there; this is the page about dates, so it is
+       the page it belongs on. Filled by exam-countdown.js. -->
+  <section id="next-up" class="next-up" hidden>
+    <h2 class="nu-head">Next up <span class="nu-note" id="nu-note"></span></h2>
+    <div id="nu-list"></div>
+  </section>
 
   <div class="controls">
     <div class="chip-row" id="sem-row"></div>

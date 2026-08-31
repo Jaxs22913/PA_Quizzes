@@ -10,7 +10,6 @@
 <script src="calendar-data.js"></script>
 <script src="home.js" defer></script>
 <script src="class-schedule.js" defer></script>
-<script src="exam-countdown.js" defer></script>
 <script src="medals.js" defer></script>
 <script src="theme.js" defer></script>
 
@@ -75,18 +74,7 @@
         }
         .class-text { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 1.6px; }
       
-  /* --- readiness, shown inside the week widget ----------------------------
-     This started as its own "Next up" card and was wrong: it repeated the two
-     exams already listed here and pushed the semester card below the fold. The
-     only thing it added that this widget lacked is how much of the block has
-     been drilled, so that is all that moved in. */
-  .week-item.has-drill{flex-wrap:wrap}
-  .wk-drill{flex-basis:100%;margin:6px 0 0 34px}
-  .wk-drill-bar{height:5px;border-radius:3px;background:rgba(127,127,127,.18);overflow:hidden}
-  .wk-drill-bar i{display:block;height:100%;border-radius:3px;background:var(--accent,#2a6df2);
-    width:0;transition:width .8s cubic-bezier(.2,.8,.2,1)}
-  .wk-drill-txt{font-size:11px;color:var(--muted,#6b7280);margin-top:3px}
-  @media (prefers-reduced-motion: reduce){.wk-drill-bar i{transition:none}}
+
 
   /* --- personal-best medals ---------------------------------------------- */
   /* .quiz-link is display:flex, which blockifies its children and would stretch
