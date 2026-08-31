@@ -37,6 +37,13 @@
   .thresh{margin-left:auto;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:7px;}
   .thresh select{font:inherit;font-size:12.5px;padding:3px 6px;border-radius:8px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);}
+  .grp-class{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:26px 0 2px;
+    padding-bottom:7px;border-bottom:2px solid var(--acc);}
+  .grp-class:first-child{margin-top:6px}
+  .grp-exam{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+    margin:16px 0 8px;font-weight:700;display:flex;justify-content:space-between;
+    align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .grp-meta{text-transform:none;letter-spacing:0;font-weight:400;font-size:12px;}
   .trap{background:var(--card);border:1px solid var(--line);border-radius:14px;
     box-shadow:var(--shadow);padding:15px 17px;margin:11px 0;
     border-left:3px solid var(--acc);}
@@ -207,23 +214,47 @@
         'come back once more of the class has been through these.</div>';
       return;
     }
+    var capped = show.slice(0, 60);
+
+    /* Broken by class, then by exam within it, rather than one flat ranking.
+       A single list mixed courses together and you could not see which block a
+       run of bad questions belonged to. Order of the groups follows the worst
+       question in each, so the weakest exam still leads. */
+    var groups = [], seen = {};
+    capped.forEach(function (r) {
+      var c = className(r.m.e), key = r.m.e;
+      if (!(key in seen)) { seen[key] = { cls: c, exam: key, rows: [] }; groups.push(seen[key]); }
+      seen[key].rows.push(r);
+    });
+
     var h = "";
-    show.slice(0, 60).forEach(function (r) {
-      h += '<div class="trap"><div class="qh"><span class="qt">' + esc(r.m.q) + "</span>" +
-           '<span class="acc">' + Math.round(r.acc * 100) + "% right</span></div>" +
-           '<div class="src">' + esc(shortClass(className(r.m.e))) + " " + esc(examLabel(r.m.e)) +
-           " &middot; " + esc(r.m.t) + " &middot; " + r.t + " responses &middot; " +
-           '<a href="' + encodeURI(r.m.h) + '">retake &rarr;</a></div>';
-      r.m.o.forEach(function (o, i) {
-        var pct = Math.round((r.c[i] || 0) / r.t * 100);
-        var cls = i === r.m.c ? " correct" : (i === r.worst && r.worstN > 0 ? " trapped" : "");
-        var mark = i === r.m.c ? '<span class="tick">&#10003;</span> '
-                 : (i === r.worst && r.worstN > 0 ? '<span class="flag">&#9888;</span> ' : "");
-        h += '<div class="opt' + cls + '"><span class="fill" style="width:' + pct + '%"></span>' +
-             '<span class="lbl"><span>' + mark + esc(o) + "</span>" +
-             '<span class="n">' + pct + "%</span></span></div>";
+    var lastClass = null;
+    groups.forEach(function (g) {
+      if (g.cls !== lastClass) {
+        h += '<h2 class="grp-class">' + esc(shortClass(g.cls)) + "</h2>";
+        lastClass = g.cls;
+      }
+      var worst = Math.round(g.rows[0].acc * 100);
+      h += '<h3 class="grp-exam">' + esc(examLabel(g.exam)) +
+           '<span class="grp-meta">' + g.rows.length +
+           (g.rows.length === 1 ? " question" : " questions") +
+           " &middot; worst " + worst + "% right</span></h3>";
+      g.rows.forEach(function (r) {
+        h += '<div class="trap"><div class="qh"><span class="qt">' + esc(r.m.q) + "</span>" +
+             '<span class="acc">' + Math.round(r.acc * 100) + "% right</span></div>" +
+             '<div class="src">' + esc(r.m.t) + " &middot; " + r.t + " responses &middot; " +
+             '<a href="' + encodeURI(r.m.h) + '">retake &rarr;</a></div>';
+        r.m.o.forEach(function (o, i) {
+          var pct = Math.round((r.c[i] || 0) / r.t * 100);
+          var cls = i === r.m.c ? " correct" : (i === r.worst && r.worstN > 0 ? " trapped" : "");
+          var mark = i === r.m.c ? '<span class="tick">&#10003;</span> '
+                   : (i === r.worst && r.worstN > 0 ? '<span class="flag">&#9888;</span> ' : "");
+          h += '<div class="opt' + cls + '"><span class="fill" style="width:' + pct + '%"></span>' +
+               '<span class="lbl"><span>' + mark + esc(o) + "</span>" +
+               '<span class="n">' + pct + "%</span></span></div>";
+        });
+        h += "</div>";
       });
-      h += "</div>";
     });
     if (show.length > 60) {
       h += '<p class="note">Showing the 60 hardest of ' + show.length + ".</p>";
