@@ -20,6 +20,18 @@ that credit in its <span class="picite">, and it is copied through verbatim
 rather than replaced with a slide number, because the repository is public and
 dropping it would republish them unattributed.
 
+LETTERED SLIDES. Jaxon, 2026-08-31: some slides carry several photographs
+labelled A, B, C, and the text underneath explains each letter separately. The
+caption for one of those pictures must come from ITS OWN letter, not from the
+slide as a whole. Two captions here were wrong for exactly that reason before
+this note existed:
+  L10 slide 18 is "A. Blepharitis" and "B. Meibomitis" -- the shipped picture is
+  A, so its caption may not borrow B's toothpaste-like meibomian secretion.
+  L12 slide 45 is a four-stage series: A acute with haemorrhages, B acute with
+  cotton wool spots, C chronic with disc elevation, D atrophic. One picture
+  cannot stand for the condition, so A and C are both shown, each labelled.
+tools/check_lettered_slides.py finds these slides so the next build sees them.
+
 RUN ORDER. After build_cms_e2_guide.py and build_cms_ophtho_chart.py.
 Idempotent: every block is fenced in <!--OPHTHOFIG--> markers and stripped
 before re-inserting, so running twice is the same as running once.
@@ -89,7 +101,7 @@ LOOK = {
  "Ectropion": "Lid margin rolled OUT, exposing the inner surface",
  "Dermatochalasis": "Excess folds of upper lid skin hanging over the lashes",
  "Xanthelasma": "Oval yellow plaques on the nasal side of the lid",
- "Blepharitis / Meibomitis": "Crusting at the lash bases with toothpaste-like secretion",
+ "Blepharitis / Meibomitis": "Crusting and collarettes at the base of the lashes",
  "Chalazion": "Painless nodule pointing INSIDE the lid, away from the margin",
  "Hordeolum (stye)": "Tender nodule sitting AT the lid margin",
  "Dacryoadenitis": "Swelling of the outer third of the UPPER lid",
@@ -123,7 +135,16 @@ LOOK = {
  "Chronic open-angle glaucoma": "OPTIC NERVE CUPPING, with the rim thinned",
  "Optic neuritis": "Often a NORMAL-looking disc despite the vision loss",
  "Retinal detachment": "Elevated grey retina thrown into folds",
- "Papilledema": "Disc pushed OUT with blurred margins and engorged veins",
+ "Papilledema": "Acute: blurred disc margins with flame haemorrhages",
+}
+
+# Figures the chart cannot supply because it holds one row per condition while
+# the slide teaches a series. Keyed by the condition they follow.
+# (filename, citation, caption, label appended to the name)
+EXTRA = {
+ "Papilledema": [("l12-s045_3.jpg", "Slide 45",
+                  "Chronic: disc elevation and blurred margins, no haemorrhages",
+                  "Papilledema &mdash; chronic")],
 }
 
 CSS = """
@@ -155,6 +176,15 @@ def strip_old(src):
     return re.sub(re.escape(FENCE_OPEN) + r".*?" + re.escape(FENCE_CLOSE), "", src, flags=re.S)
 
 
+def fig(img, name, look, cite):
+    plain = re.sub(r"<[^>]+>", "", name)
+    return ('<figure><img src="cms-ophtho-chart-images/%s" loading="lazy" decoding="async" '
+            'alt="%s &mdash; %s">'
+            '<figcaption><span class="fg-name">%s</span>%s'
+            '<span class="fg-cite">%s</span></figcaption></figure>'
+            % (img, H.escape(plain), H.escape(re.sub(r"<[^>]+>", "", look)), name, look, cite))
+
+
 def build_strip(names, imgs):
     figs = []
     for n in names:
@@ -162,13 +192,10 @@ def build_strip(names, imgs):
             continue
         img, cite = imgs[n]
         look = LOOK[n]
-        plain = re.sub(r"<[^>]+>", "", n)
-        figs.append(
-            '<figure><img src="cms-ophtho-chart-images/%s" loading="lazy" decoding="async" '
-            'alt="%s &mdash; %s">'
-            '<figcaption><span class="fg-name">%s</span>%s'
-            '<span class="fg-cite">%s</span></figcaption></figure>'
-            % (img, H.escape(plain), H.escape(re.sub(r"<[^>]+>", "", look)), n, look, cite))
+        label = "Papilledema &mdash; acute" if n == "Papilledema" else n
+        figs.append(fig(img, label, look, cite))
+        for x_img, x_cite, x_look, x_name in EXTRA.get(n, []):
+            figs.append(fig(x_img, x_name, x_look, x_cite))
     if not figs:
         return ""
     return ('%s\n  <p class="figgrid-h">What these look like</p>\n  <div class="figgrid">%s</div>\n  %s'
