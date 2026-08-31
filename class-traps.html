@@ -27,7 +27,10 @@
   .back-link:hover{color:var(--acc)}
   h1{font-size:26px;margin:0 0 4px;letter-spacing:-.01em;}
   .sub{color:var(--muted);font-size:14px;margin:0 0 20px;max-width:64ch;}
-  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px;}
+  .controls{margin:0 0 18px;}
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .chiprow.sub{margin-top:8px;padding-left:2px;}
+  .chiprow.sub .chip{font-size:12.5px;padding:4px 11px;}
   .chip{font:inherit;font-size:13px;padding:5px 13px;border-radius:999px;cursor:pointer;
     border:1px solid var(--line);background:var(--card);color:var(--ink);}
   .chip.on{background:var(--acc);color:#fff;border-color:var(--acc);}
@@ -81,7 +84,7 @@
   var API = "https://firestore.googleapis.com/v1/projects/" + PROJECT +
             "/databases/(default)/documents/answer_picks?pageSize=300";
   var out = document.getElementById("out"), controls = document.getElementById("controls");
-  var MIN = 3, exam = "__all__", rows = [], exams = [];
+  var MIN = 3, klass = "__all__", exam = "__all__", rows = [], tree = {};
 
   function num(f, k) { return f[k] ? parseInt(f[k].integerValue || 0, 10) : 0; }
 
@@ -124,27 +127,68 @@
       rows.push({ m: meta, c: counts, t: total, acc: right / total, worst: worst, worstN: worstN });
     });
     rows.sort(function (a, b) { return a.acc - b.acc || b.t - a.t; });
-    exams = Object.keys(rows.reduce(function (a, r) { a[r.m.e] = 1; return a; }, {})).sort();
+    /* Group by course, then by that course's exams. A flat row of chips read as
+       one long list of "<Course> Exam N" and got unusable as soon as a second
+       course had data. */
+    tree = {};
+    rows.forEach(function (r) {
+      var c = className(r.m.e);
+      (tree[c] || (tree[c] = {}))[r.m.e] = 1;
+    });
+    if (!(klass in tree) && klass !== "__all__") { klass = "__all__"; exam = "__all__"; }
     draw();
   }
 
   function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
 
+  /* "Pharmacology I Exam 1" -> "Pharmacology I". The folder name carries both,
+     and the exam number is what the second row of chips is for. */
+  function className(folder) { return String(folder).replace(/\s+Exam\s+\d+\s*$/i, ""); }
+  function examLabel(folder) {
+    var m = String(folder).match(/Exam\s+(\d+)\s*$/i);
+    return m ? "Exam " + m[1] : folder;
+  }
+  function shortClass(c) {
+    return c.replace(/^Clinical Medicine and Surgery I$/, "CMS I")
+            .replace(/^Principles of Diagnostic Medicine I$/, "PDM I")
+            .replace(/^Clinical Pathophysiology I$/, "Clin Path I");
+  }
+
   function drawControls() {
-    var h = '<button class="chip' + (exam === "__all__" ? " on" : "") +
-            '" data-e="__all__">All exams</button>';
-    exams.forEach(function (e) {
-      h += '<button class="chip' + (exam === e ? " on" : "") + '" data-e="' + esc(e) + '">' +
-           esc(e.replace(/^Clinical Medicine and Surgery I /, "CMS I ")
-                .replace(/^Principles of Diagnostic Medicine I /, "PDM I ")) + '</button>';
+    var classes = Object.keys(tree).sort();
+    var h = '<div class="chiprow">' +
+            '<button class="chip' + (klass === "__all__" ? " on" : "") +
+            '" data-k="__all__">All classes</button>';
+    classes.forEach(function (c) {
+      h += '<button class="chip' + (klass === c ? " on" : "") + '" data-k="' + esc(c) + '">' +
+           esc(shortClass(c)) + "</button>";
     });
     h += '<span class="thresh">at least <select id="min">' +
          [2, 3, 5, 10].map(function (n) {
            return '<option value="' + n + '"' + (n === MIN ? " selected" : "") + '>' + n + "</option>";
-         }).join("") + "</select> responses</span>";
+         }).join("") + "</select> responses</span></div>";
+
+    /* Second row appears as soon as a class is chosen. Suppressing it when the
+       class has only one exam hid the structure entirely while a single course
+       was the only one with data, which read as the filter not existing. */
+    if (klass !== "__all__" && tree[klass] && Object.keys(tree[klass]).length) {
+      var ex = Object.keys(tree[klass]).sort();
+      h += '<div class="chiprow sub"><button class="chip' +
+           (exam === "__all__" ? " on" : "") + '" data-x="__all__">All exams</button>';
+      ex.forEach(function (e) {
+        h += '<button class="chip' + (exam === e ? " on" : "") + '" data-x="' + esc(e) + '">' +
+             esc(examLabel(e)) + "</button>";
+      });
+      h += "</div>";
+    }
     controls.innerHTML = h;
-    controls.querySelectorAll(".chip").forEach(function (b) {
-      b.addEventListener("click", function () { exam = b.getAttribute("data-e"); draw(); });
+    controls.querySelectorAll("[data-k]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        klass = b.getAttribute("data-k"); exam = "__all__"; draw();
+      });
+    });
+    controls.querySelectorAll("[data-x]").forEach(function (b) {
+      b.addEventListener("click", function () { exam = b.getAttribute("data-x"); draw(); });
     });
     var sel = document.getElementById("min");
     if (sel) sel.addEventListener("change", function () { MIN = +sel.value; reload(); });
@@ -152,7 +196,11 @@
 
   function draw() {
     drawControls();
-    var show = rows.filter(function (r) { return exam === "__all__" || r.m.e === exam; });
+    var show = rows.filter(function (r) {
+      if (klass !== "__all__" && className(r.m.e) !== klass) return false;
+      if (exam !== "__all__" && r.m.e !== exam) return false;
+      return true;
+    });
     if (!show.length) {
       out.innerHTML = '<div class="state"><b>Nothing to show yet</b>' +
         'No question here has ' + MIN + ' or more responses. Lower the threshold, or ' +
@@ -163,7 +211,8 @@
     show.slice(0, 60).forEach(function (r) {
       h += '<div class="trap"><div class="qh"><span class="qt">' + esc(r.m.q) + "</span>" +
            '<span class="acc">' + Math.round(r.acc * 100) + "% right</span></div>" +
-           '<div class="src">' + esc(r.m.t) + " &middot; " + r.t + " responses &middot; " +
+           '<div class="src">' + esc(shortClass(className(r.m.e))) + " " + esc(examLabel(r.m.e)) +
+           " &middot; " + esc(r.m.t) + " &middot; " + r.t + " responses &middot; " +
            '<a href="' + encodeURI(r.m.h) + '">retake &rarr;</a></div>';
       r.m.o.forEach(function (o, i) {
         var pct = Math.round((r.c[i] || 0) / r.t * 100);
