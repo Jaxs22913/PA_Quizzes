@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class Traps — PA Quizzes</title>
+<link rel="stylesheet" href="theme.css">
+<!-- No Firebase SDK: the counts are read straight off the Firestore REST
+     endpoint, which needs no auth because reads on answer_picks are open. -->
+<script src="theme.js" defer></script>
+<style>
+  /* Authored in LIGHT only. theme.css applies filter:invert(1) hue-rotate(180deg)
+     to body > .wrap in dark mode; a page that also declares dark colours darkens
+     twice and lands on dark text over a dark ground. progress.html measured
+     1.1:1 that way. */
+  :root{
+    --ink:#1b2030; --muted:#6b7280; --line:#e6e8ef; --paper:#f6f7fb; --card:#fff;
+    --acc:#df2a44; --acc-soft:#fdf0f2;
+    --good:#218640; --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:860px;margin:0 auto;padding:26px 18px 90px;}
+  .back-link{display:inline-block;color:var(--muted);text-decoration:none;font-size:13.5px;margin-bottom:14px;}
+  .back-link:hover{color:var(--acc)}
+  h1{font-size:26px;margin:0 0 4px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 20px;max-width:64ch;}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px;}
+  .chip{font:inherit;font-size:13px;padding:5px 13px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:var(--card);color:var(--ink);}
+  .chip.on{background:var(--acc);color:#fff;border-color:var(--acc);}
+  .thresh{margin-left:auto;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:7px;}
+  .thresh select{font:inherit;font-size:12.5px;padding:3px 6px;border-radius:8px;
+    border:1px solid var(--line);background:var(--card);color:var(--ink);}
+  .trap{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:15px 17px;margin:11px 0;
+    border-left:3px solid var(--acc);}
+  .trap .qh{display:flex;justify-content:space-between;gap:14px;align-items:baseline;margin-bottom:3px;}
+  .trap .acc{font-weight:800;font-size:15px;color:var(--acc);white-space:nowrap;
+    font-variant-numeric:tabular-nums;}
+  .trap .qt{font-weight:650;font-size:15.5px;line-height:1.4;}
+  .trap .src{font-size:12px;color:var(--muted);margin:5px 0 11px;}
+  .trap .src a{color:var(--muted);}
+  .opt{position:relative;padding:7px 10px;border-radius:9px;margin:4px 0;font-size:13.5px;
+    background:var(--paper);overflow:hidden;}
+  .opt .lbl{position:relative;z-index:1;display:flex;justify-content:space-between;gap:12px;}
+  .opt .n{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12.5px;white-space:nowrap;}
+  .opt .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:#e3e6ee;
+    transition:width .5s cubic-bezier(.2,.8,.2,1);}
+  .opt.correct .fill{background:#d6efdf;}
+  .opt.correct .lbl{font-weight:700;}
+  .opt.correct .n{color:var(--good);font-weight:700;}
+  .opt.trapped .fill{background:#fbdce0;}
+  .opt.trapped .n{color:var(--acc);font-weight:700;}
+  .tick{color:var(--good);font-weight:800;}
+  .flag{color:var(--acc);font-weight:800;}
+  .note{font-size:12.5px;color:var(--muted);margin:22px 0 0;text-align:center;}
+  .state{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);padding:38px 24px;text-align:center;color:var(--muted);}
+  .state b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px;}
+  @media (prefers-reduced-motion: reduce){.opt .fill{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="index.html">&larr; Back to Home</a>
+  <h1>Class Traps</h1>
+  <p class="sub">The questions the cohort gets wrong most often, and the specific
+    wrong answer that catches people. Built from what everyone actually picked &mdash;
+    it sharpens as more of the class answers.</p>
+  <div class="controls" id="controls"></div>
+  <div id="out"><div class="state">Loading what the class picked&hellip;</div></div>
+  <p class="note">Percentages are of everyone who answered that question, this device included.</p>
+</div>
+<script>
+(function () {
+  "use strict";
+  var PROJECT = "pa-quizzes-addc1";
+  var API = "https://firestore.googleapis.com/v1/projects/" + PROJECT +
+            "/databases/(default)/documents/answer_picks?pageSize=300";
+  var out = document.getElementById("out"), controls = document.getElementById("controls");
+  var MIN = 3, exam = "__all__", rows = [], exams = [];
+
+  function num(f, k) { return f[k] ? parseInt(f[k].integerValue || 0, 10) : 0; }
+
+  // Live counts. Reads are open on this collection (see firestore.rules), so no
+  // sign-in is needed just to look.
+  function loadPicks() {
+    var docs = [];
+    function page(tok) {
+      return fetch(API + (tok ? "&pageToken=" + encodeURIComponent(tok) : ""))
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d.error) throw new Error(d.error.message || "firestore");
+          docs = docs.concat(d.documents || []);
+          return d.nextPageToken ? page(d.nextPageToken) : docs;
+        });
+    }
+    return page(null);
+  }
+
+  function shardsNeeded(docs) {
+    var want = {};
+    docs.forEach(function (d) {
+      var id = d.name.split("/").pop(), slug = id.split("__")[0];
+      if (slug) want[slug] = 1;
+    });
+    return Object.keys(want);
+  }
+
+  function build(docs, text) {
+    rows = [];
+    docs.forEach(function (d) {
+      var id = d.name.split("/").pop(), meta = text[id];
+      if (!meta) return;                       // question was reworded before ids were frozen
+      var f = d.fields || {}, counts = [], total = 0;
+      for (var i = 0; i < meta.o.length; i++) { var v = num(f, "c" + i); counts.push(v); total += v; }
+      if (total < MIN) return;
+      var right = counts[meta.c] || 0;
+      var worst = -1, worstN = -1;
+      counts.forEach(function (n, i) { if (i !== meta.c && n > worstN) { worstN = n; worst = i; } });
+      rows.push({ m: meta, c: counts, t: total, acc: right / total, worst: worst, worstN: worstN });
+    });
+    rows.sort(function (a, b) { return a.acc - b.acc || b.t - a.t; });
+    exams = Object.keys(rows.reduce(function (a, r) { a[r.m.e] = 1; return a; }, {})).sort();
+    draw();
+  }
+
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+  function drawControls() {
+    var h = '<button class="chip' + (exam === "__all__" ? " on" : "") +
+            '" data-e="__all__">All exams</button>';
+    exams.forEach(function (e) {
+      h += '<button class="chip' + (exam === e ? " on" : "") + '" data-e="' + esc(e) + '">' +
+           esc(e.replace(/^Clinical Medicine and Surgery I /, "CMS I ")
+                .replace(/^Principles of Diagnostic Medicine I /, "PDM I ")) + '</button>';
+    });
+    h += '<span class="thresh">at least <select id="min">' +
+         [2, 3, 5, 10].map(function (n) {
+           return '<option value="' + n + '"' + (n === MIN ? " selected" : "") + '>' + n + "</option>";
+         }).join("") + "</select> responses</span>";
+    controls.innerHTML = h;
+    controls.querySelectorAll(".chip").forEach(function (b) {
+      b.addEventListener("click", function () { exam = b.getAttribute("data-e"); draw(); });
+    });
+    var sel = document.getElementById("min");
+    if (sel) sel.addEventListener("change", function () { MIN = +sel.value; reload(); });
+  }
+
+  function draw() {
+    drawControls();
+    var show = rows.filter(function (r) { return exam === "__all__" || r.m.e === exam; });
+    if (!show.length) {
+      out.innerHTML = '<div class="state"><b>Nothing to show yet</b>' +
+        'No question here has ' + MIN + ' or more responses. Lower the threshold, or ' +
+        'come back once more of the class has been through these.</div>';
+      return;
+    }
+    var h = "";
+    show.slice(0, 60).forEach(function (r) {
+      h += '<div class="trap"><div class="qh"><span class="qt">' + esc(r.m.q) + "</span>" +
+           '<span class="acc">' + Math.round(r.acc * 100) + "% right</span></div>" +
+           '<div class="src">' + esc(r.m.t) + " &middot; " + r.t + " responses &middot; " +
+           '<a href="' + encodeURI(r.m.h) + '">retake &rarr;</a></div>';
+      r.m.o.forEach(function (o, i) {
+        var pct = Math.round((r.c[i] || 0) / r.t * 100);
+        var cls = i === r.m.c ? " correct" : (i === r.worst && r.worstN > 0 ? " trapped" : "");
+        var mark = i === r.m.c ? '<span class="tick">&#10003;</span> '
+                 : (i === r.worst && r.worstN > 0 ? '<span class="flag">&#9888;</span> ' : "");
+        h += '<div class="opt' + cls + '"><span class="fill" style="width:' + pct + '%"></span>' +
+             '<span class="lbl"><span>' + mark + esc(o) + "</span>" +
+             '<span class="n">' + pct + "%</span></span></div>";
+      });
+      h += "</div>";
+    });
+    if (show.length > 60) {
+      h += '<p class="note">Showing the 60 hardest of ' + show.length + ".</p>";
+    }
+    out.innerHTML = h;
+  }
+
+  var cachedDocs = null, cachedText = {};
+  function reload() { if (cachedDocs) build(cachedDocs, cachedText); }
+
+  loadPicks().then(function (docs) {
+    cachedDocs = docs;
+    var need = shardsNeeded(docs);
+    return Promise.all(need.map(function (slug) {
+      return fetch("class-traps/" + encodeURIComponent(slug) + ".json")
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .catch(function () { return {}; });
+    })).then(function (parts) {
+      parts.forEach(function (p) { Object.keys(p).forEach(function (k) { cachedText[k] = p[k]; }); });
+      build(docs, cachedText);
+    });
+  }).catch(function (e) {
+    out.innerHTML = '<div class="state"><b>Could not load the class data</b>' +
+      "This page needs a connection. " + esc(String(e && e.message || e)) + "</div>";
+  });
+})();
+</script>
+</body>
+</html>
