@@ -14,14 +14,12 @@
     --good:#218640; --good-soft:#e9f7ef; --warn:#b7791f; --warn-soft:#fdf6e3;
     --bad:#dc2626; --bad-soft:#fdecec; --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);
   }
-  @media (prefers-color-scheme: dark){
-    :root{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
-      --acc:#8b93ff;--acc-soft:#1c2030;--good:#4ade80;--good-soft:#12241a;--warn:#e0b64d;--warn-soft:#241f10;
-      --bad:#f87171;--bad-soft:#2a1717;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
-  }
-  :root[data-theme="dark"]{--ink:#e8eaf2;--muted:#9aa3b2;--line:#262b39;--paper:#0f1218;--card:#161a22;
-    --acc:#8b93ff;--acc-soft:#1c2030;--good:#4ade80;--good-soft:#12241a;--warn:#e0b64d;--warn-soft:#241f10;
-    --bad:#f87171;--bad-soft:#2a1717;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);}
+  /* NO dark palette here on purpose. theme.css already applies
+     `filter: invert(1) hue-rotate(180deg)` to `body > .wrap` in dark mode, so a
+     page that ALSO declares dark colours gets darkened twice and comes back out
+     as dark text on a dark ground -- this page measured 1.1:1 and its heading
+     was unreadable. Author in light; let the filter flip it. Same defect and
+     same fix as review.html. */
   :root[data-theme="light"]{--ink:#1b2030;--muted:#6b7280;--line:#e6e8ef;--paper:#f6f7fb;--card:#fff;
     --acc:#218640;--acc-soft:#eef0fd;--good:#218640;--good-soft:#e9f7ef;--warn:#b7791f;--warn-soft:#fdf6e3;
     --bad:#dc2626;--bad-soft:#fdecec;--shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);}
@@ -41,6 +39,49 @@
   .rc-go{flex:none;color:var(--a-crimson,#df2a44);font-size:19px;font-weight:700;}
   @media (prefers-reduced-motion: reduce){.review-cta,.rc-icon svg{transition:none;}
     .review-cta:hover{transform:none;} .review-cta:hover .rc-icon svg{transform:none;}}
+
+  /* --- Consistency heatmap -------------------------------------------------
+     One square per day for the last 18 weeks, tinted by how many questions were
+     answered that day. The tint is color-mix()ed from --good rather than a new
+     palette, so it tracks the page's own colour in both themes. */
+  .hm-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;}
+  .hm-head .hm-note{font-size:12px;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400;}
+  .hm-card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:14px 16px 12px;overflow-x:auto;}
+  .hm-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);
+    gap:3px;min-width:max-content;}
+  /* The month row has to use the SAME track width and gap as the day grid, or
+     the labels drift off their columns -- sized to their own text they walked
+     past the right edge of the grid entirely. */
+  .hm-months{display:grid;grid-auto-flow:column;grid-auto-columns:13px;gap:3px;
+    min-width:max-content;font-size:10.5px;color:var(--muted);
+    margin:0 0 5px 22px;height:13px;}
+  .hm-months span{white-space:nowrap;overflow:visible;line-height:13px;}
+  .hm-body{display:flex;gap:6px;align-items:flex-start;}
+  .hm-days{display:grid;grid-template-rows:repeat(7,1fr);gap:3px;font-size:10px;
+    color:var(--muted);width:16px;flex:none;}
+  .hm-days span{line-height:13px;height:13px;}
+  .hm-c{width:13px;height:13px;border-radius:3px;background:var(--l0);
+    outline:1px solid rgba(127,127,127,.10);outline-offset:-1px;}
+  .hm-c.l1{background:var(--l1)} .hm-c.l2{background:var(--l2)}
+  .hm-c.l3{background:var(--l3)} .hm-c.l4{background:var(--l4)}
+  .hm-c.future{background:transparent;outline:none;}
+  .hm-c.today{outline:2px solid var(--good);outline-offset:1px;}
+  .hm-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    margin-top:11px;font-size:12.5px;color:var(--muted);flex-wrap:wrap;}
+  .hm-foot b{color:var(--ink);font-weight:700;}
+  .hm-key{display:flex;align-items:center;gap:4px;}
+  .hm-key .hm-c{width:11px;height:11px;}
+  .hm-wrapc{
+    --l0: color-mix(in oklab, var(--good) 7%, var(--card));
+    --l1: color-mix(in oklab, var(--good) 26%, var(--card));
+    --l2: color-mix(in oklab, var(--good) 48%, var(--card));
+    --l3: color-mix(in oklab, var(--good) 72%, var(--card));
+    --l4: var(--good);
+  }
+  .hm-c{transition:transform var(--dur-1,160ms) var(--ease,cubic-bezier(.2,.8,.2,1));}
+  .hm-c:not(.future):hover{transform:scale(1.35);}
+  @media (prefers-reduced-motion: reduce){.hm-c{transition:none} .hm-c:hover{transform:none}}
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
     font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
@@ -152,6 +193,96 @@
     return new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric" });
   }
 
+
+  // --- Consistency heatmap ---------------------------------------------------
+  // Reads the same progressLog the streak uses. Counts QUESTIONS per day rather
+  // than quizzes, because a 60-question master exam and a 20-question quiz are
+  // not the same amount of work and colouring them identically would flatter
+  // the wrong day.
+  function heatmap(log) {
+    var WEEKS = 18, DAY = 86400000;
+    var perDay = {};                       // "y-m-d" -> questions answered
+    (log || []).forEach(function (e) {
+      var d = new Date(e.t);
+      var k = d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate();
+      perDay[k] = (perDay[k] || 0) + (e.n || 0);
+    });
+    function key(d) { return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate(); }
+
+    // Start on the Sunday of the week containing (today - 17 weeks), so every
+    // column is a whole week and the day-of-week rows line up.
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var start = new Date(today.getTime() - (WEEKS - 1) * 7 * DAY);
+    start.setDate(start.getDate() - start.getDay());
+
+    var counts = [], best = { n: 0, d: null };
+    for (var i = 0; i < WEEKS * 7; i++) {
+      var d = new Date(start.getTime() + i * DAY);
+      var n = perDay[key(d)] || 0;
+      counts.push(n);
+      if (n > best.n) { best = { n: n, d: new Date(d) }; }
+    }
+    var active = counts.filter(function (n) { return n > 0; });
+    // Thresholds from the user's own busiest day, so the scale stays meaningful
+    // whether they do 20 questions a day or 300.
+    var peak = Math.max.apply(null, counts.concat([1]));
+    function level(n) {
+      if (!n) return "";
+      if (n >= peak * 0.66) return " l4";
+      if (n >= peak * 0.40) return " l3";
+      if (n >= peak * 0.18) return " l2";
+      return " l1";
+    }
+
+    var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var months = '', lastMon = -1;
+    for (var w = 0; w < WEEKS; w++) {
+      var first = new Date(start.getTime() + w * 7 * DAY);
+      var label = '';
+      if (first.getMonth() !== lastMon) { label = MON[first.getMonth()]; lastMon = first.getMonth(); }
+      months += '<span>' + label + '</span>';
+    }
+
+    var cells = '';
+    for (var col = 0; col < WEEKS; col++) {
+      for (var row = 0; row < 7; row++) {
+        var idx = col * 7 + row;
+        var dt = new Date(start.getTime() + idx * DAY);
+        if (dt > today) { cells += '<i class="hm-c future"></i>'; continue; }
+        var n = counts[idx];
+        var when = DOW[dt.getDay()] + " " + dt.getDate() + " " + MON[dt.getMonth()];
+        var lab = n ? n + (n === 1 ? " question" : " questions") + " \u00b7 " + when
+                    : "nothing on " + when;
+        cells += '<i class="hm-c' + level(n) + (idx === Math.floor((today - start) / DAY) ? ' today' : '') +
+                 '" title="' + lab + '"></i>';
+      }
+    }
+
+    var streak = computeStreak(log);
+    var daysOn = active.length;
+    var foot = '<span><b>' + streak + '</b> day streak \u00b7 <b>' + daysOn +
+               '</b> of the last ' + (WEEKS * 7) + ' days studied';
+    if (best.d) {
+      foot += ' \u00b7 best <b>' + best.n + '</b> on ' + best.d.getDate() + ' ' + MON[best.d.getMonth()];
+    }
+    foot += '</span>';
+    foot += '<span class="hm-key">less <i class="hm-c"></i><i class="hm-c l1"></i>' +
+            '<i class="hm-c l2"></i><i class="hm-c l3"></i><i class="hm-c l4"></i> more</span>';
+
+    return '<h2 class="hm-head">Consistency <span class="hm-note">last ' + WEEKS +
+           ' weeks</span></h2>' +
+           '<div class="hm-card hm-wrapc">' +
+             '<div class="hm-months">' + months + '</div>' +
+             '<div class="hm-body">' +
+               '<div class="hm-days"><span></span><span>M</span><span></span><span>W</span>' +
+                 '<span></span><span>F</span><span></span></div>' +
+               '<div class="hm-grid">' + cells + '</div>' +
+             '</div>' +
+             '<div class="hm-foot">' + foot + '</div>' +
+           '</div>';
+  }
+
   function render() {
     var quizzes = readCompletions();
     var dash = document.getElementById("dash");
@@ -194,6 +325,8 @@
       stat(overall + "%", "overall accuracy", "acc") +
       stat(streak + (streak === 1 ? " day" : " days"), "study streak") +
       '</div>';
+
+    html += heatmap(log);
 
     // By exam
     var folders = Object.keys(byFolder).sort();
