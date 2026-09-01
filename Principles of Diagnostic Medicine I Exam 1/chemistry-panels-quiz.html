@@ -303,7 +303,788 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Correlation", "io": "h — Correlate chemistry findings with other diagnostic modalities when appropriate", "slot": "initial test", "q": "Why does the deck include an electrocardiogram in the ketoacidosis workup?", "opts": [["To confirm the diagnosis of ketoacidosis", "Diagnosis comes from the glucose, gap, and ketones."], ["To look for the cardiac effects of a raised potassium", "Correct — the deck ties the tracing to potassium."], ["To exclude a myocardial infarction as the precipitant", "A reasonable clinical thought, but not the deck's stated reason."], ["To measure the degree of dehydration", "The tracing does not measure volume status."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 24"}, {"topic": "Fluid balance", "io": "i — Explain laboratory evaluation of fluid and electrolyte homeostasis", "slot": "test finding", "q": "Which four core tests does the deck list for evaluating water and electrolyte balance?", "opts": [["Albumin, total protein, prothrombin time, and bilirubin", "Those assess liver function."], ["Serum sodium, serum osmolality, urine sodium and osmolality, and the urea nitrogen to creatinine ratio", "Correct — the deck's core set, with potassium noted alongside."], ["Serum sodium, serum potassium, serum calcium, serum magnesium, and serum phosphate", "Magnesium was not covered and the deck's list is not four cations."], ["Serum glucose, bicarbonate, the anion gap, and ketones", "That is the diabetic ketoacidosis workup."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 25"}, {"topic": "Indications", "io": "g — Discuss indications for ordering chemistry panels", "slot": "initial test", "q": "Under the deck's acute illness indication, which two situations call for a chemistry panel?", "opts": [["Fever and a suspected bloodstream infection", "Those would prompt cultures and a complete blood count."], ["Chest trauma and a suspected rib fracture", "Imaging rather than chemistry is the first step there."], ["Headache and a suspected migraine", "The deck does not give this as an indication."], ["Dehydration and a suspected acid-base disorder", "Correct — the two the deck pairs under acute illness."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 23"}, {"topic": "Panel groupings", "io": "a — Explain the components of a chemistry panel", "slot": "initial test", "q": "Where does calcium sit in the deck's grouping of panel components?", "opts": [["On its own, as the mineral", "Correct — the deck lists calcium separately under mineral."], ["With sodium and potassium as an electrolyte", "The deck's electrolyte group is sodium, potassium, chloride, and bicarbonate."], ["With the liver and protein markers", "Calcium is on the basic panel; the liver and protein group is the comprehensive addition."], ["With blood urea nitrogen as a kidney marker", "Calcium is not grouped as a measure of kidney function."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 7"}, {"topic": "Bicarbonate", "io": "b(iv) — Discuss the physiological role of bicarbonate", "slot": "test finding", "q": "Why is bicarbonate reported on a chemistry panel as carbon dioxide?", "opts": [["The laboratory measures dissolved carbon dioxide gas directly", "The reported value is total carbon dioxide, the bulk of which is bicarbonate."], ["Bicarbonate is unstable and must be converted before measurement", "The deck does not describe a conversion step."], ["It reflects the carbon dioxide cleared by the lungs that minute", "That is what a blood gas measures, not the panel value."], ["The panel reports total carbon dioxide, which is mostly serum bicarbonate", "Correct — the deck explains the label this way."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 12"}, {"topic": "Glucose", "io": "b(v) — Discuss the physiological role of glucose", "slot": "etiology", "q": "Which hormone lowers blood glucose, and which raise it?", "opts": [["Insulin lowers it; antidiuretic hormone raises it", "That hormone governs water handling, not glucose."], ["Insulin lowers it; glucagon and the counter-regulatory hormones raise it", "Correct — the deck's pairing for glucose regulation."], ["Glucagon lowers it; insulin and cortisol raise it", "This reverses the roles of insulin and glucagon."], ["Cortisol lowers it; insulin and adrenaline together raise it", "Cortisol is one of the counter-regulatory hormones that raise glucose."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 13"}, {"topic": "Anion gap", "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders", "slot": "test finding", "q": "Using the standard formula, what is the normal range for the anion gap?", "opts": [["8 to 12 milliequivalents per litre", "Correct — the range the deck prints and Reynolds repeated in the lecture."], ["10 to 14 milliequivalents per litre", "That is the range for the extended formula that includes potassium."], ["4 to 8 milliequivalents per litre", "Below the deck's stated range."], ["12 to 20 milliequivalents per litre", "Above the deck's stated range."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 22"}, {"topic": "Glucose", "io": "b(v) — Discuss the physiological role of glucose", "slot": "test finding", "q": "What effect do the speaker notes say marked hyperglycaemia has on the measured sodium?", "opts": [["It leaves it unchanged but raises the potassium", "The notes describe an effect on sodium."], ["It makes the sodium unmeasurable until the glucose is corrected", "The sodium is measurable; it simply reads low."], ["It lowers it, by dilution", "Correct — the notes describe a dilutional fall in measured sodium."], ["It raises it, by drawing water into the cells", "The water shift is out of the cells, which dilutes the sodium."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 13 (speaker notes)"}, {"topic": "Comprehensive metabolic panel", "io": "a — Explain the components of a chemistry panel", "slot": "initial test", "q": "What is the other common name for the comprehensive metabolic panel?", "opts": [["Chem-10", "The deck names chem-7, chem-8, chem-12 and chem-14 only."], ["Chem-14", "Correct — the deck gives chem-14 as the alternative name."], ["Chem-8", "Chem-8 is the basic panel including calcium."], ["Chem-20", "The deck does not use this name for any panel."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 7"}, {"topic": "Blood urea nitrogen", "io": "b(vi) — Discuss the physiological role of blood urea nitrogen", "slot": "differential", "q": "Besides reduced kidney clearance, which of these raises blood urea nitrogen?", "opts": [["Reduced muscle mass", "Muscle mass influences creatinine rather than urea nitrogen."], ["Gastrointestinal bleeding", "Correct — one of the non-renal causes the deck lists."], ["Low dietary protein intake", "A high protein intake raises it; a low intake would not."], ["Overhydration", "Dehydration raises it; the opposite state does not."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"}, {"topic": "What a chemistry panel is", "io": "a — Explain the components of a chemistry panel", "slot": "initial test", "q": "What does a chemistry panel measure?", "opts": [["Red cells, white cells, and platelets with their indices", "That is the complete blood count, a separate panel from Lecture 4."], ["Clotting factor activity together with the time taken for a clot to form in the sample", "Prothrombin time and its ratio are coagulation studies, ordered separately."], ["Hormone levels from the thyroid, adrenal, and pituitary glands", "Endocrine assays are not part of a routine chemistry panel."], ["Metabolites, electrolytes, kidney markers, and in the expanded version liver and protein markers", "Correct — the deck's own one-line definition of the panel."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 5"}, {"topic": "Creatinine", "io": "b(vii) — Discuss the physiological role of creatinine", "slot": "test finding", "q": "Which three factors does the deck say influence creatinine and can make it misleading?", "opts": [["Protein intake, hydration, and recent bleeding", "Those influence blood urea nitrogen instead."], ["Liver function, bilirubin, and albumin", "None of these is given as a creatinine influence."], ["Time of day, posture, and fasting state", "The deck does not list these."], ["Muscle mass, age, and sex", "Correct — the three the deck names."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"}, {"topic": "Potassium and pH", "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders", "slot": "etiology", "q": "What happens to serum potassium in alkalosis?", "opts": [["Potassium is unaffected by alkalosis", "The deck describes a definite direction of movement."], ["Potassium shifts into cells, so the serum level falls", "Correct — the shift the deck describes for alkalosis."], ["Potassium shifts out of cells, so the serum level rises", "That is the acidosis direction."], ["Potassium is retained by the kidney, so the serum level rises", "The deck describes a shift across the cell membrane."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 21"}, {"topic": "Blood urea nitrogen", "io": "b(vi) — Discuss the physiological role of blood urea nitrogen", "slot": "education", "q": "What do the speaker notes say about reading blood urea nitrogen?", "opts": [["Interpret it only when the patient is fasting", "Fasting is a glucose consideration."], ["Interpret it only if the estimated filtration rate is normal", "The notes set no such condition."], ["Interpret it alongside creatinine, not alone", "Correct — the notes' instruction for this value."], ["Interpret it alone, since creatinine is less specific", "Creatinine is the more specific of the two, and the notes pair them."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14 (speaker notes)"}, {"topic": "Blood urea nitrogen", "io": "b(vi) — Discuss the physiological role of blood urea nitrogen", "slot": "etiology", "q": "What is blood urea nitrogen, and where is it produced and cleared?", "opts": [["A nitrogenous waste product of protein metabolism, produced by the liver and cleared by the kidneys", "Correct — the deck's full description of its origin and clearance."], ["A nitrogenous waste product of muscle metabolism, produced and cleared by the kidneys", "That description belongs to creatinine, and the kidney does not produce it."], ["A breakdown product of red blood cells, conjugated by the liver", "That is bilirubin."], ["An enzyme released from injured hepatocytes into the blood", "That describes the transaminases."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"}, {"topic": "Sodium", "io": "b(i) — Discuss the physiological role of sodium", "slot": "etiology", "q": "Serum sodium represents a balance between which two processes?", "opts": [["Bone storage and bone release", "That describes calcium handling, not sodium."], ["Hepatic synthesis and renal clearance", "Sodium is not synthesised by the liver."], ["Oral intake and renal excretion", "Correct — the two the deck names as setting the serum level."], ["Gastrointestinal absorption and biliary loss", "Biliary loss is not a route the deck describes for sodium."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9"}, {"topic": "Liver studies", "io": "c — Discuss basic liver function studies included in chemistry testing", "slot": "test finding", "q": "Which is a synthetic product of the liver, and therefore a measure of what the liver is making?", "opts": [["Albumin", "Correct — the deck lists albumin as a synthetic product of the liver."], ["Alkaline phosphatase", "That is an enzyme marking cholestasis."], ["Total bilirubin", "That is a breakdown product of red blood cells."], ["Aspartate aminotransferase", "That is an enzyme released on injury."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 15"}, {"topic": "Sodium", "io": "b(i) — Discuss the physiological role of sodium", "slot": "etiology", "q": "Where is sodium the major cation?", "opts": [["In the cerebrospinal fluid specifically", "The deck's contrast is extracellular against intracellular, not by compartment."], ["In the biliary and pancreatic secretions", "The deck makes no such claim."], ["In the extracellular fluid", "Correct — sodium is the major extracellular cation."], ["In the intracellular fluid", "Potassium is the major intracellular cation."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9"}, {"topic": "Reference ranges", "io": "a — Explain the components of a chemistry panel", "slot": "education", "q": "What does the deck advise before launching an extensive workup on a borderline abnormal result?", "opts": [["Repeat or confirm the abnormality", "Correct — the deck's instruction, with confirming a raised alkaline phosphatase as its example."], ["Proceed straight to imaging", "Imaging follows a confirmed abnormality rather than replacing confirmation."], ["Treat empirically and recheck afterwards", "The deck does not suggest treating before confirming."], ["Refer to the relevant specialist", "Referral is not the deck's next step for a borderline value."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 18"}, {"topic": "Abbreviations", "io": "a — Explain the components of a chemistry panel", "slot": "education", "q": "On a chemistry panel, what does the abbreviation Cr stand for?", "opts": [["Chromium", "This is the element whose symbol Cr normally is, and she warned specifically against reading it that way."], ["Creatine kinase", "That is a separate enzyme assay, abbreviated differently."], ["C-reactive protein", "That is an inflammatory marker and is not on the panel."], ["Creatinine", "Correct — Reynolds singled this out as the one abbreviation that is not the element symbol it looks like."]], "c": 3, "cite": "Lecture recording, 26 August 2026"}, {"topic": "Sodium", "io": "b(i) — Discuss the physiological role of sodium", "slot": "etiology", "q": "Which two mechanisms do the speaker notes say control water handling, and therefore serum sodium?", "opts": [["Thirst and antidiuretic hormone", "Correct — the two the notes name for water handling."], ["Renin and angiotensin", "The notes assign the renin-angiotensin-aldosterone system to extracellular volume instead."], ["Aldosterone and atrial natriuretic peptide", "Aldosterone is named for total-body sodium, not for water handling."], ["Insulin and the catecholamines", "Those shift potassium across cell membranes."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9 (speaker notes)"}, {"topic": "Bicarbonate", "io": "b(iv) — Discuss the physiological role of bicarbonate", "slot": "initial test", "q": "A low bicarbonate is the trigger to do what next?", "opts": [["Calculate the anion gap", "Correct — the deck says always to calculate the gap when bicarbonate is low, and Reynolds repeated it in the lecture."], ["Order an arterial blood gas before anything else", "A gas may follow, but the deck's immediate next step is the gap."], ["Repeat the panel to exclude a laboratory error", "Repeating is the deck's advice for borderline values generally, not for this trigger."], ["Give intravenous bicarbonate", "The deck's next step is diagnostic rather than therapeutic."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 12"}, {"topic": "Hepatic patterns", "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders", "slot": "differential", "q": "Which causes do the speaker notes give for a cholestatic pattern?", "opts": [["Viral hepatitis, alcohol, ischaemia, and drug injury", "Those are given for the hepatocellular pattern."], ["Gilbert syndrome and haemolysis", "Those are given for isolated hyperbilirubinaemia."], ["Heart failure and sepsis", "Neither is on the notes' cholestatic list."], ["Bile duct obstruction, gallstones, and primary biliary cholangitis", "Correct — the three the notes list."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 17 (speaker notes)"}, {"topic": "Potassium", "io": "b(ii) — Discuss the physiological role of potassium", "slot": "complication", "q": "Why does the deck stress that small fluctuations in potassium matter?", "opts": [["Small changes reliably indicate that the sample was taken or handled incorrectly", "Collection artefact is a real issue but is not the deck's point here."], ["Small changes are usually meaningless and can be ignored", "The deck says the opposite."], ["Small changes only matter in patients with kidney disease", "The deck does not restrict the significance to renal patients."], ["Small changes in the serum level carry significant physiological consequences", "Correct — the deck's reason for treating potassium as high-stakes."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 10"}, {"topic": "Reading a panel", "io": "d — Interpret abnormal chemistry values and their clinical significance", "slot": "education", "q": "What does the deck say usually follows any single or combined abnormality on a panel?", "opts": [["Referral to the relevant specialist", "Referral is not the deck's stated next step."], ["Repeating the whole panel every day", "The deck asks for confirmation, not daily repetition."], ["Confirmatory testing", "Correct — the deck says an abnormality usually warrants confirmation."], ["Immediate treatment of the abnormal value", "The deck's next step is diagnostic."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 20"}, {"topic": "Chloride", "io": "b(iii) — Discuss the physiological role of chloride", "slot": "etiology", "q": "When carbon dioxide and hydrogen ions rise, bicarbonate moves out of the cell. What does chloride do?", "opts": [["It binds to haemoglobin and is carried to the lungs for excretion", "That is how carbon dioxide is carried, not chloride."], ["It shifts back into the cell to preserve electrical neutrality", "Correct — the reciprocal shift the deck describes."], ["It shifts out of the cell alongside bicarbonate", "Both anions leaving would break electrical neutrality."], ["It is excreted by the kidney within minutes", "The deck describes a transcellular shift, not renal loss."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 11"}, {"topic": "Overlap syndromes", "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders", "slot": "differential", "q": "Which syndrome does the deck give as showing both liver and kidney failure at once?", "opts": [["Diabetic ketoacidosis", "That produces electrolyte and renal derangements, not liver failure."], ["Nephrotic syndrome", "The deck does not name this among its overlap examples."], ["Hepatorenal syndrome", "Correct — the deck names this as the overlap of the two patterns."], ["Cardiorenal syndrome", "That is also named, but as a cardiac and renal overlap."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 19"}, {"topic": "Hepatic patterns", "io": "d — Interpret abnormal chemistry values and their clinical significance", "slot": "test finding", "q": "How do the speaker notes band the magnitude of a transaminase rise?", "opts": [["Mild under five times, moderate five to fifteen times, and severe over fifteen times the upper limit", "Correct — the three bands the notes give."], ["Mild under two times, moderate two to ten times, and severe over ten times the upper limit", "Not the bands the notes use."], ["Mild under ten times, moderate ten to fifty times, and severe over fifty times the upper limit", "These thresholds are higher than the notes state."], ["Mild under three times, moderate three to twenty times, and severe over twenty times the upper limit", "Not the deck's banding."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 17 (speaker notes)"}, {"topic": "Anion gap", "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders", "slot": "initial test", "q": "What is the standard formula for the anion gap?", "opts": [["Chloride plus bicarbonate minus sodium", "This inverts the calculation and would give a negative value."], ["Sodium minus the sum of chloride and bicarbonate", "Correct — the standard formula as the deck prints it."], ["Sodium minus chloride, without subtracting bicarbonate", "Bicarbonate is part of the subtraction."], ["The sum of sodium and potassium minus chloride", "This omits bicarbonate and adds potassium, which is the extended formula's change."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 22"}, {"topic": "Creatinine", "io": "b(vii) — Discuss the physiological role of creatinine", "slot": "etiology", "q": "Where does creatinine come from?", "opts": [["It is filtered from dietary creatine without being metabolised", "The deck describes it as a metabolic product of muscle creatine."], ["It is produced by the kidney tubules during filtration", "The kidney filters it rather than producing it."], ["It is a waste product of muscle creatine metabolism", "Correct — the deck's description of its origin."], ["It is a waste product of protein metabolism produced by the liver", "That describes blood urea nitrogen."]], "c": 2, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"}];
+const QUESTIONS = [
+  {
+    "topic": "Correlation",
+    "io": "h — Correlate chemistry findings with other diagnostic modalities when appropriate",
+    "slot": "initial test",
+    "q": "Why is an electrocardiogram part of the ketoacidosis workup?",
+    "opts": [
+      [
+        "To confirm the diagnosis of ketoacidosis",
+        "Diagnosis comes from the glucose, gap, and ketones."
+      ],
+      [
+        "To look for the cardiac effects of a raised potassium",
+        "Correct — the tracing reflects the potassium."
+      ],
+      [
+        "To exclude a myocardial infarction as the precipitant",
+        "A reasonable clinical thought, but not the reason it is ordered here."
+      ],
+      [
+        "To measure the degree of dehydration",
+        "The tracing does not measure volume status."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 24"
+  },
+  {
+    "topic": "Fluid balance",
+    "io": "i — Explain laboratory evaluation of fluid and electrolyte homeostasis",
+    "slot": "test finding",
+    "q": "Which four core tests evaluate water and electrolyte balance?",
+    "opts": [
+      [
+        "Albumin, total protein, prothrombin time, and bilirubin",
+        "Those assess liver function."
+      ],
+      [
+        "Serum sodium, serum osmolality, urine sodium and osmolality, and the urea nitrogen to creatinine ratio",
+        "Correct — that core set, with potassium alongside."
+      ],
+      [
+        "Serum sodium, serum potassium, serum calcium, serum magnesium, and serum phosphate",
+        "Magnesium is not part of it, and the set is not four cations."
+      ],
+      [
+        "Serum glucose, bicarbonate, the anion gap, and ketones",
+        "That is the diabetic ketoacidosis workup."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 25"
+  },
+  {
+    "topic": "Indications",
+    "io": "g — Discuss indications for ordering chemistry panels",
+    "slot": "initial test",
+    "q": "Under the acute illness indication, which two situations call for a chemistry panel?",
+    "opts": [
+      [
+        "Fever and a suspected bloodstream infection",
+        "Those would prompt cultures and a complete blood count."
+      ],
+      [
+        "Chest trauma and a suspected rib fracture",
+        "Imaging rather than chemistry is the first step there."
+      ],
+      [
+        "Headache and a suspected migraine",
+        "A suspected migraine is not an indication."
+      ],
+      [
+        "Dehydration and a suspected acid-base disorder",
+        "Correct — those two go together under acute illness."
+      ]
+    ],
+    "c": 3,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 23"
+  },
+  {
+    "topic": "Panel groupings",
+    "io": "a — Explain the components of a chemistry panel",
+    "slot": "initial test",
+    "q": "Where does calcium sit among the panel components?",
+    "opts": [
+      [
+        "On its own, as the mineral",
+        "Correct — calcium stands alone as the mineral."
+      ],
+      [
+        "With sodium and potassium as an electrolyte",
+        "The electrolyte group is sodium, potassium, chloride and bicarbonate."
+      ],
+      [
+        "With the liver and protein markers",
+        "Calcium is on the basic panel; the liver and protein group is the comprehensive addition."
+      ],
+      [
+        "With blood urea nitrogen as a kidney marker",
+        "Calcium is not grouped as a measure of kidney function."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 7"
+  },
+  {
+    "topic": "Bicarbonate",
+    "io": "b(iv) — Discuss the physiological role of bicarbonate",
+    "slot": "test finding",
+    "q": "Why is bicarbonate reported on a chemistry panel as carbon dioxide?",
+    "opts": [
+      [
+        "The laboratory measures dissolved carbon dioxide gas directly",
+        "The reported value is total carbon dioxide, the bulk of which is bicarbonate."
+      ],
+      [
+        "Bicarbonate is unstable and must be converted before measurement",
+        "There is no conversion step."
+      ],
+      [
+        "It reflects the carbon dioxide cleared by the lungs that minute",
+        "That is what a blood gas measures, not the panel value."
+      ],
+      [
+        "The panel reports total carbon dioxide, which is mostly serum bicarbonate",
+        "Correct — the panel reports total carbon dioxide."
+      ]
+    ],
+    "c": 3,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 12"
+  },
+  {
+    "topic": "Glucose",
+    "io": "b(v) — Discuss the physiological role of glucose",
+    "slot": "etiology",
+    "q": "Which hormone lowers blood glucose, and which raise it?",
+    "opts": [
+      [
+        "Insulin lowers it; antidiuretic hormone raises it",
+        "That hormone governs water handling, not glucose."
+      ],
+      [
+        "Insulin lowers it; glucagon and the counter-regulatory hormones raise it",
+        "Correct — insulin lowers it; glucagon and the counter-regulatory hormones raise it."
+      ],
+      [
+        "Glucagon lowers it; insulin and cortisol raise it",
+        "This reverses the roles of insulin and glucagon."
+      ],
+      [
+        "Cortisol lowers it; insulin and adrenaline together raise it",
+        "Cortisol is one of the counter-regulatory hormones that raise glucose."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 13"
+  },
+  {
+    "topic": "Anion gap",
+    "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders",
+    "slot": "test finding",
+    "q": "Using the standard formula, what is the normal range for the anion gap?",
+    "opts": [
+      [
+        "8 to 12 milliequivalents per litre",
+        "Correct — that is the normal range."
+      ],
+      [
+        "10 to 14 milliequivalents per litre",
+        "That is the range for the extended formula that includes potassium."
+      ],
+      [
+        "4 to 8 milliequivalents per litre",
+        "Below the normal range."
+      ],
+      [
+        "12 to 20 milliequivalents per litre",
+        "Above the normal range."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 22"
+  },
+  {
+    "topic": "Glucose",
+    "io": "b(v) — Discuss the physiological role of glucose",
+    "slot": "test finding",
+    "q": "What effect does marked hyperglycaemia have on the measured sodium?",
+    "opts": [
+      [
+        "It leaves it unchanged but raises the potassium",
+        "The effect is on sodium."
+      ],
+      [
+        "It makes the sodium unmeasurable until the glucose is corrected",
+        "The sodium is measurable; it simply reads low."
+      ],
+      [
+        "It lowers it, by dilution",
+        "Correct — a dilutional fall in measured sodium."
+      ],
+      [
+        "It raises it, by drawing water into the cells",
+        "The water shift is out of the cells, which dilutes the sodium."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 13 (speaker notes)"
+  },
+  {
+    "topic": "Comprehensive metabolic panel",
+    "io": "a — Explain the components of a chemistry panel",
+    "slot": "initial test",
+    "q": "What is the other common name for the comprehensive metabolic panel?",
+    "opts": [
+      [
+        "Chem-10",
+        "The panels are chem-7, chem-8, chem-12 and chem-14."
+      ],
+      [
+        "Chem-14",
+        "Correct — chem-14."
+      ],
+      [
+        "Chem-8",
+        "Chem-8 is the basic panel including calcium."
+      ],
+      [
+        "Chem-20",
+        "No panel goes by that name."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 7"
+  },
+  {
+    "topic": "Blood urea nitrogen",
+    "io": "b(vi) — Discuss the physiological role of blood urea nitrogen",
+    "slot": "differential",
+    "q": "Besides reduced kidney clearance, which of these raises blood urea nitrogen?",
+    "opts": [
+      [
+        "Reduced muscle mass",
+        "Muscle mass influences creatinine rather than urea nitrogen."
+      ],
+      [
+        "Gastrointestinal bleeding",
+        "Correct — one of the non-renal causes."
+      ],
+      [
+        "Low dietary protein intake",
+        "A high protein intake raises it; a low intake would not."
+      ],
+      [
+        "Overhydration",
+        "Dehydration raises it; the opposite state does not."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"
+  },
+  {
+    "topic": "What a chemistry panel is",
+    "io": "a — Explain the components of a chemistry panel",
+    "slot": "initial test",
+    "q": "What does a chemistry panel measure?",
+    "opts": [
+      [
+        "Red cells, white cells, and platelets with their indices",
+        "That is the complete blood count, a separate panel from Lecture 4."
+      ],
+      [
+        "Clotting factor activity together with the time taken for a clot to form in the sample",
+        "Prothrombin time and its ratio are coagulation studies, ordered separately."
+      ],
+      [
+        "Hormone levels from the thyroid, adrenal, and pituitary glands",
+        "Endocrine assays are not part of a routine chemistry panel."
+      ],
+      [
+        "Metabolites, electrolytes, kidney markers, and in the expanded version liver and protein markers",
+        "Correct — that is what the panel covers."
+      ]
+    ],
+    "c": 3,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 5"
+  },
+  {
+    "topic": "Creatinine",
+    "io": "b(vii) — Discuss the physiological role of creatinine",
+    "slot": "test finding",
+    "q": "Which three factors influence creatinine and can make it misleading?",
+    "opts": [
+      [
+        "Protein intake, hydration, and recent bleeding",
+        "Those influence blood urea nitrogen instead."
+      ],
+      [
+        "Liver function, bilirubin, and albumin",
+        "None of these is given as a creatinine influence."
+      ],
+      [
+        "Time of day, posture, and fasting state",
+        "None of these three affects creatinine that way."
+      ],
+      [
+        "Muscle mass, age, and sex",
+        "Correct — those three."
+      ]
+    ],
+    "c": 3,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"
+  },
+  {
+    "topic": "Potassium and pH",
+    "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders",
+    "slot": "etiology",
+    "q": "What happens to serum potassium in alkalosis?",
+    "opts": [
+      [
+        "Potassium is unaffected by alkalosis",
+        "Alkalosis moves potassium in a definite direction."
+      ],
+      [
+        "Potassium shifts into cells, so the serum level falls",
+        "Correct — potassium shifts into cells, so the serum level falls."
+      ],
+      [
+        "Potassium shifts out of cells, so the serum level rises",
+        "That is the acidosis direction."
+      ],
+      [
+        "Potassium is retained by the kidney, so the serum level rises",
+        "It is a shift across the cell membrane, not renal retention."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 21"
+  },
+  {
+    "topic": "Blood urea nitrogen",
+    "io": "b(vi) — Discuss the physiological role of blood urea nitrogen",
+    "slot": "education",
+    "q": "How should blood urea nitrogen be read?",
+    "opts": [
+      [
+        "Interpret it only when the patient is fasting",
+        "Fasting is a glucose consideration."
+      ],
+      [
+        "Interpret it only if the estimated filtration rate is normal",
+        "No such condition applies."
+      ],
+      [
+        "Interpret it alongside creatinine, not alone",
+        "Correct — alongside creatinine, not alone."
+      ],
+      [
+        "Interpret it alone, since creatinine is less specific",
+        "Creatinine is the more specific of the two, and they go together."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14 (speaker notes)"
+  },
+  {
+    "topic": "Blood urea nitrogen",
+    "io": "b(vi) — Discuss the physiological role of blood urea nitrogen",
+    "slot": "etiology",
+    "q": "What is blood urea nitrogen, and where is it produced and cleared?",
+    "opts": [
+      [
+        "A nitrogenous waste product of protein metabolism, produced by the liver and cleared by the kidneys",
+        "Correct — its origin and its clearance."
+      ],
+      [
+        "A nitrogenous waste product of muscle metabolism, produced and cleared by the kidneys",
+        "That description belongs to creatinine, and the kidney does not produce it."
+      ],
+      [
+        "A breakdown product of red blood cells, conjugated by the liver",
+        "That is bilirubin."
+      ],
+      [
+        "An enzyme released from injured hepatocytes into the blood",
+        "That describes the transaminases."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"
+  },
+  {
+    "topic": "Sodium",
+    "io": "b(i) — Discuss the physiological role of sodium",
+    "slot": "etiology",
+    "q": "Serum sodium represents a balance between which two processes?",
+    "opts": [
+      [
+        "Bone storage and bone release",
+        "That describes calcium handling, not sodium."
+      ],
+      [
+        "Hepatic synthesis and renal clearance",
+        "Sodium is not synthesised by the liver."
+      ],
+      [
+        "Oral intake and renal excretion",
+        "Correct — intake and renal excretion set the serum level."
+      ],
+      [
+        "Gastrointestinal absorption and biliary loss",
+        "Biliary loss is not a route for sodium."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9"
+  },
+  {
+    "topic": "Liver studies",
+    "io": "c — Discuss basic liver function studies included in chemistry testing",
+    "slot": "test finding",
+    "q": "Which is a synthetic product of the liver, and therefore a measure of what the liver is making?",
+    "opts": [
+      [
+        "Albumin",
+        "Correct — albumin is a synthetic product of the liver."
+      ],
+      [
+        "Alkaline phosphatase",
+        "That is an enzyme marking cholestasis."
+      ],
+      [
+        "Total bilirubin",
+        "That is a breakdown product of red blood cells."
+      ],
+      [
+        "Aspartate aminotransferase",
+        "That is an enzyme released on injury."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 15"
+  },
+  {
+    "topic": "Sodium",
+    "io": "b(i) — Discuss the physiological role of sodium",
+    "slot": "etiology",
+    "q": "Where is sodium the major cation?",
+    "opts": [
+      [
+        "In the cerebrospinal fluid specifically",
+        "The contrast is extracellular against intracellular, not by compartment."
+      ],
+      [
+        "In the biliary and pancreatic secretions",
+        "Sodium is not described that way."
+      ],
+      [
+        "In the extracellular fluid",
+        "Correct — sodium is the major extracellular cation."
+      ],
+      [
+        "In the intracellular fluid",
+        "Potassium is the major intracellular cation."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9"
+  },
+  {
+    "topic": "Reference ranges",
+    "io": "a — Explain the components of a chemistry panel",
+    "slot": "education",
+    "q": "What comes before an extensive workup on a borderline abnormal result?",
+    "opts": [
+      [
+        "Repeat or confirm the abnormality",
+        "Correct — repeat or confirm the abnormality first."
+      ],
+      [
+        "Proceed straight to imaging",
+        "Imaging follows a confirmed abnormality rather than replacing confirmation."
+      ],
+      [
+        "Treat empirically and recheck afterwards",
+        "Treating before confirming inverts the order."
+      ],
+      [
+        "Refer to the relevant specialist",
+        "Referral is not the next step for a borderline value."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 18"
+  },
+  {
+    "topic": "Abbreviations",
+    "io": "a — Explain the components of a chemistry panel",
+    "slot": "education",
+    "q": "On a chemistry panel, what does the abbreviation Cr stand for?",
+    "opts": [
+      [
+        "Chromium",
+        "This is the element whose symbol Cr normally is, and she warned specifically against reading it that way."
+      ],
+      [
+        "Creatine kinase",
+        "That is a separate enzyme assay, abbreviated differently."
+      ],
+      [
+        "C-reactive protein",
+        "That is an inflammatory marker and is not on the panel."
+      ],
+      [
+        "Creatinine",
+        "Correct — Reynolds singled this out as the one abbreviation that is not the element symbol it looks like."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture recording, 26 August 2026"
+  },
+  {
+    "topic": "Sodium",
+    "io": "b(i) — Discuss the physiological role of sodium",
+    "slot": "etiology",
+    "q": "Which two mechanisms control water handling, and therefore serum sodium?",
+    "opts": [
+      [
+        "Thirst and antidiuretic hormone",
+        "Correct — thirst and antidiuretic hormone."
+      ],
+      [
+        "Renin and angiotensin",
+        "The renin-angiotensin-aldosterone system governs extracellular volume instead."
+      ],
+      [
+        "Aldosterone and atrial natriuretic peptide",
+        "Aldosterone is named for total-body sodium, not for water handling."
+      ],
+      [
+        "Insulin and the catecholamines",
+        "Those shift potassium across cell membranes."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9 (speaker notes)"
+  },
+  {
+    "topic": "Bicarbonate",
+    "io": "b(iv) — Discuss the physiological role of bicarbonate",
+    "slot": "initial test",
+    "q": "A low bicarbonate is the trigger to do what next?",
+    "opts": [
+      [
+        "Calculate the anion gap",
+        "Correct — always calculate the gap when bicarbonate is low."
+      ],
+      [
+        "Order an arterial blood gas before anything else",
+        "A gas may follow, but the gap comes first."
+      ],
+      [
+        "Repeat the panel to exclude a laboratory error",
+        "Repeating is the general advice for borderline values, not for this trigger."
+      ],
+      [
+        "Give intravenous bicarbonate",
+        "The next step is diagnostic rather than therapeutic."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 12"
+  },
+  {
+    "topic": "Hepatic patterns",
+    "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders",
+    "slot": "differential",
+    "q": "What causes a cholestatic pattern?",
+    "opts": [
+      [
+        "Viral hepatitis, alcohol, ischaemia, and drug injury",
+        "Those are given for the hepatocellular pattern."
+      ],
+      [
+        "Gilbert syndrome and haemolysis",
+        "Those are given for isolated hyperbilirubinaemia."
+      ],
+      [
+        "Heart failure and sepsis",
+        "Neither is a cholestatic cause."
+      ],
+      [
+        "Bile duct obstruction, gallstones, and primary biliary cholangitis",
+        "Correct — those three."
+      ]
+    ],
+    "c": 3,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 17 (speaker notes)"
+  },
+  {
+    "topic": "Potassium",
+    "io": "b(ii) — Discuss the physiological role of potassium",
+    "slot": "complication",
+    "q": "Why do small fluctuations in potassium matter?",
+    "opts": [
+      [
+        "Small changes reliably indicate that the sample was taken or handled incorrectly",
+        "Collection artefact is a real issue but not the point here."
+      ],
+      [
+        "Small changes are usually meaningless and can be ignored",
+        "The opposite holds."
+      ],
+      [
+        "Small changes only matter in patients with kidney disease",
+        "The significance is not restricted to renal patients."
+      ],
+      [
+        "Small changes in the serum level carry significant physiological consequences",
+        "Correct — small changes carry significant physiological consequences."
+      ]
+    ],
+    "c": 3,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 10"
+  },
+  {
+    "topic": "Reading a panel",
+    "io": "d — Interpret abnormal chemistry values and their clinical significance",
+    "slot": "education",
+    "q": "What usually follows any single or combined abnormality on a panel?",
+    "opts": [
+      [
+        "Referral to the relevant specialist",
+        "Referral is not the next step."
+      ],
+      [
+        "Repeating the whole panel every day",
+        "Confirmation is needed, not daily repetition."
+      ],
+      [
+        "Confirmatory testing",
+        "Correct — an abnormality warrants confirmation."
+      ],
+      [
+        "Immediate treatment of the abnormal value",
+        "The next step is diagnostic."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 20"
+  },
+  {
+    "topic": "Chloride",
+    "io": "b(iii) — Discuss the physiological role of chloride",
+    "slot": "etiology",
+    "q": "When carbon dioxide and hydrogen ions rise, bicarbonate moves out of the cell. What does chloride do?",
+    "opts": [
+      [
+        "It binds to haemoglobin and is carried to the lungs for excretion",
+        "That is how carbon dioxide is carried, not chloride."
+      ],
+      [
+        "It shifts back into the cell to preserve electrical neutrality",
+        "Correct — the reciprocal shift."
+      ],
+      [
+        "It shifts out of the cell alongside bicarbonate",
+        "Both anions leaving would break electrical neutrality."
+      ],
+      [
+        "It is excreted by the kidney within minutes",
+        "It is a transcellular shift, not renal loss."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 11"
+  },
+  {
+    "topic": "Overlap syndromes",
+    "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders",
+    "slot": "differential",
+    "q": "Which syndrome shows liver and kidney failure at once?",
+    "opts": [
+      [
+        "Diabetic ketoacidosis",
+        "That produces electrolyte and renal derangements, not liver failure."
+      ],
+      [
+        "Nephrotic syndrome",
+        "Nephrotic syndrome is not an overlap of the two."
+      ],
+      [
+        "Hepatorenal syndrome",
+        "Correct — hepatorenal syndrome."
+      ],
+      [
+        "Cardiorenal syndrome",
+        "That is also named, but as a cardiac and renal overlap."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 19"
+  },
+  {
+    "topic": "Hepatic patterns",
+    "io": "d — Interpret abnormal chemistry values and their clinical significance",
+    "slot": "test finding",
+    "q": "How is the magnitude of a transaminase rise banded?",
+    "opts": [
+      [
+        "Mild under five times, moderate five to fifteen times, and severe over fifteen times the upper limit",
+        "Correct — those three bands."
+      ],
+      [
+        "Mild under two times, moderate two to ten times, and severe over ten times the upper limit",
+        "Not the right bands."
+      ],
+      [
+        "Mild under ten times, moderate ten to fifty times, and severe over fifty times the upper limit",
+        "These thresholds are too high."
+      ],
+      [
+        "Mild under three times, moderate three to twenty times, and severe over twenty times the upper limit",
+        "Not the right banding."
+      ]
+    ],
+    "c": 0,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 17 (speaker notes)"
+  },
+  {
+    "topic": "Anion gap",
+    "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders",
+    "slot": "initial test",
+    "q": "What is the standard formula for the anion gap?",
+    "opts": [
+      [
+        "Chloride plus bicarbonate minus sodium",
+        "This inverts the calculation and would give a negative value."
+      ],
+      [
+        "Sodium minus the sum of chloride and bicarbonate",
+        "Correct — the standard formula."
+      ],
+      [
+        "Sodium minus chloride, without subtracting bicarbonate",
+        "Bicarbonate is part of the subtraction."
+      ],
+      [
+        "The sum of sodium and potassium minus chloride",
+        "This omits bicarbonate and adds potassium, which is the extended formula's change."
+      ]
+    ],
+    "c": 1,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 22"
+  },
+  {
+    "topic": "Creatinine",
+    "io": "b(vii) — Discuss the physiological role of creatinine",
+    "slot": "etiology",
+    "q": "Where does creatinine come from?",
+    "opts": [
+      [
+        "It is filtered from dietary creatine without being metabolised",
+        "It is a metabolic product of muscle creatine, not filtered dietary creatine."
+      ],
+      [
+        "It is produced by the kidney tubules during filtration",
+        "The kidney filters it rather than producing it."
+      ],
+      [
+        "It is a waste product of muscle creatine metabolism",
+        "Correct — a waste product of muscle creatine metabolism."
+      ],
+      [
+        "It is a waste product of protein metabolism produced by the liver",
+        "That describes blood urea nitrogen."
+      ]
+    ],
+    "c": 2,
+    "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 14"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
