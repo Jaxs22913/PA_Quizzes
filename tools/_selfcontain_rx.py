@@ -24,7 +24,8 @@ PATTERNS = [
     r"\bspeaker notes?\b",
     r"\bthe notes\b",
     r"\b(professor|prof\.?|dr\.?)\s+[A-Z][a-z]+",
-    r"\bin (the )?(lecture|class|the deck)\b",
+    r"\bin (the )?(lecture|the deck)\b",
+    r"\bin class\b(?![ -]?\d)",   # not "in class 5" -- steroid potency
     r"\bon the slide\b",
     r"\bthis (lecture|deck)\b",
     r"\b(according to|per) the (lecture|deck|slides?|syllabus|professor|notes)\b",
