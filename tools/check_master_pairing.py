@@ -32,11 +32,35 @@ def norm(t):
     return " ".join(t.split())
 
 
+STOP = {"that", "this", "with", "from", "then", "than", "them", "they", "into",
+        "which", "when", "what", "also", "such", "some", "only", "both", "each",
+        "does", "have", "been", "were", "will", "used", "using", "there"}
+
+
+def toks(t):
+    """Content words, cut to a 5-character prefix so "allergic"/"allergy" and
+    "lactam"/"lactams" count as the same idea."""
+    return {w[:5] for w in norm(t).split() if len(w) > 3 and w not in STOP}
+
+
 def overlap(a, b):
-    """True when either normalised answer contains the other -- catches the
-    long-form/short-form pairs the masters produce."""
-    a, b = norm(a), norm(b)
-    return bool(a) and bool(b) and (a in b or b in a)
+    """True when the two answers say the same thing.
+
+    Masters routinely carry a long-form option where the topic quiz carries a
+    condensed one ("No beta-lactam cross-reactivity; safe in true allergy" vs
+    "No cross-reactivity with beta-lactams, so it can be used in truly
+    penicillin-allergic patients"). Both are the same answer, so compare on
+    shared content words rather than on wording.
+    """
+    na, nb = norm(a), norm(b)
+    if not na or not nb:
+        return False
+    if na in nb or nb in na:
+        return True
+    ta, tb = toks(a), toks(b)
+    if not ta or not tb:
+        return False
+    return len(ta & tb) / min(len(ta), len(tb)) >= 0.6
 
 
 def load(path):

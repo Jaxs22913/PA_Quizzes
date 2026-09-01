@@ -58,10 +58,15 @@ def main():
             if q["q"] in pairs:
                 new = pairs[q["q"]]
                 here = frozenset(o[0] for o in q["opts"])
-                if new in guard and here not in guard[new]:
-                    skipped += 1                      # options moved with the stem
-                    print("     SKIP (options differ from the source question): %s"
-                          % q["q"][:70])
+                if new not in guard or here not in guard[new]:
+                    # Either the options moved with the stem, or there is no
+                    # source question to check against.  Unverifiable is not
+                    # good enough here -- a bad pair rewrites a question into
+                    # a different one and still reads as clean prose.
+                    skipped += 1
+                    print("     SKIP (%s): %s" % (
+                        "no source question to verify against" if new not in guard
+                        else "options differ from the source question", q["q"][:64]))
                 else:
                     q["q"] = new; n += 1
             for o in q["opts"]:

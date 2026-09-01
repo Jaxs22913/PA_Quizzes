@@ -34,7 +34,16 @@ def show(rev, path):
 def main():
     out, rev = sys.argv[1], sys.argv[2]
     paths = sys.argv[3:]
-    if rev == "WORKING":
+    if rev.endswith("..WORKING"):
+        # Old text from a pre-cleanup revision, new text from the CURRENT tree.
+        # Never take the new side from the cleanup commit itself: a later
+        # commit often repairs it (the Pharmacology pass stranded verbs and
+        # they were fixed afterwards), and a snapshot would carry the broken
+        # intermediate forward.
+        before, after = rev[:-len("..WORKING")], None
+        changed = subprocess.run(["git", "ls-tree", "-r", "--name-only", before],
+                                 capture_output=True, text=True).stdout.split("\n")
+    elif rev == "WORKING":
         before, after = "HEAD", None
         changed = subprocess.run(["git", "diff", "--name-only"],
                                  capture_output=True, text=True).stdout.split("\n")
@@ -47,19 +56,45 @@ def main():
     pairs = {}
     for f in changed:
         o = load(show(before, f))
-        n = load(io.open(f, encoding="utf8").read()) if after is None else load(show(after, f))
-        if not o or not n or len(o) != len(n):
+        try:
+            n = load(io.open(f, encoding="utf8").read()) if after is None else load(show(after, f))
+        except FileNotFoundError:
             continue
-        for a, b in zip(o, n):
+        if not o or not n:
+            continue
+        # Pair the before/after questions by their OPTION SET, never by
+        # position.  A commit that rebuilt a master reorders and replaces
+        # questions at unchanged length, and zipping positionally then
+        # harvests pairs that map one question's stem onto another's -- which
+        # silently rewrites a question into a different one.
+        idx = {}
+        for b in n:
+            idx.setdefault(frozenset(x[0] for x in b["opts"]), []).append(b)
+        matched = []
+        for a in o:
+            k = frozenset(x[0] for x in a["opts"])
+            if len(idx.get(k, [])) == 1:          # unambiguous match only
+                matched.append((a, idx[k][0]))
+        for a, b in matched:
             if a["q"] != b["q"] and RX.search(a["q"]):
                 pairs[a["q"]] = b["q"]
-            for x, y in zip(a["opts"], b["opts"]):
+            # Pair options by their TEXT, not position: answer-position
+            # rotation reorders them, and zipping positionally then pairs one
+            # option's explanation with another's -- turning a refutation into
+            # "Correct. ...".
+            byopt = {}
+            for y in b["opts"]:
+                byopt.setdefault(y[0], []).append(y)
+            for x in a["opts"]:
+                cand = byopt.get(x[0], [])
+                if len(cand) != 1:
+                    continue
+                y = cand[0]
                 if len(x) > 1 and len(y) > 1 and x[1] != y[1] and RX.search(x[1]):
                     pairs[x[1]] = y[1]
-                if x[0] != y[0] and RX.search(x[0]):
-                    pairs[x[0]] = y[0]
     json.dump(pairs, io.open(out, "w", encoding="utf8"), ensure_ascii=False, indent=1)
-    print("%s: %d file(s) -> %d old->new pair(s)" % (rev, len(changed), len(pairs)))
+    print("%s: %d file(s) -> %d old->new pair(s) (paired by option set)"
+          % (rev, len(changed), len(pairs)))
 
 
 if __name__ == "__main__":
