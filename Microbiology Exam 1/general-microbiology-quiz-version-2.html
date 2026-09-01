@@ -303,7 +303,758 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Culture media", "io": "Review the types of culture media used to identify pathogens", "q": "What is the difference between selective and differential media?", "opts": [["Selective supports fastidious organisms; differential defines every ingredient", "Supporting fastidious organisms describes enriched media, and defined ingredients describe synthetic media."], ["Selective allows several types of microbes to grow and displays visible differences between them; differential contains agents that inhibit some microbes and encourage others", "Growing a broad range describes general purpose media, and differential media permit several types to grow."], ["Selective contains agents that inhibit some microbes and encourage the desired ones; differential allows several types to grow and displays visible differences between them", "Correct. One narrows what grows, the other makes what grows distinguishable."], ["Selective is always synthetic; differential is always complex", "The synthetic and complex axis is independent of the selective and differential one."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 44"}, {"topic": "Lytic vs lysogenic", "io": "Differentiate the different processes of phage replication", "q": "Which consequence does the lecture attribute to lysogeny that has direct clinical relevance?", "opts": [["The host bacterial cell is destroyed, releasing multiple copies of the virus", "That is the lytic outcome."], ["The bacterium may acquire new traits, such as the ability to make a toxin", "Correct. Integration as prophage can hand the bacterium a new capability, and it also becomes immune to reinfection."], ["The bacterium becomes unable to divide", "Viral genes are replicated along with the host cell, so division continues."], ["The bacterium loses its plasmids", "Nothing in the lecture links lysogeny to plasmid loss."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"}, {"topic": "Culture media", "io": "Review the types of culture media used to identify pathogens", "q": "What distinguishes a synthetic (chemically defined) medium from a complex one?", "opts": [["Synthetic contains pure organic and inorganic compounds in an exact chemical formula; complex contains at least one ingredient that is not chemically definable", "Correct. That is the whole distinction — whether every ingredient can be written as a formula."], ["Synthetic inhibits unwanted organisms; complex encourages them", "Inhibiting some organisms while encouraging others describes selective media."], ["Synthetic shows visible differences between organisms; complex does not", "Displaying visible differences describes differential media."], ["Synthetic contains at least one ingredient that is not chemically definable; complex contains pure organic and inorganic compounds in an exact chemical formula", "Blood, serum and haemoglobin are features of enriched media."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 43"}, {"topic": "Molecular mechanisms", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "Influenza virus binds host cells using which molecule, and to which receptor?", "opts": [["Hemagglutinin protein, binding sialic acid receptors on host cells", "Correct. The lecture gives this as its example of a specific molecular interaction between a pathogen surface protein and a host cell receptor."], ["Type I fimbriae, binding mannose receptors on host cells", "That is the Escherichia coli adhesion example, used to illustrate colonisation of the urinary tract."], ["Panton-Valentine leucocidin, binding receptors on neutrophils", "That is a Staphylococcus aureus toxin, not the influenza attachment mechanism."], ["Lipid A, binding pattern recognition receptors on white blood cells", "Lipid A is the endotoxin portion of lipopolysaccharide in Gram-negative cell walls."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 10"}, {"topic": "Animal viruses", "io": "Compare and contrast phage replication to animal virus replication", "q": "Which three differences does the lecture give between animal virus and phage replication?", "opts": [["Animal viruses lack a capsid, replicate in the nucleus, and never integrate", "All viruses have capsids, and none of these three are the stated differences."], ["Animal viruses bind only protein receptors, use no enzymes, and kill every host cell", "None of these appear as the listed contrasts."], ["The entire virion is engulfed, uncoating is required to release the genetic material, and release is by budding — which may assist acquisition of an envelope", "Correct. Uncoating is driven by the difference between cytoplasmic and extracellular pH."], ["The entire virion is engulfed, no uncoating is required at any point, and release occurs only by lysis of the host cell membrane rather than by budding", "Assembly is part of viral replication generally."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 58"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "Which internal bacterial structures does the lecture list?", "opts": [["A defined nuclear membrane, mitochondria, and 80S ribosomes within the cytoplasm", "All three are eukaryotic features; bacteria have no defined nuclear membrane and carry 70S ribosomes."], ["Cytoplasm, organelles, a nuclear area with circular chromosome, 70S ribosomes, and inclusions", "Correct. Inclusions store products such as phosphate and oil droplets."], ["Capsule, slime layer, and biofilm matrix", "These are glycocalyx components, which sit outside the cell."], ["Flagella, pili and fimbriae", "These are projections from the wall rather than internal structures."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 37"}, {"topic": "Death curve", "io": "Review the bacterial death curve", "q": "When a microbial control method is applied to a bacterial population, what does the lecture say about the rate of death?", "opts": [["It is constant", "Correct. That constant rate is what makes decimal reduction time a usable measure."], ["It accelerates as the population falls", "A constant rate is stated, not an accelerating one."], ["It slows as resistant organisms are selected", "Selection of resistance is discussed under mutation, not as a feature of the death curve."], ["It varies unpredictably with population size", "The constancy is precisely what allows the calculation posed on the same slide."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"}, {"topic": "Growth curve", "io": "Review the phases of the bacterial growth curve", "q": "During which phase are bacteria most vulnerable to control methods, and what example does the lecture give?", "opts": [["Lag phase; example, refrigeration", "The lag phase is one of adjustment with little growth, and refrigeration is a physical control rather than the example given."], ["Stationary phase; example, autoclaving", "The stationary phase is where growth and death rates balance."], ["Exponential growth phase; example, penicillin", "Correct. Penicillin acts on wall synthesis, so it bites hardest while cells are actively dividing."], ["Death phase; example, ultraviolet radiation", "In the death phase cells are already dying exponentially in their own wastes."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"}, {"topic": "Growth curve", "io": "Review the phases of the bacterial growth curve", "q": "What causes the stationary phase?", "opts": [["Cells adjusting and enlarging before division begins", "That is the lag phase."], ["Adequate nutrients and favourable environment, plus removal of organic acids and pollutants, so growth continues unchecked", "Those conditions sustain the exponential growth phase."], ["Intensifying limiting factors killing cells exponentially", "That is the death phase."], ["Depleted nutrients and oxygen, plus excretion of organic acids and pollutants, so growth rate equals death rate", "Correct. The balance point between division and death is what makes the curve flatten."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"}, {"topic": "Growth requirements", "io": "Review the methods utilized in bacterial identification", "q": "How does the lecture divide the requirements for bacterial growth?", "opts": [["Aerobic versus anaerobic oxygen requirements only — with temperature, pH and osmotic pressure counted as chemical rather than physical", "Oxygen level is one chemical requirement among several."], ["Selective versus differential", "Those are types of culture media, not growth requirements."], ["Synthetic versus complex", "Those also describe media, by whether every ingredient is chemically definable."], ["Chemical requirements — water, energy nutrients, vitamins, minerals, oxygen levels — and physical requirements — temperature, pH, osmotic pressure", "Correct. Energy nutrients are given as carbohydrates, proteins and lipids."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 42"}, {"topic": "Lytic vs lysogenic", "io": "Differentiate the different processes of phage replication", "q": "Which features belong to the lytic cycle rather than the lysogenic?", "opts": [["Integration of viral genes as a prophage, replication alongside the host cell, and immunity to reinfection", "Those are lysogenic features."], ["Viral genes replicated along with the host cell", "That is lysogenic — the genome is carried passively."], ["Specialized transduction, in which all cells carry the same host DNA", "Specialized transduction is listed under the lysogenic cycle."], ["Rapid takeover of bacterial metabolism, production of multiple virus copies, and destruction of the host cell", "Correct. The lytic cycle also produces generalized transduction, in which random pieces of host DNA may be transmitted to other bacteria."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"}, {"topic": "Peptidoglycan", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Peptidoglycan is a polymer of which alternating units?", "opts": [["Lipid A and core polysaccharide", "Those are components of lipopolysaccharide in the Gram-negative outer membrane."], ["N-acetyl glucosamine and N-acetyl muramic acid, crosslinked by a short peptide bridge", "Correct. The crosslink runs between the terminal D-alanine and the penultimate diamino-containing amino acid."], ["Teichoic acid and lipoteichoic acid, crosslinked by an outer bridge of lipopolysaccharide", "These are acidic polysaccharides bound within the Gram-positive wall, not the polymer backbone."], ["Crystal violet and safranin", "Those are Gram stain reagents, not structural molecules."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 29"}, {"topic": "Noncellular agents", "io": "Describe the types of infectious pathogens", "q": "Viroids differ from prions in which way?", "opts": [["Viroids are misfolded proteins; prions are nucleic acid", "This reverses the two entirely."], ["Viroids cause spongiform encephalopathies; prions infect plants", "Spongiform encephalopathies are the prion diseases, and viroids are the plant agents."], ["Viroids have a protein coat; prions do not", "Viroids are explicitly described as having no protein coat."], ["Viroids are short pieces of RNA; prions contain no nucleic acid at all", "Correct. Viroids have so far been identified only in plants."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 60"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "A Gram-positive cell wall consists of which features?", "opts": [["A thick homogenous sheath of peptidoglycan 20-80 nm thick, with teichoic and lipoteichoic acid, retaining crystal violet and staining purple", "Correct. It is described as physically strong — resistant to stresses such as temperature, pH and osmotic pressure."], ["An asymmetric outer bilayer of lipopolysaccharide over a periplasmic space and a thin shell of peptidoglycan, losing crystal violet and staining red", "That is the Gram-negative wall."], ["No cell wall at all, giving a pleomorphic shape", "That describes Mycoplasmas."], ["A carbohydrate-based wall with 80S ribosomes", "Those are eukaryotic features."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 33"}, {"topic": "Lytic vs lysogenic", "io": "Differentiate the different processes of phage replication", "q": "How does the lecture distinguish generalized from specialized transduction?", "opts": [["Generalized transmits random pieces of host DNA; specialized means all cells carry the same host DNA", "Correct. Generalized is listed under the lytic cycle, specialized under the lysogenic."], ["Generalized occurs in the lysogenic cycle; specialized in the lytic", "This reverses which cycle each belongs to."], ["Generalized transduction transfers plasmid DNA cell to cell; specialized takes up naked DNA", "Those describe conjugation and transformation, which are not viral processes."], ["Generalized requires a pilus; specialized requires a capsule", "A pilus is used in conjugation, and a capsule is a glycocalyx structure."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"}, {"topic": "Peptidoglycan", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Crosslinking of peptidoglycan is catalyzed by transpeptidases. Why does that matter clinically?", "opts": [["Because transpeptidases are the receptor for bacterial conjugation", "Conjugation uses a pilus, coded by a plasmid."], ["Because transpeptidases determine whether a cell retains crystal violet", "Crystal violet retention depends on the thickness of the peptidoglycan sheath, not on the enzyme."], ["Because transpeptidases are the target of beta lactam antibiotics", "Correct. The lecture states this directly, which is what connects wall synthesis to antibiotic action."], ["Because transpeptidases produce the endospore coat", "The spore coat is a survival structure formed by Bacillus and Clostridium."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 29"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "Which three mechanisms allow bacteria to acquire new genetic information?", "opts": [["Binary fission — division of the parent cell into two; sporulation — formation of a resistant endospore coat; and budding — release of virions through the host membrane", "Binary fission is reproduction, sporulation is survival, and budding is a viral release mechanism."], ["Adsorption, penetration and release", "Those are steps of phage replication."], ["Lag, exponential and stationary phases", "Those are growth curve phases."], ["Transformation — taking up naked DNA from the environment; conjugation — cell to cell transmission of DNA from a plasmid; and transduction — transmission of genetic material by viral vector", "Correct. All three are routes to traits such as antibiotic resistance or toxin production."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 62"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "How does the lecture distinguish aseptic or sterile condition from disinfection?", "opts": [["Aseptic applies to tissues; disinfection applies to inanimate objects", "That distinction is between antiseptics and disinfectants, which are chemical agents."], ["Aseptic uses heat; disinfection uses chemicals", "Both physical and chemical methods exist for either goal."], ["Aseptic or sterile means removal of ALL forms of microbial contamination; disinfection means elimination of SOME forms", "Correct. The lecture adds that lowering numbers rather than total elimination may be good enough depending on circumstances."], ["Aseptic or sterile means elimination of SOME forms of microbial contamination; disinfection means removal of ALL forms", "No such restriction is given."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 65"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "The lecture contrasts the two wall types as physically versus chemically strong. Which way round?", "opts": [["Gram-negative is physically strong — resistant to temperature, pH and osmotic pressure; Gram-positive is chemically strong — resistant to disinfectants and antibiotics", "This reverses the pairing given."], ["Both are described as physically strong only", "Each is given a different kind of strength, which is the point of the contrast."], ["Both are described as chemically strong only", "Again, the contrast assigns one property to each."], ["Gram-positive is physically strong — resistant to temperature, pH and osmotic pressure; Gram-negative is chemically strong — resistant to disinfectants and antibiotics", "Correct. That difference follows from the thick peptidoglycan sheath versus the outer membrane barrier."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "Which projection from the bacterial wall provides true directional motility?", "opts": [["Flagellum", "Correct. The flagellum is listed as a specialized feature providing true directional motility."], ["Pilus", "The pilus is coded by a plasmid and used in bacterial conjugation."], ["Fimbriae", "Fimbriae are used for adhesion to membrane surfaces."], ["Glycocalyx", "The glycocalyx is a capsule or slime layer, involved in biofilms and preventing phagocytosis."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 27"}, {"topic": "Death curve", "io": "Review the bacterial death curve", "q": "A culture of roughly 4,865,321 organisms is exposed to a control method with a decimal reduction time of 10 minutes. What does the constant death rate imply about clearing it?", "opts": [["Each successive 10-minute interval removes a fixed NUMBER of organisms, so the count falls in equal steps each time", "One interval removes 90%, leaving roughly 486,000 organisms behind."], ["Nothing can be predicted, because death rate varies with population size", "The rate is stated to be constant, which is what makes prediction possible."], ["Each successive 10-minute interval removes 90% of whatever remains, so the count falls by an order of magnitude each time", "Correct. From about 4.9 million, successive intervals give roughly 486,000, then 48,600, then 4,860 — which is why sterilisation is defined by probability rather than by a moment when the last organism dies."], ["The population reaches zero after exactly two intervals", "Two intervals leave roughly 48,600 organisms."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Which portion of lipopolysaccharide carries endotoxin activity, and which is used in bacterial classification?", "opts": [["Core polysaccharide carries endotoxin; Lipid A is used in classification", "This reverses both roles."], ["O-polysaccharide carries endotoxin; core polysaccharide is used in classification", "Endotoxin activity is attributed to Lipid A, not the O-polysaccharide."], ["Lipid A carries endotoxin activity; O-polysaccharide is used in classification", "Correct. Both attributions are given explicitly in the description of the outer membrane."], ["Both functions belong to the core polysaccharide", "The three parts are given distinct roles."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}, {"topic": "Environmental factors", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "Under which environmental conditions does the lecture say influenza virus is more stable and transmissible?", "opts": [["High temperatures and low humidity", "This reverses both conditions given."], ["Low temperatures and high humidity", "Correct. The lecture pairs low temperature with high humidity for influenza stability and transmission."], ["High temperatures and high humidity", "Temperature is stated as low, not high."], ["Low temperatures and low humidity", "Humidity is stated as high, not low."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 12"}, {"topic": "Protozoa", "io": "Describe the types of infectious pathogens", "q": "Protozoa may exist in two forms. What are they?", "opts": [["Yeast and hyphal forms", "That dimorphism belongs to fungi, not to the protozoan forms given here."], ["Trophozoite and endospore — the two alternating stages of the protozoan life cycle", "Endospores are a bacterial survival structure, produced by Bacillus and Clostridium."], ["Prophage and virion", "Those are viral states, from the lysogenic and lytic cycles."], ["Trophozoite — the motile feeding stage — and cyst, a dormant resistant stage", "Correct. Protozoa are also differentiated by motility: flagella, cilia, pseudopods, or nonmotile."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 18"}, {"topic": "Cytopathic effects", "io": "Describe the cytopathic effects of viruses", "q": "Which of the following is listed as a cytopathic effect of viruses?", "opts": [["Cells fusing to form multinucleated cells", "Correct. The full list also includes changes in size and shape, cytoplasmic and nuclear inclusion bodies, cell lysis, alteration of deoxyribonucleic acid, and transformation into cancerous cells."], ["Formation of an endospore coat", "Endospores are a bacterial survival structure."], ["Crosslinking of peptidoglycan", "That is bacterial cell wall synthesis."], ["Conversion of a trophozoite to a cyst", "That is a protozoan life-stage change."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 59"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "What is the difference between a disinfectant and an antiseptic?", "opts": [["Disinfectants are chemical; antiseptics are physical", "Both are chemical control methods."], ["Disinfectants are used on inanimate objects; antiseptics are used on tissues", "Correct. The lecture's examples are Lysol for the disinfectant and Listerine mouthwash for the antiseptic."], ["Disinfectants sterilise completely; antiseptics do not affect microbes at all", "Very few true chemical sterilants exist, and antiseptics do act on microbes."], ["Disinfectants are naturally produced; antiseptics are synthetic", "That natural-versus-synthetic distinction is drawn for antibiotics and sulfa drugs."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 69"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "What health implications does the lecture attach to high mutation rates in viruses?", "opts": [["Changing surface properties may weaken or eliminate immunity from vaccination or previous exposure, and animal viruses that were host specific can cross to humans", "Correct. Human hosts are unlikely to have immunity to viruses crossed from animal hosts."], ["Viruses lose the ability to replicate in host cells", "Nothing in the lecture suggests mutation abolishes replication."], ["Viruses become uniformly less transmissible over time", "Mutation is described as changing factors affecting transmission, not reliably reducing it."], ["Viruses can no longer be identified by nucleic acid sequencing, and previously host-specific animal viruses lose the ability to cross to humans", "Sequencing is listed as an identification method and is not said to fail."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 62"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "Which health implications does the lecture give for genetic mutations in HUMAN hosts?", "opts": [["Acquisition of resistance to antibiotics and other control methods, the ability to produce toxins, and other virulence factors enhancing pathogenicity", "Those are the implications given for bacterial mutation."], ["Chemical or radiation exposure transforming normal cells to cancer cells, oncogenic viruses causing the same transformation, and viruses affecting immune cells", "Correct. Human immunodeficiency virus with acquired immunodeficiency syndrome, and autoimmune disorders, are the examples given."], ["Loss of resident flora and overgrowth of pathogens", "Resident flora belongs to a later lecture in this course."], ["Changes to surface antigens that evade vaccination", "That is the implication of viral mutation, not human."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 63"}, {"topic": "Fungi", "io": "Describe the types of infectious pathogens", "q": "How does the lecture distinguish yeasts from molds?", "opts": [["Yeasts are macroscopic; molds are microscopic", "Both yeasts and molds fall under microscopic fungi; mushrooms and puffballs are the macroscopic group."], ["Yeasts are photosynthetic; molds are not", "Photosynthesis is attributed to algae among the protozoan groups."], ["Yeasts are unicellular; molds are multicellular and filamentous", "Correct. Candida albicans and Saccharomyces cerevisiae are the yeast examples; Penicillium notatum the mold."], ["Yeasts lack a cell wall entirely; molds have a wall built of chitin", "The lecture does not draw this distinction, and lacking a cell wall describes Mycoplasmas."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 17"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Lipopolysaccharide in the Gram-negative outer membrane consists of which three parts?", "opts": [["Teichoic acid, lipoteichoic acid, and surface proteins", "Those are Gram-positive wall components."], ["Lipid A, core polysaccharide, and O-polysaccharide", "Correct. Lipid A carries the endotoxin activity, and the O-polysaccharide is used in bacterial classification."], ["N-acetyl glucosamine, N-acetyl muramic acid, and a pentaglycine spacer", "Those are peptidoglycan components; the pentaglycine spacer is the indirect crosslink in Staphylococcus aureus."], ["Crystal violet, iodine, and safranin", "Those are stain reagents."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}];
+const QUESTIONS = [
+  {
+    "topic": "Culture media",
+    "io": "Review the types of culture media used to identify pathogens",
+    "q": "What is the difference between selective and differential media?",
+    "opts": [
+      [
+        "Selective supports fastidious organisms; differential defines every ingredient",
+        "Supporting fastidious organisms describes enriched media, and defined ingredients describe synthetic media."
+      ],
+      [
+        "Selective allows several types of microbes to grow and displays visible differences between them; differential contains agents that inhibit some microbes and encourage others",
+        "Growing a broad range describes general purpose media, and differential media permit several types to grow."
+      ],
+      [
+        "Selective contains agents that inhibit some microbes and encourage the desired ones; differential allows several types to grow and displays visible differences between them",
+        "Correct. One narrows what grows, the other makes what grows distinguishable."
+      ],
+      [
+        "Selective is always synthetic; differential is always complex",
+        "The synthetic and complex axis is independent of the selective and differential one."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 44"
+  },
+  {
+    "topic": "Lytic vs lysogenic",
+    "io": "Differentiate the different processes of phage replication",
+    "q": "Which consequence of lysogeny has direct clinical relevance?",
+    "opts": [
+      [
+        "The host bacterial cell is destroyed, releasing multiple copies of the virus",
+        "That is the lytic outcome."
+      ],
+      [
+        "The bacterium may acquire new traits, such as the ability to make a toxin",
+        "Correct. Integration as prophage can hand the bacterium a new capability, and it also becomes immune to reinfection."
+      ],
+      [
+        "The bacterium becomes unable to divide",
+        "Viral genes are replicated along with the host cell, so division continues."
+      ],
+      [
+        "The bacterium loses its plasmids",
+        "Lysogeny does not cause plasmid loss."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"
+  },
+  {
+    "topic": "Culture media",
+    "io": "Review the types of culture media used to identify pathogens",
+    "q": "What distinguishes a synthetic (chemically defined) medium from a complex one?",
+    "opts": [
+      [
+        "Synthetic contains pure organic and inorganic compounds in an exact chemical formula; complex contains at least one ingredient that is not chemically definable",
+        "Correct. That is the whole distinction — whether every ingredient can be written as a formula."
+      ],
+      [
+        "Synthetic inhibits unwanted organisms; complex encourages them",
+        "Inhibiting some organisms while encouraging others describes selective media."
+      ],
+      [
+        "Synthetic shows visible differences between organisms; complex does not",
+        "Displaying visible differences describes differential media."
+      ],
+      [
+        "Synthetic contains at least one ingredient that is not chemically definable; complex contains pure organic and inorganic compounds in an exact chemical formula",
+        "Blood, serum and haemoglobin are features of enriched media."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 43"
+  },
+  {
+    "topic": "Molecular mechanisms",
+    "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease",
+    "q": "Influenza virus binds host cells using which molecule, and to which receptor?",
+    "opts": [
+      [
+        "Hemagglutinin protein, binding sialic acid receptors on host cells",
+        "Correct. That is the specific molecular interaction between a pathogen surface protein and a host cell receptor."
+      ],
+      [
+        "Type I fimbriae, binding mannose receptors on host cells",
+        "That is the Escherichia coli adhesion example, used to illustrate colonisation of the urinary tract."
+      ],
+      [
+        "Panton-Valentine leucocidin, binding receptors on neutrophils",
+        "That is a Staphylococcus aureus toxin, not the influenza attachment mechanism."
+      ],
+      [
+        "Lipid A, binding pattern recognition receptors on white blood cells",
+        "Lipid A is the endotoxin portion of lipopolysaccharide in Gram-negative cell walls."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 10"
+  },
+  {
+    "topic": "Animal viruses",
+    "io": "Compare and contrast phage replication to animal virus replication",
+    "q": "Which three differences separate animal virus from phage replication?",
+    "opts": [
+      [
+        "Animal viruses lack a capsid, replicate in the nucleus, and never integrate",
+        "All viruses have capsids, and none of these three are the stated differences."
+      ],
+      [
+        "Animal viruses bind only protein receptors, use no enzymes, and kill every host cell",
+        "None of these appear as the listed contrasts."
+      ],
+      [
+        "The entire virion is engulfed, uncoating is required to release the genetic material, and release is by budding — which may assist acquisition of an envelope",
+        "Correct. Uncoating is driven by the difference between cytoplasmic and extracellular pH."
+      ],
+      [
+        "The entire virion is engulfed, no uncoating is required at any point, and release occurs only by lysis of the host cell membrane rather than by budding",
+        "Assembly is part of viral replication generally."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 58"
+  },
+  {
+    "topic": "Bacterial structures",
+    "io": "Compare and contrast standard and specialized structures of a bacterial cell",
+    "q": "Which internal bacterial structures are present?",
+    "opts": [
+      [
+        "A defined nuclear membrane, mitochondria, and 80S ribosomes within the cytoplasm",
+        "All three are eukaryotic features; bacteria have no defined nuclear membrane and carry 70S ribosomes."
+      ],
+      [
+        "Cytoplasm, organelles, a nuclear area with circular chromosome, 70S ribosomes, and inclusions",
+        "Correct. Inclusions store products such as phosphate and oil droplets."
+      ],
+      [
+        "Capsule, slime layer, and biofilm matrix",
+        "These are glycocalyx components, which sit outside the cell."
+      ],
+      [
+        "Flagella, pili and fimbriae",
+        "These are projections from the wall rather than internal structures."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 37"
+  },
+  {
+    "topic": "Death curve",
+    "io": "Review the bacterial death curve",
+    "q": "When a microbial control method is applied to a bacterial population, what is the rate of death?",
+    "opts": [
+      [
+        "It is constant",
+        "Correct. That constant rate is what makes decimal reduction time a usable measure."
+      ],
+      [
+        "It accelerates as the population falls",
+        "A constant rate is stated, not an accelerating one."
+      ],
+      [
+        "It slows as resistant organisms are selected",
+        "Selection of resistance is discussed under mutation, not as a feature of the death curve."
+      ],
+      [
+        "It varies unpredictably with population size",
+        "The constancy is precisely what allows the calculation posed on the same slide."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"
+  },
+  {
+    "topic": "Growth curve",
+    "io": "Review the phases of the bacterial growth curve",
+    "q": "During which phase are bacteria most vulnerable to control methods, and what is an example?",
+    "opts": [
+      [
+        "Lag phase; example, refrigeration",
+        "The lag phase is one of adjustment with little growth, and refrigeration is a physical control rather than the example given."
+      ],
+      [
+        "Stationary phase; example, autoclaving",
+        "The stationary phase is where growth and death rates balance."
+      ],
+      [
+        "Exponential growth phase; example, penicillin",
+        "Correct. Penicillin acts on wall synthesis, so it bites hardest while cells are actively dividing."
+      ],
+      [
+        "Death phase; example, ultraviolet radiation",
+        "In the death phase cells are already dying exponentially in their own wastes."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"
+  },
+  {
+    "topic": "Growth curve",
+    "io": "Review the phases of the bacterial growth curve",
+    "q": "What causes the stationary phase?",
+    "opts": [
+      [
+        "Cells adjusting and enlarging before division begins",
+        "That is the lag phase."
+      ],
+      [
+        "Adequate nutrients and favourable environment, plus removal of organic acids and pollutants, so growth continues unchecked",
+        "Those conditions sustain the exponential growth phase."
+      ],
+      [
+        "Intensifying limiting factors killing cells exponentially",
+        "That is the death phase."
+      ],
+      [
+        "Depleted nutrients and oxygen, plus excretion of organic acids and pollutants, so growth rate equals death rate",
+        "Correct. The balance point between division and death is what makes the curve flatten."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"
+  },
+  {
+    "topic": "Growth requirements",
+    "io": "Review the methods utilized in bacterial identification",
+    "q": "How do the requirements for bacterial growth divide?",
+    "opts": [
+      [
+        "Aerobic versus anaerobic oxygen requirements only — with temperature, pH and osmotic pressure counted as chemical rather than physical",
+        "Oxygen level is one chemical requirement among several."
+      ],
+      [
+        "Selective versus differential",
+        "Those are types of culture media, not growth requirements."
+      ],
+      [
+        "Synthetic versus complex",
+        "Those also describe media, by whether every ingredient is chemically definable."
+      ],
+      [
+        "Chemical requirements — water, energy nutrients, vitamins, minerals, oxygen levels — and physical requirements — temperature, pH, osmotic pressure",
+        "Correct. Energy nutrients are given as carbohydrates, proteins and lipids."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 42"
+  },
+  {
+    "topic": "Lytic vs lysogenic",
+    "io": "Differentiate the different processes of phage replication",
+    "q": "Which features belong to the lytic cycle rather than the lysogenic?",
+    "opts": [
+      [
+        "Integration of viral genes as a prophage, replication alongside the host cell, and immunity to reinfection",
+        "Those are lysogenic features."
+      ],
+      [
+        "Viral genes replicated along with the host cell",
+        "That is lysogenic — the genome is carried passively."
+      ],
+      [
+        "Specialized transduction, in which all cells carry the same host DNA",
+        "Specialized transduction is listed under the lysogenic cycle."
+      ],
+      [
+        "Rapid takeover of bacterial metabolism, production of multiple virus copies, and destruction of the host cell",
+        "Correct. The lytic cycle also produces generalized transduction, in which random pieces of host DNA may be transmitted to other bacteria."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"
+  },
+  {
+    "topic": "Peptidoglycan",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "Peptidoglycan is a polymer of which alternating units?",
+    "opts": [
+      [
+        "Lipid A and core polysaccharide",
+        "Those are components of lipopolysaccharide in the Gram-negative outer membrane."
+      ],
+      [
+        "N-acetyl glucosamine and N-acetyl muramic acid, crosslinked by a short peptide bridge",
+        "Correct. The crosslink runs between the terminal D-alanine and the penultimate diamino-containing amino acid."
+      ],
+      [
+        "Teichoic acid and lipoteichoic acid, crosslinked by an outer bridge of lipopolysaccharide",
+        "These are acidic polysaccharides bound within the Gram-positive wall, not the polymer backbone."
+      ],
+      [
+        "Crystal violet and safranin",
+        "Those are Gram stain reagents, not structural molecules."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 29"
+  },
+  {
+    "topic": "Noncellular agents",
+    "io": "Describe the types of infectious pathogens",
+    "q": "Viroids differ from prions in which way?",
+    "opts": [
+      [
+        "Viroids are misfolded proteins; prions are nucleic acid",
+        "This reverses the two entirely."
+      ],
+      [
+        "Viroids cause spongiform encephalopathies; prions infect plants",
+        "Spongiform encephalopathies are the prion diseases, and viroids are the plant agents."
+      ],
+      [
+        "Viroids have a protein coat; prions do not",
+        "Viroids are explicitly described as having no protein coat."
+      ],
+      [
+        "Viroids are short pieces of RNA; prions contain no nucleic acid at all",
+        "Correct. Viroids have so far been identified only in plants."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 60"
+  },
+  {
+    "topic": "Gram stain",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "A Gram-positive cell wall consists of which features?",
+    "opts": [
+      [
+        "A thick homogenous sheath of peptidoglycan 20-80 nm thick, with teichoic and lipoteichoic acid, retaining crystal violet and staining purple",
+        "Correct. It is described as physically strong — resistant to stresses such as temperature, pH and osmotic pressure."
+      ],
+      [
+        "An asymmetric outer bilayer of lipopolysaccharide over a periplasmic space and a thin shell of peptidoglycan, losing crystal violet and staining red",
+        "That is the Gram-negative wall."
+      ],
+      [
+        "No cell wall at all, giving a pleomorphic shape",
+        "That describes Mycoplasmas."
+      ],
+      [
+        "A carbohydrate-based wall with 80S ribosomes",
+        "Those are eukaryotic features."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 33"
+  },
+  {
+    "topic": "Lytic vs lysogenic",
+    "io": "Differentiate the different processes of phage replication",
+    "q": "What distinguishes generalized from specialized transduction?",
+    "opts": [
+      [
+        "Generalized transmits random pieces of host DNA; specialized means all cells carry the same host DNA",
+        "Correct. Generalized is listed under the lytic cycle, specialized under the lysogenic."
+      ],
+      [
+        "Generalized occurs in the lysogenic cycle; specialized in the lytic",
+        "This reverses which cycle each belongs to."
+      ],
+      [
+        "Generalized transduction transfers plasmid DNA cell to cell; specialized takes up naked DNA",
+        "Those describe conjugation and transformation, which are not viral processes."
+      ],
+      [
+        "Generalized requires a pilus; specialized requires a capsule",
+        "A pilus is used in conjugation, and a capsule is a glycocalyx structure."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 57"
+  },
+  {
+    "topic": "Peptidoglycan",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "Crosslinking of peptidoglycan is catalyzed by transpeptidases. Why does that matter clinically?",
+    "opts": [
+      [
+        "Because transpeptidases are the receptor for bacterial conjugation",
+        "Conjugation uses a pilus, coded by a plasmid."
+      ],
+      [
+        "Because transpeptidases determine whether a cell retains crystal violet",
+        "Crystal violet retention depends on the thickness of the peptidoglycan sheath, not on the enzyme."
+      ],
+      [
+        "Because transpeptidases are the target of beta lactam antibiotics",
+        "Correct. Transpeptidases are the beta-lactam target, which is what connects wall synthesis to antibiotic action."
+      ],
+      [
+        "Because transpeptidases produce the endospore coat",
+        "The spore coat is a survival structure formed by Bacillus and Clostridium."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 29"
+  },
+  {
+    "topic": "Mutations",
+    "io": "Describe the health implications of nucleic acid mutations",
+    "q": "Which three mechanisms allow bacteria to acquire new genetic information?",
+    "opts": [
+      [
+        "Binary fission — division of the parent cell into two; sporulation — formation of a resistant endospore coat; and budding — release of virions through the host membrane",
+        "Binary fission is reproduction, sporulation is survival, and budding is a viral release mechanism."
+      ],
+      [
+        "Adsorption, penetration and release",
+        "Those are steps of phage replication."
+      ],
+      [
+        "Lag, exponential and stationary phases",
+        "Those are growth curve phases."
+      ],
+      [
+        "Transformation — taking up naked DNA from the environment; conjugation — cell to cell transmission of DNA from a plasmid; and transduction — transmission of genetic material by viral vector",
+        "Correct. All three are routes to traits such as antibiotic resistance or toxin production."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 62"
+  },
+  {
+    "topic": "Microbial control",
+    "io": "Describe the basic mechanisms of microbial control",
+    "q": "What distinguishes an aseptic or sterile condition from disinfection?",
+    "opts": [
+      [
+        "Aseptic applies to tissues; disinfection applies to inanimate objects",
+        "That distinction is between antiseptics and disinfectants, which are chemical agents."
+      ],
+      [
+        "Aseptic uses heat; disinfection uses chemicals",
+        "Both physical and chemical methods exist for either goal."
+      ],
+      [
+        "Aseptic or sterile means removal of ALL forms of microbial contamination; disinfection means elimination of SOME forms",
+        "Correct. Lowering numbers rather than total elimination may be good enough depending on circumstances."
+      ],
+      [
+        "Aseptic or sterile means elimination of SOME forms of microbial contamination; disinfection means removal of ALL forms",
+        "No such restriction is given."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 65"
+  },
+  {
+    "topic": "Gram stain",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "The two wall types are physically versus chemically strong. Which way round?",
+    "opts": [
+      [
+        "Gram-negative is physically strong — resistant to temperature, pH and osmotic pressure; Gram-positive is chemically strong — resistant to disinfectants and antibiotics",
+        "This reverses the pairing given."
+      ],
+      [
+        "Both are described as physically strong only",
+        "Each is given a different kind of strength, which is the point of the contrast."
+      ],
+      [
+        "Both are described as chemically strong only",
+        "Again, the contrast assigns one property to each."
+      ],
+      [
+        "Gram-positive is physically strong — resistant to temperature, pH and osmotic pressure; Gram-negative is chemically strong — resistant to disinfectants and antibiotics",
+        "Correct. That difference follows from the thick peptidoglycan sheath versus the outer membrane barrier."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"
+  },
+  {
+    "topic": "Bacterial structures",
+    "io": "Compare and contrast standard and specialized structures of a bacterial cell",
+    "q": "Which projection from the bacterial wall provides true directional motility?",
+    "opts": [
+      [
+        "Flagellum",
+        "Correct. The flagellum is listed as a specialized feature providing true directional motility."
+      ],
+      [
+        "Pilus",
+        "The pilus is coded by a plasmid and used in bacterial conjugation."
+      ],
+      [
+        "Fimbriae",
+        "Fimbriae are used for adhesion to membrane surfaces."
+      ],
+      [
+        "Glycocalyx",
+        "The glycocalyx is a capsule or slime layer, involved in biofilms and preventing phagocytosis."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 27"
+  },
+  {
+    "topic": "Death curve",
+    "io": "Review the bacterial death curve",
+    "q": "A culture of roughly 4,865,321 organisms is exposed to a control method with a decimal reduction time of 10 minutes. What does the constant death rate imply about clearing it?",
+    "opts": [
+      [
+        "Each successive 10-minute interval removes a fixed NUMBER of organisms, so the count falls in equal steps each time",
+        "One interval removes 90%, leaving roughly 486,000 organisms behind."
+      ],
+      [
+        "Nothing can be predicted, because death rate varies with population size",
+        "The rate is stated to be constant, which is what makes prediction possible."
+      ],
+      [
+        "Each successive 10-minute interval removes 90% of whatever remains, so the count falls by an order of magnitude each time",
+        "Correct. From about 4.9 million, successive intervals give roughly 486,000, then 48,600, then 4,860 — which is why sterilisation is defined by probability rather than by a moment when the last organism dies."
+      ],
+      [
+        "The population reaches zero after exactly two intervals",
+        "Two intervals leave roughly 48,600 organisms."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"
+  },
+  {
+    "topic": "Gram stain",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "Which portion of lipopolysaccharide carries endotoxin activity, and which is used in bacterial classification?",
+    "opts": [
+      [
+        "Core polysaccharide carries endotoxin; Lipid A is used in classification",
+        "This reverses both roles."
+      ],
+      [
+        "O-polysaccharide carries endotoxin; core polysaccharide is used in classification",
+        "Endotoxin activity is attributed to Lipid A, not the O-polysaccharide."
+      ],
+      [
+        "Lipid A carries endotoxin activity; O-polysaccharide is used in classification",
+        "Correct. Both attributions are given explicitly in the description of the outer membrane."
+      ],
+      [
+        "Both functions belong to the core polysaccharide",
+        "The three parts are given distinct roles."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"
+  },
+  {
+    "topic": "Environmental factors",
+    "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease",
+    "q": "Under which environmental conditions is influenza virus more stable and transmissible?",
+    "opts": [
+      [
+        "High temperatures and low humidity",
+        "This reverses both conditions given."
+      ],
+      [
+        "Low temperatures and high humidity",
+        "Correct. Low temperature with high humidity favours influenza stability and transmission."
+      ],
+      [
+        "High temperatures and high humidity",
+        "Temperature is stated as low, not high."
+      ],
+      [
+        "Low temperatures and low humidity",
+        "Humidity is stated as high, not low."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 12"
+  },
+  {
+    "topic": "Protozoa",
+    "io": "Describe the types of infectious pathogens",
+    "q": "Protozoa may exist in two forms. What are they?",
+    "opts": [
+      [
+        "Yeast and hyphal forms",
+        "That dimorphism belongs to fungi, not to the protozoan forms given here."
+      ],
+      [
+        "Trophozoite and endospore — the two alternating stages of the protozoan life cycle",
+        "Endospores are a bacterial survival structure, produced by Bacillus and Clostridium."
+      ],
+      [
+        "Prophage and virion",
+        "Those are viral states, from the lysogenic and lytic cycles."
+      ],
+      [
+        "Trophozoite — the motile feeding stage — and cyst, a dormant resistant stage",
+        "Correct. Protozoa are also differentiated by motility: flagella, cilia, pseudopods, or nonmotile."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 18"
+  },
+  {
+    "topic": "Cytopathic effects",
+    "io": "Describe the cytopathic effects of viruses",
+    "q": "Which of the following is listed as a cytopathic effect of viruses?",
+    "opts": [
+      [
+        "Cells fusing to form multinucleated cells",
+        "Correct. The full list also includes changes in size and shape, cytoplasmic and nuclear inclusion bodies, cell lysis, alteration of deoxyribonucleic acid, and transformation into cancerous cells."
+      ],
+      [
+        "Formation of an endospore coat",
+        "Endospores are a bacterial survival structure."
+      ],
+      [
+        "Crosslinking of peptidoglycan",
+        "That is bacterial cell wall synthesis."
+      ],
+      [
+        "Conversion of a trophozoite to a cyst",
+        "That is a protozoan life-stage change."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 59"
+  },
+  {
+    "topic": "Microbial control",
+    "io": "Describe the basic mechanisms of microbial control",
+    "q": "What is the difference between a disinfectant and an antiseptic?",
+    "opts": [
+      [
+        "Disinfectants are chemical; antiseptics are physical",
+        "Both are chemical control methods."
+      ],
+      [
+        "Disinfectants are used on inanimate objects; antiseptics are used on tissues",
+        "Correct. Lysol is the disinfectant, Listerine mouthwash the antiseptic."
+      ],
+      [
+        "Disinfectants sterilise completely; antiseptics do not affect microbes at all",
+        "Very few true chemical sterilants exist, and antiseptics do act on microbes."
+      ],
+      [
+        "Disinfectants are naturally produced; antiseptics are synthetic",
+        "That natural-versus-synthetic distinction is drawn for antibiotics and sulfa drugs."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 69"
+  },
+  {
+    "topic": "Mutations",
+    "io": "Describe the health implications of nucleic acid mutations",
+    "q": "What health implications follow from high mutation rates in viruses?",
+    "opts": [
+      [
+        "Changing surface properties may weaken or eliminate immunity from vaccination or previous exposure, and animal viruses that were host specific can cross to humans",
+        "Correct. Human hosts are unlikely to have immunity to viruses crossed from animal hosts."
+      ],
+      [
+        "Viruses lose the ability to replicate in host cells",
+        "Mutation does not abolish replication."
+      ],
+      [
+        "Viruses become uniformly less transmissible over time",
+        "Mutation is described as changing factors affecting transmission, not reliably reducing it."
+      ],
+      [
+        "Viruses can no longer be identified by nucleic acid sequencing, and previously host-specific animal viruses lose the ability to cross to humans",
+        "Sequencing is listed as an identification method and is not said to fail."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 62"
+  },
+  {
+    "topic": "Mutations",
+    "io": "Describe the health implications of nucleic acid mutations",
+    "q": "What health implications follow from genetic mutations in HUMAN hosts?",
+    "opts": [
+      [
+        "Acquisition of resistance to antibiotics and other control methods, the ability to produce toxins, and other virulence factors enhancing pathogenicity",
+        "Those are the implications given for bacterial mutation."
+      ],
+      [
+        "Chemical or radiation exposure transforming normal cells to cancer cells, oncogenic viruses causing the same transformation, and viruses affecting immune cells",
+        "Correct. Human immunodeficiency virus with acquired immunodeficiency syndrome, and autoimmune disorders, are the examples given."
+      ],
+      [
+        "Loss of resident flora and overgrowth of pathogens",
+        "Resident flora belongs to a later lecture in this course."
+      ],
+      [
+        "Changes to surface antigens that evade vaccination",
+        "That is the implication of viral mutation, not human."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 63"
+  },
+  {
+    "topic": "Fungi",
+    "io": "Describe the types of infectious pathogens",
+    "q": "What distinguishes yeasts from molds?",
+    "opts": [
+      [
+        "Yeasts are macroscopic; molds are microscopic",
+        "Both yeasts and molds fall under microscopic fungi; mushrooms and puffballs are the macroscopic group."
+      ],
+      [
+        "Yeasts are photosynthetic; molds are not",
+        "Photosynthesis is attributed to algae among the protozoan groups."
+      ],
+      [
+        "Yeasts are unicellular; molds are multicellular and filamentous",
+        "Correct. Candida albicans and Saccharomyces cerevisiae are the yeast examples; Penicillium notatum the mold."
+      ],
+      [
+        "Yeasts lack a cell wall entirely; molds have a wall built of chitin",
+        "That is not the distinction, and lacking a cell wall describes Mycoplasmas."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 17"
+  },
+  {
+    "topic": "Gram stain",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "Lipopolysaccharide in the Gram-negative outer membrane consists of which three parts?",
+    "opts": [
+      [
+        "Teichoic acid, lipoteichoic acid, and surface proteins",
+        "Those are Gram-positive wall components."
+      ],
+      [
+        "Lipid A, core polysaccharide, and O-polysaccharide",
+        "Correct. Lipid A carries the endotoxin activity, and the O-polysaccharide is used in bacterial classification."
+      ],
+      [
+        "N-acetyl glucosamine, N-acetyl muramic acid, and a pentaglycine spacer",
+        "Those are peptidoglycan components; the pentaglycine spacer is the indirect crosslink in Staphylococcus aureus."
+      ],
+      [
+        "Crystal violet, iodine, and safranin",
+        "Those are stain reagents."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

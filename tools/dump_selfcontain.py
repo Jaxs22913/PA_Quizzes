@@ -5,7 +5,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _selfcontain_rx import RX as SRC
 for path in sys.argv[1:]:
     s = io.open(path, encoding="utf8").read()
-    qs = json.loads(re.search(r'const QUESTIONS\s*=\s*(\[.*?\]);\s*\n', s, re.S).group(1))
+    m = re.search(r'const QUESTIONS\s*=\s*(\[.*?\]);\s*\n', s, re.S)
+    if not m:
+        continue
+    try:
+        qs = [q for q in json.loads(m.group(1))
+              if isinstance(q, dict) and "q" in q and "opts" in q]
+    except Exception:
+        continue
     hdr = False
     for _i, q in enumerate(qs):
         hits = []

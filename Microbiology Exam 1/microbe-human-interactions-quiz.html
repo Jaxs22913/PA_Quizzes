@@ -325,7 +325,788 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Adhesion", "io": "2 — Summarize the steps in the progression of an infectious disease", "q": "Which adhesion mechanism does the lecture attribute to viruses?", "opts": [["Suction disks", "Those belong to protozoans."], ["Hooks and barbs", "Those belong to helminths and insect larvae."], ["Adhesive slimes and capsules", "Those are bacterial, such as dextran slime or glycocalyx."], ["Spike or capsid proteins", "Correct."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 29", "qid": "1l8ibwp"}, {"topic": "Sequelae", "io": "4 — Diagram the stages in the course of an infection", "q": "What does the term sequelae mean, per the lecture?", "opts": [["The period before symptoms appear", "That is incubation."], ["The route by which a pathogen leaves", "That is a portal of exit."], ["A second infection complicating the first", "That is a secondary infection."], ["Long-term or permanent tissue or organ damage", "Correct — paralysis from polio, deafness from meningitis."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 41", "qid": "n859o2"}, {"topic": "Human microbiome", "io": "1 — Define resident flora", "q": "What proportion of the human genome does the lecture describe as foreign in origin?", "opts": [["About nine tenths", "That overstates it."], ["About half", "Correct — viral remnants and transposons."], ["About a tenth", "The lecture gives a much larger share."], ["Almost none", "Half is attributed to non-human sequence."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 5", "qid": "1hfdrb6"}, {"topic": "Patterns of infection", "io": "4 — Diagram the stages in the course of an infection", "q": "What defines a focal infection?", "opts": [["An agent breaks loose from a local site and spreads", "Correct."], ["Several microbes grow at one site", "That is a mixed infection."], ["An infection confined to one tissue", "That is a localized infection."], ["A second infection following disruption of the flora", "That is a superinfection."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 35", "qid": "1hvkkft"}, {"topic": "Patterns of infection", "io": "4 — Diagram the stages in the course of an infection", "q": "A patient develops bacterial pneumonia on top of a viral upper respiratory infection. Which term applies?", "opts": [["Secondary infection", "Correct — a different microbe complicating the initial one."], ["Superinfection", "That follows disruption of the natural flora, as after antibiotics."], ["Mixed infection", "That is simultaneous growth of several microbes."], ["Focal infection", "That is spread from an existing local site."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 36", "qid": "18soz67"}, {"topic": "Patterns of infection", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "Which is given as an example of a systemic infection?", "opts": [["Antibiotic-associated colitis", "That is a superinfection."], ["Measles", "Correct, with chicken pox, anthrax and rabies."], ["A boil", "That is localized."], ["A wart", "That is localized."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 35", "qid": "1qdbett"}, {"topic": "Oral flora", "io": "1 — Define resident flora", "q": "Which organisms are the most common oral residents?", "opts": [["Coliforms", "Those are enteric organisms."], ["Aerobic streptococci", "Correct."], ["Strict anaerobes", "Those dominate the large intestine."], ["Staphylococci", "Those are prominent on skin."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 13", "qid": "1u0qr0k"}, {"topic": "Toxins", "io": "3 — Differentiate between bacterial endo- and exotoxins", "q": "Which categories of toxin does the lecture name under toxigenicity?", "opts": [["Neurotoxins, enterotoxins, hemotoxins, nephrotoxins", "Correct, grouped by the tissue targeted."], ["Exoenzymes, leukocidins and antiphagocytic factors", "Those are separate virulence factors."], ["Capsules and slimes", "Those are antiphagocytic or adhesive."], ["Fimbriae and flagella", "Those are adhesion and motility structures."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 31", "qid": "1azlrqb"}, {"topic": "Toxins", "io": "3 — Differentiate between bacterial endo- and exotoxins", "q": "What is the key difference in how endo- and exotoxins are released?", "opts": [["Endotoxin is secreted; exotoxin released on lysis", "This reverses the two."], ["Endotoxin on lysis; exotoxin secreted by living cells", "Correct."], ["Both are secreted continuously", "Endotoxin requires cell damage or lysis."], ["Both require host cell death first", "Host cell death is not the trigger."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 31", "qid": "dsu6cg"}, {"topic": "Signs and symptoms", "io": "4 — Diagram the stages in the course of an infection", "q": "How does the lecture distinguish a sign from a symptom?", "opts": [["A sign is observed; a symptom is felt by the patient", "Correct, and a sign is often measurable by the clinician."], ["A sign is felt; a symptom is observed", "This reverses the two."], ["A sign is early; a symptom is late", "Timing does not define them."], ["A sign is specific; a symptom is non-specific", "Specificity is not the distinction drawn."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 38", "qid": "13kqyq7"}, {"topic": "Host defences", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "Which host factor does the lecture single out with particular emphasis?", "opts": [["Height and weight", "Not named as factors."], ["Geographic location", "That relates to reservoirs rather than host defence."], ["Immune status", "Correct — the lecture calls it the major one."], ["Blood group", "Not named as a factor."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 22", "qid": "1jiqh2j"}, {"topic": "Pathogens", "io": "2 — Summarize the steps in the progression of an infectious disease", "q": "Which situations allow an opportunistic pathogen to cause disease?", "opts": [["Only after antibiotic therapy", "Antibiotics are one route, via superinfection, but not the only one."], ["Only in hospital settings", "Nosocomial infection is a separate category."], ["Compromised defences, or growth in an unnatural site", "Correct, and sometimes it is the patient's own flora attacking."], ["Any exposure at all, regardless of the host's status", "That describes a true pathogen."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 20", "qid": "1jmwt5f"}, {"topic": "Nosocomial infection", "io": "7 — Describe the common sources and mitigation methods related to nosocomial infections", "q": "What consequence of nosocomial infection does the lecture emphasise?", "opts": [["It resolves without treatment", "Not what the lecture describes."], ["It may prolong the hospital stay or end in death", "Correct."], ["It always requires surgical drainage of the site", "Not a stated consequence."], ["It is usually asymptomatic", "Not what the lecture describes."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 50", "qid": "1f5nzzq"}, {"topic": "Patterns of infection", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "Which pattern describes several microbes growing at one site simultaneously?", "opts": [["Focal infection", "That is spread from a local site."], ["Systemic infection", "That is spread to several sites via the blood."], ["Mixed infection", "Correct."], ["Secondary infection", "That is a different microbe complicating the first."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 36", "qid": "6yer3a"}, {"topic": "Patterns of infection", "io": "4 — Diagram the stages in the course of an infection", "q": "Which term describes microbes that remain confined to one tissue?", "opts": [["Localized infection", "Correct — boils and warts are the examples."], ["Systemic infection", "That spreads to several sites, usually via blood."], ["Focal infection", "That is when an agent breaks loose from a local site."], ["Mixed infection", "That is several microbes at one site."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 35", "qid": "gign6q"}, {"topic": "Nosocomial infection", "io": "7 — Describe the common sources and mitigation methods related to nosocomial infections", "q": "Which sites does the lecture say nosocomial infections most commonly involve?", "opts": [["Urinary tract, respiratory tract and surgical incisions", "Correct."], ["Skin and soft tissue only", "Narrower than the lecture's list."], ["Bloodstream and central nervous system infections", "Not the sites named as most common."], ["Gastrointestinal tract alone", "Not the list given."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 50", "qid": "1klqeoy"}, {"topic": "Human microbiome", "io": "1 — Define resident flora", "q": "What does the lecture say about the ratio of non-human to human cells in the body?", "opts": [["They are exactly equal", "The lecture gives microbes a small edge."], ["Non-human cells are a tiny fraction", "They contribute around three pounds of body weight."], ["Non-human cells slightly outnumber human ones", "Correct: roughly 38 to 39 trillion against about 30 trillion."], ["Human cells outnumber non-human ten to one", "The counts are close, with microbes slightly ahead."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 4", "qid": "9c1ehd"}, {"topic": "Adhesion", "io": "2 — Summarize the steps in the progression of an infectious disease", "q": "Which structure does the lecture list as a bacterial adhesion mechanism?", "opts": [["Ribosomes", "Those synthesise protein."], ["Plasmids", "Those carry accessory genes."], ["Endospores", "Those are a survival form, not an adhesin."], ["Fimbriae", "Correct, also called attachment pili."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 29", "qid": "19g5vj8"}, {"topic": "Sterile sites", "io": "1 — Define resident flora", "q": "Which of these does the lecture list as normally sterile?", "opts": [["The lumen of the large intestine", "It carries the highest bacterial numbers in the body."], ["The skin surface and hair follicles", "It has its own characteristic flora."], ["The oral cavity and pharynx", "Aerobic streptococci are its most common residents."], ["Blood and cerebrospinal fluid", "Correct, alongside kidneys, bladder, brain and the interior of the eye."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 10", "qid": "t77bk1"}, {"topic": "Toxins", "io": "3 — Differentiate between bacterial endo- and exotoxins", "q": "Where does the lecture locate bacterial endotoxin?", "opts": [["The flagellum", "That is for motility and adhesion."], ["Lipid A of lipopolysaccharide", "Correct, released from lysed or damaged gram-negative bacteria."], ["A protein secreted by living cells", "That describes an exotoxin."], ["The bacterial capsule", "The capsule is antiphagocytic."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 31", "qid": "pnnqfy"}, {"topic": "Virulence factors", "io": "2 — Summarize the steps in the progression of an infectious disease", "q": "What is the function of a leukocidin?", "opts": [["Destroying leukocytes", "Correct; the suffix means to kill."], ["Dissolving connective tissue", "That is hyaluronidase, an exoenzyme."], ["Clotting plasma", "That is coagulase."], ["Blocking antibody binding", "Not a mechanism the lecture describes."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 33", "qid": "wqtjsk"}, {"topic": "Transmission", "io": "6 — Describe reservoirs of disease", "q": "Which is an example of vertical transmission?", "opts": [["A mosquito bite", "That is a biological vector."], ["Contaminated food", "That is a vehicle."], ["Mother to child at birth", "Correct, transplacental or during vaginal birth."], ["Kissing or sexual contact", "That is horizontal direct contact."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 48", "qid": "1xj7ef3"}, {"topic": "Definitions", "io": "1 — Define resident flora", "q": "The lecture notes that disease may be caused by factors other than the microbe itself. Which does it name?", "opts": [["The portal of exit", "That concerns transmission onward."], ["Our own immune responses", "Correct; disease may follow from the host response as much as the organism."], ["Antibiotic resistance genes", "Resistance affects treatment rather than defining disease."], ["The infectious dose", "That determines whether infection occurs."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 8", "qid": "1izui79"}, {"topic": "Epidemiology", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "What is a reportable, or notifiable, disease?", "opts": [["One with a high mortality rate in the population", "Severity does not define it."], ["One that is always epidemic", "Pattern does not define it."], ["One requiring hospital admission", "Management does not define it."], ["One that must be reported to public health authorities", "Correct."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 52", "qid": "t296y9"}, {"topic": "Epidemiology", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "Which body publishes the Morbidity and Mortality Weekly Report?", "opts": [["The Food and Drug Administration", "Not named in this role."], ["The National Institutes of Health", "Not named in this role."], ["The Centers for Disease Control and Prevention", "Correct; the World Health Organization is the international counterpart."], ["The World Health Organization in Geneva", "That is the international counterpart."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 52", "qid": "a83wub"}, {"topic": "Resident flora", "io": "1 — Define resident flora", "q": "How does the lecture say resident microflora benefit the host?", "opts": [["By preventing overgrowth of harmful microbes", "Correct — competitive exclusion."], ["By producing all essential vitamins", "Not the benefit the lecture emphasises."], ["By neutralising bacterial toxins", "Not a mechanism described."], ["By stimulating antibody production directly", "Not the benefit named here."]], "c": 0, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 9", "qid": "1kabvkh"}, {"topic": "Sterile sites", "io": "1 — Define resident flora", "q": "What does the lecture say about the urinary tract in females?", "opts": [["Colonised only after catheterisation", "The urethral colonisation is normal, not iatrogenic."], ["Sterile except a short portion of the urethra", "Correct, and the same is true in males."], ["Sterile throughout, including the urethra", "A short portion of the urethra is colonised."], ["Colonised throughout by lactobacilli", "That describes the vaginal flora, not the urinary tract."]], "c": 1, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 18", "qid": "97yvvj"}, {"topic": "Zoonoses", "io": "6 — Describe reservoirs of disease", "q": "Which organisms can cause zoonotic infection, per the lecture?", "opts": [["Only viruses and bacteria", "Fungi and protozoa are included as well."], ["Only bacterial and fungal agents", "Viruses and protozoa are included as well."], ["Only parasitic protozoa", "Bacteria, viruses and fungi are included as well."], ["Bacterial, viral, fungal or protozoan", "Correct — the category is defined by the reservoir, not the organism."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 46", "qid": "1awemal"}, {"topic": "Epidemiology", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "What does prevalence measure?", "opts": [["New cases over a defined time period", "That is incidence."], ["Deaths per hundred thousand", "That is the mortality rate."], ["Cases per hundred thousand", "That is the morbidity rate."], ["Total existing cases in the population", "Correct, usually as a percentage."]], "c": 3, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 53", "qid": "r88iso"}, {"topic": "Epidemiology", "io": "5 — Differentiate between clinical manifestations of an infectious illness", "q": "What does incidence measure?", "opts": [["Deaths attributable to a disease", "That is mortality."], ["The proportion who recover", "Not one of the measures defined."], ["New cases over a certain time period", "Correct, against the general healthy population."], ["All existing cases at one moment", "That is prevalence."]], "c": 2, "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 53", "qid": "1rrt6e3"}];
+const QUESTIONS = [
+  {
+    "topic": "Adhesion",
+    "io": "2 — Summarize the steps in the progression of an infectious disease",
+    "q": "Which adhesion mechanism do viruses use?",
+    "opts": [
+      [
+        "Suction disks",
+        "Those belong to protozoans."
+      ],
+      [
+        "Hooks and barbs",
+        "Those belong to helminths and insect larvae."
+      ],
+      [
+        "Adhesive slimes and capsules",
+        "Those are bacterial, such as dextran slime or glycocalyx."
+      ],
+      [
+        "Spike or capsid proteins",
+        "Correct."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 29",
+    "qid": "1l8ibwp"
+  },
+  {
+    "topic": "Sequelae",
+    "io": "4 — Diagram the stages in the course of an infection",
+    "q": "What does the term sequelae mean?",
+    "opts": [
+      [
+        "The period before symptoms appear",
+        "That is incubation."
+      ],
+      [
+        "The route by which a pathogen leaves",
+        "That is a portal of exit."
+      ],
+      [
+        "A second infection complicating the first",
+        "That is a secondary infection."
+      ],
+      [
+        "Long-term or permanent tissue or organ damage",
+        "Correct — paralysis from polio, deafness from meningitis."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 41",
+    "qid": "n859o2"
+  },
+  {
+    "topic": "Human microbiome",
+    "io": "1 — Define resident flora",
+    "q": "What proportion of the human genome is foreign in origin?",
+    "opts": [
+      [
+        "About nine tenths",
+        "That overstates it."
+      ],
+      [
+        "About half",
+        "Correct — viral remnants and transposons."
+      ],
+      [
+        "About a tenth",
+        "The true share is far larger."
+      ],
+      [
+        "Almost none",
+        "Half is attributed to non-human sequence."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 5",
+    "qid": "1hfdrb6"
+  },
+  {
+    "topic": "Patterns of infection",
+    "io": "4 — Diagram the stages in the course of an infection",
+    "q": "What defines a focal infection?",
+    "opts": [
+      [
+        "An agent breaks loose from a local site and spreads",
+        "Correct."
+      ],
+      [
+        "Several microbes grow at one site",
+        "That is a mixed infection."
+      ],
+      [
+        "An infection confined to one tissue",
+        "That is a localized infection."
+      ],
+      [
+        "A second infection following disruption of the flora",
+        "That is a superinfection."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 35",
+    "qid": "1hvkkft"
+  },
+  {
+    "topic": "Patterns of infection",
+    "io": "4 — Diagram the stages in the course of an infection",
+    "q": "A patient develops bacterial pneumonia on top of a viral upper respiratory infection. Which term applies?",
+    "opts": [
+      [
+        "Secondary infection",
+        "Correct — a different microbe complicating the initial one."
+      ],
+      [
+        "Superinfection",
+        "That follows disruption of the natural flora, as after antibiotics."
+      ],
+      [
+        "Mixed infection",
+        "That is simultaneous growth of several microbes."
+      ],
+      [
+        "Focal infection",
+        "That is spread from an existing local site."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 36",
+    "qid": "18soz67"
+  },
+  {
+    "topic": "Patterns of infection",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "Which is given as an example of a systemic infection?",
+    "opts": [
+      [
+        "Antibiotic-associated colitis",
+        "That is a superinfection."
+      ],
+      [
+        "Measles",
+        "Correct, with chicken pox, anthrax and rabies."
+      ],
+      [
+        "A boil",
+        "That is localized."
+      ],
+      [
+        "A wart",
+        "That is localized."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 35",
+    "qid": "1qdbett"
+  },
+  {
+    "topic": "Oral flora",
+    "io": "1 — Define resident flora",
+    "q": "Which organisms are the most common oral residents?",
+    "opts": [
+      [
+        "Coliforms",
+        "Those are enteric organisms."
+      ],
+      [
+        "Aerobic streptococci",
+        "Correct."
+      ],
+      [
+        "Strict anaerobes",
+        "Those dominate the large intestine."
+      ],
+      [
+        "Staphylococci",
+        "Those are prominent on skin."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 13",
+    "qid": "1u0qr0k"
+  },
+  {
+    "topic": "Toxins",
+    "io": "3 — Differentiate between bacterial endo- and exotoxins",
+    "q": "Which categories of toxin fall under toxigenicity?",
+    "opts": [
+      [
+        "Neurotoxins, enterotoxins, hemotoxins, nephrotoxins",
+        "Correct, grouped by the tissue targeted."
+      ],
+      [
+        "Exoenzymes, leukocidins and antiphagocytic factors",
+        "Those are separate virulence factors."
+      ],
+      [
+        "Capsules and slimes",
+        "Those are antiphagocytic or adhesive."
+      ],
+      [
+        "Fimbriae and flagella",
+        "Those are adhesion and motility structures."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 31",
+    "qid": "1azlrqb"
+  },
+  {
+    "topic": "Toxins",
+    "io": "3 — Differentiate between bacterial endo- and exotoxins",
+    "q": "What is the key difference in how endo- and exotoxins are released?",
+    "opts": [
+      [
+        "Endotoxin is secreted; exotoxin released on lysis",
+        "This reverses the two."
+      ],
+      [
+        "Endotoxin on lysis; exotoxin secreted by living cells",
+        "Correct."
+      ],
+      [
+        "Both are secreted continuously",
+        "Endotoxin requires cell damage or lysis."
+      ],
+      [
+        "Both require host cell death first",
+        "Host cell death is not the trigger."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 31",
+    "qid": "dsu6cg"
+  },
+  {
+    "topic": "Signs and symptoms",
+    "io": "4 — Diagram the stages in the course of an infection",
+    "q": "What distinguishes a sign from a symptom?",
+    "opts": [
+      [
+        "A sign is observed; a symptom is felt by the patient",
+        "Correct, and a sign is often measurable by the clinician."
+      ],
+      [
+        "A sign is felt; a symptom is observed",
+        "This reverses the two."
+      ],
+      [
+        "A sign is early; a symptom is late",
+        "Timing does not define them."
+      ],
+      [
+        "A sign is specific; a symptom is non-specific",
+        "Specificity is not the distinction drawn."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 38",
+    "qid": "13kqyq7"
+  },
+  {
+    "topic": "Host defences",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "Which host factor matters most?",
+    "opts": [
+      [
+        "Height and weight",
+        "Not named as factors."
+      ],
+      [
+        "Geographic location",
+        "That relates to reservoirs rather than host defence."
+      ],
+      [
+        "Immune status",
+        "Correct — immune status is the major one."
+      ],
+      [
+        "Blood group",
+        "Not named as a factor."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 22",
+    "qid": "1jiqh2j"
+  },
+  {
+    "topic": "Pathogens",
+    "io": "2 — Summarize the steps in the progression of an infectious disease",
+    "q": "Which situations allow an opportunistic pathogen to cause disease?",
+    "opts": [
+      [
+        "Only after antibiotic therapy",
+        "Antibiotics are one route, via superinfection, but not the only one."
+      ],
+      [
+        "Only in hospital settings",
+        "Nosocomial infection is a separate category."
+      ],
+      [
+        "Compromised defences, or growth in an unnatural site",
+        "Correct, and sometimes it is the patient's own flora attacking."
+      ],
+      [
+        "Any exposure at all, regardless of the host's status",
+        "That describes a true pathogen."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 20",
+    "qid": "1jmwt5f"
+  },
+  {
+    "topic": "Nosocomial infection",
+    "io": "7 — Describe the common sources and mitigation methods related to nosocomial infections",
+    "q": "What is the consequence of a nosocomial infection?",
+    "opts": [
+      [
+        "It resolves without treatment",
+        "These do not resolve on their own."
+      ],
+      [
+        "It may prolong the hospital stay or end in death",
+        "Correct."
+      ],
+      [
+        "It always requires surgical drainage of the site",
+        "Not a stated consequence."
+      ],
+      [
+        "It is usually asymptomatic",
+        "These are not usually asymptomatic."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 50",
+    "qid": "1f5nzzq"
+  },
+  {
+    "topic": "Patterns of infection",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "Which pattern describes several microbes growing at one site simultaneously?",
+    "opts": [
+      [
+        "Focal infection",
+        "That is spread from a local site."
+      ],
+      [
+        "Systemic infection",
+        "That is spread to several sites via the blood."
+      ],
+      [
+        "Mixed infection",
+        "Correct."
+      ],
+      [
+        "Secondary infection",
+        "That is a different microbe complicating the first."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 36",
+    "qid": "6yer3a"
+  },
+  {
+    "topic": "Patterns of infection",
+    "io": "4 — Diagram the stages in the course of an infection",
+    "q": "Which term describes microbes that remain confined to one tissue?",
+    "opts": [
+      [
+        "Localized infection",
+        "Correct — boils and warts are the examples."
+      ],
+      [
+        "Systemic infection",
+        "That spreads to several sites, usually via blood."
+      ],
+      [
+        "Focal infection",
+        "That is when an agent breaks loose from a local site."
+      ],
+      [
+        "Mixed infection",
+        "That is several microbes at one site."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 35",
+    "qid": "gign6q"
+  },
+  {
+    "topic": "Nosocomial infection",
+    "io": "7 — Describe the common sources and mitigation methods related to nosocomial infections",
+    "q": "Which sites do nosocomial infections most commonly involve?",
+    "opts": [
+      [
+        "Urinary tract, respiratory tract and surgical incisions",
+        "Correct."
+      ],
+      [
+        "Skin and soft tissue only",
+        "Narrower than the sites actually involved."
+      ],
+      [
+        "Bloodstream and central nervous system infections",
+        "Not the sites named as most common."
+      ],
+      [
+        "Gastrointestinal tract alone",
+        "Not the list given."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 50",
+    "qid": "1klqeoy"
+  },
+  {
+    "topic": "Human microbiome",
+    "io": "1 — Define resident flora",
+    "q": "What is the ratio of non-human to human cells in the body?",
+    "opts": [
+      [
+        "They are exactly equal",
+        "Microbes hold a small edge."
+      ],
+      [
+        "Non-human cells are a tiny fraction",
+        "They contribute around three pounds of body weight."
+      ],
+      [
+        "Non-human cells slightly outnumber human ones",
+        "Correct: roughly 38 to 39 trillion against about 30 trillion."
+      ],
+      [
+        "Human cells outnumber non-human ten to one",
+        "The counts are close, with microbes slightly ahead."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 4",
+    "qid": "9c1ehd"
+  },
+  {
+    "topic": "Adhesion",
+    "io": "2 — Summarize the steps in the progression of an infectious disease",
+    "q": "Which structure is a bacterial adhesion mechanism?",
+    "opts": [
+      [
+        "Ribosomes",
+        "Those synthesise protein."
+      ],
+      [
+        "Plasmids",
+        "Those carry accessory genes."
+      ],
+      [
+        "Endospores",
+        "Those are a survival form, not an adhesin."
+      ],
+      [
+        "Fimbriae",
+        "Correct, also called attachment pili."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 29",
+    "qid": "19g5vj8"
+  },
+  {
+    "topic": "Sterile sites",
+    "io": "1 — Define resident flora",
+    "q": "Which of these is normally sterile?",
+    "opts": [
+      [
+        "The lumen of the large intestine",
+        "It carries the highest bacterial numbers in the body."
+      ],
+      [
+        "The skin surface and hair follicles",
+        "It has its own characteristic flora."
+      ],
+      [
+        "The oral cavity and pharynx",
+        "Aerobic streptococci are its most common residents."
+      ],
+      [
+        "Blood and cerebrospinal fluid",
+        "Correct, alongside kidneys, bladder, brain and the interior of the eye."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 10",
+    "qid": "t77bk1"
+  },
+  {
+    "topic": "Toxins",
+    "io": "3 — Differentiate between bacterial endo- and exotoxins",
+    "q": "Where does bacterial endotoxin sit?",
+    "opts": [
+      [
+        "The flagellum",
+        "That is for motility and adhesion."
+      ],
+      [
+        "Lipid A of lipopolysaccharide",
+        "Correct, released from lysed or damaged gram-negative bacteria."
+      ],
+      [
+        "A protein secreted by living cells",
+        "That describes an exotoxin."
+      ],
+      [
+        "The bacterial capsule",
+        "The capsule is antiphagocytic."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 31",
+    "qid": "pnnqfy"
+  },
+  {
+    "topic": "Virulence factors",
+    "io": "2 — Summarize the steps in the progression of an infectious disease",
+    "q": "What is the function of a leukocidin?",
+    "opts": [
+      [
+        "Destroying leukocytes",
+        "Correct; the suffix means to kill."
+      ],
+      [
+        "Dissolving connective tissue",
+        "That is hyaluronidase, an exoenzyme."
+      ],
+      [
+        "Clotting plasma",
+        "That is coagulase."
+      ],
+      [
+        "Blocking antibody binding",
+        "Blocking antibody binding is a different mechanism."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 33",
+    "qid": "wqtjsk"
+  },
+  {
+    "topic": "Transmission",
+    "io": "6 — Describe reservoirs of disease",
+    "q": "Which is an example of vertical transmission?",
+    "opts": [
+      [
+        "A mosquito bite",
+        "That is a biological vector."
+      ],
+      [
+        "Contaminated food",
+        "That is a vehicle."
+      ],
+      [
+        "Mother to child at birth",
+        "Correct, transplacental or during vaginal birth."
+      ],
+      [
+        "Kissing or sexual contact",
+        "That is horizontal direct contact."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 48",
+    "qid": "1xj7ef3"
+  },
+  {
+    "topic": "Definitions",
+    "io": "1 — Define resident flora",
+    "q": "Disease may be caused by factors other than the microbe itself. Which?",
+    "opts": [
+      [
+        "The portal of exit",
+        "That concerns transmission onward."
+      ],
+      [
+        "Our own immune responses",
+        "Correct; disease may follow from the host response as much as the organism."
+      ],
+      [
+        "Antibiotic resistance genes",
+        "Resistance affects treatment rather than defining disease."
+      ],
+      [
+        "The infectious dose",
+        "That determines whether infection occurs."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 8",
+    "qid": "1izui79"
+  },
+  {
+    "topic": "Epidemiology",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "What is a reportable, or notifiable, disease?",
+    "opts": [
+      [
+        "One with a high mortality rate in the population",
+        "Severity does not define it."
+      ],
+      [
+        "One that is always epidemic",
+        "Pattern does not define it."
+      ],
+      [
+        "One requiring hospital admission",
+        "Management does not define it."
+      ],
+      [
+        "One that must be reported to public health authorities",
+        "Correct."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 52",
+    "qid": "t296y9"
+  },
+  {
+    "topic": "Epidemiology",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "Which body publishes the Morbidity and Mortality Weekly Report?",
+    "opts": [
+      [
+        "The Food and Drug Administration",
+        "Not named in this role."
+      ],
+      [
+        "The National Institutes of Health",
+        "Not named in this role."
+      ],
+      [
+        "The Centers for Disease Control and Prevention",
+        "Correct; the World Health Organization is the international counterpart."
+      ],
+      [
+        "The World Health Organization in Geneva",
+        "That is the international counterpart."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 52",
+    "qid": "a83wub"
+  },
+  {
+    "topic": "Resident flora",
+    "io": "1 — Define resident flora",
+    "q": "How does resident microflora benefit the host?",
+    "opts": [
+      [
+        "By preventing overgrowth of harmful microbes",
+        "Correct — competitive exclusion."
+      ],
+      [
+        "By producing all essential vitamins",
+        "Vitamin production is real but not the main benefit."
+      ],
+      [
+        "By neutralising bacterial toxins",
+        "Not a mechanism described."
+      ],
+      [
+        "By stimulating antibody production directly",
+        "Not the benefit named here."
+      ]
+    ],
+    "c": 0,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 9",
+    "qid": "1kabvkh"
+  },
+  {
+    "topic": "Sterile sites",
+    "io": "1 — Define resident flora",
+    "q": "What is true of the urinary tract in females?",
+    "opts": [
+      [
+        "Colonised only after catheterisation",
+        "The urethral colonisation is normal, not iatrogenic."
+      ],
+      [
+        "Sterile except a short portion of the urethra",
+        "Correct, and the same is true in males."
+      ],
+      [
+        "Sterile throughout, including the urethra",
+        "A short portion of the urethra is colonised."
+      ],
+      [
+        "Colonised throughout by lactobacilli",
+        "That describes the vaginal flora, not the urinary tract."
+      ]
+    ],
+    "c": 1,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 18",
+    "qid": "97yvvj"
+  },
+  {
+    "topic": "Zoonoses",
+    "io": "6 — Describe reservoirs of disease",
+    "q": "Which organisms can cause zoonotic infection?",
+    "opts": [
+      [
+        "Only viruses and bacteria",
+        "Fungi and protozoa are included as well."
+      ],
+      [
+        "Only bacterial and fungal agents",
+        "Viruses and protozoa are included as well."
+      ],
+      [
+        "Only parasitic protozoa",
+        "Bacteria, viruses and fungi are included as well."
+      ],
+      [
+        "Bacterial, viral, fungal or protozoan",
+        "Correct — the category is defined by the reservoir, not the organism."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 46",
+    "qid": "1awemal"
+  },
+  {
+    "topic": "Epidemiology",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "What does prevalence measure?",
+    "opts": [
+      [
+        "New cases over a defined time period",
+        "That is incidence."
+      ],
+      [
+        "Deaths per hundred thousand",
+        "That is the mortality rate."
+      ],
+      [
+        "Cases per hundred thousand",
+        "That is the morbidity rate."
+      ],
+      [
+        "Total existing cases in the population",
+        "Correct, usually as a percentage."
+      ]
+    ],
+    "c": 3,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 53",
+    "qid": "r88iso"
+  },
+  {
+    "topic": "Epidemiology",
+    "io": "5 — Differentiate between clinical manifestations of an infectious illness",
+    "q": "What does incidence measure?",
+    "opts": [
+      [
+        "Deaths attributable to a disease",
+        "That is mortality."
+      ],
+      [
+        "The proportion who recover",
+        "Not one of the measures defined."
+      ],
+      [
+        "New cases over a certain time period",
+        "Correct, against the general healthy population."
+      ],
+      [
+        "All existing cases at one moment",
+        "That is prevalence."
+      ]
+    ],
+    "c": 2,
+    "cite": "PAJ5200.Microbe-human-interactions(1).pptx, Slide 53",
+    "qid": "1rrt6e3"
+  }
+];
 const LTR = ["A","B","C","D","E"];
 /* The objective chip used to be built as ioLabel(q.io) unconditionally,
    so any quiz whose stored io already began with "Objective" rendered as

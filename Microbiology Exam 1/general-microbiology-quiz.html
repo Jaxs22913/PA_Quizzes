@@ -303,7 +303,758 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "What does the lecture say about temperature as a physical control method?", "opts": [["High temperature can kill; low temperature will NOT — it only slows the rate of microbial growth", "Correct. Refrigeration and freezing preserve food by slowing growth, not by sterilising it."], ["Both high and low temperatures kill equally well", "Low temperature is explicitly stated not to kill."], ["Low temperature can kill; high temperature will NOT — it only slows the rate of microbial growth", "This reverses the relationship."], ["Temperature has no reliable effect on microbial populations", "Dry heat and wet heat are both listed as killing methods."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 68"}, {"topic": "Molecular mechanisms", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "How does Salmonella enterica establish a niche for replication in gut cells?", "opts": [["By producing a capsule that prevents phagocytosis", "Capsules and slime layers are a glycocalyx function, illustrated by Streptococcus pneumoniae."], ["By binding the sialic acid receptors on host cells with a surface hemagglutinin protein", "That describes influenza virus attachment."], ["By producing an endotoxin released only on cell lysis", "Lipid A endotoxin activity belongs to the Gram-negative outer membrane."], ["By using a secretion system that injects effector proteins into host gut cells", "Correct. The lecture gives this as its invasion example — the mechanism that allows entry into cells."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 11"}, {"topic": "Viral structure", "io": "Differentiate the different processes of phage replication", "q": "What do all viruses have, and what shapes does the lecture list for it?", "opts": [["Capsids — protein coats enclosing and protecting the nucleic acid — which may be helical, icosahedral or complex", "Correct. Viruses contain either deoxyribonucleic acid or ribonucleic acid, and may additionally have an envelope or spikes."], ["Envelopes — lipid coats enclosing and protecting the capsid — which may be helical, icosahedral or complex", "An envelope is optional; the capsid is the universal feature."], ["Cell walls of peptidoglycan, which may be thick or thin", "Peptidoglycan walls are a bacterial feature."], ["Both deoxyribonucleic acid and ribonucleic acid together", "A virus contains one or the other, not both."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 52"}, {"topic": "Cytopathic effects", "io": "Describe the cytopathic effects of viruses", "q": "Viral alteration of host deoxyribonucleic acid may activate oncogenes. What else does the lecture say can do this?", "opts": [["Osmotic pressure and pH change", "Those are physical control methods and growth requirements."], ["Exposure to radiation or chemicals", "Correct. The lecture names radiation and chemicals alongside viruses as activators, which is why the same slide links infection to malignant transformation."], ["Conjugation and transformation", "Those are mechanisms by which bacteria acquire new DNA."], ["Desiccation and phagocytosis", "Those relate to glycocalyx function."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 59"}, {"topic": "Animal viruses", "io": "Compare and contrast phage replication to animal virus replication", "q": "Why do animal viruses require uncoating when phages do not?", "opts": [["Because animal viruses have no capsid to remove", "All viruses have capsids; that is what has to be removed."], ["Because animal viruses integrate into the host chromosome first, so the genetic material must be excised — driven by the difference in cytoplasmic pH", "Integration as prophage is a lysogenic phage behaviour."], ["Because animal viruses replicate outside the cell", "Replication requires the host cell interior."], ["Because the entire virion is engulfed, so the genetic material must then be released — driven by the difference between cytoplasmic and extracellular pH", "Correct. A phage injects its genome through the wall instead, so nothing needs unwrapping."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 58"}, {"topic": "Types of microbes", "io": "Describe the types of infectious pathogens", "q": "Which grouping of microbe types is correct?", "opts": [["Bacteria and fungi are prokaryotic; protozoa and helminths are eukaryotic; viruses are simply very small bacteria", "Fungi are grouped with the eukaryotes in this lecture, not with bacteria."], ["All listed microbes are eukaryotic except viruses", "Bacteria are prokaryotic, so this is not correct."], ["Bacteria are prokaryotic; fungi, protozoa and helminths are eukaryotic; viruses are noncellular infectious agents", "Correct. That is exactly how the lecture divides the types of microbes."], ["Bacteria and viruses are prokaryotic; all others are eukaryotic", "Viruses are classified as noncellular infectious agents rather than as prokaryotes."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 13"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "Which statement about bacterial plasmids matches the lecture?", "opts": [["They are linear molecules, always integrated into the chromosome, and are essential to bacterial growth, to normal metabolism and to cell wall synthesis", "They are circular and explicitly described as NOT essential to growth and metabolism."], ["They are protein structures used for motility", "That describes the flagellum."], ["They are the sole site of the bacterial chromosome", "The nuclear area holds the circular chromosome; plasmids are separate, though they may integrate into it."], ["Small circular double-stranded DNA, free or integrated, which may encode antibiotic resistance, tolerance to toxic metals, enzymes and toxins", "Correct. They are duplicated and passed to offspring, and are readily manipulated for genetic engineering."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 38"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Why does a Gram-negative organism appear red at the end of the stain?", "opts": [["It loses crystal violet during decolorization and takes up the safranin counterstain", "Correct. Retention or loss of crystal violet is what the whole technique turns on."], ["It never binds the crystal violet stain in the first place during the procedure", "The stain is taken up initially; the difference is whether it is retained through decolorization."], ["Its teichoic acid binds safranin preferentially", "Teichoic acid is a Gram-positive wall component."], ["Its thick peptidoglycan sheath traps safranin", "The thick sheath is the Gram-positive feature, and it traps crystal violet rather than safranin."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"}, {"topic": "Morphology", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "What are the three shapes of bacteria, and why does the lecture say shape matters?", "opts": [["Cocci, bacilli and spiral — because shape is used in identification", "Correct. Spiral covers helical, comma, twisted rod and spirochete forms."], ["Cocci, bacilli and filamentous — because shape determines virulence", "Filamentous describes molds, and the stated reason is identification rather than virulence."], ["Round, flat and segmented — because shape determines Gram reaction", "Those terms describe helminths, and the Gram reaction depends on cell wall structure."], ["Yeast, hyphal and pleomorphic — because shape determines motility", "These are fungal and mycoplasmal descriptions, and motility comes from flagella."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 22"}, {"topic": "Mutations", "io": "Describe the health implications of nucleic acid mutations", "q": "How does the lecture define a deoxyribonucleic acid mutation?", "opts": [["Transfer of a plasmid from one bacterial cell to another, which may then impact the phenotype", "That is conjugation."], ["Uptake of naked DNA from the environment", "That is transformation."], ["A change in the base sequence of the genome, which may then impact the phenotype of the organism", "Correct. Mutations occur naturally at a low level but may be induced by radiation, chemicals or viruses, and may be beneficial, neutral or deleterious."], ["Integration of a viral genome as a prophage", "That is lysogeny."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 61"}, {"topic": "Culture media", "io": "Review the types of culture media used to identify pathogens", "q": "Enriched media are defined by what?", "opts": [["Agents that inhibit the growth of some microbes while encouraging the growth of the desired ones on the culture plate", "That defines selective media."], ["Complex organic substances such as blood, serum, haemoglobin or special growth factors required by fastidious microbes", "Correct. The point is supporting organisms that will not otherwise grow."], ["The ability to display visible differences among organisms", "That defines differential media."], ["Containing only chemically definable ingredients", "That describes synthetic media."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 43"}, {"topic": "Noncellular agents", "io": "Describe the types of infectious pathogens", "q": "Prions are described as which of the following?", "opts": [["Short pieces of RNA with no protein coat", "That describes viroids, which so far have been identified only in plants."], ["Protein coats enclosing a nucleic acid genome", "That describes a virus capsid."], ["Misfolded proteins containing no nucleic acid, causing spongiform encephalopathies", "Correct. Examples given are scrapie in sheep and goats, bovine spongiform encephalopathy, and Creutzfeldt-Jakob Disease in humans."], ["Tiny obligate intracellular bacteria that lack a cell wall, causing spongiform encephalopathies", "That describes Mycoplasmas."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 60"}, {"topic": "Gram stain", "io": "Describe bacterial cell morphologies, including Gram-staining characteristics", "q": "Which step of the Gram stain technique does the lecture call the most critical?", "opts": [["Flooding the slide with crystal violet for one full minute", "That is the first step, and is not the one identified as most critical."], ["Flooding with Gram's iodine for one minute", "That is the second step, the mordant."], ["Flooding with safranin for one minute", "That is the fourth step, the counterstain."], ["Decolorizing with acetone alcohol for about ten seconds", "Correct. It is called the most critical step and the one most affected by technical variations in timing and reagents."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 31"}, {"topic": "Identification methods", "io": "Review the methods utilized in bacterial identification", "q": "Which three techniques does the lecture place under genetic and molecular analysis?", "opts": [["Gram staining, culture, and colony counting", "These are morphological and cultural methods rather than genetic ones."], ["Serology, biochemistry, and chemical analysis", "These are listed as separate methods alongside genetic analysis."], ["Guanine plus cytosine base composition, deoxyribonucleic acid analysis using genetic probes, and nucleic acid sequencing with ribosomal RNA analysis", "Correct. All three sit under the genetic and molecular heading."], ["Colony appearance on selective agar, motility testing in semisolid medium, and spore staining with capsule staining under the light microscope", "None of these appear in the identification list."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 41"}, {"topic": "Death curve", "io": "Review the bacterial death curve", "q": "Decimal reduction time is defined as which of the following?", "opts": [["The time taken for a population to double", "Doubling relates to growth, not to death under a control method."], ["The time taken to kill 90% of the organisms", "Correct. Because the death rate is constant, each successive interval removes another 90% of what remains."], ["The time taken to kill 100% of the organisms", "No single interval achieves total kill, which is the point of the worked problem on that slide."], ["The time taken for the culture to enter the stationary phase", "The stationary phase belongs to the growth curve."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "What property should an antimicrobial chemotherapeutic agent have, and what does that mean?", "opts": [["Broad spectrum — active against every class of organism", "Breadth of spectrum is not the property the lecture emphasises here."], ["Bactericidal action — killing rather than inhibiting", "That distinction is not the stated requirement."], ["Natural origin — a substance produced by one microorganism against another", "That describes antibiotics specifically, as opposed to synthetic agents such as the sulfa drugs made from coal tar dyes."], ["Selective toxicity — working against the microbial agent without harming the host", "Correct. Penicillin, from the Penicillium mold and active against Gram-positive bacteria, is the example given."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 70"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "What are the two basic mechanisms by which microbial control works?", "opts": [["Inhibition of ribosomal function, and blockade of bacterial transcription and translation", "These are antibiotic mechanisms but are not the two given here."], ["Removal of water and lowering of temperature", "Low temperature is stated to slow growth rather than kill, and these are methods rather than mechanisms."], ["Prevention of adhesion and blockade of invasion", "Those relate to pathogen-host interaction rather than to control mechanisms."], ["Alteration of membrane permeability, and denaturation of proteins and nucleic acids", "Correct. The types of control are then physical methods, chemical methods, and clinical antimicrobial chemotherapeutic agents."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 67"}, {"topic": "Phage replication", "io": "Differentiate the different processes of phage replication", "q": "What are the six steps of phage replication in order?", "opts": [["Penetration, adsorption, assembly, replication, maturation, release", "Adsorption must precede penetration, and replication precedes assembly."], ["Adsorption, penetration, replication, assembly, maturation, release", "Correct. Adsorption is binding to a specific molecule on the host cell; release lets the viruses infect other cells."], ["Adsorption, replication, penetration, maturation, assembly, release", "The genome must enter the cell before viral components can be produced."], ["Uncoating, adsorption, penetration, replication, assembly, release", "Uncoating is a feature of animal virus replication, not one of the six phage steps."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 55"}, {"topic": "Phage replication", "io": "Differentiate the different processes of phage replication", "q": "What is adsorption, in phage replication?", "opts": [["The completion of viral formation", "That is maturation, the fifth step."], ["The entry of the genome into the host cell", "That is penetration, the second step."], ["Binding of the virus to a specific molecule on the host cell", "Correct. Specificity at this first step is what determines host range."], ["The departure of completed virions to go on and infect other cells", "That is release, the sixth step."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 55"}, {"topic": "Growth curve", "io": "Review the phases of the bacterial growth curve", "q": "What characterises the lag phase of the bacterial growth curve?", "opts": [["Maximum growth, sustained while nutrients and environment remain favourable", "That is the exponential growth phase."], ["A flat period of adjustment and enlargement, with little growth", "Correct. Cells are adapting rather than dividing."], ["Rate of cell growth equalling rate of cell death", "That is the stationary phase."], ["Exponential death of cells in their own wastes", "That is the death phase."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"}, {"topic": "Culture media", "io": "Review the types of culture media used to identify pathogens", "q": "Blood agar and mannitol salt agar are each given as examples of which media categories?", "opts": [["Blood agar is synthetic; mannitol salt agar is complex", "Neither is classified on that axis in this lecture."], ["Both are general purpose media", "Both are given more specific classifications than general purpose."], ["Blood agar is selective and differential; mannitol salt agar is enriched and differential", "This swaps the two classifications."], ["Blood agar is enriched and differential; mannitol salt agar is selective and differential", "Correct. Blood agar's differential property is the gamma, beta and alpha haemolysis patterns."]], "c": 3, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 45"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "Endospores are produced for what purpose, and by which genera?", "opts": [["As a survival mechanism, by Bacillus and Clostridium", "Correct. Genetic material is surrounded by a resistant spore coat and metabolism drops to a very low level."], ["As a reproductive mechanism, by Streptococcus and Staphylococcus", "Bacterial reproduction is by binary fission, and neither genus is listed as spore-forming."], ["As an adhesion mechanism, by Escherichia and Salmonella", "Adhesion is a fimbrial function, and neither is a spore-forming genus here."], ["As a motility mechanism, by Mycoplasma and Chlamydia", "Neither is spore-forming, and Mycoplasmas lack even a cell wall."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 39"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "What are the three stated functions of the glycocalyx?", "opts": [["Conjugation, motility, and adhesion", "These belong to the pilus, flagellum and fimbriae respectively."], ["Storage of phosphate, oil droplets and waste products", "Those are inclusions, an internal structure."], ["Involvement in biofilm production, prevention of desiccation, and prevention of phagocytosis", "Correct. Preventing phagocytosis is called out as a factor of pathogenicity, with Streptococcus pneumoniae as the example."], ["Crosslinking peptidoglycan, retaining crystal violet, and resisting osmotic stress", "These are cell wall properties rather than glycocalyx functions."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 28"}, {"topic": "Atypical bacteria", "io": "Describe the types of infectious pathogens", "q": "Mycoplasmas are characterised by which feature?", "opts": [["Transmission exclusively by ticks and lice", "That is the Rickettsias."], ["Tiny pleomorphic organisms that lack a cell wall", "Correct. Mycoplasma pneumoniae is the example given, and the absent cell wall is the defining feature."], ["A thick peptidoglycan sheath retaining crystal violet", "That describes a Gram-positive cell wall, which Mycoplasmas lack entirely."], ["An outer membrane containing lipopolysaccharide", "That describes a Gram-negative cell wall."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 15"}, {"topic": "Molecular mechanisms", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "Virulence factors are defined in this lecture as what?", "opts": [["Host molecules that recognise conserved pathogen structures", "Those are the host pattern recognition receptors, which sit on the host side of the interaction."], ["Pathogen molecules that enhance the ability to cause disease", "Correct. The listed factors are toxins, adhesins and invasins, which facilitate colonisation, invasion and evasion of the host immune response."], ["Environmental conditions that favour pathogen survival", "Temperature, humidity and vector habitat are environmental factors, listed separately."], ["Genetic sequences that confer antibiotic resistance only", "Resistance may be acquired, but virulence factors are defined more broadly than resistance genes."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 10"}, {"topic": "Bacterial structures", "io": "Compare and contrast standard and specialized structures of a bacterial cell", "q": "The pilus is coded by what, and used for what?", "opts": [["The chromosome; used for adhesion to mucosal surfaces", "Adhesion to membrane surfaces is the fimbrial role, and the pilus is plasmid-coded."], ["A plasmid; used in bacterial conjugation", "Correct. Both halves are given explicitly, which is what links the pilus to horizontal gene transfer."], ["A prophage; used in transduction", "Transduction is transmission of genetic material by a viral vector, which does not require a pilus."], ["The spore coat; used in survival", "The spore coat surrounds genetic material in an endospore."]], "c": 1, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 27"}, {"topic": "Molecular mechanisms", "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease", "q": "Escherichia coli uses type I fimbriae to adhere to which receptor, facilitating colonisation of which site?", "opts": [["Sialic acid receptors; the respiratory tract", "Sialic acid receptors are the influenza target."], ["Complement receptors; the bloodstream", "Complement receptors are host phagocyte receptors and are not the fimbrial target given."], ["Mannose receptors; the urinary tract", "Correct. The lecture uses this specifically as the adhesion example for urinary tract colonisation."], ["Toll-like receptors; the gut epithelium", "Salmonella enterica is the gut example, and it acts by injecting effector proteins rather than by fimbrial adhesion."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 11"}, {"topic": "Bacterial growth", "io": "Review the phases of the bacterial growth curve", "q": "Bacterial growth refers to an increase in what, and occurs by which process?", "opts": [["Increase in cell number, by binary fission", "Correct. The lecture is explicit that growth means number rather than size of the cell, and that binary fission leads to exponential rather than arithmetic growth."], ["Increase in cell size, by binary fission", "The lecture explicitly contrasts number against size."], ["Increase in cell number, by conjugation", "Conjugation transfers plasmid DNA between cells; it is not a reproductive mechanism producing new organisms."], ["Increase in colony diameter, by sporulation", "Sporulation is a survival mechanism, not reproduction."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 48"}, {"topic": "Microbial control", "io": "Describe the basic mechanisms of microbial control", "q": "Which two agents does the lecture name as true chemical sterilants?", "opts": [["Chlorine and bromine, used on water and surfaces, and alcohol, used on skin, instruments and laboratory work surfaces", "Halogens such as these are given as adequate control for some purposes rather than as true sterilants."], ["Lysol and Listerine", "Those are the disinfectant and antiseptic examples."], ["Ethylene oxide, used on plastics and spices, and beta propiolactone, used on vaccines, tissue grafts and surgical instruments", "Correct. The lecture stresses that very few true chemical sterilants exist."], ["Alcohol and ultraviolet radiation", "Alcohol is listed among adequate controls, and ultraviolet is non-ionizing radiation, a physical method."]], "c": 2, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 69"}, {"topic": "Atypical bacteria", "io": "Describe the types of infectious pathogens", "q": "What distinguishes Chlamydias from Rickettsias in this lecture?", "opts": [["Chlamydias are NOT transmitted by arthropod vectors; Rickettsias are transmitted by fleas, ticks and lice", "Correct. Both are tiny obligate intracellular pathogens; vector transmission is the stated difference."], ["Chlamydias lack a cell wall; Rickettsias have one", "Lacking a cell wall is the defining feature of Mycoplasmas."], ["Chlamydias are eukaryotic; Rickettsias are prokaryotic", "Both are bacteria and therefore prokaryotic."], ["Chlamydias are free-living organisms, whereas Rickettsias are obligate intracellular pathogens", "Both are described as tiny obligate intracellular pathogens."]], "c": 0, "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 15"}];
+const QUESTIONS = [
+  {
+    "topic": "Microbial control",
+    "io": "Describe the basic mechanisms of microbial control",
+    "q": "What is true of temperature as a physical control method?",
+    "opts": [
+      [
+        "High temperature can kill; low temperature will NOT — it only slows the rate of microbial growth",
+        "Correct. Refrigeration and freezing preserve food by slowing growth, not by sterilising it."
+      ],
+      [
+        "Both high and low temperatures kill equally well",
+        "Low temperature is explicitly stated not to kill."
+      ],
+      [
+        "Low temperature can kill; high temperature will NOT — it only slows the rate of microbial growth",
+        "This reverses the relationship."
+      ],
+      [
+        "Temperature has no reliable effect on microbial populations",
+        "Dry heat and wet heat are both listed as killing methods."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 68"
+  },
+  {
+    "topic": "Molecular mechanisms",
+    "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease",
+    "q": "How does Salmonella enterica establish a niche for replication in gut cells?",
+    "opts": [
+      [
+        "By producing a capsule that prevents phagocytosis",
+        "Capsules and slime layers are a glycocalyx function, illustrated by Streptococcus pneumoniae."
+      ],
+      [
+        "By binding the sialic acid receptors on host cells with a surface hemagglutinin protein",
+        "That describes influenza virus attachment."
+      ],
+      [
+        "By producing an endotoxin released only on cell lysis",
+        "Lipid A endotoxin activity belongs to the Gram-negative outer membrane."
+      ],
+      [
+        "By using a secretion system that injects effector proteins into host gut cells",
+        "Correct. That secretion system is what allows entry into cells."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 11"
+  },
+  {
+    "topic": "Viral structure",
+    "io": "Differentiate the different processes of phage replication",
+    "q": "What do all viruses have, and what shapes does it take?",
+    "opts": [
+      [
+        "Capsids — protein coats enclosing and protecting the nucleic acid — which may be helical, icosahedral or complex",
+        "Correct. Viruses contain either deoxyribonucleic acid or ribonucleic acid, and may additionally have an envelope or spikes."
+      ],
+      [
+        "Envelopes — lipid coats enclosing and protecting the capsid — which may be helical, icosahedral or complex",
+        "An envelope is optional; the capsid is the universal feature."
+      ],
+      [
+        "Cell walls of peptidoglycan, which may be thick or thin",
+        "Peptidoglycan walls are a bacterial feature."
+      ],
+      [
+        "Both deoxyribonucleic acid and ribonucleic acid together",
+        "A virus contains one or the other, not both."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 52"
+  },
+  {
+    "topic": "Cytopathic effects",
+    "io": "Describe the cytopathic effects of viruses",
+    "q": "Viral alteration of host deoxyribonucleic acid may activate oncogenes. What else can do this?",
+    "opts": [
+      [
+        "Osmotic pressure and pH change",
+        "Those are physical control methods and growth requirements."
+      ],
+      [
+        "Exposure to radiation or chemicals",
+        "Correct. Radiation and chemicals activate oncogenes alongside viruses, which is what links infection to malignant transformation."
+      ],
+      [
+        "Conjugation and transformation",
+        "Those are mechanisms by which bacteria acquire new DNA."
+      ],
+      [
+        "Desiccation and phagocytosis",
+        "Those relate to glycocalyx function."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 59"
+  },
+  {
+    "topic": "Animal viruses",
+    "io": "Compare and contrast phage replication to animal virus replication",
+    "q": "Why do animal viruses require uncoating when phages do not?",
+    "opts": [
+      [
+        "Because animal viruses have no capsid to remove",
+        "All viruses have capsids; that is what has to be removed."
+      ],
+      [
+        "Because animal viruses integrate into the host chromosome first, so the genetic material must be excised — driven by the difference in cytoplasmic pH",
+        "Integration as prophage is a lysogenic phage behaviour."
+      ],
+      [
+        "Because animal viruses replicate outside the cell",
+        "Replication requires the host cell interior."
+      ],
+      [
+        "Because the entire virion is engulfed, so the genetic material must then be released — driven by the difference between cytoplasmic and extracellular pH",
+        "Correct. A phage injects its genome through the wall instead, so nothing needs unwrapping."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 58"
+  },
+  {
+    "topic": "Types of microbes",
+    "io": "Describe the types of infectious pathogens",
+    "q": "Which grouping of microbe types is correct?",
+    "opts": [
+      [
+        "Bacteria and fungi are prokaryotic; protozoa and helminths are eukaryotic; viruses are simply very small bacteria",
+        "Fungi are eukaryotes, not prokaryotes."
+      ],
+      [
+        "All listed microbes are eukaryotic except viruses",
+        "Bacteria are prokaryotic, so this is not correct."
+      ],
+      [
+        "Bacteria are prokaryotic; fungi, protozoa and helminths are eukaryotic; viruses are noncellular infectious agents",
+        "Correct. That is how the types of microbes divide."
+      ],
+      [
+        "Bacteria and viruses are prokaryotic; all others are eukaryotic",
+        "Viruses are classified as noncellular infectious agents rather than as prokaryotes."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 13"
+  },
+  {
+    "topic": "Bacterial structures",
+    "io": "Compare and contrast standard and specialized structures of a bacterial cell",
+    "q": "Which statement about bacterial plasmids is correct?",
+    "opts": [
+      [
+        "They are linear molecules, always integrated into the chromosome, and are essential to bacterial growth, to normal metabolism and to cell wall synthesis",
+        "They are circular and explicitly described as NOT essential to growth and metabolism."
+      ],
+      [
+        "They are protein structures used for motility",
+        "That describes the flagellum."
+      ],
+      [
+        "They are the sole site of the bacterial chromosome",
+        "The nuclear area holds the circular chromosome; plasmids are separate, though they may integrate into it."
+      ],
+      [
+        "Small circular double-stranded DNA, free or integrated, which may encode antibiotic resistance, tolerance to toxic metals, enzymes and toxins",
+        "Correct. They are duplicated and passed to offspring, and are readily manipulated for genetic engineering."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 38"
+  },
+  {
+    "topic": "Gram stain",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "Why does a Gram-negative organism appear red at the end of the stain?",
+    "opts": [
+      [
+        "It loses crystal violet during decolorization and takes up the safranin counterstain",
+        "Correct. Retention or loss of crystal violet is what the whole technique turns on."
+      ],
+      [
+        "It never binds the crystal violet stain in the first place during the procedure",
+        "The stain is taken up initially; the difference is whether it is retained through decolorization."
+      ],
+      [
+        "Its teichoic acid binds safranin preferentially",
+        "Teichoic acid is a Gram-positive wall component."
+      ],
+      [
+        "Its thick peptidoglycan sheath traps safranin",
+        "The thick sheath is the Gram-positive feature, and it traps crystal violet rather than safranin."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 34"
+  },
+  {
+    "topic": "Morphology",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "What are the three shapes of bacteria, and why does shape matter?",
+    "opts": [
+      [
+        "Cocci, bacilli and spiral — because shape is used in identification",
+        "Correct. Spiral covers helical, comma, twisted rod and spirochete forms."
+      ],
+      [
+        "Cocci, bacilli and filamentous — because shape determines virulence",
+        "Filamentous describes molds, and the stated reason is identification rather than virulence."
+      ],
+      [
+        "Round, flat and segmented — because shape determines Gram reaction",
+        "Those terms describe helminths, and the Gram reaction depends on cell wall structure."
+      ],
+      [
+        "Yeast, hyphal and pleomorphic — because shape determines motility",
+        "These are fungal and mycoplasmal descriptions, and motility comes from flagella."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 22"
+  },
+  {
+    "topic": "Mutations",
+    "io": "Describe the health implications of nucleic acid mutations",
+    "q": "What is a deoxyribonucleic acid mutation?",
+    "opts": [
+      [
+        "Transfer of a plasmid from one bacterial cell to another, which may then impact the phenotype",
+        "That is conjugation."
+      ],
+      [
+        "Uptake of naked DNA from the environment",
+        "That is transformation."
+      ],
+      [
+        "A change in the base sequence of the genome, which may then impact the phenotype of the organism",
+        "Correct. Mutations occur naturally at a low level but may be induced by radiation, chemicals or viruses, and may be beneficial, neutral or deleterious."
+      ],
+      [
+        "Integration of a viral genome as a prophage",
+        "That is lysogeny."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 61"
+  },
+  {
+    "topic": "Culture media",
+    "io": "Review the types of culture media used to identify pathogens",
+    "q": "Enriched media are defined by what?",
+    "opts": [
+      [
+        "Agents that inhibit the growth of some microbes while encouraging the growth of the desired ones on the culture plate",
+        "That defines selective media."
+      ],
+      [
+        "Complex organic substances such as blood, serum, haemoglobin or special growth factors required by fastidious microbes",
+        "Correct. The point is supporting organisms that will not otherwise grow."
+      ],
+      [
+        "The ability to display visible differences among organisms",
+        "That defines differential media."
+      ],
+      [
+        "Containing only chemically definable ingredients",
+        "That describes synthetic media."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 43"
+  },
+  {
+    "topic": "Noncellular agents",
+    "io": "Describe the types of infectious pathogens",
+    "q": "Prions are described as which of the following?",
+    "opts": [
+      [
+        "Short pieces of RNA with no protein coat",
+        "That describes viroids, which so far have been identified only in plants."
+      ],
+      [
+        "Protein coats enclosing a nucleic acid genome",
+        "That describes a virus capsid."
+      ],
+      [
+        "Misfolded proteins containing no nucleic acid, causing spongiform encephalopathies",
+        "Correct. Examples given are scrapie in sheep and goats, bovine spongiform encephalopathy, and Creutzfeldt-Jakob Disease in humans."
+      ],
+      [
+        "Tiny obligate intracellular bacteria that lack a cell wall, causing spongiform encephalopathies",
+        "That describes Mycoplasmas."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 60"
+  },
+  {
+    "topic": "Gram stain",
+    "io": "Describe bacterial cell morphologies, including Gram-staining characteristics",
+    "q": "Which step of the Gram stain technique is the most critical?",
+    "opts": [
+      [
+        "Flooding the slide with crystal violet for one full minute",
+        "That is the first step, and is not the one identified as most critical."
+      ],
+      [
+        "Flooding with Gram's iodine for one minute",
+        "That is the second step, the mordant."
+      ],
+      [
+        "Flooding with safranin for one minute",
+        "That is the fourth step, the counterstain."
+      ],
+      [
+        "Decolorizing with acetone alcohol for about ten seconds",
+        "Correct. It is called the most critical step and the one most affected by technical variations in timing and reagents."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 31"
+  },
+  {
+    "topic": "Identification methods",
+    "io": "Review the methods utilized in bacterial identification",
+    "q": "Which three techniques fall under genetic and molecular analysis?",
+    "opts": [
+      [
+        "Gram staining, culture, and colony counting",
+        "These are morphological and cultural methods rather than genetic ones."
+      ],
+      [
+        "Serology, biochemistry, and chemical analysis",
+        "These are listed as separate methods alongside genetic analysis."
+      ],
+      [
+        "Guanine plus cytosine base composition, deoxyribonucleic acid analysis using genetic probes, and nucleic acid sequencing with ribosomal RNA analysis",
+        "Correct. All three sit under the genetic and molecular heading."
+      ],
+      [
+        "Colony appearance on selective agar, motility testing in semisolid medium, and spore staining with capsule staining under the light microscope",
+        "None of these appear in the identification list."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 41"
+  },
+  {
+    "topic": "Death curve",
+    "io": "Review the bacterial death curve",
+    "q": "Decimal reduction time is defined as which of the following?",
+    "opts": [
+      [
+        "The time taken for a population to double",
+        "Doubling relates to growth, not to death under a control method."
+      ],
+      [
+        "The time taken to kill 90% of the organisms",
+        "Correct. Because the death rate is constant, each successive interval removes another 90% of what remains."
+      ],
+      [
+        "The time taken to kill 100% of the organisms",
+        "No single interval achieves total kill, which is the point of the worked problem on that slide."
+      ],
+      [
+        "The time taken for the culture to enter the stationary phase",
+        "The stationary phase belongs to the growth curve."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 66"
+  },
+  {
+    "topic": "Microbial control",
+    "io": "Describe the basic mechanisms of microbial control",
+    "q": "What property should an antimicrobial chemotherapeutic agent have, and what does that mean?",
+    "opts": [
+      [
+        "Broad spectrum — active against every class of organism",
+        "Breadth of spectrum is not the property in question."
+      ],
+      [
+        "Bactericidal action — killing rather than inhibiting",
+        "That distinction is not the stated requirement."
+      ],
+      [
+        "Natural origin — a substance produced by one microorganism against another",
+        "That describes antibiotics specifically, as opposed to synthetic agents such as the sulfa drugs made from coal tar dyes."
+      ],
+      [
+        "Selective toxicity — working against the microbial agent without harming the host",
+        "Correct. Penicillin, from the Penicillium mold and active against Gram-positive bacteria, is the example given."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 70"
+  },
+  {
+    "topic": "Microbial control",
+    "io": "Describe the basic mechanisms of microbial control",
+    "q": "What are the two basic mechanisms by which microbial control works?",
+    "opts": [
+      [
+        "Inhibition of ribosomal function, and blockade of bacterial transcription and translation",
+        "These are antibiotic mechanisms but are not the two given here."
+      ],
+      [
+        "Removal of water and lowering of temperature",
+        "Low temperature is stated to slow growth rather than kill, and these are methods rather than mechanisms."
+      ],
+      [
+        "Prevention of adhesion and blockade of invasion",
+        "Those relate to pathogen-host interaction rather than to control mechanisms."
+      ],
+      [
+        "Alteration of membrane permeability, and denaturation of proteins and nucleic acids",
+        "Correct. The types of control are then physical methods, chemical methods, and clinical antimicrobial chemotherapeutic agents."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 67"
+  },
+  {
+    "topic": "Phage replication",
+    "io": "Differentiate the different processes of phage replication",
+    "q": "What are the six steps of phage replication in order?",
+    "opts": [
+      [
+        "Penetration, adsorption, assembly, replication, maturation, release",
+        "Adsorption must precede penetration, and replication precedes assembly."
+      ],
+      [
+        "Adsorption, penetration, replication, assembly, maturation, release",
+        "Correct. Adsorption is binding to a specific molecule on the host cell; release lets the viruses infect other cells."
+      ],
+      [
+        "Adsorption, replication, penetration, maturation, assembly, release",
+        "The genome must enter the cell before viral components can be produced."
+      ],
+      [
+        "Uncoating, adsorption, penetration, replication, assembly, release",
+        "Uncoating is a feature of animal virus replication, not one of the six phage steps."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 55"
+  },
+  {
+    "topic": "Phage replication",
+    "io": "Differentiate the different processes of phage replication",
+    "q": "What is adsorption, in phage replication?",
+    "opts": [
+      [
+        "The completion of viral formation",
+        "That is maturation, the fifth step."
+      ],
+      [
+        "The entry of the genome into the host cell",
+        "That is penetration, the second step."
+      ],
+      [
+        "Binding of the virus to a specific molecule on the host cell",
+        "Correct. Specificity at this first step is what determines host range."
+      ],
+      [
+        "The departure of completed virions to go on and infect other cells",
+        "That is release, the sixth step."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 55"
+  },
+  {
+    "topic": "Growth curve",
+    "io": "Review the phases of the bacterial growth curve",
+    "q": "What characterises the lag phase of the bacterial growth curve?",
+    "opts": [
+      [
+        "Maximum growth, sustained while nutrients and environment remain favourable",
+        "That is the exponential growth phase."
+      ],
+      [
+        "A flat period of adjustment and enlargement, with little growth",
+        "Correct. Cells are adapting rather than dividing."
+      ],
+      [
+        "Rate of cell growth equalling rate of cell death",
+        "That is the stationary phase."
+      ],
+      [
+        "Exponential death of cells in their own wastes",
+        "That is the death phase."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 50"
+  },
+  {
+    "topic": "Culture media",
+    "io": "Review the types of culture media used to identify pathogens",
+    "q": "Blood agar and mannitol salt agar are each given as examples of which media categories?",
+    "opts": [
+      [
+        "Blood agar is synthetic; mannitol salt agar is complex",
+        "Neither is classified on that axis."
+      ],
+      [
+        "Both are general purpose media",
+        "Both are given more specific classifications than general purpose."
+      ],
+      [
+        "Blood agar is selective and differential; mannitol salt agar is enriched and differential",
+        "This swaps the two classifications."
+      ],
+      [
+        "Blood agar is enriched and differential; mannitol salt agar is selective and differential",
+        "Correct. Blood agar's differential property is the gamma, beta and alpha haemolysis patterns."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 45"
+  },
+  {
+    "topic": "Bacterial structures",
+    "io": "Compare and contrast standard and specialized structures of a bacterial cell",
+    "q": "Endospores are produced for what purpose, and by which genera?",
+    "opts": [
+      [
+        "As a survival mechanism, by Bacillus and Clostridium",
+        "Correct. Genetic material is surrounded by a resistant spore coat and metabolism drops to a very low level."
+      ],
+      [
+        "As a reproductive mechanism, by Streptococcus and Staphylococcus",
+        "Bacterial reproduction is by binary fission, and neither genus is listed as spore-forming."
+      ],
+      [
+        "As an adhesion mechanism, by Escherichia and Salmonella",
+        "Adhesion is a fimbrial function, and neither is a spore-forming genus here."
+      ],
+      [
+        "As a motility mechanism, by Mycoplasma and Chlamydia",
+        "Neither is spore-forming, and Mycoplasmas lack even a cell wall."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 39"
+  },
+  {
+    "topic": "Bacterial structures",
+    "io": "Compare and contrast standard and specialized structures of a bacterial cell",
+    "q": "What are the three stated functions of the glycocalyx?",
+    "opts": [
+      [
+        "Conjugation, motility, and adhesion",
+        "These belong to the pilus, flagellum and fimbriae respectively."
+      ],
+      [
+        "Storage of phosphate, oil droplets and waste products",
+        "Those are inclusions, an internal structure."
+      ],
+      [
+        "Involvement in biofilm production, prevention of desiccation, and prevention of phagocytosis",
+        "Correct. Preventing phagocytosis is called out as a factor of pathogenicity, with Streptococcus pneumoniae as the example."
+      ],
+      [
+        "Crosslinking peptidoglycan, retaining crystal violet, and resisting osmotic stress",
+        "These are cell wall properties rather than glycocalyx functions."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 28"
+  },
+  {
+    "topic": "Atypical bacteria",
+    "io": "Describe the types of infectious pathogens",
+    "q": "Mycoplasmas are characterised by which feature?",
+    "opts": [
+      [
+        "Transmission exclusively by ticks and lice",
+        "That is the Rickettsias."
+      ],
+      [
+        "Tiny pleomorphic organisms that lack a cell wall",
+        "Correct. Mycoplasma pneumoniae is the example given, and the absent cell wall is the defining feature."
+      ],
+      [
+        "A thick peptidoglycan sheath retaining crystal violet",
+        "That describes a Gram-positive cell wall, which Mycoplasmas lack entirely."
+      ],
+      [
+        "An outer membrane containing lipopolysaccharide",
+        "That describes a Gram-negative cell wall."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 15"
+  },
+  {
+    "topic": "Molecular mechanisms",
+    "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease",
+    "q": "What are virulence factors?",
+    "opts": [
+      [
+        "Host molecules that recognise conserved pathogen structures",
+        "Those are the host pattern recognition receptors, which sit on the host side of the interaction."
+      ],
+      [
+        "Pathogen molecules that enhance the ability to cause disease",
+        "Correct. The listed factors are toxins, adhesins and invasins, which facilitate colonisation, invasion and evasion of the host immune response."
+      ],
+      [
+        "Environmental conditions that favour pathogen survival",
+        "Temperature, humidity and vector habitat are environmental factors, listed separately."
+      ],
+      [
+        "Genetic sequences that confer antibiotic resistance only",
+        "Resistance may be acquired, but virulence factors are defined more broadly than resistance genes."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 10"
+  },
+  {
+    "topic": "Bacterial structures",
+    "io": "Compare and contrast standard and specialized structures of a bacterial cell",
+    "q": "The pilus is coded by what, and used for what?",
+    "opts": [
+      [
+        "The chromosome; used for adhesion to mucosal surfaces",
+        "Adhesion to membrane surfaces is the fimbrial role, and the pilus is plasmid-coded."
+      ],
+      [
+        "A plasmid; used in bacterial conjugation",
+        "Correct. Both halves are given explicitly, which is what links the pilus to horizontal gene transfer."
+      ],
+      [
+        "A prophage; used in transduction",
+        "Transduction is transmission of genetic material by a viral vector, which does not require a pilus."
+      ],
+      [
+        "The spore coat; used in survival",
+        "The spore coat surrounds genetic material in an endospore."
+      ]
+    ],
+    "c": 1,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 27"
+  },
+  {
+    "topic": "Molecular mechanisms",
+    "io": "Describe an overview of molecular mechanisms related to microbiology that influence health and disease",
+    "q": "Escherichia coli uses type I fimbriae to adhere to which receptor, facilitating colonisation of which site?",
+    "opts": [
+      [
+        "Sialic acid receptors; the respiratory tract",
+        "Sialic acid receptors are the influenza target."
+      ],
+      [
+        "Complement receptors; the bloodstream",
+        "Complement receptors are host phagocyte receptors and are not the fimbrial target given."
+      ],
+      [
+        "Mannose receptors; the urinary tract",
+        "Correct. That is the adhesion mechanism behind urinary tract colonisation."
+      ],
+      [
+        "Toll-like receptors; the gut epithelium",
+        "Salmonella enterica is the gut example, and it acts by injecting effector proteins rather than by fimbrial adhesion."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 11"
+  },
+  {
+    "topic": "Bacterial growth",
+    "io": "Review the phases of the bacterial growth curve",
+    "q": "Bacterial growth refers to an increase in what, and occurs by which process?",
+    "opts": [
+      [
+        "Increase in cell number, by binary fission",
+        "Correct. Growth means number rather than size of the cell, and binary fission gives exponential rather than arithmetic growth."
+      ],
+      [
+        "Increase in cell size, by binary fission",
+        "Growth is an increase in number, not in size."
+      ],
+      [
+        "Increase in cell number, by conjugation",
+        "Conjugation transfers plasmid DNA between cells; it is not a reproductive mechanism producing new organisms."
+      ],
+      [
+        "Increase in colony diameter, by sporulation",
+        "Sporulation is a survival mechanism, not reproduction."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 48"
+  },
+  {
+    "topic": "Microbial control",
+    "io": "Describe the basic mechanisms of microbial control",
+    "q": "Which two agents are true chemical sterilants?",
+    "opts": [
+      [
+        "Chlorine and bromine, used on water and surfaces, and alcohol, used on skin, instruments and laboratory work surfaces",
+        "Halogens such as these are given as adequate control for some purposes rather than as true sterilants."
+      ],
+      [
+        "Lysol and Listerine",
+        "Those are the disinfectant and antiseptic examples."
+      ],
+      [
+        "Ethylene oxide, used on plastics and spices, and beta propiolactone, used on vaccines, tissue grafts and surgical instruments",
+        "Correct. Very few true chemical sterilants exist."
+      ],
+      [
+        "Alcohol and ultraviolet radiation",
+        "Alcohol is listed among adequate controls, and ultraviolet is non-ionizing radiation, a physical method."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 69"
+  },
+  {
+    "topic": "Atypical bacteria",
+    "io": "Describe the types of infectious pathogens",
+    "q": "What distinguishes Chlamydias from Rickettsias?",
+    "opts": [
+      [
+        "Chlamydias are NOT transmitted by arthropod vectors; Rickettsias are transmitted by fleas, ticks and lice",
+        "Correct. Both are tiny obligate intracellular pathogens; vector transmission is the stated difference."
+      ],
+      [
+        "Chlamydias lack a cell wall; Rickettsias have one",
+        "Lacking a cell wall is the defining feature of Mycoplasmas."
+      ],
+      [
+        "Chlamydias are eukaryotic; Rickettsias are prokaryotic",
+        "Both are bacteria and therefore prokaryotic."
+      ],
+      [
+        "Chlamydias are free-living organisms, whereas Rickettsias are obligate intracellular pathogens",
+        "Both are described as tiny obligate intracellular pathogens."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture 1  Dr. Webster -  Review of General Microbiology .pptx, Slide 15"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

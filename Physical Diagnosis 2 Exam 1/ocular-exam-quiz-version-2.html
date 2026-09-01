@@ -303,7 +303,792 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "chart": true, "q": "On the red-eye chart, which column has NO ocular discharge AND an unaffected pupil AND a clear cornea AND absent pain?", "opts": [["Glaucoma", "That has severe pain, a cloudy cornea and a fixed pupil."], ["Subconjunctival haemorrhage", "Correct — every column reads negative, which is what makes it benign."], ["Uncomplicated bacterial conjunctivitis", "That has watery, mucoid or mucopurulent discharge and mild discomfort."], ["Acute iritis", "That has aching pain and a small or irregular pupil."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Symptom patterns", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Acute, BILATERAL and painful symptoms should make you consider what?", "opts": [["Traumatic hyphaema", "That is unilateral."], ["Thermal, radiation or chemical exposure", "Correct — bilateral and painful points to an environmental exposure."], ["Retinal vascular occlusion", "That is acute, unilateral and painless."], ["Simple glaucoma or a slowly maturing cataract", "Those are gradual and painless."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 16"}, {"topic": "Sclera colour", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "A YELLOW sclera indicates what?", "opts": [["Anaemia", "The deck does not attach scleral colour to anaemia."], ["Liver disease", "Correct — jaundice, as the deck states."], ["Osteogenesis imperfecta", "That gives a BLUE sclera."], ["Chronic ultraviolet exposure", "That gives pinguecula or pterygium."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 43"}, {"topic": "Order of examination", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "What does the deck call the vital sign of the eye?", "opts": [["Visual fields", "Not the deck's phrase."], ["Visual acuity", "Correct — the deck labels acuity testing the vital sign of the eye."], ["Intraocular pressure", "Analogous to blood pressure in the deck, but not called the vital sign."], ["Pupil reactivity", "An important test, but not the deck's phrase."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"}, {"topic": "Eye pain qualifiers", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Eye pain ON EYE MOTION suggests what?", "opts": [["Acute narrow angle glaucoma", "That gives headache with eye pain."], ["Optic neuritis", "Correct — the deck's pairing for pain on movement."], ["Corneal abrasion", "That hurts on blinking."], ["Conjunctivitis", "That gives grittiness."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"}, {"topic": "Discharge", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Purulent discharge suggests what?", "opts": [["Allergic conjunctivitis", "That produces watery or mucoid discharge."], ["Viral conjunctivitis", "That also produces watery or mucoid discharge."], ["Dry eye", "That produces no discharge."], ["Bacterial infection", "Correct — the deck's pairing for purulent discharge."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 19"}, {"topic": "Visual fields", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "Which two tests together make up the best confrontation field examination?", "opts": [["Tonometry and fundoscopy", "Those assess pressure and the fundus."], ["The static finger wiggle test and the kinetic red target test", "Correct — the deck pairs the two."], ["The swinging light test together with the cover-uncover test", "Those assess pupils and alignment."], ["The pinhole test and the Snellen chart", "Those assess acuity."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 53"}, {"topic": "Cover-uncover test", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "What does the cover-uncover test reveal?", "opts": [["A slight muscle imbalance not otherwise seen", "Correct — the deck's stated purpose."], ["An afferent pupillary defect of the optic nerve", "That is the swinging light test."], ["A refractive error", "That is the pinhole test."], ["A field defect", "That is confrontation testing."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 67"}, {"topic": "Visual fields", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "A temporal field defect in one eye should prompt what?", "opts": [["Repeating acuity in the same eye", "Not the deck's next step."], ["Measuring intraocular pressure", "Not the deck's next step for this finding."], ["Testing for a nasal defect in the other eye", "Correct — the deck asks you to test that possibility explicitly."], ["Immediate fundoscopy of the same eye only", "Not what the deck directs here."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 55"}, {"topic": "Visual acuity", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "Which abbreviation refers to the RIGHT eye, and which to both?", "opts": [["OD is the left eye; OS is the right", "This reverses the two."], ["OD is the right eye; OU is both eyes", "Correct — Beck said these abbreviations are terms you must remember."], ["OS is the right eye; OD is both eyes", "OS is the left eye."], ["OU is the right eye; OS is both eyes", "OU means both eyes."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 49"}, {"topic": "Common mistakes", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "avoid", "q": "Which pair of diagnoses does the deck say must be differentiated because the latter can lead to death?", "opts": [["Episcleritis from scleritis", "A real distinction, but not the one the deck ties to death."], ["Cataract from glaucoma", "Not the pair the deck flags."], ["Hordeolum from chalazion", "Not the pair the deck flags."], ["Preseptal from orbital cellulitis", "Correct — the deck gives exactly this reason."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 20"}, {"topic": "Corneal abrasion", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "What does a HAZY cornea in a suspected abrasion suggest?", "opts": [["The abrasion is healing normally", "Haziness is not a healing sign."], ["The fluorescein was applied incorrectly", "Not the deck's inference."], ["Raised intraocular pressure", "Steamy cornea in glaucoma is a different context."], ["Bacterial infection should be suspected", "Correct — the deck flags haziness as pointing to infection."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 120"}, {"topic": "Eye pain qualifiers", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Eye pain WITH HEADACHE suggests what?", "opts": [["Acute narrow angle glaucoma", "Correct — the deck's pairing for headache plus eye pain."], ["Temporal arteritis with jaw claudication", "That is paired with temporal pain specifically."], ["Optic neuritis", "That is paired with pain on eye motion."], ["Conjunctivitis", "That is paired with grittiness."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"}, {"topic": "Ptosis", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "etiology", "q": "What does the deck say causes SENILE ptosis?", "opts": [["Weakened muscle, relaxed tissues, and the weight of herniated fat", "Correct — the deck's three-part mechanical explanation."], ["Antibody blockade at the neuromuscular junction of the levator", "That is myasthenia gravis."], ["Interruption of the sympathetic supply", "That is Horner syndrome."], ["Compression of the oculomotor nerve", "That is a third nerve palsy."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 29"}, {"topic": "Diplopia", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "HORIZONTAL diplopia — images side by side — points to a palsy of which cranial nerves?", "opts": [["Fourth or sixth", "The third nerve features in both patterns."], ["Second or seventh", "Neither is an extraocular motor nerve."], ["Third or sixth", "Correct — and Beck called this slide very important to commit to memory."], ["Third or fourth", "That is the VERTICAL pattern."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 18"}, {"topic": "Visual acuity", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "What should be documented if a patient cannot read the chart at all?", "opts": [["The acuity recorded at the patient's last optometry visit", "Not what the notes require."], ["An estimate in dioptres", "Dioptres measure refractive power, not acuity."], ["Counting fingers, hand motion, or light perception", "Correct — the speaker notes give this descending scale."], ["Simply 'unable to test'", "The notes ask for the descending scale instead."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 49"}, {"topic": "Vocabulary", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "What is chemosis?", "opts": [["Injection of the superficially visible vessels of the conjunctiva or sclera", "That is hyperaemia."], ["Forward displacement of the eye in the orbit", "That is proptosis."], ["Outward turning of the lower eyelid", "That is ectropion."], ["Swelling and inflammation of the conjunctiva", "Correct — the deck's definition."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 3"}, {"topic": "Nodular episcleritis", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "etiology", "q": "Nodular episcleritis is associated with which two systemic diseases in this deck?", "opts": [["Diabetes and hypertension", "Those drive retinopathy in this deck."], ["Graves disease, myasthenia gravis and thyroid orbitopathy", "Those relate to lid signs."], ["Sjögren syndrome and sarcoidosis", "Sjögren appears under dry eye, not here."], ["Rheumatoid arthritis and lupus erythematosus", "Correct — the deck's two associations."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 47"}, {"topic": "Chalazion", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "Where does a chalazion usually point?", "opts": [["Inside the lid rather than on the lid margin", "Correct — the deck notes this as a distinguishing feature."], ["On the lid margin, right at the base of the lashes", "That is the external hordeolum."], ["At the medial canthus", "That location suggests lacrimal sac disease."], ["At the lateral canthus", "Not where the deck places it."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 33"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "chart": true, "q": "On the red-eye chart, how is the PAIN of acute iritis described?", "opts": [["Moderate, aching, deep", "Correct — the chart's iritis column."], ["Mild discomfort rather than pain", "That is conjunctivitis."], ["Severe, aching, deep", "That is glaucoma."], ["Absent", "That is subconjunctival haemorrhage."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Common mistakes", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "avoid", "q": "Which two structures does the deck warn are commonly not examined?", "opts": [["The eyelids and eyebrows", "Not among the deck's named omissions."], ["The lacrimal sac and puncta", "Not among the deck's named omissions."], ["The extraocular muscles", "Movement testing is listed separately."], ["The cornea and the lens", "Correct — 'failure to examine the cornea and lens' is on the list."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 20"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "chart": true, "q": "On the deck's red-eye comparison chart, which condition shows redness that is DIFFUSE and maximal peripherally, with vision unaffected?", "opts": [["Glaucoma", "That shows diffuse redness with a steamy cornea and a dilated fixed pupil."], ["Corneal injury or infection", "That shows ciliary injection with usually decreased vision."], ["Conjunctivitis", "Correct — diffuse peripheral redness with preserved vision is the conjunctivitis column."], ["Acute iritis", "That shows ciliary injection with decreased vision."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Vocabulary", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Entropion and ectropion both affect which eyelid, per the deck's review slide?", "opts": [["Both lids equally", "The deck names the lower lid."], ["Neither — they affect the conjunctiva", "Both are lid malpositions."], ["The lower lid", "Correct — the deck specifies the lower lid for both."], ["The upper lid", "The deck's review slide specifies the lower lid."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 3"}, {"topic": "History", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "risk factors", "q": "Which immunisation status does the deck say matters in eye trauma?", "opts": [["Pneumococcal", "Not the immunisation the deck raises."], ["Hepatitis B", "Not the immunisation the deck raises."], ["Tetanus", "Correct — the deck flags tetanus status specifically for eye trauma."], ["Influenza", "Not the immunisation the deck raises here."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 15"}, {"topic": "Symptom patterns", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Gradual, painless visual loss suggests what?", "opts": [["Vitreous haemorrhage", "That is acute."], ["Chemical exposure", "That is acute and bilateral."], ["Simple glaucoma or cataract", "Correct — the deck's gradual painless pair."], ["Acute narrow angle glaucoma", "That is acute and painful."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 16"}, {"topic": "History", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Which two symptoms together suggest an allergic cause?", "opts": [["Foreign body sensation and reduced vision", "Those point toward a corneal problem."], ["Itching and excessive tearing", "Correct — the deck pairs these for allergy."], ["Deep pain and photophobia", "Deep pain points to acute narrow angle glaucoma."], ["Burning and purulent discharge", "Purulent discharge suggests bacterial infection."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 12"}, {"topic": "Diplopia", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "Which cranial nerve appears in BOTH the horizontal and vertical diplopia patterns?", "opts": [["The third", "Correct — Beck's shortcut was 'three for both of those'."], ["The fourth", "That appears in the vertical pattern only."], ["The sixth", "That appears in the horizontal pattern only."], ["The second", "That is the optic nerve and carries no motor fibres to the eye muscles."]], "c": 0, "cite": "Lecture recording, 26 August 2026"}, {"topic": "Xanthelasma", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "Where do xanthelasma plaques sit, and what should they prompt?", "opts": [["Along the NASAL portions of one or both eyelids — consider lipid disorders", "Correct — the deck gives both the position and the inference."], ["Along the temporal portions of the lids — consider thyroid disease", "The deck specifies the nasal portion and lipid disorders."], ["At the lid margin — consider bacterial infection", "That describes a hordeolum."], ["On the bulbar conjunctiva — consider ultraviolet exposure", "That describes pinguecula."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 34"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "education", "chart": true, "q": "Beck singled this chart out. What did she say about it?", "opts": [["That she genuinely thinks students should be very familiar with it, because it helps compare and contrast the common important eye conditions", "Correct — one of her clearest emphases in the lecture."], ["That it is optional background material and would not be tested", "She said the opposite."], ["That it duplicates PD1 and so is out of scope", "That is what she said about the corneal reflection test, not this chart."], ["That only the glaucoma column matters", "She recommended familiarity with the whole chart."]], "c": 0, "cite": "Lecture recording, 26 August 2026"}, {"topic": "Order of examination", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "Which examination does the deck place FIRST in the suggested order?", "opts": [["Visual acuity", "That comes after inspection and external examination."], ["Direct ophthalmoscopy", "That comes near the end."], ["Ocular pressure", "That comes among the special tests."], ["Inspection", "Correct — the deck's order begins with inspection."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"}];
+const QUESTIONS = [
+  {
+    "topic": "Red eye chart",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "chart": true,
+    "q": "On the red-eye chart, which column has NO ocular discharge AND an unaffected pupil AND a clear cornea AND absent pain?",
+    "opts": [
+      [
+        "Glaucoma",
+        "That has severe pain, a cloudy cornea and a fixed pupil."
+      ],
+      [
+        "Subconjunctival haemorrhage",
+        "Correct — every column reads negative, which is what makes it benign."
+      ],
+      [
+        "Uncomplicated bacterial conjunctivitis",
+        "That has watery, mucoid or mucopurulent discharge and mild discomfort."
+      ],
+      [
+        "Acute iritis",
+        "That has aching pain and a small or irregular pupil."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"
+  },
+  {
+    "topic": "Symptom patterns",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Acute, BILATERAL and painful symptoms should make you consider what?",
+    "opts": [
+      [
+        "Traumatic hyphaema",
+        "That is unilateral."
+      ],
+      [
+        "Thermal, radiation or chemical exposure",
+        "Correct — bilateral and painful points to an environmental exposure."
+      ],
+      [
+        "Retinal vascular occlusion",
+        "That is acute, unilateral and painless."
+      ],
+      [
+        "Simple glaucoma or a slowly maturing cataract",
+        "Those are gradual and painless."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 16"
+  },
+  {
+    "topic": "Sclera colour",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "A YELLOW sclera indicates what?",
+    "opts": [
+      [
+        "Anaemia",
+        "Scleral colour does not track anaemia."
+      ],
+      [
+        "Liver disease",
+        "Correct — jaundice."
+      ],
+      [
+        "Osteogenesis imperfecta",
+        "That gives a BLUE sclera."
+      ],
+      [
+        "Chronic ultraviolet exposure",
+        "That gives pinguecula or pterygium."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 43"
+  },
+  {
+    "topic": "Order of examination",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "initial test",
+    "q": "Which test is the vital sign of the eye?",
+    "opts": [
+      [
+        "Visual fields",
+        "Fields matter, but acuity carries that name."
+      ],
+      [
+        "Visual acuity",
+        "Correct — acuity testing is the vital sign of the eye."
+      ],
+      [
+        "Intraocular pressure",
+        "Analogous to blood pressure, but not the vital sign of the eye."
+      ],
+      [
+        "Pupil reactivity",
+        "An important test, but not the one given that name."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"
+  },
+  {
+    "topic": "Eye pain qualifiers",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Eye pain ON EYE MOTION suggests what?",
+    "opts": [
+      [
+        "Acute narrow angle glaucoma",
+        "That gives headache with eye pain."
+      ],
+      [
+        "Optic neuritis",
+        "Correct — pain on movement points to optic neuritis."
+      ],
+      [
+        "Corneal abrasion",
+        "That hurts on blinking."
+      ],
+      [
+        "Conjunctivitis",
+        "That gives grittiness."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"
+  },
+  {
+    "topic": "Discharge",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Purulent discharge suggests what?",
+    "opts": [
+      [
+        "Allergic conjunctivitis",
+        "That produces watery or mucoid discharge."
+      ],
+      [
+        "Viral conjunctivitis",
+        "That also produces watery or mucoid discharge."
+      ],
+      [
+        "Dry eye",
+        "That produces no discharge."
+      ],
+      [
+        "Bacterial infection",
+        "Correct — purulent discharge points to bacterial infection."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 19"
+  },
+  {
+    "topic": "Visual fields",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "initial test",
+    "q": "Which two tests together make up the best confrontation field examination?",
+    "opts": [
+      [
+        "Tonometry and fundoscopy",
+        "Those assess pressure and the fundus."
+      ],
+      [
+        "The static finger wiggle test and the kinetic red target test",
+        "Correct — the static and kinetic tests together."
+      ],
+      [
+        "The swinging light test together with the cover-uncover test",
+        "Those assess pupils and alignment."
+      ],
+      [
+        "The pinhole test and the Snellen chart",
+        "Those assess acuity."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 53"
+  },
+  {
+    "topic": "Cover-uncover test",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "initial test",
+    "q": "What does the cover-uncover test reveal?",
+    "opts": [
+      [
+        "A slight muscle imbalance not otherwise seen",
+        "Correct — that is what the test is for."
+      ],
+      [
+        "An afferent pupillary defect of the optic nerve",
+        "That is the swinging light test."
+      ],
+      [
+        "A refractive error",
+        "That is the pinhole test."
+      ],
+      [
+        "A field defect",
+        "That is confrontation testing."
+      ]
+    ],
+    "c": 0,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 67"
+  },
+  {
+    "topic": "Visual fields",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "A temporal field defect in one eye should prompt what?",
+    "opts": [
+      [
+        "Repeating acuity in the same eye",
+        "Repeating acuity in the same eye does not address the field defect."
+      ],
+      [
+        "Measuring intraocular pressure",
+        "Pressure is not the next step for this finding."
+      ],
+      [
+        "Testing for a nasal defect in the other eye",
+        "Correct — a temporal defect in one eye should prompt testing for a nasal defect in the other."
+      ],
+      [
+        "Immediate fundoscopy of the same eye only",
+        "Fundoscopy of the same eye alone misses the point."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 55"
+  },
+  {
+    "topic": "Visual acuity",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "Which abbreviation refers to the RIGHT eye, and which to both?",
+    "opts": [
+      [
+        "OD is the left eye; OS is the right",
+        "This reverses the two."
+      ],
+      [
+        "OD is the right eye; OU is both eyes",
+        "Correct — Beck said these abbreviations are terms you must remember."
+      ],
+      [
+        "OS is the right eye; OD is both eyes",
+        "OS is the left eye."
+      ],
+      [
+        "OU is the right eye; OS is both eyes",
+        "OU means both eyes."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 49"
+  },
+  {
+    "topic": "Common mistakes",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "avoid",
+    "q": "Which pair of diagnoses must be differentiated because the latter can lead to death?",
+    "opts": [
+      [
+        "Episcleritis from scleritis",
+        "A real distinction, but neither is fatal."
+      ],
+      [
+        "Cataract from glaucoma",
+        "Neither of these is fatal."
+      ],
+      [
+        "Hordeolum from chalazion",
+        "Neither of these is fatal."
+      ],
+      [
+        "Preseptal from orbital cellulitis",
+        "Correct — orbital cellulitis can be fatal."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 20"
+  },
+  {
+    "topic": "Corneal abrasion",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "What does a HAZY cornea in a suspected abrasion suggest?",
+    "opts": [
+      [
+        "The abrasion is healing normally",
+        "Haziness is not a healing sign."
+      ],
+      [
+        "The fluorescein was applied incorrectly",
+        "Haziness is not an artefact of fluorescein."
+      ],
+      [
+        "Raised intraocular pressure",
+        "Steamy cornea in glaucoma is a different context."
+      ],
+      [
+        "Bacterial infection should be suspected",
+        "Correct — haziness points to infection."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 120"
+  },
+  {
+    "topic": "Eye pain qualifiers",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Eye pain WITH HEADACHE suggests what?",
+    "opts": [
+      [
+        "Acute narrow angle glaucoma",
+        "Correct — headache with eye pain points to acute narrow angle glaucoma."
+      ],
+      [
+        "Temporal arteritis with jaw claudication",
+        "That is paired with temporal pain specifically."
+      ],
+      [
+        "Optic neuritis",
+        "That is paired with pain on eye motion."
+      ],
+      [
+        "Conjunctivitis",
+        "That is paired with grittiness."
+      ]
+    ],
+    "c": 0,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"
+  },
+  {
+    "topic": "Ptosis",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "etiology",
+    "q": "What causes SENILE ptosis?",
+    "opts": [
+      [
+        "Weakened muscle, relaxed tissues, and the weight of herniated fat",
+        "Correct — weakened muscle, relaxed tissues, and the weight of herniated fat."
+      ],
+      [
+        "Antibody blockade at the neuromuscular junction of the levator",
+        "That is myasthenia gravis."
+      ],
+      [
+        "Interruption of the sympathetic supply",
+        "That is Horner syndrome."
+      ],
+      [
+        "Compression of the oculomotor nerve",
+        "That is a third nerve palsy."
+      ]
+    ],
+    "c": 0,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 29"
+  },
+  {
+    "topic": "Diplopia",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "HORIZONTAL diplopia — images side by side — points to a palsy of which cranial nerves?",
+    "opts": [
+      [
+        "Fourth or sixth",
+        "The third nerve features in both patterns."
+      ],
+      [
+        "Second or seventh",
+        "Neither is an extraocular motor nerve."
+      ],
+      [
+        "Third or sixth",
+        "Correct — and Beck called this slide very important to commit to memory."
+      ],
+      [
+        "Third or fourth",
+        "That is the VERTICAL pattern."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 18"
+  },
+  {
+    "topic": "Visual acuity",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "What should be documented if a patient cannot read the chart at all?",
+    "opts": [
+      [
+        "The acuity recorded at the patient's last optometry visit",
+        "A previous reading does not record today's acuity."
+      ],
+      [
+        "An estimate in dioptres",
+        "Dioptres measure refractive power, not acuity."
+      ],
+      [
+        "Counting fingers, hand motion, or light perception",
+        "Correct — counting fingers, hand motion, then light perception."
+      ],
+      [
+        "Simply 'unable to test'",
+        "The descending scale is what gets recorded."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 49"
+  },
+  {
+    "topic": "Vocabulary",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "What is chemosis?",
+    "opts": [
+      [
+        "Injection of the superficially visible vessels of the conjunctiva or sclera",
+        "That is hyperaemia."
+      ],
+      [
+        "Forward displacement of the eye in the orbit",
+        "That is proptosis."
+      ],
+      [
+        "Outward turning of the lower eyelid",
+        "That is ectropion."
+      ],
+      [
+        "Swelling and inflammation of the conjunctiva",
+        "Correct — swelling and inflammation of the conjunctiva."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 3"
+  },
+  {
+    "topic": "Nodular episcleritis",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "etiology",
+    "q": "Nodular episcleritis is associated with which two systemic diseases?",
+    "opts": [
+      [
+        "Diabetes and hypertension",
+        "Those drive retinopathy instead."
+      ],
+      [
+        "Graves disease, myasthenia gravis and thyroid orbitopathy",
+        "Those relate to lid signs."
+      ],
+      [
+        "Sjögren syndrome and sarcoidosis",
+        "Sjögren appears under dry eye, not here."
+      ],
+      [
+        "Rheumatoid arthritis and lupus erythematosus",
+        "Correct — rheumatoid arthritis and lupus erythematosus."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 47"
+  },
+  {
+    "topic": "Chalazion",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "Where does a chalazion usually point?",
+    "opts": [
+      [
+        "Inside the lid rather than on the lid margin",
+        "Correct — this is what distinguishes it from a hordeolum."
+      ],
+      [
+        "On the lid margin, right at the base of the lashes",
+        "That is the external hordeolum."
+      ],
+      [
+        "At the medial canthus",
+        "That location suggests lacrimal sac disease."
+      ],
+      [
+        "At the lateral canthus",
+        "Not where a chalazion sits."
+      ]
+    ],
+    "c": 0,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 33"
+  },
+  {
+    "topic": "Red eye chart",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "chart": true,
+    "q": "On the red-eye chart, how is the PAIN of acute iritis described?",
+    "opts": [
+      [
+        "Moderate, aching, deep",
+        "Correct — the chart's iritis column."
+      ],
+      [
+        "Mild discomfort rather than pain",
+        "That is conjunctivitis."
+      ],
+      [
+        "Severe, aching, deep",
+        "That is glaucoma."
+      ],
+      [
+        "Absent",
+        "That is subconjunctival haemorrhage."
+      ]
+    ],
+    "c": 0,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"
+  },
+  {
+    "topic": "Common mistakes",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "avoid",
+    "q": "Which two structures are commonly left unexamined?",
+    "opts": [
+      [
+        "The eyelids and eyebrows",
+        "The lids and eyebrows are rarely skipped."
+      ],
+      [
+        "The lacrimal sac and puncta",
+        "The lacrimal sac and puncta are not the usual omissions."
+      ],
+      [
+        "The extraocular muscles",
+        "Movement testing is listed separately."
+      ],
+      [
+        "The cornea and the lens",
+        "Correct — 'failure to examine the cornea and lens' is on the list."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 20"
+  },
+  {
+    "topic": "Red eye chart",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "chart": true,
+    "q": "On the red-eye comparison, which condition shows redness that is DIFFUSE and maximal peripherally, with vision unaffected?",
+    "opts": [
+      [
+        "Glaucoma",
+        "That shows diffuse redness with a steamy cornea and a dilated fixed pupil."
+      ],
+      [
+        "Corneal injury or infection",
+        "That shows ciliary injection with usually decreased vision."
+      ],
+      [
+        "Conjunctivitis",
+        "Correct — diffuse peripheral redness with preserved vision is the conjunctivitis column."
+      ],
+      [
+        "Acute iritis",
+        "That shows ciliary injection with decreased vision."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"
+  },
+  {
+    "topic": "Vocabulary",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Entropion and ectropion both affect which eyelid?",
+    "opts": [
+      [
+        "Both lids equally",
+        "It is the lower lid for both."
+      ],
+      [
+        "Neither — they affect the conjunctiva",
+        "Both are lid malpositions."
+      ],
+      [
+        "The lower lid",
+        "Correct — the lower lid for both."
+      ],
+      [
+        "The upper lid",
+        "It is the lower lid, not the upper."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 3"
+  },
+  {
+    "topic": "History",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "risk factors",
+    "q": "Which immunisation status matters in eye trauma?",
+    "opts": [
+      [
+        "Pneumococcal",
+        "Not the immunisation that matters in trauma."
+      ],
+      [
+        "Hepatitis B",
+        "Not the immunisation that matters in trauma."
+      ],
+      [
+        "Tetanus",
+        "Correct — tetanus status matters in eye trauma."
+      ],
+      [
+        "Influenza",
+        "Not the immunisation that matters in trauma."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 15"
+  },
+  {
+    "topic": "Symptom patterns",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Gradual, painless visual loss suggests what?",
+    "opts": [
+      [
+        "Vitreous haemorrhage",
+        "That is acute."
+      ],
+      [
+        "Chemical exposure",
+        "That is acute and bilateral."
+      ],
+      [
+        "Simple glaucoma or cataract",
+        "Correct — gradual and painless points to glaucoma or cataract."
+      ],
+      [
+        "Acute narrow angle glaucoma",
+        "That is acute and painful."
+      ]
+    ],
+    "c": 2,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 16"
+  },
+  {
+    "topic": "History",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "differential",
+    "q": "Which two symptoms together suggest an allergic cause?",
+    "opts": [
+      [
+        "Foreign body sensation and reduced vision",
+        "Those point toward a corneal problem."
+      ],
+      [
+        "Itching and excessive tearing",
+        "Correct — itching with excessive tearing points to allergy."
+      ],
+      [
+        "Deep pain and photophobia",
+        "Deep pain points to acute narrow angle glaucoma."
+      ],
+      [
+        "Burning and purulent discharge",
+        "Purulent discharge suggests bacterial infection."
+      ]
+    ],
+    "c": 1,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 12"
+  },
+  {
+    "topic": "Diplopia",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "Which cranial nerve appears in BOTH the horizontal and vertical diplopia patterns?",
+    "opts": [
+      [
+        "The third",
+        "Correct — Beck's shortcut was 'three for both of those'."
+      ],
+      [
+        "The fourth",
+        "That appears in the vertical pattern only."
+      ],
+      [
+        "The sixth",
+        "That appears in the horizontal pattern only."
+      ],
+      [
+        "The second",
+        "That is the optic nerve and carries no motor fibres to the eye muscles."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture recording, 26 August 2026"
+  },
+  {
+    "topic": "Xanthelasma",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "test finding",
+    "q": "Where do xanthelasma plaques sit, and what should they prompt?",
+    "opts": [
+      [
+        "Along the NASAL portions of one or both eyelids — consider lipid disorders",
+        "Correct — nasal position, and it should prompt a lipid check."
+      ],
+      [
+        "Along the temporal portions of the lids — consider thyroid disease",
+        "They sit nasally, and point to lipid disorders."
+      ],
+      [
+        "At the lid margin — consider bacterial infection",
+        "That describes a hordeolum."
+      ],
+      [
+        "On the bulbar conjunctiva — consider ultraviolet exposure",
+        "That describes pinguecula."
+      ]
+    ],
+    "c": 0,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 34"
+  },
+  {
+    "topic": "Red eye chart",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "education",
+    "chart": true,
+    "q": "On the red-eye comparison, which condition shows a fixed, mid-dilated pupil with severe pain and markedly reduced vision?",
+    "opts": [
+      [
+        "Acute angle-closure glaucoma",
+        "Correct — a fixed mid-dilated pupil with severe pain and reduced vision is the angle-closure picture."
+      ],
+      [
+        "Bacterial conjunctivitis",
+        "Conjunctivitis leaves the pupil and the vision normal."
+      ],
+      [
+        "Anterior uveitis (iritis)",
+        "Iritis constricts the pupil rather than fixing it mid-dilated."
+      ],
+      [
+        "Corneal abrasion or ulcer",
+        "A corneal lesion is painful but does not fix the pupil."
+      ]
+    ],
+    "c": 0,
+    "cite": "Lecture recording, 26 August 2026"
+  },
+  {
+    "topic": "Order of examination",
+    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
+    "slot": "initial test",
+    "q": "Which examination comes FIRST in the suggested order?",
+    "opts": [
+      [
+        "Visual acuity",
+        "That comes after inspection and external examination."
+      ],
+      [
+        "Direct ophthalmoscopy",
+        "That comes near the end."
+      ],
+      [
+        "Ocular pressure",
+        "That comes among the special tests."
+      ],
+      [
+        "Inspection",
+        "Correct — the order begins with inspection."
+      ]
+    ],
+    "c": 3,
+    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

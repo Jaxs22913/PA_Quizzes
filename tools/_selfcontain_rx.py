@@ -17,12 +17,27 @@ SAY = (r"say|says|said|state|states|stated|call|calls|called|name|names|named"
        r"|want|wants|wanted|ask|asks|asked|make|makes|made|treat|treats|treated"
        r"|show|shows|showed|use|uses|used|add|adds|added|put|puts|contrast"
        r"|contrasts|contrasted|define|defines|defined|rank|ranks|ranked"
-       r"|cover|covers|covered|include|includes|included|offer|offers|offered")
+       r"|cover|covers|covered|include|includes|included|offer|offers|offered"
+       r"|argue|argues|argued|indicate|indicates|indicated|raise|raises|raised"
+       r"|tie|ties|tied|separate|separates|separated|set|sets|pair|pairs|paired"
+       r"|assign|assigns|assigned|draw|draws|drew|link|links|linked"
+       r"|place|places|placed|attach|attaches|attached|frame|frames|framed"
+       r"|reserve|reserves|reserved|prescribe|prescribes|prescribed")
 
 PATTERNS = [
+    # "the slide" is also the glass one under a microscope ("flooding the
+    # slide with crystal violet"), so exclude the lab verbs that precede it.
+    r"(?<!flood )(?<!flooding )(?<!warm )(?<!warming )(?<!stain )(?<!staining )"
+    r"(?<!heat )(?<!heating )(?<!fix )(?<!fixing )(?<!dry )(?<!drying )"
+    r"(?<!mount )(?<!mounting )(?<!prepare )(?<!preparing )(?<!cover )"
     r"\bthe (lecture|deck|slides?|syllabus|professor|lecturer|instructor|speaker)\b",
     r"\bspeaker notes?\b",
-    r"\bthe notes\b",
+    # "the notes" only where it means lecture notes -- a teaching verb, a
+    # possessive, or a preposition in front of it.  Bare "the notes" also
+    # means the clinical record ("hand the notes to the listener").
+    r"\bthe notes['\u2019]",
+    r"\bthe notes\s+(?:%s)\b" % SAY,
+    r"\b(?:in|per|on|from|than|that|what) the notes\b",
     r"\b(professor|prof\.?|dr\.?)\s+[A-Z][a-z]+",
     r"\bin (the )?(lecture|the deck)\b",
     r"\bin class\b(?![ -]?\d)",   # not "in class 5" -- steroid potency
