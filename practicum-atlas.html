@@ -315,6 +315,8 @@
            esc(encodeURI(base + r.img)) + '" alt="' + esc(r.title) + ', labeled"></div></section>';
   }
 
+  try { localStorage.removeItem("atlasTocOpen"); } catch (e) {}
+
   window.openSelected = function () {
     var chosen = DATA.filter(function (r) { return picked.has(key(r)); });
     if (!chosen.length) return;
@@ -322,8 +324,8 @@
       return a.exam.localeCompare(b.exam) || a.section.localeCompare(b.section) ||
              a.region.localeCompare(b.region) || a.title.localeCompare(b.title);
     });
-    var tocOpen = localStorage.getItem("atlasTocOpen") !== "0";
-    var toc = '<details id="toc"' + (tocOpen ? " open" : "") + ">" +
+    // Contents starts closed, like every other accordion on the site.
+    var toc = '<details id="toc">' +
       "<summary>" + chosen.length + ' plates <span class="hint">contents</span></summary>' +
       '<div class="toc-list">' +
       chosen.map(function (r) {
@@ -335,10 +337,6 @@
     $("back-btn").style.display = "";
     $("open-btn").style.display = "none";
     $("search").style.display = "none";
-    var t = document.getElementById("toc");
-    if (t) t.addEventListener("toggle", function () {
-      try { localStorage.setItem("atlasTocOpen", t.open ? "1" : "0"); } catch (e) {}
-    });
     window.scrollTo(0, 0);
     layoutAll();
   };

@@ -464,14 +464,22 @@ document.querySelectorAll(".semester").forEach(semester => {
       window.addEventListener("resize", alignWidgetToCard);
     })();
 
+    /* Every exam and topic accordion starts closed, on every visit.
+
+       These used to remember whether you had left them open and reopen
+       themselves next time, which meant the page could load with half the
+       term already unfolded. Closing them here rather than trusting the
+       markup means a section stays closed even if one is ever authored or
+       generated with an `open` attribute. */
     document.querySelectorAll(".exam-section, .topic-section").forEach(section => {
-      const key = "examOpen:" + section.dataset.examid;
-      const saved = localStorage.getItem(key);
-      if (saved !== null) section.open = saved === "true";
-      section.addEventListener("toggle", () => {
-        localStorage.setItem(key, section.open);
-      });
+      section.open = false;
     });
+    // Drop the keys the old remembering behaviour left behind.
+    try {
+      Object.keys(localStorage)
+        .filter(k => k.startsWith("examOpen:"))
+        .forEach(k => localStorage.removeItem(k));
+    } catch (e) {}
 
 
     (function () {
