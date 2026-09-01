@@ -303,7 +303,805 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Retinal detachment", "io": "h — Compare and contrast the pathogenesis of retinal detachment", "slot": "differential", "kfe": true, "q": "Which primary aetiology does the deck give for TRACTIONAL retinal detachment?", "opts": [["Proliferative diabetic retinopathy", "Correct — the neovascular membranes of proliferative disease are the classic traction source."], ["Severe malignant hypertension", "That appears under exudative detachment."], ["Posterior vitreous detachment", "That is a rhegmatogenous risk factor."], ["Choroidal melanoma", "That is an exudative cause."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 36"}, {"topic": "Wet macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "prognosis", "kfe": true, "q": "What proportion of severe blindness from macular degeneration does the wet form account for?", "opts": [["About ten per cent", "That inverts the deck's figure."], ["About ninety per cent", "Correct — the deck's figure, despite the dry form being commoner."], ["About fifty per cent", "Below the deck's figure."], ["About twenty-five per cent", "Well below the deck's figure."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 40"}, {"topic": "Lecture logic", "io": "a — Compare and contrast the neurological anatomy of the eye", "slot": "etiology", "q": "Why does the deck say the outer, easily visible structures are grouped first?", "opts": [["They are the only structures visible without an ophthalmoscope", "The deck's grouping is by susceptibility rather than by visibility alone."], ["They contain the highest density of nerve endings", "Not the deck's stated reason."], ["They are the last to be affected in systemic disease", "The deck ties systemic disease to the deepest group."], ["They are more susceptible to infection, trauma and environmental change", "Correct — the deck's reason for the first group."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 6"}, {"topic": "Amblyopia", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "etiology", "q": "What is amblyopia?", "opts": [["Opacification of the crystalline lens", "That is cataract."], ["Reduced best-corrected visual acuity from abnormal visual processing during the critical developmental period", "Correct — the deck's definition, and it is a visual deficit rather than a mechanical one."], ["Ocular misalignment arising from extraocular muscle imbalance or nerve palsy", "That is strabismus, which the deck contrasts with amblyopia."], ["Progressive optic neuropathy from raised pressure", "That is glaucoma."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 12"}, {"topic": "Wet macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "etiology", "kfe": true, "q": "What is the mechanism of wet, neovascular macular degeneration?", "opts": [["Hypoxia and inflammation trigger choroidal neovascularisation, and new vessels breach beneath the pigment epithelium into the subretinal space", "Correct — the deck's mechanism, from trigger through to breach."], ["Extracellular lipofuscin debris accumulating beneath the retinal pigment epithelium", "That is the dry form's drusen."], ["Fibrovascular membranes on the retinal surface exert traction", "That is tractional retinal detachment."], ["Ganglion cell axons undergo apoptosis from raised pressure", "That is glaucoma."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 40"}, {"topic": "Vitreous ageing", "io": "h — Compare and contrast the pathogenesis of retinal detachment", "slot": "etiology", "kfe": true, "q": "What happens to the vitreous with age, and why does it matter for detachment?", "opts": [["It becomes vascularised, bleeding into the subretinal space", "The vitreous stays avascular."], ["It thickens and opacifies, blocking light before it reaches the retina", "That is not the age change the deck or lecture describes."], ["It liquefies, so fluid can track through any retinal break into the subretinal space", "Correct — Webster's jelly-in-the-fridge analogy, and the reason liquefaction is upstream of detachment."], ["It solidifies, pressing the retina more firmly against the pigment epithelium", "The change is towards liquefaction, not solidification."]], "c": 2, "cite": "Lecture recording, 26 August 2026"}, {"topic": "Glaucoma mechanism", "io": "f — Describe the pathogenesis of glaucoma", "slot": "test finding", "kfe": true, "q": "Above what cup-to-disc ratio does the deck describe progressive optic disc cupping?", "opts": [["Greater than 1.0", "A ratio above one is not anatomically possible."], ["Greater than 0.5", "Correct — the deck's threshold for an increased cup-to-disc ratio."], ["Greater than 0.2", "Below the deck's stated threshold."], ["Greater than 0.8", "Above the deck's stated threshold."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"}, {"topic": "Orbital cellulitis", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "manifestation", "q": "Which findings does the deck give for orbital cellulitis that periorbital cellulitis lacks?", "opts": [["Erythema and oedema of the lid alone, held forward by the orbital septum", "That is the periorbital picture."], ["Crusting of the lid margin with altered tear film", "That is blepharitis."], ["A yellowish nodule that does not cross the cornea", "That is a pinguecula."], ["Proptosis, decreased extraocular movement and a risk of optic nerve compression", "Correct — the deck's discriminating findings, all consequences of a post-septal collection."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 16"}, {"topic": "Herpes simplex keratitis", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "test finding", "q": "What is the classical corneal finding in herpes simplex epithelial keratitis?", "opts": [["A geographic ulcer with a hypopyon", "Not the classical simplex description in the deck."], ["A ring infiltrate in a contact lens wearer", "That pattern is associated with other organisms."], ["A wedge of fibrovascular tissue growing across and over the corneal limbus", "That is a pterygium."], ["A dendritic ulcer with terminal bulbs on fluorescein staining", "Correct — the deck's classical description, terminal bulbs included."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"}, {"topic": "Eyelid anatomy", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "What does the lipid layer of the tear film do?", "opts": [["It prevents evaporation", "Correct — the deck's stated function, which is why its loss causes dry eye."], ["It provides the bulk volume of the tears", "That is the aqueous component."], ["It anchors the tear film to the corneal epithelium", "That is the mucin layer's role."], ["It carries immunoglobulin to the ocular surface", "Not the function the deck assigns to lipid."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 13"}, {"topic": "Open-angle glaucoma", "io": "f — Describe the pathogenesis of glaucoma", "slot": "etiology", "kfe": true, "q": "What is the mechanism of primary open-angle glaucoma?", "opts": [["Aqueous production by the ciliary body increases sharply", "The deck's mechanism is impaired outflow, not overproduction."], ["The canal of Schlemm is congenitally absent", "Not a mechanism the deck describes."], ["The iridocorneal angle stays open but microscopic resistance in the trabecular meshwork impairs outflow, raising pressure gradually", "Correct — the angle is open; the obstruction is microscopic and downstream."], ["The iridocorneal angle narrows anatomically and blocks aqueous outflow suddenly", "That is angle-closure glaucoma."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"}, {"topic": "The three tunics", "io": "a — Compare and contrast the neurological anatomy of the eye", "slot": "etiology", "q": "Which two structures make up the fibrous outer tunic of the eye?", "opts": [["The iris and the lens", "The iris is uveal and the lens is not part of a tunic."], ["The sclera and the cornea", "Correct — the protective white coat and the clear refracting window."], ["The choroid and the ciliary body", "Those belong to the uvea, the vascular middle tunic."], ["The retina and the retinal pigment epithelium", "Those form the neurosensory inner tunic."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"}, {"topic": "Episcleritis", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "manifestation", "q": "How does the deck characterise episcleritis?", "opts": [["A granulomatous blockage of a meibomian gland", "That is a chalazion."], ["A self-limiting inflammatory blush, not vision-threatening and without severe pain", "Correct — the deck's characterisation, in deliberate contrast to scleritis."], ["A vision-threatening emergency with severe deep boring pain and scleral melting", "That is scleritis."], ["An infection of the corneal stroma", "That is keratitis."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"}, {"topic": "Optic neuropathy", "io": "j — Describe visual field deficits according to the area of pathology", "slot": "differential", "kfe": true, "q": "Which causes does the deck give for an ipsilateral optic nerve lesion?", "opts": [["Temporal lobe surgery", "That affects the optic radiation."], ["Trauma, optic neuritis and ischaemic optic neuropathy", "Correct — the deck's three causes at site A."], ["Pituitary adenoma compression", "That is the chiasmal cause."], ["Posterior cerebral artery occlusion in the occipital lobe", "That is the occipital cause."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 34"}, {"topic": "Hypopyon", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "test finding", "q": "What is a hypopyon?", "opts": [["Pus in the anterior chamber", "Correct — the deck labels it directly on the image slide."], ["Blood in the anterior chamber", "That is a hyphaema."], ["Fluid beneath the neurosensory retina", "That is a retinal detachment."], ["Yellow debris beneath the retinal pigment epithelium", "Those are drusen."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 15"}, {"topic": "Eyelid anatomy", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "What is the fornix, and why does it matter mechanically?", "opts": [["A flexible junctional cul-de-sac that permits free rotation of the globe", "Correct — the deck's definition and its mechanical purpose."], ["The dense fibrous plate giving the eyelid its shape", "That is the tarsus."], ["The sphincteric muscle responsible for blinking", "That is orbicularis oculi."], ["The circular junction where the conjunctiva meets the edge of the cornea", "That is the limbus."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 13"}, {"topic": "Unique features of the eye", "io": "a — Compare and contrast the neurological anatomy of the eye", "slot": "etiology", "q": "What makes the eye the only place in the body where live neural tissue can be seen directly?", "opts": [["The retina can be biopsied more safely than any other neural tissue", "The deck's point is that no tissue has to be cut at all."], ["The cornea contains myelinated tracts that can be seen on slit lamp", "The cornea's nerves are not what the deck describes here."], ["The sclera is thin enough to transilluminate the whole globe", "Transillumination is not the mechanism the deck gives."], ["The optic nerve head is visible through the pupil without cutting any tissue", "Correct — the deck calls the eye a nervous window for exactly this reason."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 4"}, {"topic": "Myopia", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "etiology", "kfe": true, "q": "What is the globe geometry in myopia, and where does the image focus?", "opts": [["The axial globe is too short, so the focal point falls behind the retina", "That describes hyperopia."], ["The globe is normal but the cornea is irregularly curved", "That describes astigmatism."], ["The globe is normal but the lens has lost elasticity", "That describes presbyopia."], ["The axial globe is too long, so the focal point falls in front of the retina", "Correct — an elongated globe overshoots, focusing short of the retina."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 8"}, {"topic": "Dry macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "etiology", "kfe": true, "q": "What is the hallmark of dry, atrophic macular degeneration?", "opts": [["Choroidal neovascularisation breaching upward into the subretinal space", "That is the wet form."], ["Neovascularisation on the optic disc", "That is proliferative diabetic retinopathy."], ["Cotton-wool spots in the nerve fibre layer", "Those are an ischaemic finding in retinopathy."], ["Drusen — discrete yellow extracellular debris beneath the pigment epithelium and Bruch membrane", "Correct — the deck's hallmark, with its composition and location."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"}, {"topic": "Visual field defects", "io": "j — Describe visual field deficits according to the area of pathology", "slot": "test finding", "kfe": true, "q": "A lesion of the optic tract produces which defect?", "opts": [["Contralateral homonymous hemianopsia", "Correct — site C. Past the chiasm, each tract carries the same side of both eyes' fields."], ["Bitemporal hemianopsia", "That is the chiasmal defect."], ["Monocular blindness", "That requires a lesion before the chiasm."], ["Central scotoma with preserved peripheral vision", "That pattern is macular rather than pathway-related."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 34"}, {"topic": "Physiology of vision", "io": "b — Describe the physiological processes of vision", "slot": "etiology", "q": "Where must light be focused for an image to form?", "opts": [["On the lens itself, which then transmits the signal", "The lens refracts light; it does not detect it."], ["On the retina, after refraction through the cornea and lens", "Correct — the deck's description of image formation."], ["On the choroid, after refraction through the cornea alone", "The choroid lies behind the retina and does not receive the focused image."], ["On the optic disc, where the nerve exits", "The optic disc is the blind spot and has no photoreceptors."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"}, {"topic": "Cataract", "io": "g — Describe the pathogenesis of cataracts", "slot": "risk factors", "kfe": true, "q": "Which medication class does the deck name as a cataract risk?", "opts": [["Chronic antihistamines", "Not named by the deck."], ["Chronic statins", "Not named by the deck."], ["Chronic corticosteroids", "Correct — the deck names chronic corticosteroid use."], ["Chronic beta-blockers", "Not a cataract risk in the deck."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 22"}, {"topic": "Hyperopia", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "manifestation", "kfe": true, "q": "What can a hyperopic patient see well?", "opts": [["Objects up close", "Near vision is the impaired one in hyperopia."], ["Neither near nor far without correction", "Distance vision is preserved."], ["Only objects directly in the central field", "Hyperopia is refractive rather than a field defect."], ["Objects far away", "Correct — hyperopia is farsightedness, so distance vision is the preserved one."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 8"}, {"topic": "Macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "etiology", "kfe": true, "q": "What does the deck say about the pathogenesis of macular degeneration overall?", "opts": [["It is unknown", "Correct — the deck's slide titles say pathogenesis unknown for both forms."], ["It is entirely genetic", "The deck does not make this claim."], ["It is entirely driven by ultraviolet exposure", "The deck does not attribute it to a single cause."], ["It is a consequence of raised intraocular pressure", "That mechanism belongs to glaucoma."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"}, {"topic": "Unique features of the eye", "io": "a — Compare and contrast the neurological anatomy of the eye", "slot": "etiology", "q": "How is the avascular cornea oxygenated?", "opts": [["By the choroidal circulation behind it", "The choroid lies at the back of the eye and nourishes the retina."], ["By direct contact with air and tears", "Correct — the deck's stated route for an avascular tissue."], ["By diffusion from the limbal blood vessels alone", "The deck names air and tears rather than limbal supply."], ["By the aqueous humour circulating through the anterior chamber", "Aqueous nourishes the cornea and lens, but the deck names air and tears for oxygen."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 4"}, {"topic": "Visual field defects", "io": "j — Describe visual field deficits according to the area of pathology", "slot": "etiology", "kfe": true, "q": "Why does a central chiasmal lesion spare nasal vision in both eyes?", "opts": [["Only the crossing nasal retinal fibres are interrupted, and those carry the temporal fields; the temporal retinal fibres travel ipsilaterally and are untouched", "Correct — the anatomy of the decussation explains which half is lost."], ["The lesion damages the temporal retinal fibres instead, and those carry nasal vision", "Those fibres do not cross and are not caught by a central lesion."], ["The macula is spared by a dual blood supply", "Macular sparing belongs to occipital lesions."], ["The lesion affects only one eye at a time", "A chiasmal lesion affects both eyes."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 32"}, {"topic": "Photoreceptors", "io": "b — Describe the physiological processes of vision", "slot": "etiology", "q": "Roughly how many cones are there, and where are they concentrated?", "opts": [["About 6 million, spread evenly across the whole retina", "The deck stresses their concentration at the fovea."], ["About 60 million, concentrated at the optic disc", "The optic disc has no photoreceptors at all."], ["About 6 million, concentrated in the fovea centralis within the macula", "Correct — the deck's count and location for cones."], ["About 120 million, concentrated in the peripheral retina rather than the fovea", "That is the rod population and its distribution."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 28"}, {"topic": "Presbyopia", "io": "e — Compare and contrast the conditions of the eye that are age related", "slot": "etiology", "kfe": true, "q": "Webster tied presbyopia to a letter in an examination mnemonic. Which, and what does it stand for?", "opts": [["The P in PERRLA, for pupils", "The P is simply pupils."], ["The E in PERRLA, for equal", "The E is equal."], ["The A in PERRLA, for accommodation", "Correct — pupils equal, round, reactive to light and accommodation. He quizzed the room on it."], ["The R in PERRLA, for reactive", "The R stands for reactive to light, which is not the presbyopia link."]], "c": 2, "cite": "Lecture recording, 26 August 2026"}, {"topic": "Retinal detachment", "io": "h — Compare and contrast the pathogenesis of retinal detachment", "slot": "manifestation", "kfe": true, "q": "What symptoms does the deck give for rhegmatogenous detachment?", "opts": [["Severe pain with halos and a fixed mid-dilated pupil", "That is acute angle-closure glaucoma."], ["Slow loss of central detail with progressive distortion of straight lines", "That is macular degeneration."], ["Flashing lights, a shower of floaters, and a curtain falling across the field", "Correct — photopsia, floaters, then the curtain."], ["Gradual painless bilateral blurring with glare at night", "That is cataract."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 36"}, {"topic": "Macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "epidemiology", "kfe": true, "q": "Macular degeneration is the leading cause of new-onset blindness in which group?", "opts": [["Children and adolescents", "Not a group the deck discusses for this condition."], ["Adults of any age worldwide", "The deck's claim is specific to an age band and country."], ["Adults over seventy-five in the United States", "Correct — the deck's stated epidemiology."], ["Adults aged twenty to seventy-four in the United States", "That is the deck's group for diabetic retinopathy."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"}];
+const QUESTIONS = [
+  {
+    "topic": "Retinal detachment",
+    "io": "h — Compare and contrast the pathogenesis of retinal detachment",
+    "slot": "differential",
+    "kfe": true,
+    "q": "What is the primary aetiology of TRACTIONAL retinal detachment?",
+    "opts": [
+      [
+        "Proliferative diabetic retinopathy",
+        "Correct — the neovascular membranes of proliferative disease are the classic traction source."
+      ],
+      [
+        "Severe malignant hypertension",
+        "That appears under exudative detachment."
+      ],
+      [
+        "Posterior vitreous detachment",
+        "That is a rhegmatogenous risk factor."
+      ],
+      [
+        "Choroidal melanoma",
+        "That is an exudative cause."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 36"
+  },
+  {
+    "topic": "Wet macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "prognosis",
+    "kfe": true,
+    "q": "What proportion of severe blindness from macular degeneration does the wet form account for?",
+    "opts": [
+      [
+        "About ten per cent",
+        "That inverts the figure."
+      ],
+      [
+        "About ninety per cent",
+        "Correct — despite the dry form being commoner."
+      ],
+      [
+        "About fifty per cent",
+        "Below the true figure."
+      ],
+      [
+        "About twenty-five per cent",
+        "Well below the true figure."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 40"
+  },
+  {
+    "topic": "Lecture logic",
+    "io": "a — Compare and contrast the neurological anatomy of the eye",
+    "slot": "etiology",
+    "q": "Why are the outer, easily visible structures grouped first?",
+    "opts": [
+      [
+        "They are the only structures visible without an ophthalmoscope",
+        "The grouping is by susceptibility rather than by visibility alone."
+      ],
+      [
+        "They contain the highest density of nerve endings",
+        "Nerve ending density is not the reason."
+      ],
+      [
+        "They are the last to be affected in systemic disease",
+        "Systemic disease reaches the deepest group."
+      ],
+      [
+        "They are more susceptible to infection, trauma and environmental change",
+        "Correct — that is what the first group has in common."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 6"
+  },
+  {
+    "topic": "Amblyopia",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "etiology",
+    "q": "What is amblyopia?",
+    "opts": [
+      [
+        "Opacification of the crystalline lens",
+        "That is cataract."
+      ],
+      [
+        "Reduced best-corrected visual acuity from abnormal visual processing during the critical developmental period",
+        "Correct — it is a visual deficit rather than a mechanical one."
+      ],
+      [
+        "Ocular misalignment arising from extraocular muscle imbalance or nerve palsy",
+        "That is strabismus, which is the contrast to amblyopia."
+      ],
+      [
+        "Progressive optic neuropathy from raised pressure",
+        "That is glaucoma."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 12"
+  },
+  {
+    "topic": "Wet macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is the mechanism of wet, neovascular macular degeneration?",
+    "opts": [
+      [
+        "Hypoxia and inflammation trigger choroidal neovascularisation, and new vessels breach beneath the pigment epithelium into the subretinal space",
+        "Correct — from trigger through to breach."
+      ],
+      [
+        "Extracellular lipofuscin debris accumulating beneath the retinal pigment epithelium",
+        "That is the dry form's drusen."
+      ],
+      [
+        "Fibrovascular membranes on the retinal surface exert traction",
+        "That is tractional retinal detachment."
+      ],
+      [
+        "Ganglion cell axons undergo apoptosis from raised pressure",
+        "That is glaucoma."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 40"
+  },
+  {
+    "topic": "Vitreous ageing",
+    "io": "h — Compare and contrast the pathogenesis of retinal detachment",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What happens to the vitreous with age, and why does it matter for detachment?",
+    "opts": [
+      [
+        "It becomes vascularised, bleeding into the subretinal space",
+        "The vitreous stays avascular."
+      ],
+      [
+        "It thickens and opacifies, blocking light before it reaches the retina",
+        "That is not the age change the vitreous undergoes."
+      ],
+      [
+        "It liquefies, so fluid can track through any retinal break into the subretinal space",
+        "Correct — Webster's jelly-in-the-fridge analogy, and the reason liquefaction is upstream of detachment."
+      ],
+      [
+        "It solidifies, pressing the retina more firmly against the pigment epithelium",
+        "The change is towards liquefaction, not solidification."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture recording, 26 August 2026"
+  },
+  {
+    "topic": "Glaucoma mechanism",
+    "io": "f — Describe the pathogenesis of glaucoma",
+    "slot": "test finding",
+    "kfe": true,
+    "q": "Above what cup-to-disc ratio is optic disc cupping progressive?",
+    "opts": [
+      [
+        "Greater than 1.0",
+        "A ratio above one is not anatomically possible."
+      ],
+      [
+        "Greater than 0.5",
+        "Correct — that is the threshold for an increased cup-to-disc ratio."
+      ],
+      [
+        "Greater than 0.2",
+        "Below the threshold."
+      ],
+      [
+        "Greater than 0.8",
+        "Above the threshold."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"
+  },
+  {
+    "topic": "Orbital cellulitis",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "manifestation",
+    "q": "Which findings does orbital cellulitis show that periorbital cellulitis lacks?",
+    "opts": [
+      [
+        "Erythema and oedema of the lid alone, held forward by the orbital septum",
+        "That is the periorbital picture."
+      ],
+      [
+        "Crusting of the lid margin with altered tear film",
+        "That is blepharitis."
+      ],
+      [
+        "A yellowish nodule that does not cross the cornea",
+        "That is a pinguecula."
+      ],
+      [
+        "Proptosis, decreased extraocular movement and a risk of optic nerve compression",
+        "Correct — all consequences of a post-septal collection."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 16"
+  },
+  {
+    "topic": "Herpes simplex keratitis",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "test finding",
+    "q": "What is the classical corneal finding in herpes simplex epithelial keratitis?",
+    "opts": [
+      [
+        "A geographic ulcer with a hypopyon",
+        "That is not the classical simplex description."
+      ],
+      [
+        "A ring infiltrate in a contact lens wearer",
+        "That pattern is associated with other organisms."
+      ],
+      [
+        "A wedge of fibrovascular tissue growing across and over the corneal limbus",
+        "That is a pterygium."
+      ],
+      [
+        "A dendritic ulcer with terminal bulbs on fluorescein staining",
+        "Correct — terminal bulbs included."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"
+  },
+  {
+    "topic": "Eyelid anatomy",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "What does the lipid layer of the tear film do?",
+    "opts": [
+      [
+        "It prevents evaporation",
+        "Correct — which is why its loss causes dry eye."
+      ],
+      [
+        "It provides the bulk volume of the tears",
+        "That is the aqueous component."
+      ],
+      [
+        "It anchors the tear film to the corneal epithelium",
+        "That is the mucin layer's role."
+      ],
+      [
+        "It carries immunoglobulin to the ocular surface",
+        "Immunoglobulin is not carried by the lipid layer."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 13"
+  },
+  {
+    "topic": "Open-angle glaucoma",
+    "io": "f — Describe the pathogenesis of glaucoma",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is the mechanism of primary open-angle glaucoma?",
+    "opts": [
+      [
+        "Aqueous production by the ciliary body increases sharply",
+        "The mechanism is impaired outflow, not overproduction."
+      ],
+      [
+        "The canal of Schlemm is congenitally absent",
+        "The canal of Schlemm is present."
+      ],
+      [
+        "The iridocorneal angle stays open but microscopic resistance in the trabecular meshwork impairs outflow, raising pressure gradually",
+        "Correct — the angle is open; the obstruction is microscopic and downstream."
+      ],
+      [
+        "The iridocorneal angle narrows anatomically and blocks aqueous outflow suddenly",
+        "That is angle-closure glaucoma."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"
+  },
+  {
+    "topic": "The three tunics",
+    "io": "a — Compare and contrast the neurological anatomy of the eye",
+    "slot": "etiology",
+    "q": "Which two structures make up the fibrous outer tunic of the eye?",
+    "opts": [
+      [
+        "The iris and the lens",
+        "The iris is uveal and the lens is not part of a tunic."
+      ],
+      [
+        "The sclera and the cornea",
+        "Correct — the protective white coat and the clear refracting window."
+      ],
+      [
+        "The choroid and the ciliary body",
+        "Those belong to the uvea, the vascular middle tunic."
+      ],
+      [
+        "The retina and the retinal pigment epithelium",
+        "Those form the neurosensory inner tunic."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"
+  },
+  {
+    "topic": "Episcleritis",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "manifestation",
+    "q": "How is episcleritis best characterised?",
+    "opts": [
+      [
+        "A granulomatous blockage of a meibomian gland",
+        "That is a chalazion."
+      ],
+      [
+        "A self-limiting inflammatory blush, not vision-threatening and without severe pain",
+        "Correct — in deliberate contrast to scleritis."
+      ],
+      [
+        "A vision-threatening emergency with severe deep boring pain and scleral melting",
+        "That is scleritis."
+      ],
+      [
+        "An infection of the corneal stroma",
+        "That is keratitis."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"
+  },
+  {
+    "topic": "Optic neuropathy",
+    "io": "j — Describe visual field deficits according to the area of pathology",
+    "slot": "differential",
+    "kfe": true,
+    "q": "What causes an ipsilateral optic nerve lesion?",
+    "opts": [
+      [
+        "Temporal lobe surgery",
+        "That affects the optic radiation."
+      ],
+      [
+        "Trauma, optic neuritis and ischaemic optic neuropathy",
+        "Correct — the three causes at site A."
+      ],
+      [
+        "Pituitary adenoma compression",
+        "That is the chiasmal cause."
+      ],
+      [
+        "Posterior cerebral artery occlusion in the occipital lobe",
+        "That is the occipital cause."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 34"
+  },
+  {
+    "topic": "Hypopyon",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "test finding",
+    "q": "What is a hypopyon?",
+    "opts": [
+      [
+        "Pus in the anterior chamber",
+        "Correct — pus in the anterior chamber."
+      ],
+      [
+        "Blood in the anterior chamber",
+        "That is a hyphaema."
+      ],
+      [
+        "Fluid beneath the neurosensory retina",
+        "That is a retinal detachment."
+      ],
+      [
+        "Yellow debris beneath the retinal pigment epithelium",
+        "Those are drusen."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 15"
+  },
+  {
+    "topic": "Eyelid anatomy",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "What is the fornix, and why does it matter mechanically?",
+    "opts": [
+      [
+        "A flexible junctional cul-de-sac that permits free rotation of the globe",
+        "Correct — that is its definition and its mechanical purpose."
+      ],
+      [
+        "The dense fibrous plate giving the eyelid its shape",
+        "That is the tarsus."
+      ],
+      [
+        "The sphincteric muscle responsible for blinking",
+        "That is orbicularis oculi."
+      ],
+      [
+        "The circular junction where the conjunctiva meets the edge of the cornea",
+        "That is the limbus."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 13"
+  },
+  {
+    "topic": "Unique features of the eye",
+    "io": "a — Compare and contrast the neurological anatomy of the eye",
+    "slot": "etiology",
+    "q": "What makes the eye the only place in the body where live neural tissue can be seen directly?",
+    "opts": [
+      [
+        "The retina can be biopsied more safely than any other neural tissue",
+        "The point is that no tissue has to be cut at all."
+      ],
+      [
+        "The cornea contains myelinated tracts that can be seen on slit lamp",
+        "The cornea's nerves are not what makes this possible."
+      ],
+      [
+        "The sclera is thin enough to transilluminate the whole globe",
+        "Transillumination is not the mechanism."
+      ],
+      [
+        "The optic nerve head is visible through the pupil without cutting any tissue",
+        "Correct — the eye is a nervous window for exactly this reason."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 4"
+  },
+  {
+    "topic": "Myopia",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is the globe geometry in myopia, and where does the image focus?",
+    "opts": [
+      [
+        "The axial globe is too short, so the focal point falls behind the retina",
+        "That describes hyperopia."
+      ],
+      [
+        "The globe is normal but the cornea is irregularly curved",
+        "That describes astigmatism."
+      ],
+      [
+        "The globe is normal but the lens has lost elasticity",
+        "That describes presbyopia."
+      ],
+      [
+        "The axial globe is too long, so the focal point falls in front of the retina",
+        "Correct — an elongated globe overshoots, focusing short of the retina."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 8"
+  },
+  {
+    "topic": "Dry macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is the hallmark of dry, atrophic macular degeneration?",
+    "opts": [
+      [
+        "Choroidal neovascularisation breaching upward into the subretinal space",
+        "That is the wet form."
+      ],
+      [
+        "Neovascularisation on the optic disc",
+        "That is proliferative diabetic retinopathy."
+      ],
+      [
+        "Cotton-wool spots in the nerve fibre layer",
+        "Those are an ischaemic finding in retinopathy."
+      ],
+      [
+        "Drusen — discrete yellow extracellular debris beneath the pigment epithelium and Bruch membrane",
+        "Correct — with its composition and location."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"
+  },
+  {
+    "topic": "Visual field defects",
+    "io": "j — Describe visual field deficits according to the area of pathology",
+    "slot": "test finding",
+    "kfe": true,
+    "q": "A lesion of the optic tract produces which defect?",
+    "opts": [
+      [
+        "Contralateral homonymous hemianopsia",
+        "Correct — site C. Past the chiasm, each tract carries the same side of both eyes' fields."
+      ],
+      [
+        "Bitemporal hemianopsia",
+        "That is the chiasmal defect."
+      ],
+      [
+        "Monocular blindness",
+        "That requires a lesion before the chiasm."
+      ],
+      [
+        "Central scotoma with preserved peripheral vision",
+        "That pattern is macular rather than pathway-related."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 34"
+  },
+  {
+    "topic": "Physiology of vision",
+    "io": "b — Describe the physiological processes of vision",
+    "slot": "etiology",
+    "q": "Where must light be focused for an image to form?",
+    "opts": [
+      [
+        "On the lens itself, which then transmits the signal",
+        "The lens refracts light; it does not detect it."
+      ],
+      [
+        "On the retina, after refraction through the cornea and lens",
+        "Correct — that is how the image forms."
+      ],
+      [
+        "On the choroid, after refraction through the cornea alone",
+        "The choroid lies behind the retina and does not receive the focused image."
+      ],
+      [
+        "On the optic disc, where the nerve exits",
+        "The optic disc is the blind spot and has no photoreceptors."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"
+  },
+  {
+    "topic": "Cataract",
+    "io": "g — Describe the pathogenesis of cataracts",
+    "slot": "risk factors",
+    "kfe": true,
+    "q": "Which medication class is a cataract risk?",
+    "opts": [
+      [
+        "Chronic antihistamines",
+        "Antihistamines do not cause cataract."
+      ],
+      [
+        "Chronic statins",
+        "Statins do not cause cataract."
+      ],
+      [
+        "Chronic corticosteroids",
+        "Correct — chronic corticosteroid use."
+      ],
+      [
+        "Chronic beta-blockers",
+        "Beta-blockers do not cause cataract."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 22"
+  },
+  {
+    "topic": "Hyperopia",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "manifestation",
+    "kfe": true,
+    "q": "What can a hyperopic patient see well?",
+    "opts": [
+      [
+        "Objects up close",
+        "Near vision is the impaired one in hyperopia."
+      ],
+      [
+        "Neither near nor far without correction",
+        "Distance vision is preserved."
+      ],
+      [
+        "Only objects directly in the central field",
+        "Hyperopia is refractive rather than a field defect."
+      ],
+      [
+        "Objects far away",
+        "Correct — hyperopia is farsightedness, so distance vision is the preserved one."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 8"
+  },
+  {
+    "topic": "Macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is known about the pathogenesis of macular degeneration overall?",
+    "opts": [
+      [
+        "It is unknown",
+        "Correct — the pathogenesis is unknown for both forms."
+      ],
+      [
+        "It is entirely genetic",
+        "It is not entirely genetic."
+      ],
+      [
+        "It is entirely driven by ultraviolet exposure",
+        "It has no single cause."
+      ],
+      [
+        "It is a consequence of raised intraocular pressure",
+        "That mechanism belongs to glaucoma."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"
+  },
+  {
+    "topic": "Unique features of the eye",
+    "io": "a — Compare and contrast the neurological anatomy of the eye",
+    "slot": "etiology",
+    "q": "How is the avascular cornea oxygenated?",
+    "opts": [
+      [
+        "By the choroidal circulation behind it",
+        "The choroid lies at the back of the eye and nourishes the retina."
+      ],
+      [
+        "By direct contact with air and tears",
+        "Correct — air and tears oxygenate an avascular tissue."
+      ],
+      [
+        "By diffusion from the limbal blood vessels alone",
+        "The limbal vessels do not supply the oxygen."
+      ],
+      [
+        "By the aqueous humour circulating through the anterior chamber",
+        "Aqueous nourishes the cornea and lens, but oxygen comes from air and tears."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 4"
+  },
+  {
+    "topic": "Visual field defects",
+    "io": "j — Describe visual field deficits according to the area of pathology",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "Why does a central chiasmal lesion spare nasal vision in both eyes?",
+    "opts": [
+      [
+        "Only the crossing nasal retinal fibres are interrupted, and those carry the temporal fields; the temporal retinal fibres travel ipsilaterally and are untouched",
+        "Correct — the anatomy of the decussation explains which half is lost."
+      ],
+      [
+        "The lesion damages the temporal retinal fibres instead, and those carry nasal vision",
+        "Those fibres do not cross and are not caught by a central lesion."
+      ],
+      [
+        "The macula is spared by a dual blood supply",
+        "Macular sparing belongs to occipital lesions."
+      ],
+      [
+        "The lesion affects only one eye at a time",
+        "A chiasmal lesion affects both eyes."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 32"
+  },
+  {
+    "topic": "Photoreceptors",
+    "io": "b — Describe the physiological processes of vision",
+    "slot": "etiology",
+    "q": "Roughly how many cones are there, and where are they concentrated?",
+    "opts": [
+      [
+        "About 6 million, spread evenly across the whole retina",
+        "Cones concentrate at the fovea rather than spreading evenly."
+      ],
+      [
+        "About 60 million, concentrated at the optic disc",
+        "The optic disc has no photoreceptors at all."
+      ],
+      [
+        "About 6 million, concentrated in the fovea centralis within the macula",
+        "Correct — that is the count and the location."
+      ],
+      [
+        "About 120 million, concentrated in the peripheral retina rather than the fovea",
+        "That is the rod population and its distribution."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 28"
+  },
+  {
+    "topic": "Presbyopia",
+    "io": "e — Compare and contrast the conditions of the eye that are age related",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "Webster tied presbyopia to a letter in an examination mnemonic. Which, and what does it stand for?",
+    "opts": [
+      [
+        "The P in PERRLA, for pupils",
+        "The P is simply pupils."
+      ],
+      [
+        "The E in PERRLA, for equal",
+        "The E is equal."
+      ],
+      [
+        "The A in PERRLA, for accommodation",
+        "Correct — pupils equal, round, reactive to light and accommodation. He quizzed the room on it."
+      ],
+      [
+        "The R in PERRLA, for reactive",
+        "The R stands for reactive to light, which is not the presbyopia link."
+      ]
+    ],
+    "c": 2,
+    "cite": "Lecture recording, 26 August 2026"
+  },
+  {
+    "topic": "Retinal detachment",
+    "io": "h — Compare and contrast the pathogenesis of retinal detachment",
+    "slot": "manifestation",
+    "kfe": true,
+    "q": "What are the symptoms of rhegmatogenous detachment?",
+    "opts": [
+      [
+        "Severe pain with halos and a fixed mid-dilated pupil",
+        "That is acute angle-closure glaucoma."
+      ],
+      [
+        "Slow loss of central detail with progressive distortion of straight lines",
+        "That is macular degeneration."
+      ],
+      [
+        "Flashing lights, a shower of floaters, and a curtain falling across the field",
+        "Correct — photopsia, floaters, then the curtain."
+      ],
+      [
+        "Gradual painless bilateral blurring with glare at night",
+        "That is cataract."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 36"
+  },
+  {
+    "topic": "Macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "epidemiology",
+    "kfe": true,
+    "q": "Macular degeneration is the leading cause of new-onset blindness in which group?",
+    "opts": [
+      [
+        "Children and adolescents",
+        "Not a group affected by this condition."
+      ],
+      [
+        "Adults of any age worldwide",
+        "The claim is specific to an age band and country."
+      ],
+      [
+        "Adults over seventy-five in the United States",
+        "Correct — that is the epidemiology."
+      ],
+      [
+        "Adults aged twenty to seventy-four in the United States",
+        "That is the group for diabetic retinopathy."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

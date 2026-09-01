@@ -303,7 +303,800 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Lacrimal disease", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "manifestation", "q": "Which lid deformity does the deck associate with dacryoadenitis?", "opts": [["An S-shaped lid deformity", "Correct — the deck's characteristic sign for lacrimal gland inflammation."], ["An inward-turning lid margin", "That is entropion."], ["An outward-turning lid margin", "That is ectropion."], ["A drooping upper lid from levator weakness", "That is ptosis."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 19"}, {"topic": "Physiology of vision", "io": "b — Describe the physiological processes of vision", "slot": "etiology", "q": "Where do impulses travel after leaving the optic nerve?", "opts": [["To the frontal eye fields", "Those govern gaze rather than receiving the visual image."], ["To the superior colliculus alone", "The deck's stated destination is the visual cortex."], ["To the occipital cortex", "Correct — the deck routes neural transmission to the occipital cortex."], ["To the temporal cortex", "The temporal lobe carries part of the optic radiation but is not the destination."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"}, {"topic": "The three tunics", "io": "a — Compare and contrast the neurological anatomy of the eye", "slot": "etiology", "q": "Which three structures make up the uvea?", "opts": [["The choroid, the retina and the sclera", "The retina is the inner tunic and the sclera the outer."], ["The ciliary body, the lens and the zonules", "The lens and zonules are not part of the uvea."], ["The iris, the cornea and the conjunctiva", "The cornea is fibrous and the conjunctiva is a mucosal covering."], ["The choroid, the ciliary body and the iris", "Correct — the vascular middle tunic in full."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"}, {"topic": "Astigmatism", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "etiology", "kfe": true, "q": "What can astigmatism combine with, and what happens when it does?", "opts": [["Only presbyopia, and only after the age of forty", "Astigmatism is not restricted to combining with presbyopia."], ["Only glaucoma, through a sustained rise in intraocular pressure over years", "There is no such relationship in the deck."], ["Nothing — it always occurs in isolation", "The lecture describes it combining with the other refractive errors."], ["Myopia or hyperopia, adding a focal-length error to the axis error", "Correct — Webster described the two problems stacking."]], "c": 3, "cite": "Lecture recording, 26 August 2026"}, {"topic": "Retinal detachment", "io": "h — Compare and contrast the pathogenesis of retinal detachment", "slot": "risk factors", "kfe": true, "q": "Which risk factors does the deck list for rhegmatogenous detachment?", "opts": [["Chronic corticosteroid use, Down syndrome and ultraviolet light exposure", "Those are cataract risks."], ["Posterior vitreous detachment, age, severe myopia, trauma and lattice degeneration", "Correct — the deck's five."], ["Diabetes, prior vitrectomy and retinal trauma surgery", "Those are tractional associations."], ["Sarcoidosis, malignant hypertension and melanoma", "Those are exudative causes."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 36"}, {"topic": "Chalazion and hordeolum", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "Which glands are involved in an external as opposed to an internal hordeolum?", "opts": [["External involves a meibomian gland; internal involves the glands of Zeis or Moll", "This reverses the deck's assignment."], ["Both involve the lacrimal gland", "The lacrimal gland is not involved in hordeolum."], ["Both involve the tarsal plate itself rather than any gland", "The tarsal plate holds the meibomian glands but is not itself the site."], ["External involves the glands of Zeis or Moll; internal involves a meibomian gland", "Correct — the deck's gland-by-gland distinction."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"}, {"topic": "Retinal interneurons", "io": "a — Compare and contrast the neurological anatomy of the eye", "slot": "etiology", "q": "Which three interneuron types modulate the retinal signal before it reaches the ganglion cells?", "opts": [["Bipolar, horizontal and amacrine cells", "Correct — the three the deck lists in the neural network."], ["Bipolar, Müller and astrocyte cells", "Müller cells and astrocytes are supporting glia, not the deck's modulating trio."], ["Horizontal, amacrine and Purkinje cells", "Purkinje cells are cerebellar."], ["Rod, cone and ganglion cells", "Those are the input and output, not the interneurons between them."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 28"}, {"topic": "Chalazion and hordeolum", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "differential", "q": "What is the mechanism and character of a chalazion?", "opts": [["A cholesterol-filled plaque along the nasal eyelid", "That is xanthelasma."], ["Redundant lid skin with prolapse of orbital fat", "That is dermatochalasis."], ["A chronic, non-tender, sterile granulomatous lipogranuloma of a blocked meibomian gland", "Correct — sterile and granulomatous is what separates it from an infection."], ["An acute, tender, focal abscess of a gland sitting at the eyelid margin", "That is a hordeolum."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"}, {"topic": "Angle-closure glaucoma", "io": "f — Describe the pathogenesis of glaucoma", "slot": "manifestation", "kfe": true, "q": "Which symptom set does the deck give for acute angle-closure glaucoma?", "opts": [["Flashing lights, a sudden shower of floaters, and a curtain falling across the field", "That is retinal detachment."], ["Gradual central distortion with a scotoma", "That is macular degeneration."], ["Severe eye pain, headache, halos around lights, cloudy cornea, a fixed mid-dilated pupil, and nausea and vomiting", "Correct — the deck's full acute picture."], ["Painless gradual bilateral blurring with glare at night", "That is cataract."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"}, {"topic": "Diabetic retinopathy", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "epidemiology", "q": "Diabetic retinopathy is the leading cause of new-onset blindness in which group?", "opts": [["Children under sixteen worldwide", "Not the deck's group."], ["Adults over fifty worldwide", "The deck's figure is specific to a narrower band and country."], ["United States adults aged twenty to seventy-four", "Correct — the deck's stated age band."], ["United States adults aged over seventy-five years", "That is the group for macular degeneration."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 37"}, {"topic": "Subconjunctival haemorrhage", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "prognosis", "q": "What is the natural course of a subconjunctival haemorrhage?", "opts": [["Recurrent by definition, so it requires long-term ophthalmology follow-up", "The deck does not describe it this way."], ["Benign, resolving over one to two weeks with bruise-like colour changes", "Correct — the deck's stated course."], ["Progressive, threatening vision within days", "The deck calls it benign."], ["Permanent, leaving a fibrovascular scar", "It resolves."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 19"}, {"topic": "Myopia", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "manifestation", "kfe": true, "q": "What can a myopic patient see well?", "opts": [["Objects far away", "Distance vision is the impaired one in myopia."], ["Neither near nor far without correction", "Near vision is preserved."], ["Only objects at the extreme periphery", "Myopia is a refractive, not a field, problem."], ["Objects up close", "Correct — myopia is nearsightedness, so near vision is the preserved one."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 8"}, {"topic": "Conjunctivitis", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "Which virus does the deck name as the viral cause of conjunctivitis?", "opts": [["Herpes simplex virus", "That deck entry is for epithelial keratitis."], ["Varicella zoster virus", "That appears under herpes zoster ophthalmicus."], ["Cytomegalovirus", "Not named by the deck for conjunctivitis."], ["Adenovirus", "Correct — the deck's named viral agent."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"}, {"topic": "Chambers and fluids", "io": "b — Describe the physiological processes of vision", "slot": "etiology", "q": "What does aqueous humour nourish?", "opts": [["The optic nerve head", "Not a structure the deck says aqueous nourishes."], ["The extraocular muscles", "Those have their own blood supply."], ["The avascular lens and cornea", "Correct — the deck's stated nutritive role for aqueous."], ["The retina and the choroid", "The choroid nourishes the retina; aqueous does not reach them."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 24"}, {"topic": "Presbyopia", "io": "e — Compare and contrast the conditions of the eye that are age related", "slot": "manifestation", "kfe": true, "q": "What is the functional consequence of presbyopia?", "opts": [["Inability to focus on near objects, so reading glasses or bifocals are needed", "Correct — the deck's stated consequence, and the everyday presentation."], ["Inability to focus on distant objects, so distance vision blurs first", "Near focus is what is lost."], ["Loss of peripheral vision", "Presbyopia does not affect the visual field."], ["Loss of colour discrimination", "Colour vision is not affected."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 9"}, {"topic": "Keratitis", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "risk factors", "q": "Which patient group does the deck flag as at particular risk in keratitis, and from which organism?", "opts": [["Immunosuppressed patients, from Candida", "Not what the deck highlights here."], ["Contact lens wearers, from Pseudomonas", "Correct — the deck names both the group and the organism."], ["Contact lens wearers, from Staphylococcus aureus", "The deck names Pseudomonas for contact lens keratitis."], ["Elderly patients, from Streptococcus pneumoniae", "Not the deck's flagged group or organism."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"}, {"topic": "Diabetic retinopathy", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "What drives the change from non-proliferative to proliferative diabetic retinopathy?", "opts": [["Bacterial collagenase digestion of the retinal surface", "That mechanism belongs to corneal ulceration."], ["Severe ischaemia upregulates vascular endothelial growth factor, producing neovascularisation", "Correct — ischaemia to growth factor to new vessels is the deck's step."], ["Rising intraocular pressure forces new vessels to form", "Pressure is not the driver in the deck."], ["Accumulation of lipofuscin and apolipoprotein beneath the pigment epithelium", "That is drusen formation in macular degeneration."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 37"}, {"topic": "Dry macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "etiology", "kfe": true, "q": "What are drusen composed of?", "opts": [["Fibrin and platelet aggregates", "Not what the deck describes."], ["Calcium and phosphate crystals", "Not the deck's composition."], ["Cholesterol esters, as in xanthelasma", "That is the lid lesion, with a different composition."], ["Lipofuscin and apolipoproteins", "Correct — the deck's stated composition."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"}, {"topic": "Visual field defects", "io": "j — Describe visual field deficits according to the area of pathology", "slot": "differential", "q": "A temporal lobe lesion affecting part of the optic radiation produces which defect?", "opts": [["Monocular blindness", "That requires a prechiasmal lesion."], ["Contralateral superior quadrantanopsia, or pie in the sky", "Correct — site D. Webster deferred this one to neurology, but the deck names it."], ["Contralateral inferior quadrantanopsia instead", "The temporal radiation carries the superior field."], ["Bitemporal hemianopsia", "That is a chiasmal lesion."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 34"}, {"topic": "Angle-closure glaucoma", "io": "f — Describe the pathogenesis of glaucoma", "slot": "etiology", "kfe": true, "q": "What is iris bombé?", "opts": [["Forward displacement of the iris against the cornea", "Correct — the deck uses the term for the forward bowing that closes the angle."], ["Backward displacement of the iris against the lens", "The deck describes forward displacement."], ["Atrophy of the iris stroma after an acute attack", "Not the meaning the deck gives."], ["Adhesion of the iris to the corneal endothelium", "That describes a synechia rather than iris bombé."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"}, {"topic": "Where the -itis is", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "How does panophthalmitis differ from endophthalmitis?", "opts": [["It spares the sclera", "It involves all layers, sclera included."], ["It involves all layers of the globe and may extend into orbital tissue", "Correct — the speaker notes draw exactly this distinction."], ["It involves only the vitreous", "That is narrower than endophthalmitis, not broader."], ["It is limited to the anterior segment and spares the vitreous", "The term means the opposite."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 5"}, {"topic": "Photoreceptors", "io": "b — Describe the physiological processes of vision", "slot": "etiology", "q": "Roughly how many rods are there, and what are they for?", "opts": [["About 120 million, for dim light and peripheral vision", "Correct — the deck's count and function for rods."], ["About 6 million, for dim light and peripheral vision", "Six million is the deck's figure for cones."], ["About 120 million, for colour vision and sharp acuity", "Colour and acuity belong to cones."], ["About 20 million, for colour vision in bright light", "Neither the count nor the function matches the deck."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 28"}, {"topic": "Cataract", "io": "g — Describe the pathogenesis of cataracts", "slot": "etiology", "kfe": true, "q": "By what mechanism does diabetes mellitus cause cataract?", "opts": [["Retinal ischaemia releases vascular endothelial growth factor into the lens", "That mechanism belongs to proliferative diabetic retinopathy."], ["Excess glucose is converted to sorbitol, causing osmotic swelling of the lens", "Correct — the deck's metabolic mechanism."], ["Excess glucose glycates the lens capsule until it ruptures", "The deck describes osmotic swelling via sorbitol, not capsular rupture."], ["Hyperglycaemia causes crystallin proteins to aggregate directly", "Aggregation is the senile mechanism; diabetes acts through sorbitol."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 22"}, {"topic": "Astigmatism", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "etiology", "kfe": true, "q": "What causes astigmatism?", "opts": [["Irregular corneal or lens curvature creating non-spherical focal points", "Correct — the deck's definition, and the reason a single focal point cannot form."], ["An axial globe that is too long", "That is myopia."], ["An axial globe that is too short", "That is hyperopia."], ["Loss of lens elasticity with age, so the lens can no longer change shape", "That is presbyopia."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 9"}, {"topic": "Scleritis", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "etiology", "q": "Which systemic diseases does the deck link strongly to scleritis?", "opts": [["Rheumatoid arthritis, granulomatosis with polyangiitis and systemic vasculitis", "Correct — the three the deck names."], ["Systemic lupus erythematosus, psoriatic arthritis and ankylosing spondylitis", "Those are the deck's anterior uveitis associations."], ["Diabetes mellitus and hypertension", "Those drive retinopathy rather than scleritis in this deck."], ["Sarcoidosis and choroidal melanoma", "Those are exudative retinal detachment causes here."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"}, {"topic": "Strabismus", "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye", "slot": "etiology", "q": "What are the two pathophysiological causes of strabismus the deck gives?", "opts": [["Raised intraocular pressure with progressive optic disc cupping and field loss", "That is glaucoma."], ["Lens opacification and loss of the red reflex", "That is cataract."], ["Extraocular muscle imbalance and cranial nerve palsy of the third, fourth or sixth nerves", "Correct — the deck's two mechanisms."], ["Retinal detachment and vitreous haemorrhage", "Neither causes misalignment in the deck."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 12"}, {"topic": "Cataract", "io": "g — Describe the pathogenesis of cataracts", "slot": "etiology", "kfe": true, "q": "What is the mechanism of the commonest, senile form of cataract?", "opts": [["Chronic ultraviolet-driven oxidative damage alone", "Ultraviolet exposure is listed under environmental causes, not as the senile mechanism."], ["Progressive insoluble aggregation and deposition of lens crystallin proteins", "Correct — the deck's molecular mechanism for the ageing cataract."], ["Osmotic swelling of the lens driven by sorbitol accumulating inside it", "That is the diabetic mechanism, which the deck lists separately."], ["Rupture of the lens capsule after blunt trauma", "That is the traumatic mechanism."]], "c": 1, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 22"}, {"topic": "Pinguecula and pterygium", "io": "c — Describe the molecular mechanisms of common ocular pathologies", "slot": "differential", "q": "What single feature separates a pterygium from a pinguecula?", "opts": [["The pterygium encroaches onto the cornea; the pinguecula does not", "Correct — Webster put it as crossing the limbus, and called this section important."], ["The pterygium is yellow; the pinguecula is triangular", "The colour and shape descriptions are the wrong way round and are not the separator."], ["The pterygium is painful; the pinguecula is painless", "Pain is not the discriminator the deck gives."], ["The pterygium is bilateral; the pinguecula is unilateral", "Laterality is not the separator."]], "c": 0, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"}, {"topic": "Dry macular degeneration", "io": "i — Describe the pathologic process of macular degeneration", "slot": "manifestation", "kfe": true, "q": "How does dry macular degeneration affect vision?", "opts": [["Rapid central vision loss over days", "That is the wet form."], ["Loss of peripheral vision first, with the central field spared until late", "That pattern belongs to open-angle glaucoma."], ["Sudden painless monocular blindness", "That suggests vascular occlusion or optic nerve pathology."], ["Slow gradual loss of central detail, with distortion and a scotoma", "Correct — metamorphopsia and scotoma, developing slowly."]], "c": 3, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"}, {"topic": "Presbyopia", "io": "e — Compare and contrast the conditions of the eye that are age related", "slot": "etiology", "kfe": true, "q": "What is the mechanism of presbyopia?", "opts": [["The cornea flattens progressively with age, reducing its refractive contribution", "The deck attributes it to the lens and ciliary muscle."], ["The retinal pigment epithelium thins with age", "That is relevant to macular degeneration, not presbyopia."], ["The lens loses elasticity and the ciliary muscle loses accommodation, through sclerosis", "Correct — the deck's mechanism, and the point Webster went back to add after saying he was finished."], ["The axial globe shortens with age", "Presbyopia is a lens and ciliary problem, not a globe-shape one."]], "c": 2, "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 9"}];
+const QUESTIONS = [
+  {
+    "topic": "Lacrimal disease",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "manifestation",
+    "q": "Which lid deformity goes with dacryoadenitis?",
+    "opts": [
+      [
+        "An S-shaped lid deformity",
+        "Correct — the characteristic sign of lacrimal gland inflammation."
+      ],
+      [
+        "An inward-turning lid margin",
+        "That is entropion."
+      ],
+      [
+        "An outward-turning lid margin",
+        "That is ectropion."
+      ],
+      [
+        "A drooping upper lid from levator weakness",
+        "That is ptosis."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 19"
+  },
+  {
+    "topic": "Physiology of vision",
+    "io": "b — Describe the physiological processes of vision",
+    "slot": "etiology",
+    "q": "Where do impulses travel after leaving the optic nerve?",
+    "opts": [
+      [
+        "To the frontal eye fields",
+        "Those govern gaze rather than receiving the visual image."
+      ],
+      [
+        "To the superior colliculus alone",
+        "The destination is the visual cortex."
+      ],
+      [
+        "To the occipital cortex",
+        "Correct — neural transmission runs to the occipital cortex."
+      ],
+      [
+        "To the temporal cortex",
+        "The temporal lobe carries part of the optic radiation but is not the destination."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"
+  },
+  {
+    "topic": "The three tunics",
+    "io": "a — Compare and contrast the neurological anatomy of the eye",
+    "slot": "etiology",
+    "q": "Which three structures make up the uvea?",
+    "opts": [
+      [
+        "The choroid, the retina and the sclera",
+        "The retina is the inner tunic and the sclera the outer."
+      ],
+      [
+        "The ciliary body, the lens and the zonules",
+        "The lens and zonules are not part of the uvea."
+      ],
+      [
+        "The iris, the cornea and the conjunctiva",
+        "The cornea is fibrous and the conjunctiva is a mucosal covering."
+      ],
+      [
+        "The choroid, the ciliary body and the iris",
+        "Correct — the vascular middle tunic in full."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 7"
+  },
+  {
+    "topic": "Astigmatism",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What can astigmatism combine with, and what happens when it does?",
+    "opts": [
+      [
+        "Only presbyopia, and only after the age of forty",
+        "Astigmatism is not restricted to combining with presbyopia."
+      ],
+      [
+        "Only glaucoma, through a sustained rise in intraocular pressure over years",
+        "There is no such relationship."
+      ],
+      [
+        "Nothing — it always occurs in isolation",
+        "It does combine with the other refractive errors."
+      ],
+      [
+        "Myopia or hyperopia, adding a focal-length error to the axis error",
+        "Correct — Webster described the two problems stacking."
+      ]
+    ],
+    "c": 3,
+    "cite": "Lecture recording, 26 August 2026"
+  },
+  {
+    "topic": "Retinal detachment",
+    "io": "h — Compare and contrast the pathogenesis of retinal detachment",
+    "slot": "risk factors",
+    "kfe": true,
+    "q": "What are the risk factors for rhegmatogenous detachment?",
+    "opts": [
+      [
+        "Chronic corticosteroid use, Down syndrome and ultraviolet light exposure",
+        "Those are cataract risks."
+      ],
+      [
+        "Posterior vitreous detachment, age, severe myopia, trauma and lattice degeneration",
+        "Correct — those five."
+      ],
+      [
+        "Diabetes, prior vitrectomy and retinal trauma surgery",
+        "Those are tractional associations."
+      ],
+      [
+        "Sarcoidosis, malignant hypertension and melanoma",
+        "Those are exudative causes."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 36"
+  },
+  {
+    "topic": "Chalazion and hordeolum",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "Which glands are involved in an external as opposed to an internal hordeolum?",
+    "opts": [
+      [
+        "External involves a meibomian gland; internal involves the glands of Zeis or Moll",
+        "This reverses the assignment."
+      ],
+      [
+        "Both involve the lacrimal gland",
+        "The lacrimal gland is not involved in hordeolum."
+      ],
+      [
+        "Both involve the tarsal plate itself rather than any gland",
+        "The tarsal plate holds the meibomian glands but is not itself the site."
+      ],
+      [
+        "External involves the glands of Zeis or Moll; internal involves a meibomian gland",
+        "Correct — gland by gland, that is the distinction."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"
+  },
+  {
+    "topic": "Retinal interneurons",
+    "io": "a — Compare and contrast the neurological anatomy of the eye",
+    "slot": "etiology",
+    "q": "Which three interneuron types modulate the retinal signal before it reaches the ganglion cells?",
+    "opts": [
+      [
+        "Bipolar, horizontal and amacrine cells",
+        "Correct — those three make up the modulating network."
+      ],
+      [
+        "Bipolar, Müller and astrocyte cells",
+        "Müller cells and astrocytes are supporting glia, not the modulating trio."
+      ],
+      [
+        "Horizontal, amacrine and Purkinje cells",
+        "Purkinje cells are cerebellar."
+      ],
+      [
+        "Rod, cone and ganglion cells",
+        "Those are the input and output, not the interneurons between them."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 28"
+  },
+  {
+    "topic": "Chalazion and hordeolum",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "differential",
+    "q": "What is the mechanism and character of a chalazion?",
+    "opts": [
+      [
+        "A cholesterol-filled plaque along the nasal eyelid",
+        "That is xanthelasma."
+      ],
+      [
+        "Redundant lid skin with prolapse of orbital fat",
+        "That is dermatochalasis."
+      ],
+      [
+        "A chronic, non-tender, sterile granulomatous lipogranuloma of a blocked meibomian gland",
+        "Correct — sterile and granulomatous is what separates it from an infection."
+      ],
+      [
+        "An acute, tender, focal abscess of a gland sitting at the eyelid margin",
+        "That is a hordeolum."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"
+  },
+  {
+    "topic": "Angle-closure glaucoma",
+    "io": "f — Describe the pathogenesis of glaucoma",
+    "slot": "manifestation",
+    "kfe": true,
+    "q": "What is the symptom set of acute angle-closure glaucoma?",
+    "opts": [
+      [
+        "Flashing lights, a sudden shower of floaters, and a curtain falling across the field",
+        "That is retinal detachment."
+      ],
+      [
+        "Gradual central distortion with a scotoma",
+        "That is macular degeneration."
+      ],
+      [
+        "Severe eye pain, headache, halos around lights, cloudy cornea, a fixed mid-dilated pupil, and nausea and vomiting",
+        "Correct — the full acute picture."
+      ],
+      [
+        "Painless gradual bilateral blurring with glare at night",
+        "That is cataract."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"
+  },
+  {
+    "topic": "Diabetic retinopathy",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "epidemiology",
+    "q": "Diabetic retinopathy is the leading cause of new-onset blindness in which group?",
+    "opts": [
+      [
+        "Children under sixteen worldwide",
+        "Not the group affected."
+      ],
+      [
+        "Adults over fifty worldwide",
+        "The figure is specific to a narrower band and country."
+      ],
+      [
+        "United States adults aged twenty to seventy-four",
+        "Correct — that is the age band."
+      ],
+      [
+        "United States adults aged over seventy-five years",
+        "That is the group for macular degeneration."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 37"
+  },
+  {
+    "topic": "Subconjunctival haemorrhage",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "prognosis",
+    "q": "What is the natural course of a subconjunctival haemorrhage?",
+    "opts": [
+      [
+        "Recurrent by definition, so it requires long-term ophthalmology follow-up",
+        "It is not recurrent by definition."
+      ],
+      [
+        "Benign, resolving over one to two weeks with bruise-like colour changes",
+        "Correct — benign, resolving over one to two weeks."
+      ],
+      [
+        "Progressive, threatening vision within days",
+        "It is benign, not progressive."
+      ],
+      [
+        "Permanent, leaving a fibrovascular scar",
+        "It resolves."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 19"
+  },
+  {
+    "topic": "Myopia",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "manifestation",
+    "kfe": true,
+    "q": "What can a myopic patient see well?",
+    "opts": [
+      [
+        "Objects far away",
+        "Distance vision is the impaired one in myopia."
+      ],
+      [
+        "Neither near nor far without correction",
+        "Near vision is preserved."
+      ],
+      [
+        "Only objects at the extreme periphery",
+        "Myopia is a refractive, not a field, problem."
+      ],
+      [
+        "Objects up close",
+        "Correct — myopia is nearsightedness, so near vision is the preserved one."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 8"
+  },
+  {
+    "topic": "Conjunctivitis",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "Which virus causes conjunctivitis?",
+    "opts": [
+      [
+        "Herpes simplex virus",
+        "That deck entry is for epithelial keratitis."
+      ],
+      [
+        "Varicella zoster virus",
+        "That appears under herpes zoster ophthalmicus."
+      ],
+      [
+        "Cytomegalovirus",
+        "Cytomegalovirus does not cause conjunctivitis."
+      ],
+      [
+        "Adenovirus",
+        "Correct — adenovirus."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"
+  },
+  {
+    "topic": "Chambers and fluids",
+    "io": "b — Describe the physiological processes of vision",
+    "slot": "etiology",
+    "q": "What does aqueous humour nourish?",
+    "opts": [
+      [
+        "The optic nerve head",
+        "Aqueous does not nourish the optic nerve head."
+      ],
+      [
+        "The extraocular muscles",
+        "Those have their own blood supply."
+      ],
+      [
+        "The avascular lens and cornea",
+        "Correct — the avascular lens and cornea."
+      ],
+      [
+        "The retina and the choroid",
+        "The choroid nourishes the retina; aqueous does not reach them."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 24"
+  },
+  {
+    "topic": "Presbyopia",
+    "io": "e — Compare and contrast the conditions of the eye that are age related",
+    "slot": "manifestation",
+    "kfe": true,
+    "q": "What is the functional consequence of presbyopia?",
+    "opts": [
+      [
+        "Inability to focus on near objects, so reading glasses or bifocals are needed",
+        "Correct — and that is the everyday presentation."
+      ],
+      [
+        "Inability to focus on distant objects, so distance vision blurs first",
+        "Near focus is what is lost."
+      ],
+      [
+        "Loss of peripheral vision",
+        "Presbyopia does not affect the visual field."
+      ],
+      [
+        "Loss of colour discrimination",
+        "Colour vision is not affected."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 9"
+  },
+  {
+    "topic": "Keratitis",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "risk factors",
+    "q": "Which patient group is at particular risk in keratitis, and from which organism?",
+    "opts": [
+      [
+        "Immunosuppressed patients, from Candida",
+        "Not the group at issue here."
+      ],
+      [
+        "Contact lens wearers, from Pseudomonas",
+        "Correct — contact lens wearers, from Pseudomonas."
+      ],
+      [
+        "Contact lens wearers, from Staphylococcus aureus",
+        "It is Pseudomonas in contact lens keratitis."
+      ],
+      [
+        "Elderly patients, from Streptococcus pneumoniae",
+        "Not the group or the organism."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"
+  },
+  {
+    "topic": "Diabetic retinopathy",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "What drives the change from non-proliferative to proliferative diabetic retinopathy?",
+    "opts": [
+      [
+        "Bacterial collagenase digestion of the retinal surface",
+        "That mechanism belongs to corneal ulceration."
+      ],
+      [
+        "Severe ischaemia upregulates vascular endothelial growth factor, producing neovascularisation",
+        "Correct — ischaemia to growth factor to new vessels."
+      ],
+      [
+        "Rising intraocular pressure forces new vessels to form",
+        "Pressure is not the driver."
+      ],
+      [
+        "Accumulation of lipofuscin and apolipoprotein beneath the pigment epithelium",
+        "That is drusen formation in macular degeneration."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 37"
+  },
+  {
+    "topic": "Dry macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What are drusen composed of?",
+    "opts": [
+      [
+        "Fibrin and platelet aggregates",
+        "Not what drusen contain."
+      ],
+      [
+        "Calcium and phosphate crystals",
+        "Not the composition."
+      ],
+      [
+        "Cholesterol esters, as in xanthelasma",
+        "That is the lid lesion, with a different composition."
+      ],
+      [
+        "Lipofuscin and apolipoproteins",
+        "Correct — lipofuscin and apolipoproteins."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"
+  },
+  {
+    "topic": "Visual field defects",
+    "io": "j — Describe visual field deficits according to the area of pathology",
+    "slot": "differential",
+    "q": "A temporal lobe lesion affecting part of the optic radiation produces which defect?",
+    "opts": [
+      [
+        "Monocular blindness",
+        "That requires a prechiasmal lesion."
+      ],
+      [
+        "Contralateral superior quadrantanopsia, or pie in the sky",
+        "Correct — site D, in the temporal loop of the optic radiation."
+      ],
+      [
+        "Contralateral inferior quadrantanopsia instead",
+        "The temporal radiation carries the superior field."
+      ],
+      [
+        "Bitemporal hemianopsia",
+        "That is a chiasmal lesion."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 34"
+  },
+  {
+    "topic": "Angle-closure glaucoma",
+    "io": "f — Describe the pathogenesis of glaucoma",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is iris bombé?",
+    "opts": [
+      [
+        "Forward displacement of the iris against the cornea",
+        "Correct — forward bowing of the iris closes the angle."
+      ],
+      [
+        "Backward displacement of the iris against the lens",
+        "The displacement is forward."
+      ],
+      [
+        "Atrophy of the iris stroma after an acute attack",
+        "That is not what the term means."
+      ],
+      [
+        "Adhesion of the iris to the corneal endothelium",
+        "That describes a synechia rather than iris bombé."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 25"
+  },
+  {
+    "topic": "Where the -itis is",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "How does panophthalmitis differ from endophthalmitis?",
+    "opts": [
+      [
+        "It spares the sclera",
+        "It involves all layers, sclera included."
+      ],
+      [
+        "It involves all layers of the globe and may extend into orbital tissue",
+        "Correct — that is exactly the distinction."
+      ],
+      [
+        "It involves only the vitreous",
+        "That is narrower than endophthalmitis, not broader."
+      ],
+      [
+        "It is limited to the anterior segment and spares the vitreous",
+        "The term means the opposite."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 5"
+  },
+  {
+    "topic": "Photoreceptors",
+    "io": "b — Describe the physiological processes of vision",
+    "slot": "etiology",
+    "q": "Roughly how many rods are there, and what are they for?",
+    "opts": [
+      [
+        "About 120 million, for dim light and peripheral vision",
+        "Correct — that is the count and the function for rods."
+      ],
+      [
+        "About 6 million, for dim light and peripheral vision",
+        "Six million is the figure for cones."
+      ],
+      [
+        "About 120 million, for colour vision and sharp acuity",
+        "Colour and acuity belong to cones."
+      ],
+      [
+        "About 20 million, for colour vision in bright light",
+        "Neither the count nor the function is right."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 28"
+  },
+  {
+    "topic": "Cataract",
+    "io": "g — Describe the pathogenesis of cataracts",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "By what mechanism does diabetes mellitus cause cataract?",
+    "opts": [
+      [
+        "Retinal ischaemia releases vascular endothelial growth factor into the lens",
+        "That mechanism belongs to proliferative diabetic retinopathy."
+      ],
+      [
+        "Excess glucose is converted to sorbitol, causing osmotic swelling of the lens",
+        "Correct — the metabolic mechanism."
+      ],
+      [
+        "Excess glucose glycates the lens capsule until it ruptures",
+        "It is osmotic swelling via sorbitol, not capsular rupture."
+      ],
+      [
+        "Hyperglycaemia causes crystallin proteins to aggregate directly",
+        "Aggregation is the senile mechanism; diabetes acts through sorbitol."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 22"
+  },
+  {
+    "topic": "Astigmatism",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What causes astigmatism?",
+    "opts": [
+      [
+        "Irregular corneal or lens curvature creating non-spherical focal points",
+        "Correct — which is why a single focal point cannot form."
+      ],
+      [
+        "An axial globe that is too long",
+        "That is myopia."
+      ],
+      [
+        "An axial globe that is too short",
+        "That is hyperopia."
+      ],
+      [
+        "Loss of lens elasticity with age, so the lens can no longer change shape",
+        "That is presbyopia."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 9"
+  },
+  {
+    "topic": "Scleritis",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "etiology",
+    "q": "Which systemic diseases are strongly linked to scleritis?",
+    "opts": [
+      [
+        "Rheumatoid arthritis, granulomatosis with polyangiitis and systemic vasculitis",
+        "Correct — those three."
+      ],
+      [
+        "Systemic lupus erythematosus, psoriatic arthritis and ankylosing spondylitis",
+        "Those are the anterior uveitis associations."
+      ],
+      [
+        "Diabetes mellitus and hypertension",
+        "Those drive retinopathy rather than scleritis."
+      ],
+      [
+        "Sarcoidosis and choroidal melanoma",
+        "Those are exudative retinal detachment causes here."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 14"
+  },
+  {
+    "topic": "Strabismus",
+    "io": "d — Compare and contrast the conditions caused by abnormal shapes of the eye",
+    "slot": "etiology",
+    "q": "What are the two pathophysiological causes of strabismus?",
+    "opts": [
+      [
+        "Raised intraocular pressure with progressive optic disc cupping and field loss",
+        "That is glaucoma."
+      ],
+      [
+        "Lens opacification and loss of the red reflex",
+        "That is cataract."
+      ],
+      [
+        "Extraocular muscle imbalance and cranial nerve palsy of the third, fourth or sixth nerves",
+        "Correct — those two mechanisms."
+      ],
+      [
+        "Retinal detachment and vitreous haemorrhage",
+        "Neither causes misalignment."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 12"
+  },
+  {
+    "topic": "Cataract",
+    "io": "g — Describe the pathogenesis of cataracts",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is the mechanism of the commonest, senile form of cataract?",
+    "opts": [
+      [
+        "Chronic ultraviolet-driven oxidative damage alone",
+        "Ultraviolet exposure is listed under environmental causes, not as the senile mechanism."
+      ],
+      [
+        "Progressive insoluble aggregation and deposition of lens crystallin proteins",
+        "Correct — the molecular mechanism of the ageing cataract."
+      ],
+      [
+        "Osmotic swelling of the lens driven by sorbitol accumulating inside it",
+        "That is the diabetic mechanism, which is separate."
+      ],
+      [
+        "Rupture of the lens capsule after blunt trauma",
+        "That is the traumatic mechanism."
+      ]
+    ],
+    "c": 1,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 22"
+  },
+  {
+    "topic": "Pinguecula and pterygium",
+    "io": "c — Describe the molecular mechanisms of common ocular pathologies",
+    "slot": "differential",
+    "q": "What single feature separates a pterygium from a pinguecula?",
+    "opts": [
+      [
+        "The pterygium encroaches onto the cornea; the pinguecula does not",
+        "Correct — Webster put it as crossing the limbus, and called this section important."
+      ],
+      [
+        "The pterygium is yellow; the pinguecula is triangular",
+        "The colour and shape descriptions are the wrong way round and are not the separator."
+      ],
+      [
+        "The pterygium is painful; the pinguecula is painless",
+        "Pain is not the discriminator."
+      ],
+      [
+        "The pterygium is bilateral; the pinguecula is unilateral",
+        "Laterality is not the separator."
+      ]
+    ],
+    "c": 0,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 17"
+  },
+  {
+    "topic": "Dry macular degeneration",
+    "io": "i — Describe the pathologic process of macular degeneration",
+    "slot": "manifestation",
+    "kfe": true,
+    "q": "How does dry macular degeneration affect vision?",
+    "opts": [
+      [
+        "Rapid central vision loss over days",
+        "That is the wet form."
+      ],
+      [
+        "Loss of peripheral vision first, with the central field spared until late",
+        "That pattern belongs to open-angle glaucoma."
+      ],
+      [
+        "Sudden painless monocular blindness",
+        "That suggests vascular occlusion or optic nerve pathology."
+      ],
+      [
+        "Slow gradual loss of central detail, with distortion and a scotoma",
+        "Correct — metamorphopsia and scotoma, developing slowly."
+      ]
+    ],
+    "c": 3,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 39"
+  },
+  {
+    "topic": "Presbyopia",
+    "io": "e — Compare and contrast the conditions of the eye that are age related",
+    "slot": "etiology",
+    "kfe": true,
+    "q": "What is the mechanism of presbyopia?",
+    "opts": [
+      [
+        "The cornea flattens progressively with age, reducing its refractive contribution",
+        "It is the lens and ciliary muscle, not the cornea."
+      ],
+      [
+        "The retinal pigment epithelium thins with age",
+        "That is relevant to macular degeneration, not presbyopia."
+      ],
+      [
+        "The lens loses elasticity and the ciliary muscle loses accommodation, through sclerosis",
+        "Correct — the lens loses elasticity and the ciliary muscle weakens."
+      ],
+      [
+        "The axial globe shortens with age",
+        "Presbyopia is a lens and ciliary problem, not a globe-shape one."
+      ]
+    ],
+    "c": 2,
+    "cite": "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx, Slide 9"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;

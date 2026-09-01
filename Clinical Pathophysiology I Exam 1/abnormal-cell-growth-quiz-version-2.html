@@ -303,7 +303,758 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Cancer", "io": "c — Describe neoplastic abnormalities of cell growth", "q": "What is cancer, and where does the word come from?", "opts": [["A malignant neoplasm; from the Latin for crab", "Correct — so named because it adheres to any tissue it seizes upon and reaches out with claws, invading surrounding tissue."], ["Any neoplasm at all; from the Latin for growth, because the mass enlarges without a stimulus", "Cancer is specifically the malignant subset, and the derivation is the crab."], ["A neoplasm that has metastasized; from the Greek for wandering, because cells migrate", "Metastasis is a feature many cancers develop, not the definition of the word."], ["A precancerous lesion; from the Latin for disorder, because architecture is lost", "Loss of architecture describes dysplasia, which is not cancer."]], "c": 0, "cite": "Abnormal Cell Growth for posting.pptx, Slide 11"}, {"topic": "Heredity", "io": "j — Compare and contrast the theories of heredity and carcinogenesis", "q": "Which inherited tumour suppressor alteration is associated with malignant melanoma?", "opts": [["Adenomatous polyposis coli", "That is associated with familial adenomatous polyposis."], ["BRCA-1", "That is a deoxyribonucleic acid repair gene, associated with breast cancer."], ["p16, also called INK4a", "Correct — one of five hereditary examples the deck lists."], ["Retinoblastoma protein", "That is associated with retinoblastoma and osteosarcoma."]], "c": 2, "cite": "Abnormal Cell Growth for posting.pptx, Slide 39"}, {"topic": "Differentiation", "io": "k — Describe the histological grading of cancer", "q": "What does the degree of differentiation of a neoplasm measure?", "opts": [["How many of its cells are in the proliferative pool at any moment", "The proliferative fraction is a matter of stem cell kinetics."], ["How closely it resembles comparable normal cells in appearance and function", "Correct — this is the basis of histological grading."], ["How far it has spread from the primary site within the patient", "That is staging, which is a different question from grading."], ["How rapidly the tumour mass is enlarging over time", "Growth rate is a feature of malignancy, but it is not what differentiation measures."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 12"}, {"topic": "Benign vs malignant", "io": "c — Describe neoplastic abnormalities of cell growth", "q": "What does the deck say about differentiation in malignant tumours?", "opts": [["Always poorly differentiated", "The deck describes a range rather than a single grade."], ["Always anaplastic", "Anaplasia is the extreme end, not the rule."], ["Always well differentiated", "That is what the deck says of benign tumours."], ["Various degrees of differentiation", "Correct — malignancy does not mean uniformly poor differentiation. Benign tumours are usually well differentiated."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 13"}, {"topic": "Epstein Barr virus", "io": "i — Describe microorganisms' role in carcinogenesis", "q": "Which cancers is Epstein Barr virus associated with, and which cells does it infect?", "opts": [["Gastric adenocarcinoma and mucosa-associated lymphoid tissue lymphoma; it colonizes the stomach", "That is Helicobacter pylori."], ["B cell lymphomas and nasopharyngeal carcinoma; it infects B lymphocytes", "Correct — it immortalizes them, which is the key step, and it also infects epithelial cells of the oropharynx."], ["Hepatocellular carcinoma; it infects hepatocytes and causes chronic injury with regeneration", "That is hepatitis B and hepatitis C."], ["Cervical carcinoma; it infects cervical epithelium and integrates its genome", "That is human papillomavirus."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 33"}, {"topic": "Heredity", "io": "j — Compare and contrast the theories of heredity and carcinogenesis", "q": "Which tumours are associated with an inherited alteration of the retinoblastoma protein?", "opts": [["Neurofibromatosis types 1 and 2, with tumours of the central and peripheral nervous system", "Those follow from NF-1 and NF-2."], ["Malignant melanoma", "That follows from p16, also called INK4a."], ["Familial adenomatous polyposis and colon cancer", "That follows from adenomatous polyposis coli."], ["Retinoblastoma, a rare childhood tumour of the eye, and osteosarcoma", "Correct — the same tumour suppressor, two very different tumours."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 39"}, {"topic": "Metaplasia", "io": "b — Describe non-neoplastic abnormalities of cell growth", "q": "Which clinical example did Professor Rappa give for metaplasia, and what changes into what?", "opts": [["Barrett's oesophagus — squamous becomes columnar under chronic acid reflux", "Correct — the lower oesophagus is squamous and cannot resist acid, so chronic reflux drives the change."], ["Barrett's oesophagus — columnar becomes squamous under chronic acid reflux", "The direction is reversed; the oesophagus starts squamous."], ["Cervical dysplasia — squamous becomes columnar under human papillomavirus infection", "Cervical dysplasia was his DYSPLASIA example, and dysplasia is not a change of cell type."], ["Endometrial hyperplasia — glandular becomes squamous under excess oestrogen", "He used endometrial hyperplasia to illustrate hyperplasia, not metaplasia."]], "c": 0, "cite": "2026-08-20 lecture recording, 7:45"}, {"topic": "Differentiation", "io": "k — Describe the histological grading of cancer", "q": "What does falling differentiation mean for the behaviour of a tumour, according to Professor Rappa?", "opts": [["It becomes more aggressive", "Correct — an anaplastic carcinoma is very aggressive compared with a well differentiated one. The deck gives grading as a scale of resemblance and stops there; he attaches the prognosis to it."], ["It becomes less aggressive, because poorly differentiated cells divide more slowly", "He said the opposite, and poorly differentiated cells are not slower."], ["Aggressiveness is unrelated to differentiation and depends only on stage", "Staging and grading are separate, but he explicitly linked grade to aggressiveness."], ["It becomes more aggressive only once the basement membrane has been breached", "Invasion is a separate matter from the grade."]], "c": 0, "cite": "2026-08-20 lecture recording, 24:08"}, {"topic": "Human papillomavirus", "io": "i — Describe microorganisms' role in carcinogenesis", "q": "Besides cervical cancer, which malignancies is high-risk human papillomavirus associated with?", "opts": [["Retinoblastoma and osteosarcoma", "Those are associated with the retinoblastoma protein under heredity."], ["Anal, vulvar, vaginal, penile and oropharyngeal cancer", "Correct — all five are listed alongside cervical cancer, the oropharyngeal one being a squamous cell carcinoma."], ["Hepatocellular carcinoma and gastric adenocarcinoma", "Those belong to the hepatitis viruses and Helicobacter pylori respectively."], ["Nasopharyngeal carcinoma and certain B cell lymphomas", "Those belong to Epstein Barr virus."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 37"}, {"topic": "Heredity", "io": "j — Compare and contrast the theories of heredity and carcinogenesis", "q": "Which inherited defect underlies xeroderma pigmentosum, and what is the consequence?", "opts": [["Defective apoptosis genes, so damaged cells cannot self destruct; increased risk of lymphoma", "Apoptosis genes are a category, but this is not the disease attached to them here."], ["Defective protooncogenes, so growth signalling is lost; increased risk of aplasia", "Loss of protooncogene function would not produce cancer this way."], ["Defective repair genes, so ultraviolet B damage cannot be repaired", "Correct — the consequence is an increased risk of skin cancer in sun-exposed areas. It is a repair-gene disease rather than a tumour suppressor one."], ["Defective tumour suppressor genes, so cell growth cannot be inhibited; increased risk of nervous system tumours", "That describes the neurofibromatosis genes."]], "c": 2, "cite": "Abnormal Cell Growth for posting.pptx, Slide 40"}, {"topic": "Metaplasia", "io": "b — Describe non-neoplastic abnormalities of cell growth", "q": "What is metaplasia, and what provokes it?", "opts": [["Enlargement of an organ because its individual cells enlarge under increased demand", "That is hypertrophy."], ["Autonomous growth of an abnormal mass of tissue derived from a single genetically altered cell", "That is a neoplasm."], ["Change of one cell type to another under chronic irritation or injury", "Correct — it involves a change in differentiation. The example on the slide is bladder transitional epithelium becoming squamous."], ["Disordered growth of epithelial cells with variation in size and shape and loss of architectural orientation", "That is dysplasia, which is the next step along and is precancerous."]], "c": 2, "cite": "Abnormal Cell Growth for posting.pptx, Slide 4"}, {"topic": "Hypertrophy", "io": "b — Describe non-neoplastic abnormalities of cell growth", "q": "How did Professor Rappa explain skeletal muscle hypertrophy?", "opts": [["Striated muscle cells do not divide, so each fibre gets larger instead", "Correct — protein and resistance build more actin and myosin within the existing cells. Bigger fibres, not more fibres, which is the whole distinction from hyperplasia."], ["Resistance training recruits satellite cells, so the number of muscle fibres increases", "An increase in cell number would be hyperplasia; he was explicit that these cells do not divide."], ["Protein intake causes fluid retention within the muscle, so the organ appears larger", "Fluid was not the mechanism he described."], ["Resistance training converts slow fibres to fast fibres, changing the tissue type", "A change of cell type would be metaplasia."]], "c": 0, "cite": "2026-08-20 lecture recording, 2:54"}, {"topic": "Malignant classification", "io": "f — Compare and contrast the different types of malignant tumors according to origin", "q": "What is a malignant tumour of mesenchymal origin called?", "opts": [["A papilloma", "A papilloma is benign and epithelial."], ["A sarcoma", "Correct — mesenchymal means supportive tissue, and the malignant form is the sarcoma."], ["A carcinoma", "Carcinoma is the malignant tumour of epithelial origin."], ["An adenoma", "An adenoma is benign and epithelial."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 18"}, {"topic": "Oncogenes", "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis", "q": "What happens when a protooncogene mutates?", "opts": [["It becomes a tumour suppressor gene, which then inhibits cell growth excessively", "Tumour suppressor genes are a separate category, and they are lost rather than gained."], ["It becomes a repair gene, which then introduces errors into the genome", "Repair genes are a separate category, and mutation disables them."], ["It becomes silent, so the cell loses its ability to grow at all", "The result is uncontrolled growth, not loss of growth."], ["It becomes an oncogene, which encodes oncoproteins that promote continued uncontrolled growth", "Correct — the same machinery, with the brake removed."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 29"}, {"topic": "Carcinogenesis", "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis", "q": "Where does the gene damage in carcinogenesis come from?", "opts": [["It arises only from errors during deoxyribonucleic acid replication", "Replication error is not among the sources the deck names."], ["Inherited, and/or acquired from chemicals, radiation or microbes", "Correct — the named sources are chemical carcinogens, ultraviolet and ionizing radiation, and microbial organisms: viruses and one bacterium."], ["It is always inherited through the germline and never acquired during life", "The deck lists several acquired sources alongside inheritance."], ["It is always acquired during life and never inherited", "Inheritance is explicitly one of the sources."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 28"}, {"topic": "Haematogenous spread", "io": "d — Compare and contrast the routes of tumor spread", "q": "What are the steps of haematogenous spread, in order?", "opts": [["Cells separate and degrade intercellular tissue with enzymes, invade the vessel, then travel", "Correct — multiple tumour fragments travel to other organs, so one organ may end up with several metastatic nodules."], ["Tumour cells adhere more tightly to each other; the mass compresses a vessel; a single fragment travels to one other organ", "Cells separate rather than adhere, and multiple fragments travel."], ["Tumour cells enter lymphatic vessels at the margin and follow the natural route of drainage", "That is lymphatic spread."], ["Tumour invades through an organ surface into a body cavity and settles on the serosal membranes", "That is seeding of body cavities and surfaces."]], "c": 0, "cite": "Abnormal Cell Growth for posting.pptx, Slide 14"}, {"topic": "Dysplasia", "io": "a — Describe the molecular mechanisms of abnormal cell growth and differentiation", "q": "On the deck's dysplasia diagram, what separates severe dysplasia from invasive cancer?", "opts": [["The basement membrane", "Correct — carcinoma in situ sits above it and invasive cancer has broken through. The diagram runs normal, mild, moderate, severe, carcinoma in situ, then invasive cancer."], ["The degree of nuclear enlargement, which is greater in invasive cancer", "Nuclear change is part of the grading, but the diagram turns on the basement membrane."], ["The presence of mitoses, which appear only once invasion has occurred", "Mitoses appear well before invasion on this spectrum."], ["Involvement of the regional lymph nodes", "Nodal involvement is a staging question, and comes after invasion."]], "c": 0, "cite": "Abnormal Cell Growth for posting.pptx, Slide 8"}, {"topic": "Chemical carcinogens", "io": "h — Describe the steps of chemical carcinogenesis", "q": "Which chemical carcinogens are classically emphasised in occupational bladder cancer?", "opts": [["Polycyclic aromatic hydrocarbons", "Those are the tobacco combustion products, which also cause bladder cancer."], ["Alkylating agents", "Not among the named agents in this deck."], ["Asbestos fibres", "Not among the named agents in this deck."], ["Aromatic amines", "Correct — polycyclic aromatic hydrocarbons come from tobacco combustion."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 31"}, {"topic": "Helicobacter pylori", "io": "i — Describe microorganisms' role in carcinogenesis", "q": "What kind of organism is Helicobacter pylori, and what does it cause in the stomach?", "opts": [["A virus that integrates its genome into gastric epithelial cells", "The viral mechanisms belong to human papillomavirus, Epstein Barr and the hepatitis viruses."], ["A fungus that colonizes the gastric mucosa in immunosuppressed patients", "No fungal cause is described."], ["A Gram-negative bacterium causing chronic gastritis", "Correct — it colonizes the stomach and may lead to atrophic gastritis and intestinal metaplasia. It is the one bacterium among the microbial causes in this deck."], ["A Gram-positive bacterium that colonizes the stomach, causing acute ulceration and perforation", "It is Gram-negative, and the process described is chronic rather than acute."]], "c": 2, "cite": "Abnormal Cell Growth for posting.pptx, Slide 35"}, {"topic": "Differentiation", "io": "k — Describe the histological grading of cancer", "q": "What does anaplasia mean?", "opts": [["Close resemblance to the comparable normal cell", "That is well differentiated, the opposite end of the scale."], ["Failure of a primordial tissue to develop into a mature organ", "That is aplasia, which is a non-neoplastic developmental abnormality."], ["Disordered growth of epithelium with retained architecture", "That is closer to dysplasia, and dysplasia does lose architectural orientation."], ["Lack of differentiation", "Correct — the extreme of the grading scale, with no resemblance to the normal cell."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 12"}, {"topic": "Promotion", "io": "h — Describe the steps of chemical carcinogenesis", "q": "What do promoters do?", "opts": [["They cause the permanent deoxyribonucleic acid damage that starts the process", "That is initiation."], ["They repair the deoxyribonucleic acid damage caused by initiators", "Promoters act in the opposite direction."], ["They cause tumour cells to detach and enter the circulation", "That is part of the invasion and metastasis cascade."], ["They drive proliferation of cells already damaged by an initiator", "Correct — sustained or enhanced proliferation raises the risk of successive mutations leading to cancer."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 31"}, {"topic": "Benign classification", "io": "e — Compare and contrast the different types of benign tumors according to origin", "q": "What are mesenchymal tumours derived from, and what tissues does that include?", "opts": [["Neural tissue: peripheral nerves, nerve sheaths and the central nervous system", "Neural origin is not what mesenchymal means in this classification."], ["Supportive tissue: connective tissue, adipose tissue, cartilage, smooth and striated muscle, and bone", "Correct — the same origin gives sarcomas when the tumour is malignant."], ["Epithelial surfaces: skin, gastrointestinal lining, respiratory lining and glandular ducts", "That is epithelial origin, which gives adenomas and papillomas when benign."], ["Haematopoietic tissue: bone marrow, lymph nodes, spleen and thymus", "Haematopoietic tumours are not the category described here."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 16"}, {"topic": "Initiation", "io": "h — Describe the steps of chemical carcinogenesis", "q": "What do initiators do in chemical carcinogenesis?", "opts": [["They repair damage already caused by another carcinogen", "Initiators cause damage; they do not repair it."], ["They trigger apoptosis in cells with damaged genomes", "Apoptosis is the protective mechanism initiators help defeat."], ["They cause permanent damage to deoxyribonucleic acid", "Correct — permanence is what distinguishes initiation from promotion."], ["They cause sustained or enhanced proliferation of already-damaged cells", "That is promotion, the second step."]], "c": 2, "cite": "Abnormal Cell Growth for posting.pptx, Slide 31"}, {"topic": "Metastatic pattern", "io": "d — Compare and contrast the routes of tumor spread", "q": "Is metastatic spread random?", "opts": [["No — it is determined by blood flow, receptors, and genetically determined fitness", "Correct — the slide makes this the headline."], ["Yes — circulating cells lodge in whichever capillary bed they reach first", "The deck explicitly rejects this."], ["Yes for haematogenous spread, no for lymphatic spread", "The statement in the deck is not split this way."], ["No — but only because lymphatic drainage is anatomically fixed", "Lymphatic anatomy is one factor, but the slide is about spread in general."]], "c": 0, "cite": "Abnormal Cell Growth for posting.pptx, Slide 27"}, {"topic": "Grading", "io": "k — Describe the histological grading of cancer", "q": "Who did Professor Rappa say is the only one who can diagnose cancer?", "opts": [["The pathologist", "Correct — he said it twice. Grading is a histological judgement made on tissue."], ["The radiologist", "Imaging can suggest a cancer, but the diagnosis is histological."], ["The surgeon who obtains the specimen", "Obtaining tissue is not the same as diagnosing it."], ["The oncologist who stages the disease", "Staging follows a diagnosis that has already been made."]], "c": 0, "cite": "2026-08-20 lecture recording, 22:36"}, {"topic": "Hepatitis B", "io": "i — Describe microorganisms' role in carcinogenesis", "q": "Which three concepts does the hepatitis B slide emphasise?", "opts": [["Pleomorphism, abnormal nuclei, and abnormal differentiation", "Those are histological features of malignancy."], ["Self-renewal, immortality, and differentiation capacity", "Those are the properties of a stem cell."], ["Chronic inflammation, regenerative hyperplasia, genomic instability", "Correct — the same triad also explains hepatitis C and Helicobacter pylori."], ["Initiation, promotion, and progression", "Those are the steps of chemical carcinogenesis."]], "c": 2, "cite": "Abnormal Cell Growth for posting.pptx, Slide 34"}, {"topic": "Nomenclature", "io": "f — Compare and contrast the different types of malignant tumors according to origin", "q": "What do the prefixes leio- and rhabdo- mean in a sarcoma's name?", "opts": [["Leio- is bone; rhabdo- is cartilage", "Neither prefix refers to bone or cartilage."], ["Leio- is glandular; rhabdo- is squamous", "Adeno- is the glandular prefix, and squamous has no such prefix."], ["Leio- is smooth muscle; rhabdo- is skeletal muscle", "Correct — and adeno- means glandular, while the suffix -oma simply means tumour."], ["Leio- is skeletal muscle; rhabdo- is smooth muscle", "The two prefixes are reversed here."]], "c": 2, "cite": "2026-08-20 lecture recording, 14:43"}, {"topic": "Apoptosis genes", "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis", "q": "Why does the deck say genes promoting self destruction of cells with damaged deoxyribonucleic acid are necessary?", "opts": [["To limit the total number of cells an organ can contain", "Cell number control is not the reason given."], ["To supply nutrients to neighbouring cells as they proliferate", "No such metabolic role is described."], ["To slow the rate at which stem cells commit to differentiation", "That is a question of stem cell kinetics rather than apoptosis."], ["To stop the damage becoming permanent in dividing cells", "Correct — apoptosis prevents a mutation being carried on into the daughter cells."]], "c": 3, "cite": "Abnormal Cell Growth for posting.pptx, Slide 30"}, {"topic": "TNM", "io": "l — Describe the tumor, nodes, metastases (TNM) staging system", "q": "What do Nx, N0 and N1 to N2 or higher each mean?", "opts": [["Nx, nodes removed surgically; N0, nodes present but normal in size; N1 upwards, enlarged nodes", "Nodal staging is about metastatic involvement, not node size or removal."], ["Cannot be assessed; none; increasing number and range involved", "Correct — x always means cannot be assessed, 0 always means none found, and the numbers rise with the number and range of nodes involved."], ["Nx, no regional nodal metastasis; N0, nodes cannot be assessed; N1 upwards, distant metastasis", "The meanings of x and 0 are swapped, and N never denotes distant spread."], ["Nx, nodes not yet sampled; N0, one node involved; N1 upwards, two or more nodes", "N0 means no nodal metastasis rather than one node."]], "c": 1, "cite": "Abnormal Cell Growth for posting.pptx, Slide 42"}, {"topic": "Metaplasia", "io": "b — Describe non-neoplastic abnormalities of cell growth", "q": "A sample from an oesophageal carcinoma shows COLUMNAR cells. What did Professor Rappa say that implies?", "opts": [["It is a benign adenoma rather than a carcinoma", "The question already establishes it is a carcinoma."], ["It is secondary to reflux disease", "Correct — squamous cells would indicate a primary cancer, since the lower oesophagus is normally squamous."], ["It is a primary oesophageal cancer", "Squamous cells would suggest that, because squamous is the native epithelium there."], ["It is a metastasis from a gastrointestinal primary", "That is not the inference he drew from the cell type."]], "c": 1, "cite": "2026-08-20 lecture recording, 8:47"}];
+const QUESTIONS = [
+  {
+    "topic": "Cancer",
+    "io": "c — Describe neoplastic abnormalities of cell growth",
+    "q": "What is cancer, and where does the word come from?",
+    "opts": [
+      [
+        "A malignant neoplasm; from the Latin for crab",
+        "Correct — so named because it adheres to any tissue it seizes upon and reaches out with claws, invading surrounding tissue."
+      ],
+      [
+        "Any neoplasm at all; from the Latin for growth, because the mass enlarges without a stimulus",
+        "Cancer is specifically the malignant subset, and the derivation is the crab."
+      ],
+      [
+        "A neoplasm that has metastasized; from the Greek for wandering, because cells migrate",
+        "Metastasis is a feature many cancers develop, not the definition of the word."
+      ],
+      [
+        "A precancerous lesion; from the Latin for disorder, because architecture is lost",
+        "Loss of architecture describes dysplasia, which is not cancer."
+      ]
+    ],
+    "c": 0,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 11"
+  },
+  {
+    "topic": "Heredity",
+    "io": "j — Compare and contrast the theories of heredity and carcinogenesis",
+    "q": "Which inherited tumour suppressor alteration is associated with malignant melanoma?",
+    "opts": [
+      [
+        "Adenomatous polyposis coli",
+        "That is associated with familial adenomatous polyposis."
+      ],
+      [
+        "BRCA-1",
+        "That is a deoxyribonucleic acid repair gene, associated with breast cancer."
+      ],
+      [
+        "p16, also called INK4a",
+        "Correct — one of five hereditary examples."
+      ],
+      [
+        "Retinoblastoma protein",
+        "That is associated with retinoblastoma and osteosarcoma."
+      ]
+    ],
+    "c": 2,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 39"
+  },
+  {
+    "topic": "Differentiation",
+    "io": "k — Describe the histological grading of cancer",
+    "q": "What does the degree of differentiation of a neoplasm measure?",
+    "opts": [
+      [
+        "How many of its cells are in the proliferative pool at any moment",
+        "The proliferative fraction is a matter of stem cell kinetics."
+      ],
+      [
+        "How closely it resembles comparable normal cells in appearance and function",
+        "Correct — this is the basis of histological grading."
+      ],
+      [
+        "How far it has spread from the primary site within the patient",
+        "That is staging, which is a different question from grading."
+      ],
+      [
+        "How rapidly the tumour mass is enlarging over time",
+        "Growth rate is a feature of malignancy, but it is not what differentiation measures."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 12"
+  },
+  {
+    "topic": "Benign vs malignant",
+    "io": "c — Describe neoplastic abnormalities of cell growth",
+    "q": "How differentiated are malignant tumours?",
+    "opts": [
+      [
+        "Always poorly differentiated",
+        "They span a range rather than a single grade."
+      ],
+      [
+        "Always anaplastic",
+        "Anaplasia is the extreme end, not the rule."
+      ],
+      [
+        "Always well differentiated",
+        "That describes benign tumours."
+      ],
+      [
+        "Various degrees of differentiation",
+        "Correct — malignancy does not mean uniformly poor differentiation. Benign tumours are usually well differentiated."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 13"
+  },
+  {
+    "topic": "Epstein Barr virus",
+    "io": "i — Describe microorganisms' role in carcinogenesis",
+    "q": "Which cancers is Epstein Barr virus associated with, and which cells does it infect?",
+    "opts": [
+      [
+        "Gastric adenocarcinoma and mucosa-associated lymphoid tissue lymphoma; it colonizes the stomach",
+        "That is Helicobacter pylori."
+      ],
+      [
+        "B cell lymphomas and nasopharyngeal carcinoma; it infects B lymphocytes",
+        "Correct — it immortalizes them, which is the key step, and it also infects epithelial cells of the oropharynx."
+      ],
+      [
+        "Hepatocellular carcinoma; it infects hepatocytes and causes chronic injury with regeneration",
+        "That is hepatitis B and hepatitis C."
+      ],
+      [
+        "Cervical carcinoma; it infects cervical epithelium and integrates its genome",
+        "That is human papillomavirus."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 33"
+  },
+  {
+    "topic": "Heredity",
+    "io": "j — Compare and contrast the theories of heredity and carcinogenesis",
+    "q": "Which tumours are associated with an inherited alteration of the retinoblastoma protein?",
+    "opts": [
+      [
+        "Neurofibromatosis types 1 and 2, with tumours of the central and peripheral nervous system",
+        "Those follow from NF-1 and NF-2."
+      ],
+      [
+        "Malignant melanoma",
+        "That follows from p16, also called INK4a."
+      ],
+      [
+        "Familial adenomatous polyposis and colon cancer",
+        "That follows from adenomatous polyposis coli."
+      ],
+      [
+        "Retinoblastoma, a rare childhood tumour of the eye, and osteosarcoma",
+        "Correct — the same tumour suppressor, two very different tumours."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 39"
+  },
+  {
+    "topic": "Metaplasia",
+    "io": "b — Describe non-neoplastic abnormalities of cell growth",
+    "q": "What is the classic clinical example of metaplasia, and what changes into what?",
+    "opts": [
+      [
+        "Barrett's oesophagus — squamous becomes columnar under chronic acid reflux",
+        "Correct — the lower oesophagus is squamous and cannot resist acid, so chronic reflux drives the change."
+      ],
+      [
+        "Barrett's oesophagus — columnar becomes squamous under chronic acid reflux",
+        "The direction is reversed; the oesophagus starts squamous."
+      ],
+      [
+        "Cervical dysplasia — squamous becomes columnar under human papillomavirus infection",
+        "Cervical dysplasia was his DYSPLASIA example, and dysplasia is not a change of cell type."
+      ],
+      [
+        "Endometrial hyperplasia — glandular becomes squamous under excess oestrogen",
+        "He used endometrial hyperplasia to illustrate hyperplasia, not metaplasia."
+      ]
+    ],
+    "c": 0,
+    "cite": "2026-08-20 lecture recording, 7:45"
+  },
+  {
+    "topic": "Differentiation",
+    "io": "k — Describe the histological grading of cancer",
+    "q": "What does falling differentiation mean for the behaviour of a tumour?",
+    "opts": [
+      [
+        "It becomes more aggressive",
+        "Correct — an anaplastic carcinoma is very aggressive compared with a well differentiated one. Grading is a scale of resemblance, and prognosis tracks it."
+      ],
+      [
+        "It becomes less aggressive, because poorly differentiated cells divide more slowly",
+        "He said the opposite, and poorly differentiated cells are not slower."
+      ],
+      [
+        "Aggressiveness is unrelated to differentiation and depends only on stage",
+        "Staging and grading are separate, but he explicitly linked grade to aggressiveness."
+      ],
+      [
+        "It becomes more aggressive only once the basement membrane has been breached",
+        "Invasion is a separate matter from the grade."
+      ]
+    ],
+    "c": 0,
+    "cite": "2026-08-20 lecture recording, 24:08"
+  },
+  {
+    "topic": "Human papillomavirus",
+    "io": "i — Describe microorganisms' role in carcinogenesis",
+    "q": "Besides cervical cancer, which malignancies is high-risk human papillomavirus associated with?",
+    "opts": [
+      [
+        "Retinoblastoma and osteosarcoma",
+        "Those are associated with the retinoblastoma protein under heredity."
+      ],
+      [
+        "Anal, vulvar, vaginal, penile and oropharyngeal cancer",
+        "Correct — all five are listed alongside cervical cancer, the oropharyngeal one being a squamous cell carcinoma."
+      ],
+      [
+        "Hepatocellular carcinoma and gastric adenocarcinoma",
+        "Those belong to the hepatitis viruses and Helicobacter pylori respectively."
+      ],
+      [
+        "Nasopharyngeal carcinoma and certain B cell lymphomas",
+        "Those belong to Epstein Barr virus."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 37"
+  },
+  {
+    "topic": "Heredity",
+    "io": "j — Compare and contrast the theories of heredity and carcinogenesis",
+    "q": "Which inherited defect underlies xeroderma pigmentosum, and what is the consequence?",
+    "opts": [
+      [
+        "Defective apoptosis genes, so damaged cells cannot self destruct; increased risk of lymphoma",
+        "Apoptosis genes are a category, but this is not the disease attached to them here."
+      ],
+      [
+        "Defective protooncogenes, so growth signalling is lost; increased risk of aplasia",
+        "Loss of protooncogene function would not produce cancer this way."
+      ],
+      [
+        "Defective repair genes, so ultraviolet B damage cannot be repaired",
+        "Correct — the consequence is an increased risk of skin cancer in sun-exposed areas. It is a repair-gene disease rather than a tumour suppressor one."
+      ],
+      [
+        "Defective tumour suppressor genes, so cell growth cannot be inhibited; increased risk of nervous system tumours",
+        "That describes the neurofibromatosis genes."
+      ]
+    ],
+    "c": 2,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 40"
+  },
+  {
+    "topic": "Metaplasia",
+    "io": "b — Describe non-neoplastic abnormalities of cell growth",
+    "q": "What is metaplasia, and what provokes it?",
+    "opts": [
+      [
+        "Enlargement of an organ because its individual cells enlarge under increased demand",
+        "That is hypertrophy."
+      ],
+      [
+        "Autonomous growth of an abnormal mass of tissue derived from a single genetically altered cell",
+        "That is a neoplasm."
+      ],
+      [
+        "Change of one cell type to another under chronic irritation or injury",
+        "Correct — it involves a change in differentiation. Bladder transitional epithelium becoming squamous is the standard example."
+      ],
+      [
+        "Disordered growth of epithelial cells with variation in size and shape and loss of architectural orientation",
+        "That is dysplasia, which is the next step along and is precancerous."
+      ]
+    ],
+    "c": 2,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 4"
+  },
+  {
+    "topic": "Hypertrophy",
+    "io": "b — Describe non-neoplastic abnormalities of cell growth",
+    "q": "Why does skeletal muscle hypertrophy rather than divide?",
+    "opts": [
+      [
+        "Striated muscle cells do not divide, so each fibre gets larger instead",
+        "Correct — protein and resistance build more actin and myosin within the existing cells. Bigger fibres, not more fibres, which is the whole distinction from hyperplasia."
+      ],
+      [
+        "Resistance training recruits satellite cells, so the number of muscle fibres increases",
+        "An increase in cell number would be hyperplasia; he was explicit that these cells do not divide."
+      ],
+      [
+        "Protein intake causes fluid retention within the muscle, so the organ appears larger",
+        "Fluid was not the mechanism he described."
+      ],
+      [
+        "Resistance training converts slow fibres to fast fibres, changing the tissue type",
+        "A change of cell type would be metaplasia."
+      ]
+    ],
+    "c": 0,
+    "cite": "2026-08-20 lecture recording, 2:54"
+  },
+  {
+    "topic": "Malignant classification",
+    "io": "f — Compare and contrast the different types of malignant tumors according to origin",
+    "q": "What is a malignant tumour of mesenchymal origin called?",
+    "opts": [
+      [
+        "A papilloma",
+        "A papilloma is benign and epithelial."
+      ],
+      [
+        "A sarcoma",
+        "Correct — mesenchymal means supportive tissue, and the malignant form is the sarcoma."
+      ],
+      [
+        "A carcinoma",
+        "Carcinoma is the malignant tumour of epithelial origin."
+      ],
+      [
+        "An adenoma",
+        "An adenoma is benign and epithelial."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 18"
+  },
+  {
+    "topic": "Oncogenes",
+    "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis",
+    "q": "What happens when a protooncogene mutates?",
+    "opts": [
+      [
+        "It becomes a tumour suppressor gene, which then inhibits cell growth excessively",
+        "Tumour suppressor genes are a separate category, and they are lost rather than gained."
+      ],
+      [
+        "It becomes a repair gene, which then introduces errors into the genome",
+        "Repair genes are a separate category, and mutation disables them."
+      ],
+      [
+        "It becomes silent, so the cell loses its ability to grow at all",
+        "The result is uncontrolled growth, not loss of growth."
+      ],
+      [
+        "It becomes an oncogene, which encodes oncoproteins that promote continued uncontrolled growth",
+        "Correct — the same machinery, with the brake removed."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 29"
+  },
+  {
+    "topic": "Carcinogenesis",
+    "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis",
+    "q": "Where does the gene damage in carcinogenesis come from?",
+    "opts": [
+      [
+        "It arises only from errors during deoxyribonucleic acid replication",
+        "Replication error is not the only source."
+      ],
+      [
+        "Inherited, and/or acquired from chemicals, radiation or microbes",
+        "Correct — the named sources are chemical carcinogens, ultraviolet and ionizing radiation, and microbial organisms: viruses and one bacterium."
+      ],
+      [
+        "It is always inherited through the germline and never acquired during life",
+        "Several acquired sources sit alongside inheritance."
+      ],
+      [
+        "It is always acquired during life and never inherited",
+        "Inheritance is explicitly one of the sources."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 28"
+  },
+  {
+    "topic": "Haematogenous spread",
+    "io": "d — Compare and contrast the routes of tumor spread",
+    "q": "What are the steps of haematogenous spread, in order?",
+    "opts": [
+      [
+        "Cells separate and degrade intercellular tissue with enzymes, invade the vessel, then travel",
+        "Correct — multiple tumour fragments travel to other organs, so one organ may end up with several metastatic nodules."
+      ],
+      [
+        "Tumour cells adhere more tightly to each other; the mass compresses a vessel; a single fragment travels to one other organ",
+        "Cells separate rather than adhere, and multiple fragments travel."
+      ],
+      [
+        "Tumour cells enter lymphatic vessels at the margin and follow the natural route of drainage",
+        "That is lymphatic spread."
+      ],
+      [
+        "Tumour invades through an organ surface into a body cavity and settles on the serosal membranes",
+        "That is seeding of body cavities and surfaces."
+      ]
+    ],
+    "c": 0,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 14"
+  },
+  {
+    "topic": "Dysplasia",
+    "io": "a — Describe the molecular mechanisms of abnormal cell growth and differentiation",
+    "q": "On the dysplasia spectrum, what separates severe dysplasia from invasive cancer?",
+    "opts": [
+      [
+        "The basement membrane",
+        "Correct — carcinoma in situ sits above it and invasive cancer has broken through. The diagram runs normal, mild, moderate, severe, carcinoma in situ, then invasive cancer."
+      ],
+      [
+        "The degree of nuclear enlargement, which is greater in invasive cancer",
+        "Nuclear change is part of the grading, but the diagram turns on the basement membrane."
+      ],
+      [
+        "The presence of mitoses, which appear only once invasion has occurred",
+        "Mitoses appear well before invasion on this spectrum."
+      ],
+      [
+        "Involvement of the regional lymph nodes",
+        "Nodal involvement is a staging question, and comes after invasion."
+      ]
+    ],
+    "c": 0,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 8"
+  },
+  {
+    "topic": "Chemical carcinogens",
+    "io": "h — Describe the steps of chemical carcinogenesis",
+    "q": "Which chemical carcinogens are classically emphasised in occupational bladder cancer?",
+    "opts": [
+      [
+        "Polycyclic aromatic hydrocarbons",
+        "Those are the tobacco combustion products, which also cause bladder cancer."
+      ],
+      [
+        "Alkylating agents",
+        "Not among the agents responsible."
+      ],
+      [
+        "Asbestos fibres",
+        "Not among the agents responsible."
+      ],
+      [
+        "Aromatic amines",
+        "Correct — polycyclic aromatic hydrocarbons come from tobacco combustion."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 31"
+  },
+  {
+    "topic": "Helicobacter pylori",
+    "io": "i — Describe microorganisms' role in carcinogenesis",
+    "q": "What kind of organism is Helicobacter pylori, and what does it cause in the stomach?",
+    "opts": [
+      [
+        "A virus that integrates its genome into gastric epithelial cells",
+        "The viral mechanisms belong to human papillomavirus, Epstein Barr and the hepatitis viruses."
+      ],
+      [
+        "A fungus that colonizes the gastric mucosa in immunosuppressed patients",
+        "No fungal cause is described."
+      ],
+      [
+        "A Gram-negative bacterium causing chronic gastritis",
+        "Correct — it colonizes the stomach and may lead to atrophic gastritis and intestinal metaplasia. It is the one bacterium among the microbial causes of cancer."
+      ],
+      [
+        "A Gram-positive bacterium that colonizes the stomach, causing acute ulceration and perforation",
+        "It is Gram-negative, and the process described is chronic rather than acute."
+      ]
+    ],
+    "c": 2,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 35"
+  },
+  {
+    "topic": "Differentiation",
+    "io": "k — Describe the histological grading of cancer",
+    "q": "What does anaplasia mean?",
+    "opts": [
+      [
+        "Close resemblance to the comparable normal cell",
+        "That is well differentiated, the opposite end of the scale."
+      ],
+      [
+        "Failure of a primordial tissue to develop into a mature organ",
+        "That is aplasia, which is a non-neoplastic developmental abnormality."
+      ],
+      [
+        "Disordered growth of epithelium with retained architecture",
+        "That is closer to dysplasia, and dysplasia does lose architectural orientation."
+      ],
+      [
+        "Lack of differentiation",
+        "Correct — the extreme of the grading scale, with no resemblance to the normal cell."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 12"
+  },
+  {
+    "topic": "Promotion",
+    "io": "h — Describe the steps of chemical carcinogenesis",
+    "q": "What do promoters do?",
+    "opts": [
+      [
+        "They cause the permanent deoxyribonucleic acid damage that starts the process",
+        "That is initiation."
+      ],
+      [
+        "They repair the deoxyribonucleic acid damage caused by initiators",
+        "Promoters act in the opposite direction."
+      ],
+      [
+        "They cause tumour cells to detach and enter the circulation",
+        "That is part of the invasion and metastasis cascade."
+      ],
+      [
+        "They drive proliferation of cells already damaged by an initiator",
+        "Correct — sustained or enhanced proliferation raises the risk of successive mutations leading to cancer."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 31"
+  },
+  {
+    "topic": "Benign classification",
+    "io": "e — Compare and contrast the different types of benign tumors according to origin",
+    "q": "What are mesenchymal tumours derived from, and what tissues does that include?",
+    "opts": [
+      [
+        "Neural tissue: peripheral nerves, nerve sheaths and the central nervous system",
+        "Neural origin is not what mesenchymal means in this classification."
+      ],
+      [
+        "Supportive tissue: connective tissue, adipose tissue, cartilage, smooth and striated muscle, and bone",
+        "Correct — the same origin gives sarcomas when the tumour is malignant."
+      ],
+      [
+        "Epithelial surfaces: skin, gastrointestinal lining, respiratory lining and glandular ducts",
+        "That is epithelial origin, which gives adenomas and papillomas when benign."
+      ],
+      [
+        "Haematopoietic tissue: bone marrow, lymph nodes, spleen and thymus",
+        "Haematopoietic tumours are not the category described here."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 16"
+  },
+  {
+    "topic": "Initiation",
+    "io": "h — Describe the steps of chemical carcinogenesis",
+    "q": "What do initiators do in chemical carcinogenesis?",
+    "opts": [
+      [
+        "They repair damage already caused by another carcinogen",
+        "Initiators cause damage; they do not repair it."
+      ],
+      [
+        "They trigger apoptosis in cells with damaged genomes",
+        "Apoptosis is the protective mechanism initiators help defeat."
+      ],
+      [
+        "They cause permanent damage to deoxyribonucleic acid",
+        "Correct — permanence is what distinguishes initiation from promotion."
+      ],
+      [
+        "They cause sustained or enhanced proliferation of already-damaged cells",
+        "That is promotion, the second step."
+      ]
+    ],
+    "c": 2,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 31"
+  },
+  {
+    "topic": "Metastatic pattern",
+    "io": "d — Compare and contrast the routes of tumor spread",
+    "q": "Is metastatic spread random?",
+    "opts": [
+      [
+        "No — it is determined by blood flow, receptors, and genetically determined fitness",
+        "Correct — this is the headline."
+      ],
+      [
+        "Yes — circulating cells lodge in whichever capillary bed they reach first",
+        "This is explicitly wrong."
+      ],
+      [
+        "Yes for haematogenous spread, no for lymphatic spread",
+        "The statement is not split that way."
+      ],
+      [
+        "No — but only because lymphatic drainage is anatomically fixed",
+        "Lymphatic anatomy is one factor, but the point is about spread in general."
+      ]
+    ],
+    "c": 0,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 27"
+  },
+  {
+    "topic": "Grading",
+    "io": "k — Describe the histological grading of cancer",
+    "q": "Who is the only one who can diagnose cancer?",
+    "opts": [
+      [
+        "The pathologist",
+        "Correct — he said it twice. Grading is a histological judgement made on tissue."
+      ],
+      [
+        "The radiologist",
+        "Imaging can suggest a cancer, but the diagnosis is histological."
+      ],
+      [
+        "The surgeon who obtains the specimen",
+        "Obtaining tissue is not the same as diagnosing it."
+      ],
+      [
+        "The oncologist who stages the disease",
+        "Staging follows a diagnosis that has already been made."
+      ]
+    ],
+    "c": 0,
+    "cite": "2026-08-20 lecture recording, 22:36"
+  },
+  {
+    "topic": "Hepatitis B",
+    "io": "i — Describe microorganisms' role in carcinogenesis",
+    "q": "Which three concepts does the hepatitis B slide emphasise?",
+    "opts": [
+      [
+        "Pleomorphism, abnormal nuclei, and abnormal differentiation",
+        "Those are histological features of malignancy."
+      ],
+      [
+        "Self-renewal, immortality, and differentiation capacity",
+        "Those are the properties of a stem cell."
+      ],
+      [
+        "Chronic inflammation, regenerative hyperplasia, genomic instability",
+        "Correct — the same triad also explains hepatitis C and Helicobacter pylori."
+      ],
+      [
+        "Initiation, promotion, and progression",
+        "Those are the steps of chemical carcinogenesis."
+      ]
+    ],
+    "c": 2,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 34"
+  },
+  {
+    "topic": "Nomenclature",
+    "io": "f — Compare and contrast the different types of malignant tumors according to origin",
+    "q": "What do the prefixes leio- and rhabdo- mean in a sarcoma's name?",
+    "opts": [
+      [
+        "Leio- is bone; rhabdo- is cartilage",
+        "Neither prefix refers to bone or cartilage."
+      ],
+      [
+        "Leio- is glandular; rhabdo- is squamous",
+        "Adeno- is the glandular prefix, and squamous has no such prefix."
+      ],
+      [
+        "Leio- is smooth muscle; rhabdo- is skeletal muscle",
+        "Correct — and adeno- means glandular, while the suffix -oma simply means tumour."
+      ],
+      [
+        "Leio- is skeletal muscle; rhabdo- is smooth muscle",
+        "The two prefixes are reversed here."
+      ]
+    ],
+    "c": 2,
+    "cite": "2026-08-20 lecture recording, 14:43"
+  },
+  {
+    "topic": "Apoptosis genes",
+    "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis",
+    "q": "Why are genes promoting self destruction of cells with damaged deoxyribonucleic acid necessary?",
+    "opts": [
+      [
+        "To limit the total number of cells an organ can contain",
+        "Cell number control is not the reason given."
+      ],
+      [
+        "To supply nutrients to neighbouring cells as they proliferate",
+        "No such metabolic role is described."
+      ],
+      [
+        "To slow the rate at which stem cells commit to differentiation",
+        "That is a question of stem cell kinetics rather than apoptosis."
+      ],
+      [
+        "To stop the damage becoming permanent in dividing cells",
+        "Correct — apoptosis prevents a mutation being carried on into the daughter cells."
+      ]
+    ],
+    "c": 3,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 30"
+  },
+  {
+    "topic": "TNM",
+    "io": "l — Describe the tumor, nodes, metastases (TNM) staging system",
+    "q": "What do Nx, N0 and N1 to N2 or higher each mean?",
+    "opts": [
+      [
+        "Nx, nodes removed surgically; N0, nodes present but normal in size; N1 upwards, enlarged nodes",
+        "Nodal staging is about metastatic involvement, not node size or removal."
+      ],
+      [
+        "Cannot be assessed; none; increasing number and range involved",
+        "Correct — x always means cannot be assessed, 0 always means none found, and the numbers rise with the number and range of nodes involved."
+      ],
+      [
+        "Nx, no regional nodal metastasis; N0, nodes cannot be assessed; N1 upwards, distant metastasis",
+        "The meanings of x and 0 are swapped, and N never denotes distant spread."
+      ],
+      [
+        "Nx, nodes not yet sampled; N0, one node involved; N1 upwards, two or more nodes",
+        "N0 means no nodal metastasis rather than one node."
+      ]
+    ],
+    "c": 1,
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 42"
+  },
+  {
+    "topic": "Metaplasia",
+    "io": "b — Describe non-neoplastic abnormalities of cell growth",
+    "q": "A sample from an oesophageal carcinoma shows COLUMNAR cells. What does that imply?",
+    "opts": [
+      [
+        "It is a benign adenoma rather than a carcinoma",
+        "The question already establishes it is a carcinoma."
+      ],
+      [
+        "It is secondary to reflux disease",
+        "Correct — squamous cells would indicate a primary cancer, since the lower oesophagus is normally squamous."
+      ],
+      [
+        "It is a primary oesophageal cancer",
+        "Squamous cells would suggest that, because squamous is the native epithelium there."
+      ],
+      [
+        "It is a metastasis from a gastrointestinal primary",
+        "That is not the inference he drew from the cell type."
+      ]
+    ],
+    "c": 1,
+    "cite": "2026-08-20 lecture recording, 8:47"
+  }
+];
 const LTR = ["A","B","C","D"];
 let order=[], idx=0, score=0, answers=[];
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
