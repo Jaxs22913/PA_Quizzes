@@ -60,9 +60,9 @@ Study is text-only, and "name this photograph" without the photograph is not a q
 ### Grouping by something other than an objective
 
 `io` drives the results breakdown and the chip above the stem. It is normally an instructional
-objective, and the engine prefixes "Objective " to it. A label starting with `Objective` or
-`Region` is left as written — a picture quiz groups by anatomical region, and
-"Objective Region — Cornea" reads as a mistake.
+objective, and the engine prefixes "Objective " to it. A label starting with `Objective`,
+`Region`, `Category`, `Group` or `Topic` is left as written — a picture quiz groups by
+anatomical region or disease category, and "Objective Region — Cornea" reads as a mistake.
 
 ## Usage — building a brand-new quiz
 

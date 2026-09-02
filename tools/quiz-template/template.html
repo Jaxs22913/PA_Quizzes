@@ -350,9 +350,10 @@ const LTR = ["A","B","C","D","E"];
    "Objective s b, c & d". */
 function ioLabel(io){
   io = String(io == null ? "" : io).trim();
-  // "Region ..." is left alone too: a picture-identification quiz groups its
-  // questions by anatomical region, and "Objective Region — Cornea" is wrong.
-  return /^(objectives?|region)\b/i.test(io) ? io : "Objective " + io;
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
 }
 let order=[], idx=0, score=0, answers=[];
 /* Running comparison against the class, filled in by showClassPicks. */
