@@ -222,9 +222,27 @@
     display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
     overflow: hidden;
   }
+  /* Cover strip. Full-bleed to the card's padding edges via negative margins,
+     so it reads as cover art rather than an inline figure. Cards whose exam
+     has no suitable picture simply have no .gc-thumb -- grid rows stretch to
+     equal height anyway, so a mixed row still lines up.
+     Images stay true-coloured in dark mode for free: theme.css inverts
+     `body > .wrap` and then re-inverts `body > .wrap img`. */
+  .gc-thumb {
+    display: block; margin: -15px -18px 11px; height: 92px;
+    overflow: hidden; border-radius: 11px 11px 0 0;
+    background: var(--bg);
+  }
+  .gc-thumb img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform var(--dur-2, 260ms) var(--ease, ease);
+  }
+  .guide-card:hover .gc-thumb img { transform: scale(1.04); }
+
   @media (prefers-reduced-motion: reduce) {
     .guide-card { transition: none; }
     .guide-card:hover { transform: none; }
+    .gc-thumb img, .guide-card:hover .gc-thumb img { transition: none; transform: none; }
   }
 
   /* Within each class group, always order the cards Study Guides -> Cram
@@ -381,38 +399,31 @@
   <div class="guide-group" id="group-cms-1">
     <p class="guide-group-title">Clinical Medicine and Surgery I</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-exam-2-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-exam-2-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-chart-images/l12-s028_1.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Clinical Medicine and Surgery I Exam 2 Study Guide</p>
         <p class="guide-card-desc">The ophthalmology block. Opens with the red eye <em>before</em> you name it &mdash; the first-sixty-seconds sequence, the danger signs that stop the reflex diagnosis of conjunctivitis, and the pattern that localises the problem to conjunctiva, cornea, anterior chamber, sclera or angle. Then the four diagnostic modalities, the eyelid disorders from entropion to xanthelasma, chalazion against hordeolum, the lacrimal pair sorted by gland versus sac, pinguecula against pterygium, the whole conjunctivitis family including gonococcal, chlamydial and trachoma with their exact regimens, episcleritis against scleritis on all six counts, keratitis and corneal ulcer with the herpes simplex dendrite against the zoster pseudodendrite, anterior against posterior uveitis, pre-septal against post-septal cellulitis, and an explicit emergent / same-day / urgent / routine disposition table. <strong>This is the management half</strong> &mdash; Clinical Pathophysiology covers the same conditions by mechanism. Where a slide reads as an absolute and its own speaker notes soften it, the hedge is written out.</p>
       </a>
-      <a class="guide-card cram" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-exam-2-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-exam-2-cram-sheet.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-chart-images/l13-s037_1.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Clinical Medicine and Surgery I Exam 2 Cram Sheet</p>
         <p class="guide-card-desc">The night-before sheet for the ophthalmology block. Leads with how the exam is written and the red-eye triage in full &mdash; the two red flags, the danger-sign list, the localising patterns, and the two exceptions to the sequence. Then every condition reduced to the one thing that identifies it and the one thing you do about it: tenderness for chalazion against hordeolum, corneal crossing for pinguecula against pterygium, papillae against follicles, the phenylephrine blanch, the cotton-tip test, the true dendrite against the pseudodendrite, a white eye against a red one for pre-septal against post-septal cellulitis, and the exact antibiotic regimens with their durations.</p>
       </a>
-      <a class="guide-card ref" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-comparison-chart.html">
-        <span class="ref-badge">Quick Reference</span>
+      <a class="guide-card ref" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-comparison-chart.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-chart-images/s016_1.jpg" alt="" loading="lazy" decoding="async"></span><span class="ref-badge">Quick Reference</span>
         <p class="guide-card-title">Ophthalmology Comparison Chart</p>
         <p class="guide-card-desc">All 31 conditions from the Exam 2 ophthalmology block in one filterable table, read left to right: the words a vignette will use to hand it to you, how it presents and what you find on examination, what to order and what causes it, what to give, <strong>how fast the patient has to be seen</strong>, and what you tell them. Filter by region &mdash; eyelid, lacrimal, surface, conjunctivitis, sclera, orbit, cornea, uvea &mdash; or read down a single column to compare across conditions. The &ldquo;How fast&rdquo; column is the ophthalmology-specific one: in dermatology the useful axis was first-line against second-line treatment, but here the decision that changes an outcome is the disposition. Where a slide reads as an absolute and its own speaker notes soften it, the hedge is what is written. <strong>Every condition the deck photographs carries its picture</strong>, cited to its slide &mdash; 27 of the 31 rows. Two of the deck&rsquo;s own images are deliberately left out: slide 29&rsquo;s hyphaema and slide 27&rsquo;s conjunctival intraepithelial neoplasia are captioned <em>DDX</em> on the slide itself, and putting either in a chart cell would claim it is what the condition looks like. <strong>Every one of the 31 now has a picture:</strong> the four with no slide image &mdash; gonococcal and neonatal chlamydial conjunctivitis, trachoma and autoimmune conjunctivitis &mdash; carry a credited, openly licensed photograph from elsewhere.</p>
       </a>
-      <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-exam-1-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-chart-images/l6_s024_2.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Clinical Medicine and Surgery I Exam 1 Study Guide</p>
         <p class="guide-card-desc">Eight lectures. Clinical reasoning &mdash; sensitivity and specificity (SnNout/SpPin), pretest and posttest probability, screening versus diagnostic testing, VINDICATE and the naturalistic approach. Then the dermatology block: the skin-layer depth ladder that separates impetigo from erysipelas from cellulitis from necrotizing fasciitis, the eczema family, bullous pemphigoid against pemphigus, Stevens-Johnson syndrome and toxic epidermal necrolysis with SCORTEN, photodermatology, the bacterial infections with their antibiotic ladders, the infestations from scabies to tick-borne illness, the fungal and viral infections from tinea by body site through onychomycosis and pityriasis versicolor to varicella, herpes zoster with postherpetic neuralgia, herpes simplex, molluscum and warts, the benign lesions from corns to sebaceous hyperplasia with the full pressure injury staging system, and the pigmented lesions from freckles to dysplastic naevi. <strong>Now carries a photograph of every disease process</strong> &mdash; 131 images across the dermatology sections. Every syllabus objective, answered in order.</p>
       </a>
-      <a class="guide-card cram" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-chart-images/l8_s017_2.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Clinical Medicine and Surgery I Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation of Lectures 1&ndash;8: the two test properties and the probability chain, then the depth ladder, the eczema and bullous discriminators, SCORTEN and the drug list, phototoxic against photoallergic, the acne guideline ladder, the MRSA orals, the scabies and lice facts, spider and tick geography, the tinea sites and the two antifungal classes, the zoster phases with the 72-hour rule and the Shingrix schedule, keloid against hypertrophic scar on all seven counts, the six pressure injury stages, the vascular lesions sorted by whether they involute, and every pigmented lesion with the one thing that identifies it.</p>
       </a>
-      <a class="guide-card ref" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-staging-chart.html">
-        <span class="ref-badge">Quick Reference</span>
+      <a class="guide-card ref" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-staging-chart.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-staging-images/melanoma-stages-0-4.jpg" alt="" loading="lazy" decoding="async"></span><span class="ref-badge">Quick Reference</span>
         <p class="guide-card-title">Dermatology Staging &amp; Grading Chart</p>
         <p class="guide-card-desc">Every staged, graded or threshold system in the Exam 1 dermatology block in one place, now with a picture beside each one: the six pressure injury stages, sunburn by degree, Stevens-Johnson through toxic epidermal necrolysis by body surface area, SCORTEN with its seven variables and the mortality for each score, the Fitzpatrick skin types I&ndash;VI, the four epidermolysis bullosa types by depth of cleavage, the three Lyme stages, the three zoster phases, varicella&rsquo;s several-stages-at-once rule, the four phases of wound healing, hemangioma and keratoacanthoma growth phases, the acute-subacute-chronic eczema stages, the corticosteroid potency ladder, acne severity to treatment, and all four melanoma systems &mdash; Clark levels, Breslow thresholds, overall stage 0 to IV and the TNM table &mdash; plus the 1&nbsp;cm size cut-offs that decide macule from patch. Every picture enlarges on click. CMS decks only, each section citing its lecture and slide. <b>Five of these systems exist in the decks only as pictures</b> &mdash; the pressure injury table, Clark levels, the melanoma stage figure and the TNM table sit on slides whose text extracts as nothing at all, so they were read off the images and typed out.</p>
       </a>
-      <a class="guide-card ref" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-comparison-chart.html">
-        <span class="ref-badge">Quick Reference</span>
+      <a class="guide-card ref" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-comparison-chart.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-chart-images/l6_s076_1.jpg" alt="" loading="lazy" decoding="async"></span><span class="ref-badge">Quick Reference</span>
         <p class="guide-card-title">Dermatology Comparison Chart</p>
         <p class="guide-card-desc">All 135 conditions from the Exam 1 dermatology block in one sortable table, read left to right: a picture from the slides, the name, the usual presentation together with how a patient actually describes it, the first test and the gold standard, first-line then second-line treatment, the labs to order if the disease process needs any, and the patient education. Filter by lecture, or read down a single column to compare across conditions &mdash; the first-test column shows at a glance how much of dermatology is a clinical diagnosis. Every cell comes from the lecture PowerPoints and every slide picture cites its deck and slide. The two conditions the decks never illustrate &mdash; phytophotodermatitis and chronic paronychia &mdash; carry a credited, openly licensed photograph instead; postherpetic neuralgia has none on purpose, being pain after the rash has healed.</p>
       </a>
@@ -422,13 +433,11 @@
   <div class="guide-group" id="group-microbiology">
     <p class="guide-group-title">Microbiology</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Microbiology%20Exam%201/micro-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Microbiology%20Exam%201/micro-exam-1-study-guide.html"><span class="gc-thumb"><img src="Microbiology%20Exam%201/micro-exam-1-study-guide-images/002.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Microbiology Exam 1 Study Guide</p>
         <p class="guide-card-desc">Lectures 1&ndash;2. <strong>Review of General Microbiology</strong> &mdash; pathogen types from bacteria to prions and viroids, bacterial structures, the Gram stain with a labelled cell wall comparison, culture media, the growth and death curves, phage versus animal virus replication, mutations and microbial control. <strong>Antibiotics and Resistance</strong> &mdash; the history from Ehrlich to Waksman, drug selection criteria, the therapeutic index, every major drug line with its producing organism, the five mechanisms of action, and resistance from genetic mechanisms through biofilms. Twenty-one syllabus objectives, in order.</p>
       </a>
-      <a class="guide-card cram" href="Microbiology%20Exam%201/micro-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Microbiology%20Exam%201/micro-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Microbiology%20Exam%201/micro-exam-1-study-guide-images/005.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Microbiology Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation of Lectures 1&ndash;2: pathogen types, bacterial structures, the Gram stain, both curves and the phage cycles, then every drug line with its producing organism, the five mechanisms of action, the resistance mechanisms, and the high-yield direct toxicities.</p>
       </a>
@@ -438,8 +447,7 @@
   <div class="guide-group" id="group-pharm-1">
     <p class="guide-group-title">Pharmacology I</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide.html"><span class="gc-thumb"><img src="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide-images/005.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Pharmacology I Exam 1 Study Guide</p>
         <p class="guide-card-desc">Lecture 1, Antibiotics, Antivirals and Antifungals &mdash; all fifteen antibiotic classes, the three antiviral groups and the five antifungal classes, organised class-before-agent. Covers the antimicrobial basics, bacteriostatic versus bactericidal, concentration- versus time-dependent killing, every mechanism with six figures including the bacterial-target map and the fungal cell envelope, and the polymyxin black box warnings. All nine printed syllabus objectives, verbatim and in order. <strong>Drug dosages are not tested.</strong></p>
       </a>
@@ -463,8 +471,7 @@
         <p class="guide-card-title">Pharmacology I Exam 1 Contraindications</p>
         <p class="guide-card-desc">Every contraindication, prohibition and named reaction across all three Exam 1 decks in one place &mdash; 68 entries, each citing its slide. <strong>Named reactions are bold and underlined</strong>: Red Man Syndrome, disulfiram-like reaction, serotonin syndrome, malignant hyperthermia, epinephrine reversal, first-dose syncope, the anticholinergic toxidrome. Separate tables for <strong>pregnancy and teratogenicity</strong> and for the three age limits (30 days, 8 years, 18 years). Rows are tiered so a stated caution is never dressed up as a contraindication. Built after Dr. McInnis&rsquo;s email that contraindications are under-studied.</p>
       </a>
-      <a class="guide-card cram" href="Pharmacology%20I%20Exam%201/pharm-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Pharmacology%20I%20Exam%201/pharm-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide-images/004.png" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Pharmacology I Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation of Lecture 1: seven topics and sixty-two rows covering the static-versus-cidal lists, every beta-lactam subclass, vancomycin monitoring, the ribosomal binders, the black box warnings, all four antiviral agents with the 48-hour window, and the two-question method for sorting any antifungal.</p>
       </a>
@@ -474,13 +481,11 @@
   <div class="guide-group" id="group-pdm-1">
     <p class="guide-group-title">Principles of Diagnostic Medicine I</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-study-guide.html"><span class="gc-thumb"><img src="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-l5-images/fishbone.png" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Principles of Diagnostic Medicine I Exam 1 Study Guide</p>
         <p class="guide-card-desc">Lectures 1 and 2. <strong>Laboratory diagnostics</strong> &mdash; the pretest, intratest and posttest phases and where errors actually happen, the order of draw with the four tube pairings worth knowing cold, stool, blood, sputum and throat studies, point-of-care testing with its CLIA regulation, and the statistics: sensitivity, specificity, predictive values, prevalence and pre-test probability. <strong>Medical imaging</strong> &mdash; every modality with what it is for and what it cannot do, radiographic density and the Hounsfield scale, T1 against T2, the projections and the three planes, radiation dose, and contrast media with the checks before you give each one. Nine figures from the slides, two of which are the <em>only</em> place their content appears in the deck. All twenty-four syllabus objectives, verbatim and answered in order. <strong>Opens with how Professor Reynolds said this course is examined</strong>, quoted from the lecture &mdash; including that reference ranges are always supplied and that she will not make you calculate a predictive value.</p>
       </a>
-      <a class="guide-card cram" href="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-l5-images/co2-buffer.png" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Principles of Diagnostic Medicine I Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation: thirteen topics and seventy-four rows, opening with what you do <em>not</em> have to memorise. Then the phases, Stop-Light-Red-Stay-Put-Green-Light-Go, the specimen rules, the point-of-care menus and CLIA categories, and SnNout against SpPin with the frostbite worked example &mdash; followed by the imaging half: the modalities at a glance, the Hounsfield numbers, T1 against T2, positioning and the planes, organ radiation doses, and the contrast agents with their contraindications.</p>
       </a>
@@ -490,13 +495,11 @@
   <div class="guide-group" id="group-physical-diagnosis-2">
     <p class="guide-group-title">Physical Diagnosis 2</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-study-guide.html"><span class="gc-thumb"><img src="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-study-guide-images/01-skin-layers.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physical Diagnosis 2 Exam 1 Study Guide</p>
         <p class="guide-card-desc">Lectures 1 and 2 &mdash; the oral case presentation and what makes one good, comprehensive versus focused (both the history <em>and</em> the examination are narrowed), the history and physical against the subjective-objective-assessment-plan note, and the documentation rules that cost marks. Then Dermatology: skin structure and function, the full descriptive vocabulary of distribution, configuration and primary and secondary morphology, the abnormal findings of skin, hair and nails, and the examination technique itself. All syllabus objectives for both lectures, verbatim and answered in order. <strong>43 figures</strong> from the lecture slides &mdash; every primary and secondary lesion, the vascular lesions with diascopy, all four pressure ulcer stages side by side, the tinea patterns, the skin malignancies, and the nail findings &mdash; each cited to its slide. Ophthalmology and ENT are added as those decks are posted.</p>
       </a>
-      <a class="guide-card cram" href="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-study-guide-images/17-excoriation.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Physical Diagnosis 2 Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation: six topics and forty-seven rows covering the presentation and documentation rules, the three one-centimetre morphology pairs, erosion versus ulcer, all four pressure ulcer stages, the melanoma letters, the three causes of patchy hair loss told apart, and every nail finding with what it points to.</p>
       </a>
@@ -521,13 +524,11 @@
   <div class="guide-group" id="group-clin-path-1">
     <p class="guide-group-title">Clinical Pathophysiology I</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-study-guide-images/001.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Clinical Pathophysiology I Exam 1 Study Guide</p>
         <p class="guide-card-desc">Three lectures. <strong>Inflammation</strong> &mdash; the vascular causal chain, acute versus chronic and the three causes of chronicity, all eight patterns from serous to gangrenous, every leukocyte with its nucleus and granules, the nine-step sequence, and the mediators and opsonins with the biomaterial pearl. <strong>Dermatology</strong> &mdash; integumentary anatomy and the pathophysiology of the primary and secondary lesions. <strong>Abnormal cell growth</strong> &mdash; the seven non-neoplastic abnormalities sorted into three groups, the dysplasia-to-invasion spectrum and the basement membrane that defines it, grading by differentiation, the three routes of spread, the mesenchymal-versus-epithelial naming rule, the four categories of gene alteration, the five microbes with their exact mechanisms, heredity, and TNM. Every syllabus objective, answered in order. <strong>Mechanism throughout, never management</strong> &mdash; that is the line between this course and Clinical Medicine and Surgery.</p>
       </a>
-      <a class="guide-card cram" href="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-study-guide-images/010.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Clinical Pathophysiology I Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation of all three lectures: definitions and the vascular chain, acute versus chronic, all eight inflammation patterns side by side, every white blood cell, the nine-step sequence, the mediators with what discriminates each, the dermatology lesion mechanisms, and then abnormal cell growth &mdash; agenesis through dysplasia, benign against malignant, the naming rule, the four gene-alteration categories, the microbial mechanisms, and the whole TNM system.</p>
       </a>
@@ -537,23 +538,19 @@
   <div class="guide-group" id="group-physiology">
     <p class="guide-group-title">Physiology</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Physiology%20Exam%201/physiology-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Physiology%20Exam%201/physiology-exam-1-study-guide.html"><span class="gc-thumb"><img src="Physiology%20Exam%201/physiology-exam-1-study-guide-images/011.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 1 Study Guide</p>
         <p class="guide-card-desc">Cell Physiology &amp; Membranes, Membrane Potentials &amp; Action Potentials (with muscle physiology), Nervous System Sensory &amp; Motor divisions, and Central Nervous System Function — homeostasis, transport, EC coupling, somatosensory pathways, reflexes, the cerebellum/basal ganglia, the ANS, and memory/the limbic system, with figures and objective-by-objective coverage.</p>
       </a>
-      <a class="guide-card cram" href="Physiology%20Exam%201/physiology-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Physiology%20Exam%201/physiology-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Physiology%20Exam%201/physiology-exam-1-study-guide-images/012.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Physiology Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="Physiology%20Exam%202/physiology-exam-2-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Physiology%20Exam%202/physiology-exam-2-study-guide.html"><span class="gc-thumb"><img src="Physiology%20Exam%202/physiology-exam-2-study-guide-images/002.png" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 2 Study Guide</p>
         <p class="guide-card-desc">Hearing/Taste/Smell, Cardiac Physiology, Circulatory Physiology I &amp; II, and Physiology of Vision — cochlear mechanics, the cardiac cycle &amp; conduction system, Starling forces &amp; local blood flow control, the renin-angiotensin system &amp; baroreceptor reflex, and phototransduction/the visual pathway, with figures and objective-by-objective coverage.</p>
       </a>
-      <a class="guide-card cram" href="Physiology%20Exam%202/physiology-exam-2-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Physiology%20Exam%202/physiology-exam-2-cram-sheet.html"><span class="gc-thumb"><img src="Physiology%20Exam%202/physiology-exam-2-study-guide-images/013.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Physiology Exam 2 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
@@ -567,13 +564,11 @@
         <p class="guide-card-title">Physiology Exam 3 Cram Sheet</p>
         <p class="guide-card-desc">All 7 systems condensed to their one-glance recap facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="Physiology%20Exam%204/physiology-exam-4-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Physiology%20Exam%204/physiology-exam-4-study-guide.html"><span class="gc-thumb"><img src="Physiology%20Exam%204/physiology-exam-4-study-guide-images/036.png" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physiology Exam 4 Study Guide</p>
         <p class="guide-card-desc">Endocrine &amp; Renal Physiology — Endocrine I (pituitary &amp; thyroid), Endocrine II (adrenal, pancreas, calcium/PTH), Endocrine III (male &amp; female reproduction, pregnancy, lactation), Renal I (glomerular filtration &amp; GFR), and Renal II (tubular reabsorption, countercurrent system, RAAS, acid-base) — with 50 fully explained slide figures, objective-by-objective.</p>
       </a>
-      <a class="guide-card cram" href="Physiology%20Exam%204/physiology-exam-4-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Physiology%20Exam%204/physiology-exam-4-cram-sheet.html"><span class="gc-thumb"><img src="Physiology%20Exam%204/physiology-exam-4-study-guide-images/049.png" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Physiology Exam 4 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
@@ -588,43 +583,35 @@
   <div class="guide-group" id="group-anatomy">
     <p class="guide-group-title">Anatomy</p>
     <div class="guide-grid">
-      <a class="guide-card" href="Anatomy%20Exam%201/anatomy-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Anatomy%20Exam%201/anatomy-exam-1-study-guide.html"><span class="gc-thumb"><img src="Anatomy%20Exam%201/anatomy-exam-1-study-guide-images/023.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 1 Guide</p>
         <p class="guide-card-desc">Intro to Anatomy, Histology, Brain and ANS, Nervous Tissue &amp; Cerebral Blood Flow, Spinal Cord &amp; Sensory Receptors, and Peripheral/Cranial Nerves — terminology, tissue types, brain divisions, CNS vasculature, and all twelve cranial nerves, with figures and objective-by-objective coverage.</p>
       </a>
-      <a class="guide-card cram" href="Anatomy%20Exam%201/anatomy-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Anatomy%20Exam%201/anatomy-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="Anatomy%20Exam%201/anatomy-exam-1-study-guide-images/019.png" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Anatomy Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="Anatomy%20Exam%202/anatomy-exam-2-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Anatomy%20Exam%202/anatomy-exam-2-study-guide.html"><span class="gc-thumb"><img src="Anatomy%20Exam%202/anatomy-exam-2-study-guide-images/020.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 2 Guide</p>
         <p class="guide-card-desc">Integumentary System, Eye and Ear Anatomy, Heart and Great Vessels, Arteries/Veins/Lymphatics, and Pulmonary Anatomy — skin layers, special-sense organs, cardiac conduction &amp; the aorta's full branching, vessel histology, and the respiratory tract, with figures and objective-by-objective coverage.</p>
       </a>
-      <a class="guide-card cram" href="Anatomy%20Exam%202/anatomy-exam-2-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Anatomy%20Exam%202/anatomy-exam-2-cram-sheet.html"><span class="gc-thumb"><img src="Anatomy%20Exam%202/anatomy-exam-2-study-guide-images/002.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Anatomy Exam 2 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="Anatomy%20Exam%203/anatomy-exam-3-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Anatomy%20Exam%203/anatomy-exam-3-study-guide.html"><span class="gc-thumb"><img src="Anatomy%20Exam%203/anatomy-exam-3-study-guide-images/044.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 3 Guide</p>
         <p class="guide-card-desc">Gastrointestinal, Endocrine, Male &amp; Female Reproductive, and Urinary/Nephrology (kidney) — organs, relationships, blood supply, innervation, and histology, objective-by-objective.</p>
       </a>
-      <a class="guide-card cram" href="Anatomy%20Exam%203/anatomy-exam-3-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Anatomy%20Exam%203/anatomy-exam-3-cram-sheet.html"><span class="gc-thumb"><img src="Anatomy%20Exam%203/anatomy-exam-3-study-guide-images/077.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Anatomy Exam 3 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="Anatomy%20Exam%204/anatomy-exam-4-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Anatomy%20Exam%204/anatomy-exam-4-study-guide.html"><span class="gc-thumb"><img src="Anatomy%20Exam%204/anatomy-exam-4-study-guide-images/013.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Anatomy Exam 4 Guide</p>
         <p class="guide-card-desc">Appendicular Skeleton, Axial Skeleton, Appendicular Musculature, and Axial Musculature — bones, landmarks, cranial foramina, and muscle origins/insertions/actions/innervation, with labeled figures.</p>
       </a>
-      <a class="guide-card cram" href="Anatomy%20Exam%204/anatomy-exam-4-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Anatomy%20Exam%204/anatomy-exam-4-cram-sheet.html"><span class="gc-thumb"><img src="Anatomy%20Exam%204/anatomy-exam-4-study-guide-images/008.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Anatomy Exam 4 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
@@ -670,23 +657,19 @@
   <div class="guide-group" id="group-cam-nutrition">
     <p class="guide-group-title">CAM/Nutrition</p>
     <div class="guide-grid">
-      <a class="guide-card" href="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-study-guide.html"><span class="gc-thumb"><img src="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-study-guide-images/013.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">CAM/Nutrition Exam 1 Study Guide</p>
         <p class="guide-card-desc">Human Nutrition (nutrient classes, kcal &amp; calorie math, metric conversions, obesity &amp; BMI, the Standard American Diet, MyPlate, and the Nutrition Facts label) and Macronutrients, Micronutrients &amp; Water (carbohydrate metabolism &amp; glycemic response, fiber, saturated/mono/polyunsaturated &amp; omega-3/omega-6 fatty acids, lipoproteins &amp; cardiovascular disease, protein balance &amp; protein-calorie malnutrition, vegetarian/vegan diets, fat- &amp; water-soluble vitamins, major &amp; trace minerals, hydration, electrolytes, and the DASH diet) — with real slide figures and objective-by-objective coverage.</p>
       </a>
-      <a class="guide-card cram" href="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-cram-sheet.html"><span class="gc-thumb"><img src="CAM%20Nutrition%20Exam%201/cam-nutrition-exam-1-study-guide-images/015.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">CAM/Nutrition Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="CAM%20Nutrition%20Exam%202/cam-nutrition-exam-2-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="CAM%20Nutrition%20Exam%202/cam-nutrition-exam-2-study-guide.html"><span class="gc-thumb"><img src="CAM%20Nutrition%20Exam%202/cam-nutrition-exam-2-study-guide-images/8.png" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">CAM/Nutrition Exam 2 Study Guide</p>
         <p class="guide-card-desc">Introduction to Complementary and Alternative Medicine — complementary vs alternative vs integrative vs functional medicine, the National Center for Complementary and Integrative Health, why patients use these approaches and the counseling checklist, and all five domains: whole medical systems (Ayurveda &amp; the doshas, homeopathy, naturopathy, traditional Chinese medicine), mind-body medicine (biofeedback, guided imagery, hypnosis, meditation, relaxation therapy), biologically based practices (botanicals, supplements, chelation, diet therapies), manipulative and body-based practices, and energy therapies — with slide figures and objective-by-objective coverage.</p>
       </a>
-      <a class="guide-card cram" href="CAM%20Nutrition%20Exam%202/cam-nutrition-exam-2-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="CAM%20Nutrition%20Exam%202/cam-nutrition-exam-2-cram-sheet.html"><span class="gc-thumb"><img src="CAM%20Nutrition%20Exam%202/cam-nutrition-exam-2-study-guide-images/11.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">CAM/Nutrition Exam 2 Cram Sheet</p>
         <p class="guide-card-desc">Every topic condensed to its highest-yield facts — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
@@ -706,18 +689,15 @@
         <p class="guide-card-title">Physical Diagnosis 1 Exam 2 Cram Sheet</p>
         <p class="guide-card-desc">Every exam topic condensed to its highest-yield technique and findings — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
-      <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%203/pd1-exam3-study-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%203/pd1-exam3-study-guide.html"><span class="gc-thumb"><img src="Physical%20Diagnosis%201%20Exam%203/pd1-msk-palpation-guide-images/cervical.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Physical Diagnosis 1 Exam 3 Study Guide</p>
         <p class="guide-card-desc">Pelvic Exam (Female Genitalia) and Breast Examination &mdash; genital/breast anatomy, lymphatic drainage, Tanner staging, exam preparation and positioning, and full technique for external/speculum/bimanual/rectovaginal and breast inspection/palpation exams, with quick-reference tables and test-yourself questions.</p>
       </a>
-      <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%203/pd1-msk-palpation-guide.html">
-        <span class="guide-badge">Study Guide</span>
+      <a class="guide-card" href="Physical%20Diagnosis%201%20Exam%203/pd1-msk-palpation-guide.html"><span class="gc-thumb"><img src="Physical%20Diagnosis%201%20Exam%203/pd1-msk-palpation-guide-images/elbow-bones.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">MSK with Images for Palpations</p>
         <p class="guide-card-desc">Musculoskeletal Exam &mdash; every palpation landmark on the MSK lab checksheet mapped onto labeled photographs, joint by joint: temporomandibular joint, cervical spine, thoracic/lumbar spine, shoulder, elbow, wrist and hand, hip, knee, and ankle and foot. Includes what your fingers should feel at each landmark, the range-of-motion movements required, and the full 94-item checklist in order.</p>
       </a>
-      <a class="guide-card cram" href="Physical%20Diagnosis%201%20Exam%203/pd1-exam3-cram-sheet.html">
-        <span class="cram-badge">Cram Sheet</span>
+      <a class="guide-card cram" href="Physical%20Diagnosis%201%20Exam%203/pd1-exam3-cram-sheet.html"><span class="gc-thumb"><img src="Physical%20Diagnosis%201%20Exam%203/pd1-msk-palpation-guide-images/shoulder.jpg" alt="" loading="lazy" decoding="async"></span><span class="cram-badge">Cram Sheet</span>
         <p class="guide-card-title">Physical Diagnosis 1 Exam 3 Cram Sheet</p>
         <p class="guide-card-desc">Every exam topic condensed to its highest-yield technique and findings — a night-before companion to the full guide above, not a replacement for it.</p>
       </a>
