@@ -88,7 +88,7 @@ BODY = """<main class="content">
           <li>Subconjunctival hemorrhage</li><li>Pinguecula</li><li>Pterygium</li>
           <li>Orbital (post-septal) and periorbital (pre-septal) cellulitis</li>
           <li>Blepharitis</li><li>Chalazion</li><li>Hordeolum</li><li>Ectropion</li>
-          <li>Entropion</li><li>Dermatochalasis</li><li>Xanthalasma</li>
+          <li>Entropion</li><li>Dermatochalasis</li><li>Xanthelasma</li>
           <li>Lacrimal disorders: a. Dacryocystitis &middot; b. Dacryoadenitis</li>
           <li>Uveitis: a. Anterior uveitis (iritis/iridocyclitis) &middot; b. Posterior uveitis</li>
           <li>Keratitis</li><li>Corneal ulcer</li>
