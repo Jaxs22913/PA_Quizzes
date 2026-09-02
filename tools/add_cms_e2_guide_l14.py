@@ -46,11 +46,11 @@ FIGS = {
    ("l14-s024_pos1.jpg", "Hyphema",
     "Blood layered in the anterior chamber, with a visible fluid level", 24)],
  "@@LIDS@@": [
-   ("l14-s027_pos1.jpg", "Lid laceration",
+   ("l14-s029_pos1.jpg", "Lid laceration",
     "Look underneath &mdash; two thirds of full-thickness cuts have a globe injury with them", 27),
    ("l14-s032_pos1.jpg", "Orbital contusion",
     "Swelling held in front of the septum, without haemorrhage", 32),
-   ("l14-s034_pos2.jpg", "Periorbital haematoma",
+   ("l14-s034_pos1.jpg", "Periorbital haematoma",
     "Bleeding behind the septum, within the bony orbit", 34)],
  "@@DETACH@@": [
    ("l14-s037_pos2.jpg", "Posterior vitreous detachment",

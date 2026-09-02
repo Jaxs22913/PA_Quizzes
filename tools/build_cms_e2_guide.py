@@ -471,7 +471,7 @@ body = body.replace("@@PINGPTER@@", figpair(
     "<b>Right, pterygium</b> &mdash; the growth crosses onto the cornea. That crossing is the "
     "entire distinction.", 27))
 body = body.replace("@@CELLULITIS@@", figpair(
-    "s052_1.jpg", "s052_2.jpg",
+    "s052_1.jpg", "l10-s052_pos2.jpg",
     "<b>Left, pre-septal</b> &mdash; the lid is swollen and red but <b>the eye itself is white</b>, "
     "and movements are full and painless. <b>Right, post-septal</b> &mdash; the globe is involved. "
     "This is the single most useful visual discrimination in the block.", 52))

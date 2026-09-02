@@ -201,9 +201,9 @@ IMGS_L14 = {
  "Corneal abrasion": ("l14-s018_pos1.jpg", 18),
  "Corneal or conjunctival foreign body": ("l14-s021_pos1.jpg", 21),
  "Hyphema": ("l14-s024_pos1.jpg", 24),                     # verified: layered blood
- "Lid laceration": ("l14-s027_pos1.jpg", 27),
+ "Lid laceration": ("l14-s029_pos1.jpg", 29),
  "Orbital contusion": ("l14-s032_pos1.jpg", 32),
- "Periorbital haematoma": ("l14-s034_pos2.jpg", 34),
+ "Periorbital haematoma": ("l14-s034_pos1.jpg", 34),
  "Retinal detachment &mdash; rhegmatogenous": ("l14-s038_pos1.jpg", 38),  # verified: B-scan
  "Orbital floor (blowout) fracture": ("l14-s042_pos2.jpg", 42),  # verified: entrapment, upgaze
  "Basilar skull fracture": ("l14-s045_pos3.jpg", 45),            # verified: Battle sign

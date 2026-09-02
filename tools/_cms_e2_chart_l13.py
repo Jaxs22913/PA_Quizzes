@@ -203,7 +203,7 @@ IMGS_L13 = {
  "Cataract &mdash; nuclear": ("l13-s037_1.jpg", 37),                        # ABOVE
  "Cataract &mdash; cortical": ("l13-s037_2.jpg", 37),                       # BELOW
  "Cataract &mdash; pediatric": ("l13-s038_2.jpg", 38),                      # ABOVE, polar
- "Amblyopia": ("l13-s032_1.jpg", 32),
+ "Amblyopia": ("l13-s032_pos2.jpg", 32),
  "Retinoblastoma": ("l13-s041_1.jpg", 41),
  "Uveal melanoma": ("l13-s044_4.jpg", 44),                                  # label C, choroidal
  "Iris nevus": ("l13-s048_1.jpg", 48),                                      # label B, pigmented nevus

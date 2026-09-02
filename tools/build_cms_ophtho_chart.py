@@ -68,7 +68,7 @@ from _cms_e2_chart_l14 import ROWS_L14, DIFF_L14, IMGS_L14
 DIFF = dict(DIFF, **DIFF_NEW)
 DIFF = dict(DIFF, **DIFF_L13)
 DIFF = dict(DIFF, **DIFF_L14)
-IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('s052_2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
+IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('l10-s052_pos2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
 
 # Viewed and REJECTED. These are the deck's OWN differential images -- filing
 # one under the row's condition would be a factual error in the chart, not
@@ -411,8 +411,13 @@ def main():
         else:
             cell = '<span class="nopic">no image<br>on the slide</span>'
         deck = row[9] if len(row) > 9 else "CMS I Common Ophthalmological Disorders"
+        # Every deck must be listed. Lectures 13 and 14 were added to the
+        # chart without being added here, so all 30 of their rows fell
+        # through to the default and claimed to be Lecture 10 slides.
         lect = {"11. Neuro-Ophthalmology": "L11",
-                "12. Acute Vision Loss": "L12"}.get(deck, "L10")
+                "12. Acute Vision Loss": "L12",
+                "Chronic Vision Loss & Tumors": "L13",
+                "CMS I Ocular Trauma": "L14"}.get(deck, "L10")
         slide = '<b class="lect">%s</b><br>%s' % (lect, slide)
         pain, side, sign = DIFF[name]
         # data-* attributes drive the filter row, so "show me only the painful
@@ -468,12 +473,13 @@ table. <span class="u emerg" style="padding:1px 6px">EMERGENT</span> means now.
 stamped into the image &mdash; <i>EyeRounds.org</i>, the <i>Kellogg Eye Center</i>,
 <i>&copy; Logical Images</i> &mdash; and those marks are left visible on purpose; they are part of
 the citation.<br><br>
-<b>The Slide column names the lecture.</b> This chart now spans three decks &mdash;
-<b>L10</b> Common Ophthalmological Disorders, <b>L11</b> Neuro-Ophthalmology and <b>L12</b> Acute
-Vision Loss &mdash; so a bare slide number no longer identifies anything on its own. Lecture 11 and
-12 pictures are filed under <i>l11-</i> and <i>l12-</i> filenames for the same reason: the three
-decks number their slides independently, and without the prefix four figures resolved to the wrong
-Lecture 10 photographs.<br><br>
+<b>The Slide column names the lecture.</b> This chart spans five decks &mdash;
+<b>L10</b> Common Ophthalmological Disorders, <b>L11</b> Neuro-Ophthalmology, <b>L12</b> Acute
+Vision Loss, <b>L13</b> Chronic Vision Loss &amp; Tumors and <b>L14</b> Ocular Trauma &mdash; so a
+bare slide number no longer identifies anything on its own. Pictures from every deck after the
+first are filed under an <i>l11-</i>, <i>l12-</i>, <i>l13-</i> or <i>l14-</i> filename for the same
+reason: the five decks number their slides independently, and without the prefix four figures
+resolved to the wrong Lecture 10 photographs.<br><br>
 <b>Sixteen of the Lecture 11 and 12 rows have no picture.</b> Those decks illustrate the pathways
 and the classic fundus findings rather than every named condition, so the rows that carry a
 photograph are the ones the deck actually photographs &mdash; the glaucomatous disc, the detached

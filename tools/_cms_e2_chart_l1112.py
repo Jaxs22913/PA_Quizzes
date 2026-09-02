@@ -230,8 +230,8 @@ ROWS_NEW = [
 # layout. Files are the 600 px JPEGs, matching the Lecture 10 convention.
 IMGS_NEW = {
  "Nystagmus": ("l11-s004_1.jpg", 4),
- "Adie tonic pupil": ("l11-s020_1.jpg", 20),
- "Cranial nerve III palsy": ("l11-s039_2.jpg", 39),
+ "Adie tonic pupil": ("l11-s037_pos1.jpg", 37),
+ "Cranial nerve III palsy": ("l11-s040_pos1.jpg", 40),
  "Acute angle-closure glaucoma": ("l12-s012_1.jpg", 12),
  "Chronic open-angle glaucoma": ("l12-s019_1.jpg", 19),
  # slide 23 is labelled ABOVE / MIDDLE / BELOW: _1 is the fundus photograph of

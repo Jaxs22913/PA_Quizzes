@@ -33,6 +33,37 @@ loaded site-wide: `window.openPauseOverlay`, `window.startExamModeTour`, `window
 don't reuse one generic "why" string across all wrong choices; that's only what the legacy
 converter did because the old schema didn't have per-option text.
 
+### Picture questions
+
+Three optional fields put a photograph above the stem — added for "Guess that Disease"
+(CMS I Exam 2), where the picture *is* the question:
+
+```json
+{
+  "img": "cms-ophtho-chart-images/s012_1.jpg",
+  "alt": "Lower eyelid with the margin turned inward against the globe",
+  "slide": "Slide 12"
+}
+```
+
+`img` is relative to the rendered quiz file. `alt` is the screen-reader description — write
+what is visible, not the diagnosis, or you have given the answer away. `slide` is the caption
+printed under the picture; keep the full deck citation in `cite` as usual.
+
+The picture is rendered in the live question card, in the Exam Mode scroll column and in the
+end-of-quiz review. `theme.js` arms it for click-to-enlarge automatically. Questions without
+`img` are unaffected — the figure element stays hidden.
+
+Note that `tools/build_group_quizzes.py` drops any quiz containing a picture question: Group
+Study is text-only, and "name this photograph" without the photograph is not a question.
+
+### Grouping by something other than an objective
+
+`io` drives the results breakdown and the chip above the stem. It is normally an instructional
+objective, and the engine prefixes "Objective " to it. A label starting with `Objective` or
+`Region` is left as written — a picture quiz groups by anatomical region, and
+"Objective Region — Cornea" reads as a mistake.
+
 ## Usage — building a brand-new quiz
 
 ```python
