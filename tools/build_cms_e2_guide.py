@@ -103,11 +103,11 @@ BODY = """<main class="content">
   <div class="callout">
     <p><strong>Where this sits against Clinical Pathophysiology.</strong> Clin Path I Lecture 4
     covers almost this exact condition list from the <em>mechanism</em> side &mdash; why the tissue
-    fails. This lecture is the <em>management</em> side: what it looks like, what to order, what to
+    fails. This section is the <em>management</em> side: what it looks like, what to order, what to
     give, and when to refer. If you find yourself revising the same fact twice, check which half
     you are actually being asked for.</p>
-    <p><strong>A standing warning about this deck.</strong> Several slides read as absolutes and
-    are softened by their own speaker notes. Imaging is <em>not</em> automatic for dacryoadenitis,
+    <p><strong>A standing warning.</strong> Several of these rules are stated as absolutes but
+    are softened in practice. Imaging is <em>not</em> automatic for dacryoadenitis,
     dacryocystitis or clearly pre-septal disease; haematology referral is <em>not</em> automatic
     for a recurrent subconjunctival haemorrhage; and perforation risk in scleritis is greatest in
     <em>necrotising</em> disease rather than uniformly. Those hedges are folded in below.</p>
@@ -118,10 +118,10 @@ BODY = """<main class="content">
     <p><strong>She said she will not test this section.</strong> After finishing posterior uveitis
     she moved on and said: <em>&ldquo;This is extra material. You can write that. I&rsquo;m not
     going to pull test questions from this. This is not instructional objective.&rdquo;</em> It is
-    kept here because it is the most clinically useful part of the deck and it is on the slides
+    kept here because it is the most clinically useful material in the block
     &mdash; but <b>no quiz question is built on it</b>. Read it for the ward, not for the exam.</p>
   </div>
-  <p>The single most transferable thing in this lecture is a sequence rather than a fact.
+  <p>The single most transferable thing here is a sequence rather than a fact.
   <strong>Complete this before naming the diagnosis:</strong></p>
   <ol>
     <li><strong>Visual acuity in each eye, with correction</strong> &mdash; the vital sign of the eye</li>
@@ -131,7 +131,7 @@ BODY = """<main class="content">
     <li><strong>Pattern of injection and discharge</strong></li>
     <li><strong>History</strong>: contact lenses, trauma, surgery, steroids</li>
   </ol>
-  <p><strong>Reduced vision or an abnormal pupil is a red flag.</strong> The deck's warning is
+  <p><strong>Reduced vision or an abnormal pupil is a red flag.</strong> The warning is
   blunt: <em>do not let obvious redness substitute for an eye examination.</em></p>
 
   <div class="callout warn">
@@ -190,8 +190,7 @@ BODY = """<main class="content">
   metabolic disorders with raised serum lipids. <strong>Work up the metabolism</strong>: lipid
   profile, plus fasting glucose and haemoglobin A1C for diabetes, plus liver function. Treat the
   underlying issue; local options are cryotherapy, laser ablation, chemical peel or excision.
-  <strong>Recurrence is common even after effective local treatment.</strong> Caveat from the
-  notes: many patients have entirely normal lipids, and the profile is still reasonable.</p>
+  <strong>Recurrence is common even after effective local treatment.</strong> One caveat: many patients have entirely normal lipids, and the profile is still reasonable.</p>
 
   <p><strong>Blepharitis and meibomitis</strong> &mdash; associated with <b>rosacea, seborrhoeic
   dermatitis, and Staphylococcus aureus colonisation</b>. Burning, dryness, grittiness, itching,
@@ -234,7 +233,7 @@ BODY = """<main class="content">
   @@PINGPTER@@
   <p><strong>Pinguecula and pterygium</strong> both come from chronic sun and wind exposure and sit
   almost always at <b>3 o'clock or 9 o'clock</b>. The whole distinction:
-  <strong>the pterygium extends onto the cornea, the pinguecula does not.</strong> The deck's
+  <strong>the pterygium extends onto the cornea, the pinguecula does not.</strong> The
   mnemonic: <em>pterodactyls fly (into the cornea), penguins can't.</em>
   Protect from sun, dust and wind; lubricating drops. <strong>Conservative management will not make
   it resolve.</strong> Non-urgent referral if it grows or vision is affected; surgery if it
@@ -255,7 +254,7 @@ BODY = """<main class="content">
     check their vision</b> &mdash; with their contacts or glasses in, because what you want to know
     is whether it has <em>changed</em>.</p>
   </div>
-  <p> For recurrence, the notes ask for medication review, blood pressure and
+  <p> For recurrence, what is wanted is medication review, blood pressure and
   targeted evaluation &mdash; <em>not</em> automatic haematology referral.</p>
 
   <p><strong>Chemosis</strong> is conjunctival swelling &mdash; a <em>sign</em>, not a diagnosis.
@@ -305,7 +304,7 @@ BODY = """<main class="content">
     <tr><td>Management</td><td>Artificial tears + <b>oral anti-inflammatory taken WITH FOOD</b>. Refer if no response in <b>2 days</b></td><td><b>URGENT referral.</b> Slit lamp and fundoscopy, work up the systemic cause. Sclera at risk of perforation, may need a surgical patch</td></tr>
     <tr><td>Prognosis</td><td>Usually self-limited; may recur in either eye</td><td><b>Decreased PAIN is the first sign of response</b>, even if the inflammation looks unchanged</td></tr>
   </table>
-  <p class="muted">The notes refine the slide: non-infectious anterior scleritis commonly
+  <p class="muted">A refinement worth carrying: non-infectious anterior scleritis commonly
   <em>begins</em> with systemic non-steroidal anti-inflammatories, with corticosteroids and
   immunomodulators for severe, necrotising, posterior or refractory disease &mdash; and perforation
   risk is greatest in <em>necrotising</em> disease, not uniformly.</p>
@@ -360,7 +359,7 @@ BODY = """<main class="content">
     <tr><td>Course</td><td>Most acute cases respond dramatically in days to weeks</td><td>Develops far more slowly, may last years</td></tr>
   </table>
   <p>Recurrent uveitis, or uveitis with features suggesting systemic autoimmune disease, needs a
-  <strong>thorough systemic evaluation</strong>. And per the notes,
+  <strong>thorough systemic evaluation</strong>. And
   <strong>infection must be excluded before immunosuppression.</strong></p>
 
   <h3 class="sub" id="e2l1-cellulitis">1.10 &middot; Pre-septal and post-septal cellulitis</h3>
@@ -422,7 +421,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"Episcleral vessels blanch with phenylephrine, and can be moved with a cotton-tip applicator. Scleral vessels do neither."},
       {q:"What is the FIRST sign that scleritis is responding to treatment?",
        choices:["The violaceous hue fades","Decreased PAIN, even if the eye looks unchanged","Vision returns to normal","The discharge stops"],correct:1,
-       explain:"The deck flags this specifically, so an eye that still looks inflamed is not misread as treatment failure."},
+       explain:"This is flagged specifically, so an eye that still looks inflamed is not misread as treatment failure."},
       {q:"A contact lens wearer has a central epithelial defect with a white infiltrate. What is the next step?",
        choices:["Patch the eye and review in two days","Remove the lenses without patching and arrange SAME-DAY ophthalmology","Give a take-home topical anaesthetic","Start a topical corticosteroid"],correct:1,
        explain:"Microbial keratitis until proven otherwise. Never patch, never send home an anaesthetic, never start steroids."},
@@ -475,7 +474,7 @@ body = body.replace("@@CELLULITIS@@", figpair(
     "s052_1.jpg", "s052_2.jpg",
     "<b>Left, pre-septal</b> &mdash; the lid is swollen and red but <b>the eye itself is white</b>, "
     "and movements are full and painless. <b>Right, post-septal</b> &mdash; the globe is involved. "
-    "This is the single most useful visual discrimination in the lecture.", 52))
+    "This is the single most useful visual discrimination in the block.", 52))
 body = body.replace("@@HERPES@@", figpair(
     "s057_1.jpg", "s057_2.jpg",
     "<b>Left, herpes simplex</b> &mdash; a true dendrite: tree-branching, elevated edges, and "

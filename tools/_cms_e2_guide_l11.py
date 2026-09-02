@@ -39,7 +39,7 @@ SECTION = """
   </div>
 
   <div class="callout">
-    <p><strong>How to read this lecture.</strong> Almost every diagnosis here is decided by
+    <p><strong>How to read this section.</strong> Almost every diagnosis here is decided by
     <em>which pupil is the abnormal one</em> and <em>what it does in the dark</em>. Get the four
     pathways straight first &mdash; afferent light, parasympathetic efferent, sympathetic, and
     near/accommodation &mdash; and the named pupils fall out of them rather than needing to be
@@ -47,7 +47,7 @@ SECTION = """
   </div>
 
   <h3 class="sub" id="e2l2-nystagmus">2.1 &middot; Nystagmus <span class="cite">Objective a</span></h3>
-  <p><strong>Definition, as the deck words it:</strong> an <b>involuntary, biphasic, rhythmic,
+  <p><strong>Definition:</strong> an <b>involuntary, biphasic, rhythmic,
   tremor-like oscillating movement of the eyes</b>. It is either <b>congenital</b> (infantile or
   latent) or <b>acquired</b>.</p>
   <p><strong>It is usually symptomatic &mdash; unless it was acquired before the age of 8.</strong>
@@ -123,7 +123,7 @@ SECTION = """
     <tr><td>Is the difference <b>greater in the LIGHT</b>?</td><td>The larger pupil is failing to constrict</td><td>The <b>LARGE</b> one &mdash; think CN III palsy, Adie, pharmacologic mydriasis</td></tr>
     <tr><td>Is it <b>equal in light and dark</b>?</td><td>Both pupils are working</td><td><b>Physiologic anisocoria</b> &mdash; the most common cause, usually <b>under 0.4 mm</b> difference</td></tr>
   </table>
-  <p><strong>When the large pupil is abnormal</strong>, the deck's causes are an ocular condition
+  <p><strong>When the large pupil is abnormal</strong>, the causes are an ocular condition
   preventing constriction, or <b>pharmacologic mydriasis</b>. Anticholinergics give a pupil that
   is <b>usually 8 mm or more and does not constrict to light at all</b> &mdash; atropine and other
   anticholinergic mydriatic or cycloplegic drops are the classic culprits.</p>
@@ -145,7 +145,7 @@ SECTION = """
   the average illumination the brain is working from has just dropped.</p>
 
   <div class="prof-flag">
-    <span class="prof-flag-label">&#9733; Emphasised in lecture</span>
+    <span class="prof-flag-label">&#9733; Emphasised</span>
     <p><strong>Horner syndrome &mdash; dilation lag is the hallmark.</strong> The anisocoria is
     <b>most evident in the first 4&ndash;5 seconds after dimming the lights</b>, which is exactly
     when a normal sympathetic pathway would be actively dilating. <b>After 10&ndash;15 seconds the
@@ -158,11 +158,11 @@ SECTION = """
   </div>
 
   <table class="tbl">
-    <tr><th>Horner &mdash; neuron order</th><th>Causes named in the deck</th></tr>
+    <tr><th>Horner &mdash; neuron order</th><th>Causes</th></tr>
     <tr><td><b>First order</b></td><td>Brainstem strokes and tumours; spinal cord lesions <b>above T1</b></td></tr>
     <tr><td><b>Second order</b></td><td><b>Pancoast tumour</b> (superior pulmonary sulcus), thyroid cancer</td></tr>
     <tr><td><b>Third order</b></td><td><b>Carotid dissection</b>, cavernous sinus pathology</td></tr>
-    <tr><td colspan="2"><b>Often idiopathic</b> &mdash; the deck says so in capitals, so a negative workup is a real outcome rather than a failure.</td></tr>
+    <tr><td colspan="2"><b>Often idiopathic</b> &mdash; emphatically so, and a negative workup is a real outcome rather than a failure.</td></tr>
   </table>
   <div class="callout warn">
     <p><strong>The one that must not be missed.</strong> <b>Carotid artery dissection</b>,
@@ -215,7 +215,7 @@ SECTION = """
     <tr><th>Situation</th><th>Management</th></tr>
     <tr><td>Isolated, atraumatic <b>CN IV or CN VI</b> palsy</td><td><b>MRI brain with and without contrast</b>. Check <b>haemoglobin A1C</b> if there are risk factors and no known diabetes.</td></tr>
     <tr><td><b>Traumatic</b></td><td><b>Observe roughly 6 months</b> before considering corrective treatment. In the interim, <b>patch one eye</b> to relieve binocular diplopia.</td></tr>
-    <tr><td><b>Congenital</b></td><td>Patching, per the deck.</td></tr>
+    <tr><td><b>Congenital</b></td><td>Patching.</td></tr>
   </table>
 
   <h3 class="sub" id="e2l2-ptosis">2.7 &middot; Ptosis <span class="cite">Objective f6</span></h3>
@@ -260,7 +260,7 @@ SECTION = """
   </div>
 
   <h3 class="sub" id="e2l2-care">2.9 &middot; Care strategies, adult and elderly <span class="cite">Objective h</span></h3>
-  <p>The deck's own summary, in order: <b>begin with a thorough history and physical
+  <p>The summary, in order: <b>begin with a thorough history and physical
   examination</b>; <b>labs and imaging</b> (head CT or brain MRI) <b>if indicated</b>;
   <b>ophthalmology referral</b>; and <b>appropriate specialist referral</b> &mdash; neurology,
   vascular surgery, or neurosurgery. <span class="cite">Slide 54</span></p>

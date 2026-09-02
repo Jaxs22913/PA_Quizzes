@@ -43,12 +43,12 @@ SECTION = """
     </ol>
   </div>
 
-  <div class="callout"><strong>How this lecture is organised, and the one line that
+  <div class="callout"><strong>How this section is organised, and the one line that
   carries it.</strong> Everything here is <em>slow</em> &mdash; the opposite of section 3.
   Beck came back to the same question repeatedly: <mark class="prof-highlight">what is the
   most common cause?</mark> She said it outright &mdash; &ldquo;it&rsquo;s always important
   to know the most common causes of things, because you&rsquo;ll see them most commonly.&rdquo;
-  That list is the spine of the lecture: <strong>amblyopia</strong> for childhood vision loss,
+  That list is the spine of the section: <strong>amblyopia</strong> for childhood vision loss,
   <strong>uveal melanoma</strong> for adult eye cancer, <strong>primary open-angle</strong>
   for glaucoma, <strong>zonular</strong> for paediatric cataract, and the <strong>liver</strong>
   for where ocular melanoma goes.</div>

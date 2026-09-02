@@ -47,7 +47,7 @@ SECTION = """
   </div>
 
   <h3 class="sub" id="e2l3-approach">3.1 &middot; The four questions that separate these diagnoses</h3>
-  <p>Jaquith opened the lecture by telling the class which details to highlight, because these
+  <p>Jaquith opened by telling the class which details to highlight, because these
   conditions overlap heavily and <strong>the discriminating information is in the history rather
   than the fundus</strong>:</p>
   <table class="tbl">
@@ -75,7 +75,7 @@ SECTION = """
   blindness&rdquo;</b>. Lasts <b>a few seconds to minutes</b>. It can involve both eyes but is
   <b>usually one</b>.</p>
   <div class="callout">
-    <p><strong>If it lasted hours, it was not a transient ischemic attack.</strong> The lecturer
+    <p><strong>If it lasted hours, it was not a transient ischemic attack.</strong> Jaquith
     was explicit. Duration is the first filter you apply.</p>
   </div>
   <table class="tbl">
@@ -103,7 +103,7 @@ SECTION = """
     <tr><td><b>First-line</b></td><td>Topical <b>pilocarpine</b> (alpha-blocker) or <b>timolol</b> (beta-blocker); <b>IV acetazolamide</b> then mannitol or isosorbide</td><td><b>Latanoprost, tafluprost, timolol drops</b></td></tr>
     <tr><td><b>Definitive</b></td><td><b>Laser peripheral iridotomy</b>, <b>1&ndash;2 days after onset</b> &mdash; lets fluid pass from the posterior to the anterior chamber</td><td><b>Laser trabeculoplasty</b> if refractory or advanced. <b>Surgery is definitive for both forms.</b></td></tr>
   </table>
-  <figure class="fig"><img src="%(IMG)ss019_1.jpg" loading="lazy" alt="Two fundus photographs: a healthy optic nerve beside a glaucomatous one with a widened cup."><figcaption><b>Optic nerve cupping</b> &mdash; the widening and deepening of the central cup as nerve fibres are lost. The lecturer called it <b>the classic sign</b>, and the one a non-ophthalmologist can actually see. <span class="cite">Slide 19</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss019_1.jpg" loading="lazy" alt="Two fundus photographs: a healthy optic nerve beside a glaucomatous one with a widened cup."><figcaption><b>Optic nerve cupping</b> &mdash; the widening and deepening of the central cup as nerve fibres are lost. Jaquith called it <b>the classic sign</b>, and the one a non-ophthalmologist can actually see. <span class="cite">Slide 19</span></figcaption></figure>
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; The case she told twice</span>
     <p>A patient went to the emergency department with an <b>intractable headache</b> &mdash;
@@ -120,7 +120,7 @@ SECTION = """
   <h3 class="sub" id="e2l3-neuritis">3.4 &middot; Optic neuritis <span class="cite">Objective a3</span></h3>
   <table class="tbl">
     <tr><th>Facet</th><th>Content</th></tr>
-    <tr><td><b>Epidemiology</b></td><td><b>18 to 45 years old, 75% female</b> &mdash; a much younger group than everything else in this lecture</td></tr>
+    <tr><td><b>Epidemiology</b></td><td><b>18 to 45 years old, 75% female</b> &mdash; a much younger group than everything else in this block</td></tr>
     <tr><td><b>Etiology</b></td><td>Inflammation due to <b>multiple sclerosis</b>, autoimmune disorders, <b>postviral</b>, or idiopathic</td></tr>
     <tr><td><b>Symptoms</b></td><td><b>Unilateral</b> vision loss over <b>hours to several days</b>, with <b>PAINFUL EYE MOVEMENT</b>. Often central vision loss and <b>loss of colour vision</b></td></tr>
     <tr><td><b>Signs</b></td><td>Often a <b>normal-appearing disc</b>. <b>Relative afferent pupillary defect (Marcus Gunn)</b></td></tr>
@@ -145,7 +145,7 @@ SECTION = """
     <tr><td><b>Diagnosis</b></td><td>Direct and dilated ophthalmoscopy: retina <b>elevated, grey cloud with folds</b>, a <b>pigmented well-demarcated area</b>, and tears that are <b>orange and crescent shaped</b>. <b>Ultrasound is MORE SENSITIVE than the fundoscopic exam</b> and determines the type</td></tr>
     <tr><td><b>Treatment</b></td><td><b>EMERGENCY &mdash; refer immediately.</b> Surgical repair urgently or within a week depending on type. Options: <b>laser photocoagulation, cryotherapy, pneumatic retinopexy, vitrectomy, scleral buckle</b></td></tr>
   </table>
-  <figure class="fig"><img src="%(IMG)ss028_1.jpg" loading="lazy" alt="Fundus photograph of a detached retina showing pale billowy folds, arrowed."><figcaption>The detached upper retina &mdash; opaque and cloudy, vessels no longer visible, with the <b>&ldquo;billowy folds&rdquo;</b> the deck names. <span class="cite">Slide 28</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss028_1.jpg" loading="lazy" alt="Fundus photograph of a detached retina showing pale billowy folds, arrowed."><figcaption>The detached upper retina &mdash; opaque and cloudy, vessels no longer visible, with the characteristic <b>&ldquo;billowy folds&rdquo;</b>. <span class="cite">Slide 28</span></figcaption></figure>
   <div class="callout warn">
     <p><strong>Her disposition, verbatim in substance:</strong> this one needs to be seen
     <em>right now</em>. If no ophthalmologist can take them, they go to a hospital that has one.
@@ -178,7 +178,7 @@ SECTION = """
   their central counterparts</em>, differing only in <b>where the blockage sits</b>. A branch
   vessel is occluded rather than the main trunk, so <b>only part of the retina is affected</b> and
   the field loss is partial and localised rather than widespread. Everything else &mdash; risk
-  factors, workup, referral &mdash; is the same. The lecturer was explicit that this is all there
+  factors, workup, referral &mdash; is the same. Jaquith was explicit that this is all there
   is to it.</p>
 
   <h3 class="sub" id="e2l3-papilledema">3.7 &middot; Papilledema</h3>
@@ -186,7 +186,7 @@ SECTION = """
     <p><strong>This is the one condition here that is NOT about intraocular pressure.</strong>
     Papilledema is swelling of the optic disc caused by raised <b>INTRACRANIAL</b> pressure
     &mdash; pressure inside the skull pushing on the optic disc. Every other pressure in this
-    lecture is inside the globe. She drew the line explicitly.</p>
+    block is inside the globe. She drew the line explicitly.</p>
   </div>
   <table class="tbl">
     <tr><th>Facet</th><th>Content</th></tr>
@@ -274,7 +274,7 @@ TEST = """    avl: [
        explain:"Artery gives pale retina with a cherry-red fovea. Vein gives the haemorrhagic blood-and-thunder fundus. The other three are all venous."},
       {q:"Which pressure is raised in papilledema?",
        choices:["Intraocular","Intracranial","Central venous","Orbital compartment"],correct:1,
-       explain:"Intracranial. Every other condition in this lecture involves pressure inside the globe. Papilledema pushes the disc OUT; glaucoma cups it IN."},
+       explain:"Intracranial. Every other condition in this block involves pressure inside the globe. Papilledema pushes the disc OUT; glaucoma cups it IN."},
       {q:"A 24-year-old woman has vision loss over two days with pain on eye movement and washed-out colours. Which diagnosis?",
        choices:["NAION","Optic neuritis","Angle-closure glaucoma","CRVO"],correct:1,
        explain:"18-45 years, 75% female, painful eye movement, colour desaturation, often a normal-looking disc. The ischemic optic neuropathies are painless and occur in an older group."},

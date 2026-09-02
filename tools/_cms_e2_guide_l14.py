@@ -55,7 +55,7 @@ SECTION = """
   </div>
 
   <h3 class="sub" id="e2l5-rules">5.1 &middot; The four rules that apply before any diagnosis</h3>
-  <p>These sit at the front of the lecture because breaking one of them makes the injury worse.</p>
+  <p>These come first because breaking one of them makes the injury worse.</p>
   <table class="tbl">
     <tr><th>Rule</th><th>Why</th></tr>
     <tr><td><b>DO NOT REMOVE a penetrating object</b></td>
@@ -85,7 +85,7 @@ SECTION = """
   response to direct and consensual light</strong>; and if the patient is conscious and cooperative,
   test <strong>visual acuity and confrontation fields</strong>. Consult ophthalmology for anything
   needing further evaluation.</p>
-  <p class="muted">A practical aside from the deck: if no lid retractor is to hand, an unfolded
+  <p class="muted">A practical aside: if no lid retractor is to hand, an unfolded
   paper clip bent with a hemostat will retract a lid.</p>
 
   <h3 class="sub" id="e2l5-globe">5.3 &middot; Open globe injury</h3>
@@ -176,7 +176,7 @@ SECTION = """
 
   <h3 class="sub" id="e2l5-detach">5.7 &middot; Retinal and vitreous detachment</h3>
   @@DETACH@@
-  <p>The presentation is the same one that appears in Lecture 12: a <strong>shadow or curtain
+  <p>The presentation is the same one that appears in section 3: a <strong>shadow or curtain
   descending</strong> over the eye, cloudy or smoky vision, <strong>floaters and momentary flashes
   of light</strong>, a monocular field defect, and central acuity dropping once the macula is
   involved. Diagnosis is history plus a <strong>dilated eye examination</strong>. The patient must
