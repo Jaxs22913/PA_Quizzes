@@ -4528,6 +4528,70 @@ window.openPauseOverlay = function (opts) {
 })();
 
 /* ============================================================
+   READING-POSITION BAR  (study guides only)
+   ------------------------------------------------------------
+   Jaxon, 2026-09-02: "The long guides have a table of contents but no sense
+   of how far through you are." Some of them run 10,000-27,000px tall.
+
+   APPENDED TO <body>, NOT INTO .wrap. In dark mode theme.css inverts
+   `body > .wrap` with a filter, and a filtered ancestor becomes the
+   containing block for position:fixed descendants -- the bar would scroll
+   away with the page instead of staying pinned, and it would be colour-
+   inverted on top of that. Everything fixed on this site is a direct child
+   of <body> for exactly that reason.
+
+   Amber because that is the Guides hue in theme.css's hue map, and
+   --a-amber already carries its own dark value, which is correct here
+   precisely because this element is outside the inverted wrapper.
+
+   Guides are identified by `nav.toc[data-readable]`. Cram sheets have a
+   .toc too, but it is a <div> of chips, so they are not matched.
+   ============================================================ */
+(function () {
+  var toc = document.querySelector('nav.toc[data-readable], nav.toc');
+  if (!toc || toc.tagName !== 'NAV') return;
+  if (!document.body) return;
+
+  var bar = document.createElement('div');
+  bar.id = 'read-bar';
+  bar.setAttribute('aria-hidden', 'true');
+  var fill = document.createElement('span');
+  bar.appendChild(fill);
+  document.body.appendChild(bar);
+
+  var ticking = false;
+
+  function paint() {
+    ticking = false;
+    var doc = document.documentElement;
+    /* Scrollable height, not total height: the last viewport of a page is
+       reached at 100%, so the bar fills exactly when the end is on screen
+       rather than at some unreachable fraction. */
+    var max = (doc.scrollHeight || 0) - window.innerHeight;
+    if (max < 240) { bar.classList.remove('on'); return; }   // too short to be worth it
+    bar.classList.add('on');
+    var pct = Math.min(1, Math.max(0, (window.scrollY || doc.scrollTop || 0) / max));
+    fill.style.width = (pct * 100).toFixed(2) + '%';
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    (window.requestAnimationFrame || setTimeout)(paint, 16);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  /* Guides load images lazily and open/close accordions, both of which change
+     scrollHeight after load; without this the bar drifts out of true. */
+  if (window.ResizeObserver) {
+    try { new ResizeObserver(onScroll).observe(document.body); } catch (e) {}
+  }
+  window.addEventListener('load', paint);
+  paint();
+})();
+
+/* ============================================================
    SWIPE BETWEEN QUESTIONS  (touch devices)
    ------------------------------------------------------------
    Jaxon, 2026-09-02: "The biggest change to how the site feels on a phone,

@@ -2800,3 +2800,23 @@ body.homepage .continue-item:hover {
    only for the release, so the drag itself stays 1:1 with the finger. */
 #quiz.swipe-settle { transition: transform 180ms cubic-bezier(.22,.61,.36,1); }
 @media (prefers-reduced-motion: reduce) { #quiz.swipe-settle { transition: none; } }
+
+/* Reading-position bar on the study guides (theme.js). Amber is the Guides
+   hue in the map above. Sits at 4400: over the guides' own layers (their
+   highest is 4000) but under theme.css's modals and overlays. */
+#read-bar {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  z-index: 4400; pointer-events: none;
+  background: transparent;
+  opacity: 0; transition: opacity 200ms ease;
+}
+#read-bar.on { opacity: 1; }
+#read-bar span {
+  display: block; height: 100%; width: 0;
+  background: var(--a-amber, #ad631e);
+  border-radius: 0 2px 2px 0;
+  transition: width 90ms linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  #read-bar, #read-bar span { transition: none; }
+}
