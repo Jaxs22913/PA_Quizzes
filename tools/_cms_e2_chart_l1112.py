@@ -43,7 +43,8 @@ DIFF_NEW = {
  "Argyll Robertson pupil": ("<b>NO</b>", "<b>BILATERAL</b>",
    "<b>Small pupils</b>: <b>no light reaction, brisk near reaction</b> &mdash; light-near dissociation"),
  "Adie tonic pupil": ("<b>NO</b> &mdash; may have photophobia", "Usually unilateral",
-   "<b>LARGE pupil</b>, poor light response, <b>slow tonic near response</b>; <b>sector paralysis</b>"),
+   "<b>LARGE pupil</b>, poor light response, <b>slow tonic near response</b>; <b>sector paralysis</b>; "
+   "<b>absent Achilles or patellar reflexes</b> (Holmes-Adie)"),
  "Cranial nerve III palsy": ("<b>NO</b> in itself", "Unilateral",
    "<b>Ptosis + MYDRIASIS</b> + impaired movement. <b>Pupil INVOLVED &rarr; STAT angiography</b>"),
  "Cranial nerve IV palsy": ("<b>NO</b>", "Unilateral",
@@ -182,7 +183,7 @@ ROWS_NEW = [
   "The pupillary near pathway <b>skips part of the light pathway&rsquo;s route</b>, which is why one can fail while the other works.",
   "19, 31&ndash;33", D11),
  ("Adie tonic pupil", NEU,
-  "<b>LARGE</b> pupil &middot; <b>poor light, slow tonic near</b> &middot; <b>sector paralysis</b>",
+  "<b>LARGE</b> pupil &middot; <b>slow tonic near</b> &middot; <b>absent ankle reflexes</b>",
   "Inflammation damages the <b>ciliary ganglion</b> or short ciliary nerves, followed by <b>aberrant reinnervation</b>. Typically <b>women in their 30s</b>, often unilateral, and <b>often asymptomatic</b>; may have photophobia and blurred vision.",
   "Slit lamp shows <b>sector paralysis</b> of the iris. <b>Decreased regional corneal sensation.</b> <b>Absent Achilles or patellar reflexes</b> in Holmes-Adie syndrome.",
   "Reassurance; treat symptoms. Dilute pilocarpine constricts it through denervation supersensitivity.",
