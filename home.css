@@ -900,6 +900,12 @@
 
     .exam-section {
       border: 1px solid var(--border);
+      /* Each exam's own colour down the left edge, so a panel of six reads as
+         six places rather than six rows. Generated per exam by
+         tools/build_exam_spines.py; the fallback keeps sections whose folder
+         has no palette (Pharmacodynamics, the Practicums) aligned with the
+         rest instead of 2px narrower. */
+      border-left: 3px solid var(--exam-spine, var(--border));
       border-radius: var(--r-md, 12px);
       margin-bottom: 10px;
       overflow: hidden;
@@ -908,6 +914,8 @@
                   box-shadow var(--dur-1, 160ms) var(--ease, ease);
     }
     .exam-section:hover { border-color: color-mix(in oklab, var(--accent) 32%, var(--border)); }
+    /* ...but not the spine, which is the whole point of it. */
+    .exam-section:hover { border-left-color: var(--exam-spine, var(--border)); }
     .exam-section[open] { box-shadow: var(--e-1); }
     .exam-section summary {
       list-style: none;
@@ -1487,6 +1495,50 @@
    itself stays calm. Every hue is solved on the same 4.60:1 recipe as the
    site accent ring; no off-system colour is introduced.
    ============================================================ */
+    /* --- BEGIN generated exam spines (tools/build_exam_spines.py) --- */
+    /* Each exam's own --indigo, lifted by 0.057 lightness for dark mode
+       (floor 0.42) -- the same treatment the tab hues above get. */
+    .exam-section[data-examid="anatomy-exam1"] { --exam-spine: #5b3a8e; }
+    .exam-section[data-examid="anatomy-exam2"] { --exam-spine: #1e3a5f; }
+    .exam-section[data-examid="anatomy-exam3"] { --exam-spine: #8a3d5b; }
+    .exam-section[data-examid="anatomy-exam4"] { --exam-spine: #0f766e; }
+    .exam-section[data-examid="cam-nutrition-exam1"] { --exam-spine: #3f7a5c; }
+    .exam-section[data-examid="cam-nutrition-exam2"] { --exam-spine: #3f7a5c; }
+    .exam-section[data-examid="cms1-exam1"] { --exam-spine: #3f7d7a; }
+    .exam-section[data-examid="cms1-exam2"] { --exam-spine: #5566b5; }
+    .exam-section[data-examid="clinpath1-exam1"] { --exam-spine: #6a4fa3; }
+    .exam-section[data-examid="intro-pa-comprehensive"] { --exam-spine: #4f5666; }
+    .exam-section[data-examid="micro-exam1"] { --exam-spine: #3f8a55; }
+    .exam-section[data-examid="pharm1-exam1"] { --exam-spine: #9c5230; }
+    .exam-section[data-examid="pd1-exam2"] { --exam-spine: #5c8a72; }
+    .exam-section[data-examid="pd1-exam3"] { --exam-spine: #5b46a3; }
+    .exam-section[data-examid="pd2-exam1"] { --exam-spine: #6b7f35; }
+    .exam-section[data-examid="physio-exam1"] { --exam-spine: #1f6b4a; }
+    .exam-section[data-examid="physio-exam2"] { --exam-spine: #4a2f6b; }
+    .exam-section[data-examid="physio-exam3"] { --exam-spine: #2a5f8f; }
+    .exam-section[data-examid="physio-exam4"] { --exam-spine: #15707f; }
+    .exam-section[data-examid="pdm1-exam1"] { --exam-spine: #8a5f8d; }
+:root[data-theme="dark"] .exam-section[data-examid="anatomy-exam1"] { --exam-spine: #6842a3; }
+:root[data-theme="dark"] .exam-section[data-examid="anatomy-exam2"] { --exam-spine: #3363a3; }
+:root[data-theme="dark"] .exam-section[data-examid="anatomy-exam3"] { --exam-spine: #9e4668; }
+:root[data-theme="dark"] .exam-section[data-examid="anatomy-exam4"] { --exam-spine: #18beb1; }
+:root[data-theme="dark"] .exam-section[data-examid="cam-nutrition-exam1"] { --exam-spine: #498d6b; }
+:root[data-theme="dark"] .exam-section[data-examid="cam-nutrition-exam2"] { --exam-spine: #498d6b; }
+:root[data-theme="dark"] .exam-section[data-examid="cms1-exam1"] { --exam-spine: #49908d; }
+:root[data-theme="dark"] .exam-section[data-examid="cms1-exam2"] { --exam-spine: #6978be; }
+:root[data-theme="dark"] .exam-section[data-examid="clinpath1-exam1"] { --exam-spine: #795eb1; }
+:root[data-theme="dark"] .exam-section[data-examid="intro-pa-comprehensive"] { --exam-spine: #5d6679; }
+:root[data-theme="dark"] .exam-section[data-examid="micro-exam1"] { --exam-spine: #489e61; }
+:root[data-theme="dark"] .exam-section[data-examid="pharm1-exam1"] { --exam-spine: #b25e37; }
+:root[data-theme="dark"] .exam-section[data-examid="pd1-exam2"] { --exam-spine: #689b80; }
+:root[data-theme="dark"] .exam-section[data-examid="pd1-exam3"] { --exam-spine: #6852b5; }
+:root[data-theme="dark"] .exam-section[data-examid="pd2-exam1"] { --exam-spine: #7f973f; }
+:root[data-theme="dark"] .exam-section[data-examid="physio-exam1"] { --exam-spine: #30a673; }
+:root[data-theme="dark"] .exam-section[data-examid="physio-exam2"] { --exam-spine: #674195; }
+:root[data-theme="dark"] .exam-section[data-examid="physio-exam3"] { --exam-spine: #316ea6; }
+:root[data-theme="dark"] .exam-section[data-examid="physio-exam4"] { --exam-spine: #1ea2b8; }
+:root[data-theme="dark"] .exam-section[data-examid="pdm1-exam1"] { --exam-spine: #996d9c; }
+    /* --- END generated exam spines --- */
 
 .tab-btn[data-tab="physio"]              { --tab-hue: #2a6df2; }
 .tab-btn[data-tab="pharmacodynamics"]    { --tab-hue: #9c46f3; }
