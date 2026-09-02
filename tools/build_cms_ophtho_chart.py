@@ -60,8 +60,14 @@ from cms_e2_ophtho_diff import DIFF, classify
 # slide number no longer identifies anything on its own.
 from _cms_e2_chart_l1112 import ROWS_NEW, DIFF_NEW, IMGS_NEW
 from _cms_e2_chart_l13 import ROWS_L13, DIFF_L13, IMGS_L13
+# Lecture 14 (Ocular Trauma) added 2026-09-01. Its images are named by their
+# READING-ORDER POSITION on the slide, not by relationship order, because this
+# deck labels pictures positionally in notes that themselves do not map to
+# slides by index -- see _cms_e2_chart_l14.py.
+from _cms_e2_chart_l14 import ROWS_L14, DIFF_L14, IMGS_L14
 DIFF = dict(DIFF, **DIFF_NEW)
 DIFF = dict(DIFF, **DIFF_L13)
+DIFF = dict(DIFF, **DIFF_L14)
 IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('s052_2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
 
 # Viewed and REJECTED. These are the deck's OWN differential images -- filing
@@ -292,9 +298,10 @@ ROWS = [
   "Develops far more slowly than anterior disease and may last several years. <b>Infection must be excluded before immunosuppression.</b>", "64&ndash;65"),
 ]
 
-ROWS = ROWS + ROWS_NEW + ROWS_L13
+ROWS = ROWS + ROWS_NEW + ROWS_L13 + ROWS_L14
 IMGS = dict(IMGS, **IMGS_NEW)
 IMGS = dict(IMGS, **IMGS_L13)
+IMGS = dict(IMGS, **IMGS_L14)
 
 GROUP_COLOUR = {
  "Acute vision loss": "#b8860b", "Neuro-ophthalmology": "#5f3a8a",
@@ -305,6 +312,10 @@ GROUP_COLOUR = {
  "Eyelid": "#5566b5", "Lacrimal": "#2f6b5a", "Surface": "#7a5a2e",
  "Conjunctivitis": "#8f5aa8", "Sclera": "#a4502a", "Orbit": "#8a5a2b",
  "Cornea": "#2f7d76", "Uvea": "#7a2f5f",
+ # Lecture 14. Trauma takes a distinct red-brown so it does not read as a
+ # variant of any of the medical groups -- these are the rows where the
+ # decision is surgical and the clock is running.
+ "Ocular trauma": "#94371f",
 }
 
 

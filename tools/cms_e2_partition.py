@@ -34,15 +34,39 @@ SPECS = {
            "cms_e2l13_vig_sets.json"),
  "l4io":  (["cms_e2l13_pool_a:QUESTIONS", "cms_e2l13_pool_b:QUESTIONS"],
            "cms_e2l13_sets.json"),
+ # Lecture 14, Ocular Trauma. Same QUESTIONS export as Lecture 13.
+ "l5vig": (["cms_e2l14_vig_a:QUESTIONS", "cms_e2l14_vig_b:QUESTIONS",
+            "cms_e2l14_vig_c:QUESTIONS", "cms_e2l14_vig_d:QUESTIONS"],
+           "cms_e2l14_vig_sets.json"),
+ "l5io":  (["cms_e2l14_pool_a:QUESTIONS", "cms_e2l14_pool_b:QUESTIONS",
+            "cms_e2l14_pool_c:QUESTIONS"], "cms_e2l14_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))
 mods, OUT_JSON = SPECS[WHICH]
 
+# Length-bias fixes, if the set has any. Keyed by (module, question index) so a
+# fix survives the pools being combined in a different order, and applied BEFORE
+# anything is measured. Shorten the KEY; only pad a distractor where the key's
+# own detail is the content (Jaxon, 2026-08-30).
+try:
+    from cms_e2l14_lengthfix import KEYS as _LKEYS, SPECIFIC as _LSPEC
+except ImportError:
+    _LKEYS, _LSPEC = {}, {}
+
 POOL = []
 for spec in mods:
     m, attr = spec.split(":")
-    for q in getattr(__import__(m), attr):
+    for _qi, q in enumerate(getattr(__import__(m), attr)):
+        if (m, _qi) in _LKEYS:
+            _new = _LKEYS[(m, _qi)]
+            assert len(_new) < len(q["opts"][0][0]), \
+                "length fix %s[%d] is not shorter" % (m, _qi)
+            q["opts"][0][0] = _new
+        for (_fm, _fq, _fo), _txt in _LSPEC.items():
+            if _fm == m and _fq == _qi:
+                assert _fo != 0, "SPECIFIC fix targets the CORRECT option"
+                q["opts"][_fo][0] = _txt
         # Pools may author the correct answer FIRST and leave the key implicit --
         # that is the convention that stops an author drifting toward a favourite
         # position. Rotation below moves it regardless, so a missing key means 0.
