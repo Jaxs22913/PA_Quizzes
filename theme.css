@@ -2793,3 +2793,10 @@ body.homepage .continue-item:hover {
   .lb-btn { padding: 6px 9px; font-size: 12px; }
   .lb-cap { font-size: 12px; padding: 8px 12px 12px; }
 }
+
+/* Swipe-to-navigate on the quiz pages (theme.js). The card follows the finger
+   at a third of the distance -- enough to show the gesture is understood
+   without it feeling like the card is being thrown. .swipe-settle is added
+   only for the release, so the drag itself stays 1:1 with the finger. */
+#quiz.swipe-settle { transition: transform 180ms cubic-bezier(.22,.61,.36,1); }
+@media (prefers-reduced-motion: reduce) { #quiz.swipe-settle { transition: none; } }

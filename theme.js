@@ -4528,6 +4528,126 @@ window.openPauseOverlay = function (opts) {
 })();
 
 /* ============================================================
+   SWIPE BETWEEN QUESTIONS  (touch devices)
+   ------------------------------------------------------------
+   Jaxon, 2026-09-02: "The biggest change to how the site feels on a phone,
+   which is where you actually use it."
+
+   LIVES HERE, NOT IN tools/quiz-template/template.html, for the same reason
+   the missed-question recorder does: the template only applies at render
+   time, so putting it there would give the gesture to quizzes built after
+   today and to nothing already on the site. theme.js is loaded by every one
+   of them, and it no-ops on any page with no #quiz.
+
+   It CLICKS THE ON-SCREEN BUTTONS rather than calling nextQ()/prevQ(), so a
+   swipe can never do something the visible controls would not: Back is inert
+   on question 1, and Forward stays inert in practice mode until the question
+   has been answered -- exactly as the button is.
+
+   The gesture is tracked anywhere on the card, including across the answer
+   buttons, because confining it to the padding would make it undiscoverable.
+   Browsers still fire a click after a drag that ends on a button, so a
+   capture-phase listener swallows that one click: swiping over an option
+   cannot answer it, and swiping over a picture cannot open the lightbox.
+
+   Two things keep their own gesture: anything horizontally scrollable (a wide
+   table inside an explanation) and Exam Mode's scroll column, which is one
+   long page rather than a card at a time. Vertical drags are left alone, so
+   the quiz pages' own pull-to-refresh is untouched.
+   ============================================================ */
+(function () {
+  var card = document.getElementById('quiz');
+  if (!card) return;
+  if (!('ontouchstart' in window) && !navigator.maxTouchPoints) return;
+
+  var THRESH = 58;        // px of travel before it counts as a swipe
+  var DECIDE = 10;        // px before the axis is locked in
+  var RATIO  = 1.2;       // how much more horizontal than vertical it must be
+  var LIMIT  = 800;       // ms; slower than this is a scroll, not a flick
+
+  var x0 = 0, y0 = 0, t0 = 0, dx = 0, axis = '', active = false, swiped = false;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function scrollableX(el) {
+    for (; el && el !== card; el = el.parentElement) {
+      if (el.scrollWidth > el.clientWidth + 2) {
+        var ov = getComputedStyle(el).overflowX;
+        if (ov === 'auto' || ov === 'scroll') return true;
+      }
+    }
+    return false;
+  }
+
+  /* The BUTTON decides whether the move is allowed -- Back is disabled on
+     question 1, and Forward is display:none in practice mode until the
+     question has been answered -- but the move itself is made by calling the
+     navigation directly. Dispatching a synthetic click on the button instead
+     was the first attempt and it deadlocked: the click-suppressor below
+     swallowed the very click this code had just fired. */
+  function usable(id) {
+    var b = document.getElementById(id);
+    if (!b || b.disabled) return false;
+    return getComputedStyle(b).display !== 'none';
+  }
+
+  card.addEventListener('touchstart', function (e) {
+    if (e.touches.length !== 1) return;
+    if (document.getElementById('scrollcol')) return;      // Exam Mode scroll view
+    if (card.style.display === 'none') return;
+    if (scrollableX(e.target)) return;
+    var t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+    dx = 0; axis = ''; active = true;
+    card.classList.remove('swipe-settle');
+  }, { passive: true });
+
+  card.addEventListener('touchmove', function (e) {
+    if (!active || e.touches.length !== 1) return;
+    var t = e.touches[0];
+    dx = t.clientX - x0;
+    var dy = t.clientY - y0;
+    if (!axis) {
+      if (Math.abs(dx) < DECIDE && Math.abs(dy) < DECIDE) return;
+      axis = Math.abs(dx) > Math.abs(dy) * RATIO ? 'x' : 'y';
+    }
+    if (axis !== 'x') { active = false; return; }
+    if (!reduce) card.style.transform = 'translateX(' + (dx / 3) + 'px)';
+  }, { passive: true });
+
+  function release() {
+    if (!active) return;
+    active = false;
+    var moved = dx, quick = Date.now() - t0 < LIMIT;
+    card.classList.add('swipe-settle');
+    card.style.transform = '';
+    if (axis !== 'x' || !quick || Math.abs(moved) < THRESH) return;
+    // Left drag = forward, the way a page turns.
+    var fwd = moved < 0;
+    if (!usable(fwd ? 'nextbtn' : 'prevbtn')) return;
+    var go = window[fwd ? 'nextQ' : 'prevQ'];
+    if (typeof go !== 'function') return;      // older engine: no paged nav
+    // Set before navigating: the browser still delivers a click for the drag
+    // that just ended, and it must not land on whatever is now under the
+    // finger in the newly rendered question.
+    swiped = true;
+    setTimeout(function () { swiped = false; }, 400);
+    go();
+  }
+
+  card.addEventListener('touchend', release, { passive: true });
+  card.addEventListener('touchcancel', release, { passive: true });
+
+  // The click the browser fires at the end of a drag, swallowed before it can
+  // reach an option button or the picture.
+  card.addEventListener('click', function (e) {
+    if (!swiped) return;
+    swiped = false;
+    e.stopPropagation();
+    e.preventDefault();
+  }, true);
+})();
+
+/* ============================================================
    MISSED-QUESTION RECORDER
    ------------------------------------------------------------
    The quiz engine calls clearProgress() the instant results are shown
