@@ -766,6 +766,10 @@
     .review-link svg { transition: transform .45s var(--ease-spring, ease); }
     .review-link:hover svg { transform: rotate(-160deg); }
     @media (prefers-reduced-motion: reduce) { .review-link svg, .review-link:hover svg { transition: none; transform: none; } }
+    /* Green, matching the Cram Sheet badge on guides.html -- a cram sheet is
+       green everywhere else on the site, so it should be green here too. */
+    .mycram-link { background: var(--a-green-soft, #e7fbea); color: var(--a-green, #218640); }
+    .mycram-link:hover { border-color: var(--a-green, #218640); box-shadow: 0 4px 12px rgba(33,134,64,.16); }
     .my-progress-link:hover { border-color: var(--accent, #2a6df2); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,.14); }
     /* Playful icon hovers -------------------------------------------------- */
     /* Cap tips its hat when you hover the counter */
@@ -1483,6 +1487,7 @@
    itself stays calm. Every hue is solved on the same 4.60:1 recipe as the
    site accent ring; no off-system colour is introduced.
    ============================================================ */
+
 .tab-btn[data-tab="physio"]              { --tab-hue: #2a6df2; }
 .tab-btn[data-tab="pharmacodynamics"]    { --tab-hue: #9c46f3; }
 .tab-btn[data-tab="anatomy"]             { --tab-hue: #df2a44; }

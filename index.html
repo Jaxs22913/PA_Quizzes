@@ -199,6 +199,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
           <span>Review <b id="review-count"></b></span>
         </a>
+        <!-- Revealed by the same counter that reveals Review: it is built from
+             the same qm: records, so if there is nothing to review there is
+             nothing to cram either. -->
+        <a href="my-cram-sheet.html" class="my-progress-link mycram-link" id="mycram-link" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H19v18H6.5A2.5 2.5 0 0 0 4 22Z"/><path d="M8 7h7"/><path d="M8 11h7"/></svg>
+          <span>My Cram Sheet</span>
+        </a>
         <!-- Class-wide rather than personal: what everyone else got wrong. -->
         <a href="class-traps.html" class="my-progress-link traps-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18.1A2 2 0 0 0 3.5 21h17a2 2 0 0 0 1.7-2.9L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>

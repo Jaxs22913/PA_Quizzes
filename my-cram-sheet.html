@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Cram Sheet — PA Quizzes</title>
+<link rel="stylesheet" href="theme.css">
+<script src="cram-personal/index.js" defer></script>
+<script src="theme.js" defer></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<style>
+  /* LIGHT PALETTE ONLY, deliberately -- the same rule review.html documents.
+     theme.css does dark mode by inverting body > .wrap, so a page that also
+     declares its own dark colours gets inverted twice and ends up dark-on-dark.
+     Author light; let the filter flip it. */
+  :root{
+    --ink:#161a24; --body:#2b3140; --muted:#6b7280; --line:#e4e7ef;
+    --paper:#f6f7fb; --card:#fff; --primary:var(--a-crimson,#df2a44);
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;
+    font-size:13.5px;font-weight:700;margin:30px 0 14px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;
+    color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);
+    border-radius:10px;padding:12px 15px;margin:16px 0 22px;font-size:13.8px;color:#495064;
+    box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .picker{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+  .picker button{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:8px 15px;box-shadow:var(--shadow);cursor:pointer;transition:border-color .15s,transform .15s}
+  .picker button:hover{border-color:var(--primary);transform:translateY(-1px)}
+  .picker button.on{background:var(--primary);border-color:var(--primary);color:#fff}
+  /* Separated by a middot so the count does not read as part of the exam name
+     ("...Exam 1 7"). */
+  .picker button .n{opacity:.75;font-weight:600}
+  .picker button .n::before{content:"\00b7";margin:0 5px;opacity:.6}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 26px;
+    font-size:13px;color:var(--muted)}
+  .toolbar .btn{font:700 13px ui-sans-serif,system-ui,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:9px;
+    padding:7px 13px;box-shadow:var(--shadow);cursor:pointer}
+  .toolbar .btn:hover{border-color:var(--primary)}
+
+  section.topic{margin:30px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink);margin:0}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none;background:var(--acc,#888)}
+  .shead .cnt{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--muted)}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    letter-spacing:.03em;text-transform:uppercase;color:#374151;padding:11px 13px;
+    border-bottom:2px solid var(--line);background:var(--acc-bg,#f2f3f7)}
+  th.term{width:28%}
+  th.hits{width:88px;text-align:right}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra,#fafbfd)}
+  td.hits{text-align:right;white-space:nowrap;color:var(--muted);font-size:12.5px;font-weight:700}
+  td.hits b{color:var(--primary);font-size:14px}
+
+  .empty{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 26px;
+    text-align:center;box-shadow:var(--shadow);margin-top:22px}
+  .empty h3{margin:0 0 8px;font:800 18px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink)}
+  .empty p{margin:0 auto;max-width:52ch;color:var(--muted);font-size:14px}
+  .empty a{color:var(--primary);font-weight:700}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .back,.picker,.toolbar,footer,.note{display:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb}
+    table{min-width:0}
+    section.topic{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">&larr; Back to home</a>
+
+  <header>
+    <div class="kicker">Built from your misses</div>
+    <h1>My Cram Sheet</h1>
+    <p class="sub">The rows of the Cram Sheet that cover questions you actually got wrong &mdash;
+      nothing else. Everything you have been getting right is left out.</p>
+  </header>
+
+  <div class="note" id="note" hidden></div>
+  <div class="picker" id="picker"></div>
+  <div class="toolbar" id="toolbar" hidden>
+    <button class="btn" onclick="window.print()">Print this</button>
+    <span id="summary"></span>
+  </div>
+
+  <div id="sheet"></div>
+
+  <footer>
+    Rebuilt every time you open it. As you clear misses in
+    <a href="review.html">Review</a>, rows drop off this sheet on their own.
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var PREFIX = "qm:";
+  var $ = function (id) { return document.getElementById(id); };
+  var current = null;
+
+  /* ---------- the same records review.html reads ---------- */
+  function loadRecords() {
+    var out = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k || k.indexOf(PREFIX) !== 0) continue;
+      try {
+        var v = JSON.parse(localStorage.getItem(k));
+        if (v && v.slug && v.m && v.m.length) out.push(v);
+      } catch (e) { /* a corrupt entry should not blank the page */ }
+    }
+    return out;
+  }
+
+  /* exam key -> { hits: {rowIndex: count}, misses, quizzes, t } */
+  function group(records) {
+    var map = window.CRAM_PERSONAL_QUIZ || {};
+    var by = {};
+    records.forEach(function (rec) {
+      var key = map[rec.slug];
+      if (!key) return;                       // Semester 1, or a quiz with no sheet
+      var e = by[key] || (by[key] = { hits: {}, misses: 0, quizzes: 0, t: 0 });
+      e.quizzes++;
+      e.t = Math.max(e.t, rec.t || 0);
+      e.misses += rec.m.length;
+      e.pending = e.pending || [];
+      e.pending.push(rec);
+    });
+    return by;
+  }
+
+  /* Resolving a miss to a row needs that exam's file, so it happens after the
+     load rather than up front. */
+  function resolve(key, entry, done) {
+    loadExam(key, function (data) {
+      if (!data) { done(null); return; }
+      (entry.pending || []).forEach(function (rec) {
+        var rows = data.map[rec.slug];
+        if (!rows) return;
+        rec.m.forEach(function (pair) {
+          var ri = rows[pair[0]];
+          if (ri === undefined || ri < 0) return;
+          entry.hits[ri] = (entry.hits[ri] || 0) + 1;
+        });
+      });
+      done(data);
+    });
+  }
+
+  var loading = {};
+  function loadExam(key, cb) {
+    var bank = window.CRAM_PERSONAL || {};
+    if (bank[key]) { cb(bank[key]); return; }
+    if (loading[key]) { loading[key].push(cb); return; }
+    loading[key] = [cb];
+    var s = document.createElement("script");
+    s.src = "cram-personal/" + encodeURIComponent(key) + ".js";
+    s.onload = s.onerror = function () {
+      var d = (window.CRAM_PERSONAL || {})[key] || null;
+      var waiting = loading[key] || [];
+      delete loading[key];
+      waiting.forEach(function (fn) { try { fn(d); } catch (e) {} });
+    };
+    document.head.appendChild(s);
+  }
+
+  /* ---------- render ---------- */
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+
+  function render(key, entry, data) {
+    var hits = entry.hits;
+    var idx = Object.keys(hits).map(Number).sort(function (a, b) { return a - b; });
+    if (!idx.length) {
+      $("sheet").innerHTML = '<div class="empty"><h3>Nothing to show for this exam yet</h3>' +
+        '<p>Your misses here could not be tied to a Cram Sheet row. Drill them in ' +
+        '<a href="review.html">Review</a> instead.</p></div>';
+      $("toolbar").hidden = true;
+      return;
+    }
+    // Group the hit rows back under their own sections, in sheet order, so it
+    // still reads like the Cram Sheet rather than a ranked list of fragments.
+    var bySection = {};
+    idx.forEach(function (i) {
+      var r = data.rows[i];
+      (bySection[r.s] || (bySection[r.s] = [])).push(i);
+    });
+    var out = "";
+    Object.keys(bySection).map(Number).sort(function (a, b) { return a - b; })
+      .forEach(function (si) {
+        var sec = data.sections[si] || { title: "Other", style: "" };
+        var list = bySection[si];
+        out += '<section class="topic" style="' + esc(sec.style) + '">' +
+          '<div class="shead"><span class="dot"></span><h2>' + esc(sec.title) + '</h2>' +
+          '<span class="cnt">' + list.length + (list.length === 1 ? " row" : " rows") + '</span></div>' +
+          '<div class="scroll"><table><thead><tr><th class="term">Term</th>' +
+          '<th>What you need to know</th><th class="hits">Missed</th></tr></thead><tbody>';
+        list.forEach(function (i) {
+          var r = data.rows[i];
+          out += '<tr><td class="h">' + r.t + '</td><td>' + r.d +
+            '</td><td class="hits"><b>' + hits[i] + '</b>&times;</td></tr>';
+        });
+        out += "</tbody></table></div></section>";
+      });
+    $("sheet").innerHTML = out;
+    $("toolbar").hidden = false;
+    $("summary").textContent = idx.length + " rows, from " + entry.misses +
+      " missed question" + (entry.misses === 1 ? "" : "s") +
+      " across " + entry.quizzes + " quiz" + (entry.quizzes === 1 ? "" : "zes") + ".";
+  }
+
+  function select(key, by) {
+    current = key;
+    Array.prototype.forEach.call($("picker").children, function (b) {
+      b.classList.toggle("on", b.getAttribute("data-k") === key);
+    });
+    $("sheet").innerHTML = '<div class="empty"><p>Building&hellip;</p></div>';
+    var entry = by[key];
+    if (entry.done) { render(key, entry, entry.data); return; }
+    resolve(key, entry, function (data) {
+      entry.done = true; entry.data = data;
+      if (!data) {
+        $("sheet").innerHTML = '<div class="empty"><h3>Could not load this exam</h3>' +
+          '<p>Try again once you are back online.</p></div>';
+        return;
+      }
+      if (current === key) render(key, entry, data);
+    });
+  }
+
+  function start() {
+    var by = group(loadRecords());
+    var keys = Object.keys(by);
+    if (!keys.length) {
+      $("sheet").innerHTML = '<div class="empty"><h3>No misses yet &mdash; nothing to cram</h3>' +
+        '<p>Finish a quiz and get something wrong, and the Cram Sheet rows covering it will ' +
+        'collect here. Start with a <a href="index.html">topic quiz</a>.</p></div>';
+      return;
+    }
+    // Most recently attempted exam first: that is the one being revised for.
+    keys.sort(function (a, b) { return by[b].t - by[a].t; });
+    var meta = window.CRAM_PERSONAL_INDEX || {};
+    $("picker").innerHTML = keys.map(function (k) {
+      var title = (meta[k] && meta[k].title) || k;
+      return '<button data-k="' + esc(k) + '">' + esc(title) +
+        '<span class="n">' + by[k].misses + '</span></button>';
+    }).join("");
+    Array.prototype.forEach.call($("picker").children, function (b) {
+      b.onclick = function () { select(b.getAttribute("data-k"), by); };
+    });
+    if (keys.length > 1) {
+      $("note").hidden = false;
+      $("note").innerHTML = "<b>You have misses in " + keys.length +
+        " exams.</b> Pick one &mdash; each sheet is built only from what you got wrong in it.";
+    }
+    select(keys[0], by);
+  }
+
+  // cram-personal/index.js is deferred, so wait for the parser to finish.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+</script>
+</body>
+</html>

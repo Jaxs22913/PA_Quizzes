@@ -1434,6 +1434,9 @@ function buildHomeTourSteps() {
   if (!n) return;
   document.getElementById("review-count").textContent = n;
   link.hidden = false;
+  // My Cram Sheet reads the same records, so it appears on the same condition.
+  var cram = document.getElementById("mycram-link");
+  if (cram) cram.hidden = false;
 })();
 
 /* ---------------------------------------------------------------------------
