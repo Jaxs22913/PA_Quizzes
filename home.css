@@ -1021,6 +1021,12 @@
     .quiz-tag + .quiz-tag { margin-left: 6px; }
     .quiz-tag--new     { background: var(--accent); color: #fff; }
     .quiz-tag--updated { background: var(--accent-soft); color: var(--accent); border-color: var(--tab-border); }
+    /* "Drill" marks the one-fact rapid sets. Violet, because it is the only
+       hue in theme.css's map not already spoken for by a tag here (New is the
+       page accent, Updated its soft form) -- and it is permanent, unlike New,
+       which expires after three days. */
+    .quiz-tag--drill   { background: var(--a-violet-soft); color: var(--a-violet);
+                         border-color: color-mix(in oklab, var(--a-violet) 26%, transparent); }
 
     a.quiz-link:hover {
       background: var(--accent-soft);
