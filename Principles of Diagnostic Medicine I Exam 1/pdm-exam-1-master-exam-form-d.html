@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #4d6bb0; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #b8862f; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDM I Exam 1 Master Exam &mdash; Form D</title>
+<style>
+  :root{
+    --navy:#243b6b; --indigo:#4d6bb0; --gold:#b8862f; --ice:#eef1f8;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Principles of Diagnostic Medicine I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 1 &middot; Lectures 1&ndash;6 &middot; Form D</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from every lecture in the Exam 1 block, in exam proportions rather than at random &mdash; each of the six lectures contributes ten questions to every form, so this is a genuine cumulative rehearsal and not a sample of whichever topic had the most questions written for it. Questions are reused verbatim from the topic quizzes, so nothing here can drift from the material it is summarising. <b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. <b>These forms cover the six LECTURES.</b> The exam also covers Lab 1, for which no material has been handed out; when it is, it gets folded in and these are rebuilt. <b>You are not expected to recall reference ranges</b> &mdash; where a value matters, its scale is given in the question. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Laboratory diagnostics</span><span class="chip">Medical imaging</span><span class="chip">Derm, ENT &amp; ophtho testing</span><span class="chip">Complete blood count</span><span class="chip">Chemistry panels</span><span class="chip">Urinalysis</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Suspected urinary tract infection", "io": "c — Correlate urinalysis findings with common clinical presentations", "slot": "next step", "q": "A dipstick supports a urinary tract infection. What identifies the organism and what will treat it?", "opts": [["Urine culture and sensitivity", "Correct — culture names the organism and sensitivity picks the agent."], ["Gram stain of the urine alone", "A stain narrows the field but does not give sensitivities."], ["A repeat dipstick after treatment", "That does not identify anything."], ["Blood cultures", "Those are for suspected bloodstream infection."]], "c": 0, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 34"}, {"topic": "Hounsfield units", "io": "d — Compare and contrast the concepts of radiographic density and contrast", "slot": "manifestation", "q": "On the Hounsfield scale, where water is zero, which tissue sits at roughly minus forty to minus one hundred and twenty?", "opts": [["Fat, which is why it reads darker than soft tissue but lighter than air", "Correct — fat is negative, but nowhere near as negative as air."], ["Soft tissue, which is why it reads darker than fat but lighter than water", "Soft tissue is positive, roughly plus twenty to plus one hundred."], ["Bone, which is why it reads brighter than soft tissue but darker than metal", "Bone is roughly plus four hundred to plus six hundred."], ["Air, which is why it reads darker than every other tissue on the scan", "Air is minus one thousand, the bottom of the scale."]], "c": 0, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 13"}, {"topic": "Anion gap", "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders", "slot": "test finding", "q": "Using the standard formula, what is the normal range for the anion gap?", "opts": [["12 to 20 milliequivalents per litre", "Above the normal range."], ["8 to 12 milliequivalents per litre", "Correct — that is the normal range."], ["10 to 14 milliequivalents per litre", "That is the range for the extended formula that includes potassium."], ["4 to 8 milliequivalents per litre", "Below the normal range."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 22"}, {"topic": "Positioning", "io": "e — Discuss the importance of patient positioning in medical imaging", "slot": "first-line", "q": "Beyond the heart, what else is better seen on the posterior-anterior chest view?", "opts": [["Maximum visualisation of the lung, better visualisation of the apices, and well visualised posterior ribs", "Correct — all three are listed alongside the cardiac and dose advantages."], ["Maximum visualisation of the mediastinum, better visualisation of the hila, and well visualised anterior ribs", "It is the lung fields, apices and posterior ribs rather than these."], ["Maximum visualisation of the diaphragm, better visualisation of free air, and well visualised gastric bubble", "Free air beneath the diaphragm is what an upright abdominal series is for."], ["Maximum visualisation of the pleura, better visualisation of layering fluid, and well visualised costophrenic angles", "Layering fluid with gravity is the decubitus view's stated purpose."]], "c": 0, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 40"}, {"topic": "Schistocytes", "io": "e(i) — Discuss the clinical significance of abnormalities in red blood cells", "slot": "test finding", "q": "What is a schistocyte, and what else is it called?", "opts": [["A perfectly round red cell, also called a spherocyte or a microspherocyte", "Those are separate entities, though the picture-only figure does list microspherocyte as a schistocyte form."], ["A crescent-shaped red cell, also called a drepanocyte", "That is the sickled cell."], ["A teardrop-shaped red cell, also called a dacrocyte", "That is the teardrop cell."], ["A fragmented red cell, also called a helmet cell or a horn cell", "Correct — fragments of widely varying shapes and sizes."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 38"}, {"topic": "Evaluating anemia", "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia", "slot": "first-line", "q": "What should be looked at in addition to the four evaluation steps?", "opts": [["A bone marrow biopsy in every case", "Far beyond what is needed at this stage."], ["Hemoglobin electrophoresis in every case", "The algorithm reserves hemoglobin analysis for specific circumstances."], ["A direct antiglobulin test in every single case", "Not part of the evaluation at this stage."], ["The peripheral blood smear, if one can be obtained", "Correct — the peripheral blood smear."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 59 (speaker notes)"}, {"topic": "Vomiting case", "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders", "slot": "test finding", "q": "After three days of intractable vomiting, what does the panel show?", "opts": [["Low sodium, raised potassium, raised chloride, and a low bicarbonate with acidaemia", "That would be an acidosis, not the alkalosis vomiting produces."], ["Raised sodium, raised potassium, and a normal bicarbonate", "Vomiting depletes rather than raises these."], ["Normal electrolytes with an isolated raised anion gap", "The case turns on the electrolyte losses."], ["Low sodium, low potassium, low chloride, and a raised bicarbonate with alkalaemia", "Correct — that is the pattern."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 27"}, {"topic": "Hematocrit", "io": "b — Explain the difference between hemoglobin and hematocrit", "slot": "differential", "q": "Which causes of a raised hematocrit do not also raise the hemoglobin?", "opts": [["Chronic kidney disease and cancer", "Those are causes of a decreased value."], ["Trauma and acute hemorrhage", "Those raise platelets rather than hematocrit."], ["Iron deficiency and thalassemia", "Those are microcytic anemia causes."], ["Smoking and hypoventilation", "Correct — the hematocrit slide adds these two alongside polycythemia vera and dehydration."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 52"}, {"topic": "Throat culture", "io": "f — Purpose and appropriate use of stool, throat, sputum and blood studies", "q": "How should the swab be applied when obtaining a throat culture?", "opts": [["Swab the anterior tongue and the inner cheeks", "Touching the tongue is specifically to be avoided."], ["Swab a single tonsil to minimise the gag reflex", "Both tonsils and the posterior throat are sampled."], ["Swab the soft palate and uvula only, deliberately avoiding the tonsils so that the gag reflex is not triggered", "The tonsils are part of what is sampled."], ["Rotate it firmly and gently over the posterior throat, both tonsils, and any areas of inflammation, exudation or ulceration", "Correct, and the tongue and lips must not be touched."]], "c": 3, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 26"}, {"topic": "Uncontrolled diabetes", "io": "c — Correlate urinalysis findings with common clinical presentations", "slot": "interpretation", "q": "A patient with ketonuria has a normal blood glucose and reports not eating for two days. What explains the ketones?", "opts": [["Uncontrolled diabetes mellitus", "The blood glucose is normal, which does not fit."], ["A urinary tract infection", "Infection does not produce ketones."], ["Starvation", "Correct — fasting drives fatty acid metabolism just as insulin deficiency does."], ["Overhydration", "That dilutes the urine without producing ketones."]], "c": 2, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 21"}, {"topic": "Evaluating anemia", "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia", "slot": "first-line", "q": "What does the reticulocyte count tell you, and when is it most helpful?", "opts": [["Whether iron stores are adequate, and it is most helpful when ferritin is normal", "Iron stores are assessed by ferritin, not the reticulocyte count."], ["Whether hemolysis is immune or mechanical, and it is most helpful when the smear is normal", "The count does not distinguish the mechanism of hemolysis."], ["Whether the bone marrow is functioning appropriately, and it is most helpful when very elevated or very decreased", "Correct — the middle of the range is the least informative part."], ["Whether the bone marrow is functioning appropriately, and it is most helpful when in the middle of its range", "It is the extremes that help."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 59"}, {"topic": "Radiodensity", "io": "d — Compare and contrast the concepts of radiographic density and contrast", "slot": "manifestation", "q": "Which term describes tissue that appears white because it absorbs more of the beam?", "opts": [["Radiopaque, also called hyperdense or radiodense", "Correct — less passage of x-ray photons produces the whiter appearance."], ["Radiolucent, also called hypodense", "That describes darker tissue with greater photon passage."], ["Isodense, matching the density of the surrounding tissue", "That term is not the one for a white appearance."], ["Attenuated, meaning the beam has been scattered away", "Increased attenuation is a computed tomography term for the same idea."]], "c": 0, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 9"}, {"topic": "Liver studies", "io": "c — Discuss basic liver function studies included in chemistry testing", "slot": "test finding", "q": "Besides the liver, in which four tissues is aspartate aminotransferase found?", "opts": [["Bone, placenta, intestine, and kidney", "Those are the extrahepatic sources of alkaline phosphatase."], ["Spleen, pancreas, lung, and thyroid", "None of these carries the enzyme."], ["Red blood cells, platelets, bone marrow, and lymph nodes", "Not tissues associated with this enzyme."], ["Cardiac muscle, skeletal muscle, kidney, and brain", "Correct — those four."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 15"}, {"topic": "Teardrop cells", "io": "e(i) — Discuss the clinical significance of abnormalities in red blood cells", "slot": "test finding", "q": "What is a teardrop cell also called, where does it form, and what is it associated with?", "opts": [["A dacrocyte, formed within bone marrow infiltrated by scar tissue or cancerous cells, associated with bone marrow disease", "Correct — the shape reflects the marrow the cell had to squeeze out of."], ["A drepanocyte, formed within the circulation under low oxygen tension, associated with sickle cell anemia", "That is the sickled cell."], ["A codocyte, formed from redundant membrane, associated with liver disease", "That is the target cell."], ["An echinocyte, formed from membrane changes, associated with renal disease", "That is the burr cell."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 44"}, {"topic": "Anemia algorithm", "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia", "slot": "first-line", "q": "In the normocytic branch of the algorithm, which test is obtained next?", "opts": [["Iron studies", "Iron studies belong to the microcytic branch."], ["A peripheral smear looking for megaloblastic change", "That belongs to the macrocytic branch."], ["Hemoglobin analysis", "That is reserved for suspected thalassemia."], ["The reticulocyte count", "Correct — a normal mean corpuscular volume sends you to the reticulocyte count."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 70"}, {"topic": "Screening vs diagnostic", "io": "n — Screening versus diagnostic tests", "q": "What distinguishes a screening test from a diagnostic test?", "opts": [["Screening looks for evidence of disease in an asymptomatic person; a diagnostic test looks for the reason for symptoms", "Correct — the presence or absence of symptoms is the discriminator."], ["Screening is always more invasive than diagnostic testing", "Diagnostic tests may be more invasive and carry more risk of complications."], ["Screening provides the definitive diagnosis", "A screening test does not necessarily provide a diagnosis and may require confirmation."], ["Screening is performed only after a diagnostic test has returned an abnormal result that requires further explanation", "The sequence runs the other way."]], "c": 0, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 40"}, {"topic": "Glucose", "io": "b(v) — Discuss the physiological role of glucose", "slot": "etiology", "q": "Which hormone lowers blood glucose, and which raise it?", "opts": [["Insulin lowers it; antidiuretic hormone raises it", "That hormone governs water handling, not glucose."], ["Insulin lowers it; glucagon and the counter-regulatory hormones raise it", "Correct — insulin lowers it; glucagon and the counter-regulatory hormones raise it."], ["Glucagon lowers it; insulin and cortisol raise it", "This reverses the roles of insulin and glucagon."], ["Cortisol lowers it; insulin and adrenaline together raise it", "Cortisol is one of the counter-regulatory hormones that raise glucose."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 13"}, {"topic": "Tonometry", "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing", "slot": "first-line", "q": "What is the purpose of tonometry?", "opts": [["To measure intraocular pressure and evaluate for glaucoma", "Correct — both halves of the stated purpose."], ["To measure corneal thickness and evaluate for keratoconus", "Corneal thickness affects the reading but is not what tonometry measures."], ["To assess the visual pathway and evaluate for field loss", "That is visual field testing."], ["To assess corneal integrity and evaluate for abrasion", "That is fluorescein examination."]], "c": 0, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 22"}, {"topic": "Chloride", "io": "b(iii) — Discuss the physiological role of chloride", "slot": "etiology", "q": "When carbon dioxide and hydrogen ions rise, bicarbonate moves out of the cell. What does chloride do?", "opts": [["It binds to haemoglobin and is carried to the lungs for excretion", "That is how carbon dioxide is carried, not chloride."], ["It shifts back into the cell to preserve electrical neutrality", "Correct — the reciprocal shift."], ["It shifts out of the cell alongside bicarbonate", "Both anions leaving would break electrical neutrality."], ["It is excreted by the kidney within minutes", "It is a transcellular shift, not renal loss."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 11"}, {"topic": "Melanoma rule", "io": "d — Discuss indications for skin biopsy and common biopsy techniques", "slot": "gold standard", "q": "What margin does the melanoma rule specify for the diagnostic biopsy?", "opts": [["A narrow excisional biopsy with margins of one to three millimetres", "Correct — narrow margins, because this biopsy is for diagnosis rather than cure."], ["A wide excisional biopsy with margins of one to two centimetres", "Those are the definitive re-excision margins, taken after the diagnosis is made."], ["A narrow excisional biopsy with margins of one to three centimetres", "The rule specifies millimetres for the diagnostic biopsy."], ["An excisional biopsy with no margin, cutting at the visible lesion edge", "The rule specifies a narrow margin rather than none."]], "c": 0, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 10"}, {"topic": "POCT devices", "io": "j — Availability, advantages and limitations of point-of-care testing", "q": "How does handheld point-of-care equipment differ from a benchtop device?", "opts": [["Handheld equipment is easy to carry, involves one to two steps, and usually gives one or few data points; benchtop devices are stationary, multi-step, and give multiple data points", "Correct — portability, complexity and data yield all differ."], ["Handheld equipment requires no reagents while benchtop devices do", "Both usually require reagents and consumables."], ["Handheld equipment is quantitative while benchtop devices are qualitative", "Both categories span result types."], ["Handheld equipment requires a laboratory certificate and trained operators, whereas benchtop devices may be run by anyone on site without additional certification or documented competency", "All testing sites require certification regardless of device."]], "c": 0, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 33"}, {"topic": "Ordering a CBC", "io": "f — Discuss indications for ordering a complete blood count", "slot": "first-line", "q": "What is the difference between a complete blood count with and without differential?", "opts": [["The version with differential adds the breakdown of white cell types to everything the version without it contains", "Correct — one is a strict superset of the other."], ["The version with differential adds platelet indices to everything the version without it contains", "Platelets are in both; the differential adds white cell types."], ["The version without differential omits the red cell indices", "Red cell indices are present in both."], ["The version without differential omits the total white cell count", "It gives a total white cell count, just not the breakdown."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 6"}, {"topic": "pH", "io": "a — Describe the following urinalysis parameters", "slot": "mechanism", "q": "What does the urine pH reflect?", "opts": [["Tubular handling of hydrogen ions", "Correct — it reports tubular handling of hydrogen ions."], ["The rate at which the glomerulus filters plasma", "Filtration rate is a separate measure from urine pH."], ["The concentration of protein crossing the glomerulus", "Protein is measured on its own pad."], ["The total volume of urine produced each day", "Volume is not what the pH pad reports."]], "c": 0, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 16"}, {"topic": "Regulation", "io": "l — Accreditation and regulatory considerations", "q": "Which agency categorizes tests based on complexity under the Clinical Laboratory Improvement Amendments?", "opts": [["The Centers for Medicare and Medicaid Services", "That agency issues certificates, collects fees, inspects and enforces."], ["The Centers for Disease Control and Prevention", "That agency provides analysis, research, technical standards and quality improvement studies."], ["The Joint Commission", "It classifies testing outside a traditional laboratory as waived, but does not perform federal complexity categorization."], ["The Food and Drug Administration", "Correct — it also reviews waiver applications and develops categorization guidance."]], "c": 3, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 39"}, {"topic": "Sputum culture", "io": "f — Purpose and appropriate use of stool, throat, sputum and blood studies", "q": "What may be used to help a patient who cannot produce a sputum specimen?", "opts": [["Delaying collection until the following morning", "Delay is not the recommended solution."], ["Aerosols such as sterile water, saline or albuterol", "Correct — these help loosen and induce secretions."], ["Chest percussion alone, without any aerosol", "Aerosols are the named aid."], ["A prolonged breath hold before coughing", "This is not the described technique."]], "c": 1, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 25"}, {"topic": "Optic disc cupping", "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing", "slot": "etiology", "q": "What structural change occurs in the glaucomatous optic disc?", "opts": [["Lamina cribrosa collapse", "Correct — the schematic panel shows collapse of the lamina cribrosa."], ["Thickening of the retinal nerve fibre layer", "The change is loss and collapse rather than thickening."], ["Detachment of the neurosensory retina", "Retinal detachment is not what these panels show."], ["Swelling of the optic nerve head", "Swelling describes papilloedema, not glaucomatous cupping."]], "c": 0, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 23"}, {"topic": "Computed tomography", "io": "b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies", "slot": "etiology", "q": "How does a computed tomography scanner acquire its data?", "opts": [["High-frequency sound waves released from a transducer bounce off tissue and return", "That describes ultrasound."], ["A varying magnetic field aligns hydrogen atoms which then emit radio waves", "That describes magnetic resonance imaging."], ["Powerful x-ray beams pass through the patient via a rotating fan beam, measuring transmission at thousands of data points", "Correct — a computer then processes the data through algorithms into diagnostic images."], ["A gamma camera mounted on a rotating gantry detects the photons that are emitted from an injected isotope", "That describes single photon emission computed tomography."]], "c": 2, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 16"}, {"topic": "Specific gravity", "io": "a — Describe the following urinalysis parameters", "slot": "mechanism", "q": "What does specific gravity measure?", "opts": [["The osmotic pressure the urine exerts", "That is osmolality, a related but different measure."], ["The number of particles per litre of urine", "It weighs the solutes rather than counting them."], ["Solute weight against an equal volume of water", "Correct — it is a ratio of weights."], ["The volume of urine produced per hour", "Volume is not what specific gravity reports."]], "c": 2, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 31"}, {"topic": "Hematuria", "io": "b — Differentiate between hematuria, hemoglobinuria, and myoglobinuria", "slot": "interpretation", "q": "How is gross hematuria distinguished from microscopic hematuria?", "opts": [["Gross is painless; microscopic is painful", "Pain does not separate the two."], ["Gross means more than three red cells; microscopic means fewer", "The threshold defines microscopic hematuria rather than separating the two this way."], ["Gross is visible to the naked eye; microscopic needs analysis to detect", "Correct — visibility is the distinction."], ["Gross comes from the kidney; microscopic comes from the bladder", "Either can arise anywhere along the tract."]], "c": 2, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 24"}, {"topic": "What urinalysis is", "io": "a — Describe the following urinalysis parameters", "slot": "initial test", "q": "What does a urinalysis examine?", "opts": [["Only the microscopic sediment, after centrifugation", "Sediment microscopy is one component rather than the whole test."], ["Only the chemical contents, read from a reagent strip", "The reagent strip is one part; inspection and microscopy are the others."], ["The physical, chemical, and microscopic contents of urine", "Correct — all three together make up the test."], ["The bacterial species present and their antibiotic sensitivities", "That is a urine culture and sensitivity, ordered separately."]], "c": 2, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 4"}, {"topic": "CT versus MRI", "io": "h — Compare and contrast CT and MRI applications in head and neck pathology", "slot": "first-line", "q": "What are the five strengths of magnetic resonance imaging?", "opts": [["Soft-tissue contrast, speed, bone erosion, gas and oedema", "Speed, bone erosion and gas are computed tomography advantages."], ["No ionizing radiation, cystic versus solid character, vascularity, size and the depth of a neck mass on ultrasound", "The last three are what ultrasound contributes to a neck mass."], ["Superior soft-tissue contrast, no ionizing radiation, intracranial or orbital extension, perineural spread, skull base and tumours", "Correct — the magnetic resonance list as given."], ["Speed, wide availability, bone detail, foreign bodies and acute trauma", "Those are the computed tomography strengths."]], "c": 2, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 35"}, {"topic": "Glucose", "io": "a — Describe the following urinalysis parameters", "slot": "interpretation", "q": "Which of these can produce glucosuria even when the serum glucose is within normal limits?", "opts": [["Renal disease that impairs tubular reabsorption", "Correct — the leak is tubular rather than a high blood level."], ["A diet high in meat", "Meat shifts the pH rather than causing glucosuria."], ["Dehydration", "Dehydration concentrates the urine without spilling glucose."], ["A urinary tract infection with Escherichia coli", "Infection does not itself spill glucose."]], "c": 0, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 22"}, {"topic": "Neutrophil abnormalities", "io": "e(ii) — Discuss the clinical significance of abnormalities in white blood cells", "slot": "differential", "q": "What causes INCREASED neutrophils?", "opts": [["Parasitic infection, allergic reaction, cancer, and pregnancy", "The first three are eosinophil causes."], ["Bacterial infection, myocardial infarction, burns, steroids, rheumatoid arthritis, and physiologic causes such as pregnancy, labor and surgery", "Correct — the full list, including the physiologic causes."], ["Bacterial infection, radiation exposure, severe burns, benzene and other toxic chemicals, and an overwhelming systemic infection", "Radiation, benzene and overwhelming infection are causes of DECREASED neutrophils."], ["Viral infection, folate deficiency, bone marrow damage, and steroids", "The first three decrease the count."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 22"}, {"topic": "Neutrophils", "io": "e(ii) — Discuss the clinical significance of abnormalities in white blood cells", "slot": "test finding", "q": "What is the normal neutrophil percentage, and what is the neutrophil's rank among white cells?", "opts": [["Twenty-four to forty-four per cent, and the most abundant white blood cell", "That range belongs to lymphocytes."], ["Fifty-four to sixty-two per cent, and the second most abundant white blood cell", "The neutrophil is the most abundant white cell."], ["Three to seven per cent, and the largest white blood cell", "Those figures describe the monocyte."], ["Fifty-four to sixty-two per cent, and the most abundant white blood cell", "Correct — both the range and the rank, and the reference table agrees with this figure."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 18"}, {"topic": "Fluid balance", "io": "i — Explain laboratory evaluation of fluid and electrolyte homeostasis", "slot": "initial test", "q": "What does serum osmolality allow you to distinguish?", "opts": [["Acute from chronic kidney disease", "Chronicity is judged over at least three months."], ["True hypotonic hyponatraemia from the pseudo- and hypertonic forms", "Correct — osmolality makes that separation."], ["Prerenal failure from intrinsic renal failure", "That separation comes from the urea nitrogen to creatinine ratio."], ["Raised-gap from normal-gap acidosis", "That comes from the anion gap."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 25"}, {"topic": "Stool studies", "io": "f — Purpose and appropriate use of stool, throat, sputum and blood studies", "q": "Why are three separate random stool specimens recommended for ova and parasite testing?", "opts": [["Because the first specimen is always discarded as contaminated", "No specimen is routinely discarded."], ["Because the laboratory requires a minimum total volume spread across three containers", "Volume is not the reason for three specimens."], ["Because of the life cycle of parasites, which increases the likelihood of detection", "Correct — organisms are shed intermittently, so a single specimen can miss them."], ["Because each specimen tests for a different class of organism", "All three are the same test; the repetition addresses intermittent shedding."]], "c": 2, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 21"}, {"topic": "Nuclear medicine", "io": "b — Describe the function and clinical applications of radiography, ultrasonography, computed tomography, magnetic resonance imaging, magnetic resonance angiography, positron emission tomography, single photon emission computed tomography and angiographic studies", "slot": "agent/regimen", "q": "Which tracer does positron emission tomography typically use, and why that one?", "opts": [["Technetium-99, a metastable isotope, because tumours retain it far longer than normal tissue", "Technetium-99 is the usual single photon emission tomography agent, tracking blood flow."], ["Iodixanol, an iso-osmolal agent, because tumours take up iodine more avidly than muscle", "Iodixanol is an intravascular iodinated contrast for angiography, not a nuclear tracer."], ["Gadolinium, a paramagnetic metal, because tumours disrupt the local magnetic environment", "Gadolinium is the magnetic resonance contrast agent and emits no radiation."], ["Fluorodeoxyglucose-18, a radioactive glucose, because tumours have a higher metabolic rate", "Correct — the scan asks which tissues are consuming more glucose."]], "c": 3, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 55"}, {"topic": "History", "io": "a — Identify the fundamental properties of medical imaging", "slot": "etiology", "q": "Who discovered x-rays, and what recognition followed?", "opts": [["Godfrey Hounsfield, in Britain in 1972, awarded the Nobel Prize for Medicine in 1979", "He developed the first computed tomography scanner, with Allan Cormack."], ["Allan Cormack, in South Africa in 1963, awarded the first Nobel Prize for Physics", "He shared the 1979 Medicine prize for computed tomography."], ["Marie Curie, in France in 1898, awarded the Nobel Prize for Physics in 1903", "Her work was on radioactivity rather than the discovery of x-rays."], ["Wilhelm Roentgen, in Germany in 1895, awarded the first Nobel Prize for Physics in 1901", "Correct — the technique is still called roentgenography after him."]], "c": 3, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 4"}, {"topic": "Phases", "io": "c — Phases of the diagnostic testing process", "q": "When does the pretest phase begin and end?", "opts": [["It begins when the order is placed and ends when the specimen reaches the laboratory", "The phase ends when the test itself begins, not at laboratory receipt."], ["It begins at the patient's arrival and ends when consent is signed", "Consent is one component within the phase rather than its endpoint."], ["It begins when the specimen is collected and ends when it is analysed", "That describes the intratest phase."], ["It begins with patient preparation and extends until the diagnostic test begins", "Correct — preparation through to the moment the test starts."]], "c": 3, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 8"}, {"topic": "Breslow depth", "io": "d — Discuss indications for skin biopsy and common biopsy techniques", "slot": "prognosis", "q": "Which Breslow depth corresponds to T2?", "opts": [["More than two millimetres and up to four millimetres", "That is T3."], ["More than four millimetres", "That is T4."], ["More than one millimetre and up to two millimetres", "Correct — T2 spans the interval above one and up to two millimetres."], ["One millimetre or less", "That is T1."]], "c": 2, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 11"}, {"topic": "Imaging planes", "io": "e — Discuss the importance of patient positioning in medical imaging", "slot": "manifestation", "q": "Which three standard planes are used in cross-sectional imaging, and how does each divide the body?", "opts": [["Axial into upper and lower, coronal into right and left, sagittal into anterior and posterior", "Coronal and sagittal are swapped; coronal separates front from back."], ["Axial into upper and lower, coronal into anterior and posterior, sagittal into right and left", "Correct — axial is also called transverse and is the commonest of the three."], ["Axial into anterior and posterior, coronal into right and left, sagittal into upper and lower", "Each plane here is matched to the wrong division of the body."], ["Axial into right and left, coronal into upper and lower, sagittal into anterior and posterior", "This rotates all three assignments and is wrong on each one."]], "c": 1, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 45"}, {"topic": "Hematocrit", "io": "b — Explain the difference between hemoglobin and hematocrit", "slot": "differential", "q": "What are the four causes of a decreased hematocrit?", "opts": [["Trauma, iron deficiency, polycythemia vera and acute hemorrhage", "That is the raised platelet list."], ["Anemias, acute or chronic blood loss, hemolysis and dilution", "Correct — hemolysis is on the hematocrit list specifically."], ["Polycythemia vera, smoking, chronic obstructive pulmonary disease and dehydration", "Those all raise the hematocrit."], ["Bone marrow disorders, cancer, chronic kidney disease and dehydration", "Dehydration raises rather than lowers it."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Slide 52"}, {"topic": "Sodium", "io": "b(i) — Discuss the physiological role of sodium", "slot": "etiology", "q": "Serum sodium and total-body sodium reflect different things. Which pairing is correct?", "opts": [["Serum sodium reflects total-body sodium; water balance governs extracellular volume", "This reverses both halves of the note."], ["Both serum sodium and total-body sodium reflect water balance", "The two are separate, not equivalent."], ["Serum sodium reflects extracellular volume; water balance governs total-body sodium", "Neither half matches the note."], ["Serum sodium reflects water balance; total-body sodium governs extracellular volume", "Correct — serum sodium reflects water balance; total-body sodium governs extracellular volume."]], "c": 3, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 9 (speaker notes)"}, {"topic": "Soft tissue infection", "io": "e — Discuss the role of diagnostic testing in evaluation of soft tissue infections and abscesses", "slot": "escalation", "q": "For what is computed tomography or magnetic resonance imaging reserved in soft tissue infection?", "opts": [["Cellulitis that has failed forty-eight hours of oral antibiotics", "Treatment failure is not the stated indication on this slide."], ["Any infection in an immunocompromised patient", "Immunosuppression is a culture consideration here, not an imaging one."], ["Deep-space infection, necrotizing infection, foreign body and gas", "Correct — the four reasons listed to escalate beyond ultrasound."], ["Any abscess large enough to require drainage in theatre", "Abscess size is not the criterion given."]], "c": 2, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 12"}, {"topic": "Levine method", "io": "b — Describe indications for skin cultures and wound cultures", "slot": "initial test", "q": "How is the swab handled in the Levine method?", "opts": [["Pressed onto the wound edge and held still for five seconds", "The swab is rotated, not held still."], ["Rotated for five seconds over one to two centimetres of clean wound tissue, with enough pressure to express fluid", "Correct — area, duration and pressure, all three as specified."], ["Rolled once across the entire width of the wound bed from edge to edge without applying pressure", "The method requires rotation with pressure over a defined small area."], ["Rotated for thirty seconds over the whole wound bed", "The specified duration is five seconds over one to two centimetres."]], "c": 1, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 14"}, {"topic": "Reagent strip technique", "io": "a — Describe the following urinalysis parameters", "slot": "specimen handling", "q": "What kind of specimen does reagent strip testing require?", "opts": [["Any specimen collected within the past day", "A specimen brought in from the day before is no longer fresh."], ["A specimen collected after a preservative is added", "No preservative is added."], ["A fresh specimen in a sterile container", "Correct — both the freshness and the sterile container matter."], ["A first-morning specimen only", "A fresh specimen is required; it need not be the first of the day."]], "c": 2, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 11"}, {"topic": "Contrast media", "io": "g — Compare and contrast the risks and benefits associated with contrast administration", "slot": "differential", "q": "Which vascular magnetic resonance studies are performed without contrast?", "opts": [["Coronary angiography and retrograde pyelography", "Both of these are performed with injected contrast material."], ["Arthrography and intrathecal myelography", "Both are defined by contrast being injected into a space."], ["Magnetic resonance angiography and magnetic resonance venography", "Correct — both are done without a contrast agent."], ["Computed tomography angiography and computed tomography venography", "The computed tomography vascular studies do require an iodinated injection."]], "c": 2, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 54"}, {"topic": "Nephrotic syndrome", "io": "c — Correlate urinalysis findings with common clinical presentations", "slot": "interpretation", "q": "A patient has heavy protein on the dipstick and foamy urine. Which finding on inspection matched the pad?", "opts": [["The colour", "Colour points to concentration, bilirubin, or blood."], ["The foam", "Correct — foaming is associated with protein."], ["The odour", "Odour points to infection or ketones."], ["The transparency", "Turbidity points to cells, organisms, or crystals."]], "c": 1, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 8"}, {"topic": "Tympanometry", "io": "g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry", "slot": "first-line", "q": "What are the three indications for tympanometry?", "opts": [["Persistent otitis media with effusion, hearing loss, and retrocochlear pathology", "Those overlap with the audiometry list, not the tympanometry one."], ["Any ear pain, any ear discharge, and any hearing complaint", "The list is more specific than this."], ["Suspected effusion, otitis media with effusion, and eustachian tube dysfunction", "Correct — the three indications as given."], ["Suspected effusion, asymmetric hearing loss, and tinnitus", "Asymmetric loss and tinnitus are not tympanometry indications here."]], "c": 2, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 27"}, {"topic": "Audiometry", "io": "g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry", "slot": "test finding", "q": "What counts as a fail on primary-care conventional audiometry?", "opts": [["Any threshold above zero decibels hearing level", "That is not the criterion given."], ["More than twenty decibels hearing level at one or more frequencies", "Correct — that is the threshold for a fail."], ["More than ten decibels hearing level at one or more frequencies", "Ten decibels is the air-bone gap figure, not the fail threshold."], ["More than forty decibels hearing level at two or more frequencies", "Neither the level nor the number of frequencies matches."]], "c": 1, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 27"}, {"topic": "Role of testing", "io": "a — Importance and role of laboratory testing in evaluating a patient", "q": "A patient asks why you are ordering a laboratory test when you already suspect the diagnosis. Which statement best describes the role of laboratory testing?", "opts": [["It is ordered chiefly to satisfy documentation requirements", "Documentation matters, but it is not why a test is ordered."], ["It is a tool used alongside a thorough history and physical examination to add information", "Correct. Diagnostics supplement the history and examination rather than replacing them."], ["It replaces the history and physical examination once the results have been reported", "Testing is used in conjunction with the history and examination, never instead of them."], ["It is primarily therapeutic rather than diagnostic", "Testing is not necessarily therapeutic, though a blood culture that guides antibiotic choice can be."]], "c": 1, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 6"}, {"topic": "Indications", "io": "g — Discuss indications for ordering chemistry panels", "slot": "initial test", "q": "Under the acute illness indication, which two situations call for a chemistry panel?", "opts": [["Headache and a suspected migraine", "A suspected migraine is not an indication."], ["Dehydration and a suspected acid-base disorder", "Correct — those two go together under acute illness."], ["Fever and a suspected bloodstream infection", "Those would prompt cultures and a complete blood count."], ["Chest trauma and a suspected rib fracture", "Imaging rather than chemistry is the first step there."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 23"}, {"topic": "Deep neck infection", "io": "k — Discuss imaging evaluation of neck masses and deep neck infections", "slot": "escalation", "q": "What are the three things contrast computed tomography of the neck evaluates in deep neck infection?", "opts": [["A drainable abscess, airway compromise, and spread towards the mediastinum", "Correct — the three questions this study is asked."], ["Cystic versus solid character, size, and vascularity", "Those are the ultrasound descriptors for a neck mass."], ["Perineural spread, skull base involvement, and intracranial extension", "Those are magnetic resonance strengths."], ["Bone erosion, gas, and foreign body", "Those are general computed tomography findings, not this slide's three."]], "c": 0, "cite": "3. svDerm, ENT, Ophtho.pptx, Slide 39"}, {"topic": "Panel groupings", "io": "a — Explain the components of a chemistry panel", "slot": "initial test", "q": "Where does calcium sit among the panel components?", "opts": [["On its own, as the mineral", "Correct — calcium stands alone as the mineral."], ["With sodium and potassium as an electrolyte", "The electrolyte group is sodium, potassium, chloride and bicarbonate."], ["With the liver and protein markers", "Calcium is on the basic panel; the liver and protein group is the comprehensive addition."], ["With blood urea nitrogen as a kidney marker", "Calcium is not grouped as a measure of kidney function."]], "c": 0, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 7"}, {"topic": "Potassium", "io": "b(ii) — Discuss the physiological role of potassium", "slot": "etiology", "q": "Besides renal excretion, what is the other mechanism regulating potassium?", "opts": [["Loss through sweat and insensible routes", "Sweat and insensible losses do not regulate potassium."], ["Transcellular shifts driven by insulin, acid-base status, and catecholamines", "Correct — those three drive transcellular shift."], ["Storage in, and release from, the glycogen held in skeletal muscle", "Potassium shifts across membranes; it is not stored as glycogen."], ["Binding to and release from plasma albumin", "Potassium is not protein-bound that way."]], "c": 1, "cite": "5. Chemistry Panels, Renal Fxn, Elytes.pptx, Slide 10 (speaker notes)"}, {"topic": "Phases", "io": "d — Components of the pretest, intratest and posttest phases", "q": "What does the integration component of the posttest phase refer to?", "opts": [["Entering results into the electronic health record", "That is documentation rather than integration."], ["Reconciling the result against the pretest probability", "That is a separate concept from the integration phase."], ["Diagnosis, subsequent acceptance, healing, and health-promoting behavior", "Correct — it includes patient education for the diagnosis and treatment plan."], ["Combining results from several laboratories into a single unified record", "Integration here refers to the patient's process, not to data merging."]], "c": 2, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 12"}, {"topic": "Nephrotic syndrome", "io": "c — Correlate urinalysis findings with common clinical presentations", "slot": "next step", "q": "A dipstick shows heavy proteinuria. Which test quantifies it properly?", "opts": [["Urine culture and sensitivity", "Culture answers a question about infection."], ["A twenty-four hour urine collection", "Correct — it measures the loss far more accurately than an estimate."], ["Serum creatinine alone", "That assesses function rather than quantifying the protein lost."], ["A repeat dipstick with an automated reader", "The reader improves accuracy but still gives an estimate."]], "c": 1, "cite": "6. Urinalysis Diagnostics SV Gopal Fall 2026.pptx, Slide 28"}, {"topic": "Point-of-care testing", "io": "h — Common point-of-care tests in primary care and acute care", "q": "Which two areas of point-of-care testing are noted as rapidly increasing?", "opts": [["Cholesterol and hemoglobin A1c testing", "Both are common but are not the ones flagged as rapidly increasing."], ["Pregnancy and ovulation testing", "Neither is flagged in this way."], ["Rapid strep testing and rapid influenza antigen testing", "Both are common but are not the flagged growth areas."], ["Fentanyl testing and human immunodeficiency virus testing", "Correct — both are flagged as growing rapidly."]], "c": 3, "cite": "1. Principles of Laboratory Diagnostics sv.pptx, Slide 30"}, {"topic": "Densities", "io": "d — Compare and contrast the concepts of radiographic density and contrast", "slot": "manifestation", "q": "Which density is described as the most dense naturally occurring material?", "opts": [["Metal", "Metal is denser but is not naturally occurring in the body."], ["Fluid", "Fluid and soft tissue share a middle density."], ["Fat", "Fat is less dense than soft tissue."], ["Calcium", "Correct — it absorbs most x-rays, though metal absorbs essentially all of them."]], "c": 3, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 8"}, {"topic": "Positioning", "io": "c — Discuss anatomical structures best visualized by each imaging modality", "slot": "initial test", "q": "What is the decubitus position used to evaluate?", "opts": [["Bowel obstruction, because gravity separates the air from the fluid within the loops", "Air-fluid levels within bowel are assessed on the abdominal series."], ["Aortic calcification, because gravity displaces the overlying bowel gas out of the field", "The decubitus view is not described for vascular calcification here."], ["Pleural effusion, because gravity lets the fluid around the lung level out and be seen", "Correct — fluid in the pleural space moves when the patient is laid on their side."], ["Free air under the diaphragm, because gravity lets the air rise to the highest point", "Free intraperitoneal air is sought on an upright abdominal series."]], "c": 2, "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 41"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  return /^objectives?\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
+      '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

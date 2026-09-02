@@ -414,6 +414,11 @@ window.GROUP_INDEX = {
 "principles-of-diagnostic-medicine-i-exam-1-lab-diagnostics-quiz-version-2":{"title":"Principles of Laboratory Diagnostics Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-medical-imaging-quiz":{"title":"Principles of Medical Imaging Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-medical-imaging-quiz-version-2":{"title":"Principles of Medical Imaging Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-1-pdm-exam-1-master-exam-form-a":{"title":"PDM I Exam 1 Master Exam — Form A","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":60},
+"principles-of-diagnostic-medicine-i-exam-1-pdm-exam-1-master-exam-form-b":{"title":"PDM I Exam 1 Master Exam — Form B","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":60},
+"principles-of-diagnostic-medicine-i-exam-1-pdm-exam-1-master-exam-form-c":{"title":"PDM I Exam 1 Master Exam — Form C","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":60},
+"principles-of-diagnostic-medicine-i-exam-1-pdm-exam-1-master-exam-form-d":{"title":"PDM I Exam 1 Master Exam — Form D","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":60},
+"principles-of-diagnostic-medicine-i-exam-1-pdm-exam-1-master-exam-form-e":{"title":"PDM I Exam 1 Master Exam — Form E","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":60},
 "principles-of-diagnostic-medicine-i-exam-1-urinalysis-quiz":{"title":"Urinalysis Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-urinalysis-quiz-version-2":{"title":"Urinalysis Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30}
 };

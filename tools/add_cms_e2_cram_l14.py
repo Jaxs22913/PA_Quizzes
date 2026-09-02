@@ -114,6 +114,8 @@ SECTIONS = "".join([
   ("THE PAEDIATRIC TRAP", "&ldquo;WHITE-EYED BLOWOUT&rdquo; &mdash; entrapment with NO orbital soft tissue signs at all. A quiet-looking eye does not exclude it."),
   ("Diagnosis", "CT of ORBITS and MIDFACE."),
   ("Management ladder", "No injury/entrapment &rarr; ICE + analgesia, review 2&ndash;3 days. Blood in MAXILLARY SINUS &rarr; ANTIBIOTICS. True blowout &rarr; OPHTHO (30% have a significant globe injury). ENTRAPMENT &rarr; FACIAL TRAUMA SURGEON STAT (muscle NECROSIS)."),
+  ("WHY antibiotics for blood in the sinus", "PROPHYLACTIC, not treatment. The eye is STERILE; blood in the sinus means the sinus is DISRUPTED and now has a PORTAL OF ENTRY."),
+  ("WHY the CT includes the MIDFACE", "To catch ADDITIONAL FRACTURES. Finding the orbital floor is not the same as excluding everything else."),
   ("Surgical timing", "Often DELAYED 1&ndash;2 WEEKS to let swelling settle. Already-damaged optic nerve is unlikely to improve and surgery may worsen it."),
  ], star=True),
 
@@ -122,6 +124,7 @@ SECTIONS = "".join([
   ("The catch", "Trauma there often has NO SYMPTOMS of its own &mdash; you find it on INDIRECT SIGNS."),
   ("INDIRECT SIGNS", "RACCOON EYES &middot; BATTLE SIGN &middot; HAEMOTYMPANUM &middot; bleeding into middle ear or sphenoid sinus &middot; CSF LEAK with CLEAR or PINK RHINORRHOEA."),
   ("TWO BEDSIDE TESTS FOR CSF", "DEXTROSE STICK may be positive. Fluid on FILTER PAPER or the BEDSHEET shows a HALO / DOUBLE RING SIGN &mdash; INNER ring of BLOOD, OUTER ring of CSF."),
+  ("HOW to do the halo test", "Hold a BEDSHEET, paper or tissue under the nostril, let the drip fall, and watch it DRY. Two rings appear. She called this &ldquo;very classic&rdquo; and a sign NOT TO MISS."),
   ("Diagnosis", "CT ORBITS &mdash; but the fracture is NOT ALWAYS EVIDENT."),
   ("Management", "CSF present &rarr; NEUROSURGERY CONSULT and ADMISSION. Otherwise admission depends on clinical condition, associated injuries, brain injury on CT."),
   ("Antibiotics for a CSF leak", "CONTROVERSIAL &mdash; risk of selecting RESISTANT organisms."),
