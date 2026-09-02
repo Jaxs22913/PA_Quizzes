@@ -255,6 +255,7 @@ window.GROUP_INDEX = {
 "pharmacology-i-exam-1-pharm-drill-antibacterials":{"title":"Antibacterials Drill","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-pharm-drill-antifungals-antivirals":{"title":"Antifungals & Antivirals Drill","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-pharm-drill-cholinergic":{"title":"Cholinergic & Anticholinergic Drill","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":30},
+"pharmacology-i-exam-1-pharm-drill-classes":{"title":"Drug Classes Drill","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":25},
 "pharmacology-i-exam-1-pharm-drill-dermatology":{"title":"Dermatology Medications Drill","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":25},
 "pharmacology-i-exam-1-pharm-exam-1-master-exam-form-a":{"title":"Pharmacology I Exam 1 Master Exam — Form A","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":60},
 "pharmacology-i-exam-1-pharm-exam-1-master-exam-form-a-v1":{"title":"Pharmacology I Exam 1 Master Exam (v1, archived) — Form A","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":60},

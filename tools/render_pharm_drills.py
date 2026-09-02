@@ -24,6 +24,7 @@ import pharm_drill_antifungals as af
 import pharm_drill_cholinergic as ch
 import pharm_drill_adrenergic as ad
 import pharm_drill_dermatology as dm
+import pharm_drill_classes as cl
 
 OUT = os.path.join(ROOT, "Pharmacology I Exam 1")
 DECK = {"L1": "Antibiotics, Antivirals, and Antifungals.pptx",
@@ -48,6 +49,13 @@ SETS = [
     (dm, "pharm-drill-dermatology.html", "Dermatology Medications Drill",
      "Topic — Dermatology medications",
      ["Acne", "Retinoids", "Topical steroids", "Topical antimicrobials"]),
+    # Jaxon, 2026-09-02: "If theres stuff specific to a whole class you can make
+    # drill questions for those." Every option here is a class, which is the one
+    # case where the one-drug-per-choice rule does not apply.
+    (cl, "pharm-drill-classes.html", "Drug Classes Drill",
+     "Topic — Facts that belong to a whole class",
+     ["Antibacterial classes", "Antifungal classes", "Autonomic classes",
+      "Topical classes"]),
 ]
 
 INTRO = ("One fact, four drug names. No patient, no story &mdash; just the thing that drug "
