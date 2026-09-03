@@ -195,6 +195,17 @@ everything here is one-sided &mdash; so the middle column is <b>the type of hear
 thing Lecture 16 asks you to distinguish, it is the entire reason Weber and Rinne exist, and it
 sorts almost every row on this page. The buttons above let you pull out just the conductive
 causes, or just the painful ones, and read down.<br><br>
+<b>This is the shape of the exam question, stated in the lecture.</b> Lecture 16 stopped on a
+worked vignette &mdash; ear fullness and reduced hearing after a cold, an amber effusion behind an
+intact drum with reduced mobility &mdash; and asked <i>which Weber and Rinne findings are most
+likely</i>, with the note: <i>&ldquo;this is what I expect you to get right on the test, because
+there is a test question like this.&rdquo;</i> The reverse was described too: <b>given the Weber
+and Rinne results, name the diagnosis</b> &mdash; <i>&ldquo;I can give you these results and
+you&rsquo;ll automatically know if it&rsquo;s conductive or sensorineural &hellip; I have things
+like wax impaction on there, and that would be the answer, because the other choices
+wouldn&rsquo;t be conductive.&rdquo;</i> <b>That is exactly why the hearing-loss column is the one
+to read down</b>: in that question the wrong answers are eliminated by loss type before you think
+about anything else.<br><br>
 <b>Weber and Rinne, once, so the middle column reads quickly.</b>
 <b>Conductive:</b> Weber lateralises <b>to the bad ear</b>, and bone conduction is <b>equal to or
 better than</b> air conduction. <b>Sensorineural:</b> Weber lateralises <b>away, to the good

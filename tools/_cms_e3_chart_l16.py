@@ -36,7 +36,7 @@ ROWS_L16 = [
  ("Sensorineural hearing loss", PATTERN,
   "<b>Weber lateralises AWAY to the good ear</b> &middot; <b>AC &gt; BC</b> &middot; <b>worse</b> in noise",
   "Sensory (deterioration of the cochlea and loss of hair cells) and neural (lesions of the eighth nerve, auditory nuclei, ascending tracts, auditory cortex) are <b>difficult to separate clinically and are grouped together</b>. Onset in <b>middle or later years</b>; <b>the ear canal and drum look normal</b>. <b>Higher registers are lost so sound is distorted</b>, <b>hearing worsens in a noisy environment</b>, and <b>the voice may be loud</b> because hearing is difficult.",
-  "<b>Weber lateralises to the GOOD ear.</b> <b>Rinne: AC &gt; BC</b> &mdash; the same as normal, which is why Weber carries the diagnosis. Audiometry classifies severity: normal 0&ndash;20 dB, mild 20&ndash;40, moderate 40&ndash;60, severe 60&ndash;80, <b>profound &gt;80 dB</b>.",
+  "<b>Weber lateralises to the GOOD ear.</b> <b>Rinne: AC &gt; BC</b> &mdash; the same as normal, which is why Weber carries the diagnosis. Audiometry classifies severity: normal 0&ndash;20 dB, mild 20&ndash;40, moderate 40&ndash;60, severe 60&ndash;80, <b>profound &gt;80 dB</b>. <b>It is all by 20s &mdash; 20, 40, 60, 80</b>, which is how it was given in the lecture, and it is one of the few charts flagged as one to know outright.",
   "<b>Usually not correctable</b>, but may be stabilised and some types prevented. <b>Acute-onset sensory loss may respond to corticosteroids in the first weeks.</b>",
   "Urgent",
   "The window for steroids in sudden loss is short, which is why new one-sided hearing loss is not a wait-and-see problem.",
@@ -44,7 +44,7 @@ ROWS_L16 = [
 
  ("Presbycusis", PATTERN,
   "<b>Hears people speak but cannot make out words</b> &middot; bilateral &middot; high frequency first",
-  "<b>The commonest sensorineural hearing loss.</b> Progressive age-related loss from <b>hair cell loss in the organ of Corti and cochlear nerve degeneration</b>. <b>Bilateral, symmetrical, gradual.</b> <b>High frequencies go first</b>, progressing to mid and low. Patients <b>hear speech but cannot make out the words</b>, miss the doorbell and the phone, may have tinnitus, and <b>lip-read more than they realise</b>. Age is the strongest predictor: about 2% of adults 45&ndash;54, 8.5% at 55&ndash;64, nearly 25% at 65&ndash;74 and 50% over 75 have disabling loss; <b>men are almost twice as likely as women</b>.",
+  "<b>The commonest sensorineural hearing loss.</b> Progressive age-related loss from <b>hair cell loss in the organ of Corti and cochlear nerve degeneration</b>. <b>Bilateral, symmetrical, gradual.</b> <b>High frequencies go first</b>, progressing to mid and low. Patients <b>hear speech but cannot make out the words</b>, miss the doorbell and the phone, may have tinnitus, and <b>lip-read more than they realise</b>. It is common enough that <b>primary care screens everyone aged 65 and over</b> for it as a matter of routine. <i>The prevalence percentages on the slide are explicitly not to be memorised &mdash; &ldquo;you don&rsquo;t have to memorize these statistics&rdquo;.</i>",
   "Audiometry showing bilateral symmetrical high-frequency loss.",
   "Amplification and communication strategy. Not correctable.",
   "Routine",
