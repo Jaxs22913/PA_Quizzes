@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #9c5230; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c9a227; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Drill | Pharmacology I Exam 1</title>
+<style>
+  :root{
+    --navy:#6b3524; --indigo:#9c5230; --gold:#c9a227; --ice:#fbf1e6;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Master Drill</h1>
+    <div class="sub">Pharmacology I &middot; Exam 1 &middot; every drill question in one paper</div>
+    <span class="pill">170 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">All 170 rapid-drill questions in one sitting, interleaved across the six sets. Same format throughout &mdash; one fact, four names. Set a shorter length on this screen if you want a sample rather than the whole thing.</p>
+    <div class="chips"><span class="chip">Antibacterials</span><span class="chip">Antifungals &amp; antivirals</span><span class="chip">Cholinergic</span><span class="chip">Adrenergic</span><span class="chip">Dermatology</span><span class="chip">Drug classes</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Vancomycin", "io": "Topic — Antibacterials", "q": "Which drug causes body flushing, fever and chills during a rapid infusion — Red Man Syndrome?", "opts": [["Vancomycin", "Correct. Red Man Syndrome, also called Vancomycin Infusion Syndrome. It is an infusion-rate reaction, not an allergy, so the answer is to slow the infusion."], ["Linezolid", "Its signature interaction is serotonin syndrome, not an infusion flush."], ["Clindamycin", "Known for Clostridium difficile and pseudomembranous colitis."], ["Gentamicin", "Known for renal toxicity and ototoxicity, not an infusion flush."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 51"}, {"topic": "Voriconazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal causes visual disturbance in about thirty per cent of patients?", "opts": [["Fluconazole", "Best oral absorption and penetrates the central nervous system; no visual effect."], ["Voriconazole", "Correct. Visual effects in 30% — the standout adverse effect of this azole. Used for systemic Aspergillus and Candida."], ["Itraconazole", "Its flag is teratogenicity."], ["Posaconazole", "Its flags are QT prolongation and electrolyte loss."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 107"}, {"topic": "Succinylcholine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which neuromuscular blocker causes malignant hyperthermia?", "opts": [["Rocuronium", "A nondepolarizing blocker; no malignant hyperthermia."], ["Vecuronium", "A nondepolarizing blocker."], ["Succinylcholine", "Correct. Malignant hyperthermia and hyperkalaemia. Treatment is rapid cooling and dantrolene."], ["Atracurium", "Nondepolarizing, and its quirk is histamine release."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 66"}, {"topic": "Oxymetazoline", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which decongestant causes rebound congestion — rhinitis medicamentosa — if used for more than three days?", "opts": [["Pseudoephedrine", "Oral, and not the agent this rebound rule is attached to."], ["Phenylephrine", "Used as a decongestant but the rebound warning is given for oxymetazoline."], ["Albuterol", "A bronchodilator, not a nasal decongestant."], ["Oxymetazoline", "Correct. Rhinitis medicamentosa beyond THREE DAYS. That three-day limit is the patient-education point."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 95"}, {"topic": "Benzoyl peroxide", "io": "Topic — Dermatology medications", "q": "Which acne treatment bleaches hair and clothing?", "opts": [["Benzoyl peroxide", "Correct. It bleaches hair and clothes — the practical warning every patient needs before the first application."], ["Azelaic acid", "Causes mild irritation and dryness, and can HYPOpigment the skin — a different problem."], ["Tretinoin", "Causes erythema, peeling and photosensitivity."], ["Clindamycin", "A topical antibiotic, with no bleaching."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 21"}, {"topic": "Tetracyclines", "io": "Topic — Facts that belong to a whole class", "q": "Which class must be separated from antacids, iron and dairy because it chelates with cations?", "opts": [["Macrolides", "No cation chelation."], ["Tetracyclines", "Correct. They chelate with cations, so the dose has to be spaced away from antacids, iron and dairy."], ["Penicillins", "No cation chelation."], ["Cephalosporins", "No cation chelation."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 63"}, {"topic": "Fluoroquinolones", "io": "Topic — Antibacterials", "q": "Which antibiotic class causes tendonitis and Achilles tendon rupture?", "opts": [["Macrolides", "Known for QT prolongation and cholestatic hepatitis."], ["Tetracyclines", "Known for tooth discolouration and depressed skeletal growth."], ["Fluoroquinolones", "Correct. Tendonitis and Achilles rupture, with caution under 18 years old. Peripheral neuropathy belongs to the same class."], ["Aminoglycosides", "Known for renal toxicity and ototoxicity."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 79"}, {"topic": "Amphotericin B", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal's infusion causes fever and chills severe enough to limit treatment?", "opts": [["Fluconazole", "Well tolerated orally."], ["Caspofungin", "Echinocandins are comparatively well tolerated."], ["Griseofulvin", "Causes headache and blurred vision, not an infusion reaction."], ["Amphotericin B", "Correct. Fever and chills, hypotension, and hypokalaemia with hypomagnesaemia — side effects that limit treatment."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 98"}, {"topic": "Atracurium", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which neuromuscular blocker releases histamine?", "opts": [["Atracurium", "Correct. Histamine release is what separates it from the other nondepolarizing blockers."], ["Succinylcholine", "Depolarizing, and its flags are malignant hyperthermia and hyperkalaemia."], ["Rocuronium", "No histamine release."], ["Pancuronium", "No histamine release."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 65"}, {"topic": "Phenylephrine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug induces REFLEX BRADYCARDIA?", "opts": [["Isoproterenol", "Stimulates the heart directly — the opposite."], ["Phenylephrine", "Correct. Pure alpha-1 vasoconstriction raises blood pressure, and the baroreceptor answer is a reflex slowing of the heart."], ["Dobutamine", "Increases atrioventricular conduction."], ["Epinephrine", "Raises rate and pressure together."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 96"}, {"topic": "Azelaic acid", "io": "Topic — Dermatology medications", "q": "Which topical acne agent can cause hypopigmentation?", "opts": [["Benzoyl peroxide", "Bleaches hair and fabric, but the skin effect described is irritation."], ["Adapalene", "A retinoid — erythema and peeling."], ["Azelaic acid", "Correct. Hypopigmentation alongside mild irritation and dryness."], ["Erythromycin", "A topical antibiotic."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 22"}, {"topic": "Tetracyclines", "io": "Topic — Facts that belong to a whole class", "q": "Which class must be avoided in children under eight years old?", "opts": [["Macrolides", "Used freely in children."], ["Cephalosporins", "Used freely in children."], ["Penicillins", "Used freely in children."], ["Tetracyclines", "Correct. Under eight, because of tooth discolouration and depressed skeletal growth."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 63"}, {"topic": "Metronidazole", "io": "Topic — Antibacterials", "q": "Which antibiotic causes a disulfiram-like reaction if the patient drinks alcohol?", "opts": [["Metronidazole", "Correct. A disulfiram-like reaction with ethanol — the patient must be told not to drink."], ["Clindamycin", "No alcohol interaction; its problem is Clostridium difficile."], ["Vancomycin", "Its infusion reaction is rate-related, not alcohol-related."], ["Linezolid", "Its food interaction is with tyramine, not ethanol."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 86"}, {"topic": "Posaconazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which is the only azole effective against the Zygomycetes, Mucor and Rhizopus?", "opts": [["Fluconazole", "No Zygomycete cover; its strength is cryptococcal meningitis."], ["Posaconazole", "Correct. The ONLY azole covering Zygomycetes. It also prolongs the QT interval and drops potassium and magnesium."], ["Voriconazole", "Aspergillus and Candida, not Mucor."], ["Itraconazole", "No Zygomycete cover."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 105"}, {"topic": "Pralidoxime", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which drug reactivates acetylcholinesterase after organophosphate poisoning?", "opts": [["Atropine", "Blocks the muscarinic effects but does not reactivate the enzyme."], ["Physostigmine", "An inhibitor itself — it would make the poisoning worse."], ["Pralidoxime", "Correct. It reactivates inhibited acetylcholinesterase. Two limits: it does not enter the central nervous system, and it cannot overcome reversible inhibitors such as physostigmine."], ["Neostigmine", "Also an inhibitor."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 42"}, {"topic": "Norepinephrine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Extravasation causing blanching and sloughing of the skin belongs to which drug?", "opts": [["Dopamine", "Can extravasate but this point is made about norepinephrine."], ["Dobutamine", "Not the agent this is said about."], ["Isoproterenol", "A beta agonist, not a vasoconstrictor."], ["Norepinephrine", "Correct. Extravasation blanches then sloughs the skin, and it is treated with the alpha antagonist phentolamine."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 90"}, {"topic": "Isotretinoin", "io": "Topic — Dermatology medications", "q": "Which oral acne drug causes retinoid dermatitis, photophobia and raised serum lipids?", "opts": [["Isotretinoin", "Correct. Retinoid dermatitis, photophobia, arthralgia, headache, alopecia, brittle nails and raised lipids."], ["Doxycycline", "Photosensitivity and gastrointestinal upset, not this cluster."], ["Spironolactone", "An antiandrogen used in some women."], ["Benzoyl peroxide", "Topical, and it bleaches fabric."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 27"}, {"topic": "Fluoroquinolones", "io": "Topic — Facts that belong to a whole class", "q": "Which class is used with caution in patients under eighteen?", "opts": [["Macrolides", "No paediatric age restriction of this kind."], ["Fluoroquinolones", "Correct. Caution under 18, because of the tendon and cartilage effects."], ["Cephalosporins", "No age restriction."], ["Aminoglycosides", "Monitored for renal and ear toxicity, not restricted by age this way."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 79"}, {"topic": "Linezolid", "io": "Topic — Antibacterials", "q": "Which antibiotic can cause serotonin syndrome with selective serotonin reuptake inhibitors?", "opts": [["Vancomycin", "No serotonergic activity."], ["Metronidazole", "Its interaction is with ethanol."], ["Linezolid", "Correct. Serotonin syndrome with SSRIs, and it also interacts with tyramine-containing foods and pseudoephedrine."], ["Tigecycline", "Its problems are nausea, vomiting and diarrhoea."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 71"}, {"topic": "Fluconazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal penetrates the central nervous system and is used for cryptococcal meningitis?", "opts": [["Amphotericin B", "Used in cryptococcal meningitis but with flucytosine, and it is the infusion agent, not the one named for CNS penetration."], ["Griseofulvin", "Only for dermatophytes."], ["Caspofungin", "Does not penetrate the central nervous system well."], ["Fluconazole", "Correct. Best oral absorption of the azoles and it crosses into the central nervous system."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 106"}, {"topic": "Edrophonium", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which cholinesterase inhibitor is used to DIAGNOSE myasthenia gravis?", "opts": [["Edrophonium", "Correct. Very short acting, so it is used for diagnosis and to reverse nondepolarizing blockers after surgery."], ["Pyridostigmine", "Used for CHRONIC management of myasthenia gravis, not diagnosis."], ["Neostigmine", "Used to reverse blockade and stimulate bladder and gut."], ["Physostigmine", "Crosses into the central nervous system; used for anticholinergic toxicity."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 35"}, {"topic": "Phentolamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug is given to prevent dermal necrosis after norepinephrine extravasation?", "opts": [["Phenoxybenzamine", "Also an alpha blocker but irreversible, used for longer preparation."], ["Phentolamine", "Correct. An alpha antagonist, infiltrated locally. It is also used for short-term management of phaeochromocytoma and for hypertensive crisis after abrupt clonidine withdrawal."], ["Propranolol", "A beta blocker; it would not relieve alpha vasoconstriction."], ["Prazosin", "An oral alpha-1 blocker, not used for extravasation."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 110"}, {"topic": "Topical retinoids", "io": "Topic — Dermatology medications", "q": "Which class must be avoided in pregnancy and causes photosensitivity and severe sunburn?", "opts": [["Benzoyl peroxide", "Not the agent carrying the pregnancy restriction."], ["Azelaic acid", "Not the agent carrying it."], ["Topical retinoids", "Correct. Tretinoin, adapalene and tazarotene — photosensitivity, severe sunburn, and avoided in pregnancy."], ["Bacitracin", "A topical antibiotic with no systemic issue."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 24"}, {"topic": "Fluoroquinolones", "io": "Topic — Facts that belong to a whole class", "q": "Dizziness, insomnia and somnolence — central nervous system toxicity — belong to which class?", "opts": [["Tetracyclines", "Affect teeth, bone and photosensitivity."], ["Cephalosporins", "No characteristic central toxicity."], ["Polymyxins", "Neurotoxic, but through the black box warning rather than this picture."], ["Fluoroquinolones", "Correct. Central toxicity sits alongside the tendon rupture and peripheral neuropathy."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 79"}, {"topic": "Carbapenems", "io": "Topic — Antibacterials", "q": "Seizures are the warning attached to which antibiotic class, and to imipenem in particular?", "opts": [["Carbapenems", "Correct. Seizures, specifically with imipenem."], ["Cephalosporins", "The class warning is allergic reaction, with under 1% penicillin cross-sensitivity."], ["Monobactams", "Aztreonam is notable for the opposite — no cross-reactivity and few warnings."], ["Penicillins", "The class warning is hypersensitivity, not seizures."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 44"}, {"topic": "Itraconazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal is teratogenic?", "opts": [["Fluconazole", "Not the agent this warning is attached to."], ["Itraconazole", "Correct. Teratogenic — the flag attached to this azole specifically."], ["Terbinafine", "Used for dermatophytes, without this flag."], ["Nystatin", "Topical, with negligible absorption."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 104"}, {"topic": "Pyridostigmine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which cholinesterase inhibitor is used for the CHRONIC management of myasthenia gravis?", "opts": [["Edrophonium", "Too short acting; it is used to diagnose."], ["Physostigmine", "Used for anticholinergic toxicity."], ["Pyridostigmine", "Correct. Long acting, so it is the maintenance drug — edrophonium is the diagnostic one."], ["Pralidoxime", "Reactivates the enzyme in organophosphate poisoning."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 38"}, {"topic": "Alpha-1 blockers", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "“First-dose” syncope is the warning attached to which class?", "opts": [["Beta-1 selective blockers", "Cause bradycardia and fatigue, not first-dose syncope."], ["Beta-2 agonists", "Cause tremor and restlessness."], ["Antimuscarinics", "Cause dry mouth and retention."], ["Alpha-1 blockers", "Correct. First-dose syncope with orthostatic hypotension — which is why the first dose is taken at bedtime."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 111"}, {"topic": "Decrease with time and with emollients", "io": "Topic — Dermatology medications", "q": "The erythema, desquamation, burning and stinging from topical retinoids do what over time?", "opts": [["Decrease with time and with emollients", "Correct. They settle — which is exactly what the patient must be told, or they stop the drug in week two."], ["Worsen steadily until the drug is stopped", "Not what happens; the skin adapts."], ["Are unaffected by emollients", "Emollients are specifically recommended."], ["Indicate an allergic reaction", "They are expected irritation, not allergy."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 24"}, {"topic": "Macrolides", "io": "Topic — Facts that belong to a whole class", "q": "Gastrointestinal upset that is worst with erythromycin, especially in children and young adults, points to which class?", "opts": [["Penicillins", "Cause diarrhoea, but without the erythromycin gradient."], ["Macrolides", "Correct. Nausea, diarrhoea and abdominal pain, worse with erythromycin than with the newer members."], ["Tetracyclines", "Cause oesophageal irritation rather than this."], ["Aminoglycosides", "Given parenterally; the gut is not the issue."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 57"}, {"topic": "Tetracyclines", "io": "Topic — Antibacterials", "q": "Which class discolours the teeth and depresses skeletal growth?", "opts": [["Macrolides", "Cause gastrointestinal upset and cholestatic hepatitis."], ["Fluoroquinolones", "Affect tendons and peripheral nerves, not teeth."], ["Tetracyclines", "Correct. Tooth discolouration, doxycycline more than the others, and depression of skeletal growth."], ["Aminoglycosides", "Affect the kidney and the ear."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 63"}, {"topic": "Ketoconazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal inhibits CYP3A4 and so carries significant drug interactions?", "opts": [["Griseofulvin", "An INDUCER, of CYP1A2 and CYP2C9 — the opposite direction."], ["Nystatin", "Not absorbed, so no systemic interactions."], ["Caspofungin", "Few interactions."], ["Ketoconazole", "Correct. A CYP3A4 inhibitor, which is why its interaction list is the longest of the azoles."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 103"}, {"topic": "Bethanechol", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which agent stimulates a postpartum or postoperative atonic bladder and has NO nicotinic activity?", "opts": [["Bethanechol", "Correct. Muscarinic only, with no nicotinic action, so it is used for the atonic bladder."], ["Carbachol", "Has BOTH muscarinic and nicotinic activity."], ["Pilocarpine", "Used for glaucoma and for dry mouth."], ["Neostigmine", "An indirect agent — it inhibits the enzyme instead."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 30"}, {"topic": "Tamsulosin", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which alpha-1 blockers are used specifically for benign prostatic hyperplasia?", "opts": [["Prazosin", "Used mainly for hypertension."], ["Tamsulosin", "Correct. The uroselective ones — the rest of the class is used for blood pressure."], ["Phentolamine", "Used for phaeochromocytoma."], ["Labetalol", "Mixed alpha and beta blockers for hypertension and heart failure."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 111"}, {"topic": "Clindamycin", "io": "Topic — Dermatology medications", "q": "Which topical antibiotic is preferred for acne, though it is losing efficacy to resistance?", "opts": [["Erythromycin", "Also used, but clindamycin is named as preferred."], ["Mupirocin", "Used for staphylococcal skin infection and nasal carriage."], ["Clindamycin", "Correct. The preferred topical antibiotic, with efficacy falling over time because of Propionibacterium acnes resistance."], ["Bacitracin", "Used for minor wounds."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 23"}, {"topic": "Aminopenicillins", "io": "Topic — Facts that belong to a whole class", "q": "Interstitial nephritis with haematuria and crystalluria belongs to which class?", "opts": [["Macrolides", "Cause cholestatic hepatitis, not interstitial nephritis."], ["Aminoglycosides", "Cause tubular injury, but the picture described is the penicillin one."], ["Fluoroquinolones", "Affect tendons and nerves."], ["Aminopenicillins", "Correct. Alongside hepatic dysfunction, Clostridium difficile infection and the hypersensitivity spectrum."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 21"}, {"topic": "Clindamycin", "io": "Topic — Antibacterials", "q": "Which antibiotic is the one classically named for Clostridium difficile and pseudomembranous colitis?", "opts": [["Clindamycin", "Correct. Clostridium difficile and pseudomembranous colitis, plus rash, neutropenia and thrombocytopenia."], ["Aztreonam", "Its listed side effect is diarrhoea, without this association."], ["Linezolid", "Named for serotonin syndrome."], ["Vancomycin", "Named for its infusion reaction — and oral vancomycin treats C. difficile."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 80"}, {"topic": "Griseofulvin", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal induces CYP1A2 and CYP2C9 and is absorbed better with a high-fat meal?", "opts": [["Ketoconazole", "An INHIBITOR of CYP3A4."], ["Griseofulvin", "Correct. An inducer, taken with a fatty meal, and it causes headache in about 15% with blurred vision."], ["Fluconazole", "Absorption is already excellent without food."], ["Terbinafine", "Not the agent this is said about."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 110"}, {"topic": "Carbachol", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which cholinergic agonist has both muscarinic AND nicotinic activity and is used to lower intraocular pressure?", "opts": [["Bethanechol", "Muscarinic only, with no nicotinic activity."], ["Pilocarpine", "Muscarinic; used for glaucoma and xerostomia."], ["Carbachol", "Correct. Both receptor types, and it decreases intraocular pressure in glaucoma."], ["Atropine", "An antagonist — it does the opposite."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 32"}, {"topic": "Propranolol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which beta blocker causes arrhythmias if it is stopped abruptly?", "opts": [["Phentolamine", "An alpha blocker."], ["Prazosin", "An alpha-1 blocker."], ["Albuterol", "A beta agonist."], ["Propranolol", "Correct. Abrupt withdrawal causes rebound arrhythmia — the class must be tapered."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 115"}, {"topic": "Spironolactone", "io": "Topic — Dermatology medications", "q": "Which drugs are used as antiandrogens for acne in some women?", "opts": [["Spironolactone", "Correct. Useful in some women, working on the hormonal driver rather than the follicle."], ["Isotretinoin", "Used in severe acne but not as an antiandrogen."], ["Doxycycline", "An antibiotic."], ["Adapalene", "A topical retinoid."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 29"}, {"topic": "Cephalosporins", "io": "Topic — Facts that belong to a whole class", "q": "Which class is mostly renally eliminated, so its dosing changes with kidney function?", "opts": [["Macrolides", "Cleared hepatically."], ["Cephalosporins", "Correct. Mostly renally eliminated — which is why the interval is stretched in renal impairment."], ["Allylamines", "Antifungals, cleared hepatically."], ["Topical corticosteroids", "Not systemically dosed at all."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 30"}, {"topic": "Macrolides", "io": "Topic — Antibacterials", "q": "Which class prolongs the QT interval and risks Torsades de pointes, worse with class Ia and III antiarrhythmics?", "opts": [["Penicillins", "No QT effect; the class problem is hypersensitivity."], ["Aminoglycosides", "Renal toxicity and ototoxicity."], ["Macrolides", "Correct. QT prolongation and Torsades de pointes, and the combination with class Ia and III antiarrhythmics makes it worse."], ["Carbapenems", "Seizures, particularly imipenem."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 57"}, {"topic": "Flucytosine", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal is combined with amphotericin B for cryptococcal meningitis and is hepatotoxic?", "opts": [["Fluconazole", "Used alone for cryptococcal disease, and it is not hepatotoxic in this way."], ["Voriconazole", "For Aspergillus and Candida."], ["Micafungin", "An echinocandin for oesophageal candidiasis."], ["Flucytosine", "Correct. Given with amphotericin B in cryptococcal meningitis; hepatotoxicity is its flag."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 100"}, {"topic": "Pilocarpine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which drug lowers intraocular pressure AND stimulates salivation in dry mouth?", "opts": [["Pilocarpine", "Correct. Both indications belong to it — glaucoma and xerostomia."], ["Carbachol", "Glaucoma, but not the xerostomia indication."], ["Bethanechol", "The bladder drug."], ["Timolol", "Lowers intraocular pressure by reducing aqueous production, and does nothing for saliva."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 33"}, {"topic": "Propranolol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Fasting hypoglycaemia with raised low-density lipoprotein and triglycerides belongs to which drug?", "opts": [["Atenolol", "Beta-1 selective, and these effects are attributed to propranolol here."], ["Propranolol", "Correct. Metabolic effects of nonselective beta blockade, alongside sexual impairment and central effects."], ["Clonidine", "Causes sedation and rebound hypertension."], ["Prazosin", "Causes orthostatic hypotension."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 115"}, {"topic": "Corticosteroids", "io": "Topic — Dermatology medications", "q": "Local tissue atrophy and adrenal suppression, with the need to taper to prevent a flare, belong to which acne treatment?", "opts": [["Topical retinoids", "Cause irritation, not atrophy or adrenal suppression."], ["Benzoyl peroxide", "Bleaching and irritation."], ["Corticosteroids", "Correct. Atrophy locally, adrenal suppression systemically, and tapering to prevent rebound."], ["Azelaic acid", "Irritation and hypopigmentation."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 30"}, {"topic": "Echinocandins", "io": "Topic — Facts that belong to a whole class", "q": "Tachycardia, headache, insomnia, low potassium and low magnesium describe which antifungal class?", "opts": [["Azoles", "Their signature problems are drug interactions and, for some, visual or QT effects."], ["Polyenes", "Amphotericin B gives fever, chills and hypotension."], ["Allylamines", "Used superficially, with little systemic effect."], ["Echinocandins", "Correct. Caspofungin, micafungin and anidulafungin, which also cause blood dyscrasias."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 109"}, {"topic": "Aminoglycosides", "io": "Topic — Antibacterials", "q": "Renal toxicity and ototoxicity together point to which class?", "opts": [["Aminoglycosides", "Correct. Both at once — the kidney and the eighth nerve."], ["Macrolides", "Can cause transient hearing loss but not nephrotoxicity."], ["Cephalosporins", "Mostly renally eliminated, but not characteristically toxic to the kidney or ear."], ["Clindamycin", "Its problem is the colon."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 68"}, {"topic": "Echinocandins", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which class is used for oesophageal candidiasis and for aspergillosis that has failed itraconazole or amphotericin?", "opts": [["Polyenes", "Amphotericin B is the drug they are used INSTEAD of here."], ["Echinocandins", "Correct. Caspofungin, micafungin and anidulafungin — with tachycardia, headache, insomnia and low potassium and magnesium."], ["Allylamines", "Terbinafine, for superficial dermatophytes."], ["Griseofulvin", "For dermatophytes only."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 109"}, {"topic": "Atropine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Dry mouth, blurred vision and “sandy eyes” describe the effects of which drug?", "opts": [["Bethanechol", "Does the opposite — it increases secretions."], ["Pilocarpine", "Increases salivation."], ["Atropine", "Correct. Classic antimuscarinic effects, along with urinary retention and constipation."], ["Neostigmine", "Increases secretions."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 51"}, {"topic": "Clonidine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug causes REBOUND HYPERTENSION if stopped abruptly?", "opts": [["Propranolol", "Rebound ARRHYTHMIA is the effect attributed to it."], ["Prazosin", "First-dose syncope is its warning."], ["Tamsulosin", "Used for prostatic symptoms."], ["Clonidine", "Correct. Rebound hypertension on abrupt discontinuation — and phentolamine is used if a crisis follows."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 97"}, {"topic": "Topical corticosteroids", "io": "Topic — Dermatology medications", "q": "Skin atrophy, acne, rosacea and allergic dermatitis are the LOCAL effects of which class?", "opts": [["Topical corticosteroids", "Correct. The local list. Systemically they can suppress the adrenal axis, raise glucose, and cause glaucoma, cataracts and growth retardation in children."], ["Topical retinoids", "Cause erythema and peeling that settles."], ["Topical immunomodulators", "Cause a burning sensation."], ["Topical antifungals", "Rarely cause local reaction."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 39"}, {"topic": "Echinocandins", "io": "Topic — Facts that belong to a whole class", "q": "Which antifungal class is used in the febrile neutropenic patient who is not responding to antibiotics?", "opts": [["Allylamines", "Only for superficial dermatophytes."], ["Echinocandins", "Correct. Given when antibiotics have not worked, and for aspergillosis that has failed itraconazole or amphotericin."], ["Topical azoles", "Topical use only."], ["Topical antifungals", "Topical use only."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 109"}, {"topic": "Trimethoprim / sulfamethoxazole", "io": "Topic — Antibacterials", "q": "Stevens-Johnson syndrome with thrombocytopenia and agranulocytosis is the warning on which agent?", "opts": [["Amoxicillin / clavulanate", "Causes rash and diarrhoea, but not this hypersensitivity spectrum."], ["Piperacillin / tazobactam", "Hypersensitivity is possible, but the blood dyscrasias belong elsewhere."], ["Trimethoprim / sulfamethoxazole", "Correct. Hypersensitivity through to Stevens-Johnson syndrome and toxic epidermal necrolysis, plus blood dyscrasias."], ["Nitrofurantoin", "Not the agent this warning is attached to."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 85"}, {"topic": "Tolnaftate", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical antifungal has NO activity against Candida?", "opts": [["Nystatin", "The opposite: it is specifically for candidal infection."], ["Clotrimazole", "A topical azole, active against Candida."], ["Miconazole", "A topical azole, active against Candida."], ["Tolnaftate", "Correct. Tolnaftate has no candidal activity — nystatin is the one for candidal infection."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 54"}, {"topic": "Antimuscarinics", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "“Mad as a hatter, blind as a bat, red as a beet” describes toxicity from which group?", "opts": [["Antimuscarinics", "Correct. The anticholinergic toxidrome."], ["Cholinergic agonists", "Produce the opposite picture — wet, slow and constricted."], ["Beta blockers", "Cause bradycardia and fatigue, not delirium and flushing."], ["Organophosphates", "Cholinesterase inhibitors, so again the opposite picture."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 50"}, {"topic": "Clonidine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug is used to minimise withdrawal from opiates, tobacco and benzodiazepines?", "opts": [["Propranolol", "Used for hypertension, tremor and rate control."], ["Clonidine", "Correct. A central alpha-2 agonist, used to blunt withdrawal."], ["Phenoxybenzamine", "Used for phaeochromocytoma."], ["Amphetamine", "Would worsen withdrawal."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 97"}, {"topic": "Topical corticosteroids", "io": "Topic — Dermatology medications", "q": "Glaucoma, cataracts and growth retardation in children are SYSTEMIC risks of which class?", "opts": [["Topical antifungals", "Negligible absorption."], ["Benzoyl peroxide", "No systemic effect."], ["Topical corticosteroids", "Correct. Absorbed steroid produces systemic effects — which is why potency and duration are limited, especially in children."], ["Mupirocin", "No systemic effect."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 39"}, {"topic": "Azoles", "io": "Topic — Facts that belong to a whole class", "q": "Which class treats athlete's foot, ringworm, jock itch and onychomycosis as well as the systemic mycoses?", "opts": [["Echinocandins", "Chiefly Candida and Aspergillus, and not superficial disease."], ["Polyenes", "Amphotericin B is systemic, not for tinea."], ["Topical corticosteroids", "Would make a fungal infection worse."], ["Azoles", "Correct. The breadth is the point: superficial tinea through to Candida, Cryptococcus, Blastomyces, Histoplasma, Coccidioides and Aspergillus."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 102"}, {"topic": "Polymyxins", "io": "Topic — Antibacterials", "q": "Which class carries black box warnings for nephrotoxicity, neurotoxicity and neuromuscular blockade?", "opts": [["Polymyxins", "Correct. Polymyxin B and E (colistin) — all three warnings, and use is rising because of multidrug resistance."], ["Aminoglycosides", "Nephrotoxic and ototoxic, but without this black box set."], ["Vancomycin", "Ototoxic and nephrotoxic, but not a neuromuscular blocker."], ["Tigecycline", "Chiefly gastrointestinal."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 88"}, {"topic": "Acyclovir", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antiviral crystallises in the renal tubule, so hydration must be maintained?", "opts": [["Oseltamivir", "Needs renal dose adjustment but does not crystallise."], ["Acyclovir", "Correct. Crystallises in the renal tubule; it also causes seizures, delirium and tremor centrally."], ["Ganciclovir", "Its flag is neutropenia."], ["Famciclovir", "Toxicity is similar to acyclovir but this is the agent the point is made about."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 122"}, {"topic": "Atropine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which drug shows bradycardia at lower doses but tachycardia at higher doses?", "opts": [["Propranolol", "Slows the heart at every dose."], ["Bethanechol", "Slows the heart."], ["Atropine", "Correct. The dose-dependent reversal that catches people out."], ["Isoproterenol", "Stimulates the heart at every dose."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 51"}, {"topic": "Labetalol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which beta blocker is given intravenously for a hypertensive emergency?", "opts": [["Propranolol", "Not the agent named for the intravenous emergency use."], ["Atenolol", "Beta-1 selective, oral."], ["Timolol", "Used topically in glaucoma."], ["Labetalol", "Correct. Intravenous labetalol for hypertensive emergencies; it and carvedilol both cause orthostatic hypotension through alpha-1 blockade."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 122"}, {"topic": "Tacrolimus", "io": "Topic — Dermatology medications", "q": "Which agents are second-line for atopic dermatitis, after topical steroids, and cause a burning sensation?", "opts": [["Tacrolimus", "Correct. Topical immunomodulators, second line, with burning on application — and avoided in patients with weakened immune systems."], ["Topical corticosteroids", "These are the FIRST-line agents they follow."], ["Topical retinoids", "Used for acne and photoageing."], ["Imiquimod", "Used for warts and premalignant lesions."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 43"}, {"topic": "Polymyxins", "io": "Topic — Facts that belong to a whole class", "q": "Use of which class is expected to rise because of increasing multidrug resistance?", "opts": [["Penicillins", "Losing ground to resistance, not gaining."], ["Polymyxins", "Correct. Old, toxic, and coming back because gram-negative resistance is leaving fewer options."], ["Macrolides", "Losing ground to resistance."], ["Tetracyclines", "Not the class named here."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 88"}, {"topic": "Aztreonam", "io": "Topic — Antibacterials", "q": "Which antibiotic can be given to a genuinely penicillin-allergic patient because it has no cross-reactivity with beta-lactams?", "opts": [["Cefazolin", "A cephalosporin — cross-sensitivity is low but not zero."], ["Meropenem", "A carbapenem, and still a beta-lactam."], ["Aztreonam", "Correct. No cross-reactivity with the beta-lactams, so it is usable in true penicillin allergy. Gram-negative cover only."], ["Ampicillin", "A penicillin, so exactly what must be avoided."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 40"}, {"topic": "Ganciclovir", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antiviral causes neutropenia in fifteen to forty per cent of patients?", "opts": [["Acyclovir", "Renal crystallisation, not marrow suppression."], ["Oseltamivir", "Well tolerated apart from the renal dose adjustment."], ["Valacyclovir", "The acyclovir prodrug, with acyclovir's profile."], ["Ganciclovir", "Correct. Neutropenia in 15-40%, with central effects in 5-15%; a third of patients must stop intravenous treatment because of side effects."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 125"}, {"topic": "Scopolamine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which antimuscarinic is used to prevent motion sickness, with instructions to wash the hands after applying it?", "opts": [["Scopolamine", "Correct. A patch for motion sickness — and hands must be washed, or the drug is transferred to the eye."], ["Atropine", "Not used for motion sickness."], ["Ipratropium", "Inhaled, for chronic obstructive pulmonary disease."], ["Oxybutynin", "For the overactive bladder."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 54"}, {"topic": "Carvedilol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which beta blocker prevents cardiovascular mortality in heart failure?", "opts": [["Propranolol", "Not the agent this benefit is attributed to."], ["Carvedilol", "Correct. Named for the mortality benefit in heart failure."], ["Esmolol", "Ultra-short acting, for rate control."], ["Timolol", "Used in glaucoma."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 122"}, {"topic": "Topical immunomodulators", "io": "Topic — Dermatology medications", "q": "Which topical class must be avoided in patients with weakened immune systems?", "opts": [["Topical corticosteroids", "Used with care but not carrying this specific restriction."], ["Topical antifungals", "No such restriction."], ["Topical immunomodulators", "Correct. Tacrolimus and pimecrolimus suppress local immunity, so they are avoided where immunity is already impaired."], ["Benzoyl peroxide", "No such restriction."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 44"}, {"topic": "Polymyxins", "io": "Topic — Facts that belong to a whole class", "q": "Which class covers gram-negative organisms only?", "opts": [["Macrolides", "Cover gram-positives and atypicals."], ["Cephalosporins", "Cover both, varying by generation."], ["Allylamines", "Antifungals."], ["Polymyxins", "Correct. Gram-negative only, which is why they are reserved for resistant gram-negative infection."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 88"}, {"topic": "Nafcillin", "io": "Topic — Antibacterials", "q": "Which penicillin group was designed solely to cover methicillin-sensitive Staphylococcus aureus?", "opts": [["Nafcillin", "Correct. Designed solely for MSSA — and monitored for hepatic rather than renal toxicity, the exception among the beta-lactams."], ["Trimethoprim / sulfamethoxazole", "Covers MRSA and Pneumocystis, but it is not a penicillin."], ["Ampicillin", "Aminopenicillins, extended to gram-negatives."], ["Piperacillin/tazobactam", "Antipseudomonal, for polymicrobial and nosocomial infection."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 26"}, {"topic": "Oseltamivir", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antiviral is used for influenza A and B and requires renal dose adjustment?", "opts": [["Acyclovir", "For herpes simplex and varicella-zoster."], ["Oseltamivir", "Correct. A neuraminidase inhibitor for influenza A and B, with renal dose adjustment."], ["Ganciclovir", "For cytomegalovirus."], ["Famciclovir", "For herpes infections."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 126"}, {"topic": "Tiotropium", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which inhaled antimuscarinics are used for maintenance bronchodilation in chronic obstructive pulmonary disease?", "opts": [["Albuterol", "A beta-2 agonist, and it is the rescue rather than the antimuscarinic maintenance."], ["Scopolamine", "For motion sickness."], ["Tiotropium", "Correct. Maintenance inhaled bronchodilators; glycopyrrolate in the same group is also used for drooling and hyperhidrosis."], ["Atropine", "Not used as a maintenance inhaler."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 55"}, {"topic": "Timolol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which beta blocker reduces production of aqueous humour in chronic open-angle glaucoma?", "opts": [["Propranolol", "Systemic use only."], ["Carvedilol", "Used in heart failure."], ["Atenolol", "Used for hypertension."], ["Timolol", "Correct. It reduces aqueous production — a different mechanism from pilocarpine, which improves outflow."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 124"}, {"topic": "Bacitracin", "io": "Topic — Dermatology medications", "q": "Which topical antibiotic has no systemic toxicity and only rarely causes allergic dermatitis?", "opts": [["Bacitracin", "Correct. Rare allergic dermatitis, no systemic toxicity."], ["Neomycin", "Frequently sensitises and can accumulate systemically."], ["Polymyxin B", "Neurotoxic and nephrotoxic if absorbed."], ["Mupirocin", "Well tolerated but this description belongs to bacitracin."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 46"}, {"topic": "Catecholamines", "io": "Topic — Facts that belong to a whole class", "q": "Anxiety, tremor and headache, with poor penetration into the central nervous system, describe which class?", "opts": [["Alpha-1 blockers", "Cause dizziness, congestion and drowsiness."], ["Catecholamines", "Correct. Epinephrine, norepinephrine, isoproterenol and dopamine — peripheral effects dominate because they do not cross well."], ["Beta-1 selective blockers", "Cause bradycardia and fatigue."], ["Antimuscarinics", "Cross readily and cause central delirium."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 79"}, {"topic": "Penicillin G", "io": "Topic — Antibacterials", "q": "Which is the drug of choice for syphilis, gas gangrene and meningococcus?", "opts": [["Doxycycline", "An alternative in penicillin allergy, but not the drug of choice."], ["Azithromycin", "A macrolide, used for atypicals."], ["Penicillin G", "Correct. Drug of choice for all three. Good against gram-positives, with no staphylococcal cover."], ["Ceftriaxone", "The drug of choice for gonorrhoea, not syphilis."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 17"}, {"topic": "Shortens the illness but does not cure it", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "In chickenpox, giving an antiviral within the first twenty-four hours does what?", "opts": [["Cures the infection completely", "The virus stays latent; nothing here eradicates it."], ["Prevents post-herpetic neuralgia entirely", "Not the claim made."], ["Has no effect on the course at all", "It does shorten it if started early enough."], ["Shortens the illness but does not cure it", "Correct. Within the first 24 hours it shortens the acute illness — and it does not clear the latent virus."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 123"}, {"topic": "Oxybutynin", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which antimuscarinics lower intravesical pressure and increase bladder capacity?", "opts": [["Oxybutynin", "Correct. The bladder antimuscarinics, reducing the frequency of bladder contractions."], ["Bethanechol", "The opposite — it stimulates an atonic bladder."], ["Ipratropium", "Inhaled for the airway."], ["Scopolamine", "For motion sickness."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 56"}, {"topic": "At higher doses", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Cardioselectivity is LOST under what circumstance?", "opts": [["In renal impairment", "Not the stated condition."], ["At higher doses", "Correct. Beta-1 selective agents stop being selective as the dose rises, which matters in a patient with airway disease."], ["When given intravenously", "Not the stated condition."], ["In elderly patients", "Not the stated condition."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 120"}, {"topic": "Contraindicated under 8 years old and in pregnancy", "io": "Topic — Dermatology medications", "q": "Which tetracycline restriction matters most when prescribing for skin disease?", "opts": [["Contraindicated in renal failure and dialysis", "Not the stated restriction."], ["Contraindicated with dairy and antacids only", "Chelation matters, but it is not the contraindication stated."], ["Contraindicated under 8 years old and in pregnancy", "Correct. Contraindicated in children under eight and in pregnant women — the same rule that governs systemic use."], ["Contraindicated over 65 years of age", "Not a stated restriction."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 25"}, {"topic": "Nondepolarizing blockers", "io": "Topic — Facts that belong to a whole class", "q": "Which class is used during orthopaedic surgery for fracture alignment and dislocation correction?", "opts": [["Cholinergic agonists", "Increase muscle activity rather than relaxing it."], ["Cholinesterase inhibitors", "Reverse blockade rather than produce it."], ["Antimuscarinics", "Have no effect at the neuromuscular junction."], ["Nondepolarizing blockers", "Correct. Adjuvants in anaesthesia — intubation, and relaxing muscle enough to reduce a fracture or dislocation."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 63"}, {"topic": "Cefepime", "io": "Topic — Antibacterials", "q": "Which is the drug of choice for neutropenic fever?", "opts": [["Cefepime", "Correct. The fourth-generation cephalosporin, drug of choice for neutropenic fever."], ["Cefazolin", "First generation — surgical prophylaxis, MSSA and urinary tract infection."], ["Ceftriaxone", "Third generation, with good streptococcal cover."], ["Cephalexin", "First generation, oral, for skin and urinary infection."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 36"}, {"topic": "Albendazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which agents are used for hookworms, roundworms, pinworms and whipworms?", "opts": [["Pyrantel pamoate", "Also an antihelminthic, but its listed effects are dizziness, headache and gastrointestinal upset."], ["Albendazole", "Correct. The benzimidazoles, and they are very well tolerated."], ["Metronidazole", "For anaerobes and protozoa."], ["Ivermectin", "Not the pair this is said about."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 115"}, {"topic": "Physostigmine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which cholinesterase inhibitor crosses into the central nervous system and can cause convulsions at high dose?", "opts": [["Neostigmine", "Does not cross into the central nervous system."], ["Pyridostigmine", "Does not cross appreciably."], ["Physostigmine", "Correct. It enters the central nervous system, which is why it is the one used for anticholinergic toxicity — and why it convulses at high dose."], ["Pralidoxime", "Explicitly does not penetrate the central nervous system."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 36"}, {"topic": "Beta-1 selective blockers", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which class is useful for hypertension in a patient with impaired pulmonary function?", "opts": [["Nonselective beta blockers", "Block beta-2 in the airway and can provoke bronchospasm."], ["Cholinergic agonists", "Cause bronchospasm."], ["Alpha-1 blockers", "Not the class chosen for this reason."], ["Beta-1 selective blockers", "Correct. Atenolol, metoprolol, bisoprolol and esmolol — selective, so the airway is spared. But only at lower doses."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 120"}, {"topic": "Benzoyl peroxide", "io": "Topic — Dermatology medications", "q": "Which acne agent is used when resistance has made a topical antibiotic less useful, and is often combined with it?", "opts": [["Benzoyl peroxide", "Correct. Combining it with a topical antibiotic slows the resistance that is eroding clindamycin and erythromycin."], ["Isotretinoin", "Reserved for severe disease."], ["Spironolactone", "A hormonal option in some women."], ["Tacrolimus", "For atopic dermatitis."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 21"}, {"topic": "Organophosphates", "io": "Topic — Facts that belong to a whole class", "q": "Poisoning by which group produces EITHER nicotinic OR muscarinic signs?", "opts": [["Alpha-1 blockers", "Produce orthostatic hypotension only."], ["Organophosphates", "Correct. Either picture can dominate, which is why the presentation varies so much."], ["Beta blockers", "Produce bradycardia and bronchospasm."], ["Nondepolarizing blockers", "Produce flaccid paralysis alone."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 42"}, {"topic": "Ceftriaxone", "io": "Topic — Antibacterials", "q": "Which cephalosporin cannot be used during the first thirty days of life?", "opts": [["Cefotaxime", "The one that IS preferred in the neonate."], ["Cefazolin", "Not the agent carrying this restriction."], ["Ceftriaxone", "Correct. Not in the first 30 days of life; cefotaxime is preferred for neonatal fever or sepsis."], ["Cefepime", "Reserved for neutropenic fever."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 34"}, {"topic": "Mupirocin", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which drug is used to eliminate nasal carriage of Staphylococcus aureus, especially MRSA?", "opts": [["Bacitracin", "Topical, and its only real issue is rare allergic dermatitis."], ["Neomycin", "Topical, and it frequently sensitises."], ["Polymyxin B", "Topical, and it must be kept off open wounds."], ["Mupirocin", "Correct. Applied intranasally to clear carriage, MRSA included."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 47"}, {"topic": "Donepezil", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which drugs slow the progression of Alzheimer's disease and mostly cause gastrointestinal distress?", "opts": [["Donepezil", "Correct. The centrally acting cholinesterase inhibitors, whose limiting side effect is gastrointestinal."], ["Neostigmine", "Peripheral, for myasthenia gravis and the bladder."], ["Edrophonium", "Diagnostic only."], ["Atropine", "An antagonist, which would worsen cognition."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 40"}, {"topic": "Dopamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug is used for cardiogenic and septic shock, acting as a beta-1 inotrope with alpha-1 vasoconstriction only at very high doses?", "opts": [["Dobutamine", "Used to raise cardiac output in acute heart failure."], ["Dopamine", "Correct. The dose-response is the whole point: beta-1 first, alpha-1 only at the top of the range."], ["Phenylephrine", "Pure alpha-1 at all doses."], ["Isoproterenol", "Pure beta, with no alpha effect at any dose."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 92"}, {"topic": "Imiquimod", "io": "Topic — Dermatology medications", "q": "Which agent causes skin irritation in virtually every patient who uses it?", "opts": [["Bacitracin", "Rarely causes any reaction."], ["Mupirocin", "Well tolerated."], ["Imiquimod", "Correct. Irritation in virtually all patients — expected, and not a reason to stop."], ["Nystatin", "Well tolerated."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 57"}, {"topic": "Ointment", "io": "Topic — Facts that belong to a whole class", "q": "Which vehicle makes a topical corticosteroid MOST potent?", "opts": [["Cream", "Middle of the three."], ["Lotion", "The least potent of the three."], ["Gel", "Not part of the ordering given."], ["Ointment", "Correct. Ointment beats cream, which beats lotion — the vehicle changes the potency, not just the feel."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 39"}, {"topic": "Cephalosporins", "io": "Topic — Antibacterials", "q": "Penicillin cross-sensitivity of roughly less than one per cent belongs to which class?", "opts": [["Cephalosporins", "Correct. Cross-sensitivity of approximately less than 1%, and mostly renally eliminated."], ["Carbapenems", "Beta-lactams too, but the figure quoted is for the cephalosporins."], ["Monobactams", "Aztreonam has NO cross-reactivity at all."], ["Macrolides", "Not beta-lactams, so the question does not arise."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 30"}, {"topic": "Neomycin", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical antibiotic frequently causes sensitisation?", "opts": [["Mupirocin", "Used for nasal carriage, without this reputation."], ["Neomycin", "Correct. Frequently sensitises, and it can accumulate systemically."], ["Bacitracin", "Allergic dermatitis only rarely, and no systemic toxicity."], ["Clindamycin", "Used topically for acne."]], "c": 1, "cite": "02. Dermatology Medications(1).pptx, Slide 49"}, {"topic": "Cholinergic excess", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Salivation, flushing, falling blood pressure, abdominal pain, diarrhoea and bronchospasm together are the effects of what?", "opts": [["Anticholinergic excess", "The opposite: dry, flushed, hot, delirious, retaining urine."], ["Beta blockade", "Bradycardia and fatigue, without secretions."], ["Cholinergic excess", "Correct. The muscarinic picture produced by cholinesterase inhibitors and direct agonists."], ["Alpha-1 blockade", "Orthostatic hypotension and nasal congestion."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 38"}, {"topic": "Dobutamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug increases atrioventricular conduction, so it needs caution in atrial fibrillation?", "opts": [["Phenylephrine", "Causes reflex bradycardia."], ["Clonidine", "Slows sympathetic outflow."], ["Propranolol", "Slows AV conduction, the opposite."], ["Dobutamine", "Correct. Increased AV conduction is the caution — in atrial fibrillation it can speed the ventricular response."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 94"}, {"topic": "Nystatin", "io": "Topic — Dermatology medications", "q": "Which topical antifungal is for candidal infection specifically?", "opts": [["Nystatin", "Correct. For candidal infection — tolnaftate in the same pairing has NO candidal activity."], ["Tolnaftate", "No candidal activity at all."], ["Terbinafine", "For dermatophytes."], ["Ciclopirox", "The nail lacquer for onychomycosis."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 54"}, {"topic": "Benzoyl peroxide", "io": "Topic — Facts that belong to a whole class", "q": "Which agent inactivates tretinoin if the two are applied together?", "opts": [["Clindamycin", "Combined with benzoyl peroxide deliberately, to slow resistance."], ["Benzoyl peroxide", "Correct. Benzoyl peroxide inactivates tretinoin, so they are applied at different times of day."], ["Azelaic acid", "No such interaction."], ["Tacrolimus", "Used for atopic dermatitis, not acne."]], "c": 1, "cite": "02. Dermatology Medications(1).pptx, Slide 24"}, {"topic": "Trimethoprim / sulfamethoxazole", "io": "Topic — Antibacterials", "q": "Which agent significantly raises the international normalised ratio in a patient on warfarin, and causes hypoglycaemia with sulfonylureas?", "opts": [["Amoxicillin / clavulanate", "No clinically important warfarin or sulfonylurea interaction."], ["Piperacillin / tazobactam", "No clinically important warfarin or sulfonylurea interaction."], ["Trimethoprim / sulfamethoxazole", "Correct. Both interactions belong to it, which is why the warfarin patient needs closer monitoring."], ["Clindamycin", "No such interaction."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 85"}, {"topic": "Polymyxin B", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical agent must be kept off open or denuded skin in high doses?", "opts": [["Bacitracin", "No systemic toxicity."], ["Mupirocin", "Safe on intact and broken skin."], ["Nystatin", "A topical antifungal without this restriction."], ["Polymyxin B", "Correct. Avoided on open wounds or denuded skin at high dose, because of neurotoxicity and nephrotoxicity."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 48"}, {"topic": "Cholinergic agonists", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which class must be used with caution in reactive airway disease because it causes bronchospasm?", "opts": [["Cholinergic agonists", "Correct. Bronchospasm is the reason for caution in reactive airway disease."], ["Antimuscarinics", "Used to OPEN the airway in COPD."], ["Beta-2 agonists", "Used to open the airway in asthma."], ["Alpha-1 blockers", "Not a bronchial issue."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 31"}, {"topic": "Epinephrine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Cerebral haemorrhage from a sharp rise in blood pressure is a risk with which drug?", "opts": [["Albuterol", "Beta-2 selective, so far less pressor effect."], ["Epinephrine", "Correct. Alongside anxiety, tremor, headache, arrhythmias and pulmonary oedema."], ["Dobutamine", "Chiefly inotropic."], ["Clonidine", "Lowers blood pressure."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 83"}, {"topic": "Ciclopirox", "io": "Topic — Dermatology medications", "q": "Which topical drug is applied as a lacquer to the nail?", "opts": [["Terbinafine", "Oral or topical cream for dermatophytes."], ["Nystatin", "Cream or oral suspension for Candida."], ["Ciclopirox", "Correct. Penlac nail lacquer, for onychomycosis."], ["Mupirocin", "An antibacterial ointment."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 52"}, {"topic": "Topical antibiotics", "io": "Topic — Facts that belong to a whole class", "q": "Which class is losing efficacy over time because of Propionibacterium acnes resistance?", "opts": [["Topical retinoids", "No bacterial resistance issue."], ["Topical corticosteroids", "Not antibacterial."], ["Topical immunomodulators", "Not antibacterial."], ["Topical antibiotics", "Correct. Which is why they are paired with benzoyl peroxide rather than used alone."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 23"}, {"topic": "Tetracyclines", "io": "Topic — Antibacterials", "q": "Which class must be avoided in the second and third trimesters of pregnancy?", "opts": [["Tetracyclines", "Correct. Avoided in the second and third trimesters, and in children, because of tooth discolouration and skeletal effects."], ["Penicillins", "Generally regarded as safe in pregnancy."], ["Cephalosporins", "Generally regarded as safe in pregnancy."], ["Macrolides", "Not the class carrying this restriction."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 63"}, {"topic": "Ciclopirox", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical antifungal comes as a nail lacquer for onychomycosis?", "opts": [["Nystatin", "For candidal infection, not nails."], ["Ciclopirox", "Correct. The nail lacquer formulation, applied to the nail plate."], ["Tolnaftate", "For dermatophytes, but not the lacquer."], ["Clotrimazole", "A topical azole cream."]], "c": 1, "cite": "02. Dermatology Medications(1).pptx, Slide 52"}, {"topic": "Agricultural insecticides", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Organophosphates are most commonly encountered as what?", "opts": [["Prescription eye drops", "Not the common source of poisoning."], ["Topical acne treatments", "Unrelated."], ["Agricultural insecticides", "Correct. Irreversible cholinesterase inhibitors used as insecticides; poisoning shows nicotinic or muscarinic signs."], ["Inhaled anaesthetics", "Unrelated."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 42"}, {"topic": "Isoproterenol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug is used to stimulate the heart in an emergency and is a pure beta agonist?", "opts": [["Phenylephrine", "Pure alpha-1."], ["Norepinephrine", "Predominantly alpha, used to raise pressure."], ["Clonidine", "A central alpha-2 agonist that lowers sympathetic outflow."], ["Isoproterenol", "Correct. Nonselective beta, so it drives rate and contractility with no alpha vasoconstriction."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 91"}, {"topic": "Allylamines", "io": "Topic — Dermatology medications", "q": "Which class treats athlete's foot, ringworm and jock itch — the superficial dermatophytes?", "opts": [["Allylamines", "Correct. Terbinafine and naftifine, oral or topical."], ["Nystatin", "Candida only, with no dermatophyte activity."], ["Bacitracin", "An antibacterial."], ["Imiquimod", "For warts and premalignant lesions."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 53"}, {"topic": "Cholinesterase inhibitors", "io": "Topic — Facts that belong to a whole class", "q": "Which class produces salivation, flushing, falling blood pressure, abdominal pain, diarrhoea and bronchospasm?", "opts": [["Nondepolarizing blockers", "Produce flaccid paralysis with no autonomic picture at all."], ["Cholinesterase inhibitors", "Correct. The muscarinic picture from raising acetylcholine at every synapse."], ["Alpha-1 blockers", "Produce orthostatic hypotension and congestion."], ["Antimuscarinics", "Produce the opposite — dry, hot, flushed and delirious."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 38"}, {"topic": "Macrolides", "io": "Topic — Antibacterials", "q": "Transient hearing loss and cholestatic hepatitis belong to which class?", "opts": [["Aminoglycosides", "Cause permanent ototoxicity, not transient hearing loss with hepatitis."], ["Tetracyclines", "Affect teeth and bone."], ["Macrolides", "Correct. Both, alongside the gastrointestinal upset that is worst with erythromycin."], ["Fluoroquinolones", "Affect tendons and nerves."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 57"}, {"topic": "Terbinafine", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical class is first-line for superficial dermatophyte infection — athlete's foot, ringworm and jock itch?", "opts": [["Nystatin", "Has no dermatophyte activity at all — it is for Candida."], ["Mupirocin", "An antibacterial."], ["Bacitracin", "An antibacterial."], ["Terbinafine", "Correct. Terbinafine, oral or topical, for the superficial dermatophytes."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 53"}, {"topic": "Neostigmine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which drug is given as an ANTIDOTE to competitive neuromuscular blockers after surgery?", "opts": [["Neostigmine", "Correct. Raises acetylcholine to out-compete the blocker at the junction."], ["Succinylcholine", "A blocker itself — it would deepen the block."], ["Atropine", "Given alongside to limit muscarinic effects, but it does not reverse the block."], ["Pralidoxime", "For organophosphates, and it cannot reverse a competitive blocker."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 38"}, {"topic": "Albuterol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Tremor, restlessness, apprehension and anxiety are the side effects of which drug?", "opts": [["Ipratropium", "An antimuscarinic inhaler; dry mouth rather than tremor."], ["Albuterol", "Correct. Beta-2 agonist effects, and the reason a patient feels shaky after a rescue inhaler."], ["Propranolol", "Blocks beta receptors — it treats tremor."], ["Atropine", "Antimuscarinic effects."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 98"}, {"topic": "Neomycin", "io": "Topic — Dermatology medications", "q": "Which topical antibiotic can accumulate systemically if used over a large area?", "opts": [["Bacitracin", "No systemic toxicity."], ["Mupirocin", "Not described as accumulating."], ["Neomycin", "Correct. Systemic accumulation, on top of frequent sensitisation."], ["Clindamycin", "Topical use for acne, not this concern."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 49"}, {"topic": "Antimuscarinics", "io": "Topic — Facts that belong to a whole class", "q": "“Dry as a bone, blind as a bat, red as a beet, mad as a hatter” describes toxicity from which class?", "opts": [["Cholinesterase inhibitors", "Give the wet, slow, constricted opposite."], ["Catecholamines", "Give anxiety and tremor without the dryness and flush."], ["Nondepolarizing blockers", "Give paralysis with no autonomic picture."], ["Antimuscarinics", "Correct. The anticholinergic toxidrome, each phrase naming one blocked muscarinic effect."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 50"}, {"topic": "Tigecycline", "io": "Topic — Antibacterials", "q": "Which agent does NOT cover vancomycin-resistant Enterococcus?", "opts": [["Tigecycline", "Correct. Covers complicated skin and intra-abdominal infection but NOT VRE — the exception worth remembering."], ["Linezolid", "Does cover VRE."], ["Vancomycin", "By definition VRE is resistant to it, but the question is about the agent listed as not covering it."], ["Clindamycin", "Not the agent this point is made about."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 73"}, {"topic": "Imiquimod", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which agent is used for external and perianal warts, actinic keratoses and basal cell carcinoma?", "opts": [["Mupirocin", "An antibacterial for staphylococcal skin infection."], ["Imiquimod", "Correct. All three indications, and it irritates the skin in virtually every patient — which is expected, not a reason to stop."], ["Ciclopirox", "An antifungal nail lacquer."], ["Tacrolimus", "An immunomodulator for atopic dermatitis."]], "c": 1, "cite": "02. Dermatology Medications(1).pptx, Slide 57"}, {"topic": "Relaxing skeletal muscle for intubation", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Nondepolarizing blockers are used for which purpose?", "opts": [["Treating myasthenia gravis", "They would worsen it."], ["Reversing organophosphate poisoning", "That is pralidoxime and atropine."], ["Relaxing skeletal muscle for intubation", "Correct. Adjuvants in anaesthesia — intubation, fracture alignment and dislocation correction."], ["Lowering intraocular pressure", "That is pilocarpine, carbachol or timolol."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 63"}, {"topic": "Phenoxybenzamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which alpha blocker is IRREVERSIBLE, so its effect lasts at least twenty-four hours?", "opts": [["Phentolamine", "Reversible and short-acting."], ["Prazosin", "Reversible, competitive."], ["Tamsulosin", "Reversible, and uroselective."], ["Phenoxybenzamine", "Correct. Irreversible blockade lasting at least 24 hours, used in phaeochromocytoma, and it produces epinephrine reversal."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 109"}, {"topic": "Penciclovir", "io": "Topic — Dermatology medications", "q": "Which agents are used topically for recurrent cold sores?", "opts": [["Penciclovir", "Correct. Topical antivirals for recurrent orolabial herpes simplex."], ["Imiquimod", "For warts and premalignant lesions."], ["Mupirocin", "An antibacterial."], ["Tacrolimus", "An immunomodulator."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 55"}, {"topic": "Penicillins", "io": "Topic — Facts that belong to a whole class", "q": "Which class requires less frequent dosing as renal function falls?", "opts": [["Macrolides", "Cleared hepatically."], ["Penicillins", "Correct. Renally cleared, so the interval stretches as clearance drops."], ["Allylamines", "Cleared hepatically."], ["Topical retinoids", "Not systemically dosed."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 22"}, {"topic": "Piperacillin/tazobactam", "io": "Topic — Antibacterials", "q": "Which is the drug of choice for polymicrobial and nosocomial infections, especially pneumonia and intra-abdominal sepsis?", "opts": [["Amoxicillin/clavulanate", "The choice for bites and diabetic foot, not for nosocomial pneumonia."], ["Cefazolin", "Surgical prophylaxis and MSSA."], ["Piperacillin/tazobactam", "Correct. Drug of choice for polymicrobial and nosocomial infection, including hospital pneumonia."], ["Aztreonam", "Gram-negatives only."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 27"}, {"topic": "Penciclovir", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical agent is used for recurrent orolabial herpes simplex?", "opts": [["Imiquimod", "For warts and premalignant lesions."], ["Mupirocin", "An antibacterial."], ["Bacitracin", "An antibacterial."], ["Penciclovir", "Correct. The topical antivirals for cold sores."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 55"}, {"topic": "Blood pressure falls and gut activity ceases", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Nicotine at higher doses does what to blood pressure and to gut and bladder activity?", "opts": [["Blood pressure falls and gut activity ceases", "Correct. Stimulation first, then paralysis of all ganglia — so the early effects reverse."], ["Blood pressure rises further and gut activity increases", "That is the early, low-dose phase only."], ["Both are unchanged", "Ganglionic effects are dose-dependent, not absent."], ["Blood pressure rises while gut activity ceases", "Mixes the two phases."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 59"}, {"topic": "Amphetamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug is used for hyperactivity, narcolepsy and appetite control?", "opts": [["Clonidine", "Used in hypertension and withdrawal."], ["Amphetamine", "Correct. All three indications, through raised blood pressure, cardiac stimulation and central activity."], ["Cocaine", "Used as a local anaesthetic."], ["Pseudoephedrine", "Used for nasal and sinus congestion."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 100"}, {"topic": "Topical azoles", "io": "Topic — Dermatology medications", "q": "Which topical antifungals are used for vulvovaginal candidiasis?", "opts": [["Tolnaftate", "No candidal activity."], ["Terbinafine", "Dermatophytes only."], ["Topical azoles", "Correct. Clotrimazole, miconazole and sertaconazole, topically and vaginally."], ["Bacitracin", "An antibacterial."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 51"}, {"topic": "Aminopenicillins", "io": "Topic — Facts that belong to a whole class", "q": "Hepatic dysfunction with jaundice and raised transaminases belongs to which penicillin group?", "opts": [["Penicillinase-resistant penicillins", "Monitored for hepatic toxicity too, but the described enzyme picture is the aminopenicillin one."], ["Cephalosporins", "Chiefly allergic and gastrointestinal."], ["Carbapenems", "Chiefly seizures."], ["Aminopenicillins", "Correct. Hepatic dysfunction, hepatitis and jaundice with raised AST, ALT, bilirubin and alkaline phosphatase."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 21"}, {"topic": "Amoxicillin/clavulanate", "io": "Topic — Antibacterials", "q": "Which is the drug of choice for skin and soft tissue infection, diabetic foot, and animal or human bites?", "opts": [["Amoxicillin/clavulanate", "Correct. Drug of choice for exactly those, because the clavulanate covers the mouth flora in a bite."], ["Piperacillin/tazobactam", "The choice for nosocomial and polymicrobial infection, not an outpatient bite."], ["Ceftriaxone", "Good streptococcal cover but not the choice for a bite."], ["Metronidazole", "Anaerobes only."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 25"}, {"topic": "Azoles", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal class covers Candida, Cryptococcus, Blastomyces, Histoplasma, Coccidioides and Aspergillus?", "opts": [["Echinocandins", "Narrower, chiefly Candida and Aspergillus."], ["Azoles", "Correct. The class spectrum — which is why the individual azoles are then separated by their own quirks."], ["Allylamines", "Superficial dermatophytes."], ["Polyenes", "Amphotericin B is broad but is a single agent, not this class list."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 102"}, {"topic": "Succinylcholine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Hyperkalaemia after a neuromuscular blocker points to which agent?", "opts": [["Rocuronium", "Nondepolarizing; no potassium shift."], ["Cisatracurium", "Nondepolarizing."], ["Succinylcholine", "Correct. Hyperkalaemia alongside malignant hyperthermia — the two dangers of the depolarizing blocker."], ["Pancuronium", "Nondepolarizing."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 66"}, {"topic": "Cocaine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which sympathomimetic has a legitimate use as a LOCAL ANAESTHETIC?", "opts": [["Amphetamine", "No anaesthetic use."], ["Ephedrine", "A decongestant and pressor."], ["Tyramine", "Has NO therapeutic use at all."], ["Cocaine", "Correct. Its one therapeutic use."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 102"}, {"topic": "It causes photosensitivity and severe sunburn", "io": "Topic — Dermatology medications", "q": "What is the most important thing to tell a patient starting a topical retinoid about the sun?", "opts": [["It causes photosensitivity and severe sunburn", "Correct. Photosensitivity and severe sunburn — so sun protection is part of the prescription."], ["It protects against sunburn", "The opposite."], ["It has no interaction with sun exposure", "It does."], ["It should only be applied in the morning", "It is applied at night, but the sun point is the photosensitivity."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 24"}, {"topic": "Topical immunomodulators", "io": "Topic — Facts that belong to a whole class", "q": "Which class is second line for atopic dermatitis, after topical steroids?", "opts": [["Topical retinoids", "Used for acne and photoageing."], ["Topical immunomodulators", "Correct. Tacrolimus and pimecrolimus, used when steroids are not appropriate to continue."], ["Topical antibiotics", "Used for acne and skin infection."], ["Topical antifungals", "Used for fungal infection."]], "c": 1, "cite": "02. Dermatology Medications(1).pptx, Slide 43"}, {"topic": "Carbapenems", "io": "Topic — Antibacterials", "q": "Which class is the drug of choice for multidrug-resistant gram-negative and extended-spectrum beta-lactamase infections?", "opts": [["Aminopenicillins", "Hydrolysed by those beta-lactamases."], ["First-generation cephalosporins", "Far too narrow."], ["Carbapenems", "Correct. Drug of choice for MDR gram-negatives and ESBL producers."], ["Macrolides", "Wrong spectrum entirely."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 43"}, {"topic": "Voriconazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal accumulates its cyclodextrin vehicle in renal failure?", "opts": [["Fluconazole", "Renally cleared but without this vehicle problem."], ["Amphotericin B", "Nephrotoxic itself, but not through a vehicle."], ["Caspofungin", "Not renally dosed."], ["Voriconazole", "Correct. The cyclodextrin carrier accumulates when renal function is poor."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 107"}, {"topic": "Dantrolene", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Malignant hyperthermia is treated with rapid cooling and which drug?", "opts": [["Dantrolene", "Correct. Dantrolene, with rapid cooling."], ["Pralidoxime", "For organophosphate poisoning."], ["Neostigmine", "Reverses nondepolarizing blockade."], ["Atropine", "Blocks muscarinic effects; no role here."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 66"}, {"topic": "2004", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Ephedra-containing herbal products were banned by the Food and Drug Administration in which year?", "opts": [["1994", "Not the year given."], ["2004", "Correct. Banned in 2004; pseudoephedrine remains available for nasal and sinus congestion."], ["2010", "Not the year given."], ["2016", "Not the year given."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 104"}, {"topic": "Polymyxin B", "io": "Topic — Dermatology medications", "q": "Which topical antibacterial must be kept off open or denuded skin at high dose?", "opts": [["Bacitracin", "No systemic toxicity."], ["Mupirocin", "Safe on broken skin."], ["Polymyxin B", "Correct. Because of neurotoxicity and nephrotoxicity if enough is absorbed."], ["Clindamycin", "Used on acne-bearing skin."]], "c": 2, "cite": "02. Dermatology Medications(1).pptx, Slide 48"}, {"topic": "Topical retinoids", "io": "Topic — Facts that belong to a whole class", "q": "Which class must be applied with a warning about severe sunburn?", "opts": [["Topical corticosteroids", "Cause atrophy rather than photosensitivity."], ["Topical immunomodulators", "Cause burning on application, not photosensitivity."], ["Topical antibiotics", "No photosensitivity in the topical form."], ["Topical retinoids", "Correct. Photosensitivity and severe sunburn, which is why they are applied at night and paired with sun protection."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 24"}, {"topic": "Aztreonam", "io": "Topic — Antibacterials", "q": "Which antibiotic covers gram-negative organisms only?", "opts": [["Aztreonam", "Correct. Gram-negative only — and no cross-reactivity with the other beta-lactams."], ["Vancomycin", "Gram-positive only, the mirror image."], ["Ceftaroline", "The cephalosporin with MRSA cover, so gram-positive included."], ["Piperacillin/tazobactam", "Broad, covering both."]], "c": 0, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 40"}, {"topic": "Flucytosine", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which drug is used with amphotericin B specifically because using it alone breeds resistance?", "opts": [["Fluconazole", "Used alone routinely."], ["Flucytosine", "Correct. Paired with amphotericin B in cryptococcal meningitis rather than used alone."], ["Voriconazole", "Used alone for Aspergillus."], ["Griseofulvin", "Used alone for dermatophytes."]], "c": 1, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 100"}, {"topic": "Tyramine", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which agent has NO therapeutic use but causes a serious pressor reaction in a patient on a monoamine oxidase inhibitor?", "opts": [["Nicotine", "Has therapeutic use in cessation products."], ["Cocaine", "Has a therapeutic use as a local anaesthetic."], ["Tyramine", "Correct. No therapeutic use; found in fermented foods such as cheese and wine."], ["Ephedrine", "Has therapeutic use as a decongestant."]], "c": 2, "cite": "03. ANS Pharmacology(1).pptx, Slide 106"}, {"topic": "Catecholamines", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Poor penetration into the central nervous system is a property of which class?", "opts": [["Amphetamines", "Cross readily, which is the point of them."], ["Alpha-1 blockers", "Not the group this property is stated for."], ["Antimuscarinics", "Atropine and scopolamine cross readily."], ["Catecholamines", "Correct. Epinephrine, norepinephrine, isoproterenol and dopamine — they do not cross well, so their effects are peripheral."]], "c": 3, "cite": "03. ANS Pharmacology(1).pptx, Slide 79"}, {"topic": "Mupirocin", "io": "Topic — Dermatology medications", "q": "Which drug is applied inside the nose rather than to a lesion?", "opts": [["Mupirocin", "Correct. To eliminate nasal carriage of Staphylococcus aureus, MRSA included."], ["Bacitracin", "Applied to wounds."], ["Imiquimod", "Applied to warts and keratoses."], ["Ciclopirox", "Applied to nails."]], "c": 0, "cite": "02. Dermatology Medications(1).pptx, Slide 47"}, {"topic": "Cholinergic agonists", "io": "Topic — Facts that belong to a whole class", "q": "Which class causes bronchospasm and so must be used cautiously in reactive airway disease?", "opts": [["Antimuscarinics", "Open the airway; they are used in chronic obstructive pulmonary disease."], ["Cholinergic agonists", "Correct. Bronchospasm is the reason for caution — the airway constricts as secretions rise."], ["Beta-2 agonists", "Open the airway; they are the rescue treatment in asthma."], ["Alpha-1 blockers", "Have no bronchial effect."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 31"}, {"topic": "Moxifloxacin", "io": "Topic — Antibacterials", "q": "Which fluoroquinolone must not be used for a urinary tract infection and has no Pseudomonas cover?", "opts": [["Levofloxacin", "The one that DOES have Pseudomonas cover."], ["Ciprofloxacin", "Used for urinary infection."], ["Moxifloxacin", "Correct. Not for urinary tract infection, and no Pseudomonas cover — levofloxacin is the one with it."], ["Ofloxacin", "Not the agent this restriction is attached to."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 78"}, {"topic": "Amphotericin B", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Hypokalaemia and hypomagnesaemia during treatment point to which antifungal?", "opts": [["Fluconazole", "Does not waste electrolytes."], ["Terbinafine", "Superficial use, no electrolyte effect."], ["Nystatin", "Not absorbed."], ["Amphotericin B", "Correct. Electrolyte wasting is part of its toxicity, alongside the infusion fever and hypotension."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 98"}, {"topic": "Carbachol", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which cholinergic agent is used to decrease intraocular pressure in glaucoma AND has both receptor actions, given intraocularly during surgery?", "opts": [["Carbachol", "Correct. Both muscarinic and nicotinic, used intraocularly."], ["Bethanechol", "Muscarinic only and used for the bladder."], ["Physostigmine", "An indirect agent."], ["Scopolamine", "An antagonist."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 32"}, {"topic": "Labetalol", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug produces orthostatic hypotension because it blocks alpha-1 in addition to beta receptors?", "opts": [["Atenolol", "Beta-1 selective, with no alpha blockade."], ["Labetalol", "Correct. Mixed alpha and beta blockade, which is where the orthostatic drop comes from. Carvedilol shares this."], ["Propranolol", "Nonselective beta but no alpha blockade."], ["Timolol", "No alpha blockade."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 122"}, {"topic": "Aminoglycosides", "io": "Topic — Antibacterials", "q": "Which class is the drug of choice for febrile neutropenia, sepsis and enterococcal synergy?", "opts": [["Macrolides", "Used for atypical respiratory infection."], ["Tetracyclines", "Used for atypicals and acne."], ["Aminoglycosides", "Correct. Drug of choice for all three, which is why the renal and ear monitoring matters."], ["Clindamycin", "Used for anaerobes and gram-positives."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 68"}, {"topic": "Famciclovir", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antiviral pair has actions and toxicity essentially the same as acyclovir?", "opts": [["Ganciclovir", "Far more marrow-toxic, and used for cytomegalovirus."], ["Oseltamivir", "A neuraminidase inhibitor for influenza."], ["Albendazole", "An antihelminthic."], ["Famciclovir", "Correct. Explicitly described as similar to acyclovir in both action and toxicity."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 124"}, {"topic": "Confusion, hallucinations and delirium", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which effects would you expect from a patient who has taken too much of an antimuscarinic?", "opts": [["Confusion, hallucinations and delirium", "Correct. The central antimuscarinic picture, on top of dry mouth, blurred vision and retention."], ["Salivation, diarrhoea and bronchospasm", "That is cholinergic excess."], ["Bradycardia and hypotension", "Cholinergic, not antimuscarinic."], ["Tendon rupture and photosensitivity", "Fluoroquinolone effects, not autonomic."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 51"}, {"topic": "Phentolamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which agent is used for the SHORT-TERM management of phaeochromocytoma?", "opts": [["Phenoxybenzamine", "Used for the longer, irreversible blockade."], ["Phentolamine", "Correct. Short-term; phenoxybenzamine is the irreversible one used for longer preparation."], ["Propranolol", "Given only after alpha blockade, never first."], ["Clonidine", "Not used for this."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 110"}, {"topic": "Fluoroquinolones", "io": "Topic — Antibacterials", "q": "Which class causes photosensitivity and complexes with cations such as antacids and dairy?", "opts": [["Macrolides", "No cation chelation."], ["Penicillins", "No cation chelation."], ["Fluoroquinolones", "Correct. Photosensitivity, and they chelate with cations — so they must be separated from antacids, iron and dairy."], ["Clindamycin", "Not affected this way."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 79"}, {"topic": "Acyclovir", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Seizures, delirium and tremor are the central nervous system effects of which antiviral?", "opts": [["Oseltamivir", "Not associated with these."], ["Albendazole", "Very well tolerated."], ["Imiquimod", "Topical, with local irritation only."], ["Acyclovir", "Correct. Central effects alongside the renal crystallisation."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 122"}, {"topic": "Organophosphates", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which of these groups inhibits cholinesterase IRREVERSIBLY?", "opts": [["Organophosphates", "Correct. Irreversible, which is why the enzyme has to be reactivated with pralidoxime rather than simply out-competed."], ["Cholinergic agonists", "They act on the receptor directly and do not touch the enzyme."], ["Antimuscarinics", "They block the receptor; they are not enzyme inhibitors at all."], ["Nondepolarizing blockers", "They compete at the neuromuscular junction, not at cholinesterase."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 42"}, {"topic": "Pseudoephedrine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Which drug relieves nasal and sinus congestion and is taken by mouth?", "opts": [["Oxymetazoline", "Topical, with the rebound congestion warning."], ["Pseudoephedrine", "Correct. Oral decongestant — unlike oxymetazoline, which is the topical one with the three-day rebound limit."], ["Albuterol", "Inhaled, for the lower airway."], ["Isoproterenol", "Used to stimulate the heart."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 104"}, {"topic": "Trimethoprim / sulfamethoxazole", "io": "Topic — Antibacterials", "q": "Which is the drug of choice for Pneumocystis jirovecii pneumonia, both to treat and to prevent it?", "opts": [["Clindamycin with primaquine", "A second-line alternative, not the drug of choice."], ["Azithromycin", "Used for atypical bacterial pneumonia."], ["Trimethoprim / sulfamethoxazole", "Correct. Treatment AND prophylaxis, which is why it is used long term in immunosuppressed patients."], ["Fluconazole", "An antifungal, and Pneumocystis does not respond to it."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 85"}, {"topic": "Clotrimazole", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which topical antifungal is the one used for vulvovaginal candidiasis?", "opts": [["Tolnaftate", "No candidal activity whatsoever."], ["Terbinafine", "For dermatophytes."], ["Ciclopirox", "The nail lacquer."], ["Clotrimazole", "Correct. Topical and vaginal use for vulvovaginal candidiasis."]], "c": 3, "cite": "02. Dermatology Medications(1).pptx, Slide 51"}, {"topic": "Glycopyrrolate", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Which antimuscarinic is used for excessive drooling in cerebral palsy and for hyperhidrosis?", "opts": [["Glycopyrrolate", "Correct. Named for both, alongside its inhaled use in the same family."], ["Scopolamine", "For motion sickness."], ["Oxybutynin", "For the bladder."], ["Atropine", "Not the agent used for these."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 55"}, {"topic": "Dopamine", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Nausea, hypertension and arrhythmias are listed for which drug?", "opts": [["Albuterol", "Tremor and restlessness."], ["Dopamine", "Correct. Its side effects, used in cardiogenic and septic shock."], ["Clonidine", "Sedation and constipation."], ["Prazosin", "Dizziness and orthostatic hypotension."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 92"}, {"topic": "Ceftaroline", "io": "Topic — Antibacterials", "q": "Which cephalosporin generation carries MRSA cover?", "opts": [["Cefazolin", "MSSA only."], ["Ceftriaxone", "Good streptococcal cover, no MRSA."], ["Ceftaroline", "Correct. The fifth generation, used for skin and soft tissue infection WITH MRSA cover — the only cephalosporin that has it."], ["Cefepime", "Antipseudomonal, for neutropenic fever."]], "c": 2, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 37"}, {"topic": "Caspofungin", "io": "Topic — Antifungals, antivirals and antiparasitics", "q": "Which antifungal is used for systemic aspergillosis and candidaemia and is given intravenously as an echinocandin?", "opts": [["Griseofulvin", "Oral, and only for dermatophytes."], ["Nystatin", "Topical or oral for candidal mucosal infection, not systemic."], ["Terbinafine", "For dermatophytes."], ["Caspofungin", "Correct. An echinocandin, used when itraconazole or amphotericin has failed."]], "c": 3, "cite": "Antibiotics, Antivirals, and Antifungals.pptx, Slide 109"}, {"topic": "It cannot overcome reversible inhibitors", "io": "Topic — Cholinergic, anticholinergic and neuromuscular", "q": "Why can pralidoxime not be used against physostigmine poisoning?", "opts": [["It cannot overcome reversible inhibitors", "Correct. It reactivates the enzyme after IRREVERSIBLE inhibition; a reversible inhibitor is not bound the same way."], ["It is too slow to act", "Speed is not the stated limitation."], ["It is inactivated by the liver first", "Not the stated limitation."], ["It only works in children", "Not the stated limitation."]], "c": 0, "cite": "03. ANS Pharmacology(1).pptx, Slide 42"}, {"topic": "Alpha-1 blockers", "io": "Topic — Adrenergic agonists and the alpha and beta blockers", "q": "Dizziness, lack of energy, nasal congestion and drowsiness point to which class?", "opts": [["Beta-2 agonists", "Cause tremor and restlessness."], ["Alpha-1 blockers", "Correct. Alpha-1 blockade opens the nasal vessels and drops the blood pressure — hence congestion plus dizziness."], ["Antimuscarinics", "Cause dry mucosa, not congestion."], ["Cholinergic agonists", "Cause secretions and bronchospasm."]], "c": 1, "cite": "03. ANS Pharmacology(1).pptx, Slide 111"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

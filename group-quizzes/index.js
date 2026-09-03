@@ -272,6 +272,7 @@ window.GROUP_INDEX = {
 "pharmacology-i-exam-1-pharm-exam-1-master-exam-form-h":{"title":"Pharmacology I Exam 1 Master Exam — Form H","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":60},
 "pharmacology-i-exam-1-pharm-exam-1-master-exam-form-i":{"title":"Pharmacology I Exam 1 Master Exam — Form I","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":60},
 "pharmacology-i-exam-1-pharm-exam-1-master-exam-form-j":{"title":"Pharmacology I Exam 1 Master Exam — Form J","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":60},
+"pharmacology-i-exam-1-pharm-master-drill":{"title":"Master Drill","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":170},
 "pharmacology-i-exam-1-pharm-vignettes":{"title":"Pharmacology I Vignettes 1 — Exam 1","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "pharmacology-i-exam-1-pharm-vignettes-version-2":{"title":"Pharmacology I Vignettes 2 — Exam 1","category":"Pharmacology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "physical-diagnosis-1-exam-2-abdominal-exam-quiz":{"title":"Abdominal Examination — Set 1 (Physical Diagnosis 1)","category":"Physical Diagnosis","exam":"Exam 2","sem":"summer-1-2026","n":30},

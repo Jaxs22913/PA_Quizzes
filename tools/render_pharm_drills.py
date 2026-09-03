@@ -76,6 +76,36 @@ def build(items, io):
     return out
 
 
+def master(all_items):
+    """Every drill question in one paper.
+
+    Round-robin across the six sets rather than concatenated, so an unshuffled
+    run interleaves topics from the first question instead of spending 30
+    questions on antibacterials. The engine's own length sampler already keeps
+    objectives covered when a shorter run is chosen; this just makes the
+    default order read well too.
+
+    Positions are re-rotated across the combined paper: each set was already
+    balanced on its own, but interleaving six of them would otherwise stack
+    their patterns.
+    """
+    rows = []
+    for i in range(max(len(items) for items, _io in all_items)):
+        for items, io in all_items:
+            if i < len(items):
+                rows.append((items[i], io))
+    out = []
+    for n, (it, io) in enumerate(rows):
+        opts = [[it["ans"], "Correct. " + it["why"]]]
+        opts += [[w, r] for w, r in it["wrong"]]
+        slot = n % 4
+        opts.insert(slot, opts.pop(0))
+        lect, slide = it["src"]
+        out.append({"topic": it["ans"], "io": io, "q": it["q"], "opts": opts,
+                    "c": slot, "cite": "%s, Slide %d" % (DECK[lect], slide)})
+    return out
+
+
 def main():
     total = 0
     for mod, fname, title, io, chips in SETS:
@@ -94,6 +124,26 @@ def main():
         print("  %-44s %3d questions" % (fname, len(qs)))
         total += len(qs)
     print("%d drill questions across %d sets" % (total, len(SETS)))
+
+    # Jaxon, 2026-09-02: "put all the drill quizzes in one big exam with all the
+    # questions 'Master Drill' and put it in the same grouping in the accordian"
+    qs = master([(m.ITEMS, io) for m, _f, _t, io, _c in SETS])
+    assert len(qs) == total, (len(qs), total)
+    html = render(
+        title="Master Drill | Pharmacology I Exam 1",
+        h1="Master Drill",
+        sub="Pharmacology I &middot; Exam 1 &middot; every drill question in one paper",
+        pill="%d questions" % len(qs),
+        chips=["Antibacterials", "Antifungals &amp; antivirals", "Cholinergic",
+               "Adrenergic", "Dermatology", "Drug classes"],
+        intro="All %d rapid-drill questions in one sitting, interleaved across the six sets. "
+              "Same format throughout &mdash; one fact, four names. Set a shorter length on "
+              "this screen if you want a sample rather than the whole thing." % len(qs),
+        questions=qs, already_converted=True,
+        navy="#6b3524", indigo="#9c5230", gold="#c9a227", ice="#fbf1e6",
+    )
+    open(os.path.join(OUT, "pharm-master-drill.html"), "w", encoding="utf-8").write(html)
+    print("  %-44s %3d questions" % ("pharm-master-drill.html", len(qs)))
 
 
 if __name__ == "__main__":
