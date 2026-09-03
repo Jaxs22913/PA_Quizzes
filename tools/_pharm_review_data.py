@@ -105,9 +105,193 @@ RULES = [
        "<i>Lasix</i> rather than furosemide and <i>Rocephin</i> rather than ceftriaxone, and "
        "he wants the association built early. But the board exam is generic-only, "
        "<b>so the generic is the one you must have</b>.</p>"),
+ dict(id="by-class-then-back", at="31:30",
+  title="Learn by class &mdash; but the paper asks you individual drug NAMES",
+  quote="most my questions will ultimately come down to four individual drugs",
+  verify=["please do as much as you can by classes",
+          "most my questions will ultimately come down to four individual drugs",
+          "you'll drive yourself crazy"],
+  body="<p><b>Both halves of this matter, and they pull in opposite directions.</b></p>"
+       "<p>Learn the material <b>by category</b>. His example: every cell-wall-active drug is "
+       "bactericidal &mdash; penicillins, cephalosporins, carbapenems, vancomycin, the "
+       "polymyxins &mdash; so there is no point memorising that fact drug by drug. Do the same "
+       "for mechanism of action and the common contraindications. <i>&ldquo;Do big bins instead "
+       "of individual agents.&rdquo;</i></p>"
+       "<p><b>But the answer choices are individual drug names.</b> He said most of his "
+       "questions come down to four named drugs. So the skill being tested is "
+       "<b>seeing a drug name and placing it back in its bin</b> &mdash; you read "
+       "<i>ceftriaxone</i>, you think <i>third-generation cephalosporin</i>, and everything you "
+       "know about that class becomes available.</p>"
+       "<p>That is exactly the drill the <a href=\"pharm-drill-classes.html\">Drug Classes "
+       "Drill</a> and the other drills on this site are built to rehearse.</p>"),
+ dict(id="no-numbers", at="29:40",
+  title="Do not memorise numerical values &mdash; he gives them to you",
+  quote="don't know specific values. If I'm using any values, I will tell you what those are "
+        "in the question itself",
+  verify=["if i'm using any values, i will tell you what those are in the question itself",
+          "why would we look at a trough value"],
+  body="<p>He is asking <b>why you look at a value</b>, never what the number is. His worked "
+       "contrast, which is worth knowing in full:</p>"
+       "<ul><li><b>Vancomycin</b> is a <b>time-dependent</b> killer. You want the trough "
+       "<b>above the minimum inhibitory concentration for as long as possible</b>, so the "
+       "trough is checked to confirm it is high enough &mdash; a level coming back at zero is "
+       "cause for concern, because the infection is not being treated.</li>"
+       "<li><b>Gentamicin</b> is a <b>concentration-dependent</b> killer with a "
+       "<b>post-antibiotic effect</b>, so the level does <i>not</i> need to stay above that "
+       "concentration. The trough is checked to confirm it is <b>undetectable</b> &mdash; "
+       "because what accumulates causes <b>ototoxicity and nephrotoxicity</b>, and once the "
+       "kidneys are harmed you accumulate still more.</li></ul>"
+       "<p><b>Same test, opposite target, for opposite reasons.</b> That is the kind of "
+       "question he is describing.</p>"),
+ dict(id="why-not-what", at="28:20",
+  title="&ldquo;Pharmacology is not a what class, it&rsquo;s a why class&rdquo;",
+  quote="pharmacology is not a what class, it's a why class",
+  verify=["pharmacology is not a what class, it's a why class",
+          "i can read a drug reference if i wanted to know all the facts"],
+  body="<p>He drew the contrast with anatomy, which he called closer to brute-force "
+       "memorisation, and with physiology, which is a why class &mdash; how the body normally "
+       "works, how it goes wrong, how you then treat it. Pharmacology sits with physiology.</p>"
+       "<p><i>&ldquo;I can read a drug reference if I wanted to know all the facts. I want you "
+       "to know: why am I selecting this drug? What are the things I need to look for? How do I "
+       "communicate this to my patient?&rdquo;</i></p>"),
+ dict(id="how-to-read", at="32:40",
+  title="How to read his questions &mdash; and the habit he says wrecks scores",
+  quote="if you ever find yourself asking did he mean this or this you're already in the weeds",
+  verify=["keep it simple students",
+          "sometimes it can be useful just to read the last sentence of the question",
+          "i do not include a lot of superfluous information",
+          "do not change your answers"],
+  body="<p><b>Reading the stem.</b> His shortcut is to <b>read the last sentence first</b> to "
+       "see what is being asked, then go back through the stem for the context you need. He "
+       "does <b>not</b> pad questions &mdash; there is no patient's favourite colour in there, "
+       "so every detail present is there for a reason. <i>&ldquo;Keep it simple, "
+       "students.&rdquo;</i></p>"
+       "<p><b>And the one he repeated hardest, twice, including as his closing line: do not "
+       "change your answers.</b> He called it one of the worst habits, the one he hears "
+       "constantly from students who struggle. Trust the gut instinct <b>unless you have a very "
+       "obvious reason</b> to change it &mdash; you have had a week with this material and it "
+       "is already in there.</p>"),
 ]
 
 ANSWERS = [
+ dict(id="zebras", at="19:40",
+  title="Zebras &mdash; and the shortcut that saves you most of the work",
+  q="Are there any adverse effects we should focus on specifically?",
+  quote="whenever you hear hoofs beating, normally you should be thinking horses. Sometimes "
+        "it's a zebra",
+  verify=["sometimes it's a zebra",
+          "the alcohol interaction with metronidazole",
+          "no, they're all the same"],
+  body="<p><b>Zebras</b> are the uncommon effects that are <b>unique to one particular "
+       "drug</b>. His example is the <b>alcohol interaction with metronidazole</b> &mdash; most "
+       "patients on it for an infection will not be drinking, but it costs nothing to warn "
+       "them.</p>"
+       "<p><b>The shortcut:</b> commons belong to the <b>group</b>, not the drug. Asked whether "
+       "the common side effects of penicillins, cephalosporins and carbapenems need learning "
+       "separately, he said <i>&ldquo;no, they're all the same&rdquo;</i> &mdash; do not spend "
+       "the headspace. <b>Spend it where a class breaks the pattern instead</b>, and his "
+       "example there is the <b>tetracyclines</b>: calcium binding, the bone effects, and "
+       "photosensitivity that the patient genuinely needs advice about.</p>"
+       "<p><b>Where to aim:</b> <i>&ldquo;Any time you see those killers or the zebras, those "
+       "are always things you should look at.&rdquo;</i> The commons cover a good share of what "
+       "he asks; the idiosyncratic ones are each worth about one question &mdash; he named "
+       "<b>vancomycin infusion syndrome</b>, and slowing the infusion to two hours, as exactly "
+       "that kind of one-off.</p>"),
+
+ dict(id="ans-depth", at="24:10",
+  title="Autonomic drugs: the mechanism tells you the indication",
+  q="Should we focus on the categories, mechanism and adverse effects of the autonomic drugs, or what they are used for?",
+  quote="what their mechanisms are will inform you on what they are used for in a lot of cases",
+  verify=["will inform you on what they are used for",
+          "which one of these would be most likely to slow down a rapid heart rate"],
+  body="<p>He said you do not learn the indications separately &mdash; you <b>derive</b> them. "
+       "The same antimuscarinic mechanism treats <b>chronic drooling</b> and <b>urinary "
+       "incontinence</b>; it is one action in two organs. Glycopyrrolate tends to be used for "
+       "the first and oxybutynin for the second, but that is marketing and licensing rather "
+       "than a real pharmacological divide, and <i>either would work</i>.</p>"
+       "<p><b>His example question:</b> <i>which of these would be most likely to slow a rapid "
+       "heart rate?</i> There is more than one right road &mdash; a <b>beta blocker</b>, or a "
+       "<b>muscarinic agonist</b>, or an <b>acetylcholinesterase inhibitor</b> raising "
+       "acetylcholine. Recognise the category and what it does, and the answer follows.</p>"
+       "<p><b>The reasoning chain he wants you running:</b> this drug is an antimuscarinic "
+       "&rarr; what do muscarinic effects look like &rarr; I am blocking those &rarr; so what "
+       "should I see? That is where the <i>mad as a hatter, dry as a bone</i> picture comes "
+       "from, rather than being memorised as a list.</p>"),
+
+ dict(id="bradycardia", at="34:40",
+  title="The bradycardia question, and how he builds the wrong answers",
+  q="For conditions treatable with multiple drugs, like bradycardia, will the answer be clear?",
+  quote="I would not include both atropine and epinephrine. I would have like three drugs that "
+        "lower the heart rate further and then like one that didn't",
+  verify=["i would not include both atropine and epinephrine",
+          "three drugs that lower the heart rate further",
+          "i hate it when students challenge my question"],
+  body="<p><b>He will not make you choose between two right answers.</b> Asked whether a "
+       "condition with several valid treatments would be ambiguous, he described how he builds "
+       "the item instead: <b>three drugs that would make the problem worse, and one that "
+       "would not</b>. He said he writes them that clearly on purpose &mdash; "
+       "<i>&ldquo;I hate it when students challenge my question&rdquo;</i> &mdash; so most "
+       "distractors are <b>not even theoretically reasonable</b>.</p>"
+       "<p><b>The clinical content he gave with it:</b> for symptomatic bradycardia he follows "
+       "the advanced cardiac life support guidelines. <b>Atropine</b> first &mdash; an "
+       "antimuscarinic, so blocking the muscarinic receptors on the heart raises the rate. If "
+       "that is not enough, move to <b>beta-1 activation</b>: dobutamine, epinephrine, "
+       "norepinephrine or isoproterenol, all sharing that one action. In the guidelines "
+       "<b>epinephrine</b> is the usual next step after atropine.</p>"),
+
+ dict(id="antifungal-organisms", at="39:10",
+  title="Antifungals: you do NOT need which fungus each one covers",
+  q="For the antifungals, do we need to know the exact organism &mdash; for example that posaconazole treats Aspergillus?",
+  quote="I would not get hung up on memorizing each individual type of fungus that the drugs treat",
+  verify=["i would not get hung up on memorizing each individual type of fungus",
+          "they don't have nice broad"],
+  body="<p><b>No.</b> He said the fungi do not sort into clean categories the way bacteria do "
+       "with gram-positive and gram-negative, and that the organism lists were there to give a "
+       "sense of what is being treated, not to be memorised.</p>"
+       "<p><b>What he wants instead</b> is that you can identify the <b>type</b> of antifungal, "
+       "and above all <b>tell an antifungal from an antiviral</b>. His example item: a patient "
+       "is <b>influenza A positive</b>, which of these is the best treatment &mdash; with an "
+       "antifungal sitting among the options for you to reject.</p>"),
+
+ dict(id="exam-structure", at="41:00",
+  title="How many questions, and where they come from",
+  q="How many questions are there per lecture?",
+  quote="There are five questions per technical hour of lecture",
+  verify=["there are five questions per technical hour of lecture",
+          "15 from the first powerpoint"],
+  body="<p><b>Five questions per scheduled hour of lecture.</b> He does not set the hours "
+       "&mdash; the course director does &mdash; but the ratio is fixed. Dermatology was "
+       "scheduled three hours, which is more than he thinks it needs, and it still earns "
+       "fifteen questions.</p>"
+       "<p>His split: <b>15 from the first deck, 15 from the second</b>, and the remainder from "
+       "the third. <b>He was not certain of the total</b>, talking himself between 40 and 45 "
+       "and settling on <i>&ldquo;I think it's 45 &hellip; I need to double check&rdquo;</i>. "
+       "It is written here as he said it rather than tidied into a figure he did not "
+       "commit to.</p>"
+       "<p>He also mentioned, unprompted, that his class averages usually land in the "
+       "<b>upper eighties</b>.</p>"),
+
+ dict(id="study-advice", at="26:00",
+  title="What he told the student who said their brain was scrambled",
+  q="Any tips on last-minute studying, or things we really should focus on?",
+  quote="if you hear me spending like five minutes talking about something, chances are I "
+        "think that's really important",
+  verify=["if you hear me spending like five minutes talking about something",
+          "don't just go off of what's on the slides",
+          "being comfortable with being uncomfortable"],
+  body="<p><b>Re-listen rather than re-read.</b> It is only three lectures. He said outright "
+       "that <b>time spent is his own signal</b> &mdash; five minutes on something means he "
+       "thinks it matters and probably wrote a question on it &mdash; and that the slides are "
+       "not the whole picture, because the context, illustrations and stories are where the "
+       "concepts lock in.</p>"
+       "<p><b>Group study</b>, which he made the strongest case for: you cannot become fluent "
+       "in a language through an app, you become fluent by talking to people who will catch "
+       "what you have wrong. There is what you know, what you know you do not know, and "
+       "<b>what you do not know you do not know</b> &mdash; and working alone is how that third "
+       "category survives until the exam finds it.</p>"
+       "<p><i>&ldquo;The first rule of PA school is being comfortable with being "
+       "uncomfortable.&rdquo;</i></p>"),
+
  dict(id="acne-ladder", at="11:55",
   title="The acne ladder, in his own order",
   q="Can we go over the acne treatments in order for the different levels of acne?",

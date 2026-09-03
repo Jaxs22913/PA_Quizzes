@@ -32,6 +32,12 @@ def norm(s):
     for a, b in (("’", "'"), ("‘", "'"), ("“", '"'), ("”", '"'),
                  ("–", "-"), ("—", "-"), ("…", "..."), ("\xa0", " ")):
         s = s.replace(a, b)
+    # PUNCTUATION IS DROPPED BEFORE MATCHING, deliberately. The speech model
+    # invents sentence boundaries -- it writes "epinephrine I would have" where
+    # a human would put a full stop -- so requiring punctuation to match is not
+    # rigour, it is matching against the model's guesswork. The WORDS still have
+    # to be exact and in order, which is the guarantee that matters for a quote.
+    s = re.sub(r"[.,;:!?()\"]", " ", s)
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
@@ -53,6 +59,8 @@ ASR_FIXES = [
     ("point by serial", "point-biserial"),
     ("rockuronium", "rocuronium"),
     ("the pants", "the pance"),
+    ("a debutamine", "dobutamine"),
+    ("a cls", "acls"),
     ("our gastral", "ergosterol"),
     ("vecan rockuronium", "vecuronium and rocuronium"),
 ]
