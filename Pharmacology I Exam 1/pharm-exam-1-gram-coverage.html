@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gram Coverage by Class &mdash; Pharmacology I Exam 1 (Class of 2028)</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --navy:#6b3524;--indigo:#9c5230;--gold:#c9a227;--ice:#fbf1e6;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo);font-weight:800}
+  h1{margin:6px 0 8px;font-size:31px;line-height:1.15;color:var(--ink);letter-spacing:-.015em}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;margin-top:6px}
+  .legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+  .note{margin-top:14px;background:var(--ice);border:1px solid rgba(107,53,36,.18);
+    border-radius:11px;padding:13px 15px;font-size:14.5px}
+  .note.warn{background:#fff6f5;border-color:rgba(179,38,30,.22)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .toc a{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .toc a:hover{background:var(--ice)}
+  section{margin:0 0 26px}
+  .shead{display:flex;align-items:center;gap:9px;margin:0 0 9px}
+  .shead .dot{width:11px;height:11px;border-radius:50%;background:var(--indigo)}
+  h2{margin:0;font-size:19.5px;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:12px;font-weight:600;color:var(--muted);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+  thead th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;
+    padding:10px 13px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .dn-h{width:20%}.p-h{width:12%}.sl-h{width:9%}
+  .dn{font-weight:800;color:var(--ink)}
+  .ct u{text-underline-offset:3px;text-decoration-thickness:2px}
+  .sl{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .g{color:var(--muted);font-weight:500;font-size:12.5px}
+  .pill{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  tr.t-abs td,tr.t-bbw td{background:#fff6f5}
+  tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
+  footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
+  @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
+
+  .prog{margin:0 0 12px;padding-left:20px;} .prog li{margin:4px 0;font-size:.95rem;}
+  .tw{overflow-x:auto;} table{width:100%;border-collapse:collapse;font-size:.86rem;}
+  th{text-align:left;background:var(--c-panel);color:var(--c-panel-fg);padding:8px;
+     position:sticky;top:0;}
+  td{padding:8px;border-top:1px solid var(--c-line);vertical-align:top;}
+  td.nm b{display:block;} td.nm .dr{display:block;margin-top:3px;font-size:.76rem;
+     color:var(--c-mute);font-style:italic;}
+  td.cv{text-align:center;white-space:nowrap;}
+  td.cv span{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.74rem;
+     font-weight:700;letter-spacing:.01em;}
+  .cv-yes span{background:#1f6b4a;color:#fff;}
+  .cv-mod span{background:#6b7f35;color:#fff;}
+  .cv-part span{background:#8a5f14;color:#fff;}
+  .cv-no span{background:#8c2f22;color:#fff;}
+  td.ln{white-space:nowrap;}
+  .lp{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.74rem;font-weight:600;
+      border:1px solid var(--c-line);}
+  .lp-pos{background:#e8f2ec;color:#17493a;} .lp-neg{background:#eceef7;color:#2d3f7a;}
+  .lp-both{background:#f4efe2;color:#6b5312;} .lp-neither{background:#f2eef4;color:#5f3a6b;}
+  td.sl{text-align:center;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
+  .gf{font:inherit;font-size:.8rem;padding:5px 12px;border-radius:999px;cursor:pointer;
+      border:1px solid var(--c-line);background:var(--c-btn-bg);color:var(--c-fg);}
+  .gf.on{background:var(--acc);color:#fff;border-color:var(--acc);}
+  :root[data-theme="dark"] .lp-pos{background:#1c3a30;color:#a9dcc6;}
+  :root[data-theme="dark"] .lp-neg{background:#232a44;color:#b9c4ee;}
+  :root[data-theme="dark"] .lp-both{background:#3a3320;color:#e2cf96;}
+  :root[data-theme="dark"] .lp-neither{background:#332a3a;color:#d5bde2;}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 1 &middot; Class of 2028</div>
+    <h1>Gram Coverage by Drug Class</h1>
+    <p class="sub">Every antibiotic class in Lecture 1, with whether it covers gram-positives, gram-negatives and anaerobes &mdash; taken from the traffic-light table on each class slide. 26 classes: 8 lean gram-positive, 4 lean gram-negative, 13 cover both equally.</p>
+    <div class="legend"><span>Every verdict is <b>read out of the lecture deck</b> &mdash; each class slide carries a traffic-light table and the colour under each heading is what is printed here. The slide number is on every row.</span></div>
+    <div class="note"><b>Where these judgements come from.</b> They are not mine and they are
+    not inferred from the prose. Most antibiotic class slides carry a small three-column table
+    &mdash; Gram Positive, Gram Negative, Anaerobes &mdash; with a coloured circle under each
+    heading, and this page prints those colours. Nothing in the slide text states which colour
+    sits under which heading, so each circle is matched to its column by position.</div>
+    <div class="note"><b>Two shades of green, and one odd one.</b> The deck uses two greens
+    interchangeably and both are shown here as <b>covers</b>. A third, lighter green appears on
+    exactly one class &mdash; the tetracyclines, on all three columns at once &mdash; and is shown
+    separately as <b>moderate</b>, because using it once and only across the board reads as
+    deliberate rather than as a colour slip.</div>
+    <div class="note warn"><b>Colour is never the only signal here.</b> Each cell carries its word
+    as well as its colour, because a red-and-green table is unreadable to a red-green colour-blind
+    reader.</div>
+  </header>
+
+  <div class="toc"><a href="#progression">The generation rule</a><a href="#why">Why this axis</a><a href="#table">All 26 classes</a></div>
+
+<section id="progression"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>The rule the whole cephalosporin block turns on <span class="tag">slide 31</span></h2></div><ul class="prog"><li>As one moves up in cephalosporin generation, <b>more gram-negative activity</b> is seen</li><li>Consequently, <b>gram-positive activity is decreased</b> advancing in generation</li><li><b>4th generation has gram-negative activity without sacrificing gram-positive activity</b></li></ul><div class="note"><b>Read the table below against that.</b> First generation is the strong gram-positive agent; by third generation the gram-negative cover is better and the gram-positive has been given away; <b>fourth generation is the one that breaks the trade-off</b>, and fifth is where MRSA cover appears.</div></section><section id="why"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>Why this is the axis to revise <span class="tag">from the exam review</span></h2></div><div class="note warn">At the review session the evening before the paper, Dr. Wood said he is <b>not</b> asking which single drug treats one named organism. He is asking whether an agent covers gram-positives, gram-negatives, anaerobes or atypicals &mdash; and he described the question outright: <i>&ldquo;a patient has an infection, a skin infection. Do you think it&rsquo;s a gram-positive bacteria? Which one of these would be most likely to treat it?&rdquo;</i>, built from <b>three agents with strictly gram-negative coverage and one good gram-positive</b>. <a href="pharm-exam-1-review-session.html">The full review is here.</a></div></section><section id="table"><div class="shead"><span class="dot" style="background:#2f6b5a"></span><h2>All 26 classes <span class="tag">read from the deck&rsquo;s own traffic lights</span></h2></div><div class="filters"><button class="gf on" data-f="all">All 26</button><button class="gf" data-f="pos">Mainly gram-positive (8)</button><button class="gf" data-f="neg">Mainly gram-negative (4)</button><button class="gf" data-f="both">Both equally (13)</button><button class="gf" data-f="anaer">Covers anaerobes</button></div><div class="tw"><table><thead><tr><th>Class &amp; drugs</th><th>Gram +</th><th>Gram &minus;</th><th>Anaerobes</th><th>Leans</th><th>What that means</th><th>Slide</th></tr></thead><tbody><tr data-lean="pos" data-an="y"><td class="nm"><b>Natural penicillins</b><span class="dr">penicillin G, penicillin V</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-part"><span>partial</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt">Good against gram-positive <b>cocci</b>, but <b>no staph coverage</b>. Drug of choice for syphilis, gas gangrene and meningococcus. No activity against aerobic gram-negatives.</td><td class="sl">17</td></tr>
+<tr data-lean="pos" data-an="y"><td class="nm"><b>Aminopenicillins</b><span class="dr">ampicillin, amoxicillin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-part"><span>partial</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt">As the natural penicillins, plus <b>some gram-negative aerobes</b>. Drug of choice for Enterococcus, Listeria and endocarditis prophylaxis. Still <b>no staph coverage</b>.</td><td class="sl">19</td></tr>
+<tr data-lean="pos" data-an="y"><td class="nm"><b>Aminopenicillin + beta-lactamase inhibitor</b><span class="dr">amoxicillin/clavulanate, ampicillin/sulbactam</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-part"><span>partial</span></td><td class="cv cv-yes"><span>covers</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt"><b>Adding the inhibitor buys anaerobes</b> (including Bacteroides) and <b>MSSA</b>. Drug of choice for skin and soft tissue, diabetic foot, and animal or human bites.</td><td class="sl">25</td></tr>
+<tr data-lean="pos" data-an="n"><td class="nm"><b>Penicillinase-resistant penicillins</b><span class="dr">nafcillin, oxacillin, dicloxacillin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt"><b>Designed solely to cover S. aureus (MSSA)</b>, with decreased activity against everything else. Not for MRSA &mdash; vancomycin is the choice there.</td><td class="sl">26</td></tr>
+<tr data-lean="both" data-an="y"><td class="nm"><b>Antipseudomonal penicillins</b><span class="dr">piperacillin, piperacillin/tazobactam</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Broad spectrum. <b>Keeps gram-positive coverage (MSSA only), adds gram-negative and antipseudomonal activity.</b> Drug of choice for polymicrobial, nosocomial and intra-abdominal infection.</td><td class="sl">27</td></tr>
+<tr data-lean="pos" data-an="n"><td class="nm"><b>Cephalosporins &mdash; 1st generation</b><span class="dr">cefazolin, cephalexin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-part"><span>partial</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt"><b>Great gram-positive activity</b> (but no Enterococcus). Some gram-negatives &mdash; E. coli, Proteus, Klebsiella. Surgical prophylaxis, cellulitis, urinary infection.</td><td class="sl">32</td></tr>
+<tr data-lean="both" data-an="y"><td class="nm"><b>Cephalosporins &mdash; 2nd generation</b><span class="dr">cefotetan, cefoxitin, cefuroxime, cefprozil</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-part"><span>partial</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt"><b>More gram-negative activity than first generation</b> &mdash; H. influenzae, Enterobacter, Neisseria, Proteus, E. coli, Klebsiella.</td><td class="sl">33</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Cephalosporins &mdash; 3rd generation</b><span class="dr">ceftriaxone, ceftazidime, cefotaxime, cefdinir, cefixime</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt"><b>Better gram-negative coverage than second generation, and loses more gram-positive.</b> Adds Serratia and Moraxella catarrhalis. Ceftriaxone needs no renal adjustment but is avoided in the first 30 days of life.</td><td class="sl">34</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Cephalosporins &mdash; 4th generation</b><span class="dr">cefepime</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt"><b>The exception to the trade-off: gram-negative activity WITHOUT sacrificing gram-positive.</b> Antipseudomonal. No MRSA, no Enterococcus.</td><td class="sl">36</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Cephalosporins &mdash; 5th generation</b><span class="dr">ceftaroline</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt"><b>The cephalosporin with MRSA coverage.</b> Gram-negative and gram-positive, no Enterococcus, no anaerobes.</td><td class="sl">37</td></tr>
+<tr data-lean="both" data-an="y"><td class="nm"><b>Cephalosporins &mdash; 5th generation</b><span class="dr">ceftolozane/tazobactam</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-part"><span>partial</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Antipseudomonal, with <b>some anaerobic activity including Bacteroides</b>. No MRSA, no Enterococcus.</td><td class="sl">38</td></tr>
+<tr data-lean="neg" data-an="n"><td class="nm"><b>Monobactam</b><span class="dr">aztreonam</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-neg">Mainly gram-negative</span></td><td class="nt"><b>Gram-negative ONLY.</b> Spectrum resembles the aminoglycosides, with activity against P. aeruginosa.</td><td class="sl">40</td></tr>
+<tr data-lean="both" data-an="y"><td class="nm"><b>Carbapenems</b><span class="dr">imipenem, meropenem, ertapenem</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt"><b>Very broad</b> &mdash; gram-positive (not MRSA), gram-negative, anaerobes, and P. aeruginosa <b>except ertapenem</b>.</td><td class="sl">43</td></tr>
+<tr data-lean="pos" data-an="n"><td class="nm"><b>Vancomycin</b><span class="dr">vancomycin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt"><b>Gram-positive ONLY.</b> Drug of choice for MRSA and for penicillin-allergic infections.</td><td class="sl">47</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Macrolides</b><span class="dr">azithromycin, clarithromycin, erythromycin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Gram-positive and gram-negative aerobes, and the <b>atypicals</b>. Does <b>not</b> cover enterococci.</td><td class="sl">55</td></tr>
+<tr data-lean="both" data-an="y"><td class="nm"><b>Tetracyclines</b><span class="dr">tetracycline, doxycycline, minocycline</span></td><td class="cv cv-mod"><span>moderate</span></td><td class="cv cv-mod"><span>moderate</span></td><td class="cv cv-mod"><span>moderate</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt"><b>Moderate across all three</b> rather than strong anywhere &mdash; the only class the deck marks that way. Watch the calcium and iron binding, and photosensitivity.</td><td class="sl">62</td></tr>
+<tr data-lean="both" data-an="y"><td class="nm"><b>Tigecycline</b><span class="dr">tigecycline</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Broad across all three. Bacteriostatic, for complicated skin infection.</td><td class="sl">65</td></tr>
+<tr data-lean="neg" data-an="n"><td class="nm"><b>Aminoglycosides</b><span class="dr">gentamicin, tobramycin, amikacin</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-neg">Mainly gram-negative</span></td><td class="nt"><b>Gram-negatives</b>, including Pseudomonas and Enterobacter. <b>No gram-positive coverage.</b> The trough is checked to confirm it is undetectable.</td><td class="sl">68</td></tr>
+<tr data-lean="pos" data-an="n"><td class="nm"><b>Oxazolidinone</b><span class="dr">linezolid</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt">For <b>vancomycin-resistant Enterococcus</b>. Gram-positive only.</td><td class="sl">72</td></tr>
+<tr data-lean="neg" data-an="n"><td class="nm"><b>Fluoroquinolones &mdash; 2nd generation</b><span class="dr">ciprofloxacin</span></td><td class="cv cv-part"><span>partial</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-neg">Mainly gram-negative</span></td><td class="nt"><b>Gram-negative and atypical</b> coverage, with variable Pseudomonas activity. Gram-positive cover is limited.</td><td class="sl">76</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Fluoroquinolones &mdash; 3rd generation</b><span class="dr">levofloxacin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Second-generation coverage <b>with improved gram-positive activity</b>, and it <b>keeps</b> Pseudomonas. Community-acquired pneumonia.</td><td class="sl">77</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Fluoroquinolones &mdash; 3rd generation</b><span class="dr">moxifloxacin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Second-generation coverage with improved gram-positive activity, but <b>loses</b> Pseudomonas. Community-acquired pneumonia.</td><td class="sl">78</td></tr>
+<tr data-lean="pos" data-an="y"><td class="nm"><b>Clindamycin</b><span class="dr">clindamycin</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-yes"><span>covers</span></td><td class="ln"><span class="lp lp-pos">Mainly gram-positive</span></td><td class="nt">Gram-positive aerobes <b>including MRSA</b>, and gram-positive anaerobes. It binds toxin, which is why it appears in toxic shock.</td><td class="sl">80</td></tr>
+<tr data-lean="both" data-an="n"><td class="nm"><b>Sulfamethoxazole and trimethoprim</b><span class="dr">sulfamethoxazole/trimethoprim</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-both">Both equally</span></td><td class="nt">Gram-positive aerobes <b>including MRSA</b>, and gram-negative aerobes. Does <b>not</b> cover enterococci.</td><td class="sl">83</td></tr>
+<tr data-lean="neither" data-an="y"><td class="nm"><b>Metronidazole</b><span class="dr">metronidazole</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-yes"><span>covers</span></td><td class="ln"><span class="lp lp-neither">Neither &mdash; anaerobes</span></td><td class="nt"><b>Anaerobes only</b> &mdash; gram-positive and gram-negative anaerobes. The alcohol interaction is its signature.</td><td class="sl">86</td></tr>
+<tr data-lean="neg" data-an="n"><td class="nm"><b>Polymyxins</b><span class="dr">polymyxin B, colistin (polymyxin E)</span></td><td class="cv cv-no"><span>no</span></td><td class="cv cv-yes"><span>covers</span></td><td class="cv cv-no"><span>no</span></td><td class="ln"><span class="lp lp-neg">Mainly gram-negative</span></td><td class="nt"><b>Gram-negative only.</b> A detergent-like mechanism against the lipopolysaccharide of the gram-negative outer membrane.</td><td class="sl">87</td></tr></tbody></table></div></section>
+
+  <footer>
+    Verdicts extracted by <code>tools/extract_pharm_gram_coverage.py</code> directly from the lecture deck, so a cell cannot drift from the slide it cites.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+</div>
+<script>
+  document.querySelectorAll('.gf').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.gf').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      var f = b.dataset.f;
+      document.querySelectorAll('tbody tr').forEach(function(tr){
+        var ok = f === 'all' ? true
+               : f === 'anaer' ? tr.dataset.an === 'y'
+               : tr.dataset.lean === f;
+        tr.style.display = ok ? '' : 'none';
+      });
+    });
+  });
+</script></body>
+</html>
