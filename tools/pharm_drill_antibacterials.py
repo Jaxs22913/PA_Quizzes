@@ -64,12 +64,16 @@ dict(q="Which class discolours the teeth and depresses skeletal growth?",
             ("Fluoroquinolones", "Affect tendons and peripheral nerves, not teeth."),
             ("Aminoglycosides", "Affect the kidney and the ear.")]),
 
-dict(q="Which antibiotic is the one classically named for Clostridium difficile and pseudomembranous colitis?",
+# Reported by a classmate 2026-09-03: "maybe can clarify if causes or treats".
+# The stem said "classically named for", which reads both ways -- and two of the
+# distractors TREAT C. difficile while the answer CAUSES it. Rewritten so that
+# distinction is the point of the question rather than a trap in it.
+dict(q="Which antibiotic is most classically blamed for CAUSING Clostridium difficile and pseudomembranous colitis?",
      ans="Clindamycin", src=("L1", 80),
-     why="Clostridium difficile and pseudomembranous colitis, plus rash, neutropenia and thrombocytopenia.",
-     wrong=[("Aztreonam", "Its listed side effect is diarrhoea, without this association."),
-            ("Linezolid", "Named for serotonin syndrome."),
-            ("Vancomycin", "Named for its infusion reaction — and oral vancomycin treats C. difficile.")]),
+     why="It causes them. Clostridium difficile and pseudomembranous colitis are its signature adverse effects, alongside rash, neutropenia and thrombocytopenia.",
+     wrong=[("Vancomycin", "The other way round — oral vancomycin TREATS Clostridium difficile."),
+            ("Metronidazole", "The other way round — it is the drug of choice FOR Clostridium difficile."),
+            ("Aztreonam", "Causes diarrhoea, but carries no such association.")]),
 
 dict(q="Which class prolongs the QT interval and risks Torsades de pointes, worse with class Ia and III antiarrhythmics?",
      ans="Macrolides", src=("L1", 57),
