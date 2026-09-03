@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Wood&rsquo;s Exam Review Session &mdash; Pharmacology I Exam 1 (Class of 2028)</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --navy:#6b3524;--indigo:#9c5230;--gold:#c9a227;--ice:#fbf1e6;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo);font-weight:800}
+  h1{margin:6px 0 8px;font-size:31px;line-height:1.15;color:var(--ink);letter-spacing:-.015em}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;margin-top:6px}
+  .legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+  .note{margin-top:14px;background:var(--ice);border:1px solid rgba(107,53,36,.18);
+    border-radius:11px;padding:13px 15px;font-size:14.5px}
+  .note.warn{background:#fff6f5;border-color:rgba(179,38,30,.22)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .toc a{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .toc a:hover{background:var(--ice)}
+  section{margin:0 0 26px}
+  .shead{display:flex;align-items:center;gap:9px;margin:0 0 9px}
+  .shead .dot{width:11px;height:11px;border-radius:50%;background:var(--indigo)}
+  h2{margin:0;font-size:19.5px;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:12px;font-weight:600;color:var(--muted);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+  thead th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;
+    padding:10px 13px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .dn-h{width:20%}.p-h{width:12%}.sl-h{width:9%}
+  .dn{font-weight:800;color:var(--ink)}
+  .ct u{text-underline-offset:3px;text-decoration-thickness:2px}
+  .sl{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .g{color:var(--muted);font-weight:500;font-size:12.5px}
+  .pill{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  tr.t-abs td,tr.t-bbw td{background:#fff6f5}
+  tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
+  footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
+  @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
+
+  .asked{margin:0 0 10px;font-size:.88rem;color:var(--c-mute);font-style:italic;}
+  blockquote.wq{margin:0 0 12px;padding:10px 14px;border-left:3px solid var(--gold);
+    background:var(--c-ice);border-radius:0 8px 8px 0;}
+  blockquote.wq p{margin:0;font-size:.95rem;}
+  blockquote.wq footer{margin-top:6px;font-size:.72rem;color:var(--c-mute);}
+  blockquote.wq .ts{font-variant-numeric:tabular-nums;}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 1 &middot; Class of 2028</div>
+    <h1>Dr. Wood&rsquo;s Exam Review Session</h1>
+    <p class="sub">Held the evening before the paper, 3 September 2026. 7 standing scope rules and 6 answered questions, each with the timestamp it came from. This is the only place he says what is and is not being asked.</p>
+    <div class="legend"><span>Every quote is <b>verbatim from the review recording</b>, with its timestamp. Nothing here is inferred from the slides &mdash; the slides do not say what is being asked, and a review session does.</span></div>
+    <div class="note"><b>What this page is.</b> On the evening before the paper the class
+    put questions to Dr. Wood and he answered them. This is what he said, organised into the
+    standing scope rules first and then the individual answers. It is a companion to
+    <a href="pharm-exam-1-what-to-star.html">What Dr. Wood Told You to Star</a>, which is drawn
+    from the three content lectures instead.</div>
+    <div class="note warn"><b>On the quotes.</b> Drug names are repaired where the automatic
+    transcript mis-hears them &mdash; it renders &ldquo;physostigmine&rdquo; as <i>Pfizer
+    stigmine</i>, &ldquo;aminopenicillins&rdquo; as <i>immunopenicillins</i> and
+    &ldquo;PANCE&rdquo; as <i>pants</i>. The wording, order and meaning are his. Every quote is
+    checked against the transcript by <code>tools/check_pharm_review.py</code> before this page
+    is written, with those corrections applied to the transcript rather than to the quote, so
+    the check cannot be fooled by the cleanup.</div>
+  </header>
+
+  <div class="toc"><a href="#scope">What he narrowed</a><a href="#indications">Do not get hung up on indications &mdash; know the bugs instead</a><a href="#derm-exception">Dermatology is the exception: there, indications ARE fair game</a><a href="#gram-coverage">Group gram-positive and gram-negative coverage BY CLASS, not by drug</a><a href="#question-shape">The shape of the coverage question he WILL ask</a><a href="#no-tricks">He does not write trick questions, and he explained how he knows</a><a href="#mechanism-depth">General mechanism is enough &mdash; except where you need synergy</a><a href="#brand-generic">Learn the generics &mdash; the board exam gives you nothing else</a><a href="#acne-ladder">The acne ladder, in his own order</a><a href="#glaucoma-cholinergics">Why the cholinergic agents are not first choice in glaucoma</a><a href="#adverse-framework">The three buckets he sorts every adverse effect into</a><a href="#succinylcholine">Succinylcholine: flaccid paralysis is PHASE TWO</a><a href="#anticholinesterases">Why physostigmine, neostigmine and pyridostigmine are not interchangeable</a><a href="#antifungal-mechanisms">Polyenes, azoles and allylamines: the difference in one line each</a></div>
+
+<section id="scope"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>What he narrowed <span class="tag">read this first</span></h2></div><div class="note warn"><b>The single most useful thing he said is a scope cut.</b> Asked to go over the treatment of every condition mentioned under the antibiotics, he said that is not where the course is yet. The pneumonia and syphilis examples were <b>context</b>. What survives off that axis is <b>which bugs an agent covers</b> &mdash; and he named <b>MRSA, Pseudomonas and Clostridioides difficile</b> as the notable ones &mdash; plus whether it covers <b>anaerobes</b> or <b>atypicals</b>.<br><br><b>Dermatology is the exception</b>: there he does expect the antibiotic choice, and specifically <b>topical against oral</b>.</div><div class="note"><b>This does not contradict Dr. McInnis.</b> On 28 August she said mechanism was over-weighted and that indications, patient education, side effects and contraindications should carry more. Dr. Wood is narrowing <i>one</i> axis for <i>this</i> paper &mdash; the infectious-disease indications that have not been taught yet. Side effects, patient education and contraindications are untouched by the cut, and his adverse-effect framework below is the clearest steer on this page.</div></section>
+<section id="indications"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>Do not get hung up on indications &mdash; know the bugs instead</h2></div><blockquote class="wq"><p>&ldquo;I would not get so hung up on indications other than generally like what kind of bugs is it treating or if there's notable bugs that it treats&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">0:53</span></footer></blockquote><p>Asked to go over the treatment of the conditions named under each antibiotic, he said that is <b>not where the course is yet</b>. The pneumonia and syphilis examples in the lectures were <b>context</b>, not content &mdash; he is not asking for the treatment of choice for syphilis, and he is not expecting aminoglycosides for pneumonia until the pulmonology block later in the year.</p><p>What he does want off that axis: <b>the notable organisms</b> &mdash; he named <b>MRSA, Pseudomonas and Clostridioides difficile</b> &mdash; and the <b>broad strokes</b>, meaning does the agent cover anaerobes, does it cover atypicals.</p></section>
+<section id="derm-exception"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>Dermatology is the exception: there, indications ARE fair game</h2></div><blockquote class="wq"><p>&ldquo;if we were doing a derm question about acne, for example, there you would want to know what kind of antibiotics you'd want to use and when&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">1:20</span></footer></blockquote><p>He drew the line himself. The general antibiotic indications are out; the <b>dermatology ones are in</b>, because that material has been taught. The specific distinction he named is <b>topical against oral</b> &mdash; knowing which you reach for, and when.</p></section>
+<section id="gram-coverage"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>Group gram-positive and gram-negative coverage BY CLASS, not by drug</h2></div><blockquote class="wq"><p>&ldquo;No, it'll be more, again, the broad strokes here&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">3:40</span></footer></blockquote><p>Asked how much gram-positive and gram-negative detail is needed, he said to <b>group by class</b>. The two comparisons he gave as the right level:</p><ul><li><b>Cephalosporin generations.</b> Gram-positive coverage <b>diminishes</b> as you go up the generations; gram-negative coverage <b>improves</b>.</li><li><b>Beta-lactamase inhibitors.</b> Adding one <b>opens up anaerobic coverage</b> for the aminopenicillins, which they do not have alone.</li></ul></section>
+<section id="question-shape"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>The shape of the coverage question he WILL ask</h2></div><blockquote class="wq"><p>&ldquo;a patient has an infection, a skin infection. Do you think it's a gram-positive bacteria? Which one of these would be most likely to treat it?&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">4:20</span></footer></blockquote><p>He described the item outright, including how the distractors are built: <b>three agents with strictly gram-negative coverage and one good gram-positive agent</b>, and you identify it. That is the level of discrimination being asked for &mdash; not which single drug treats one named organism.</p></section>
+<section id="no-tricks"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>He does not write trick questions, and he explained how he knows</h2></div><blockquote class="wq"><p>&ldquo;I'm never trying to trick you. It's just read the questions, see what I'm looking for and either know it or you don't&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">5:35</span></footer></blockquote><p>He explained the statistic he checks after a paper &mdash; the <b>point-biserial</b>, which asks whether the people who did well overall got a given question right and the people who did poorly got it wrong. A high value means the item is measuring knowledge rather than puzzle-solving, and he said his run well. <b>Read the stem for what it is asking; there is no second layer.</b></p></section>
+<section id="mechanism-depth"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>General mechanism is enough &mdash; except where you need synergy</h2></div><blockquote class="wq"><p>&ldquo;As long as you know that it inhibits ergosterol synthesis and inhibits the ability for that cell wall or cell membrane to function and causes the cell to die, then that's good enough for my purposes&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">9:42</span></footer></blockquote><p>He does <b>not</b> want the exact binding target of each antifungal class. What he would rather you could do is <b>tell an antifungal from an antiviral from an antibiotic</b>, so you know what you are treating.</p><p><b>The one place mechanism detail does matter is synergy.</b> When two drugs are used for the same problem you need to know their mechanisms differ, because <b>complementary mechanisms</b> are the point of combining them.</p></section>
+<section id="brand-generic"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>Learn the generics &mdash; the board exam gives you nothing else</h2></div><blockquote class="wq"><p>&ldquo;on the PANCE, you will only get the generic&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">10:57</span></footer></blockquote><p>He gives both names wherever he can, deliberately, because in practice people say <i>Lasix</i> rather than furosemide and <i>Rocephin</i> rather than ceftriaxone, and he wants the association built early. But the board exam is generic-only, <b>so the generic is the one you must have</b>.</p></section>
+<section id="acne-ladder"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>The acne ladder, in his own order</h2></div><p class="asked"><b>Asked:</b> &ldquo;Can we go over the acne treatments in order for the different levels of acne?&rdquo;</p><blockquote class="wq"><p>&ldquo;start easy, start simple stuff first and then kind of work your way up to the big guns&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">11:55</span></footer></blockquote><p><b>Before anything: ask what the patient has already tried</b>, and what did and did not work. He was blunt about why &mdash; prescribe something they have already failed and they will conclude you were not listening.</p><ol><li><b>Benzoyl peroxide.</b> The right first move, though most patients have tried it already.</li><li><b>Topical retinoids</b> &mdash; tretinoin &mdash; and <b>azelaic acid</b>.</li><li><b>Topical antibiotics</b> &mdash; minocycline, clindamycin or erythromycin.</li><li><b>Systemic antibiotics</b> &mdash; doxycycline or minocycline. The trigger is the disease outgrowing topical therapy: a <b>larger area</b> where applying a topical is no longer practical, or disease that is more <b>severe or inflammatory</b>.</li><li><b>Isotretinoin</b> &mdash; the most effective and the <b>last line</b>. He called it the nuclear option.</li></ol><p><b>Maximise the dose before you add or switch.</b> If a product is partly working, go up in strength first.</p><p><b>Why going systemic costs you something.</b> A topical works only where you put it, so the side effects stay local. Systemic antibiotics bring <b>gastrointestinal upset</b>, <b>photosensitivity</b> with the tetracyclines, and <b>food and drug interactions</b> &mdash; his example is a patient on a <b>prenatal vitamin</b> whose <b>calcium and iron bind up the doxycycline</b>.</p><p><b>Isotretinoin's price:</b> heavy drying and <b>desquamation</b>, <b>photosensitivity</b>, light toxicity in the <b>eyes</b>, and <b>worsening depression with possible suicidal ideation</b>.</p><p><b>Also available:</b> <b>intralesional steroids</b> for large inflammatory pustules, though he called that a specialty use.</p><p><b>And the contrast worth remembering:</b> with an acute infection you do not hesitate &mdash; you go straight to what treats it. With a chronic condition like acne, <i>&ldquo;it's a marathon, it's not a race&rdquo;</i>, and you can work up the ladder finding what suits the patient.</p></section>
+<section id="glaucoma-cholinergics"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>Why the cholinergic agents are not first choice in glaucoma</h2></div><p class="asked"><b>Asked:</b> &ldquo;Would pilocarpine be preferable to carbachol because carbachol has more adverse effects?&rdquo;</p><blockquote class="wq"><p>&ldquo;the cholinergic agents are not really preferred for management of glaucoma&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">15:30</span></footer></blockquote><p>He said he does not think either is clinically worse than the other, whatever the slide lists. <b>The real answer is that the whole class is not preferred</b> in glaucoma until you reach a third or fourth line agent.</p><p><b>Why:</b> they cause <b>miosis</b> and impair the ability to re-accommodate the lens, so the patient gets poor vision and an induced short-sightedness, plus headaches from straining to see. He singled out <b>younger patients with full vision</b> as the worst fit. First-line is a <b>prostaglandin or a beta blocker</b> instead.</p></section>
+<section id="adverse-framework"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>The three buckets he sorts every adverse effect into</h2></div><blockquote class="wq"><p>&ldquo;I typically break them up into three categories. There's the killers, the commons and the zebras&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">17:20</span></footer></blockquote><p>Asked which adverse effects to focus on, he gave a framework rather than a list. <b>Sort every side effect you have learned into one of these three, and you will know what he is asking for.</b></p><ul><li><b>Killers</b> &mdash; dangerous, and they require <b>immediate discontinuation and evaluation</b>. His examples: <b>anaphylaxis</b>; <b>Stevens-Johnson syndrome</b> with agents such as <b>sulfamethoxazole and trimethoprim</b>; <b>suicidal ideation with isotretinoin</b>. These are not necessarily the commonest &mdash; they are the ones the patient must be <b>warned about in advance</b>, so that they do not assume skin sloughing off is a normal side effect.</li><li><b>Commons</b> &mdash; what actually happens often. His example: <b>gastrointestinal upset with antibiotics</b>. Almost every antibiotic causes nausea, vomiting or diarrhoea in somebody. The patient is told these are expected; they may or may not warrant a change of therapy.</li><li><b>Zebras</b> &mdash; the rare ones.</li></ul></section>
+<section id="succinylcholine"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>Succinylcholine: flaccid paralysis is PHASE TWO</h2></div><p class="asked"><b>Asked:</b> &ldquo;Does flaccid paralysis happen in phase one or phase two of the depolarizing agents?&rdquo;</p><blockquote class="wq"><p>&ldquo;So that would be in phase two&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">2:34</span></footer></blockquote><p>Succinylcholine is <b>two acetylcholine molecules joined together</b>. In <b>phase one</b> it activates the nicotinic receptor at the neuromuscular end plate and depolarises it &mdash; which is what produces the <b>fasciculations</b>, and what makes it a <i>depolarizing</i> agent. It then keeps sitting on the receptor until the receptor <b>desensitises</b> from being over-activated, and that is <b>phase two</b>, when the <b>flaccid paralysis</b> appears.</p><p><b>His mnemonic, back from the autonomic lecture:</b> the days of the week &mdash; <b>F</b>riday for <b>f</b>asciculations first, then <b>W</b>ednesday for <b>w</b>eakness. Fasciculations come first because they are phase one; the weakness, and then the paralysis, is phase two.</p></section>
+<section id="anticholinesterases"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>Why physostigmine, neostigmine and pyridostigmine are not interchangeable</h2></div><p class="asked"><b>Asked:</b> &ldquo;If they all inhibit acetylcholinesterase, why can't they be used interchangeably?&rdquo;</p><blockquote class="wq"><p>&ldquo;I need something that's able to get across the blood brain barrier and actually be able to treat the CNS effects there&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">6:10</span></footer></blockquote><p><b>The real axis is whether the drug crosses into the brain.</b></p><ul><li><b>Physostigmine</b> crosses the blood&ndash;brain barrier, so it is the one for <b>anticholinergic overdose</b> where the problem is central toxicity. He tied this to the anticholinergic toxidrome and the <b>Mad Hatter</b> mnemonic: mild sedation, then anxiety, hallucinations and agitation, with <b>seizures as the end point</b> of central toxicity.</li><li><b>Neostigmine</b> and <b>pyridostigmine</b> cross less easily and act <b>peripherally</b>, on neuromuscular function.</li></ul><p><b>Neostigmine in surgery</b> is his worked example. Rocuronium and vecuronium are <b>non-depolarizing</b> blockers &mdash; they sit on the nicotinic receptor and keep acetylcholine off it, which paralyses the patient. Neostigmine blocks acetylcholinesterase, acetylcholine builds up, <b>outcompetes</b> the blocker and knocks it off the receptor, and neuromuscular function returns so the patient breathes for themselves.</p><p><b>And an honest caveat he added:</b> some of the choice is not pharmacology at all. A myasthenia clinic may simply prefer pyridostigmine. He called it <b>clinical inertia</b> &mdash; <i>&ldquo;this was how I was trained&rdquo;</i> &mdash; and said there is often no concrete reason.</p></section>
+<section id="antifungal-mechanisms"><div class="shead"><span class="dot" style="background:#5566b5"></span><h2>Polyenes, azoles and allylamines: the difference in one line each</h2></div><p class="asked"><b>Asked:</b> &ldquo;What is the difference in mechanism between the polyenes, azoles and allylamines?&rdquo;</p><blockquote class="wq"><p>&ldquo;With the polyenes, for example, those are more so like kind of poking holes in the actual membrane itself to cause like leakage of contents&rdquo;</p><footer>Dr. Wood &middot; Exam review session, 3 September &middot; <span class="ts">8:40</span></footer></blockquote><ul><li><b>Polyenes</b> &mdash; punch holes in the membrane itself, so the cell's contents leak out.</li><li><b>Azoles</b> &mdash; block the fungal enzyme that makes ergosterol. His own memory hook: <b>azoles cause a great many CYP3A4 interactions</b>, so remember that azoles block a CYP enzyme &mdash; in the fungus, that is the one making ergosterol.</li><li><b>Allylamines</b> &mdash; also reduce ergosterol synthesis, at a different step.</li></ul><p><b>He said the shared endpoint is enough:</b> ergosterol synthesis is inhibited, the membrane stops working, the cell dies.</p></section>
+
+  <footer>
+    Every quote is verified verbatim against the review recording by <code>tools/check_pharm_review.py</code> before this page is written. The recording stays on the course owner's machine and is never copied into this repo.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+</div>
+</body>
+</html>
