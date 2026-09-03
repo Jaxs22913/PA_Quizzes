@@ -385,9 +385,14 @@ def main():
     body_rows, n_pics, n_ext = [], 0, 0
     for row in ROWS:
         name, grp, give, pres, test, tx, urg, edu, slide = row[:9]
-        urg_cls = ("emerg" if "EMERGENT" in urg else
-                   "sameday" if "SAME DAY" in urg else
-                   "urg" if urg.startswith("Urgent") or "URGENT" in urg else "rout")
+        # CASE-INSENSITIVE. The uppercase-only test this replaces sent every
+        # Lecture 13 and 14 row -- which write "Emergent" and "Same day" in
+        # title case -- to the "rout" default, colouring twenty-one
+        # emergencies in the routine green.
+        _u = urg.upper()
+        urg_cls = ("emerg" if "EMERGENT" in _u else
+                   "sameday" if "SAME DAY" in _u else
+                   "urg" if "URGENT" in _u else "rout")
         pic = IMGS.get(name)
         if pic:
             fn, sl = pic
