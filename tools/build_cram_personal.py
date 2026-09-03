@@ -102,7 +102,10 @@ def parse_cram(path):
     for m in SECTION.finditer(src):
         sid, style, body = m.group(1), m.group(2), m.group(3)
         h2 = SHEAD.search(body)
-        title = re.sub(r'<[^>]+>', '', h2.group(1)).strip() if h2 else sid
+        # Entities decoded here, NOT left encoded: my-cram-sheet.html escapes the
+        # title before inserting it, so a stored "&amp;" came out on screen as
+        # literal "&amp;". Store plain text and let the page do the escaping.
+        title = html.unescape(re.sub(r'<[^>]+>', '', h2.group(1))).strip() if h2 else sid
         first = len(rows)
         for r in ROW.finditer(body):
             rows.append({"t": r.group(1).strip(), "d": r.group(2).strip(), "s": len(sections)})

@@ -85,6 +85,22 @@
   tbody tr:nth-child(even){background:var(--acc-zebra,#fafbfd)}
   td.hits{text-align:right;white-space:nowrap;color:var(--muted);font-size:12.5px;font-weight:700}
   td.hits b{color:var(--primary);font-size:14px}
+  /* Dismiss. Its own narrow column rather than sharing the Missed cell -- the
+     count already ends in a multiplication sign, and two crosses side by side
+     read as one control. */
+  th.rm{width:34px}
+  td.rm{text-align:right;padding-left:0}
+  .rmbtn{border:1px solid var(--line);background:#fff;color:var(--muted);
+    width:22px;height:22px;line-height:1;border-radius:6px;cursor:pointer;
+    font:700 13px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    padding:0;transition:border-color .15s,color .15s,background .15s}
+  .rmbtn:hover{border-color:var(--primary);color:var(--primary);background:#fff}
+  .rmbtn:focus-visible{outline:2px solid var(--primary);outline-offset:1px}
+  tr.going{opacity:0;transition:opacity 160ms ease}
+  @media (prefers-reduced-motion: reduce){ tr.going{transition:none} }
+  .restore{background:none;border:0;padding:0;color:var(--primary);cursor:pointer;
+    font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    text-decoration:underline}
 
   .empty{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 26px;
     text-align:center;box-shadow:var(--shadow);margin-top:22px}
@@ -99,7 +115,7 @@
     @page{size:landscape;margin:12mm}
     body{background:#fff;font-size:10.5px}
     .wrap{padding:0;max-width:none}
-    .back,.picker,.toolbar,footer,.note{display:none}
+    .back,.picker,.toolbar,footer,.note,th.rm,td.rm{display:none}
     .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb}
     table{min-width:0}
     section.topic{break-inside:avoid}
@@ -137,8 +153,33 @@
   "use strict";
 
   var PREFIX = "qm:";
+  var HIDE = "cramHide:";
   var $ = function (id) { return document.getElementById(id); };
   var current = null;
+
+  /* Rows you have dismissed, per exam.
+     KEYED BY THE TERM TEXT, NOT THE ROW INDEX. tools/build_cram_personal.py
+     regenerates the row array whenever a cram sheet changes, so an index would
+     silently start pointing at a different row; the term survives that.
+     Written through localStorage, so cloud-sync.js picks it up for free. */
+  function hiddenKey(rowHtml) {
+    var t = String(rowHtml).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
+    var h = 2166136261;
+    for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = (h * 16777619) >>> 0; }
+    return h.toString(36);
+  }
+  function hiddenSet(key) {
+    try { return new Set(JSON.parse(localStorage.getItem(HIDE + key) || "[]")); }
+    catch (e) { return new Set(); }
+  }
+  function saveHidden(key, set) {
+    try {
+      // Array.from, NOT Array.prototype.slice.call -- a Set is not array-like,
+      // so slice returns [] and every dismissal was silently saved as nothing.
+      if (set.size) localStorage.setItem(HIDE + key, JSON.stringify(Array.from(set)));
+      else localStorage.removeItem(HIDE + key);
+    } catch (e) { /* quota or private mode -- dismissing just will not persist */ }
+  }
 
   /* ---------- the same records review.html reads ---------- */
   function loadRecords() {
@@ -211,14 +252,27 @@
 
   function render(key, entry, data) {
     var hits = entry.hits;
-    var idx = Object.keys(hits).map(Number).sort(function (a, b) { return a - b; });
-    if (!idx.length) {
+    var hidden = hiddenSet(key);
+    var all = Object.keys(hits).map(Number).sort(function (a, b) { return a - b; });
+    var idx = all.filter(function (i) { return !hidden.has(hiddenKey(data.rows[i].t)); });
+    var nHidden = all.length - idx.length;
+
+    if (!all.length) {
       $("sheet").innerHTML = '<div class="empty"><h3>Nothing to show for this exam yet</h3>' +
         '<p>Your misses here could not be tied to a Cram Sheet row. Drill them in ' +
         '<a href="review.html">Review</a> instead.</p></div>';
       $("toolbar").hidden = true;
       return;
     }
+    if (!idx.length) {
+      $("sheet").innerHTML = '<div class="empty"><h3>You have cleared this sheet</h3>' +
+        '<p>All ' + nHidden + ' rows are hidden. ' +
+        '<button class="restore" id="restore-all">Bring them back</button></p></div>';
+      $("toolbar").hidden = true;
+      wireRestore(key, entry, data);
+      return;
+    }
+
     // Group the hit rows back under their own sections, in sheet order, so it
     // still reads like the Cram Sheet rather than a ranked list of fragments.
     var bySection = {};
@@ -231,23 +285,58 @@
       .forEach(function (si) {
         var sec = data.sections[si] || { title: "Other", style: "" };
         var list = bySection[si];
-        out += '<section class="topic" style="' + esc(sec.style) + '">' +
+        out += '<section class="topic" data-sec="' + si + '" style="' + esc(sec.style) + '">' +
           '<div class="shead"><span class="dot"></span><h2>' + esc(sec.title) + '</h2>' +
           '<span class="cnt">' + list.length + (list.length === 1 ? " row" : " rows") + '</span></div>' +
           '<div class="scroll"><table><thead><tr><th class="term">Term</th>' +
-          '<th>What you need to know</th><th class="hits">Missed</th></tr></thead><tbody>';
+          '<th>What you need to know</th><th class="hits">Missed</th><th class="rm"></th>' +
+          '</tr></thead><tbody>';
         list.forEach(function (i) {
           var r = data.rows[i];
-          out += '<tr><td class="h">' + r.t + '</td><td>' + r.d +
-            '</td><td class="hits"><b>' + hits[i] + '</b>&times;</td></tr>';
+          out += '<tr data-row="' + i + '"><td class="h">' + r.t + '</td><td>' + r.d +
+            '</td><td class="hits"><b>' + hits[i] + '</b>&times;</td>' +
+            '<td class="rm"><button class="rmbtn" type="button" data-row="' + i +
+            '" title="Remove this row" aria-label="Remove this row">&#10005;</button></td></tr>';
         });
         out += "</tbody></table></div></section>";
       });
     $("sheet").innerHTML = out;
     $("toolbar").hidden = false;
-    $("summary").textContent = idx.length + " rows, from " + entry.misses +
+
+    var msg = idx.length + " rows, from " + entry.misses +
       " missed question" + (entry.misses === 1 ? "" : "s") +
       " across " + entry.quizzes + " quiz" + (entry.quizzes === 1 ? "" : "zes") + ".";
+    $("summary").innerHTML = esc(msg) + (nHidden
+      ? ' <span class="hid">' + nHidden + " hidden &middot; " +
+        '<button class="restore" id="restore-all">bring them back</button></span>' : "");
+    wireRestore(key, entry, data);
+
+    Array.prototype.forEach.call($("sheet").querySelectorAll(".rmbtn"), function (b) {
+      b.onclick = function () { dismiss(key, entry, data, Number(b.getAttribute("data-row"))); };
+    });
+  }
+
+  function wireRestore(key, entry, data) {
+    var r = document.getElementById("restore-all");
+    if (!r) return;
+    r.onclick = function () {
+      saveHidden(key, new Set());
+      render(key, entry, data);
+    };
+  }
+
+  /* Hiding a row is NOT the same as clearing the miss behind it -- Review owns
+     that. This only says "I know this one, stop showing it to me", so the
+     underlying qm: record is left alone and the row comes back if you restore. */
+  function dismiss(key, entry, data, rowIndex) {
+    var set = hiddenSet(key);
+    set.add(hiddenKey(data.rows[rowIndex].t));
+    saveHidden(key, set);
+
+    var tr = $("sheet").querySelector('tr[data-row="' + rowIndex + '"]');
+    if (!tr) { render(key, entry, data); return; }
+    tr.classList.add("going");
+    setTimeout(function () { render(key, entry, data); }, 170);
   }
 
   function select(key, by) {
