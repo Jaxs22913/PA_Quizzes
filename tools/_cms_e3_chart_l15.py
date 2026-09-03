@@ -44,10 +44,10 @@ ROWS_L15 = [
  ("Acute otitis media", OM,
   "<b>Bulging, erythematous</b> drum &middot; otalgia and fever after a cold &middot; child around <b>2 years</b>",
   "Rapid-onset middle ear inflammation, most often <b>following an upper respiratory illness</b>. Commonest in children, <b>peak incidence around age 2</b>; adults are only <b>3&ndash;15%</b> of diagnoses. <b>Otalgia, fever, hearing loss.</b> Suppurative form discharges into the canal through a perforation. <b>Recurrent</b> means 3 or more episodes in 6 months, or more than 4 in 12 months, with complete resolution between.",
-  "<b>Diagnosed clinically.</b> Otoscopy: <b>erythematous and/or bulging</b> drum, purulent effusion often visible, <b>decreased mobility on pneumatic otoscopy</b>, sometimes palpable cervical nodes. Tympanometry optional. Organisms: <b>S. pneumoniae, H. influenzae, M. catarrhalis</b>.",
+  "<b>Diagnosed clinically.</b> Otoscopy: <b>erythematous and/or bulging</b> drum, purulent effusion often visible, <b>decreased mobility on pneumatic otoscopy</b>, sometimes palpable cervical nodes. Tympanometry optional. <b>Far and away the commonest cause is VIRAL</b> &mdash; the slide lists only bacteria. The three bacterial organisms are <b>S. pneumoniae, H. influenzae and M. catarrhalis</b>. That sequence used to run in order of prevalence; <b>M. catarrhalis has now overtaken H. influenzae because of vaccination</b>, so <b>ask the immunisation status &mdash; an unimmunised child puts H. influenzae back on the list</b>.",
   "<b>Most episodes resolve spontaneously.</b> Antibiotics for bacterial involvement &mdash; <b>amoxicillin</b>. Analgesics and antipyretics for the pain and fever. <b>Tympanostomy tubes</b> for refractory or recurrent episodes, or when complications are present (ENT).",
   "Routine",
-  "Explain that most cases settle on their own, so a wait-and-see period is not neglect. Return if pain worsens or discharge appears.",
+  "Explain that most cases settle on their own, so a wait-and-see period is not neglect &mdash; <b>most of these are viral</b>. Return if pain worsens or discharge appears.",
   "12&ndash;19", D15),
 
  ("Otitis media with effusion", OM,
