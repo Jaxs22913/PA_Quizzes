@@ -209,6 +209,28 @@ BODY_ADD = '''
     <tr><td><strong>Alpha-two</strong></td><td><strong>Presynaptic</strong> nerve endings</td></tr>
     <tr><td><strong>Beta</strong></td><td>Cardiac (beta-one), airway and vessels (beta-two)</td><td>Beta potency: <strong>isoproterenol &gt; epinephrine &gt; norepinephrine</strong></td></tr>
   </table>
+  <h4 class="subsub">What each receptor actually does</h4>
+  <p>The table above says <em>where</em> each receptor is. This one says <em>what happens</em> when
+  a drug hits it &mdash; which is what turns most of this chapter from a list into arithmetic.</p>
+  <table>
+    <tr><th>Receptor</th><th>Stimulating it</th><th>Blocking it</th></tr>
+    <tr><td><strong>M2</strong> (heart)</td><td><strong>Slows the rate</strong> and slows conduction through the atrioventricular node</td><td>Heart <strong>speeds up</strong> &mdash; this is atropine</td></tr>
+    <tr><td><strong>M3</strong> (glands, smooth muscle, eye)</td><td>Secretions &mdash; saliva, tears, sweat; <strong>bronchoconstriction</strong>; bladder detrusor contracts, so voiding; <strong>miosis</strong></td><td><strong>Dry</strong> mouth and eyes, <strong>bronchodilation</strong>, urinary <strong>retention</strong>, <strong>mydriasis</strong> with blurred near vision</td></tr>
+    <tr><td><strong>Nicotinic</strong> (ganglia, neuromuscular junction)</td><td>Ganglionic transmission; <strong>skeletal muscle contraction</strong>; adrenal catecholamine release</td><td><strong>Paralysis</strong> at the junction &mdash; the neuromuscular blockers</td></tr>
+    <tr><td><strong>Alpha-1</strong> (vessels, bladder neck, pupil dilator)</td><td><strong>Vasoconstriction</strong>, so blood pressure rises; bladder neck and prostate contract; <strong>mydriasis</strong></td><td>Vasodilation &rarr; <strong>orthostatic hypotension</strong> and <strong>nasal congestion</strong>; easier flow in benign prostatic hyperplasia</td></tr>
+    <tr><td><strong>Alpha-2</strong> (presynaptic)</td><td>Negative feedback &mdash; <strong>less noradrenaline released</strong>. Centrally this lowers sympathetic outflow, so blood pressure <strong>falls</strong></td><td>More released</td></tr>
+    <tr><td><strong>Beta-1</strong> (heart, kidney)</td><td><strong>Faster</strong> rate, <strong>harder</strong> contraction, quicker atrioventricular conduction; <strong>renin</strong> release</td><td>Slower, weaker heart; less renin</td></tr>
+    <tr><td><strong>Beta-2</strong> (airway, skeletal-muscle vessels, liver)</td><td><strong>Bronchodilation</strong>, vasodilation, <strong>tremor</strong>, glycogenolysis</td><td><strong>Bronchospasm</strong>; blunted warning signs of hypoglycaemia</td></tr>
+  </table>
+  <div class="pearl"><strong>Read it forwards and the drug facts fall out.</strong>
+  Phenylephrine is alpha-1 &rarr; vessels constrict &rarr; pressure rises &rarr; the baroreceptors
+  answer with <strong>reflex bradycardia</strong>. Albuterol is beta-2 &rarr; airway opens, and the
+  same receptor in skeletal muscle gives the <strong>tremor</strong> patients complain about.
+  Propranolol blocks beta-2 as well as beta-1 &rarr; <strong>bronchospasm</strong> in the asthmatic
+  and <strong>fasting hypoglycaemia</strong> with the warning signs blunted. Oxybutynin blocks M3
+  &rarr; the bladder stops squeezing, and the dry mouth comes free with it. None of those four are
+  separate things to learn.</div>
+
   <div class="pearl"><strong>Transmitter fate is where several drug classes act.</strong>
   Acetylcholine runs <strong>six steps</strong> &mdash; synthesis, storage, release, receptor binding,
   <strong>degradation by acetylcholinesterase</strong>, recycling of choline. Catecholamines are
@@ -225,6 +247,25 @@ BODY_ADD = '''
   <strong>small pupils and a slow heart</strong>; nicotinic and anticholinergic both give
   <strong>large pupils and a fast heart</strong>. Wet versus dry then separates the last two:
   muscarinic is wet, anticholinergic is bone dry.</div>
+
+  <h4 class="subsub">When the dose changes the answer</h4>
+  <p>The two pictures above assume a drug does one thing. Four of the agents in this lecture do
+  <strong>different things at different doses</strong>, and they are usually met as four unrelated
+  oddities. They are one idea: a drug hits its <strong>highest-affinity</strong> receptor first,
+  and as the concentration climbs it recruits a second action that may <strong>oppose</strong> the
+  first.</p>
+  <table>
+    <tr><th>Agent</th><th>Lower dose</th><th>Higher dose</th></tr>
+    <tr><td><strong>Dopamine</strong></td><td>Beta-1 &mdash; <strong>inotrope and chronotrope</strong></td><td>Alpha-1 <strong>vasoconstriction, only at VERY high doses</strong></td></tr>
+    <tr><td><strong>Epinephrine</strong></td><td><strong>Beta</strong> effects dominate</td><td><strong>Alpha</strong> effects take over</td></tr>
+    <tr><td><strong>Atropine</strong></td><td><strong>Bradycardia</strong></td><td><strong>Tachycardia</strong> &mdash; the reversal that catches people out</td></tr>
+    <tr><td><strong>Nicotine</strong></td><td><strong>Stimulates</strong> all ganglia &mdash; pressure rises, gut and bladder active</td><td><strong>Paralyses</strong> them &mdash; pressure <strong>falls</strong>, gut and bladder activity <strong>ceases</strong></td></tr>
+    <tr><td><strong>Selective beta-1 blockers</strong></td><td>Cardioselective, so the airway is spared</td><td><strong>Cardioselectivity is LOST</strong> &mdash; beta-2 gets blocked too</td></tr>
+  </table>
+  <div class="pearl"><strong>So &ldquo;what does this drug do?&rdquo; is an incomplete question for
+  these five.</strong> The complete one is &ldquo;what does it do <em>at this dose</em>?&rdquo; It is
+  also why a beta-1 selective blocker is not a free pass in a patient with airway disease, and why
+  a dopamine infusion behaves like two different drugs at the two ends of its range.</div>
 
   <h3 class="sub" id="ans-cholag">3.4 &middot; Objectives 7&ndash;8 &mdash; Cholinergic agonists</h3>
   <p><strong>Direct-acting</strong> bind the receptor: choline esters (acetylcholine, carbachol,

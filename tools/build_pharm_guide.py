@@ -169,6 +169,30 @@ BODY = '''<main>
   aminoglycosides moving from every 8 hours to once daily, and piperacillin/tazobactam being
   given as an extended infusion. One exploits a post-antibiotic effect; the other buys time above
   the minimal inhibitory concentration.</div>
+  <h4 class="subsub">Why there is more than one beta-lactam</h4>
+  <p>The classes below arrive in the objectives as a list. They are easier to hold as a
+  <strong>sequence</strong>: each one exists because the one before it failed at something
+  specific, and each addition costs something.</p>
+  <table>
+    <tr><th>Agent</th><th>What it adds</th><th>What still defeats it</th></tr>
+    <tr><td><strong>Penicillin G</strong></td><td>The original. Gram-positives; <strong>drug of choice for syphilis, gas gangrene and meningococcus</strong></td><td><strong>Staphylococcal penicillinase</strong>, and most gram-negatives</td></tr>
+    <tr><td><strong>Nafcillin, oxacillin, dicloxacillin</strong></td><td>A side chain that <strong>shields the ring from penicillinase</strong> &mdash; so, staphylococci</td><td>Gram-negatives. Designed <strong>solely</strong> for methicillin-sensitive <i>S. aureus</i></td></tr>
+    <tr><td><strong>Ampicillin, amoxicillin</strong></td><td><strong>Gram-negative reach</strong>, plus <i>Enterococcus</i> and <i>Listeria</i></td><td>Beta-lactamase producers &mdash; the shield was traded away for the reach</td></tr>
+    <tr><td><strong>Amoxicillin/clavulanate, ampicillin/sulbactam</strong></td><td>An <strong>inhibitor bolted on</strong> to absorb the enzyme &mdash; staphylococci and anaerobes come back. Bites, diabetic foot</td><td>Pseudomonas</td></tr>
+    <tr><td><strong>Piperacillin/tazobactam</strong></td><td><strong>Pseudomonas</strong>, and the breadth for polymicrobial and nosocomial infection</td><td>Extended-spectrum beta-lactamases</td></tr>
+    <tr><td><strong>Cephalosporins, 1st &rarr; 5th</strong></td><td>Gram-positive cover trades gradually for gram-negative as you climb; <strong>4th (cefepime)</strong> antipseudomonal and the choice in neutropenic fever; <strong>5th (ceftaroline)</strong> is the only one with <strong>MRSA</strong> cover</td><td>Extended-spectrum beta-lactamases; enterococci throughout</td></tr>
+    <tr><td><strong>Carbapenems</strong></td><td><strong>Extended-spectrum beta-lactamase producers and multidrug-resistant gram-negatives</strong> &mdash; the end of the ladder</td><td>The cost is <strong>seizures</strong>, specifically with imipenem</td></tr>
+  </table>
+  <div class="pearl"><strong>Two agents sit off the ladder, and that is the point of them.</strong>
+  <strong>Aztreonam</strong> is gram-negative only and has <strong>no cross-reactivity with the
+  beta-lactams</strong>, which is why it is the one you reach for in a genuine penicillin allergy.
+  <strong>Vancomycin</strong> is not a beta-lactam at all &mdash; it binds the D-alanyl-D-alanine
+  terminus rather than the transpeptidase &mdash; so penicillinase is irrelevant to it, and it
+  covers gram-positives including MRSA.</div>
+  <div class="callout"><strong>Use the ladder as a diagnostic.</strong> If you cannot say what a
+  class adds over the one above it, that is the gap to go back to &mdash; not the side-effect list,
+  which is what the drills are for.</div>
+
   <button class="test-yourself-btn" style="--acc:#9c5230" onclick="window.openTestYourself('Test yourself &mdash; Principles', TEST_YOURSELF.principles)">Test yourself! &rarr;</button>
 
   <h3 class="sub" id="am-betalactams">1.4 &middot; Objective 4 &mdash; Beta-lactams</h3>
