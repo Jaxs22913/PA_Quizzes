@@ -75,6 +75,7 @@ BODY_ADD = '''
   <strong>gel or foam on the scalp</strong>, where it foams well and leaves low residue.</div>
 
   <h3 class="sub" id="dm-acne-why">2.2 &middot; Objectives 1&ndash;3 &mdash; Acne: four factors, one target</h3>
+  <figure class="fig"><img width="480" height="601" loading="lazy" src="pharm-exam-1-study-guide-images/015.png" alt="Flow diagram of acne pathogenesis: a normal follicle undergoes abnormal keratinization to a microcomedone, then with increased sebum production to a closed comedone, which either opens into an open comedone or progresses to a papule, then a pustule, and through a foreign body response to a nodule or cyst."><figcaption><strong>Where each lesion comes from.</strong> The comedone is the starting point, not a separate disease &mdash; which is why a comedolytic is the foundation of treatment even when the visible problem is inflammatory. Note the branch: the closed comedone can vent to the surface as a blackhead or push inward toward the papule, pustule and finally the nodule or cyst that scars. (Slide 13.)</figcaption></figure>
   <p>Acne is multifactorial, and the lecture gives four major factors: <strong>increased sebum
   production</strong>, <strong>altered keratinization with hyperproliferation of the ductal
   epidermis</strong>, <strong>bacterial colonization with <em>Propionibacterium acnes</em></strong>,
@@ -94,6 +95,7 @@ BODY_ADD = '''
   tuberculostatics and lithium are also on the list.</div>
 
   <h3 class="sub" id="dm-acne-drugs">2.3 &middot; Objectives 2&ndash;7 &mdash; The acne drugs</h3>
+  <figure class="fig"><img width="560" height="454" loading="lazy" src="pharm-exam-1-study-guide-images/014.png" alt="Venn diagram of acne pathogenesis with three overlapping factors — abnormal keratinization of the follicle, Propionibacterium acnes proliferation and abnormal sebum — leading to an inflammatory response, with the drugs that act on each factor listed around it: salicylic acid, benzoyl peroxide, topical retinoids and isotretinoin for keratinization; benzoyl peroxide, topical and oral antibiotics and isotretinoin for the organism; antiandrogens, isotretinoin, topical and oral antibiotics, corticosteroids and estrogens for sebum; and corticosteroids and antibiotics for the inflammatory response."><figcaption><strong>The best single picture in this lecture.</strong> Every acne drug is placed on the factor it attacks, which turns the drug list into a choice rather than a set. It also shows why the combinations that get used are the ones that cover different circles &mdash; and why <strong>isotretinoin appears on three of them</strong>, which is exactly why it is reserved for the severe disease that nothing narrower has touched. (Slide 20.)</figcaption></figure>
   <table>
     <tr><th>Drug</th><th>Mechanism</th><th>What to tell the patient</th></tr>
     <tr><td><strong>Benzoyl peroxide</strong></td><td>Crosses the stratum corneum unchanged, then converts to <strong>benzoic acid</strong>, active against <em>P. acnes</em>; peeling and comedolytic</td><td><strong>It bleaches hair, clothing and bedding.</strong> Start low, once daily, and build up</td></tr>
@@ -115,6 +117,7 @@ BODY_ADD = '''
   <button class="test-yourself-btn" style="--acc:#9c5230" onclick="window.openTestYourself('Test yourself &mdash; Acne', TEST_YOURSELF.acne)">Test yourself! &rarr;</button>
 
   <h3 class="sub" id="dm-eczema">2.4 &middot; Objectives 3, 9 &amp; 10 &mdash; Atopic dermatitis and the steroid ladder</h3>
+  <figure class="fig"><img width="600" height="236" loading="lazy" src="pharm-exam-1-study-guide-images/016.png" alt="Staircase chart of topical corticosteroid potency from mild through moderate and potent to very potent, with the agents named at each step from hydrocortisone at the bottom to clobetasol propionate at the top."><figcaption><strong>The ladder, with the names on it.</strong> Hydrocortisone at the bottom, clobetasol propionate at the top. Read it alongside the vehicle rule from 2.1 &mdash; ointment beats cream beats lotion &mdash; because <strong>potency is the molecule and the vehicle together</strong>, and the same steroid moves a step by changing the base it is carried in. (Slide 40.)</figcaption></figure>
   <p>Atopic dermatitis is chronic inflammation with pruritus, part of the atopic triad with
   <strong>asthma and allergic rhino-conjunctivitis</strong>, and <strong>skin barrier dysfunction</strong>
   plays the major role. The major indicators are <strong>pruritus, rash in typical areas, chronic or
@@ -185,6 +188,7 @@ BODY_ADD = '''
   any single agent.</div>
 
   <h3 class="sub" id="ans-wiring">3.1 &middot; Objectives 1&ndash;2 &mdash; How the system is wired</h3>
+  <figure class="fig"><img width="600" height="417" loading="lazy" src="pharm-exam-1-study-guide-images/009.png" alt="Whole-body diagram with each organ labelled twice: sympathetic actions in red and parasympathetic actions in blue, covering eye, lacrimal and salivary glands, trachea and bronchioles, heart, adrenal medulla, kidney, gastrointestinal tract, ureters and bladder, genitalia and blood vessels."><figcaption><strong>Both divisions, organ by organ, on one body.</strong> Red is sympathetic, blue is parasympathetic. Two things are worth reading off it rather than memorising: the eye gets opposing instructions (radial muscle contracts to dilate, sphincter contracts to constrict), and the <strong>blood vessels carry only red</strong> &mdash; there is no parasympathetic supply to most of them, which is why vascular tone is an adrenergic story throughout. (Slide 11.)</figcaption></figure>
   <p>Nervous system &rarr; <strong>central</strong> (brain, spinal cord) and <strong>peripheral</strong>.
   Peripheral &rarr; <strong>afferent</strong> (to the centre; the example is sensing pressure in the
   carotid sinus and aortic arch) and <strong>efferent</strong> (away). Efferent &rarr;
@@ -199,6 +203,7 @@ BODY_ADD = '''
   nervous system while being modulated by the other two.</div>
 
   <h3 class="sub" id="ans-receptors">3.2 &middot; Objectives 3, 5 &amp; 6 &mdash; Transmitters and receptors</h3>
+  <figure class="fig"><img width="560" height="454" loading="lazy" src="pharm-exam-1-study-guide-images/007.png" alt="Diagram of the autonomic and somatic outflow: preganglionic neuron, ganglionic transmitter acetylcholine acting at nicotinic receptors, then postganglionic neurons releasing norepinephrine onto adrenergic receptors for the sympathetic branch and acetylcholine onto muscarinic receptors for the parasympathetic branch, with the adrenal medulla releasing epinephrine into the blood and the somatic nerve running direct to skeletal muscle."><figcaption><strong>The map the whole chapter hangs off.</strong> Every autonomic pathway is two neurons with <strong>acetylcholine at a nicotinic receptor in the ganglion</strong> &mdash; sympathetic and parasympathetic alike. They only diverge at the second synapse: norepinephrine onto adrenergic receptors, or acetylcholine onto muscarinic ones. Two exceptions are drawn in: the <strong>adrenal medulla has no postganglionic neuron</strong> and dumps epinephrine straight into the blood, and the <strong>somatic nerve has no ganglion at all</strong>. Knowing where a drug acts on this picture tells you how broad its effects will be. (Slide 14.)</figcaption></figure>
   <table>
     <tr><th>Receptor</th><th>Where</th><th>Note</th></tr>
     <tr><td><strong>M1</strong></td><td>Neurons, gastric parietal cells</td><td rowspan="3">Five subclasses; <strong>only M1, M2 and M3 are functionally characterised</strong></td></tr>
@@ -222,6 +227,13 @@ BODY_ADD = '''
     <tr><td><strong>Beta-1</strong> (heart, kidney)</td><td><strong>Faster</strong> rate, <strong>harder</strong> contraction, quicker atrioventricular conduction; <strong>renin</strong> release</td><td>Slower, weaker heart; less renin</td></tr>
     <tr><td><strong>Beta-2</strong> (airway, skeletal-muscle vessels, liver)</td><td><strong>Bronchodilation</strong>, vasodilation, <strong>tremor</strong>, glycogenolysis</td><td><strong>Bronchospasm</strong>; blunted warning signs of hypoglycaemia</td></tr>
   </table>
+  <figure class="fig"><img width="600" height="205" loading="lazy" src="pharm-exam-1-study-guide-images/008.png" alt="Table of the adrenoceptors: alpha-1 causing vasoconstriction, increased peripheral resistance, increased blood pressure, mydriasis and closure of the internal bladder sphincter; alpha-2 inhibiting norepinephrine, acetylcholine and insulin release; beta-1 causing tachycardia, lipolysis, increased myocardial contractility and renin release; beta-2 causing vasodilation, decreased peripheral resistance, bronchodilation, glycogenolysis, glucagon release and uterine relaxation."><figcaption><strong>The same table in the lecturer's own words.</strong> Worth comparing against the one above rather than skipping: it adds the metabolic effects &mdash; beta-1 lipolysis and renin, beta-2 glycogenolysis and glucagon &mdash; which is where propranolol's fasting hypoglycaemia and raised lipids come from, and it names the alpha-2 inhibition of insulin release. (Slide 78.)</figcaption></figure>
+  <div class="pearl"><strong>One heart, two lungs.</strong> Beta-<strong>one</strong> receptors are
+  the ones on the heart &mdash; you have one heart. Beta-<strong>two</strong> are the ones on the
+  airway &mdash; you have two lungs. It is the shortest route into the table above, and it is also
+  the reason a beta-2 agonist like albuterol opens the airway while a nonselective blocker like
+  propranolol closes it.</div>
+
   <div class="pearl"><strong>Read it forwards and the drug facts fall out.</strong>
   Phenylephrine is alpha-1 &rarr; vessels constrict &rarr; pressure rises &rarr; the baroreceptors
   answer with <strong>reflex bradycardia</strong>. Albuterol is beta-2 &rarr; airway opens, and the
@@ -231,6 +243,7 @@ BODY_ADD = '''
   &rarr; the bladder stops squeezing, and the dry mouth comes free with it. None of those four are
   separate things to learn.</div>
 
+  <figure class="fig"><img width="560" height="453" loading="lazy" src="pharm-exam-1-study-guide-images/010.png" alt="Cholinergic nerve terminal with six numbered steps: synthesis of acetylcholine from choline and acetyl coenzyme A, uptake into storage vesicles, release of neurotransmitter, binding to the postsynaptic receptor, degradation by acetylcholinesterase, and recycling of choline; each step annotated with the agent that blocks it."><figcaption><strong>The six steps, with the drug that blocks each one.</strong> Hemicholinium stops transport at step 1, botulinum toxin stops release at step 3 and spider venom forces it, and the anticholinesterases act at step 5. Read down the list and the drug classes stop being arbitrary &mdash; each one is a different place to interrupt the same conveyor belt. (Slide 21.)</figcaption></figure>
   <div class="pearl"><strong>Transmitter fate is where several drug classes act.</strong>
   Acetylcholine runs <strong>six steps</strong> &mdash; synthesis, storage, release, receptor binding,
   <strong>degradation by acetylcholinesterase</strong>, recycling of choline. Catecholamines are
@@ -243,6 +256,13 @@ BODY_ADD = '''
     <tr><th>Muscarinic (DUMBBELS)</th><th>Nicotinic (MTWHF)</th><th>Anticholinergic</th></tr>
     <tr><td>Defecation, urination, miosis, bradycardia, bronchorrhoea, bronchospasm, emesis, lacrimation, salivation</td><td>Mydriasis, tachycardia, weakness, hypertension, fasciculations</td><td>Mad as a hatter, blind as a bat, red as a beet, dry as a bone, hot as Hades &mdash; plus constipation, urinary retention, tachycardia</td></tr>
   </table>
+  <div class="callout"><strong>You will meet the muscarinic picture under two names.</strong>
+  DUMBBELS above, and <strong>SLUDGE</strong> elsewhere &mdash; <strong>S</strong>alivation,
+  <strong>L</strong>acrimation, <strong>U</strong>rination, <strong>D</strong>efecation,
+  <strong>G</strong>astrointestinal upset, <strong>E</strong>mesis. They are the same syndrome;
+  SLUDGE simply leaves out the two that matter most for spotting it, the
+  <strong>bradycardia and the bronchospasm</strong>, so DUMBBELS is the safer one to carry.</div>
+
   <div class="pearl"><strong>Read the pupil and the heart first.</strong> Muscarinic stimulation gives
   <strong>small pupils and a slow heart</strong>; nicotinic and anticholinergic both give
   <strong>large pupils and a fast heart</strong>. Wet versus dry then separates the last two:
@@ -262,6 +282,7 @@ BODY_ADD = '''
     <tr><td><strong>Nicotine</strong></td><td><strong>Stimulates</strong> all ganglia &mdash; pressure rises, gut and bladder active</td><td><strong>Paralyses</strong> them &mdash; pressure <strong>falls</strong>, gut and bladder activity <strong>ceases</strong></td></tr>
     <tr><td><strong>Selective beta-1 blockers</strong></td><td>Cardioselective, so the airway is spared</td><td><strong>Cardioselectivity is LOST</strong> &mdash; beta-2 gets blocked too</td></tr>
   </table>
+  <figure class="fig"><img width="400" height="557" loading="lazy" src="pharm-exam-1-study-guide-images/011.png" alt="Vertical scale of atropine dose against effect: at 0.5 milligrams slight cardiac slowing, some dryness of the mouth and inhibition of sweating; at 2 to 5 milligrams rapid heart rate, palpitation, marked dry mouth, dilated pupil and blurred near vision; above 10 milligrams hallucinations, delirium and coma."><figcaption><strong>The reversal, drawn.</strong> At the bottom of the scale atropine <em>slows</em> the heart; climb it and the same drug speeds it up, then adds the rest of the antimuscarinic picture, then takes the central nervous system. This is the clearest illustration of the point above &mdash; asking what atropine does is incomplete without asking how much. (Slide 49.)</figcaption></figure>
   <div class="pearl"><strong>So &ldquo;what does this drug do?&rdquo; is an incomplete question for
   these five.</strong> The complete one is &ldquo;what does it do <em>at this dose</em>?&rdquo; It is
   also why a beta-1 selective blocker is not a free pass in a patient with airway disease, and why
@@ -290,6 +311,7 @@ BODY_ADD = '''
   <button class="test-yourself-btn" style="--acc:#c9a227" onclick="window.openTestYourself('Test yourself &mdash; Cholinergic drugs', TEST_YOURSELF.cholinergic)">Test yourself! &rarr;</button>
 
   <h3 class="sub" id="ans-cholant">3.5 &middot; Objectives 7 &amp; 9 &mdash; Cholinergic antagonists</h3>
+  <figure class="fig"><img width="330" height="561" loading="lazy" src="pharm-exam-1-study-guide-images/013.png" alt="Three photographs of the same eye: treated with pilocarpine showing a constricted pupil, untreated, and treated with atropine showing a widely dilated pupil."><figcaption><strong>One eye, two directions.</strong> Pilocarpine is a muscarinic agonist and the sphincter contracts &mdash; miosis. Atropine blocks the same receptor and the pupil dilates &mdash; mydriasis, with the loss of accommodation that makes near vision blurry. If you can hold this picture you can rebuild half the anticholinergic toxidrome from it. (Slide 33.)</figcaption></figure>
   <p>Three classes: <strong>antimuscarinics</strong>, <strong>ganglionic blockers</strong> and
   <strong>neuromuscular blocking agents</strong>. Antimuscarinics do <strong>not</strong> block
   nicotinic receptors and have little action at ganglia or the neuromuscular junction.</p>
@@ -312,6 +334,7 @@ BODY_ADD = '''
   <strong>cooling and dantrolene</strong>.</div>
 
   <h3 class="sub" id="ans-adrag">3.6 &middot; Objectives 7 &amp; 10 &mdash; Adrenergic agonists</h3>
+  <figure class="fig"><img width="380" height="1007" loading="lazy" src="pharm-exam-1-study-guide-images/012.png" alt="Three stacked tracings against time during a norepinephrine infusion: pulse rate falls, systolic and diastolic blood pressure both rise, and peripheral resistance rises."><figcaption><strong>Reflex bradycardia, actually visible.</strong> Norepinephrine constricts every vessel, so peripheral resistance and both pressures climb &mdash; and the pulse rate <em>falls</em>, even though norepinephrine stimulates the heart directly. The baroreceptors win. This is the same mechanism behind phenylephrine's reflex bradycardia, and it is why a pressor can slow a heart. (Slide 89.)</figcaption></figure>
   <table>
     <tr><th>Agent</th><th>Receptors</th><th>Use / note</th></tr>
     <tr><td><strong>Epinephrine</strong></td><td>Alpha and beta &mdash; <strong>beta at low dose, alpha at high</strong></td><td>Anaphylaxis, cardiac arrest, acute bronchospasm; raises systolic, lowers diastolic; in local anaesthetic to <strong>prolong the block</strong></td></tr>

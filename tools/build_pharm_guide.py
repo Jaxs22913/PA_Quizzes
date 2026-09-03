@@ -158,6 +158,17 @@ BODY = '''<main>
   <p>Notice the bactericidal list spans the cell wall, the ribosome and DNA. Killing is not tied
   to one target, so you cannot infer static-versus-cidal from mechanism alone &mdash; it has to
   be learned.</p>
+  <div class="pearl"><strong>Two mnemonics that fit these exact lists.</strong>
+  The bacteriostatic five spell <strong>ECSTaTiC</strong> &mdash; <strong>E</strong>rythromycin,
+  <strong>C</strong>lindamycin, <strong>S</strong>ulfonamides, <strong>T</strong>rimethoprim,
+  <strong>T</strong>etracyclines. (The usual version has a second C for chloramphenicol, which is
+  not on the list above.) The bactericidal six are
+  <strong>V</strong>ery <strong>F</strong>inely <strong>P</strong>roficient <strong>A</strong>t
+  <strong>C</strong>ell <strong>M</strong>urder &mdash; <strong>V</strong>ancomycin,
+  <strong>F</strong>luoroquinolones, <strong>P</strong>enicillins,
+  <strong>A</strong>minoglycosides, <strong>C</strong>ephalosporins,
+  <strong>M</strong>etronidazole. That one maps to all six with nothing left over.</div>
+
   <table>
     <tr><th></th><th>Concentration-dependent</th><th>Time-dependent</th></tr>
     <tr><td>What drives killing</td><td>Higher concentration, greater killing</td><td>Time above the minimal inhibitory concentration</td></tr>
@@ -376,6 +387,30 @@ BODY = '''<main>
   <button class="test-yourself-btn" style="--acc:#9c5230" onclick="window.openTestYourself('Test yourself &mdash; Antivirals', TEST_YOURSELF.antivirals)">Test yourself! &rarr;</button>
 
   <h3 class="sub" id="am-antifungals">1.9 &middot; Objective 9 &mdash; Antifungals</h3>
+  <h4 class="subsub">Why there is more than one antifungal</h4>
+  <p>The same trick as the beta-lactams in 1.3 works here, and it is shorter. Fungi are eukaryotes,
+  so the hard part is finding something to poison that we do not also have.
+  <strong>Ergosterol</strong> is that something &mdash; and the classes are best held as three
+  different answers to it.</p>
+  <table>
+    <tr><th>Class</th><th>What it does about ergosterol</th><th>What that costs</th></tr>
+    <tr><td><strong>Polyenes</strong><br>amphotericin B, nystatin</td><td><strong>Binds the ergosterol already in the membrane</strong> and punches pores in it. Fast, and it does not need the fungus to be growing</td><td>Ergosterol resembles our cholesterol, so <strong>our membranes suffer too</strong> &mdash; the infusion fever and chills, hypotension, renal injury and potassium and magnesium wasting. Nystatin is too toxic to give systemically at all</td></tr>
+    <tr><td><strong>Azoles</strong><br>fluconazole, itraconazole, voriconazole, posaconazole, ketoconazole</td><td><strong>Stops ergosterol being MADE</strong> rather than attacking it once it is there &mdash; blocking the demethylase</td><td>That demethylase is a <strong>cytochrome P450 enzyme</strong>, and ours are the same family. The whole class is therefore an interaction problem, which is the price of being oral, broad and far gentler</td></tr>
+    <tr><td><strong>Echinocandins</strong><br>caspofungin, micafungin, anidulafungin</td><td><strong>Ignores ergosterol entirely.</strong> Attacks &beta;-1,3-glucan in the <strong>cell wall</strong> &mdash; a structure we do not have at all</td><td>Neither polyene toxicity nor azole interactions. The cost is a <strong>narrow spectrum</strong> and intravenous administration only</td></tr>
+  </table>
+  <div class="pearl"><strong>Three more sit outside that sequence, each on its own target.</strong>
+  <strong>Allylamines</strong> (terbinafine) also block ergosterol synthesis but at an earlier step,
+  squalene epoxidase, and are used for the superficial dermatophytes.
+  <strong>Griseofulvin</strong> binds microtubules and is a cytochrome <em>inducer</em> &mdash; the
+  exact opposite of ketoconazole, which is an inhibitor. <strong>Flucytosine</strong> is a
+  pyrimidine analogue, and resistance appears so fast on its own that it is given
+  <strong>with amphotericin B</strong> rather than alone.</div>
+  <div class="callout"><strong>The individual azoles are then just quirks on a shared spine.</strong>
+  Fluconazole crosses into the central nervous system; voriconazole disturbs vision in about a
+  third; posaconazole is the only one that covers the Zygomycetes; itraconazole is teratogenic;
+  ketoconazole inhibits CYP3A4 hardest. None of those five need learning as separate drugs once the
+  class mechanism is in place.</div>
+
   <p>Fungi are <strong>eukaryotic</strong>, with a rigid cell wall containing chitin, a cell
   membrane built on <strong>ergosterol</strong>, different ribosomes and a distinct nuclear
   membrane. They are resistant to antibiotics, and every antifungal class exploits one of those
