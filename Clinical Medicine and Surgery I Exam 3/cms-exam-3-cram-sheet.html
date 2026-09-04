@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Cram Sheet</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#6a4fa3;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">PAJ 5500 &middot; Class of 2028</div>
+    <h1>Clinical Medicine and Surgery I &middot; Exam 3</h1>
+    <p class="sub">Ear, nose and throat block &mdash; Lectures 15 and 16, everything that has to be recallable cold</p>
+    <div class="toc">
+      <a href="#tests" style="color:#533e7f"><span class="dot" style="background:#6a4fa3"></span>The tests</a>
+      <a href="#vertigo" style="color:#105763"><span class="dot" style="background:#15707f"></span>Vertigo, by how long it lasts</a>
+      <a href="#sort" style="color:#2d2d53"><span class="dot" style="background:#3a3a6b"></span>Sort the whole block</a>
+      <a href="#om" style="color:#704683"><span class="dot" style="background:#8f5aa8"></span>The otitis media family</a>
+      <a href="#canal" style="color:#803e21"><span class="dot" style="background:#a4502a"></span>The canal</a>
+      <a href="#drum" style="color:#5f4624"><span class="dot" style="background:#7a5a2e"></span>The drum, pressure and fixation</a>
+      <a href="#snhl" style="color:#214a70"><span class="dot" style="background:#2a5f8f"></span>Sensorineural causes worth knowing cold</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-3-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="tests" style="--acc:#6a4fa3;--acc-bg:#eae6f2;--acc-zebra:#f5f3f9;--acc-ink:#533e7f">
+    <div class="shead"><span class="dot" style="background:#6a4fa3"></span><h2>The tests<span class="tag">objectives b to f</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">WEBER</td><td>Tuning fork on the MIDLINE. Compares BONE conduction between the two ears. Asks WHICH SIDE IS LOUDER.</td></tr>
+          <tr><td class="h">RINNE</td><td>Tuning fork at the EAR then the MASTOID. Compares AIR against BONE in ONE ear.</td></tr>
+          <tr><td class="h">CONDUCTIVE</td><td>Weber lateralises <b>TO the BAD ear</b>. Rinne: <b>BC &ge; AC</b>. Voice stays SOFT. Hearing BETTER in noise.</td></tr>
+          <tr><td class="h">SENSORINEURAL</td><td>Weber lateralises <b>AWAY, to the GOOD ear</b>. Rinne: <b>AC &gt; BC &mdash; SAME AS NORMAL</b>. Voice LOUD. Hearing WORSE in noise.</td></tr>
+          <tr><td class="h">WHY WEBER DECIDES</td><td>A sensorineural Rinne looks exactly like a normal ear. Only WEBER separates them.</td></tr>
+          <tr><td class="h">THE QUESTION SHE PROMISED</td><td>Fullness + reduced hearing AFTER A COLD, AMBER effusion behind an INTACT drum with REDUCED MOBILITY &rarr; conductive &rarr; <b>Weber TO that ear, BC &ge; AC</b>. She also asks it BACKWARDS: given the fork findings, name the diagnosis &mdash; the distractors die on LOSS TYPE.</td></tr>
+          <tr><td class="h">AUDIOMETRY &mdash; ALL BY 20s</td><td>Normal 0&ndash;20 &middot; MILD 20&ndash;40 &middot; MODERATE 40&ndash;60 &middot; SEVERE 60&ndash;80 &middot; <b>PROFOUND &gt;80 dB</b>. The prevalence percentages are explicitly NOT to be memorised.</td></tr>
+          <tr><td class="h">TYMPANOGRAM</td><td><b>A</b> normal &middot; <b>B</b> FLAT = fluid or perforation &middot; <b>C</b> peak NEGATIVE = eustachian tube dysfunction &middot; <b>As</b> SHALLOW/stiff = ossicular FIXATION, tympanosclerosis &middot; <b>Ad</b> DEEP = ossicular DISCONTINUITY, monomeric drum.</td></tr>
+          <tr><td class="h">VESTIBULAR</td><td><b>ELECTRONYSTAGMOGRAPHY</b> = gold standard, one ear at a time. <b>MRI WITH GADOLINIUM</b> = gold standard for RETROCOCHLEAR. <b>DIX-HALLPIKE</b> diagnoses positional vertigo; <b>EPLEY</b> treats it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="vertigo" style="--acc:#15707f;--acc-bg:#deebed;--acc-zebra:#eff5f6;--acc-ink:#105763">
+    <div class="shead"><span class="dot" style="background:#15707f"></span><h2>Vertigo, by how long it lasts<span class="tag">she said definitely know this</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">SECONDS (10&ndash;60)</td><td><b>BENIGN PAROXYSMAL POSITIONAL VERTIGO.</b> On rolling over. Hearing NOT affected, NO tinnitus. Beyond a MINUTE &rarr; think again. Dix-Hallpike diagnoses, EPLEY treats.</td></tr>
+          <tr><td class="h">MINUTES TO HOURS</td><td><b>M&Eacute;NI&Egrave;RE&rsquo;S.</b> Tetrad: vertigo + FLUCTUATING LOW-FREQUENCY sensorineural loss + LOW-TONE tinnitus + FULLNESS. Hearing IS affected. RULE OUT SYPHILIS &mdash; indistinguishable.</td></tr>
+          <tr><td class="h">DAYS TO WEEKS, hearing AFFECTED</td><td><b>LABYRINTHITIS.</b> Inflammation of the membranous labyrinth. Viral. Meclizine or diazepam, steroids, antibiotics ONLY if bacterial features.</td></tr>
+          <tr><td class="h">DAYS TO WEEKS, hearing NORMAL</td><td><b>VESTIBULAR NEURONITIS.</b> Inflammation of the VESTIBULAR portion of CN VIII. BENIGN and SELF-LIMITING. No hearing change, NO focal neurology.</td></tr>
+          <tr><td class="h">THE ONE WORD</td><td>Labyrinthitis vs vestibular neuronitis = <b>does it affect HEARING</b>. That is the whole difference.</td></tr>
+          <tr><td class="h">CENTRAL &mdash; STOP</td><td>Vertigo + FACIAL PARALYSIS, CROSSED sensory loss, GAZE palsy or HORNER = <b>VERTEBROBASILAR</b>. Vertigo + ATAXIA, HEADACHE or facial numbness = <b>CEREBELLAR INFARCT</b>. Both EMERGENT.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="sort" style="--acc:#3a3a6b;--acc-bg:#e3e3ea;--acc-zebra:#f1f1f5;--acc-ink:#2d2d53">
+    <div class="shead"><span class="dot" style="background:#3a3a6b"></span><h2>Sort the whole block<span class="tag">generated from the chart</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">CONDUCTIVE</td><td>EUSTACHIAN TUBE DYSFUNCTION &middot; ACUTE OTITIS MEDIA &middot; OTITIS MEDIA WITH EFFUSION &middot; CHRONIC OTITIS MEDIA &middot; MASTOIDITIS &middot; CERUMEN IMPACTION &middot; CHOLESTEATOMA &middot; TYMPANIC MEMBRANE PERFORATION &middot; FOREIGN BODY OF THE CANAL &middot; OTITIS EXTERNA &middot; MALIGNANT OTITIS EXTERNA &middot; OTOMYCOSIS &middot; OTOSCLEROSIS &middot; CARCINOMA OF THE EAR CANAL &middot; CONDUCTIVE HEARING LOSS &middot; EXOSTOSIS &middot; GLOMUS TUMOUR</td></tr>
+          <tr><td class="h">SENSORINEURAL</td><td>SENSORINEURAL HEARING LOSS &middot; PRESBYCUSIS &middot; OTOTOXICITY &middot; NOISE-INDUCED HEARING LOSS &middot; PERILYMPHATIC FISTULA &middot; AUTOIMMUNE SENSORINEURAL LOSS &middot; SYPHILITIC SENSORINEURAL LOSS &middot; AIDS-RELATED SENSORINEURAL LOSS &middot; HEREDITARY SENSORINEURAL LOSS &middot; SUDDEN SENSORINEURAL HEARING LOSS &middot; M&EACUTE;NI&EGRAVE;RE'S DISEASE &middot; LABYRINTHITIS &middot; ACOUSTIC NEUROMA</td></tr>
+          <tr><td class="h">HEARING NOT AFFECTED</td><td>HEMATOMA OF THE EXTERNAL EAR &middot; LACERATIONS AND AVULSION &middot; FOREIGN BODY OF THE AURICLE &middot; KELOID OF THE EAR &middot; BENIGN PAROXYSMAL POSITIONAL VERTIGO &middot; VESTIBULAR NEURONITIS &middot; ISOLATED CEREBELLAR INFARCTION</td></tr>
+          <tr><td class="h">EMERGENT</td><td>MALIGNANT OTITIS EXTERNA &middot; CARCINOMA OF THE EAR CANAL &middot; SUDDEN SENSORINEURAL HEARING LOSS &middot; VERTEBROBASILAR INSUFFICIENCY OR OCCLUSION &middot; ISOLATED CEREBELLAR INFARCTION</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="om" style="--acc:#8f5aa8;--acc-bg:#efe8f3;--acc-zebra:#f7f3f9;--acc-ink:#704683">
+    <div class="shead"><span class="dot" style="background:#8f5aa8"></span><h2>The otitis media family</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">ACUTE OTITIS MEDIA</td><td>BULGING ERYTHEMATOUS drum, reduced mobility. Otalgia + FEVER + hearing loss. Peak age ~<b>2 YEARS</b>; adults only 3&ndash;15%.</td></tr>
+          <tr><td class="h">ITS CAUSE &mdash; the slide is incomplete</td><td><b>FAR AND AWAY MOST ARE VIRAL.</b> Bacterial three: <b>S. PNEUMONIAE, H. INFLUENZAE, M. CATARRHALIS</b>. M. catarrhalis has OVERTAKEN H. influenzae because of VACCINATION &mdash; ask IMMUNISATION STATUS.</td></tr>
+          <tr><td class="h">ITS TREATMENT</td><td>MOST RESOLVE SPONTANEOUSLY. Bacterial &rarr; <b>AMOXICILLIN</b>. RECURRENT = 3 in 6 months or &gt;4 in 12 &rarr; TYMPANOSTOMY TUBES.</td></tr>
+          <tr><td class="h">OTITIS MEDIA WITH EFFUSION</td><td>DULL drum, AIR&ndash;FLUID LEVEL, reduced mobility. OFTEN ASYMPTOMATIC, found incidentally. Treat on <b>DURATION + degree of hearing loss + effect on SPEECH AND LANGUAGE</b>.</td></tr>
+          <tr><td class="h">CHRONIC OTITIS MEDIA</td><td><b>NON-HEALING PERFORATION.</b> Benign = dry. With effusion = serous drainage. SUPPURATIVE = pus. Refer to ENT.</td></tr>
+          <tr><td class="h">MASTOIDITIS</td><td>Spread into the MASTOID AIR CELLS. Complication of acute otitis media &mdash; alongside PERFORATION, LABYRINTHITIS, rarely MENINGITIS.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="canal" style="--acc:#a4502a;--acc-bg:#f2e6e1;--acc-zebra:#f9f3f0;--acc-ink:#803e21">
+    <div class="shead"><span class="dot" style="background:#a4502a"></span><h2>The canal</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">OTITIS EXTERNA</td><td><b>PAIN ON MOVING THE TRAGUS.</b> Swimmer. <b>P. AERUGINOSA 38%</b>. Remove debris FIRST, then drops &plusmn; steroid. WICK if the canal is closed.</td></tr>
+          <tr><td class="h">MALIGNANT (NECROTIZING)</td><td><b>ELDERLY DIABETIC</b> + <b>PAIN OUT OF PROPORTION</b> + <b>FACIAL NERVE WEAKNESS</b>. &gt;95% P. aeruginosa. IMAGING shows BONY involvement. <b>ANTIPSEUDOMONAL</b> &mdash; ciprofloxacin. EMERGENT.</td></tr>
+          <tr><td class="h">OTOMYCOSIS</td><td>ITCH &gt; pain. <b>ASPERGILLUS = &ldquo;WET NEWSPAPER&rdquo;</b>. <b>CANDIDA = WHITE CURD</b>. Debris removal + topical antifungal.</td></tr>
+          <tr><td class="h">CERUMEN IMPACTION</td><td>MOST OFTEN <b>SELF-INDUCED BY CLEANING</b>. Irrigate ONLY if the drum is INTACT, body-temperature water. TUBES or PERFORATION &rarr; ENT.</td></tr>
+          <tr><td class="h">FOREIGN BODY</td><td>DO NOT PUSH DEEPER. Firm &rarr; loop/hook. Soft &rarr; alligator forceps. <b>ORGANIC SWELLS WHEN WET</b> &mdash; no irrigation. INSECT &rarr; LIDOCAINE first.</td></tr>
+          <tr><td class="h">CARCINOMA OF THE CANAL</td><td><b>OTITIS EXTERNA THAT WILL NOT RESPOND</b> + BLOODY otorrhoea + FRIABLE canal. Often MISDIAGNOSED. <b>BIOPSY.</b> EMERGENT.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="drum" style="--acc:#7a5a2e;--acc-bg:#ece8e2;--acc-zebra:#f6f3f0;--acc-ink:#5f4624">
+    <div class="shead"><span class="dot" style="background:#7a5a2e"></span><h2>The drum, pressure and fixation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">EUSTACHIAN TUBE DYSFUNCTION</td><td><b>RETRACTED</b> drum, reduced mobility. Fullness + CRACKLING/POPPING after a cold. Decongestant + intranasal steroid. <b>NO FLYING until it resolves.</b></td></tr>
+          <tr><td class="h">BAROTRAUMA</td><td>Flying or DIVING. <b>HAEMOTYMPANUM.</b> Window rupture adds VERTIGO + TINNITUS + SENSORINEURAL loss. MYRINGOTOMY gives instant relief.</td></tr>
+          <tr><td class="h">TM PERFORATION</td><td><b>THE PAIN STOPS</b> when it ruptures. CENTRAL vs MARGINAL. Most heal; after acute otitis media as fast as <b>48&ndash;72 HOURS</b>.</td></tr>
+          <tr><td class="h">CHOLESTEATOMA</td><td><b>KERATIN in a RETRACTION POCKET</b> + <b>RECURRENT OTORRHOEA WITH NO OTITIS EXTERNA</b>. Not a neoplasm, no cholesterol. CT for extent. <b>SURGERY</b> &mdash; it erodes bone.</td></tr>
+          <tr><td class="h">OTOSCLEROSIS</td><td><b>STAPES fixation.</b> Gradual CONDUCTIVE loss with a <b>NORMAL DRUM</b>. <b>HEARS BETTER IN NOISE.</b> Weber TO the affected ear. CT first-line imaging. Stapes prosthesis.</td></tr>
+          <tr><td class="h">AURICULAR HAEMATOMA</td><td>Sub-perichondrial. Landmarks LOST. <b>DRAIN WITHIN 7 DAYS</b> &mdash; then splint. Re-check at 12&ndash;24h because it can appear LATE. Otherwise CAULIFLOWER EAR.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="snhl" style="--acc:#2a5f8f;--acc-bg:#e1e9ef;--acc-zebra:#f0f4f7;--acc-ink:#214a70">
+    <div class="shead"><span class="dot" style="background:#2a5f8f"></span><h2>Sensorineural causes worth knowing cold</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">PRESBYCUSIS</td><td>Commonest sensorineural loss. BILATERAL, SYMMETRICAL, GRADUAL, <b>HIGH FREQUENCY FIRST</b>. &ldquo;Hears but cannot make out words.&rdquo; Screen from <b>65</b>.</td></tr>
+          <tr><td class="h">OTOTOXICITY</td><td><b>AMINOGLYCOSIDES</b> most ototoxic and most common &mdash; monitor peaks. Also FUROSEMIDE, ASPIRIN, PLATINUM. <b>Ototoxic drugs are frequently NEPHROTOXIC too.</b></td></tr>
+          <tr><td class="h">NOISE-INDUCED</td><td>TEMPORARY threshold shift recovers in <b>24&ndash;48h</b>; repeated exposure makes it PERMANENT. Damage from ~80 dB; PAIN at 120.</td></tr>
+          <tr><td class="h">SUDDEN SNHL</td><td><b>UNILATERAL. A SYNDROME, NOT A DISEASE.</b> Viral or vascular. <b>SAME-DAY ENT REFERRAL</b> &mdash; steroids work only in the first weeks.</td></tr>
+          <tr><td class="h">ACOUSTIC NEUROMA</td><td>UNILATERAL loss with <b>SPEECH DISCRIMINATION WORSE THAN THE TONES PREDICT</b>. May involve CN V and VII. <b>MRI WITH GADOLINIUM.</b></td></tr>
+          <tr><td class="h">PERILYMPHATIC FISTULA</td><td><b>AUDIBLE POP</b> then sudden loss + vertigo after STRAINING, DIVING or a BLOW. Round or oval window.</td></tr>
+          <tr><td class="h">SYPHILIS</td><td><b>INDISTINGUISHABLE FROM M&Eacute;NI&Egrave;RE&rsquo;S</b> and TREATABLE. Order <b>FTA-ABS and MHA-TP</b>; <b>VDRL IS NOT HELPFUL</b>. Antibiotic + systemic steroid.</td></tr>
+          <tr><td class="h">GLOMUS TUMOUR</td><td><b>PULSATILE TINNITUS</b> + vascular middle ear mass. Can paralyse CN IX, X, XI.</td></tr>
+          <tr><td class="h">TINNITUS RED FLAG</td><td><b>UNILATERAL or PULSATILE</b> is investigated. No drug beats placebo; masking and biofeedback may help.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    The study guide carries the reasoning; this is the night-before sheet. Lectures 17 to 19 are added as they are delivered. Where a slide is incomplete and the lecturer corrected it out loud, the correction is what is written.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
