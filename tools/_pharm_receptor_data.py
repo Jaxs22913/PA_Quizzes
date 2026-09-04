@@ -24,11 +24,25 @@ RECEPTORS = [
                "<b>Pupil dilates</b> by contracting the iris <i>radial</i> muscle",
                "<b>Contracts</b> the bladder trigone and sphincter",
                "<b>Decreases</b> renin secretion &mdash; the opposite of beta-1"],
-      agon="phenylephrine &middot; oxymetazoline &middot; norepinephrine &middot; epinephrine "
-           "(at higher doses) &middot; dopamine (at very high doses)",
-      anta="prazosin &middot; terazosin &middot; doxazosin &middot; tamsulosin &middot; alfuzosin "
-           "&middot; phentolamine &middot; phenoxybenzamine &middot; labetalol &middot; carvedilol",
-      slides="76, 96, 111"),
+      agon=[
+            ("Direct-acting &mdash; catecholamines",
+             "norepinephrine &middot; epinephrine (higher doses) &middot; dopamine (very high doses)"),
+            ("Direct-acting &mdash; synthetic",
+             "phenylephrine &middot; oxymetazoline"),
+            ("Indirect-acting",
+             "amphetamine &middot; cocaine"),
+            ("Mixed-action",
+             "ephedrine &middot; pseudoephedrine"),
+          ],
+      anta=[
+            ("Selective alpha-1 blockers &mdash; the &ldquo;-osins&rdquo;",
+             "prazosin &middot; terazosin &middot; doxazosin &middot; tamsulosin &middot; alfuzosin"),
+            ("Non-selective alpha blockers",
+             "phentolamine (competitive) &middot; phenoxybenzamine (irreversible)"),
+            ("Combined alpha and beta blockers",
+             "labetalol &middot; carvedilol"),
+          ],
+      slides="76, 82, 96, 99, 103, 107, 111"),
  dict(key="a2", label="Alpha-2", colour="#8a5f14", short="Brake",
       where="On <b>presynaptic nerve endings</b> &mdash; the sending end, not the target organ.",
       hook="<b>Alpha-2 is the brake on the system itself.</b> Because it sits presynaptically, "
@@ -37,21 +51,40 @@ RECEPTORS = [
                "<b>Vasodilation</b> and a fall in blood pressure follow",
                "This is why an alpha-2 <i>agonist</i> lowers pressure while an alpha-1 agonist "
                "raises it &mdash; the location, not the letter, decides"],
-      agon="clonidine &middot; oxymetazoline",
-      anta="phentolamine &middot; phenoxybenzamine",
-      slides="76, 97, 108"),
+      agon=[
+            ("Direct-acting &mdash; synthetic",
+             "clonidine &middot; oxymetazoline"),
+          ],
+      anta=[
+            ("Non-selective alpha blockers",
+             "phentolamine &middot; phenoxybenzamine"),
+          ],
+      slides="76, 82, 97, 107, 108"),
  dict(key="b1", label="Beta-1", colour="#2d3f7a", short="Heart",
       where="Mainly the <b>heart</b>, and the kidney.",
       hook="<b>You have ONE heart &mdash; beta-1.</b> <i>Memory hook, not from the slides.</i>",
       actions=["<b>Increases heart rate</b> &mdash; positive chronotrope",
                "<b>Increases contractility</b> &mdash; positive inotrope",
                "<b>Increases renin</b> secretion from the kidney"],
-      agon="dobutamine (selective) &middot; isoproterenol &middot; epinephrine &middot; "
-           "norepinephrine &middot; dopamine",
-      anta="metoprolol &middot; atenolol &middot; bisoprolol &middot; betaxolol &middot; "
-           "acebutolol (all selective) &middot; propranolol &middot; timolol &middot; nadolol "
-           "(non-selective) &middot; labetalol &middot; carvedilol",
-      slides="11, 94, 114, 120"),
+      agon=[
+            ("Direct-acting &mdash; catecholamines",
+             "isoproterenol &middot; epinephrine &middot; norepinephrine &middot; dopamine"),
+            ("Direct-acting &mdash; synthetic",
+             "dobutamine (beta-1 selective)"),
+            ("Indirect-acting",
+             "amphetamine"),
+          ],
+      anta=[
+            ("Selective beta-1 antagonists",
+             "metoprolol &middot; atenolol &middot; bisoprolol &middot; betaxolol &middot; acebutolol"),
+            ("Non-selective beta antagonists",
+             "propranolol &middot; timolol &middot; nadolol"),
+            ("With partial agonist activity",
+             "acebutolol &middot; pindolol"),
+            ("Combined alpha and beta blockers",
+             "labetalol &middot; carvedilol"),
+          ],
+      slides="11, 79, 82, 94, 113, 114, 120, 121, 122"),
  dict(key="b2", label="Beta-2", colour="#1f6b4a", short="Lungs",
       where="<b>Bronchial smooth muscle</b>, and the vessels of skeletal muscle.",
       hook="<b>You have TWO lungs &mdash; beta-2.</b> <i>Memory hook, not from the slides.</i> "
@@ -61,11 +94,21 @@ RECEPTORS = [
                "<b>Vasodilation</b> in skeletal muscle beds",
                "<b>Relaxes the uterus</b>",
                "Contributes to <b>hyperglycaemia</b> with epinephrine"],
-      agon="albuterol (selective) &middot; isoproterenol &middot; epinephrine &middot; "
-           "ephedrine and pseudoephedrine (mixed action)",
-      anta="propranolol &middot; timolol &middot; nadolol &middot; labetalol &middot; carvedilol "
-           "&mdash; <b>all non-selective</b>",
-      slides="84, 98, 113, 119"),
+      agon=[
+            ("Direct-acting &mdash; catecholamines",
+             "isoproterenol &middot; epinephrine"),
+            ("Direct-acting &mdash; synthetic",
+             "albuterol (beta-2 selective)"),
+            ("Mixed-action",
+             "ephedrine &middot; pseudoephedrine"),
+          ],
+      anta=[
+            ("Non-selective beta antagonists",
+             "propranolol &middot; timolol &middot; nadolol &mdash; <b>this is the asthma problem</b>"),
+            ("Combined alpha and beta blockers",
+             "labetalol &middot; carvedilol"),
+          ],
+      slides="79, 84, 98, 103, 113, 119, 122"),
  dict(key="m", label="Muscarinic", colour="#5f3a8a", short="Rest and digest",
       where="<b>M1</b> neurons and gastric parietal cells &middot; <b>M2</b> neurons, cardiac "
             "cells and smooth muscle &middot; <b>M3</b> neurons, bladder, exocrine glands and "
@@ -77,11 +120,25 @@ RECEPTORS = [
                "<b>B</b>radycardia &middot; <b>B</b>ronchorrhoea &middot; <b>B</b>ronchospasm",
                "<b>E</b>mesis &middot; <b>L</b>acrimation &middot; <b>S</b>alivation",
                "The lens also <b>accommodates for near vision</b>"],
-      agon="bethanechol (muscarinic only) &middot; carbachol (also nicotinic) &middot; "
-           "pilocarpine &middot; and indirectly every acetylcholinesterase inhibitor",
-      anta="atropine &middot; scopolamine &middot; ipratropium &middot; tiotropium &middot; "
-           "glycopyrrolate &middot; oxybutynin and the other bladder agents",
-      slides="11, 23, 28, 30, 46"),
+      agon=[
+            ("Direct-acting &mdash; choline esters",
+             "acetylcholine &middot; carbachol &middot; bethanechol"),
+            ("Direct-acting &mdash; natural alkaloids",
+             "pilocarpine"),
+            ("Indirect &mdash; reversible cholinesterase inhibitors",
+             "edrophonium &middot; physostigmine &middot; neostigmine &middot; pyridostigmine &middot; donepezil, rivastigmine, galantamine"),
+            ("Indirect &mdash; irreversible",
+             "the organophosphates"),
+          ],
+      anta=[
+            ("Antimuscarinics &mdash; natural",
+             "atropine &middot; scopolamine"),
+            ("Antimuscarinics &mdash; synthetic",
+             "ipratropium &middot; tiotropium &middot; glycopyrrolate"),
+            ("Antimuscarinics &mdash; bladder agents",
+             "oxybutynin &middot; tolterodine &middot; solifenacin &middot; darifenacin &middot; fesoterodine &middot; trospium"),
+          ],
+      slides="11, 23, 26, 28, 30, 34, 40, 42, 46, 47, 55, 56"),
  dict(key="n", label="Nicotinic", colour="#4a6b7a", short="Ganglia and muscle",
       where="<b>Autonomic ganglia</b>, the <b>adrenal medulla</b>, the <b>neuromuscular "
             "junction</b> and the central nervous system.",
@@ -92,11 +149,21 @@ RECEPTORS = [
                "<b>H</b>ypertension &middot; <b>F</b>asciculations",
                "Structurally a <b>ligand-gated ion channel</b>: two acetylcholine molecules bind "
                "and sodium flows in"],
-      agon="nicotine (stimulates at low concentration, <b>blocks at high</b>) &middot; carbachol "
-           "&middot; succinylcholine, which depolarises before it paralyses",
-      anta="rocuronium &middot; vecuronium &middot; tubocurarine (non-depolarizing, competitive) "
-           "&middot; the ganglionic blockers",
-      slides="24, 29, 59, 62, 66"),
+      agon=[
+            ("Direct-acting &mdash; choline esters",
+             "carbachol (muscarinic and nicotinic) &middot; acetylcholine"),
+            ("Depolarizing neuromuscular blocker",
+             "succinylcholine &mdash; agonist first, paralysis second"),
+            ("Ganglionic stimulant",
+             "nicotine &mdash; stimulates low, <b>blocks high</b>"),
+          ],
+      anta=[
+            ("Non-depolarizing neuromuscular blockers",
+             "rocuronium &middot; vecuronium &middot; pancuronium &middot; cisatracurium &middot; tubocurarine"),
+            ("Ganglionic blockers",
+             "all non-depolarizing competitive antagonists except nicotine"),
+          ],
+      slides="24, 29, 58, 59, 61, 62, 66"),
 ]
 
 FIGURE = dict(

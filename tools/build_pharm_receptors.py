@@ -16,6 +16,19 @@ import _pharm_receptor_data as D
 OUT = os.path.join(ROOT, "Pharmacology I Exam 1", "pharm-exam-1-receptor-chart.html")
 
 
+def classes(pairs):
+    """Render drugs grouped under the class name the DECK gives them.
+
+    Jaxon asked for the classes alongside the drugs, and it is also the skill
+    Dr. Wood described: the answer choices are individual drug names, and what
+    you do with one is put it back in its bin. A flat list of names does not
+    rehearse that; a list with the bin written above it does.
+    """
+    return "".join('<div class="cl"><span class="cl-n">%s</span>'
+                   '<span class="cl-d">%s</span></div>' % (cls, drugs)
+                   for cls, drugs in pairs)
+
+
 def main():
     assert os.path.exists(os.path.join(ROOT, "Pharmacology I Exam 1", D.FIGURE["file"])), \
         "effector-organ figure missing"
@@ -62,7 +75,8 @@ def main():
           '<div class="rrow off"><span class="rl">Turned OFF by</span><div>%s</div></div>'
           '<div class="rsl">Slides %s</div></div></section>'
           % (r["key"], r["colour"], r["label"], r["short"], r["colour"],
-             r["where"], acts, r["hook"], r["agon"], r["anta"], r["slides"]))
+             r["where"], acts, r["hook"], classes(r["agon"]), classes(r["anta"]),
+             r["slides"]))
 
     body += ('<section id="organs"><div class="shead">'
              '<span class="dot" style="background:#6b5312"></span>'
@@ -93,6 +107,10 @@ def main():
   .ra{margin:0;padding-left:18px;} .ra li{margin:3px 0;font-size:.9rem;}
   .rrow.hook div{font-size:.9rem;}
   .rrow.on div, .rrow.off div{font-size:.86rem;line-height:1.55;}
+  .cl{margin-bottom:6px;} .cl:last-child{margin-bottom:0;}
+  .cl-n{display:block;font-size:.71rem;font-weight:800;letter-spacing:.02em;
+        color:var(--rc);margin-bottom:1px;}
+  .cl-d{display:block;font-size:.85rem;line-height:1.5;}
   .rrow.on .rl{color:#1f6b4a;} .rrow.off .rl{color:#8c2f22;}
   .rsl{padding-top:8px;font-size:.7rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
   .orgfig{margin:0;} .orgfig img{width:100%;height:auto;border-radius:10px;
@@ -101,8 +119,8 @@ def main():
   @media (max-width:620px){.rrow{grid-template-columns:1fr;gap:3px;}}
 """
     legend = ('<span>Six receptors, each read the way he said to think: <b>where it sits &rarr; '
-              'what it does &rarr; which drugs turn it on and off</b>. Slides cited on every '
-              'card.</span>')
+              'what it does &rarr; which drugs turn it on and off</b>, with every drug filed '
+              'under the class the lecture puts it in. Slides cited on every card.</span>')
     notes = """    <div class="note"><b>The deck has no table like this.</b> It teaches the receptors on
     slides 22 to 24 and 76 to 78, the organ actions as a figure on slide 11, and then the drugs
     one at a time across nearly a hundred slides. Everything here is from those slides; putting
