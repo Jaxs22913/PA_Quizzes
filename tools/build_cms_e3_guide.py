@@ -23,6 +23,7 @@ os.chdir(ROOT)
 
 from _cms_e3_guide_l15 import SECTION as S15
 from _cms_e3_guide_l16 import SECTION as S16
+from _cms_e3_guide_l17 import SECTION as S17
 
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-exam-2-study-guide.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3/cms-exam-3-study-guide.html")
@@ -42,6 +43,13 @@ TOC = """<nav class="toc">
   <a class="sub-link" href="#l16-acquired">2.4 Acquired sensorineural loss</a>
   <a class="sub-link" href="#l16-vertigo">2.5 The inner ear syndromes</a>
   <a class="sub-link" href="#l16-central">2.6 Retrocochlear and central</a>
+  <a class="top-link" href="#nose-sinuses">3 &middot; Nose and Paranasal Sinuses</a>
+  <a class="sub-link" href="#l17-sinus">3.1 Sinusitis</a>
+  <a class="sub-link" href="#l17-septum">3.2 The septum</a>
+  <a class="sub-link" href="#l17-bleed">3.3 Epistaxis</a>
+  <a class="sub-link" href="#l17-trauma">3.4 Trauma and foreign bodies</a>
+  <a class="sub-link" href="#l17-polyp">3.5 Polyps and rhinitis</a>
+  <a class="sub-link" href="#l17-neo">3.6 Neoplasms</a>
 </nav>"""
 
 TEST_YOURSELF = '''  var TEST_YOURSELF = {
@@ -105,17 +113,17 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
   '<header class="top">\n'
   '  <h1>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Study Guide</h1>\n'
   '  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>\n'
-  '  <p>Ear, nose and throat block &middot; <b>Lectures 15 and 16 are here; 17 to 19 are added as '
-  'they are delivered</b> &middot; Instructional Objectives taken verbatim from the syllabus</p>\n'
+  '  <p>Ear, nose and throat block &middot; <b>Lectures 15, 16 and 17 are here; 18 and 19 are '
+  'added as they are delivered</b> &middot; Instructional Objectives taken verbatim from the syllabus</p>\n'
   '</header>', head, count=1, flags=re.S)
 
-body = ('<main class="content">%s\n%s\n'
-        '<section class="deck" id="pending"><h2 class="deck-title">3 &middot; Still to come</h2>'
+body = ('<main class="content">%s\n%s\n%s\n'
+        '<section class="deck" id="pending"><h2 class="deck-title">4 &middot; Still to come</h2>'
         '<div class="callout warn"><p>The syllabus puts <b>five lectures</b> in this exam. '
-        'Lectures 15 and 16 are above. <b>Lecture 17, Disorders of the Nose and Paranasal '
-        'Sinuses</b>, was delivered on 3 September and is being built; Lectures 18 and 19 have '
-        'not been delivered yet. Treat a gap here as <i>not taught yet</i> rather than <i>not '
-        'examinable</i>.</p></div></section>\n</main>' % (S15, S16))
+        'Lectures 15, 16 and 17 are above. <b>Lecture 18 is Neck Masses and Neoplasms</b>; '
+        'neither it nor Lecture 19 has been delivered yet. Treat a gap here as <i>not taught '
+        'yet</i> rather than <i>not examinable</i>.</p></div></section>\n</main>'
+        % (S15, S16, S17))
 
 # The condition blocks and the Weber/Rinne table need styles the donor lacks.
 EXTRA = """

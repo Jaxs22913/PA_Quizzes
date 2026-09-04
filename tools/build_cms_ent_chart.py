@@ -42,10 +42,11 @@ OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3/cms-ent-compari
 
 from _cms_e3_chart_l15 import ROWS_L15, DIFF_L15, IMGS_L15
 from _cms_e3_chart_l16 import ROWS_L16, DIFF_L16, IMGS_L16
+from _cms_e3_chart_l17 import ROWS_L17, DIFF_L17, IMGS_L17
 
-ROWS = ROWS_L15 + ROWS_L16
-DIFF = dict(DIFF_L15, **DIFF_L16)
-IMGS = dict(IMGS_L15, **IMGS_L16)
+ROWS = ROWS_L15 + ROWS_L16 + ROWS_L17
+DIFF = dict(DIFF_L15, **DIFF_L16, **DIFF_L17)
+IMGS = dict(IMGS_L15, **IMGS_L16, **IMGS_L17)
 
 # Exam 1 is teal, Exam 2 indigo, Exam 3 violet, so the three CMS charts are
 # never confused with each other. #6a4fa3 is ALREADY IN THE SITE PALETTE (it is
@@ -87,10 +88,16 @@ GROUP_COLOUR = {
  "Hearing loss pattern": "#3a3a6b", "Tinnitus": "#8a5f8d", "Canal and middle ear mass": "#7a2f5f",
  "Acquired sensorineural": "#2a5f8f", "Inner ear syndrome": "#15707f",
  "Retrocochlear and central": "#8c1d12", "Non-organic": "#4f5666",
+ # Lecture 17 -- the nose. A separate warm family so the nasal rows never read
+ # as a variant of an ear group at a glance.
+ "Sinusitis": "#9c5230", "Septum": "#7a4a2e", "Epistaxis": "#8c1d12",
+ "Nasal trauma": "#94371f", "Foreign body": "#8a5a2b", "Polyps and rhinitis": "#6b7f35",
+ "Neoplasm": "#5f3a8a",
 }
 
 DECKS = {"l15": ("L15", "Disorders of the External and Middle Ear"),
-         "l16": ("L16", "Disorders of the Inner Ear")}
+         "l16": ("L16", "Disorders of the Inner Ear"),
+         "l17": ("L17", "Disorders of the Nose and Paranasal Sinuses")}
 
 
 def classify(pain, hearing):
@@ -152,7 +159,8 @@ def main():
                     % (fn, H.escape(re.sub("&[a-z]+;", " ", name)), lect, sl))
         else:
             cell = '<span class="nopic">no image<br>on the slide</span>'
-        lect = "L15" if deck.startswith("Disorders External") else "L16"
+        lect = ("L15" if deck.startswith("Disorders External")
+                else "L17" if deck.startswith("hughie") else "L16")
         slide_cell = '<b class="lect">%s</b><br>%s' % (lect, slide)
         pain, hear, sign = DIFF[name]
         painful, hl = classify(pain, hear)
@@ -175,14 +183,15 @@ def main():
 <header class="top">
   <h1>ENT Comparison Chart</h1>
   <p>Clinical Medicine and Surgery I &middot; Exam 3 &middot; Class of 2028</p>
-  <p>__N__ conditions from the ear, hearing and balance lectures</p>
+  <p>__N__ conditions from the ear, hearing, balance and nose lectures</p>
   <p style="margin-top:10px;font-size:.82rem;color:var(--c-mute)">Use the <b>Download as PDF</b> button,
   top right, to keep this offline &mdash; it prints landscape with every row intact.</p>
 </header>
 
 <div class="howto"><b>This chart is still being built.</b> The exam covers five lectures.
-<b>Lectures 15 and 16 are in it</b> &mdash; the external and middle ear, then the inner ear,
-hearing and balance. Lectures 17, 18 and 19 will be added as they are delivered, so treat a
+<b>Lectures 15, 16 and 17 are in it</b> &mdash; the external and middle ear, the inner ear,
+hearing and balance, then the nose and paranasal sinuses. Lectures 18 and 19 will be added as
+they are delivered, so treat a
 gap here as &ldquo;not taught yet&rdquo; rather than &ldquo;not examinable&rdquo;.<br><br>
 <b>How to use this.</b> Read it left to right for one condition: <b>the words a question will use
 to hand it to you</b>, how it presents and what you find on examination, what you order, what you
@@ -190,7 +199,8 @@ give, <b>how fast the patient has to be seen</b>, and what you tell them. Read i
 down one column to compare across conditions.<br><br>
 <b>The three grey columns are this block&rsquo;s discriminators.</b> On the ophthalmology chart they
 were pain, laterality and the pupil. Ear disease does not separate on laterality &mdash; nearly
-everything here is one-sided &mdash; so the middle column is <b>the type of hearing loss</b>.
+everything here is one-sided &mdash; so the middle column is <b>the type of hearing loss</b>, and
+for the nasal rows it carries <b>the discharge</b>, which is that half's most useful sign.
 <b>Conductive against sensorineural is the axis this whole block turns on</b>: it is the first
 thing Lecture 16 asks you to distinguish, it is the entire reason Weber and Rinne exist, and it
 sorts almost every row on this page. The buttons above let you pull out just the conductive
@@ -261,7 +271,7 @@ complication of acute otitis media. It sits where the content is.</div>
 <thead><tr>
   <th>Picture</th>
   <th>Condition</th>
-  <th class="d-h">Pain &amp; hearing loss</th>
+  <th class="d-h">Pain &amp; hearing loss<br><span style="font-weight:400;opacity:.75">discharge, for the nose</span></th>
   <th class="d-h">Key exam finding</th>
   <th class="gv-h">Vignette giveaway<br><span style="font-weight:400;opacity:.75">the words that hand it to you</span></th>
   <th>Presentation &amp; exam findings</th>

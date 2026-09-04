@@ -22,20 +22,31 @@ sys.path.insert(0, HERE)
 from render import render
 from _cms_e3_chart_l15 import ROWS_L15, DIFF_L15
 from _cms_e3_chart_l16 import ROWS_L16, DIFF_L16
+from _cms_e3_chart_l17 import ROWS_L17, DIFF_L17
 
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3", "cms-exam-3-cram-sheet.html")
-ROWS = ROWS_L15 + ROWS_L16
-DIFF = dict(DIFF_L15, **DIFF_L16)
+ROWS = ROWS_L15 + ROWS_L16 + ROWS_L17
+DIFF = dict(DIFF_L15, **DIFF_L16, **DIFF_L17)
 
 
 def strip(s):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s)).strip()
 
 
+EAR_ONLY = {r[0] for r in ROWS_L15 + ROWS_L16}
+
+
 def by_hearing(kind):
-    """Every condition whose hearing-loss cell names this type -- from the chart."""
+    """Every EAR condition whose hearing-loss cell names this type.
+
+    Scoped to Lectures 15 and 16 on purpose: the Lecture 17 rows use that same
+    middle column for the DISCHARGE, so sweeping them in would file allergic
+    rhinitis under "hearing not affected" -- true, and completely useless.
+    """
     out = []
     for n, *_ in ROWS:
+        if n not in EAR_ONLY:
+            continue
         h = strip(DIFF[n][1]).lower()
         if kind == "cond" and "conductive" in h and "sensorineural" not in h:
             out.append(n)
@@ -117,18 +128,41 @@ topics = [
   ["GLOMUS TUMOUR", "<b>PULSATILE TINNITUS</b> + vascular middle ear mass. Can paralyse CN IX, X, XI."],
   ["TINNITUS RED FLAG", "<b>UNILATERAL or PULSATILE</b> is investigated. No drug beats placebo; masking and biofeedback may help."],
  ]),
+ dict(id="nose", label="Nose and sinuses", color="#9c5230", tag="Lecture 17", rows=[
+  ["ACUTE SINUSITIS", "<b>UNDER 4 WEEKS.</b> <b>90&ndash;98% VIRAL</b>; only 0.5&ndash;2% superinfect. Pain <b>WORSE BENDING FORWARD</b>, localises to the sinus. 1 in 8 adults; <b>5th leading reason antibiotics are prescribed</b>."],
+  ["BACTERIAL &mdash; the 5 features", "<b>DOUBLE WORSENING</b> after 5&ndash;6 days &middot; <b>&ge;10 DAYS</b> persistent &middot; persistent PURULENT discharge &middot; <b>UNILATERAL</b> tooth/facial pain or maxillary tenderness &middot; FEVER."],
+  ["PAIN IS THE DISCRIMINATOR", "Pain occurs <b>ONLY in bacterial and fungal</b> sinusitis and is <b>REPRODUCIBLE ON PALPATION</b>. A common cold is not."],
+  ["DISCHARGE COLOUR", "<b>Yellow/green = LEAST helpful.</b> Clear = viral or allergic. Yellow AND putrid = bacterial. <b>BLACK = FUNGUS.</b> Rust = possible S. pneumoniae."],
+  ["SINUSITIS DIAGNOSTICS", "<b>NO test separates viral from bacterial.</b> Routine radiography DISCOURAGED &mdash; 3+ clinical findings match imaging accuracy. <b>CT</b> for recurrence, treatment failure, or suspected EXTRASINUS involvement."],
+  ["SINUSITIS TREATMENT", "Most improve WITHOUT antibiotics. Symptomatic: decongestants, NSAIDs, lavage, intranasal steroids. <b>Bacterial &rarr; AMOXICILLIN/CLAVULANATE.</b> Penicillin allergy &rarr; <b>DOXYCYCLINE</b> or moxifloxacin. Influenza &rarr; oseltamivir 5 days if &gt;13."],
+  ["URGENT IN SINUSITIS", "<b>DIPLOPIA</b> or visual disturbance &middot; <b>PERIORBITAL swelling/erythema</b> &middot; <b>ALTERED MENTAL STATUS</b>. Get the CT."],
+  ["CHRONIC SINUSITIS", "<b>OVER 12 WEEKS.</b> Impaired MUCOCILIARY CLEARANCE &rarr; REPEATED infections, not one persistent one. Oral steroids + <b>2 weeks amoxicillin/clavulanate</b>; courses often 3&ndash;4 weeks. ENT for surgery, allergy for skin testing."],
+  ["CHRONIC FUNGAL", "<b>ASPERGILLUS</b>, noninvasive, immunocompetent. Mild disease cured by <b>ENDOSCOPIC SURGERY WITHOUT ANTIFUNGALS</b>. Fungus ball &rarr; surgery, antifungals ONLY if bony erosion. Allergic form: polyps + asthma + <b>PEANUT-BUTTER mucus</b>."],
+  ["DEVIATED SEPTUM", "One passage smaller. Congestion &rarr; ANOSMIA; severe = <b>OSA, snoring, facial pain, RECURRENT NOSEBLEEDS</b>. Treatment SEPTOPLASTY."],
+  ["PERFORATED SEPTUM", "<b>INTRANASAL STEROIDS or COCAINE</b> &mdash; chronic ischaemia. Rarely GRANULOMATOSIS WITH POLYANGIITIS or secondary SYPHILIS. Treat the cause; else septoplasty."],
+  ["SEPTAL HAEMATOMA", "Between septum and PERICHONDRIUM. Usually TRAUMA; associated with nasal fracture. <b>DRAIN via intranasal incision under general anaesthesia.</b>"],
+  ["EPISTAXIS &mdash; ANTERIOR", "<b>90%</b>, from <b>KIESSELBACH&rsquo;S PLEXUS</b>. Commonest cause = <b>the patient&rsquo;s finger</b>. Peaks &lt;10 and 45&ndash;65; WINTER."],
+  ["EPISTAXIS &mdash; POSTERIOR", "<b>SPHENOPALATINE ARTERY.</b> Significant haemorrhage. <b>HIGHER RISK because of ASPIRATION</b> and subsequent infection."],
+  ["STOPPING THE BLEED", "Blow out clots &rarr; spray <b>OXYMETAZOLINE</b> &rarr; <b>PINCH THE ALAE 10 MINUTES CONTINUOUSLY</b>. Sit up, lean FORWARD. Cold compress. Then tampons, packing, balloon catheters, thrombogenic foams. <b>DO NOT BLOW THE NOSE.</b>"],
+  ["EPISTAXIS WORKUP", "<b>PT/INR is NOT routine</b> &mdash; only if anticoagulated. Haematocrit + type and crossmatch if massive, with <b>2 large-bore IV lines</b>."],
+  ["NASAL FOREIGN BODY", "<b>UNILATERAL PURULENT FOUL-SMELLING discharge in a young child.</b> Floor of the passage under the INFERIOR turbinate, or in front of the MIDDLE turbinate. Visualisation is the diagnosis."],
+  ["NASAL FRACTURE &mdash; no x-ray if", "<b>ALL FOUR:</b> tenderness/swelling ISOLATED to the bony bridge &middot; breathes through EACH naris &middot; nose STRAIGHT, no septal deviation &middot; <b>NO SEPTAL HAEMATOMA</b>. Otherwise film it. Initial care: ICE + head of bed up."],
+  ["NASAL POLYPS", "<b>GREY, GLISTENING</b> masses &rarr; congestion, thick discharge, <b>ANOSMIA</b>. Asthma 20&ndash;50%, <b>allergic fungal sinusitis 85%</b>, aspirin intolerance 8&ndash;20%, alcohol intolerance 50%, Churg-Strauss 50%, <b>CF 5&ndash;44%</b>. <b>EVALUATE EVERY CHILD WITH MULTIPLE POLYPS FOR CF AND ASTHMA</b> &mdash; chloride sweat test. Surgery gives only TEMPORARY relief."],
+  ["ALLERGIC RHINITIS", "<b>CLEAR discharge from BOTH nostrils</b>, <b>BLUISH hue</b>, oedematous mucosa, &plusmn; polyps. <b>80% end up on 2+ medicines.</b> Antihistamine + leukotriene inhibitor at night + intranasal steroid; ipratropium; immunotherapy. <b>Allergy creates the environment for infection but is not itself an -itis.</b>"],
+  ["NASOPHARYNGEAL CARCINOMA", "<b>NECK MASS + DIPLOPIA + facial numbness + headache.</b> <b>EBV</b>, HPV, smoking; endemic SOUTHERN CHINA; <b>2&ndash;3&times; more in males</b>. ENT + endoscopic guided biopsy."],
+ ]),
 ]
 
 html = render(
     title="Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Cram Sheet",
     kicker="PAJ 5500 &middot; Class of 2028",
     h1="Clinical Medicine and Surgery I &middot; Exam 3",
-    sub="Ear, nose and throat block &mdash; Lectures 15 and 16, everything that has to be "
+    sub="Ear, nose and throat block &mdash; Lectures 15 to 17, everything that has to be "
         "recallable cold",
     topics=topics,
     guide_href="cms-exam-3-study-guide.html",
     footer_note=("The study guide carries the reasoning; this is the night-before sheet. "
-                 "Lectures 17 to 19 are added as they are delivered. Where a slide is incomplete "
+                 "Lectures 18 and 19 are added as they are delivered. Where a slide is incomplete "
                  "and the lecturer corrected it out loud, the correction is what is written."),
     primary="#6a4fa3")
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

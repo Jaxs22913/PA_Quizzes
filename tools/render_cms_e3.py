@@ -48,6 +48,18 @@ SPEC = {
    sub="Clinical Medicine and Surgery I &middot; Exam 3 &middot; Lecture 16",
    chips=["Weber &amp; Rinne", "M&eacute;ni&egrave;re disease", "Positional vertigo",
           "Sudden hearing loss", "Ototoxicity"]),
+ "l17io": dict(sets="cms_e3l17_sets.json",
+   files=["nose-sinuses-quiz.html", "nose-sinuses-quiz-version-2.html"],
+   title="Nose and Paranasal Sinuses Quiz %d — CMS I Exam 3",
+   h1="Nose and Paranasal Sinuses &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 3 &middot; Lecture 17",
+   chips=["Sinusitis", "The septum", "Epistaxis", "Polyps &amp; rhinitis", "Nasal trauma"]),
+ "l17vig": dict(sets="cms_e3l17_vig_sets.json",
+   files=["nose-sinuses-vignettes.html", "nose-sinuses-vignettes-version-2.html"],
+   title="Nose and Paranasal Sinuses Vignettes %d — CMS I Exam 3",
+   h1="Nose and Paranasal Sinuses &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 3 &middot; Lecture 17",
+   chips=["Viral vs bacterial", "Epistaxis", "Foreign body", "Polyps", "Nasal fracture"]),
 }[sys.argv[1] if len(sys.argv) > 1 else "l15io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))

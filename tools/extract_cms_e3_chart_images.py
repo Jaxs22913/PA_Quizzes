@@ -33,6 +33,7 @@ INBOX = os.path.expanduser("~/Desktop/Semester 2/Clinical Medicine and Surgery I
 DECKS = {
   "l15": os.path.join(INBOX, "Disorders External and Middle Ear 9-2026.pptx"),
   "l16": os.path.join(INBOX, "16. Disorders of Inner Ear 2026 - Dr. Jaquith.pptx"),
+  "l17": os.path.join(INBOX, "hughie Nose & Paranasal Sinuses fall 2026.pptx"),
 }
 ROW_TOL = 400000          # EMU; two pictures within this are the same visual row
 
@@ -58,6 +59,12 @@ WANT = {
   "l15": {9: [1], 16: [1, 2], 26: [2], 35: [2], 40: [1], 43: [1], 47: [1],
           49: [1], 52: [1], 58: [2], 61: [1], 63: [1], 65: [1], 69: [1]},
   "l16": {5: [1], 19: [1], 39: [1], 43: [1], 49: [2], 51: [1], 59: [1], 73: [1]},
+  # Lecture 17. All 47 pictures were viewed on contact sheets first. Left out:
+  # the neti-pot and saline-spray product shots (24, 25), the instrument table
+  # (55), the before/after cosmetic septoplasty pairs (33, 34) which show a
+  # RESULT rather than a finding, and the "nasal packing" title card (52 pos1).
+  "l17": {7: [1], 15: [1], 36: [1], 38: [1], 42: [1, 2], 44: [1], 47: [2],
+          52: [2], 53: [2], 58: [3], 61: [1], 62: [1], 63: [1]},
 }
 
 

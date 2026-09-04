@@ -1,0 +1,222 @@
+# -*- coding: utf-8 -*-
+"""CMS I Exam 3, Lecture 17 -- vignette set A.
+
+Sinusitis, the septum and epistaxis. Every stem opens with a patient.
+
+Diagnosis lead-ins are the minority, per Jaquith's account of how the CMS
+papers are written. Named findings carry a plain description in brackets.
+
+FIVE options. Correct answer authored FIRST; the partition rotates it.
+"""
+D = "hughie Nose & Paranasal Sinuses fall 2026.pptx, Slide %d"
+IO_A = ("a — Nose and paranasal sinus disorders: etiologies, epidemiology, risk factors, clinical "
+        "manifestations, differential diagnosis, diagnostic testing, management, referrals, "
+        "patient education, prognosis")
+IO_B = ("b — Identify medical care strategies for nose and paranasal sinus disorders by "
+        "population: adolescent, adult, elderly")
+
+QUESTIONS = [
+ dict(topic="Acute sinusitis", io=IO_A, lead="next step", cite=D % 22,
+  q="A 31-year-old woman has four days of nasal congestion, facial pressure and clear discharge after a cold. She is afebrile and the pressure is not reproduced by pressing over her cheeks. What is the appropriate management?",
+  opts=[["Symptomatic treatment without antibiotics", "Correct. Most acute rhinosinusitis is viral and improves without antibiotics."],
+        ["Amoxicillin with clavulanate now", "Nothing here suggests bacterial involvement."],
+        ["Sinus radiography", "Routine imaging is discouraged and would not change management."],
+        ["Immediate ENT referral", "Referral follows failure of medical treatment."],
+        ["Oral corticosteroids", "Not first-line symptomatic care."]]),
+
+ dict(topic="Bacterial sinusitis", io=IO_A, lead="next step", cite=D % 23,
+  q="A 44-year-old man had a cold that improved by day four, then worsened on day seven with right-sided facial pain, purulent discharge and a temperature of 38.5 degrees Celsius. Pressing over the right maxilla reproduces his pain. What should be done?",
+  opts=[["Start amoxicillin with clavulanate", "Correct. Double worsening, unilateral pain reproduced on palpation and fever together point bacterial."],
+        ["Continue symptomatic treatment alone", "The pattern has shifted toward bacterial disease."],
+        ["Arrange sinus radiography first", "Imaging cannot separate viral from bacterial."],
+        ["Prescribe an antifungal", "Fungal disease is a concern in the immunocompromised."],
+        ["Reassure and review in two weeks", "He meets the criteria for treatment now."]]),
+
+ dict(topic="Bacterial sinusitis", io=IO_A, lead="treatment", cite=D % 23,
+  q="A 39-year-old woman with bacterial sinusitis has a documented anaphylactic reaction to penicillin. Which treatment is appropriate?",
+  opts=[["Doxycycline", "Correct; an antipneumococcal fluoroquinolone such as moxifloxacin is the alternative."],
+        ["Amoxicillin with clavulanate", "That is a penicillin combination."],
+        ["Ampicillin with sulbactam", "Also a penicillin combination."],
+        ["Nystatin", "An antifungal, and the infection is bacterial."],
+        ["Oseltamivir", "That treats influenza."]]),
+
+ dict(topic="Acute sinusitis", io=IO_A, lead="defining feature", cite=D % 18,
+  q="A 28-year-old man with facial pressure says it is much worse when he bends to tie his shoes. What does that suggest?",
+  opts=[["Sinus involvement", "Correct. Sinusitis pain localises to the sinus and worsens bending over or lying flat."],
+        ["A tension headache", "Posture is not the classic trigger."],
+        ["Dental abscess", "Tooth pain can occur, but posture is the sinus clue."],
+        ["Migraine", "Typically throbbing and unilateral, without the postural trigger."],
+        ["Temporal arteritis", "That causes scalp tenderness and jaw claudication in older patients."]]),
+
+ dict(topic="Sinusitis urgent features", io=IO_A, lead="next step", cite=D % 21,
+  q="A 36-year-old man being treated for sinusitis returns with double vision and swelling around the right eye. What is the priority?",
+  opts=[["Urgent computed tomography for extrasinus involvement", "Correct. Diplopia and periorbital swelling are named urgent features."],
+        ["Change the antibiotic and review in a week", "These findings need imaging now."],
+        ["Add an intranasal steroid", "That does not address orbital involvement."],
+        ["Reassure &mdash; this is expected", "These are explicitly urgent findings."],
+        ["Arrange allergy skin testing", "Not the priority."]]),
+
+ dict(topic="Bacterial sinusitis", io=IO_A, lead="diagnostic technique", cite=D % 19,
+  q="A 47-year-old woman asks whether her green nasal discharge proves she needs antibiotics. What should she be told?",
+  opts=[["Yellow or green is the least helpful colour", "Correct. Colour barely helps; only black, rust or pure clear carry any signal."],
+        ["Green always means bacterial infection", "Colour does not establish that."],
+        ["Green always means viral infection", "Colour does not establish that either."],
+        ["Green means a fungal cause", "Black is the colour that suggests fungus."],
+        ["Green means blood is present", "Red indicates blood."]]),
+
+ dict(topic="Acute sinusitis", io=IO_A, lead="etiology", cite=D % 12,
+  q="A 58-year-old man on chemotherapy develops facial pain, fever and black discharge from the nose. Which cause must be considered?",
+  opts=[["A fungal infection", "Correct. Immunocompromised patients get Rhizopus, Mucor and occasionally Aspergillus &mdash; and black discharge suggests fungus."],
+        ["Ordinary viral rhinosinusitis", "The colour and his immune status point elsewhere."],
+        ["Allergic rhinitis", "That gives clear bilateral discharge."],
+        ["A nasal foreign body", "That gives unilateral foul discharge, typically in children."],
+        ["Nasal polyps", "Polyps do not produce black discharge."]]),
+
+ dict(topic="Chronic sinusitis", io=IO_A, lead="diagnosis", cite=D % 28,
+  q="A 41-year-old woman has had constant nasal congestion and sinus pressure for five months, with intermittent flares. What is the most likely diagnosis?",
+  opts=[["Chronic sinusitis", "Correct &mdash; more than twelve weeks, from impaired mucociliary clearance causing repeated infection."],
+        ["Acute sinusitis", "That lasts under four weeks."],
+        ["Allergic rhinitis", "That gives clear discharge and a bluish mucosa rather than constant pressure."],
+        ["Nasal foreign body", "That gives unilateral foul discharge."],
+        ["Deviated septum", "That obstructs without the infective flares."]]),
+
+ dict(topic="Chronic sinusitis", io=IO_A, lead="treatment", cite=D % 29,
+  q="A 45-year-old man with chronic bacterial sinusitis has failed several short antibiotic courses. What is the appropriate regimen and referral?",
+  opts=[["Oral steroids with two weeks of amoxicillin/clavulanate, and ENT referral", "Correct, with allergy skin testing as well."],
+        ["A three-day course of azithromycin", "Far shorter than the courses required."],
+        ["Topical antifungals alone", "The cause here is bacterial."],
+        ["Antihistamines alone", "That addresses the allergic pathway only."],
+        ["No treatment &mdash; await spontaneous resolution", "Repeated courses are required."]]),
+
+ dict(topic="Chronic fungal sinusitis", io=IO_A, lead="treatment", cite=D % 30,
+  q="A 52-year-old immunocompetent woman has unilateral sinus disease with a fungus ball on imaging and no bony erosion. How is she treated?",
+  opts=[["Surgery alone", "Correct. Antifungals are added only if bony erosion has occurred."],
+        ["Surgery plus antifungals", "Antifungals are reserved for bony erosion."],
+        ["Antifungals alone", "Surgery is the mainstay."],
+        ["Antibiotics", "The organism is fungal."],
+        ["Observation", "Treatment is required."]]),
+
+ dict(topic="Chronic fungal sinusitis", io=IO_A, lead="diagnosis", cite=D % 30,
+  q="A 34-year-old man with asthma and nasal polyps has pansinusitis, and thick mucus with the consistency of peanut butter is removed at surgery. What is the diagnosis?",
+  opts=[["Allergic fungal sinusitis", "Correct &mdash; the eosinophil-laden mucus is characteristic."],
+        ["Chronic bacterial sinusitis", "That does not produce this mucus."],
+        ["Acute viral rhinosinusitis", "Too short-lived and without this finding."],
+        ["Nasopharyngeal carcinoma", "That presents with a neck mass and cranial nerve signs."],
+        ["Septal perforation", "Not related to this presentation."]]),
+
+ dict(topic="Deviated septum", io=IO_A, lead="diagnosis", cite=D % 32,
+  q="A 29-year-old man has years of one-sided nasal blockage, snoring and recurrent nosebleeds from the same side. Examination shows one nasal passage clearly narrower. What is the most likely diagnosis?",
+  opts=[["Deviated septum", "Correct."],
+        ["Nasal polyps", "Those appear as grey glistening masses, usually bilateral."],
+        ["Septal perforation", "That is a hole, not a displacement."],
+        ["Allergic rhinitis", "That is bilateral with clear discharge."],
+        ["Nasopharyngeal carcinoma", "That presents with a neck mass and cranial nerve signs."]]),
+
+ dict(topic="Perforated septum", io=IO_A, lead="etiology", cite=D % 37,
+  q="A 33-year-old woman has a septal perforation. She has used an intranasal steroid daily for years. What is the likely mechanism?",
+  opts=[["Chronic ischaemia", "Correct &mdash; the same mechanism as cocaine use."],
+        ["Direct bacterial invasion", "No organism is implicated in steroid-related perforation."],
+        ["An allergic reaction to the propellant", "Allergy does not destroy cartilage."],
+        ["Autoimmune destruction", "That would suggest granulomatosis with polyangiitis."],
+        ["Barotrauma", "Not implicated in septal perforation."]]),
+
+ dict(topic="Perforated septum", io=IO_A, lead="next step", cite=D % 37,
+  q="A 46-year-old man has a septal perforation, and also reports haemoptysis and blood in his urine. Which diagnosis should be considered?",
+  opts=[["Granulomatosis with polyangiitis", "Correct &mdash; a vascular autoimmune disease named as a rare cause of nasal deformity."],
+        ["Cocaine use", "Possible, but it would not explain the lung and kidney findings."],
+        ["Secondary syphilis", "Named as a rare cause, but without this multi-system pattern."],
+        ["Allergic rhinitis", "It causes rhinorrhoea, not perforation or systemic disease."],
+        ["Chronic sinusitis", "An infective process confined to the sinuses."]]),
+
+ dict(topic="Septal haematoma", io=IO_A, lead="next step", cite=D % 41,
+  q="A 19-year-old man struck on the nose during a game has a bulging, boggy swelling on both sides of the nasal septum. What must be done?",
+  opts=[["Drain it via intranasal incision under general anaesthesia", "Correct."],
+        ["Ice and review in a week", "A septal haematoma needs draining."],
+        ["Nasal packing", "Packing controls bleeding rather than draining a collection."],
+        ["Oral antibiotics alone", "Antibiotics do not drain it."],
+        ["Reassure &mdash; it will resorb", "It requires drainage."]]),
+
+ dict(topic="Nasal fracture", io=IO_A, lead="next step", cite=D % 57,
+  q="A 24-year-old woman has swelling and tenderness confined to the bony bridge after a fall. She breathes freely through each nostril, the nose is straight, and there is no septal haematoma. What imaging is required?",
+  opts=[["None", "Correct &mdash; all four criteria are met."],
+        ["Plain nasal radiographs", "Not required when all four criteria hold."],
+        ["Computed tomography of the face", "Not required here."],
+        ["Magnetic resonance imaging", "Not indicated."],
+        ["Ultrasound of the nose", "Not a described modality."]]),
+
+ dict(topic="Nasal fracture", io=IO_A, lead="next step", cite=D % 57,
+  q="A 27-year-old man with a nasal injury has swelling over the bridge, but cannot breathe through the left nostril and the nose looks deviated. What is required?",
+  opts=[["Plain nasal radiographs", "Correct &mdash; two of the four criteria fail, so imaging is needed."],
+        ["No imaging", "Imaging can only be omitted if all four criteria hold."],
+        ["Immediate surgery without imaging", "Not the described step."],
+        ["Antibiotics and discharge", "That does not address the injury."],
+        ["Nasal packing", "Packing treats bleeding."]]),
+
+ dict(topic="Epistaxis", io=IO_A, lead="diagnosis", cite=D % 46,
+  q="A 9-year-old boy has recurrent nosebleeds from the front of the left nostril, easily controlled by pinching. What is the likely source?",
+  opts=[["Kiesselbach's plexus", "Correct &mdash; the anterior septal watershed, and the source of about ninety per cent of nosebleeds."],
+        ["The sphenopalatine artery", "That is the posterior source."],
+        ["The internal carotid artery", "Not the usual source."],
+        ["The greater palatine artery", "It supplies the palate."],
+        ["The frontal sinus", "Not a bleeding source."]]),
+
+ dict(topic="Epistaxis", io=IO_A, lead="patient education", cite=D % 49,
+  q="A 52-year-old woman with a nosebleed asks what to do at home. What should she be taught?",
+  opts=[["Blow out clots, spray oxymetazoline, then pinch the alae for ten minutes continuously",
+         "Correct, sitting up and leaning forward."],
+        ["Tilt the head back and pinch the bridge", "Tilting back sends blood into the pharynx, and the bridge is bone."],
+        ["Lie flat and apply ice to the neck", "Lying flat allows blood to be swallowed."],
+        ["Pack the nostril with tissue and sleep", "Not the taught technique."],
+        ["Pinch for thirty seconds and check repeatedly", "Checking interrupts the pressure; ten continuous minutes is required."]]),
+
+ dict(topic="Epistaxis", io=IO_A, lead="next step", cite=D % 45,
+  q="A 68-year-old man on warfarin has heavy bleeding with blood running down the back of his throat, and it does not stop with anterior pressure. What does this suggest and what is the concern?",
+  opts=[["A posterior bleed, with a risk of aspiration", "Correct &mdash; posterior bleeds carry higher risk from aspiration and subsequent infection."],
+        ["An anterior bleed that needs more pressure", "Blood in the pharynx points posteriorly."],
+        ["Allergic rhinitis", "That does not bleed."],
+        ["A nasal foreign body", "That gives foul unilateral discharge."],
+        ["Nasal polyps", "Polyps obstruct rather than bleed heavily."]]),
+
+ dict(topic="Epistaxis", io=IO_A, lead="next step", cite=D % 49,
+  q="A 71-year-old woman on apixaban has prolonged heavy epistaxis. Which investigations are appropriate?",
+  opts=[["Prothrombin time with international normalised ratio, haematocrit, and type and crossmatch",
+         "Correct &mdash; the clotting study is indicated because she is anticoagulated."],
+        ["No blood tests at all", "Anticoagulation and heavy bleeding both warrant testing."],
+        ["A full blood count only", "Insufficient in prolonged haemorrhage."],
+        ["Computed tomography of the sinuses", "Not the acute priority."],
+        ["Nasal swab culture", "That identifies organisms, not bleeding risk."]]),
+
+ dict(topic="Epistaxis", io=IO_A, lead="patient education", cite=D % 51,
+  q="A 35-year-old man has just had nasal packing for epistaxis. What must he be told to avoid?",
+  opts=[["Blowing his nose", "Correct."],
+        ["Drinking cold fluids", "Fluids are unrestricted."],
+        ["Sleeping propped up", "That is helpful rather than avoided."],
+        ["Using a cold compress", "That is recommended."],
+        ["Talking", "Speech has no effect on the packing."]]),
+
+ dict(topic="Acute sinusitis", io=IO_B, lead="treatment", cite=D % 24,
+  q="A 16-year-old girl has sinusitis symptoms during an influenza outbreak and tests positive for influenza. What treatment is appropriate?",
+  opts=[["Oseltamivir twice daily for five days", "Correct &mdash; indicated in anyone over thirteen."],
+        ["Amoxicillin with clavulanate", "That treats bacterial sinusitis."],
+        ["An antifungal", "The cause is viral."],
+        ["Immediate ENT referral", "Not indicated at this stage."],
+        ["Nasal packing", "That treats bleeding."]]),
+
+ dict(topic="Allergic rhinitis", io=IO_A, lead="mechanism", cite=D % 13,
+  q="A 30-year-old woman with seasonal allergies insists she gets sinus infections every spring. How should the relationship be explained?",
+  opts=[["Allergy creates the environment for infection without itself inflaming the sinus",
+         "Correct &mdash; allergy does not cause an inflammation per se."],
+        ["Allergy directly infects the sinuses", "Allergy is not an infection."],
+        ["The two are unrelated", "Allergy is described as predisposing."],
+        ["Allergy protects against sinus infection", "It predisposes rather than protects."],
+        ["Only children show this relationship", "Age is not the distinction."]]),
+
+ dict(topic="Acute sinusitis", io=IO_A, lead="patient education", cite=D % 27,
+  q="A 38-year-old man is being referred for persistent sinus disease. What does the lecture require you to tell him?",
+  opts=[["What he has, how it arose, how to use the treatment, and which specialty he is going to",
+         "Correct &mdash; the four elements named."],
+        ["Only the name of the diagnosis", "Naming it is one of four elements, not all of them."],
+        ["Only how to take the medicine", "Necessary, but it omits the diagnosis and the referral."],
+        ["Nothing until the specialist has seen him", "The referring clinician explains the referral."],
+        ["Only the likely prognosis", "Prognosis is not among the four elements named."]]),
+]

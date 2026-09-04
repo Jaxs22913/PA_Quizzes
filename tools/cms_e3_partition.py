@@ -32,6 +32,10 @@ SPECS = {
             "cms_e3l16_sets.json"),
  "l16vig": (["cms_e3l16_vig_a:QUESTIONS", "cms_e3l16_vig_b:QUESTIONS"],
             "cms_e3l16_vig_sets.json"),
+ "l17io":  (["cms_e3l17_pool_a:QUESTIONS", "cms_e3l17_pool_b:QUESTIONS"],
+            "cms_e3l17_sets.json"),
+ "l17vig": (["cms_e3l17_vig_a:QUESTIONS", "cms_e3l17_vig_b:QUESTIONS",
+            "cms_e3l17_vig_c:QUESTIONS"], "cms_e3l17_vig_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))
