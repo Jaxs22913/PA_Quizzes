@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receptor Chart &mdash; Pharmacology I Exam 1 (Class of 2028)</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --navy:#6b3524;--indigo:#9c5230;--gold:#c9a227;--ice:#fbf1e6;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo);font-weight:800}
+  h1{margin:6px 0 8px;font-size:31px;line-height:1.15;color:var(--ink);letter-spacing:-.015em}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;margin-top:6px}
+  .legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+  .note{margin-top:14px;background:var(--ice);border:1px solid rgba(107,53,36,.18);
+    border-radius:11px;padding:13px 15px;font-size:14.5px}
+  .note.warn{background:#fff6f5;border-color:rgba(179,38,30,.22)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .toc a{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .toc a:hover{background:var(--ice)}
+  section{margin:0 0 26px}
+  .shead{display:flex;align-items:center;gap:9px;margin:0 0 9px}
+  .shead .dot{width:11px;height:11px;border-radius:50%;background:var(--indigo)}
+  h2{margin:0;font-size:19.5px;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:12px;font-weight:600;color:var(--muted);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+  thead th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;
+    padding:10px 13px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .dn-h{width:20%}.p-h{width:12%}.sl-h{width:9%}
+  .dn{font-weight:800;color:var(--ink)}
+  .ct u{text-underline-offset:3px;text-decoration-thickness:2px}
+  .sl{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .g{color:var(--muted);font-weight:500;font-size:12.5px}
+  .pill{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  tr.t-abs td,tr.t-bbw td{background:#fff6f5}
+  tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
+  footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
+  @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
+
+  .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:9px;
+         margin-bottom:14px;}
+  .rg{border:1px solid var(--c-line);border-left:5px solid var(--rc);border-radius:10px;
+      padding:10px 12px;background:var(--c-ice);}
+  .rg-l{font-weight:800;font-size:1rem;color:var(--rc);}
+  .rg-s{font-size:.8rem;font-weight:700;margin:2px 0 5px;}
+  .rg-h{font-size:.79rem;color:var(--c-mute);line-height:1.4;}
+  .rcard{border:1px solid var(--c-line);border-left:5px solid var(--rc);border-radius:10px;
+         padding:4px 14px 10px;background:var(--c-ice);}
+  .rrow{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:9px 0;
+        border-top:1px solid var(--c-line);align-items:start;}
+  .rrow:first-child{border-top:none;}
+  .rl{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+      color:var(--c-mute);padding-top:2px;}
+  .ra{margin:0;padding-left:18px;} .ra li{margin:3px 0;font-size:.9rem;}
+  .rrow.hook div{font-size:.9rem;}
+  .rrow.on div, .rrow.off div{font-size:.86rem;line-height:1.55;}
+  .rrow.on .rl{color:#1f6b4a;} .rrow.off .rl{color:#8c2f22;}
+  .rsl{padding-top:8px;font-size:.7rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .orgfig{margin:0;} .orgfig img{width:100%;height:auto;border-radius:10px;
+          border:1px solid var(--c-line);}
+  .orgfig figcaption{margin-top:6px;font-size:.74rem;color:var(--c-mute);}
+  @media (max-width:620px){.rrow{grid-template-columns:1fr;gap:3px;}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 1 &middot; Lecture 3</div>
+    <h1>Autonomic Receptor Chart</h1>
+    <p class="sub">Alpha-1, alpha-2, beta-1, beta-2, muscarinic and nicotinic &mdash; where each one sits, what it does, and every drug in the lecture that turns it on or off.</p>
+    <div class="legend"><span>Six receptors, each read the way he said to think: <b>where it sits &rarr; what it does &rarr; which drugs turn it on and off</b>. Slides cited on every card.</span></div>
+    <div class="note"><b>The deck has no table like this.</b> It teaches the receptors on
+    slides 22 to 24 and 76 to 78, the organ actions as a figure on slide 11, and then the drugs
+    one at a time across nearly a hundred slides. Everything here is from those slides; putting
+    it in one place is what the page is for.</div>
+    <div class="note warn"><b>Two memory hooks are NOT from the lecture</b> and are labelled where
+    they appear: <i>one heart, two lungs</i> for beta-1 against beta-2. They are standard
+    mnemonics, included because the point of this page is to be memorable, and flagged so they
+    are not mistaken for something the deck said.</div>
+  </header>
+
+  <div class="toc"><a href="#grid">Six lines</a><a href="#a1">Alpha-1</a><a href="#a2">Alpha-2</a><a href="#b1">Beta-1</a><a href="#b2">Beta-2</a><a href="#m">Muscarinic</a><a href="#n">Nicotinic</a><a href="#organs">Organ by organ</a></div>
+
+<section id="grid"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>The whole thing in six lines <span class="tag">memorise this</span></h2></div><div class="rgrid"><div class="rg" style="--rc:#8c2f22"><div class="rg-l">Alpha-1</div><div class="rg-s">Squeeze</div><div class="rg-h">constricts vessels &middot; raises pressure</div></div><div class="rg" style="--rc:#8a5f14"><div class="rg-l">Alpha-2</div><div class="rg-s">Brake</div><div class="rg-h">presynaptic &mdash; turns the system DOWN</div></div><div class="rg" style="--rc:#2d3f7a"><div class="rg-l">Beta-1</div><div class="rg-s">Heart</div><div class="rg-h">rate &amp; force up &middot; renin up</div></div><div class="rg" style="--rc:#1f6b4a"><div class="rg-l">Beta-2</div><div class="rg-s">Lungs</div><div class="rg-h">opens airways &middot; dilates muscle beds</div></div><div class="rg" style="--rc:#5f3a8a"><div class="rg-l">Muscarinic</div><div class="rg-s">Rest and digest</div><div class="rg-h">secretions, contractions, slowing</div></div><div class="rg" style="--rc:#4a6b7a"><div class="rg-l">Nicotinic</div><div class="rg-s">Ganglia and muscle</div><div class="rg-h">ganglia, adrenal medulla, muscle</div></div></div><div class="note"><b>The two that catch people.</b> <b>Alpha-1 and alpha-2 pull in opposite directions</b>, and it is not the number that decides &mdash; it is <i>where the receptor sits</i>. Alpha-1 is on the target organ, so stimulating it squeezes. Alpha-2 is on the nerve ending <i>before</i> the target, so stimulating it turns the whole outflow down. That is why phenylephrine raises blood pressure and clonidine lowers it, though both are alpha agonists.<br><br><b>And beta-2 is why &ldquo;non-selective&rdquo; matters.</b> Propranolol, timolol and nadolol block beta-2 as well as beta-1 &mdash; which closes airways.</div></section><section id="a1"><div class="shead"><span class="dot" style="background:#8c2f22"></span><h2>Alpha-1 <span class="tag">Squeeze</span></h2></div><div class="rcard" style="--rc:#8c2f22"><div class="rrow"><span class="rl">Where</span><div>On the <b>postsynaptic membrane of the effector organ</b> &mdash; the receiving end.</div></div><div class="rrow"><span class="rl">What it does</span><div><ul class="ra"><li><b>Vasoconstriction</b>, so blood pressure rises &mdash; systolic and diastolic</li><li><b>Pupil dilates</b> by contracting the iris <i>radial</i> muscle</li><li><b>Contracts</b> the bladder trigone and sphincter</li><li><b>Decreases</b> renin secretion &mdash; the opposite of beta-1</li></ul></div></div><div class="rrow hook"><span class="rl">Hook</span><div><b>Alpha-1 squeezes.</b> Vessels, sphincters and the pupil all tighten.</div></div><div class="rrow on"><span class="rl">Turned ON by</span><div>phenylephrine &middot; oxymetazoline &middot; norepinephrine &middot; epinephrine (at higher doses) &middot; dopamine (at very high doses)</div></div><div class="rrow off"><span class="rl">Turned OFF by</span><div>prazosin &middot; terazosin &middot; doxazosin &middot; tamsulosin &middot; alfuzosin &middot; phentolamine &middot; phenoxybenzamine &middot; labetalol &middot; carvedilol</div></div><div class="rsl">Slides 76, 96, 111</div></div></section><section id="a2"><div class="shead"><span class="dot" style="background:#8a5f14"></span><h2>Alpha-2 <span class="tag">Brake</span></h2></div><div class="rcard" style="--rc:#8a5f14"><div class="rrow"><span class="rl">Where</span><div>On <b>presynaptic nerve endings</b> &mdash; the sending end, not the target organ.</div></div><div class="rrow"><span class="rl">What it does</span><div><ul class="ra"><li><b>Reduces sympathetic outflow</b> from the central vasomotor centres</li><li><b>Vasodilation</b> and a fall in blood pressure follow</li><li>This is why an alpha-2 <i>agonist</i> lowers pressure while an alpha-1 agonist raises it &mdash; the location, not the letter, decides</li></ul></div></div><div class="rrow hook"><span class="rl">Hook</span><div><b>Alpha-2 is the brake on the system itself.</b> Because it sits presynaptically, stimulating it turns the sympathetic outflow DOWN.</div></div><div class="rrow on"><span class="rl">Turned ON by</span><div>clonidine &middot; oxymetazoline</div></div><div class="rrow off"><span class="rl">Turned OFF by</span><div>phentolamine &middot; phenoxybenzamine</div></div><div class="rsl">Slides 76, 97, 108</div></div></section><section id="b1"><div class="shead"><span class="dot" style="background:#2d3f7a"></span><h2>Beta-1 <span class="tag">Heart</span></h2></div><div class="rcard" style="--rc:#2d3f7a"><div class="rrow"><span class="rl">Where</span><div>Mainly the <b>heart</b>, and the kidney.</div></div><div class="rrow"><span class="rl">What it does</span><div><ul class="ra"><li><b>Increases heart rate</b> &mdash; positive chronotrope</li><li><b>Increases contractility</b> &mdash; positive inotrope</li><li><b>Increases renin</b> secretion from the kidney</li></ul></div></div><div class="rrow hook"><span class="rl">Hook</span><div><b>You have ONE heart &mdash; beta-1.</b> <i>Memory hook, not from the slides.</i></div></div><div class="rrow on"><span class="rl">Turned ON by</span><div>dobutamine (selective) &middot; isoproterenol &middot; epinephrine &middot; norepinephrine &middot; dopamine</div></div><div class="rrow off"><span class="rl">Turned OFF by</span><div>metoprolol &middot; atenolol &middot; bisoprolol &middot; betaxolol &middot; acebutolol (all selective) &middot; propranolol &middot; timolol &middot; nadolol (non-selective) &middot; labetalol &middot; carvedilol</div></div><div class="rsl">Slides 11, 94, 114, 120</div></div></section><section id="b2"><div class="shead"><span class="dot" style="background:#1f6b4a"></span><h2>Beta-2 <span class="tag">Lungs</span></h2></div><div class="rcard" style="--rc:#1f6b4a"><div class="rrow"><span class="rl">Where</span><div><b>Bronchial smooth muscle</b>, and the vessels of skeletal muscle.</div></div><div class="rrow"><span class="rl">What it does</span><div><ul class="ra"><li><b>Bronchodilation</b></li><li><b>Vasodilation</b> in skeletal muscle beds</li><li><b>Relaxes the uterus</b></li><li>Contributes to <b>hyperglycaemia</b> with epinephrine</li></ul></div></div><div class="rrow hook"><span class="rl">Hook</span><div><b>You have TWO lungs &mdash; beta-2.</b> <i>Memory hook, not from the slides.</i> It is also why a NON-selective beta blocker is a problem in asthma: blocking beta-2 closes the airway.</div></div><div class="rrow on"><span class="rl">Turned ON by</span><div>albuterol (selective) &middot; isoproterenol &middot; epinephrine &middot; ephedrine and pseudoephedrine (mixed action)</div></div><div class="rrow off"><span class="rl">Turned OFF by</span><div>propranolol &middot; timolol &middot; nadolol &middot; labetalol &middot; carvedilol &mdash; <b>all non-selective</b></div></div><div class="rsl">Slides 84, 98, 113, 119</div></div></section><section id="m"><div class="shead"><span class="dot" style="background:#5f3a8a"></span><h2>Muscarinic <span class="tag">Rest and digest</span></h2></div><div class="rcard" style="--rc:#5f3a8a"><div class="rrow"><span class="rl">Where</span><div><b>M1</b> neurons and gastric parietal cells &middot; <b>M2</b> neurons, cardiac cells and smooth muscle &middot; <b>M3</b> neurons, bladder, exocrine glands and smooth muscle. Only these three are functionally characterised.</div></div><div class="rrow"><span class="rl">What it does</span><div><ul class="ra"><li><b>D</b>efecation &middot; <b>U</b>rination &middot; <b>M</b>iosis</li><li><b>B</b>radycardia &middot; <b>B</b>ronchorrhoea &middot; <b>B</b>ronchospasm</li><li><b>E</b>mesis &middot; <b>L</b>acrimation &middot; <b>S</b>alivation</li><li>The lens also <b>accommodates for near vision</b></li></ul></div></div><div class="rrow hook"><span class="rl">Hook</span><div><b>DUMBBELS</b> &mdash; and every one of them is a secretion, a contraction or a slowing. Blocking them gives you the exact opposite, which is the anticholinergic toxidrome.</div></div><div class="rrow on"><span class="rl">Turned ON by</span><div>bethanechol (muscarinic only) &middot; carbachol (also nicotinic) &middot; pilocarpine &middot; and indirectly every acetylcholinesterase inhibitor</div></div><div class="rrow off"><span class="rl">Turned OFF by</span><div>atropine &middot; scopolamine &middot; ipratropium &middot; tiotropium &middot; glycopyrrolate &middot; oxybutynin and the other bladder agents</div></div><div class="rsl">Slides 11, 23, 28, 30, 46</div></div></section><section id="n"><div class="shead"><span class="dot" style="background:#4a6b7a"></span><h2>Nicotinic <span class="tag">Ganglia and muscle</span></h2></div><div class="rcard" style="--rc:#4a6b7a"><div class="rrow"><span class="rl">Where</span><div><b>Autonomic ganglia</b>, the <b>adrenal medulla</b>, the <b>neuromuscular junction</b> and the central nervous system.</div></div><div class="rrow"><span class="rl">What it does</span><div><ul class="ra"><li><b>M</b>ydriasis &middot; <b>T</b>achycardia</li><li><b>W</b>eakness, meaning paralysis</li><li><b>H</b>ypertension &middot; <b>F</b>asciculations</li><li>Structurally a <b>ligand-gated ion channel</b>: two acetylcholine molecules bind and sodium flows in</li></ul></div></div><div class="rrow hook"><span class="rl">Hook</span><div><b>M-T-W-H-F</b>, the days of the week &mdash; and note it is the mirror image of the muscarinic list on the pupil and the heart.</div></div><div class="rrow on"><span class="rl">Turned ON by</span><div>nicotine (stimulates at low concentration, <b>blocks at high</b>) &middot; carbachol &middot; succinylcholine, which depolarises before it paralyses</div></div><div class="rrow off"><span class="rl">Turned OFF by</span><div>rocuronium &middot; vecuronium &middot; tubocurarine (non-depolarizing, competitive) &middot; the ganglionic blockers</div></div><div class="rsl">Slides 24, 29, 59, 62, 66</div></div></section><section id="organs"><div class="shead"><span class="dot" style="background:#6b5312"></span><h2>The same thing organ by organ <span class="tag">slide 11</span></h2></div><div class="note">Sympathetic actions in <b>red</b>, parasympathetic in <b>blue</b>. Read it against the cards above: everything red is alpha or beta, everything blue is muscarinic.</div><figure class="orgfig"><img src="pharm-exam-1-study-guide-images/l3-s011-sns-pns-effector-organs.jpg" alt="Actions of the sympathetic and parasympathetic nervous systems on each effector organ, sympathetic in red and parasympathetic in blue" loading="lazy"><figcaption>Actions of the sympathetic and parasympathetic nervous systems on effector organs &mdash; lecture slide 11.</figcaption></figure></section>
+
+  <footer>
+    Assembled from the Lecture 3 slides; each card cites the ones it came from.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+</div>
+</body>
+</html>
