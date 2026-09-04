@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Killers, Commons and Zebras &mdash; Pharmacology I Exam 1 (Class of 2028)</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --navy:#6b3524;--indigo:#9c5230;--gold:#c9a227;--ice:#fbf1e6;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo);font-weight:800}
+  h1{margin:6px 0 8px;font-size:31px;line-height:1.15;color:var(--ink);letter-spacing:-.015em}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;margin-top:6px}
+  .legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+  .note{margin-top:14px;background:var(--ice);border:1px solid rgba(107,53,36,.18);
+    border-radius:11px;padding:13px 15px;font-size:14.5px}
+  .note.warn{background:#fff6f5;border-color:rgba(179,38,30,.22)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .toc a{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .toc a:hover{background:var(--ice)}
+  section{margin:0 0 26px}
+  .shead{display:flex;align-items:center;gap:9px;margin:0 0 9px}
+  .shead .dot{width:11px;height:11px;border-radius:50%;background:var(--indigo)}
+  h2{margin:0;font-size:19.5px;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:12px;font-weight:600;color:var(--muted);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+  thead th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;
+    padding:10px 13px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .dn-h{width:20%}.p-h{width:12%}.sl-h{width:9%}
+  .dn{font-weight:800;color:var(--ink)}
+  .ct u{text-underline-offset:3px;text-decoration-thickness:2px}
+  .sl{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .g{color:var(--muted);font-weight:500;font-size:12.5px}
+  .pill{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  tr.t-abs td,tr.t-bbw td{background:#fff6f5}
+  tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
+  footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
+  @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
+
+  .kcg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;}
+  .kc{border:1px solid var(--c-line);border-radius:10px;padding:11px 13px;background:var(--c-ice);}
+  .kc-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:4px;}
+  .kc-h b{font-size:.95rem;}
+  .kc-d{font-size:.78rem;color:var(--c-mute);font-style:italic;margin-bottom:6px;}
+  .kc-n{font-size:.86rem;line-height:1.5;}
+  .kc-s{margin-top:7px;font-size:.7rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .hb{font-size:.64rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+      padding:2px 7px;border-radius:999px;background:var(--gold);color:#241a02;white-space:nowrap;}
+  #killers .kc{border-left:3px solid #8c2f22;}
+  #commons .kc{border-left:3px solid #6b5312;}
+  #zebras  .kc{border-left:3px solid #5f3a8a;}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 1 &middot; Class of 2028</div>
+    <h1>Killers, Commons and Zebras</h1>
+    <p class="sub">Dr. Wood&rsquo;s own framework for sorting every adverse effect, from the exam review the evening before the paper. 7 killers, 6 groups of commons and 9 zebras, each citing its slide.</p>
+    <div class="legend"><span>Three buckets, from the exam review. The <b>nine badged entries are effects he named himself</b>; the rest are the decks&rsquo; adverse effects sorted by his criteria, each citing its slide.</span></div>
+    <div class="note"><b>Why a framework beats a list.</b> The side-effects reference on this
+    site is organised by drug, which is the right shape for looking something up and the wrong
+    shape for revising. This one is organised the way he said he thinks about them, which is the
+    shape the question comes in. Use both:
+    <a href="pharm-exam-1-side-effects.html">the full side-effects chart is here</a>.</div>
+  </header>
+
+  <div class="toc"><a href="#how">How to use this</a><a href="#killers">Killers</a><a href="#commons">Commons</a><a href="#zebras">Zebras</a></div>
+
+<section id="how"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>How to use this <span class="tag">his framework, not a list</span></h2></div><div class="note warn">Asked which adverse effects to focus on, Dr. Wood did not give a list &mdash; he gave three buckets and told the class to sort everything into them. <b>The sorting is the revision.</b> Take any side effect you have learned and ask: would this kill them, does it happen to nearly everyone on the group, or is it the one strange thing that belongs to this drug alone?<br><br><b>Where he said to aim:</b> <i>&ldquo;Any time you see those killers or the zebras, those are always things you should look at.&rdquo;</i> The commons cover a good share of what he asks and mostly come free with the group; the killers and the zebras are each worth about a question.</div><div class="note"><b>What is his and what is not.</b> The nine entries badged <span class="hb">his example</span> are effects he named himself at the review. The rest are the lecture decks&rsquo; own adverse effects sorted by his criteria, each citing its slide. He did not assign those buckets &mdash; his rule did, and you can check every one against the slide beside it.</div></section><section id="killers"><div class="shead"><span class="dot" style="background:#8c2f22"></span><h2>Killers <span class="tag">7</span></h2></div><div class="note">Dangerous. <b>Immediate discontinuation and evaluation.</b> Not necessarily the commonest &mdash; these are the ones you warn the patient about <i>in advance</i>, so that they do not decide that skin sloughing off is a normal side effect.</div><div class="kcg"><div class="kc"><div class="kc-h"><b>Anaphylaxis</b><span class="hb">his example</span></div><div class="kc-d">Penicillins &mdash; the whole class, and the carbapenems and monobactam</div><div class="kc-n">The deck asks for monitoring for signs and symptoms of anaphylaxis on the natural penicillins, the penicillinase-resistant penicillins, the antipseudomonal penicillins, aztreonam and the carbapenems &mdash; five separate slides. <b>Stop the drug and evaluate.</b></div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 17</div></div><div class="kc"><div class="kc-h"><b>Stevens-Johnson syndrome and toxic epidermal necrolysis</b><span class="hb">his example</span></div><div class="kc-d">aminopenicillins; sulfamethoxazole/trimethoprim</div><div class="kc-n"><b>His own example of a killer.</b> Skin sloughing is not a side effect to tolerate &mdash; he made the point that patients must be told in advance so they do not assume it is normal.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 21</div></div><div class="kc"><div class="kc-h"><b>Suicidal ideation and worsening depression</b><span class="hb">his example</span></div><div class="kc-d">isotretinoin</div><div class="kc-n"><b>His own example of a killer.</b> The deck instructs monitoring for signs of developing depression, and the drug is also contraindicated in pregnancy and breastfeeding with the iPledge programme attached.</div><div class="kc-s">Dermatology Medications &middot; slide 27</div></div><div class="kc"><div class="kc-h"><b>Clostridioides difficile infection and pseudomembranous colitis</b></div><div class="kc-d">clindamycin; aminopenicillins; fluoroquinolones</div><div class="kc-n">Clindamycin is the one classically named for it. <b>Stop the antibiotic and treat.</b></div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 81</div></div><div class="kc"><div class="kc-h"><b>Torsades de pointes from QT prolongation</b></div><div class="kc-d">macrolides; fluoroquinolones; azoles</div><div class="kc-n">The deck gives QT prolongation its own slide. On the fluoroquinolones it is listed with torsades by name. <b>An arrhythmia, not an inconvenience.</b></div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 58</div></div><div class="kc"><div class="kc-h"><b>Serotonin syndrome</b></div><div class="kc-d">linezolid</div><div class="kc-n">Listed on the linezolid slide with its triggers: <b>selective serotonin reuptake inhibitors, tyramine-containing foods and pseudoephedrine</b>. Linezolid is a monoamine oxidase inhibitor, which is why an antibiotic is on this list at all.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 71</div></div><div class="kc"><div class="kc-h"><b>Seizures</b></div><div class="kc-d">carbapenems; acyclovir and ganciclovir at high levels</div><div class="kc-n">On the carbapenem slide directly. It is the reason the class is not simply the safe broad-spectrum default.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 44</div></div></div></section><section id="commons"><div class="shead"><span class="dot" style="background:#6b5312"></span><h2>Commons <span class="tag">6</span></h2></div><div class="note">What actually happens, often. <b>These belong to the GROUP, not the drug.</b> Asked whether the common effects of penicillins, cephalosporins and carbapenems need learning separately, he said <i>&ldquo;no, they&rsquo;re all the same&rdquo;</i> &mdash; so they are listed by group here, and the effort goes where a class breaks the pattern.</div><div class="kcg"><div class="kc"><div class="kc-h"><b>Every antibiotic</b><span class="hb">his example</span></div><div class="kc-d">Gastrointestinal upset &mdash; nausea, vomiting, diarrhoea</div><div class="kc-n"><b>His own example, and the whole point of the bucket.</b> Almost every antibiotic causes this in somebody. Tell the patient it is expected; it may or may not warrant changing therapy.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 22</div></div><div class="kc"><div class="kc-h"><b>All beta-lactams &mdash; penicillins, cephalosporins, carbapenems</b><span class="hb">his example</span></div><div class="kc-d">Hypersensitivity reaction, rash, diarrhoea</div><div class="kc-n"><b>Do not learn these three classes' common effects separately.</b> Asked exactly that, he said: <i>&ldquo;no, they're all the same&rdquo;</i>. Learn the shared set once and spend the effort where a class breaks the pattern.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 22</div></div><div class="kc"><div class="kc-h"><b>Penicillins</b></div><div class="kc-d">Renal and hepatic monitoring, platelets</div><div class="kc-n">Dosing frequency falls with renal impairment.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 22</div></div><div class="kc"><div class="kc-h"><b>Vancomycin</b></div><div class="kc-d">Renal clearance monitoring</div><div class="kc-n">Trough levels are checked to confirm efficacy.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 51</div></div><div class="kc"><div class="kc-h"><b>Aminoglycosides</b></div><div class="kc-d">Ototoxicity and nephrotoxicity</div><div class="kc-n">Common enough in this class to be the reason troughs are checked at all &mdash; the target is an <b>undetectable</b> trough, because it is accumulation that harms.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 68</div></div><div class="kc"><div class="kc-h"><b>Topical retinoids</b></div><div class="kc-d">Retinoid dermatitis &mdash; erythema, pruritus, scaling</div><div class="kc-n">Expected with the class rather than a reason to stop.</div><div class="kc-s">Dermatology Medications &middot; slide 24</div></div></div></section><section id="zebras"><div class="shead"><span class="dot" style="background:#5f3a8a"></span><h2>Zebras <span class="tag">9</span></h2></div><div class="note">Uncommon, but <b>unique to one drug</b>. <i>&ldquo;Whenever you hear hoofs beating, normally you should be thinking horses. Sometimes it&rsquo;s a zebra.&rdquo;</i> Each is worth about one question &mdash; and together with the killers they are where he told the class to look.</div><div class="kcg"><div class="kc"><div class="kc-h"><b>Disulfiram-like reaction with alcohol</b><span class="hb">his example</span></div><div class="kc-d">metronidazole</div><div class="kc-n"><b>His own example of a zebra.</b> Uncommon in practice &mdash; a patient taking it for an infection is often not drinking &mdash; but unique to this drug, and it costs nothing to warn them.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 86</div></div><div class="kc"><div class="kc-h"><b>Red Man syndrome</b><span class="hb">his example</span></div><div class="kc-d">vancomycin</div><div class="kc-n"><b>His own example.</b> An infusion-related reaction, not an allergy, which is why the answer is to <b>slow the infusion</b> rather than to stop the drug. He specified two hours.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 51</div></div><div class="kc"><div class="kc-h"><b>Tooth discolouration and depression of skeletal growth</b><span class="hb">his example</span></div><div class="kc-d">tetracyclines</div><div class="kc-n"><b>He pointed at the tetracyclines by name</b> as where a class breaks the common pattern. Doxycycline discolours more than the others; avoid under <b>8 years old</b> and in the <b>second and third trimesters</b>.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 63</div></div><div class="kc"><div class="kc-h"><b>Chelation with calcium and iron</b><span class="hb">his example</span></div><div class="kc-d">tetracyclines; fluoroquinolones</div><div class="kc-n">The interaction he illustrated with a patient on a <b>prenatal vitamin</b> whose calcium and iron bind up the doxycycline. Both classes complex with cations.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 63</div></div><div class="kc"><div class="kc-h"><b>Achilles tendonitis and tendon rupture</b></div><div class="kc-d">fluoroquinolones</div><div class="kc-n">Unique to this class, and paired on the slide with a caution in the <b>under-18s</b> and with peripheral neuropathy.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 79</div></div><div class="kc"><div class="kc-h"><b>Photosensitivity</b></div><div class="kc-d">tetracyclines; fluoroquinolones; topical retinoids</div><div class="kc-n">Not dangerous, but it is the one that actually changes what you tell the patient &mdash; sunscreen and covering up, because they will be outdoors regardless.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 63</div></div><div class="kc"><div class="kc-h"><b>Teratogenicity</b></div><div class="kc-d">azoles; isotretinoin; tetracyclines</div><div class="kc-n">The azole slides carry it three times over. Isotretinoin is contraindicated in pregnancy and breastfeeding outright.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 104</div></div><div class="kc"><div class="kc-h"><b>Bone marrow suppression</b></div><div class="kc-d">flucytosine; ganciclovir</div><div class="kc-n">Confined to these agents rather than shared across the antifungals or antivirals.</div><div class="kc-s">Antibiotics, Antivirals, and Antifungals &middot; slide 101</div></div><div class="kc"><div class="kc-h"><b>Raised serum lipids</b></div><div class="kc-d">isotretinoin</div><div class="kc-n">Sits alongside photophobia, arthralgia, headaches, alopecia and brittle nails on the same slide &mdash; the price of the most effective acne drug.</div><div class="kc-s">Dermatology Medications &middot; slide 27</div></div></div></section>
+
+  <footer>
+    The framework quotes are verified against the review recording before this page is written. The recording stays on the course owner's machine and is never copied into this repo.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+</div>
+</body>
+</html>
