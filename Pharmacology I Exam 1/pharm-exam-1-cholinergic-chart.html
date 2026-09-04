@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cholinergic Drug Chart &mdash; Pharmacology I Exam 1 (Class of 2028)</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --navy:#6b3524;--indigo:#9c5230;--gold:#c9a227;--ice:#fbf1e6;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo);font-weight:800}
+  h1{margin:6px 0 8px;font-size:31px;line-height:1.15;color:var(--ink);letter-spacing:-.015em}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;margin-top:6px}
+  .legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+  .note{margin-top:14px;background:var(--ice);border:1px solid rgba(107,53,36,.18);
+    border-radius:11px;padding:13px 15px;font-size:14.5px}
+  .note.warn{background:#fff6f5;border-color:rgba(179,38,30,.22)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .toc a{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .toc a:hover{background:var(--ice)}
+  section{margin:0 0 26px}
+  .shead{display:flex;align-items:center;gap:9px;margin:0 0 9px}
+  .shead .dot{width:11px;height:11px;border-radius:50%;background:var(--indigo)}
+  h2{margin:0;font-size:19.5px;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:12px;font-weight:600;color:var(--muted);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+  thead th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;
+    padding:10px 13px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .dn-h{width:20%}.p-h{width:12%}.sl-h{width:9%}
+  .dn{font-weight:800;color:var(--ink)}
+  .ct u{text-underline-offset:3px;text-decoration-thickness:2px}
+  .sl{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .g{color:var(--muted);font-weight:500;font-size:12.5px}
+  .pill{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  tr.t-abs td,tr.t-bbw td{background:#fff6f5}
+  tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
+  footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
+  @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
+
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px;
+         margin-bottom:13px;}
+  .cg{border:1px solid var(--c-line);border-left:5px solid var(--cc);border-radius:10px;
+      padding:10px 12px;background:var(--c-ice);}
+  .cg-l{font-weight:800;font-size:.92rem;color:var(--cc);line-height:1.25;}
+  .cg-s{font-size:.79rem;color:var(--c-mute);margin-top:4px;line-height:1.4;}
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:10px;}
+  .pc{border:1px solid var(--c-line);border-left:5px solid #8c2f22;border-radius:10px;
+      padding:11px 13px;background:var(--c-ice);}
+  .pc-t{font-weight:800;font-size:.92rem;margin-bottom:8px;}
+  .pc-b{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;
+        margin-bottom:8px;}
+  .pc-s{font-size:.83rem;line-height:1.45;}
+  .pc-v{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--c-mute);}
+  .pc-a{font-size:.85rem;line-height:1.5;padding-top:8px;border-top:1px solid var(--c-line);}
+  .pl{display:block;font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+      color:#8c2f22;margin-bottom:3px;}
+  .pc-sl{margin-top:7px;font-size:.69rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .dgrid{display:grid;gap:10px;}
+  .dc{border:1px solid var(--c-line);border-left:5px solid var(--cc);border-radius:10px;
+      padding:4px 14px 9px;background:var(--c-ice);}
+  .dc-n{font-weight:800;font-size:.95rem;padding:9px 0 2px;}
+  .dr{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:8px 0;
+      border-top:1px solid var(--c-line);align-items:start;}
+  .dl{font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+      color:var(--c-mute);padding-top:2px;}
+  .dr div{font-size:.87rem;line-height:1.55;}
+  .dc-s{padding-top:7px;font-size:.69rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  @media (max-width:620px){.dr{grid-template-columns:1fr;gap:3px;}
+    .pc-b{grid-template-columns:1fr;} .pc-v{text-align:left;}}
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 1 &middot; Lecture 3</div>
+    <h1>Cholinergic Drug Chart</h1>
+    <p class="sub">Every cholinergic and anticholinergic drug in the lecture &mdash; 18 agents across 5 groups, plus the 5 pairs that actually get confused.</p>
+    <div class="legend"><span>Every cholinergic drug in Lecture 3, read as <b>what it does at the receptor &rarr; what it is used for &rarr; what to watch for</b>. Slide cited on every drug.</span></div>
+    <div class="note"><b>The companion to the receptor chart.</b> That page is organised by
+    receptor; this one is organised by drug. Read them together:
+    <a href="pharm-exam-1-receptor-chart.html">the receptor chart is here</a>, and the muscarinic
+    and nicotinic cards on it are what every drug below is acting on.</div>
+    <div class="note warn"><b>The pairs section is the one to read first.</b> Almost every hard
+    question in this half of the lecture is two drugs that look interchangeable and are separated
+    by a single axis &mdash; and one of them, physostigmine against neostigmine, is an answer
+    Dr. Wood gave at the exam review in exactly those terms.</div>
+  </header>
+
+  <div class="toc"><a href="#grid">Five groups</a><a href="#pairs">Confusable pairs</a><a href="#direct">Direct-acting agonists</a><a href="#indirect">Indirect-acting &mdash; cholinesterase inhibitors</a><a href="#antimusc">Antimuscarinics</a><a href="#ganglion">Ganglionic blockers</a><a href="#nmb">Neuromuscular blockers</a></div>
+
+<section id="grid"><div class="shead"><span class="dot" style="background:#c9a227"></span><h2>The five groups <span class="tag">start here</span></h2></div><div class="cgrid"><div class="cg" style="--cc:#1f6b4a"><div class="cg-l">Direct-acting agonists</div><div class="cg-s">Bind the receptor themselves</div></div><div class="cg" style="--cc:#2d3f7a"><div class="cg-l">Indirect-acting &mdash; cholinesterase inhibitors</div><div class="cg-s">Raise the acetylcholine that is already there</div></div><div class="cg" style="--cc:#8a5f14"><div class="cg-l">Antimuscarinics</div><div class="cg-s">Block muscarinic only</div></div><div class="cg" style="--cc:#5f3a8a"><div class="cg-l">Ganglionic blockers</div><div class="cg-s">Block the entire autonomic output</div></div><div class="cg" style="--cc:#8c2f22"><div class="cg-l">Neuromuscular blockers</div><div class="cg-s">Nicotinic, at the muscle end plate</div></div></div><div class="note"><b>Two of these block nicotinic receptors and three do not.</b> The antimuscarinics leave the neuromuscular junction and the autonomic ganglia alone entirely &mdash; which is why atropine does not paralyse anyone. The ganglionic blockers and the neuromuscular blockers are the nicotinic pair, and they differ only in <i>which</i> nicotinic receptor they reach.</div></section><section id="pairs"><div class="shead"><span class="dot" style="background:#8c2f22"></span><h2>The pairs that get confused <span class="tag">learn these first</span></h2></div><div class="note">Each of these is two drugs that look interchangeable and are separated by <b>exactly one axis</b>. Get the axis and the pair comes free.</div><div class="pgrid"><div class="pc"><div class="pc-t">Bethanechol vs carbachol</div><div class="pc-b"><div class="pc-s"><b>Bethanechol</b> &mdash; muscarinic ONLY.</div><div class="pc-v">against</div><div class="pc-s"><b>Carbachol</b> &mdash; muscarinic AND nicotinic.</div></div><div class="pc-a"><span class="pl">Separated by</span>Whether it also hits nicotinic receptors. Carbachol's nicotinic action is why it releases epinephrine from the adrenal medulla; bethanechol has no such effect.</div><div class="pc-sl">Slides 30, 32</div></div><div class="pc"><div class="pc-t">Physostigmine vs neostigmine</div><div class="pc-b"><div class="pc-s"><b>Physostigmine</b> &mdash; enters the central nervous system.</div><div class="pc-v">against</div><div class="pc-s"><b>Neostigmine</b> &mdash; does not.</div></div><div class="pc-a"><span class="pl">Separated by</span><b>The blood-brain barrier.</b> That is why physostigmine is the antidote when anticholinergic toxicity is central, and neostigmine is the one used peripherally in surgery. Dr. Wood built a whole review answer on this axis.</div><div class="pc-sl">Slides 36, 38</div></div><div class="pc"><div class="pc-t">Edrophonium vs pyridostigmine</div><div class="pc-b"><div class="pc-s"><b>Edrophonium</b> &mdash; short-acting.</div><div class="pc-v">against</div><div class="pc-s"><b>Pyridostigmine</b> &mdash; long-acting.</div></div><div class="pc-a"><span class="pl">Separated by</span><b>Diagnose against maintain.</b> Edrophonium diagnoses myasthenia gravis; pyridostigmine manages it chronically. Neostigmine sits between them, treating symptoms.</div><div class="pc-sl">Slides 35, 39</div></div><div class="pc"><div class="pc-t">Non-depolarizing vs depolarizing blockade</div><div class="pc-b"><div class="pc-s"><b>Non-depolarizing</b> &mdash; competitive antagonist, reversible.</div><div class="pc-v">against</div><div class="pc-s"><b>Succinylcholine</b> &mdash; agonist, not reversible this way.</div></div><div class="pc-a"><span class="pl">Separated by</span><b>Whether a cholinesterase inhibitor helps.</b> Raising acetylcholine outcompetes a competitive blocker and restores function; against succinylcholine, more acetylcholine does nothing, because the problem is that the receptor is already over-stimulated.</div><div class="pc-sl">Slides 64, 67</div></div><div class="pc"><div class="pc-t">Atropine at low against high dose</div><div class="pc-b"><div class="pc-s"><b>Low dose</b> &mdash; bradycardia.</div><div class="pc-v">against</div><div class="pc-s"><b>High dose</b> &mdash; tachycardia.</div></div><div class="pc-a"><span class="pl">Separated by</span>The dose itself. It is the one place in this lecture where the same drug does opposite things to the same organ, which is exactly the kind of detail a question is built on.</div><div class="pc-sl">Slides 52</div></div></div></section><section id="direct"><div class="shead"><span class="dot" style="background:#1f6b4a"></span><h2>Direct-acting agonists <span class="tag">Bind the receptor themselves</span></h2></div><div class="note">Also called <b>parasympathomimetics</b>. Two families: the <b>choline esters</b> (acetylcholine, carbachol, bethanechol) and the <b>natural alkaloids</b> (pilocarpine).</div><div class="dgrid" style="--cc:#1f6b4a"><div class="dc"><div class="dc-n">Bethanechol</div><div class="dr"><span class="dl">At the receptor</span><div><b>Muscarinic only &mdash; it lacks nicotinic activity.</b> Not hydrolysed by acetylcholinesterase, so it lasts.</div></div><div class="dr"><span class="dl">Used for</span><div>Bladder and gastrointestinal atony.</div></div><div class="dr"><span class="dl">Watch for</span><div>Sweating, salivation, flushing.</div></div><div class="dc-s">Slide 30</div></div><div class="dc"><div class="dc-n">Carbachol</div><div class="dr"><span class="dl">At the receptor</span><div><b>Muscarinic AND nicotinic.</b> Its nicotinic action releases epinephrine from the adrenal medulla.</div></div><div class="dr"><span class="dl">Used for</span><div>Ophthalmic use; profound cardiovascular and gastrointestinal effects.</div></div><div class="dr"><span class="dl">Watch for</span><div>May <b>first stimulate, then depress</b> those systems.</div></div><div class="dc-s">Slide 32</div></div><div class="dc"><div class="dc-n">Pilocarpine</div><div class="dr"><span class="dl">At the receptor</span><div>Muscarinic. A natural alkaloid rather than a choline ester.</div></div><div class="dr"><span class="dl">Used for</span><div><b>Miosis, ciliary muscle contraction and lowering of intraocular pressure.</b></div></div><div class="dr"><span class="dl">Watch for</span><div>The eye drug of the group.</div></div><div class="dc-s">Slide 33</div></div></div></section><section id="indirect"><div class="shead"><span class="dot" style="background:#2d3f7a"></span><h2>Indirect-acting &mdash; cholinesterase inhibitors <span class="tag">Raise the acetylcholine that is already there</span></h2></div><div class="note">They inhibit acetylcholinesterase, so acetylcholine accumulates and acts at <b>both muscarinic and nicotinic</b> sites. Whether a given one reaches the brain is what separates them clinically.</div><div class="dgrid" style="--cc:#2d3f7a"><div class="dc"><div class="dc-n">Edrophonium</div><div class="dr"><span class="dl">At the receptor</span><div>Reversible. <b>The short-acting prototype.</b></div></div><div class="dr"><span class="dl">Used for</span><div><b>DIAGNOSING myasthenia gravis</b> &mdash; short action is the point.</div></div><div class="dr"><span class="dl">Watch for</span><div>Also reverses a competitive neuromuscular blockade.</div></div><div class="dc-s">Slide 35</div></div><div class="dc"><div class="dc-n">Physostigmine</div><div class="dr"><span class="dl">At the receptor</span><div>Reversible, and <b>it reaches the central nervous system</b>.</div></div><div class="dr"><span class="dl">Used for</span><div><b>Antidote for anticholinergic overdose</b> &mdash; atropine, phenothiazines, tricyclic antidepressants. Also raises intestinal and bladder motility, causes miosis and lowers intraocular pressure.</div></div><div class="dr"><span class="dl">Watch for</span><div><b>Convulsions at high doses</b>, bradycardia, reduced cardiac output, and paralysis of skeletal muscle from accumulated acetylcholine.</div></div><div class="dc-s">Slide 36</div></div><div class="dc"><div class="dc-n">Neostigmine</div><div class="dr"><span class="dl">At the receptor</span><div>Reversible. <b>Poorly absorbed from the gut and does NOT enter the central nervous system.</b></div></div><div class="dr"><span class="dl">Used for</span><div><b>Antidote for competitive neuromuscular blockers</b>; symptomatic treatment of myasthenia gravis; stimulating bladder and bowel.</div></div><div class="dr"><span class="dl">Watch for</span><div>Salivation, flushing, low blood pressure, nausea, abdominal pain, diarrhoea, bronchospasm.</div></div><div class="dc-s">Slide 38</div></div><div class="dc"><div class="dc-n">Pyridostigmine</div><div class="dr"><span class="dl">At the receptor</span><div>Reversible, peripheral.</div></div><div class="dr"><span class="dl">Used for</span><div><b>CHRONIC management of myasthenia gravis</b> &mdash; where edrophonium diagnoses it.</div></div><div class="dr"><span class="dl">Watch for</span><div>Same peripheral cholinergic effects as neostigmine.</div></div><div class="dc-s">Slide 39</div></div><div class="dc"><div class="dc-n">Donepezil, rivastigmine, galantamine</div><div class="dr"><span class="dl">At the receptor</span><div>Reversible, central.</div></div><div class="dr"><span class="dl">Used for</span><div><b>Slowing the progression of Alzheimer disease</b>, which is associated with a deficiency of central cholinergic neurons.</div></div><div class="dr"><span class="dl">Watch for</span><div>Gastrointestinal distress.</div></div><div class="dc-s">Slide 40</div></div><div class="dc"><div class="dc-n">Organophosphates &mdash; the irreversible inhibitors</div><div class="dr"><span class="dl">At the receptor</span><div><b>Irreversible.</b> Agricultural insecticides, and used in suicide and homicide.</div></div><div class="dr"><span class="dl">Used for</span><div>No therapeutic use. Toxicity shows as <b>nicotinic or muscarinic signs</b>, or both.</div></div><div class="dr"><span class="dl">Watch for</span><div><b>Pralidoxime</b> reactivates the enzyme &mdash; but it does <b>not</b> enter the central nervous system, and cannot overcome reversible inhibitors such as physostigmine.</div></div><div class="dc-s">Slide 42</div></div></div></section><section id="antimusc"><div class="shead"><span class="dot" style="background:#8a5f14"></span><h2>Antimuscarinics <span class="tag">Block muscarinic only</span></h2></div><div class="note">They block the muscarinic receptors of parasympathetic nerves, and the few sympathetic cholinergic fibres to salivary and sweat glands. <b>They do NOT block nicotinic receptors</b> &mdash; little or no action at the neuromuscular junction or the autonomic ganglia.</div><div class="dgrid" style="--cc:#8a5f14"><div class="dc"><div class="dc-n">Atropine</div><div class="dr"><span class="dl">At the receptor</span><div>Competitive at muscarinic receptors, <b>centrally and peripherally</b>. Greatest effect on bronchial tissue and on sweat and saliva.</div></div><div class="dr"><span class="dl">Used for</span><div>Blocking secretions before surgery or in end-of-life care; dilating the pupil; antispasmodic in the gut; <b>antidote for cholinesterase inhibitor insecticides and some mushroom poisoning</b>.</div></div><div class="dr"><span class="dl">Watch for</span><div><b>Bradycardia at LOWER doses, tachycardia at HIGHER doses</b> &mdash; the dose paradox. Also dry mouth, blurred vision, &ldquo;sandy eyes&rdquo;, urinary retention, constipation, and restlessness through to delirium.</div></div><div class="dc-s">Slide 51</div></div><div class="dc"><div class="dc-n">Scopolamine</div><div class="dr"><span class="dl">At the receptor</span><div>Peripheral effects like atropine, but <b>greater central action at therapeutic doses</b>.</div></div><div class="dr"><span class="dl">Used for</span><div><b>Preventing motion sickness</b>; anaesthetic adjunct; short-term memory blocking; reducing secretions.</div></div><div class="dr"><span class="dl">Watch for</span><div>As atropine. <b>Wash hands after handling the patch</b> &mdash; touching the eye afterwards blurs vision.</div></div><div class="dc-s">Slide 54</div></div><div class="dc"><div class="dc-n">Ipratropium, tiotropium</div><div class="dr"><span class="dl">At the receptor</span><div>Muscarinic blockade in the airway.</div></div><div class="dr"><span class="dl">Used for</span><div>Obstructive airway disease.</div></div><div class="dr"><span class="dl">Watch for</span><div>Inhaled, so systemic anticholinergic effects are limited.</div></div><div class="dc-s">Slide 55</div></div><div class="dc"><div class="dc-n">Glycopyrrolate</div><div class="dr"><span class="dl">At the receptor</span><div>Peripheral muscarinic blockade.</div></div><div class="dr"><span class="dl">Used for</span><div>Drying secretions &mdash; the drooling agent.</div></div><div class="dr"><span class="dl">Watch for</span><div>The peripheral counterpart to scopolamine's central action.</div></div><div class="dc-s">Slide 55</div></div><div class="dc"><div class="dc-n">Oxybutynin and the other bladder agents</div><div class="dr"><span class="dl">At the receptor</span><div>Muscarinic blockade at the bladder &mdash; darifenacin, fesoterodine, solifenacin, tolterodine, trospium.</div></div><div class="dr"><span class="dl">Used for</span><div><b>Lowering pressure inside the bladder and increasing its capacity</b> &mdash; urinary incontinence.</div></div><div class="dr"><span class="dl">Watch for</span><div>Same mechanism as glycopyrrolate in a different organ; the split between them is licensing rather than pharmacology.</div></div><div class="dc-s">Slide 56</div></div></div></section><section id="ganglion"><div class="shead"><span class="dot" style="background:#5f3a8a"></span><h2>Ganglionic blockers <span class="tag">Block the entire autonomic output</span></h2></div><div class="note">They act at the nicotinic receptors of <b>both</b> sympathetic and parasympathetic ganglia, so they shut off the whole autonomic outflow. <b>Rarely used clinically.</b></div><div class="dgrid" style="--cc:#5f3a8a"><div class="dc"><div class="dc-n">Nicotine</div><div class="dr"><span class="dl">At the receptor</span><div>Nicotinic at the ganglia. <b>The one agent in the group that is not a competitive antagonist.</b></div></div><div class="dr"><span class="dl">Used for</span><div>No therapeutic use here &mdash; recreational.</div></div><div class="dr"><span class="dl">Watch for</span><div><b>Stimulates at low concentration and BLOCKS at high concentration.</b></div></div><div class="dc-s">Slide 59</div></div><div class="dc"><div class="dc-n">The blockers as a class</div><div class="dr"><span class="dl">At the receptor</span><div>Nicotinic receptors of sympathetic and parasympathetic ganglia alike. All except nicotine are <b>non-depolarizing competitive antagonists</b>.</div></div><div class="dr"><span class="dl">Used for</span><div>Rarely used clinically.</div></div><div class="dr"><span class="dl">Watch for</span><div>The predominant sympathetic effect is <b>vasodilation</b>; the predominant parasympathetic effects are <b>bladder and bowel atony, cycloplegia, dry mouth and tachycardia</b>.</div></div><div class="dc-s">Slide 58</div></div></div></section><section id="nmb"><div class="shead"><span class="dot" style="background:#8c2f22"></span><h2>Neuromuscular blockers <span class="tag">Nicotinic, at the muscle end plate</span></h2></div><div class="note">Structural analogues of acetylcholine acting at the nicotinic receptors of the skeletal muscle end plate &mdash; as antagonists (non-depolarizing) or as agonists (depolarizing).</div><div class="dgrid" style="--cc:#8c2f22"><div class="dc"><div class="dc-n">Non-depolarizing &mdash; rocuronium, vecuronium, pancuronium, cisatracurium</div><div class="dr"><span class="dl">At the receptor</span><div><b>Competitive antagonists</b> at the end-plate nicotinic receptor: they sit on it and keep acetylcholine off.</div></div><div class="dr"><span class="dl">Used for</span><div>Skeletal muscle relaxation during surgery.</div></div><div class="dr"><span class="dl">Watch for</span><div><b>They CAN be reversed</b> &mdash; raise acetylcholine with neostigmine, pyridostigmine or edrophonium and it outcompetes the blocker. Paralysis arrives in order: <b>face and eye first</b>, then fingers, limbs, neck, trunk, intercostals.</div></div><div class="dc-s">Slide 64</div></div><div class="dc"><div class="dc-n">Succinylcholine &mdash; the only depolarizing agent</div><div class="dr"><span class="dl">At the receptor</span><div>An <b>agonist</b>: it binds the receptor and depolarises, then is not cleared by acetylcholinesterase, so the stimulation persists. <b>Phase I</b> opens the sodium channel and depolarises; <b>Phase II</b> is resistance to further depolarization, and that is where the <b>flaccid paralysis</b> appears.</div></div><div class="dr"><span class="dl">Used for</span><div><b>Rapid sequence intubation</b> and intubation at induction &mdash; rapid onset, short duration.</div></div><div class="dr"><span class="dl">Watch for</span><div>Broken down by <b>plasma pseudocholinesterase</b>; a genetic deficiency causes <b>prolonged paralysis and apnoea</b>. With halothane it can trigger <b>malignant hyperthermia</b> &mdash; rigidity, metabolic acidosis, tachycardia, hyperpyrexia &mdash; treated by cooling and <b>dantrolene</b>. Respiratory muscles are paralysed <b>last</b>.</div></div><div class="dc-s">Slide 70</div></div></div></section>
+
+  <footer>
+    Assembled from Lecture 3, slides 26 to 70; each entry cites its slide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+</div>
+</body>
+</html>
