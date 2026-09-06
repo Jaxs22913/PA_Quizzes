@@ -186,8 +186,8 @@ Q("Orbital floor fracture", IO,
   "A 9-year-old boy was struck in the eye with a ball. He has severe pain, nausea and vomiting, and "
   "bradycardia on attempted upgaze, but the eye looks remarkably quiet. What does this suggest?",
   [["Entrapment of the inferior rectus in an orbital floor fracture",
-    "Correct. The deck pairs restricted upgaze with severe pain and AUTONOMIC DISTURBANCE "
-    "— bradycardia and vomiting on attempted movement."],
+    "Correct. Restricted upgaze with severe pain and AUTONOMIC DISTURBANCE "
+    "— bradycardia and vomiting on attempted movement — is the entrapment picture."],
    ["Simple periorbital contusion", "Would not produce bradycardia or restricted upgaze."],
    ["Periorbital haematoma", "Bruising and swelling, without restricted upgaze or bradycardia."],
    ["Anterior uveitis", "Photophobia and cells, without the autonomic disturbance."],

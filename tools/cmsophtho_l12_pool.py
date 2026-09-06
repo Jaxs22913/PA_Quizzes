@@ -142,7 +142,7 @@ Q("Optic neuritis", IO,
   "movement. Colour appears washed out. Examination shows a relative afferent pupillary defect on "
   "the right and a normal-looking optic disc. What is the most likely diagnosis?",
   [["Optic neuritis", "Correct. Pain on eye movement, dyschromatopsia and a relative afferent "
-                      "pupillary defect. The deck lists optic neuritis among the causes of that defect."],
+                      "pupillary defect, and optic neuritis is among the causes of that defect."],
    ["Central retinal artery occlusion", "Painless and instantaneous, with a pale retina."],
    ["Acute angle-closure glaucoma", "Severely painful with a hazy cornea and fixed mid-dilated "
                                     "pupil."],

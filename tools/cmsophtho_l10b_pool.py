@@ -227,10 +227,9 @@ Q("Bacterial conjunctivitis", IO,
   "two-step", D, 41),
 
 Q("Dacryoadenitis", IO,
-  "A 29-year-old woman has dacryoadenitis. Imaging is being considered. What does the deck's own "
-  "hedge say about it?",
+  "A 29-year-old woman has dacryoadenitis. Which statement about imaging is correct?",
   [["Contrast computed tomography is used when indicated, not automatically",
-    "Correct — several slides read as absolutes and are softened in their own notes."],
+    "Correct — orbits and sinuses, when there is concern about orbital involvement."],
    ["Every patient needs imaging on presentation", "Imaging is not automatic."],
    ["Imaging is never indicated", "It is used when there is concern about orbital involvement."],
    ["Only magnetic resonance imaging is acceptable",
@@ -293,8 +292,8 @@ Q("Subconjunctival haemorrhage", IO,
   "anticoagulants. What is the appropriate approach?",
   [["Medication review, blood pressure check and targeted haematologic evaluation",
     "Correct — targeted rather than an automatic haematology referral."],
-   ["Automatic referral to haematology", "The deck's own notes soften that into a targeted "
-                                         "evaluation."],
+   ["Automatic referral to haematology", "An automatic referral overshoots; the "
+                                         "evaluation should be targeted."],
    ["Reassurance with no investigation", "Recurrence without a culprit warrants some evaluation."],
    ["Urgent ophthalmology referral", "The eye itself is not at risk."],
    ["Start topical corticosteroids", "There is no inflammation to treat."]],

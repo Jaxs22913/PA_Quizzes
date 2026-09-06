@@ -20,9 +20,9 @@ Q("Horner syndrome", IO,
   "diagnosis", D, 27),
 
 Q("Ptosis", IO,
-  "Which neuro-ophthalmological conditions in this lecture produce ptosis?",
+  "Which pair of neuro-ophthalmological conditions produces ptosis?",
   [["Horner syndrome and third nerve palsy",
-    "Correct — both appear on the lecture's own condition list, and ptosis is listed separately "
+    "Correct — both drop the lid, and each also disturbs the pupil, so ptosis appears "
     "alongside anisocoria."],
    ["Adie tonic pupil and Argyll Robertson pupil",
     "Both are pupil abnormalities without ptosis."],

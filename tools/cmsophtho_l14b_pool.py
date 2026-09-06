@@ -22,7 +22,7 @@ Q("Full-thickness eye wall laceration", IO,
   "two-step", D, 15),
 
 Q("Open globe injury", IO,
-  "A 27-year-old woman has a suspected open globe. Which set of signs does the lecture list?",
+  "A 27-year-old woman has a suspected open globe. Which set of signs would support that?",
   [["Pupillary distortion, a flat anterior chamber and a soft eye",
     "Correct, with extraocular protrusion of uveal tissue and massive haemorrhagic chemosis."],
    ["A mid-dilated fixed pupil and a hazy cornea", "That is the angle-closure picture."],
@@ -82,7 +82,7 @@ Q("Lid laceration", IO,
 Q("Orbital floor fracture", IO,
   "A 33-year-old man with an orbital floor fracture is advised not to blow his nose. Why?",
   [["It can force air from the sinus into the tissues",
-    "Correct — periorbital subcutaneous emphysema, which the deck lists as a feature of "
+    "Correct — periorbital subcutaneous emphysema, a recognised feature of "
     "orbital floor fracture."],
    ["It will restart the nosebleed", "Not the reason specific to an orbital fracture."],
    ["It will displace the fracture fragments", "Not the mechanism of concern."],

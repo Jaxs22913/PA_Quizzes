@@ -29,11 +29,11 @@ DECKS = ["CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx",
          "12. Acute Vision Loss current - Jaquith.pptx",
          "Chronic Vision Loss & Tumors - Dr Rappa.pptx",
          "CMS I Ocular Trauma - Shah Fallsv.pptx"]
-POOLS = ["cmsophtho_l10_pool", "cmsophtho_l10b_pool", "cmsophtho_l10c_pool",
+POOLS = ["cmsophtho_l10_pool", "cmsophtho_l10b_pool", "cmsophtho_l10c_pool", "cmsophtho_l10d_pool",
          "cmsophtho_l11_pool", "cmsophtho_l11b_pool",
-         "cmsophtho_l12_pool", "cmsophtho_l12b_pool",
-         "cmsophtho_l13_pool", "cmsophtho_l13b_pool",
-         "cmsophtho_l14_pool", "cmsophtho_l14b_pool"]
+         "cmsophtho_l12_pool", "cmsophtho_l12b_pool", "cmsophtho_l12c_pool",
+         "cmsophtho_l13_pool", "cmsophtho_l13b_pool", "cmsophtho_l13c_pool",
+         "cmsophtho_l14_pool", "cmsophtho_l14b_pool", "cmsophtho_l14c_pool"]
 
 # Clinical nouns worth checking. Ordinary English is not checked -- only the
 # terms that would represent CONTENT if they were absent from the decks.

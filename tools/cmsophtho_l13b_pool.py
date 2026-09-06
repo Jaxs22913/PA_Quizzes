@@ -36,10 +36,10 @@ Q("Cataract", IO,
   "treatment", D, 37),
 
 Q("Cataract", IO,
-  "A 69-year-old woman has had cataract surgery. Which later complication does the lecture link to "
-  "it?",
-  [["Posterior vitreous detachment", "Correct — the deck names cataract surgery, myopia and ocular "
-                                     "trauma as things that render it more likely."],
+  "A 69-year-old woman has had cataract surgery. Which later complication is she now more likely "
+  "to develop?",
+  [["Posterior vitreous detachment", "Correct — cataract surgery, myopia and ocular "
+                                     "trauma all make it more likely."],
    ["Acute angle-closure glaucoma", "Associated with the short hyperopic eye rather than with "
                                     "previous surgery."],
    ["Optic neuritis", "A demyelinating condition unrelated to lens surgery."],
@@ -115,10 +115,10 @@ Q("Amblyopia", IO,
   "diagnosis", D, 32),
 
 Q("Strabismus", IO,
-  "A 6-year-old girl is referred with strabismus. Which levels of the visual motor system does the "
-  "lecture name as possible causes?",
+  "A 6-year-old girl is referred with strabismus. At which levels of the visual motor system can "
+  "the cause lie?",
   [["Brain, cranial nerves, neuromuscular junction or extraocular muscles",
-    "Correct — the deck says there are many causes across all four levels."],
+    "Correct — causes are found at all four levels."],
    ["The cornea and lens only", "Those are refractive structures, not motor ones."],
    ["The retina alone", "The retina is sensory rather than motor."],
    ["The optic nerve alone", "That carries vision rather than moving the eye."],
