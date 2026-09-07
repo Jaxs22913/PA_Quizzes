@@ -98,6 +98,16 @@ EXTRA_CSS = """
   [data-theme="dark"] .sixty div{background:rgba(255,255,255,.04);}
   .dangerlist li{margin-bottom:5px;}
   .rcite{font-size:.74rem;color:var(--soft);margin:4px 0 0;}
+  .rnote{display:block;margin-top:6px;font-size:.8rem;line-height:1.45;padding:6px 9px;
+    border-radius:7px;border-left:3px solid;}
+  .rnote::before{font-weight:700;letter-spacing:.4px;font-size:.66rem;text-transform:uppercase;
+    display:block;margin-bottom:2px;}
+  .n-conflict{border-color:#9d2235;background:rgba(157,34,53,.08);}
+  .n-conflict::before{content:"The deck contradicts itself";color:#9d2235;}
+  .n-nointerval{border-color:#b26a12;background:rgba(178,106,18,.08);}
+  .n-nointerval::before{content:"No interval stated";color:#b26a12;}
+  .n-nuance{border-color:var(--accent3);background:rgba(85,102,181,.09);}
+  .n-nuance::before{content:"Read the exception";color:var(--accent3);}
   details.qa{border:1px solid var(--line);border-radius:10px;margin:9px 0;background:#fff;}
   details.qa summary{cursor:pointer;padding:11px 14px;font-weight:600;font-size:.92rem;
     list-style:none;}
@@ -127,10 +137,12 @@ def table(rows, extra=()):
         if first is None:
             first = D.FIRST.get(r["name"])
         assert first, "no first move written for %r" % r["name"]
+        note = D.NOTE.get(re.sub(r"<[^>]+>", "", r["name"]).strip()) or D.NOTE.get(r["name"])
+        nhtml = ('<span class="rnote n-%s">%s</span>' % note) if note else ""
         h.append('<tr><td class="cn">%s<span class="lecpill">%s</span></td>'
-                 '<td class="cg">%s</td><td class="cf">%s</td>'
+                 '<td class="cg">%s</td><td class="cf">%s%s</td>'
                  '<td class="cs">Slides %s</td></tr>'
-                 % (r["name"], r["lec"], r["give"], first, r["slides"]))
+                 % (r["name"], r["lec"], r["give"], first, nhtml, r["slides"]))
     for name, group, give, cite in extra:
         h.append('<tr><td class="cn">%s</td><td class="cg">%s</td><td class="cf">%s</td>'
                  '<td class="cs">%s</td></tr>' % (name, give, D.FIRST[name], cite))
@@ -170,6 +182,11 @@ def build():
              'by how fast, with the finding that identifies it and the first thing to do. The '
              'tiers are the ones Professor Jaquith uses on the disposition slide, not a scheme '
              'invented for this page.</p>'
+             '<p><strong>Checked slide by slide against all five decks.</strong> Where a lecture '
+             'states an urgency, that is the tier. Where it says only &ldquo;refer&rdquo; and never '
+             'says how fast, the row says so rather than inventing an interval &mdash; and where a '
+             'deck gives <em>two different answers in two places</em>, both are printed. There are '
+             'two of those, and they are the ones worth knowing about.</p>'
              '<p><strong>The order matters more than the list.</strong> Sections 1.1 to 1.4 are a '
              'triage sequence the lecture asks you to complete <em>before</em> naming a diagnosis; '
              'the condition tables are what that sequence sorts into. If you are revising against '
@@ -232,6 +249,7 @@ def build():
              '<p>%d conditions. The generic trigger, for anything not named below, is unexplained '
              'decreased vision, persistent pain or photophobia, or an atypical or worsening red '
              'eye.</p>' % len(ur))
+    b.append('<p class="callout">Every neuro-ophthalmology condition follows the same pathway: %s</p>' % D.NEURO_PATHWAY)
     b.append(table(ur))
     b.append('</section>')
 

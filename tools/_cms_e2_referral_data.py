@@ -185,6 +185,52 @@ EXTRA_EMERGENT = [
   "Inflammation of the WHOLE eye &middot; what undertreated keratitis becomes", "Slides 5, 56, 70"),
 ]
 
+# --- where the decks do not simply agree with themselves -----------------------
+# Checked slide by slide against all five decks on 2026-09-07. Three kinds of
+# caveat, and they are worth more than the tier itself, because a student who
+# revises the condition slide and one who revises the disposition slide will
+# answer differently.
+#
+#   conflict   -- the deck states two different urgencies in two places
+#   nointerval -- the deck says "refer" and never says how fast; the tier here is
+#                 an inference from severity, not something the slides state
+#   nuance     -- the tier is right for the severe form only
+NOTE = {
+ "Scleritis": ("conflict",
+   "Slide 50 says <b>urgent referral</b>; the disposition slide puts scleritis in "
+   "<b>same day</b>. The deck says both."),
+ "Corneal ulcer": ("conflict",
+   "Slide 61 says <b>emergent referral</b>; the disposition slide groups "
+   "&ldquo;keratitis/corneal ulcer&rdquo; under <b>same day</b>. The deck says both."),
+ "Posterior uveitis (choroiditis, retinitis)": ("nointerval",
+   "The slide says only &ldquo;refer to ophthalmology&rdquo; &mdash; no interval &mdash; and notes "
+   "it develops far more slowly than anterior uveitis."),
+ "Optic neuritis": ("nointerval",
+   "The slide says &ldquo;REFER to Optho&rdquo; without stating how fast."),
+ "Idiopathic intracranial hypertension": ("nointerval",
+   "The referral carries no stated interval; it is the <b>acetazolamide</b> the slide says to "
+   "start promptly."),
+ "Orbital floor (blowout) fracture": ("nuance",
+   "<b>Without eye injury or entrapment this is not emergent</b> &mdash; ice, analgesia and "
+   "follow-up in 2&ndash;3 days. Only a true blowout or entrapment escalates."),
+ "Lid laceration": ("nuance",
+   "A partial-thickness laceration meeting none of those criteria can be repaired in the "
+   "emergency department, with ophthalmology in <b>2&ndash;3 days</b>."),
+ "Corneal or conjunctival foreign body": ("nuance",
+   "Consult immediately instead if there is any concern the object passed <b>through</b> the "
+   "cornea."),
+ "Nystagmus": ("nuance",
+   "Who to refer, explicitly: <b>infants and young children</b>; nystagmus <b>acquired</b> in "
+   "adolescence or adulthood; and non-physiologic nystagmus in adults &mdash; upbeat, "
+   "monocular or asymmetric, or non-physiologic horizontal."),
+}
+
+# Lecture 11 slide 54, the pathway every neuro-ophthalmology condition follows.
+NEURO_PATHWAY = ("History and physical examination &rarr; labs and imaging (head computed "
+                 "tomography or magnetic resonance imaging of the brain) if indicated &rarr; "
+                 "<b>ophthalmology referral</b> &rarr; the appropriate specialist: neurology, "
+                 "vascular surgery or neurosurgery.")
+
 # --- routine, until a trigger fires -------------------------------------------
 ESCALATE = [
  ("Bacterial conjunctivitis",
@@ -203,8 +249,18 @@ ESCALATE = [
   "defect", "URGENT", "Slide 31"),
  ("Pterygium", "Growing, or vision affected", "Refer", "Slides 27&ndash;28"),
  ("Chalazion / hordeolum",
-  "Chalazion not resolving, or recurrent &middot; hordeolum not improving in 2 weeks &middot; "
-  "associated pre-septal cellulitis", "Refer", "Slide 21"),
+  "Chalazion recurrent, or persisting <b>more than 2&ndash;3 months</b> &mdash; refer to rule out "
+  "<b>sebaceous carcinoma</b> &middot; hordeolum not improving in 2 weeks &middot; associated "
+  "pre-septal cellulitis", "Refer", "Slide 21"),
+ ("Blepharitis / meibomitis",
+  "Symptoms not improving after <b>several weeks</b> of lid hygiene", "Refer",
+  "Slides 18&ndash;19"),
+ ("Allergic conjunctivitis",
+  "Not settling as allergen levels fall &mdash; the disease may be unusually severe, or the "
+  "<b>diagnosis may be wrong</b>", "Refer", "Slide 35"),
+ ("Iris nevus",
+  "Any concerning feature &mdash; refer to <b>rule out melanoma</b>; ophthalmology may pass it to "
+  "ocular oncology", "Refer", "Slide 49"),
  ("Pre-septal cellulitis",
   "Moderate-severe or toxic &middot; poor compliance &middot; <b>child aged 5 or under</b> "
   "&middot; no improvement on oral antibiotics", "Admit", "Slides 51&ndash;53"),
