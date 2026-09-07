@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medicine and Surgery I &middot; Exam 2 &mdash; Referral Urgency</title>
+<style>
+  :root{
+    --ink:#1e2233;
+    --paper:#faf6f7;
+    --accent:#2d3f7a;      /* rose plum */
+    --accent2:#c1873a;      /* warm gold */
+    --accent3:#5566b5;      /* muted violet */
+    --line:#e5dade;
+    --soft:#665b62;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  header.top{
+    background:linear-gradient(120deg,#1b2450,var(--accent) 55%,#7b8ad0);
+    color:#fff;
+    padding:34px 26px 30px;
+  }
+  header.top h1{
+    margin:0 0 6px;
+    font-size:2rem;
+    letter-spacing:.2px;
+    font-weight:800;
+  }
+  header.top p{margin:2px 0;color:#f5e6ec;font-size:.95rem;}
+  header.top .hdr-note{margin-top:12px;font-size:.86rem;background:rgba(255,255,255,.14);
+    display:inline-block;padding:7px 13px;border-radius:9px;}
+  header.top .hdr-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  header.top .hdr-links a{font-size:.83rem;font-weight:700;color:#fff;text-decoration:none;
+    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;}
+  header.top .hdr-links a:hover{background:rgba(255,255,255,.16);}
+  header.top .hdr-save{margin-top:12px;font-size:.8rem;opacity:.85;}
+  @media print{ header.top .hdr-links, header.top .hdr-save{display:none !important;} }
+
+  .layout{display:flex;max-width:1180px;margin:0 auto;}
+  nav.toc{
+    position:sticky;top:38px;align-self:flex-start;
+    width:280px;min-width:280px;max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:24px 18px;border-right:1px solid var(--line);
+    background:#f2e9eb;
+    font-size:.85rem;
+  }
+  nav.toc h2{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:14px 0 6px;}
+  nav.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;}
+  nav.toc a.top-link{font-weight:700;color:var(--accent2);margin-top:10px;}
+  nav.toc a:hover{color:var(--accent);}
+  main{flex:1;padding:30px 40px 90px;min-width:0;}
+  section.deck{margin-bottom:56px;scroll-margin-top:18px;}
+  h2.deck-title{
+    font-size:1.55rem;color:var(--accent);
+    border-bottom:3px solid var(--accent2);
+    padding-bottom:8px;margin:0 0 6px;
+    font-weight:800;
+  }
+  .lecturer{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px;}
+  .io-box{
+    background:#f3e8ec;border:1px solid var(--line);
+    border-radius:10px;padding:14px 18px;margin:14px 0 20px;
+  }
+  .io-box h3{
+    margin:0 0 8px;font-size:.8rem;text-transform:uppercase;
+    letter-spacing:1px;color:var(--accent3);
+  }
+  .io-box ol{margin:0;padding-left:20px;}
+  .io-box li{margin-bottom:5px;font-size:.92rem;}
+  h3.sub{
+    color:var(--accent3);font-size:1.14rem;margin:26px 0 6px;font-weight:800;
+  }
+  h4.subsub{
+    color:var(--accent2);font-size:.98rem;margin:16px 0 4px;
+    font-weight:700;
+  }
+  ul,ol{margin:6px 0 12px;}
+  li{margin-bottom:3px;}
+  p{margin:8px 0;}
+  .callout{
+    border-left:4px solid var(--accent3);
+    background:#efeaf4;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  .pearl{
+    border-left:4px solid var(--accent2);
+    background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--accent);color:#fff;font-weight:700;}
+  tr:nth-child(even) td{background:#f3ecee;}
+  code{background:#eadfe0;padding:1px 5px;border-radius:4px;font-size:.85rem;}
+  .tag{
+    display:inline-block;background:var(--accent2);color:#fff;
+    font-size:.68rem;
+    padding:2px 8px;border-radius:10px;letter-spacing:.5px;
+    vertical-align:middle;margin-left:8px;
+  }
+  figure.fig{
+    margin:18px 0;padding:12px;background:#f2e9eb;border-radius:10px;
+    border:1px solid var(--line);text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;height:auto;border-radius:6px;background:#fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+  }
+  figure.fig figcaption{
+    margin-top:8px;font-size:13.5px;color:var(--soft);font-style:italic;line-height:1.45;
+  }
+  .test-yourself-btn{
+    display:inline-block;margin-top:18px;padding:10px 18px;border:none;border-radius:999px;
+    background:var(--acc,var(--accent));color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .test-yourself-btn:hover{filter:brightness(1.08);}
+  footer.guide-foot{margin:34px 40px 0;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);}
+  @media(max-width:820px){
+    nav.toc{display:none;}
+    main{padding:22px 18px 60px;}
+    footer.guide-foot{margin:34px 18px 0;}
+  }
+
+  /* header.top sits outside .wrap (full-bleed banner) so it needs its own
+     dark-mode invert -- everything else lives inside .layout.wrap and gets
+     the site-wide body > .wrap invert from theme.css for free. */
+  :root[data-theme="dark"] header.top { filter: invert(1) hue-rotate(180deg); }
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2d3f7a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+
+  /* Disease photograph strips (added 2026-08-20). Images are shared with the
+     dermatology comparison chart -- same directory, same files, no duplicates.
+     Images here are eager, never lazy: an image that never scrolled into view
+     is absent from Download as PDF, which cost 74 of 84 photographs on the
+     chart before it was caught. */
+  .figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));
+    gap:12px;margin:16px 0;padding:14px;background:#f2e9eb;border-radius:10px;
+    border:1px solid var(--line)}
+  .figgrid figure{margin:0;text-align:center;display:flex;flex-direction:column}
+  .figgrid img{width:100%;height:132px;object-fit:contain;border-radius:6px;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .figgrid .fg-nopic{width:100%;height:132px;border-radius:6px;background:#fff;
+    border:1px dashed var(--line);display:flex;align-items:center;
+    justify-content:center;font-size:11.5px;color:var(--soft);padding:8px;
+    line-height:1.35;box-sizing:border-box}
+  .figgrid figcaption{margin-top:7px;font-size:12px;line-height:1.35;color:var(--soft)}
+  .figgrid .fg-name{display:block;font-weight:700;color:var(--ink);font-size:12.5px;
+    margin-bottom:2px}
+  .figgrid .fg-cite{display:block;font-size:10.5px;margin-top:3px;opacity:1;color:var(--soft)}
+  .figgrid-h{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--soft);margin:0 0 4px}
+  @media (max-width:520px){.figgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+    .figgrid img,.figgrid .fg-nopic{height:112px}}
+  /* The GRID must be allowed to break -- a ten-condition strip is taller than a
+     page, so `break-inside:avoid` on the grid cannot be honoured and Chrome
+     splits it through the middle of a figure instead, clipping the photograph
+     and orphaning its caption. Let the grid fragment between rows and protect
+     the individual figure, which always fits. */
+  @media print{.figgrid{break-inside:auto;background:#f7f2f3}
+    .figgrid figure{break-inside:avoid;page-break-inside:avoid}
+    .figgrid img,.figgrid .fg-nopic{break-inside:avoid}}
+
+  /* First-line treatment tables (add_guide_ophtho_treatment.py). The condition
+     column is held narrow so the treatment text gets the width; the urgency
+     column is narrower still and never wraps mid-word. */
+  .txnote{font-size:13px;line-height:1.5;color:var(--soft);margin:0 0 10px}
+  table.txtab td.txc{width:200px;font-weight:700;vertical-align:top}
+  table.txtab td{vertical-align:top;font-size:14px;line-height:1.5}
+  table.txtab .txu{width:120px;font-size:12.5px;line-height:1.4}
+  table.txtab td.txu{font-weight:700}
+  @media(max-width:700px){
+    table.txtab td.txc{width:auto;display:block;border-bottom:none;padding-bottom:0}
+    table.txtab td:not(.txc){display:block;border-top:none;padding-top:3px}
+    table.txtab .txu{width:auto}
+  }
+</style>
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-1-study-guide.docx" title="Editable Word copy">
+</head>
+<body>
+<style>
+  /* Professor-emphasised content. Star + highlight, per the convention set by
+     the CAM/Nutrition guide. Here the marks are derived from the 2026-08-17
+     lecture recording: prosodic weight, time spent, and repetition. */
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
+  .footer-mark-ink { stroke: #1e2233; }
+  .footer-mark-accent { stroke: #2d3f7a; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #b9c2ee; }
+  }
+</style>
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+
+<style>
+  .tierbar{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 4px;}
+  .tierbar a{flex:1 1 150px;text-decoration:none;border-radius:10px;padding:11px 13px;
+    color:#fff;font-weight:700;font-size:.9rem;line-height:1.25;}
+  .tierbar a span{display:block;font-weight:500;font-size:.74rem;opacity:.9;margin-top:2px;}
+  .t-em{background:#9d2235;} .t-sd{background:#b26a12;}
+  .t-ur{background:#2d3f7a;} .t-ro{background:#5c6070;}
+  .rtab{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.9rem;}
+  .rtab th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.8px;
+    color:var(--soft);border-bottom:2px solid var(--line);padding:6px 8px;font-weight:700;}
+  .rtab td{border-bottom:1px solid var(--line);padding:9px 8px;vertical-align:top;}
+  .rtab tr:last-child td{border-bottom:none;}
+  .rtab .cn{font-weight:700;width:19%;}
+  /* The chart bolds the whole giveaway because there it competes with eight other
+     columns. Here it would drown out the first-move column, which is the point of
+     the page -- so the phrase keeps its weight but drops back in colour. */
+  .rtab .cg{width:30%;color:var(--soft);font-size:.87rem;}
+  .rtab .cg b{font-weight:600;color:var(--ink);}
+  .rtab .cf{width:41%;}
+  .rtab .cs{width:10%;font-size:.76rem;color:var(--soft);white-space:nowrap;}
+  .lecpill{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.5px;
+    background:var(--accent3);color:#fff;border-radius:4px;padding:1px 5px;margin-left:5px;
+    vertical-align:1px;}
+  .neverbox{border-left:5px solid #9d2235;background:rgba(157,34,53,.07);border-radius:0 10px 10px 0;
+    padding:12px 16px;margin:12px 0;}
+  .neverbox b.n-h{display:block;font-size:.97rem;margin-bottom:2px;}
+  .neverbox .n-w{font-size:.87rem;color:var(--soft);}
+  .neverbox .n-c{font-size:.72rem;color:var(--soft);opacity:.85;display:block;margin-top:4px;}
+  .sixty{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin:14px 0;}
+  .sixty div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;}
+  .sixty b{display:block;font-size:.9rem;}
+  .sixty span{font-size:.8rem;color:var(--soft);}
+  [data-theme="dark"] .sixty div{background:rgba(255,255,255,.04);}
+  .dangerlist li{margin-bottom:5px;}
+  .rcite{font-size:.74rem;color:var(--soft);margin:4px 0 0;}
+  details.qa{border:1px solid var(--line);border-radius:10px;margin:9px 0;background:#fff;}
+  details.qa summary{cursor:pointer;padding:11px 14px;font-weight:600;font-size:.92rem;
+    list-style:none;}
+  details.qa summary::-webkit-details-marker{display:none;}
+  details.qa summary::before{content:"▸";color:var(--accent);margin-right:8px;
+    display:inline-block;transition:transform .15s;}
+  details.qa[open] summary::before{transform:rotate(90deg);}
+  details.qa .qa-a{padding:0 14px 12px 30px;font-size:.9rem;color:var(--soft);}
+  [data-theme="dark"] details.qa{background:rgba(255,255,255,.04);}
+  @media (max-width:640px){
+    .rtab,.rtab tbody,.rtab tr,.rtab td{display:block;width:100%;}
+    .rtab thead{display:none;}
+    .rtab tr{border-bottom:1px solid var(--line);padding:8px 0;}
+    .rtab td{border:none;padding:2px 0;}
+    .rtab .cn{font-size:1rem;}
+    .rtab .cs{white-space:normal;}
+  }
+</style>
+<header class="top">
+  <h1>Clinical Medicine and Surgery I &middot; Exam 2 &mdash; Referral Urgency</h1>
+  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>
+  <p>Ophthalmology block &middot; every condition needing ophthalmology sooner than a routine clinic slot &middot; tiers taken from the lecture&rsquo;s own disposition slide</p>
+</header>
+
+<div class="layout wrap" data-readable>
+<nav class="toc">
+<a class="top-link" href="#how">How to use this</a>
+<a class="top-link" href="#triage">1 &middot; Triage before diagnosis</a>
+<a class="sub-link" href="#sixty">1.1 The first 60 seconds</a>
+<a class="sub-link" href="#danger">1.2 Danger signs</a>
+<a class="sub-link" href="#pattern">1.3 Localise by pattern</a>
+<a class="sub-link" href="#ladder">1.4 The disposition ladder</a>
+<a class="top-link" href="#emergent">2 &middot; EMERGENT &mdash; now (25)</a>
+<a class="top-link" href="#sameday">3 &middot; SAME DAY (6)</a>
+<a class="top-link" href="#urgent">4 &middot; URGENT &mdash; 24&ndash;48 h (26)</a>
+<a class="top-link" href="#escalate">5 &middot; Routine, until it is not</a>
+<a class="top-link" href="#never">6 &middot; Never do these</a>
+<a class="top-link" href="#check">7 &middot; Check yourself</a>
+</nav>
+<main>
+<section id="how"><h2 class="deck-title">How to use this</h2><p>Every condition in the Exam 2 ophthalmology block that needs ophthalmology <strong>sooner than a routine clinic slot</strong> &mdash; 57 of them &mdash; sorted by how fast, with the finding that identifies it and the first thing to do. The tiers are the ones Professor Jaquith uses on the disposition slide, not a scheme invented for this page.</p><p><strong>The order matters more than the list.</strong> Sections 1.1 to 1.4 are a triage sequence the lecture asks you to complete <em>before</em> naming a diagnosis; the condition tables are what that sequence sorts into. If you are revising against the clock, section 6 is the one that changes what you do at the bedside.</p><div class="tierbar"><a class="t-em" href="#emergent">EMERGENT<span>now &middot; 25 conditions</span></a><a class="t-sd" href="#sameday">SAME DAY<span>today &middot; 6</span></a><a class="t-ur" href="#urgent">URGENT<span>24&ndash;48 hours &middot; 26</span></a><a class="t-ro" href="#escalate">ROUTINE<span>until a trigger fires &middot; 8</span></a></div></section>
+<section id="triage"><h2 class="deck-title">1 &middot; Triage before diagnosis</h2><p>Lecture 10 closes on six slides of pure triage. They are worth more than any single condition on this page, because they work on the red eye you cannot name yet.</p>
+<h3 class="sub" id="sixty">1.1 &middot; The first 60 seconds</h3><p>Complete all of it <strong>before</strong> naming the diagnosis.</p><div class="sixty">
+<div><b>Visual acuity in each eye</b><span>with correction</span></div>
+<div><b>Pupils</b><span>shape, reactivity, afferent defect</span></div>
+<div><b>Extraocular movements</b><span>note pain or restriction</span></div>
+<div><b>Cornea</b><span>clarity, and fluorescein staining</span></div>
+<div><b>Injection and discharge</b><span>the pattern of each</span></div>
+<div><b>The history that changes everything</b><span>contact lenses, trauma, surgery, steroids</span></div>
+</div><p class="callout">Reduced vision or an abnormal pupil is a red flag &mdash; and the whole list is meant to be completed <em>before</em> naming the diagnosis.</p>
+<h3 class="sub" id="danger">1.2 &middot; Danger signs &mdash; this is not simple conjunctivitis</h3><p>Any one of these means immediate or same-day evaluation.</p><ul class="dangerlist">
+<li>Moderate to severe pain, or consensual photophobia</li>
+<li>Reduced visual acuity, a relative afferent pupillary defect, or an abnormal pupil</li>
+<li>Corneal opacity, infiltrate, ulcer or dendrite</li>
+<li>Ciliary flush, hypopyon, or markedly elevated intraocular pressure</li>
+<li>Proptosis, diplopia, or painful or restricted eye movement</li>
+<li>Chemical exposure, penetrating trauma, or recent eye surgery</li>
+<li>A contact lens wearer with pain or photophobia</li>
+</ul>
+<h3 class="sub" id="pattern">1.3 &middot; Localise by pattern</h3><table class="rtab"><thead><tr><th>Where</th><th>What you see</th></tr></thead><tbody>
+<tr><td class="cn">Conjunctiva</td><td>Itch or discharge &middot; diffuse injection &middot; <b>vision preserved</b></td></tr>
+<tr><td class="cn">Cornea</td><td>Pain and photophobia &middot; fluorescein defect, infiltrate or opacity</td></tr>
+<tr><td class="cn">Anterior chamber</td><td><b>Consensual</b> photophobia &middot; ciliary flush &middot; irregular pupil</td></tr>
+<tr><td class="cn">Sclera or orbit</td><td>Deep pain, or painful eye movement &middot; violaceous sclera, proptosis, restriction</td></tr>
+<tr><td class="cn">Angle closure</td><td>Pain and headache with halos and nausea &middot; cloudy cornea &middot; mid-dilated pupil</td></tr>
+</tbody></table>
+<h3 class="sub" id="ladder">1.4 &middot; The disposition ladder</h3><p>The deck's own four tiers, and the examples it gives for each.</p><table class="rtab"><thead><tr><th>Tier</th><th>When</th><th>Examples given</th></tr></thead><tbody>
+<tr><td class="cn">EMERGENT</td><td class="cs">now</td><td>Chemical injury (irrigate first), open globe, angle closure, orbital cellulitis, endophthalmitis</td></tr>
+<tr><td class="cn">SAME DAY</td><td class="cs">today</td><td>Keratitis or corneal ulcer, anterior uveitis, scleritis, ocular herpes zoster</td></tr>
+<tr><td class="cn">URGENT</td><td class="cs">within 24&ndash;48 hours</td><td>Unexplained decreased vision, persistent pain or photophobia, an atypical or worsening red eye</td></tr>
+<tr><td class="cn">ROUTINE</td><td class="cs">in clinic</td><td>Uncomplicated conjunctivitis, or chronic eyelid and ocular-surface disease</td></tr>
+</tbody></table><p class="rcite">Common Ophthalmological Disorders, slides 66&ndash;70</p></section>
+<section id="emergent"><h2 class="deck-title">2 &middot; EMERGENT &mdash; now</h2><p>25 conditions. These do not wait for a clinic list, and several of them are lost in minutes to hours: the central retinal artery is irreversible after 90 minutes, and hyphema rebleeds hardest in the first 72 hours.</p>
+<table class="rtab"><thead><tr><th>Condition</th><th>What gives it away</th><th>First move</th><th>Slides</th></tr></thead><tbody>
+<tr><td class="cn">Gonococcal conjunctivitis<span class="lecpill">L10</span></td><td class="cg"><b>SEVERE purulent discharge WITH a palpable preauricular node</b> &middot; <b>neonate</b></td><td class="cf">Newborn: <b>hospitalise</b>, systemic ceftriaxone once, specialty consultation. Untreated risk is corneal perforation.</td><td class="cs">Slides 40&ndash;41</td></tr>
+<tr><td class="cn">Post-septal (orbital) cellulitis<span class="lecpill">L10</span></td><td class="cg"><b>THE EYE ITSELF IS RED</b> &middot; <b>PROPTOSIS</b> &middot; <b>painful restricted eye movement</b> &middot; diplopia &middot; reduced vision</td><td class="cf"><b>Hospitalise.</b> Broad-spectrum intravenous antibiotics for 48&ndash;72 hours, then oral for at least a week.</td><td class="cs">Slides 51&ndash;53</td></tr>
+<tr><td class="cn">Corneal ulcer<span class="lecpill">L10</span></td><td class="cg"><b>Patient RESISTS OPENING the eye</b> &middot; <b>white spot on the cornea</b> &middot; contact lens wearer &middot; ciliary flush</td><td class="cf">Broad-spectrum topical fourth-generation fluoroquinolone to start; agent-specific therapy then follows from ophthalmology.</td><td class="cs">Slides 60&ndash;61</td></tr>
+<tr><td class="cn">Acute angle-closure glaucoma<span class="lecpill">L12</span></td><td class="cg"><b>Severe pain + headache + vomiting</b> &middot; <b>coloured halos</b> &middot; <b>hazy cornea</b></td><td class="cf">Topical pilocarpine or timolol, intravenous acetazolamide, then mannitol or isosorbide. Laser peripheral iridotomy 1&ndash;2 days after onset.</td><td class="cs">Slides 9, 13&ndash;14, 16&ndash;17, 20</td></tr>
+<tr><td class="cn">Retinal detachment<span class="lecpill">L12</span></td><td class="cg"><b>Flashes and floaters</b>, then a <b>curtain that STAYS</b> &middot; <b>painless</b></td><td class="cf"><b>Refer immediately.</b> Surgery urgently, or within a week, depending on type.</td><td class="cs">Slides 25&ndash;30</td></tr>
+<tr><td class="cn">Central retinal artery occlusion (CRAO)<span class="lecpill">L12</span></td><td class="cg"><b>Painless profound loss over SECONDS</b> &middot; <b>CHERRY-RED SPOT</b></td><td class="cf">High-concentration inhaled oxygen and digital massage, intravenous acetazolamide, anterior chamber paracentesis; thrombolytic within 8 hours. <b>Irreversible after 90 minutes.</b></td><td class="cs">Slides 36&ndash;40</td></tr>
+<tr><td class="cn">Branch retinal artery occlusion (BRAO)<span class="lecpill">L12</span></td><td class="cg"><b>Painless</b> loss of a <b>WEDGE</b> of field &middot; sectoral pallor</td><td class="cf">As for the central form &mdash; the management does not change, only the size of the field lost.</td><td class="cs">Slides 41</td></tr>
+<tr><td class="cn">Arteritic AION (giant cell arteritis)<span class="lecpill">L12</span></td><td class="cg"><b>Over 55</b> &middot; <b>NEW temporal headache</b> &middot; <b>scalp tenderness, jaw claudication</b></td><td class="cf">Intravenous methylprednisolone for 3 days, then a slow oral taper. <b>Do not wait for the biopsy.</b></td><td class="cs">Slides 47, 49&ndash;51</td></tr>
+<tr><td class="cn">Papilledema<span class="lecpill">L12</span></td><td class="cg"><b>BILATERAL</b> swollen discs &middot; <b>headache, nausea, vomiting</b> &middot; <b>INTRACRANIAL</b> pressure</td><td class="cf">Neuroimaging first to exclude a mass, then lumbar puncture; treat the cause. The raised pressure is <b>intracranial, not intraocular</b>.</td><td class="cs">Slides 42&ndash;46</td></tr>
+<tr><td class="cn">Horner syndrome<span class="lecpill">L11</span></td><td class="cg"><b>Ptosis + MIOSIS + anhidrosis</b> &middot; <b>DILATION LAG</b></td><td class="cf">Treat the cause &mdash; but with neck pain, trauma or focal neurology it is <b>carotid dissection until proven otherwise</b>.</td><td class="cs">Slides 13, 15, 27&ndash;30</td></tr>
+<tr><td class="cn">Cranial nerve III palsy<span class="lecpill">L11</span></td><td class="cg"><b>Ptosis + MYDRIASIS</b> &middot; impaired movement &middot; <b>pupil involved = STAT</b></td><td class="cf"><b>A pupil-involving third is STAT</b> &mdash; image for a posterior communicating artery aneurysm.</td><td class="cs">Slides 39&ndash;41</td></tr>
+<tr><td class="cn">Cataract &mdash; pediatric<span class="lecpill">L13</span></td><td class="cg"><b>Zonular is commonest</b> &middot; <b>leukocoria</b> &middot; may have nystagmus</td><td class="cf">Surgery is <b>not</b> deferred in a neonate &mdash; it is done early to prevent amblyopia.</td><td class="cs">Slides 36, 38</td></tr>
+<tr><td class="cn">Retinoblastoma<span class="lecpill">L13</span></td><td class="cg"><b>LEUKOCORIA</b> in a young child &middot; white pupil in photographs</td><td class="cf">Ocular oncology, multimodal therapy, genetic counselling. An absent red reflex in a newborn is this or congenital cataract until proven otherwise.</td><td class="cs">Slides 41&ndash;42</td></tr>
+<tr><td class="cn">Open globe injury<span class="lecpill">L14</span></td><td class="cg"><b>Pupil pulled toward a wound</b> &middot; <b>soft eye</b> &middot; massive haemorrhagic chemosis</td><td class="cf"><b>Rigid shield taped over the eye</b>, ophthalmology called immediately. Antiemetics and analgesia so the patient does not strain; tetanus.</td><td class="cs">Slides 14</td></tr>
+<tr><td class="cn">Full-thickness eye wall laceration<span class="lecpill">L14</span></td><td class="cg"><b>Sharp object or high-velocity projectile</b> &middot; entry &plusmn; exit wound</td><td class="cf">Shield and ophthalmology. Surgical repair &mdash; and posterior-segment foreign bodies are deliberately left alone at first.</td><td class="cs">Slides 15&ndash;16</td></tr>
+<tr><td class="cn">Globe rupture<span class="lecpill">L14</span></td><td class="cg"><b>Blunt</b> trauma &mdash; airbag, fist, baseball &middot; <b>soft eye</b></td><td class="cf">Shield, ophthalmology immediately, antiemetics, analgesia, tetanus. Immediate surgical repair with wound exploration.</td><td class="cs">Slides 17</td></tr>
+<tr><td class="cn">Hyphema<span class="lecpill">L14</span></td><td class="cg"><b>Blood layered in the anterior chamber</b> after blunt trauma</td><td class="cf">Bed rest with the head elevated, antiemetics, ocular hypotensives, cycloplegic drops and oral aminocaproic acid. Rebleeding peaks in the first 72 hours.</td><td class="cs">Slides 24&ndash;25</td></tr>
+<tr><td class="cn">Lid laceration<span class="lecpill">L14</span></td><td class="cg">Cut <b>at the lid margin</b> or within <b>6&ndash;8 mm of the medial canthus</b></td><td class="cf">Ophthalmology for margin involvement, within 6&ndash;8&nbsp;mm of the medial canthus, the lacrimal system, the inner lid surface, ptosis, tarsal plate or levator.</td><td class="cs">Slides 26&ndash;27</td></tr>
+<tr><td class="cn">Periorbital haematoma<span class="lecpill">L14</span></td><td class="cg">Bleeding <b>within the orbit</b> &middot; not always traumatic</td><td class="cf"><b>Canthotomy with cantholysis</b> &mdash; release the lateral canthal tendon and cut its inferior branch to let the blood out.</td><td class="cs">Slides 33</td></tr>
+<tr><td class="cn">Retinal detachment &mdash; rhegmatogenous<span class="lecpill">L14</span></td><td class="cg"><b>Curtain</b> descending &middot; <b>flashes and floaters</b> &middot; commonest type</td><td class="cf">Ophthalmology STAT and seen within 24 hours. Pain control, antiemetics, head of bed at 30&ndash;40 degrees.</td><td class="cs">Slides 35&ndash;36</td></tr>
+<tr><td class="cn">Retinal detachment &mdash; traction<span class="lecpill">L14</span></td><td class="cg"><b>Proliferative diabetic retinopathy</b> &middot; <b>concave</b> and localised</td><td class="cf">Surgical &mdash; and the diabetic control conversation that should have come years earlier.</td><td class="cs">Slides 39</td></tr>
+<tr><td class="cn">Orbital floor (blowout) fracture<span class="lecpill">L14</span></td><td class="cg"><b>Diplopia on UPWARD gaze</b> &middot; <b>infraorbital numbness</b> &middot; fist or ball</td><td class="cf">True blowout &rarr; ophthalmology, because <b>30% have a significant globe injury</b>. Entrapment &rarr; facial trauma surgeon.</td><td class="cs">Slides 40&ndash;43</td></tr>
+<tr><td class="cn">Basilar skull fracture<span class="lecpill">L14</span></td><td class="cg"><b>Raccoon eyes</b> &middot; <b>Battle sign</b> &middot; clear or pink rhinorrhoea</td><td class="cf">Cerebrospinal fluid leak &rarr; neurosurgery consult and admission.</td><td class="cs">Slides 44, 47</td></tr>
+<tr><td class="cn">Chemical injury</td><td class="cg">Any chemical exposure &middot; the disposition slide lists it FIRST</td><td class="cf"><b>Irrigate first</b> &mdash; before acuity, before examination, before the referral call.</td><td class="cs">Slide 70</td></tr>
+<tr><td class="cn">Endophthalmitis</td><td class="cg">Inflammation of the WHOLE eye &middot; what undertreated keratitis becomes</td><td class="cf">Ophthalmology now. It is what undertreated keratitis becomes, and it can cost the eye.</td><td class="cs">Slides 5, 56, 70</td></tr>
+</tbody></table>
+</section>
+<section id="sameday"><h2 class="deck-title">3 &middot; SAME DAY</h2><p>6 conditions &mdash; the deck names four of these on the disposition slide itself: keratitis or corneal ulcer, anterior uveitis, scleritis and ocular herpes zoster.</p>
+<table class="rtab"><thead><tr><th>Condition</th><th>What gives it away</th><th>First move</th><th>Slides</th></tr></thead><tbody>
+<tr><td class="cn">Scleritis<span class="lecpill">L10</span></td><td class="cg"><b>SEVERE BORING pain, WORSE AT NIGHT</b>, radiating to the face &middot; <b>VIOLACEOUS hue</b> &middot; vessels do NOT move</td><td class="cf">Systemic anti-inflammatories to begin; corticosteroids and immunomodulators for severe, necrotising, posterior or refractory disease. The sclera can perforate.</td><td class="cs">Slides 49&ndash;50</td></tr>
+<tr><td class="cn">Keratitis<span class="lecpill">L10</span></td><td class="cg"><b>Contact lens overwear</b> &middot; <b>corneal opacification</b> &middot; &ldquo;broken up&rdquo; corneal light reflection &middot; <b>CILIARY FLUSH</b></td><td class="cf">Referral <b>within 24 hours</b> for slit lamp with fluorescein, and treat the underlying cause before it scars.</td><td class="cs">Slides 54&ndash;56</td></tr>
+<tr><td class="cn">Herpes simplex keratitis<span class="lecpill">L10</span></td><td class="cg"><b>TRUE DENDRITE</b> &mdash; tree-branching, elevated edges, <b>TERMINAL END BULBS</b> &middot; younger patient &middot; rash not dermatomal</td><td class="cf">Oral antivirals for 10 days.</td><td class="cs">Slides 57&ndash;59</td></tr>
+<tr><td class="cn">Herpes zoster keratitis<span class="lecpill">L10</span></td><td class="cg"><b>PSEUDOdendrite</b> &mdash; no branch pattern, no elevated edges, <b>no end bulbs</b> &middot; older patient &middot; <b>dermatomal V1 rash respecting the midline</b></td><td class="cf">Oral antivirals for 10 days, ideally <b>within 72 hours</b> of the rash appearing.</td><td class="cs">Slides 57&ndash;59</td></tr>
+<tr><td class="cn">Anterior uveitis (iritis, iridocyclitis)<span class="lecpill">L10</span></td><td class="cg"><b>CONSENSUAL photophobia</b> &middot; <b>ciliary flush</b> &middot; <b>irregular pupil</b> stuck to lens or cornea &middot; <b>cells in the anterior chamber</b></td><td class="cf">Within 24 hours, because delay may cost vision. Non-infectious &rarr; topical corticosteroids.</td><td class="cs">Slides 62&ndash;63</td></tr>
+<tr><td class="cn">Age-related macular degeneration &mdash; wet<span class="lecpill">L13</span></td><td class="cg"><b>Sudden</b> worsening of a <b>central</b> blur &middot; <b>neovascular</b></td><td class="cf">Intravitreal anti-VEGF; thermal laser photocoagulation or photodynamic therapy.</td><td class="cs">Slides 11, 14</td></tr>
+</tbody></table>
+</section>
+<section id="urgent"><h2 class="deck-title">4 &middot; URGENT &mdash; within 24&ndash;48 hours</h2><p>26 conditions. The generic trigger, for anything not named below, is unexplained decreased vision, persistent pain or photophobia, or an atypical or worsening red eye.</p>
+<table class="rtab"><thead><tr><th>Condition</th><th>What gives it away</th><th>First move</th><th>Slides</th></tr></thead><tbody>
+<tr><td class="cn">Dacryoadenitis<span class="lecpill">L10</span></td><td class="cg">Swelling over the <b>LATERAL ONE THIRD of the UPPER lid</b> &middot; ipsilateral preauricular node</td><td class="cf">Inflammatory &rarr; corticosteroids. Cause unclear &rarr; empiric oral antibiotics, reassessed at 24 hours.</td><td class="cs">Slides 22&ndash;23</td></tr>
+<tr><td class="cn">Dacryocystitis<span class="lecpill">L10</span></td><td class="cg">Swelling over the <b>NASAL aspect of the LOWER lid</b>, BELOW the medial canthal tendon &middot; pus from the punctum</td><td class="cf">Well and afebrile &rarr; oral antibiotics 10 days. Febrile or ill &rarr; admit for intravenous therapy 48&ndash;72 hours.</td><td class="cs">Slides 24&ndash;25</td></tr>
+<tr><td class="cn">Chemosis<span class="lecpill">L10</span></td><td class="cg"><b>Swelling of the conjunctiva itself</b> &middot; a sign, not a diagnosis</td><td class="cf">Treat the cause &mdash; but proptosis, restricted movement, reduced vision or an afferent defect alongside it makes this <b>urgent</b>.</td><td class="cs">Slides 31</td></tr>
+<tr><td class="cn">Chlamydial conjunctivitis &mdash; neonatal<span class="lecpill">L10</span></td><td class="cg">Neonate &middot; maternal cervical infection &middot; may also have <b>pneumonia</b></td><td class="cf">Erythromycin 50&nbsp;mg/kg/day in four divided doses for 14 days.</td><td class="cs">Slides 44</td></tr>
+<tr><td class="cn">Trachoma<span class="lecpill">L10</span></td><td class="cg">Poor sanitation &middot; <b>repeated childhood infections</b> &middot; scarred upper lid &middot; <b>lashes turned in</b></td><td class="cf">Azithromycin 1&nbsp;g orally as a single dose. <b>Trichiasis requires surgery.</b></td><td class="cs">Slides 45&ndash;46</td></tr>
+<tr><td class="cn">Pre-septal (periorbital) cellulitis<span class="lecpill">L10</span></td><td class="cg">Swollen red lid <b>but THE EYE ITSELF IS WHITE</b> &middot; movements full and painless &middot; vision normal</td><td class="cf">Mild &rarr; oral antibiotics 10&ndash;14 days. <b>Admit</b> if moderate-severe or toxic, unreliable, a child of 5 or under, or not improving.</td><td class="cs">Slides 51&ndash;53</td></tr>
+<tr><td class="cn">Posterior uveitis (choroiditis, retinitis)<span class="lecpill">L10</span></td><td class="cg"><b>NO PAIN</b> &middot; floaters, scotomas, <b>metamorphopsia</b> &middot; <b>cells in the posterior vitreous</b> &middot; vitreous haze</td><td class="cf">Does <b>not</b> respond to topical treatment &mdash; may need an intraocular corticosteroid injection.</td><td class="cs">Slides 64&ndash;65</td></tr>
+<tr><td class="cn">Amaurosis fugax<span class="lecpill">L12</span></td><td class="cg"><b>Transient</b> monocular curtain &middot; <b>seconds to minutes</b> &middot; then <b>full recovery</b></td><td class="cf">Treat it as a transient ischaemic attack of the eye: stroke workup, carotid imaging, cardiac assessment, antiplatelets.</td><td class="cs">Slides 4&ndash;8</td></tr>
+<tr><td class="cn">Optic neuritis<span class="lecpill">L12</span></td><td class="cg"><b>PAINFUL EYE MOVEMENT</b> &middot; <b>loss of colour vision</b> &middot; <b>young woman</b></td><td class="cf">Corticosteroids if a demyelinating cause is found; two or more lesions &rarr; neurology or neuro-ophthalmology.</td><td class="cs">Slides 22&ndash;24</td></tr>
+<tr><td class="cn">Central retinal vein occlusion (CRVO)<span class="lecpill">L12</span></td><td class="cg"><b>Painless</b> loss &middot; <b>&ldquo;BLOOD AND THUNDER&rdquo; fundus</b></td><td class="cf">Urgent referral to restore flow, and evaluate the underlying disorder &mdash; hypertension, diabetes, hyperviscosity.</td><td class="cs">Slides 31&ndash;34</td></tr>
+<tr><td class="cn">Branch retinal vein occlusion (BRVO)<span class="lecpill">L12</span></td><td class="cg"><b>Painless</b> loss of <b>PART</b> of the field &middot; sectoral haemorrhage</td><td class="cf">As for the central form, and treat the underlying disorder.</td><td class="cs">Slides 35</td></tr>
+<tr><td class="cn">Non-arteritic AION<span class="lecpill">L12</span></td><td class="cg"><b>40&ndash;60</b> &middot; <b>painless</b> &middot; <b>&ldquo;disc at risk&rdquo;</b> &middot; <b>normal markers</b></td><td class="cf">Observation and cardiovascular risk factor modification &mdash; but the workup is <b>identical</b> to the arteritic form, because that must be excluded.</td><td class="cs">Slides 47&ndash;48, 50, 52</td></tr>
+<tr><td class="cn">Relative afferent pupillary defect (Marcus Gunn)<span class="lecpill">L11</span></td><td class="cg">Swinging flashlight &rarr; <b>BOTH pupils DILATE</b> on the bad eye</td><td class="cf">A sign, not a diagnosis &mdash; find the retinal or optic nerve disease behind it.</td><td class="cs">Slides 25&ndash;26</td></tr>
+<tr><td class="cn">Argyll Robertson pupil<span class="lecpill">L11</span></td><td class="cg"><b>Small BILATERAL</b> pupils &middot; <b>no light, brisk near</b></td><td class="cf">Treat the underlying syphilis.</td><td class="cs">Slides 19, 31&ndash;33</td></tr>
+<tr><td class="cn">Cranial nerve IV palsy<span class="lecpill">L11</span></td><td class="cg"><b>VERTICAL</b> binocular diplopia &middot; <b>head tilt AWAY</b> from the bad eye</td><td class="cf">Traumatic: observe about 6 months before corrective treatment, patching one eye meanwhile.</td><td class="cs">Slides 42&ndash;43, 46</td></tr>
+<tr><td class="cn">Cranial nerve VI palsy<span class="lecpill">L11</span></td><td class="cg"><b>HORIZONTAL</b> binocular diplopia &middot; failure of abduction</td><td class="cf">Traumatic: observe about 6 months, patching one eye in the interim.</td><td class="cs">Slides 44&ndash;46</td></tr>
+<tr><td class="cn">Nystagmus<span class="lecpill">L11</span></td><td class="cg"><b>Involuntary rhythmic oscillation</b> &middot; named for the <b>FAST beat</b></td><td class="cf">Complete ophthalmic examination, then imaging, then labs. The aetiology must be addressed.</td><td class="cs">Slides 3&ndash;5</td></tr>
+<tr><td class="cn">Idiopathic intracranial hypertension<span class="lecpill">L13</span></td><td class="cg"><b>Overweight woman of childbearing age</b> &middot; <b>pulsatile tinnitus</b> &middot; transient greyouts</td><td class="cf">Acetazolamide promptly, with a supervised weight reduction programme. Surgery only if medical therapy fails.</td><td class="cs">Slides 4&ndash;5</td></tr>
+<tr><td class="cn">Strabismus<span class="lecpill">L13</span></td><td class="cg"><b>Binocular</b> diplopia &mdash; <b>gone when either eye is covered</b></td><td class="cf">Ophthalmology, and treat the cause &mdash; untreated in a child it causes amblyopia.</td><td class="cs">Slides 25, 29</td></tr>
+<tr><td class="cn">Amblyopia<span class="lecpill">L13</span></td><td class="cg"><b>Commonest cause of vision loss in children</b> &middot; unequal eyes</td><td class="cf">Patch or atropinise the <b>good</b> eye to force the weaker one to work. Treatment works less well as visual maturity approaches.</td><td class="cs">Slides 30, 32&ndash;33</td></tr>
+<tr><td class="cn">Uveal melanoma<span class="lecpill">L13</span></td><td class="cg"><b>Commonest eye cancer in adults</b> &middot; <b>feeder vessel</b> &middot; usually found incidentally</td><td class="cf">Radiation therapy is now the commonest treatment; enucleation is needed less often.</td><td class="cs">Slides 44&ndash;46</td></tr>
+<tr><td class="cn">Conjunctival melanoma<span class="lecpill">L13</span></td><td class="cg"><b>Raised and vascular</b> pigmented conjunctival lesion</td><td class="cf">Specialist management under ocular oncology.</td><td class="cs">Slides 52&ndash;54</td></tr>
+<tr><td class="cn">Corneal abrasion<span class="lecpill">L14</span></td><td class="cg"><b>Fingernail or contact lens</b> &middot; severe <b>foreign body sensation</b></td><td class="cf">Topical broad-spectrum antibacterial, and periodic re-examination to confirm healing and exclude infection.</td><td class="cs">Slides 18</td></tr>
+<tr><td class="cn">Corneal or conjunctival foreign body<span class="lecpill">L14</span></td><td class="cg"><b>Grinding or striking metal</b> &middot; <b>vertical linear</b> corneal scratches</td><td class="cf">Topical anaesthetic, then a sterile 27-gauge needle. A rust ring comes out with a burr.</td><td class="cs">Slides 21&ndash;22</td></tr>
+<tr><td class="cn">Orbital contusion<span class="lecpill">L14</span></td><td class="cg">Peri-orbital <b>swelling without haemorrhage</b></td><td class="cf">Supportive, through to surgery depending on the patient's condition.</td><td class="cs">Slides 31</td></tr>
+<tr><td class="cn">Retinal detachment &mdash; exudative<span class="lecpill">L14</span></td><td class="cg"><b>No break and no traction</b> &middot; systemic disease or a tumour behind it</td><td class="cf">Treat the underlying condition &mdash; this one is not primarily a surgical problem.</td><td class="cs">Slides 39</td></tr>
+</tbody></table>
+</section>
+<section id="escalate"><h2 class="deck-title">5 &middot; Routine, until it is not</h2><p>These are managed in clinic &mdash; until one of these triggers fires, and then they are not. This table is the one that catches people out, because the diagnosis does not change; only the disposition does.</p><table class="rtab"><thead><tr><th>Condition</th><th>What changes it</th><th>Becomes</th><th>Slides</th></tr></thead><tbody>
+<tr><td class="cn">Bacterial conjunctivitis</td><td class="cg" style="width:52%">Immunocompromised &middot; contact lens wearer &middot; recent eye surgery &middot; foreign body &middot; corneal opacity or suspicion of keratitis &middot; <b>no improvement in 24 hours</b></td><td class="cf" style="width:14%"><b>Urgent</b></td><td class="cs">Slide 41</td></tr>
+<tr><td class="cn">Bacterial conjunctivitis &mdash; newborn</td><td class="cg" style="width:52%">Suspected gonococcal infection in a newborn &mdash; untreated risk is corneal perforation</td><td class="cf" style="width:14%"><b>EMERGENT</b></td><td class="cs">Slide 41</td></tr>
+<tr><td class="cn">Viral conjunctivitis</td><td class="cg" style="width:52%">Longer than 3 weeks &middot; photophobia or vision loss appearing after onset</td><td class="cf" style="width:14%"><b>Refer</b></td><td class="cs">Slides 36&ndash;37</td></tr>
+<tr><td class="cn">Episcleritis</td><td class="cg" style="width:52%">No response in 2 days</td><td class="cf" style="width:14%"><b>Refer</b></td><td class="cs">Slides 47&ndash;48</td></tr>
+<tr><td class="cn">Chemosis</td><td class="cg" style="width:52%">Proptosis &middot; restricted movement &middot; reduced vision &middot; an afferent pupillary defect</td><td class="cf" style="width:14%"><b>URGENT</b></td><td class="cs">Slide 31</td></tr>
+<tr><td class="cn">Pterygium</td><td class="cg" style="width:52%">Growing, or vision affected</td><td class="cf" style="width:14%"><b>Refer</b></td><td class="cs">Slides 27&ndash;28</td></tr>
+<tr><td class="cn">Chalazion / hordeolum</td><td class="cg" style="width:52%">Chalazion not resolving, or recurrent &middot; hordeolum not improving in 2 weeks &middot; associated pre-septal cellulitis</td><td class="cf" style="width:14%"><b>Refer</b></td><td class="cs">Slide 21</td></tr>
+<tr><td class="cn">Pre-septal cellulitis</td><td class="cg" style="width:52%">Moderate-severe or toxic &middot; poor compliance &middot; <b>child aged 5 or under</b> &middot; no improvement on oral antibiotics</td><td class="cf" style="width:14%"><b>Admit</b></td><td class="cs">Slides 51&ndash;53</td></tr>
+</tbody></table></section>
+<section id="never"><h2 class="deck-title">6 &middot; Never do these</h2><p>Every one of these is stated outright in a lecture, and every one of them is a way of making the eye worse while meaning to help.</p>
+<div class="neverbox"><b class="n-h">Never dilate an eye when ocular trauma is suspected.</b><span class="n-w">The deck puts an exclamation mark on this one.</span><span class="n-c">Ocular Trauma, slide 6</span></div>
+<div class="neverbox"><b class="n-h">Do not remove a penetrating object.</b><span class="n-w">Ensure tetanus is up to date, image, and leave it where it is.</span><span class="n-c">Ocular Trauma, slide 6</span></div>
+<div class="neverbox"><b class="n-h">Computed tomography of the orbit without contrast &mdash; and <b>no MRI</b>.</b><span class="n-w">Metallic foreign bodies and magnets do not mix.</span><span class="n-c">Ocular Trauma, slide 6</span></div>
+<div class="neverbox"><b class="n-h">Do not measure intraocular pressure if a penetrating globe injury is suspected.</b><span class="n-w">Pressing on an open eye can extrude its contents.</span><span class="n-c">Ocular Trauma, slide 25</span></div>
+<div class="neverbox"><b class="n-h">Do not patch the contact lens wearer with a corneal defect.</b><span class="n-w">Remove the lenses, keep them if a culture is wanted, and arrange same-day review.</span><span class="n-c">Common Ophthalmological Disorders, slide 71</span></div>
+<div class="neverbox"><b class="n-h">No take-home topical anaesthetic, and no take-home corticosteroid.</b><span class="n-w">Repeated anaesthetic is toxic to the epithelium and delays healing; steroids can worsen an infection that has not been identified yet.</span><span class="n-c">Common Ophthalmological Disorders, slide 71; Ocular Trauma, slide 18</span></div>
+<div class="neverbox"><b class="n-h">Leave posterior-segment foreign bodies alone at the first evaluation.</b><span class="n-w">Going after one early risks more damage than the object itself.</span><span class="n-c">Ocular Trauma, slide 16</span></div>
+<div class="neverbox"><b class="n-h">Do not wait for the temporal artery biopsy before starting steroids.</b><span class="n-w">In arteritic anterior ischaemic optic neuropathy the delay costs the second eye.</span><span class="n-c">Acute Vision Loss, slides 49&ndash;51</span></div>
+</section>
+<section id="check"><h2 class="deck-title">7 &middot; Check yourself</h2>
+<details class="qa"><summary>1. A contact lens wearer has severe pain, photophobia and blurred vision after sleeping in the lenses. Fluorescein shows a central epithelial defect with a white infiltrate. What are the next steps?</summary><div class="qa-a">Remove the lenses and <b>do not patch</b>. No take-home topical anaesthetic or corticosteroid. Same-day ophthalmology for microbial keratitis. Preserve the lenses and case in case a culture is requested.</div></details>
+<details class="qa"><summary>2. Which conditions sit in the EMERGENT &mdash; now tier?</summary><div class="qa-a">Five of them: chemical injury (irrigate first), open globe, angle closure, orbital cellulitis and endophthalmitis.</div></details>
+<details class="qa"><summary>3. A patient over 55 has sudden visual loss, a new temporal headache and jaw claudication. What must not delay treatment?</summary><div class="qa-a">The temporal artery biopsy. Start intravenous methylprednisolone; untreated, the second eye follows the first.</div></details>
+<details class="qa"><summary>4. Which two findings on the first-60-seconds list are called red flags in their own right?</summary><div class="qa-a">Reduced vision, and an abnormal pupil.</div></details>
+<details class="qa"><summary>5. A child is struck in the eye with a ball and has severe pain, vomiting and bradycardia on attempted upgaze, but the eye looks quiet. What is this?</summary><div class="qa-a">An orbital floor fracture with inferior rectus entrapment &mdash; the white-eyed blowout. The autonomic disturbance is the clue, and it needs a facial trauma surgeon.</div></details>
+<details class="qa"><summary>6. What separates pre-septal from post-septal cellulitis at the bedside?</summary><div class="qa-a">In pre-septal disease <b>the eye itself is white</b>, movements are full and painless, and vision is normal. Proptosis, painful or restricted movement, diplopia or reduced vision means post-septal &mdash; and that is emergent.</div></details>
+</section>
+
+</main>
+</div>
+<script>
+  // High-yield "Test yourself" question sets, one per lecture topic, fed to
+  // window.openTestYourself (theme.js) by each section's button.
+  var TEST_YOURSELF = {
+    trauma: [
+      {q:"A patient has a metal fragment embedded in the eye after grinding. Which imaging?",
+       o:["CT orbit","MRI orbit","Ocular ultrasound","Plain orbital radiograph"],a:0,
+       why:"CT orbit, never MRI &mdash; a magnetic field will move a metallic fragment through the eye."},
+      {q:"Blunt trauma has left a soft eye with massive haemorrhagic chemosis. What is the first action?",
+       o:["Rigid shield over the eye and call ophthalmology","Measure the intraocular pressure",
+          "Dilate and examine the fundus","Irrigate the eye copiously"],a:0,
+       why:"That picture is a globe rupture. Do not press, do not dilate, do not measure pressure &mdash; shield it."},
+      {q:"Which instruction must a patient with a corneal abrasion NOT be given?",
+       o:["Take home topical anaesthetic drops","Use a topical antibiotic",
+          "Return if symptoms worsen","Consider patching for pain"],a:0,
+       why:"They delay healing, mask worsening symptoms and can cause a corneal ulcer."},
+      {q:"Vertical linear corneal scratches point to a foreign body where?",
+       o:["Under the upper lid","In the lower fornix","On the sclera","In the anterior chamber"],a:0,
+       why:"Evert the upper lid &mdash; the vertical pattern is the object scraping with each blink."},
+      {q:"Why is aminocaproic acid used in hyphema?",
+       o:["It slows clot breakdown, reducing rebleeding","It lowers intraocular pressure",
+          "It reverses anticoagulation","It prevents infection"],a:0,
+       why:"Most rebleeding happens in the first 72 hours, and a secondary haemorrhage is what costs the vision."},
+      {q:"Diplopia on UPWARD gaze after blunt orbital trauma means what?",
+       o:["Inferior rectus entrapment","Medial rectus entrapment",
+          "Superior oblique palsy","Optic nerve injury"],a:0,
+       why:"Lateral gaze diplopia would point to the medial rectus instead."},
+      {q:"A child has severe pain, bradycardia and vomiting on eye movement, but a quiet-looking eye. What is this?",
+       o:["White-eyed blowout with muscle entrapment","Simple periorbital contusion",
+          "Retrobulbar haemorrhage","Traumatic iritis"],a:0,
+       why:"In children an entrapped muscle may show no orbital soft tissue signs at all."},
+      {q:"Clear fluid from the nose after head trauma leaves a double ring on the bedsheet. What does that indicate?",
+       o:["Cerebrospinal fluid leak from a basilar skull fracture","Simple epistaxis",
+          "Lacrimal duct injury","Sinus infection"],a:0,
+       why:"Inner ring of blood, outer ring of cerebrospinal fluid. Neurosurgery consult and admission."},
+      {q:"Which retinal detachment is NOT primarily treated surgically?",
+       o:["Exudative","Rhegmatogenous","Traction","All three are surgical"],a:0,
+       why:"Exudative has no break and no traction &mdash; treat the underlying disease."},
+      {q:"A lid laceration sits 5 mm from the medial canthus. Why does that matter?",
+       o:["The canalicular system may be transected, causing chronic tearing",
+          "It always means a globe rupture","It cannot be repaired surgically",
+          "It indicates a basilar skull fracture"],a:0,
+       why:"A missed canalicular injury leaves the patient tearing for life. Ophthalmology repairs it."}
+    ],
+    cvl: [
+      {q:"What is the most common cause of vision loss in children?",
+       choices:["Amblyopia","Congenital cataract","Retinoblastoma","Refractive error"],correct:0,
+       explain:"Affecting 3 to 5 percent of children. The others are far less common, though cataract and refractive error can cause amblyopia."},
+      {q:"Which cataract classically appears under 50 in a patient on corticosteroids?",
+       choices:["Posterior subcapsular","Nuclear","Cortical","Zonular"],correct:0,
+       explain:"Faster onset, glare and reading difficulty, and symptoms that improve after dilation."},
+      {q:"Which paediatric cataract type is most common?",
+       choices:["Zonular","Polar","Nuclear","Posterior lenticonus"],correct:0,
+       explain:"A white opacity surrounding the nucleus. Polar is less common but central, so easier to spot."},
+      {q:"Where does ocular melanoma most often metastasise?",
+       choices:["Liver","Brain","Bone","Lung"],correct:0,
+       explain:"Which is what surveillance after treatment is aimed at."},
+      {q:"What separates an iris melanoma from an iris freckle?",
+       choices:["A feeder vessel, plus growth and size","Colour","Which eye it is in","Whether it is painful"],correct:0,
+       explain:"A cancer builds its own blood supply. A nevus stays flat, under 3 mm and avascular."},
+      {q:"Why is a suspected retinoblastoma not biopsied?",
+       choices:["It risks seeding the tumour","Pathology cannot identify it","The lesion is inaccessible","Anaesthesia is unsafe"],correct:0,
+       explain:"Diagnosis rests on dilated examination plus imaging."},
+      {q:"In amblyopia, which eye is patched?",
+       choices:["The good eye","The amblyopic eye","Both alternately","Neither"],correct:0,
+       explain:"Occluding the strong eye forces the weak one to work. Patching the weak eye would worsen it."},
+      {q:"A cataract alone causes which of the following?",
+       choices:["None of these — notably not a relative afferent pupillary defect","A relative afferent pupillary defect","Optic disc cupping","A central scotoma with distortion"],correct:0,
+       explain:"If there is an afferent defect, something besides the cataract is present."},
+      {q:"Which confirms idiopathic intracranial hypertension?",
+       choices:["Elevated opening pressure on lumbar puncture","Elevated intraocular pressure","Raised blood pressure","A mass on MRI"],correct:0,
+       explain:"Imaging with venography comes first to exclude a mass and a venous sinus thrombosis; the puncture confirms."},
+      {q:"Which vision is lost first in primary open-angle glaucoma?",
+       choices:["Peripheral","Central","Colour","Night vision"],correct:0,
+       explain:"Central acuity is spared until late, which is why it goes unnoticed and has to be screened for."},
+      {q:"What proportion of age-related macular degeneration is dry?",
+       choices:["About 80 percent","About 50 percent","About 20 percent","About 95 percent"],correct:0,
+       explain:"Leaving roughly 20 percent wet, which is the neovascular form."},
+      {q:"Why was high-dose beta carotene dropped from the AREDS supplement?",
+       choices:["It raised lung cancer risk in smokers","It stained the lens","It raised eye pressure","It caused detachment"],correct:0,
+       explain:"AREDS2 replaced it with lutein and zeaxanthin."},
+    ],
+    neuro: [
+      {q:"Anisocoria is greater in the DARK. Which pupil is abnormal?",
+       choices:["The larger one","The smaller one","Neither &mdash; this is physiologic","Cannot be determined"],correct:1,
+       explain:"In the dark the sympathetic system should be dilating both pupils. The one that fails to dilate is the abnormal one, and it is the smaller. Think Horner."},
+      {q:"What is the hallmark of the miosis in Horner syndrome?",
+       choices:["Failure to constrict to light","DILATION LAG in the first 4-5 seconds after the lights dim","A brisk near response with no light response","Sector paralysis of the iris"],correct:1,
+       explain:"Dilation lag. After 10-15 seconds the pupil does dilate a little, but that is passive relaxation of the sphincter rather than sympathetic function."},
+      {q:"A third nerve palsy WITH pupil involvement requires what?",
+       choices:["Reassurance and routine imaging","STAT CTA head or MRA brain","Haemoglobin A1C and observation","Patching for six months"],correct:1,
+       explain:"Pupil involvement points at external compression &mdash; most commonly a posterior communicating artery aneurysm, which threatens rupture within hours to days."},
+      {q:"Which pupil does NOT react to light but constricts briskly to near?",
+       choices:["Marcus Gunn","Adie tonic","Argyll Robertson","Horner"],correct:2,
+       explain:"Argyll Robertson &mdash; bilateral miosis with light-near dissociation, classically tertiary syphilis. The Adie pupil is large and its near response is slow and tonic."},
+      {q:"A patient has ptosis with NORMAL levator function. Which is most likely?",
+       choices:["CN III palsy","Horner syndrome","Myasthenia gravis","Congenital ptosis"],correct:1,
+       explain:"Only Muller's muscle is out, which accounts for 1-2 mm of elevation, so the levator still works. The accompanying miosis confirms it."},
+      {q:"Which cranial nerve arises from the DORSAL brainstem and crosses?",
+       choices:["CN III","CN IV","CN VI","CN II"],correct:1,
+       explain:"CN IV. The left trochlear nucleus supplies the right eye. Patients tilt the head AWAY from the affected eye to compensate."},
+      {q:"A bitemporal hemianopsia localises the lesion where?",
+       choices:["Optic nerve","Optic chiasm","Optic tract","Striate cortex"],correct:1,
+       explain:"The crossing nasal fibres are hit at the chiasm. Monocular loss is pre-chiasmal; anything homonymous is post-chiasmal."},
+      {q:"What is the most common form of jerk nystagmus?",
+       choices:["Vertical","Torsional","Horizontal","Rotary"],correct:2,
+       explain:"Horizontal jerk nystagmus &mdash; eyes drift slowly to one side and snap quickly back. It is named for the direction of the FAST beat."},
+    ],
+    avl: [
+      {q:"A curtain came down over one eye and lifted after 40 seconds. Which diagnosis?",
+       choices:["Retinal detachment","Amaurosis fugax","CRAO","Optic neuritis"],correct:1,
+       explain:"Both amaurosis fugax and retinal detachment use the word curtain. Duration separates them: amaurosis fugax lifts within seconds to minutes, a detachment stays and advances."},
+      {q:"After how long does CRAO cause irreversible retinal damage?",
+       choices:["30 minutes","90 minutes","8 hours","24 hours"],correct:1,
+       explain:"90 minutes. The 8-hour figure is the window for intra-arterial thrombolysis, not the damage threshold."},
+      {q:"Which fundus finding belongs to CRAO rather than CRVO?",
+       choices:["Blood and thunder haemorrhage","A cherry-red spot at the fovea","Cotton wool spots","Venous dilation"],correct:1,
+       explain:"Artery gives pale retina with a cherry-red fovea. Vein gives the haemorrhagic blood-and-thunder fundus. The other three are all venous."},
+      {q:"Which pressure is raised in papilledema?",
+       choices:["Intraocular","Intracranial","Central venous","Orbital compartment"],correct:1,
+       explain:"Intracranial. Every other condition in this block involves pressure inside the globe. Papilledema pushes the disc OUT; glaucoma cups it IN."},
+      {q:"A 24-year-old woman has vision loss over two days with pain on eye movement and washed-out colours. Which diagnosis?",
+       choices:["NAION","Optic neuritis","Angle-closure glaucoma","CRVO"],correct:1,
+       explain:"18-45 years, 75% female, painful eye movement, colour desaturation, often a normal-looking disc. The ischemic optic neuropathies are painless and occur in an older group."},
+      {q:"Which drug class is a RISK FACTOR for acute angle-closure glaucoma?",
+       choices:["Beta-blocker drops","Systemic anticholinergics","Prostaglandin analogues","Carbonic anhydrase inhibitors"],correct:1,
+       explain:"Anticholinergics such as atropine, and nebulized bronchodilators. The other three are all treatments that LOWER intraocular pressure."},
+      {q:"New flashing lights and floaters represent what?",
+       choices:["Raised intracranial pressure","A retinal tear","Optic nerve inflammation","Venous thrombosis"],correct:1,
+       explain:"The tear, which the detachment then commonly follows. If the macula becomes involved, vision in that eye is lost suddenly."},
+      {q:"An 81-year-old woman has sudden vision loss, scalp tenderness and jaw claudication. What is done FIRST?",
+       choices:["Await the temporal artery biopsy","Start IV methylprednisolone","Tonometry","Lumbar puncture"],correct:1,
+       explain:"Treatment starts before the biopsy, because early therapy is what saves the vision. ESR and CRP are sent, and biopsy remains the gold standard, but neither delays the steroid."},
+      {q:"What percentage of amaurosis fugax patients recover fully?",
+       choices:["About 50%","About 85%","About 95%","Nearly none"],correct:1,
+       explain:"About 85%. The rest progress to a central retinal artery occlusion, which is why early evaluation matters."},
+      {q:"Which single imaging study does EVERY patient with sudden vision loss get?",
+       choices:["Orbital ultrasound","MRA","Chest radiograph","Skull radiographs"],correct:1,
+       explain:"Sudden acute vision loss is a stroke until proven otherwise -- you can have a stroke with no symptom other than vision loss. Carotid Doppler and echocardiogram are added for the suspected source."},
+    ],
+    ophthalmology: [
+      {q:"Which single examination finding separates a chalazion from a hordeolum?",
+       choices:["Size","Tenderness","Colour","Laterality"],correct:1,
+       explain:"The hordeolum is tender and the chalazion is not. A chalazion is a STERILE meibomian obstruction; a hordeolum is an acute infection."},
+      {q:"A pterygium differs from a pinguecula how?",
+       choices:["It is yellow rather than fleshy","It extends onto the CORNEA","It is always bilateral","It is painful"],correct:1,
+       explain:"Corneal involvement is the entire distinction. Pterodactyls fly into the cornea; penguins can't."},
+      {q:"Which conjunctival finding points to a chlamydial or viral cause?",
+       choices:["Papillae","Follicles","Chemosis","Purulent discharge"],correct:1,
+       explain:"Follicles are pale at the surface and redder at the base. Papillae are the reverse, and point to bacterial or allergic disease."},
+      {q:"Which bedside test confirms episcleritis?",
+       choices:["Fluorescein under cobalt blue","2.5% phenylephrine, wait 15 minutes for blanching","Tonometry","Conjunctival scraping"],correct:1,
+       explain:"Episcleral vessels blanch with phenylephrine, and can be moved with a cotton-tip applicator. Scleral vessels do neither."},
+      {q:"What is the FIRST sign that scleritis is responding to treatment?",
+       choices:["The violaceous hue fades","Decreased PAIN, even if the eye looks unchanged","Vision returns to normal","The discharge stops"],correct:1,
+       explain:"This is flagged specifically, so an eye that still looks inflamed is not misread as treatment failure."},
+      {q:"A contact lens wearer has a central epithelial defect with a white infiltrate. What is the next step?",
+       choices:["Patch the eye and review in two days","Remove the lenses without patching and arrange SAME-DAY ophthalmology","Give a take-home topical anaesthetic","Start a topical corticosteroid"],correct:1,
+       explain:"Microbial keratitis until proven otherwise. Never patch, never send home an anaesthetic, never start steroids."},
+      {q:"Which corneal finding is PATHOGNOMONIC for herpes simplex?",
+       choices:["A pseudodendrite","A true dendrite with terminal end bulbs","A ring infiltrate","A hypopyon"],correct:1,
+       explain:"The true dendrite branches like a tree, has elevated edges and terminal end bulbs. The zoster pseudodendrite lacks all three."},
+      {q:"What separates PRE-septal from POST-septal cellulitis on examination?",
+       choices:["Fever","The eye itself: white with full painless movements, versus red with proptosis and restricted painful movement","Lid swelling","Presence of pain"],correct:1,
+       explain:"Both have lid swelling, warmth and fever. Only post-septal disease involves the globe and its movements."},
+      {q:"Which is EMERGENT rather than same-day?",
+       choices:["Anterior uveitis","Orbital cellulitis","Scleritis","Corneal ulcer"],correct:1,
+       explain:"Emergent: chemical injury, open globe, angle closure, orbital cellulitis, endophthalmitis. The others are same-day."},
+      {q:"Untreated trachoma causes blindness by which chain?",
+       choices:["Ulceration then perforation","Inflammation, lid scarring, entropion, trichiasis","Raised pressure then optic nerve damage","Neovascularisation then haemorrhage"],correct:1,
+       explain:"Repeated chlamydial infection scars the lid, which turns it inward, which drives the lashes onto the cornea."}
+    ],
+  };
+</script>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
