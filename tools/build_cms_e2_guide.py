@@ -466,7 +466,7 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
 
 body = BODY
 body = body.replace("@@PINGPTER@@", figpair(
-    "s027_1.jpg", "s027_2.jpg",
+    "l10-s027-pinguecula.jpg", "l10-s027-pterygium.jpg",
     "<b>Left, pinguecula</b> &mdash; the yellowish nodule stops at the limbus. "
     "<b>Right, pterygium</b> &mdash; the growth crosses onto the cornea. That crossing is the "
     "entire distinction.", 27))

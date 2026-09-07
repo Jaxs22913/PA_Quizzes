@@ -113,7 +113,7 @@ dict(cond="Chemosis", img="s031_1.jpg", slide=31, deck=D10, io=SURFACE,
             ("Pterygium", "That is a fixed wedge of fibrous tissue, not generalised fluid swelling."),
             ("Episcleritis", "That is sectoral redness of the vessels; the conjunctiva is not raised like this.")]),
 
-dict(cond="Pinguecula", img="s027_1.jpg", slide=27, deck=D10, io=SURFACE,
+dict(cond="Pinguecula", img="l10-s027-pinguecula.jpg", slide=27, deck=D10, io=SURFACE,
      alt="Raised yellow-white conjunctival deposit beside the cornea, stopping at the limbus",
      why="A raised yellow-white conjunctival deposit that STOPS at the limbus and never reaches the cornea.",
      wrong=[("Pterygium", "That one keeps going — a wedge of tissue that crosses ONTO the cornea."),
@@ -192,7 +192,7 @@ dict(cond="Herpes zoster keratitis", img="s057_2.jpg", slide=57, deck=D10, io=CO
             ("Corneal abrasion", "That is a single sharply bounded area of uptake, not multiple raised plaques."),
             ("Keratitis", "That is a general term; the pattern here names the organism.")]),
 
-dict(cond="Corneal ulcer", img="s060_1.jpg", slide=60, deck=D10, io=CORNEA,
+dict(cond="Corneal ulcer", img="l10-s060-corneal-ulcer.jpg", slide=60, deck=D10, io=CORNEA,
      alt="Cornea with a dense white stromal infiltrate and ciliary flush",
      why="A dense WHITE INFILTRATE within the cornea with ciliary flush around the limbus.",
      wrong=[("Corneal abrasion", "That is an epithelial defect only — it stains, but there is no white infiltrate under it."),

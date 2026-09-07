@@ -119,7 +119,7 @@ LOOK = {
  "Xanthelasma": "Oval yellow plaques on the nasal side of the lid",
  "Blepharitis / Meibomitis": "Crusting and collarettes at the base of the lashes",
  "Chalazion": "Focal, NON-tender lid swelling built over days to weeks",
- "Hordeolum (stye)": "TENDER nodule &mdash; internal, pointing on the inner lid surface",
+ "Hordeolum (stye)": "TENDER red nodule at the lid MARGIN &mdash; an external stye",
  "Dacryoadenitis": "Swelling of the outer third of the UPPER lid",
  "Dacryocystitis": "Swelling BELOW the medial canthal tendon, pus from the punctum",
  "Pinguecula": "Yellow nodule on the conjunctiva that STOPS at the limbus",

@@ -68,15 +68,31 @@ from _cms_e2_chart_l14 import ROWS_L14, DIFF_L14, IMGS_L14
 DIFF = dict(DIFF, **DIFF_NEW)
 DIFF = dict(DIFF, **DIFF_L13)
 DIFF = dict(DIFF, **DIFF_L14)
-IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('s020_5.jpg', 20), 'Hordeolum (stye)': ('s020_1.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('s027_1.jpg', 27), 'Pterygium': ('s027_2.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('l10-s052_pos2.jpg', 52), 'Keratitis': ('s055_2.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('s060_1.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
+IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('l10-s020-chalazion.jpg', 20), 'Hordeolum (stye)': ('l10-s020-hordeolum.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('l10-s027-pinguecula.jpg', 27), 'Pterygium': ('l10-s027-pterygium.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('l10-s052_pos2.jpg', 52), 'Keratitis': ('l10-s055-keratitis.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('l10-s060-corneal-ulcer.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
 
 # Viewed and REJECTED. These are the deck's OWN differential images -- filing
 # one under the row's condition would be a factual error in the chart, not
 # merely an ugly picture. See [[image_only_slides]].
+# Keyed by the MEDIA FILE INSIDE THE DECK, not by an extracted filename.
+# The slide-27 entry used to read "s027_3.jpg", which was never written, so it
+# rejected nothing and conjunctival intraepithelial neoplasia shipped as
+# "Pinguecula". A media name cannot go stale that way, and
+# tools/check_ophtho_image_identity.py pixel-matches every chart picture against
+# this list so a rejected image cannot creep back in under a new filename.
 REJECTED = {
-  "s029_1.jpg": "a HYPHAEMA, captioned DDX on slide 29 -- not a subconjunctival haemorrhage",
-  "s027_3.jpg": "CONJUNCTIVAL INTRAEPITHELIAL NEOPLASIA, the fan-shaped DDX on slide 27 -- not a pterygium",
+  "image39.emf": "HYPHAEMA -- letter C, captioned DDX on slide 29, not a subconjunctival haemorrhage",
+  "image40.emf": "360-degree TRAUMATIC subconjunctival haemorrhage -- letter B DDX on slide 29, "
+                 "where the row is the atraumatic one",
+  "image36.png": "CONJUNCTIVAL INTRAEPITHELIAL NEOPLASIA -- letter D, captioned DDX on slide 27, "
+                 "neither a pinguecula nor a pterygium",
+  "image25.emf": "INTERNAL HORDEOLUM -- the RIGHT of slide 20's 'LEFT External hordeolum RIGHT "
+                 "Internal hordeolum', so not a chalazion",
+  "image68.png": "SCARRED CORNEA -- letter E on slide 55, 'sequela of' keratitis rather than the "
+                 "active disease the row describes",
+  "image75.png": "HEALED CORNEAL ULCER SCAR with calcification -- slide 60's BELOW image, not an "
+                 "active ulcer",
 }
+
 
 # name, group, giveaway, presentation, testing, treatment, urgency, education, slides
 ROWS = [
