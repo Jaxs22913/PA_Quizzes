@@ -686,6 +686,27 @@
     );
     panel.appendChild(contrastToggle.row);
 
+    // Hides what the class picked beside each option, and the "You vs the class"
+    // panel on the results screen. UNGATED ON PURPOSE (Jaxon, 2026-09-08: "add
+    // the mute class stats to all page settings buttons"). It first shipped
+    // gated on #shuffle-toggle so it only appeared where it had something to
+    // hide, but that meant the switch could not be found from the homepage or a
+    // guide -- and a preference you can only change from inside the thing it
+    // affects is a preference people cannot find. It is a stored flag, so
+    // flipping it anywhere holds everywhere until it is flipped back.
+    var classStatsToggle = makeToggleRow(
+      "Hide class statistics",
+      localStorage.getItem("hideClassStats") === "1",
+      function (checked) {
+        if (window.ClassStats && window.ClassStats.setHidden) {
+          window.ClassStats.setHidden(checked);
+        } else {
+          try { localStorage.setItem("hideClassStats", checked ? "1" : "0"); } catch (e) {}
+        }
+      }
+    );
+    panel.appendChild(classStatsToggle.row);
+
     if (document.getElementById("shuffle-toggle")) {
       var shuffleToggle = makeToggleRow(
         "Shuffle questions by default",
@@ -710,26 +731,6 @@
       );
       panel.appendChild(soundToggle.row);
 
-      // Hides what the class picked beside each option, and the "You vs the
-      // class" panel on the results screen. Gated on #shuffle-toggle like the
-      // rows above -- every quiz that shows class numbers has one, checked at
-      // the time this was added. The switch itself is enforced inside
-      // class-stats.js, which every page shares, so it works on quizzes that
-      // shipped long before this row existed as well as on future ones.
-      // Answers still count toward the numbers for everyone else; this only
-      // stops them being drawn.
-      var classStatsToggle = makeToggleRow(
-        "Hide class statistics",
-        localStorage.getItem("hideClassStats") === "1",
-        function (checked) {
-          if (window.ClassStats && window.ClassStats.setHidden) {
-            window.ClassStats.setHidden(checked);
-          } else {
-            try { localStorage.setItem("hideClassStats", checked ? "1" : "0"); } catch (e) {}
-          }
-        }
-      );
-      panel.appendChild(classStatsToggle.row);
     }
 
     // Exam Mode: no per-question feedback until a real submit, free
