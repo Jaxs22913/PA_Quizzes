@@ -15,7 +15,7 @@ QUESTIONS = [
 Q("Neck mass evaluation", IO,
   "A 47-year-old woman has a neck mass that is pulsatile and has an audible bruit.",
   [["A vascular lesion, most likely a paraganglioma",
-    "Correct. The lecture gives four rules of thumb, and pulsatility or a bruit means vascular. "
+    "Correct. There are four rules of thumb, and pulsatility or a bruit means vascular. "
     "Paragangliomas head the benign vascular list, arising at the carotid body, the vagus or the "
     "jugulotympanic region. The practical consequence is that this mass must not be biopsied blindly "
     "and needs computed tomography angiography before anything is put into it."],
@@ -35,7 +35,7 @@ Q("Neck mass evaluation", IO,
   "A 33-year-old man has a neck mass that has enlarged rapidly over three weeks. He has no fever, "
   "sore throat or other infective symptoms, but reports night sweats and weight loss.",
   [["Lymphoma",
-    "Correct. The rule the lecture gives is that a rapidly growing mass is usually infectious IF "
+    "Correct. The rule is that a rapidly growing mass is usually infectious IF "
     "there are other infective symptoms, and lymphoma if there are not. Here the rapid growth comes "
     "with constitutional B symptoms rather than infection, and lymphoma is also the noted exception "
     "to the rule that masses under 40 are usually inflammatory."],
@@ -78,7 +78,7 @@ Q("Fine needle aspiration", IO,
   "passes are needed.",
   [["A minimum of four separate passes",
     "Correct. A single pass samples one small volume and risks missing focal disease within a "
-    "heterogeneous node, so the lecture specifies a minimum of four separate needle passes for "
+    "heterogeneous node, so the standard is a minimum of four separate needle passes for "
     "collection. The material is used for cytology, Gram stain and culture, which is why adequacy of "
     "sampling determines whether the result can be trusted."],
    ["One pass, provided material is obtained",
@@ -293,7 +293,7 @@ Q("Thymic cyst", IO,
   [["Thymic cyst",
     "Correct. Hassall corpuscles are concentric epithelial structures found in the thymic medulla, "
     "and their presence is what makes the diagnosis definitively. Imaging narrows the differential "
-    "but cannot establish it, which is why the lecture specifies that definitive diagnosis is by "
+    "but cannot establish it, which is why definitive diagnosis is by "
     "biopsy. Treatment is surgical excision."],
    ["Branchial cleft cyst",
     "A branchial cleft cyst sits laterally at the sternocleidomastoid border and is lined by "
@@ -312,7 +312,7 @@ Q("Thymic cyst", IO,
 Q("Neck mass in a child versus an adult", IO,
   "A clinician is taught that age changes the prior probability when assessing a neck mass.",
   [["Under 40 most masses are inflammatory, with Hodgkin lymphoma as the exception",
-    "Correct. The lecture states that most neck masses in patients under 40 are inflammatory in "
+    "Correct. Most neck masses in patients under 40 are inflammatory in "
     "nature, and names Hodgkin lymphoma as the specific exception to that rule. Above 40 the "
     "probability shifts toward malignancy, which is why age over 40 appears on the red-flag list "
     "alongside size, duration, firmness and tobacco use."],

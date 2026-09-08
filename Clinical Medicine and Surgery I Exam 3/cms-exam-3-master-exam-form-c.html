@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #7455b5; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS I Exam 3 Master Exam &mdash; Form C</title>
+<style>
+  :root{
+    --navy:#462d7a; --indigo:#7455b5; --gold:#c08a2e; --ice:#f2eefa;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Medicine and Surgery I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 3 &middot; Ear, nose and throat block, Lectures 15&ndash;19 &middot; Form C</div>
+    <span class="pill">50 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Fifty newly written questions drawn from all five lectures of the ear, nose and throat block &mdash; <b>ten from each</b>, so every form is a genuine cumulative rehearsal rather than a sample of whichever lecture had the most questions written for it. Patient vignettes in the style of the worked examples, with the lead-in varied: what finding is expected, what is the most likely cause, what is the most direct method, what is the next step, what additional finding is likely.<br><br><b>Four options, A&ndash;D.</b> Every option carries a real explanation &mdash; the correct answer gets the mechanism, and each wrong answer gets the specific reason it fails rather than a restatement of itself. That is enforced rather than intended: the build rejects any explanation under 90 characters, and any that merely repeats its own option.<br><br><b>No question appears in more than one form</b>, so working through all five gives you 250 distinct questions. Every question cites the lecture and slide it came from.</p>
+    <div class="chips"><span class="chip">Clinical reasoning</span><span class="chip">External &amp; middle ear</span><span class="chip">Inner ear &amp; hearing</span><span class="chip">Nose &amp; sinuses</span><span class="chip">Neck masses</span><span class="chip">Oral cavity &amp; throat</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Malignant otitis externa", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 70-year-old man with diabetes is being investigated for suspected necrotising otitis externa.", "opts": [["Canal swab alone to guide topical therapy", "A swab is worth taking to identify the organism, which is usually Pseudomonas, but topical therapy cannot reach infected bone. Treating this as a surface problem is what allows it to progress."], ["Tympanometry", "Tympanometry assesses middle ear compliance and would add nothing here, because the pathology is in the canal and the surrounding bone rather than behind the drum."], ["Audiometry to quantify the hearing loss", "Documenting hearing is reasonable at some point, but it neither establishes the diagnosis nor changes the immediate management of a bone infection that threatens cranial nerves."], ["Imaging of the temporal bone", "Correct. Necrotising otitis externa has left the canal skin and entered bone, so it is a skull base osteomyelitis rather than a soft tissue infection. Imaging defines how far the disease has spread, which determines the duration of intravenous therapy and identifies cranial nerve involvement or intracranial extension."]], "c": 3, "cite": "CMS I Disorders of the External and Middle Ear, Slide 43"}, {"topic": "Sudden sensorineural hearing loss", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician explains why sudden sensorineural hearing loss is investigated with imaging even when it appears idiopathic.", "opts": [["To exclude a retrocochlear lesion such as a schwannoma", "Correct. A proportion of patients presenting with sudden loss turn out to have a vestibular schwannoma, and the presentation gives no reliable way to identify them clinically. Because a tumour's size at diagnosis determines the treatment options and the chance of preserving hearing and facial nerve function, imaging is done rather than assumed unnecessary."], ["To confirm the loss is genuinely sensorineural", "That distinction is made by tuning forks and audiometry, which are quicker and cheaper. Imaging answers a different question about what is causing it."], ["To plan cochlear implantation", "Implantation is considered much later and only in profound bilateral loss that does not respond to treatment. Imaging at presentation is diagnostic rather than surgical planning."], ["To assess the degree of hearing loss", "Degree of loss is quantified by audiometry in decibels. Imaging shows structure rather than function and cannot measure a threshold."]], "c": 0, "cite": "16. Disorders of Inner Ear, Slide 68"}, {"topic": "Ludwig angina", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 44-year-old man with Ludwig angina and diabetes is noted to have a more aggressive course than expected.", "opts": [["Klebsiella is more often involved in patients with diabetes", "Correct. The usual organisms are streptococci, staphylococci, Bacteroides and Fusobacterium, but Klebsiella features specifically in patients with diabetes, and that those patients may have a more aggressive clinical course. That changes both the expected tempo and the antibiotic choice."], ["Diabetes protects against airway compromise", "Nothing about diabetes protects the airway, and the more aggressive course means airway compromise is if anything more likely and sooner."], ["Diabetes has no bearing on the course of deep neck infection", "Impaired neutrophil function and the different organism spectrum both make deep neck infection more dangerous in diabetes, which is why it is flagged rather than left as a background comorbidity."], ["The infection is usually viral in diabetic patients", "Ludwig angina is a bacterial cellulitis of the floor of the mouth regardless of the host. There is no viral form."]], "c": 0, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 108"}, {"topic": "Neck anatomy", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A surgeon is operating in the triangle bounded by the sternocleidomastoid behind, the posterior belly of digastric above, and the omohyoid below.", "opts": [["The thyroid, parathyroid, larynx and trachea", "Those are the contents of the muscular triangle, which lies between the omohyoid above, the sternocleidomastoid below and the midline in front. It is a different triangle of the same anterior group."], ["The submandibular gland, hypoglossal nerve and facial vessels", "Those sit in the digastric or submandibular triangle, bounded by the mandible above and the two bellies of digastric. The boundaries given do not include the mandible."], ["The brachial plexus and subclavian artery", "Those are in the supraclavicular triangle of the POSTERIOR group, above the middle of the clavicle. The boundaries described are all anterior triangle structures."], ["The carotid arteries, internal jugular vein and vagus nerve", "Correct. Those boundaries define the carotid triangle, which houses the carotid arteries, the internal jugular vein and the vagus nerve. Knowing the contents from the boundaries is the point of the triangle scheme: it converts a set of surface landmarks into a prediction about what lies underneath."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 6"}, {"topic": "Vestibular schwannoma", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 48-year-old man with a unilateral sensorineural loss is found to have a vestibular schwannoma. He asks why his balance has been only mildly affected.", "opts": [["The tumour does not involve the vestibular nerve", "It arises from the vestibular division of the eighth nerve, which is where its name comes from. The nerve is involved from the outset; it is the rate of change that determines the symptom."], ["Central compensation adjusts to a slowly growing lesion", "Correct. The tumour enlarges over years, so the vestibular input on that side declines gradually and the brainstem and cerebellum recalibrate continuously. That is why patients describe unsteadiness rather than vertigo, unlike a sudden vestibular loss such as neuronitis, which produces dramatic spinning because there is no time to compensate."], ["Balance is maintained entirely by vision and proprioception", "Vision and proprioception contribute substantially and help compensate, which is why symptoms worsen in the dark or on uneven ground, but the vestibular system is not dispensable."], ["Vestibular symptoms only occur once hearing is completely lost", "There is no such threshold relationship. The cochlear and vestibular divisions are affected independently, and either can dominate the presentation."]], "c": 1, "cite": "16. Disorders of Inner Ear, Slide 105"}, {"topic": "Barotrauma prevention", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 34-year-old woman with a heavy cold is due to fly and asks how to reduce the risk of ear pain.", "opts": [["Take an oral antihistamine", "Antihistamines help when the congestion is allergic, but a viral cold is not histamine-driven, and their anticholinergic drying can thicken secretions. A decongestant addresses the mucosal swelling directly."], ["Avoid swallowing during descent to prevent pressure changes", "This reverses the advice. Swallowing is one of the actions that OPENS the eustachian tube, and avoiding it guarantees the middle ear cannot equalise."], ["Wear earplugs throughout the flight", "Plugs occlude the canal lateral to the drum, but the pressure differential is between the middle ear and the cabin, which they do not influence. They may dampen noise but do not help equalisation."], ["Use a topical decongestant before descent and swallow or yawn frequently", "Correct. The problem is a eustachian tube too swollen to equalise the rising ambient pressure during descent. A topical decongestant shrinks the mucosa around the tube opening so it can open, and swallowing, yawning or the Valsalva manoeuvre actively opens it, letting middle ear pressure track the cabin."]], "c": 3, "cite": "CMS I Disorders of the External and Middle Ear, Slide 37"}, {"topic": "Malignant otitis externa", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 74-year-old woman with type 2 diabetes has severe left ear pain and discharge that has not responded to topical treatment. She now has a left-sided facial droop involving the forehead. Inflammatory markers are raised.", "opts": [["A concurrent Bell palsy unrelated to the ear infection", "Attributing a facial palsy to an idiopathic cause in a diabetic patient with an active unresolving ear infection ignores the far likelier explanation sitting in the same temporal bone. Bell palsy is a diagnosis of exclusion, and here there is an obvious cause to exclude first."], ["Ramsay Hunt syndrome from herpes zoster", "Zoster of the geniculate ganglion does cause a facial palsy with ear pain, so it belongs on the list, but it produces vesicles in the canal or concha and does not present as weeks of treatment-resistant discharge with raised inflammatory markers in a diabetic."], ["It has reached the skull base and facial nerve", "Correct. Necrotising otitis externa spreads from the canal into the temporal bone as an osteomyelitis, usually Pseudomonas in a diabetic or immunocompromised host. The facial nerve runs through that bone, so a lower motor neuron palsy involving the forehead signals the infection has reached it, which marks advanced disease and a worse prognosis."], ["A stroke affecting the facial motor cortex", "A central lesion spares the forehead, because the upper face receives input from both hemispheres. Forehead involvement localises the lesion to the nerve itself rather than the brain, which points back to the temporal bone."]], "c": 2, "cite": "CMS I Disorders of the External and Middle Ear, Slide 43"}, {"topic": "Thyroglossal duct cyst", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A 14-year-old girl has a painless swelling in the midline of the anterior neck, noticed after a cold. On examination the mass moves upward when she swallows and again when she protrudes her tongue.", "opts": [["Branchial cleft cyst", "A branchial cleft cyst is LATERAL, sitting at the anterior border of the sternocleidomastoid, and has no attachment to the hyoid, so it does not move with tongue protrusion. Position alone separates the two."], ["Thyroglossal duct cyst", "Correct. The thyroid descends from the foramen caecum at the tongue base through the hyoid bone during development, and a persistent tract leaves a midline cyst attached to the hyoid. That attachment is why the mass rises with swallowing AND with tongue protrusion, which is the pathognomonic sign and the reason the Sistrunk operation removes the central hyoid with it."], ["Dermoid cyst", "A dermoid is also midline and submental, so it is the closest mimic, but it arises from entrapped epithelium with no connection to the hyoid or the tongue base and therefore does not elevate on tongue protrusion."], ["Reactive cervical lymphadenopathy", "Reactive nodes are lateral, sit in the cervical chains, are often multiple and tender, and regress over one to two weeks. A solitary midline mass that moves with the tongue is not a lymph node."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 23"}, {"topic": "Perilymphatic fistula", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A patient with a suspected perilymphatic fistula is advised about initial management.", "opts": [["Bed rest with head elevation and avoidance of straining", "Correct. The leak is pressure-dependent, which is why symptoms worsen with coughing, lifting and straining. Reducing the pressure gradient by resting with the head up gives the ruptured window membrane a chance to seal, and many fistulae close spontaneously with that alone before surgical repair is considered."], ["Long-term vestibular suppressants", "Suppressants mask the symptom without addressing the leak, and prolonged use impairs the compensation that helps once the fistula has closed."], ["Immediate surgical exploration in all cases", "Exploration is reserved for patients who fail conservative management or who have progressive hearing loss, because a proportion seal on their own with rest."], ["Vigorous vestibular rehabilitation exercises", "Rehabilitation drives central compensation and is right for a stable deficit such as vestibular neuronitis. Here it would repeatedly raise pressure and reopen a membrane that is trying to heal."]], "c": 0, "cite": "16. Disorders of Inner Ear, Slide 60"}, {"topic": "Autoimmune sensorineural loss", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 39-year-old woman has bilateral sensorineural hearing loss that has worsened in steps over eight months, with periods of deterioration alternating with periods of stability. She has rheumatoid arthritis.", "opts": [["Sudden sensorineural hearing loss", "Sudden loss is unilateral and occurs over up to three days, then either recovers or does not. A bilateral fluctuating course over eight months is a different entity requiring different treatment."], ["Autoimmune inner ear disease", "Correct. The characteristic course is bilateral, progressive loss advancing in alternating periods of deterioration and stabilisation over months, which is faster than presbycusis and slower than a sudden loss. An existing autoimmune condition supports it, and it matters because it is one of the few sensorineural losses that responds to immunosuppression."], ["Meniere disease", "Meniere gives episodic vertigo with fluctuating low-frequency loss, tinnitus and fullness, usually starting unilaterally. There is no vertigo here and the pattern of progression is stepwise rather than attack-based."], ["Presbycusis", "Age-related loss is a slow symmetrical decline over years without discrete periods of worsening, and it would be very unusual at 39. The stepwise course over eight months does not fit."]], "c": 1, "cite": "16. Disorders of Inner Ear, Slide 64"}, {"topic": "Epistaxis", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 9-year-old boy has recurrent nosebleeds from the left nostril, each stopping within ten minutes with pressure. He has no bruising elsewhere, takes no medication, and picks his nose frequently. It is winter.", "opts": [["Juvenile nasopharyngeal angiofibroma", "That tumour does cause epistaxis in young males, but it presents with profuse unilateral bleeding and progressive obstruction from a nasopharyngeal mass, not brief self-limiting bleeds in a nose-picking child."], ["Anterior epistaxis, managed conservatively", "Correct. Ninety per cent of nosebleeds are anterior, arising from Kiesselbach plexus on the anterior septum where several arteries anastomose in thin mucosa. Digital trauma is the commonest cause, and dry winter air cracks the mucosa further. Short bleeds stopped by pressure in a well child need humidification and behaviour change rather than investigation."], ["Posterior epistaxis requiring packing", "Posterior bleeds arise from the sphenopalatine artery, are usually heavier, often bleed from both nostrils or down the throat, and do not stop reliably with ten minutes of pressure. They are also uncommon in children."], ["A coagulopathy requiring urgent clotting studies", "Coagulation testing is not routine for epistaxis and is reserved for patients on anticoagulants or with other bleeding signs. This child has no bruising, no family history and no medication, and has an obvious mechanical cause."]], "c": 1, "cite": "hughie Nose & Paranasal Sinuses, Slide 37"}, {"topic": "Perichondritis", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 24-year-old woman has a red, hot, exquisitely tender auricle three days after a cartilage piercing of the upper ear. The lobule is spared.", "opts": [["Cellulitis of the auricle", "Simple cellulitis would involve the lobule too, because it spreads through skin and soft tissue without regard to the cartilage boundary. The sparing is what localises this."], ["Contact dermatitis from the jewellery", "Nickel allergy is common and would give itch with an eczematous rash, often extending to the lobule if that is pierced too. Severe tenderness with heat indicates infection rather than allergy."], ["Perichondritis, needing antipseudomonal antibiotics", "Correct. Sparing of the lobule is the key observation: the lobule contains no cartilage, so an infection confined to the cartilaginous part of the ear implicates the perichondrium. Pseudomonas is the usual organism after high piercings, and treatment must cover it or the cartilage necroses and the ear deforms."], ["Auricular haematoma", "A haematoma follows blunt trauma and produces a tense swelling that obliterates the normal contours. It is not hot and erythematous, and there is no history of a blow."]], "c": 2, "cite": "CMS I Disorders of the External and Middle Ear, Slide 35"}, {"topic": "Ototoxicity", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician wants to name the drug classes most associated with cochlear toxicity.", "opts": [["Beta blockers and calcium channel blockers", "Cardiovascular drugs of these classes are not recognised ototoxins. They can cause dizziness through hypotension, which is a different symptom from cochlear damage."], ["Aminoglycosides and loop diuretics", "Correct. Aminoglycosides accumulate in and destroy cochlear hair cells, usually permanently, starting at the high frequencies. Loop diuretics affect the stria vascularis and their effect is more often reversible. Both appear as named ototoxic classes, and the difference in reversibility matters for what the patient is told."], ["Proton pump inhibitors and antihistamines", "Neither class damages the cochlea. Antihistamines cause sedation and can suppress vestibular symptoms, which is a therapeutic effect rather than toxicity."], ["Statins and metformin", "These carry muscular and gastrointestinal effects respectively and are not associated with hearing loss. Attributing a new sensorineural loss to them would divert the search from the real cause."]], "c": 1, "cite": "16. Disorders of Inner Ear, Slide 32"}, {"topic": "Sinusitis complications", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 26-year-old man with sinusitis develops altered mental status and a severe headache.", "opts": [["A migraine triggered by sinus congestion", "Sinus symptoms and migraine do overlap and are commonly confused, but migraine does not alter mental status. Attributing confusion to headache type risks missing an intracranial infection."], ["Urgent evaluation for intracranial extension", "Correct. Altered mental status is one of the urgent features alongside diplopia and periorbital swelling, and it indicates the infection may have crossed into the cranial cavity, producing meningitis, an epidural or subdural collection, or a brain abscess. That requires imaging and admission rather than outpatient management."], ["Dehydration from reduced oral intake", "Dehydration can cause confusion in the elderly or in severe illness, and rehydration is sensible, but it does not explain a severe headache in a young man with an adjacent infection and would not be assumed before imaging."], ["A side effect of oral decongestants", "Decongestants can cause insomnia, palpitations and hypertension, and rarely agitation, but attributing new confusion with severe headache to a common over-the-counter drug leaves a dangerous complication unexamined."]], "c": 1, "cite": "hughie Nose & Paranasal Sinuses, Slide 20"}, {"topic": "Branchial cleft cyst", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A 21-year-old man has a tender, fluctuant swelling at the anterior border of the right sternocleidomastoid with overlying erythema, which appeared after an upper respiratory infection. He recalls a small painless lump in the same place for years.", "opts": [["Control the infection first, then excise the cyst and its tract", "Correct. A branchial cleft cyst arises from pharyngobranchial ducts that failed to obliterate, and it usually declares itself when it becomes infected after an upper respiratory infection. The infection is settled first, then the cyst AND its tract are excised, because leaving the tract behind is what causes recurrence."], ["Antibiotics alone, since the cyst will resolve once the infection settles", "Antibiotics settle the infection but the cyst itself is a congenital structure that does not disappear. It will simply become infected again, which is why definitive excision follows."], ["Excise it immediately during the acute infection", "Operating on acutely infected, oedematous tissue makes it difficult to define and follow the tract, which raises the risk of leaving part of it behind. Controlling the infection first gives a cleaner and more complete excision."], ["Incision and drainage now, then excision later", "Incision and drainage is specifically avoided unless there is frank abscess, because it scars the tissue planes and makes the definitive excision considerably harder. Even when a collection must be decompressed, needle aspiration is preferred."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 22"}, {"topic": "Thyroid nodule", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A radionuclide scan of a solitary thyroid nodule in a hyperthyroid patient shows the nodule is hyperfunctioning.", "opts": [["Proceed to fine needle aspiration as for any nodule", "Aspirating every nodule is the correct default when the thyroid-stimulating hormone is normal. Applying it after a scan has already shown the nodule is hot subjects the patient to a procedure whose result was predictable."], ["No biopsy is needed, as hot nodules carry a low malignant risk", "Correct. A nodule that concentrates tracer avidly is producing hormone autonomously, and autonomously functioning nodules are almost always benign. That is the whole purpose of scanning before aspirating in a patient with a suppressed thyroid-stimulating hormone: it identifies the group in whom biopsy can be safely omitted."], ["Repeat the scan in six months", "Repeating a scan that has already answered the question adds radiation without new information. The management question now concerns the hyperthyroidism rather than the nodule's nature."], ["Proceed directly to thyroidectomy", "Surgery may eventually be considered for symptomatic hyperthyroidism, but removing the gland on the basis of a benign hot nodule is disproportionate when medical therapy or radioiodine are available."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 41"}, {"topic": "Anosmia", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 55-year-old man has lost his sense of smell over several months, with nasal obstruction and thick discharge.", "opts": [["Sensorineural anosmia from olfactory nerve damage", "Nerve damage from head injury or a viral illness does cause permanent anosmia, but it is not accompanied by progressive obstruction and thick discharge, and treating the nose would not help."], ["A normal age-related change", "Smell does decline with age, but not over a few months and not alongside obstruction and discharge, which point to a treatable mechanical cause."], ["Conductive anosmia from obstruction", "Correct. Smell requires airflow to carry odorant molecules up to the olfactory epithelium high in the nasal vault. Polyps, chronic inflammation or marked mucosal swelling block that path, so the receptors are intact but never reached. That is why treating the obstruction can restore smell, unlike a sensorineural olfactory loss."], ["An early sign of a nasopharyngeal tumour", "A nasopharyngeal carcinoma presents with unilateral obstruction, blood-stained discharge, a neck mass or cranial nerve signs. Bilateral obstruction with anosmia more often reflects polyps or chronic inflammation."]], "c": 2, "cite": "hughie Nose & Paranasal Sinuses, Slide 63"}, {"topic": "Vertigo triage", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician is taught which features of acute vertigo should raise concern for a central cause.", "opts": [["Headache, ataxia, or focal neurological signs", "Correct. Peripheral vertigo produces unidirectional nystagmus and unsteadiness that still allows the patient to sit and walk with support. Severe truncal ataxia, headache, direction-changing nystagmus or any focal deficit such as diplopia, dysarthria or facial numbness point to the brainstem or cerebellum and require urgent imaging."], ["Presence of nausea and vomiting", "Vomiting accompanies vertigo of any cause because of vestibular connections to the emetic centre. Its presence says nothing about where the problem is."], ["Severity of the vertigo itself", "Peripheral causes such as vestibular neuronitis produce some of the most dramatic vertigo seen, so intensity is a poor discriminator. It is the accompanying signs that localise the lesion."], ["Whether the vertigo is worse on head movement", "Almost all vertigo worsens with head movement, peripheral or central, because movement stimulates a system that is already mismatched. That is different from vertigo TRIGGERED by position, which suggests otoconia."]], "c": 0, "cite": "16. Disorders of Inner Ear, Slide 97"}, {"topic": "Neck mass evaluation", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A 33-year-old man has a neck mass that has enlarged rapidly over three weeks. He has no fever, sore throat or other infective symptoms, but reports night sweats and weight loss.", "opts": [["Lymphoma", "Correct. The rule is that a rapidly growing mass is usually infectious IF there are other infective symptoms, and lymphoma if there are not. Here the rapid growth comes with constitutional B symptoms rather than infection, and lymphoma is also the noted exception to the rule that masses under 40 are usually inflammatory."], ["Reactive viral lymphadenopathy", "Reactive nodes follow an upper respiratory infection, regress within one to two weeks, and are not accompanied by night sweats and weight loss. Their whole course is one of resolution rather than progression."], ["A branchial cleft cyst that has become infected", "An infected congenital cyst is tender and erythematous with the systemic features of infection, and it appears at a site the patient often recalls having had a lump before. Night sweats and weight loss are not part of it."], ["A lipoma", "Lipomas are soft, slow-growing over years, and produce no systemic symptoms whatsoever. Three weeks of rapid growth is the opposite of a lipoma's behaviour."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 13"}, {"topic": "Neck mass evaluation", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A 47-year-old woman has a neck mass that is pulsatile and has an audible bruit.", "opts": [["A reactive lymph node", "Reactive nodes are firm or rubbery and are not pulsatile. Even a hypervascular node does not transmit a palpable pulse or produce a bruit audible on auscultation."], ["A vascular lesion, most likely a paraganglioma", "Correct. There are four rules of thumb, and pulsatility or a bruit means vascular. Paragangliomas head the benign vascular list, arising at the carotid body, the vagus or the jugulotympanic region. The practical consequence is that this mass must not be biopsied blindly and needs computed tomography angiography before anything is put into it."], ["A branchial cleft cyst", "A branchial cleft cyst is a fluid-filled congenital structure at the sternocleidomastoid border, which would be fluctuant rather than pulsatile. Fluctuance and pulsatility indicate quite different contents."], ["A lipoma, since it has been present a long time", "A mass present for years is usually benign and a lipoma is a common answer, but a lipoma is soft, mobile and completely avascular. Nothing about a lipoma pulses or generates a bruit."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 13"}, {"topic": "Allergic rhinitis", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 26-year-old man with perennial allergic rhinitis has persistent symptoms on a single antihistamine. He asks what usually happens next.", "opts": [["Surgery is the usual next step after antihistamine failure", "Surgery has a role for structural obstruction or polyps, not for allergic inflammation itself. Medical escalation and immunotherapy come long before any operation is considered."], ["Antibiotics are usually required at some point", "Allergy creates the environment in which infection can occur, but it is not itself an infection. Routinely expecting antibiotics medicalises an inflammatory condition and drives unnecessary prescribing."], ["Most patients end up on more than one medicine", "Correct. About 80 per cent of patients with allergic rhinitis require two or more agents, because the different symptoms are driven by different mediators. A typical combination is an antihistamine with an intranasal corticosteroid, adding a leukotriene inhibitor at night, and immunotherapy if drug treatment is insufficient."], ["A single agent controls symptoms in most patients", "This underestimates the disease. Monotherapy leaves a large proportion of patients symptomatic, which is why escalation is the expected course rather than a sign of unusual severity."]], "c": 2, "cite": "hughie Nose & Paranasal Sinuses, Slide 67"}, {"topic": "Dental abscess", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 40-year-old man has a dental abscess. The tooth is badly broken down and cannot be restored.", "opts": [["Root canal treatment", "A root canal is the correct answer for a restorable tooth, which is what makes it the tempting option. It cannot succeed on a tooth that cannot be restored, because there is nothing to rebuild around the treated root."], ["Antibiotics alone until the infection settles", "Antibiotics are part of treatment but never definitive, because the source is a physical collection and a necrotic pulp. Relying on them alone leads to recurrence and, in the worst case, spread into the deep neck spaces."], ["Extraction followed by curettage of the apical tissue", "Correct. The management depends on whether the tooth can be saved. If it can be restored, a root canal removes the infected pulp and preserves the tooth. If it cannot, extraction is required, and the apical tissue is curetted because leaving infected granulation tissue behind allows the infection to persist in the socket."], ["Incision and drainage alone", "Drainage relieves the pressure and is often needed acutely, but leaving the causative tooth in place means the abscess reforms. The definitive step addresses the tooth."]], "c": 2, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 117"}, {"topic": "Neck dissection", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck, and the etiologies, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of neck masses and neoplasms", "q": "A clinician explains why the primary tumour must be found before treating metastatic cervical squamous cell carcinoma.", "opts": [["The primary determines the patient's blood group compatibility", "Transfusion planning is unrelated to tumour site. This confuses perioperative preparation with oncological staging."], ["The primary determines whether the patient needs antibiotics", "This is oncological rather than infectious disease. Antibiotics have no role in staging or treating a squamous carcinoma."], ["Without the primary the cell type cannot be established", "The cell type is already known from the nodal aspirate. What remains unknown is the site of origin, which is a different question."], ["Treatment fields and surgery both depend on where it came from", "Correct. The neck disease is a metastasis, so treating it alone leaves the source in place to keep seeding. Locating the primary determines the extent of resection and the radiotherapy field, which is why a systematic examination is made of every mucosal surface, the thyroid, the salivary glands and the skin."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 39"}, {"topic": "Vocal cord paralysis", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A patient with vocal cord paralysis after a neck operation asks whether the voice will recover. Laryngeal electromyography is arranged.", "opts": [["It predicts recovery: a bruised or stretched nerve may return over 6 months to a year", "Correct. Electromyography distinguishes a nerve that is still in continuity from one that is not. A bruised or stretched nerve may recover function over six months to a year, whereas a transected nerve or one infiltrated by malignancy will not, which is what determines whether to wait or to proceed to medialisation."], ["It confirms which cord is paralysed", "Laryngoscopy already establishes which cord is immobile by direct observation. Electromyography is asked a different question, about the state of the nerve rather than the position of the fold."], ["It determines whether the lesion is in the vagus or the recurrent laryngeal nerve", "Distinguishing a vagal from a recurrent laryngeal lesion matters and is done by the pattern of associated deficits and by imaging along the nerve's course. That is not what this test is used for here."], ["It measures the degree of airway obstruction", "Airway compromise is assessed clinically and by observing the cords, particularly in bilateral paralysis. Electromyography records muscle electrical activity and says nothing about airway calibre."]], "c": 0, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 56"}, {"topic": "Glomus tumour", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A student asks what cranial nerve deficits might accompany a glomus tumour of the jugular foramen.", "opts": [["Cranial nerves nine, ten and eleven", "Correct. The glossopharyngeal, vagus and spinal accessory nerves all pass through the jugular foramen, so a tumour arising there compresses them together. That produces difficulty swallowing, hoarseness and shoulder weakness alongside the pulsatile tinnitus and conductive loss from the middle ear component."], ["Cranial nerve seven alone", "The facial nerve runs through the temporal bone and can be involved by an extensive middle ear lesion, but it exits at the stylomastoid foramen rather than the jugular foramen, so it is not the characteristic group."], ["Cranial nerves three, four and six", "Those are the ocular motor nerves and pass through the superior orbital fissure and cavernous sinus. They are nowhere near the jugular foramen."], ["Cranial nerves five and six", "The trigeminal and abducens are related to the cavernous sinus and petrous apex. Their involvement suggests a lesion there, such as in Gradenigo syndrome, rather than at the jugular bulb."]], "c": 0, "cite": "16. Disorders of Inner Ear, Slide 51"}, {"topic": "Retropharyngeal abscess", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A student asks why retropharyngeal abscess carries such a high mortality if untreated.", "opts": [["The abscess compresses the carotid artery", "Carotid involvement is a recognised complication of deep neck infection generally, but the specific reason this abscess is so dangerous is its continuity with the mediastinum rather than a vascular effect."], ["It always progresses to Ludwig angina", "Ludwig angina is a separate deep neck infection of the submental, sublingual and submandibular spaces, usually odontogenic. The two are different spaces with different sources."], ["The space extends to the posterior mediastinum", "Correct. The retropharyngeal space runs from the base of the skull to the posterior mediastinum, so an abscess there has a direct anatomical route into the chest. Mediastinitis carries a 50 per cent mortality, and the danger space beyond it is continuous left to right, which lets infection cross to either side."], ["It causes irreversible damage to the recurrent laryngeal nerves", "Nerve injury is not the mechanism of death here. The lethal complications are mediastinitis, airway obstruction and aspiration pneumonia after rupture."]], "c": 2, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 107"}, {"topic": "Otitis externa prevention", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 15-year-old competitive swimmer has had three episodes of otitis externa this season and asks how to prevent recurrence.", "opts": [["Wear earplugs continuously, including out of the water", "Plugs during swimming are reasonable, but wearing them continuously traps moisture and warmth against the canal skin, which recreates the environment the advice is meant to avoid."], ["Clean the canal thoroughly with cotton buds after each swim", "This does the opposite of what is needed. Buds push debris deeper, remove the wax that waterproofs the canal, and create the small abrasions through which bacteria enter."], ["Use prophylactic antibiotic drops before each swim", "Routine antibiotic drops in a healthy canal select for resistant organisms and for fungal overgrowth, which is how otomycosis develops. The driver here is water and mechanical trauma, which no drug prevents."], ["Dry the ears after swimming and avoid cotton buds", "Correct. The canal's defences are its acidic pH and its intact skin barrier with a wax coating. Retained water raises the pH and macerates the skin, while cotton buds strip the protective wax and abrade the epithelium. Removing both insults addresses the two mechanisms that let Pseudomonas and Staphylococcus overgrow."]], "c": 3, "cite": "CMS I Disorders of the External and Middle Ear, Slide 41"}, {"topic": "Chronic otitis media", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 26-year-old man has had intermittent painless discharge from the right ear for two years, with reduced hearing on that side. Otoscopy shows a central perforation with a moist middle ear mucosa. There is no keratin debris and no retraction pocket.", "opts": [["Chronic otitis media", "Correct. A perforation that has failed to heal, with recurrent painless discharge and conductive hearing loss over years, defines chronic suppurative otitis media. The absence of pain distinguishes it from an acute infection, and the absence of keratin debris or a retraction pocket is what separates it from cholesteatoma."], ["Acute otitis media", "Acute disease presents over days with pain, fever and a bulging intact drum, not with two years of painless discharge through an established perforation. The tempo alone rules it out."], ["Cholesteatoma", "Cholesteatoma also gives chronic painless otorrhoea and conductive loss, so it is the right thing to consider, but it requires the keratin sac or the retraction pocket that this examination explicitly does not show. The distinction matters because cholesteatoma erodes bone and needs surgery."], ["Otitis externa", "Canal infection causes pain on moving the tragus with canal oedema and no perforation. Here the pathology is behind a perforated drum in the middle ear, and the canal findings that define external otitis are absent."]], "c": 0, "cite": "CMS I Disorders of the External and Middle Ear, Slide 31"}, {"topic": "Acoustic trauma", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 24-year-old man fires a rifle without ear protection and immediately notices reduced hearing and severe ringing in the ear nearer the muzzle. Otoscopy shows a small tympanic membrane perforation.", "opts": [["Barotrauma", "Barotrauma results from a pressure differential the eustachian tube cannot equalise, typically during flying or diving. A gunshot generates an acoustic pressure wave rather than the sustained ambient pressure change that causes barotrauma."], ["Noise-induced hearing loss from cumulative exposure", "Cumulative noise damage produces a gradual symmetrical high-frequency loss, classically with a notch around 4000 hertz, over years of exposure. A single shot with immediate unilateral loss is a different mechanism."], ["A temporary threshold shift that will fully recover", "Threshold shifts follow sustained loud exposure such as a concert and recover over 24 to 48 hours with an intact drum. A perforation indicates structural injury that has already gone beyond reversible hair cell fatigue."], ["Acoustic trauma from a single impulse noise", "Correct. A single very loud impulse such as a gunshot or blast delivers enough energy in milliseconds to damage hair cells immediately and, at higher intensities, to rupture the tympanic membrane. That distinguishes it from cumulative noise exposure, where damage builds over repeated sessions and the drum stays intact."]], "c": 3, "cite": "16. Disorders of Inner Ear, Slide 45"}, {"topic": "Tularemia", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A 44-year-old man who hunts rabbits has fever, chills, headache and fatigue with tonsillitis and painful cervical adenopathy.", "opts": [["Azithromycin", "Azithromycin is used for cat scratch disease caused by Bartonella henselae, which follows cat contact and gives preauricular and submandibular nodes. The exposure and node distribution do not match."], ["Trimethoprim-sulfamethoxazole", "That is the treatment for brucellosis, along with tetracycline. Brucellosis is acquired from unpasteurised milk and produces total-body lymphadenopathy rather than the tonsillitis with regional nodes described here."], ["Sulfonamides or pyrimethamine", "Those treat toxoplasmosis, acquired from undercooked meat or cat faeces. Toxoplasmosis gives fever, malaise, sore throat and myalgias rather than the specific tonsillitis and painful adenopathy of tularemia."], ["Streptomycin", "Correct. The exposure history of rabbits, ticks or contaminated water points to Francisella tularensis, and the described combination of tonsillitis with painful adenopathy and systemic symptoms is the oropharyngeal form. Diagnosis is by serology and culture, and streptomycin is the treatment named for it."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 33"}, {"topic": "Tooth disorders", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 29-year-old man has a painful lower wisdom tooth that has only partially erupted, with inflamed overlying gum.", "opts": [["Dental caries of the wisdom tooth", "Caries can certainly affect a partially erupted tooth that is hard to clean, but the underlying problem described is the failure to erupt fully and the gum flap over it, which is what causes the pericoronal inflammation."], ["Pulpitis", "Pulpitis is inflammation of the tooth's pulp, usually from decay or injury, producing pain within the tooth rather than in the gum flap over an unerupted crown."], ["Impaction, which predisposes to infection", "Correct. Impaction usually results from overcrowding and insufficient room for the tooth to erupt, and wisdom teeth are the usual culprits because they are the last to come through. A partially erupted tooth leaves a flap of gum over it that traps debris, which is why impacted teeth are more likely to become infected and are usually removed."], ["Malocclusion", "Malocclusion describes how the arches meet and can coexist with crowding, but it does not explain a single partially erupted tooth with inflamed overlying gum."]], "c": 2, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 125"}, {"topic": "Bacterial sinusitis", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 25-year-old patient has had ten days of nasal congestion, purulent discharge, facial pressure and reduced sense of smell. Symptoms have not improved with a week of oral decongestants and saline irrigation. Temperature is 100.8 degrees Fahrenheit. There is maxillary sinus tenderness and thick yellow-green discharge.", "opts": [["Ciprofloxacin 500 milligrams orally twice daily", "A fluoroquinolone has poor pneumococcal coverage relative to its side effect burden, and reaching for one in uncomplicated sinusitis exposes the patient to tendon and central nervous system effects while covering the likeliest organism less well."], ["Amoxicillin-clavulanate twice daily", "Correct. Symptoms persisting ten days or more without improvement is one of the criteria that shifts a rhinosinusitis from the 90 to 98 per cent that are viral into the small bacterial minority. Amoxicillin-clavulanate is first line because the clavulanate covers the beta-lactamase producing Haemophilus influenzae and Moraxella catarrhalis alongside pneumococcus."], ["Azithromycin 500 milligrams daily for three days", "Macrolides have substantial pneumococcal resistance in respiratory isolates and are reserved for genuine penicillin allergy. Choosing one without an allergy trades away efficacy against the main pathogen for no benefit."], ["Continued decongestants and saline irrigation", "This is the correct management for the first week and it has already been tried and failed. Persisting past ten days with fever and purulence is specifically the point at which symptomatic treatment alone stops being adequate."]], "c": 1, "cite": "hughie Nose & Paranasal Sinuses, Slide 15"}, {"topic": "Otitis externa", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 55-year-old man has had otitis externa treated with drops for five days. The canal is so oedematous that the drops appear not to be reaching beyond the outer third, and his pain is unchanged.", "opts": [["Place an ear wick to carry the drops in", "Correct. Topical therapy only works where the drug physically reaches, and a canal swollen shut stops the drops at its outer end. A wick is an absorbent strip that draws medication along the length of the canal by capillary action, restoring delivery to the inflamed skin without changing the drug."], ["Irrigate the canal to reduce the swelling", "Irrigation does not reduce oedema and risks driving infected material deeper or into the middle ear if the drum is not clearly intact. It is also poorly tolerated in an ear that is already acutely painful."], ["Switch to oral antibiotics", "Systemic therapy reaches canal skin poorly, which is why topical treatment is first line for otitis externa in the first place. Oral antibiotics are reserved for spread beyond the canal or for immunocompromised patients, not for a delivery problem that has a mechanical solution."], ["Stop the drops and observe", "Withdrawing the only active treatment because it has not yet worked leaves an infected, occluded canal to progress. The problem here is that the drug is not arriving, not that it is the wrong drug."]], "c": 0, "cite": "CMS I Disorders of the External and Middle Ear, Slide 41"}, {"topic": "Nasopharyngeal carcinoma", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician is asked which virus is most strongly associated with nasopharyngeal carcinoma.", "opts": [["Epstein-Barr virus", "Correct. Epstein-Barr virus is the principal viral association, alongside human papillomavirus and smoking as risk factors, and the disease is endemic in southern China with males affected two to three times as often as females. The association matters because viral serology and in situ testing contribute to diagnosis and surveillance."], ["Cytomegalovirus", "Cytomegalovirus causes a mononucleosis-like illness and disease in the immunocompromised, but it is not among the recognised aetiological agents for nasopharyngeal carcinoma."], ["Human papillomavirus type 16", "Human papillomavirus is listed as a risk factor and dominates OROPHARYNGEAL cancer, where 60 to 80 per cent of cases are virus-related. For the nasopharynx specifically, Epstein-Barr virus is the stronger association."], ["Herpes simplex virus type 1", "Herpes simplex causes oral and perioral ulceration through latency in the trigeminal ganglion. It has no established role in nasopharyngeal malignancy."]], "c": 0, "cite": "hughie Nose & Paranasal Sinuses, Slide 70"}, {"topic": "Tympanic membrane perforation", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 33-year-old woman had severe right ear pain for two days with fever. This morning the pain stopped abruptly and she noticed discharge on her pillow. Otoscopy shows purulent material in the canal and a small perforation in the tympanic membrane.", "opts": [["A cholesteatoma has eroded through the drum", "Cholesteatoma produces chronic painless discharge developing over months to years, with keratin debris. It does not explain two days of fever and severe pain ending in sudden rupture."], ["The drum has perforated, releasing the pressure of the middle ear pus", "Correct. In acute otitis media the pain comes from pus under pressure stretching the drum. Once the drum ruptures the pressure is relieved and the pain stops abruptly, which is why sudden relief accompanied by discharge is the classic history. The perforation is a consequence of the infection, not a separate injury."], ["She has developed otitis externa on top of the middle ear infection", "Canal infection would give pain on moving the tragus and canal oedema, and it would not relieve the deep pain of a middle ear under pressure. The discharge here is coming through the perforation from behind the drum."], ["The infection has resolved spontaneously", "Resolution does not produce purulent discharge and a hole in the drum. The pain stopping is a mechanical event rather than a sign that the organisms have gone, and the middle ear infection still needs treating."]], "c": 1, "cite": "CMS I Disorders of the External and Middle Ear, Slide 61"}, {"topic": "Ludwig angina", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 46-year-old man with poorly controlled diabetes has two days of rapidly increasing swelling under the chin and in the floor of the mouth after a dental infection. The tongue is displaced upward and backward, and he is drooling and speaking with difficulty.", "opts": [["Intravenous corticosteroids alone to reduce the swelling", "Steroids may be used as an adjunct but do not treat the infection and do not reliably protect an airway that is already being displaced. Relying on them alone leaves a spreading bacterial infection untreated."], ["Secure the airway, then antibiotics", "Correct. Ludwig angina is a rapidly spreading cellulitis of the submental, sublingual and submandibular spaces. As the floor of the mouth swells it pushes the tongue up and back into the airway, which is why this is an emergency and why airway management comes first. Antibiotics cover the mixed oral flora, and external drainage through bilateral submental incisions is used when the airway is threatened."], ["Incision and drainage of the tooth abscess alone", "Draining the offending tooth addresses the source but not the established cellulitis in the deep spaces, which is what is compressing the airway. Both have to be dealt with, and the airway takes precedence."], ["Oral antibiotics and urgent dental review in the morning", "A dental consultation is genuinely part of management because the source is usually a tooth, but sending home a diabetic patient whose tongue is already displaced backward risks losing the airway overnight. The referral does not replace admission."]], "c": 1, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 111"}, {"topic": "Thyroid cancer prognosis", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck, and the etiologies, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of neck masses and neoplasms", "q": "A clinician ranks the four thyroid carcinomas by prognosis for a teaching session.", "opts": [["Anaplastic best, then medullary, then follicular, with papillary worst", "This reverses the order entirely and would lead to reassuring the patient with the most dangerous tumour while alarming the one with the best outlook."], ["All four carry a similar prognosis", "The range runs from an excellent long-term outlook to death within three years, which is about as wide a spread as any organ's tumours show. Treating them as equivalent would misdirect both counselling and treatment intensity."], ["Medullary best because it produces calcitonin", "Calcitonin is a useful tumour marker for follow-up, but producing a measurable hormone does not make a tumour less dangerous. Medullary carcinoma is the most likely of the four to have metastasised at diagnosis."], ["Papillary best, then follicular, then medullary, with anaplastic worst", "Correct. Papillary is commonest and has the best outlook; follicular is second commonest and spreads haematogenously; medullary is more insidious and most likely to metastasise, often presenting once a metastasis is found; and anaplastic is the most aggressive, causing death in 6 to 36 months and resistant to all treatment."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 42"}, {"topic": "Epistaxis", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 66-year-old man has heavy bleeding from both nostrils with blood running down the back of his throat. Anterior rhinoscopy shows no visible bleeding point.", "opts": [["A posterior bleed from the sphenopalatine artery", "Correct. Bleeding visible from both nostrils and running posteriorly, with no anterior source seen, indicates the sphenopalatine artery high and posteriorly in the nasal cavity. These bleeds are heavier and carry a specific additional danger, which is aspiration of blood into the airway and subsequent infection."], ["A ruptured septal haematoma", "A septal haematoma is a collection between cartilage and perichondrium after trauma, presenting as a boggy septal swelling. It does not produce brisk bleeding from both nostrils and there is no trauma described."], ["Bleeding from a nasal polyp", "Polyps are avascular grey glistening masses that cause obstruction and anosmia rather than haemorrhage. They are not a recognised source of brisk arterial bleeding."], ["An anterior bleed from Kiesselbach plexus", "Anterior bleeds account for 90 per cent of cases, so this is the base rate, but they arise from a visible spot on the anterior septum and usually bleed from one nostril. Failure to see any source anteriorly argues against it."]], "c": 0, "cite": "hughie Nose & Paranasal Sinuses, Slide 39"}, {"topic": "Malocclusion", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A student is asked to describe the malocclusion classes used in practice.", "opts": [["Class I mesial, Class II normal, Class III distal", "This reassigns all three labels. Class I is the reference normal, and building the scheme from the wrong baseline makes every subsequent description wrong."], ["The classes describe the degree of crowding rather than the bite relationship", "Crowding contributes to impaction and is a separate problem. The classification describes how the arches meet, which is why it is illustrated with profile views."], ["The classes describe which teeth are missing", "Missing teeth are one cause of malocclusion, alongside jaw-tooth size mismatch, thumb sucking and birth defects, but the classes describe the resulting bite rather than the cause."], ["Class I normal, Class II distal, Class III mesial occlusion", "Correct. The three classes describe how the lower dental arch sits relative to the upper. Class I is normal alignment, Class II is distal occlusion with the lower arch set back, and Class III is mesial occlusion with the lower arch forward. Naming them consistently is what allows the problem to be communicated to an orthodontist."]], "c": 3, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 126"}, {"topic": "Epistaxis workup", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 55-year-old man on no medication has a single anterior nosebleed that stops with pressure. He asks whether he needs blood tests.", "opts": [["Clotting studies for every patient with epistaxis", "Universal testing treats a common local mucosal problem as though it were a haematological one. The overwhelming majority of nosebleeds arise from trauma or dryness at Kiesselbach plexus in people with entirely normal clotting."], ["A full blood count and crossmatch", "Haematocrit with type and crossmatch is appropriate for massive haemorrhage, alongside two large-bore intravenous lines. A single self-limiting anterior bleed does not approach that threshold."], ["No clotting studies, because they are not routine for epistaxis", "Correct. Prothrombin time and international normalised ratio are not part of the routine workup and are reserved for patients who are anticoagulated or who have other evidence of a bleeding tendency. Ordering them reflexively generates incidental abnormalities without changing the management of a nosebleed that has already stopped."], ["Platelet function testing", "Specialised platelet studies are for investigating a suspected inherited or acquired platelet disorder, which requires a suggestive history such as easy bruising or bleeding after surgery. None of that is present."]], "c": 2, "cite": "hughie Nose & Paranasal Sinuses, Slide 44"}, {"topic": "Infectious mononucleosis", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 20-year-old is confirmed to have infectious mononucleosis. He plays rugby and asks when he can return to training.", "opts": [["No restriction is needed, as splenic rupture is a myth", "Splenic rupture is rare but real and is the reason the restriction exists. Dismissing it removes the single piece of advice in this illness that prevents a catastrophic outcome."], ["Return as soon as the fever and sore throat settle", "Symptomatic recovery and splenic recovery are not the same timeline. A patient can feel well while the spleen is still enlarged, which is precisely when a tackle can rupture it."], ["Avoid contact sport for about a month", "Correct. Epstein-Barr virus enlarges the spleen, and an enlarged spleen has a thin capsule under tension that can rupture with relatively minor abdominal trauma, which is a life-threatening complication. Avoiding contact sport and heavy lifting for about a month, with resolution of splenomegaly confirmed, is the standard advice."], ["Avoid all exercise for six months", "Six months of complete inactivity is far beyond what the risk justifies and would be unlikely to be followed. The restriction is specific to contact and heavy lifting, and it is measured in weeks."]], "c": 2, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 86"}, {"topic": "Erythroplakia", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 61-year-old woman who smokes and drinks has a well-demarcated red velvety patch on the floor of the mouth. It does not scrape off.", "opts": [["Leukoplakia, with a 5 to 20 per cent risk of transformation", "Leukoplakia is white rather than red. The colour is not cosmetic detail here: it is the single feature that separates a lesion with a modest premalignant risk from one that is usually already malignant."], ["Geographic tongue", "Geographic tongue is a benign migratory condition of the dorsal tongue with map-like patches that change position over days. It does not occur on the floor of the mouth and does not persist as a fixed lesion."], ["Erythroplakia", "Correct. Erythroplakia is the red counterpart of leukoplakia and is far more dangerous: around 90 per cent of these lesions are already dysplastic or frankly malignant, against 5 to 20 per cent for leukoplakia. Alcohol and tobacco are the major risk factors, and it is biopsied urgently."], ["Oral candidiasis with an erythematous pattern", "Erythematous candidiasis exists and can be red rather than white, but it is usually painful, associated with dentures or immunosuppression, and responds to antifungal therapy. It does not present as a solitary well-demarcated velvety patch in a smoker."]], "c": 2, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 135"}, {"topic": "Cat scratch disease", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis of common neck masses, vascular tumors, and benign and malignant neoplasms", "q": "A 12-year-old boy has a tender preauricular and submandibular lymphadenopathy with low-grade fever and malaise for two weeks. He has a new kitten at home.", "opts": [["Acid-fast stain and culture for mycobacteria", "Acid-fast testing is how atypical mycobacterial and tuberculous adenitis are diagnosed. Those present with brawny unilateral disease in a well child, or diffuse bilateral disease in an adult, and neither is suggested by a new kitten."], ["Monospot and Epstein-Barr virus serology", "Mononucleosis does cause cervical lymphadenopathy with fever and malaise, so it is a reasonable differential, but it typically brings tonsillar exudate and splenomegaly, and it is not explained by cat exposure."], ["Toxoplasma serology", "Toxoplasmosis is also acquired from cats, which makes it tempting, but the route is ingestion of oocysts in faeces or undercooked meat rather than a scratch, and it usually gives more generalised lymphadenopathy with sore throat and myalgias."], ["Serology for Bartonella henselae", "Correct. Cat scratch disease is caused by Bartonella henselae, is common in patients under 20, and classically produces preauricular and submandibular lymphadenopathy with fever and malaise after cat contact. Diagnosis is serologic with indirect fluorescent antibodies, and the illness is often self-limiting or treated with azithromycin."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 34"}, {"topic": "Ear examination in children", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician is examining the ear of a 2-year-old and needs to straighten the canal.", "opts": [["Push the pinna directly downward", "Downward force alone does not straighten the canal's curve, which requires a backward component as well. The drum would remain partly hidden."], ["Pull the pinna downward and backward", "Correct. The infant and toddler canal runs upward from the drum, so the pinna is pulled down and back to align it. In older children and adults the canal takes the opposite course and the pinna is pulled up and back. Using the adult manoeuvre in a toddler leaves the drum obscured."], ["Pull the tragus forward", "Pulling the tragus is the manoeuvre that ELICITS PAIN in otitis externa; it is a diagnostic test rather than a way to straighten the canal for viewing."], ["Pull the pinna upward and backward", "That is the correct technique for an older child or adult, whose canal curves differently. Applying it to a toddler works against the canal's natural direction."]], "c": 1, "cite": "CMS I Disorders of the External and Middle Ear, Slide 8"}, {"topic": "Presbycusis", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 78-year-old man says he can hear that people are speaking but cannot make out the words, especially in a busy restaurant. His wife says he has the television too loud. Audiometry shows symmetrical high-frequency sensorineural loss.", "opts": [["Noise-induced hearing loss", "Noise damage also affects high frequencies but classically produces a notch around 4000 hertz with recovery at higher frequencies, and it requires an exposure history. Nothing here suggests occupational or recreational noise."], ["Conductive loss from bilateral cerumen impaction", "Wax would be visible on otoscopy and would produce a conductive audiogram with an air-bone gap rather than a symmetrical high-frequency sensorineural curve. It also would not selectively impair word discrimination."], ["Otosclerosis", "Otosclerosis is conductive, and conductive patients hear BETTER in background noise because ambient low-frequency sound is filtered out and speakers raise their voices. This patient does distinctly worse in noise, which is the sensorineural pattern."], ["Presbycusis", "Correct. Age-related loss begins at the high frequencies, and consonants carry most of the information that distinguishes one word from another while sitting in exactly that range. That is why patients describe hearing sound but not words, and why background noise is so much harder: the damaged cochlea cannot separate speech from competing sound."]], "c": 3, "cite": "16. Disorders of Inner Ear, Slide 27"}, {"topic": "Oral examination", "io": "Disorders of the oral cavity, salivary glands, and neck: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician is asked why oral examination is emphasised so strongly.", "opts": [["Oral findings rarely change management", "Findings such as a lesion that will not scrape off, or a red velvety patch, change management immediately by triggering biopsy. Several oral findings are also the first sign of systemic disease."], ["Examination is difficult and requires specialist equipment", "It requires a light, a tongue depressor and gloves. The barrier is habit rather than equipment, which is precisely why it is worth making a point of."], ["Most clinicians agree it matters but far fewer actually do it", "Correct. Over 80 per cent of surveyed clinicians believe oral examination is important, while the proportion who perform one routinely is much lower. That gap matters because oral cancer presents as a visible non-healing ulcer that a thirty-second look would find at a curable stage."], ["Oral disease is rare so examination is mostly reassurance", "Oral disease is common, ranging from candidiasis and aphthous ulceration to premalignant leukoplakia and frank carcinoma. Rarity is not the argument."]], "c": 2, "cite": "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide 6"}, {"topic": "Nasal fracture", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 27-year-old man is punched in the nose. He has tenderness and swelling isolated to the bony bridge, breathes freely through each nostril, the nose is straight with no septal deviation, and there is no septal haematoma.", "opts": [["Computed tomography of the facial bones", "Facial computed tomography is reserved for suspected complex midface injury, orbital involvement or when the examination is unreliable. An isolated bridge injury with a normal examination does not warrant it."], ["Ice and elevation, without radiography", "Correct. All four reassuring criteria are met: tenderness confined to the bony bridge, patent airflow through each side, a straight nose with no septal deviation, and no septal haematoma. A radiograph would not change management in that situation, because the treatment of an undisplaced nasal fracture is symptomatic in any case."], ["Immediate closed reduction", "Reduction is for a displaced fracture producing deformity or obstruction. This nose is straight and patent, so there is nothing to reduce, and manipulating it risks creating the deformity it is meant to correct."], ["Plain radiography of the nasal bones", "Films are ordered when one of those four criteria fails, because that is when displacement or an associated injury might change management. Ordering them reflexively in a patient who meets all four adds radiation and cost without altering treatment."]], "c": 1, "cite": "hughie Nose & Paranasal Sinuses, Slide 46"}, {"topic": "Acute otitis media", "io": "Disorders of the external and middle ear: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 2-year-old boy has had four episodes of acute otitis media in the past six months, each treated with antibiotics. Between episodes his parents report he does not respond when called from another room. Tympanometry today shows a flat trace bilaterally.", "opts": [["Referral for consideration of tympanostomy tubes", "Correct. Recurrent acute infections plus a persistent bilateral effusion, shown by the flat tympanograms, together with functional hearing concern in a child at the age of language acquisition, is the combination that justifies tubes. The tubes ventilate the middle ear, restore hearing and reduce the recurrence rate rather than treating each episode after it starts."], ["Long-term prophylactic antibiotics", "Continuous antibiotics have fallen out of favour because the benefit is small and the cost in resistance and side effects is real. They also do nothing for the effusion that is currently impairing his hearing, which is the more pressing problem."], ["Oral corticosteroids to clear the effusion", "Steroids have not been shown to produce lasting resolution of middle ear effusion, and systemic steroid exposure in a toddler for a self-limiting mechanical problem is a poor trade."], ["Reassurance, since most children outgrow ear infections", "Most children do, and that is the right advice for isolated episodes. It is the wrong advice when there is documented bilateral effusion and a hearing concern at two years old, because the window in which hearing supports speech development is not indefinite."]], "c": 0, "cite": "CMS I Disorders of the External and Middle Ear, Slide 30"}, {"topic": "Sinus anatomy", "io": "Disorders of the nose and paranasal sinuses: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A student asks which paranasal sinuses are present at birth.", "opts": [["None are present until age five", "The maxillary and ethmoid sinuses are present from birth and are the reason paediatric sinusitis exists at all in the first years of life."], ["The frontal and sphenoid sinuses", "These pneumatise later, the frontal typically not until school age and beyond, which is why frontal sinusitis is not a diagnosis in a toddler."], ["The maxillary and ethmoid sinuses", "Correct. The maxillary and ethmoid sinuses are present at birth, which is why sinusitis in infants and young children involves those and why ethmoid disease is the classic source of paediatric orbital cellulitis. The frontal and sphenoid sinuses develop later in childhood and adolescence."], ["All four sinuses are fully formed at birth", "If that were so, frontal sinusitis would be seen in infants, and it is not. Development is staggered through childhood."]], "c": 2, "cite": "hughie Nose & Paranasal Sinuses, Slide 6"}, {"topic": "Audiometry", "io": "Disorders of the inner ear, balance and hearing loss: etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "An audiogram reports a patient's thresholds at 70 decibels across the speech frequencies.", "opts": [["Mild hearing loss", "Mild is 20 to 40 decibels, where speech is audible but soft consonants are missed. Seventy decibels is two bands beyond it and describes a very different functional problem."], ["Moderate hearing loss", "Moderate covers 40 to 60 decibels, so 70 sits a full band above it. Placing a patient a category too low understates how much amplification or intervention they are likely to need."], ["Profound hearing loss", "Profound begins above 80 decibels, which is the band in which spoken conversation is inaccessible without amplification. Seventy is severe but has not reached that threshold."], ["Severe hearing loss", "Correct. The severity bands run in twenties: normal is 0 to 20 decibels, mild 20 to 40, moderate 40 to 60, severe 60 to 80, and profound above 80. Seventy decibels therefore falls in the severe band, and remembering that the boundaries are all multiples of twenty makes the whole scale recoverable without memorising each one."]], "c": 3, "cite": "16. Disorders of Inner Ear, Slide 24"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

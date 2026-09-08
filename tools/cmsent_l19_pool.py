@@ -64,16 +64,16 @@ Q("Epiglottitis", IO,
   "muffled voice. He is sitting upright and leaning forward with his chin thrust out, and appears "
   "distressed and anxious.",
   [["Do not examine the throat; secure the airway with the appropriate team",
-    "Correct. The four Ds and the tripod position describe supraglottitis, and the lecture is "
+    "Correct. The four Ds and the tripod position describe supraglottitis, and the teaching is "
     "explicit that once it is suspected, examinations that increase the child's anxiety, including "
     "intraoral examination and venipuncture, may precipitate complete airway obstruction. The "
     "priority is a controlled airway in theatre with anaesthetic and surgical teams present."],
    ["Examine the pharynx with a tongue depressor to confirm the diagnosis",
-    "This is the specific action the lecture warns against. Depressing the tongue in a child with an "
+    "This is the specific action to avoid. Depressing the tongue in a child with an "
     "inflamed supraglottis can trigger laryngospasm or complete obstruction, and the diagnosis does "
     "not depend on seeing the epiglottis in clinic."],
    ["Obtain a lateral neck radiograph before any intervention",
-    "The thumbprint sign is a recognised finding but the lecture states plainly that the film is not "
+    "The thumbprint sign is a recognised finding but the film is not "
     "necessary for diagnosis. Sending an unstable child to radiology, away from the team who can "
     "secure the airway, adds risk without adding information."],
    ["Give oral antibiotics and arrange review in the morning",

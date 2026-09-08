@@ -212,7 +212,7 @@ QUESTIONS = [
         ["Only children show this relationship", "Age is not the distinction."]]),
 
  dict(topic="Acute sinusitis", io=IO_A, lead="patient education", cite=D % 27,
-  q="A 38-year-old man is being referred for persistent sinus disease. What does the lecture require you to tell him?",
+  q="A 38-year-old man is being referred for persistent sinus disease. What should you tell him?",
   opts=[["What he has, how it arose, how to use the treatment, and which specialty he is going to",
          "Correct &mdash; the four elements named."],
         ["Only the name of the diagnosis", "Naming it is one of four elements, not all of them."],

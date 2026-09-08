@@ -100,7 +100,7 @@ Q("Sialolithiasis", IO,
   "A clinician wants the most sensitive test to detect a salivary stone, and separately the most "
   "accurate method for detecting calculi.",
   [["Computed tomography is the most sensitive; digital subtraction sialography the most accurate",
-    "Correct. The lecture separates these two claims deliberately. Computed tomography detects the "
+    "Correct. These two claims are separate. Computed tomography detects the "
     "greatest proportion of stones, because it resolves small calcifications anywhere in the gland "
     "and duct, while digital subtraction sialography is described as the most accurate method for "
     "detecting calculi because it opacifies the duct system directly."],
@@ -326,7 +326,7 @@ Q("Cervical adenitis", IO,
 Q("Cervical lymphadenopathy", IO,
   "A clinician is describing a cervical node and considers which features suggest malignancy.",
   [["Immobility and non-tenderness",
-    "Correct. The lecture specifies the descriptors that matter: size, shape, mobility, consistency "
+    "Correct. The descriptors that matter are: size, shape, mobility, consistency "
     "and tenderness. An immobile node suggests fixation to surrounding structures by tumour, and "
     "non-tenderness points away from an inflammatory cause, since inflamed nodes hurt. Persistence "
     "or continued enlargement is what triggers fine needle aspiration."],
@@ -347,7 +347,7 @@ Q("Chronic laryngitis", IO,
   "A 57-year-old smoker has been hoarse for seven weeks. He has no pain and no other symptoms.",
   [["Refer to ear, nose and throat for laryngoscopy",
     "Correct. Voice disturbance lasting more than two weeks is defined as chronic laryngitis, and "
-    "the lecture is explicit that this is not a true diagnosis. It is a description that obliges a "
+    "the teaching is explicit that this is not a true diagnosis. It is a description that obliges a "
     "search for an underlying cause, and laryngeal cancer and vocal cord polyps are the two that "
     "must be excluded, particularly in a smoker."],
    ["A trial of proton pump inhibitor for reflux laryngitis",

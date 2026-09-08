@@ -62,7 +62,7 @@ Q("Neck mass red flags", IO,
   "present for six weeks and measures 3 centimetres. It is immobile and there is no history of "
   "infection.",
   [["Fine needle aspiration biopsy",
-    "Correct. Every red flag on the lecture's own list is present: no infectious origin, duration "
+    "Correct. Every red flag is present: no infectious origin, duration "
     "over two weeks, size over 1.5 centimetres, firm and non-tender with little mobility, age over "
     "40, and tobacco with alcohol. Fine needle aspiration is the standard of care because it "
     "separates neoplasm from inflammation and carcinoma from lymphoma without spilling tumour."],
@@ -287,8 +287,8 @@ Q("Lymphatic drainage", IO,
     "just below the angle of the jaw."],
    ["The juguloomohyoid nodes",
     "The juguloomohyoid node is the other named deep cervical node, and its territory is the TONGUE "
-    "rather than the tonsil. The pairing is easy to reverse, which is why both are named together "
-    "on the slide."],
+    "rather than the tonsil. The pairing is easy to reverse, which is why both are worth learning "
+    "together."],
    ["The occipital nodes",
     "Occipital nodes drain the posterior scalp, along with the retroauricular and parotid nodes that "
     "take the auricle and middle ear. They have no tonsillar territory."],
