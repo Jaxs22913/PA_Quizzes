@@ -18,6 +18,8 @@ patient stems and that is the accepted state for Set 1; see [[cms_exam_spec]],
 "the recall quizzes do not match the exam's FORM".
 """
 import sys, os, json, random, re, statistics
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import apply_leadins as _leadins
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -66,6 +68,11 @@ POOL = []
 for spec in mods:
     m, attr = spec.split(":")
     for _qi, q in enumerate(getattr(__import__(m), attr)):
+        # Lead-in first: the L18/L19 vignette pools were authored as
+        # scenario-only stems. Everything below measures option text, not the
+        # stem, so order does not matter -- but doing it here keeps every
+        # post-load fix in one loop.
+        q = _leadins.attach(m, _qi, q)
         if (m, _qi) in _LKEYS:
             _new = _LKEYS[(m, _qi)]
             assert len(_new) < len(q["opts"][0][0]), \

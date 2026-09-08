@@ -26,6 +26,9 @@ themselves.
     python3 tools/cmsent_partition.py
 """
 import importlib.util, os, json, random, re, collections, glob
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import apply_leadins as _leadins
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -46,7 +49,12 @@ def _load(path):
     spec = importlib.util.spec_from_file_location(os.path.basename(path)[:-3], path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    return mod.QUESTIONS
+    # Attach the lead-in question. These pools were written as scenario-only
+    # stems and shipped that way on 2026-09-08; apply_leadins asserts every
+    # stem either carries an authored lead-in or already asks something, so a
+    # new question cannot be added without one.
+    name = os.path.basename(path)[:-3]
+    return [_leadins.attach(name, i, q) for i, q in enumerate(mod.QUESTIONS)]
 
 
 def gameable(opts, c):
