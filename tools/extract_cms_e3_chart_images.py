@@ -25,6 +25,8 @@ A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
 R = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from extract_cms_e2_chart_images import emf_dib   # metafile decoder
 OUT = os.path.join(os.path.dirname(HERE), "Clinical Medicine and Surgery I Exam 3",
                    "cms-ent-chart-images")
 REVIEW = ("/private/tmp/claude-501/-Users-jaxonluke/"
@@ -34,6 +36,13 @@ DECKS = {
   "l15": os.path.join(INBOX, "Disorders External and Middle Ear 9-2026.pptx"),
   "l16": os.path.join(INBOX, "16. Disorders of Inner Ear 2026 - Dr. Jaquith.pptx"),
   "l17": os.path.join(INBOX, "hughie Nose & Paranasal Sinuses fall 2026.pptx"),
+  # Added 2026-09-08 with the last two ENT lectures. Neither has a recording
+  # yet -- Jaxon asked for the build to go ahead on the slides alone and be
+  # revisited when audio lands.
+  "l18": os.path.join(INBOX, "CMS I Neoplasms and Neck Masses - Shah Fallsv-2.pptx"),
+  "l19": os.path.join(INBOX,
+                      "CMS I Disorders of the Oral Cavity, Salivary Glands - "
+                      "Shah Fall UPDATEDsv.pptx"),
 }
 ROW_TOL = 400000          # EMU; two pictures within this are the same visual row
 
@@ -65,6 +74,15 @@ WANT = {
   # RESULT rather than a finding, and the "nasal packing" title card (52 pos1).
   "l17": {7: [1], 15: [1], 36: [1], 38: [1], 42: [1, 2], 44: [1], 47: [2],
           52: [2], 53: [2], 58: [3], 61: [1], 62: [1], 63: [1]},
+  # Lectures 18 and 19, added 2026-09-08. All 94 pictures were viewed on contact
+  # sheets first. Lecture 18 has exactly ONE clinical photograph -- the
+  # haemangioma on slide 27; everything else in that deck is an anatomy diagram,
+  # a flowchart or a table, and four of those tables are picture-only content
+  # transcribed into the rows instead (see _cms_e3_chart_l18.py). Left out of
+  # both: the professor's dog (l18 s48, l19 s151), the exit-ticket QR code
+  # (l18 s49) and the peritonsillar-abscess cartoon (l19 s102).
+  "l18": {27: [1]},
+  "l19": {9: [1], 10: [1], 11: [2], 15: [1], 19: [1], 21: [1], 23: [1], 25: [1], 35: [1], 36: [1], 47: [1], 48: [1], 49: [1], 64: [1], 73: [1], 83: [1], 89: [1], 96: [1], 105: [1], 109: [1], 116: [1], 122: [2], 126: [1], 133: [2], 135: [1], 136: [1]},
 }
 
 
@@ -88,13 +106,30 @@ def pictures(z, slide):
 
 
 def save(z, src, dest, width=600):
+    """Decode one picture. Metafiles get the EMR_STRETCHDIBITS path used by the
+    ophthalmology extractor before we give up on them -- Lectures 18 and 19 are
+    full of .wmf, and PIL opens those lazily, so the failure surfaces at
+    convert() rather than at open(). Both have to be inside the try."""
     raw = z.read("ppt/media/" + src)
+    im = None
+    if src.lower().endswith((".emf", ".wmf")):
+        try:
+            dib = emf_dib(raw)
+            if dib:
+                im = Image.open(BytesIO(dib))
+        except Exception:
+            im = None
+    if im is None:
+        try:
+            im = Image.open(BytesIO(raw))
+        except Exception as e:
+            print("  ! cannot decode %s (%s)" % (src, e))
+            return False
     try:
-        im = Image.open(BytesIO(raw))
+        im = im.convert("RGB")
     except Exception as e:
         print("  ! cannot decode %s (%s)" % (src, e))
         return False
-    im = im.convert("RGB")
     if im.width > width:
         im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
     im.save(dest, "JPEG", quality=80)

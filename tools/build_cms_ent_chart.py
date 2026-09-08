@@ -43,10 +43,14 @@ OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3/cms-ent-compari
 from _cms_e3_chart_l15 import ROWS_L15, DIFF_L15, IMGS_L15
 from _cms_e3_chart_l16 import ROWS_L16, DIFF_L16, IMGS_L16
 from _cms_e3_chart_l17 import ROWS_L17, DIFF_L17, IMGS_L17
+# Lectures 18 and 19 added 2026-09-08, from the slides alone -- neither has a
+# recording in the inbox yet.
+from _cms_e3_chart_l18 import ROWS_L18, DIFF_L18, IMGS_L18
+from _cms_e3_chart_l19 import ROWS_L19, DIFF_L19, IMGS_L19
 
-ROWS = ROWS_L15 + ROWS_L16 + ROWS_L17
-DIFF = dict(DIFF_L15, **DIFF_L16, **DIFF_L17)
-IMGS = dict(IMGS_L15, **IMGS_L16, **IMGS_L17)
+ROWS = ROWS_L15 + ROWS_L16 + ROWS_L17 + ROWS_L18 + ROWS_L19
+DIFF = dict(DIFF_L15, **DIFF_L16, **DIFF_L17, **DIFF_L18, **DIFF_L19)
+IMGS = dict(IMGS_L15, **IMGS_L16, **IMGS_L17, **IMGS_L18, **IMGS_L19)
 
 # Exam 1 is teal, Exam 2 indigo, Exam 3 violet, so the three CMS charts are
 # never confused with each other. #6a4fa3 is ALREADY IN THE SITE PALETTE (it is
@@ -93,11 +97,25 @@ GROUP_COLOUR = {
  "Sinusitis": "#9c5230", "Septum": "#7a4a2e", "Epistaxis": "#8c1d12",
  "Nasal trauma": "#94371f", "Foreign body": "#8a5a2b", "Polyps and rhinitis": "#6b7f35",
  "Neoplasm": "#5f3a8a",
+ # Lecture 18 -- the neck. Deep, cool tones: these rows are sorted by WHERE the
+ # mass sits rather than by what it feels like, and they should not read as a
+ # continuation of the warm nasal family.
+ "Congenital neck mass": "#2f6b6f", "Inflammatory neck mass": "#8a5320",
+ "Neck neoplasm": "#6b2340", "Thyroid": "#3f5a99",
+ # Lecture 19 -- mouth, throat and jaw. The three that can kill quickly --
+ # airway emergency and deep neck infection -- take the two reddest tones on
+ # the whole chart, so they are findable at a glance while scrolling.
+ "Oral mucosa variant": "#5c6070", "Oral ulcer": "#8c4a5f", "Salivary gland": "#3d6b52",
+ "Vocal cord and larynx": "#4a4f8c", "Airway emergency": "#a01722",
+ "Pharynx": "#8a5f2b", "Deep neck infection": "#8c1d12", "Dentition": "#6b6330",
+ "Jaw": "#5a4a7a", "Oral lesion": "#7a3f6b", "Oral and salivary neoplasm": "#5f3a8a",
 }
 
 DECKS = {"l15": ("L15", "Disorders of the External and Middle Ear"),
          "l16": ("L16", "Disorders of the Inner Ear"),
-         "l17": ("L17", "Disorders of the Nose and Paranasal Sinuses")}
+         "l17": ("L17", "Disorders of the Nose and Paranasal Sinuses"),
+         "l18": ("L18", "Neoplasms and Neck Masses"),
+         "l19": ("L19", "Disorders of the Oral Cavity, Salivary Glands and Neck")}
 
 
 def classify(pain, hearing):
@@ -160,7 +178,10 @@ def main():
         else:
             cell = '<span class="nopic">no image<br>on the slide</span>'
         lect = ("L15" if deck.startswith("Disorders External")
-                else "L17" if deck.startswith("hughie") else "L16")
+                else "L17" if deck.startswith("hughie")
+                else "L18" if deck.startswith("CMS I Neoplasms")
+                else "L19" if deck.startswith("CMS I Disorders of the Oral")
+                else "L16")
         slide_cell = '<b class="lect">%s</b><br>%s' % (lect, slide)
         pain, hear, sign = DIFF[name]
         painful, hl = classify(pain, hear)
@@ -188,11 +209,12 @@ def main():
   top right, to keep this offline &mdash; it prints landscape with every row intact.</p>
 </header>
 
-<div class="howto"><b>This chart is still being built.</b> The exam covers five lectures.
-<b>Lectures 15, 16 and 17 are in it</b> &mdash; the external and middle ear, the inner ear,
-hearing and balance, then the nose and paranasal sinuses. Lectures 18 and 19 will be added as
-they are delivered, so treat a
-gap here as &ldquo;not taught yet&rdquo; rather than &ldquo;not examinable&rdquo;.<br><br>
+<div class="howto"><b>All five lectures are in.</b> The external and middle ear, the inner ear with
+hearing and balance, the nose and paranasal sinuses, neck masses and neoplasms, and the oral
+cavity, salivary glands and neck &mdash; 127 conditions.
+<b>Lectures 18 and 19 were built from the slides alone</b>, because neither has a recording; where
+the earlier three carry a point the lecturer made out loud, those two carry only what is on the
+slide. That is a difference in sourcing, not in coverage.<br><br>
 <b>How to use this.</b> Read it left to right for one condition: <b>the words a question will use
 to hand it to you</b>, how it presents and what you find on examination, what you order, what you
 give, <b>how fast the patient has to be seen</b>, and what you tell them. Read it top to bottom
@@ -241,7 +263,11 @@ citation.<br><br>
 slides 49, 51 and 59 are bare photographs. Each was resolved against the slide <i>before</i> it
 (Exostosis, Glomus Tumors, Barotrauma) rather than guessed at, which is the only reason the
 exostosis and glomus cells are the right way round.<br><br>
-<b>Nineteen rows have no picture, and that is not an oversight.</b> Lecture 16 teaches most of its
+<b>Sixty-six rows have no picture, and that is not an oversight.</b> Lecture 18 is the extreme
+case: it contains exactly <b>one</b> clinical photograph, the haemangioma on slide 27. Everything
+else in that deck is an anatomy diagram, a flowchart or a table &mdash; four of which are pictures
+of content with no text at all, and are transcribed into the rows rather than shown as though they
+were photographs of a disease. Lecture 16 teaches most of its
 sensorineural causes as histories and audiograms rather than photographs &mdash; there is nothing
 to photograph in ototoxicity, M&eacute;ni&egrave;re&rsquo;s or vestibular neuronitis. The rows that
 carry a picture are the ones the decks actually picture. Product shots, instrument trays and stock
@@ -271,7 +297,7 @@ complication of acute otitis media. It sits where the content is.</div>
 <thead><tr>
   <th>Picture</th>
   <th>Condition</th>
-  <th class="d-h">Pain &amp; hearing loss<br><span style="font-weight:400;opacity:.75">discharge, for the nose</span></th>
+  <th class="d-h">Pain &amp; hearing loss<br><span style="font-weight:400;opacity:.75">discharge for the nose, location for the neck and mouth</span></th>
   <th class="d-h">Key exam finding</th>
   <th class="gv-h">Vignette giveaway<br><span style="font-weight:400;opacity:.75">the words that hand it to you</span></th>
   <th>Presentation &amp; exam findings</th>
