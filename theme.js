@@ -709,6 +709,27 @@
         function (checked) { localStorage.setItem("soundEffects", checked ? "1" : "0"); }
       );
       panel.appendChild(soundToggle.row);
+
+      // Hides what the class picked beside each option, and the "You vs the
+      // class" panel on the results screen. Gated on #shuffle-toggle like the
+      // rows above -- every quiz that shows class numbers has one, checked at
+      // the time this was added. The switch itself is enforced inside
+      // class-stats.js, which every page shares, so it works on quizzes that
+      // shipped long before this row existed as well as on future ones.
+      // Answers still count toward the numbers for everyone else; this only
+      // stops them being drawn.
+      var classStatsToggle = makeToggleRow(
+        "Hide class statistics",
+        localStorage.getItem("hideClassStats") === "1",
+        function (checked) {
+          if (window.ClassStats && window.ClassStats.setHidden) {
+            window.ClassStats.setHidden(checked);
+          } else {
+            try { localStorage.setItem("hideClassStats", checked ? "1" : "0"); } catch (e) {}
+          }
+        }
+      );
+      panel.appendChild(classStatsToggle.row);
     }
 
     // Exam Mode: no per-question feedback until a real submit, free

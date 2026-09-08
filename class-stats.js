@@ -139,6 +139,33 @@
   // retake never re-counts, so the percentages stay a picture of what people
   // chose the first time -- which is the only reading that means anything.
   // ---------------------------------------------------------------------
+
+  // ---------------------------------------------------------------------
+  // HIDING THE CLASS NUMBERS  (added 2026-09-08)
+  //
+  // Jaxon asked for a Settings switch that hides class statistics in quizzes,
+  // and for it to work on the quizzes already on the site as well as future
+  // ones. Every quiz page bakes its own copy of the engine at render time, so
+  // a check added to tools/quiz-template only ever reaches quizzes rendered
+  // AFTER it -- the 83 pages already shipped would have gone on showing the
+  // numbers until each was re-rendered. This file is shared by every page, so
+  // the gate lives here instead: one switch, effective everywhere at once, no
+  // re-render and no diff across 83 files.
+  //
+  // Both surfaces the engine draws hang off getPicks() -- the per-option
+  // percentages, and the "You vs the class" panel on the results screen, which
+  // only accumulates from getPicks results. Resolving null turns off both.
+  //
+  // Hiding is a DISPLAY preference, not an opt-out. The pick is still written,
+  // so one student turning the numbers off does not thin them for everyone
+  // else.
+  // ---------------------------------------------------------------------
+  var HIDE_KEY = "hideClassStats";
+
+  function statsHidden() {
+    try { return localStorage.getItem(HIDE_KEY) === "1"; } catch (e) { return false; }
+  }
+
   var pickQueue = [];
 
   function flushPicks() {
@@ -188,14 +215,36 @@
       } catch (e) { /* private mode -- fall through and count it */ }
       if (!fresh) return false;
       writePick(qid, oi, nOpts);
-      return true;
+      // The caller adds its own +1 to the tally it is about to draw, so that
+      // answering moves the bars without waiting for the write to land. When
+      // the numbers are hidden it is about to be told the tally is zero --
+      // returning true here would leave it drawing a lone 100% bar.
+      return !statsHidden();
+    },
+
+    // Read and set the Settings switch. Kept on ClassStats rather than in
+    // theme.js so the key has exactly one owner.
+    isHidden: statsHidden,
+    setHidden: function (on) {
+      try { localStorage.setItem(HIDE_KEY, on ? "1" : "0"); } catch (e) { /* private mode */ }
+      // Strip anything already drawn. Turning them back ON cannot repaint the
+      // current question -- the engine only draws after an answer -- so the
+      // numbers reappear from the next one.
+      if (on && typeof document !== "undefined") {
+        var n = document.getElementById("classpicks");
+        if (n && n.parentNode) n.parentNode.removeChild(n);
+        var kill = document.querySelectorAll(".pct, .pctbar, .vs");
+        for (var i = 0; i < kill.length; i++) {
+          if (kill[i].parentNode) kill[i].parentNode.removeChild(kill[i]);
+        }
+      }
     },
 
     // Resolves to {total, c0..cN} or null. Never rejects: a missing rule, an
-    // offline device, or a question nobody has answered all resolve null and
-    // the caller simply shows nothing.
+    // offline device, a question nobody has answered, or the Settings switch
+    // above all resolve null and the caller simply shows nothing.
     getPicks: function (qid) {
-      if (!qid) return Promise.resolve(null);
+      if (!qid || statsHidden()) return Promise.resolve(null);
       return new Promise(function (resolve) {
         function go() {
           try {
