@@ -24,6 +24,8 @@ os.chdir(ROOT)
 from _cms_e3_guide_l15 import SECTION as S15
 from _cms_e3_guide_l16 import SECTION as S16
 from _cms_e3_guide_l17 import SECTION as S17
+from _cms_e3_guide_l18 import SECTION as S18
+from _cms_e3_guide_l19 import SECTION as S19
 
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-exam-2-study-guide.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3/cms-exam-3-study-guide.html")
@@ -50,6 +52,25 @@ TOC = """<nav class="toc">
   <a class="sub-link" href="#l17-trauma">3.4 Trauma and foreign bodies</a>
   <a class="sub-link" href="#l17-polyp">3.5 Polyps and rhinitis</a>
   <a class="sub-link" href="#l17-neo">3.6 Neoplasms</a>
+  <a class="top-link" href="#neck-masses">4 &middot; Neoplasms and Neck Masses</a>
+  <a class="sub-link" href="#l18-anatomy">4.1 Triangles and nodes</a>
+  <a class="sub-link" href="#l18-approach">4.2 When to think malignancy</a>
+  <a class="sub-link" href="#l18-cong">4.3 Congenital neck masses</a>
+  <a class="sub-link" href="#l18-infl">4.4 Inflammatory neck masses</a>
+  <a class="sub-link" href="#l18-neo">4.5 Neoplastic neck masses</a>
+  <a class="sub-link" href="#l18-thy">4.6 The thyroid</a>
+  <a class="top-link" href="#oral-cavity">5 &middot; Oral Cavity, Salivary Glands and Neck</a>
+  <a class="sub-link" href="#l19-exam">5.1 Examining the mouth</a>
+  <a class="sub-link" href="#l19-var">5.2 Normal variants</a>
+  <a class="sub-link" href="#l19-ulcer">5.3 Stomatitis and ulcers</a>
+  <a class="sub-link" href="#l19-sal">5.4 Salivary glands</a>
+  <a class="sub-link" href="#l19-vc">5.5 Vocal cords and larynx</a>
+  <a class="sub-link" href="#l19-air">5.6 The airway emergency</a>
+  <a class="sub-link" href="#l19-pha">5.7 Pharyngitis and sequelae</a>
+  <a class="sub-link" href="#l19-deep">5.8 Deep neck infections</a>
+  <a class="sub-link" href="#l19-dent">5.9 Dentition and the jaw</a>
+  <a class="sub-link" href="#l19-les">5.10 Lesions of the oral cavity</a>
+  <a class="sub-link" href="#l19-neo">5.11 Neoplasms</a>
 </nav>"""
 
 TEST_YOURSELF = '''  var TEST_YOURSELF = {
@@ -113,17 +134,12 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
   '<header class="top">\n'
   '  <h1>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Study Guide</h1>\n'
   '  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>\n'
-  '  <p>Ear, nose and throat block &middot; <b>Lectures 15, 16 and 17 are here; 18 and 19 are '
-  'added as they are delivered</b> &middot; Instructional Objectives taken verbatim from the syllabus</p>\n'
+  '  <p>Ear, nose and throat block &middot; <b>all five lectures</b> &middot; Instructional '
+  'Objectives taken verbatim from the syllabus</p>\n'
   '</header>', head, count=1, flags=re.S)
 
-body = ('<main class="content">%s\n%s\n%s\n'
-        '<section class="deck" id="pending"><h2 class="deck-title">4 &middot; Still to come</h2>'
-        '<div class="callout warn"><p>The syllabus puts <b>five lectures</b> in this exam. '
-        'Lectures 15, 16 and 17 are above. <b>Lecture 18 is Neck Masses and Neoplasms</b>; '
-        'neither it nor Lecture 19 has been delivered yet. Treat a gap here as <i>not taught '
-        'yet</i> rather than <i>not examinable</i>.</p></div></section>\n</main>'
-        % (S15, S16, S17))
+body = ('<main class="content">%s\n%s\n%s\n%s\n%s\n</main>'
+        % (S15, S16, S17, S18, S19))
 
 # The condition blocks and the Weber/Rinne table need styles the donor lacks.
 EXTRA = """

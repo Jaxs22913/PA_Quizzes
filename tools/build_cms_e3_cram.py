@@ -23,10 +23,12 @@ from render import render
 from _cms_e3_chart_l15 import ROWS_L15, DIFF_L15
 from _cms_e3_chart_l16 import ROWS_L16, DIFF_L16
 from _cms_e3_chart_l17 import ROWS_L17, DIFF_L17
+from _cms_e3_chart_l18 import ROWS_L18, DIFF_L18
+from _cms_e3_chart_l19 import ROWS_L19, DIFF_L19
 
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3", "cms-exam-3-cram-sheet.html")
-ROWS = ROWS_L15 + ROWS_L16 + ROWS_L17
-DIFF = dict(DIFF_L15, **DIFF_L16, **DIFF_L17)
+ROWS = ROWS_L15 + ROWS_L16 + ROWS_L17 + ROWS_L18 + ROWS_L19
+DIFF = dict(DIFF_L15, **DIFF_L16, **DIFF_L17, **DIFF_L18, **DIFF_L19)
 
 
 def strip(s):
@@ -150,6 +152,41 @@ topics = [
   ["NASAL POLYPS", "<b>GREY, GLISTENING</b> masses &rarr; congestion, thick discharge, <b>ANOSMIA</b>. Asthma 20&ndash;50%, <b>allergic fungal sinusitis 85%</b>, aspirin intolerance 8&ndash;20%, alcohol intolerance 50%, Churg-Strauss 50%, <b>CF 5&ndash;44%</b>. <b>EVALUATE EVERY CHILD WITH MULTIPLE POLYPS FOR CF AND ASTHMA</b> &mdash; chloride sweat test. Surgery gives only TEMPORARY relief."],
   ["ALLERGIC RHINITIS", "<b>CLEAR discharge from BOTH nostrils</b>, <b>BLUISH hue</b>, oedematous mucosa, &plusmn; polyps. <b>80% end up on 2+ medicines.</b> Antihistamine + leukotriene inhibitor at night + intranasal steroid; ipratropium; immunotherapy. <b>Allergy creates the environment for infection but is not itself an -itis.</b>"],
   ["NASOPHARYNGEAL CARCINOMA", "<b>NECK MASS + DIPLOPIA + facial numbness + headache.</b> <b>EBV</b>, HPV, smoking; endemic SOUTHERN CHINA; <b>2&ndash;3&times; more in males</b>. ENT + endoscopic guided biopsy."],
+ ]),
+ dict(id="neck", label="Neck masses", color="#2f6b6f", tag="Lecture 18", rows=[
+  ["THINK MALIGNANCY WHEN", "No infectious origin &middot; <b>&gt;2 WEEKS</b> &middot; <b>&gt;1.5 CM</b> &middot; FIRM, non-cystic, NON-TENDER, immobile &middot; <b>AGE &gt;40</b> &middot; tobacco + alcohol &middot; ULCERATION. Under 40 most are inflammatory &mdash; <b>except HODGKIN LYMPHOMA</b>."],
+  ["FOUR RULES OF THUMB", "Present for YEARS = benign (lipoma, cyst) &middot; RAPIDLY growing = infectious if other symptoms, <b>LYMPHOMA if not</b> &middot; FLUCTUANT = cystic &middot; <b>PULSATILE or BRUIT = VASCULAR</b>."],
+  ["MIDLINE vs LATERAL", "<b>MIDLINE</b> &rarr; THYROGLOSSAL DUCT CYST (moves with tongue protrusion), DERMOID CYST, THYROID. <b>LATERAL</b> &rarr; BRANCHIAL CLEFT CYST (anterior border of SCM), lymphadenopathy, cystic hygroma."],
+  ["THE TWO CONGENITAL SIGNS", "<b>THYROGLOSSAL DUCT CYST moves VERTICALLY with SWALLOWING or TONGUE PROTRUSION</b> &mdash; pathognomonic, and why the SISTRUNK operation takes the CENTRE OF THE HYOID. <b>LYMPHANGIOMA TRANSILLUMINATES.</b>"],
+  ["BRANCHIAL CLEFT CYST", "Infected after a URI. <b>AVOID I&amp;D</b> &mdash; it makes definitive excision harder; needle aspiration if you must. <b>Rule out HPV-associated SCC in an adult</b> &mdash; it can present as a cystic neck mass."],
+  ["HAEMANGIOMA", "Grows through year 1, <b>involutes at 18&ndash;24 months</b>, <b>90% self-resolve</b>. Enlarges with CRYING. First line if you must treat: <b>PROPRANOLOL</b>."],
+  ["THE EXPOSURE HISTORIES", "<b>CATS scratch</b> &rarr; <i>Bartonella henselae</i> &middot; <b>CAT FAECES / undercooked meat</b> &rarr; toxoplasmosis &middot; <b>RABBITS, TICKS</b> &rarr; tularemia (STREPTOMYCIN) &middot; <b>UNPASTEURISED MILK</b> &rarr; brucellosis (total-body nodes)."],
+  ["MYCOBACTERIA, THE TWO", "<b>ATYPICAL</b>: children, <b>UNILATERAL</b>, <b>BRAWNY reddish-brown skin</b>, surgical excision. <b>TB (SCROFULA)</b>: adults &gt; children, <b>DIFFUSE and BILATERAL</b>, <b>RIPE</b>."],
+  ["THE WORKUP", "<b>FNA BIOPSY = STANDARD OF CARE</b>, minimum <b>4 PASSES</b>; separates neoplasm from inflammation and carcinoma from lymphoma. <b>FNA not EXCISIONAL</b> &mdash; excision spills tumour. <b>AVOID IODINE CONTRAST if thyroid cancer is suspected.</b>"],
+  ["THYROID MASS", "<b>Immobile MIDLINE mass that ELEVATES WITH SWALLOWING.</b> Low TSH + nodule &rarr; <b>RADIONUCLIDE SCAN FIRST</b>: <b>HOT = no biopsy</b> (low malignant risk); <b>COLD or WARM = FNA</b>."],
+  ["THYROID CANCER, THE FOUR", "<b>PAPILLARY 75%</b>, best prognosis, young women &middot; <b>FOLLICULAR 16%</b>, spreads by <b>BLOOD to BONE and LUNG</b>, H&uuml;rthle variant worse &middot; <b>MEDULLARY 5%</b>, <b>C cells, CALCITONIN</b>, screen family for <b>MEN</b> &middot; <b>ANAPLASTIC 1%</b>, elderly, <b>death 6&ndash;36 months</b>, resistant to everything."],
+  ["THYROID LYMPHOMA", "Non-Hodgkin B cell, on a background of <b>HASHIMOTO</b>. <b>FNA alone cannot separate it from Hashimoto</b> &mdash; needs biopsy. <b>Chemo + radiation, NOT surgery.</b>"],
+ ]),
+ dict(id="oral", label="Mouth, throat and jaw", color="#8c4a5f", tag="Lecture 19", rows=[
+  ["THE SCRAPE TEST", "<b>WIPES OFF &rarr; CANDIDIASIS.</b> <b>Will NOT scrape off + WHITE &rarr; LEUKOPLAKIA</b> (premalignant, <b>5&ndash;20% &rarr; SCC</b>). <b>Lacy white lines &rarr; LICHEN PLANUS</b> (Wickham striae, 1&ndash;4% &rarr; SCC). <b>Disappears on STRETCHING &rarr; LEUKOEDEMA</b>, a normal variant."],
+  ["ERYTHROPLAKIA", "Like leukoplakia but <b>RED</b>. <b>90% are already dysplastic or carcinoma.</b> Red beats white for danger, every time."],
+  ["HAIRY LEUKOPLAKIA", "<b>LATERAL TONGUE</b>, painless, waxes and wanes. <b>EBV</b>. <b>Strongly associated with HIV &mdash; a common EARLY finding.</b>"],
+  ["APHTHOUS vs HERPES", "<b>APHTHOUS &rarr; NON-KERATINISED, freely moving mucosa</b> (buccal, labial, non-attached gingiva); yellow-grey centre, RED HALO. <b>HERPES &rarr; keratinised surfaces</b>, with a <b>24-hour BURNING PRODROME</b>. Recurrent aphthous = <b>SUTTON DISEASE</b>."],
+  ["SIALOLITHIASIS", "<b>Pain and swelling WITH EATING</b> (salivary colic). <b>80&ndash;90% SUBMANDIBULAR</b> &mdash; longer duct, alkaline mucin-rich saliva. <b>RADIOPAQUE.</b> CT most sensitive; digital subtraction sialography most accurate."],
+  ["SUPPURATIVE SIALADENITIS", "<b>PAROTID</b>, dehydrated post-op or elderly patient. <b><i>S. aureus</i></b>. <b>PUS FROM THE DUCT.</b> Rehydrate + antistaphylococcal antibiotics. <b>No improvement in 48 h = presume ABSCESS.</b>"],
+  ["VOCAL CORDS", "<b>NODULES: BILATERAL, symmetric</b>, junction of anterior 1/3 and posterior 2/3, vocal abuse, <b>SPEECH THERAPY first line</b>. <b>POLYPS: UNILATERAL</b>, smokers, <b>excise &mdash; may hide an occult SCC</b>. <b>PAPILLOMATOSIS: HPV 6 and 11</b>, warty, <b>AVOID TRACHEOSTOMY</b>."],
+  ["HOARSENESS CLOCK", "<b>ACUTE LARYNGITIS</b> = commonest cause, persists ~1 week after the cold clears, <b>NO antibiotics</b>. <b>&gt;2 WEEKS = CHRONIC = not a diagnosis &rarr; SCOPE IT</b> for cancer and polyps."],
+  ["EPIGLOTTITIS", "<b>ENT EMERGENCY.</b> Children <b>4 Ds: DROOLING, DYSPHAGIA, DYSPHONIA, DISTRESS</b> + <b>TRIPOD</b> position. <b>HIB</b>. <b>DO NOT examine the mouth or draw blood</b> &mdash; it can complete the obstruction. <b>THUMBPRINT SIGN not needed</b>; <b>laryngoscopy is the gold standard</b>. <b>STRIDOR IS LATE.</b>"],
+  ["CENTOR", "+1 each: <b>NO COUGH</b>, tonsillar EXUDATE, FEVER, tender anterior cervical NODES. Age <b>3&ndash;14 +1</b>, 15&ndash;44 <b>0</b>, <b>&ge;45 &minus;1</b>. <b>Negative rapid test &rarr; ALWAYS culture.</b> Definitive = <b>ASO</b>. Treat: <b>PENICILLIN VK 10 DAYS</b>."],
+  ["MONONUCLEOSIS", "<b>Fever + tonsillar pharyngitis + cervical adenopathy</b>, ages 15&ndash;24, <b>EBV 90%</b>. <b>MONOSPOT falsely negative in WEEK 1.</b> <b>NO CONTACT SPORTS ~1 MONTH</b> &mdash; splenic rupture. <b>GIVING PENICILLIN CAUSES A RASH</b> &mdash; that rash is often how the diagnosis gets made."],
+  ["RHEUMATIC FEVER", "<b>2&ndash;3 WEEKS</b> after untreated GABHS, peak ages <b>5&ndash;15</b>. Cross-reactive antibodies attack heart muscle. <b>This is why a sore throat gets an antibiotic at all.</b>"],
+  ["PERITONSILLAR ABSCESS", "<b>TRIAD: TRISMUS (most reliable) + UVULAR DEVIATION + DYSPHONIA.</b> <b>&ldquo;HOT POTATO&rdquo; voice.</b> Commonest deep head and neck infection. Airway first, then <b>needle aspiration / I&amp;D</b> + amoxicillin-clavulanate or clindamycin."],
+  ["RETROPHARYNGEAL ABSCESS", "<b>SURGICAL EMERGENCY.</b> Child <b>&lt;5</b>. <b>WIDENED RETROPHARYNGEAL SPACE</b> on lateral neck XR; <b>CT is gold standard</b>. <b>MEDIASTINITIS carries 50% MORTALITY.</b>"],
+  ["LUDWIG ANGINA", "<b>EMERGENCY.</b> Floor of mouth + submental + sublingual + submandibular. <b>TONGUE PUSHED UP AND BACK.</b> Usually ODONTOGENIC &mdash; <b>dental consult is part of the treatment</b>. PCN + metronidazole; bilateral submental drainage if the airway is threatened."],
+  ["DIPHTHERIA", "<b>TENACIOUS GREY MEMBRANE</b> over tonsils and pharynx, unimmunised child. <b>ANTITOXIN from the CDC</b> + PCN or erythromycin <b>14 days</b>. <b>MYOCARDITIS</b> and <b>cranial neuropathy</b> are the killers."],
+  ["TMJ DISORDERS", "<b>SECOND commonest musculoskeletal cause of pain and disability.</b> Women of childbearing age. Three categories: <b>MYOFASCIAL PAIN, INTERNAL DERANGEMENT, ARTHRITIS</b>. <b>The ear symptoms are the trap</b> &mdash; tinnitus, fullness, dizziness with a normal ear exam."],
+  ["ORAL CANCER", "<b>NON-HEALING ULCER.</b> Tobacco + alcohol; <b>60&ndash;80% of OROPHARYNGEAL is HPV</b>. <b>SCC commonest.</b> <b>REFERRED OTALGIA</b> and ill-fitting dentures in advanced disease. Oral cavity &rarr; <b>SURGERY ALONE</b>; oropharynx &rarr; <b>SURGERY + RADIOTHERAPY</b>."],
+  ["SALIVARY NEOPLASM", "<b>The SMALLER the gland, the likelier MALIGNANT.</b> Parotid <b>75&ndash;80% benign</b>; minor glands only <b>35% benign</b>. Commonest benign = <b>PLEOMORPHIC ADENOMA</b>; commonest malignant = <b>MUCOEPIDERMOID CARCINOMA</b>. <b>PAIN or FACIAL NERVE involvement = bad prognosis.</b>"],
  ]),
 ]
 
