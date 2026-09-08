@@ -711,7 +711,15 @@
       border-radius: 4px;
       overflow: hidden;
     }
-    #semester-progress-fill {
+    /* Selector is the CLASS, not the id. The bar was built when there was one
+       semester and one #semester-progress-fill; the registry then generalised
+       the markup to four .semester blocks, each with its own fill, but an id
+       can only be on one element. Only the Summer I block kept the id, so from
+       the moment Fall became the current term the visible bar had no CSS at
+       all -- display:inline, no height, no background -- and rendered as
+       nothing while its width was being set correctly all along. The element
+       that still carries the id also carries the class, so this covers both. */
+    .semester-progress-fill {
       display: block;
       height: 100%;
       width: 0%;
@@ -726,7 +734,7 @@
       text-align: center;
     }
     @media (prefers-reduced-motion: reduce) {
-      #semester-progress-fill { transition: none; }
+      .semester-progress-fill { transition: none; }
     }
 
     /* Class-wide cumulative "questions answered" counter (class-stats.js).
