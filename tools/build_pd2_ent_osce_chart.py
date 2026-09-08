@@ -147,9 +147,21 @@ def main():
 
     rows = sorted(C.ROWS, key=lambda r: (REGION_ORDER.index(region_of(r[1], r[9])),
                                          r[1], r[0]))
-    emerg = [r for r in rows if "EMERGENT" in r[6].upper()]
-    non = [r for r in rows if "EMERGENT" not in r[6].upper()]
-    assert len(emerg) + len(non) == len(C.ROWS)
+
+    # Three tiers, least urgent first. Jaxon, 2026-09-08: "put all the routine
+    # at the top". The first cut of this page had one NONEMERGENT block holding
+    # routine and urgent together, which buried the 55 rows the station is most
+    # likely to be about behind 54 that need a referral within days. Splitting
+    # them means the first thing on the page is the commonest thing in the room.
+    def tier(r):
+        u = r[6].upper()
+        return "emerg" if "EMERGENT" in u else "urgent" if "URGENT" in u else "routine"
+
+    TIERS = ["routine", "urgent", "emerg"]
+    by_tier = {t: [r for r in rows if tier(r) == t] for t in TIERS}
+    assert sum(len(v) for v in by_tier.values()) == len(C.ROWS), \
+        "every row must land in exactly one tier"
+    assert all(by_tier[t] for t in TIERS), "a tier came out empty"
 
     buttons = "".join('<button class="filt" data-r="%s">%s</button>'
                       % (H.escape(r), H.escape(r)) for r in REGION_ORDER)
@@ -162,7 +174,7 @@ def main():
 <header class="top">
   <h1>ENT OSCE Disease Chart</h1>
   <p>Physical Diagnosis 2 &middot; ENT OSCE &middot; Class of 2028</p>
-  <p>__N__ conditions &mdash; __NNON__ nonemergent, __NEM__ emergent</p>
+  <p>__N__ conditions &mdash; __NROUT__ routine, __NURG__ urgent, __NEM__ emergent</p>
   <p style="margin-top:10px;font-size:.82rem;color:var(--c-mute)">Use the <b>Download as PDF</b> button,
   top right, to keep this offline &mdash; it prints landscape with every row intact.</p>
 </header>
@@ -172,10 +184,12 @@ OSCE Run-Sheet</a> tells you the order of the station; this tells you what to do
 diagnosis in mind. Same 127 diseases as the <a href="../Clinical%20Medicine%20and%20Surgery%20I%20Exam%203/cms-ent-comparison-chart.html">CMS
 comparison chart</a>, turned ninety degrees: that one answers <i>what is this</i>, this one answers
 <i>what do I do about it</i>.<br><br>
-<b>Nonemergent is first, deliberately.</b> The station will almost always be a routine complaint,
-so the rows you are most likely to need are the ones you reach without scrolling. The emergent
-block sits at the bottom as the must-never-miss tail &mdash; and every row there is a diagnosis
-whose whole teaching point is that it gets mistaken for something in the block above it.<br><br>
+<b>Ordered least urgent first, deliberately.</b> <span class="tierkey"><span class="dot routine"></span>Routine</span>
+sits at the top because the station will almost always be a routine complaint, so the rows you are
+most likely to need are the ones you reach without scrolling. <span class="tierkey"><span class="dot urgent"></span>Urgent</span>
+follows &mdash; still a clinic referral, but in days rather than weeks. <span class="tierkey"><span class="dot emerg"></span>Emergent</span>
+sits at the bottom as the must-never-miss tail, and every row there is a diagnosis whose whole
+teaching point is that it gets mistaken for something in the blocks above it.<br><br>
 <b>Every test names its finding.</b> &ldquo;Order a computed tomography&rdquo; is worth nothing in
 a station if you cannot say what makes it positive, so the tests column reads
 <i>investigation &rarr; what you would see</i>, and it is split: what confirms this diagnosis, and
@@ -189,15 +203,21 @@ lecture and slide citation in the first column.</div>
 
 <div class="filters"><button class="filt on" data-r="__all__">All regions</button>__BUTTONS__</div>
 
-<h2 class="sect nonem">Nonemergent<span class="cnt">__NNON__ conditions</span></h2>
-<p class="sectnote">Routine and urgent referrals. The urgency badge in the treatment column keeps
-the distinction &mdash; <span class="u urg" style="display:inline">URGENT</span> still means days,
-not weeks.</p>
+<h2 class="sect routine">Routine<span class="cnt">__NROUT__ conditions</span></h2>
+<p class="sectnote">Managed in clinic, on a normal timescale. This is what the station is most
+likely to be, and it is the block to know cold.</p>
 <div class="tblwrap"><table>__COLS__<tbody>
-__NONROWS__
+__ROUTROWS__
 </tbody></table></div>
 
-<h2 class="sect em">Emergent<span class="cnt">__NEM__ conditions</span></h2>
+<h2 class="sect urgent">Urgent<span class="cnt">__NURG__ conditions</span></h2>
+<p class="sectnote">Still a referral rather than an emergency, but measured in <b>days, not
+weeks</b>. The commonest way to get one of these wrong is to manage it correctly and too slowly.</p>
+<div class="tblwrap"><table>__COLS__<tbody>
+__URGROWS__
+</tbody></table></div>
+
+<h2 class="sect emerg">Emergent<span class="cnt">__NEM__ conditions</span></h2>
 <p class="sectnote">These do not wait for a clinic appointment. If the station gives you one of
 these, the answer to &ldquo;what is your plan&rdquo; begins with where the patient goes now, not
 with which test you would order.</p>
@@ -243,8 +263,13 @@ __EMROWS__
   h2.sect{margin:26px 0 4px;font-size:1.08rem;letter-spacing:.01em;
           display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
   h2.sect::before{content:"";width:10px;height:10px;border-radius:50%;flex:none;}
-  h2.sect.nonem::before{background:#3f5c46;}
-  h2.sect.em::before{background:#8c1d12;}
+  h2.sect.routine::before{background:#3f5c46;}
+  h2.sect.urgent::before{background:#7a5a08;}
+  h2.sect.emerg::before{background:#8c1d12;}
+  .tierkey{white-space:nowrap;font-weight:700;}
+  .tierkey .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;}
+  .tierkey .dot.routine{background:#3f5c46;} .tierkey .dot.urgent{background:#7a5a08;}
+  .tierkey .dot.emerg{background:#8c1d12;}
   h2.sect .cnt{font-size:.76rem;font-weight:400;color:var(--c-mute);
                font-variant-numeric:tabular-nums;}
   p.sectnote{margin:0 0 10px;font-size:.82rem;color:var(--c-mute);max-width:62ch;line-height:1.5;}
@@ -272,11 +297,13 @@ __EMROWS__
 </body></html>"""
 
     html = (html.replace("__COLS__", HEADCOLS)
-                .replace("__NONROWS__", "\n".join(build_row(r) for r in non))
-                .replace("__EMROWS__", "\n".join(build_row(r) for r in emerg))
+                .replace("__ROUTROWS__", "\n".join(build_row(r) for r in by_tier["routine"]))
+                .replace("__URGROWS__", "\n".join(build_row(r) for r in by_tier["urgent"]))
+                .replace("__EMROWS__", "\n".join(build_row(r) for r in by_tier["emerg"]))
                 .replace("__BUTTONS__", buttons)
-                .replace("__NNON__", str(len(non)))
-                .replace("__NEM__", str(len(emerg)))
+                .replace("__NROUT__", str(len(by_tier["routine"])))
+                .replace("__NURG__", str(len(by_tier["urgent"])))
+                .replace("__NEM__", str(len(by_tier["emerg"])))
                 .replace("__N__", str(len(C.ROWS))))
 
     # Every condition in the source chart must reach the page exactly once.
@@ -298,8 +325,9 @@ __EMROWS__
     assert btn == row, "filter buttons %r do not match row regions %r" % (btn - row, row - btn)
 
     open(OUT, "w", encoding="utf-8").write(html)
-    print("wrote %s (%d KB, %d conditions: %d nonemergent, %d emergent, %d regions)"
-          % (os.path.basename(OUT), len(html)//1024, len(C.ROWS), len(non), len(emerg),
+    print("wrote %s (%d KB, %d conditions: %d routine, %d urgent, %d emergent, %d regions)"
+          % (os.path.basename(OUT), len(html)//1024, len(C.ROWS),
+             len(by_tier["routine"]), len(by_tier["urgent"]), len(by_tier["emerg"]),
              len(REGION_ORDER)))
 
 if __name__ == "__main__":
