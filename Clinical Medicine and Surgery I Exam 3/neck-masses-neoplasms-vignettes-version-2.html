@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #7455b5; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neck Masses and Neoplasms Vignettes 2 — CMS I Exam 3</title>
+<style>
+  :root{
+    --navy:#462d7a; --indigo:#7455b5; --gold:#c08a2e; --ice:#f2eefa;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Neoplasms and Neck Masses &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 3 &middot; Lecture 18</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Midline vs lateral</span><span class="chip">Red flags</span><span class="chip">Fine needle aspiration</span><span class="chip">Thyroid nodules</span><span class="chip">Lymphadenopathy</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Neck mass consistency", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A clinician palpates a neck mass and finds it fluctuant.", "opts": [["A vascular lesion", "Vascular masses are identified by pulsatility or a bruit. Both fluctuance and pulsatility suggest non-solid contents, but they are distinguished by whether the movement follows the pulse."], ["A metastatic node", "Malignant nodes are characteristically firm or hard and immobile. Fluctuance argues against malignancy, though a necrotic node can occasionally feel cystic."], ["A lipoma", "A lipoma is soft and doughy and can be mistaken for fluid, but it does not fluctuate because it is solid fat."], ["A cystic lesion", "Correct. Fluctuance means the mass transmits pressure the way a fluid would, so it contains liquid rather than solid tissue. That is one of the four rules of thumb, sitting alongside pulsatility for vascular, years of stability for benign, and rapid growth for infection or lymphoma."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 13"}, {"topic": "Suppurative lymphadenitis", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 30-year-old man has a fluctuant, tender submandibular mass with overlying erythema and fever after a sore throat. Three days of antibiotics have not settled it.", "opts": [["Excisional biopsy of the node", "Excisional biopsy is a diagnostic operation for a suspected neoplastic node. Here the diagnosis is clinically evident and what is needed is therapeutic drainage."], ["Observation, as most nodes settle on their own", "Reactive nodes do settle spontaneously, but a fluctuant tender node with fever that has resisted antibiotics is a collection and will not resolve unaided."], ["Fine needle aspiration or incision and drainage", "Correct. Suppurative bacterial lymphadenopathy is treated empirically against anaerobes and gram-positive organisms, but drainage follows when antibiotics fail. Fluctuance means there is a collection, and antibiotics penetrate an established abscess cavity poorly, so more of the same will not work."], ["Broaden the antibiotic and continue", "Escalating cover is reasonable alongside drainage, but relying on it alone repeats a strategy that has already failed for three days against a collection."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 33"}, {"topic": "Vascular neck mass", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 45-year-old woman has a neck mass that pulses under the fingers and has an audible bruit on auscultation.", "opts": [["Computed tomography angiography, and do not biopsy it blindly", "Correct. Pulsatility or a bruit means vascular, which puts paraganglioma at the head of the list. Angiography defines the blood supply and the relationship to the carotid, and it must come before any needle, because puncturing a highly vascular tumour risks significant haemorrhage."], ["Immediate fine needle aspiration", "Aspiration is the standard of care for most neck masses, which is exactly why this trap works. It is the one thing not to do first into a pulsatile lesion."], ["A trial of antibiotics", "There are no infective features, and no antibiotic influences a vascular tumour. This would waste weeks."], ["Reassurance, as pulsation indicates a benign lesion", "Paragangliomas are usually benign, so the reassurance is half right, but their position and vascularity still make them a surgical problem needing definition."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 13"}, {"topic": "Referral timing", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 59-year-old woman's neck mass has persisted after a course of antibiotics.", "opts": [["Prescribe a second, broader antibiotic course", "A second course repeats a strategy that has already failed and adds weeks of delay in a patient whose age alone is a malignancy red flag."], ["Wait until systemic symptoms develop", "Waiting for weight loss or night sweats means waiting for advanced disease. The red-flag list exists precisely to prompt action before that."], ["Discharge with advice to return if it grows", "Safety-netting has a place, but a mass that has already outlasted treatment in a patient over 40 has met the criteria for referral now."], ["Refer to a specialist now", "Correct. A trial of antibiotics is common practice, and failure of that trial is exactly the point at which referral should happen rather than another course being prescribed. Early and aggressive treatment is needed in some neoplastic conditions, so the delay costs more than the referral."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 19"}, {"topic": "Haemangioma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 5-month-old has a red, soft, compressible neck mass that has grown since birth and enlarges when he cries. He feeds well and the airway is clear.", "opts": [["Sclerotherapy", "Sclerotherapy is used for lymphangiomas, whose lymphatic channels are the target. It is not the approach to a haemangioma that will resolve on its own."], ["Observation", "Correct. Haemangiomas proliferate through the first year and then involute from 18 to 24 months, with about 90 per cent resolving without any therapy. Enlargement on crying reflects venous engorgement rather than progression, so with no functional compromise the right action is to explain the curve and watch."], ["Start propranolol now", "Propranolol is first line when treatment IS needed, but the indications are airway compromise, skin ulceration, dysphagia, thrombocytopenia or cardiac failure. None applies here."], ["Surgical excision", "Surgery is reserved for complications or for residual deformity after involution. Operating on a proliferating vascular lesion is technically difficult and unnecessary."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 27"}, {"topic": "Neck mass evaluation", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 44-year-old woman with a neck mass is asked a series of history questions. Which exposure is specifically relevant?", "opts": [["Recent travel and possible tuberculosis exposure", "Correct. The history should cover recent upper respiratory, sinus, ear or other head and neck infection, exposure to pets and animals, recent travel and tuberculosis exposure, malignancy risk including previous skin lesion excision, smoking, alcohol, radiation and family history, recent trauma, and immunodeficiency."], ["Dietary iodine intake alone", "Iodine matters to thyroid physiology and to the contrast question, but it is not one of the exposure items in the history for a neck mass generally."], ["Occupational noise exposure", "Noise exposure belongs to the assessment of hearing loss. It has no bearing on a neck mass."], ["Sun exposure only", "Sun exposure is relevant to skin malignancy, which can metastasise to the neck, so it is part of the malignancy risk question rather than a standalone item."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 14"}, {"topic": "Brucellosis", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 39-year-old dairy worker who drinks unpasteurised milk has fever, fatigue, malaise and lymphadenopathy involving the neck, axillae and groins.", "opts": [["Penicillin", "Penicillin treats actinomycosis, which presents as a painless fluctuant submandibular mass with filamentous organisms on biopsy."], ["Amphotericin B", "Amphotericin treats invasive fungal infection in immunocompromised patients, where Candida, Histoplasma or Aspergillus are the organisms."], ["Trimethoprim-sulfamethoxazole or tetracycline", "Correct. Unpasteurised milk points to Brucella, and the distinguishing clinical feature is that the lymphadenopathy is total-body rather than confined to one region, which separates it from the regional adenopathies. Diagnosis is by serology and culture."], ["Streptomycin", "Streptomycin treats tularemia, acquired from rabbits, ticks or contaminated water, which presents with tonsillitis and painful regional adenopathy."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 33"}, {"topic": "Hemangioma complications", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 4-month-old has a large neck haemangioma and is now developing stridor and difficulty feeding.", "opts": [["Start propranolol", "Correct. Observation is the default because about 90 per cent involute, but intervention is indicated for airway compromise, skin ulceration, dysphagia, thrombocytopenia or cardiac failure. Stridor and feeding difficulty are two of those, and propranolol is first line for infants without a contraindication."], ["Continue observation", "Observation is right for an asymptomatic lesion, and would have been right for this infant last month. Functional compromise is precisely what changes the plan."], ["Sclerotherapy", "Sclerotherapy is used for lymphangiomas rather than haemangiomas, and it would not act quickly enough for a threatened airway."], ["Immediate surgical excision", "Surgery is second line after propranolol and systemic steroids, and operating on a proliferating vascular lesion in an infant carries considerable risk."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 27"}, {"topic": "Branchial cleft cyst", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 20-year-old man has a tender fluctuant swelling at the anterior border of the right sternocleidomastoid with overlying redness, appearing after a cold. He recalls a small painless lump there for years.", "opts": [["Incise and drain it now", "Incision and drainage is specifically avoided unless there is frank abscess, because it scars the planes and makes the definitive excision considerably harder. Needle aspiration is preferred even then."], ["Antibiotics alone, since the cyst will resolve", "Antibiotics settle the infection but the cyst is a congenital structure that does not disappear. It becomes infected again, which is why excision follows."], ["Excise it during the acute infection", "Operating on acutely inflamed oedematous tissue makes the tract hard to define and follow, raising the chance of leaving part of it behind."], ["Control the infection, then excise the cyst and its tract", "Correct. The cyst is congenital and only declares itself when it becomes infected after an upper respiratory infection. Settling the infection first gives cleaner planes, and the definitive operation must take the TRACT as well as the cyst, because leaving the tract behind is what causes recurrence."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 22"}, {"topic": "Actinomycosis", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 53-year-old man has a painless, fluctuant swelling in the submandibular region that has slowly enlarged. Biopsy shows filamentous organisms.", "opts": [["Penicillin", "Correct. Actinomycosis presents as a painless fluctuant mass in the submandibular or upper digastric region, and the combination of painlessness with fluctuance is what separates it from an ordinary pyogenic abscess, which would be exquisitely tender. Diagnosis is clinical and by biopsy."], ["Surgical excision alone", "Excision without prolonged antimicrobial therapy leaves organisms in the surrounding planes, because the infection spreads without respecting anatomical boundaries."], ["Antituberculous therapy", "Tuberculous adenitis produces diffuse bilateral lymphadenopathy in adults and is diagnosed by acid-fast staining. The filamentous organisms described are not mycobacteria."], ["Amphotericin B", "Amphotericin is for invasive fungal disease. Actinomyces is a bacterium despite its filamentous appearance, which is the trap in this question."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 34"}, {"topic": "Congenital neck mass in an adult", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 44-year-old smoker has what looks like a branchial cleft cyst: a cystic lateral neck mass at the sternocleidomastoid border.", "opts": [["Rule out human papillomavirus-associated squamous carcinoma first", "Correct. Human papillomavirus-associated squamous cell carcinoma can present as a CYSTIC neck mass in an adult, which is exactly what a branchial cleft cyst looks like. Because a congenital diagnosis in an adult carries that trap, the malignancy must be excluded before the benign label is accepted."], ["Proceed directly to excision as for a congenital cyst", "Excising it as a congenital lesion without excluding malignancy risks operating on a cancer with the wrong plan, and excisional biopsy of a malignant node spills tumour."], ["Reassure, as congenital cysts are always benign", "Congenital cysts are benign, which is what makes the mimicry dangerous. The point is that this may not be one."], ["Treat with antibiotics and review in three months", "Three months of watching a cystic neck mass in a smoker over 40 delays a cancer diagnosis while treating an infection that may not exist."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 22"}, {"topic": "Congenital versus adult", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 6-year-old girl has a lateral neck mass. Using the age-based framework, which category should be considered first?", "opts": [["Neoplastic, since all neck masses are malignant until proven otherwise", "That presumption applies to a NEW neck mass in an adult. In a child the base rate runs strongly the other way, with Hodgkin lymphoma as the exception."], ["Inflammatory, and lateral position points to Ludwig angina", "Inflammatory causes are common in children, so the category is reasonable, but Ludwig angina is a submental and submandibular floor-of-mouth infection rather than a lateral neck mass."], ["Endocrine, pointing to a parathyroid cyst", "Endocrine causes such as thymic cyst, thyroid hyperplasia and parathyroid cyst sit on the KITTENS list but are uncommon and not suggested by a lateral mass in a child."], ["Congenital, and lateral position points to a branchial cleft cyst", "Correct. The differential splits first by age. In a child the congenital branch is considered, and within it position separates lateral from midline: lateral gives branchial cleft cyst, lymphadenopathy or cystic hygroma, while midline gives thyroglossal duct cyst."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 17"}, {"topic": "Anaplastic carcinoma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "An 80-year-old woman has a hard thyroid mass that has enlarged over six weeks with hoarseness and difficulty swallowing. Biopsy shows undifferentiated giant and spindle cells.", "opts": [["Anaplastic carcinoma", "Correct. Anaplastic carcinoma is about 1 per cent of thyroid cancers, occurs in elderly patients, and comprises small cell, giant cell and spindle cell types. It is the most aggressive form, with death typically in 6 to 36 months, and it is resistant to all treatment modalities, which is what the rapid growth and compressive symptoms reflect."], ["Papillary carcinoma", "Papillary carcinoma is the commonest and kindest type, occurring in young women and growing slowly. Neither the age, the six-week course nor the histology matches."], ["Primary thyroid lymphoma", "Thyroid lymphoma also enlarges rapidly in an older patient, so it belongs on the differential, but it is a non-Hodgkin B cell tumour on a Hashimoto background and responds to chemotherapy and radiation."], ["Medullary carcinoma", "Medullary carcinoma arises from calcitonin-producing C cells, runs a more insidious course and carries a familial association. Giant and spindle cell histology is not its picture."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 42"}, {"topic": "Lymphatic drainage", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 24-year-old has tonsillitis and a tender node high in the jugular chain just below the angle of the jaw.", "opts": [["The juguloomohyoid node, which drains the tongue", "The juguloomohyoid node is the other named one and its territory is the TONGUE. The pairing is easy to reverse, which is why the two are worth learning together."], ["The submental node", "Submental nodes drain the lower lip, chin and floor of mouth. They sit beneath the chin rather than in the jugular chain."], ["The supraclavicular node", "Supraclavicular nodes drain the thorax and abdomen, which is why enlargement there raises concern about disease below the diaphragm."], ["The jugulodigastric node, which drains the palatine tonsil", "Correct. The deep cervical chain has two named members with defined territories, and the jugulodigastric node drains the palatine tonsil. That is why tonsillitis reliably produces tenderness at this precise point, and why it is the node examined in a sore throat."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 12"}, {"topic": "Reactive lymphadenopathy", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 5-year-old has a 2 centimetre cervical node that appeared with a cold five weeks ago and has not changed since.", "opts": [["Reassure and discharge", "Discharging a node that has breached both thresholds removes the follow-up that would detect lymphoma, the named exception to the rule that childhood masses are inflammatory."], ["Investigate further, as it has passed the size and duration thresholds", "Correct. A node over 1 centimetre is abnormal, and reactive nodes regress within one to two weeks. Persistence beyond four to six weeks or continued enlargement is the stated trigger for investigation, with biopsy looking for fungal, granulomatous or neoplastic causes."], ["Continue observation, as viral nodes are common in children", "Observation was right for the first fortnight, and reactive adenopathy is indeed the commonest cause at this age. It stops being right once the node outlives the timescale that defines reactive."], ["Start empirical antibiotics", "There is no tenderness, erythema, fever or fluctuance, so there are no features of bacterial adenitis to treat. Antibiotics would only delay the investigation."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 31"}, {"topic": "Thyroid cancer", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 36-year-old woman has papillary thyroid carcinoma confined to one lobe, well differentiated, with no metastasis.", "opts": [["Total thyroidectomy", "Total resection is the general rule, which makes this the tempting answer, but applying the rule without its exception commits a young woman to replacement therapy she may not need."], ["Isthmectomy", "Isthmectomy is specified for ANAPLASTIC carcinoma, a very different disease in an elderly patient with a prognosis measured in months. It would be inadequate here."], ["Chemotherapy and radiation", "That combination treats primary thyroid lymphoma. Differentiated carcinoma is a surgical disease with radioiodine ablation where indicated."], ["Lobectomy", "Correct. Almost all thyroid cancers require thyroidectomy, but there is an explicit exception for disease localised to one lobe that is well differentiated and without metastasis. That describes this patient, and lobectomy preserves the other lobe, reducing the risk to the recurrent laryngeal nerves and parathyroids and often avoiding lifelong replacement."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 44"}, {"topic": "Lipoma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 48-year-old woman has a soft, mobile, painless neck lump that she says has been there for at least ten years and has barely changed.", "opts": [["Branchial cleft cyst", "A branchial cleft cyst is congenital and could indeed have been present for years, so it is a fair thought, but it sits specifically at the anterior sternocleidomastoid border and declares itself when infected."], ["A benign lesion such as a lipoma or a cyst", "Correct. A mass present for years is usually benign, and lipoma or cyst are the two named examples. Duration in that range is reassuring in the way that duration over two weeks is concerning, and the soft mobile texture supports it."], ["Metastatic squamous cell carcinoma", "Metastatic nodes are firm, immobile and enlarge over weeks to months. Ten years of stability is incompatible with malignant behaviour."], ["Lymphoma", "Lymphoma presents as a rapidly growing mass, often with night sweats and weight loss. A decade of no change is the opposite pattern."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 13"}, {"topic": "Atypical mycobacteria", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 4-year-old has a unilateral neck mass in the anterior triangle with brawny reddish-brown skin over it and mild tenderness. She is afebrile and well.", "opts": [["Cat scratch disease", "Bartonella adenitis is common under 20 and affects preauricular and submandibular nodes, but it needs cat contact and produces fever and malaise rather than brawny skin."], ["Atypical mycobacterial infection", "Correct. Non-tuberculous mycobacterial adenitis is a paediatric disease presenting as a unilateral mass in the anterior triangle or parotid with characteristically brawny reddish-brown overlying skin, in a child who is systemically well. Diagnosis is by acid-fast stain, culture and skin testing, and treatment is usually surgical excision."], ["Tuberculous adenitis", "Cervical tuberculosis affects adults more than children and produces diffuse BILATERAL lymphadenopathy. Unilateral disease with brawny skin in a well toddler is the atypical pattern."], ["Suppurative bacterial lymphadenitis", "Staphylococcal or streptococcal adenitis gives a hot, acutely tender node with fever and a throat or skin source over days. The indolent course and skin colour here do not fit."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 34"}, {"topic": "Dermoid cyst", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 13-year-old has a midline submental mass that is non-tender and mobile. It does not move when he protrudes his tongue.", "opts": [["Dermoid cyst", "Correct. Both dermoid and thyroglossal duct cysts are midline, which is why they are the pair that must be distinguished. The discriminator is the hyoid attachment: a thyroglossal duct cyst rises with tongue protrusion, while a dermoid, from epithelium entrapped during embryogenesis, has no such connection and stays still."], ["Thyroglossal duct cyst", "This is the commonest congenital midline mass and the right first thought, but the absence of movement on tongue protrusion specifically excludes it, because that movement is pathognomonic."], ["Branchial cleft cyst", "Branchial cleft cysts are lateral, at the anterior border of the sternocleidomastoid. A midline submental position is wrong for them."], ["Submental lymph node", "A submental node would usually be one of several, relate to an oral or facial infection, and be tender if inflamed. A solitary painless mobile midline mass behaves differently."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 29"}, {"topic": "Kawasaki disease", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 3-year-old has five days of high fever, red eyes without discharge, a strawberry tongue, cracked lips, a rash and one large cervical node.", "opts": [["Suppurative bacterial lymphadenitis", "Bacterial adenitis gives a hot tender node with fever but not conjunctival injection, a strawberry tongue, cracked lips and a rash. Those mucocutaneous features indicate a systemic process."], ["Infectious mononucleosis", "Mononucleosis gives fever with tonsillar pharyngitis and bilateral cervical adenopathy, and can produce a rash after penicillin, but not the ocular and oral changes described."], ["Reactive viral lymphadenopathy", "Reactive nodes accompany a mild upper respiratory illness and regress within a couple of weeks, without five days of high fever and mucocutaneous change."], ["Kawasaki disease", "Correct. Kawasaki sits among the non-infectious inflammatory causes of neck masses alongside Sjogren syndrome, sarcoidosis and IgG4-related disease. The cervical node is one criterion among several, and recognising the constellation matters because untreated Kawasaki causes coronary artery aneurysms."]], "c": 3, "cite": "CMS I Neoplasms and Neck Masses, Slide 35"}, {"topic": "Thyroid lymphoma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 64-year-old woman with long-standing Hashimoto thyroiditis has a rapidly enlarging thyroid mass. Aspiration shows a lymphoid infiltrate that cannot be separated from her thyroiditis.", "opts": [["Total thyroidectomy", "Surgery is the mainstay for thyroid carcinoma but not for lymphoma, which is treated with chemotherapy and radiation. Operating first risks a major procedure that does not treat the disease."], ["Repeat the aspiration with more passes", "More passes yield more of the same cells and the same interpretive problem, because the limitation is architectural rather than one of sample size."], ["Proceed to open biopsy", "Correct. Primary thyroid lymphoma is usually a non-Hodgkin B cell tumour arising on a Hashimoto background, and both fill the gland with lymphocytes. Aspiration cytology cannot reliably distinguish a reactive infiltrate from a monoclonal one, so tissue architecture is needed, followed by lymphoma staging."], ["Accept the result as Hashimoto and continue replacement", "Accepting an inconclusive result as benign in a gland that is rapidly enlarging ignores the clinical change that prompted the biopsy in the first place."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 45"}, {"topic": "Thymic cyst", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "An 11-year-old has a slow-growing asymptomatic lower anterior neck mass. Biopsy shows Hassall corpuscles.", "opts": [["Thymic cyst", "Correct. Hassall corpuscles are concentric epithelial structures of the thymic medulla, so their presence identifies the tissue definitively. Imaging narrows the differential but cannot establish it, which is why biopsy is specified, and treatment is surgical excision."], ["Branchial cleft cyst", "A branchial cleft cyst is lateral at the sternocleidomastoid border and is lined by squamous or respiratory epithelium, containing no thymic tissue."], ["Thyroglossal duct cyst", "A thyroglossal duct cyst is midline, moves with tongue protrusion, and may contain thyroid tissue, which is why every specimen is checked for thyroid carcinoma."], ["Dermoid cyst", "A dermoid contains entrapped epithelial elements including skin appendages, a different histological picture, and sits midline and submental."]], "c": 0, "cite": "CMS I Neoplasms and Neck Masses, Slide 29"}, {"topic": "Neck mass in the immunocompromised", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 40-year-old man with untreated HIV has a rapidly enlarging cervical mass with purple discolouration of the overlying skin.", "opts": [["Persistent generalised lymphadenopathy", "That diagnosis requires no identifiable infectious or neoplastic cause and is generalised, not a single rapidly enlarging mass with skin discolouration."], ["Reactive viral lymphadenopathy", "Reactive nodes follow an upper respiratory infection and regress in one to two weeks without changing the overlying skin."], ["Kaposi sarcoma", "Correct. Kaposi sarcoma is one of the conditions that must be excluded in an HIV-positive patient with lymphadenopathy, alongside tuberculosis, Pneumocystis and lymphoma. Its vascular nature produces the purple appearance, distinguishing it from the follicular hyperplasia that accounts for most adenopathy in this group."], ["Idiopathic follicular hyperplasia", "Hyperplasia is the commonest cause of adenopathy in HIV and the right base rate, but it produces ordinary-looking nodes without skin change and is a diagnosis of exclusion."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 32"}, {"topic": "Medullary carcinoma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 44-year-old man is diagnosed with a thyroid carcinoma of parafollicular C cells. What additional step involves his family?", "opts": [["No family screening, as thyroid cancer is sporadic", "Most thyroid cancer is sporadic, which makes this a reasonable generalisation, but medullary disease is the specific exception."], ["Screen relatives for multiple endocrine neoplasia", "Correct. Medullary carcinoma arises from calcitonin-producing C cells and carries a familial association with multiple endocrine neoplasia. Relatives may carry the same predisposition and can be identified before disease develops, so screening the family is part of managing the index case."], ["Screen relatives for Hashimoto thyroiditis", "Hashimoto is associated with primary thyroid LYMPHOMA. It clusters in families but carries no syndromic cancer risk that would justify systematic screening."], ["Screen relatives for papillary carcinoma", "Papillary carcinoma is the commonest thyroid cancer but is not the one with a defined familial endocrine syndrome driving management."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 44"}, {"topic": "Neck mass and travel", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 26-year-old woman returned from a rural stay abroad and now has cervical adenopathy. The clinician reviews her exposure history.", "opts": [["No further history is needed once imaging is arranged", "Imaging characterises the mass but cannot supply the exposure history that narrows an infectious differential, and much of that differential is diagnosed serologically."], ["Ask about tuberculosis contact and animal exposure", "Correct. The history for a neck mass covers recent upper respiratory or head and neck infection, exposure to pets and other animals, recent travel and tuberculosis exposure, malignancy risk, recent trauma and immunodeficiency. Travel makes the tuberculosis and zoonotic branches considerably more relevant."], ["Ask only about smoking and alcohol", "Tobacco and alcohol are malignancy risk factors and belong in the history, but taken alone they omit the infectious exposures that the travel makes likely."], ["Ask about noise exposure", "Noise exposure belongs to the assessment of hearing loss and has no bearing on cervical adenopathy."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 14"}, {"topic": "Neck triangles", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A surgeon plans an approach through the triangle bounded by the mandible above and the two bellies of digastric.", "opts": [["The brachial plexus and subclavian artery", "Those are in the supraclavicular triangle of the posterior group, above the middle of the clavicle, with the pleural cupola deep to them."], ["The thyroid, trachea and oesophagus", "Those occupy the muscular triangle, between omohyoid above, sternocleidomastoid below and the midline in front."], ["The submandibular gland, hypoglossal nerve and facial vessels", "Correct. Those boundaries define the digastric or submandibular triangle, whose contents are the stylohyoid, mylohyoid and hyoglossus muscles, the submandibular gland, the hypoglossal nerve and the facial vessels. Predicting contents from boundaries is the practical point of the triangle scheme."], ["The carotid arteries and vagus nerve", "Those lie in the carotid triangle, bounded by sternocleidomastoid behind, the posterior belly of digastric above and omohyoid below."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 6"}, {"topic": "Cat scratch disease", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 10-year-old boy has tender preauricular and submandibular nodes with low-grade fever and malaise for two weeks. The family recently got a kitten.", "opts": [["Toxoplasma serology", "Toxoplasmosis is also cat-associated, which makes it tempting, but the route is ingestion of oocysts in faeces or undercooked meat, and it gives more generalised adenopathy with sore throat and myalgias."], ["Serology with indirect fluorescent antibodies", "Correct. Cat scratch disease is caused by Bartonella henselae, is common under 20 years, and classically involves preauricular and submandibular nodes with fever and malaise after cat contact. Diagnosis is serologic using indirect fluorescent antibodies, and the illness is often self-limiting or treated with azithromycin."], ["Acid-fast stain and culture", "Acid-fast testing diagnoses atypical mycobacterial and tuberculous adenitis, which present with brawny unilateral disease in a child or diffuse bilateral disease in an adult. Neither is suggested by a new kitten."], ["Monospot and Epstein-Barr serology", "Mononucleosis causes cervical adenopathy with fever and malaise, so it is a fair differential, but it brings tonsillar exudate and splenomegaly and is not explained by cat exposure."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 34"}, {"topic": "Lymphoma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 35-year-old man has a neck mass that has grown quickly over three weeks. He has no fever or sore throat, but reports drenching night sweats and weight loss.", "opts": [["An infected branchial cleft cyst", "An infected congenital cyst is tender and erythematous with systemic features of infection, at a site the patient often recalls having had a lump before."], ["Lipoma", "Lipomas are soft, mobile and grow imperceptibly over years, producing no systemic symptoms. Three weeks of rapid growth is out of character."], ["Lymphoma", "Correct. Rapid growth is usually infectious when other infective symptoms accompany it, and lymphoma when they do not. Here the tempo comes with constitutional B symptoms instead, and lymphoma is also the named exception to the rule that masses under 40 are inflammatory."], ["Reactive viral lymphadenopathy", "Reactive nodes follow an upper respiratory infection, regress within one to two weeks, and are not accompanied by night sweats and weight loss."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 13"}, {"topic": "Follicular carcinoma", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 57-year-old woman with a thyroid carcinoma is found to have a solitary lesion in the femur.", "opts": [["Anaplastic carcinoma", "Anaplastic carcinoma presents as a rapidly enlarging hard neck mass in an elderly patient with death in 6 to 36 months, not as a solitary bone lesion in a woman of 57."], ["Medullary carcinoma", "Medullary carcinoma is the most likely of the four to metastasise and can be found that way, so it deserves consideration, but it arises from C cells and usually carries an evident familial association."], ["Follicular carcinoma", "Correct. Route of spread is what separates follicular from papillary disease. Follicular carcinoma disseminates haematogenously to bone and lung, whereas papillary tends to involve local cervical nodes. A distant bony metastasis therefore points to the follicular type, and the Hurthle cell variant is more aggressive still."], ["Papillary carcinoma", "Papillary carcinoma is commonest with the best prognosis and spreads to local lymph nodes. A femoral deposit would be atypical for it."]], "c": 2, "cite": "CMS I Neoplasms and Neck Masses, Slide 42"}, {"topic": "Neck abscess", "io": "Neck masses and neoplasms: the triangles and lymph nodes of the neck; and the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 5-year-old has a hot, tender, fluctuant submandibular swelling with fever after a sore throat.", "opts": [["Lymphoma", "Lymphoma is painless and firm, growing over weeks without heat, fever or fluctuance."], ["Suppurative lymphadenitis", "Correct. Suppurative adenitis is most often Staphylococcus aureus or group A beta-haemolytic streptococcus, developing in the submandibular or jugulodigastric regions with sore throat, skin lesions and upper respiratory symptoms. Empirical antibiotics come first, with aspiration or drainage if they fail."], ["Atypical mycobacterial adenitis", "Atypical mycobacterial disease is indolent, with brawny reddish-brown skin and a systemically well child. Acute fever with fluctuance and heat is a pyogenic picture."], ["Branchial cleft cyst", "An infected branchial cleft cyst is possible and would be tender and erythematous, but it sits at the anterior sternocleidomastoid border rather than submandibular, and usually there is a known lump."]], "c": 1, "cite": "CMS I Neoplasms and Neck Masses, Slide 33"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

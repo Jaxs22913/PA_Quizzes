@@ -36,6 +36,17 @@ SPECS = {
             "cms_e3l17_sets.json"),
  "l17vig": (["cms_e3l17_vig_a:QUESTIONS", "cms_e3l17_vig_b:QUESTIONS",
             "cms_e3l17_vig_c:QUESTIONS"], "cms_e3l17_vig_sets.json"),
+ # Lectures 18 and 19 are FOUR-option, unlike 15-17 -- Jaxon, 2026-09-08.
+ # NOPT is read off the pool, so nothing here needs to say so.
+ "l18io":  (["cms_e3l18_pool_a:QUESTIONS", "cms_e3l18_pool_b:QUESTIONS",
+            "cms_e3l18_pool_c:QUESTIONS"], "cms_e3l18_sets.json"),
+ "l18vig": (["cms_e3l18_vig_a:QUESTIONS", "cms_e3l18_vig_b:QUESTIONS",
+            "cms_e3l18_vig_c:QUESTIONS",
+            "cms_e3l18_vig_d:QUESTIONS"], "cms_e3l18_vig_sets.json"),
+ "l19io":  (["cms_e3l19_pool_a:QUESTIONS", "cms_e3l19_pool_b:QUESTIONS",
+            "cms_e3l19_pool_c:QUESTIONS"], "cms_e3l19_sets.json"),
+ "l19vig": (["cms_e3l19_vig_a:QUESTIONS", "cms_e3l19_vig_b:QUESTIONS",
+            "cms_e3l19_vig_c:QUESTIONS"], "cms_e3l19_vig_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))
@@ -72,7 +83,15 @@ for spec in mods:
         POOL.append(q)
 
 random.seed(20260903)
-PER_SET, NOPT = 30, 5
+PER_SET = 30
+# Derived from the pool rather than fixed at five. Lectures 15-17 are
+# five-option; Lectures 18 and 19 are four, because Jaxon asked for four on
+# 2026-09-08. A hardcoded 5 would have rejected the new pools as malformed
+# rather than adapting, so the count is read off the questions and then
+# enforced for consistency within the set.
+NOPT = len(POOL[0]["opts"]) if POOL else 5
+assert all(len(q["opts"]) == NOPT for q in POOL), \
+    "the pool mixes option counts: %s" % sorted({len(q["opts"]) for q in POOL})
 # taken verbatim from check_exam_standard.py: a stem "names a patient" only if
 # it carries an explicit age. Scoring against a looser proxy (counting the word
 # "patient") optimised for the wrong thing and shipped a set at 67%.
@@ -132,7 +151,8 @@ def rotate(qs):
 def validate(pool):
     bad = []
     for i, q in enumerate(pool):
-        if len(q["opts"]) != NOPT: bad.append((i, "not five options"))
+        if len(q["opts"]) != NOPT:
+            bad.append((i, "has %d options, set uses %d" % (len(q["opts"]), NOPT)))
         if not (0 <= q["c"] < NOPT): bad.append((i, "answer index out of range"))
         if not q.get("cite"): bad.append((i, "missing citation"))
         if len(set(o[0] for o in q["opts"])) != NOPT: bad.append((i, "duplicate option"))
@@ -171,7 +191,8 @@ if __name__ == "__main__":
         L = [len(o[0]) for q in s for o in q["opts"]]
         pos = Counter(q["c"] for q in s)
         print("%s  n=%d" % (name, len(s)))
-        print("   positions A-E: %s" % "/".join(str(pos.get(i, 0)) for i in range(NOPT)))
+        print("   positions A-%s: %s" % ("ABCDE"[NOPT - 1],
+              "/".join(str(pos.get(i, 0)) for i in range(NOPT))))
         print("   patient stems %d%%   pure diagnosis %d%%   gameable %d%%"
               % (100 * sum(map(is_patient, s)) // len(s),
                  100 * sum(map(is_pure_diagnosis, s)) // len(s), gameable_pct(s)))
