@@ -196,6 +196,86 @@
      The title is lighter than .guide-group-title on purpose: it is a divider
      within a class, not another class. */
   .guide-subgroup + .guide-subgroup { margin-top: 22px; }
+
+  /* ---- Finished exams fan into a stack -------------------------------
+     Jaxon, 2026-09-09: once an exam is behind us its cards should not keep
+     eating a full grid row. They collapse into a spread deck -- the FIRST
+     card fully visible, the rest fanned to the right behind it, each showing
+     a spine you can still read.
+
+     The spine text comes from a data attribute the script fills in, so no
+     card markup had to change: 90-odd cards are hand-written in this file and
+     editing each one to add a spine element would have been the actual cost
+     of this feature.
+
+     Everything is driven by --peek so the fan can widen on hover without
+     re-laying anything out. */
+  .guide-subgroup[data-stack] .guide-grid {
+    display: flex; gap: 0; align-items: stretch;
+    --card-w: 268px; --peek: 52px;
+    padding: 2px 2px 6px;
+  }
+  .guide-subgroup[data-stack] .guide-grid:hover { --peek: 116px; }
+  .guide-subgroup[data-stack] .guide-card {
+    flex: 0 0 var(--card-w);
+    margin-left: calc(var(--peek) - var(--card-w));
+    position: relative; z-index: var(--z, 1);
+    transition: margin-left var(--dur-2, 240ms) ease, transform var(--dur-1, 160ms) ease,
+                box-shadow var(--dur-1, 160ms) ease;
+  }
+  .guide-subgroup[data-stack] .guide-card:first-child { margin-left: 0; }
+  .guide-subgroup[data-stack] .guide-card:hover { z-index: 999; transform: translateY(-4px); }
+  /* The spine: sits on the card's own right edge, which is the strip that
+     stays visible once the next card overlaps it. */
+  .guide-subgroup[data-stack] .guide-card::after {
+    content: attr(data-spine);
+    position: absolute; top: -1px; right: -1px; bottom: -1px; width: var(--peek);
+    display: flex; align-items: center; justify-content: flex-start;
+    /* 'sideways' rotates the whole run uniformly. 'mixed' keeps punctuation
+       upright, which turned the apostrophe in "Dr. Wood's" into a stray
+       floating mark between two rotated words. */
+    writing-mode: vertical-rl; text-orientation: sideways;
+    padding: 12px 0;
+    font: 700 11.5px/1 var(--font-sans, ui-sans-serif);
+    letter-spacing: .02em; color: var(--muted);
+    background: var(--card); border-left: 1px solid var(--border);
+    border-radius: 0 13px 13px 0;
+    transition: opacity var(--dur-1, 160ms) ease;
+    overflow: hidden;
+  }
+  /* The front card and whatever you are pointing at show themselves, not a spine. */
+  .guide-subgroup[data-stack] .guide-card:first-child::after,
+  .guide-subgroup[data-stack] .guide-card:hover::after { opacity: 0; pointer-events: none; }
+  .guide-subgroup[data-stack] .guide-card:last-child::after { border-radius: 0 13px 13px 0; }
+
+  /* Spread back out to the ordinary grid. */
+  .guide-subgroup[data-stack][data-spread] .guide-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
+  }
+  .guide-subgroup[data-stack][data-spread] .guide-card { margin-left: 0; flex: initial; }
+  .guide-subgroup[data-stack][data-spread] .guide-card::after { display: none; }
+
+  /* A fan of one is just a card. */
+  .guide-subgroup[data-stack].stack-single .guide-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
+  }
+  .guide-subgroup[data-stack].stack-single .guide-card { margin-left: 0; flex: initial; }
+  .guide-subgroup[data-stack].stack-single .guide-card::after { display: none; }
+  .guide-subgroup[data-stack].stack-single .sg-toggle { display: none; }
+
+  .sg-toggle {
+    margin-left: 8px; font: 600 11px/1 var(--font-sans, ui-sans-serif);
+    letter-spacing: .03em; text-transform: uppercase;
+    color: var(--muted); background: none; border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px 10px; cursor: pointer;
+  }
+  .sg-toggle:hover { color: var(--ink); border-color: var(--a-blue); }
+
+  /* No hover on touch, so the fan is opened by the button instead. */
+  @media (hover: none) {
+    .guide-subgroup[data-stack] .guide-grid { --peek: 64px; }
+  }
+
   .guide-subgroup-title {
     display: flex; align-items: center; gap: 10px;
     font-size: 12px; font-weight: 600; letter-spacing: .04em;
@@ -419,7 +499,7 @@
 
   <div class="guide-group" id="group-cms-1">
     <p class="guide-group-title">Clinical Medicine and Surgery I</p>
-          <div class="guide-subgroup">
+          <div class="guide-subgroup" data-stack="1">
         <p class="guide-subgroup-title">Exam 1 &middot; Dermatology <span class="sg-count">4</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-exam-1-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-chart-images/l6_s024_2.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -440,7 +520,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-stack="1">
         <p class="guide-subgroup-title">Exam 2 &middot; Ophthalmology <span class="sg-count">4</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-exam-2-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-chart-images/l12-s028_1.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -496,7 +576,7 @@
 
   <div class="guide-group" id="group-pharm-1">
     <p class="guide-group-title">Pharmacology I</p>
-          <div class="guide-subgroup">
+          <div class="guide-subgroup" data-stack="1">
         <p class="guide-subgroup-title">Exam 1 &middot; Start here <span class="sg-count">2</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide.html"><span class="gc-thumb"><img src="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide-images/005.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -509,7 +589,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-stack="1">
         <p class="guide-subgroup-title">Exam 1 &middot; What the drug does to the patient <span class="sg-count">3</span></p>
         <div class="guide-grid">
           <a class="guide-card ref" href="Pharmacology%20I%20Exam%201/pharm-exam-1-indications.html">
@@ -529,7 +609,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-stack="1">
         <p class="guide-subgroup-title">Exam 1 &middot; Charts to memorise <span class="sg-count">4</span></p>
         <div class="guide-grid">
           <a class="guide-card ref" href="Pharmacology%20I%20Exam%201/pharm-exam-1-receptor-chart.html">
@@ -554,7 +634,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-stack="1">
         <p class="guide-subgroup-title">Exam 1 &middot; Straight from Dr. Wood <span class="sg-count">2</span></p>
         <div class="guide-grid">
           <a class="guide-card ref" href="Pharmacology%20I%20Exam%201/pharm-exam-1-what-to-star.html">
@@ -885,6 +965,58 @@
       empty, groups[groups.length - 1].nextSibling);
   }
 
+
+  // ---- Finished-exam card fan ------------------------------------------
+  // Stacking order and spine text are set here rather than in the markup:
+  // the cards are hand-written and the visible set changes with the filters,
+  // so both have to be recomputed whenever apply() runs. A card hidden by a
+  // filter must not leave a gap in the fan or hold a z-index above its
+  // visible neighbours.
+  function spineLabel(card) {
+    var t = card.querySelector(".guide-card-title");
+    var txt = t ? t.textContent.trim() : "";
+    // Drop the class-and-exam prefix; inside "Exam 1 - Dermatology" every card
+    // starts with it and the useful half is what follows.
+    txt = txt.replace(/^.*?Exam\s*\d+\s*[-\u2013\u2014:.]?\s*/i, "");
+    txt = txt.replace(/\s+/g, " ").trim();
+    if (!txt) txt = (card.querySelector(".guide-badge, .cram-badge, .ref-badge") || {}).textContent || "Guide";
+    return txt.length > 30 ? txt.slice(0, 29).trim() + "\u2026" : txt;
+  }
+
+  function restack() {
+    document.querySelectorAll('.guide-subgroup[data-stack]').forEach(function (sg) {
+      var live = Array.prototype.filter.call(
+        sg.querySelectorAll(".guide-card"), function (c) { return c.style.display !== "none"; });
+      live.forEach(function (c, i) {
+        // First card on top, the rest descending, so the fan reads left to right.
+        c.style.setProperty("--z", String(live.length - i));
+        if (!c.dataset.spine) c.dataset.spine = spineLabel(c);
+        // :first-child is the wrong hook once a filter hides the original
+        // first card, so the front card is marked explicitly.
+        c.style.marginLeft = i === 0 ? "0" : "";
+      });
+      var btn = sg.querySelector(".sg-toggle");
+      if (btn) btn.textContent = sg.hasAttribute("data-spread")
+        ? "Stack" : "Spread out \u00b7 " + live.length;
+      // One card left after filtering: a fan of one is just a card.
+      sg.classList.toggle("stack-single", live.length < 2);
+    });
+  }
+
+  document.querySelectorAll('.guide-subgroup[data-stack]').forEach(function (sg) {
+    var title = sg.querySelector(".guide-subgroup-title");
+    if (!title || title.querySelector(".sg-toggle")) return;
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "sg-toggle";
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (sg.hasAttribute("data-spread")) sg.removeAttribute("data-spread");
+      else sg.setAttribute("data-spread", "1");
+      restack();
+    });
+    title.appendChild(btn);
+  });
+
   function apply() {
     var shown = 0;
     cards.forEach(function (c) {
@@ -906,6 +1038,8 @@
       var badge = sg.querySelector(".sg-count");
       if (badge) badge.textContent = n;
     });
+
+    restack();
 
     groups.forEach(function (g) {
       var live = Array.prototype.some.call(g.querySelectorAll(".guide-card"), function (c) {
