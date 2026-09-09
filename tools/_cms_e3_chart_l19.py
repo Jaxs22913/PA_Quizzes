@@ -381,11 +381,29 @@ ROWS_L19 = [
   "asymptomatic under 10 years. <b>Triad of fever, tonsillar pharyngitis with or without exudate, "
   "and cervical lymphadenopathy.</b> Also palatal petechiae, hepatomegaly, <b>splenomegaly</b>, and "
   "a maculopapular rash in 5%.",
+  # SLIDE 84 IS WRONG AND WE ARE DELIBERATELY NOT COPYING IT. It reads "can be
+  # falsely POSITIVE if early in the illness (first week)". Heterophile
+  # antibodies take about a week to appear, so an early test is falsely
+  # NEGATIVE -- and the slide contradicts itself twice proving it: the line
+  # above says "if positive, no need for further testing" (which cannot hold
+  # if positives were unreliable), and the serology line below says serology
+  # is for a "negative heterophile antibody test (& highly suspicious of
+  # mono)", which IS the false-negative pathway. Jaxon spotted it 2026-09-09
+  # and SHAH CORRECTED IT IN CLASS the same morning. Do not "verify" that
+  # against the recordings and conclude otherwise: the word "false" appears
+  # nowhere in Notability's transcript of this lecture, but that transcript
+  # also renders Centor as "center" and ENT as "MNT" in the same stretch, and
+  # the capture ends at 10:02 with its last segment a zero-byte error blob.
+  # Someone who was in the room outranks all of that.
   "Clinical plus confirmation. <b>Monospot / heterophile antibody test</b> is very sensitive and "
   "specific &mdash; positive means no further testing, but it can be <b>falsely negative in the "
-  "first week</b>. Serology: <b>IgG means past infection, IgM means current</b>; useful under 4 "
-  "years, with a negative heterophile test, or with atypical symptoms. Polymerase chain reaction "
-  "detects viral DNA.",
+  "first week</b>, because heterophile antibodies take about a week to develop. "
+  "<b>Slide 84 says &ldquo;falsely positive&rdquo;, which is an error, and Prof. Shah corrected "
+  "it in class on 9 September</b> &mdash; the same slide then sends you to serology for a "
+  "<i>negative</i> heterophile test in suspected mono, which is the false-negative pathway. "
+  "Serology: <b>IgG means past infection, IgM means "
+  "current</b>; useful under 4 years, with a negative heterophile test, or with atypical "
+  "symptoms. Polymerase chain reaction detects viral DNA.",
   "Supportive &mdash; there is no antiviral therapy. Corticosteroids for severe respiratory "
   "compromise. <b>Avoid heavy lifting and contact sports for about a month, until the splenomegaly "
   "has resolved</b>, to prevent splenic rupture.",
