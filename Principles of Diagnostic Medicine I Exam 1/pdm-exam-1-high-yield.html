@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDM Exam 1 &mdash; Most Likely Tested</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#8c1d12;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Principles of Diagnostic Medicine I &middot; Exam 1 &middot; Class of 2028</div>
+    <h1>Most Likely Tested</h1>
+    <p class="sub">Six lectures ranked by how likely each fact is to be asked, with what to stop studying at the top. Built from the 56 syllabus objectives, the six lecture recordings, and what each lecturer said out loud about their own exam.</p>
+    <div class="toc">
+      <a href="#cut" style="color:#6d170e"><span class="dot" style="background:#8c1d12"></span>Cut this first</a>
+      <a href="#l1" style="color:#185748"><span class="dot" style="background:#1f6f5c"></span>L1 &middot; Lab Diagnostics</a>
+      <a href="#l2" style="color:#5f3a7a"><span class="dot" style="background:#7a4a9c"></span>L2 &middot; Medical Imaging</a>
+      <a href="#l3" style="color:#834325"><span class="dot" style="background:#a8562f"></span>L3 &middot; Derm, ENT &amp; Ophtho Testing</a>
+      <a href="#l4" style="color:#892525"><span class="dot" style="background:#b03030"></span>L4 &middot; Complete Blood Count &amp; Hematology</a>
+      <a href="#l5" style="color:#15394f"><span class="dot" style="background:#1b4965"></span>L5 &middot; Chemistry Panels</a>
+      <a href="#l6" style="color:#6c5b1e"><span class="dot" style="background:#8a7526"></span>L6 &middot; Urinalysis</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this page is RANKED, and it leaves things out on purpose. Start at <b>Cut this first</b> — everything there was ruled out by a lecturer in as many words, so it is time you get back. Then work down each lecture from NEAR-CERTAIN. It is an argument about what matters most, with the evidence for every call in the last column, not a complete account — for that, see the <a href="pdm-exam-1-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  
+<div class="keybox">
+  <h3>How to read the Odds column</h3>
+  <p><span class="tier t1">NEAR-CERTAIN</span> Two or three kinds of evidence agree, usually
+     including something the lecturer said out loud. If you are short on time, this is the exam.</p>
+  <p><span class="tier t2">LIKELY</span> Answers a numbered objective and the lecture spent real
+     time on it.</p>
+  <p><span class="tier t3">POSSIBLE</span> Objective-backed but lightly taught. Know it exists;
+     do not sink an evening into it.</p>
+  <h3 style="margin-top:14px">And the evidence tags</h3>
+  <p><span class="ev e-said">SAID</span> the lecturer flagged it aloud &mdash; quoted, with a
+     timestamp, from the recordings.</p>
+  <p><span class="ev e-time">TIME</span> measured by how often the term appears across the
+     lecture transcripts. Potassium is said 112 times in Lecture 5; contrast 60 times in Lecture 2.</p>
+  <p><span class="ev e-io">IO</span> it answers a numbered syllabus Instructional Objective.
+     Necessary for anything to be here at all.</p>
+</div>
+<section class="topic" id="cut" style="--acc:#8c1d12;--acc-bg:#efdfde;--acc-zebra:#f7efee;--acc-ink:#6d170e">
+    <div class="shead"><span class="dot" style="background:#8c1d12"></span><h2>Cut this first</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="3">SAID OUT LOUD IN LECTURE — these are not coming</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Animal hearing ranges.</b> The figure with killer whales, dogs and bats.</td><td><span class="ev e-said">SAID</span> Lecture 3 at 1:00:43: &ldquo;I&rsquo;m not going to ask you to be like, what is the range of the killer whale&hellip; I&rsquo;m not gonna ask you about that.&rdquo;</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Keeping a patient on the same magnetic resonance machine strength</b> so serial scans stay comparable &mdash; the multiple sclerosis follow-up example.</td><td><span class="ev e-said">SAID</span> Lecture 2 at 1:02:11: &ldquo;don&rsquo;t stress about this. This is not gonna be on the test. This is just like a life thing.&rdquo;</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Memorising normal reference ranges.</b> Any of them.</td><td><span class="ev e-said">SAID</span> Lecture 5 at 36:14: &ldquo;there&rsquo;s not anything I need you to memorize number wise&hellip; you don&rsquo;t have to memorize the normal ranges.&rdquo; Ranges are supplied on the exam. Learn DIRECTION and rough magnitude &mdash; sodium about 140, potassium single digits &mdash; so an absurd value looks absurd.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Calculating a glomerular filtration rate.</b></td><td><span class="ev e-said">SAID</span> Lecture 5: &ldquo;I don&rsquo;t need you to calculate that or know that just yet, but know OF it.&rdquo; Know what it means and that cystatin C measures it better; do not learn a formula.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Predictive-value arithmetic.</b> No two-by-two tables to fill in.</td><td><span class="ev e-said">SAID</span> Lecture 1: &ldquo;We&rsquo;re not gonna do math, I&rsquo;m not gonna make you do math.&rdquo; You still need the DIRECTION prevalence pushes positive predictive value &mdash; that part is very much testable.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Cystatin C in any detail.</b></td><td><span class="ev e-said">SAID</span> Lecture 5 at 1:31:30: &ldquo;we&rsquo;ll talk about cystatin C in the future.&rdquo; Deferred to a later exam.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>The genetics of each anemia beyond genetic vs non-genetic.</b></td><td><span class="ev e-said">SAID</span> Lecture 4, twice: &ldquo;for now, I&rsquo;m happy if you understand genetic versus non-genetic; the rest will come later.&rdquo;</td></tr>
+          <tr><td class="grp" colspan="3">NOT ASKED FOR BY ANY OBJECTIVE — low return on your time</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Hounsfield numbers as a memorised list</b> (air &minus;1000, fat &minus;40, and so on).</td><td><span class="ev e-io">IO</span> The objective asks you to <i>compare and contrast radiographic density and contrast</i>. Know the five-density ladder and that water is 0 by convention; the rest of the table is on an image slide and no objective asks you to recall it.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Exact organ radiation doses in milliSieverts.</b></td><td><span class="ev e-io">IO</span> The objective is <i>compare and contrast the risks and benefits associated with radiation exposure</i>. Relative ranking is the point &mdash; and that neonatal abdominal computed tomography is about twice the adult dose.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>White cell lifespans</b> (neutrophil 7 hours, eosinophil 8&ndash;12 days&hellip;).</td><td><span class="ev e-io">IO</span> Image-only slide, no objective. Contrast with the percentages and the absolute count, which are objective-backed and near-certain.</td></tr>
+          <tr><td class="h">&mdash;</td><td><b>Accreditation bodies as an org chart.</b></td><td><span class="ev e-io">IO</span> One objective mentions <i>accreditation and regulatory considerations</i>. Who does what in one line is enough: CMS certifies and enforces, FDA categorises, CDC sets standards. The load-bearing fact is that regulation only ever gets STRICTER.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l1" style="--acc:#1f6f5c;--acc-bg:#e0ebe8;--acc-zebra:#eff5f4;--acc-ink:#185748">
+    <div class="shead"><span class="dot" style="background:#1f6f5c"></span><h2>L1 &middot; Lab Diagnostics</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>SnNout / SpPin.</b> High SENSITIVITY + Negative rules OUT (good at detecting, best for SCREENING). High SPECIFICITY + Positive rules IN (good at confirming).</td><td><span class="ev e-time">TIME</span> Sensitivity said 14&times;, specificity 10&times;, and it carries its own objective. The single most reusable idea in the lecture.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Sensitivity and specificity belong to the TEST. Positive and negative predictive value belong to the POPULATION.</b> Same test, different prevalence, different predictive value.</td><td><span class="ev e-time">TIME</span> Positive predictive value said 14&times;. The frostbite worked example &mdash; 95% sensitivity in Michigan gives a positive predictive value near 68%, in Florida near 2% &mdash; exists only to make this point.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>The named trap.</b> &ldquo;My patient&rsquo;s test is positive &mdash; do they have it?&rdquo; feels like sensitivity. It is POSITIVE PREDICTIVE VALUE.</td><td><span class="ev e-said">SAID</span> Called out as a trap in the lecture and written into the deck as one.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Most errors are PRETEST.</b> Communication, medication administration, labelling.</td><td><span class="ev e-io">IO</span> Two objectives cover the phases and their components; this is the fact they converge on.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Get cultures BEFORE antibiotics</b> &mdash; blood, sputum and throat alike.</td><td><span class="ev e-time">TIME</span> Culture is said 33&times;, the most of any term in the lecture. One rule spanning three objectives.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The four tube pairings.</b> Light blue = coagulation. Lavender = complete blood count. Yellow = blood cultures. Gray = glucose. The order exists to stop additive carryover.</td><td><span class="ev e-io">IO</span> &ldquo;Identify which colored laboratory collection tubes correspond to common laboratory tests&rdquo; &mdash; an objective that names the task exactly.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Screening vs diagnostic.</b> SCREENING: asymptomatic, cheap, says whether more testing is needed. DIAGNOSTIC: symptomatic, may be invasive, aims to name the disease.</td><td><span class="ev e-io">IO</span> Its own objective, plus 11 mentions.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Pre-test vs post-test probability.</b> Pre-test comes from signs, symptoms, history, risk and how common the thing is; the result moves you to post-test.</td><td><span class="ev e-io">IO</span> Its own objective; 11 mentions across the two terms.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Point-of-care testing</b> &mdash; testing outside the central lab, at or near the patient. Know the primary-care menu against the acute-care menu, and that it trades precision for speed.</td><td><span class="ev e-time">TIME</span> 21 mentions and FOUR separate objectives, but it is mostly list-recall, which is why it sits here rather than above.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Qualitative / semi-quantitative / quantitative.</b> Rapid strep and pregnancy are qualitative; the urinalysis dipstick is SEMI-quantitative (trace, 1+, 2+); a lab value is quantitative.</td><td><span class="ev e-io">IO</span> Its own objective, and the semi-quantitative middle term is the one people drop.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>CLIA is a MINIMUM and cannot be downgraded</b> &mdash; state and city rules are always stricter. CMS certifies and enforces, FDA categorises by complexity, CDC sets standards.</td><td><span class="ev e-io">IO</span> Objective-backed but thinly taught &mdash; quality assurance is mentioned once. Know the one-way direction of regulation and move on.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Ova and parasites: do NOT refrigerate, THREE separate specimens.</b> Guaiac: heme oxidises the reagent, BLUE = POSITIVE, use a small sample.</td><td><span class="ev e-io">IO</span> Under the stool-studies objective, but a small share of lecture time.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l2" style="--acc:#7a4a9c;--acc-bg:#ece6f1;--acc-zebra:#f6f2f8;--acc-ink:#5f3a7a">
+    <div class="shead"><span class="dot" style="background:#7a4a9c"></span><h2>L2 &middot; Medical Imaging</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Iodinated contrast is NEPHROTOXIC.</b> Check blood urea nitrogen and creatinine, give one litre of normal saline. GADOLINIUM is a CLEARANCE problem instead &mdash; poor function lets it build up in tissue.</td><td><span class="ev e-said">SAID</span> Contrast is said 60&times;, more than any term in any lecture, and Lecture 5 adds &ldquo;you still need to know before you give that person contrast &mdash; you will order these two labs&hellip; ALWAYS. We don&rsquo;t say always very often in medicine.&rdquo;</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Shellfish allergy is NOT an iodine allergy.</b> No cross-reactivity. A genuine iodine allergy is a real concern; a prior contrast reaction is the actual high-risk history.</td><td><span class="ev e-said">SAID</span> Made explicitly in lecture and flagged in the deck. A classic single-best-answer trap.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>T1 vs T2.</b> T2: water is WHITE (oedema, infection, cerebrospinal fluid). T1: water is DARK. Check yourself on the ventricles &mdash; bright cerebrospinal fluid means T2.</td><td><span class="ev e-time">TIME</span> The deck itself labels this &ldquo;the always-asked one&rdquo;, and 27 mentions of Tesla and weighting back it up.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Free air under the diaphragm = perforated bowel.</b> Unless there has been recent laparoscopic surgery with insufflation.</td><td><span class="ev e-said">SAID</span> Lecture 2 at 1:22:50, her own word: &ldquo;there&rsquo;s your like buzzword phrase.&rdquo; Preceded at 1:22:11 by &ldquo;this is important.&rdquo;</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Know the VIEW before you read the film.</b> Posterior-anterior reduces magnification of the heart; an anterior-posterior film makes the heart look big. Projections are named for what the BEAM strikes first.</td><td><span class="ev e-said">SAID</span> Lecture 2 at 1:14:06: &ldquo;you need to know what the view is&hellip; so that you can decide, is this actually cardiomegaly or not?&rdquo; View said 30&times;.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>The five densities, whitest to blackest: METAL, CALCIUM, FLUID/SOFT TISSUE, FAT, AIR.</b> Fluid and soft tissue are the SAME density on a plain film &mdash; which is why computed tomography, which expands the grey scale, exists.</td><td><span class="ev e-io">IO</span> Directly under the density-and-contrast objective, and the foundation for reading anything.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Barium is CONTRAINDICATED if perforation is suspected</b> &mdash; use Gastrografin. Barium in the peritoneum is toxic.</td><td><span class="ev e-io">IO</span> Under contraindications and safety. A clean vignette answer.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Highest radiation emitters: computed tomography, positron emission tomography, SPECT.</b> Ultrasound and magnetic resonance use none. Neonatal abdominal computed tomography is about TWICE the adult organ dose.</td><td><span class="ev e-time">TIME</span> Radiation said 36&times;; the deck marks the emitter ranking IMPORTANT.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Position drives the question.</b> DECUBITUS levels out a PLEURAL EFFUSION (and you choose the side by which way you want fluid to run). KUB is supine for the genitourinary tract.</td><td><span class="ev e-io">IO</span> The patient-positioning objective; taught with worked reasoning rather than as a list.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Ultrasound indicator side.</b> Cardiac imaging: indicator on the RIGHT of the screen. Every other ultrasound: on the LEFT.</td><td><span class="ev e-said">SAID</span> Called &ldquo;crucial&rdquo; in the deck; getting it wrong mirrors left and right.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Reason from the TISSUE, not a memorised protocol.</b> Bone &rarr; x-ray or computed tomography. Soft tissue &rarr; often ultrasound first. Nerves, cord, marrow &rarr; magnetic resonance.</td><td><span class="ev e-said">SAID</span> Her stated method for choosing when you are unsure, and it answers the &ldquo;anatomical structures best visualized by each modality&rdquo; objective.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Modality mechanics.</b> Positron emission tomography uses fluorodeoxyglucose-18 for cancer staging; SPECT uses technetium-99 and follows blood flow. Angiography is not one test &mdash; any modality can image vessels.</td><td><span class="ev e-io">IO</span> Objective-backed, but the clinical application matters more than the physics.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>The radiology relationship.</b> They have not seen your patient; a vague report is a conversation. Four regions of spine is FOUR orders, not one.</td><td><span class="ev e-io">IO</span> Has its own objective, which is why it is here at all, but it is one slide.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l3" style="--acc:#a8562f;--acc-bg:#f3e7e2;--acc-zebra:#f9f3f0;--acc-ink:#834325">
+    <div class="shead"><span class="dot" style="background:#a8562f"></span><h2>L3 &middot; Derm, ENT &amp; Ophtho Testing</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>THE MELANOMA RULE.</b> NARROW EXCISIONAL biopsy, 1&ndash;3 <i>millimetre</i> margins, to a depth that does NOT transect the base &mdash; so Breslow depth can be measured. A partial shave is allowed only when suspicion is LOW and may underestimate depth.</td><td><span class="ev e-said">SAID</span> Said three separate times in the lecture. Do not confuse the 1&ndash;3 mm DIAGNOSTIC margin with the 0.5&ndash;2 cm definitive re-excision margin &mdash; that swap is the obvious distractor.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>The necrotising fasciitis red flag.</b> HYPOTENSION + white cell count &ge;15,000 + VIOLACEOUS skin &rarr; must be screened for necrotising fasciitis.</td><td><span class="ev e-said">SAID</span> Bolded in the deck AND said aloud. Three findings, one answer &mdash; exactly the shape of a vignette stem.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Potassium hydroxide readings.</b> BRANCHING SEPTATE HYPHAE = DERMATOPHYTE. PSEUDOHYPHAE + BUDDING YEAST = CANDIDA. Negative = no fungal elements.</td><td><span class="ev e-io">IO</span> &ldquo;Interpret potassium hydroxide (KOH) preparations&rdquo; is an objective that says <i>interpret</i> &mdash; it is asking for this table.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Tympanogram types, and the flat-trace split.</b> A = normal. B = restricted mobility. C = significant negative pressure. FLAT + HIGH canal volume &rarr; PERFORATION or patent tube. FLAT + NORMAL volume &rarr; MIDDLE-EAR EFFUSION.</td><td><span class="ev e-io">IO</span> Tympanometry has its own objective, and the volume split is the one number that changes the answer.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Rapid strep sensitivity is only 70&ndash;90%.</b> A NEGATIVE test IN A CHILD should be confirmed by CULTURE; not routinely required in adults. Culture is the gold standard.</td><td><span class="ev e-time">TIME</span> Strep said 20&times;, culture 22&times;. The child-versus-adult split is the testable half.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Fluorescein patterns.</b> LINEAR &rarr; abrasion. BRANCHING or DENDRITIC &rarr; HERPETIC keratitis. Cobalt-blue light, after topical anaesthetic.</td><td><span class="ev e-time">TIME</span> Fluorescein said 10&times; and it is named in the objective. Dendritic is the pattern that changes management.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Always choose the LEAST INVASIVE test that answers the question.</b> The four factors: cost, availability, invasiveness, diagnostic yield.</td><td><span class="ev e-said">SAID</span> The lecture&rsquo;s closing rule, and the final objective is literally &ldquo;apply diagnostic test selection principles&rdquo; &mdash; so it is the exam&rsquo;s own framing.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Which test for which question.</b> Infection &rarr; potassium hydroxide or culture. Neoplasm or persistent rash &rarr; biopsy. Abscess vs cellulitis &rarr; point-of-care ultrasound.</td><td><span class="ev e-io">IO</span> Covers three objectives at once; biopsy said 20&times;.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Biopsy techniques.</b> SHAVE for raised epidermal lesions and basal or squamous cell carcinoma. PUNCH for full-thickness. EXCISIONAL when you need the whole lesion.</td><td><span class="ev e-io">IO</span> &ldquo;Discuss indications for skin biopsy and common biopsy techniques.&rdquo;</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Tonometry: normal pressure 10&ndash;21 mm Hg, and acute angle-closure glaucoma is an EMERGENCY.</b> Cup-to-disc normally about 0.3; glaucomatous above 0.7 and EXCAVATED, not merely pale.</td><td><span class="ev e-io">IO</span> Named in the objective. Note tonometry is said only once in lecture &mdash; the deck carries it, so learn the numbers and the emergency.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Visual acuity and the pinhole.</b> Test every eye complaint, best-corrected. Pinhole CORRECTS &rarr; refractive error. Does NOT correct &rarr; something else.</td><td><span class="ev e-io">IO</span> First named ophthalmic test in the objective; 8 mentions.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Computed tomography for BONE, TRAUMA and SPEED. Magnetic resonance for SOFT TISSUE, NERVES and intracranial or orbital extension.</b> No imaging at all for uncomplicated rhinosinusitis, otitis or simple soft-tissue infection.</td><td><span class="ev e-io">IO</span> Two objectives &mdash; comparing the modalities in head and neck, and selecting studies. The &ldquo;no imaging needed&rdquo; list is the half people forget.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Visual field patterns.</b> Central scotoma &rarr; macula or optic nerve. Peripheral loss &rarr; glaucoma. Bitemporal hemianopia &rarr; chiasmal.</td><td><span class="ev e-io">IO</span> Objective-backed, 5 mentions. Worth a read, not an evening.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>The Levine method for wound culture.</b> Clean with sterile saline, NOT antimicrobial; rotate over 1 cm&sup2; of CLEAN tissue with enough pressure to express fluid.</td><td><span class="ev e-io">IO</span> Under the wound-culture objective, but procedural detail; a single fact at most.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l4" style="--acc:#b03030;--acc-bg:#f4e2e2;--acc-zebra:#f9f1f1;--acc-ink:#892525">
+    <div class="shead"><span class="dot" style="background:#b03030"></span><h2>L4 &middot; Complete Blood Count &amp; Hematology</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>ABSOLUTE NEUTROPHIL COUNT = white cell count &times; (%neutrophils + %BANDS) &divide; 100.</b> BANDS COUNT WITH THE NEUTROPHILS &mdash; that is the trap. Worked example: 6,000 with 40% neutrophils and 5% bands &rarr; 2,700.</td><td><span class="ev e-said">SAID</span> Lecture 4 at 15:37: apps and the record will compute it, &ldquo;HOWEVER, EVERYONE NEEDS TO KNOW HOW TO CALCULATE THAT.&rdquo; The one calculation this exam wants.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>The three MCV bands.</b> MICROCYTIC &lt;80 fL, NORMOCYTIC 80&ndash;100, MACROCYTIC &gt;100. Haemoglobin says there IS an anaemia; the mean corpuscular volume says WHICH KIND.</td><td><span class="ev e-io">IO</span> Its own objective comparing the three patterns; the whole workup hangs off it.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Iron studies, the two patterns.</b> IRON DEFICIENCY: ferritin DOWN, iron DOWN, total iron-binding capacity UP. ANAEMIA OF CHRONIC DISEASE: ferritin UP, iron DOWN, capacity DOWN.</td><td><span class="ev e-time">TIME</span> Iron said 30&times;. The reciprocal ferritin/capacity movement is the discriminator, and it is an objective on evaluating anaemia.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Iron deficiency is the MOST COMMON cause of anaemia</b> &mdash; and demands evaluation for occult blood loss, often the first sign of gastrointestinal bleeding.</td><td><span class="ev e-said">SAID</span> Flagged &ldquo;most common&rdquo; three times between 49:07 and 52:56.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Which line for which problem.</b> BACTERIAL &rarr; neutrophils. VIRAL &rarr; lymphocytes. ALLERGY or PARASITES &rarr; eosinophils.</td><td><span class="ev e-time">TIME</span> Neutrophil said 40&times;, the most in the lecture. Straight out of the clinical-significance objective.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>LEFT SHIFT.</b> Bands are immature neutrophils, normally &le;5%. Neutrophils plus bands rising means the marrow is pushing out immature cells &mdash; acute bacterial infection.</td><td><span class="ev e-io">IO</span> Under white cell significance, and it is the reason bands are in the absolute count formula above.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Haemoglobin vs haematocrit.</b> Haemoglobin is the AMOUNT in a volume; haematocrit is the PERCENTAGE of blood that is red cells. Her habit: read the haemoglobin, multiply by three, check the haematocrit lands nearby.</td><td><span class="ev e-io">IO</span> Its own objective &mdash; &ldquo;explain the difference between hemoglobin and hematocrit&rdquo; &mdash; and the &times;3 rule is a fast sanity check.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The morphology&ndash;disease pairs.</b> HOWELL-JOLLY &rarr; post-splenectomy. BASOPHILIC STIPPLING &rarr; LEAD. HEINZ BODIES &rarr; G6PD deficiency (needs a supravital stain). TARGET CELLS &rarr; post-splenectomy and liver disease. SCHISTOCYTES &rarr; fragmentation. TEARDROP &rarr; marrow infiltration.</td><td><span class="ev e-io">IO</span> Under red cell significance. Pairs like these are the easiest thing on the exam to write a question about.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The reticulocyte split in a NORMOCYTIC anaemia.</b> HIGH retics &rarr; haemolysis, sickle cell, acute haemorrhage. LOW retics with low white cells and platelets &rarr; marrow failure.</td><td><span class="ev e-io">IO</span> The reticulocyte count is step four of the stated workup; this split is what it is for.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The four indices.</b> MCV = average volume (80&ndash;100 fL, measured). MCH = haemoglobin per cell. MCHC = concentration. RDW = variation in size.</td><td><span class="ev e-io">IO</span> &ldquo;Discuss red blood cell indices&rdquo; is an objective by itself.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Neutrophils UP</b> in bacterial infection, myocardial infarction, burns, STEROIDS (by DEMARGINATION &mdash; detaching from the vessel wall, not new production), pregnancy. <b>DOWN</b> with marrow damage, and with FOLATE or B12 deficiency.</td><td><span class="ev e-time">TIME</span> Part of the 40 neutrophil mentions; demargination is the mechanism worth a sentence.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Macrocytic: megaloblastic vs not.</b> MEGALOBLASTIC &mdash; B12, folate, drugs impairing DNA synthesis &mdash; shows MACROOVALOCYTES and HYPERSEGMENTED NEUTROPHILS. Without them, think liver disease or alcohol.</td><td><span class="ev e-io">IO</span> Third arm of the three-pattern objective; the smear finding is the discriminator.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Platelets: 150,000&ndash;450,000</b> &mdash; the one range she said she has NOT seen vary between labs. From megakaryocyte fragments, lifespan 7&ndash;10 days.</td><td><span class="ev e-said">SAID</span> Explicitly the exception to &ldquo;ranges vary by lab&rdquo;. If you commit ONE number in this lecture, commit this one.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Rouleaux vs agglutination, and MCHC as a screening flag</b> for hereditary spherocytosis.</td><td><span class="ev e-io">IO</span> Genuinely taught but thinly, and neither is named in an objective.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5" style="--acc:#1b4965;--acc-bg:#dfe6e9;--acc-zebra:#eff2f4;--acc-ink:#15394f">
+    <div class="shead"><span class="dot" style="background:#1b4965"></span><h2>L5 &middot; Chemistry Panels</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>POTASSIUM is the centre of this lecture.</b> Excreted by the kidney with NO reabsorption, so it must be replaced. What SHIFTS it across the membrane: INSULIN, ACID-BASE STATUS, CATECHOLAMINES. Both high and low cause LIFE-THREATENING ARRHYTHMIAS.</td><td><span class="ev e-said">SAID</span> Said 112 times &mdash; more than twice any other term in any lecture &mdash; and at 14:59: &ldquo;I want you to pay attention to these numbers&hellip; I want your ears to perk up, be like, this is important, potassium&rsquo;s important.&rdquo;</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Potassium and pH move in OPPOSITE directions.</b> ACIDOSIS drives potassium OUT of cells (serum rises). ALKALOSIS drives it IN (serum falls). This is why the potassium in diabetic ketoacidosis misleads &mdash; serum can be HIGH while total body stores are DEPLETED.</td><td><span class="ev e-time">TIME</span> Acidosis said 28&times;, and diabetic ketoacidosis was singled out at 1:08:52 as &ldquo;why this is important&rdquo;. A reliable two-step question.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>An abnormal SODIUM is a WATER problem first.</b> Ask &ldquo;too much or too little free water&rdquo; BEFORE &ldquo;too much or too little sodium&rdquo;. Sodium is the major extracellular cation; potassium the major intracellular one.</td><td><span class="ev e-said">SAID</span> Sodium said 58&times;; at 14:16 she works through exactly why the sodium is ordered. The framing is the answer to several possible stems.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>ANION GAP = sodium &minus; (chloride + bicarbonate). Normal 8&ndash;12.</b> Raised gap means unmeasured acids &mdash; MUDPILES. Normal gap means bicarbonate LOSS from gut or kidney.</td><td><span class="ev e-said">SAID</span> &ldquo;Quick and dirty, calculate it.&rdquo; This is the one calculation she asks for in this lecture &mdash; contrast with the filtration rate, which she explicitly does not want calculated.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>BUN : CREATININE greater than 20 : 1 is PRERENAL.</b> Below that, intrinsic renal. Creatinine is more specific (muscle origin); blood urea nitrogen is raised by bleeding, steroids and protein load too.</td><td><span class="ev e-time">TIME</span> Creatinine said 30&times;. A single ratio that answers a whole vignette.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Before any contrast study, order blood urea nitrogen and creatinine BY THEMSELVES.</b></td><td><span class="ev e-said">SAID</span> At 38:11: &ldquo;you still need to know before you give that person contrast&hellip; ALWAYS. We don&rsquo;t say always very often in medicine. Always.&rdquo; It also ties Lecture 2 to Lecture 5, so it can be asked from either side.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>BASIC panel = 8 tests</b> (glucose, calcium, sodium, potassium, chloride, bicarbonate, blood urea nitrogen, creatinine). <b>COMPREHENSIVE = 14</b>, adding albumin, total protein, alkaline phosphatase, the transaminases and bilirubin. <b>Chem-7 vs chem-8 is CALCIUM.</b></td><td><span class="ev e-io">IO</span> &ldquo;Explain the components of a chemistry panel&rdquo; is objective one, and the basic-versus-comprehensive choice is how it gets asked.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Liver: INJURY vs FUNCTION.</b> AST, ALT, alkaline phosphatase and bilirubin mark INJURY. ALBUMIN, PROTHROMBIN TIME and bilirubin measure FUNCTION. ALT is more liver-specific; AST is also cardiac and skeletal muscle.</td><td><span class="ev e-time">TIME</span> Liver said 57&times;, third highest in the lecture, and it has its own objective.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Three liver shortcuts.</b> AST:ALT above 2:1 &rarr; ALCOHOL. Transaminases in the THOUSANDS &rarr; only three causes: viral, ischaemia, toxins. Alkaline phosphatase out of proportion &rarr; CHOLESTATIC; confirm hepatic origin with GGT.</td><td><span class="ev e-io">IO</span> Under the hepatic-pattern objective. Compact, high-signal, easy to write questions on.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Bicarbonate is reported as &ldquo;CO2&rdquo;.</b> LOW means metabolic acidosis &mdash; and that is your cue to calculate the anion gap. Chloride follows sodium for electrical neutrality and is reciprocal with bicarbonate.</td><td><span class="ev e-time">TIME</span> Chloride said 28&times;. The reporting-name trap is worth one sentence of memory.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The pattern trio.</b> RENAL: urea and creatinine up, filtration down, metabolic acidosis. HEPATIC: transaminases or alkaline phosphatase up, albumin down late. METABOLIC (DKA): glucose up, bicarbonate down, gap up, pH low.</td><td><span class="ev e-io">IO</span> &ldquo;Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders&rdquo; &mdash; the objective asks for exactly these three side by side.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The vomiting case.</b> Sodium, potassium and chloride all DOWN, bicarbonate UP, alkalaemia. It persists because volume, potassium and chloride depletion force the kidney to keep reabsorbing bicarbonate.</td><td><span class="ev e-io">IO</span> The worked example for the fluid-and-electrolyte objective; a ready-made vignette.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Albumin correction of the gap</b> (add about 2.5 per 1 g/dL fall) and <b>serum osmolality</b> (about 275&ndash;285) separating true from pseudo-hyponatraemia.</td><td><span class="ev e-io">IO</span> Real content under the homeostasis objective, but she does not ask for calculations &mdash; recognise the concepts.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Hepatorenal and cardiorenal syndrome</b> as names for combined failure.</td><td><span class="ev e-io">IO</span> Mentioned once. Know the words.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l6" style="--acc:#8a7526;--acc-bg:#efece1;--acc-zebra:#f7f5f0;--acc-ink:#6c5b1e">
+    <div class="shead"><span class="dot" style="background:#8a7526"></span><h2>L6 &middot; Urinalysis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Odds</th><th>What to know</th><th>Why it is ranked here</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>It is NITRITES, not nitrates.</b> Urease-producing bacteria carry a reductase that turns urinary NITRATES into NITRITES, and it needs MORE THAN FOUR HOURS in the bladder.</td><td><span class="ev e-said">SAID</span> She asked the class for this naming point TWICE. When a lecturer repeats a naming distinction, it is a question.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>E. coli causes most urinary tract infections and is RARELY urease-positive.</b> So a POSITIVE nitrite is helpful, but a NEGATIVE nitrite does NOT exclude infection. Nitrite sensitivity is only about 50%.</td><td><span class="ev e-said">SAID</span> At 18:59 she names E. coli as &ldquo;the most common microorganism&rdquo;, returns at 24:06 with &ldquo;remember which one did I say was most common?&rdquo;, and the take-home flag lands at 23:17. Three cues on one idea.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Leukocyte esterase positive = PYURIA.</b> Also raised in interstitial cystitis and glomerulonephritis, which are inflammatory rather than infective. Either pad negative with symptoms &rarr; STILL send culture and sensitivity.</td><td><span class="ev e-said">SAID</span> &ldquo;That&rsquo;s the take-home point&rdquo; at 23:17, and it is named in the parameters objective.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Blood on the pad has THREE meanings, and the pad cannot tell them apart.</b> HAEMATURIA = intact red cells. HAEMOGLOBINURIA = free haemoglobin, from intravascular haemolysis &mdash; confirm with raised UNCONJUGATED BILIRUBIN. MYOGLOBINURIA = muscle injury &mdash; confirm with raised CREATINE PHOSPHOKINASE.</td><td><span class="ev e-io">IO</span> An entire objective is &ldquo;differentiate between hematuria, hemoglobinuria and myoglobinuria&rdquo;. One of only three objectives in the lecture &mdash; and the two confirming tests are how you differentiate them.</td></tr>
+          <tr><td class="h"><span class="tier t1">NEAR-CERTAIN</span></td><td><b>Which pads should read NEGATIVE</b> &mdash; leukocyte esterase, nitrites, ketones, glucose, blood, bilirubin (protein negative or trace). <b>Specific gravity and pH ALWAYS carry a value</b> and are never simply &ldquo;negative&rdquo;.</td><td><span class="ev e-io">IO</span> The parameters objective lists the pads by name. This is the cleanest way to hold them.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Ketones mean cells are burning FATTY ACIDS.</b> Next move: CHECK THE GLUCOSE. Causes include diabetic ketoacidosis, starvation, fasting, alcohol, very low-carbohydrate diets.</td><td><span class="ev e-io">IO</span> Named in the parameters objective; the &ldquo;next move&rdquo; is the correlation the third objective asks for.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Glucose appears in urine above the TUBULAR THRESHOLD, around 180 mg/dL</b> &mdash; it is normally filtered then wholly reabsorbed proximally. It can also appear without high blood sugar: impaired reabsorption, dextrose infusions, PREGNANCY.</td><td><span class="ev e-time">TIME</span> Glucose said 19&times;. The threshold is the mechanism the question turns on.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Protein is NOT pathognomonic.</b> It narrows the field; it does not name a disease. Normal trace in pregnancy, fever and strenuous exercise. Next test is a TWENTY-FOUR HOUR collection.</td><td><span class="ev e-said">SAID</span> At 37:33: &ldquo;it&rsquo;s not pathognomonic for any one single thing.&rdquo; Protein is also the most-said term in the lecture at 22.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>The myeloma trap.</b> Reagent strips are INSENSITIVE to BENCE JONES proteins &mdash; use urine protein electrophoresis, not a dipstick.</td><td><span class="ev e-io">IO</span> Under the protein parameter; a clean single-best-answer trap.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Specific gravity.</b> LOW (dilute): overhydration, diuresis, chronic kidney disease, DIABETES INSIPIDUS. HIGH (concentrated): dehydration, reduced renal blood flow, SIADH. Radiographic CONTRAST has large particles and pushes it above 1.040.</td><td><span class="ev e-time">TIME</span> Said 11&times; and named first in the parameters objective. The contrast artefact is the memorable bit.</td></tr>
+          <tr><td class="h"><span class="tier t2">LIKELY</span></td><td><b>Reading time DIFFERS by analyte</b> &mdash; glucose 30 seconds, leukocytes 2 minutes &mdash; so a strip cannot be read all at once, and pads sit in different orders on different brands.</td><td><span class="ev e-io">IO</span> Practical detail under the parameters objective, and it makes a plausible &ldquo;what went wrong&rdquo; stem.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>pH and stones.</b> ACIDIC urine &rarr; calcium oxalate and uric acid stones. ALKALINE &rarr; triple phosphate and struvite, driven by urease-producing organisms, so treat the INFECTION. Name trap: RENAL TUBULAR ACIDOSIS gives ALKALINE urine.</td><td><span class="ev e-io">IO</span> pH is in the objective list; the stone pairings are a step beyond it. The name trap is the part worth holding.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>Colour and odour lists.</b> Yellow-brown or green &rarr; bilirubin. Fruity &rarr; ketones. Ammonia &rarr; the sample stood too long. Faecal odour &rarr; enterovesical fistula.</td><td><span class="ev e-io">IO</span> Physical characteristics are covered, but these are recall lists and the objectives emphasise the chemical pads.</td></tr>
+          <tr><td class="h"><span class="tier t3">POSSIBLE</span></td><td><b>After the strip:</b> microscopy adds white cells, red cells, squamous epithelial cells, casts and crystals. More than twenty squamous cells per field means CONTAMINATION.</td><td><span class="ev e-io">IO</span> Correlation objective, lightly taught &mdash; the contamination number is the one fact worth keeping.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Ranked, not exhaustive &mdash; this page drops material on purpose. The <a href="pdm-exam-1-study-guide.html">study guide</a> has the full treatment and the <a href="pdm-exam-1-cram-sheet.html">cram sheet</a> has everything condensed. Every quotation is from a lecture recording; recordings stay off the site.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+
+<style>
+  td .tier{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.06em;
+           padding:3px 8px;border-radius:999px;white-space:nowrap;color:#fff;}
+  .tier.t1{background:#8c1d12;} .tier.t2{background:#7a5a08;} .tier.t3{background:#4a5c24;}
+  td .ev{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.07em;
+         padding:2px 6px;border-radius:4px;margin-right:6px;vertical-align:1px;}
+  .ev.e-said{background:#8c1d12;color:#fff;}
+  .ev.e-time{background:#1b4965;color:#fff;}
+  .ev.e-io{background:#3f5c46;color:#fff;}
+  table td:first-child{text-align:center;vertical-align:middle;width:8.5em;}
+  table td:last-child{font-size:.86rem;line-height:1.5;}
+  .keybox{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:16px 0 4px;
+          background:var(--card);}
+  .keybox h3{margin:0 0 8px;font-size:.95rem;}
+  .keybox p{margin:6px 0;font-size:.86rem;line-height:1.55;}
+  .keybox .ev{margin-right:8px;}
+</style>
+</body>
+</html>
