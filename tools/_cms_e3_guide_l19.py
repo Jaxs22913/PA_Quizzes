@@ -167,12 +167,22 @@ def build():
 
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; MUST KNOW</span>
-    <p style="margin-top:2px"><em>Jaxon, 9 September: &ldquo;I must know the Centor
-    criteria.&rdquo;</em> Prof. Shah worked the whole thing through in class that morning
-    [1:22:47&ndash;1:24:23], component by component and then score by score &mdash; and she framed
-    it as the answer to the question students actually get stuck on: the rapid test is negative,
-    now what? Her answer: throat culture, and whether you treat &ldquo;depends on how sick they
-    are.&rdquo;</p>
+    <p style="margin-top:2px">Prof. Shah, [1:34:40]: <em>&ldquo;Centor criteria is something that
+    everyone most definitely needs to know. Like, <b>you absolutely need to know the Centor
+    criteria, no matter what</b>&hellip; So I don&rsquo;t know how you&rsquo;re going to know
+    that, but you need to know that. That means you need to come up with an acronym, you need to
+    come up with a song, you need to dance it out &mdash; whatever you need to do to make sure you
+    know it. <b>You&rsquo;re going to be using this all the time.</b>&rdquo;</em> She then worked
+    it through component by component and score by score [1:22:47&ndash;1:24:23], and framed it
+    around the question students get stuck on &mdash; the rapid test is negative, now what?
+    Answer: throat culture, and whether you treat &ldquo;depends on how sick they are.&rdquo;</p>
+    <p><b>The antipyretic trap on the fever point</b> [1:33:00], which is not on the slide. Fever
+    scores a point, but a normal temperature in clinic does not automatically score zero. If they
+    took ibuprofen <b>six hours ago</b> and are still 102&nbsp;&deg;F in front of you, that counts.
+    If they took it <b>two hours ago</b> and read 99.9, the number in front of you is not the
+    answer &mdash; ask <b>what their maximum temperature was, how many days they have had fever,
+    the highest reading in the past 24 hours, and whether the fever returns as the next dose comes
+    due</b>.</p>
     <p><strong>Centor criteria, and what to do with the score</strong> (slides 74&ndash;77).
     One point each for <b>absence of cough</b>, <b>tonsillar exudate</b>, <b>fever</b>, and
     <b>tender anterior cervical lymphadenopathy</b>; plus <b>+1 for age 3&ndash;14</b>,
@@ -200,9 +210,10 @@ def build():
 
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; SHE SAID &ldquo;BAD, BAD, BAD&rdquo;</span>
-    <p style="margin-top:2px">Four times in this lecture. Two are diagnoses, and two are single
-    findings that turn an ordinary presentation into an urgent one &mdash; which is the more
-    useful half of the list.</p>
+    <p style="margin-top:2px">Four times in this lecture &mdash; two diagnoses, and two single
+    findings that turn an ordinary presentation into an urgent one, which is the more useful half
+    of the list. She also uses it once in the <em>negative</em>, which is what shows the phrase is
+    a deliberate grade rather than a verbal tic.</p>
     <p><b>Chronic laryngitis</b> [59:40]. <em>&ldquo;Chronic laryngitis is where you have vocal
     disturbances that go on for <b>more than two weeks</b>&hellip; Here, your brain should
     automatically be thinking of <b>cancer or polyps</b>, right? Something bad, right? Bad, bad,
@@ -229,6 +240,11 @@ def build():
     This is a surgical emergency.</b>&rdquo;</em> Antibiotics must cover <b>streptococci,
     staphylococci and anaerobes</b>. She was counting as she went &mdash; this was the second
     emergency of the lecture.</p>
+    <p><b>And the one she says is NOT.</b> Leukoplakia [2:37:42]: it does not scrape off, and it
+    may bleed if you try &mdash; <em>&ldquo;This is a pre-malignant lesion. This is bad&hellip;
+    <b>not bad, bad, bad, but bad enough where we have to work it up relatively
+    quickly.</b>&rdquo;</em> Useful in both directions: it fixes leukoplakia one rung below the
+    four above, and it confirms the phrase is how she grades urgency out loud.</p>
   </div>
 
   __SECS__
