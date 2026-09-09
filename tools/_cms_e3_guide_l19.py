@@ -165,7 +165,14 @@ def build():
     <b>leukoedema</b>, a normal variant.</p>
   </div>
 
-  <div class="callout warn">
+  <div class="prof-flag">
+    <span class="prof-flag-label">&#9733; MUST KNOW</span>
+    <p style="margin-top:2px"><em>Jaxon, 9 September: &ldquo;I must know the Centor
+    criteria.&rdquo;</em> Prof. Shah worked the whole thing through in class that morning
+    [1:22:47&ndash;1:24:23], component by component and then score by score &mdash; and she framed
+    it as the answer to the question students actually get stuck on: the rapid test is negative,
+    now what? Her answer: throat culture, and whether you treat &ldquo;depends on how sick they
+    are.&rdquo;</p>
     <p><strong>Centor criteria, and what to do with the score</strong> (slides 74&ndash;77).
     One point each for <b>absence of cough</b>, <b>tonsillar exudate</b>, <b>fever</b>, and
     <b>tender anterior cervical lymphadenopathy</b>; plus <b>+1 for age 3&ndash;14</b>,
@@ -190,6 +197,25 @@ def build():
   <em>not</em> ordering: the lecture is explicit that it is <b>not necessary for diagnosis</b>, and
   that once epiglottitis is suspected, examinations that agitate the patient can complete the
   obstruction.</p>
+
+  <div class="prof-flag">
+    <span class="prof-flag-label">&#9733; SHE SAID &ldquo;BAD, BAD, BAD&rdquo;</span>
+    <p style="margin-top:2px">Twice in this lecture, and both times about a throat complaint that
+    is not what it looks like. Worth knowing which two she picked.</p>
+    <p><b>Chronic laryngitis</b> [59:40]. <em>&ldquo;Chronic laryngitis is where you have vocal
+    disturbances that go on for <b>more than two weeks</b>&hellip; Here, your brain should
+    automatically be thinking of <b>cancer or polyps</b>, right? Something bad, right? Bad, bad,
+    bad. And in these instances, you have to <b>refer to ENT as soon as possible, like ASAP, like
+    yesterday</b>.&rdquo;</em> The two-week mark is the trigger and the referral is the answer
+    &mdash; not a longer course of anything.</p>
+    <p><b>Epiglottitis</b> [1:00:05]. She notes first that <b>supraglottitis</b> is <em>&ldquo;a
+    much more correct terminology&rdquo;</em>, because the inflammation involves several
+    supraglottic structures rather than one. Then: <em>&ldquo;This is an absolute emergency, okay?
+    Emergency. This is bad. This is bad, bad, bad. <b>You cannot miss this diagnosis. This will
+    hurt the patient. This will kill the patient if it&rsquo;s missed.</b>&rdquo;</em> Read it with
+    the thumbprint paragraph above: the film is not what makes the diagnosis, and examining the
+    throat can finish the airway.</p>
+  </div>
 
   __SECS__
 </section>
