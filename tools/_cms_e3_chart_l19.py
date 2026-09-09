@@ -391,9 +391,9 @@ ROWS_L19 = [
   # mono)", which IS the false-negative pathway. Jaxon spotted it 2026-09-09
   # and it was corrected in class the same morning: Shah read the slide as
   # written, a student asked "is that supposed to say can be false negative
-  # temporarily?", and she confirmed -- "Yes. I'm sorry... I'll send that over."
-  # A corrected slide is therefore expected from her; re-check this row when it
-  # arrives. The exchange is at the very end of the mono block, in audio that
+  # temporarily?", and she confirmed. That settles it -- this row is correct as
+  # written and needs no revisiting, whatever the deck ends up saying.
+  # The exchange is at the very end of the mono block, in audio that
   # only exists because the lecture was re-pulled after recording finished --
   # the first capture stopped at 10:02 and contained no instance of the word
   # "false" at all.
@@ -401,8 +401,8 @@ ROWS_L19 = [
   "specific &mdash; positive means no further testing, but it can be <b>falsely negative in the "
   "first week</b>, because heterophile antibodies take about a week to develop. "
   "<b>Slide 84 prints &ldquo;falsely positive&rdquo;, which is an error.</b> Prof. Shah read it "
-  "as written at [1:45:26], a student asked &ldquo;is that supposed to say can be false negative "
-  "temporarily?&rdquo;, and she confirmed it at [1:47:49] &mdash; <b>&ldquo;Yes. I&rsquo;m sorry&hellip; I&rsquo;ll send that over&rdquo;</b>, so a corrected slide is coming. Minutes earlier she had taught the false-negative pathway herself: <b>&ldquo;you order that monospot test and you&rsquo;re like, hold on, that came back NEGATIVE but this patient walks and talks like they have mono&hellip; serology will help you&rdquo;</b>. The same slide already contradicts itself: "
+  "as written at [1:45:26], a student asked whether it was supposed to say false negative, and "
+  "she confirmed it at [1:47:49].</b> Minutes earlier she had taught the false-negative pathway herself: <b>&ldquo;you order that monospot test and you&rsquo;re like, hold on, that came back NEGATIVE but this patient walks and talks like they have mono&hellip; serology will help you&rdquo;</b>. The same slide already contradicts itself: "
   "it sends you to serology for a <i>negative</i> heterophile test in suspected mono, which is "
   "the false-negative pathway. "
   "Serology: <b>IgG means past infection, IgM means "
