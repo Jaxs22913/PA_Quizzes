@@ -402,7 +402,7 @@ ROWS_L19 = [
   "first week</b>, because heterophile antibodies take about a week to develop. "
   "<b>Slide 84 prints &ldquo;falsely positive&rdquo;, which is an error.</b> Prof. Shah read it "
   "as written at [1:45:26], a student asked whether it was supposed to say false negative, and "
-  "she confirmed it at [1:47:49].</b> Minutes earlier she had taught the false-negative pathway herself: <b>&ldquo;you order that monospot test and you&rsquo;re like, hold on, that came back NEGATIVE but this patient walks and talks like they have mono&hellip; serology will help you&rdquo;</b>. The same slide already contradicts itself: "
+  "she confirmed it at [1:47:49]. Minutes earlier she had taught the false-negative pathway herself: <b>&ldquo;you order that monospot test and you&rsquo;re like, hold on, that came back NEGATIVE but this patient walks and talks like they have mono&hellip; serology will help you&rdquo;</b>. The same slide already contradicts itself: "
   "it sends you to serology for a <i>negative</i> heterophile test in suspected mono, which is "
   "the false-negative pathway. "
   "Serology: <b>IgG means past infection, IgM means "
