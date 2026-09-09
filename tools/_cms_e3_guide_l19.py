@@ -200,8 +200,9 @@ def build():
 
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; SHE SAID &ldquo;BAD, BAD, BAD&rdquo;</span>
-    <p style="margin-top:2px">Twice in this lecture, and both times about a throat complaint that
-    is not what it looks like. Worth knowing which two she picked.</p>
+    <p style="margin-top:2px">Four times in this lecture. Two are diagnoses, and two are single
+    findings that turn an ordinary presentation into an urgent one &mdash; which is the more
+    useful half of the list.</p>
     <p><b>Chronic laryngitis</b> [59:40]. <em>&ldquo;Chronic laryngitis is where you have vocal
     disturbances that go on for <b>more than two weeks</b>&hellip; Here, your brain should
     automatically be thinking of <b>cancer or polyps</b>, right? Something bad, right? Bad, bad,
@@ -215,6 +216,19 @@ def build():
     hurt the patient. This will kill the patient if it&rsquo;s missed.</b>&rdquo;</em> Read it with
     the thumbprint paragraph above: the film is not what makes the diagnosis, and examining the
     throat can finish the airway.</p>
+    <p><b>A neck mass that does not move.</b> Running through what a node examination must
+    document &mdash; site, size, consistency, tenderness &mdash; she reaches mobility:
+    <em>&ldquo;If it&rsquo;s immobile, not moving, <b>that is bad. That is bad, bad, bad.</b>&rdquo;</em>
+    And she gives the word to write: document it as <b>immobile or FIXED</b>, <em>&ldquo;because
+    that&rsquo;s telling whoever&rsquo;s reading it that it&rsquo;s not moving and it&rsquo;s stuck
+    to whatever location it is.&rdquo;</em> The finding is the alarm; the wording is how you pass
+    the alarm on.</p>
+    <p><b>A rim-enhancing hypodense collection on computed tomography.</b> Her described classic
+    for a deep neck abscess &mdash; an enhancing rim around a sac of fluid.
+    <em>&ldquo;So this is bad. Now we&rsquo;ve like bad, bad, bad, right? <b>Protect the airway.
+    This is a surgical emergency.</b>&rdquo;</em> Antibiotics must cover <b>streptococci,
+    staphylococci and anaerobes</b>. She was counting as she went &mdash; this was the second
+    emergency of the lecture.</p>
   </div>
 
   __SECS__
