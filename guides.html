@@ -223,7 +223,11 @@
     transition: margin-left var(--dur-2, 240ms) ease, transform var(--dur-1, 160ms) ease,
                 box-shadow var(--dur-1, 160ms) ease;
   }
-  .guide-subgroup[data-stack] .guide-card:first-child { margin-left: 0; }
+  /* The front card is whichever one the script marks, NOT whichever happens to
+     be first in the markup. Jaxon, 2026-09-09: "make the main study guide the
+     front card every time you do this." The guide is the thing you actually
+     open first, and in several sub-groups it is not written first in the file. */
+  .guide-subgroup[data-stack] .guide-card.is-front { margin-left: 0; }
   .guide-subgroup[data-stack] .guide-card:hover { z-index: 999; transform: translateY(-4px); }
   /* The spine: sits on the card's own right edge, which is the strip that
      stays visible once the next card overlaps it. */
@@ -244,7 +248,7 @@
     overflow: hidden;
   }
   /* The front card and whatever you are pointing at show themselves, not a spine. */
-  .guide-subgroup[data-stack] .guide-card:first-child::after,
+  .guide-subgroup[data-stack] .guide-card.is-front::after,
   .guide-subgroup[data-stack] .guide-card:hover::after { opacity: 0; pointer-events: none; }
   .guide-subgroup[data-stack] .guide-card:last-child::after { border-radius: 0 13px 13px 0; }
 
@@ -987,13 +991,27 @@
     document.querySelectorAll('.guide-subgroup[data-stack]').forEach(function (sg) {
       var live = Array.prototype.filter.call(
         sg.querySelectorAll(".guide-card"), function (c) { return c.style.display !== "none"; });
-      live.forEach(function (c, i) {
-        // First card on top, the rest descending, so the fan reads left to right.
-        c.style.setProperty("--z", String(live.length - i));
+
+      // The STUDY GUIDE leads the fan wherever it sits in the markup -- it is
+      // the card you open first, and the others are companions to it. Flex
+      // `order` does the moving, so the document order is left alone and the
+      // filter logic above keeps working on the real elements. If a sub-group
+      // has no guide (the Pharmacology chart groups are all Quick References),
+      // the first live card leads instead.
+      var lead = live.filter(function (c) { return typeOf(c) === "guide"; })[0] || live[0];
+      var fan = live.slice().sort(function (a, b) {
+        if (a === lead) return -1;
+        if (b === lead) return 1;
+        return live.indexOf(a) - live.indexOf(b);
+      });
+
+      live.forEach(function (c) { c.classList.remove("is-front"); });
+      fan.forEach(function (c, i) {
+        c.style.order = String(i);
+        // Front card on top, the rest descending, so the fan reads left to right.
+        c.style.setProperty("--z", String(fan.length - i));
         if (!c.dataset.spine) c.dataset.spine = spineLabel(c);
-        // :first-child is the wrong hook once a filter hides the original
-        // first card, so the front card is marked explicitly.
-        c.style.marginLeft = i === 0 ? "0" : "";
+        if (i === 0) c.classList.add("is-front");
       });
       var btn = sg.querySelector(".sg-toggle");
       if (btn) btn.textContent = sg.hasAttribute("data-spread")
