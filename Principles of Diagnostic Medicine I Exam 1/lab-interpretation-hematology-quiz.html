@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #8a5f8d; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #b8862f; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Interpretation 1: Complete Blood Count &mdash; PDM I Exam 1</title>
+<style>
+  :root{
+    --navy:#5a3a5e; --indigo:#8a5f8d; --gold:#b8862f; --ice:#f6f1f6;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Reading the Panel: Complete Blood Count</h1>
+    <div class="sub">Principles of Diagnostic Medicine I &middot; Exam 1 &middot; Lecture 4</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Every question gives you a panel with the reference ranges printed beside the values, and asks what it shows. <b>Nothing here is a recall question</b> &mdash; the numbers are on the page, and the work is reading them. That is also how the exam itself behaves: reference ranges are supplied, and they are taught as approximate and lab-dependent on purpose, so what is being tested is the DIRECTION of an abnormality and the pattern several values make together. <b>This set is the anemia algorithm run backwards.</b> Instead of being asked what iron studies show in iron deficiency, you are given the ferritin and the binding capacity and asked which anemia they belong to. The three volume bands sort the first move, the reticulocyte count separates a marrow that is responding from one that is not, and the smear findings &mdash; stippling, Howell-Jolly bodies, Heinz bodies, schistocytes, rouleaux &mdash; each name one condition. One question is deliberately normal, because recognising a panel with nothing wrong with it is its own skill.</p>
+    <div class="chips"><span class="chip">Microcytic</span><span class="chip">Macrocytic</span><span class="chip">Normocytic</span><span class="chip">White cells &amp; platelets</span><span class="chip">Morphology</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Microcytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 34-year-old woman has six months of fatigue and heavy periods. Her results are hemoglobin 9.1 g/dL (12.0–15.5) · mean corpuscular volume 72 fL (80–100) · ferritin 6 ng/mL (15–200) · total iron-binding capacity 465 µg/dL (250–400). What is the most likely diagnosis?", "opts": [["Iron deficiency anemia", "Correct. Microcytic with a LOW ferritin and a HIGH iron-binding capacity — the marrow is short of iron and the body has increased its carrying capacity to hunt for more. In a menstruating woman this is the commonest anemia there is, and it still obliges you to think about occult blood loss."], ["Anemia of chronic disease", "This gives a low iron too, but ferritin is an acute phase reactant and rises; the binding capacity FALLS rather than rises. Both markers here point the other way."], ["Beta thalassemia trait", "Also microcytic, but iron studies are normal — ferritin would not be 6. The red cell count also tends to be preserved or high, which is what separates it."], ["Vitamin B12 deficiency", "That is macrocytic, with a volume above 100 rather than 72. Wrong side of the algorithm entirely."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, iron studies"}, {"topic": "Microcytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 68-year-old man with rheumatoid arthritis has mild fatigue. His results are hemoglobin 10.4 g/dL (13.5–17.5) · mean corpuscular volume 84 fL (80–100) · ferritin 410 ng/mL (15–200) · total iron-binding capacity 198 µg/dL (250–400). What is the most likely diagnosis?", "opts": [["Anemia of chronic disease", "Correct. Ferritin HIGH and binding capacity LOW is the mirror image of iron deficiency: iron exists but inflammation sequesters it, and ferritin rises as an acute phase reactant. The volume sits normocytic or mildly microcytic."], ["Iron deficiency anemia", "Would show the opposite pair — ferritin low, binding capacity high. A ferritin of 410 effectively excludes it."], ["Sideroblastic anemia", "Iron is high here too, but this is far rarer and the smear shows ringed sideroblasts on iron staining rather than an inflammatory picture."], ["Folate deficiency", "Macrocytic, and it does not move ferritin or binding capacity in this pattern."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, iron studies"}, {"topic": "Microcytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 24-year-old man of Mediterranean descent is anemic on a routine panel and feels well. His results are hemoglobin 11.8 g/dL (13.5–17.5) · mean corpuscular volume 68 fL (80–100) · red blood cell count 6.1 million/µL (4.5–5.9) · ferritin 142 ng/mL (15–200). What is the most likely diagnosis?", "opts": [["Beta thalassemia trait", "Correct. Markedly microcytic with NORMAL iron stores and a red cell count that is high rather than low — the marrow makes plenty of small cells. Iron deficiency cannot produce that combination."], ["Iron deficiency anemia", "Ferritin is normal at 142, and the red cell count would be low rather than 6.1 million. Both findings argue against it."], ["Anemia of chronic disease", "There is no inflammatory context, the anemia is mild, and the degree of microcytosis is far greater than this usually produces."], ["Lead poisoning", "Also microcytic with normal iron, but the smear shows basophilic stippling and there would be an exposure history."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, microcytic causes"}, {"topic": "Macrocytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 71-year-old man has fatigue and pins and needles in both feet. His results are hemoglobin 9.6 g/dL (13.5–17.5) · mean corpuscular volume 118 fL (80–100) · vitamin B12 94 pg/mL (200–900) · smear macroovalocytes and hypersegmented neutrophils (—). What is the most likely diagnosis?", "opts": [["Folate deficiency", "Produces an identical smear, but the B12 level here is the discriminator — and folate deficiency does not cause the neurological findings."], ["Alcoholic liver disease", "A common non-megaloblastic macrocytosis, but it does NOT produce macroovalocytes or hypersegmented neutrophils. Their presence points at impaired DNA synthesis."], ["Myelodysplastic syndrome", "Can be macrocytic, but usually with cytopenias in more than one line and dysplastic changes rather than a pure megaloblastic picture."], ["Vitamin B12 deficiency", "Correct. Macrocytic with a low B12, and the smear gives the megaloblastic signature — macroovalocytes with hypersegmented neutrophils. The neuropathy is what distinguishes it from folate deficiency clinically."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, macrocytic causes"}, {"topic": "Macrocytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 52-year-old man who drinks heavily is anemic. His results are hemoglobin 11.2 g/dL (13.5–17.5) · mean corpuscular volume 106 fL (80–100) · vitamin B12 and folate both normal (—) · smear round macrocytes, no hypersegmentation (—). What is the most likely diagnosis?", "opts": [["Vitamin B12 deficiency", "Excluded by a normal B12, and the smear lacks the megaloblastic changes it would produce."], ["Non-megaloblastic macrocytosis of liver disease and alcohol", "Correct. Macrocytic with normal B12 and folate and, decisively, NO macroovalocytes or hypersegmented neutrophils. Without those the problem is not DNA synthesis, and alcohol and liver disease are the usual explanation."], ["Folate deficiency", "Folate is normal, and it would give the same hypersegmented picture that is absent here."], ["Hereditary spherocytosis", "That raises the mean corpuscular hemoglobin concentration and shows spherocytes; it does not produce macrocytosis."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, macrocytic causes"}, {"topic": "Normocytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 29-year-old woman is admitted after a road traffic collision with a pelvic fracture. Two days later her results are hemoglobin 8.4 g/dL (12.0–15.5) · mean corpuscular volume 89 fL (80–100) · reticulocyte count 6.8% (0.5–2.5) · ferritin 165 ng/mL (15–200). What is the most likely diagnosis?", "opts": [["Iron deficiency anemia", "Takes weeks to develop and would be microcytic with a low ferritin. Neither is present two days after the injury."], ["Acute blood loss anemia", "Correct. Normocytic with a HIGH reticulocyte count — the marrow is responding normally to a sudden loss, and the cells it makes are of normal size. Stores are still adequate, which is why ferritin is untouched this early."], ["Aplastic anemia", "The marrow would be failing, so the reticulocyte count would be LOW rather than 6.8%, and other cell lines would fall too."], ["Anemia of chronic disease", "Develops over weeks of inflammation and is hypo-proliferative — the reticulocyte response would be blunted, not brisk."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, normocytic branch"}, {"topic": "Normocytic anemia", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 26-year-old woman has jaundice and dark urine. Her results are hemoglobin 7.9 g/dL (12.0–15.5) · reticulocyte count 9.2% (0.5–2.5) · unconjugated bilirubin 4.1 mg/dL (0.2–0.8) · haptoglobin undetectable (30–200 mg/dL). What is the most likely diagnosis?", "opts": [["Acute blood loss anemia", "Also raises reticulocytes, but blood leaving the body does not release hemoglobin into plasma, so haptoglobin and bilirubin stay normal."], ["Hemolytic anemia", "Correct. A high reticulocyte count with a raised UNCONJUGATED bilirubin and an undetectable haptoglobin is the hemolysis triad — cells are being destroyed, free hemoglobin is mopping up the haptoglobin, and the marrow is compensating hard."], ["Gilbert syndrome", "Raises unconjugated bilirubin, but causes no anemia, no reticulocytosis and no haptoglobin consumption."], ["Aplastic anemia", "The reticulocyte count would be low and there would be no hyperbilirubinemia; the marrow is not producing."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, hemolysis"}, {"topic": "Pancytopenia", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 33-year-old man has fatigue, bruising and recurrent infections. His results are hemoglobin 7.2 g/dL (13.5–17.5) · white blood cell count 1,900/µL (4,500–11,000) · platelets 24,000/µL (150,000–400,000) · reticulocyte count 0.2% (0.5–2.5). What is the most likely diagnosis?", "opts": [["Immune thrombocytopenic purpura", "Drops platelets alone. Hemoglobin and white cells would be normal, and they are not."], ["Aplastic anemia", "Correct. All three lines are down and the reticulocyte count is LOW — the marrow is not producing anything. That combination of pancytopenia with an absent reticulocyte response is what defines marrow failure."], ["Hemolytic anemia", "Would drive reticulocytes UP, and does not by itself cause leukopenia or thrombocytopenia."], ["Iron deficiency anemia", "Affects the red line only, is microcytic, and if anything raises the platelet count rather than lowering it."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, pancytopenia"}, {"topic": "Red cell morphology", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 4-year-old living in old housing has irritability and abdominal pain. Her results are hemoglobin 9.8 g/dL (11.5–15.5) · mean corpuscular volume 70 fL (80–100) · ferritin 88 ng/mL (15–200) · smear coarse basophilic stippling (—). What is the most likely diagnosis?", "opts": [["Iron deficiency anemia", "The commonest microcytic anemia at this age, but ferritin is normal at 88 and it does not produce stippling."], ["Beta thalassemia trait", "Microcytic with normal iron as well, and it is the differential here — but stippling points to lead, and thalassemia usually preserves the red cell count."], ["Anemia of chronic disease", "There is no inflammatory illness, and it does not cause stippling."], ["Lead poisoning", "Correct. Microcytic with NORMAL iron stores, and the smear finding settles it — basophilic stippling is ribosomal RNA scattered evenly through the cytoplasm, and the classic association is lead."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, red cell inclusions"}, {"topic": "Red cell morphology", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 22-year-old man has anemia and splenomegaly. His results are hemoglobin 10.1 g/dL (13.5–17.5) · mean corpuscular volume 82 fL (80–100) · mean corpuscular hemoglobin concentration 38 g/dL (32–36) · smear round cells lacking central pallor (—). What is the most likely diagnosis?", "opts": [["Iron deficiency anemia", "Moves the concentration DOWN, not up, and produces hypochromic cells with widened central pallor — the opposite appearance."], ["Sickle cell disease", "The smear would show thin crescents forming under low oxygen tension, not uniformly round cells."], ["Autoimmune hemolytic anemia", "Can also produce spherocytes, but they are acquired and the direct antiglobulin test is positive; the hereditary form runs in families."], ["Hereditary spherocytosis", "Correct. A RAISED mean corpuscular hemoglobin concentration is the automated flag for it, and the smear matches — perfectly round cells that have lost their central pallor. Few things push that index above the range."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, mean corpuscular hemoglobin concentration"}, {"topic": "Red cell morphology", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 30-year-old man had a splenectomy after trauma five years ago. His routine smear shows single dark purple nuclear fragments in red cells present (absent) · target cells present (absent) · hemoglobin 14.1 g/dL (13.5–17.5). What is the most likely cause?", "opts": [["Iron deficiency has produced the inclusions", "Iron deficiency gives hypochromic microcytic cells; it does not leave nuclear remnants behind, and the hemoglobin here is normal."], ["He has lead poisoning", "Lead gives basophilic stippling — fine blue dots spread evenly through the cytoplasm — not a single discrete nuclear fragment."], ["He has no spleen to remove the inclusions", "Correct. Those fragments are Howell-Jolly bodies, and the spleen normally plucks them out — so finding them means absent or non-functioning splenic tissue. Target cells appear after splenectomy too, from redundant membrane."], ["He has glucose-6-phosphate dehydrogenase deficiency", "That shows Heinz bodies, which are denatured hemoglobin at the cell periphery and need a supravital stain to see at all."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Howell-Jolly bodies"}, {"topic": "Red cell morphology", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 19-year-old man develops anemia days after starting an oxidant drug. His results are hemoglobin 8.8 g/dL (13.5–17.5) · reticulocyte count 7.1% (0.5–2.5) · supravital stain inclusions at the cell periphery (—) · smear bite cells (—). What is the most likely diagnosis?", "opts": [["Hereditary spherocytosis", "Gives round cells without central pallor and a raised hemoglobin concentration index, and it is not triggered by oxidant drugs."], ["Immune hemolytic anemia", "Would be confirmed by a positive direct antiglobulin test and does not need a supravital stain to show inclusions."], ["Glucose-6-phosphate dehydrogenase deficiency", "Correct. Heinz bodies are denatured hemoglobin sitting at the edge of the cell and are invisible without a supravital stain; the spleen bites them out, leaving bite cells. An oxidant trigger completes the picture."], ["Lead poisoning", "Basophilic stippling is visible on the ordinary stain and is spread through the cytoplasm, not at the periphery."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, Heinz bodies"}, {"topic": "White cell lines", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 41-year-old woman has a fever and a productive cough. Her results are white blood cell count 19,400/µL (4,500–11,000) · neutrophils 84% (54–62) · bands 11% (0–5) · lymphocytes 9% (24–44). What is the most likely cause?", "opts": [["A viral infection", "Would raise LYMPHOCYTES rather than neutrophils, and lymphocytes here are suppressed at 9%."], ["A parasitic infestation", "Raises eosinophils, which are not elevated in this differential."], ["A bacterial infection", "Correct. Neutrophils dominate and bands are raised — a left shift, meaning the marrow is releasing immature neutrophils faster than it can mature them. That pairing is the bacterial signature."], ["An allergic reaction", "Also an eosinophil response, and it would not produce a band count of 11%."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, neutrophils and left shift"}, {"topic": "White cell lines", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 9-year-old has a week of fever, sore throat and fatigue. His results are white blood cell count 14,800/µL (4,500–11,000) · lymphocytes 62% (24–44) · neutrophils 28% (54–62) · smear atypical lymphocytes (—). What is the most likely cause?", "opts": [["A bacterial infection", "Would push neutrophils up with a left shift; here neutrophils are the suppressed line."], ["A viral infection", "Correct. A lymphocyte-predominant leukocytosis with atypical lymphocytes on the smear is the viral pattern, and in this age group with pharyngitis it points hard at infectious mononucleosis."], ["An allergic reaction", "Drives eosinophils, and produces neither lymphocytosis nor atypical forms."], ["A bone marrow failure syndrome", "The total white count is raised rather than reduced, so production is not the problem."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, lymphocytes"}, {"topic": "White cell lines", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 27-year-old man recently back from travel has itching and a rash. His results are white blood cell count 12,100/µL (4,500–11,000) · eosinophils 18% (1–3) · neutrophils 48% (54–62) · hemoglobin 13.9 g/dL (13.5–17.5). What is the most likely cause?", "opts": [["A parasitic infestation or an allergic process", "Correct. Eosinophils are the line raised by parasites, allergy and — less often — malignancy. At 18% against a range of 1 to 3, the eosinophil is the whole finding here."], ["A bacterial infection", "Neutrophils would lead and would be raised rather than mildly low."], ["A viral infection", "Lymphocytes carry the viral response; eosinophils are not the viral line."], ["Corticosteroid therapy", "Steroids raise neutrophils by demargination and actually SUPPRESS eosinophils."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, eosinophils"}, {"topic": "Absolute neutrophil count", "io": "d — Calculate absolute white blood cell counts", "slot": "interpretation", "q": "A patient on chemotherapy is reviewed before the next cycle. His results are white blood cell count 1,200/µL (4,500–11,000) · neutrophils 22% (54–62) · bands 6% (0–5). Calculate the absolute neutrophil count and grade it.", "opts": [["336 per microlitre — severe neutropenia", "Correct. Bands count WITH the neutrophils: 1,200 × (22 + 6) ÷ 100 = 336. Below 500 is severe, which is the threshold that changes precautions and antibiotic decisions."], ["264 per microlitre — severe neutropenia", "This leaves the bands out. They are immature neutrophils and belong in the numerator — that omission is the classic error."], ["336 per microlitre — moderate neutropenia", "The arithmetic is right but the grade is not: moderate is 500 to under 1,000, and 336 is below 500."], ["1,200 per microlitre — mild neutropenia", "That is the total white count, not the neutrophil count. A percentage means nothing until it is applied to the total."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, absolute neutrophil count"}, {"topic": "Platelets", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 28-year-old woman has petechiae and gum bleeding after a viral illness. She is otherwise well. Her results are platelets 18,000/µL (150,000–400,000) · hemoglobin 13.4 g/dL (12.0–15.5) · white blood cell count 7,100/µL (4,500–11,000) · smear no schistocytes (—). What is the most likely diagnosis?", "opts": [["Thrombotic thrombocytopenic purpura", "Also drops platelets, but consumes red cells too: you would expect anemia and schistocytes, and there are none."], ["Immune thrombocytopenic purpura", "Correct. An ISOLATED thrombocytopenia — red cells and white cells untouched — with a normal smear after a viral illness. The absence of schistocytes is what separates it from the microangiopathies."], ["Aplastic anemia", "Would take all three lines down, and here hemoglobin and white cells are normal."], ["Disseminated intravascular coagulation", "Consumes platelets alongside clotting factors, with schistocytes and deranged coagulation studies rather than an isolated fall."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, platelets"}, {"topic": "Platelets", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 44-year-old woman has confusion, fever and bruising. Her results are platelets 22,000/µL (150,000–400,000) · hemoglobin 8.1 g/dL (12.0–15.5) · reticulocyte count 6.4% (0.5–2.5) · smear numerous schistocytes (—). What is the most likely diagnosis?", "opts": [["Immune thrombocytopenic purpura", "Drops platelets alone and leaves the smear normal; there would be no anemia and no fragmented cells."], ["Iron deficiency anemia", "Microcytic and hypo-proliferative, with a raised rather than reduced platelet count and no schistocytes."], ["A thrombotic microangiopathy", "Correct. Low platelets PLUS a hemolytic anemia with schistocytes is consumption inside small vessels — red cells are being sheared as they pass. The fever and confusion complete the classic pentad."], ["Hereditary spherocytosis", "Produces round cells without central pallor, not fragments, and does not consume platelets."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, schistocytes"}, {"topic": "Erythrocytosis", "io": "a — Explain the components of a complete blood count", "slot": "diagnosis", "q": "A 58-year-old man has headaches, itching after hot showers and a ruddy face. He does not smoke. His results are hemoglobin 19.8 g/dL (13.5–17.5) · hematocrit 59% (41–53) · white blood cell count 14,200/µL (4,500–11,000) · platelets 612,000/µL (150,000–400,000). What is the most likely diagnosis?", "opts": [["Polycythemia vera", "Correct. All THREE lines are raised, which points at a clonal marrow disorder rather than a response to anything. A secondary cause drives red cells alone; it has no reason to raise white cells and platelets too."], ["Chronic hypoxia from lung disease", "Raises red cells only, as an appropriate erythropoietin response. It leaves white cells and platelets alone."], ["Dehydration", "Concentrates everything proportionally and resolves with fluids; it does not produce a platelet count of 612,000."], ["Anemia of chronic disease", "The wrong direction entirely — that lowers hemoglobin rather than raising it."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, red cell count raised"}, {"topic": "Red cell morphology", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis", "q": "A 47-year-old man with cirrhosis has a routine panel. His results are hemoglobin 11.6 g/dL (13.5–17.5) · mean corpuscular volume 103 fL (80–100) · smear cells with a dark centre inside the pale area (—) · vitamin B12 and folate normal (—). What is the most likely cause?", "opts": [["Vitamin B12 deficiency has impaired DNA synthesis", "B12 is normal, and megaloblastic change gives macroovalocytes and hypersegmented neutrophils rather than targets."], ["Iron is being lost chronically from the gut", "Iron deficiency is microcytic; this volume is 103 fL, which is the wrong direction."], ["The spleen is sequestering red cells", "Hypersplenism lowers counts but does not create the target appearance; redundant membrane does."], ["Liver disease has added redundant membrane to the red cells", "Correct. Those are target cells — a bullseye produced by too much membrane for the volume of hemoglobin. Liver disease and splenectomy are the two classic causes, and the macrocytosis here is non-megaloblastic."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, target cells"}, {"topic": "Red cell morphology", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 66-year-old man has anemia and a firm enlarged spleen. His results are hemoglobin 9.2 g/dL (13.5–17.5) · smear teardrop-shaped red cells (—) · platelets 96,000/µL (150,000–400,000) · white blood cell count 3,800/µL (4,500–11,000). What is the most likely cause?", "opts": [["The spleen has been removed", "The spleen is present and enlarged, and asplenia gives Howell-Jolly bodies and target cells rather than teardrops."], ["Oxidant stress is denaturing hemoglobin", "That gives Heinz bodies and bite cells, and needs a supravital stain to demonstrate."], ["The marrow is being infiltrated and replaced", "Correct. Teardrop cells are made when red cells squeeze out of a marrow packed with scar tissue or tumour. With cytopenias in all three lines and splenomegaly, infiltration is the mechanism."], ["Iron stores are exhausted", "Iron deficiency is microcytic and hypochromic and does not produce teardrop forms or pancytopenia."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, teardrop cells"}, {"topic": "Hemoglobin and hematocrit", "io": "b — Explain the difference between hemoglobin and hematocrit", "slot": "interpretation", "q": "A results screen shows a value that does not look right to the clinician. The results are hemoglobin 9.0 g/dL (13.5–17.5) · hematocrit 48% (41–53). Why is this pair implausible?", "opts": [["The hematocrit should equal the hemoglobin", "They measure different things — an amount in a volume against a percentage of packed cells — so they are never equal."], ["The hemoglobin should be roughly three times the hematocrit", "The multiplication runs the other way; this would predict a hematocrit of 3 from a hemoglobin of 9."], ["Both values are normal, so nothing is wrong", "The hemoglobin is well below its range, so the panel is not normal even before the mismatch is considered."], ["The hematocrit should be roughly three times the hemoglobin", "Correct. Multiply the hemoglobin by three and the hematocrit should land nearby — 9 predicts about 27, not 48. A pair that far apart means a sampling or analyser problem worth repeating."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, hemoglobin against hematocrit"}, {"topic": "Red cell indices", "io": "c — Discuss red blood cell indices", "slot": "interpretation", "q": "A panel reports the indices below. The results are mean corpuscular volume 74 fL (80–100) · mean corpuscular hemoglobin 23 pg (27–33) · mean corpuscular hemoglobin concentration 29 g/dL (32–36). How are these cells best described?", "opts": [["Macrocytic and normochromic", "Macrocytic would need a volume above 100; this is 74, at the other end."], ["Normocytic and hyperchromic", "The volume is not normal, and hyperchromic would need the concentration ABOVE 36 rather than below 32."], ["Microcytic and hypochromic", "Correct. Volume below range makes them small, and both hemoglobin indices below range make them pale — central pallor exceeding a third of the diameter. Iron deficiency and thalassemia sit here."], ["Microcytic and hyperchromic", "The size is right but the colour is not — a concentration of 29 is below the range, so the cells are pale, not dense."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, red cell indices"}, {"topic": "Anemia workup", "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia", "slot": "next step", "q": "A 55-year-old woman has a microcytic anemia. Her results are mean corpuscular volume 76 fL (80–100) · ferritin 120 ng/mL (15–200) · serum iron 82 µg/dL (60–170) · total iron-binding capacity 310 µg/dL (250–400) · smear no stippling (—). What does this pattern point to?", "opts": [["Iron deficiency anemia", "Every iron study is normal, which is precisely what iron deficiency cannot look like."], ["Lead poisoning", "The other cause of microcytosis with normal iron — but it is excluded here by the absence of basophilic stippling."], ["Anemia of chronic disease", "Ferritin would be raised and binding capacity reduced; both sit mid-range."], ["Thalassemia trait", "Correct. Microcytic with all three iron studies normal and no stippling — the algorithm's endpoint. Iron is available, so the small cells are a production defect rather than a supply problem."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, microcytic algorithm"}, {"topic": "White cell lines", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 62-year-old woman on prednisone for polymyalgia has a raised white count and feels well, with no fever. Her results are white blood cell count 14,600/µL (4,500–11,000) · neutrophils 82% (54–62) · bands 2% (0–5) · eosinophils 0% (1–3). What is the most likely cause?", "opts": [["An occult bacterial infection", "Would come with a left shift; bands are normal at 2% and the patient has no fever."], ["Corticosteroids have demarginated neutrophils", "Correct. Steroids detach neutrophils from the vessel wall into the circulating pool, so the count rises without any new production — which is why bands stay normal. They also suppress eosinophils, and here eosinophils are zero."], ["A myeloproliferative disorder", "Would usually disturb more than one line and persist; this is explained by an obvious drug."], ["An allergic reaction", "Raises eosinophils. They are absent here, which points the opposite way."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, demargination"}, {"topic": "Platelets", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "interpretation", "q": "A 39-year-old woman with heavy periods has these results hemoglobin 9.4 g/dL (12.0–15.5) · mean corpuscular volume 71 fL (80–100) · platelets 580,000/µL (150,000–400,000) · ferritin 7 ng/mL (15–200). How should the platelet count be read?", "opts": [["Evidence of a second, independent bone marrow disorder", "Unnecessary. The anemia already explains it, and invoking two diagnoses where one accounts for both findings is the error being tested."], ["A reactive rise that iron deficiency itself causes", "Correct. Iron deficiency is one of the listed causes of a raised platelet count, alongside trauma, acute hemorrhage and polycythemia vera. It needs no separate workup — treat the iron deficiency and it settles."], ["A laboratory artefact requiring a repeat sample", "There is nothing inconsistent here — the value fits the clinical picture rather than contradicting it."], ["A sign of impending bleeding", "A high platelet count is not a bleeding risk in this setting; her bleeding is menstrual and is the cause, not the consequence."]], "c": 1, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, platelets raised"}, {"topic": "Red cell morphology", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 71-year-old man has back pain and anemia. His results are hemoglobin 9.7 g/dL (13.5–17.5) · smear red cells stacked in chains like rows of coins (—) · total protein 10.8 g/dL (6.0–8.3) · erythrocyte sedimentation rate 112 mm/hr (0–20). What is the most likely cause?", "opts": [["Antibodies are agglutinating the red cells", "Agglutination clumps cells irregularly rather than stacking them in neat chains, and it is temperature-dependent."], ["The marrow is infiltrated by fibrous tissue", "That gives teardrop cells, not rouleaux, and would not raise the total protein."], ["Raised serum proteins have neutralised the cells' surface charge", "Correct. That stacking is rouleaux: red cells normally repel each other with a negative surface charge, and excess protein cancels it so they clump in chains. The very high total protein and sedimentation rate fit a paraprotein."], ["The cells have lost membrane and become spherical", "Spherocytes are round and individual; they do not stack, and the hemoglobin concentration index would rise."]], "c": 2, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, rouleaux"}, {"topic": "Components of the panel", "io": "a — Explain the components of a complete blood count", "slot": "interpretation", "q": "A well 30-year-old man has a pre-employment panel. His results are hemoglobin 15.1 g/dL (13.5–17.5) · mean corpuscular volume 91 fL (80–100) · white blood cell count 7,600/µL (4,500–11,000) · platelets 268,000/µL (150,000–400,000). How should this panel be reported?", "opts": [["Normal, with no further testing indicated", "Correct. Every value sits inside its range. Recognising a normal panel is a real skill — a reference range is the mean plus or minus two standard deviations, so chasing values that are merely near an edge generates work rather than answers."], ["Early iron deficiency, because the volume is below the midpoint", "Being below the middle of a range is not being outside it. 91 fL is unambiguously normal."], ["Mild anemia, because the hemoglobin is not at the top of the range", "Anemia means falling below the lower limit, not below the maximum. 15.1 is comfortably inside."], ["Thrombocytopenia, because the platelet count is under 300,000", "The lower limit is 150,000, so 268,000 sits comfortably inside the range. Thrombocytopenia means falling below the floor, not below the midpoint."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, reference ranges"}, {"topic": "Anemia workup", "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia", "slot": "next step", "q": "A 63-year-old man is found to have iron deficiency anemia on a routine panel. He reports no bleeding. His results are hemoglobin 10.2 g/dL (13.5–17.5) · mean corpuscular volume 70 fL (80–100) · ferritin 5 ng/mL (15–200). What must accompany treatment?", "opts": [["Nothing beyond oral iron and a repeat panel", "This is the trap. The anemia will correct and the cause will be missed, which is the outcome the teaching exists to prevent."], ["Bone marrow biopsy", "Not indicated for straightforward iron deficiency, where the mechanism is loss rather than a production failure."], ["Hemoglobin electrophoresis", "That investigates thalassemia, and thalassemia does not lower ferritin to 5."], ["Evaluation for occult blood loss", "Correct. In a man of this age iron deficiency is a bleeding diagnosis until proven otherwise, and it is often the first sign of gastrointestinal bleeding. Replacing the iron without finding the leak treats the number, not the patient."]], "c": 3, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, iron deficiency"}, {"topic": "White cell lines", "io": "e — Discuss the clinical significance of abnormalities in red blood cells, white blood cells and platelets", "slot": "diagnosis", "q": "A 60-year-old man has fatigue and early satiety with a very large spleen. His results are white blood cell count 96,000/µL (4,500–11,000) · differential the full range of maturing granulocytes (—) · platelets 540,000/µL (150,000–400,000) · hemoglobin 10.8 g/dL (13.5–17.5). What is the most likely diagnosis?", "opts": [["A myeloproliferative disorder", "Correct. A white count near 100,000 with granulocytes at every stage of maturation and a massive spleen is clonal overproduction, not a response to infection. The raised platelets and mild anemia fit the same process."], ["A bacterial infection", "Even severe sepsis rarely reaches 96,000, and it produces mature neutrophils with bands rather than the entire maturation series."], ["A viral infection", "Raises lymphocytes and does not produce granulocytes at every stage or splenomegaly of this degree."], ["Corticosteroid therapy", "Demargination can raise the count, but only modestly, and it does not enlarge the spleen or raise platelets."]], "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, white cell count raised"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

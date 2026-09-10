@@ -50,7 +50,13 @@ def _has_leadin(t):
         return True
     if t.endswith("..."):             # ditto, ellipsis form
         return True
-    return bool(IMPERATIVE.match(t))  # "Describe...", "Rank...", "List..."
+    # An imperative lead-in. Tested against the LAST sentence, not the start of
+    # the stem: a vignette states the case first and instructs afterwards --
+    # "A patient on chemotherapy is reviewed... Calculate the absolute
+    # neutrophil count and grade it." Anchoring at the start of the whole stem
+    # missed every one of those.
+    last = [x for x in re.split(r"(?<=[.?!])\s+", t) if x.strip()]
+    return bool(IMPERATIVE.match(last[-1].strip())) if last else False
 
 
 def attach(module, index, q):

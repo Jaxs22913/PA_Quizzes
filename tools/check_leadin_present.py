@@ -54,8 +54,7 @@ def asks(stem):
     "is to", "approximately", "also called" -- and each miss was a false
     positive on frozen content.
     """
-    t = stem
-    t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t)).strip()
+    t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", stem)).strip()
     if not t:
         return True
     if "?" in t:                      # an explicit question
@@ -64,7 +63,13 @@ def asks(stem):
         return True
     if t.endswith("..."):             # ditto, ellipsis form
         return True
-    return bool(IMPERATIVE.match(t))  # "Describe...", "Rank...", "List..."
+    # An imperative lead-in. Tested against the LAST sentence, not the start of
+    # the stem: a vignette states the case first and instructs afterwards --
+    # "A patient on chemotherapy is reviewed... Calculate the absolute
+    # neutrophil count and grade it." Anchoring at the start of the whole stem
+    # missed every one of those.
+    last = [x for x in re.split(r"(?<=[.?!])\s+", t) if x.strip()]
+    return bool(IMPERATIVE.match(last[-1].strip())) if last else False
 
 
 def stems(path):
