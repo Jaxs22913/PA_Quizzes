@@ -242,6 +242,8 @@ window.GROUP_INDEX = {
 "clinical-pathophysiology-i-exam-1-abnormal-cell-growth-quiz-version-2":{"title":"Abnormal Cell Growth and Differentiation Quiz 2 — Clin Path I Exam 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-dermatology-pathophys-quiz":{"title":"Dermatology Pathophysiology Quiz 1 — Clinical Pathophysiology I Exam 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-dermatology-pathophys-quiz-version-2":{"title":"Dermatology Pathophysiology Quiz 2 — Clinical Pathophysiology I Exam 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
+"clinical-pathophysiology-i-exam-1-ent-pathophysiology-quiz":{"title":"ENT Pathophysiology Quiz 1 — Clinical Pathophysiology I","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":23},
+"clinical-pathophysiology-i-exam-1-ent-pathophysiology-quiz-version-2":{"title":"ENT Pathophysiology Quiz 2 — Clinical Pathophysiology I","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":23},
 "clinical-pathophysiology-i-exam-1-inflammation-quiz":{"title":"Inflammation — Quiz 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-inflammation-quiz-version-2":{"title":"Inflammation — Quiz 2","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-ophthalmic-pathophys-quiz":{"title":"Ophthalmic Pathophysiology Quiz 1 — Clin Path I Exam 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
