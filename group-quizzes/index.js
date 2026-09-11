@@ -359,6 +359,8 @@ window.GROUP_INDEX = {
 "physical-diagnosis-2-exam-1-clinical-reasoning-documentation-quiz":{"title":"Clinical Reasoning & Documentation Quiz — Physical Diagnosis 2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":15},
 "physical-diagnosis-2-exam-1-dermatology-quiz":{"title":"Dermatology Quiz 1 — Physical Diagnosis 2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":30},
 "physical-diagnosis-2-exam-1-dermatology-quiz-version-2":{"title":"Dermatology Quiz 2 — Physical Diagnosis 2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":30},
+"physical-diagnosis-2-exam-1-ent-exam-quiz":{"title":"Advanced ENT History & Examination Quiz 1 — PD2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":30},
+"physical-diagnosis-2-exam-1-ent-exam-quiz-version-2":{"title":"Advanced ENT History & Examination Quiz 2 — PD2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":30},
 "physical-diagnosis-2-exam-1-ocular-exam-quiz":{"title":"Advanced Ocular History & Examination Quiz 1 — PD2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":30},
 "physical-diagnosis-2-exam-1-ocular-exam-quiz-version-2":{"title":"Advanced Ocular History & Examination Quiz 2 — PD2 Exam 1","category":"Physical Diagnosis","exam":"Exam 1","sem":"fall-2026","n":30},
 "physiology-exam-1-cell-physiology-membranes-quiz":{"title":"Cell Physiology and Cell Membranes — Physiology Exam 1","category":"Physiology","exam":"Exam 1","sem":"summer-1-2026","n":30},
