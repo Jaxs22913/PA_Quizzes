@@ -260,6 +260,8 @@ SECTION = """
   admission turns on the clinical condition, the associated injuries, and any brain injury seen on
   CT. <strong>Antibiotics for a cerebrospinal fluid leak are controversial</strong>, because of the
   risk of selecting resistant organisms.</p>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#2d3f7a" onclick="window.openTestYourself('Test yourself &mdash; Ocular Trauma', TEST_YOURSELF.trauma)">Test yourself! &rarr;</button>
 </section>
 """
 

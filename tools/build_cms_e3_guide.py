@@ -138,8 +138,15 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
   'Objectives taken verbatim from the syllabus</p>\n'
   '</header>', head, count=1, flags=re.S)
 
-body = ('<main class="content">%s\n%s\n%s\n%s\n%s\n</main>'
-        % (S15, S16, S17, S18, S19))
+# The guide registers one TEST_YOURSELF.ent bank for the whole of ENT, so its
+# button sits after the last section rather than inside one. Without it the bank
+# is unreachable -- which is how it shipped, until 2026-09-11.
+TY_BUTTON = ('\n<button type="button" class="test-yourself-btn" style="--acc:#6a4fa3" '
+             'onclick="window.openTestYourself(\'Test yourself &mdash; ENT\', '
+             'TEST_YOURSELF.ent)">Test yourself! &rarr;</button>\n')
+
+body = ('<main class="content">%s\n%s\n%s\n%s\n%s\n%s</main>'
+        % (S15, S16, S17, S18, S19, TY_BUTTON))
 
 # The condition blocks and the Weber/Rinne table need styles the donor lacks.
 EXTRA = """

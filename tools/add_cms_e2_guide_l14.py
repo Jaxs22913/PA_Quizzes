@@ -46,8 +46,11 @@ FIGS = {
    ("l14-s024_pos1.jpg", "Hyphema",
     "Blood layered in the anterior chamber, with a visible fluid level", 24)],
  "@@LIDS@@": [
+   # Slide 29, not 27. The picture's own filename says s029 and
+   # _cms_e2_chart_l14.py agrees; the 27 here was stale and a rebuild would have
+   # quietly reverted the correct citation already in the shipped guide.
    ("l14-s029_pos1.jpg", "Lid laceration",
-    "Look underneath &mdash; two thirds of full-thickness cuts have a globe injury with them", 27),
+    "Look underneath &mdash; two thirds of full-thickness cuts have a globe injury with them", 29),
    ("l14-s032_pos1.jpg", "Orbital contusion",
     "Swelling held in front of the septum, without haemorrhage", 32),
    ("l14-s034_pos1.jpg", "Periorbital haematoma",

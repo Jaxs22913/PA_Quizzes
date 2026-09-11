@@ -266,6 +266,8 @@ BODY = """
   @@FIELDS@@
   <p>One more consequence he drew out: losing vision in one eye costs the <b>binocular overlap</b>,
   and with it <b>depth perception</b>. Everything becomes flat.</p>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#3b2a5e" onclick="window.openTestYourself('Test yourself &mdash; Ophthalmic Pathophysiology', TEST_YOURSELF.ophthalmic)">Test yourself! &rarr;</button>
 </section>
 """
 
@@ -353,6 +355,10 @@ def main():
         assert token in body, "figure token %s unused" % token
         body = body.replace(token, fig(slug, ext, cap, slide))
     assert "@@" not in body, "unfilled figure token"
+
+    assert "TEST_YOURSELF.ophthalmic" in body, (
+        "this section registers a TEST_YOURSELF.ophthalmic bank but has no button "
+        "that opens it -- the bank shipped unreachable once already")
 
     # the seven he named must each appear in the flagged block
     flagged = "\n".join(re.findall(r'<div class="prof-flag">.*?</div>', body, re.S))

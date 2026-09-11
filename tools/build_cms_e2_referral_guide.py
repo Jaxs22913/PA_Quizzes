@@ -155,6 +155,21 @@ def build():
     shell = src[:src.index('<header class="top">')]
     tail = src[src.index("</main>"):]
 
+    # The donor's tail carries its TEST_YOURSELF object, and this guide has no
+    # button that opens any of it -- it runs its own <details> "Check yourself"
+    # section instead. Spliced in, those five banks were ~50 questions of dead
+    # payload, byte-identical to the study guide's and unreachable from here.
+    # Found 2026-09-11 by tools/check_test_yourself_reachable.py.
+    i = tail.find("var TEST_YOURSELF = {")
+    if i != -1:
+        j = tail.index("\n  };", i) + len("\n  };")
+        dropped = tail[i:j].count("{q:")
+        tail = tail[:i] + tail[j:]
+        assert "TEST_YOURSELF" not in tail, (
+            "something still references TEST_YOURSELF after dropping the object -- "
+            "this guide would now throw on load")
+        print("  dropped the donor's unreachable TEST_YOURSELF object (%d questions)" % dropped)
+
     em, sd, ur = rows_for("EMERGENT"), rows_for("SAME DAY"), rows_for("URGENT")
     n_em = len(em) + len(D.EXTRA_EMERGENT)
     total = n_em + len(sd) + len(ur)
