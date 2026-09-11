@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmacology I Exam 2 Cram Sheet &mdash; Ophthalmic Drugs</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#8c1d12;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 2 &middot; Class of 2028</div>
+    <h1>Ophthalmic Drugs Cram Sheet</h1>
+    <p class="sub">Lecture 4, Adam Wood Pharm.D. DABAT. Opens with what he says is NOT on the exam, because on this lecture that is the most useful thing to read first.</p>
+    <div class="toc">
+      <a href="#rules" style="color:#6d170e"><span class="dot" style="background:#8c1d12"></span>What is NOT on it</a>
+      <a href="#kinetics" style="color:#253e53"><span class="dot" style="background:#2f4f6b"></span>Delivery &amp; kinetics</a>
+      <a href="#abx" style="color:#185748"><span class="dot" style="background:#1f6f5c"></span>Ocular antibiotics</a>
+      <a href="#viral" style="color:#5f3a7a"><span class="dot" style="background:#7a4a9c"></span>Antivirals &amp; antifungals</a>
+      <a href="#allergy" style="color:#834325"><span class="dot" style="background:#a8562f"></span>Allergy</a>
+      <a href="#inflam" style="color:#906925"><span class="dot" style="background:#b8862f"></span>Anti-inflammatories &amp; dry eye</a>
+      <a href="#glaucoma" style="color:#3a3e6d"><span class="dot" style="background:#4a4f8c"></span>Glaucoma</a>
+      <a href="#diag" style="color:#305340"><span class="dot" style="background:#3d6b52"></span>Diagnostic agents &amp; administration</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pharm-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="rules" style="--acc:#8c1d12;--acc-bg:#efdfde;--acc-zebra:#f7efee;--acc-ink:#6d170e">
+    <div class="shead"><span class="dot" style="background:#8c1d12"></span><h2>What is NOT on it</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Dosing</td><td>&ldquo;Not for memorization sake necessarily, because you can always look up the dosing for a medication <b>if you know which drug you actually want to use in the first place</b>.&rdquo; The deck is full of regimens. Learn none of them.</td></tr>
+          <tr><td class="h">Formulations</td><td>&ldquo;I don&rsquo;t care that you memorize that necessarily, with some exceptions.&rdquo; Percent strengths, solution against ointment: not the question.</td></tr>
+          <tr><td class="h">The indications table</td><td>&ldquo;Don&rsquo;t worry so much about indications for use&hellip; a lot of them have a lot of crossover.&rdquo; Slide 14 lists ten antibiotics against overlapping indications; it is orientation, not content.</td></tr>
+          <tr><td class="h">Which agent irritates</td><td>&ldquo;Don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. <b>Any of these can do that.</b>&rdquo; Only two adverse effects name a drug &mdash; see the antibiotics block.</td></tr>
+          <tr><td class="h">Combination products</td><td>&ldquo;The specific combinations, I don&rsquo;t care that you memorize, <b>BUT</b> just know if I was to say, hey, patient&rsquo;s on this drug right now, what would be a helpful second line agent to add on?&rdquo; Products out, reasoning in.</td></tr>
+          <tr><td class="h">&#9733; What IS promised</td><td>&ldquo;<b>I will tell you, I will ask this question</b>&hellip; there&rsquo;s rebound hyperaemia.&rdquo; It is in the allergy block below.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="kinetics" style="--acc:#2f4f6b;--acc-bg:#e2e6ea;--acc-zebra:#f0f3f5;--acc-ink:#253e53">
+    <div class="shead"><span class="dot" style="background:#2f4f6b"></span><h2>Delivery &amp; kinetics</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">ONE variable</td><td><b>Time in contact with the eye.</b> Gels, ointments and solid inserts exist to prolong contact in the cul-de-sac. So does blocking the tear ducts with silicone plugs or cautery.</td></tr>
+          <tr><td class="h">Two routes, two effects</td><td><b>TRANSCORNEAL &rarr; local effect.</b> Has a lag time; rate depends on the CONCENTRATION GRADIENT, governed by <b>Fick&rsquo;s law</b>. <b>NASOLACRIMAL &rarr; systemic effect</b>, and it <b>AVOIDS FIRST-PASS METABOLISM</b> &mdash; which is why a topical beta blocker can drop a heart rate.</td></tr>
+          <tr><td class="h">Four absorption determinants</td><td>Time in cul-de-sac and tear film &middot; nasolacrimal drainage &middot; protein binding &middot; diffusion across cornea and conjunctiva.</td></tr>
+          <tr><td class="h">Prodrugs activated IN the eye</td><td><b>Dipivefrin &rarr; epinephrine. Latanoprost &rarr; prostaglandin F2-alpha.</b> Some drugs instead ACCUMULATE &mdash; chloroquine&rsquo;s <b>bull&rsquo;s eye lesion</b>.</td></tr>
+          <tr><td class="h">Route trade-offs</td><td>TOPICAL: convenient, economical, safe; costs compliance, surface toxicity, systemic absorption. PERIOCULAR (subconjunctival, sub-Tenon&rsquo;s, retrobulbar): reaches posterior uveitis and cystoid macular oedema; risks <b>globe perforation, optic nerve trauma, retinal vessel occlusion</b>. INTRACAMERAL: prompt, anterior segment, short-lived.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="abx" style="--acc:#1f6f5c;--acc-bg:#e0ebe8;--acc-zebra:#eff5f4;--acc-ink:#185748">
+    <div class="shead"><span class="dot" style="background:#1f6f5c"></span><h2>Ocular antibiotics</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ THE MECHANISM PAIR</td><td><b>Macrolides &rarr; 50S</b> (block transpeptidation). <b>Aminoglycosides &rarr; 30S.</b> Same endpoint, different subunit.</td></tr>
+          <tr><td class="h">The other mechanisms</td><td><b>Fluoroquinolones</b> &rarr; DNA gyrase + topoisomerase IV, double-stranded breakage. <b>Bacitracin</b> &rarr; blocks mucopeptide transfer into the CELL WALL. <b>Polymyxin B</b> &rarr; binds membrane phospholipids, contents leak. <b>Sulfacetamide</b> &rarr; antagonises PABA. <b>Trimethoprim</b> &rarr; blocks reduction to tetrahydrofolate. (The last two are the same pathway, one step apart.)</td></tr>
+          <tr><td class="h">★ DRUG CHOICE</td><td><b>Erythromycin</b> = commonest, SOOTHING, usable before a bacterial cause is confirmed; also ophthalmia neonatorum prophylaxis. <b>Fluoroquinolone</b> = corneal ulcers, suspected <b>Pseudomonas</b>, and therefore CONTACT LENS wearers once keratitis is excluded. <b>Azithromycin</b> = twice daily instead of 4+, but expensive and used less.</td></tr>
+          <tr><td class="h">The only two adverse effects that name a drug</td><td><b>Ciprofloxacin &rarr; white precipitate in ~17%.</b> <b>Aminoglycoside over several days &rarr; corneal ulceration and reactive keratoconjunctivitis.</b> Everything else irritates.</td></tr>
+          <tr><td class="h">The only hard contraindication</td><td><b>Sulfacetamide in sulfonamide allergy.</b></td></tr>
+          <tr><td class="h">Conjunctivitis context</td><td>Most is NOT bacterial: viruses, allergy, irritants, contact lenses. Bacteria: <b>Neisseria, Haemophilus, Strep pneumoniae, Staph aureus, Moraxella</b>. Treat empirically, broad spectrum, <b>no cultures unless an unusual organism is expected</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="viral" style="--acc:#7a4a9c;--acc-bg:#ece6f1;--acc-zebra:#f6f2f8;--acc-ink:#5f3a7a">
+    <div class="shead"><span class="dot" style="background:#7a4a9c"></span><h2>Antivirals &amp; antifungals</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ NO antiviral for adenoviral conjunctivitis</td><td>Self-limited; symptomatic relief only. Antivirals exist for <b>keratitis, herpes zoster ophthalmicus, retinitis</b>.</td></tr>
+          <tr><td class="h">Topical antivirals</td><td><b>Trifluridine</b> &rarr; inhibits thymidylate synthetase AND substitutes for thymidine in viral DNA. <b>Ganciclovir</b> &rarr; competitively inhibits dGTP binding to DNA polymerase; intravitreal for CMV retinitis.</td></tr>
+          <tr><td class="h">Systemic antivirals</td><td><b>Acyclovir, valacyclovir, famciclovir</b> oral &mdash; zoster ophthalmicus, simplex keratitis. <b>Foscarnet</b> intravenous &mdash; CMV retinitis.</td></tr>
+          <tr><td class="h">★ Natamycin</td><td><b>The ONLY commercially available ophthalmic antifungal.</b> Polyene &mdash; binds sterol, increases membrane permeability. Covers Aspergillus, Candida, Cephalosporium, <b>Fusarium</b>, Penicillium. <b>Amphotericin B</b> is the one with every route (topical, subconjunctival, intravitreal, intravenous).</td></tr>
+          <tr><td class="h">★ Fungal risk factors</td><td>Trauma &middot; chronic ocular surface disease &middot; contact lens wear &middot; immunosuppression &mdash; <b>including topical steroid use</b>. The only one a prescription creates.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="allergy" style="--acc:#a8562f;--acc-bg:#f3e7e2;--acc-zebra:#f9f3f0;--acc-ink:#834325">
+    <div class="shead"><span class="dot" style="background:#a8562f"></span><h2>Allergy</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★★ REBOUND HYPERAEMIA</td><td>The promised question. OTC redness drops are <b>alpha-1 agonists</b> &rarr; vasoconstriction. Constant activation <b>DOWNREGULATES the receptors</b> &rarr; on stopping, fewer receptors for endogenous catecholamines &rarr; <b>vessels blow open</b>. Use <b>&lt;2 weeks</b>; no improvement in <b>72 hours</b> &rarr; stop and be seen.</td></tr>
+          <tr><td class="h">★ Imidazoline ingestion</td><td><b>LOCALLY alpha-1. SYSTEMICALLY alpha-2.</b> That is why a toddler who swallows the bottle gets CNS depression and apnoea, not hypertension. Same receptor logic as the brimonidine age limit.</td></tr>
+          <tr><td class="h">H1 agents</td><td><b>Not antagonists &mdash; INVERSE AGONISTS</b> that inactivate the receptor, still competitive with histamine. Onset <b>minutes</b>; allow <b>2 weeks</b> for full efficacy. Typically preferred over mast cell stabilisers. Can worsen dryness.</td></tr>
+          <tr><td class="h">Mast cell stabilisers</td><td>Cromolyn, lodoxamide, nedocromil. Inhibit degranulation (histamine, tryptase, PGD2). <b>5&ndash;14 days</b> to full effect &mdash; <b>NOT for acute symptoms</b>. Often 4&times; daily. For predictable seasonal allergy in someone intolerant of alternatives.</td></tr>
+          <tr><td class="h">The cascade</td><td>IgE binds Fc receptors on <b>mast cells and basophils</b>; tyrosine kinases in <b>5&ndash;15 seconds</b>; histamine, PAF, leukotrienes &rarr; vasodilation, swelling, redness, itch.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="inflam" style="--acc:#b8862f;--acc-bg:#f5eee2;--acc-zebra:#faf7f0;--acc-ink:#906925">
+    <div class="shead"><span class="dot" style="background:#b8862f"></span><h2>Anti-inflammatories &amp; dry eye</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ One step apart</td><td><b>STEROIDS inhibit phospholipase A2</b> &mdash; arachidonic acid never liberated, whole cascade fails. <b>NSAIDs block cyclooxygenase</b> &mdash; only the prostaglandin/thromboxane arm.</td></tr>
+          <tr><td class="h">NSAIDs</td><td>Bromfenac, diclofenac, flurbiprofen, ketorolac, nepafenac. For <b>postoperative inflammation and pain</b> and allergic conjunctivitis; <b>NOT routinely for conjunctivitis</b>. Adverse: lacrimation, keratitis, <b>raised IOP</b>.</td></tr>
+          <tr><td class="h">★ Steroid risks &rarr; &lt;2 week pulse</td><td>Cataract &middot; raised IOP and glaucoma (<b>more with family history</b>) &middot; infection &middot; delayed wound healing &middot; corneal ulcers. Also inhibit fibrin/collagen deposition &rarr; less scarring.</td></tr>
+          <tr><td class="h">★ &ldquo;Soft steroids&rdquo;</td><td><b>Fluorometholone, loteprednol, rimexolone</b> &mdash; lower IOP risk. Triamcinolone = intravitreal.</td></tr>
+          <tr><td class="h">Dry eye order</td><td><b>TREAT THE DISEASE FIRST</b> (Sjogren, rheumatoid, vitamin A deficiency, Stevens-Johnson). Then punctal plugs or surgical occlusion, then tear substitutes (electrolytes + surfactants + <b>thickeners to prolong cul-de-sac time</b>).</td></tr>
+          <tr><td class="h">Cyclosporine</td><td>Inhibits <b>interleukin-2</b> &rarr; less T cell activation &rarr; less lacrimal gland inflammation &rarr; more tears. For <b>chronic dry eye WITH inflammation</b>. Warn: <b>burning in ~17%</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="glaucoma" style="--acc:#4a4f8c;--acc-bg:#e6e6ef;--acc-zebra:#f2f3f7;--acc-ink:#3a3e6d">
+    <div class="shead"><span class="dot" style="background:#4a4f8c"></span><h2>Glaucoma</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Sort every drug by side</td><td><b>INCREASE OUTFLOW:</b> prostaglandins, alpha agonists, cholinergics. <b>DECREASE PRODUCTION:</b> alpha agonists, beta blockers, carbonic anhydrase inhibitors. <b>Alpha agonists are on BOTH</b> &mdash; that is where the errors come from.</td></tr>
+          <tr><td class="h">The three definitions</td><td><b>Ocular hypertension</b> = high pressure, NO nerve damage, NO field loss. <b>Open angle</b> = increased production or decreased drainage; may have damage. <b>Angle closure</b> = blocked canal, often normal nerve, usually acute PAIN. Normal IOP <b>10&ndash;21 mmHg</b>. Drugs target OPEN angle.</td></tr>
+          <tr><td class="h">★ Prostaglandins</td><td><b>FIRST LINE, most commonly used.</b> Increase outflow. <b>ONCE DAILY &mdash; exceeding it INHIBITS the effect.</b> Warn: <b>eyelash length and IRIS COLOUR change</b>, hyperaemia. Latanoprost, travoprost, bimatoprost, tafluprost.</td></tr>
+          <tr><td class="h">★ Beta blockers</td><td>Block beta receptors in ciliary epithelium &rarr; less cAMP &rarr; less production. <b>Betaxolol = beta-1 SELECTIVE</b> (safer in asthma). Carteolol, timolol, levobunolol = non-selective, more efficacious, more risk. Systemic: <b>heart failure, bradycardia, heart block, airway resistance</b>.</td></tr>
+          <tr><td class="h">★ Alpha-2 agonists</td><td>Apraclonidine, brimonidine. Reduce production AND increase outflow. <b>CONTRAINDICATED UNDER 2 YEARS &mdash; CNS depression and apnoea.</b> Apraclonidine ionised &rarr; less blood-brain penetration; brimonidine lipophilic but less allergic conjunctivitis.</td></tr>
+          <tr><td class="h">Carbonic anhydrase inhibitors</td><td>Dorzolamide, brinzolamide. Less bicarbonate &rarr; less fluid. Tolerability is the issue: <b>bitter taste ~25%, stinging ~33%</b>.</td></tr>
+          <tr><td class="h">Cholinergics</td><td>Pilocarpine, carbachol, acetylcholine. Muscarinic &rarr; ciliary muscle contracts &rarr; outflow opens. <b>Fixed small pupils, myopia, blurring</b> &mdash; <b>young patients cannot tolerate it</b>.</td></tr>
+          <tr><td class="h">★ Treat / target</td><td>Treat those <b>with risk factors</b>; monitor those without. Start with a <b>prostaglandin or beta blocker</b>, optionally <b>one eye</b> as its own control. Goal: <b>20&ndash;30% reduction</b>. Combinations are synergistic across DIFFERENT routes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="diag" style="--acc:#3d6b52;--acc-bg:#e4eae7;--acc-zebra:#f1f5f3;--acc-ink:#305340">
+    <div class="shead"><span class="dot" style="background:#3d6b52"></span><h2>Diagnostic agents &amp; administration</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Anaesthetics</td><td>Tetracaine, proparacaine. Inhibit <b>sodium influx</b>. For tonometry, foreign body removal, superficial corneal surgery. <b>Numb 10&ndash;20 min with NO BLINK REFLEX.</b> <b>DO NOT PRESCRIBE</b> &mdash; repeated use is epithelial-toxic and delays healing.</td></tr>
+          <tr><td class="h">Cycloplegics &mdash; two routes</td><td><b>ANTIMUSCARINICS</b> (atropine, cyclopentolate, tropicamide) block muscarinic receptors &rarr; mydriasis. <b>SYMPATHOMIMETIC</b> (phenylephrine) stimulates the dilator &rarr; pupil stays <b>more light-reactive</b>. Uses: fundoscopy; uveitis to prevent synechiae and relieve ciliary spasm.</td></tr>
+          <tr><td class="h">Fluorescein</td><td>Reveals <b>epithelial defects of cornea and conjunctiva</b>. Anterior segment staining; discloses corneal injury.</td></tr>
+          <tr><td class="h">★ BEFORE any drop</td><td><b>MEASURE VISUAL ACUITY.</b> Document allergies and last eye exam. Repeat acuity every visit &mdash; <b>if it worsens, immediate ophthalmology consult</b>.</td></tr>
+          <tr><td class="h">Instillation</td><td><b>Wash hands (most important)</b> &rarr; dropper touches nothing &rarr; head back, lower lid pocket &rarr; one drop &rarr; close eyes, tilt forward, <b>finger over lacrimal duct</b> &rarr; hold <b>2&ndash;3 minutes</b> &rarr; wipe, wash again.</td></tr>
+          <tr><td class="h">Ointments &amp; lenses</td><td>Ointment suits <b>children and poor compliers</b> (works even from the lashes); ribbon into the pocket, <b>no duct occlusion needed</b>; <b>blurs vision ~20 min</b>. Contact lenses: stop; resume after <b>24 h free of inflammation and discharge</b>; discard or disinfect the lens; bin the eye makeup.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Lecture 4 of five in Exam 2 &mdash; lectures 5 to 8 are not delivered yet. The <a href="pharm-exam-2-study-guide.html">study guide</a> has the full treatment.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
