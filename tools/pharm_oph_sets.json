@@ -1,0 +1,2718 @@
+{
+ "anti1": [
+  {
+   "topic": "Ocular drug delivery",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What are the stated advantages of the topical route?",
+   "opts": [
+    [
+     "Convenient, economical and relatively safe",
+     "Correct. That combination is why almost every ophthalmic drug is a drop or an ointment. The price is compliance, surface toxicity and systemic absorption by the nasolacrimal route."
+    ],
+    [
+     "Sustained release without repeated dosing",
+     "That is what inserts and implants are for; a plain topical solution needs frequent administration."
+    ],
+    [
+     "Reliable delivery to the posterior segment",
+     "Topical drug reaches the anterior segment well; the posterior segment is what the periocular and intraocular routes exist for."
+    ],
+    [
+     "Avoidance of any systemic exposure",
+     "The opposite — nasolacrimal drainage is exactly how a topical drop produces systemic effects."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 5"
+  },
+  {
+   "topic": "Ocular drug delivery",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which route is described for anterior segment surgery and infection, with prompt absorption and a relatively short duration?",
+   "opts": [
+    [
+     "Topical instillation",
+     "Prompt depending on formulation, but it is the convenient everyday route rather than a surgical one."
+    ],
+    [
+     "Intracameral injection",
+     "Correct. Prompt onset, used in anterior segment surgery and infection, but its effect is relatively short-lived and it carries corneal and intraocular toxicity."
+    ],
+    [
+     "Retrobulbar injection",
+     "A periocular route whose utility is posterior uveitis and cystoid macular oedema."
+    ],
+    [
+     "Oral administration",
+     "Oral and parenteral agents exist for infections topical therapy cannot reach, which is not the situation described here."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 5"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Azithromycin solution is dosed twice daily while erythromycin ointment may be needed four or more times a day. Why is azithromycin still not the usual choice?",
+   "opts": [
+    [
+     "It is less effective against the usual conjunctivitis organisms",
+     "Azithromycin is not described as less effective. The reason it is used less often is expense, despite its more convenient dosing."
+    ],
+    [
+     "It cannot be used in contact lens wearers",
+     "No such restriction is given; the contact lens concern drives you toward a fluoroquinolone for Pseudomonas cover."
+    ],
+    [
+     "It is considerably more expensive",
+     "Correct. The dosing advantage is real and helps compliance, but cost keeps it from being used as often clinically. Erythromycin remains the common one."
+    ],
+    [
+     "It causes a white precipitate on the eye",
+     "That is ciprofloxacin, in about seventeen per cent of patients."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 17"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "contraindication",
+   "q": "Which ophthalmic antibiotic must be avoided outright in a patient with a sulfonamide allergy?",
+   "opts": [
+    [
+     "Trimethoprim with polymyxin B",
+     "Trimethoprim blocks the next step down, the reduction of folic acid to tetrahydrofolate, and is not a sulfonamide."
+    ],
+    [
+     "Bacitracin",
+     "A cell wall agent with no structural relationship to the sulfonamides."
+    ],
+    [
+     "Sulfacetamide",
+     "Correct. It is a sulfonamide, and it works by antagonising p-aminobenzoic acid to block folic acid synthesis. A documented sulfonamide allergy rules it out — one of the few genuine contraindications in the whole ophthalmic antibiotic list."
+    ],
+    [
+     "Ciprofloxacin",
+     "A fluoroquinolone. It shares no structural relationship with the sulfonamides, so a sulfa allergy is no bar to using it."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 19"
+  },
+  {
+   "topic": "Ocular drug delivery",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Why do gels, ointments and solid inserts increase the amount of drug absorbed compared with a simple solution?",
+   "opts": [
+    [
+     "They increase the drug's lipid solubility",
+     "Formulation changes the residence time, not the molecule. Solubility is a property of the drug itself."
+    ],
+    [
+     "They open tight junctions in the corneal epithelium",
+     "Not how it works; absorption is governed by the concentration gradient across an intact cornea."
+    ],
+    [
+     "They reduce binding of drug to tear proteins",
+     "Protein binding does affect absorption, but it is not how a gel or ointment works — the gain is contact time."
+    ],
+    [
+     "They prolong contact time in the cul-de-sac",
+     "Correct. More time sitting in the cul-de-sac means more opportunity for transcorneal diffusion. Every formulation trick is aimed at the same variable — how long the drug stays in contact with the eye."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slides 6-7"
+  },
+  {
+   "topic": "Ocular antivirals",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "A patient has adenoviral conjunctivitis. Which antiviral is indicated?",
+   "opts": [
+    [
+     "None is indicated",
+     "Correct. There is no antiviral for viral conjunctivitis caused by adenoviruses. It runs its own course and you relieve the irritation. The ocular antivirals exist for keratitis, herpes zoster ophthalmicus and retinitis."
+    ],
+    [
+     "Topical trifluridine",
+     "Reserved for herpes simplex keratitis and keratoconjunctivitis, not adenoviral disease."
+    ],
+    [
+     "Topical ganciclovir",
+     "Used for herpetic keratitis and, by intravitreal injection, for cytomegalovirus retinitis."
+    ],
+    [
+     "Oral acyclovir",
+     "Used for herpes zoster ophthalmicus and herpes simplex iridocyclitis; it has no role against adenovirus."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 25"
+  },
+  {
+   "topic": "Ocular antifungals",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "risk factor",
+   "q": "Which risk factor for ophthalmic fungal infection is one a clinician can create?",
+   "opts": [
+    [
+     "Contact lens wear",
+     "A genuine risk factor, but the patient's, not one the clinician introduces."
+    ],
+    [
+     "Antecedent trauma",
+     "A genuine risk factor and on the list, but it is something the patient arrives with rather than something a prescription introduces."
+    ],
+    [
+     "Topical corticosteroid use",
+     "Correct. The risk list is trauma, chronic ocular surface disease, contact lens wear and immunosuppression — and topical steroid use is named explicitly as immunosuppression. It is the only one on the list you can introduce by prescribing."
+    ],
+    [
+     "Chronic ocular surface disease",
+     "Also on the list, and also not something a prescription causes."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "diagnosis",
+   "q": "Which non-infectious causes of conjunctivitis are commoner than the bacterial ones?",
+   "opts": [
+    [
+     "Only bacterial pathogens are listed as common",
+     "The non-infectious causes come FIRST precisely because most red eyes are not bacterial; the pathogens are the smaller group."
+    ],
+    [
+     "Tumours and systemic disease",
+     "Tumours and systemic disease do appear, but in the less common group alongside immune-mediated reactions rather than among the common causes."
+    ],
+    [
+     "Fungal keratitis and herpes zoster",
+     "Fungal keratitis and herpes zoster are separate entities, and neither is a common cause of conjunctivitis."
+    ],
+    [
+     "Viruses, allergy, irritants and contact lenses",
+     "Correct. These are given as the common causes, with immune-mediated reactions, systemic disease and tumours as less common. Bacterial pathogens come after — a reminder that most red eyes are not bacterial."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 13"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which agent is described as the most common ophthalmic antibiotic, and what property lets it be used before a bacterial cause is confirmed?",
+   "opts": [
+    [
+     "Azithromycin, because it is dosed less often",
+     "Twice daily rather than four or more times is a real advantage, but it is considerably more expensive and not used as often clinically."
+    ],
+    [
+     "Ciprofloxacin, because it covers the widest spectrum",
+     "Broad and effective, but expensive, with emerging resistance, and reserved rather than reached for first."
+    ],
+    [
+     "Erythromycin, because it is soothing on an inflamed eye",
+     "Correct. It is the one you will see most, and because it soothes the inflamed eye it can reasonably be started even when a bacterial infection has not been confirmed."
+    ],
+    [
+     "Bacitracin, because it has no drug interactions",
+     "True of nearly every topical ophthalmic antibiotic here, so it distinguishes nothing."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 17"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Two ophthalmic antibiotic classes both stop bacterial protein synthesis. What separates them?",
+   "opts": [
+    [
+     "Macrolides act at the 30S subunit, aminoglycosides at the 50S",
+     "The two subunits are the right ones but assigned to the wrong classes — macrolides take the 50S and aminoglycosides the 30S."
+    ],
+    [
+     "Macrolides act at the 50S subunit, aminoglycosides at the 30S",
+     "Correct. Same endpoint, different ribosomal subunit — the cleanest mechanism pairing among the ophthalmic antibiotics."
+    ],
+    [
+     "Macrolides block transpeptidation, aminoglycosides block DNA gyrase",
+     "The first is right; the second belongs to the fluoroquinolones."
+    ],
+    [
+     "Both act at the 50S subunit but bind different sites",
+     "The aminoglycosides bind the 30S, which is the whole distinction."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slides 15 and 23"
+  },
+  {
+   "topic": "Ocular drug delivery",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which delivery route carries the risk of globe perforation, optic nerve trauma and central retinal artery occlusion?",
+   "opts": [
+    [
+     "Topical instillation",
+     "Its limitations are compliance, corneal and conjunctival toxicity, nasal mucosal toxicity and systemic effects from nasolacrimal absorption — no needle, no perforation."
+    ],
+    [
+     "Oral administration",
+     "Systemic exposure is the trade-off there, not mechanical injury to the globe."
+    ],
+    [
+     "Intravenous administration",
+     "Again a systemic route; it carries no risk of perforating the eye."
+    ],
+    [
+     "Periocular injection",
+     "Correct. These periocular injections reach the anterior segment, posterior uveitis and cystoid macular oedema, but the needle is the hazard — perforation, optic nerve trauma, vascular occlusion and direct retinal drug toxicity if the globe is entered."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 5"
+  },
+  {
+   "topic": "Ocular antifungals",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Amphotericin B appears on the ophthalmic antifungal table with more routes than any other agent. Which are they?",
+   "opts": [
+    [
+     "Topical solution and oral tablet only",
+     "Oral administration belongs to the imidazoles — fluconazole, itraconazole, ketoconazole."
+    ],
+    [
+     "Topical, subconjunctival, intravitreal, intravenous",
+     "Correct. It is the one agent given by every route on the table, which is what makes it usable for endophthalmitis as well as surface disease."
+    ],
+    [
+     "Intravitreal and subconjunctival injection only",
+     "Intravitreal injection is one of amphotericin B’s four listed routes, which is the point — no other antifungal here has that range."
+    ],
+    [
+     "Topical suspension, and nothing else",
+     "A topical suspension and nothing else is natamycin, which is the only commercially available ophthalmic antifungal."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 31"
+  },
+  {
+   "topic": "Ocular pharmacokinetics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "A patient on long-term chloroquine develops a bull's eye lesion in the retina. Which pharmacokinetic property explains it?",
+   "opts": [
+    [
+     "Some drugs accumulate in ocular tissue after systemic absorption",
+     "Correct. Distribution into the eye happens normally after systemic absorption, and a few drugs concentrate there over time. The bull's eye maculopathy is the named consequence."
+    ],
+    [
+     "Chloroquine is metabolised in the eye to a toxic product",
+     "Ocular metabolism is exploited for prodrugs such as dipivefrin and latanoprost, not offered as the explanation here."
+    ],
+    [
+     "Nasolacrimal drainage delivers a high local dose",
+     "That route carries drug away from the eye toward the systemic circulation, not into the retina."
+    ],
+    [
+     "Chloroquine binds tear proteins and is retained on the surface",
+     "Tear protein binding acts on the ocular surface and limits absorption; it cannot deposit anything in the retina, where the bull’s eye lesion sits."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 10"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Sulfacetamide and trimethoprim both interfere with folate, but at different points. What is the difference?",
+   "opts": [
+    [
+     "Sulfacetamide blocks reduction to tetrahydrofolate; trimethoprim antagonises p-aminobenzoic acid",
+     "The two steps are the right ones but assigned to the wrong drugs."
+    ],
+    [
+     "Sulfacetamide inhibits the 30S ribosome; trimethoprim inhibits the 50S",
+     "Neither acts on the ribosome. Both interfere with folate, which is what makes them a sequential pair rather than alternatives."
+    ],
+    [
+     "Both block the same enzyme, so they are interchangeable",
+     "They act at different points, which is why they appear as separate agents rather than substitutes."
+    ],
+    [
+     "Sulfacetamide antagonises p-aminobenzoic acid; trimethoprim blocks reduction to tetrahydrofolate",
+     "Correct. Sulfacetamide acts at the synthesis end by competing with p-aminobenzoic acid; trimethoprim acts one step later, stopping folic acid being reduced. Sequential blockade of the same pathway."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slides 18-19"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Bacitracin ointment works on a structure none of the other ophthalmic antibiotics target. Which one?",
+   "opts": [
+    [
+     "The 50S ribosomal subunit",
+     "That is the macrolides, which block transpeptidation there and stop protein synthesis."
+    ],
+    [
+     "DNA gyrase",
+     "That is the fluoroquinolones, which cause double-stranded DNA breakage."
+    ],
+    [
+     "The bacterial cell wall",
+     "Correct. Bacitracin stops mucopeptides being transferred into the growing wall. Every other ophthalmic antibiotic goes after the ribosome, DNA, folate or the membrane."
+    ],
+    [
+     "The cytoplasmic membrane",
+     "That is polymyxin B, which alters permeability rather than blocking wall construction."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 20"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Why has the microbiological spectrum of ocular infection shifted over time, by the example given?",
+   "opts": [
+    [
+     "Contact lens use increased Pseudomonas",
+     "Contact lenses do raise Pseudomonas risk, but the shift attributed to a changing spectrum is the vaccine example."
+    ],
+    [
+     "Vaccination reduced Haemophilus influenzae",
+     "Correct. The spectrum is not fixed — the example given is the fall in Haemophilus influenzae after the vaccine was introduced, which changes what empiric therapy has to cover."
+    ],
+    [
+     "Fluoroquinolone use selected for resistant Staphylococcus",
+     "Emerging resistance is noted for the fluoroquinolones, but it is not the example used for a changing spectrum."
+    ],
+    [
+     "Topical steroid use increased fungal infection",
+     "That is a risk factor for fungal keratitis, not a change in the bacterial spectrum."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 12"
+  },
+  {
+   "topic": "Ocular pharmacokinetics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Which factors determine the rate and extent of absorption of a topical ophthalmic drug?",
+   "opts": [
+    [
+     "Corneal blood flow and the rate of aqueous production",
+     "The cornea is avascular, and aqueous production is the target of glaucoma drugs rather than a determinant of absorption."
+    ],
+    [
+     "The patient's systemic renal and hepatic function",
+     "Those govern elimination once the drug is absorbed, not absorption at the eye."
+    ],
+    [
+     "Intraocular pressure and pupil size",
+     "Neither intraocular pressure nor pupil size appears among the four determinants; those are time in contact, drainage, protein binding and diffusion."
+    ],
+    [
+     "Contact time, drainage, protein binding and diffusion",
+     "Correct. Four variables, and formulation changes act on the first two — which is why gels, ointments and inserts exist and why occluding the puncta increases absorption."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 7"
+  },
+  {
+   "topic": "Ocular antifungals",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What is notable about natamycin among the ophthalmic antifungals?",
+   "opts": [
+    [
+     "It is the only antifungal effective against Fusarium",
+     "It does cover Fusarium, but the point is availability rather than an exclusive spectrum."
+    ],
+    [
+     "It is the only commercially available ophthalmic antifungal",
+     "Correct. Everything else on the antifungal table — amphotericin B, the imidazoles — is given by another route or has to be compounded. Availability is why natamycin is the one to know by name."
+    ],
+    [
+     "It is the only antifungal given intravitreally",
+     "Amphotericin B is the agent listed for intravitreal injection; natamycin is a topical suspension."
+    ],
+    [
+     "It is the only antifungal free of ocular irritation",
+     "Ocular irritation is its adverse effect, as with nearly every topical ophthalmic agent."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "When are cultures routinely taken before starting an ophthalmic antibiotic?",
+   "opts": [
+    [
+     "Not unless an unusual organism is expected",
+     "Correct. Broad-spectrum topical therapy is started empirically. Cultures are reserved for when something unusual is likely — the immunocompromised patient is the example given."
+    ],
+    [
+     "Always, because resistance is emerging",
+     "Resistance is a real concern with the fluoroquinolones, but it has not changed the empiric approach for ordinary infections."
+    ],
+    [
+     "Only for conjunctivitis, not for keratitis",
+     "No such split is drawn. The rule is about whether an unusual organism is expected, not about which part of the eye is involved."
+    ],
+    [
+     "Only when the patient wears contact lenses",
+     "Contact lens wear changes the drug you choose because of Pseudomonas risk, not whether you culture."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 12"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Erythromycin ointment and azithromycin solution share a mechanism. What is it?",
+   "opts": [
+    [
+     "Inhibition of protein synthesis at the 50S ribosomal subunit",
+     "Correct. The macrolides block transpeptidation at the 50S subunit, so RNA-dependent protein synthesis stops and the organism dies. Knowing the subunit is what separates them from the aminoglycosides."
+    ],
+    [
+     "Inhibition of protein synthesis at the 30S ribosomal subunit",
+     "That is the aminoglycosides — gentamicin and tobramycin. Same broad target, different subunit, and the pairing is the point."
+    ],
+    [
+     "Inhibition of DNA gyrase and topoisomerase IV",
+     "That is the fluoroquinolones, which break double-stranded DNA rather than interfering with the ribosome."
+    ],
+    [
+     "Inhibition of cell wall mucopeptide transfer",
+     "That is bacitracin, which works on the wall rather than on protein synthesis."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 15"
+  }
+ ],
+ "anti2": [
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is specific enough to an ophthalmic antibiotic class to be worth knowing, rather than being shared by all of them?",
+   "opts": [
+    [
+     "Ocular irritation with erythromycin",
+     "Shared by nearly every ophthalmic antibiotic, which is why it is not worth memorising which ones cause it."
+    ],
+    [
+     "Hypersensitivity with bacitracin",
+     "Also non-specific — any of these agents can produce hypersensitivity, so it names no particular drug."
+    ],
+    [
+     "Corneal ulceration from an aminoglycoside",
+     "Correct. Ocular irritation is common to essentially every agent here and so distinguishes nothing — but aminoglycosides used for several days can produce corneal ulceration and a reactive keratoconjunctivitis, which changes how long you continue them."
+    ],
+    [
+     "Unpleasant taste after a macrolide",
+     "The taste complaint belongs with the fluoroquinolones, and reflects nasolacrimal drainage rather than a class toxicity."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Roughly one in six patients given a particular ophthalmic fluoroquinolone develops a visible finding on the eye. Which drug, and what is seen?",
+   "opts": [
+    [
+     "Ciprofloxacin, and a white precipitate forms",
+     "Correct. It occurs in about seventeen per cent, and it is worth recognising so it is not mistaken for a worsening infiltrate or a new ulcer."
+    ],
+    [
+     "Moxifloxacin, and a white precipitate forms",
+     "The finding is right but the agent is not; this is described for ciprofloxacin."
+    ],
+    [
+     "Gatifloxacin, and corneal deposits form",
+     "Gatifloxacin carries no such described finding. The visible precipitate is specific to ciprofloxacin, in roughly one patient in six."
+    ],
+    [
+     "Ofloxacin, and conjunctival pigmentation develops",
+     "Pigment change belongs with the prostaglandins in the glaucoma section, not with a fluoroquinolone."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 21"
+  },
+  {
+   "topic": "Ocular drug delivery",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Latanoprost and dipivefrin are both given in an inactive form. What does the eye do with them?",
+   "opts": [
+    [
+     "It metabolises them — they are prodrugs activated in the eye",
+     "Correct. Some drugs are metabolised within the eye itself, which is exploited deliberately: dipivefrin becomes epinephrine and latanoprost becomes prostaglandin F2-alpha once inside."
+    ],
+    [
+     "It concentrates them in the ciliary body without altering them",
+     "Accumulation happens with some drugs — chloroquine's bull's eye lesion is the example — but that is storage, not activation."
+    ],
+    [
+     "It excretes them unchanged into the aqueous humour",
+     "That would deliver no active drug at all, which defeats the purpose of the prodrug design."
+    ],
+    [
+     "It binds them to tear proteins until they are displaced",
+     "Tear protein binding limits absorption; it does not convert an inactive compound into an active one."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 10"
+  },
+  {
+   "topic": "Ocular antivirals",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Ganciclovir treats herpetic keratitis topically and cytomegalovirus retinitis by intravitreal injection. How does it work?",
+   "opts": [
+    [
+     "It inhibits thymidylate synthetase and substitutes for thymidine",
+     "That is trifluridine, the other topical ophthalmic antiviral."
+    ],
+    [
+     "It binds sterols in the viral envelope",
+     "Sterol binding is the antifungal mechanism used by natamycin."
+    ],
+    [
+     "It competitively inhibits DNA polymerase",
+     "Correct. Competing with the natural nucleotide at DNA polymerase halts viral DNA synthesis, and the intravitreal route is what makes it usable for retinitis."
+    ],
+    [
+     "It inhibits viral protease",
+     "Protease inhibition is not among the ocular antiviral mechanisms here; both topical agents act at the level of viral DNA synthesis."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 28"
+  },
+  {
+   "topic": "Ocular antivirals",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which ocular antivirals are given by mouth, and for which conditions?",
+   "opts": [
+    [
+     "Oral natamycin for fungal keratitis",
+     "Natamycin is a topical suspension; the oral antifungals are the imidazoles."
+    ],
+    [
+     "Oral foscarnet for cytomegalovirus retinitis",
+     "Foscarnet does treat cytomegalovirus retinitis, but it is an intravenous agent. The oral antivirals here are acyclovir, valacyclovir and famciclovir."
+    ],
+    [
+     "Oral trifluridine for herpes simplex keratoconjunctivitis",
+     "Trifluridine treats herpes simplex keratoconjunctivitis, but topically rather than orally — it is one of the two topical ocular antivirals."
+    ],
+    [
+     "Acyclovir, valacyclovir or famciclovir",
+     "Correct. The systemic agents handle zoster ophthalmicus and simplex keratitis or iridocyclitis, while trifluridine and ganciclovir are the topical options."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 26"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "diagnosis",
+   "q": "Which organisms are listed as infectious causes of conjunctivitis?",
+   "opts": [
+    [
+     "Pseudomonas aeruginosa and Serratia marcescens only",
+     "Pseudomonas matters for contact lens wearers and corneal ulcers, but it is not the general conjunctivitis list."
+    ],
+    [
+     "Aspergillus, Candida, Fusarium and Cephalosporium",
+     "Those are the fungal keratitis organisms that natamycin covers."
+    ],
+    [
+     "Neisseria, Haemophilus, Streptococcus and Moraxella",
+     "Correct. Though most conjunctivitis is viral, allergic, irritant or contact-lens related — the bacterial list matters because it is what empiric broad-spectrum therapy is aimed at."
+    ],
+    [
+     "Adenovirus, herpes simplex and varicella zoster only",
+     "Viruses are a common cause, but the question asks for the bacterial pathogens named."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 13"
+  },
+  {
+   "topic": "Ocular pharmacokinetics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Absorption can be deliberately increased by blocking the tear ducts with silicone plugs or cautery. Why does that work?",
+   "opts": [
+    [
+     "It increases tear production and dilutes irritants",
+     "Occlusion conserves tears rather than stimulating them, and dilution would reduce the gradient."
+    ],
+    [
+     "It stops the drop draining away",
+     "Correct. Nasolacrimal drainage removes drug from the eye and sends it systemically. Blocking it leaves more drug in contact with the cornea for longer — the same goal as thickening the formulation."
+    ],
+    [
+     "It reduces drug binding to tear proteins",
+     "Protein binding is a separate determinant and is not altered by occluding the duct."
+    ],
+    [
+     "It lowers the corneal epithelial barrier",
+     "Occluding the punctum does nothing to the corneal epithelium itself. What changes is how long the drug stays in contact with it."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 7"
+  },
+  {
+   "topic": "Ocular antifungals",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How does natamycin act on fungi?",
+   "opts": [
+    [
+     "It inhibits fungal cell wall glucan synthesis",
+     "An echinocandin mechanism, and the echinocandins are not on this ophthalmic list."
+    ],
+    [
+     "It inhibits ergosterol synthesis at 14-alpha-demethylase",
+     "That is the azole mechanism, used by fluconazole and the rest of the imidazole group."
+    ],
+    [
+     "It binds sterol and increases fungal cell membrane permeability",
+     "Correct. Binding membrane sterol makes the fungal membrane leaky. It is a polyene, and that is the polyene mechanism."
+    ],
+    [
+     "It inhibits fungal DNA polymerase",
+     "No antifungal on this list acts on fungal DNA polymerase. The mechanisms here are sterol binding and ergosterol synthesis inhibition."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 32"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Gentamicin and tobramycin act on the bacterial ribosome. At which subunit?",
+   "opts": [
+    [
+     "The 50S subunit",
+     "That belongs to the macrolides — erythromycin and azithromycin — which block transpeptidation there."
+    ],
+    [
+     "Both the 30S and 50S subunits equally",
+     "Neither class does this; each has its own subunit and the separation is what makes the pair worth learning."
+    ],
+    [
+     "Neither — they act on the cell membrane",
+     "That is polymyxin B, which alters membrane permeability and lets intracellular contents leak out."
+    ],
+    [
+     "The 30S subunit",
+     "Correct. The aminoglycosides bind the 30S subunit and interfere with protein synthesis. The macrolides take the 50S, and keeping the two numbers straight is the whole distinction."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Polytrim combines two agents. How does each one work?",
+   "opts": [
+    [
+     "Trimethoprim antagonises p-aminobenzoic acid; polymyxin B blocks the 50S ribosome",
+     "The first half describes sulfacetamide, which acts a step earlier in the same folate pathway, and polymyxin B is a membrane agent rather than a ribosomal one."
+    ],
+    [
+     "Trimethoprim blocks folate reduction; polymyxin B disrupts the bacterial membrane",
+     "Correct. Trimethoprim stops folic acid becoming tetrahydrofolate, so nucleic acid and protein production fail. Polymyxin B binds membrane phospholipids and lets intracellular contents leak out. Two unrelated mechanisms in one bottle."
+    ],
+    [
+     "Both inhibit bacterial cell wall synthesis",
+     "Neither agent touches the cell wall. Bacitracin is the only wall-active ophthalmic antibiotic, and it is not in this combination."
+    ],
+    [
+     "Trimethoprim disrupts the membrane; polymyxin B blocks folate reduction",
+     "The mechanisms named are the right two but attached to the wrong drugs — trimethoprim is the folate agent and polymyxin B the membrane one."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 18"
+  },
+  {
+   "topic": "Ocular antivirals",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How does trifluridine interfere with viral replication?",
+   "opts": [
+    [
+     "It competitively inhibits deoxyguanosine triphosphate binding to DNA polymerase",
+     "That is ganciclovir's mechanism, and the two are the pair worth separating."
+    ],
+    [
+     "It inhibits viral neuraminidase",
+     "Not a mechanism used by any of the ophthalmic antivirals; both topical agents act on viral DNA synthesis."
+    ],
+    [
+     "It inhibits thymidylate synthetase and is incorporated into viral DNA in place of thymidine",
+     "Correct. It both starves the virus of thymidine and substitutes itself into the growing strand — two hits on the same pathway."
+    ],
+    [
+     "It blocks viral attachment to the corneal epithelium",
+     "Neither ophthalmic antiviral here acts at the attachment step."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 27"
+  },
+  {
+   "topic": "Precautions",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "A patient presents with an eye complaint and you are about to instil a medication. What must be done first?",
+   "opts": [
+    [
+     "Measure intraocular pressure",
+     "Tonometry has its own indications and needs an anesthetic first; it is not the universal precondition."
+    ],
+    [
+     "Measure visual acuity",
+     "Correct. Acuity is measured before anything goes in the eye, and again at every follow-up. If it worsens, that is an immediate ophthalmology consult — which is the whole reason a baseline has to exist."
+    ],
+    [
+     "Instil fluorescein to exclude an epithelial defect",
+     "Useful when corneal injury is suspected, but not required before every ophthalmic medication."
+    ],
+    [
+     "Confirm the patient is not wearing contact lenses",
+     "Relevant to management, but the stated precaution that comes first is the acuity measurement."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 33"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "A small, mild, peripheral ocular infection is being treated. What is the usual approach, and what limits it?",
+   "opts": [
+    [
+     "Topical therapy, needing frequent dosing",
+     "Correct. Topical gives very high local concentrations, which is the point, but bioavailability beyond the eye is poor and drops have to be given often. Broad-spectrum agents are used empirically without cultures unless an unusual organism is expected."
+    ],
+    [
+     "Oral therapy, limited by first-pass metabolism",
+     "Oral and parenteral agents are reserved for infections that topical treatment cannot reach."
+    ],
+    [
+     "Intravitreal injection, limited by the risk of endophthalmitis",
+     "Intravitreal injection is reserved for endophthalmitis and retinitis. Using it for a small peripheral infection would carry far more risk than the disease."
+    ],
+    [
+     "Subconjunctival injection, limited by local tissue injury",
+     "Reserved for anterior segment infections and posterior uveitis, not mild peripheral disease."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 12"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Besides Pseudomonas cover, what is the other indication for which fluoroquinolones are specifically preferred?",
+   "opts": [
+    [
+     "Corneal ulcers",
+     "Correct. Corneal ulcers and suspected Pseudomonas are the two the fluoroquinolones are named for. Against that sit the cost and the emerging resistance, which is why they are not first for everything."
+    ],
+    [
+     "Blepharitis",
+     "Managed with the broader ointment agents rather than reserved fluoroquinolones."
+    ],
+    [
+     "Ophthalmia neonatorum prophylaxis",
+     "Prophylaxis of ophthalmia neonatorum is erythromycin ointment's listed indication, not a reason to reach for a fluoroquinolone."
+    ],
+    [
+     "Fungal keratitis",
+     "An antifungal problem — natamycin — not an antibacterial one."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 22"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do the ophthalmic fluoroquinolones kill bacteria?",
+   "opts": [
+    [
+     "They inhibit RNA-dependent protein synthesis at the 50S ribosome",
+     "That is the macrolide mechanism, shared by erythromycin and azithromycin."
+    ],
+    [
+     "They inhibit DNA gyrase and topoisomerase IV",
+     "Correct. Blocking those enzymes prevents supercoiled DNA relaxing, and the strands break. This is the class used for corneal ulcers and for suspected Pseudomonas."
+    ],
+    [
+     "They block folic acid synthesis",
+     "That is sulfacetamide, and trimethoprim acts one step further along the same pathway."
+    ],
+    [
+     "They bind sterols and increase membrane permeability",
+     "That is natamycin, and it is an antifungal mechanism rather than antibacterial."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 21"
+  },
+  {
+   "topic": "Ocular antibiotics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "A contact lens wearer has bacterial conjunctivitis and keratitis has been ruled out. Which class is preferred, and why?",
+   "opts": [
+    [
+     "A macrolide, because erythromycin is soothing on an inflamed eye",
+     "True of erythromycin in general, and it is the commonest ophthalmic antibiotic — but soothing does not address the organism this patient is at risk from."
+    ],
+    [
+     "A fluoroquinolone, for Pseudomonas cover",
+     "Correct. Contact lens use raises the risk of Pseudomonas aeruginosa, a gram-negative rod, and the fluoroquinolones are the class that covers it. They are also the preferred choice for corneal ulcers for the same reason."
+    ],
+    [
+     "An aminoglycoside, because it covers gram-negative organisms",
+     "Aminoglycosides do have gram-negative activity, but the fluoroquinolones are the class named for Pseudomonas and corneal ulcers, and aminoglycosides carry a corneal ulceration risk of their own."
+    ],
+    [
+     "Sulfacetamide, because it is inexpensive and well tolerated",
+     "Cheap, but it does not answer the Pseudomonas risk, and it must be avoided altogether in sulfonamide allergy."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 22"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "risk factor",
+   "q": "Which factors determine whether an ocular infection is treated topically or with oral or parenteral agents?",
+   "opts": [
+    [
+     "The organism's Gram stain alone",
+     "Cultures are not routinely obtained, so this is rarely even available at the moment of decision."
+    ],
+    [
+     "The patient's visual acuity alone",
+     "Acuity is a mandatory baseline and a warning sign, but it does not by itself set the route."
+    ],
+    [
+     "Whether the patient wears contact lenses",
+     "Relevant to drug choice because of Pseudomonas, not to the route."
+    ],
+    [
+     "Setting, age, immune status and extent",
+     "Correct. Those four decide the route. Preseptal disease may be manageable topically or orally, while postseptal or orbital cellulitis is a different proposition entirely."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 11"
+  },
+  {
+   "topic": "Ocular drug delivery",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "A drop instilled in the eye reaches the systemic circulation and causes a side effect elsewhere in the body. By which route did it get there, and what is the consequence for its metabolism?",
+   "opts": [
+    [
+     "Nasolacrimal drainage, which avoids first-pass metabolism",
+     "Correct. Drug draining through the nasolacrimal duct is absorbed across nasal mucosa straight into the systemic circulation, bypassing the liver's first pass. That is why a topical drop can produce a systemic effect out of proportion to its dose."
+    ],
+    [
+     "Transcorneal absorption, which avoids first-pass metabolism",
+     "Transcorneal absorption is what produces the LOCAL ocular effect. It is the route you want for the eye, not the route that causes systemic exposure."
+    ],
+    [
+     "Nasolacrimal drainage, with extensive first-pass metabolism",
+     "The route is right but the consequence is backwards — avoiding the portal circulation is precisely what makes this absorption efficient and the systemic effects notable."
+    ],
+    [
+     "Conjunctival absorption into the retinal circulation",
+     "Not the described pathway; systemic absorption from an eye drop is a nasolacrimal phenomenon."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 8"
+  },
+  {
+   "topic": "Ocular pharmacokinetics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Transcorneal absorption has a lag time, and its rate depends most on one variable. Which, and what law governs it?",
+   "opts": [
+    [
+     "The tear film pH, governed by the Henderson-Hasselbalch equation",
+     "Ionisation matters for some drugs, but the rate-determining variable stated here is the gradient."
+    ],
+    [
+     "The corneal blood flow, governed by Fick's principle",
+     "The cornea is avascular, which is part of why diffusion rather than perfusion governs delivery."
+    ],
+    [
+     "The drug's molecular weight, governed by Graham's law",
+     "Molecular weight is not the variable named. Transcorneal movement is passive diffusion, so it is the concentration gradient that governs the rate."
+    ],
+    [
+     "The concentration gradient, governed by Fick's law",
+     "Correct. Transcorneal movement is passive diffusion, so the steeper the gradient the faster the transfer. That is also why raising concentration, rather than volume, is the lever that matters."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 8"
+  },
+  {
+   "topic": "Ocular antimicrobials",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "What is the stated goal of treating infectious conjunctivitis?",
+   "opts": [
+    [
+     "Relieve symptoms while the infection resolves on its own",
+     "That is the approach to adenoviral conjunctivitis specifically, where no antiviral exists."
+    ],
+    [
+     "Prevent transmission to the other eye",
+     "Limiting spread matters practically, but the goal given is to eradicate the infection and prevent the long-term complications it would leave."
+    ],
+    [
+     "Establish the organism by culture",
+     "Cultures are not routine unless an unusual organism is expected."
+    ],
+    [
+     "Eradicate the infection and prevent long-term complications",
+     "Correct. Both halves matter — clearing the organism is not the whole aim, because the reason to treat promptly is what an untreated infection leaves behind."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 13"
+  }
+ ],
+ "inflam1": [
+  {
+   "topic": "Dry eye",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Besides drug therapy, which physical interventions are offered for dry eye?",
+   "opts": [
+    [
+     "Warm compresses and lid massage only",
+     "Useful in blepharitis, but not the interventions listed here."
+    ],
+    [
+     "Contact lens wear to protect the surface",
+     "Not offered as a dry eye treatment, and lens wear is a risk factor for fungal keratitis."
+    ],
+    [
+     "Punctal plugs and surgical occlusion",
+     "Correct. The same trick used to boost drug absorption is used here for tears themselves — keep what little there is on the eye rather than letting it drain."
+    ],
+    [
+     "Intravitreal injection of tear substitute",
+     "Not a real intervention. Tear substitutes are applied topically, and the physical options listed are punctal plugs and surgical occlusion."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 57"
+  },
+  {
+   "topic": "Ocular glucocorticoids",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What are the main uses of ocular glucocorticoids?",
+   "opts": [
+    [
+     "First-line treatment of all allergic conjunctivitis",
+     "Antihistamines come first; steroids are for severe or refractory disease."
+    ],
+    [
+     "Severe allergy, uveitis and post-surgical inflammation",
+     "Correct. They are generally reserved for refractory symptoms, and can be given topically or intraocularly depending on the indication."
+    ],
+    [
+     "Bacterial keratitis, to limit scarring",
+     "Steroids suppress local immunity and appear on the fungal keratitis risk list; they are not a treatment for active infection."
+    ],
+    [
+     "Chronic dry eye as maintenance therapy",
+     "Cyclosporine holds that role; steroids cannot be used long term."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 52"
+  },
+  {
+   "topic": "Mast cell stabilisers",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "For which patient are mast cell stabilisers described as most useful?",
+   "opts": [
+    [
+     "Someone needing relief from an acute allergic flare",
+     "This is the one situation they are explicitly not useful for: full efficacy takes 5 to 14 days, so they cannot rescue symptoms that are already present."
+    ],
+    [
+     "Someone with postoperative ocular inflammation",
+     "Postoperative inflammation is where the nonsteroidals and the steroids are used; a mast cell stabiliser has no role in it."
+    ],
+    [
+     "Predictable seasonal allergy, intolerant of alternatives",
+     "Correct. Their weaknesses — 5 to 14 days to full effect and often four times daily dosing — are tolerable if the season is predictable and can be pre-empted, and if the alternatives are not an option."
+    ],
+    [
+     "Someone with bacterial conjunctivitis and marked itching",
+     "Itch suggests allergy, but a bacterial infection needs an antibiotic, not a stabiliser."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 47"
+  },
+  {
+   "topic": "Ocular antihistamines",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Ocular H1 agents are described as not really antagonists. What are they?",
+   "opts": [
+    [
+     "Non-competitive antagonists that bind irreversibly",
+     "They compete with histamine, which is the opposite of non-competitive."
+    ],
+    [
+     "Partial agonists producing a submaximal histamine response",
+     "A partial agonist would still produce some histamine effect; these drive the receptor the other way."
+    ],
+    [
+     "Mast cell stabilisers that prevent histamine release",
+     "That is a different class, though several ocular antihistamines have some stabilising activity as well."
+    ],
+    [
+     "Inverse agonists, still competing with histamine",
+     "Correct. A true antagonist would simply occupy the site; an inverse agonist drives the receptor into an inactive state. They remain competitive with histamine, so the effect still depends on relative concentrations."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 42"
+  },
+  {
+   "topic": "Ocular decongestants",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "How long may an over-the-counter ocular vasoconstrictor be used, and what should the patient be told if there is no improvement?",
+   "opts": [
+    [
+     "Up to three months, with review if symptoms persist",
+     "Far too long — prolonged use is exactly what produces the rebound."
+    ],
+    [
+     "Under two weeks; see a provider if no better in 72 hours",
+     "Correct. Short-term use only, because of rebound hyperaemia. And the 72-hour rule exists because a red eye that is not improving may be something more serious than allergy."
+    ],
+    [
+     "Indefinitely, as they are available without prescription",
+     "Being over the counter says nothing about safe duration; this is the misconception the counselling point exists to correct."
+    ],
+    [
+     "Less than two weeks, but no review is needed if symptoms persist",
+     "The duration is right and the advice is wrong: failure to improve in 72 hours is a reason to be seen."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Administration",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "How does the technique for a gel or ointment differ from a drop?",
+   "opts": [
+    [
+     "The lacrimal duct must be covered for twice as long",
+     "The opposite is true: ointment does not drain like a solution, so the punctal occlusion step is unnecessary rather than prolonged."
+    ],
+    [
+     "The eye should be held open rather than closed",
+     "The eye is closed as with a drop; the difference is the duct step."
+    ],
+    [
+     "It should be applied directly to the cornea rather than the pocket",
+     "Medication goes into the lower lid pocket either way; nothing is applied to the cornea directly."
+    ],
+    [
+     "A ribbon into the pocket, with no duct occlusion",
+     "Correct. The process is otherwise the same, but ointment does not drain away like a solution, so the punctal occlusion step is unnecessary."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 37"
+  },
+  {
+   "topic": "Ocular antihistamines",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which of these is an ocular antihistamine available over the counter?",
+   "opts": [
+    [
+     "Cromolyn",
+     "Cromolyn is a mast cell stabiliser. It prevents mediator release rather than blocking the receptor, and it is not the over-the-counter antihistamine."
+    ],
+    [
+     "Bromfenac",
+     "Bromfenac is a nonsteroidal anti-inflammatory, indicated for postoperative inflammation rather than as an over-the-counter allergy drop."
+    ],
+    [
+     "Ketotifen",
+     "Correct. It is the one marked over the counter in the antihistamine list, which matters because it is what a patient may already have tried before they reach you."
+    ],
+    [
+     "Loteprednol",
+     "Loteprednol is one of the soft glucocorticoids, prescription-only and reserved for refractory inflammation rather than routine allergy."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 43"
+  },
+  {
+   "topic": "Dry eye",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "A patient has dry eye in the context of rheumatoid arthritis. What should be done first?",
+   "opts": [
+    [
+     "Start cyclosporine drops immediately",
+     "It has its place in chronic dry eye with inflammation, but not ahead of addressing the systemic disease."
+    ],
+    [
+     "Treat the underlying disease",
+     "Correct. Dry eyes are often a manifestation of something systemic — Sjogren syndrome, rheumatoid arthritis, vitamin A deficiency, Stevens-Johnson syndrome — and treating the eye without addressing the cause treats a symptom."
+    ],
+    [
+     "Insert punctal plugs",
+     "A physical intervention that comes after, not instead of, treating the disease."
+    ],
+    [
+     "Prescribe a topical steroid pulse",
+     "Not the listed approach to dry eye, and it carries the usual steroid risks."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 57"
+  },
+  {
+   "topic": "Ocular antihistamines",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "A patient has acute itchy, watery eyes from a sudden pollen exposure and wants relief today. Which class is appropriate, and why?",
+   "opts": [
+    [
+     "An antihistamine, because the onset is within minutes",
+     "Correct. Antihistamines work within minutes, which is what an acute presentation needs. They are also typically preferred over mast cell stabilisers, though two weeks of therapy is needed to judge full efficacy."
+    ],
+    [
+     "A mast cell stabiliser, because it prevents histamine release",
+     "Prevention is the point, and that is exactly why it fails here: mast cell stabilisers take 5 to 14 days for full efficacy and are NOT useful for acute symptoms."
+    ],
+    [
+     "A topical glucocorticoid, because it suppresses the allergic response",
+     "Reserved for refractory or severe disease, and limited to short pulses because of cataract, pressure rise and infection risk."
+    ],
+    [
+     "An ocular nonsteroidal anti-inflammatory, because it blocks prostaglandins",
+     "Not routinely recommended for conjunctivitis; its ocular indications are postoperative inflammation and pain."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slides 44 and 47"
+  },
+  {
+   "topic": "Ocular NSAIDs",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect of ocular nonsteroidal anti-inflammatory drugs matters most in a patient who also has glaucoma?",
+   "opts": [
+    [
+     "Increased tear production",
+     "Lacrimation is listed, but it is a nuisance rather than a hazard in glaucoma."
+    ],
+    [
+     "Rebound hyperaemia",
+     "Rebound hyperaemia follows alpha receptor downregulation from a vasoconstrictor; a nonsteroidal does not act on those receptors."
+    ],
+    [
+     "Cataract formation",
+     "Cataract is a glucocorticoid risk rather than a nonsteroidal one, and it is one reason steroid courses are kept short."
+    ],
+    [
+     "A rise in intraocular pressure",
+     "Correct. Lacrimation, keratitis and irritation are the nuisance effects; the pressure rise is the one that interacts with an existing diagnosis and could undo glaucoma control."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 51"
+  },
+  {
+   "topic": "Ocular NSAIDs",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What are the ocular indications for a topical nonsteroidal anti-inflammatory, and what is it NOT recommended for?",
+   "opts": [
+    [
+     "Bacterial conjunctivitis, to reduce discomfort while antibiotics work",
+     "Not a listed indication, and masking an infection's inflammation is a poor idea."
+    ],
+    [
+     "Chronic dry eye with inflammation",
+     "Chronic dry eye with inflammation is cyclosporine's indication; a nonsteroidal has no established role there."
+    ],
+    [
+     "Fungal keratitis, to limit scarring",
+     "Anti-inflammatory therapy in fungal disease risks worsening the infection; natamycin is the treatment."
+    ],
+    [
+     "Postoperative inflammation and allergic conjunctivitis",
+     "Correct. Their place is after surgery and in allergic disease; they are explicitly not routinely recommended for conjunctivitis generally. Their adverse effects include lacrimation, keratitis and a rise in intraocular pressure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 51"
+  },
+  {
+   "topic": "Contact lenses",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "A contact lens wearer has conjunctivitis. What is the advice about resuming lens wear?",
+   "opts": [
+    [
+     "Stop, and resume after 24 hours clear of inflammation",
+     "Correct. All three parts matter — stop, wait for a clear 24 hours, and deal with the lens itself. Eye makeup should go too, since it is the other reservoir."
+    ],
+    [
+     "Continue wearing them, since the drops will treat the eye anyway",
+     "Lens wear maintains the insult and raises the risk of Pseudomonas keratitis."
+    ],
+    [
+     "Stop, and resume as soon as the drops are finished",
+     "Finishing a course is not the same as the eye being quiet; the criterion is 24 hours without inflammation or discharge."
+    ],
+    [
+     "Stop permanently and switch to spectacles",
+     "Unnecessarily absolute — lens wear can resume once the eye has settled."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 38"
+  },
+  {
+   "topic": "Ocular antihistamines",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "A patient starts an ocular antihistamine. How long before they feel relief, and how long before its full effect can be judged?",
+   "opts": [
+    [
+     "Five to fourteen days before any effect at all",
+     "That is the mast cell stabiliser timeline, and it is why they cannot treat acute symptoms."
+    ],
+    [
+     "Minutes for relief, two weeks for full efficacy",
+     "Correct. Both halves matter in counselling — the drug does something immediately, so it will not feel useless, but the final verdict takes a fortnight."
+    ],
+    [
+     "Full effect immediately, with no further change",
+     "Onset really is within minutes, but the effect continues to build, which is why two weeks are needed before judging whether it is working."
+    ],
+    [
+     "Six weeks, as with most topical ocular therapy",
+     "Six weeks is not the timeline for any ocular allergy agent, and quoting it would make a working drug look like a failure."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Ocular glucocorticoids",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Besides suppressing inflammation, what other effect of glucocorticoids is useful in the eye?",
+   "opts": [
+    [
+     "They inhibit fibrin and collagen deposition, reducing scar formation",
+     "Correct. In a structure where a scar in the wrong place costs vision, limiting collagen deposition is a benefit in its own right — and it is part of why they are used after surgery."
+    ],
+    [
+     "They increase aqueous outflow, lowering pressure",
+     "The opposite: steroids RAISE intraocular pressure, which is one of their principal risks."
+    ],
+    [
+     "They promote corneal epithelial healing",
+     "The reverse is true: glucocorticoids delay wound healing, and that is one of their listed adverse effects rather than a benefit."
+    ],
+    [
+     "They have antimicrobial activity against surface organisms",
+     "Glucocorticoids reduce local immune function and can enable infection — which is why topical steroid use appears on the fungal keratitis risk list."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 52"
+  },
+  {
+   "topic": "Ocular decongestants",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How does the vasoconstrictor component of an over-the-counter allergy drop reduce redness?",
+   "opts": [
+    [
+     "It activates alpha-adrenergic receptors on vessels",
+     "Correct. Constricting those vessels reduces conjunctival oedema and the visible redness. It treats the appearance rather than the allergy, which is why it is paired with an antihistamine in products such as Naphcon-A."
+    ],
+    [
+     "It blocks histamine at the H1 receptor",
+     "That is the antihistamine component, not the vasoconstrictor."
+    ],
+    [
+     "It stabilises mast cells to prevent degranulation",
+     "Mast cell stabilisation prevents mediator release; it does not constrict blood vessels, which is what reduces the visible redness."
+    ],
+    [
+     "It inhibits cyclooxygenase in the conjunctiva",
+     "Cyclooxygenase inhibition is a nonsteroidal mechanism. The vasoconstrictor component works through adrenergic receptors on the vessels."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Ocular glucocorticoids",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "By what mechanism do ocular glucocorticoids suppress the late-phase allergic reaction?",
+   "opts": [
+    [
+     "They block cyclooxygenase only",
+     "That is the nonsteroidals, and it leaves the leukotriene arm untouched — which is precisely the difference."
+    ],
+    [
+     "They inhibit interleukin-2 production",
+     "Interleukin-2 inhibition is cyclosporine's mechanism in dry eye, and it works on T cells rather than on the arachidonic acid cascade."
+    ],
+    [
+     "They inhibit phospholipase A2",
+     "Correct. Cutting off arachidonic acid stops the whole downstream cascade, not just the prostaglandin arm. They also inhibit fibrin and collagen deposition, which is why they reduce scar formation."
+    ],
+    [
+     "They stabilise mast cell membranes",
+     "Mast cell stabilisation acts earlier in the sequence, preventing mediator release rather than suppressing the cascade those mediators trigger."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 52"
+  }
+ ],
+ "inflam2": [
+  {
+   "topic": "Ocular glucocorticoids",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What is meant by a soft steroid, and which agents are given as examples?",
+   "opts": [
+    [
+     "One given at a lower concentration — dexamethasone and prednisolone",
+     "Dexamethasone and prednisolone are the conventional agents. The soft steroid label is about a lower pressure risk, not a lower concentration."
+    ],
+    [
+     "One given by intravitreal injection — triamcinolone",
+     "Triamcinolone is the intravitreal agent listed, but that is a route rather than a softness."
+    ],
+    [
+     "Fluorometholone, loteprednol and rimexolone",
+     "Correct. Three of the listed agents are marked out as soft steroids for exactly that reason, which matters most in someone with a family history of pressure rise."
+    ],
+    [
+     "One that does not cause cataract — difluprednate",
+     "The soft steroid label refers to pressure risk, and difluprednate is not among the three marked."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 55"
+  },
+  {
+   "topic": "Dry eye",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "What should a patient starting cyclosporine drops be warned about?",
+   "opts": [
+    [
+     "Permanent darkening of the iris",
+     "A prostaglandin effect in the glaucoma section, not a cyclosporine one."
+    ],
+    [
+     "An increased risk of cataract",
+     "Cataract formation is a glucocorticoid risk, and one of the reasons steroid courses are held to under two weeks."
+    ],
+    [
+     "Ocular burning, which affects about one in six",
+     "Correct. Burning occurs in roughly seventeen per cent, along with foreign body sensation and blurred vision. Warning about it up front is what keeps a patient on a drug that takes time to work."
+    ],
+    [
+     "Rebound redness if the drops are stopped suddenly",
+     "Rebound hyperaemia belongs to the ocular vasoconstrictors and follows receptor downregulation, which has nothing to do with cyclosporine."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 58"
+  },
+  {
+   "topic": "Administration",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "education",
+   "q": "After placing a drop, the patient is told to close the eyes and press a finger over the lacrimal duct. What does that achieve?",
+   "opts": [
+    [
+     "It prevents the drop being diluted by reflex tearing",
+     "Reflex tearing does dilute a drop, but finger pressure over the duct works by blocking drainage."
+    ],
+    [
+     "It limits drainage and systemic absorption",
+     "Correct. Occluding the punctum stops the drop draining down the nasolacrimal duct, so more stays on the eye and less reaches the systemic circulation — the same principle as silicone plugs, done by hand for two to three minutes."
+    ],
+    [
+     "It spreads the drug evenly across the cornea",
+     "Closing the eye helps distribution; the finger on the duct is specifically about drainage."
+    ],
+    [
+     "It reduces the stinging on instillation",
+     "Not its purpose, and it does not address the cause of stinging."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 36"
+  },
+  {
+   "topic": "Allergy",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Which cells are the principal targets in ocular hypersensitivity, and what happens when immunoglobulin E binds them?",
+   "opts": [
+    [
+     "Neutrophils and macrophages; binding triggers phagocytosis",
+     "Neutrophils and macrophages are not the principal target cells named; immunoglobulin E binds Fc receptors on mast cells and basophils."
+    ],
+    [
+     "T lymphocytes; binding triggers interleukin-2 release",
+     "Interleukin-2 and T cells are where cyclosporine acts in dry eye, not the immediate allergic response."
+    ],
+    [
+     "Corneal epithelial cells; binding triggers prostaglandin release",
+     "The principal target cells named are mast cells and basophils."
+    ],
+    [
+     "Mast cells and basophils, within seconds",
+     "Correct. Immunoglobulin E binds Fc receptors, tyrosine kinases activate within 5 to 15 seconds, and histamine, platelet-activating factor and leukotrienes are released — producing vasodilation, swelling, redness and itch."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 40"
+  },
+  {
+   "topic": "Administration",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "For which patients are ointments preferred over drops, and what must they be warned about?",
+   "opts": [
+    [
+     "Children and poor compliers; vision blurs for twenty minutes",
+     "Correct. Ointment works even if it only reaches the lashes, because it still makes contact with the eye — which is exactly why it suits a squirming child. The trade-off is blurring, so no driving until it clears."
+    ],
+    [
+     "Contact lens wearers, warned to keep lenses in to hold the ointment in place",
+     "Lenses must come out — a patient with conjunctivitis should stop wearing them altogether."
+    ],
+    [
+     "Adults with glaucoma, warned that ointment raises pressure",
+     "Not a stated indication, and ointment itself does not raise pressure."
+    ],
+    [
+     "Patients with dry eye, warned that ointment worsens tear film stability",
+     "Ointments are not contraindicated in dry eye, and this is not the reason they are chosen."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 37"
+  },
+  {
+   "topic": "Allergy",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Which mediators are released in the ocular allergic response, and what do they produce?",
+   "opts": [
+    [
+     "Interleukin-2 and interferon gamma, producing scarring",
+     "Interleukin-2 belongs to the T cell pathway that cyclosporine targets in dry eye."
+    ],
+    [
+     "Prostaglandins only, producing pain",
+     "Prostaglandin D2 is among the mediators, but it is not the whole list and pain is not the dominant feature."
+    ],
+    [
+     "Immunoglobulin E itself, producing direct vasodilation",
+     "Immunoglobulin E triggers the release; it is not the mediator that acts on the vessels."
+    ],
+    [
+     "Histamine, platelet-activating factor and leukotrienes",
+     "Correct. Those four signs are what every drug in this section is aimed at, and knowing which mediator each class addresses is what sorts antihistamines from stabilisers from steroids."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 40"
+  },
+  {
+   "topic": "Mast cell stabilisers",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which three agents are listed as mast cell stabilisers?",
+   "opts": [
+    [
+     "Cromolyn, lodoxamide and nedocromil",
+     "Correct. A short list worth holding because everything else in the allergy section is an antihistamine, a vasoconstrictor or an anti-inflammatory."
+    ],
+    [
+     "Olopatadine, epinastine and azelastine",
+     "All antihistamines, though several antihistamines do have some stabilising activity."
+    ],
+    [
+     "Ketorolac, nepafenac and diclofenac",
+     "Ketorolac, nepafenac and diclofenac are nonsteroidal anti-inflammatories, which block cyclooxygenase rather than stabilising mast cells."
+    ],
+    [
+     "Naphazoline, tetrahydrozoline and pheniramine",
+     "The first two are vasoconstrictors and the third an antihistamine found in combination products."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 46"
+  },
+  {
+   "topic": "Ocular decongestants",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "A patient has used an over-the-counter redness-relieving eye drop daily for a month. On stopping it, the eye becomes redder than before. What has happened?",
+   "opts": [
+    [
+     "Rebound hyperaemia, from downregulation of alpha-1 receptors",
+     "Correct. These are alpha-adrenergic agonists that vasoconstrict to reduce redness and conjunctival oedema. Constant activation downregulates the receptors, so when the drug stops there are fewer left for endogenous noradrenaline and adrenaline to act on, and the vessels dilate."
+    ],
+    [
+     "A new allergic conjunctivitis unmasked by stopping the drop",
+     "The timing points at withdrawal of the vasoconstrictor itself. Allergy would not wait for the drug to be stopped to appear."
+    ],
+    [
+     "Tachyphylaxis, meaning the drug no longer works while it is being taken",
+     "Close but not the same phenomenon: tachyphylaxis is loss of effect ON the drug. Here the redness appears when it is WITHDRAWN."
+    ],
+    [
+     "Preservative toxicity from long-term use",
+     "A real problem with chronic drops, but it does not produce the characteristic worsening on discontinuation."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Dry eye",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How does cyclosporine improve chronic dry eye?",
+   "opts": [
+    [
+     "It thickens the tear film to prolong contact time",
+     "Thickening to prolong contact time is what a tear substitute does; cyclosporine acts on the inflammation driving the dryness instead."
+    ],
+    [
+     "It inhibits interleukin-2 production",
+     "Correct. Less inflammation in the lacrimal gland means increased tear production, with improved vision and comfort. Its indication is chronic dry eye associated with inflammation — keratoconjunctivitis sicca."
+    ],
+    [
+     "It blocks cyclooxygenase in the lacrimal gland",
+     "That is a nonsteroidal mechanism and is not how cyclosporine acts."
+    ],
+    [
+     "It occludes the lacrimal drainage system pharmacologically",
+     "Occlusion is achieved physically with punctal plugs or surgery."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 58"
+  },
+  {
+   "topic": "Mast cell stabilisers",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do ocular mast cell stabilisers work?",
+   "opts": [
+    [
+     "They inactivate the H1 receptor as inverse agonists",
+     "That is the antihistamines, which act after histamine has already been released."
+    ],
+    [
+     "They inhibit phospholipase A2",
+     "That is the glucocorticoid mechanism, acting a step earlier by stopping arachidonic acid being liberated at all."
+    ],
+    [
+     "They inhibit mast cell degranulation",
+     "Correct. They stop the mediators being released at all, and also dampen release from basophils, eosinophils and neutrophils. That is prevention rather than blockade — and it is why they cannot rescue an acute attack."
+    ],
+    [
+     "They block cyclooxygenase",
+     "That is the nonsteroidal anti-inflammatory mechanism, which blocks prostaglandin formation after arachidonic acid has already been released."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 45"
+  },
+  {
+   "topic": "Administration",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "A patient is being taught to instil an eye drop. What is named as the single most important step?",
+   "opts": [
+    [
+     "Washing the hands thoroughly with soap and water",
+     "Correct. It is marked as the most important step, and it comes before anything else. The dropper must then not touch anything, so it stays sterile."
+    ],
+    [
+     "Tilting the head back to form a lower lid pocket",
+     "Necessary, but it is step three; the hand washing is what is singled out."
+    ],
+    [
+     "Holding the eyes closed for two to three minutes",
+     "Important for keeping drug in contact with the eye, but not the step highlighted as most important."
+    ],
+    [
+     "Covering the lacrimal duct after instilling",
+     "It reduces systemic absorption and drainage, and is genuinely useful — but again not the step marked most important."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 34"
+  },
+  {
+   "topic": "Ocular antihistamines",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect of ocular antihistamines is worth mentioning to a patient who already has dry eyes?",
+   "opts": [
+    [
+     "Raised intraocular pressure",
+     "Raised intraocular pressure belongs with the nonsteroidals and the steroids; the antihistamines do not carry that concern."
+    ],
+    [
+     "Increased ocular dryness",
+     "Correct. Along with irritation and headache, antihistamines can worsen dryness — which matters when dry eye is the background problem, since the treatment can aggravate the complaint."
+    ],
+    [
+     "Permanent iris colour change",
+     "Iris colour change is a prostaglandin analogue effect from the glaucoma section, not something an ocular antihistamine causes."
+    ],
+    [
+     "Corneal ulceration",
+     "Corneal ulceration is an aminoglycoside concern after several days of use, and belongs with the antibiotics rather than the allergy drugs."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Ocular NSAIDs",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do ocular nonsteroidal anti-inflammatory drugs reduce inflammation?",
+   "opts": [
+    [
+     "They inhibit phospholipase A2, preventing arachidonic acid formation",
+     "That is the glucocorticoid mechanism, and the distinction between the two levels is the point."
+    ],
+    [
+     "They stabilise mast cells against degranulation",
+     "That is the antihistamines, which act on the receptor after histamine has been released rather than preventing its release."
+    ],
+    [
+     "They block cyclooxygenase",
+     "Correct. They act one step below the steroids: the steroids stop arachidonic acid being liberated at all, while the nonsteroidals stop what is already liberated becoming prostaglandin."
+    ],
+    [
+     "They inactivate the H1 receptor",
+     "That is the antihistamines, which are inverse agonists at the H1 receptor rather than agents that prevent mediator release."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 50"
+  },
+  {
+   "topic": "Ocular glucocorticoids",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effects limit ocular glucocorticoid use, and how long is a course generally kept to?",
+   "opts": [
+    [
+     "Only transient burning, so courses may run for months",
+     "Burning is trivial next to the real risks, and prolonged courses are what produce them."
+    ],
+    [
+     "Rebound hyperaemia on withdrawal, limited to under two weeks",
+     "Rebound hyperaemia belongs to the vasoconstrictors; the duration limit is right for the wrong reason."
+    ],
+    [
+     "Permanent iris colour change, limited to a single dose",
+     "Iris pigmentation is a prostaglandin effect in the glaucoma section."
+    ],
+    [
+     "Cataract, raised pressure, infection and delayed healing",
+     "Correct. The pressure rise is greater with a family history. Because steroids suppress local immune function they also enable infection, which is why topical steroid use appears on the fungal keratitis risk list."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 54"
+  },
+  {
+   "topic": "Ocular decongestants",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "A toddler swallows a bottle of an imidazoline eye drop. Why does an agent that vasoconstricts locally cause central nervous system depression when ingested?",
+   "opts": [
+    [
+     "It acts on alpha-1 receptors both locally and systemically",
+     "If that were true an overdose would cause hypertension and vasoconstriction, not the depressed picture that actually occurs."
+    ],
+    [
+     "Locally it acts on alpha-1 receptors, but systemically it targets alpha-2",
+     "Correct. That split is the whole reason the question is asked. Alpha-1 activation in the conjunctival vessels gives the local vasoconstriction; absorbed systemically the drug acts at alpha-2 receptors, and central alpha-2 agonism produces sedation, bradycardia and depressed respiration."
+    ],
+    [
+     "It is metabolised to an opioid-like compound in the gut",
+     "No such conversion; the toxicity follows from the receptor it reaches systemically."
+    ],
+    [
+     "It blocks rather than stimulates adrenergic receptors when absorbed",
+     "It is an agonist by either route; what changes is which receptor subtype dominates."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 49"
+  },
+  {
+   "topic": "Dry eye",
+   "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What do tear substitutes contain, and what is the purpose of the thickeners in them?",
+   "opts": [
+    [
+     "Only sterile water, the thickeners preventing evaporation",
+     "They are hypotonic or isotonic solutions containing electrolytes, not plain water."
+    ],
+    [
+     "Antibiotic and thickener, to prevent secondary infection",
+     "Tear substitutes carry no antibiotic. They are electrolyte solutions with surfactants and thickeners, and infection is not what they address."
+    ],
+    [
+     "Cyclosporine in a thickened base, to reduce inflammation",
+     "Cyclosporine is a separate immunomodulator, not a component of artificial tears."
+    ],
+    [
+     "Electrolytes, surfactants and thickeners",
+     "Correct. Same principle as a gel or ointment — the longer the preparation stays in contact, the more benefit it gives. Balanced salt solution, carboxymethylcellulose and polyvinyl alcohol are the over-the-counter examples."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 57"
+  }
+ ],
+ "glauc1": [
+  {
+   "topic": "Glaucoma pharmacology",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which classes INCREASE aqueous outflow?",
+   "opts": [
+    [
+     "Beta blockers, carbonic anhydrase inhibitors and prostaglandins",
+     "The first two decrease production; only the prostaglandins in this list increase outflow."
+    ],
+    [
+     "Carbonic anhydrase inhibitors and cholinergic agonists only",
+     "Carbonic anhydrase inhibitors reduce production rather than improving drainage."
+    ],
+    [
+     "Beta blockers alone",
+     "Beta blockers are a production drug, and second line at that."
+    ],
+    [
+     "Prostaglandins, alpha adrenergic agonists and cholinergic agonists",
+     "Correct. The alpha agonists appear on both sides — they decrease production and increase outflow — which is why they are easy to misplace."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 64"
+  },
+  {
+   "topic": "Glaucoma definitions",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "What is the sequence by which glaucoma causes blindness?",
+   "opts": [
+    [
+     "Raised pressure causes corneal oedema and then scarring",
+     "Corneal oedema and scarring are not the pathway. Glaucoma blinds by destroying retinal ganglion cell axons at the optic nerve."
+    ],
+    [
+     "Raised pressure causes cataract formation",
+     "Cataract is a glucocorticoid risk, not the glaucoma mechanism."
+    ],
+    [
+     "Optic neuropathy, axon loss, field loss, blindness",
+     "Correct. The irreversibility is the point — the axons do not come back, which is why the whole of therapy is aimed at preventing progression rather than recovering vision."
+    ],
+    [
+     "Raised pressure detaches the retina",
+     "Retinal detachment is not the described sequence. The damage is at the optic nerve head, and it is irreversible once the axons are lost."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 60"
+  },
+  {
+   "topic": "Prostaglandin analogues",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which cosmetic adverse effects should a patient starting a prostaglandin analogue be warned about?",
+   "opts": [
+    [
+     "Permanent pupillary constriction and myopia",
+     "Fixed small pupils and induced myopia are cholinergic agonist effects, which is why young patients tolerate miotics so poorly."
+    ],
+    [
+     "Bitter taste and stinging on instillation",
+     "Bitter taste and stinging belong to the carbonic anhydrase inhibitors, and between them affect more than half of those patients."
+    ],
+    [
+     "Bradycardia and wheeze",
+     "Systemic beta blocker effects; prostaglandins have limited systemic side effects."
+    ],
+    [
+     "Eyelash and iris colour change, with hyperaemia",
+     "Correct. The eyelash effect is marketed as a product in its own right, and iris darkening can be permanent — which is why it is a consent conversation rather than a footnote, particularly when only one eye is treated."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 65"
+  },
+  {
+   "topic": "Prostaglandin analogues",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which class is first line for open angle glaucoma, and how often is it given?",
+   "opts": [
+    [
+     "Beta blockers, twice daily",
+     "Beta blockers are described as second line, though therapy may reasonably start with either a prostaglandin or a beta blocker."
+    ],
+    [
+     "Carbonic anhydrase inhibitors, three times daily",
+     "Not first line, and their bitter taste and stinging limit acceptability."
+    ],
+    [
+     "Cholinergic agonists, four times daily",
+     "Frequent dosing and side effects make compliance poor; they are far from first choice."
+    ],
+    [
+     "Prostaglandin analogues, once daily",
+     "Correct. They are the most commonly used glaucoma medications and the first line agents. Once daily is the whole dose — and more often is actively worse, not merely unnecessary."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slides 64 and 66"
+  },
+  {
+   "topic": "Glaucoma definitions",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "diagnosis",
+   "q": "A patient has an intraocular pressure of 26 mmHg with a normal optic nerve and no visual field loss. What is this called?",
+   "opts": [
+    [
+     "Open angle glaucoma",
+     "That requires damage — the patient may have optic nerve damage or reduced visual field. Pressure alone is not the diagnosis."
+    ],
+    [
+     "Angle closure glaucoma",
+     "A blockage of the drainage canal, usually with acute pain, and often with a normal optic nerve early. Nothing here suggests it."
+    ],
+    [
+     "Ocular hypertension",
+     "Correct. Pressure above the normal 10 to 21 mmHg but with no optic nerve damage and no field loss. It is a risk factor rather than a disease, and whether to treat depends on the other risk factors."
+    ],
+    [
+     "Normal tension glaucoma",
+     "Would require optic nerve damage at a normal pressure — the opposite combination."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 61"
+  },
+  {
+   "topic": "Beta blockers",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "contraindication",
+   "q": "A patient with asthma needs a topical beta blocker for glaucoma. Which agent is safer, and why?",
+   "opts": [
+    [
+     "Timolol, because it is beta-1 selective",
+     "Timolol is non-selective, which is precisely the problem in asthma."
+    ],
+    [
+     "Levobunolol, because it is more efficacious",
+     "Non-selective agents are more efficacious, but that efficacy comes with the beta-2 blockade this patient cannot afford."
+    ],
+    [
+     "Betaxolol, because it is beta-1 selective",
+     "Correct. Beta-2 receptors mediate bronchodilation, so blocking them raises airway resistance. Betaxolol is the beta-1 selective option on this list; carteolol, timolol and levobunolol are non-selective."
+    ],
+    [
+     "Carteolol, because it has no systemic absorption",
+     "All topical beta blockers can be absorbed nasolacrimally, and carteolol is non-selective."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slides 67-68"
+  },
+  {
+   "topic": "Fluorescein",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "What does fluorescein show, and what is it used for?",
+   "opts": [
+    [
+     "Epithelial defects of cornea and conjunctiva",
+     "Correct. It reveals where the epithelium is broken. Its adverse effects are hypersensitivity and a burning sensation, which is true of most things put on an injured eye."
+    ],
+    [
+     "Raised intraocular pressure, for glaucoma screening",
+     "Pressure is measured by tonometry, which needs an anaesthetic rather than a dye."
+    ],
+    [
+     "Fungal elements, for suspected fungal keratitis",
+     "Fungal disease is confirmed by culture and microscopy, not by fluorescein."
+    ],
+    [
+     "Retinal detachment, by staining the posterior segment",
+     "Fluorescein is an anterior segment stain. It shows epithelial defects of cornea and conjunctiva, not posterior segment pathology."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 78"
+  },
+  {
+   "topic": "Glaucoma therapy",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "Why might glaucoma therapy be started in one eye only?",
+   "opts": [
+    [
+     "Because bilateral treatment doubles the systemic absorption to unsafe levels",
+     "Systemic absorption is a genuine concern with beta blockers, but the stated reason for a one-eye trial is assessment."
+    ],
+    [
+     "To judge efficacy and tolerability against the untreated eye",
+     "Correct. The other eye acts as its own control, which tells you whether the drug is doing anything and whether the patient can tolerate it before both eyes are committed."
+    ],
+    [
+     "Because only the worse eye requires treatment",
+     "Both eyes will usually need treating; this is a trial, not a final plan."
+    ],
+    [
+     "To reduce the cost of therapy",
+     "Cost is not the reason given for a one-eye trial. The untreated eye serves as a control for efficacy and tolerability."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Beta blockers",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which systemic adverse effects can a topical ophthalmic beta blocker produce?",
+   "opts": [
+    [
+     "Bradycardia, heart block and bronchoconstriction",
+     "Correct. A drop is not a local-only treatment — nasolacrimal absorption avoids first-pass metabolism, so a topical beta blocker can do everything a systemic one does."
+    ],
+    [
+     "Hypertension and tachycardia",
+     "The opposite direction; beta blockade slows the heart rather than speeding it."
+    ],
+    [
+     "Central nervous system depression and apnoea",
+     "That is the alpha-2 agonist risk, and specifically in children under two."
+    ],
+    [
+     "Bitter taste and allergic conjunctivitis",
+     "Bitter taste and allergic conjunctivitis are carbonic anhydrase inhibitor effects, and are local rather than systemic."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 67"
+  },
+  {
+   "topic": "Ocular anaesthetics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "A patient has had proparacaine for foreign body removal. What must they be told, and what must you NOT do?",
+   "opts": [
+    [
+     "The eye stays numb for several hours, and a short prescription is reasonable for pain",
+     "Both halves wrong: the duration is 10 to 20 minutes and a prescription is exactly what must not happen."
+    ],
+    [
+     "Numb for 10 to 20 minutes, no blink reflex, never prescribe",
+     "Correct. No blink reflex means the eye is unprotected for the duration. And these are explicitly not to be prescribed for home use — repeated application is toxic to the epithelium and delays healing."
+    ],
+    [
+     "Vision will blur for about twenty minutes, and they should not drive",
+     "That is the ointment counselling point; anaesthetics numb rather than blur."
+    ],
+    [
+     "They should keep the eye open to let the drug disperse",
+     "With no blink reflex the eye needs protecting, not holding open."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 75"
+  },
+  {
+   "topic": "Cycloplegics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Besides fundoscopy, what therapeutic use do cycloplegics have?",
+   "opts": [
+    [
+     "Uveitis, to prevent synechiae and relieve ciliary spasm",
+     "Correct. Keeping the pupil moving stops the iris adhering, and relaxing the ciliary muscle relieves the pain of spasm. So they are not purely diagnostic agents."
+    ],
+    [
+     "Glaucoma, to increase aqueous outflow",
+     "Dilating the pupil can precipitate angle closure; the outflow drugs are the cholinergics, which do the opposite."
+    ],
+    [
+     "Bacterial conjunctivitis, to reduce photophobia",
+     "Not an indication given, and it would not treat the infection."
+    ],
+    [
+     "Dry eye, to reduce tear evaporation",
+     "Cycloplegics have no role in dry eye; reducing tear evaporation is not something pupil dilation or ciliary paralysis achieves."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 76"
+  },
+  {
+   "topic": "Carbonic anhydrase inhibitors",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effects most affect whether a patient will keep taking a topical carbonic anhydrase inhibitor?",
+   "opts": [
+    [
+     "Bitter taste and stinging",
+     "Correct. Neither is dangerous, but between them they affect over half of patients — and a drop that tastes foul and stings is a drop that gets skipped. The taste comes from nasolacrimal drainage to the pharynx."
+    ],
+    [
+     "Bradycardia and heart block",
+     "Bradycardia and heart block are systemic beta blocker effects, reaching the circulation through nasolacrimal absorption."
+    ],
+    [
+     "Iris darkening and eyelash growth",
+     "Iris darkening and eyelash growth are prostaglandin analogue effects, and are cosmetic rather than tolerability problems."
+    ],
+    [
+     "Fixed small pupils and myopia",
+     "Fixed small pupils and myopia are cholinergic agonist effects, and they are what make miotics hard for younger patients."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 70"
+  },
+  {
+   "topic": "Cholinergic agonists",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How does pilocarpine lower intraocular pressure?",
+   "opts": [
+    [
+     "It blocks muscarinic receptors, dilating the pupil",
+     "That is the antimuscarinic cycloplegics, which do the opposite."
+    ],
+    [
+     "It activates muscarinic receptors on the ciliary muscle",
+     "Correct. Contracting the ciliary muscle pulls on the trabecular meshwork and opens the drainage route — an outflow drug achieved by a muscle action."
+    ],
+    [
+     "It reduces aqueous production by inhibiting carbonic anhydrase",
+     "Carbonic anhydrase inhibition is a different class acting on production, whereas pilocarpine works by improving outflow."
+    ],
+    [
+     "It analogues prostaglandin F2-alpha",
+     "Analoguing prostaglandin F2-alpha is what latanoprost and its relatives do; pilocarpine acts through muscarinic receptors instead."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 72"
+  },
+  {
+   "topic": "Cycloplegics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Phenylephrine also dilates the pupil. How does it differ from the antimuscarinics?",
+   "opts": [
+    [
+     "It is an antimuscarinic with a longer duration",
+     "Phenylephrine is a sympathomimetic acting on the dilator muscle, not an antimuscarinic blocking the constrictor."
+    ],
+    [
+     "It produces cycloplegia without mydriasis",
+     "It produces mydriasis; the antimuscarinics are the ones that also paralyse accommodation."
+    ],
+    [
+     "It constricts rather than dilates",
+     "Constriction is the cholinergic agonist effect. Phenylephrine dilates, which is why it is grouped with the mydriatics."
+    ],
+    [
+     "It is a sympathomimetic, more light-reactive",
+     "Correct. Two routes to mydriasis — block the constrictor or stimulate the dilator — and the sympathomimetic leaves more light reactivity, which matters if the pupil response still needs assessing."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 77"
+  },
+  {
+   "topic": "Cholinergic agonists",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "adverse effect",
+   "q": "Why are younger patients usually intolerant of miotic therapy?",
+   "opts": [
+    [
+     "Systemic bradycardia from muscarinic activation",
+     "Systemic bradycardia is not the reason given. What young patients cannot tolerate is the visual blurring from induced myopia."
+    ],
+    [
+     "Visual blurring from induced myopia",
+     "Correct. Fixed small pupils, induced myopia and visual disturbance are the effects, and a young eye with active accommodation notices them most. That, plus frequent dosing, is why compliance is poor."
+    ],
+    [
+     "Permanent iris colour change",
+     "Permanent iris colour change is a prostaglandin analogue effect and has nothing to do with muscarinic agonists."
+    ],
+    [
+     "Increased airway resistance",
+     "Increased airway resistance is a non-selective beta blocker concern, mediated by beta-2 blockade in the lung."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 72"
+  },
+  {
+   "topic": "Ocular anaesthetics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do tetracaine and proparacaine work?",
+   "opts": [
+    [
+     "They block muscarinic receptors on the ciliary muscle",
+     "Blocking muscarinic receptors to dilate is the antimuscarinic cycloplegics, which is the opposite of what an anaesthetic does."
+    ],
+    [
+     "They activate alpha-1 receptors to vasoconstrict",
+     "Activating alpha-1 receptors to vasoconstrict is the ocular decongestants, which reduce redness rather than producing anaesthesia."
+    ],
+    [
+     "They inhibit sodium influx into the neuron",
+     "Correct. Blocking the sodium channel stops the action potential, so the nerve cannot signal. It is the same mechanism as any local anaesthetic, applied to the ocular surface."
+    ],
+    [
+     "They inhibit prostaglandin synthesis",
+     "Inhibiting prostaglandin synthesis is the nonsteroidal anti-inflammatories; it reduces inflammation rather than blocking nerve conduction."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 75"
+  }
+ ],
+ "glauc2": [
+  {
+   "topic": "Glaucoma pharmacology",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Why is more than one agent often needed to control intraocular pressure?",
+   "opts": [
+    [
+     "Targeting production and outflow together",
+     "Correct. Combinations are described as synergistic for exactly that reason, and they also cut the number of drops a patient has to manage, which helps compliance."
+    ],
+    [
+     "Tolerance develops to every single agent within weeks",
+     "Tolerance is not the stated reason; inadequate pressure reduction is."
+    ],
+    [
+     "Each agent can only be used at half dose",
+     "Half-dosing is not how combinations work; agents are combined for synergy across mechanisms, not to dilute each one."
+    ],
+    [
+     "Single agents are contraindicated in open angle disease",
+     "Therapy routinely starts with a single agent, usually a prostaglandin or a beta blocker, so monotherapy is plainly not contraindicated."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slides 64 and 73"
+  },
+  {
+   "topic": "Combination products",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "A patient is already on timolol and needs a second agent. Which combination product makes sense, and what is the general advantage of combinations?",
+   "opts": [
+    [
+     "A second beta blocker, because the effect is additive",
+     "Adding a drug with the same mechanism gains little and doubles the class's adverse effects."
+    ],
+    [
+     "Brimonidine with timolol, targeting both mechanisms",
+     "Correct. Given the drug someone is already on, the question is what second-line agent helps most. Adding an alpha agonist to a beta blocker hits both production and outflow, and fewer drops improves compliance."
+    ],
+    [
+     "Dorzolamide with timolol, because both increase outflow",
+     "The product exists, but the reasoning is wrong — both of those reduce production rather than increasing outflow."
+    ],
+    [
+     "Pilocarpine alone, because miotics are best tolerated",
+     "Miotics are among the least well tolerated, which is why compliance with them is poor."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 73"
+  },
+  {
+   "topic": "Alpha adrenergic agonists",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Apraclonidine is highly ionised at physiological pH while brimonidine is more lipophilic. What is the practical consequence?",
+   "opts": [
+    [
+     "Ionisation increases corneal penetration and local potency",
+     "Charged molecules cross membranes less readily, not more, so ionisation reduces penetration rather than increasing local potency."
+    ],
+    [
+     "Lipophilicity prevents systemic absorption",
+     "Lipophilicity favours crossing membranes, including the blood-brain barrier."
+    ],
+    [
+     "Ionisation limits blood-brain barrier penetration",
+     "Correct. A charged molecule crosses membranes poorly, so it stays where it is put. Brimonidine, being more lipophilic, is also the one with less allergic conjunctivitis."
+    ],
+    [
+     "The difference is purely one of shelf stability",
+     "It is a pharmacokinetic difference with a clinical consequence, not a formulation one."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 69"
+  },
+  {
+   "topic": "Glaucoma definitions",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "diagnosis",
+   "q": "What distinguishes angle closure glaucoma from open angle glaucoma?",
+   "opts": [
+    [
+     "Increased aqueous production with a gradual course",
+     "Increased production or reduced drainage with a gradual course describes open angle disease, not the mechanical blockage of angle closure."
+    ],
+    [
+     "Optic nerve damage at a normal intraocular pressure",
+     "Optic nerve damage at a normal pressure would be normal tension disease. Angle closure is defined by the blocked drainage canal."
+    ],
+    [
+     "Blockage of the drainage canal, with acute pain",
+     "Correct. Open angle comes from increased production or reduced drainage and damages the nerve over time; angle closure is a mechanical blockage that presents acutely and painfully. Drug therapy targets open angle disease."
+    ],
+    [
+     "Raised pressure without any optic nerve damage",
+     "Raised pressure with no optic nerve damage is ocular hypertension — a risk factor rather than either form of glaucoma."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 61"
+  },
+  {
+   "topic": "Alpha adrenergic agonists",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "contraindication",
+   "q": "In which patients are ophthalmic alpha-2 agonists contraindicated, and why?",
+   "opts": [
+    [
+     "Patients with asthma, because of bronchoconstriction",
+     "Bronchoconstriction is the non-selective beta blocker problem, because beta-2 receptors in the lung mediate bronchodilation."
+    ],
+    [
+     "Patients with sulfonamide allergy",
+     "Sulfonamide allergy is the contraindication to sulfacetamide among the ocular antibiotics, and has nothing to do with alpha agonists."
+    ],
+    [
+     "Patients over 65, because of falls",
+     "Age over 65 is not a contraindication. The age limit runs the other way — under two years."
+    ],
+    [
+     "Children under two, from apnoea risk",
+     "Correct. A hard age contraindication, and the mechanism is the same central alpha-2 effect that makes imidazoline ingestion dangerous in toddlers. Worth holding alongside that question."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 69"
+  },
+  {
+   "topic": "Prostaglandin analogues",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "education",
+   "q": "A patient using latanoprost thinks two drops a night will lower the pressure further. What should they be told?",
+   "opts": [
+    [
+     "Two drops a night is acceptable if the pressure is not at target",
+     "It would work against the goal rather than toward it: exceeding once daily actively inhibits the pressure-lowering effect."
+    ],
+    [
+     "It is harmless but wasteful",
+     "Not harmless. The extra dose is not merely wasted; it reduces the pressure-lowering effect the patient is taking the drug for."
+    ],
+    [
+     "It should be split to morning and evening instead",
+     "Splitting the dose still exceeds once daily in total, so the same inhibition of the pressure-lowering effect applies."
+    ],
+    [
+     "Exceeding once daily dosing inhibits the pressure-lowering effect",
+     "Correct. This is counter-intuitive and therefore a good question: more drug does not mean more effect, it means less. Once daily is the maximum as well as the minimum."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 66"
+  },
+  {
+   "topic": "Carbonic anhydrase inhibitors",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do dorzolamide and brinzolamide lower pressure?",
+   "opts": [
+    [
+     "They increase outflow through the trabecular meshwork",
+     "Carbonic anhydrase inhibitors do not act on drainage at all; they reduce bicarbonate production so less fluid is made."
+    ],
+    [
+     "They block beta receptors in the ciliary body",
+     "That is the beta blockers, though both end up reducing production."
+    ],
+    [
+     "They inhibit carbonic anhydrase in the ciliary epithelium",
+     "Correct. Less bicarbonate means less fluid follows it, so aqueous production falls. It is a production-side drug, like the beta blockers but by a different route."
+    ],
+    [
+     "They activate muscarinic receptors on the ciliary muscle",
+     "That is the cholinergic agonists, which contract the ciliary muscle and open the trabecular meshwork to increase outflow."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 70"
+  },
+  {
+   "topic": "Glaucoma pharmacology",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "Glaucoma drugs work by one of two strategies. What are they?",
+   "opts": [
+    [
+     "Decreasing aqueous production or reducing episcleral venous pressure",
+     "Episcleral venous pressure is not one of the two targets; drug therapy works on production and on outflow."
+    ],
+    [
+     "Increasing outflow or reducing optic nerve metabolic demand",
+     "Neuroprotection is not among the described mechanisms; the drugs are pressure drugs."
+    ],
+    [
+     "Dilating the pupil or constricting the ciliary muscle",
+     "Cholinergics do contract the ciliary muscle, but as a means to increase outflow rather than as a strategy in itself."
+    ],
+    [
+     "Reducing production or increasing outflow",
+     "Correct. Every agent in this section sorts into one or the other, and some do both. Sorting a drug by which side it is on is the fastest way to remember the whole class list."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 60"
+  },
+  {
+   "topic": "Glaucoma therapy",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "Which patients with raised pressure are treated, and which are monitored?",
+   "opts": [
+    [
+     "Treat those with risk factors; monitor those without",
+     "Correct. Raised pressure alone is not automatically a prescription. Risk factors decide, and in their absence you watch for the change that would make it a disease."
+    ],
+    [
+     "All patients with pressure above 21 mmHg are treated",
+     "That would treat every ocular hypertensive, which is not the stated approach."
+    ],
+    [
+     "Only those who already have visual field loss are treated",
+     "Waiting for field loss means waiting for irreversible axon loss, which is what treatment exists to prevent."
+    ],
+    [
+     "Treatment is started only once both eyes are affected",
+     "Not a criterion given, and therapy may deliberately start in one eye."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Ocular anaesthetics",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "For which procedures are topical ocular anaesthetics indicated?",
+   "opts": [
+    [
+     "Fundoscopy and pupil assessment",
+     "Those need dilation, which is what the cycloplegics and phenylephrine are for."
+    ],
+    [
+     "Treatment of corneal abrasion pain at home",
+     "Explicitly ruled out: these are not prescribed for home use, because repeated application is toxic to the epithelium and delays healing."
+    ],
+    [
+     "Tonometry, foreign body removal, corneal surgery",
+     "Correct. All three need the surface insensate but not the eye immobilised. That also explains why tonometry cannot simply be done on any patient without preparation."
+    ],
+    [
+     "Intravitreal injection only",
+     "Not the listed indications, which are all anterior and superficial."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 75"
+  },
+  {
+   "topic": "Glaucoma pharmacology",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which classes reduce aqueous PRODUCTION?",
+   "opts": [
+    [
+     "Prostaglandins, beta blockers and cholinergic agonists",
+     "Prostaglandins and cholinergic agonists are outflow drugs, so neither belongs on a list of agents that reduce aqueous production."
+    ],
+    [
+     "Alpha agonists, beta blockers and carbonic anhydrase inhibitors",
+     "Correct. The alpha agonists sit on both sides of the list, which is the part most easily got wrong — they reduce production AND increase outflow."
+    ],
+    [
+     "Cholinergic agonists and carbonic anhydrase inhibitors only",
+     "Cholinergics work on outflow by contracting the ciliary muscle."
+    ],
+    [
+     "Prostaglandins alone",
+     "Prostaglandins are the first-line agents but they work by increasing outflow, which puts them on the other side of this division."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 64"
+  },
+  {
+   "topic": "Cycloplegics",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do atropine, cyclopentolate and tropicamide produce mydriasis?",
+   "opts": [
+    [
+     "They competitively block muscarinic acetylcholine receptors",
+     "Correct. Blocking muscarinic receptors is the exact opposite of pilocarpine's action, which is why one dilates and the other constricts. They are used diagnostically and in uveitis to prevent synechiae and relieve ciliary spasm."
+    ],
+    [
+     "They activate alpha-1 adrenergic receptors",
+     "That is phenylephrine, the sympathomimetic route to the same endpoint."
+    ],
+    [
+     "They activate muscarinic receptors on the iris dilator",
+     "Activating muscarinic receptors constricts the pupil, as pilocarpine does. Dilation requires blocking them, not stimulating them."
+    ],
+    [
+     "They inhibit carbonic anhydrase in the ciliary body",
+     "Carbonic anhydrase inhibition is a glaucoma mechanism that lowers pressure and has no effect on pupil size at all."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 76"
+  },
+  {
+   "topic": "Alpha adrenergic agonists",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do ophthalmic alpha-2 agonists lower intraocular pressure?",
+   "opts": [
+    [
+     "They block beta receptors in the ciliary epithelium",
+     "That is the beta blockers, which reduce production by cutting cyclic AMP in the ciliary epithelium rather than improving drainage."
+    ],
+    [
+     "They reduce production and increase outflow",
+     "Correct. They work on both sides of the equation, which is why they appear in both lists — decreased production and increased outflow."
+    ],
+    [
+     "They contract the ciliary muscle to open the trabecular meshwork",
+     "That is the cholinergic agonists, which contract the ciliary muscle and open the trabecular meshwork to increase outflow."
+    ],
+    [
+     "They analogue prostaglandin F2-alpha at prostaglandin receptors",
+     "That is the prostaglandin analogues, which bind prostaglandin receptors and increase outflow as the first-line agents."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 69"
+  },
+  {
+   "topic": "Beta blockers",
+   "io": "Describe the mechanism of action of ophthalmic drugs",
+   "slot": "mechanism",
+   "q": "How do ophthalmic beta blockers lower intraocular pressure?",
+   "opts": [
+    [
+     "They block beta receptors in the ciliary epithelium",
+     "Correct. Less catecholamine activation means less cyclic AMP, and less aqueous is made. They act on the production side, not on drainage."
+    ],
+    [
+     "They increase outflow through the trabecular meshwork",
+     "Increasing outflow is what the prostaglandins and the cholinergic agonists do; the beta blockers work on production instead."
+    ],
+    [
+     "They inhibit carbonic anhydrase in the ciliary epithelium",
+     "A different production-side mechanism belonging to dorzolamide and brinzolamide."
+    ],
+    [
+     "They contract the ciliary muscle",
+     "That is the cholinergic agonists, and it opens outflow rather than reducing production."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 67"
+  },
+  {
+   "topic": "Glaucoma therapy",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "next step",
+   "q": "What is the general target for pressure reduction in glaucoma therapy?",
+   "opts": [
+    [
+     "A pressure below 10 mmHg in every patient",
+     "Below 10 is under the normal range; the target is relative, not a universal floor."
+    ],
+    [
+     "A 50 per cent reduction regardless of starting pressure",
+     "More aggressive than the stated goal, and it would mean more drugs and more side effects."
+    ],
+    [
+     "Any reduction at all, however small",
+     "Any reduction at all is too permissive to count as a target; the stated goal is a 20 to 30 per cent fall in pressure."
+    ],
+    [
+     "A 20 to 30 per cent reduction in intraocular pressure",
+     "Correct. The goal is expressed as a proportion rather than an absolute number, which matches the stated aim: prevent progressive optic nerve damage with the least risk and fewest side effects."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Glaucoma therapy",
+   "io": "Identify indications and contraindications of ophthalmic drugs",
+   "slot": "drug choice",
+   "q": "Which classes are named as reasonable places to START glaucoma therapy?",
+   "opts": [
+    [
+     "A carbonic anhydrase inhibitor or a cholinergic agonist",
+     "Both are available, but neither is offered as the usual starting point — tolerability is the problem with each."
+    ],
+    [
+     "A prostaglandin analogue or a beta blocker",
+     "Correct. Either is a reasonable opening move, though the prostaglandins are described as first line and the most commonly used, with beta blockers second line."
+    ],
+    [
+     "A combination product from the outset",
+     "Combinations are for when multiple agents are needed, not for starting."
+    ],
+    [
+     "A cholinergic agonist alone",
+     "Compliance is poor because of side effects and frequent dosing, so it is a poor first choice."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 74"
+  }
+ ]
+}
