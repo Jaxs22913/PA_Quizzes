@@ -47,7 +47,7 @@ QUESTIONS = [
  "c": 0, "cite": "%s, Slide 5" % D},
 
 {"topic": "Auditory transduction", "io": O3, "slot": "mechanism",
- "q": "Which ion movement depolarises the cochlear hair cell, and where does it come from?",
+ "q": "Depolarisation of the cochlear hair cell comes from an ion influx. Through what, and out of which fluid?",
  "opts": [
   ["Influx from the endolymph through the tip-link channels",
    "Correct. The endolymph is the reservoir, and opening the tip-link channels lets ions rush in. Depolarisation then opens voltage-gated channels and glutamate is released onto cranial nerve VIII."],
@@ -257,7 +257,7 @@ QUESTIONS = [
 {"topic": "Otitis media", "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.", "slot": "microbiology",
  "q": "Which organisms most commonly cause bacterial otitis media?",
  "opts": [
-  ["Strep pneumoniae, Haemophilus and Moraxella",
+  ["Streptococcus pneumoniae, Haemophilus influenzae, Moraxella catarrhalis",
    "Correct. The classic middle ear trio. Viral causes are respiratory syncytial virus, rhinovirus, influenza and adenovirus."],
   ["Pseudomonas aeruginosa and Staphylococcus aureus",
    "Those are the otitis EXTERNA organisms, accounting for 80 to 90 per cent of that condition."],
@@ -270,7 +270,7 @@ QUESTIONS = [
 {"topic": "Otitis externa", "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.", "slot": "microbiology",
  "q": "Which organisms cause 80 to 90 per cent of otitis externa, and what predisposes to the fungal form?",
  "opts": [
-  ["Pseudomonas and Staph aureus; fungal after antibiotics or humidity",
+  ["Pseudomonas aeruginosa and Staphylococcus aureus; fungal after antibiotics",
    "Correct. The bacterial pair dominate, and Aspergillus niger or Candida albicans take over when the bacterial flora has been suppressed or the canal stays wet."],
   ["Streptococcus pneumoniae and Haemophilus influenzae; fungal disease follows swimming",
    "Those two are middle ear organisms, and swimming predisposes to bacterial rather than specifically fungal disease."],
@@ -294,7 +294,7 @@ QUESTIONS = [
  "c": 0, "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 14"},
 
 {"topic": "Equilibrium", "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.", "slot": "mechanism",
- "q": "Which structures detect linear acceleration and gravitational position, and what are their orientations?",
+ "q": "Which structures detect linear acceleration and gravitational position?",
  "opts": [
   ["The otolith organs",
    "Correct. They handle static and linear balance, while the semicircular canals handle rotation. The two systems together give the brain a complete picture of head position and movement."],
