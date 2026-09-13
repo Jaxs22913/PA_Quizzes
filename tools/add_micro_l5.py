@@ -42,6 +42,23 @@ def esc(s):
 
 # --------------------------------------------------------------- cram sheet
 CRAM_ROWS = [
+ ("L5 · ★ HE READ OUT THE EXAM LIST", "#b8860b", [
+   ("How this list exists", "The last three minutes of the lecture are a revision plan. These are his words, in his order."),
+   ("1. THE THREE LINES", "“Know those three lines — first, second, third — and KNOW WHAT BELONGS IN EACH. First line: know which are PHYSICAL, which are CHEMICAL, which are MICROBIOLOGICAL.”"),
+   ("2. RECOGNITION", "“What do we call the receptors that the white blood cells have?” → <b>PATTERN RECOGNITION RECEPTORS (PRRs)</b>, detecting <b>PAMPs</b> and <b>DAMPs</b>."),
+   ("3. MACROPHAGE vs NEUTROPHIL", "“Know the difference between a macrophage and a neutrophil, our two major phagocytes. But HOW are they different?”"),
+   ("4. THE DIFFERENTIAL", "“What do we USE it for? And what can it TELL us?”"),
+   ("5. INFLAMMATION", "“Know the major characteristics AND HOW DO THEY COME ABOUT? How is it that we have the redness, the heat, the pain?”"),
+   ("6. FEVER", "“What CAUSES fever? Why is fever GOOD? Why is fever BAD?”"),
+   ("7. INTERFERON", "“WHEN do we produce interferon? What kind of invading organism?” → <b>VIRUS</b>. And: “remember that IT DOES NOT KILL A VIRUS, but it prevents the viral spread.”"),
+   ("8. COMPLEMENT", "“Three pathways, ALL GETTING TO C3. Which is first? THE ALTERNATIVE. Then the LECTIN. Then the CLASSICAL — and the classical is the one associated with the THIRD line of defence.”"),
+   ("★ THE ORDER MATTERS", "“Organisms have to hit these barriers IN ORDER — physical and chemical first, then the white blood cell processes, and ONLY AFTER that can they start an adaptive response.” A sequence, not a menu."),
+   ("✗ NOT asked to memorise (1)", "The TYPES OF MUCINS — only that different surfaces get different ones."),
+   ("✗ NOT asked to memorise (2)", "The CHART OF TOXINS defensins can unfold."),
+   ("✗ NOT asked to memorise (3)", "The proteins protecting human cells from the MEMBRANE ATTACK COMPLEX — “you don’t need to fuss about that one.”"),
+   ("✗ NOT asked to memorise (4)", "The MAC ASSEMBLY CHART — just know it forms a PORE."),
+   ("✗ NOT asked to memorise (5)", "The REFERENCE RANGES for the differential. The PROPORTIONS matter; the numbers do not."),
+ ]),
  ("L5 · The Three Lines of Defense", "#3f8a55", [
    ("FIRST LINE", "PHYSICAL, CHEMICAL, MICROBIOLOGICAL and GENETIC barriers AT THE PORTAL OF ENTRY. <b>NONSPECIFIC.</b>"),
    ("SECOND LINE", "Protective CELLS, physiological processes, antimicrobial substances. <b>NONSPECIFIC.</b>"),
