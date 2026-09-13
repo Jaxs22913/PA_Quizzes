@@ -1,278 +1,18 @@
 {
  "set1": [
   {
-   "topic": "Vocal cord lesions",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "What are vocal cord nodules, and what causes them?",
-   "opts": [
-    [
-     "Unilateral pedunculated fluid-filled growths on the middle third, from a single severe strain",
-     "That describes vocal cord POLYPS, and the unilateral-versus-bilateral split is the main distinction."
-    ],
-    [
-     "Bilateral symmetrical calluses at the anterior third junction, from chronic phonotrauma",
-     "Correct. Repeated slamming of the cords causes basement membrane hyalinisation &mdash; literally a callus. Bilateral and symmetrical, because both cords take the same repeated impact at the same point."
-    ],
-    [
-     "Bilateral wart-like exophytic lesions from viral infection",
-     "Wart-like exophytic lesions from viral infection describe papillomatosis, which is a separate entity from the benign phonotrauma lesions."
-    ],
-    [
-     "Unilateral firm masses with cord fixation, from malignancy",
-     "Fixation and a firm mass suggest carcinoma, not a benign lesion."
-    ]
-   ],
-   "c": 1,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 25"
-  },
-  {
-   "topic": "Hearing loss patterns",
-   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
-   "slot": "mechanism",
-   "q": "Which set of causes belongs to sensorineural rather than conductive loss?",
-   "opts": [
-    [
-     "Cerumen impaction, otosclerosis, otitis media and tympanic membrane perforation",
-     "All four are conductive — they obstruct, load, stiffen or interrupt the sound-conducting apparatus."
-    ],
-    [
-     "Cholesteatoma, exostoses, foreign body and ossicular necrosis",
-     "Again all conductive, and they map onto the four core mechanisms of conductive loss."
-    ],
-    [
-     "Eustachian tube dysfunction, middle ear effusion and stapes fixation",
-     "All three are conductive: effusion loads the drum with mass, and stapes fixation stiffens the chain. None involves the cochlea or the nerve."
-    ],
-    [
-     "Presbycusis, ototoxic drugs, noise trauma and acoustic neuroma",
-     "Correct. All four damage the cochlea or the nerve. Note acoustic neuroma sits here because cranial nerve VIII is part of the sensorineural pathway even though the tumour is outside the cochlea."
-    ]
-   ],
-   "c": 3,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 7"
-  },
-  {
-   "topic": "Allergic rhinitis",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "What kind of immune reaction is allergic rhinitis, and what does it look like?",
-   "opts": [
-    [
-     "IgG-mediated type 2 hypersensitivity with purulent rhinorrhoea",
-     "Purulence points at bacterial infection, and the mechanism named is type 1."
-    ],
-    [
-     "IgE-mediated type 1 hypersensitivity, with CLEAR rhinorrhoea",
-     "Correct. Type 1, immediate, IgE-driven. The CLEAR discharge is what separates it at the bedside from bacterial sinusitis, which is purulent. Allergic shiners complete the picture."
-    ],
-    [
-     "Immune complex deposition, type 3 hypersensitivity",
-     "Immune complex deposition is type 3 hypersensitivity. Allergic rhinitis is type 1, immediate and IgE-mediated on the nasal mucosa."
-    ],
-    [
-     "T cell mediated, type 4 delayed hypersensitivity",
-     "Delayed hypersensitivity does not fit a reaction that starts within minutes of exposure."
-    ]
-   ],
-   "c": 1,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 20"
-  },
-  {
-   "topic": "Vertigo vs dizziness",
-   "io": "Objective 4 — Differentiate the pathogenesis of vertigo and dizziness.",
-   "slot": "mechanism",
-   "q": "Which causes are listed as CENTRAL vertigo?",
-   "opts": [
-    [
-     "Brainstem stroke, multiple sclerosis and cerebellar tumour",
-     "Correct. All involve the brainstem or cerebellum, which is why the nystagmus can be vertical and is not suppressed by fixation, and why other neurological signs appear."
-    ],
-    [
-     "Benign paroxysmal positional vertigo, Meniere disease and labyrinthitis",
-     "Those are the peripheral causes, along with vestibular neuritis."
-    ],
-    [
-     "Otosclerosis and cerumen impaction",
-     "Otosclerosis and cerumen impaction are conductive hearing problems. Neither involves the vestibular apparatus, so neither causes vertigo at all."
-    ],
-    [
-     "Presbycusis and noise trauma",
-     "Both are sensorineural hearing loss without a vestibular component."
-    ]
-   ],
-   "c": 0,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 15"
-  },
-  {
-   "topic": "Conductive loss mechanisms",
-   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
-   "slot": "mechanism",
-   "q": "A temporal bone fracture causes conductive loss by which mechanism?",
-   "opts": [
-    [
-     "Discontinuity of the ossicular chain",
-     "Correct. The chain is physically disrupted so the wave cannot be conducted across it. Ossicular necrosis produces the same end result by erosion rather than trauma."
-    ],
-    [
-     "Stiffness of the ossicular chain",
-     "Stiffness is the opposite problem — the chain is intact but cannot move."
-    ],
-    [
-     "Mass loading of the tympanic membrane",
-     "Mass loading requires added fluid or tissue weight damping the chain. A fracture removes continuity rather than adding weight."
-    ],
-    [
-     "Obstruction of the external canal",
-     "Obstruction blocks the external canal before the drum. A temporal bone fracture acts deeper, on the ossicular chain itself."
-    ]
-   ],
-   "c": 0,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 9"
-  },
-  {
-   "topic": "Turbinate hypertrophy",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "What enlarges the inferior turbinates, and what does rhinitis medicamentosa refer to?",
-   "opts": [
-    [
-     "Venous engorgement, oedema or bony hypertrophy; decongestant rebound",
-     "Correct. Three possible substrates, and the drug-induced one has its own name. It is the same rebound phenomenon that appears in ocular pharmacology &mdash; overuse of a vasoconstrictor leaving the tissue more congested than before."
-    ],
-    [
-     "Cartilage displacement off the midline; a congenital deformity",
-     "That is deviated septum, an anatomical rather than mucosal problem."
-    ],
-    [
-     "Eosinophilic polyp formation; an allergic reaction",
-     "Polyps are a separate entity with their own type 2 mechanism."
-    ],
-    [
-     "Bacterial infection of the turbinate bone; osteomyelitis",
-     "Osteomyelitis of the turbinate bone is not among the triggers. Enlargement comes from venous engorgement, mucosal oedema or bony hypertrophy."
-    ]
-   ],
-   "c": 0,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 21"
-  },
-  {
-   "topic": "Otosclerosis",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "Which single event in otosclerosis produces the hearing loss?",
-   "opts": [
-    [
-     "Erosion of the incus by the remodelled bone",
-     "Discontinuity would be a different mechanism; otosclerosis works by fixation."
-    ],
-    [
-     "Hair cell loss at the cochlear base",
-     "That is noise or ototoxic damage, and it would give sensorineural loss."
-    ],
-    [
-     "Ankylosis of the stapes footplate",
-     "Correct. Once the footplate is fixed it cannot transfer mechanical vibration into the cochlear fluid, and conduction fails progressively. Fixation is the whole lesion."
-    ],
-    [
-     "Accumulation of endolymph in the scala media",
-     "Fluid accumulating in the scala media is endolymphatic hydrops in Meniere disease, a sensorineural and vestibular problem rather than a conductive one."
-    ]
-   ],
-   "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 10"
-  },
-  {
-   "topic": "Vocal cord lesions",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "How do vocal cord polyps differ from nodules in site and pathogenesis?",
-   "opts": [
-    [
-     "Bilateral fibrous calluses from chronic phonotrauma",
-     "Bilateral fibrous calluses from chronic phonotrauma are NODULES. Polyps differ on every count &mdash; unilateral, soft, and from one event."
-    ],
-    [
-     "Unilateral, soft and pedunculated on the middle third, after one severe strain",
-     "Correct. One event rather than chronic repetition, and the healing response is inflammatory rather than a callus. Site and laterality both differ from nodules."
-    ],
-    [
-     "Bilateral soft lesions at the anterior commissure from reflux",
-     "Neither matches: polyps are unilateral on the middle third and follow acute strain, not bilateral at the commissure from reflux."
-    ],
-    [
-     "Unilateral fibrous calluses from chronic yelling",
-     "This mixes the two lesions. Calluses from chronic trauma are nodules and they are bilateral; polyps are unilateral and follow a single event."
-    ]
-   ],
-   "c": 1,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 25"
-  },
-  {
-   "topic": "Tonsillitis",
-   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
-   "slot": "microbiology",
-   "q": "Which organism is the usual bacterial cause of tonsillitis, and which finding suggests abscess?",
-   "opts": [
-    [
-     "Streptococcus pneumoniae; bilateral exudate",
-     "Pneumoniae is a middle ear and sinus organism here, and bilateral exudate is ordinary tonsillitis rather than abscess."
-    ],
-    [
-     "Pseudomonas aeruginosa; fever above 39 degrees",
-     "Pseudomonas belongs to otitis externa, and fever alone does not indicate abscess."
-    ],
-    [
-     "Group A Streptococcus; asymmetric deviation with trismus",
-     "Correct. Deviation and trismus indicate the infection has collected rather than staying confined to the tonsil and pharyngeal mucosa."
-    ],
-    [
-     "Haemophilus influenzae; odynophagia",
-     "Haemophilus is on the otitis media and sinusitis lists, and odynophagia is present in uncomplicated tonsillitis too."
-    ]
-   ],
-   "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 26"
-  },
-  {
-   "topic": "Epistaxis",
-   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
-   "slot": "anatomy",
-   "q": "Which vascular source accounts for anterior epistaxis, and what proportion of cases is that?",
-   "opts": [
-    [
-     "Woodruff's plexus on the posterolateral wall, about 90 per cent",
-     "Woodruff's is the posterior source and accounts for the minority."
-    ],
-    [
-     "The sphenopalatine artery, about 50 per cent",
-     "The sphenopalatine artery is not how this is divided. The two named vascular sources are Kiesselbach's plexus anteriorly and Woodruff's posteriorly."
-    ],
-    [
-     "The anterior ethmoidal artery, about 10 per cent",
-     "The anterior ethmoidal artery is not one of the two named plexuses. Anterior bleeds come from Kiesselbach's and posterior from Woodruff's."
-    ],
-    [
-     "Kiesselbach's plexus on the anterior septum, about 90 per cent",
-     "Correct. Nine in ten nosebleeds are anterior and come from this plexus, which is why direct compression works so often. The posterior 10 per cent come from Woodruff's plexus on the posterolateral wall."
-    ]
-   ],
-   "c": 3,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 23"
-  },
-  {
    "topic": "Conductive loss mechanisms",
    "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
    "slot": "mechanism",
    "q": "Middle ear effusion and cholesteatoma impair conduction by which mechanism?",
    "opts": [
     [
-     "Mass loading",
-     "Correct. Both add fluid or tissue weight that damps movement of the tympanic membrane and ossicles. The chain is intact and mobile in principle, but it is carrying extra mass."
-    ],
-    [
      "Obstruction",
      "Obstruction blocks the canal before the drum — wax, foreign bodies, exostoses."
+    ],
+    [
+     "Mass loading",
+     "Correct. Both add fluid or tissue weight that damps movement of the tympanic membrane and ossicles. The chain is intact and mobile in principle, but it is carrying extra mass."
     ],
     [
      "Stiffness effect",
@@ -283,8 +23,34 @@
      "Discontinuity means the chain is physically broken, which neither of these does."
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 9"
+  },
+  {
+   "topic": "Noise trauma",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "Above what sound level does long-term chronic exposure cause irreversible cochlear damage, and what is the cellular change?",
+   "opts": [
+    [
+     "Above 85 decibels, by stereocilia degeneration and apoptosis",
+     "Correct. Both words matter: degeneration of the stereocilia and programmed death of the hair cells. Neither regenerates, which is why the loss is permanent."
+    ],
+    [
+     "Above 85 decibels, causing reversible stereocilia fatigue",
+     "The threshold is right but the change is not reversible — apoptosis is cell death."
+    ],
+    [
+     "Above 120 decibels, causing tympanic membrane rupture",
+     "That is acute blast injury, a conductive problem, and a different threshold."
+    ],
+    [
+     "Above 60 decibels, causing endolymphatic hydrops",
+     "Endolymphatic hydrops is the lesion of Meniere disease, caused by defective resorption rather than by sound exposure at any level."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 8"
   },
   {
    "topic": "Hearing loss patterns",
@@ -297,176 +63,98 @@
      "That is sensorineural loss — the sensing apparatus rather than the conducting apparatus."
     ],
     [
-     "Defective sound transmission, in the external or middle ear",
-     "Correct. The apparatus that carries sound inward has failed; the cochlea and nerve are intact. That anatomical split is what the tuning fork tests are detecting."
-    ],
-    [
      "Failure of glutamate release at cranial nerve VIII",
      "A neural failure, so sensorineural by site even though the mechanism is synaptic."
+    ],
+    [
+     "Defective sound transmission, in the external or middle ear",
+     "Correct. The apparatus that carries sound inward has failed; the cochlea and nerve are intact. That anatomical split is what the tuning fork tests are detecting."
     ],
     [
      "Central processing failure in the auditory cortex",
      "Central pathways fall under the sensorineural heading in this comparison, not the conductive one."
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 7"
   },
   {
-   "topic": "Meniere disease",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "topic": "Vertigo vs dizziness",
+   "io": "Objective 4 — Differentiate the pathogenesis of vertigo and dizziness.",
    "slot": "mechanism",
-   "q": "What is the mechanism of Meniere disease?",
+   "q": "Why does asymmetrical vestibular input produce a false sense of motion?",
    "opts": [
     [
-     "Inflammatory swelling and vascular congestion of the labyrinth after a viral infection",
-     "That is labyrinthitis, and the recent upper respiratory infection is what separates the two clinically."
+     "The cochlea sends conflicting auditory signals",
+     "The cochlea handles hearing and contributes nothing to the sense of position or movement."
     ],
     [
-     "Dislodged otoconia floating in the semicircular canals",
-     "Otoconia loose in the semicircular canals is benign paroxysmal positional vertigo, which produces brief positional attacks and spares hearing."
+     "The brain reads the mismatch between the two sides as movement",
+     "Correct. Balance is a comparison, so unequal input is indistinguishable from turning."
     ],
     [
-     "Defective endolymph resorption causing hydrops, ballooning the scala media until micro-ruptures occur",
-     "Correct. Endolymphatic hydrops is the lesion: fluid accumulates because it is not resorbed, the membranous labyrinth distends, and micro-ruptures follow. The episodic nature follows from that cycle."
+     "Cerebral perfusion falls on one side",
+     "Falling cerebral perfusion produces dizziness and presyncope, which is the category vertigo is separated from."
     ],
     [
-     "Demyelination of the vestibular nerve",
-     "Demyelination of the vestibular nerve is not one of the named mechanisms. The central causes given are brainstem stroke, multiple sclerosis and cerebellar tumour."
-    ]
-   ],
-   "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 16"
-  },
-  {
-   "topic": "Labyrinthitis",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "What is the mechanism of labyrinthitis, and why does it impair hearing AND balance together?",
-   "opts": [
-    [
-     "Inflammation across both the semicircular canals and the cochlea",
-     "Correct. The inflammation does not respect the boundary between the vestibular apparatus and the organ of Corti, so both fail at once. That simultaneous involvement is what names it otitis interna."
-    ],
-    [
-     "Defective endolymph resorption ballooning the scala media",
-     "That is the hydrops of Meniere disease, and it does not begin with inflammation."
-    ],
-    [
-     "Dislodged otoconia striking structures in the endolymph",
-     "That is benign paroxysmal positional vertigo, which spares hearing entirely."
-    ],
-    [
-     "Fixation of the stapes footplate",
-     "Otosclerosis, a conductive lesion with no vestibular component."
-    ]
-   ],
-   "c": 0,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17"
-  },
-  {
-   "topic": "Labyrinthitis",
-   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
-   "slot": "clinical pattern",
-   "q": "Which history most separates labyrinthitis from Meniere disease?",
-   "opts": [
-    [
-     "Unilateral rather than bilateral symptoms",
-     "Both are usually unilateral, so this is explicitly not a discriminator."
-    ],
-    [
-     "The presence of tinnitus",
-     "Both labyrinthitis and Meniere disease produce tinnitus, so its presence tells you nothing about which one you are looking at."
-    ],
-    [
-     "A recent upper respiratory infection",
-     "Correct. Labyrinthitis usually follows a viral infection, so a cold last week points hard at it; someone who has not had a cold in years is likelier to have Meniere disease. Both can be unilateral, so laterality does not separate them."
-    ],
-    [
-     "The presence of sensorineural hearing loss",
-     "Both cause it. The duration of vertigo and the preceding infection are what differ."
-    ]
-   ],
-   "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17"
-  },
-  {
-   "topic": "Labyrinthitis",
-   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
-   "slot": "clinical pattern",
-   "q": "Which way does the nystagmus of labyrinthitis beat?",
-   "opts": [
-    [
-     "Horizontal-rotary, with the fast phase beating TOWARD the affected side",
-     "The direction is reversed; the fast phase beats away from the lesion."
-    ],
-    [
-     "Vertical and non-suppressible",
-     "Vertical nystagmus is a central feature, and labyrinthitis is peripheral."
-    ],
-    [
-     "Absent, because hearing rather than balance is affected",
-     "Labyrinthitis impairs both, and nystagmus is a listed feature."
-    ],
-    [
-     "Horizontal-rotary, with the fast phase beating AWAY from the affected side",
-     "Correct. The damaged side is under-firing, so the slow drift is toward it and the corrective fast phase beats away. Severe postural instability, gait ataxia and nausea come with it."
-    ]
-   ],
-   "c": 3,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17"
-  },
-  {
-   "topic": "Auditory transduction",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "Depolarisation of the cochlear hair cell comes from an ion influx. Through what, and out of which fluid?",
-   "opts": [
-    [
-     "Efflux into the perilymph through voltage-gated channels",
-     "Voltage-gated channels open AFTER depolarisation and drive transmitter release; they are not what depolarises the cell."
-    ],
-    [
-     "Influx from the perilymph across the basilar membrane",
-     "The ionic gradient that matters is between endolymph and the hair cell, not across the basilar membrane."
-    ],
-    [
-     "Influx from the endolymph through the tip-link channels",
-     "Correct. The endolymph is the reservoir, and opening the tip-link channels lets ions rush in. Depolarisation then opens voltage-gated channels and glutamate is released onto cranial nerve VIII."
-    ],
-    [
-     "Release from intracellular stores after glutamate binding",
-     "Glutamate is what the hair cell RELEASES onto cranial nerve VIII after it depolarises. It is the output of the cell, not a signal arriving at it."
-    ]
-   ],
-   "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 5"
-  },
-  {
-   "topic": "Noise trauma",
-   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
-   "slot": "mechanism",
-   "q": "Above what sound level does long-term chronic exposure cause irreversible cochlear damage, and what is the cellular change?",
-   "opts": [
-    [
-     "Above 85 decibels, causing reversible stereocilia fatigue",
-     "The threshold is right but the change is not reversible — apoptosis is cell death."
-    ],
-    [
-     "Above 85 decibels, by stereocilia degeneration and apoptosis",
-     "Correct. Both words matter: degeneration of the stereocilia and programmed death of the hair cells. Neither regenerates, which is why the loss is permanent."
-    ],
-    [
-     "Above 120 decibels, causing tympanic membrane rupture",
-     "That is acute blast injury, a conductive problem, and a different threshold."
-    ],
-    [
-     "Above 60 decibels, causing endolymphatic hydrops",
-     "Endolymphatic hydrops is the lesion of Meniere disease, caused by defective resorption rather than by sound exposure at any level."
+     "The otoliths dissolve",
+     "Otoconia become dislodged in one condition, but they do not dissolve."
     ]
    ],
    "c": 1,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 8"
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 15"
+  },
+  {
+   "topic": "Presbycusis",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "What is the pattern of onset in presbycusis?",
+   "opts": [
+    [
+     "Gradual, symmetrical and bilateral",
+     "Correct, and it is sensorineural. Asymmetry would point away from ageing toward a focal lesion."
+    ],
+    [
+     "Sudden and unilateral",
+     "Sudden unilateral loss points to labyrinthitis or a vascular event rather than to age-related change."
+    ],
+    [
+     "Episodic and fluctuating",
+     "Loss that comes and goes suggests Meniere disease, where endolymph pressure rises and falls."
+    ],
+    [
+     "Gradual but strictly unilateral",
+     "One-sided gradual loss raises acoustic neuroma rather than presbycusis."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 12"
+  },
+  {
+   "topic": "Epistaxis",
+   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
+   "slot": "aetiology",
+   "q": "How do the causes of anterior and posterior epistaxis differ?",
+   "opts": [
+    [
+     "Anterior from local trauma and dry air; posterior from hypertension and anticoagulation",
+     "Correct. Anterior bleeds are local and mechanical; posterior bleeds reflect a systemic vascular or clotting problem, which is also why they are more profuse and carry airway risk."
+    ],
+    [
+     "Anterior from hypertension and anticoagulation; posterior from digital trauma",
+     "The two aetiologies are swapped. Digital trauma and dry air are anterior causes; hypertension and anticoagulation drive posterior bleeds."
+    ],
+    [
+     "Both are caused predominantly by anticoagulation",
+     "Anticoagulation belongs with the posterior group; anterior bleeds are usually local."
+    ],
+    [
+     "Anterior from coagulopathy; posterior from low humidity",
+     "Reversed again: coagulopathy belongs with posterior bleeding and low humidity with anterior mucosal drying."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 23"
   },
   {
    "topic": "Otosclerosis",
@@ -492,6 +180,162 @@
     ]
    ],
    "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 10"
+  },
+  {
+   "topic": "Nasal polyps",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Why are nasal polyps described as non-neoplastic?",
+   "opts": [
+    [
+     "They are malignant but slow growing",
+     "Polyps are benign and not neoplastic at all, so describing them as slow-growing malignancy is wrong twice over."
+    ],
+    [
+     "No new tissue is grown; existing mucosa becomes oedematous",
+     "Correct. They are waterlogged mucous membrane rather than a growth."
+    ],
+    [
+     "They arise from cartilage rather than epithelium",
+     "They arise from the mucous membranes of the sinus ostia or ethmoid air cells."
+    ],
+    [
+     "They regress without treatment in every case",
+     "Non-neoplastic describes what the tissue IS, not how it behaves over time or whether it regresses."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 21"
+  },
+  {
+   "topic": "Cervical lymphadenopathy",
+   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
+   "slot": "clinical pattern",
+   "q": "Which nodal findings require immediate assessment to exclude lymphoma?",
+   "opts": [
+    [
+     "Tender mobile nodes during a viral upper respiratory infection",
+     "That is the ordinary reactive picture, which is usually benign."
+    ],
+    [
+     "Bilateral small nodes in a child with otitis media",
+     "Regional response to a head and neck infection &mdash; the benign pathway described."
+    ],
+    [
+     "Persistent rubbery or matted nodes in older adults",
+     "Correct. Reactive nodes are usually tender and follow a regional infection. Rubbery, matted, persistent and supraclavicular in an older patient is the combination that changes the level of concern."
+    ],
+    [
+     "Any palpable cervical node at all",
+     "Palpable nodes are common and usually reactive; the features listed are what raise concern."
+    ]
+   ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 27"
+  },
+  {
+   "topic": "Rhinosinusitis",
+   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
+   "slot": "classification",
+   "q": "How are acute and chronic rhinosinusitis defined by duration, and what commonly accompanies the chronic form?",
+   "opts": [
+    [
+     "Acute under 2 weeks; chronic beyond 6 weeks, often with septal deviation",
+     "Neither threshold matches, and septal deviation is a separate anatomical problem."
+    ],
+    [
+     "Acute under 4 weeks; chronic beyond 12 weeks despite therapy, often with nasal polyps",
+     "Correct. The two thresholds are the definition. Acute disease is usually viral &mdash; rhinovirus or influenza &mdash; with secondary bacterial infection by Streptococcus pneumoniae or Haemophilus influenzae."
+    ],
+    [
+     "Acute under 12 weeks; chronic beyond 6 months, often with turbinate hypertrophy",
+     "The thresholds are wrong: acute rhinosinusitis is under 4 weeks and chronic is beyond 12 weeks despite therapy."
+    ],
+    [
+     "Acute under 4 weeks; chronic beyond 12 weeks, usually with no mucosal change",
+     "The durations are right but chronic disease often comes WITH polyps rather than without change."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 20"
+  },
+  {
+   "topic": "Equilibrium",
+   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
+   "slot": "mechanism",
+   "q": "What do the semicircular canals detect, and how?",
+   "opts": [
+    [
+     "Linear acceleration and gravitational position, via the otoliths",
+     "That is the utricle and saccule — the otolith organs — which handle static and linear balance."
+    ],
+    [
+     "Rotational acceleration, by endolymph bending the cupula",
+     "Correct. Three loops in the sagittal, coronal and transverse planes. The fluid lags behind the head, the gelatinous cupula bends, and the hair cell stereocilia inside it are stimulated."
+    ],
+    [
+     "Sound frequency, via the basilar membrane",
+     "That is the cochlea, a different part of the inner ear entirely."
+    ],
+    [
+     "Middle ear pressure, via the Eustachian tube",
+     "The Eustachian tube equalises middle ear pressure. That is a conduction function and has nothing to do with detecting head movement."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 14"
+  },
+  {
+   "topic": "Presbycusis",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "What is the characteristic frequency pattern of presbycusis, and why does it impair conversation?",
+   "opts": [
+    [
+     "Low frequencies go first, taking the vowels",
+     "That is the Meniere pattern — fluctuating low-tone loss — and it is not age-related."
+    ],
+    [
+     "All frequencies fall equally",
+     "A flat loss is not what presbycusis produces, and it would not preferentially damage discrimination."
+    ],
+    [
+     "Only frequencies above the speech range are affected",
+     "If the speech range were spared there would be no discrimination problem."
+    ],
+    [
+     "High frequencies go first, taking the speech consonants",
+     "Correct. Consonants such as /s/, /f/ and /t/ are high-frequency sounds and carry most of the discriminating information in speech, which is why voices become hard to make out in a noisy room while still being audible."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 12"
+  },
+  {
+   "topic": "Otosclerosis",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Which single event in otosclerosis produces the hearing loss?",
+   "opts": [
+    [
+     "Ankylosis of the stapes footplate",
+     "Correct. Once the footplate is fixed it cannot transfer mechanical vibration into the cochlear fluid, and conduction fails progressively. Fixation is the whole lesion."
+    ],
+    [
+     "Erosion of the incus by the remodelled bone",
+     "Discontinuity would be a different mechanism; otosclerosis works by fixation."
+    ],
+    [
+     "Hair cell loss at the cochlear base",
+     "That is noise or ototoxic damage, and it would give sensorineural loss."
+    ],
+    [
+     "Accumulation of endolymph in the scala media",
+     "Fluid accumulating in the scala media is endolymphatic hydrops in Meniere disease, a sensorineural and vestibular problem rather than a conductive one."
+    ]
+   ],
+   "c": 0,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 10"
   },
   {
@@ -521,58 +365,6 @@
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 15"
   },
   {
-   "topic": "Cervical lymphadenopathy",
-   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
-   "slot": "clinical pattern",
-   "q": "Which nodal findings require immediate assessment to exclude lymphoma?",
-   "opts": [
-    [
-     "Tender mobile nodes during a viral upper respiratory infection",
-     "That is the ordinary reactive picture, which is usually benign."
-    ],
-    [
-     "Bilateral small nodes in a child with otitis media",
-     "Regional response to a head and neck infection &mdash; the benign pathway described."
-    ],
-    [
-     "Any palpable cervical node at all",
-     "Palpable nodes are common and usually reactive; the features listed are what raise concern."
-    ],
-    [
-     "Persistent rubbery or matted nodes in older adults",
-     "Correct. Reactive nodes are usually tender and follow a regional infection. Rubbery, matted, persistent and supraclavicular in an older patient is the combination that changes the level of concern."
-    ]
-   ],
-   "c": 3,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 27"
-  },
-  {
-   "topic": "Equilibrium",
-   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
-   "slot": "mechanism",
-   "q": "What do the semicircular canals detect, and how?",
-   "opts": [
-    [
-     "Rotational acceleration, by endolymph bending the cupula",
-     "Correct. Three loops in the sagittal, coronal and transverse planes. The fluid lags behind the head, the gelatinous cupula bends, and the hair cell stereocilia inside it are stimulated."
-    ],
-    [
-     "Linear acceleration and gravitational position, via the otoliths",
-     "That is the utricle and saccule — the otolith organs — which handle static and linear balance."
-    ],
-    [
-     "Sound frequency, via the basilar membrane",
-     "That is the cochlea, a different part of the inner ear entirely."
-    ],
-    [
-     "Middle ear pressure, via the Eustachian tube",
-     "The Eustachian tube equalises middle ear pressure. That is a conduction function and has nothing to do with detecting head movement."
-    ]
-   ],
-   "c": 0,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 14"
-  },
-  {
    "topic": "Vertigo vs dizziness",
    "io": "Objective 4 — Differentiate the pathogenesis of vertigo and dizziness.",
    "slot": "mechanism",
@@ -583,48 +375,46 @@
      "That is dizziness or presyncope, driven by hypoperfusion, orthostatic hypotension or metabolic imbalance."
     ],
     [
-     "A hallucination of motion, with NO syncope",
-     "Correct. Asymmetry between the two sides is the mechanism, and the absence of syncope is the separator. Dizziness or lightheadedness is a non-vestibular sensation of impending faint."
-    ],
-    [
      "Any unsteadiness on standing",
      "Unsteadiness alone does not distinguish the two; the hallucination of motion does."
     ],
     [
      "Loss of consciousness preceded by spinning",
      "Vertigo explicitly involves NO syncope. Loss of consciousness points away from a vestibular cause and toward cerebral hypoperfusion."
+    ],
+    [
+     "A hallucination of motion, with NO syncope",
+     "Correct. Asymmetry between the two sides is the mechanism, and the absence of syncope is the separator. Dizziness or lightheadedness is a non-vestibular sensation of impending faint."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 15"
-  }
- ],
- "set2": [
+  },
   {
-   "topic": "Presbycusis",
-   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "topic": "Ear anatomy",
+   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
    "slot": "mechanism",
-   "q": "What is the characteristic frequency pattern of presbycusis, and why does it impair conversation?",
+   "q": "What makes the middle ear vulnerable to the pressure changes behind otitis media?",
    "opts": [
     [
-     "Low frequencies go first, taking the vowels",
-     "That is the Meniere pattern — fluctuating low-tone loss — and it is not age-related."
+     "It is fluid-filled and cannot compress",
+     "The middle ear is air-filled; the INNER ear holds the fluid."
     ],
     [
-     "High frequencies go first, taking the speech consonants",
-     "Correct. Consonants such as /s/, /f/ and /t/ are high-frequency sounds and carry most of the discriminating information in speech, which is why voices become hard to make out in a noisy room while still being audible."
+     "It is an air-filled space vented only by the Eustachian tube",
+     "Correct. A sealed air pocket with one vent is why closing the vent drops the pressure and draws in fluid."
     ],
     [
-     "All frequencies fall equally",
-     "A flat loss is not what presbycusis produces, and it would not preferentially damage discrimination."
+     "It has no blood supply",
+     "The middle ear is perfused. Its vulnerability comes from being a sealed air space, not from any lack of blood supply."
     ],
     [
-     "Only frequencies above the speech range are affected",
-     "If the speech range were spared there would be no discrimination problem."
+     "It is lined by keratinised skin",
+     "The canal is skin-lined; the middle ear is mucosa, which is what absorbs the gas."
     ]
    ],
    "c": 1,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 12"
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 4"
   },
   {
    "topic": "Nasal polyps",
@@ -632,10 +422,6 @@
    "slot": "mechanism",
    "q": "Which cytokines drive nasal polyp formation, and which cell floods the tissue?",
    "opts": [
-    [
-     "Interleukins 4, 5 and 13, with eosinophil influx",
-     "Correct. This is type 2 inflammation, and naming the three interleukins is the molecular-mechanism objective in action. Polyps are benign, non-neoplastic oedematous masses from the sinus ostia or ethmoid air cells."
-    ],
     [
      "Interleukins 1, 6 and tumour necrosis factor, with neutrophil influx",
      "That is the type 1 or acute inflammatory profile, not the type 2 allergic one."
@@ -645,64 +431,172 @@
      "A type 1 T-helper response, which is not what drives polyps."
     ],
     [
+     "Interleukins 4, 5 and 13, with eosinophil influx",
+     "Correct. This is type 2 inflammation, and naming the three interleukins is the molecular-mechanism objective in action. Polyps are benign, non-neoplastic oedematous masses from the sinus ostia or ethmoid air cells."
+    ],
+    [
      "Interleukin 17, with mast cell influx",
      "Interleukin 17 and mast cell influx are not the polyp pathway. Polyps are type 2 inflammation driven by interleukins 4, 5 and 13 with eosinophils."
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 21"
   },
   {
    "topic": "Deviated septum",
    "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
    "slot": "mechanism",
-   "q": "Which physical law explains why a small septal deviation causes disproportionate obstruction?",
+   "q": "What happens to the wider nasal cavity opposite a septal deviation?",
    "opts": [
     [
-     "Poiseuille's law",
-     "Correct. Resistance rises with the fourth power of the radius, so a modest narrowing has an outsized effect on airflow. That is why a deviation that looks minor can produce persistent obstruction."
+     "Compensatory inferior turbinate hypertrophy",
+     "Correct. The wide side does more of the work, so its turbinate enlarges to condition the extra airflow &mdash; which can then narrow the only good airway the patient had."
     ],
     [
-     "Fick's law of diffusion",
-     "That governs diffusion across a membrane, which is a transport problem rather than a flow-resistance one."
+     "It atrophies from disuse",
+     "The opposite happens. The wide side carries MORE airflow, so its turbinate enlarges to condition the extra volume rather than wasting away."
     ],
     [
-     "Laplace's law",
-     "That relates wall tension to radius and pressure, used for vessels and alveoli, not nasal airflow resistance."
+     "It develops polyps from the increased flow",
+     "Polyps arise from type 2 inflammation, not from airflow volume."
     ],
     [
-     "Boyle's law",
-     "A pressure-volume relationship for gases, not a resistance law."
+     "Nothing changes; only the narrow side is affected",
+     "The compensatory change on the wide side is specifically described."
     ]
    ],
    "c": 0,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 22"
   },
   {
-   "topic": "Rhinosinusitis",
+   "topic": "Tonsillitis",
    "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
-   "slot": "classification",
-   "q": "How are acute and chronic rhinosinusitis defined by duration, and what commonly accompanies the chronic form?",
+   "slot": "microbiology",
+   "q": "Which organism is the usual bacterial cause of tonsillitis, and which finding suggests abscess?",
    "opts": [
     [
-     "Acute under 4 weeks; chronic beyond 12 weeks despite therapy, often with nasal polyps",
-     "Correct. The two thresholds are the definition. Acute disease is usually viral &mdash; rhinovirus or influenza &mdash; with secondary bacterial infection by Streptococcus pneumoniae or Haemophilus influenzae."
+     "Streptococcus pneumoniae; bilateral exudate",
+     "Pneumoniae is a middle ear and sinus organism here, and bilateral exudate is ordinary tonsillitis rather than abscess."
     ],
     [
-     "Acute under 2 weeks; chronic beyond 6 weeks, often with septal deviation",
-     "Neither threshold matches, and septal deviation is a separate anatomical problem."
+     "Pseudomonas aeruginosa; fever above 39 degrees",
+     "Pseudomonas belongs to otitis externa, and fever alone does not indicate abscess."
     ],
     [
-     "Acute under 12 weeks; chronic beyond 6 months, often with turbinate hypertrophy",
-     "The thresholds are wrong: acute rhinosinusitis is under 4 weeks and chronic is beyond 12 weeks despite therapy."
+     "Haemophilus influenzae; odynophagia",
+     "Haemophilus is on the otitis media and sinusitis lists, and odynophagia is present in uncomplicated tonsillitis too."
     ],
     [
-     "Acute under 4 weeks; chronic beyond 12 weeks, usually with no mucosal change",
-     "The durations are right but chronic disease often comes WITH polyps rather than without change."
+     "Group A Streptococcus; asymmetric deviation with trismus",
+     "Correct. Deviation and trismus indicate the infection has collected rather than staying confined to the tonsil and pharyngeal mucosa."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 26"
+  },
+  {
+   "topic": "Auditory transduction",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Depolarisation of the cochlear hair cell comes from an ion influx. Through what, and out of which fluid?",
+   "opts": [
+    [
+     "Efflux into the perilymph through voltage-gated channels",
+     "Voltage-gated channels open AFTER depolarisation and drive transmitter release; they are not what depolarises the cell."
+    ],
+    [
+     "Influx from the endolymph through the tip-link channels",
+     "Correct. The endolymph is the reservoir, and opening the tip-link channels lets ions rush in. Depolarisation then opens voltage-gated channels and glutamate is released onto cranial nerve VIII."
+    ],
+    [
+     "Influx from the perilymph across the basilar membrane",
+     "The ionic gradient that matters is between endolymph and the hair cell, not across the basilar membrane."
+    ],
+    [
+     "Release from intracellular stores after glutamate binding",
+     "Glutamate is what the hair cell RELEASES onto cranial nerve VIII after it depolarises. It is the output of the cell, not a signal arriving at it."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 5"
+  },
+  {
+   "topic": "Ear anatomy",
+   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
+   "slot": "mechanism",
+   "q": "Which structure separates the external ear from the middle ear, and what does it do?",
+   "opts": [
+    [
+     "The oval window, which passes energy to the cochlea",
+     "The oval window is the boundary between MIDDLE and INNER ear, driven by the stapes."
+    ],
+    [
+     "The round window, which relieves pressure",
+     "It sits at the cochlear end and relieves pressure waves; it is not the external boundary."
+    ],
+    [
+     "The Eustachian tube, which equalises pressure",
+     "The tube connects the middle ear to the nasopharynx rather than separating compartments."
+    ],
+    [
+     "The tympanic membrane, which vibrates and passes energy to the ossicles",
+     "Correct. It is the boundary and the first moving part of the conducting chain, which is why perforating it causes conductive loss."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 4"
+  },
+  {
+   "topic": "Meniere disease",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Why does the vertigo of Meniere disease come in attacks rather than continuously?",
+   "opts": [
+    [
+     "Pressure builds until micro-ruptures occur, then re-equilibrates",
+     "Correct. The cycle of build-up and release is what makes it episodic."
+    ],
+    [
+     "The virus replicates in waves",
+     "Meniere disease is a disorder of endolymph resorption, not an infection, so there is no organism replicating."
+    ],
+    [
+     "Otoconia settle between episodes",
+     "Otoconia settling between episodes explains benign paroxysmal positional vertigo, which lasts seconds rather than hours."
+    ],
+    [
+     "Inflammation resolves and recurs",
+     "Inflammation across canals and cochlea is labyrinthitis, and its vertigo is continuous."
     ]
    ],
    "c": 0,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 20"
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 16"
+  },
+  {
+   "topic": "Ototoxicity",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "How do cisplatin and carboplatin cause permanent bilateral sensorineural loss?",
+   "opts": [
+    [
+     "They generate reactive oxygen species that destroy outer hair cells at the cochlear base",
+     "Reactive oxygen species destroying outer hair cells from the cochlear base is the aminoglycoside mechanism, and it takes the high frequencies first."
+    ],
+    [
+     "They inhibit prestin in outer hair cells",
+     "That is salicylate, and the effect is tinnitus rather than permanent loss."
+    ],
+    [
+     "They cross-link DNA in stria vascularis cells, compromising endolymph ion homeostasis",
+     "Correct. The stria vascularis maintains the ionic composition of endolymph, and without that gradient transduction fails. Damage there is permanent and bilateral."
+    ],
+    [
+     "They fix the stapes footplate in the oval window",
+     "That is otosclerosis, a conductive lesion with no drug involvement."
+    ]
+   ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 11"
   },
   {
    "topic": "Otitis externa",
@@ -715,20 +609,230 @@
      "Those two are middle ear organisms, and swimming predisposes to bacterial rather than specifically fungal disease."
     ],
     [
-     "Pseudomonas aeruginosa and Staphylococcus aureus; fungal after antibiotics",
-     "Correct. The bacterial pair dominate, and Aspergillus niger or Candida albicans take over when the bacterial flora has been suppressed or the canal stays wet."
-    ],
-    [
      "Moraxella catarrhalis alone; fungal disease follows trauma",
      "Moraxella catarrhalis sits on the otitis MEDIA list alongside Streptococcus pneumoniae and Haemophilus influenzae, not in the external canal."
+    ],
+    [
+     "Pseudomonas aeruginosa and Staphylococcus aureus; fungal after antibiotics",
+     "Correct. The bacterial pair dominate, and Aspergillus niger or Candida albicans take over when the bacterial flora has been suppressed or the canal stays wet."
     ],
     [
      "Respiratory syncytial virus and rhinovirus; fungal disease follows steroid use",
      "Respiratory syncytial virus and rhinovirus are viral causes of otitis MEDIA; they are not what colonises an external canal."
     ]
    ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 13"
+  },
+  {
+   "topic": "Hearing loss patterns",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "Which set of causes belongs to sensorineural rather than conductive loss?",
+   "opts": [
+    [
+     "Presbycusis, ototoxic drugs, noise trauma and acoustic neuroma",
+     "Correct. All four damage the cochlea or the nerve. Note acoustic neuroma sits here because cranial nerve VIII is part of the sensorineural pathway even though the tumour is outside the cochlea."
+    ],
+    [
+     "Cerumen impaction, otosclerosis, otitis media and tympanic membrane perforation",
+     "All four are conductive — they obstruct, load, stiffen or interrupt the sound-conducting apparatus."
+    ],
+    [
+     "Cholesteatoma, exostoses, foreign body and ossicular necrosis",
+     "Again all conductive, and they map onto the four core mechanisms of conductive loss."
+    ],
+    [
+     "Eustachian tube dysfunction, middle ear effusion and stapes fixation",
+     "All three are conductive: effusion loads the drum with mass, and stapes fixation stiffens the chain. None involves the cochlea or the nerve."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 7"
+  },
+  {
+   "topic": "Ototoxicity",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Which two ototoxic effects are described as reversible or symptom-limited rather than permanent?",
+   "opts": [
+    [
+     "Gentamicin and tobramycin damage",
+     "Aminoglycoside destruction of outer hair cells is the permanent one."
+    ],
+    [
+     "Cisplatin and carboplatin damage",
+     "Platinum agents cause bilateral permanent sensorineural loss."
+    ],
+    [
+     "Noise trauma and presbycusis",
+     "Both are irreversible — noise causes stereocilia degeneration and hair cell apoptosis."
+    ],
+    [
+     "Furosemide on the strial potential; salicylate on prestin",
+     "Correct. The loop diuretic effect on the strial potential is reversible, and the salicylate effect on the outer hair cell motor protein produces tinnitus. Neither destroys the cells outright."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 11"
+  },
+  {
+   "topic": "Otitis externa",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Why does prolonged antibiotic use predispose to FUNGAL otitis externa?",
+   "opts": [
+    [
+     "It thins the canal skin directly",
+     "Antibiotics do not thin the canal skin. What they remove is the bacterial competition."
+    ],
+    [
+     "It removes the bacterial competition that normally limits fungal growth",
+     "Correct. The same logic as thrush: clear the residents and the fungus has the canal to itself."
+    ],
+    [
+     "It raises the canal pH to favour fungi",
+     "The association is not explained by pH. It is the loss of competing bacteria that lets fungus grow."
+    ],
+    [
+     "It damages the tympanic membrane",
+     "Otitis externa is a canal disease and does not begin at the membrane."
+    ]
+   ],
    "c": 1,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 13"
+  },
+  {
+   "topic": "Labyrinthitis",
+   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
+   "slot": "clinical pattern",
+   "q": "Which way does the nystagmus of labyrinthitis beat?",
+   "opts": [
+    [
+     "Horizontal-rotary, with the fast phase beating TOWARD the affected side",
+     "The direction is reversed; the fast phase beats away from the lesion."
+    ],
+    [
+     "Vertical and non-suppressible",
+     "Vertical nystagmus is a central feature, and labyrinthitis is peripheral."
+    ],
+    [
+     "Absent, because hearing rather than balance is affected",
+     "Labyrinthitis impairs both, and nystagmus is a listed feature."
+    ],
+    [
+     "Horizontal-rotary, with the fast phase beating AWAY from the affected side",
+     "Correct. The damaged side is under-firing, so the slow drift is toward it and the corrective fast phase beats away. Severe postural instability, gait ataxia and nausea come with it."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17"
+  },
+  {
+   "topic": "Meniere disease",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "What is the mechanism of Meniere disease?",
+   "opts": [
+    [
+     "Defective endolymph resorption causing hydrops, ballooning the scala media until micro-ruptures occur",
+     "Correct. Endolymphatic hydrops is the lesion: fluid accumulates because it is not resorbed, the membranous labyrinth distends, and micro-ruptures follow. The episodic nature follows from that cycle."
+    ],
+    [
+     "Inflammatory swelling and vascular congestion of the labyrinth after a viral infection",
+     "That is labyrinthitis, and the recent upper respiratory infection is what separates the two clinically."
+    ],
+    [
+     "Dislodged otoconia floating in the semicircular canals",
+     "Otoconia loose in the semicircular canals is benign paroxysmal positional vertigo, which produces brief positional attacks and spares hearing."
+    ],
+    [
+     "Demyelination of the vestibular nerve",
+     "Demyelination of the vestibular nerve is not one of the named mechanisms. The central causes given are brainstem stroke, multiple sclerosis and cerebellar tumour."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 16"
+  },
+  {
+   "topic": "Epistaxis",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Why does anticoagulation favour POSTERIOR rather than anterior epistaxis?",
+   "opts": [
+    [
+     "The anterior septum has no blood supply",
+     "Kiesselbach's plexus supplies the anterior septum richly, which is exactly why anterior bleeds are the common ones."
+    ],
+    [
+     "Anticoagulants are concentrated posteriorly",
+     "Anticoagulants act on clotting throughout the circulation and are not concentrated in any part of the nose."
+    ],
+    [
+     "Posterior bleeding is driven by systemic vascular and clotting factors",
+     "Correct. Anterior causes are local insults to the mucosa; posterior causes act on the vessels and on clotting."
+    ],
+    [
+     "The posterior mucosa is thinner",
+     "Mucosal thickness is not what separates the two. The difference is local insult against systemic vascular and clotting factors."
+    ]
+   ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 23"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Epistaxis",
+   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
+   "slot": "anatomy",
+   "q": "Which vascular source accounts for anterior epistaxis, and what proportion of cases is that?",
+   "opts": [
+    [
+     "Woodruff's plexus on the posterolateral wall, about 90 per cent",
+     "Woodruff's is the posterior source and accounts for the minority."
+    ],
+    [
+     "Kiesselbach's plexus on the anterior septum, about 90 per cent",
+     "Correct. Nine in ten nosebleeds are anterior and come from this plexus, which is why direct compression works so often. The posterior 10 per cent come from Woodruff's plexus on the posterolateral wall."
+    ],
+    [
+     "The sphenopalatine artery, about 50 per cent",
+     "The sphenopalatine artery is not how this is divided. The two named vascular sources are Kiesselbach's plexus anteriorly and Woodruff's posteriorly."
+    ],
+    [
+     "The anterior ethmoidal artery, about 10 per cent",
+     "The anterior ethmoidal artery is not one of the two named plexuses. Anterior bleeds come from Kiesselbach's and posterior from Woodruff's."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 23"
+  },
+  {
+   "topic": "Conductive loss mechanisms",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "Why does cerumen impaction cause conductive rather than sensorineural loss?",
+   "opts": [
+    [
+     "It blocks the canal, so sound never reaches the conducting chain",
+     "Correct. The cochlea is untouched, and the defect is purely one of delivery."
+    ],
+    [
+     "It damages the outer hair cells",
+     "Wax sits in the canal and never reaches the cochlea, so the hair cells are untouched by it."
+    ],
+    [
+     "It stiffens the stapes footplate",
+     "Stiffening of the stapes footplate is otosclerosis, a separate conductive mechanism entirely."
+    ],
+    [
+     "It loads the tympanic membrane with fluid",
+     "Wax sits in the canal in front of the membrane rather than behind it."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 9"
   },
   {
    "topic": "Hearing loss patterns",
@@ -757,108 +861,290 @@
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 7"
   },
   {
-   "topic": "Ototoxicity",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "How do cisplatin and carboplatin cause permanent bilateral sensorineural loss?",
-   "opts": [
-    [
-     "They generate reactive oxygen species that destroy outer hair cells at the cochlear base",
-     "Reactive oxygen species destroying outer hair cells from the cochlear base is the aminoglycoside mechanism, and it takes the high frequencies first."
-    ],
-    [
-     "They cross-link DNA in stria vascularis cells, compromising endolymph ion homeostasis",
-     "Correct. The stria vascularis maintains the ionic composition of endolymph, and without that gradient transduction fails. Damage there is permanent and bilateral."
-    ],
-    [
-     "They inhibit prestin in outer hair cells",
-     "That is salicylate, and the effect is tinnitus rather than permanent loss."
-    ],
-    [
-     "They fix the stapes footplate in the oval window",
-     "That is otosclerosis, a conductive lesion with no drug involvement."
-    ]
-   ],
-   "c": 1,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 11"
-  },
-  {
-   "topic": "Ototoxicity",
-   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
-   "slot": "mechanism",
-   "q": "Which two ototoxic effects are described as reversible or symptom-limited rather than permanent?",
-   "opts": [
-    [
-     "Gentamicin and tobramycin damage",
-     "Aminoglycoside destruction of outer hair cells is the permanent one."
-    ],
-    [
-     "Cisplatin and carboplatin damage",
-     "Platinum agents cause bilateral permanent sensorineural loss."
-    ],
-    [
-     "Furosemide on the strial potential; salicylate on prestin",
-     "Correct. The loop diuretic effect on the strial potential is reversible, and the salicylate effect on the outer hair cell motor protein produces tinnitus. Neither destroys the cells outright."
-    ],
-    [
-     "Noise trauma and presbycusis",
-     "Both are irreversible — noise causes stereocilia degeneration and hair cell apoptosis."
-    ]
-   ],
-   "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 11"
-  },
-  {
-   "topic": "Epistaxis",
+   "topic": "Labyrinthitis",
    "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
-   "slot": "aetiology",
-   "q": "How do the causes of anterior and posterior epistaxis differ?",
+   "slot": "clinical pattern",
+   "q": "Which history most separates labyrinthitis from Meniere disease?",
    "opts": [
     [
-     "Anterior from hypertension and anticoagulation; posterior from digital trauma",
-     "The two aetiologies are swapped. Digital trauma and dry air are anterior causes; hypertension and anticoagulation drive posterior bleeds."
+     "Unilateral rather than bilateral symptoms",
+     "Both are usually unilateral, so this is explicitly not a discriminator."
     ],
     [
-     "Both are caused predominantly by anticoagulation",
-     "Anticoagulation belongs with the posterior group; anterior bleeds are usually local."
+     "The presence of tinnitus",
+     "Both labyrinthitis and Meniere disease produce tinnitus, so its presence tells you nothing about which one you are looking at."
     ],
     [
-     "Anterior from local trauma and dry air; posterior from hypertension and anticoagulation",
-     "Correct. Anterior bleeds are local and mechanical; posterior bleeds reflect a systemic vascular or clotting problem, which is also why they are more profuse and carry airway risk."
+     "A recent upper respiratory infection",
+     "Correct. Labyrinthitis usually follows a viral infection, so a cold last week points hard at it; someone who has not had a cold in years is likelier to have Meniere disease. Both can be unilateral, so laterality does not separate them."
     ],
     [
-     "Anterior from coagulopathy; posterior from low humidity",
-     "Reversed again: coagulopathy belongs with posterior bleeding and low humidity with anterior mucosal drying."
+     "The presence of sensorineural hearing loss",
+     "Both cause it. The duration of vertigo and the preceding infection are what differ."
     ]
    ],
    "c": 2,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 23"
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17"
+  },
+  {
+   "topic": "Auditory transduction",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "Where do the pressure waves that begin hearing actually travel first?",
+   "opts": [
+    [
+     "The scala tympani",
+     "The scala tympani carries the wave later in its course, after it has passed the cochlear duct."
+    ],
+    [
+     "The cochlear duct itself",
+     "The duct holds the endolymph that is displaced, but the wave begins in the scala vestibuli."
+    ],
+    [
+     "The scala vestibuli",
+     "Correct. Stapes movement at the oval window starts them there, and they displace endolymph in the cochlear duct."
+    ],
+    [
+     "The semicircular canals",
+     "The semicircular canals detect rotation and play no part in transmitting sound to the organ of Corti."
+    ]
+   ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 5"
+  },
+  {
+   "topic": "Ear anatomy",
+   "io": "Objective 1 — Review the anatomy of the ear, nose, neck and throat system.",
+   "slot": "mechanism",
+   "q": "What protects the outer third of the ear canal?",
+   "opts": [
+    [
+     "Mucus from goblet cells",
+     "The ear canal is lined by skin, not respiratory mucosa, so it has no goblet cells to produce mucus."
+    ],
+    [
+     "Ciliated epithelium sweeping debris outward",
+     "Ciliated epithelium sweeps the respiratory tract; the ear canal clears itself by cerumen migration instead."
+    ],
+    [
+     "A keratin plug at the isthmus",
+     "There is no keratin plug at the isthmus. What sits in the outer third is cerumen and hair."
+    ],
+    [
+     "Cerumen from ceruminous glands, and hair follicles",
+     "Correct. Both sit in the outer third, which is why impaction and otitis externa are canal diseases."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 4"
+  },
+  {
+   "topic": "Vocal cord lesions",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "How do vocal cord polyps differ from nodules in site and pathogenesis?",
+   "opts": [
+    [
+     "Bilateral fibrous calluses from chronic phonotrauma",
+     "Bilateral fibrous calluses from chronic phonotrauma are NODULES. Polyps differ on every count &mdash; unilateral, soft, and from one event."
+    ],
+    [
+     "Bilateral soft lesions at the anterior commissure from reflux",
+     "Neither matches: polyps are unilateral on the middle third and follow acute strain, not bilateral at the commissure from reflux."
+    ],
+    [
+     "Unilateral, soft and pedunculated on the middle third, after one severe strain",
+     "Correct. One event rather than chronic repetition, and the healing response is inflammatory rather than a callus. Site and laterality both differ from nodules."
+    ],
+    [
+     "Unilateral fibrous calluses from chronic yelling",
+     "This mixes the two lesions. Calluses from chronic trauma are nodules and they are bilateral; polyps are unilateral and follow a single event."
+    ]
+   ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 25"
+  },
+  {
+   "topic": "Allergic rhinitis",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "What kind of immune reaction is allergic rhinitis, and what does it look like?",
+   "opts": [
+    [
+     "IgG-mediated type 2 hypersensitivity with purulent rhinorrhoea",
+     "Purulence points at bacterial infection, and the mechanism named is type 1."
+    ],
+    [
+     "Immune complex deposition, type 3 hypersensitivity",
+     "Immune complex deposition is type 3 hypersensitivity. Allergic rhinitis is type 1, immediate and IgE-mediated on the nasal mucosa."
+    ],
+    [
+     "T cell mediated, type 4 delayed hypersensitivity",
+     "Delayed hypersensitivity does not fit a reaction that starts within minutes of exposure."
+    ],
+    [
+     "IgE-mediated type 1 hypersensitivity, with CLEAR rhinorrhoea",
+     "Correct. Type 1, immediate, IgE-driven. The CLEAR discharge is what separates it at the bedside from bacterial sinusitis, which is purulent. Allergic shiners complete the picture."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 20"
   },
   {
    "topic": "Deviated septum",
    "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
    "slot": "mechanism",
-   "q": "What happens to the wider nasal cavity opposite a septal deviation?",
+   "q": "Which physical law explains why a small septal deviation causes disproportionate obstruction?",
    "opts": [
     [
-     "It atrophies from disuse",
-     "The opposite happens. The wide side carries MORE airflow, so its turbinate enlarges to condition the extra volume rather than wasting away."
+     "Fick's law of diffusion",
+     "That governs diffusion across a membrane, which is a transport problem rather than a flow-resistance one."
     ],
     [
-     "It develops polyps from the increased flow",
-     "Polyps arise from type 2 inflammation, not from airflow volume."
+     "Laplace's law",
+     "That relates wall tension to radius and pressure, used for vessels and alveoli, not nasal airflow resistance."
     ],
     [
-     "Nothing changes; only the narrow side is affected",
-     "The compensatory change on the wide side is specifically described."
+     "Boyle's law",
+     "A pressure-volume relationship for gases, not a resistance law."
     ],
     [
-     "Compensatory inferior turbinate hypertrophy",
-     "Correct. The wide side does more of the work, so its turbinate enlarges to condition the extra airflow &mdash; which can then narrow the only good airway the patient had."
+     "Poiseuille's law",
+     "Correct. Resistance rises with the fourth power of the radius, so a modest narrowing has an outsized effect on airflow. That is why a deviation that looks minor can produce persistent obstruction."
     ]
    ],
    "c": 3,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 22"
+  },
+  {
+   "topic": "Conductive loss mechanisms",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "A temporal bone fracture causes conductive loss by which mechanism?",
+   "opts": [
+    [
+     "Discontinuity of the ossicular chain",
+     "Correct. The chain is physically disrupted so the wave cannot be conducted across it. Ossicular necrosis produces the same end result by erosion rather than trauma."
+    ],
+    [
+     "Stiffness of the ossicular chain",
+     "Stiffness is the opposite problem — the chain is intact but cannot move."
+    ],
+    [
+     "Mass loading of the tympanic membrane",
+     "Mass loading requires added fluid or tissue weight damping the chain. A fracture removes continuity rather than adding weight."
+    ],
+    [
+     "Obstruction of the external canal",
+     "Obstruction blocks the external canal before the drum. A temporal bone fracture acts deeper, on the ossicular chain itself."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 9"
+  },
+  {
+   "topic": "Vertigo vs dizziness",
+   "io": "Objective 4 — Differentiate the pathogenesis of vertigo and dizziness.",
+   "slot": "mechanism",
+   "q": "Which causes are listed as CENTRAL vertigo?",
+   "opts": [
+    [
+     "Benign paroxysmal positional vertigo, Meniere disease and labyrinthitis",
+     "Those are the peripheral causes, along with vestibular neuritis."
+    ],
+    [
+     "Brainstem stroke, multiple sclerosis and cerebellar tumour",
+     "Correct. All involve the brainstem or cerebellum, which is why the nystagmus can be vertical and is not suppressed by fixation, and why other neurological signs appear."
+    ],
+    [
+     "Otosclerosis and cerumen impaction",
+     "Otosclerosis and cerumen impaction are conductive hearing problems. Neither involves the vestibular apparatus, so neither causes vertigo at all."
+    ],
+    [
+     "Presbycusis and noise trauma",
+     "Both are sensorineural hearing loss without a vestibular component."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 15"
+  },
+  {
+   "topic": "Labyrinthitis",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "What is the mechanism of labyrinthitis, and why does it impair hearing AND balance together?",
+   "opts": [
+    [
+     "Defective endolymph resorption ballooning the scala media",
+     "That is the hydrops of Meniere disease, and it does not begin with inflammation."
+    ],
+    [
+     "Dislodged otoconia striking structures in the endolymph",
+     "That is benign paroxysmal positional vertigo, which spares hearing entirely."
+    ],
+    [
+     "Fixation of the stapes footplate",
+     "Otosclerosis, a conductive lesion with no vestibular component."
+    ],
+    [
+     "Inflammation across both the semicircular canals and the cochlea",
+     "Correct. The inflammation does not respect the boundary between the vestibular apparatus and the organ of Corti, so both fail at once. That simultaneous involvement is what names it otitis interna."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17"
+  },
+  {
+   "topic": "Equilibrium",
+   "io": "Objective 4 — Differentiate the pathogenesis of vertigo and dizziness.",
+   "slot": "mechanism",
+   "q": "Why are there three semicircular canals rather than one?",
+   "opts": [
+    [
+     "Each detects a different speed of rotation",
+     "The three canals are distinguished by the plane they occupy, not by the speed of rotation they detect."
+    ],
+    [
+     "Two detect rotation and one detects gravity",
+     "Gravity and linear acceleration are the otolith organs' job."
+    ],
+    [
+     "Redundancy in case one is damaged",
+     "Redundancy is not the explanation. Three canals exist because rotation happens in three planes."
+    ],
+    [
+     "They sit in three planes, so rotation in any direction is detected",
+     "Correct. Sagittal, coronal and transverse between them cover all rotational movement."
+    ]
+   ],
+   "c": 3,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 14"
+  },
+  {
+   "topic": "Cervical lymphadenopathy",
+   "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.",
+   "slot": "mechanism",
+   "q": "What does it mean, structurally, for lymph nodes to be MATTED?",
+   "opts": [
+    [
+     "They have lost their individual capsules and move as one mass",
+     "Correct. Tissue no longer respecting its own boundaries is why matting raises concern."
+    ],
+    [
+     "They are tender and mobile",
+     "Tender and mobile describes a reactive node responding to local infection, which is the reassuring picture."
+    ],
+    [
+     "They are smaller than normal",
+     "Matting is about nodes moving together as one mass, and says nothing about whether they are large or small."
+    ],
+    [
+     "They fluctuate in size with infection",
+     "Nodes that swell and settle with infection are behaving reactively, which is the opposite of the concerning pattern."
+    ]
+   ],
+   "c": 0,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 27"
   },
   {
    "topic": "Otitis media",
@@ -867,12 +1153,12 @@
    "q": "Which organisms most commonly cause bacterial otitis media?",
    "opts": [
     [
-     "Pseudomonas aeruginosa and Staphylococcus aureus",
-     "Those are the otitis EXTERNA organisms, accounting for 80 to 90 per cent of that condition."
-    ],
-    [
      "Streptococcus pneumoniae, Haemophilus influenzae, Moraxella catarrhalis",
      "Correct. The classic middle ear trio. Viral causes are respiratory syncytial virus, rhinovirus, influenza and adenovirus."
+    ],
+    [
+     "Pseudomonas aeruginosa and Staphylococcus aureus",
+     "Those are the otitis EXTERNA organisms, accounting for 80 to 90 per cent of that condition."
     ],
     [
      "Aspergillus niger and Candida albicans",
@@ -883,8 +1169,34 @@
      "That is the usual bacterial cause of tonsillitis, not of otitis media."
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 13"
+  },
+  {
+   "topic": "Turbinate hypertrophy",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "What enlarges the inferior turbinates, and what does rhinitis medicamentosa refer to?",
+   "opts": [
+    [
+     "Cartilage displacement off the midline; a congenital deformity",
+     "That is deviated septum, an anatomical rather than mucosal problem."
+    ],
+    [
+     "Venous engorgement, oedema or bony hypertrophy; decongestant rebound",
+     "Correct. Three possible substrates, and the drug-induced one has its own name. It is the same rebound phenomenon that appears in ocular pharmacology &mdash; overuse of a vasoconstrictor leaving the tissue more congested than before."
+    ],
+    [
+     "Eosinophilic polyp formation; an allergic reaction",
+     "Polyps are a separate entity with their own type 2 mechanism."
+    ],
+    [
+     "Bacterial infection of the turbinate bone; osteomyelitis",
+     "Osteomyelitis of the turbinate bone is not among the triggers. Enlargement comes from venous engorgement, mucosal oedema or bony hypertrophy."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 21"
   },
   {
    "topic": "Otosclerosis",
@@ -919,6 +1231,10 @@
    "q": "What is the sequence by which Eustachian tube dysfunction creates negative middle ear pressure?",
    "opts": [
     [
+     "The tube fails to open, so the mucosa absorbs the gases",
+     "Correct. The middle ear is an air-filled space; if it is not re-ventilated, the mucosa absorbs the gases and the pressure falls. That negative pressure is the start of the otitis media sequence."
+    ],
+    [
      "Mucus production increases faster than the tube can drain it",
      "Fluid accumulates later, but the initiating step described is gas absorption after failure to ventilate."
     ],
@@ -927,15 +1243,11 @@
      "A patulous tube is a different problem; here the failure is that it does not open."
     ],
     [
-     "The tube fails to open, so the mucosa absorbs the gases",
-     "Correct. The middle ear is an air-filled space; if it is not re-ventilated, the mucosa absorbs the gases and the pressure falls. That negative pressure is the start of the otitis media sequence."
-    ],
-    [
      "The tympanic membrane becomes stiff and pulls the ossicles inward",
      "Retraction is a consequence of the negative pressure, not its cause."
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 13"
   },
   {
@@ -971,12 +1283,12 @@
    "q": "Which structures detect linear acceleration and gravitational position?",
    "opts": [
     [
-     "The otolith organs",
-     "Correct. They handle static and linear balance, while the semicircular canals handle rotation. The two systems together give the brain a complete picture of head position and movement."
-    ],
-    [
      "The three semicircular canals",
      "The semicircular canals detect ROTATIONAL acceleration through cupula deflection. Linear and gravitational sensing belongs to the otoliths."
+    ],
+    [
+     "The otolith organs",
+     "Correct. They handle static and linear balance, while the semicircular canals handle rotation. The two systems together give the brain a complete picture of head position and movement."
     ],
     [
      "The cupula and ampulla",
@@ -987,7 +1299,7 @@
      "The organ of Corti transduces sound into neural signals. It is the hearing apparatus and plays no part in equilibrium."
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 14"
   },
   {
@@ -1053,20 +1365,46 @@
      "That is the platinum chemotherapy mechanism — cisplatin and carboplatin."
     ],
     [
+     "Reactive oxygen species destroy outer hair cells from the base, so high pitches go first",
+     "Correct. The base of the cochlea encodes high frequencies, so basal damage shows as high-frequency loss. The mechanism is oxidative injury, not a direct toxic binding."
+    ],
+    [
      "They alter the stria vascularis potential reversibly",
      "That is the loop diuretic effect, and reversibility is what separates it from the aminoglycosides."
     ],
     [
      "They inhibit the prestin motor protein in outer hair cells",
      "Inhibiting prestin in outer hair cells is the salicylate mechanism, and its hallmark is tinnitus rather than permanent threshold loss."
+    ]
+   ],
+   "c": 1,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 11"
+  },
+  {
+   "topic": "Vocal cord lesions",
+   "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.",
+   "slot": "mechanism",
+   "q": "What are vocal cord nodules, and what causes them?",
+   "opts": [
+    [
+     "Unilateral pedunculated fluid-filled growths on the middle third, from a single severe strain",
+     "That describes vocal cord POLYPS, and the unilateral-versus-bilateral split is the main distinction."
     ],
     [
-     "Reactive oxygen species destroy outer hair cells from the base, so high pitches go first",
-     "Correct. The base of the cochlea encodes high frequencies, so basal damage shows as high-frequency loss. The mechanism is oxidative injury, not a direct toxic binding."
+     "Bilateral wart-like exophytic lesions from viral infection",
+     "Wart-like exophytic lesions from viral infection describe papillomatosis, which is a separate entity from the benign phonotrauma lesions."
+    ],
+    [
+     "Unilateral firm masses with cord fixation, from malignancy",
+     "Fixation and a firm mass suggest carcinoma, not a benign lesion."
+    ],
+    [
+     "Bilateral symmetrical calluses at the anterior third junction, from chronic phonotrauma",
+     "Correct. Repeated slamming of the cords causes basement membrane hyalinisation &mdash; literally a callus. Bilateral and symmetrical, because both cords take the same repeated impact at the same point."
     ]
    ],
    "c": 3,
-   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 11"
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 25"
   },
   {
    "topic": "Conductive loss mechanisms",
@@ -1074,6 +1412,10 @@
    "slot": "mechanism",
    "q": "Cerumen impaction, foreign bodies and canal exostoses all cause conductive loss by which of the four core mechanisms?",
    "opts": [
+    [
+     "Obstruction",
+     "Correct. A physical blockage stops sound penetrating down the canal. It is the first of four mechanisms, and the only one that acts before the sound reaches the drum."
+    ],
     [
      "Mass loading",
      "That is fluid or tissue weight damping movement of the drum or ossicles — middle ear effusion, cholesteatoma."
@@ -1085,13 +1427,9 @@
     [
      "Discontinuity",
      "That is physical disruption of the ossicular chain, from temporal bone fracture or ossicular necrosis."
-    ],
-    [
-     "Obstruction",
-     "Correct. A physical blockage stops sound penetrating down the canal. It is the first of four mechanisms, and the only one that acts before the sound reaches the drum."
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 9"
   },
   {
@@ -1101,6 +1439,10 @@
    "q": "Is the vertigo of labyrinthitis episodic or continuous, and how long does it run?",
    "opts": [
     [
+     "Continuous, over days, improving across weeks",
+     "Correct. Someone comes in saying the room has been spinning for three days, not that it comes and goes. Continuous vertigo that slowly settles over weeks is the labyrinthitis pattern, because the body is resolving an inflammatory process."
+    ],
+    [
      "Episodic, with attacks lasting several hours",
      "That is Meniere disease. The hours-long discrete attack is its signature, and mixing the two up is the error this question exists to catch."
     ],
@@ -1109,15 +1451,11 @@
      "That is benign paroxysmal positional vertigo, provoked by head position."
     ],
     [
-     "Continuous, over days, improving across weeks",
-     "Correct. Someone comes in saying the room has been spinning for three days, not that it comes and goes. Continuous vertigo that slowly settles over weeks is the labyrinthitis pattern, because the body is resolving an inflammatory process."
-    ],
-    [
      "Continuous, permanent and non-improving",
      "It does improve, because the body resolves the inflammation; recovery just takes weeks."
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 17 (slide says episodic; corrected in lecture)"
   },
   {
@@ -1153,10 +1491,6 @@
    "q": "Which features mark vertigo as PERIPHERAL rather than central?",
    "opts": [
     [
-     "Sudden onset, horizontal or rotational nystagmus, fatigable, suppressed by visual fixation",
-     "Correct. All four point at the inner ear or cranial nerve VIII. Suppression by visual fixation is the one most easily tested at the bedside."
-    ],
-    [
      "Gradual onset, vertical nystagmus, non-suppressible, with neurological deficits",
      "Gradual onset, vertical non-suppressible nystagmus and neurological deficits describe CENTRAL vertigo from the brainstem or cerebellum."
     ],
@@ -1165,11 +1499,15 @@
      "Hearing loss can accompany peripheral causes, but gradual onset and the other features listed describe central disease."
     ],
     [
+     "Sudden onset, horizontal or rotational nystagmus, fatigable, suppressed by visual fixation",
+     "Correct. All four point at the inner ear or cranial nerve VIII. Suppression by visual fixation is the one most easily tested at the bedside."
+    ],
+    [
      "Absence of nystagmus entirely",
      "Vertigo frequently presents WITH nystagmus and ataxia; its absence does not localise."
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 15"
   },
   {
@@ -1183,20 +1521,46 @@
      "Neither is a described mechanism; the problem is airflow, not compression."
     ],
     [
+     "Turbulent airflow dries the mucosa; air misses the cribriform plate",
+     "Correct. Two separate consequences of the same disturbed airflow: local drying with fragile vessel breakdown on one hand, and failure to deliver odorant to the superior nasal vault on the other."
+    ],
+    [
      "Chronic infection eroding the septal vessels and olfactory epithelium",
      "Secondary bacterial rhinosinusitis can follow ostial blockage, but the epistaxis and anosmia are explained by airflow."
     ],
     [
      "Autoimmune destruction of the septal cartilage",
      "Autoimmune destruction of septal cartilage is a different disease process; the consequences here all follow from disturbed airflow."
-    ],
-    [
-     "Turbulent airflow dries the mucosa; air misses the cribriform plate",
-     "Correct. Two separate consequences of the same disturbed airflow: local drying with fragile vessel breakdown on one hand, and failure to deliver odorant to the superior nasal vault on the other."
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 22"
+  },
+  {
+   "topic": "Hearing loss patterns",
+   "io": "Objective 5 — Compare and contrast the pathophysiological processes of hearing deficits.",
+   "slot": "mechanism",
+   "q": "Why does a lesion of cranial nerve VIII produce the same audiometric pattern as cochlear damage?",
+   "opts": [
+    [
+     "Both stiffen the ossicles",
+     "Neither the cochlea nor the nerve has any mechanical connection to the ossicles, so neither stiffens them."
+    ],
+    [
+     "Both obstruct the canal",
+     "Obstruction blocks the external canal, which is a conductive mechanism rather than a sensorineural one."
+    ],
+    [
+     "Both sit beyond the conducting chain, so both give sensorineural loss",
+     "Correct. The category is defined by where the defect sits, not by which of the two structures failed."
+    ],
+    [
+     "Both add mass to the tympanic membrane",
+     "Mass loading damps the middle ear structures, which produces conductive rather than sensorineural loss."
+    ]
+   ],
+   "c": 2,
+   "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 7"
   }
  ]
 }

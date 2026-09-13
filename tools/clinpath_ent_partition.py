@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Split and guard the Clinical Pathophysiology ENT pool into 2 x 23.
+"""Split and guard the Clinical Pathophysiology ENT pool into 2 x 30.
+
+Was 2 x 23 until 13 September 2026. That made ENT the only under-sized topic in
+the course -- the spec calls for 2 x 30 -- and it also left the cumulative
+master exams 14 questions short of 5 x 60, which is how it was noticed.
 
 Guards, in order of how easily this content could have failed them:
 
