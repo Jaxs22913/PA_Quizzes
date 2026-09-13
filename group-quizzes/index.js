@@ -262,6 +262,8 @@ window.GROUP_INDEX = {
 "microbiology-exam-1-antibiotics-resistance-quiz-version-2":{"title":"Antibiotics and Resistance — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-general-microbiology-quiz":{"title":"Review of General Microbiology — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-general-microbiology-quiz-version-2":{"title":"Review of General Microbiology — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
+"microbiology-exam-1-host-defenses-nonspecific-quiz":{"title":"Host Defenses: Nonspecific Mechanisms — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
+"microbiology-exam-1-host-defenses-nonspecific-quiz-version-2":{"title":"Host Defenses: Nonspecific Mechanisms — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-microbe-human-interactions-quiz":{"title":"Microbe-Human Interactions — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-microbe-human-interactions-quiz-version-2":{"title":"Microbe-Human Interactions — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-transmission-of-microorganisms-quiz":{"title":"Transmission of Microorganisms — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
