@@ -77,12 +77,37 @@
   .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
   .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
   .qbody{padding:24px 26px}
   .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
   .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
   .tag-topic{background:var(--navy);color:#fff}
   .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
   .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
   .opts{display:flex;flex-direction:column;gap:11px}
   .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
     border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
@@ -100,6 +125,16 @@
   .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
   .opt.dim{opacity:.72}
   .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
   .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
   .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
     justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
@@ -280,6 +315,7 @@
         <span class="tag tag-topic" id="qtopic"></span>
         <span class="tag tag-io" id="qio"></span>
       </div>
+      <figure class="qfig" id="qfig" hidden></figure>
       <div class="qtext" id="qtext"></div>
       <div class="opts" id="opts"></div>
       <div class="expl" id="expl">
@@ -303,793 +339,25 @@
 </div>
 
 <script>
-const QUESTIONS = [
-  {
-    "topic": "Zygomatic fracture",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "etiology",
-    "q": "Why may a zygomatic fracture cause pain on opening the mouth?",
-    "opts": [
-      [
-        "The temporomandibular joint is always involved",
-        "The temporomandibular joint is not always involved."
-      ],
-      [
-        "The temporalis muscle passes medial to the arch and inserts on the mandible",
-        "Correct — the anatomical explanation Beck gave alongside the finding."
-      ],
-      [
-        "The masseter originates on the mandible and inserts on the zygoma",
-        "That is not the muscle relationship at work."
-      ],
-      [
-        "The infraorbital nerve is compressed during jaw movement",
-        "Nerve damage causes hypoaesthesia rather than pain on opening."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 116"
-  },
-  {
-    "topic": "Injection pattern",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "Injection localised JUST AROUND THE CORNEA suggests which three conditions?",
-    "opts": [
-      [
-        "Subconjunctival haemorrhage, pinguecula, or pterygium",
-        "Those are localised surface lesions."
-      ],
-      [
-        "Episcleritis, chalazion, or hordeolum",
-        "Those do not produce a circumcorneal ring."
-      ],
-      [
-        "Keratitis, iritis, or acute glaucoma",
-        "Correct — these three, and this is the pattern that must not be dismissed as conjunctivitis."
-      ],
-      [
-        "Conjunctivitis, blepharitis, or dry eye",
-        "Those give diffuse or lid-margin redness."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 46"
-  },
-  {
-    "topic": "Horner syndrome",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "etiology",
-    "q": "What is interrupted in Horner syndrome?",
-    "opts": [
-      [
-        "The sympathetic innervation of the pupil and the levator palpebrae superioris",
-        "Correct — which explains both the small pupil and the ptosis."
-      ],
-      [
-        "The parasympathetic supply travelling through the ciliary ganglion",
-        "That is Adie's tonic pupil."
-      ],
-      [
-        "The oculomotor nerve",
-        "That gives a dilated fixed pupil with lateral deviation."
-      ],
-      [
-        "The optic nerve",
-        "That gives an afferent defect."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 88"
-  },
-  {
-    "topic": "Argyll Robertson pupil",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "What is the defining behaviour of the Argyll Robertson pupil?",
-    "opts": [
-      [
-        "It reacts to both, but slowly",
-        "That is closer to Adie's tonic pupil."
-      ],
-      [
-        "It accommodates but does not react to light",
-        "Correct — it accommodates but does not react to light."
-      ],
-      [
-        "It reacts to light but does not accommodate",
-        "This reverses the finding."
-      ],
-      [
-        "It reacts to neither light nor accommodation",
-        "That is a fixed pupil."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 84"
-  },
-  {
-    "topic": "Eye pain qualifiers",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "Eye pain with PHOTOPHOBIA suggests what?",
-    "opts": [
-      [
-        "Inflammation of the iris",
-        "Correct — photophobia points to iris inflammation."
-      ],
-      [
-        "Corneal abrasion",
-        "That is signalled by pain with blinking."
-      ],
-      [
-        "Temporal arteritis",
-        "That gives temporal pain."
-      ],
-      [
-        "Conjunctivitis",
-        "That gives a gritty feeling."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"
-  },
-  {
-    "topic": "Near reaction",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "etiology",
-    "q": "Which nerve mediates the pupillary constriction of the near reaction, and which two things accompany it?",
-    "opts": [
-      [
-        "The abducens nerve; accompanied by abduction",
-        "That nerve moves the lateral rectus."
-      ],
-      [
-        "The oculomotor nerve; accompanied by convergence and accommodation",
-        "Correct — convergence and accommodation are coincident with the constriction but not part of it."
-      ],
-      [
-        "The optic nerve; accompanied by convergence and dilation",
-        "The optic nerve is the afferent limb, and dilation is not part of it."
-      ],
-      [
-        "The trochlear nerve; accompanied by depression and intorsion",
-        "That nerve moves the superior oblique."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 80"
-  },
-  {
-    "topic": "Symptom patterns",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "Acute, unilateral and PAINLESS visual loss suggests which group of causes?",
-    "opts": [
-      [
-        "Simple glaucoma or cataract",
-        "That is the gradual painless group."
-      ],
-      [
-        "Retinal vascular occlusion, retinal detachment, vitreous haemorrhage, macular degeneration",
-        "Correct — these are the painless causes."
-      ],
-      [
-        "Corneal abrasion or ulcer, uveitis, traumatic hyphaema, acute narrow angle glaucoma",
-        "Those make up the acute unilateral PAINFUL group."
-      ],
-      [
-        "Thermal, radiation or chemical exposure",
-        "That is the acute BILATERAL painful group."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 16"
-  },
-  {
-    "topic": "Diplopia",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "Which compensatory finding accompanies diplopia?",
-    "opts": [
-      [
-        "A compensatory head posture",
-        "Correct — patients tilt or turn to fuse the images."
-      ],
-      [
-        "A compensatory squint of one eye only",
-        "A unilateral squint is not the compensation seen."
-      ],
-      [
-        "Compensatory pupil dilation",
-        "Not a compensation for diplopia."
-      ],
-      [
-        "Compensatory tearing",
-        "Tearing is not a compensation for diplopia."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 18"
-  },
-  {
-    "topic": "Extraocular movement",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "What is nystagmus, and when is a few beats normal?",
-    "opts": [
-      [
-        "Misalignment of the visual axes — a few degrees of deviation is normal",
-        "That is strabismus."
-      ],
-      [
-        "Drooping of the upper lid — a few millimetres is normal",
-        "That is ptosis."
-      ],
-      [
-        "Unequal pupil size — a few millimetres is normal",
-        "That is anisocoria."
-      ],
-      [
-        "Fine rhythmic oscillation of the eyes — a few beats on LATERAL gaze is normal",
-        "Correct — that is the definition, and the normal exception."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 63"
-  },
-  {
-    "topic": "Red eye chart",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "chart": true,
-    "q": "On the red-eye chart, what is the CORNEA like in glaucoma?",
-    "opts": [
-      [
-        "Clear",
-        "That is conjunctivitis and subconjunctival haemorrhage."
-      ],
-      [
-        "Clear or slightly clouded",
-        "That is acute iritis."
-      ],
-      [
-        "Changes depending on the cause",
-        "That is corneal injury or infection."
-      ],
-      [
-        "Steamy and cloudy",
-        "Correct — the chart's glaucoma column."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"
-  },
-  {
-    "topic": "Horner syndrome",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "What additional finding appears in CONGENITAL Horner syndrome?",
-    "opts": [
-      [
-        "Proptosis of the affected eye",
-        "Not a Horner feature."
-      ],
-      [
-        "The involved iris is lighter in colour — heterochromia",
-        "Correct — heterochromia appears in the congenital form."
-      ],
-      [
-        "The involved iris is darker in colour than its fellow",
-        "The involved iris is lighter, not darker."
-      ],
-      [
-        "Bilateral ptosis",
-        "Horner syndrome is unilateral."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 87"
-  },
-  {
-    "topic": "Referral",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "referral",
-    "q": "Which complaints belong in the EMERGENT group, referred to ophthalmology immediately?",
-    "opts": [
-      [
-        "Blepharitis, chalazion and dry eye",
-        "Those are routine."
-      ],
-      [
-        "Conjunctivitis and subconjunctival haemorrhage",
-        "Those are routine."
-      ],
-      [
-        "Sudden vision loss, retinal artery occlusion, chemical burns, rupture, acute angle-closure glaucoma, and vitreous haemorrhage",
-        "Correct — these make up the emergent list."
-      ],
-      [
-        "Acute glaucoma, orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular oedema, and hyphaema",
-        "That is the URGENT group, seen within a day or less."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 124"
-  },
-  {
-    "topic": "Eyebrows",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "Lateral sparseness of the eyebrows suggests what?",
-    "opts": [
-      [
-        "Hypothyroidism",
-        "Correct — lateral eyebrow loss points to hypothyroidism."
-      ],
-      [
-        "Hyperthyroidism",
-        "Lid lag goes with hyperthyroidism; eyebrow loss does not."
-      ],
-      [
-        "Seborrhoeic dermatitis",
-        "That causes scaliness of the eyebrows."
-      ],
-      [
-        "Iron deficiency",
-        "Iron deficiency does not thin the lateral eyebrow."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 27"
-  },
-  {
-    "topic": "Argyll Robertson pupil",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "What happens when a mydriatic is instilled in an Argyll Robertson pupil?",
-    "opts": [
-      [
-        "Incomplete dilation",
-        "Correct — mydriatics dilate it only incompletely."
-      ],
-      [
-        "Full and rapid dilation",
-        "The response is incomplete, not full."
-      ],
-      [
-        "No change at all",
-        "Dilation is incomplete rather than absent."
-      ],
-      [
-        "Paradoxical constriction",
-        "It does not constrict paradoxically."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 84"
-  },
-  {
-    "topic": "Upper lid eversion",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "avoid",
-    "q": "When must the lid never be everted?",
-    "opts": [
-      [
-        "If rupture of the globe is suspected",
-        "Correct — this is absolute."
-      ],
-      [
-        "If the patient has conjunctivitis",
-        "Not a contraindication."
-      ],
-      [
-        "If the patient wears contact lenses",
-        "Not a contraindication."
-      ],
-      [
-        "If a foreign body has already been seen",
-        "That is a reason TO evert, not to avoid it."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 42"
-  },
-  {
-    "topic": "Red eye chart",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "chart": true,
-    "q": "On the red-eye chart, what is the PUPIL like in glaucoma?",
-    "opts": [
-      [
-        "Dilated and fixed",
-        "Correct — the chart's glaucoma column, and a cardinal danger sign."
-      ],
-      [
-        "Not affected",
-        "That is conjunctivitis and subconjunctival haemorrhage."
-      ],
-      [
-        "May be small and, with time, irregular",
-        "That is acute iritis."
-      ],
-      [
-        "Not affected unless iritis develops",
-        "That is corneal injury or infection."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"
-  },
-  {
-    "topic": "Corneal ulcer",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "test finding",
-    "q": "Which corneal ulcer is NOT very painful?",
-    "opts": [
-      [
-        "Bacterial corneal ulcers",
-        "Those are painful."
-      ],
-      [
-        "Fungal corneal ulcers",
-        "Fungal ulcers are painful."
-      ],
-      [
-        "Amoebic corneal ulcers",
-        "Amoebic ulcers are painful, often severely so."
-      ],
-      [
-        "Herpes simplex corneal ulcers",
-        "Correct — herpes simplex is the exception."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 122"
-  },
-  {
-    "topic": "Discharge",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "Watery or mucoid discharge suggests which conditions?",
-    "opts": [
-      [
-        "Traumatic",
-        "Trauma is not sorted by discharge type."
-      ],
-      [
-        "Allergic or viral",
-        "Correct — watery and mucoid discharge points to allergic or viral causes."
-      ],
-      [
-        "Bacterial infection",
-        "That produces purulent discharge."
-      ],
-      [
-        "Fungal infection",
-        "Fungal infection is not sorted by discharge type."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 19"
-  },
-  {
-    "topic": "Order of examination",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "initial test",
-    "q": "When must pupillary reactions be checked, relative to dilation?",
-    "opts": [
-      [
-        "After dilating",
-        "Dilation abolishes the reaction being tested."
-      ],
-      [
-        "It makes no difference",
-        "It makes all the difference."
-      ],
-      [
-        "Only after the fundoscopic examination",
-        "Fundoscopy usually follows dilation."
-      ],
-      [
-        "Before dilating",
-        "Correct — pupillary reactions must be checked before dilating."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"
-  },
-  {
-    "topic": "Fundoscopy",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "education",
-    "q": "What must be documented when the pupils are dilated?",
-    "opts": [
-      [
-        "The patient's consent form number",
-        "A consent form number is not what is recorded."
-      ],
-      [
-        "Nothing specific",
-        "Documentation is required."
-      ],
-      [
-        "The time of dilation and the agents used",
-        "Correct — both the time and the agents are recorded."
-      ],
-      [
-        "The visual acuity before dilation only",
-        "Acuity matters, but it is not what dilation requires recording."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 99"
-  },
-  {
-    "topic": "Eye pain qualifiers",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "Eye pain with a GRITTY feeling suggests what?",
-    "opts": [
-      [
-        "Acute narrow angle glaucoma",
-        "That comes with headache."
-      ],
-      [
-        "Optic neuritis",
-        "That comes with pain on eye movement."
-      ],
-      [
-        "Conjunctivitis",
-        "Correct — grittiness goes with conjunctivitis."
-      ],
-      [
-        "Inflammation of the iris",
-        "That is signalled by photophobia."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"
-  },
-  {
-    "topic": "History",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "Bilateral visual loss usually implies which kind of problem?",
-    "opts": [
-      [
-        "A primary neurologic cause rather than a primary ophthalmologic one",
-        "Correct — bilateral loss points neurologic rather than ophthalmologic."
-      ],
-      [
-        "A primary ophthalmologic cause rather than a neurologic one",
-        "That is the wrong way round."
-      ],
-      [
-        "An infective cause",
-        "Infection rarely takes both eyes at once."
-      ],
-      [
-        "A traumatic cause",
-        "Trauma rarely takes both eyes at once."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 10 (speaker notes)"
-  },
-  {
-    "topic": "Lid position",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "differential",
-    "q": "What is trichiasis?",
-    "opts": [
-      [
-        "Outward turning of the lower lid margin",
-        "That is ectropion."
-      ],
-      [
-        "Drooping of the upper lid",
-        "That is ptosis."
-      ],
-      [
-        "Posteriorly misdirected eyelashes",
-        "Correct — posteriorly misdirected lashes, alongside entropion and ectropion."
-      ],
-      [
-        "Inward turning of the lower lid margin",
-        "That is entropion."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 35"
-  },
-  {
-    "topic": "Nasolacrimal duct",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "avoid",
-    "q": "When should the lacrimal sac compression test be avoided?",
-    "opts": [
-      [
-        "If the patient has previously had cataract surgery on that eye",
-        "Prior cataract surgery is not a contraindication."
-      ],
-      [
-        "If the patient is over sixty-five",
-        "Age is not a contraindication."
-      ],
-      [
-        "If the area is significantly inflamed or tender",
-        "Correct — avoid it when the area is significantly inflamed or tender."
-      ],
-      [
-        "If the patient wears contact lenses",
-        "Contact lens wear is not a contraindication."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 38"
-  },
-  {
-    "topic": "Red eye chart",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "prognosis",
-    "chart": true,
-    "q": "On the red-eye chart, what does it give as the significance of the glaucoma column?",
-    "opts": [
-      [
-        "Bacterial, viral and other infections, or allergy and irritation",
-        "That is the conjunctivitis column."
-      ],
-      [
-        "Abrasions and other injuries; viral and bacterial infections",
-        "That is the corneal injury column."
-      ],
-      [
-        "Often none; may result from trauma, bleeding disorders, or a sudden increase in venous pressure",
-        "That is subconjunctival haemorrhage."
-      ],
-      [
-        "An acute increase in intraocular pressure — an emergency",
-        "Correct — the chart labels it an emergency outright."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"
-  },
-  {
-    "topic": "Subconjunctival haemorrhage",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "escalation",
-    "q": "When is globe rupture more likely in a patient with a subconjunctival haemorrhage?",
-    "opts": [
-      [
-        "When both eyes are affected",
-        "Bilaterality is not the warning sign."
-      ],
-      [
-        "In trauma, and when the haemorrhage encircles the entire cornea",
-        "Correct — trauma plus a 360-degree haemorrhage."
-      ],
-      [
-        "When the haemorrhage is small, flat and confined to one sector",
-        "That is the ordinary benign pattern."
-      ],
-      [
-        "When the patient is anticoagulated",
-        "That explains the bleed but does not indicate rupture."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 44"
-  },
-  {
-    "topic": "Order of examination",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "avoid",
-    "q": "In a trauma patient, what must NOT be done?",
-    "opts": [
-      [
-        "Do not take a history",
-        "The history is still required."
-      ],
-      [
-        "Do not palpate the globe",
-        "Correct — palpating the globe is the critical thing to avoid in trauma."
-      ],
-      [
-        "Do not measure visual acuity",
-        "Acuity is still required."
-      ],
-      [
-        "Do not inspect the lids",
-        "Inspection is still required."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 24"
-  },
-  {
-    "topic": "Blepharitis",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "etiology",
-    "q": "Which two conditions are associated with blepharitis?",
-    "opts": [
-      [
-        "Hypothyroidism and iron deficiency",
-        "Neither is given for blepharitis."
-      ],
-      [
-        "Graves disease and myasthenia gravis",
-        "Those relate to lid lag and ptosis."
-      ],
-      [
-        "Rheumatoid arthritis and lupus",
-        "Those are given for nodular episcleritis."
-      ],
-      [
-        "Bacterial infection and atopic dermatitis",
-        "Correct — bacterial infection and atopic dermatitis."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 31"
-  },
-  {
-    "topic": "History",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "initial test",
-    "q": "After a chemical or fluid splash to the eye, what must be established?",
-    "opts": [
-      [
-        "The volume of fluid involved",
-        "Volume matters less than what the fluid was."
-      ],
-      [
-        "Whether the patient was wearing contact lenses",
-        "Relevant generally, but not the essential question here."
-      ],
-      [
-        "The manufacturer of the product",
-        "The manufacturer is not what determines management."
-      ],
-      [
-        "The acidity or alkalinity of the fluid",
-        "Correct — knowing whether it was acid or alkali is essential."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 15"
-  },
-  {
-    "topic": "Referral",
-    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
-    "slot": "education",
-    "q": "Which presentation belongs in the EMERGENT referral group rather than the urgent one?",
-    "opts": [
-      [
-        "A chalazion that has persisted for two months",
-        "A chalazion is routine, not emergent."
-      ],
-      [
-        "Gradual painless vision loss over a year",
-        "Gradual painless loss is worked up urgently, not emergently."
-      ],
-      [
-        "Sudden vision loss after a chemical splash",
-        "Correct — a chemical splash with vision loss goes to ophthalmology immediately."
-      ],
-      [
-        "Itchy, watery red eyes every spring",
-        "Seasonal allergic conjunctivitis is routine."
-      ]
-    ],
-    "c": 2,
-    "cite": "Lecture recording, 26 August 2026"
-  }
-];
-const LTR = ["A","B","C","D"];
+const QUESTIONS = [{"topic": "Eye pain qualifiers", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Eye pain WITH HEADACHE suggests what?", "opts": [["Conjunctivitis", "That is paired with grittiness."], ["Acute narrow angle glaucoma", "Correct — the pairing for headache plus eye pain."], ["Temporal arteritis with jaw claudication", "That is paired with temporal pain specifically."], ["Optic neuritis", "That is paired with pain on eye motion."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "chart": true, "q": "On the red-eye chart, how is the PAIN of acute iritis described?", "opts": [["Severe, aching, deep", "That is glaucoma."], ["Absent", "That is subconjunctival haemorrhage."], ["Moderate, aching, deep", "Correct — the chart's iritis column."], ["Mild discomfort rather than pain", "That is conjunctivitis."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Near reaction", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "etiology", "q": "Which nerve mediates the pupillary constriction of the near reaction, and which two things accompany it?", "opts": [["The oculomotor nerve; accompanied by convergence and accommodation", "Correct — the material notes convergence and accommodation are coincident but not part of the constriction."], ["The optic nerve; accompanied by convergence and dilation", "The optic nerve is the afferent limb, and dilation is not part of it."], ["The trochlear nerve; accompanied by depression and intorsion", "That nerve moves the superior oblique."], ["The abducens nerve; accompanied by abduction", "That nerve moves the lateral rectus."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 80"}, {"topic": "Referral", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "referral", "q": "Which complaints fall in the URGENT group, seen by ophthalmology within a day or less?", "opts": [["Pinguecula and pterygium", "Those are routine."], ["Acute glaucoma", "Correct — the urgent list. Orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular oedema or haemorrhage, and hyphaema."], ["Sudden vision loss, chemical burns and suspected globe rupture", "Those are emergent, referred immediately."], ["Dry eye and blepharitis", "Those are routine."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 124"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "chart": true, "q": "The chart warns that the eye in a ciliary-injection condition may be diffusely red instead. Which other clues does it give to catch those conditions?", "opts": [["Pain, decreased vision, unequal pupils", "Correct — the chart's four backup clues when the injection pattern is unhelpful. A less than perfectly clear cornea."], ["Itch, watery discharge and lid crusting", "Those point toward benign conjunctivitis."], ["Bilateral involvement together with a tender preauricular node", "Those point toward viral conjunctivitis."], ["Fever and periorbital swelling", "Those suggest cellulitis, which is not on this chart."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Visual fields", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "How is the static finger wiggle test performed?", "opts": [["Covering and uncovering each eye in turn", "That is the cover-uncover test."], ["At arm's length", "Correct — the technique in full. Hands held two feet apart lateral to the ears, wiggling the fingers and bringing them slowly into the centre of view until seen, testing each quadrant or each hour of the clock."], ["Moving a red-topped pin inward from beyond the boundary of each quadrant", "That is the kinetic red target test."], ["Shining a light alternately into each eye", "That is the swinging light test."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 53"}, {"topic": "Chalazion", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "Where does a chalazion usually point?", "opts": [["At the lateral canthus", "Not where the material places it."], ["Inside the lid rather than on the lid margin", "Correct — the material notes this as a distinguishing feature."], ["On the lid margin, right at the base of the lashes", "That is the external hordeolum."], ["At the medial canthus", "That location suggests lacrimal sac disease."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 33"}, {"topic": "Corneal ulcer", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "At what setting can an ophthalmoscope be used to look for a corneal ulcer, and what is more sensitive?", "opts": [["Set at +40 dioptres, giving roughly a ten times magnifier", "Correct — it is both the setting and the better test. But staining with fluorescein is more sensitive for early ulcers."], ["Set at zero dioptres — and this is more sensitive than fluorescein", "Neither the setting nor the comparison matches."], ["Set at minus 20 dioptres — with fluorescein being less sensitive", "It is fluorescein is MORE sensitive."], ["No ophthalmoscope setting is useful here", "It is a specific one."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 123"}, {"topic": "Eye pain qualifiers", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Eye pain WITH BLINKING suggests what?", "opts": [["Acute narrow angle glaucoma", "That gives headache with eye pain."], ["Optic neuritis", "That gives pain on eye MOTION, not on blinking."], ["Temporal arteritis", "That gives temporal pain."], ["Corneal abrasion or a foreign body", "Correct — the lid moving over the defect is what hurts."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 17"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "prognosis", "chart": true, "q": "On the red-eye chart, what does it give as the significance of the glaucoma column?", "opts": [["Bacterial, viral and other infections, or allergy and irritation", "That is the conjunctivitis column."], ["Abrasions and other injuries; viral and bacterial infections", "That is the corneal injury column."], ["Often none; may result from trauma, bleeding disorders, or a sudden increase in venous pressure", "That is subconjunctival haemorrhage."], ["An acute increase in intraocular pressure — an emergency", "Correct — the chart labels it an emergency outright."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Symptom patterns", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Acute, unilateral and PAINLESS visual loss suggests which group of causes?", "opts": [["Simple glaucoma or cataract", "That is the gradual painless group."], ["Retinal vascular occlusion, retinal detachment, vitreous haemorrhage, macular degeneration", "Correct — the painless group."], ["Corneal abrasion or ulcer, uveitis, traumatic hyphaema, acute narrow angle glaucoma", "Those make up the acute unilateral PAINFUL group."], ["Thermal, radiation or chemical exposure", "That is the acute BILATERAL painful group."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 16"}, {"topic": "Nodular episcleritis", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "etiology", "q": "Nodular episcleritis is associated with which two systemic diseases?", "opts": [["Graves disease, myasthenia gravis and thyroid orbitopathy", "Those relate to lid signs."], ["Sjögren syndrome and sarcoidosis", "Sjögren appears under dry eye, not here."], ["Rheumatoid arthritis and lupus erythematosus", "Correct — the two associations."], ["Diabetes and hypertension", "Those drive retinopathy rather than this finding."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 47"}, {"topic": "Red eye chart", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "chart": true, "q": "On the red-eye chart, which column has NO ocular discharge AND an unaffected pupil AND a clear cornea AND absent pain?", "opts": [["Subconjunctival haemorrhage", "Correct — every column reads negative, which is what makes it benign."], ["Uncomplicated bacterial conjunctivitis", "That has watery, mucoid or mucopurulent discharge and mild discomfort."], ["Acute iritis", "That has aching pain and a small or irregular pupil."], ["Glaucoma", "That has severe pain, a cloudy cornea and a fixed pupil."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 48 (image only)"}, {"topic": "Fundoscopy", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "education", "q": "What must be documented when the pupils are dilated?", "opts": [["The time of dilation and the agents used", "Correct — it is both."], ["The visual acuity before dilation only", "Acuity matters but is not what it is here."], ["The patient's consent form number", "Not what it is."], ["Nothing specific", "The material requires documentation."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 99"}, {"topic": "Referral", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "referral", "q": "Which complaints fall in the EMERGENT group, referred to ophthalmology immediately?", "opts": [["Sudden vision loss, retinal artery occlusion, chemical burns, rupture, acute angle-closure glaucoma, and vitreous haemorrhage", "Correct — the emergent list, which Beck asked the class to know."], ["Acute glaucoma, orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular oedema, and hyphaema", "That is the URGENT group, seen within a day or less."], ["Blepharitis, chalazion and dry eye", "Those are routine."], ["Conjunctivitis and subconjunctival haemorrhage", "Those are routine."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 124"}, {"topic": "History", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Bilateral visual loss usually implies which kind of problem?", "opts": [["A primary neurologic cause rather than a primary ophthalmologic one", "Correct, and this point is stated explicitly."], ["A primary ophthalmologic cause rather than a neurologic one", "The stated relationship runs the opposite way."], ["An infective cause", "Not the inference to draw from it."], ["A traumatic cause", "Not the inference to draw from it."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 10 (speaker notes)"}, {"topic": "Order of examination", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "When must pupillary reactions be checked, relative to dilation?", "opts": [["After dilating", "Dilation abolishes the reaction being tested."], ["It makes no difference", "It makes all the difference."], ["Only after the fundoscopic examination", "Fundoscopy usually follows dilation."], ["Before dilating", "Correct — the material notes this explicitly in the suggested order."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"}, {"topic": "Dilated pupil", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Once local eye disease is excluded, which three causes of a dilated pupil remain?", "opts": [["Optic neuritis, papilloedema and optic atrophy", "Those affect the afferent limb rather than pupil size at rest."], ["Compression or other lesion of the third cranial nerve", "Correct — the three, and Beck called them important to know. Parasympathetic denervation from a ciliary ganglion lesion producing an Adie's pupil; and pharmacologic block of the pupillary sphincter."], ["Glaucoma, cataract and macular degeneration", "None of these dilates the pupil."], ["Horner syndrome, myasthenia gravis and Graves disease", "Horner produces a SMALL pupil."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 86"}, {"topic": "Common mistakes", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "avoid", "q": "Which two structures are commonly left unexamined?", "opts": [["The eyelids and eyebrows", "Not among the named omissions."], ["The lacrimal sac and puncta", "Not among the named omissions."], ["The extraocular muscles", "Movement testing is listed separately."], ["The cornea and the lens", "Correct — 'failure to examine the cornea and lens' is on the list."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 20"}, {"topic": "Trauma", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "etiology", "q": "How does the SIZE of the striking object change the injury?", "opts": [["Object size makes no difference", "Beck said explicitly that size is important."], ["Only velocity matters, not size", "It is both."], ["Larger objects transfer most of the energy to the orbital rim", "Correct — the mechanical distinction. Smaller objects may strike the globe directly."], ["Larger objects strike the globe directly; smaller objects hit the orbital rim", "This reverses the mechanics."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 111"}, {"topic": "Diplopia", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "etiology", "q": "Besides faulty alignment, what causes diplopia?", "opts": [["Dry eye", "That causes irritation and blurring."], ["Cataract", "It is monocular diplopia with cataract elsewhere, not as this cause."], ["A neurological problem", "Correct — the neurological grouping. Lesions in the brainstem or cerebellum, or weakness or paralysis of one or more extraocular muscles."], ["Refractive error alone, without a neurological component", "Refractive error blurs rather than doubles."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 18"}, {"topic": "Pupils", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "escalation", "q": "An acute, significantly dilated pupil is a medical emergency particularly when accompanied by what, and from which two causes?", "opts": [["Headache or other neurologic signs", "Correct, and it is flagged in red as a point to notice. From uncal herniation or a posterior communicating artery aneurysm."], ["Itching or discharge — from an allergic conjunctivitis", "Neither is an emergency."], ["Fever — from orbital cellulitis", "Serious, but not the pairing for this sign."], ["Blurred vision alone — from cataract", "Cataract does not dilate the pupil."]], "c": 0, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 73"}, {"topic": "Xanthelasma", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "Where do xanthelasma plaques sit, and what should they prompt?", "opts": [["At the lid margin — consider bacterial infection", "That describes a hordeolum."], ["On the bulbar conjunctiva — consider ultraviolet exposure", "That describes pinguecula."], ["Along the NASAL portions of one or both eyelids — consider lipid disorders", "Correct — it is both the position and the inference."], ["Along the temporal portions of the lids — consider thyroid disease", "It is the nasal portion and lipid disorders."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 34"}, {"topic": "Discharge", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "differential", "q": "Purulent discharge suggests what?", "opts": [["Viral conjunctivitis", "That also produces watery or mucoid discharge."], ["Dry eye", "That produces no discharge."], ["Bacterial infection", "Correct — the pairing for purulent discharge."], ["Allergic conjunctivitis", "That produces watery or mucoid discharge."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 19"}, {"topic": "Fluorescein", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "How does fluorescein reveal a corneal defect?", "opts": [["The dye stains intact epithelium and spares defects", "This reverses the mechanism."], ["The dye is injected intravenously and photographed with a blue flash", "That is fluorescein angiography."], ["The dye changes the colour of the aqueous humour", "Not how the test works."], ["Orange dye is instilled and a blue light used", "Correct — uptake marks where the epithelium is missing. The dye is taken up by areas of cornea devoid of epithelium."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 121"}, {"topic": "History", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "risk factors", "q": "Which immunisation status matters in eye trauma?", "opts": [["Hepatitis B", "Not the immunisation it is."], ["Tetanus", "Correct — it is tetanus status specifically for eye trauma."], ["Influenza", "Not the immunisation it is here."], ["Pneumococcal", "Not the immunisation it is."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 15"}, {"topic": "Proptosis", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "How do you assess whether the eyes are truly protruding?", "opts": [["Palpate the globe to judge its forward position", "Palpating the globe is contraindicated in trauma and is not the technique here."], ["Stand behind the seated patient and inspect from above", "Correct — the technique Beck demonstrated and kept in scope. Drawing the lid slightly upward to compare the corneas against the lower lids."], ["Sit facing the patient and compare the two eyes directly", "The material specifically asks you to look down from above."], ["Measure the distance from the lateral orbital angle with a ruler", "That is the exophthalmometer measurement, which Beck said she would not test."]], "c": 1, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 25"}, {"topic": "Argyll Robertson pupil", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "test finding", "q": "What happens when a mydriatic is instilled in an Argyll Robertson pupil?", "opts": [["Full and rapid dilation", "It is an incomplete response."], ["No change at all", "It is incomplete rather than absent dilation."], ["Paradoxical constriction", "Not a response it is."], ["Incomplete dilation", "Correct — the material notes mydriatics dilate it only incompletely."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 84"}, {"topic": "Subconjunctival haemorrhage", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "escalation", "q": "When is globe rupture more likely in a patient with a subconjunctival haemorrhage?", "opts": [["When the haemorrhage is small, flat and confined to one sector", "That is the ordinary benign pattern."], ["When the patient is anticoagulated", "That explains the bleed but does not indicate rupture."], ["When both eyes are affected", "Bilaterality is not the warning sign."], ["In trauma, and when the haemorrhage encircles the entire cornea", "Correct — it is both the mechanism and the 360-degree pattern."]], "c": 3, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 44"}, {"topic": "Order of examination", "io": "Instructional Objectives — Advanced Ocular Medical History and Examination", "slot": "initial test", "q": "What is the vital sign of the eye?", "opts": [["Pupil reactivity", "An important test, but not the phrase."], ["Visual fields", "Not the phrase."], ["Visual acuity", "Correct — the material labels acuity testing the vital sign of the eye."], ["Intraocular pressure", "Analogous to blood pressure, but not called the vital sign."]], "c": 2, "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 21"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
 let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
 let crossedOut = {};
 function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
@@ -1197,16 +465,21 @@ function pickOrder(n){
     r++;
   }
 
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
   /* Answer-position rebalance. Count letters, then for each over-represented
      letter try to swap a question out for an unpicked one with a scarce letter
      from the SAME objective, so coverage is never traded away for balance. */
   var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
   function counts(){
-    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
   }
   for(var pass=0; pass<40; pass++){
     var c = counts(), hi=0, lo=0;
-    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
     if(c[hi]-c[lo] <= 1) break;
     var swapped=false;
     for(var p=0;p<picked.length && !swapped;p++){
@@ -1263,8 +536,8 @@ function renderScroll(){
       '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
       '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
       '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
-      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
-      '<div class="qtext"></div><div class="opts"></div>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
       '<div class="expl" id="sexpl-' + i + '"></div>';
     d.querySelector('.qtext').textContent = q.q;
     var wrap = d.querySelector('.opts');
@@ -1438,6 +711,17 @@ function resumeQuiz(){
   document.getElementById('resume-banner').style.display='block';
 })();
 
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
 function renderQ(){
   const q = QUESTIONS[order[idx]];
   document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
@@ -1448,8 +732,26 @@ function renderQ(){
   // the explanation, where it is useful for looking the condition up.
   var _tp = document.getElementById('qtopic');
   _tp.textContent = ''; _tp.style.display = 'none';
-  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qio').textContent = ioLabel(q.io);
   document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
   document.getElementById('prevbtn').disabled = (idx===0);
 
   if(flagNav){
@@ -1491,6 +793,71 @@ function renderQ(){
     document.getElementById('expl').classList.remove('show');
     document.getElementById('nextbtn').style.display='none';
   }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
 }
 
 function choose(sel){
@@ -1536,6 +903,7 @@ function revealAnswer(sel, scroll){
   var _tp2 = document.getElementById('qtopic');
   if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
   document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
   document.getElementById('expl').classList.add('show');
   document.getElementById('nextbtn').style.display='inline-block';
   if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -1588,6 +956,7 @@ function examReviewHTML(){
     const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
     out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
       <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
       <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
       ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
       <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
@@ -1595,6 +964,27 @@ function examReviewHTML(){
   });
   return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
 }
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
 function showResults(){
   stopTimerInterval();
   const finalMs=currentElapsedMs();
@@ -1626,6 +1016,7 @@ function showResults(){
       const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
       missed+=`<div class="mitem">
         <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
         <div class="ma you"><b>Your answer:</b> ${you}</div>
         <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
         <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
@@ -1647,6 +1038,7 @@ function showResults(){
         <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
       </div>
     </div>
+    ${classCompareHTML(pct)}
     <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
     ${missBlock}
     <div class="resbtns">
@@ -1667,13 +1059,13 @@ document.addEventListener('keydown', (e)=>{
   if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
   if(deferFeedback){
     if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
-    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
     const i=map[k.toLowerCase()];
     if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
     return;
   }
   if(answers[idx]===null){
-    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
     const i=map[k.toLowerCase()];
     if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
   } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }

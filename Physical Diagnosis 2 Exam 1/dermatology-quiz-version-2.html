@@ -77,12 +77,37 @@
   .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
   .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
   .qbody{padding:24px 26px}
   .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
   .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
   .tag-topic{background:var(--navy);color:#fff}
   .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
   .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
   .opts{display:flex;flex-direction:column;gap:11px}
   .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
     border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
@@ -100,6 +125,16 @@
   .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
   .opt.dim{opacity:.72}
   .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
   .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
   .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
     justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
@@ -280,6 +315,7 @@
         <span class="tag tag-topic" id="qtopic"></span>
         <span class="tag tag-io" id="qio"></span>
       </div>
+      <figure class="qfig" id="qfig" hidden></figure>
       <div class="qtext" id="qtext"></div>
       <div class="opts" id="opts"></div>
       <div class="expl" id="expl">
@@ -303,760 +339,25 @@
 </div>
 
 <script>
-const QUESTIONS = [
-  {
-    "topic": "Structure and function",
-    "io": "a — Review the anatomical structure and function of the skin",
-    "q": "Which of the following is a function of the skin?",
-    "opts": [
-      [
-        "Production of clotting factors",
-        "Clotting factors are synthesised by the liver, not the skin."
-      ],
-      [
-        "Storage of calcium for release into the blood",
-        "Bone, not skin, serves as the body's calcium reservoir."
-      ],
-      [
-        "Filtration of nitrogenous waste from the blood",
-        "That is renal work; the skin's excretory role is limited to what leaves in sweat."
-      ],
-      [
-        "Production of vitamin D",
-        "Correct. The skin also protects internal structures, prevents entry of microorganisms, regulates temperature and participates in excretion."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 3"
-  },
-  {
-    "topic": "Configuration",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "What does the term confluent mean when applied to skin lesions?",
-    "opts": [
-      [
-        "The lesions form a line or stripe",
-        "That is linear."
-      ],
-      [
-        "The lesions run together",
-        "Correct — the opposite of discrete, where lesions remain separate."
-      ],
-      [
-        "The lesions remain separate from one another",
-        "That is discrete."
-      ],
-      [
-        "The lesions form a cluster",
-        "That is grouped."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 29"
-  },
-  {
-    "topic": "Pressure ulcers",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "A patient has intact skin over the sacrum with an area of erythema that fails to blanch with pressure. What stage of pressure ulcer is this?",
-    "opts": [
-      [
-        "Stage I",
-        "Correct — the skin is still intact, and the non-blanching erythema is the key finding."
-      ],
-      [
-        "Stage II",
-        "Stage II involves partial thickness skin loss."
-      ],
-      [
-        "Stage III",
-        "Stage III involves full thickness skin loss with necrosis of subcutaneous tissue."
-      ],
-      [
-        "Stage IV",
-        "Stage IV involves destruction of tissue, muscle and bone."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 59"
-  },
-  {
-    "topic": "History",
-    "io": "c — Elements of the history that identify skin, hair and nail disorders",
-    "q": "Generalised itching with no obvious skin lesion should prompt consideration of which causes?",
-    "opts": [
-      [
-        "Anxiety and stress, once organic causes have been excluded",
-        "The listed causes are organic rather than psychological."
-      ],
-      [
-        "Dry skin, ageing, pregnancy, uraemia, jaundice, lymphomas, leukaemias, drug reaction and lice",
-        "Correct — the list spans dermatological, systemic, malignant and infestational causes."
-      ],
-      [
-        "Dry skin and ageing only, since these account for nearly all cases",
-        "The differential is considerably broader and includes systemic disease."
-      ],
-      [
-        "Contact dermatitis, scabies and other infestations, to the exclusion of systemic disease",
-        "Neither is on the list given for generalised itching without obvious cause."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 11"
-  },
-  {
-    "topic": "History",
-    "io": "c — Elements of the history that identify skin, hair and nail disorders",
-    "q": "How should psychological stress be regarded in a patient with a skin disorder?",
-    "opts": [
-      [
-        "It should be raised only after organic causes have been excluded",
-        "Psychosocial factors are part of the routine history rather than a diagnosis of exclusion."
-      ],
-      [
-        "It is seldom the sole cause, but it can exacerbate many dermatoses",
-        "Correct — the distinction between causing and worsening is the point being made."
-      ],
-      [
-        "It is the single commonest cause of chronic skin disease",
-        "Stress is explicitly described as seldom being the sole cause."
-      ],
-      [
-        "It has no demonstrable effect on the course of skin disease",
-        "It can exacerbate many dermatoses, so it is not irrelevant."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 9"
-  },
-  {
-    "topic": "Distribution",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "Lesions confined to sun-exposed skin should raise concern for which condition?",
-    "opts": [
-      [
-        "Intertrigo",
-        "Intertrigo occurs in skin folds, which are shielded from the sun."
-      ],
-      [
-        "Herpes zoster",
-        "Zoster follows a dermatome regardless of sun exposure."
-      ],
-      [
-        "Psoriasis",
-        "Psoriasis favours extensor surfaces rather than sun-exposed skin specifically."
-      ],
-      [
-        "Skin cancers",
-        "Correct — cumulative ultraviolet exposure explains why these arise where the sun reaches."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 25"
-  },
-  {
-    "topic": "Examination technique",
-    "io": "e — Clinical skills for a complete and focused skin examination",
-    "q": "Which part of the hand should be used to assess skin temperature?",
-    "opts": [
-      [
-        "The palmar aspect",
-        "The palm is used for texture and vibration rather than temperature."
-      ],
-      [
-        "The fingertips",
-        "Fingertips are best for fine tactile discrimination, not temperature."
-      ],
-      [
-        "The ulnar border",
-        "The ulnar border is used to assess vibration in some examinations, not temperature."
-      ],
-      [
-        "The dorsal aspect",
-        "Correct — the back of the hand is more sensitive to temperature than the palm."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 19"
-  },
-  {
-    "topic": "Secondary morphology",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "A bulla ruptures and leaves a moist area that does not bleed. How should this be described?",
-    "opts": [
-      [
-        "A fissure",
-        "A fissure is a linear crack rather than a broad denuded area."
-      ],
-      [
-        "An excoriation",
-        "An excoriation is an abrasion or scratch mark."
-      ],
-      [
-        "An erosion",
-        "Correct — the moist, non-bleeding surface indicates the dermis has not been breached."
-      ],
-      [
-        "An ulcer",
-        "An ulcer extends into the dermis and may bleed and scar."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 44"
-  },
-  {
-    "topic": "Lesion description",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "What distinguishes a primary skin lesion from a secondary one?",
-    "opts": [
-      [
-        "A primary lesion is larger than one centimetre in diameter, while a secondary lesion is anything smaller than that",
-        "Size distinguishes several individual lesions from one another but not the two categories."
-      ],
-      [
-        "A primary lesion is flat and a secondary lesion is elevated",
-        "Both categories contain flat and elevated lesions."
-      ],
-      [
-        "A primary lesion is the one the patient noticed first",
-        "The distinction is about the disease process, not about what the patient happened to notice."
-      ],
-      [
-        "A primary lesion forms first and results directly from the disease, while a secondary lesion is a change in that lesion over time",
-        "Correct. Identifying the primary lesion is the key to interpreting and describing the eruption."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 21"
-  },
-  {
-    "topic": "Examination technique",
-    "io": "e — Clinical skills for a complete and focused skin examination",
-    "q": "Why is natural light preferred for inspecting the skin?",
-    "opts": [
-      [
-        "Artificial light may distort skin tone",
-        "Correct — the distortion can conceal jaundice, pallor and subtle erythema."
-      ],
-      [
-        "Natural light is brighter than any artificial source available in clinic",
-        "Brightness is not the reason; fidelity of colour is."
-      ],
-      [
-        "Artificial light makes lesion borders appear larger than they are",
-        "The concern is colour rendition rather than apparent size."
-      ],
-      [
-        "Natural light reduces the glare produced by moist lesions",
-        "Glare is not the stated problem with artificial light."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 14"
-  },
-  {
-    "topic": "Examination technique",
-    "io": "e — Clinical skills for a complete and focused skin examination",
-    "q": "Which descriptive terms are used for skin moisture?",
-    "opts": [
-      [
-        "Roughness and smoothness",
-        "Those describe texture rather than moisture."
-      ],
-      [
-        "Warmth and coolness",
-        "Those describe temperature."
-      ],
-      [
-        "Mobility and turgor",
-        "Those are assessed by lifting a fold of skin and are separate from moisture."
-      ],
-      [
-        "Dryness, sweating and oiliness",
-        "Correct — these three cover the moisture characteristic."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 19"
-  },
-  {
-    "topic": "Secondary morphology",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "A linear crack in the skin, as seen in athlete's foot, is called what?",
-    "opts": [
-      [
-        "An excoriation",
-        "An excoriation is a scratch mark and may be linear or rounded."
-      ],
-      [
-        "A scale",
-        "A scale is a thin flake of exfoliated epidermis."
-      ],
-      [
-        "A fissure",
-        "Correct — the interdigital spaces of the foot are the classic site."
-      ],
-      [
-        "An erosion",
-        "An erosion is a broader loss of superficial epidermis."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 46"
-  },
-  {
-    "topic": "Distribution",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "Which term describes lesions involving the skin creases and folds?",
-    "opts": [
-      [
-        "Palmar-plantar",
-        "That refers to the palms and soles."
-      ],
-      [
-        "Intertriginous",
-        "Correct — the axillae, groin and inframammary folds are the classic intertriginous sites."
-      ],
-      [
-        "Extensor",
-        "Extensor distribution involves the outer surfaces of joints, as in psoriasis."
-      ],
-      [
-        "Photodistributed",
-        "That describes lesions confined to sun-exposed skin."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 27"
-  },
-  {
-    "topic": "Pressure ulcers",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "Which finding defines a stage IV pressure ulcer?",
-    "opts": [
-      [
-        "Non-blanching erythema over intact skin",
-        "That is stage I."
-      ],
-      [
-        "Full thickness skin loss with destruction of tissue, muscle and bone",
-        "Correct — involvement of muscle and bone is what separates stage IV from stage III."
-      ],
-      [
-        "Full thickness skin loss reaching but not penetrating muscle",
-        "That is stage III."
-      ],
-      [
-        "Partial thickness loss of the epidermis and dermis",
-        "That is stage II."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 62"
-  },
-  {
-    "topic": "Tinea",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "Dry scaling or macerated fissuring of the interdigital spaces of the feet describes which infection?",
-    "opts": [
-      [
-        "Tinea unguium",
-        "Unguium affects the nails."
-      ],
-      [
-        "Tinea corporis",
-        "Corporis produces round plaques with central clearing on the body."
-      ],
-      [
-        "Tinea pedis",
-        "Correct — the web spaces are the characteristic site."
-      ],
-      [
-        "Tinea cruris",
-        "Cruris affects the groin."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 64"
-  },
-  {
-    "topic": "Examination technique",
-    "io": "e — Clinical skills for a complete and focused skin examination",
-    "q": "A patient has bluish discoloration of the fingers and toes with a normal oxygen level. What does peripheral cyanosis usually reflect?",
-    "opts": [
-      [
-        "Inadequate circulation",
-        "Correct — peripheral cyanosis is a perfusion problem, which is why it spares the central mucous membranes."
-      ],
-      [
-        "Inadequate oxygenation in the lungs",
-        "That produces central cyanosis."
-      ],
-      [
-        "Excess melanin production in the extremities",
-        "Increased pigmentation is a separate finding entirely."
-      ],
-      [
-        "Chronic exposure to cold water",
-        "Environmental cold is not the explanation given for peripheral cyanosis."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 18"
-  },
-  {
-    "topic": "Secondary morphology",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "How is an atrophic scar described?",
-    "opts": [
-      [
-        "Raised and extending beyond the wound",
-        "That describes a keloid."
-      ],
-      [
-        "Rough with accentuated skin lines",
-        "That describes lichenification."
-      ],
-      [
-        "Thin and white",
-        "Correct — as opposed to a hypertrophic scar, which is thick and pink."
-      ],
-      [
-        "Thick and pink",
-        "That describes a hypertrophic scar."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 49"
-  },
-  {
-    "topic": "Dermatographism",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "Firm stroking of a patient's skin produces a red line, a broadening flare, and then a linear wheal. What is this called?",
-    "opts": [
-      [
-        "Nikolsky's sign",
-        "That is a different manoeuvre entirely."
-      ],
-      [
-        "The Auspitz sign",
-        "This is a separate dermatological sign not covered here."
-      ],
-      [
-        "The triple response of Lewis",
-        "Correct — capillary dilatation, arteriolar dilatation and then transudation of fluid, in that sequence."
-      ],
-      [
-        "The diascopy response",
-        "Diascopy involves pressing glass against the skin rather than stroking it."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 54"
-  },
-  {
-    "topic": "Vascular lesions",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "A reddish-purple, non-blanching macule measuring two millimetres is called what?",
-    "opts": [
-      [
-        "A petechia",
-        "Correct — petechiae are under three millimetres."
-      ],
-      [
-        "Purpura",
-        "Purpura measures three millimetres to one centimetre."
-      ],
-      [
-        "An ecchymosis",
-        "An ecchymosis is larger than one centimetre."
-      ],
-      [
-        "A cherry angioma",
-        "A cherry angioma is a dome-shaped lesion that may blanch."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 56"
-  },
-  {
-    "topic": "Primary morphology",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "An elevated, irregular-shaped area of cutaneous edema that is solid, transient and of variable diameter is called what?",
-    "opts": [
-      [
-        "A plaque",
-        "A plaque is firm, flat-topped and persistent rather than transient."
-      ],
-      [
-        "A bulla",
-        "A bulla is fluid-filled rather than solid."
-      ],
-      [
-        "A nodule",
-        "A nodule is firm, circumscribed and persistent."
-      ],
-      [
-        "A wheal",
-        "Correct — an allergic reaction is the example given, and transience is the distinguishing feature."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 37"
-  },
-  {
-    "topic": "Primary morphology",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "A palpable, elevated, plateau-like solid mass larger than one centimetre that occupies a large area compared with its elevation is called what?",
-    "opts": [
-      [
-        "A tumor",
-        "A tumor is a solid mass greater than two centimetres."
-      ],
-      [
-        "A patch",
-        "A patch is flat rather than elevated."
-      ],
-      [
-        "A plaque",
-        "Correct — psoriasis is the example, and a plaque may be coalesced papules."
-      ],
-      [
-        "A nodule",
-        "A nodule is round or ellipsoid and sits deeper in the dermis rather than being plateau-like."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 35"
-  },
-  {
-    "topic": "Nails",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "What distinguishes a splinter hemorrhage from a subungual hematoma?",
-    "opts": [
-      [
-        "A splinter hemorrhage affects all nails while a subungual hematoma affects one",
-        "Number of nails involved is not the distinguishing feature."
-      ],
-      [
-        "A splinter hemorrhage is a transverse line while a subungual hematoma is longitudinal",
-        "Orientation is not what separates the two."
-      ],
-      [
-        "A splinter hemorrhage arises from the distal capillary loop, while a subungual hematoma is hemorrhage into the nail plate",
-        "Correct — the source of the bleeding is what separates the two findings."
-      ],
-      [
-        "A splinter hemorrhage is painful to the touch, whereas a subungual hematoma causes the patient no discomfort",
-        "Pain is not what distinguishes them."
-      ]
-    ],
-    "c": 2,
-    "cite": "PD II Derm - Beck.pptx, Slide 89"
-  },
-  {
-    "topic": "Hair",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "Hair loss caused by an urge to pull out one's own hair is called what?",
-    "opts": [
-      [
-        "Alopecia areata",
-        "Alopecia areata is an inflammatory disease of hair follicles associated with autoimmune disorders."
-      ],
-      [
-        "Androgenic alopecia",
-        "Androgenic alopecia is male pattern baldness."
-      ],
-      [
-        "Hirsutism",
-        "Hirsutism is increased hair growth rather than hair loss."
-      ],
-      [
-        "Trichotillomania",
-        "Correct — patches may be single or multiple and range from a few square centimetres to the entire scalp."
-      ]
-    ],
-    "c": 3,
-    "cite": "PD II Derm - Beck.pptx, Slide 80"
-  },
-  {
-    "topic": "Malignancy",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "A red scaling, crusting nodule on sun-exposed skin that can ulcerate and bleed is characteristic of which malignancy?",
-    "opts": [
-      [
-        "Squamous cell carcinoma",
-        "Correct — the face and other sun-exposed areas are the common sites."
-      ],
-      [
-        "Basal cell carcinoma",
-        "Basal cell carcinoma is translucent and pearly with raised borders rather than red and scaling."
-      ],
-      [
-        "Malignant melanoma",
-        "Melanoma is pigmented with irregular colour and notched borders."
-      ],
-      [
-        "Kaposi's sarcoma",
-        "Kaposi's sarcoma produces dark blue-purple macules, papules, nodules and plaques."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 68"
-  },
-  {
-    "topic": "Configuration",
-    "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour",
-    "q": "Which term describes grouped papules or vesicles arranged as they are in a herpes simplex infection?",
-    "opts": [
-      [
-        "Confluent",
-        "Confluent lesions run together into a single area."
-      ],
-      [
-        "Herpetiform",
-        "Correct — the configuration is named for the infection it resembles."
-      ],
-      [
-        "Zosteriform",
-        "Zosteriform lesions are clustered in a dermatomal distribution."
-      ],
-      [
-        "Annular",
-        "Annular means ring-shaped."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 28"
-  },
-  {
-    "topic": "Hair",
-    "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails",
-    "q": "What does the term hirsutism describe?",
-    "opts": [
-      [
-        "Excessive fine hair covering the whole body in infancy",
-        "That is not the definition given."
-      ],
-      [
-        "Increased hair growth in women following a male pattern of distribution",
-        "Correct — the pattern of distribution, not simply the amount, defines the term."
-      ],
-      [
-        "Diffuse thinning of the scalp hair in women following the menopause",
-        "That is a form of alopecia rather than hirsutism."
-      ],
-      [
-        "Loss of hair in multiple round patches",
-        "That describes alopecia areata."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 81"
-  },
-  {
-    "topic": "History",
-    "io": "c — Elements of the history that identify skin, hair and nail disorders",
-    "q": "Which set of questions forms the core of a proper dermatological history?",
-    "opts": [
-      [
-        "Where the problem first appeared, what it looked like, how it has progressed, associated symptoms, and what treatment has been tried",
-        "Correct. Those five questions cover onset, original appearance, evolution, symptoms and prior therapy."
-      ],
-      [
-        "The patient's age, occupation, marital status and insurance carrier, recorded in full before the skin complaint is discussed",
-        "These are demographic details rather than the history of the skin problem itself."
-      ],
-      [
-        "Whether the lesion is a macule, papule, plaque or nodule",
-        "Morphology is determined on examination, not asked of the patient."
-      ],
-      [
-        "The results of any previous biopsy, culture and blood work",
-        "Prior testing is useful background but is not the core of the history."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 5"
-  },
-  {
-    "topic": "Structure and function",
-    "io": "a — Review the anatomical structure and function of the skin",
-    "q": "Which gland surrounds the hair follicle and keeps hair and skin moist?",
-    "opts": [
-      [
-        "The sebaceous gland",
-        "Correct — it secretes sebum directly into the follicle."
-      ],
-      [
-        "The eccrine gland",
-        "Eccrine glands open onto the skin surface and secrete sweat for temperature control."
-      ],
-      [
-        "The apocrine gland",
-        "Apocrine glands secrete pheromones and switch on at puberty."
-      ],
-      [
-        "The sudoriferous gland",
-        "Sudoriferous is another name for the eccrine sweat gland."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 4"
-  },
-  {
-    "topic": "Examination technique",
-    "io": "e — Clinical skills for a complete and focused skin examination",
-    "q": "How should the scalp be examined?",
-    "opts": [
-      [
-        "Ask the patient to wet the hair before inspection",
-        "No such preparation is described."
-      ],
-      [
-        "Separate the hair into sections in order to observe the scalp beneath",
-        "Correct — the scalp cannot be assessed through intact hair."
-      ],
-      [
-        "Inspect the hair from a distance without touching the patient",
-        "The hair has to be parted for the scalp to be seen."
-      ],
-      [
-        "Palpate the scalp through the hair without visual inspection",
-        "Inspection is the point of the manoeuvre."
-      ]
-    ],
-    "c": 1,
-    "cite": "PD II Derm - Beck.pptx, Slide 77"
-  },
-  {
-    "topic": "Examination technique",
-    "io": "e — Clinical skills for a complete and focused skin examination",
-    "q": "A patient has central cyanosis. What is the usual explanation?",
-    "opts": [
-      [
-        "Inadequate oxygenation in the lungs",
-        "Correct — central cyanosis points to a pulmonary problem rather than a circulatory one."
-      ],
-      [
-        "Inadequate circulation to the extremities",
-        "That produces peripheral cyanosis."
-      ],
-      [
-        "Increased pigmentation of the skin",
-        "Pigment change is a separate category of colour abnormality."
-      ],
-      [
-        "Deposition of bilirubin in the skin",
-        "That produces jaundice rather than cyanosis."
-      ]
-    ],
-    "c": 0,
-    "cite": "PD II Derm - Beck.pptx, Slide 18"
-  }
-];
-const LTR = ["A","B","C","D"];
+const QUESTIONS = [{"topic": "Structure and function", "io": "a — Review the anatomical structure and function of the skin", "q": "Which of the following is a function of the skin?", "opts": [["Production of clotting factors", "Clotting factors are synthesised by the liver, not the skin."], ["Storage of calcium for release into the blood", "Bone, not skin, serves as the body's calcium reservoir."], ["Filtration of nitrogenous waste from the blood", "That is renal work; the skin's excretory role is limited to what leaves in sweat."], ["Production of vitamin D", "Correct. The skin also protects internal structures, prevents entry of microorganisms, regulates temperature and participates in excretion."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 3"}, {"topic": "Configuration", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "What does the term confluent mean when applied to skin lesions?", "opts": [["The lesions form a line or stripe", "That is linear."], ["The lesions run together", "Correct — the opposite of discrete, where lesions remain separate."], ["The lesions remain separate from one another", "That is discrete."], ["The lesions form a cluster", "That is grouped."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 29"}, {"topic": "Pressure ulcers", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A patient has intact skin over the sacrum with an area of erythema that fails to blanch with pressure. What stage of pressure ulcer is this?", "opts": [["Stage I", "Correct — the skin is still intact, and the non-blanching erythema is the key finding."], ["Stage II", "Stage II involves partial thickness skin loss."], ["Stage III", "Stage III involves full thickness skin loss with necrosis of subcutaneous tissue."], ["Stage IV", "Stage IV involves destruction of tissue, muscle and bone."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 59"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "Generalised itching with no obvious skin lesion should prompt consideration of which causes?", "opts": [["Anxiety and stress, once organic causes have been excluded", "The listed causes are organic rather than psychological."], ["Dry skin, ageing, pregnancy, uraemia, jaundice, lymphomas, leukaemias, drug reaction and lice", "Correct — the list spans dermatological, systemic, malignant and infestational causes."], ["Dry skin and ageing only, since these account for nearly all cases", "The differential is considerably broader and includes systemic disease."], ["Contact dermatitis, scabies and other infestations, to the exclusion of systemic disease", "Neither is on the list given for generalised itching without obvious cause."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 11"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "How should psychological stress be regarded in a patient with a skin disorder?", "opts": [["It should be raised only after organic causes have been excluded", "Psychosocial factors are part of the routine history rather than a diagnosis of exclusion."], ["It is seldom the sole cause, but it can exacerbate many dermatoses", "Correct — the distinction between causing and worsening is the point being made."], ["It is the single commonest cause of chronic skin disease", "Stress is explicitly described as seldom being the sole cause."], ["It has no demonstrable effect on the course of skin disease", "It can exacerbate many dermatoses, so it is not irrelevant."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 9"}, {"topic": "Distribution", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Lesions confined to sun-exposed skin should raise concern for which condition?", "opts": [["Intertrigo", "Intertrigo occurs in skin folds, which are shielded from the sun."], ["Herpes zoster", "Zoster follows a dermatome regardless of sun exposure."], ["Psoriasis", "Psoriasis favours extensor surfaces rather than sun-exposed skin specifically."], ["Skin cancers", "Correct — cumulative ultraviolet exposure explains why these arise where the sun reaches."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 25"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which part of the hand should be used to assess skin temperature?", "opts": [["The palmar aspect", "The palm is used for texture and vibration rather than temperature."], ["The fingertips", "Fingertips are best for fine tactile discrimination, not temperature."], ["The ulnar border", "The ulnar border is used to assess vibration in some examinations, not temperature."], ["The dorsal aspect", "Correct — the back of the hand is more sensitive to temperature than the palm."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 19"}, {"topic": "Secondary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A bulla ruptures and leaves a moist area that does not bleed. How should this be described?", "opts": [["A fissure", "A fissure is a linear crack rather than a broad denuded area."], ["An excoriation", "An excoriation is an abrasion or scratch mark."], ["An erosion", "Correct — the moist, non-bleeding surface indicates the dermis has not been breached."], ["An ulcer", "An ulcer extends into the dermis and may bleed and scar."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 44"}, {"topic": "Lesion description", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "What distinguishes a primary skin lesion from a secondary one?", "opts": [["A primary lesion is larger than one centimetre in diameter, while a secondary lesion is anything smaller than that", "Size distinguishes several individual lesions from one another but not the two categories."], ["A primary lesion is flat and a secondary lesion is elevated", "Both categories contain flat and elevated lesions."], ["A primary lesion is the one the patient noticed first", "The distinction is about the disease process, not about what the patient happened to notice."], ["A primary lesion forms first and results directly from the disease", "Correct. Identifying the primary lesion is the key to interpreting and describing the eruption. While a secondary lesion is a change in that lesion over time."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 21"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Why is natural light preferred for inspecting the skin?", "opts": [["Artificial light may distort skin tone", "Correct — the distortion can conceal jaundice, pallor and subtle erythema."], ["Natural light is brighter than any artificial source available in clinic", "Brightness is not the reason; fidelity of colour is."], ["Artificial light makes lesion borders appear larger than they are", "The concern is colour rendition rather than apparent size."], ["Natural light reduces the glare produced by moist lesions", "Glare is not the stated problem with artificial light."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 14"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which descriptive terms are used for skin moisture?", "opts": [["Roughness and smoothness", "Those describe texture rather than moisture."], ["Warmth and coolness", "Those describe temperature."], ["Mobility and turgor", "Those are assessed by lifting a fold of skin and are separate from moisture."], ["Dryness, sweating and oiliness", "Correct — these three cover the moisture characteristic."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 19"}, {"topic": "Secondary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A linear crack in the skin, as seen in athlete's foot, is called what?", "opts": [["An excoriation", "An excoriation is a scratch mark and may be linear or rounded."], ["A scale", "A scale is a thin flake of exfoliated epidermis."], ["A fissure", "Correct — the interdigital spaces of the foot are the classic site."], ["An erosion", "An erosion is a broader loss of superficial epidermis."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 46"}, {"topic": "Distribution", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which term describes lesions involving the skin creases and folds?", "opts": [["Palmar-plantar", "That refers to the palms and soles."], ["Intertriginous", "Correct — the axillae, groin and inframammary folds are the classic intertriginous sites."], ["Extensor", "Extensor distribution involves the outer surfaces of joints, as in psoriasis."], ["Photodistributed", "That describes lesions confined to sun-exposed skin."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 27"}, {"topic": "Pressure ulcers", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Which finding defines a stage IV pressure ulcer?", "opts": [["Non-blanching erythema over intact skin", "That is stage I."], ["Full thickness skin loss with destruction of tissue, muscle and bone", "Correct — involvement of muscle and bone is what separates stage IV from stage III."], ["Full thickness skin loss reaching but not penetrating muscle", "That is stage III."], ["Partial thickness loss of the epidermis and dermis", "That is stage II."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 62"}, {"topic": "Tinea", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Dry scaling or macerated fissuring of the interdigital spaces of the feet describes which infection?", "opts": [["Tinea unguium", "Unguium affects the nails."], ["Tinea corporis", "Corporis produces round plaques with central clearing on the body."], ["Tinea pedis", "Correct — the web spaces are the characteristic site."], ["Tinea cruris", "Cruris affects the groin."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 64"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "A patient has bluish discoloration of the fingers and toes with a normal oxygen level. What does peripheral cyanosis usually reflect?", "opts": [["Inadequate circulation", "Correct — peripheral cyanosis is a perfusion problem, which is why it spares the central mucous membranes."], ["Inadequate oxygenation in the lungs", "That produces central cyanosis."], ["Excess melanin production in the extremities", "Increased pigmentation is a separate finding entirely."], ["Chronic exposure to cold water", "Environmental cold is not the explanation given for peripheral cyanosis."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 18"}, {"topic": "Secondary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "How is an atrophic scar described?", "opts": [["Raised and extending beyond the wound", "That describes a keloid."], ["Rough with accentuated skin lines", "That describes lichenification."], ["Thin and white", "Correct — as opposed to a hypertrophic scar, which is thick and pink."], ["Thick and pink", "That describes a hypertrophic scar."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 49"}, {"topic": "Dermatographism", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Firm stroking of a patient's skin produces a red line, a broadening flare, and then a linear wheal. What is this called?", "opts": [["Nikolsky's sign", "This is a different manoeuvre and is not what it is."], ["The Auspitz sign", "This is a separate dermatological sign not covered here."], ["The triple response of Lewis", "Correct — capillary dilatation, arteriolar dilatation and then transudation of fluid, in that sequence."], ["The diascopy response", "Diascopy involves pressing glass against the skin rather than stroking it."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 54"}, {"topic": "Vascular lesions", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A reddish-purple, non-blanching macule measuring two millimetres is called what?", "opts": [["A petechia", "Correct — petechiae are under three millimetres."], ["Purpura", "Purpura measures three millimetres to one centimetre."], ["An ecchymosis", "An ecchymosis is larger than one centimetre."], ["A cherry angioma", "A cherry angioma is a dome-shaped lesion that may blanch."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 56"}, {"topic": "Primary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "An elevated, irregular-shaped area of cutaneous edema that is solid, transient and of variable diameter is called what?", "opts": [["A plaque", "A plaque is firm, flat-topped and persistent rather than transient."], ["A bulla", "A bulla is fluid-filled rather than solid."], ["A nodule", "A nodule is firm, circumscribed and persistent."], ["A wheal", "Correct — an allergic reaction is the example given, and transience is the distinguishing feature."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 37"}, {"topic": "Primary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A palpable, elevated, plateau-like solid mass larger than one centimetre that occupies a large area compared with its elevation is called what?", "opts": [["A tumor", "A tumor is a solid mass greater than two centimetres."], ["A patch", "A patch is flat rather than elevated."], ["A plaque", "Correct — psoriasis is the example, and a plaque may be coalesced papules."], ["A nodule", "A nodule is round or ellipsoid and sits deeper in the dermis rather than being plateau-like."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 35"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "What distinguishes a splinter hemorrhage from a subungual hematoma?", "opts": [["A splinter hemorrhage affects all nails while a subungual hematoma affects one", "Number of nails involved is not the distinguishing feature."], ["A splinter hemorrhage is a transverse line while a subungual hematoma is longitudinal", "Orientation is not what separates the two."], ["A splinter hemorrhage arises from the distal capillary loop", "Correct — the source of the bleeding is what separates the two findings. While a subungual hematoma is hemorrhage into the nail plate."], ["A splinter hemorrhage is painful to the touch, whereas a subungual hematoma causes the patient no discomfort", "Pain is not what distinguishes them."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 89"}, {"topic": "Hair", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Hair loss caused by an urge to pull out one's own hair is called what?", "opts": [["Alopecia areata", "Alopecia areata is an inflammatory disease of hair follicles associated with autoimmune disorders."], ["Androgenic alopecia", "Androgenic alopecia is male pattern baldness."], ["Hirsutism", "Hirsutism is increased hair growth rather than hair loss."], ["Trichotillomania", "Correct — patches may be single or multiple and range from a few square centimetres to the entire scalp."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 80"}, {"topic": "Malignancy", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A red scaling, crusting nodule on sun-exposed skin that can ulcerate and bleed is characteristic of which malignancy?", "opts": [["Squamous cell carcinoma", "Correct — the face and other sun-exposed areas are the common sites."], ["Basal cell carcinoma", "Basal cell carcinoma is translucent and pearly with raised borders rather than red and scaling."], ["Malignant melanoma", "Melanoma is pigmented with irregular colour and notched borders."], ["Kaposi's sarcoma", "Kaposi's sarcoma produces dark blue-purple macules, papules, nodules and plaques."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 68"}, {"topic": "Configuration", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which term describes grouped papules or vesicles arranged as they are in a herpes simplex infection?", "opts": [["Confluent", "Confluent lesions run together into a single area."], ["Herpetiform", "Correct — the configuration is named for the infection it resembles."], ["Zosteriform", "Zosteriform lesions are clustered in a dermatomal distribution."], ["Annular", "Annular means ring-shaped."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 28"}, {"topic": "Hair", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "What does the term hirsutism describe?", "opts": [["Excessive fine hair covering the whole body in infancy", "That is not the definition given."], ["Increased hair growth in women following a male pattern of distribution", "Correct — the pattern of distribution, not simply the amount, defines the term."], ["Diffuse thinning of the scalp hair in women following the menopause", "That is a form of alopecia rather than hirsutism."], ["Loss of hair in multiple round patches", "That describes alopecia areata."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 81"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "Which set of questions forms the core of a proper dermatological history?", "opts": [["Where the problem first appeared, what it looked like, how it has progressed, associated symptoms, and what treatment has been tried", "Correct. Those five questions cover onset, original appearance, evolution, symptoms and prior therapy."], ["The patient's age, occupation, marital status and insurance carrier, recorded in full before the skin complaint is discussed", "These are demographic details rather than the history of the skin problem itself."], ["Whether the lesion is a macule, papule, plaque or nodule", "Morphology is determined on examination, not asked of the patient."], ["The results of any previous biopsy, culture and blood work", "Prior testing is useful background but is not the core of the history."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 5"}, {"topic": "Structure and function", "io": "a — Review the anatomical structure and function of the skin", "q": "Which gland surrounds the hair follicle and keeps hair and skin moist?", "opts": [["The sebaceous gland", "Correct — it secretes sebum directly into the follicle."], ["The eccrine gland", "Eccrine glands open onto the skin surface and secrete sweat for temperature control."], ["The apocrine gland", "Apocrine glands secrete pheromones and switch on at puberty."], ["The sudoriferous gland", "Sudoriferous is another name for the eccrine sweat gland."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 4"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "How should the scalp be examined?", "opts": [["Ask the patient to wet the hair before inspection", "No such preparation is described."], ["Separate the hair into sections in order to observe the scalp beneath", "Correct — the scalp cannot be assessed through intact hair."], ["Inspect the hair from a distance without touching the patient", "The hair has to be parted for the scalp to be seen."], ["Palpate the scalp through the hair without visual inspection", "Inspection is the point of the manoeuvre."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 77"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "A patient has central cyanosis. What is the usual explanation?", "opts": [["Inadequate oxygenation in the lungs", "Correct — central cyanosis points to a pulmonary problem rather than a circulatory one."], ["Inadequate circulation to the extremities", "That produces peripheral cyanosis."], ["Increased pigmentation of the skin", "Pigment change is a separate category of colour abnormality."], ["Deposition of bilirubin in the skin", "That produces jaundice rather than cyanosis."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 18"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
 let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
 let crossedOut = {};
 function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
@@ -1164,16 +465,21 @@ function pickOrder(n){
     r++;
   }
 
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
   /* Answer-position rebalance. Count letters, then for each over-represented
      letter try to swap a question out for an unpicked one with a scarce letter
      from the SAME objective, so coverage is never traded away for balance. */
   var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
   function counts(){
-    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
   }
   for(var pass=0; pass<40; pass++){
     var c = counts(), hi=0, lo=0;
-    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
     if(c[hi]-c[lo] <= 1) break;
     var swapped=false;
     for(var p=0;p<picked.length && !swapped;p++){
@@ -1230,8 +536,8 @@ function renderScroll(){
       '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
       '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
       '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
-      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
-      '<div class="qtext"></div><div class="opts"></div>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
       '<div class="expl" id="sexpl-' + i + '"></div>';
     d.querySelector('.qtext').textContent = q.q;
     var wrap = d.querySelector('.opts');
@@ -1405,6 +711,17 @@ function resumeQuiz(){
   document.getElementById('resume-banner').style.display='block';
 })();
 
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
 function renderQ(){
   const q = QUESTIONS[order[idx]];
   document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
@@ -1415,8 +732,26 @@ function renderQ(){
   // the explanation, where it is useful for looking the condition up.
   var _tp = document.getElementById('qtopic');
   _tp.textContent = ''; _tp.style.display = 'none';
-  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qio').textContent = ioLabel(q.io);
   document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
   document.getElementById('prevbtn').disabled = (idx===0);
 
   if(flagNav){
@@ -1458,6 +793,71 @@ function renderQ(){
     document.getElementById('expl').classList.remove('show');
     document.getElementById('nextbtn').style.display='none';
   }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
 }
 
 function choose(sel){
@@ -1503,6 +903,7 @@ function revealAnswer(sel, scroll){
   var _tp2 = document.getElementById('qtopic');
   if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
   document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
   document.getElementById('expl').classList.add('show');
   document.getElementById('nextbtn').style.display='inline-block';
   if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -1555,6 +956,7 @@ function examReviewHTML(){
     const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
     out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
       <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
       <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
       ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
       <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
@@ -1562,6 +964,27 @@ function examReviewHTML(){
   });
   return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
 }
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
 function showResults(){
   stopTimerInterval();
   const finalMs=currentElapsedMs();
@@ -1593,6 +1016,7 @@ function showResults(){
       const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
       missed+=`<div class="mitem">
         <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
         <div class="ma you"><b>Your answer:</b> ${you}</div>
         <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
         <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
@@ -1614,6 +1038,7 @@ function showResults(){
         <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
       </div>
     </div>
+    ${classCompareHTML(pct)}
     <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
     ${missBlock}
     <div class="resbtns">
@@ -1634,13 +1059,13 @@ document.addEventListener('keydown', (e)=>{
   if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
   if(deferFeedback){
     if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
-    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
     const i=map[k.toLowerCase()];
     if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
     return;
   }
   if(answers[idx]===null){
-    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
     const i=map[k.toLowerCase()];
     if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
   } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }

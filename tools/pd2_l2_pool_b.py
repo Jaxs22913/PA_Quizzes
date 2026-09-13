@@ -13,8 +13,8 @@ POOL_B = [
  dict(topic="Lesion description", io=IOB,
    q="What distinguishes a primary skin lesion from a secondary one?",
    opts=[
-     ["A primary lesion forms first and results directly from the disease, while a secondary lesion is a change in that lesion over time",
-      "Correct. Identifying the primary lesion is the key to interpreting and describing the eruption."],
+     ["A primary lesion forms first and results directly from the disease",
+      "Correct. Identifying the primary lesion is the key to interpreting and describing the eruption. While a secondary lesion is a change in that lesion over time."],
      ["A primary lesion is larger than one centimetre and a secondary lesion is smaller",
       "Size distinguishes several individual lesions from one another but not the two categories."],
      ["A primary lesion is flat and a secondary lesion is elevated",
@@ -442,8 +442,8 @@ POOL_B = [
  dict(topic="Secondary morphology", io=IOB,
    q="What distinguishes a keloid from a hypertrophic scar?",
    opts=[
-     ["A keloid grows beyond the original wound, while a scar does not extend beyond the injured area",
-      "Correct — extension past the wound margin is the defining feature."],
+     ["A keloid grows beyond the original wound",
+      "Correct — extension past the wound margin is the defining feature. While a scar does not extend beyond the injured area."],
      ["A keloid is thin and white while a hypertrophic scar is thick and pink",
       "Thin and white describes an atrophic scar."],
      ["A keloid contains no fibrous tissue",
@@ -494,8 +494,8 @@ POOL_B = [
  dict(topic="Secondary morphology", io=IOB,
    q="What distinguishes a corn from a callus?",
    opts=[
-     ["A corn is smaller, usually lies over a non-weight-bearing area of the foot, and has a conical structure of keratin pointing toward the dermis",
-      "Correct — the inward-pointing keratin cone is why corns are painful."],
+     ["A corn is smaller, usually lies over a non-weight-bearing area of the foot",
+      "Correct — the inward-pointing keratin cone is why corns are painful. Has a conical structure of keratin pointing toward the dermis."],
      ["A corn is larger and lies on the ball or heel of the foot",
       "That describes a callus."],
      ["A corn is caused by infection while a callus is caused by pressure",

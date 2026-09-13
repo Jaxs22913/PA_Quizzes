@@ -77,12 +77,37 @@
   .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
   .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
   .qbody{padding:24px 26px}
   .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
   .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
   .tag-topic{background:var(--navy);color:#fff}
   .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
   .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
   .opts{display:flex;flex-direction:column;gap:11px}
   .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
     border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
@@ -100,6 +125,16 @@
   .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
   .opt.dim{opacity:.72}
   .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
   .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
   .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
     justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
@@ -280,6 +315,7 @@
         <span class="tag tag-topic" id="qtopic"></span>
         <span class="tag tag-io" id="qio"></span>
       </div>
+      <figure class="qfig" id="qfig" hidden></figure>
       <div class="qtext" id="qtext"></div>
       <div class="opts" id="opts"></div>
       <div class="expl" id="expl">
@@ -303,9 +339,25 @@
 </div>
 
 <script>
-const QUESTIONS = [{"topic": "Structure and function", "io": "a — Review the anatomical structure and function of the skin", "q": "Which glands become active during puberty and secrete pheromones?", "opts": [["Meibomian glands", "These are the modified glands of the eyelid margin and are not the pheromone-secreting glands."], ["Apocrine glands", "Correct. Their activation at puberty is what distinguishes them from eccrine glands."], ["Eccrine glands", "Eccrine glands are functional from birth and secrete thermoregulatory sweat."], ["Sebaceous glands", "Sebaceous glands surround hair follicles and secrete sebum."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 4"}, {"topic": "Pressure ulcers", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Partial thickness skin loss involving the epidermis, dermis or both defines which stage of pressure ulcer?", "opts": [["Stage I", "In stage I the skin remains intact."], ["Stage III", "Stage III is full thickness loss with subcutaneous necrosis."], ["Stage IV", "Stage IV extends to muscle and bone."], ["Stage II", "Correct — partial thickness is what distinguishes stage II from the full thickness loss of stage III."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 60"}, {"topic": "Vascular lesions", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A lesion with a central red macule and radiating spider-like arms that blanches is called what?", "opts": [["A spider angioma", "Correct — the radiating arms and blanching together identify it."], ["A cherry angioma", "A cherry angioma is dome-shaped and bright red to violet or black."], ["A telangiectasia", "A telangiectasia consists of fine irregular vessels without a central macule."], ["Purpura", "Purpura does not blanch."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 58"}, {"topic": "Secondary morphology", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "What distinguishes a keloid from a hypertrophic scar?", "opts": [["A keloid contains no fibrous tissue", "Both represent replacement of destroyed tissue by fibrous tissue."], ["A keloid resolves spontaneously within a year", "Spontaneous resolution is not a feature that distinguishes the two."], ["A keloid grows beyond the original wound, while a scar does not extend beyond the injured area", "Correct — extension past the wound margin is the defining feature."], ["A keloid is thin and white in appearance, while a hypertrophic scar is thick and pink", "Thin and white describes an atrophic scar."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 49"}, {"topic": "Configuration", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which term describes lesions that remain separate from one another?", "opts": [["Reticular", "Reticular describes a lacy or networked pattern."], ["Discrete", "Correct — discrete lesions stay distinct rather than merging."], ["Confluent", "Confluent lesions run together."], ["Grouped", "Grouped lesions form a cluster."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 29"}, {"topic": "Primary morphology", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A palpable, elevated solid mass greater than two centimetres is called what?", "opts": [["A nodule", "A nodule measures one to two centimetres."], ["A cyst", "A cyst is encapsulated and filled with liquid or semisolid material."], ["A tumor", "Correct — neoplasms are the example given."], ["A plaque", "A plaque is plateau-like, broad relative to its elevation."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 38"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which finding is described by the term rubor?", "opts": [["Erythema, or redness of the skin", "Correct — rubor and erythema are used interchangeably for redness."], ["Yellowing of the skin and sclerae", "That is jaundice."], ["Loss of normal skin colour", "That is pallor."], ["A bluish discoloration of the skin", "That is cyanosis."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 17"}, {"topic": "Hair", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which piece of equipment aids inspection when lice are suspected?", "opts": [["A tongue depressor", "This has no role in scalp inspection."], ["A magnifying glass", "Correct — nits appear as tiny white ovoid granules adherent to the hair shafts."], ["A Wood's lamp", "This is not the equipment named for inspecting for lice."], ["A dermatoscope", "This instrument is not the one specified."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 82"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "The angle between the nail base and the finger measures greater than one hundred and eighty degrees, and the fingertip is rounded and bulbous. What is this finding?", "opts": [["Clubbing", "Correct — the increased angle is the measurable feature that confirms it."], ["Koilonychia", "Koilonychia is a spoon-shaped concavity of the nail plate."], ["Onycholysis", "Onycholysis is separation of the nail plate from the bed."], ["Paronychia", "Paronychia is infection of the soft tissue around the nail."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 91"}, {"topic": "Primary morphology", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A palpable, elevated solid mass measuring less than one centimetre is called what?", "opts": [["A papule", "Correct — nevi, warts and lichen planus are the examples given."], ["A macule", "A macule is flat rather than elevated."], ["A nodule", "A nodule lies deeper in the dermis and is one to two centimetres."], ["A vesicle", "A vesicle is fluid-filled rather than solid."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 34"}, {"topic": "Structure and function", "io": "a — Review the anatomical structure and function of the skin", "q": "Which gland secretes sweat in order to maintain body temperature?", "opts": [["The apocrine (scent) gland", "Apocrine glands become active at puberty and secrete pheromones rather than thermoregulatory sweat."], ["The sebaceous gland", "Sebaceous glands secrete sebum, which keeps hair and skin moist."], ["The ceruminous gland", "Cerumen is produced in the external ear canal and has no thermoregulatory role."], ["The sudoriferous (eccrine) gland", "Correct — thermoregulatory sweating is the eccrine gland's job."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 4"}, {"topic": "Tinea", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Which term refers to a tinea infection of the groin?", "opts": [["Tinea corporis", "Corporis denotes the body."], ["Tinea capitis", "Capitis denotes the scalp."], ["Tinea unguium", "Unguium denotes the nails."], ["Tinea cruris", "Correct — cruris denotes the groin."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 63"}, {"topic": "Dermatographism", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Which component of the triple response of Lewis is produced by transudation of fluid?", "opts": [["The reflex flare with broadening erythema", "The flare results from arteriolar dilatation."], ["The fading of the lesion after several minutes", "Resolution is not one of the three components."], ["The formation of a linear wheal", "Correct — fluid leaving the vessels creates the raised, edematous wheal."], ["The initial red line", "The initial red line results from capillary dilatation."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 54"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "Which skin symptoms should be asked about when taking the history?", "opts": [["Fever, chills and night sweats", "These are systemic symptoms covered in the review of systems rather than skin symptoms."], ["Erythema, scaling and crusting", "These are findings you observe rather than symptoms the patient reports."], ["Pruritus, pain and paresthesia", "Correct — itch, pain and abnormal sensation are the three symptom categories."], ["Pruritus alone, since it is the commonest skin symptom", "Pain and paresthesia are asked about alongside pruritus."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 8"}, {"topic": "Nails", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which features should be inspected in the nail beds?", "opts": [["Capillary refill time, nail bed temperature and the presence of peripheral cyanosis", "Neither appears among the features listed for nail inspection."], ["Length, cleanliness and evidence of biting", "These are not the inspection features described."], ["Shape, size, colour, brittleness, hemorrhages, lines and grooves, clubbing and pitting", "Correct — eight features, each of which can point toward a systemic diagnosis."], ["Shape and colour only, since the remainder require specialist assessment", "The list is considerably broader than those two."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 84"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which characteristics of the skin are assessed by inspection, palpation or both?", "opts": [["Colour, moisture, temperature, texture, mobility and turgor, and lesions", "Correct — six characteristics, of which colour and lesions begin with inspection and the remainder require touch."], ["Colour and lesions only, since the skin examination is essentially visual", "Moisture, temperature, texture, mobility and turgor all require palpation."], ["Temperature and turgor only, since colour varies too much between patients", "Colour is a core part of the assessment."], ["Thickness, elasticity and capillary refill time", "These are not the characteristics listed for the skin examination."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 16"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A soft tissue infection around the cuticle or nail fold that is painful and purulent is called what?", "opts": [["Onycholysis", "Onycholysis is painless separation of the nail plate."], ["Subungual hematoma", "This is hemorrhage beneath the nail rather than an infection."], ["Nail pitting", "Nail pitting is a dystrophy of the nail plate."], ["Acute paronychia", "Correct — pain and purulence distinguish the acute form from the chronic one."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 92"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "Which historical factors should be explored for their relationship to the appearance of skin lesions?", "opts": [["The patient's blood type and immunisation record", "Neither is part of this line of questioning."], ["Season, travel, heat or cold, previous reactions, drugs and menses", "Correct — each can be the trigger that explains the timing of an eruption."], ["Season and travel only, since the remainder are rarely relevant", "The list is considerably broader than those two."], ["The patient's height, weight and body mass index", "These are not among the relationships explored in a skin history."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 8"}, {"topic": "Hair", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "What distinguishes terminal hair from vellus hair?", "opts": [["Terminal hair is pigmented while vellus hair is always white", "Pigmentation is not what separates the two types."], ["Terminal hair is coarse and grows on the scalp and in the pubic, axillary and beard areas, while vellus hair is short and fine and covers the body", "Correct — the two hair types differ in calibre as well as location."], ["Terminal hair is the short, fine hair that covers the body, while vellus hair is the coarse hair of the scalp, axillae and beard", "The descriptions are reversed."], ["Terminal hair grows only after puberty while vellus hair is present only in infancy", "Both are present throughout life in their respective distributions."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 76"}, {"topic": "Malignancy", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Where are the lesions of Kaposi's sarcoma typically distributed?", "opts": [["Confined to the sun-exposed areas of the face and neck", "That is the distribution of basal and squamous cell carcinoma."], ["Confined to a single dermatome", "Dermatomal distribution is characteristic of herpes zoster."], ["Confined to the skin creases and folds", "That is an intertriginous distribution."], ["Widely disseminated on the legs, trunk, arms, neck and head", "Correct — the wide dissemination is part of what makes the diagnosis recognisable."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 73"}, {"topic": "Vascular lesions", "io": "e — Clinical skills for a complete and focused skin examination", "q": "A purple lesion does not fade when a glass slide is pressed against it. What does this indicate?", "opts": [["Hemorrhage in the skin", "Correct — blood outside the vessels cannot be displaced by pressure, which is why petechiae and purpura do not blanch."], ["Vascular engorgement", "Engorged vessels empty under pressure and the colour fades."], ["An allergic reaction", "Diascopy distinguishes hemorrhage from engorgement rather than identifying allergy."], ["Inadequate peripheral circulation", "Cyanosis from poor circulation is not what the manoeuvre assesses."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 55"}, {"topic": "Malignancy", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Beyond the original four melanoma warning signs, which additional letters are included?", "opts": [["E for evolving or elevation, F for family history, and G for growing", "Correct — the list extends past ABCD to capture change over time and inherited risk."], ["E for erythema, F for friability, and G for a granular surface", "Neither term appears among the additional warning signs."], ["E for elevation only, with no further letters", "Family history and growth are also included."], ["F for firmness and G for granularity", "Neither describes the additional warning signs."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 71"}, {"topic": "Distribution", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "An eruption confined to a single dermatome should suggest which diagnosis?", "opts": [["Herpes zoster", "Correct — dermatomal distribution is the defining feature of zoster."], ["Psoriasis", "Psoriasis follows an extensor distribution rather than a dermatomal one."], ["Intertrigo", "Intertrigo occupies skin folds."], ["Tinea capitis", "Tinea capitis is regional, confined to the scalp."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 25"}, {"topic": "Secondary morphology", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Warts are caused by which organism?", "opts": [["Staphylococcus aureus", "This organism causes pustular infections such as impetigo and paronychia."], ["Human papillomavirus", "Correct — verrucae are small harmless tumors of the skin, grey to flesh coloured, sometimes with rough hornlike projections."], ["Herpes simplex virus", "Herpes simplex produces grouped vesicles rather than warts."], ["A dermatophyte fungus", "Dermatophytes cause the tinea infections."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 50"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Why should the patient wear a gown for the skin examination?", "opts": [["It prevents contamination of the patient's clothing and keeps the examination table clean between successive patients", "Protecting clothing is not the reason a gown is used."], ["It standardises the appearance of the skin under artificial light", "The gown has no effect on how light renders skin tone."], ["It is required whenever gloves are worn during an examination", "Gown use is not tied to glove use."], ["It allows inspection of the hair, the anterior and posterior body surfaces, the palms and soles, the nails and the interdigital spaces", "Correct — a complete skin examination means the whole skin surface, including areas patients rarely expose."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 14"}, {"topic": "Configuration", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which term describes lesions clustered in a dermatomal distribution?", "opts": [["Iris", "Iris describes a target or bull's eye shape."], ["Zosteriform", "Correct — named for the pattern seen in herpes zoster."], ["Herpetiform", "Herpetiform describes grouping like herpes simplex rather than a dermatomal band."], ["Serpiginous", "Serpiginous means snake-like."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 28"}, {"topic": "Lesion description", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which processes can convert a primary lesion into a secondary one?", "opts": [["Only the passage of time, independent of any external factor", "Specific processes are named rather than time alone."], ["Only secondary bacterial infection of the original lesion", "Infection is not among the three processes listed."], ["Disease progression, treatment, and manipulation such as picking or scratching", "Correct — the patient's own handling of a lesion is as capable of changing it as the disease itself."], ["Disease progression alone, since treatment does not alter lesion morphology", "Treatment is explicitly listed as one of the causes."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 21"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A nail whose proximal portion is white and whose distal portion is dark is described as what?", "opts": [["Beau's lines", "Beau's lines are transverse depressions rather than a colour change."], ["Splinter hemorrhages", "These are linear hemorrhages of the distal capillary loop."], ["Terry's nails", "Correct — the proximal white and distal dark pattern defines the finding."], ["Mee's lines", "Mee's lines are transverse lines across the nail."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 88"}, {"topic": "Distribution", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A generalised or diffuse distribution most commonly suggests which category of disease?", "opts": [["A pressure injury", "Pressure injuries occur where pressure is applied rather than diffusely."], ["An allergic reaction", "Correct — a process delivered through the bloodstream reaches the whole skin surface."], ["A fungal infection", "Tinea infections are regional, confined to a specific body area."], ["A malignancy", "Skin cancers follow a sun-exposed distribution."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 24"}, {"topic": "Primary morphology", "io": "b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "What distinguishes a nodule from a papule?", "opts": [["A nodule is filled with fluid, whereas a papule is a solid elevation", "Both are solid lesions."], ["A nodule is flat while a papule is elevated", "Both are elevated."], ["A nodule is transient while a papule persists", "Transience is the defining feature of a wheal, not a nodule."], ["A nodule is deeper in the dermis and measures one to two centimetres", "Correct — depth as well as size separates the two, and the examples given are basal cell carcinoma and neurofibromatosis."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 36"}];
-const LTR = ["A","B","C","D"];
+const QUESTIONS = [{"topic": "Structure and function", "io": "a — Review the anatomical structure and function of the skin", "q": "Which glands become active during puberty and secrete pheromones?", "opts": [["Meibomian glands", "These are the modified glands of the eyelid margin and are not the pheromone-secreting glands."], ["Apocrine glands", "Correct. Their activation at puberty is what distinguishes them from eccrine glands."], ["Eccrine glands", "Eccrine glands are functional from birth and secrete thermoregulatory sweat."], ["Sebaceous glands", "Sebaceous glands surround hair follicles and secrete sebum."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 4"}, {"topic": "Pressure ulcers", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Partial thickness skin loss involving the epidermis, dermis or both defines which stage of pressure ulcer?", "opts": [["Stage I", "In stage I the skin remains intact."], ["Stage III", "Stage III is full thickness loss with subcutaneous necrosis."], ["Stage IV", "Stage IV extends to muscle and bone."], ["Stage II", "Correct — partial thickness is what distinguishes stage II from the full thickness loss of stage III."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 60"}, {"topic": "Vascular lesions", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A lesion with a central red macule and radiating spider-like arms that blanches is called what?", "opts": [["A spider angioma", "Correct — the radiating arms and blanching together identify it."], ["A cherry angioma", "A cherry angioma is dome-shaped and bright red to violet or black."], ["A telangiectasia", "A telangiectasia consists of fine irregular vessels without a central macule."], ["Purpura", "Purpura does not blanch."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 58"}, {"topic": "Secondary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "What distinguishes a keloid from a hypertrophic scar?", "opts": [["A keloid contains no fibrous tissue", "Both represent replacement of destroyed tissue by fibrous tissue."], ["A keloid resolves spontaneously within a year", "Spontaneous resolution is not a feature that distinguishes the two."], ["A keloid grows beyond the original wound", "Correct — extension past the wound margin is the defining feature. While a scar does not extend beyond the injured area."], ["A keloid is thin and white in appearance, while a hypertrophic scar is thick and pink", "Thin and white describes an atrophic scar."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 49"}, {"topic": "Configuration", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which term describes lesions that remain separate from one another?", "opts": [["Reticular", "Reticular describes a lacy or networked pattern."], ["Discrete", "Correct — discrete lesions stay distinct rather than merging."], ["Confluent", "Confluent lesions run together."], ["Grouped", "Grouped lesions form a cluster."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 29"}, {"topic": "Primary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A palpable, elevated solid mass greater than two centimetres is called what?", "opts": [["A nodule", "A nodule measures one to two centimetres."], ["A cyst", "A cyst is encapsulated and filled with liquid or semisolid material."], ["A tumor", "Correct — neoplasms are the example given."], ["A plaque", "A plaque is plateau-like, broad relative to its elevation."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 38"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which finding is described by the term rubor?", "opts": [["Erythema, or redness of the skin", "Correct — rubor and erythema are used interchangeably for redness."], ["Yellowing of the skin and sclerae", "That is jaundice."], ["Loss of normal skin colour", "That is pallor."], ["A bluish discoloration of the skin", "That is cyanosis."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 17"}, {"topic": "Hair", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which piece of equipment aids inspection when lice are suspected?", "opts": [["A tongue depressor", "This has no role in scalp inspection."], ["A magnifying glass", "Correct — nits appear as tiny white ovoid granules adherent to the hair shafts."], ["A Wood's lamp", "This is not the equipment named for inspecting for lice."], ["A dermatoscope", "This instrument is not the one specified."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 82"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "The angle between the nail base and the finger measures greater than one hundred and eighty degrees, and the fingertip is rounded and bulbous. What is this finding?", "opts": [["Clubbing", "Correct — the increased angle is the measurable feature that confirms it."], ["Koilonychia", "Koilonychia is a spoon-shaped concavity of the nail plate."], ["Onycholysis", "Onycholysis is separation of the nail plate from the bed."], ["Paronychia", "Paronychia is infection of the soft tissue around the nail."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 91"}, {"topic": "Primary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A palpable, elevated solid mass measuring less than one centimetre is called what?", "opts": [["A papule", "Correct — nevi, warts and lichen planus are the examples given."], ["A macule", "A macule is flat rather than elevated."], ["A nodule", "A nodule lies deeper in the dermis and is one to two centimetres."], ["A vesicle", "A vesicle is fluid-filled rather than solid."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 34"}, {"topic": "Structure and function", "io": "a — Review the anatomical structure and function of the skin", "q": "Which gland secretes sweat in order to maintain body temperature?", "opts": [["The apocrine (scent) gland", "Apocrine glands become active at puberty and secrete pheromones rather than thermoregulatory sweat."], ["The sebaceous gland", "Sebaceous glands secrete sebum, which keeps hair and skin moist."], ["The ceruminous gland", "Cerumen is produced in the external ear canal and has no thermoregulatory role."], ["The sudoriferous (eccrine) gland", "Correct — thermoregulatory sweating is the eccrine gland's job."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 4"}, {"topic": "Tinea", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Which term refers to a tinea infection of the groin?", "opts": [["Tinea corporis", "Corporis denotes the body."], ["Tinea capitis", "Capitis denotes the scalp."], ["Tinea unguium", "Unguium denotes the nails."], ["Tinea cruris", "Correct — cruris denotes the groin."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 63"}, {"topic": "Dermatographism", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Which component of the triple response of Lewis is produced by transudation of fluid?", "opts": [["The reflex flare with broadening erythema", "The flare results from arteriolar dilatation."], ["The fading of the lesion after several minutes", "Resolution is not one of the three components."], ["The formation of a linear wheal", "Correct — fluid leaving the vessels creates the raised, edematous wheal."], ["The initial red line", "The initial red line results from capillary dilatation."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 54"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "Which skin symptoms should be asked about when taking the history?", "opts": [["Fever, chills and night sweats", "These are systemic symptoms covered in the review of systems rather than skin symptoms."], ["Erythema, scaling and crusting", "These are findings you observe rather than symptoms the patient reports."], ["Pruritus, pain and paresthesia", "Correct — itch, pain and abnormal sensation are the three symptom categories."], ["Pruritus alone, since it is the commonest skin symptom", "Pain and paresthesia are asked about alongside pruritus."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 8"}, {"topic": "Nails", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which features should be inspected in the nail beds?", "opts": [["Capillary refill time, nail bed temperature and the presence of peripheral cyanosis", "Neither appears among the features listed for nail inspection."], ["Length, cleanliness and evidence of biting", "These are not the inspection features described."], ["Shape, size, colour, brittleness, hemorrhages, lines and grooves, clubbing and pitting", "Correct — eight features, each of which can point toward a systemic diagnosis."], ["Shape and colour only, since the remainder require specialist assessment", "The list is considerably broader than those two."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 84"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Which characteristics of the skin are assessed by inspection, palpation or both?", "opts": [["Colour, moisture, temperature, texture, mobility and turgor, and lesions", "Correct — six characteristics, of which colour and lesions begin with inspection and the remainder require touch."], ["Colour and lesions only, since the skin examination is essentially visual", "Moisture, temperature, texture, mobility and turgor all require palpation."], ["Temperature and turgor only, since colour varies too much between patients", "Colour is a core part of the assessment."], ["Thickness, elasticity and capillary refill time", "These are not the characteristics listed for the skin examination."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 16"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A soft tissue infection around the cuticle or nail fold that is painful and purulent is called what?", "opts": [["Onycholysis", "Onycholysis is painless separation of the nail plate."], ["Subungual hematoma", "This is hemorrhage beneath the nail rather than an infection."], ["Nail pitting", "Nail pitting is a dystrophy of the nail plate."], ["Acute paronychia", "Correct — pain and purulence distinguish the acute form from the chronic one."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 92"}, {"topic": "History", "io": "c — Elements of the history that identify skin, hair and nail disorders", "q": "Which historical factors should be explored for their relationship to the appearance of skin lesions?", "opts": [["The patient's blood type and immunisation record", "Neither is part of this line of questioning."], ["Season, travel, heat or cold, previous reactions, drugs and menses", "Correct — each can be the trigger that explains the timing of an eruption."], ["Season and travel only, since the remainder are rarely relevant", "The list is considerably broader than those two."], ["The patient's height, weight and body mass index", "These are not among the relationships explored in a skin history."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 8"}, {"topic": "Hair", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "What distinguishes terminal hair from vellus hair?", "opts": [["Terminal hair is pigmented while vellus hair is always white", "Pigmentation is not what separates the two types."], ["Terminal hair is coarse and grows on the scalp and in the pubic", "Correct — the two hair types differ in calibre as well as location. Axillary and beard areas, while vellus hair is short and fine and covers the body."], ["Terminal hair is the short, fine hair that covers the body, while vellus hair is the coarse hair of the scalp, axillae and beard", "The descriptions are reversed."], ["Terminal hair grows only after puberty while vellus hair is present only in infancy", "Both are present throughout life in their respective distributions."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 76"}, {"topic": "Malignancy", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Where are the lesions of Kaposi's sarcoma typically distributed?", "opts": [["Confined to the sun-exposed areas of the face and neck", "That is the distribution of basal and squamous cell carcinoma."], ["Confined to a single dermatome", "Dermatomal distribution is characteristic of herpes zoster."], ["Confined to the skin creases and folds", "That is an intertriginous distribution."], ["Widely disseminated on the legs", "Correct — the wide dissemination is part of what makes the diagnosis recognisable. Trunk, arms, neck and head."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 73"}, {"topic": "Vascular lesions", "io": "e — Clinical skills for a complete and focused skin examination", "q": "A purple lesion does not fade when a glass slide is pressed against it. What does this indicate?", "opts": [["Hemorrhage in the skin", "Correct — blood outside the vessels cannot be displaced by pressure, which is why petechiae and purpura do not blanch."], ["Vascular engorgement", "Engorged vessels empty under pressure and the colour fades."], ["An allergic reaction", "Diascopy distinguishes hemorrhage from engorgement rather than identifying allergy."], ["Inadequate peripheral circulation", "Cyanosis from poor circulation is not what the manoeuvre assesses."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 55"}, {"topic": "Malignancy", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "Beyond the original four melanoma warning signs, which additional letters are included?", "opts": [["E for evolving or elevation, F for family history", "Correct — the list extends past ABCD to capture change over time and inherited risk. G for growing."], ["E for erythema, F for friability, and G for a granular surface", "Neither term appears among the additional warning signs."], ["E for elevation only, with no further letters", "Family history and growth are also included."], ["F for firmness and G for granularity", "Neither describes the additional warning signs."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 71"}, {"topic": "Distribution", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "An eruption confined to a single dermatome should suggest which diagnosis?", "opts": [["Herpes zoster", "Correct — dermatomal distribution is the defining feature of zoster."], ["Psoriasis", "Psoriasis follows an extensor distribution rather than a dermatomal one."], ["Intertrigo", "Intertrigo occupies skin folds."], ["Tinea capitis", "Tinea capitis is regional, confined to the scalp."]], "c": 0, "cite": "PD II Derm - Beck.pptx, Slide 25"}, {"topic": "Secondary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Warts are caused by which organism?", "opts": [["Staphylococcus aureus", "This organism causes pustular infections such as impetigo and paronychia."], ["Human papillomavirus", "Correct — verrucae are small harmless tumors of the skin, grey to flesh coloured, sometimes with rough hornlike projections."], ["Herpes simplex virus", "Herpes simplex produces grouped vesicles rather than warts."], ["A dermatophyte fungus", "Dermatophytes cause the tinea infections."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 50"}, {"topic": "Examination technique", "io": "e — Clinical skills for a complete and focused skin examination", "q": "Why should the patient wear a gown for the skin examination?", "opts": [["It prevents contamination of the patient's clothing and keeps the examination table clean between successive patients", "Protecting clothing is not the reason a gown is used."], ["It standardises the appearance of the skin under artificial light", "The gown has no effect on how light renders skin tone."], ["It is required whenever gloves are worn during an examination", "Gown use is not tied to glove use."], ["It allows inspection of the hair", "Correct — a complete skin examination means the whole skin surface, including areas patients rarely expose. The anterior and posterior body surfaces, the palms and soles, the nails and the interdigital spaces."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 14"}, {"topic": "Configuration", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which term describes lesions clustered in a dermatomal distribution?", "opts": [["Iris", "Iris describes a target or bull's eye shape."], ["Zosteriform", "Correct — named for the pattern seen in herpes zoster."], ["Herpetiform", "Herpetiform describes grouping like herpes simplex rather than a dermatomal band."], ["Serpiginous", "Serpiginous means snake-like."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 28"}, {"topic": "Lesion description", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "Which processes can convert a primary lesion into a secondary one?", "opts": [["Only the passage of time, independent of any external factor", "Specific processes are named rather than time alone."], ["Only secondary bacterial infection of the original lesion", "Infection is not among the three processes listed."], ["Disease progression, treatment, and manipulation such as picking or scratching", "Correct — the patient's own handling of a lesion is as capable of changing it as the disease itself."], ["Disease progression alone, since treatment does not alter lesion morphology", "Treatment is explicitly listed as one of the causes."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 21"}, {"topic": "Nails", "io": "d — Physical examination findings of abnormal conditions of skin, hair and nails", "q": "A nail whose proximal portion is white and whose distal portion is dark is described as what?", "opts": [["Beau's lines", "Beau's lines are transverse depressions rather than a colour change."], ["Splinter hemorrhages", "These are linear hemorrhages of the distal capillary loop."], ["Terry's nails", "Correct — the proximal white and distal dark pattern defines the finding."], ["Mee's lines", "Mee's lines are transverse lines across the nail."]], "c": 2, "cite": "PD II Derm - Beck.pptx, Slide 88"}, {"topic": "Distribution", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "A generalised or diffuse distribution most commonly suggests which category of disease?", "opts": [["A pressure injury", "Pressure injuries occur where pressure is applied rather than diffusely."], ["An allergic reaction", "Correct — a process delivered through the bloodstream reaches the whole skin surface."], ["A fungal infection", "Tinea infections are regional, confined to a specific body area."], ["A malignancy", "Skin cancers follow a sun-exposed distribution."]], "c": 1, "cite": "PD II Derm - Beck.pptx, Slide 24"}, {"topic": "Primary morphology", "io": "Objective b — Terms describing lesion type (primary morphology), configuration (secondary morphology), texture, distribution and colour", "q": "What distinguishes a nodule from a papule?", "opts": [["A nodule is filled with fluid, whereas a papule is a solid elevation", "Both are solid lesions."], ["A nodule is flat while a papule is elevated", "Both are elevated."], ["A nodule is transient while a papule persists", "Transience is the defining feature of a wheal, not a nodule."], ["A nodule is deeper in the dermis and measures one to two centimetres", "Correct — depth as well as size separates the two, and the examples given are basal cell carcinoma and neurofibromatosis."]], "c": 3, "cite": "PD II Derm - Beck.pptx, Slide 36"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
 let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
 let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
 let crossedOut = {};
 function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
@@ -413,16 +465,21 @@ function pickOrder(n){
     r++;
   }
 
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
   /* Answer-position rebalance. Count letters, then for each over-represented
      letter try to swap a question out for an unpicked one with a scarce letter
      from the SAME objective, so coverage is never traded away for balance. */
   var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
   function counts(){
-    var c=[0,0,0,0]; picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
   }
   for(var pass=0; pass<40; pass++){
     var c = counts(), hi=0, lo=0;
-    for(var L=1;L<4;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
     if(c[hi]-c[lo] <= 1) break;
     var swapped=false;
     for(var p=0;p<picked.length && !swapped;p++){
@@ -479,8 +536,8 @@ function renderScroll(){
       '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
       '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
       '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
-      '<span class="tag tag-io">Objective ' + q.io + '</span></div>' +
-      '<div class="qtext"></div><div class="opts"></div>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
       '<div class="expl" id="sexpl-' + i + '"></div>';
     d.querySelector('.qtext').textContent = q.q;
     var wrap = d.querySelector('.opts');
@@ -654,6 +711,17 @@ function resumeQuiz(){
   document.getElementById('resume-banner').style.display='block';
 })();
 
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
 function renderQ(){
   const q = QUESTIONS[order[idx]];
   document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
@@ -664,8 +732,26 @@ function renderQ(){
   // the explanation, where it is useful for looking the condition up.
   var _tp = document.getElementById('qtopic');
   _tp.textContent = ''; _tp.style.display = 'none';
-  document.getElementById('qio').textContent = 'Objective '+q.io;
+  document.getElementById('qio').textContent = ioLabel(q.io);
   document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
   document.getElementById('prevbtn').disabled = (idx===0);
 
   if(flagNav){
@@ -707,6 +793,71 @@ function renderQ(){
     document.getElementById('expl').classList.remove('show');
     document.getElementById('nextbtn').style.display='none';
   }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
 }
 
 function choose(sel){
@@ -752,6 +903,7 @@ function revealAnswer(sel, scroll){
   var _tp2 = document.getElementById('qtopic');
   if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
   document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
   document.getElementById('expl').classList.add('show');
   document.getElementById('nextbtn').style.display='inline-block';
   if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -804,6 +956,7 @@ function examReviewHTML(){
     const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
     out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
       <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
       <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
       ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
       <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
@@ -811,6 +964,27 @@ function examReviewHTML(){
   });
   return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
 }
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
 function showResults(){
   stopTimerInterval();
   const finalMs=currentElapsedMs();
@@ -842,6 +1016,7 @@ function showResults(){
       const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
       missed+=`<div class="mitem">
         <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
         <div class="ma you"><b>Your answer:</b> ${you}</div>
         <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
         <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
@@ -863,6 +1038,7 @@ function showResults(){
         <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
       </div>
     </div>
+    ${classCompareHTML(pct)}
     <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
     ${missBlock}
     <div class="resbtns">
@@ -883,13 +1059,13 @@ document.addEventListener('keydown', (e)=>{
   if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
   if(deferFeedback){
     if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
-    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
     const i=map[k.toLowerCase()];
     if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
     return;
   }
   if(answers[idx]===null){
-    const map={'1':0,'2':1,'3':2,'4':3,'a':0,'b':1,'c':2,'d':3};
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
     const i=map[k.toLowerCase()];
     if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
   } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }

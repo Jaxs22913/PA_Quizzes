@@ -85,5 +85,5 @@ FIXES = {
  (120, 2): "The dye is injected intravenously and photographed with a blue flash",
  (122, 1): "Set at zero dioptres — and this is more sensitive than fluorescein",
  (124, 1): "Sudden vision loss, chemical burns and suspected globe rupture",
- (125, 1): "Because it happens to be the last slide of the deck",
+ (125, 1): "Because it happens to come last in the material",
 }

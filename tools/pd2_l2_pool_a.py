@@ -80,8 +80,8 @@ POOL_A = [
  dict(topic="History", io=IOC,
    q="The memory aid \"bugs, drugs, contact\" prompts you to ask about which three areas?",
    opts=[
-     ["Affected family members or contacts and travel, systemic medications, and allergens or irritants encountered through hobbies, occupation or environment",
-      "Correct — infectious exposure, drug exposure and contact exposure, in that order."],
+     ["Affected family members or contacts and travel, systemic medications",
+      "Correct — infectious exposure, drug exposure and contact exposure, in that order. Allergens or irritants encountered through hobbies, occupation or environment."],
      ["Insect bites, antibiotic allergies, and the use of gloves at work",
       "Each is far narrower than the category it stands for."],
      ["Bacterial cultures, prescription records, and patch testing results",
@@ -171,8 +171,8 @@ POOL_A = [
  dict(topic="History", io=IOC,
    q="You see a patient whose skin, hair and nail hygiene appears inadequate. What should this prompt you to assess?",
    opts=[
-     ["The social history, cognition and ability to perform activities of daily living",
-      "Correct. Patients with cognitive problems may not attend to hygiene measures, so poor hygiene is a clinical finding worth explaining."],
+     ["The social history",
+      "Correct. Patients with cognitive problems may not attend to hygiene measures, so poor hygiene is a clinical finding worth explaining. Cognition and ability to perform activities of daily living."],
      ["Whether the patient is being truthful about how often they bathe",
       "The purpose is to identify a barrier to self-care rather than to challenge the patient."],
      ["Nutritional status through serum albumin and prealbumin levels",
@@ -223,8 +223,8 @@ POOL_A = [
  dict(topic="Examination technique", io=IOE,
    q="Which equipment should be available for a skin examination?",
    opts=[
-     ["A ruler, a light source, a magnifying lens, and gloves for any open lesions",
-      "Correct. The ruler matters because several morphological definitions turn on whether a lesion exceeds one centimetre."],
+     ["A ruler, a light source, a magnifying lens",
+      "Correct. The ruler matters because several morphological definitions turn on whether a lesion exceeds one centimetre. Gloves for any open lesions."],
      ["A ruler and a light source only",
       "A magnifying lens and gloves are also required."],
      ["A dermatoscope and a Wood's lamp",
@@ -249,8 +249,8 @@ POOL_A = [
  dict(topic="Examination technique", io=IOE,
    q="Why should the patient wear a gown for the skin examination?",
    opts=[
-     ["It allows inspection of the hair, the anterior and posterior body surfaces, the palms and soles, the nails and the interdigital spaces",
-      "Correct — a complete skin examination means the whole skin surface, including areas patients rarely expose."],
+     ["It allows inspection of the hair",
+      "Correct — a complete skin examination means the whole skin surface, including areas patients rarely expose. The anterior and posterior body surfaces, the palms and soles, the nails and the interdigital spaces."],
      ["It prevents contamination of the patient's clothing during the examination",
       "Protecting clothing is not the reason a gown is used."],
      ["It standardises the appearance of the skin under artificial light",
