@@ -1,0 +1,1098 @@
+{
+ "set1": [
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "test finding",
+   "q": "A 54-year-old has an intraocular pressure of 26 mmHg, but the optic nerve and visual fields are normal. What is this called?",
+   "opts": [
+    [
+     "Normal pressure",
+     "26 is above the normal range."
+    ],
+    [
+     "Ocular hypertension",
+     "Correct — pressure above normal WITHOUT optic nerve damage or field loss. Normal runs about 10 to 21."
+    ],
+    [
+     "Open-angle glaucoma",
+     "Glaucoma implies optic nerve damage or field loss, which this patient does not have."
+    ],
+    [
+     "Angle-closure glaucoma",
+     "An abrupt blockage of the drainage canal, usually with acute pain."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 61"
+  },
+  {
+   "topic": "Antibacterials",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A newborn needs prophylaxis against ophthalmia neonatorum. Which agent?",
+   "opts": [
+    [
+     "Erythromycin ointment",
+     "Correct. It is the named agent for newborn prophylaxis, and it is inexpensive."
+    ],
+    [
+     "Azithromycin solution",
+     "Used for conjunctivitis, and considerably more expensive."
+    ],
+    [
+     "Moxifloxacin solution",
+     "A fluoroquinolone for conjunctivitis and ulcers."
+    ],
+    [
+     "Natamycin suspension",
+     "An antifungal."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 14"
+  },
+  {
+   "topic": "Vasoconstrictors",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "referral",
+   "q": "A 41-year-old man has used a vasoconstrictor drop for three days with no improvement in his red eye. What should he do?",
+   "opts": [
+    [
+     "Continue for another week and reassess",
+     "Continuing past the point of failure risks rebound and delays a diagnosis."
+    ],
+    [
+     "Double the frequency",
+     "More frequent use worsens the rebound problem without addressing the cause."
+    ],
+    [
+     "Switch to a second vasoconstrictor",
+     "Changing brand does not change the class or the problem."
+    ],
+    [
+     "Stop the drop and see a provider",
+     "Correct. No improvement within 72 hours is the stated trigger for review. Because something more serious may be going on."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Vasoconstrictors",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 30-year-old man has used an over-the-counter redness-relief drop every day for a month. His eyes are redder than when he started. What has happened?",
+   "opts": [
+    [
+     "He has bacterial conjunctivitis",
+     "Nothing here suggests infection, and the timing follows the drop rather than an exposure."
+    ],
+    [
+     "The drops have raised his intraocular pressure",
+     "Raised pressure is a steroid and non-steroidal concern, not a vasoconstrictor one."
+    ],
+    [
+     "Rebound hyperaemia",
+     "Correct. Beyond about two weeks, stopping leaves the eye redder than it started. This is the counselling point most worth carrying out of this topic."
+    ],
+    [
+     "He has developed allergic conjunctivitis",
+     "Possible in general, but the history of daily vasoconstrictor use for a month points squarely at rebound."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Antivirals",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 34-year-old has a dendritic corneal lesion consistent with herpes simplex keratitis. Which TOPICAL agent is available?",
+   "opts": [
+    [
+     "Natamycin",
+     "An antifungal."
+    ],
+    [
+     "Trifluridine",
+     "Correct, and its ocular toxicity is punctate keratopathy. Ganciclovir is the other ophthalmic preparation."
+    ],
+    [
+     "Valacyclovir",
+     "An oral agent for simplex keratitis and zoster ophthalmicus, not a topical one."
+    ],
+    [
+     "Foscarnet",
+     "Intravenous, for cytomegalovirus retinitis."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 27"
+  },
+  {
+   "topic": "Dry eye",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 58-year-old with rheumatoid arthritis has chronic dry eye with inflammation. Beyond tear substitutes, which agent is indicated?",
+   "opts": [
+    [
+     "Cyclosporine drops",
+     "Correct. It inhibits interleukin 2 production, reduces lacrimal inflammatory markers and raises tear production. Ocular burning is the commonest complaint."
+    ],
+    [
+     "A topical antihistamine",
+     "It would worsen matters — antihistamines INCREASE ocular dryness."
+    ],
+    [
+     "A vasoconstrictor",
+     "It treats redness short-term and risks rebound."
+    ],
+    [
+     "An ophthalmic antibiotic",
+     "There is no infection here."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 58"
+  },
+  {
+   "topic": "Antibacterials",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "complication",
+   "q": "A 55-year-old has been using tobramycin drops for five days and now has worsening pain and a corneal defect. What has happened?",
+   "opts": [
+    [
+     "Rebound hyperaemia",
+     "That follows vasoconstrictor use, not an antibiotic."
+    ],
+    [
+     "Corneal ulceration",
+     "Correct, along with reactive keratoconjunctivitis. It is one of the few ocular adverse effects specific enough to name a class."
+    ],
+    [
+     "Ordinary ocular irritation, common to all ophthalmic antibiotics",
+     "Irritation is indeed common to all of them, which is why it is NOT the answer when a specific defect has appeared."
+    ],
+    [
+     "A white precipitate from the drug",
+     "That belongs to ciprofloxacin and is a surface deposit, not an ulcer."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "escalation",
+   "q": "A 68-year-old on a prostaglandin analogue still has inadequate pressure control. What is the principle for adding a second agent?",
+   "opts": [
+    [
+     "Add a second prostaglandin analogue",
+     "Same mechanism gives no synergy."
+    ],
+    [
+     "Increase the prostaglandin to twice daily",
+     "That actively reduces its effect."
+    ],
+    [
+     "Add a topical steroid",
+     "Steroids raise intraocular pressure."
+    ],
+    [
+     "Add an agent with a DIFFERENT mechanism",
+     "Correct. Targeting a second route gives synergy, and fewer drops improves compliance. Which brand pairs which two drugs matters far less than the principle."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 73"
+  },
+  {
+   "topic": "Administration",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A parent struggles to get drops into a wriggling toddler's eye. What do you suggest, and what do you warn about?",
+   "opts": [
+    [
+     "A drop given twice as often",
+     "More frequent dosing does not solve the administration problem."
+    ],
+    [
+     "An oral antibiotic instead",
+     "Systemic therapy is reserved for more involved infection."
+    ],
+    [
+     "A vasoconstrictor to reduce redness first",
+     "It treats appearance, not the underlying problem."
+    ],
+    [
+     "An ointment, which blurs vision briefly",
+     "Correct. Ointments suit children and poor compliance, and the blurring means no driving until it clears."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 37"
+  },
+  {
+   "topic": "Steroids",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "complication",
+   "q": "A 60-year-old with a strong family history of glaucoma needs a topical steroid for anterior uveitis. What is the particular concern, and what might you choose?",
+   "opts": [
+    [
+     "Raised intraocular pressure",
+     "Correct. Pressure elevation is more likely with a family history, and the soft steroids carry lower pressure risk. Consider a soft steroid such as loteprednol."
+    ],
+    [
+     "Cataract formation — choose difluprednate",
+     "Cataract is a real steroid risk, but the family history points specifically at pressure, and difluprednate is not a soft steroid."
+    ],
+    [
+     "Corneal ulceration — choose prednisolone",
+     "Ulcers are on the steroid risk list, but prednisolone is not the lower-risk option."
+    ],
+    [
+     "Rebound hyperaemia — avoid steroids entirely",
+     "Rebound hyperaemia belongs to the vasoconstrictors."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 54"
+  },
+  {
+   "topic": "Antivirals",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "first-line",
+   "q": "A 22-year-old has watery, red eyes after a family member had the same. Adenoviral conjunctivitis is diagnosed. What is the treatment?",
+   "opts": [
+    [
+     "Symptomatic relief of irritation",
+     "Correct. It runs a self-limited course. There is no antiviral for it."
+    ],
+    [
+     "Trifluridine drops",
+     "For herpes simplex keratitis and keratoconjunctivitis, not adenovirus."
+    ],
+    [
+     "Oral valacyclovir",
+     "For simplex keratitis and zoster ophthalmicus."
+    ],
+    [
+     "A topical fluoroquinolone",
+     "An antibacterial, which does nothing for a virus."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 25"
+  },
+  {
+   "topic": "Diagnostics",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "initial test",
+   "q": "A 38-year-old reports a foreign body sensation after gardening. Which agent reveals an epithelial defect?",
+   "opts": [
+    [
+     "Tropicamide",
+     "A cycloplegic for dilation."
+    ],
+    [
+     "Phenylephrine",
+     "A mydriatic."
+    ],
+    [
+     "Fluorescein",
+     "Correct — it discloses corneal injury and stains the anterior segment."
+    ],
+    [
+     "Proparacaine",
+     "An anaesthetic, often used alongside it, but it does not stain."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 78"
+  },
+  {
+   "topic": "Administration",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 21-year-old contact lens wearer is treated for conjunctivitis. When may she resume her lenses?",
+   "opts": [
+    [
+     "When the eye is not inflamed and there has been no discharge for 24 hours",
+     "Correct, and she should get rid of her eye makeup too. With the lens discarded or disinfected."
+    ],
+    [
+     "Immediately, as long as she is using drops",
+     "Lenses must be discontinued while the eye is inflamed."
+    ],
+    [
+     "After finishing the full antibiotic course, regardless of the eye",
+     "The criterion is the state of the eye, not the end of the course."
+    ],
+    [
+     "After 7 days in all cases",
+     "The rule is based on inflammation and discharge, not a fixed count."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 38"
+  },
+  {
+   "topic": "Dry eye",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 59-year-old starting cyclosporine drops should be warned about which common effect?",
+   "opts": [
+    [
+     "Ocular burning",
+     "Correct, alongside foreign body sensation and blurred vision. In about one in six patients."
+    ],
+    [
+     "A bitter taste",
+     "That belongs to the carbonic anhydrase inhibitors."
+    ],
+    [
+     "Darkening of the iris",
+     "That belongs to the prostaglandin analogues."
+    ],
+    [
+     "Bradycardia",
+     "That is systemic beta blockade from a glaucoma drop."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 58"
+  },
+  {
+   "topic": "Antifungals",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 47-year-old farm worker develops fungal keratitis after a corneal injury with plant material. Which commercially available ophthalmic agent treats it?",
+   "opts": [
+    [
+     "Trifluridine",
+     "An antiviral."
+    ],
+    [
+     "Natamycin",
+     "Correct — the only commercially available ophthalmic antifungal. It covers Aspergillus, Candida, Cephalosporium, Fusarium and Penicillium."
+    ],
+    [
+     "Amphotericin B drops",
+     "Used ophthalmically but not as a commercially available product; it must be compounded."
+    ],
+    [
+     "Oral fluconazole alone",
+     "Systemic azoles have a role, but the question asks for the available ophthalmic agent."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Precautions",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "initial test",
+   "q": "A 29-year-old presents with an eye complaint. What must be done BEFORE instilling any medication?",
+   "opts": [
+    [
+     "Stain with fluorescein",
+     "A diagnostic step that follows, not the universal first action."
+    ],
+    [
+     "Document a visual acuity",
+     "Correct, along with documenting allergies and the date and result of the last eye examination. Acuity is repeated at every follow-up."
+    ],
+    [
+     "Measure intraocular pressure",
+     "Useful in the right context, but acuity is the stated first step before any drug goes in."
+    ],
+    [
+     "Dilate the pupil",
+     "Dilation itself is a medication, and acuity comes first."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 33"
+  },
+  {
+   "topic": "Allergy",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "first-line",
+   "q": "A 28-year-old has itchy, watery eyes each spring and wants something that works today. Which class do you choose?",
+   "opts": [
+    [
+     "An ophthalmic glucocorticoid",
+     "Reserved for refractory symptoms, and limited to a pulse of under two weeks."
+    ],
+    [
+     "An ophthalmic non-steroidal",
+     "Indicated for postoperative inflammation and allergic conjunctivitis, but not the first reach for acute itch."
+    ],
+    [
+     "An ophthalmic antihistamine",
+     "Correct, and they are typically preferred over mast cell stabilisers. Allow two weeks to judge full efficacy. Which works within minutes."
+    ],
+    [
+     "A mast cell stabiliser",
+     "It needs 5 to 14 days for full efficacy and is NOT useful for acute symptoms."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "first-line",
+   "q": "A 62-year-old is newly diagnosed with open-angle glaucoma and has risk factors. Which class do you start?",
+   "opts": [
+    [
+     "A carbonic anhydrase inhibitor",
+     "Effective, but not the stated first choice."
+    ],
+    [
+     "A topical glucocorticoid",
+     "Steroids RAISE intraocular pressure."
+    ],
+    [
+     "A prostaglandin analogue",
+     "Correct — first line and the most commonly used, dosed once daily. A beta blocker is the other reasonable start."
+    ],
+    [
+     "A cholinergic agonist",
+     "Poor compliance from side effects and frequent dosing."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Delivery",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "complication",
+   "q": "A 74-year-old on timolol drops for glaucoma develops systemic side effects. By what route did the drug reach the circulation?",
+   "opts": [
+    [
+     "Transcorneal absorption into the bloodstream",
+     "Transcorneal absorption is what produces the LOCAL ocular effect."
+    ],
+    [
+     "Absorption through the eyelid skin",
+     "Eyelid skin is not the described route. It is the nasolacrimal duct."
+    ],
+    [
+     "Swallowed residue from the eyelashes",
+     "Swallowed residue is not the described mechanism; drainage down the nasolacrimal duct is."
+    ],
+    [
+     "Nasolacrimal drainage",
+     "Correct. What runs down the duct is absorbed systemically without passing through the liver first. Which also avoids first-pass metabolism."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 8"
+  },
+  {
+   "topic": "Administration",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "You are teaching a 72-year-old to use eye drops. What is the MOST important step?",
+   "opts": [
+    [
+     "Holding a finger over the lacrimal duct",
+     "Important for drops, though unnecessary for gels and ointments."
+    ],
+    [
+     "Tilting the head back",
+     "Part of the technique, but not the step singled out."
+    ],
+    [
+     "Washing the hands",
+     "Correct, and it is singled out as the most important step of all."
+    ],
+    [
+     "Holding the eyes closed for 2 to 3 minutes",
+     "Important, and it limits systemic absorption, but not the step singled out as most important."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 34"
+  },
+  {
+   "topic": "Precautions",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "referral",
+   "q": "At follow-up, a 61-year-old's documented visual acuity is worse than at the first visit. What does that require?",
+   "opts": [
+    [
+     "Repeating the course of drops",
+     "Worsening acuity needs assessment, not more of the same treatment."
+    ],
+    [
+     "Reassurance and review in a week",
+     "Delay is precisely what the rule exists to prevent."
+    ],
+    [
+     "Switching to an ointment",
+     "Formulation is not the issue."
+    ],
+    [
+     "Immediate ophthalmology consult",
+     "Correct — which is the reason acuity is documented at every visit."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 33"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Allergy",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 27-year-old starting an ophthalmic antihistamine asks when she will know if it is working. What do you tell her?",
+   "opts": [
+    [
+     "Allow 5 to 14 days before it works at all",
+     "That is the mast cell stabiliser timeline."
+    ],
+    [
+     "It should work fully within an hour",
+     "Onset is fast but full efficacy takes about two weeks."
+    ],
+    [
+     "Allow six weeks",
+     "Longer than the stated period."
+    ],
+    [
+     "It acts within minutes",
+     "Correct — fast onset, slower to reach full efficacy. But allow two weeks to judge the full effect."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Vasoconstrictors",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 24-year-old woman asks how long she can keep using her redness-relief drops. What do you tell her?",
+   "opts": [
+    [
+     "As long as her eyes stay red",
+     "That is exactly what produces rebound hyperaemia."
+    ],
+    [
+     "No more than six weeks",
+     "Well beyond the stated limit."
+    ],
+    [
+     "No more than two weeks",
+     "Correct, and if there is no improvement within 72 hours she should stop and be seen."
+    ],
+    [
+     "No more than 72 hours",
+     "72 hours is the point at which FAILURE should prompt review, not the limit on use."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Diagnostics",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 45-year-old needs pupil dilation for fundoscopy, and you want the pupil to stay as reactive to light as possible. Which agent?",
+   "opts": [
+    [
+     "Atropine",
+     "An antimuscarinic with the longest action of the three."
+    ],
+    [
+     "Phenylephrine",
+     "Correct. The sympathomimetic leaves the pupil more reactive to light than an antimuscarinic does."
+    ],
+    [
+     "Tropicamide",
+     "An antimuscarinic; the pupil is less reactive."
+    ],
+    [
+     "Cyclopentolate",
+     "An antimuscarinic; the pupil is less reactive."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 77"
+  },
+  {
+   "topic": "Antibacterials",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 6-year-old is prescribed ciprofloxacin drops. Two days later the parent reports a white deposit on the eye. What is this?",
+   "opts": [
+    [
+     "A corneal ulcer forming",
+     "Ulceration is the aminoglycoside risk, and it would be painful rather than a surface deposit."
+    ],
+    [
+     "A fungal superinfection",
+     "Nothing here suggests fungus, and the timing follows the drug too closely."
+    ],
+    [
+     "Dried ointment residue",
+     "Ciprofloxacin here is a solution, and the precipitate is a known drug effect."
+    ],
+    [
+     "An expected white precipitate",
+     "Correct, and specific enough to ciprofloxacin to be worth warning about in advance. Seen in about one in six patients on this drug."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 21"
+  },
+  {
+   "topic": "Diagnostics",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "avoid",
+   "q": "A 33-year-old asks for a prescription for the numbing drops that helped during foreign body removal. What do you do?",
+   "opts": [
+    [
+     "Decline — not for home use",
+     "Correct. The eye stays numb for 10 to 20 minutes with no blink reflex, which is unsafe unsupervised."
+    ],
+    [
+     "Prescribe a short course for comfort",
+     "Explicitly not to be prescribed."
+    ],
+    [
+     "Prescribe them with a warning not to drive",
+     "The problem is the absent blink reflex, not driving alone, and they are not dispensed."
+    ],
+    [
+     "Substitute a topical steroid",
+     "A different drug for a different purpose, with its own risks."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 75"
+  },
+  {
+   "topic": "Antibacterials",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 19-year-old contact lens wearer has purulent conjunctivitis. Keratitis has been excluded. Which class do you reach for, and why?",
+   "opts": [
+    [
+     "A fluoroquinolone",
+     "Correct, and the same class is preferred for corneal ulcers for the same reason. Because lens wearers are at high risk for Pseudomonas."
+    ],
+    [
+     "A macrolide, because it is soothing on the inflamed eye",
+     "Erythromycin is soothing and cheap, but it does not cover the organism this patient is at risk from."
+    ],
+    [
+     "An aminoglycoside, because it covers gram negatives",
+     "Its risk of corneal ulceration makes it a poor choice in an eye already at risk."
+    ],
+    [
+     "Sulfacetamide, because it is inexpensive",
+     "Cost is not the deciding factor when Pseudomonas is the concern."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 22"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 49-year-old woman starting a prostaglandin analogue in one eye should be warned about which cosmetic effects?",
+   "opts": [
+    [
+     "Drooping of the eyelid",
+     "Not an effect attributed to prostaglandin analogues here."
+    ],
+    [
+     "Longer lashes and iris colour change",
+     "Correct, and they matter more when only one eye is treated. Conjunctival hyperaemia is common too."
+    ],
+    [
+     "Yellowing of the sclera",
+     "Yellowing of the sclera is not an effect of the prostaglandin analogues."
+    ],
+    [
+     "Permanent pupil dilation",
+     "Permanent dilation is not an effect of this class; the changes are to lashes and iris colour."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 65"
+  },
+  {
+   "topic": "Steroids",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 51-year-old is prescribed a topical steroid for anterior uveitis. How long may the course run?",
+   "opts": [
+    [
+     "Less than 72 hours",
+     "Shorter than the stated limit."
+    ],
+    [
+     "Less than two weeks, as a pulse",
+     "Correct. The risks — cataract, raised pressure, infection, delayed healing, corneal ulcers — are why."
+    ],
+    [
+     "Up to three months",
+     "Far beyond the stated limit."
+    ],
+    [
+     "As long as inflammation persists",
+     "That is exactly what the pulse limit exists to prevent."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 54"
+  },
+  {
+   "topic": "Delivery",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 57-year-old needs treatment for endophthalmitis with an immediate local effect. Which route achieves this by circumventing absorption entirely?",
+   "opts": [
+    [
+     "Subconjunctival injection",
+     "Prompt or sustained, but it does not circumvent absorption."
+    ],
+    [
+     "Oral therapy",
+     "The slowest route to the eye of those listed."
+    ],
+    [
+     "Intravitreal injection or device",
+     "Correct, with a potential sustained effect too. Its limitation is retinal toxicity."
+    ],
+    [
+     "Topical drops",
+     "Prompt but formulation-dependent, and much is lost to drainage."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 5"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "avoid",
+   "q": "A 26-year-old finds his vision blurs badly on pilocarpine. Why is this class particularly poorly tolerated in younger patients?",
+   "opts": [
+    [
+     "It causes iris colour change in the young",
+     "That belongs to the prostaglandin analogues."
+    ],
+    [
+     "Miosis blurs vision",
+     "Correct — fixed small pupils, myopia and visual disturbance, and compliance suffers for it."
+    ],
+    [
+     "Younger patients absorb more drug systemically",
+     "Systemic absorption is not greater in the young. The stated reason is the visual blurring itself."
+    ],
+    [
+     "The drug raises intraocular pressure in the young",
+     "It lowers pressure by increasing outflow."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 72"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "avoid",
+   "q": "An 18-month-old needs pressure-lowering therapy. Which class is contraindicated?",
+   "opts": [
+    [
+     "Prostaglandin analogues",
+     "Prostaglandin analogues carry no stated age contraindication; the under-two rule is the alpha-2 agonists."
+    ],
+    [
+     "Carbonic anhydrase inhibitors",
+     "Their problems are taste and stinging."
+    ],
+    [
+     "Cholinergic agonists",
+     "Their problems are miosis and blurring."
+    ],
+    [
+     "Alpha-2 agonists",
+     "Correct — contraindicated under two years because of central nervous system depression and apnoea."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 69"
+  },
+  {
+   "topic": "Administration",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 40-year-old is shown how to use both a drop and an ointment. Why must she cover the lacrimal duct after the DROP but not the ointment?",
+   "opts": [
+    [
+     "The ointment is absorbed entirely through the cornea",
+     "Corneal absorption is not the reason. It is the viscosity: the ointment does not drain away."
+    ],
+    [
+     "Ointments have no systemic absorption at all",
+     "The reason given is that it does not go anywhere, rather than a claim of zero absorption."
+    ],
+    [
+     "Drops are sterile and ointments are not",
+     "Both are handled aseptically."
+    ],
+    [
+     "The ointment is too viscous to drain away",
+     "Correct. With a drop, occluding the duct limits nasolacrimal drainage and the systemic absorption that follows it. So there is nothing to block."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 37"
+  },
+  {
+   "topic": "Vasoconstrictors",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "complication",
+   "q": "A toddler swallows a bottle of a parent's redness-relief drops. Why is this dangerous, given the drug acts on alpha-1 receptors in the eye?",
+   "opts": [
+    [
+     "Systemically they act on alpha-2",
+     "Correct. Local alpha-1 against systemic alpha-2 is exactly why an ingestion behaves differently from an instillation."
+    ],
+    [
+     "Systemically they act on beta-1 receptors",
+     "Beta-1 is the cardiac target of the beta blocker drops, not these."
+    ],
+    [
+     "They are converted to epinephrine in the gut",
+     "Dipivefrin is the prodrug converted to epinephrine, and that happens in the eye."
+    ],
+    [
+     "They inhibit carbonic anhydrase systemically",
+     "That is the mechanism of a different glaucoma class."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 49"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 66-year-old on latanoprost asks whether using it twice daily would lower his pressure further. What do you tell him?",
+   "opts": [
+    [
+     "Yes, but only if pressure remains high",
+     "Frequency above once daily reduces the effect regardless of pressure."
+    ],
+    [
+     "It makes no difference either way",
+     "It actively reduces the benefit."
+    ],
+    [
+     "No — it INHIBITS the effect",
+     "Correct, and counterintuitive enough to be worth stating plainly."
+    ],
+    [
+     "Yes, twice daily is more effective",
+     "The opposite is true here: exceeding once daily reduces the pressure-lowering effect."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 66"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "education",
+   "q": "A 71-year-old on dorzolamide complains of a persistent bitter taste and stinging on instillation. What do you tell him?",
+   "opts": [
+    [
+     "Both are common with this class",
+     "Correct, and they are common enough that warning in advance improves adherence. Bitter taste in about a quarter and stinging in about a third."
+    ],
+    [
+     "This suggests an allergy and the drug must stop",
+     "Allergic conjunctivitis can occur, but taste and stinging are expected effects."
+    ],
+    [
+     "This means the drop is contaminated",
+     "No — they are known effects of the drug."
+    ],
+    [
+     "This indicates systemic absorption and cardiac risk",
+     "Cardiac risk belongs to the beta blockers."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 70"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "complication",
+   "q": "A 70-year-old on timolol drops develops fatigue and a heart rate of 48. What has happened?",
+   "opts": [
+    [
+     "An allergic reaction to the preservative",
+     "It would not produce bradycardia."
+    ],
+    [
+     "Rebound hyperaemia",
+     "A vasoconstrictor effect, and it does not affect heart rate."
+    ],
+    [
+     "Carbonic anhydrase inhibition",
+     "A different class, with taste and stinging as its problems."
+    ],
+    [
+     "Systemic beta blockade",
+     "Correct. Worsening heart failure, bradycardia, heart block and increased airway resistance are all possible from a drop."
+    ]
+   ],
+   "c": 3,
+   "cite": "Ophthalmology-2.pptx, Slide 67"
+  },
+  {
+   "topic": "Glaucoma",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "avoid",
+   "q": "A 58-year-old with asthma needs a beta blocker drop for glaucoma. Which agent, and why?",
+   "opts": [
+    [
+     "Levobunolol, because it is well tolerated",
+     "Also nonselective."
+    ],
+    [
+     "Carteolol, because it is beta-2 selective",
+     "It is nonselective, and a beta-2 selective blocker is not what you would want anyway."
+    ],
+    [
+     "Betaxolol — beta-1 selective",
+     "Correct. The nonselective agents are more efficacious in the eye but carry the respiratory risk."
+    ],
+    [
+     "Timolol, because it is more efficacious",
+     "Nonselective, and its increased airway resistance is exactly the problem here."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 68"
+  },
+  {
+   "topic": "Allergy",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "agent/regimen",
+   "q": "A 35-year-old with predictable seasonal allergy cannot tolerate antihistamine drops and is willing to start weeks before the season. Which class suits her?",
+   "opts": [
+    [
+     "An ophthalmic antibiotic",
+     "There is no infection to treat."
+    ],
+    [
+     "A mast cell stabiliser",
+     "Correct. Slow to work — 5 to 14 days — but that matters less when treatment starts before the season."
+    ],
+    [
+     "A vasoconstrictor used daily through the season",
+     "Prolonged use causes rebound hyperaemia."
+    ],
+    [
+     "A topical glucocorticoid through the season",
+     "Steroids are limited to pulses of under two weeks."
+    ]
+   ],
+   "c": 1,
+   "cite": "Ophthalmology-2.pptx, Slide 47"
+  },
+  {
+   "topic": "Antifungals",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "risk factors",
+   "q": "A 63-year-old is being assessed for a corneal infiltrate. Which of her features most raises the risk that it is FUNGAL?",
+   "opts": [
+    [
+     "Long-term topical steroid use",
+     "Correct. Immunosuppression — including topical steroids — sits alongside trauma, chronic surface disease and contact lens wear."
+    ],
+    [
+     "A history of migraine",
+     "No stated relationship to ocular fungal infection."
+    ],
+    [
+     "Taking a beta blocker for hypertension",
+     "Antihypertensive therapy is not among the listed risk factors for ocular fungal infection."
+    ],
+    [
+     "Wearing reading glasses",
+     "Spectacles are not a risk factor. Contact lens WEAR is, alongside trauma and immunosuppression."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Delivery",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "mechanism",
+   "q": "A 36-year-old has a small peripheral corneal infection. Why can a topical antibiotic reach concentrations at the eye that an intravenous one cannot?",
+   "opts": [
+    [
+     "The cornea actively transports antibiotics",
+     "Transcorneal absorption is passive and governed by the concentration gradient."
+    ],
+    [
+     "Topical drugs avoid the blood-brain barrier",
+     "The blood-brain barrier is not what separates topical from systemic delivery to the eye."
+    ],
+    [
+     "It gives very high LOCAL concentrations",
+     "Correct — and the trade-off is that more involved infection still needs systemic therapy."
+    ],
+    [
+     "Topical drugs have greater systemic bioavailability",
+     "The opposite: systemic bioavailability from a drop is limited."
+    ]
+   ],
+   "c": 2,
+   "cite": "Ophthalmology-2.pptx, Slide 12"
+  },
+  {
+   "topic": "Antibacterials",
+   "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education",
+   "slot": "avoid",
+   "q": "A 44-year-old with a documented sulfonamide allergy needs treatment for bacterial conjunctivitis. Which agent must be avoided?",
+   "opts": [
+    [
+     "Sulfacetamide",
+     "Correct. It is a sulfonamide, so the allergy rules it out."
+    ],
+    [
+     "Bacitracin",
+     "A cell wall agent with no sulfonamide component."
+    ],
+    [
+     "Erythromycin",
+     "A macrolide, unrelated to sulfonamides."
+    ],
+    [
+     "Tobramycin",
+     "An aminoglycoside, unrelated to sulfonamides."
+    ]
+   ],
+   "c": 0,
+   "cite": "Ophthalmology-2.pptx, Slide 19"
+  }
+ ]
+}
