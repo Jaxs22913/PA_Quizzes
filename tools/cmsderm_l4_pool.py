@@ -23,10 +23,6 @@ Q("Acne vulgaris",
     "Adding an oral antibiotic is the regimen for moderate papulopustular and mixed acne, and requires inflammatory "
     "lesions to justify it. This patient has none, so the antibiotic has no inflammatory target and adds resistance "
     "risk."],
-   ["Oral isotretinoin as monotherapy",
-    "Isotretinoin monotherapy is reserved for severe nodular acne or resistant mild disease. It is a potent teratogen "
-    "requiring mandatory pregnancy testing and prescriber registration, which is a substantial burden for untreated "
-    "comedonal acne."],
    ["Topical benzoyl peroxide alone",
     "Benzoyl peroxide is a first-line drug especially for mild acne and suppresses Cutibacterium acnes, but its role "
     "is antimicrobial and keratolytic rather than primarily comedolytic. The retinoid is the agent named for "
@@ -51,10 +47,7 @@ Q("Acne vulgaris",
     "invites resistance in Cutibacterium acnes. It also leaves the follicular hyperkeratinisation untreated."],
    ["A topical retinoid alone",
     "A topical retinoid alone is the regimen for comedonal disease. Moderate inflammatory acne that has already "
-    "failed topical therapy needs systemic treatment added."],
-   ["Oral isotretinoin as monotherapy",
-    "Isotretinoin monotherapy sits alongside the triple regimen for severe nodular acne. Moving to it before trying "
-    "the recommended combination escalates past an effective and much safer option."]],
+    "failed topical therapy needs systemic treatment added."]],
   0, 33),
 
 Q("Acne vulgaris",
@@ -69,9 +62,6 @@ Q("Acne vulgaris",
    ["Monthly liver function tests, with no pregnancy testing required",
     "Laboratory monitoring accompanies isotretinoin, but omitting pregnancy testing removes the single most important "
     "safeguard for a potent teratogen in a woman of childbearing age."],
-   ["A negative pregnancy test before starting and one week after completion",
-    "The post-treatment interval is wrong. Testing is required 5 weeks after treatment, and shortening it to a week "
-    "would clear a patient while the drug's teratogenic risk persists."],
    ["No specific requirements, since isotretinoin is used as monotherapy",
     "Monotherapy describes how the drug is combined with others, not how it is monitored. Isotretinoin carries the "
     "strictest prescribing requirements of any acne agent."]],
@@ -88,9 +78,6 @@ Q("Acne vulgaris",
    ["Apply the two together but wash the face vigorously between applications",
     "Vigorous washing is itself discouraged; the advice is to wash no more than twice daily with a gentle cleanser "
     "and warm rather than hot water. This compounds irritation instead of preventing it."],
-   ["Use only one of the two, since they cannot be used in the same regimen",
-    "They can and often should both be used, just not applied at the same time. Discarding one removes a component of "
-    "the recommended regimen."],
    ["Apply both twice daily and expect clearance within one week",
     "Improvement takes 4 to 6 weeks, clinical response is measured by new lesion counts after 6 to 8 weeks, and the "
     "back and chest may take 3 to 4 months. A one-week expectation guarantees perceived failure."]],
@@ -106,9 +93,6 @@ Q("Acne vulgaris",
    ["Rosacea",
     "Rosacea is on the differential but is identified by papules and pustules in the middle third of the face with "
     "telangiectasias, flushing, and an absence of comedones. It does not cause hirsutism or menstrual irregularity."],
-   ["Anabolic steroid use",
-    "Anabolic steroid use is a recognised cause of acne and should be asked about in the medication history. It would "
-    "not typically produce irregular menses with hirsutism in the way endogenous androgen excess does."],
    ["Acne mechanica",
     "Acne mechanica follows pressure on the skin from shoulder pads, orthopaedic casts, or helmets occluding the "
     "pilosebaceous follicle. It is localised to the pressure site and has no endocrine features."],
@@ -132,9 +116,6 @@ Q("Folliculitis",
    ["Streptococcus pyogenes",
     "Streptococcus pyogenes is the most common organism in erysipelas and a cause of impetigo and cellulitis. It is "
     "not the characteristic organism of follicular pustules."],
-   ["Corynebacterium minutissimum",
-    "Corynebacterium minutissimum causes erythrasma, a chronic superficial infection of intertriginous skin that "
-    "fluoresces coral-red under a Wood's lamp. It does not produce follicular pustules."],
    ["Candida albicans",
     "Candida albicans is the most common pathogen in chronic paronychia and causes cutaneous candidiasis in moist "
     "occluded sites. A pustule pierced by a central hair is a bacterial follicular lesion."]],
@@ -154,9 +135,6 @@ Q("Pseudomonas folliculitis",
    ["Oral trimethoprim-sulfamethoxazole for probable methicillin-resistant Staphylococcus aureus",
     "That regimen targets methicillin-resistant Staphylococcus aureus, whereas the organism here is a gram-negative "
     "rod acquired from contaminated water. The antibiotic would not cover it."],
-   ["Topical mupirocin applied three times daily",
-    "Mupirocin is a topical antistaphylococcal agent used for mild bacterial folliculitis and impetigo. It does not "
-    "cover Pseudomonas aeruginosa."],
    ["Advise that showering immediately after hot tub use prevents recurrence",
     "Showering after contact with contaminated water specifically does not prevent infection. Prevention depends on "
     "continuous water filtration, frequent monitoring of chlorine levels, and frequent water changes."]],
@@ -170,10 +148,6 @@ Q("Pseudofolliculitis barbae",
     "Correct. Pseudofolliculitis barbae is a foreign body reaction to hair in any shaved area. The cut hair curves "
     "into the follicular wall and penetrates the skin to form a tender red papule or pustule, and it occurs commonly "
     "in Black men because of tightly curled facial hair together with keratin gene variations."],
-   ["Bacterial infection of the follicle by Staphylococcus aureus",
-    "True bacterial folliculitis is a distinct condition, though secondary infection can complicate "
-    "pseudofolliculitis barbae and lead to pustules and abscess formation. The primary process here is mechanical "
-    "rather than infective."],
    ["An allergic reaction to shaving products",
     "Allergic contact dermatitis would produce a well-demarcated eruption over the whole area of product contact "
     "rather than discrete papules each containing a re-entrant hair shaft."],
@@ -200,10 +174,7 @@ Q("Pseudofolliculitis barbae",
     "possible is the first recommendation."],
    ["Continue shaving as usual and rely on a topical corticosteroid to control the papules",
     "Mild corticosteroids reduce inflammation and are part of treatment, but relying on them while continuing the "
-    "provoking technique treats the consequence and leaves the cause."],
-   ["Use a chemical depilatory daily on freshly shaved skin",
-    "Chemical depilatories are a shaving alternative rather than an addition, and applying one to freshly shaved "
-    "irritated skin increases the irritant burden."]],
+    "provoking technique treats the consequence and leaves the cause."]],
   0, 57),
 
 Q("Furuncles and carbuncles",
@@ -221,9 +192,7 @@ Q("Furuncles and carbuncles",
     "Staphylococcus aureus. A 4 mm lesion does not require it as a first step."],
    ["Oral trimethoprim-sulfamethoxazole for presumed methicillin-resistant Staphylococcus aureus",
     "Coverage for methicillin-resistant Staphylococcus aureus is used when it is cultured or suspected. Presuming it "
-    "in an afebrile patient with a single small lesion that needs no antibiotic at all is two steps too far."],
-   ["Squeezing the lesion to express its contents",
-    "Patients are specifically instructed not to squeeze pustules. Doing so risks deeper inoculation and spread."]],
+    "in an afebrile patient with a single small lesion that needs no antibiotic at all is two steps too far."]],
   0, 65),
 
 Q("Furuncles and carbuncles",
@@ -240,9 +209,6 @@ Q("Furuncles and carbuncles",
    ["A carbuncle, whose mainstay of therapy is oral antibiotics alone",
     "The lesion is identified correctly but antibiotics alone leave the collection undrained. Incision and drainage "
     "is the mainstay, with antibiotics as an adjunct."],
-   ["An abscess, whose mainstay of therapy is warm soaks",
-    "An abscess arises from traumatic inoculation of bacteria rather than from hair follicles, and warm soaks apply "
-    "when a lesion has already drained spontaneously. This lesion arises from confluent follicles."],
    ["Hidradenitis suppurativa, whose mainstay of therapy is topical clindamycin",
     "Hidradenitis suppurativa affects apocrine-bearing skin of the axilla, groin, breasts, and perineum with "
     "recurrence more than twice in six months. The posterior neck is not an apocrine site and this is an acute single "
@@ -265,9 +231,6 @@ Q("Hidradenitis suppurativa",
    ["Typical lesions, characteristic distribution, and a biopsy showing follicular occlusion",
     "Biopsy would show follicular occlusion by keratinous material, but it is explicitly not usually required. "
     "Requiring it would make a clinical diagnosis unnecessarily invasive."],
-   ["Fever, leukocytosis, and a draining sinus",
-    "These are markers of acute infection rather than the diagnostic elements of a chronic recurrent apocrine "
-    "inflammatory disease."],
    ["A single episode of axillary abscess with a positive family history",
     "One episode cannot satisfy the recurrence criterion, which is what separates this condition from an isolated "
     "furuncle or abscess."]],
@@ -286,9 +249,6 @@ Q("Hidradenitis suppurativa",
    ["Wearing tight-fitting garments to support the affected areas",
     "Constrictive clothing and frictional trauma are among the exposures to avoid. Tight garments worsen the "
     "mechanical component of the disease."],
-   ["Applying heat to the axillae daily",
-    "Avoiding heat exposure is a listed preventive measure, and hot weather with excessive perspiration is a "
-    "predisposing factor."],
    ["Shaving the affected areas daily with a multi-blade razor",
     "Laser hair removal appears among the preventive options, but daily razor shaving of inflamed apocrine-bearing "
     "skin adds trauma rather than reducing it."]],
@@ -302,9 +262,6 @@ Q("Erythrasma",
     "Correct. Erythrasma is a chronic superficial infection of intertriginous skin caused by Corynebacterium "
     "minutissimum invading the upper third of the stratum corneum. Coral-red fluorescence under a Wood's lamp is "
     "diagnostic, and first-line treatment for localised disease is topical erythromycin or clindamycin."],
-   ["Corynebacterium minutissimum, treated with oral erythromycin or clarithromycin",
-    "The organism is right but oral therapy is reserved for widespread disease. Localised disease is treated "
-    "topically, so this over-treats."],
    ["A dermatophyte, treated with topical terbinafine",
     "Tinea cruris and tinea pedis are on the differential and occupy the same sites, which is what makes this "
     "tempting. But dermatophytes do not fluoresce coral-red, and that finding is what settles the diagnosis."],
@@ -330,9 +287,6 @@ Q("Impetigo",
    ["Oral cephalexin",
     "Cephalexin is the oral drug of choice for children, but oral therapy is reserved for more extensive disease. "
     "Four lesions is a limited number, so topical treatment is preferred and carries fewer side effects."],
-   ["Oral trimethoprim-sulfamethoxazole for presumed methicillin-resistant Staphylococcus aureus",
-    "Coverage for methicillin-resistant Staphylococcus aureus is used when it is cultured or suspected, and cultures "
-    "are obtained for high-risk patients such as healthcare workers or teachers. Nothing here suggests that risk."],
    ["Oral penicillin V",
     "Treatment should cover both staphylococci and streptococci, and penicillin V does not cover Staphylococcus "
     "aureus. Penicillin V is the drug for erysipelas, where group A streptococcus is the organism."]],
@@ -354,10 +308,7 @@ Q("Impetigo",
     "bacterial infection. Changing antibiotics would not address it."],
    ["This is rheumatic fever following the skin infection",
     "Acute post-streptococcal glomerulonephritis is the complication named as following impetigo, and its features "
-    "are renal rather than cardiac or articular."],
-   ["This is an allergic reaction to the antibiotic used for the impetigo",
-    "A drug reaction would not produce haematuria with hypertension and oedema three weeks after treatment in this "
-    "characteristic pattern."]],
+    "are renal rather than cardiac or articular."]],
   0, 97),
 
 Q("Impetigo",
@@ -374,9 +325,6 @@ Q("Impetigo",
    ["Streptococcus pyogenes exclusively, through direct dermal invasion",
     "Streptococcus pyogenes contributes to non-bullous impetigo and is the main organism in erysipelas, but bullous "
     "impetigo is exclusively staphylococcal."],
-   ["Corynebacterium minutissimum invading the stratum corneum",
-    "Corynebacterium minutissimum causes erythrasma, an asymptomatic intertriginous patch with coral-red "
-    "fluorescence. It does not produce bullae."],
    ["An autoimmune antibody against the epithelial basement membrane",
     "Antibodies against the basement membrane produce bullous pemphigoid, a disease of adults over 60 with tense "
     "1 to 3 cm bullae. This is a toxin-mediated infection in a young child."]],
@@ -392,9 +340,6 @@ Q("Impetigo",
    ["Non-bullous impetigo",
     "Non-bullous impetigo is the more common form and produces a superficial honey-coloured crust over an erosion "
     "rather than a deeper dermal ulceration with a thick grey-yellow crust."],
-   ["Bullous impetigo",
-    "Bullous impetigo produces fragile superficial bullae on intact skin that rupture leaving collarettes. It is "
-    "superficial rather than ulcerative."],
    ["Erysipelas",
     "Erysipelas involves the upper dermis and superficial lymphatics, producing a raised plaque with a clear line of "
     "demarcation and high fever. It is not a crusted ulcer at a bite site."],
@@ -418,9 +363,6 @@ Q("Erysipelas",
    ["Streptococcus pyogenes, treated with trimethoprim-sulfamethoxazole",
     "The organism is right but the drug is aimed at methicillin-resistant Staphylococcus aureus and has poor "
     "streptococcal activity. Penicillin V is the named agent."],
-   ["Pseudomonas aeruginosa, treated with ciprofloxacin",
-    "Pseudomonas aeruginosa causes hot tub folliculitis after contaminated water exposure. It is not the organism of "
-    "a febrile demarcated leg plaque."],
    ["Corynebacterium minutissimum, treated with topical erythromycin",
     "Corynebacterium minutissimum causes erythrasma, which is chronic, asymptomatic, and non-febrile. Sudden high "
     "fever with a rapidly spreading plaque excludes it."]],
@@ -442,10 +384,7 @@ Q("Cellulitis",
     "sudden onset within 48 hours of the skin changes."],
    ["Only erysipelas is caused by Streptococcus pyogenes",
     "Streptococcus pyogenes is the most common erysipelas organism, but group A beta-haemolytic streptococci also "
-    "cause cellulitis alongside Staphylococcus aureus. The organism does not separate them reliably."],
-   ["Only cellulitis follows a portal of entry",
-    "Both follow a portal of entry such as tinea pedis, trauma, or an open lesion, and in erysipelas the inciting "
-    "event is often not recalled at all."]],
+    "cause cellulitis alongside Staphylococcus aureus. The organism does not separate them reliably."]],
   0, 107),
 
 Q("Cellulitis",
@@ -460,9 +399,6 @@ Q("Cellulitis",
     "Cellulitis may look and feel worse during the first day as destroyed pathogens release enzymes that increase "
     "local inflammation, which makes this genuinely true at 24 hours. But fever usually resolves within 24 hours of "
     "antibiotics, and persistence beyond 48 hours demands reassessment."],
-   ["Contact dermatitis, given the failure to respond to antibiotics",
-    "Contact dermatitis is on the differential but is identified by itching, vesicles, and absence of fever. This "
-    "patient is febrile with spreading erythema."],
    ["Deep vein thrombosis as the sole explanation",
     "Deep vein thrombosis is on the differential and should be considered, but it would not explain fever with "
     "expanding erythema, and it does not carry the surgical urgency of the correct answer."],
@@ -481,9 +417,6 @@ Q("Cellulitis",
    ["This is the expected appearance of resolving cellulitis",
     "Resolving cellulitis fades from erythema without becoming tense, cyanotic, or bronzed. Mistaking necrosis for "
     "improvement is the error that delays the surgery this patient needs."],
-   ["This indicates a drug reaction to the antibiotic",
-    "A drug reaction would not produce localised bronzed, cyanotic, non-perfused tissue within the area of "
-    "infection."],
    ["This indicates deep vein thrombosis and anticoagulation should be started",
     "Deep vein thrombosis produces swelling and pain but not bronzed necrotic skin, and anticoagulation would not "
     "address non-perfused devitalised tissue."],
@@ -508,9 +441,6 @@ Q("Necrotizing fasciitis",
     "Broad-based antibiotics covering aerobic gram-positive and gram-negative organisms are given, but they are an "
     "adjunct to surgery rather than a substitute. Waiting 24 hours in a rapidly progressive necrotising infection is "
     "not survivable management."],
-   ["Admit for observation and elevate the limb",
-    "Observation is exactly what leads to the described pattern of patients being diagnosed with cellulitis, sent "
-    "home, and returning with worsening disease."],
    ["Perform bedside incision and drainage in the emergency department",
     "This condition requires aggressive operative debridement of necrotic tissue in theatre with admission to a "
     "surgical intensive care unit, not a bedside drainage procedure."]],
@@ -523,9 +453,6 @@ Q("Necrotizing fasciitis",
     "infection",
     "Correct. Gas may be present with Clostridium perfringens infection but is not present with group A streptococcal "
     "infection. Ultrasound is also useful for demonstrating air bubbles in soft tissue."],
-   ["Gas is present with group A streptococcal infection and absent with Clostridium perfringens",
-    "The two organisms are reversed. A clinician using this rule would exclude clostridial infection on the very "
-    "finding that suggests it."],
    ["Gas is present in all cases of necrotizing fasciitis regardless of organism",
     "Absence of gas does not exclude necrotizing fasciitis, and group A streptococcal disease specifically does not "
     "produce it. Requiring gas for the diagnosis would miss the common streptococcal form."],
@@ -553,9 +480,7 @@ Q("Acute paronychia",
     "prolonged immersion or chemical exposure. This is an acute bacterial process following trauma."],
    ["Oral acyclovir for probable herpetic whitlow",
     "Herpetic whitlow is on the differential and a Tzanck smear is used to rule it out, but it produces grouped "
-    "painful vesicles rather than a purulent collection following a manicure."],
-   ["Nail plate removal in all cases",
-    "Nail removal is not the described management. Incision and drainage of the collection is what is required."]],
+    "painful vesicles rather than a purulent collection following a manicure."]],
   0, 119),
 
 Q("Chronic paronychia",
@@ -574,10 +499,7 @@ Q("Chronic paronychia",
     "prescribing soaks perpetuates the condition."],
    ["Pseudomonas aeruginosa, and the nail should be removed",
     "Pseudomonal nail infection appears on the differential, but Candida albicans is the most common pathogen and "
-    "nail removal is not the described treatment."],
-   ["A dermatophyte, treated with oral terbinafine",
-    "Onychomycosis is on the differential, and the thickened discoloured nail plates make it worth excluding. But the "
-    "primary process here is inflammation of the proximal nail fold from chronic wet work."]],
+    "nail removal is not the described treatment."]],
   0, 123),
 
 Q("MRSA considerations",
@@ -592,8 +514,6 @@ Q("MRSA considerations",
    ["Penicillin V or amoxicillin",
     "Penicillin V is the drug for erysipelas, where group A streptococcus is the organism. Neither agent covers "
     "methicillin-resistant Staphylococcus aureus."],
-   ["Ciprofloxacin or acetic acid soaks",
-    "Ciprofloxacin and dilute acetic acid soaks belong to Pseudomonas folliculitis acquired from contaminated water."],
    ["Topical mupirocin alone",
     "Mupirocin ointment applied to the nares is used to address the Staphylococcus aureus carrier state in recurrent "
     "folliculitis. It is not adequate treatment for a drained methicillin-resistant abscess."]],
@@ -613,10 +533,7 @@ Q("MRSA considerations",
     "diagnosis. It is a reason not to culture rather than a reason to."],
    ["Any patient being treated with topical mupirocin",
     "Mupirocin is adequate for most cases of limited non-bullous impetigo and as effective as oral therapy. Its use "
-    "does not itself indicate culture."],
-   ["Only patients who have already failed oral antibiotics",
-    "Waiting for treatment failure delays identification in exactly the high-risk groups where resistance is "
-    "anticipated in advance."]],
+    "does not itself indicate culture."]],
   0, 93, IO_B),
 ]
 
@@ -628,9 +545,6 @@ Q("Acne vulgaris",
     "Correct. Acne involves follicular hyperkeratinisation with excess keratin in the follicle, increased sebum "
     "production providing a growth medium, proliferation of Cutibacterium acnes, and inflammation. The temporal "
     "sequence among them is not fully understood."],
-   ["Follicular hyperkeratinisation, decreased sebum production, bacterial proliferation, and inflammation",
-    "Sebum production is increased rather than decreased — the sebum provides the growth medium the bacteria need. "
-    "Reversing it removes the link between the sebaceous gland and the organism."],
    ["Apocrine gland occlusion, bacterial proliferation, sinus tract formation, and scarring",
     "Apocrine occlusion with sinus tracts describes hidradenitis suppurativa, which is called acne inversa because it "
     "resembles acne vulgaris but affects different glands."],
@@ -654,8 +568,6 @@ Q("Acne vulgaris",
    ["The nodule, whose presence defines the diagnosis",
     "Nodules occur in severe acne and drive the decision to use isotretinoin, but they are a severity marker rather "
     "than the hallmark that identifies the disease."],
-   ["The telangiectasia, whose presence confirms acne",
-    "Telangiectasias belong to rosacea. Their presence argues against acne rather than for it."],
    ["The papule, which is unique to acne among facial eruptions",
     "Papules occur across acne, rosacea, perioral dermatitis, and folliculitis. Acne is described as polymorphic, "
     "with several lesion types present at once."]],
@@ -674,10 +586,7 @@ Q("Acne vulgaris",
     "Tyrosinase inhibition with improvement of post-inflammatory hyperpigmentation is a property of azelaic acid."],
    ["It decreases sebum excretion",
     "Decreased sebum excretion is the mechanism of isotretinoin, and oestrogen in combined oral contraceptives also "
-    "decreases sebum production."],
-   ["It provides ultraviolet protection to acne-prone skin",
-    "Benzoyl peroxide has no photoprotective role. Photosensitivity is a consideration with topical retinoids and "
-    "with doxycycline."]],
+    "decreases sebum production."]],
   0, 22),
 
 Q("Acne vulgaris",
@@ -690,8 +599,6 @@ Q("Acne vulgaris",
    ["Improvement takes 4 to 6 weeks and all body sites respond at the same rate",
     "The timeline is right for the face but the claim of uniform response is wrong, and it is the part that causes "
     "patients to abandon treatment for truncal acne before it has had time to work."],
-   ["Improvement should be evident within one week of starting therapy",
-    "A one-week expectation guarantees perceived failure and premature discontinuation of an effective regimen."],
    ["No improvement should be expected for at least six months at any site",
     "This understates the response and may prompt unnecessary escalation to systemic therapy while a working regimen "
     "is dismissed as ineffective."],
@@ -712,9 +619,6 @@ Q("Acne vulgaris",
    ["Endocrine acne from insulin resistance",
     "Insulin resistance is proposed to stimulate androgen production and is listed among endocrine factors, but it "
     "would produce acne in the hormonally responsive sebaceous areas rather than confined to a pressure site."],
-   ["Emotional stress causing cortisol release",
-    "Stress with cortisol release is listed among predisposing factors, but it would not confine the eruption to the "
-    "area beneath the equipment."],
    ["Genetic predisposition, given the three-fold risk with an affected first-degree relative",
     "Genetics is a key factor with a three-fold risk if a first-degree relative is affected, but inherited "
     "susceptibility does not create a distribution that matches sports equipment."]],
@@ -726,9 +630,6 @@ Q("Acne vulgaris",
     "Correct. Oral contraceptives are considered for patients with hyperandrogenism and when acne is unresponsive to "
     "both topical retinoids and topical or oral antibiotics. Oestrogen decreases sebum production and reduces ovarian "
     "androgen production."],
-   ["A woman with mild comedonal acne who has not yet used any topical therapy",
-    "Mild comedonal acne is treated first with a topical retinoid. Starting systemic hormonal therapy before any "
-    "topical trial reverses the treatment ladder."],
    ["A man with moderate papulopustular acne",
     "Combined oral contraceptives are not applicable to male patients, whose moderate disease is treated with a "
     "topical retinoid, an oral antibiotic, and benzoyl peroxide."],
@@ -746,9 +647,6 @@ Q("Folliculitis",
   [["Mupirocin ointment applied to the nares to address the Staphylococcus aureus carrier state",
     "Correct. Recurrent or recalcitrant folliculitis raises the Staphylococcus aureus carrier state, and mupirocin "
     "ointment is used for it. Nasal swabs of the patient and family members are taken to evaluate carriage."],
-   ["A longer course of the same topical antibiotic cream",
-    "Extending a treatment that has already failed repeatedly does not address why it keeps returning, which is "
-    "recolonisation from a reservoir."],
    ["Oral ciprofloxacin",
     "Ciprofloxacin is used for widespread or resistant Pseudomonas folliculitis after water exposure. It is not the "
     "agent for staphylococcal carriage."],
@@ -768,9 +666,6 @@ Q("Folliculitis",
    ["A Tzanck smear to rule out herpetic infection",
     "A Tzanck smear evaluates vesicular lesions for herpesvirus changes and is used to rule out herpetic whitlow in "
     "paronychia. It is not the plucked-hair test."],
-   ["A mineral oil preparation to identify mites",
-    "A mineral oil preparation confirms scabies by identifying the mite, its eggs, or fecal pellets. It is a skin "
-    "scraping rather than a hair test."],
    ["A Wood's lamp examination for coral-red fluorescence",
     "Coral-red fluorescence identifies erythrasma caused by Corynebacterium minutissimum. It is not performed on a "
     "plucked hair and does not detect dermatophytes."],
@@ -786,9 +681,6 @@ Q("Abscess",
     "Correct. An abscess is a collection of purulent material within the dermis and deeper tissues, often due to "
     "traumatic inoculation of bacteria into the skin, compared with furuncles, which arise from infected hair "
     "follicles."],
-   ["An abscess arises from an infected hair follicle, whereas a furuncle follows traumatic inoculation",
-    "The two origins are swapped. A furuncle is by definition a deep-seated infection of a hair follicle and its "
-    "adjacent subcutaneous tissue."],
    ["An abscess involves apocrine glands, whereas a furuncle involves eccrine glands",
     "Apocrine gland inflammation describes hidradenitis suppurativa. Neither an abscess nor a furuncle is defined by "
     "eccrine involvement."],
@@ -814,10 +706,7 @@ Q("Abscess",
     "drainage that is the definitive treatment."],
    ["Observation until the lesion drains on its own",
     "Waiting allows the collection to enlarge and risks extension into surrounding tissue. Incision and drainage is "
-    "the indicated step."],
-   ["Squeezing the lesion to express its contents",
-    "Patients are instructed not to squeeze such lesions, which risks deeper inoculation and spread rather than "
-    "controlled evacuation."]],
+    "the indicated step."]],
   0, 115),
 
 Q("Erysipelas",
@@ -832,9 +721,6 @@ Q("Erysipelas",
    ["Magnetic resonance imaging to define the depth of involvement",
     "Imaging is of low yield and not indicated in a classic presentation. Depth is inferred clinically from the "
     "raised, sharply demarcated plaque."],
-   ["Skin biopsy in every patient to confirm the diagnosis",
-    "Biopsy is not part of the routine evaluation of a classic erysipelas presentation and would delay prompt "
-    "treatment."],
    ["No laboratory testing of any kind is ever useful",
     "Leukocytosis and raised inflammatory markers are common and can support the clinical impression; it is cultures "
     "and imaging specifically that add little."]],
@@ -855,10 +741,7 @@ Q("Cellulitis",
     "low risk. Extent, pain, and comorbidity all contribute."],
    ["Any patient already taking antibiotics",
     "Current antibiotic use does not remove the need for assessment, and failure to respond within 48 hours should "
-    "raise necrotizing fasciitis."],
-   ["Only patients under 40 years of age",
-    "Extremes of age are one risk factor among several, and a single age cut-off does not capture immunocompromise, "
-    "extent, or systemic signs."]],
+    "raise necrotizing fasciitis."]],
   0, 109),
 
 Q("Cellulitis",
@@ -877,10 +760,7 @@ Q("Cellulitis",
     "antibiotic before it has been given a fair trial."],
    ["The patient has developed an allergy to the antibiotic",
     "Worsening erythema at the infected site on day one reflects the inflammatory response to bacterial killing "
-    "rather than hypersensitivity, which would produce a new eruption elsewhere."],
-   ["This indicates devitalised tissue requiring immediate debridement",
-    "Devitalised tissue is recognised by a tense, cyanotic, bronzed, blanched appearance rather than by ordinary "
-    "first-day worsening of erythema."]],
+    "rather than hypersensitivity, which would produce a new eruption elsewhere."]],
   0, 112),
 
 Q("Necrotizing fasciitis",
@@ -894,8 +774,6 @@ Q("Necrotizing fasciitis",
    ["Impaired lymphatic drainage after mastectomy, athlete's foot, and obesity",
     "Those are erysipelas risk factors, where impaired lymphatic drainage and tinea pedis as a portal of entry are "
     "prominent."],
-   ["Manicure, ingrown nail, hangnail, and nail biting",
-    "Those are the predisposing factors for acute paronychia."],
    ["Continuous immersion of the hands in water and contact with chemicals",
     "That is the occupational history behind chronic paronychia in dishwashers, bartenders, cleaners, and cooks."]],
   0, 125),
@@ -913,8 +791,6 @@ Q("Hidradenitis suppurativa",
    ["It reduces the size of draining sinuses when injected into the lesion",
     "Intralesional triamcinolone acetonide is what decreases the size of draining sinuses. Spironolactone is taken "
     "orally and acts systemically."],
-   ["It is a retinoid that normalises follicular keratinisation",
-    "Oral retinoids such as isotretinoin are a separate treatment option. Spironolactone is not a retinoid."],
    ["It is an antibiotic that suppresses the causative organism",
     "Topical clindamycin and erythromycin and systemic antibiotics are used, but hidradenitis suppurativa is an "
     "inflammatory apocrine disease rather than a primary infection, and spironolactone has no antibacterial action."]],
@@ -925,9 +801,6 @@ Q("Hidradenitis suppurativa",
   [["Wide excision of the affected areas",
     "Correct. Chances of permanent cure are best with wide excision of the affected areas. Large fluctuant cysts are "
     "incised and drained, but that manages an episode rather than curing the disease."],
-   ["Long-term systemic antibiotics",
-    "Some advocate long-term systemic antibiotics, but the long-term outcomes are described as often poor. They "
-    "control rather than cure."],
    ["Incision and drainage of each cyst as it develops",
     "Incision and drainage relieves individual large fluctuant cysts. Because the disease recurs in the same apocrine "
     "regions, repeated drainage never becomes a cure."],
@@ -952,8 +825,6 @@ Q("Erythrasma",
    ["The axilla, groin, breasts, and perineum, with recurrent painful suppurative lesions",
     "That distribution and symptom profile belong to hidradenitis suppurativa, which affects apocrine-bearing skin "
     "with recurrence more than twice in six months."],
-   ["Around the nose and mouth, with honey-coloured crusting",
-    "Perioral honey-coloured crusting is non-bullous impetigo, a superficial epidermal infection of children."],
    ["The scalp, thighs, trunk, axilla, and inguinal region, with follicular pustules",
     "Those are the common sites of folliculitis, whose lesions are pustules pierced by a central hair."]],
   0, 81),

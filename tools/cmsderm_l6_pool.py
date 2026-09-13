@@ -23,9 +23,6 @@ Q("Antifungal classes",
    ["Ketoconazole, an imidazole, recognisable by the ending -fine",
     "Ketoconazole is an imidazole, and imidazoles block ergosterol synthesis rather than destroying the membrane "
     "directly. The naming clue also belongs to the allylamines."],
-   ["Terbinafine, an imidazole, recognisable by the ending -azole",
-    "Terbinafine is correctly chosen but wrongly classified. It is an allylamine, and the -azole ending identifies "
-    "the imidazoles instead."],
    ["Nystatin, a polyene that treats both Candida and dermatophytes",
     "Topical nystatin treats Candida only, which is precisely why topical azoles are preferred when a dermatophyte "
     "may also be present."],
@@ -45,8 +42,6 @@ Q("Dermatophytes",
    ["Dermatophytes require sebum, which mucous membranes do not produce",
     "Sebum matters in tinea capitis, where post-pubertal changes in sebum fatty acid content are believed to inhibit "
     "dermatophyte growth. But the organisms depend on keratin rather than requiring sebum."],
-   ["Dermatophytes are obligate intracellular organisms confined to keratinocyte nuclei",
-    "Dermatophytes are not intracellular organisms. They live within keratinised tissue rather than inside cells."],
    ["Dermatophytes can involve mucous membranes when the patient is immunocompromised",
     "The constraint is structural rather than immunological. Immunosuppression extends the severity and extent of "
     "dermatophytosis but does not create keratin where there is none."]],
@@ -65,9 +60,6 @@ Q("Tinea capitis",
    ["An antifungal shampoo used two to three times weekly is sufficient on its own",
     "Selenium sulfide or ketoconazole shampoo reduces viable spore shedding and is a useful adjunct during early "
     "systemic treatment, but it explicitly does not replace oral therapy."],
-   ["A topical corticosteroid should be used first to settle the inflammation",
-    "Topical steroids applied to a dermatophyte infection produce tinea incognito, in which the appearance is "
-    "clinically altered and the lesion flares whenever the steroid is stopped."],
    ["No treatment is needed because tinea capitis resolves spontaneously after puberty",
     "Changes in sebum fatty acid content after puberty are believed to inhibit dermatophyte growth, but waiting years "
     "in an infected 7-year-old leaves an active, transmissible infection with a risk of scarring alopecia."]],
@@ -87,10 +79,7 @@ Q("Tinea capitis",
     "for both discards the species-specific preference."],
    ["Fluconazole for both organisms",
     "Fluconazole and itraconazole appear as alternatives in other dermatophyte infections, but they are not the two "
-    "agents paired with these organisms in tinea capitis."],
-   ["Topical ketoconazole for both organisms",
-    "Ketoconazole 2 percent shampoo is an adjunct that reduces spore shedding. Topical therapy of any kind does not "
-    "penetrate the infected hair shaft."]],
+    "agents paired with these organisms in tinea capitis."]],
   0, 15),
 
 Q("Tinea capitis",
@@ -100,9 +89,6 @@ Q("Tinea capitis",
     "fluoresce",
     "Correct. A Wood lamp may rapidly support Microsporum infection, but Trichophyton tonsurans — the most common "
     "species — usually does not fluoresce. Confirmation rests on potassium hydroxide microscopy and fungal culture."],
-   ["A negative Wood's lamp excludes tinea capitis",
-    "Relying on a negative Wood's lamp to exclude the diagnosis would miss most cases, since the commonest causative "
-    "species does not fluoresce."],
    ["A negative Wood's lamp indicates a bacterial rather than fungal cause",
     "Coral-red fluorescence under a Wood's lamp identifies erythrasma, a bacterial infection. Absence of fluorescence "
     "says nothing about a bacterial cause on the scalp."],
@@ -130,9 +116,7 @@ Q("Tinea corporis",
     "blistering disease, not to fungal microscopy."],
    ["A plucked hair from within the plaque",
     "A plucked hair is used for potassium hydroxide microscopy when dermatophyte folliculitis is suspected. This is a "
-    "glabrous skin lesion with an advancing scaly edge."],
-   ["A nail clipping from the same limb",
-    "Nail clippings with periodic acid-Schiff stain evaluate onychomycosis. They do not sample a body lesion."]],
+    "glabrous skin lesion with an advancing scaly edge."]],
   0, 26),
 
 Q("Tinea corporis",
@@ -148,8 +132,6 @@ Q("Tinea corporis",
    ["Only tinea corporis is pruritic",
     "Nummular eczema is intensely pruritic and tinea corporis may be asymptomatic or pruritic. Itch does not separate "
     "them."],
-   ["Only nummular eczema occurs on the extremities",
-    "Nummular eczema favours the extremities but tinea corporis occurs there freely. Site does not decide."],
    ["Only tinea corporis is well demarcated",
     "Both are well demarcated — nummular eczema is described as well-demarcated and tinea corporis as sharply "
     "circumscribed."]],
@@ -161,9 +143,6 @@ Q("Tinea cruris",
   [["It supports tinea cruris, since scrotal involvement would suggest candidal intertrigo instead",
     "Correct. In tinea cruris the scrotum is typically spared, and scrotal involvement suggests candidal intertrigo, "
     "which commonly involves the scrotum. His coexisting tinea pedis fits, since the two often occur together."],
-   ["It argues against tinea cruris and toward a dermatophyte-negative process",
-    "Sparing of the scrotum is characteristic of tinea cruris rather than evidence against it, so this inverts the "
-    "finding's meaning."],
    ["It indicates erythrasma rather than a dermatophyte infection",
     "Erythrasma involves the inner thighs, crural region, and scrotum and fluoresces coral-red under a Wood's lamp. "
     "Scrotal involvement is typical of erythrasma rather than excluded by it."],
@@ -188,9 +167,6 @@ Q("Tinea pedis",
    ["Vesiculobullous tinea pedis, which is the most common form",
     "The vesiculobullous form is the moist acute variant with a vesicular or bullous eruption on underlying erythema. "
     "It is pruritic and painful rather than macerated and eroded."],
-   ["Interdigital tinea pedis, which is the least common form",
-    "The classification is right but the frequency is wrong. Naming it the least common would misdirect the index of "
-    "suspicion for the presentation clinicians see most often."],
    ["Candidal intertrigo of the toe webs",
     "Candidiasis and mixed toe web infection are on the differential, and bacterial studies are added for marked "
     "maceration, malodour, or drainage. But the described pattern is the classic dermatophyte presentation."]],
@@ -202,8 +178,6 @@ Q("Tinea pedis",
     "Correct. Drying between the toes after bathing is marked as essential, alongside antifungal foot powder for "
     "shoes, wearing open-toed sandals when possible, using sandals in community showers, and changing socks "
     "frequently."],
-   ["Wearing occlusive footwear to protect the skin",
-    "Occlusion traps the warmth and moisture dermatophytes need. Open-toed sandals are recommended where possible."],
    ["Soaking the feet daily in warm water",
     "Prolonged moisture is the predisposing condition rather than a treatment. Moisture control is a core part of "
     "management."],
@@ -228,8 +202,6 @@ Q("Onychomycosis",
    ["Obtain a Wood's lamp examination of the nails",
     "A Wood lamp evaluates pigment change in selected fungal and bacterial infections and may support Microsporum "
     "scalp infection. It is not the confirmatory test for nail disease."],
-   ["Begin topical antifungal therapy, which is adequate for most nail infections",
-    "Topical therapy is inadequate for most nail infections, which is why the question of oral therapy arises at all."],
    ["Remove the affected nails surgically before medical therapy",
     "Nail avulsion is not the described first step. Confirming the diagnosis governs whether systemic therapy is "
     "justified."]],
@@ -249,9 +221,6 @@ Q("Onychomycosis",
    ["Two weeks for both, with no laboratory monitoring",
     "A two-week course is far too short for nail disease, and omitting the hepatic review discards the principal "
     "safety consideration for terbinafine."],
-   ["Six weeks for both, with baseline renal function testing",
-    "The duration differs between fingernails and toenails, and the safety review for terbinafine is hepatic rather "
-    "than renal."],
    ["Lifelong therapy, since onychomycosis cannot be cured",
     "Defined courses are given, and itraconazole is available as an alternative. Indefinite systemic antifungal "
     "therapy is not the approach."]],
@@ -276,10 +245,7 @@ Q("Id reaction",
    ["A positive Wood's lamp at the primary site, negative potassium hydroxide at the distant site, and biopsy "
     "confirmation",
     "Wood's lamp fluorescence and biopsy are not among the criteria, and the primary site is confirmed by potassium "
-    "hydroxide microscopy."],
-   ["Symmetric distribution, absence of pruritus, and spontaneous resolution without treatment",
-    "The eruption is described as extremely pruritic, and resolution follows treatment of the primary dermatophyte "
-    "infection."]],
+    "hydroxide microscopy."]],
   0, 62),
 
 Q("Tinea incognito",
@@ -295,9 +261,6 @@ Q("Tinea incognito",
    ["Allergic contact dermatitis to the corticosteroid vehicle; patch test before any further treatment",
     "Contact allergy to a topical is possible in general, but the expanding annular morphology and the flare-on-"
     "withdrawal pattern point to a suppressed dermatophyte infection."],
-   ["Steroid-induced atrophy; apply an emollient and observe",
-    "Atrophy, striae, and telangiectasia follow prolonged steroid use, but they do not produce an expanding annular "
-    "lesion that flares when treatment stops."],
    ["Psoriasis unmasked by steroid withdrawal; begin calcipotriene",
     "Systemic steroid withdrawal can precipitate pustular psoriasis, but that is an abrupt febrile eruption of "
     "pustules rather than a single altered annular plaque."]],
@@ -318,9 +281,7 @@ Q("Cutaneous candidiasis",
     "allylamine aimed at dermatophytes."],
    ["Coral-red fluorescence identifies Candida, and topical erythromycin is used",
     "Coral-red fluorescence identifies erythrasma caused by Corynebacterium minutissimum, which is treated with "
-    "topical erythromycin or clindamycin."],
-   ["Honey-coloured crusting identifies Candida, and topical mupirocin is used",
-    "Honey-coloured crust is impetigo, a bacterial infection treated with mupirocin."]],
+    "topical erythromycin or clindamycin."]],
   0, 72),
 
 Q("Cutaneous candidiasis",
@@ -337,9 +298,7 @@ Q("Cutaneous candidiasis",
     "Hot water and prolonged wetting worsen maceration in the folds. Gentle drying is what is required."],
    ["Applying a high-potency topical corticosteroid to the folds",
     "Potent steroids in occluded flexural skin cause atrophy and striae rapidly and can allow candidal overgrowth to "
-    "extend."],
-   ["Binding the folds tightly to prevent skin-on-skin contact",
-    "Tight binding increases friction and occlusion, both of which are among the causes to be reduced."]],
+    "extend."]],
   0, 72),
 
 Q("Pityriasis versicolor",
@@ -357,10 +316,7 @@ Q("Pityriasis versicolor",
     "for in candidal diaper dermatitis or intertrigo."],
    ["Mites, eggs, and fecal pellets",
     "Those are the findings of a mineral oil preparation in scabies, which is a mite infestation rather than a fungal "
-    "one."],
-   ["No organisms, since the diagnosis is made only by biopsy",
-    "Biopsy is rarely needed. The diagnosis is usually clinical, supported by scraping or stretching the lesion to "
-    "reveal fine scale and by the characteristic potassium hydroxide appearance."]],
+    "one."]],
   0, 80),
 
 Q("Pityriasis versicolor",
@@ -378,10 +334,7 @@ Q("Pityriasis versicolor",
     "produces partial pigment change that recovers over months."],
    ["The condition has become contagious and household members require treatment",
     "Pityriasis versicolor is not considered contagious, since it results from overgrowth of an organism that "
-    "normally inhabits the skin."],
-   ["The pale patches indicate a secondary bacterial infection",
-    "There is no bacterial component. The pigment change is a consequence of altered melanocyte function from the "
-    "yeast overgrowth."]],
+    "normally inhabits the skin."]],
   0, 77),
 
 Q("Varicella",
@@ -397,9 +350,7 @@ Q("Varicella",
     "Dermatomal confinement that abruptly stops at the midline describes herpes zoster, the reactivation of latent "
     "virus, rather than primary varicella."],
    ["Lesions limited to the palms and soles",
-    "Varicella lesions concentrate on the trunk, scalp, and face. Palm and sole involvement points elsewhere."],
-   ["Lesions with honey-coloured crusting around the nose and mouth",
-    "Honey-coloured perioral crusting is impetigo, a superficial bacterial infection."]],
+    "Varicella lesions concentrate on the trunk, scalp, and face. Palm and sole involvement points elsewhere."]],
   0, 84),
 
 Q("Varicella",
@@ -414,9 +365,7 @@ Q("Varicella",
     "Contagion continues until all lesions have crusted rather than until crusting begins in some."],
    ["For 21 days from exposure regardless of the rash",
     "Twenty-one days describes the incubation window for monitoring an exposed contact rather than the infectious "
-    "period of a case."],
-   ["Until fever resolves, regardless of the state of the lesions",
-    "The lesions rather than the temperature define the infectious period."]],
+    "period of a case."]],
   0, 89),
 
 Q("Herpes zoster",
@@ -436,9 +385,7 @@ Q("Herpes zoster",
     "it is not one of the three clinical phases of the disease episode."],
    ["A pre-eruptive phase, an eruptive phase, and a scarring phase",
     "Vesicles may eventually scar if inflammation is intense, but scarring is a possible outcome rather than a named "
-    "clinical phase. The recognised third phase is postherpetic neuralgia."],
-   ["An erythematous phase, a bullous phase, and a necrotic phase",
-    "Vesicles may coalesce to form bullae, but this sequence does not match the three phases described."]],
+    "clinical phase. The recognised third phase is postherpetic neuralgia."]],
   0, 97),
 
 Q("Herpes zoster",
@@ -454,8 +401,6 @@ Q("Herpes zoster",
    ["It is generalised over the trunk, scalp, and face",
     "That distribution describes primary varicella rather than reactivation, and varicella shows multiple stages "
     "simultaneously."],
-   ["It follows the lines of skin cleavage in a Christmas tree pattern",
-    "The Christmas tree pattern following cleavage lines describes pityriasis rosea, which follows a herald patch."],
    ["It is confined to intertriginous folds",
     "Flexural and intertriginous distribution suggests candidal intertrigo, erythrasma, or inverse psoriasis rather "
     "than a dermatomal viral reactivation."]],
@@ -475,8 +420,6 @@ Q("Herpes zoster",
    ["Ramsay Hunt syndrome, requiring antiviral therapy plus corticosteroid",
     "Ramsay Hunt syndrome is herpes zoster oticus — peripheral facial palsy with painful vesicles of the ear canal, "
     "auricle, or oropharynx, sometimes with hearing loss, tinnitus, or vertigo. The nose is not its territory."],
-   ["Zoster sine herpete, requiring no antiviral therapy",
-    "Zoster sine herpete is pain without a vesicular eruption. This patient has visible vesicles."],
    ["Disseminated zoster, requiring airborne isolation only",
     "Dissemination is defined by lesions beyond the affected and adjacent dermatomes. Antiviral therapy is required "
     "regardless, and isolation alone would leave the eye untreated."]],
@@ -492,8 +435,6 @@ Q("Herpes zoster",
    ["Ideally within 72 hours, with no benefit and no indication beyond that point",
     "This is the closest wrong answer because the 72-hour target is correct. But refusing treatment beyond it would "
     "deny antivirals to patients with active new lesion formation or ophthalmic disease, who still benefit."],
-   ["Within 7 days of rash onset, with no exceptions",
-    "The stated target is 72 hours. Waiting a week loses the window in which antivirals most reduce acute severity."],
    ["Only after polymerase chain reaction confirmation, whenever that returns",
     "Typical unilateral dermatomal vesicles are diagnosed clinically, and polymerase chain reaction is reserved for "
     "atypical, disseminated, vaccine-modified, or immunocompromised presentations. Waiting for it forfeits the "
@@ -516,8 +457,6 @@ Q("Postherpetic neuralgia",
    ["Pain persisting at least 7 days after rash onset, treated with antivirals",
     "Seven days is far too short a threshold, and antivirals are acute-phase therapy rather than treatment for "
     "established neuropathic pain."],
-   ["Pain persisting at least 30 days after rash onset, treated with systemic corticosteroids",
-    "The interval is wrong and corticosteroids are not among the first-line agents for this neuropathic pain."],
    ["Any pain during the acute eruptive phase, treated with acetaminophen",
     "Almost all patients have pain during the acute eruptive phase, and acetaminophen or a non-steroidal agent is "
     "used for mild acute pain. That is not postherpetic neuralgia, which is defined by persistence."]],
@@ -539,8 +478,6 @@ Q("Shingrix",
    ["Two doses for immunocompetent adults aged 65 and over only",
     "The age threshold for immunocompetent adults is 50 rather than 65, and restricting it to 65 would leave a "
     "fifteen-year band of eligible adults unvaccinated."],
-   ["Two doses only for adults who have already had an episode of herpes zoster",
-    "Prior zoster is not the eligibility criterion. Vaccination is recommended by age and by immune status."],
    ["Two doses for children as part of the routine childhood schedule",
     "The two-dose varicella vaccine is what is given in childhood to prevent primary infection. Recombinant zoster "
     "vaccine is for adults to prevent reactivation."]],
@@ -560,9 +497,6 @@ Q("Herpes zoster",
    ["There is no transmission risk of any kind from herpes zoster lesions",
     "Vesicular fluid contains virus. Dismissing the risk entirely would leave susceptible household contacts, "
     "including unvaccinated children and pregnant women, unprotected."],
-   ["Transmission occurs only through respiratory droplets in all cases",
-    "Localised zoster transmits through contact with vesicular fluid; airborne spread becomes a concern with "
-    "disseminated disease."],
    ["The grandson can catch shingles only if he has never had chickenpox",
     "A child who has never had chickenpox and is unvaccinated is exactly the person at risk — but what he would "
     "develop is varicella, not shingles."]],
@@ -577,9 +511,6 @@ Q("Herpes simplex virus",
    ["Genital or buttock lesions are always herpes simplex virus type 2",
     "This is the common assumption the lecture corrects. Type 1 causes a substantial share of genital infection, and "
     "acting on location alone gives false reassurance about transmission and recurrence patterns."],
-   ["Oral lesions are always herpes simplex virus type 1 and genital lesions always type 2",
-    "Both types produce similar genital and orofacial primary infections after exposure, so this mapping does not "
-    "hold in either direction."],
    ["Type can be determined by the appearance of the vesicles",
     "Grouped vesicles on an erythematous base breaking down to shallow painful ulcers is the appearance of both "
     "types. Morphology does not distinguish them."],
@@ -604,10 +535,7 @@ Q("Herpes simplex virus",
     "a second method where available."],
    ["A Tzanck smear, which distinguishes herpes simplex virus from varicella-zoster virus",
     "A Tzanck smear gives rapid evaluation for herpesvirus cytologic changes but cannot distinguish between the "
-    "herpesviruses, and polymerase chain reaction is preferred for confirmation."],
-   ["A potassium hydroxide preparation from the ulcer base",
-    "A potassium hydroxide preparation detects fungal elements and has no role in diagnosing a viral vesicular "
-    "eruption."]],
+    "herpesviruses, and polymerase chain reaction is preferred for confirmation."]],
   0, 123),
 
 Q("Herpes simplex virus",
@@ -619,8 +547,6 @@ Q("Herpes simplex virus",
    ["Patient-initiated episodic therapy at the first sign of a recurrence",
     "Episodic therapy is a legitimate option for managing recurrences and shortens individual episodes. But it treats "
     "outbreaks after they begin and does not carry the transmission-reduction benefit of daily suppression."],
-   ["Topical acyclovir applied to lesions during outbreaks",
-    "Oral agents are what is used for first episodes and recurrences. Topical therapy does not reduce transmission."],
    ["Treatment of the uninfected partner with prophylactic valacyclovir",
     "Suppression is given to the infected partner, in whom it reduces shedding. Treating an uninfected person has no "
     "target."],
@@ -639,9 +565,6 @@ Q("Herpetic whitlow",
    ["Incise and drain, then start oral antivirals",
     "This is the specific error the lecture warns against. The lesion is not an abscess, and incising it delays "
     "healing while creating a portal for secondary infection."],
-   ["Incise and drain, then start oral antibiotics for presumed bacterial paronychia",
-    "Herpetic whitlow mimics bacterial paronychia, which is exactly why it is on that differential and why a Tzanck "
-    "smear is used to rule it out. Treating it surgically as a bacterial abscess compounds two errors."],
    ["Apply a topical antifungal and keep the hand dry",
     "That approach belongs to chronic paronychia, where Candida albicans is the most common pathogen and the cause is "
     "prolonged wet work."],
@@ -663,8 +586,6 @@ Q("Molluscum contagiosum",
    ["Oral acyclovir",
     "Acyclovir treats herpesvirus infections. Molluscum contagiosum is caused by a poxvirus and does not respond to "
     "it."],
-   ["Topical mupirocin to each lesion",
-    "Mupirocin is an antibacterial used for impetigo. There is no bacterial infection here."],
    ["Salicylic acid 40 percent to each lesion",
     "Salicylic acid 40 percent is a treatment for plantar warts. It is not among the options given for molluscum."]],
   0, 136, IO_C),
@@ -679,8 +600,6 @@ Q("Molluscum contagiosum",
     "verruca vulgaris. Trimming the surface makes those capillaries more prominent."],
    ["A stuck-on appearance with comedone-like openings",
     "A stuck-on appearance with comedone-like openings on dermoscopy describes seborrheic keratosis."],
-   ["An annular plaque with an advancing scaly border and central clearing",
-    "That describes tinea corporis, a dermatophyte infection."],
    ["Grouped vesicles on an erythematous base",
     "Grouped vesicles on an erythematous base are the hallmark of herpes simplex virus and herpes zoster."]],
   0, 134),
@@ -697,9 +616,6 @@ Q("Warts",
    ["Melanocytic nests, which help exclude melanoma",
     "The dots are thrombosed capillaries rather than pigment. Melanoma is not what paring a verruca is designed to "
     "exclude."],
-   ["Fungal elements, which help exclude tinea manuum",
-    "Fungal elements are seen microscopically on a potassium hydroxide preparation, not as visible dots on a pared "
-    "surface."],
    ["Deep roots extending into the dermis, confirming the need for excision",
     "Warts have no roots. A wart is confined to the epidermis, though it expands and displaces the dermis, giving the "
     "false impression that it extends deeper."]],
@@ -720,8 +636,6 @@ Q("Warts",
    ["Molluscum contagiosum, which requires cantharidin",
     "Molluscum lesions are dome-shaped pearly papules with central umbilication rather than flat-topped papules, and "
     "they are caused by a poxvirus rather than human papillomavirus."],
-   ["Plantar warts, which require salicylic acid 40 percent and cryotherapy",
-    "Plantar warts occur on the weight-bearing surface of the foot and require therapy only if painful."],
    ["Seborrheic keratoses, which require no treatment",
     "Seborrheic keratoses have a stuck-on appearance with comedone-like openings and are not spread by shaving."]],
   0, 143),
@@ -734,9 +648,6 @@ Q("Warts",
    ["Cryotherapy every 2 to 3 weeks regardless of symptoms",
     "Cryotherapy every 2 to 3 weeks is an option when treatment is indicated, but it may cause pain, blistering, and "
     "pigment change — all of which are unjustified for an asymptomatic lesion."],
-   ["Surgical excision to remove the roots",
-    "Warts have no roots, and excision on a weight-bearing surface risks a painful scar worse than the original "
-    "lesion."],
    ["Oral antiviral therapy to eradicate human papillomavirus",
     "No therapy eradicates human papillomavirus with certainty, and oral antivirals are not among the treatments for "
     "cutaneous warts."],
@@ -760,10 +671,7 @@ Q("Tinea barbae",
     "hair follicle, so oral therapy is required."],
    ["It indicates pseudofolliculitis barbae, and shaving technique should be modified",
     "Pseudofolliculitis barbae is a foreign body reaction to hair that has curved back into the skin, producing "
-    "papules with a visible re-entrant hair shaft rather than boggy pustular plaques."],
-   ["It indicates acne vulgaris, and a topical retinoid should be started",
-    "Acne is on the differential but is identified by comedones, which are absent in an inflammatory boggy plaque "
-    "acquired from animal contact."]],
+    "papules with a visible re-entrant hair shaft rather than boggy pustular plaques."]],
   0, 22),
 
 Q("Tinea manuum",
@@ -777,9 +685,6 @@ Q("Tinea manuum",
     "Occupational irritant dermatitis is a genuine consideration in a labourer, which is what makes his own "
     "explanation plausible. But the coexisting plantar scaling points to a dermatophyte infection spreading between "
     "sites."],
-   ["Palmar psoriasis",
-    "Psoriasis produces well-demarcated plaques with silvery scale and is typically bilateral on the palms. It would "
-    "not be explained by concurrent tinea pedis."],
    ["Dyshidrotic eczema",
     "Dyshidrotic eczema produces crops of intensely pruritic deep-seated vesicles on the palms and lateral fingers "
     "that desquamate. There are no vesicles described here."],
@@ -798,8 +703,6 @@ Q("Pityriasis versicolor",
    ["Oral terbinafine as first-line therapy",
     "Oral terbinafine is specifically not effective for this organism, even though topical terbinafine is among the "
     "topical options. Malassezia is a yeast rather than a dermatophyte."],
-   ["Topical nystatin as first-line therapy",
-    "Nystatin treats Candida only. Pityriasis versicolor is caused by Malassezia species."],
    ["Oral fluconazole for all patients at diagnosis",
     "Systemic therapy is reserved rather than routine, and it requires review of hepatic risk, pregnancy status, and "
     "drug interactions that most patients do not need to undergo."],
@@ -814,9 +717,6 @@ Q("Varicella",
     "Correct. Management is supportive, avoiding aspirin in children and using caution with non-steroidal "
     "anti-inflammatory drugs. Early oral antivirals are considered for higher-risk patients and intravenous "
     "acyclovir for severe disease."],
-   ["Avoid acetaminophen and use aspirin preferentially",
-    "This inverts the caution and would expose a child with a viral illness to the risk aspirin carries in that "
-    "setting."],
    ["Avoid all analgesics entirely",
     "Supportive care is the mainstay and symptom relief is appropriate; it is aspirin specifically that is avoided, "
     "with caution around non-steroidal agents."],
@@ -841,10 +741,7 @@ Q("Herpes zoster",
     "makes this the closest wrong answer. But there is a recognised presentation in which no lesions ever appear."],
    ["Ramsay Hunt syndrome",
     "Ramsay Hunt syndrome is peripheral facial palsy with painful vesicles of the ear canal, auricle, or oropharynx. "
-    "It is defined in part by the presence of vesicles."],
-   ["Disseminated zoster",
-    "Disseminated disease involves lesions beyond the affected and adjacent dermatomes, which requires an eruption to "
-    "be present."]],
+    "It is defined in part by the presence of vesicles."]],
   0, 99),
 
 Q("Ramsay Hunt syndrome",
@@ -863,10 +760,7 @@ Q("Ramsay Hunt syndrome",
     "nose raising ocular risk. The ear canal and facial nerve are a different territory."],
    ["Bell palsy, treated with a corticosteroid alone",
     "Idiopathic facial palsy does not produce painful vesicles in the ear canal. The vesicles identify a zoster "
-    "reactivation and mandate antiviral therapy."],
-   ["Otitis externa, treated with topical antibiotic drops",
-    "Otitis externa does not cause facial palsy or grouped vesicles, and antibacterial drops would leave a viral "
-    "reactivation untreated."]],
+    "reactivation and mandate antiviral therapy."]],
   0, 104),
 
 Q("Herpes simplex virus",
@@ -878,9 +772,6 @@ Q("Herpes simplex virus",
    ["Chancroid, caused by Haemophilus ducreyi",
     "Chancroid is a bacterial sexually transmitted infection caused by Haemophilus ducreyi producing painful "
     "necrotizing ulcers with inguinal lymphadenopathy. It is painful rather than painless."],
-   ["Trauma",
-    "Trauma appears on the differential and is characteristically painful, so it does not provide the contrast the "
-    "question asks for."],
    ["Candidiasis",
     "Candidiasis is on the differential and produces burning and pruritus with well-demarcated erythema and satellite "
     "lesions rather than a painless eroded papule."],
@@ -904,10 +795,7 @@ Q("Molluscum contagiosum",
     "coexisting infections."],
    ["Treat with oral acyclovir and screen for herpes simplex virus only",
     "Molluscum contagiosum is a poxvirus infection and does not respond to acyclovir, and screening should not be "
-    "limited to a single organism."],
-   ["Refer immediately for surgical excision of all lesions",
-    "Observation is appropriate for many patients, and procedures may blister, pigment, or scar. Excision is not the "
-    "first response."]],
+    "limited to a single organism."]],
   0, 133, IO_C),
 
 Q("Warts",
@@ -925,10 +813,7 @@ Q("Warts",
     "require therapy unless painful."],
    ["Biopsy is required for every wart before treatment",
     "Biopsy is generally unnecessary and is reserved for atypical, bleeding, ulcerated, growing, or refractory "
-    "lesions and for immunocompromised patients."],
-   ["Warts must be excised deeply because they extend into the dermis",
-    "A wart is confined to the epidermis. It expands and displaces the dermis, which gives a false impression of "
-    "depth, and it has no roots."]],
+    "lesions and for immunocompromised patients."]],
   0, 149),
 
 Q("Herpes zoster",
@@ -939,8 +824,6 @@ Q("Herpes zoster",
    ["Cranial, involved in about 55 percent, followed by thoracic at about 20 percent",
     "The two are reversed. Thoracic involvement is by far the commonest, and inverting the figures would skew "
     "expectations toward cranial disease."],
-   ["Sacral dermatomes in the majority of cases",
-    "Sacral involvement occurs but is not the leading distribution."],
    ["Lumbar dermatomes in the majority of cases",
     "Lumbar involvement occurs but is less frequent than thoracic and cranial disease."],
    ["The distribution is random and no dermatome predominates",
@@ -957,9 +840,6 @@ Q("Tinea corporis",
    ["To the visible lesion only, stopping as soon as it clears",
     "Both halves fail. The advancing edge extends beyond what is visible, and stopping at visible clearance leaves "
     "viable organism behind, which is the commonest cause of apparent relapse."],
-   ["To the whole limb, to prevent spread",
-    "Treating an entire limb is unnecessary and increases irritation and cost without added benefit over margin "
-    "coverage."],
    ["To the centre of the lesion only, where the infection began",
     "The centre has typically cleared as the organism advances outward. Treating there misses where the fungus "
     "actually is."],
@@ -981,10 +861,7 @@ Q("Onychomycosis",
     "The proximal nail fold is the site of paronychia rather than of nail plate infection, and sampling it would not "
     "demonstrate the organism within the nail."],
    ["A plucked hair from the affected limb",
-    "A plucked hair is used for potassium hydroxide microscopy in dermatophyte folliculitis and tinea capitis."],
-   ["Any nail on the affected foot, whether or not it appears diseased",
-    "Sampling clinically normal nail risks a false negative and would not confirm the diagnosis for the affected "
-    "nail."]],
+    "A plucked hair is used for potassium hydroxide microscopy in dermatophyte folliculitis and tinea capitis."]],
   0, 51, IO_A),
 
 Q("Tinea capitis",
@@ -1001,9 +878,6 @@ Q("Tinea capitis",
    ["No household measures are needed because transmission is only person to person",
     "Transmission occurs from infected persons, pets, fallen hairs, clothing, combs, hats, and furniture, and fungal "
     "particles remain viable for months. Fomites matter."],
-   ["Treatment can be stopped as soon as itching and scaling improve",
-    "Patients are specifically told to complete the prescribed oral course even when itching or scaling improves "
-    "early."],
    ["Household contacts should all take oral antifungal therapy",
     "Household contacts may use a sporicidal shampoo rather than systemic therapy, which would expose asymptomatic "
     "people to a drug requiring hepatic consideration."]],
@@ -1022,8 +896,6 @@ Q("Dermatophytes",
    ["By the depth of invasion into the dermis",
     "Dermatophytes infect only dead keratin in the stratum corneum, hair, and nails, so they do not invade the dermis "
     "at all."],
-   ["By whether the infection is contagious",
-    "All dermatophyte infections are transmissible. Contagiousness is not the basis of the classification."],
    ["By the patient's age at presentation",
     "Age matters epidemiologically — tinea capitis is predominantly preadolescent and tinea pedis is the most common "
     "dermatophyte infection in adults — but it is not what the tinea names denote."]],

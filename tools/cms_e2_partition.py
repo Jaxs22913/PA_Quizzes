@@ -91,7 +91,13 @@ if WHICH in ("l2vig", "l2io"):
         POOL = [q for i, q in enumerate(POOL) if i >= n_vig or i in RECALL]
 
 random.seed(20260829)
-PER_SET, NOPT = 30, 5
+PER_SET = 30
+# NOPT is read OFF THE POOL rather than stated, so the option count only has
+# to change in one place -- the pools -- and never drifts from them. This was
+# hardcoded to 5 and had to be found by hand when CMS moved to four.
+NOPT = len(POOL[0]["opts"]) if POOL else 4
+assert all(len(q["opts"]) == NOPT for q in POOL), (
+    "pool mixes option counts: %s" % sorted({len(q["opts"]) for q in POOL}))
 # taken verbatim from check_exam_standard.py: a stem "names a patient" only if
 # it carries an explicit age. Scoring against a looser proxy (counting the word
 # "patient") optimised for the wrong thing and shipped a set at 67%.
@@ -149,7 +155,7 @@ def rotate(qs):
 def validate(pool):
     bad = []
     for i, q in enumerate(pool):
-        if len(q["opts"]) != NOPT: bad.append((i, "not five options"))
+        if len(q["opts"]) != NOPT: bad.append((i, "wrong option count"))
         if not (0 <= q["c"] < NOPT): bad.append((i, "answer index out of range"))
         if not q.get("cite"): bad.append((i, "missing citation"))
         if len(set(o[0] for o in q["opts"])) != NOPT: bad.append((i, "duplicate option"))
@@ -188,7 +194,7 @@ if __name__ == "__main__":
         L = [len(o[0]) for q in s for o in q["opts"]]
         pos = Counter(q["c"] for q in s)
         print("%s  n=%d" % (name, len(s)))
-        print("   positions A-E: %s" % "/".join(str(pos.get(i, 0)) for i in range(NOPT)))
+        print("   positions: %s" % "/".join(str(pos.get(i, 0)) for i in range(NOPT)))
         print("   patient stems %d%%   pure diagnosis %d%%   gameable %d%%"
               % (100 * sum(map(is_patient, s)) // len(s),
                  100 * sum(map(is_pure_diagnosis, s)) // len(s), gameable_pct(s)))

@@ -20,6 +20,8 @@ patient stems and that is the accepted state for Set 1; see [[cms_exam_spec]],
 import sys, os, json, random, re, statistics
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import apply_leadins as _leadins
+_DROPS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                     "cms_four_option_drops.json"), encoding="utf-8"))
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -81,6 +83,17 @@ for spec in mods:
         for (_fm, _fq, _fo), _txt in _LSPEC.items():
             if _fm == m and _fq == _qi:
                 assert _fo != 0, "SPECIFIC fix targets the CORRECT option"
+                # These length fixes address options BY INDEX into the original
+                # five. CMS moved to four on 13 September 2026, so the index has
+                # to be remapped through the record of what was removed --
+                # cms_four_option_drops.json, regenerated from git by
+                # _four_option_drop_manifest.py.
+                _di = _DROPS.get(m + ".py", [None] * (_qi + 1))[_qi] \
+                    if _qi < len(_DROPS.get(m + ".py", [])) else None
+                if _di is not None:
+                    if _fo == _di:
+                        continue                 # that option no longer exists
+                    _fo -= 1 if _fo > _di else 0
                 q["opts"][_fo][0] = _txt
         # Pools may author the correct answer FIRST and leave the key implicit --
         # that is the convention that stops an author drifting toward a favourite

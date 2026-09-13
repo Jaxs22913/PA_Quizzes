@@ -27,9 +27,6 @@ Q("Callus",
     "A wart interrupts the skin lines rather than allowing them to run through, may hurt with side pressure rather "
     "than downward pressure, and shows a blackened centre from thrombosed capillaries. All three features point away "
     "from it here."],
-   ["Plantar fibroma",
-    "A plantar fibroma is a firm nodule within the plantar fascia rather than a hyperkeratotic surface lesion, and it "
-    "does not produce a keratin core on paring."],
    ["Epidermoid cyst",
     "An epidermoid cyst is a moveable round protruding mass with a central punctum that may drain foul-smelling "
     "keratin. It is not a hyperkeratotic pressure lesion of a weight-bearing surface."]],
@@ -47,9 +44,7 @@ Q("Callus",
     "The sign is useful precisely because the two behave differently. Discarding it removes a simple discriminator."],
    ["Skin lines run through both, so the sign is not useful",
     "Skin lines run through corns and calluses only. A wart interrupts them, which is what makes the comparison "
-    "informative."],
-   ["Skin lines cannot be assessed on plantar skin",
-    "Plantar skin has particularly prominent dermatoglyphics, which is exactly why the sign is most useful there."]],
+    "informative."]],
   0, 8),
 
 Q("Wound healing",
@@ -62,9 +57,6 @@ Q("Wound healing",
    ["Inflammation, proliferation, remodeling, and contracture, with strength from new elastin deposition",
     "Hemostasis is the first phase and contracture is not one of the four, and it is collagen cross-linking rather "
     "than elastin that confers strength."],
-   ["Hemostasis, proliferation, contraction, and epithelialisation, with strength from fibroblast proliferation",
-    "Fibroblast activity occurs during proliferation, but the four named phases are hemostasis, inflammation, "
-    "proliferation, and remodeling."],
    ["Inflammation, granulation, maturation, and involution, with strength from vascular ingrowth",
     "Involution describes the natural history of an infantile hemangioma rather than a phase of wound healing, and "
     "vascular ingrowth does not confer tensile strength."],
@@ -87,8 +79,6 @@ Q("Keloid",
    ["It remains confined within the original wound margins",
     "Staying within the wound margins is the hypertrophic scar pattern. Extension beyond them is the defining keloid "
     "feature."],
-   ["It regresses and flattens with time",
-    "Hypertrophic scars remain stable and regress with time. Keloids show no regression."],
    ["It is always painless",
     "Keloids are often asymptomatic but may be pruritic or produce burning pain, and hypertrophic scars are also "
     "typically asymptomatic. Symptoms do not separate them."]],
@@ -104,9 +94,6 @@ Q("Keloid",
    ["Surgical removal alone is curative in most patients",
     "This reverses the recurrence data entirely and would set up a patient with a known keloid tendency for a larger "
     "lesion than she started with."],
-   ["Surgical removal should be performed only after a biopsy has confirmed the diagnosis",
-    "Diagnosis is clinical, and biopsy is done only if there is clinical doubt because it may itself induce new "
-    "scarring."],
    ["Silicone gel sheeting should be applied for one week before excision",
     "Silicone gel sheets are worn for 12 to 24 hours a day for up to a year as a treatment in their own right, not as "
     "a brief pre-operative measure."],
@@ -129,9 +116,7 @@ Q("Keloid",
     "atrophy. They are one modality among several rather than the most important element."],
    ["Compression therapy applied for one week after any injury",
     "Compression therapy is used with pressure maintained over an extended period rather than for a single week, and "
-    "it is a treatment rather than the overarching principle."],
-   ["Routine biopsy of every lesion to exclude malignancy",
-    "Biopsy is performed only if there is clinical doubt, because it may itself induce new scarring."]],
+    "it is a treatment rather than the overarching principle."]],
   0, 15),
 
 Q("Cutaneous horn",
@@ -148,8 +133,6 @@ Q("Cutaneous horn",
    ["A conical shape reliably indicates a benign process",
     "Shape does not indicate behaviour. That is precisely why the underlying lesion must be identified rather than "
     "inferred."],
-   ["The lesion can be reassured about if it is painless",
-    "History may include bleeding or pain but symptoms do not separate benign from malignant underlying lesions."],
    ["Cryotherapy should be applied without histological assessment",
     "Destroying the lesion without knowing what lies beneath forfeits the opportunity to diagnose an underlying "
     "malignancy, which frequently requires excision according to standard practice for the tumour type."]],
@@ -170,9 +153,7 @@ Q("Acrochordon",
     "Skin tags are soft pedunculated growths of normal skin."],
    ["They indicate an underlying internal malignancy",
     "It is malignant acanthosis nigricans that carries a paraneoplastic association. Skin tags are a friction-related "
-    "benign finding."],
-   ["They will resolve spontaneously without any intervention",
-    "Skin tags do not regress. They may be removed for cosmetic reasons or if irritated, but they persist otherwise."]],
+    "benign finding."]],
   0, 31, IO_B),
 
 Q("Pressure injury",
@@ -187,9 +168,6 @@ Q("Pressure injury",
    ["Repositioning every eight hours with the nursing shift changes",
     "Repositioning every two hours is specified. Tying it to eight-hour shifts leaves long periods of unrelieved "
     "pressure, which is the mechanism of injury."],
-   ["Referring every at-risk patient for surgical debridement",
-    "Surgical referral for debridement applies to an established wound with devitalised tissue rather than to a "
-    "patient at risk who has no injury yet."],
    ["Restricting fluids to reduce incontinence and moisture",
     "Incontinence is managed with skin care and barrier creams, and nutrition assessment is part of prevention. "
     "Restricting fluids risks dehydration and malnutrition, both of which worsen tissue tolerance."]],
@@ -206,8 +184,6 @@ Q("Pilonidal cyst",
    ["Oral antibiotics alone",
     "An antibiotic will not evacuate a fluctuant collection, and fluctuance is specifically the palpation finding "
     "indicating fluid. Drainage is required."],
-   ["Warm compresses and observation",
-    "Observation of a fluctuant, draining abscess allows it to enlarge and extend rather than resolve."],
    ["Immediate wide surgical excision of the natal cleft",
     "Definitive excision addresses chronic disease with sinus tracts. It is not the management of an acute abscess "
     "presentation."],
@@ -225,8 +201,6 @@ Q("Pilonidal cyst",
     "cessation of hormonal contraception."],
    ["Prematurity, low birth weight, and multiple gestation",
     "Those are the birth history factors associated with infantile hemangiomas."],
-   ["Fair skin, sun exposure, and age over 40",
-    "Fair skin, sun exposure, and age over 40 are risk factors for keratoacanthoma."],
    ["Chronic venous insufficiency and impaired lymphatic drainage",
     "Those relate to stasis dermatitis and erysipelas rather than to a follicular disease of the natal cleft."]],
   0, 39),
@@ -247,9 +221,7 @@ Q("Dermatofibroma",
     "to do with a firm dermal nodule."],
    ["Darier sign, indicating mastocytosis",
     "Darier sign is urtication of a lesion after stroking and points to mastocytosis rather than to a fibrous dermal "
-    "nodule."],
-   ["Auspitz sign, indicating psoriasis",
-    "Auspitz sign is pinpoint bleeding after scale removal from a psoriatic plaque."]],
+    "nodule."]],
   0, 46),
 
 Q("Dermatofibroma",
@@ -261,8 +233,6 @@ Q("Dermatofibroma",
     "Most are asymptomatic. Requiring pain for the diagnosis would exclude the majority of lesions."],
    ["It is always pruritic and never painful",
     "Slight pruritus can occur, but pain is the symptom for which this lesion is specifically noted."],
-   ["It becomes painful only after malignant transformation",
-    "Dermatofibroma is benign. Pain is a feature of the benign lesion rather than a marker of transformation."],
    ["Symptoms occur only in lesions larger than 3 cm",
     "The lesion is characteristically 0.5 to 1 cm, so a size threshold of that kind would apply to almost none of "
     "them."]],
@@ -283,8 +253,6 @@ Q("Keratoacanthoma",
    ["Dermoscopy, which distinguishes it from squamous cell carcinoma",
     "Dermoscopy is useful for distinguishing basal cell carcinoma from sebaceous hyperplasia and for dermatofibroma, "
     "but biopsy is the reliable method here."],
-   ["A potassium hydroxide preparation from the keratin plug",
-    "A potassium hydroxide preparation detects fungal elements and has no role in evaluating a keratinocytic tumour."],
    ["Clinical appearance alone, given the characteristic triphasic history",
     "The history is characteristic but not sufficient, because the appearance overlaps with squamous cell carcinoma, "
     "basal cell carcinoma, and amelanotic melanoma."]],
@@ -299,8 +267,6 @@ Q("Keratoacanthoma",
    ["Observation alone, since the lesion regresses spontaneously",
     "Regression does occur after 3 to 6 months, but the lesion may continue growing or rarely metastasise, and it "
     "cannot be distinguished from squamous cell carcinoma without histology."],
-   ["Excision with 1 mm margins",
-    "A 1 mm margin is inadequate for a lesion excised specifically because of possible malignancy."],
    ["Cryotherapy without histological assessment",
     "Destroying the lesion without histology forfeits the diagnosis, which matters given the squamous cell carcinoma "
     "differential."],
@@ -320,8 +286,6 @@ Q("Epidermoid cyst",
    ["Excise the entire capsule immediately while it is inflamed",
     "Removal of the entire capsule is the standard of care but is performed when the cyst is not inflamed. Operating "
     "on inflamed tissue makes complete capsule removal harder and recurrence more likely."],
-   ["Leave it alone permanently, since epidermoid cysts never require treatment",
-    "No treatment is necessary if the cyst is asymptomatic, but this one is inflamed and symptomatic."],
    ["Aspirate the contents with a needle and discharge without follow-up",
     "Removing contents without the capsule leaves the structure that regenerates the cyst, so it recurs."],
    ["Refer urgently for excision with wide margins for possible malignancy",
@@ -342,9 +306,7 @@ Q("Epidermoid cyst",
     "mucinous contents from a joint space."],
    ["The cyst contains lipid-laden macrophages rather than sebum",
     "Collections of lipid-laden macrophages form xanthelasma, the soft yellow cholesterol plaques of the medial "
-    "eyelids."],
-   ["The cyst is filled with mucin from the underlying joint",
-    "Mucin from a joint space characterises the digital mucous cyst over the distal interphalangeal joint."]],
+    "eyelids."]],
   0, 53),
 
 Q("Syringoma",
@@ -358,8 +320,6 @@ Q("Syringoma",
    ["Collections of lipid-laden macrophages",
     "Lipid-laden macrophages form xanthelasma, which appears as soft yellow cholesterol plaques and is on the "
     "syringoma differential — but xanthelasma is yellow and plaque-like rather than small firm papules."],
-   ["Proliferation of dermal capillaries",
-    "Capillary proliferation produces cherry angiomas, which are red and blanch with pressure."],
    ["Hyperplasia of sebaceous glands around a central pore",
     "Sebaceous hyperplasia produces whitish-yellow or skin-coloured papules with a central dell, typically in older "
     "adults rather than at puberty."]],
@@ -376,8 +336,6 @@ Q("Infantile hemangioma",
    ["Steady growth in proportion to the child with no involution",
     "Growth in proportion to the child without involution describes nevus flammeus, which is present at birth, "
     "remains for life, and becomes darker and thicker."],
-   ["Immediate involution beginning at birth with resolution by 6 weeks",
-    "Involution follows the proliferative phase rather than preceding it, and the timescale is far longer."],
    ["Rapid growth with a high risk of malignant transformation",
     "Hemangiomas of infancy are the most common tumours of infancy and most are medically insignificant. Malignant "
     "transformation is not a feature."],
@@ -399,8 +357,6 @@ Q("Infantile hemangioma",
    ["Pulsed dye laser as the primary treatment",
     "Pulsed dye laser targets superficial vessels to a depth of about 1.2 mm. It has a role but is not first line for "
     "a lesion causing functional compromise."],
-   ["Systemic corticosteroids as first-line therapy",
-    "Beta-blockers are named as first line. Corticosteroids are not the initial choice here."],
    ["Immediate surgical excision in all cases",
     "Surgical excision is one option among several rather than the first-line approach for a functional "
     "complication."]],
@@ -418,8 +374,6 @@ Q("Nevus flammeus",
    ["Present at birth and involutes completely by school age",
     "Involution is the hemangioma pattern. The absence of regression is what makes nevus flammeus a lifelong lesion "
     "with psychosocial consequences."],
-   ["A soft yellow plaque of lipid-laden macrophages",
-    "That describes xanthelasma, which is associated with lipid disorders and warrants hyperlipidaemia screening."],
    ["An acquired lesion formed by capillary proliferation in adults",
     "Acquired capillary proliferation in adults describes cherry angioma. Nevus flammeus is congenital and involves "
     "dilatation without proliferation."]],
@@ -438,9 +392,6 @@ Q("Nevus simplex",
    ["A port-wine stain that will darken and thicken over life",
     "Nevus flammeus, formerly called a port-wine stain, darkens and thickens and persists. Nevus simplex is the more "
     "superficial variant with a different course."],
-   ["A cherry angioma",
-    "Cherry angiomas are acquired lesions of adults that increase with age, appearing as deep red papules under 5 mm "
-    "on the trunk."],
    ["A pyogenic granuloma",
     "Pyogenic granuloma is an acquired vascular lesion that grows rapidly after trauma and bleeds easily. It is not "
     "present at birth."]],
@@ -457,9 +408,6 @@ Q("Cherry angioma",
    ["They are benign lesions formed by capillary proliferation that can progress to malignancy if untreated",
     "The first half is correct, which is what makes this the most tempting distractor. But cherry angiomas remain "
     "benign; they do not transform, and framing them as premalignant would prompt needless procedures."],
-   ["They are caused by an increase in melanocytes",
-    "Melanocytic proliferation produces pigmented lesions such as naevi and lentigines. A blanchable red papule is "
-    "vascular."],
    ["They require biopsy to establish the diagnosis",
     "The clinical features are characteristic enough for diagnosis by inspection, and treatment is not needed unless "
     "the patient is bothered."],
@@ -482,8 +430,6 @@ Q("Nevus araneus",
     "existing vessels, and its associations are exactly what make the history important."],
    ["Dilated superficial dermal capillaries present from birth",
     "Congenital dilated dermal capillaries describe nevus flammeus, which is present at birth and persists for life."],
-   ["A benign vascular tumour arising after minor trauma",
-    "A rapidly growing vascular lesion after trauma that bleeds easily describes pyogenic granuloma."],
    ["Extravasation of blood into the dermis",
     "Deposits of blood in the skin are petechiae and purpura, which are non-blanching. Spider angiomas blanch and "
     "refill from the centre."]],
@@ -505,10 +451,7 @@ Q("Pyogenic granuloma",
     "not appear rapidly after trauma on a finger in an adolescent."],
    ["Amelanotic melanoma",
     "Malignant melanoma is on the differential and is the reason histology may be sent, but the classic history of "
-    "rapid growth after trauma with easy bleeding in a young patient fits the benign lesion."],
-   ["Dermatofibroma",
-    "A dermatofibroma is a firm nodule with a brown halo and a positive dimple sign, most commonly on the legs, and "
-    "it does not bleed spontaneously."]],
+    "rapid growth after trauma with easy bleeding in a young patient fits the benign lesion."]],
   0, 95),
 
 Q("Neurofibromatosis",
@@ -518,9 +461,6 @@ Q("Neurofibromatosis",
     "Correct. Café au lait spots are often the first manifestation of neurofibromatosis type 1, defined as light tan "
     "to brown macules over 5 mm prepubertally. Intertriginous freckling in the axillary and inguinal regions is "
     "Crowe's sign, with freckles smaller than 5 mm."],
-   ["Neurofibromatosis type 1, with intertriginous freckling known as Darier sign",
-    "The condition is right but the sign is wrong. Darier sign is urtication of a lesion after stroking and indicates "
-    "mastocytosis."],
    ["Neurofibromatosis type 2, with freckling from the NF2 gene on chromosome 22",
     "Neurofibromatosis type 2 involves the NF2 gene on chromosome 22, but the cutaneous manifestations described — "
     "café au lait spots, cutaneous neurofibromas, intertriginous freckling, and plexiform neurofibromas — belong to "
@@ -548,10 +488,7 @@ Q("Xanthelasma",
     "punctum rather than a soft yellow eyelid plaque."],
    ["Eccrine duct neoplasms appearing at puberty",
     "Syringomas are eccrine duct neoplasms of the lower eyelids appearing at puberty, and they are firm "
-    "skin-coloured papules rather than soft yellow plaques."],
-   ["Dilated capillaries requiring laser therapy",
-    "Dilated capillaries produce telangiectasias, which are blanchable and vascular rather than yellow and lipid "
-    "laden."]],
+    "skin-coloured papules rather than soft yellow plaques."]],
   0, 104),
 
 Q("Lipoma",
@@ -564,9 +501,6 @@ Q("Lipoma",
    ["Epidermoid cyst, which requires excision of the entire capsule",
     "An epidermoid cyst is on the lipoma differential, but it is a firm nodule with a central punctum that may "
     "discharge foul-smelling keratin rather than a soft mobile fatty mass."],
-   ["Dermatofibroma, which shows a positive dimple sign",
-    "Dermatofibroma is on the differential but is a firm 0.5 to 1 cm dermal nodule with a brown halo, most commonly "
-    "on the legs."],
    ["Abscess, requiring incision and drainage",
     "An abscess is on the differential but is warm, tender, and erythematous with purulent contents rather than a "
     "painless mass present for years."],
@@ -588,9 +522,7 @@ Q("Digital mucous cyst",
    ["A benign neoplasm of eccrine ducts",
     "Eccrine duct neoplasms are syringomas, which appear at puberty as multiple small papules on the eyelids."],
    ["A fibroproliferative overgrowth of dense fibrous tissue",
-    "Overgrowth of dense fibrous tissue extending beyond wound margins describes a keloid."],
-   ["A collection of lipid-laden macrophages",
-    "Lipid-laden macrophages form xanthelasma at the medial eyelids."]],
+    "Overgrowth of dense fibrous tissue extending beyond wound margins describes a keloid."]],
   0, 107),
 
 Q("Sebaceous hyperplasia",
@@ -599,9 +531,6 @@ Q("Sebaceous hyperplasia",
   [["Dermoscopy, which can distinguish sebaceous hyperplasia from basal cell carcinoma",
     "Correct. Basal cell carcinoma is the principal differential for sebaceous hyperplasia, and dermoscopy can "
     "distinguish between them. Biopsy is performed if malignancy concern persists."],
-   ["A potassium hydroxide preparation",
-    "A potassium hydroxide preparation detects fungal elements and has no role in distinguishing two "
-    "non-infectious papular lesions."],
    ["A Wood's lamp examination",
     "A Wood lamp evaluates pigment changes in selected fungal and bacterial infections. It does not differentiate "
     "sebaceous hyperplasia from basal cell carcinoma."],
@@ -632,10 +561,7 @@ Q("Hypertrophic scar",
     "scars, excision is one option among several rather than a guaranteed cure."],
    ["Cryotherapy is contraindicated in all scar management",
     "Cryotherapy with liquid nitrogen appears among keloid treatments, where it flattens lesions but can cause "
-    "hypopigmentation. It is not universally contraindicated."],
-   ["Systemic corticosteroids tapered over six weeks",
-    "Steroid delivery for scars is intralesional rather than systemic, which concentrates the effect and avoids "
-    "systemic exposure."]],
+    "hypopigmentation. It is not universally contraindicated."]],
   0, 23),
 
 Q("Keloid",
@@ -652,9 +578,7 @@ Q("Keloid",
     "therapy, which is a different modality using spandex pressure devices."],
    ["It delivers corticosteroid transdermally; it is worn for six weeks",
     "Silicone sheeting is not a drug delivery system. Corticosteroid for keloids is given by intralesional "
-    "injection."],
-   ["It provides ultraviolet protection to the scar; it is worn only outdoors",
-    "Sun protection is generally advisable for scars but is not the stated rationale for silicone sheeting."]],
+    "injection."]],
   0, 16),
 
 Q("Infantile hemangioma",
@@ -672,9 +596,7 @@ Q("Infantile hemangioma",
     "mixed, and deep."],
    ["Congenital, infantile, and acquired, with congenital the most common",
     "Infantile hemangiomas are congenital vascular lesions as a group; the subtypes are defined by the depth of "
-    "vessel involvement."],
-   ["Proliferative, involuting, and involuted, with proliferative the most common",
-    "Those terms describe phases of the natural history rather than morphological types."]],
+    "vessel involvement."]],
   0, 67, IO_B),
 
 Q("Infantile hemangioma",
@@ -686,8 +608,6 @@ Q("Infantile hemangioma",
    ["Malignant transformation to angiosarcoma",
     "Hemangiomas of infancy are benign and most are medically insignificant. Malignant transformation is not among "
     "the described complications."],
-   ["Progressive darkening and thickening throughout life",
-    "Darkening and thickening over life describes nevus flammeus, which does not involute."],
    ["Systemic hypertension from arteriovenous shunting",
     "This is not among the listed complications; the concerns are local mass effect and extracutaneous involvement."],
    ["No complications occur, since all lesions involute",
@@ -704,9 +624,6 @@ Q("Telangiectasia",
    ["A permanently dilated capillary under 1 mm that does not blanch with pressure",
     "The size and nature are right but the blanching is the key physical property, and getting it wrong would lead a "
     "clinician to mistake a dilated vessel for extravasated blood."],
-   ["A deposit of blood 1 to 2 mm that does not blanch",
-    "A non-blanching deposit of blood 1 to 2 mm is a petechia, which reflects extravasation rather than vessel "
-    "dilatation."],
    ["A proliferation of capillaries producing a red papule",
     "Capillary proliferation producing a deep red papule describes a cherry angioma, which is a raised lesion rather "
     "than a dilated vessel."],
@@ -726,8 +643,6 @@ Q("Neurofibromatosis",
    ["Greater than 5 mm at any age",
     "A single threshold ignores that lesions grow in proportion to the child, which is why the postpubertal cut-off "
     "is larger."],
-   ["Greater than 1 cm at any age",
-    "Neither stated threshold is 1 cm, and using one figure for all ages loses the developmental adjustment."],
    ["Size is not part of the definition",
     "Size is explicitly part of the definition and is what separates a café au lait macule from ordinary freckling, "
     "which in Crowe's sign is under 5 mm."]],
@@ -743,8 +658,6 @@ Q("Neurofibromatosis",
     "nerves, sessile or pedunculated. Plexiform lesions are the larger, more extensive form."],
    ["A pigmented macule that grows in proportion to the child",
     "Growth in proportion to the child describes café au lait macules."],
-   ["A cluster of freckles smaller than 5 mm in intertriginous areas",
-    "Intertriginous freckling under 5 mm is Crowe's sign."],
    ["A tumour arising exclusively within the brain and spinal cord",
     "Plexiform neurofibromas occur anywhere except the brain and spinal cord."]],
   0, 101),
@@ -759,8 +672,6 @@ Q("Acrochordon",
    ["A firm sessile nodule with a central keratin core on weight-bearing surfaces",
     "A central keratin core on a weight-bearing surface describes a clavus, which results from localised mechanical "
     "pressure."],
-   ["A translucent papule over the distal interphalangeal joint",
-    "A translucent papule over the distal interphalangeal joint is a digital mucous cyst."],
    ["A hard conical keratotic projection on sun-exposed skin",
     "A hard conical keratotic projection is a cutaneous horn, which arises from an underlying benign or malignant "
     "lesion."],
@@ -788,9 +699,7 @@ Q("Sebaceous hyperplasia",
     "Overgrowth of dense fibrous tissue describes a keloid, which enlarges but does not invade."],
    ["Ultraviolet-induced keratinocytic dysplasia that may progress to squamous cell carcinoma",
     "Ultraviolet-induced keratinocytic dysplasia describes actinic keratosis, a premalignant lesion. Sebaceous "
-    "hyperplasia is benign."],
-   ["Capillary proliferation, with a risk of haemorrhage",
-    "Capillary proliferation describes cherry angioma, which may bleed after trauma."]],
+    "hyperplasia is benign."]],
   0, 109),
 
 Q("Benign lesions overall",
@@ -806,8 +715,6 @@ Q("Benign lesions overall",
    ["Immediate referral for full-body photography in every patient",
     "Full-body photographic surveillance is a specialist tool for high-risk patients rather than a universal response "
     "to a benign lesion."],
-   ["Prophylactic excision of all lesions in sun-exposed areas",
-    "Excising benign lesions prophylactically causes scarring without benefit."],
    ["Advising complete avoidance of all outdoor activity",
     "The counselling is to avoid direct sun during peak hours and use sunscreen, not to avoid the outdoors entirely, "
     "which is neither realistic nor advised."]],

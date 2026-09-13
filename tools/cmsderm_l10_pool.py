@@ -19,9 +19,6 @@ Q("Actinic keratosis",
     "Correct. The most important distinction for actinic keratosis is early squamous cell carcinoma or carcinoma in "
     "situ, especially when a lesion is thick, indurated, ulcerated, enlarging, painful, bleeding, persistent, or "
     "recurrent. Those features change the lesion from one to treat destructively to one to sample."],
-   ["Liquid nitrogen cryotherapy, as for the other lesions",
-    "Cryotherapy is preferred for isolated or few lesions with clear borders and eradicates them over 10 to 14 days. "
-    "Applying it to an indurated bleeding lesion destroys the tissue that would have made the diagnosis."],
    ["Field-directed therapy across the whole scalp",
     "Field-directed therapy is indicated when multiple lesions occupy a field of sun-damaged skin, and it is "
     "appropriate for his burden generally. But it does not address the single lesion whose features suggest "
@@ -44,8 +41,6 @@ Q("Actinic keratosis",
    ["A velvety texture, best appreciated on inspection alone",
     "A velvety texture describes acanthosis nigricans and seborrheic keratosis. Inspection alone would miss the "
     "lesions this condition is known for."],
-   ["A stuck-on quality that lifts at the edge",
-    "A stuck-on or pasted-on appearance describes seborrheic keratosis, which is benign."],
    ["A pearly translucent quality with visible telangiectasias",
     "Pearly translucency with telangiectasias accentuated by stretching the skin is the hallmark of nodular basal "
     "cell carcinoma."],
@@ -68,9 +63,7 @@ Q("Actinic keratosis",
     "topical field therapy."],
    ["Only in immunosuppressed patients",
     "Immunosuppression is a referral indication alongside diagnostic uncertainty and high lesion burden, but it is not "
-    "what defines the choice between lesion-directed and field-directed therapy."],
-   ["Only after cryotherapy has failed twice",
-    "Field therapy is chosen on lesion burden and distribution rather than reserved for repeated treatment failure."]],
+    "what defines the choice between lesion-directed and field-directed therapy."]],
   0, 14, IO_11),
 
 Q("Squamous cell carcinoma",
@@ -90,10 +83,7 @@ Q("Squamous cell carcinoma",
     "the red flags that mark progression beyond that stage."],
    ["Keratoacanthoma, which regresses spontaneously",
     "Keratoacanthoma is on the differential and can regress, which is exactly why biopsy is the only reliable way to "
-    "distinguish it from squamous cell carcinoma."],
-   ["Amelanotic melanoma",
-    "Amelanotic melanoma is on the differential, but the classic conical hard ulcerating nodule on chronically "
-    "sun-exposed skin of an older fair-skinned outdoor worker fits keratinocyte carcinoma."]],
+    "distinguish it from squamous cell carcinoma."]],
   0, 22),
 
 Q("Squamous cell carcinoma",
@@ -111,10 +101,7 @@ Q("Squamous cell carcinoma",
     "and follow-up is required in any case."],
    ["Radiotherapy as first-line treatment for all patients",
     "Surgery is the preferred modality. Radiotherapy has a role in selected patients rather than as universal first "
-    "line."],
-   ["Observation, since squamous cell carcinoma does not metastasise",
-    "Squamous cell carcinoma carries genuine metastatic potential, which is why lymph node examination is part of "
-    "follow-up."]],
+    "line."]],
   0, 26),
 
 Q("Basal cell carcinoma",
@@ -129,9 +116,6 @@ Q("Basal cell carcinoma",
    ["Nodular squamous cell carcinoma; squamous cell carcinoma is the most common form of cancer",
     "Squamous cell carcinoma is the second most common skin cancer, and its nodule is red, conical, and hard rather "
     "than pearly and translucent."],
-   ["Sebaceous hyperplasia, which is benign",
-    "Sebaceous hyperplasia is on the basal cell carcinoma differential and dermoscopy distinguishes them. Its papules "
-    "are whitish-yellow with a central dell rather than pearly with telangiectasias and central erosion."],
    ["Keratoacanthoma, which resolves spontaneously",
     "Keratoacanthoma grows rapidly over 6 to 8 weeks and is dome-shaped with a central keratin plug, rather than "
     "enlarging slowly over years with a pearly rim."],
@@ -152,9 +136,6 @@ Q("Basal cell carcinoma",
    ["Only after topical therapy has failed twice",
     "Topical imiquimod or fluorouracil is used for selected superficial basal cell carcinoma, with clinical clearance "
     "confirmed afterwards. Mohs selection depends on site and risk rather than on prior topical failure."],
-   ["Only for tumours larger than 5 cm",
-    "Size is one consideration among several, and anatomic site, recurrence, and histological subtype drive the "
-    "decision."],
    ["Never, since basal cell carcinoma does not require surgery",
     "Basal cell carcinoma is capable of significant local destruction when delayed or histologically aggressive, and "
     "surgical management is central."]],
@@ -169,8 +150,6 @@ Q("Malignant melanoma",
    ["Asymmetry, bleeding, crusting, depth, and erosion",
     "Bleeding and ulceration are red flags in their own right, but they are not the letters of this rule, and a "
     "misremembered mnemonic produces systematic blind spots in screening."],
-   ["Abscess, bulla, cyst, dermatitis, and erythema",
-    "These are morphological terms unrelated to pigmented lesion assessment."],
    ["Age, burn history, complexion, dysplasia, and exposure",
     "These resemble risk factors rather than lesion features, and the rule describes the lesion itself."],
    ["Asymmetry, border, colour, dermoscopy, and excision",
@@ -185,9 +164,6 @@ Q("Malignant melanoma",
    ["Lentigo maligna melanoma, about two-thirds of cases, on chronically sun-exposed skin",
     "Lentigo maligna arises on chronically sun-exposed skin of older adults with a slow radial growth phase, but it "
     "is not the most common subtype."],
-   ["Nodular melanoma, about two-thirds of cases",
-    "Nodular melanoma is a recognised major subtype characterised by early vertical growth, but it is not the "
-    "commonest."],
    ["Acral lentiginous melanoma, about two-thirds of cases",
     "Acral lentiginous melanoma is one of the four major subtypes and is important because it occurs on palms, soles, "
     "and nail units in any skin tone, but it is uncommon overall."],
@@ -205,8 +181,6 @@ Q("Malignant melanoma",
    ["1 cm for in situ disease, 2 cm for lesions under 1 mm, and 3 cm for lesions over 1 mm",
     "Each margin is inflated by roughly a centimetre, which would cause unnecessary tissue loss and reconstruction "
     "without oncological benefit."],
-   ["A single 5 mm margin for all melanomas regardless of thickness",
-    "Margins are graded by Breslow thickness precisely because deeper tumours need wider clearance."],
    ["No re-excision is required after the diagnostic biopsy",
     "Re-excision is the definitive local treatment; the initial biopsy establishes the diagnosis and thickness."],
    ["Margins are determined by lesion diameter rather than thickness",
@@ -220,9 +194,6 @@ Q("Malignant melanoma",
     "Correct. Sentinel lymph node biopsy is offered or discussed at 1.0 mm Breslow thickness or greater, or at "
     "0.8 mm or greater when additional histologic risk factors such as ulceration or a high mitotic rate are "
     "present."],
-   ["At any thickness, since all melanomas warrant sentinel node biopsy",
-    "Thresholds exist precisely so that thin low-risk tumours are not subjected to an operation that would not change "
-    "management."],
    ["Only at a thickness of 4 mm or greater",
     "That threshold is far too high and would deny staging information to a large group of patients in whom it "
     "changes management."],
@@ -242,8 +213,6 @@ Q("Malignant melanoma",
    ["Lesion diameter, which must exceed 6 mm to be significant",
     "Diameter is the D of the ABCDE rule and a screening feature, but it is not the prognostic variable that drives "
     "survival."],
-   ["The presence of asymmetry, graded at initial assessment",
-    "Asymmetry is a recognition feature used to select lesions for biopsy rather than a prognostic measurement."],
    ["The patient's Fitzpatrick skin type",
     "Skin type predicts baseline ultraviolet sensitivity and contributes to risk, but it does not determine prognosis "
     "once a melanoma is diagnosed."],
@@ -261,8 +230,6 @@ Q("Malignant melanoma",
    ["Annual self-examination limited to sun-exposed skin",
     "Restricting examination to sun-exposed sites would miss acral lentiginous and nail unit melanoma, which occur on "
     "palms, soles, and nail units and are not clearly ultraviolet driven."],
-   ["Self-examination is unnecessary if annual clinician examination occurs",
-    "Both have a role, and monthly self-examination is what detects evolution between visits."],
    ["Examination should focus on counting the total number of naevi",
     "Naevus count contributes to risk assessment, but the self-examination principles are about recognising the "
     "lesion that differs from its neighbours and that is changing."],
@@ -287,9 +254,7 @@ Q("Kaposi sarcoma",
     "rather than the priority in epidemic disease, and the essential examination is oral."],
    ["Lymph node examination only; and observation",
     "Observation leaves an immunodeficiency untreated, and the specifically emphasised examination is of the oral "
-    "cavity."],
-   ["Skin examination alone, since mucosal involvement does not occur",
-    "Lesions occur on skin or mucous membranes, and hard palate involvement may be the presenting site."]],
+    "cavity."]],
   0, 66),
 
 Q("Kaposi sarcoma",
@@ -306,9 +271,7 @@ Q("Kaposi sarcoma",
     "addressed in part by discussing immunosuppression reduction with the transplant team."],
    ["The epidemic form",
     "The epidemic form is associated with acquired immunodeficiency syndrome, and its cornerstone of treatment is "
-    "immune restoration with antiretroviral therapy."],
-   ["The nodular form",
-    "Nodular describes lesion morphology rather than one of the clinical forms of the disease."]],
+    "immune restoration with antiretroviral therapy."]],
   0, 63),
 
 Q("Cutaneous T-cell lymphoma",
@@ -325,8 +288,6 @@ Q("Cutaneous T-cell lymphoma",
    ["Involvement of the trunk",
     "Truncal involvement is typical of the early disease but is also seen in the inflammatory conditions on the "
     "differential."],
-   ["The presence of scale",
-    "Scaly plaques occur in psoriasis, eczematous dermatitis, and tinea corporis alike."],
    ["A positive potassium hydroxide preparation",
     "A positive potassium hydroxide preparation would indicate tinea corporis, which is one of the alternatives being "
     "excluded rather than a feature of lymphoma."]],
@@ -345,8 +306,6 @@ Q("Cutaneous T-cell lymphoma",
    ["No treatment at any stage, since the disease is indolent",
     "The disease may remain confined to skin for years or decades, which makes indolence a real feature, but "
     "stage-directed skin-directed treatment is offered rather than nothing."],
-   ["Surgical excision of all involved skin",
-    "Malignant T cells form localised or generalised skin infiltrates, so excision is not a coherent strategy."],
    ["High-dose systemic corticosteroids indefinitely",
     "Indefinite systemic corticosteroids are not the described management and would carry substantial cumulative "
     "toxicity."]],
@@ -368,10 +327,7 @@ Q("Nail unit neoplasms",
     "widening is the pattern that argues against it."],
    ["Onychomycosis, causing discoloration of the nail plate",
     "Onychomycosis produces thickening, crumbling, debris, and onycholysis rather than a discrete pigmented "
-    "longitudinal band with periungual extension."],
-   ["Glomus tumour, causing pain and cold sensitivity",
-    "Glomus tumour is a nail unit neoplasm characterised by pain and cold sensitivity rather than by pigmented "
-    "longitudinal bands."]],
+    "longitudinal band with periungual extension."]],
   0, 84),
 
 Q("Nail unit neoplasms",
@@ -388,9 +344,7 @@ Q("Nail unit neoplasms",
     "change."],
    ["It arises in the periungual skin and is easily seen",
     "Matrix tumours cause longitudinal plate changes, and the origin beneath the proximal fold is part of why they "
-    "are recognised late."],
-   ["It is common and therefore over-diagnosed rather than delayed",
-    "It is rare, and rarity combined with an unexpected demographic is what drives delay."]],
+    "are recognised late."]],
   0, 79),
 
 Q("Nail unit neoplasms",
@@ -404,8 +358,6 @@ Q("Nail unit neoplasms",
    ["Perform a potassium hydroxide preparation before any inspection",
     "Confirming fungus matters when onychomycosis is suspected, but it does not replace inspection of the nail unit "
     "for a neoplasm."],
-   ["Obtain radiographs of all digits routinely",
-    "Imaging has selected roles but is not the specified universal examination step."],
    ["Defer examination until pigment has been present for a year",
     "Delayed recognition contributes to worse outcomes, so waiting a year is the opposite of what is advised."]],
   0, 93),
@@ -419,8 +371,6 @@ Q("Clinical approach",
    ["Assign the most likely diagnosis and then look for supporting features",
     "Naming first and confirming afterwards is the reasoning pattern that produces anchoring, which is why the "
     "sequence is deliberately reversed."],
-   ["Biopsy every lesion before description",
-    "Biopsy follows assessment, and description determines which lesions need sampling and by what technique."],
    ["Photograph the lesion and review it at the next visit",
     "Serial photography has a role in surveillance but does not substitute for systematic characterisation at the "
     "first encounter."],
@@ -442,9 +392,7 @@ Q("Actinic keratosis",
     "ulceration, bleeding — are what prompt biopsy."],
    ["Actinic keratosis progresses to basal cell carcinoma",
     "The continuum is with keratinocyte carcinoma of squamous type. Basal cell carcinoma arises through a different "
-    "route driven by intense intermittent exposure."],
-   ["Actinic keratosis progresses to melanoma",
-    "Actinic keratosis is a keratinocytic lesion. Melanoma arises from melanocytes."]],
+    "route driven by intense intermittent exposure."]],
   0, 11),
 
 Q("Basal cell carcinoma",
@@ -459,8 +407,6 @@ Q("Basal cell carcinoma",
    ["High-risk facial tumours, as an alternative to Mohs surgery",
     "High-risk anatomic sites are exactly where Mohs surgery is indicated, because tissue sparing and margin control "
     "matter most there."],
-   ["Recurrent tumours after surgical excision",
-    "Recurrence is a listed indication for Mohs surgery rather than for topical therapy."],
    ["Any basal cell carcinoma the patient prefers not to have excised",
     "Patient preference matters but does not make topical therapy appropriate for a tumour whose subtype and site "
     "call for surgery."]],
@@ -478,9 +424,7 @@ Q("Squamous cell carcinoma",
     "Pearly translucency with telangiectasias is the hallmark of nodular basal cell carcinoma."],
    ["A stuck-on appearance with comedone-like openings",
     "That describes seborrheic keratosis, a benign lesion, though an inflamed seborrheic keratosis does appear on the "
-    "squamous cell carcinoma differential."],
-   ["Colour variegation with border irregularity",
-    "Colour variegation and irregular borders are melanoma recognition features under the ABCDE rule."]],
+    "squamous cell carcinoma differential."]],
   0, 22),
 
 Q("Kaposi sarcoma",
@@ -496,8 +440,6 @@ Q("Kaposi sarcoma",
     "Human immunodeficiency virus creates the immunodeficiency that permits epidemic disease, but human herpesvirus 8 "
     "is the causative agent, which is why the classic and endemic forms occur without it."],
    ["Ultraviolet radiation damaging dermal fibroblasts",
-    "Ultraviolet damage drives keratinocyte carcinomas and melanoma rather than this vascular tumour."],
-   ["Malignant T cells migrating to the skin",
-    "Malignant T cells migrating to the skin describes cutaneous T-cell lymphoma."]],
+    "Ultraviolet damage drives keratinocyte carcinomas and melanoma rather than this vascular tumour."]],
   0, 63),
 ]

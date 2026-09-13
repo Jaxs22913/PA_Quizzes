@@ -18,15 +18,13 @@ QUESTIONS = [
   opts=[["The canalicular system may be transected, leaving chronic tearing", "Correct. If it is not repaired properly the tearing is permanent."],
         ["The optic nerve runs immediately beneath", "The nerve is not at that site."],
         ["It always indicates a globe rupture", "It raises concern but does not establish rupture."],
-        ["It cannot be closed surgically", "It can be repaired, by the right person."],
-        ["It indicates a basilar skull fracture", "Different injury entirely."]]),
+        ["It cannot be closed surgically", "It can be repaired, by the right person."]]),
 
  dict(topic="Lid laceration", io=IO_A, lead="diagnosis", cite=D % 26,
   q="What proportion of full-thickness lid lacerations come with a corneal laceration or globe rupture?",
   opts=[["About two thirds", "Correct. Always look underneath a full-thickness lid cut."],
         ["About one in twenty", "Far lower than the true association."],
         ["About one in ten", "Far lower than the true association."],
-        ["About one quarter", "Lower than the true association."],
         ["Almost none", "The association is strong."]]),
 
  dict(topic="Lid laceration", io=IO_A, lead="management", cite=D % 27,
@@ -34,7 +32,6 @@ QUESTIONS = [
   opts=[["Repair in the emergency department with ophthalmology follow-up in 2 to 3 days",
          "Correct. It does not need the specialist to close it."],
         ["Immediate transfer for operative repair", "Not required for a partial-thickness cut."],
-        ["Left open permanently to granulate", "Not the described approach."],
         ["Closed with tissue adhesive and no follow-up", "Follow-up is still arranged."],
         ["Referred to plastic surgery routinely", "Ophthalmology follow-up is what is described."]]),
 
@@ -43,7 +40,6 @@ QUESTIONS = [
   opts=[["The face is highly vascular", "Correct. That vascularity is what permits the delay."],
         ["It reduces the need for antibiotics", "Not the stated reason."],
         ["It allows swelling to resolve first", "Not the reason given for the face."],
-        ["It improves the cosmetic result in every case", "Not the stated reason."],
         ["It is required by tetanus prophylaxis", "Unrelated to wound timing."]]),
 
  # ---------------- contusion and haematoma ----------------
@@ -51,7 +47,6 @@ QUESTIONS = [
   q="What distinguishes an orbital contusion from a periorbital haematoma?",
   opts=[["Contusion is swelling without haemorrhage; the haematoma is bleeding within the orbit",
          "Correct. The septum is what keeps the contusion in front of the eye."],
-        ["Contusion involves the globe; the haematoma does not", "Neither is defined by globe involvement."],
         ["Contusion is bilateral; the haematoma is unilateral", "Laterality does not separate them."],
         ["Contusion follows sharp trauma; the haematoma follows blunt", "Mechanism does not separate them."],
         ["Contusion needs surgery; the haematoma does not", "That reverses the usual urgency."]]),
@@ -61,13 +56,11 @@ QUESTIONS = [
   opts=[["Brain trauma", "Correct. The force that bruised the orbit reaches the brain."],
         ["Thyroid eye disease", "Not an acute traumatic consideration."],
         ["Chronic open-angle glaucoma", "Not what trauma raises acutely."],
-        ["Allergic conjunctivitis", "Unrelated to the injury."],
         ["Retinoblastoma", "Not a traumatic consideration."]]),
 
  dict(topic="Periorbital haematoma", io=IO_A, lead="management", cite=D % 33,
   q="How is a periorbital haematoma decompressed?",
   opts=[["Canthotomy with cantholysis", "Correct. Release the lateral canthal tendon and cut its inferior branch so blood can drain."],
-        ["Needle aspiration through the lid", "Not the described procedure."],
         ["Pressure patching for 24 hours", "Pressure is the wrong direction entirely."],
         ["Intravenous mannitol alone", "It does not drain orbital blood."],
         ["Observation until it resorbs", "Not the management for a tense orbit."]]),
@@ -78,7 +71,6 @@ QUESTIONS = [
          "Correct. It is not always traumatic."],
         ["A corneal abrasion earlier in the week", "That does not bleed into the orbit."],
         ["Seasonal allergy", "It does not cause orbital bleeding."],
-        ["Contact lens overwear", "It does not cause orbital bleeding."],
         ["A previous hyphema", "Not a listed cause of spontaneous orbital bleeding."]]),
 
  # ---------------- retinal and vitreous detachment ----------------
@@ -87,7 +79,6 @@ QUESTIONS = [
   opts=[["Rhegmatogenous", "Correct. Full-thickness retinal breaks let liquefied vitreous behind the retina."],
         ["Traction", "That follows proliferative diabetic retinopathy and is less common."],
         ["Exudative", "That accompanies systemic disease or a tumour."],
-        ["Combined traction and exudative", "Not the commonest presentation."],
         ["Congenital", "Not one of the three types described."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="mechanism", cite=D % 35,
@@ -95,13 +86,11 @@ QUESTIONS = [
   opts=[["Posterior vitreous detachment", "Correct. The vitreous separates first, then traction opens a retinal break."],
         ["Central retinal artery occlusion", "A different disease entirely."],
         ["Acute angle closure", "Unrelated to the retinal break."],
-        ["Optic neuritis", "Unrelated to the retinal break."],
         ["Corneal ulceration", "A surface disease, unrelated."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="risk factor", cite=D % 35,
   q="Which three factors bring a rhegmatogenous detachment forward?",
   opts=[["Myopia, cataract surgery and ocular trauma", "Correct. It is usually age-related, but these accelerate it."],
-        ["Hyperopia, glaucoma and dry eye", "Not the described risks."],
         ["Diabetes, hypertension and smoking", "Those drive retinopathy rather than a retinal break."],
         ["Contact lens wear, allergy and blepharitis", "Surface conditions, unrelated."],
         ["Sickle cell disease, burns and transfusion", "Those relate to haemoglobinuria, not detachment."]]),
@@ -110,7 +99,6 @@ QUESTIONS = [
   q="Which type of retinal detachment is NOT treated primarily with surgery?",
   opts=[["Exudative", "Correct. With no break and no traction, treatment is directed at the underlying condition."],
         ["Rhegmatogenous", "That is surgical."],
-        ["Traction", "That is surgical."],
         ["All three are surgical", "One of them is not."],
         ["None of the three is surgical", "Two of the three are."]]),
 
@@ -118,7 +106,6 @@ QUESTIONS = [
   q="A traction retinal detachment is most commonly caused by what?",
   opts=[["Proliferative diabetic retinopathy", "Correct. Fibrovascular tissue pulls the retina off."],
         ["Age-related macular degeneration", "That damages the macula without traction detachment."],
-        ["Retinitis pigmentosa", "Not the described cause."],
         ["Uveal melanoma", "A tumour is associated with the exudative type."],
         ["Blunt ocular trauma alone", "Trauma accelerates the rhegmatogenous type."]]),
 
@@ -127,14 +114,12 @@ QUESTIONS = [
   opts=[["Head of bed elevated 30 to 40 degrees", "Correct, alongside pain control and antiemetics."],
         ["Flat, with the head lower than the body", "That is not the described position."],
         ["Prone with the face down", "Not described here."],
-        ["Sitting fully upright", "More than the described elevation."],
-        ["Lying on the affected side", "Not the described position."]]),
+        ["Sitting fully upright", "More than the described elevation."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="referral", cite=D % 36,
   q="Within what period must a patient with a retinal detachment see ophthalmology?",
   opts=[["Within 24 hours", "Correct. The referral is immediate."],
         ["Within one week", "Later than required."],
-        ["Within 2 to 3 days", "Later than required."],
         ["At the next routine clinic", "Far later than required."],
         ["Only if the vision worsens", "Referral does not wait on deterioration."]]),
 
@@ -143,7 +128,6 @@ QUESTIONS = [
   q="In a true blowout fracture, which wall gives way most often?",
   opts=[["The orbital floor", "Correct. Raised orbital pressure blows out the floor most frequently, or the medial wall."],
         ["The lateral wall", "Not the wall that gives way first."],
-        ["The orbital roof", "Not the wall that gives way first."],
         ["The posterior wall", "Not described as the site."],
         ["The superior orbital rim", "The rim is the second mechanism, not the wall that fails."]]),
 
@@ -152,14 +136,12 @@ QUESTIONS = [
   opts=[["Inferior rectus", "Correct. Upward gaze diplopia means the inferior rectus or its supporting structures."],
         ["Medial rectus", "That gives diplopia on lateral gaze."],
         ["Superior oblique", "Not the entrapped muscle in a floor fracture."],
-        ["Lateral rectus", "Not the entrapped muscle described."],
         ["Levator palpebrae", "That elevates the lid, not the globe."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="diagnosis", cite=D % 41,
   q="A patient has numbness of the cheek after an orbital fracture. Which nerve is injured?",
   opts=[["The infraorbital nerve", "Correct. Infraorbital numbness is a recognised finding."],
         ["The optic nerve", "That would affect vision, not sensation."],
-        ["The oculomotor nerve", "That affects eye movement and the pupil."],
         ["The facial nerve", "That affects movement rather than cheek sensation here."],
         ["The trochlear nerve", "That affects the superior oblique."]]),
 
@@ -167,7 +149,6 @@ QUESTIONS = [
   q="A child has severe pain, bradycardia and vomiting on attempting to look up, but the eye looks quiet. What is this?",
   opts=[["A white-eyed blowout with muscle entrapment", "Correct. In children entrapment may come with no orbital soft tissue signs at all."],
         ["Simple periorbital contusion", "That does not produce autonomic disturbance on gaze."],
-        ["Traumatic iritis", "That does not produce bradycardia on eye movement."],
         ["A retrobulbar haemorrhage", "That produces proptosis and a tense orbit."],
         ["Concussion without orbital injury", "The gaze-provoked symptoms point to entrapment."]]),
 
@@ -176,8 +157,7 @@ QUESTIONS = [
   opts=[["A facial trauma surgeon urgently, because the muscle can necrose", "Correct. A compromised blood supply is the reason for the urgency."],
         ["Ophthalmology within 2 to 3 days", "Too slow for an entrapped muscle."],
         ["Neurosurgery for admission", "That is the basilar skull fracture pathway."],
-        ["No consult; ice and analgesia suffice", "That is the pathway for a fracture without entrapment."],
-        ["Plastic surgery at the next elective list", "Entrapment does not wait for an elective list."]]),
+        ["No consult; ice and analgesia suffice", "That is the pathway for a fracture without entrapment."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="management", cite=D % 43,
   q="Why is surgery for an orbital fracture often delayed one to two weeks?",
@@ -185,15 +165,13 @@ QUESTIONS = [
          "Correct. Operating into a swollen orbit raises the pressure further."],
         ["To allow the fracture to begin healing", "Not the stated reason."],
         ["To complete a course of antibiotics", "Antibiotics are for blood in the maxillary sinus."],
-        ["To wait for the diplopia to resolve spontaneously", "Not the stated reason."],
-        ["To arrange outpatient anaesthetic review", "Not the stated reason."]]),
+        ["To wait for the diplopia to resolve spontaneously", "Not the stated reason."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="referral", cite=D % 43,
   q="Why is ophthalmology consulted for a true blowout fracture even without entrapment?",
   opts=[["About 30% sustain a significant globe injury", "Correct. The globe has to be assessed."],
         ["Because every fracture needs operative repair", "Many do not."],
         ["Because the optic nerve is always damaged", "It is not always involved."],
-        ["To arrange spectacles for the diplopia", "Not the reason for consultation."],
         ["To exclude a basilar skull fracture", "That is a separate assessment."]]),
 
  # ---------------- basilar skull fracture ----------------
@@ -202,15 +180,13 @@ QUESTIONS = [
   opts=[["Trauma there frequently produces no symptoms of its own", "Correct. The indirect signs are what give it away."],
         ["The fracture is always visible on plain films", "It is not, and radiographs are not the test."],
         ["It never causes bleeding", "Bleeding into soft tissue is one of the signs."],
-        ["Patients are always unconscious", "That is not what makes it silent."],
-        ["The signs appear within minutes", "Timing is not the reason."]]),
+        ["Patients are always unconscious", "That is not what makes it silent."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="diagnosis", cite=D % 44,
   q="Clear fluid drips from a patient's nose after head trauma and leaves a ring within a ring on the bedsheet. What is this?",
   opts=[["The halo sign of a cerebrospinal fluid leak", "Correct. Inner ring of blood, outer ring of cerebrospinal fluid."],
         ["Simple epistaxis", "Blood alone does not form the double ring."],
         ["Lacrimal duct injury", "Tears do not produce this pattern."],
-        ["Purulent sinus drainage", "Infection does not produce a double ring."],
         ["Cerebral oedema", "Not a bedside finding of this kind."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="initial test", cite=D % 44,
@@ -218,21 +194,18 @@ QUESTIONS = [
   opts=[["A dextrose stick", "Correct. Cerebrospinal fluid contains glucose."],
         ["A urine dipstick for protein", "Not the described test."],
         ["Fluorescein staining", "That examines the cornea."],
-        ["A rapid streptococcal antigen test", "Unrelated to this fluid."],
-        ["A pregnancy test", "Unrelated to this fluid."]]),
+        ["A rapid streptococcal antigen test", "Unrelated to this fluid."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="management", cite=D % 47,
   q="A patient with a basilar skull fracture has a cerebrospinal fluid leak. What follows?",
   opts=[["Neurosurgery consult and admission", "Correct. The leak is what forces both."],
         ["Discharge with outpatient follow-up", "A leak is not managed as an outpatient."],
         ["Ophthalmology consult and observation", "The relevant specialty is neurosurgery."],
-        ["Antibiotics alone, then discharge", "Antibiotics here are themselves controversial."],
-        ["Repeat computed tomography in one week", "That does not address the leak."]]),
+        ["Antibiotics alone, then discharge", "Antibiotics here are themselves controversial."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="management", cite=D % 47,
   q="Why are antibiotics for a cerebrospinal fluid leak controversial?",
   opts=[["They risk selecting resistant organisms", "Correct. That is the stated concern."],
-        ["They worsen the leak itself", "They do not affect the leak."],
         ["They interfere with computed tomography", "They do not."],
         ["They are contraindicated with a skull fracture", "They are not contraindicated, merely debated."],
         ["They mask the halo sign", "They do not affect the halo sign."]]),
@@ -240,7 +213,6 @@ QUESTIONS = [
  dict(topic="Basilar skull fracture", io=IO_A, lead="initial test", cite=D % 47,
   q="What is the limitation of computed tomography of the orbits in basilar skull fracture?",
   opts=[["The fracture is not always evident on it", "Correct. A normal scan does not exclude it."],
-        ["It cannot show a cerebrospinal fluid leak at all", "Not the stated limitation."],
         ["It is contraindicated after head trauma", "It is the imaging of choice."],
         ["It requires contrast that may be nephrotoxic", "Contrast is not the issue here."],
         ["It cannot be done in an unconscious patient", "It can."]]),

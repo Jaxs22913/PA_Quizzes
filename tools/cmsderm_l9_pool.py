@@ -19,8 +19,6 @@ Q("Ephelides",
     "Correct. Ephelides, or freckles, are autosomal dominant and appear most commonly on sun-exposed skin of "
     "fair-skinned individuals, often with blonde or red hair. They become more pronounced in spring and summer and "
     "fade in winter. Cryotherapy is not used because it is difficult given the size of the lesions."],
-   ["Autosomal recessive inheritance, and cryotherapy is first-line treatment",
-    "Both halves fail: the pattern is dominant, and cryotherapy is specifically excluded because of lesion size."],
    ["Somatic mutation, and surgical excision is first line",
     "Somatic mutations underlie congenital melanocytic naevi and nevus spilus. Excising freckles would produce scars "
     "far more conspicuous than the lesions."],
@@ -45,9 +43,6 @@ Q("Lentigines",
    ["Lentigines are always larger than 2 cm",
     "Simple lentigines are less than 5 mm in diameter. It is solar lentigines that range from under 1 mm to several "
     "centimetres."],
-   ["Lentigines never occur on mucous membranes",
-    "They occur on skin, conjunctiva, and mucocutaneous surfaces, and they can be associated with inherited "
-    "syndromes."],
    ["Lentigines require excision in every case",
     "Diagnosis is clinical and treatment is not necessary, with cosmetic removal by cryotherapy or quality-switched "
     "laser if the patient prefers."]],
@@ -69,9 +64,7 @@ Q("Solar lentigo",
     "Capillary proliferation produces cherry angiomas, which are red and blanchable rather than brown macules."],
    ["Somatic mutation present from birth",
     "Somatic mutations underlie congenital melanocytic naevi, which are evident at birth or shortly after rather than "
-    "acquired with cumulative sun exposure."],
-   ["Hyperinsulinaemia stimulating keratinocyte proliferation",
-    "That mechanism produces acanthosis nigricans, a velvety hyperpigmented thickening of body folds."]],
+    "acquired with cumulative sun exposure."]],
   0, 13, IO_B),
 
 Q("Seborrheic keratosis",
@@ -90,10 +83,7 @@ Q("Seborrheic keratosis",
     "palpable velvety surface."],
    ["Dermatosis papulosa nigrans, which occurs only on the trunk",
     "Dermatosis papulosa nigrans lesions are identical to small seborrheic keratoses but are 1 to 5 mm and occur on "
-    "the face and neck rather than the trunk."],
-   ["Congenital melanocytic naevi, present since birth",
-    "Congenital naevi are evident at birth or shortly after, whereas seborrheic keratoses are acquired lesions of "
-    "older adults."]],
+    "the face and neck rather than the trunk."]],
   0, 17, IO_B),
 
 Q("Dermatosis papulosa nigrans",
@@ -106,8 +96,6 @@ Q("Dermatosis papulosa nigrans",
    ["Dermatosis papulosa nigrans, which is a premalignant variant of seborrheic keratosis",
     "The lesion is identified correctly but it is not premalignant. Framing a benign genetic condition as "
     "premalignant would prompt unnecessary destructive treatment on facial skin prone to dyspigmentation."],
-   ["Multiple lentigines, which occur on sun-exposed skin only",
-    "Lentigines are macules occurring on both sun-exposed and sun-protected skin. These lesions are raised papules."],
    ["Syringomas, which are eccrine duct neoplasms",
     "Syringomas are skin-coloured 1 to 2 mm papules of the lower eyelids appearing at puberty rather than dark brown "
     "papules of the face and neck."],
@@ -129,8 +117,6 @@ Q("Vitiligo",
    ["Overgrowth of Malassezia altering melanocyte function",
     "Malassezia overgrowth causes pityriasis versicolor, in which hypopigmentation reflects altered melanocyte "
     "function and reduced tanning. Its lesions are scaly and pigment recovery follows treatment, unlike vitiligo."],
-   ["Proliferation of basal melanocytes with increased melanin",
-    "That process produces solar lentigines, which are hyperpigmented rather than depigmented."],
    ["Postinflammatory loss of pigment after a dermatitis",
     "Postinflammatory change requires preceding inflammation at the site and produces partial rather than complete "
     "depigmentation with indistinct rather than distinct margins."]],
@@ -152,10 +138,7 @@ Q("Vitiligo",
     "cancer risk, which is why narrow band ultraviolet B is preferred."],
    ["Surgical grafting is first line for all patients",
     "Management is multifactorial and depends on the extent of disease, with topical therapy and phototherapy "
-    "preceding surgical approaches."],
-   ["No treatment is available, so counselling alone is appropriate",
-    "Effective options exist across the range of disease extent, and withholding them would leave a treatable "
-    "condition untreated."]],
+    "preceding surgical approaches."]],
   0, 25),
 
 Q("Congenital melanocytic naevi",
@@ -167,9 +150,6 @@ Q("Congenital melanocytic naevi",
     "The larger the lesion, the higher the risk for melanoma. With naevi on the head or axial locations, "
     "neurocutaneous melanosis must be considered, and magnetic resonance imaging of the brain with or without the "
     "total spine is obtained concordant with the anatomic location."],
-   ["The smaller the lesion the higher the melanoma risk, with no imaging indicated",
-    "The size relationship is inverted, and omitting imaging for a large head and axial naevus would miss "
-    "neurocutaneous melanosis."],
    ["Melanoma risk is unrelated to size, and imaging is never indicated",
     "Size is the principal determinant of risk, and imaging has a defined role in specific anatomical distributions."],
    ["The larger the lesion the higher the risk, and complete excision is mandatory in every case",
@@ -189,8 +169,6 @@ Q("Nevus spilus",
     "years of life, most commonly on the trunk and extremities. Darkly pigmented macules or papules sit within a "
     "background that is circumscribed and similar in appearance to a café au lait spot, and it rarely progresses to "
     "melanoma. Management is observation, periodic evaluation, and sun protection."],
-   ["Nevus spilus, requiring immediate complete excision because of high melanoma risk",
-    "The lesion is identified correctly but it rarely progresses to melanoma, so routine excision is not warranted."],
    ["A café au lait macule of neurofibromatosis type 1",
     "Café au lait macules are uniform light tan to brown macules without darker macules within them, and their size "
     "thresholds define significance in neurofibromatosis."],
@@ -217,9 +195,7 @@ Q("Melanocytic naevi",
     "feet, scalp, and sacral region, and larger lesions are biopsied."],
    ["It indicates a Spitz nevus, which is always benign",
     "Spitz naevi are solitary, pink or red, hairless, firm, and dome-shaped, usually benign but sometimes resembling "
-    "melanoma. They are not dark brown or black."],
-   ["It confirms melanoma without need for biopsy",
-    "Suspicion warrants evaluation and biopsy rather than a diagnosis made on colour alone."]],
+    "melanoma. They are not dark brown or black."]],
   0, 36, IO_B),
 
 Q("Blue nevus",
@@ -232,8 +208,6 @@ Q("Blue nevus",
    ["Deeply pigmented melanocytes in the epidermis, always diagnosed clinically",
     "The melanocytes lie in the dermis, which is what gives the lesion its blue colour, and larger lesions require "
     "biopsy rather than clinical diagnosis alone."],
-   ["Proliferating keratinocytes, requiring cryotherapy",
-    "Keratinocytic proliferation describes seborrheic keratosis. Blue naevi are melanocytic."],
    ["Lipid-laden macrophages, requiring lipid screening",
     "Lipid-laden macrophages form xanthelasma, which warrants hyperlipidaemia screening."],
    ["Dilated dermal capillaries, blanching with pressure",
@@ -254,9 +228,7 @@ Q("Pigmented spindle cell naevus",
     "Common blue naevi are deeply pigmented lesions under 1 cm arising in adolescence at characteristic sites."],
    ["Dysplastic naevus, defined by irregular indistinct borders",
     "A dysplastic naevus is at least 5 mm with irregular, indistinct borders, whereas the Reed nevus is sharply "
-    "circumscribed."],
-   ["Congenital melanocytic nevus, present at birth",
-    "Congenital naevi are evident at birth or shortly after rather than appearing in adulthood."]],
+    "circumscribed."]],
   0, 41),
 
 Q("Spitz naevus",
@@ -269,8 +241,6 @@ Q("Spitz naevus",
    ["Pigmented spindle cell nevus, which is darkly pigmented",
     "The Reed nevus is a sharply circumscribed darkly pigmented papule on the extremities of adults in their "
     "thirties, not a pink dome-shaped lesion in a child."],
-   ["Pyogenic granuloma, which bleeds easily after trauma",
-    "Pyogenic granuloma is a bright red friable lesion that grows rapidly after injury and bleeds spontaneously."],
    ["Molluscum contagiosum, with central umbilication",
     "Molluscum lesions are pearly dome-shaped papules with characteristic central umbilication, and they are usually "
     "multiple."],
@@ -294,8 +264,6 @@ Q("Dysplastic naevus",
    ["Diagnosis is by biopsy, and all naevi should be excised prophylactically",
     "The diagnostic method is right but excising more than a hundred lesions is neither practical nor indicated. "
     "Excision is directed at lesions where melanoma is a concern."],
-   ["Diagnosis is by dermoscopy alone, with no histology needed",
-    "Dermoscopy assists assessment but biopsy is what establishes this diagnosis."],
    ["No follow-up is needed once the lesions are documented",
     "Changing or developing lesions must be biopsied, which requires ongoing surveillance rather than a single "
     "documentation visit."]],
@@ -311,8 +279,6 @@ Q("Ephelides",
     "Cryotherapy is specifically excluded because it is difficult given the small size of the lesions."],
    ["Surgical excision of each macule",
     "Excising freckles would leave scars more conspicuous than the pigment, and the lesions regress later in life."],
-   ["Systemic depigmenting therapy",
-    "Depigmenting agents used are topical rather than systemic."],
    ["No management is possible or appropriate",
     "Sun protection, counselling, and topical depigmenting agents are all available, so the condition is not simply "
     "untreatable."]],

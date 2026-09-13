@@ -10,7 +10,7 @@ themselves:
   because _cmsophtho_style.Q asserts the key's explanation opens "Correct".
   Rendering a pool straight out would make all five forms answerable without
   reading -- the PD1 bug, see [[answer_position_bias_check]]. Options are
-  permuted here onto a balanced A-E cycle.
+  permuted here onto a balanced answer-position cycle.
 
   STRATIFICATION. Each form draws proportionally from all five lectures and
   carries a fixed quota of diagnosis and treatment lead-ins, so every form is a
@@ -74,7 +74,7 @@ def build():
         q["opts"][c][0] = text
         if extra:
             q["opts"][c][1] = q["opts"][c][1].rstrip() + " " + extra
-        assert len({o[0].strip().lower() for o in q["opts"]}) == 5, \
+        assert len({o[0].strip().lower() for o in q["opts"]}) == len(q["opts"]), \
             "%s:%d shortened key collides with a distractor" % (k, i)
     print("correct answers shortened: %d" % len(sf.SHORT))
 
@@ -134,17 +134,22 @@ def build():
     for f in FORMS:
         rng.shuffle(forms[f])
 
-    # --- permute options onto a balanced A-E cycle, WITHIN each form -------
+    # --- permute options onto a balanced position cycle, WITHIN each form --
     # Every question is authored with the correct choice first (_cmsophtho_style.Q
     # asserts the key's explanation opens "Correct"), so rendering a pool straight
     # out would make all five forms answerable without reading -- the PD1 bug, see
     # [[answer_position_bias_check]]. Doing this per form rather than across the
     # whole bank is what makes each form land on exactly 13 of each letter; a
     # single global cycle left Form A with 18 A's and 7 B's.
-    assert PER_FORM % 5 == 0, "per-form balance needs a multiple of five"
+    NOPT = len(flat[0]["opts"])
+    assert all(len(q["opts"]) == NOPT for q in flat), (
+        "pools mix option counts: %s" % sorted({len(q["opts"]) for q in flat}))
+    # 65 per form does not divide by four, so the cycle is built long and cut to
+    # length: three positions get 16 questions and one gets 17. Asserting a clean
+    # multiple was only ever possible because five happened to divide 65.
     before = sum(gameable(q["opts"], q["c"]) for q in flat)
     for f in FORMS:
-        order = list(range(5)) * (PER_FORM // 5)
+        order = (list(range(NOPT)) * (PER_FORM // NOPT + 1))[:PER_FORM]
         rng.shuffle(order)
         for n, q in enumerate(forms[f]):
             target = order[n]

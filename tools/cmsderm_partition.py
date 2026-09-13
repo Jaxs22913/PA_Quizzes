@@ -65,18 +65,42 @@ def build():
         parts = re.split(r"(?<=[.!?])\s+", q["q"].strip())
         assert parts[-1].endswith("?"), f"{key}:{qi} final sentence is not the lead-in"
         q["q"] = " ".join(parts[:-1] + [new_lead])
+    # The shortfix tables were written against the ORIGINAL five options and
+    # address them by index. CMS moved to four on 13 September 2026, so both the
+    # replacement lists and the trim indices have to be remapped through a record
+    # of which option was removed from each question.
+    # cms_four_option_drops.json is regenerated from git by
+    # _four_option_drop_manifest.py, so it can be rebuilt rather than trusted.
+    _drops = json.load(open(os.path.join(HERE, "cms_four_option_drops.json"),
+                            encoding="utf-8"))
+
+    def dropped_index(key, qi):
+        per = _drops.get("cmsderm_%s_pool.py" % key)
+        assert per is not None, "no drop record for pool %r" % key
+        assert qi < len(per), "%s:%d is past the end of the drop record" % (key, qi)
+        return per[qi]
+
     for (key, qi), texts in short.items():
         q = pools[key][qi]
         assert len(texts) == 5, f"{key}:{qi}"
         assert len({t.strip().lower() for t in texts}) == 5, f"{key}:{qi} duplicate option"
+        di = dropped_index(key, qi)
+        texts = [t for i, t in enumerate(texts) if i != di]
+        assert len(texts) == len(q["opts"]), (
+            f"{key}:{qi} shortfix has {len(texts)} texts for {len(q['opts'])} options")
         q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(texts)]
     print(f"option sets cut to reference length: {len(short)}  (lead-ins narrowed: {len(leads)})")
 
     trims = _load(os.path.join(HERE, "cmsderm_shortfix.py"), "TRIM")
     for (key, qi, oi), t in trims.items():
         q = pools[key][qi]
+        di = dropped_index(key, qi)
+        if oi == di:
+            continue                    # that option no longer exists
+        oi -= 1 if oi > di else 0       # indices after the removal shift down
         q["opts"][oi][0] = t
-        assert len({x[0].strip().lower() for x in q["opts"]}) == 5, f"{key}:{qi} trim collided"
+        assert len({x[0].strip().lower() for x in q["opts"]}) == len(q["opts"]), \
+            f"{key}:{qi} trim collided"
     print(f"correct answers trimmed of trailing descriptor: {len(trims)}")
 
     splits = _load(os.path.join(HERE, "cmsderm_splitfix.py"), "SPLIT")
@@ -87,19 +111,33 @@ def build():
         q["q"] = " ".join(parts[:-1] + [spec["lead"]])
         texts = spec["opts"]
         assert len(texts) == 5 and len({t.lower() for t in texts}) == 5, f"{key}:{qi}"
+        di = dropped_index(key, qi)
+        texts = [t for i, t in enumerate(texts) if i != di]
+        assert len(texts) == len(q["opts"]), (
+            f"{key}:{qi} splitfix has {len(texts)} texts for {len(q['opts'])} options")
         q["opts"] = [[t, q["opts"][i][1]] for i, t in enumerate(texts)]
         for oi, e in spec.get("expl", {}).items():
+            if oi == di:
+                continue                # that option no longer exists
+            oi -= 1 if oi > di else 0
             assert oi != q["c"], f"{key}:{qi} split expl would overwrite the key"
             q["opts"][oi][1] = e
     print(f"two-part options split to a single concept: {len(splits)}")
 
     expl = _load(os.path.join(HERE, "cmsderm_explfix.py"), "EXPL")
+    skipped_expl = 0
     for (key, qi, oi), new_e in expl.items():
         q = pools[key][qi]
+        di = dropped_index(key, qi)
+        if oi == di:
+            skipped_expl += 1           # that distractor no longer exists
+            continue
+        oi -= 1 if oi > di else 0
         assert oi != q["c"], f"explfix would rewrite the KEYED answer at {key}:{qi}"
         assert not new_e.startswith("Correct"), f"{key}:{qi}:{oi} distractor must not read as correct"
         q["opts"][oi][1] = new_e
-    print(f"thin refutations strengthened: {len(expl)}")
+    print(f"thin refutations strengthened: {len(expl) - skipped_expl}"
+          f"  (+{skipped_expl} for options removed in the move to four)")
 
     # Padding retired 2026-08-27. It was the wrong fix: the bias came from
     # over-long CORRECT answers, so cmsderm_shortfix.py cures both at once.
@@ -120,7 +158,10 @@ def build():
 
     # --- permute options onto a balanced A-E cycle ---
     rng = random.Random(SEED)
-    order = list(range(5)) * (len(flat) // 5 + 1)
+    NOPT = len(flat[0][2]["opts"])
+    assert all(len(q["opts"]) == NOPT for _, _, q in flat), (
+        "pools mix option counts: %s" % sorted({len(q["opts"]) for _, _, q in flat}))
+    order = list(range(NOPT)) * (len(flat) // NOPT + 1)
     rng.shuffle(order)
     for n, (_, _, q) in enumerate(flat):
         target = order[n]

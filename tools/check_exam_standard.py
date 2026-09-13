@@ -113,9 +113,15 @@ def check(path, qs, html):
     if not n:
         return hard, soft
 
-    five = sum(1 for q in qs if len(q["opts"]) == 5)
-    if five != n:
-        soft.append(f"{n-five}/{n} questions are not five-option")
+    # FOUR options, and this is a HARD rule now. Jaxon, 13 September 2026:
+    # "All should be 4 answer choices not 5." The five-option shape came from the
+    # 40 reference exemplars and only ever applied to CMS; every other class was
+    # already four, so this warning used to fire on most of the site for being
+    # correct. It is inverted and promoted: a five-option question is a defect.
+    four = sum(1 for q in qs if len(q["opts"]) == 4)
+    if four != n:
+        counts = sorted({len(q["opts"]) for q in qs if len(q["opts"]) != 4})
+        hard.append(f"{n-four}/{n} questions are not four-option (found {counts})")
 
     shared = 0
     for q in qs:

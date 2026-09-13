@@ -51,10 +51,13 @@ def Q(topic, io, q, opts, lead, deck, slide, c=0):
     `opts` is a list of [text, explanation]; the CORRECT one is written first
     and `c` stays 0 until the partitioner moves it.
     """
-    assert len(opts) == 5, "five options: %s" % q[:50]
+    # FOUR options, not five. Jaxon, 13 September 2026: "All should be 4 answer
+    # choices not 5." The five-option shape came from the 40 reference exemplars
+    # and applied to CMS alone; every other class was already four.
+    assert len(opts) == 4, "four options, got %d: %s" % (len(opts), q[:50])
     assert lead in LEADS, "unknown lead-in %r" % lead
-    assert len({o[0] for o in opts}) == 5, "duplicate option: %s" % q[:50]
-    assert len({o[1] for o in opts[1:]}) == 4, "shared refutation: %s" % q[:50]
+    assert len({o[0] for o in opts}) == 4, "duplicate option: %s" % q[:50]
+    assert len({o[1] for o in opts[1:]}) == 3, "shared refutation: %s" % q[:50]
     # WORD BOUNDARY, not prefix. A distractor reading "Correcting the refractive
     # consequence does not address..." is not opening with "Correct" -- the same
     # trap the Exam 2 partition validator already documents.
