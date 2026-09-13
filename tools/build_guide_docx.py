@@ -186,6 +186,41 @@ NUMBER_CLASSES = {"n", "num", "step"}
 BREAK_BEFORE = BREAK_BEFORE | {"key", "script", "hint"}
 QUOTE_CLASSES = {"script"}
 
+# BREAK_BEFORE started as a hand-kept list of class names, and a hand-kept list
+# is wrong the moment a page adds a class nobody remembered. The gram-coverage
+# chart styles `td.nm .dr{display:block}` -- a descendant selector, so even
+# grepping for ".dr{" missed it -- and Word rendered "Penicillinase-resistant
+# penicillinsnafcillin", welding the label to the drug list. Twenty-five drug
+# names stopped existing as words.
+#
+# So: read it off the page. Anything the page itself renders on its own line
+# gets a line of its own in Word too, and no list needs maintaining.
+_BLOCKY = re.compile(r"display\s*:\s*(block|flex|grid)\b", re.I)
+
+# Set per document by convert(); union'd with BREAK_BEFORE at use.
+DOC_BREAK_BEFORE = set()
+
+
+def break_classes_from_css(soup):
+    """Class names the page's own stylesheet renders as block-level."""
+    out = set()
+    for style in soup.find_all("style"):
+        css = style.string or style.get_text() or ""
+        # strip comments so a commented-out rule cannot contribute
+        css = re.sub(r"/\*.*?\*/", " ", css, flags=re.S)
+        for m in re.finditer(r"([^{}]+)\{([^{}]*)\}", css):
+            if not _BLOCKY.search(m.group(2)):
+                continue
+            for sel in m.group(1).split(","):
+                sel = sel.strip()
+                if not sel:
+                    continue
+                # the rule targets the LAST simple selector -- in "td.nm .dr"
+                # that is .dr, and .dr is what needs the break
+                last = re.split(r"[\s>+~]+", sel)[-1]
+                out.update(re.findall(r"\.([A-Za-z][\w-]*)", last))
+    return out
+
 
 def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
     """Walk inline content, preserving bold/italic/highlight rather than
@@ -218,7 +253,7 @@ def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
                 r = par.add_run("\u2610 ")
                 r.font.size = Pt(11)
             continue
-        if kls & BREAK_BEFORE and par.runs:
+        if kls & (BREAK_BEFORE | DOC_BREAK_BEFORE) and par.runs:
             par.add_run().add_break()
         if kls & QUOTE_CLASSES:
             r = par.add_run(" ".join(child.get_text(" ", strip=True).split()))
@@ -422,15 +457,30 @@ class Builder:
         self.doc.add_paragraph().paragraph_format.space_after = Pt(4)
 
     def figure(self, node):
-        img = node.find("img")
-        if not img or not img.get("src"): return
-        path = self.resolve(img["src"])
-        if not path: return
+        # A <figure> may hold MORE THAN ONE <img> -- the side-by-side comparison
+        # pairs (.figpair) hold two, and node.find("img") returned only the
+        # first, so the second was dropped without a word. That is what the
+        # image gate caught on the CMS Exam 2 guide: 84 of 89. Any container
+        # that can hold n things has to be read as holding n.
+        imgs = [i for i in node.find_all("img") if i.get("src")]
+        if not imgs: return
+        paths = [q for q in (self.resolve(i["src"]) for i in imgs) if q]
+        if not paths: return
         p = self.doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        try:
-            p.add_run().add_picture(path, width=Inches(4.2))
-        except Exception:
-            return
+        # Two images side by side get half the width each, so a pair stays a
+        # pair on the page instead of becoming two stacked full-width figures.
+        w = Inches(4.2 if len(paths) == 1 else 4.2 / len(paths))
+        placed = 0
+        for path in paths:
+            try:
+                run = p.add_run()
+                run.add_picture(path, width=w)
+                placed += 1
+                if placed < len(paths):
+                    p.add_run("  ")
+            except Exception:
+                continue
+        if not placed: return
         cap = node.find("figcaption")
         if cap:
             caption_runs(self.doc.add_paragraph(), cap)
@@ -574,6 +624,10 @@ def convert(relpath):
     src = os.path.join(ROOT, relpath)
     html = open(src, encoding="utf-8").read()
     soup = BeautifulSoup(html, "html.parser")
+    # Read the page's block-level classes BEFORE the <style> tags are thrown
+    # away -- they are the only record of which spans render on their own line.
+    global DOC_BREAK_BEFORE
+    DOC_BREAK_BEFORE = break_classes_from_css(soup)
     for bad in soup(["script", "style", "noscript", "svg", "button"]):
         bad.decompose()
     # Navigation is dropped: the Word TOC field replaces it, and a link rail
@@ -623,7 +677,7 @@ def convert(relpath):
     # nothing.
     want_imgs = len([i for i in soup.find_all("img")
                      if i.get("src") and not i["src"].startswith("data:")])
-    src_words = words_of(soup.get_text(" ", strip=True))
+    src_words = words_of(visible_text(soup, DOC_BREAK_BEFORE))
 
     title = soup.find("h1")
     tt = doc.add_heading(level=0)
@@ -682,6 +736,43 @@ def docx_words(path):
                 for inner in c.tables: walk(inner)
     for t in d.tables: walk(t)
     return parts
+
+
+def visible_text(node, breaks=frozenset()):
+    """Text as the BROWSER lays it out: a separator at block boundaries, nothing
+    at inline ones.
+
+    soup.get_text(" ") was inserting a space at EVERY tag boundary, including
+    inline ones. The receptor chart writes its mnemonic as <b>D</b>efecation, so
+    the gate saw the words "D" and "efecation" -- neither of which appears on the
+    page or in the Word file -- and then failed the conversion for losing words
+    that never existed. The gate was manufacturing its own evidence.
+    """
+    out = []
+
+    def walk(n):
+        for child in n.children:
+            if isinstance(child, NavigableString):
+                # Comment, Doctype and CData all subclass NavigableString, so a
+                # plain isinstance check reads the page's HTML comments as body
+                # text -- which is how "google", "gtag" and a note about quote
+                # verification turned up as missing words.
+                if type(child) is not NavigableString:
+                    continue
+                out.append(str(child))
+            elif isinstance(child, Tag):
+                if child.name in INLINE_SKIP:
+                    continue
+                blocky = (child.name in BLOCK_TAGS or child.name == "br"
+                          or (set(child.get("class") or []) & breaks))
+                if blocky:
+                    out.append("\n")
+                walk(child)
+                if blocky:
+                    out.append("\n")
+
+    walk(node)
+    return re.sub(r"[ \t]+", " ", "".join(out))
 
 
 def words_of(text):
