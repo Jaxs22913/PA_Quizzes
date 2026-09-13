@@ -29,7 +29,7 @@ for n, key, fname in ((1, "set1", "transmission-of-microorganisms-quiz.html"),
     html = render(
         title="Transmission of Microorganisms &mdash; Quiz %d" % n,
         h1="Transmission of Microorganisms",
-        sub="Microbiology &middot; Exam 1 &middot; Lecture 3 &middot; Set %d" % n,
+        sub="Microbiology &middot; Exam 1 &middot; Lecture 4 &middot; Set %d" % n,
         pill="30 questions",
         chips=CHIPS,
         intro=INTRO,
