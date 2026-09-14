@@ -78,8 +78,13 @@
          is 51 lectures and eight block exams, Clin Path I is ten lectures and
          two. That puts the tab you reach for most first, the same way
          Physiology leads Summer I. */
+      /* Interpretation of Medical Literature was pulled from this term
+         (Jaxon, 2026-09-13) after the calendar was printed. Its folder->class
+         rule below is deliberately left in place: it is an inert lookup, and
+         leaving it means the course returning is a one-line change here
+         rather than a hunt through five files. */
       classes: ["cms-1", "pdm-1", "microbiology", "pharm-1",
-                "physical-diagnosis-2", "clin-path-1", "med-lit"]
+                "physical-diagnosis-2", "clin-path-1"]
     },
 
     /* The last two didactic terms have no syllabus yet, so these dates are

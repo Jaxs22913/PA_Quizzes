@@ -68,6 +68,40 @@ MOVED = {
 }
 
 
+# Courses the school pulled from a term after printing the calendar. The PDFs
+# still carry every lecture, so without this a regeneration would put the whole
+# course back -- the same failure mode MOVED exists to prevent, one course wide
+# instead of one event.
+#
+# Each entry is  course_title_substring -> why. Delete an entry if the course
+# returns; nothing else needs changing, because the tab and the registry entry
+# are driven from semesters.js, not from here.
+DROPPED = {
+    "Interpretation of Med": "not offered Fall 2026; Jaxon 2026-09-13. The "
+                             "printed calendar scheduled 19 lectures and an "
+                             "exam that are not happening.",
+}
+
+
+def apply_drops(out):
+    """Remove courses pulled after the calendar was printed. Loud if unmatched."""
+    kept, dropped = [], {}
+    for e in out:
+        hit = next((f for f in DROPPED if f.lower() in e["title"].lower()), None)
+        if hit:
+            dropped[hit] = dropped.get(hit, 0) + 1
+        else:
+            kept.append(e)
+    for frag, why in DROPPED.items():
+        n = dropped.get(frag, 0)
+        if n:
+            print("  dropped %d event(s) for %r (%s)" % (n, frag, why))
+        else:
+            print("  NOTE: no event matched the DROPPED entry %r; if the course "
+                  "is gone from the reprinted calendar, delete it." % frag)
+    return kept
+
+
 def apply_moves(out):
     """Re-date events the school moved verbally. Loud if one stops matching."""
     unused = set(MOVED)
@@ -128,6 +162,7 @@ def main():
         return h * 60 + int(m.group(2))
 
     out = apply_moves(out)
+    out = apply_drops(out)
     out.sort(key=lambda x: (x["date"], minutes(x["start"]), x["title"]))
 
     lines = []
