@@ -732,6 +732,11 @@ function renderQ(){
   // the explanation, where it is useful for looking the condition up.
   var _tp = document.getElementById('qtopic');
   _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
   document.getElementById('qio').textContent = ioLabel(q.io);
   document.getElementById('qtext').textContent = q.q;
   var _fig = document.getElementById('qfig');
@@ -825,6 +830,9 @@ function showClassPicks(q, sel){
   var counted = false;
   try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
   ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
     var c=[], total=0;
     for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
     /* Bank how the REST of the class did on this one, before our own answer is
