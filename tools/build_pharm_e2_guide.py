@@ -87,12 +87,15 @@ BODY = '''<main>
     you actually want to use in the first place.&rdquo;</em></li>
     <li><mark class="prof-highlight">Formulations</mark> &mdash; <em>&ldquo;I don&rsquo;t care that
     you memorize that necessarily, with some exceptions.&rdquo;</em></li>
-    <li><mark class="prof-highlight">The indications table</mark> &mdash; <em>&ldquo;Don&rsquo;t
-    worry so much about indications for use&hellip; a lot of them have a lot of
-    crossover.&rdquo;</em></li>
-    <li><mark class="prof-highlight">Which agent causes which adverse effect</mark> &mdash;
+    <li><mark class="prof-highlight">That one table of overlapping indications</mark> &mdash;
+    <em>&ldquo;Don&rsquo;t worry so much about indications for use&hellip; a lot of them have a
+    lot of crossover.&rdquo;</em> This is about the antibiotic table specifically. What each
+    agent is <b>for</b> is still examinable.</li>
+    <li><mark class="prof-highlight">Which agent causes the GENERIC irritation</mark> &mdash;
     <em>&ldquo;don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. Any of
-    these can do that.&rdquo;</em></li>
+    these can do that.&rdquo;</em> The adverse effects that name one drug and no other &mdash;
+    ciprofloxacin&rsquo;s white precipitate, the bitter taste of the carbonic anhydrase
+    inhibitors, iris colour change with the prostaglandins &mdash; are examinable.</li>
     <li><mark class="prof-highlight">Specific combination products</mark> &mdash; <em>&ldquo;the
     specific combinations, I don&rsquo;t care that you memorize, <strong>but</strong> just know if
     I was to say, hey, patient&rsquo;s on this drug right now, what would be a helpful second line

@@ -464,4 +464,23 @@ QUESTIONS = [
   ["Intraocular pressure and pupil size", "Neither intraocular pressure nor pupil size appears among the four determinants; those are time in contact, drainage, protein binding and diffusion."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 7"},
 
+# Added 2026-09-18, after the scope correction: agent-specific adverse effects
+# ARE examinable. What Dr. Wood ruled out was memorising which agents cause
+# ocular IRRITATION or hypersensitivity, since any of them can -- not the
+# effects that name one drug and no other.
+
+{"topic": "Trifluridine", "io": "Identify indications and contraindications of ophthalmic drugs",
+ "slot": "adverse effect",
+ "q": "Beyond ocular irritation, which adverse effect is specific to trifluridine?",
+ "opts": [
+  ["Punctate keratopathy",
+   "Correct. It is worth separating from the generic irritation every ophthalmic drug can cause, because this one names a drug and an actual corneal finding."],
+  ["A white corneal precipitate",
+   "That is described with ciprofloxacin, in about one in six patients, rather than with trifluridine."],
+  ["Raised intraocular pressure",
+   "Pressure elevation is described with the nonsteroidals and with steroids rather than with an antiviral agent."],
+  ["Changes in iris colour",
+   "Iris colour change belongs to the prostaglandin analogues used in glaucoma."]],
+ "c": 0, "cite": "Ophthalmology-2.pptx, Slide 27"},
+
 ]

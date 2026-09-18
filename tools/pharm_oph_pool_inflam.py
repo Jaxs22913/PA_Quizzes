@@ -416,4 +416,34 @@ QUESTIONS = [
   ["They have antimicrobial activity against surface organisms", "Glucocorticoids reduce local immune function and can enable infection \u2014 which is why topical steroid use appears on the fungal keratitis risk list."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 52"},
 
+# Added 2026-09-18 with the scope correction, as above.
+
+{"topic": "Ocular nonsteroidals", "io": "Identify indications and contraindications of ophthalmic drugs",
+ "slot": "adverse effect",
+ "q": "Which adverse effect of the ocular nonsteroidals matters most in a patient already being watched for glaucoma?",
+ "opts": [
+  ["A rise in intraocular pressure",
+   "Correct. The drug given for inflammation pushes the very pressure the glaucoma treatment exists to lower, so the two work against each other."],
+  ["Reduced tear production",
+   "Increased lacrimation rather than reduced tearing is described, alongside keratitis and a rise in intraocular pressure."],
+  ["Changes in eyelash length",
+   "That belongs to the prostaglandin analogues used in glaucoma, alongside iris colour change."],
+  ["Bradycardia",
+   "Slowing of the heart is a systemic effect of the topical beta blockers, reaching the circulation by the nasolacrimal route."]],
+ "c": 0, "cite": "Ophthalmology-2.pptx, Slide 51"},
+
+{"topic": "Ocular glucocorticoids", "io": "Identify indications and contraindications of ophthalmic drugs",
+ "slot": "drug choice",
+ "q": "Which conditions are given as the main uses of ocular glucocorticoids?",
+ "opts": [
+  ["Severe ocular allergy, anterior uveitis, external inflammatory disease and inflammation after surgery",
+   "Correct. All four are inflammation the nonsteroidals are not expected to control, which is what puts the steroid a step above them."],
+  ["Bacterial conjunctivitis and corneal ulcer",
+   "These are treated with anti-infectives; a steroid alone would not address the organism, and may make the infection worse."],
+  ["Chronic dry eye with inflammation",
+   "That is the indication given for cyclosporine, which raises tear production by reducing lacrimal inflammation."],
+  ["Open angle glaucoma",
+   "Steroids raise intraocular pressure rather than treating glaucoma, which is a reason to watch pressure on a steroid."]],
+ "c": 0, "cite": "Ophthalmology-2.pptx, Slide 52"},
+
 ]

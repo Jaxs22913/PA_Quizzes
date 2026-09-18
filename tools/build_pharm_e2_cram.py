@@ -4,7 +4,7 @@
 
 Opens with what Dr. Wood excludes, because on this lecture that is the single
 most useful thing to read first -- a 79-slide drug deck of which dosing,
-formulations, the indications table and per-agent adverse effects are all off
+formulations and the specific combination products are off
 the table.
 """
 import os, sys
@@ -19,8 +19,8 @@ T = [
 {"id":"rules","label":"What is NOT on it","color":"#8c1d12","rows":[
  ["Dosing","&ldquo;Not for memorization sake necessarily, because you can always look up the dosing for a medication <b>if you know which drug you actually want to use in the first place</b>.&rdquo; The deck is full of regimens. Learn none of them."],
  ["Formulations","&ldquo;I don&rsquo;t care that you memorize that necessarily, with some exceptions.&rdquo; Percent strengths, solution against ointment: not the question."],
- ["The indications table","&ldquo;Don&rsquo;t worry so much about indications for use&hellip; a lot of them have a lot of crossover.&rdquo; Slide 14 lists ten antibiotics against overlapping indications; it is orientation, not content."],
- ["Which agent irritates","&ldquo;Don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. <b>Any of these can do that.</b>&rdquo; Only two adverse effects name a drug &mdash; see the antibiotics block."],
+ ["That ONE indications table","&ldquo;Don&rsquo;t worry so much about indications for use&hellip; a lot of them have a lot of crossover.&rdquo; He means the slide listing ten antibiotics against overlapping indications &mdash; orientation, not content. <b>What each agent is FOR is still asked.</b>"],
+ ["Which agent irritates","&ldquo;Don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. <b>Any of these can do that.</b>&rdquo; That is about the GENERIC irritation. <b>The effects that name one drug are fair game</b> &mdash; ciprofloxacin&rsquo;s white precipitate, the bitter taste of the carbonic anhydrase inhibitors, iris colour change with the prostaglandins."],
  ["Combination products","&ldquo;The specific combinations, I don&rsquo;t care that you memorize, <b>BUT</b> just know if I was to say, hey, patient&rsquo;s on this drug right now, what would be a helpful second line agent to add on?&rdquo; Products out, reasoning in."],
  ["&#9733; What IS promised","&ldquo;<b>I will tell you, I will ask this question</b>&hellip; there&rsquo;s rebound hyperaemia.&rdquo; It is in the allergy block below."],
 ]},

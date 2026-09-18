@@ -10,15 +10,26 @@ OUT = os.path.join(os.path.dirname(HERE), "Pharmacology I Exam 2")
 SETS = json.load(open(os.path.join(HERE, "pharm_oph_sets.json"), encoding="utf-8"))
 PALETTE = dict(navy="#2f4f6b", indigo="#4a7fa5", gold="#b8862f", ice="#eef3f7")
 
-NOTE = ("<b>What this lecture does not test.</b> Dr. Wood rules four things out in as many words: "
-        "<b>dosing</b> (&ldquo;not for memorization sake&hellip; you can always look up the dosing "
-        "if you know which drug you actually want to use in the first place&rdquo;), "
-        "<b>formulations</b>, the <b>indications table</b> (&ldquo;don&rsquo;t worry so much about "
-        "indications for use&hellip; a lot of them have a lot of crossover&rdquo;), and "
-        "<b>which agent causes which adverse effect</b> (&ldquo;any of these can do that&rdquo;). "
-        "Nothing here is built on any of it. What is left is mechanism, drug CHOICE, and the "
-        "handful of facts he stops to make &mdash; which is why these sets are 20 and 16 rather "
-        "than the usual 30.")
+# CORRECTED 2026-09-18. This note used to say indications and adverse effects
+# were not examinable, which over-read what was actually said. Both quotes are
+# narrower than that: one is about a specific table of OVERLAPPING antibiotic
+# indications, the other about which agents cause ocular IRRITATION, since any
+# of them can. Neither rules out an agent's indications or the adverse effects
+# that name one drug and no other, and the pools were always full of both.
+NOTE = ("<b>What this lecture does not test.</b> <b>Dosing</b> &mdash; &ldquo;not for "
+        "memorization sake&hellip; you can always look up the dosing if you know which drug you "
+        "actually want to use in the first place&rdquo; &mdash; and <b>formulations</b>, and the "
+        "specific <b>combination products</b> (&ldquo;the specific combinations, I don&rsquo;t "
+        "care that you memorize, <b>BUT</b>&hellip; what would be a helpful second line agent to "
+        "add on?&rdquo; &mdash; products out, reasoning in). "
+        "Two things are narrower than they sound. &ldquo;Don&rsquo;t worry so much about "
+        "indications for use&hellip; a lot of them have a lot of crossover&rdquo; is about the "
+        "<b>table of overlapping antibiotic indications</b>, not about what an agent is for. And "
+        "&ldquo;don&rsquo;t memorize which ones cause eye irritation or hypersensitivity&hellip; "
+        "any of these can do that&rdquo; is about the <b>generic</b> irritation, not about the "
+        "effects that name one drug &mdash; ciprofloxacin&rsquo;s white precipitate, the bitter "
+        "taste of the carbonic anhydrase inhibitors, the iris colour change of the "
+        "prostaglandins. <b>Indications and agent-specific adverse effects are asked here.</b>")
 
 CONF = [
  ("anti", "Ocular Delivery &amp; Anti-infectives", "anti-infectives-quiz",

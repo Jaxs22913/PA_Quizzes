@@ -3,13 +3,20 @@
 """Split and guard the three Pharmacology Exam 2 ophthalmology pools.
 
 SIZES ARE NOT 2x30 AND THAT IS DELIBERATE. Dr. Wood rules out dosing,
-formulations, the indications table and which agent causes which adverse
-effect; padding to the house 30 would have meant writing questions on exactly
-the material he said he will not ask. Each pool is split in half instead:
+formulations and the specific combination products, which removes enough of the
+deck that padding to the house 30 would have meant writing questions on
+material he said he will not ask.
 
-    anti-infectives      40 -> 2 x 20
-    allergy/inflammation 32 -> 2 x 16
-    glaucoma/diagnostics 32 -> 2 x 16
+SCOPE CORRECTED 2026-09-18. Two of his exclusions were being read too widely.
+"Don't worry so much about indications for use... a lot of them have a lot of
+crossover" is about one table of OVERLAPPING antibiotic indications, not about
+what an agent is for; and "don't memorize which ones cause eye irritation or
+hypersensitivity... any of these can do that" is about the GENERIC irritation,
+not about the effects that name one drug -- ciprofloxacin's white precipitate,
+the bitter taste of the carbonic anhydrase inhibitors, the iris colour change
+of the prostaglandins. An audit against the deck found the pools already
+covered 25 of 29 such facts; the four that were missing have been added, so the
+defect was mostly in how the scope was DESCRIBED rather than in what was asked.
 
 Guards below are the ones this content can fail: a pharmacology question that
 quizzes a number he excluded, a stem that cites the lecture, an uneven answer

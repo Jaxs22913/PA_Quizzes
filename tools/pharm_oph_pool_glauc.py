@@ -445,4 +445,20 @@ QUESTIONS = [
    "Not the listed indications, which are all anterior and superficial."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 75"},
 
+# Added 2026-09-18 with the scope correction, as above.
+
+{"topic": "Cycloplegic agents", "io": "Identify indications and contraindications of ophthalmic drugs",
+ "slot": "adverse effect",
+ "q": "What should a patient be warned of after a cycloplegic agent is instilled?",
+ "opts": [
+  ["Photosensitivity and blurred vision",
+   "Correct. Both follow directly from a dilated pupil and a paralysed ciliary muscle, so they are predictable rather than idiosyncratic."],
+  ["A bitter taste and stinging",
+   "These are described with the carbonic anhydrase inhibitors, the bitter taste in a quarter of patients and stinging in a third."],
+  ["Fixed, small pupils and myopia",
+   "These belong to the cholinergic agonists, which constrict the pupil where a cycloplegic dilates it."],
+  ["Conjunctival hyperaemia with lash growth",
+   "Lash changes belong to the prostaglandin analogues, together with conjunctival hyperaemia and iris colour change."]],
+ "c": 0, "cite": "Ophthalmology-2.pptx, Slide 76"},
+
 ]
