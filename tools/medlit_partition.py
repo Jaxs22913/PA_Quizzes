@@ -30,6 +30,11 @@ sys.path.insert(0, HERE)
 WHICH = sys.argv[1] if len(sys.argv) > 1 else "s1"
 SPECS = {
  "s1": (["medlit_s1_pool_a:POOL_A", "medlit_s1_pool_b:POOL_B"], "medlit_s1_sets.json"),
+ "s2evid": (["medlit_s2evid_pool:POOL"], "medlit_s2evid_sets.json"),
+ "s2design": (["medlit_s2design_pool:POOL"], "medlit_s2design_sets.json"),
+ "s3rates": (["medlit_s3rates_pool:POOL"], "medlit_s3rates_sets.json"),
+ "s3data": (["medlit_s3data_pool:POOL"], "medlit_s3data_sets.json"),
+ "s4tests": (["medlit_s4tests_pool:POOL"], "medlit_s4tests_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))

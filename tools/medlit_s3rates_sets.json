@@ -1,0 +1,1566 @@
+{
+ "set1": [
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "principle",
+   "q": "Why does an age-adjusted death rate differ from a crude one?",
+   "opts": [
+    [
+     "Adjustment removes deaths from unrelated causes",
+     "Restricting to one cause gives the cause-specific rate rather than an age-adjusted one."
+    ],
+    [
+     "Adjustment converts the rate into a proportion",
+     "Expressing deaths as a share of all deaths gives proportionate mortality rather than an adjusted rate."
+    ],
+    [
+     "Adjustment removes the effect of the population's age structure",
+     "Correct, and the difference can be substantial: a crude United States rate of about 794 per 100,000 in 2009 corresponded to an age-adjusted figure of about 741."
+    ],
+    [
+     "Adjustment changes the multiplier used",
+     "The multiplier only scales the figure for readability; adjustment changes what the figure accounts for."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 10"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "application",
+   "q": "When is a probability sample useful?",
+   "opts": [
+    [
+     "When subgroups such as age or ethnicity must be investigated",
+     "Correct, because a random sample of the whole population may not deliver enough of a small subgroup to say anything about it."
+    ],
+    [
+     "When the population is too small to sample at all",
+     "The technique addresses how to sample rather than whether a population can be sampled."
+    ],
+    [
+     "When participants must be recruited quickly and cheaply",
+     "Speed and convenience describe a convenience or grab sample."
+    ],
+    [
+     "When every individual must have an equal chance",
+     "Equal chance defines a random sample; the probability sample allows the chance to differ as long as it is known."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Surveillance",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "function",
+   "q": "Which study designs allow surveillance to support hypothesis testing for aetiology?",
+   "opts": [
+    [
+     "Case-control or cohort studies",
+     "Correct, and this is where surveillance hands over to analytic epidemiology: the data identify a question that a comparative design is then built to answer."
+    ],
+    [
+     "Cross-sectional surveys only",
+     "Cross-sectional work generates hypotheses rather than testing them."
+    ],
+    [
+     "Randomised controlled trials only",
+     "Assigning an exposure suspected of causing harm is not how aetiologic questions are investigated."
+    ],
+    [
+     "Case reports and case series",
+     "Descriptive designs characterise cases without the comparison needed to test an aetiologic hypothesis."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 36"
+  },
+  {
+   "topic": "Rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "principle",
+   "q": "Why are rates used rather than raw counts?",
+   "opts": [
+    [
+     "Rates are easier to collect than counts",
+     "A rate requires the count plus a denominator, so it takes more information rather than less."
+    ],
+    [
+     "Rates allow comparisons",
+     "Correct. Two places with different populations cannot be compared on counts alone, which is why a denominator and a time period are built into the measure."
+    ],
+    [
+     "Rates remove the effect of chance",
+     "Random variation affects rates as much as counts; what rates provide is comparability."
+    ],
+    [
+     "Rates establish the cause of a disease",
+     "Rates measure how much disease there is rather than what produced it."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 5"
+  },
+  {
+   "topic": "Distribution by person",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "What does distribution by person involve?",
+   "opts": [
+    [
+     "Mapping where cases occur geographically",
+     "Mapping where cases occur is distribution by place rather than by person, which profiles who was affected."
+    ],
+    [
+     "Profiling those affected, including behaviour as well as demographics",
+     "Correct, and the questions are deliberately practical: where they eat, where they shop, what products they use, their drinking water, and whether they attended the same event."
+    ],
+    [
+     "Plotting the number of cases against time",
+     "Plotting cases against time produces an epidemic curve, which is distribution by time."
+    ],
+    [
+     "Comparing rates between nations",
+     "International comparison uses measures such as the infant mortality rate rather than describing who is affected."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "application",
+   "q": "Cardiovascular disease accounted for about 24.5 per cent of United States deaths in a year. Which measure is that?",
+   "opts": [
+    [
+     "Cause-specific mortality rate",
+     "That would set cardiovascular deaths against the population rather than against all deaths."
+    ],
+    [
+     "Case fatality",
+     "Case fatality sets deaths against those diagnosed with the disease rather than against all deaths."
+    ],
+    [
+     "Proportionate mortality",
+     "Correct, and it is a fraction rather than a rate, since its denominator is total deaths rather than the population at risk."
+    ],
+    [
+     "Crude death rate",
+     "The crude rate covers deaths from all causes set against the population."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 11"
+  },
+  {
+   "topic": "Population at risk",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "principle",
+   "q": "Who should be included in the population at risk?",
+   "opts": [
+    [
+     "Only those susceptible to the disease or outcome",
+     "Correct, and the example is unambiguous: men are not included in the denominator of a study of ovarian cancer."
+    ],
+    [
+     "Everyone living in the geographic area",
+     "Including people who cannot develop the outcome inflates the denominator and understates the rate."
+    ],
+    [
+     "Only those who already have the condition",
+     "Those who already have it cannot become new cases, so they belong outside an incidence denominator too."
+    ],
+    [
+     "Everyone who consented to take part",
+     "Consent determines who can be studied rather than who is at risk of the outcome."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Prevalence studies",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "example",
+   "q": "What did the SchoolNuts study set out to determine?",
+   "opts": [
+    [
+     "The prevalence of food allergy in children aged 10 to 14",
+     "Correct, using a parent questionnaire together with allergy testing, and finding roughly one in twenty children in Melbourne affected."
+    ],
+    [
+     "Whether a new treatment for food allergy worked",
+     "Testing a treatment would require an experimental design rather than a prevalence survey."
+    ],
+    [
+     "Whether food allergy causes school absence",
+     "Prevalence studies are poor for cause and effect; this one measured how common the condition was."
+    ],
+    [
+     "The incidence of new food allergy over ten years",
+     "Following children over time for new cases would be an incidence or cohort study."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 23"
+  },
+  {
+   "topic": "Prevalence studies",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "principle",
+   "q": "What are prevalence studies good and bad at?",
+   "opts": [
+    [
+     "Good for establishing cause, poor for planning services",
+     "The strengths run the other way: they answer what is common, not what produced it."
+    ],
+    [
+     "Good for following disease over many years",
+     "Following a population over time to see whether a condition appears describes an incidence or cohort study."
+    ],
+    [
+     "Good for measuring the severity of a condition",
+     "Severity is measured by case fatality rather than by a prevalence survey."
+    ],
+    [
+     "Good for hypotheses and service planning, poor for cause and effect",
+     "Correct, and they are relatively inexpensive, which is part of why they are a sensible first look at what is common in a community."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 23"
+  },
+  {
+   "topic": "Surveillance strategies",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "What does provider reporting of morbidity allow?",
+   "opts": [
+    [
+     "Calculation of the case fatality rate",
+     "Case fatality requires deaths among diagnosed cases rather than contact tracing."
+    ],
+    [
+     "Tracking of possible contacts and exposures",
+     "Correct, which is what converts a report of one case into the beginning of an investigation rather than a single data point."
+    ],
+    [
+     "Assignment of patients to control groups",
+     "Assignment belongs to experimental designs and has no role in surveillance."
+    ],
+    [
+     "Determination of the pretest probability",
+     "Pretest probability follows from prevalence rather than from provider reporting as such."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 37"
+  },
+  {
+   "topic": "Incidence studies",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "example",
+   "q": "What is the Framingham Heart Study an example of?",
+   "opts": [
+    [
+     "A prevalence, or cross-sectional, study",
+     "It follows participants over decades rather than measuring a condition at one moment."
+    ],
+    [
+     "A randomised controlled trial",
+     "Nothing was assigned; the exposures were observed as they occurred."
+    ],
+    [
+     "A case-control study",
+     "Participants were not selected by whether they had the outcome and then examined for past exposure."
+    ],
+    [
+     "An incidence, or cohort, study",
+     "Correct. It began in 1948 with an original cohort, follows multiple generations and additional cohorts, and helped identify the cardiovascular risk factors."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 25"
+  },
+  {
+   "topic": "Outbreak investigation",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "framework",
+   "q": "What follows the testing of hypotheses in an outbreak investigation?",
+   "opts": [
+    [
+     "Establishing the case definition",
+     "The case definition is set early, before hypotheses can be framed at all."
+    ],
+    [
+     "Determining whether an epidemic exists",
+     "That is settled near the beginning rather than after hypothesis testing."
+    ],
+    [
+     "Initiating control measures",
+     "Correct, and the sequence runs on from there to solving the original source, controlling the outbreak and deciding that it is over."
+    ],
+    [
+     "Plotting the epidemic curve",
+     "The curve is built while the outbreak is being characterised, before hypotheses are tested."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 39"
+  },
+  {
+   "topic": "Rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What is a rate?",
+   "opts": [
+    [
+     "The total number of people with a condition",
+     "A bare count of affected people is not a rate, because it carries neither a population nor a time period to be read against."
+    ],
+    [
+     "The proportion of deaths attributable to one cause",
+     "That describes proportionate mortality, which is explicitly not a rate because its denominator is deaths rather than population."
+    ],
+    [
+     "The number of times an event occurs in a fixed time period",
+     "Correct, and the reason rates exist rather than raw counts is comparison: a count means nothing until it is set against a population and a period."
+    ],
+    [
+     "The severity of a disease in those who have it",
+     "Severity is measured by case fatality rather than being what a rate means in general."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 5"
+  },
+  {
+   "topic": "Surveillance strategies",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "Why is mortality listed as a surveillance strategy?",
+   "opts": [
+    [
+     "Mortality rates are the most accurate measure of disease",
+     "Accuracy is not the argument; the point is that death is sometimes the first moment a case becomes visible."
+    ],
+    [
+     "Mortality determines the case definition",
+     "The case definition is established during the investigation rather than derived from deaths."
+    ],
+    [
+     "Deaths are easier to count than cases",
+     "Ease of counting is not the reason given; detection of otherwise unrecognised cases is."
+    ],
+    [
+     "Some cases are detected only at death",
+     "Correct, which makes death certification a genuine source of case finding rather than merely a record of outcome."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 37"
+  },
+  {
+   "topic": "Surveillance",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "example",
+   "q": "Which example is given for documenting geographic distribution and spread?",
+   "opts": [
+    [
+     "Vibrio infections after hurricane floods",
+     "That example is given for detecting outbreaks rather than for documenting geographic spread."
+    ],
+    [
+     "Emerging antibiotic resistance in an organism",
+     "That example illustrates monitoring changes in an infectious agent."
+    ],
+    [
+     "A person with tuberculosis on an international flight",
+     "Correct, because the exposure travels with the person, which makes the geographic question the operative one."
+    ],
+    [
+     "Influenza in a nursing home resident",
+     "That illustrates screening high-risk persons or groups as a surveillance strategy."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What is the denominator of the maternal mortality rate?",
+   "opts": [
+    [
+     "The mid-interval population of women",
+     "Population denominators belong to the crude and cause-specific death rates rather than to maternal mortality."
+    ],
+    [
+     "Total deaths from all causes",
+     "A denominator of total deaths describes proportionate mortality rather than a rate."
+    ],
+    [
+     "The number of pregnancies in the interval",
+     "The denominator used is live births rather than pregnancies."
+    ],
+    [
+     "Live births in the same interval",
+     "Correct, multiplied by 100,000, with deaths assigned to pregnancy-related causes in the numerator."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 9"
+  },
+  {
+   "topic": "Rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "Which rates are named as specific to maternal and child health?",
+   "opts": [
+    [
+     "Crude and age-specific death rates",
+     "Those are general mortality rates applied to a whole population."
+    ],
+    [
+     "Incidence and prevalence rates",
+     "Incidence and prevalence are morbidity measures applying to any condition rather than maternal and child health rates."
+    ],
+    [
+     "Live birth rates and fetal, infant and maternal death rates",
+     "Correct, with neonatal and perinatal death rates alongside them, all of which take live births rather than population as their denominator."
+    ],
+    [
+     "Case fatality and death-to-case ratio",
+     "Those measure the lethality of a disease rather than maternal and child health."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 6"
+  },
+  {
+   "topic": "Rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "Which rates are grouped under morbidity rates?",
+   "opts": [
+    [
+     "Crude and cause-specific death rates",
+     "Those belong to the mortality group rather than the morbidity group."
+    ],
+    [
+     "Incidence and prevalence rates",
+     "Correct. Morbidity concerns illness in the living, whereas the mortality group covers crude, age-specific, cause-specific, adjusted and case fatality rates."
+    ],
+    [
+     "Live birth and fetal death rates",
+     "Those fall under the additional rates specific to maternal and child health."
+    ],
+    [
+     "Case fatality and years of potential life lost",
+     "Those concern death among the affected rather than the frequency of illness."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 6"
+  },
+  {
+   "topic": "Prevalence studies",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "definition",
+   "q": "What is another name for a prevalence study?",
+   "opts": [
+    [
+     "A cohort study",
+     "Following a population over time to see whether a condition appears describes an incidence study, also called a cohort study."
+    ],
+    [
+     "A case-control study",
+     "A case-control study groups by outcome and looks back at exposure rather than measuring how common a condition is."
+    ],
+    [
+     "A cross-sectional study",
+     "Correct, because the population is assessed for the presence of a condition at one point rather than followed for its appearance."
+    ],
+    [
+     "A randomised trial",
+     "Nothing is assigned in a prevalence study; the condition is measured as found."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 22"
+  },
+  {
+   "topic": "Comparing populations",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "application",
+   "q": "Why is the age-adjusted death rate the right measure for comparing a county with its state?",
+   "opts": [
+    [
+     "It counts only deaths among residents",
+     "Residency affects who is counted rather than whether the comparison is fair between different age structures."
+    ],
+    [
+     "It uses live births as the denominator",
+     "Live births are the denominator of the infant and maternal mortality rates rather than of adjusted death rates."
+    ],
+    [
+     "It expresses each cause as a percentage of deaths",
+     "That describes proportionate mortality rather than an age-adjusted rate."
+    ],
+    [
+     "It removes differences in age structure between the two",
+     "Correct, and without it a county with an older population would appear less healthy on the crude rate for that reason alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 13"
+  },
+  {
+   "topic": "Outbreak investigation",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "Why must an investigation confirm that an epidemic truly exists?",
+   "opts": [
+    [
+     "Epidemics are always reported by clinicians first",
+     "How a rise first comes to attention does not settle whether the rise is real rather than an artefact of detection."
+    ],
+    [
+     "An apparent rise may reflect detection rather than occurrence",
+     "Correct, which is why a baseline and a settled case definition come first: both awareness and definition change how many cases are found."
+    ],
+    [
+     "Endemic disease cannot produce clusters of cases",
+     "Endemic disease can produce apparent clusters, which is part of why confirmation is needed."
+    ],
+    [
+     "Attack rates cannot be determined otherwise",
+     "The attack rate is determined as part of the same investigation rather than depending on the confirmation."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 38"
+  },
+  {
+   "topic": "Outbreak investigation",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "framework",
+   "q": "What must be determined at the start of an outbreak investigation?",
+   "opts": [
+    [
+     "Whether the situation is epidemic or endemic",
+     "Correct, alongside determining the attack rate, establishing the diagnosis and the case definition, confirming that an epidemic truly exists, and characterising it by time, place and person."
+    ],
+    [
+     "Which control measures to implement",
+     "Control measures are initiated after hypotheses about source and spread have been developed and tested."
+    ],
+    [
+     "Which journal will publish the findings",
+     "Publication of the findings is not one of the steps named for investigating an outbreak."
+    ],
+    [
+     "The cost of the response",
+     "Cost is not among the steps named for investigating an outbreak."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 38"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "Why is proportionate mortality not a rate?",
+   "opts": [
+    [
+     "It is measured over too short a period",
+     "The period is not the problem; the denominator is, because it counts deaths instead of people at risk."
+    ],
+    [
+     "Its denominator is deaths rather than population",
+     "Correct, and because every cause is expressed as a percentage of all deaths, the causes must sum to one hundred per cent."
+    ],
+    [
+     "It applies only to a single age group",
+     "Restriction to an age group describes the age-specific mortality rate, which is still a rate."
+    ],
+    [
+     "It cannot be compared between populations",
+     "Comparability is not what disqualifies it; the composition of its denominator is."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 8"
+  },
+  {
+   "topic": "Surveillance",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "Why does surveillance need to establish a baseline?",
+   "opts": [
+    [
+     "Because a baseline proves the cause of the disease",
+     "Hypothesis testing for aetiology is a separate function, carried out with case-control or cohort studies."
+    ],
+    [
+     "Because surveillance is required to be passive",
+     "Surveillance may be active or passive, and the baseline requirement applies either way."
+    ],
+    [
+     "Because baselines determine the case definition",
+     "The case definition is established during an outbreak investigation rather than derived from a baseline."
+    ],
+    [
+     "Without it a rise in cases cannot be recognised",
+     "Correct, and establishing that baseline is listed among its core purposes, alongside determining the magnitude of a health problem."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 34"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "principle",
+   "q": "What must the causes in a proportionate mortality analysis sum to?",
+   "opts": [
+    [
+     "One hundred per cent",
+     "Correct, because each cause is expressed as a share of all deaths in the population over the period, so together they account for every death."
+    ],
+    [
+     "The crude death rate",
+     "The crude death rate is a separate measure with population in its denominator rather than a total the shares add up to."
+    ],
+    [
+     "The number of live births",
+     "Live births are the denominator of the maternal and infant mortality rates rather than a total for cause shares."
+    ],
+    [
+     "Whatever the case fatality implies",
+     "Case fatality concerns deaths among those diagnosed with one disease rather than the distribution of all deaths."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 8"
+  },
+  {
+   "topic": "Case definition",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "principle",
+   "q": "Why does the case definition matter so much to measured frequency?",
+   "opts": [
+    [
+     "Most clinical information lies on a continuum, not in two boxes",
+     "Correct, so where the line is drawn between case and non-case has a marked effect on how much disease the measurement finds."
+    ],
+    [
+     "Case definitions are fixed by national agencies",
+     "Definitions are established during an investigation rather than being immutable, which is why their effect on frequency matters."
+    ],
+    [
+     "Frequency depends only on the size of the population",
+     "The denominator matters, but so does what counts as a case in the numerator."
+    ],
+    [
+     "Clinical information is almost always binary",
+     "The opposite is stated: most clinical information is not binary and exists on a low-to-high continuum."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 27"
+  },
+  {
+   "topic": "Prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "principle",
+   "q": "Which method is described as useful for collecting prevalence information?",
+   "opts": [
+    [
+     "Long-term follow-up of a cohort",
+     "Following a group over time measures incidence rather than prevalence."
+    ],
+    [
+     "Surveys",
+     "Correct, because a survey counts who does and does not have the condition at one time, which is exactly what prevalence requires."
+    ],
+    [
+     "Randomised assignment to an intervention",
+     "Nothing is assigned when measuring how common a condition is."
+    ],
+    [
+     "Pooling data from published trials",
+     "Pooling data from published trials describes a meta-analysis, which uses existing results rather than collecting new ones."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 15"
+  },
+  {
+   "topic": "Incidence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "definition",
+   "q": "What does incidence describe?",
+   "opts": [
+    [
+     "Everyone who has the condition at one moment",
+     "That is prevalence, which counts existing cases as well as new ones."
+    ],
+    [
+     "The proportion of cases that prove fatal",
+     "That is case fatality, a measure of severity rather than of new occurrence."
+    ],
+    [
+     "The distribution of a condition by person and place",
+     "Distribution describes where and in whom disease occurs rather than how fast new cases appear."
+    ],
+    [
+     "New cases arising in previously healthy people",
+     "Correct, over a specified time period. That restriction to the previously healthy is what separates it from prevalence, which counts everyone who has the condition."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 17"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "definition",
+   "q": "What is a grab sample?",
+   "opts": [
+    [
+     "Researchers take whoever they can find",
+     "Correct, and it sits alongside the convenience sample among the non-random approaches, where who ends up in the study is decided by availability."
+    ],
+    [
+     "A sample in which everyone has an equal chance",
+     "That is a random sample, in which selection probability is not merely known but identical for everyone."
+    ],
+    [
+     "A sample in which everyone has a known chance",
+     "That is a probability sample, where the chance of selection is known but need not be the same for everyone."
+    ],
+    [
+     "A sample drawn separately from each subgroup",
+     "Deliberate sampling within subgroups describes the use of a probability sample."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "definition",
+   "q": "What defines a random sample?",
+   "opts": [
+    [
+     "Every individual has a known chance of selection",
+     "A known but possibly unequal chance defines a probability sample."
+    ],
+    [
+     "Every individual has an equal chance of selection",
+     "Correct, which is what separates it from a probability sample, where the chance of selection is known but need not be equal."
+    ],
+    [
+     "Participants are whoever is convenient to obtain",
+     "That describes a convenience sample, which is non-random and chosen because it is straightforward to obtain."
+    ],
+    [
+     "Researchers take whoever they can find",
+     "That describes a grab sample, the least structured of the approaches named."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 29"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Surveillance",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "function",
+   "q": "What example is given for monitoring changes in an infectious agent?",
+   "opts": [
+    [
+     "A restaurant worker with hepatitis A",
+     "That is an example of screening high-risk persons or groups."
+    ],
+    [
+     "Foodborne gastrointestinal disease",
+     "Vibrio infections after hurricane floods are given as an example of detecting outbreaks rather than geographic spread."
+    ],
+    [
+     "Resistance emerging to an antibiotic it was once susceptible to",
+     "Correct, and it matters because the organism has not changed its name while the treatment that works against it has changed entirely."
+    ],
+    [
+     "A person with tuberculosis flying internationally",
+     "That illustrates documenting geographic distribution and spread."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 36"
+  },
+  {
+   "topic": "Prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "application",
+   "q": "How does prevalence help in clinical reasoning?",
+   "opts": [
+    [
+     "It establishes the cause of the condition",
+     "Prevalence measures how much of a condition is present rather than what produces it."
+    ],
+    [
+     "It determines the severity of the condition",
+     "Severity is measured by case fatality rather than by how common a condition is."
+    ],
+    [
+     "It prioritises the differential diagnosis",
+     "Correct: think horses, not zebras. It also affects the interpretation of test results, because it sets the pretest probability."
+    ],
+    [
+     "It identifies which test is most accurate",
+     "Test accuracy is a property of the test, although prevalence does change how its result should be read."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 16"
+  },
+  {
+   "topic": "Incidence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "differential",
+   "q": "What distinguishes cumulative incidence from incidence density?",
+   "opts": [
+    [
+     "Cumulative incidence uses person-time in the denominator",
+     "Person-time is the denominator of incidence density, used because the population changes."
+    ],
+    [
+     "Incidence density counts existing as well as new cases",
+     "Both measure new cases; what differs is whether the population is fixed or dynamic."
+    ],
+    [
+     "Cumulative incidence applies only to acute illness",
+     "Neither measure is restricted by the acuteness of the condition."
+    ],
+    [
+     "Cumulative incidence uses a group of fixed size",
+     "Correct, whereas incidence density measures new cases in a changing population, which is why its denominator is person-time rather than people."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 17"
+  },
+  {
+   "topic": "Population at risk",
+   "io": "Discuss factors that impact or influence disease measurement",
+   "slot": "limitation",
+   "q": "What is the cost of narrowing the population under study?",
+   "opts": [
+    [
+     "It always introduces measurement error",
+     "Measurement error arises from the process of measuring rather than from how the population was bounded."
+    ],
+    [
+     "It may curtail generalisability",
+     "Correct, and the trade is often worth making, as when a study is limited to those in a service region who need the service, but the limit has to be acknowledged."
+    ],
+    [
+     "It makes the rate impossible to calculate",
+     "A narrower population still gives a denominator; what suffers is how widely the result applies."
+    ],
+    [
+     "It converts the study into an experiment",
+     "Nothing is assigned by narrowing a population, so the design remains observational."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "application",
+   "q": "What does prevalence set when a test result is interpreted?",
+   "opts": [
+    [
+     "The pretest probability",
+     "Correct, and this is why the same result means different things in different settings: a positive test in a population where the disease is rare is far more often a false positive."
+    ],
+    [
+     "The sensitivity of the test",
+     "Sensitivity is a property of the test rather than of the population it is used in."
+    ],
+    [
+     "The specificity of the test",
+     "Specificity likewise belongs to the test rather than to how common the disease is."
+    ],
+    [
+     "The reliability of the measurement",
+     "Reliability concerns whether repeated measurement gives the same answer, independent of disease frequency."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 16"
+  },
+  {
+   "topic": "Incidence density",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "definition",
+   "q": "What is incidence density useful for?",
+   "opts": [
+    [
+     "Populations of fixed size followed together",
+     "A group of fixed size is what cumulative incidence handles, counting new cases among a membership that does not change."
+    ],
+    [
+     "Dynamic populations, with people moving in and out",
+     "Correct, which is why it is often used in clinical trials, where participants enrol and leave at different times rather than all being present throughout."
+    ],
+    [
+     "Measuring how many people have a condition now",
+     "Counting everyone who has a condition at a moment is prevalence rather than any measure of new occurrence."
+    ],
+    [
+     "Comparing mortality between nations",
+     "International health comparison is commonly done with the infant mortality rate."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 19"
+  },
+  {
+   "topic": "Other rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What principle underlies years of potential life lost?",
+   "opts": [
+    [
+     "Deaths should be weighted by the cost of treatment",
+     "Cost of treatment is not what the measure weights; age at death is, because dying young costs more productive years."
+    ],
+    [
+     "Death at a younger age loses more productive years",
+     "Correct, and the practical use follows: it helps target interventions at the causes that take the most life from a population, not merely the most lives."
+    ],
+    [
+     "All deaths carry equal weight regardless of age",
+     "Equal weighting of every death is exactly what this measure departs from, by counting the years each death removed."
+    ],
+    [
+     "Only deaths from preventable causes are counted",
+     "The measure weights by age at death rather than restricting to preventable causes."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 14"
+  },
+  {
+   "topic": "Incidence and prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "principle",
+   "q": "In chronic disease, how do incidence and prevalence usually compare?",
+   "opts": [
+    [
+     "Incidence is usually higher than prevalence",
+     "That pattern belongs to acute illness, where people recover and leave the prevalent pool quickly."
+    ],
+    [
+     "They are usually equal",
+     "The relationship depends on how long people remain cases, which differs sharply between chronic and acute conditions."
+    ],
+    [
+     "Incidence is usually lower than prevalence",
+     "Correct, because newly diagnosed patients are added to a group that does not shed its existing members, so cases accumulate."
+    ],
+    [
+     "Neither can be measured in chronic disease",
+     "Both are measurable; the point is how their relationship differs by the duration of the condition."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What does the crude mortality rate measure?",
+   "opts": [
+    [
+     "Deaths from all causes in a population",
+     "Correct, which is why it is called crude: it makes no adjustment for the age structure of the population, and an older population will show a higher figure for that reason alone."
+    ],
+    [
+     "Deaths from one specified cause in a population",
+     "That is the cause-specific mortality rate, which narrows the numerator to a single cause."
+    ],
+    [
+     "Deaths within a particular age group",
+     "That is the age-specific mortality rate, which narrows both numerator and denominator to one age band."
+    ],
+    [
+     "Deaths among those diagnosed with a disease",
+     "That is case fatality, which measures the severity of a disease rather than mortality in a population."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 7"
+  },
+  {
+   "topic": "Prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "definition",
+   "q": "What does prevalence describe?",
+   "opts": [
+    [
+     "The portion who develop a condition over a period",
+     "That is incidence, which counts new cases arising in previously healthy people."
+    ],
+    [
+     "The portion of a group with a condition at one time",
+     "Correct, and the useful image is a snapshot: it is measured by counting who does and does not have the condition, which is what surveys are good at."
+    ],
+    [
+     "The proportion of those diagnosed who die",
+     "That is case fatality, a measure of severity among those diagnosed rather than of how much disease is present."
+    ],
+    [
+     "The number of deaths per unit of population",
+     "That describes a mortality rate rather than how much of a condition is present."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 15"
+  },
+  {
+   "topic": "Prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "differential",
+   "q": "What distinguishes point from period prevalence?",
+   "opts": [
+    [
+     "Point prevalence uses the same calendar date for all",
+     "The single point is per person and does not need to be the same date across the group."
+    ],
+    [
+     "Period prevalence counts only new cases",
+     "Counting only new cases describes incidence; period prevalence counts all cases present."
+    ],
+    [
+     "Point prevalence is a single moment for each person",
+     "Correct, and that moment need not be the same calendar date for everyone. Period prevalence counts cases present during a specified stretch of time."
+    ],
+    [
+     "Point prevalence applies only to chronic disease",
+     "Neither measure is restricted by the chronicity of the condition."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 15"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "Which measure is commonly used to compare health status between nations?",
+   "opts": [
+    [
+     "Infant mortality rate",
+     "Correct: deaths among children under one year divided by live births in the same period, multiplied by one thousand."
+    ],
+    [
+     "Crude death rate",
+     "The crude rate reflects a population's age structure as much as its health, which limits its use for international comparison."
+    ],
+    [
+     "Proportionate mortality",
+     "That describes how deaths are distributed among causes rather than how much death there is."
+    ],
+    [
+     "Death-to-case ratio",
+     "That compares deaths to new cases of one disease rather than describing a nation's health status."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 8"
+  },
+  {
+   "topic": "Surveillance strategies",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "framework",
+   "q": "Which is a named surveillance strategy?",
+   "opts": [
+    [
+     "Reviewing published systematic reviews",
+     "Literature synthesis is not one of the surveillance strategies named."
+    ],
+    [
+     "Randomly assigning exposures in the population",
+     "Assignment of exposure is experimental and has no place in surveillance."
+    ],
+    [
+     "Pooling data from several published studies",
+     "Pooling published studies describes a meta-analysis, which synthesises evidence rather than gathering surveillance data."
+    ],
+    [
+     "Screening high-risk persons or groups",
+     "Correct, alongside clinical symptoms and syndromes, mortality data, provider reporting of morbidity and laboratory reporting of positive results."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 37"
+  },
+  {
+   "topic": "Incidence and prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "application",
+   "q": "A town of 1,000 has 80 cases of a disease in 2015, and 20 previously healthy people develop it between 2016 and 2018. Which figure is the incidence for that period?",
+   "opts": [
+    [
+     "Eight per cent",
+     "That is the prevalence in 2015, being the 80 cases already present in the 1,000 residents."
+    ],
+    [
+     "Ten per cent",
+     "That is the prevalence in 2018, counting all 100 cases present rather than only the new ones."
+    ],
+    [
+     "Eighteen per cent",
+     "Adding the 2015 prevalence to the new cases mixes two different measures rather than producing either."
+    ],
+    [
+     "Two per cent",
+     "Correct, since 20 new cases in 1,000 people is the new-case count over the period. The 100 cases present in 2018 give a prevalence of ten per cent."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 20"
+  },
+  {
+   "topic": "Distribution by place",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "definition",
+   "q": "What does endemic mean?",
+   "opts": [
+    [
+     "A concentration of new cases in a given time",
+     "A concentration of new cases in a given time is an epidemic, which belongs to distribution by time."
+    ],
+    [
+     "Disease limited by geographic location",
+     "Correct, and it belongs to distribution by place, alongside the outbreak lists, travel notices and food safety recalls maintained nationally."
+    ],
+    [
+     "Widespread cases across many regions",
+     "Widespread cases describe a pandemic, which may develop rapidly or slowly depending on the disease."
+    ],
+    [
+     "A disease that has been eradicated",
+     "Endemic describes a disease confined to an area rather than one that has gone."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 32"
+  },
+  {
+   "topic": "Distribution of disease",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "framework",
+   "q": "On which three levels is the distribution of disease evaluated?",
+   "opts": [
+    [
+     "Agent, host and environment",
+     "Those three are what epidemiology sets out to discover as factors affecting health rather than the levels on which distribution is evaluated."
+    ],
+    [
+     "Person, place and time",
+     "Correct, and the work of looking for patterns across those three is a large part of what epidemiologists actually do."
+    ],
+    [
+     "Incidence, prevalence and mortality",
+     "Those are measures of disease frequency rather than levels of distribution."
+    ],
+    [
+     "Nominal, ordinal and interval",
+     "Those are the three types of data that measurement produces."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 30"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "Which age range defines the neonatal mortality rate?",
+   "opts": [
+    [
+     "28 to 364 days",
+     "That is the postneonatal mortality rate rather than the neonatal one."
+    ],
+    [
+     "Under one year",
+     "That is the infant mortality rate, which spans both the neonatal and postneonatal periods."
+    ],
+    [
+     "Under 28 days",
+     "Correct, with live births as the denominator. Postneonatal mortality covers 28 to 364 days, and infant mortality covers the whole first year."
+    ],
+    [
+     "Under five years",
+     "No measure in this set uses five years; the divisions are 28 days, 28 to 364 days, and the first year."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 9"
+  },
+  {
+   "topic": "Outbreak investigation",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "example",
+   "q": "What does the 1976 Philadelphia Legionnaires' disease outbreak illustrate?",
+   "opts": [
+    [
+     "A slowly developing pandemic",
+     "A slow pandemic is illustrated by HIV and AIDS rather than by a localised outbreak after one event."
+    ],
+    [
+     "An endemic disease confined by geography",
+     "The outbreak was a concentration of new cases in time rather than a disease permanently limited to an area."
+    ],
+    [
+     "A prevalence survey of a community",
+     "Cases were investigated as an outbreak rather than counted in a cross-sectional survey."
+    ],
+    [
+     "An epidemic curve tied to a single gathering",
+     "Correct: cases were plotted by date of onset across July and August, following an American Legion convention."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 40"
+  },
+  {
+   "topic": "Other rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What does case fatality measure?",
+   "opts": [
+    [
+     "Disease frequency in a population",
+     "Frequency is what incidence and prevalence measure; case fatality concerns what happens to those who have the disease."
+    ],
+    [
+     "The distribution of deaths among causes",
+     "That is proportionate mortality, which distributes all deaths among their causes rather than measuring severity."
+    ],
+    [
+     "Years of productive life lost to early death",
+     "That is years of potential life lost, a separate measure used to target interventions."
+    ],
+    [
+     "Disease severity",
+     "Correct, expressed as the proportion of people diagnosed with a disease who die from it, which says nothing about how common the disease is."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 14"
+  },
+  {
+   "topic": "Surveillance",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "function",
+   "q": "Which is an epidemiologic function of surveillance?",
+   "opts": [
+    [
+     "Detecting outbreaks and epidemics",
+     "Correct, alongside determining the magnitude of a problem, understanding natural history, documenting geographic spread, testing aetiologic hypotheses, evaluating control strategies and monitoring changes in an agent."
+    ],
+    [
+     "Assigning treatment to individual patients",
+     "Treatment of individuals is clinical work rather than a surveillance function."
+    ],
+    [
+     "Publishing systematic reviews of the literature",
+     "Evidence synthesis is a separate activity from population surveillance."
+    ],
+    [
+     "Setting the price of preventive services",
+     "Setting the price of services is not among the epidemiologic functions of surveillance that are named."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "Incidence density",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "limitation",
+   "q": "Where does the potential for error lie in incidence density?",
+   "opts": [
+    [
+     "In variation in duration of follow-up",
+     "Correct, because person-time treats one person followed ten years as equivalent to ten people followed one year, which may not be true of the risk involved."
+    ],
+    [
+     "In counting existing cases as new ones",
+     "Incidence of any kind counts only new cases in previously healthy people."
+    ],
+    [
+     "In the population being of fixed size",
+     "A fixed population is what cumulative incidence assumes; incidence density exists for changing ones."
+    ],
+    [
+     "In the multiplier used to express the result",
+     "The multiplier scales the figure for legibility rather than introducing error."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 19"
+  },
+  {
+   "topic": "Surveillance",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "At which levels does disease surveillance operate?",
+   "opts": [
+    [
+     "National level only",
+     "State and county health departments both take part alongside the national agency."
+    ],
+    [
+     "National, state and county",
+     "Correct, and it may be active or passive. Its first contribution is a baseline, without which no rise in cases can be recognised as a rise."
+    ],
+    [
+     "Hospital level only",
+     "Hospitals contribute data, but surveillance is organised through national, state and county public health structures."
+    ],
+    [
+     "International level only",
+     "The levels named are national, state and county, so surveillance is not run from any single one of them."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 34"
+  },
+  {
+   "topic": "Outbreak investigation",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "definition",
+   "q": "What is an epidemic curve?",
+   "opts": [
+    [
+     "The number of cases plotted against location",
+     "Location is handled under distribution by place rather than by an epidemic curve."
+    ],
+    [
+     "The proportion of cases that prove fatal",
+     "That is case fatality, a measure of how lethal a disease is rather than of how an outbreak spread."
+    ],
+    [
+     "The number of cases plotted against time",
+     "Correct, and its shape carries information about the type of exposure, the route of spread and when exposure occurred."
+    ],
+    [
+     "The cumulative attack rate across subgroups",
+     "The attack rate is a separate determination from the plot of cases over time."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 39"
+  },
+  {
+   "topic": "Outbreak investigation",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "framework",
+   "q": "Which characteristics of an outbreak are described alongside the epidemic curve?",
+   "opts": [
+    [
+     "Case fatality, years of life lost and attack rate",
+     "Those are measures of impact rather than the characteristics used to work out how an outbreak spread."
+    ],
+    [
+     "Incidence, prevalence and mortality",
+     "Those are measures of disease frequency rather than the characteristics named here."
+    ],
+    [
+     "Type of exposure, route of spread and timing of exposure",
+     "Correct, and together they feed the hypotheses about source, type and route of spread that the investigation then tests."
+    ],
+    [
+     "Person, place and time",
+     "Those are the three levels on which the distribution of disease is evaluated, a related but separate framework."
+    ]
+   ],
+   "c": 2,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 39"
+  },
+  {
+   "topic": "Incidence and prevalence",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "principle",
+   "q": "Why may prevalence be lower than incidence in acute illness?",
+   "opts": [
+    [
+     "People recover, so few are ill at any one moment",
+     "Correct, with the common cold as the example: a great many people are affected over a period while only a small number have it at any given instant."
+    ],
+    [
+     "Acute illnesses are diagnosed less often",
+     "The explanation offered is recovery and short duration rather than under-diagnosis."
+    ],
+    [
+     "Acute illnesses have no measurable incidence",
+     "Incidence is precisely what is high in acute illness; it is prevalence that stays low because people recover quickly."
+    ],
+    [
+     "Acute illness is not counted in prevalence studies",
+     "It is counted; it simply does not persist long enough to accumulate."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Incidence studies",
+   "io": "Compare and contrast incidence and prevalence rates",
+   "slot": "definition",
+   "q": "What is another name for an incidence study?",
+   "opts": [
+    [
+     "A cross-sectional study",
+     "Assessing a population for a condition at one moment describes a prevalence study."
+    ],
+    [
+     "A case series",
+     "A case series describes a group of cases without a denominator or follow-up."
+    ],
+    [
+     "A meta-analysis",
+     "A meta-analysis pools published studies rather than following a population."
+    ],
+    [
+     "A cohort study",
+     "Correct, because a population is followed over time to identify whether the condition appears, which is what following a cohort means."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 25"
+  },
+  {
+   "topic": "Distribution by time",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "definition",
+   "q": "What distinguishes an epidemic from a pandemic?",
+   "opts": [
+    [
+     "An epidemic is widespread; a pandemic is local",
+     "The terms run the other way: widespread distribution is what makes an outbreak a pandemic."
+    ],
+    [
+     "An epidemic is limited by geography",
+     "Limitation by geographic location defines an endemic disease rather than either kind of outbreak."
+    ],
+    [
+     "A pandemic always develops rapidly",
+     "A pandemic may be rapid or slow; HIV and AIDS are given as the slow example."
+    ],
+    [
+     "An epidemic concentrates new cases in time; a pandemic is widespread",
+     "Correct, and a pandemic may develop rapidly, as with the influenza outbreak of the early 1900s, or slowly, as with HIV and AIDS."
+    ]
+   ],
+   "c": 3,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 33"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What sits in the denominator of the crude death rate?",
+   "opts": [
+    [
+     "The total number of deaths from all causes",
+     "Deaths in the denominator describes proportionate mortality, which is a fraction of deaths rather than a rate."
+    ],
+    [
+     "The mid-interval population",
+     "Correct, and it is multiplied by 1,000 or 100,000 so the result is a legible number rather than a small decimal."
+    ],
+    [
+     "The number of live births in the same interval",
+     "Live births form the denominator of the infant, neonatal and maternal mortality rates."
+    ],
+    [
+     "The number of new cases of the disease",
+     "New cases in the denominator describes the death-to-case ratio."
+    ]
+   ],
+   "c": 1,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 9"
+  },
+  {
+   "topic": "Distribution by time",
+   "io": "Describe considerations for disease surveillance and outbreak investigations",
+   "slot": "principle",
+   "q": "What effect does awareness of an epidemic have?",
+   "opts": [
+    [
+     "It can make new cases easier to diagnose",
+     "Correct, with early COVID-19 as the example. It is also a reason measured frequency can rise partly because clinicians started looking."
+    ],
+    [
+     "It reduces the true incidence of the disease",
+     "Awareness changes detection rather than how many people actually fall ill."
+    ],
+    [
+     "It converts an epidemic into a pandemic",
+     "What makes an outbreak a pandemic is how widespread it becomes, not how well known it is."
+    ],
+    [
+     "It has no effect on case finding",
+     "Easier diagnosis of new cases is precisely the effect described."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 33"
+  },
+  {
+   "topic": "Mortality rates",
+   "io": "Discuss the concepts of rate and rate determination",
+   "slot": "definition",
+   "q": "What does the death-to-case ratio compare?",
+   "opts": [
+    [
+     "Deaths from a cause against new cases of it",
+     "Correct, both over the same time interval, multiplied by one hundred. It measures how lethal a disease is rather than how much of it there is."
+    ],
+    [
+     "Deaths from a cause against the whole population",
+     "A population denominator describes the cause-specific death rate."
+    ],
+    [
+     "Deaths from a cause against all deaths",
+     "That describes proportionate mortality, whose denominator is all deaths rather than new cases of the disease."
+    ],
+    [
+     "Deaths against live births",
+     "Live birth denominators belong to the infant, neonatal and maternal mortality rates."
+    ]
+   ],
+   "c": 0,
+   "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 9"
+  }
+ ]
+}
