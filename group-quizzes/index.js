@@ -240,6 +240,8 @@ window.GROUP_INDEX = {
 "clinical-medicine-and-surgery-i-exam-3-oral-cavity-salivary-vignettes-version-2":{"title":"Oral Cavity and Salivary Glands Vignettes 2 — CMS I Exam 3","category":"Clinical Medicine and Surgery I","exam":"Exam 3","sem":"fall-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-4-hypertension-quiz":{"title":"Hypertension Quiz 1 — CMS I Exam 4","category":"Clinical Medicine and Surgery I","exam":"Exam 4","sem":"fall-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-4-hypertension-quiz-version-2":{"title":"Hypertension Quiz 2 — CMS I Exam 4","category":"Clinical Medicine and Surgery I","exam":"Exam 4","sem":"fall-2026","n":30},
+"clinical-medicine-and-surgery-i-exam-4-hypertension-vignettes":{"title":"Hypertension Vignettes 1 — CMS I Exam 4","category":"Clinical Medicine and Surgery I","exam":"Exam 4","sem":"fall-2026","n":30},
+"clinical-medicine-and-surgery-i-exam-4-hypertension-vignettes-version-2":{"title":"Hypertension Vignettes 2 — CMS I Exam 4","category":"Clinical Medicine and Surgery I","exam":"Exam 4","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-abnormal-cell-growth-quiz":{"title":"Abnormal Cell Growth and Differentiation Quiz 1 — Clin Path I Exam 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-abnormal-cell-growth-quiz-version-2":{"title":"Abnormal Cell Growth and Differentiation Quiz 2 — Clin Path I Exam 1","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":30},
 "clinical-pathophysiology-i-exam-1-cp-exam-1-master-exam-form-a":{"title":"Clin Path I Exam 1 Master Exam — Form A","category":"Clinical Pathophysiology I","exam":"Exam 1","sem":"fall-2026","n":60},

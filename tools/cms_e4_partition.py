@@ -23,6 +23,8 @@ WHICH = sys.argv[1] if len(sys.argv) > 1 else "l20io"
 SPECS = {
  "l20io": (["cms_e4l20_pool_a:QUESTIONS", "cms_e4l20_pool_b:QUESTIONS"],
            "cms_e4l20_sets.json"),
+ "l20vig": (["cms_e4l20_vig_a:QUESTIONS", "cms_e4l20_vig_b:QUESTIONS"],
+            "cms_e4l20_vig_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))
@@ -80,11 +82,17 @@ def slot_spread(qs):
 
 def score(qs):
     """Lower is better -- penalties are in the units the standard is written in."""
+    # Vignette sets only: the standard wants >= 80% patient stems. Set 1 is
+    # recall by design and carries no ages, so on an objective pool this term
+    # would be a flat penalty on every candidate set.
+    pat = 100.0 * sum(is_patient(q) for q in qs) / len(qs)
+    pat_term = max(0, 80 - pat) * 2.0 if WHICH.endswith("vig") else 0.0
     game = gameable_pct(qs)
     topics = Counter(q["topic"] for q in qs)
     lumpy = sum(max(0, n - 4) for n in topics.values())
     nslots, slot_lump = slot_spread(qs)
-    return (max(0, game - 13) * 1.5       # reference sits at 13%; the bar is 35%
+    return (pat_term                      # standard wants >= 80% patient stems
+            + max(0, game - 13) * 1.5     # reference sits at 13%; the bar is 35%
             + lumpy * 2.0                 # do not stack one topic
             + max(0, 10 - nslots) * 3.0   # both sets should span the objective
             + slot_lump * 1.5)            # and not pile into one slot
@@ -144,7 +152,9 @@ if __name__ == "__main__":
         print("%s  n=%d" % (name, len(s)))
         print("   positions A-%s: %s" % ("ABCD"[NOPT - 1],
               "/".join(str(pos.get(i, 0)) for i in range(NOPT))))
-        print("   gameable %d%%   slots covered %d" % (gameable_pct(s), nslots))
+        print("   gameable %d%%   slots covered %d   patient stems %d%%"
+              % (gameable_pct(s), nslots,
+                 100 * sum(map(is_patient, s)) // len(s)))
         print("   option length median %d, max %d (reference 19 / 66)"
               % (statistics.median(L), max(L)))
         print()

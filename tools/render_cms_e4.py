@@ -24,6 +24,13 @@ SPEC = {
    sub="Clinical Medicine and Surgery I &middot; Exam 4 &middot; Lecture 20",
    chips=["Classification", "Secondary causes", "Target organ damage",
           "Assessment", "Treatment"]),
+ "l20vig": dict(sets="cms_e4l20_vig_sets.json",
+   files=["hypertension-vignettes.html", "hypertension-vignettes-version-2.html"],
+   title="Hypertension Vignettes %d — CMS I Exam 4",
+   h1="Hypertension &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 4 &middot; Lecture 20",
+   chips=["Secondary causes", "Emergency vs urgency", "Agent selection",
+          "Adverse effects", "Resistant hypertension"]),
 }[sys.argv[1] if len(sys.argv) > 1 else "l20io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
