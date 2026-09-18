@@ -90,7 +90,7 @@
   .back-link:hover{color:var(--acc)}
   h1{font-size:26px;margin:0 0 4px;letter-spacing:-.01em;}
   .sub{color:var(--muted);font-size:14px;margin:0 0 22px;}
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:26px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px;}
   @media(max-width:620px){.cards{grid-template-columns:repeat(2,1fr)}}
   .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow);}
   .stat .n{font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;}
@@ -193,6 +193,33 @@
     return new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric" });
   }
 
+
+  // --- Today and this week ---------------------------------------------------
+  // Asked for by a classmate through the report form on 2026-09-17: the running
+  // total is the headline number, but it never goes down, so it says nothing
+  // about whether today has been a good day.
+  //
+  // Read off the same progressLog as the heatmap and the streak, so all three
+  // agree by construction. Two things follow from that log being written only
+  // by markCompleted: a quiz counts on the day it was FINISHED, and a quiz left
+  // half-done contributes nothing until it is submitted. The week runs Sunday
+  // to Saturday to match the heatmap's columns, so "this week" is exactly the
+  // column the heatmap is currently filling in rather than a second, competing
+  // definition sitting right above it.
+  function recent(log) {
+    var startOfDay = new Date(); startOfDay.setHours(0, 0, 0, 0);
+    var startOfWeek = new Date(startOfDay);
+    startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
+    var day = { q: 0, quizzes: 0 }, week = { q: 0, quizzes: 0 };
+    (log || []).forEach(function (e) {
+      if (!e || typeof e.t !== "number") return;
+      if (e.t >= startOfWeek.getTime()) { week.q += (e.n || 0); week.quizzes++; }
+      if (e.t >= startOfDay.getTime())  { day.q  += (e.n || 0); day.quizzes++; }
+    });
+    return { day: day, week: week, weekStart: startOfWeek };
+  }
+
+  function quizWord(n) { return n + (n === 1 ? " quiz" : " quizzes"); }
 
   // --- Consistency heatmap ---------------------------------------------------
   // Reads the same progressLog the streak uses. Counts QUESTIONS per day rather
@@ -318,10 +345,21 @@
     var overall = Math.round(totalC / totalQ * 100);
     var streak = computeStreak(log);
 
+    var r = recent(log);
+    var MONS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var ws = r.weekStart;
+    var dayTitle = r.day.quizzes
+      ? quizWord(r.day.quizzes) + " finished today"
+      : "Nothing finished yet today";
+    var weekTitle = "Week beginning " + MONS[ws.getMonth()] + " " + ws.getDate() +
+      (r.week.quizzes ? " \u00b7 " + quizWord(r.week.quizzes) + " finished" : " \u00b7 nothing finished yet");
+
     var html = '';
     html += '<div class="cards">' +
-      stat(quizzes.length, "quizzes completed") +
+      stat(r.day.q.toLocaleString(), "questions today", "", dayTitle) +
+      stat(r.week.q.toLocaleString(), "questions this week", "", weekTitle) +
       stat(totalQ.toLocaleString(), "questions answered") +
+      stat(quizzes.length, "quizzes completed") +
       stat(overall + "%", "overall accuracy", "acc") +
       stat(streak + (streak === 1 ? " day" : " days"), "study streak") +
       '</div>';
@@ -388,8 +426,10 @@
 
     dash.innerHTML = html;
   }
-  function stat(n, l, cls) {
-    return '<div class="stat ' + (cls || '') + '"><div class="n">' + n + '</div><div class="l">' + l + '</div></div>';
+  function stat(n, l, cls, title) {
+    return '<div class="stat ' + (cls || '') + '"' +
+      (title ? ' title="' + esc(title) + '"' : '') +
+      '><div class="n">' + n + '</div><div class="l">' + l + '</div></div>';
   }
 
   render();
