@@ -1,0 +1,1566 @@
+{
+ "set1": [
+  {
+   "topic": "Cardiovascular magnetic resonance",
+   "io": "Discuss indications, advantages, and limitations of cardiac MRI",
+   "slot": "indication",
+   "q": "What is done before a cardiovascular magnetic resonance study is ordered?",
+   "opts": [
+    [
+     "A coronary angiogram",
+     "Angiography is invasive and is not a prerequisite for magnetic resonance."
+    ],
+    [
+     "A nuclear perfusion study",
+     "A perfusion study is not the stated prerequisite; an echocardiogram is done before magnetic resonance is ordered."
+    ],
+    [
+     "An echocardiogram",
+     "Correct. It is the first-line functional study, and magnetic resonance answers what it leaves unresolved rather than replacing it."
+    ],
+    [
+     "A coronary calcium score",
+     "Calcium scoring is not the stated prerequisite; an echocardiogram is done first."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 56"
+  },
+  {
+   "topic": "Coronary angiography",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "advantage",
+   "q": "What can be done during a coronary angiogram that cannot be done during any of the noninvasive studies?",
+   "opts": [
+    [
+     "Treatment, by percutaneous coronary intervention there and then",
+     "Correct. It is the one study that can fix what it finds while the catheter is still in place."
+    ],
+    [
+     "Measurement of ejection fraction",
+     "Ejection fraction can be obtained noninvasively by echocardiography."
+    ],
+    [
+     "Assessment of myocardial viability",
+     "Viability is assessed noninvasively by nuclear imaging or magnetic resonance."
+    ],
+    [
+     "Calcium scoring",
+     "Calcium scoring is a noninvasive computed tomography study and needs no catheter."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 72"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "contraindication",
+   "q": "Which patient factors, other than oesophageal disease, contraindicate a transoesophageal study?",
+   "opts": [
+    [
+     "An uncooperative patient, restricted neck movement, airway risk",
+     "Correct. Two are about whether the patient can be positioned and kept still, and one is about whether the airway can be protected under sedation. In full: altered mental status or an uncooperative patient, cervical spine arthritis with reduced range of motion, and obstructive sleep apnoea or other risk of airway compromise."
+    ],
+    [
+     "Significant renal impairment",
+     "Renal impairment matters for iodinated contrast rather than for this study."
+    ],
+    [
+     "An implanted cardiac pacemaker",
+     "A pacemaker is not among the listed contraindications for this study."
+    ],
+    [
+     "Atrial fibrillation",
+     "Atrial fibrillation is a reason to look for appendage thrombus rather than a contraindication."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 26"
+  },
+  {
+   "topic": "Nuclear cardiology",
+   "io": "Discuss indications, advantages, and limitations of nuclear cardiology studies",
+   "slot": "interpretation",
+   "q": "Tracer uptake in a region is normal at rest but reduced after stress. What does that pattern indicate?",
+   "opts": [
+    [
+     "Infarcted, non-viable tissue",
+     "Infarcted tissue shows no uptake in either set. Reduced uptake only after stress indicates inducible ischaemia."
+    ],
+    [
+     "Inducible ischaemia, from a coronary stenosis",
+     "Correct. The tissue is alive but cannot increase its supply when demand rises, which is what a stenosis does."
+    ],
+    [
+     "Normal myocardium",
+     "Normal tissue maintains or increases uptake under stress rather than losing it."
+    ],
+    [
+     "A pericardial effusion",
+     "Pericardial fluid is not assessed by perfusion imaging; the pattern described indicates inducible ischaemia."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 48"
+  },
+  {
+   "topic": "Cardiac catheterisation",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "indication",
+   "q": "What does RIGHT heart catheterisation assess?",
+   "opts": [
+    [
+     "The coronary artery anatomy",
+     "Coronary anatomy is assessed from the left side rather than the right."
+    ],
+    [
+     "Right-sided pressures, pulmonary resistance, valves and shunts",
+     "Correct. The pulmonary side of the circulation, and the shunts that connect the two sides. In full: right atrial and right ventricular pressure, pulmonary artery and occlusion pressure, pulmonary vascular resistance, tricuspid and pulmonic valve function, and intracardiac shunts."
+    ],
+    [
+     "Aortic and mitral valve function",
+     "Both are left heart structures, assessed at left rather than right catheterisation."
+    ],
+    [
+     "Systemic vascular resistance",
+     "That is a left heart measurement; the right study gives pulmonary vascular resistance instead."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 69"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "mechanism",
+   "q": "How does an exercise stress test detect myocardial ischaemia?",
+   "opts": [
+    [
+     "Directly, by imaging myocardial perfusion during exercise",
+     "Direct perfusion imaging is what the nuclear study adds; the standard exercise test relies on the electrocardiogram."
+    ],
+    [
+     "By measuring coronary artery calcium before and after exercise",
+     "Calcium scoring is a non-contrast computed tomography study and is not part of stress testing."
+    ],
+    [
+     "Indirectly, by continuous electrocardiographic monitoring",
+     "Correct. It never images the heart at all; it infers ischaemia from what the electrocardiogram does as demand rises, which is why the word is indirectly."
+    ],
+    [
+     "By measuring ejection fraction at peak exercise",
+     "Ejection fraction is an echocardiographic measure; the standard exercise test does not obtain it."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 29"
+  },
+  {
+   "topic": "Nuclear cardiology",
+   "io": "Discuss indications, advantages, and limitations of nuclear cardiology studies",
+   "slot": "interpretation",
+   "q": "A region of myocardium shows no tracer uptake on either the stress or the rest images. What does that indicate?",
+   "opts": [
+    [
+     "Dead tissue",
+     "Correct. Uptake requires functional myocardium, so tissue that never lights up is not ischaemic but infarcted."
+    ],
+    [
+     "Inducible ischaemia",
+     "Inducible ischaemia shows reduced uptake after stress with better uptake at rest, rather than absent uptake in both."
+    ],
+    [
+     "Normal myocardium",
+     "Normal tissue takes up tracer in both sets of images; absent uptake in both indicates infarction."
+    ],
+    [
+     "An artefact of the gamma camera",
+     "Absent uptake in both sets is a finding rather than an artefact."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 48"
+  },
+  {
+   "topic": "Chest radiography",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "modality choice",
+   "q": "What is the standing of chest radiography in cardiac evaluation?",
+   "opts": [
+    [
+     "It is not the primary modality, but it gives useful clues when obtained",
+     "Correct. It is rarely the study you order to answer a cardiac question, and frequently the study you already have, which is why reading it well matters."
+    ],
+    [
+     "It is the primary modality for assessing cardiac function",
+     "Function and detailed cardiac anatomy are exactly what it does not assess."
+    ],
+    [
+     "It has no role in cardiac assessment",
+     "It visualises the cardiac silhouette, the great vessels and the pulmonary vasculature, all of which carry cardiac information."
+    ],
+    [
+     "It replaces echocardiography when the patient cannot lie flat",
+     "It does not substitute for echocardiography; the two answer different questions."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 4"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "modality choice",
+   "q": "Which exercise modalities are used, and which is preferred among the cycles?",
+   "opts": [
+    [
+     "Treadmill only",
+     "Cycle ergometry is described alongside the treadmill as one of the two common modalities."
+    ],
+    [
+     "Arm ergometry, as first choice",
+     "Arm ergometry is listed but the stationary bicycle is the preferred cycle."
+    ],
+    [
+     "Step testing",
+     "Step testing is not among the modalities described, which are the treadmill, the cycle ergometer and arm ergometry."
+    ],
+    [
+     "Treadmill and cycle ergometer",
+     "Correct, and arm ergometry exists for patients who cannot use their legs, which keeps the test available to more people. With the stationary bicycle preferred."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 30"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "complication",
+   "q": "Which complications of exercise stress testing are described?",
+   "opts": [
+    [
+     "Contrast-induced nephropathy",
+     "No contrast is given in a standard exercise stress test. The complications are arrhythmia, angina, infarction and death."
+    ],
+    [
+     "Arrhythmia, angina, infarction and death",
+     "Correct. The test deliberately provokes the thing it is looking for, which is why it is supervised and why it has a stopping rule."
+    ],
+    [
+     "Malignancy induced by radiation exposure",
+     "The standard exercise test uses no ionising radiation. Its complications are arrhythmia, angina, infarction and death."
+    ],
+    [
+     "Oesophageal perforation",
+     "That risk belongs to transoesophageal echocardiography rather than to exercise testing."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 30"
+  },
+  {
+   "topic": "Nuclear cardiology",
+   "io": "Discuss indications, advantages, and limitations of nuclear cardiology studies",
+   "slot": "mechanism",
+   "q": "On what principle does radionuclide myocardial perfusion imaging work?",
+   "opts": [
+    [
+     "Diseased myocardium takes up more tracer than normal myocardium",
+     "Uptake is reduced rather than increased where flow is reduced."
+    ],
+    [
+     "Tracer is taken up only by scarred tissue",
+     "Uptake marks functional, viable tissue; scar does not take it up."
+    ],
+    [
+     "The tracer is metabolised into a contrast agent within the coronary arteries",
+     "The tracer emits gamma rays that the camera detects rather than becoming contrast."
+    ],
+    [
+     "Under stress, diseased myocardium receives less blood flow than normal myocardium",
+     "Correct, so comparing stress images against rest images is what makes the difference visible rather than either set alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 49"
+  },
+  {
+   "topic": "Cardiovascular magnetic resonance",
+   "io": "Discuss indications, advantages, and limitations of cardiac MRI",
+   "slot": "advantage",
+   "q": "What does cardiovascular magnetic resonance avoid that computed tomography does not?",
+   "opts": [
+    [
+     "Dependence on the operator",
+     "Operator dependence is a limitation of ultrasound rather than the point of comparison here."
+    ],
+    [
+     "Any need for a resting heart rate",
+     "Rate control is a computed tomography requirement; it is not what magnetic resonance is described as avoiding."
+    ],
+    [
+     "Both ionising radiation and iodinated contrast",
+     "Correct. Both avoided at once, which matters most in the young patient and in the patient with impaired kidneys."
+    ],
+    [
+     "Sedation and airway monitoring",
+     "Sedation is required for transoesophageal echocardiography rather than being the contrast drawn here."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 55"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "interpretation",
+   "q": "A patient stops an exercise stress test having reached 70 per cent of their predicted maximum heart rate, with no electrocardiographic changes. How should the result be read?",
+   "opts": [
+    [
+     "A negative test, excluding ischaemia",
+     "A negative result only counts once the heart rate threshold has been reached."
+    ],
+    [
+     "A positive test",
+     "Nothing here indicates ischaemia; the problem is that the test was not taken far enough to say."
+    ],
+    [
+     "Inadequate to exclude ischaemia",
+     "Correct. The threshold for a valid test is 85 per cent, so a negative result below it says nothing about the heart, only about the test."
+    ],
+    [
+     "Equivocal, requiring repeat in six months",
+     "The result is uninterpretable rather than equivocal, and the stated consequence is that ischaemia has not been excluded."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 31"
+  },
+  {
+   "topic": "Stress testing",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "modality choice",
+   "q": "Which types of stress test are described?",
+   "opts": [
+    [
+     "Exercise and pharmacological only",
+     "Echocardiographic and nuclear stress testing are described as separate types alongside these two."
+    ],
+    [
+     "Nuclear and magnetic resonance only",
+     "Magnetic resonance is described separately from the stress tests rather than as one of them."
+    ],
+    [
+     "Treadmill and bicycle only",
+     "These are two modalities within the standard exercise test rather than two types of stress test."
+    ],
+    [
+     "Standard exercise",
+     "Correct. Two axes run through the list: how the heart is stressed, and how it is then imaged, and the four names are combinations of those two. Echocardiographic, nuclear and pharmacological."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 28"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "procedure",
+   "q": "What is obtained before an exercise stress test begins?",
+   "opts": [
+    [
+     "A resting echocardiogram in every case",
+     "A resting echocardiogram is obtained for the echocardiographic stress test rather than for the standard one."
+    ],
+    [
+     "A coronary calcium score",
+     "Calcium scoring is a separate computed tomography study. What is obtained first is a resting tracing and blood pressure."
+    ],
+    [
+     "A resting electrocardiogram",
+     "Correct. Without the resting baseline there is nothing to compare the exercise tracing against. Blood pressure both supine and standing."
+    ],
+    [
+     "A radionuclide injection at rest",
+     "Resting tracer injection belongs to the nuclear perfusion study."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 33"
+  },
+  {
+   "topic": "Chest radiography",
+   "io": "Identify common abnormal cardiovascular imaging findings",
+   "slot": "anatomy",
+   "q": "Which structures can be at least partly seen on a chest radiograph for cardiac purposes?",
+   "opts": [
+    [
+     "The coronary arteries and cardiac valves",
+     "Neither is visualised on a plain radiograph; calcification of a valve may be seen, but not the valve's structure."
+    ],
+    [
+     "The cardiac conduction system",
+     "Conduction is assessed electrically rather than radiographically."
+    ],
+    [
+     "The pericardial fluid volume",
+     "Pericardial calcification may be visible, but fluid volume is not measured on a plain film."
+    ],
+    [
+     "The cardiac silhouette",
+     "Correct. Note what is absent from the list: the chambers, the valves and the coronary arteries are not among them. Great vessels, pulmonary vasculature, lungs and pleura."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 4"
+  },
+  {
+   "topic": "Pharmacological stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "indication",
+   "q": "Which patients receive a pharmacological rather than an exercise stress test?",
+   "opts": [
+    [
+     "Those with a normal resting electrocardiogram",
+     "A normal resting tracing makes the standard exercise test easier to interpret rather than ruling it out."
+    ],
+    [
+     "Those with renal impairment",
+     "Renal impairment is a consideration for iodinated contrast rather than for exercise capacity."
+    ],
+    [
+     "Those who cannot exercise",
+     "Correct. The heart still has to be stressed; if the legs cannot do it, a drug does it instead. Usually because of a physical limitation."
+    ],
+    [
+     "Those under forty years of age",
+     "Age is not the basis for choosing it; inability to exercise, usually from a physical limitation, is."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 38"
+  },
+  {
+   "topic": "Cardiac computed tomography",
+   "io": "Discuss indications, advantages, and limitations of cardiac CT",
+   "slot": "advantage",
+   "q": "What advantages does cardiac computed tomography have over echocardiography?",
+   "opts": [
+    [
+     "Assessment of cardiac function as well as anatomy",
+     "Function is exactly what it cannot assess; that is left to echocardiography and magnetic resonance."
+    ],
+    [
+     "Superior resolution and noninvasive coronary assessment",
+     "Correct, with fast acquisition and interpretation as well, which together make it the anatomical study of choice. It also shows internal structures directly, and acquires and reports quickly."
+    ],
+    [
+     "Freedom from ionising radiation",
+     "Radiation is one of its disadvantages rather than an advantage; magnetic resonance is what avoids it."
+    ],
+    [
+     "Independence from heart rate and rhythm",
+     "It is rhythm and rate dependent, which is why rate control is given beforehand."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 44"
+  },
+  {
+   "topic": "Vascular ultrasound",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "interpretation",
+   "q": "On a vascular ultrasound, how does tissue density relate to the image?",
+   "opts": [
+    [
+     "The denser the structure the darker it appears",
+     "The relationship runs the other way: dense structures return more signal and appear lighter."
+    ],
+    [
+     "Density does not affect the image, only depth does",
+     "Both matter: depth sets position on the screen and density sets brightness."
+    ],
+    [
+     "The denser the structure the lighter it appears",
+     "Correct, and superficial structures sit nearer the top of the screen, which together let you orient any image without being told what it is. So air is black and bone is near white."
+    ],
+    [
+     "Only flowing blood produces any signal",
+     "Tissue of all kinds reflects sound; Doppler is what adds flow information."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 14"
+  },
+  {
+   "topic": "Electrophysiological testing",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "indication",
+   "q": "What does electrophysiological testing do?",
+   "opts": [
+    [
+     "Assesses myocardial perfusion under stress conditions",
+     "Perfusion under stress is the nuclear study. Electrophysiological testing investigates rhythm disorders."
+    ],
+    [
+     "Measures the cardiothoracic ratio",
+     "That is a chest radiograph measurement rather than an electrophysiological one."
+    ],
+    [
+     "Visualises coronary anatomy",
+     "Coronary anatomy is shown by angiography; electrophysiological testing locates arrhythmias."
+    ],
+    [
+     "Investigates rhythm disorders and locates an arrhythmia",
+     "Correct, and where applicable it treats as well as diagnoses, by ablating the tissue it has just located. It reveals the precise location, and where applicable treats it by ablation in the same sitting."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 61"
+  },
+  {
+   "topic": "Coronary angiography",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "indication",
+   "q": "Which is a listed indication for coronary angiography?",
+   "opts": [
+    [
+     "Screening an asymptomatic patient",
+     "Screening is not an indication for an invasive study carrying the risks this one does."
+    ],
+    [
+     "Severe angina despite medical therapy",
+     "Correct, together with acute infarction, a high-risk noninvasive test result, high-risk patients undergoing non-cardiac surgery, and arrhythmias suspected to be vascular in origin. Or unstable angina."
+    ],
+    [
+     "Suspected deep venous thrombosis",
+     "That is assessed by vascular ultrasound rather than by coronary angiography."
+    ],
+    [
+     "Newly diagnosed atrial fibrillation alone",
+     "Atrial fibrillation alone is not among the listed indications."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 71"
+  },
+  {
+   "topic": "Cardiac catheterisation",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "indication",
+   "q": "What does LEFT heart catheterisation assess?",
+   "opts": [
+    [
+     "Coronary anatomy, aortic pressure and left ventricular function",
+     "Correct. Everything on the systemic side of the circulation, which is the side the left heart serves. Together with systemic vascular resistance, and aortic and mitral valve function, and left ventricular pressure."
+    ],
+    [
+     "Pulmonary artery pressure and vascular resistance",
+     "These are right heart measurements. The left heart study assesses coronary anatomy and the systemic side."
+    ],
+    [
+     "Tricuspid and pulmonic valve function",
+     "These are assessed at right heart catheterisation; the left study covers the aortic and mitral valves."
+    ],
+    [
+     "Right atrial pressure",
+     "That is a right heart measurement rather than one obtained from the left side."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 68"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "indication",
+   "q": "Why is a transoesophageal study used in a patient presenting with cerebral ischaemia?",
+   "opts": [
+    [
+     "It measures cerebral blood flow directly and noninvasively",
+     "Echocardiography images the heart rather than the cerebral circulation."
+    ],
+    [
+     "It can find thrombus in the left atrial appendage",
+     "Correct. It looks for the source rather than the consequence, and the appendage is the site the transthoracic study sees worst."
+    ],
+    [
+     "It assesses the carotid arteries",
+     "The carotids are assessed by vascular ultrasound. The transoesophageal study looks for a cardiac source of embolus."
+    ],
+    [
+     "It excludes coronary stenosis",
+     "Coronary stenosis is not assessed by echocardiography; it needs computed tomography angiography or catheter angiography."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 23"
+  },
+  {
+   "topic": "Coronary angiography",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "complication",
+   "q": "Which complications of coronary angiography occur at the catheter insertion site?",
+   "opts": [
+    [
+     "Contrast nephropathy and arrhythmia",
+     "Both are recognised risks of the procedure but are not site complications."
+    ],
+    [
+     "Oesophageal perforation",
+     "That belongs to transoesophageal echocardiography rather than to arterial catheterisation."
+    ],
+    [
+     "Pneumothorax",
+     "Not among the described site complications, which are haematoma and pseudoaneurysm."
+    ],
+    [
+     "Haematoma and pseudoaneurysm",
+     "Correct, and the pseudoaneurysm is the one to check for deliberately, since it maintains a continuous communication with the artery."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 78"
+  },
+  {
+   "topic": "Cardiac computed tomography",
+   "io": "Discuss indications, advantages, and limitations of cardiac CT",
+   "slot": "limitation",
+   "q": "What is the fundamental limitation of cardiac computed tomography compared with echocardiography and magnetic resonance?",
+   "opts": [
+    [
+     "It assesses anatomy but not function",
+     "Correct. It shows the structure in great detail and cannot tell you how well it is working, which decides when it is the wrong study."
+    ],
+    [
+     "It cannot show the coronary arteries",
+     "Noninvasive coronary assessment is one of its strengths. What it cannot show is function."
+    ],
+    [
+     "It cannot be used in patients with a normal heart rate",
+     "A controlled heart rate is what it requires rather than what excludes it."
+    ],
+    [
+     "It requires an endoscope",
+     "No endoscope is involved; that belongs to transoesophageal echocardiography."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 44"
+  },
+  {
+   "topic": "Cardiothoracic ratio",
+   "io": "Measure the cardiothoracic ratio to evaluate cardiac enlargement",
+   "slot": "interpretation",
+   "q": "Why does the cardiothoracic ratio require a properly performed posteroanterior film?",
+   "opts": [
+    [
+     "Projection alters the apparent size of the cardiac silhouette",
+     "Correct. A ratio measured off the wrong projection is a measurement of the technique rather than of the heart."
+    ],
+    [
+     "Only a posteroanterior film shows the pulmonary vasculature",
+     "Vasculature is visible on other projections; it is the silhouette measurement that depends on projection."
+    ],
+    [
+     "Contrast is required and is only given for posteroanterior films",
+     "No contrast is involved in measuring the ratio; it is the projection that alters the apparent silhouette size."
+    ],
+    [
+     "The ratio can only be calculated with electrocardiographic gating",
+     "Gating belongs to cardiac computed tomography rather than to plain radiography."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 8"
+  },
+  {
+   "topic": "Electrophysiological testing",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "mechanism",
+   "q": "What does catheter ablation do during electrophysiological testing?",
+   "opts": [
+    [
+     "Stimulates the area to restore normal conduction",
+     "Stimulation is used to identify the arrhythmia; the ablation destroys rather than restores."
+    ],
+    [
+     "Inactivates part of the heart by destroying that tissue",
+     "Correct. The tissue is not merely silenced but destroyed, which is what makes the treatment definitive."
+    ],
+    [
+     "Places a permanent pacing wire in the atrium",
+     "Catheters are placed for the study, but ablation itself destroys tissue."
+    ],
+    [
+     "Delivers a drug directly to the arrhythmic focus",
+     "Ablation is a physical rather than a pharmacological treatment."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 62"
+  },
+  {
+   "topic": "Cephalisation",
+   "io": "Identify common abnormal cardiovascular imaging findings",
+   "slot": "finding",
+   "q": "What is cephalisation on a chest radiograph?",
+   "opts": [
+    [
+     "Fluid tracking into the interlobar fissures",
+     "That would be described as effusion or fissural fluid rather than cephalisation."
+    ],
+    [
+     "The trachea deviating toward the apex",
+     "Tracheal deviation is a different sign entirely. Cephalisation is enlargement of the upper zone vessels."
+    ],
+    [
+     "Calcification of the aortic arch",
+     "Great vessel calcification is listed separately from cephalisation."
+    ],
+    [
+     "Upper zone vessels becoming larger",
+     "Correct. Flow redistributes upward, which is why the sign sits in the lungs while the problem is in the heart."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 9"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "procedure",
+   "q": "When is an exercise stress test terminated?",
+   "opts": [
+    [
+     "At maximum performance",
+     "Correct. Three separate stopping conditions, only one of which is the patient simply having had enough. On signs or symptoms of ischaemia, or at a predetermined endpoint."
+    ],
+    [
+     "Only when the patient asks to stop",
+     "The patient's request is not the only stopping condition; ischaemic signs and a predetermined endpoint also stop it."
+    ],
+    [
+     "After a fixed twelve minutes regardless of response",
+     "No fixed duration is given; the endpoints are performance, symptoms or a predetermined target."
+    ],
+    [
+     "When blood pressure returns to baseline",
+     "Blood pressure is monitored through the test rather than used as the endpoint."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 33"
+  },
+  {
+   "topic": "Coronary angiography",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "procedure",
+   "q": "How is coronary angiography performed?",
+   "opts": [
+    [
+     "Under general anaesthesia with the patient intubated",
+     "Local anaesthesia with intravenous sedation is what is described, with fluoroscopic guidance."
+    ],
+    [
+     "Under local anaesthesia with intravenous sedation",
+     "Correct, and pressures are measured as the catheter goes, so it yields haemodynamic information alongside the pictures. With catheters guided by fluoroscopy and contrast injected into each coronary artery."
+    ],
+    [
+     "Without contrast, using ultrasound guidance",
+     "Radiographic contrast is injected into each coronary artery."
+    ],
+    [
+     "Through the oesophagus",
+     "The oesophageal route belongs to transoesophageal echocardiography."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 72"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "modality choice",
+   "q": "Why is transthoracic echocardiography the most common echo procedure?",
+   "opts": [
+    [
+     "It gives better detail of the posterior structures",
+     "Posterior and inferior detail is exactly where it is weaker than the transoesophageal study."
+    ],
+    [
+     "It requires no operator training",
+     "Operator dependence applies to ultrasound generally. Its advantage is being noninvasive and available at the bedside."
+    ],
+    [
+     "It can be performed at the bedside and is noninvasive",
+     "Correct. Availability rather than image quality is what makes it the default, and the trade is detail at the back of the heart."
+    ],
+    [
+     "It is the only echo that can use Doppler",
+     "Doppler is available in both studies. The transthoracic study leads because it is noninvasive and bedside-capable."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 22"
+  },
+  {
+   "topic": "Echocardiographic stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "modality choice",
+   "q": "For which patient is an echocardiographic stress test the appropriate initial choice?",
+   "opts": [
+    [
+     "One who cannot exercise at all",
+     "A patient unable to exercise is given a pharmacological stress test."
+    ],
+    [
+     "One with a normal resting electrocardiogram who can exercise",
+     "That patient can have the standard exercise test, which is simpler."
+    ],
+    [
+     "One who can exercise but whose resting tracing is abnormal",
+     "Correct. The electrocardiogram cannot be read for ischaemia if it is already abnormal, so the imaging has to carry the answer instead."
+    ],
+    [
+     "One with suspected aortic dissection",
+     "Dissection is assessed by imaging the aorta rather than by stress testing."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 37"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "indication",
+   "q": "What does echocardiography evaluate?",
+   "opts": [
+    [
+     "The coronary artery calcium score",
+     "Calcium scoring is done by non-contrast cardiac computed tomography."
+    ],
+    [
+     "The distribution of coronary atherosclerotic plaque",
+     "Plaque distribution requires computed tomography angiography or catheter angiography."
+    ],
+    [
+     "The electrical conduction pathways of the heart",
+     "Conduction is assessed by electrocardiography and electrophysiological testing."
+    ],
+    [
+     "Chamber size, ventricular function, valves, shunts and pressures",
+     "Correct. It is the functional study of the heart, which is what separates it from computed tomography, and Doppler is what adds flow and velocity to it. Wall thickness and ejection fraction come with the ventricular assessment, and Doppler adds flow and velocity."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 20"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "modality choice",
+   "q": "Which structures does a transoesophageal study show in more detail than a transthoracic one?",
+   "opts": [
+    [
+     "The right ventricle and tricuspid valve",
+     "The gain is on the posterior and inferior side of the heart rather than on the right-sided structures."
+    ],
+    [
+     "The left atrium",
+     "Correct. The probe sits directly behind the heart, so the structures that gain are the posterior ones. Mitral valve, pulmonary artery, aorta and coronary arteries."
+    ],
+    [
+     "The pericardium alone",
+     "The improvement is not confined to the pericardium; it covers the left atrium, mitral valve, pulmonary artery, aorta and coronary arteries."
+    ],
+    [
+     "The coronary calcium burden",
+     "Calcium scoring is a non-contrast computed tomography measurement rather than an echocardiographic one."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 22"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "indication",
+   "q": "Which of these is a stated indication for exercise stress testing?",
+   "opts": [
+    [
+     "Cardiac assessment before non-cardiac surgery in a high-risk patient",
+     "Correct, alongside symptoms suggesting ischaemia, known ischaemic disease with a change in status, prior revascularisation and newly diagnosed heart failure."
+    ],
+    [
+     "Acute chest pain before acute coronary syndrome has been excluded",
+     "The indication applies specifically after acute coronary syndrome and infarction have been excluded, not before."
+    ],
+    [
+     "Suspected aortic dissection",
+     "Dissection is assessed by imaging the aorta rather than by stressing the heart."
+    ],
+    [
+     "Screening an asymptomatic patient with no risk factors",
+     "Screening in that setting is not among the listed indications."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 32"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "modality choice",
+   "q": "What distinguishes a transthoracic from a transoesophageal echocardiogram?",
+   "opts": [
+    [
+     "One uses Doppler and the other does not",
+     "Both can use Doppler. What separates them is whether the transducer sits outside the body or inside it."
+    ],
+    [
+     "The transducer is outside the body in one, inside in the other",
+     "Correct, and everything else about the two -- invasiveness, sedation, contraindications, and how much posterior detail you get -- follows from that single difference."
+    ],
+    [
+     "One uses ionising radiation while the other does not",
+     "Neither uses ionising radiation. The difference is the position of the transducer, outside the body or within it."
+    ],
+    [
+     "One assesses valves and the other assesses chambers",
+     "Both assess valves and chambers; the difference is the transducer position."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 20"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "indication",
+   "q": "For which of these is a transoesophageal study specifically useful?",
+   "opts": [
+    [
+     "Coronary artery calcium scoring",
+     "That is a non-contrast computed tomography study. The transoesophageal study excels at posterior structures."
+    ],
+    [
+     "Valve vegetations",
+     "Correct. All are small, posterior, or both, which is precisely where the transthoracic view falls short. Prosthetic valve function, cardiac tumours and left atrial appendage thrombus."
+    ],
+    [
+     "Assessing exercise capacity",
+     "Exercise capacity is assessed by stress testing rather than by an echocardiogram at rest."
+    ],
+    [
+     "Measuring the cardiothoracic ratio",
+     "That is measured on a chest radiograph rather than by echocardiography."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 23"
+  },
+  {
+   "topic": "Vascular ultrasound",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "advantage",
+   "q": "Which combination of advantages does vascular ultrasound offer?",
+   "opts": [
+    [
+     "Superior resolution to computed tomography with no operator dependence",
+     "Resolution is not its strength and it is highly operator dependent."
+    ],
+    [
+     "Reliable assessment of deep vessels regardless of body habitus",
+     "Deep vessels are harder to assess and body habitus is an explicit limitation."
+    ],
+    [
+     "Fast, portable, repeatable, no ionising radiation",
+     "Correct. The combination of no radiation and easy repetition is what makes it the study you can do again tomorrow without cost to the patient. It shows both anatomy and flow."
+    ],
+    [
+     "Independence from the angle at which the probe is held",
+     "Probe angle can affect measurements, which is one of its limitations."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 17"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "procedure",
+   "q": "What does a transoesophageal study require that a transthoracic one does not?",
+   "opts": [
+    [
+     "Throat anaesthesia, sedation and monitoring",
+     "Correct. It is a procedure rather than a scan, which is why it carries a contraindication list and the transthoracic study does not."
+    ],
+    [
+     "Iodinated contrast given intravenously",
+     "No iodinated contrast is used in echocardiography; the transoesophageal study needs anaesthesia, sedation and monitoring."
+    ],
+    [
+     "Electrocardiographic gating of the images",
+     "Gating belongs to cardiac computed tomography. The transoesophageal study requires sedation and airway monitoring."
+    ],
+    [
+     "A period of fasting from fluids only",
+     "The requirements described are anaesthesia, sedation and monitoring."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 25"
+  },
+  {
+   "topic": "Chest radiography",
+   "io": "Identify common abnormal cardiovascular imaging findings",
+   "slot": "finding",
+   "q": "Which chest radiograph findings are given as indicators of cardiac pathology?",
+   "opts": [
+    [
+     "Coronary artery stenosis and the distribution of plaque",
+     "These require computed tomography angiography or catheter angiography."
+    ],
+    [
+     "Oedema, effusion, cardiomegaly, cephalisation and calcification",
+     "Correct, with tension physiology completing the list. Several are about the lungs rather than the heart, which is the point: the heart announces itself through what it does to everything around it. The calcification may be of the great vessels, the valves or the pericardium, and tension physiology completes the list."
+    ],
+    [
+     "Ejection fraction and regional wall motion abnormality",
+     "Both are functional measures requiring echocardiography or magnetic resonance."
+    ],
+    [
+     "Valve pressure gradients and regurgitant volume",
+     "These are Doppler measurements made on echocardiography rather than findings visible on a plain film."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 6"
+  },
+  {
+   "topic": "Vascular ultrasound",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "limitation",
+   "q": "Which limitations are described for vascular ultrasound?",
+   "opts": [
+    [
+     "Ionising radiation dose and contrast nephrotoxicity",
+     "Neither applies: ultrasound uses no ionising radiation and no iodinated contrast."
+    ],
+    [
+     "Dependence on heart rate and rhythm",
+     "Rate and rhythm dependence belongs to cardiac computed tomography."
+    ],
+    [
+     "Highly operator dependent, limited by body habitus",
+     "Correct. Calcification causes acoustic shadowing, which matters because the vessels most worth imaging are often the ones most calcified. Degraded by bone, air and calcification."
+    ],
+    [
+     "Inability to show blood flow",
+     "Showing both anatomy and flow is one of its advantages rather than a limitation, with Doppler supplying the flow."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 18"
+  },
+  {
+   "topic": "Vascular ultrasound",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "limitation",
+   "q": "Why does calcification degrade a vascular ultrasound image?",
+   "opts": [
+    [
+     "It causes acoustic shadowing",
+     "Correct. Sound does not pass through, so everything behind the calcium is unassessable rather than merely indistinct."
+    ],
+    [
+     "It absorbs the ionising radiation before it reaches the vessel",
+     "No ionising radiation is involved in ultrasound. Calcification blocks sound, casting an acoustic shadow behind it."
+    ],
+    [
+     "It produces a blooming artefact that exaggerates the lesion",
+     "Blooming from calcification is a computed tomography artefact."
+    ],
+    [
+     "It prevents the vein from collapsing under compression",
+     "Failure to collapse indicates thrombus rather than calcification."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 18"
+  },
+  {
+   "topic": "Cephalisation",
+   "io": "Identify common abnormal cardiovascular imaging findings",
+   "slot": "finding",
+   "q": "In which patients is cephalisation seen?",
+   "opts": [
+    [
+     "Pneumothorax and pleural effusion",
+     "Neither is given as a cause. Cephalisation is seen in heart failure and pulmonary hypertension."
+    ],
+    [
+     "Coronary artery disease without failure",
+     "Coronary disease alone does not produce it; the sign follows raised pulmonary pressure in failure or pulmonary hypertension."
+    ],
+    [
+     "Pericardial calcification",
+     "Calcification is listed as a separate radiographic finding rather than as a form of cephalisation."
+    ],
+    [
+     "Heart failure and pulmonary hypertension",
+     "Correct. Both raise pressure in the pulmonary circulation, and the redistribution upward is the radiographic consequence."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 9"
+  },
+  {
+   "topic": "Nuclear cardiology",
+   "io": "Discuss indications, advantages, and limitations of nuclear cardiology studies",
+   "slot": "procedure",
+   "q": "How is the heart stressed for a nuclear perfusion study in a patient who cannot exercise?",
+   "opts": [
+    [
+     "By transoesophageal pacing",
+     "Pacing is not the described method; pharmacological stress with an agent such as adenosine is."
+    ],
+    [
+     "By cold pressor testing",
+     "Not among the described methods. Pharmacological stress, with an agent such as adenosine, is used instead."
+    ],
+    [
+     "The study cannot be performed without exercise",
+     "Pharmacological stress exists precisely so that it can be performed without exercise."
+    ],
+    [
+     "Pharmacologically, with an agent such as adenosine",
+     "Correct. The stress can be produced by exercise or by drug, and the imaging is the same either way."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 47"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "contraindication",
+   "q": "Why must a Zenker's diverticulum be identified before a transoesophageal study?",
+   "opts": [
+    [
+     "It prevents adequate sedation",
+     "Sedation is not the issue; the hazard is that the probe may enter and perforate the pouch."
+    ],
+    [
+     "The probe risks entering and perforating the pouch",
+     "Correct, and because it is a pouch rather than a narrowing, the operator may feel nothing wrong until the damage is done."
+    ],
+    [
+     "It causes a false positive for vegetations",
+     "It is a procedural hazard rather than an imaging artefact: the probe risks entering and perforating the pouch."
+    ],
+    [
+     "It makes the patient unable to swallow the local anaesthetic",
+     "The concern is perforation rather than anaesthetic administration."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 26"
+  },
+  {
+   "topic": "Cardiac computed tomography",
+   "io": "Discuss indications, advantages, and limitations of cardiac CT",
+   "slot": "procedure",
+   "q": "Why are cardiac medications given before a cardiac computed tomography study?",
+   "opts": [
+    [
+     "To dilate the coronary arteries so contrast reaches the myocardium",
+     "Rate control is the stated reason, together with electrocardiographic synchronisation."
+    ],
+    [
+     "To control heart rate, since the moving heart degrades the images",
+     "Correct, and the study is also synchronised to an electrocardiogram so the heart can be examined at chosen points in the cycle."
+    ],
+    [
+     "To prevent an allergic reaction to the contrast",
+     "Premedication for contrast allergy is not what is described here."
+    ],
+    [
+     "To provoke ischaemia during the scan",
+     "Provoking ischaemia is what a stress test does; the medication here steadies the heart."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 41"
+  },
+  {
+   "topic": "Echocardiographic stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "procedure",
+   "q": "What is the echocardiogram looking for after exercise, and why must it be obtained quickly?",
+   "opts": [
+    [
+     "Valve gradients, which take time to develop",
+     "The study looks for induced wall motion abnormality rather than valve gradients."
+    ],
+    [
+     "Pericardial fluid, which accumulates after exertion",
+     "Pericardial fluid is not what the post-exercise images are looking for."
+    ],
+    [
+     "Abnormal left ventricular wall motion induced by exercise",
+     "Correct. The finding is transient, so the patient is asked to dismount quickly and the heart is imaged before it settles. Which resolves as the heart recovers."
+    ],
+    [
+     "Coronary calcium, which is best seen at high heart rates",
+     "Calcium is assessed by computed tomography and is unrelated to heart rate."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 37"
+  },
+  {
+   "topic": "Vascular ultrasound",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "mechanism",
+   "q": "How does a vascular ultrasound image form?",
+   "opts": [
+    [
+     "Ionising radiation is absorbed differently by tissues of differing density",
+     "That describes radiography; ultrasound uses no ionising radiation."
+    ],
+    [
+     "A magnetic field aligns protons which then emit radiofrequency signal",
+     "That describes magnetic resonance. Ultrasound works by emitting sound pulses and reading the returning echoes."
+    ],
+    [
+     "An injected tracer is taken up and emits gamma rays",
+     "That describes nuclear imaging. Ultrasound forms its image from reflected high-frequency sound."
+    ],
+    [
+     "Quartz crystals emit pulses that reflect off tissue",
+     "Correct. The returning echoes are what the machine turns into a picture, so anything that stops sound returning leaves a gap in it. The pulses are high frequency, and what returns depends on the density of what they meet."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 14"
+  },
+  {
+   "topic": "Nuclear cardiology",
+   "io": "Discuss indications, advantages, and limitations of nuclear cardiology studies",
+   "slot": "modality choice",
+   "q": "How does nuclear perfusion imaging compare with standard and echocardiographic stress testing?",
+   "opts": [
+    [
+     "It is less accurate but faster",
+     "It is described as more accurate than standard and echocardiographic stress testing rather than less."
+    ],
+    [
+     "It is equivalent in accuracy but avoids radiation",
+     "It uses a radioactive tracer, and it is described as more accurate."
+    ],
+    [
+     "It assesses anatomy rather than perfusion",
+     "It assesses perfusion and thus viability rather than anatomy."
+    ],
+    [
+     "Its sensitivity and specificity are superior",
+     "Correct, which is why it is worth the tracer and the radiation when the simpler tests have not settled the question."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 49"
+  },
+  {
+   "topic": "Coronary angiography",
+   "io": "Discuss indications, advantages, and limitations of coronary angiography",
+   "slot": "modality choice",
+   "q": "What is coronary angiography the gold standard for?",
+   "opts": [
+    [
+     "Coronary artery anatomy and cardiac function",
+     "Correct, which is why it is usually performed before any percutaneous or surgical intervention on the coronary arteries."
+    ],
+    [
+     "Assessing myocardial viability",
+     "Viability is assessed by nuclear perfusion imaging or magnetic resonance."
+    ],
+    [
+     "Measuring the coronary calcium score",
+     "Calcium scoring is a non-contrast computed tomography study."
+    ],
+    [
+     "Detecting valve vegetations",
+     "Vegetations are sought on echocardiography. Angiography is the gold standard for coronary anatomy and cardiac function."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 66"
+  },
+  {
+   "topic": "Vascular ultrasound",
+   "io": "Compare and contrast cardiovascular imaging modalities",
+   "slot": "indication",
+   "q": "Which of these is NOT among the listed indications for vascular ultrasound?",
+   "opts": [
+    [
+     "Assessment of coronary artery stenosis",
+     "Correct -- this is not one. The coronary arteries are not accessible to surface vascular ultrasound; they are assessed by computed tomography angiography or catheter angiography."
+    ],
+    [
+     "Deep vein thrombosis study and vascular access",
+     "Both are listed indications, alongside carotid evaluation, aneurysm assessment and venous insufficiency."
+    ],
+    [
+     "Carotid evaluation after stroke, transient ischaemic attack or myocardial infarction",
+     "This is a listed indication, alongside deep vein thrombosis studies, vascular access and aneurysm evaluation."
+    ],
+    [
+     "Abdominal aortic aneurysm evaluation and varicose veins",
+     "Both are listed indications, alongside vascular access, deep vein thrombosis studies and carotid assessment."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 16"
+  },
+  {
+   "topic": "Cardiac computed tomography",
+   "io": "Discuss indications, advantages, and limitations of cardiac CT",
+   "slot": "limitation",
+   "q": "What is the blooming artefact, and why does it matter?",
+   "opts": [
+    [
+     "Motion during the scan blurs the coronary arteries",
+     "Motion blur is a separate problem, addressed by rate control and gating."
+    ],
+    [
+     "Heavy calcification appears larger than it is",
+     "Correct. The artefact exaggerates the very lesion the study was ordered to assess, which is a limitation worth naming rather than a curiosity. So a stenosis looks more severe."
+    ],
+    [
+     "Contrast pools in the ventricle and obscures the valve",
+     "That is not what blooming describes. Blooming makes dense calcium appear larger than it is."
+    ],
+    [
+     "Radiation scatter degrades the image at the edges",
+     "Blooming relates to dense calcium appearing larger than it is, rather than to radiation scatter."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 44"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "procedure",
+   "q": "In which position does a patient lie initially for transthoracic echocardiography?",
+   "opts": [
+    [
+     "Supine and flat throughout",
+     "The patient starts in the left lateral decubitus position and is repositioned."
+    ],
+    [
+     "Prone",
+     "The prone position is not used. The patient starts in left lateral decubitus and is repositioned for other views."
+    ],
+    [
+     "Left lateral decubitus",
+     "Correct. It brings the heart toward the chest wall, and the patient is moved through other positions to obtain the different views."
+    ],
+    [
+     "Standing",
+     "The study is performed lying, starting in the left lateral decubitus position."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 24"
+  },
+  {
+   "topic": "Cardiac computed tomography",
+   "io": "Discuss indications, advantages, and limitations of cardiac CT",
+   "slot": "indication",
+   "q": "Which is an indication for cardiac computed tomography rather than the angiographic study?",
+   "opts": [
+    [
+     "Detecting and excluding coronary stenosis",
+     "Stenosis detection is the indication for the angiographic study."
+    ],
+    [
+     "Assessing exercise capacity",
+     "Exercise capacity is assessed by stress testing rather than by cardiac computed tomography."
+    ],
+    [
+     "Pre-operative planning before cardiac surgery",
+     "Correct, alongside calcium deposits, coronary anatomical anomalies and congenital disease, and it is usually done immediately before the angiographic study. Particularly valvular and great vessel procedures."
+    ],
+    [
+     "Evaluating deep venous thrombosis",
+     "Deep vein thrombosis is assessed by vascular ultrasound rather than by cardiac computed tomography."
+    ]
+   ],
+   "c": 2,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 43"
+  },
+  {
+   "topic": "Cardiovascular magnetic resonance",
+   "io": "Discuss indications, advantages, and limitations of cardiac MRI",
+   "slot": "indication",
+   "q": "Which aortic conditions is cardiovascular magnetic resonance used to diagnose and monitor?",
+   "opts": [
+    [
+     "Aneurysm, dissection, haematoma, coarctation",
+     "Correct. All four are questions about the wall and the lumen of a large vessel, which is where its detailed anatomy is most useful."
+    ],
+    [
+     "The coronary artery calcium burden",
+     "Calcium is scored by non-contrast computed tomography rather than by magnetic resonance."
+    ],
+    [
+     "Valve vegetations",
+     "Vegetations are sought on echocardiography, particularly the transoesophageal study."
+    ],
+    [
+     "Deep venous thrombosis",
+     "Deep vein thrombosis is assessed by vascular ultrasound rather than by cardiovascular magnetic resonance."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 56"
+  },
+  {
+   "topic": "Cardiovascular magnetic resonance",
+   "io": "Discuss indications, advantages, and limitations of cardiac MRI",
+   "slot": "indication",
+   "q": "Which cardiomyopathy questions is cardiovascular magnetic resonance used to answer?",
+   "opts": [
+    [
+     "The degree of coronary stenosis",
+     "Stenosis is assessed by computed tomography angiography or catheter angiography."
+    ],
+    [
+     "Exercise capacity",
+     "Exercise capacity is assessed by stress testing rather than by magnetic resonance."
+    ],
+    [
+     "Left atrial appendage thrombus",
+     "Appendage thrombus is sought on transoesophageal echocardiography."
+    ],
+    [
+     "Hypertrophic cardiomyopathy",
+     "Correct. Each turns on what the muscle itself is doing, which is where it outperforms the studies that show the arteries. Ischaemic against nonischaemic, acute myocarditis and cardiac sarcoidosis."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 57"
+  },
+  {
+   "topic": "Echocardiography",
+   "io": "Discuss indications, advantages, and limitations of echocardiography",
+   "slot": "contraindication",
+   "q": "Which oesophageal conditions contraindicate a transoesophageal echocardiogram?",
+   "opts": [
+    [
+     "Gastro-oesophageal reflux disease",
+     "Reflux alone is not listed. Stricture, malignancy and bleeding varices are the oesophageal contraindications."
+    ],
+    [
+     "A history of oesophageal candidiasis",
+     "Not among the listed contraindications, which are stricture, malignancy and varices with recent or active bleeding."
+    ],
+    [
+     "Recent barium swallow",
+     "Not among the listed contraindications; stricture, malignancy and bleeding varices are the oesophageal ones."
+    ],
+    [
+     "Stricture, malignancy or bleeding varices",
+     "Correct. All three mean passing a probe risks perforation or haemorrhage, which is the hazard the contraindication list exists to avoid."
+    ]
+   ],
+   "c": 3,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 26"
+  },
+  {
+   "topic": "Exercise stress test",
+   "io": "Discuss indications, advantages, and limitations of stress testing",
+   "slot": "interpretation",
+   "q": "Which electrocardiographic changes during an exercise stress test suggest ischaemia?",
+   "opts": [
+    [
+     "ST elevation with reciprocal change",
+     "The changes described for this test are ST depression and ectopy rather than elevation."
+    ],
+    [
+     "ST depression",
+     "Correct. Both appear as the heart is worked and are what the continuous monitoring exists to catch. Or the development of premature ventricular contractions."
+    ],
+    [
+     "A prolonged QT interval",
+     "QT prolongation is not among the described findings; ST depression and premature ventricular contractions are."
+    ],
+    [
+     "Loss of P waves",
+     "Absent P waves indicate atrial fibrillation rather than the ischaemic changes described."
+    ]
+   ],
+   "c": 1,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 29"
+  },
+  {
+   "topic": "Cardiac computed tomography",
+   "io": "Discuss indications, advantages, and limitations of cardiac CT",
+   "slot": "modality choice",
+   "q": "What is a non-contrast cardiac computed tomography particularly useful for?",
+   "opts": [
+    [
+     "Coronary artery calcium scoring",
+     "Correct. Calcium is dense enough to be seen without contrast, so the study that needs no contrast is the one that measures it."
+    ],
+    [
+     "Assessing coronary stenosis",
+     "Assessing stenosis requires contrast, which is what computed tomography angiography adds."
+    ],
+    [
+     "Measuring ejection fraction",
+     "Ejection fraction is a functional measure obtained by echocardiography or magnetic resonance."
+    ],
+    [
+     "Detecting valve vegetations",
+     "Vegetations are sought on echocardiography, particularly the transoesophageal study."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 40"
+  },
+  {
+   "topic": "Cardiothoracic ratio",
+   "io": "Measure the cardiothoracic ratio to evaluate cardiac enlargement",
+   "slot": "interpretation",
+   "q": "A properly performed posteroanterior chest radiograph shows the cardiac silhouette occupying 58 per cent of the internal thoracic diameter. What does that suggest?",
+   "opts": [
+    [
+     "Cardiomegaly",
+     "Correct. The silhouette should normally occupy no more than about half the internal thoracic diameter, so this exceeds it."
+    ],
+    [
+     "A normal heart size",
+     "A normal ratio sits below about one half of the internal thoracic diameter, and this measurement is above it."
+    ],
+    [
+     "Pulmonary hypertension without cardiac enlargement",
+     "The ratio measures the cardiac silhouette rather than the pulmonary circulation."
+    ],
+    [
+     "A pericardial effusion specifically",
+     "An effusion can enlarge the silhouette, but the ratio identifies enlargement rather than its cause."
+    ]
+   ],
+   "c": 0,
+   "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 8"
+  }
+ ]
+}
