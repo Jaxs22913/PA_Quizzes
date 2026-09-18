@@ -1,0 +1,3788 @@
+{
+ "anti1": [
+  {
+   "topic": "Antifungal comparison",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A patient on an inhaled steroid has oral thrush and takes several other medicines. Which antifungal is preferred, and why?",
+   "opts": [
+    [
+     "Nystatin, because it is not absorbed",
+     "Correct. The property that limits it to surface infection is the same one that keeps it out of the patient's other drugs. Not being absorbed is also why it cannot interact with the patient's other medicines."
+    ],
+    [
+     "Ketoconazole, because it is the more potent agent",
+     "Ketoconazole is absorbed and inhibits CYP3A4, which is the problem in a patient on several medicines."
+    ],
+    [
+     "Either one, since neither is absorbed at all",
+     "Ketoconazole is absorbed; nystatin is the nonabsorbable one."
+    ],
+    [
+     "Neither, since thrush resolves without treatment",
+     "Oral candidiasis is a stated indication for treatment, and nystatin treats it without reaching the rest of the patient."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 13"
+  },
+  {
+   "topic": "Nystatin",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A patient using an inhaled steroid develops oral candidiasis. Which of these situations is NOT given as a setting for it?",
+   "opts": [
+    [
+     "Use of an inhaled steroid",
+     "This is one of the named settings, along with HIV infection and chemotherapy, all of which share suppressed immunity."
+    ],
+    [
+     "Human immunodeficiency virus infection",
+     "This is one of the named settings, alongside inhaled steroid use and chemotherapy."
+    ],
+    [
+     "Chemotherapy",
+     "This is one of the named settings, alongside inhaled steroid use and HIV infection."
+    ],
+    [
+     "Recent tympanostomy tube placement",
+     "Correct -- this is not one of them. The settings given are inhaled steroids, HIV infection and chemotherapy, all of which share suppressed local or general immunity."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 13"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A child with acute otitis media finished a course of antibiotics three weeks ago. How does that change the choice?",
+   "opts": [
+    [
+     "Amoxicillin-clavulanate is used instead",
+     "Correct. Recent antibiotic exposure selects for beta-lactamase producers, and that is exactly what the clavulanate is there to cover."
+    ],
+    [
+     "The same high-dose amoxicillin is used",
+     "Recent exposure is one of the stated reasons to move off plain amoxicillin."
+    ],
+    [
+     "A macrolide is substituted",
+     "Macrolides are a penicillin-allergy option, and pneumococcal resistance to them is common."
+    ],
+    [
+     "Antibiotics are withheld for a further week",
+     "Watchful waiting is not the response to recent antibiotic exposure."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 5"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A child has acute otitis media and has had no antibiotics in the last month. What is the mainstay of therapy?",
+   "opts": [
+    [
+     "Amoxicillin-clavulanate",
+     "That is held for severe or resistant disease, or a child who has had antibiotics in the past month."
+    ],
+    [
+     "Azithromycin",
+     "A penicillin-allergy alternative, and a weak one here, since up to half of pneumococci are resistant to macrolides."
+    ],
+    [
+     "Ceftriaxone by injection",
+     "Reserved for failed therapy or a child who cannot keep oral medication down."
+    ],
+    [
+     "Amoxicillin, at a high dose",
+     "Correct. High-dose amoxicillin is first line, and the dose is high for a reason rather than by habit: it is what overcomes the resistant pneumococcus."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 5"
+  },
+  {
+   "topic": "Otic antibiotics",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which otic ingredient is singled out for causing hypersensitivity?",
+   "opts": [
+    [
+     "Hydrocortisone",
+     "The steroid is not the sensitising component. Neomycin is the ingredient singled out for causing hypersensitivity."
+    ],
+    [
+     "Neomycin",
+     "Correct. A patient whose ear gets worse rather than better on drops may be reacting to the neomycin rather than failing treatment."
+    ],
+    [
+     "Ciprofloxacin",
+     "Not flagged for hypersensitivity here; the fluoroquinolone drops are the ones considered safe. Neomycin carries that warning."
+    ],
+    [
+     "Ofloxacin",
+     "Not flagged for hypersensitivity here. Ofloxacin is offered as an alternative, while neomycin is the sensitising ingredient."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 10"
+  },
+  {
+   "topic": "Acute bacterial rhinosinusitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "next step",
+   "q": "What non-antibiotic measure is described as useful in bacterial rhinosinusitis?",
+   "opts": [
+    [
+     "Oral antihistamines",
+     "Antihistamines are for allergic rhinitis rather than bacterial sinus infection."
+    ],
+    [
+     "Systemic corticosteroids",
+     "Not offered as an adjunct here. Saline irrigation is the one non-antibiotic measure described as useful."
+    ],
+    [
+     "Saline irrigation",
+     "Correct. It is the one adjunct named, and it costs nothing in resistance."
+    ],
+    [
+     "Topical decongestant for ten days",
+     "Topical decongestants are limited to a few days, and are not the named adjunct."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 7"
+  },
+  {
+   "topic": "Ketoconazole",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What is ketoconazole indicated for here?",
+   "opts": [
+    [
+     "Oral candidiasis alone",
+     "That is nystatin's indication. Ketoconazole is used for systemic fungal infection, which is why it has to be absorbed."
+    ],
+    [
+     "Fungal otitis externa",
+     "Not the indication given for ketoconazole, which is used for systemic fungal infection."
+    ],
+    [
+     "Systemic fungal infection",
+     "Correct, and the contrast with nystatin is the point: one treats infection throughout the body, the other never leaves the mouth and gut."
+    ],
+    [
+     "Prophylaxis during antibiotic courses",
+     "Prophylaxis is not among its indications here; it is used to treat established systemic fungal infection."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 12"
+  },
+  {
+   "topic": "Ketoconazole",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which cardiac adverse effect is associated with ketoconazole?",
+   "opts": [
+    [
+     "Atrial fibrillation",
+     "Not among the described effects. The cardiac concern with ketoconazole is prolongation of the QTc interval."
+    ],
+    [
+     "Heart block",
+     "Not among the described effects; the cardiac effect associated with ketoconazole is QTc prolongation."
+    ],
+    [
+     "Cardiomyopathy",
+     "Not among the described effects. Ketoconazole is associated with QTc prolongation rather than with structural heart disease."
+    ],
+    [
+     "QTc prolongation",
+     "Correct. It matters most alongside its CYP3A4 inhibition, because the drugs whose levels it raises may prolong the QT interval too."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 12"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "mechanism",
+   "q": "Most acute otitis media involves a virus. What does that fact change?",
+   "opts": [
+    [
+     "It means an antiviral should be given in place of an antibiotic",
+     "No antiviral is offered for acute otitis media. The viral majority argues against reaching for an antibiotic, not for reaching for an antiviral."
+    ],
+    [
+     "It means the causative bacterial organisms remain unidentified",
+     "The bacterial causes are well described; the point is that many cases are not bacterial at all."
+    ],
+    [
+     "It is one reason antibiotics are not automatic in every case",
+     "Correct. A majority of cases are viral, or viral with bacteria alongside, which is the argument against reaching for an antibiotic reflexively."
+    ],
+    [
+     "It means the condition resolves without treatment in every case",
+     "Antibiotics are clearly indicated in a defined group; the point is that the group is not everyone."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 4"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Why is a macrolide a weak choice in acute otitis media even when it is permitted?",
+   "opts": [
+    [
+     "Up to half of pneumococci are resistant to macrolides",
+     "Correct. It remains an option for the penicillin-allergic patient, but the resistance rate is the reason it is not a comfortable one."
+    ],
+    [
+     "Macrolides do not reach the middle ear",
+     "Penetration is not the stated limitation. The problem is that up to half of pneumococci are resistant to macrolides outright."
+    ],
+    [
+     "Macrolides are contraindicated in children",
+     "They are used in children; the problem is resistance, not age."
+    ],
+    [
+     "Macrolides have no activity against Haemophilus influenzae",
+     "The stated resistance problem concerns Streptococcus pneumoniae rather than Haemophilus influenzae, and it is resistance rather than absent activity."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 5"
+  },
+  {
+   "topic": "Acute bacterial rhinosinusitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A patient with bacterial rhinosinusitis has a penicillin allergy. Which regimens are offered?",
+   "opts": [
+    [
+     "Clindamycin with cefixime",
+     "Correct. The first is a pairing rather than a single agent, which is easy to remember wrongly as clindamycin alone. Or levofloxacin."
+    ],
+    [
+     "Cefdinir or azithromycin",
+     "That pair belongs to penicillin allergy in acute otitis media."
+    ],
+    [
+     "Clindamycin alone",
+     "Clindamycin is given together with cefixime here rather than by itself; the alternative single agent is levofloxacin."
+    ],
+    [
+     "Nitrofurantoin or trimethoprim",
+     "Neither is used for sinus infection. The penicillin-allergy options are clindamycin with cefixime, or levofloxacin."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 7"
+  },
+  {
+   "topic": "Acute bacterial rhinosinusitis",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "Beyond the organisms it shares with otitis media, what else causes bacterial rhinosinusitis?",
+   "opts": [
+    [
+     "Pseudomonas aeruginosa and Candida",
+     "Neither is listed among the causes. The additional organisms are Streptococcus pyogenes, Staphylococcus aureus and gram negative bacilli."
+    ],
+    [
+     "Streptococcus pyogenes",
+     "Correct. The extra names are part of why the starting antibiotic is broader than it is for the ear. Staphylococcus aureus and gram negative bacilli."
+    ],
+    [
+     "Mycoplasma and Chlamydophila",
+     "Atypicals are not named here. The extra organisms beyond the middle ear trio are S. pyogenes, S. aureus and gram negative bacilli."
+    ],
+    [
+     "Anaerobes exclusively",
+     "Anaerobes are not given as the additional organisms; Streptococcus pyogenes, Staphylococcus aureus and gram negative bacilli are."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 7"
+  },
+  {
+   "topic": "Acute bacterial rhinosinusitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "diagnosis",
+   "q": "What separates viral from bacterial rhinosinusitis, and so decides whether an antibiotic is given?",
+   "opts": [
+    [
+     "The colour of the nasal discharge",
+     "Discharge colour does not distinguish viral from bacterial. The timeline does: ten days, or worsening after an initial improvement."
+    ],
+    [
+     "Symptoms beyond ten days",
+     "Correct. The timeline does the work, because nothing on examination reliably separates the two. Or worsening after five to six days."
+    ],
+    [
+     "The presence of fever at any point",
+     "Fever appears in both, so it cannot separate them. What separates them is the duration and the pattern of worsening."
+    ],
+    [
+     "Tenderness over the maxillary sinuses",
+     "Tenderness is common to both. The distinguishing feature is the time course rather than anything found on examination."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 7"
+  },
+  {
+   "topic": "Otic antibiotics",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Ciprofloxacin with dexamethasone is effective but expensive. What alternative is suggested?",
+   "opts": [
+    [
+     "Neomycin with polymyxin B and hydrocortisone drops",
+     "That combination carries the perforation restriction and the hypersensitivity problem."
+    ],
+    [
+     "Oral ciprofloxacin in place of the drops",
+     "Switching to an oral agent is not the suggested economy. The alternative is ofloxacin with an ophthalmic dexamethasone preparation."
+    ],
+    [
+     "Ofloxacin with an ophthalmic dexamethasone",
+     "Correct. An eye preparation used in the ear, which is a deliberate substitution rather than an error, and it reproduces the same two actions for less. An eye preparation used in the ear, which is a deliberate substitution rather than an error."
+    ],
+    [
+     "Plain hydrocortisone drops without any anti-infective",
+     "That loses the anti-infective half of the treatment. The suggested alternative keeps both actions by pairing ofloxacin with dexamethasone."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 10"
+  },
+  {
+   "topic": "Acute pharyngitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "mechanism",
+   "q": "What is the stated goal of treating streptococcal pharyngitis?",
+   "opts": [
+    [
+     "To shorten the duration of the sore throat",
+     "Symptom duration is not the stated goal. The antibiotic is given to prevent acute rheumatic fever and suppurative complications."
+    ],
+    [
+     "To prevent acute rheumatic fever and suppurative complications",
+     "Correct. Note what is absent: shortening the sore throat is not the reason the antibiotic is given."
+    ],
+    [
+     "To prevent transmission within the household",
+     "Transmission is not the reason given. The goal is preventing acute rheumatic fever and suppurative complications."
+    ],
+    [
+     "To prevent the infection spreading to the sinuses and middle ear",
+     "That is not among the complications named. The antibiotic is given to prevent acute rheumatic fever and suppurative complications."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 8"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "Which organisms are named as the bacterial causes of acute otitis media?",
+   "opts": [
+    [
+     "Staphylococcus aureus, Pseudomonas and Proteus",
+     "These are canal and chronic-infection organisms rather than the middle ear trio."
+    ],
+    [
+     "Streptococcus pneumoniae",
+     "Correct. The same three run through otitis media and bacterial sinusitis, which is why the antibiotic reasoning for the two is so similar. Haemophilus influenzae and Moraxella catarrhalis."
+    ],
+    [
+     "Group A Streptococcus and Epstein-Barr virus",
+     "That pairing belongs to pharyngitis. The middle ear organisms are Streptococcus pneumoniae, Haemophilus influenzae and Moraxella catarrhalis."
+    ],
+    [
+     "Candida and Aspergillus",
+     "Fungi are not among the causes of acute otitis media given here."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 4"
+  },
+  {
+   "topic": "Nystatin",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What adverse effects are described with oral nystatin?",
+   "opts": [
+    [
+     "QTc prolongation and hepatitis",
+     "Those belong to ketoconazole, which is absorbed. Nystatin stays in the gut, so its effects are gastrointestinal."
+    ],
+    [
+     "Sedation and dry mouth",
+     "These belong to first generation antihistamines. Nystatin's effects are gastrointestinal, as befits a drug that is never absorbed."
+    ],
+    [
+     "Nosebleed and perforation of the septum",
+     "These belong to nasal sprays. Nystatin causes gastrointestinal upset because it remains in the gut."
+    ],
+    [
+     "Diarrhoea, nausea, stomach pain and vomiting",
+     "Correct. All gastrointestinal, which is exactly what you would predict for a drug that stays in the gut and is never absorbed."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 13"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "next step",
+   "q": "A child treated for acute otitis media has not improved after three days, and has had no antibiotics in the past three months. What is the next step?",
+   "opts": [
+    [
+     "Amoxicillin-clavulanate",
+     "Correct. Failure at three days is the trigger to step up, and this is the step. Or a third generation cephalosporin."
+    ],
+    [
+     "Continue the same agent for a further three days",
+     "Three days without improvement is the stated point at which therapy is considered to have failed."
+    ],
+    [
+     "Move straight to injected ceftriaxone",
+     "Injection is for failed therapy after stepping up, or for a child who cannot tolerate oral medication."
+    ],
+    [
+     "Stop antibiotics and observe",
+     "Observation is not the response to a treatment failure. Failure at three days is the point at which therapy is stepped up rather than withdrawn."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 6"
+  },
+  {
+   "topic": "Nystatin",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "mechanism",
+   "q": "Nystatin is classified as a nonabsorbable antifungal. Why does that matter?",
+   "opts": [
+    [
+     "It must be given with food to be absorbed",
+     "It is not absorbed at all, so food does not help. Being nonabsorbable is what confines it to the surfaces it touches."
+    ],
+    [
+     "It accumulates in the liver with repeated use",
+     "Accumulation is not a feature of a drug that is not absorbed."
+    ],
+    [
+     "It acts only where it touches, and not elsewhere",
+     "Correct. Being nonabsorbable is both the safety of the drug and its limitation: it is why it is well tolerated and why it cannot treat anything beyond the mucosa."
+    ],
+    [
+     "It requires renal dose adjustment",
+     "A nonabsorbable drug does not reach the kidney to need adjusting."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 13"
+  }
+ ],
+ "anti2": [
+  {
+   "topic": "Acute otitis media",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Why is amoxicillin given at a high dose rather than a standard one in acute otitis media?",
+   "opts": [
+    [
+     "It shortens the course to a single day",
+     "Duration is not shortened by the higher dose; the course still runs several days."
+    ],
+    [
+     "It overcomes Streptococcus pneumoniae resistance",
+     "Correct. Pneumococcal resistance here is a matter of degree rather than all-or-nothing, so raising the concentration restores activity. That is the whole argument for the higher dose."
+    ],
+    [
+     "It penetrates the middle ear only at high concentrations",
+     "Penetration is not the stated problem. The higher dose exists to overcome pneumococcal resistance, which is a matter of degree rather than absolute."
+    ],
+    [
+     "It covers Pseudomonas, which standard doses miss",
+     "Pseudomonas is not among the organisms causing acute otitis media."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 5"
+  },
+  {
+   "topic": "Otic antibiotics",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Otic preparations usually combine an anti-infective with a glucocorticoid. What does each component do?",
+   "opts": [
+    [
+     "The anti-infective inhibits bacterial growth and the steroid reduces inflammatory cytokines",
+     "Correct. Two separate jobs in one bottle, which is also why the combinations cost more than a plain antibiotic drop."
+    ],
+    [
+     "The steroid kills the organism and the anti-infective reduces swelling",
+     "The roles are the other way round: the anti-infective inhibits bacterial growth and the steroid reduces inflammatory cytokines."
+    ],
+    [
+     "Both components are antibacterial and act synergistically",
+     "The steroid has no antibacterial action. It is there to reduce inflammatory cytokines while the anti-infective inhibits bacterial growth."
+    ],
+    [
+     "The steroid improves penetration of the anti-infective through the tympanic membrane",
+     "Penetration is not the stated reason for combining them. Each component has its own job: killing organisms, and damping inflammation."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 9"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "next step",
+   "q": "When is injected ceftriaxone used in acute otitis media?",
+   "opts": [
+    [
+     "As first line in any child under two",
+     "Age alone does not move a child to injection. The triggers are failed oral therapy, or an inability to keep oral medication down."
+    ],
+    [
+     "Whenever the tympanic membrane has perforated",
+     "Perforation is not the stated trigger. Escalation to injection follows failed therapy, or intolerance of oral medication."
+    ],
+    [
+     "Only after culture confirms a resistant organism",
+     "Middle ear fluid is not routinely cultured before escalating."
+    ],
+    [
+     "For failed therapy",
+     "Correct. Both routes to it are practical rather than microbiological: the oral agents have not worked, or they cannot be kept down. Or when oral medication is not tolerated."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 6"
+  },
+  {
+   "topic": "Ketoconazole",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "Why does ketoconazole interact with so many other medicines?",
+   "opts": [
+    [
+     "It is highly protein bound and displaces other drugs",
+     "Displacement from protein binding is not the mechanism given. Ketoconazole inhibits CYP3A4, raising the level of anything cleared by that route."
+    ],
+    [
+     "It induces its own metabolism over time",
+     "Induction would lower levels rather than raise them, and is not described."
+    ],
+    [
+     "It inhibits CYP3A4",
+     "Correct. It raises the level of anything cleared by that route, which makes the interaction list a property of the enzyme rather than of any one drug pairing."
+    ],
+    [
+     "It is eliminated unchanged by the kidney",
+     "Renal elimination of unchanged drug would not generate these interactions. They come from inhibition of CYP3A4."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 12"
+  },
+  {
+   "topic": "Ketoconazole",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which hepatic adverse effects are described with ketoconazole?",
+   "opts": [
+    [
+     "Hepatitis, cirrhosis and hepatic failure",
+     "Correct. A full spectrum from a blood test abnormality through to organ failure, which is why liver monitoring belongs with this drug. Deranged liver enzymes appear before any of these."
+    ],
+    [
+     "Gallstones with episodes of biliary colic",
+     "Not among the described effects. The hepatic effects run from abnormal enzymes and hepatitis through cirrhosis to hepatic failure."
+    ],
+    [
+     "Hepatic vein thrombosis and portal hypertension",
+     "Not among the described effects. Ketoconazole's liver toxicity is hepatitis, enzyme derangement, cirrhosis and failure."
+    ],
+    [
+     "Fatty liver with no change in liver enzymes",
+     "The described effects include abnormal enzymes and progression to failure."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 12"
+  },
+  {
+   "topic": "Nystatin",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does nystatin work?",
+   "opts": [
+    [
+     "It inhibits cytochrome P450 within the fungal cell",
+     "That is ketoconazole's mechanism. Nystatin binds sterols already present in the fungal membrane and increases permeability."
+    ],
+    [
+     "It inhibits protein synthesis in the fungal cell",
+     "Not the stated mechanism. Nystatin acts on the membrane itself by binding sterols, rather than on protein synthesis."
+    ],
+    [
+     "It binds membrane sterols and increases permeability",
+     "Correct. It acts on what is already in the membrane rather than on the machinery that builds it, which is why it works on contact."
+    ],
+    [
+     "It prevents the fungus adhering to the oral mucosa",
+     "Not the stated mechanism. Nystatin binds sterols in the fungal cell membrane and increases its permeability."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 13"
+  },
+  {
+   "topic": "Acute pharyngitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Which single-dose option is offered for streptococcal pharyngitis in a patient unlikely to finish a course?",
+   "opts": [
+    [
+     "A ten-day course of oral azithromycin",
+     "Azithromycin is a penicillin-allergy alternative and is not a single dose here."
+    ],
+    [
+     "A ten-day course of oral amoxicillin",
+     "Amoxicillin is given as a course over several days rather than as a single dose; the single-dose option is injected benzathine penicillin G."
+    ],
+    [
+     "Benzathine penicillin G by intramuscular injection",
+     "Correct. One injection replaces the whole oral course, which is precisely its point when adherence is in doubt."
+    ],
+    [
+     "Intramuscular ceftriaxone given over three days",
+     "Ceftriaxone is used in otitis media that has failed therapy, not for pharyngitis."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 8"
+  },
+  {
+   "topic": "Acute pharyngitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "diagnosis",
+   "q": "Why is a rapid streptococcal test used before treating a sore throat?",
+   "opts": [
+    [
+     "To identify which antibiotic the organism is sensitive to",
+     "The rapid test does not provide sensitivities. It establishes whether the organism is there at all, since most sore throats are viral."
+    ],
+    [
+     "To exclude infectious mononucleosis",
+     "It tests for streptococcus rather than ruling out mononucleosis."
+    ],
+    [
+     "To decide the length of the course",
+     "Course length does not depend on the test result. The test decides whether to treat at all, because most pharyngitis is viral."
+    ],
+    [
+     "To prevent over-prescribing, since most pharyngitis is viral",
+     "Correct. Only a minority of sore throats are streptococcal, so testing is what keeps the antibiotic away from the rest."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 8"
+  },
+  {
+   "topic": "Ketoconazole",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Besides liver and cardiac effects, what else is described with ketoconazole?",
+   "opts": [
+    [
+     "Hyperkalaemia and hypertension",
+     "Not among the described effects. Ketoconazole is associated with hyperlipidaemia and orthostatic hypotension."
+    ],
+    [
+     "Neutropenia and thrombocytopenia together",
+     "Not among the described effects; the further effects listed are hyperlipidaemia and orthostatic hypotension."
+    ],
+    [
+     "Peripheral neuropathy",
+     "Not among the described effects. The additional effects described are hyperlipidaemia and orthostatic hypotension."
+    ],
+    [
+     "Hyperlipidaemia and orthostatic hypotension",
+     "Correct. Neither is obvious for an antifungal, and the orthostatic drop is the one a patient will actually notice."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 12"
+  },
+  {
+   "topic": "Otic antibiotics",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "adverse effect",
+   "q": "What is the specific concern with polymyxin B reaching the middle ear?",
+   "opts": [
+    [
+     "Cochlear damage and hearing loss",
+     "Correct. The harm is permanent and the drug was given for an ear complaint, which is what makes checking the drum first worth the trouble."
+    ],
+    [
+     "Facial nerve palsy",
+     "Not the stated risk. The specific concern with polymyxin B reaching the middle ear is cochlear damage and hearing loss."
+    ],
+    [
+     "Chronic perforation of the drum",
+     "The perforation is the route of entry rather than the consequence."
+    ],
+    [
+     "Vestibular failure alone",
+     "The named harm is cochlear, so it is hearing rather than balance that is at risk when polymyxin B reaches the middle ear."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 10"
+  },
+  {
+   "topic": "Otic antibiotics",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "Which agents are listed as available otic anti-infectives?",
+   "opts": [
+    [
+     "Ciprofloxacin, ofloxacin, and two steroid combinations",
+     "Correct. Two plain fluoroquinolones and two combinations, and the combinations are where the restrictions live. In full: ciprofloxacin, ciprofloxacin with dexamethasone, neomycin with polymyxin B and hydrocortisone, and ofloxacin."
+    ],
+    [
+     "Amoxicillin, azithromycin and cefdinir, as drops",
+     "These are oral agents rather than ear drops. The otic list is ciprofloxacin, ciprofloxacin with dexamethasone, the neomycin combination, and ofloxacin."
+    ],
+    [
+     "Gentamicin and tobramycin, given as ear drops",
+     "Neither aminoglycoside is on the list of available otic agents; neomycin is the aminoglycoside that appears, and only within a combination."
+    ],
+    [
+     "Nystatin and ketoconazole, given as ear drops",
+     "These are antifungals rather than otic anti-infectives. Nystatin treats oral candidiasis and ketoconazole systemic fungal infection."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 9"
+  },
+  {
+   "topic": "Acute bacterial rhinosinusitis",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Why does bacterial rhinosinusitis start with amoxicillin-clavulanate when otitis media does not?",
+   "opts": [
+    [
+     "The sinuses are harder for antibiotics to penetrate",
+     "Penetration is not the reason given. Beta-lactamase producing Haemophilus influenzae is common in sinusitis, and the clavulanate exists to defeat that enzyme."
+    ],
+    [
+     "Beta-lactamase producing Haemophilus influenzae is common in sinusitis",
+     "Correct. The clavulanate exists to inhibit that enzyme, so the frequency of the enzyme is what decides whether it is needed from the outset."
+    ],
+    [
+     "Sinusitis is caused by entirely different organisms",
+     "The organisms largely overlap with otitis media; the resistance pattern is what differs."
+    ],
+    [
+     "Clavulanate has independent antibacterial activity against these organisms",
+     "Clavulanate protects the amoxicillin rather than acting as an antibiotic itself."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 7"
+  },
+  {
+   "topic": "Acute bacterial rhinosinusitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What is the standard of therapy for acute bacterial rhinosinusitis?",
+   "opts": [
+    [
+     "High-dose amoxicillin alone",
+     "That is the otitis media starting point; sinusitis begins a step further along."
+    ],
+    [
+     "Azithromycin",
+     "Not the standard of therapy for this infection. Amoxicillin-clavulanate is, because beta-lactamase producing Haemophilus influenzae is common here."
+    ],
+    [
+     "Doxycycline",
+     "Not among the agents offered here. The standard is amoxicillin-clavulanate, with clindamycin plus cefixime or levofloxacin for penicillin allergy."
+    ],
+    [
+     "Amoxicillin-clavulanate",
+     "Correct. Unlike otitis media, this one starts with the clavulanate already on board, because beta-lactamase producing Haemophilus influenzae is common here."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 7"
+  },
+  {
+   "topic": "Acute pharyngitis",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "mechanism",
+   "q": "What proportion of acute pharyngitis is due to group A streptococcus?",
+   "opts": [
+    [
+     "The clear majority of cases",
+     "Most pharyngitis is viral; group A streptococcus accounts for a minority of cases, which is why testing precedes treating."
+    ],
+    [
+     "Almost all cases in adults",
+     "Streptococcal pharyngitis is more a disease of children and teenagers, and is a minority of sore throats at any age."
+    ],
+    [
+     "A minority of cases, with most being viral",
+     "Correct. That imbalance is the entire argument for testing before prescribing."
+    ],
+    [
+     "It is too rare to be worth testing for",
+     "It is common enough that missing it matters, which is why the rapid test exists."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 8"
+  },
+  {
+   "topic": "Otic antibiotics",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Which otic ingredient is specifically not recommended when the tympanic membrane is perforated or tubes are in place?",
+   "opts": [
+    [
+     "Ciprofloxacin",
+     "The fluoroquinolone drops are the ones considered safe in this situation."
+    ],
+    [
+     "Polymyxin B",
+     "Correct. With a route to the middle ear it risks cochlear damage and hearing loss, which makes an intact drum the thing to establish before prescribing it."
+    ],
+    [
+     "Dexamethasone",
+     "The steroid component is not the part that carries this warning."
+    ],
+    [
+     "Ofloxacin",
+     "Ofloxacin is offered as an alternative rather than restricted."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 10"
+  },
+  {
+   "topic": "Ketoconazole",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does ketoconazole work?",
+   "opts": [
+    [
+     "It binds to the sterols already present in the fungal cell membrane",
+     "That is nystatin's mechanism: it binds sterols already in the membrane. Ketoconazole acts on the machinery instead, by inhibiting cytochrome P450."
+    ],
+    [
+     "It inhibits fungal DNA synthesis",
+     "Not the stated mechanism. Ketoconazole alters fungal cell wall permeability by inhibiting cytochrome P450."
+    ],
+    [
+     "It alters fungal cell wall permeability by inhibiting cytochrome P450",
+     "Correct. The same enzyme family it acts on in the fungus explains its behaviour in the patient, which is where its interactions come from."
+    ],
+    [
+     "It blocks fungal cell wall glucan synthesis",
+     "That is the echinocandin mechanism, which is not described here."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 12"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A child with acute otitis media has a penicillin allergy. Which agents are offered?",
+   "opts": [
+    [
+     "Ciprofloxacin or levofloxacin",
+     "Fluoroquinolones are not the listed oral option for this infection in children."
+    ],
+    [
+     "Cefdinir or azithromycin",
+     "Correct. Both are listed, though the macrolide is the weaker of the two here because pneumococcal resistance to macrolides runs high."
+    ],
+    [
+     "Clindamycin or cefixime",
+     "That pairing belongs to bacterial rhinosinusitis in a penicillin-allergic patient."
+    ],
+    [
+     "Vancomycin or linezolid",
+     "These are not among the agents used for uncomplicated acute otitis media."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 5"
+  },
+  {
+   "topic": "Acute otitis media",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "mechanism",
+   "q": "What is changing the organisms that cause acute otitis media?",
+   "opts": [
+    [
+     "Vaccination",
+     "Correct. The aetiology is shifting on the back of vaccination, which is why the proportions attached to each organism are not fixed and why they keep being revised."
+    ],
+    [
+     "Rising antibiotic resistance alone",
+     "Resistance changes which drug works, not which organism turns up."
+    ],
+    [
+     "Increasing use of tympanostomy tubes",
+     "Tubes change management rather than which organisms appear. Vaccination is what is shifting the aetiology."
+    ],
+    [
+     "Climate and seasonal variation",
+     "Seasonality is not offered as the reason the aetiology is moving."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 4"
+  },
+  {
+   "topic": "Acute pharyngitis",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A patient with streptococcal pharyngitis is penicillin-allergic. Which agents are offered?",
+   "opts": [
+    [
+     "Cefdinir, cefixime or ceftriaxone",
+     "These are the alternatives listed for the ear and the sinuses."
+    ],
+    [
+     "Cephalexin, clindamycin or azithromycin",
+     "Correct. Three alternatives rather than one, which is worth holding onto because the allergy lists differ between the ear, the sinuses and the throat."
+    ],
+    [
+     "Levofloxacin or moxifloxacin",
+     "A fluoroquinolone is offered for sinusitis, not for pharyngitis."
+    ],
+    [
+     "Doxycycline or trimethoprim",
+     "Not among the alternatives for streptococcal pharyngitis, which are cephalexin, clindamycin and azithromycin."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 8"
+  }
+ ],
+ "inflam1": [
+  {
+   "topic": "Salicylates",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Aspirin produces different effects as exposure rises. In what order do they appear?",
+   "opts": [
+    [
+     "Anti-inflammatory, then analgesic, then antiplatelet",
+     "The order runs the other way: antiplatelet at the lowest exposure, then analgesic and antipyretic, then anti-inflammatory."
+    ],
+    [
+     "Antiplatelet, then analgesic and antipyretic, then anti-inflammatory",
+     "Correct. One drug with three jobs stacked by exposure, which is why 'taking aspirin' means very different things in different patients."
+    ],
+    [
+     "Analgesic first, then antiplatelet, then anti-inflammatory",
+     "The antiplatelet effect appears at the lowest exposure of the three."
+    ],
+    [
+     "All three appear together at any exposure",
+     "They appear in sequence as exposure rises, which is why the same drug means different things in different patients."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 16"
+  },
+  {
+   "topic": "Aspirin education",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "What is a patient on aspirin told about pain that does not settle?",
+   "opts": [
+    [
+     "To follow up if it worsens or persists",
+     "Correct. There is a time limit on treating yourself, and it exists so that a persistent cause gets looked at rather than masked. The limit given is about ten days."
+    ],
+    [
+     "To double the amount taken",
+     "Increasing exposure without review is not advised, and it moves the patient toward the range where tinnitus appears."
+    ],
+    [
+     "To switch to an anticoagulant",
+     "Anticoagulants are not an analgesic alternative, and combining one with aspirin is specifically warned against."
+    ],
+    [
+     "To continue taking it indefinitely if it helps",
+     "Indefinite self-treatment is what the instruction is designed to prevent."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 20"
+  },
+  {
+   "topic": "Acetaminophen",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "education",
+   "q": "What should a patient who drinks alcohol regularly be told about acetaminophen?",
+   "opts": [
+    [
+     "Alcohol prevents acetaminophen from working",
+     "Efficacy is not the concern; hepatic injury is. Regular alcohol with acetaminophen raises the risk of liver damage over time."
+    ],
+    [
+     "The combination causes gastric ulceration",
+     "Ulceration belongs to the non-steroidal anti-inflammatory drugs."
+    ],
+    [
+     "There is no interaction between the two drugs",
+     "A chronic interaction is described, and it involves the liver."
+    ],
+    [
+     "The combination risks liver damage over time",
+     "Correct. Neither is dangerous on its own at ordinary use, which is what makes the combination easy to arrive at without noticing."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 25"
+  },
+  {
+   "topic": "Naproxen",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "What distinguishes naproxen from ibuprofen?",
+   "opts": [
+    [
+     "It is selective for COX-2",
+     "Selectivity is not what separates it here. Naproxen differs by having a longer half-life, so it is taken less often."
+    ],
+    [
+     "It has no gastrointestinal effects",
+     "It is a non-steroidal anti-inflammatory drug and carries the same gastrointestinal risks."
+    ],
+    [
+     "A longer half-life",
+     "Correct. Same class and same problems, but a longer half-life, which matters for adherence more than for efficacy. So it is taken less often."
+    ],
+    [
+     "It is available only on prescription",
+     "It is named among the over-the-counter agents. Its distinguishing feature is a longer half-life."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 23"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "A child has a fever during chickenpox. Why must aspirin be avoided?",
+   "opts": [
+    [
+     "It is ineffective against viral fever",
+     "Efficacy is not the issue; the risk is. Aspirin given to a child with a viral illness is associated with Reye's syndrome."
+    ],
+    [
+     "It causes irreversible hearing loss in children",
+     "Tinnitus is exposure-related and is not the reason for this restriction."
+    ],
+    [
+     "It raises the risk of Reye's syndrome",
+     "Correct. A viral illness plus aspirin in a child is the exact combination that produces it, which is why the rule is about the setting rather than the drug alone."
+    ],
+    [
+     "It interacts with the varicella vaccine",
+     "The concern is the illness rather than the vaccine: aspirin during a viral illness in a child risks Reye's syndrome."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 17"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "A patient taking aspirin regularly develops ringing in the ears. What does that suggest?",
+   "opts": [
+    [
+     "Exposure has reached the anti-inflammatory range",
+     "Correct. Tinnitus is the audible marker that the patient has climbed the ladder from analgesia into the anti-inflammatory range, which makes it useful rather than incidental."
+    ],
+    [
+     "An unrelated sensorineural hearing loss on that side",
+     "Tinnitus is a recognised salicylate effect and should not be dismissed as coincidence."
+    ],
+    [
+     "An allergic reaction to aspirin",
+     "Hypersensitivity presents differently; tinnitus tracks exposure."
+    ],
+    [
+     "The dose is too low to be effective",
+     "Tinnitus indicates more exposure rather than less; it appears once salicylate reaches the anti-inflammatory range."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 16"
+  },
+  {
+   "topic": "Acetaminophen",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A child has fever during influenza. Why is acetaminophen preferred over aspirin?",
+   "opts": [
+    [
+     "Acetaminophen is anti-inflammatory and aspirin is not",
+     "Acetaminophen is the one WITHOUT anti-inflammatory action. It is preferred here because aspirin risks Reye's syndrome."
+    ],
+    [
+     "Aspirin in a child with viral illness risks Reye's syndrome",
+     "Correct. This is the everyday consequence of the Reye's association, and it is why acetaminophen became the default antipyretic in children."
+    ],
+    [
+     "Aspirin does not reduce fever",
+     "Aspirin is an effective antipyretic; the problem is the risk in this setting."
+    ],
+    [
+     "Acetaminophen also treats the influenza itself",
+     "It treats the fever and the discomfort rather than the infection. It is preferred because aspirin risks Reye's syndrome."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 17"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does ibuprofen differ from aspirin at cyclooxygenase?",
+   "opts": [
+    [
+     "It inhibits reversibly rather than irreversibly",
+     "Correct. The effect lifts as the drug clears, which is why ibuprofen is not used as an antiplatelet the way aspirin is."
+    ],
+    [
+     "It inhibits COX-2 only",
+     "Ibuprofen inhibits both isoforms. What separates it from aspirin is that it does so reversibly."
+    ],
+    [
+     "It does not inhibit cyclooxygenase",
+     "It does inhibit cyclooxygenase; the difference from aspirin is that its binding is reversible."
+    ],
+    [
+     "It inhibits irreversibly, but only COX-1",
+     "Irreversible binding is aspirin's property, and neither drug is confined to COX-1."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 21"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Which patients should avoid ibuprofen?",
+   "opts": [
+    [
+     "Those with asthma it may worsen",
+     "Correct. Asthma is the one most easily forgotten, because it is not an obvious consequence of blocking prostaglandin synthesis. Previous ulcer or perforation, or renal impairment."
+    ],
+    [
+     "Those with a history of Reye's syndrome",
+     "Reye's relates to aspirin in children rather than to ibuprofen."
+    ],
+    [
+     "Those taking acetaminophen",
+     "Acetaminophen is not a contraindication to ibuprofen. The contraindications are asthma, prior ulcer or perforation, and renal impairment."
+    ],
+    [
+     "Those over sixty-five years old",
+     "Age alone is not the stated contraindication; asthma, previous ulceration and renal impairment are, along with very young infants."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 22"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "Why is ibuprofen a problem for a patient taking methotrexate?",
+   "opts": [
+    [
+     "It displaces methotrexate from its receptor",
+     "Displacement at a receptor is not the described mechanism. Ibuprofen reduces methotrexate secretion, so it accumulates."
+    ],
+    [
+     "It prevents methotrexate from being absorbed",
+     "Absorption is not the step affected. Reduced secretion is what allows methotrexate to reach toxic levels."
+    ],
+    [
+     "It inactivates methotrexate in the liver",
+     "The interaction concerns secretion rather than hepatic inactivation."
+    ],
+    [
+     "It reduces methotrexate secretion",
+     "Correct. Same mechanism as the lithium interaction -- reduced renal clearance of a drug that does harm when it accumulates. Producing toxic levels."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 22"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Aspirin is contraindicated in pregnancy, yet one exception is noted. What is it?",
+   "opts": [
+    [
+     "It is safe throughout the third trimester",
+     "No such blanket allowance is given. The only exception noted is very low exposure in hypertensive disorders such as pre-eclampsia."
+    ],
+    [
+     "It may be used to treat fever during pregnancy",
+     "Fever in pregnancy is not the exception described. The exception concerns hypertensive disorders such as pre-eclampsia."
+    ],
+    [
+     "It may be used if the patient is also on an anticoagulant",
+     "That combination increases bleeding risk rather than making aspirin acceptable."
+    ],
+    [
+     "Very low exposure may benefit pre-eclampsia",
+     "Correct. The exception is narrow and specific, and it is the reason the contraindication is stated as a rule with a footnote rather than as an absolute. That is, the hypertensive disorders of pregnancy."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 17"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "diagnosis",
+   "q": "Which features characterise Reye's syndrome?",
+   "opts": [
+    [
+     "Fever, a rash and migratory joint pain",
+     "Not the described features. Reye's syndrome brings vomiting, progressive central nervous system damage, hepatic injury and low glucose."
+    ],
+    [
+     "Vomiting, neurological damage, liver injury and low glucose",
+     "Correct. The hypoglycaemia is easy to forget alongside the liver and brain findings, and it is treatable. The neurological damage is progressive, and the glucose is genuinely low rather than borderline."
+    ],
+    [
+     "Jaundice with painless distension of the abdomen",
+     "Not how it is described. The picture is vomiting, neurological deterioration, liver injury and hypoglycaemia."
+    ],
+    [
+     "Isolated hepatic failure without neurological signs",
+     "The central nervous system involvement is central to it; the alternative name pairs the brain with the liver for that reason."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 18"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "diagnosis",
+   "q": "Which illnesses typically precede Reye's syndrome?",
+   "opts": [
+    [
+     "Bacterial otitis media or sinusitis",
+     "The preceding illnesses described are viral: an upper respiratory infection, influenza or chickenpox."
+    ],
+    [
+     "Streptococcal pharyngitis",
+     "Not among the illnesses named. Reye's syndrome follows an upper respiratory infection, influenza or chickenpox."
+    ],
+    [
+     "Gastroenteritis from food poisoning",
+     "Not among the illnesses named; the preceding illnesses are viral ones such as influenza and chickenpox."
+    ],
+    [
+     "An upper respiratory infection",
+     "Correct. All viral, which is why the aspirin restriction in children is framed around fever from viral illness specifically. Influenza or chickenpox."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 18"
+  },
+  {
+   "topic": "Acetaminophen",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What is known about how acetaminophen works?",
+   "opts": [
+    [
+     "Its mechanism is not fully established",
+     "Correct. It is worth saying plainly rather than inventing an explanation: the mechanism is not fully worked out, and the drug is used on its observed effects."
+    ],
+    [
+     "It irreversibly inhibits COX-1 in the periphery",
+     "That is aspirin's mechanism. Acetaminophen's mechanism is not fully established."
+    ],
+    [
+     "It blocks prostaglandin receptors directly",
+     "Receptor blockade is not the described mechanism; acetaminophen's mechanism is stated to be incompletely understood."
+    ],
+    [
+     "It acts through opioid receptors",
+     "It is not an opioid and does not act there. Its mechanism is described as not fully elucidated."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 24"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "diagnosis",
+   "q": "What is Reye's syndrome also called, and what does the name describe?",
+   "opts": [
+    [
+     "Salicylate hypersensitivity syndrome",
+     "It is not a hypersensitivity reaction. Reye's syndrome is also called fatty liver encephalopathy, naming the two organs involved."
+    ],
+    [
+     "Acute hepatic porphyria",
+     "A different condition entirely. Reye's syndrome is also known as fatty liver encephalopathy."
+    ],
+    [
+     "Fatty liver encephalopathy",
+     "Correct. The alternative name is a compact description of the illness: liver and brain together. Naming the two organs involved."
+    ],
+    [
+     "Viral haemorrhagic encephalitis",
+     "Neither the name nor the mechanism. Reye's syndrome is called fatty liver encephalopathy, and involves mitochondrial dysfunction."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 18"
+  },
+  {
+   "topic": "Aspirin education",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "Why is a patient on aspirin told not to take it with an anticoagulant?",
+   "opts": [
+    [
+     "The anticoagulant blocks aspirin's absorption",
+     "Absorption is not the problem. Aspirin inhibits platelet function, which adds a second bleeding mechanism to the anticoagulant."
+    ],
+    [
+     "Aspirin makes the anticoagulant ineffective",
+     "The concern is additive bleeding risk rather than loss of effect: two different parts of haemostasis are disabled at once."
+    ],
+    [
+     "Aspirin inhibits platelet function",
+     "Correct. Two different parts of haemostasis are disabled at once, which is more than the sum of either alone. Adding a second bleeding mechanism."
+    ],
+    [
+     "The combination causes Reye's syndrome",
+     "Reye's relates to children with viral illness rather than to anticoagulants."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 20"
+  },
+  {
+   "topic": "Aspirin education",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "A patient takes aspirin for fever. When are they told to come back straight away?",
+   "opts": [
+    [
+     "If they feel drowsy after the first dose",
+     "Drowsiness is not the flag given, and it is not an aspirin effect. The trigger is a fever that fails to come down."
+    ],
+    [
+     "If the fever does not come down",
+     "Correct. The instruction is about the fever failing to respond, which is a different signal from the fever simply continuing. That is, if it fails to respond to the medicine rather than merely persisting."
+    ],
+    [
+     "Only once a full week has passed",
+     "The instruction is more urgent than that: a fever that does not respond to the medicine warrants immediate follow-up."
+    ],
+    [
+     "If the fever returns at any point",
+     "A returning fever is not the stated trigger for immediate follow-up."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 20"
+  }
+ ],
+ "inflam2": [
+  {
+   "topic": "Ibuprofen",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which organ systems carry ibuprofen's main adverse effects?",
+   "opts": [
+    [
+     "The liver and the bone marrow",
+     "Not the systems described for ibuprofen, whose main harms fall on the gastrointestinal tract and the kidney."
+    ],
+    [
+     "The lungs and the thyroid",
+     "Not the systems described. Ibuprofen's adverse effects centre on the gut and the kidney, with fluid retention."
+    ],
+    [
+     "The skin and the joints",
+     "Not the systems described; the gastrointestinal tract and the kidney carry ibuprofen's main adverse effects."
+    ],
+    [
+     "The gastrointestinal tract and the kidney",
+     "Correct. Ulceration and bleeding at one end, falling clearance and oedema at the other -- and both come from the same prostaglandin blockade. Fluid retention and oedema come with the renal effects."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 21"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "diagnosis",
+   "q": "Which finding marks the most advanced stage of Reye's syndrome?",
+   "opts": [
+    [
+     "Cerebral oedema with coma",
+     "That is an intermediate stage. The most advanced stage brings seizures, multiple organ failure and death."
+    ],
+    [
+     "Fatty liver with encephalitis",
+     "That appears earlier in the sequence. The final stage is seizures, multiple organ failure and death."
+    ],
+    [
+     "Seizures and multiple organ failure",
+     "Correct. The staging runs from a nonspecific febrile illness to multi-organ failure, which is why the early stage matters so much."
+    ],
+    [
+     "Vomiting with lethargy",
+     "That is the first stage. The most advanced brings seizures, multiple organ failure and death."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 19"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does aspirin act on cyclooxygenase, and what follows from it?",
+   "opts": [
+    [
+     "Irreversibly and non-competitively, so the platelet never recovers",
+     "Correct. A platelet has no nucleus and cannot make fresh enzyme, so one exposure disables it for its lifetime. Everything distinctive about aspirin as an antiplatelet follows from that."
+    ],
+    [
+     "Reversibly, so the effect ends as the drug is cleared",
+     "That is ibuprofen. Aspirin binds irreversibly, so a platelet exposed to it never recovers the enzyme."
+    ],
+    [
+     "Selectively at cyclooxygenase-2 only",
+     "Aspirin is non-selective between the two isoforms, and hitting COX-1 as well is where its gastric and bleeding effects come from."
+    ],
+    [
+     "Indirectly, by reducing prostaglandin release from storage",
+     "Prostaglandins are made on demand rather than stored, and aspirin acts on the enzyme."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 15"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "A patient on lithium is started on ibuprofen. What is the concern?",
+   "opts": [
+    [
+     "Ibuprofen reduces lithium excretion, so levels rise",
+     "Correct. Lithium has little margin between useful and toxic, so anything that slows its removal matters quickly."
+    ],
+    [
+     "Ibuprofen blocks lithium absorption, so levels fall",
+     "The interaction raises levels rather than lowering them: ibuprofen reduces lithium excretion, and lithium has little safety margin."
+    ],
+    [
+     "The two combine to cause serotonin syndrome",
+     "That concern belongs to dextromethorphan with a monoamine oxidase inhibitor."
+    ],
+    [
+     "Lithium increases the risk of gastric ulceration from ibuprofen",
+     "The described interaction runs the other way, through lithium handling."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 22"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "mechanism",
+   "q": "What underlying cellular abnormality is described in Reye's syndrome?",
+   "opts": [
+    [
+     "Mitochondrial dysfunction in brain",
+     "Correct. One failing organelle across several tissues explains why an illness of the liver and brain also involves muscle. Liver and muscle."
+    ],
+    [
+     "Autoimmune destruction of hepatocytes",
+     "Not the described mechanism. Reye's syndrome involves mitochondrial dysfunction in brain, liver and muscle."
+    ],
+    [
+     "Direct viral invasion of the brain",
+     "The syndrome follows the viral illness rather than being the virus itself."
+    ],
+    [
+     "Accumulation of unconjugated bilirubin",
+     "Not the described mechanism; the abnormality described is mitochondrial dysfunction across brain, liver and muscle."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 18"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Which situations are listed as contraindications to aspirin?",
+   "opts": [
+    [
+     "Asthma, renal impairment and peptic ulcer alone",
+     "Those belong to the ibuprofen list. Aspirin's are bleeding disorders, pregnancy, and children with fever from viral illness."
+    ],
+    [
+     "Bleeding disorders, pregnancy",
+     "Correct. Three unrelated mechanisms -- bleeding risk, pregnancy, and Reye's -- which is why the list has to be remembered rather than derived. Children with fever from viral illness."
+    ],
+    [
+     "Any patient over sixty-five",
+     "Age alone is not given as a contraindication. The age-related restriction concerns children with viral illness, because of Reye's syndrome."
+    ],
+    [
+     "Concurrent acetaminophen use",
+     "Acetaminophen is not listed as a contraindication to aspirin."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 17"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Is aspirin selective for one cyclooxygenase isoform?",
+   "opts": [
+    [
+     "Yes, it is COX-2 selective",
+     "COX-2 selectivity belongs to a different group of agents. Aspirin inhibits both isoforms without preference."
+    ],
+    [
+     "Yes, it is COX-1 selective",
+     "It inhibits both isoforms rather than only one, which is why its effects span platelets, stomach and inflammation."
+    ],
+    [
+     "It does not act on cyclooxygenase at all",
+     "Cyclooxygenase is exactly where it acts, and it does so irreversibly at both isoforms."
+    ],
+    [
+     "No, it is non-selective for COX-1 and COX-2",
+     "Correct. Hitting COX-1 as well is where the gastric and bleeding problems come from."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 15"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "What three actions does ibuprofen have?",
+   "opts": [
+    [
+     "Analgesic and antipyretic only",
+     "It is anti-inflammatory as well, which is what makes it a non-steroidal anti-inflammatory drug."
+    ],
+    [
+     "Anti-inflammatory, analgesic and antipyretic",
+     "Correct. All three at ordinary use, unlike aspirin where they separate out by exposure."
+    ],
+    [
+     "Anti-inflammatory and antiplatelet only",
+     "Pain and fever are both within its range, and its antiplatelet effect is not a listed action."
+    ],
+    [
+     "Antipyretic only",
+     "It does considerably more than reduce fever: ibuprofen is anti-inflammatory and analgesic as well as antipyretic."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 21"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "adverse effect",
+   "q": "What happens when ibuprofen is combined with an anticoagulant?",
+   "opts": [
+    [
+     "The anticoagulant is inactivated",
+     "The problem is additive bleeding risk rather than loss of anticoagulation."
+    ],
+    [
+     "Absorption of both drugs is reduced",
+     "Absorption is not the issue. The combination prolongs prothrombin time and risks serious gastrointestinal bleeding."
+    ],
+    [
+     "Clotting time shortens",
+     "The effect runs toward bleeding rather than clotting: prothrombin time is prolonged and gastrointestinal bleeding may follow."
+    ],
+    [
+     "Prothrombin time is prolonged",
+     "Correct. Ibuprofen damages the mucosa and the anticoagulant stops the bleeding from being controlled, which is why the combination is worse than either alone. With a risk of serious gastrointestinal bleeding."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 22"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "diagnosis",
+   "q": "A child in the earliest stage of Reye's syndrome would show which of these?",
+   "opts": [
+    [
+     "A rash on the hands and feet",
+     "Correct. Stage one looks nonspecific, which is exactly the problem -- it is the stage at which the illness is most treatable and least recognisable. Vomiting, high fever and lethargy."
+    ],
+    [
+     "Coma with fixed, dilated pupils",
+     "That is a late stage. The first stage is a rash on hands and feet with vomiting, high fever and lethargy."
+    ],
+    [
+     "Seizures and multiple organ failure",
+     "That is the final stage. The first is a nonspecific febrile illness with vomiting and lethargy."
+    ],
+    [
+     "Encephalitis with hyperventilation",
+     "That is the second stage rather than the first, which is a rash, vomiting, high fever and lethargy."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 19"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "next step",
+   "q": "A patient on a diuretic and an ACE inhibitor starts taking ibuprofen regularly. What should be watched?",
+   "opts": [
+    [
+     "Liver enzymes and bilirubin",
+     "The liver is not the organ at risk in this combination. The kidney is, and the ACE inhibitor also works less well."
+    ],
+    [
+     "Thyroid function",
+     "Not affected by this combination. Renal function and the blood pressure response are what need watching."
+    ],
+    [
+     "Renal function",
+     "Correct. Two interactions at once: the kidney is at risk with the diuretic, and the ACE inhibitor works less well. The blood pressure response to the ACE inhibitor."
+    ],
+    [
+     "Serum potassium only",
+     "Potassium is not the described concern here; the risks are renal impairment and a reduced antihypertensive effect."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 22"
+  },
+  {
+   "topic": "Acetaminophen",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "How is acetaminophen tolerated when taken as intended?",
+   "opts": [
+    [
+     "Poorly, with frequent gastric irritation",
+     "Gastric irritation belongs to the non-steroidal anti-inflammatory drugs."
+    ],
+    [
+     "With common renal impairment",
+     "Renal effects belong to the non-steroidal anti-inflammatory drugs."
+    ],
+    [
+     "With frequent sedation",
+     "Sedation is not an acetaminophen effect. Within the intended range it is described as very well tolerated."
+    ],
+    [
+     "Very well, with no notable side effects",
+     "Correct. Its safety within the intended range is exactly why exceeding that range is so easy to do. That holds at therapeutic exposure, which is what makes exceeding it so easy."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 24"
+  },
+  {
+   "topic": "Reye's syndrome",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "diagnosis",
+   "q": "Who is affected by Reye's syndrome, and how dangerous is it?",
+   "opts": [
+    [
+     "Adults over sixty-five, with mortality around a tenth",
+     "It is a disease of children rather than older adults, and the mortality described is far higher than a tenth."
+    ],
+    [
+     "Children, with mortality around half",
+     "Correct. The severity is what justifies a blanket restriction on a cheap and otherwise useful drug."
+    ],
+    [
+     "Children, but it is almost never fatal",
+     "Mortality is substantial, which is the reason for the restriction."
+    ],
+    [
+     "Any age, with mortality under one per cent",
+     "Neither the age group nor the mortality matches: it affects children, and around half of those affected die."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 18"
+  },
+  {
+   "topic": "Acetaminophen",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "How is acetaminophen classified, and what does that exclude?",
+   "opts": [
+    [
+     "Analgesic, antipyretic and anti-inflammatory",
+     "The anti-inflammatory action is the one it does not have, and that absence is its main practical difference from the NSAIDs."
+    ],
+    [
+     "Analgesic and antipyretic",
+     "Correct. That missing third action is the practical difference from the non-steroidal anti-inflammatory drugs, and it decides when it is not the right choice. But not anti-inflammatory."
+    ],
+    [
+     "Anti-inflammatory and antiplatelet",
+     "It has neither of these. Acetaminophen is an analgesic and an antipyretic only."
+    ],
+    [
+     "Antipyretic only",
+     "It relieves pain as well as fever; what it does not do is reduce inflammation."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 24"
+  },
+  {
+   "topic": "Ibuprofen",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Ibuprofen is avoided below a certain age. Which group?",
+   "opts": [
+    [
+     "All children under twelve",
+     "The restriction applies to infants rather than to all children."
+    ],
+    [
+     "All children under fifteen, because of Reye's syndrome",
+     "That threshold belongs to aspirin and Reye's syndrome. Ibuprofen's age restriction concerns young infants instead."
+    ],
+    [
+     "Young infants",
+     "Correct. There is a lower age limit below which it is not used, which distinguishes it from acetaminophen."
+    ],
+    [
+     "Adolescents only",
+     "Adolescents are not the restricted group; it is young infants in whom ibuprofen is avoided."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 22"
+  },
+  {
+   "topic": "Aspirin education",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "A patient is started on aspirin for fever. What should they be told about other medicines?",
+   "opts": [
+    [
+     "Do not take other anti-inflammatory drugs alongside it",
+     "Correct. They share a mechanism, so combining them adds the harms without adding the benefit. That means the non-steroidal anti-inflammatory drugs specifically."
+    ],
+    [
+     "Take an antacid alongside every dose",
+     "Not among the instructions given. The medicine warning is to avoid other non-steroidal anti-inflammatory drugs."
+    ],
+    [
+     "Avoid acetaminophen entirely while taking it",
+     "Acetaminophen is not the drug the patient is warned off; the warning concerns other non-steroidal anti-inflammatory drugs."
+    ],
+    [
+     "Take it only on a completely empty stomach",
+     "Not among the instructions given, and it would worsen the gastric effects rather than help them."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 20"
+  },
+  {
+   "topic": "Salicylates",
+   "io": "Describe absorption, distribution, metabolism, and excretion of ENT drugs",
+   "slot": "mechanism",
+   "q": "How is aspirin handled by the body?",
+   "opts": [
+    [
+     "Absorbed orally and excreted unchanged in bile",
+     "Biliary excretion of unchanged drug is not the route described."
+    ],
+    [
+     "Absorbed through the skin and metabolised in plasma",
+     "Oral absorption is what is described, followed by hepatic conjugation and renal excretion."
+    ],
+    [
+     "Absorbed orally",
+     "Correct. Liver then kidney, which is why disease in either changes what a given exposure does. Conjugated in the liver, excreted by the kidney."
+    ],
+    [
+     "Absorbed orally and eliminated entirely by the lungs",
+     "The lungs are not an elimination route for aspirin. It is conjugated in the liver and excreted by the kidney."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 15"
+  }
+ ],
+ "hist1": [
+  {
+   "topic": "H1 antagonists",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "Which agent is named as an over-the-counter sleep aid?",
+   "opts": [
+    [
+     "Azelastine",
+     "Azelastine is a nasal spray for allergic and vasomotor rhinitis rather than a sleep aid; doxylamine is the sleep aid named."
+    ],
+    [
+     "Promethazine",
+     "Promethazine is named for its antimuscarinic and antiemetic strength."
+    ],
+    [
+     "Doxylamine",
+     "Correct. A sedating antihistamine sold for the side effect rather than the indication."
+    ],
+    [
+     "Fluticasone",
+     "Fluticasone is a nasal corticosteroid rather than an antihistamine. Doxylamine is the agent sold as a sleep aid."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 32"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "What is a patient on prednisone told about infection risk?",
+   "opts": [
+    [
+     "They should take prophylactic antibiotics",
+     "Prophylaxis is not advised. The advice is to avoid chickenpox, measles and live vaccines while immunocompromised."
+    ],
+    [
+     "Infection risk only matters above a certain amount",
+     "The advice is not framed as exposure-dependent. The patient is treated as immunocompromised and told to avoid live vaccines."
+    ],
+    [
+     "They are immunocompromised and should avoid chickenpox",
+     "Correct. Live vaccines are the part most easily missed, because the patient does not think of a vaccine as an exposure. Measles and live vaccines."
+    ],
+    [
+     "There is no increased risk with short courses",
+     "The immune suppression is stated without a short-course exemption."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 48"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Beyond histamine receptors, what else do first generation agents act on?",
+   "opts": [
+    [
+     "Adrenergic receptors only",
+     "Adrenergic action is not among those described. First generation agents act on muscarinic and serotonergic systems, with antiemetic action."
+    ],
+    [
+     "Muscarinic and serotonergic systems",
+     "Correct. Acting on several receptor families is what gives them uses and side effects that have nothing to do with allergy. With antiemetic action."
+    ],
+    [
+     "Dopamine receptors in the basal ganglia",
+     "Not among the systems described, which are the muscarinic and serotonergic systems alongside an antiemetic action."
+    ],
+    [
+     "Nothing else -- they are entirely selective",
+     "Being non-selective is precisely the point of the first generation."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 33"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What is the major central nervous system side effect of first generation H1 antagonists?",
+   "opts": [
+    [
+     "Tremor",
+     "Not the described central effect. Sedation is the major central nervous system side effect of first generation agents."
+    ],
+    [
+     "Headache",
+     "Not the major central effect described, which is sedation, additive with alcohol and other depressants."
+    ],
+    [
+     "Seizures at ordinary use",
+     "Excitation appears at higher exposure rather than at ordinary use."
+    ],
+    [
+     "Sedation",
+     "Correct. It is the dominant side effect, and it is also the basis of an entire over-the-counter market in sleep aids."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 32"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which eye findings are associated with systemic corticosteroids?",
+   "opts": [
+    [
+     "Raised intraocular pressure, glaucoma and cataract",
+     "Correct. Worth holding onto because a course given for the nose can end up costing sight if it runs long enough."
+    ],
+    [
+     "Retinal detachment and vitreous haemorrhage",
+     "Not among the described effects. The ocular effects are raised intraocular pressure, glaucoma, cataract and exophthalmos."
+    ],
+    [
+     "Optic neuritis",
+     "Not among the described effects; the ocular harms listed are raised pressure, glaucoma, cataract and exophthalmos."
+    ],
+    [
+     "Corneal ulceration",
+     "Not among the described effects. The eye findings are raised intraocular pressure, glaucoma and cataract."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 47"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "next step",
+   "q": "A patient on a diuretic is started on dexamethasone. What should be monitored?",
+   "opts": [
+    [
+     "Liver enzymes and bilirubin",
+     "Not the concern in this combination. Both a diuretic and dexamethasone lower potassium, so potassium is what to monitor."
+    ],
+    [
+     "Thyroid function tests",
+     "Not the concern in this combination; potassium is, since both drugs push it the same way."
+    ],
+    [
+     "Potassium, since both drugs lower it",
+     "Correct. Two drugs pushing the same electrolyte the same way, which is how a patient arrives at a dangerous level without either drug being at fault alone."
+    ],
+    [
+     "Prothrombin time and clotting",
+     "Not relevant to this pairing. Potassium is the shared target of a diuretic and a corticosteroid."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 45"
+  },
+  {
+   "topic": "Azelastine",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What is azelastine nasal spray indicated for?",
+   "opts": [
+    [
+     "Bacterial sinusitis",
+     "Not an indication for an antihistamine spray. Azelastine is indicated for allergic and vasomotor rhinitis."
+    ],
+    [
+     "Allergic and vasomotor rhinitis",
+     "Correct. It covers vasomotor rhinitis as well as allergic, which matters because vasomotor rhinitis has no allergic trigger to avoid."
+    ],
+    [
+     "Nasal congestion from the common cold",
+     "That is the decongestant indication. Azelastine is for allergic and vasomotor rhinitis."
+    ],
+    [
+     "Epistaxis",
+     "Epistaxis is a side effect of the spray rather than an indication."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 38"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Why do second generation antihistamines cause much less sedation?",
+   "opts": [
+    [
+     "They do not enter the central nervous system",
+     "Correct. The whole generational difference comes down to where the drug goes rather than what it blocks. Not to the same extent, at any rate, which is the whole generational difference."
+    ],
+    [
+     "They block H2 rather than H1 receptors",
+     "They remain H1 antagonists. What changed between the generations is entry into the central nervous system."
+    ],
+    [
+     "They are given at much lower exposure",
+     "The difference is distribution rather than amount: second generation agents do not enter the central nervous system to the same extent."
+    ],
+    [
+     "They are broken down before reaching the brain",
+     "It is entry into the central nervous system that differs rather than metabolism before arrival."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 32"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "A child given a first generation antihistamine becomes restless and agitated rather than sleepy. How is that explained?",
+   "opts": [
+    [
+     "The child has developed tolerance to the sedating effect",
+     "Tolerance is not the described explanation. Excitation occurs at higher exposure and is seen particularly in children."
+    ],
+    [
+     "The drug was a second generation agent",
+     "Second generation agents do not enter the central nervous system enough to produce either effect."
+    ],
+    [
+     "It indicates an allergic reaction to the antihistamine",
+     "Excitation is a recognised central effect rather than an allergic one."
+    ],
+    [
+     "Excitation occurs at higher exposure, and particularly in children",
+     "Correct. The paradox is recognised rather than unusual, and it means an agitated child may have had more of the drug rather than less."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 32"
+  },
+  {
+   "topic": "Histamine receptors",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Which effect belongs to H2 rather than H1 receptors?",
+   "opts": [
+    [
+     "Increased gastric acid secretion",
+     "Correct. It is the reason H2 blockers are stomach drugs while H1 blockers are allergy drugs."
+    ],
+    [
+     "Stimulation of sensory nerve endings",
+     "That is an H1 effect. The H2 effects include gastric acid secretion, slow vasodilation and increased cardiac contractility."
+    ],
+    [
+     "Increased post-capillary permeability",
+     "That is an H1 effect, and it is what produces the wheal. H2 raises gastric acid secretion instead."
+    ],
+    [
+     "Bronchoconstriction",
+     "That is an H1 effect. H2 lowers smooth muscle tone rather than raising it, and raises gastric acid secretion."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 30"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How do antihistamines reduce nasal and bronchial secretions during an allergic reaction?",
+   "opts": [
+    [
+     "By blocking H2 receptors on glands",
+     "H2 blockade is not the mechanism. The drying of nasal and bronchial secretions is an antimuscarinic effect."
+    ],
+    [
+     "By constricting the vessels supplying the mucosa",
+     "Vasoconstriction is the decongestant mechanism. Antihistamines dry secretions through antimuscarinic action instead."
+    ],
+    [
+     "By thinning the mucus already produced",
+     "Thinning mucus is what an expectorant does. Antihistamines reduce the secretion itself, through antimuscarinic action."
+    ],
+    [
+     "Through their antimuscarinic action",
+     "Correct. The drying is a muscarinic effect rather than a histamine one, which is why the second generation agents dry you out less."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 34"
+  },
+  {
+   "topic": "Nasal spray technique",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "Why is a patient told to use the right hand for the left nostril and the left hand for the right?",
+   "opts": [
+    [
+     "It distributes the medicine more evenly",
+     "Even distribution is not the stated reason. Crossing hands angles the spray away from the septum."
+    ],
+    [
+     "It angles the spray away from the septum",
+     "Correct. Crossing hands sets the angle automatically, and the septum is what nosebleed and perforation happen to."
+    ],
+    [
+     "It prevents contamination of the bottle tip",
+     "Cleaning the tip is a separate instruction. Crossing hands is about directing the spray away from the septum."
+    ],
+    [
+     "It reduces the bitter taste",
+     "Taste is addressed by not tilting the head back. Crossing hands protects the septum instead."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 39"
+  },
+  {
+   "topic": "Histamine",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Histamine release produces the triple response. What are its three components?",
+   "opts": [
+    [
+     "Redness, itching and sneezing",
+     "Itching and sneezing are symptoms rather than the components of the triple response."
+    ],
+    [
+     "Redness, a wheal, and a surrounding flare",
+     "Correct. Three visible signs from three different mechanisms -- direct vasodilation, leaking capillaries, and a nerve reflex -- which is why they appear together but look different."
+    ],
+    [
+     "Swelling, pallor and numbness",
+     "Pallor is the opposite of what histamine produces. The triple response is redness, a wheal and a surrounding flare."
+    ],
+    [
+     "Bronchospasm, hypotension and rash",
+     "That describes anaphylaxis rather than the local triple response."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 27"
+  },
+  {
+   "topic": "Azelastine",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What side effects are described for azelastine nasal spray?",
+   "opts": [
+    [
+     "A bitter taste and nosebleed",
+     "Correct. The bitter taste is the common reason patients stop it, and it comes from spray running back into the throat."
+    ],
+    [
+     "Sedation and dry mouth",
+     "These belong to systemic first generation agents. Azelastine's described effects are a bitter taste and nosebleed."
+    ],
+    [
+     "Rebound congestion",
+     "Rebound belongs to topical decongestants. Azelastine's described effects are a bitter taste and nosebleed."
+    ],
+    [
+     "Raised intraocular pressure",
+     "That belongs to the corticosteroids. Azelastine is associated with a bitter taste and nosebleed."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 38"
+  },
+  {
+   "topic": "Histamine receptors",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "H1 and H2 receptors both cause vasodilation. How do the two differ?",
+   "opts": [
+    [
+     "H1 is rapid in onset and short-lived",
+     "Correct. Same end result by two different routes and on two different timescales, which is why blocking H1 alone does not abolish the flush. H2 is slow in onset and long-lasting."
+    ],
+    [
+     "H1 is slow and sustained, H2 is rapid and brief",
+     "The timings are the other way round: H1 vasodilation is rapid and short-lived, H2 is slow in onset and long-lasting."
+    ],
+    [
+     "Both are rapid and brief",
+     "They differ in timing, which is the point of comparing them."
+    ],
+    [
+     "Only H1 causes vasodilation",
+     "H2 causes vasodilation as well, by a slower and longer-lasting route, which is why blocking H1 alone does not abolish flushing."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 29"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "next step",
+   "q": "A patient with diabetes is started on a course of prednisone. What should be anticipated?",
+   "opts": [
+    [
+     "Glucose will fall and treatment may need reducing",
+     "Corticosteroids raise glucose rather than lowering it, and they also reduce the effect of antidiabetic medicines."
+    ],
+    [
+     "Glucose control will worsen",
+     "Correct. Two effects pointing the same way: the steroid raises glucose and blunts the drugs used to lower it. Antidiabetic medicines will work less well."
+    ],
+    [
+     "There is no interaction with antidiabetic medicines",
+     "A reduced effect on antidiabetic treatment is specifically described."
+    ],
+    [
+     "Insulin requirements will fall",
+     "They would be expected to rise: the steroid raises glucose and blunts the drugs used to lower it."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 45"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effects are specifically associated with topical use of antihistamines?",
+   "opts": [
+    [
+     "Sedation, drowsiness and confusion",
+     "These follow systemic use and entry into the central nervous system. Topical use is associated with dermatitis and photosensitivity."
+    ],
+    [
+     "Urinary retention and dry mouth",
+     "An antimuscarinic effect of systemic use. The effects specific to topical application are dermatitis and photosensitivity."
+    ],
+    [
+     "Dermatitis and photosensitivity of the skin",
+     "Correct. Applying an antihistamine to skin can produce the kind of reaction it was meant to treat."
+    ],
+    [
+     "Epistaxis",
+     "Nosebleed relates to nasal sprays rather than to topical skin use."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 36"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "Why is a patient who has taken a corticosteroid for more than about a week told not to stop abruptly?",
+   "opts": [
+    [
+     "The drug accumulates and must be cleared slowly",
+     "Accumulation is not the reason given. Stopping abruptly after more than about a week produces rebound symptoms."
+    ],
+    [
+     "Abrupt withdrawal causes fluid retention",
+     "Fluid retention is an effect of taking the drug, not of stopping it."
+    ],
+    [
+     "The drug loses effect if restarted after a gap",
+     "Loss of future effect is not the concern. Abrupt withdrawal after a week or more produces rebound symptoms."
+    ],
+    [
+     "Stopping suddenly produces rebound symptoms",
+     "Correct. It is the duration that creates the problem, which is why a short course and a long one are stopped differently."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 46"
+  }
+ ],
+ "hist2": [
+  {
+   "topic": "H1 antagonists",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "A patient on a first generation antihistamine reports dry mouth, blurred vision and difficulty passing urine. What explains this?",
+   "opts": [
+    [
+     "Histamine receptor blockade itself",
+     "These effects come from the muscarinic blockade rather than the H1 blockade."
+    ],
+    [
+     "The antimuscarinic action of the drug",
+     "Correct. Three complaints from three different organs, all explained by one receptor family being blocked."
+    ],
+    [
+     "An allergic reaction to the drug",
+     "This is a predictable pharmacological effect rather than an allergy."
+    ],
+    [
+     "Interaction with alcohol",
+     "Alcohol adds sedation rather than these effects. Dry mouth, blurred vision and urinary retention are antimuscarinic."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 36"
+  },
+  {
+   "topic": "Histamine receptors",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What effect does histamine have on the heart through H2 receptors?",
+   "opts": [
+    [
+     "It increases contractility",
+     "Correct. A cardiac action is easy to miss in a receptor filed under the stomach."
+    ],
+    [
+     "It slows conduction through the atrioventricular node",
+     "Not the described cardiac effect. Histamine acting at H2 increases the contractility of the heart."
+    ],
+    [
+     "It reduces contractility",
+     "The effect is to increase contractility, which is an easy cardiac action to overlook in a receptor filed under the stomach."
+    ],
+    [
+     "It has no cardiac effect",
+     "An effect on contractility is described: H2 activation increases it."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 30"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "education",
+   "q": "What should a patient taking a first generation antihistamine be warned about?",
+   "opts": [
+    [
+     "It must not be taken together with food",
+     "Food is not a stated concern. The warning is that sedation is additive with alcohol and other central nervous system depressants."
+    ],
+    [
+     "Sedation is additive with alcohol and other depressants",
+     "Correct. The risk is in the combination rather than the drug alone, which is what makes it easy to stumble into. Central nervous system depressants generally."
+    ],
+    [
+     "It raises the blood pressure",
+     "Hypertension belongs to the decongestants. The antihistamine warning concerns additive sedation with alcohol and depressants."
+    ],
+    [
+     "It causes rebound symptoms if stopped",
+     "Rebound belongs to topical decongestants. The antihistamine warning is about additive sedation."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 32"
+  },
+  {
+   "topic": "Nasal corticosteroids",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What are nasal corticosteroids indicated for?",
+   "opts": [
+    [
+     "Acute bacterial sinusitis",
+     "Not their indication. Nasal corticosteroids are indicated for allergic and vasomotor rhinitis."
+    ],
+    [
+     "Allergic and vasomotor rhinitis",
+     "Correct. The same two conditions the nasal antihistamine covers, which is why the two are often used together."
+    ],
+    [
+     "Otitis externa",
+     "Not a nasal indication. Nasal corticosteroids treat allergic and vasomotor rhinitis."
+    ],
+    [
+     "Chronic cough",
+     "Not their stated indication, which is allergic and vasomotor rhinitis."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 43"
+  },
+  {
+   "topic": "Nasal spray technique",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "A patient using a nasal spray develops a nosebleed. What are they told to do?",
+   "opts": [
+    [
+     "Continue and use the other nostril only",
+     "Continuing is not the instruction given. The advice is to stop the spray and follow up immediately."
+    ],
+    [
+     "Reduce to one spray daily and continue",
+     "Reducing rather than stopping is not what is advised; the instruction is to stop and be seen, because perforation lies beyond."
+    ],
+    [
+     "Stop the spray and follow up immediately",
+     "Correct. It is a stop-and-be-seen instruction rather than a wait-and-see one, because septal perforation is what lies beyond it."
+    ],
+    [
+     "Apply pressure and carry on as normal",
+     "Carrying on is not the instruction. A nosebleed on a nasal spray means stopping it and following up immediately."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 39"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Which infection is specifically a contraindication to systemic corticosteroids?",
+   "opts": [
+    [
+     "Bacterial sinusitis",
+     "Not listed as a contraindication. Systemic fungal infection is the infection specifically named."
+    ],
+    [
+     "Viral upper respiratory infection",
+     "Not listed as a contraindication; systemic fungal infection is the one specifically named."
+    ],
+    [
+     "Systemic fungal infection",
+     "Correct. A drug that suppresses immunity given to someone with a disseminated fungal infection makes the infection worse."
+    ],
+    [
+     "Otitis media",
+     "Not listed as a contraindication. The named contraindication among infections is systemic fungal infection."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 46"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What do H1 antagonists do peripherally?",
+   "opts": [
+    [
+     "Reduce gastric acid secretion",
+     "That would be an H2 blocker. H1 antagonists reduce secretions, oedema, hives and itching, and block smooth muscle contraction."
+    ],
+    [
+     "Increase mucus secretion to clear allergens",
+     "They reduce secretion rather than increasing it, mirroring histamine's own effect at the H1 receptor."
+    ],
+    [
+     "Reduce secretions, oedema, hives and itching",
+     "Correct. Each of these is the mirror image of an H1 action, which is why the antagonist's effects can be read straight off the receptor. Block smooth muscle contraction."
+    ],
+    [
+     "Cause bronchoconstriction",
+     "They block the bronchoconstriction histamine produces, since bronchoconstriction is itself an H1 effect."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 31"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Which agent is singled out as having the strongest antimuscarinic action, especially for motion sickness?",
+   "opts": [
+    [
+     "Doxylamine",
+     "Doxylamine is named as a sleep aid. Promethazine is the agent singled out for antimuscarinic strength in motion sickness."
+    ],
+    [
+     "Azelastine",
+     "Azelastine is a nasal antihistamine for rhinitis. Promethazine is the one named for its antimuscarinic strength."
+    ],
+    [
+     "Cetirizine",
+     "A second generation agent, which by design lacks these extra actions."
+    ],
+    [
+     "Promethazine",
+     "Correct. The antimuscarinic strength is what makes it the motion sickness choice, not its antihistamine potency."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 34"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "A patient on digoxin is started on dexamethasone. Why does that raise the risk of arrhythmia?",
+   "opts": [
+    [
+     "Dexamethasone lowers potassium",
+     "Correct. The interaction runs through the electrolyte rather than between the two drugs directly, which is why checking potassium is what protects the patient. Low potassium predisposes to digoxin toxicity."
+    ],
+    [
+     "Dexamethasone raises digoxin levels directly",
+     "The mechanism described runs through potassium: dexamethasone lowers it, and low potassium predisposes to digoxin toxicity."
+    ],
+    [
+     "Digoxin increases the effect of dexamethasone",
+     "The interaction is described in the other direction, and it runs through potassium loss rather than between the drugs directly."
+    ],
+    [
+     "Both prolong the QT interval independently",
+     "Low potassium is the stated mechanism, and it is what predisposes the patient on digoxin to arrhythmia."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 45"
+  },
+  {
+   "topic": "Nasal spray technique",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "Why is a patient told not to tilt the head back when using a nasal spray?",
+   "opts": [
+    [
+     "It causes the spray to hit the septum",
+     "Septal contact is managed by the angle rather than by head tilt backwards."
+    ],
+    [
+     "It increases the risk of nosebleed",
+     "Nosebleed relates to septal contact, which the spray angle controls. Tilting back sends the medicine into the throat."
+    ],
+    [
+     "It draws the medicine into the throat",
+     "Correct. It wastes the dose and produces the bitter taste, which is the complaint that stops people using the spray at all."
+    ],
+    [
+     "It reduces absorption through the skin",
+     "Skin absorption is not relevant to a nasal spray. Tilting back draws the medicine into the throat and wastes it."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 39"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "Why does a macrolide antibiotic matter in a patient taking dexamethasone?",
+   "opts": [
+    [
+     "Macrolides reduce dexamethasone clearance",
+     "Correct. The steroid is not changed; it simply stays around longer, which is enough to turn a tolerable course into a problematic one. So its effect is amplified."
+    ],
+    [
+     "Macrolides inactivate dexamethasone",
+     "The interaction increases exposure rather than reducing it: macrolides decrease dexamethasone clearance, so it lingers."
+    ],
+    [
+     "Dexamethasone blocks macrolide absorption",
+     "The interaction is described in the other direction: the macrolide reduces clearance of the steroid."
+    ],
+    [
+     "The two combine to cause hyperkalaemia",
+     "Corticosteroids are associated with potassium loss rather than retention."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 45"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What is the role of an antihistamine in anaphylaxis?",
+   "opts": [
+    [
+     "Adjuvant only",
+     "Correct. The word matters: it supports treatment rather than being it, and the drug that actually treats anaphylaxis is adrenaline."
+    ],
+    [
+     "First-line treatment",
+     "It is explicitly an adjuvant rather than the primary treatment."
+    ],
+    [
+     "It has no role at all",
+     "An adjuvant role is described. It supports treatment of anaphylaxis without replacing adrenaline."
+    ],
+    [
+     "It replaces adrenaline in a mild case",
+     "It does not substitute for adrenaline at any severity; its role in anaphylaxis is explicitly adjuvant."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 35"
+  },
+  {
+   "topic": "Nasal corticosteroids",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What are the described side effects of nasal corticosteroids?",
+   "opts": [
+    [
+     "Nosebleed, perforation and an unpleasant taste",
+     "Correct. All three are local, which is the trade-off that makes a nasal steroid different from a systemic one."
+    ],
+    [
+     "Glucose intolerance and fluid retention",
+     "These are systemic corticosteroid effects rather than nasal ones."
+    ],
+    [
+     "Sedation and dry mouth",
+     "These belong to first generation antihistamines. Nasal steroids cause nosebleed, septal perforation and an unpleasant taste."
+    ],
+    [
+     "Rebound congestion on stopping",
+     "Rebound belongs to the topical decongestants. Nasal steroid effects are local: nosebleed, perforation and unpleasant taste."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 43"
+  },
+  {
+   "topic": "H1 antagonists",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Which of these is NOT among the listed indications for H1 antagonists?",
+   "opts": [
+    [
+     "Allergic rhinitis and urticaria",
+     "These are listed indications, alongside motion sickness, sleep remedies and an adjuvant role in anaphylaxis."
+    ],
+    [
+     "Motion sickness and vestibular disturbance",
+     "This is a listed indication, alongside allergic reactions, sleep remedies and an adjuvant role in anaphylaxis."
+    ],
+    [
+     "An adjuvant role in anaphylaxis",
+     "This is a listed indication, though an adjuvant one: adrenaline remains the treatment for anaphylaxis."
+    ],
+    [
+     "Bacterial sinusitis",
+     "Correct -- this is not one. The indications are allergic reactions, motion sickness and vestibular symptoms, sleep remedies, and an adjuvant role in anaphylaxis."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 35"
+  },
+  {
+   "topic": "Histamine receptors",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Through which second messenger pathway do H1 receptors raise intracellular calcium?",
+   "opts": [
+    [
+     "Adenylate cyclase, raising cyclic AMP",
+     "That is the H2 pathway. H1 receptors work through phospholipase C, producing IP3 and DAG to raise calcium."
+    ],
+    [
+     "Direct opening of a ligand-gated sodium channel",
+     "Histamine receptors here are described as acting through second messengers."
+    ],
+    [
+     "Inhibition of guanylate cyclase",
+     "Not the described pathway. H1 acts through phospholipase C; H2 acts through adenylate cyclase."
+    ],
+    [
+     "Phospholipase C, producing IP3 and DAG",
+     "Correct. It is the contrast with H2 that matters: H1 works through phospholipase C, H2 through adenylate cyclase and cyclic AMP."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 29"
+  },
+  {
+   "topic": "Histamine",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What produces the flare, the redness spreading out around the original insult?",
+   "opts": [
+    [
+     "Direct vasodilation by histamine at that site",
+     "Direct vasodilation accounts for the central redness, not the spreading flare."
+    ],
+    [
+     "Fluid leaking from post-capillary venules",
+     "That produces the wheal. The spreading flare comes from a reflex through axons causing vasodilation."
+    ],
+    [
+     "A reflex through axons causing vasodilation",
+     "Correct. It is a nerve reflex rather than direct spread of histamine, which is why the flare extends beyond where the histamine actually is."
+    ],
+    [
+     "Mast cells migrating outward from the site",
+     "Cell migration is not the described mechanism. The flare spreads through an axonal reflex rather than by cells moving."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 27"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which musculoskeletal harms are described with systemic corticosteroids?",
+   "opts": [
+    [
+     "Muscle cramps and myalgia only",
+     "The described harms are structural rather than symptomatic: tendon rupture and pathological fracture of long bones."
+    ],
+    [
+     "Joint effusions and stiffness",
+     "Not among the described effects. The musculoskeletal harms are tendon rupture and fracture of long bones."
+    ],
+    [
+     "Gout and joint crystal deposition",
+     "Not among the described effects; the musculoskeletal harms described are tendon rupture and pathological fracture."
+    ],
+    [
+     "Tendon rupture and long bone fracture",
+     "Correct. Structural damage rather than discomfort, and it can appear without warning."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 47"
+  },
+  {
+   "topic": "Nasal corticosteroids",
+   "io": "Identify ENT drug classes and commonly prescribed ENT drugs",
+   "slot": "drug choice",
+   "q": "Which warning accompanies the list of nasal corticosteroids?",
+   "opts": [
+    [
+     "They must not be used for longer than a few days",
+     "That restriction belongs to the topical decongestants. The warning on nasal steroids is that names overlap with asthma inhalers."
+    ],
+    [
+     "Many have inhaled versions for asthma",
+     "Correct. The example given is fluticasone: the nasal product and the asthma inhaler are different preparations of the same drug with different names. The names are easy to confuse."
+    ],
+    [
+     "They are all prescription only",
+     "Some are named as available over the counter. The warning attached is about confusing nasal and inhaled versions."
+    ],
+    [
+     "They cannot be used alongside an antihistamine",
+     "No such restriction is given; the two are often used together. The warning concerns confusing nasal with inhaled preparations."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 42"
+  },
+  {
+   "topic": "Histamine receptors",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What effect do H1 receptors have on smooth muscle and airways?",
+   "opts": [
+    [
+     "They lower smooth muscle tone and cause bronchodilation",
+     "That direction belongs to H2, which lowers smooth muscle tone."
+    ],
+    [
+     "They raise smooth muscle tone and cause bronchoconstriction",
+     "Correct. This is why an H1 antagonist relaxes airway and gut smooth muscle, and why histamine itself is a bronchoconstrictor."
+    ],
+    [
+     "They have no effect on smooth muscle",
+     "Smooth muscle is a principal H1 target: H1 raises smooth muscle tone and causes bronchoconstriction."
+    ],
+    [
+     "They act only on vascular smooth muscle",
+     "The effect extends to airway and gastrointestinal smooth muscle."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 29"
+  }
+ ],
+ "cough1": [
+  {
+   "topic": "N-acetylcysteine",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What adverse effects are described with inhaled N-acetylcysteine?",
+   "opts": [
+    [
+     "Sedation and confusion",
+     "These belong to the centrally acting antitussive. Inhaled N-acetylcysteine smells of sulfur and can cause bronchospasm."
+    ],
+    [
+     "Hypertension and tachycardia",
+     "These belong to the decongestants. N-acetylcysteine causes a rotten egg smell, nausea, vomiting and bronchospasm."
+    ],
+    [
+     "A rotten egg smell, nausea and vomiting",
+     "Correct. The smell comes from its sulfur content and is a real reason patients refuse it; the bronchospasm is the one that matters clinically. Bronchospasm."
+    ],
+    [
+     "Nosebleed and septal perforation",
+     "These belong to nasal sprays. Inhaled N-acetylcysteine causes a sulfurous smell, nausea, vomiting and bronchospasm."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 63"
+  },
+  {
+   "topic": "Cough complications",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which complications of persistent coughing are described as common?",
+   "opts": [
+    [
+     "Stroke, syncope and rib fracture",
+     "These are described as the less common complications. The common ones are insomnia, exhaustion, musculoskeletal pain and hoarseness."
+    ],
+    [
+     "Pneumothorax, haemoptysis and chest pain",
+     "Not among the complications listed. The common ones are insomnia, exhaustion, musculoskeletal pain and hoarseness."
+    ],
+    [
+     "Hearing loss, tinnitus and vertigo",
+     "Not among the complications listed; insomnia, exhaustion, musculoskeletal pain and hoarseness are the common ones."
+    ],
+    [
+     "Insomnia, exhaustion, pain and hoarseness",
+     "Correct. Unglamorous but genuinely disabling, and together they are the reason cough is treated at all. The pain is musculoskeletal, from the effort of coughing."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 56"
+  },
+  {
+   "topic": "Pseudoephedrine",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What adverse effects are described with pseudoephedrine?",
+   "opts": [
+    [
+     "Fast heart rate",
+     "Correct. All three follow from stimulating alpha receptors throughout the body rather than only in the nose. Raised blood pressure and headache."
+    ],
+    [
+     "Sedation and dry mouth",
+     "These belong to first generation antihistamines. Pseudoephedrine causes tachycardia, raised blood pressure and headache."
+    ],
+    [
+     "Diarrhoea and abdominal pain",
+     "These are described with oral nystatin. Pseudoephedrine's effects are cardiovascular, with headache."
+    ],
+    [
+     "Nosebleed and bitter taste",
+     "These belong to nasal sprays. Pseudoephedrine is taken orally and causes tachycardia, hypertension and headache."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 52"
+  },
+  {
+   "topic": "Dextromethorphan",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What adverse effects are described with dextromethorphan?",
+   "opts": [
+    [
+     "Gastric ulceration and bleeding",
+     "These belong to the non-steroidal anti-inflammatory drugs. Dextromethorphan causes confusion, excitement and agitation."
+    ],
+    [
+     "Confusion, excitement and agitation",
+     "Correct. All central, which follows from where it acts and separates it cleanly from benzonatate."
+    ],
+    [
+     "Nosebleed and septal perforation",
+     "These belong to nasal sprays. Dextromethorphan's effects are central: confusion, excitement and agitation."
+    ],
+    [
+     "Tachycardia and hypertension",
+     "These belong to the decongestants. Dextromethorphan acts centrally and causes confusion, excitement and agitation."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 58"
+  },
+  {
+   "topic": "Dornase alfa",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "In which patients does dornase alfa give the greatest benefit?",
+   "opts": [
+    [
+     "Those with severe disease only",
+     "Severe disease benefits less in terms of lung function; the greatest gain is in mild to moderate disease."
+    ],
+    [
+     "Those with no symptoms",
+     "Not the described use. Dornase alfa is used in mild to moderate disease, where the gain is greatest."
+    ],
+    [
+     "It benefits all stages equally",
+     "The degree of improvement differs by severity: severe disease still responds, but with less gain in lung function."
+    ],
+    [
+     "Those with mild to moderate disease",
+     "Correct. It still works in severe disease, but the gain in lung function is smaller, which is a point about expectation rather than eligibility."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 61"
+  },
+  {
+   "topic": "Hypertonic saline",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What does inhaled hypertonic saline improve?",
+   "opts": [
+    [
+     "Bronchial smooth muscle tone",
+     "Not the described action. Hypertonic saline improves airway surface hydration, mucus transport and mucociliary clearance."
+    ],
+    [
+     "Airway surface hydration",
+     "Correct. It works by changing the conditions the cilia operate in rather than by acting on the mucus chemically. Mucus transport and mucociliary clearance."
+    ],
+    [
+     "Neutrophil DNA breakdown",
+     "That is dornase alfa's mechanism. Hypertonic saline works by hydrating the airway surface."
+    ],
+    [
+     "Cough receptor sensitivity",
+     "Not the described action. Hypertonic saline improves hydration of the airway surface and mucociliary clearance."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 62"
+  },
+  {
+   "topic": "Cough reflex",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What is the mechanical sequence of a cough once the reflex fires?",
+   "opts": [
+    [
+     "Forced expiration with the glottis held open throughout",
+     "Without glottic closure no pressure builds. The sequence is deep inspiration, glottic closure, then forceful contraction."
+    ],
+    [
+     "Passive exhalation followed by a sharp inspiration",
+     "The sequence runs the other way: deep inspiration first, then glottic closure, then active contraction of chest and abdomen."
+    ],
+    [
+     "Deep inspiration",
+     "Correct. Closing the glottis against a contracting chest is what builds the pressure, and releasing it is what produces the velocity. Glottic closure, then contraction of chest wall, diaphragm and abdominal wall."
+    ],
+    [
+     "Diaphragmatic relaxation followed by chest wall recoil",
+     "Active contraction rather than relaxation generates the cough."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 55"
+  },
+  {
+   "topic": "Dextromethorphan",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does dextromethorphan suppress cough?",
+   "opts": [
+    [
+     "It anaesthetises airway stretch receptors",
+     "That is benzonatate's mechanism. Dextromethorphan suppresses the medullary cough centre through sigma receptors."
+    ],
+    [
+     "It constricts bronchial vessels",
+     "Not its mechanism. Dextromethorphan acts centrally, suppressing the cough centre in the medulla."
+    ],
+    [
+     "It breaks disulfide bonds in mucus",
+     "That is N-acetylcysteine's mechanism. Dextromethorphan suppresses the medullary cough centre."
+    ],
+    [
+     "It suppresses the medullary cough centre",
+     "Correct. It is related to codeine and acts centrally, which is the origin of both its confusion as a side effect and its misuse. It does so through sigma receptor activation, and it is related to codeine."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 58"
+  },
+  {
+   "topic": "Antitussive comparison",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "A patient with a dry cough is taking an antidepressant. Which antitussive is the safer choice, and why?",
+   "opts": [
+    [
+     "Dextromethorphan, because it acts centrally and works faster",
+     "Central action is exactly what makes it the riskier choice here."
+    ],
+    [
+     "Either, since neither interacts with antidepressants",
+     "Dextromethorphan carries a serotonergic interaction, so in this patient benzonatate is the safer of the two."
+    ],
+    [
+     "Neither -- an expectorant should be used instead",
+     "An expectorant treats a productive cough rather than a dry one; benzonatate is the appropriate choice here."
+    ],
+    [
+     "Benzonatate, because dextromethorphan risks serotonin syndrome",
+     "Correct. Both would suppress the cough; the interaction is what decides between them."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 58"
+  },
+  {
+   "topic": "Cough treatment goals",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What are the stated goals of treating a cough?",
+   "opts": [
+    [
+     "To eliminate the cough completely",
+     "Complete abolition is not the stated goal, and a productive cough is doing a job worth leaving alone."
+    ],
+    [
+     "To treat the underlying infection instead",
+     "The goals given are about the cough itself: fewer and less severe episodes, and prevention of complications."
+    ],
+    [
+     "Fewer, milder episodes and no complications",
+     "Correct. Note that abolishing the cough is not the goal, which matters because a productive cough is doing a job."
+    ],
+    [
+     "To prevent transmission to other people",
+     "Not among the stated goals, which are reducing the number and severity of episodes and preventing complications."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 56"
+  },
+  {
+   "topic": "Pseudoephedrine",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Which ear complaint is pseudoephedrine indicated for?",
+   "opts": [
+    [
+     "Acute otitis media in a young child",
+     "Antibiotics rather than decongestants are the treatment described."
+    ],
+    [
+     "Otitis externa following swimming",
+     "A canal problem treated with drops. The ear indication for a decongestant is eustachian tube dysfunction after a viral infection."
+    ],
+    [
+     "Eustachian tube dysfunction",
+     "Correct. A nasal decongestant given for an ear problem, which makes sense once the tube is understood as opening into the nose. Specifically, the eustachian tube dysfunction that follows a viral infection."
+    ],
+    [
+     "Sudden sensorineural hearing loss",
+     "Not an indication for a decongestant. The ear indication is eustachian tube dysfunction following a viral infection."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 52"
+  },
+  {
+   "topic": "Oxymetazoline",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "What is the central instruction for a patient given a topical nasal decongestant?",
+   "opts": [
+    [
+     "Use it every day through the allergy season",
+     "Continuous use is exactly what causes the problem; beyond a few days the spray produces rebound congestion."
+    ],
+    [
+     "Do not use it beyond a few days",
+     "Correct. It is the whole safety message for this drug, and exceeding it is what produces rebound congestion."
+    ],
+    [
+     "Use it only at night",
+     "Timing is not the restriction. The restriction is on duration: no more than a few days of use."
+    ],
+    [
+     "Always combine it with a nasal steroid",
+     "Combining nasal sprays is specifically discouraged, and it does nothing about the duration limit that matters here."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 51"
+  },
+  {
+   "topic": "Cough reflex",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "Where is the cough reflex organised?",
+   "opts": [
+    [
+     "In a cough centre in the medulla oblongata",
+     "Correct. Receptors in the airway start it, but the medulla organises it, which is why one drug class works at each end."
+    ],
+    [
+     "In the cerebral cortex, under voluntary control",
+     "The reflex pathway described ends in a cough centre in the medulla oblongata rather than in the cortex."
+    ],
+    [
+     "In the cervical spinal cord",
+     "Not where the reflex is described as terminating. Impulses run through the brainstem to the medulla oblongata."
+    ],
+    [
+     "In the vagal ganglia alone",
+     "The pathway runs through the brainstem to a cough centre in the medulla oblongata."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 55"
+  },
+  {
+   "topic": "Dextromethorphan",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Which patient must not be given dextromethorphan?",
+   "opts": [
+    [
+     "One taking a monoamine oxidase inhibitor",
+     "Correct. The two-week tail is the part that catches people out, because the patient has already stopped the drug. The restriction extends for two weeks after stopping one, which is the part most easily missed."
+    ],
+    [
+     "One taking an oral antihistamine",
+     "Not a contraindication. The contraindication is a monoamine oxidase inhibitor, currently or within the past two weeks."
+    ],
+    [
+     "One with treated hypertension",
+     "Not the stated contraindication, which is current or recent use of a monoamine oxidase inhibitor."
+    ],
+    [
+     "One with a productive, chesty cough",
+     "That is a reason to question the choice rather than a contraindication."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 58"
+  },
+  {
+   "topic": "Oxymetazoline",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "A patient has used a topical decongestant spray daily for three weeks and is more blocked than when they started. What has happened?",
+   "opts": [
+    [
+     "They have developed allergic rhinitis",
+     "The history of prolonged spray use points to rebound rather than a new allergy."
+    ],
+    [
+     "Rebound congestion, rhinitis medicamentosa",
+     "Correct. The drug produces the symptom it was bought to relieve, which is why the patient keeps using it and why the cycle is hard to break."
+    ],
+    [
+     "Bacterial sinusitis has developed",
+     "Nothing here indicates bacterial infection. Weeks of daily spray use points to rebound congestion, rhinitis medicamentosa."
+    ],
+    [
+     "Tolerance, with no rebound effect",
+     "The described effect is an active worsening rather than simple loss of benefit."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 50"
+  },
+  {
+   "topic": "Guaifenesin",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What does guaifenesin do?",
+   "opts": [
+    [
+     "Loosens mucus and reduces its viscosity",
+     "Correct. It makes secretions easier to clear rather than stopping the cough, so it works with the cough rather than against it."
+    ],
+    [
+     "Suppresses the cough reflex centrally",
+     "That is an antitussive action. Guaifenesin loosens mucus and reduces its viscosity instead."
+    ],
+    [
+     "Constricts nasal vessels",
+     "That is a decongestant action. Guaifenesin works on the mucus rather than on the mucosa."
+    ],
+    [
+     "Blocks histamine receptors",
+     "That is an antihistamine action. Guaifenesin is a mucolytic and expectorant."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 59"
+  },
+  {
+   "topic": "Benzonatate",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "Why must a benzonatate capsule be swallowed whole?",
+   "opts": [
+    [
+     "It releases local anaesthetic into the mouth",
+     "Correct. It numbs whatever it touches, so releasing it in the mouth numbs the airway a patient needs to protect. And into the throat, which is the airway the patient needs to protect."
+    ],
+    [
+     "Chewing destroys the active drug before it works",
+     "The problem is where the drug acts rather than loss of activity: chewing releases local anaesthetic into the mouth and throat."
+    ],
+    [
+     "Chewing causes irritation of the stomach lining",
+     "Gastric irritation is not the stated reason. Chewing releases anaesthetic where it will numb the airway."
+    ],
+    [
+     "Chewing gives the medicine a bitter taste",
+     "The concern is anaesthesia rather than taste: released in the mouth, it numbs whatever it touches."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 57"
+  },
+  {
+   "topic": "N-acetylcysteine",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does inhaled N-acetylcysteine reduce mucus viscosity?",
+   "opts": [
+    [
+     "It cleaves DNA from degenerating neutrophils",
+     "That is dornase alfa's mechanism. N-acetylcysteine splits the disulfide bonds linking mucoproteins."
+    ],
+    [
+     "It splits the disulfide bonds linking mucoproteins",
+     "Correct. It breaks the chemical cross-links that make mucus stiff, which is a different target again from the DNA that dornase alfa cuts."
+    ],
+    [
+     "It draws water onto the airway surface",
+     "That is hypertonic saline's mechanism. N-acetylcysteine breaks the disulfide cross-links that stiffen mucus."
+    ],
+    [
+     "It inhibits mucus secretion at the gland",
+     "It acts on mucus already produced, splitting the disulfide bonds that link mucoproteins together."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 63"
+  }
+ ],
+ "cough2": [
+  {
+   "topic": "N-acetylcysteine",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What is N-acetylcysteine traditionally used for, apart from its mucolytic action?",
+   "opts": [
+    [
+     "Aspirin poisoning",
+     "Not its antidotal use. N-acetylcysteine is traditionally the antidote for acetaminophen poisoning."
+    ],
+    [
+     "Acetaminophen poisoning",
+     "Correct. The same drug turns up in two entirely unrelated places -- as an antidote in poisoning and as a mucolytic in the airway -- which is worth noticing rather than being surprised by."
+    ],
+    [
+     "Opioid overdose",
+     "Not its antidotal use; N-acetylcysteine is the traditional antidote in acetaminophen poisoning."
+    ],
+    [
+     "Organophosphate poisoning",
+     "Not its antidotal use. Its established role outside the airway is in acetaminophen poisoning."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 63"
+  },
+  {
+   "topic": "Pseudoephedrine",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What congestion is pseudoephedrine indicated to relieve?",
+   "opts": [
+    [
+     "Nasal and sinus congestion from a cold",
+     "Correct. It covers both infective and allergic causes, because it acts on the swollen vessels rather than on the cause of the swelling. Hay fever or allergy."
+    ],
+    [
+     "Congestion from bacterial sinusitis only",
+     "Its indications are broader than bacterial infection: congestion from a cold, hay fever or allergy, and sinus congestion."
+    ],
+    [
+     "Chest congestion with productive cough",
+     "That is the expectorant's territory. Pseudoephedrine relieves nasal and sinus congestion."
+    ],
+    [
+     "Congestion from nasal polyps only",
+     "Not the stated indication, which covers congestion from a cold, hay fever or allergy, and sinus congestion."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 52"
+  },
+  {
+   "topic": "Guaifenesin",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "What is a patient starting guaifenesin told to expect?",
+   "opts": [
+    [
+     "Less drainage within a day",
+     "Increased drainage is what is expected, and saying so stops the patient reading the drug working as it failing."
+    ],
+    [
+     "A bitter taste",
+     "That belongs to the nasal sprays. A patient on guaifenesin is told to expect more drainage and to drink fluids."
+    ],
+    [
+     "More drainage",
+     "Correct. Warning the patient that drainage increases stops them reading the drug working as the drug failing. To drink plenty of fluid."
+    ],
+    [
+     "Drowsiness",
+     "Not an expected effect of guaifenesin. The patient is told to expect increased drainage and to drink plenty of fluid."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 60"
+  },
+  {
+   "topic": "Benzonatate",
+   "io": "Identify contraindications for ENT drugs",
+   "slot": "contraindication",
+   "q": "Which allergy history is a contraindication to benzonatate?",
+   "opts": [
+    [
+     "Allergy to penicillin or a cephalosporin",
+     "Unrelated to benzonatate. The relevant allergy is to tetracaine and related ester anaesthetics."
+    ],
+    [
+     "Allergy to aspirin or other salicylates",
+     "Unrelated to benzonatate, which is chemically related to the ester local anaesthetics such as tetracaine."
+    ],
+    [
+     "Allergy to iodine or contrast media",
+     "Unrelated to benzonatate. Allergy to tetracaine or a related anaesthetic is the contraindication."
+    ],
+    [
+     "Allergy to tetracaine or related anaesthetics",
+     "Correct. Benzonatate is chemically related to the ester local anaesthetics, so a reaction to one predicts a reaction to the other."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 57"
+  },
+  {
+   "topic": "Dextromethorphan",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "What risk arises when dextromethorphan is combined with other serotonergic drugs?",
+   "opts": [
+    [
+     "Neuroleptic malignant syndrome",
+     "Not the described risk. Combining dextromethorphan with other serotonergic drugs risks serotonin syndrome."
+    ],
+    [
+     "Hypertensive crisis alone",
+     "Serotonin syndrome is the described risk when dextromethorphan meets other pro-serotonergic drugs."
+    ],
+    [
+     "Serotonin syndrome",
+     "Correct. An over-the-counter cough medicine can supply the second serotonergic drug, which is exactly why it is worth asking about."
+    ],
+    [
+     "Prolonged bleeding time",
+     "Not the described risk; the concern with other serotonergic drugs is serotonin syndrome."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 58"
+  },
+  {
+   "topic": "Dornase alfa",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does dornase alfa reduce sputum viscosity?",
+   "opts": [
+    [
+     "It cleaves DNA released from degenerating neutrophils",
+     "Correct. The thickness comes from the DNA of dead white cells, so an enzyme that cuts DNA is a precisely targeted answer to it."
+    ],
+    [
+     "It splits disulfide bonds between mucoproteins",
+     "That is N-acetylcysteine's mechanism. Dornase alfa cleaves DNA released from degenerating neutrophils."
+    ],
+    [
+     "It draws water onto the airway surface",
+     "That is how hypertonic saline works. Dornase alfa is an enzyme that cuts neutrophil DNA in the sputum."
+    ],
+    [
+     "It suppresses neutrophil recruitment to the lung",
+     "It acts on what the neutrophils leave behind rather than on their recruitment."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 61"
+  },
+  {
+   "topic": "Guaifenesin",
+   "io": "Outline appropriate patient education for ENT drugs",
+   "slot": "education",
+   "q": "When is a patient on guaifenesin told to follow up?",
+   "opts": [
+    [
+     "Only if a fever develops",
+     "Fever is not the stated trigger. Follow-up is advised if symptoms persist beyond about a week or worsen."
+    ],
+    [
+     "After a single day without improvement",
+     "The window is longer than that: follow up if symptoms last beyond about a week or get worse."
+    ],
+    [
+     "Never -- it is available without prescription",
+     "Over-the-counter availability does not remove the follow-up advice."
+    ],
+    [
+     "If symptoms persist beyond about a week or get worse",
+     "Correct. A cough that outlasts the self-treatment window needs a cause found rather than more expectorant."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 60"
+  },
+  {
+   "topic": "Pseudoephedrine",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does pseudoephedrine differ from oxymetazoline in mechanism and route?",
+   "opts": [
+    [
+     "It blocks histamine receptors and is taken orally",
+     "It is a decongestant rather than an antihistamine: an alpha agonist that constricts nasal vessels, taken orally."
+    ],
+    [
+     "It is an alpha antagonist given orally",
+     "Antagonism would worsen congestion rather than relieve it. Pseudoephedrine is an alpha agonist."
+    ],
+    [
+     "Same alpha agonist mechanism, but taken orally",
+     "Correct. The mechanism is shared; taking it orally is what changes both its usefulness and its side effect profile."
+    ],
+    [
+     "It is a topical steroid",
+     "It is neither topical nor a steroid. Pseudoephedrine is an oral alpha agonist that constricts nasal vessels."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 52"
+  },
+  {
+   "topic": "Oxymetazoline",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Besides rebound congestion, what systemic effect is described with oxymetazoline?",
+   "opts": [
+    [
+     "A slow heart rate",
+     "An alpha agonist would not be expected to do this, and it is not described."
+    ],
+    [
+     "Raised blood pressure",
+     "Correct. A drug sprayed into the nose still reaches the circulation, which is what makes it worth asking about in a hypertensive patient."
+    ],
+    [
+     "Drowsiness and sedation",
+     "Sedation belongs to first generation antihistamines. Oxymetazoline's systemic effect is raised blood pressure."
+    ],
+    [
+     "Hypoglycaemia",
+     "Not among the described effects. Oxymetazoline is associated with rebound congestion and raised blood pressure."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 50"
+  },
+  {
+   "topic": "Guaifenesin",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "What adverse effects are described with guaifenesin?",
+   "opts": [
+    [
+     "Confusion and agitation",
+     "These belong to dextromethorphan, which acts centrally. Guaifenesin causes nausea and vomiting."
+    ],
+    [
+     "Hypertension and tachycardia",
+     "These belong to the decongestants. Guaifenesin's described adverse effects are nausea and vomiting."
+    ],
+    [
+     "Hepatic failure",
+     "Not described with guaifenesin, whose adverse effects are limited to nausea and vomiting."
+    ],
+    [
+     "Nausea and vomiting",
+     "Correct. A short list, which is part of why it is available without prescription."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 59"
+  },
+  {
+   "topic": "Cough reflex",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "What activates cough receptors in the respiratory tract?",
+   "opts": [
+    [
+     "Mechanical stretch alone",
+     "Mechanical stretch is only part of it; chemical irritants also trigger the reflex."
+    ],
+    [
+     "Changes in temperature alone",
+     "Not the stated trigger. Cough receptors respond to chemical and mechanical irritants."
+    ],
+    [
+     "Chemical and mechanical irritants",
+     "Correct. Both kinds, which is why a cough can come from a fume, a crumb or a drip of mucus equally."
+    ],
+    [
+     "Release of histamine alone",
+     "Histamine is not given as the trigger. Cough receptors respond to chemical and mechanical irritants."
+    ]
+   ],
+   "c": 2,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 55"
+  },
+  {
+   "topic": "Benzonatate",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does benzonatate suppress cough?",
+   "opts": [
+    [
+     "It suppresses the medullary cough centre",
+     "That is dextromethorphan's mechanism. Benzonatate anaesthetises stretch receptors in the lungs instead."
+    ],
+    [
+     "It anaesthetises stretch receptors in the lungs",
+     "Correct. It works at the start of the reflex rather than in the brain, which is the whole contrast with dextromethorphan."
+    ],
+    [
+     "It thins mucus so there is less to clear",
+     "That is an expectorant's action. Benzonatate numbs the receptors where the cough reflex begins."
+    ],
+    [
+     "It blocks histamine receptors in the airway",
+     "Not its mechanism. Benzonatate anaesthetises the stretch receptors in the lungs that start the cough reflex."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 57"
+  },
+  {
+   "topic": "Oxymetazoline",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "mechanism",
+   "q": "Which medicines interact with oxymetazoline?",
+   "opts": [
+    [
+     "Monoamine oxidase inhibitors and antidepressants",
+     "Correct. Both raise the effect of a sympathomimetic, so an over-the-counter spray becomes a blood pressure problem in these patients."
+    ],
+    [
+     "Antibiotics of any class or route",
+     "Not among the described interactions, which are with monoamine oxidase inhibitors and antidepressants."
+    ],
+    [
+     "Oral and nasal antihistamine preparations",
+     "Not among the described interactions; monoamine oxidase inhibitors and antidepressants are the ones named."
+    ],
+    [
+     "Proton pump inhibitors and other antacid drugs",
+     "Not among the described interactions. Monoamine oxidase inhibitors and antidepressants are what raise the risk."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 51"
+  },
+  {
+   "topic": "Dornase alfa",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "Besides improving lung function, what else does dornase alfa achieve?",
+   "opts": [
+    [
+     "It eradicates chronic airway infection",
+     "Not a described effect. Alongside improving lung function it reduces the number of exacerbations."
+    ],
+    [
+     "It reduces the number of exacerbations",
+     "Correct. Fewer episodes matters as much as a better spirometry number, and arguably more to the patient."
+    ],
+    [
+     "It replaces the need for airway clearance physiotherapy",
+     "Not claimed. What is claimed is better lung function and fewer exacerbations."
+    ],
+    [
+     "It reverses established lung damage",
+     "Not claimed. Dornase alfa improves lung function and reduces exacerbations rather than reversing damage."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 61"
+  },
+  {
+   "topic": "Cough complications",
+   "io": "Summarize side effects and toxic manifestations of ENT drugs",
+   "slot": "adverse effect",
+   "q": "Which are named as the less common complications of coughing?",
+   "opts": [
+    [
+     "Dysrhythmias, syncope, stroke and rib fracture",
+     "Correct. Rare, but they establish that a cough can do structural and vascular harm, not merely wear a patient down."
+    ],
+    [
+     "Hoarseness, insomnia and exhaustion",
+     "These are among the common complications. The less common are dysrhythmias, syncope, stroke and rib fracture."
+    ],
+    [
+     "Bronchospasm, wheeze and breathlessness together",
+     "Not among the complications listed. The less common ones are dysrhythmias, syncope, stroke and rib fracture."
+    ],
+    [
+     "Nosebleed and nasal congestion",
+     "Not among the complications listed; the less common ones are dysrhythmias, syncope, stroke and rib fracture."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 56"
+  },
+  {
+   "topic": "Benzonatate",
+   "io": "Identify indications for commonly used ENT drugs",
+   "slot": "drug choice",
+   "q": "What kind of cough is benzonatate indicated for?",
+   "opts": [
+    [
+     "A productive cough with thick sputum",
+     "That calls for an expectorant rather than a suppressant; benzonatate is indicated for a non-productive cough."
+    ],
+    [
+     "Cough from bacterial pneumonia",
+     "Not the stated indication, which is symptomatic relief of a non-productive cough."
+    ],
+    [
+     "Any cough regardless of character",
+     "The indication is specifically a non-productive cough, since suppressing a productive one works against the patient."
+    ],
+    [
+     "A non-productive cough",
+     "Correct. Suppressing a cough that is clearing something would be working against the patient."
+    ]
+   ],
+   "c": 3,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 57"
+  },
+  {
+   "topic": "Oxymetazoline",
+   "io": "Describe the mechanism of action of ENT drugs",
+   "slot": "mechanism",
+   "q": "How does oxymetazoline relieve nasal congestion?",
+   "opts": [
+    [
+     "It is an alpha agonist that constricts vessels in the nasal mucosa",
+     "Correct. Congestion is swollen mucosa rather than mucus, so shrinking the vessels is what opens the nose."
+    ],
+    [
+     "It blocks histamine H1 receptors in the mucosa",
+     "That is an antihistamine's mechanism. Oxymetazoline is an alpha agonist that constricts vessels in the nasal mucosa."
+    ],
+    [
+     "It thins mucus so it drains more easily",
+     "That is an expectorant's action. Congestion is swollen mucosa rather than mucus, so the decongestant shrinks vessels."
+    ],
+    [
+     "It reduces inflammation through a glucocorticoid receptor",
+     "That is the nasal corticosteroid mechanism. Oxymetazoline acts as an alpha agonist on the mucosal vessels."
+    ]
+   ],
+   "c": 0,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 50"
+  },
+  {
+   "topic": "Pseudoephedrine",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs",
+   "slot": "next step",
+   "q": "A patient treated for hypertension asks about pseudoephedrine for a cold. What is the concern?",
+   "opts": [
+    [
+     "It increases the effect of antihypertensives, causing hypotension",
+     "The interaction runs the other way: pseudoephedrine reduces the effect of antihypertensive medicines."
+    ],
+    [
+     "It reduces the effect of antihypertensive medicines",
+     "Correct. A patient can undo their blood pressure treatment with something bought off the shelf, without ever mentioning it as a medicine."
+    ],
+    [
+     "It has no effect on blood pressure treatment",
+     "A reduced antihypertensive effect is specifically described."
+    ],
+    [
+     "It cannot be taken with any antibiotic",
+     "Antibiotics are not the interaction described. The concern is a reduced effect of antihypertensive treatment."
+    ]
+   ],
+   "c": 1,
+   "cite": "ENT Jax Pharmacology.pptx, Slide 52"
+  }
+ ]
+}
