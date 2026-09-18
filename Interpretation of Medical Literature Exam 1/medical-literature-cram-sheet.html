@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Interpretation of Medical Literature</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#7a2d47;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Interpretation of Medical Literature · Class of 2028</div>
+    <h1>Medical Literature Cram Sheet</h1>
+    <p class="sub">Sessions 1–4 condensed: the bias taxonomy, the evidence hierarchy and USPSTF grades, every study design, rates with incidence against prevalence, data and variation, and the whole of diagnostic test interpretation.</p>
+    <div class="toc">
+      <a href="#bias" style="color:#5f2337"><span class="dot" style="background:#7a2d47"></span>Bias, Chance & Validity</a>
+      <a href="#evidence" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Evidence & the Hierarchy</a>
+      <a href="#design" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Study Design</a>
+      <a href="#rates" style="color:#18482d"><span class="dot" style="background:#1f5c3a"></span>Rates, Incidence & Prevalence</a>
+      <a href="#data" style="color:#3a2d5f"><span class="dot" style="background:#4a3a7a"></span>Data, Validity & Variation</a>
+      <a href="#tests" style="color:#7f2918"><span class="dot" style="background:#a3341f"></span>Diagnostic Tests</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="medical-literature-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="bias" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Bias, Chance & Validity</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Bias</td><td><b>Systematic</b> error producing conclusions that differ from the truth. Can enter at conception/design, data collection, analysis or interpretation. Potential for bias does not mean bias is present &mdash; but it is often detectable when reading the article.</td></tr>
+          <tr><td class="h">Chance</td><td><b>Random</b> variation. Equally likely above or below the truth. Reduced by good design, estimated statistically, <b>never eliminated</b>. May coexist with bias.</td></tr>
+          <tr><td class="h">Telling them apart</td><td>Readings that all fall on <i>one</i> side of the true value = bias. Random variation would scatter both ways.</td></tr>
+          <tr><td class="h">Selection (sampling) bias</td><td>Compared groups differ in more ways affecting the outcome than the study's focus. Consider at <b>study design</b>. Example: surgical arm healthy enough to tolerate surgery, medical arm sicker.</td></tr>
+          <tr><td class="h">Measurement bias</td><td>The method of measurement gives incorrect results &mdash; blood pressure taken without a standardised procedure every time.</td></tr>
+          <tr><td class="h">Confounding</td><td>The covariate's effect cannot be separated from the variable studied. Associated with <b>both</b> exposure and outcome; <b>need not cause</b> the disease. Consider at <b>data analysis</b>. May result from selection bias or chance.</td></tr>
+          <tr><td class="h">Procedural bias</td><td>Interview/questionnaire results affected by method of delivery &mdash; a post-op questionnaire while anaesthesia is wearing off.</td></tr>
+          <tr><td class="h">Attrition effect</td><td>Participants drop out; reduces sample size.</td></tr>
+          <tr><td class="h">Non-response bias</td><td>Responders differ from non-responders; may not reflect the population.</td></tr>
+          <tr><td class="h">Performance bias</td><td>Care differs between groups other than the topic of interest &mdash; controls seeking other treatment. <b>Blinding participants protects against it.</b></td></tr>
+          <tr><td class="h">Reporting vs publication bias</td><td><b>Reporting</b> = only a subset of the data is made available (the study appears, not all its findings). <b>Publication</b> = non-significant research is less likely to be published, via editor preference and sponsors avoiding unfavourable results.</td></tr>
+          <tr><td class="h">Conflict of interest</td><td>Financial or personal considerations affecting objectivity; impact may be conscious <b>or unconscious</b>; should be disclosed by authors.</td></tr>
+          <tr><td class="h">The statistics limit</td><td>Analysis estimates the effect of <b>chance</b>. <b>No analysis corrects for unknown bias.</b> Statistics on a poor design give a false sense of respectability.</td></tr>
+          <tr><td class="h">Internal validity</td><td>Degree results are correct <b>for the sample studied</b>. &ldquo;Are the conclusions valid for these people?&rdquo;</td></tr>
+          <tr><td class="h">External validity</td><td>Degree results are true <b>in other settings</b> &mdash; <b>generalisability</b>. &ldquo;Does the sample represent my patients?&rdquo; Rarely determined from a single study.</td></tr>
+          <tr><td class="h">Variables</td><td>Independent = possible <b>cause</b>. Dependent = possible <b>effect</b>. Extraneous (covariate) = may impact the relationship.</td></tr>
+          <tr><td class="h">Primary vs secondary research</td><td>Primary collects its own data (questionnaires, surveys, measurements, labs) &rarr; original articles. Secondary analyses existing data &rarr; meta-analyses, systematic reviews.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="evidence" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Evidence & the Hierarchy</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Origins</td><td><b>McMaster University, 1970s.</b> <b>Sackett</b> gave the core concepts and definition; <b>Cochrane</b> advocated randomised trials and systematic reviews to verify treatment effectiveness.</td></tr>
+          <tr><td class="h">Definition</td><td>The conscientious, explicit and judicious use of current best evidence in decisions about individual patients &mdash; integrating <b>clinical expertise</b> with <b>external evidence</b>, and considering the <b>patient's situation and preferences</b>.</td></tr>
+          <tr><td class="h">Five challenges</td><td>Searching takes time &middot; evidence unavailable &middot; conflicting &middot; outdated &middot; written in language clinicians struggle with.</td></tr>
+          <tr><td class="h">Three types of evidence</td><td><b>Descriptive</b> (characteristics of patients with a diagnosis) &middot; <b>Assessment</b> (which tests identify/predict it) &middot; <b>Treatment</b> (what works, in whom).</td></tr>
+          <tr><td class="h">Higher levels are&hellip;</td><td>Least vulnerable to bias &middot; more generalisable &middot; outcomes more likely attributable to the construct studied.</td></tr>
+          <tr><td class="h">Pyramid, base to apex</td><td>Expert opinion/background &rarr; case-control, case series/reports &rarr; cohort &rarr; randomised controlled trials &rarr; <span style='white-space:nowrap'>critically-appraised articles</span> &rarr; critically-appraised topics &rarr; <b>systematic reviews</b>. (The laboratory version adds in vitro and animal research below case reports.)</td></tr>
+          <tr><td class="h">Filtered vs unfiltered</td><td><b>Filtered</b> = already appraised for you (systematic reviews, critically-appraised topics and articles). <b>Unfiltered</b> = primary studies you appraise yourself (randomised trials, cohort, case-control).</td></tr>
+          <tr><td class="h">Systematic review vs meta-analysis</td><td><b>Review</b> identifies and evaluates multiple studies for one specific, focused question. <b>Meta-analysis</b> pools their data into a single large study &mdash; greater <i>n</i> usually means greater power.</td></tr>
+          <tr><td class="h">USPSTF certainty</td><td>= the likelihood the <b>net benefit</b> assessment is correct. Net benefit = benefit minus harm in a general primary care population. <b>High</b> = consistent results, representative populations, future studies unlikely to change it. <b>Moderate</b> = sufficient but constrained (number/size/quality, inconsistency, generalisability, coherence). <b>Low</b> = insufficient to assess effects.</td></tr>
+          <tr><td class="h">USPSTF grades</td><td><b>A</b> high certainty, substantial benefit &rarr; offer. <b>B</b> high certainty moderate, or moderate certainty moderate-to-substantial &rarr; offer. <b>C</b> at least moderate certainty of <i>small</i> benefit &rarr; offer <i>selectively</i>. <b>D</b> moderate/high certainty of no net benefit or net harm &rarr; <i>discourage</i>. <b>I</b> insufficient evidence &rarr; balance cannot be determined.</td></tr>
+          <tr><td class="h">D vs I</td><td><b>D</b> is a finding <i>against</i> the service. <b>I</b> is the <i>absence</i> of a finding either way.</td></tr>
+          <tr><td class="h">Judging sources</td><td>Peer-reviewed and government databases; <b>be cautious of websites</b>. <b>ABCD:</b> Author (credentials) &middot; Bias &middot; Content (level of detail) &middot; Date (still current?). The library's <b>CRAAP test</b> does the same job.</td></tr>
+          <tr><td class="h">Databases</td><td><b>Medline/PubMed</b> (National Library of Medicine, original articles) &middot; <b>Cochrane Library</b> (systematic reviews) &middot; Evidence Based Medicine Reviews &middot; Up-To-Date, TripPro, Clinical Key, Essential Evidence Plus &middot; ACP Journal Club. <b>Guidelines:</b> AHRQ (links to USPSTF), MMWR, Task Force on Community Preventive Services.</td></tr>
+          <tr><td class="h">Steps to EBP</td><td>Focused clinical question &rarr; systematic review <i>or an evidence-based synopsis from a credible resource</i> &rarr; evaluate validity &rarr; apply to the patient &rarr; evaluate outcome.</td></tr>
+          <tr><td class="h">Joint decision making</td><td>Disclosure of risks and benefits &rarr; exploration of patient values &rarr; the actual decision.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="design" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Study Design</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Qualitative vs quantitative</td><td><b>Qualitative</b>: naturalistic, inductive, develops <i>descriptions</i>; data are observation, field notes, recordings; case study, biography, ethnography, phenomenology. <b>Quantitative</b>: positivistic, deductive, develops <i>predictions</i>; numerical, objective, measurable; trials, cohort, case-control.</td></tr>
+          <tr><td class="h">Study design</td><td>The organisation and plan for data collection and analysis. <b>Strong design &rarr; strong data &rarr; valid, reliable results.</b></td></tr>
+          <tr><td class="h">Descriptive vs analytic</td><td><b>Descriptive</b> describes one group (case report, case series). <b>Analytic</b> compares two or more groups to draw inference for a population (randomised trials, cohort, case-control).</td></tr>
+          <tr><td class="h">Experimental vs observational</td><td><b>Experimental</b>: the investigator <i>assigns and manipulates</i> the intervention (randomised trial). <b>Observational</b>: the exposure is <i>observed</i> (cohort, case-control). Cross-sectional is observational and appears under both descriptive and analytic.</td></tr>
+          <tr><td class="h">Other methods</td><td><b>Longitudinal</b> (changes over time) &middot; <b>survey</b> &middot; <b>policy research/evaluation</b> &mdash; all observational. <b>Quasi-experimental</b>: controls treatment but <i>not</i> assignment. <b>Field research</b> (epidemiologic investigations, new screening tests, vaccine trials): either.</td></tr>
+          <tr><td class="h">Design goal</td><td>An <b>unbiased comparison</b> between a group with the factor and one without. Good design permits group comparison, quantification of risk difference, <b>determination of temporal sequence</b>, and minimised bias.</td></tr>
+          <tr><td class="h">Cross-sectional</td><td>Observational, <b>generates</b> hypotheses. Single point in time; risk factor and disease measured <i>together</i>, so temporal sequence cannot be established. <b>Ecologic</b> versions use population-level data &mdash; beware the <b>ecologic fallacy</b> (applying aggregate data to an individual).</td></tr>
+          <tr><td class="h">Case-control</td><td>Observational; generates <i>or</i> tests hypotheses. Groups defined by <b>outcome</b>, then assessed for a difference in exposure. Looks <b>backward</b>.</td></tr>
+          <tr><td class="h">Cohort</td><td>Observational; <b>tests</b> hypotheses. Groups defined by <b>exposure</b>, followed forward. Comparison group as similar as possible <i>except for the exposure</i>. Follow long enough for the outcome and <b>completely</b>, so attrition does not skew it. <b>Prospective (concurrent)</b> assembles now; <b>retrospective (historical)</b> defines a past risk group and follows it to the present.</td></tr>
+          <tr><td class="h">Randomised controlled trial</td><td>Experimental; tests hypotheses. Clear hypothesis, protocol, results applicable to a larger population, <b>random assignment</b>, single or double blinding, adequate sample size, accounts for withdrawals and drop-outs.</td></tr>
+          <tr><td class="h">Design hierarchy</td><td>Some designs are stronger: they prove <b>cause and effect</b>; weaker ones prove <b>relationships or predictability</b>. All studies serve a purpose and can guide practice.</td></tr>
+          <tr><td class="h">Typical sequence</td><td>Clinical observations &rarr; available data &rarr; case-control &rarr; cohort &rarr; randomised trials.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="rates" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>Rates, Incidence & Prevalence</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Rate</td><td>The number of times an event occurs during a fixed time period. <b>Rates allow comparisons</b> &mdash; that is why they exist rather than raw counts.</td></tr>
+          <tr><td class="h">Crude death rate</td><td>All deaths &divide; <b>mid-interval population</b> &times;1,000 or 100,000. <b>Age-adjusted</b> removes the effect of age structure (US 2009: crude ~794, adjusted 741 per 100,000).</td></tr>
+          <tr><td class="h">Cause- and age-specific</td><td><b>Cause-specific</b>: deaths from one cause &divide; mid-interval population &times;100,000. <b>Age-specific</b>: limited to one age group.</td></tr>
+          <tr><td class="h">Proportionate mortality</td><td>Deaths from a cause &divide; <b>total deaths</b> &times;100. <b>NOT a rate</b> &mdash; the denominator is deaths, not population. All causes must sum to <b>100%</b>. (CVD ~24.5% of US deaths.)</td></tr>
+          <tr><td class="h">Death-to-case ratio</td><td>Deaths from a cause &divide; <b>new cases</b> of the same disease &times;100.</td></tr>
+          <tr><td class="h">Maternal & child rates</td><td>All take <b>live births</b> as the denominator. <b>Neonatal</b> &lt;28 days &middot; <b>postneonatal</b> 28&ndash;364 days &middot; <b>infant</b> &lt;1 year (&times;1,000) &middot; <b>maternal</b> pregnancy-related deaths (&times;100,000). Infant mortality is the usual international comparison.</td></tr>
+          <tr><td class="h">Case fatality / YPLL</td><td><b>Case fatality</b> = disease <i>severity</i>: proportion diagnosed who die from it. <b>Years of potential life lost</b> = dying young loses more productive years; used to target interventions.</td></tr>
+          <tr><td class="h">Prevalence</td><td>Portion of a group <i>with</i> a condition at a point in time &mdash; a snapshot. <b>Point</b> (single moment per person, not necessarily the same date) vs <b>period</b> (cases present during a span). Surveys collect it. Prevalence study = <b>cross-sectional</b> (SchoolNuts).</td></tr>
+          <tr><td class="h">Incidence</td><td>Portion who <i>develop</i> a condition over a period &mdash; <b>new cases in previously healthy people</b>. <b>Cumulative incidence</b> = fixed-size group. <b>Incidence density</b> = changing population, denominator in <b>person-time</b> (1 person &times; 10 years = 10 person-years); error arises from varying follow-up duration. Incidence study = <b>cohort</b> (Framingham, 1948&ndash;).</td></tr>
+          <tr><td class="h">Which is bigger?</td><td><b>Chronic disease</b>: incidence LOWER than prevalence (cases accumulate). <b>Acute illness</b>: prevalence may be LOWER than incidence (people recover &mdash; the common cold).</td></tr>
+          <tr><td class="h">Prevalence clinically</td><td>Prioritises the differential (<i>horses, not zebras</i>) and sets the <b>pretest probability</b>.</td></tr>
+          <tr><td class="h">What distorts measurement</td><td><b>Case definition</b> &mdash; most clinical information is on a continuum, so where the line falls changes frequency. <b>Population at risk</b> &mdash; only the susceptible (no men in an ovarian cancer denominator); narrowing it may curtail generalisability.</td></tr>
+          <tr><td class="h">Sampling</td><td><b>Random</b> = equal chance. <b>Probability</b> = known chance, not necessarily equal (useful for subgroups). <b>Convenience</b> = non-random, easy to obtain. <b>Grab</b> = whoever researchers can find.</td></tr>
+          <tr><td class="h">Distribution: person, place, time</td><td><b>Person</b> = profile of those affected, demographics <i>and</i> behaviour. <b>Place</b> = <b>endemic</b>, limited by geography. <b>Time</b> = <b>epidemic</b> (new cases concentrated in time) and <b>pandemic</b> (widespread; rapid like 1900s influenza or slow like HIV/AIDS).</td></tr>
+          <tr><td class="h">Surveillance</td><td>Active or passive; national, state, county. Establishes a <b>baseline</b>. Functions: magnitude &middot; natural history &middot; detect outbreaks &middot; document geographic spread &middot; test aetiology (via case-control or cohort) &middot; evaluate control &middot; monitor agent change. Strategies: screen high-risk groups &middot; symptoms/syndrome &middot; <b>mortality</b> (some cases detected only at death) &middot; provider reporting &middot; laboratory reporting.</td></tr>
+          <tr><td class="h">Outbreak investigation</td><td>Epidemic vs endemic &rarr; attack rate &rarr; establish diagnosis &rarr; <b>case definition</b> &rarr; confirm an epidemic truly exists &rarr; characterise by time, place, person &rarr; <b>epi curve</b> (cases vs time) &rarr; hypotheses about source/type/route &rarr; test &rarr; control measures &rarr; solve source &rarr; <b>decide it is over</b>. (Philadelphia Legionnaires', 1976.)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="data" style="--acc:#4a3a7a;--acc-bg:#e6e3ec;--acc-zebra:#f2f1f6;--acc-ink:#3a2d5f">
+    <div class="shead"><span class="dot" style="background:#4a3a7a"></span><h2>Data, Validity & Variation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Three types of data</td><td><b>Nominal</b> &mdash; categories, no order (blood group, eye colour); <b>dichotomous</b> is nominal split in two. <b>Ordinal</b> &mdash; order, <i>no defined intervals</i> (cancer stage I&ndash;IV, oedema 1+&ndash;4+); you can say more/less, not by how much. <b>Interval</b> &mdash; order <i>with</i> equal defined intervals; <b>continuous</b> (blood pressure, weight, limited by measurement precision) or <b>discrete</b> (number of children).</td></tr>
+          <tr><td class="h">Validity vs reliability</td><td><b>Validity</b> (accuracy) = measures what it is supposed to; ensured by calibration against known values, or by structured questions for subjective measures (CAGE, pain scales). <b>Reliability</b> (reproducibility, repeatability, precision) = repeated attempts give similar results. <b>A measure can be reliably wrong.</b></td></tr>
+          <tr><td class="h">Three validities</td><td><b>Content</b> &mdash; includes all relevant dimensions, <i>excludes irrelevant</i> ones. <b>Criterion</b> &mdash; predicts/associates with an observable event. <b>Construct</b> &mdash; relates to other measures of the same phenomenon.</td></tr>
+          <tr><td class="h">Types of variation</td><td><b>Intrasubject</b> (within one person) &middot; <b>intraobserver</b> (one reader, two occasions) &middot; <b>interobserver</b> (two readers &mdash; murmur graded 3 vs 4).</td></tr>
+          <tr><td class="h">Biologic vs systematic</td><td><b>True biologic variation</b> = many <i>unknown</i> factors each with a small <i>random</i> effect. <b>Systematic variation</b> = <i>known</i> conditions affecting the value (time of day, after a cigarette, position, white coat).</td></tr>
+          <tr><td class="h">Measurement error</td><td><b>Random</b> (chance; equally above or below) &rarr; lack of <b>reliability</b>. <b>Systematic</b> (a flaw in the process) &rarr; lack of <b>validity</b>; determines a range for the true score.</td></tr>
+          <tr><td class="h">Intra-patient variation</td><td>May be biologic variation, measurement error, <i>or</i> biologic change representing disease. <b>Intervene only for a true pathological change.</b></td></tr>
+          <tr><td class="h">Effects of variation</td><td><b>Random</b> balances out &mdash; reduce by <b>averaging</b>, estimate statistically; individual measurements can still mislead. <b>Systematic will bias results</b>, and averaging does not help.</td></tr>
+          <tr><td class="h">Central tendency</td><td><b>Mean</b> = sum &divide; n; best estimate, but <i>affected by outliers</i>. <b>Median</b> = middle score. <b>Mode</b> = most frequent value.</td></tr>
+          <tr><td class="h">Dispersion</td><td><b>Range</b> = lowest to highest. <b>Interquartile range</b> = limited index, e.g. 25th&ndash;75th percentile. <b>Standard deviation</b> = variability about the mean.</td></tr>
+          <tr><td class="h">Normal distribution</td><td>Gaussian / bell curve. <b>~2/3 within 1 SD</b>, <b>95% within 2 SD</b>. <b>Based on mathematical theory, not actual measurement.</b></td></tr>
+          <tr><td class="h">Normal vs abnormal</td><td>No clear-cut point: <b>susceptibility &rarr; pre-symptomatic &rarr; clinical disease &rarr; dysfunction &rarr; death</b>. Statistical abnormality &ne; clinical abnormality (cholesterol 201). You can be abnormal and well (sickle cell trait). Extremes may be <i>desirable</i> (low systolic, high HDL). <b>A normal test does not rule out disease.</b></td></tr>
+          <tr><td class="h">Defining abnormality</td><td>Use values associated with <b>disease, disability or death</b>; a clinically recognisable difference from healthy. <b>Repeat abnormal tests</b> &mdash; regression to the mean. Cutoffs are <b>often arbitrary</b>. <b>Be careful of labelling.</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="tests" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Diagnostic Tests</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Before ordering</td><td>Horses, not zebras. <b>Uncommon presentations of common disease beat common presentations of rare disease.</b> No disease is rare to the patient who has it. Avoid indiscriminate ordering &middot; risk:benefit &middot; know the limits &middot; do not repeat without indication &middot; consider cost.</td></tr>
+          <tr><td class="h">Diagnostic vs screening</td><td><b>Diagnostic</b> = symptomatic individuals. <b>Screening</b> = asymptomatic individuals.</td></tr>
+          <tr><td class="h">Gold standard</td><td>A procedure believed to identify the disease <b>with certainty</b> &mdash; culture for strep, biopsy for cancer, catheterisation for coronary disease, endoscopy for peptic ulcer. Often expensive, invasive/risky, unacceptable, or not easily completed, so alternatives are usually the initial choice.</td></tr>
+          <tr><td class="h">The 2&times;2, lettered</td><td><b>a</b> = true positives &middot; <b>b</b> = false positives &middot; <b>c</b> = false negatives &middot; <b>d</b> = true negatives.</td></tr>
+          <tr><td class="h">Sensitivity</td><td>Probability a person <i>with</i> disease tests <i>positive</i>. <b>TP/(TP+FN) = a/(a+c)</b>. Read <b>down the disease column</b> &rarr; fixed property of the test.</td></tr>
+          <tr><td class="h">Specificity</td><td>Probability a person <i>without</i> disease tests <i>negative</i>. <b>TN/(TN+FP) = d/(b+d)</b>. Read down the no-disease column &rarr; fixed property of the test.</td></tr>
+          <tr><td class="h">Predictive values</td><td><b>PPV</b> = probability a positive result means disease = <b>TP/(TP+FP) = a/(a+b)</b>. <b>NPV</b> = probability a negative result means no disease = <b>TN/(TN+FN) = d/(c+d)</b>. Read <b>across the test rows</b> &rarr; <b>depend on prevalence</b>. Prevalence = (a+c)/(a+b+c+d).</td></tr>
+          <tr><td class="h">SnOUT / SpIN</td><td><b>Sn-OUT</b>: a <i>negative</i> on a highly <b>sensitive</b> test rules <b>OUT</b> (few false negatives) &mdash; matters when missing disease is dangerous. <b>Sp-IN</b>: a <i>positive</i> on a highly <b>specific</b> test rules <b>IN</b> (few false positives) &mdash; matters when false positives trigger risky or costly work-ups.</td></tr>
+          <tr><td class="h">Sensitivity vs specificity</td><td><b>Inversely related.</b> The <b>ROC curve</b> plots true positive rate against false positive rate (1&minus;specificity); the better test's curve is <b>closest to the upper left</b> with the <b>greatest area beneath</b>, and it also sets the <b>cutoff point</b>. Screening strategy: screen <i>sensitive</i>, confirm <i>specific</i>.</td></tr>
+          <tr><td class="h">Prevalence effect</td><td>Same test, sensitivity 99% / specificity 95%: at <b>1%</b> prevalence PPV = <b>17%</b>, NPV 99.9%; at <b>5%</b> prevalence PPV = <b>51%</b>, NPV 97%. As prevalence <i>falls</i>, PPV falls and NPV rises (more false positives). <b>Spectrum bias.</b></td></tr>
+          <tr><td class="h">Pre- and post-test probability</td><td><b>Pretest</b> = chance of disease before the test, often the prevalence. <b>Posttest</b> = chance after it; informs treatment.</td></tr>
+          <tr><td class="h">Likelihood ratios</td><td>How much a result changes the probability. <b>Not affected by prevalence.</b> <b>LR+ = Sn/(1&minus;Sp)</b> &middot; <b>LR&minus; = (1&minus;Sn)/Sp</b>. LR+ of 4 &rarr; 4&times; more likely; LR&minus; of 0.5 &rarr; half as likely.</td></tr>
+          <tr><td class="h">LR bands</td><td><b>&gt;10</b> strong rule-in (<b>+45%</b>) &middot; <b>5&ndash;10</b> moderate rule-in (+30%) &middot; <b>0.5&ndash;2</b> indeterminate (&plusmn;15%) &middot; <b>0.2&ndash;0.5</b> weak rule-out (&minus;15%) &middot; <b>0.1&ndash;0.2</b> moderate rule-out (&minus;30%) &middot; <b>&lt;0.1</b> strong rule-out (&minus;45%). The shift is <b>added to the pretest probability</b>. A very high LR rules in when pretest probability is <b>30&ndash;70%</b>. <b>Even a high LR misleads at low prevalence.</b></td></tr>
+          <tr><td class="h">Getting to posttest</td><td>Convert pretest probability &rarr; <b>odds</b>, multiply by the LR &rarr; posttest odds, convert back. Or the <b>nomogram</b>: line from pretest probability through the LR to the right-hand column.</td></tr>
+          <tr><td class="h">Worked example</td><td>Rapid strep antigen, Sn 65% / Sp 96%. <b>LR+ = 0.65/0.04 = 16.25</b>; <b>LR&minus; = 0.35/0.96 = 0.36</b>. Pretest from the <b>modified Centor score</b> (fever &gt;38&deg;C, absent cough, tender anterior nodes, tonsillar swelling/exudate = 1 each; age 3&ndash;14 = +1, 15&ndash;44 = 0, &gt;45 = <b>&minus;1</b>). Posttest ~<b>93%</b> positive, ~<b>22%</b> negative.</td></tr>
+          <tr><td class="h">Parallel vs serial</td><td><b>Parallel</b> = all at once, when speed matters; <b>&uarr;sensitivity and NPV</b>; gain depends on how well the tests complement each other. <b>Serial</b> = one after another, when speed matters less or tests are risky/costly; <b>&uarr;specificity and PPV</b>, &darr;sensitivity and NPV; fewer tests, more time. <b>Do the most specific first</b> unless another is cheaper or safer (exercise tolerance test &rarr; catheterisation).</td></tr>
+          <tr><td class="h">Appraising a new test</td><td>Disease of interest? Spectrum of patients? What is the test? Did <b>every subject undergo both</b> it and the gold standard? Were the testers <b>blinded</b> to the other result? Benefits and risks reasonable? Sn, Sp, PPV, NPV? <b>Similar prevalence in your population?</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Medical Literature Study Guide (Class of 2028). For the full explanation and the worked examples behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
