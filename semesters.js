@@ -79,12 +79,13 @@
          two. That puts the tab you reach for most first, the same way
          Physiology leads Summer I. */
       /* Interpretation of Medical Literature was pulled from this term
-         (Jaxon, 2026-09-13) after the calendar was printed. Its folder->class
-         rule below is deliberately left in place: it is an inert lookup, and
-         leaving it means the course returning is a one-line change here
-         rather than a hunt through five files. */
+         (Jaxon, 2026-09-13) and is back as of 2026-09-18, when its decks and
+         readings were posted. Leaving its folder->class rule in place while it
+         was out is what made restoring it a one-line change here. It sits last
+         because it is the smallest course: no block exams, one computerised
+         exam, and the rest of the grade on participation and a group project. */
       classes: ["cms-1", "pdm-1", "microbiology", "pharm-1",
-                "physical-diagnosis-2", "clin-path-1"]
+                "physical-diagnosis-2", "clin-path-1", "med-lit"]
     },
 
     /* The last two didactic terms have no syllabus yet, so these dates are
