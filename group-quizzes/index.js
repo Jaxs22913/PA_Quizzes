@@ -509,5 +509,7 @@ window.GROUP_INDEX = {
 "principles-of-diagnostic-medicine-i-exam-1-urinalysis-quiz":{"title":"Urinalysis Quiz 1 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-1-urinalysis-quiz-version-2":{"title":"Urinalysis Quiz 2 — PDM I Exam 1","category":"Principles of Diagnostic Medicine I","exam":"Exam 1","sem":"fall-2026","n":30},
 "principles-of-diagnostic-medicine-i-exam-2-cardiac-imaging-quiz":{"title":"Cardiac Imaging Quiz 1 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":30},
-"principles-of-diagnostic-medicine-i-exam-2-cardiac-imaging-quiz-version-2":{"title":"Cardiac Imaging Quiz 2 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":30}
+"principles-of-diagnostic-medicine-i-exam-2-cardiac-imaging-quiz-version-2":{"title":"Cardiac Imaging Quiz 2 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-2-electrocardiography-quiz":{"title":"Electrocardiography Quiz 1 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-2-electrocardiography-quiz-version-2":{"title":"Electrocardiography Quiz 2 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":30}
 };
