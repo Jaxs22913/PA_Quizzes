@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — CMS I Exam 4</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#702d7a;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Medicine and Surgery I · Exam 4 · Class of 2028</div>
+    <h1>CMS I Exam 4 Cram Sheet</h1>
+    <p class="sub">Hypertension condensed: classification, the nine secondary causes with their clues, target organ damage, assessment, the drug classes with what to avoid, and the resistance and emergency sequences. More topics as the rest of the block is posted.</p>
+    <div class="toc">
+      <a href="#def" style="color:#57235f"><span class="dot" style="background:#702d7a"></span>Definitions & Classification</a>
+      <a href="#secondary" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Secondary Causes</a>
+      <a href="#organ" style="color:#7f2918"><span class="dot" style="background:#a3341f"></span>Target Organ Damage</a>
+      <a href="#assess" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Assessment</a>
+      <a href="#treat" style="color:#18482d"><span class="dot" style="background:#1f5c3a"></span>Treatment</a>
+      <a href="#resist" style="color:#5f2337"><span class="dot" style="background:#7a2d47"></span>Resistance & Emergency</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-4-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="def" style="--acc:#702d7a;--acc-bg:#ebe2ec;--acc-zebra:#f5f0f6;--acc-ink:#57235f">
+    <div class="shead"><span class="dot" style="background:#702d7a"></span><h2>Definitions & Classification</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Treatment goal</td><td><b>Below 130/80</b>, with values closer to 120/80 encouraged where appropriate. The same number defines the condition and measures control.</td></tr>
+          <tr><td class="h">Primary (essential)</td><td>No single identifiable underlying cause. <b>The vast majority of adult cases.</b></td></tr>
+          <tr><td class="h">Secondary</td><td>An identifiable underlying condition drives the pressure. Go looking when the <i>pattern</i> is wrong (see next topic).</td></tr>
+          <tr><td class="h">Resistant</td><td>Above goal despite <b>three complementary drugs at maximally tolerated doses</b>.</td></tr>
+          <tr><td class="h">Hypertensive emergency</td><td>Severe elevation <b>with acute hypertension-mediated organ injury</b>. <b>No numeric cutoff exists</b> &mdash; 230/130 with no acute organ involvement is severe <i>asymptomatic</i> hypertension. Qualifying injury: encephalopathy, acute pulmonary oedema, acute kidney injury, aortic dissection, acute coronary syndrome.</td></tr>
+          <tr><td class="h">White coat vs masked</td><td><b>White coat</b> = high office, normal out-of-office. <b>Masked</b> = normal office, high out-of-office &mdash; and it carries <b>real cardiovascular risk</b>, which is why out-of-office measurement is not only about avoiding overtreatment.</td></tr>
+          <tr><td class="h">Epidemiology</td><td>Roughly <b>one in five</b> of those affected are controlled to goal nationally. <b>Systolic keeps climbing after middle age; diastolic plateaus or falls</b> &mdash; hence isolated systolic elevation in older adults.</td></tr>
+          <tr><td class="h">Risk factors (primary)</td><td>Advancing age &middot; family history &middot; excess adiposity &middot; high dietary sodium &middot; inactivity &middot; excess alcohol &middot; dyslipidaemia &middot; insulin resistance. Low potassium intake and poor sleep are modifiable too.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="secondary" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Secondary Causes</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">When to go looking</td><td><b>Early onset &middot; abrupt new onset &middot; resistance &middot; sudden loss of previously stable control.</b> The pattern is the clue, not any single reading.</td></tr>
+          <tr><td class="h">Chronic kidney disease</td><td>Impaired sodium excretion expands extracellular volume, with renin-angiotensin-aldosterone and sympathetic activation. Needs an abnormality persisting <b>&ge; 3 months</b>. Relationship is <b>bidirectional</b> &mdash; evaluate diabetes rather than assuming which came first.</td></tr>
+          <tr><td class="h">Renovascular disease</td><td>Atherosclerotic (older, vascular, often bilateral and progressive) or fibromuscular dysplasia (young). Clues: resistant or abrupt elevation &middot; <b>abdominal bruit</b> &middot; <b>asymmetric kidneys</b> &middot; recurrent <b>flash pulmonary oedema</b> &middot; <b>marked creatinine rise after starting an ACE inhibitor</b>. Refer early for flash oedema, progressive renal decline despite optimal therapy, or truly refractory control.</td></tr>
+          <tr><td class="h">Primary aldosteronism</td><td><b>Autonomous aldosterone production independent of renin.</b> Screen for resistant pressure, <b>unexplained hypokalaemia</b>, adrenal incidentaloma, early or familial hypertension. Test: <b>morning aldosterone to renin ratio</b>, positive above roughly <b>20:1</b> with an adequate aldosterone concentration.</td></tr>
+          <tr><td class="h">Obstructive sleep apnoea</td><td>Recurrent airway obstruction &rarr; intermittent hypoxaemia and arousal &rarr; <b>sustained sympathetic activation</b>. Snoring, witnessed apnoeas, daytime sleepiness. Confirm with <b>polysomnography or validated home testing</b>.</td></tr>
+          <tr><td class="h">Drugs & substances</td><td>Ask beyond the prescription list: <b>over-the-counter drugs, recreational substances, licorice, herbal supplements</b>. Excess alcohol raises pressure chronically, and <b>withdrawal can raise it acutely</b>.</td></tr>
+          <tr><td class="h">Thyroid</td><td><b>Hyper</b> &rarr; raises cardiac output &rarr; <b>systolic</b> elevation. <b>Hypo</b> &rarr; raises vascular resistance &rarr; <b>diastolic</b> elevation.</td></tr>
+          <tr><td class="h">Cushing syndrome</td><td>Glucocorticoid excess. Proximal muscle weakness &middot; easy bruising &middot; thin skin &middot; broad purple striae &middot; central adiposity. Test: low-dose dexamethasone suppression.</td></tr>
+          <tr><td class="h">Pheochromocytoma</td><td>Catecholamine excess. The <b>five Ps</b>: pressure, perspiration, palpitations, pallor, tremor &mdash; <b>paroxysmal, with well intervals</b>. Test: plasma free metanephrines or 24-hour urinary fractionated metanephrines. <b>Surgery: ALPHA blockade first, then beta</b> &mdash; isolated beta blockade is dangerous.</td></tr>
+          <tr><td class="h">Coarctation</td><td><b>Radial-femoral delay</b>; leg systolic <i>lower</i> than arm (<b>normally it is higher</b>). <b>Echocardiography</b> establishes it; refer to a vascular surgeon or structural cardiologist.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="organ" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Target Organ Damage</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Heart</td><td>Left ventricular hypertrophy with impaired diastolic relaxation &mdash; <b>independently</b> raises risk. Progresses to heart failure with <b>either preserved OR reduced</b> ejection fraction, so <b>a normal ejection fraction does not reassure</b>.</td></tr>
+          <tr><td class="h">Brain</td><td><b>Both</b> ischaemic stroke and intracerebral haemorrhage, plus small-vessel white matter change, lacunar infarcts and cognitive decline. <b>Acute stroke follows a distinct protocol &mdash; never apply chronic targets acutely.</b></td></tr>
+          <tr><td class="h">Kidney</td><td>Injury to vessels, glomeruli and interstitium. Earliest markers: <b>rising urine albumin-to-creatinine ratio, falling estimated filtration rate</b> &mdash; both read as <i>trends</i>.</td></tr>
+          <tr><td class="h">Aorta</td><td>Dissection: abrupt severe chest/back/abdominal pain, <b>maximal at onset</b>, often tearing. Pulse deficits, asymmetric arm pressures, aortic regurgitation murmur, new neurological deficit. <b>Neither normal pulses NOR a normal chest radiograph excludes it.</b> Immediate cross-sectional vascular imaging; urgent surgery.</td></tr>
+          <tr><td class="h">Arteries</td><td>Shear stress &rarr; intimal injury &rarr; low-density lipoprotein oxidation &rarr; smooth muscle proliferation. <b>Treat total cardiovascular risk, not pressure alone.</b></td></tr>
+          <tr><td class="h">Retina</td><td>Predicts long-term stroke risk <b>independently of the pressure level</b>; retinal arterial narrowing predicts future hypertension; <b>control can produce regression</b>. <b>Focal</b> narrowing, haemorrhages and exudates = <b>current</b> pressure. <b>Generalised</b> narrowing and AV nicking = <b>current AND previous</b>. Disc oedema = emergency.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="assess" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Assessment</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Symptoms</td><td>Most patients with mild to moderate primary hypertension have <b>no reliable blood pressure-related symptoms</b>. Headache is common but nonspecific and cannot guide anything.</td></tr>
+          <tr><td class="h">Immediate evaluation</td><td>Confusion or seizures &middot; visual disturbance or focal deficit &middot; <b>abrupt severe</b> headache &middot; chest or severe back pain &middot; oliguria.</td></tr>
+          <tr><td class="h">Measurement technique</td><td>Rest <b>&ge; 5 minutes</b>, empty bladder, no smoking/caffeine/vigorous activity for 30 minutes. Back supported, feet flat, <b>legs uncrossed</b>, bare arm at heart level, <b>not speaking</b>. Cuff matched to arm circumference. At least two readings. <b>Both arms initially &mdash; use the higher consistent arm at follow-up.</b></td></tr>
+          <tr><td class="h">Why technique matters</td><td>Measurement error is one of the first things to exclude before labelling a patient resistant &mdash; <b>bad technique mimics true resistance exactly</b>.</td></tr>
+          <tr><td class="h">Baseline panel</td><td>Creatinine with filtration rate, <b>urine albumin-to-creatinine ratio</b>, electrolytes, glucose or glycated haemoglobin, lipids, thyroid-stimulating hormone, full blood count, urinalysis. Three jobs at once: screen secondary causes, measure organ damage, set a baseline before drugs that move potassium and creatinine.</td></tr>
+          <tr><td class="h">Electrocardiogram</td><td>Voltage criteria for hypertrophy are <b>specific but NOT sensitive</b> &mdash; a normal tracing does <i>not</i> exclude hypertensive heart disease.</td></tr>
+          <tr><td class="h">Not routine</td><td><b>Chest radiograph</b> &mdash; only for suspected pulmonary oedema, cardiomegaly, or widened mediastinum. <b>Echocardiography</b> &mdash; only for suspected heart failure, significant murmur, hypertrophy on ECG, or unexplained dyspnoea.</td></tr>
+          <tr><td class="h">Home monitoring</td><td>Validated upper-arm device. <b>Two readings a minute apart, morning and evening, seven days; report the average.</b> Educate: <b>do not overreact to the highest single reading.</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="treat" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>Treatment</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Lifestyle</td><td>Recommended at <b>every</b> blood pressure category, and continues alongside drugs. DASH-style with reduced sodium &middot; ~<b>150 min/week</b> moderate aerobic plus resistance training &middot; sustained <b>5&ndash;10 kg</b> loss meaningfully lowers systolic &middot; alcohol to low-risk thresholds (<b>never start alcohol for cardiovascular benefit</b>).</td></tr>
+          <tr><td class="h">First-line classes</td><td><b>Thiazide-type diuretic</b> (chlorthalidone preferred) &middot; <b>ACE inhibitor OR angiotensin receptor blocker</b> &middot; <b>dihydropyridine calcium channel blocker</b>. Beta blockers are deliberately absent.</td></tr>
+          <tr><td class="h">Thiazide</td><td>Monitor electrolytes, uric acid, volume status. Hyponatraemia &middot; hypokalaemia &middot; <b>hyperuricaemia may precipitate gout</b> &middot; volume depletion. <b>At 65+, check sodium</b> &mdash; especially women and low-normal sodium. With a beta blocker: higher new-onset diabetes risk.</td></tr>
+          <tr><td class="h">ACE inhibitor / ARB</td><td><b>Dry cough</b> (bradykinin-mediated, up to ~1 in 5 &rarr; switch to an ARB) &middot; hyperkalaemia &middot; creatinine rise &middot; <b>angioedema</b>, <b>2&ndash;4&times; more common in Black patients</b>. <b>Avoid:</b> pregnancy, prior angioedema, bilateral renal artery stenosis.</td></tr>
+          <tr><td class="h">Dihydropyridine</td><td><b>Dependent ankle oedema</b> is commonest &mdash; vasodilatory, so <i>a diuretic does not fix it</i>. Also flushing, headache, gingival enlargement.</td></tr>
+          <tr><td class="h">NEVER combine</td><td><b>ACE inhibitor + ARB</b> &mdash; hyperkalaemia and acute kidney injury risk <i>with no added benefit</i>; one is used INSTEAD of the other. <b>Beta blocker + verapamil/diltiazem</b> &mdash; both slow the sinus and AV nodes &rarr; severe bradycardia and heart block. Non-dihydropyridines are also avoided where the ejection fraction is reduced.</td></tr>
+          <tr><td class="h">Beta blockers</td><td><b>NOT first-line</b> for uncomplicated hypertension. Preferred where the comorbidity selects them: <b>heart failure with reduced ejection fraction, recent myocardial infarction, ischaemic disease</b>.</td></tr>
+          <tr><td class="h">Starting</td><td><b>Stage 1</b> &rarr; one first-line agent. <b>Stage 2</b> &rarr; two complementary agents, ideally a <b>single-pill combination</b> (adherence is itself a main determinant of control). <b>Preferred pairings:</b> a renin-angiotensin blocker with <i>either</i> a dihydropyridine <i>or</i> a thiazide-type diuretic.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="resist" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Resistance & Emergency</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Exclude the impostors first</td><td><b>Nonadherence is the commonest cause</b> of apparent resistance. Then measurement error &middot; white coat effect &middot; high sodium or alcohol &middot; interfering drugs &middot; undiagnosed sleep apnoea or secondary hypertension.</td></tr>
+          <tr><td class="h">Step 1</td><td><b>Optimise the diuretic</b> &mdash; chlorthalidone preferred, class matched to renal function. An inadequate diuretic is a common reason the other two agents appear to fail.</td></tr>
+          <tr><td class="h">Step 2</td><td>Titrate the renin-angiotensin blocker and the dihydropyridine to maximally tolerated doses.</td></tr>
+          <tr><td class="h">Step 3</td><td>Add <b>spironolactone</b> &mdash; the most evidence-supported fourth agent &mdash; if filtration rate and potassium allow.</td></tr>
+          <tr><td class="h">Step 4</td><td>Escalate by physiology and comorbidity: beta blockade &middot; <b>hydralazine</b> (reflex tachycardia and fluid retention &rarr; needs combination therapy) &middot; <b>clonidine</b> (sedation, dry mouth, <b>rebound hypertension on abrupt withdrawal</b>). Then refer to a hypertension specialist.</td></tr>
+          <tr><td class="h">Emergency: how fast</td><td><b>Reduce mean arterial pressure by no more than ~20&ndash;25% in the first hour</b>, then toward ~160/100&ndash;110 over 2&ndash;6 hours, normalising gradually over a day or two.</td></tr>
+          <tr><td class="h">Emergency: why not faster</td><td><b>Autoregulation has adapted to the higher pressure.</b> The organs reset the range over which they protect their own perfusion, so normalising too fast leaves them underperfused at a value that would be safe in anyone else &mdash; causing ischaemic stroke, myocardial injury or renal failure.</td></tr>
+          <tr><td class="h">Exceptions</td><td><b>Aortic dissection</b> and <b>some stroke syndromes</b> &mdash; acute stroke follows its own protocol.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the CMS I Exam 4 Study Guide (Class of 2028). For the full explanation behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
