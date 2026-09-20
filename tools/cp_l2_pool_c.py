@@ -180,7 +180,7 @@ POOL_C = [
    c=0, cite=c(60)),
 
  dict(topic="Psoriasis", io=IOD,
-   q="Which cells drive psoriasis, and which cytokines does the lecture name?",
+   q="Which cells drive psoriasis, and which cytokines are named?",
    opts=[
      ["Active T cells infiltrating the epidermis stimulate keratinocyte proliferation and excessive cytokine production, particularly tumour necrosis factor alpha, interferon gamma and interleukin-12",
       "Correct. It is a chronic autoimmune inflammatory dermatosis, and skin cells multiply up to ten times faster than normal."],
@@ -362,7 +362,7 @@ POOL_C = [
    c=0, cite=c(80)),
 
  dict(topic="Melanoma", io=IOD,
-   q="How is melanoma risk inherited, according to the lecture?",
+   q="How is melanoma risk inherited?",
    opts=[
      ["As an autosomal dominant trait with variable penetrance",
       "Correct, though ultraviolet light and oxidative stress remain the primary driving factor."],

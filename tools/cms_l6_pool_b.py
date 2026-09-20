@@ -50,7 +50,7 @@ POOL_B = [
    c=0, cite=c(26)),
 
  dict(topic="Tinea corporis", io=IOB, slot="differential",
-   q="Which condition does the deck flag in a clinical pearl as often confused with tinea corporis?",
+   q="Which condition is flagged in a clinical pearl as often confused with tinea corporis?",
    opts=[
      ["Nummular eczema",
       "Correct — the deck gives it its own pearl slide."],
@@ -245,7 +245,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Tinea pedis", io=IOC, slot="education",
-   q="Which piece of tinea pedis patient education does the deck mark as essential?",
+   q="Which piece of tinea pedis patient education is marked as essential?",
    opts=[
      ["Dry between the toes after bathing",
       "Correct — alongside antifungal foot powder for shoes, open-toed sandals when possible, sandals in community showers, and changing socks frequently."],

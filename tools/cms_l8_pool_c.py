@@ -144,7 +144,7 @@ POOL_C = [
    c=0, cite=c(39)),
 
  dict(topic="Dysplastic naevus", io=IOB,
-   q="What relationship does the lecture draw between naevus count and melanoma risk?",
+   q="What relationship is drawn between naevus count and melanoma risk?",
    opts=[
      ["The higher the number of naevi, the higher the risk of melanoma",
       "Correct — in dysplastic naevus syndrome there can be over one hundred by adolescence."],

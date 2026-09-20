@@ -7,7 +7,7 @@ IO8 = "Describe other potential problems with antimicrobial therapy"
 
 POOL_C = [
  dict(topic="Resistance definition", io=IO7,
-   q="How does the lecture define resistance?",
+   q="How is resistance defined?",
    opts=[
      ["The ability of a microorganism to avoid the harmful effects of an antibiotic by destroying it, transporting it out of the cell, or undergoing changes that block its effects",
       "Correct. All three routes appear again later as the cellular and biochemical mechanisms."],
@@ -20,7 +20,7 @@ POOL_C = [
    c=0, cite=c(62)),
 
  dict(topic="Why resistance occurs", io=IO7,
-   q="According to the lecture, resistance occurs because of which two things?",
+   q="Resistance occurs because of which two things?",
    opts=[
      ["Antibiotics actively mutate bacterial DNA, and mutation spreads by conjugation",
       "The antibiotic selects rather than causes the variation."],
@@ -124,7 +124,7 @@ POOL_C = [
    c=0, cite=c(71)),
 
  dict(topic="Drivers of resistance", io=IO7,
-   q="Which of these does the lecture list as a behaviour that increases resistance?",
+   q="Which of these is listed as a behaviour that increases resistance?",
    opts=[
      ["Completing a prescribed regimen in full",
       "Failing to complete the regimen is the listed problem; completing it is protective."],
@@ -163,7 +163,7 @@ POOL_C = [
    c=3, cite=c(75)),
 
  dict(topic="Drivers of resistance", io=IO7,
-   q="Which environmental contributors to resistance does the lecture raise?",
+   q="Which environmental contributors to resistance are raised?",
    opts=[
      ["Environmental warming, with potential correlations to pesticide use in food production and to microplastic contamination",
       "Correct. The latter two are explicitly framed as potential correlations rather than established causes."],
@@ -176,7 +176,7 @@ POOL_C = [
    c=0, cite=c(75)),
 
  dict(topic="Problems with therapy", io=IO8,
-   q="Which four problems with antimicrobial therapy does the lecture group together?",
+   q="Which four problems with antimicrobial therapy are grouped together?",
    opts=[
      ["Cost, availability, storage and administration route",
       "None of these four are the listed problems."],
@@ -202,7 +202,7 @@ POOL_C = [
    c=2, cite=c(59)),
 
  dict(topic="Superinfection", io=IO8,
-   q="Which organisms does the lecture name as typically involved in superinfection?",
+   q="Which organisms are named as typically involved in superinfection?",
    opts=[
      ["Streptococcus pyogenes and Neisseria meningitidis",
       "Neither is listed."],
@@ -241,7 +241,7 @@ POOL_C = [
    c=1, cite=c(60)),
 
  dict(topic="Direct toxicity", io=IO8,
-   q="Which toxicity does the lecture attribute to chloroquine?",
+   q="Which toxicity is attributed to chloroquine?",
    opts=[
      ["Seizures",
       "Seizures are attributed to ciprofloxacin."],

@@ -32,7 +32,7 @@ POOL_B = [
    c=0, cite=c(33)),
 
  dict(topic="Atopic dermatitis", io=IO1,
-   q="Which set gives the MAJOR indicators of atopic dermatitis as the lecture lists them?",
+   q="Which set gives the MAJOR indicators of atopic dermatitis?",
    opts=[
      ["Pruritus, rash in areas typical of the disease, chronic or repeated symptoms, and family history",
       "Correct. Raised immunoglobulin E, positive skin tests, dry patchy scales and infection susceptibility are the minor ones."],
@@ -58,7 +58,7 @@ POOL_B = [
    c=0, cite=c(36)),
 
  dict(topic="Atopic dermatitis", io=IO3,
-   q="Why does the lecture include a sedating antihistamine in the non-pharmacologic advice for a child with atopic dermatitis?",
+   q="Why is a sedating antihistamine included in the non-pharmacologic advice for a child with atopic dermatitis?",
    opts=[
      ["To reduce night-time itching",
       "Correct. The sedating property is being used for the itch that disrupts sleep."],
@@ -84,7 +84,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="Atopic dermatitis", io=IO3,
-   q="Which potency of topical steroid does the lecture direct to the face, intertriginous areas and infants?",
+   q="Which potency of topical steroid is directed to the face, intertriginous areas and infants?",
    opts=[
      ["Low potency",
       "Correct, and the lecture notes low potency is also better for long term therapy."],
@@ -136,7 +136,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="Topical corticosteroids", io=IO5,
-   q="Which systemic effects does the lecture attribute to topical corticosteroids?",
+   q="Which systemic effects are attributed to topical corticosteroids?",
    opts=[
      ["Adrenal suppression, infections, hyperglycaemia, glaucoma, cataracts and growth retardation in children",
       "Correct. That a topical agent can do all of this is the point of the potency and duration warnings."],
@@ -149,7 +149,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="Topical corticosteroids", io=IO1,
-   q="Which agent does the lecture place in class 1, superpotent?",
+   q="Which agent is placed in class 1, superpotent?",
    opts=[
      ["Clobetasol propionate",
       "Correct, listed in class 1 in cream, ointment, lotion, spray, shampoo and foam forms."],
@@ -188,7 +188,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Topical immunomodulators", io=IO10,
-   q="Which two counselling points does the lecture attach to the topical immunomodulators?",
+   q="Which two counselling points are attached to the topical immunomodulators?",
    opts=[
      ["Expect a burning sensation, and use a high SPF sunscreen",
       "Correct. Both are given explicitly with these agents."],
@@ -214,7 +214,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Bacitracin", io=IO2,
-   q="How does bacitracin work, and what does the lecture say about its systemic toxicity?",
+   q="How does bacitracin work, and what is true of its systemic toxicity?",
    opts=[
      ["It is a peptide antibiotic that prevents cell wall synthesis, and it has no systemic toxicity",
       "Correct, with allergic dermatitis noted only rarely."],
@@ -227,7 +227,7 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Mupirocin", io=IO3,
-   q="Which use does the lecture give for mupirocin beyond ordinary skin infection?",
+   q="Which use is given for mupirocin beyond ordinary skin infection?",
    opts=[
      ["Eliminating nasal carriage of Staphylococcus aureus",
       "Correct, and its coverage is most gram positive aerobes, especially meticillin-resistant Staphylococcus aureus."],
@@ -253,7 +253,7 @@ POOL_B = [
    c=0, cite=c(47)),
 
  dict(topic="Polymyxin B", io=IO7,
-   q="What warning does the lecture attach to polymyxin B?",
+   q="What warning is attached to polymyxin B?",
    opts=[
      ["Avoid using it on open wounds or denuded skin in high doses, because of neurotoxicity and nephrotoxicity risk",
       "Correct. Loss of the barrier is what turns a topical agent into a systemic exposure."],
@@ -279,7 +279,7 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Topical aminoglycosides", io=IO5,
-   q="Which problem does the lecture specifically attach to topical neomycin?",
+   q="Which problem is specifically attached to topical neomycin?",
    opts=[
      ["It frequently causes sensitisation",
       "Correct, and the class can also accumulate systemically."],
@@ -331,7 +331,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Ciclopirox", io=IO10,
-   q="A patient asks about the ciclopirox nail lacquer for onychomycosis. What does the lecture say about how well it works?",
+   q="A patient asks about the ciclopirox nail lacquer for onychomycosis. What is true of how well it works?",
    opts=[
      ["It is less than twelve per cent effective",
       "Correct, and saying so up front is what keeps expectations honest for a months-long treatment."],
@@ -344,7 +344,7 @@ POOL_B = [
    c=0, cite=c(52)),
 
  dict(topic="Allylamines", io=IO1,
-   q="Which two agents does the lecture name as allylamines, and how do they work?",
+   q="Which two agents are named as allylamines, and how do they work?",
    opts=[
      ["Naftifine and terbinafine, which inhibit ergosterol production and prevent cell wall synthesis",
       "Correct, with local irritation as the adverse reaction."],
@@ -357,7 +357,7 @@ POOL_B = [
    c=0, cite=c(53)),
 
  dict(topic="Other antifungals", io=IO3,
-   q="Which gap in coverage does the lecture flag for tolnaftate?",
+   q="Which gap in coverage is flagged for tolnaftate?",
    opts=[
      ["It has no Candida activity",
       "Correct, and nystatin is the agent the lecture pairs with candidal infection."],
@@ -370,7 +370,7 @@ POOL_B = [
    c=0, cite=c(54)),
 
  dict(topic="Other antifungals", io=IO4,
-   q="What does the lecture say about nystatin's absorption?",
+   q="What is true of nystatin's absorption?",
    opts=[
      ["It has no oral absorption",
       "Correct, which is why it is used for cutaneous and mucosal candidal infection rather than systemically."],
@@ -396,7 +396,7 @@ POOL_B = [
    c=0, cite=c(56)),
 
  dict(topic="Imiquimod", io=IO3,
-   q="Which set gives imiquimod's indications as the lecture lists them?",
+   q="Which set gives imiquimod's indications?",
    opts=[
      ["External and perianal warts, actinic keratoses, and basal cell carcinoma",
       "Correct. All three sit under the same immunomodulator."],
@@ -422,7 +422,7 @@ POOL_B = [
    c=0, cite=c(57)),
 
  dict(topic="Imiquimod", io=IO10,
-   q="A patient on imiquimod reports redness, swelling and erosions at the site. What does the lecture say about this?",
+   q="A patient on imiquimod reports redness, swelling and erosions at the site. What is true of this?",
    opts=[
      ["Skin irritation occurs in virtually all patients, and the degree of inflammation parallels efficacy",
       "Correct, so the reaction is expected and is not by itself a reason to stop."],

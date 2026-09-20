@@ -103,7 +103,7 @@ POOL_B = [
    c=0, cite=ci(21)),
 
  dict(topic="Neutropenia", io=IOD, slot="escalation",
-   q="How does the deck categorise neutropenia by absolute neutrophil count?",
+   q="How is neutropenia categorised by absolute neutrophil count?",
    opts=[
      ["Mild is 1,000 to under 1,500; moderate is 500 to under 1,000; severe is under 500 cells per microlitre",
       "Correct — from the Berlinger table, which exists on the slide only as a picture."],
@@ -207,7 +207,7 @@ POOL_B = [
    c=0, cite=c(29)),
 
  dict(topic="Platelets", io=IOE3, slot="differential",
-   q="Which causes of INCREASED platelets does the deck list?",
+   q="Which causes of INCREASED platelets are listed?",
    opts=[
      ["Trauma, acute hemorrhage, iron deficiency and polycythemia vera",
       "Correct — note that iron deficiency raises platelets while lowering red cells."],
@@ -220,7 +220,7 @@ POOL_B = [
    c=0, cite=c(30)),
 
  dict(topic="Platelets", io=IOE3, slot="differential",
-   q="What decreases the platelet count, according to the deck?",
+   q="What decreases the platelet count?",
    opts=[
      ["Marrow suppression from chemotherapy, alcohol, radiation, aplastic anemia or drugs",
       "Correct — all five suppression causes grouped under one heading."],
@@ -272,7 +272,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Hemoglobin vs hematocrit", io=IOB, slot="test finding",
-   q="What rule of thumb does the deck give relating hemoglobin to hematocrit?",
+   q="What rule of thumb is given relating hemoglobin to hematocrit?",
    opts=[
      ["Hemoglobin multiplied by three equals the hematocrit",
       "Correct — the rule of thumb the slide prints."],
@@ -415,7 +415,7 @@ POOL_B = [
    c=0, cite=ci(54)),
 
  dict(topic="Red blood cell count", io=IOC, slot="test finding",
-   q="What does the deck say about using the red blood cell count to diagnose anemia?",
+   q="What is true of using the red blood cell count to diagnose anemia?",
    opts=[
      ["It does not accurately measure oxygen carrying capacity and is not directly used to diagnose anemia, though it is still used to evaluate it",
       "Correct — a distinction worth holding, since the count is on every panel."],
@@ -441,7 +441,7 @@ POOL_B = [
    c=0, cite=c(50)),
 
  dict(topic="Red blood cell count", io=IOC, slot="etiology",
-   q="Which three conditions does the deck give as examples of chronic hypoxia?",
+   q="Which three conditions are given as examples of chronic hypoxia?",
    opts=[
      ["Chronic obstructive pulmonary disease, sleep apnea and high altitude",
       "Correct — the three examples given."],
@@ -467,7 +467,7 @@ POOL_B = [
    c=0, cite=c(50)),
 
  dict(topic="Hemoglobin", io=IOB, slot="test finding",
-   q="Which example does the deck give for hemoglobin raised by dehydration, and which for hemoglobin lowered by dilution?",
+   q="Which example is given for hemoglobin raised by dehydration, and which for hemoglobin lowered by dilution?",
    opts=[
      ["Hypovolemia raises it, hypervolemia lowers it",
       "Correct — the two examples the slide gives in parentheses."],
@@ -480,7 +480,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Hematocrit", io=IOB, slot="differential",
-   q="Which causes of a raised hematocrit does the deck list that do not appear on the hemoglobin slide?",
+   q="Which causes of a raised hematocrit are listed that do not appear on the hemoglobin slide?",
    opts=[
      ["Smoking and hypoventilation",
       "Correct — the hematocrit slide adds these two alongside polycythemia vera and dehydration."],
@@ -493,7 +493,7 @@ POOL_B = [
    c=0, cite=c(52)),
 
  dict(topic="Hematocrit", io=IOB, slot="differential",
-   q="Which four causes of a decreased hematocrit does the deck list?",
+   q="Which four causes of a decreased hematocrit are listed?",
    opts=[
      ["Anemias, acute or chronic blood loss, hemolysis and dilution",
       "Correct — hemolysis is on the hematocrit list specifically."],

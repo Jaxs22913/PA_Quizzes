@@ -196,7 +196,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Indications", io=IOG, slot="manifestation",
-   q="Which cluster of symptoms does the deck give as an indication for a chemistry panel?",
+   q="Which cluster of symptoms is given as an indication for a chemistry panel?",
    opts=[
      ["Fatigue, weakness, oedema, jaundice, confusion, nausea and vomiting",
       "Correct — the symptom list the deck prints under its indications."],
@@ -209,7 +209,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Indications", io=IOG, slot="initial test",
-   q="Which chronic conditions does the deck name as monitoring indications for a chemistry panel?",
+   q="Which chronic conditions are named as monitoring indications for a chemistry panel?",
    opts=[
      ["Diabetes, chronic kidney disease, hypertension, and liver disease",
       "Correct — the four conditions the deck lists under monitoring."],
@@ -292,7 +292,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Reference ranges", io=IOA, slot="education",
-   q="Following from how a normal range is defined, what does the deck conclude about a normal result?",
+   q="Following from how a normal range is defined, what is concluded about a normal result?",
    opts=[
      ["A normal value does not exclude disease",
       "Correct — the deck states this directly."],
@@ -305,7 +305,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Reference ranges", io=IOA, slot="education",
-   q="What does the deck advise before launching an extensive workup on a borderline abnormal result?",
+   q="What is advised before launching an extensive workup on a borderline abnormal result?",
    opts=[
      ["Repeat or confirm the abnormality",
       "Correct — the deck's instruction, with confirming a raised alkaline phosphatase as its example."],

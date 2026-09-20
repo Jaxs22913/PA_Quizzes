@@ -21,7 +21,7 @@ POOL_E = [
    c=0, cite=c(57)),
 
  dict(topic="Kaposi sarcoma", io=IOA, slot="epidemiology",
-   q="Which clinical forms of Kaposi sarcoma does the deck describe?",
+   q="Which clinical forms of Kaposi sarcoma are described?",
    opts=[
      ["Classic in older men with a chronic course; endemic, often aggressive in young Black men in equatorial Africa; iatrogenic with immunosuppressive therapy; and epidemic in acquired immunodeficiency",
       "Correct — four forms, each with a different population and course."],
@@ -34,7 +34,7 @@ POOL_E = [
    c=0, cite=c(63)),
 
  dict(topic="Kaposi sarcoma", io=IOA, slot="manifestation",
-   q="What does Kaposi sarcoma look like, and which examination does the deck call essential when it is suspected?",
+   q="What does Kaposi sarcoma look like, and which examination is called essential when it is suspected?",
    opts=[
      ["Red or purple macules, plaques or nodules on skin or mucous membranes; ORAL examination is essential, since hard palate lesions are common and may be the presenting site",
       "Correct — the mouth may be where it declares itself."],
@@ -47,7 +47,7 @@ POOL_E = [
    c=0, cite=c(64)),
 
  dict(topic="Kaposi sarcoma", io=IOA, slot="test finding",
-   q="What warning does the deck give about oedema in Kaposi sarcoma?",
+   q="What warning is given about oedema in Kaposi sarcoma?",
    opts=[
      ["Marked oedema may occur even with few or no visible skin lesions, so oedema severity must not be used to gauge disease burden",
       "Correct — the skin can look almost clear while disease is extensive."],
@@ -73,7 +73,7 @@ POOL_E = [
    c=0, cite=c(66)),
 
  dict(topic="Kaposi sarcoma", io=IOB, slot="escalation",
-   q="Which systemic agents are first-line in Kaposi sarcoma, and what does the deck say about combining them with antiretroviral therapy?",
+   q="Which systemic agents are first-line in Kaposi sarcoma, and what is true of combining them with antiretroviral therapy?",
    opts=[
      ["Liposomal doxorubicin and paclitaxel; antiretroviral therapy plus chemotherapy is more effective than antiretroviral therapy alone in advanced disease",
       "Correct — combination beats antiretroviral therapy alone once disease is advanced."],
@@ -112,7 +112,7 @@ POOL_E = [
    c=0, cite=c(70)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, slot="test finding",
-   q="Which two clinical clues does the deck give for suspecting cutaneous T-cell lymphoma in a chronic eruption?",
+   q="Which two clinical clues are given for suspecting cutaneous T-cell lymphoma in a chronic eruption?",
    opts=[
      ["Itch out of proportion to the apparent inflammatory activity, and follicular involvement with hair loss",
       "Correct — folliculotropism discriminates from routine eczema or psoriasis."],
@@ -125,7 +125,7 @@ POOL_E = [
    c=0, cite=c(70)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, slot="first-line",
-   q="What treatment philosophy does the deck set out for cutaneous T-cell lymphoma?",
+   q="What treatment philosophy is set out for cutaneous T-cell lymphoma?",
    opts=[
      ["A stage-directed, skin-first approach for most early disease, because early aggressive treatment has not been proven to cure or prevent progression and may cause complications and premature death",
       "Correct — aggression is a harm here, not a virtue."],
@@ -138,7 +138,7 @@ POOL_E = [
    c=0, cite=c(75)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, slot="agent/regimen",
-   q="Which initial skin-directed therapies does the deck list for cutaneous T-cell lymphoma?",
+   q="Which initial skin-directed therapies are listed for cutaneous T-cell lymphoma?",
    opts=[
      ["Topical corticosteroids, topical mechlorethamine, bexarotene gel, and ultraviolet phototherapy",
       "Correct — four skin-directed options."],
@@ -190,7 +190,7 @@ POOL_E = [
    c=0, cite=c(84)),
 
  dict(topic="Nail unit neoplasms", io=IOA, slot="differential",
-   q="What does the deck say about amelanotic nail melanoma?",
+   q="What is true of amelanotic nail melanoma?",
    opts=[
      ["It may appear red, pink, eroded or mass-like without a dark band, and the absence of pigment does NOT exclude melanoma",
       "Correct — a pigment-free nail lesion can still be melanoma, so consider biopsy for any unexplained, progressive single-nail lesion."],
@@ -216,7 +216,7 @@ POOL_E = [
    c=0, cite=c(86)),
 
  dict(topic="Nail unit neoplasms", io=IOB, slot="escalation",
-   q="What does the deck say about amputation in nail unit melanoma?",
+   q="What is true of amputation in nail unit melanoma?",
    opts=[
      ["It is NOT automatic — digit-sparing wide excision or Mohs with immunostaining is contemporary care, with amputation reserved for deep, extensive or bone-involving disease",
       "Correct — the digit is preserved where margins can be reliably assessed."],
@@ -229,7 +229,7 @@ POOL_E = [
    c=0, cite=c(94)),
 
  dict(topic="Nail unit neoplasms", io=IOB, slot="referral",
-   q="Which findings does the deck list as urgent referral triggers in the nail unit?",
+   q="Which findings are listed as urgent referral triggers in the nail unit?",
    opts=[
      ["New or changing single-digit longitudinal melanonychia, proximal widening, Hutchinson sign, or nail dystrophy with pigment",
       "Correct — the list also includes an unexplained subungual mass, persistent ulceration or bleeding, and a chronic wart or infection that fails appropriate therapy. That failed-wart history is the one most easily dismissed."],

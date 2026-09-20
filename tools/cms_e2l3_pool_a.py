@@ -14,7 +14,7 @@ POOL_A = [
 
  # ---------------- Etiology ----------------
  dict(topic="Amaurosis fugax", io=IOA, lead="etiology",
-   q="A 66-year-old man is being worked up for amaurosis fugax. Which two embolic sources does the lecture name?",
+   q="A 66-year-old man is being worked up for amaurosis fugax. Which two embolic sources are named?",
    opts=[
      ["Carotid and cardiac", "Correct, with retinal vascular spasm as a third mechanism."],
      ["Pulmonary and renal", "Neither is a source named for retinal emboli."],
@@ -23,7 +23,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="CRAO", io=IOA, lead="etiology",
-   q="A 74-year-old man has a central retinal artery occlusion. Which etiologies does the lecture list?",
+   q="A 74-year-old man has a central retinal artery occlusion. Which etiologies are listed?",
    opts=[
      ["Arteriosclerosis, atherosclerosis and emboli", "Correct, the emboli being carotid or cardiac."],
      ["Venous thrombosis", "That is the vein occlusion mechanism."],
@@ -32,7 +32,7 @@ POOL_A = [
    c=0, cite=c(37)),
 
  dict(topic="Optic neuritis", io=IOA, lead="etiology",
-   q="A 30-year-old woman has optic neuritis. Which causes does the lecture give?",
+   q="A 30-year-old woman has optic neuritis. Which causes are given?",
    opts=[
      ["Multiple sclerosis, autoimmune, postviral or idiopathic", "Correct."],
      ["Embolism arising from the carotid artery or heart", "That causes amaurosis fugax or arterial occlusion."],
@@ -50,7 +50,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Retinal detachment", io=IOA, lead="etiology",
-   q="A 70-year-old woman is told she has one of the three types of retinal detachment. Which types does the lecture name?",
+   q="A 70-year-old woman is told she has one of the three types of retinal detachment. Which types are named?",
    opts=[
      ["Rhegmatogenous, traction and serous", "Correct; the serous form is also called exudative."],
      ["Arteritic and non-arteritic types", "Those are the anterior ischemic optic neuropathies."],
@@ -59,7 +59,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Papilledema", io=IOA, lead="etiology",
-   q="A 37-year-old man has papilledema. Which causes does the lecture list?",
+   q="A 37-year-old man has papilledema. Which causes are listed?",
    opts=[
      ["Tumour, trauma, infection, haemorrhage and vitamin A toxicity", "Correct, all raising intracranial pressure."],
      ["Carotid emboli, cardiac emboli and retinal vascular spasm", "Those cause amaurosis fugax and arterial occlusion."],
@@ -77,7 +77,7 @@ POOL_A = [
    c=0, cite=c(49)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="etiology",
-   q="A 63-year-old man has chronic open-angle glaucoma. How does the lecture characterise its cause?",
+   q="A 63-year-old man has chronic open-angle glaucoma. How is its cause characterised?",
    opts=[
      ["Idiopathic optic nerve damage", "Correct, from trabecular meshwork change with aging."],
      ["Mechanical closure by the iris", "That is the acute angle-closure mechanism."],
@@ -86,7 +86,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="etiology",
-   q="A 61-year-old woman has secondary angle-closure glaucoma. Which mechanical causes does the lecture list?",
+   q="A 61-year-old woman has secondary angle-closure glaucoma. Which mechanical causes are listed?",
    opts=[
      ["Tumour, scarring or other mechanical causes", "Correct."],
      ["Embolism and thrombosis", "Those are vascular, not mechanical."],
@@ -114,7 +114,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="AAION", io=IOA, lead="epidemiology",
-   q="A 74-year-old woman is being assessed for arteritic anterior ischemic optic neuropathy. Which age threshold does the lecture give?",
+   q="A 74-year-old woman is being assessed for arteritic anterior ischemic optic neuropathy. Which age threshold is given?",
    opts=[
      ["55 years and older", "Correct."],
      ["40 to 60 years", "That is the non-arteritic group."],
@@ -123,7 +123,7 @@ POOL_A = [
    c=0, cite=c(49)),
 
  dict(topic="NAION", io=IOA, lead="epidemiology",
-   q="A 51-year-old man is diagnosed with non-arteritic anterior ischemic optic neuropathy. Which age range does the lecture give?",
+   q="A 51-year-old man is diagnosed with non-arteritic anterior ischemic optic neuropathy. Which age range is given?",
    opts=[
      ["40 to 60 years", "Correct, accounting for 90 to 95 percent of cases."],
      ["55 years and older", "That is the arteritic group."],
@@ -141,7 +141,7 @@ POOL_A = [
    c=0, cite=c(13)),
 
  dict(topic="CRVO", io=IOA, lead="epidemiology",
-   q="A 64-year-old woman asks how the two central retinal vascular occlusions compare in frequency. What does the lecture state?",
+   q="A 64-year-old woman asks how the two central retinal vascular occlusions compare in frequency. What is stated?",
    opts=[
      ["Vein occlusion is the more common", "Correct."],
      ["They are equally common", "One is stated to be more common."],
@@ -151,7 +151,7 @@ POOL_A = [
 
  # ---------------- Risk factors ----------------
  dict(topic="Amaurosis fugax", io=IOA, lead="risk factor",
-   q="A 68-year-old man with amaurosis fugax is assessed for risk factors. Which does the lecture list?",
+   q="A 68-year-old man with amaurosis fugax is assessed for risk factors. Which is listed?",
    opts=[
      ["Diabetes, hypertension and atherosclerosis", "Correct, with older age, valve disease, sickle cell and Raynaud's."],
      ["Myopia and cataract surgery", "Those are retinal detachment risks."],
@@ -160,7 +160,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Retinal detachment", io=IOA, lead="risk factor",
-   q="A 57-year-old woman is counselled about retinal detachment risk. Which set does the lecture list?",
+   q="A 57-year-old woman is counselled about retinal detachment risk. Which set is listed?",
    opts=[
      ["Myopia, trauma, cataract extraction and diabetes", "Correct, with tumour, connective tissue disease and family history."],
      ["Anticholinergics and nebulized bronchodilators", "Those are angle-closure risks."],
@@ -169,7 +169,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="risk factor",
-   q="A 44-year-old African American man asks about his glaucoma risk. Which factors does the lecture list for the chronic open-angle form?",
+   q="A 44-year-old African American man asks about his glaucoma risk. Which factors are listed for the chronic open-angle form?",
    opts=[
      ["African American race, age over 40 and diabetes", "Correct, with Hispanic ethnicity, family history, hypertension and myopia."],
      ["Sickle cell disease, Raynaud's and valve disease", "Those are listed for amaurosis fugax."],
@@ -178,7 +178,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="risk factor",
-   q="A 60-year-old woman is assessed for angle-closure risk. Which does the lecture list?",
+   q="A 60-year-old woman is assessed for angle-closure risk. Which is listed?",
    opts=[
      ["Systemic anticholinergics and prior uveitis", "Correct, with nebulized bronchodilators and lens dislocation."],
      ["Myopia and cataract extraction", "Those are detachment risks."],
@@ -187,7 +187,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="CRVO", io=IOA, lead="risk factor",
-   q="A 66-year-old man with a central retinal vein occlusion is assessed. Which risk factors does the lecture list?",
+   q="A 66-year-old man with a central retinal vein occlusion is assessed. Which risk factors are listed?",
    opts=[
      ["Hypertension, diabetes and hyperlipidaemia", "Correct, with age over 50, hypercoagulable states, obesity and endocarditis."],
      ["Myopia, trauma and vitreous shrinkage", "Those are detachment risks."],
@@ -196,7 +196,7 @@ POOL_A = [
    c=0, cite=c(32)),
 
  dict(topic="NAION", io=IOA, lead="risk factor",
-   q="A 53-year-old man with non-arteritic anterior ischemic optic neuropathy is reviewed. Which associations does the lecture name?",
+   q="A 53-year-old man with non-arteritic anterior ischemic optic neuropathy is reviewed. Which associations are named?",
    opts=[
      ["Hypertension, diabetes, high cholesterol and sleep apnea", "Correct, with a small structural disc at risk."],
      ["Anterior uveitis and systemic anticholinergic drugs", "Those are angle-closure risks."],
@@ -233,7 +233,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="manifestation",
-   q="A 62-year-old man has acute angle-closure glaucoma. Which symptom set does the lecture give?",
+   q="A 62-year-old man has acute angle-closure glaucoma. Which symptom set is given?",
    opts=[
      ["Severe eye pain, headache, nausea and vomiting", "Correct, with coloured halos around lights and decreased vision."],
      ["Painless gradual peripheral field loss", "That is the chronic open-angle form."],
@@ -242,7 +242,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="manifestation",
-   q="A 68-year-old woman has chronic open-angle glaucoma. How does the lecture describe the typical presentation?",
+   q="A 68-year-old woman has chronic open-angle glaucoma. How is the typical presentation described?",
    opts=[
      ["Asymptomatic in most patients", "Correct; peripheral field is lost slowly and silently."],
      ["Severe eye pain and vomiting", "That is the acute angle-closure form."],
@@ -260,7 +260,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Optic neuritis", io=IOA, lead="manifestation",
-   q="A 29-year-old man has optic neuritis. Which visual finding besides reduced acuity does the lecture name?",
+   q="A 29-year-old man has optic neuritis. Which visual finding besides reduced acuity is named?",
    opts=[
      ["Loss of colour vision", "Correct, with central vision loss and a relative afferent pupillary defect."],
      ["Tunnel vision", "That belongs to chronic glaucoma."],
@@ -269,7 +269,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Retinal detachment", io=IOA, lead="manifestation",
-   q="A 69-year-old man has a retinal detachment. Which feature does the lecture describe that is unusual among these diagnoses?",
+   q="A 69-year-old man has a retinal detachment. Which feature is described that is unusual among these diagnoses?",
    opts=[
      ["Vision changes with head position", "Correct, because the detached retina moves."],
      ["Vision improves in bright light", "Not a described feature."],
@@ -278,7 +278,7 @@ POOL_A = [
    c=0, cite=c(27)),
 
  dict(topic="CRAO", io=IOA, lead="manifestation",
-   q="A 73-year-old man has a central retinal artery occlusion. Which range of visual acuity does the lecture give?",
+   q="A 73-year-old man has a central retinal artery occlusion. Which range of visual acuity is given?",
    opts=[
      ["Counting fingers to light perception", "Correct, describing profound loss."],
      ["20/40 to 20/60", "Far better than the loss described."],
@@ -287,7 +287,7 @@ POOL_A = [
    c=0, cite=c(38)),
 
  dict(topic="CRVO", io=IOA, lead="manifestation",
-   q="A 62-year-old man has a central retinal vein occlusion. How does the lecture describe the onset?",
+   q="A 62-year-old man has a central retinal vein occlusion. How is the onset described?",
    opts=[
      ["Sudden and painless, sometimes gradual over days to weeks", "Correct."],
      ["Sudden and severely painful", "That is angle-closure glaucoma."],
@@ -296,7 +296,7 @@ POOL_A = [
    c=0, cite=c(33)),
 
  dict(topic="Papilledema", io=IOA, lead="manifestation",
-   q="A 35-year-old woman has papilledema. Which visual complaints does the lecture list?",
+   q="A 35-year-old woman has papilledema. Which visual complaints are listed?",
    opts=[
      ["Flickering, blurry and double vision", "Correct, all non-specific."],
      ["A curtain across the field", "That belongs to detachment or amaurosis fugax."],
@@ -305,7 +305,7 @@ POOL_A = [
    c=0, cite=c(44)),
 
  dict(topic="Papilledema", io=IOA, lead="manifestation",
-   q="A 40-year-old man has papilledema. Which non-visual symptoms does the lecture list?",
+   q="A 40-year-old man has papilledema. Which non-visual symptoms are listed?",
    opts=[
      ["Nausea, vomiting and headache", "Correct, the non-specific signs of raised intracranial pressure."],
      ["Jaw claudication and scalp tenderness", "Those belong to arteritic optic neuropathy."],
@@ -314,7 +314,7 @@ POOL_A = [
    c=0, cite=c(44)),
 
  dict(topic="AAION", io=IOA, lead="manifestation",
-   q="A 77-year-old woman has arteritic anterior ischemic optic neuropathy. Which systemic symptoms does the lecture list?",
+   q="A 77-year-old woman has arteritic anterior ischemic optic neuropathy. Which systemic symptoms are listed?",
    opts=[
      ["Malaise, weight loss, headache, fever and scalp tenderness", "Correct, with jaw claudication on chewing."],
      ["Severe eye pain, nausea, vomiting and coloured halos", "Those belong to angle-closure glaucoma."],
@@ -323,7 +323,7 @@ POOL_A = [
    c=0, cite=c(49)),
 
  dict(topic="AION", io=IOA, lead="manifestation",
-   q="A 70-year-old man has anterior ischemic optic neuropathy. How does the lecture describe the vision loss?",
+   q="A 70-year-old man has anterior ischemic optic neuropathy. How is the vision loss described?",
    opts=[
      ["Sudden and painless, of side or central vision", "Correct."],
      ["Sudden and severely painful", "That is angle-closure glaucoma."],
@@ -332,7 +332,7 @@ POOL_A = [
    c=0, cite=c(50)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="finding",
-   q="A 58-year-old woman has acute angle-closure glaucoma. Which examination findings does the lecture list?",
+   q="A 58-year-old woman has acute angle-closure glaucoma. Which examination findings are listed?",
    opts=[
      ["Pupillary dilation, hazy cornea and a narrow angle", "Correct, with markedly elevated intraocular pressure."],
      ["Optic nerve cupping with splinter haemorrhages", "Those belong to the chronic form."],
@@ -341,7 +341,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="finding",
-   q="A 65-year-old man has chronic open-angle glaucoma. Which optic nerve findings does the lecture list besides cupping?",
+   q="A 65-year-old man has chronic open-angle glaucoma. Which optic nerve findings are listed besides cupping?",
    opts=[
      ["Rim pitting, bayoneting and splinter haemorrhages", "Correct, with rim thinning and visual field defects."],
      ["Cotton wool spots, venous dilation and haemorrhage", "Those are vein occlusion findings."],
@@ -359,7 +359,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="CRAO", io=IOA, lead="finding",
-   q="A 75-year-old man has a central retinal artery occlusion. Which fundus findings does the lecture describe?",
+   q="A 75-year-old man has a central retinal artery occlusion. Which fundus findings are described?",
    opts=[
      ["Pale retinal swelling with a cherry-red fovea", "Correct, with emboli visible in the central artery."],
      ["Disc swelling with cotton wool spots and haemorrhage", "That is vein occlusion."],
@@ -368,7 +368,7 @@ POOL_A = [
    c=0, cite=c(39)),
 
  dict(topic="CRVO", io=IOA, lead="finding",
-   q="A 67-year-old woman has a central retinal vein occlusion. Which findings does the lecture list on examination?",
+   q="A 67-year-old woman has a central retinal vein occlusion. Which findings are listed on examination?",
    opts=[
      ["Disc swelling, venous dilation and cotton wool spots", "Correct, with retinal haemorrhages."],
      ["Pale retinal swelling with a cherry-red spot at the fovea", "That is arterial occlusion."],
@@ -377,7 +377,7 @@ POOL_A = [
    c=0, cite=c(34)),
 
  dict(topic="Retinal detachment", io=IOA, lead="finding",
-   q="A 64-year-old man has a retinal detachment. How does the lecture describe a retinal tear on examination?",
+   q="A 64-year-old man has a retinal detachment. How is a retinal tear described on examination?",
    opts=[
      ["Orange and crescent shaped", "Correct, against the elevated grey detached retina."],
      ["Pale and wedge shaped", "That describes branch arterial occlusion."],
@@ -386,7 +386,7 @@ POOL_A = [
    c=0, cite=c(29)),
 
  dict(topic="Papilledema", io=IOA, lead="finding",
-   q="A 42-year-old woman has papilledema. Which fundus findings does the lecture list?",
+   q="A 42-year-old woman has papilledema. Which fundus findings are listed?",
    opts=[
      ["Engorged retinal veins and a swollen optic disc", "Correct, with or without retinal haemorrhages."],
      ["A cherry-red spot at the fovea with retinal pallor", "That is arterial occlusion."],

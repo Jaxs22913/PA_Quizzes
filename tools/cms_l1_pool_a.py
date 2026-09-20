@@ -178,7 +178,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Pretest probability", io="Define pretest probability",
-   q="Which set of inputs does the lecture list as informing pretest probability?",
+   q="Which set of inputs is listed as informing pretest probability?",
    opts=[
      ["Sensitivity, specificity, and the test result",
       "These determine posttest probability, once a result is in hand."],

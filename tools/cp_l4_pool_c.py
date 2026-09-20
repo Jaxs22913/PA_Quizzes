@@ -68,7 +68,7 @@ POOL_C = [
    c=0, cite=c(5)),
 
  dict(topic="Conjunctivitis", io=IO3, slot="etiology",
-   q="Which virus does the deck name as the viral cause of conjunctivitis?",
+   q="Which virus is named as the viral cause of conjunctivitis?",
    opts=[
      ["Adenovirus", "Correct — the deck's named viral agent."],
      ["Herpes simplex virus", "That deck entry is for epithelial keratitis."],
@@ -90,7 +90,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Episcleritis", io=IO3, slot="manifestation",
-   q="How does the deck characterise episcleritis?",
+   q="How is episcleritis characterised?",
    opts=[
      ["A self-limiting inflammatory blush, not vision-threatening and without severe pain",
       "Correct — the deck's characterisation, in deliberate contrast to scleritis."],
@@ -116,7 +116,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Scleritis", io=IO3, slot="etiology",
-   q="Which systemic diseases does the deck link strongly to scleritis?",
+   q="Which systemic diseases are linked strongly to scleritis?",
    opts=[
      ["Rheumatoid arthritis, granulomatosis with polyangiitis and systemic vasculitis",
       "Correct — the three the deck names."],
@@ -142,7 +142,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Anterior uveitis", io=IO3, slot="etiology",
-   q="Which systemic associations does the deck give for anterior uveitis?",
+   q="Which systemic associations are given for anterior uveitis?",
    opts=[
      ["Systemic lupus erythematosus, psoriatic arthritis, inflammatory bowel disease and ankylosing spondylitis",
       "Correct — the deck's four associations for iritis."],
@@ -164,7 +164,7 @@ POOL_C = [
    c=0, cite=c(15)),
 
  dict(topic="Keratitis", io=IO3, slot="risk factors",
-   q="Which patient group does the deck flag as at particular risk in keratitis, and from which organism?",
+   q="Which patient group is flagged as at particular risk in keratitis, and from which organism?",
    opts=[
      ["Contact lens wearers, from Pseudomonas",
       "Correct — the deck names both the group and the organism."],
@@ -177,7 +177,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Keratitis", io=IO3, slot="complication",
-   q="Which complications does the deck attach to keratitis?",
+   q="Which complications are attached to keratitis?",
    opts=[
      ["Corneal stromal ulceration, perforation and endophthalmitis",
       "Correct — the progression the deck sets out, which is why it is an emergency."],
@@ -203,7 +203,7 @@ POOL_C = [
    c=0, cite=c(16)),
 
  dict(topic="Orbital cellulitis", io=IO3, slot="manifestation",
-   q="Which findings does the deck give for orbital cellulitis that periorbital cellulitis lacks?",
+   q="Which findings are given for orbital cellulitis that periorbital cellulitis lacks?",
    opts=[
      ["Proptosis, decreased extraocular movement and a risk of optic nerve compression",
       "Correct — the deck's discriminating findings, all consequences of a post-septal collection."],
@@ -446,7 +446,7 @@ POOL_C = [
    c=0, cite=c(19)),
 
  dict(topic="Lacrimal disease", io=IO3, slot="manifestation",
-   q="Which lid deformity does the deck associate with dacryoadenitis?",
+   q="Which lid deformity is associated with dacryoadenitis?",
    opts=[
      ["An S-shaped lid deformity", "Correct — the deck's characteristic sign for lacrimal gland inflammation."],
      ["An inward-turning lid margin", "That is entropion."],
@@ -468,7 +468,7 @@ POOL_C = [
    c=0, cite=c(19)),
 
  dict(topic="Subconjunctival haemorrhage", io=IO3, slot="risk factors",
-   q="Which triggers does the deck list for subconjunctival haemorrhage?",
+   q="Which triggers are listed for subconjunctival haemorrhage?",
    opts=[
      ["Valsalva from coughing, vomiting or heavy lifting, minor trauma, hypertension, age-related vessel fragility and coagulopathy",
       "Correct — the deck's full trigger list."],

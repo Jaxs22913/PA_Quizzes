@@ -49,7 +49,7 @@ POOL_F = [
    c=0, cite=c(50)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",
-   q="How does the level of invasion (Clark) differ from Breslow thickness, and which does the deck call the dominant prognostic variable?",
+   q="How does the level of invasion (Clark) differ from Breslow thickness, and which is called the dominant prognostic variable?",
    opts=[
      ["The level of invasion is the anatomic layer reached; Breslow thickness is a measured depth, and Breslow is the dominant prognostic variable",
       "Correct — Breslow is measured in millimetres and drives margins and staging. Note the deck labels these only \u201cLevel I\u201d to \u201cLevel V\u201d and never uses the word Clark; that is the conventional outside name for the same system."],

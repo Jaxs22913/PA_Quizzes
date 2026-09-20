@@ -165,7 +165,7 @@ POOL_B = [
    c=0, cite=cn(10)),
 
  dict(topic="Potassium", io=IOB2, slot="etiology",
-   q="How does the deck describe the renal handling of potassium?",
+   q="How is the renal handling of potassium described?",
    opts=[
      ["It is excreted by the kidneys with no reabsorption",
       "Correct — the deck's stated main physiological point about potassium."],
@@ -253,7 +253,7 @@ POOL_B = [
    c=0, cite=c(11)),
 
  dict(topic="Chloride", io=IOB3, slot="test finding",
-   q="What does the deck say about chloride measured as a standalone test?",
+   q="What is true of chloride measured as a standalone test?",
    opts=[
      ["It does not provide much information on its own",
       "Correct — the deck is explicit that chloride alone is uninformative."],

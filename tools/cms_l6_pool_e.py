@@ -160,7 +160,7 @@ POOL_E = [
    c=0, cite=c(119)),
 
  dict(topic="Herpes simplex virus", io=IOB, slot="manifestation",
-   q="Which symptom does the deck specifically associate with genital herpes simplex lesions in women?",
+   q="Which symptom is specifically associated with genital herpes simplex lesions in women?",
    opts=[
      ["Dysuria",
       "Correct — the deck names dysuria in women."],
@@ -225,7 +225,7 @@ POOL_E = [
    c=0, cite=c(122)),
 
  dict(topic="Herpes simplex virus", io=IOB, slot="initial test",
-   q="What does the deck say about routine herpes simplex serologic screening of asymptomatic adults?",
+   q="What is true of routine herpes simplex serologic screening of asymptomatic adults?",
    opts=[
      ["It is not recommended, and low-positive results may be false positives",
       "Correct — the deck advises against routine screening."],
@@ -316,7 +316,7 @@ POOL_E = [
    c=0, cite=c(124)),
 
  dict(topic="Herpes simplex virus", io=IOB, slot="education",
-   q="What does the deck say about suppressive valacyclovir and condoms for transmission?",
+   q="What is true of suppressive valacyclovir and condoms for transmission?",
    opts=[
      ["Suppressive valacyclovir lowers type 2 transmission, and condoms reduce but do not eliminate risk",
       "Correct — risk is reduced, never abolished."],
@@ -498,7 +498,7 @@ POOL_E = [
    c=0, cite=c(130)),
 
  dict(topic="Molluscum contagiosum", io=IOC, slot="referral",
-   q="A child has genital molluscum lesions. What does the deck say about interpreting this?",
+   q="A child has genital molluscum lesions. What is true of interpreting this?",
    opts=[
      ["It requires context-sensitive assessment, because location alone does not prove abuse",
       "Correct — location alone is not proof."],
@@ -615,7 +615,7 @@ POOL_E = [
    c=0, cite=c(136)),
 
  dict(topic="Molluscum contagiosum", io=IOB, slot="escalation",
-   q="Which other molluscum options does the deck list, and which is off label?",
+   q="Which other molluscum options are listed, and which is off label?",
    opts=[
      ["Curettage or cryotherapy, with topical retinoids off label",
       "Correct — retinoids are the off-label option."],
@@ -654,7 +654,7 @@ POOL_E = [
    c=0, cite=c(138)),
 
  dict(topic="Warts", io=IOB, slot="manifestation",
-   q="Which variations of verruca does the deck list?",
+   q="Which variations of verruca are listed?",
    opts=[
      ["Verruca vulgaris, verruca plana, verruca plantaris, mosaic warts, and genital warts",
       "Correct — five variants."],
@@ -732,7 +732,7 @@ POOL_E = [
    c=0, cite=c(143)),
 
  dict(topic="Warts", io=IOB, slot="education",
-   q="What spreads flat warts, and what does the deck advise about treating them?",
+   q="What spreads flat warts, and what is advised about treating them?",
    opts=[
      ["Shaving spreads them by autoinoculation; observation is reasonable because spontaneous resolution is common",
       "Correct — shaving spreads, and watchful waiting is reasonable."],
@@ -784,7 +784,7 @@ POOL_E = [
    c=0, cite=c(145)),
 
  dict(topic="Warts", io=IOB, slot="agent/regimen",
-   q="Which two treatments does the deck give for plantar warts?",
+   q="Which two treatments are given for plantar warts?",
    opts=[
      ["Salicylic acid 40% and cryotherapy",
       "Correct — the two named options."],
@@ -849,7 +849,7 @@ POOL_E = [
    c=0, cite=c(148)),
 
  dict(topic="Warts", io=IOB, slot="prognosis",
-   q="What does the deck say about eradicating human papillomavirus with wart therapy?",
+   q="What is true of eradicating human papillomavirus with wart therapy?",
    opts=[
      ["No therapy eradicates it with certainty, and recurrence can occur",
       "Correct — set expectations accordingly."],
@@ -875,7 +875,7 @@ POOL_E = [
    c=0, cite=c(149)),
 
  dict(topic="Warts", io=IOB, slot="avoid",
-   q="What does the deck warn against for benign warts likely to resolve on their own?",
+   q="What is warned against for benign warts likely to resolve on their own?",
    opts=[
      ["Excessive freezing or destructive therapy",
       "Correct — do not over-treat a self-limiting lesion."],

@@ -76,7 +76,7 @@ POOL_D = [
    c=0, cite=c(52)),
 
  dict(topic="Cellulitis", io=IOA, slot="test finding",
-   q="Which examination findings does the deck give for POST-septal (orbital) cellulitis?",
+   q="Which examination findings are given for POST-septal (orbital) cellulitis?",
    opts=[
      ["Significant conjunctival injection, proptosis, decreased and painful extraocular movement, possible afferent pupillary defect and decreased vision",
       "Correct — the deck's full post-septal picture."],
@@ -89,7 +89,7 @@ POOL_D = [
    c=0, cite=c(52)),
 
  dict(topic="Cellulitis", io=IOA, slot="initial test",
-   q="Which workup does the deck order for cellulitis?",
+   q="Which workup is ordered for cellulitis?",
    opts=[
      ["Computed tomography of the orbits and paranasal sinuses with contrast, complete ocular examination including fundoscopy, Gram stain and culture of any open wound or drainage, a complete blood count with differential, and blood cultures",
       "Correct — the deck's full workup."],
@@ -102,7 +102,7 @@ POOL_D = [
    c=0, cite=c(53)),
 
  dict(topic="Cellulitis", io=IOA, slot="agent/regimen",
-   q="How does the deck treat MILD pre-septal cellulitis?",
+   q="How is MILD pre-septal cellulitis treated?",
    opts=[
      ["Outpatient oral antibiotics for 10 to 14 days aimed at Staphylococcus, including resistant strains, and Streptococcus",
       "Correct — the deck's outpatient pathway and the organisms targeted."],
@@ -115,7 +115,7 @@ POOL_D = [
    c=0, cite=c(53)),
 
  dict(topic="Cellulitis", io=IOB, slot="escalation",
-   q="Which patients with PRE-septal cellulitis does the deck hospitalise?",
+   q="Which patients with PRE-septal cellulitis are hospitalised?",
    opts=[
      ["Moderate to severe or toxic disease, concern for poor compliance, a child of five years or younger, or no improvement after oral antibiotics were started",
       "Correct — the deck's four admission criteria, and age five is the paediatric cut-off."],
@@ -181,7 +181,7 @@ POOL_D = [
    c=0, cite=c(7)),
 
  dict(topic="Ophthalmoscopy", io=IOA, slot="initial test",
-   q="Which three types of ophthalmoscopy does the deck describe, and which is most commonly used?",
+   q="Which three types of ophthalmoscopy are described, and which is most commonly used?",
    opts=[
      ["Direct, indirect and slit-lamp ophthalmoscopy — slit-lamp is most common, because the patient is usually already seated there",
       "Correct — the three types and the practical reason for the third."],
@@ -220,7 +220,7 @@ POOL_D = [
    c=0, cite=c(10)),
 
  dict(topic="Fluorescein angiography", io=IOA, slot="education",
-   q="What does the deck note about the safety of fluorescein angiography dye?",
+   q="What is noted about the safety of fluorescein angiography dye?",
    opts=[
      ["It is relatively safe and has no iodine",
       "Correct — the deck notes the absence of iodine explicitly."],
@@ -260,7 +260,7 @@ POOL_D = [
    c=0, cite=c(67)),
 
  dict(topic="Red eye triage", io=IOA, slot="test finding",
-   q="Which two findings does the deck single out as red flags in a red eye?",
+   q="Which two findings are singled out as red flags in a red eye?",
    opts=[
      ["Reduced vision or an abnormal pupil",
       "Correct — the deck highlights exactly these two."],
@@ -378,7 +378,7 @@ POOL_D = [
 
  # ---- disposition ----
  dict(topic="Referral timing", io=IOA, slot="referral",
-   q="Which conditions does the deck put in the EMERGENT — now — category?",
+   q="Which conditions are put in the EMERGENT — now — category?",
    opts=[
      ["Chemical injury (irrigate first), open globe, angle closure, orbital cellulitis and endophthalmitis",
       "Correct — the deck's five emergent conditions."],
@@ -391,7 +391,7 @@ POOL_D = [
    c=0, cite=c(70)),
 
  dict(topic="Referral timing", io=IOA, slot="referral",
-   q="Which conditions does the deck put in the SAME DAY category?",
+   q="Which conditions are put in the SAME DAY category?",
    opts=[
      ["Keratitis or corneal ulcer, anterior uveitis, scleritis, and ocular herpes zoster ophthalmicus",
       "Correct — the deck's same-day group."],

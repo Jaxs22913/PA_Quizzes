@@ -28,7 +28,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Clinical approach", io=IOA, slot="initial test",
-   q="Which examination priorities does the deck list for a suspected malignant cutaneous lesion?",
+   q="Which examination priorities are listed for a suspected malignant cutaneous lesion?",
    opts=[
      ["Good lighting, dermoscopy when trained, and a total-body skin survey when indicated; palms, soles and nails; oral mucosa when Kaposi sarcoma is possible; regional nodes for invasive or high-risk disease",
       "Correct — note the oral mucosa is tied specifically to Kaposi sarcoma."],
@@ -54,7 +54,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="etiology",
-   q="What is the core mechanism of actinic keratosis, and how does the deck position it relative to keratinocyte carcinoma?",
+   q="What is the core mechanism of actinic keratosis, and how is it positioned relative to keratinocyte carcinoma?",
    opts=[
      ["Chronic ultraviolet injury producing dysplastic keratinocytic change in a field of sun-damaged skin; it is premalignant and lies on a biologic continuum with keratinocyte carcinoma, not a distinct separate entity",
       "Correct — a continuum, not a separate disease."],
@@ -80,7 +80,7 @@ POOL_A = [
    c=0, cite=c(11)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="risk factors",
-   q="Which factors does the deck list as amplifying actinic keratosis risk?",
+   q="Which factors are listed as amplifying actinic keratosis risk?",
    opts=[
      ["Advanced age, cumulative ultraviolet exposure with outdoor work or recreation, prior actinic keratosis or keratinocyte carcinoma, male sex with bald scalp exposure, and immunosuppression",
       "Correct — five amplifiers."],
@@ -171,7 +171,7 @@ POOL_A = [
    c=0, cite=c(13)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="first-line",
-   q="Which lesion-directed therapy does the deck give for actinic keratosis, and what happens to the lesion afterwards?",
+   q="Which lesion-directed therapy is given for actinic keratosis, and what happens to the lesion afterwards?",
    opts=[
      ["Liquid nitrogen cryotherapy — the lesion crusts and disappears over 10 to 14 days; preferred for isolated or few lesions with clear borders",
       "Correct — lesion-directed, for small numbers."],
@@ -184,7 +184,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="escalation",
-   q="When is field-directed therapy indicated for actinic keratosis, and which options does the deck list as most effective?",
+   q="When is field-directed therapy indicated for actinic keratosis, and which options are listed as most effective?",
    opts=[
      ["When multiple lesions are present in one anatomic region, reflecting field cancerization risk; topical fluorouracil, imiquimod, photodynamic therapy, and fluorouracil plus calcipotriene as a possible benefit",
       "Correct — four options, the last flagged as possible rather than established."],
@@ -197,7 +197,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Actinic keratosis", io=IOB, slot="referral",
-   q="Which situations does the deck give as referral indications in actinic keratosis?",
+   q="Which situations are given as referral indications in actinic keratosis?",
    opts=[
      ["Diagnostic uncertainty or high lesion burden; recurrent or persistent lesions after appropriate therapy; immunosuppression, cosmetically sensitive sites, or concern for squamous cell carcinoma",
       "Correct — three groupings."],
@@ -223,7 +223,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Actinic keratosis", io=IOB, slot="education",
-   q="What patient education does the deck give for actinic keratosis?",
+   q="What patient education is given for actinic keratosis?",
    opts=[
      ["Daily broad-spectrum sun protection and protective clothing; expect local treatment reactions such as erythema and crusting and adhere to the field therapy duration; seek prompt review of any non-healing or changing lesion",
       "Correct — warning about the expected reaction protects adherence."],

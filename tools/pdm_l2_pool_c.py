@@ -164,7 +164,7 @@ POOL_C = [
    c=0, cite=c(46)),
 
  dict(topic="Positioning", io=IOE, slot="education",
-   q="What does the deck call the most important thing to remember about ultrasound orientation?",
+   q="What is called the most important thing to remember about ultrasound orientation?",
    opts=[
      ["Where the indicator is: on the right of the screen in cardiac imaging, on the left for everything else",
       "Correct — it is called crucial, because the whole image flips with it."],
@@ -320,7 +320,7 @@ POOL_C = [
    c=0, cite=c(51)),
 
  dict(topic="Contrast media", io=IOH, slot="education",
-   q="What does the deck say about shellfish allergy and iodinated contrast?",
+   q="What is true of shellfish allergy and iodinated contrast?",
    opts=[
      ["There should be no cross-reactivity between shellfish and iodinated radiocontrast",
       "Correct — the cross-reactivity idea is explicitly rejected."],
@@ -346,7 +346,7 @@ POOL_C = [
    c=0, cite=c(53)),
 
  dict(topic="Contrast media", io=IOH, slot="education",
-   q="What does the deck give as the key takeaway on contrast safety?",
+   q="What is given as the key takeaway on contrast safety?",
    opts=[
      ["Always ask about allergies and assess kidney function",
       "Correct — and pre-treatment exists when contrast is absolutely necessary."],
@@ -437,7 +437,7 @@ POOL_C = [
    c=0, cite=c(56)),
 
  dict(topic="Radiology team", io=IOI, slot="referral",
-   q="Why does the deck stress giving the radiologist relevant clinical information?",
+   q="Why is giving the radiologist relevant clinical information stressed?",
    opts=[
      ["The radiologist has not seen the patient, so the history is what guides their read",
       "Correct — the report is only as good as the question it is answering."],
@@ -450,7 +450,7 @@ POOL_C = [
    c=0, cite=c(58)),
 
  dict(topic="Radiology team", io=IOI, slot="referral",
-   q="What does the deck advise when a radiology report comes back vague?",
+   q="What is advised when a radiology report comes back vague?",
    opts=[
      ["Contact the radiologist to discuss the patient",
       "Correct — the relationship is described as interprofessional and team-based."],
@@ -476,7 +476,7 @@ POOL_C = [
    c=0, cite=c(58)),
 
  dict(topic="Radiology team", io=IOI, slot="education",
-   q="What practical ordering point does the deck make about imaging several body regions?",
+   q="What practical ordering point is made about imaging several body regions?",
    opts=[
      ["Multiple body parts or sections may mean multiple orders, giving brain, cervical, thoracic and lumbar spine as the example",
       "Correct — one clinical question can require four separate requests."],

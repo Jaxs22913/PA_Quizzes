@@ -33,7 +33,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Antifungal classes", io=IOB, slot="agent/regimen",
-   q="How does the imidazole class work, and which two examples does the deck give?",
+   q="How does the imidazole class work, and which two examples are given?",
    opts=[
      ["It blocks ergosterol synthesis; clotrimazole and ketoconazole",
       "Correct — ergosterol is a vital component of the fungal cell membrane, so blocking it halts growth and replication. The names end in -azole."],
@@ -111,7 +111,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Tinea capitis", io=IOB, slot="risk factors",
-   q="How is tinea capitis transmitted, and what does the deck emphasise about the fungal particles?",
+   q="How is tinea capitis transmitted, and what is emphasised about the fungal particles?",
    opts=[
      ["From people, pets and fomites; the particles stay viable for MONTHS",
       "Correct — infected persons, pets, fallen hairs, clothing, combs, hats and furniture. Asymptomatic carriers are also a source."],
@@ -202,7 +202,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, slot="escalation",
-   q="A child with tinea capitis is not responding to oral therapy. Which five explanations does the deck list?",
+   q="A child with tinea capitis is not responding to oral therapy. Which five explanations are listed?",
    opts=[
      ["Adherence, wrong diagnosis, reinfection, organism mismatch, or resistance",
       "Correct — reassess all five before assuming the drug has failed."],
@@ -228,7 +228,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Tinea capitis", io=IOC, slot="education",
-   q="What does the deck say about school exclusion in tinea capitis?",
+   q="What is true of school exclusion in tinea capitis?",
    opts=[
      ["Generally unnecessary once effective therapy has begun",
       "Correct — follow local policy. And complete the oral course even when itching or scaling improves early."],

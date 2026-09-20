@@ -230,7 +230,7 @@ POOL_D = [
    c=0, cite=c(36)),
 
  dict(topic="Positioning", io=IOE, slot="education",
-   q="What does the deck say about comparison films?",
+   q="What is true of comparison films?",
    opts=[
      ["They can be invaluable — old gold — and the old film is displayed adjacent to the matching new one",
       "Correct — old posterior-anterior beside new, old lateral beside new."],

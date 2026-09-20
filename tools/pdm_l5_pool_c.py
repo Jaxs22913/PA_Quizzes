@@ -100,7 +100,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Blood urea nitrogen", io=IOB6, slot="differential",
-   q="Which four non-renal factors does the deck list as raising blood urea nitrogen?",
+   q="Which four non-renal factors are listed as raising blood urea nitrogen?",
    opts=[
      ["Dehydration, gastrointestinal bleeding, high protein intake, and catabolic states",
       "Correct — the four the deck names when calling the value non-specific."],
@@ -320,7 +320,7 @@ POOL_C = [
    c=0, cite=c(16)),
 
  dict(topic="Liver studies", io=IOC, slot="test finding",
-   q="Which liver test does the deck call the most sensitive marker of function, and how fast can it move?",
+   q="Which liver test is called the most sensitive marker of function, and how fast can it move?",
    opts=[
      ["The prothrombin time with its ratio, which can prolong within twenty-four hours of severe injury",
       "Correct — the deck's most sensitive functional marker and its speed."],
@@ -333,7 +333,7 @@ POOL_C = [
    c=0, cite=c(16)),
 
  dict(topic="Liver studies", io=IOC, slot="etiology",
-   q="Which clotting factors does the deck link to the prothrombin time as a measure of liver function?",
+   q="Which clotting factors are linked to the prothrombin time as a measure of liver function?",
    opts=[
      ["Factors two, seven, nine, and ten",
       "Correct — the four the deck lists."],

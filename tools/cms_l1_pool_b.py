@@ -125,7 +125,7 @@ POOL_B = [
    c=0, cite=c(17)),
 
  dict(topic="Differential diagnosis", io="Discuss clinical principles and decision-making",
-   q="In the confusion example, which cause does the lecture place under Iatrogenic/intoxication?",
+   q="In the confusion example, which cause is placed under Iatrogenic/intoxication?",
    opts=[
      ["Hypoglycaemia",
       "Hypoglycaemia is listed under Endocrine and metabolic causes."],
@@ -218,7 +218,7 @@ POOL_B = [
 
  # ---------------- Pattern recognition vs analytic (Slide 20) ----------------
  dict(topic="Clinical decision making", io="Discuss clinical principles and decision-making",
-   q="How does the lecture characterise the use of pattern recognition in diagnosis?",
+   q="How is the use of pattern recognition characterised in diagnosis?",
    opts=[
      ["The lowest level of decision making, easy to use, but subject to error",
       "Correct. It is easy to use but can produce errors because other possibilities are not considered."],
@@ -271,7 +271,7 @@ POOL_B = [
    c=3, cite=c(21)),
 
  dict(topic="Evidence-based medicine", io="Discuss clinical principles and decision-making",
-   q="Which two limitations of evidence-based medicine does the lecture identify?",
+   q="Which two limitations of evidence-based medicine are identified?",
    opts=[
      ["It is time consuming, and many clinical questions have no relevant studies in the literature",
       "Correct. These are the two limitations given."],
@@ -297,7 +297,7 @@ POOL_B = [
    c=1, cite=c(23)),
 
  dict(topic="Clinical guidelines", io="Discuss clinical principles and decision-making",
-   q="Which caution does the lecture attach to the use of clinical guidelines?",
+   q="Which caution is attached to the use of clinical guidelines?",
    opts=[
      ["They should be avoided because they are rarely cost-effective",
       "The lecture describes guidelines as cost-effective, not the reverse."],
@@ -311,7 +311,7 @@ POOL_B = [
 
  # ---------------- Clinical principles and good decision-making (Slides 25-26) ----------------
  dict(topic="Clinical principles", io="Discuss clinical principles and decision-making",
-   q="Which treatment principle does the lecture state?",
+   q="Which treatment principle is stated?",
    opts=[
      ["If what you are doing is not working, increase the dose",
       "The stated principle is to stop doing it, not to intensify it."],
@@ -324,7 +324,7 @@ POOL_B = [
    c=3, cite=c(25)),
 
  dict(topic="Clinical principles", io="Discuss clinical principles and decision-making",
-   q="Among the suggestions for good decision-making, which does the lecture explicitly recommend regarding your own hypothesis?",
+   q="Among the suggestions for good decision-making, which is explicitly recommended regarding your own hypothesis?",
    opts=[
      ["Ask questions designed to disprove it rather than confirm it",
       "Correct. The lecture advises asking questions to disprove rather than confirm your current hypothesis, and actively seeking alternative diagnoses."],
@@ -377,7 +377,7 @@ POOL_B = [
    c=3, cite=c(24)),
 
  dict(topic="Naturalistic approach", io="Discuss the naturalistic approach",
-   q="Which patient circumstances does the lecture list as suiting the naturalistic approach?",
+   q="Which patient circumstances are listed as suiting the naturalistic approach?",
    opts=[
      ["Unstable patients and atypical presentations",
       "Correct. Both are listed, along with ruling out the worst-case scenario and following responses to interventions."],
@@ -390,7 +390,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Naturalistic approach", io="Discuss the naturalistic approach",
-   q="Beyond treating before diagnosis, which two actions does the lecture associate with the naturalistic approach?",
+   q="Beyond treating before diagnosis, which two actions are associated with the naturalistic approach?",
    opts=[
      ["Formulating a clinical question and appraising the literature",
       "These belong to evidence-based medicine."],

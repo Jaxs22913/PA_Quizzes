@@ -57,7 +57,7 @@ POOL_H = [
    c=0, cite=c(23)),
 
  dict(topic="Squamous cell carcinoma", io=IO, slot="initial test",
-   q="What regional assessment does the deck require alongside biopsy of a squamous cell carcinoma?",
+   q="What regional assessment is required alongside biopsy of a squamous cell carcinoma?",
    opts=[
      ["Palpate the draining lymph-node basins, considering imaging or nodal evaluation for high-risk tumours",
       "Correct — the nodes are examined at diagnosis, not only at follow-up."],
@@ -83,7 +83,7 @@ POOL_H = [
    c=0, cite=c(36)),
 
  dict(topic="Basal cell carcinoma", io=IO, slot="avoid",
-   q="What does the deck say about imaging in typical localized basal cell carcinoma?",
+   q="What is true of imaging in typical localized basal cell carcinoma?",
    opts=[
      ["Routine imaging is not needed; it is reserved for advanced, deeply invasive or metastatic disease",
       "Correct — and that specialist-directed workup is the exception rather than the rule."],
@@ -122,7 +122,7 @@ POOL_H = [
    c=0, cite=c(65)),
 
  dict(topic="Kaposi sarcoma", io=IO, slot="initial test",
-   q="How does the deck define the immune context once Kaposi sarcoma is suspected?",
+   q="How is the immune context defined once Kaposi sarcoma is suspected?",
    opts=[
      ["Test for human immunodeficiency virus if status is unknown; if known, assess CD4 count, viral load, antiretroviral history and adherence",
       "Correct — knowing the status is not enough, the degree of immune suppression matters."],
@@ -135,7 +135,7 @@ POOL_H = [
    c=0, cite=c(65)),
 
  dict(topic="Kaposi sarcoma", io=IO, slot="escalation",
-   q="Which directed procedures does the deck reserve for symptomatic Kaposi sarcoma rather than performing routinely?",
+   q="Which directed procedures are reserved for symptomatic Kaposi sarcoma rather than performing routinely?",
    opts=[
      ["Bronchoscopy for suspected pulmonary disease, and endoscopy driven by symptoms or management rather than routinely in asymptomatic patients",
       "Correct — a chest radiograph is used when pulmonary involvement is possible, but scoping is not routine."],
@@ -174,7 +174,7 @@ POOL_H = [
    c=0, cite=c(74)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IO, slot="escalation",
-   q="Which blood tests does the deck list for ADVANCED cutaneous T-cell lymphoma?",
+   q="Which blood tests are listed for ADVANCED cutaneous T-cell lymphoma?",
    opts=[
      ["Complete blood count with differential, eosinophilia, circulating Sezary cells, T-cell gene-rearrangement testing and specialist flow cytometry",
       "Correct — these belong to advanced disease rather than to the initial skin diagnosis."],
@@ -226,7 +226,7 @@ POOL_H = [
    c=0, cite=c(13)),
 
  dict(topic="Nail unit neoplasms", io=IO, slot="referral",
-   q="What does the deck require of a biopsy for a suspicious nail lesion?",
+   q="What is required of a biopsy for a suspicious nail lesion?",
    opts=[
      ["Prompt referral to a dermatologist experienced in nail-unit biopsy, with the biopsy sampling the correct site",
       "Correct — the referral is to someone experienced in the nail unit specifically."],

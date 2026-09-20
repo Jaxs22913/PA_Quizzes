@@ -126,7 +126,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Drug selection", io=IO2,
-   q="How does the lecture define selective toxicity, and how is it normally achieved?",
+   q="How is selective toxicity defined, and how is it normally achieved?",
    opts=[
      ["Killing all microbes in a sample; achieved by raising the dose above the therapeutic window",
       "Raising dose above the window produces toxicity rather than selectivity."],
@@ -191,7 +191,7 @@ POOL_A = [
    c=2, cite=c(15)),
 
  dict(topic="Therapeutic index", io=IO3,
-   q="Which expressions does the lecture give for the therapeutic index?",
+   q="Which expressions are given for the therapeutic index?",
    opts=[
      ["Renal clearance plus hepatic clearance, divided by total clearance",
       "That is the composition of drug clearance, a separate calculation."],
@@ -217,7 +217,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Drug clearance", io=IO4,
-   q="How does the lecture define drug clearance?",
+   q="How is drug clearance defined?",
    opts=[
      ["The time taken for plasma concentration to fall by half",
       "That describes half-life, which is not the definition given."],

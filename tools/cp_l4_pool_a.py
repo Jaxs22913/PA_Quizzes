@@ -78,7 +78,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Unique features of the eye", io=IO1, slot="etiology",
-   q="What proportion of human knowledge acquisition does the deck estimate is mediated through the eye?",
+   q="What proportion of human knowledge acquisition is estimated is mediated through the eye?",
    opts=[
      ["About eighty-three per cent", "Correct — the deck's opening figure."],
      ["About fifty per cent", "Below the deck's estimate."],

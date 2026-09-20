@@ -229,7 +229,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="Pressure injury", io=IOB, slot="education",
-   q="What does the deck call the best measure against pressure injury, and what does it include?",
+   q="What is called the best measure against pressure injury, and what does it include?",
    opts=[
      ["Prevention: frequent skin assessment, nutrition assessment, moisture control and skin care, repositioning every two hours, pain management, improved mobility and specialty mattresses",
       "Correct — barrier creams and incontinence management sit under moisture control."],

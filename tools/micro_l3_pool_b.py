@@ -11,7 +11,7 @@ IO7 = "7 — Describe the common sources and mitigation methods related to nosoc
 
 POOL_B = [
  dict(topic="Reservoirs", io=IO6,
-   q="How does the lecture define a reservoir of infection?",
+   q="How is a reservoir of infection defined?",
    opts=[
      ["The primary habitat a pathogen originates from", "Correct; it may be living or nonliving."],
      ["The route by which a pathogen exits a host", "That is a portal of exit."],
@@ -19,7 +19,7 @@ POOL_B = [
      ["The minimum dose needed to infect", "That is the infectious dose."]],
    c=0, cite=c(42)),
  dict(topic="Reservoirs", io=IO6,
-   q="Which does the lecture give as a nonliving reservoir?",
+   q="Which is given as a nonliving reservoir?",
    opts=[
      ["Soil and water", "Correct."],
      ["Asymptomatic carriers", "Those are living reservoirs."],
@@ -35,7 +35,7 @@ POOL_B = [
      ["Someone recovered but still shedding", "That is a convalescent carrier rather than a passive one."]],
    c=0, cite=c(42)),
  dict(topic="Vectors", io=IO6,
-   q="Which does the lecture give as examples of vectors?",
+   q="Which is given as examples of vectors?",
    opts=[
      ["Mosquitoes, fleas and ticks", "Correct, with flies and cockroaches also named."],
      ["Soil and water sources", "Those are nonliving reservoirs."],
@@ -43,7 +43,7 @@ POOL_B = [
      ["Airborne droplet nuclei", "Those are a route rather than a carrier."]],
    c=0, cite=c(44)),
  dict(topic="Zoonoses", io=IO6,
-   q="What does the lecture say about eliminating a zoonotic infection?",
+   q="What is true of eliminating a zoonotic infection?",
    opts=[
      ["It cannot be eliminated without eradicating the animal reservoir", "Correct."],
      ["It is eliminated once human cases stop", "The animal reservoir sustains it."],
@@ -75,7 +75,7 @@ POOL_B = [
      ["An airborne droplet nucleus", "That is the airborne route."]],
    c=0, cite=c(48)),
  dict(topic="Transmission", io=IO6,
-   q="Which route does the lecture class as indirect contact?",
+   q="Which route is classed as indirect contact?",
    opts=[
      ["Airborne droplet nuclei", "Correct, along with vehicles and fomites."],
      ["Kissing", "That is direct personal contact."],
@@ -83,7 +83,7 @@ POOL_B = [
      ["A tick bite", "That is a biological vector under direct contact."]],
    c=0, cite=c(48)),
  dict(topic="Nosocomial infection", io=IO7,
-   q="How does the lecture define a nosocomial infection?",
+   q="How is a nosocomial infection defined?",
    opts=[
      ["One acquired or developing during a hospital stay", "Correct, also called a hospital-acquired infection."],
      ["Any infection resistant to antibiotics", "Resistance is a separate property."],
@@ -99,7 +99,7 @@ POOL_B = [
      ["Gastrointestinal tract alone", "Not the list given."]],
    c=0, cite=c(50)),
  dict(topic="Nosocomial infection", io=IO7,
-   q="Which organisms does the lecture name as most commonly involved in nosocomial infection?",
+   q="Which organisms are named as most commonly involved in nosocomial infection?",
    opts=[
      ["Escherichia coli, Pseudomonas and Klebsiella", "Correct, with staphylococci, streptococci and yeasts."],
      ["Staphylococci and streptococci only", "Both are named, but the gram-negatives lead the list."],
@@ -107,7 +107,7 @@ POOL_B = [
      ["Respiratory viruses and yeasts by themselves", "Yeasts are named; viruses are not."]],
    c=0, cite=c(50)),
  dict(topic="Nosocomial infection", io=IO7,
-   q="What consequence of nosocomial infection does the lecture emphasise?",
+   q="What consequence of nosocomial infection is emphasised?",
    opts=[
      ["It may prolong the hospital stay or end in death", "Correct."],
      ["It always requires surgical drainage of the site", "Not a stated consequence."],
@@ -131,7 +131,7 @@ POOL_B = [
      ["The proportion who recover", "Not one of the measures defined."]],
    c=0, cite=c(53)),
  dict(topic="Epidemiology", io=IO5,
-   q="How does the lecture distinguish mortality from morbidity rate?",
+   q="How is mortality distinguished from morbidity rate?",
    opts=[
      ["Mortality counts deaths, morbidity counts cases", "Correct, both expressed per hundred thousand."],
      ["Mortality counts cases, morbidity counts deaths", "This reverses them."],
@@ -139,7 +139,7 @@ POOL_B = [
      ["They measure the same thing", "They are distinct measures."]],
    c=0, cite=c(54)),
  dict(topic="Epidemiology", io=IO5,
-   q="What trend over the last century does the lecture describe?",
+   q="What trend over the last century is described?",
    opts=[
      ["Death rate fell while morbidity stayed high", "Correct."],
      ["Both death and morbidity rates fell", "Morbidity has remained relatively high."],
@@ -163,7 +163,7 @@ POOL_B = [
      ["An epidemic lasts longer", "Duration is not the distinction."]],
    c=0, cite=c(56)),
  dict(topic="Epidemiology", io=IO5,
-   q="What does the lecture call a disease with occasional cases at irregular intervals?",
+   q="What is called a disease with occasional cases at irregular intervals?",
    opts=[
      ["Sporadic", "Correct."],
      ["Endemic", "That is a steady background frequency."],
@@ -235,7 +235,7 @@ POOL_B = [
      ["Antibiotic-associated colitis", "That is a superinfection."]],
    c=0, cite=c(35)),
  dict(topic="Opportunists", io=IO5,
-   q="Which organism does the lecture name among opportunistic pathogens?",
+   q="Which organism is named among opportunistic pathogens?",
    opts=[
      ["Candida albicans", "Correct, with Pseudomonas, coliforms, staphylococci and streptococci."],
      ["Rabies virus", "Rabies is a true pathogen, infecting healthy hosts."],
@@ -243,7 +243,7 @@ POOL_B = [
      ["Malarial protozoan", "Malaria is a true pathogen spread by a vector."]],
    c=0, cite=c(20)),
  dict(topic="Host defences", io=IO5,
-   q="Which host factor does the lecture single out with particular emphasis?",
+   q="Which host factor is singled out with particular emphasis?",
    opts=[
      ["Immune status", "Correct — the lecture calls it the major one."],
      ["Blood group", "Not named as a factor."],
@@ -251,7 +251,7 @@ POOL_B = [
      ["Geographic location", "That relates to reservoirs rather than host defence."]],
    c=0, cite=c(22)),
  dict(topic="Nosocomial infection", io=IO7,
-   q="Which patient group does the lecture flag as weakened in defences, and therefore at risk?",
+   q="Which patient group is flagged as weakened in defences, and therefore at risk?",
    opts=[
      ["The elderly, young children and premature infants", "Correct, alongside those on immunosuppressants."],
      ["Healthy young adults", "Not a group with weakened defences."],

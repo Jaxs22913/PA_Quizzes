@@ -275,7 +275,7 @@ POOL_B = [
    c=0, cite=c(47)),
 
  dict(topic="Vancomycin", io=IO4J,
-   q="What loading dose does the lecture give for vancomycin in critically ill patients?",
+   q="What loading dose is given for vancomycin in critically ill patients?",
    opts=[
      ["25 to 30 milligrams per kilogram, rounded to the nearest 500 milligrams",
       "Correct. The loading dose exists to reach the target trough quickly rather than waiting through several maintenance doses."],
@@ -314,7 +314,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Vancomycin", io=IO4J,
-   q="For an organism with a vancomycin minimal inhibitory concentration of 2 milligrams per litre or greater, what does the lecture advise?",
+   q="For an organism with a vancomycin minimal inhibitory concentration of 2 milligrams per litre or greater, what is advised?",
    opts=[
      ["The target ratio of area under the curve to minimal inhibitory concentration is difficult to achieve, so alternative therapy such as linezolid may be needed",
       "Correct. Above that threshold, pushing the dose stops being a reliable answer."],
@@ -340,7 +340,7 @@ POOL_B = [
    c=0, cite=c(72)),
 
  dict(topic="Daptomycin", io=IO4J,
-   q="What monitoring does the lecture specify for daptomycin?",
+   q="What monitoring is specified for daptomycin?",
    opts=[
      ["Muscle pain and creatine phosphokinase levels",
       "Correct. The muscle toxicity is what the monitoring is aimed at."],

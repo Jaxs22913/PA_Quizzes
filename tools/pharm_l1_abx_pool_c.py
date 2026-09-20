@@ -129,7 +129,7 @@ POOL_C = [
    c=0, cite=c(61)),
 
  dict(topic="Tetracyclines", io=IO4H,
-   q="Which organisms does the lecture list as excellent tetracycline coverage?",
+   q="Which organisms are listed as excellent tetracycline coverage?",
    opts=[
      ["Atypicals and animal-borne organisms — Yersinia pestis, Brucella, Borrelia burgdorferi and rickettsiae",
       "Correct. Poor coverage is specified for Pseudomonas and Clostridium difficile."],
@@ -311,7 +311,7 @@ POOL_C = [
    c=0, cite=c(79)),
 
  dict(topic="Fluoroquinolones", io=IO4K,
-   q="What collateral consequence of fluoroquinolone overuse does the lecture emphasise?",
+   q="What collateral consequence of fluoroquinolone overuse is emphasised?",
    opts=[
      ["High rates of resistance, and Clostridium difficile as collateral damage",
       "Correct. The slide states overuse equals resistance in capital letters, which is a deliberate emphasis."],

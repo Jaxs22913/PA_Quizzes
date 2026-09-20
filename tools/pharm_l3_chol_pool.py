@@ -61,7 +61,7 @@ POOL = [
    c=0, cite=c(8)),
 
  dict(topic="Enteric system", io=IO1,
-   q="What does the lecture say about the enteric nervous system?",
+   q="What is true of the enteric nervous system?",
    opts=[
      ["It innervates the gastrointestinal tract, pancreas and gallbladder, functions independently of the central nervous system, and is modulated by both other divisions",
       "Correct, which is why it is called the brain of the gut."],
@@ -87,7 +87,7 @@ POOL = [
    c=0, cite=c(20)),
 
  dict(topic="Cholinergic receptors", io=IO3,
-   q="Which muscarinic receptor subtypes does the lecture say are functionally characterised?",
+   q="Which muscarinic receptor subtypes are functionally characterised?",
    opts=[
      ["M1, M2 and M3 only, of five subclasses",
       "Correct. M4 and M5 are listed as neuronal without further characterisation."],
@@ -100,7 +100,7 @@ POOL = [
    c=0, cite=c(23)),
 
  dict(topic="Cholinergic receptors", io=IO3,
-   q="Where does the lecture place M2 receptors?",
+   q="Where are M2 receptors placed?",
    opts=[
      ["Neurons, cardiac cells and smooth muscle",
       "Correct, which is why muscarinic stimulation slows the heart."],
@@ -113,7 +113,7 @@ POOL = [
    c=0, cite=c(23)),
 
  dict(topic="Cholinergic receptors", io=IO3,
-   q="How does the lecture describe the nicotinic receptor?",
+   q="How is the nicotinic receptor described?",
    opts=[
      ["Five subunits functioning as a ligand-gated ion channel, where binding of two acetylcholine molecules opens it to sodium influx",
       "Correct, and it is found in the central nervous system, adrenal medulla, autonomic ganglia and neuromuscular junction."],
@@ -204,7 +204,7 @@ POOL = [
    c=0, cite=c(30)),
 
  dict(topic="Pilocarpine", io=IO7,
-   q="Beyond the eye, which use does the lecture give for pilocarpine?",
+   q="Beyond the eye, which use is given for pilocarpine?",
    opts=[
      ["Stimulating salivation in a patient with xerostomia",
       "Correct. It is called a potent stimulator of sweat, tears and saliva."],
@@ -256,7 +256,7 @@ POOL = [
    c=0, cite=c(35)),
 
  dict(topic="Myasthenia gravis", io=IO7,
-   q="How does the lecture describe myasthenia gravis?",
+   q="How is myasthenia gravis described?",
    opts=[
      ["An autoimmune disorder caused by antibodies to nicotinic receptors",
       "Correct, which is why raising acetylcholine at the junction helps."],
@@ -282,7 +282,7 @@ POOL = [
    c=0, cite=c(36)),
 
  dict(topic="Physostigmine", io=IO7,
-   q="Which adverse effect does the lecture attach to physostigmine at high doses?",
+   q="Which adverse effect is attached to physostigmine at high doses?",
    opts=[
      ["Convulsions, with bradycardia, decreased cardiac output and skeletal muscle paralysis from accumulated acetylcholine",
       "Correct. The paralysis comes from too much transmitter rather than too little."],
@@ -295,7 +295,7 @@ POOL = [
    c=0, cite=c(37)),
 
  dict(topic="Neostigmine", io=IO7,
-   q="What does the lecture say about neostigmine's absorption and central penetration?",
+   q="What is true of neostigmine's absorption and central penetration?",
    opts=[
      ["It is poorly absorbed from the gastrointestinal tract and does not enter the central nervous system",
       "Correct, which is what keeps its effects peripheral."],
@@ -321,7 +321,7 @@ POOL = [
    c=0, cite=c(39)),
 
  dict(topic="Alzheimer agents", io=IO7,
-   q="Which agents does the lecture name for Alzheimer disease, and what is the rationale?",
+   q="Which agents are named for Alzheimer disease, and what is the rationale?",
    opts=[
      ["Donepezil, rivastigmine and galantamine, because the disease is associated with a deficiency of cholinergic neurons in the central nervous system",
       "Correct, and their common adverse effect is gastrointestinal distress."],
@@ -438,7 +438,7 @@ POOL = [
    c=0, cite=c(53)),
 
  dict(topic="Scopolamine", io=IO4,
-   q="What does the lecture tell patients to do after handling a scopolamine patch?",
+   q="What are patients told to do after handling a scopolamine patch?",
    opts=[
      ["Wash their hands thoroughly, because touching the eye afterwards will cause blurred vision",
       "Correct. It is a small instruction that prevents an alarming symptom."],
@@ -477,7 +477,7 @@ POOL = [
    c=0, cite=c(56)),
 
  dict(topic="Bladder antimuscarinics", io=IO4,
-   q="Which adverse effects does the lecture attach to the older bladder agents such as oxybutynin and tolterodine?",
+   q="Which adverse effects are attached to the older bladder agents such as oxybutynin and tolterodine?",
    opts=[
      ["Dry mouth, constipation and blurred vision",
       "Correct, which are the predictable antimuscarinic effects."],
@@ -516,7 +516,7 @@ POOL = [
    c=0, cite=c(59)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
-   q="Which muscles does the lecture say are paralysed first by a nondepolarizing blocker?",
+   q="Which muscles are paralysed first by a nondepolarizing blocker?",
    opts=[
      ["The small, rapidly contracting muscles of the face and eye",
       "Correct, and the diaphragm goes last, with recovery in reverse order."],
@@ -581,7 +581,7 @@ POOL = [
    c=0, cite=c(69)),
 
  dict(topic="Malignant hyperthermia", io=IO4,
-   q="A genetically susceptible patient given succinylcholine with halothane develops muscular rigidity, metabolic acidosis, tachycardia and a very high temperature. What does the lecture direct?",
+   q="A genetically susceptible patient given succinylcholine with halothane develops muscular rigidity, metabolic acidosis, tachycardia and a very high temperature. What is directed?",
    opts=[
      ["Rapid cooling and dantrolene, which blocks calcium release from the sarcoplasmic reticulum",
       "Correct, and blocking that release is what reduces heat production."],
@@ -594,7 +594,7 @@ POOL = [
    c=0, cite=c(70)),
 
  dict(topic="Cholinergic terminology", io=IO3,
-   q="Which terms does the lecture give as synonymous with cholinergic antagonists?",
+   q="Which terms are given as synonymous with cholinergic antagonists?",
    opts=[
      ["Anticholinergics, parasympatholytics, antimuscarinics or antinicotinics",
       "Correct, while the agonists are cholinomimetics or parasympathomimetics."],

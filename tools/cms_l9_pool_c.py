@@ -21,7 +21,7 @@ POOL_C = [
    c=0, cite=c(33)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="etiology",
-   q="Which clinical and histologic subtypes of basal cell carcinoma does the deck list, and which determines behaviour?",
+   q="Which clinical and histologic subtypes of basal cell carcinoma are listed, and which determines behaviour?",
    opts=[
      ["Clinical: superficial, nodular, pigmented, morpheaform. Histologic: superficial, nodular, micronodular, infiltrative. The HISTOLOGIC subtype determines behaviour and dictates treatment selection",
       "Correct — histology drives the treatment decision."],
@@ -47,7 +47,7 @@ POOL_C = [
    c=0, cite=c(33)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="agent/regimen",
-   q="What chemoprevention does the deck give for basal cell carcinoma, and by how much does it reduce development?",
+   q="What chemoprevention is given for basal cell carcinoma, and by how much does it reduce development?",
    opts=[
      ["Nicotinamide 500 mg orally twice daily, reducing basal cell carcinoma development by approximately 20%",
       "Correct — the same drug and dose reduces squamous cell carcinoma by about 30%."],
@@ -86,7 +86,7 @@ POOL_C = [
    c=0, cite=c(35)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="manifestation",
-   q="Which warning patterns does the deck give for basal cell carcinoma, and where do they commonly appear?",
+   q="Which warning patterns are given for basal cell carcinoma, and where do they commonly appear?",
    opts=[
      ["A pearly papule, an erythematous patch larger than 6 mm, or a non-healing ulcer — commonly on the face, trunk or lower legs",
       "Correct — three patterns, three common sites."],
@@ -112,7 +112,7 @@ POOL_C = [
    c=0, cite=c(36)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="first-line",
-   q="Which topical regimens does the deck give for selected superficial basal cell carcinoma?",
+   q="Which topical regimens are given for selected superficial basal cell carcinoma?",
    opts=[
      ["Imiquimod five nights weekly for 6 to 10 weeks, or fluorouracil twice daily for up to 12 weeks, with clinical clearance confirmed afterwards",
       "Correct — confirming clearance is part of the regimen."],
@@ -125,7 +125,7 @@ POOL_C = [
    c=0, cite=c(37)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="escalation",
-   q="What does the deck give for ADVANCED or metastatic basal cell carcinoma?",
+   q="What is given for ADVANCED or metastatic basal cell carcinoma?",
    opts=[
      ["Hedgehog pathway inhibitors — vismodegib or sonidegib",
       "Correct — reserved for advanced disease or extensive tumour burden."],
@@ -138,7 +138,7 @@ POOL_C = [
    c=0, cite=c(37)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="prognosis",
-   q="What recurrence and cure figures does the deck give for basal cell carcinoma surgery?",
+   q="What recurrence and cure figures are given for basal cell carcinoma surgery?",
    opts=[
      ["Excision recurrence rate of 5% or less; Mohs cure rate of about 98%",
       "Correct — Mohs is the higher-cure, tissue-sparing option."],
@@ -151,7 +151,7 @@ POOL_C = [
    c=0, cite=c(37)),
 
  dict(topic="Basal cell carcinoma", io=IOA, slot="escalation",
-   q="Which indications does the deck give for Mohs surgery in basal cell carcinoma?",
+   q="Which indications are given for Mohs surgery in basal cell carcinoma?",
    opts=[
      ["Eyelids, nasolabial folds, canthi, external ear and temple; recurrent tumours; a tissue-sparing or cosmetic need; and aggressive histology — morpheaform, micronodular or infiltrative",
       "Correct — four groupings, with the histologic subtypes named."],

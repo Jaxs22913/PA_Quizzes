@@ -39,7 +39,7 @@ POOL_A = [
    c=0, cite=c(90)),
 
  dict(topic="Fungal biology", io=IO9,
-   q="Which predisposing factors for fungal infection does the lecture list?",
+   q="Which predisposing factors for fungal infection are listed?",
    opts=[
      ["Loss of barriers, immunodeficiency, metabolic abnormalities, suppression of competing organisms, and a warm moist environment",
       "Correct. Note that antibiotic use appears here as suppression of competing organisms — treating a bacterial infection can create a fungal one."],
@@ -65,7 +65,7 @@ POOL_A = [
    c=0, cite=c(91)),
 
  dict(topic="Fungal biology", io=IO9,
-   q="How does the lecture classify mycoses by the depth of tissue involved?",
+   q="How are mycoses classified by the depth of tissue involved?",
    opts=[
      ["Systemic affecting internal organs, subcutaneous affecting skin layers, and superficial affecting hair, nails and mucous membranes",
       "Correct. Aspergillus and Cryptococcus sit in the systemic group; Epidermophyton, Microsporum and Trichophyton in the superficial."],

@@ -30,7 +30,7 @@ IOL = "l — Describe the tumor, nodes, metastases (TNM) staging system"
 
 POOL_C = [
  dict(topic="Carcinogenesis", io=IOG,
-   q="How does the deck characterise carcinogenesis overall?",
+   q="How is carcinogenesis overall characterised?",
    opts=[
      ["A multistep process, resulting from damage to multiple normal regulatory genes",
       "Correct — a single mutation is not enough; the damage accumulates."],
@@ -82,7 +82,7 @@ POOL_C = [
    c=0, cite=c(29)),
 
  dict(topic="Tumour suppressors", io=IOG,
-   q="What do tumour suppressor genes do, and which examples does the deck give?",
+   q="What do tumour suppressor genes do, and which examples are given?",
    opts=[
      ["They inhibit cell growth; the examples are NF-1, NF-2, retinoblastoma and adenomatous polyposis coli",
       "Correct — losing them removes a brake rather than adding an accelerator."],
@@ -342,7 +342,7 @@ POOL_C = [
    c=0, cite=c(36)),
 
  dict(topic="Radiation", io=IOI,
-   q="Which forms of radiation does the deck name as causes of cancer?",
+   q="Which forms of radiation are named as causes of cancer?",
    opts=[
      ["Ultraviolet B, and ionizing radiation",
       "Correct — ultraviolet B is the wavelength that damages deoxyribonucleic acid directly."],
@@ -511,7 +511,7 @@ POOL_C = [
    c=0, cite=c(42)),
 
  dict(topic="TNM", io=IOL,
-   q="What important caveat does the deck attach to TNM definitions?",
+   q="What important caveat is attached to TNM definitions?",
    opts=[
      ["They are cancer-specific; for some cancers depth of invasion matters more than size",
       "Correct — which is why the slide's example table is for one named cancer rather than all."],

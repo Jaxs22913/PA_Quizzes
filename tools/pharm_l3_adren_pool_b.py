@@ -76,7 +76,7 @@ POOL_B = [
    c=0, cite=c(109)),
 
  dict(topic="Phentolamine", io=IO11,
-   q="Which hypertensive crisis does the lecture pair with phentolamine?",
+   q="Which hypertensive crisis is paired with phentolamine?",
    opts=[
      ["Crisis following abrupt clonidine withdrawal",
       "Correct, which is the rebound the clonidine slide warns about."],
@@ -102,7 +102,7 @@ POOL_B = [
    c=0, cite=c(111)),
 
  dict(topic="Prazosin group", io=IO11,
-   q="Which two alpha-one blockers does the lecture direct to benign prostatic hyperplasia?",
+   q="Which two alpha-one blockers are directed to benign prostatic hyperplasia?",
    opts=[
      ["Tamsulosin and alfuzosin",
       "Correct, while prazosin, terazosin and doxazosin are listed for hypertension."],
@@ -115,7 +115,7 @@ POOL_B = [
    c=0, cite=c(111)),
 
  dict(topic="Prazosin group", io=IO11,
-   q="Which metabolic effect does the lecture attribute to the alpha-one blockers used for hypertension?",
+   q="Which metabolic effect is attributed to the alpha-one blockers used for hypertension?",
    opts=[
      ["Improved lipid profiles and glucose metabolism",
       "Correct, which contrasts with propranolol's worsening of both."],
@@ -167,7 +167,7 @@ POOL_B = [
    c=0, cite=c(115)),
 
  dict(topic="Propranolol", io=IO11,
-   q="Which uses does the lecture list for propranolol beyond hypertension?",
+   q="Which uses are listed for propranolol beyond hypertension?",
    opts=[
      ["Migraine prevention, hyperthyroidism, angina and myocardial infarction",
       "Correct, and after infarction it reduces infarct size and sudden death."],
@@ -193,7 +193,7 @@ POOL_B = [
    c=0, cite=c(117)),
 
  dict(topic="Propranolol", io=IO4,
-   q="Which central nervous system effects does the lecture attribute to propranolol?",
+   q="Which central nervous system effects are attributed to propranolol?",
    opts=[
      ["Depression, fatigue, hallucinations, memory loss and vivid dreams",
       "Correct, a notably long central list for a cardiovascular drug."],
@@ -245,7 +245,7 @@ POOL_B = [
    c=0, cite=c(120)),
 
  dict(topic="Intrinsic sympathomimetic activity", io=IO11,
-   q="Which two agents does the lecture name as having intrinsic sympathomimetic activity?",
+   q="Which two agents are named as having intrinsic sympathomimetic activity?",
    opts=[
      ["Acebutolol and pindolol",
       "Correct: they weakly stimulate beta-one and beta-two while blocking."],
@@ -271,7 +271,7 @@ POOL_B = [
    c=0, cite=c(122)),
 
  dict(topic="Labetalol and carvedilol", io=IO11,
-   q="Which of the two does the lecture link to preventing cardiovascular mortality in heart failure?",
+   q="Which of the two is linked to preventing cardiovascular mortality in heart failure?",
    opts=[
      ["Carvedilol",
       "Correct, and it also decreases lipid peroxidation and vascular wall thickening."],

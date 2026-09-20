@@ -23,7 +23,7 @@ IO10 = "10 — Outline appropriate patient education for dermatologic drugs"
 POOL_A = [
 
  dict(topic="Topical vehicles", io=IO4,
-   q="Which body sites does the lecture name as more permeable to a topical drug?",
+   q="Which body sites are named as more permeable to a topical drug?",
    opts=[
      ["Scrotum, face, axilla and scalp",
       "Correct. Regional variation in penetration is the first variable the lecture lists, and these four are its examples."],
@@ -75,7 +75,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Topical vehicles", io=IO3,
-   q="Which vehicle does the lecture place at the most drying end of its range, and which at the least?",
+   q="Which vehicle is placed at the most drying end of its range, and which at the least?",
    opts=[
      ["Tinctures are the most drying and ointments the least",
       "Correct. The list runs tinctures, wet dressings, lotions, gels, aerosols, powders, pastes, creams, foams, ointments."],
@@ -88,7 +88,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Topical vehicles", io=IO3,
-   q="A lesion is oozing, vesicular and crusting. Which end of the vehicle range does the lecture pair with that presentation?",
+   q="A lesion is oozing, vesicular and crusting. Which end of the vehicle range is paired with that presentation?",
    opts=[
      ["The drying end of the range",
       "Correct. Oozing, vesiculation and crusting are matched to drying vehicles; scaling, lichenification and xerosis to the least drying."],
@@ -114,7 +114,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Topical vehicles", io=IO10,
-   q="Which vehicle does the lecture recommend for the scalp and hairy locations, and why?",
+   q="Which vehicle is recommended for the scalp and hairy locations, and why?",
    opts=[
      ["Gel or foam, because it foams well and leaves low residue",
       "Correct. The lecture pairs the scalp with the foam and gel column for exactly that reason."],
@@ -127,7 +127,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Acne pathogenesis", io=IO2,
-   q="Which set gives the four major factors in acne as the lecture lists them?",
+   q="Which set gives the four major factors in acne?",
    opts=[
      ["Increased sebum production, altered keratinization with ductal hyperproliferation, bacterial colonization, and release of inflammatory mediators",
       "Correct. These four are the lecture's framework, and every acne drug is aimed at one of them."],
@@ -140,7 +140,7 @@ POOL_A = [
    c=0, cite=c(10)),
 
  dict(topic="Acne pathogenesis", io=IO2,
-   q="Which organism does the lecture name as proliferating in the anaerobic conditions created by pooled sebum?",
+   q="Which organism is named as proliferating in the anaerobic conditions created by pooled sebum?",
    opts=[
      ["Propionibacterium acnes",
       "Correct. Pooled sebum creates anaerobic conditions in which this organism proliferates."],
@@ -166,7 +166,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Acne pathogenesis", io=IO1,
-   q="How does the lecture divide acne lesions?",
+   q="How are acne lesions divided?",
    opts=[
      ["Noninflammatory as open and closed comedones; inflammatory as papulopustular and nodular lesions",
       "Correct. That split is what decides whether topical or systemic therapy is chosen."],
@@ -192,7 +192,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Drug-induced acne", io=IO5,
-   q="Which systemic corticosteroid does the lecture explicitly exclude from causing drug-induced acne?",
+   q="Which systemic corticosteroid is explicitly excluded from causing drug-induced acne?",
    opts=[
      ["Hydrocortisone",
       "Correct. The lecture notes the eruption is not seen with hydrocortisone."],
@@ -205,7 +205,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Drug-induced acne", io=IO5,
-   q="Besides systemic corticosteroids, which drug groups does the lecture list as causing acne?",
+   q="Besides systemic corticosteroids, which drug groups are listed as causing acne?",
    opts=[
      ["Antiepileptics, tuberculostatics and lithium",
       "Correct. These three sit alongside systemic corticosteroids on the lecture's list."],
@@ -218,7 +218,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Acne treatment principles", io=IO3,
-   q="Which structure does the lecture identify as the critical target of acne treatment?",
+   q="Which structure is identified as the critical target of acne treatment?",
    opts=[
      ["The microcomedone",
       "Correct. Eliminating follicular occlusion at the microcomedone arrests the cascade."],
@@ -244,7 +244,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Acne treatment principles", io=IO10,
-   q="What does the lecture advise patients about washing in acne?",
+   q="What are patients advised about washing in acne?",
    opts=[
      ["Do not wash too frequently; twice a day, balancing cleanliness against drying and irritation",
       "Correct, and it adds that once rinsed off no active product remains on the skin."],
@@ -335,7 +335,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Azelaic acid", io=IO5,
-   q="Which pigmentary adverse effect does the lecture attach to azelaic acid?",
+   q="Which pigmentary adverse effect is attached to azelaic acid?",
    opts=[
      ["Hypopigmentation",
       "Correct. It is listed with mild skin irritation and dryness."],
@@ -361,7 +361,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Topical retinoids", io=IO2,
-   q="Which three actions does the lecture attribute to topical retinoic acid?",
+   q="Which three actions are attributed to topical retinoic acid?",
    opts=[
      ["Corrects abnormal follicular keratinization, reduces Propionibacterium acnes counts, and reduces inflammation",
       "Correct, and the lecture still notes the mechanism is not completely understood."],
@@ -400,7 +400,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Topical retinoids", io=IO8,
-   q="Which interaction does the lecture describe between benzoyl peroxide and tretinoin?",
+   q="Which interaction is described between benzoyl peroxide and tretinoin?",
    opts=[
      ["Benzoyl peroxide inactivates tretinoin",
       "Correct, and it is why adapalene, which is stable with benzoyl peroxide, is highlighted separately."],
@@ -413,7 +413,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Topical retinoids", io=IO1,
-   q="Which two properties does the lecture use to distinguish adapalene from tretinoin?",
+   q="Which two properties are used to distinguish adapalene from tretinoin?",
    opts=[
      ["Adapalene is stable in sunlight and stable with benzoyl peroxide",
       "Correct, and it also tends to be less irritating."],
@@ -426,7 +426,7 @@ POOL_A = [
    c=0, cite=c(25)),
 
  dict(topic="Topical retinoids", io=IO3,
-   q="Which retinoid does the lecture pair with Kaposi sarcoma?",
+   q="Which retinoid is paired with Kaposi sarcoma?",
    opts=[
      ["Alitretinoin",
       "Correct. Bexarotene is the one paired with T-cell lymphoma."],
@@ -439,7 +439,7 @@ POOL_A = [
    c=0, cite=c(25)),
 
  dict(topic="Topical antibiotics for acne", io=IO1,
-   q="Which topical antibiotic does the lecture name as the preferred agent for acne, and what is happening to the alternative?",
+   q="Which topical antibiotic is named as the preferred agent for acne, and what is happening to the alternative?",
    opts=[
      ["Clindamycin is preferred; erythromycin is losing efficacy to Propionibacterium acnes resistance",
       "Correct, and both are noted to lack systemic side effects."],
@@ -452,7 +452,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Isotretinoin", io=IO7,
-   q="What does the lecture say about isotretinoin and pregnancy?",
+   q="What is true of isotretinoin and pregnancy?",
    opts=[
      ["It is contraindicated in pregnancy and breastfeeding, and the lecture adds that men should avoid it as well",
       "Correct, and the iPledge programme exists around exactly this risk."],
@@ -465,7 +465,7 @@ POOL_A = [
    c=0, cite=c(27)),
 
  dict(topic="Isotretinoin", io=IO5,
-   q="Which laboratory change does the lecture list among isotretinoin's adverse reactions?",
+   q="Which laboratory change is listed among isotretinoin's adverse reactions?",
    opts=[
      ["Increased serum lipids",
       "Correct, and it sits alongside retinoid dermatitis, photophobia, arthralgia, headaches, alopecia and brittle nails."],
@@ -517,7 +517,7 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Other acne therapies", io=IO1,
-   q="Which antiandrogen does the lecture name for acne?",
+   q="Which antiandrogen is named for acne?",
    opts=[
      ["Spironolactone",
       "Correct, and the lecture notes a gel formulation is available alongside oral use."],
@@ -530,7 +530,7 @@ POOL_A = [
    c=0, cite=c(29)),
 
  dict(topic="Other acne therapies", io=IO5,
-   q="Which two problems does the lecture attach to intralesional steroid injection of an inflammatory nodule?",
+   q="Which two problems are attached to intralesional steroid injection of an inflammatory nodule?",
    opts=[
      ["Systemic absorption leading to adrenal suppression, and local tissue atrophy",
       "Correct. Both are consequences of injecting a steroid into the lesion."],

@@ -338,7 +338,7 @@ POOL_C = [
    c=0, cite=c(119)),
 
  dict(topic="Photoprotection", io=IOA,
-   q="What does the lecture say about patients with Fitzpatrick types IV to VI?",
+   q="What is true of patients with Fitzpatrick types IV to VI?",
    opts=[
      ["They are not immune to ultraviolet damage or skin cancer, and melanoma is frequently diagnosed at advanced stages",
       "Correct — delayed diagnosis is common because of a lower index of suspicion."],

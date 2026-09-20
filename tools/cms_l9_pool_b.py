@@ -49,7 +49,7 @@ POOL_B = [
    c=0, cite=c(21)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="agent/regimen",
-   q="Which chemoprevention does the deck give for squamous cell carcinoma, at what dose, and with what effect?",
+   q="Which chemoprevention is given for squamous cell carcinoma, at what dose, and with what effect?",
    opts=[
      ["Nicotinamide 500 mg orally twice daily, reducing new squamous cell carcinoma development by approximately 30% in high-risk patients",
       "Correct — the corresponding figure for basal cell carcinoma is about 20%."],
@@ -75,7 +75,7 @@ POOL_B = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="test finding",
-   q="Which red flags does the deck list for squamous cell carcinoma?",
+   q="Which red flags are listed for squamous cell carcinoma?",
    opts=[
      ["Rapid growth, pain, bleeding, ulceration, induration, fixation, or palpable regional nodes",
       "Correct — seven features."],
@@ -88,7 +88,7 @@ POOL_B = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="risk factors",
-   q="Which sites does the deck call high-risk for squamous cell carcinoma, and what does having more than ten tumours imply?",
+   q="Which sites are called high-risk for squamous cell carcinoma, and what does having more than ten tumours imply?",
    opts=[
      ["Mucosal surfaces, lip, ear, scalp, temple, nose and genitalia; more than ten tumours means higher rates of local recurrence and nodal metastasis",
       "Correct — site and tumour count both drive risk."],
@@ -140,7 +140,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="escalation",
-   q="Which indications does the deck give for Mohs micrographic surgery in squamous cell carcinoma?",
+   q="Which indications are given for Mohs micrographic surgery in squamous cell carcinoma?",
    opts=[
      ["High-risk sites (lips, temples, ears, nose, genitalia), recurrent tumours, aggressive histology with perineural or perivascular invasion, lesions over 1 cm on the face or over 2 cm on trunk or extremities, immunosuppression, tumours within scars, and genetic disease-associated tumours",
       "Correct — note the two different size thresholds by site."],
@@ -153,7 +153,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, slot="referral",
-   q="What follow-up schedule does the deck specify after squamous cell carcinoma?",
+   q="What follow-up schedule is specified after squamous cell carcinoma?",
    opts=[
      ["At least annual skin AND lymph-node examination, at closer intervals for high-risk or immunosuppressed patients",
       "Correct — the node examination is part of the routine, not an extra."],
@@ -179,7 +179,7 @@ POOL_B = [
    c=0, cite=c(26)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="prognosis",
-   q="What metastatic rate does the deck give for actinically induced squamous cell carcinoma?",
+   q="What metastatic rate is given for actinically induced squamous cell carcinoma?",
    opts=[
      ["An estimated 3 to 7%",
       "Correct — substantially higher with high-risk features."],

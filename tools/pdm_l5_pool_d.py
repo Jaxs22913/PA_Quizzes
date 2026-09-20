@@ -134,7 +134,7 @@ POOL_D = [
 
  # ---- renal and metabolic patterns ----
  dict(topic="Renal pattern", io=IOE, slot="test finding",
-   q="Which laboratory pattern does the deck give for a renal disorder?",
+   q="Which laboratory pattern is given for a renal disorder?",
    opts=[
      ["Raised urea nitrogen and creatinine with a fallen filtration rate, and possibly a raised potassium and a metabolic acidosis",
       "Correct — the deck's renal row."],
@@ -147,7 +147,7 @@ POOL_D = [
    c=0, cite=c(19)),
 
  dict(topic="Renal pattern", io=IOE, slot="test finding",
-   q="Besides urea nitrogen and creatinine, which findings does the deck list in the renal pattern?",
+   q="Besides urea nitrogen and creatinine, which findings are listed in the renal pattern?",
    opts=[
      ["A raised phosphate, a lowered calcium, and albuminuria",
       "Correct — the deck lists these alongside the potassium and acidosis."],
@@ -160,7 +160,7 @@ POOL_D = [
    c=0, cite=c(19)),
 
  dict(topic="Metabolic pattern", io=IOE, slot="test finding",
-   q="Which laboratory pattern does the deck give for diabetic ketoacidosis?",
+   q="Which laboratory pattern is given for diabetic ketoacidosis?",
    opts=[
      ["A raised glucose, a lowered bicarbonate, a raised anion gap, and a low pH",
       "Correct — the deck's metabolic row."],
@@ -173,7 +173,7 @@ POOL_D = [
    c=0, cite=c(19)),
 
  dict(topic="Metabolic pattern", io=IOE, slot="test finding",
-   q="In diabetic ketoacidosis the serum potassium may be raised. What does the deck say about total-body potassium?",
+   q="In diabetic ketoacidosis the serum potassium may be raised. What is true of total-body potassium?",
    opts=[
      ["Total-body potassium is depleted despite the raised serum level",
       "Correct — the deck flags the discrepancy explicitly."],
@@ -186,7 +186,7 @@ POOL_D = [
    c=0, cite=c(19)),
 
  dict(topic="Overlap syndromes", io=IOE, slot="differential",
-   q="Which syndrome does the deck give as showing both liver and kidney failure at once?",
+   q="Which syndrome is given as showing both liver and kidney failure at once?",
    opts=[
      ["Hepatorenal syndrome",
       "Correct — the deck names this as the overlap of the two patterns."],
@@ -415,7 +415,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Fluid balance", io=IOI, slot="test finding",
-   q="Hyponatraemia usually means what, according to the deck?",
+   q="Hyponatraemia usually means what?",
    opts=[
      ["Water excess", "Correct — the deck's shorthand reading of a low sodium."],
      ["Salt deficiency", "The deck reads the low value as a water problem first."],
@@ -457,7 +457,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Fluid balance", io=IOI, slot="test finding",
-   q="Which four core tests does the deck list for evaluating water and electrolyte balance?",
+   q="Which four core tests are listed for evaluating water and electrolyte balance?",
    opts=[
      ["Serum sodium, serum osmolality, urine sodium and osmolality, and the urea nitrogen to creatinine ratio",
       "Correct — the deck's core set, with potassium noted alongside."],
@@ -523,7 +523,7 @@ POOL_D = [
    c=0, cite=c(26)),
 
  dict(topic="Pitfalls", io=IOD, slot="education",
-   q="What does the deck say about interpreting a sodium value on its own?",
+   q="What is true of interpreting a sodium value on its own?",
    opts=[
      ["The number alone does not give the diagnosis; interpret it alongside volume status",
       "Correct — the deck's closing caution on sodium."],
@@ -555,7 +555,7 @@ POOL_D = [
    c=0, cite=c(24)),
 
  dict(topic="Correlation", io=IOH, slot="initial test",
-   q="Which test does the deck name for confirming an estimated filtration rate when accuracy matters?",
+   q="Which test is named for confirming an estimated filtration rate when accuracy matters?",
    opts=[
      ["Cystatin C", "Correct — the deck's named confirmatory measure."],
      ["A twenty-four hour urine protein", "That measures protein loss rather than confirming the rate."],
@@ -564,7 +564,7 @@ POOL_D = [
    c=0, cite=c(24)),
 
  dict(topic="Correlation", io=IOH, slot="initial test",
-   q="Which tests does the deck add to the panel in a diabetic ketoacidosis workup?",
+   q="Which tests are added to the panel in a diabetic ketoacidosis workup?",
    opts=[
      ["Ketones with beta-hydroxybutyrate, a venous blood gas, urinalysis, an electrocardiogram, and a complete blood count",
       "Correct — the deck's full ketoacidosis add-on list."],
@@ -577,7 +577,7 @@ POOL_D = [
    c=0, cite=c(24)),
 
  dict(topic="Correlation", io=IOH, slot="initial test",
-   q="Why does the deck include an electrocardiogram in the ketoacidosis workup?",
+   q="Why is an electrocardiogram included in the ketoacidosis workup?",
    opts=[
      ["To look for the cardiac effects of a raised potassium",
       "Correct — the deck ties the tracing to potassium."],
@@ -590,7 +590,7 @@ POOL_D = [
    c=0, cite=c(24)),
 
  dict(topic="Correlation", io=IOH, slot="initial test",
-   q="Which tests does the deck pair with the panel to work out the cause of hyponatraemia?",
+   q="Which tests are paired with the panel to work out the cause of hyponatraemia?",
    opts=[
      ["Serum osmolality with urine sodium and osmolality",
       "Correct — the deck's hyponatraemia pairing."],

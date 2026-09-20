@@ -103,7 +103,7 @@ POOL_C = [
    c=2, cite=c(31)),
 
  dict(topic="Acute inflammation review", io=IO_E,
-   q="What does the lecture give as the timescale and defining content of acute inflammation on review?",
+   q="What is given as the timescale and defining content of acute inflammation on review?",
    opts=[
      ["Long term, at least days, with proliferation of blood vessels and connective tissue",
       "That is the chronic inflammation review."],
@@ -143,7 +143,7 @@ POOL_C = [
    c=1, cite=c(28)),
 
  dict(topic="Serotonin", io=IO_F,
-   q="What effects does the lecture attribute to serotonin?",
+   q="What effects are attributed to serotonin?",
    opts=[
      ["Pain generation and leukocyte chemotaxis",
       "Pain and possible increased chemotaxis are attributed to bradykinin."],
@@ -273,7 +273,7 @@ POOL_C = [
    c=3, cite=c(28)),
 
  dict(topic="Mediator comparison", io=IO_F,
-   q="Which two mediators does the lecture group under plasma proteins?",
+   q="Which two mediators are grouped under plasma proteins?",
    opts=[
      ["Bradykinin and complement components",
       "Correct. Both are listed under the plasma proteins heading, alongside the coagulation system."],

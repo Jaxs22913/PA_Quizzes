@@ -41,7 +41,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Principles", io=IO3,
-   q="Which set of agents does the lecture classify as bactericidal?",
+   q="Which set of agents is classified as bactericidal?",
    opts=[
      ["Penicillins, cephalosporins, aminoglycosides, vancomycin, fluoroquinolones, metronidazole",
       "Correct. Six agents, and note they act at the cell wall, the ribosome and on DNA — killing is not tied to one target."],
@@ -67,7 +67,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Principles", io=IO2,
-   q="For a time-dependent agent with no post-antibiotic effect, what dosing strategy does the lecture recommend?",
+   q="For a time-dependent agent with no post-antibiotic effect, what dosing strategy is recommended?",
    opts=[
      ["Continuous or frequent infusions, keeping the concentration above the minimal inhibitory concentration for 40 to 70 percent of the dosing interval",
       "Correct. Without a post-antibiotic effect, organisms resume growing as soon as the level falls, so time above the threshold is what matters."],
@@ -80,7 +80,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Principles", io=IO1,
-   q="Under drug factors for choosing a regimen, which toxicities does the lecture list as the organ systems to consider?",
+   q="Under drug factors for choosing a regimen, which toxicities are listed as the organ systems to consider?",
    opts=[
      ["Gastrointestinal, integument, hematologic, central nervous system, hepatic, renal",
       "Correct. Six systems, and they map onto the monitoring parameters repeated for individual classes later in the lecture."],
@@ -171,7 +171,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Penicillins", io=IO4A,
-   q="Why do aminopenicillins reduce the effectiveness of oral contraceptives, according to the lecture?",
+   q="Why do aminopenicillins reduce the effectiveness of oral contraceptives?",
    opts=[
      ["Disruption of gut flora decreases enterohepatic recycling of estrogens, though the lecture notes the supporting evidence is not strong",
       "Correct. The lecture is explicit that the mechanism is proposed and the evidence behind it is weak, while still advising backup contraception."],
@@ -197,7 +197,7 @@ POOL_A = [
    c=0, cite=c(21)),
 
  dict(topic="Penicillins", io=IO4A,
-   q="A patient taking an aminopenicillin is also on warfarin. What does the lecture identify as the interaction?",
+   q="A patient taking an aminopenicillin is also on warfarin. What is identified as the interaction?",
    opts=[
      ["Abnormal prolongation of the prothrombin time",
       "Correct. The lecture lists anticoagulants first among the aminopenicillin interactions."],
@@ -301,7 +301,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Penicillins", io=IO4A,
-   q="What monitoring does the lecture specify for the penicillinase-resistant penicillins?",
+   q="What monitoring is specified for the penicillinase-resistant penicillins?",
    opts=[
      ["Hepatic function, complete blood count, and signs or symptoms of anaphylaxis",
       "Correct. Note the dosing consideration for this class is hepatic rather than renal function, unlike most other penicillins."],
@@ -340,7 +340,7 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Penicillins", io=IO4A,
-   q="Which adverse reactions does the lecture list for the antipseudomonal penicillins?",
+   q="Which adverse reactions are listed for the antipseudomonal penicillins?",
    opts=[
      ["Hypersensitivity reaction, rash, and diarrhoea",
       "Correct, with monitoring for anaphylaxis, renal function, complete blood count and bleeding."],
@@ -353,7 +353,7 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Principles", io=IO1,
-   q="Which pharmacokinetic properties does the lecture list under drug factors when choosing a regimen?",
+   q="Which pharmacokinetic properties are listed under drug factors when choosing a regimen?",
    opts=[
      ["Absorption, distribution, penetration into body compartments, and elimination",
       "Correct. Penetration into compartments is called out separately, which is why central nervous system penetration recurs for individual classes."],

@@ -127,7 +127,7 @@ POOL_B = [
    c=0, cite=c(36)),
 
  dict(topic="Wound healing", io=IOC,
-   q="Which phase of wound healing does the lecture single out as important, and what defines it?",
+   q="Which phase of wound healing is singled out as important, and what defines it?",
    opts=[
      ["The remodelling phase, days 21 to one year, in which formation of granulation tissue ceases",
       "Correct — the slide marks this phase specifically, and its collagen swap is what determines the final scar."],

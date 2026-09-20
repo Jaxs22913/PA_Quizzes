@@ -15,7 +15,7 @@ IO8 = "8 — Mechanism, pharmacokinetics, indications, contraindications and adv
 POOL_B = [
 
  dict(topic="ANS organisation", io=IO1,
-   q="What does the afferent division of the peripheral nervous system do, and what example does the lecture give?",
+   q="What does the afferent division of the peripheral nervous system do, and what example is given?",
    opts=[
      ["It carries signals to the central nervous system and is important in reflex regulation, with sensing pressure in the carotid sinus and aortic arch as the example",
       "Correct. The reflex arc needs the incoming limb before any autonomic outflow can be adjusted."],
@@ -28,7 +28,7 @@ POOL_B = [
    c=0, cite=c(5)),
 
  dict(topic="Chemical signalling", io=IO3,
-   q="Which three general types of signalling between cells does the lecture list?",
+   q="Which three general types of signalling between cells are listed?",
    opts=[
      ["Hormones, local mediators and neurotransmitters",
       "Correct, and the neurotransmitters of interest here are acetylcholine, norepinephrine and epinephrine."],
@@ -41,7 +41,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Neurotransmitters", io=IO3,
-   q="Which neurotransmitter does the lecture describe as the major inhibitory transmitter in the brain?",
+   q="Which neurotransmitter is described as the major inhibitory transmitter in the brain?",
    opts=[
      ["Gamma-aminobutyric acid",
       "Correct, while glycine is given as the inhibitory transmitter used by spinal cord neurons."],
@@ -54,7 +54,7 @@ POOL_B = [
    c=0, cite=c(15)),
 
  dict(topic="Neurotransmitters", io=IO3,
-   q="How does the lecture characterise dopamine?",
+   q="How is dopamine characterised?",
    opts=[
      ["Multiple functions depending on location, producing feelings of pleasure when released by the brain reward system, and usually inhibitory",
       "Correct, which contrasts with acetylcholine being usually excitatory."],
@@ -106,7 +106,7 @@ POOL_B = [
    c=0, cite=c(20)),
 
  dict(topic="Acetylcholine actions", io=IO4,
-   q="Which set of cardiovascular effects does the lecture give for acetylcholine itself?",
+   q="Which set of cardiovascular effects is given for acetylcholine itself?",
    opts=[
      ["A decrease in heart rate, cardiac output and blood pressure",
       "Correct, alongside increased salivary, intestinal and bronchiolar secretions."],
@@ -158,7 +158,7 @@ POOL_B = [
    c=0, cite=c(32)),
 
  dict(topic="Neostigmine", io=IO7,
-   q="Which uses does the lecture list for neostigmine?",
+   q="Which uses are listed for neostigmine?",
    opts=[
      ["Stimulating the bladder and gastrointestinal tract, acting as an antidote to competitive neuromuscular blockers, and symptomatic treatment of myasthenia gravis",
       "Correct, and it can stimulate contractility before paralysing."],
@@ -184,7 +184,7 @@ POOL_B = [
    c=0, cite=c(42)),
 
  dict(topic="Antimuscarinic agents", io=IO7,
-   q="Which antimuscarinic does the lecture identify as approved for axillary hyperhidrosis?",
+   q="Which antimuscarinic is identified as approved for axillary hyperhidrosis?",
    opts=[
      ["Glycopyrronium",
       "Correct, approved in 2018 for that indication."],
@@ -223,7 +223,7 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Atropine", io=IO7,
-   q="Which antisecretory use does the lecture give for atropine?",
+   q="Which antisecretory use is given for atropine?",
    opts=[
      ["Blocking secretions in the upper and lower respiratory tract before surgery or during end-of-life care",
       "Correct, and glycopyrrolate is used similarly before surgery."],
@@ -262,7 +262,7 @@ POOL_B = [
    c=0, cite=c(55)),
 
  dict(topic="Ganglionic blockers", io=IO4,
-   q="Which effects does the lecture give as predominating with ganglionic blockade?",
+   q="Which effects are given as predominating with ganglionic blockade?",
    opts=[
      ["Vasodilation on the sympathetic side, and atony of the bladder and gut, cycloplegia, xerostomia and tachycardia on the parasympathetic side",
       "Correct, since each organ loses whichever division normally dominates it."],
@@ -275,7 +275,7 @@ POOL_B = [
    c=0, cite=c(58)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
-   q="How does the lecture describe the neuromuscular blocking drugs structurally?",
+   q="How are the neuromuscular blocking drugs structurally described?",
    opts=[
      ["As structural analogues of acetylcholine that act either as antagonists in the nondepolarizing type or as agonists in the depolarizing type",
       "Correct, and both are used during surgery to produce complete muscle relaxation."],
@@ -301,7 +301,7 @@ POOL_B = [
    c=0, cite=c(62)),
 
  dict(topic="Neuromuscular blockers", io=IO4,
-   q="Which adverse effect does the lecture attach to atracurium specifically?",
+   q="Which adverse effect is attached to atracurium specifically?",
    opts=[
      ["Histamine release, which can produce a fall in blood pressure, flushing and bronchoconstriction",
       "Correct, and it was replaced by its isomer cisatracurium for having fewer adverse effects."],
@@ -314,7 +314,7 @@ POOL_B = [
    c=0, cite=c(65)),
 
  dict(topic="Succinylcholine", io=IO8,
-   q="What does the lecture call the two phases of succinylcholine's action?",
+   q="What is called the two phases of succinylcholine's action?",
    opts=[
      ["Phase one, opening the sodium channel and depolarizing, and phase two, resistance to further depolarization",
       "Correct, and the receptor becomes incapable of transmitting further impulses."],
@@ -340,7 +340,7 @@ POOL_B = [
    c=0, cite=c(69)),
 
  dict(topic="Cholinergic agents overview", io=IO7,
-   q="What term does the lecture give as synonymous with an indirect-acting cholinergic agonist?",
+   q="What term is given as synonymous with an indirect-acting cholinergic agonist?",
    opts=[
      ["Anticholinesterase",
       "Correct. They raise acetylcholine by blocking its degradation rather than binding the receptor."],
@@ -366,7 +366,7 @@ POOL_B = [
    c=0, cite=c(76)),
 
  dict(topic="Alpha and beta receptors", io=IO3,
-   q="What rank order of potency does the lecture give for alpha receptors?",
+   q="What rank order of potency is given for alpha receptors?",
    opts=[
      ["Epinephrine at least equal to norepinephrine, both far greater than isoproterenol",
       "Correct, and the beta order runs the other way with isoproterenol first."],

@@ -17,7 +17,7 @@ POOL_C = [
    c=0, cite=c(84)),
 
  dict(topic="Epinephrine", io=IO10,
-   q="Which emergency indications does the lecture give for epinephrine?",
+   q="Which emergency indications are given for epinephrine?",
    opts=[["Anaphylactic shock and cardiac arrest","Correct, alongside acute reversal of bronchospasm."],
          ["Cardiogenic and septic shock","Those are dopamine's indications."],
          ["Hypertensive emergency","That is intravenous labetalol."],
@@ -25,7 +25,7 @@ POOL_C = [
    c=0, cite=c(85)),
 
  dict(topic="Dopamine", io=IO10,
-   q="Which adverse effects does the lecture list for dopamine?",
+   q="Which adverse effects are listed for dopamine?",
    opts=[["Nausea, hypertension and arrhythmias","Correct."],
          ["Tremor, restlessness and anxiety","Those are albuterol's."],
          ["Sedation and dry mouth","Those are clonidine's."],
@@ -33,7 +33,7 @@ POOL_C = [
    c=0, cite=c(93)),
 
  dict(topic="Dopamine", io=IO10,
-   q="Which forms of shock does the lecture pair with dopamine?",
+   q="Which forms of shock are paired with dopamine?",
    opts=[["Cardiogenic and septic","Correct."],
          ["Anaphylactic and haemorrhagic","Anaphylaxis is epinephrine's indication."],
          ["Neurogenic only","Not the indication given."],
@@ -57,7 +57,7 @@ POOL_C = [
    c=0, cite=c(95)),
 
  dict(topic="Phenylephrine", io=IO10,
-   q="Which uses does the lecture list for phenylephrine?",
+   q="Which uses are listed for phenylephrine?",
    opts=[["Nasal decongestant, eye redness and septic shock","Correct."],
          ["Asthma and chronic obstructive pulmonary disease","That is albuterol."],
          ["Hypertension and opiate withdrawal","That is clonidine."],
@@ -89,7 +89,7 @@ POOL_C = [
    c=0, cite=c(108)),
 
  dict(topic="Phentolamine", io=IO11,
-   q="Which non-cardiovascular use does the lecture give for phentolamine?",
+   q="Which non-cardiovascular use is given for phentolamine?",
    opts=[["Treatment of impotence","Correct, injected to dilate penile arteries."],
          ["Treatment of glaucoma","That is timolol."],
          ["Treatment of asthma","No alpha blocker is used for asthma."],
@@ -97,7 +97,7 @@ POOL_C = [
    c=0, cite=c(110)),
 
  dict(topic="Prazosin group", io=IO11,
-   q="Which adverse effects does the lecture list for the alpha-one blockers?",
+   q="Which adverse effects are listed for the alpha-one blockers?",
    opts=[["Dizziness, nasal congestion and orthostatic hypotension","Correct, with headache and drowsiness."],
          ["Bronchoconstriction and bradycardia","Those are beta blocker effects."],
          ["Hyperglycaemia and raised lipids","Those belong to propranolol."],
@@ -121,7 +121,7 @@ POOL_C = [
    c=0, cite=c(116)),
 
  dict(topic="Beta blockers", io=IO11,
-   q="What does the lecture say about cardioselectivity at higher doses?",
+   q="What is true of cardioselectivity at higher doses?",
    opts=[["It is lost","Correct, so a beta-one selective agent can still affect the airway."],
          ["It increases","The lecture states the opposite."],
          ["It is unchanged","Selectivity is dose dependent."],

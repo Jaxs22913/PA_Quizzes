@@ -104,7 +104,7 @@ POOL_C = [
    c=0, cite=c(17)),
 
  dict(topic="Visual acuity", io=IOF, slot="differential",
-   q="A patient has unilateral visual loss. Where does the deck localise this?",
+   q="A patient has unilateral visual loss. Where is this localised?",
    opts=[
      ["To the optic nerve or the eye itself",
       "Correct — unilateral loss is ocular or optic nerve."],
@@ -156,7 +156,7 @@ POOL_C = [
    c=0, cite=c(18)),
 
  dict(topic="Visual field testing", io=IOF, slot="test finding",
-   q="A central scotoma is found. Where does the deck localise it?",
+   q="A central scotoma is found. Where is it localised?",
    opts=[
      ["To the macula or the optic nerve",
       "Correct — central scotoma is a macular or optic nerve pattern."],
@@ -169,7 +169,7 @@ POOL_C = [
    c=0, cite=c(18)),
 
  dict(topic="Visual field testing", io=IOF, slot="test finding",
-   q="Which visual field pattern does the deck attach to glaucoma?",
+   q="Which visual field pattern is attached to glaucoma?",
    opts=[
      ["Peripheral loss",
       "Correct — glaucoma is the peripheral-loss pattern on this slide."],
@@ -221,7 +221,7 @@ POOL_C = [
    c=0, cite=c(19)),
 
  dict(topic="Fluorescein", io=IOF, slot="first-line",
-   q="Which five indications does the deck list for fluorescein examination?",
+   q="Which five indications are listed for fluorescein examination?",
    opts=[
      ["Eye pain, foreign-body sensation, trauma, contact-lens wear and red eye",
       "Correct — all five as listed."],
@@ -286,7 +286,7 @@ POOL_C = [
    c=0, cite=c(22)),
 
  dict(topic="Tonometry", io=IOF, slot="escalation",
-   q="Which condition does the deck name as an ophthalmologic emergency indicating tonometry?",
+   q="Which condition is named as an ophthalmologic emergency indicating tonometry?",
    opts=[
      ["Acute angle-closure glaucoma",
       "Correct — named as an ophthalmologic emergency."],
@@ -338,7 +338,7 @@ POOL_C = [
    c=0, cite=cn(22)),
 
  dict(topic="Tonometry", io=IOF, slot="initial test",
-   q="Which two tonometers does the deck name for glaucoma screening?",
+   q="Which two tonometers are named for glaucoma screening?",
    opts=[
      ["The Schiotz indentation tonometer and the Goldman applanation tonometer",
       "Correct — one indentation and one applanation instrument."],
@@ -403,7 +403,7 @@ POOL_C = [
    c=0, cite=c(23)),
 
  dict(topic="Glaucoma", io=IOF, slot="manifestation",
-   q="Which symptoms does the deck list for glaucoma?",
+   q="Which symptoms are listed for glaucoma?",
    opts=[
      ["Blurred vision, blindness and pain in the eye",
       "Correct — the three symptoms as listed."],

@@ -18,7 +18,7 @@ POOL_A = [
      ["Double vision on lateral gaze", "That is diplopia from a cranial nerve palsy."]],
    c=0, cite=c(3)),
  dict(topic="Nystagmus", io=IO, lead="recall",
-   q="A 30-year-old woman developed nystagmus at age three and has no symptoms. What does the lecture say about symptoms in early-onset nystagmus?",
+   q="A 30-year-old woman developed nystagmus at age three and has no symptoms. What is true of symptoms in early-onset nystagmus?",
    opts=[
      ["It is usually asymptomatic if acquired before age eight", "Correct, which is why onset age matters."],
      ["It is always symptomatic regardless of onset", "Early onset is the stated exception."],
@@ -66,7 +66,7 @@ POOL_A = [
      ["Miosis, nystagmus, ataxia", "Those belong to other conditions."]],
    c=0, cite=c(28)),
  dict(topic="Horner syndrome", io=IO, lead="recall",
-   q="Which cause does the lecture say is often behind Horner syndrome?",
+   q="Which cause is often behind Horner syndrome?",
    opts=[
      ["It is often idiopathic", "Correct, before the ordered causes are considered."],
      ["It is always malignant", "Malignancy is one cause among several."],
@@ -74,7 +74,7 @@ POOL_A = [
      ["It is usually congenital", "Congenital origin is not what the lecture emphasises."]],
    c=0, cite=c(30)),
  dict(topic="Third nerve palsy", io=IO, lead="recall",
-   q="How does the lecture classify a third nerve palsy?",
+   q="How is a third nerve palsy classified?",
    opts=[
      ["Complete or incomplete, pupil involved or spared", "Correct, and the pupil is what sets the urgency."],
      ["Central or peripheral only", "That distinction exists but is not the classification named."],
@@ -146,7 +146,7 @@ POOL_A = [
      ["Anhidrosis", "That belongs to Horner syndrome."]],
    c=0, cite=c(36)),
  dict(topic="Care strategies", io=IO, lead="recall",
-   q="Which imaging does the lecture name in the general work-up of neuro-ophthalmological disorders?",
+   q="Which imaging is named in the general work-up of neuro-ophthalmological disorders?",
    opts=[
      ["Head computed tomography or MRI", "Correct, if indicated after history and examination."],
      ["Abdominal ultrasound", "Not relevant here."],
@@ -162,7 +162,7 @@ POOL_A = [
      ["Seventh", "That closes the eyelids."]],
    c=0, cite=c(11)),
  dict(topic="Pharmacologic mydriasis", io=IO, lead="recall",
-   q="Which agents does the lecture name as causing a pharmacologically dilated pupil?",
+   q="Which agents are named as causing a pharmacologically dilated pupil?",
    opts=[
      ["Atropine, ipratropium, scopolamine, glycopyrrolate", "Correct: anticholinergics, giving a large pupil unreactive to light."],
      ["Pilocarpine and carbachol", "Those are cholinergic agonists and constrict the pupil."],
@@ -186,7 +186,7 @@ POOL_A = [
      ["Optic tract to superior colliculus", "Not the route described for the near response."]],
    c=0, cite=c(17)),
  dict(topic="Ptosis", io=IO, lead="recall",
-   q="Which three mechanisms of ptosis does the lecture contrast?",
+   q="Which three mechanisms of ptosis are contrasted?",
    opts=[
      ["Third nerve palsy, Horner syndrome, myasthenia gravis", "Correct, separated by levator function and associated signs."],
      ["Adie pupil, Argyll Robertson pupil, anisocoria", "Those are pupillary rather than lid problems."],

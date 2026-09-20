@@ -34,7 +34,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Benign vs malignant", io=IOC,
-   q="Which five features does the deck list for a benign tumour?",
+   q="Which five features are listed for a benign tumour?",
    opts=[
      ["Circumscribed, compresses, often encapsulated, well differentiated, no metastasis, slow",
       "Correct — each has a malignant counterpart on the same slide: ragged border, infiltrates and invades, various degrees of differentiation, may metastasize, grows rapidly."],
@@ -47,7 +47,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Benign vs malignant", io=IOC,
-   q="What does the deck say about differentiation in malignant tumours?",
+   q="What is true of differentiation in malignant tumours?",
    opts=[
      ["Various degrees of differentiation",
       "Correct — malignancy does not mean uniformly poor differentiation. Benign tumours are usually well differentiated."],
@@ -268,7 +268,7 @@ POOL_B = [
    c=0, cite=c(18)),
 
  dict(topic="Invasion cascade", io=IOD,
-   q="Which three hurdles does the deck name for a tumour cell that has penetrated the vasculature?",
+   q="Which three hurdles are named for a tumour cell that has penetrated the vasculature?",
    opts=[
      ["Penetration of the vasculature, survival in the circulation, and survival in a new organ",
       "Correct — reaching the bloodstream is only the first of the three."],
@@ -281,7 +281,7 @@ POOL_B = [
    c=0, cite=c(26)),
 
  dict(topic="Metastatic pattern", io=IOD,
-   q="What determines where a cancer metastasizes, according to the deck?",
+   q="What determines where a cancer metastasizes?",
    opts=[
      ["Venous blood flow, tumour and endothelial receptors, and genetic fitness",
       "Correct — the deck states explicitly that metastatic spread is NOT random but determined by these three."],
@@ -307,7 +307,7 @@ POOL_B = [
    c=0, cite=c(27)),
 
  dict(topic="Invasion", io=IOD,
-   q="Which abnormal interaction does the deck name as a step in invasion, besides invasion into adjacent structures?",
+   q="Which abnormal interaction is named as a step in invasion, besides invasion into adjacent structures?",
    opts=[
      ["Abnormal cell-substratum interaction",
       "Correct — the cell's relationship with its own supporting matrix changes."],

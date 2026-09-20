@@ -17,7 +17,7 @@ IO8 = "8 — Anti-influenza agents"
 
 POOL_A = [
  dict(topic="Principles", io=IO5,
-   q="Which approaches to antiviral therapy does the lecture list?",
+   q="Which approaches to antiviral therapy are listed?",
    opts=[
      ["Blocking attachment and uncoating, inhibiting nucleic acid and protein synthesis, inhibiting specific viral enzymes, blocking assembly and release, and stimulating the host immune system",
       "Correct. Every agent in this lecture maps onto one of these — acyclovir onto nucleic acid synthesis, oseltamivir onto viral release."],
@@ -56,7 +56,7 @@ POOL_A = [
    c=0, cite=c(119)),
 
  dict(topic="Herpesviruses", io=IO7,
-   q="Which manifestations does the lecture attribute to cytomegalovirus?",
+   q="Which manifestations are attributed to cytomegalovirus?",
    opts=[
      ["Retinitis, oesophagitis and colitis",
       "Correct, and they occur chiefly in transplant recipients and other immunocompromised patients."],
@@ -160,7 +160,7 @@ POOL_A = [
    c=0, cite=c(123)),
 
  dict(topic="Acyclovir", io=IO6,
-   q="What does the lecture say about starting acyclovir within the first 24 hours of chickenpox?",
+   q="What is true of starting acyclovir within the first 24 hours of chickenpox?",
    opts=[
      ["It shortens the acute illness but does not cure the infection",
       "Correct — the virus is not eradicated, which is why reactivation as shingles remains possible later."],
@@ -329,7 +329,7 @@ POOL_A = [
    c=0, cite=c(127)),
 
  dict(topic="Oseltamivir", io=IO8,
-   q="What does the lecture note about oseltamivir resistance?",
+   q="What is noted about oseltamivir resistance?",
    opts=[
      ["It has been becoming a problem over time",
       "Correct — the same trajectory the antibacterial section describes for the fluoroquinolones."],

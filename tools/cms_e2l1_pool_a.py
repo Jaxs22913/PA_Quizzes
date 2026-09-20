@@ -26,7 +26,7 @@ IOB = ("Objective b — Identify medical care strategies for ophthalmological di
 POOL_A = [
  # ---- entropion / ectropion ----
  dict(topic="Entropion", io=IOA, slot="manifestation",
-   q="Which symptom does the deck give for entropion?",
+   q="Which symptom is given for entropion?",
    opts=[
      ["Foreign body sensation", "Correct — the inward-turned lashes rub the globe."],
      ["Tearing", "That is the symptom the deck gives for ectropion."],
@@ -57,7 +57,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Ectropion", io=IOA, slot="etiology",
-   q="Which cause does the deck give for ectropion but NOT for entropion?",
+   q="Which cause is given for ectropion but NOT for entropion?",
    opts=[
      ["Seventh cranial nerve palsy", "Correct — the deck marks this one as ectropion only."],
      ["Aging", "The deck lists ageing for both."],
@@ -115,7 +115,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Dermatochalasis", io=IOA, slot="initial test",
-   q="Which assessment does the deck specify in dermatochalasis, and why does it matter?",
+   q="Which assessment is specified in dermatochalasis, and why does it matter?",
    opts=[
      ["Visual fields, because a demonstrated deficit is what gets blepharoplasty covered by insurance",
       "Correct — the deck ties the field test directly to coverage."],
@@ -151,7 +151,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Xanthelasma", io=IOA, slot="initial test",
-   q="Which laboratory workup does the deck order for xanthelasma?",
+   q="Which laboratory workup is ordered for xanthelasma?",
    opts=[
      ["Serum lipid profile, plus tests for diabetes mellitus and liver function",
       "Correct — the deck's full workup, because the lesion flags a metabolic disorder."],
@@ -164,7 +164,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Xanthelasma", io=IOA, slot="education",
-   q="What does the deck say about the prognosis of locally treated xanthelasma?",
+   q="What is true of the prognosis of locally treated xanthelasma?",
    opts=[
      ["Recurrences are common even after effective local treatment",
       "Correct — the deck flags recurrence explicitly."],
@@ -204,7 +204,7 @@ POOL_A = [
 
  # ---- blepharitis / meibomitis ----
  dict(topic="Blepharitis", io=IOA, slot="risk factors",
-   q="Which three associations does the deck give for blepharitis and meibomitis?",
+   q="Which three associations are given for blepharitis and meibomitis?",
    opts=[
      ["Rosacea, seborrhoeic dermatitis, and colonisation with Staphylococcus aureus",
       "Correct — the deck's three."],
@@ -217,7 +217,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Blepharitis", io=IOA, slot="manifestation",
-   q="Which sign does the deck describe at the meibomian glands in meibomitis?",
+   q="Which sign is described at the meibomian glands in meibomitis?",
    opts=[
      ["Thick, sometimes toothpaste-like lipid secretion",
       "Correct — the deck's distinctive description."],
@@ -230,7 +230,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Blepharitis", io=IOA, slot="manifestation",
-   q="What does the deck say about the tear film in blepharitis?",
+   q="What is true of the tear film in blepharitis?",
    opts=[
      ["It is decreased, or frothy and foamy",
       "Correct — the deck gives both descriptions."],
@@ -252,7 +252,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Blepharitis", io=IOA, slot="escalation",
-   q="How long does the deck give lid hygiene before escalating in blepharitis?",
+   q="How long is lid hygiene given before escalating in blepharitis?",
    opts=[
      ["Two weeks", "Correct — the deck's stated trial period before topical antibiotics."],
      ["Two days", "Shorter than the deck's period."],
@@ -261,7 +261,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Blepharitis", io=IOA, slot="prognosis",
-   q="What does the deck say about the long-term course of blepharitis?",
+   q="What is true of the long-term course of blepharitis?",
    opts=[
      ["It is chronic and can be controlled rather than cured",
       "Correct — an important expectation to set with the patient."],
@@ -327,7 +327,7 @@ POOL_A = [
    c=0, cite=c(21)),
 
  dict(topic="Chalazion and hordeolum", io=IOA, slot="referral",
-   q="When does the deck refer a hordeolum to ophthalmology, and for what?",
+   q="When is a hordeolum referred to ophthalmology, and for what?",
    opts=[
      ["If persistent — for example no improvement in two weeks — for incision and drainage",
       "Correct — the deck's threshold and procedure."],
@@ -380,7 +380,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="etiology",
-   q="Which cause of dacryoadenitis does the deck say is most common?",
+   q="Which cause of dacryoadenitis is most common?",
    opts=[
      ["Inflammatory", "Correct — the deck ranks inflammatory as most common, bacterial as rare."],
      ["Bacterial", "The deck calls bacterial causes rare."],
@@ -389,7 +389,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="test finding",
-   q="Which associated findings does the deck list in dacryoadenitis?",
+   q="Which associated findings are listed in dacryoadenitis?",
    opts=[
      ["Ipsilateral preauricular lymphadenopathy, temporal conjunctival injection, fever and leukocytosis",
       "Correct — the deck's associated findings."],
@@ -402,7 +402,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="first-line",
-   q="How does the deck treat INFLAMMATORY dacryoadenitis, and how fast should it respond?",
+   q="How is INFLAMMATORY dacryoadenitis treated, and how fast should it respond?",
    opts=[
      ["Corticosteroids, with a response expected within 48 hours",
       "Correct — the deck gives both the agent and the expected response time."],
@@ -487,7 +487,7 @@ POOL_A = [
    c=0, cite=c(25)),
 
  dict(topic="Dacryocystitis", io=IOA, slot="escalation",
-   q="Which patients with dacryocystitis does the deck admit, and for how long?",
+   q="Which patients with dacryocystitis are admitted, and for how long?",
    opts=[
      ["Febrile, acutely ill or unreliable patients — intravenous antibiotics for 48 to 72 hours, then oral to complete 10 to 14 days",
       "Correct — the deck's inpatient pathway in full."],
@@ -500,7 +500,7 @@ POOL_A = [
    c=0, cite=c(25)),
 
  dict(topic="Dacryocystitis", io=IOA, slot="prognosis",
-   q="What does the deck say is often needed once the acute infection has resolved?",
+   q="What is often needed once the acute infection has resolved?",
    opts=[
      ["Probing and irrigation to assess patency of the nasolacrimal drainage system, possibly surgery",
       "Correct — the obstruction still has to be addressed."],

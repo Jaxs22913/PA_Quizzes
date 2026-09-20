@@ -140,7 +140,7 @@ POOL_A = [
    c=1, cite=c(15)),
 
  dict(topic="Fungi", io=IO2,
-   q="How does the lecture distinguish yeasts from molds?",
+   q="How are yeasts distinguished from molds?",
    opts=[
      ["Yeasts are macroscopic; molds are microscopic",
       "Both yeasts and molds fall under microscopic fungi; mushrooms and puffballs are the macroscopic group."],
@@ -283,7 +283,7 @@ POOL_A = [
    c=0, cite=c(39)),
 
  dict(topic="Bacterial structures", io=IO3,
-   q="Which internal bacterial structures does the lecture list?",
+   q="Which internal bacterial structures are listed?",
    opts=[
      ["Nuclear membrane, mitochondria, and 80S ribosomes",
       "All three are eukaryotic features; bacteria have no defined nuclear membrane and carry 70S ribosomes."],

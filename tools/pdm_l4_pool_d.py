@@ -52,7 +52,7 @@ POOL_D = [
    c=0, cite=c(58)),
 
  dict(topic="Evaluating anemia", io=IOH, slot="first-line",
-   q="Which four steps does the deck give for evaluating a patient with anemia?",
+   q="Which four steps are given for evaluating a patient with anemia?",
    opts=[
      ["Assess the clinical presentation, check the complete blood count and chemistry panel, determine the mean corpuscular volume, and check the reticulocyte count",
       "Correct — and the notes add that all of these should be assessed simultaneously."],
@@ -104,7 +104,7 @@ POOL_D = [
    c=0, cite=cn(59)),
 
  dict(topic="Microcytic anemia", io=IOG, slot="differential",
-   q="Which five causes of microcytic anemia does the deck list?",
+   q="Which five causes of microcytic anemia are listed?",
    opts=[
      ["Iron deficiency anemia, lead poisoning, anemia of chronic disease, thalassemia and sideroblastic anemia",
       "Correct — the five causes as listed."],
@@ -260,7 +260,7 @@ POOL_D = [
    c=0, cite=cn(69)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="Which causes of MEGALOBLASTIC macrocytic anemia does the deck list?",
+   q="Which causes of MEGALOBLASTIC macrocytic anemia are listed?",
    opts=[
      ["Vitamin B12 deficiency, folate deficiency, drugs impairing DNA synthesis, and copper deficiency",
       "Correct — with methotrexate, antiretrovirals and hydroxyurea as the named drugs."],
@@ -273,7 +273,7 @@ POOL_D = [
    c=0, cite=c(65)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="Which three drugs does the deck name as impairing DNA synthesis?",
+   q="Which three drugs are named as impairing DNA synthesis?",
    opts=[
      ["Methotrexate, antiretrovirals and hydroxyurea",
       "Correct — the three named examples."],
@@ -286,7 +286,7 @@ POOL_D = [
    c=0, cite=c(65)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="Which causes of NON-MEGALOBLASTIC macrocytic anemia does the deck list?",
+   q="Which causes of NON-MEGALOBLASTIC macrocytic anemia are listed?",
    opts=[
      ["Alcohol use, liver disease, hypothyroidism, reticulocytosis, primary bone marrow disorders and chronic kidney disorders",
       "Correct — all six as listed."],
@@ -325,7 +325,7 @@ POOL_D = [
    c=0, cite=c(66)),
 
  dict(topic="Normocytic anemia", io=IOG, slot="differential",
-   q="How does the deck divide the causes of normocytic anemia?",
+   q="How are the causes of normocytic anemia divided?",
    opts=[
      ["Into hypo-proliferative causes and hemolysis or hemorrhage",
       "Correct — the two branches, which is why the reticulocyte count matters most here."],
@@ -338,7 +338,7 @@ POOL_D = [
    c=0, cite=c(68)),
 
  dict(topic="Normocytic anemia", io=IOG, slot="differential",
-   q="Which hypo-proliferative causes of normocytic anemia does the deck list?",
+   q="Which hypo-proliferative causes of normocytic anemia are listed?",
    opts=[
      ["Aplastic anemia, anemia of chronic disease, infiltration of bone marrow by tumor, and hypometabolic states",
       "Correct — the four hypo-proliferative causes."],
@@ -494,7 +494,7 @@ POOL_D = [
    c=0, cite=ci(71)),
 
  dict(topic="Anemia algorithm", io=IOH, slot="referral",
-   q="In the picture-only algorithm's macrocytic branch, what does the deck instruct?",
+   q="In the picture-only algorithm's macrocytic branch, what is instructed?",
    opts=[
      ["Refer to a separate algorithm on the evaluation of macrocytic anemia",
       "Correct — this branch is not worked through in the figure itself."],

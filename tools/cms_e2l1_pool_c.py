@@ -29,7 +29,7 @@ POOL_C = [
    c=0, cite=c(47)),
 
  dict(topic="Episcleritis", io=IOA, slot="gold standard",
-   q="Which bedside test does the deck give to confirm episcleritis, and what is the expected result?",
+   q="Which bedside test is given to confirm episcleritis, and what is the expected result?",
    opts=[
      ["A drop of 2.5 per cent phenylephrine, waiting 15 minutes — the episcleral vessels should blanch",
       "Correct — the deck's test, concentration, waiting time and expected result."],
@@ -116,7 +116,7 @@ POOL_C = [
    c=0, cite=c(50)),
 
  dict(topic="Scleritis", io=IOA, slot="agent/regimen",
-   q="What treatment does the slide give for scleritis, and how do the speaker notes refine it?",
+   q="What treatment is given for scleritis, and how do the speaker notes refine it?",
    opts=[
      ["The slide gives systemic corticosteroids or immune-modulating agents; the notes say non-infectious anterior scleritis commonly BEGINS with systemic non-steroidal anti-inflammatories, with steroids reserved for severe, necrotising, posterior or refractory disease",
       "Correct — the notes add a step the slide skips."],
@@ -170,7 +170,7 @@ POOL_C = [
 
  # ---- keratitis ----
  dict(topic="Keratitis", io=IOA, slot="risk factors",
-   q="Which risk factors does the deck list for keratitis?",
+   q="Which risk factors are listed for keratitis?",
    opts=[
      ["Corneal trauma, dry eyes, contact lens overwear, and topical ocular corticosteroid therapy",
       "Correct — the deck's four."],
@@ -183,7 +183,7 @@ POOL_C = [
    c=0, cite=c(55)),
 
  dict(topic="Keratitis", io=IOA, slot="test finding",
-   q="Which examination findings does the deck give for keratitis?",
+   q="Which examination findings are given for keratitis?",
    opts=[
      ["Opacification of the cornea, a broken-up corneal light reflection, and ciliary flush",
       "Correct — the deck's three signs."],
@@ -248,7 +248,7 @@ POOL_C = [
    c=0, cite=cn(56)),
 
  dict(topic="Keratitis", io=IOA, slot="prognosis",
-   q="How does the deck describe prognosis in BACTERIAL keratitis?",
+   q="How is prognosis described in BACTERIAL keratitis?",
    opts=[
      ["Good for small to moderate ulcers, poor for severe ones, and worse for ulcers inside the visual axis",
       "Correct — the deck grades by size and by position relative to the visual axis."],
@@ -327,7 +327,7 @@ POOL_C = [
    c=0, cite=c(59)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="avoid",
-   q="What does the deck prohibit outright in active herpes simplex epithelial disease?",
+   q="What is prohibited outright in active herpes simplex epithelial disease?",
    opts=[
      ["Topical glucocorticoids prescribed by the primary care provider — that decision is left to ophthalmology",
       "Correct — the deck puts this in capitals."],
@@ -340,7 +340,7 @@ POOL_C = [
    c=0, cite=c(59)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="escalation",
-   q="When does the deck give intravenous aciclovir in herpes zoster keratitis?",
+   q="When is intravenous aciclovir given in herpes zoster keratitis?",
    opts=[
      ["If the patient is immunocompromised",
       "Correct on the slide — though the notes narrow this to severe, disseminated, orbital, retinal, central nervous system or significantly immunocompromised presentations."],
@@ -393,7 +393,7 @@ POOL_C = [
 
  # ---- corneal ulcer ----
  dict(topic="Corneal ulcer", io=IOA, slot="risk factors",
-   q="Which single risk factor does the deck call major for a corneal ulcer?",
+   q="Which single risk factor is called major for a corneal ulcer?",
    opts=[
      ["Contact lens use", "Correct — the deck marks it as the major risk factor."],
      ["Sunlight exposure", "That drives pterygium."],
@@ -402,7 +402,7 @@ POOL_C = [
    c=0, cite=c(60)),
 
  dict(topic="Corneal ulcer", io=IOA, slot="manifestation",
-   q="Which examination behaviour does the deck describe in corneal ulcer?",
+   q="Which examination behaviour is described in corneal ulcer?",
    opts=[
      ["The patient resists opening the affected eye",
       "Correct — the deck notes this specifically, from photophobia and foreign body sensation."],
@@ -424,7 +424,7 @@ POOL_C = [
    c=0, cite=c(61)),
 
  dict(topic="Corneal ulcer", io=IOA, slot="agent/regimen",
-   q="Which agent does the deck start for a corneal ulcer while awaiting ophthalmology?",
+   q="Which agent is started for a corneal ulcer while awaiting ophthalmology?",
    opts=[
      ["A broad-spectrum topical agent such as a fourth-generation fluoroquinolone",
       "Correct — the deck's starting agent."],
@@ -450,7 +450,7 @@ POOL_C = [
    c=0, cite=c(61)),
 
  dict(topic="Corneal ulcer", io=IOA, slot="prognosis",
-   q="What follow-up and healing time does the deck give for a corneal ulcer?",
+   q="What follow-up and healing time is given for a corneal ulcer?",
    opts=[
      ["Next-day follow-up after starting an anti-infective, with most ulcers healing in two to three weeks",
       "Correct — both the follow-up interval and the healing time."],
@@ -464,7 +464,7 @@ POOL_C = [
 
  # ---- uveitis ----
  dict(topic="Anterior uveitis", io=IOA, slot="test finding",
-   q="Which findings does the deck give for anterior uveitis?",
+   q="Which findings are given for anterior uveitis?",
    opts=[
      ["Cells in the anterior chamber, consensual photophobia, ciliary flush, variable pressure, and an irregular pupil that may be stuck to the lens or cornea",
       "Correct — the deck's full sign list."],
@@ -490,7 +490,7 @@ POOL_C = [
    c=0, cite=c(62)),
 
  dict(topic="Anterior uveitis", io=IOA, slot="manifestation",
-   q="What does the deck say about vision in anterior uveitis?",
+   q="What is true of vision in anterior uveitis?",
    opts=[
      ["It is often preserved", "Correct — which is why the other signs matter so much."],
      ["It is always severely reduced", "The deck says vision is often preserved."],
@@ -525,7 +525,7 @@ POOL_C = [
    c=0, cite=c(64)),
 
  dict(topic="Posterior uveitis", io=IOA, slot="etiology",
-   q="Which infectious causes does the deck give for posterior uveitis?",
+   q="Which infectious causes are given for posterior uveitis?",
    opts=[
      ["Toxoplasmosis and cytomegalovirus", "Correct — the deck's two named organisms."],
      ["Adenovirus and Staphylococcus aureus", "Those are conjunctivitis causes."],
@@ -547,7 +547,7 @@ POOL_C = [
    c=0, cite=c(65)),
 
  dict(topic="Posterior uveitis", io=IOA, slot="initial test",
-   q="Which additional investigation does the deck mention for posterior uveitis, and what does it distinguish?",
+   q="Which additional investigation is mentioned for posterior uveitis, and what does it distinguish?",
    opts=[
      ["Fluorescein angiography, which helps distinguish active from inactive lesions and associated problems",
       "Correct — the deck's stated purpose for the test."],

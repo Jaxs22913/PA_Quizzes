@@ -50,7 +50,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Glaucoma mechanism", io=IO6, slot="test finding", kfe=True,
-   q="Above what cup-to-disc ratio does the deck describe progressive optic disc cupping?",
+   q="Above what cup-to-disc ratio is progressive optic disc cupping described?",
    opts=[
      ["Greater than 0.5", "Correct — the deck's threshold for an increased cup-to-disc ratio."],
      ["Greater than 0.2", "Below the deck's stated threshold."],
@@ -72,7 +72,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Open-angle glaucoma", io=IO6, slot="manifestation", kfe=True,
-   q="What does the deck call the clinical pitfall of primary open-angle glaucoma?",
+   q="What is called the clinical pitfall of primary open-angle glaucoma?",
    opts=[
      ["It is asymptomatic until severe peripheral vision loss, or tunnel vision, has occurred",
       "Correct — the silence of the disease is the pitfall the deck names."],
@@ -107,7 +107,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Angle-closure glaucoma", io=IO6, slot="manifestation", kfe=True,
-   q="Which symptom set does the deck give for acute angle-closure glaucoma?",
+   q="Which symptom set is given for acute angle-closure glaucoma?",
    opts=[
      ["Severe eye pain, headache, halos around lights, cloudy cornea, a fixed mid-dilated pupil, and nausea and vomiting",
       "Correct — the deck's full acute picture."],
@@ -173,7 +173,7 @@ POOL_D = [
    c=0, cite=c(36)),
 
  dict(topic="Retinal detachment", io=IO8, slot="differential", kfe=True,
-   q="Which primary aetiology does the deck give for TRACTIONAL retinal detachment?",
+   q="Which primary aetiology is given for TRACTIONAL retinal detachment?",
    opts=[
      ["Proliferative diabetic retinopathy",
       "Correct — the neovascular membranes of proliferative disease are the classic traction source."],
@@ -186,7 +186,7 @@ POOL_D = [
    c=0, cite=c(36)),
 
  dict(topic="Retinal detachment", io=IO8, slot="differential", kfe=True,
-   q="Which three aetiologies does the deck give for EXUDATIVE detachment?",
+   q="Which three aetiologies are given for EXUDATIVE detachment?",
    opts=[
      ["Severe malignant hypertension, sarcoidosis and choroidal melanoma",
       "Correct — hydrostatic, inflammatory and neoplastic causes respectively."],
@@ -199,7 +199,7 @@ POOL_D = [
    c=0, cite=c(36)),
 
  dict(topic="Retinal detachment", io=IO8, slot="risk factors", kfe=True,
-   q="Which risk factors does the deck list for rhegmatogenous detachment?",
+   q="Which risk factors are listed for rhegmatogenous detachment?",
    opts=[
      ["Posterior vitreous detachment, age, severe myopia, trauma and lattice degeneration",
       "Correct — the deck's five."],
@@ -212,7 +212,7 @@ POOL_D = [
    c=0, cite=c(36)),
 
  dict(topic="Retinal detachment", io=IO8, slot="manifestation", kfe=True,
-   q="What symptoms does the deck give for rhegmatogenous detachment?",
+   q="What symptoms are given for rhegmatogenous detachment?",
    opts=[
      ["Flashing lights, a shower of floaters, and a curtain falling across the field",
       "Correct — photopsia, floaters, then the curtain."],
@@ -322,7 +322,7 @@ POOL_D = [
    c=0, cite=c(39)),
 
  dict(topic="Macular degeneration", io=IO9, slot="etiology", kfe=True,
-   q="What does the deck say about the pathogenesis of macular degeneration overall?",
+   q="What is true of the pathogenesis of macular degeneration overall?",
    opts=[
      ["It is unknown", "Correct — the deck's slide titles say pathogenesis unknown for both forms."],
      ["It is entirely genetic", "The deck does not make this claim."],
@@ -384,7 +384,7 @@ POOL_D = [
    c=0, cite=c(37)),
 
  dict(topic="Diabetic retinopathy", io=IO3, slot="complication",
-   q="Which complications does the deck attach to proliferative diabetic retinopathy?",
+   q="Which complications are attached to proliferative diabetic retinopathy?",
    opts=[
      ["Vitreous haemorrhage, fibrotic traction and tractional detachment",
       "Correct — the fragile new vessels bleed and then scar."],
@@ -541,7 +541,7 @@ POOL_D = [
    c=0, cite=au()),
 
  dict(topic="Optic neuropathy", io=IO10, slot="differential", kfe=True,
-   q="Which causes does the deck give for an ipsilateral optic nerve lesion?",
+   q="Which causes are given for an ipsilateral optic nerve lesion?",
    opts=[
      ["Trauma, optic neuritis and ischaemic optic neuropathy",
       "Correct — the deck's three causes at site A."],

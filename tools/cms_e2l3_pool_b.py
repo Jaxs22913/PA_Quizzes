@@ -13,7 +13,7 @@ POOL_B = [
 
  # ---------------- Diagnostic testing ----------------
  dict(topic="Amaurosis fugax", io=IOA, lead="test",
-   q="A 69-year-old man with amaurosis fugax is investigated for a cardiac source. Which study does the lecture pair with that?",
+   q="A 69-year-old man with amaurosis fugax is investigated for a cardiac source. Which study is paired with that?",
    opts=[
      ["Echocardiogram", "Correct; carotid Doppler is used for a carotid source."],
      ["Carotid Doppler", "That investigates a carotid source."],
@@ -22,7 +22,7 @@ POOL_B = [
    c=0, cite=c(7)),
 
  dict(topic="Glaucoma", io=IOA, lead="test",
-   q="A 63-year-old woman is being screened for glaucoma. Which two instruments does the lecture name?",
+   q="A 63-year-old woman is being screened for glaucoma. Which two instruments are named?",
    opts=[
      ["Tonometry and gonioscopy", "Correct; tonometry measures pressure, gonioscopy views the angle."],
      ["Ophthalmoscopy and lumbar puncture", "Lumbar puncture belongs to the papilledema workup."],
@@ -31,7 +31,7 @@ POOL_B = [
    c=0, cite=c(18)),
 
  dict(topic="Optic neuritis", io=IOA, lead="test",
-   q="A 28-year-old woman with optic neuritis is referred. Which components does the lecture list in the ophthalmic examination?",
+   q="A 28-year-old woman with optic neuritis is referred. Which components are listed in the ophthalmic examination?",
    opts=[
      ["Slit lamp, dilated fundoscopy and colour vision", "Correct, with a neurological examination."],
      ["Carotid Doppler and echocardiography of the heart", "Those look for an embolic source."],
@@ -49,7 +49,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Vascular occlusion", io=IOA, lead="test",
-   q="A 66-year-old man has a retinal vascular occlusion. Which two studies does the lecture name as confirmatory?",
+   q="A 66-year-old man has a retinal vascular occlusion. Which two studies are named as confirmatory?",
    opts=[
      ["Colour fundus photography and fluorescein angiography", "Correct, used for both the arterial and venous occlusions."],
      ["MRI and lumbar puncture", "Those belong to the papilledema workup."],
@@ -58,7 +58,7 @@ POOL_B = [
    c=0, cite=c(39)),
 
  dict(topic="Retinal detachment", io=IOA, lead="test",
-   q="A 67-year-old woman has a suspected retinal detachment. What advantage does the lecture give for ultrasound?",
+   q="A 67-year-old woman has a suspected retinal detachment. What advantage is given for ultrasound?",
    opts=[
      ["It is more sensitive than the fundoscopic exam", "Correct, and it determines the type of detachment."],
      ["It measures intraocular pressure", "That is tonometry."],
@@ -86,7 +86,7 @@ POOL_B = [
 
  # ---------------- Management ----------------
  dict(topic="Amaurosis fugax", io=IOB, lead="treatment",
-   q="A 67-year-old man has amaurosis fugax. What does the lecture identify as the core of management?",
+   q="A 67-year-old man has amaurosis fugax. What is identified as the core of management?",
    opts=[
      ["Treat the underlying cause", "Correct; the lecturer called this the essential point."],
      ["Lower the intraocular pressure", "That is glaucoma management."],
@@ -95,7 +95,7 @@ POOL_B = [
    c=0, cite=c(8)),
 
  dict(topic="Amaurosis fugax", io=IOB, lead="treatment",
-   q="A 64-year-old woman has amaurosis fugax attributed to vascular spasm from Raynaud's. Which drug class does the lecture use?",
+   q="A 64-year-old woman has amaurosis fugax attributed to vascular spasm from Raynaud's. Which drug class is used?",
    opts=[
      ["Calcium channel blockers", "Correct, for the vasospastic mechanism."],
      ["Beta-blockers", "Those are used as drops for glaucoma."],
@@ -104,7 +104,7 @@ POOL_B = [
    c=0, cite=c(8)),
 
  dict(topic="Angle-closure glaucoma", io=IOB, lead="treatment",
-   q="A 60-year-old man presents with acute angle closure. Which topical agents does the lecture instil first?",
+   q="A 60-year-old man presents with acute angle closure. Which topical agents are instilled first?",
    opts=[
      ["Pilocarpine or timolol", "Correct, a topical alpha-blocker or beta-blocker."],
      ["Latanoprost or tafluprost", "Those are first-line for the chronic form."],
@@ -122,7 +122,7 @@ POOL_B = [
    c=0, cite=c(20)),
 
  dict(topic="Glaucoma", io=IOB, lead="treatment",
-   q="A 66-year-old man asks what the definitive treatment for glaucoma is. What does the lecture state?",
+   q="A 66-year-old man asks what the definitive treatment for glaucoma is. What is stated?",
    opts=[
      ["Surgery", "Correct, for both the acute and chronic forms."],
      ["Lifelong eye drops", "Some patients remain on drops, but that is not definitive."],
@@ -131,7 +131,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Retinal detachment", io=IOB, lead="treatment",
-   q="A 65-year-old man has a retinal detachment. What timeframe does the lecture give for surgical repair?",
+   q="A 65-year-old man has a retinal detachment. What timeframe is given for surgical repair?",
    opts=[
      ["Urgently, or within a week depending on type", "Correct."],
      ["Only if vision fails to improve", "Repair is not conditional on that."],
@@ -140,7 +140,7 @@ POOL_B = [
    c=0, cite=c(30)),
 
  dict(topic="CRVO", io=IOB, lead="next step",
-   q="A 68-year-old woman has a central retinal vein occlusion. What does the lecture give as the purpose of urgent referral?",
+   q="A 68-year-old woman has a central retinal vein occlusion. What is given as the purpose of urgent referral?",
    opts=[
      ["To restore blood flow", "Correct, alongside evaluating the underlying disorders."],
      ["To lower intracranial pressure", "That is papilledema management."],
@@ -149,7 +149,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="CRAO", io=IOB, lead="treatment",
-   q="A 72-year-old man has a central retinal artery occlusion. Why does the lecture perform anterior chamber paracentesis?",
+   q="A 72-year-old man has a central retinal artery occlusion. Why is anterior chamber paracentesis performed?",
    opts=[
      ["To lower the intraocular pressure", "Correct, fluid is withdrawn from the eye with a needle."],
      ["To deliver a drug into the retina", "That is the intra-arterial thrombolytic route."],
@@ -158,7 +158,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="Papilledema", io=IOB, lead="treatment",
-   q="A 43-year-old woman has papilledema from an identified cause. What does the lecture give as management?",
+   q="A 43-year-old woman has papilledema from an identified cause. What is given as management?",
    opts=[
      ["Treat the underlying disorder", "Correct, after imaging and lumbar puncture."],
      ["Topical pressure-lowering drops", "The pressure is intracranial, not intraocular."],
@@ -167,7 +167,7 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Acute vision loss", io=IOB, lead="next step",
-   q="A 78-year-old woman presents to a primary care clinic with sudden vision loss in one eye. What does the lecture direct the clinician to do?",
+   q="A 78-year-old woman presents to a primary care clinic with sudden vision loss in one eye. What is the clinician directed to do?",
    opts=[
      ["Refer emergently to ophthalmology", "Correct, for anyone over 50 with sudden visual loss."],
      ["Prescribe drops and review in a week", "None of these diagnoses tolerates that delay."],
@@ -177,7 +177,7 @@ POOL_B = [
 
  # ---------------- Patient education ----------------
  dict(topic="Glaucoma", io=IOB, lead="education",
-   q="A 47-year-old man asks how glaucoma is usually picked up. What does the lecturer advise for patients?",
+   q="A 47-year-old man asks how glaucoma is usually picked up. What is advised for patients?",
    opts=[
      ["Annual eye examinations", "Correct; screening is what finds the asymptomatic chronic form."],
      ["Annual carotid ultrasound", "That screens for embolic disease."],
@@ -213,7 +213,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Acute vision loss", io=IOB, lead="education",
-   q="A 61-year-old man is counselled after an episode of transient monocular vision loss. Which point does the lecture make central?",
+   q="A 61-year-old man is counselled after an episode of transient monocular vision loss. Which point is made central?",
    opts=[
      ["A transient ischemic attack warns of a stroke", "Correct; it is a major warning sign."],
      ["Only bilateral loss is concerning", "Monocular loss is the presentation described."],
@@ -232,7 +232,7 @@ POOL_B = [
    c=0, cite=c(8)),
 
  dict(topic="Optic neuritis", io=IOA, lead="prognosis",
-   q="A 29-year-old man with optic neuritis asks how long recovery takes. What does the lecture describe?",
+   q="A 29-year-old man with optic neuritis asks how long recovery takes. What is described?",
    opts=[
      ["Improvement within weeks, normal vision within a year", "Correct, often without treatment."],
      ["No recovery at any point", "Recovery is the rule."],
@@ -241,7 +241,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="CRAO", io=IOA, lead="prognosis",
-   q="A 71-year-old woman with a central retinal artery occlusion asks about her wider risk. What does the lecture state?",
+   q="A 71-year-old woman with a central retinal artery occlusion asks about her wider risk. What is stated?",
    opts=[
      ["Stroke risk rises at the onset of the occlusion", "Correct; plaque reaching the retina implies more upstream."],
      ["Risk is limited to the affected eye", "The systemic risk is emphasised."],
@@ -259,7 +259,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="NAION", io=IOB, lead="prognosis",
-   q="A 56-year-old man with non-arteritic anterior ischemic optic neuropathy has completed his workup. What does the lecture give as management?",
+   q="A 56-year-old man with non-arteritic anterior ischemic optic neuropathy has completed his workup. What is given as management?",
    opts=[
      ["Observation and cardiovascular risk modification", "Correct, once everything else has been excluded."],
      ["A long-term high-dose oral corticosteroid course", "Those treat the arteritic form."],
@@ -305,7 +305,7 @@ POOL_B = [
    c=0, cite=c(35)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
-   q="A 55-year-old woman is learning the two glaucomas. Which pairing does the lecture give?",
+   q="A 55-year-old woman is learning the two glaucomas. Which pairing is given?",
    opts=[
      ["Acute is closed-angle; chronic is open-angle", "Correct."],
      ["Acute is open-angle; chronic is closed-angle", "This reverses them."],
@@ -314,7 +314,7 @@ POOL_B = [
    c=0, cite=c(9)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
-   q="A 73-year-old man asks what separates the two forms of anterior ischemic optic neuropathy. What does the lecture give?",
+   q="A 73-year-old man asks what separates the two forms of anterior ischemic optic neuropathy. What is given?",
    opts=[
      ["Whether giant cell arteritis is present", "Correct; the arteritic form is caused by it."],
      ["Which eye is affected", "Either eye may be affected in both."],
@@ -332,7 +332,7 @@ POOL_B = [
    c=0, cite=c(6)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="manifestation",
-   q="A 70-year-old woman with ocular ischemia loses part of her visual field. Which patterns does the lecture describe?",
+   q="A 70-year-old woman with ocular ischemia loses part of her visual field. Which patterns are described?",
    opts=[
      ["Upper or lower half, temporal or nasal, or central", "Correct; the whole field may also be lost."],
      ["Only the central field", "The lecture describes several patterns."],
@@ -359,7 +359,7 @@ POOL_B = [
    c=0, cite=c(45)),
 
  dict(topic="Angle-closure glaucoma", io=IOB, lead="treatment",
-   q="A 59-year-old man has acute angle closure. How soon after onset does the lecture perform the definitive procedure?",
+   q="A 59-year-old man has acute angle closure. How soon after onset is the definitive procedure performed?",
    opts=[
      ["One to two days", "Correct, after medical measures have lowered the pressure."],
      ["Within the hour", "Medical therapy comes first."],
@@ -368,7 +368,7 @@ POOL_B = [
    c=0, cite=c(20)),
 
  dict(topic="Optic neuritis", io=IOB, lead="treatment",
-   q="A 33-year-old woman with optic neuritis is found to have multiple sclerosis. Which treatment does the lecture mention?",
+   q="A 33-year-old woman with optic neuritis is found to have multiple sclerosis. Which treatment is mentioned?",
    opts=[
      ["Corticosteroids", "Correct, considered when a demyelinating cause is identified."],
      ["Carbonic anhydrase inhibitors", "Those lower intraocular pressure."],
@@ -377,7 +377,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Retinal detachment", io=IOB, lead="treatment",
-   q="A 66-year-old man needs retinal detachment repair. Which of these does the lecture list among the surgical options?",
+   q="A 66-year-old man needs retinal detachment repair. Which of these is listed among the surgical options?",
    opts=[
      ["Pneumatic retinopexy", "Correct, with cryotherapy, vitrectomy, laser photocoagulation and scleral buckle."],
      ["Peripheral iridotomy", "That treats angle-closure glaucoma."],

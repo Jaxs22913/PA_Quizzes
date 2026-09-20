@@ -295,7 +295,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Keloid", io=IOA, slot="first-line",
-   q="What does the deck call the most important treatment for keloids?",
+   q="What is called the most important treatment for keloids?",
    opts=[
      ["Prevention, including advising high-risk patients to avoid cosmetic procedures such as ear piercing",
       "Correct — no single modality is best for all keloids."],

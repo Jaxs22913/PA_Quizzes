@@ -16,7 +16,7 @@ IO10 = "10 — Mechanism, pharmacokinetics, indications, contraindications and a
 POOL = [
 
  dict(topic="Adrenergic receptors", io=IO5,
-   q="Which rank order of potency does the lecture give for beta receptors?",
+   q="Which rank order of potency is given for beta receptors?",
    opts=[
      ["Isoproterenol, then epinephrine, then norepinephrine",
       "Correct. The alpha order runs the other way, with epinephrine and norepinephrine far above isoproterenol."],
@@ -68,7 +68,7 @@ POOL = [
    c=0, cite=c(80)),
 
  dict(topic="Adrenergic agonists", io=IO10,
-   q="Which agents does the lecture classify as MIXED-action adrenergic agonists?",
+   q="Which agents are classified as MIXED-action adrenergic agonists?",
    opts=[
      ["Ephedrine and pseudoephedrine",
       "Correct. They release stored norepinephrine and also activate receptors directly."],
@@ -120,7 +120,7 @@ POOL = [
    c=0, cite=c(84)),
 
  dict(topic="Epinephrine", io=IO10,
-   q="Why does the lecture prefer a selective beta-two agonist for chronic asthma over epinephrine?",
+   q="Why is a selective beta-two agonist preferred for chronic asthma over epinephrine?",
    opts=[
      ["Longer duration of action",
       "Correct. Epinephrine reverses acute bronchospasm; albuterol covers chronic treatment."],
@@ -198,7 +198,7 @@ POOL = [
    c=0, cite=c(89)),
 
  dict(topic="Norepinephrine", io=IO10,
-   q="Norepinephrine extravasates from a drip and the skin blanches. What does the lecture give as treatment?",
+   q="Norepinephrine extravasates from a drip and the skin blanches. What is given as treatment?",
    opts=[
      ["Phentolamine",
       "Correct. An alpha blocker reverses the intense local vasoconstriction before the skin sloughs."],
@@ -250,7 +250,7 @@ POOL = [
    c=0, cite=c(94)),
 
  dict(topic="Dobutamine", io=IO10,
-   q="Why does the lecture counsel caution with dobutamine in atrial fibrillation?",
+   q="Why is caution counselled with dobutamine in atrial fibrillation?",
    opts=[
      ["It increases atrioventricular conduction",
       "Correct, which can accelerate the ventricular response."],
@@ -263,7 +263,7 @@ POOL = [
    c=0, cite=c(94)),
 
  dict(topic="Oxymetazoline", io=IO10,
-   q="What does the lecture warn happens if oxymetazoline is used beyond three days?",
+   q="What happens if oxymetazoline is used beyond three days?",
    opts=[
      ["Rhinitis medicamentosa, or rebound congestion",
       "Correct, and it is the practical reason for a hard stop on a decongestant spray."],
@@ -315,7 +315,7 @@ POOL = [
    c=0, cite=c(97)),
 
  dict(topic="Clonidine", io=IO4,
-   q="What does the lecture warn about stopping clonidine abruptly?",
+   q="What is warned about stopping clonidine abruptly?",
    opts=[
      ["Rebound hypertension",
       "Correct, which is why it is tapered rather than stopped."],
@@ -328,7 +328,7 @@ POOL = [
    c=0, cite=c(97)),
 
  dict(topic="Albuterol", io=IO10,
-   q="Which adverse effects does the lecture list for albuterol?",
+   q="Which adverse effects are listed for albuterol?",
    opts=[
      ["Tremor, restlessness, apprehension and anxiety",
       "Correct, the familiar beta-two agonist profile."],
@@ -393,7 +393,7 @@ POOL = [
    c=0, cite=c(104)),
 
  dict(topic="Amphetamine", io=IO10,
-   q="Which uses does the lecture list for amphetamine?",
+   q="Which uses are listed for amphetamine?",
    opts=[
      ["Hyperactivity, narcolepsy and appetite control",
       "Correct, on top of its indirect adrenergic actions."],

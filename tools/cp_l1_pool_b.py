@@ -19,7 +19,7 @@ POOL_B = [
    c=0, cite=c(14)),
 
  dict(topic="Granulocytes", io=IO_C,
-   q="Which three cell types does the lecture list as granulocytes?",
+   q="Which three cell types are listed as granulocytes?",
    opts=[
      ["Lymphocytes, monocytes and macrophages",
       "These are the agranulocytes, or mononuclear leucocytes."],
@@ -45,7 +45,7 @@ POOL_B = [
    c=2, cite=c(15)),
 
  dict(topic="Agranulocytes", io=IO_C,
-   q="Which cells does the lecture group as agranulocytes (mononuclear leucocytes)?",
+   q="Which cells are grouped as agranulocytes (mononuclear leucocytes)?",
    opts=[
      ["Neutrophils, eosinophils and basophils",
       "These are the three granulocytes."],
@@ -84,7 +84,7 @@ POOL_B = [
    c=1, cite=c(16)),
 
  dict(topic="Neutrophils", io=IO_C,
-   q="How does the lecture describe the neutrophil's nucleus and cytoplasm?",
+   q="How is the neutrophil's nucleus and cytoplasm described?",
    opts=[
      ["Bi-lobed nucleus with pink-orange granules",
       "That is the eosinophil."],
@@ -149,7 +149,7 @@ POOL_B = [
    c=2, cite=c(18)),
 
  dict(topic="B lymphocytes", io=IO_C,
-   q="Which set of functions does the lecture assign to B lymphocytes?",
+   q="Which set of functions is assigned to B lymphocytes?",
    opts=[
      ["Cell-mediated killing of virus-infected cells through T cell receptors",
       "That is the role of CD8+ cytotoxic T cells and natural killer cells."],
@@ -201,7 +201,7 @@ POOL_B = [
    c=2, cite=c(23)),
 
  dict(topic="T lymphocytes", io=IO_C,
-   q="What function does the lecture assign to regulatory (suppressor) T cells?",
+   q="What function is assigned to regulatory (suppressor) T cells?",
    opts=[
      ["Producing antibody against antigens encountered previously",
       "Antibody production belongs to B lymphocytes and plasma cells."],

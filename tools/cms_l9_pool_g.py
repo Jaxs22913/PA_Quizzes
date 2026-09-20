@@ -56,7 +56,7 @@ POOL_G = [
    c=0, cite=c(95)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IO, slot="avoid",
-   q="What harm does the deck attribute to overly aggressive cutaneous T-cell lymphoma therapy?",
+   q="What harm is attributed to overly aggressive cutaneous T-cell lymphoma therapy?",
    opts=[
      ["Complications and premature death",
       "Correct — and early aggressive treatment has not been proven to cure disease or prevent progression."],
@@ -162,7 +162,7 @@ POOL_G = [
    c=0, cite=c(67)),
 
  dict(topic="Melanoma", io=IO, slot="education",
-   q="Which melanoma subtype does the deck say is frequently delayed in diagnosis, making early reporting critical?",
+   q="Which melanoma subtype is frequently delayed in diagnosis, making early reporting critical?",
    opts=[
      ["Acral lentiginous melanoma",
       "Correct — which is why patients are told to report new pigment, widening bands or periungual pigment promptly."],
@@ -255,7 +255,7 @@ POOL_G = [
 
  # ---------------- etiology / risk factors ----------------
  dict(topic="Squamous cell carcinoma", io=IO, slot="risk factors",
-   q="Besides sun exposure and immunosuppression, which risk factors does the deck list for squamous cell carcinoma?",
+   q="Besides sun exposure and immunosuppression, which risk factors are listed for squamous cell carcinoma?",
    opts=[
      ["Chronic wounds, scars or prior radiation fields; certain genetic diseases; and mucosal or genital disease",
       "Correct — the three additional categories as listed."],

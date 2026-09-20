@@ -29,7 +29,7 @@ POOL_A = [
    c=0, cite=c(3)),
 
  dict(topic="Skin functions", io=IOA,
-   q="Which receptors does the lecture name for the sensations of touch and pressure?",
+   q="Which receptors are named for the sensations of touch and pressure?",
    opts=[
      ["Meissner's corpuscles, Pacinian corpuscles and Merkel cells",
       "Correct. Meissner's serve fine discriminative touch and low-frequency vibration, Pacinian respond to deep pressure and vibration, and Merkel cells serve light touch."],

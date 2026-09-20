@@ -176,7 +176,7 @@ POOL_B = [
    c=0, cite=c(12)),
 
  dict(topic="Strabismus", io=IO4, slot="etiology",
-   q="Which four subtypes of strabismus does the deck name?",
+   q="Which four subtypes of strabismus are named?",
    opts=[
      ["Esotropia, exotropia, hypertropia and hypotropia",
       "Correct — inward, outward, upward and downward turning."],
@@ -224,7 +224,7 @@ POOL_B = [
    c=0, cite=c(12)),
 
  dict(topic="Amblyopia", io=IO4, slot="etiology",
-   q="Which of these does the deck list as an amblyopia aetiology?",
+   q="Which of these is listed as an amblyopia aetiology?",
    opts=[
      ["Uncorrected strabismus",
       "Correct — one of the three routes the deck gives to abnormal visual development."],
@@ -237,7 +237,7 @@ POOL_B = [
    c=0, cite=c(12)),
 
  dict(topic="Amblyopia", io=IO4, slot="etiology",
-   q="Which forms of visual deprivation does the deck name as causing amblyopia?",
+   q="Which forms of visual deprivation are named as causing amblyopia?",
    opts=[
      ["Congenital cataract and ptosis",
       "Correct — the two deprivation causes the deck lists."],
@@ -302,7 +302,7 @@ POOL_B = [
    c=0, cite=c(22)),
 
  dict(topic="Cataract", io=IO7, slot="risk factors", kfe=True,
-   q="Which medication class does the deck name as a cataract risk?",
+   q="Which medication class is named as a cataract risk?",
    opts=[
      ["Chronic corticosteroids", "Correct — the deck names chronic corticosteroid use."],
      ["Chronic beta-blockers", "Not a cataract risk in the deck."],
@@ -350,7 +350,7 @@ POOL_B = [
    c=0, cite=c(22)),
 
  dict(topic="Cataract", io=IO7, slot="risk factors", kfe=True,
-   q="Which congenital and environmental causes does the deck list for cataract?",
+   q="Which congenital and environmental causes are listed for cataract?",
    opts=[
      ["Down syndrome, excessive ultraviolet radiation and oxidative damage",
       "Correct — the deck's congenital and environmental group."],

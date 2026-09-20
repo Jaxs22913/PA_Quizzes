@@ -113,7 +113,7 @@ POOL_A = [
    c=3, cite=c(6)),
 
  dict(topic="Acute vs chronic", io=IO_B,
-   q="Which histological findings does the lecture associate with chronic inflammation?",
+   q="Which histological findings are associated with chronic inflammation?",
    opts=[
      ["White blood cells (lymphocytes and macrophages), proliferation of blood vessels, fibrosis and tissue necrosis",
       "Correct. All four are listed together as the histological associations of chronic inflammation."],
@@ -126,7 +126,7 @@ POOL_A = [
    c=0, cite=c(6)),
 
  dict(topic="Acute vs chronic", io=IO_B,
-   q="Which three causes of chronic inflammation does the lecture list?",
+   q="Which three causes of chronic inflammation are listed?",
    opts=[
      ["Trauma, thermal injury, and radiation exposure",
       "These are acute physical insults rather than the listed causes of chronicity."],
@@ -152,7 +152,7 @@ POOL_A = [
    c=2, cite=c(7)),
 
  dict(topic="Acute vs chronic", io=IO_B,
-   q="Which pair of conditions does the lecture give as examples of autoimmunity causing chronic inflammation?",
+   q="Which pair of conditions is given as examples of autoimmunity causing chronic inflammation?",
    opts=[
      ["Atherosclerosis and silicosis",
       "Atherosclerosis is the endogenous toxic-agent example and silica is the exogenous one."],
@@ -230,7 +230,7 @@ POOL_A = [
    c=0, cite=c(10)),
 
  dict(topic="Patterns", io=IO_B,
-   q="How does the lecture distinguish dry from wet gangrene?",
+   q="How is dry distinguished from wet gangrene?",
    opts=[
      ["Dry involves fibrinous exudate; wet involves serous exudate",
       "Neither exudate type is used to define gangrene here."],

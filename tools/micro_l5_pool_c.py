@@ -531,7 +531,7 @@ POOL_C = [
           "The failure is general."]],
    c=0, cite=c(93)),
  dict(topic="Coordination", io=IO3,
-   q="What does the deck cite as evidence that innate immunity is very effective?",
+   q="What is cited as evidence that innate immunity is very effective?",
    opts=[["We carry vast resident microbes and stay well",
           "Correct."],
          ["Vaccination protects against most diseases",

@@ -88,7 +88,7 @@ POOL_E = [
    c=0, cite=c(35)),
 
  dict(topic="CT versus MRI", io=IOH, slot="first-line",
-   q="For which patients does the deck specifically favour computed tomography?",
+   q="For which patients is computed tomography specifically favoured?",
    opts=[
      ["Unstable or claustrophobic patients",
       "Correct — both are named as reasons to choose computed tomography."],
@@ -140,7 +140,7 @@ POOL_E = [
    c=0, cite=c(36)),
 
  dict(topic="Imaging selection", io=IOI, slot="first-line",
-   q="Which study does the deck name for deep neck infection, and what does it say about ultrasound there?",
+   q="Which study is named for deep neck infection, and what does it say about ultrasound there?",
    opts=[
      ["Contrast computed tomography of the neck, and it states that ultrasound is not helpful",
       "Correct — the deck rules ultrasound out explicitly for this indication."],
@@ -309,7 +309,7 @@ POOL_E = [
    c=0, cite=c(39)),
 
  dict(topic="Deep neck infection", io=IOK, slot="complication",
-   q="Which syndrome does the deck give as the example of vascular thrombosis in deep neck infection?",
+   q="Which syndrome is given as the example of vascular thrombosis in deep neck infection?",
    opts=[
      ["Lemierre syndrome",
       "Correct — named on the slide as the magnetic resonance indication for vascular thrombosis."],
@@ -335,7 +335,7 @@ POOL_E = [
    c=0, cite=c(40)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="What closing rule does the deck give for choosing a test?",
+   q="What closing rule is given for choosing a test?",
    opts=[
      ["Always choose the least invasive test that answers the clinical question",
       "Correct — the closing rule, which ties back to the four selection principles."],

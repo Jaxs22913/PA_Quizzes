@@ -92,7 +92,7 @@ POOL_D = [
    c=0, cite=c(103)),
 
  dict(topic="Echinocandins", io=IO9A,
-   q="An immunocompromised patient has systemic aspergillosis that has not responded to itraconazole or amphotericin B. Which class does the lecture position for this?",
+   q="An immunocompromised patient has systemic aspergillosis that has not responded to itraconazole or amphotericin B. Which class is positioned for this?",
    opts=[
      ["Echinocandins",
       "Correct — their listed role is largely salvage, in refractory aspergillosis, oesophageal candidiasis, and febrile neutropenia not responding to antibiotics."],

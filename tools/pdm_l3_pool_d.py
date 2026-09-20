@@ -42,7 +42,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Rapid strep testing", io=IOG, slot="escalation",
-   q="A rapid streptococcal test is negative in a child. What does the deck advise?",
+   q="A rapid streptococcal test is negative in a child. What is advised?",
    opts=[
      ["Confirm with a throat culture",
       "Correct — the clinical pearl for children specifically."],
@@ -146,7 +146,7 @@ POOL_D = [
    c=0, cite=c(27)),
 
  dict(topic="Audiometry", io=IOG, slot="first-line",
-   q="Which three indications for audiometry does the deck list?",
+   q="Which three indications for audiometry are listed?",
    opts=[
      ["Suspected or confirmed hearing loss, persistent otitis media with effusion, and asymmetric loss",
       "Correct — all three, with asymmetric loss serving to screen for retrocochlear pathology."],
@@ -276,7 +276,7 @@ POOL_D = [
    c=0, cite=c(27)),
 
  dict(topic="Tympanometry", io=IOG, slot="first-line",
-   q="Which three indications for tympanometry does the deck list?",
+   q="Which three indications for tympanometry are listed?",
    opts=[
      ["Suspected effusion, otitis media with effusion, and eustachian tube dysfunction",
       "Correct — the three indications as given."],

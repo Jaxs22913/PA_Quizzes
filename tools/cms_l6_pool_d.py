@@ -297,7 +297,7 @@ POOL_D = [
    c=0, cite=c(106)),
 
  dict(topic="Herpes zoster", io=IOB, slot="avoid",
-   q="What does the deck say about corticosteroids and postherpetic neuralgia?",
+   q="What is true of corticosteroids and postherpetic neuralgia?",
    opts=[
      ["Topical or systemic corticosteroids do NOT prevent postherpetic neuralgia and should never replace antiviral therapy",
       "Correct — systemic steroids require individualized risk-benefit assessment."],

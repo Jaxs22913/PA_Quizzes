@@ -51,7 +51,7 @@ POOL_A = [
      ["By stimulating antibody production directly", "Not the benefit named here."]],
    c=0, cite=c(9)),
  dict(topic="Sterile sites", io=IO1,
-   q="Which of these does the lecture list as normally sterile?",
+   q="Which of these is listed as normally sterile?",
    opts=[
      ["Blood and cerebrospinal fluid", "Correct, alongside kidneys, bladder, brain and the interior of the eye."],
      ["The lumen of the large intestine", "It carries the highest bacterial numbers in the body."],
@@ -59,7 +59,7 @@ POOL_A = [
      ["The oral cavity and pharynx", "Aerobic streptococci are its most common residents."]],
    c=0, cite=c(10)),
  dict(topic="Sterile sites", io=IO1,
-   q="What does the lecture say about the urinary tract in females?",
+   q="What is true of the urinary tract in females?",
    opts=[
      ["Sterile except a short portion of the urethra", "Correct, and the same is true in males."],
      ["Sterile throughout, including the urethra", "A short portion of the urethra is colonised."],
@@ -67,7 +67,7 @@ POOL_A = [
      ["Colonised only after catheterisation", "The urethral colonisation is normal, not iatrogenic."]],
    c=0, cite=c(18)),
  dict(topic="Resident flora", io=IO1,
-   q="Which organisms does the lecture list among the notable skin microflora?",
+   q="Which organisms are listed among the notable skin microflora?",
    opts=[
      ["Staphylococci and Corynebacterium", "Correct, with Propionibacterium, yeasts and Mycobacterium smegmatis."],
      ["Aerobic streptococcal species", "Those are the most common oral residents."],
@@ -75,7 +75,7 @@ POOL_A = [
      ["Strict anaerobes", "Those dominate the large intestine."]],
    c=0, cite=c(11)),
  dict(topic="Resident flora", io=IO1,
-   q="What does the lecture say about the lower respiratory tract?",
+   q="What is true of the lower respiratory tract?",
    opts=[
      ["It is essentially sterile", "Correct, and colonisation there means trouble."],
      ["It carries Neisseria meningitidis normally", "That is upper respiratory flora."],
@@ -107,7 +107,7 @@ POOL_A = [
       "Nosocomial infection is a separate category."]],
    c=0, cite=c(20)),
  dict(topic="Host defences", io=IO2,
-   q="Which factor does the lecture list as weakening host defences?",
+   q="Which factor is listed as weakening host defences?",
    opts=[
      ["Immunosuppressing drugs and organ transplants", "Correct, alongside age, genetic defects, stress and chronic disease."],
      ["A naturally low infectious dose for the organism", "That is a property of the organism."],
@@ -151,7 +151,7 @@ POOL_A = [
      ["Reduced transmissibility", "A small dose makes transmission easier, not harder."]],
    c=0, cite=c(27)),
  dict(topic="Adhesion", io=IO2,
-   q="Which structure does the lecture list as a bacterial adhesion mechanism?",
+   q="Which structure is listed as a bacterial adhesion mechanism?",
    opts=[
      ["Fimbriae", "Correct, also called attachment pili."],
      ["Ribosomes", "Those synthesise protein."],
@@ -159,7 +159,7 @@ POOL_A = [
      ["Endospores", "Those are a survival form, not an adhesin."]],
    c=0, cite=c(29)),
  dict(topic="Adhesion", io=IO2,
-   q="Which adhesion mechanism does the lecture attribute to viruses?",
+   q="Which adhesion mechanism is attributed to viruses?",
    opts=[
      ["Spike or capsid proteins", "Correct."],
      ["Suction disks", "Those belong to protozoans."],
@@ -175,7 +175,7 @@ POOL_A = [
      ["Bind tightly to the surface of the host cell", "That is adhesion."]],
    c=0, cite=c(31)),
  dict(topic="Toxins", io=IO3,
-   q="Where does the lecture locate bacterial endotoxin?",
+   q="Where is bacterial endotoxin located?",
    opts=[
      ["Lipid A of lipopolysaccharide", "Correct, released from lysed or damaged gram-negative bacteria."],
      ["A protein secreted by living cells", "That describes an exotoxin."],
@@ -199,7 +199,7 @@ POOL_A = [
      ["Only anaerobes", "Oxygen tolerance is unrelated."]],
    c=0, cite=c(31)),
  dict(topic="Toxins", io=IO3,
-   q="Which categories of toxin does the lecture name under toxigenicity?",
+   q="Which categories of toxin are named under toxigenicity?",
    opts=[
      ["Neurotoxins, enterotoxins, hemotoxins, nephrotoxins", "Correct, grouped by the tissue targeted."],
      ["Exoenzymes, leukocidins and antiphagocytic factors", "Those are separate virulence factors."],
@@ -255,7 +255,7 @@ POOL_A = [
      ["It is the first infection in the sequence of events", "That is the primary infection."]],
    c=0, cite=c(36)),
  dict(topic="Signs and symptoms", io=IO4,
-   q="How does the lecture distinguish a sign from a symptom?",
+   q="How is a sign distinguished from a symptom?",
    opts=[
      ["A sign is observed; a symptom is felt by the patient",
       "Correct, and a sign is often measurable by the clinician."],
@@ -275,7 +275,7 @@ POOL_A = [
      ["A second infection complicating the first", "That is a secondary infection."]],
    c=0, cite=c(41)),
  dict(topic="Sequelae", io=IO4,
-   q="Which example of a sequela does the lecture give?",
+   q="Which example of a sequela is given?",
    opts=[
      ["Blindness from gonococcal conjunctivitis", "Correct, alongside polio paralysis and Lyme arthritis."],
      ["Fever during acute infection", "That is an acute manifestation, not a sequela."],
@@ -283,7 +283,7 @@ POOL_A = [
      ["Cough during a respiratory infection", "That is a symptom during illness."]],
    c=0, cite=c(41)),
  dict(topic="Human microbiome", io=IO1,
-   q="What does the lecture say about the ratio of non-human to human cells in the body?",
+   q="What is true of the ratio of non-human to human cells in the body?",
    opts=[
      ["Non-human cells slightly outnumber human ones", "Correct: roughly 38 to 39 trillion against about 30 trillion."],
      ["Human cells outnumber non-human ten to one", "The counts are close, with microbes slightly ahead."],
@@ -299,7 +299,7 @@ POOL_A = [
      ["Protozoa", "A minor component of resident flora."]],
    c=0, cite=c(4)),
  dict(topic="Human microbiome", io=IO1,
-   q="What proportion of the human genome does the lecture describe as foreign in origin?",
+   q="What proportion of the human genome is described as foreign in origin?",
    opts=[
      ["About half", "Correct — viral remnants and transposons."],
      ["About a tenth", "The lecture gives a much larger share."],

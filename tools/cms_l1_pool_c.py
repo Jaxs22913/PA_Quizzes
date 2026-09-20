@@ -7,7 +7,7 @@ def c(n): return f"{SRC}, Slide {n}"
 POOL_C = [
  # ---------------- Screening vs diagnostic testing (Slides 8, 10) ----------------
  dict(topic="Screening and diagnostic testing", io="Compare and contrast screening and diagnostic testing",
-   q="What does the lecture give as the purpose of screening testing?",
+   q="What is given as the purpose of screening testing?",
    opts=[
      ["To identify the likelihood of occult disease",
       "Correct. Screening testing is defined as identifying the likelihood of occult disease — disease not yet apparent."],
@@ -20,7 +20,7 @@ POOL_C = [
    c=0, cite=c(10)),
 
  dict(topic="Screening and diagnostic testing", io="Compare and contrast screening and diagnostic testing",
-   q="Which three functions does the lecture attribute to diagnostic testing?",
+   q="Which three functions are attributed to diagnostic testing?",
    opts=[
      ["Screening whole populations, lowering cost, and replacing the examination",
       "None of these are given, and diagnostic testing complements rather than replaces the examination."],
@@ -46,7 +46,7 @@ POOL_C = [
    c=2, cite=c(8)),
 
  dict(topic="Screening and diagnostic testing", io="Compare and contrast screening and diagnostic testing",
-   q="Why does the lecture consider a few false-positives acceptable when screening for human immunodeficiency virus (HIV)?",
+   q="Why is a few false-positives acceptable considered when screening for human immunodeficiency virus (HIV)?",
    opts=[
      ["Because false-positive results do not occur with sensitive tests",
       "Sensitivity does not address false-positives at all, so they certainly can occur."],
@@ -73,7 +73,7 @@ POOL_C = [
    c=0, cite=c(27)),
 
  dict(topic="Implications for treatment", io="Discuss the implications for treatment",
-   q="Besides the probability of disease, which two factors does the lecture list in the decision to treat?",
+   q="Besides the probability of disease, which two factors are listed in the decision to treat?",
    opts=[
      ["Sensitivity and specificity of the diagnostic test",
       "These determine posttest probability rather than being separate treatment factors."],
@@ -178,7 +178,7 @@ POOL_C = [
    c=1, cite=c(28)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="What does the lecture advise regarding where a patient sits on the continuum of behaviour change?",
+   q="What is advised regarding where a patient sits on the continuum of behaviour change?",
    opts=[
      ["Apply the same intervention regardless of where they are",
       "The advice is explicitly to tailor rather than standardise."],
@@ -191,7 +191,7 @@ POOL_C = [
    c=2, cite=c(28)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="How does the lecture characterise behavioural counselling?",
+   q="How is behavioural counselling characterised?",
    opts=[
      ["As a task best delegated to non-clinical staff",
       "No delegation is suggested; it is framed as a core provider skill."],
@@ -217,7 +217,7 @@ POOL_C = [
    c=0, cite=c(29)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="Which pair of barriers to adherence does the lecture list?",
+   q="Which pair of barriers to adherence is listed?",
    opts=[
      ["Excess follow-up appointments and over-explanation of side effects",
       "Neither appears; the listed problems are poor follow-up and fear of side effects."],

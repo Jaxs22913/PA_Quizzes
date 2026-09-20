@@ -88,7 +88,7 @@ POOL_B = [
    c=0, cite=c(17)),
 
  dict(topic="Nuclear medicine", io=IOF, slot="avoid",
-   q="Which imaging devices does the deck flag as the highest-emitting currently in existence?",
+   q="Which imaging devices are flagged as the highest-emitting currently in existence?",
    opts=[
      ["Computed tomography, positron emission tomography and single photon emission tomography",
       "Correct — the deck marks this IMPORTANT, and all three use ionizing radiation."],
@@ -192,7 +192,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Ultrasonography", io=IOH, slot="prognosis",
-   q="How does the deck summarise ultrasound's safety?",
+   q="How is ultrasound's safety summarised?",
    opts=[
      ["Very safe, without any known major side effects at medically diagnostic levels",
       "Correct — it is called the safest of these modalities."],

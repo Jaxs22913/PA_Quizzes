@@ -18,7 +18,7 @@ IOE = "e — Discuss the role of diagnostic testing in evaluation of soft tissue
 
 POOL_B = [
  dict(topic="Skin biopsy", io=IOD, slot="initial test",
-   q="Which four indications for skin biopsy does the deck list?",
+   q="Which four indications for skin biopsy are listed?",
    opts=[
      ["Suspicious pigmented lesion, possible malignancy, persistent or undiagnosed rash, and vesiculobullous disease",
       "Correct — the four indications exactly as listed."],

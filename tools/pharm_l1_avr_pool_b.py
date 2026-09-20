@@ -26,7 +26,7 @@ POOL_B = [
    c=0, cite=c(125)),
 
  dict(topic="Comparisons", io=IO5,
-   q="A patient presents on day 4 of an influenza-like illness. What does the lecture imply about oseltamivir?",
+   q="A patient presents on day 4 of an influenza-like illness. What is implied about oseltamivir?",
    opts=[
      ["The 48-hour window for starting treatment has passed",
       "Correct. Because the drug blocks release of new virus rather than clearing existing virus, starting late has little to act on."],
@@ -130,7 +130,7 @@ POOL_B = [
    c=0, cite=c(118)),
 
  dict(topic="Herpesviruses", io=IO6,
-   q="A patient has meningitis attributed to a herpes simplex virus. Which type does the lecture associate with the meninges?",
+   q="A patient has meningitis attributed to a herpes simplex virus. Which type is associated with the meninges?",
    opts=[
      ["Type 2",
       "Correct. Type 2 covers genitals, rectum, hands or meninges; type 1 covers mouth, face, skin, oesophagus or brain."],
@@ -143,7 +143,7 @@ POOL_B = [
    c=0, cite=c(119)),
 
  dict(topic="Herpesviruses", io=IO6,
-   q="A patient has encephalitis attributed to a herpes simplex virus. Which type does the lecture associate with the brain?",
+   q="A patient has encephalitis attributed to a herpes simplex virus. Which type is associated with the brain?",
    opts=[
      ["Type 1",
       "Correct — type 1 covers mouth, face, skin, oesophagus or brain."],

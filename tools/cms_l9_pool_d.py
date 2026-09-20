@@ -21,7 +21,7 @@ POOL_D = [
    c=0, cite=c(40)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="epidemiology",
-   q="Which 2023 melanoma figures does the deck give?",
+   q="Which 2023 melanoma figures are given?",
    opts=[
      ["About 97,610 new invasive melanomas and about 7,990 deaths, with roughly two-thirds of deaths in men",
       "Correct — note the male preponderance among deaths."],
@@ -34,7 +34,7 @@ POOL_D = [
    c=0, cite=c(40)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="epidemiology",
-   q="What lifetime melanoma risk does the deck give by skin colour?",
+   q="What lifetime melanoma risk is given by skin colour?",
    opts=[
      ["About 2% in white individuals; 0.1 to 0.5% in persons of colour",
       "Correct — lower risk in persons of colour, but not zero."],
@@ -86,7 +86,7 @@ POOL_D = [
    c=0, cite=c(46)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",
-   q="What caveat does the deck attach to the 6 mm diameter criterion?",
+   q="What caveat is attached to the 6 mm diameter criterion?",
    opts=[
      ["Smaller lesions can be melanoma",
       "Correct — the threshold is a prompt, not a rule-out."],
@@ -125,7 +125,7 @@ POOL_D = [
    c=0, cite=c(51)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="initial test",
-   q="What does the deck say about what sentinel lymph node biopsy achieves?",
+   q="What is true of what sentinel lymph node biopsy achieves?",
    opts=[
      ["It is a STAGING procedure, and may not itself improve overall survival",
       "Correct — an important expectation to set with a patient."],
@@ -138,7 +138,7 @@ POOL_D = [
    c=0, cite=c(51)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="first-line",
-   q="Which re-excision margins does the deck give for definitive local treatment of melanoma?",
+   q="Which re-excision margins are given for definitive local treatment of melanoma?",
    opts=[
      ["In situ 0.5 to 1 cm; less than 1 mm thick, a 1 cm margin; more than 1 mm thick, a 1 to 2 cm margin",
       "Correct — margin scales with Breslow thickness."],
@@ -164,7 +164,7 @@ POOL_D = [
    c=0, cite=c(52)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="prognosis",
-   q="Which variable does the deck call the dominant prognostic factor in melanoma, and what modifies it?",
+   q="Which variable is called the dominant prognostic factor in melanoma, and what modifies it?",
    opts=[
      ["Breslow thickness, which must be accurately measured at the time of initial biopsy; ulceration and mitotic activity further modify stage-based prognosis",
       "Correct — which is why the initial biopsy technique matters."],
@@ -190,7 +190,7 @@ POOL_D = [
    c=0, cite=c(56)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="differential",
-   q="Which entities does the deck list in the melanoma differential?",
+   q="Which entities are listed in the melanoma differential?",
    opts=[
      ["Dysplastic or changing naevus, seborrheic keratosis, solar lentigo, pigmented basal cell carcinoma, dermatofibroma, and amelanotic mimics",
       "Correct — the list also includes the lentigo maligna spectrum and two nail entries, subungual haematoma and benign longitudinal melanonychia."],

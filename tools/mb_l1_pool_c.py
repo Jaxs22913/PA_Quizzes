@@ -12,7 +12,7 @@ IO13 = "Review the bacterial death curve"
 
 POOL_C = [
  dict(topic="Viral structure", io=IO8,
-   q="What do all viruses have, and what shapes does the lecture list for it?",
+   q="What do all viruses have, and what shapes are listed for it?",
    opts=[
      ["Capsids — protein coats enclosing and protecting the nucleic acid — which may be helical, icosahedral or complex",
       "Correct. Viruses contain either deoxyribonucleic acid or ribonucleic acid, and may additionally have an envelope or spikes."],
@@ -64,7 +64,7 @@ POOL_C = [
    c=3, cite=c(57)),
 
  dict(topic="Lytic vs lysogenic", io=IO8,
-   q="How does the lecture distinguish generalized from specialized transduction?",
+   q="How is generalized distinguished from specialized transduction?",
    opts=[
      ["Generalized transmits random pieces of host DNA; specialized means all cells carry the same host DNA",
       "Correct. Generalized is listed under the lytic cycle, specialized under the lysogenic."],
@@ -77,7 +77,7 @@ POOL_C = [
    c=0, cite=c(57)),
 
  dict(topic="Lytic vs lysogenic", io=IO8,
-   q="Which consequence does the lecture attribute to lysogeny that has direct clinical relevance?",
+   q="Which consequence is attributed to lysogeny that has direct clinical relevance?",
    opts=[
      ["The host cell is destroyed, releasing multiple virus copies",
       "That is the lytic outcome."],
@@ -90,7 +90,7 @@ POOL_C = [
    c=1, cite=c(57)),
 
  dict(topic="Animal viruses", io=IO9,
-   q="Which three differences does the lecture give between animal virus and phage replication?",
+   q="Which three differences are given between animal virus and phage replication?",
    opts=[
      ["Animal viruses lack a capsid, replicate in the nucleus, and never integrate",
       "All viruses have capsids, and none of these three are the stated differences."],
@@ -142,7 +142,7 @@ POOL_C = [
    c=1, cite=c(59)),
 
  dict(topic="Mutations", io=IO11,
-   q="How does the lecture define a deoxyribonucleic acid mutation?",
+   q="How is a deoxyribonucleic acid mutation defined?",
    opts=[
      ["Transfer of a plasmid between two bacterial cells",
       "That is conjugation."],
@@ -168,7 +168,7 @@ POOL_C = [
    c=3, cite=c(62)),
 
  dict(topic="Mutations", io=IO11,
-   q="What health implications does the lecture attach to high mutation rates in viruses?",
+   q="What health implications are attached to high mutation rates in viruses?",
    opts=[
      ["Changing surface properties may weaken or eliminate immunity from vaccination or previous exposure, and animal viruses that were host specific can cross to humans",
       "Correct. Human hosts are unlikely to have immunity to viruses crossed from animal hosts."],
@@ -181,7 +181,7 @@ POOL_C = [
    c=0, cite=c(62)),
 
  dict(topic="Mutations", io=IO11,
-   q="Which health implications does the lecture give for genetic mutations in HUMAN hosts?",
+   q="Which health implications are given for genetic mutations in HUMAN hosts?",
    opts=[
      ["Acquisition of antibiotic resistance and toxin production",
       "Those are the implications given for bacterial mutation."],
@@ -194,7 +194,7 @@ POOL_C = [
    c=1, cite=c(63)),
 
  dict(topic="Microbial control", io=IO12,
-   q="How does the lecture distinguish aseptic or sterile condition from disinfection?",
+   q="How is aseptic or sterile condition distinguished from disinfection?",
    opts=[
      ["Aseptic applies to tissues; disinfection applies to inanimate objects",
       "That distinction is between antiseptics and disinfectants, which are chemical agents."],
@@ -220,7 +220,7 @@ POOL_C = [
    c=3, cite=c(67)),
 
  dict(topic="Microbial control", io=IO12,
-   q="What does the lecture say about temperature as a physical control method?",
+   q="What is true of temperature as a physical control method?",
    opts=[
      ["High temperature can kill; low temperature will NOT — it only slows the rate of microbial growth",
       "Correct. Refrigeration and freezing preserve food by slowing growth, not by sterilising it."],
@@ -246,7 +246,7 @@ POOL_C = [
    c=1, cite=c(69)),
 
  dict(topic="Microbial control", io=IO12,
-   q="Which two agents does the lecture name as true chemical sterilants?",
+   q="Which two agents are named as true chemical sterilants?",
    opts=[
      ["Chlorine and bromine",
       "Halogens such as these are given as adequate control for some purposes rather than as true sterilants."],
@@ -272,7 +272,7 @@ POOL_C = [
    c=3, cite=c(70)),
 
  dict(topic="Death curve", io=IO13,
-   q="When a microbial control method is applied to a bacterial population, what does the lecture say about the rate of death?",
+   q="When a microbial control method is applied to a bacterial population, what is true of the rate of death?",
    opts=[
      ["It is constant",
       "Correct. That constant rate is what makes decimal reduction time a usable measure."],

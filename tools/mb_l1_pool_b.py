@@ -49,7 +49,7 @@ POOL_B = [
    c=2, cite=c(29)),
 
  dict(topic="Gram stain", io=IO4,
-   q="Which step of the Gram stain technique does the lecture call the most critical?",
+   q="Which step of the Gram stain technique is called the most critical?",
    opts=[
      ["Flooding with crystal violet for one minute",
       "That is the first step, and is not the one identified as most critical."],
@@ -140,7 +140,7 @@ POOL_B = [
    c=1, cite=c(41)),
 
  dict(topic="Identification methods", io=IO5,
-   q="Which three techniques does the lecture place under genetic and molecular analysis?",
+   q="Which three techniques are placed under genetic and molecular analysis?",
    opts=[
      ["Gram staining, culture, and colony counting",
       "These are morphological and cultural methods rather than genetic ones."],
@@ -153,7 +153,7 @@ POOL_B = [
    c=2, cite=c(41)),
 
  dict(topic="Growth requirements", io=IO5,
-   q="How does the lecture divide the requirements for bacterial growth?",
+   q="How are the requirements divided for bacterial growth?",
    opts=[
      ["Aerobic versus anaerobic only",
       "Oxygen level is one chemical requirement among several."],
@@ -244,7 +244,7 @@ POOL_B = [
    c=1, cite=c(50)),
 
  dict(topic="Growth curve", io=IO7,
-   q="During which phase are bacteria most vulnerable to control methods, and what example does the lecture give?",
+   q="During which phase are bacteria most vulnerable to control methods, and what example is given?",
    opts=[
      ["Lag phase; example, refrigeration",
       "The lag phase is one of adjustment with little growth, and refrigeration is a physical control rather than the example given."],

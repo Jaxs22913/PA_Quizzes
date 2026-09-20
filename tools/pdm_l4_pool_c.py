@@ -22,7 +22,7 @@ IOE1 = "e(i) — Discuss the clinical significance of abnormalities in red blood
 
 POOL_C = [
  dict(topic="Morphology framework", io=IOE1, slot="first-line",
-   q="Which four categories does the deck use to organise red blood cell morphology?",
+   q="Which four categories are used to organise red blood cell morphology?",
    opts=[
      ["Size, hemoglobin distribution, shape variation, and inclusions with cell distribution",
       "Correct — the framework the whole morphology section is built on."],
@@ -204,7 +204,7 @@ POOL_C = [
    c=0, cite=c(38)),
 
  dict(topic="Schistocytes", io=IOE1, slot="avoid",
-   q="What laboratory error does the deck warn about with schistocytes?",
+   q="What laboratory error is warned about with schistocytes?",
    opts=[
      ["Automated cell counters may incorrectly count them as platelets",
       "Correct — which can produce a falsely reassuring platelet count."],
@@ -347,7 +347,7 @@ POOL_C = [
    c=0, cite=cn(46)),
 
  dict(topic="Howell-Jolly bodies", io=IOE1, slot="test finding",
-   q="Which other abnormal cell does the deck point out alongside Howell-Jolly bodies in the same image, and why?",
+   q="Which other abnormal cell is pointed out alongside Howell-Jolly bodies in the same image, and why?",
    opts=[
      ["Target cells, because they are another consequence of splenectomy",
       "Correct — the deck labels the Howell-Jolly body with a blue circle and the target cell with a pink square."],

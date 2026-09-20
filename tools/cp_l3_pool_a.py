@@ -308,7 +308,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Abnormal growth", io=IOA,
-   q="What two abnormalities does the deck contrast between a normal cell and a tumour cell?",
+   q="What two abnormalities are contrasted between a normal cell and a tumour cell?",
    opts=[
      ["Abnormal regulation of cell growth, and abnormal cell-cell interactions",
       "Correct — the same slide also contrasts a normal stem cell with a cancer stem cell."],
@@ -321,7 +321,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Stem cells", io=IOA,
-   q="How does the deck qualify the cancer stem cell idea?",
+   q="How is the cancer stem cell idea qualified?",
    opts=[
      ["As a conceptual framework rather than an absolute explanation",
       "Correct — the slide is explicit that this is a model, not a settled account."],

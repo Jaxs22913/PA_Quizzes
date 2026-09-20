@@ -17,7 +17,7 @@ IO2  = "2 — Common modes of action of antimicrobial agents"
 
 POOL_C = [
  dict(topic="Fungal biology", io=IO9,
-   q="Which organisms does the lecture list as causes of systemic mycoses affecting internal organs?",
+   q="Which organisms are listed as causes of systemic mycoses affecting internal organs?",
    opts=[
      ["Aspergillus, Blastomyces, Candida, Coccidioides, Cryptococcus, Histoplasma and Zygomycetes",
       "Correct. These are the organisms the systemic antifungals target, which is why amphotericin B's indication list closely mirrors this one."],
@@ -43,7 +43,7 @@ POOL_C = [
    c=0, cite=c(92)),
 
  dict(topic="Fungal biology", io=IO9,
-   q="Which mycoses does the lecture place in the subcutaneous category?",
+   q="Which mycoses are placed in the subcutaneous category?",
    opts=[
      ["Chromomycosis, Pseudallescheriasis and Sporotrichosis",
       "Correct — the middle tier, affecting skin layers rather than the surface or the internal organs."],
@@ -199,7 +199,7 @@ POOL_C = [
    c=0, cite=c(109)),
 
  dict(topic="Polyenes", io=IO9B,
-   q="Which three polyene agents does the lecture name?",
+   q="Which three polyene agents are named?",
    opts=[
      ["Amphotericin B, nystatin and natamycin",
       "Correct. Amphotericin B is the systemic agent; nystatin is used topically and orally because it is poorly absorbed."],

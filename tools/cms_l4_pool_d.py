@@ -275,7 +275,7 @@ POOL_D = [
    c=0, cite=c(131)),
 
  dict(topic="Abscess", io=IOA, slot="referral",
-   q="How does the lecture describe the definitive procedure for an abscess that will not drain?",
+   q="How is the definitive procedure described for an abscess that will not drain?",
    opts=[
      ["Surgical incision and drainage, covered in detail in a later course",
       "Correct — the aim is to eradicate infection and prevent recurrence."],

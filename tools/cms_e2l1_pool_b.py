@@ -61,7 +61,7 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Pinguecula and pterygium", io=IOA, slot="referral",
-   q="When does the deck refer a pterygium, and how urgently?",
+   q="When is a pterygium referred, and how urgently?",
    opts=[
      ["Non-urgently, if there is growth or the patient reports vision impairment",
       "Correct — non-urgent, with those two triggers."],
@@ -74,7 +74,7 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Subconjunctival haemorrhage", io=IOA, slot="risk factors",
-   q="Which risk factors does the deck list for an atraumatic subconjunctival haemorrhage?",
+   q="Which risk factors are listed for an atraumatic subconjunctival haemorrhage?",
    opts=[
      ["Valsalva, bleeding disorder, antiplatelet or anticoagulant medication, and hypertension",
       "Correct — the deck's four."],
@@ -87,7 +87,7 @@ POOL_B = [
    c=0, cite=c(29)),
 
  dict(topic="Subconjunctival haemorrhage", io=IOA, slot="initial test",
-   q="What does the deck emphasise most in evaluating a subconjunctival haemorrhage?",
+   q="What is emphasised most in evaluating a subconjunctival haemorrhage?",
    opts=[
      ["History — and check the blood pressure if there is no explanation",
       "Correct — the deck says history is super important and names the blood pressure check."],
@@ -152,7 +152,7 @@ POOL_B = [
    c=0, cite=cn(31)),
 
  dict(topic="Conjunctivitis", io=IOA, slot="differential",
-   q="How does the deck divide acute from chronic conjunctivitis?",
+   q="How is acute divided from chronic conjunctivitis?",
    opts=[
      ["Acute is four weeks or less; chronic is more than four weeks",
       "Correct — the deck's cut-off."],
@@ -200,7 +200,7 @@ POOL_B = [
    c=0, cite=c(33)),
 
  dict(topic="Allergic conjunctivitis", io=IOA, slot="manifestation",
-   q="Which symptom set does the deck give for acute allergic conjunctivitis?",
+   q="Which symptom set is given for acute allergic conjunctivitis?",
    opts=[
      ["Itchy eyes, swollen lids, watery or stringy discharge, bilateral, with preserved vision",
       "Correct — itch and bilaterality are the giveaways."],
@@ -213,7 +213,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="Allergic conjunctivitis", io=IOA, slot="agent/regimen",
-   q="Which single agent does the deck name that both blocks histamine and stabilises mast cells?",
+   q="Which single agent is named that both blocks histamine and stabilises mast cells?",
    opts=[
      ["Olopatadine", "Correct — the deck names it as doing both."],
      ["Ketotifen", "Not the agent the deck names here."],
@@ -322,7 +322,7 @@ POOL_B = [
    c=0, cite=c(41)),
 
  dict(topic="Bacterial conjunctivitis", io=IOB, slot="escalation",
-   q="A NEWBORN has suspected gonococcal conjunctivitis. What does the deck require?",
+   q="A NEWBORN has suspected gonococcal conjunctivitis. What is required?",
    opts=[
      ["Emergent referral and hospitalisation with immediate systemic ceftriaxone, cultures and Gram stain, testing for chlamydia and disseminated infection, and specialty consultation",
       "Correct — the deck's full emergency pathway, because untreated disease risks corneal perforation."],
@@ -335,7 +335,7 @@ POOL_B = [
    c=0, cite=c(41)),
 
  dict(topic="Bacterial conjunctivitis", io=IOA, slot="referral",
-   q="Which patients with bacterial conjunctivitis does the deck send urgently to ophthalmology?",
+   q="Which patients with bacterial conjunctivitis are sent urgently to ophthalmology?",
    opts=[
      ["The immunocompromised, contact lens wearers, recent eye surgery, foreign body, corneal opacity or suspected keratitis, and anyone not improving in 24 hours",
       "Correct — the deck's urgent-referral list."],
@@ -387,7 +387,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Chlamydial conjunctivitis", io=IOA, slot="education",
-   q="Which counselling points does the deck attach to doxycycline?",
+   q="Which counselling points are attached to doxycycline?",
    opts=[
      ["Avoid the sun, and read which foods cannot be taken with it",
       "Correct — the deck's counselling, expanded in the notes to a full glass of water, staying upright, and separating from antacids and iron, calcium or magnesium."],
@@ -400,7 +400,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Chlamydial conjunctivitis", io=IOA, slot="referral",
-   q="Beyond treating the eye, what else does the deck require in adult chlamydial conjunctivitis?",
+   q="Beyond treating the eye, what else is required in adult chlamydial conjunctivitis?",
    opts=[
      ["Evaluation by the primary care provider for other sexually transmitted infections, and partner notification for evaluation",
       "Correct — the eye finding is a sentinel for urogenital infection."],
@@ -452,7 +452,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Trachoma", io=IOA, slot="epidemiology",
-   q="What does the deck say about trachoma's global significance?",
+   q="What is true of trachoma's global significance?",
    opts=[
      ["It is the leading infectious cause of blindness worldwide",
       "Correct — the deck marks this with three asterisks."],
@@ -526,7 +526,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="Autoimmune conjunctivitis", io=IOA, slot="differential",
-   q="Which conditions does the deck list under autoimmune conjunctivitis?",
+   q="Which conditions are listed under autoimmune conjunctivitis?",
    opts=[
      ["Ocular mucous membrane pemphigoid, Stevens-Johnson syndrome, Sjögren disease and graft-versus-host disease",
       "Correct — the deck's four named associations."],

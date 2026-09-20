@@ -64,7 +64,7 @@ POOL_A = [
    c=0, cite=c(3)),
 
  dict(topic="What a CBC is", io=IOA, slot="first-line",
-   q="Which other names does the deck give for neutrophils?",
+   q="Which other names are given for neutrophils?",
    opts=[
      ["Polymorphonuclear leukocytes or polys, segmented cells or segs, and band or stab cells",
       "Correct — all the synonyms the deck lists, including the immature forms."],
@@ -129,7 +129,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Ordering a CBC", io=IOF, slot="first-line",
-   q="Which white cell line does the deck attach to viral infection, and which to allergies and parasites?",
+   q="Which white cell line is attached to viral infection, and which to allergies and parasites?",
    opts=[
      ["Lymphocytes for viral infection, eosinophils for allergies and parasites",
       "Correct — the two pairings as the slide gives them."],
@@ -168,7 +168,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="White blood cells", io=IOF, slot="first-line",
-   q="Which non-specific constitutional symptoms does the deck list as a reason to check a white cell count?",
+   q="Which non-specific constitutional symptoms are listed as a reason to check a white cell count?",
    opts=[
      ["Unexplained fatigue, weakness, unexplained bruising or bleeding, and weight loss",
       "Correct — the four constitutional symptoms as listed."],
@@ -220,7 +220,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Neutrophils", io=IOE2, slot="manifestation",
-   q="How does the deck describe the neutrophil's nucleus and cytoplasm?",
+   q="How is the neutrophil's nucleus and cytoplasm described?",
    opts=[
      ["A three- to four-lobed nucleus with granular cytoplasm",
       "Correct — the lobation is what gives the cell its polymorphonuclear name."],
@@ -298,7 +298,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Neutrophil abnormalities", io=IOE2, slot="differential",
-   q="Which causes of INCREASED neutrophils does the deck list?",
+   q="Which causes of INCREASED neutrophils are listed?",
    opts=[
      ["Bacterial infection, myocardial infarction, burns, steroids, rheumatoid arthritis, and physiologic causes such as pregnancy, labor and surgery",
       "Correct — the full list, including the physiologic causes."],
@@ -324,7 +324,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Neutrophil abnormalities", io=IOE2, slot="differential",
-   q="Which causes of DECREASED neutrophils does the deck list?",
+   q="Which causes of DECREASED neutrophils are listed?",
    opts=[
      ["Bone marrow damage, folate and vitamin B12 deficiency, radiation, toxic chemicals, overwhelming infection, and viral infections",
       "Correct — the full list, with benzene named as the toxic chemical example."],
@@ -350,7 +350,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Neutrophil abnormalities", io=IOE2, slot="etiology",
-   q="Which three viral infections does the deck name as suppressing bone marrow function?",
+   q="Which three viral infections are named as suppressing bone marrow function?",
    opts=[
      ["Mononucleosis, human immunodeficiency virus, and hepatitis",
       "Correct — the three named examples."],
@@ -376,7 +376,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Eosinophils", io=IOE2, slot="differential",
-   q="Which three causes of increased eosinophils does the deck list?",
+   q="Which three causes of increased eosinophils are listed?",
    opts=[
      ["Parasitic infection, allergic reactions and cancer",
       "Correct — the three causes as listed."],
@@ -467,7 +467,7 @@ POOL_A = [
    c=0, cite=cn(25)),
 
  dict(topic="Monocytes", io=IOE2, slot="differential",
-   q="Which causes of increased monocytes does the deck list, and what decreases them?",
+   q="Which causes of increased monocytes are listed, and what decreases them?",
    opts=[
      ["Increased by chronic inflammation, stress and viral infection; decreased by bone marrow injury",
       "Correct — three causes up and one down."],
@@ -480,7 +480,7 @@ POOL_A = [
    c=0, cite=c(25)),
 
  dict(topic="Lymphocytes", io=IOE2, slot="etiology",
-   q="Which three types of lymphocyte exist, and what does the deck say about telling them apart?",
+   q="Which three types of lymphocyte exist, and what is true of telling them apart?",
    opts=[
      ["T cells, B cells and natural killer cells, and the complete blood count does not differentiate between them",
       "Correct — the limitation matters, because a raised lymphocyte count does not say which line is raised."],
@@ -506,7 +506,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Lymphocytes", io=IOE2, slot="manifestation",
-   q="How does the deck describe lymphocyte morphology?",
+   q="How is lymphocyte morphology described?",
    opts=[
      ["Small mononuclear cells without granules",
       "Correct — small, one nucleus, no granules."],

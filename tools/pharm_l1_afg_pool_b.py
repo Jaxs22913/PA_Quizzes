@@ -159,7 +159,7 @@ POOL_B = [
    c=0, cite=c(109)),
 
  dict(topic="Echinocandins", io=IO9A,
-   q="Which indications does the lecture give for the echinocandins?",
+   q="Which indications are given for the echinocandins?",
    opts=[
      ["Oesophageal candidiasis, systemic aspergillosis not responding to itraconazole or amphotericin B, and febrile neutropenic patients not responding to antibiotics",
       "Correct — largely a salvage and neutropenic-fever role rather than first-line therapy."],

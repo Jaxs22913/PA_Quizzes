@@ -90,7 +90,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Bedside testing", io=IOA, slot="first-line",
-   q="Which three tests does the deck group together as bedside testing?",
+   q="Which three tests are grouped together as bedside testing?",
    opts=[
      ["Potassium hydroxide preparation, Tzanck smear and Gram stain",
       "Correct — the three bedside tests on the slide."],
@@ -220,7 +220,7 @@ POOL_A = [
    c=0, cite=c(6)),
 
  dict(topic="Potassium hydroxide", io=IOC, slot="avoid",
-   q="What error does the deck warn about when a fungal infection is diagnosed clinically alone?",
+   q="What error is warned about when a fungal infection is diagnosed clinically alone?",
    opts=[
      ["Fungal infections can be misidentified",
       "Correct — the slide's stated reason for confirming with microscopy."],
