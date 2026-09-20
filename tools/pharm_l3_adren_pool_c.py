@@ -113,7 +113,7 @@ POOL_C = [
    c=0, cite=c(114)),
 
  dict(topic="Propranolol", io=IO11,
-   q="How does propranolol lower blood pressure, per the lecture?",
+   q="How does propranolol lower blood pressure?",
    opts=[["By reducing cardiac output, renin release and sympathetic outflow","Correct."],
          ["By blocking alpha-one receptors on vessels","It does not affect alpha receptors."],
          ["By depleting vesicular norepinephrine","That is reserpine."],

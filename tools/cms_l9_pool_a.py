@@ -15,7 +15,7 @@ IOB = "11 — Identify medical care strategies for pre-malignant and malignant c
 
 POOL_A = [
  dict(topic="Clinical approach", io=IOA, slot="manifestation",
-   q="What does the deck say you should do before assigning a diagnosis to a skin lesion?",
+   q="What should be done before assigning a diagnosis to a skin lesion?",
    opts=[
      ["Characterise it systematically — primary lesion type, colour, surface texture, border definition, size, distribution, palpability, ulceration, bleeding, induration and temporal evolution",
       "Correct — describe before naming."],
@@ -41,7 +41,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Clinical approach", io=IOA, slot="risk factors",
-   q="Which history elements does the deck ask you to elicit?",
+   q="Which history elements should be elicited?",
    opts=[
      ["Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational or recreational ultraviolet exposure and tanning-bed use; prior skin cancer, immunosuppression or transplant, human immunodeficiency virus risk; chronic scars, wounds or radiation sites; family history",
       "Correct — note chronic scars and radiation sites among them."],
@@ -93,7 +93,7 @@ POOL_A = [
    c=0, cite=c(11)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="manifestation",
-   q="Describe the actinic keratosis lesion, including the finding the deck says may be more apparent by touch than by sight.",
+   q="Describe the actinic keratosis lesion, including the finding that may be more apparent by touch than by sight.",
    opts=[
      ["Small 0.2 to 0.6 cm flesh-coloured, pink or slightly hyperpigmented papules with a characteristic sandpaper texture on palpation",
       "Correct — the sandpaper texture is often felt before it is seen."],

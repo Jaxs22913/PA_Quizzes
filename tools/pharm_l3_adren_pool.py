@@ -42,7 +42,7 @@ POOL = [
    c=0, cite=c(79)),
 
  dict(topic="Catecholamines", io=IO4,
-   q="The catecholamines penetrate the central nervous system poorly, yet the lecture still lists central-type adverse effects. Which are they?",
+   q="The catecholamines penetrate the central nervous system poorly, yet central-type adverse effects still occur. Which are they?",
    opts=[
      ["Anxiety, tremor and headache",
       "Correct. They are described as CNS-like effects despite the drugs being too polar to enter the brain."],
@@ -159,7 +159,7 @@ POOL = [
    c=0, cite=c(85)),
 
  dict(topic="Epinephrine interactions", io=IO4,
-   q="What does the lecture say happens when epinephrine is given to a patient on a beta blocker?",
+   q="What happens when epinephrine is given to a patient on a beta blocker?",
    opts=[
      ["Alpha effects are left unopposed, raising peripheral resistance and blood pressure",
       "Correct. Blocking the vasodilating beta side leaves only vasoconstriction."],
@@ -237,7 +237,7 @@ POOL = [
    c=0, cite=c(92)),
 
  dict(topic="Dobutamine", io=IO10,
-   q="What does the lecture say distinguishes dobutamine from other sympathomimetics?",
+   q="What distinguishes dobutamine from other sympathomimetics?",
    opts=[
      ["It does not significantly increase myocardial oxygen demand",
       "Correct, which matters in a failing heart."],
@@ -302,7 +302,7 @@ POOL = [
    c=0, cite=c(97)),
 
  dict(topic="Clonidine", io=IO10,
-   q="Which withdrawal syndromes does the lecture say clonidine helps with?",
+   q="Which withdrawal syndromes does clonidine help with?",
    opts=[
      ["Opiate, tobacco and benzodiazepine withdrawal",
       "Correct, alongside its use in hypertension."],
@@ -367,7 +367,7 @@ POOL = [
    c=0, cite=c(101)),
 
  dict(topic="Cocaine", io=IO10,
-   q="Besides blocking norepinephrine reuptake, what other action does the lecture give cocaine?",
+   q="Besides blocking norepinephrine reuptake, what other action does cocaine have?",
    opts=[
      ["It blocks neuronal sodium channels, acting as a local anaesthetic",
       "Correct, and it also blocks sodium-potassium activated ATPase."],

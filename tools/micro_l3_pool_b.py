@@ -27,7 +27,7 @@ POOL_B = [
      ["Medical personnel", "Those are passive carriers."]],
    c=0, cite=c(42)),
  dict(topic="Carriers", io=IO6,
-   q="What is a passive carrier, in the lecture's terms?",
+   q="What is a passive carrier?",
    opts=[
      ["Someone such as medical or dental personnel", "Correct — carrying the organism without being infected by it."],
      ["Someone with an obvious active infection", "That person is simply contagious."],
@@ -51,7 +51,7 @@ POOL_B = [
      ["It is eliminated by vaccinating the human population alone", "The reservoir remains."]],
    c=0, cite=c(46)),
  dict(topic="Zoonoses", io=IO6,
-   q="Which organisms can cause zoonotic infection, per the lecture?",
+   q="Which organisms can cause zoonotic infection?",
    opts=[
      ["Bacterial, viral, fungal or protozoan", "Correct — the category is defined by the reservoir, not the organism."],
      ["Only viruses and bacteria", "Fungi and protozoa are included as well."],
@@ -91,7 +91,7 @@ POOL_B = [
      ["An infection present on admission", "That would be community acquired."]],
    c=0, cite=c(50)),
  dict(topic="Nosocomial infection", io=IO7,
-   q="Which sites does the lecture say nosocomial infections most commonly involve?",
+   q="Which sites do nosocomial infections most commonly involve?",
    opts=[
      ["Urinary tract, respiratory tract and surgical incisions", "Correct."],
      ["Skin and soft tissue only", "Narrower than the lecture's list."],
@@ -195,7 +195,7 @@ POOL_B = [
      ["Re-isolate the agent from the new host", "That is the fourth step."]],
    c=0, cite=c(59)),
  dict(topic="Koch's postulates", io=IO5,
-   q="Why does the lecture say Koch's postulates do not work for all pathogens?",
+   q="Why do Koch's postulates not work for all pathogens?",
    opts=[
      ["Some organisms cannot be cultivated artificially", "Correct; viruses and prions break the rules routinely."],
      ["Some diseases have no symptoms", "Not the stated limitation."],

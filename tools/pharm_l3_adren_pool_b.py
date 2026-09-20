@@ -11,7 +11,7 @@ IO11 = "11 — Mechanism, pharmacokinetics, indications, contraindications and a
 POOL_B = [
 
  dict(topic="Alpha blockers", io=IO11,
-   q="Which effect do the alpha-adrenergic blocking agents share, per the lecture?",
+   q="Which effect do the alpha-adrenergic blocking agents share?",
    opts=[
      ["Reflex tachycardia",
       "Correct, and their effects on blood pressure are more profound when the patient stands."],
@@ -37,7 +37,7 @@ POOL_B = [
    c=0, cite=c(108)),
 
  dict(topic="Phenoxybenzamine", io=IO4,
-   q="What is epinephrine reversal, as the lecture describes it?",
+   q="What is epinephrine reversal?",
    opts=[
      ["Blockade of epinephrine's vasoconstriction while its vasodilation remains",
       "Correct, so the net vascular effect flips direction."],
@@ -206,7 +206,7 @@ POOL_B = [
    c=0, cite=c(118)),
 
  dict(topic="Propranolol", io=IO11,
-   q="Which drugs does the lecture say INHIBIT propranolol's metabolism?",
+   q="Which drugs INHIBIT propranolol's metabolism?",
    opts=[
      ["Cimetidine, fluoxetine, paroxetine and ritonavir",
       "Correct, while barbiturates, phenytoin and rifampin induce it."],
@@ -232,7 +232,7 @@ POOL_B = [
    c=0, cite=c(119)),
 
  dict(topic="Selective beta-one antagonists", io=IO11,
-   q="Why does the lecture call the selective beta-one antagonists useful in impaired pulmonary function?",
+   q="Why are the selective beta-one antagonists useful in impaired pulmonary function?",
    opts=[
      ["They spare beta-two receptors, so bronchoconstriction is less likely",
       "Correct, with the caveat that selectivity is lost at higher doses."],
@@ -323,7 +323,7 @@ POOL_B = [
    c=0, cite=c(123)),
 
  dict(topic="Adrenergic transmission", io=IO6,
-   q="How many steps does the lecture give for adrenergic neurotransmission?",
+   q="How many steps are there in adrenergic neurotransmission?",
    opts=[
      ["Five",
       "Correct, against the six sequential steps given for the cholinergic neuron."],
@@ -375,7 +375,7 @@ POOL_B = [
    c=0, cite=c(86)),
 
  dict(topic="Norepinephrine", io=IO11,
-   q="How is norepinephrine given, per the lecture?",
+   q="How is norepinephrine given?",
    opts=[
      ["As a continuous intravenous infusion titrated to effect",
       "Correct, which suits a drug used to support vascular resistance in shock."],

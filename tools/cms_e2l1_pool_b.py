@@ -309,7 +309,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="Bacterial conjunctivitis", io=IOA, slot="first-line",
-   q="What does the deck give an immunocompetent adult with acute bacterial conjunctivitis?",
+   q="What is given to an immunocompetent adult with acute bacterial conjunctivitis?",
    opts=[
      ["A topical broad-spectrum antibiotic, such as a fluoroquinolone",
       "Correct — the deck's first-line, with its own example."],
@@ -439,7 +439,7 @@ POOL_B = [
    c=0, cite=cn(44)),
 
  dict(topic="Chlamydial conjunctivitis", io=IOB, slot="complication",
-   q="Why does the deck say neonates with chlamydial conjunctivitis are often treated in hospital?",
+   q="Why are neonates with chlamydial conjunctivitis often treated in hospital?",
    opts=[
      ["Because there is often concomitant pneumonia or pneumonitis",
       "Correct — the lung involvement is what drives admission."],

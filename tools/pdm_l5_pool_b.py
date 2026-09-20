@@ -142,7 +142,7 @@ POOL_B = [
    c=0, cite=c(10)),
 
  dict(topic="Potassium", io=IOB2, slot="complication",
-   q="Why does the deck stress that small fluctuations in potassium matter?",
+   q="Why do small fluctuations in potassium matter?",
    opts=[
      ["Small changes in the serum level carry significant physiological consequences",
       "Correct — the deck's reason for treating potassium as high-stakes."],

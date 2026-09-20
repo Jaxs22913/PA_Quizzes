@@ -76,7 +76,7 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Tinea corporis", io=IOB, slot="avoid",
-   q="Why does the deck say to avoid corticosteroid-antifungal combination products?",
+   q="Why should corticosteroid-antifungal combination products be avoided?",
    opts=[
      ["Steroids can mask and worsen dermatophytosis, producing tinea incognito",
       "Correct — the same warning appears again under tinea cruris."],

@@ -67,7 +67,7 @@ POOL_B = [
    c=0, cite=c(15)),
 
  dict(topic="Neurotransmitters", io=IO3,
-   q="What does the lecture say norepinephrine acts as?",
+   q="What does norepinephrine act as?",
    opts=[
      ["Both a neurotransmitter and a hormone, part of the fight-or-flight response in the periphery",
       "Correct, and it also regulates normal brain processes, usually excitatory."],
@@ -80,7 +80,7 @@ POOL_B = [
    c=0, cite=c(16)),
 
  dict(topic="Acetylcholine synthesis", io=IO6,
-   q="From what is acetylcholine synthesised, per the lecture's diagram?",
+   q="From what is acetylcholine synthesised?",
    opts=[
      ["Acetyl coenzyme A and choline",
       "Correct, and choline is recovered by recycling after the transmitter is degraded."],
@@ -119,7 +119,7 @@ POOL_B = [
    c=0, cite=c(27)),
 
  dict(topic="Acetylcholine", io=IO7,
-   q="Why is acetylcholine itself of little therapeutic use, per the lecture?",
+   q="Why is acetylcholine itself of little therapeutic use?",
    opts=[
      ["It is rapidly inactivated by cholinesterases",
       "Correct, which is why the synthetic esters that resist that enzyme exist."],
@@ -132,7 +132,7 @@ POOL_B = [
    c=0, cite=c(27)),
 
  dict(topic="Carbachol", io=IO7,
-   q="What is carbachol's clinical use in the lecture, and what receptor activity does it have?",
+   q="What is carbachol's clinical use, and what receptor activity does it have?",
    opts=[
      ["Decreasing intraocular pressure in glaucoma, with both muscarinic and nicotinic activity",
       "Correct, and it causes miosis and spasm of accommodation."],
@@ -171,7 +171,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="Anticholinesterase toxicity", io=IO7,
-   q="In what everyday context does the lecture say acetylcholinesterase inhibitors are encountered as poisons?",
+   q="In what everyday context are acetylcholinesterase inhibitors encountered as poisons?",
    opts=[
      ["As agricultural insecticides, and in suicidal or homicidal use",
       "Correct, with toxicity manifesting as nicotinic or muscarinic signs."],
@@ -197,7 +197,7 @@ POOL_B = [
    c=0, cite=c(47)),
 
  dict(topic="Atropine", io=IO7,
-   q="From which plants does the lecture say atropine is derived?",
+   q="From which plants is atropine derived?",
    opts=[
      ["Deadly nightshade, jimson weed and mandrake, of the nightshade family",
       "Correct, and scopolamine comes from the same family."],
@@ -210,7 +210,7 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Atropine", io=IO4,
-   q="Where does the lecture say atropine's greatest inhibitory effects are seen?",
+   q="Where are atropine's greatest inhibitory effects seen?",
    opts=[
      ["On bronchial tissue and on the secretion of sweat and saliva",
       "Correct, which is what underlies both its antisecretory use and its dry, hot toxidrome."],
@@ -236,7 +236,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Atropine", io=IO4,
-   q="Which set matches atropine's adverse effects in the lecture?",
+   q="Which set matches atropine's adverse effects?",
    opts=[
      ["Dry mouth, blurred vision, sandy eyes, urinary retention, constipation, and central restlessness or confusion",
       "Correct, with bradycardia at lower doses and tachycardia at higher ones."],
@@ -249,7 +249,7 @@ POOL_B = [
    c=0, cite=c(52)),
 
  dict(topic="Glycopyrrolate", io=IO7,
-   q="Besides its inhaled use, what does the lecture say glycopyrrolate solution is used for?",
+   q="Besides its inhaled use, what is glycopyrrolate solution used for?",
    opts=[
      ["Reducing salivary, tracheobronchial and pharyngeal secretions before surgery, and reducing excessive drooling",
       "Correct, both of which follow from blocking muscarinic receptors on glands."],
@@ -288,7 +288,7 @@ POOL_B = [
    c=0, cite=c(61)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
-   q="Why does the lecture say competitive neuromuscular blockers significantly increased the safety of anaesthesia?",
+   q="Why did competitive neuromuscular blockers significantly increase the safety of anaesthesia?",
    opts=[
      ["They allow the use of less anaesthetic agent, since higher doses of anaesthesia may produce respiratory paralysis and cardiac depression",
       "Correct. The relaxation is achieved without deepening the anaesthetic."],
@@ -327,7 +327,7 @@ POOL_B = [
    c=0, cite=c(67)),
 
  dict(topic="Succinylcholine", io=IO4,
-   q="How does the sequence of paralysis with succinylcholine differ, per the lecture?",
+   q="How does the sequence of paralysis with succinylcholine differ?",
    opts=[
      ["The sequence is a little different, but the respiratory muscles are paralysed last",
       "Correct, which is the safety-relevant part of the sequence either way."],
@@ -353,7 +353,7 @@ POOL_B = [
    c=0, cite=c(25)),
 
  dict(topic="Alpha and beta receptors", io=IO3,
-   q="Where does the lecture place alpha-one as against alpha-two receptors?",
+   q="Where are alpha-one receptors located, as against alpha-two receptors?",
    opts=[
      ["Alpha-one on the postsynaptic membrane of the effector organ, alpha-two on presynaptic nerve endings and other cells",
       "Correct, and that presynaptic location is what makes an alpha-two agonist reduce sympathetic outflow."],

@@ -77,7 +77,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Conjunctivitis", io=IO3, slot="manifestation",
-   q="What is the defining feature of conjunctivitis in the deck's inflammation table?",
+   q="What is the defining feature of conjunctivitis?",
    opts=[
      ["Hyperaemia without severe deep pain",
       "Correct — the absence of deep pain is what separates it from the vision-threatening entries."],

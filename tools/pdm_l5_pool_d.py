@@ -199,7 +199,7 @@ POOL_D = [
    c=0, cite=c(19)),
 
  dict(topic="Reading a panel", io=IOD, slot="initial test",
-   q="In the deck's stepwise approach to an abnormal comprehensive metabolic panel, which step comes first?",
+   q="In the stepwise approach to an abnormal comprehensive metabolic panel, which step comes first?",
    opts=[
      ["The electrolytes and acid-base group, then calculate the anion gap",
       "Correct — the deck's first step, ending in the gap calculation."],
@@ -212,7 +212,7 @@ POOL_D = [
    c=0, cite=c(20)),
 
  dict(topic="Reading a panel", io=IOD, slot="education",
-   q="What does the deck say usually follows any single or combined abnormality on a panel?",
+   q="What usually follows any single or combined abnormality on a panel?",
    opts=[
      ["Confirmatory testing",
       "Correct — the deck says an abnormality usually warrants confirmation."],
@@ -252,7 +252,7 @@ POOL_D = [
    c=0, cite=c(21)),
 
  dict(topic="Potassium and pH", io=IOF, slot="etiology",
-   q="The deck describes the potassium and pH relationship as working in both directions. What does potassium depletion do?",
+   q="The potassium and pH relationship works in both directions. What does potassium depletion do?",
    opts=[
      ["It increases renal acid secretion",
       "Correct — the reverse arm of the relationship as the deck states it."],
@@ -278,7 +278,7 @@ POOL_D = [
    c=0, cite=c(21)),
 
  dict(topic="Electrolytes and acid-base", io=IOF, slot="education",
-   q="The deck states that acid-base and electrolyte balance cannot be separated. Why?",
+   q="Acid-base and electrolyte balance cannot be separated. Why?",
    opts=[
      ["They are regulated by the same renal transport mechanisms and are physically coupled by electroneutrality",
       "Correct — the two reasons the deck gives."],
@@ -392,7 +392,7 @@ POOL_D = [
    c=0, cite=cn(22)),
 
  dict(topic="Anion gap", io=IOF, slot="test finding",
-   q="How does the deck say the anion gap should be adjusted when albumin is low?",
+   q="How should the anion gap be adjusted when albumin is low?",
    opts=[
      ["Correct it upward by about 2.5 for every one gram per decilitre the albumin has fallen",
       "Correct — the correction the deck prints."],
@@ -612,12 +612,12 @@ POOL_D = [
      ["A lab value should always be confirmed by imaging before acting",
       "Imaging follows only where the notes indicate it."],
      ["A lab value is only useful when the whole panel is abnormal",
-      "The notes make no such claim."]],
+      "A single abnormal value is informative on its own; an isolated result still narrows the differential and points to the next test."]],
    c=0, cite=cn(24)),
 
  # ---- the vomiting case ----
  dict(topic="Vomiting case", io=IOF, slot="test finding",
-   q="In the deck's case of three days of intractable vomiting, what does the panel show?",
+   q="In a case of three days of intractable vomiting, what does the panel show?",
    opts=[
      ["Low sodium, low potassium, low chloride, and a raised bicarbonate with alkalaemia",
       "Correct — the pattern the deck prints for the case."],

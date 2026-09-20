@@ -21,8 +21,10 @@ will make it worse -- clean the pool first.
 """
 import glob, importlib.util, os, re, sys
 
-CITES = re.compile(r"\b(the lecture|the deck|the slide|this course|in class|"
-                   r"the professor|the syllabus|the lecturer)\b", re.I)
+# "in class" needs the negative lookahead: topical steroids are ranked by
+# potency CLASS ("placed in class 1, superpotent"), which is not a citation.
+CITES = re.compile(r"\b(the lecture|the deck|the slide|this course|"
+                   r"in class(?!\s*\d)|the professor|the syllabus|the lecturer)\b", re.I)
 
 
 def scan():

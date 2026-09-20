@@ -64,7 +64,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Diagnostic approach", io=IOA, slot="first-line",
-   q="A patient has a lesion you suspect is a neoplasm, or a rash that has not resolved. Which test does the deck's decision list point to?",
+   q="A patient has a lesion you suspect is a neoplasm, or a rash that has not resolved. Which test is indicated?",
    opts=[
      ["Biopsy",
       "Correct — neoplasm or a persistent rash routes to biopsy."],
@@ -77,7 +77,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Diagnostic approach", io=IOA, slot="first-line",
-   q="Which question does point-of-care ultrasound answer in the deck's decision list?",
+   q="Which question does point-of-care ultrasound answer?",
    opts=[
      ["Abscess versus cellulitis",
       "Correct — that is the question the list assigns to point-of-care ultrasound."],
@@ -233,7 +233,7 @@ POOL_A = [
    c=0, cite=c(6)),
 
  dict(topic="Potassium hydroxide", io=IOC, slot="initial test",
-   q="What concentration of potassium hydroxide does the deck's procedure specify?",
+   q="What concentration of potassium hydroxide is specified?",
    opts=[
      ["Twenty per cent",
       "Correct — one drop of twenty per cent potassium hydroxide is added to the specimen."],

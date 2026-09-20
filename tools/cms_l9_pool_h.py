@@ -109,7 +109,7 @@ POOL_H = [
    c=0, cite=c(65)),
 
  dict(topic="Kaposi sarcoma", io=IO, slot="differential",
-   q="Which features does the deck say to use when discriminating Kaposi sarcoma from its lookalikes?",
+   q="Which features should be used when discriminating Kaposi sarcoma from its lookalikes?",
    opts=[
      ["Immune status, distribution, oral lesions, oedema, visceral symptoms and biopsy — not colour alone",
       "Correct — the warning against relying on colour is the point of the list."],
@@ -161,7 +161,7 @@ POOL_H = [
    c=0, cite=c(74)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IO, slot="avoid",
-   q="A biopsy for suspected cutaneous T-cell lymphoma comes back nondiagnostic, but the clinical picture still fits. What does the deck say?",
+   q="A biopsy for suspected cutaneous T-cell lymphoma comes back nondiagnostic, but the clinical picture still fits. What is the next step?",
    opts=[
      ["A single nondiagnostic biopsy does not exclude the disease; correlate clinically and reassess over time",
       "Correct — and numerous biopsies may be needed, which is why patients are warned in advance."],

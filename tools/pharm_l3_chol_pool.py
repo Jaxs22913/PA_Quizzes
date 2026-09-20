@@ -22,7 +22,7 @@ IO8 = "8 — Mechanism, pharmacokinetics, indications, contraindications and adv
 POOL = [
 
  dict(topic="ANS organisation", io=IO1,
-   q="How does the lecture divide the efferent division of the peripheral nervous system?",
+   q="How is the efferent division of the peripheral nervous system divided?",
    opts=[
      ["Into the somatic system, under voluntary control of muscles, and the autonomic system, under involuntary control of body functions",
       "Correct. Afferent carries signals to the central nervous system; efferent carries them away and splits this way."],
@@ -35,7 +35,7 @@ POOL = [
    c=0, cite=c(7)),
 
  dict(topic="ANS organisation", io=IO1,
-   q="Which three systems make up the autonomic division in the lecture?",
+   q="Which three systems make up the autonomic division?",
    opts=[
      ["Enteric, parasympathetic and sympathetic",
       "Correct. The enteric system is the one most often forgotten of the three."],
@@ -48,7 +48,7 @@ POOL = [
    c=0, cite=c(9)),
 
  dict(topic="ANS organisation", io=IO2,
-   q="How does the lecture describe the two sections of an autonomic efferent pathway?",
+   q="How are the two sections of an autonomic efferent pathway described?",
    opts=[
      ["A preganglionic neuron located within the central nervous system, and a postganglionic neuron originating in a ganglion and terminating on the effector organ",
       "Correct, and the postganglionic neuron is generally nonmyelinated."],
@@ -74,7 +74,7 @@ POOL = [
    c=0, cite=c(12)),
 
  dict(topic="Cholinergic transmission", io=IO6,
-   q="Which sequence describes neurotransmission at a cholinergic neuron in the lecture?",
+   q="Which sequence describes neurotransmission at a cholinergic neuron?",
    opts=[
      ["Synthesis, storage in vesicles, release, binding to receptors, degradation by acetylcholinesterase, and recycling of choline",
       "Correct. Six sequential steps, and several drug classes act at one of them."],
@@ -126,7 +126,7 @@ POOL = [
    c=0, cite=c(24)),
 
  dict(topic="Cholinergic receptors", io=IO4,
-   q="What does the lecture say nicotine does at the nicotinic receptor across concentrations?",
+   q="What does nicotine do at the nicotinic receptor across concentrations?",
    opts=[
      ["It stimulates the receptor at low concentrations and blocks it at high concentrations",
       "Correct, which is why nicotine appears in both the agonist and the ganglionic blocker discussions."],
@@ -152,7 +152,7 @@ POOL = [
    c=0, cite=c(28)),
 
  dict(topic="Nicotinic effects", io=IO4,
-   q="Which set matches the nicotinic effects the lecture lists?",
+   q="Which set matches the nicotinic effects?",
    opts=[
      ["Mydriasis, tachycardia, weakness, hypertension and fasciculations",
       "Correct, and note this set moves the pupil and heart in the opposite direction to the muscarinic set."],
@@ -165,7 +165,7 @@ POOL = [
    c=0, cite=c(29)),
 
  dict(topic="Direct cholinergic agonists", io=IO7,
-   q="Which two groups does the lecture divide the direct-acting cholinergic agonists into?",
+   q="Which two groups are the direct-acting cholinergic agonists divided into?",
    opts=[
      ["Choline esters, including acetylcholine, carbachol and bethanechol, and naturally occurring alkaloids, of which pilocarpine is the example",
       "Correct. The esters are synthetic apart from acetylcholine itself."],
@@ -178,7 +178,7 @@ POOL = [
    c=0, cite=c(26)),
 
  dict(topic="Bethanechol", io=IO7,
-   q="What distinguishes bethanechol from acetylcholine in the lecture?",
+   q="What distinguishes bethanechol from acetylcholine?",
    opts=[
      ["It is not hydrolysed by acetylcholinesterase, and it lacks nicotinic activity while having strong muscarinic activity",
       "Correct, which is what makes it usable clinically where acetylcholine is not."],
@@ -191,7 +191,7 @@ POOL = [
    c=0, cite=c(30)),
 
  dict(topic="Bethanechol", io=IO7,
-   q="What does bethanechol do to the bladder, per the lecture?",
+   q="What does bethanechol do to the bladder?",
    opts=[
      ["It stimulates the detrusor muscle and relaxes the trigone and sphincter, raising voiding pressure and lowering bladder capacity",
       "Correct, and its clinical use follows from that: stimulating an atonic bladder."],
@@ -243,7 +243,7 @@ POOL = [
    c=0, cite=c(34)),
 
  dict(topic="Edrophonium", io=IO7,
-   q="What is edrophonium used for in the lecture?",
+   q="What is edrophonium used for?",
    opts=[
      ["Diagnosing myasthenia gravis, assessing cholinesterase therapy, and reversing nondepolarizing neuromuscular blockade after surgery",
       "Correct, and it is the prototype short-acting agent of its class."],
@@ -269,7 +269,7 @@ POOL = [
    c=0, cite=c(35)),
 
  dict(topic="Physostigmine", io=IO7,
-   q="Which poisoning does the lecture say physostigmine treats?",
+   q="Which poisoning does physostigmine treat?",
    opts=[
      ["Overdose of anticholinergic drugs such as atropine",
       "Correct. It raises acetylcholine to compete with the blocking drug."],
@@ -308,7 +308,7 @@ POOL = [
    c=0, cite=c(38)),
 
  dict(topic="Pyridostigmine", io=IO7,
-   q="What is pyridostigmine's clinical role in the lecture?",
+   q="What is pyridostigmine's clinical role?",
    opts=[
      ["Chronic management of myasthenia gravis",
       "Correct, as distinct from edrophonium's diagnostic role."],
@@ -334,7 +334,7 @@ POOL = [
    c=0, cite=c(40)),
 
  dict(topic="Anticholinesterase toxicity", io=IO7,
-   q="What are the two limits the lecture places on pralidoxime?",
+   q="What are the two limits on pralidoxime?",
    opts=[
      ["It does not penetrate the central nervous system, and it cannot overcome reversible inhibitors such as physostigmine",
       "Correct. It reactivates inhibited acetylcholinesterase but only within those limits."],
@@ -347,7 +347,7 @@ POOL = [
    c=0, cite=c(42)),
 
  dict(topic="Cholinergic antagonists", io=IO8,
-   q="Which three classes make up the cholinergic antagonists in the lecture?",
+   q="Which three classes make up the cholinergic antagonists?",
    opts=[
      ["Antimuscarinic agents, ganglionic blockers and neuromuscular blocking agents",
       "Correct, and they are distinguished by which cholinergic site they occupy."],
@@ -360,7 +360,7 @@ POOL = [
    c=0, cite=c(44)),
 
  dict(topic="Antimuscarinic agents", io=IO8,
-   q="Which statement about antimuscarinic agents matches the lecture?",
+   q="Which statement about antimuscarinic agents is correct?",
    opts=[
      ["They do not block nicotinic receptors and have little or no action at skeletal neuromuscular junctions or autonomic ganglia",
       "Correct, and they leave the actions of sympathetic stimulation unopposed."],
@@ -386,7 +386,7 @@ POOL = [
    c=0, cite=c(49)),
 
  dict(topic="Atropine", io=IO4,
-   q="How does atropine's cardiovascular effect vary, per the lecture?",
+   q="How does atropine's cardiovascular effect vary?",
    opts=[
      ["Bradycardia at lower doses and tachycardia at higher doses",
       "Correct, and it is given during a code to treat bradycardia."],
@@ -412,7 +412,7 @@ POOL = [
    c=0, cite=c(50)),
 
  dict(topic="Atropine", io=IO7,
-   q="Which poisoning does the lecture say atropine is used as an antidote for?",
+   q="Which poisoning is atropine used as an antidote for?",
    opts=[
      ["Overdose of cholinesterase inhibitor insecticides and some types of mushroom poisoning",
       "Correct. It opposes the excess muscarinic activity."],
@@ -425,7 +425,7 @@ POOL = [
    c=0, cite=c(51)),
 
  dict(topic="Scopolamine", io=IO7,
-   q="What distinguishes scopolamine from atropine in the lecture?",
+   q="What distinguishes scopolamine from atropine?",
    opts=[
      ["It has greater action on the central nervous system at therapeutic doses, preventing motion sickness and blocking short-term memory",
       "Correct, with sedation at lower doses and excitement at higher ones."],
@@ -451,7 +451,7 @@ POOL = [
    c=0, cite=c(54)),
 
  dict(topic="Synthetic antimuscarinics", io=IO7,
-   q="What are ipratropium and tiotropium used for in the lecture?",
+   q="What are ipratropium and tiotropium used for?",
    opts=[
      ["Inhaled bronchodilators for maintenance treatment of bronchospasm in chronic obstructive pulmonary disease",
       "Correct, and glycopyrrolate joins them among the synthetic agents."],
@@ -464,7 +464,7 @@ POOL = [
    c=0, cite=c(55)),
 
  dict(topic="Bladder antimuscarinics", io=IO7,
-   q="What do the bladder antimuscarinics do, per the lecture?",
+   q="What do the bladder antimuscarinics do?",
    opts=[
      ["Lower the pressure inside the bladder, increase bladder capacity, and reduce the frequency of bladder contractions",
       "Correct, which is the mirror image of bethanechol's action."],
@@ -503,7 +503,7 @@ POOL = [
    c=0, cite=c(58)),
 
  dict(topic="Nicotine", io=IO4,
-   q="What does the lecture say happens with nicotine at autonomic ganglia?",
+   q="What happens with nicotine at autonomic ganglia?",
    opts=[
      ["It depolarizes the ganglia, first stimulating and then paralysing them",
       "Correct, and the stimulation raises blood pressure, heart rate, peristalsis and secretions before the fall."],
@@ -529,7 +529,7 @@ POOL = [
    c=0, cite=c(65)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
-   q="How is a nondepolarizing neuromuscular blockade reversed, per the lecture?",
+   q="How is a nondepolarizing neuromuscular blockade reversed?",
    opts=[
      ["By increasing acetylcholine in the synaptic gap with a cholinesterase inhibitor such as neostigmine, pyridostigmine or edrophonium",
       "Correct. Because the block is competitive, more transmitter can outcompete it."],
@@ -555,7 +555,7 @@ POOL = [
    c=0, cite=c(67)),
 
  dict(topic="Succinylcholine", io=IO7,
-   q="Why is succinylcholine suited to rapid sequence intubation, per the lecture?",
+   q="Why is succinylcholine suited to rapid sequence intubation?",
    opts=[
      ["Its rapid onset and short duration of action",
       "Correct, with the short duration owing to rapid breakdown by plasma enzyme."],
@@ -568,7 +568,7 @@ POOL = [
    c=0, cite=c(66)),
 
  dict(topic="Succinylcholine", io=IO4,
-   q="Why does the lecture suggest a small dose of a nondepolarizing blocker before succinylcholine?",
+   q="Why is a small dose of a nondepolarizing blocker suggested before succinylcholine?",
    opts=[
      ["To decrease or prevent the fasciculations that cause muscle soreness",
       "Correct. It is a comfort measure that addresses a predictable adverse effect."],

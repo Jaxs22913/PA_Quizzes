@@ -116,7 +116,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Ordering a CBC", io=IOF, slot="first-line",
-   q="Which white cell line does the deck say to check for a suspected bacterial infection?",
+   q="Which white cell line should be checked for a suspected bacterial infection?",
    opts=[
      ["Neutrophils",
       "Correct — bacterial infection routes to neutrophils on this slide."],
@@ -142,7 +142,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="White blood cells", io=IOE2, slot="etiology",
-   q="What are the four roles of white blood cells that the deck lists?",
+   q="What are the four roles of white blood cells?",
    opts=[
      ["Fight infection, migrate to the site of injury by chemotaxis, phagocytose foreign organisms, and produce and distribute antibodies",
       "Correct — with the immune response to a foreign antigen as the overarching function."],
@@ -259,7 +259,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Bands", io=IOE2, slot="test finding",
-   q="What combination does the deck say indicates bacterial infection?",
+   q="What combination indicates bacterial infection?",
    opts=[
      ["Neutrophils plus bands",
       "Correct — the deck writes the two together as the bacterial signature."],
@@ -402,7 +402,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Eosinophils and basophils", io=IOE2, slot="test finding",
-   q="Why does the deck say a normal eosinophil or basophil range is difficult to define?",
+   q="Why is a normal eosinophil or basophil range difficult to define?",
    opts=[
      ["Because a normal count can sometimes be zero",
       "Correct — a count of zero can be normal for both lines."],

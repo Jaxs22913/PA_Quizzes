@@ -10,7 +10,7 @@ IO = ("a — Describe the pupillary pathways, cranial nerve palsies and chiasmal
 
 POOL_A = [
  dict(topic="Nystagmus", io=IO, lead="recall",
-   q="A 24-year-old man asks what nystagmus actually is. Which description matches the lecture?",
+   q="A 24-year-old man asks what nystagmus actually is. Which description is correct?",
    opts=[
      ["Involuntary rhythmic oscillation of the eyes", "Correct: a biphasic, tremor-like oscillating movement."],
      ["A fixed deviation of one eye", "That is a strabismus, not an oscillation."],

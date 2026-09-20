@@ -144,7 +144,7 @@ POOL_A = [
    c=0, cite=cn(7)),
 
  dict(topic="Panel groupings", io=IOA, slot="initial test",
-   q="Under the deck's functional grouping of panel components, which group do blood urea nitrogen and creatinine belong to?",
+   q="Under the functional grouping of panel components, which group do blood urea nitrogen and creatinine belong to?",
    opts=[
      ["Kidney function and waste",
       "Correct — the deck groups both as kidney function and waste markers."],
@@ -157,7 +157,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Panel groupings", io=IOA, slot="initial test",
-   q="Which four panel components make up the deck's electrolytes and acid-base group?",
+   q="Which four panel components make up the electrolytes and acid-base group?",
    opts=[
      ["Sodium, potassium, chloride, and bicarbonate",
       "Correct — the four the deck groups together for electrolytes and acid-base."],
@@ -170,7 +170,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Panel groupings", io=IOA, slot="initial test",
-   q="Where does calcium sit in the deck's grouping of panel components?",
+   q="Where does calcium sit in the grouping of panel components?",
    opts=[
      ["On its own, as the mineral",
       "Correct — the deck lists calcium separately under mineral."],
@@ -222,7 +222,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Indications", io=IOG, slot="initial test",
-   q="Under the deck's acute illness indication, which two situations call for a chemistry panel?",
+   q="Under the acute illness indication, which two situations call for a chemistry panel?",
    opts=[
      ["Dehydration and a suspected acid-base disorder",
       "Correct — the two the deck pairs under acute illness."],
@@ -279,7 +279,7 @@ POOL_A = [
    c=0, cite=au()),
 
  dict(topic="Reference ranges", io=IOA, slot="education",
-   q="Why does the deck say roughly 2.5 per cent of healthy people fall outside a normal range?",
+   q="Why do roughly 2.5 per cent of healthy people fall outside a normal range?",
    opts=[
      ["A normal range is defined as the mean plus or minus two standard deviations",
       "Correct — the tail beyond two standard deviations is where those healthy people sit."],
@@ -318,7 +318,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Reference ranges", io=IOA, slot="test finding",
-   q="The deck gives one worked example of confirming a borderline abnormality. Which is it?",
+   q="There is one worked example of confirming a borderline abnormality. Which is it?",
    opts=[
      ["Using gamma-glutamyl transferase to confirm that a raised alkaline phosphatase is hepatic",
       "Correct — the deck's own example of a confirmatory step."],
@@ -331,7 +331,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Reference ranges", io=IOA, slot="education",
-   q="What third thing does the deck say every value must be interpreted against?",
+   q="What third thing must every value be interpreted against?",
    opts=[
      ["Clinical context — history, medications and supplements, alcohol, and examination",
       "Correct — the deck's list of what surrounds the number."],

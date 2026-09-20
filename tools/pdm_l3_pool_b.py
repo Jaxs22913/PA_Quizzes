@@ -226,7 +226,7 @@ POOL_B = [
    c=0, cite=c(12)),
 
  dict(topic="Soft tissue infection", io=IOE, slot="avoid",
-   q="Why does the deck footnote cobblestoning as possibly non-specific?",
+   q="Why is cobblestoning noted as possibly non-specific?",
    opts=[
      ["It is also seen in venous stasis",
       "Correct — the speaker note gives venous stasis as the confounder."],
@@ -291,7 +291,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Skin and wound cultures", io=IOB, slot="avoid",
-   q="Which lesion does the deck say not to culture?",
+   q="Which lesion should not be cultured?",
    opts=[
      ["An inflamed epidermoid cyst",
       "Correct — the slide states this outright."],

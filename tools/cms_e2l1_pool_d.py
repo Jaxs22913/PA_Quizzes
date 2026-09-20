@@ -37,7 +37,7 @@ POOL_D = [
    c=0, cite=c(52)),
 
  dict(topic="Cellulitis", io=IOA, slot="etiology",
-   q="In which patients does the deck say to consider a FUNGAL cause of orbital cellulitis?",
+   q="In which patients should a FUNGAL cause of orbital cellulitis be considered?",
    opts=[
      ["Diabetic, elderly or immunocompromised patients — aspergillosis or mucormycosis",
       "Correct — the deck names the groups and the two organisms."],
@@ -63,7 +63,7 @@ POOL_D = [
    c=0, cite=c(52)),
 
  dict(topic="Cellulitis", io=IOA, slot="test finding",
-   q="The deck contrasts the two cellulitis photographs with one phrase. What is the giveaway in PRE-septal disease?",
+   q="Two cellulitis photographs can be contrasted with one phrase. What is the giveaway in PRE-septal disease?",
    opts=[
      ["The eye itself is white, despite the swollen erythematous lid and periorbital area",
       "Correct — the deck's caption makes exactly this point."],
@@ -128,7 +128,7 @@ POOL_D = [
    c=0, cite=c(53)),
 
  dict(topic="Cellulitis", io=IOA, slot="complication",
-   q="What does the deck say untreated cellulitis may spread to cause?",
+   q="What may untreated cellulitis spread to cause?",
    opts=[
      ["Intracranial spread causing meningitis or cavernous sinus thrombosis",
       "Correct — the deck's two named complications."],
@@ -141,7 +141,7 @@ POOL_D = [
    c=0, cite=c(53)),
 
  dict(topic="Cellulitis", io=IOA, slot="referral",
-   q="Which consults does the deck say may be needed in cellulitis?",
+   q="Which consults may be needed in cellulitis?",
    opts=[
      ["Ear, nose and throat; oral and maxillofacial surgery; and infectious disease",
       "Correct — the deck's three, reflecting the sinus and dental sources."],
@@ -233,7 +233,7 @@ POOL_D = [
    c=0, cite=c(10)),
 
  dict(topic="Fluorescein angiography", io=IOA, slot="initial test",
-   q="Which conditions does the deck say fluorescein angiography can detect?",
+   q="Which conditions can fluorescein angiography detect?",
    opts=[
      ["Diabetic retinopathy, macular degeneration, macular oedema, ocular melanoma, retinal detachment and retinitis pigmentosa",
       "Correct — the deck's list, all posterior segment conditions."],
@@ -247,7 +247,7 @@ POOL_D = [
 
  # ---- red eye triage ----
  dict(topic="Red eye triage", io=IOA, slot="initial test",
-   q="What does the deck say to complete BEFORE naming a diagnosis in a red eye?",
+   q="What must be completed BEFORE naming a diagnosis in a red eye?",
    opts=[
      ["Visual acuity in each eye with correction, pupils, extraocular movements, corneal clarity and fluorescein staining, the pattern of injection and discharge, and the contact lens, trauma, surgery and steroid history",
       "Correct — the deck's first-60-seconds sequence."],
@@ -299,7 +299,7 @@ POOL_D = [
    c=0, cite=cn(67)),
 
  dict(topic="Red eye danger signs", io=IOA, slot="referral",
-   q="Which findings does the deck say should stop the reflex diagnosis of conjunctivitis?",
+   q="Which findings should stop the reflex diagnosis of conjunctivitis?",
    opts=[
      ["Moderate to severe pain or consensual photophobia, reduced acuity or an abnormal pupil, corneal opacity or dendrite, ciliary flush or hypopyon, proptosis or restricted movement, chemical or penetrating injury, and a contact lens wearer with pain",
       "Correct — the deck's danger-sign list."],
@@ -417,7 +417,7 @@ POOL_D = [
    c=0, cite=cn(70)),
 
  dict(topic="Referral timing", io=IOA, slot="education",
-   q="What does the deck say every red-eye assessment should end with?",
+   q="What should every red-eye assessment end with?",
    opts=[
      ["A clearly documented disposition and a safety-net plan — recording acuity, key negatives, suspected diagnosis, urgency, destination and explicit return precautions",
       "Correct — the notes' documentation standard."],

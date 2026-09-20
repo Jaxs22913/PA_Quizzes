@@ -36,7 +36,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Topical vehicles", io=IO4,
-   q="A patient's corticosteroid is not controlling a plaque. Based on the concentration gradient principle in the lecture, what does that principle predict?",
+   q="A patient's corticosteroid is not controlling a plaque. Based on the concentration gradient principle, what is predicted?",
    opts=[
      ["Raising the concentration increases drug transfer and can overcome the resistance",
       "Correct. The lecture gives corticosteroid resistance overcome by increased concentration as its worked example."],
@@ -49,7 +49,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Topical vehicles", io=IO4,
-   q="What is the depot effect described in the lecture, and what does it allow?",
+   q="What is the depot effect, and what does it allow?",
    opts=[
      ["Skin acts as a reservoir for the drug, which may permit once daily dosing of short acting drugs",
       "Correct. The reservoir is what lets a short acting drug be given less often than its half-life suggests."],
@@ -62,7 +62,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Topical vehicles", io=IO5,
-   q="The lecture says occlusion increases efficacy. What does it flag alongside that?",
+   q="Occlusion increases efficacy. What must be flagged alongside that?",
    opts=[
      ["It raises the question of increased toxicity as well",
       "Correct. The lecture pairs the efficacy gain with a query about toxicity rather than presenting it as free benefit."],
@@ -101,7 +101,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Topical vehicles", io=IO10,
-   q="Which vehicle does the lecture say to avoid in intertriginous areas?",
+   q="Which vehicle should be avoided in intertriginous areas?",
    opts=[
      ["Ointment",
       "Correct. Ointment is water in oil and leaves a protective oil film, which is why the lecture steers it away from skin folds."],
@@ -153,7 +153,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Acne pathogenesis", io=IO2,
-   q="What does bacterial lipase do in the acne cascade the lecture describes?",
+   q="What does bacterial lipase do in the acne cascade?",
    opts=[
      ["Hydrolyses triglycerides into free fatty acids",
       "Correct, and those free fatty acids feed the increase in keratinization and microcomedone formation."],
@@ -179,7 +179,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Drug-induced acne", io=IO5,
-   q="A patient develops pustular inflammation on the trunk a few weeks after starting a systemic corticosteroid. What does the lecture say happens when the steroid is stopped?",
+   q="A patient develops pustular inflammation on the trunk a few weeks after starting a systemic corticosteroid. What happens when the steroid is stopped?",
    opts=[
      ["An initial worsening, because inflammation increases",
       "Correct, and warning the patient of this in advance is what stops them abandoning the plan."],
@@ -231,7 +231,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Acne treatment principles", io=IO3,
-   q="How does the lecture split topical against systemic therapy in acne?",
+   q="How is topical therapy separated from systemic therapy in acne?",
    opts=[
      ["Topical for mild to moderate disease, systemic for moderate to severe",
       "Correct. Severity is what moves a patient onto systemic therapy."],
@@ -257,7 +257,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Topical therapy principles", io=IO10,
-   q="Why does the lecture say to apply topical acne therapy to the whole affected area rather than to individual spots?",
+   q="Why should topical acne therapy be applied to the whole affected area rather than to individual spots?",
    opts=[
      ["Topical therapy only works where it is applied",
       "Correct, and that is why the whole affected area is treated rather than visible lesions alone."],
@@ -270,7 +270,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Topical therapy principles", io=IO10,
-   q="Most topical acne agents cause skin irritation. What does the lecture say that leads to, and how does it advise starting?",
+   q="Most topical acne agents cause skin irritation. What does that lead to, and how should therapy be started?",
    opts=[
      ["It can lead to patient discontinuation, so start with lower strength and increase gradually",
       "Correct. Anticipating the irritation is what keeps a patient on therapy."],
@@ -309,7 +309,7 @@ POOL_A = [
    c=0, cite=c(21)),
 
  dict(topic="Azelaic acid", io=IO2,
-   q="What are the two proposed actions of azelaic acid in the lecture?",
+   q="What are the two proposed actions of azelaic acid?",
    opts=[
      ["Antimicrobial activity and inhibition of the conversion of testosterone to dihydrotestosterone",
       "Correct, and the lecture is explicit that the mechanism is not fully understood."],
@@ -322,7 +322,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Azelaic acid", io=IO10,
-   q="A patient starting azelaic acid asks how long before it works. What does the lecture support telling them?",
+   q="A patient starting azelaic acid asks how long before it works. What should they be told?",
    opts=[
      ["Improvement occurs over six to eight weeks with continuous therapy",
       "Correct, and setting that expectation is what prevents early abandonment."],
@@ -348,7 +348,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Topical retinoids", io=IO3,
-   q="For which form of acne does the lecture name a topical retinoid as first line?",
+   q="For which form of acne is a topical retinoid first line?",
    opts=[
      ["Noninflammatory, comedonal acne",
       "Correct, and for inflammatory acne it is often combined with other agents rather than used alone."],
@@ -374,7 +374,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Topical retinoids", io=IO7,
-   q="Which patient should not be given a topical retinoid, per the lecture?",
+   q="Which patient should not be given a topical retinoid?",
    opts=[
      ["A patient who is pregnant",
       "Correct. The lecture says to avoid retinoids during pregnancy."],
@@ -387,7 +387,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Topical retinoids", io=IO10,
-   q="Why does the lecture say tretinoin should be applied at night?",
+   q="Why should tretinoin be applied at night?",
    opts=[
      ["It is photolabile",
       "Correct. Being degraded by light is the reason for nightly application, distinct from the photosensitivity it also causes."],
@@ -478,7 +478,7 @@ POOL_A = [
    c=0, cite=c(27)),
 
  dict(topic="Isotretinoin", io=IO10,
-   q="Which psychiatric issue does the lecture say to monitor for during isotretinoin therapy?",
+   q="Which psychiatric issue should be monitored for during isotretinoin therapy?",
    opts=[
      ["Signs of developing depression",
       "Correct. The lecture names monitoring for depression explicitly."],
@@ -491,7 +491,7 @@ POOL_A = [
    c=0, cite=c(27)),
 
  dict(topic="Systemic antibiotics for acne", io=IO2,
-   q="What is the anti-inflammatory action the lecture attributes to tetracyclines in acne?",
+   q="What is the anti-inflammatory action of tetracyclines in acne?",
    opts=[
      ["They chelate calcium ions, which prevents neutrophil and monocyte chemotaxis",
       "Correct. That is an anti-inflammatory action separate from killing the organism."],
@@ -504,7 +504,7 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Systemic antibiotics for acne", io=IO7,
-   q="Which two groups are contraindicated from receiving tetracyclines, per the lecture?",
+   q="Which two groups are contraindicated from receiving tetracyclines?",
    opts=[
      ["Children under eight years and pregnant women",
       "Correct. These are the two the lecture names."],

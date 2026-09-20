@@ -101,7 +101,7 @@ POOL_B = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="differential",
-   q="What does the deck say should be used to distinguish squamous cell carcinoma from its differential, rather than morphology alone?",
+   q="What should be used to distinguish squamous cell carcinoma from its differential, rather than morphology alone?",
    opts=[
      ["Time course, firmness or induration, ulceration, site, immune status and pathology",
       "Correct — six discriminators beyond appearance."],

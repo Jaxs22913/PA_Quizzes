@@ -49,7 +49,7 @@ POOL_E = [
    c=0, cite=c(35)),
 
  dict(topic="CT versus MRI", io=IOH, slot="first-line",
-   q="Which five strengths does the deck give computed tomography?",
+   q="What are the five strengths of computed tomography?",
    opts=[
      ["Calcifications and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and unstable or claustrophobic patients",
       "Correct — all five as listed."],
@@ -62,7 +62,7 @@ POOL_E = [
    c=0, cite=c(35)),
 
  dict(topic="CT versus MRI", io=IOH, slot="first-line",
-   q="Which five strengths does the deck give magnetic resonance imaging?",
+   q="What are the five strengths of magnetic resonance imaging?",
    opts=[
      ["Superior soft-tissue contrast, no ionizing radiation, intracranial or orbital extension, perineural spread, skull base and tumours",
       "Correct — the magnetic resonance list as given."],
@@ -75,7 +75,7 @@ POOL_E = [
    c=0, cite=c(35)),
 
  dict(topic="CT versus MRI", io=IOH, slot="first-line",
-   q="What are the deck's two clinical pearls contrasting the modalities?",
+   q="What are the two clinical pearls contrasting the modalities?",
    opts=[
      ["Think computed tomography for bone, trauma and speed; think magnetic resonance for soft tissue, nerves and tumour or intracranial extension",
       "Correct — both pearls as the slide words them."],
@@ -322,7 +322,7 @@ POOL_E = [
    c=0, cite=c(39)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="Which four questions does the deck ask you to consider about any test?",
+   q="Which four questions should be considered about any test?",
    opts=[
      ["What does it evaluate well, when do we order it, what are its strengths and limitations, and how do the results confirm the condition",
       "Correct — the four framing questions on the clinical applications slide."],
@@ -348,7 +348,7 @@ POOL_E = [
    c=0, cite=c(40)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="Which five presentations does the deck's case wrap-up cover?",
+   q="Which five presentations does the case wrap-up cover?",
    opts=[
      ["Scaly rash, painful red eye, sore throat, neck mass and deep neck infection",
       "Correct — the five cases as listed."],
@@ -361,7 +361,7 @@ POOL_E = [
    c=0, cite=c(42)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="A patient has a scaly rash you suspect is fungal. Which test does the deck's approach select first, and why?",
+   q="A patient has a scaly rash you suspect is fungal. Which test is selected first, and why?",
    opts=[
      ["A potassium hydroxide preparation, because it is quick, inexpensive and answers the infection question directly",
       "Correct — it is the least invasive test that answers the question asked."],

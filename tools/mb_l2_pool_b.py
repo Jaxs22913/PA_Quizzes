@@ -34,7 +34,7 @@ POOL_B = [
    c=1, cite=c(20)),
 
  dict(topic="Beta-lactams", io=IO5,
-   q="How does the lecture describe the structural difference of carbapenems and monobactams?",
+   q="How is the structural difference of carbapenems and monobactams described?",
    opts=[
      ["Carbapenems have a single ring; monobactams substitute a carbon for a sulphur",
       "This reverses the two descriptions."],

@@ -198,7 +198,7 @@ POOL_B = [
    c=0, cite=c(12)),
 
  dict(topic="Strabismus", io=IO4, slot="etiology",
-   q="What are the two pathophysiological causes of strabismus the deck gives?",
+   q="What are the two pathophysiological causes of strabismus?",
    opts=[
      ["Extraocular muscle imbalance and cranial nerve palsy of the third, fourth or sixth nerves",
       "Correct — the deck's two mechanisms."],
@@ -250,7 +250,7 @@ POOL_B = [
    c=0, cite=c(12)),
 
  dict(topic="Amblyopia", io=IO4, slot="etiology",
-   q="The deck names a treatment window for amblyopia. What is it, and why does a window exist at all?",
+   q="There is a treatment window for amblyopia. What is it, and why does a window exist at all?",
    opts=[
      ["Before age seven to eight, because the visual system is only plastic during the critical developmental period",
       "Correct — the deck's window, and the developmental reason it closes."],

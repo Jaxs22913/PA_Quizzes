@@ -30,7 +30,7 @@ IO = "1 — Compare and contrast the etiologies, epidemiology, risk factors, cli
 POOL_G = [
  # ---------------- avoid (was 0) ----------------
  dict(topic="Nail unit neoplasms", io=IO, slot="avoid",
-   q="A single nail abnormality has persisted despite treatment. What does the deck say to avoid?",
+   q="A single nail abnormality has persisted despite treatment. What should be avoided?",
    opts=[
      ["Repeated empiric antifungal, antibiotic or wart treatment",
       "Correct — repeating empiric therapy on a solitary persistent nail lesion is how diagnostic delay happens."],
@@ -43,7 +43,7 @@ POOL_G = [
    c=0, cite=c(95)),
 
  dict(topic="Nail unit neoplasms", io=IO, slot="avoid",
-   q="The deck says to photograph a concerning pigmented band. What caution comes with that?",
+   q="A concerning pigmented band should be photographed. What caution comes with that?",
    opts=[
      ["Do not let photographing it delay referral",
       "Correct — documentation is for tracking change, not for postponing the specialist."],
@@ -175,7 +175,7 @@ POOL_G = [
    c=0, cite=c(56)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IO, slot="education",
-   q="What does the deck say patients should be told about establishing the cutaneous T-cell lymphoma diagnosis?",
+   q="What should patients be told about establishing the cutaneous T-cell lymphoma diagnosis?",
    opts=[
      ["It may require repeated biopsies, and the disease is usually chronic",
       "Correct — setting that expectation early matters, because the diagnosis is often slow to confirm."],

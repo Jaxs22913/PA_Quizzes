@@ -41,7 +41,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Retinal detachment", io=IOA, lead="etiology",
-   q="A 68-year-old man has a retinal detachment. What does the lecture say it commonly follows?",
+   q="A 68-year-old man has a retinal detachment. What does it commonly follow?",
    opts=[
      ["A retinal tear or hole", "Correct, with vitreous shrinkage over time behind it."],
      ["An embolus in the central artery", "That causes arterial occlusion."],
@@ -96,7 +96,7 @@ POOL_A = [
 
  # ---------------- Epidemiology ----------------
  dict(topic="Retinal detachment", io=IOA, lead="epidemiology",
-   q="A 52-year-old woman asks at what age retinal detachment becomes most common. What does the lecture say?",
+   q="A 52-year-old woman asks at what age retinal detachment becomes most common. What should she be told?",
    opts=[
      ["After age 50", "Correct, as the vitreous shrinks with age."],
      ["Between 18 and 45", "That is the optic neuritis group."],
@@ -132,7 +132,7 @@ POOL_A = [
    c=0, cite=c(48)),
 
  dict(topic="Glaucoma", io=IOA, lead="epidemiology",
-   q="A 56-year-old man asks how serious glaucoma is worldwide. What did the lecturer say?",
+   q="A 56-year-old man asks how serious glaucoma is worldwide. What should he be told?",
    opts=[
      ["It is a leading cause of blindness worldwide", "Correct, and untreated disease ends in blindness."],
      ["It rarely causes blindness", "Untreated, it does."],
@@ -215,7 +215,7 @@ POOL_A = [
 
  # ---------------- Clinical manifestations ----------------
  dict(topic="Amaurosis fugax", io=IOA, lead="manifestation",
-   q="A 70-year-old man has amaurosis fugax. How long does the lecture say an episode lasts?",
+   q="A 70-year-old man has amaurosis fugax. How long does an episode last?",
    opts=[
      ["A few seconds to minutes", "Correct; hours argues against a transient ischemic attack."],
      ["One to two days", "That is the optic neuritis time course."],
@@ -224,7 +224,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="manifestation",
-   q="A 65-year-old woman describes what the lecture calls fleeting blindness. Which term is this a synonym for?",
+   q="A 65-year-old woman describes fleeting blindness. Which term is this a synonym for?",
    opts=[
      ["Amaurosis fugax", "Correct, monocular episodic visual loss."],
      ["Papilledema", "That is disc swelling from raised intracranial pressure."],
@@ -251,7 +251,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Optic neuritis", io=IOA, lead="manifestation",
-   q="A 32-year-old woman has optic neuritis. Over what period does the lecture say vision is lost?",
+   q="A 32-year-old woman has optic neuritis. Over what period is vision lost?",
    opts=[
      ["Hours to several days", "Correct, unilateral, with painful eye movement."],
      ["A few seconds", "That is arterial occlusion."],

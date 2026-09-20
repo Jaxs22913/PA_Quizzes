@@ -15,7 +15,7 @@ IO4 = "4 — Diagram the stages in the course of an infection"
 
 POOL_A = [
  dict(topic="Definitions", io=IO1,
-   q="How does the lecture define infection, as distinct from disease?",
+   q="How is infection defined, as distinct from disease?",
    opts=[
      ["Microbes penetrate host defences, enter tissues and multiply",
       "Correct. Disease is broader: any deviation from health."],
@@ -27,7 +27,7 @@ POOL_A = [
       "The best case is an appropriate immune response and recovery."]],
    c=0, cite=c(8)),
  dict(topic="Definitions", io=IO1,
-   q="The lecture notes that disease may be caused by factors other than the microbe itself. Which does it name?",
+   q="Disease may be caused by factors other than the microbe itself. Which are they?",
    opts=[
      ["Our own immune responses", "Correct; disease may follow from the host response as much as the organism."],
      ["Antibiotic resistance genes", "Resistance affects treatment rather than defining disease."],
@@ -35,7 +35,7 @@ POOL_A = [
      ["The portal of exit", "That concerns transmission onward."]],
    c=0, cite=c(8)),
  dict(topic="Resident flora", io=IO1,
-   q="Which site does the lecture say carries the highest numbers of bacteria?",
+   q="Which site carries the highest numbers of bacteria?",
    opts=[
      ["Large intestine", "Correct, mainly strict or facultative anaerobes."],
      ["Skin", "Populated, but not the highest count."],
@@ -43,7 +43,7 @@ POOL_A = [
      ["Upper respiratory tract", "Colonised, but not the highest."]],
    c=0, cite=c(9)),
  dict(topic="Resident flora", io=IO1,
-   q="How does the lecture say resident microflora benefit the host?",
+   q="How do resident microflora benefit the host?",
    opts=[
      ["By preventing overgrowth of harmful microbes", "Correct — competitive exclusion."],
      ["By producing all essential vitamins", "Not the benefit the lecture emphasises."],
@@ -83,7 +83,7 @@ POOL_A = [
      ["It has the same flora as the mouth", "The mouth is heavily colonised; the lower tract is not."]],
    c=0, cite=c(16)),
  dict(topic="Pathogens", io=IO2,
-   q="How does the lecture define a true, or frank, pathogen?",
+   q="How is a true, or frank, pathogen defined?",
    opts=[
      ["It causes disease in healthy people with normal defences",
       "Correct; influenza, rabies, plague and malaria are the examples."],
@@ -115,7 +115,7 @@ POOL_A = [
      ["A high morbidity rate", "That is an epidemiological measure."]],
    c=0, cite=c(22)),
  dict(topic="Portals of entry", io=IO2,
-   q="Which set matches the portals of entry the lecture lists?",
+   q="Which set matches the portals of entry?",
    opts=[
      ["Skin, gastrointestinal, respiratory, urogenital, conjunctiva",
       "Correct, with pregnancy and birth also named."],
@@ -167,7 +167,7 @@ POOL_A = [
      ["Adhesive slimes and capsules", "Those are bacterial, such as dextran slime or glycocalyx."]],
    c=0, cite=c(29)),
  dict(topic="Virulence factors", io=IO2,
-   q="What do exoenzymes do, per the lecture?",
+   q="What do exoenzymes do?",
    opts=[
      ["Attack host defences to allow deeper invasion", "Correct — mucinase, hyaluronidase, coagulase, kinases."],
      ["Kill leukocytes directly", "That is a leukocidin."],
@@ -267,7 +267,7 @@ POOL_A = [
       "Specificity is not the distinction drawn."]],
    c=0, cite=c(38)),
  dict(topic="Sequelae", io=IO4,
-   q="What does the term sequelae mean, per the lecture?",
+   q="What does the term sequelae mean?",
    opts=[
      ["Long-term or permanent tissue or organ damage", "Correct — paralysis from polio, deafness from meningitis."],
      ["The period before symptoms appear", "That is incubation."],
@@ -307,7 +307,7 @@ POOL_A = [
      ["About nine tenths", "That overstates it."]],
    c=0, cite=c(5)),
  dict(topic="Human microbiome", io=IO1,
-   q="How does the lecture explain the presence of more than a hundred human genes of microbial origin?",
+   q="How is the presence of more than a hundred human genes of microbial origin explained?",
    opts=[
      ["Horizontal gene transfer", "Correct, from bacteria, fungi and plants over time."],
      ["Convergent evolution", "Not the mechanism proposed."],

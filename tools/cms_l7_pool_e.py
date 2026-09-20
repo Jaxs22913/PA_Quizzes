@@ -419,7 +419,7 @@ POOL_E = [
    c=0, cite=c(15)),
 
  dict(topic="Benign lesions overall", io=IOB, slot="education",
-   q="What opportunity does the deck say a new lesion in a sun-exposed area creates?",
+   q="What opportunity does a new lesion in a sun-exposed area create?",
    opts=[
      ["To counsel on sunscreen, peak-hour sun avoidance and skin checks",
       "Correct — the general education point the deck attaches to every benign lesion in a sun-exposed area."],

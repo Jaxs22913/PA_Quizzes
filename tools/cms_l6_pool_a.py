@@ -150,7 +150,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Tinea capitis", io=IOB, slot="differential",
-   q="Which feature separates seborrheic dermatitis from tinea capitis on the deck's differential?",
+   q="Which feature separates seborrheic dermatitis from tinea capitis?",
    opts=[
      ["Hair may be lost but not broken, and the scales are fine, dry or greasy",
       "Correct — the hair fracture is what points to tinea."],
@@ -241,7 +241,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Tinea capitis", io=IOB, slot="complication",
-   q="Why does the deck say to treat inflammatory tinea capitis promptly?",
+   q="Why should inflammatory tinea capitis be treated promptly?",
    opts=[
      ["To reduce the risk of scarring alopecia",
       "Correct — and to reassess if a kerion develops or improvement is absent after several weeks."],

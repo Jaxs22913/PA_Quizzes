@@ -15,7 +15,7 @@ IO4A = "4a — Penicillins"
 
 POOL_A = [
  dict(topic="Principles", io=IO3,
-   q="What distinguishes a bacteriostatic drug from a bactericidal drug, as the lecture defines them?",
+   q="What distinguishes a bacteriostatic drug from a bactericidal drug?",
    opts=[
      ["Bacteriostatic inhibits a vital growth pathway without directly causing death; bactericidal disrupts function enough that death occurs",
       "Correct. The lecture's split is about whether the drug itself kills, not about how fast it works."],
@@ -28,7 +28,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Principles", io=IO3,
-   q="The lecture lists five bacteriostatic agents. Which group is correct?",
+   q="There are five bacteriostatic agents. Which group is correct?",
    opts=[
      ["Erythromycin, tetracyclines, sulfonamides, trimethoprim, clindamycin",
       "Correct. These are the five the lecture places on the bacteriostatic side."],

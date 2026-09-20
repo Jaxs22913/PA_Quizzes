@@ -108,7 +108,7 @@ POOL_C = [
    c=0, cite=c(30)),
 
  dict(topic="Apoptosis genes", io=IOG,
-   q="Why does the deck say genes promoting self destruction of cells with damaged deoxyribonucleic acid are necessary?",
+   q="Why are genes promoting self destruction of cells with damaged deoxyribonucleic acid necessary?",
    opts=[
      ["To stop the damage becoming permanent in dividing cells",
       "Correct — apoptosis prevents a mutation being carried on into the daughter cells."],
@@ -121,7 +121,7 @@ POOL_C = [
    c=0, cite=c(30)),
 
  dict(topic="Gene categories", io=IOG,
-   q="How many categories of gene alteration in carcinogenesis does the deck describe, and what are they?",
+   q="How many categories of gene alteration in carcinogenesis are there, and what are they?",
    opts=[
      ["Four",
       "Correct — protooncogenes, tumour suppressor genes, genes promoting repair of damaged deoxyribonucleic acid, and genes promoting apoptosis. Two are gains of function and two are losses."],

@@ -91,7 +91,7 @@ POOL_D = [
    c=0, cite=cn(59)),
 
  dict(topic="Evaluating anemia", io=IOH, slot="first-line",
-   q="What does the deck say to look at in addition to the four evaluation steps?",
+   q="What should be looked at in addition to the four evaluation steps?",
    opts=[
      ["The peripheral blood smear, if one can be obtained",
       "Correct — from the speaker notes."],
@@ -234,7 +234,7 @@ POOL_D = [
    c=0, cite=ci(63)),
 
  dict(topic="Iron transport", io=IOH, slot="etiology",
-   q="In the deck's iron transport analogy, what does the bus represent, and what does the bus stop represent?",
+   q="In the iron transport analogy, what does the bus represent, and what does the bus stop represent?",
    opts=[
      ["The bus is transferrin, the binding protein that transports iron; the bus stop is ferritin, which stores it",
       "Correct — from the speaker notes on the hand-drawn slide."],
@@ -312,7 +312,7 @@ POOL_D = [
    c=0, cite=c(66)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="A macrocytic anemia shows NO megaloblastic changes on the smear. Which two diagnoses does the deck's flowchart offer?",
+   q="A macrocytic anemia shows NO megaloblastic changes on the smear. Which two diagnoses follow?",
    opts=[
      ["Chronic liver disease and acute hematologic malignancy",
       "Correct — the two arms on the no-megaloblastic-change branch."],
@@ -377,7 +377,7 @@ POOL_D = [
    c=0, cite=c(68)),
 
  dict(topic="Anemia algorithm", io=IOH, slot="test finding",
-   q="At what hemoglobin does the deck's algorithm define a low value for men and for women?",
+   q="At what hemoglobin is a low value defined for men and for women?",
    opts=[
      ["Under fourteen grams per decilitre for men, under twelve for women",
       "Correct — note this differs from the reference table's lower limit of thirteen point five for men."],
@@ -442,7 +442,7 @@ POOL_D = [
    c=0, cite=c(70)),
 
  dict(topic="Anemia algorithm", io=IOH, slot="escalation",
-   q="In the microcytic branch of the picture-only algorithm, what does the deck say to obtain, and why?",
+   q="In the microcytic branch of the picture-only algorithm, what should be obtained, and why?",
    opts=[
      ["Iron studies in all individuals, because concomitant iron deficiency can affect hemoglobin analysis",
       "Correct — testing iron first stops a coexisting deficiency from masking thalassemia."],

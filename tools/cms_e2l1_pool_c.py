@@ -437,7 +437,7 @@ POOL_C = [
    c=0, cite=c(61)),
 
  dict(topic="Corneal ulcer", io=IOA, slot="avoid",
-   q="Why does the deck leave the decision on steroid drops for a corneal ulcer to ophthalmology?",
+   q="Why is the decision on steroid drops for a corneal ulcer left to ophthalmology?",
    opts=[
      ["Steroids can worsen the infection if started too early, especially fungal or herpetic",
       "Correct — the deck names both the risk and the two aetiologies of greatest concern."],

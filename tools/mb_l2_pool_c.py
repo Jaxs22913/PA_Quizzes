@@ -267,7 +267,7 @@ POOL_C = [
    c=3, cite=c(61)),
 
  dict(topic="Drug combinations", io=IO8,
-   q="When two drugs are used together, what are the three possible interactions the lecture names?",
+   q="When two drugs are used together, what are the three possible interactions?",
    opts=[
      ["Indifference — no interaction; synergism — the combined effect is greater than either alone; antagonism — the combined effect is less than either alone",
       "Correct. Using a cocktail is one approach to resistant organisms, but antagonism is the risk that makes the choice matter."],

@@ -129,7 +129,7 @@ POOL_C = [
    c=0, cite=c(59)),
 
  dict(topic="Cytopathic effects", io=IO10,
-   q="Viral alteration of host deoxyribonucleic acid may activate oncogenes. What else does the lecture say can do this?",
+   q="Viral alteration of host deoxyribonucleic acid may activate oncogenes. What else can do this?",
    opts=[
      ["Osmotic pressure and pH change",
       "Those are physical control methods and growth requirements."],

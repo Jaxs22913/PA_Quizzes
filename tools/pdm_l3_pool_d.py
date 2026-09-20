@@ -94,7 +94,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Throat culture", io=IOG, slot="avoid",
-   q="Which test does the deck say not to use to diagnose acute pharyngitis?",
+   q="Which test should not be used to diagnose acute pharyngitis?",
    opts=[
      ["Antistreptococcal antibody titres",
       "Correct — the antistreptolysin O titre is explicitly excluded for acute diagnosis."],

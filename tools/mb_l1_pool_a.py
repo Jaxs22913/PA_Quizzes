@@ -75,7 +75,7 @@ POOL_A = [
    c=0, cite=c(11)),
 
  dict(topic="Environmental factors", io=IO1,
-   q="Under which environmental conditions does the lecture say influenza virus is more stable and transmissible?",
+   q="Under which environmental conditions is influenza virus more stable and transmissible?",
    opts=[
      ["High temperatures and low humidity",
       "This reverses both conditions given."],
@@ -257,7 +257,7 @@ POOL_A = [
    c=2, cite=c(28)),
 
  dict(topic="Bacterial structures", io=IO3,
-   q="Which statement about bacterial plasmids matches the lecture?",
+   q="Which statement about bacterial plasmids is correct?",
    opts=[
      ["They are linear and essential to bacterial growth and metabolism",
       "They are circular and explicitly described as NOT essential to growth and metabolism."],

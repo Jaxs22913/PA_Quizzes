@@ -35,7 +35,7 @@ POOL_A = [
    c=1, cite=c(4)),
 
  dict(topic="Inflammatory mechanisms", io=IO_A,
-   q="Which sequence correctly orders the three linked vascular mechanisms the lecture describes?",
+   q="Which sequence correctly orders the three linked vascular mechanisms?",
    opts=[
      ["Endothelial contraction, then exudation, then vasodilation of arterioles",
       "Exudation is the consequence of increased permeability, so it cannot precede the vasodilation that begins the sequence."],
@@ -139,7 +139,7 @@ POOL_A = [
    c=1, cite=c(6)),
 
  dict(topic="Acute vs chronic", io=IO_B,
-   q="The lecture distinguishes endogenous from exogenous toxic agents in chronic inflammation. Which pairing is correct?",
+   q="Endogenous and exogenous toxic agents are distinguished in chronic inflammation. Which pairing is correct?",
    opts=[
      ["Endogenous — silica; exogenous — atherosclerosis",
       "These are transposed: silica is an inhaled particulate and therefore exogenous."],
@@ -269,7 +269,7 @@ POOL_A = [
    c=3, cite=c(9)),
 
  dict(topic="Acute vs chronic", io=IO_B,
-   q="The lecture contrasts trauma with a bee sting to illustrate which distinction within acute inflammation?",
+   q="Trauma is contrasted with a bee sting to illustrate which distinction within acute inflammation?",
    opts=[
      ["Damage that is purely physical versus damage that involves activation of an immune response",
       "Correct. Both produce acute inflammation, but only one recruits an immune response, which is the point of the pairing."],

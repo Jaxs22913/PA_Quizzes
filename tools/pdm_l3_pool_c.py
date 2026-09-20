@@ -182,7 +182,7 @@ POOL_C = [
    c=0, cite=c(18)),
 
  dict(topic="Visual field testing", io=IOF, slot="test finding",
-   q="A patient has bitemporal hemianopia. What does the deck say this indicates?",
+   q="A patient has bitemporal hemianopia. What does this indicate?",
    opts=[
      ["A chiasmal lesion, such as a pituitary lesion",
       "Correct — the deck names the pituitary explicitly."],
@@ -195,7 +195,7 @@ POOL_C = [
    c=0, cite=c(18)),
 
  dict(topic="Visual field testing", io=IOF, slot="test finding",
-   q="Homonymous hemianopia is found. Where is the lesion, and what does the deck raise as a possible cause?",
+   q="Homonymous hemianopia is found. Where is the lesion, and what is a possible cause?",
    opts=[
      ["Retrochiasmal, and it queries a stroke",
       "Correct — the slide writes it with a question mark against stroke."],
@@ -390,7 +390,7 @@ POOL_C = [
    c=0, cite=c(23)),
 
  dict(topic="Optic disc cupping", io=IOF, slot="etiology",
-   q="What structural change does the deck's cross-sectional schematic of the glaucomatous disc show?",
+   q="What structural change does a cross-sectional view of the glaucomatous disc show?",
    opts=[
      ["Lamina cribrosa collapse",
       "Correct — the schematic panel shows collapse of the lamina cribrosa."],

@@ -10,7 +10,7 @@ IO7 = "Review the phases of the bacterial growth curve"
 
 POOL_B = [
  dict(topic="Morphology", io=IO4,
-   q="What are the three shapes of bacteria, and why does the lecture say shape matters?",
+   q="What are the three shapes of bacteria, and why does shape matter?",
    opts=[
      ["Cocci, bacilli and spiral — because shape is used in identification",
       "Correct. Spiral covers helical, comma, twisted rod and spirochete forms."],
@@ -101,7 +101,7 @@ POOL_B = [
    c=2, cite=c(34)),
 
  dict(topic="Gram stain", io=IO4,
-   q="The lecture contrasts the two wall types as physically versus chemically strong. Which way round?",
+   q="The two wall types are contrasted as physically versus chemically strong. Which way round?",
    opts=[
      ["Gram-negative is physically strong; Gram-positive is chemically strong",
       "This reverses the pairing given."],

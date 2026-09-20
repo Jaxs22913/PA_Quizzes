@@ -247,7 +247,7 @@ POOL_C = [
    c=1, cite=c(29)),
 
  dict(topic="Biomaterials", io=IO_F,
-   q="The lecture defines a biomaterial in this context as which of the following?",
+   q="A biomaterial in this context is defined as which of the following?",
    opts=[
      ["Any tissue harvested from the patient's own body",
       "Autologous tissue is not what the parenthetical describes."],

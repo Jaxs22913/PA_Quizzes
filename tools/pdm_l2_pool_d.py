@@ -100,7 +100,7 @@ POOL_D = [
    c=0, cite=c(13)),
 
  dict(topic="Radiation dose", io=IOF, slot="differential",
-   q="In the deck's table of typical organ radiation doses, which listed study delivers the highest dose?",
+   q="Among typical organ radiation doses, which study delivers the highest dose?",
    opts=[
      ["Neonatal abdominal computed tomography, to the stomach",
       "Correct — twenty, the largest figure in the table."],
@@ -178,7 +178,7 @@ POOL_D = [
    c=0, cite=c(21)),
 
  dict(topic="Radiodensity", io=IOD, slot="test finding",
-   q="On the deck's labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
+   q="On a labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
    opts=[
      ["Bone is radiopaque, gas is radiolucent, and the metal prosthesis is very opaque",
       "Correct — one image showing three of the five densities at once."],
@@ -243,7 +243,7 @@ POOL_D = [
    c=0, cite=c(36)),
 
  dict(topic="Computed tomography", io=IOB, slot="first-line",
-   q="What does the deck's three-panel chest example illustrate about post-processing?",
+   q="What does a three-panel chest example illustrate about post-processing?",
    opts=[
      ["The same acquired data re-windowed to bring out different pathology, without re-scanning the patient",
       "Correct — that is the benefit digital imaging markedly advanced."],

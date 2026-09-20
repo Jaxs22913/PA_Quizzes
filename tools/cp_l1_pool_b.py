@@ -71,7 +71,7 @@ POOL_B = [
    c=0, cite=c(16)),
 
  dict(topic="Neutrophils", io=IO_C,
-   q="Which statement about neutrophils matches the lecture?",
+   q="Which statement about neutrophils is correct?",
    opts=[
      ["They are the predominant inflammatory cell in allergic reactions",
       "Eosinophils are the predominant inflammatory cells in allergic reactions."],

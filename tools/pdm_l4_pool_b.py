@@ -25,7 +25,7 @@ IOE3 = "e(iii) — Discuss the clinical significance of abnormalities in platele
 
 POOL_B = [
  dict(topic="Absolute counts", io=IOD, slot="test finding",
-   q="Why does the deck say absolute counts are worth calculating?",
+   q="Why are absolute counts worth calculating?",
    opts=[
      ["They give precise numbers of each white cell type, making the immune response easier to interpret",
       "Correct — a percentage alone cannot be interpreted without the total."],
@@ -142,7 +142,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Platelets", io=IOE3, slot="etiology",
-   q="Where do platelets come from, and why does the deck say they are not really cells?",
+   q="Where do platelets come from, and why are they not really cells?",
    opts=[
      ["From megakaryocytes in the bone marrow, which break into fragments",
       "Correct — platelets are fragments rather than whole cells."],
@@ -181,7 +181,7 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Platelets", io=IOE3, slot="test finding",
-   q="Below what platelet count does the deck say the risk of hemorrhage increases?",
+   q="Below what platelet count does the risk of hemorrhage increase?",
    opts=[
      ["Twenty thousand",
       "Correct — the threshold the deck gives for increased hemorrhage risk."],

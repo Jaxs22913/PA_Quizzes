@@ -39,7 +39,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Unique features of the eye", io=IO1, slot="etiology",
-   q="Which tissue does the deck say has the highest oxygen consumption and metabolic rate in the body?",
+   q="Which tissue has the highest oxygen consumption and metabolic rate in the body?",
    opts=[
      ["The retina, higher even than the cerebral cortex",
       "Correct — the deck makes the comparison with cortex explicitly."],
@@ -126,7 +126,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Physiology of vision", io=IO2, slot="etiology",
-   q="What are the three non-negotiable requirements for vision the deck lists?",
+   q="What are the three non-negotiable requirements for vision?",
    opts=[
      ["Image formation, neural transmission, and photoreceptor excitation",
       "Correct — the three the deck names as non-negotiable."],
@@ -291,7 +291,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Lecture logic", io=IO1, slot="etiology",
-   q="The deck organises ocular disease from front to back. Which structures does it place in the third and deepest group?",
+   q="Ocular disease can be organised from front to back. Which structures fall in the third and deepest group?",
    opts=[
      ["Posterior segment, optic nerve and retina, which are more susceptible to systemic disease",
       "Correct — the deck's third group and the reason it gives."],
@@ -304,7 +304,7 @@ POOL_A = [
    c=0, cite=c(6)),
 
  dict(topic="Lecture logic", io=IO1, slot="etiology",
-   q="Why does the deck say the outer, easily visible structures are grouped first?",
+   q="Why are the outer, easily visible structures grouped first?",
    opts=[
      ["They are more susceptible to infection, trauma and environmental change",
       "Correct — the deck's reason for the first group."],

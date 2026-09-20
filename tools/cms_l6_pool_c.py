@@ -311,7 +311,7 @@ POOL_C = [
    c=0, cite=c(80)),
 
  dict(topic="Pityriasis versicolor", io=IOB, slot="education",
-   q="Why does the deck warn that colour change alone does not prove treatment failure?",
+   q="Why does colour change alone not prove treatment failure?",
    opts=[
      ["Scale resolves before pigment normalizes",
       "Correct — hypopigmentation reflects altered melanocyte function and reduced tanning, and recovery can lag months after the yeast has cleared. Look for scale, or confirm with potassium hydroxide."],
@@ -324,7 +324,7 @@ POOL_C = [
    c=0, cite=c(77)),
 
  dict(topic="Pityriasis versicolor", io=IOB, slot="differential",
-   q="How does vitiligo differ from pityriasis versicolor on the deck's differential?",
+   q="How does vitiligo differ from pityriasis versicolor?",
    opts=[
      ["Vitiligo is completely white — depigmented — and is an autoimmune disorder",
       "Correct — pityriasis versicolor is hypopigmented rather than depigmented, and it scales."],

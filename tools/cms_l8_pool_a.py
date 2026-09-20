@@ -395,7 +395,7 @@ POOL_A = [
    c=0, cite=c(25)),
 
  dict(topic="Vitiligo", io=IOA,
-   q="Why does the lecture caution against dismissing vitiligo as cosmetic?",
+   q="Why should vitiligo not be dismissed as cosmetic?",
    opts=[
      ["It affects patients psychologically and socially, through low self-esteem and poor body image",
       "Correct — psychological intervention is named as part of management."],

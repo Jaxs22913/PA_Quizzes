@@ -203,7 +203,7 @@ POOL_C = [
    c=0, cite=c(50)),
 
  dict(topic="Contrast media", io=IOG, slot="complication",
-   q="Why does the deck name cancer as a risk factor for all contrast material?",
+   q="Why is cancer a risk factor for all contrast material?",
    opts=[
      ["Because the dyes are technically radioactive, as are the imaging techniques themselves",
       "Correct — the deck states the risk in exactly those terms."],

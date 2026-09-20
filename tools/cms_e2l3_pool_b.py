@@ -67,7 +67,7 @@ POOL_B = [
    c=0, cite=c(29)),
 
  dict(topic="AAION", io=IOA, lead="test",
-   q="A 76-year-old woman is being assessed for arteritic optic neuropathy. What role does the lecture give the inflammatory markers?",
+   q="A 76-year-old woman is being assessed for arteritic optic neuropathy. What role do the inflammatory markers play?",
    opts=[
      ["They help rule the diagnosis in or out", "Correct; erythrocyte sedimentation rate and C-reactive protein are markedly raised."],
      ["They confirm the diagnosis definitively", "Biopsy is the gold standard."],
@@ -113,7 +113,7 @@ POOL_B = [
    c=0, cite=c(20)),
 
  dict(topic="Angle-closure glaucoma", io=IOB, lead="treatment",
-   q="A 62-year-old woman has laser peripheral iridotomy planned. What does the lecture say the procedure achieves?",
+   q="A 62-year-old woman has laser peripheral iridotomy planned. What does the procedure achieve?",
    opts=[
      ["Fluid flows from the posterior to the anterior chamber", "Correct, bypassing the blocked circuit."],
      ["It reattaches the retina", "That is detachment surgery."],
@@ -186,7 +186,7 @@ POOL_B = [
    c=0, cite=c(18)),
 
  dict(topic="Open-angle glaucoma", io=IOB, lead="education",
-   q="A 70-year-old woman with chronic open-angle glaucoma asks whether she will need surgery. What does the lecture say?",
+   q="A 70-year-old woman with chronic open-angle glaucoma asks whether she will need surgery. What should she be told?",
    opts=[
      ["Some patients stay on drops for life", "Correct, when the surgical risk outweighs the benefit."],
      ["Surgery is never used in this form", "Laser and incisional surgery are both used."],
@@ -223,7 +223,7 @@ POOL_B = [
 
  # ---------------- Prognosis ----------------
  dict(topic="Amaurosis fugax", io=IOA, lead="prognosis",
-   q="A 66-year-old man with amaurosis fugax does not recover fully. Which condition does the lecture say the remainder progress to?",
+   q="A 66-year-old man with amaurosis fugax does not recover fully. Which condition do the remainder progress to?",
    opts=[
      ["Central retinal artery occlusion", "Correct, a full blockage rather than a transient one."],
      ["Central retinal vein occlusion", "A thrombotic event, not the endpoint of an embolic one."],
@@ -250,7 +250,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="AAION", io=IOA, lead="prognosis",
-   q="A 80-year-old woman is treated for arteritic optic neuropathy. What does the lecture say the outlook depends on?",
+   q="A 80-year-old woman is treated for arteritic optic neuropathy. What does the outlook depend on?",
    opts=[
      ["Duration of symptoms and when steroids began", "Correct, which is why early therapy is critical."],
      ["Whether surgery was performed", "Surgery is not the treatment."],
@@ -268,7 +268,7 @@ POOL_B = [
    c=0, cite=c(52)),
 
  dict(topic="AAION", io=IOB, lead="reasoning",
-   q="A 77-year-old man is being treated for arteritic optic neuropathy. Why does the lecture describe it as a medical emergency?",
+   q="A 77-year-old man is being treated for arteritic optic neuropathy. Why is it a medical emergency?",
    opts=[
      ["Untreated, it leads to blindness", "Correct, and the second eye is at risk."],
      ["It causes a stroke within hours", "Blindness, not stroke, is the stated risk."],
@@ -296,7 +296,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
-   q="A 65-year-old man asks how the branch and central forms of a retinal occlusion differ. What does the lecture say?",
+   q="A 65-year-old man asks how the branch and central forms of a retinal occlusion differ. What should he be told?",
    opts=[
      ["The branch form affects only part of the retina", "Correct; everything else about it is the same."],
      ["The branch form affects both eyes", "Both forms are monocular."],
@@ -323,7 +323,7 @@ POOL_B = [
    c=0, cite=c(47)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="reasoning",
-   q="A 62-year-old man says a curtain came down over his vision. Why does the lecture warn about this description?",
+   q="A 62-year-old man says a curtain came down over his vision. Why is this description a warning sign?",
    opts=[
      ["More than one condition uses it", "Correct; it fits amaurosis fugax and retinal detachment."],
      ["It is never a real symptom", "It is a genuine and useful description."],
@@ -341,7 +341,7 @@ POOL_B = [
    c=0, cite=c(6)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="reasoning",
-   q="A 68-year-old man describes vision descending over one eye like a shade from above. What does the lecture attribute this to?",
+   q="A 68-year-old man describes vision descending over one eye like a shade from above. What is this attributed to?",
    opts=[
      ["Retinal ischemia", "Correct, when the loss descends over the field of one eye."],
      ["Raised intracranial pressure", "That gives non-specific bilateral change."],

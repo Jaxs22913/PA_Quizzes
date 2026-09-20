@@ -88,7 +88,7 @@ POOL_A = [
    c=0, cite=c(13)),
 
  dict(topic="Entropion and ectropion", io=IOA, slot="initial test",
-   q="Which examination does the deck specify for entropion and ectropion, and what is it looking for?",
+   q="Which examination is specified for entropion and ectropion, and what is it looking for?",
    opts=[
      ["Slit lamp examination, to assess corneal involvement",
       "Correct — the question is whether the cornea has been damaged."],
@@ -177,7 +177,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Xanthelasma", io=IOA, slot="first-line",
-   q="Beyond local treatment, what does the deck say to do for xanthelasma?",
+   q="Beyond local treatment, what should be done for xanthelasma?",
    opts=[
      ["Treat the underlying metabolic issue",
       "Correct — the plaques are a marker, and the deck directs treatment at the cause."],
@@ -340,7 +340,7 @@ POOL_A = [
    c=0, cite=c(21)),
 
  dict(topic="Chalazion and hordeolum", io=IOA, slot="referral",
-   q="Why does the deck refer a chalazion that recurs or persists more than two to three months?",
+   q="Why is a chalazion that recurs or persists more than two to three months referred?",
    opts=[
      ["To rule out sebaceous carcinoma",
       "Correct — the deck names the malignancy explicitly."],
@@ -464,7 +464,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Dacryocystitis", io=IOA, slot="differential",
-   q="A mass sits ABOVE the medial canthal tendon rather than below it. What does the deck say to suspect?",
+   q="A mass sits ABOVE the medial canthal tendon rather than below it. What should be suspected?",
    opts=[
      ["A lacrimal sac tumour, which is rare",
       "Correct — the deck flags position relative to the tendon as the discriminator."],
@@ -474,7 +474,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Dacryocystitis", io=IOA, slot="first-line",
-   q="How does the deck manage an afebrile, systemically well, reliable patient with mild dacryocystitis?",
+   q="How is an afebrile, systemically well, reliable patient with mild dacryocystitis managed?",
    opts=[
      ["Outpatient oral antibiotics for ten days",
       "Correct — the deck's outpatient pathway."],

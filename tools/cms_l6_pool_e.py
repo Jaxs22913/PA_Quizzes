@@ -251,7 +251,7 @@ POOL_E = [
    c=0, cite=c(123)),
 
  dict(topic="Herpes simplex virus", io=IOB, slot="avoid",
-   q="Which herpes simplex test does the deck tell you not to use?",
+   q="Which herpes simplex test should not be used?",
    opts=[
      ["Immunoglobulin M serology",
       "Correct — the deck says do not use it."],
@@ -888,7 +888,7 @@ POOL_E = [
    c=0, cite=c(149)),
 
  dict(topic="Warts", io=IOB, slot="referral",
-   q="Which wart cases does the deck say to refer?",
+   q="Which wart cases should be referred?",
    opts=[
      ["Periungual, facial, extensive, recalcitrant, diagnostically uncertain, or immunocompromised cases",
       "Correct — six referral categories."],

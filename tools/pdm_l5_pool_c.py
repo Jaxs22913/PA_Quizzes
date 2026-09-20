@@ -34,7 +34,7 @@ POOL_C = [
    c=0, cite=c(13)),
 
  dict(topic="Glucose", io=IOB5, slot="etiology",
-   q="Besides the pancreatic hormones, which organ does the deck say contributes to glucose regulation, and how?",
+   q="Besides the pancreatic hormones, which organ contributes to glucose regulation, and how?",
    opts=[
      ["The kidney, through gluconeogenesis",
       "Correct — the deck credits the kidney with a gluconeogenic contribution."],
@@ -47,7 +47,7 @@ POOL_C = [
    c=0, cite=c(13)),
 
  dict(topic="Glucose", io=IOB5, slot="test finding",
-   q="Which piece of context does the deck say a glucose value must always be interpreted against?",
+   q="Which piece of context must a glucose value always be interpreted against?",
    opts=[
      ["Whether the patient was fasting or not",
       "Correct — the deck ties interpretation to the fasting state."],
@@ -149,7 +149,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Creatinine", io=IOB7, slot="test finding",
-   q="Why does the deck call creatinine a more specific marker of kidney function than blood urea nitrogen?",
+   q="Why is creatinine a more specific marker of kidney function than blood urea nitrogen?",
    opts=[
      ["It is filtered by the kidneys and rises as the filtration rate falls, without the many non-renal influences on urea nitrogen",
       "Correct — specificity is the contrast the deck draws between the two."],
@@ -162,7 +162,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Creatinine", io=IOB7, slot="test finding",
-   q="Which three factors does the deck say influence creatinine and can make it misleading?",
+   q="Which three factors influence creatinine and can make it misleading?",
    opts=[
      ["Muscle mass, age, and sex",
       "Correct — the three the deck names."],
@@ -211,7 +211,7 @@ POOL_C = [
    c=0, cite=c(15)),
 
  dict(topic="Liver studies", io=IOC, slot="test finding",
-   q="Which four tissues besides the liver does the deck say aspartate aminotransferase is found in?",
+   q="Which four tissues besides the liver is aspartate aminotransferase found in?",
    opts=[
      ["Cardiac muscle, skeletal muscle, kidney, and brain",
       "Correct — the four the deck lists."],
@@ -281,16 +281,16 @@ POOL_C = [
    c=0, cite=c(15)),
 
  dict(topic="Liver studies", io=IOC, slot="education",
-   q="The slide is titled 'Liver Function Tests' with an asterisk. What do the speaker notes say the asterisk is there for?",
+   q="The label 'liver function tests' is a misnomer for most of the panel. Why?",
    opts=[
      ["The transaminases, alkaline phosphatase, and bilirubin mark liver INJURY rather than liver function",
-      "Correct — the notes correct the slide's own title on exactly this point."],
+      "Correct — the transaminases, alkaline phosphatase and bilirubin rise when hepatocytes are damaged, so they report injury rather than synthetic function; albumin and the prothrombin time are the tests that actually measure what the liver is making."],
      ["These tests are only valid when the patient is fasting",
-      "Fasting is not the caveat the notes raise."],
+      "Fasting is not the caveat; these tests are interpreted without regard to the last meal, unlike glucose or a lipid panel."],
      ["These tests are not on the comprehensive metabolic panel",
-      "They are precisely what the comprehensive panel adds."],
+      "They are precisely what the comprehensive metabolic panel adds over the basic panel, so they are on it."],
      ["These tests are unreliable in patients with kidney disease",
-      "The notes make no such claim."]],
+      "Kidney disease does not invalidate them; urea nitrogen and creatinine are the panel components that track renal function."]],
    c=0, cite=cn(15)),
 
  dict(topic="Liver studies", io=IOC, slot="test finding",

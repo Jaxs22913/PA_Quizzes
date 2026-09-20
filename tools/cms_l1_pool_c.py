@@ -60,7 +60,7 @@ POOL_C = [
 
  # ---------------- Implications for treatment (Slide 27) ----------------
  dict(topic="Implications for treatment", io="Discuss the implications for treatment",
-   q="How does the lecture describe the value of treatment versus no treatment?",
+   q="How is the value of treatment versus no treatment described?",
    opts=[
      ["As a linear function of the probability of disease",
       "Correct. The lecture states the value of treatment versus no treatment is a linear function of the probability of disease."],
@@ -99,7 +99,7 @@ POOL_C = [
    c=2, cite=c(27)),
 
  dict(topic="Implications for treatment", io="Discuss the implications for treatment",
-   q="What does the lecture say benefit and risk encompass?",
+   q="What do benefit and risk encompass?",
    opts=[
      ["Only the medical consequences of treatment",
       "Financial consequences are included alongside medical ones."],
@@ -112,7 +112,7 @@ POOL_C = [
    c=3, cite=c(27)),
 
  dict(topic="Implications for treatment", io="Discuss the implications for treatment",
-   q="A test result leaves a patient's probability of disease very low, and the proposed treatment carries substantial risk. Which principle from the lecture applies most directly?",
+   q="A test result leaves a patient's probability of disease very low, and the proposed treatment carries substantial risk. Which principle applies most directly?",
    opts=[
      ["The value of treatment is a linear function of the probability of disease, so a low probability weakens the case for treating",
       "Correct. As the probability of disease falls, so does the value of treatment relative to no treatment, and the risk of treating a well person weighs more heavily."],
@@ -126,7 +126,7 @@ POOL_C = [
 
  # ---------------- Counselling and adherence (Slides 28-29) ----------------
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="What do the Five As stand for in the lecture's counselling strategies?",
+   q="What do the Five As stand for in the counselling strategies?",
    opts=[
      ["Assess, adhere, arrange, advise, and act",
       "Adhere and act are not among the five; assist is one of the terms omitted here."],
@@ -165,7 +165,7 @@ POOL_C = [
    c=0, cite=c(28)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="What does the lecture say health care providers must be able to communicate effectively?",
+   q="What must health care providers be able to communicate effectively?",
    opts=[
      ["Only the dosing schedule of any medication prescribed",
       "The scope described is considerably broader than dosing."],
@@ -230,7 +230,7 @@ POOL_C = [
    c=1, cite=c(29)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="Mental health challenges or cognitive impairment appear in the lecture under which heading?",
+   q="Mental health challenges or cognitive impairment appear under which heading?",
    opts=[
      ["Elements of the FRAMES strategy",
       "FRAMES consists of feedback, responsibility, advice, a menu of options, empathetic style and promoting self-efficacy."],
@@ -243,7 +243,7 @@ POOL_C = [
    c=2, cite=c(29)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="For which specific behaviours does the lecture point to counselling guidelines in Bates' Chapter 7?",
+   q="For which specific behaviours are the counselling guidelines in Bates' Chapter 7 recommended?",
    opts=[
      ["Diet, exercise, and sleep hygiene",
       "These are reasonable health behaviours but are not the three named."],

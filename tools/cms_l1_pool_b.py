@@ -7,7 +7,7 @@ def c(n): return f"{SRC}, Slide {n}"
 POOL_B = [
  # ---------------- Clinical reasoning process (Slide 11) ----------------
  dict(topic="Clinical reasoning process", io="Discuss clinical principles and decision-making",
-   q="What is the first step of the clinical reasoning process as presented in the lecture?",
+   q="What is the first step of the clinical reasoning process?",
    opts=[
      ["Gather initial patient information",
       "Correct. Step 1 is gathering initial patient information; interpretation, synthesis and hypothesis generation all follow it."],
@@ -46,7 +46,7 @@ POOL_B = [
    c=2, cite=c(11)),
 
  dict(topic="Clinical decision making", io="Discuss clinical principles and decision-making",
-   q="Which of the following is NOT one of the questions the lecture says clinicians will need to answer?",
+   q="Which of the following is NOT one of the questions clinicians will need to answer?",
    opts=[
      ["What disease does the patient have?",
       "This is listed as one of the three questions."],
@@ -59,7 +59,7 @@ POOL_B = [
    c=3, cite=c(13)),
 
  dict(topic="Clinical decision making", io="Discuss clinical principles and decision-making",
-   q="Clinical decision making, as framed in the lecture, covers all of the following EXCEPT which?",
+   q="Clinical decision making covers all of the following EXCEPT which?",
    opts=[
      ["Setting the sensitivity and specificity of the tests available",
       "Correct. Sensitivity and specificity are fixed properties of a test, not decisions a clinician makes at the bedside."],
@@ -73,7 +73,7 @@ POOL_B = [
 
  # ---------------- Differential diagnosis and mnemonics (Slides 14-17) ----------------
  dict(topic="Differential diagnosis", io="Discuss clinical principles and decision-making",
-   q="When building a differential for shortness of breath, the lecture's first recommendation is to consider what?",
+   q="When building a differential for shortness of breath, what should be considered first?",
    opts=[
      ["Which treatment is most likely to be tolerated",
       "Tolerance of treatment is weighed once a diagnosis is being managed, not while building the differential."],
@@ -112,7 +112,7 @@ POOL_B = [
    c=3, cite=c(16)),
 
  dict(topic="Differential diagnosis", io="Discuss clinical principles and decision-making",
-   q="Applying VINDICATE to a chief complaint of confusion, which pairing matches the lecture's worked example?",
+   q="Applying VINDICATE to a chief complaint of confusion, which pairing is correct?",
    opts=[
      ["Vascular — stroke, transient ischaemic attack, subarachnoid haemorrhage",
       "Correct. These are the vascular causes the lecture lists for confusion."],
@@ -231,7 +231,7 @@ POOL_B = [
    c=0, cite=c(20)),
 
  dict(topic="Clinical decision making", io="Discuss clinical principles and decision-making",
-   q="In more complex clinical situations, the lecture recommends analytic decision making, which may include which of the following?",
+   q="In more complex clinical situations, analytic decision making is recommended. Which of the following may it include?",
    opts=[
      ["Relying on intuitive, automatic thinking",
       "Intuitive and automatic thinking is what analytic methods are contrasted against, and suits straightforward situations."],
@@ -244,7 +244,7 @@ POOL_B = [
    c=1, cite=c(20)),
 
  dict(topic="Clinical decision making", io="Discuss clinical principles and decision-making",
-   q="The lecture contrasts an intuitive system of thinking with what alternative?",
+   q="An intuitive system of thinking is contrasted with what alternative?",
    opts=[
      ["A system that avoids all use of probability",
       "The deliberate alternative explicitly makes use of logic and probabilities."],
@@ -337,7 +337,7 @@ POOL_B = [
    c=0, cite=c(26)),
 
  dict(topic="Clinical principles", io="Discuss clinical principles and decision-making",
-   q="Which of the following is listed among the lecture's suggestions for good decision-making?",
+   q="Which of the following is listed among the suggestions for good decision-making?",
    opts=[
      ["Decide quickly to avoid delaying care",
       "The first suggestion is the opposite — slow down."],
@@ -364,7 +364,7 @@ POOL_B = [
    c=2, cite=c(24)),
 
  dict(topic="Naturalistic approach", io="Discuss the naturalistic approach",
-   q="In which setting does the lecture say the naturalistic approach is mostly used?",
+   q="In which setting is the naturalistic approach mostly used?",
    opts=[
      ["Outpatient preventive care",
       "Preventive care is where screening for occult disease belongs, not the event-driven approach."],

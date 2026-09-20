@@ -19,7 +19,7 @@ IO10 = "10 — Outline appropriate patient education for dermatologic drugs"
 POOL_B = [
 
  dict(topic="Atopic dermatitis", io=IO1,
-   q="Which conditions make up the atopic triad the lecture places atopic dermatitis within?",
+   q="Which conditions make up the atopic triad that atopic dermatitis belongs to?",
    opts=[
      ["Asthma and allergic rhino-conjunctivitis",
       "Correct, and skin barrier dysfunction is what the lecture says plays the major role in the skin component."],
@@ -45,7 +45,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="Atopic dermatitis", io=IO10,
-   q="A parent asks what to do at home for a child with atopic dermatitis. Which set matches the lecture's non-pharmacologic advice?",
+   q="A parent asks what to do at home for a child with atopic dermatitis. Which set matches the non-pharmacologic advice?",
    opts=[
      ["Lukewarm baths with lubricant applied afterwards, short fingernails, and avoiding overheating",
       "Correct, and the lecture adds distracting the child, removing irritants and allergens, and maintaining hydration."],
@@ -97,7 +97,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="Atopic dermatitis", io=IO9,
-   q="An exacerbation warrants a medium to high potency corticosteroid. What does the lecture say to do next?",
+   q="An exacerbation warrants a medium to high potency corticosteroid. What should be done next?",
    opts=[
      ["Use it for one to two weeks, then switch to a lower potency",
       "Correct. The step-down is the protocol rather than continuing at strength."],
@@ -110,7 +110,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="Topical corticosteroids", io=IO5,
-   q="Which four factors does the lecture say determine the adverse reactions of a topical steroid?",
+   q="Which four factors determine the adverse reactions of a topical steroid?",
    opts=[
      ["Potency, duration, area of body covered, and occlusiveness of the preparation",
       "Correct, and it ranks occlusiveness as ointment greater than cream greater than lotion."],
@@ -123,7 +123,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="Topical corticosteroids", io=IO5,
-   q="Which of these is a LOCAL adverse effect of topical steroids in the lecture, rather than a systemic one?",
+   q="Which of these is a LOCAL adverse effect of topical steroids, rather than a systemic one?",
    opts=[
      ["Skin atrophy",
       "Correct. Local effects are skin atrophy, acne, rosacea and allergic dermatitis related to the vehicle."],
@@ -162,7 +162,7 @@ POOL_B = [
    c=0, cite=c(41)),
 
  dict(topic="Topical immunomodulators", io=IO2,
-   q="What is the mechanism the lecture gives for tacrolimus and pimecrolimus?",
+   q="What is the mechanism of tacrolimus and pimecrolimus?",
    opts=[
      ["They inhibit activation of T cells, mast cells and keratinocytes",
       "Correct, and that is why they are positioned as a steroid-sparing option."],
@@ -175,7 +175,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Topical immunomodulators", io=IO7,
-   q="Which patient does the lecture say should avoid topical tacrolimus or pimecrolimus?",
+   q="Which patient should avoid topical tacrolimus or pimecrolimus?",
    opts=[
      ["A patient with a weakened immune system",
       "Correct, and the lecture pairs this with a possible cancer risk."],
@@ -201,7 +201,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Oral corticosteroids", io=IO10,
-   q="Why does the lecture say an oral corticosteroid course for atopic dermatitis needs a tapering dose?",
+   q="Why does an oral corticosteroid course for atopic dermatitis need a tapering dose?",
    opts=[
      ["To prevent a flare-up",
       "Correct. The taper protects against rebound rather than against withdrawal symptoms alone."],
@@ -240,7 +240,7 @@ POOL_B = [
    c=0, cite=c(47)),
 
  dict(topic="Mupirocin", io=IO2,
-   q="What is mupirocin's mechanism in the lecture?",
+   q="What is mupirocin's mechanism?",
    opts=[
      ["It binds bacterial transfer RNA, preventing protein synthesis",
       "Correct, and the lecture notes it is not absorbed though it may irritate mucous membranes."],
@@ -266,7 +266,7 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Polymyxin B", io=IO3,
-   q="Which organisms does the lecture say polymyxin B is effective against?",
+   q="Which organisms is polymyxin B effective against?",
    opts=[
      ["Gram negative organisms including Pseudomonas, Escherichia coli and Klebsiella",
       "Correct, which is the complement to bacitracin's gram positive coverage."],
@@ -292,7 +292,7 @@ POOL_B = [
    c=0, cite=c(49)),
 
  dict(topic="Azole antifungals", io=IO2,
-   q="What is the mechanism the lecture gives for the topical azole antifungals?",
+   q="What is the mechanism of the topical azole antifungals?",
    opts=[
      ["They inhibit fungal cytochrome P450, preventing cell wall formation",
       "Correct, and the named agents are clotrimazole, ketoconazole, miconazole and sertaconazole."],
@@ -305,7 +305,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Azole antifungals", io=IO10,
-   q="A patient is starting a topical azole. What does the lecture support telling them about duration?",
+   q="A patient is starting a topical azole. What should they be told about duration?",
    opts=[
      ["Treatment is generally prolonged, on the order of two to three weeks",
       "Correct, and stopping early is how a treated infection returns."],
@@ -318,7 +318,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Azole antifungals", io=IO3,
-   q="Why does the lecture say an azole is sometimes combined with a corticosteroid?",
+   q="Why is an azole sometimes combined with a corticosteroid?",
    opts=[
      ["For more rapid symptom relief",
       "Correct. The steroid addresses symptoms while the antifungal addresses the organism."],
@@ -383,7 +383,7 @@ POOL_B = [
    c=0, cite=c(54)),
 
  dict(topic="Topical antivirals", io=IO3,
-   q="What are acyclovir and penciclovir used for topically in the lecture, and what kind of molecule are they?",
+   q="What are acyclovir and penciclovir used for topically, and what kind of molecule are they?",
    opts=[
      ["Recurrent orolabial herpes simplex infection; they are synthetic guanine analogues",
       "Correct, active against herpes simplex virus types 1 and 2."],
@@ -409,7 +409,7 @@ POOL_B = [
    c=0, cite=c(57)),
 
  dict(topic="Imiquimod", io=IO2,
-   q="What does imiquimod do, per the lecture?",
+   q="What does imiquimod do?",
    opts=[
      ["It stimulates peripheral mononuclear cells to release interferon alpha and macrophages to produce tumour necrosis factor alpha and interleukins",
       "Correct. It is an immunomodulator rather than a directly cytotoxic agent."],
@@ -435,7 +435,7 @@ POOL_B = [
    c=0, cite=c(57)),
 
  dict(topic="Imiquimod", io=IO9,
-   q="How often is imiquimod applied, per the lecture?",
+   q="How often is imiquimod applied?",
    opts=[
      ["Two to five times per week",
       "Correct, which is a weekly schedule rather than a daily one."],

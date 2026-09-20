@@ -126,7 +126,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Metaplasia", io=IOA,
-   q="On the deck's metaplasia figure, which epithelium changes into which?",
+   q="In metaplasia, which epithelium changes into which?",
    opts=[
      ["Bladder transitional epithelium becoming squamous epithelium",
       "Correct — squamous metaplasia, driven by chronic irritation."],
@@ -334,7 +334,7 @@ POOL_A = [
    c=0, cite=c(21)),
 
  dict(topic="Dysplasia", io=IOA,
-   q="On the deck's dysplasia diagram, what separates severe dysplasia from invasive cancer?",
+   q="What separates severe dysplasia from invasive cancer?",
    opts=[
      ["The basement membrane",
       "Correct — carcinoma in situ sits above it and invasive cancer has broken through. The diagram runs normal, mild, moderate, severe, carcinoma in situ, then invasive cancer."],
@@ -347,7 +347,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Abnormal growth", io=IOA,
-   q="On the deck's abnormal tissue growth figure, what is the sequence from normal to cancer?",
+   q="In abnormal tissue growth, what is the sequence from normal to cancer?",
    opts=[
      ["Normal, hyperplasia, mild dysplasia, carcinoma in situ, cancer",
       "Correct — carcinoma in situ is labelled as severe dysplasia on that figure."],

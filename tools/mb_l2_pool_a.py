@@ -9,7 +9,7 @@ IO4 = "Discuss the effect of drug clearance on dosing schedule"
 
 POOL_A = [
  dict(topic="Terminology", io=IO2,
-   q="How does the lecture define an antibiotic, as distinct from an antimicrobial drug?",
+   q="How is an antibiotic defined, as distinct from an antimicrobial drug?",
    opts=[
      ["A substance produced by a microbe that, in small amounts, inhibits another microbe",
       "Correct. Antimicrobial drugs more broadly interfere with the growth of microbes within a host; the antibiotic definition requires microbial origin."],
@@ -165,7 +165,7 @@ POOL_A = [
    c=3, cite=c(13)),
 
  dict(topic="Drug selection", io=IO2,
-   q="Why does the lecture say treatment of eukaryotic pathogens is often more difficult than treatment of bacteria?",
+   q="Why is treatment of eukaryotic pathogens often more difficult than treatment of bacteria?",
    opts=[
      ["Because eukaryotic pathogens replicate faster than bacteria",
       "Replication rate is not the reason given."],

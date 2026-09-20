@@ -106,7 +106,7 @@ POOL_B = [
          ["Empiric corticosteroids", "Treatment is not started before assessment."]],
    c=0, cite=c(54)),
  dict(topic="Opioid toxicity", io=IO, lead="recall",
-   q="A 27-year-old woman has opioid toxicity. Which two features does the lecture say actually matter clinically?",
+   q="A 27-year-old woman has opioid toxicity. Which two features actually matter clinically?",
    opts=[["Reduced consciousness and respiratory depression", "Correct; the miosis is a clue rather than the danger."],
          ["Tachycardia and hypertension", "Those are not features of opioid toxicity here."],
          ["Mydriasis and agitation", "That is an anticholinergic picture."],

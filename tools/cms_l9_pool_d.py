@@ -177,7 +177,7 @@ POOL_D = [
    c=0, cite=c(55)),
 
  dict(topic="Malignant melanoma", io=IOB, slot="education",
-   q="What self-examination does the deck ask melanoma patients to perform, and which sites must be included?",
+   q="What self-examination should melanoma patients perform, and which sites must be included?",
    opts=[
      ["Monthly self-examination using the recognition mnemonic and ugly-duckling principles, including the scalp, back, palms, soles and nails",
       "Correct — the acral and scalp sites are easy to miss."],

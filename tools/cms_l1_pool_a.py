@@ -86,7 +86,7 @@ POOL_A = [
    c=1, cite=c(6)),
 
  dict(topic="Sensitivity and specificity", io="Compare and contrast sensitivity and specificity",
-   q="Screening tests for human immunodeficiency virus (HIV) are described in the lecture as having high sensitivity for what reason?",
+   q="Screening tests for human immunodeficiency virus (HIV) have high sensitivity for what reason?",
    opts=[
      ["So that treatment can be started without any confirmatory testing",
       "The lecture describes confirmatory supplemental testing as a separate, highly specific step — screening does not replace it."],
@@ -112,7 +112,7 @@ POOL_A = [
    c=3, cite=c(6)),
 
  dict(topic="Sensitivity and specificity", io="Compare and contrast sensitivity and specificity",
-   q="According to the lecture's key point, which question does specificity answer?",
+   q="Which question does specificity answer?",
    opts=[
      ["How good is the test at excluding people without disease?",
       "Correct. The lecture pairs the two: sensitivity answers how good the test is at finding disease, specificity at excluding people without it."],
@@ -151,7 +151,7 @@ POOL_A = [
    c=2, cite=c(8)),
 
  dict(topic="Sensitivity and specificity", io="Compare and contrast sensitivity and specificity",
-   q="In the lecture's discussion, why is a false-positive result considered especially harmful in the setting of a serious, non-curable disease such as cancer?",
+   q="Why is a false-positive result especially harmful in the setting of a serious, non-curable disease such as cancer?",
    opts=[
      ["Because it delays the confirmatory test indefinitely",
       "The lecture does not attribute the harm to a delay in confirmation."],
@@ -204,7 +204,7 @@ POOL_A = [
    c=2, cite=c(26)),
 
  dict(topic="Pretest probability", io="Define pretest probability",
-   q="Which clinical principle from the lecture most directly reflects the influence of how common a condition is?",
+   q="Which clinical principle most directly reflects the influence of how common a condition is?",
    opts=[
      ["If what you are doing is working, keep on doing it",
       "This is a treatment principle, applied after a management plan is under way."],
@@ -217,7 +217,7 @@ POOL_A = [
    c=3, cite=c(25)),
 
  dict(topic="Pretest probability", io="Define pretest probability",
-   q="The lecture advises placing your bets on which of the following?",
+   q="On which of the following should you place your bets?",
    opts=[
      ["Uncommon manifestations of common conditions",
       "Correct. The lecture states this explicitly, in preference to common manifestations of uncommon conditions."],

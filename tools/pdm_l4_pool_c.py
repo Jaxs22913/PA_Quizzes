@@ -165,7 +165,7 @@ POOL_C = [
    c=0, cite=c(37)),
 
  dict(topic="Schistocytes", io=IOE1, slot="test finding",
-   q="What is a schistocyte, and what other names does the deck give it?",
+   q="What is a schistocyte, and what other names is it given?",
    opts=[
      ["A fragmented red cell, also called a helmet cell or a horn cell",
       "Correct — fragments of widely varying shapes and sizes."],
@@ -178,7 +178,7 @@ POOL_C = [
    c=0, cite=c(38)),
 
  dict(topic="Schistocytes", io=IOE1, slot="test finding",
-   q="Which four schistocyte types does the deck's figure name?",
+   q="Which four schistocyte types are named?",
    opts=[
      ["Triangular cell, horn cell, helmet cell and microspherocyte",
       "Correct — from the picture-only figure; the slide text names only helmet and horn."],
@@ -230,7 +230,7 @@ POOL_C = [
    c=0, cite=c(40)),
 
  dict(topic="Sickled cells", io=IOE1, slot="test finding",
-   q="How does the deck describe a sickled cell's appearance and hemoglobin content?",
+   q="How is a sickled cell's appearance and hemoglobin content described?",
    opts=[
      ["Thin and crescent shaped with no central pallor, dense hemoglobin, normochromic to hyperchromic",
       "Correct — the density of hemoglobin is what makes it normochromic to hyperchromic."],
@@ -256,7 +256,7 @@ POOL_C = [
    c=0, cite=c(42)),
 
  dict(topic="Spherocytes", io=IOE1, slot="etiology",
-   q="What does the deck's note say about spherocytosis?",
+   q="What is true of spherocytosis?",
    opts=[
      ["In most cases it is inherited, and it changes the shape and decreases the life of red blood cells",
       "Correct — both the inheritance and the effect on cell survival."],
@@ -386,7 +386,7 @@ POOL_C = [
    c=0, cite=ci(47)),
 
  dict(topic="Heinz bodies", io=IOE1, slot="etiology",
-   q="What does the deck's note say G6PD is and does?",
+   q="What is G6PD, and what does it do?",
    opts=[
      ["Glucose-6-phosphate dehydrogenase, an enzyme that protects red cells from harmful substances",
       "Correct — deficiency arises when the gene driving the enzyme mutates."],

@@ -412,7 +412,7 @@ POOL_A = [
    c=0, cite=c(20)),
 
  dict(topic="Keloid", io=IOB, slot="education",
-   q="What advice does the deck give adolescents with acne, and why?",
+   q="What advice should be given to adolescents with acne, and why?",
    opts=[
      ["Seek early, appropriate acne treatment, because it greatly increases the chance of scar-free healing",
       "Correct — acne is one of the named keloid triggers."],

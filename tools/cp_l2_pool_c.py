@@ -401,7 +401,7 @@ POOL_C = [
    c=0, cite=c(49)),
 
  dict(topic="Psoriasis", io=IOD,
-   q="Why does psoriatic skin become dry, in the lecture's account?",
+   q="Why does psoriatic skin become dry?",
    opts=[
      ["Epidermal cells fail to secrete lipids, producing xeroderma",
       "Correct — the dryness follows from a secretory failure rather than from water loss alone."],
