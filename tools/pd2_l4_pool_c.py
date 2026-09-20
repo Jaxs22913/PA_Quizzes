@@ -73,9 +73,9 @@ POOL_C = [
  dict(topic="Oral history", io=IO, slot="etiology",
    q="Which causes of hoarseness should a history cover?",
    opts=[
-     ["Viral laryngitis",
-      "Correct — a list that runs from the trivial to the serious, which is why hoarseness always earns a full history. Voice overuse, laryngeal nerve damage, reflux and smoking."],
-     ["Allergic rhinitis, sinusitis and postnasal drip",
+     ["Viral laryngitis, overuse, reflux, nerve damage, smoking",
+      "Correct — a list that runs from the trivial to the serious, which is why hoarseness always earns a full history."],
+     ["Allergic rhinitis, sinusitis and chronic postnasal drip",
       "Nasal conditions; not the list given for hoarseness."],
      ["Gingivitis and dental caries",
       "Oral findings unrelated to voice."],

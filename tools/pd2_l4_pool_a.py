@@ -216,8 +216,8 @@ POOL_A = [
  dict(topic="Vertigo comparison", io=IO, slot="etiology",
    q="Which causes produce CENTRAL vertigo?",
    opts=[
-     ["Brainstem lesion",
-      "Correct — all vascular, demyelinating or structural problems above the inner ear. Atherosclerosis, multiple sclerosis, vertebrobasilar migraine and transient ischaemic attack."],
+     ["Brainstem lesion, atherosclerosis and multiple sclerosis",
+      "Correct — all vascular, demyelinating or structural problems above the inner ear, with vertebrobasilar migraine and transient ischaemic attack completing the list."],
      ["Benign positional vertigo, Ménière disease and labyrinthitis",
       "All three are peripheral."],
      ["Loop diuretics, aminoglycosides, salicylates and alcohol",

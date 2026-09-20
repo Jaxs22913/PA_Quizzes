@@ -254,8 +254,8 @@ QUESTIONS = [
 {"topic": "Plaque formation", "io": IO_PLAQUE, "slot": "mechanism",
  "q": "Which are given as causes of the initiating endothelial injury?",
  "opts": [
-  ["Chronic haemodynamic wall stress",
-   "Correct. Mechanical, chemical, inflammatory and metabolic insults all converge on the same first step, which is why so many different risk factors end in the same lesion. Toxins, inflammation and hyperlipidaemia."],
+  ["Wall stress, toxins, inflammation, hyperlipidaemia",
+   "Correct. Mechanical, chemical, inflammatory and metabolic insults all converge on the same first step, which is why so many different risk factors end in the same lesion."],
   ["Valvular calcification and rheumatic scarring",
    "These damage valves rather than injuring coronary endothelium."],
   ["Viral infection of the myocardium",
