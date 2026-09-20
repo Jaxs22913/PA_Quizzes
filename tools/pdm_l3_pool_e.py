@@ -374,7 +374,7 @@ POOL_E = [
    c=0, cite=c(4)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="A contact-lens wearer presents with a painful red eye and foreign-body sensation. Which two bedside tests does this lecture point to?",
+   q="A contact-lens wearer presents with a painful red eye and foreign-body sensation. Which two bedside tests are indicated?",
    opts=[
      ["Visual acuity, then fluorescein examination under cobalt-blue light",
       "Correct — acuity is indicated for every eye complaint, and this history is a fluorescein indication."],

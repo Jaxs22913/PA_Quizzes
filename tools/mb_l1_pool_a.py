@@ -23,7 +23,7 @@ POOL_A = [
    c=0, cite=c(10)),
 
  dict(topic="Molecular mechanisms", io=IO1,
-   q="Virulence factors are defined in this lecture as what?",
+   q="Virulence factors are defined as what?",
    opts=[
      ["Host molecules that recognise conserved pathogen structures",
       "Those are the host pattern recognition receptors, which sit on the host side of the interaction."],
@@ -114,7 +114,7 @@ POOL_A = [
    c=3, cite=c(14)),
 
  dict(topic="Atypical bacteria", io=IO2,
-   q="What distinguishes Chlamydias from Rickettsias in this lecture?",
+   q="What distinguishes Chlamydias from Rickettsias?",
    opts=[
      ["Chlamydias are NOT transmitted by arthropod vectors; Rickettsias are transmitted by fleas, ticks and lice",
       "Correct. Both are tiny obligate intracellular pathogens; vector transmission is the stated difference."],

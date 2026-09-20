@@ -342,7 +342,7 @@ POOL_A = [
    c=0, cite=c(126)),
 
  dict(topic="Principles", io=IO5,
-   q="Several antivirals in this lecture are prodrugs. Which set is correct?",
+   q="Several antivirals are prodrugs. Which set is correct?",
    opts=[
      ["Valacyclovir, famciclovir, valganciclovir and oseltamivir",
       "Correct. Improving oral absorption is a recurring design theme across the whole antiviral section."],
@@ -394,7 +394,7 @@ POOL_A = [
    c=0, cite=c(123)),
 
  dict(topic="Herpesviruses", io=IO6,
-   q="Which herpesviruses does this lecture group together as targets for antiviral therapy?",
+   q="Which herpesviruses are grouped together as targets for antiviral therapy?",
    opts=[
      ["Herpes simplex, varicella-zoster and cytomegalovirus",
       "Correct — the first two share the acyclovir family, while cytomegalovirus needs ganciclovir."],

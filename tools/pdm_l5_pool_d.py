@@ -55,7 +55,7 @@ POOL_D = [
    c=0, cite=c(17)),
 
  dict(topic="Hepatic patterns", io=IOE, slot="differential",
-   q="Which causes do the speaker notes give for a cholestatic pattern?",
+   q="Which causes produce a cholestatic pattern?",
    opts=[
      ["Bile duct obstruction, gallstones, and primary biliary cholangitis",
       "Correct — the three the notes list."],
@@ -68,7 +68,7 @@ POOL_D = [
    c=0, cite=cn(17)),
 
  dict(topic="Hepatic patterns", io=IOE, slot="differential",
-   q="Which two causes do the speaker notes give for isolated hyperbilirubinaemia?",
+   q="Which two causes produce isolated hyperbilirubinaemia?",
    opts=[
      ["Gilbert syndrome and haemolysis",
       "Correct — the two the notes name for a raised bilirubin with normal enzymes."],
@@ -120,7 +120,7 @@ POOL_D = [
    c=0, cite=cn(17)),
 
  dict(topic="Hepatic patterns", io=IOD, slot="test finding",
-   q="How do the speaker notes band the magnitude of a transaminase rise?",
+   q="How is the magnitude of a transaminase rise banded?",
    opts=[
      ["Mild under five times, moderate five to fifteen times, and severe over fifteen times the upper limit",
       "Correct — the three bands the notes give."],
@@ -379,7 +379,7 @@ POOL_D = [
    c=0, cite=cn(22)),
 
  dict(topic="Anion gap", io=IOF, slot="differential",
-   q="The mnemonic in the speaker notes for a raised anion gap includes which of these?",
+   q="The mnemonic for a raised anion gap includes which of these?",
    opts=[
      ["Methanol, uraemia, diabetic ketoacidosis, lactic acidosis, ethylene glycol, and salicylates",
       "Correct — the causes the notes list under the mnemonic."],
@@ -603,7 +603,7 @@ POOL_D = [
    c=0, cite=c(24)),
 
  dict(topic="Correlation", io=IOH, slot="education",
-   q="What general lesson do the speaker notes draw about chemistry results?",
+   q="What general lesson applies to chemistry results?",
    opts=[
      ["A lab value narrows the differential and directs the next test rather than being diagnostic by itself",
       "Correct — the notes' point-of-care lesson."],
@@ -656,7 +656,7 @@ POOL_D = [
    c=0, cite=c(27)),
 
  dict(topic="Vomiting case", io=IOF, slot="education",
-   q="What do the speaker notes say the vomiting case illustrates?",
+   q="What does the vomiting case illustrate?",
    opts=[
      ["That electrolytes and acid-base cannot be separated",
       "Correct — the notes call it the single best illustration of that point."],

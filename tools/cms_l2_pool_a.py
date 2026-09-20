@@ -35,7 +35,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Primary morphology", io=IOA,
-   q="How is a macule defined in this lecture?",
+   q="How is a macule defined?",
    opts=[
      ["A flat lesion less than one centimetre, without elevation or depression",
       "Correct. A patch is the same lesion larger than one centimetre."],
@@ -113,7 +113,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Blood deposits", io=IOA,
-   q="How are petechiae and purpura distinguished by size in this lecture?",
+   q="How are petechiae and purpura distinguished by size?",
    opts=[
      ["Petechiae are deposits of blood 1 to 2 mm; purpura are 4 mm or greater",
       "Correct, and purpura is flagged as a medical emergency until proven otherwise."],
@@ -126,7 +126,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Blood deposits", io=IOA,
-   q="What does this lecture say about a patient presenting with purpura?",
+   q="What is true of a patient presenting with purpura?",
    opts=[
      ["It is a medical emergency until proven otherwise",
       "Correct — the lecture flags it explicitly rather than treating it as one finding among many."],
@@ -308,7 +308,7 @@ POOL_A = [
    c=0, cite=c(37)),
 
  dict(topic="Pharmacology", io=IOC,
-   q="What is the usual application schedule for topical corticosteroids given in this lecture?",
+   q="What is the usual application schedule for topical corticosteroids?",
    opts=[
      ["Twice a day for two weeks",
       "Correct, with potency selected according to site and severity."],
@@ -334,7 +334,7 @@ POOL_A = [
    c=0, cite=c(41)),
 
  dict(topic="Pharmacology", io=IOC,
-   q="Which topical corticosteroid is classified as high potency in this lecture?",
+   q="Which topical corticosteroid is classified as high potency?",
    opts=[
      ["Clobetasol propionate 0.05%",
       "Correct. Hydrocortisone at any strength is mild."],

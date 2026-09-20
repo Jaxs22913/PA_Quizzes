@@ -21,10 +21,26 @@ will make it worse -- clean the pool first.
 """
 import glob, importlib.util, os, re, sys
 
-# "in class" needs the negative lookahead: topical steroids are ranked by
-# potency CLASS ("placed in class 1, superpotent"), which is not a citation.
-CITES = re.compile(r"\b(the lecture|the deck|the slide|this course|"
-                   r"in class(?!\s*\d)|the professor|the syllabus|the lecturer)\b", re.I)
+# Two lookaheads earn their keep here:
+#   "in class" -- topical steroids are ranked by potency CLASS ("placed in
+#   class 1, superpotent"), which is not a citation.
+#   "the slide" -- a potassium hydroxide preparation sits on a microscope
+#   SLIDE ("warm the slide gently over a flame"), which is not a citation.
+#
+# Deliberately NOT included, because in these pools they are clinical words
+# and adding them produces hundreds of false positives: "the material"
+# (material cultured at incision and drainage), "the class" (drug class),
+# "the presentation" (how a disease presents), "the course" (the course of
+# an illness). Checked each against the pools before leaving it out.
+CITES = re.compile(
+    r"\b((?:the|this)\s+(?:lecture|deck|lecturer|professor|syllabus)"
+    r"|(?:the|this)\s+slides?(?!\s+(?:is\s+left|gently|before\s+reading|over\s+a\s+flame))"
+    r"|(?:the\s+)?(?:speaker|lecture|deck|material)\s+notes"
+    # "hand the notes to the listener" is an oral case presentation handing
+    # over WRITTEN PATIENT NOTES -- the one clinical use of the phrase in
+    # these pools; the other 118 are citations.
+    r"|(?<!hand\s)the\s+notes"
+    r"|this\s+course|in\s+lecture|in\s+class(?!\s*\d))\b", re.I)
 
 
 def scan():

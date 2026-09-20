@@ -22,7 +22,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Terminology", io=IO2,
-   q="Chemotherapy is defined in this lecture as which of the following?",
+   q="Chemotherapy is defined as which of the following?",
    opts=[
      ["The treatment of malignancy with cytotoxic agents",
       "The lecture uses the term in its original, broader sense rather than the oncologic one."],

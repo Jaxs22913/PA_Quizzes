@@ -131,7 +131,7 @@ POOL_A = [
    c=0, cite=cn(7)),
 
  dict(topic="Choosing a panel", io=IOG, slot="initial test",
-   q="For which purpose do the speaker notes say a basic metabolic panel suffices?",
+   q="For which purpose does a basic metabolic panel suffice?",
    opts=[
      ["Electrolytes, glucose, and renal screening",
       "Correct — the notes give these three as the basic panel's remit."],

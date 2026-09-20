@@ -28,7 +28,7 @@ POOL_B = [
    c=0, cite=c(31)),
 
  dict(topic="Cephalosporins", io=IO4B,
-   q="What is the approximate rate of penicillin cross-sensitivity with cephalosporins in this lecture?",
+   q="What is the approximate rate of penicillin cross-sensitivity with cephalosporins?",
    opts=[
      ["Less than 1 percent",
       "Correct. The figure matters clinically because a reported penicillin allergy does not automatically exclude a cephalosporin."],

@@ -154,7 +154,7 @@ POOL_D = [
    c=0, cite=c(53)),
 
  dict(topic="Cellulitis", io=IOA, slot="initial test",
-   q="When do the speaker notes say a contrast scan is NOT routinely required in cellulitis?",
+   q="When is a contrast scan NOT routinely required in cellulitis?",
    opts=[
      ["In mild, clearly pre-septal disease with normal vision, normal pupils and painless full extraocular movements",
       "Correct — the notes qualify the slide's blanket imaging recommendation."],
@@ -273,7 +273,7 @@ POOL_D = [
    c=0, cite=c(67)),
 
  dict(topic="Red eye triage", io=IOA, slot="education",
-   q="What warning do the speaker notes attach to the red-eye examination?",
+   q="What warning attaches to the red-eye examination?",
    opts=[
      ["Do not let obvious redness substitute for an eye examination",
       "Correct — the notes' phrasing, and the whole point of the sequence."],
@@ -286,7 +286,7 @@ POOL_D = [
    c=0, cite=cn(67)),
 
  dict(topic="Red eye triage", io=IOA, slot="initial test",
-   q="Which is the ONE exception to the normal red-eye sequence, per the speaker notes?",
+   q="Which is the ONE exception to the normal red-eye sequence?",
    opts=[
      ["Chemical exposure — begin copious irrigation before the history or examination, then verify the surface pH has normalised",
       "Correct — the notes' single named exception."],
@@ -325,7 +325,7 @@ POOL_D = [
    c=0, cite=cn(68)),
 
  dict(topic="Red eye danger signs", io=IOA, slot="escalation",
-   q="What do the notes say to do for a suspected OPEN GLOBE?",
+   q="What must be done for a suspected OPEN GLOBE?",
    opts=[
      ["Place a rigid eye shield, avoid pressure, manipulation and tonometry, keep the patient nil by mouth, and obtain emergency ophthalmology consultation",
       "Correct — the notes' five protective actions."],
@@ -404,7 +404,7 @@ POOL_D = [
    c=0, cite=c(70)),
 
  dict(topic="Referral timing", io=IOA, slot="referral",
-   q="When is ROUTINE follow-up appropriate for a red eye, per the speaker notes?",
+   q="When is ROUTINE follow-up appropriate for a red eye?",
    opts=[
      ["Only when acuity is preserved, pupils and movements are normal, the cornea is clear without uptake or infiltrate, significant pain and photophobia are absent, and follow-up is reliable",
       "Correct — the notes' five conditions, all of which must hold."],
@@ -444,7 +444,7 @@ POOL_D = [
    c=0, cite=c(71)),
 
  dict(topic="Contact lens keratitis", io=IOA, slot="avoid",
-   q="Why do the speaker notes forbid dispensing a topical anaesthetic for home use?",
+   q="Why must a topical anaesthetic never be dispensed for home use?",
    opts=[
      ["It delays healing and masks progression",
       "Correct — the notes give both reasons."],
@@ -457,7 +457,7 @@ POOL_D = [
    c=0, cite=cn(71)),
 
  dict(topic="Contact lens keratitis", io=IOA, slot="escalation",
-   q="What do the notes say if same-day ophthalmology evaluation is unavoidably delayed?",
+   q="What should be done if same-day ophthalmology evaluation is unavoidably delayed?",
    opts=[
      ["Consult ophthalmology immediately about empiric topical antipseudomonal therapy, and do not delay necessary treatment solely to obtain a culture",
       "Correct — the notes are explicit that culture must not hold up treatment."],
@@ -470,7 +470,7 @@ POOL_D = [
    c=0, cite=cn(71)),
 
  dict(topic="Contact lens keratitis", io=IOA, slot="education",
-   q="What safety-net advice do the notes give this patient?",
+   q="What safety-net advice should this patient be given?",
    opts=[
      ["Escalate immediately for increasing pain, an enlarging opacity, worsening photophobia, or further visual decline",
       "Correct — the notes' four escalation triggers."],

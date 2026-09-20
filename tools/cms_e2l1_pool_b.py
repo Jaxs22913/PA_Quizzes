@@ -113,7 +113,7 @@ POOL_B = [
    c=0, cite=c(30)),
 
  dict(topic="Subconjunctival haemorrhage", io=IOA, slot="escalation",
-   q="What do the speaker notes recommend for a RECURRENT subconjunctival haemorrhage?",
+   q="What is recommended for a RECURRENT subconjunctival haemorrhage?",
    opts=[
      ["Medication review, blood pressure measurement and targeted evaluation for haematologic disease — not automatic haematology referral",
       "Correct — the notes soften the slide's referral language."],
@@ -139,7 +139,7 @@ POOL_B = [
    c=0, cite=c(31)),
 
  dict(topic="Chemosis", io=IOA, slot="referral",
-   q="Which accompanying findings make chemosis urgent, per the speaker notes?",
+   q="Which accompanying findings make chemosis urgent?",
    opts=[
      ["Proptosis, restricted eye movement, reduced vision, or an afferent pupillary defect",
       "Correct — the notes' four urgency flags."],
@@ -426,7 +426,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Chlamydial conjunctivitis", io=IOB, slot="etiology",
-   q="Why do the speaker notes say erythromycin causes infantile hypertrophic pyloric stenosis?",
+   q="Why does erythromycin cause infantile hypertrophic pyloric stenosis?",
    opts=[
      ["It acts as a motilin receptor agonist and overstimulates the smooth muscle of the lower stomach",
       "Correct — the notes give the receptor mechanism."],

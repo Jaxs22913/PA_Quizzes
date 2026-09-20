@@ -406,7 +406,7 @@ POOL_C = [
    c=0, cite=c(125)),
 
  dict(topic="MRSA considerations", io=IOB,
-   q="Which trait is shared by the oral agents named across this lecture for methicillin-resistant Staphylococcus aureus skin infection?",
+   q="Which trait is shared by the oral agents used for methicillin-resistant Staphylococcus aureus skin infection?",
    opts=[
      ["Trimethoprim-sulfamethoxazole, clindamycin and doxycycline recur as the core options",
       "Correct, with linezolid and ciprofloxacin added in particular settings."],

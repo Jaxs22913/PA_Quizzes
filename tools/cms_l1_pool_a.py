@@ -125,7 +125,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Sensitivity and specificity", io="Compare and contrast sensitivity and specificity",
-   q="Conditional probability, as introduced in this lecture, refers to which of the following?",
+   q="Conditional probability refers to which of the following?",
    opts=[
      ["The proportion of a population that will develop a disease over a lifetime",
       "Lifetime risk is an epidemiological measure, not the definition given here."],

@@ -119,7 +119,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Penicillins", io=IO4A,
-   q="Penicillin G is the drug of choice for which group of infections in this lecture?",
+   q="Penicillin G is the drug of choice for which group of infections?",
    opts=[
      ["Syphilis, gas gangrene, and meningococcus",
       "Correct. Note it has good Gram-positive coccal activity but no Staphylococcus coverage and no aerobic Gram-negative activity."],
@@ -173,7 +173,7 @@ POOL_A = [
  dict(topic="Penicillins", io=IO4A,
    q="Why do aminopenicillins reduce the effectiveness of oral contraceptives?",
    opts=[
-     ["Disruption of gut flora decreases enterohepatic recycling of estrogens, though the lecture notes the supporting evidence is not strong",
+     ["Disruption of gut flora decreases enterohepatic recycling of estrogens, though the supporting evidence is not strong",
       "Correct. The lecture is explicit that the mechanism is proposed and the evidence behind it is weak, while still advising backup contraception."],
      ["Induction of hepatic cytochrome P450 enzymes accelerates estrogen metabolism",
       "Enzyme induction is how rifampin and griseofulvin interact with contraceptives, not aminopenicillins."],
@@ -210,7 +210,7 @@ POOL_A = [
    c=0, cite=c(20)),
 
  dict(topic="Penicillins", io=IO4A,
-   q="What is the mechanism by which bacteria develop resistance to penicillins in this lecture?",
+   q="What is the mechanism by which bacteria develop resistance to penicillins?",
    opts=[
      ["Beta-lactamase enzymes cleave the beta-lactam ring, modifying the antibiotic",
       "Correct. Destroying the ring destroys the D-alanine mimicry the mechanism depends on."],

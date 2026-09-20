@@ -190,7 +190,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Xanthelasma", io=IOA, slot="education",
-   q="What caveat do the speaker notes add about lipid levels in xanthelasma?",
+   q="What caveat applies to lipid levels in xanthelasma?",
    opts=[
      ["Many patients have normal lipid levels, so a lipid profile and cardiovascular risk assessment are still reasonable",
       "Correct — the notes temper the association without discarding the workup."],
@@ -415,7 +415,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="avoid",
-   q="What caution do the speaker notes give before starting corticosteroids in dacryoadenitis?",
+   q="What caution applies before starting corticosteroids in dacryoadenitis?",
    opts=[
      ["Do not begin them until bacterial and other infectious causes have been reasonably excluded",
       "Correct — the notes are explicit about the sequence."],
@@ -428,7 +428,7 @@ POOL_A = [
    c=0, cite=cn(23)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="initial test",
-   q="When do the speaker notes say imaging is actually appropriate in dacryoadenitis?",
+   q="When is imaging actually appropriate in dacryoadenitis?",
    opts=[
      ["With severe disease, orbital findings, chronicity, atypical presentation, suspected abscess or mass, or failure to improve",
       "Correct — the notes qualify the slide's blanket recommendation."],

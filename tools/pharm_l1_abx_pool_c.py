@@ -144,7 +144,7 @@ POOL_C = [
  dict(topic="Tetracyclines", io=IO4H,
    q="Why must tetracyclines be separated from iron and calcium-containing products?",
    opts=[
-     ["They chelate with cations, which the lecture flags as an important food interaction",
+     ["They chelate with cations, an important food interaction",
       "Correct. The same chelation problem applies to the fluoroquinolones with antacids, dairy and multivitamins."],
      ["Cations induce the hepatic enzymes that metabolize tetracyclines",
       "Enzyme induction is not the mechanism; the interaction is chemical binding in the gut."],
@@ -207,7 +207,7 @@ POOL_C = [
    c=0, cite=c(68)),
 
  dict(topic="Aminoglycosides", io=IO4I,
-   q="What are the once-daily doses and trough targets for the aminoglycosides in this lecture?",
+   q="What are the once-daily doses and trough targets for the aminoglycosides?",
    opts=[
      ["Tobramycin and gentamicin 7 milligrams per kilogram with a trough under 1; amikacin 15 milligrams per kilogram with a trough under 5",
       "Correct. Peaks are drawn 30 minutes after the end of the infusion and troughs 15 to 30 minutes before the next dose."],

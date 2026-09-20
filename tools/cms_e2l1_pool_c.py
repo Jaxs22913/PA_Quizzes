@@ -116,27 +116,27 @@ POOL_C = [
    c=0, cite=c(50)),
 
  dict(topic="Scleritis", io=IOA, slot="agent/regimen",
-   q="What treatment is given for scleritis, and how do the speaker notes refine it?",
+   q="What is the treatment sequence for non-infectious anterior scleritis?",
    opts=[
-     ["The slide gives systemic corticosteroids or immune-modulating agents; the notes say non-infectious anterior scleritis commonly BEGINS with systemic non-steroidal anti-inflammatories, with steroids reserved for severe, necrotising, posterior or refractory disease",
-      "Correct — the notes add a step the slide skips."],
-     ["The slide and notes agree that topical corticosteroids are first-line",
-      "Neither gives topical steroids as first-line here."],
-     ["The slide gives oral antivirals; the notes agree",
-      "Antivirals are for herpetic keratitis."],
-     ["The slide gives artificial tears alone",
-      "That is episcleritis."]],
+     ["Systemic non-steroidal anti-inflammatories commonly BEGIN treatment, with systemic corticosteroids or immune-modulating agents reserved for severe, necrotising, posterior or refractory disease",
+      "Correct — oral non-steroidal anti-inflammatories are the usual first step in non-infectious anterior disease, with systemic corticosteroids or steroid-sparing immune-modulating agents escalated to for severe, necrotising, posterior or refractory scleritis."],
+     ["Topical corticosteroids are first-line",
+      "Topical corticosteroids do not penetrate deeply enough to control scleral inflammation; scleritis is treated systemically, which is one of the things separating it from episcleritis."],
+     ["Oral antivirals are first-line",
+      "Oral antivirals treat herpetic keratitis and herpes zoster ophthalmicus, not non-infectious scleritis."],
+     ["Artificial tears alone are sufficient",
+      "Artificial tears alone suit episcleritis, which is self-limiting; scleritis is painful, vision-threatening and needs systemic anti-inflammatory therapy."]],
    c=0, cite=cn(50)),
 
  dict(topic="Scleritis", io=IOA, slot="complication",
-   q="Which patients carry the greatest perforation risk in scleritis, per the speaker notes?",
+   q="Which patients carry the greatest perforation risk in scleritis?",
    opts=[
      ["Those with necrotising disease, rather than all scleritis uniformly",
-      "Correct — the notes qualify the slide's blanket warning."],
+      "Correct — perforation risk is concentrated in necrotising scleritis, where the sclera is actively destroyed; non-necrotising diffuse and nodular disease carries a far lower risk."],
      ["All patients with scleritis equally",
-      "The notes specifically push back on that."],
+      "Risk is not uniform across scleritis; it tracks the necrotising subtype rather than the diagnosis as a whole."],
      ["Only patients with an identified autoimmune disease",
-      "Not the notes' distinction."],
+      "An associated autoimmune disease raises overall severity, but perforation risk follows the necrotising subtype, which can occur without a confirmed systemic diagnosis."],
      ["Only contact lens wearers",
       "That risk factor belongs to keratitis."]],
    c=0, cite=cn(50)),
@@ -235,7 +235,7 @@ POOL_C = [
    c=0, cite=c(56)),
 
  dict(topic="Keratitis", io=IOA, slot="avoid",
-   q="Which three things do the speaker notes say NOT to do in suspected microbial keratitis?",
+   q="Which three things must NOT be done in suspected microbial keratitis?",
    opts=[
      ["Do not patch, do not send home a topical anaesthetic, and do not start empiric corticosteroids",
       "Correct — the notes' three prohibitions, alongside stopping contact lenses immediately."],
@@ -353,7 +353,7 @@ POOL_C = [
    c=0, cite=c(59)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="education",
-   q="Which prevention advice do the speaker notes add for herpes zoster?",
+   q="Which prevention advice applies to herpes zoster?",
    opts=[
      ["Recombinant zoster vaccine for adults 50 and over, and for immunocompromised adults 19 and over",
       "Correct — the notes' vaccination guidance with both age thresholds."],
@@ -366,7 +366,7 @@ POOL_C = [
    c=0, cite=cn(59)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="first-line",
-   q="Within what window do the speaker notes say to start oral antivirals for zoster?",
+   q="Within what window should oral antivirals be started for zoster?",
    opts=[
      ["Ideally within 72 hours of rash onset, though later is still appropriate with new lesions or ocular or neurologic disease",
       "Correct — the window plus the exception."],
@@ -573,7 +573,7 @@ POOL_C = [
    c=0, cite=c(65)),
 
  dict(topic="Posterior uveitis", io=IOA, slot="avoid",
-   q="What do the speaker notes say must happen before immunosuppression in posterior uveitis?",
+   q="What must happen before immunosuppression in posterior uveitis?",
    opts=[
      ["Infection must be excluded", "Correct — the notes are explicit about the sequence."],
      ["A lipid profile must be obtained", "Unrelated to this decision."],

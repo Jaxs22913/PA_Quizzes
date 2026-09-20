@@ -282,7 +282,7 @@ POOL_C = [
    c=0, cite=c(43)),
 
  dict(topic="Target cells", io=IOE1, slot="etiology",
-   q="Why does splenectomy increase target cells, according to the speaker notes?",
+   q="Why does splenectomy increase target cells?",
    opts=[
      ["Because of altered filtration dynamics",
       "Correct — the spleen normally remodels the membrane as cells pass through."],

@@ -47,12 +47,12 @@ POOL_B = [
       "The pairings are scrambled; each prodrug belongs to its own parent."],
      ["Oseltamivir with acyclovir, valacyclovir with penciclovir, and famciclovir with ganciclovir",
       "Oseltamivir is a prodrug of its own carboxylate form, unrelated to the guanine analogues."],
-     ["There are no prodrugs among the antivirals in this lecture",
+     ["There are no prodrugs among these antivirals",
       "Several are explicitly described as prodrugs."]],
    c=0, cite=c(124)),
 
  dict(topic="Comparisons", io=IO5,
-   q="Which antiviral in this lecture does NOT act on viral nucleic acid?",
+   q="Which antiviral does NOT act on viral nucleic acid?",
    opts=[
      ["Oseltamivir, which inhibits neuraminidase to block viral release",
       "Correct. The guanine analogues all terminate the nucleic acid chain; oseltamivir works at a completely different stage."],
@@ -156,7 +156,7 @@ POOL_B = [
    c=0, cite=c(119)),
 
  dict(topic="Comparisons", io=IO5,
-   q="Which two antiviral agents in this lecture are given intravenously as the parent compound?",
+   q="Which two antiviral agents are given intravenously as the parent compound?",
    opts=[
      ["Penciclovir and ganciclovir, each with an oral prodrug available",
       "Correct — famciclovir and valganciclovir respectively are the better-absorbed oral forms."],
@@ -169,7 +169,7 @@ POOL_B = [
    c=0, cite=c(125)),
 
  dict(topic="Oseltamivir", io=IO8,
-   q="Why is influenza treatment framed around a season in this lecture?",
+   q="Why is influenza treatment framed around a season?",
    opts=[
      ["Flu season runs roughly October to March, which is when the illness is circulating",
       "Correct, and it frames when an influenza-like illness should raise suspicion in the first place."],

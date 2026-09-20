@@ -129,7 +129,7 @@ POOL_D = [
    c=0, cite=c(25)),
 
  dict(topic="Diagnostic tools", io=IOC,
-   q="What is direct immunofluorescence used to diagnose in this lecture?",
+   q="What is direct immunofluorescence used to diagnose?",
    opts=[
      ["Autoimmune blistering disease, by showing where antibody is deposited in the skin",
       "Correct — it is what separates bullous pemphigoid from pemphigus on a biopsy."],

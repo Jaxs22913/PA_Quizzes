@@ -60,7 +60,7 @@ POOL_C = [
    c=0, cite=c(13)),
 
  dict(topic="Glucose", io=IOB5, slot="test finding",
-   q="What effect do the speaker notes say marked hyperglycaemia has on the measured sodium?",
+   q="What effect does marked hyperglycaemia have on the measured sodium?",
    opts=[
      ["It lowers it, by dilution",
       "Correct — the notes describe a dilutional fall in measured sodium."],
@@ -122,7 +122,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Blood urea nitrogen", io=IOB6, slot="education",
-   q="What do the speaker notes say about reading blood urea nitrogen?",
+   q="What is true of reading blood urea nitrogen?",
    opts=[
      ["Interpret it alongside creatinine, not alone",
       "Correct — the notes' instruction for this value."],
@@ -175,7 +175,7 @@ POOL_C = [
    c=0, cite=c(14)),
 
  dict(topic="Creatinine", io=IOB7, slot="test finding",
-   q="In which patients do the speaker notes warn that a normal creatinine can hide a reduced filtration rate?",
+   q="In which patients can a normal creatinine hide a reduced filtration rate?",
    opts=[
      ["Elderly or cachectic patients",
       "Correct — low muscle mass is the trap the notes name."],
@@ -294,7 +294,7 @@ POOL_C = [
    c=0, cite=cn(15)),
 
  dict(topic="Liver studies", io=IOC, slot="test finding",
-   q="Which three tests do the speaker notes group as measures of synthetic and excretory function?",
+   q="Which three tests are measures of synthetic and excretory function?",
    opts=[
      ["Albumin, prothrombin time, and bilirubin",
       "Correct — the notes' grouping for function as opposed to injury."],

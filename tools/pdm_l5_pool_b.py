@@ -80,7 +80,7 @@ POOL_B = [
    c=0, cite=c(9)),
 
  dict(topic="Sodium", io=IOB1, slot="test finding",
-   q="According to the speaker notes, an abnormal sodium should first raise which question?",
+   q="An abnormal sodium should first raise which question?",
    opts=[
      ["Is there too much or too little free water?",
       "Correct — the notes say to ask the water question before the salt question."],
@@ -93,7 +93,7 @@ POOL_B = [
    c=0, cite=cn(9)),
 
  dict(topic="Sodium", io=IOB1, slot="etiology",
-   q="The speaker notes distinguish what serum sodium reflects from what governs extracellular volume. Which pairing is correct?",
+   q="What serum sodium reflects is distinct from what governs extracellular volume. Which pairing is correct?",
    opts=[
      ["Serum sodium reflects water balance; total-body sodium governs extracellular volume",
       "Correct — the distinction the notes draw."],
@@ -106,7 +106,7 @@ POOL_B = [
    c=0, cite=cn(9)),
 
  dict(topic="Sodium", io=IOB1, slot="etiology",
-   q="Which two mechanisms do the speaker notes say control water handling, and therefore serum sodium?",
+   q="Which two mechanisms control water handling, and therefore serum sodium?",
    opts=[
      ["Thirst and antidiuretic hormone",
       "Correct — the two the notes name for water handling."],
@@ -155,7 +155,7 @@ POOL_B = [
    c=0, cite=c(10)),
 
  dict(topic="Potassium", io=IOB2, slot="complication",
-   q="Which complication do the speaker notes attribute to BOTH high and low potassium?",
+   q="Which complication follows BOTH high and low potassium?",
    opts=[
      ["Life-threatening cardiac arrhythmias",
       "Correct — the notes name arrhythmia as the shared danger at either extreme."],
@@ -191,7 +191,7 @@ POOL_B = [
    c=0, cite=c(10)),
 
  dict(topic="Potassium", io=IOB2, slot="etiology",
-   q="Which hormone do the speaker notes name as driving renal potassium excretion, and where does it act?",
+   q="Which hormone drives renal potassium excretion, and where does it act?",
    opts=[
      ["Aldosterone, at the distal tubule and collecting duct",
       "Correct — the hormone and site the notes give."],
@@ -204,7 +204,7 @@ POOL_B = [
    c=0, cite=cn(10)),
 
  dict(topic="Potassium", io=IOB2, slot="etiology",
-   q="Besides renal excretion, what is the other mechanism the speaker notes give for potassium regulation?",
+   q="Besides renal excretion, what is the other mechanism of potassium regulation?",
    opts=[
      ["Transcellular shifts driven by insulin, acid-base status, and catecholamines",
       "Correct — the three drivers of shift that the notes list."],
@@ -217,7 +217,7 @@ POOL_B = [
    c=0, cite=cn(10)),
 
  dict(topic="Potassium", io=IOB2, slot="test finding",
-   q="Why do the speaker notes flag insulin and acid-base status specifically when reading diabetic ketoacidosis results?",
+   q="Why must insulin and acid-base status be considered specifically when reading diabetic ketoacidosis results?",
    opts=[
      ["Both shift potassium across the cell membrane, so the serum value can mislead",
       "Correct — the reason the notes give for reading those labs carefully."],
@@ -279,7 +279,7 @@ POOL_B = [
    c=0, cite=c(11)),
 
  dict(topic="Chloride", io=IOB3, slot="test finding",
-   q="A patient has a low chloride with a high bicarbonate. Which acid-base picture do the speaker notes say this suggests?",
+   q="A patient has a low chloride with a high bicarbonate. Which acid-base picture does this suggest?",
    opts=[
      ["Metabolic alkalosis, such as from vomiting",
       "Correct — the notes give exactly this pattern and this cause."],
@@ -292,7 +292,7 @@ POOL_B = [
    c=0, cite=cn(11)),
 
  dict(topic="Chloride", io=IOB3, slot="test finding",
-   q="Which named acid-base disorder do the speaker notes give as the example of chloride and bicarbonate moving reciprocally?",
+   q="Which named acid-base disorder is the example of chloride and bicarbonate moving reciprocally?",
    opts=[
      ["Hyperchloraemic non-gap metabolic acidosis",
       "Correct — the disorder the notes name for the reciprocal relationship."],

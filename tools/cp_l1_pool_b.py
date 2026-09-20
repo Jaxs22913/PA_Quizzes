@@ -266,7 +266,7 @@ POOL_B = [
    c=3, cite=c(16)),
 
  dict(topic="Leukocyte comparison", io=IO_C,
-   q="What does the abbreviation PMN refer to in this lecture?",
+   q="What does the abbreviation PMN refer to?",
    opts=[
      ["All granulocytes",
       "Correct. Polymorphonuclear leukocyte, abbreviated PMN, is used to refer to all granulocytes rather than to neutrophils alone."],

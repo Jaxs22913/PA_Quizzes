@@ -454,7 +454,7 @@ POOL_A = [
  dict(topic="Isotretinoin", io=IO7,
    q="What is true of isotretinoin and pregnancy?",
    opts=[
-     ["It is contraindicated in pregnancy and breastfeeding, and the lecture adds that men should avoid it as well",
+     ["It is contraindicated in pregnancy and breastfeeding, and men should avoid it as well",
       "Correct, and the iPledge programme exists around exactly this risk."],
      ["It is safe in the second and third trimesters",
       "It is contraindicated, without a safe window."],

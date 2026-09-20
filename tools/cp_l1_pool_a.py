@@ -9,7 +9,7 @@ IO_B = "Describe the various types and etiologies of inflammation"
 
 POOL_A = [
  dict(topic="Definition of inflammation", io=IO_A,
-   q="Inflammation is defined in this lecture as which of the following?",
+   q="Inflammation is defined as which of the following?",
    opts=[
      ["The reaction of vascularized living tissue to injury",
       "Correct. The definition given is specifically the reaction of vascularized living tissue to injury — vascularity is part of the definition, which is why avascular tissue cannot mount one."],
@@ -61,7 +61,7 @@ POOL_A = [
    c=3, cite=c(12)),
 
  dict(topic="Inflammation response", io=IO_A,
-   q="Which of the following is NOT one of the five main processes of the inflammatory response listed in this lecture?",
+   q="Which of the following is NOT one of the five main processes of the inflammatory response?",
    opts=[
      ["Fibroblast proliferation",
       "Correct. The five listed are increased blood flow, increased permeability, migration of neutrophils, chemotaxis, and leucocyte recruitment and activation. Fibroblastic scar tissue is a healing outcome, not one of the five."],
@@ -87,7 +87,7 @@ POOL_A = [
    c=1, cite=c(11)),
 
  dict(topic="Exudation", io=IO_A,
-   q="Exudation, as described in this lecture, refers to the movement of what, and to where?",
+   q="Exudation refers to the movement of what, and to where?",
    opts=[
      ["Leukocytes from the interstitium back into the capillary lumen",
       "Leukocyte movement is outward, and is covered by transmigration rather than exudation."],

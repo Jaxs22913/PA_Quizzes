@@ -71,9 +71,9 @@ POOL_E = [
  dict(topic="Dermatitis herpetiformis", io=IOA, slot="gold standard",
    q="Why is the diagnostic test for dermatitis herpetiformis worth knowing particularly well?",
    opts=[
-     ["Because most conditions in this lecture are clinical diagnoses, so a disease with a distinctive test stands out",
+     ["Because most of these conditions are clinical diagnoses, so a disease with a distinctive test stands out",
       "Correct — she flagged this reasoning out loud while teaching it."],
-     ["Because the condition is the most common one covered in the lecture",
+     ["Because it is the most common blistering disorder of the skin",
       "It affects only 11 to 75 per 100,000 and is described as rare."],
      ["Because the test result changes nothing about the management",
       "The result drives a lifelong dietary change."],
