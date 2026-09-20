@@ -156,8 +156,8 @@ POOL_C = [
  dict(topic="Pressure ulcers", io=IOD,
    q="Besides non-blanching erythema, which changes characterise a stage I pressure ulcer?",
    opts=[
-     ["Changes in temperature",
-      "Correct — the area may be warm or cool, firm or boggy, and painful or itchy. Consistency, sensation and colour."],
+     ["Temperature, consistency, sensation and colour",
+      "Correct — the area may be warm or cool, firm or boggy, and painful or itchy."],
      ["Changes in temperature alone",
       "Consistency, sensation and colour changes are also described."],
      ["Partial loss of the epidermis with a moist base",

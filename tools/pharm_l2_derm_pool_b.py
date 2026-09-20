@@ -71,7 +71,7 @@ POOL_B = [
    c=0, cite=c(36)),
 
  dict(topic="Atopic dermatitis", io=IO3,
-   q="Which agents does the lecture call the gold standard for atopic dermatitis?",
+   q="Which agents are the gold standard for atopic dermatitis?",
    opts=[
      ["Topical corticosteroids",
       "Correct, with the agent chosen by severity and by site of disease."],

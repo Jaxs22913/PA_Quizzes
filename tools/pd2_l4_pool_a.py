@@ -21,13 +21,13 @@ POOL_A = [
  dict(topic="Ear history", io=IO, slot="manifestation",
    q="A patient reports ear pain but the ear itself looks entirely normal. Which structures should the history now cover?",
    opts=[
-     ["The temporomandibular joint",
-      "Correct. Ear pain is frequently referred, and these three are the usual sources. The first answer a patient gives is not the last question you ask. The teeth and the cervical spine."],
+     ["The jaw joint, the teeth and the cervical spine",
+      "Correct. Ear pain is frequently referred, and these three are the usual sources — the first answer a patient gives is not the last question you ask."],
      ["The frontal and maxillary sinuses",
       "Sinus tenderness is part of the nose examination. Referred otalgia comes from the joint, the teeth and the cervical spine."],
      ["The thyroid gland and the trachea",
       "Both belong to the neck examination, and neither is listed as a source of referred ear pain."],
-     ["The parotid and submandibular glands",
+     ["The parotid and submandibular salivary glands",
       "The salivary glands are not among the referred sources. The cranial nerves that carry the referral are V, VII, IX and X."]],
    c=0, cite=c(6)),
 

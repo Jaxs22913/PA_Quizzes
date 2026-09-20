@@ -21,7 +21,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(
 
 NUM = {'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8}
 LIST_Q = re.compile(r"\bwhich (are|factors|injuries|causes|types|kinds|categories|forms|"
-                    r"things|features|findings|three|four|five)\b|"
+                    r"things|features|findings|structures|modalities|changes|indications|"
+                    r"agents|drugs|signs|symptoms|steps|three|four|five)\b|"
                     r"\bwhat are the\b|\bin what order\b|\blist the\b|\bname the\b", re.I)
 def items(s):
     body = re.sub(r'^\s*\w+[:,]\s*', '', s)
