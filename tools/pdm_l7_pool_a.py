@@ -288,7 +288,7 @@ POOL_A = [
 {"topic": "Bundle branches", "io": IOA, "slot": "anatomy",
  "q": "Into how many fascicles does the left bundle branch divide, and what are they?",
  "opts": [
-  ["Three: the left posterior, the interventricular septal",
+  ["Three: left anterior, left posterior and septal",
    "Correct. The septal fascicle is the one most often forgotten, which matters because the three-fascicle arrangement is what makes bifascicular block possible. The left anterior."],
   ["Two: the left anterior and the left posterior",
    "A third, the interventricular septal fascicle, is described alongside these two."],

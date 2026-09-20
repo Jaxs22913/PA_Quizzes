@@ -501,8 +501,8 @@ POOL_C = [
  dict(topic="Glaucomatous cupping", io=IO, slot="test finding",
    q="What are the fundoscopic findings in glaucomatous cupping?",
    opts=[
-     ["The physiologic cup is enlarged",
-      "Correct — the description. More than half the disc diameter, with retinal vessels sinking in and around the disc."],
+     ["An enlarged cup with vessels sinking in",
+      "Correct — the cup exceeds half the disc diameter, and the retinal vessels sink in and around the disc."],
      ["A pink swollen disc with blurred margins",
       "That is papilloedema."],
      ["A white disc with absent vessels",

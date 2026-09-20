@@ -22,13 +22,13 @@ POOL_B = [
 {"topic": "Stress testing", "io": IOE, "slot": "modality choice",
  "q": "Which types of stress test are described?",
  "opts": [
-  ["Standard exercise",
+  ["Exercise, echocardiographic, nuclear, pharmacological",
    "Correct. Two axes run through the list: how the heart is stressed, and how it is then imaged, and the four names are combinations of those two. Echocardiographic, nuclear and pharmacological."],
-  ["Exercise and pharmacological only",
+  ["Exercise, pharmacological, treadmill and bicycle",
    "Echocardiographic and nuclear stress testing are described as separate types alongside these two."],
-  ["Nuclear and magnetic resonance only",
+  ["Nuclear, magnetic resonance, catheter and Doppler",
    "Magnetic resonance is described separately from the stress tests rather than as one of them."],
-  ["Treadmill and bicycle only",
+  ["Treadmill, bicycle, handgrip and cold pressor",
    "These are two modalities within the standard exercise test rather than two types of stress test."]],
  "c": 0, "cite": c(28)},
 
