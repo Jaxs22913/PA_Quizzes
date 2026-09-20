@@ -40,7 +40,7 @@ POOL_D = [
    q="What is the pathological hallmark of glaucoma?",
    opts=[
      ["Raised pressure compresses retinal ganglion cell axons, causing apoptosis and progressive optic disc cupping",
-      "Correct — the deck's causal chain from pressure to nerve loss."],
+      "Correct — pressure is transmitted to the lamina cribrosa where axons leave the eye, interrupting axoplasmic transport and starving ganglion cells of trophic support, so they die and the disc excavates."],
      ["Raised pressure opacifies the crystalline lens",
       "That is cataract, which pressure does not cause."],
      ["Raised pressure detaches the neurosensory retina from the pigment epithelium",
@@ -52,9 +52,9 @@ POOL_D = [
  dict(topic="Glaucoma mechanism", io=IO6, slot="test finding", kfe=True,
    q="Above what cup-to-disc ratio is progressive optic disc cupping described?",
    opts=[
-     ["Greater than 0.5", "Correct — the deck's threshold for an increased cup-to-disc ratio."],
-     ["Greater than 0.2", "Below the deck's stated threshold."],
-     ["Greater than 0.8", "Above the deck's stated threshold."],
+     ["Greater than 0.5", "Correct — above 0.5 the cup occupies more than half the disc diameter, indicating that a substantial proportion of the neuroretinal rim has already been lost."],
+     ["Greater than 0.2", "A ratio of 0.2 is within the normal range; concern begins above 0.5, where the rim has visibly thinned."],
+     ["Greater than 0.8", "A ratio of 0.8 is advanced disease rather than the threshold; cupping is called increased above 0.5."],
      ["Greater than 1.0", "A ratio above one is not anatomically possible."]],
    c=0, cite=c(25)),
 
@@ -66,16 +66,16 @@ POOL_D = [
      ["The iridocorneal angle narrows anatomically and blocks outflow suddenly",
       "That is angle-closure glaucoma."],
      ["Aqueous production by the ciliary body increases sharply",
-      "The deck's mechanism is impaired outflow, not overproduction."],
+      "Aqueous production is normal; the fault lies in outflow resistance at the trabecular meshwork, which is why the pressure rises so gradually."],
      ["The canal of Schlemm is congenitally absent",
-      "Not a mechanism the deck describes."]],
+      "The canal of Schlemm is present; the resistance is microscopic, within the trabecular meshwork draining into it."]],
    c=0, cite=c(25)),
 
  dict(topic="Open-angle glaucoma", io=IO6, slot="manifestation", kfe=True,
    q="What is called the clinical pitfall of primary open-angle glaucoma?",
    opts=[
      ["It is asymptomatic until severe peripheral vision loss, or tunnel vision, has occurred",
-      "Correct — the silence of the disease is the pitfall the deck names."],
+      "Correct — peripheral ganglion cells are lost first and the intact fellow eye fills in the missing field, so half the nerve can be gone before the patient notices anything."],
      ["It presents abruptly with severe pain and vomiting",
       "That is the angle-closure presentation."],
      ["It causes sudden painless monocular blindness",
@@ -100,17 +100,17 @@ POOL_D = [
  dict(topic="Angle-closure glaucoma", io=IO6, slot="test finding", kfe=True,
    q="How high does the pressure spike in acute angle-closure glaucoma?",
    opts=[
-     ["Above 50 mmHg", "Correct — the deck's figure for the acute spike."],
-     ["Above 25 mmHg", "Below the figure the deck gives for an acute closure."],
-     ["Above 30 mmHg", "Below the deck's stated spike."],
-     ["Above 80 mmHg", "Above the deck's stated figure."]],
+     ["Above 50 mmHg", "Correct — with outflow abruptly blocked and production continuing, pressure exceeds 50 mmHg, which is high enough to oedematise the cornea and compromise the optic nerve within hours."],
+     ["Above 25 mmHg", "25 mmHg is a chronically raised pressure rather than an acute closure; sudden angle closure drives it above 50."],
+     ["Above 30 mmHg", "30 mmHg is well short of an acute attack, in which pressure exceeds 50 mmHg."],
+     ["Above 80 mmHg", "80 mmHg overstates it; the acute spike is above 50 mmHg."]],
    c=0, cite=c(25)),
 
  dict(topic="Angle-closure glaucoma", io=IO6, slot="manifestation", kfe=True,
    q="Which symptom set is given for acute angle-closure glaucoma?",
    opts=[
      ["Severe eye pain, headache, halos around lights, cloudy cornea, a fixed mid-dilated pupil, and nausea and vomiting",
-      "Correct — the deck's full acute picture."],
+      "Correct — the pressure oedematises the cornea to give halos and cloudiness, paralyses the iris sphincter to leave a fixed mid-dilated pupil, and stimulates the trigeminal and vagal reflexes to produce pain and vomiting."],
      ["Painless gradual bilateral blurring with glare at night",
       "That is cataract."],
      ["Flashing lights, a shower of floaters and a curtain falling across the vision",
@@ -123,11 +123,11 @@ POOL_D = [
    q="What is iris bombé?",
    opts=[
      ["Forward displacement of the iris against the cornea",
-      "Correct — the deck uses the term for the forward bowing that closes the angle."],
+      "Correct — aqueous trapped behind the iris by pupillary block pushes the peripheral iris forward against the trabecular meshwork, sealing the angle it was meant to drain through."],
      ["Backward displacement of the iris against the lens",
-      "The deck describes forward displacement."],
+      "The bowing is forward rather than backward; aqueous trapped behind the iris pushes it towards the cornea."],
      ["Atrophy of the iris stroma after an acute attack",
-      "Not the meaning the deck gives."],
+      "Iris atrophy can follow a prolonged attack, but iris bombé is the forward bowing that causes the attack in the first place."],
      ["Adhesion of the iris to the corneal endothelium",
       "That describes a synechia rather than iris bombé."]],
    c=0, cite=c(25)),
@@ -143,7 +143,7 @@ POOL_D = [
      ["Fluid accumulates beneath the retina without any tear or traction",
       "That is exudative detachment."],
      ["Raised intraocular pressure compresses the retina against the choroid",
-      "Pressure does not detach the retina in the deck's account."]],
+      "Raised pressure damages the optic nerve head rather than separating retina from pigment epithelium; detachment needs a break, traction or subretinal fluid."]],
    c=0, cite=c(36)),
 
  dict(topic="Retinal detachment", io=IO8, slot="etiology", kfe=True,
@@ -163,13 +163,13 @@ POOL_D = [
    q="What is the mechanism of an exudative retinal detachment?",
    opts=[
      ["Subretinal fluid accumulates without any tear or traction, from a breakdown of the blood-retinal barrier",
-      "Correct — the deck's defining feature is the absence of both a break and traction."],
+      "Correct — inflammation, tumour or severe hypertension breaks down the blood-retinal barrier, so fluid leaks into the subretinal space without any break or pulling force."],
      ["A full-thickness tear admits vitreous fluid beneath the retina",
       "That is rhegmatogenous."],
      ["Fibrovascular scar tissue pulls the retina forward",
       "That is tractional."],
      ["The pigment epithelium proliferates and lifts the retina",
-      "Not a mechanism the deck gives."]],
+      "The pigment epithelium does not proliferate to lift the retina; exudative detachment is fluid leaking through a broken blood-retinal barrier."]],
    c=0, cite=c(36)),
 
  dict(topic="Retinal detachment", io=IO8, slot="differential", kfe=True,
@@ -202,7 +202,7 @@ POOL_D = [
    q="Which risk factors are listed for rhegmatogenous detachment?",
    opts=[
      ["Posterior vitreous detachment, age, severe myopia, trauma and lattice degeneration",
-      "Correct — the deck's five."],
+      "Correct — each either liquefies the vitreous, stretches the retina thin, or weakens it focally, so a break forms and liquefied vitreous can pass through it."],
      ["Diabetes, prior vitrectomy and retinal trauma surgery",
       "Those are tractional associations."],
      ["Sarcoidosis, malignant hypertension and melanoma",
@@ -234,7 +234,7 @@ POOL_D = [
      ["It becomes vascularised, bleeding into the subretinal space",
       "The vitreous stays avascular."],
      ["It thickens and opacifies, blocking light before it reaches the retina",
-      "That is not the age change the deck or lecture describes."]],
+      "The vitreous liquefies rather than thickening, and the problem is not light transmission but fluid gaining access to the subretinal space."]],
    c=0, cite=au()),
 
  # ---- macular degeneration ----
@@ -242,7 +242,7 @@ POOL_D = [
    q="What is the hallmark of dry, atrophic macular degeneration?",
    opts=[
      ["Drusen — discrete yellow extracellular debris beneath the pigment epithelium and Bruch membrane",
-      "Correct — the deck's hallmark, with its composition and location."],
+      "Correct — the pigment epithelium fails to clear the waste products of photoreceptor turnover, so debris accumulates beneath it and separates it from its choroidal blood supply."],
      ["Choroidal neovascularisation breaching into the subretinal space",
       "That is the wet form."],
      ["Neovascularisation on the optic disc",
@@ -254,9 +254,9 @@ POOL_D = [
  dict(topic="Dry macular degeneration", io=IO9, slot="etiology", kfe=True,
    q="What are drusen composed of?",
    opts=[
-     ["Lipofuscin and apolipoproteins", "Correct — the deck's stated composition."],
-     ["Fibrin and platelet aggregates", "Not what the deck describes."],
-     ["Calcium and phosphate crystals", "Not the deck's composition."],
+     ["Lipofuscin and apolipoproteins", "Correct — lipofuscin is the undigested residue of photoreceptor outer segments, and it accumulates with apolipoproteins as the pigment epithelium's clearance capacity fails."],
+     ["Fibrin and platelet aggregates", "Fibrin and platelets form thrombus within vessels; drusen are extracellular waste of lipofuscin and apolipoproteins."],
+     ["Calcium and phosphate crystals", "Drusen may calcify late, but their substance is lipofuscin and apolipoproteins from failed photoreceptor waste clearance."],
      ["Cholesterol esters, as in xanthelasma", "That is the lid lesion, with a different composition."]],
    c=0, cite=c(39)),
 
@@ -277,7 +277,7 @@ POOL_D = [
    q="What is the mechanism of wet, neovascular macular degeneration?",
    opts=[
      ["Hypoxia and inflammation trigger choroidal neovascularisation, and new vessels breach beneath the pigment epithelium into the subretinal space",
-      "Correct — the deck's mechanism, from trigger through to breach."],
+      "Correct — a pigment epithelium separated from its blood supply by drusen becomes hypoxic and releases vascular endothelial growth factor, and the fragile new vessels that result leak and bleed under the macula."],
      ["Extracellular debris accumulates beneath the pigment epithelium",
       "That is the dry form's drusen."],
      ["Fibrovascular membranes on the retinal surface exert traction",
@@ -289,17 +289,17 @@ POOL_D = [
  dict(topic="Wet macular degeneration", io=IO9, slot="prognosis", kfe=True,
    q="What proportion of severe blindness from macular degeneration does the wet form account for?",
    opts=[
-     ["About ninety per cent", "Correct — the deck's figure, despite the dry form being commoner."],
-     ["About fifty per cent", "Below the deck's figure."],
-     ["About twenty-five per cent", "Well below the deck's figure."],
-     ["About ten per cent", "That inverts the deck's figure."]],
+     ["About ninety per cent", "Correct — the dry form is far commoner but progresses slowly, while the wet form destroys central vision quickly, so it causes about ninety per cent of the severe visual loss."],
+     ["About fifty per cent", "Half understates it; the wet form causes around ninety per cent of severe visual loss despite being the less common type."],
+     ["About twenty-five per cent", "A quarter is far too low; the wet form accounts for roughly ninety per cent of severe blindness from the disease."],
+     ["About ten per cent", "This inverts the figures: the wet form is the less common type but causes about ninety per cent of the severe visual loss."]],
    c=0, cite=c(40)),
 
  dict(topic="Wet macular degeneration", io=IO9, slot="complication", kfe=True,
    q="What complications follow from leaking neovascular vessels in wet macular degeneration?",
    opts=[
      ["Rapid central vision loss, disciform scarring and retinal detachment",
-      "Correct — the deck's complication list."],
+      "Correct — the new vessels lack tight junctions, so they leak fluid and blood under the macula; the organised haemorrhage becomes a fibrous disciform scar and the accumulating fluid can lift the retina."],
      ["Progressive optic disc cupping and tunnel vision",
       "That is glaucomatous damage."],
      ["Lens opacification and loss of the red reflex",
@@ -312,21 +312,21 @@ POOL_D = [
    q="Macular degeneration is the leading cause of new-onset blindness in which group?",
    opts=[
      ["Adults over seventy-five in the United States",
-      "Correct — the deck's stated epidemiology."],
+      "Correct — the disease is degenerative and cumulative, so its incidence climbs steeply with age and dominates blindness in the oldest group."],
      ["Adults aged twenty to seventy-four in the United States",
-      "That is the deck's group for diabetic retinopathy."],
+      "That working-age band is dominated by diabetic retinopathy; macular degeneration leads in adults over seventy-five."],
      ["Children and adolescents",
-      "Not a group the deck discusses for this condition."],
+      "Macular degeneration is a disease of ageing and does not occur in children; the juvenile maculopathies are separate genetic conditions."],
      ["Adults of any age worldwide",
-      "The deck's claim is specific to an age band and country."]],
+      "The claim is specific to adults over seventy-five in the United States; worldwide, cataract and trachoma dominate blindness overall."]],
    c=0, cite=c(39)),
 
  dict(topic="Macular degeneration", io=IO9, slot="etiology", kfe=True,
    q="What is true of the pathogenesis of macular degeneration overall?",
    opts=[
-     ["It is unknown", "Correct — the deck's slide titles say pathogenesis unknown for both forms."],
-     ["It is entirely genetic", "The deck does not make this claim."],
-     ["It is entirely driven by ultraviolet exposure", "The deck does not attribute it to a single cause."],
+     ["It is unknown", "Correct — both forms remain incompletely explained; ageing, genetic susceptibility, oxidative stress and inflammation all contribute without a single established cause."],
+     ["It is entirely genetic", "Genetic susceptibility contributes but does not account for the disease alone; age, oxidative stress and inflammation also play a part."],
+     ["It is entirely driven by ultraviolet exposure", "Ultraviolet exposure is one contributing factor among several rather than the whole explanation."],
      ["It is a consequence of raised intraocular pressure", "That mechanism belongs to glaucoma."]],
    c=0, cite=c(39)),
 
@@ -335,7 +335,7 @@ POOL_D = [
    q="What is the initiating microvascular mechanism in diabetic retinopathy?",
    opts=[
      ["Chronic hyperglycaemia damages capillaries and endothelial basement membranes, causing capillary occlusion and loss of oxygenation",
-      "Correct — the deck's cascade begins with hyperglycaemic microvascular damage."],
+      "Correct — persistent hyperglycaemia glycates basement membrane proteins and damages pericytes, so capillaries leak and then close, leaving the retina it supplied ischaemic."],
      ["Raised intraocular pressure compresses the retinal vessels",
       "Pressure is not the mechanism in retinopathy."],
      ["Choroidal neovascularisation breaches Bruch membrane",
@@ -348,7 +348,7 @@ POOL_D = [
    q="Which findings characterise NON-proliferative diabetic retinopathy?",
    opts=[
      ["Dilated veins, microaneurysms, dot and blot haemorrhages, hard exudates, cotton-wool spots and macular oedema",
-      "Correct — the deck's non-proliferative list."],
+      "Correct — each reflects damaged but not yet neovascularised vessels: outpouchings, leakage of blood and lipid, and small infarcts, with fluid collecting at the macula."],
      ["Neovascularisation on the optic disc and retina",
       "New vessels define the proliferative stage."],
      ["Drusen beneath the pigment epithelium",
@@ -361,9 +361,9 @@ POOL_D = [
    q="What drives the change from non-proliferative to proliferative diabetic retinopathy?",
    opts=[
      ["Severe ischaemia upregulates vascular endothelial growth factor, producing neovascularisation",
-      "Correct — ischaemia to growth factor to new vessels is the deck's step."],
+      "Correct — extensive capillary closure leaves retina hypoxic, and the vascular endothelial growth factor released in response drives fragile new vessels onto the retina and disc."],
      ["Rising intraocular pressure forces new vessels to form",
-      "Pressure is not the driver in the deck."],
+      "Intraocular pressure plays no part in this transition; retinal ischaemia and the growth factor it releases do."],
      ["Accumulation of lipofuscin beneath the pigment epithelium",
       "That is drusen formation in macular degeneration."],
      ["Bacterial collagenase digestion of the retinal surface",
@@ -374,7 +374,7 @@ POOL_D = [
    q="Where do hard exudates and cotton-wool spots sit, and what does each represent?",
    opts=[
      ["Hard exudates are lipid in the outer plexiform layer; cotton-wool spots are nerve fibre layer ischaemia or infarction",
-      "Correct — the deck gives the layer and the pathology for each."],
+      "Correct — hard exudates are lipid left behind when leaked plasma is reabsorbed, collecting in the outer plexiform layer, while cotton-wool spots are swollen axons where nerve fibre layer capillaries have occluded."],
      ["Hard exudates are nerve fibre layer infarcts; cotton-wool spots are lipid deposits",
       "This reverses the two."],
      ["Both are lipid deposits, differing only in size",
@@ -400,13 +400,13 @@ POOL_D = [
    q="Diabetic retinopathy is the leading cause of new-onset blindness in which group?",
    opts=[
      ["United States adults aged twenty to seventy-four",
-      "Correct — the deck's stated age band."],
+      "Correct — diabetes affects working-age adults and damages the retina over years, so it dominates blindness in the band before age-related degeneration takes over."],
      ["United States adults over seventy-five",
       "That is the group for macular degeneration."],
      ["Children under sixteen worldwide",
-      "Not the deck's group."],
+      "Diabetic retinopathy requires years of hyperglycaemia to develop and is not a significant cause of blindness in children."],
      ["Adults over fifty worldwide",
-      "The deck's figure is specific to a narrower band and country."]],
+      "The claim applies to United States adults aged twenty to seventy-four; over seventy-five, macular degeneration leads."]],
    c=0, cite=c(37)),
 
  # ---- visual pathway and fields ----
@@ -427,7 +427,7 @@ POOL_D = [
    q="Trace the route from the ganglion cell axons to the visual cortex.",
    opts=[
      ["Optic disc, optic nerve, chiasm, optic tract, lateral geniculate nucleus, optic radiation, occipital cortex",
-      "Correct — the deck's full pathway. Webster said to memorise nerve, chiasm, tract."],
+      "Correct — axons leave at the disc, nasal fibres cross at the chiasm, the tract carries the combined contralateral field to the lateral geniculate nucleus, and the radiation fans out to the occipital cortex."],
      ["Optic disc, optic tract, chiasm, optic nerve, optic radiation, occipital cortex",
       "The nerve, chiasm and tract are in the wrong order."],
      ["Optic nerve, superior colliculus, thalamus, temporal cortex",
@@ -505,7 +505,7 @@ POOL_D = [
    q="A temporal lobe lesion affecting part of the optic radiation produces which defect?",
    opts=[
      ["Contralateral superior quadrantanopsia, or pie in the sky",
-      "Correct — site D. Webster deferred this one to neurology, but the deck names it."],
+      "Correct — the fibres looping forward through the temporal lobe as Meyer loop carry the superior visual field, so their interruption removes the upper quadrant on the opposite side."],
      ["Contralateral inferior quadrantanopsia",
       "The temporal radiation carries the superior field."],
      ["Bitemporal hemianopsia",
@@ -518,9 +518,9 @@ POOL_D = [
    q="An occipital cortex lesion from posterior cerebral artery occlusion produces which defect, and what is characteristically preserved?",
    opts=[
      ["Contralateral homonymous hemianopsia with macular sparing, because of the dual blood supply to the macular representation",
-      "Correct — site E. Webster deferred this to neurology, but the deck gives the mechanism."],
+      "Correct — the occipital pole representing the macula receives collateral supply from the middle cerebral artery, so it survives a posterior cerebral occlusion and central vision is spared."],
      ["Contralateral homonymous hemianopsia with no sparing at all",
-      "The deck specifically notes macular sparing."],
+      "The macular representation at the occipital pole has a dual blood supply, so it is characteristically spared in posterior cerebral artery occlusion."],
      ["Bitemporal hemianopsia with central sparing",
       "That is a chiasmal pattern."],
      ["Monocular blindness with a preserved pupillary reflex",
@@ -544,7 +544,7 @@ POOL_D = [
    q="Which causes are given for an ipsilateral optic nerve lesion?",
    opts=[
      ["Trauma, optic neuritis and ischaemic optic neuropathy",
-      "Correct — the deck's three causes at site A."],
+      "Correct — a lesion before the chiasm affects only that eye, and trauma, inflammatory demyelination and ischaemia are the mechanisms that damage the nerve there."],
      ["Pituitary adenoma compression",
       "That is the chiasmal cause."],
      ["Posterior cerebral artery occlusion",
