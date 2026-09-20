@@ -13,7 +13,10 @@ names the process rather than what is done about it.
 KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation, so the
 correct answer is never the longest option.
 
-No recording exists for this lecture, so every question comes off the slides.
+The lecture WAS recorded (15 September) but sits behind the transcription
+queue, which runs in exam-date order and has not reached Clin Path Exam 2 --
+so every question comes off the slides for now and the lecturer's own
+emphasis should be layered in once the transcript lands.
 """
 
 D = "SV Vascular Pathophys I Fall 2026.pptx"

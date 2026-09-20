@@ -7,7 +7,9 @@ endothelium and blood pressure regulation in part A, arteriosclerosis through
 venous disease in part B -- and split in half here, so each set is drawn from
 the whole lecture rather than from one half of it.
 
-NO RECORDING EXISTS for this lecture, so every question comes off the slides.
+THE TRANSCRIPT IS NOT IN YET. The lecture was recorded on 15 September but is
+queued behind the exams that come sooner, so every question here comes off the
+slides and cites its slide. Spoken emphasis can be layered in afterwards.
 
 Guards, in the order this content could have failed them:
 

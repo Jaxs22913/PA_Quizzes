@@ -25,8 +25,9 @@ INTRO = (
   "proliferates, lays down matrix, platelets activate and leukocytes arrive. The wall has a "
   "limited repertoire, which is why one process explains in-stent restenosis, transplant "
   "vasculopathy and the beginning of every atherosclerotic plaque. "
-  "<b>No recording exists for this lecture</b>, so every question comes off the slides and every "
-  "one cites the slide it came from."
+  "<b>Built from the slides.</b> The recording for this lecture is queued behind the exams that "
+  "come sooner, so every question cites the slide it came from and spoken emphasis will be "
+  "layered in once the transcript lands."
 )
 
 for n in (1, 2):
