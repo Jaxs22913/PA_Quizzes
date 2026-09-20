@@ -1,0 +1,1566 @@
+{
+ "set1": [
+  {
+   "topic": "Vasculitis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What are the two main pathogenic mechanisms of vasculitis?",
+   "opts": [
+    [
+     "Lipid accumulation and calcification",
+     "Those are steps in atherosclerosis rather than vasculitis mechanisms."
+    ],
+    [
+     "Immune-mediated inflammation, and pathogen invasion",
+     "Correct, and the distinction matters because the wall is being destroyed in one case by the host's own response and in the other by the organism itself."
+    ],
+    [
+     "Mechanical stress and loss of elastic tissue",
+     "Those underlie hypertensive vessel change and aneurysm formation."
+    ],
+    [
+     "Valve insufficiency and venous stasis",
+     "Those belong to the venous side, producing varicosities and thrombosis."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 32"
+  },
+  {
+   "topic": "Capillaries",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "anatomy",
+   "q": "Which tissues have the highest density of capillaries?",
+   "opts": [
+    [
+     "Skin and subcutaneous fat",
+     "Both have comparatively low metabolic rates and correspondingly lower capillary density."
+    ],
+    [
+     "Myocardium and brain",
+     "Correct, because capillary density tracks metabolic rate &mdash; tissues that consume the most oxygen need the shortest diffusion distances to reach it."
+    ],
+    [
+     "Tendon and ligament",
+     "Dense connective tissue such as tendon and ligament is relatively poorly vascularised and has a low metabolic rate."
+    ],
+    [
+     "Cartilage",
+     "Cartilage is avascular, at the opposite extreme from the tissues named."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 11"
+  },
+  {
+   "topic": "Functional components",
+   "io": "Review the functions of the components of the vascular system",
+   "slot": "function",
+   "q": "What do the capillaries exchange?",
+   "opts": [
+    [
+     "Oxygen alone",
+     "The exchange is far broader, covering fluid, electrolytes, hormones and wastes as well as respiratory gases."
+    ],
+    [
+     "Blood cells into the interstitium",
+     "Cells are not the exchanged material; diffusible substances are."
+    ],
+    [
+     "Fluid, nutrients, electrolytes and wastes",
+     "Correct, and the exchange runs in both directions between blood and tissues, which is why this is the only segment where the vascular system does its actual work. Hormones cross the same way."
+    ],
+    [
+     "Nothing &mdash; capillaries only conduct blood",
+     "Exchange is precisely what defines the capillary segment; conduction is what the arteries and veins do."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 8"
+  },
+  {
+   "topic": "Hypertension consequences",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "consequence",
+   "q": "Raised blood pressure is a risk factor for which of these?",
+   "opts": [
+    [
+     "Varicose veins and haemorrhoids",
+     "Those follow chronic high INTRALUMINAL venous pressure with weakened wall support rather than systemic arterial hypertension."
+    ],
+    [
+     "Deep vein thrombosis",
+     "Deep vein thrombosis follows the Virchow triad rather than arterial hypertension."
+    ],
+    [
+     "Atherosclerosis, heart failure and renal failure",
+     "Correct, with cerebral haemorrhage completing the list &mdash; five different organs injured by a single haemodynamic abnormality. Cerebral haemorrhage and aortic dissection too."
+    ],
+    [
+     "Arteriovenous fistula",
+     "A fistula is a direct artery-to-vein connection arising from developmental defect, rupture, injury or inflammation."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 20"
+  },
+  {
+   "topic": "Renin-angiotensin",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "By what two routes does angiotensin II raise blood pressure?",
+   "opts": [
+    [
+     "Raising heart rate and respiratory rate",
+     "Respiratory rate plays no part, and the described routes are vascular tone and aldosterone."
+    ],
+    [
+     "Raising smooth muscle tone, and driving aldosterone",
+     "Correct &mdash; one route acts on resistance immediately, the other on volume through increased renal sodium resorption, so both determinants of pressure are addressed."
+    ],
+    [
+     "Increasing red cell mass and blood viscosity",
+     "Increasing red cell mass and blood viscosity are not among the described actions of angiotensin II."
+    ],
+    [
+     "Dilating the efferent arteriole to raise filtration",
+     "Angiotensin II is a vasoconstrictor, and the routes named are smooth muscle tone and aldosterone."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 19"
+  },
+  {
+   "topic": "Virchow triad",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What are the three components of the Virchow triad?",
+   "opts": [
+    [
+     "Immobility, dehydration and trauma",
+     "Those are risk factors that operate THROUGH the triad rather than being the triad itself."
+    ],
+    [
+     "Wall damage, turbulence and hypercoagulability",
+     "Correct, and the triggers are multifactorial, with these three involved in varying degrees rather than all being equally present."
+    ],
+    [
+     "Inflammation, infection and infarction",
+     "Inflammation, infection and infarction are not the components of the triad, which are structural and rheological."
+    ],
+    [
+     "Stasis, valve insufficiency and varicosity",
+     "Valve insufficiency and varicosity belong to varicose vein pathogenesis."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 38"
+  },
+  {
+   "topic": "Vasculitis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "definition",
+   "q": "What is vasculitis, and which vessels does it mostly affect?",
+   "opts": [
+    [
+     "Vessel wall thickening with loss of elasticity",
+     "Wall thickening with loss of elasticity is arteriosclerosis, a non-inflammatory process by definition."
+    ],
+    [
+     "Wall inflammation, mostly small vessels",
+     "Correct &mdash; arterioles, capillaries and venules, although any organ and any vessel can be affected. Manifestations follow from the location of the vessel involved."
+    ],
+    [
+     "Dilation of a vessel from wall weakening",
+     "Dilation of a vessel from wall weakening is an aneurysm rather than inflammation of the wall."
+    ],
+    [
+     "Thrombus formation within a deep vein",
+     "That is deep vein thrombosis, which arises from the Virchow triad rather than from inflammation of the wall as a primary event."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 32"
+  },
+  {
+   "topic": "Vasculitis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "classification",
+   "q": "Which vasculitis is classified as large vessel?",
+   "opts": [
+    [
+     "Giant cell arteritis",
+     "Correct. Polyarteritis nodosa and Kawasaki disease are medium vessel, and the small vessel group splits into ANCA-associated and immune complex subgroups."
+    ],
+    [
+     "Polyarteritis nodosa",
+     "Polyarteritis nodosa is classified as medium vessel, alongside Kawasaki disease."
+    ],
+    [
+     "Kawasaki disease",
+     "That is classified as medium vessel alongside polyarteritis nodosa."
+    ],
+    [
+     "Systemic lupus erythematosus",
+     "Systemic lupus erythematosus falls under the small vessel immune complex subgroup rather than large vessel."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 32"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What recruits smooth muscle cells into the developing lesion?",
+   "opts": [
+    [
+     "Factors released from activated platelets and macrophages",
+     "Correct, and once recruited they proliferate, produce extracellular matrix, and T cells are drawn in &mdash; the lesion becomes self-sustaining."
+    ],
+    [
+     "Direct contact with circulating low-density lipoprotein",
+     "Lipoprotein accumulates in the wall, but the recruitment signal named comes from platelets and macrophages."
+    ],
+    [
+     "Mechanical stretch from the pulse pressure alone",
+     "The recruitment described is chemical rather than purely mechanical."
+    ],
+    [
+     "Complement deposition on the endothelium",
+     "Complement is not named in this sequence; the recruiting signals come from platelets and macrophages."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 25"
+  },
+  {
+   "topic": "Fibromuscular dysplasia",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What happens to the vessel wall in fibromuscular dysplasia?",
+   "opts": [
+    [
+     "Segments are focally thickened by hyperplasia and fibrosis",
+     "Correct, in the media and intima layers, causing luminal stenosis. The exact cause is unknown, and medium and large muscular arteries are affected."
+    ],
+    [
+     "The wall thins uniformly along its whole length",
+     "The thickening is focal and irregular rather than a uniform thinning."
+    ],
+    [
+     "Lipid-laden macrophages accumulate beneath the endothelium",
+     "That is atherosclerosis rather than fibromuscular dysplasia."
+    ],
+    [
+     "Inflammatory cells destroy the wall architecture",
+     "That is vasculitis; fibromuscular dysplasia is a hyperplastic and fibrotic process of unknown cause."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 31"
+  },
+  {
+   "topic": "Smooth muscle cells",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What are smooth muscle cells responsible for in response to stimuli?",
+   "opts": [
+    [
+     "Phagocytosis of lipid",
+     "Lipid uptake is a macrophage behaviour in the plaque rather than the named smooth muscle role."
+    ],
+    [
+     "Vasoconstriction or vasodilation",
+     "Correct, and they also proliferate when appropriately stimulated, which is the behaviour that turns a repair response into a stenotic lesion."
+    ],
+    [
+     "Production of nitric oxide to relax the vessel",
+     "Nitric oxide production is an endothelial function, and its loss is a feature of endothelial dysfunction."
+    ],
+    [
+     "Maintaining the nonthrombogenic surface",
+     "That is an endothelial property, since the endothelium is what contacts the blood."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 12"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "risk factor",
+   "q": "Which risk factor for atherosclerosis is described as the most important?",
+   "opts": [
+    [
+     "Smoking",
+     "Smoking is on the list, but family history is named as most important."
+    ],
+    [
+     "Family history",
+     "Correct &mdash; genetics is named as the most important risk factor, ahead of the modifiable ones such as hyperlipidaemia, smoking and hypertension."
+    ],
+    [
+     "Hyperlipidaemia",
+     "Hyperlipidaemia heads the list as written but family history is the one singled out as most important."
+    ],
+    [
+     "Increasing age",
+     "Age is a listed risk factor, but the emphasis falls on family history."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 24"
+  },
+  {
+   "topic": "Aneurysm and dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "Which syndrome is named for abnormal transforming growth factor signalling and defective collagen synthesis?",
+   "opts": [
+    [
+     "Kawasaki disease",
+     "Kawasaki disease is a medium-vessel vasculitis rather than a connective tissue disorder."
+    ],
+    [
+     "Systemic lupus erythematosus",
+     "Systemic lupus erythematosus appears under the immune complex small-vessel vasculitis subgroup instead."
+    ],
+    [
+     "Tertiary syphilis",
+     "Syphilis is listed under wall weakening through smooth muscle loss rather than under collagen synthesis defects."
+    ],
+    [
+     "Marfan syndrome",
+     "Correct, listed under poor connective tissue quality producing weak vessel walls &mdash; a genetic route to the same wall failure that hypertension reaches mechanically."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 28"
+  },
+  {
+   "topic": "Veins",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "anatomy",
+   "q": "What prevents gravitational reverse flow in veins?",
+   "opts": [
+    [
+     "Venous valves",
+     "Correct, and their insufficiency is precisely what produces varicose veins, typically in the lower extremities where blood flows against gravity."
+    ],
+    [
+     "A thick muscular media",
+     "Venous medial walls are THINNER than arterial ones, which is what allows their capacitance."
+    ],
+    [
+     "Active pumping by the endothelium",
+     "The endothelium is not contractile; the valves are mechanical."
+    ],
+    [
+     "Constriction of the adventitia",
+     "The adventitia provides support rather than generating directional flow."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 35"
+  },
+  {
+   "topic": "Deep vein thrombosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "risk factor",
+   "q": "Which conditions raise the risk of coagulation in deep vein thrombosis?",
+   "opts": [
+    [
+     "Immobility and mechanical compression",
+     "Those act through reduced flow and increased venous pressure respectively."
+    ],
+    [
+     "Dehydration and thrombocytosis",
+     "Dehydration and thrombocytosis act by increasing blood viscosity rather than by raising coagulability."
+    ],
+    [
+     "Trauma and intravenous drug use",
+     "Trauma and intravenous drug use fall under mechanical injury rather than increased coagulability."
+    ],
+    [
+     "Cancer, sepsis, lupus and oral estrogen",
+     "Correct, and the increased coagulability may be genetic or acquired &mdash; these four are the acquired examples given."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 37"
+  },
+  {
+   "topic": "Intimal thickening",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What is the consequence of endothelial repair for nitric oxide?",
+   "opts": [
+    [
+     "Its production increases sharply",
+     "The change described runs the other way, toward decreased production."
+    ],
+    [
+     "It is unchanged by injury",
+     "Decreased nitric oxide production is specifically named as a consequence."
+    ],
+    [
+     "Its production decreases",
+     "Correct, and because nitric oxide is a vasodilator and an inhibitor of platelet adhesion, losing it shifts the vessel toward constriction and thrombosis."
+    ],
+    [
+     "It is replaced by carbon monoxide signalling",
+     "No such substitution is described; the named consequence is simply decreased nitric oxide production."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 13"
+  },
+  {
+   "topic": "Secondary hypertension",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "By what mechanism does renal artery stenosis raise blood pressure?",
+   "opts": [
+    [
+     "Direct mechanical transmission of pressure to the aorta",
+     "The mechanism is hormonal, through renin, rather than mechanical."
+    ],
+    [
+     "Autonomous aldosterone secretion independent of renin",
+     "That is primary hyperaldosteronism, a separate common cause of secondary hypertension."
+    ],
+    [
+     "Reduced glomerular flow and afferent pressure induce renin secretion",
+     "Correct, and blood volume and vascular tone both rise as a result &mdash; the kidney reads the stenosis as whole-body hypotension and corrects a problem that does not exist."
+    ],
+    [
+     "Loss of nitric oxide production from the renal endothelium",
+     "Decreased nitric oxide follows endothelial injury generally; the described renovascular mechanism is renin-driven."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 20"
+  },
+  {
+   "topic": "Intimal thickening",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "Which two blood-borne events accompany the neointimal response?",
+   "opts": [
+    [
+     "Red cell aggregation and haemolysis",
+     "Red cell aggregation and haemolysis are not among the named components of the neointimal response."
+    ],
+    [
+     "Eosinophil degranulation and mast cell activation",
+     "The cells named are platelets and leukocytes generally rather than these allergic effectors."
+    ],
+    [
+     "Plasma cell infiltration with antibody deposition",
+     "Immune complex deposition characterises certain vasculitides rather than the general neointimal response."
+    ],
+    [
+     "Platelet activation and leukocyte recruitment",
+     "Correct: a thrombus forms and the inflammatory cascade begins at the injury site, so the response is simultaneously thrombotic and inflammatory."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 13"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "How is atherosclerosis characterised as a process?",
+   "opts": [
+    [
+     "A purely degenerative process of ageing",
+     "It is described as an active inflammatory and healing response rather than passive degeneration."
+    ],
+    [
+     "An infectious process of the arterial wall",
+     "Direct pathogen invasion of vessel walls is a vasculitis mechanism rather than the atherosclerotic one."
+    ],
+    [
+     "A chronic inflammatory and healing response",
+     "Correct, and framing it that way explains the sequence: it behaves like a repair process that never stops and progressively costs lumen. The trigger is endothelial injury."
+    ],
+    [
+     "A congenital malformation of the intima",
+     "The process is acquired, beginning with injury to a previously healthy vessel."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 25"
+  },
+  {
+   "topic": "Arterial types",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "classification",
+   "q": "Which vessels does atherosclerosis principally affect?",
+   "opts": [
+    [
+     "Large elastic arteries such as the aorta",
+     "The aorta's characteristic lesion is aneurysm, through loss of elastic tissue."
+    ],
+    [
+     "Small arteries and arterioles within tissues",
+     "Small arteries and arterioles within tissues are the vessels affected by hypertension rather than by aneurysm."
+    ],
+    [
+     "Medium-sized muscular arteries",
+     "Correct &mdash; the smaller branches of the aorta such as the coronary and renal arteries, roughly 3 to 4 mm. They combine elasticity with musculature to withstand high pulsatile forces and recoil to promote flow."
+    ],
+    [
+     "Capillaries",
+     "Capillaries have no media and are not the site of atherosclerotic disease."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 18"
+  },
+  {
+   "topic": "Cerebral aneurysm",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "structure",
+   "q": "What characterises a saccular cerebral aneurysm?",
+   "opts": [
+    [
+     "Uniform dilation of the entire vessel circumference",
+     "That is a fusiform aneurysm, in which atherosclerosis may be a factor."
+    ],
+    [
+     "A thin-walled protrusion lacking elastic lamina",
+     "Correct, with very thin or absent tunica media. The lack of elastic lamina is named as the MAIN feature, and these are typically acquired rather than congenital. The tunica media is very thin or absent."
+    ],
+    [
+     "A lesion arising from infected emboli",
+     "That is a mycotic aneurysm, usually in the setting of infective endocarditis."
+    ],
+    [
+     "A blood-filled channel within the wall layers",
+     "A blood-filled channel within the wall layers is a dissection rather than a localised dilation."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 30"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What are the final two steps of the atherosclerotic sequence?",
+   "opts": [
+    [
+     "Lipid accumulation, then calcification",
+     "Correct. The calcification at the end is what gives atherosclerosis its second name component &mdash; the Greek for hardening. The calcification involves matrix and necrotic debris."
+    ],
+    [
+     "Monocyte adhesion, then platelet adhesion",
+     "Monocyte and platelet adhesion are early steps, following lipoprotein accumulation rather than closing the sequence."
+    ],
+    [
+     "Endothelial injury, then lipoprotein accumulation",
+     "Endothelial injury and lipoprotein accumulation are the first two steps rather than the last two."
+    ],
+    [
+     "T cell recruitment, then smooth muscle migration",
+     "Smooth muscle recruitment precedes T cell involvement, and both come before lipid accumulation and calcification."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 25"
+  },
+  {
+   "topic": "Varicosities",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "classification",
+   "q": "What are oesophageal varices related to?",
+   "opts": [
+    [
+     "Valve insufficiency in the lower extremities",
+     "That produces the classic lower limb varicose veins rather than oesophageal varices."
+    ],
+    [
+     "Deep vein thrombosis of the femoral vein",
+     "Deep vein thrombosis is a separate entity from varicosity, arising from the Virchow triad instead."
+    ],
+    [
+     "Cirrhosis and portal venous hypertension",
+     "Correct &mdash; dilated submucosal distal oesophageal veins. Haemorrhoids are the equivalent process at the anorectal junction."
+    ],
+    [
+     "Atherosclerosis of the coeliac artery",
+     "The mechanism is venous hypertension from cirrhosis rather than arterial disease."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 36"
+  },
+  {
+   "topic": "Capillaries",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "anatomy",
+   "q": "How does capillary diameter compare with a red blood cell?",
+   "opts": [
+    [
+     "About ten times larger",
+     "A capillary is at most the width of a single red cell rather than many times it."
+    ],
+    [
+     "About a hundred times larger",
+     "That scale belongs to the large elastic arteries rather than to a capillary."
+    ],
+    [
+     "Too variable to compare",
+     "The comparison is specific: equal to or slightly smaller than a red blood cell."
+    ],
+    [
+     "Equal to or even slightly smaller",
+     "Correct, and the consequence is that red cells must deform to pass, which brings their membranes into close contact with the endothelium."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 11"
+  },
+  {
+   "topic": "Veins",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "anatomy",
+   "q": "Which are named as superficial veins?",
+   "opts": [
+    [
+     "The femoral and popliteal veins",
+     "Those are deep veins, where stasis in a dilated vein can produce thrombosis."
+    ],
+    [
+     "The portal and hepatic veins",
+     "Those are not among the superficial or deep veins named in this scheme."
+    ],
+    [
+     "The jugular and subclavian veins",
+     "The jugular and subclavian veins are not the examples given for the superficial group in this scheme."
+    ],
+    [
+     "The great and small saphenous veins",
+     "Correct, and the deep veins named are the femoral, popliteal and tibial. The anatomic location determines which pathology follows."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 35"
+  },
+  {
+   "topic": "Blood pressure regulation",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What determines stroke volume, and therefore part of cardiac output?",
+   "opts": [
+    [
+     "Blood volume",
+     "Correct &mdash; sodium excretion or resorption sets the volume, which is why renal sodium handling sits at the centre of blood pressure regulation. It is regulated by sodium excretion or resorption."
+    ],
+    [
+     "The diameter of the arterioles",
+     "Arteriolar diameter sets resistance rather than stroke volume."
+    ],
+    [
+     "The number of capillaries in the tissue",
+     "Capillary density reflects metabolic demand rather than determining stroke volume."
+    ],
+    [
+     "The elasticity of the adventitia",
+     "The adventitia is supportive tissue and does not determine ejected volume."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 19"
+  },
+  {
+   "topic": "Mechanisms of vascular disease",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "classification",
+   "q": "Which are the four principal mechanisms of vascular disease?",
+   "opts": [
+    [
+     "Inflammation, infection, infarction and ischaemia",
+     "These are processes that occur in vessels, but they are not the four structural mechanisms named."
+    ],
+    [
+     "Hypertrophy, atrophy, metaplasia and dysplasia",
+     "Those are general cellular adaptations rather than the vascular mechanisms listed."
+    ],
+    [
+     "Thrombosis, embolism, stasis and reflux",
+     "Thrombosis and embolism are routes to narrowing rather than separate principal mechanisms."
+    ],
+    [
+     "Weakening, narrowing, dilation and rupture",
+     "Correct, and narrowing itself can be progressive, as in atherosclerosis, or precipitous, as in thrombosis or embolism."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 16"
+  },
+  {
+   "topic": "Deep vein thrombosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What happens during remodelling of a venous thrombus?",
+   "opts": [
+    [
+     "Neutrophils and macrophages infiltrate the clot",
+     "Correct, over weeks. The resulting fibrosis decreases blood flow, so the vein does not simply return to normal once the clot has organised. Collagen then replaces the fibrin."
+    ],
+    [
+     "The thrombus dissolves completely with no residual change",
+     "The remodelling is extensive and leaves fibrosis that decreases flow."
+    ],
+    [
+     "The vein wall calcifies along its whole length",
+     "Calcification of medial walls describes Monckeberg sclerosis in arteries."
+    ],
+    [
+     "The valves regenerate and competence is restored",
+     "Valve regeneration is not described; the outcome is fibrosis and decreased flow."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 38"
+  },
+  {
+   "topic": "Blood pressure regulation",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What two quantities determine blood pressure?",
+   "opts": [
+    [
+     "Vascular resistance and cardiac output",
+     "Correct. Resistance is regulated at the arterioles by neural and hormonal input; output is heart rate times stroke volume, with stroke volume influenced by blood volume."
+    ],
+    [
+     "Blood viscosity and vessel length",
+     "Both influence flow in principle, but the two determinants named are resistance and cardiac output."
+    ],
+    [
+     "Heart rate and respiratory rate",
+     "Heart rate contributes through cardiac output, but respiratory rate is not one of the determinants."
+    ],
+    [
+     "Haemoglobin concentration and oxygen saturation",
+     "Haemoglobin concentration and oxygen saturation determine oxygen carriage rather than arterial pressure."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 19"
+  },
+  {
+   "topic": "Endothelial cells",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What does a nonthrombogenic endothelial surface achieve?",
+   "opts": [
+    [
+     "It accelerates clot formation at rest",
+     "The healthy surface does the opposite, resisting thrombosis until it is injured."
+    ],
+    [
+     "It prevents leukocytes from entering tissues anywhere",
+     "The endothelium regulates inflammation rather than blocking it outright."
+    ],
+    [
+     "It stops all molecules crossing the vessel wall",
+     "Exchange across the wall is a central vascular function rather than something the endothelium prevents."
+    ],
+    [
+     "It keeps blood in a fluid state",
+     "Correct, and it is an active property rather than a passive one, which is why endothelial injury is the event that lets platelets adhere and a thrombus begin."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 12"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Function of the vascular system",
+   "io": "Review the functions of the components of the vascular system",
+   "slot": "function",
+   "q": "Which four functions does the vascular system serve?",
+   "opts": [
+    [
+     "Gas exchange and the production of blood cells",
+     "Gas exchange happens at the capillary interface, but cell production is a marrow function rather than one of the four named vascular roles."
+    ],
+    [
+     "Immune surveillance and antibody synthesis",
+     "Antibody synthesis belongs to lymphoid tissue. The vascular system transports rather than manufactures."
+    ],
+    [
+     "Thermoregulation and acid production",
+     "Neither is among the four functions named for the vascular system."
+    ],
+    [
+     "Transport of nutrients, wastes, hormones; homeostasis",
+     "Correct. Nutrients go to tissues, wastes come away from them, hormones travel from one part of the body to another, and fluid balance is maintained across all tissues so cells can function."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 5"
+  },
+  {
+   "topic": "Aneurysm and dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "definition",
+   "q": "What is an aneurysm?",
+   "opts": [
+    [
+     "Blood tunnelling through the medial planes of the wall",
+     "That is a dissection, where blood enters a defect in the arterial wall."
+    ],
+    [
+     "An intimal lesion projecting into the lumen",
+     "An intimal lesion projecting into the lumen is an atheroma, which narrows rather than dilating the vessel."
+    ],
+    [
+     "Localised abnormal dilation of a blood vessel",
+     "Correct. It may be congenital or acquired, and it is classified by shape."
+    ],
+    [
+     "An irregular direct connection between artery and vein",
+     "That is an arteriovenous fistula, which bypasses the capillaries."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 27"
+  },
+  {
+   "topic": "Deep vein thrombosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "risk factor",
+   "q": "Which risk factor for deep vein thrombosis reflects reduced blood flow?",
+   "opts": [
+    [
+     "Immobility",
+     "Correct, and it sits alongside increased venous pressure, mechanical injury, increased blood viscosity, anatomic variations and increased coagulability."
+    ],
+    [
+     "Dehydration",
+     "Dehydration acts by increasing blood VISCOSITY rather than by reducing flow."
+    ],
+    [
+     "Oral estrogen",
+     "Estrogen acts through increased risk of coagulation, alongside cancer, sepsis and lupus."
+    ],
+    [
+     "Surgery",
+     "Surgery is listed under mechanical injury, with trauma and intravenous drug use."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 37"
+  },
+  {
+   "topic": "Atheromatous plaque",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "structure",
+   "q": "What is the structure of an atheroma?",
+   "opts": [
+    [
+     "A calcified nodule within the media",
+     "Medial calcification describes Monckeberg sclerosis rather than an atheroma."
+    ],
+    [
+     "A soft lipid core with a fibrous cap",
+     "Correct, and these intimal lesions project out into the lumen of the vessel, which is how the plaque converts a wall abnormality into a flow abnormality."
+    ],
+    [
+     "A blood-filled channel within the wall",
+     "That is a dissection, where blood tunnels through the medial planes."
+    ],
+    [
+     "A thin-walled outpouching of the vessel",
+     "That is an aneurysm, a dilation rather than an intimal lesion."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 26"
+  },
+  {
+   "topic": "Fibromuscular dysplasia",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "structure",
+   "q": "What appearance do affected vessels have on angiography?",
+   "opts": [
+    [
+     "A smooth tapering narrowing",
+     "A smooth taper would suggest a different process; the focal irregularity is what gives the beaded look."
+    ],
+    [
+     "A blood-filled false channel alongside the true lumen",
+     "A false channel running alongside the true lumen is the appearance of a dissection rather than a beaded artery."
+    ],
+    [
+     "A string of beads",
+     "Correct, produced by alternating focal thickening and intervening normal or dilated segments. The renal arteries are the classic example."
+    ],
+    [
+     "A saccular outpouching from one wall",
+     "A saccular outpouching from one wall describes a saccular aneurysm rather than segmental beading."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 31"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "risk factor",
+   "q": "Which inflammatory marker appears among the risk factors?",
+   "opts": [
+    [
+     "Erythrocyte sedimentation rate",
+     "The marker named for inflammation in this list is C-reactive protein."
+    ],
+    [
+     "C-reactive protein",
+     "Correct, listed under inflammation alongside hyperlipidaemia, lipoprotein a, smoking, hypertension, diabetes mellitus and metabolic syndrome."
+    ],
+    [
+     "Procalcitonin",
+     "Procalcitonin is not among the listed risk factors; C-reactive protein is the inflammatory marker named."
+    ],
+    [
+     "Ferritin",
+     "Ferritin is not among the listed risk factors for atherosclerosis."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 24"
+  },
+  {
+   "topic": "Aneurysm and dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What underlies aneurysm and dissection at the level of the wall?",
+   "opts": [
+    [
+     "Compromised wall connective tissue",
+     "Correct. Arterial walls are constantly remodelling, so any compromise in that connective tissue can produce either lesion, with histopathological change following. Either its structure or its function."
+    ],
+    [
+     "Excess elastin deposition stiffening the wall",
+     "The problem is loss or defect of connective tissue rather than excess."
+    ],
+    [
+     "Lipid accumulation beneath the endothelium",
+     "That is the atherosclerotic mechanism, though atherosclerosis is a predisposing condition for aortic aneurysm."
+    ],
+    [
+     "Bacterial colonisation of the intima",
+     "Infected emboli produce mycotic aneurysms specifically, rather than being the general mechanism."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 28"
+  },
+  {
+   "topic": "Circulatory loops",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "anatomy",
+   "q": "What does the pulmonary loop do?",
+   "opts": [
+    [
+     "Carries deoxygenated blood from the right heart to the lungs",
+     "Correct. The systemic loop is the mirror image: highly oxygenated blood from the left heart to the tissues, removing wastes and returning deoxygenated blood to the right heart."
+    ],
+    [
+     "Carries oxygenated blood from the left heart to the tissues",
+     "That is the systemic loop, which begins on the left side of the heart rather than the right."
+    ],
+    [
+     "Returns deoxygenated blood from the tissues to the right heart",
+     "That is the returning half of the systemic loop rather than the pulmonary circuit."
+    ],
+    [
+     "Supplies the heart muscle itself with blood",
+     "Coronary supply is a branch of the systemic circulation rather than a loop in this scheme."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 6"
+  },
+  {
+   "topic": "Arteriosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "classification",
+   "q": "Which subtypes of small-vessel arteriosclerosis are related to hypertension?",
+   "opts": [
+    [
+     "Fibromuscular and intimal",
+     "Fibromuscular intimal hyperplasia is a separate pattern, driven by inflammation or mechanical injury in larger muscular arteries."
+    ],
+    [
+     "Medial and adventitial",
+     "Monckeberg sclerosis is medial calcification, but hyaline and hyperplastic are the hypertension-related subtypes."
+    ],
+    [
+     "Saccular and fusiform",
+     "Those classify aneurysms by shape rather than arteriosclerosis."
+    ],
+    [
+     "Hyaline and hyperplastic",
+     "Correct, and the vessels involved are the small arteries and arterioles, where downstream ischaemic injury is the consequence."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 22"
+  },
+  {
+   "topic": "Renin-angiotensin",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What triggers renin secretion?",
+   "opts": [
+    [
+     "A rise in pressure in the afferent arterioles",
+     "Renin is secreted in response to a DECREASE in blood pressure rather than an increase."
+    ],
+    [
+     "A fall in pressure in the afferent arterioles",
+     "Correct. The kidney senses the pressure drop at the afferent arteriole and responds, which is the first step of the sequence that restores it."
+    ],
+    [
+     "A rise in plasma sodium concentration",
+     "The described trigger is the pressure change at the afferent arteriole."
+    ],
+    [
+     "Direct sympathetic stimulation of the adrenal medulla",
+     "Renin comes from the kidney, and the named trigger is the afferent arteriolar pressure."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 19"
+  },
+  {
+   "topic": "Deep vein thrombosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "consequence",
+   "q": "How does deep vein thrombosis lead to pulmonary embolus?",
+   "opts": [
+    [
+     "The thrombus propagates continuously up the venous system",
+     "The mechanism described is dislodgement and embolisation rather than continuous propagation."
+    ],
+    [
+     "Fibrosis of the vein raises pulmonary pressure directly",
+     "Remodelling fibrosis decreases local flow rather than acting on the pulmonary circulation."
+    ],
+    [
+     "The thrombus dislodges and travels to the pulmonary artery",
+     "Correct, moving freely through the venous system until it reaches the pulmonary artery and occludes it &mdash; an arterial occlusion produced by a venous disease."
+    ],
+    [
+     "The clot crosses into the arterial circulation at the capillaries",
+     "The route described runs through the venous system to the pulmonary artery."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 38"
+  },
+  {
+   "topic": "Arteriosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "definition",
+   "q": "What is Monckeberg medial sclerosis, and what is its significance?",
+   "opts": [
+    [
+     "Calcification of the media of muscular arteries",
+     "Correct. It is one of the four patterns of arteriosclerosis, and the notable thing about it is precisely that it usually does not matter clinically. It is usually not clinically significant."
+    ],
+    [
+     "Lipid plaque formation with a necrotic core",
+     "Lipid plaque with a necrotic core is atherosclerosis, the most clinically relevant form of arteriosclerosis."
+    ],
+    [
+     "Hyaline thickening of arterioles from hypertension",
+     "That is one of the small-vessel subtypes rather than medial calcification."
+    ],
+    [
+     "Inflammatory destruction of the vessel wall",
+     "Inflammatory destruction of the wall is vasculitis, an entirely different category from medial calcification."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 22"
+  },
+  {
+   "topic": "Functional components",
+   "io": "Review the functions of the components of the vascular system",
+   "slot": "function",
+   "q": "What characterises the arteries?",
+   "opts": [
+    [
+     "Low pressure, thin walls, and a role as a blood reservoir",
+     "That describes the veins, which hold the reserve volume rather than delivering at pressure."
+    ],
+    [
+     "High pressure, strong walls, high flow velocity",
+     "Correct, and the contrast with veins is instructive: veins are low pressure with thin walls and serve as the major reservoir of extra blood."
+    ],
+    [
+     "Control conduits releasing blood into the capillaries",
+     "That is the arterioles, the regulating segment rather than the conducting one."
+    ],
+    [
+     "Collection of blood from capillaries into larger vessels",
+     "Collecting blood emerging from the capillaries describes the venules, which coalesce gradually into larger veins."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 8"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "risk factor",
+   "q": "Which sex and age groups are listed as at risk?",
+   "opts": [
+    [
+     "Premenopausal women specifically",
+     "The listed group is POSTmenopausal women, which suggests the opposite."
+    ],
+    [
+     "Children and adolescents",
+     "Risk rises with increasing age rather than falling on the young."
+    ],
+    [
+     "Men and postmenopausal women",
+     "Correct, together with increasing age &mdash; the pairing implies that the premenopausal state is relatively protective."
+    ],
+    [
+     "Men only, at any age",
+     "Postmenopausal women are named alongside men, so the risk is not confined to one sex."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 24"
+  },
+  {
+   "topic": "Deep vein thrombosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "epidemiology",
+   "q": "Where does deep vein thrombosis rank among cardiovascular causes of death?",
+   "opts": [
+    [
+     "First most common",
+     "It ranks third among cardiovascular causes of death rather than first."
+    ],
+    [
+     "Third most common",
+     "Correct, which places a venous disease immediately behind the arterial ones in mortality &mdash; the venous side is not the minor partner it might appear."
+    ],
+    [
+     "Tenth most common",
+     "Its rank is considerably higher than tenth, at third among cardiovascular causes of death."
+    ],
+    [
+     "It is not a significant cause of death",
+     "It is the third most common cause of death from cardiovascular disease."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 37"
+  },
+  {
+   "topic": "Aneurysm and dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "definition",
+   "q": "What defines a dissection?",
+   "opts": [
+    [
+     "Localised abnormal dilation of the vessel",
+     "Localised abnormal dilation is an aneurysm, in which the wall bulges rather than splitting into layers."
+    ],
+    [
+     "Inflammation of the vessel wall with leukocyte infiltration",
+     "Inflammation of the wall with leukocyte infiltration is vasculitis rather than a blood-filled wall channel."
+    ],
+    [
+     "Calcification of the media without luminal change",
+     "Medial calcification without luminal change is Monckeberg sclerosis, usually not clinically significant."
+    ],
+    [
+     "Blood enters a wall defect and tunnels through medial planes",
+     "Correct &mdash; through medial or medial-adventitial planes. The vessel is not merely dilated; its wall has been split into layers by blood under pressure."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 27"
+  },
+  {
+   "topic": "Aneurysm and dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "risk factor",
+   "q": "Which conditions predispose to aortic aneurysm?",
+   "opts": [
+    [
+     "Varicose veins and hemorrhoids",
+     "Both are venous varicosities from high intraluminal pressure rather than arterial risk factors."
+    ],
+    [
+     "Raynaud phenomenon and cold exposure",
+     "Raynaud phenomenon is an exaggerated vasoconstrictive response without structural wall failure."
+    ],
+    [
+     "Atherosclerosis, hypertension and smoking",
+     "Correct, and all three converge on the same endpoint by different routes &mdash; plaque, mechanical stress and an accelerant of both."
+    ],
+    [
+     "Thrombocytosis and dehydration",
+     "Those raise blood viscosity and are deep vein thrombosis risk factors."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 28"
+  },
+  {
+   "topic": "Blood pressure regulation",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What regulates vascular resistance?",
+   "opts": [
+    [
+     "The arterioles, by neural and hormonal input",
+     "Correct, and it is described as a delicate balance between vasoconstrictors and vasodilators rather than a single controlling signal."
+    ],
+    [
+     "The capillaries, by altering their permeability",
+     "Capillaries exchange substances; they do not set systemic resistance."
+    ],
+    [
+     "The veins, by varying their capacitance",
+     "Venous capacitance holds the reservoir volume rather than setting arterial resistance."
+    ],
+    [
+     "The adventitia, by contracting around the vessel",
+     "The adventitia is supportive connective tissue and is not contractile."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 19"
+  },
+  {
+   "topic": "Smooth muscle cells",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What do vascular smooth muscle cells synthesise?",
+   "opts": [
+    [
+     "Collagen, elastin, proteoglycans and cytokines",
+     "Correct, which is why they are central to both repair and disease: the same synthetic capacity that rebuilds a wall also builds an atherosclerotic plaque. Growth factors too."
+    ],
+    [
+     "Immunoglobulins",
+     "Antibody production belongs to plasma cells rather than to vascular smooth muscle."
+    ],
+    [
+     "Clotting factors for the plasma",
+     "Most clotting factors are hepatic in origin rather than being synthesised by vascular smooth muscle."
+    ],
+    [
+     "Surfactant",
+     "Surfactant is produced by type II pneumocytes in the lung and has no vascular smooth muscle origin."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 12"
+  },
+  {
+   "topic": "Functional components",
+   "io": "Review the functions of the components of the vascular system",
+   "slot": "function",
+   "q": "What is the role of the arterioles?",
+   "opts": [
+    [
+     "Exchange of fluid, nutrients and wastes with the tissues",
+     "That is the capillaries, whose thin walls and slow flow make exchange possible."
+    ],
+    [
+     "Transport of blood back toward the heart",
+     "That is the veins, carrying blood in the returning direction."
+    ],
+    [
+     "Collection of blood emerging from the capillary bed",
+     "That is the venules, immediately downstream of the capillaries."
+    ],
+    [
+     "Control conduits for release of blood to the capillaries",
+     "Correct, and it is the same property that makes them the regulators of vascular resistance, which is one of the two determinants of blood pressure."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 8"
+  },
+  {
+   "topic": "Atherosclerosis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What follows injury to the vessel at the start of the atherosclerotic sequence?",
+   "opts": [
+    [
+     "Calcification of the extracellular matrix",
+     "Calcification comes at the END of the sequence, along with necrotic debris."
+    ],
+    [
+     "Accumulation of low-density lipoprotein in the vessel wall",
+     "Correct, and monocyte adhesion to the endothelium and platelet adhesion follow it before any smooth muscle is recruited."
+    ],
+    [
+     "Smooth muscle proliferation with matrix production",
+     "That comes later, after smooth muscle has been recruited by factors from activated platelets and macrophages."
+    ],
+    [
+     "Formation of a fibrous cap over a lipid core",
+     "The mature plaque structure is the end product rather than the first step."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 25"
+  },
+  {
+   "topic": "Mechanisms of vascular disease",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "How can narrowing of a vessel lumen arise?",
+   "opts": [
+    [
+     "Only progressively over years",
+     "Thrombosis and embolism produce precipitous narrowing, so narrowing is not always a gradual process."
+    ],
+    [
+     "Progressively or precipitously",
+     "Correct, and the distinction matters because a gradual stenosis allows collateral supply to develop while a sudden one does not. Atherosclerosis narrows progressively; thrombosis or embolism precipitously."
+    ],
+    [
+     "Only precipitously, as a sudden event",
+     "Atherosclerosis narrows the lumen progressively over years, so narrowing is not always a sudden event."
+    ],
+    [
+     "Only as a consequence of external compression",
+     "The mechanisms described are intrinsic to the vessel rather than compressive."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 16"
+  },
+  {
+   "topic": "Smooth muscle cells",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "Which layer are smooth muscle cells the predominant element of?",
+   "opts": [
+    [
+     "The intima",
+     "The healthy intima is an endothelial monolayer; smooth muscle appears there only as pathology, in intimal thickening."
+    ],
+    [
+     "The adventitia",
+     "The adventitia is loose connective tissue providing support."
+    ],
+    [
+     "The basement membrane",
+     "The basement membrane supports the endothelium rather than being a cellular layer."
+    ],
+    [
+     "The media",
+     "Correct, and their dual role is the point: they are important in normal vascular repair AND play a large part in the development of atherosclerosis."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 12"
+  },
+  {
+   "topic": "Vasculitis",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "classification",
+   "q": "How does the small vessel group subdivide?",
+   "opts": [
+    [
+     "ANCA-associated, and immune complex",
+     "Correct, with systemic lupus erythematosus and rheumatoid arthritis given as the immune complex examples. The first is a necrotising vasculitis."
+    ],
+    [
+     "Hyaline and hyperplastic",
+     "Those are subtypes of small-vessel ARTERIOSCLEROSIS related to hypertension, not vasculitis."
+    ],
+    [
+     "Saccular and fusiform",
+     "Saccular and fusiform classify aneurysms by shape rather than dividing the small vessel vasculitides."
+    ],
+    [
+     "Superficial and deep",
+     "That division applies to the venous system rather than to vasculitis."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 32"
+  },
+  {
+   "topic": "Blood vessel layers",
+   "io": "Review the anatomy of the vascular system",
+   "slot": "anatomy",
+   "q": "What does the adventitia contain?",
+   "opts": [
+    [
+     "A single layer of endothelium on a basement membrane",
+     "A single endothelial layer on a basement membrane is the intima, the innermost of the three layers."
+    ],
+    [
+     "Lamellar units of elastin and smooth muscle",
+     "Lamellar units of elastin and smooth muscle describe the media of an elastic artery rather than the adventitia."
+    ],
+    [
+     "Nothing &mdash; it is a potential space",
+     "It is a real layer of loose connective tissue providing structural support."
+    ],
+    [
+     "Loose connective tissue, sometimes with nerve fibres",
+     "Correct, and in large vessels it carries its own small arterioles, which perfuse the adventitia and part of the media &mdash; the wall is too thick to be fed from the lumen alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 10"
+  },
+  {
+   "topic": "Aneurysm and dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "Which three are named as weakening the wall through smooth muscle loss or inappropriate matrix synthesis?",
+   "opts": [
+    [
+     "Marfan syndrome, lupus and rheumatoid arthritis",
+     "Marfan belongs to the connective tissue quality group, and the other two are immune complex vasculitides."
+    ],
+    [
+     "Smoking, diabetes and hyperlipidaemia",
+     "Those are atherosclerosis risk factors; smoking is separately listed as predisposing to aortic aneurysm."
+    ],
+    [
+     "Ischaemia, hypertension and tertiary syphilis",
+     "Correct, and they form one of three routes to wall failure, alongside poor connective tissue quality and an imbalance of collagen degradation against synthesis."
+    ],
+    [
+     "Giant cell arteritis, polyarteritis nodosa and Kawasaki disease",
+     "Giant cell arteritis, polyarteritis nodosa and Kawasaki disease are vasculitides classified by vessel size."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 28"
+  },
+  {
+   "topic": "Essential hypertension",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What combination is essential hypertension suspected to arise from?",
+   "opts": [
+    [
+     "A single inherited defect in the renin gene",
+     "No single genetic lesion is proposed; the mechanism is a combination of small changes."
+    ],
+    [
+     "Autoimmune destruction of the vascular endothelium",
+     "No autoimmune mechanism is described for essential hypertension."
+    ],
+    [
+     "Small changes in renal sodium handling and vessel tone",
+     "Correct, which is why no single lesion is found: the abnormality is distributed across two systems rather than located in one."
+    ],
+    [
+     "Chronic infection of the arterial wall",
+     "Direct invasion of vessel walls by pathogens is a mechanism of vasculitis rather than of essential hypertension."
+    ]
+   ],
+   "c": 2,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 20"
+  },
+  {
+   "topic": "Varicosities",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What causes varicose veins?",
+   "opts": [
+    [
+     "Thrombus formation within a deep vein",
+     "That is deep vein thrombosis, arising from stasis in a dilated deep vein."
+    ],
+    [
+     "Chronic high intraluminal pressure",
+     "Correct, producing dilated tortuous veins. Insufficiency of the venous valves is what allows that pressure to build. The wall support is weakened as well."
+    ],
+    [
+     "Inflammation of the vessel wall by immune complexes",
+     "That is vasculitis rather than a pressure-driven varicosity."
+    ],
+    [
+     "Direct connection between an artery and a vein",
+     "A direct connection between an artery and a vein is an arteriovenous fistula rather than a varicosity."
+    ]
+   ],
+   "c": 1,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 36"
+  },
+  {
+   "topic": "Raynaud phenomenon",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What produces the colour sequence in Raynaud phenomenon?",
+   "opts": [
+    [
+     "Haemorrhage into the skin followed by resorption",
+     "The colour change is due to changing perfusion and oxygenation rather than extravasated blood."
+    ],
+    [
+     "Deposition of immune complexes in dermal vessels",
+     "That would describe a vasculitic process rather than this vasospastic one."
+    ],
+    [
+     "Progressive thrombosis of digital arteries",
+     "The phenomenon is a reversible vasoconstrictive response rather than a thrombotic occlusion."
+    ],
+    [
+     "Vasoconstriction, anoxia, then reperfusion",
+     "Correct, and the sequence maps onto the colours in order: white to blue to red."
+    ]
+   ],
+   "c": 3,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 33"
+  },
+  {
+   "topic": "Aortic dissection",
+   "io": "Describe the molecular mechanisms of vascular pathologies",
+   "slot": "mechanism",
+   "q": "What happens to the aortic wall in dissection?",
+   "opts": [
+    [
+     "The laminar planes of the media split apart",
+     "Correct, and hypertension is the major risk factor, though Marfan syndrome and inflammation can also produce it. A blood-filled channel forms within the wall."
+    ],
+    [
+     "The intima thickens progressively, narrowing the lumen",
+     "Progressive intimal thickening that narrows the lumen is the neointimal response rather than a dissection."
+    ],
+    [
+     "The media calcifies without affecting the lumen",
+     "Calcification of the media without luminal change is Monckeberg medial sclerosis rather than a dissection."
+    ],
+    [
+     "The whole circumference dilates uniformly",
+     "That describes a fusiform aneurysm rather than a dissection."
+    ]
+   ],
+   "c": 0,
+   "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 29"
+  }
+ ]
+}
