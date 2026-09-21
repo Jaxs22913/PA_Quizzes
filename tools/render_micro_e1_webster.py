@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 """Render the Webster-style Microbiology Exam 1 quiz from its pool.
 
-One 60-question paper spanning all six Exam 1 lectures. The pool docstring
-explains the two things the review supplies -- her weighting of the
-objectives, and the four habits in how she asks -- and both are reflected
-here: the question mix follows her tiers, and the `io` groupings match her
-review headings for Lectures 1, 2 and 5 so the results breakdown lines up
-with the review page.
+One paper spanning all six Exam 1 lectures, weighted by her own review: her
+"know cold" objectives carry the most questions and her two explicit skips
+one each, while the three lectures she did not review are weighted evenly
+rather than lightly.
+
+Every stem asks exactly ONE thing. Her spoken style stacks several demands
+in a breath, and an earlier version of this copied that into the stems --
+which tests three things at once and tells a student nothing about which
+part they missed. The stacked items are split instead, which is why this is
+longer than the objective count alone would need.
+
+The `io` groupings match her review headings for Lectures 1, 2 and 5, so the
+results breakdown lines up with the review page.
 """
 import importlib.util, os, sys
 
@@ -24,11 +31,10 @@ PAL = dict(navy="#1f4d2b", indigo="#3f8a55", gold="#c2903a", ice="#e8f4ea")
 OUT = os.path.join(os.path.dirname(HERE), "Microbiology Exam 1")
 
 INTRO = (
-  "<p>Sixty questions across all six Exam 1 lectures, written in the shape the "
-  "questions tend to take: several demands in one stem, reasoning forward from a "
-  "structure to what follows from it, and mechanism rather than a list. The mix "
-  "follows the in-class review &mdash; the objectives graded <em>know cold</em> carry "
-  "the most questions here, and the two explicit skips carry one each.</p>"
+  "<p>Every question asks one thing. The mix follows the in-class review &mdash; the "
+  "objectives graded <em>know cold</em> carry the most questions here, and the two "
+  "explicit skips carry one each &mdash; and the groupings match that review's "
+  "headings, so the score breakdown at the end tells you which objective to go back to.</p>"
   "<p>Lectures 3, 4 and 6 were not covered in that review. They are weighted evenly "
   "with the rest rather than lightly, because silence was not a de-emphasis. Both "
   "confirmed calculations &mdash; the therapeutic index and the decimal reduction "

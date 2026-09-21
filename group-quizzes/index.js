@@ -289,7 +289,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-1-general-microbiology-quiz-version-2":{"title":"Review of General Microbiology — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-host-defenses-nonspecific-quiz":{"title":"Host Defenses: Nonspecific Mechanisms — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-host-defenses-nonspecific-quiz-version-2":{"title":"Host Defenses: Nonspecific Mechanisms — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
-"microbiology-exam-1-micro-exam-1-exam-style-quiz":{"title":"Microbiology Exam 1 — Exam-Style Review Quiz","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
+"microbiology-exam-1-micro-exam-1-exam-style-quiz":{"title":"Microbiology Exam 1 — Exam-Style Review Quiz","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":77},
 "microbiology-exam-1-micro-exam-1-master-exam-form-a":{"title":"Microbiology Exam 1 Master Exam — Form A","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
 "microbiology-exam-1-micro-exam-1-master-exam-form-b":{"title":"Microbiology Exam 1 Master Exam — Form B","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
 "microbiology-exam-1-micro-exam-1-master-exam-form-c":{"title":"Microbiology Exam 1 Master Exam — Form C","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
