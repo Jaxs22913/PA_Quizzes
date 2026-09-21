@@ -19,7 +19,7 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Horner syndrome", io=IO, lead="test",
-   q="A 61-year-old woman has ptosis and miosis on the left. You want to confirm the diagnosis in clinic. Which test does the lecture name?",
+   q="A 61-year-old woman has ptosis and miosis on the left. You want to confirm the diagnosis in clinic. Which test is named?",
    opts=[
      ["Dilute apraclonidine drops", "Correct. Ineffective in a normal pupil, they dilate the Horner pupil in most patients."],
      ["Dilute pilocarpine drops", "That is the test for an Adie tonic pupil, which is supersensitive to it."],
@@ -55,7 +55,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Marcus Gunn pupil", io=IO, lead="diagnosis",
-   q="A 33-year-old woman has a relative afferent pupillary defect on the left. Where does the lecture place the lesion?",
+   q="A 33-year-old woman has a relative afferent pupillary defect on the left. Where is the lesion placed?",
    opts=[
      ["Retina or optic nerve", "Correct, and therefore pre-chiasmal."],
      ["Optic chiasm", "A chiasmal lesion gives a field defect rather than this pupillary sign."],
@@ -91,7 +91,7 @@ POOL_A = [
    c=0, cite=c(35)),
 
  dict(topic="Adie tonic pupil", io=IO, lead="test",
-   q="A 31-year-old woman has a unilateral large, poorly reactive pupil. Which bedside test does the lecture use to support an Adie pupil?",
+   q="A 31-year-old woman has a unilateral large, poorly reactive pupil. Which bedside test is used to support an Adie pupil?",
    opts=[
      ["Dilute pilocarpine drops", "Correct. The denervated pupil is supersensitive and constricts."],
      ["Dilute apraclonidine drops", "That is the Horner syndrome test."],
@@ -127,7 +127,7 @@ POOL_A = [
    c=0, cite=c(41)),
 
  dict(topic="Third nerve palsy", io=IO, lead="diagnosis",
-   q="A 66-year-old man with long-standing diabetes has a third nerve palsy with a normal, reactive pupil. Which cause does the lecture name as most common?",
+   q="A 66-year-old man with long-standing diabetes has a third nerve palsy with a normal, reactive pupil. Which cause is named as most common?",
    opts=[
      ["Microvascular disease", "Correct, and pupil sparing is what makes it the likely one here."],
      ["Posterior communicating artery aneurysm", "That is the most dreaded cause, and it typically involves the pupil."],
@@ -136,7 +136,7 @@ POOL_A = [
    c=0, cite=c(40)),
 
  dict(topic="Third nerve palsy", io=IO, lead="diagnosis",
-   q="Which structure does the lecture identify as the most dreaded cause of a pupil-involved third nerve palsy?",
+   q="Which structure is identified as the most dreaded cause of a pupil-involved third nerve palsy?",
    opts=[
      ["Posterior communicating artery aneurysm", "Correct, with rupture threatened within hours to days."],
      ["Internal carotid artery dissection", "That causes a third-order Horner syndrome instead."],
@@ -154,7 +154,7 @@ POOL_A = [
    c=0, cite=c(43)),
 
  dict(topic="Fourth nerve palsy", io=IO, lead="diagnosis",
-   q="What does the lecture say is anatomically unique about the trochlear nerve?",
+   q="What is anatomically unique about the trochlear nerve?",
    opts=[
      ["It arises dorsally and crosses", "Correct, so the left nucleus supplies the right eye."],
      ["It carries parasympathetic fibres", "Those travel with the third nerve."],
@@ -172,7 +172,7 @@ POOL_A = [
    c=0, cite=c(45)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="next step",
-   q="A 59-year-old woman has an isolated, atraumatic sixth nerve palsy. Which investigation does the lecture direct?",
+   q="A 59-year-old woman has an isolated, atraumatic sixth nerve palsy. Which investigation is directed?",
    opts=[
      ["MRI brain with and without contrast", "Correct, and check haemoglobin A1C if there are risk factors and no known diabetes."],
      ["Stat computed tomography angiography", "That is reserved for a pupil-involved third nerve palsy."],
@@ -235,7 +235,7 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
-   q="A patient has horizontal jerk nystagmus. How is jerk nystagmus named, per the lecture?",
+   q="A patient has horizontal jerk nystagmus. How is jerk nystagmus named?",
    opts=[
      ["For the direction of the fast beat", "Correct, and it increases on gaze in that direction."],
      ["For the eye that is affected", "Laterality is not what names it."],
@@ -253,7 +253,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Opioid toxicity", io=IO, lead="education",
-   q="A patient is discharged after naloxone reversal. Which point does the lecture emphasise?",
+   q="A patient is discharged after naloxone reversal. Which point is emphasised?",
    opts=[
      ["Naloxone may need repeating", "Correct. It lasts about two hours, so respiratory depression can return."],
      ["The pupils will stay dilated", "Opioid toxicity constricts the pupils."],

@@ -8,7 +8,7 @@ IOB = "11 — Identify medical care strategies for pre-malignant and malignant c
 
 VIG_D = [
  dict(topic="Clinical approach", io=IOA, lead="next step",
-   q="A patient presents with a lesion you have not seen before. Before you commit to a diagnosis, what does the deck ask you to do?",
+   q="A patient presents with a lesion you have not seen before. Before you commit to a diagnosis, what should you do?",
    opts=[
      ["Characterise it systematically",
       "Correct — describe before naming. Lesion type, colour, texture, border, size, distribution, palpability, ulceration, bleeding, induration and evolution."],
@@ -21,7 +21,7 @@ VIG_D = [
    c=0, cite=c(4)),
 
  dict(topic="Clinical approach", io=IOA, lead="test",
-   q="A 60-year-old is being examined for a suspicious lesion. Which additional sites does the deck ask you to include, and when is the oral cavity specifically indicated?",
+   q="A 60-year-old is being examined for a suspicious lesion. Which additional sites must be included, and when is the oral cavity specifically indicated?",
    opts=[
      ["Palms, soles and nails in all; the oral mucosa specifically when Kaposi sarcoma is possible; regional nodes for invasive or high-risk disease",
       "Correct — the oral examination is tied to Kaposi sarcoma."],
@@ -47,7 +47,7 @@ VIG_D = [
    c=0, cite=c(15)),
 
  dict(topic="Actinic keratosis", io=IOA, lead="diagnosis",
-   q="A 70-year-old woman has an actinic keratosis on her forearm. Which single distinction does the deck call the most important when assessing it?",
+   q="A 70-year-old woman has an actinic keratosis on her forearm. Which single distinction is called the most important when assessing it?",
    opts=[
      ["Early squamous cell carcinoma or carcinoma in situ",
       "Correct — thickness, induration, ulceration or bleeding all raise it."],
@@ -80,7 +80,7 @@ VIG_D = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, lead="treatment",
-   q="A 68-year-old man's biopsy reports squamous cell carcinoma in situ on the forearm with no high-risk features. Which options does the deck give?",
+   q="A 68-year-old man's biopsy reports squamous cell carcinoma in situ on the forearm with no high-risk features. Which options are given?",
    opts=[
      ["Imiquimod, topical fluorouracil",
       "Correct — three options for appropriately selected in situ disease. Or curettage and electrodesiccation."],
@@ -93,7 +93,7 @@ VIG_D = [
    c=0, cite=c(24)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, lead="education",
-   q="A patient asks how likely his actinically induced squamous cell carcinoma is to spread. Which figure does the deck give, and what raises it?",
+   q="A patient asks how likely his actinically induced squamous cell carcinoma is to spread. Which figure is given, and what raises it?",
    opts=[
      ["An estimated 3 to 7%, raised substantially by high-risk sites or features, immunosuppression, multiple tumours, recurrence, or nodal involvement",
       "Correct — the baseline is modest but modifiable."],
@@ -128,7 +128,7 @@ VIG_D = [
    c=0, cite=c(35)),
 
  dict(topic="Basal cell carcinoma", io=IOB, lead="treatment",
-   q="A patient with an advanced basal cell carcinoma is no longer a surgical candidate. Which systemic option does the deck give?",
+   q="A patient with an advanced basal cell carcinoma is no longer a surgical candidate. Which systemic option is given?",
    opts=[
      ["A hedgehog pathway inhibitor",
       "Correct — reserved for advanced or metastatic disease or extensive tumour burden. Vismodegib or sonidegib."],
@@ -150,7 +150,7 @@ VIG_D = [
    c=0, cite=c(41)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="next step",
-   q="A 45-year-old patient has a suspicious pigmented lesion that needs sampling. Which is the initial diagnostic test the deck names?",
+   q="A 45-year-old patient has a suspicious pigmented lesion that needs sampling. Which is the initial diagnostic test?",
    opts=[
      ["Biopsy or excision to confirm the diagnosis",
       "Correct — tissue is required before staging decisions."],
@@ -198,7 +198,7 @@ VIG_D = [
    c=0, cite=c(63)),
 
  dict(topic="Kaposi sarcoma", io=IOB, lead="treatment",
-   q="An 82-year-old with classic Kaposi sarcoma has a few troublesome plaques on one shin and no visceral disease. Which local options does the deck give?",
+   q="An 82-year-old with classic Kaposi sarcoma has a few troublesome plaques on one shin and no visceral disease. Which local options are given?",
    opts=[
      ["Palliative local therapy — intralesional vincristine, vinblastine or bleomycin, or radiation",
       "Correct — cryotherapy and intralesional vinblastine are also listed for all forms."],
@@ -211,7 +211,7 @@ VIG_D = [
    c=0, cite=c(66)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, lead="treatment",
-   q="A patient with early patch-stage cutaneous T-cell lymphoma is to begin treatment. Which initial skin-directed options does the deck list?",
+   q="A patient with early patch-stage cutaneous T-cell lymphoma is to begin treatment. Which initial skin-directed options are listed?",
    opts=[
      ["Topical corticosteroids, topical mechlorethamine, bexarotene gel",
       "Correct — four skin-directed options for early disease. Ultraviolet phototherapy."],
@@ -224,7 +224,7 @@ VIG_D = [
    c=0, cite=c(75)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, lead="next step",
-   q="A patient with cutaneous T-cell lymphoma develops enlarged inguinal nodes. What does the deck say these may represent, and what is required?",
+   q="A patient with cutaneous T-cell lymphoma develops enlarged inguinal nodes. What may these represent, and what is required?",
    opts=[
      ["They may be benign dermatopathic change or lymphoma involvement, and require directed biopsy or imaging to distinguish",
       "Correct — enlargement alone does not establish spread."],
@@ -237,7 +237,7 @@ VIG_D = [
    c=0, cite=c(70)),
 
  dict(topic="Nail unit neoplasms", io=IOA, lead="test",
-   q="A 58-year-old patient asks you to look at one abnormal nail. Which preparatory step does the deck specify before inspection?",
+   q="A 58-year-old patient asks you to look at one abnormal nail. Which preparatory step is specified before inspection?",
    opts=[
      ["Remove the polish and inspect every nail, the periungual skin, the palms and soles, and the regional nodes",
       "Correct — a single-nail problem is assessed against all the others."],
@@ -250,7 +250,7 @@ VIG_D = [
    c=0, cite=c(93)),
 
  dict(topic="Nail unit neoplasms", io=IOA, lead="diagnosis",
-   q="A patient has a single nail with longitudinal erythronychia, distal subungual hyperkeratosis and splinter haemorrhages. Which benign tumours does the deck associate with this pattern?",
+   q="A patient has a single nail with longitudinal erythronychia, distal subungual hyperkeratosis and splinter haemorrhages. Which benign tumours are associated with this pattern?",
    opts=[
      ["Onychopapilloma or onychomatricoma",
       "Correct — single-nail longitudinal change with distal hyperkeratosis."],
@@ -263,7 +263,7 @@ VIG_D = [
    c=0, cite=c(86)),
 
  dict(topic="Nail unit neoplasms", io=IOB, lead="treatment",
-   q="A 66-year-old man has a nail unit squamous cell carcinoma confirmed on biopsy. Which surgical approach does the deck prefer, and when is amputation considered?",
+   q="A 66-year-old man has a nail unit squamous cell carcinoma confirmed on biopsy. Which surgical approach is preferred, and when is amputation considered?",
    opts=[
      ["Complete margin-controlled surgery — Mohs or wide surgical excision",
       "Correct — amputation is reserved for bone invasion or disease that cannot otherwise be cleared, and partial or limited destructive treatment carries a higher recurrence risk."],

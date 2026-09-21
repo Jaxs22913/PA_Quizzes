@@ -45,8 +45,18 @@ CITES = re.compile(
 
 def scan():
     found = {}
-    for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                           "*pool*.py"))):
+    # The glob was "*pool*.py" alone, which silently missed every VIGNETTE
+    # bank: those are named cms_e2l1_vig_a.py with no "pool" in the name, so
+    # 370 citations across 32 files sat outside the scan while this reported
+    # the site clean. Tooling scripts stay excluded -- importing a module runs
+    # it, and some of these download images or shell out to OCR.
+    here = os.path.dirname(os.path.abspath(__file__))
+    cands = sorted(set(glob.glob(os.path.join(here, "*pool*.py")))
+                   | set(glob.glob(os.path.join(here, "*_vig*.py"))))
+    skip = re.compile(r"(partition|lengthfix|check_|render_|build_|dump_|apply_|_rx)")
+    for f in cands:
+        if skip.search(os.path.basename(f)):
+            continue
         mod = os.path.basename(f)[:-3]
         try:
             spec = importlib.util.spec_from_file_location(mod, f)

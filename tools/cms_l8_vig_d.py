@@ -26,7 +26,7 @@ IOB = "11 — Identify medical care strategies for pigmented skin lesions for ad
 
 VIG_D = [
  dict(topic="Ephelides", io=IOA, lead="treatment",
-   q="A 24-year-old with red hair and widespread freckling across her nose and cheeks asks what can be done about them. Which management does the deck support, and which must be avoided?",
+   q="A 24-year-old with red hair and widespread freckling across her nose and cheeks asks what can be done about them. Which management is supported, and which must be avoided?",
    opts=[
      ["Sun protection, patient education and topical depigmenting agents; cryotherapy is NOT used",
       "Correct — cryotherapy is difficult because of the size of the lesions, so intense pulsed light or lasers are preferred."],
@@ -65,7 +65,7 @@ VIG_D = [
    c=0, cite=c(12)),
 
  dict(topic="Seborrheic keratosis", io=IOA, lead="treatment",
-   q="A 70-year-old man wants several waxy stuck-on lesions on his trunk removed because they catch on his clothing. Which options does the deck give?",
+   q="A 70-year-old man wants several waxy stuck-on lesions on his trunk removed because they catch on his clothing. Which options are given?",
    opts=[
      ["Retinoids, cryotherapy or quality-switched laser, since removal here is elective",
       "Correct — treatment is not necessary; removal is for cosmetic or symptomatic reasons."],
@@ -117,7 +117,7 @@ VIG_D = [
    c=0, cite=c(25)),
 
  dict(topic="Vitiligo", io=IOA, lead="education",
-   q="A 31-year-old man with extensive vitiligo says the condition troubles him socially far more than physically. Which aspect of care does the deck single out alongside repigmentation?",
+   q="A 31-year-old man with extensive vitiligo says the condition troubles him socially far more than physically. Which aspect of care is singled out alongside repigmentation?",
    opts=[
      ["Psychological intervention, alongside cosmetic and non-traditional therapies",
       "Correct — it is listed as part of management rather than as an afterthought."],
@@ -130,7 +130,7 @@ VIG_D = [
    c=0, cite=c(25)),
 
  dict(topic="Congenital melanocytic naevus", io=IOA, lead="next step",
-   q="A newborn has a large pigmented patch across the posterior midline of the neck and upper back. What does the deck require next?",
+   q="A newborn has a large pigmented patch across the posterior midline of the neck and upper back. What is required next?",
    opts=[
      ["Magnetic resonance imaging of the brain, with or without total spine, matched to where the naevus sits",
       "Correct — head, neck or posterior midline lesions raise neurocutaneous melanosis."],
@@ -143,7 +143,7 @@ VIG_D = [
    c=0, cite=c(30)),
 
  dict(topic="Congenital melanocytic naevus", io=IOA, lead="education",
-   q="The parents of a child with a very large congenital naevus ask what support exists. What does the deck point them towards, and what shapes the plan?",
+   q="The parents of a child with a very large congenital naevus ask what support exists. What is pointed them towards, and what shapes the plan?",
    opts=[
      ["Counselling and support groups, with management balancing melanoma risk, cosmetic outcome and preserved function",
       "Correct — the goal is removing as much as possible while preserving function and improving appearance."],

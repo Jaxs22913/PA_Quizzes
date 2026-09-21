@@ -162,7 +162,7 @@ VIG_A = [
    c=0, cite=c(16)),
 
  dict(topic="Keloid", io=IOA, lead="treatment",
-   q="A patient is offered compression therapy for a keloid. Which regimen matches the lecture?",
+   q="A patient is offered compression therapy for a keloid. Which regimen is correct?",
    opts=[
      ["Twenty-five millimetres of mercury, round the clock, six to twelve months",
       "Correct — the mechanism is not understood, but it possibly induces tissue hypoxia with fibroblast degeneration and subsequent collagen degradation."],
@@ -240,7 +240,7 @@ VIG_A = [
    c=0, cite=c(25)),
 
  dict(topic="Cutaneous horn", io=IOA, lead="test",
-   q="Four patients each have a hard, hornlike keratotic projection. Which of them best matches the epidemiology the lecture gives for cutaneous horn?",
+   q="Four patients each have a hard, hornlike keratotic projection. Which of them best matches the epidemiology of cutaneous horn?",
    opts=[
      ["A 62-year-old Caucasian with a lesion on the ear",
       "Correct — Caucasians over fifty, on head, neck and upper extremities."],
@@ -305,7 +305,7 @@ VIG_A = [
    c=0, cite=c(11)),
 
  dict(topic="Keloid", io=IOA, lead="treatment",
-   q="A patient's keloid has been treated with laser. Which addition does the lecture say gives the best result?",
+   q="A patient's keloid has been treated with laser. Which addition gives the best result?",
    opts=[
      ["Combining the laser with intralesional steroids",
       "Correct — laser works by shrinking collagen or inducing microvascular thrombosis."],

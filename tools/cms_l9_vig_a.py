@@ -47,7 +47,7 @@ VIG_A = [
    c=0, cite=c(14)),
 
  dict(topic="Actinic keratosis", io=IOA, lead="treatment",
-   q="A 74-year-old farmer has eleven actinic keratoses across his forehead and temples. Which approach does the deck favour, and why?",
+   q="A 74-year-old farmer has eleven actinic keratoses across his forehead and temples. Which approach is favoured, and why?",
    opts=[
      ["Field-directed therapy, because multiple lesions in one anatomic region reflect field cancerization risk",
       "Correct — options are fluorouracil, imiquimod, photodynamic therapy, or fluorouracil plus calcipotriene."],
@@ -69,7 +69,7 @@ VIG_A = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, lead="next step",
-   q="A 58-year-old kidney transplant recipient, six years post-transplant, has developed his fourth squamous cell carcinoma this year. Which does the deck say about this pattern, and what can be offered to reduce new tumours?",
+   q="A 58-year-old kidney transplant recipient, six years post-transplant, has developed his fourth squamous cell carcinoma this year. Which is true of this pattern, and what can be offered to reduce new tumours?",
    opts=[
      ["Multiple tumours typically emerge about five years after transplant and are often aggressive; nicotinamide 500 mg orally twice daily reduces new squamous cell carcinoma by about 30%",
       "Correct — both the timing and the chemoprevention figure."],
@@ -150,7 +150,7 @@ VIG_A = [
    c=0, cite=c(36)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="treatment",
-   q="A 64-year-old has a biopsy-confirmed superficial basal cell carcinoma on the upper back, with no high-risk features. Which topical regimen fits the deck, and what must follow it?",
+   q="A 64-year-old has a biopsy-confirmed superficial basal cell carcinoma on the upper back, with no high-risk features. Which topical regimen is appropriate, and what must follow it?",
    opts=[
      ["Imiquimod five nights weekly for 6 to 10 weeks, or fluorouracil twice daily for up to 12 weeks; clinical clearance must be confirmed afterwards",
       "Correct — confirming clearance is part of the regimen, not optional."],

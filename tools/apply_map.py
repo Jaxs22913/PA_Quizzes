@@ -22,7 +22,10 @@ print("mapping: %d entries" % len(want))
 # global uniqueness check FIRST -- a per-file check passes happily while the
 # same string is being replaced in three other pools it does not belong to.
 where = {}
-for path in sorted(glob.glob(os.path.join(TOOLS, "*pool*.py"))):
+for path in sorted(set(glob.glob(os.path.join(TOOLS, "*pool*.py")))
+                   | set(glob.glob(os.path.join(TOOLS, "*_vig*.py")))):
+    if __import__("re").search(r"(partition|lengthfix|check_|render_|build_|dump_|apply_|_rx)", os.path.basename(path)):
+        continue
     try:
         tree = ast.parse(open(path, encoding="utf-8").read())
     except SyntaxError:
@@ -37,7 +40,13 @@ if dupes:
     sys.exit("refusing to apply: %d mapping entries are not unique" % len(dupes))
 
 hit, files = 0, 0
-for path in sorted(glob.glob(os.path.join(TOOLS, "*pool*.py"))):
+import re as _re
+_cands = sorted(set(glob.glob(os.path.join(TOOLS, "*pool*.py")))
+                | set(glob.glob(os.path.join(TOOLS, "*_vig*.py"))))
+_skip = _re.compile(r"(partition|lengthfix|check_|render_|build_|dump_|apply_|_rx)")
+for path in _cands:
+    if _skip.search(os.path.basename(path)):
+        continue
     src = open(path, encoding="utf-8").read()
     if not any(k in src for k in want):
         continue

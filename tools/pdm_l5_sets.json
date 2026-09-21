@@ -4,7 +4,7 @@
    "topic": "Correlation",
    "io": "h — Correlate chemistry findings with other diagnostic modalities when appropriate",
    "slot": "initial test",
-   "q": "Why does the deck include an electrocardiogram in the ketoacidosis workup?",
+   "q": "Why is an electrocardiogram included in the ketoacidosis workup?",
    "opts": [
     [
      "To confirm the diagnosis of ketoacidosis",
@@ -12,11 +12,11 @@
     ],
     [
      "To look for the cardiac effects of a raised potassium",
-     "Correct — the deck ties the tracing to potassium."
+     "Correct — potassium shifts make the tracing an immediate read-out of cardiac risk while the laboratory result is still awaited."
     ],
     [
      "To exclude a myocardial infarction as the precipitant",
-     "A reasonable clinical thought, but not the deck's stated reason."
+     "Infarction can precipitate ketoacidosis, but the tracing is included primarily to detect the cardiac effects of potassium shifts."
     ],
     [
      "To measure the degree of dehydration",
@@ -30,7 +30,7 @@
    "topic": "Fluid balance",
    "io": "i — Explain laboratory evaluation of fluid and electrolyte homeostasis",
    "slot": "test finding",
-   "q": "Which four core tests does the deck list for evaluating water and electrolyte balance?",
+   "q": "Which four core tests are listed for evaluating water and electrolyte balance?",
    "opts": [
     [
      "Albumin, total protein, prothrombin time, and bilirubin",
@@ -38,11 +38,11 @@
     ],
     [
      "Serum sodium, serum osmolality, urine sodium and osmolality, and the urea nitrogen to creatinine ratio",
-     "Correct — the deck's core set, with potassium noted alongside."
+     "Correct — serum sodium and osmolality, urine sodium and osmolality, and the urea nitrogen to creatinine ratio together locate the problem."
     ],
     [
      "Serum sodium, serum potassium, serum calcium, serum magnesium, and serum phosphate",
-     "Magnesium was not covered and the deck's list is not four cations."
+     "The evaluation is not simply four cations; it pairs serum measurements with urine measurements, and magnesium is not part of the set."
     ],
     [
      "Serum glucose, bicarbonate, the anion gap, and ketones",
@@ -56,7 +56,7 @@
    "topic": "Indications",
    "io": "g — Discuss indications for ordering chemistry panels",
    "slot": "initial test",
-   "q": "Under the deck's acute illness indication, which two situations call for a chemistry panel?",
+   "q": "Under the acute illness indication, which two situations call for a chemistry panel?",
    "opts": [
     [
      "Fever and a suspected bloodstream infection",
@@ -68,11 +68,11 @@
     ],
     [
      "Headache and a suspected migraine",
-     "The deck does not give this as an indication."
+     "A suspected migraine is diagnosed clinically; the acute indications are dehydration and a suspected acid-base disorder."
     ],
     [
      "Dehydration and a suspected acid-base disorder",
-     "Correct — the two the deck pairs under acute illness."
+     "Correct — dehydration shows as a rising urea nitrogen to creatinine ratio with concentrated electrolytes, and a bicarbonate with the anion gap identifies an acid-base disorder."
     ]
    ],
    "c": 3,
@@ -82,15 +82,15 @@
    "topic": "Panel groupings",
    "io": "a — Explain the components of a chemistry panel",
    "slot": "initial test",
-   "q": "Where does calcium sit in the deck's grouping of panel components?",
+   "q": "Where does calcium sit in the grouping of panel components?",
    "opts": [
     [
      "On its own, as the mineral",
-     "Correct — the deck lists calcium separately under mineral."
+     "Correct — calcium is grouped by itself as the mineral, because it is regulated by parathyroid hormone and vitamin D rather than by the renal handling that governs the other cations."
     ],
     [
      "With sodium and potassium as an electrolyte",
-     "The deck's electrolyte group is sodium, potassium, chloride, and bicarbonate."
+     "The electrolyte and acid-base group is sodium, potassium, chloride and bicarbonate; calcium is regulated differently and stands alone as the mineral."
     ],
     [
      "With the liver and protein markers",
@@ -116,7 +116,7 @@
     ],
     [
      "Bicarbonate is unstable and must be converted before measurement",
-     "The deck does not describe a conversion step."
+     "No conversion step is involved; the panel simply reports total carbon dioxide, which is overwhelmingly bicarbonate."
     ],
     [
      "It reflects the carbon dioxide cleared by the lungs that minute",
@@ -124,7 +124,7 @@
     ],
     [
      "The panel reports total carbon dioxide, which is mostly serum bicarbonate",
-     "Correct — the deck explains the label this way."
+     "Correct — the assay measures all forms of carbon dioxide in serum, and around 95 per cent of that is bicarbonate, so the label and the substance differ."
     ]
    ],
    "c": 3,
@@ -142,7 +142,7 @@
     ],
     [
      "Insulin lowers it; glucagon and the counter-regulatory hormones raise it",
-     "Correct — the deck's pairing for glucose regulation."
+     "Correct — insulin is the only hormone that lowers glucose, while glucagon, cortisol, adrenaline and growth hormone all raise it, which is why hypoglycaemia is defended against far more robustly than hyperglycaemia."
     ],
     [
      "Glucagon lowers it; insulin and cortisol raise it",
@@ -164,7 +164,7 @@
    "opts": [
     [
      "8 to 12 milliequivalents per litre",
-     "Correct — the range the deck prints and Reynolds repeated in the lecture."
+     "Correct — 8 to 12 milliequivalents per litre is the normal range when potassium is left out of the calculation."
     ],
     [
      "10 to 14 milliequivalents per litre",
@@ -172,11 +172,11 @@
     ],
     [
      "4 to 8 milliequivalents per litre",
-     "Below the deck's stated range."
+     "4 to 8 sits below normal; the standard range begins at 8 milliequivalents per litre."
     ],
     [
      "12 to 20 milliequivalents per litre",
-     "Above the deck's stated range."
+     "12 to 20 overlaps the raised range; normal tops out at 12 milliequivalents per litre."
     ]
    ],
    "c": 0,
@@ -186,11 +186,11 @@
    "topic": "Glucose",
    "io": "b(v) — Discuss the physiological role of glucose",
    "slot": "test finding",
-   "q": "What effect do the speaker notes say marked hyperglycaemia has on the measured sodium?",
+   "q": "What effect does marked hyperglycaemia have on the measured sodium?",
    "opts": [
     [
      "It leaves it unchanged but raises the potassium",
-     "The notes describe an effect on sodium."
+     "The effect described is on sodium: osmotic water movement out of cells dilutes it, which is why a correction factor exists."
     ],
     [
      "It makes the sodium unmeasurable until the glucose is corrected",
@@ -198,7 +198,7 @@
     ],
     [
      "It lowers it, by dilution",
-     "Correct — the notes describe a dilutional fall in measured sodium."
+     "Correct — glucose is osmotically active and draws water out of cells into the extracellular space, diluting the sodium by roughly 1.6 millimoles per litre for every 100 milligrams per decilitre of excess glucose."
     ],
     [
      "It raises it, by drawing water into the cells",
@@ -216,11 +216,11 @@
    "opts": [
     [
      "Chem-10",
-     "The deck names chem-7, chem-8, chem-12 and chem-14 only."
+     "The panels in use are the chem-7, chem-8, chem-12 and chem-14; the comprehensive panel is the last of these."
     ],
     [
      "Chem-14",
-     "Correct — the deck gives chem-14 as the alternative name."
+     "Correct — the panels are commonly named for the number of tests they carry, and the comprehensive panel holds fourteen."
     ],
     [
      "Chem-8",
@@ -228,7 +228,7 @@
     ],
     [
      "Chem-20",
-     "The deck does not use this name for any panel."
+     "Chem-20 is not one of the panel names in use here; the comprehensive panel is the chem-14."
     ]
    ],
    "c": 1,
@@ -246,7 +246,7 @@
     ],
     [
      "Gastrointestinal bleeding",
-     "Correct — one of the non-renal causes the deck lists."
+     "Correct — blood in the gut is digested as a large protein meal, so urea production rises sharply and the ratio to creatinine climbs."
     ],
     [
      "Low dietary protein intake",
@@ -280,7 +280,7 @@
     ],
     [
      "Metabolites, electrolytes, kidney markers, and in the expanded version liver and protein markers",
-     "Correct — the deck's own one-line definition of the panel."
+     "Correct — the panel samples the plasma chemistry that the kidneys and liver regulate, so it reports on fuel, electrolyte balance and waste handling in a single draw."
     ]
    ],
    "c": 3,
@@ -290,7 +290,7 @@
    "topic": "Creatinine",
    "io": "b(vii) — Discuss the physiological role of creatinine",
    "slot": "test finding",
-   "q": "Which three factors does the deck say influence creatinine and can make it misleading?",
+   "q": "Which three factors influence creatinine and can make it misleading?",
    "opts": [
     [
      "Protein intake, hydration, and recent bleeding",
@@ -302,11 +302,11 @@
     ],
     [
      "Time of day, posture, and fasting state",
-     "The deck does not list these."
+     "Time of day, posture and fasting have negligible effect; muscle mass, age and sex are what shift creatinine production."
     ],
     [
      "Muscle mass, age, and sex",
-     "Correct — the three the deck names."
+     "Correct — creatinine production tracks muscle mass, which falls with age and is lower in women, so the same value means a different filtration rate in different people."
     ]
    ],
    "c": 3,
@@ -320,11 +320,11 @@
    "opts": [
     [
      "Potassium is unaffected by alkalosis",
-     "The deck describes a definite direction of movement."
+     "Alkalosis has a definite effect; it drives potassium into cells and lowers the serum level."
     ],
     [
      "Potassium shifts into cells, so the serum level falls",
-     "Correct — the shift the deck describes for alkalosis."
+     "Correct — in alkalosis hydrogen ions leave cells and potassium moves in to maintain electroneutrality, so the serum potassium falls."
     ],
     [
      "Potassium shifts out of cells, so the serum level rises",
@@ -332,7 +332,7 @@
     ],
     [
      "Potassium is retained by the kidney, so the serum level rises",
-     "The deck describes a shift across the cell membrane."
+     "The fall is a shift into cells rather than renal retention; retention would raise the serum level, not lower it."
     ]
    ],
    "c": 1,
@@ -342,7 +342,7 @@
    "topic": "Blood urea nitrogen",
    "io": "b(vi) — Discuss the physiological role of blood urea nitrogen",
    "slot": "education",
-   "q": "What do the speaker notes say about reading blood urea nitrogen?",
+   "q": "What is true of reading blood urea nitrogen?",
    "opts": [
     [
      "Interpret it only when the patient is fasting",
@@ -350,15 +350,15 @@
     ],
     [
      "Interpret it only if the estimated filtration rate is normal",
-     "The notes set no such condition."
+     "Urea nitrogen is read against creatinine whatever the filtration rate; the ratio itself is what carries the information."
     ],
     [
      "Interpret it alongside creatinine, not alone",
-     "Correct — the notes' instruction for this value."
+     "Correct — urea nitrogen alone cannot distinguish dehydration or a protein load from kidney failure; the ratio to creatinine is what separates them."
     ],
     [
      "Interpret it alone, since creatinine is less specific",
-     "Creatinine is the more specific of the two, and the notes pair them."
+     "Creatinine is the more specific of the two for kidney function, which is precisely why urea nitrogen is read against it rather than alone."
     ]
    ],
    "c": 2,
@@ -372,7 +372,7 @@
    "opts": [
     [
      "A nitrogenous waste product of protein metabolism, produced by the liver and cleared by the kidneys",
-     "Correct — the deck's full description of its origin and clearance."
+     "Correct — amino acid breakdown yields ammonia, the liver converts it to urea in the urea cycle, and the kidney excretes it, so the value reflects both organs and protein load."
     ],
     [
      "A nitrogenous waste product of muscle metabolism, produced and cleared by the kidneys",
@@ -406,11 +406,11 @@
     ],
     [
      "Oral intake and renal excretion",
-     "Correct — the two the deck names as setting the serum level."
+     "Correct — sodium enters only by mouth and leaves chiefly through the kidney, so the serum level sits between dietary intake and renal excretion."
     ],
     [
      "Gastrointestinal absorption and biliary loss",
-     "Biliary loss is not a route the deck describes for sodium."
+     "Sodium secreted into the gut is largely reabsorbed, and bile is not a significant route of sodium loss; renal excretion is."
     ]
    ],
    "c": 2,
@@ -424,7 +424,7 @@
    "opts": [
     [
      "Albumin",
-     "Correct — the deck lists albumin as a synthetic product of the liver."
+     "Correct — albumin is manufactured by hepatocytes and sustains plasma oncotic pressure, so its level reports on synthetic capacity rather than on damage."
     ],
     [
      "Alkaline phosphatase",
@@ -450,11 +450,11 @@
    "opts": [
     [
      "In the cerebrospinal fluid specifically",
-     "The deck's contrast is extracellular against intracellular, not by compartment."
+     "Cerebrospinal fluid is an extracellular compartment, so sodium dominates there too; the meaningful contrast is extracellular against intracellular."
     ],
     [
      "In the biliary and pancreatic secretions",
-     "The deck makes no such claim."
+     "Biliary and pancreatic secretions are sodium-rich but are not where sodium is defined as the major cation; that is the extracellular fluid as a whole."
     ],
     [
      "In the extracellular fluid",
@@ -472,11 +472,11 @@
    "topic": "Reference ranges",
    "io": "a — Explain the components of a chemistry panel",
    "slot": "education",
-   "q": "What does the deck advise before launching an extensive workup on a borderline abnormal result?",
+   "q": "What is advised before launching an extensive workup on a borderline abnormal result?",
    "opts": [
     [
      "Repeat or confirm the abnormality",
-     "Correct — the deck's instruction, with confirming a raised alkaline phosphatase as its example."
+     "Correct — a value just outside the range may be biological variation or a pre-analytic artefact, so confirming it first avoids an expensive workup chasing a number that was never real."
     ],
     [
      "Proceed straight to imaging",
@@ -484,11 +484,11 @@
     ],
     [
      "Treat empirically and recheck afterwards",
-     "The deck does not suggest treating before confirming."
+     "Treating before confirming risks committing a patient to therapy for an abnormality that a repeat would not reproduce."
     ],
     [
      "Refer to the relevant specialist",
-     "Referral is not the deck's next step for a borderline value."
+     "Referral on an unconfirmed borderline value passes on a question that a repeat test might answer immediately."
     ]
    ],
    "c": 0,
@@ -524,15 +524,15 @@
    "topic": "Sodium",
    "io": "b(i) — Discuss the physiological role of sodium",
    "slot": "etiology",
-   "q": "Which two mechanisms do the speaker notes say control water handling, and therefore serum sodium?",
+   "q": "Which two mechanisms control water handling, and therefore serum sodium?",
    "opts": [
     [
      "Thirst and antidiuretic hormone",
-     "Correct — the two the notes name for water handling."
+     "Correct — thirst governs water taken in and antidiuretic hormone governs water retained, so together they set the dilution of the sodium."
     ],
     [
      "Renin and angiotensin",
-     "The notes assign the renin-angiotensin-aldosterone system to extracellular volume instead."
+     "The renin-angiotensin-aldosterone system controls sodium handling and so extracellular volume; water handling runs through thirst and antidiuretic hormone."
     ],
     [
      "Aldosterone and atrial natriuretic peptide",
@@ -554,19 +554,19 @@
    "opts": [
     [
      "Calculate the anion gap",
-     "Correct — the deck says always to calculate the gap when bicarbonate is low, and Reynolds repeated it in the lecture."
+     "Correct — the gap separates acidosis caused by added acid from acidosis caused by bicarbonate loss, which is the first branch point in finding the cause."
     ],
     [
      "Order an arterial blood gas before anything else",
-     "A gas may follow, but the deck's immediate next step is the gap."
+     "A blood gas may follow to confirm the pH, but the gap is calculated first because it costs nothing and narrows the differential immediately."
     ],
     [
      "Repeat the panel to exclude a laboratory error",
-     "Repeating is the deck's advice for borderline values generally, not for this trigger."
+     "Repeating is the response to a borderline value; a clearly low bicarbonate calls for the anion gap."
     ],
     [
      "Give intravenous bicarbonate",
-     "The deck's next step is diagnostic rather than therapeutic."
+     "Bicarbonate is not given reflexively; the cause of the acidosis is established first, starting with the gap."
     ]
    ],
    "c": 0,
@@ -576,7 +576,7 @@
    "topic": "Hepatic patterns",
    "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders",
    "slot": "differential",
-   "q": "Which causes do the speaker notes give for a cholestatic pattern?",
+   "q": "Which causes produce a cholestatic pattern?",
    "opts": [
     [
      "Viral hepatitis, alcohol, ischaemia, and drug injury",
@@ -588,11 +588,11 @@
     ],
     [
      "Heart failure and sepsis",
-     "Neither is on the notes' cholestatic list."
+     "Heart failure and sepsis cause hepatic congestion and ischaemic injury, which produce a hepatocellular rather than a cholestatic pattern."
     ],
     [
      "Bile duct obstruction, gallstones, and primary biliary cholangitis",
-     "Correct — the three the notes list."
+     "Correct — bile duct obstruction, gallstones and primary biliary cholangitis all impede bile flow, which is what raises alkaline phosphatase preferentially."
     ]
    ],
    "c": 3,
@@ -602,23 +602,23 @@
    "topic": "Potassium",
    "io": "b(ii) — Discuss the physiological role of potassium",
    "slot": "complication",
-   "q": "Why does the deck stress that small fluctuations in potassium matter?",
+   "q": "Why do small fluctuations in potassium matter?",
    "opts": [
     [
      "Small changes reliably indicate that the sample was taken or handled incorrectly",
-     "Collection artefact is a real issue but is not the deck's point here."
+     "Haemolysis does falsely raise potassium, but the reason small genuine changes matter is their effect on the membrane potential and cardiac rhythm."
     ],
     [
      "Small changes are usually meaningless and can be ignored",
-     "The deck says the opposite."
+     "Small changes are far from meaningless; the normal range is narrow and small shifts can cause arrhythmia."
     ],
     [
      "Small changes only matter in patients with kidney disease",
-     "The deck does not restrict the significance to renal patients."
+     "The risk is not confined to renal patients; any patient's cardiac conduction depends on the potassium gradient."
     ],
     [
      "Small changes in the serum level carry significant physiological consequences",
-     "Correct — the deck's reason for treating potassium as high-stakes."
+     "Correct — the normal range is narrow and the membrane potential depends on the gradient, so a shift of a single millimole can provoke a dangerous arrhythmia."
     ]
    ],
    "c": 3,
@@ -628,23 +628,23 @@
    "topic": "Reading a panel",
    "io": "d — Interpret abnormal chemistry values and their clinical significance",
    "slot": "education",
-   "q": "What does the deck say usually follows any single or combined abnormality on a panel?",
+   "q": "What usually follows any single or combined abnormality on a panel?",
    "opts": [
     [
      "Referral to the relevant specialist",
-     "Referral is not the deck's stated next step."
+     "Referral may follow eventually, but the immediate next step is to confirm the abnormality."
     ],
     [
      "Repeating the whole panel every day",
-     "The deck asks for confirmation, not daily repetition."
+     "Repeating the whole panel daily is neither targeted nor necessary; it is the specific abnormality that gets confirmed."
     ],
     [
      "Confirmatory testing",
-     "Correct — the deck says an abnormality usually warrants confirmation."
+     "Correct — a single abnormal value is a screening signal rather than a diagnosis, so it is confirmed before it is acted on."
     ],
     [
      "Immediate treatment of the abnormal value",
-     "The deck's next step is diagnostic."
+     "Treating the number before confirming it risks acting on a transient or spurious result; confirmation comes first."
     ]
    ],
    "c": 2,
@@ -662,7 +662,7 @@
     ],
     [
      "It shifts back into the cell to preserve electrical neutrality",
-     "Correct — the reciprocal shift the deck describes."
+     "Correct — this is the chloride shift: as bicarbonate leaves the red cell, chloride enters to replace the lost negative charge."
     ],
     [
      "It shifts out of the cell alongside bicarbonate",
@@ -670,7 +670,7 @@
     ],
     [
      "It is excreted by the kidney within minutes",
-     "The deck describes a transcellular shift, not renal loss."
+     "The movement is across the red cell membrane within seconds, not a renal loss over minutes."
     ]
    ],
    "c": 1,
@@ -680,7 +680,7 @@
    "topic": "Overlap syndromes",
    "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders",
    "slot": "differential",
-   "q": "Which syndrome does the deck give as showing both liver and kidney failure at once?",
+   "q": "Which syndrome is given as showing both liver and kidney failure at once?",
    "opts": [
     [
      "Diabetic ketoacidosis",
@@ -688,11 +688,11 @@
     ],
     [
      "Nephrotic syndrome",
-     "The deck does not name this among its overlap examples."
+     "Nephrotic syndrome is a purely renal protein-losing disorder; it does not produce concurrent liver failure."
     ],
     [
      "Hepatorenal syndrome",
-     "Correct — the deck names this as the overlap of the two patterns."
+     "Correct — hepatorenal syndrome is renal failure arising from advanced liver disease, so the hepatic and renal patterns appear together."
     ],
     [
      "Cardiorenal syndrome",
@@ -706,23 +706,23 @@
    "topic": "Hepatic patterns",
    "io": "d — Interpret abnormal chemistry values and their clinical significance",
    "slot": "test finding",
-   "q": "How do the speaker notes band the magnitude of a transaminase rise?",
+   "q": "How is the magnitude of a transaminase rise banded?",
    "opts": [
     [
      "Mild under five times, moderate five to fifteen times, and severe over fifteen times the upper limit",
-     "Correct — the three bands the notes give."
+     "Correct — a rise under five times the upper limit is mild, five to fifteen times is moderate, and over fifteen times is severe."
     ],
     [
      "Mild under two times, moderate two to ten times, and severe over ten times the upper limit",
-     "Not the bands the notes use."
+     "Two and ten times are not the thresholds; the bands fall at five and fifteen times the upper limit of normal."
     ],
     [
      "Mild under ten times, moderate ten to fifty times, and severe over fifty times the upper limit",
-     "These thresholds are higher than the notes state."
+     "Ten and fifty times are far too high; severe disease begins at fifteen times the upper limit, not fifty."
     ],
     [
      "Mild under three times, moderate three to twenty times, and severe over twenty times the upper limit",
-     "Not the deck's banding."
+     "Three and twenty times are close but wrong; the bands fall at five and fifteen times the upper limit of normal."
     ]
    ],
    "c": 0,
@@ -740,7 +740,7 @@
     ],
     [
      "Sodium minus the sum of chloride and bicarbonate",
-     "Correct — the standard formula as the deck prints it."
+     "Correct — the gap is sodium minus the sum of chloride and bicarbonate, and what remains represents the unmeasured anions."
     ],
     [
      "Sodium minus chloride, without subtracting bicarbonate",
@@ -762,7 +762,7 @@
    "opts": [
     [
      "It is filtered from dietary creatine without being metabolised",
-     "The deck describes it as a metabolic product of muscle creatine."
+     "Dietary creatine contributes a little, but most creatinine comes from the steady breakdown of creatine phosphate within muscle."
     ],
     [
      "It is produced by the kidney tubules during filtration",
@@ -770,7 +770,7 @@
     ],
     [
      "It is a waste product of muscle creatine metabolism",
-     "Correct — the deck's description of its origin."
+     "Correct — creatine phosphate in muscle breaks down to creatinine at a near-constant daily rate, which is what makes it a usable marker of filtration."
     ],
     [
      "It is a waste product of protein metabolism produced by the liver",
@@ -786,23 +786,23 @@
    "topic": "Correlation",
    "io": "h — Correlate chemistry findings with other diagnostic modalities when appropriate",
    "slot": "education",
-   "q": "What general lesson do the speaker notes draw about chemistry results?",
+   "q": "What general lesson applies to chemistry results?",
    "opts": [
     [
      "A lab value narrows the differential and directs the next test rather than being diagnostic by itself",
-     "Correct — the notes' point-of-care lesson."
+     "Correct — a chemistry result shifts the probability of the diagnoses under consideration and tells you what to order next, rather than settling the question on its own."
     ],
     [
      "A lab value is diagnostic on its own once it falls outside the reference range",
-     "The notes argue the opposite."
+     "Falling outside the reference range makes a value abnormal, not diagnostic; roughly one in twenty healthy people sits outside any given range."
     ],
     [
      "A lab value should always be confirmed by imaging before acting",
-     "Imaging follows only where the notes indicate it."
+     "Imaging is ordered where the abnormality points to a structural cause, not as a routine confirmation of every laboratory value."
     ],
     [
      "A lab value is only useful when the whole panel is abnormal",
-     "The notes make no such claim."
+     "A single abnormal value is informative on its own; an isolated result still narrows the differential and points to the next test."
     ]
    ],
    "c": 0,
@@ -820,7 +820,7 @@
     ],
     [
      "Helping transport carbon dioxide in the bloodstream",
-     "Correct — the deck pairs buffering with carbon dioxide transport."
+     "Correct — most carbon dioxide travels from the tissues to the lungs as bicarbonate in plasma rather than dissolved as gas."
     ],
     [
      "Helping transport oxygen to the tissues",
@@ -838,11 +838,11 @@
    "topic": "Liver studies",
    "io": "c — Discuss basic liver function studies included in chemistry testing",
    "slot": "test finding",
-   "q": "Which four tissues besides the liver does the deck say aspartate aminotransferase is found in?",
+   "q": "Which four tissues besides the liver is aspartate aminotransferase found in?",
    "opts": [
     [
      "Cardiac muscle, skeletal muscle, kidney, and brain",
-     "Correct — the four the deck lists."
+     "Correct — the enzyme is widespread in metabolically active tissue, which is why a rise without a matching alanine transaminase points away from the liver."
     ],
     [
      "Bone, placenta, intestine, and kidney",
@@ -850,11 +850,11 @@
     ],
     [
      "Spleen, pancreas, lung, and thyroid",
-     "The deck names none of these."
+     "Spleen, pancreas, lung and thyroid are not significant sources; the extrahepatic ones are cardiac and skeletal muscle, kidney and brain."
     ],
     [
      "Red blood cells, platelets, bone marrow, and lymph nodes",
-     "Not tissues the deck associates with this enzyme."
+     "Red cells release the enzyme only when haemolysed in the sample; the genuine tissue sources are cardiac and skeletal muscle, kidney and brain."
     ]
    ],
    "c": 0,
@@ -872,7 +872,7 @@
     ],
     [
      "An increase in unmeasured acids",
-     "Correct — the speaker notes' interpretation of a wide gap."
+     "Correct — a wide gap means unmeasured anions have accumulated, as with lactate, ketoacids or an ingested toxin."
     ],
     [
      "A loss of bicarbonate from the gut or kidney",
@@ -894,11 +894,11 @@
    "opts": [
     [
      "It lowers the strong ion difference",
-     "The deck gives the opposite direction."
+     "The strong ion difference rises rather than falls; losing chloride, a strong anion, widens the gap between the strong cations and anions."
     ],
     [
      "It directly removes hydrogen ions from the blood",
-     "Vomiting removes acid from the stomach, but the deck's stated mechanism here is the ion difference."
+     "Vomiting does remove gastric acid, but the alkalosis is sustained by chloride loss widening the strong ion difference rather than by direct removal of hydrogen ions from blood."
     ],
     [
      "It stimulates the lungs to retain carbon dioxide",
@@ -906,7 +906,7 @@
     ],
     [
      "It raises the strong ion difference",
-     "Correct — the deck's stated mechanism."
+     "Correct — chloride is a strong anion, so losing it in gastric fluid widens the strong ion difference, and electroneutrality is restored by a rise in bicarbonate."
     ]
    ],
    "c": 3,
@@ -916,7 +916,7 @@
    "topic": "Anion gap",
    "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders",
    "slot": "test finding",
-   "q": "How does the deck say the anion gap should be adjusted when albumin is low?",
+   "q": "How should the anion gap be adjusted when albumin is low?",
    "opts": [
     [
      "Correct it by 1.6 for every one gram per decilitre",
@@ -924,7 +924,7 @@
     ],
     [
      "Correct it upward by about 2.5 for every one gram per decilitre the albumin has fallen",
-     "Correct — the correction the deck prints."
+     "Correct — albumin is itself an unmeasured anion, so a low albumin falsely narrows the gap and the correction adds about 2.5 for each gram per decilitre lost."
     ],
     [
      "Correct it downward by about 2.5 for every one gram per decilitre the albumin has fallen",
@@ -976,7 +976,7 @@
     ],
     [
      "Chemical balance, metabolism, and organ function",
-     "Correct — the three words the deck uses for what the panel shows."
+     "Correct — the panel captures a single moment, showing whether the internal chemical environment is balanced, whether fuel is being handled normally, and whether the organs that maintain both are working."
     ],
     [
      "Infection, inflammation, and immune response",
@@ -994,11 +994,11 @@
    "topic": "Renal pattern",
    "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders",
    "slot": "test finding",
-   "q": "Besides urea nitrogen and creatinine, which findings does the deck list in the renal pattern?",
+   "q": "Besides urea nitrogen and creatinine, which findings are listed in the renal pattern?",
    "opts": [
     [
      "A raised phosphate, a lowered calcium, and albuminuria",
-     "Correct — the deck lists these alongside the potassium and acidosis."
+     "Correct — the failing kidney retains phosphate and loses the ability to activate vitamin D, so calcium falls, while glomerular damage leaks albumin into the urine."
     ],
     [
      "A raised calcium, a lowered phosphate, and glycosuria",
@@ -1020,23 +1020,23 @@
    "topic": "Potassium",
    "io": "b(ii) — Discuss the physiological role of potassium",
    "slot": "etiology",
-   "q": "Besides renal excretion, what is the other mechanism the speaker notes give for potassium regulation?",
+   "q": "Besides renal excretion, what is the other mechanism of potassium regulation?",
    "opts": [
     [
      "Loss through sweat and insensible routes",
-     "Not a mechanism the notes raise for regulation."
+     "Sweat is a trivial route of potassium loss; regulation works through renal excretion and transcellular shift."
     ],
     [
      "Transcellular shifts driven by insulin, acid-base status, and catecholamines",
-     "Correct — the three drivers of shift that the notes list."
+     "Correct — insulin and catecholamines drive potassium into cells and acidosis drives it out, so the serum level can move sharply without any change in total body potassium."
     ],
     [
      "Storage in, and release from, the glycogen held in skeletal muscle",
-     "The notes describe shift across membranes, not glycogen storage."
+     "Potassium moves across cell membranes rather than being stored with glycogen; insulin, acid-base status and catecholamines drive that shift."
     ],
     [
      "Binding to and release from plasma albumin",
-     "Potassium is not protein-bound in the way the notes describe."
+     "Potassium circulates free rather than bound to albumin, which is why the measured serum level responds so quickly to transcellular shifts."
     ]
    ],
    "c": 1,
@@ -1046,7 +1046,7 @@
    "topic": "Reading a panel",
    "io": "d — Interpret abnormal chemistry values and their clinical significance",
    "slot": "initial test",
-   "q": "In the deck's stepwise approach to an abnormal comprehensive metabolic panel, which step comes first?",
+   "q": "In the stepwise approach to an abnormal comprehensive metabolic panel, which step comes first?",
    "opts": [
     [
      "The kidney group — urea nitrogen, creatinine, and the filtration rate",
@@ -1054,15 +1054,15 @@
     ],
     [
      "The minerals — calcium",
-     "Calcium is the last step in the deck's sequence."
+     "Calcium is read last; the electrolytes and acid-base group come first."
     ],
     [
      "The electrolytes and acid-base group, then calculate the anion gap",
-     "Correct — the deck's first step, ending in the gap calculation."
+     "Correct — the electrolytes and acid-base group is read first because the anion gap calculated from it reframes everything that follows."
     ],
     [
      "The liver group — the transaminases, alkaline phosphatase, and bilirubin",
-     "Liver comes fourth in the deck's order."
+     "The liver group is read fourth; the electrolytes and the anion gap come first."
     ]
    ],
    "c": 2,
@@ -1072,7 +1072,7 @@
    "topic": "Hepatic patterns",
    "io": "e — Compare and contrast laboratory patterns seen in renal, hepatic and metabolic disorders",
    "slot": "differential",
-   "q": "Which two causes do the speaker notes give for isolated hyperbilirubinaemia?",
+   "q": "Which two causes produce isolated hyperbilirubinaemia?",
    "opts": [
     [
      "Viral hepatitis and drug injury",
@@ -1084,7 +1084,7 @@
     ],
     [
      "Gilbert syndrome and haemolysis",
-     "Correct — the two the notes name for a raised bilirubin with normal enzymes."
+     "Correct — Gilbert syndrome impairs bilirubin conjugation and haemolysis floods the liver with bilirubin, so bilirubin rises while the hepatocytes and biliary tree stay intact and their enzymes stay normal."
     ],
     [
      "Gallstones and primary biliary cholangitis",
@@ -1102,11 +1102,11 @@
    "opts": [
     [
      "Lactate dehydrogenase",
-     "Not the confirmatory test the deck gives."
+     "Lactate dehydrogenase is present in almost every tissue and so localises nothing; gamma-glutamyl transferase is the discriminating test."
     ],
     [
      "A bone-specific isoenzyme assay",
-     "The deck's stated route is the transferase."
+     "Isoenzyme assays exist but are rarely used; in practice gamma-glutamyl transferase separates a biliary from a bony source."
     ],
     [
      "A repeat alkaline phosphatase in one month",
@@ -1114,7 +1114,7 @@
     ],
     [
      "Gamma-glutamyl transferase",
-     "Correct — the deck names this as the confirmatory step."
+     "Correct — gamma-glutamyl transferase is present in the biliary tract but not in bone, so a rise in both localises the source to the liver."
     ]
    ],
    "c": 3,
@@ -1124,15 +1124,15 @@
    "topic": "Blood urea nitrogen",
    "io": "b(vi) — Discuss the physiological role of blood urea nitrogen",
    "slot": "differential",
-   "q": "Which four non-renal factors does the deck list as raising blood urea nitrogen?",
+   "q": "Which four non-renal factors are listed as raising blood urea nitrogen?",
    "opts": [
     [
      "Dehydration, gastrointestinal bleeding, high protein intake, and catabolic states",
-     "Correct — the four the deck names when calling the value non-specific."
+     "Correct — dehydration concentrates it and increases tubular reabsorption, while bleeding, dietary protein and catabolism all increase the nitrogen load presented to the liver."
     ],
     [
      "Dehydration, haemolysis, low protein intake, and pregnancy",
-     "Haemolysis, low protein intake, and pregnancy are not on the deck's list."
+     "Haemolysis affects potassium and bilirubin, while low protein intake and pregnancy both LOWER urea nitrogen rather than raising it."
     ],
     [
      "Liver failure, malnutrition, overhydration, and immobility",
@@ -1150,11 +1150,11 @@
    "topic": "Sodium",
    "io": "b(i) — Discuss the physiological role of sodium",
    "slot": "etiology",
-   "q": "The speaker notes distinguish what serum sodium reflects from what governs extracellular volume. Which pairing is correct?",
+   "q": "What serum sodium reflects is distinct from what governs extracellular volume. Which pairing is correct?",
    "opts": [
     [
      "Serum sodium reflects water balance; total-body sodium governs extracellular volume",
-     "Correct — the distinction the notes draw."
+     "Correct — the concentration tells you about water, while the total quantity of sodium in the body determines how much extracellular fluid there is to hold it."
     ],
     [
      "Serum sodium reflects total-body sodium; water balance governs extracellular volume",
@@ -1162,7 +1162,7 @@
     ],
     [
      "Both serum sodium and total-body sodium reflect water balance",
-     "The notes separate the two rather than equating them."
+     "The two are separate: the serum concentration tracks water, while total-body sodium sets extracellular volume."
     ],
     [
      "Serum sodium reflects extracellular volume; water balance governs total-body sodium",
@@ -1176,15 +1176,15 @@
    "topic": "Reference ranges",
    "io": "a — Explain the components of a chemistry panel",
    "slot": "education",
-   "q": "Following from how a normal range is defined, what does the deck conclude about a normal result?",
+   "q": "Following from how a normal range is defined, what is concluded about a normal result?",
    "opts": [
     [
      "A normal value effectively excludes disease",
-     "The deck says the opposite."
+     "A normal value lowers the probability of disease without excluding it, because the range is built from a healthy distribution rather than to discriminate disease."
     ],
     [
      "A normal value should always be repeated",
-     "It is the borderline abnormal value the deck says to confirm."
+     "It is the borderline abnormal result that warrants repeating; a normal one is interpreted against the clinical picture."
     ],
     [
      "A normal value means the sample was handled correctly",
@@ -1192,7 +1192,7 @@
     ],
     [
      "A normal value does not exclude disease",
-     "Correct — the deck states this directly."
+     "Correct — the range is set to capture most healthy people, not to separate sick from well, so a patient with disease can sit inside it just as a healthy person can sit outside."
     ]
    ],
    "c": 3,
@@ -1232,19 +1232,19 @@
    "opts": [
     [
      "Magnetic resonance cholangiopancreatography",
-     "Not the deck's first step."
+     "Magnetic resonance cholangiopancreatography is reserved for defining biliary anatomy after ultrasound has raised the question."
     ],
     [
      "Plain abdominal radiography",
-     "The deck does not give this for abnormal liver tests."
+     "Plain radiography does not usefully show the liver parenchyma or the biliary tree."
     ],
     [
      "Ultrasound",
-     "Correct — the deck names ultrasound first, for steatosis and biliary dilation."
+     "Correct — ultrasound comes first because it is non-invasive and shows both steatosis and biliary dilation."
     ],
     [
      "Computed tomography with contrast",
-     "The deck lists this after ultrasound."
+     "Contrast computed tomography follows ultrasound rather than preceding it."
     ]
    ],
    "c": 2,
@@ -1254,23 +1254,23 @@
    "topic": "Creatinine",
    "io": "b(vii) — Discuss the physiological role of creatinine",
    "slot": "test finding",
-   "q": "Why does the deck call creatinine a more specific marker of kidney function than blood urea nitrogen?",
+   "q": "Why is creatinine a more specific marker of kidney function than blood urea nitrogen?",
    "opts": [
     [
      "It is produced at a rate that never varies between people, whatever their build or age",
-     "Muscle mass, age, and sex all influence it, as the deck says."
+     "Production does vary between people, with muscle mass, age and sex, which is why estimating equations adjust for them."
     ],
     [
      "It is measured by a more accurate laboratory method",
-     "The deck's argument is physiological rather than analytic."
+     "Both are measured reliably; the advantage is physiological, in that creatinine is not reabsorbed and is not affected by protein load or bleeding."
     ],
     [
      "It rises earlier in kidney injury than any other marker",
-     "The deck's point is specificity, not earliness."
+     "Creatinine is in fact a late marker, rising only after substantial filtration has been lost; its advantage is specificity rather than early warning."
     ],
     [
      "It is filtered by the kidneys and rises as the filtration rate falls, without the many non-renal influences on urea nitrogen",
-     "Correct — specificity is the contrast the deck draws between the two."
+     "Correct — creatinine is produced at a steady rate and cleared almost entirely by filtration, whereas urea is reabsorbed by the tubules and varies with protein load, bleeding and hydration."
     ]
    ],
    "c": 3,
@@ -1280,7 +1280,7 @@
    "topic": "Chloride",
    "io": "b(iii) — Discuss the physiological role of chloride",
    "slot": "test finding",
-   "q": "A patient has a low chloride with a high bicarbonate. Which acid-base picture do the speaker notes say this suggests?",
+   "q": "A patient has a low chloride with a high bicarbonate. Which acid-base picture does this suggest?",
    "opts": [
     [
      "Metabolic acidosis with a raised anion gap",
@@ -1288,7 +1288,7 @@
     ],
     [
      "Respiratory acidosis",
-     "The notes tie this chloride and bicarbonate pattern to metabolic alkalosis."
+     "Respiratory acidosis raises bicarbonate through renal compensation but does not strip chloride; the low chloride points to acid loss."
     ],
     [
      "A normal anion gap acidosis from bicarbonate loss",
@@ -1296,7 +1296,7 @@
     ],
     [
      "Metabolic alkalosis, such as from vomiting",
-     "Correct — the notes give exactly this pattern and this cause."
+     "Correct — vomiting loses hydrochloric acid, stripping chloride while bicarbonate is retained, so the two move in opposite directions."
     ]
    ],
    "c": 3,
@@ -1310,7 +1310,7 @@
    "opts": [
     [
      "A postrenal obstructive cause",
-     "The deck's contrast is prerenal against intrinsic."
+     "Obstruction produces a mixed picture; the ratio above twenty to one specifically indicates a prerenal, hypoperfusion cause."
     ],
     [
      "A hepatic cause",
@@ -1318,7 +1318,7 @@
     ],
     [
      "A prerenal cause",
-     "Correct — the deck uses this ratio to separate prerenal from intrinsic renal causes."
+     "Correct — in hypoperfusion the tubules reabsorb urea along with sodium and water while creatinine is not reclaimed, so urea rises disproportionately."
     ],
     [
      "An intrinsic renal cause",
@@ -1358,7 +1358,7 @@
    "topic": "Potassium",
    "io": "b(ii) — Discuss the physiological role of potassium",
    "slot": "test finding",
-   "q": "Why do the speaker notes flag insulin and acid-base status specifically when reading diabetic ketoacidosis results?",
+   "q": "Why must insulin and acid-base status be considered specifically when reading diabetic ketoacidosis results?",
    "opts": [
     [
      "Both interfere chemically with the potassium assay",
@@ -1366,15 +1366,15 @@
     ],
     [
      "Both shift potassium across the cell membrane, so the serum value can mislead",
-     "Correct — the reason the notes give for reading those labs carefully."
+     "Correct — acidosis drives potassium out of cells and insulin drives it back in, so a normal or high serum potassium can conceal a large total-body deficit that treatment will unmask."
     ],
     [
      "Both raise the measured potassium by causing haemolysis of the sample",
-     "Haemolysis is a collection artefact and is not what the notes describe."
+     "Haemolysis is a collection artefact; here the concern is a genuine physiological shift of potassium across cell membranes."
     ],
     [
      "Both reduce renal potassium excretion to near zero",
-     "The notes describe shift, not a halt in excretion."
+     "Excretion continues and is in fact increased by the osmotic diuresis; what misleads is the shift of potassium between compartments."
     ]
    ],
    "c": 1,
@@ -1384,11 +1384,11 @@
    "topic": "Indications",
    "io": "g — Discuss indications for ordering chemistry panels",
    "slot": "manifestation",
-   "q": "Which cluster of symptoms does the deck give as an indication for a chemistry panel?",
+   "q": "Which cluster of symptoms is given as an indication for a chemistry panel?",
    "opts": [
     [
      "Fatigue, weakness, oedema, jaundice, confusion, nausea and vomiting",
-     "Correct — the symptom list the deck prints under its indications."
+     "Correct — each can arise from a chemical derangement the panel detects: uraemia, electrolyte disturbance, hypoalbuminaemia, hyperbilirubinaemia or acidosis."
     ],
     [
      "Fever, night sweats, weight loss, and lymph node swelling",
@@ -1422,7 +1422,7 @@
     ],
     [
      "True hypotonic hyponatraemia from the pseudo- and hypertonic forms",
-     "Correct — the separation the deck assigns to osmolality."
+     "Correct — osmolality is normal in pseudohyponatraemia and raised in the hypertonic form, so it isolates the true hypotonic case."
     ],
     [
      "Prerenal failure from intrinsic renal failure",
@@ -1440,7 +1440,7 @@
    "opts": [
     [
      "The osmolality is normal in pseudohyponatraemia",
-     "Correct — a falsely low sodium with a normal osmolality is the deck's definition."
+     "Correct — in pseudohyponatraemia the measured sodium reads low while osmolality stays normal, because lipid or protein displaces plasma water."
     ],
     [
      "The osmolality is low in pseudohyponatraemia",
@@ -1462,7 +1462,7 @@
    "topic": "Vomiting case",
    "io": "f — Explain the relationship between electrolyte abnormalities and acid-base disorders",
    "slot": "test finding",
-   "q": "In the deck's case of three days of intractable vomiting, what does the panel show?",
+   "q": "In a case of three days of intractable vomiting, what does the panel show?",
    "opts": [
     [
      "Raised sodium, raised potassium, and a normal bicarbonate",
@@ -1474,7 +1474,7 @@
     ],
     [
      "Low sodium, low potassium, low chloride, and a raised bicarbonate with alkalaemia",
-     "Correct — the pattern the deck prints for the case."
+     "Correct — vomiting loses sodium, potassium, chloride and hydrogen ions in gastric fluid, so all three electrolytes fall while bicarbonate rises and the blood turns alkalaemic."
     ],
     [
      "Low sodium, raised potassium, raised chloride, and a low bicarbonate with acidaemia",
@@ -1488,23 +1488,23 @@
    "topic": "Glucose",
    "io": "b(v) — Discuss the physiological role of glucose",
    "slot": "etiology",
-   "q": "Besides the pancreatic hormones, which organ does the deck say contributes to glucose regulation, and how?",
+   "q": "Besides the pancreatic hormones, which organ contributes to glucose regulation, and how?",
    "opts": [
     [
      "The thyroid, through its effect on metabolic rate",
-     "Metabolic rate is not the mechanism the deck names here."
+     "Thyroid hormone raises metabolic rate and so glucose turnover, but the organ that makes glucose alongside the liver is the kidney."
     ],
     [
      "The adrenal medulla, through glycogen storage",
-     "Glycogen is stored in liver and muscle, and the deck names gluconeogenesis."
+     "The adrenal medulla releases adrenaline, which mobilises glucose but stores none; glycogen is held in liver and muscle, and the kidney contributes by gluconeogenesis."
     ],
     [
      "The kidney, through gluconeogenesis",
-     "Correct — the deck credits the kidney with a gluconeogenic contribution."
+     "Correct — the renal cortex performs gluconeogenesis alongside the liver, contributing a significant share of glucose production during a prolonged fast."
     ],
     [
      "The spleen, through glucose storage",
-     "The spleen has no such role in the deck."
+     "The spleen filters blood and houses lymphoid tissue; it stores no glucose and plays no part in glucose regulation."
     ]
    ],
    "c": 2,
@@ -1514,23 +1514,23 @@
    "topic": "Potassium",
    "io": "b(ii) — Discuss the physiological role of potassium",
    "slot": "complication",
-   "q": "Which complication do the speaker notes attribute to BOTH high and low potassium?",
+   "q": "Which complication follows BOTH high and low potassium?",
    "opts": [
     [
      "Seizures",
-     "Not the complication the notes give for potassium."
+     "Seizures are associated with sodium and calcium disturbance; potassium extremes threaten cardiac rhythm."
     ],
     [
      "Acute kidney injury",
-     "Kidneys regulate potassium rather than failing because of it in the notes."
+     "The kidney regulates potassium rather than failing because of it; the shared danger at either extreme is arrhythmia."
     ],
     [
      "Hepatic encephalopathy with confusion",
-     "The notes make no such link."
+     "Hepatic encephalopathy follows liver failure and ammonia accumulation, not a potassium derangement."
     ],
     [
      "Life-threatening cardiac arrhythmias",
-     "Correct — the notes name arrhythmia as the shared danger at either extreme."
+     "Correct — both directions distort the resting membrane potential of cardiac muscle, so either extreme can precipitate a fatal arrhythmia."
     ]
    ],
    "c": 3,
@@ -1540,23 +1540,23 @@
    "topic": "Potassium",
    "io": "b(ii) — Discuss the physiological role of potassium",
    "slot": "etiology",
-   "q": "How does the deck describe the renal handling of potassium?",
+   "q": "How is the renal handling of potassium described?",
    "opts": [
     [
      "It is reabsorbed in exchange for sodium in the proximal tubule",
-     "The deck does not describe such an exchange."
+     "No such proximal exchange is described; potassium is excreted without reabsorption."
     ],
     [
      "It is excreted by the kidneys with no reabsorption",
-     "Correct — the deck's stated main physiological point about potassium."
+     "Correct — potassium is filtered and secreted without meaningful reabsorption, so losses continue whether or not intake does."
     ],
     [
      "It is filtered and then almost entirely reabsorbed",
-     "The deck states there is no reabsorption."
+     "Almost complete reabsorption describes sodium handling; potassium is excreted without being reclaimed."
     ],
     [
      "It is neither filtered nor secreted, and is lost only in stool",
-     "The deck names the kidney as the route of loss."
+     "The kidney is the main route of potassium loss; stool is a minor contributor."
     ]
    ],
    "c": 1,

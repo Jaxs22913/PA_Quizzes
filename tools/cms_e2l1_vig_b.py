@@ -319,7 +319,7 @@ VIG_B = [
    c=0, cite=c(39)),
 
  dict(topic="Red eye triage", io=IOA, lead="next step", slot="initial test",
-   q="A 36-year-old man presents with a red eye. Before deciding what is wrong, which assessment does the lecture say to complete first?",
+   q="A 36-year-old man presents with a red eye. Before deciding what is wrong, which assessment must be completed first?",
    opts=[
      ["Visual acuity in each eye with correction, pupils, extraocular movements, corneal clarity with fluorescein, the pattern of injection and discharge, and the contact lens, trauma, surgery and steroid history",
       "Correct — the deck's first-60-seconds sequence, completed before naming a diagnosis."],
@@ -441,7 +441,7 @@ VIG_B = [
    c=0, cite=c(41)),
 
  dict(topic="Anterior uveitis", io=IOA, lead="first-line", slot="first-line",
-   q="A 37-year-old woman with confirmed non-infectious anterior uveitis is under ophthalmology care. Which treatment does the lecture describe as typical?",
+   q="A 37-year-old woman with confirmed non-infectious anterior uveitis is under ophthalmology care. Which treatment is described as typical?",
    opts=[
      ["Topical corticosteroids", "Correct — for non-infectious anterior disease the deck gives topical steroids."],
      ["Intraocular corticosteroid injection", "That is needed for posterior disease, which does not respond to topical treatment."],
@@ -476,7 +476,7 @@ VIG_B = [
    c=0, cite=c(56)),
 
  dict(topic="Trachoma", io=IOA, lead="treatment" if False else "first-line", slot="agent/regimen",
-   q="A public health team is treating an area where trachoma prevalence is eight per cent. Which regimen does the lecture describe?",
+   q="A public health team is treating an area where trachoma prevalence is eight per cent. Which regimen is described?",
    opts=[
      ["Azithromycin one gram orally as a single dose, given to all eligible members of the evaluation unit",
       "Correct — mass drug administration, at or above the five per cent threshold."],

@@ -32,7 +32,7 @@ POOL_D = [
      ["Both retinas", "Bilateral retinal disease rarely respects the vertical midline."]],
    c=0, cite=c(52)),
  dict(topic="Nystagmus", io=IO, lead="next step",
-   q="A 22-year-old woman has new asymmetric nystagmus in one eye only. What does the lecture advise?",
+   q="A 22-year-old woman has new asymmetric nystagmus in one eye only. What is advised?",
    opts=[
      ["Refer for work-up", "Correct. Monocular or asymmetric nystagmus is specifically flagged as concerning."],
      ["Reassure, it is physiologic", "Physiologic gaze-evoked nystagmus is symmetric."],
@@ -104,7 +104,7 @@ POOL_D = [
      ["Opioids cause an afferent defect", "The afferent limb is not affected."]],
    c=0, cite=c(12)),
  dict(topic="Argyll Robertson pupil", io=IO, lead="test",
-   q="A 46-year-old man has bilateral small pupils with light-near dissociation. Which additional examination does the lecture's association suggest?",
+   q="A 46-year-old man has bilateral small pupils with light-near dissociation. Which additional examination does this association suggest?",
    opts=[
      ["Test posterior column function", "Correct. Tabes dorsalis with sensory ataxia accompanies it in tertiary syphilis."],
      ["Palpate the temporal arteries", "That relates to giant cell arteritis."],

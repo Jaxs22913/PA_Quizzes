@@ -29,7 +29,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="cause",
-   q="A 71-year-old woman has had three episodes of painless monocular blackout, each lasting under a minute. Which source does the lecture name as most common?",
+   q="A 71-year-old woman has had three episodes of painless monocular blackout, each lasting under a minute. Which source is named as most common?",
    opts=[
      ["A carotid or cardiac embolus", "Correct. Most commonly a transient ischemic attack of retinal origin."],
      ["Optic nerve demyelination", "That produces optic neuritis, which is not transient in this way."],
@@ -47,7 +47,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="test",
-   q="A 70-year-old man has transient monocular vision loss and you suspect a carotid source. Which study does the lecture pair with that suspicion?",
+   q="A 70-year-old man has transient monocular vision loss and you suspect a carotid source. Which study is paired with that suspicion?",
    opts=[
      ["Carotid Doppler ultrasound", "Correct. Echocardiography is the study when a cardiac source is suspected."],
      ["Echocardiogram", "That is the study for a suspected cardiac source."],
@@ -56,7 +56,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Acute vision loss", io=IOB, lead="next step",
-   q="A 66-year-old woman arrives having had sudden painless vision loss in one eye that has now resolved. She has no weakness, numbness or speech difficulty. Which imaging does the lecture say every such patient receives?",
+   q="A 66-year-old woman arrives having had sudden painless vision loss in one eye that has now resolved. She has no weakness, numbness or speech difficulty. Which imaging does every such patient receive?",
    opts=[
      ["Magnetic resonance angiography", "Correct. Every patient is evaluated for emboli across all the arteries."],
      ["Plain skull radiographs", "These have no role in this evaluation."],
@@ -65,7 +65,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Acute vision loss", io=IOB, lead="reasoning",
-   q="A 59-year-old man with sudden monocular vision loss and no other neurological findings asks why he is being worked up so aggressively. Which principle did the lecturer stress twice?",
+   q="A 59-year-old man with sudden monocular vision loss and no other neurological findings asks why he is being worked up so aggressively. Which principle explains it?",
    opts=[
      ["Sudden vision loss is a stroke until proven otherwise", "Correct. A stroke can present with acute vision loss and nothing else."],
      ["Sudden vision loss is a stroke only with weakness", "It can occur with no other symptom at all."],
@@ -74,7 +74,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="prognosis",
-   q="A 67-year-old woman with amaurosis fugax asks what happens next. What does the lecture give as the outlook?",
+   q="A 67-year-old woman with amaurosis fugax asks what happens next. What is given as the outlook?",
    opts=[
      ["About 85% recover fully", "Correct, and the remainder progress to a central retinal artery occlusion."],
      ["About half lose vision permanently", "The figure given is far more favourable."],
@@ -83,7 +83,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="treatment",
-   q="A 63-year-old man's transient monocular vision loss is traced to a carotid embolus with significant plaque. Which intervention does the lecture pair with that finding?",
+   q="A 63-year-old man's transient monocular vision loss is traced to a carotid embolus with significant plaque. Which intervention is paired with that finding?",
    opts=[
      ["Carotid endarterectomy", "Correct. Calcium channel blockers are reserved for vascular spasm."],
      ["Calcium channel blockers", "Those are used for Raynaud's and vascular spasm."],
@@ -92,7 +92,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="treatment",
-   q="A 69-year-old man has amaurosis fugax and you want to reduce his stroke risk. Which therapy does the lecture name?",
+   q="A 69-year-old man has amaurosis fugax and you want to reduce his stroke risk. Which therapy is named?",
    opts=[
      ["Aspirin and clopidogrel", "Correct, given to reduce cerebrovascular accident risk."],
      ["Oral acetazolamide", "That lowers intraocular pressure, not stroke risk."],
@@ -120,7 +120,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="test",
-   q="A 61-year-old woman has a painful red eye with a hazy cornea. Which measurement does the lecture make first?",
+   q="A 61-year-old woman has a painful red eye with a hazy cornea. Which measurement is made first?",
    opts=[
      ["Intraocular pressure", "Correct, by tonometry or gonioscopy; expect 40 to 80 mmHg."],
      ["Erythrocyte sedimentation rate", "That is for suspected arteritic optic neuropathy."],
@@ -129,7 +129,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="finding",
-   q="A 65-year-old man with a painful eye has tonometry performed. Which pressure range does the lecture give for acute angle closure?",
+   q="A 65-year-old man with a painful eye has tonometry performed. Which pressure range is given for acute angle closure?",
    opts=[
      ["40 to 80 mmHg", "Correct."],
      ["10 to 21 mmHg", "That is the normal range."],
@@ -147,7 +147,7 @@ POOL_A = [
    c=0, cite=c(20)),
 
  dict(topic="Angle-closure glaucoma", io=IOB, lead="treatment",
-   q="A 57-year-old man has acute angle closure and a very high intraocular pressure. Which does the lecture give as the intravenous agent, followed by mannitol or isosorbide?",
+   q="A 57-year-old man has acute angle closure and a very high intraocular pressure. Which is given as the intravenous agent, followed by mannitol or isosorbide?",
    opts=[
      ["Acetazolamide", "Correct, a carbonic anhydrase inhibitor used to drop the pressure rapidly."],
      ["Methylprednisolone", "That treats arteritic anterior ischemic optic neuropathy."],
@@ -156,7 +156,7 @@ POOL_A = [
    c=0, cite=c(20)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="risk factor",
-   q="A 59-year-old woman with a history of anterior uveitis is started on a new inhaler and later develops a painful red eye. Which class does the lecture flag as a risk factor?",
+   q="A 59-year-old woman with a history of anterior uveitis is started on a new inhaler and later develops a painful red eye. Which class is flagged as a risk factor?",
    opts=[
      ["Nebulized bronchodilators", "Correct, listed alongside systemic anticholinergics such as atropine."],
      ["Beta-blocker eye drops", "Those are used to treat glaucoma, not to precipitate it."],
@@ -193,7 +193,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="finding",
-   q="A 61-year-old woman is found to have chronic open-angle glaucoma. Which optic nerve finding did the lecturer call the classic sign?",
+   q="A 61-year-old woman is found to have chronic open-angle glaucoma. Which optic nerve finding is the classic sign?",
    opts=[
      ["Optic nerve cupping", "Correct, and the finding a non-ophthalmologist can most readily see."],
      ["Disc elevation with blurred margins", "That is papilledema."],
@@ -211,7 +211,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="pathophysiology",
-   q="A 70-year-old woman has chronic open-angle glaucoma. Which abnormality does the lecture describe?",
+   q="A 70-year-old woman has chronic open-angle glaucoma. Which abnormality is described?",
    opts=[
      ["Trabecular meshwork change with aging", "Correct, next to the canal of Schlemm, damaging the optic nerve."],
      ["The iris obstructing the drainage angle", "That is the acute angle-closure mechanism."],
@@ -220,7 +220,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="finding",
-   q="A 67-year-old man with optic nerve changes has an intraocular pressure of 18 mmHg. How does the lecture describe pressure in the chronic open-angle form?",
+   q="A 67-year-old man with optic nerve changes has an intraocular pressure of 18 mmHg. How is pressure described in the chronic open-angle form?",
    opts=[
      ["It may be normal or elevated", "Correct; nerve damage occurs with or without raised pressure."],
      ["It is always above 40 mmHg", "That range belongs to acute angle closure."],
@@ -229,7 +229,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Open-angle glaucoma", io=IOB, lead="treatment",
-   q="A 64-year-old woman is newly diagnosed with chronic open-angle glaucoma. Which does the lecture list as first-line?",
+   q="A 64-year-old woman is newly diagnosed with chronic open-angle glaucoma. Which is listed as first-line?",
    opts=[
      ["Latanoprost", "Correct, with tafluprost and timolol drops."],
      ["Laser peripheral iridotomy", "That is definitive treatment for the angle-closure form."],
@@ -238,7 +238,7 @@ POOL_A = [
    c=0, cite=c(21)),
 
  dict(topic="Open-angle glaucoma", io=IOB, lead="treatment",
-   q="A 72-year-old man has chronic open-angle glaucoma that continues to progress on maximal drops. Which does the lecture give next?",
+   q="A 72-year-old man has chronic open-angle glaucoma that continues to progress on maximal drops. What comes next?",
    opts=[
      ["Laser trabeculoplasty", "Correct, used when the disease is refractory or advanced."],
      ["A stronger prostaglandin analogue", "The lecture moves to laser or incisional surgery instead."],
@@ -266,7 +266,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Optic neuritis", io=IOA, lead="epidemiology",
-   q="A 26-year-old woman is diagnosed with optic neuritis. Which patient profile does the lecture describe for this condition?",
+   q="A 26-year-old woman is diagnosed with optic neuritis. Which patient profile is described for this condition?",
    opts=[
      ["Aged 18 to 45 and mostly female", "Correct; about 75% are women."],
      ["Aged over 60 and mostly male", "That fits the ischemic and occlusive diseases."],
@@ -275,7 +275,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Optic neuritis", io=IOA, lead="finding",
-   q="A 31-year-old man with optic neuritis has a swinging flashlight test performed. Which sign does the lecture name?",
+   q="A 31-year-old man with optic neuritis has a swinging flashlight test performed. Which sign is named?",
    opts=[
      ["A relative afferent pupillary defect", "Correct, also called a Marcus Gunn pupil."],
      ["Optic nerve cupping", "That belongs to chronic glaucoma."],
@@ -284,7 +284,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Optic neuritis", io=IOB, lead="test",
-   q="A 27-year-old woman has optic neuritis. Which imaging does the lecture specify?",
+   q="A 27-year-old woman has optic neuritis. Which imaging is specified?",
    opts=[
      ["MRI of brain and orbits, with and without contrast", "Correct, looking for demyelinating lesions."],
      ["Orbital ultrasound", "That is used for retinal detachment."],
@@ -293,7 +293,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Optic neuritis", io=IOB, lead="next step",
-   q="A 33-year-old woman with optic neuritis has an MRI showing three characteristic demyelinating lesions. What does the lecture say happens next?",
+   q="A 33-year-old woman with optic neuritis has an MRI showing three characteristic demyelinating lesions. What happens next?",
    opts=[
      ["Referral to neurology or neuro-ophthalmology", "Correct, once at least two such lesions are present."],
      ["Reassurance and discharge", "Those lesions require onward referral."],
@@ -302,7 +302,7 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Optic neuritis", io=IOA, lead="prognosis",
-   q="A 28-year-old man with optic neuritis asks whether his sight will return. What does the lecture say?",
+   q="A 28-year-old man with optic neuritis asks whether his sight will return. What should he be told?",
    opts=[
      ["Vision usually recovers spontaneously", "Correct; it begins improving within weeks and is usually normal within a year."],
      ["Vision loss is permanent", "Spontaneous recovery is the rule."],
@@ -357,7 +357,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Retinal detachment", io=IOA, lead="test",
-   q="A 66-year-old man has a suspected retinal detachment but the view on fundoscopy is poor. Which study does the lecture prefer?",
+   q="A 66-year-old man has a suspected retinal detachment but the view on fundoscopy is poor. Which study is preferred?",
    opts=[
      ["Ocular ultrasound", "Correct, more sensitive than fundoscopy and it types the detachment."],
      ["Fluorescein angiography", "That is used in the vascular occlusions."],
@@ -375,7 +375,7 @@ POOL_A = [
    c=0, cite=c(30)),
 
  dict(topic="Retinal detachment", io=IOB, lead="treatment",
-   q="A 59-year-old man needs repair of a retinal detachment. Which does the lecture list as an option?",
+   q="A 59-year-old man needs repair of a retinal detachment. Which is listed as an option?",
    opts=[
      ["Scleral buckle", "Correct, with vitrectomy, pneumatic retinopexy, cryotherapy and laser photocoagulation."],
      ["Peripheral iridotomy", "That treats angle-closure glaucoma."],
@@ -384,7 +384,7 @@ POOL_A = [
    c=0, cite=c(30)),
 
  dict(topic="Retinal detachment", io=IOA, lead="finding",
-   q="A 65-year-old woman undergoes dilated ophthalmoscopy for suspected detachment. Which appearance does the lecture describe?",
+   q="A 65-year-old woman undergoes dilated ophthalmoscopy for suspected detachment. Which appearance is described?",
    opts=[
      ["An elevated grey area with folds", "Correct, well demarcated and pigmented, with orange crescent-shaped tears."],
      ["A cherry-red spot at the fovea", "That is arterial occlusion."],

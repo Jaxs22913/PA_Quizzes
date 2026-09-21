@@ -34,7 +34,7 @@ VIG_A = [
    c=0, cite=c(12)),
 
  dict(topic="Tinea capitis", io=IOC, lead="diagnosis",
-   q="A mother asks why her 6-year-old daughter developed a scalp fungal infection when she herself has never had one. Which explanation best fits the epidemiology in the lecture?",
+   q="A mother asks why her 6-year-old daughter developed a scalp fungal infection when she herself has never had one. Which explanation best fits the epidemiology?",
    opts=[
      ["It is predominantly a disease of preadolescent children, because after puberty changes in the fatty acid content of sebum are believed to inhibit dermatophyte growth",
       "Correct — sebum fatty acids after puberty are the proposed reason."],
@@ -60,7 +60,7 @@ VIG_A = [
    c=0, cite=c(10)),
 
  dict(topic="Tinea capitis", io=IOB, lead="test",
-   q="A 5-year-old has a scaly patch of alopecia. Before starting a prolonged systemic antifungal course, which investigations does the lecture recommend?",
+   q="A 5-year-old has a scaly patch of alopecia. Before starting a prolonged systemic antifungal course, which investigations are recommended?",
    opts=[
      ["Potassium hydroxide microscopy and fungal culture when feasible",
       "Correct — confirm before committing to prolonged oral therapy."],
@@ -99,7 +99,7 @@ VIG_A = [
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, lead="treatment",
-   q="Culture from a child's scalp grows a Microsporum species. Which oral agent does the lecture say is often favored?",
+   q="Culture from a child's scalp grows a Microsporum species. Which oral agent is often favored?",
    opts=[
      ["Griseofulvin",
       "Correct — griseofulvin is often favored for Microsporum."],
@@ -112,7 +112,7 @@ VIG_A = [
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, lead="treatment",
-   q="Culture from a child's scalp grows a Trichophyton species. Which oral agent does the lecture say is generally favored?",
+   q="Culture from a child's scalp grows a Trichophyton species. Which oral agent is generally favored?",
    opts=[
      ["Terbinafine",
       "Correct — terbinafine is generally favored for Trichophyton."],
@@ -125,7 +125,7 @@ VIG_A = [
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, lead="next step",
-   q="You are about to prescribe a systemic antifungal for an 8-year-old with confirmed tinea capitis. Which safety step does the lecture identify before the first dose?",
+   q="You are about to prescribe a systemic antifungal for an 8-year-old with confirmed tinea capitis. Which safety step is identified before the first dose?",
    opts=[
      ["Review drug interactions and hepatic disease, and obtain baseline liver tests when indicated by the agent, its labeling, and patient risk",
       "Correct — baseline testing is indication-driven, not automatic."],
@@ -190,7 +190,7 @@ VIG_A = [
    c=0, cite=c(19)),
 
  dict(topic="Tinea barbae", io=IOB, lead="test",
-   q="A man with a pustular beard eruption has hairs that are firmly anchored and do not pull out easily. Which test does the lecture suggest to help separate this from tinea barbae?",
+   q="A man with a pustular beard eruption has hairs that are firmly anchored and do not pull out easily. Which test is suggested to help separate this from tinea barbae?",
    opts=[
      ["Bacterial culture",
       "Correct — used to rule out bacterial folliculitis."],
@@ -320,7 +320,7 @@ VIG_A = [
    c=0, cite=c(33)),
 
  dict(topic="Tinea cruris", io=IOB, lead="diagnosis",
-   q="A 26-year-old man with obesity has recurrent tinea cruris. He asks what is making it come back. Which predisposing factors does the lecture name?",
+   q="A 26-year-old man with obesity has recurrent tinea cruris. He asks what is making it come back. Which predisposing factors are named?",
    opts=[
      ["A warm, moist environment, obesity, diabetes, tight-fitting clothes worn for extended periods, and sharing clothes",
       "Correct — five predisposing factors."],
@@ -385,7 +385,7 @@ VIG_A = [
    c=0, cite=c(41)),
 
  dict(topic="Tinea pedis", io=IOB, lead="test",
-   q="A patient's foot is markedly macerated and malodorous with erosion and drainage. In addition to potassium hydroxide microscopy, which studies does the lecture advise?",
+   q="A patient's foot is markedly macerated and malodorous with erosion and drainage. In addition to potassium hydroxide microscopy, which studies are advised?",
    opts=[
      ["Bacterial studies",
       "Correct — maceration, malodor, drainage or cellulitis prompt them."],
@@ -411,7 +411,7 @@ VIG_A = [
    c=0, cite=c(44)),
 
  dict(topic="Tinea pedis", io=IOB, lead="treatment",
-   q="A patient has hyperkeratotic tinea pedis with markedly thickened soles. What does the lecture say may help in addition to an antifungal?",
+   q="A patient has hyperkeratotic tinea pedis with markedly thickened soles. What may help in addition to an antifungal?",
    opts=[
      ["A keratolytic",
       "Correct — added to the antifungal for hyperkeratotic disease."],
@@ -437,7 +437,7 @@ VIG_A = [
    c=0, cite=c(44)),
 
  dict(topic="Tinea pedis", io=IOB, lead="education",
-   q="Which self-care measure does the lecture single out as essential for a patient with tinea pedis?",
+   q="Which self-care measure is singled out as essential for a patient with tinea pedis?",
    opts=[
      ["Drying between the toes after bathing",
       "Correct — the deck flags this one as essential."],

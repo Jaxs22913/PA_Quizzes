@@ -53,7 +53,7 @@ VIG_C = [
    c=0, cite=c(87)),
 
  dict(topic="Varicella", io=IOC, lead="next step",
-   q="You are covering a clinic and several patients with varicella are booked in. Which of these situations does the lecture say warrants prompt consultation?",
+   q="You are covering a clinic and several patients with varicella are booked in. Which of these situations warrants prompt consultation?",
    opts=[
      ["Pregnancy, neonatal exposure, immunocompromise, or severe complications",
       "Correct — four named triggers for prompt consultation."],
@@ -131,7 +131,7 @@ VIG_C = [
    c=0, cite=c(100)),
 
  dict(topic="Herpes zoster", io=IOB, lead="diagnosis",
-   q="A 66-year-old woman has severe unilateral dermatomal pain but no rash at all. Which term does the lecture use for this?",
+   q="A 66-year-old woman has severe unilateral dermatomal pain but no rash at all. Which term is used for this?",
    opts=[
      ["Zoster sine herpete",
       "Correct — pain without the vesicular eruption."],
@@ -209,7 +209,7 @@ VIG_C = [
    c=0, cite=c(106)),
 
  dict(topic="Herpes zoster", io=IOB, lead="treatment",
-   q="A patient with acute zoster has mild pain. Which comfort measures does the lecture describe?",
+   q="A patient with acute zoster has mild pain. Which comfort measures are described?",
    opts=[
      ["Acetaminophen or a non-steroidal anti-inflammatory drug, with cool compresses, calamine, loose clothing, and lesion coverage",
       "Correct — lesion coverage also reduces exposure of contacts."],
@@ -222,7 +222,7 @@ VIG_C = [
    c=0, cite=c(107)),
 
  dict(topic="Herpes zoster", io=IOB, lead="test",
-   q="A patient has an atypical, widespread vesicular eruption and is immunocompromised. Which test does the lecture prefer, and from what sample?",
+   q="A patient has an atypical, widespread vesicular eruption and is immunocompromised. Which test is preferred, and from what sample?",
    opts=[
      ["Polymerase chain reaction, from vesicle fluid, a scab, or cells from the lesion base",
       "Correct — preferred for atypical or immunocompromised presentations."],
@@ -235,7 +235,7 @@ VIG_C = [
    c=0, cite=c(105)),
 
  dict(topic="Herpes zoster", io=IOB, lead="diagnosis",
-   q="A 63-year-old has a grouped vesicular eruption that is not clearly dermatomal. Which conditions does the lecture list in the differential diagnosis of herpes zoster?",
+   q="A 63-year-old has a grouped vesicular eruption that is not clearly dermatomal. Which conditions are listed in the differential diagnosis of herpes zoster?",
    opts=[
      ["Herpes simplex, contact dermatitis, impetigo, folliculitis, insect bites, and varicella",
       "Correct — dermatitis herpetiformis is on the list too, making seven named entities."],
@@ -274,7 +274,7 @@ VIG_C = [
    c=0, cite=c(109)),
 
  dict(topic="Postherpetic neuralgia", io=IOC, lead="next step",
-   q="Before prescribing for an 84-year-old with postherpetic neuralgia, which factors does the lecture say to individualize for?",
+   q="Before prescribing for an 84-year-old with postherpetic neuralgia, which factors must treatment be individualised for?",
    opts=[
      ["Kidney function, falls, anticholinergic burden, and drug interactions",
       "Correct — four named considerations."],
@@ -365,7 +365,7 @@ VIG_C = [
    c=0, cite=c(110)),
 
  dict(topic="Herpes zoster", io=IOC, lead="education",
-   q="A 24-year-old is about to begin immunosuppressive therapy. What does the lecture recommend regarding zoster vaccination?",
+   q="A 24-year-old is about to begin immunosuppressive therapy. What is recommended regarding zoster vaccination?",
    opts=[
      ["Two doses of recombinant zoster vaccine, since adults 19 and over who are or will be immunodeficient or immunosuppressed are eligible",
       "Correct — the \"or will be\" wording covers planned immunosuppression."],
@@ -404,7 +404,7 @@ VIG_C = [
    c=0, cite=c(119)),
 
  dict(topic="Herpes simplex virus", io=IOB, lead="test",
-   q="A patient presents with a fresh genital vesicle. Which test does the lecture prefer?",
+   q="A patient presents with a fresh genital vesicle. Which test is preferred?",
    opts=[
      ["Type-specific nucleic acid amplification testing from the vesicle",
       "Correct — swab a fresh vesicle, ulcer base, or crust."],
@@ -560,7 +560,7 @@ VIG_C = [
    c=0, cite=c(143)),
 
  dict(topic="Warts", io=IOB, lead="treatment",
-   q="A 30-year-old runner has a painful plantar wart on the ball of the foot. Which treatments does the lecture give?",
+   q="A 30-year-old runner has a painful plantar wart on the ball of the foot. Which treatments are given?",
    opts=[
      ["Salicylic acid 40% or cryotherapy",
       "Correct — the two named options for plantar warts."],

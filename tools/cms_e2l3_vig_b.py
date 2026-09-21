@@ -24,7 +24,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="CRVO", io=IOA, lead="finding",
-   q="A 67-year-old woman has a retinal vein occlusion. Which term did the lecturer give as the classic fundus description?",
+   q="A 67-year-old woman has a retinal vein occlusion. Which term is the classic fundus description?",
    opts=[
      ["Blood and thunder", "Correct, blotches of haemorrhage across the fundus."],
      ["Cherry-red spot", "That belongs to arterial occlusion."],
@@ -42,7 +42,7 @@ POOL_B = [
    c=0, cite=c(32)),
 
  dict(topic="CRVO", io=IOA, lead="comparison",
-   q="A 61-year-old woman asks which retinal vascular occlusion is seen more often. What does the lecture state?",
+   q="A 61-year-old woman asks which retinal vascular occlusion is seen more often. What is stated?",
    opts=[
      ["Vein occlusion is more common", "Correct, more common than central retinal artery occlusion."],
      ["Artery occlusion is more common", "The lecture states the opposite."],
@@ -51,7 +51,7 @@ POOL_B = [
    c=0, cite=c(32)),
 
  dict(topic="CRVO", io=IOB, lead="test",
-   q="A 65-year-old man has a suspected central retinal vein occlusion. Which does the lecture name as confirmatory testing?",
+   q="A 65-year-old man has a suspected central retinal vein occlusion. Which is named as confirmatory testing?",
    opts=[
      ["Fluorescein angiography", "Correct, with colour fundus photography."],
      ["Ocular ultrasound", "That is used for retinal detachment."],
@@ -106,7 +106,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="CRAO", io=IOA, lead="finding",
-   q="A 69-year-old man has a central retinal artery occlusion. His affected pupil is sluggish to direct light but constricts briskly when the other eye is illuminated. What did the lecturer say about this finding?",
+   q="A 69-year-old man has a central retinal artery occlusion. His affected pupil is sluggish to direct light but constricts briskly when the other eye is illuminated. What is true of this finding?",
    opts=[
      ["It is a major clinical clue", "Correct; she singled out this sentence in the lecture."],
      ["It excludes an arterial cause", "It is characteristic of one."],
@@ -115,7 +115,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="CRAO", io=IOA, lead="symptom",
-   q="A 71-year-old man with a central retinal artery occlusion describes what remains of his sight. Which pattern does the lecture give?",
+   q="A 71-year-old man with a central retinal artery occlusion describes what remains of his sight. Which pattern is given?",
    opts=[
      ["An island of vision in the temporal field", "Correct, with acuity from counting fingers to light perception."],
      ["A central island with peripheral loss", "That is the tunnel vision of chronic glaucoma."],
@@ -124,7 +124,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="CRAO", io=IOB, lead="treatment",
-   q="A 70-year-old woman arrives with a central retinal artery occlusion. Which initial measures does the lecture give?",
+   q="A 70-year-old woman arrives with a central retinal artery occlusion. Which initial measures are given?",
    opts=[
      ["Inhaled oxygen and digital globe massage", "Correct, alongside intravenous acetazolamide."],
      ["Topical latanoprost", "That is chronic glaucoma therapy."],
@@ -133,7 +133,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="CRAO", io=IOB, lead="treatment",
-   q="A 66-year-old man presents six hours after a central retinal artery occlusion. Which option remains available per the lecture?",
+   q="A 66-year-old man presents six hours after a central retinal artery occlusion. Which option remains available?",
    opts=[
      ["Thrombolytic infusion into the ophthalmic artery", "Correct, within eight hours of onset."],
      ["Scleral buckle", "That repairs a detachment."],
@@ -142,7 +142,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="CRAO", io=IOB, lead="next step",
-   q="A 68-year-old man with a central retinal artery occlusion asks about his general health risk. What does the lecture emphasise?",
+   q="A 68-year-old man with a central retinal artery occlusion asks about his general health risk. What is emphasised?",
    opts=[
      ["His stroke risk is markedly increased", "Correct; plaque reaching the retinal artery implies more in the carotids."],
      ["His stroke risk is unchanged", "It rises at the onset of the occlusion."],
@@ -179,7 +179,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Papilledema", io=IOA, lead="cause",
-   q="A 38-year-old woman with papilledema is taking large doses of a supplement. Which does the lecture list as a cause?",
+   q="A 38-year-old woman with papilledema is taking large doses of a supplement. Which is listed as a cause?",
    opts=[
      ["Vitamin A toxicity", "Correct, listed with tumour, trauma, intracranial infection and haemorrhage."],
      ["Vitamin C excess", "Not a listed cause."],
@@ -188,7 +188,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Papilledema", io=IOB, lead="test",
-   q="A 36-year-old man has bilateral disc swelling. Which test does the lecture use to confirm that intracranial pressure is raised?",
+   q="A 36-year-old man has bilateral disc swelling. Which test is used to confirm that intracranial pressure is raised?",
    opts=[
      ["Lumbar puncture opening pressure", "Correct, after imaging has excluded a mass lesion."],
      ["Tonometry", "That measures intraocular pressure."],
@@ -197,7 +197,7 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Papilledema", io=IOB, lead="next step",
-   q="A 45-year-old woman has papilledema. Which imaging does the lecture obtain, and why?",
+   q="A 45-year-old woman has papilledema. Which imaging is obtained, and why?",
    opts=[
      ["MRI or CT of the head, to exclude a mass", "Correct."],
      ["Orbital ultrasound, to type a detachment", "That is the detachment workup."],
@@ -225,7 +225,7 @@ POOL_B = [
    c=0, cite=c(49)),
 
  dict(topic="AAION", io=IOB, lead="test",
-   q="A 76-year-old woman has sudden vision loss, scalp tenderness and jaw claudication. Which initial tests does the lecture order?",
+   q="A 76-year-old woman has sudden vision loss, scalp tenderness and jaw claudication. Which initial tests are ordered?",
    opts=[
      ["Erythrocyte sedimentation rate and C-reactive protein", "Correct, the inflammatory markers used to rule the diagnosis in or out."],
      ["Lumbar puncture", "That assesses intracranial pressure."],
@@ -243,7 +243,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="AAION", io=IOB, lead="treatment",
-   q="A 74-year-old man is starting a long corticosteroid course for arteritic optic neuropathy. Which additional drug does the lecture add?",
+   q="A 74-year-old man is starting a long corticosteroid course for arteritic optic neuropathy. Which additional drug is added?",
    opts=[
      ["Famotidine", "Correct, for gastrointestinal ulcer prophylaxis."],
      ["Latanoprost", "That is glaucoma therapy."],
@@ -252,7 +252,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="AAION", io=IOA, lead="test",
-   q="A 77-year-old woman is treated for arteritic optic neuropathy. Which test does the lecture call the gold standard for the underlying arteritis?",
+   q="A 77-year-old woman is treated for arteritic optic neuropathy. Which test is called the gold standard for the underlying arteritis?",
    opts=[
      ["Temporal artery biopsy", "Correct."],
      ["C-reactive protein", "A screening marker, not the gold standard."],
@@ -261,7 +261,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="AAION", io=IOB, lead="education",
-   q="A 75-year-old woman with arteritic optic neuropathy asks how long she will take steroids. What does the lecture say?",
+   q="A 75-year-old woman with arteritic optic neuropathy asks how long she will take steroids. What should she be told?",
    opts=[
      ["At least 6 to 12 months", "Correct, tapered to the lowest dose that suppresses the disease."],
      ["Three days only", "Three days is the intravenous phase alone."],
@@ -288,7 +288,7 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="NAION", io=IOB, lead="next step",
-   q="A 54-year-old man has suspected non-arteritic anterior ischemic optic neuropathy. How does the lecture describe the workup?",
+   q="A 54-year-old man has suspected non-arteritic anterior ischemic optic neuropathy. How is the workup described?",
    opts=[
      ["Identical to the arteritic form", "Correct; it is a diagnosis of exclusion once arteritis is ruled out."],
      ["No workup is needed", "Arteritis must first be excluded."],
@@ -306,7 +306,7 @@ POOL_B = [
    c=0, cite=c(52)),
 
  dict(topic="AION", io=IOA, lead="finding",
-   q="A 68-year-old woman has sudden painless vision loss. Which optic disc appearance does the lecture describe in anterior ischemic optic neuropathy?",
+   q="A 68-year-old woman has sudden painless vision loss. Which optic disc appearance is described in anterior ischemic optic neuropathy?",
    opts=[
      ["A swollen, pale disc", "Correct, with loss of side or central vision."],
      ["A deeply cupped disc", "That is chronic glaucoma."],
@@ -315,7 +315,7 @@ POOL_B = [
    c=0, cite=c(50)),
 
  dict(topic="AION", io=IOA, lead="prognosis",
-   q="A 71-year-old man has anterior ischemic optic neuropathy in one eye and asks about the other. What does the lecture say?",
+   q="A 71-year-old man has anterior ischemic optic neuropathy in one eye and asks about the other. What should he be told?",
    opts=[
      ["The second eye is at risk", "Correct; one eye is usually affected first but the other may follow."],
      ["Both eyes are always affected at once", "Usually one eye is affected first."],
@@ -324,7 +324,7 @@ POOL_B = [
    c=0, cite=c(50)),
 
  dict(topic="AAION", io=IOB, lead="next step",
-   q="A 79-year-old man has sudden vision loss in one eye. Which referral threshold does the lecture apply?",
+   q="A 79-year-old man has sudden vision loss in one eye. Which referral threshold is applied?",
    opts=[
      ["Emergent referral for anyone over 50", "Correct, any patient over 50 with sudden visual loss."],
      ["Routine referral within a month", "That delay risks the eye."],
@@ -334,7 +334,7 @@ POOL_B = [
 
  # ---------------- Cross-cutting discriminators ----------------
  dict(topic="Differential diagnosis", io=IOA, lead="reasoning",
-   q="A 66-year-old woman has acute vision loss. Which features did the lecturer tell the class to pin down in order to separate these diagnoses?",
+   q="A 66-year-old woman has acute vision loss. Which features must be pinned down to separate these diagnoses?",
    opts=[
      ["One eye or both, sudden or gradual, central or peripheral", "Correct, along with whether there is pain."],
      ["Family history and occupation", "Useful background, but not the named discriminators."],
@@ -379,7 +379,7 @@ POOL_B = [
    c=0, cite=c(23)),
 
  dict(topic="Differential diagnosis", io=IOB, lead="next step",
-   q="A 69-year-old man has sudden painless monocular vision loss and no other findings. Which single step does the lecture treat as non-negotiable?",
+   q="A 69-year-old man has sudden painless monocular vision loss and no other findings. Which single step is treated as non-negotiable?",
    opts=[
      ["Urgent ophthalmology involvement", "Correct; each of these diagnoses is sight-threatening and time-dependent."],
      ["A trial of topical antibiotics", "There is no infectious indication here."],

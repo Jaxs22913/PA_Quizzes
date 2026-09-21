@@ -8,7 +8,7 @@ IOB = "11 — Identify medical care strategies for pre-malignant and malignant c
 
 VIG_C = [
  dict(topic="Kaposi sarcoma", io=IOA, lead="diagnosis",
-   q="A 34-year-old man newly diagnosed with human immunodeficiency virus has several red-purple plaques on his legs. Which examination does the deck call essential, and what might you find?",
+   q="A 34-year-old man newly diagnosed with human immunodeficiency virus has several red-purple plaques on his legs. Which examination is called essential, and what might you find?",
    opts=[
      ["Oral examination — hard palate lesions are common and may be the presenting site",
       "Correct — the mouth may declare the disease before anywhere else."],

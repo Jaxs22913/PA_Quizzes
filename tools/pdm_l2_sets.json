@@ -16,7 +16,7 @@
     ],
     [
      "It separates water from soft tissue, which a conventional radiograph cannot tell apart",
-     "Correct — the deck's asterisk on “Five*” marks exactly that exception."
+     "Correct — water and soft tissue attenuate x-rays almost identically on a plain film, but the Hounsfield scale assigns them distinct numerical values."
     ],
     [
      "It separates calcium from metal, which a conventional radiograph cannot tell apart",
@@ -82,11 +82,11 @@
    "topic": "Contrast media",
    "io": "h — Discuss contraindications and safety considerations of commonly used imaging modalities",
    "slot": "education",
-   "q": "What does the deck say about shellfish allergy and iodinated contrast?",
+   "q": "What is true of shellfish allergy and iodinated contrast?",
    "opts": [
     [
      "There is cross-reactivity only with the iso-osmolal agents such as iodixanol",
-     "The deck draws no agent-specific exception of this kind."
+     "No agent-specific exception applies; the cross-reactivity itself does not exist, because shellfish allergy is to protein rather than to iodine."
     ],
     [
      "There should be no cross-reactivity between shellfish and iodinated radiocontrast",
@@ -94,7 +94,7 @@
     ],
     [
      "There is well-established cross-reactivity, so the two allergies must be treated as one",
-     "This is the belief the deck corrects rather than the position it takes."
+     "This is precisely the misconception to discard: shellfish allergy is to tropomyosin protein, not to iodine, so it does not predict a contrast reaction."
     ],
     [
      "There is partial cross-reactivity, so contrast may be given at a reduced concentration",
@@ -224,11 +224,11 @@
     ],
     [
      "Thyroid function tests, because the iodine load can precipitate thyrotoxicosis",
-     "Thyroid effects are real clinically but are not what this deck requires checking."
+     "Iodinated contrast can precipitate thyrotoxicosis in susceptible patients, but the test required before administration is renal function."
     ],
     [
      "Complete blood count and platelets, because the agent affects coagulation",
-     "Coagulation is not the risk the deck attaches to iodinated contrast."
+     "Iodinated contrast does not impair coagulation; it is cleared renally and can injure the kidney, so urea nitrogen and creatinine are checked."
     ]
    ],
    "c": 0,
@@ -238,7 +238,7 @@
    "topic": "Radiation dose",
    "io": "f — Compare and contrast the risks and benefits associated with radiation exposure",
    "slot": "differential",
-   "q": "In the deck's table of typical organ radiation doses, which listed study delivers the highest dose?",
+   "q": "Among typical organ radiation doses, which study delivers the highest dose?",
    "opts": [
     [
      "Barium enema, to the colon",
@@ -376,7 +376,7 @@
     ],
     [
      "Single photons on rotating gamma cameras, giving three-dimensional images of where blood flows",
-     "Correct — the deck's stated indication is seeing where blood flows to."
+     "Correct — a gamma camera rotating around the patient collects single photons from many angles, which reconstruct into a three-dimensional map of where the tracer, and therefore the blood, has gone."
     ],
     [
      "Paired positrons on a stationary gamma camera, giving two-dimensional images of glucose uptake",
@@ -420,7 +420,7 @@
    "topic": "Positioning",
    "io": "e — Discuss the importance of patient positioning in medical imaging",
    "slot": "education",
-   "q": "What does the deck call the most important thing to remember about ultrasound orientation?",
+   "q": "What is called the most important thing to remember about ultrasound orientation?",
    "opts": [
     [
      "Which frequency is selected: high for superficial structures, low for deeper structures",
@@ -432,7 +432,7 @@
     ],
     [
      "Where the indicator is: on the left of the screen in cardiac imaging, on the right for everything else",
-     "This reverses the convention the deck gives for the heart."
+     "The convention is the other way round: the indicator sits on the right of the screen for cardiac imaging and on the left for everything else."
     ],
     [
      "How deep the focus is set: shallow for superficial structures, deep for abdominal structures",
@@ -532,7 +532,7 @@
     ],
     [
      "Appendicitis, diverticulitis and inflammatory bowel disease",
-     "These are not the examples the deck gives for the plain abdominal series."
+     "These are inflammatory conditions diagnosed by cross-sectional imaging; the plain series looks for gas patterns, free air and volvulus."
     ],
     [
      "Cholelithiasis, pancreatitis and hepatic abscess",
@@ -558,7 +558,7 @@
     ],
     [
      "The strength of the magnet in Tesla, together with the duration of the scan",
-     "Field strength changes image quality, but it is not what the deck names here."
+     "Field strength and scan time affect image quality; the frequency emitted depends on the chemical surroundings of each hydrogen atom and where it sits."
     ],
     [
      "The density of the tissue in Hounsfield units, together with the chosen window",
@@ -684,19 +684,19 @@
    "opts": [
     [
      "One dose of intravenous furosemide",
-     "Forcing diuresis is not what the deck describes for renal protection here."
+     "Furosemide would deplete the volume that protects the kidney; the protection comes from a litre of normal saline."
     ],
     [
      "One litre of normal saline",
-     "Correct — the only volume the deck specifies, and it is renal protection."
+     "Correct — a litre of normal saline expands intravascular volume and maintains renal perfusion, diluting the contrast load as it passes through the tubules."
     ],
     [
      "One litre of lactated Ringer's",
-     "The deck names normal saline specifically rather than a balanced solution."
+     "Lactated Ringer's is a reasonable crystalloid, but normal saline is the specified fluid for contrast-associated renal protection."
     ],
     [
      "One gram of acetylcysteine",
-     "Acetylcysteine is not mentioned in this lecture."
+     "Acetylcysteine has been trialled for this purpose with inconsistent results and is not what is given here; a litre of normal saline is."
     ]
    ],
    "c": 1,
@@ -706,7 +706,7 @@
    "topic": "Radiology team",
    "io": "i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "education",
-   "q": "What practical ordering point does the deck make about imaging several body regions?",
+   "q": "What practical ordering point is made about imaging several body regions?",
    "opts": [
     [
      "Multiple body parts must be imaged on separate days to limit cumulative radiation dose",
@@ -718,7 +718,7 @@
     ],
     [
      "Multiple body parts should be combined into one single order, so that the patient is scanned once and the radiologist reads the whole study together",
-     "The deck makes the opposite point about how these studies are requested."
+     "Each body region is ordered as its own study, because the technique, positioning and interpretation differ for each."
     ],
     [
      "Multiple body parts require the radiologist to countersign the request before booking",
@@ -770,7 +770,7 @@
     ],
     [
      "It is higher, which is one reason the posterior-anterior view is the preferred projection",
-     "Correct — the deck also credits the posterior-anterior view with lower dose to sensitive organs."
+     "Correct — the lateral beam traverses a greater thickness of tissue, so more radiation is needed and the lung dose rises."
     ],
     [
      "It is lower, which is one reason the lateral view is taken first in a standard series",
@@ -812,7 +812,7 @@
    "topic": "Radiology team",
    "io": "i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "referral",
-   "q": "Why does the deck stress giving the radiologist relevant clinical information?",
+   "q": "Why is giving the radiologist relevant clinical information stressed?",
    "opts": [
     [
      "The radiologist selects the modality, so the history determines which scanner is booked",
@@ -828,7 +828,7 @@
     ],
     [
      "The radiologist bills separately, so the indication must be documented for the claim",
-     "Billing is not the reason the deck gives for communicating."
+     "Billing is unrelated; the radiologist has not met the patient, so the clinical question is what directs their search and shapes the report."
     ]
    ],
    "c": 2,
@@ -924,7 +924,7 @@
     ],
     [
      "Muscle for a myogram, the pleural space directly, and the ureter for an antegrade pyelogram",
-     "None of these three routes is described in the deck."
+     "None of these routes is used: contrast goes into joints, the intrathecal space and the bladder, besides the intravascular and enteral routes."
     ],
     [
      "Bowel for an arthrogram, the epidural space, and the renal pelvis for a cystogram",
@@ -980,7 +980,7 @@
     ],
     [
      "Which modality best rules the diagnosis in or out, is there a lower-radiation alternative, what is the risk against benefit for this patient, and is contrast needed",
-     "Correct — those are the four the lecture opens with."
+     "Correct — each guards a different failure: ordering a study that cannot answer the question, irradiating unnecessarily, ignoring patient-specific risk, and omitting the contrast the study needs."
     ],
     [
      "Which modality is cheapest, which is fastest, which is closest, and which the patient prefers",
@@ -1002,7 +1002,7 @@
     ],
     [
      "Uptake in the kidneys is normal, and the same is true of tracer on positron emission scans",
-     "Correct — the deck labels renal uptake normal on both studies."
+     "Correct — tracer is cleared renally, so the kidneys light up simply because they are excreting it, and the same normal appearance occurs on positron emission scans."
     ],
     [
      "Uptake in the kidneys indicates the tracer dose given was higher than the study required",
@@ -1050,7 +1050,7 @@
    "opts": [
     [
      "Maximum visualisation of the mediastinum, better visualisation of the hila, and well visualised anterior ribs",
-     "The deck names the lung fields, apices and posterior ribs rather than these."
+     "The anterior ribs are better seen on an anterior-posterior film; the posterior-anterior view favours the lung fields, apices and posterior ribs."
     ],
     [
      "Maximum visualisation of the diaphragm, better visualisation of free air, and well visualised gastric bubble",
@@ -1236,7 +1236,7 @@
     ],
     [
      "Fat-suppressed imaging, which removes the signal from adipose tissue in the field",
-     "Fat suppression is not the technique the deck names for stroke."
+     "Fat suppression improves visibility of oedema against fat, but it is diffusion-weighted imaging that detects the restricted water movement of acute infarction."
     ],
     [
      "Post-processing windowing, which re-displays the raw data over a narrower range",
@@ -1262,7 +1262,7 @@
     ],
     [
      "A matrix of thousands of tiny cubes called voxels, each assigned a greyscale signal intensity on a fixed scale running from zero to two hundred and fifty five",
-     "That is not how the lecture describes the image."
+     "The greyscale here is not an arbitrary 0 to 255 signal; each volume element is assigned a Hounsfield value that measures how strongly the tissue attenuates x-rays."
     ],
     [
      "A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
@@ -1440,7 +1440,7 @@
    "opts": [
     [
      "Decreased quality of imaging, which is the price paid for the open configuration",
-     "Correct — it is available, but the deck flags the loss of quality."
+     "Correct — the open design uses a weaker magnetic field, and less signal means a poorer image, which is the price paid for accommodating claustrophobic and larger patients."
     ],
     [
      "Increased scan duration, which is the price paid for the open configuration",
@@ -1452,7 +1452,7 @@
     ],
     [
      "Decreased soft tissue contrast only, with spatial resolution otherwise preserved",
-     "The deck says quality generally, without limiting it to soft tissue contrast."
+     "The loss is in overall image quality rather than confined to soft tissue contrast, because the weaker field reduces signal across the board."
     ]
    ],
    "c": 0,
@@ -1462,7 +1462,7 @@
    "topic": "Radiodensity",
    "io": "d — Compare and contrast the concepts of radiographic density and contrast",
    "slot": "test finding",
-   "q": "On the deck's labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
+   "q": "On a labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
    "opts": [
     [
      "Bone is radiolucent, gas is radiopaque, and the metal prosthesis is very lucent",
@@ -1488,11 +1488,11 @@
    "topic": "Radiology team",
    "io": "i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "referral",
-   "q": "What does the deck advise when a radiology report comes back vague?",
+   "q": "What is advised when a radiology report comes back vague?",
    "opts": [
     [
      "Refer the patient to the relevant specialist",
-     "Onward referral is not the response the deck names to a vague report."
+     "Referring on passes along an unresolved question; a direct conversation with the radiologist often clarifies the report immediately."
     ],
     [
      "Contact the radiologist to discuss the patient",
@@ -1500,7 +1500,7 @@
     ],
     [
      "Repeat the study using a different modality",
-     "Repeating the study is not the first response the deck advises."
+     "Repeating with another modality adds cost and radiation before the existing images have been discussed; speaking to the radiologist comes first."
     ],
     [
      "Order the next test in the diagnostic sequence",
@@ -1522,7 +1522,7 @@
     ],
     [
      "Nothing beforehand, because gadolinium is inert and is excreted unchanged in the bile",
-     "The deck requires assessing renal function regardless."
+     "Gadolinium is renally cleared rather than biliary, and impaired clearance is the reason renal function is assessed first."
     ],
     [
      "Blood urea nitrogen and creatinine, because renal function matters primarily for clearance",
@@ -1530,7 +1530,7 @@
     ],
     [
      "Blood urea nitrogen and creatinine, because gadolinium is more nephrotoxic than iodine",
-     "The deck says the opposite: it is not as harmful as computed tomography contrast."
+     "The comparison runs the other way: gadolinium is less harmful to the kidney than iodinated contrast, though renal function is still checked."
     ]
    ],
    "c": 2,
@@ -1548,7 +1548,7 @@
     ],
     [
      "A varying magnetic field aligns hydrogen atoms; releasing it produces radio waves the computer maps",
-     "Correct — the deck calls the resulting images essentially hydrogen maps."
+     "Correct — hydrogen nuclei align with the field, and as they relax back they emit radio signals whose timing and strength the computer converts into an image."
     ],
     [
      "A varying magnetic field aligns iron atoms; releasing it produces heat the computer measures",

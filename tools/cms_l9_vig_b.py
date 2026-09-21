@@ -46,7 +46,7 @@ VIG_B = [
    c=0, cite=c(41)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="test",
-   q="A melanoma is excised and reported at 1.3 mm Breslow thickness with no ulceration. What does the deck say about sentinel lymph node biopsy here, and what should the patient be told it achieves?",
+   q="A melanoma is excised and reported at 1.3 mm Breslow thickness with no ulceration. What is true of sentinel lymph node biopsy here, and what should the patient be told it achieves?",
    opts=[
      ["It should be offered or discussed, since the threshold is 1.0 mm; it is a staging procedure and may not itself improve overall survival",
       "Correct — an honest expectation to set."],
@@ -72,7 +72,7 @@ VIG_B = [
    c=0, cite=c(51)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="treatment",
-   q="A 55-year-old man has a melanoma in situ confirmed on his forearm. Which re-excision margin does the deck give?",
+   q="A 55-year-old man has a melanoma in situ confirmed on his forearm. Which re-excision margin is given?",
    opts=[
      ["0.5 to 1 cm", "Correct — margins widen with Breslow thickness from there."],
      ["1 to 2 cm", "That margin is for lesions thicker than 1 mm."],
@@ -107,7 +107,7 @@ VIG_B = [
    c=0, cite=c(56)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="diagnosis",
-   q="You are explaining a 49-year-old woman's melanoma report to her; it gives Breslow thickness, ulceration status and mitotic rate. Which of these does the deck call the dominant prognostic variable?",
+   q="You are explaining a 49-year-old woman's melanoma report to her; it gives Breslow thickness, ulceration status and mitotic rate. Which of these is called the dominant prognostic variable?",
    opts=[
      ["Breslow thickness, with ulceration and mitotic activity further modifying stage-based prognosis",
       "Correct — which is why it must be measured accurately at the initial biopsy."],
@@ -133,7 +133,7 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Malignant melanoma", io=IOB, lead="education",
-   q="A 30-year-old Black patient asks whether she needs to worry about melanoma. Which is the most accurate response using the deck's figures?",
+   q="A 30-year-old Black patient asks whether she needs to worry about melanoma. Which is the most accurate response?",
    opts=[
      ["Lifetime risk is lower but not zero — about 0.1 to 0.5% in persons of colour against about 2% in white individuals",
       "Correct — lower risk, and acral and nail sites still need checking."],

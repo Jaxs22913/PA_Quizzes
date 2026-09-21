@@ -15,7 +15,7 @@ IOC = "c — Identify medical care strategies for cutaneous viral and fungal inf
 
 VIG_B = [
  dict(topic="Onychomycosis", io=IOC, lead="diagnosis",
-   q="A 68-year-old man with diabetes has thickened, discoloured, crumbling great toenails with subungual debris and separation of the nail from its bed. Which risk factors in his history does the lecture specifically link to this condition?",
+   q="A 68-year-old man with diabetes has thickened, discoloured, crumbling great toenails with subungual debris and separation of the nail from its bed. Which risk factors in his history are specifically linked to this condition?",
    opts=[
      ["Tinea pedis, age, diabetes, trauma, occlusive footwear, psoriasis, and vascular disease",
       "Correct — seven named risk factors."],
@@ -41,7 +41,7 @@ VIG_B = [
    c=0, cite=c(51)),
 
  dict(topic="Onychomycosis", io=IOB, lead="test",
-   q="A 64-year-old has thickened discoloured toenails and you decide to confirm the diagnosis before prescribing. Which tests does the lecture list, and how should the sample be taken?",
+   q="A 64-year-old has thickened discoloured toenails and you decide to confirm the diagnosis before prescribing. Which tests are listed, and how should the sample be taken?",
    opts=[
      ["Potassium hydroxide microscopy, periodic acid–Schiff stain of clippings, culture, or amplification testing; sample the most proximal accessible diseased nail bed",
       "Correct — sample subungual debris after trimming the onycholytic nail. Sampling proximally is the part most often missed."],
@@ -67,7 +67,7 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Onychomycosis", io=IOB, lead="treatment",
-   q="A patient cannot take terbinafine for confirmed onychomycosis. Which alternative does the lecture name, and what does it say about fluconazole?",
+   q="A patient cannot take terbinafine for confirmed onychomycosis. Which alternative is named, and what does it say about fluconazole?",
    opts=[
      ["Itraconazole is an alternative; fluconazole is off label in the United States",
       "Correct — both points come from the same slide."],
@@ -93,7 +93,7 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Onychomycosis", io=IOB, lead="treatment",
-   q="A patient has limited onychomycosis affecting one nail and wishes to avoid oral therapy. Which options does the lecture give, and with what caveat?",
+   q="A patient has limited onychomycosis affecting one nail and wishes to avoid oral therapy. Which options are given, and with what caveat?",
    opts=[
      ["Topical efinaconazole, tavaborole, or ciclopirox, with lower cure rates",
       "Correct — an honest trade-off to explain to the patient."],
@@ -132,7 +132,7 @@ VIG_B = [
    c=0, cite=c(62)),
 
  dict(topic="Id reaction", io=IOB, lead="diagnosis",
-   q="A 26-year-old has an itchy hand eruption and you suspect an id reaction. Which three criteria does the lecture give for establishing it?",
+   q="A 26-year-old has an itchy hand eruption and you suspect an id reaction. Which three criteria are given for establishing it?",
    opts=[
      ["A dermatophyte infection elsewhere, absence of fungal elements at the reaction site, and resolution when the primary infection is treated",
       "Correct — all three must be satisfied."],
@@ -236,7 +236,7 @@ VIG_B = [
    c=0, cite=c(68)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="diagnosis",
-   q="A 70-year-old with obesity, diabetes and incontinence is examined for candidal skin disease. Which sites does the lecture list as the common ones to inspect?",
+   q="A 70-year-old with obesity, diabetes and incontinence is examined for candidal skin disease. Which sites are listed as the common ones to inspect?",
    opts=[
      ["Inframammary, axillary, abdominal, inguinal, and interdigital folds",
       "Correct — the perineal folds are on the list too, making six named sites."],
@@ -275,7 +275,7 @@ VIG_B = [
    c=0, cite=c(72)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="treatment",
-   q="A 58-year-old woman with candidal intertrigo is prescribed a topical azole. Beyond the antifungal, which environmental measures does the lecture require?",
+   q="A 58-year-old woman with candidal intertrigo is prescribed a topical azole. Beyond the antifungal, which environmental measures are required?",
    opts=[
      ["Gently dry the folds, reduce friction and occlusion, use moisture-wicking fabric or absorbent material, and address incontinence or hyperhidrosis",
       "Correct — correcting the environment is listed first."],
@@ -288,7 +288,7 @@ VIG_B = [
    c=0, cite=c(72)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="treatment",
-   q="A patient with candidal intertrigo has marked inflammation. What does the lecture say about adding a corticosteroid?",
+   q="A patient with candidal intertrigo has marked inflammation. What is true of adding a corticosteroid?",
    opts=[
      ["Consider a low-potency corticosteroid only briefly, and only alongside adequate antifungal treatment",
       "Correct — brief, low-potency, and never alone."],
@@ -327,7 +327,7 @@ VIG_B = [
    c=0, cite=c(74)),
 
  dict(topic="Pityriasis versicolor", io=IOB, lead="diagnosis",
-   q="A 21-year-old asks why his pityriasis versicolor keeps returning each summer. Which factors does the lecture say make it more common?",
+   q="A 21-year-old asks why his pityriasis versicolor keeps returning each summer. Which factors make it more common?",
    opts=[
      ["Heat, humidity, oily skin, sweating, immunosuppression, or corticosteroid exposure",
       "Correct — six named factors."],
@@ -405,7 +405,7 @@ VIG_B = [
    c=0, cite=c(81)),
 
  dict(topic="Pityriasis versicolor", io=IOB, lead="treatment",
-   q="A 22-year-old with pityriasis versicolor is prescribed selenium sulfide and asks exactly how to use it. Which regimen does the lecture describe?",
+   q="A 22-year-old with pityriasis versicolor is prescribed selenium sulfide and asks exactly how to use it. Which regimen is described?",
    opts=[
      ["Daily application for 7 days, with a 10-minute contact time before rinsing",
       "Correct — the contact time matters as much as the frequency."],
@@ -431,7 +431,7 @@ VIG_B = [
    c=0, cite=c(82)),
 
  dict(topic="Pityriasis versicolor", io=IOB, lead="treatment",
-   q="A 30-year-old with extensive pityriasis versicolor asks about an oral tablet a friend was given. Which oral agent does the lecture say must NOT be used here, and why?",
+   q="A 30-year-old with extensive pityriasis versicolor asks about an oral tablet a friend was given. Which oral agent must NOT be used here, and why?",
    opts=[
      ["Oral ketoconazole, because serious hepatic and adrenal toxicity outweighs the benefit in a superficial infection",
       "Correct — the risk-benefit balance fails for superficial disease."],
@@ -444,7 +444,7 @@ VIG_B = [
    c=0, cite=c(82)),
 
  dict(topic="Pityriasis versicolor", io=IOB, lead="education",
-   q="A patient in a warm climate has had pityriasis versicolor three summers in a row. Which measure does the lecture suggest?",
+   q="A patient in a warm climate has had pityriasis versicolor three summers in a row. Which measure is suggested?",
    opts=[
      ["Intermittent prophylactic topical therapy",
       "Correct — recurrence is common, especially in warm climates."],

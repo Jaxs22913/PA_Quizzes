@@ -55,7 +55,7 @@ POOL_C = [
    c=0, cite=c(36)),
 
  dict(topic="Nystagmus", io=IO, lead="next step",
-   q="A 19-year-old woman develops new nystagmus with vertigo. After referral to ophthalmology, what does the lecture place next in the sequence?",
+   q="A 19-year-old woman develops new nystagmus with vertigo. After referral to ophthalmology, what is placed next in the sequence?",
    opts=[
      ["Initial imaging", "Correct: referral, then imaging, then labs if relevant, to find the underlying cause."],
      ["Laboratory testing", "Labs come after imaging, and only if relevant."],
@@ -82,7 +82,7 @@ POOL_C = [
    c=0, cite=c(22)),
 
  dict(topic="Care strategies", io=IO, lead="next step",
-   q="A 68-year-old man has a new visual field defect and a suspected chiasmal lesion. Which referral does the lecture list alongside ophthalmology?",
+   q="A 68-year-old man has a new visual field defect and a suspected chiasmal lesion. Which referral is listed alongside ophthalmology?",
    opts=[
      ["Neurology or neurosurgery", "Correct, with vascular surgery also named as appropriate."],
      ["Cardiology", "A cardiac source is pursued for embolic transient visual loss, not a chiasmal lesion."],
@@ -100,7 +100,7 @@ POOL_C = [
    c=0, cite=c(43)),
 
  dict(topic="Third nerve palsy", io=IO, lead="treatment",
-   q="A 29-year-old man has a traumatic third nerve palsy. What does the lecture advise about corrective treatment?",
+   q="A 29-year-old man has a traumatic third nerve palsy. What is advised about corrective treatment?",
    opts=[
      ["Observe about six months first", "Correct, with patching in the interim for binocular diplopia."],
      ["Operate within two weeks", "Early surgery is not what the lecture advises."],
@@ -109,7 +109,7 @@ POOL_C = [
    c=0, cite=c(41)),
 
  dict(topic="Sixth nerve palsy", io=IO, lead="test",
-   q="A 57-year-old man has an isolated atraumatic sixth nerve palsy and no known diabetes. Besides imaging, which test does the lecture add?",
+   q="A 57-year-old man has an isolated atraumatic sixth nerve palsy and no known diabetes. Besides imaging, which test is added?",
    opts=[
      ["Haemoglobin A1C", "Correct, if he has risk factors and no established diagnosis."],
      ["Erythrocyte sedimentation rate", "That is for suspected giant cell arteritis."],
@@ -118,7 +118,7 @@ POOL_C = [
    c=0, cite=c(46)),
 
  dict(topic="Argyll Robertson pupil", io=IO, lead="education",
-   q="A 55-year-old man with Argyll Robertson pupils asks what else to look for. Which associated finding does the lecture name?",
+   q="A 55-year-old man with Argyll Robertson pupils asks what else to look for. Which associated finding is named?",
    opts=[
      ["Sensory ataxia", "Correct, from tabes dorsalis with posterior column involvement."],
      ["Jaw claudication", "That belongs to giant cell arteritis."],

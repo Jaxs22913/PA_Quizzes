@@ -15,7 +15,7 @@ POOL_B = [
    c=0, cite=c(19)),
 
  dict(topic="Accommodation", io=IO, lead="diagnosis",
-   q="A patient shifts gaze from a distant sign to a book. Which three changes does the lecture describe?",
+   q="A patient shifts gaze from a distant sign to a book. Which three changes are described?",
    opts=[
      ["Lens thickens, pupils constrict, eyes converge", "Correct. The near response acts on lens, pupil and globes together."],
      ["Lens flattens, pupils dilate, eyes diverge", "That is the opposite of the near response."],
@@ -105,7 +105,7 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Care strategies", io=IO, lead="next step",
-   q="A patient presents with a new neuro-ophthalmological complaint. Which sequence does the lecture summarise?",
+   q="A patient presents with a new neuro-ophthalmological complaint. Which sequence is summarised?",
    opts=[
      ["History and examination, then imaging if indicated", "Correct, with ophthalmology and appropriate specialist referral."],
      ["Imaging first, then history", "The lecture begins with a thorough history and physical."],
@@ -114,7 +114,7 @@ POOL_B = [
    c=0, cite=c(54)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="treatment",
-   q="A 35-year-old man has a traumatic fourth nerve palsy with binocular diplopia. What does the lecture advise in the interim?",
+   q="A 35-year-old man has a traumatic fourth nerve palsy with binocular diplopia. What is advised in the interim?",
    opts=[
      ["Patch one eye", "Correct, to relieve binocular diplopia while observing for about six months."],
      ["Start systemic corticosteroids", "Those are for giant cell arteritis, not a traumatic palsy."],
@@ -123,7 +123,7 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="education",
-   q="A parent asks about patching for a young child with a congenital palsy. What does the lecture specify?",
+   q="A parent asks about patching for a young child with a congenital palsy. What is specified?",
    opts=[
      ["It should be supervised by ophthalmology", "Correct, especially under about five years of age."],
      ["It should be continuous until resolution", "The lecture does not prescribe continuous patching."],
@@ -132,7 +132,7 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Adie pupil", io=IO, lead="diagnosis",
-   q="Which slit-lamp finding does the lecture associate with an Adie pupil?",
+   q="Which slit-lamp finding is associated with an Adie pupil?",
    opts=[
      ["Sector paralysis of the iris", "Correct, alongside decreased regional corneal sensation."],
      ["Keratic precipitates", "Those are seen in anterior uveitis."],
@@ -150,7 +150,7 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
-   q="A 3-month-old infant is noted to have nystagmus. What does the lecture advise?",
+   q="A 3-month-old infant is noted to have nystagmus. What is advised?",
    opts=[
      ["Refer for work-up", "Correct. Infants and young children with nystagmus warrant referral."],
      ["Reassure, as it is always physiologic", "Infantile nystagmus specifically warrants referral."],
@@ -159,7 +159,7 @@ POOL_B = [
    c=0, cite=c(5)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
-   q="Which type of nystagmus does the lecture call the most common form?",
+   q="Which type of nystagmus is called the most common form?",
    opts=[
      ["Horizontal jerk", "Correct, with eyes moving slowly to one side and quickly back."],
      ["Torsional jerk", "Also recognised but not the most common."],
@@ -195,7 +195,7 @@ POOL_B = [
    c=0, cite=c(26)),
 
  dict(topic="Argyll Robertson pupil", io=IO, lead="diagnosis",
-   q="Where does the lecture suspect the lesion lies in Argyll Robertson pupil?",
+   q="Where is the lesion suspected to lie in Argyll Robertson pupil?",
    opts=[
      ["Dorsal midbrain", "Correct, in the pretectal area of the superior colliculus."],
      ["Ciliary ganglion", "That is the Adie pupil lesion."],
@@ -204,7 +204,7 @@ POOL_B = [
    c=0, cite=c(33)),
 
  dict(topic="Third nerve palsy", io=IO, lead="next step",
-   q="A 58-year-old woman has a pupil-sparing third nerve palsy. How urgent is imaging, per the lecture?",
+   q="A 58-year-old woman has a pupil-sparing third nerve palsy. How urgent is imaging?",
    opts=[
      ["Imaging, but not stat", "Correct. Reassurance and imaging, without the emergency pathway."],
      ["Stat angiography", "That is reserved for pupil involvement."],
@@ -213,7 +213,7 @@ POOL_B = [
    c=0, cite=c(41)),
 
  dict(topic="Fourth nerve palsy", io=IO, lead="diagnosis",
-   q="A 45-year-old man has an isolated fourth nerve palsy with no history of trauma. Which cause does the lecture name as most common?",
+   q="A 45-year-old man has an isolated fourth nerve palsy with no history of trauma. Which cause is named as most common?",
    opts=[
      ["Congenital", "Correct. Isolated fourth nerve palsy is most commonly congenital, even in adults."],
      ["Microvascular disease", "That is an acquired cause, alongside trauma."],
@@ -249,7 +249,7 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
-   q="A 40-year-old man has new upbeat nystagmus. How does the lecture classify this finding?",
+   q="A 40-year-old man has new upbeat nystagmus. How is this finding classified?",
    opts=[
      ["Concerning and non-physiologic", "Correct, and it warrants work-up in adults."],
      ["Normal physiologic gaze-evoked", "That is a different, benign pattern."],

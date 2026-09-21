@@ -161,7 +161,7 @@ POOL_C = [
    c=0, cite=c(31)),
 
  dict(topic="Congenital melanocytic naevi", io=IOB,
-   q="The parents of a child with a very large congenital naevus feel isolated and overwhelmed. Which support does the lecture name?",
+   q="The parents of a child with a very large congenital naevus feel isolated and overwhelmed. Which support is named?",
    opts=[
      ["Counselling and support groups for families and patients with large naevi",
       "Correct — that is named alongside the surgical and observational decision."],

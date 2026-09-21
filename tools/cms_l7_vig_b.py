@@ -239,7 +239,7 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Keratoacanthoma", io=IOA, lead="treatment",
-   q="A 58-year-old woman is to have a keratoacanthoma excised from her forearm. Which margin does the lecture specify?",
+   q="A 58-year-old woman is to have a keratoacanthoma excised from her forearm. Which margin is specified?",
    opts=[
      ["Five millimetres",
       "Correct — with Mohs surgery for large, recurrent or cosmetically sensitive lesions."],
@@ -252,7 +252,7 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Keratoacanthoma", io=IOA, lead="treatment",
-   q="A 74-year-old man has a large keratoacanthoma on the nasal tip. Which approach does the lecture indicate?",
+   q="A 74-year-old man has a large keratoacanthoma on the nasal tip. Which approach is indicated?",
    opts=[
      ["Mohs surgery",
       "Correct — it is indicated for large or recurrent lesions, and for lesions in anatomic areas with cosmetic or functional considerations. This lesion is both."],

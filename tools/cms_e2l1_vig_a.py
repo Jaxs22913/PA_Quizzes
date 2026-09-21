@@ -111,7 +111,7 @@ VIG_A = [
    c=0, cite=c(43)),
 
  dict(topic="Chlamydial conjunctivitis", io=IOA, lead="education", slot="education",
-   q="A 26-year-old woman is starting doxycycline for adult inclusion conjunctivitis. Which counselling point does the lecture emphasise?",
+   q="A 26-year-old woman is starting doxycycline for adult inclusion conjunctivitis. Which counselling point is emphasised?",
    opts=[
      ["Stay out of the sun, take it with a full glass of water, stay upright, and separate it from antacids and iron, calcium or magnesium",
       "Correct — photosensitivity plus the absorption and oesophageal cautions."],
@@ -359,7 +359,7 @@ VIG_A = [
    c=0, cite=c(53)),
 
  dict(topic="Orbital cellulitis", io=IOA, lead="complication", slot="complication",
-   q="A 55-year-old man with untreated orbital cellulitis is deteriorating. Which complications does the lecture specifically warn about?",
+   q="A 55-year-old man with untreated orbital cellulitis is deteriorating. Which complications should be watched for specifically?",
    opts=[
      ["Intracranial spread causing meningitis or cavernous sinus thrombosis",
       "Correct — the deck's two named complications of untreated infection."],
@@ -398,7 +398,7 @@ VIG_A = [
    c=0, cite=c(25)),
 
  dict(topic="Dacryoadenitis", io=IOA, lead="first-line", slot="agent/regimen",
-   q="A 36-year-old woman has pain, redness and swelling over the outer third of her upper eyelid, with an enlarged node in front of the ear on the same side. Workup points to an inflammatory cause. Which treatment does the lecture give, and how quickly should it work?",
+   q="A 36-year-old woman has pain, redness and swelling over the outer third of her upper eyelid, with an enlarged node in front of the ear on the same side. Workup points to an inflammatory cause. Which treatment is given, and how quickly should it work?",
    opts=[
      ["Oral corticosteroids, with a response expected within 48 hours",
       "Correct — the deck's agent and response window for inflammatory dacryoadenitis."],

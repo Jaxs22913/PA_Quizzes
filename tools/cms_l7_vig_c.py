@@ -357,7 +357,7 @@ VIG_C = [
    c=0, cite=c(111)),
 
  dict(topic="Benign lesions overall", io=IOB, lead="education",
-   q="A 62-year-old attends about a new lesion on his sun-exposed forearm. Beyond addressing the lesion, which counselling does the lecture say to offer?",
+   q="A 62-year-old attends about a new lesion on his sun-exposed forearm. Beyond addressing the lesion, which counselling should be offered?",
    opts=[
      ["Sunscreen, sun avoidance at peak hours, and skin checks",
       "Correct — the general education point the deck attaches to any new lesion in a sun-exposed area."],
