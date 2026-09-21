@@ -24,9 +24,9 @@ POOL_E = [
      ["Chronic venous insufficiency, obesity, immobility, previous deep vein thrombosis and chronic lower-limb oedema",
       "Those are the risk factors for stasis dermatitis."],
      ["Occlusive clothing, hot humid weather, obesity, poor hygiene and nasal staphylococcal carriage",
-      "Those are the risk factors for folliculitis in Lecture 4."],
+      "Those predispose to folliculitis by occluding and colonising follicles; atopic dermatitis follows barrier dysfunction and allergic sensitisation."],
      ["Cumulative ultraviolet exposure, fair skin, outdoor occupation, immunosuppression and older age",
-      "Those are the risk factors for actinic damage in Lecture 3."]],
+      "Those are the risk factors for actinic damage and keratinocyte carcinoma, not for an atopic inflammatory dermatosis."]],
    c=0, cite=c(52)),
 
  dict(topic="Atopic dermatitis", io=IOC, slot="epidemiology",
@@ -37,7 +37,7 @@ POOL_E = [
      ["About 5% of children, and it is more common in females than males",
       "That understates the prevalence and reverses the sex difference."],
      ["About 50% of children, and it affects both sexes equally overall",
-      "That overstates the prevalence given in the lecture."],
+      "Half of all children is a considerable overstatement; the figure is about 20 per cent, with a male predominance."],
      ["About 2% of children, and it is confined almost entirely to males",
       "That understates the prevalence substantially."]],
    c=0, cite=c(52)),
@@ -171,7 +171,7 @@ POOL_E = [
      ["A band-like infiltrate of lymphocytes filling the papillary dermis",
       "That is the lichen planus finding."],
      ["Granular immunoglobulin A deposited at the tips of the dermal papillae",
-      "That is dermatitis herpetiformis, in Lecture 3."]],
+      "Granular immunoglobulin A at the dermal papillary tips is the finding in dermatitis herpetiformis; bullous pemphigoid shows a neutrophil row at the junction."]],
    c=0, cite=c(124)),
 
  dict(topic="Lichen planus", io=IOC, slot="test finding",
@@ -370,7 +370,7 @@ POOL_E = [
      ["Referral for hair transplantation early in the disease course",
       "Transplantation is discussed for androgenetic rather than areata."],
      ["Referral to a wig service before starting any medical therapy",
-      "That is not what the lecture names."]],
+      "A wig may help, but what is emphasised is psychological support, because the condition's main burden is the distress of visible sudden hair loss."]],
    c=0, cite=c(140)),
 
  # ---------------- complications

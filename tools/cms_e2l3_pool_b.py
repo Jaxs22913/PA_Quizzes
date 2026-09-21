@@ -45,7 +45,7 @@ POOL_B = [
      ["At least two", "Correct, prompting neurology or neuro-ophthalmology referral."],
      ["At least five", "Higher than the threshold given."],
      ["Any number, if contrast enhancing", "Number, not enhancement, is the stated threshold."],
-     ["Lesion count does not affect referral", "The lecture gives a specific threshold."]],
+     ["Lesion count does not affect referral", "Lesion count does matter: two or more characteristic demyelinating lesions raise the probability of multiple sclerosis enough to warrant neurology referral."]],
    c=0, cite=c(24)),
 
  dict(topic="Vascular occlusion", io=IOA, lead="test",
@@ -88,7 +88,7 @@ POOL_B = [
  dict(topic="Amaurosis fugax", io=IOB, lead="treatment",
    q="A 67-year-old man has amaurosis fugax. What is identified as the core of management?",
    opts=[
-     ["Treat the underlying cause", "Correct; the lecturer called this the essential point."],
+     ["Treat the underlying cause", "Correct; the transient visual loss is only a warning, and the value of recognising it lies in finding and treating the embolic source before a stroke follows."],
      ["Lower the intraocular pressure", "That is glaucoma management."],
      ["Start high-dose corticosteroids", "Those treat arteritic optic neuropathy."],
      ["Observe without intervention", "The cause must be found and treated."]],
@@ -280,7 +280,7 @@ POOL_B = [
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
    q="A 60-year-old man is being taught how to separate papilledema from glaucoma at the optic disc. What is the key difference?",
    opts=[
-     ["Papilledema pushes the disc out; glaucoma cups it in", "Correct, and the lecturer stressed how distinct they look."],
+     ["Papilledema pushes the disc out; glaucoma cups it in", "Correct; raised intracranial pressure swells the disc forward, while raised intraocular pressure excavates it backwards, so the two look opposite on fundoscopy."],
      ["Both cup the disc equally", "They move in opposite directions."],
      ["Neither changes the disc", "Both change it markedly."],
      ["Only glaucoma affects the appearance of the disc", "Papilledema is defined by disc swelling."]],
@@ -335,8 +335,8 @@ POOL_B = [
    q="A 70-year-old woman with ocular ischemia loses part of her visual field. Which patterns are described?",
    opts=[
      ["Upper or lower half, temporal or nasal, or central", "Correct; the whole field may also be lost."],
-     ["Only the central field", "The lecture describes several patterns."],
-     ["Only the temporal field", "The lecture describes several patterns."],
+     ["Only the central field", "Several patterns occur, depending on which vessels are compromised: upper or lower half, temporal or nasal, or central."],
+     ["Only the temporal field", "The temporal field is one possibility among several; loss may also be altitudinal, nasal or central."],
      ["The visual field is never partially affected", "Partial loss is explicitly described."]],
    c=0, cite=c(6)),
 

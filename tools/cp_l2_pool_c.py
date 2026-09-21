@@ -57,7 +57,7 @@ POOL_C = [
      ["Capillary rupture with blood deposited into the dermis",
       "That produces petechiae and purpura."],
      ["Dense inflammatory infiltration around dilated vessels",
-      "The lecture states specifically that there is no inflammatory infiltration."],
+      "The absence of inflammatory infiltrate is part of the definition; these are permanently dilated and thinned vessels rather than inflamed ones."],
      ["Proliferation of new vessels driven by vascular endothelial growth factor",
       "That mechanism is described for nail clubbing."]],
    c=0, cite=c(44)),
@@ -92,7 +92,7 @@ POOL_C = [
    q="What is the key mechanistic difference between irritant and allergic contact dermatitis?",
    opts=[
      ["Irritant contact dermatitis is caused by direct cutaneous interaction with a chemical, biologic or physical agent and does NOT require prior exposure; allergic requires prior sensitization",
-      "Correct, and the lecture notes the two can be clinically difficult to tell apart, which is why the exposure history matters."],
+      "Correct — an irritant damages the skin directly on first contact, whereas an allergic reaction is a delayed hypersensitivity requiring prior sensitisation, though the two can look identical."],
      ["Irritant requires prior sensitization and allergic does not",
       "This reverses the two."],
      ["Irritant is immunoglobulin E-mediated and allergic is T cell-mediated",
@@ -144,7 +144,7 @@ POOL_C = [
    q="Which factors contribute to seborrhoeic dermatitis, and where does it occur?",
    opts=[
      ["Cutaneous microbiome dysbiosis, altered immune response and epidermal barrier dysfunction, affecting regions rich in sebaceous glands — scalp, face and upper trunk",
-      "Correct, and the lecture is explicit that the cause is incompletely understood. Dandruff is the non-inflammatory form."],
+      "Correct — the distribution follows sebum-rich skin because Malassezia depends on sebum lipids, and the disease reflects the interaction of that organism with barrier and immune dysfunction rather than any single cause."],
      ["A single fungal pathogen acting alone, affecting the palms and soles",
       "The cause is described as multifactorial and incompletely understood, and the distribution follows sebaceous glands."],
      ["Autoimmune T cell activation, affecting the elbows and knees",
@@ -157,7 +157,7 @@ POOL_C = [
    q="What is a seborrhoeic keratosis at the cellular level, and what mutation is implicated?",
    opts=[
      ["A benign proliferation of immature keratinocytes, possibly from activating mutations in the tyrosine kinase receptor fibroblast growth factor receptor-3",
-      "Correct, and the lecture notes the exact mechanism remains unknown. It is the most common skin growth in older adults."],
+      "Correct — activating mutations in fibroblast growth factor receptor-3 drive a benign proliferation of immature keratinocytes, which is why these lesions accumulate with age and never invade."],
      ["A malignant proliferation of basal keratinocytes driven by the Hedgehog pathway",
       "That is basal cell carcinoma."],
      ["A dysplastic keratinocyte proliferation driven by cumulative ultraviolet exposure",
@@ -261,7 +261,7 @@ POOL_C = [
    q="What is the suspected mechanism of koilonychia?",
    opts=[
      ["Impaired keratin synthesis associated with deficiency anaemia, weakening the nail plate into raised ridges that are thin and concave",
-      "Correct, and the lecture notes the exact pathophysiology is unknown."],
+      "Correct — iron is required for keratin synthesis, so deficiency produces a thin, poorly formed nail plate that flattens and then becomes concave."],
      ["A halt of keratin production producing transverse grooves",
       "That is Beau's lines."],
      ["Overgrowth of connective tissue producing an opaque nail",

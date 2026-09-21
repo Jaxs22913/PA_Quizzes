@@ -94,7 +94,7 @@ POOL_B = [
    q="Which sites do nosocomial infections most commonly involve?",
    opts=[
      ["Urinary tract, respiratory tract and surgical incisions", "Correct."],
-     ["Skin and soft tissue only", "Narrower than the lecture's list."],
+     ["Skin and soft tissue only", "Skin and soft tissue are involved, but the commonest sites are those breached by devices and surgery: the urinary tract, respiratory tract and surgical incisions."],
      ["Bloodstream and central nervous system infections", "Not the sites named as most common."],
      ["Gastrointestinal tract alone", "Not the list given."]],
    c=0, cite=c(50)),
@@ -103,7 +103,7 @@ POOL_B = [
    opts=[
      ["Escherichia coli, Pseudomonas and Klebsiella", "Correct, with staphylococci, streptococci and yeasts."],
      ["Staphylococci and streptococci only", "Both are named, but the gram-negatives lead the list."],
-     ["Strict anaerobes and spore formers", "Not among the organisms the lecture names."],
+     ["Strict anaerobes and spore formers", "Strict anaerobes and spore formers are not the common hospital organisms; Escherichia coli, Pseudomonas and Klebsiella are."],
      ["Respiratory viruses and yeasts by themselves", "Yeasts are named; viruses are not."]],
    c=0, cite=c(50)),
  dict(topic="Nosocomial infection", io=IO7,
@@ -111,8 +111,8 @@ POOL_B = [
    opts=[
      ["It may prolong the hospital stay or end in death", "Correct."],
      ["It always requires surgical drainage of the site", "Not a stated consequence."],
-     ["It is usually asymptomatic", "Not what the lecture describes."],
-     ["It resolves without treatment", "Not what the lecture describes."]],
+     ["It is usually asymptomatic", "These infections are symptomatic and serious, prolonging admission and contributing to death."],
+     ["It resolves without treatment", "They require treatment; left alone they extend the hospital stay and can be fatal."]],
    c=0, cite=c(50)),
  dict(topic="Epidemiology", io=IO5,
    q="What does prevalence measure?",
@@ -245,7 +245,7 @@ POOL_B = [
  dict(topic="Host defences", io=IO5,
    q="Which host factor is singled out with particular emphasis?",
    opts=[
-     ["Immune status", "Correct — the lecture calls it the major one."],
+     ["Immune status", "Correct — whatever the organism or the exposure, whether infection takes hold depends most on the host's ability to resist it."],
      ["Blood group", "Not named as a factor."],
      ["Height and weight", "Not named as factors."],
      ["Geographic location", "That relates to reservoirs rather than host defence."]],
@@ -255,7 +255,7 @@ POOL_B = [
    opts=[
      ["The elderly, young children and premature infants", "Correct, alongside those on immunosuppressants."],
      ["Healthy young adults", "Not a group with weakened defences."],
-     ["Athletes", "Not a group the lecture names."],
+     ["Athletes", "Athletes are not a risk group; those with immature or declining immunity are, namely the elderly, young children and premature infants."],
      ["Those whose resident flora remain fully intact", "Intact flora is protective."]],
    c=0, cite=c(22)),
 ]
