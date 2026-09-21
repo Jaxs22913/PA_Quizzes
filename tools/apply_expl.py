@@ -57,12 +57,19 @@ for pool, items in sorted(by_pool.items()):
     for n in ast.walk(tree):
         if not isinstance(n, ast.Call):
             continue
-        for a, b in zip(n.args, n.args[1:]):
-            if (isinstance(a, ast.Constant) and isinstance(a.value, str)
-                    and isinstance(b, ast.List) and b.elts
+        # The stem is not always adjacent to the options list -- signatures
+        # differ between pools (Q(topic, stem, opts, ...) but also
+        # Q(topic, var, stem, x, opts, c)). Register every string argument
+        # that PRECEDES the options list as a possible key; lookups are by
+        # exact stem text, so a short topic label simply never matches.
+        for i, b in enumerate(n.args):
+            if not (isinstance(b, ast.List) and b.elts
                     and all(isinstance(e, ast.List) and len(e.elts) == 2 for e in b.elts)):
-                if b not in qmap.get(a.value, []):
-                    qmap.setdefault(a.value, []).append(b)
+                continue
+            for a in n.args[:i]:
+                if isinstance(a, ast.Constant) and isinstance(a.value, str):
+                    if b not in qmap.get(a.value, []):
+                        qmap.setdefault(a.value, []).append(b)
 
     targets = []
     for stem, idx, new in items:

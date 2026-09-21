@@ -136,7 +136,7 @@ POOL_C = [
      ["PSORS1",
       "That is the major susceptibility locus rather than the 90% marker."],
      ["HLA-DR4",
-      "This marker is not named in the lecture."]],
+      "HLA-DR4 is associated with rheumatoid arthritis and type 1 diabetes; early-onset psoriasis carries a different class I association."]],
    c=0, cite=c(155)),
 
  dict(topic="Psoriasis", io=IOC,
@@ -253,7 +253,7 @@ POOL_C = [
      ["Phototherapy is contraindicated; acitretin is used instead",
       "The contraindication given is for acitretin."],
      ["Biologics are first line in pregnancy",
-      "That is not what the lecture specifies."]],
+      "Biologics are not first line in pregnancy; the agent to avoid is teratogenic, and a safer alternative is substituted."]],
    c=0, cite=c(164)),
 
  dict(topic="Pityriasis rosea", io=IOC,

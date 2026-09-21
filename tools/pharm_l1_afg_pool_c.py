@@ -230,7 +230,7 @@ POOL_C = [
      ["Six to twelve weeks for fingernails and up to twelve months for toenails",
       "Correct. As with griseofulvin, the duration follows nail growth, which is the counselling point that keeps patients on therapy."],
      ["One week for fingernails and one month for toenails",
-      "Those durations are far shorter than the lecture gives."],
+      "Both are far too short; treatment must continue while the nail grows out, which takes months rather than weeks."],
      ["Six to nine months for fingernails and up to twelve months for toenails",
       "Those are griseofulvin's figures; terbinafine clears fingernails faster."],
      ["A single dose for both sites",
@@ -241,7 +241,7 @@ POOL_C = [
    q="A patient with poorly controlled diabetes develops a fungal infection. Which predisposing category does this represent?",
    opts=[
      ["Metabolic abnormality",
-      "Correct — diabetes is the lecture's own example for that category."],
+      "Correct — hyperglycaemia both feeds the organism and impairs neutrophil function, which is why diabetes is the standing example of a metabolic predisposition."],
      ["Immunodeficiency",
       "That category is illustrated by cancer, human immunodeficiency virus infection, organ transplant and chemotherapy."],
      ["Loss of barriers",

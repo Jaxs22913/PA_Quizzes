@@ -400,10 +400,10 @@ POOL_B = [
      ["Deeper tissue biopsy or aspirate",
       "Correct — higher yield than a superficial swab in complex wounds."],
      ["A superficial swab taken by the Levine method",
-      "The Levine method is an appropriate swab technique, but the deck still gives biopsy or aspirate the higher yield here."],
+      "The Levine technique is the correct way to take a swab, but even a well-taken surface swab samples colonising flora; tissue biopsy or aspirate reaches the organisms causing the infection."],
      ["Repeat superficial swabs taken on consecutive days",
       "Repeating a superficial swab does not overcome its limitations."],
      ["Blood cultures drawn from two separate sites",
-      "Blood cultures are not offered for this purpose on this slide."]],
+      "Blood cultures detect bacteraemia rather than identifying the organism in a localised wound; tissue biopsy or aspirate does that."]],
    c=0, cite=c(15)),
 ]

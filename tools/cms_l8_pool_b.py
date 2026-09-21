@@ -38,7 +38,7 @@ POOL_B = [
      ["The smaller the lesion the higher the risk, and they occur most commonly on the palms and the soles",
       "That reverses the size relationship and gives the wrong distribution."],
      ["The darker the pigment the higher the risk, and they occur most commonly on the face and the neck",
-      "Size rather than pigment intensity is what the lecture ties to risk."],
+      "Risk tracks the size of the lesion rather than how dark it is, because a larger naevus contains far more melanocytes at risk of transformation."],
      ["The number of lesions determines the risk, and they occur most commonly on sun-exposed surfaces",
       "Number of lesions is the risk relationship described for dysplastic naevi."]],
    c=0, cite=c(28)),
@@ -209,7 +209,7 @@ POOL_B = [
      ["Common blue naevi occur on the palms and soles; cellular blue naevi occur on the trunk and the extremities only",
       "Both occur on the same sites and neither is confined to palms and soles."],
      ["Common blue naevi are present at birth; cellular blue naevi develop only after the fifth decade of life",
-      "Neither timing matches what the lecture describes."]],
+      "Neither timing fits: blue naevi are typically acquired in childhood or adolescence rather than congenital or confined to later life."]],
    c=0, cite=c(39)),
 
  dict(topic="Blue naevus", io=IOA,

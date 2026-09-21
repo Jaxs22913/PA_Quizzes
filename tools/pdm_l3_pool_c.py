@@ -367,7 +367,7 @@ POOL_C = [
    q="Which appearance distinguishes glaucomatous optic damage from other optic atrophies?",
    opts=[
      ["It is characteristically excavated rather than merely pale",
-      "Correct — excavation is the discriminator the slide names."],
+      "Correct — other optic neuropathies leave a pale but normally contoured disc, whereas glaucoma physically excavates it as the neuroretinal rim is lost."],
      ["It is characteristically pale rather than excavated",
       "The distinction is stated the other way round."],
      ["It is characteristically unilateral rather than bilateral",
@@ -380,7 +380,7 @@ POOL_C = [
    q="What does a healthy optic disc look like?",
    opts=[
      ["A small central cup with a robust neuroretinal rim",
-      "Correct — the healthy disc as the slide describes it."],
+      "Correct — a healthy disc has most of its area occupied by nerve fibres forming a full rim, with only a small central cup where no axons lie."],
      ["An enlarged, deeply excavated cup with an undermined rim",
       "That is the glaucomatous disc."],
      ["A pale disc with sharply defined margins and no cup",

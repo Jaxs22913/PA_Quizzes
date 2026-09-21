@@ -44,7 +44,7 @@ POOL_A = [
    q="Which four questions frame the choice of an imaging modality?",
    opts=[
      ["Which modality best rules the diagnosis in or out, is there a lower-radiation alternative, what is the risk against benefit for this patient, and is contrast needed",
-      "Correct — those are the four the lecture opens with."],
+      "Correct — each guards a different failure: ordering a study that cannot answer the question, irradiating unnecessarily, ignoring patient-specific risk, and omitting the contrast the study needs."],
      ["Which modality is cheapest, which is fastest, which is closest, and which the patient prefers",
       "Cost and availability matter but are not the framing questions given."],
      ["Which modality the radiologist prefers, which is available today, which the insurer covers, and which is quickest",
@@ -215,7 +215,7 @@ POOL_A = [
      ["A matrix of thousands of tiny squares called pixels, each assigned a computed tomography number from −1000 to +1000 in Hounsfield units",
       "Correct — water is assigned a Hounsfield number of zero by convention."],
      ["A matrix of voxels, each assigned a signal intensity from 0 to 255 in greyscale units",
-      "That is not how the lecture describes the image."],
+      "The greyscale here is not an arbitrary 0 to 255 signal; each volume element is assigned a Hounsfield value that measures how strongly the tissue attenuates x-rays."],
      ["A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
       "Millisieverts measure radiation dose rather than image density."],
      ["A hydrogen map, each point assigned a relaxation time in milliseconds",

@@ -444,8 +444,7 @@ Q("Pyogenic granuloma",
     "granulomatous. It is a benign vascular tumour common in children, young adults, and pregnancy, arising as a "
     "response to injury or hormonal factors, most often on the head, neck, and fingers."],
    ["Pyogenic granuloma, so named because it is a granulomatous response to bacterial infection",
-    "This accepts the name at face value, which is the misconception the lecture corrects. The lesion is neither "
-    "infectious nor granulomatous."],
+    "The name is a double misnomer: the lesion is a reactive proliferation of capillaries following trauma, with neither infection nor granuloma formation involved."],
    ["Cherry angioma",
     "Cherry angiomas are smooth firm deep red papules under 5 mm that occur with increasing age on the trunk. They do "
     "not appear rapidly after trauma on a finger in an adolescent."],

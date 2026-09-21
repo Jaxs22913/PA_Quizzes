@@ -40,7 +40,7 @@ POOL_A = [
      ["A flat lesion less than one centimetre, without elevation or depression",
       "Correct. A patch is the same lesion larger than one centimetre."],
      ["A flat lesion less than five millimetres",
-      "Five millimetres is the convention used in Clinical Pathophysiology; in this course the cut-off between a macule and a patch is one centimetre."],
+      "Five millimetres is the convention used in Clinical Pathophysiology; here the boundary between a macule and a patch falls at one centimetre."],
      ["An elevated solid lesion less than one centimetre",
       "That is a papule."],
      ["A flat elevated plateau lesion greater than one centimetre",

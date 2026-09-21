@@ -147,7 +147,7 @@ POOL_D = [
    q="From which organism is griseofulvin derived?",
    opts=[
      ["Penicillium griseofulvum",
-      "Correct — a mould product, like several of the antibacterials in this lecture."],
+      "Correct — like several antibacterials, it is a mould product, isolated from a Penicillium species rather than synthesised."],
      ["Streptomycetaceae in soil",
       "That is amphotericin B's source."],
      ["Bacillus polymyxa",
@@ -160,7 +160,7 @@ POOL_D = [
    q="A patient develops athlete's foot after prolonged use of occlusive footwear. Which predisposing factor is this?",
    opts=[
      ["A warm moist environment",
-      "Correct — the lecture's own examples for that category are diaper rash and athlete's foot."],
+      "Correct — occlusive footwear traps sweat against the skin, and dermatophytes need exactly that warmth and moisture to establish in the stratum corneum."],
      ["Loss of barriers",
       "That covers burns, surgery and catheters breaching a physical boundary."],
      ["Immunodeficiency",

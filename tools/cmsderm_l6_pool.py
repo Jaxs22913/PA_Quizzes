@@ -256,8 +256,7 @@ Q("Tinea incognito",
     "topical steroids. Management begins by stopping the inappropriate corticosteroid or calcineurin inhibitor, then "
     "obtaining potassium hydroxide microscopy or culture from an active edge."],
    ["Tinea incognito; increase the potency of the topical corticosteroid",
-    "This is the exact cycle described in the lecture — the lesion flares, more steroid is applied, and the "
-    "appearance is further altered. Escalating potency deepens the problem."],
+    "This is the cycle itself: the steroid suppresses inflammation so the lesion looks better, the fungus spreads unchecked beneath it, and stopping unmasks a worse eruption. More steroid deepens the problem."],
    ["Allergic contact dermatitis to the corticosteroid vehicle; patch test before any further treatment",
     "Contact allergy to a topical is possible in general, but the expanding annular morphology and the flare-on-"
     "withdrawal pattern point to a suppressed dermatophyte infection."],
@@ -509,8 +508,7 @@ Q("Herpes simplex virus",
     "Correct. Either herpes simplex virus type can cause oral or genital infection, and lesion location does not "
     "reliably determine type. Infections can occur anywhere on the skin, and typing requires a type-specific test."],
    ["Genital or buttock lesions are always herpes simplex virus type 2",
-    "This is the common assumption the lecture corrects. Type 1 causes a substantial share of genital infection, and "
-    "acting on location alone gives false reassurance about transmission and recurrence patterns."],
+    "Either type infects either site, and type 1 now accounts for a substantial share of genital infection, so location cannot assign the type or predict recurrence risk."],
    ["Type can be determined by the appearance of the vesicles",
     "Grouped vesicles on an erythematous base breaking down to shallow painful ulcers is the appearance of both "
     "types. Morphology does not distinguish them."],
@@ -563,8 +561,7 @@ Q("Herpetic whitlow",
     "covered, hand hygiene used, contact with mucosa and broken skin avoided until healed, and early oral acyclovir, "
     "valacyclovir, or famciclovir may shorten the episode."],
    ["Incise and drain, then start oral antivirals",
-    "This is the specific error the lecture warns against. The lesion is not an abscess, and incising it delays "
-    "healing while creating a portal for secondary infection."],
+    "There is no pus to release; incising a herpetic whitlow delays healing and opens a route for bacterial superinfection, which is why it is specifically contraindicated."],
    ["Apply a topical antifungal and keep the hand dry",
     "That approach belongs to chronic paronychia, where Candida albicans is the most common pathogen and the cause is "
     "prolonged wet work."],

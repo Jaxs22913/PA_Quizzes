@@ -32,7 +32,7 @@ POOL_B = [
      ["Every one to two days, and they die within a week without one",
       "That underestimates both the interval and the survival."],
      ["Once a month, and they can survive for up to three months",
-      "That is not the interval the lecture gives."],
+      "Bedbugs feed far more often than monthly, and their capacity to survive without a meal is considerably longer than three months, which is why infestations persist in empty rooms."],
      ["Twice daily, and they cannot survive more than forty-eight hours",
       "That is far more frequent than described."]],
    c=0, cite=c(32)),

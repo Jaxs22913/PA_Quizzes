@@ -110,7 +110,7 @@ POOL_A = [
      ["About 75 percent", "Correct, in patients aged 18 to 45."],
      ["About 25 percent", "That would reverse the sex distribution."],
      ["About 90 percent", "Higher than the figure given."],
-     ["Sex distribution is not stated", "The lecture gives a figure."]],
+     ["Sex distribution is not stated", "A figure is given, and it reflects the marked female predominance of optic neuritis and of the demyelinating disease behind it."]],
    c=0, cite=c(23)),
 
  dict(topic="AAION", io=IOA, lead="epidemiology",
@@ -146,7 +146,7 @@ POOL_A = [
      ["Vein occlusion is the more common", "Correct."],
      ["They are equally common", "One is stated to be more common."],
      ["Neither occurs before age 70", "Age over 50 is the listed risk."],
-     ["Branch forms are more common than both", "The lecture does not make that comparison."]],
+     ["Branch forms are more common than both", "The comparison drawn is between the central arterial and venous occlusions rather than with the branch forms."]],
    c=0, cite=c(32)),
 
  # ---------------- Risk factors ----------------

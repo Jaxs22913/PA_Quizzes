@@ -155,7 +155,7 @@ POOL = [
      ["It provides additional analgesia of its own",
       "The benefit described is vascular, not analgesic."],
      ["It prevents an allergic reaction to the anaesthetic",
-      "Not the reason the lecture gives."]],
+      "Epinephrine does not prevent allergy; it constricts local vessels so the anaesthetic is carried away more slowly, prolonging the block and reducing bleeding."]],
    c=0, cite=c(85)),
 
  dict(topic="Epinephrine interactions", io=IO4,

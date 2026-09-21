@@ -123,14 +123,14 @@ POOL_B = [
      ["Collagen is degraded entirely and replaced by elastin",
       "Elastin is not the replacement fibre in scar remodelling."],
      ["Collagen production continues to increase indefinitely",
-      "The lecture notes that formation of granulation tissue ceases in this phase."]],
+      "Production does not continue indefinitely; granulation tissue formation ceases and the existing collagen is reorganised and cross-linked instead."]],
    c=0, cite=c(36)),
 
  dict(topic="Wound healing", io=IOC,
    q="Which phase of wound healing is singled out as important, and what defines it?",
    opts=[
      ["The remodelling phase, days 21 to one year, in which formation of granulation tissue ceases",
-      "Correct — the slide marks this phase specifically, and its collagen swap is what determines the final scar."],
+      "Correct — remodelling determines the final scar, as type III collagen is replaced by type I and cross-linked, which is why strength keeps increasing for months without ever reaching that of normal dermis."],
      ["The inflammatory phase, days 1 to 3, in which the fibrin plug forms",
       "That phase is described but is not the one singled out."],
      ["The proliferative phase, days 4 to 21, in which granulation tissue forms",

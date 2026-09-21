@@ -301,8 +301,7 @@ Q("Cutaneous T-cell lymphoma",
     "progression, and overly aggressive therapy may cause complications and premature death, so treatment is "
     "stage-directed and skin-directed."],
    ["Immediate combination systemic chemotherapy for all patients at diagnosis",
-    "This is precisely the approach the lecture warns against, since aggressive early therapy has not been shown to "
-    "cure or prevent progression and carries a real risk of harm."],
+    "Early aggressive chemotherapy has not been shown to cure the disease or prevent progression, and its complications can shorten a life that would otherwise run for decades."],
    ["No treatment at any stage, since the disease is indolent",
     "The disease may remain confined to skin for years or decades, which makes indolence a real feature, but "
     "stage-directed skin-directed treatment is offered rather than nothing."],

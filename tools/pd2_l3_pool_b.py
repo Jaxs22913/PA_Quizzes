@@ -109,7 +109,7 @@ POOL_B = [
    q="Where does a chalazion usually point?",
    opts=[
      ["Inside the lid rather than on the lid margin",
-      "Correct — the material notes this as a distinguishing feature."],
+      "Correct — the chalazion arises in a meibomian gland within the tarsal plate, so it points inward towards the conjunctival surface rather than at the lash line."],
      ["On the lid margin at the lash line",
       "That is the external hordeolum."],
      ["At the medial canthus",

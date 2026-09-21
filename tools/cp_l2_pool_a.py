@@ -181,7 +181,7 @@ POOL_A = [
      ["Lanugo hair is androgen-regulated; terminal hair is not",
       "Lanugo is newborn hair and is not the androgen-dependent type."],
      ["All three types are equally androgen-dependent",
-      "The lecture distinguishes them specifically on androgen regulation."]],
+      "They differ sharply: terminal hair in androgen-dependent areas responds to androgens, while vellus hair and scalp hair grow independently of them."]],
    c=0, cite=c(15)),
 
  dict(topic="Lesion categories", io=IOB,
@@ -305,7 +305,7 @@ POOL_A = [
    q="What does a pustule contain, and what organisms are typically involved?",
    opts=[
      ["Purulent material of leukocytes, cellular debris, serous fluid and possibly microorganisms, typically Gram-positive bacteria such as Staphylococcus aureus or Streptococcus pyogenes",
-      "Correct, and the lecture notes a pustule may also be sterile, as in rosacea."],
+      "Correct — a pustule is a visible collection of neutrophils, usually responding to Gram-positive skin flora, though in rosacea the same appearance occurs without any organism."],
      ["Clear serous fluid only, always sterile",
       "Pustules contain purulent material, though they may sometimes be sterile."],
      ["Blood deposited in the dermis from ruptured capillaries",

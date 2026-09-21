@@ -437,7 +437,7 @@ POOL_A = [
  dict(topic="Order of examination", io=IO, slot="initial test",
    q="When must pupillary reactions be checked, relative to dilation?",
    opts=[
-     ["Before dilating", "Correct — the material notes this explicitly in the suggested order."],
+     ["Before dilating", "Correct — a dilating drop paralyses the iris sphincter, so once it is instilled the light reflex cannot be assessed for hours and any afferent defect is lost."],
      ["After dilating", "Dilation abolishes the reaction being tested."],
      ["It makes no difference", "It makes all the difference."],
      ["Only after the fundoscopic examination", "Fundoscopy usually follows dilation."]],

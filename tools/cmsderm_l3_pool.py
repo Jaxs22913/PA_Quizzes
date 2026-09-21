@@ -291,8 +291,7 @@ Q("Pyoderma gangrenosum",
     "Correct. Debridement must be avoided in pyoderma gangrenosum because pathergy — worsening with trauma — is a "
     "defining feature. Wound care uses moist dressings and non-adherent contact layers instead."],
    ["Proceed with debridement to remove devitalised tissue and speed healing",
-    "This is the intervention the lecture specifically warns against. Trauma to a pathergic ulcer enlarges it, so the "
-    "operation intended to help is the thing most likely to cause harm."],
+    "Pyoderma gangrenosum shows pathergy: any trauma, including debridement, provokes further ulceration, so the operation intended to help is what enlarges the wound."],
    ["Obtain an ankle-brachial index and begin compression therapy",
     "Arterial and venous studies belong to the exclusion of vascular insufficiency ulcers, which is a reasonable part "
     "of the workup. But this ulcer's undermined violaceous border and rapid painful expansion in a patient with "

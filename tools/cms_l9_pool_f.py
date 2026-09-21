@@ -52,13 +52,13 @@ POOL_F = [
    q="How does the level of invasion (Clark) differ from Breslow thickness, and which is called the dominant prognostic variable?",
    opts=[
      ["The level of invasion is the anatomic layer reached; Breslow thickness is a measured depth, and Breslow is the dominant prognostic variable",
-      "Correct — Breslow is measured in millimetres and drives margins and staging. Note the deck labels these only \u201cLevel I\u201d to \u201cLevel V\u201d and never uses the word Clark; that is the conventional outside name for the same system."],
+      "Correct — the level records which anatomic layer the tumour has reached, while Breslow measures actual depth in millimetres, and that measurement is what determines margins and stage."],
      ["The level of invasion is a measured depth; Breslow thickness is the anatomic layer reached, and the level is the dominant prognostic variable",
       "The two definitions are swapped, and Breslow dominates."],
      ["Both describe the same measurement on different scales, and either may be used as the dominant prognostic variable",
       "They are different concepts."],
      ["The level of invasion is the anatomic layer reached; Breslow thickness is a measured depth, and the level is the dominant prognostic variable",
-      "The definitions are right but the deck names Breslow as dominant."]],
+      "The definitions are right but the ranking is not: Breslow thickness rather than anatomic level is the dominant prognostic variable."]],
    c=0, cite=c(55)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",

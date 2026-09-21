@@ -17,11 +17,11 @@ POOL_D = [
      ["Recurrent herpes simplex infection, immunosuppression, high-risk medications, recent respiratory infection and a prior episode",
       "Correct — a prior episode itself carries recurrence risk."],
      ["Chronic venous insufficiency, obesity, immobility, previous deep vein thrombosis and chronic lower-limb oedema",
-      "Those are the risk factors for stasis dermatitis in Lecture 2."],
+      "Those predispose to stasis dermatitis through venous hypertension; erythema multiforme is an immune reaction, most often to herpes simplex or a drug."],
      ["Cumulative ultraviolet exposure, fair skin, outdoor work, immunosuppression and older age",
       "Those are the risk factors for actinic damage."],
      ["Nasal staphylococcal carriage, obesity, diabetes, occlusive clothing and humid weather",
-      "Those are the risk factors for folliculitis in Lecture 4."]],
+      "Those favour folliculitis by occluding and colonising follicles; erythema multiforme follows infection or drug exposure instead."]],
    c=0, cite=c(9)),
 
  dict(topic="Erythema multiforme", io=IOA, slot="differential",

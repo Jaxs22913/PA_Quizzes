@@ -374,7 +374,7 @@ POOL_A = [
      ["Because no single treatment is licensed for children under twelve years of age",
       "Licensing is not the stated reason."],
      ["Because nits cannot be killed by any chemical agent currently available anywhere",
-      "That is not what the lecture states."]],
+      "Nits can be killed by some agents, but cemented eggs resist many treatments and survive a single application, which is why combing and repeat treatment are added."]],
    c=0, cite=c(30)),
 
  dict(topic="Pediculosis", io=IOA,

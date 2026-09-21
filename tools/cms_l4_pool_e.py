@@ -21,11 +21,11 @@ POOL_E = [
      ["The acne treatment ladder, slides 32 and 33",
       "Correct — an explicit instruction to know a specific pair of slides is the strongest signal available about what will be examined."],
      ["The MRSA risk factor list, slides 44 and 45",
-      "The methicillin-resistant risk factors matter, but the slides singled out were the acne treatment ladder."],
+      "The methicillin-resistant risk factors are examinable content, but what was singled out by number was the acne treatment ladder."],
      ["The cellulitis versus erysipelas comparison",
       "The cellulitis and erysipelas comparison is examinable content, but the acne treatment ladder was what she flagged by number."],
      ["The necrotizing fasciitis red flags",
-      "The necrotizing fasciitis red flags are important clinically, but the slides named aloud were the acne treatment ladder."]],
+      "The necrotizing fasciitis red flags matter clinically, but what was named aloud was the acne treatment ladder."]],
    c=0, cite=r("15:40")),
 
  dict(topic="Acne vulgaris", io=IOA, slot="escalation",

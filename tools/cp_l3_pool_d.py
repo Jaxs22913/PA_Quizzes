@@ -94,7 +94,7 @@ POOL_D = [
    q="What does falling differentiation mean for the behaviour of a tumour, according to Professor Rappa?",
    opts=[
      ["It becomes more aggressive",
-      "Correct — an anaplastic carcinoma is very aggressive compared with a well differentiated one. The deck gives grading as a scale of resemblance and stops there; he attaches the prognosis to it."],
+      "Correct — a cell that no longer resembles its tissue of origin has also lost that tissue's growth controls, so an anaplastic tumour grows and spreads far faster than a well differentiated one."],
      ["It becomes less aggressive, because poorly differentiated cells divide more slowly",
       "He said the opposite, and poorly differentiated cells are not slower."],
      ["Aggressiveness is unrelated to differentiation and depends only on stage",

@@ -334,7 +334,7 @@ Q("Dermatofibroma", D7, 45,
 Q("Keloid", D7, 13,
   "A 23-year-old woman has a firm, bulbous nodule at the site of an ear piercing done two years ago. It extends well beyond the original piercing site and has continued to enlarge, with occasional itching.",
   [["Keloid","Correct. A keloid is a fibroproliferative overgrowth of dense fibrous tissue that extends BEYOND the wound margins, develops slowly, continues to enlarge for months to years, and shows no regression."],
-   ["Hypertrophic scar","A hypertrophic scar develops rapidly within four weeks, remains confined within the original wound margins, and flattens with time — the opposite of this course."],
+   ["Hypertrophic scar","A hypertrophic scar appears within weeks, stays inside the original wound margins and flattens over time; growing beyond the wound and still enlarging after two years is what defines a keloid."],
    ["Dermatofibroma","Dermatofibroma is a firm dermal nodule with a brown halo and a dimple sign, most commonly on the legs, and it is not related to a wound."],
    ["Foreign-body granuloma","A foreign-body granuloma is on the differential but forms around retained material and does not enlarge progressively over years beyond the wound."]], 0),
 
