@@ -68,7 +68,7 @@ POOL_B = [
      ["Infants: flexures. Children: extensor surfaces. Adults: scalp and cheeks",
       "The infantile and childhood patterns are reversed."],
      ["The distribution is the same at every age",
-      "Distribution evolves with age, which the lecture stresses."],
+      "Distribution shifts with age, from the face and extensor surfaces in infancy to the flexures in childhood and adults, which is part of how the diagnosis is made."],
      ["Infants: palms and soles. Children: trunk. Adults: lower legs",
       "None of these matches the described pattern."]],
    c=0, cite=c(54)),
@@ -155,7 +155,7 @@ POOL_B = [
    q="What is the main differential for nummular eczema, and what distinguishes them?",
    opts=[
      ["Tinea corporis — tinea has central clearing and nummular eczema does not",
-      "Correct, and this single feature is the discriminator the lecture gives."],
+      "Correct — a dermatophyte spreads outward and clears behind itself, giving an annular lesion, whereas nummular eczema is inflamed uniformly across the whole plaque."],
      ["Psoriasis — psoriasis has silvery scale and nummular eczema does not",
       "Psoriasis is a differential for other conditions but is not the one named here."],
      ["Pityriasis rosea — pityriasis has a herald patch",
@@ -213,7 +213,7 @@ POOL_B = [
      ["All irritants produce symptoms 48 to 72 hours after exposure",
       "That timing belongs to delayed hypersensitivity in the allergic form."],
      ["Timing does not vary with the irritant",
-      "The lecture states it varies by exposure."]],
+      "Timing depends entirely on the agent: a strong acid or alkali burns within minutes, while a weak detergent needs repeated exposure over weeks."]],
    c=0, cite=c(81)),
 
  dict(topic="Allergic contact dermatitis", io=IOC,
@@ -363,7 +363,7 @@ POOL_B = [
    q="Which feature distinguishes irritant from candidal diaper dermatitis?",
    opts=[
      ["Irritant disease affects convex surfaces and spares the inguinal folds; candidal disease involves the folds with satellite papules or pustules",
-      "Correct — fold involvement is the discriminator, and it is called essential in the lecture."],
+      "Correct — urine and faeces contact the convex surfaces the nappy touches while the folds stay protected, whereas Candida thrives in the warm moist depths of the folds."],
      ["Irritant disease involves the folds and candidal disease spares them",
       "The pattern is reversed."],
      ["Irritant disease produces satellite lesions and candidal disease does not",

@@ -53,7 +53,7 @@ POOL_B = [
    q="Which condition is flagged in a clinical pearl as often confused with tinea corporis?",
    opts=[
      ["Nummular eczema",
-      "Correct — the deck gives it its own pearl slide."],
+      "Correct — both produce round scaly plaques, and the discriminator is central clearing, which tinea has and nummular eczema does not."],
      ["Psoriasis",
       "Psoriasis is on the differential but is not the one singled out."],
      ["Discoid lupus",
@@ -70,7 +70,7 @@ POOL_B = [
      ["To the lesion only, avoiding normal skin",
       "The advancing edge extends beyond what is visible."],
      ["Five centimetres beyond the border",
-      "Wider than the deck specifies."],
+      "Five centimetres is more than needed; a two-centimetre margin covers the advancing hyphae, which extend beyond the visible edge."],
      ["To the whole affected limb",
       "Whole-limb application is not what is described."]],
    c=0, cite=c(28)),
@@ -105,7 +105,7 @@ POOL_B = [
    q="Who gets tinea cruris, what is it commonly called, and what does it often coexist with?",
    opts=[
      ["More common in men; jock itch; often coexists with tinea pedis",
-      "Correct — which is why the deck says to treat the coexisting foot infection."],
+      "Correct — the groin is usually infected by fungus carried from the feet on hands or clothing, so treating the groin alone leaves the reservoir in place."],
      ["More common in women; jock itch; often coexists with tinea capitis",
       "The sex and the coexisting infection are both wrong."],
      ["Equally common in both sexes; ringworm; often coexists with onychomycosis",
@@ -137,7 +137,7 @@ POOL_B = [
      ["The inguinal crease is typically spared; involvement suggests erythrasma",
       "The crural fold is exactly where tinea cruris sits."],
      ["The perineum is typically spared; involvement suggests psoriasis",
-      "Psoriasis is not the differential drawn on this slide."]],
+      "The scrotum is what tinea characteristically spares, and scrotal involvement points to candidal infection rather than a dermatophyte."]],
    c=0, cite=c(33)),
 
  dict(topic="Tinea cruris", io=IOB, slot="first-line",
