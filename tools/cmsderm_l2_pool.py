@@ -73,9 +73,7 @@ Q("Nummular eczema",
   "both thighs and lower legs, with prominent scale and crusting. Each plaque is uniform in appearance throughout. "
   "What single examination finding most strongly separates this from the principal alternative diagnosis?",
   [["The plaques are uniform throughout, without central clearing",
-    "Correct. The main differential is tinea corporis, and the slide draws the line exactly here: tinea corporis has "
-    "central clearing and nummular eczema does not. Uniform appearance across the whole plaque is what makes this "
-    "nummular eczema."],
+    "Correct. The main alternative is tinea corporis, and the line falls exactly here: a dermatophyte advances outward and clears behind itself, whereas nummular eczema is inflamed uniformly across the whole plaque."],
    ["The plaques are round rather than irregular in outline",
     "A round or coin-shaped outline is what gives nummular eczema its name, but tinea corporis is also round — "
     "its lesions are classically annular. Shape alone is shared by both and therefore separates neither."],
@@ -302,9 +300,7 @@ Q("Stasis dermatitis",
     "Fever is neither required for nor exclusive to venous thrombosis, and this patient is indeed afebrile. Using a "
     "normal temperature to rule out a thrombotic event would be a serious error."],
    ["Compression therapy should be started immediately to relieve the swelling",
-    "Starting compression before excluding deep venous thrombosis and confirming arterial adequacy is exactly the "
-    "sequence the lecture warns against. Compression is the cornerstone of management only after those questions are "
-    "settled."]],
+    "Compressing a leg before excluding deep venous thrombosis and confirming adequate arterial supply risks both propagating a clot and causing ischaemic damage; compression is the cornerstone only once those questions are settled."]],
   0, 115),
 
 Q("Bullous pemphigoid",
@@ -508,9 +504,7 @@ Q("Psoriasis",
     "and may follow systemic steroid withdrawal. It is abrupt and life-threatening, begins with several days of "
     "fever, and is commonly mistaken for bacterial or viral infection."],
    ["A widespread bacterial skin infection",
-    "This is the mistake the lecture warns about explicitly: pustular psoriasis is commonly mistaken for bacterial or "
-    "viral infection. The context of pre-existing psoriasis and recent systemic steroid withdrawal identifies the "
-    "true cause."],
+    "The pustules are sterile and neutrophil-rich rather than infective; pre-existing psoriasis with recent systemic steroid withdrawal identifies this as a pustular flare, which is commonly mistaken for infection."],
    ["Acute generalised exanthematous pustulosis from the prednisone",
     "A drug-induced pustular eruption is a reasonable thought, but the temporal relationship here is to steroid "
     "withdrawal rather than to steroid exposure, and the patient's established psoriasis supplies the substrate "
@@ -739,8 +733,7 @@ Q("Primary morphology",
   "A 6-year-old boy is brought in with fever and a rash. Examination shows non-blanching deposits of blood in the "
   "skin, several measuring 6 mm across. What is the most appropriate interpretation of this finding?",
   [["Purpura, which should be treated as a medical emergency until proven otherwise",
-    "Correct. Purpura is a deposit of blood 4 mm or greater, and the lecture flags it explicitly as a medical "
-    "emergency until proven otherwise. Combined with fever in a child this demands immediate evaluation."],
+    "Correct. Blood deposits of 4 mm or more are purpura, and non-blanching purpura with fever in a child raises meningococcaemia, which can kill within hours."],
    ["Petechiae, which should be treated as a medical emergency until proven otherwise",
     "The urgency is right but the term is wrong: petechiae are deposits of blood 1 to 2 mm, and these lesions are "
     "6 mm. Precision matters here because the size defines which term is being used to communicate the finding."],

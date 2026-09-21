@@ -50,6 +50,20 @@ for pool, items in sorted(by_pool.items()):
         if stem_node is not None and isinstance(opts_node, ast.List):
             qmap.setdefault(stem_node.value, []).append(opts_node)
 
+    # Some pools build questions through a POSITIONAL helper, Q(topic, stem,
+    # opts, c, slide), so there is no "q" keyword to key on. Match structurally
+    # instead: a string argument immediately followed by a list of
+    # [text, explanation] pairs is the stem and its options.
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        for a, b in zip(n.args, n.args[1:]):
+            if (isinstance(a, ast.Constant) and isinstance(a.value, str)
+                    and isinstance(b, ast.List) and b.elts
+                    and all(isinstance(e, ast.List) and len(e.elts) == 2 for e in b.elts)):
+                if b not in qmap.get(a.value, []):
+                    qmap.setdefault(a.value, []).append(b)
+
     targets = []
     for stem, idx, new in items:
         hits = qmap.get(stem, [])

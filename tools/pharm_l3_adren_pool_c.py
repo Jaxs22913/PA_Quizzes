@@ -68,7 +68,7 @@ POOL_C = [
    q="What happened to ephedra-containing herbal products?",
    opts=[["They were banned in 2004","Correct."],
          ["They were moved behind the pharmacy counter","That was pseudoephedrine."],
-         ["They were reclassified as prescription only","Not what the lecture states."],
+         ["They were reclassified as prescription only","They were not moved to prescription status; they were banned outright in 2004 after reports of cardiovascular events."],
          ["They remain freely available","They were banned."]],
    c=0, cite=c(104)),
 
@@ -85,7 +85,7 @@ POOL_C = [
    opts=[["At least twenty-four hours","Correct, because new receptors must be synthesised."],
          ["About four hours","That is phentolamine's duration."],
          ["A few minutes","Far shorter than described."],
-         ["About one week","Longer than the lecture states."]],
+         ["About one week","A week is longer than stated; the blockade is covalent and irreversible, so recovery waits on synthesis of new receptors over about 24 to 48 hours."]],
    c=0, cite=c(108)),
 
  dict(topic="Phentolamine", io=IO11,
@@ -108,7 +108,7 @@ POOL_C = [
    q="What does propranolol do to sinoatrial and atrioventricular activity?",
    opts=[["Depresses both, causing bradycardia","Correct."],
          ["Accelerates both, causing tachycardia","That is a beta agonist."],
-         ["Depresses the sinoatrial node only","The lecture names both."],
+         ["Depresses the sinoatrial node only","Both nodes are affected: propranolol slows sinoatrial firing and depresses atrioventricular conduction, which is why it can cause heart block."],
          ["Has no effect on conduction","Conduction depression is central to its action."]],
    c=0, cite=c(114)),
 
@@ -123,7 +123,7 @@ POOL_C = [
  dict(topic="Beta blockers", io=IO11,
    q="What is true of cardioselectivity at higher doses?",
    opts=[["It is lost","Correct, so a beta-one selective agent can still affect the airway."],
-         ["It increases","The lecture states the opposite."],
+         ["It increases","Selectivity is relative rather than absolute, so raising the dose engages beta-two receptors as well and the advantage in airways disease is lost."],
          ["It is unchanged","Selectivity is dose dependent."],
          ["It converts to alpha blockade","No such conversion occurs."]],
    c=0, cite=c(120)),

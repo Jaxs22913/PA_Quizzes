@@ -46,7 +46,7 @@ POOL_A = [
    q="How do resident microflora benefit the host?",
    opts=[
      ["By preventing overgrowth of harmful microbes", "Correct — competitive exclusion."],
-     ["By producing all essential vitamins", "Not the benefit the lecture emphasises."],
+     ["By producing all essential vitamins", "They synthesise some vitamins, notably vitamin K and several B vitamins, but not all essential ones; their main benefit is occupying niches that would otherwise admit pathogens."],
      ["By neutralising bacterial toxins", "Not a mechanism described."],
      ["By stimulating antibody production directly", "Not the benefit named here."]],
    c=0, cite=c(9)),
@@ -212,7 +212,7 @@ POOL_A = [
      ["Destroying leukocytes", "Correct; the suffix means to kill."],
      ["Dissolving connective tissue", "That is hyaluronidase, an exoenzyme."],
      ["Clotting plasma", "That is coagulase."],
-     ["Blocking antibody binding", "Not a mechanism the lecture describes."]],
+     ["Blocking antibody binding", "Leukocidins destroy white blood cells outright rather than interfering with antibody binding, which removes the cells that would otherwise phagocytose the organism."]],
    c=0, cite=c(33)),
  dict(topic="Virulence factors", io=IO2,
    q="How does a capsule help a pathogen?",
@@ -287,7 +287,7 @@ POOL_A = [
    opts=[
      ["Non-human cells slightly outnumber human ones", "Correct: roughly 38 to 39 trillion against about 30 trillion."],
      ["Human cells outnumber non-human ten to one", "The counts are close, with microbes slightly ahead."],
-     ["They are exactly equal", "The lecture gives microbes a small edge."],
+     ["They are exactly equal", "They are close but not equal; microbial cells modestly outnumber human ones, which is part of the point about how substantial the microbiome is."],
      ["Non-human cells are a tiny fraction", "They contribute around three pounds of body weight."]],
    c=0, cite=c(4)),
  dict(topic="Human microbiome", io=IO1,
@@ -302,7 +302,7 @@ POOL_A = [
    q="What proportion of the human genome is described as foreign in origin?",
    opts=[
      ["About half", "Correct — viral remnants and transposons."],
-     ["About a tenth", "The lecture gives a much larger share."],
+     ["About a tenth", "A tenth understates it considerably; a far larger share of the human genome derives from sequences of microbial origin."],
      ["Almost none", "Half is attributed to non-human sequence."],
      ["About nine tenths", "That overstates it."]],
    c=0, cite=c(5)),
