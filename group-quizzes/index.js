@@ -295,6 +295,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-1-micro-exam-1-master-exam-form-c":{"title":"Microbiology Exam 1 Master Exam — Form C","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
 "microbiology-exam-1-micro-exam-1-master-exam-form-d":{"title":"Microbiology Exam 1 Master Exam — Form D","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
 "microbiology-exam-1-micro-exam-1-master-exam-form-e":{"title":"Microbiology Exam 1 Master Exam — Form E","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":60},
+"microbiology-exam-1-micro-exam-1-timetable-weighted-quiz":{"title":"Microbiology Exam 1 — Timetable-Weighted Quiz","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":65},
 "microbiology-exam-1-microbe-human-interactions-quiz":{"title":"Microbe-Human Interactions — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-microbe-human-interactions-quiz-version-2":{"title":"Microbe-Human Interactions — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-specific-immunity-quiz":{"title":"The Acquisition of Specific Immunity — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
