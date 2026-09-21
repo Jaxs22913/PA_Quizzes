@@ -99,7 +99,7 @@ POOL_A = [
    q="A 22-year-old woman has scarring across both cheeks that seems far more extensive than her current lesion count would explain. Which should be suspected?",
    opts=[
      ["Manipulation of the lesions by picking or squeezing",
-      "Correct — that is the specific inference the lecture draws."],
+      "Correct — scarring out of proportion to active disease indicates the lesions are being ruptured mechanically, driving inflammation deeper into the dermis than the acne itself would."],
      ["Resistance of Cutibacterium acnes to her topical antibiotic",
       "Resistance would show as failure to improve rather than scarring."],
      ["An undiagnosed hyperandrogenic state driving deeper lesions",

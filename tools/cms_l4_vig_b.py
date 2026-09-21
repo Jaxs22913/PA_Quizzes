@@ -21,7 +21,7 @@ POOL_B = [
      ["Recurrent furunculosis of the axilla",
       "Furuncles do not produce sinus tracts or meshlike scarring."],
      ["Cutaneous Crohn's disease of the groin",
-      "That is not among the differentials this lecture gives."],
+      "Metastatic Crohn's disease of the skin is rare and would usually follow known bowel disease; the pattern here, in apocrine-bearing sites with sinus tracts and bridged scars, is hidradenitis suppurativa."],
      ["Erythrasma of the axilla and the groin",
       "Erythrasma is a superficial stratum corneum infection without nodules."]],
    c=0, cite=c(74)),
@@ -140,7 +140,7 @@ POOL_B = [
      ["He may return immediately, since impetigo does not spread from one person to another",
       "Impetigo is described as very contagious and autoinoculable."],
      ["He may return after ten full days from the appearance of the very first lesion",
-      "That is longer than the interval the lecture gives."]],
+      "Ten days is unnecessarily long; the child stops being infectious shortly after effective treatment begins and lesions crust over."]],
    c=0, cite=c(96)),
 
  dict(topic="Impetigo", io=IOA,

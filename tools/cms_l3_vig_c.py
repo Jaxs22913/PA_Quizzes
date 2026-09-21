@@ -84,7 +84,7 @@ POOL_C = [
    q="A 67-year-old man taking allopurinol for two weeks has fever, painful erythema and flaccid bullae, with sheets of epidermis separating over an estimated 45% of his body surface. Which is the most likely diagnosis?",
    opts=[
      ["Toxic epidermal necrolysis",
-      "Correct — detachment above 30% with allopurinol exposure. The slide names allopurinol as the commonest cause IN ASIA, alongside aromatic anticonvulsants, sulfonamides, oxicam non-steroidals and nevirapine."],
+      "Correct — detachment above 30 per cent of body surface defines toxic epidermal necrolysis, and allopurinol is among the commonest triggers, alongside aromatic anticonvulsants, sulfonamides, oxicam non-steroidals and nevirapine."],
      ["Stevens-Johnson and toxic epidermal necrolysis overlap",
       "Overlap is defined by detachment between 10 and 30%."],
      ["Generalised bullous fixed drug eruption of the trunk",

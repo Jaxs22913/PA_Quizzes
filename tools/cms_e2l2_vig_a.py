@@ -75,10 +75,10 @@ POOL_A = [
  dict(topic="Argyll Robertson pupil", io=IO, lead="test",
    q="A 49-year-old man has bilateral miosis with light-near dissociation. Which condition should be tested for first?",
    opts=[
-     ["Tertiary syphilis", "Correct. It is the classic association the lecture names."],
+     ["Tertiary syphilis", "Correct — the Argyll Robertson pupil is the classic sign of neurosyphilis, in which the light reflex pathway is damaged while the near response is preserved."],
      ["Multiple sclerosis", "Listed as a possible cause, but syphilis is the classic one."],
      ["Diabetes mellitus", "Also listed, but not the classic association."],
-     ["Giant cell arteritis", "Not a cause of light-near dissociation in this lecture."]],
+     ["Giant cell arteritis", "Giant cell arteritis causes ischaemic optic neuropathy and sudden vision loss, not light-near dissociation."]],
    c=0, cite=c(32)),
 
  dict(topic="Adie tonic pupil", io=IO, lead="diagnosis",
@@ -102,7 +102,7 @@ POOL_A = [
  dict(topic="Adie tonic pupil", io=IO, lead="diagnosis",
    q="A 30-year-old woman with a large tonic pupil has normal eyelid position and full eye movements. Which finding argues against a third nerve palsy?",
    opts=[
-     ["No ptosis and no extraocular weakness", "Correct. The lecture makes that absence the discriminator."],
+     ["No ptosis and no extraocular weakness", "Correct — the third nerve also supplies levator and four extraocular muscles, so a palsy large enough to dilate the pupil would almost always cause ptosis and limited movement too."],
      ["Photophobia", "That can occur with an Adie pupil and does not separate the two."],
      ["Blurred near vision", "Also common to both and not discriminating."],
      ["Female sex in the thirties", "Typical of Adie pupil but not a finding that excludes a palsy."]],
@@ -140,7 +140,7 @@ POOL_A = [
    opts=[
      ["Posterior communicating artery aneurysm", "Correct, with rupture threatened within hours to days."],
      ["Internal carotid artery dissection", "That causes a third-order Horner syndrome instead."],
-     ["Cavernous sinus thrombosis", "A third-order Horner cause in this lecture."],
+     ["Cavernous sinus thrombosis", "Cavernous sinus thrombosis is a third-order Horner cause; the feared cause of a pupil-involved third nerve palsy is a posterior communicating artery aneurysm."],
      ["Basilar artery occlusion", "Not named in relation to this palsy."]],
    c=0, cite=c(40)),
 
@@ -159,16 +159,16 @@ POOL_A = [
      ["It arises dorsally and crosses", "Correct, so the left nucleus supplies the right eye."],
      ["It carries parasympathetic fibres", "Those travel with the third nerve."],
      ["It supplies two extraocular muscles", "It supplies superior oblique alone."],
-     ["It exits through the optic canal", "Not a point the lecture makes."]],
+     ["It exits through the optic canal", "The trochlear nerve does not use the optic canal; what is unique is that it is the only cranial nerve to exit from the dorsal brainstem and cross to the opposite side."]],
    c=0, cite=c(42)),
 
  dict(topic="Sixth nerve palsy", io=IO, lead="diagnosis",
    q="A 7-year-old boy has new horizontal double vision and cannot abduct the left eye. Which cause is most likely in a child?",
    opts=[
-     ["Intracranial tumour", "Correct. In children the lecture names tumours, especially brainstem and posterior fossa."],
+     ["Intracranial tumour", "Correct — the abducens nerve has a long intracranial course and is compressed early by raised intracranial pressure, so a new sixth nerve palsy in a child raises a brainstem or posterior fossa tumour."],
      ["Microvascular disease", "That is the commonest cause in adults, not children."],
      ["Skull base fracture", "That requires major trauma, absent here."],
-     ["Congenital palsy", "The lecture attaches congenital origin to isolated fourth nerve palsies."]],
+     ["Congenital palsy", "Congenital origin is characteristic of isolated fourth nerve palsies; a new sixth nerve palsy in a child is investigated for a tumour."]],
    c=0, cite=c(45)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="next step",
@@ -231,7 +231,7 @@ POOL_A = [
      ["Refer to ophthalmology", "Correct. Nystagmus acquired in adulthood, and monocular nystagmus, both warrant work-up."],
      ["Reassure her it is physiologic", "Monocular and asymmetric nystagmus is specifically flagged as concerning."],
      ["Start a calcium channel blocker", "That is used for vascular spasm in amaurosis fugax."],
-     ["Prescribe prism glasses", "Not a management step the lecture gives."]],
+     ["Prescribe prism glasses", "Prism glasses correct ocular misalignment; new nystagmus in one eye only requires investigation for an underlying cause."]],
    c=0, cite=c(5)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",

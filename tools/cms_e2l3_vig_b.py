@@ -45,7 +45,7 @@ POOL_B = [
    q="A 61-year-old woman asks which retinal vascular occlusion is seen more often. What is stated?",
    opts=[
      ["Vein occlusion is more common", "Correct, more common than central retinal artery occlusion."],
-     ["Artery occlusion is more common", "The lecture states the opposite."],
+     ["Artery occlusion is more common", "Venous occlusion is the commoner of the two, since the vein is compressed by the stiffened artery where they share a sheath."],
      ["They occur equally often", "One is stated to be more common."],
      ["Neither occurs after age 50", "Age over 50 is a listed risk factor."]],
    c=0, cite=c(32)),
@@ -80,7 +80,7 @@ POOL_B = [
  dict(topic="BRVO", io=IOB, lead="next step",
    q="A 64-year-old woman has a branch retinal vein occlusion. How does her management compare with the central form?",
    opts=[
-     ["It is essentially the same", "Correct; the lecture said the only difference is where the clot sits."],
+     ["It is essentially the same", "Correct — the pathology is identical and only the site of the occlusion differs, so the assessment and treatment follow the same path."],
      ["It requires laser iridotomy", "That is for angle-closure glaucoma."],
      ["It requires high-dose steroids", "Those are for arteritic optic neuropathy."],
      ["It requires surgical reattachment", "That is for detachment."]],
@@ -99,7 +99,7 @@ POOL_B = [
  dict(topic="CRAO", io=IOB, lead="reasoning",
    q="A 74-year-old woman presents 40 minutes after sudden painless monocular vision loss. Why is she treated immediately?",
    opts=[
-     ["Retinal damage is irreversible after 90 minutes", "Correct; this is the window the lecture gives."],
+     ["Retinal damage is irreversible after 90 minutes", "Correct — the retina has the highest metabolic rate of any tissue and infarcts within about 90 minutes of losing its arterial supply, so the window is very short."],
      ["Retinal damage is irreversible after 8 hours", "Eight hours is the thrombolysis window, not the damage threshold."],
      ["Damage is reversible at any point", "It is not."],
      ["Damage occurs only if both eyes are affected", "One eye is enough."]],
@@ -108,7 +108,7 @@ POOL_B = [
  dict(topic="CRAO", io=IOA, lead="finding",
    q="A 69-year-old man has a central retinal artery occlusion. His affected pupil is sluggish to direct light but constricts briskly when the other eye is illuminated. What is true of this finding?",
    opts=[
-     ["It is a major clinical clue", "Correct; she singled out this sentence in the lecture."],
+     ["It is a major clinical clue", "Correct — this is a relative afferent pupillary defect: the signal into that eye is impaired while the motor response remains intact, which localises the problem to the retina or optic nerve."],
      ["It excludes an arterial cause", "It is characteristic of one."],
      ["It indicates raised intracranial pressure", "That gives disc swelling, not this pupil pattern."],
      ["It is a normal finding", "It reflects an afferent defect."]],
@@ -172,7 +172,7 @@ POOL_B = [
  dict(topic="Papilledema", io=IOA, lead="pathophysiology",
    q="A 41-year-old man is told he has papilledema. Which pressure is raised?",
    opts=[
-     ["Intracranial pressure", "Correct; the lecturer drew a sharp line against intraocular pressure."],
+     ["Intracranial pressure", "Correct — papilledema is disc swelling from raised pressure inside the skull transmitted along the optic nerve sheath, and it is distinct from raised pressure inside the eye."],
      ["Intraocular pressure", "That is the glaucoma mechanism."],
      ["Central venous pressure", "Not the mechanism described."],
      ["Arterial blood pressure", "Hypertension is a risk factor elsewhere, not this mechanism."]],
@@ -301,7 +301,7 @@ POOL_B = [
    opts=[
      ["Moving the dose away from bedtime", "Correct, to avoid nocturnal hypotension, which can worsen the condition."],
      ["Doubling the bedtime dose", "That would deepen the overnight fall in pressure."],
-     ["Stopping all antihypertensives", "The lecture adjusts timing rather than abandoning treatment."],
+     ["Stopping all antihypertensives", "Stopping antihypertensives altogether trades one vascular risk for another; the aim is to avoid the nocturnal pressure dip by moving the dose."],
      ["Adding a corticosteroid", "Steroids treat the arteritic form."]],
    c=0, cite=c(52)),
 

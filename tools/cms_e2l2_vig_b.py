@@ -73,7 +73,7 @@ POOL_B = [
    opts=[
      ["It enlarges, as average illumination halves", "Correct. Pupil size reflects an average of the light detected by both eyes."],
      ["It constricts, as the covered eye is dark", "Covering reduces total light, so the pupil enlarges."],
-     ["It is unchanged, as each eye acts alone", "The lecture makes the point that size is an average across both eyes."],
+     ["It is unchanged, as each eye acts alone", "The eyes are not independent: light reaching either retina constricts both pupils through the consensual reflex, so covering one changes the other."],
      ["It enlarges only in the covered eye", "The uncovered pupil is the one observed to change."]],
    c=0, cite=c(7)),
 
@@ -108,7 +108,7 @@ POOL_B = [
    q="A patient presents with a new neuro-ophthalmological complaint. Which sequence is summarised?",
    opts=[
      ["History and examination, then imaging if indicated", "Correct, with ophthalmology and appropriate specialist referral."],
-     ["Imaging first, then history", "The lecture begins with a thorough history and physical."],
+     ["Imaging first, then history", "Imaging without a history has no target; the history and examination localise the lesion and determine which study is appropriate."],
      ["Immediate surgical referral", "Referral is to ophthalmology and other specialists as appropriate."],
      ["Observation for six months in all cases", "That interval applies to traumatic cranial nerve palsies."]],
    c=0, cite=c(54)),
@@ -126,7 +126,7 @@ POOL_B = [
    q="A parent asks about patching for a young child with a congenital palsy. What is specified?",
    opts=[
      ["It should be supervised by ophthalmology", "Correct, especially under about five years of age."],
-     ["It should be continuous until resolution", "The lecture does not prescribe continuous patching."],
+     ["It should be continuous until resolution", "Continuous patching risks inducing amblyopia in the covered eye, so it is used intermittently and under supervision."],
      ["It is contraindicated in children", "Patching is used, but under specialist care."],
      ["It is unnecessary before school age", "The caution is about supervision, not deferral."]],
    c=0, cite=c(46)),
@@ -154,7 +154,7 @@ POOL_B = [
    opts=[
      ["Refer for work-up", "Correct. Infants and young children with nystagmus warrant referral."],
      ["Reassure, as it is always physiologic", "Infantile nystagmus specifically warrants referral."],
-     ["Repeat examination at age five", "Delay is not what the lecture advises."],
+     ["Repeat examination at age five", "Waiting until five wastes the critical period of visual development, during which the cause must be identified and treated."],
      ["Start patching immediately", "Patching addresses diplopia and amblyopia, not this."]],
    c=0, cite=c(5)),
 
@@ -163,7 +163,7 @@ POOL_B = [
    opts=[
      ["Horizontal jerk", "Correct, with eyes moving slowly to one side and quickly back."],
      ["Torsional jerk", "Also recognised but not the most common."],
-     ["Pendular", "The lecture's classification centres on jerk nystagmus."],
+     ["Pendular", "Pendular nystagmus has equal-speed movement in both directions; the common form has a slow drift with a fast corrective phase."],
      ["Upbeat", "That is specifically flagged as concerning rather than common."]],
    c=0, cite=c(4)),
 

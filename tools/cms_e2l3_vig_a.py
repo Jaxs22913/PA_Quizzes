@@ -167,7 +167,7 @@ POOL_A = [
  dict(topic="Angle-closure glaucoma", io=IOA, lead="education",
    q="A 63-year-old man with angle-closure glaucoma is about to start a medication for overactive bladder. Which counselling point applies?",
    opts=[
-     ["Anticholinergic drugs can worsen his glaucoma", "Correct; the lecture names systemic anticholinergics such as atropine."],
+     ["Anticholinergic drugs can worsen his glaucoma", "Correct — antimuscarinic drugs dilate the pupil, which crowds the iris into the drainage angle and can precipitate an acute attack in a susceptible eye."],
      ["Anticholinergic drugs will lower his pressure", "They act in the opposite direction."],
      ["Anticholinergic drugs cause optic neuritis", "That is inflammatory, not drug-induced here."],
      ["Anticholinergic drugs cause papilledema", "Vitamin A toxicity, not anticholinergics, is the drug cause listed."]],
@@ -176,7 +176,7 @@ POOL_A = [
  dict(topic="Angle-closure glaucoma", io=IOA, lead="diagnosis",
    q="A 64-year-old man is admitted with an intractable headache localised behind one eye. Multiple clinicians have treated him for migraine. On examination his eye is red and his vision is reduced. Which diagnosis should be excluded?",
    opts=[
-     ["Angle-closure glaucoma", "Correct. The lecture gave this exact case as a missed presentation."],
+     ["Angle-closure glaucoma", "Correct — acute angle closure produces headache with nausea that mimics migraine, and the red eye with reduced vision is what separates them."],
      ["Papilledema", "That gives non-specific visual change without a red eye."],
      ["Optic neuritis", "That hurts on eye movement rather than presenting as a headache."],
      ["Retinal detachment", "That is painless and shows a field defect."]],
@@ -241,7 +241,7 @@ POOL_A = [
    q="A 72-year-old man has chronic open-angle glaucoma that continues to progress on maximal drops. What comes next?",
    opts=[
      ["Laser trabeculoplasty", "Correct, used when the disease is refractory or advanced."],
-     ["A stronger prostaglandin analogue", "The lecture moves to laser or incisional surgery instead."],
+     ["A stronger prostaglandin analogue", "He is already on maximal medical therapy, so adding drug potency will not help; laser or incisional surgery is needed to create outflow."],
      ["Observation alone", "Progression on treatment calls for escalation."],
      ["Systemic corticosteroids", "Those are not used for this."]],
    c=0, cite=c(21)),
@@ -368,7 +368,7 @@ POOL_A = [
  dict(topic="Retinal detachment", io=IOB, lead="next step",
    q="A 70-year-old woman has a retinal detachment confirmed on ultrasound. Which is the appropriate disposition?",
    opts=[
-     ["Immediate referral for surgical repair", "Correct; the lecture calls it an emergency."],
+     ["Immediate referral for surgical repair", "Correct — the detached retina is separated from its choroidal blood supply, so photoreceptors die progressively until it is reattached."],
      ["Routine ophthalmology clinic in a month", "The delay would cost her the eye."],
      ["Oral corticosteroids and review", "Those treat arteritic optic neuropathy."],
      ["Observation with head positioning", "Position changes the symptom, not the disease."]],

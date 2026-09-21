@@ -103,7 +103,7 @@ POOL_C = [
    q="A 29-year-old man has a traumatic third nerve palsy. What is advised about corrective treatment?",
    opts=[
      ["Observe about six months first", "Correct, with patching in the interim for binocular diplopia."],
-     ["Operate within two weeks", "Early surgery is not what the lecture advises."],
+     ["Operate within two weeks", "Traumatic palsies frequently recover spontaneously over months, so surgery is deferred until the deficit has stabilised."],
      ["Start high-dose corticosteroids", "Those are for giant cell arteritis."],
      ["Begin pilocarpine drops", "That is a diagnostic test for an Adie pupil."]],
    c=0, cite=c(41)),

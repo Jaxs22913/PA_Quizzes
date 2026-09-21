@@ -13,7 +13,7 @@ POOL_D = [
      ["Pancoast tumour", "Correct. A superior sulcus tumour reaches the second-order neurons over the lung apex."],
      ["Carotid dissection", "That is third-order and presents acutely, often with neck pain."],
      ["Brainstem stroke", "That is first-order and would usually bring other brainstem signs."],
-     ["Cluster headache", "Not a cause the lecture lists for Horner syndrome."]],
+     ["Cluster headache", "Cluster headache can cause a transient Horner syndrome during attacks, but it does not produce six weeks of arm pain in a smoker; an apical lung tumour does."]],
    c=0, cite=c(30)),
  dict(topic="Third nerve palsy", io=IO, lead="diagnosis",
    q="A 71-year-old man has a left ptosis, a dilated left pupil and the left eye deviated down and out. Which nerve is affected?",
@@ -83,7 +83,7 @@ POOL_D = [
    q="A 55-year-old woman has ptosis and miosis on the left with no anhidrosis. Does the absent anhidrosis exclude the diagnosis?",
    opts=[
      ["No, it depends on lesion level", "Correct. The triad may be incomplete depending where along the pathway the lesion sits."],
-     ["Yes, all three are required", "The lecture explicitly allows an incomplete triad."],
+     ["Yes, all three are required", "The sudomotor fibres leave the sympathetic chain early, so a lesion beyond that point produces ptosis and miosis with sweating intact."],
      ["Yes, unless the pupil is fixed", "Pupil fixity is not part of the definition."],
      ["No, because anhidrosis is parasympathetic", "The sudomotor fibres involved are sympathetic."]],
    c=0, cite=c(28)),
@@ -99,7 +99,7 @@ POOL_D = [
    q="A 31-year-old man is unresponsive with 1 mm pupils and shallow breathing. Which mechanism explains the pupils?",
    opts=[
      ["Opioids are parasympathomimetic", "Correct, which is why the pupils constrict."],
-     ["Opioids block the sympathetic pathway", "The lecture describes a parasympathomimetic effect."],
+     ["Opioids block the sympathetic pathway", "Opioids act on the Edinger-Westphal nucleus to increase parasympathetic outflow, constricting the pupils, rather than blocking sympathetic tone."],
      ["Opioids raise intracranial pressure", "That is not what constricts the pupils here."],
      ["Opioids cause an afferent defect", "The afferent limb is not affected."]],
    c=0, cite=c(12)),
