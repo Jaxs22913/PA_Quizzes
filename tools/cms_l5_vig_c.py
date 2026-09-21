@@ -100,7 +100,7 @@ POOL_C = [
      ["Take prophylactic doxycycline through the summer months while she continues to hike",
       "Continuous prophylaxis is not among the described measures."],
      ["Rely on showering promptly after each hike, since this removes ticks before they attach",
-      "Tick checks and repellents are what the lecture names."]],
+      "Showering does not remove an attached tick, and attachment can occur within hours; deliberate tick checks and repellent are what prevent transmission."]],
    c=0, cite=c(80)),
 
  dict(topic="Rocky Mountain spotted fever", io=IOA,
@@ -113,7 +113,7 @@ POOL_C = [
      ["A drug eruption from a recently started medication",
       "That would not follow this geography, timing and distribution."],
      ["Meningococcaemia with an early petechial rash",
-      "That is not the differential this lecture develops here."]],
+      "Meningococcaemia progresses over hours rather than days and its rash is petechial and non-blanching from early on, whereas this rash is blanching and began on the wrists and ankles after four days."]],
    c=0, cite=c(82)),
 
  dict(topic="Rocky Mountain spotted fever", io=IOA,
@@ -126,7 +126,7 @@ POOL_C = [
      ["Start amoxicillin now, since doxycycline should be reserved for confirmed disease",
       "Doxycycline is the treatment for this illness in all groups."],
      ["Repeat the assay in three days and treat only if it has become positive by then",
-      "Delay of that kind is what the lecture warns against."]],
+      "Antibodies take one to two weeks to appear, so waiting for seroconversion delays treatment past the point where it prevents death; doxycycline starts on clinical suspicion."]],
    c=0, cite=c(85)),
 
  dict(topic="Rocky Mountain spotted fever", io=IOC,

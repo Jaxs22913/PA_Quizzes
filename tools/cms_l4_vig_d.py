@@ -90,7 +90,7 @@ POOL_D = [
      ["Warm soaks three times daily with incision if any purulent material has collected",
       "That is the management of acute paronychia."],
      ["Compression bandaging applied from the toes to the knee for the first week",
-      "Elevation rather than compression is what the lecture names."],
+      "Compression on an acutely inflamed, infected leg is painful and risks compromising perfusion; elevation drains the oedema without that hazard."],
      ["Dilute acetic acid compresses applied for twenty minutes several times daily",
       "That treats Pseudomonas folliculitis."]],
    c=0, cite=c(104)),

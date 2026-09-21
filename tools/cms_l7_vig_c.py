@@ -152,7 +152,7 @@ VIG_C = [
    q="A 44-year-old man has several small vascular lesions with a central punctum and radiating vessels across his upper chest and arms. Which history is most important to take?",
    opts=[
      ["Alcohol use, liver-damaging medications, and hormone use",
-      "Correct — the deck also says to ask about pregnancies. Spider angiomas are associated with estrogen excess and with cirrhosis and liver failure."],
+      "Correct — spider angiomas reflect oestrogen excess, which arises with impaired hepatic clearance in liver disease and with pregnancy or exogenous hormones, so alcohol, hepatotoxic drugs, hormones and pregnancies are all relevant."],
      ["Footwear, occupation and use of hand tools",
       "That is the corn and callus history."],
      ["Immobility, incontinence and nutritional status",
@@ -219,7 +219,7 @@ VIG_C = [
      ["Neurofibromatosis type 1",
       "Correct — café au lait spots, intertriginous freckling and cutaneous neurofibromas."],
      ["Neurofibromatosis type 2",
-      "The skin manifestations listed in the deck belong to type 1."],
+      "Type 2 is dominated by vestibular schwannomas and hearing loss; the pigmented macules, axillary freckling and cutaneous neurofibromas described here define type 1."],
      ["Multiple acrochordons",
       "Skin tags occur in friction sites and are not accompanied by café au lait spots."],
      ["Multiple dermatofibromas",
@@ -249,7 +249,7 @@ VIG_C = [
      ["Annual magnetic resonance imaging of the whole body",
       "Routine whole-body imaging is not part of the described surveillance."],
      ["Intralesional corticosteroid to any enlarging lesion",
-      "That is a scar treatment in this lecture."]],
+      "Intralesional steroid is a keloid treatment; neurofibromas are monitored, with the skin examined at each visit for change suggesting malignant transformation."]],
    c=0, cite=c(103)),
 
  dict(topic="Xanthelasma", io=IOA, lead="test",
@@ -360,7 +360,7 @@ VIG_C = [
    q="A 62-year-old attends about a new lesion on his sun-exposed forearm. Beyond addressing the lesion, which counselling should be offered?",
    opts=[
      ["Sunscreen, sun avoidance at peak hours, and skin checks",
-      "Correct — the general education point the deck attaches to any new lesion in a sun-exposed area."],
+      "Correct — the patient has already come in about the skin, which makes it the natural moment to address cumulative ultraviolet damage and self-examination."],
      ["Avoiding cosmetic procedures such as ear piercing",
       "That is for the keloid-prone patient."],
      ["Repositioning every two hours and barrier creams",
@@ -379,6 +379,6 @@ VIG_C = [
      ["That the lesion would become malignant if left in place",
       "These are benign lesions, so that would be untrue."],
      ["That lifelong surveillance of the site will be needed",
-      "Lifelong surveillance is not what the slide requires."]],
+      "Lifelong surveillance is not required for a benign lesion; what must be discussed is that removal can leave pigment change and the lesion may recur."]],
    c=0, cite=c(112)),
 ]

@@ -56,7 +56,7 @@ VIG_A = [
      ["Observation with annual review, because eleven lesions in one region indicates indolent disease",
       "A high lesion burden raises concern rather than lowering it."],
      ["Immediate wide excision of the whole affected field, because eleven lesions cannot be treated topically",
-      "Excision of a field is not among the deck's options."]],
+      "Excising a whole field is disfiguring and unnecessary; multiple lesions in sun-damaged skin are exactly what field therapy is designed to treat, including subclinical ones."]],
    c=0, cite=c(14)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, lead="diagnosis",
@@ -65,7 +65,7 @@ VIG_A = [
      ["Squamous cell carcinoma", "Correct — and the lip is one of the named high-risk sites."],
      ["Basal cell carcinoma", "That is pearly and translucent with telangiectasias, and grows over years."],
      ["Actinic keratosis", "That is a small rough sandpaper papule without ulceration or induration."],
-     ["Keratoacanthoma", "It is in the differential, but the deck's classic description here is carcinoma."]],
+     ["Keratoacanthoma", "Keratoacanthoma belongs in the differential, but it grows rapidly over weeks with a central keratin plug; a hard ulcerating lip nodule over two months fits squamous cell carcinoma."]],
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, lead="next step",
@@ -97,7 +97,7 @@ VIG_A = [
  dict(topic="Squamous cell carcinoma", io=IOA, lead="next step",
    q="A patient treated for squamous cell carcinoma of the scalp returns with new numbness and tingling in the distribution of the scar. Which is the most appropriate response?",
    opts=[
-     ["Refer urgently, because neurologic symptoms are one of the deck's urgent referral triggers",
+     ["Refer urgently, because neurologic symptoms are an urgent referral trigger",
       "Correct — they raise concern for perineural invasion."],
      ["Reassure, because sensory change is expected permanently after any scalp excision",
       "New neurologic symptoms are an explicit urgency trigger."],
@@ -142,7 +142,7 @@ VIG_A = [
      ["Shave or punch biopsy, because the HISTOLOGIC subtype determines behaviour and dictates treatment selection",
       "Correct — histology, not clinical appearance, drives the plan."],
      ["Shave or punch biopsy, because the CLINICAL subtype determines behaviour and dictates treatment selection",
-      "The deck assigns that role to the histologic subtype."],
+      "The clinical appearance guides suspicion, but it is the histologic subtype, particularly micronodular and infiltrative, that predicts subclinical spread and dictates treatment."],
      ["Wide local excision with 1 cm margins, because tissue diagnosis and treatment are achieved together",
       "Biopsy precedes definitive treatment here."],
      ["Sentinel lymph node biopsy, because nodal status determines treatment selection",
@@ -159,7 +159,7 @@ VIG_A = [
      ["Vismodegib orally for 6 to 10 weeks; clinical clearance must be confirmed afterwards",
       "Hedgehog inhibitors are for advanced or metastatic disease."],
      ["Liquid nitrogen cryotherapy every 2 to 3 weeks for 12 weeks; clearance must be confirmed afterwards",
-      "That is not the topical regimen the deck gives."]],
+      "Cryotherapy is a destructive rather than a topical regimen, and it gives no histological confirmation of clearance."]],
    c=0, cite=c(37)),
 
  dict(topic="Basal cell carcinoma", io=IOB, lead="education",
@@ -196,7 +196,7 @@ VIG_A = [
      ["Intense intermittent exposure favours squamous cell carcinoma; prolonged cumulative exposure favours basal cell carcinoma",
       "The two patterns are the wrong way round."],
      ["Both patterns favour basal cell carcinoma equally, since ultraviolet exposure is not subdivided in this way",
-      "The deck distinguishes the two patterns explicitly."],
+      "The patterns differ: intermittent intense burning favours basal cell carcinoma and melanoma, while cumulative daily exposure favours squamous cell carcinoma."],
      ["Both patterns favour melanoma, since keratinocyte carcinoma is not ultraviolet-driven",
       "Both keratinocyte carcinomas are ultraviolet-driven."]],
    c=0, cite=c(33)),

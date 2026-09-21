@@ -44,7 +44,7 @@ POOL_B = [
      ["Neurocutaneous melanosis has developed, and the prognosis is poor once neurological symptoms appear",
       "Correct — symptoms usually appear within the first few years of life."],
      ["Melanoma has arisen within the naevus and has metastasised to the central nervous system",
-      "Neurocutaneous melanosis is the condition the lecture names for this picture."],
+      "Melanoma in infancy is rare; a large naevus over the head and neck with new neurological signs points to melanocytes within the leptomeninges, which is neurocutaneous melanosis."],
      ["The naevus is unrelated to the symptoms, which need investigating separately",
       "The head, neck and posterior midline location is exactly what raises this concern."],
      ["A familial cancer syndrome is present, as suggested by the multiple lesions",

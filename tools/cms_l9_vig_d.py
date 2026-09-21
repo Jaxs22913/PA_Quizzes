@@ -13,7 +13,7 @@ VIG_D = [
      ["Characterise it systematically",
       "Correct — describe before naming. Lesion type, colour, texture, border, size, distribution, palpability, ulceration, bleeding, induration and evolution."],
      ["Name the most likely diagnosis, then look only for the features that support it",
-      "That reverses the order the deck insists on."],
+      "Naming the diagnosis first invites confirmation bias: features that fit are noticed and those that do not are explained away, which is how melanoma is missed."],
      ["Photograph it and wait for the dermatology opinion before describing anything",
       "Description is the first step, not a deferred one."],
      ["Biopsy immediately, since description adds nothing once tissue is available",
@@ -28,7 +28,7 @@ VIG_D = [
      ["Palms, soles and nails in every patient; the oral mucosa specifically when melanoma is possible; and the regional nodes for every lesion whatever its risk",
       "The oral examination is tied to Kaposi sarcoma."],
      ["The affected area alone, since the total-body survey, the acral sites and the regional nodes all belong to the dermatologist",
-      "The deck asks the examining clinician to look more widely."],
+      "Acral and mucosal melanoma and regional nodal spread can be missed entirely if nobody looks before referral, so these are the referring clinician's responsibility."],
      ["The scalp and trunk only, since acral sites and the oral mucosa are rarely involved in cutaneous malignancy",
       "Palms, soles and nails are explicitly included."]],
    c=0, cite=c(4)),
@@ -66,9 +66,7 @@ VIG_D = [
    q="A 69-year-old man has an ulcer on his ear that has not healed in three months. The base is firm and indurated. Which is the most likely diagnosis?",
    opts=[
      ["Squamous cell carcinoma",
-      "Correct. A non-healing ulcer with an indurated base is one of the presentations the deck lists, and "
-      "induration is on its red-flag list. The ear is also one of its named high-risk sites — with mucosal "
-      "surfaces, lip, scalp, temple, nose and genitalia — all of which carry higher recurrence and metastatic risk."],
+      "Correct — a non-healing indurated ulcer indicates invasion below the epidermis, and the ear is a high-risk site alongside lip, scalp, temple, nose, genitalia and mucosal surfaces, all carrying higher recurrence and metastatic risk."],
      ["Basal cell carcinoma",
       "Basal cell carcinoma is usually a pearly papule with telangiectasias and a rolled border. It can erode "
       "centrally, but a firm, indurated, non-healing ulcer is the squamous pattern."],
@@ -102,7 +100,7 @@ VIG_D = [
      ["An estimated 3 to 7%, and nothing raises it further, since metastatic risk is fixed at the moment of diagnosis whatever the site or immune status",
       "Several named factors raise it substantially."],
      ["Under 0.1%, raised only by nodal involvement already present at the time of diagnosis",
-      "The deck gives 3 to 7%."]],
+      "Under 0.1 per cent greatly understates it; actinically induced squamous cell carcinoma metastasises in about 3 to 7 per cent of cases, and high-risk sites and features raise that."]],
    c=0, cite=c(26)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="diagnosis",
@@ -168,7 +166,7 @@ VIG_D = [
      ["A 1 cm margin", "Correct — lesions under 1 mm take a 1 cm margin."],
      ["A 0.5 to 1 cm margin", "That range is for in situ disease."],
      ["A 1 to 2 cm margin", "That is for lesions thicker than 1 mm."],
-     ["A 3 cm margin", "Wider than any margin the deck gives."]],
+     ["A 3 cm margin", "A 3 cm margin is far wider than needed; below 1 mm thickness a 1 cm margin is appropriate."]],
    c=0, cite=c(52)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="education",
@@ -233,7 +231,7 @@ VIG_D = [
      ["They are always benign dermatopathic change and need no directed biopsy, imaging or further assessment",
       "Either is possible, so they must be assessed."],
      ["They indicate regional infection rather than lymphoma and warrant a course of oral antibiotics",
-      "Infection is not the explanation the deck offers."]],
+      "Enlarged nodes in established cutaneous T-cell lymphoma raise nodal involvement rather than infection, and that possibility has to be assessed rather than treated blindly with antibiotics."]],
    c=0, cite=c(70)),
 
  dict(topic="Nail unit neoplasms", io=IOA, lead="test",
@@ -242,7 +240,7 @@ VIG_D = [
      ["Remove the polish and inspect every nail, the periungual skin, the palms and soles, and the regional nodes",
       "Correct — a single-nail problem is assessed against all the others."],
      ["Remove the polish and inspect the affected nail alone, since comparison with other nails is unhelpful",
-      "The deck asks you to inspect every nail."],
+      "Comparison across nails is exactly what makes one abnormal nail interpretable, since a change affecting a single digit carries different weight from one affecting several."],
      ["Leave the polish in place to avoid disturbing the nail plate, and inspect the periungual skin only",
       "The polish must come off."],
      ["Inspect the affected nail under a Wood lamp before removing any polish",
