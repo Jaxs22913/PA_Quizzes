@@ -86,8 +86,11 @@ usually that window. Hard refresh or a private window confirms it.
 
 - A new class auto-gets an Inbox folder (`class_inbox_convention`).
 - `calendar-data.js` in the repo is **generated** from those calendar PDFs by
-  `tools/gen_calendar_data.py`. Never hand-edit it. It is also the only source
-  that **names the lecturer for each lecture** — the syllabus does not.
+  `tools/gen_calendar_data.py`. Never hand-edit it. It names the **scheduled**
+  lecturer per row (the syllabus names none), but that has been wrong on at
+  least five rows (CMS L16, CMS Hypertension, Clin Path L4/L6/L7): attribute a
+  lecture from the deck's title slide and the recording, and ask Jaxon when
+  they disagree (`academic_calendar_pipeline`).
 - Lecture recordings come out of Notability; `tools/pull_notability_audio.py`
   and the `notability_audio_pipeline` memory cover the extraction, including two
   traps that make a recording that IS there read as absent.
@@ -130,20 +133,22 @@ Micro Exam 1 timetable quiz (§8) is the clean example to copy —
    specifically, pushing is part of the spec — you do not need to wait to be
    asked.
 
-### Guides, cram sheets, Arcade, RPG
+### Guides, cram sheets, Arcade
 
 - Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box
   must quote the syllabus verbatim and answer each one in order).
 - Cram sheets: `tools/cram-sheet-template/`, one per exam, GREEN badge on
   `guides.html` (`cram_sheets_feature`).
 - Arcade: `arcade_content_policy` and `arcade_integration`.
-- RPG: local only, **do not push** (`rpg_local_art_pipeline`).
+- RPG: **scrapped 2026-09-22** (Jaxon: "No to rpg stuff scrap it"); `rpg/` was
+  removed from the site. Do not resume, rebuild or push RPG work unless he
+  revives it.
 
 ---
 
 ## 6. The checkers — run them, do not trust memory
 
-33 live in `tools/check_*.py`. The standing minimum after any quiz build:
+34 live in `tools/check_*.py`. The standing minimum after any quiz build:
 
 ```bash
 python3 tools/check_answer_key_consistency.py "<file>"   # keys must be right
@@ -158,9 +163,17 @@ Others worth knowing: `check_length_bias`, `check_ppt_grounding`,
 `check_truncated_keys`, `check_accordions_closed`, `check_spelling`,
 `check_slot_coverage`, `check_pool_cites`.
 
-`check_length_bias.py` drives headless Chrome and is slow and fragile; a
-node-based literal extractor does the same job vastly faster and was validated
-to produce identical numbers.
+`check_length_bias.py` drives headless Chrome and is slow and fragile; use
+`tools/check_length_bias_fast.py` (node literal extractor, identical numbers,
+~3 s site-wide).
+
+**Upgraded 2026-09-22 — they now FAIL on real defects they used to pass.**
+`check_self_contained` (with the new `tools/_lecturers.py`) catches lecturer
+names and scans TEST_YOURSELF banks; `check_pool_cites` also reads `*_sets.json`
+and `master-exams*.json` — run it BEFORE any render, a stale sets file puts
+citations back; `check_truncated_keys` compares master keys with their
+topic/pool twins. Until Phase 2 (§8) lands, several are red on Semester 2
+content. Always read the denominator a checker prints.
 
 ---
 
@@ -188,37 +201,54 @@ These are the ones most often broken. Each has a memory with the full story.
 
 ---
 
-## 8. State as of 2026-09-22
+## 8. State as of 2026-09-23 — READ THE HANDOFF FIRST
 
-- **Microbiology Exam 1 was sat 2026-09-21** (Lectures 1–6). Two papers exist
-  for it: the objective-weighted `micro-exam-1-exam-style-quiz.html` (77 q) and
-  the timetable-weighted `micro-exam-1-timetable-weighted-quiz.html` (65 q,
-  five per scheduled lecture hour). See `timetable_weighted_exams`.
-  - Per the standing `guides_fan_past_exams` rule, a sat exam's `guides.html`
-    sub-group should get `data-stack="1"` so its cards fan into a stack. **Not
-    yet done for Micro Exam 1.**
-- All 292 question banks are free of lecture/professor citations as of
-  2026-09-20 — but **46 shipped quiz pages still carry old citations** because
-  their topics were never re-rendered (§5). Flagged, not done.
-- Micro Lecture 6 audio was recovered 2026-09-20 and transcribed; Lectures 1–6
-  all have transcripts now.
+**A "Fix defects" pass is half done.** Full handoff, outside the public repo:
+`~/Developer/PA_Quizzes-handoff/2026-09-23/HANDOFF.md` (state, Jaxon's
+decisions, the defect inventory, a ready Phase 2 workflow script, open
+questions). The memory `phase2_handoff` points there too.
+
+- **Phase 1 is done and live** (commits `fade96b7`..`d64b08a8`): RPG removed;
+  sat Semester 2 exams stacked on `guides.html` (CMS E3, PD2 ENT OSCE, PDM E1,
+  Micro E1) and CMS Exam 4 given its own group; Micro whole-exam papers under a
+  "Whole-Exam Review" divider; `pdm-urinalysis` Arcade deck reachable; Med Lit
+  restored to the calendar (exam 2026-11-02); checkers upgraded (§6).
+- **Phase 2 has NOT run** (stopped before writing anything). Its scope, most
+  urgent first: CMS I ENT retest 2026-09-25 (citations, 2 truncated master
+  keys, GTD bank), Clin Path I Exam 1 2026-09-28 (lecturer-named stems, ~900
+  thin explanations, a sets file that would restore "Professor Rappa"), PD II
+  Exam 1 2026-09-30 (lecturer-named stems, truncated master keys, 3
+  course-mechanics questions to remove, thin explanations), then PDM E1 (the
+  contrast-radioactive claim, "Reynolds contrasted..." stem), CMS E1/E2, Pharm,
+  Micro/Med Lit, Arcade, and automatic guide stacking for Semester 2+.
+- **Decisions already made (2026-09-22):** PD2 course-mechanics questions
+  removed only (L1 quiz 15 -> 12, masters A/D/E 60 -> 59); PDM contrast = keep
+  the deck's keyed answer + state the accurate fact beside it; rewrite Clin
+  Path E1 and PD2 E1 thin explanations (refute + fact, >= 60 chars); guides
+  stack automatically after each exam, Semester 2 and forward only; design
+  review quit; RPG scrapped.
+- The earlier claim that "all 292 banks are citation-free" was only true of the
+  old, narrower `check_pool_cites` regex. Of the "46 pages" still citing, 33
+  were frozen Semester 1 pages; the real Semester 2 set is in the handoff
+  inventory.
+- **Microbiology Exam 1 was sat 2026-09-21.** Its papers: the Webster-review
+  weighted `micro-exam-1-exam-style-quiz.html` (77 q) and the
+  timetable-weighted `micro-exam-1-timetable-weighted-quiz.html` (65 q, the
+  real 65 apportioned over 14 scheduled hours — `timetable_weighted_exams`).
 - Micro has two lecturers: **Webster** (1, 2, 5, 7, 10, 12, 14, 17, 18) and
-  **Fair** (3, 4, 6, 8, 9, 11, 13, 15, 16, 19). Webster reviews in class and
-  signposts; Fair gives **no** examinability signposting across ~205 measured
-  minutes, so weight his lectures by time-on-topic instead
+  **Fair** (3, 4, 6, 8, 9, 11, 13, 15, 16, 19). Webster's lectures carry
+  almost no signposting, but she reviewed her Exam 1 objectives in class
+  (`micro_webster_review`); Fair gives **no** examinability signposting across
+  ~205 measured minutes, so weight his lectures by time-on-topic
   (`transcript_emphasis_measurement`).
 
-### Open items, none of them started
+### Open build work (not defects — ask before starting)
 
-- Guides and cram sheets for the four new Exam 2 topics.
-- Master exams for Exam 2 blocks (held by standing rule until block content is
-  complete).
-- Thin CMS Exam 3 master-exam stems (median 38 words against a 78-word
-  reference).
-- A factual error flagged for Jaxon's decision in `pdm_l2_pool_c`: the keyed
-  answer says contrast dyes "are technically radioactive", which is false. The
-  key was left alone because it is what the deck teaches; the explanation now
-  states the accurate position.
+- Guides + cram sheets for 7 Exam-2 topics (Micro L7/L8, Clin Path L6/L7,
+  PD2 L5, PDM L7/L8) and Pharm L5 ENT in its existing guide.
+- PDM L9 deck in the inbox since 09-21, unbuilt; PDM Lab 2 handling (ask).
+- Micro L7 quizzes cover only objectives 1-4 of 9 (pool B never written).
+- Master exams for Exam-2 blocks, held until each block is complete.
 
 ---
 
