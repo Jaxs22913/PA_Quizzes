@@ -42,9 +42,13 @@ WATCH = ["Clark", "Breslow", "TNM", "Fitzpatrick", "Nikolsky", "Auspitz",
          "moccasin", "caeruleae", "dew drop", "herald patch", "Christmas tree",
          "tapioca", "coin-shaped", "glazed", "honey-colored", "serpiginous",
          "exclamation-mark", "collarette", "pathergy", "dimple sign",
-         "cutis rhomboidalis", "Crowe", "kerion", "Auspitz", "erythema migrans",
+         "cutis rhomboidalis", "Crowe", "kerion", "erythema migrans",
          "spaghetti and meatballs", "umbilication", "Ghon", "Darier sign",
          "Leser-Trelat", "apple-jelly", "string of pearls", "shawl sign"]
+# "Auspitz" was listed twice (2026-08-24 and again with the giveaway batch),
+# which printed every Auspitz problem twice and overstated the list as 42 terms.
+_dupes = sorted({t for t in WATCH if WATCH.count(t) > 1})
+assert not _dupes, "WATCH lists these more than once: %s" % _dupes
 
 # Phrasings that count as introducing a term rather than assuming it.
 INTRODUCED = re.compile(
@@ -73,7 +77,14 @@ def deck_text(inbox):
             else:
                 yield sh
     out = []
-    decks = glob.glob(os.path.join(inbox, "*.pptx"))
+    # Recursive, skipping recordings/: Interpretation of Medical Literature keeps
+    # its decks in Exam 1/Powerpoints/, and a top-level glob found none there.
+    decks = []
+    for dirpath, dirnames, filenames in os.walk(inbox):
+        dirnames[:] = [d for d in dirnames if d.lower() != "recordings"]
+        decks += [os.path.join(dirpath, f) for f in filenames
+                  if f.lower().endswith(".pptx") and not f.startswith("~$")]
+    decks.sort()
     assert decks, "no .pptx found in %s -- a silent empty scan would pass everything" % inbox
     for d in decks:
         p = Presentation(d)
@@ -87,9 +98,15 @@ def deck_text(inbox):
 
 
 def main():
-    if len(sys.argv) < 3:
+    argv = sys.argv[1:]
+    json_out = None
+    if "--json" in argv:
+        i = argv.index("--json")
+        json_out = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
+    if len(argv) < 2:
         sys.exit(__doc__)
-    classdir, inbox = sys.argv[1], os.path.expanduser(sys.argv[2])
+    classdir, inbox = argv[0], os.path.expanduser(argv[1])
     decks, ndecks = deck_text(inbox)
 
     ours = []
@@ -125,6 +142,23 @@ def main():
 
     print("scanned %d deck(s) and %d page(s) for %d watchlist term(s)"
           % (ndecks, len(ours), len(WATCH)))
+    if json_out:
+        # Every unexcused occurrence with its surrounding text, so a fix can
+        # go straight to it (--json out.json).
+        import json
+        bodies = dict(ours)
+        rows = []
+        for term, name in problems:
+            body = bodies[name]
+            for m in re.finditer(re.escape(term.lower()), body.lower()):
+                ctx = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body[max(0, m.start() - 160): m.end() + 160]))
+                rows.append({"file": os.path.join(os.path.basename(os.path.normpath(classdir)), name),
+                             "location": "char %d" % m.start(), "field": "page text", "term": term,
+                             "text": ctx.strip(), "detector": "deck_vocabulary"})
+        with open(json_out, "w", encoding="utf-8") as fh:
+            json.dump({"classdir": classdir, "inbox": inbox, "decks": ndecks, "pages": len(ours),
+                       "terms": len(WATCH), "problems": [{"term": t, "file": n} for t, n in problems],
+                       "hits": rows}, fh, ensure_ascii=False, indent=1)
     if problems:
         print("\nTERMS USED IN OUR CONTENT BUT ABSENT FROM THE DECKS, and not introduced as such:")
         for term, name in problems:

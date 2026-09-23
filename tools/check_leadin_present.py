@@ -25,6 +25,8 @@ Picture-stem items are exempt: the photograph is the stem.
 import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+from check_exam_standard import is_frozen      # the one Semester 1 list
 # Question mark, an interrogative, or an IMPERATIVE that names the task. The
 # imperative list is deliberately broad -- "Describe the appearance of a
 # dysplastic naevus." and "Rank the following from fastest to slowest." both
@@ -86,8 +88,14 @@ def stems(path):
 
 
 def main(argv):
+    # Semester 1 is frozen (Jaxon, 2026-08-27) and two of its Anatomy Exam 3
+    # stems ask nothing, so this failed permanently on content nobody may edit
+    # -- and a new Semester 2 failure looked exactly like the standing red.
+    # Frozen folders are skipped, and COUNTED, unless --include-frozen.
+    include_frozen = "--include-frozen" in argv
+    argv = [a for a in argv if a != "--include-frozen"]
     prefix = argv[1] if len(argv) > 1 else ""
-    files, bad, total, flagged = [], [], 0, 0
+    files, bad, total, flagged, frozen = [], [], 0, 0, 0
     for dirpath, _dirs, names in os.walk(ROOT):
         if os.sep + "." in dirpath or "group-quizzes" in dirpath or "tools" in dirpath:
             continue
@@ -97,12 +105,17 @@ def main(argv):
             rel = os.path.relpath(os.path.join(dirpath, n), ROOT)
             if prefix and not rel.startswith(prefix):
                 continue
+            if not include_frozen and is_frozen(rel):
+                frozen += 1
+                continue
             files.append(rel)
 
+    with_stems = 0
     for rel in sorted(files):
         qs, has_img = stems(os.path.join(ROOT, rel))
         if not qs:
             continue
+        with_stems += 1
         miss = [(i, q) for i, q in enumerate(qs) if not asks(q)]
         total += len(qs)
         if miss and not has_img:
@@ -116,8 +129,10 @@ def main(argv):
         if len(miss) > 3:
             print("   ... and %d more" % (len(miss) - 3))
 
-    print("\n%d stems scanned across %d quiz file(s); %d file(s) contain a stem "
-          "that asks nothing" % (total, len(files), flagged))
+    print("\n%d stems scanned across %d quiz file(s) (%d html file(s) walked; %d in frozen "
+          "Semester 1 folders skipped%s); %d file(s) contain a stem that asks nothing"
+          % (total, with_stems, len(files), frozen,
+             "" if include_frozen else ", --include-frozen to read them", flagged))
     return 1 if flagged else 0
 
 

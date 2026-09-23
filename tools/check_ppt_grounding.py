@@ -12,9 +12,15 @@ as slide images or tables routinely flag as false positives even when correct
 (verified 2026-07-21: every sampled numeric flag matched its slide exactly).
 Treat flags as "go read this slide," never as "this is wrong."
 
-Requires the PowerPoints in the Desktop inbox layout:
-    ~/Desktop/<Class> Inbox/Exam <N>/*.pptx
-mapped to the repo's "<Class> Exam <N>" folders. No pip deps (reads pptx XML).
+Reads the PowerPoints from the Desktop inbox for each repo "<Class> Exam <N>"
+folder, in either layout (see inbox_dir):
+    ~/Desktop/Semester <n>/<Class> Inbox/Exam <N>/     (Fall 2026 onward)
+    ~/Desktop/<Class> Inbox/Exam <N>/                  (Semester 1, flat)
+Decks are found RECURSIVELY under Exam <N>/, skipping any recordings/ folder:
+Interpretation of Medical Literature keeps its five decks in
+Exam 1/Powerpoints/, and a top-level-only glob screened 0 of its questions
+while the run looked clean (audit of 2026-09-22). No pip deps (reads pptx XML).
+Paths resolve from the repo root, whatever the cwd.
 
     python3 tools/check_ppt_grounding.py            # whole site
     python3 tools/check_ppt_grounding.py "Anatomy Exam 4"
@@ -23,6 +29,7 @@ import zipfile, re, glob, os, json, sys
 from collections import Counter
 
 HOME = os.path.expanduser("~")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INBOX = {"Anatomy": "Anatomy Inbox", "Physiology": "Physiology Inbox",
          "Physical Diagnosis 1": "Physical Diagnosis 1 Inbox", "CAM Nutrition": "CAM-Nutrition Inbox"}
 STOP = set(("the a an of and or to in on at by with for from that which this these those is are was were be as it "
@@ -66,13 +73,23 @@ def inbox_dir(repo_folder):
             p = os.path.join(root, name, "Exam " + num)
             if not os.path.isdir(p):
                 continue
-            if glob.glob(os.path.join(p, "*.pptx")):
+            if decks_in(p):
                 return p
             empty.append(p)
     if empty:
         print("  NOTE: %s -- found inbox dir(s) with no .pptx, ignored: %s"
               % (repo_folder, ", ".join(empty)), file=sys.stderr)
     return None
+
+def decks_in(p):
+    """Every .pptx under an Exam N/ inbox folder, at any depth, except inside a
+    recordings/ folder and Office's "~$" lock files."""
+    out = []
+    for dirpath, dirnames, filenames in os.walk(p):
+        dirnames[:] = [d for d in dirnames if d.lower() != "recordings"]
+        out += [os.path.join(dirpath, f) for f in filenames
+                if f.lower().endswith(".pptx") and not f.startswith("~$")]
+    return sorted(out)
 
 def toks(s):
     return [w for w in re.findall(r'[a-z]{4,}', s.lower()) if w not in STOP] + re.findall(r'\d+', s)
@@ -104,26 +121,35 @@ def main(argv):
     roots = argv[1:]
     excluded = 0
     exam_corpus = {}
-    for repo in glob.glob("*/"):
-        folder = repo.rstrip('/')
+    decks_read = Counter()
+    for folder in sorted(os.listdir(ROOT)):
+        if not os.path.isdir(os.path.join(ROOT, folder)) or folder.startswith('.'):
+            continue
         if roots and folder not in roots:
             continue
         ib = inbox_dir(folder)
         if ib and os.path.isdir(ib):
-            txt = ' '.join(deck_text(p) for p in glob.glob(ib + '/*.pptx')
-                           if not os.path.basename(p).startswith('~$'))
+            decks = decks_in(ib)
+            decks_read[folder] = len(decks)
+            txt = ' '.join(deck_text(p) for p in decks)
             if txt.strip():
                 exam_corpus[folder] = re.sub(r'\s+', ' ', txt.lower())
-    flags = []; screened = Counter()
-    for f in glob.glob("**/*.html", recursive=True):
-        folder = f.split('/')[0]
+    flags = []; screened = Counter(); unparseable = []
+    for path in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True):
+        f = os.path.relpath(path, ROOT)
+        folder = f.split(os.sep)[0]
         if folder not in exam_corpus:
             continue
-        m = re.search(r'const QUESTIONS\s*=\s*(\[.*?\]);', open(f, encoding='utf-8').read(), re.S)
+        text = open(path, encoding='utf-8').read()
+        m = re.search(r'const QUESTIONS\s*=\s*', text)
         if not m:
             continue
-        try: arr = json.loads(m.group(1))
-        except Exception: continue
+        # raw_decode, not a non-greedy "(\[.*?\]);" -- that stopped at the first
+        # "];" inside a string and the file silently dropped out of the screen.
+        try: arr = json.JSONDecoder().raw_decode(text, m.end())[0]
+        except ValueError as e:
+            unparseable.append((f, str(e)[:70]))
+            continue
         d = exam_corpus[folder]
         for qi, q in enumerate(arr):
             o, c = q.get('opts'), q.get('c')
@@ -140,9 +166,12 @@ def main(argv):
                     excluded += 1
                     continue
                 flags.append((f, qi + 1, o[c][0][:50], q.get('q', '')[:55]))
+    print("decks read per exam:", dict(decks_read))
     print("screened per exam:", dict(screened))
     if excluded:
         print(f"reviewed and excluded (verified on the slide by hand): {excluded}")
+    for f, err in unparseable:
+        print(f"UNPARSEABLE -- NOT SCREENED: {f}  {err}")
     print(f"\nflags to eyeball (correct absent from all decks + a distractor present): {len(flags)}")
     for f, qi, ans, stem in flags:
         print(f"  {f}  Q{qi}: '{ans}'  ::  {stem}")

@@ -9,10 +9,13 @@ depend on anyone remembering.
     python3 tools/check_exam_standard.py                       # every quiz
     python3 tools/check_exam_standard.py "Clinical Medicine..."  # a folder
     python3 tools/check_exam_standard.py --new                 # only NEW-tagged
+    python3 tools/check_exam_standard.py --new --days 3        # ...still showing
 
 What it checks, and why each one is here:
 
-  OPTIONS      five, A-E, all distinct.
+  OPTIONS      FOUR, A-D, all distinct. A HARD rule since 2026-09-13 ("All
+               should be 4 answer choices not 5"); the five-option shape of the
+               2026-08-27 reference items was reversed site-wide.
   VIGNETTE     the stem names a patient. His exams are mostly vignette.
   REFUTATIONS  every wrong option gets its OWN explanation; none may open with
                "Correct", and the keyed one must.
@@ -24,7 +27,7 @@ What it checks, and why each one is here:
   GAMEABLE     the correct answer must not be reliably the longest. Reference
                sits at 13%; the house bar is 35%. Zero is NOT the target --
                engineering it to zero is what bloated the options the first time.
-  POSITIONS    keys spread across A-E. Authoring correct-first and shipping it
+  POSITIONS    keys spread across A-D. Authoring correct-first and shipping it
                is a real bug that has now happened twice.
   DIAGNOSIS    about a quarter pure diagnosis.
   CITE         every question cites its slide.
@@ -34,7 +37,21 @@ What it checks, and why each one is here:
 
 Legacy quizzes predate all of this and are reported, never failed: --new limits
 the run to files carrying a New tag, which is what a fresh build looks like.
-Exit code is non-zero only if a checked file breaks a HARD rule.
+
+--new reads the tag wherever index.html puts it. The convention written down on
+2026-08-27 put the span INSIDE the link (<a ...>Form A<span class="quiz-tag
+quiz-tag--new" ...></a>), and this matched only that. From 2026-08-29 index.html
+put it AFTER </a> -- sometimes after a Drill span -- so --new went on checking
+the same five CMS Exam 1 "Updated" forms and none of the 169 links tagged since
+(audit of 2026-09-22). Both placements count now. The run prints how many
+tagged links it found against how many New spans index.html holds, and FAILS if
+any span could not be attached to a link, so a markup change cannot silently
+shrink it again.
+
+Exit code is non-zero if a checked file breaks a HARD rule, if a file carrying a
+question bank cannot be parsed (it would otherwise drop out of the run without a
+word), if FROZEN has drifted from semesters.js, or (--new) if a New span in
+index.html could not be attached to a link.
 """
 import argparse, collections, glob, json, os, re, sys
 
@@ -60,6 +77,48 @@ FROZEN = (
     "Physical Diagnosis 1 Exam",
     "Physiology Exam",
 )
+
+
+def is_frozen(rel):
+    """True for a repo-relative path inside a Semester 1 folder. The one place
+    other checkers ask -- check_self_contained, check_leadin_present and
+    check_truncated_keys import this rather than keep their own list (the
+    self-contained checker's private copy had drifted: it skipped the Semester 2
+    Medical Literature folder and scanned four Semester 1 ones)."""
+    return rel.replace(os.sep, "/").startswith(FROZEN)
+
+
+def frozen_drift(root=None):
+    """FROZEN against semesters.js, the registry it is copied from.
+
+    Returns [(folder, class, 'Semester 1 but not FROZEN' | 'FROZEN but not
+    Semester 1')]. The same fact in two places always drifts; this is the guard
+    between the two copies. Folders semesters.js does not classify (tools,
+    audio, group-quizzes...) are ignored."""
+    root = root or ROOT
+    js = open(os.path.join(root, "semesters.js"), encoding="utf-8").read()
+    m = re.search(r'id:\s*"summer-1-2026".*?classes:\s*\[([^\]]*)\]', js, re.S)
+    if not m:
+        return [("semesters.js", "?", "cannot find the summer-1-2026 class list")]
+    s1 = set(re.findall(r'"([^"]+)"', m.group(1)))
+    rules = [(re.compile(p, re.I if "i" in fl else 0), c)
+             for p, fl, c in re.findall(r'\[\s*/(.+?)/([a-z]*)\s*,\s*"([^"]+)"\s*\]', js)]
+    if not rules:
+        return [("semesters.js", "?", "cannot find FOLDER_CLASS")]
+    out = []
+    for d in sorted(os.listdir(root)):
+        if not os.path.isdir(os.path.join(root, d)) or d.startswith("."):
+            continue
+        cls = next((c for rx, c in rules if rx.search(d)), None)
+        if cls is None:
+            continue
+        if cls in s1 and not is_frozen(d):
+            out.append((d, cls, "Semester 1 but not FROZEN"))
+        elif cls not in s1 and is_frozen(d):
+            out.append((d, cls, "FROZEN but not Semester 1"))
+    return out
+
+
 REF_MEDIAN, REF_MAX = 19, 66          # measured from the 40 reference items
 GAMEABLE_BAR = 0.35                   # house bar; reference itself is 0.13
 DIAG_MIN = 0.20                       # "about a quarter", with slack
@@ -71,15 +130,23 @@ CONDITION = re.compile(r"\b(syndrome|scabies|zoster|melanoma|carcinoma|dermatiti
 INSTRUCTION = re.compile(r"\b(start|stop|give|apply|excise|observe|biopsy|screen|refer|remove|drain|immediately|antiviral|antibiotics|corticosteroid|cryotherapy|permethrin|ivermectin|antivenom|vincristine)\b", re.I)
 
 
+class Unparseable(Exception):
+    pass
+
+
 def load(path):
     h = open(path, encoding="utf-8").read()
-    m = re.search(r"const QUESTIONS\s*=\s*(\[.*?\]);", h, re.S)
+    m = re.search(r"const QUESTIONS\s*=\s*", h)
     if not m:
         return None, h
+    # raw_decode reads exactly one JSON value and stops. The non-greedy
+    # "(\[.*?\]);" this used to use stopped at the first "];" inside any
+    # string, and the resulting JSON error was swallowed -- the file simply
+    # dropped out of the run.
     try:
-        qs = json.loads(m.group(1))
-    except Exception:
-        return None, h
+        qs = json.JSONDecoder().raw_decode(h, m.end())[0]
+    except ValueError as e:
+        raise Unparseable(str(e)[:80])
     # Older quizzes store {q, choices, answer, correct, why} instead of
     # {q, opts:[[text, explanation]], c}. Normalise so one checker sees both,
     # and remember which shape it was -- the shared-"why" test only means
@@ -180,8 +247,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("target", nargs="?", default=None)
     ap.add_argument("--new", action="store_true", help="only files carrying a New tag in index.html")
+    ap.add_argument("--days", type=int, default=None,
+                    help="with --new: only tags added within this many days (home.js shows them for 3)")
     ap.add_argument("--include-frozen", action="store_true", help="also check folders marked FROZEN")
     args = ap.parse_args()
+
+    drift = frozen_drift()
+    for d, cls, why in drift:
+        print(f"FROZEN DRIFT  {d} ({cls}): {why} -- fix FROZEN in this file")
 
     files, frozen_skipped = [], []
     for f in glob.glob(os.path.join(ROOT, "*", "*.html")):
@@ -195,16 +268,38 @@ def main():
             continue
         files.append(f)
 
+    blind = False
     if args.new:
-        idx = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
-        tagged = set(re.findall(r'href="([^"]+)"[^>]*>[^<]*<span class="quiz-tag quiz-tag--new"', idx))
-        import urllib.parse
-        tagged = {urllib.parse.unquote(t) for t in tagged}
+        index_html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+        tags = new_tags(index_html)
+        spans = count_new_spans(index_html)
+        inside = sum(1 for t in tags if t[2])
+        print(f"New-tagged links in index.html: {len(tags)} of {spans} New span(s) "
+              f"({inside} with the tag inside <a>, {len(tags) - inside} after </a>)")
+        if len(tags) < spans:
+            blind = True
+            print(f"  TAG MISMATCH: {spans - len(tags)} New span(s) sit where the link pattern "
+                  f"cannot attach them to a quiz -- fix new_tags() before trusting --new")
+        if args.days is not None:
+            import datetime
+            today = datetime.date.today()
+            tags = [t for t in tags if t[1] and
+                    (today - datetime.date(*map(int, t[1].split("-")))).days <= args.days]
+            print(f"  ...added within {args.days} day(s): {len(tags)}")
+        tagged = {t[0] for t in tags}
         files = [f for f in files if os.path.relpath(f, ROOT) in tagged]
+        missing = sorted(t for t in tagged if not os.path.exists(os.path.join(ROOT, t)))
+        if missing:
+            print(f"  {len(missing)} tagged link(s) point at no file: {missing[:5]}")
 
     checked = failed = 0
+    unparseable = []
     for f in sorted(files):
-        qs, html = load(f)
+        try:
+            qs, html = load(f)
+        except Unparseable as e:
+            unparseable.append((os.path.relpath(f, ROOT), str(e)))
+            continue
         if not qs:
             continue
         checked += 1
@@ -220,8 +315,38 @@ def main():
 
     if frozen_skipped:
         print(f"\nskipped {len(frozen_skipped)} file(s) in frozen folders: {', '.join(FROZEN)}")
-    print(f"checked {checked} quiz file(s); {failed} broke a hard rule")
-    return 1 if failed else 0
+    for rel, err in unparseable:
+        print(f"UNPARSEABLE  {rel}: {err} -- NOT CHECKED")
+    print(f"checked {checked} quiz file(s); {failed} broke a hard rule; "
+          f"{len(unparseable)} could not be parsed")
+    return 1 if (failed or unparseable or drift or blind) else 0
+
+
+def count_new_spans(index_html):
+    """Every New-tag span in index.html, however it is placed. --new compares
+    this with what new_tags() attached to links: a markup change that the link
+    pattern cannot follow shows up as a shortfall and fails the run, rather
+    than quietly shrinking the set of files checked."""
+    return len(re.findall(r'<span\b[^>]*\bquiz-tag--new\b[^>]*>', index_html))
+
+
+def new_tags(index_html):
+    """[(repo-relative href, data-added or None, tag_inside_link)] for every
+    quiz link carrying a New tag, whether the span sits inside the <a> or
+    after </a> (optionally after other tag spans such as Drill)."""
+    import urllib.parse
+    out = []
+    link = re.compile(r'<a\b[^>]*\bhref="([^"]+)"[^>]*>(.*?)</a>'
+                      r'((?:\s*<span\b[^>]*>[^<]*</span>)*)', re.S)
+    for m in link.finditer(index_html):
+        inner, after = m.group(2), m.group(3)
+        for part, is_inside in ((inner, True), (after, False)):
+            t = re.search(r'<span\b[^>]*\bquiz-tag--new\b[^>]*>', part)
+            if t:
+                d = re.search(r'data-added="(\d{4}-\d{2}-\d{2})"', t.group(0))
+                out.append((urllib.parse.unquote(m.group(1)), d.group(1) if d else None, is_inside))
+                break
+    return out
 
 
 if __name__ == "__main__":
