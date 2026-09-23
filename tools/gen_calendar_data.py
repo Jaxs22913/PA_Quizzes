@@ -76,11 +76,11 @@ MOVED = {
 # Each entry is  course_title_substring -> why. Delete an entry if the course
 # returns; nothing else needs changing, because the tab and the registry entry
 # are driven from semesters.js, not from here.
-DROPPED = {
-    "Interpretation of Med": "not offered Fall 2026; Jaxon 2026-09-13. The "
-                             "printed calendar scheduled 19 lectures and an "
-                             "exam that are not happening.",
-}
+#
+# Empty on purpose. Interpretation of Medical Literature was dropped here on
+# 2026-09-13 and came back 2026-09-18 (semesters.js); its entry was deleted on
+# 2026-09-22, which restored its 20 printed events, including the 2 Nov exam.
+DROPPED = {}
 
 
 def apply_drops(out):
