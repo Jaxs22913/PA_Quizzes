@@ -8822,7 +8822,7 @@ var DEMO_CLASSES = [
   ]},
 
   { id: "pdm-1", name: "Principles of Diagnostic Medicine I", exams: [
-    { id: "exam1", name: "Exam 1", deckIds: ["pdm-lab-diagnostics", "pdm-medical-imaging", "pdm-derm-ent-ophtho", "pdm-cbc-hematology", "pdm-chemistry-panels"] },
+    { id: "exam1", name: "Exam 1", deckIds: ["pdm-lab-diagnostics", "pdm-medical-imaging", "pdm-derm-ent-ophtho", "pdm-cbc-hematology", "pdm-chemistry-panels", "pdm-urinalysis"] },
     { id: "exam2", name: "Exam 2", deckIds: [
       "pdm-ecg", "pdm-cardiac-imaging"
     ] }
