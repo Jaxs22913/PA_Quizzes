@@ -22,7 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import _pharm_review_data as D
 
-SRC = os.path.expanduser("~/Desktop/Semester 2/Pharmacology I Inbox/Exam 1/recordings/"
+SRC = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/Exam 1/recordings/"
                          "pharm-exam-1-review-wood-2026-09-03.transcript.txt")
 _cache = {}
 

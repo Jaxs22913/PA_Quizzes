@@ -13,9 +13,10 @@ as slide images or tables routinely flag as false positives even when correct
 Treat flags as "go read this slide," never as "this is wrong."
 
 Reads the PowerPoints from the Desktop inbox for each repo "<Class> Exam <N>"
-folder, in either layout (see inbox_dir):
-    ~/Desktop/Semester <n>/<Class> Inbox/Exam <N>/     (Fall 2026 onward)
-    ~/Desktop/<Class> Inbox/Exam <N>/                  (Semester 1, flat)
+folder (see inbox_dir):
+    ~/Desktop/PA Quizzes/Semester <n>/<Class> Inbox/Exam <N>/
+(inbox_dir also checks ~/Desktop/PA Quizzes/<Class> Inbox/ first, a leftover of
+the old flat Semester 1 layout; no inbox sits there now.)
 Decks are found RECURSIVELY under Exam <N>/, skipping any recordings/ folder:
 Interpretation of Medical Literature keeps its five decks in
 Exam 1/Powerpoints/, and a top-level-only glob screened 0 of its questions
@@ -51,22 +52,25 @@ def inbox_dir(repo_folder):
     Fall 2026 the inboxes moved under ~/Desktop/Semester <n>/. The old
     hardcoded map silently returned None for every Fall class, so grounding
     screened 0 questions and still printed a clean result -- a check that
-    passes by doing nothing is worse than no check.
+    passes by doing nothing is worse than no check. Since 2026-09-23 both
+    layouts are searched under ~/Desktop/PA Quizzes/ (the Desktop was
+    reorganised into it): that root first, then its Semester <n>/ folders.
     """
     m = re.match(r'(.+?)\s*Exam\s*(\d+)\s*$', repo_folder)
     if not m:
         return None
     cls, num = m.group(1).strip(), m.group(2)
     names = [INBOX.get(cls, cls + " Inbox"), cls + " Inbox"]
-    roots = [os.path.join(HOME, "Desktop")] + sorted(
-        glob.glob(os.path.join(HOME, "Desktop", "Semester *")))
+    roots = [os.path.join(HOME, "Desktop", "PA Quizzes")] + sorted(
+        glob.glob(os.path.join(HOME, "Desktop", "PA Quizzes", "Semester *")))
     # A directory EXISTING is not enough -- it has to contain slides. Found
     # 2026-08-20: ~/Desktop/<Class> Inbox/Exam 1/ still existed from the
     # Semester-1 flat layout but held only a "recordings" folder, and because
     # ~/Desktop is searched before ~/Desktop/Semester */, it shadowed the real
     # inbox. Grounding then screened ZERO slides and printed a clean result --
     # exactly the "passes by doing nothing" failure this function was written to
-    # stop, reintroduced by an empty leftover directory.
+    # stop, reintroduced by an empty leftover directory. (That empty folder was
+    # deleted 2026-09-23 when the Desktop was reorganised into ~/Desktop/PA Quizzes/.)
     empty = []
     for root in roots:
         for name in names:

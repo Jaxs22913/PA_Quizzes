@@ -27,7 +27,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "Clinical Medicine and Surgery I Exam 2",
                    "cms-ophtho-chart-images")
 DECK = os.path.expanduser(
-    "~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2/"
+    "~/Desktop/PA Quizzes/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2/"
     "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx")
 EMR_STRETCHDIBITS = 81
 

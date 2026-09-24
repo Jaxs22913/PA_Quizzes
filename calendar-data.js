@@ -1,7 +1,7 @@
 /* Academic calendar for the Class of 2028 — generated, do not hand-edit.
 
    Source: the printed academic calendar PDFs in
-   ~/Desktop/Calendars/, one per month. Regenerate with
+   ~/Desktop/PA Quizzes/Calendars/, one per month. Regenerate with
    tools/gen_calendar_data.py whenever the school revises the schedule.
 
    This exists because the exam list used to be a hand-typed array inside

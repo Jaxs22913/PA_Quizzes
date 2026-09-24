@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Pull lecture recordings out of Notability into the Desktop class inboxes.
+"""Pull lecture recordings out of Notability into the Desktop class inboxes
+(~/Desktop/PA Quizzes/Semester <n>/<Class> Inbox/).
 
 Notability keeps every recording as a content-addressed blob -- the filename is
 a SHA of the contents, with no extension and no hint of which lecture it is --
@@ -46,7 +47,7 @@ NOTA = os.path.expanduser(
     'Application Support/local-persistence-collab-production')
 DB = os.path.join(NOTA, 'local_persistence')
 ASSETS = os.path.join(NOTA, 'assets')
-DESKTOP = os.path.expanduser('~/Desktop')
+INBOX_BASE = os.path.expanduser('~/Desktop/PA Quizzes')
 EPOCH = datetime.datetime(1904, 1, 1)
 
 # Lectures whose audio must never be pulled, with the reason.
@@ -134,7 +135,7 @@ def notes_with_audio():
 
 
 def decks(semester):
-    root = os.path.join(DESKTOP, semester)
+    root = os.path.join(INBOX_BASE, semester)
     if not os.path.isdir(root):
         sys.exit('No such semester folder: %s' % root)
     out = []

@@ -7,7 +7,7 @@ date and time. Titles are accumulated until a time line closes them off.
 """
 import fitz, re, json, sys, os
 
-SRC = "/Users/jaxonluke/Desktop/Calendars/Fall Semester - 2026"
+SRC = "/Users/jaxonluke/Desktop/PA Quizzes/Calendars/Fall Semester - 2026"
 MONTHS = ["August.pdf", "September.pdf", "October.pdf", "November.pdf", "December.pdf"]
 
 DATE_HEAD = re.compile(r"^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), "

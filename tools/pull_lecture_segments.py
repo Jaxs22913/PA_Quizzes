@@ -44,7 +44,7 @@ NOTABILITY = os.path.expanduser(
 ASSETS = os.path.join(NOTABILITY, "assets")
 ASR = os.path.join(NOTABILITY, "asr")
 INDEX = os.path.join(NOTABILITY, "local_persistence")
-INBOX_ROOT = os.path.expanduser("~/Desktop/Semester 2")
+INBOX_ROOT = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2")
 
 
 def open_index():

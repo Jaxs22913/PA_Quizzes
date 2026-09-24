@@ -43,7 +43,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "Physical Diagnosis 2 Exam 1",
                    "pd2-exam-1-l4-images")
 DECK = os.path.expanduser(
-    "~/Desktop/Semester 2/Physical Diagnosis 2 Inbox/Exam 1/PD II ENT 2026.pptx")
+    "~/Desktop/PA Quizzes/Semester 2/Physical Diagnosis 2 Inbox/Exam 1/PD II ENT 2026.pptx")
 
 WANTED = [("ppt/media/image5.png",   "conduction",     "png",  5),
           ("ppt/media/image31.png",  "normal-drum",    "png", 27),

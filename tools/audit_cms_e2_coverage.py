@@ -28,7 +28,7 @@ from xml.etree import ElementTree as ET
 A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2")
-BASE = os.path.expanduser("~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2")
+BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2")
 
 DECKS = [
  ("L10 Ophthalmology I", "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx"),

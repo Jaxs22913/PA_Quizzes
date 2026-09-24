@@ -31,7 +31,7 @@ OUT = os.path.join(os.path.dirname(HERE), "Clinical Medicine and Surgery I Exam 
                    "cms-ent-chart-images")
 REVIEW = ("/private/tmp/claude-501/-Users-jaxonluke/"
           "8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad/ent-images")
-INBOX = os.path.expanduser("~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 3")
+INBOX = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 3")
 DECKS = {
   "l15": os.path.join(INBOX, "Disorders External and Middle Ear 9-2026.pptx"),
   "l16": os.path.join(INBOX, "16. Disorders of Inner Ear 2026 - Dr. Jaquith.pptx"),

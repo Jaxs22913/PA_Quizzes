@@ -11,7 +11,7 @@ British spellings are accepted by rule rather than by list -- the dictionary is
 American, so -ise/-isation/-aemia/-oedema forms are normalised before lookup.
 
     python3 tools/check_spelling.py "Clinical Medicine and Surgery I Exam 2" \
-        ~/Desktop/"Semester 2"/"Clinical Medicine and Surgery I Inbox"/"Exam 2"
+        ~/Desktop/"PA Quizzes"/"Semester 2"/"Clinical Medicine and Surgery I Inbox"/"Exam 2"
 
 FOUR FALSE-POSITIVE SHAPES, so a hit list is quick to read rather than alarming:
 

@@ -19,7 +19,7 @@ rule that you run it on every build.
 
 **The repository is PUBLIC.** Anything committed is republished at the live URL.
 That governs image licensing, and it means lecture audio, transcripts and raw
-decks stay OUT of the repo — they live on the Desktop (§4).
+decks stay OUT of the repo — they live in `~/Desktop/PA Quizzes/` (§4).
 
 ---
 
@@ -77,13 +77,17 @@ usually that window. Hard refresh or a private window confirms it.
 ## 4. Where the inputs live (not in the repo)
 
 ```
-~/Desktop/Semester 2/<Class> Inbox/
+~/Desktop/PA Quizzes/Semester 2/<Class> Inbox/
     Syllabus/
     Exam N/                    ← the .pptx decks
     Exam N/recordings/         ← lecture audio + transcripts
-~/Desktop/Calendars/<Semester>/<Month>.pdf   ← the printed academic calendar
+~/Desktop/PA Quizzes/Calendars/<Semester>/<Month>.pdf   ← the printed academic calendar
 ```
 
+- `PA Quizzes` has a **space** (the repo is `PA_Quizzes`); quote it in the
+  shell. Every semester's inboxes sit under it (`Semester 1/`, `Semester 2/`, …)
+  since the Desktop was reorganised on 2026-09-23; no inbox or calendar folder
+  sits loose on the Desktop any more.
 - A new class auto-gets an Inbox folder (`class_inbox_convention`).
 - `calendar-data.js` in the repo is **generated** from those calendar PDFs by
   `tools/gen_calendar_data.py`. Never hand-edit it. It names the **scheduled**

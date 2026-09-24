@@ -30,7 +30,7 @@ from xml.etree import ElementTree as ET
 
 P = '{http://schemas.openxmlformats.org/presentationml/2006/main}'
 A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
-DECK = os.path.expanduser("~/Desktop/Semester 2/Pharmacology I Inbox/Exam 1/"
+DECK = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/Exam 1/"
                           "Antibiotics, Antivirals, and Antifungals.pptx")
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pharm_gram_coverage.json")
 COLOUR = {"008000": "yes", "00B050": "yes", "92D050": "moderate",

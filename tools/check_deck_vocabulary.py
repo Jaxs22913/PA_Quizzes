@@ -23,7 +23,7 @@ to say somewhere that the deck does not use it.
 
 Run with a class directory, e.g.
   python3 tools/check_deck_vocabulary.py "Clinical Medicine and Surgery I Exam 1" \\
-      ~/Desktop/"Semester 2"/"Clinical Medicine and Surgery I Inbox"/"Exam 1"
+      ~/Desktop/"PA Quizzes"/"Semester 2"/"Clinical Medicine and Surgery I Inbox"/"Exam 1"
 """
 import os, re, sys, glob
 

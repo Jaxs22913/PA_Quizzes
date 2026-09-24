@@ -23,7 +23,7 @@ from xml.etree import ElementTree as ET
 
 A = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
 HERE = os.path.dirname(os.path.abspath(__file__))
-INBOX = os.path.expanduser("~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2")
+INBOX = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2")
 DECKS = ["CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx",
          "11. Neuro-Ophthalmology STUDENT VERSION 2026.pptx",
          "12. Acute Vision Loss current - Jaquith.pptx",

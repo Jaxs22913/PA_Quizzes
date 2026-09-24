@@ -15,7 +15,7 @@ sys.path.insert(0, HERE)
 import lecture_transcript as LT
 
 DEST = os.path.expanduser(
-    "~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2/recordings")
+    "~/Desktop/PA Quizzes/Semester 2/Clinical Medicine and Surgery I Inbox/Exam 2/recordings")
 NEEDLE = "ocular trauma"
 
 recs = [r for r in LT.notability_recordings(LT.DEFAULT_SINCE)

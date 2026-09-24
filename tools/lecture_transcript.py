@@ -47,7 +47,7 @@ NOTABILITY = os.path.expanduser(
 ASSETS = os.path.join(NOTABILITY, "assets")
 INDEX = os.path.join(NOTABILITY, "local_persistence")
 
-INBOX_ROOT = os.path.expanduser("~/Desktop/Semester 2")
+INBOX_ROOT = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2")
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Fall 2026 starts here; older recordings are last semester's and are noise.
@@ -303,7 +303,7 @@ def main():
     if a.klass and a.exam:
         dest = os.path.join(INBOX_ROOT, f"{a.klass} Inbox", f"Exam {a.exam}", "recordings")
     else:
-        dest = os.path.join(os.path.expanduser("~/Desktop"), "Lecture Recordings")
+        dest = os.path.join(os.path.expanduser("~/Desktop/PA Quizzes"), "Lecture Recordings")
         print(f"No --class/--exam given; writing to {dest}")
 
     # the site is public -- a recording must never land in the repo

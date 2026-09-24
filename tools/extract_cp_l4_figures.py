@@ -28,7 +28,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "Clinical Pathophysiology I Exam 1",
                    "cp-exam-1-l4-images")
 DECK = os.path.expanduser(
-    "~/Desktop/Semester 2/Clinical Pathophysiology I Inbox/Exam 1/"
+    "~/Desktop/PA Quizzes/Semester 2/Clinical Pathophysiology I Inbox/Exam 1/"
     "4. Ophthalmic Pathophysiology_STUDENT VERSION_v2.pptx")
 
 WANTED = [("ppt/media/image6.png",   "anatomy",       "png", 5),

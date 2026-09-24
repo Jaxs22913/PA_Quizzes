@@ -51,8 +51,8 @@
     },
 
     /* Fall 2026 dates are REAL — the academic calendar PDFs for the schedule
-       (~/Desktop/Calendars/Fall Semester - 2026) and the course syllabi for the
-       term itself. Same shape as Summer I:
+       (~/Desktop/PA Quizzes/Calendars/Fall Semester - 2026) and the course
+       syllabi for the term itself. Same shape as Summer I:
          start        Aug 17, the Start of Semester Talk and first lectures
          lastClassDay Dec 3, the last regular course final (Microbiology #3);
                       Dec 4-11 is retests and course remediation, which is not

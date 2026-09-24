@@ -41,7 +41,7 @@ import os, re, sys, zipfile, glob
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-INBOX = os.path.expanduser("~/Desktop")
+INBOX = os.path.expanduser("~/Desktop/PA Quizzes")
 
 # "A. Something", "A) Something", "(A) Something" -- a label followed by prose.
 LABEL = re.compile(r'(?:^|\s|\()([A-F])[\.\)\:]\s+(?=[A-Za-z])')

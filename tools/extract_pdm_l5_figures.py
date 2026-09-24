@@ -22,7 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE),
                    "Principles of Diagnostic Medicine I Exam 1", "pdm-exam-1-l5-images")
 DECK = os.path.expanduser(
-    "~/Desktop/Semester 2/Principles of Diagnostic Medicine I Inbox/Exam 1/"
+    "~/Desktop/PA Quizzes/Semester 2/Principles of Diagnostic Medicine I Inbox/Exam 1/"
     "5. Chemistry Panels, Renal Fxn, Elytes.pptx")
 
 # (member in the pptx, output slug, the slide it teaches)

@@ -38,7 +38,7 @@ import os, re, json, sys, datetime, sqlite3, shutil, tempfile
 
 ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
 CAL = os.path.join(ROOT, "calendar-data.js")
-INBOX_ROOT = os.path.expanduser("~/Desktop/Semester 2")
+INBOX_ROOT = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2")
 NOTA = os.path.expanduser(
     "~/Library/Containers/com.gingerlabs.Notability/Data/Library/"
     "Application Support/local-persistence-collab-production")

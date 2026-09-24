@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from pharm_vig_pool import POOL
 
-BASE = os.path.expanduser("~/Desktop/Semester 2/Pharmacology I Inbox/Exam 1/")
+BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/Exam 1/")
 FILES = {"Antibiotics, Antivirals, and Antifungals": "Antibiotics, Antivirals, and Antifungals.pptx",
          "02. Dermatology Medications": "02. Dermatology Medications(1).pptx",
          "03. ANS Pharmacology": "03. ANS Pharmacology(1).pptx"}

@@ -47,7 +47,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DIR = os.path.join(os.path.dirname(HERE), "Principles of Diagnostic Medicine I Exam 1")
 GUIDE = os.path.join(DIR, "pdm-exam-1-study-guide.html")
 CRAM = os.path.join(DIR, "pdm-exam-1-cram-sheet.html")
-REC = os.path.expanduser("~/Desktop/Semester 2/Principles of Diagnostic Medicine I Inbox/"
+REC = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Principles of Diagnostic Medicine I Inbox/"
                          "Exam 1/recordings")
 
 # Every quote below is checked against BOTH transcripts before it is written.

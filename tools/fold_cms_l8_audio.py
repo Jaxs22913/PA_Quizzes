@@ -44,7 +44,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DIR = os.path.join(os.path.dirname(HERE), "Clinical Medicine and Surgery I Exam 1")
 GUIDE = os.path.join(DIR, "cms-exam-1-study-guide.html")
 CRAM = os.path.join(DIR, "cms-exam-1-cram-sheet.html")
-REC = os.path.expanduser("~/Desktop/Semester 2/Clinical Medicine and Surgery I Inbox/"
+REC = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Clinical Medicine and Surgery I Inbox/"
                          "Exam 1/recordings")
 
 QUOTES = ["remembering the pattern", "two things that it's not like that for",

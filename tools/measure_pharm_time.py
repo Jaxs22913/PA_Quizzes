@@ -18,7 +18,7 @@ anything finer than "he spent much longer here than there".
 """
 import json, os, re, sys
 
-BASE = os.path.expanduser("~/Desktop/Semester 2/Pharmacology I Inbox/Exam 1/recordings/")
+BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/Exam 1/recordings/")
 
 # Ordered as he teaches them. Each entry is (label, regex that marks the topic
 # ACTUALLY starting -- deliberately specific, so a passing earlier reference

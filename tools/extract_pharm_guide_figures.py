@@ -47,7 +47,7 @@ R = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "Pharmacology I Exam 1",
                    "pharm-exam-1-study-guide-images")
-INBOX = os.path.expanduser("~/Desktop/Semester 2/Pharmacology I Inbox/Exam 1")
+INBOX = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/Exam 1")
 DECKS = {"l2": "02. Dermatology Medications(1).pptx",
          "l3": "03. ANS Pharmacology(1).pptx"}
 
