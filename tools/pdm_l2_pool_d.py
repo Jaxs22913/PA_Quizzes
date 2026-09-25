@@ -96,16 +96,16 @@ POOL_D = [
      ["It separates fat from air, which a conventional radiograph cannot tell apart",
       "Fat and air are already distinguishable on a plain film."],
      ["It merges bone and soft tissue, which a conventional radiograph shows separately",
-      "The table separates tissues rather than merging them."]],
+      "Computed tomography expands the gray scale to separate more than the five basic densities; it does not merge bone with soft tissue."]],
    c=0, cite=c(13)),
 
  dict(topic="Radiation dose", io=IOF, slot="differential",
-   q="Among typical organ radiation doses, which study delivers the highest dose?",
+   q="Among typical organ radiation doses, which study delivers the highest?",
    opts=[
      ["Neonatal abdominal computed tomography, to the stomach",
-      "Correct — twenty, the largest figure in the table."],
+      "Correct — neonatal abdominal computed tomography gives the stomach about 20 millisieverts, twice the 10 of the adult abdominal scan."],
      ["Barium enema, to the colon",
-      "Fifteen, which is high but is not the top of the table."],
+      "A barium enema gives the colon about 15 millisieverts, which is high but below the 20 that a neonatal abdominal scan gives the stomach."],
      ["Adult abdominal computed tomography, to the stomach",
       "Ten, which is half the neonatal figure."],
      ["Screening mammography, to the breast",
@@ -142,13 +142,13 @@ POOL_D = [
    q="How does the lung dose of a lateral chest radiograph compare with the posterior-anterior view?",
    opts=[
      ["It is higher, which is one reason the posterior-anterior view is the preferred projection",
-      "Correct — the lateral beam traverses a greater thickness of tissue, so more radiation is needed and the lung dose rises."],
+      "Correct — the lateral film gives the lung about 0.15 millisieverts against 0.01, and reducing dose to radiation-sensitive organs is one reason the posterior-anterior view is preferred."],
      ["It is lower, which is one reason the lateral view is taken first in a standard series",
-      "The lateral figure in the table is the larger of the two."],
+      "The lateral dose is the larger one, about 0.15 against 0.01 millisieverts to the lung, and the posterior-anterior view is the preferred projection."],
      ["It is identical, because both views expose the same volume of lung tissue",
-      "The table gives two different values for the two projections."],
+      "The doses differ: a lateral chest film gives the lung about 0.15 millisieverts, against 0.01 for a posterior-anterior film."],
      ["It is higher, but only in children, because the chest wall is thinner",
-      "The table is not stratified by age for the chest views."]],
+      "No age condition applies: a lateral chest film gives the lung about 0.15 millisieverts, against 0.01 for a posterior-anterior film."]],
    c=0, cite=c(21)),
 
  dict(topic="Radiation dose", io=IOF, slot="manifestation",
@@ -178,7 +178,7 @@ POOL_D = [
    c=0, cite=c(21)),
 
  dict(topic="Radiodensity", io=IOD, slot="test finding",
-   q="On a labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
+   q="On a labelled pelvic radiograph, how are bone, gas and a prosthesis described?",
    opts=[
      ["Bone is radiopaque, gas is radiolucent, and the metal prosthesis is very opaque",
       "Correct — one image showing three of the five densities at once."],

@@ -34,7 +34,7 @@ POOL_A = [
      ["By culture, with history and inspection used to choose the transport medium",
       "Culture is indicated for purulent lesions, not for skin disease generally."],
      ["By dermoscopy, with history and inspection used to confirm the reading",
-      "Dermoscopy refines the assessment of pigmented lesions rather than serving as the routine diagnostic route, which remains history and inspection."]],
+      "Dermoscopy is not the routine route; most skin disease is diagnosed by history and visual inspection, with office testing for uncertain diagnoses."]],
    c=0, cite=c(3)),
 
  dict(topic="Diagnostic approach", io=IOA, slot="first-line",
@@ -64,7 +64,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Diagnostic approach", io=IOA, slot="first-line",
-   q="A patient has a lesion you suspect is a neoplasm, or a rash that has not resolved. Which test is indicated?",
+   q="A patient has a lesion you suspect is a neoplasm, or a rash that has not resolved. Which test follows?",
    opts=[
      ["Biopsy",
       "Correct — neoplasm or a persistent rash routes to biopsy."],
@@ -90,12 +90,12 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Bedside testing", io=IOA, slot="first-line",
-   q="Which three tests are grouped together as bedside testing?",
+   q="Which three tests count as bedside testing?",
    opts=[
      ["Potassium hydroxide preparation, Tzanck smear and Gram stain",
-      "Correct — all three are performed and read in the room within minutes, giving an immediate answer about fungus, virus or bacteria."],
+      "Correct — the potassium hydroxide preparation, Tzanck smear and Gram stain are quick and inexpensive, limited by operator skill and sampling technique."],
      ["Potassium hydroxide preparation, Wood lamp and Gram stain",
-      "The Wood lamp is an examination aid rather than one of the three bedside tests, which are the potassium hydroxide preparation, Tzanck smear and Gram stain."],
+      "The Wood lamp is not one of them; the three bedside tests are the potassium hydroxide preparation, the Tzanck smear and the Gram stain."],
      ["Tzanck smear, Gram stain and skin culture",
       "Culture is sent to the laboratory rather than performed at the bedside."],
      ["Potassium hydroxide preparation, Tzanck smear and dermoscopy",
@@ -220,20 +220,20 @@ POOL_A = [
    c=0, cite=c(6)),
 
  dict(topic="Potassium hydroxide", io=IOC, slot="avoid",
-   q="What error is warned about when a fungal infection is diagnosed clinically alone?",
+   q="What is the risk of diagnosing a fungal infection clinically alone?",
    opts=[
      ["Fungal infections can be misidentified",
-      "Correct — psoriasis, eczema and other scaly eruptions closely resemble tinea, so treating on appearance alone risks weeks of antifungal therapy for an inflammatory condition."],
+      "Correct — a clinical-only diagnosis can misidentify fungal infections, so a potassium hydroxide preparation confirms fungal elements under the microscope."],
      ["Treatment is delayed while the culture is awaited",
       "Delay is a limitation of culture, not of clinical-only diagnosis."],
      ["The wrong antifungal class is chosen",
-      "The error is diagnosing fungus where there is none, rather than picking the wrong antifungal for a confirmed infection."],
+      "Agent choice is not the concern; the risk is misidentifying the infection itself, which scraping for a potassium hydroxide preparation avoids."],
      ["Resistance develops to topical antifungals",
-      "Resistance is not the concern; the risk is that a non-fungal eruption such as psoriasis or eczema is mistaken for tinea."]],
+      "Resistance is not the stated risk; a clinical-only diagnosis can misidentify fungal infections, which is why a potassium hydroxide preparation is used."]],
    c=0, cite=c(6)),
 
  dict(topic="Potassium hydroxide", io=IOC, slot="initial test",
-   q="What concentration of potassium hydroxide is specified?",
+   q="What concentration of potassium hydroxide does the preparation use?",
    opts=[
      ["Twenty per cent",
       "Correct — one drop of twenty per cent potassium hydroxide is added to the specimen."],

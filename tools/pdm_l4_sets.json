@@ -30,7 +30,7 @@
    "topic": "Red blood cell count",
    "io": "c — Discuss red blood cell indices",
    "slot": "etiology",
-   "q": "Which three conditions are given as examples of chronic hypoxia?",
+   "q": "Which three conditions are examples of chronic hypoxia?",
    "opts": [
     [
      "Chronic kidney disease, cancer and dilution by intravenous fluid",
@@ -60,19 +60,19 @@
    "opts": [
     [
      "A direct antiglobulin test in every single case",
-     "The direct antiglobulin test is used when immune haemolysis is suspected rather than in every anaemia; the smear is what is added routinely."
+     "A direct antiglobulin test is not part of the stated evaluation; alongside the four steps, the peripheral blood smear is looked at if it can be obtained."
     ],
     [
      "The peripheral blood smear, if one can be obtained",
-     "Correct — the smear shows cell shape and inclusions that no automated index captures, and findings such as schistocytes or basophilic stippling redirect the whole workup."
+     "Correct — the peripheral blood smear is also looked at if it can be obtained, and all of the evaluation points are assessed simultaneously."
     ],
     [
      "A bone marrow biopsy in every case",
-     "Marrow biopsy is invasive and reserved for cases the non-invasive workup cannot explain; the smear is the additional step at this stage."
+     "A bone marrow biopsy is not a routine step; the evaluation adds the peripheral blood smear, if one can be obtained, to the four assessments."
     ],
     [
      "Hemoglobin electrophoresis in every case",
-     "The algorithm reserves hemoglobin analysis for specific circumstances."
+     "Hemoglobin electrophoresis is not a routine step; the workup checks the complete blood count, chemistry panel, mean corpuscular volume and reticulocyte count."
     ]
    ],
    "c": 1,
@@ -86,7 +86,7 @@
    "opts": [
     [
      "The hematologic system only",
-     "The count reflects the marrow's response to disease elsewhere, so it reports on other organ systems as well as the blood."
+     "The count is not limited to the blood; a complete blood count provides information about the hematologic system and other organ systems."
     ],
     [
      "Bone marrow function only",
@@ -98,7 +98,7 @@
     ],
     [
      "The hematologic system and other organ systems",
-     "Correct — the marrow responds to infection, inflammation, kidney disease, nutritional deficiency and malignancy, so the cell lines report on systems well beyond the blood itself."
+     "Correct — a complete blood count provides information about the hematologic system and other organ systems through automated measurement of each cell line."
     ]
    ],
    "c": 3,
@@ -108,7 +108,7 @@
    "topic": "Bands",
    "io": "e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
    "slot": "test finding",
-   "q": "What combination indicates bacterial infection?",
+   "q": "Which combination indicates bacterial infection?",
    "opts": [
     [
      "Neutrophils plus eosinophils",
@@ -134,7 +134,7 @@
    "topic": "Hematocrit",
    "io": "b — Explain the difference between hemoglobin and hematocrit",
    "slot": "differential",
-   "q": "Which four causes of a decreased hematocrit are listed?",
+   "q": "What are the four causes of a decreased hematocrit?",
    "opts": [
     [
      "Anemias, acute or chronic blood loss, hemolysis and dilution",
@@ -198,7 +198,7 @@
     ],
     [
      "Enzymes that digest bacterial cell walls",
-     "Lysozyme and digestive enzymes belong to neutrophil granules; basophils carry heparin, histamine and other inflammatory mediators."
+     "Basophil granules are not described as digesting bacterial walls; they contain heparin, histamine and other mediators of inflammation."
     ],
     [
      "Denatured hemoglobin and residual nuclear material",
@@ -212,7 +212,7 @@
    "topic": "White blood cells",
    "io": "f — Discuss indications for ordering a complete blood count",
    "slot": "first-line",
-   "q": "Which non-specific constitutional symptoms are listed as a reason to check a white cell count?",
+   "q": "Which non-specific constitutional symptoms are a reason to check a white cell count?",
    "opts": [
     [
      "Pallor, dyspnoea on exertion, palpitations, dizziness and cold intolerance",
@@ -228,7 +228,7 @@
     ],
     [
      "Night sweats, lymphadenopathy, splenomegaly and pruritus",
-     "Night sweats, lymphadenopathy, splenomegaly and pruritus suggest lymphoma specifically; the constitutional prompts are fatigue, weakness, unexplained bruising or bleeding, and weight loss."
+     "Those four are not the prompts; the non-specific constitutional symptoms are unexplained fatigue, weakness, unexplained bruising or bleeding, and weight loss."
     ]
    ],
    "c": 1,
@@ -250,7 +250,7 @@
     ],
     [
      "Less than eighty femtolitres, from iron deficiency anemia or thalassemia",
-     "Correct — both causes limit haemoglobin production, so the developing cell divides an extra time before it fills, ending up smaller than eighty femtolitres."
+     "Correct — microcytosis corresponds to a mean corpuscular volume below 80 femtoliters, as seen in iron deficiency anemia or thalassemia."
     ],
     [
      "Greater than one hundred femtolitres, from iron deficiency anemia or thalassemia",
@@ -264,7 +264,7 @@
    "topic": "Schistocytes",
    "io": "e(i) — Discuss the clinical significance of abnormalities in red blood cells",
    "slot": "test finding",
-   "q": "What is a schistocyte, and what other names is it given?",
+   "q": "What is a schistocyte, and what else is it called?",
    "opts": [
     [
      "A teardrop-shaped red cell, also called a dacrocyte",
@@ -306,7 +306,7 @@
     ],
     [
      "The acanthocyte is microcytic and the echinocyte is macrocytic",
-     "Both are normocytic; what separates them is whether the spikes are irregular or evenly spaced, and whether central pallor is retained."
+     "Size is not what separates them; the acanthocyte has irregular spikes, while the echinocyte has regularly spaced projections and keeps its central pallor."
     ]
    ],
    "c": 2,
@@ -350,7 +350,7 @@
     ],
     [
      "Because iron is no longer stored efficiently",
-     "Iron handling is unaffected; the change is mechanical, since the spleen no longer remodels excess membrane from passing cells."
+     "Iron storage is not involved; after splenectomy, altered filtration dynamics may increase target cells, which carry redundant cell membrane."
     ],
     [
      "Because hemoglobin denatures without splenic clearance",
@@ -424,7 +424,7 @@
    "opts": [
     [
      "Fifty-four to sixty-two per cent, and the second most abundant white blood cell",
-     "Neutrophils are the most abundant white cell, making up over half the total; lymphocytes come second."
+     "The range is right but the rank is not: the neutrophil is the most abundant white blood cell, at a normal fifty-four to sixty-two percent."
     ],
     [
      "Three to seven per cent, and the largest white blood cell",
@@ -432,7 +432,7 @@
     ],
     [
      "Fifty-four to sixty-two per cent, and the most abundant white blood cell",
-     "Correct — both the range and the rank, and the reference table agrees with this figure."
+     "Correct — the neutrophil is the most abundant white blood cell, with a normal range of fifty-four to sixty-two percent of the differential."
     ],
     [
      "Twenty-four to forty-four per cent, and the most abundant white blood cell",
@@ -472,7 +472,7 @@
    "topic": "Macrocytic anemia",
    "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
    "slot": "differential",
-   "q": "Which three drugs are named as impairing DNA synthesis?",
+   "q": "Which three drugs impair DNA synthesis?",
    "opts": [
     [
      "Chemotherapy, alcohol and radiation",
@@ -514,7 +514,7 @@
     ],
     [
      "Decreased suggests underproduction of red cells; increased suggests hemolysis or blood loss",
-     "Correct — reticulocytes are newly released red cells, so a low count means the marrow is not replacing them and a high count means it is responding to losses."
+     "Correct — a decreased reticulocyte count points to underproduction of red cells, while an increased count suggests hemolysis or blood loss."
     ]
    ],
    "c": 3,
@@ -576,7 +576,7 @@
    "topic": "Normocytic anemia",
    "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
    "slot": "differential",
-   "q": "Which hypo-proliferative causes of normocytic anemia are listed?",
+   "q": "What are the hypo-proliferative causes of normocytic anemia?",
    "opts": [
     [
      "Vitamin B12 deficiency, folate deficiency, alcohol use and liver disease",
@@ -654,7 +654,7 @@
    "topic": "Monocytes",
    "io": "e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
    "slot": "differential",
-   "q": "Which causes of increased monocytes are listed, and what decreases them?",
+   "q": "What increases monocytes, and what decreases them?",
    "opts": [
     [
      "Increased by chronic inflammation, stress and viral infection; decreased by bone marrow injury",
@@ -740,7 +740,7 @@
     ],
     [
      "Neutrophils are increasingly consumed, so the marrow releases both mature and immature forms to keep up",
-     "Correct — mature neutrophils are consumed at the site of infection faster than the marrow can replace them, so it releases bands from the storage pool before segmentation is complete."
+     "Correct — neutrophils are increasingly consumed, so more are needed, and the marrow releases both mature neutrophils and immature bands, which is the left shift."
     ],
     [
      "The marrow is suppressed, so only immature forms can be produced",
@@ -758,7 +758,7 @@
    "topic": "Platelets",
    "io": "e(iii) — Discuss the clinical significance of abnormalities in platelets",
    "slot": "differential",
-   "q": "Which causes of INCREASED platelets are listed?",
+   "q": "What causes INCREASED platelets?",
    "opts": [
     [
      "Trauma, chemotherapy, alcohol and aplastic anemia",
@@ -794,7 +794,7 @@
     ],
     [
      "Hemostasis, meaning stopping the bleeding and repairing damaged blood vessels",
-     "Correct — platelets adhere to exposed subendothelium and aggregate into a plug, which arrests bleeding and provides the surface on which repair proceeds."
+     "Correct — hemostasis, the process of stopping the bleeding and repairing damaged blood vessels, is the platelet's primary role."
     ],
     [
      "Coagulation, meaning activating the clotting cascade",
@@ -824,7 +824,7 @@
     ],
     [
      "Three to seven per cent, the largest white blood cell, and no granules",
-     "Correct — and the reference table agrees on the percentage."
+     "Correct — the monocyte is the largest white blood cell, has no granules, and makes up a normal three to seven percent of white cells."
     ],
     [
      "Three to seven per cent, the smallest white blood cell, and no granules",
@@ -838,11 +838,11 @@
    "topic": "Fishbone diagram",
    "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia",
    "slot": "test finding",
-   "q": "In the CBC fishbone diagram, which value goes in each position?",
+   "q": "In the complete blood count fishbone diagram, which value goes in each position?",
    "opts": [
     [
      "Hemoglobin on the left, white cell count above the centre line, platelets below it, and hematocrit on the right",
-     "The diagram does not arrange the values this way."
+     "Hemoglobin sits above the center line, not on the left; the left arm carries the white cell count and platelets sit on the right."
     ],
     [
      "Red cell count on the left, hemoglobin above the centre line, hematocrit below it, and platelets on the right",
@@ -850,11 +850,11 @@
     ],
     [
      "White cell count on the left, hemoglobin above the centre line, hematocrit below it, and platelets on the right",
-     "Correct — from the picture-only diagram on the summary slide."
+     "Correct — the fishbone puts the white cell count on the left, hemoglobin above and hematocrit below the center line, and platelets on the right."
     ],
     [
      "Platelets on the left, hematocrit above the centre line, hemoglobin below it, and white cell count on the right",
-     "Every position is reversed."
+     "This mirrors the true layout; the white cell count belongs on the left, platelets on the right, and hemoglobin sits above hematocrit."
     ]
    ],
    "c": 2,
@@ -890,7 +890,7 @@
    "topic": "Red blood cell count",
    "io": "c — Discuss red blood cell indices",
    "slot": "test finding",
-   "q": "What is true of using the red blood cell count to diagnose anemia?",
+   "q": "Can the red blood cell count be used to diagnose anemia?",
    "opts": [
     [
      "It does not accurately measure oxygen carrying capacity and is not directly used to diagnose anemia, though it is still used to evaluate it",
@@ -898,15 +898,15 @@
     ],
     [
      "It is the single most accurate measure of the blood's oxygen carrying capacity that is available anywhere on the panel today",
-     "The count says how many cells there are, not how much haemoglobin they carry; a patient can have a normal count with severely reduced oxygen carrying capacity."
+     "The red cell count does not accurately measure the blood's oxygen carrying capacity and is not directly used to diagnose anemia."
     ],
     [
      "It is the definitive test for anemia and replaces hemoglobin",
-     "Anaemia is defined by haemoglobin rather than by cell number, because it is haemoglobin that carries oxygen."
+     "The red cell count is not the definitive test; it is not directly used to diagnose anemia, although it is still used to evaluate it."
     ],
     [
      "It has no role at all in evaluating anemia",
-     "It retains a role: combined with haemoglobin and hematocrit it yields the indices that classify the anaemia once diagnosed."
+     "The count keeps a role: it is still important in evaluating anemia, and the mean corpuscular hemoglobin is calculated from it."
     ]
    ],
    "c": 0,
@@ -916,23 +916,23 @@
    "topic": "Hematocrit",
    "io": "b — Explain the difference between hemoglobin and hematocrit",
    "slot": "differential",
-   "q": "Which causes of a raised hematocrit are listed that do not appear on the hemoglobin slide?",
+   "q": "Besides polycythemia vera and dehydration, which causes raise the hematocrit?",
    "opts": [
     [
      "Chronic kidney disease and cancer",
-     "Those are causes of a decreased value."
+     "Chronic kidney disease and cancer lower the red cell count and hemoglobin; they are causes of a decrease, not of a raised hematocrit."
     ],
     [
      "Trauma and acute hemorrhage",
-     "Those raise platelets rather than hematocrit."
+     "Trauma and acute hemorrhage raise the platelet count, and blood loss lowers the hematocrit rather than raising it."
     ],
     [
      "Iron deficiency and thalassemia",
-     "Those are microcytic anemia causes."
+     "Iron deficiency and thalassemia cause microcytic anemia, with a mean corpuscular volume below 80, not a raised hematocrit."
     ],
     [
      "Smoking and hypoventilation",
-     "Correct — the hematocrit slide adds these two alongside polycythemia vera and dehydration."
+     "Correct — smoking, chronic obstructive pulmonary disease or hypoventilation raise the hematocrit, as do polycythemia vera and reduced fluid intake."
     ]
    ],
    "c": 3,
@@ -972,7 +972,7 @@
    "opts": [
     [
      "Mean corpuscular volume, mean corpuscular hemoglobin, mean corpuscular hemoglobin concentration, and red blood cell distribution width",
-     "Correct — each is derived from the cell count, haemoglobin and haematocrit, describing average cell size, average haemoglobin content and concentration, and the variability in size."
+     "Correct — the indices describe the size, hemoglobin content and size distribution of red cells: volume, hemoglobin, hemoglobin concentration and distribution width."
     ],
     [
      "Mean corpuscular volume, hemoglobin concentration, hematocrit percentage, and the red blood cell distribution width",
@@ -1028,7 +1028,7 @@
     ],
     [
      "Ferritin increased, serum iron increased, total iron binding capacity increased",
-     "Everything rising together does not occur; in chronic disease iron is sequestered, so ferritin rises while serum iron and binding capacity both fall."
+     "Everything rising together is not a pattern here; anemia of chronic disease shows increased ferritin with decreased serum iron and total iron binding capacity."
     ],
     [
      "Ferritin normal, serum iron normal, total iron binding capacity normal",
@@ -1054,11 +1054,11 @@
     ],
     [
      "The body's main defense against bacteria and its primary defense against microbial invasion, by phagocytosis",
-     "Correct — neutrophils arrive first at a bacterial focus, engulf organisms and kill them with granule enzymes and an oxidative burst, which is why they dominate the acute response."
+     "Correct — the neutrophil, the most abundant white blood cell, is the main defense against bacteria and the primary defense against microbial invasion, by phagocytosis."
     ],
     [
      "The body's main defense against parasites and its primary defense against allergens, by releasing granule contents",
-     "That role is attributed to eosinophils elsewhere."
+     "Parasites and allergic reactions raise the eosinophil, whose granules contain histamines; the neutrophil's role is defense against bacteria."
     ],
     [
      "Antibody production and cellular immune response",
@@ -1080,7 +1080,7 @@
     ],
     [
      "One hundred thousand",
-     "One hundred thousand is below the normal range but still leaves ample platelets for haemostasis; spontaneous bleeding risk rises below twenty thousand."
+     "One hundred thousand is below the normal 150,000 to 450,000 range, but the risk of hemorrhage increases only when the count falls below 20,000."
     ],
     [
      "One hundred and fifty thousand",
@@ -1088,7 +1088,7 @@
     ],
     [
      "Twenty thousand",
-     "Correct — below twenty thousand there are too few platelets to seal the small breaches that occur constantly in normal vessels, so spontaneous bleeding becomes a real risk."
+     "Correct — the risk of hemorrhage increases when the platelet count falls below 20,000, against a normal count of 150,000 to 450,000 per microliter."
     ]
    ],
    "c": 3,
@@ -1098,7 +1098,7 @@
    "topic": "Neutrophil abnormalities",
    "io": "e(ii) — Discuss the clinical significance of abnormalities in white blood cells",
    "slot": "differential",
-   "q": "Which causes of INCREASED neutrophils are listed?",
+   "q": "What causes INCREASED neutrophils?",
    "opts": [
     [
      "Parasitic infection, allergic reaction, cancer, and pregnancy",
@@ -1140,7 +1140,7 @@
     ],
     [
      "Platelet clumping in the sample; lowered by prolonged storage",
-     "Clumping affects the platelet count rather than the measured average volume; the raised value reflects large immature platelets from an active marrow."
+     "Clumping and storage are not the causes; a raised mean platelet volume represents more immature platelets, and bone marrow failure lowers it."
     ]
    ],
    "c": 1,
@@ -1162,7 +1162,7 @@
     ],
     [
      "From abnormalities in lipid metabolism or alterations in the red cell membrane",
-     "Correct — the membrane's lipid composition determines its shape, so a disturbance of lipid metabolism distorts the surface into irregular spikes."
+     "Correct — acanthocytes form from abnormalities in lipid metabolism or alterations in the red cell membrane, and they are associated with liver disease."
     ],
     [
      "From mechanical shearing as the cells pass through fibrin strands in vessels",
@@ -1254,7 +1254,7 @@
    "topic": "Anemia algorithm",
    "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia",
    "slot": "test finding",
-   "q": "At what hemoglobin is a low value defined for men and for women?",
+   "q": "At what hemoglobin is a value low for men and for women?",
    "opts": [
     [
      "Under sixteen grams per decilitre for men, under fourteen for women",
@@ -1262,7 +1262,7 @@
     ],
     [
      "Under fourteen grams per decilitre for men, under twelve for women",
-     "Correct — note this differs from the reference table's lower limit of thirteen point five for men."
+     "Correct — the anemia workup starts at a hemoglobin under 14 for men and under 12 for women, although the normal male range begins at 13.5."
     ],
     [
      "Under twelve grams per decilitre for men, under fourteen for women",
@@ -1270,7 +1270,7 @@
     ],
     [
      "Under thirteen point five grams per decilitre for men, under twelve for women",
-     "That is the reference table's figure, not the algorithm's."
+     "Thirteen point five is where the normal male range begins, but the anemia workup uses under 14 for men and under 12 for women."
     ]
    ],
    "c": 1,
@@ -1292,7 +1292,7 @@
     ],
     [
      "The home is the bone marrow; the percentage saturation is serum iron",
-     "The marrow is where iron is used rather than stored long-term, and serum iron is the amount in transit rather than the capacity of the carrier."
+     "In the analogy the home is hemosiderin, the storage form that cannot be measured, and the percentage saturation is the total iron binding capacity."
     ],
     [
      "The home is hemosiderin storage, which cannot be measured; the percentage saturation is total iron binding capacity, how many iron atoms can sit on the bus",
@@ -1314,7 +1314,7 @@
     ],
     [
      "One to three per cent, a two-lobed nucleus, and granules containing histamines",
-     "Correct — and the reference table agrees on the percentage."
+     "Correct — the eosinophil makes up one to three percent of white cells, has a two-lobed nucleus, and carries histamine in its granules."
     ],
     [
      "One to three per cent, a three-lobed nucleus, and granules containing heparin",
@@ -1332,7 +1332,7 @@
    "topic": "Macrocytic anemia",
    "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
    "slot": "differential",
-   "q": "Which causes of MEGALOBLASTIC macrocytic anemia are listed?",
+   "q": "What causes MEGALOBLASTIC macrocytic anemia?",
    "opts": [
     [
      "Alcohol use, liver disease, hypothyroidism and reticulocytosis",
@@ -1448,7 +1448,7 @@
     ],
     [
      "Four thousand five hundred to eleven thousand cells per microlitre, with leukopenia below and leukocytosis above",
-     "Correct — the range runs from four thousand five hundred to eleven thousand per microlitre, with leukopenia below suggesting marrow failure or overwhelming consumption, and leukocytosis above suggesting infection or inflammation."
+     "Correct — the normal white count runs from 4,500 to 11,000 cells per microliter, with leukopenia below 4,500 and leukocytosis above 11,000."
     ],
     [
      "Four thousand five hundred to eleven thousand cells per microlitre, with leukocytosis below and leukopenia above",
@@ -1462,7 +1462,7 @@
    "topic": "Macrocytic anemia",
    "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia",
    "slot": "differential",
-   "q": "Which causes of NON-MEGALOBLASTIC macrocytic anemia are listed?",
+   "q": "What causes NON-MEGALOBLASTIC macrocytic anemia?",
    "opts": [
     [
      "Alcohol use, liver disease, hypothyroidism, reticulocytosis, primary bone marrow disorders and chronic kidney disorders",
@@ -1514,7 +1514,7 @@
    "topic": "Howell-Jolly bodies",
    "io": "e(i) — Discuss the clinical significance of abnormalities in red blood cells",
    "slot": "test finding",
-   "q": "Which other abnormal cell is pointed out alongside Howell-Jolly bodies in the same image, and why?",
+   "q": "Which other abnormal cell appears alongside Howell-Jolly bodies, and why?",
    "opts": [
     [
      "Spherocytes, because they share the same inherited defect",
@@ -1526,7 +1526,7 @@
     ],
     [
      "Target cells, because they are another consequence of splenectomy",
-     "Correct — both follow loss of the spleen: it no longer pits nuclear remnants out of red cells, and it no longer trims their surplus membrane."
+     "Correct — Howell-Jolly bodies are nuclear remnants the spleen normally removes, and target cells are another consequence of splenectomy."
     ],
     [
      "Schistocytes, because they are another consequence of splenectomy",
@@ -1552,7 +1552,7 @@
     ],
     [
      "Usually normocytic with normal central pallor, associated with acute blood loss",
-     "Fragments are smaller than whole cells and have lost the biconcave centre, so they are microcytic without central pallor."
+     "Schistocytes are usually microcytic and lack central pallor, and they are associated with hemolysis, mechanical trauma and medications."
     ],
     [
      "Usually microcytic with prominent central pallor, associated with iron deficiency",

@@ -12,7 +12,7 @@
     ],
     [
      "It merges bone and soft tissue, which a conventional radiograph shows separately",
-     "The table separates tissues rather than merging them."
+     "Computed tomography expands the gray scale to separate more than the five basic densities; it does not merge bone with soft tissue."
     ],
     [
      "It separates water from soft tissue, which a conventional radiograph cannot tell apart",
@@ -82,11 +82,11 @@
    "topic": "Contrast media",
    "io": "h — Discuss contraindications and safety considerations of commonly used imaging modalities",
    "slot": "education",
-   "q": "What is true of shellfish allergy and iodinated contrast?",
+   "q": "Does a shellfish allergy contraindicate iodinated contrast?",
    "opts": [
     [
      "There is cross-reactivity only with the iso-osmolal agents such as iodixanol",
-     "No agent-specific exception applies; the cross-reactivity itself does not exist, because shellfish allergy is to protein rather than to iodine."
+     "No agent-specific exception exists; there should be no cross-reactivity between shellfish allergy and iodinated radiocontrast with any agent."
     ],
     [
      "There should be no cross-reactivity between shellfish and iodinated radiocontrast",
@@ -94,7 +94,7 @@
     ],
     [
      "There is well-established cross-reactivity, so the two allergies must be treated as one",
-     "This is precisely the misconception to discard: shellfish allergy is to tropomyosin protein, not to iodine, so it does not predict a contrast reaction."
+     "Treating the two allergies as one is the error; the real high-risk marker is a documented anaphylactic reaction to any medication."
     ],
     [
      "There is partial cross-reactivity, so contrast may be given at a reduced concentration",
@@ -134,27 +134,27 @@
    "topic": "Abdominal series",
    "io": "c — Discuss anatomical structures best visualized by each imaging modality",
    "slot": "test finding",
-   "q": "Which phrase did Professor Reynolds call out as a buzzword, and what does it mean?",
+   "q": "Which radiographic buzzword means a perforated bowel?",
    "opts": [
     [
      "Coral-red fluorescence — erythrasma",
-     "That is a dermatology finding from a different course."
+     "Coral-red fluorescence is not a radiographic finding at all; on the upright abdominal series, perforation shows as free air in the abdomen."
     ],
     [
      "Increased attenuation — a metallic foreign body",
-     "Attenuation is computed tomography vocabulary rather than the buzzword named."
+     "Increased attenuation is computed tomography vocabulary for dense material that appears whiter; it does not mean perforation, which shows as free air."
     ],
     [
      "Free air under the diaphragm — perforated bowel",
-     "Correct — unless there has been recent laparoscopic surgery and the insufflated gas is not yet absorbed."
+     "Correct — the abdominal series is shot standing to assess air-fluid levels or free air in the abdomen, and free air is the sign of a perforated bowel."
     ],
     [
      "Air-fluid levels in dilated loops — small bowel obstruction",
-     "Obstruction is a named indication for the series, but it is not the phrase she flagged."
+     "Air-fluid levels are how the series shows obstruction, but a perforated bowel shows as free air in the abdomen, not as air-fluid levels."
     ]
    ],
    "c": 2,
-   "cite": "2026-08-19 lecture recording, 1:22:50"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 43"
   },
   {
    "topic": "Radiodensity",
@@ -224,11 +224,11 @@
     ],
     [
      "Thyroid function tests, because the iodine load can precipitate thyrotoxicosis",
-     "Iodinated contrast can precipitate thyrotoxicosis in susceptible patients, but the test required before administration is renal function."
+     "Thyroid function is not the pre-contrast check; iodinated contrast is nephrotoxic, so urea nitrogen and creatinine are checked first."
     ],
     [
      "Complete blood count and platelets, because the agent affects coagulation",
-     "Iodinated contrast does not impair coagulation; it is cleared renally and can injure the kidney, so urea nitrogen and creatinine are checked."
+     "Coagulation is not the concern with iodinated contrast; the agent is nephrotoxic, so urea nitrogen and creatinine are checked before it."
     ]
    ],
    "c": 0,
@@ -238,11 +238,11 @@
    "topic": "Radiation dose",
    "io": "f — Compare and contrast the risks and benefits associated with radiation exposure",
    "slot": "differential",
-   "q": "Among typical organ radiation doses, which study delivers the highest dose?",
+   "q": "Among typical organ radiation doses, which study delivers the highest?",
    "opts": [
     [
      "Barium enema, to the colon",
-     "Fifteen, which is high but is not the top of the table."
+     "A barium enema gives the colon about 15 millisieverts, which is high but below the 20 that a neonatal abdominal scan gives the stomach."
     ],
     [
      "Adult abdominal computed tomography, to the stomach",
@@ -254,7 +254,7 @@
     ],
     [
      "Neonatal abdominal computed tomography, to the stomach",
-     "Correct — twenty, the largest figure in the table."
+     "Correct — neonatal abdominal computed tomography gives the stomach about 20 millisieverts, twice the 10 of the adult abdominal scan."
     ]
    ],
    "c": 3,
@@ -420,7 +420,7 @@
    "topic": "Positioning",
    "io": "e — Discuss the importance of patient positioning in medical imaging",
    "slot": "education",
-   "q": "What is called the most important thing to remember about ultrasound orientation?",
+   "q": "What is the most important thing to remember about ultrasound orientation?",
    "opts": [
     [
      "Which frequency is selected: high for superficial structures, low for deeper structures",
@@ -472,53 +472,53 @@
    "topic": "Contrast media",
    "io": "h — Discuss contraindications and safety considerations of commonly used imaging modalities",
    "slot": "initial test",
-   "q": "Professor Reynolds said renal function must be checked before gadolinium, but for a different reason from iodinated contrast. What is that reason?",
+   "q": "Renal function must be checked before gadolinium, but for a different reason from iodinated contrast. What is that reason?",
    "opts": [
     [
      "Gadolinium is far more nephrotoxic than iodinated contrast, so the threshold for withholding it is lower",
-     "She said the opposite: gadolinium is not necessarily nephrotoxic."
+     "The reverse holds: gadolinium can cause kidney damage but is not as harmful as computed tomography contrast, which is the nephrotoxic agent."
     ],
     [
      "Gadolinium is cleared hepatically, so renal function predicts the hepatic reserve",
-     "The clearance route in question is renal."
+     "Gadolinium clearance is renal, not hepatic, which is why urea nitrogen and creatinine are assessed before magnetic resonance with contrast."
     ],
     [
      "Gadolinium interferes with the creatinine assay, so a baseline is needed for comparison",
-     "No assay interference is described."
+     "Assay interference is not the reason; renal function matters primarily for clearance, so urea nitrogen and creatinine are checked regardless."
     ],
     [
      "It is a clearance problem — poor function lets it build up in tissue",
-     "Correct — gadolinium is not necessarily nephrotoxic itself, but if the kidney cannot clear it, it accumulates in tissue and that accumulation is toxic. With iodinated contrast the agent itself is nephrotoxic."
+     "Correct — for gadolinium, renal function matters primarily for clearance; it can cause kidney damage, but not as much as computed tomography contrast, which is nephrotoxic."
     ]
    ],
    "c": 3,
-   "cite": "2026-08-19 lecture recording, 1:40:24"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 54"
   },
   {
    "topic": "Diagnostic approach",
    "io": "c — Discuss anatomical structures best visualized by each imaging modality",
    "slot": "first-line",
-   "q": "What method did Professor Reynolds give for choosing a modality when you are not certain of the diagnosis?",
+   "q": "How should a modality be chosen when the diagnosis is not certain?",
    "opts": [
     [
      "Always order both a plain film and a cross-sectional study at the same visit",
-     "Ordering in parallel is not what she recommended."
+     "Parallel ordering adds radiation without adding benefit; the framing questions ask which modality best rules the diagnosis in or out."
     ],
     [
      "Memorise a protocol for each presenting complaint and follow it exactly",
-     "She allowed that this works, but named reasoning from the tissue as the fallback."
+     "A fixed protocol does not cover the uncertain case; when unsure, reason from the tissue or tell the radiologist what you are looking for."
     ],
     [
      "Reason from the tissue rather than from a memorised protocol",
-     "Correct — bone points to x-ray or computed tomography; soft tissue often starts with ultrasound. Memorised protocols are fine, but reasoning from the tissue is what generalises."
+     "Correct — computed tomography suits bone, magnetic resonance is the best modality for soft tissue, and ultrasound cannot penetrate bone or gas-filled structures."
     ],
     [
      "Always begin with the study carrying the least radiation and escalate only if negative",
-     "Dose matters in the diagnostic approach, but this is not the method she described."
+     "A lower-radiation alternative is one framing question, but a least-dose-first rule ignores which modality can rule the diagnosis in or out."
     ]
    ],
    "c": 2,
-   "cite": "2026-08-19 lecture recording, 1:10:31"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 58"
   },
   {
    "topic": "Positioning",
@@ -532,7 +532,7 @@
     ],
     [
      "Appendicitis, diverticulitis and inflammatory bowel disease",
-     "These are inflammatory conditions diagnosed by cross-sectional imaging; the plain series looks for gas patterns, free air and volvulus."
+     "Those are not the enteric targets of the plain series; it evaluates small bowel obstruction, perforation and volvulus through air-fluid levels and free air."
     ],
     [
      "Cholelithiasis, pancreatitis and hepatic abscess",
@@ -684,19 +684,19 @@
    "opts": [
     [
      "One dose of intravenous furosemide",
-     "Furosemide would deplete the volume that protects the kidney; the protection comes from a litre of normal saline."
+     "A diuretic is not part of the regimen; one liter of normal saline is what is given with intravenous iodinated contrast to protect the kidneys."
     ],
     [
      "One litre of normal saline",
-     "Correct — a litre of normal saline expands intravascular volume and maintains renal perfusion, diluting the contrast load as it passes through the tubules."
+     "Correct — iohexol is nephrotoxic, so urea nitrogen and creatinine are checked first and one liter of normal saline is given to protect the kidneys."
     ],
     [
      "One litre of lactated Ringer's",
-     "Lactated Ringer's is a reasonable crystalloid, but normal saline is the specified fluid for contrast-associated renal protection."
+     "The fluid given to protect the kidneys is one liter of normal saline, not lactated Ringer's, alongside checking urea nitrogen and creatinine."
     ],
     [
      "One gram of acetylcysteine",
-     "Acetylcysteine has been trialled for this purpose with inconsistent results and is not what is given here; a litre of normal saline is."
+     "Acetylcysteine is not part of the regimen; the kidney protection given with intravenous iodinated contrast is one liter of normal saline."
     ]
    ],
    "c": 1,
@@ -706,7 +706,7 @@
    "topic": "Radiology team",
    "io": "i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "education",
-   "q": "What practical ordering point is made about imaging several body regions?",
+   "q": "What practical ordering point applies when imaging several body regions?",
    "opts": [
     [
      "Multiple body parts must be imaged on separate days to limit cumulative radiation dose",
@@ -718,7 +718,7 @@
     ],
     [
      "Multiple body parts should be combined into one single order, so that the patient is scanned once and the radiologist reads the whole study together",
-     "Each body region is ordered as its own study, because the technique, positioning and interpretation differ for each."
+     "The reverse applies: imaging multiple body parts may mean multiple orders, such as separate magnetic resonance studies of the brain and each spinal level."
     ],
     [
      "Multiple body parts require the radiologist to countersign the request before booking",
@@ -762,19 +762,19 @@
    "opts": [
     [
      "It is identical, because both views expose the same volume of lung tissue",
-     "The table gives two different values for the two projections."
+     "The doses differ: a lateral chest film gives the lung about 0.15 millisieverts, against 0.01 for a posterior-anterior film."
     ],
     [
      "It is higher, but only in children, because the chest wall is thinner",
-     "The table is not stratified by age for the chest views."
+     "No age condition applies: a lateral chest film gives the lung about 0.15 millisieverts, against 0.01 for a posterior-anterior film."
     ],
     [
      "It is higher, which is one reason the posterior-anterior view is the preferred projection",
-     "Correct — the lateral beam traverses a greater thickness of tissue, so more radiation is needed and the lung dose rises."
+     "Correct — the lateral film gives the lung about 0.15 millisieverts against 0.01, and reducing dose to radiation-sensitive organs is one reason the posterior-anterior view is preferred."
     ],
     [
      "It is lower, which is one reason the lateral view is taken first in a standard series",
-     "The lateral figure in the table is the larger of the two."
+     "The lateral dose is the larger one, about 0.15 against 0.01 millisieverts to the lung, and the posterior-anterior view is the preferred projection."
     ]
    ],
    "c": 2,
@@ -812,7 +812,7 @@
    "topic": "Radiology team",
    "io": "i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "referral",
-   "q": "Why is giving the radiologist relevant clinical information stressed?",
+   "q": "Why does the radiologist need relevant clinical information?",
    "opts": [
     [
      "The radiologist selects the modality, so the history determines which scanner is booked",
@@ -864,11 +864,11 @@
    "topic": "Positioning",
    "io": "e — Discuss the importance of patient positioning in medical imaging",
    "slot": "manifestation",
-   "q": "Which patient does Professor Reynolds say will get an anterior-posterior chest film rather than a posterior-anterior one?",
+   "q": "Which patient gets an anterior-posterior chest film rather than a posterior-anterior one?",
    "opts": [
     [
      "A sick inpatient who cannot get out of bed",
-     "Correct — they cannot stand against a wall, so they are filmed anterior-posterior in bed. Which is exactly why reading the view label matters in practice."
+     "Correct — a patient who cannot stand is filmed anterior-posterior, and because that view magnifies the heart it must not be read for cardiomegaly like a posterior-anterior film."
     ],
     [
      "Any patient in whom cardiomegaly is suspected",
@@ -880,11 +880,11 @@
     ],
     [
      "Any patient having a follow-up rather than a first study",
-     "Follow-up status is not what determines the projection."
+     "Follow-up status does not decide the projection; posterior-anterior is preferred because it reduces heart magnification and dose to sensitive organs."
     ]
    ],
    "c": 0,
-   "cite": "2026-08-19 lecture recording, 1:14:21"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 40"
   },
   {
    "topic": "Magnetic resonance imaging",
@@ -1002,7 +1002,7 @@
     ],
     [
      "Uptake in the kidneys is normal, and the same is true of tracer on positron emission scans",
-     "Correct — tracer is cleared renally, so the kidneys light up simply because they are excreting it, and the same normal appearance occurs on positron emission scans."
+     "Correct — renal uptake is a normal finding on a bone scan, and positron emission tracer is renally cleared, so the urinary tract always appears contrast positive."
     ],
     [
      "Uptake in the kidneys indicates the tracer dose given was higher than the study required",
@@ -1050,7 +1050,7 @@
    "opts": [
     [
      "Maximum visualisation of the mediastinum, better visualisation of the hila, and well visualised anterior ribs",
-     "The anterior ribs are better seen on an anterior-posterior film; the posterior-anterior view favours the lung fields, apices and posterior ribs."
+     "Those are not the advantages; the posterior-anterior view gives maximum visualization of the lung, better views of the apices and well-visualized posterior ribs."
     ],
     [
      "Maximum visualisation of the diaphragm, better visualisation of free air, and well visualised gastric bubble",
@@ -1102,33 +1102,33 @@
    "opts": [
     [
      "Recent upper gastrointestinal endoscopy without biopsy",
-     "That is not the exception Professor Reynolds named."
+     "Endoscopy without biopsy is not the exception; only unabsorbed gas from recent laparoscopic surgery explains free air without a perforation."
     ],
     [
      "A barium swallow performed the previous week",
-     "Barium in the lumen is not free air, and this is not the named exception."
+     "Barium in the bowel lumen is not free air, and barium is contraindicated when perforation is suspected; the exception is recent laparoscopy."
     ],
     [
      "Chronic constipation with a heavy stool burden",
-     "Stool burden does not produce free intraperitoneal air."
+     "A heavy stool burden does not put free air under the diaphragm; that finding means perforation unless gas remains from recent laparoscopic surgery."
     ],
     [
      "Recent laparoscopic surgery, with the gas not yet absorbed",
-     "Correct — insufflation of the abdomen puts gas there deliberately. With belly pain, fever, nausea and vomiting and no recent surgery, it is perforation."
+     "Correct — gas left from recent laparoscopic surgery that has not yet been absorbed can explain free air; without that history, free air means perforation."
     ]
    ],
    "c": 3,
-   "cite": "2026-08-19 lecture recording, 1:22:55"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 43"
   },
   {
    "topic": "Contrast media",
    "io": "g — Compare and contrast the risks and benefits associated with contrast administration",
    "slot": "agent/regimen",
-   "q": "Which agent is named for intravenous contrast in computed tomography, and what is it?",
+   "q": "Which agent is used for intravenous contrast in computed tomography?",
    "opts": [
     [
      "Omnipaque (iohexol), a radioactive form of iodine given into the vein",
-     "Correct — the same agent is used, at higher concentration, for angiography."
+     "Correct — intravenous Omnipaque (iohexol) is the computed tomography contrast agent; it is nephrotoxic, so urea nitrogen and creatinine are checked first. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."
     ],
     [
      "Visipaque (iodixanol), a barium salt suspension given into the vein",
@@ -1236,7 +1236,7 @@
     ],
     [
      "Fat-suppressed imaging, which removes the signal from adipose tissue in the field",
-     "Fat suppression improves visibility of oedema against fat, but it is diffusion-weighted imaging that detects the restricted water movement of acute infarction."
+     "Fat suppression is not the technique for stroke; magnetic resonance can be programmed to evaluate the diffusion of water, which is diffusion-weighted imaging."
     ],
     [
      "Post-processing windowing, which re-displays the raw data over a narrower range",
@@ -1262,7 +1262,7 @@
     ],
     [
      "A matrix of thousands of tiny cubes called voxels, each assigned a greyscale signal intensity on a fixed scale running from zero to two hundred and fifty five",
-     "The greyscale here is not an arbitrary 0 to 255 signal; each volume element is assigned a Hounsfield value that measures how strongly the tissue attenuates x-rays."
+     "The image is a matrix of tiny squares called pixels, each assigned a computed tomography number from minus 1000 to plus 1000 in Hounsfield units."
     ],
     [
      "A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
@@ -1306,27 +1306,27 @@
    "topic": "Contrast media",
    "io": "g — Compare and contrast the risks and benefits associated with contrast administration",
    "slot": "complication",
-   "q": "What did Professor Reynolds say about the carcinogenicity of contrast media, and what does it justify?",
+   "q": "Which statement about the carcinogenicity of contrast media is correct?",
    "opts": [
     [
      "None of them is carcinogenic, which is why contrast is used freely",
-     "She stated the opposite."
+     "Contrast is not used freely: cancer is a risk factor for all contrast material, so every study asks whether it could be done without contrast."
     ],
     [
-     "Only the nuclear medicine tracers are carcinogenic, because they are radioactive",
-     "She described the contrast media generally as technically radioactive."
+     "Only oral barium is carcinogenic, because it is toxic outside the bowel",
+     "Barium's stated toxicity is to extra-intestinal tissue, with alkaline burns; cancer is a risk factor for all contrast material, not barium alone."
     ],
     [
      "It is all carcinogenic",
-     "Correct — which is exactly why the diagnostic approach asks whether the study can be done without contrast. She tied the risk straight back to the four framing questions."
+     "Correct — dyes and contrast materials are technically radioactive, so cancer is a risk factor for all contrast material, which is why each study asks whether it can be done without contrast. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."
     ],
     [
      "Only the iodinated agents are carcinogenic, which is why gadolinium is preferred",
-     "She said the risk applies to contrast media generally."
+     "Cancer risk applies to all contrast material, not only iodinated agents, and gadolinium is the magnetic resonance agent rather than a safer substitute."
     ]
    ],
    "c": 2,
-   "cite": "2026-08-19 lecture recording, 27:38"
+   "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 50"
   },
   {
    "topic": "Radiation dose",
@@ -1440,7 +1440,7 @@
    "opts": [
     [
      "Decreased quality of imaging, which is the price paid for the open configuration",
-     "Correct — the open design uses a weaker magnetic field, and less signal means a poorer image, which is the price paid for accommodating claustrophobic and larger patients."
+     "Correct — open magnetic resonance scanners are available, but the price of the open configuration is decreased quality of imaging."
     ],
     [
      "Increased scan duration, which is the price paid for the open configuration",
@@ -1452,7 +1452,7 @@
     ],
     [
      "Decreased soft tissue contrast only, with spatial resolution otherwise preserved",
-     "The loss is in overall image quality rather than confined to soft tissue contrast, because the weaker field reduces signal across the board."
+     "The loss is in the quality of imaging overall, not confined to soft tissue contrast; magnetic resonance remains the best modality for soft tissue."
     ]
    ],
    "c": 0,
@@ -1462,7 +1462,7 @@
    "topic": "Radiodensity",
    "io": "d — Compare and contrast the concepts of radiographic density and contrast",
    "slot": "test finding",
-   "q": "On a labelled pelvic radiograph, how are bone, gas and the prosthesis described?",
+   "q": "On a labelled pelvic radiograph, how are bone, gas and a prosthesis described?",
    "opts": [
     [
      "Bone is radiolucent, gas is radiopaque, and the metal prosthesis is very lucent",
@@ -1488,11 +1488,11 @@
    "topic": "Radiology team",
    "io": "i — Discuss the importance of communication between the physician assistant and radiology team",
    "slot": "referral",
-   "q": "What is advised when a radiology report comes back vague?",
+   "q": "What should be done when a radiology report comes back vague?",
    "opts": [
     [
      "Refer the patient to the relevant specialist",
-     "Referring on passes along an unresolved question; a direct conversation with the radiologist often clarifies the report immediately."
+     "Referral does not resolve the report itself; when a report is vague, the step is to contact the radiologist and discuss the patient."
     ],
     [
      "Contact the radiologist to discuss the patient",
@@ -1500,7 +1500,7 @@
     ],
     [
      "Repeat the study using a different modality",
-     "Repeating with another modality adds cost and radiation before the existing images have been discussed; speaking to the radiologist comes first."
+     "A repeat study is not the response to a vague report; contact the radiologist to discuss the patient before ordering more imaging."
     ],
     [
      "Order the next test in the diagnostic sequence",
@@ -1548,7 +1548,7 @@
     ],
     [
      "A varying magnetic field aligns hydrogen atoms; releasing it produces radio waves the computer maps",
-     "Correct — hydrogen nuclei align with the field, and as they relax back they emit radio signals whose timing and strength the computer converts into an image."
+     "Correct — the field aligns hydrogen atoms, and when it is released they generate radio waves that the computer analyzes into images that are essentially hydrogen maps."
     ],
     [
      "A varying magnetic field aligns iron atoms; releasing it produces heat the computer measures",

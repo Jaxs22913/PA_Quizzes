@@ -199,10 +199,10 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   luminal structures when given by mouth or as an enema. It can be injected into joints
   (arthrogram), into the central nervous system (intrathecal) and into the bladder (retrograde
   pyelogram). Because the dyes are technically radioactive, the deck names <b>cancer as a risk
-  factor for all contrast material</b>.</p>
+  factor for all contrast material</b>. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</p>
   <table>
     <tr><th>Study</th><th>Agent</th><th>Before you give it</th><th>Watch for</th></tr>
-    <tr><td>Computed tomography, intravenous</td><td>Omnipaque (iohexol) &mdash; a radioactive form of iodine</td><td><b>Check blood urea nitrogen and creatinine</b>; give one litre of normal saline to protect the kidneys</td><td>Nephrotoxicity. Indicated for inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm</td></tr>
+    <tr><td>Computed tomography, intravenous</td><td>Omnipaque (iohexol) &mdash; a radioactive form of iodine. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</td><td><b>Check blood urea nitrogen and creatinine</b>; give one litre of normal saline to protect the kidneys</td><td>Nephrotoxicity. Indicated for inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm</td></tr>
     <tr><td>Angiography</td><td>Iohexol arterially, lower concentration than for intravenous computed tomography; iso-osmolal iodixanol (Visipaque) believed safer</td><td>Same renal checks</td><td>Same iodinated risks</td></tr>
     <tr><td>Computed tomography, oral</td><td>Barium, or Gastrografin</td><td><b>Barium is contraindicated if perforation is suspected</b> &mdash; use Gastrografin</td><td>Barium is toxic to extra-intestinal tissue and causes alkaline burns. Unpleasant taste</td></tr>
     <tr><td>Fluoroscopy swallow study</td><td>Oral barium, with sequential films</td><td>Same perforation caveat</td><td>Same</td></tr>
@@ -250,13 +250,13 @@ TESTS = '''    medicalimaging: [
       {q:"Perforation is suspected. Which oral contrast agent must NOT be used?",
        choices:["Barium","Gastrografin","Iohexol","Gadolinium"],correct:0,
        expl:"Barium is toxic to extra-intestinal tissue and causes alkaline burns, so Gastrografin is used instead when there may be a perforation."},
-      {q:"A patient reports a shellfish allergy before a contrast-enhanced computed tomography scan. What does the lecture say?",
+      {q:"A patient reports a shellfish allergy before a contrast-enhanced computed tomography scan. Which statement is correct?",
        choices:["There should be no cross-reactivity between shellfish and iodinated contrast","Contrast is absolutely contraindicated","Give half the usual concentration","Switch to gadolinium instead"],correct:0,
-       expl:"The deck rejects the cross-reactivity idea explicitly. The real high-risk marker is a documented anaphylactic reaction to ANY medication, and pre-treatment exists when contrast is necessary. Always ask about allergies and assess kidney function."},
+       expl:"There should be no cross-reactivity between shellfish allergy and iodinated radiocontrast. The real high-risk marker is a documented anaphylactic reaction to ANY medication, and pre-treatment exists when contrast is necessary. Always ask about allergies and assess kidney function."},
       {q:"Which position is used to evaluate a pleural effusion?",
        choices:["Lateral decubitus","Supine anterior-posterior","Standing posterior-anterior alone","Prone"],correct:0,
        expl:"Lying the patient on their side lets gravity move free pleural fluid into a layer along the dependent chest wall, where it can be seen. Upright films are what show free air and air-fluid levels."},
-      {q:"Which of these delivers the highest organ dose in the lecture's table?",
+      {q:"Which of these studies delivers the highest typical organ dose?",
        choices:["Neonatal abdominal computed tomography","Adult abdominal computed tomography","Barium enema","Screening mammography"],correct:0,
        expl:"Twenty against the adult scan's ten \\u2014 the smaller the patient, the higher the organ dose for the same study. That is the whole reason the diagnostic approach asks whether something with less radiation would do."},
       {q:"You are looking at a traditional axial computed tomography slice. Where is the patient's left side?",

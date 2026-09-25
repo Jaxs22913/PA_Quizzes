@@ -30,7 +30,7 @@
    "topic": "Potassium hydroxide",
    "io": "c — Interpret potassium hydroxide (KOH) preparations",
    "slot": "initial test",
-   "q": "What concentration of potassium hydroxide is specified?",
+   "q": "What concentration of potassium hydroxide does the preparation use?",
    "opts": [
     [
      "Forty per cent",
@@ -124,7 +124,7 @@
     ],
     [
      "A full-thickness sample, used for inflammatory rashes and small lesions",
-     "Correct — the punch cuts a cylinder through epidermis, dermis and into subcutis, so the pathologist sees every layer, which is what inflammatory disease requires for a pattern diagnosis."
+     "Correct — a punch biopsy takes a full-thickness sample, which suits inflammatory rashes and small lesions; a shave suits raised epidermal lesions."
     ]
    ],
    "c": 3,
@@ -134,11 +134,11 @@
    "topic": "Visual field testing",
    "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing",
    "slot": "test finding",
-   "q": "Homonymous hemianopia is found. Where is the lesion, and what is a possible cause?",
+   "q": "Homonymous hemianopia is found. Where is the lesion, and what should be considered?",
    "opts": [
     [
      "Retrochiasmal, and it queries a stroke",
-     "Correct — behind the chiasm each side carries the opposite half-field from both eyes, so a lesion there, commonly a stroke, removes the same side of the field in each eye."
+     "Correct — homonymous hemianopia localizes to a retrochiasmal lesion, and stroke is the cause to consider; a bitemporal pattern is chiasmal instead."
     ],
     [
      "Chiasmal, and it queries a pituitary tumour",
@@ -150,7 +150,7 @@
     ],
     [
      "Retinal, and it queries a branch artery occlusion",
-     "A retinal or branch artery lesion affects one eye only; matching field loss in both eyes places the lesion behind the chiasm."
+     "Retinal disease is not the localization; homonymous hemianopia points to a retrochiasmal lesion, while a central scotoma is the macular pattern."
     ]
    ],
    "c": 0,
@@ -168,7 +168,7 @@
     ],
     [
      "Pregnant patients and children",
-     "Pregnancy and childhood are reasons to AVOID the radiation of computed tomography; it is favoured for unstable or claustrophobic patients who cannot lie still for a long scan."
+     "Pregnancy and childhood are not the reasons given for choosing it; computed tomography is better for unstable or claustrophobic patients."
     ],
     [
      "Patients with implanted metal hardware",
@@ -224,7 +224,7 @@
     ],
     [
      "Uncomplicated acute rhinosinusitis, otitis, and simple soft-tissue infections",
-     "Correct — each is diagnosed clinically and treated empirically, so imaging adds cost and radiation without changing management."
+     "Correct — uncomplicated acute rhinosinusitis, otitis and simple soft-tissue infections need no imaging; complicated sinusitis or orbital signs need contrast computed tomography."
     ],
     [
      "Uncomplicated acute rhinosinusitis, orbital cellulitis, and simple soft-tissue infections",
@@ -238,7 +238,7 @@
    "topic": "Tympanometry",
    "io": "g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry",
    "slot": "first-line",
-   "q": "Which three indications for tympanometry are listed?",
+   "q": "What are the three indications for tympanometry?",
    "opts": [
     [
      "Any ear pain, any ear discharge, and any hearing complaint",
@@ -272,11 +272,11 @@
     ],
     [
      "Eye pathology is likely present",
-     "Correct — the pinhole removes refractive blur, so vision that stays poor means the deficit lies in the media, retina or optic nerve rather than in focus."
+     "Correct — if acuity does not correct with the pinhole, or worsens, eye pathology is likely; correction with the pinhole points to a refractive error."
     ],
     [
      "The refractive error is greater than the pinhole can compensate for",
-     "The pinhole works regardless of the size of the refractive error, because it admits only the central rays; failure to improve points to pathology."
+     "Failure to correct does not mean a larger refractive error; the pinhole separates refractive error from pathology, so no correction points to pathology."
     ],
     [
      "The patient needs a near chart rather than a distance chart",
@@ -380,11 +380,11 @@
     ],
     [
      "Any negative pressure at all",
-     "Mildly negative pressure is common and transient; the threshold that matters is beyond minus two hundred millimetres of water."
+     "Negative pressure counts as significant for treatment only when it is more negative than minus two hundred millimeters of water, not at any level."
     ],
     [
      "More negative than minus two hundred millimetres of water",
-     "Correct — beyond minus two hundred millimetres of water the eustachian tube is failing badly enough that fluid is being drawn into the middle ear."
+     "Correct — a type C curve shows normal mobility with negative pressure, and that pressure is significant for treatment when more negative than minus two hundred."
     ]
    ],
    "c": 3,
@@ -394,7 +394,7 @@
    "topic": "Applying the principles",
    "io": "l — Apply diagnostic test selection principles to common dermatologic, ophthalmologic, and otolaryngologic presentations",
    "slot": "first-line",
-   "q": "Which four questions should be considered about any test?",
+   "q": "Which four questions should be asked about any test?",
    "opts": [
     [
      "What does it cost, how long does it take, who performs it, and where is it available",
@@ -410,7 +410,7 @@
     ],
     [
      "What does it evaluate well, when do we order it, what are its strengths and limitations, and how do the results confirm the condition",
-     "Correct — the four framing questions on the clinical applications slide."
+     "Correct — what each test evaluates well, when to order it, its strengths and limitations, and how its results confirm the condition, choosing the least invasive test."
     ]
    ],
    "c": 3,
@@ -428,7 +428,7 @@
     ],
     [
      "Confrontation fields at the bedside; formal perimetry or Amsler grid testing by ophthalmology",
-     "Correct — confrontation compares the patient's field against the examiner's and needs no equipment, while perimetry maps the field quantitatively and the Amsler grid tests the central field specifically."
+     "Correct — confrontation fields are done at the bedside, while formal perimetry or Amsler grid testing is done by ophthalmology to assess the visual pathway."
     ],
     [
      "Amsler grid at the bedside; confrontation fields by ophthalmology",
@@ -446,7 +446,7 @@
    "topic": "Diagnostic approach",
    "io": "a — Discuss indications, advantages, and limitations of common diagnostic tests used in dermatologic disorders",
    "slot": "first-line",
-   "q": "A patient has a lesion you suspect is a neoplasm, or a rash that has not resolved. Which test is indicated?",
+   "q": "A patient has a lesion you suspect is a neoplasm, or a rash that has not resolved. Which test follows?",
    "opts": [
     [
      "Point-of-care ultrasound",
@@ -480,7 +480,7 @@
     ],
     [
      "A hyperechoic mass with posterior acoustic shadowing, sharply defined margins and no through-transmission",
-     "Fluid transmits sound well, so an abscess shows posterior ENHANCEMENT rather than shadowing; shadowing indicates a dense structure such as bone or calculus."
+     "An abscess shows posterior acoustic enhancement, not shadowing, with a hypoechoic or heterogeneous fluid collection that may hold debris or septations."
     ],
     [
      "Loss of the normal tissue planes with gas tracking along fascia",
@@ -514,7 +514,7 @@
     ],
     [
      "Facial, acral and very large lesions",
-     "Correct — excising the whole lesion on the face, on palms and soles, or across a very large area carries real cosmetic and functional cost, which is what justifies the concession."
+     "Correct — a partial or superficial shave is acceptable only when suspicion is low, and that also covers facial, acral and very large lesions, though it may underestimate Breslow depth."
     ]
    ],
    "c": 3,
@@ -528,7 +528,7 @@
    "opts": [
     [
      "Ultrasound, distinguishing superficial or cystic from solid",
-     "Correct — ultrasound is radiation-free and answers the question that determines everything downstream: whether the mass is a fluid-filled cyst or solid tissue."
+     "Correct — ultrasound is first-line for a neck mass and separates superficial or cystic from solid, as with lymphadenopathy or a thyroid mass."
     ],
     [
      "Contrast computed tomography, distinguishing abscess from phlegmon",
@@ -540,7 +540,7 @@
     ],
     [
      "Fine needle aspiration, distinguishing reactive from neoplastic",
-     "Aspiration may follow, but imaging begins with ultrasound to establish whether the mass is cystic or solid and how vascular it is."
+     "The neck mass workup begins with ultrasound, which establishes whether the mass is cystic or solid, its size and its vascularity."
     ]
    ],
    "c": 0,
@@ -580,7 +580,7 @@
    "opts": [
     [
      "A small central cup with a robust neuroretinal rim",
-     "Correct — a healthy disc has most of its area occupied by nerve fibres forming a full rim, with only a small central cup where no axons lie."
+     "Correct — a healthy disc has a small central cup and a robust neuroretinal rim, with a normal cup-to-disc ratio of about 0.3 against over 0.7 in glaucoma."
     ],
     [
      "An enlarged, deeply excavated cup with an undermined rim",
@@ -602,7 +602,7 @@
    "topic": "Tonometry",
    "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing",
    "slot": "initial test",
-   "q": "Which two tonometers are named for glaucoma screening?",
+   "q": "Which two tonometers are used for glaucoma screening?",
    "opts": [
     [
      "The Snellen tonometer and the Rosenbaum tonometer",
@@ -636,7 +636,7 @@
     ],
     [
      "It requires a specialised transport medium not stocked in most clinics",
-     "Standard transport swabs are adequate and widely stocked; the limitation is the twenty-four to forty-eight hour wait for growth."
+     "Transport medium is not the limitation; throat culture is the gold standard, but its results are delayed by twenty-four to forty-eight hours."
     ],
     [
      "Delayed results, taking twenty-four to forty-eight hours",
@@ -684,7 +684,7 @@
    "opts": [
     [
      "Visual acuity, visual fields, external exam, extraocular movements, pupils, pressure",
-     "Correct — the six steps run from function to structure to pressure, so acuity and fields are established before the eye is inspected or its pressure measured."
+     "Correct — visual acuity, visual fields, external exam, extraocular movements, pupils and pressure are the steps that begin the eye examination."
     ],
     [
      "Vision, vessels, eyelids, extraocular movements, pupils, pressure",
@@ -740,7 +740,7 @@
     ],
     [
      "Blood cultures drawn from two separate sites",
-     "Blood cultures detect bacteraemia rather than identifying the organism in a localised wound; tissue biopsy or aspirate does that."
+     "Blood cultures are not the higher-yield sample; in complex wounds such as diabetic foot or pressure ulcers, deeper tissue biopsy or aspirate is."
     ],
     [
      "Deeper tissue biopsy or aspirate",
@@ -758,7 +758,7 @@
    "topic": "Audiometry",
    "io": "g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry",
    "slot": "first-line",
-   "q": "Which three indications for audiometry are listed?",
+   "q": "What are the three indications for audiometry?",
    "opts": [
     [
      "Suspected or confirmed hearing loss, persistent otitis media with effusion, and asymmetric loss",
@@ -824,7 +824,7 @@
     ],
     [
      "Zero to ten decibels for adults, and ten to fifteen decibels for children",
-     "Zero to ten decibels is too quiet to serve as a screening threshold; tones are presented at twenty-five to thirty decibels for adults and fifteen to twenty for children."
+     "Screening tones sit at the upper limits of normal hearing: twenty-five to thirty decibels for adults and fifteen to twenty for children."
     ],
     [
      "Forty to fifty decibels for adults, and thirty to forty decibels for children",
@@ -838,7 +838,7 @@
    "topic": "Imaging selection",
    "io": "i — Select appropriate imaging studies for common ophthalmologic and ENT disorders",
    "slot": "first-line",
-   "q": "Which study is named for deep neck infection, and what does it say about ultrasound there?",
+   "q": "Which study is used for deep neck infection, and what is the role of ultrasound there?",
    "opts": [
     [
      "Magnetic resonance imaging of the neck, with ultrasound as a screening step",
@@ -850,7 +850,7 @@
     ],
     [
      "Contrast computed tomography of the neck, and it states that ultrasound is not helpful",
-     "Correct — contrast defines the abscess wall and the deep fascial planes, which ultrasound cannot reach through the mandible and air-filled airway."
+     "Correct — contrast computed tomography of the neck is first line for deep neck infection, evaluating drainable abscess, airway compromise and mediastinal spread."
     ],
     [
      "Ultrasound of the neck first, escalating to computed tomography if inconclusive",
@@ -916,7 +916,7 @@
    "topic": "Visual acuity",
    "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing",
    "slot": "differential",
-   "q": "A patient has unilateral visual loss. Where is this localised?",
+   "q": "A patient has unilateral visual loss. Where does that localise?",
    "opts": [
     [
      "To the optic chiasm",
@@ -942,7 +942,7 @@
    "topic": "Applying the principles",
    "io": "l — Apply diagnostic test selection principles to common dermatologic, ophthalmologic, and otolaryngologic presentations",
    "slot": "first-line",
-   "q": "A contact-lens wearer presents with a painful red eye and foreign-body sensation. Which two bedside tests are indicated?",
+   "q": "A contact-lens wearer presents with a painful red eye and foreign-body sensation. Which two bedside tests come first?",
    "opts": [
     [
      "Visual acuity, then fluorescein examination under cobalt-blue light",
@@ -972,11 +972,11 @@
    "opts": [
     [
      "Incisional biopsy of the darkest quadrant of the lesion",
-     "Sampling one quadrant risks missing the deepest part of the tumour, so Breslow depth would be underestimated and staging would be wrong."
+     "Sampling one quadrant is not preferred; suspected melanoma calls for a narrow excisional biopsy with 1 to 3 millimeter margins so Breslow depth can be measured."
     ],
     [
      "Excisional biopsy, which removes the entire lesion",
-     "Correct — removing the whole lesion with a margin lets the pathologist measure Breslow depth through the deepest point, which is the single strongest prognostic variable."
+     "Correct — excisional biopsy removes the entire lesion, and a narrow excision to below the base lets Breslow depth be measured."
     ],
     [
      "Punch biopsy, which gives a full-thickness sample",
@@ -994,19 +994,19 @@
    "topic": "Pure tone audiometry",
    "io": "g — Discuss indications for rapid streptococcal testing, throat cultures, audiometry and tympanometry",
    "slot": "test finding",
-   "q": "What is recorded on the vertical axis of an audiogram, and what does pure tone audiometry require of the room?",
+   "q": "Which pairing correctly gives the audiogram's vertical axis and the room pure tone audiometry needs?",
    "opts": [
     [
      "Sound intensity on the vertical axis, and a quiet environment",
-     "Correct — both details from the same slide."
+     "Correct — sound intensity is recorded on the audiogram's vertical axis, and pure tone audiometry requires a quiet environment."
     ],
     [
      "Frequency on the vertical axis, and a quiet environment",
-     "Intensity goes on the vertical axis."
+     "Frequency is not the vertical axis; the audiogram records sound intensity there, with right ear thresholds marked as a red circle."
     ],
     [
      "Sound intensity on the vertical axis, and a soundproof booth in every case",
-     "A quiet room suffices for screening; a soundproof booth is needed for formal diagnostic testing rather than in every case."
+     "The axis is right, but pure tone audiometry requires a quiet environment rather than a soundproof booth in every case."
     ],
     [
      "Compliance on the vertical axis, and a quiet environment",
@@ -1032,7 +1032,7 @@
     ],
     [
      "Intracranial extension, vascular thrombosis, and osteomyelitis",
-     "Correct — each involves soft tissue, vessel lumen or marrow, which magnetic resonance resolves far better than computed tomography."
+     "Correct — after ultrasound, magnetic resonance adds value for intracranial extension, vascular thrombosis such as Lemierre syndrome, and osteomyelitis."
     ],
     [
      "Drainable abscess, airway compromise, and mediastinal spread",
@@ -1136,11 +1136,11 @@
     ],
     [
      "Bone, tumours, foreign bodies, vascular thrombosis, and osteomyelitis",
-     "The last three are given elsewhere as magnetic resonance contributions."
+     "Vascular thrombosis and osteomyelitis are where magnetic resonance adds value in the neck, and tumors are a magnetic resonance strength as well."
     ],
     [
      "Calcifications and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and unstable or claustrophobic patients",
-     "Correct — all five as listed."
+     "Correct — computed tomography's strengths are calcifications and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and unstable or claustrophobic patients."
     ]
    ],
    "c": 3,
@@ -1154,7 +1154,7 @@
    "opts": [
     [
      "Facial swelling, proptosis, eye signs or neurologic signs",
-     "Correct — each indicates that infection has spread beyond the sinus into the orbit or cranium, where it threatens the eye and brain within hours."
+     "Correct — facial swelling, proptosis, eye signs or neurologic signs make contrast computed tomography of the sinuses and orbits emergency imaging."
     ],
     [
      "Fever, purulent discharge, facial pain and headache",
@@ -1188,7 +1188,7 @@
     ],
     [
      "Think computed tomography for bone, trauma and speed; think magnetic resonance for soft tissue, nerves and tumour or intracranial extension",
-     "Correct — computed tomography resolves dense structures and acquires in seconds, while magnetic resonance separates soft tissues of similar density, which is what nerve, tumour and intracranial questions require."
+     "Correct — computed tomography is the choice for bone, trauma and speed, and magnetic resonance for soft tissue, nerves and tumor or intracranial extension."
     ],
     [
      "Think computed tomography for soft tissue and nerves; think magnetic resonance for bone and speed",
@@ -1254,15 +1254,15 @@
    "topic": "Potassium hydroxide",
    "io": "c — Interpret potassium hydroxide (KOH) preparations",
    "slot": "avoid",
-   "q": "What error is warned about when a fungal infection is diagnosed clinically alone?",
+   "q": "What is the risk of diagnosing a fungal infection clinically alone?",
    "opts": [
     [
      "Resistance develops to topical antifungals",
-     "Resistance is not the concern; the risk is that a non-fungal eruption such as psoriasis or eczema is mistaken for tinea."
+     "Resistance is not the stated risk; a clinical-only diagnosis can misidentify fungal infections, which is why a potassium hydroxide preparation is used."
     ],
     [
      "Fungal infections can be misidentified",
-     "Correct — psoriasis, eczema and other scaly eruptions closely resemble tinea, so treating on appearance alone risks weeks of antifungal therapy for an inflammatory condition."
+     "Correct — a clinical-only diagnosis can misidentify fungal infections, so a potassium hydroxide preparation confirms fungal elements under the microscope."
     ],
     [
      "Treatment is delayed while the culture is awaited",
@@ -1270,7 +1270,7 @@
     ],
     [
      "The wrong antifungal class is chosen",
-     "The error is diagnosing fungus where there is none, rather than picking the wrong antifungal for a confirmed infection."
+     "Agent choice is not the concern; the risk is misidentifying the infection itself, which scraping for a potassium hydroxide preparation avoids."
     ]
    ],
    "c": 1,
@@ -1306,23 +1306,23 @@
    "topic": "Tonometry",
    "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing",
    "slot": "escalation",
-   "q": "Which condition is named as an ophthalmologic emergency indicating tonometry?",
+   "q": "Which ophthalmologic emergency is an indication for tonometry?",
    "opts": [
     [
      "Corneal ulcer",
-     "That is the urgent fluorescein finding."
+     "A corneal ulcer shows as fixed dense staining or opacity on fluorescein and needs urgent referral, not tonometry."
     ],
     [
      "Acute angle-closure glaucoma",
-     "Correct — named as an ophthalmologic emergency."
+     "Correct — acute angle-closure glaucoma is the ophthalmologic emergency that indicates tonometry to measure intraocular pressure."
     ],
     [
      "Chronic open-angle glaucoma",
-     "Open-angle glaucoma often runs at normal pressure and is chronic; it is acute angle closure, with pressure above fifty, that is the emergency."
+     "Open-angle glaucoma is chronic and most cases have normal pressure; acute angle-closure glaucoma is the emergency that indicates tonometry."
     ],
     [
      "Orbital cellulitis",
-     "That is an imaging emergency on a later slide, not a tonometry indication."
+     "Orbital cellulitis calls for contrast computed tomography of the sinuses and orbits as emergency imaging, not for tonometry."
     ]
    ],
    "c": 1,
@@ -1370,7 +1370,7 @@
     ],
     [
      "By dermoscopy, with history and inspection used to confirm the reading",
-     "Dermoscopy refines the assessment of pigmented lesions rather than serving as the routine diagnostic route, which remains history and inspection."
+     "Dermoscopy is not the routine route; most skin disease is diagnosed by history and visual inspection, with office testing for uncertain diagnoses."
     ],
     [
      "By history and visual inspection, with office testing added for uncertain diagnoses",
@@ -1418,15 +1418,15 @@
     ],
     [
      "They are prone to contamination and colonisation, and may not correlate well with deep infection",
-     "Correct — both limitations as stated."
+     "Correct — superficial swabs are prone to contamination and colonization and may not correlate with deep infection; deeper biopsy or aspirate yields more."
     ],
     [
      "They are prone to contamination, and cannot provide susceptibilities",
-     "Susceptibilities are listed as an advantage of culture."
+     "Wound cultures do provide susceptibilities, which is their advantage alongside organism identification, so that is not a limitation."
     ],
     [
      "They take twenty-four to forty-eight hours, and are operator dependent",
-     "That delay is quoted for throat culture on a later slide."
+     "A twenty-four to forty-eight hour delay is the throat culture limitation; for wound swabs it is contamination, colonization and poor correlation."
     ]
    ],
    "c": 1,
@@ -1488,15 +1488,15 @@
    "topic": "Bedside testing",
    "io": "a — Discuss indications, advantages, and limitations of common diagnostic tests used in dermatologic disorders",
    "slot": "first-line",
-   "q": "Which three tests are grouped together as bedside testing?",
+   "q": "Which three tests count as bedside testing?",
    "opts": [
     [
      "Potassium hydroxide preparation, Tzanck smear and Gram stain",
-     "Correct — all three are performed and read in the room within minutes, giving an immediate answer about fungus, virus or bacteria."
+     "Correct — the potassium hydroxide preparation, Tzanck smear and Gram stain are quick and inexpensive, limited by operator skill and sampling technique."
     ],
     [
      "Potassium hydroxide preparation, Wood lamp and Gram stain",
-     "The Wood lamp is an examination aid rather than one of the three bedside tests, which are the potassium hydroxide preparation, Tzanck smear and Gram stain."
+     "The Wood lamp is not one of them; the three bedside tests are the potassium hydroxide preparation, the Tzanck smear and the Gram stain."
     ],
     [
      "Tzanck smear, Gram stain and skin culture",
@@ -1514,7 +1514,7 @@
    "topic": "Optic disc cupping",
    "io": "f — Describe indications and interpretation of visual acuity testing, fluorescein examination, tonometry and visual field testing",
    "slot": "etiology",
-   "q": "What structural change does a cross-sectional view of the glaucomatous disc show?",
+   "q": "What structural change occurs in the glaucomatous optic disc?",
    "opts": [
     [
      "Thickening of the retinal nerve fibre layer",
@@ -1556,7 +1556,7 @@
     ],
     [
      "More than twenty decibels hearing level at one or more frequencies",
-     "Correct — normal hearing sits within twenty decibels, so requiring a tone louder than that at any frequency means the threshold has shifted."
+     "Correct — a fail on primary-care conventional audiometry is more than twenty decibels hearing level at one or more frequencies."
     ]
    ],
    "c": 3,

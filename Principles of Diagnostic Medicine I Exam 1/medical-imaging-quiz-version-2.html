@@ -350,7 +350,7 @@ const QUESTIONS = [
       ],
       [
         "The radiologist bills separately, so the indication must be documented for the claim",
-        "Billing is not the reason."
+        "Billing is unrelated; the radiologist has not met the patient, so the clinical question is what directs their search and shapes the report."
       ]
     ],
     "c": 2,
@@ -390,7 +390,7 @@ const QUESTIONS = [
     "opts": [
       [
         "A sick inpatient who cannot get out of bed",
-        "Correct — they cannot stand against a wall, so they are filmed anterior-posterior in bed. Which is exactly why reading the view label matters in practice."
+        "Correct — a patient who cannot stand is filmed anterior-posterior, and because that view magnifies the heart it must not be read for cardiomegaly like a posterior-anterior film."
       ],
       [
         "Any patient in whom cardiomegaly is suspected",
@@ -402,11 +402,11 @@ const QUESTIONS = [
       ],
       [
         "Any patient having a follow-up rather than a first study",
-        "Follow-up status is not what determines the projection."
+        "Follow-up status does not decide the projection; posterior-anterior is preferred because it reduces heart magnification and dose to sensitive organs."
       ]
     ],
     "c": 0,
-    "cite": "2026-08-19 lecture recording, 1:14:21"
+    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 40"
   },
   {
     "topic": "Magnetic resonance imaging",
@@ -446,7 +446,7 @@ const QUESTIONS = [
       ],
       [
         "Muscle for a myogram, the pleural space directly, and the ureter for an antegrade pyelogram",
-        "None of these three routes is used."
+        "None of these routes is used: contrast goes into joints, the intrathecal space and the bladder, besides the intravascular and enteral routes."
       ],
       [
         "Bowel for an arthrogram, the epidural space, and the renal pelvis for a cystogram",
@@ -502,7 +502,7 @@ const QUESTIONS = [
       ],
       [
         "Which modality best rules the diagnosis in or out, is there a lower-radiation alternative, what is the risk against benefit for this patient, and is contrast needed",
-        "Correct — those are the four."
+        "Correct — each guards a different failure: ordering a study that cannot answer the question, irradiating unnecessarily, ignoring patient-specific risk, and omitting the contrast the study needs."
       ],
       [
         "Which modality is cheapest, which is fastest, which is closest, and which the patient prefers",
@@ -524,7 +524,7 @@ const QUESTIONS = [
       ],
       [
         "Uptake in the kidneys is normal, and the same is true of tracer on positron emission scans",
-        "Correct — renal uptake is normal on both studies."
+        "Correct — renal uptake is a normal finding on a bone scan, and positron emission tracer is renally cleared, so the urinary tract always appears contrast positive."
       ],
       [
         "Uptake in the kidneys indicates the tracer dose given was higher than the study required",
@@ -572,7 +572,7 @@ const QUESTIONS = [
     "opts": [
       [
         "Maximum visualisation of the mediastinum, better visualisation of the hila, and well visualised anterior ribs",
-        "It is the lung fields, apices and posterior ribs rather than these."
+        "Those are not the advantages; the posterior-anterior view gives maximum visualization of the lung, better views of the apices and well-visualized posterior ribs."
       ],
       [
         "Maximum visualisation of the diaphragm, better visualisation of free air, and well visualised gastric bubble",
@@ -624,33 +624,33 @@ const QUESTIONS = [
     "opts": [
       [
         "Recent upper gastrointestinal endoscopy without biopsy",
-        "That is not the exception."
+        "Endoscopy without biopsy is not the exception; only unabsorbed gas from recent laparoscopic surgery explains free air without a perforation."
       ],
       [
         "A barium swallow performed the previous week",
-        "Barium in the lumen is not free air, and this is not the named exception."
+        "Barium in the bowel lumen is not free air, and barium is contraindicated when perforation is suspected; the exception is recent laparoscopy."
       ],
       [
         "Chronic constipation with a heavy stool burden",
-        "Stool burden does not produce free intraperitoneal air."
+        "A heavy stool burden does not put free air under the diaphragm; that finding means perforation unless gas remains from recent laparoscopic surgery."
       ],
       [
         "Recent laparoscopic surgery, with the gas not yet absorbed",
-        "Correct — insufflation of the abdomen puts gas there deliberately. With belly pain, fever, nausea and vomiting and no recent surgery, it is perforation."
+        "Correct — gas left from recent laparoscopic surgery that has not yet been absorbed can explain free air; without that history, free air means perforation."
       ]
     ],
     "c": 3,
-    "cite": "2026-08-19 lecture recording, 1:22:55"
+    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 43"
   },
   {
     "topic": "Contrast media",
     "io": "g — Compare and contrast the risks and benefits associated with contrast administration",
     "slot": "agent/regimen",
-    "q": "Which agent is named for intravenous contrast in computed tomography, and what is it?",
+    "q": "Which agent is used for intravenous contrast in computed tomography?",
     "opts": [
       [
         "Omnipaque (iohexol), a radioactive form of iodine given into the vein",
-        "Correct — the same agent is used, at higher concentration, for angiography."
+        "Correct — intravenous Omnipaque (iohexol) is the computed tomography contrast agent; it is nephrotoxic, so urea nitrogen and creatinine are checked first. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."
       ],
       [
         "Visipaque (iodixanol), a barium salt suspension given into the vein",
@@ -758,7 +758,7 @@ const QUESTIONS = [
       ],
       [
         "Fat-suppressed imaging, which removes the signal from adipose tissue in the field",
-        "Fat suppression is not the stroke technique."
+        "Fat suppression is not the technique for stroke; magnetic resonance can be programmed to evaluate the diffusion of water, which is diffusion-weighted imaging."
       ],
       [
         "Post-processing windowing, which re-displays the raw data over a narrower range",
@@ -784,7 +784,7 @@ const QUESTIONS = [
       ],
       [
         "A matrix of thousands of tiny cubes called voxels, each assigned a greyscale signal intensity on a fixed scale running from zero to two hundred and fifty five",
-        "That is not how the image is built."
+        "The image is a matrix of tiny squares called pixels, each assigned a computed tomography number from minus 1000 to plus 1000 in Hounsfield units."
       ],
       [
         "A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
@@ -828,27 +828,27 @@ const QUESTIONS = [
     "topic": "Contrast media",
     "io": "g — Compare and contrast the risks and benefits associated with contrast administration",
     "slot": "complication",
-    "q": "What is the position on the carcinogenicity of contrast media, and what does it justify?",
+    "q": "Which statement about the carcinogenicity of contrast media is correct?",
     "opts": [
       [
         "None of them is carcinogenic, which is why contrast is used freely",
-        "She stated the opposite."
+        "Contrast is not used freely: cancer is a risk factor for all contrast material, so every study asks whether it could be done without contrast."
       ],
       [
-        "Only the nuclear medicine tracers are carcinogenic, because they are radioactive",
-        "She described the contrast media generally as technically radioactive."
+        "Only oral barium is carcinogenic, because it is toxic outside the bowel",
+        "Barium's stated toxicity is to extra-intestinal tissue, with alkaline burns; cancer is a risk factor for all contrast material, not barium alone."
       ],
       [
         "It is all carcinogenic",
-        "Correct — which is exactly why the diagnostic approach asks whether the study can be done without contrast. She tied the risk straight back to the four framing questions."
+        "Correct — dyes and contrast materials are technically radioactive, so cancer is a risk factor for all contrast material, which is why each study asks whether it can be done without contrast. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."
       ],
       [
         "Only the iodinated agents are carcinogenic, which is why gadolinium is preferred",
-        "She said the risk applies to contrast media generally."
+        "Cancer risk applies to all contrast material, not only iodinated agents, and gadolinium is the magnetic resonance agent rather than a safer substitute."
       ]
     ],
     "c": 2,
-    "cite": "2026-08-19 lecture recording, 27:38"
+    "cite": "2. svPrinciples of Medical Imaging.pptx, Slide 50"
   },
   {
     "topic": "Radiation dose",
@@ -962,7 +962,7 @@ const QUESTIONS = [
     "opts": [
       [
         "Decreased quality of imaging, which is the price paid for the open configuration",
-        "Correct — it is available, but the loss of quality is the trade-off."
+        "Correct — open magnetic resonance scanners are available, but the price of the open configuration is decreased quality of imaging."
       ],
       [
         "Increased scan duration, which is the price paid for the open configuration",
@@ -974,7 +974,7 @@ const QUESTIONS = [
       ],
       [
         "Decreased soft tissue contrast only, with spatial resolution otherwise preserved",
-        "The quality loss is general, not limited to soft tissue contrast."
+        "The loss is in the quality of imaging overall, not confined to soft tissue contrast; magnetic resonance remains the best modality for soft tissue."
       ]
     ],
     "c": 0,
@@ -1014,7 +1014,7 @@ const QUESTIONS = [
     "opts": [
       [
         "Refer the patient to the relevant specialist",
-        "Onward referral does not resolve a vague report."
+        "Referral does not resolve the report itself; when a report is vague, the step is to contact the radiologist and discuss the patient."
       ],
       [
         "Contact the radiologist to discuss the patient",
@@ -1022,7 +1022,7 @@ const QUESTIONS = [
       ],
       [
         "Repeat the study using a different modality",
-        "Repeating the study is not the first response."
+        "A repeat study is not the response to a vague report; contact the radiologist to discuss the patient before ordering more imaging."
       ],
       [
         "Order the next test in the diagnostic sequence",
@@ -1044,7 +1044,7 @@ const QUESTIONS = [
       ],
       [
         "Nothing beforehand, because gadolinium is inert and is excreted unchanged in the bile",
-        "Renal function must be assessed regardless."
+        "Gadolinium is renally cleared rather than biliary, and impaired clearance is the reason renal function is assessed first."
       ],
       [
         "Blood urea nitrogen and creatinine, because renal function matters primarily for clearance",
@@ -1052,7 +1052,7 @@ const QUESTIONS = [
       ],
       [
         "Blood urea nitrogen and creatinine, because gadolinium is more nephrotoxic than iodine",
-        "The opposite holds: it is not as harmful as computed tomography contrast."
+        "The comparison runs the other way: gadolinium is less harmful to the kidney than iodinated contrast, though renal function is still checked."
       ]
     ],
     "c": 2,
@@ -1070,7 +1070,7 @@ const QUESTIONS = [
       ],
       [
         "A varying magnetic field aligns hydrogen atoms; releasing it produces radio waves the computer maps",
-        "Correct — the resulting images are essentially hydrogen maps."
+        "Correct — the field aligns hydrogen atoms, and when it is released they generate radio waves that the computer analyzes into images that are essentially hydrogen maps."
       ],
       [
         "A varying magnetic field aligns iron atoms; releasing it produces heat the computer measures",

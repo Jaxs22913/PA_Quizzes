@@ -158,7 +158,7 @@ POOL_B = [
    q="What is the platelet's primary role, and what does that mean?",
    opts=[
      ["Hemostasis, meaning stopping the bleeding and repairing damaged blood vessels",
-      "Correct — platelets adhere to exposed subendothelium and aggregate into a plug, which arrests bleeding and provides the surface on which repair proceeds."],
+      "Correct — hemostasis, the process of stopping the bleeding and repairing damaged blood vessels, is the platelet's primary role."],
      ["Coagulation, meaning activating the clotting cascade",
       "Coagulation is listed as a contribution, but hemostasis is the primary role."],
      ["Immune defense, meaning encapsulating and destroying foreign organisms",
@@ -184,11 +184,11 @@ POOL_B = [
    q="Below what platelet count does the risk of hemorrhage increase?",
    opts=[
      ["Twenty thousand",
-      "Correct — below twenty thousand there are too few platelets to seal the small breaches that occur constantly in normal vessels, so spontaneous bleeding becomes a real risk."],
+      "Correct — the risk of hemorrhage increases when the platelet count falls below 20,000, against a normal count of 150,000 to 450,000 per microliter."],
      ["Fifty thousand",
       "Higher than the threshold given."],
      ["One hundred thousand",
-      "One hundred thousand is below the normal range but still leaves ample platelets for haemostasis; spontaneous bleeding risk rises below twenty thousand."],
+      "One hundred thousand is below the normal 150,000 to 450,000 range, but the risk of hemorrhage increases only when the count falls below 20,000."],
      ["One hundred and fifty thousand",
       "That is the lower limit of the normal range, not the hemorrhage threshold."]],
    c=0, cite=c(29)),
@@ -207,7 +207,7 @@ POOL_B = [
    c=0, cite=c(29)),
 
  dict(topic="Platelets", io=IOE3, slot="differential",
-   q="Which causes of INCREASED platelets are listed?",
+   q="What causes INCREASED platelets?",
    opts=[
      ["Trauma, acute hemorrhage, iron deficiency and polycythemia vera",
       "Correct — note that iron deficiency raises platelets while lowering red cells."],
@@ -253,7 +253,7 @@ POOL_B = [
      ["An increase in mature platelets, as in polycythemia; lowered by recent blood loss",
       "Recent blood loss raises rather than lowers the value."],
      ["Platelet clumping in the sample; lowered by prolonged storage",
-      "Clumping affects the platelet count rather than the measured average volume; the raised value reflects large immature platelets from an active marrow."],
+      "Clumping and storage are not the causes; a raised mean platelet volume represents more immature platelets, and bone marrow failure lowers it."],
      ["An increase in platelet number; lowered by a decrease in number",
       "Volume and number are separate measurements."]],
    c=0, cite=c(30)),
@@ -320,7 +320,7 @@ POOL_B = [
      ["Eighty to one hundred femtolitres",
       "That is mean corpuscular volume."],
      ["Twelve to fifteen per cent",
-      "That is the red cell distribution width figure given on the teaching slide."]],
+      "Twelve to fifteen percent is the normal red cell distribution width, which measures variation in red cell size rather than hemoglobin content."]],
    c=0, cite=c(54)),
 
  dict(topic="Red cell indices", io=IOC, slot="test finding",
@@ -415,16 +415,16 @@ POOL_B = [
    c=0, cite=ci(54)),
 
  dict(topic="Red blood cell count", io=IOC, slot="test finding",
-   q="What is true of using the red blood cell count to diagnose anemia?",
+   q="Can the red blood cell count be used to diagnose anemia?",
    opts=[
      ["It does not accurately measure oxygen carrying capacity and is not directly used to diagnose anemia, though it is still used to evaluate it",
       "Correct — a distinction worth holding, since the count is on every panel."],
      ["It is the single most accurate measure of oxygen carrying capacity",
-      "The count says how many cells there are, not how much haemoglobin they carry; a patient can have a normal count with severely reduced oxygen carrying capacity."],
+      "The red cell count does not accurately measure the blood's oxygen carrying capacity and is not directly used to diagnose anemia."],
      ["It is the definitive test for anemia and replaces hemoglobin",
-      "Anaemia is defined by haemoglobin rather than by cell number, because it is haemoglobin that carries oxygen."],
+      "The red cell count is not the definitive test; it is not directly used to diagnose anemia, although it is still used to evaluate it."],
      ["It has no role at all in evaluating anemia",
-      "It retains a role: combined with haemoglobin and hematocrit it yields the indices that classify the anaemia once diagnosed."]],
+      "The count keeps a role: it is still important in evaluating anemia, and the mean corpuscular hemoglobin is calculated from it."]],
    c=0, cite=c(50)),
 
  dict(topic="Red blood cell count", io=IOC, slot="differential",
@@ -441,7 +441,7 @@ POOL_B = [
    c=0, cite=c(50)),
 
  dict(topic="Red blood cell count", io=IOC, slot="etiology",
-   q="Which three conditions are given as examples of chronic hypoxia?",
+   q="Which three conditions are examples of chronic hypoxia?",
    opts=[
      ["Chronic obstructive pulmonary disease, sleep apnea and high altitude",
       "Correct — the three examples given."],
@@ -480,20 +480,20 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Hematocrit", io=IOB, slot="differential",
-   q="Which causes of a raised hematocrit are listed that do not appear on the hemoglobin slide?",
+   q="Besides polycythemia vera and dehydration, which causes raise the hematocrit?",
    opts=[
      ["Smoking and hypoventilation",
-      "Correct — the hematocrit slide adds these two alongside polycythemia vera and dehydration."],
+      "Correct — smoking, chronic obstructive pulmonary disease or hypoventilation raise the hematocrit, as do polycythemia vera and reduced fluid intake."],
      ["Chronic kidney disease and cancer",
-      "Those are causes of a decreased value."],
+      "Chronic kidney disease and cancer lower the red cell count and hemoglobin; they are causes of a decrease, not of a raised hematocrit."],
      ["Trauma and acute hemorrhage",
-      "Those raise platelets rather than hematocrit."],
+      "Trauma and acute hemorrhage raise the platelet count, and blood loss lowers the hematocrit rather than raising it."],
      ["Iron deficiency and thalassemia",
-      "Those are microcytic anemia causes."]],
+      "Iron deficiency and thalassemia cause microcytic anemia, with a mean corpuscular volume below 80, not a raised hematocrit."]],
    c=0, cite=c(52)),
 
  dict(topic="Hematocrit", io=IOB, slot="differential",
-   q="Which four causes of a decreased hematocrit are listed?",
+   q="What are the four causes of a decreased hematocrit?",
    opts=[
      ["Anemias, acute or chronic blood loss, hemolysis and dilution",
       "Correct — hemolysis is on the hematocrit list specifically."],

@@ -323,7 +323,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"The pretest phase. That is why preparation, labeling, transport and communication carry so much of the objective — the assay itself is rarely the weak link."},
       {q:"You order coagulation studies. Which tube must the specimen arrive in?",
        choices:["Lavender","Gray","Light blue","Gold"],correct:2,
-       explain:"Light blue, containing sodium citrate. Lavender is the complete blood count tube. Professor Reynolds' own test of whether you know this: if someone walks in with a lavender tube for your coags, you should catch it immediately."},
+       explain:"Light blue, containing sodium citrate. Lavender is the complete blood count tube, so a lavender tube sent for coagulation studies is the wrong tube and should be caught immediately."},
       {q:"A patient will collect a stool specimen at home for ova and parasites. What must you tell them?",
        choices:["Refrigerate it right away","Do NOT refrigerate it","Freeze it if delayed","Add the preservative provided"],correct:1,
        explain:"Do not refrigerate — warm stool is best for detecting ova and parasites. Patients refrigerate by instinct, so say it explicitly. Three separate random specimens are recommended because of the parasite life cycle."},

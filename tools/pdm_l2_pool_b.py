@@ -117,7 +117,7 @@ POOL_B = [
    q="On a bone scan, why are the kidneys visible?",
    opts=[
      ["Uptake in the kidneys is normal, and the same is true of tracer on positron emission scans",
-      "Correct — tracer is cleared renally, so the kidneys light up simply because they are excreting it, and the same normal appearance occurs on positron emission scans."],
+      "Correct — renal uptake is a normal finding on a bone scan, and positron emission tracer is renally cleared, so the urinary tract always appears contrast positive."],
      ["Uptake in the kidneys indicates the tracer dose given was higher than the study required",
       "Renal visibility is expected and says nothing about the dose administered."],
      ["Uptake in the kidneys suggests metastatic disease has reached the retroperitoneal organs",
@@ -208,7 +208,7 @@ POOL_B = [
    q="How are magnetic resonance images generated?",
    opts=[
      ["A varying magnetic field aligns hydrogen atoms; releasing it produces radio waves the computer maps",
-      "Correct — hydrogen nuclei align with the field, and as they relax back they emit radio signals whose timing and strength the computer converts into an image."],
+      "Correct — the field aligns hydrogen atoms, and when it is released they generate radio waves that the computer analyzes into images that are essentially hydrogen maps."],
      ["A varying magnetic field aligns iron atoms; releasing it produces heat the computer measures",
       "Hydrogen is the nucleus imaged, and the signal read out is radiofrequency, not thermal."],
      ["A rotating x-ray beam passes through tissue; detectors measure how much of it is absorbed",
@@ -288,7 +288,7 @@ POOL_B = [
      ["Diffusion-weighted imaging, which evaluates the diffusion of water within tissue",
       "Correct — the scanner can also be programmed to evaluate blood velocity."],
      ["Fat-suppressed imaging, which removes the signal from adipose tissue in the field",
-      "Fat suppression improves visibility of oedema against fat, but it is diffusion-weighted imaging that detects the restricted water movement of acute infarction."],
+      "Fat suppression is not the technique for stroke; magnetic resonance can be programmed to evaluate the diffusion of water, which is diffusion-weighted imaging."],
      ["Post-processing windowing, which re-displays the raw data over a narrower range",
       "Post-processing and windowing are computed tomography techniques."],
      ["Gadolinium-enhanced imaging, which highlights vascular structures after injection",
@@ -312,13 +312,13 @@ POOL_B = [
    q="What is the stated trade-off of an open magnetic resonance scanner?",
    opts=[
      ["Decreased quality of imaging, which is the price paid for the open configuration",
-      "Correct — the open design uses a weaker magnetic field, and less signal means a poorer image, which is the price paid for accommodating claustrophobic and larger patients."],
+      "Correct — open magnetic resonance scanners are available, but the price of the open configuration is decreased quality of imaging."],
      ["Increased scan duration, which is the price paid for the open configuration",
       "Time is listed as a general disadvantage, not as the open scanner's trade-off."],
      ["Increased radiation dose, which is the price paid for the open configuration",
       "No magnetic resonance scanner emits ionizing radiation, open or closed."],
      ["Decreased soft tissue contrast only, with spatial resolution otherwise preserved",
-      "The loss is in overall image quality rather than confined to soft tissue contrast, because the weaker field reduces signal across the board."]],
+      "The loss is in the quality of imaging overall, not confined to soft tissue contrast; magnetic resonance remains the best modality for soft tissue."]],
    c=0, cite=c(27)),
 
  dict(topic="Magnetic resonance imaging", io=IOC, slot="first-line",

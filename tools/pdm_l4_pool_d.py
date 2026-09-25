@@ -81,7 +81,7 @@ POOL_D = [
    q="What does a decreased reticulocyte count suggest, and what does an increased one suggest?",
    opts=[
      ["Decreased suggests underproduction of red cells; increased suggests hemolysis or blood loss",
-      "Correct — reticulocytes are newly released red cells, so a low count means the marrow is not replacing them and a high count means it is responding to losses."],
+      "Correct — a decreased reticulocyte count points to underproduction of red cells, while an increased count suggests hemolysis or blood loss."],
      ["Decreased suggests hemolysis; increased suggests underproduction of red cells",
       "The two are swapped."],
      ["Decreased suggests iron deficiency; increased suggests vitamin B12 deficiency",
@@ -94,13 +94,13 @@ POOL_D = [
    q="What should be looked at in addition to the four evaluation steps?",
    opts=[
      ["The peripheral blood smear, if one can be obtained",
-      "Correct — the smear shows cell shape and inclusions that no automated index captures, and findings such as schistocytes or basophilic stippling redirect the whole workup."],
+      "Correct — the peripheral blood smear is also looked at if it can be obtained, and all of the evaluation points are assessed simultaneously."],
      ["A bone marrow biopsy in every case",
-      "Marrow biopsy is invasive and reserved for cases the non-invasive workup cannot explain; the smear is the additional step at this stage."],
+      "A bone marrow biopsy is not a routine step; the evaluation adds the peripheral blood smear, if one can be obtained, to the four assessments."],
      ["Hemoglobin electrophoresis in every case",
-      "The algorithm reserves hemoglobin analysis for specific circumstances."],
+      "Hemoglobin electrophoresis is not a routine step; the workup checks the complete blood count, chemistry panel, mean corpuscular volume and reticulocyte count."],
      ["A direct antiglobulin test in every case",
-      "The direct antiglobulin test is used when immune haemolysis is suspected rather than in every anaemia; the smear is what is added routinely."]],
+      "A direct antiglobulin test is not part of the stated evaluation; alongside the four steps, the peripheral blood smear is looked at if it can be obtained."]],
    c=0, cite=cn(59)),
 
  dict(topic="Microcytic anemia", io=IOG, slot="differential",
@@ -150,7 +150,7 @@ POOL_D = [
      ["Ferritin decreased, serum iron decreased, total iron binding capacity increased",
       "That is iron deficiency."],
      ["Ferritin increased, serum iron increased, total iron binding capacity increased",
-      "Everything rising together does not occur; in chronic disease iron is sequestered, so ferritin rises while serum iron and binding capacity both fall."],
+      "Everything rising together is not a pattern here; anemia of chronic disease shows increased ferritin with decreased serum iron and total iron binding capacity."],
      ["Ferritin normal, serum iron normal, total iron binding capacity normal",
       "That routes to thalassemia trait or lead poisoning."]],
    c=0, cite=c(62)),
@@ -256,11 +256,11 @@ POOL_D = [
      ["The home is the red blood cell; the percentage saturation is the reticulocyte count",
       "The red blood cell is the school."],
      ["The home is the bone marrow; the percentage saturation is serum iron",
-      "The marrow is where iron is used rather than stored long-term, and serum iron is the amount in transit rather than the capacity of the carrier."]],
+      "In the analogy the home is hemosiderin, the storage form that cannot be measured, and the percentage saturation is the total iron binding capacity."]],
    c=0, cite=cn(69)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="Which causes of MEGALOBLASTIC macrocytic anemia are listed?",
+   q="What causes MEGALOBLASTIC macrocytic anemia?",
    opts=[
      ["Vitamin B12 deficiency, folate deficiency, drugs impairing DNA synthesis, and copper deficiency",
       "Correct — with methotrexate, antiretrovirals and hydroxyurea as the named drugs."],
@@ -273,7 +273,7 @@ POOL_D = [
    c=0, cite=c(65)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="Which three drugs are named as impairing DNA synthesis?",
+   q="Which three drugs impair DNA synthesis?",
    opts=[
      ["Methotrexate, antiretrovirals and hydroxyurea",
       "Correct — the three named examples."],
@@ -286,7 +286,7 @@ POOL_D = [
    c=0, cite=c(65)),
 
  dict(topic="Macrocytic anemia", io=IOG, slot="differential",
-   q="Which causes of NON-MEGALOBLASTIC macrocytic anemia are listed?",
+   q="What causes NON-MEGALOBLASTIC macrocytic anemia?",
    opts=[
      ["Alcohol use, liver disease, hypothyroidism, reticulocytosis, primary bone marrow disorders and chronic kidney disorders",
       "Correct — all six as listed."],
@@ -338,7 +338,7 @@ POOL_D = [
    c=0, cite=c(68)),
 
  dict(topic="Normocytic anemia", io=IOG, slot="differential",
-   q="Which hypo-proliferative causes of normocytic anemia are listed?",
+   q="What are the hypo-proliferative causes of normocytic anemia?",
    opts=[
      ["Aplastic anemia, anemia of chronic disease, infiltration of bone marrow by tumor, and hypometabolic states",
       "Correct — the four hypo-proliferative causes."],
@@ -377,14 +377,14 @@ POOL_D = [
    c=0, cite=c(68)),
 
  dict(topic="Anemia algorithm", io=IOH, slot="test finding",
-   q="At what hemoglobin is a low value defined for men and for women?",
+   q="At what hemoglobin is a value low for men and for women?",
    opts=[
      ["Under fourteen grams per decilitre for men, under twelve for women",
-      "Correct — note this differs from the reference table's lower limit of thirteen point five for men."],
+      "Correct — the anemia workup starts at a hemoglobin under 14 for men and under 12 for women, although the normal male range begins at 13.5."],
      ["Under twelve grams per decilitre for men, under fourteen for women",
       "The two are swapped."],
      ["Under thirteen point five grams per decilitre for men, under twelve for women",
-      "That is the reference table's figure, not the algorithm's."],
+      "Thirteen point five is where the normal male range begins, but the anemia workup uses under 14 for men and under 12 for women."],
      ["Under sixteen grams per decilitre for men, under fourteen for women",
       "Both figures sit within the normal range."]],
    c=0, cite=c(70)),
@@ -520,14 +520,14 @@ POOL_D = [
    c=0, cite=ci(71)),
 
  dict(topic="Fishbone diagram", io=IOH, slot="test finding",
-   q="In the CBC fishbone diagram, which value goes in each position?",
+   q="In the complete blood count fishbone diagram, which value goes in each position?",
    opts=[
      ["White cell count on the left, hemoglobin above the centre line, hematocrit below it, and platelets on the right",
-      "Correct — from the picture-only diagram on the summary slide."],
+      "Correct — the fishbone puts the white cell count on the left, hemoglobin above and hematocrit below the center line, and platelets on the right."],
      ["Platelets on the left, hematocrit above the centre line, hemoglobin below it, and white cell count on the right",
-      "Every position is reversed."],
+      "This mirrors the true layout; the white cell count belongs on the left, platelets on the right, and hemoglobin sits above hematocrit."],
      ["Hemoglobin on the left, white cell count above the centre line, platelets below it, and hematocrit on the right",
-      "The diagram does not arrange the values this way."],
+      "Hemoglobin sits above the center line, not on the left; the left arm carries the white cell count and platelets sit on the right."],
      ["Red cell count on the left, hemoglobin above the centre line, hematocrit below it, and platelets on the right",
       "The left arm carries the white cell count, not the red cell count."]],
    c=0, cite=ci(72)),

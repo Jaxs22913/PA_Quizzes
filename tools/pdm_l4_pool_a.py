@@ -28,9 +28,9 @@ POOL_A = [
    q="What does a complete blood count provide information about?",
    opts=[
      ["The hematologic system and other organ systems",
-      "Correct — the marrow responds to infection, inflammation, kidney disease, nutritional deficiency and malignancy, so the cell lines report on systems well beyond the blood itself."],
+      "Correct — a complete blood count provides information about the hematologic system and other organ systems through automated measurement of each cell line."],
      ["The hematologic system only",
-      "The count reflects the marrow's response to disease elsewhere, so it reports on other organ systems as well as the blood."],
+      "The count is not limited to the blood; a complete blood count provides information about the hematologic system and other organ systems."],
      ["Bone marrow function only",
       "Marrow function is inferred, not the stated scope."],
      ["Clotting function and platelet activity",
@@ -41,7 +41,7 @@ POOL_A = [
    q="Which four red cell indices does a complete blood count report?",
    opts=[
      ["Mean corpuscular volume, mean corpuscular hemoglobin, mean corpuscular hemoglobin concentration, and red blood cell distribution width",
-      "Correct — each is derived from the cell count, haemoglobin and haematocrit, describing average cell size, average haemoglobin content and concentration, and the variability in size."],
+      "Correct — the indices describe the size, hemoglobin content and size distribution of red cells: volume, hemoglobin, hemoglobin concentration and distribution width."],
      ["Mean corpuscular volume, hemoglobin, hematocrit, and red blood cell distribution width",
       "Hemoglobin and hematocrit are separate measurements, not indices."],
      ["Mean corpuscular volume, mean platelet volume, hematocrit, and reticulocyte count",
@@ -158,7 +158,7 @@ POOL_A = [
    q="What is the normal white blood cell range, and what are the terms for values outside it?",
    opts=[
      ["Four thousand five hundred to eleven thousand cells per microlitre, with leukopenia below and leukocytosis above",
-      "Correct — the range runs from four thousand five hundred to eleven thousand per microlitre, with leukopenia below suggesting marrow failure or overwhelming consumption, and leukocytosis above suggesting infection or inflammation."],
+      "Correct — the normal white count runs from 4,500 to 11,000 cells per microliter, with leukopenia below 4,500 and leukocytosis above 11,000."],
      ["Four thousand five hundred to eleven thousand cells per microlitre, with leukocytosis below and leukopenia above",
       "The two terms are the wrong way round."],
      ["Four thousand to ten thousand cells per microlitre, with leukopenia below and leukocytosis above",
@@ -168,14 +168,14 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="White blood cells", io=IOF, slot="first-line",
-   q="Which non-specific constitutional symptoms are listed as a reason to check a white cell count?",
+   q="Which non-specific constitutional symptoms are a reason to check a white cell count?",
    opts=[
      ["Unexplained fatigue, weakness, unexplained bruising or bleeding, and weight loss",
       "Correct — the four constitutional symptoms as listed."],
      ["Fever, chills, body aches and headaches",
       "Those are the signs and symptoms listed under concern for infection."],
      ["Night sweats, lymphadenopathy, splenomegaly and pruritus",
-      "Night sweats, lymphadenopathy, splenomegaly and pruritus suggest lymphoma specifically; the constitutional prompts are fatigue, weakness, unexplained bruising or bleeding, and weight loss."],
+      "Those four are not the prompts; the non-specific constitutional symptoms are unexplained fatigue, weakness, unexplained bruising or bleeding, and weight loss."],
      ["Pallor, dyspnoea on exertion, palpitations and dizziness",
       "Those are anemia symptoms and are not the list given."]],
    c=0, cite=c(12)),
@@ -210,11 +210,11 @@ POOL_A = [
    q="What is the normal neutrophil percentage, and what is the neutrophil's rank among white cells?",
    opts=[
      ["Fifty-four to sixty-two per cent, and the most abundant white blood cell",
-      "Correct — both the range and the rank, and the reference table agrees with this figure."],
+      "Correct — the neutrophil is the most abundant white blood cell, with a normal range of fifty-four to sixty-two percent of the differential."],
      ["Twenty-four to forty-four per cent, and the most abundant white blood cell",
       "Twenty-four to forty-four per cent is the lymphocyte range; neutrophils make up fifty-four to sixty-two per cent and are the most abundant."],
      ["Fifty-four to sixty-two per cent, and the second most abundant white blood cell",
-      "Neutrophils are the most abundant white cell, making up over half the total; lymphocytes come second."],
+      "The range is right but the rank is not: the neutrophil is the most abundant white blood cell, at a normal fifty-four to sixty-two percent."],
      ["Three to seven per cent, and the largest white blood cell",
       "Those figures describe the monocyte."]],
    c=0, cite=c(18)),
@@ -236,9 +236,9 @@ POOL_A = [
    q="What is the neutrophil's role?",
    opts=[
      ["The body's main defense against bacteria and its primary defense against microbial invasion, by phagocytosis",
-      "Correct — neutrophils arrive first at a bacterial focus, engulf organisms and kill them with granule enzymes and an oxidative burst, which is why they dominate the acute response."],
+      "Correct — the neutrophil, the most abundant white blood cell, is the main defense against bacteria and the primary defense against microbial invasion, by phagocytosis."],
      ["The body's main defense against parasites, by releasing granule contents",
-      "That role is attributed to eosinophils elsewhere."],
+      "Parasites and allergic reactions raise the eosinophil, whose granules contain histamines; the neutrophil's role is defense against bacteria."],
      ["Antibody production and cellular immune response",
       "Those are lymphocyte functions."],
      ["Immune surveillance and differentiation into macrophages",
@@ -259,7 +259,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Bands", io=IOE2, slot="test finding",
-   q="What combination indicates bacterial infection?",
+   q="Which combination indicates bacterial infection?",
    opts=[
      ["Neutrophils plus bands",
       "Correct — a raised neutrophil count shows the marrow responding, and the appearance of immature bands shows that demand has outstripped the supply of mature cells."],
@@ -288,7 +288,7 @@ POOL_A = [
    q="Why does a left shift occur during an acute bacterial infection?",
    opts=[
      ["Neutrophils are increasingly consumed, so the marrow releases both mature and immature forms to keep up",
-      "Correct — mature neutrophils are consumed at the site of infection faster than the marrow can replace them, so it releases bands from the storage pool before segmentation is complete."],
+      "Correct — neutrophils are increasingly consumed, so more are needed, and the marrow releases both mature neutrophils and immature bands, which is the left shift."],
      ["The marrow is suppressed, so only immature forms can be produced",
       "Marrow suppression causes a decreased count, not a left shift."],
      ["Immature cells survive longer in the circulation than mature ones",
@@ -298,7 +298,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Neutrophil abnormalities", io=IOE2, slot="differential",
-   q="Which causes of INCREASED neutrophils are listed?",
+   q="What causes INCREASED neutrophils?",
    opts=[
      ["Bacterial infection, myocardial infarction, burns, steroids, rheumatoid arthritis, and physiologic causes such as pregnancy, labor and surgery",
       "Correct — the full list, including the physiologic causes."],
@@ -366,7 +366,7 @@ POOL_A = [
    q="What is the eosinophil's normal percentage, nucleus, and granule content?",
    opts=[
      ["One to three per cent, a two-lobed nucleus, and granules containing histamines",
-      "Correct — and the reference table agrees on the percentage."],
+      "Correct — the eosinophil makes up one to three percent of white cells, has a two-lobed nucleus, and carries histamine in its granules."],
      ["One to three per cent, a three-lobed nucleus, and granules containing heparin",
       "Heparin is in the basophil's granules and the eosinophil nucleus is bilobed."],
      ["Twenty-four to forty-four per cent, a two-lobed nucleus, and granules containing histamines",
@@ -396,7 +396,7 @@ POOL_A = [
      ["Histamines only",
       "Histamine alone describes the eosinophil granule; the basophil also carries heparin, which is what distinguishes it."],
      ["Enzymes that digest bacterial cell walls",
-      "Lysozyme and digestive enzymes belong to neutrophil granules; basophils carry heparin, histamine and other inflammatory mediators."],
+      "Basophil granules are not described as digesting bacterial walls; they contain heparin, histamine and other mediators of inflammation."],
      ["Denatured hemoglobin and residual nuclear material",
       "Those are red cell inclusions, not white cell granules."]],
    c=0, cite=c(24)),
@@ -418,7 +418,7 @@ POOL_A = [
    q="What is the monocyte's normal percentage, size and granule status?",
    opts=[
      ["Three to seven per cent, the largest white blood cell, and no granules",
-      "Correct — and the reference table agrees on the percentage."],
+      "Correct — the monocyte is the largest white blood cell, has no granules, and makes up a normal three to seven percent of white cells."],
      ["Three to seven per cent, the smallest white blood cell, and no granules",
       "The monocyte is described as the largest."],
      ["Twenty-four to forty-four per cent, the largest white blood cell, and no granules",
@@ -467,7 +467,7 @@ POOL_A = [
    c=0, cite=cn(25)),
 
  dict(topic="Monocytes", io=IOE2, slot="differential",
-   q="Which causes of increased monocytes are listed, and what decreases them?",
+   q="What increases monocytes, and what decreases them?",
    opts=[
      ["Increased by chronic inflammation, stress and viral infection; decreased by bone marrow injury",
       "Correct — three causes up and one down."],
@@ -548,7 +548,7 @@ POOL_A = [
    q="How long do B and T lymphocytes live, and what are their functions?",
    opts=[
      ["Memory cells may live for years; B lymphocytes produce antibody and T lymphocytes give cellular immune response",
-      "Correct — from the picture-only table on slide 17."],
+      "Correct — memory B and T cells may live for years; B lymphocytes produce antibody, and T lymphocytes provide the cellular immune response."],
      ["Memory cells may live for years; B lymphocytes give cellular immune response and T lymphocytes produce antibody",
       "The two functions are swapped."],
      ["Both live about three days, matching the monocyte",

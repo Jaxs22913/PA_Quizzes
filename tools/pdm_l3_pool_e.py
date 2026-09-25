@@ -52,13 +52,13 @@ POOL_E = [
    q="What are the five strengths of computed tomography?",
    opts=[
      ["Calcifications and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and unstable or claustrophobic patients",
-      "Correct — all five as listed."],
+      "Correct — computed tomography's strengths are calcifications and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and unstable or claustrophobic patients."],
      ["Soft-tissue contrast, no ionizing radiation, orbital extension, perineural spread, and tumours",
       "Those are the five magnetic resonance strengths."],
      ["Calcifications, sinuses, perineural spread, foreign bodies, and skull base disease",
       "Perineural spread and skull base disease belong to magnetic resonance."],
      ["Bone, tumours, foreign bodies, vascular thrombosis, and osteomyelitis",
-      "The last three are given elsewhere as magnetic resonance contributions."]],
+      "Vascular thrombosis and osteomyelitis are where magnetic resonance adds value in the neck, and tumors are a magnetic resonance strength as well."]],
    c=0, cite=c(35)),
 
  dict(topic="CT versus MRI", io=IOH, slot="first-line",
@@ -78,7 +78,7 @@ POOL_E = [
    q="What are the two clinical pearls contrasting the modalities?",
    opts=[
      ["Think computed tomography for bone, trauma and speed; think magnetic resonance for soft tissue, nerves and tumour or intracranial extension",
-      "Correct — computed tomography resolves dense structures and acquires in seconds, while magnetic resonance separates soft tissues of similar density, which is what nerve, tumour and intracranial questions require."],
+      "Correct — computed tomography is the choice for bone, trauma and speed, and magnetic resonance for soft tissue, nerves and tumor or intracranial extension."],
      ["Think computed tomography for soft tissue and nerves; think magnetic resonance for bone and speed",
       "The two pearls are swapped."],
      ["Think computed tomography for tumours; think magnetic resonance for foreign bodies",
@@ -93,7 +93,7 @@ POOL_E = [
      ["Unstable or claustrophobic patients",
       "Correct — both are named as reasons to choose computed tomography."],
      ["Pregnant patients and children",
-      "Pregnancy and childhood are reasons to AVOID the radiation of computed tomography; it is favoured for unstable or claustrophobic patients who cannot lie still for a long scan."],
+      "Pregnancy and childhood are not the reasons given for choosing it; computed tomography is better for unstable or claustrophobic patients."],
      ["Patients with implanted metal hardware",
       "Implanted metal is a contraindication to magnetic resonance rather than one of the two reasons named here, which are instability and claustrophobia."],
      ["Patients with impaired kidney function",
@@ -104,7 +104,7 @@ POOL_E = [
    q="Which three presentations need no imaging at all?",
    opts=[
      ["Uncomplicated acute rhinosinusitis, otitis, and simple soft-tissue infections",
-      "Correct — each is diagnosed clinically and treated empirically, so imaging adds cost and radiation without changing management."],
+      "Correct — uncomplicated acute rhinosinusitis, otitis and simple soft-tissue infections need no imaging; complicated sinusitis or orbital signs need contrast computed tomography."],
      ["Uncomplicated acute rhinosinusitis, orbital cellulitis, and simple soft-tissue infections",
       "Orbital cellulitis is an emergency imaging indication."],
      ["Otitis, neck mass, and simple soft-tissue infections",
@@ -117,7 +117,7 @@ POOL_E = [
    q="Which findings make sinus or orbital imaging an emergency?",
    opts=[
      ["Facial swelling, proptosis, eye signs or neurologic signs",
-      "Correct — each indicates that infection has spread beyond the sinus into the orbit or cranium, where it threatens the eye and brain within hours."],
+      "Correct — facial swelling, proptosis, eye signs or neurologic signs make contrast computed tomography of the sinuses and orbits emergency imaging."],
      ["Fever, purulent discharge, facial pain and headache",
       "These are ordinary sinusitis features and do not trigger emergency imaging."],
      ["Nasal obstruction, anosmia and postnasal drip",
@@ -140,10 +140,10 @@ POOL_E = [
    c=0, cite=c(36)),
 
  dict(topic="Imaging selection", io=IOI, slot="first-line",
-   q="Which study is named for deep neck infection, and what does it say about ultrasound there?",
+   q="Which study is used for deep neck infection, and what is the role of ultrasound there?",
    opts=[
      ["Contrast computed tomography of the neck, and it states that ultrasound is not helpful",
-      "Correct — contrast defines the abscess wall and the deep fascial planes, which ultrasound cannot reach through the mandible and air-filled airway."],
+      "Correct — contrast computed tomography of the neck is first line for deep neck infection, evaluating drainable abscess, airway compromise and mediastinal spread."],
      ["Ultrasound of the neck first, escalating to computed tomography if inconclusive",
       "That sequence applies to a neck MASS, not to deep neck infection."],
      ["Magnetic resonance imaging of the neck, with ultrasound as a screening step",
@@ -156,13 +156,13 @@ POOL_E = [
    q="What is first-line for a neck mass, and what question does it answer?",
    opts=[
      ["Ultrasound, distinguishing superficial or cystic from solid",
-      "Correct — ultrasound is radiation-free and answers the question that determines everything downstream: whether the mass is a fluid-filled cyst or solid tissue."],
+      "Correct — ultrasound is first-line for a neck mass and separates superficial or cystic from solid, as with lymphadenopathy or a thyroid mass."],
      ["Contrast computed tomography, distinguishing abscess from phlegmon",
       "That is the deep neck infection pathway."],
      ["Magnetic resonance imaging, distinguishing benign from malignant",
       "Magnetic resonance follows ultrasound for specific reasons."],
      ["Fine needle aspiration, distinguishing reactive from neoplastic",
-      "Aspiration may follow, but imaging begins with ultrasound to establish whether the mass is cystic or solid and how vascular it is."]],
+      "The neck mass workup begins with ultrasound, which establishes whether the mass is cystic or solid, its size and its vascularity."]],
    c=0, cite=c(36)),
 
  dict(topic="Imaging selection", io=IOI, slot="escalation",
@@ -299,7 +299,7 @@ POOL_E = [
    q="For which three complications does magnetic resonance add value in the neck?",
    opts=[
      ["Intracranial extension, vascular thrombosis, and osteomyelitis",
-      "Correct — each involves soft tissue, vessel lumen or marrow, which magnetic resonance resolves far better than computed tomography."],
+      "Correct — after ultrasound, magnetic resonance adds value for intracranial extension, vascular thrombosis such as Lemierre syndrome, and osteomyelitis."],
      ["Drainable abscess, airway compromise, and mediastinal spread",
       "Those are the contrast computed tomography questions."],
      ["Cystic character, size, and vascularity",
@@ -322,10 +322,10 @@ POOL_E = [
    c=0, cite=c(39)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="Which four questions should be considered about any test?",
+   q="Which four questions should be asked about any test?",
    opts=[
      ["What does it evaluate well, when do we order it, what are its strengths and limitations, and how do the results confirm the condition",
-      "Correct — the four framing questions on the clinical applications slide."],
+      "Correct — what each test evaluates well, when to order it, its strengths and limitations, and how its results confirm the condition, choosing the least invasive test."],
      ["What does it cost, how long does it take, who performs it, and where is it available",
       "Cost and logistics matter in practice, but the framing questions are what the test evaluates well, when to order it, its strengths and limitations, and how its result confirms the condition."],
      ["What is its sensitivity, its specificity, its predictive value, and its likelihood ratio",
@@ -374,7 +374,7 @@ POOL_E = [
    c=0, cite=c(4)),
 
  dict(topic="Applying the principles", io=IOL, slot="first-line",
-   q="A contact-lens wearer presents with a painful red eye and foreign-body sensation. Which two bedside tests are indicated?",
+   q="A contact-lens wearer presents with a painful red eye and foreign-body sensation. Which two bedside tests come first?",
    opts=[
      ["Visual acuity, then fluorescein examination under cobalt-blue light",
       "Correct — acuity is indicated for every eye complaint, and this history is a fluorescein indication."],

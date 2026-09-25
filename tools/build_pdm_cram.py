@@ -104,13 +104,13 @@ topics = [
    ["Nuclear medicine is different in KIND", "The tracer is inside the patient, so for a while THE PATIENT IS THE SOURCE and can briefly expose other people. No other modality does this."],
  ]},
  {"id": "contrast", "label": "Contrast Media", "color": "#69406c", "rows": [
-   ["CT intravenous — Omnipaque (iohexol)", "A radioactive form of IODINE. NEPHROTOXIC → CHECK BUN AND CREATININE, give 1 L NORMAL SALINE to protect the kidneys. For inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm."],
+   ["CT intravenous — Omnipaque (iohexol)", "A radioactive form of IODINE (note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are). NEPHROTOXIC → CHECK BUN AND CREATININE, give 1 L NORMAL SALINE to protect the kidneys. For inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm."],
    ["CT oral — barium or Gastrografin", "BARIUM IS CONTRAINDICATED IF PERFORATION IS SUSPECTED — it is toxic to extra-intestinal tissue and causes alkaline burns. USE GASTROGRAFIN instead. For the intraluminal space, upper oesophagus to rectum."],
    ["MRI — gadolinium", "Assess BUN and creatinine regardless, but it is NOT as harmful as CT contrast; renal function matters mainly for clearance. For CNS tumours (typically characterised WITHOUT biopsy), metastases, soft tissue masses, arthrograms. MRA and MRV are done WITHOUT contrast."],
    ["PET — fluorodeoxyglucose-18", "NO contraindications, NOT known to be nephrotoxic. May cause HYPERGLYCAEMIA. Renally cleared, so the genitourinary tract is ALWAYS contrast positive."],
    ["SPECT — technetium-99", "Travels to areas of higher blood flow and cellular activity. Bone scans, myocardial perfusion, functional brain imaging, immunoscintigraphy, sentinel node, white cell uptake. Allergic reactions RARE, NO organ damage documented."],
    ["SHELLFISH IS NOT IODINE", "There should be NO CROSS-REACTIVITY between shellfish allergy and iodinated radiocontrast. The real high-risk marker is a documented ANAPHYLACTIC REACTION TO ANY MEDICATION. Pre-treatment exists when contrast is necessary."],
-   ["The stated takeaway", "ALWAYS ASK ABOUT ALLERGIES AND ASSESS KIDNEY FUNCTION. Also: all contrast is technically radioactive, so the deck names CANCER as a risk factor for all of it."],
+   ["The stated takeaway", "ALWAYS ASK ABOUT ALLERGIES AND ASSESS KIDNEY FUNCTION. Also: all contrast is technically radioactive, so the deck names CANCER as a risk factor for all of it. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."],
    ["Other routes", "Joints = arthrogram. Central nervous system = intrathecal. Bladder = retrograde pyelogram."],
  ]},
  {"id": "radiology-team", "label": "The Radiology Relationship", "color": "#5a6b3a", "rows": [

@@ -27,7 +27,7 @@ DECKS = [
   ["Which pretest error does a patient eating before a fasting test represent?", "Inappropriate patient preparation."],
   ["Name three variables that can affect laboratory results.", "Hydration status, time of collection, and current drug therapy."],
   ["Which complications are monitored for in the posttest phase?", "Bleeding, infection, respiratory difficulty, perforation, and sedation effects."],
-  ["What is the documentation principle stated for the posttest phase?", "If it wasn't documented, it wasn't done."],
+  ["What is the documentation principle for the posttest phase?", "If it wasn't documented, it wasn't done."],
   ["What is the memory aid for the order of draw?", "Stop, Light, Red, Stay, Put, Green, Light, Go."],
   ["Which tube is drawn first?", "Yellow, the sterile blood culture tube."],
   ["Which tube is used for coagulation studies?", "Light blue, containing sodium citrate."],

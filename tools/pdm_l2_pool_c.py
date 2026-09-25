@@ -52,7 +52,7 @@ POOL_C = [
      ["Maximum visualisation of the lung, better visualisation of the apices, and well visualised posterior ribs",
       "Correct — all three are listed alongside the cardiac and dose advantages."],
      ["Maximum visualisation of the mediastinum, better visualisation of the hila, and well visualised anterior ribs",
-      "The anterior ribs are better seen on an anterior-posterior film; the posterior-anterior view favours the lung fields, apices and posterior ribs."],
+      "Those are not the advantages; the posterior-anterior view gives maximum visualization of the lung, better views of the apices and well-visualized posterior ribs."],
      ["Maximum visualisation of the diaphragm, better visualisation of free air, and well visualised gastric bubble",
       "Free air beneath the diaphragm is what an upright abdominal series is for."],
      ["Maximum visualisation of the pleura, better visualisation of layering fluid, and well visualised costophrenic angles",
@@ -104,7 +104,7 @@ POOL_C = [
      ["Small bowel obstruction, perforation and volvulus",
       "Correct — the three named examples of enteric pathology."],
      ["Appendicitis, diverticulitis and inflammatory bowel disease",
-      "These are inflammatory conditions diagnosed by cross-sectional imaging; the plain series looks for gas patterns, free air and volvulus."],
+      "Those are not the enteric targets of the plain series; it evaluates small bowel obstruction, perforation and volvulus through air-fluid levels and free air."],
      ["Cholelithiasis, pancreatitis and hepatic abscess",
       "These hepatobiliary conditions are not named for this study."],
      ["Peptic ulceration, gastritis and oesophageal stricture",
@@ -164,7 +164,7 @@ POOL_C = [
    c=0, cite=c(46)),
 
  dict(topic="Positioning", io=IOE, slot="education",
-   q="What is called the most important thing to remember about ultrasound orientation?",
+   q="What is the most important thing to remember about ultrasound orientation?",
    opts=[
      ["Where the indicator is: on the right of the screen in cardiac imaging, on the left for everything else",
       "Correct — it is called crucial, because the whole image flips with it."],
@@ -229,10 +229,10 @@ POOL_C = [
    c=0, cite=c(50)),
 
  dict(topic="Contrast media", io=IOG, slot="agent/regimen",
-   q="Which agent is named for intravenous contrast in computed tomography, and what is it?",
+   q="Which agent is used for intravenous contrast in computed tomography?",
    opts=[
      ["Omnipaque (iohexol), a radioactive form of iodine given into the vein",
-      "Correct — the same agent is used, at higher concentration, for angiography."],
+      "Correct — intravenous Omnipaque (iohexol) is the computed tomography contrast agent; it is nephrotoxic, so urea nitrogen and creatinine are checked first. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."],
      ["Visipaque (iodixanol), a barium salt suspension given into the vein",
       "Iodixanol is iodinated and iso-osmolal; barium is enteral and never intravenous."],
      ["Gadolinium, a paramagnetic metal chelate given into the vein",
@@ -249,22 +249,22 @@ POOL_C = [
      ["Liver function tests and bilirubin, because the agent is cleared hepatically",
       "The concern named is renal rather than hepatic."],
      ["Thyroid function tests, because the iodine load can precipitate thyrotoxicosis",
-      "Iodinated contrast can precipitate thyrotoxicosis in susceptible patients, but the test required before administration is renal function."],
+      "Thyroid function is not the pre-contrast check; iodinated contrast is nephrotoxic, so urea nitrogen and creatinine are checked first."],
      ["Complete blood count and platelets, because the agent affects coagulation",
-      "Iodinated contrast does not impair coagulation; it is cleared renally and can injure the kidney, so urea nitrogen and creatinine are checked."]],
+      "Coagulation is not the concern with iodinated contrast; the agent is nephrotoxic, so urea nitrogen and creatinine are checked before it."]],
    c=0, cite=c(52)),
 
  dict(topic="Contrast media", io=IOH, slot="first-line",
    q="What is given alongside intravenous iodinated contrast to protect the kidneys?",
    opts=[
      ["One litre of normal saline",
-      "Correct — a litre of normal saline expands intravascular volume and maintains renal perfusion, diluting the contrast load as it passes through the tubules."],
+      "Correct — iohexol is nephrotoxic, so urea nitrogen and creatinine are checked first and one liter of normal saline is given to protect the kidneys."],
      ["One litre of lactated Ringer's",
-      "Lactated Ringer's is a reasonable crystalloid, but normal saline is the specified fluid for contrast-associated renal protection."],
+      "The fluid given to protect the kidneys is one liter of normal saline, not lactated Ringer's, alongside checking urea nitrogen and creatinine."],
      ["One gram of acetylcysteine",
-      "Acetylcysteine has been trialled for this purpose with inconsistent results and is not what is given here; a litre of normal saline is."],
+      "Acetylcysteine is not part of the regimen; the kidney protection given with intravenous iodinated contrast is one liter of normal saline."],
      ["One dose of intravenous furosemide",
-      "Furosemide would deplete the volume that protects the kidney; the protection comes from a litre of normal saline."]],
+      "A diuretic is not part of the regimen; one liter of normal saline is what is given with intravenous iodinated contrast to protect the kidneys."]],
    c=0, cite=c(52)),
 
  dict(topic="Contrast media", io=IOH, slot="avoid",
@@ -320,16 +320,16 @@ POOL_C = [
    c=0, cite=c(51)),
 
  dict(topic="Contrast media", io=IOH, slot="education",
-   q="What is true of shellfish allergy and iodinated contrast?",
+   q="Does a shellfish allergy contraindicate iodinated contrast?",
    opts=[
      ["There should be no cross-reactivity between shellfish and iodinated radiocontrast",
       "Correct — the cross-reactivity idea is explicitly rejected."],
      ["There is well-established cross-reactivity, so the two allergies must be treated as one",
-      "This is precisely the misconception to discard: shellfish allergy is to tropomyosin protein, not to iodine, so it does not predict a contrast reaction."],
+      "Treating the two allergies as one is the error; the real high-risk marker is a documented anaphylactic reaction to any medication."],
      ["There is partial cross-reactivity, so contrast may be given at a reduced concentration",
       "No such graded approach is described; the cross-reactivity itself is denied."],
      ["There is cross-reactivity only with the iso-osmolal agents such as iodixanol",
-      "No agent-specific exception applies; the cross-reactivity itself does not exist, because shellfish allergy is to protein rather than to iodine."]],
+      "No agent-specific exception exists; there should be no cross-reactivity between shellfish allergy and iodinated radiocontrast with any agent."]],
    c=0, cite=c(53)),
 
  dict(topic="Contrast media", io=IOH, slot="risk factors",
@@ -437,7 +437,7 @@ POOL_C = [
    c=0, cite=c(56)),
 
  dict(topic="Radiology team", io=IOI, slot="referral",
-   q="Why is giving the radiologist relevant clinical information stressed?",
+   q="Why does the radiologist need relevant clinical information?",
    opts=[
      ["The radiologist has not seen the patient, so the history is what guides their read",
       "Correct — the report is only as good as the question it is answering."],
@@ -450,16 +450,16 @@ POOL_C = [
    c=0, cite=c(58)),
 
  dict(topic="Radiology team", io=IOI, slot="referral",
-   q="What is advised when a radiology report comes back vague?",
+   q="What should be done when a radiology report comes back vague?",
    opts=[
      ["Contact the radiologist to discuss the patient",
       "Correct — the relationship is described as interprofessional and team-based."],
      ["Repeat the study using a different modality",
-      "Repeating with another modality adds cost and radiation before the existing images have been discussed; speaking to the radiologist comes first."],
+      "A repeat study is not the response to a vague report; contact the radiologist to discuss the patient before ordering more imaging."],
      ["Order the next test in the diagnostic sequence",
       "Moving on without clarifying the report is not what is advised."],
      ["Refer the patient to the relevant specialist",
-      "Referring on passes along an unresolved question; a direct conversation with the radiologist often clarifies the report immediately."]],
+      "Referral does not resolve the report itself; when a report is vague, the step is to contact the radiologist and discuss the patient."]],
    c=0, cite=c(58)),
 
  dict(topic="Radiology team", io=IOI, slot="referral",
@@ -476,12 +476,12 @@ POOL_C = [
    c=0, cite=c(58)),
 
  dict(topic="Radiology team", io=IOI, slot="education",
-   q="What practical ordering point is made about imaging several body regions?",
+   q="What practical ordering point applies when imaging several body regions?",
    opts=[
      ["Multiple body parts or sections may mean multiple orders, giving brain, cervical, thoracic and lumbar spine as the example",
       "Correct — one clinical question can require four separate requests."],
      ["Multiple body parts should be combined into a single order so the patient is scanned once",
-      "Each body region is ordered as its own study, because the technique, positioning and interpretation differ for each."],
+      "The reverse applies: imaging multiple body parts may mean multiple orders, such as separate magnetic resonance studies of the brain and each spinal level."],
      ["Multiple body parts require the radiologist to countersign the request before booking",
       "No countersignature requirement is described."],
      ["Multiple body parts must be imaged on separate days to limit cumulative radiation dose",

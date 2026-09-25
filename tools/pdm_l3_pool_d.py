@@ -77,7 +77,7 @@ POOL_D = [
      ["It distinguishes carriage from acute infection",
       "Culture grows the organism whether it is causing disease or being carried, so it does not separate carriage from acute infection."],
      ["It gives antibiotic susceptibilities for group A streptococcus",
-      "Susceptibilities are a wound-culture advantage on an earlier slide."]],
+      "Susceptibilities are the stated advantage of wound cultures; throat culture's advantage is being the gold standard with the highest sensitivity."]],
    c=0, cite=c(25)),
 
  dict(topic="Throat culture", io=IOG, slot="avoid",
@@ -90,7 +90,7 @@ POOL_D = [
      ["It cannot be performed in children",
       "It is specifically recommended in children after a negative rapid test."],
      ["It requires a specialised transport medium not stocked in most clinics",
-      "Standard transport swabs are adequate and widely stocked; the limitation is the twenty-four to forty-eight hour wait for growth."]],
+      "Transport medium is not the limitation; throat culture is the gold standard, but its results are delayed by twenty-four to forty-eight hours."]],
    c=0, cite=c(25)),
 
  dict(topic="Throat culture", io=IOG, slot="avoid",
@@ -146,7 +146,7 @@ POOL_D = [
    c=0, cite=c(27)),
 
  dict(topic="Audiometry", io=IOG, slot="first-line",
-   q="Which three indications for audiometry are listed?",
+   q="What are the three indications for audiometry?",
    opts=[
      ["Suspected or confirmed hearing loss, persistent otitis media with effusion, and asymmetric loss",
       "Correct — all three, with asymmetric loss serving to screen for retrocochlear pathology."],
@@ -188,7 +188,7 @@ POOL_D = [
    q="What counts as a fail on primary-care conventional audiometry?",
    opts=[
      ["More than twenty decibels hearing level at one or more frequencies",
-      "Correct — normal hearing sits within twenty decibels, so requiring a tone louder than that at any frequency means the threshold has shifted."],
+      "Correct — a fail on primary-care conventional audiometry is more than twenty decibels hearing level at one or more frequencies."],
      ["More than ten decibels hearing level at one or more frequencies",
       "Ten decibels is the air-bone gap figure, not the fail threshold."],
      ["More than forty decibels hearing level at two or more frequencies",
@@ -218,7 +218,7 @@ POOL_D = [
      ["Fifteen to twenty decibels for adults, and twenty-five to thirty decibels for children",
       "The two are the wrong way round."],
      ["Zero to ten decibels for adults, and ten to fifteen decibels for children",
-      "Zero to ten decibels is too quiet to serve as a screening threshold; tones are presented at twenty-five to thirty decibels for adults and fifteen to twenty for children."],
+      "Screening tones sit at the upper limits of normal hearing: twenty-five to thirty decibels for adults and fifteen to twenty for children."],
      ["Forty to fifty decibels for adults, and thirty to forty decibels for children",
       "Both figures are well above the levels given."]],
    c=0, cite=c(29)),
@@ -250,14 +250,14 @@ POOL_D = [
    c=0, cite=c(29)),
 
  dict(topic="Pure tone audiometry", io=IOG, slot="test finding",
-   q="What is recorded on the vertical axis of an audiogram, and what does pure tone audiometry require of the room?",
+   q="Which pairing correctly gives the audiogram's vertical axis and the room pure tone audiometry needs?",
    opts=[
      ["Sound intensity on the vertical axis, and a quiet environment",
-      "Correct — both details from the same slide."],
+      "Correct — sound intensity is recorded on the audiogram's vertical axis, and pure tone audiometry requires a quiet environment."],
      ["Frequency on the vertical axis, and a quiet environment",
-      "Intensity goes on the vertical axis."],
+      "Frequency is not the vertical axis; the audiogram records sound intensity there, with right ear thresholds marked as a red circle."],
      ["Sound intensity on the vertical axis, and a soundproof booth in every case",
-      "A quiet room suffices for screening; a soundproof booth is needed for formal diagnostic testing rather than in every case."],
+      "The axis is right, but pure tone audiometry requires a quiet environment rather than a soundproof booth in every case."],
      ["Compliance on the vertical axis, and a quiet environment",
       "Compliance is the tympanogram's vertical axis, not the audiogram's."]],
    c=0, cite=c(29)),
@@ -276,7 +276,7 @@ POOL_D = [
    c=0, cite=c(27)),
 
  dict(topic="Tympanometry", io=IOG, slot="first-line",
-   q="Which three indications for tympanometry are listed?",
+   q="What are the three indications for tympanometry?",
    opts=[
      ["Suspected effusion, otitis media with effusion, and eustachian tube dysfunction",
       "Correct — the three indications as given."],
@@ -396,13 +396,13 @@ POOL_D = [
    q="How negative must middle-ear pressure be before it is considered significant for treatment?",
    opts=[
      ["More negative than minus two hundred millimetres of water",
-      "Correct — beyond minus two hundred millimetres of water the eustachian tube is failing badly enough that fluid is being drawn into the middle ear."],
+      "Correct — a type C curve shows normal mobility with negative pressure, and that pressure is significant for treatment when more negative than minus two hundred."],
      ["More negative than minus fifty millimetres of water",
       "Fifty is the normal peak pressure point, not the treatment threshold."],
      ["More negative than minus one hundred millimetres of water",
       "Not the figure given."],
      ["Any negative pressure at all",
-      "Mildly negative pressure is common and transient; the threshold that matters is beyond minus two hundred millimetres of water."]],
+      "Negative pressure counts as significant for treatment only when it is more negative than minus two hundred millimeters of water, not at any level."]],
    c=0, cite=cn(32)),
 
  dict(topic="Tympanogram types", io=IOG, slot="test finding",

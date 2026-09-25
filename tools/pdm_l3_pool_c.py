@@ -16,7 +16,7 @@ POOL_C = [
    q="What does the mnemonic VVEEPP stand for?",
    opts=[
      ["Visual acuity, visual fields, external exam, extraocular movements, pupils, pressure",
-      "Correct — the six steps run from function to structure to pressure, so acuity and fields are established before the eye is inspected or its pressure measured."],
+      "Correct — visual acuity, visual fields, external exam, extraocular movements, pupils and pressure are the steps that begin the eye examination."],
      ["Vision, vessels, eyelids, extraocular movements, pupils, pressure",
       "Vessels and eyelids are not the second and third items."],
      ["Visual acuity, visual fields, eyelids, external exam, pupils, photophobia",
@@ -94,9 +94,9 @@ POOL_C = [
    q="What does it mean if acuity does not correct with a pinhole, or worsens?",
    opts=[
      ["Eye pathology is likely present",
-      "Correct — the pinhole removes refractive blur, so vision that stays poor means the deficit lies in the media, retina or optic nerve rather than in focus."],
+      "Correct — if acuity does not correct with the pinhole, or worsens, eye pathology is likely; correction with the pinhole points to a refractive error."],
      ["The refractive error is greater than the pinhole can compensate for",
-      "The pinhole works regardless of the size of the refractive error, because it admits only the central rays; failure to improve points to pathology."],
+      "Failure to correct does not mean a larger refractive error; the pinhole separates refractive error from pathology, so no correction points to pathology."],
      ["The patient needs a near chart rather than a distance chart",
       "Chart choice is not what the pinhole result indicates."],
      ["The test should be repeated after instilling a topical anesthetic",
@@ -104,7 +104,7 @@ POOL_C = [
    c=0, cite=c(17)),
 
  dict(topic="Visual acuity", io=IOF, slot="differential",
-   q="A patient has unilateral visual loss. Where is this localised?",
+   q="A patient has unilateral visual loss. Where does that localise?",
    opts=[
      ["To the optic nerve or the eye itself",
       "Correct — unilateral loss is ocular or optic nerve."],
@@ -146,7 +146,7 @@ POOL_C = [
    q="How is the visual field assessed at the bedside, and how is it assessed formally?",
    opts=[
      ["Confrontation fields at the bedside; formal perimetry or Amsler grid testing by ophthalmology",
-      "Correct — confrontation compares the patient's field against the examiner's and needs no equipment, while perimetry maps the field quantitatively and the Amsler grid tests the central field specifically."],
+      "Correct — confrontation fields are done at the bedside, while formal perimetry or Amsler grid testing is done by ophthalmology to assess the visual pathway."],
      ["Amsler grid at the bedside; confrontation fields by ophthalmology",
       "The pairing is reversed."],
      ["Confrontation fields at the bedside; fluorescein examination performed by ophthalmology",
@@ -195,16 +195,16 @@ POOL_C = [
    c=0, cite=c(18)),
 
  dict(topic="Visual field testing", io=IOF, slot="test finding",
-   q="Homonymous hemianopia is found. Where is the lesion, and what is a possible cause?",
+   q="Homonymous hemianopia is found. Where is the lesion, and what should be considered?",
    opts=[
      ["Retrochiasmal, and it queries a stroke",
-      "Correct — behind the chiasm each side carries the opposite half-field from both eyes, so a lesion there, commonly a stroke, removes the same side of the field in each eye."],
+      "Correct — homonymous hemianopia localizes to a retrochiasmal lesion, and stroke is the cause to consider; a bitemporal pattern is chiasmal instead."],
      ["Chiasmal, and it queries a pituitary tumour",
       "The pituitary lesion is the bitemporal pattern."],
      ["Prechiasmal, and it queries optic neuritis",
       "A prechiasmal lesion causes monocular loss."],
      ["Retinal, and it queries a branch artery occlusion",
-      "A retinal or branch artery lesion affects one eye only; matching field loss in both eyes places the lesion behind the chiasm."]],
+      "Retinal disease is not the localization; homonymous hemianopia points to a retrochiasmal lesion, while a central scotoma is the macular pattern."]],
    c=0, cite=c(18)),
 
  dict(topic="Fluorescein", io=IOF, slot="first-line",
@@ -286,16 +286,16 @@ POOL_C = [
    c=0, cite=c(22)),
 
  dict(topic="Tonometry", io=IOF, slot="escalation",
-   q="Which condition is named as an ophthalmologic emergency indicating tonometry?",
+   q="Which ophthalmologic emergency is an indication for tonometry?",
    opts=[
      ["Acute angle-closure glaucoma",
-      "Correct — named as an ophthalmologic emergency."],
+      "Correct — acute angle-closure glaucoma is the ophthalmologic emergency that indicates tonometry to measure intraocular pressure."],
      ["Chronic open-angle glaucoma",
-      "Open-angle glaucoma often runs at normal pressure and is chronic; it is acute angle closure, with pressure above fifty, that is the emergency."],
+      "Open-angle glaucoma is chronic and most cases have normal pressure; acute angle-closure glaucoma is the emergency that indicates tonometry."],
      ["Orbital cellulitis",
-      "That is an imaging emergency on a later slide, not a tonometry indication."],
+      "Orbital cellulitis calls for contrast computed tomography of the sinuses and orbits as emergency imaging, not for tonometry."],
      ["Corneal ulcer",
-      "That is the urgent fluorescein finding."]],
+      "A corneal ulcer shows as fixed dense staining or opacity on fluorescein and needs urgent referral, not tonometry."]],
    c=0, cite=c(22)),
 
  dict(topic="Tonometry", io=IOF, slot="avoid",
@@ -338,7 +338,7 @@ POOL_C = [
    c=0, cite=cn(22)),
 
  dict(topic="Tonometry", io=IOF, slot="initial test",
-   q="Which two tonometers are named for glaucoma screening?",
+   q="Which two tonometers are used for glaucoma screening?",
    opts=[
      ["The Schiotz indentation tonometer and the Goldman applanation tonometer",
       "Correct — one indentation and one applanation instrument."],
@@ -380,7 +380,7 @@ POOL_C = [
    q="What does a healthy optic disc look like?",
    opts=[
      ["A small central cup with a robust neuroretinal rim",
-      "Correct — a healthy disc has most of its area occupied by nerve fibres forming a full rim, with only a small central cup where no axons lie."],
+      "Correct — a healthy disc has a small central cup and a robust neuroretinal rim, with a normal cup-to-disc ratio of about 0.3 against over 0.7 in glaucoma."],
      ["An enlarged, deeply excavated cup with an undermined rim",
       "That is the glaucomatous disc."],
      ["A pale disc with sharply defined margins and no cup",
@@ -390,7 +390,7 @@ POOL_C = [
    c=0, cite=c(23)),
 
  dict(topic="Optic disc cupping", io=IOF, slot="etiology",
-   q="What structural change does a cross-sectional view of the glaucomatous disc show?",
+   q="What structural change occurs in the glaucomatous optic disc?",
    opts=[
      ["Lamina cribrosa collapse",
       "Correct — the schematic panel shows collapse of the lamina cribrosa."],

@@ -215,7 +215,7 @@ POOL_A = [
      ["A matrix of thousands of tiny squares called pixels, each assigned a computed tomography number from −1000 to +1000 in Hounsfield units",
       "Correct — water is assigned a Hounsfield number of zero by convention."],
      ["A matrix of voxels, each assigned a signal intensity from 0 to 255 in greyscale units",
-      "The greyscale here is not an arbitrary 0 to 255 signal; each volume element is assigned a Hounsfield value that measures how strongly the tissue attenuates x-rays."],
+      "The image is a matrix of tiny squares called pixels, each assigned a computed tomography number from minus 1000 to plus 1000 in Hounsfield units."],
      ["A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
       "Millisieverts measure radiation dose rather than image density."],
      ["A hydrogen map, each point assigned a relaxation time in milliseconds",
