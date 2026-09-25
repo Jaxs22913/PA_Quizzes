@@ -440,7 +440,9 @@
     font-size: 15px;
   }
 
-  .ai-disclaimer { text-align: center; font-size: 12px; color: var(--muted); margin: 0 0 20px; }
+  .ai-disclaimer { text-align: center; font-size: 12px; color: var(--muted); margin: 0 0 20px; text-wrap: pretty; }
+  .ai-disclaimer strong { color: var(--ink); font-weight: 700; }
+  .ai-disclaimer a.ai-report { color: var(--a-amber-hover); font-size: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 
   .mistake-note { text-align: center; font-size: 13.5px; color: var(--muted); margin-top: 30px; font-style: italic; }
 </style>
@@ -479,7 +481,7 @@
   <h1>Guides &amp; Study Aids</h1>
   <p class="sub">Reference material and quick-review guides for each class, in one place — separate from the timed quizzes.</p>
 
-  <p class="ai-disclaimer">Study materials made by AI, use at your own risk. Check info if unsure.</p>
+  <p class="ai-disclaimer"><strong>AI-assisted.</strong> Built from your lecture slides and syllabus objectives. Spot an error? <a href="#" class="ai-report" onclick="event.preventDefault(); window.reportMistake &amp;&amp; window.reportMistake();">Report it</a></p>
 
   <div class="search-wrap">
     <input type="text" id="guide-search" class="guide-search-input" placeholder="Search guides…" autocomplete="off" spellcheck="false">

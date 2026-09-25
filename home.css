@@ -884,7 +884,12 @@
       font-size: 12px;
       color: var(--muted);
       margin: 0 0 20px;
+      text-wrap: pretty;
     }
+    /* Trust signal, not a waiver (design review item 16): the AI disclosure
+       stays, and says what is actually done to keep the material honest. */
+    .ai-disclaimer strong { color: var(--ink); font-weight: 700; }
+    .ai-disclaimer a.ai-report { color: var(--accent); font-size: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
     .tab-btn {
       /* With 7+ tabs now, cramming them all onto one row (the old
          flex:1;min-width:0 approach) squished each button to an unreadably
