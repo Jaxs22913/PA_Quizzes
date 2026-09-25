@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Physical Diagnosis 2 Exam 2</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#b8860b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Physical Diagnosis 2 Exam 2 · Class of 2028</div>
+    <h1>Physical Diagnosis 2 Exam 2 Cram Sheet</h1>
+    <p class="sub">Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Pulmonary and hematology are added when those lectures are posted.</p>
+    <div class="toc">
+      <a href="#l5-emphasis" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ What the lecture kept coming back to</a>
+      <a href="#l5-history" style="color:#2d4632"><span class="dot" style="background:#3a5a40"></span>The Cardiac History</a>
+      <a href="#l5-cycle" style="color:#37573e"><span class="dot" style="background:#46704f"></span>Cardiac Cycle & Heart Sounds</a>
+      <a href="#l5-impulse" style="color:#4a6c51"><span class="dot" style="background:#5f8a68"></span>Apical Impulse & Point of Maximal Impulse</a>
+      <a href="#l5-auscultation" style="color:#255349"><span class="dot" style="background:#2f6b5e"></span>Auscultation — Areas, Diaphragm & Bell</a>
+      <a href="#l5-murmur-describe" style="color:#966c24"><span class="dot" style="background:#c08a2e"></span>Describing & Grading Murmurs</a>
+      <a href="#l5-murmurs" style="color:#5f2e2e"><span class="dot" style="background:#7a3b3b"></span>The Murmurs One by One</a>
+      <a href="#l5-maneuvers" style="color:#473a6c"><span class="dot" style="background:#5b4a8a"></span>Maneuvers</a>
+      <a href="#l5-peripheral" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Peripheral Vascular Examination</a>
+      <a href="#l5-edema" style="color:#314753"><span class="dot" style="background:#3f5b6b"></span>Peripheral Edema</a>
+      <a href="#l5-exam" style="color:#3a3a3a"><span class="dot" style="background:#4a4a4a"></span>Running the Examination</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pd2-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="l5-emphasis" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ What the lecture kept coming back to</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ The sound is not the diagnosis</td><td>Document what you hear, when and where: 'grade 4/6 systolic ejection murmur, crescendo-decrescendo, loudest at the right 2nd intercostal space, radiating to the carotids, with a thrill.' The disease name (aortic stenosis) goes in the differential, not the physical examination.</td></tr>
+          <tr><td class="h">★ Try before you buy</td><td>Tricuspid is the FIRST valve blood crosses on its way back to the heart (tricuspid before bicuspid/mitral). Said twice: 'That is important, that is important.'</td></tr>
+          <tr><td class="h">★ Hypertrophic obstructive cardiomyopathy</td><td>Learn this murmur so you do not sign off a sports physical wrongly. Aortic and pulmonic stenosis worry you at a point; this one worries you, period. Murmur LOUDER with Valsalva or standing = echocardiogram, no activity until done.</td></tr>
+          <tr><td class="h">★ Mitral vs tricuspid regurgitation</td><td>Both pansystolic. Mitral (apex) radiates to the LEFT AXILLA; tricuspid (lower left sternal border) does NOT. Loudest spot plus the axilla decides it.</td></tr>
+          <tr><td class="h">★ The thrill is the jump</td><td>Loudness raises the grade, but a palpable thrill makes it at least grade 4/6. An arteriovenous fistula is what a thrill feels like.</td></tr>
+          <tr><td class="h">★ Weight before swelling</td><td>Up to 10% of body weight can accumulate before pitting shows. Two pounds overnight is water. Daily morning weight; know a dialysis or heart failure patient's dry weight.</td></tr>
+          <tr><td class="h">★ Syncope: before and after</td><td>Prodrome (lightheaded, pale, clammy) = vasovagal. On standing = orthostatic. Sudden, no warning = arrhythmia. Confused afterward = postictal, think seizure. Feel faint? Sit down.</td></tr>
+          <tr><td class="h">★ Negative Homans does not reassure</td><td>Do it when you already suspect deep vein thrombosis, on the worrying leg. Positive confirms suspicion; negative in a high-risk story, still worried.</td></tr>
+          <tr><td class="h">Time on topic</td><td>No exam-scope statements in 138 minutes. Cardiac content took about 110 minutes; peripheral vascular about 25 ('almost entirely review... the cardiac stuff is a lot of new').</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-history" style="--acc:#3a5a40;--acc-bg:#e3e8e4;--acc-zebra:#f1f3f2;--acc-ink:#2d4632">
+    <div class="shead"><span class="dot" style="background:#3a5a40"></span><h2>The Cardiac History</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Symptoms to ask</td><td>Chest pain, palpitations, dyspnea, orthopnea, paroxysmal nocturnal dyspnea, edema, syncope. Quantify the baseline level of activity.</td></tr>
+          <tr><td class="h">Chest pain</td><td>Most common symptom of coronary artery disease. Always consider angina, myocardial infarction, dissecting aortic aneurysm, pulmonary embolism. Open-ended first, then details; ask the patient to point.</td></tr>
+          <tr><td class="h">Atypical presentation</td><td>Women over 65: upper back, neck or jaw pain, shortness of breath, paroxysmal nocturnal dyspnea, nausea, vomiting, fatigue.</td></tr>
+          <tr><td class="h">Palpitations</td><td>Unpleasant awareness of the heartbeat (skipping, racing, fluttering, pounding). Anxiety and hyperthyroidism cause them; not necessarily heart disease. Get an electrocardiogram.</td></tr>
+          <tr><td class="h">Dyspnea</td><td>Uncomfortable awareness of breathing inappropriate to the level of exertion. Cardiac or pulmonary.</td></tr>
+          <tr><td class="h">Orthopnea</td><td>Dyspnea supine, better sitting up. Count the pillows, and ask what they are for.</td></tr>
+          <tr><td class="h">Paroxysmal nocturnal dyspnea</td><td>Sudden dyspnea waking the patient, usually 1-2 hours after going to bed; sits up or goes to the window. May wheeze and cough.</td></tr>
+          <tr><td class="h">Syncope</td><td>Transient loss of consciousness with recovery. Most common: neurocardiogenic (vasovagal). Arrhythmia in about 20%.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-cycle" style="--acc:#46704f;--acc-bg:#e5ebe6;--acc-zebra:#f2f5f3;--acc-ink:#37573e">
+    <div class="shead"><span class="dot" style="background:#46704f"></span><h2>Cardiac Cycle & Heart Sounds</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Systole vs diastole</td><td>Named for the VENTRICLES. Systole: contraction, S1 to S2. Diastole: relaxation and filling, S2 to S1.</td></tr>
+          <tr><td class="h">S1 (lub)</td><td>Mitral + tricuspid closure. Diaphragm, apex. Usually not split. Precedes the carotid pulse.</td></tr>
+          <tr><td class="h">S2 (dub)</td><td>Aortic (A2, usually louder) + pulmonic (P2) closure. Diaphragm, base. Follows the carotid pulse.</td></tr>
+          <tr><td class="h">Physiologic splitting</td><td>S2 split on INSPIRATION, fused on expiration. Normal. Best at the pulmonic area.</td></tr>
+          <tr><td class="h">Pathologic splitting</td><td>Audible split on EXPIRATION: suggests heart disease. Tends to be fixed.</td></tr>
+          <tr><td class="h">Early ejection sound</td><td>Just after S1; high, clicking; diaphragm. Aortic: base and apex, no change with inspiration. Pulmonic: 2nd-3rd intercostal spaces, decreases with inspiration.</td></tr>
+          <tr><td class="h">Click</td><td>Mid to late systolic, at or medial to the apex; high, diaphragm. Mitral valve prolapse; followed by a late systolic murmur crescendoing to S2.</td></tr>
+          <tr><td class="h">S3 ventricular gallop</td><td>After S2: Ken-TUC-ky. Bell, apex, left lateral decubitus. Normal to about 35-40 and in late pregnancy; over 40 = heart failure, volume overload.</td></tr>
+          <tr><td class="h">S4 atrial gallop</td><td>Before S1: Ten-nes-SEE. Dull, low; bell, apex, left lateral decubitus. Stiff ventricle: hypertension, aortic stenosis. Normal in athletes and older adults. Right-sided S4 at lower left sternal border, louder with inspiration.</td></tr>
+          <tr><td class="h">Opening snap</td><td>Very early diastole, stenotic MITRAL valve. HIGH pitch, diaphragm. Can be mistaken for P2. Fades as the leaflets calcify.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-impulse" style="--acc:#5f8a68;--acc-bg:#e9efea;--acc-zebra:#f4f7f4;--acc-ink:#4a6c51">
+    <div class="shead"><span class="dot" style="background:#5f8a68"></span><h2>Apical Impulse & Point of Maximal Impulse</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Normal</td><td>5th intercostal space at or just medial to the left midclavicular line. Marks the LEFT border of the heart. About 2.5 cm (a quarter), brisk and tapping.</td></tr>
+          <tr><td class="h">Displaced</td><td>Enlarged heart: lateral and possibly inferior (for example 6th space, anterior axillary line). Document where you find it.</td></tr>
+          <tr><td class="h">Can't find it</td><td>Left lateral decubitus; then exhale fully and hold.</td></tr>
+          <tr><td class="h">Hyperkinetic</td><td>Increased stroke volume; not necessarily disease. Anxiety, hyperthyroidism, severe anemia. Normal location, under 2/3 of systole.</td></tr>
+          <tr><td class="h">Sustained (pressure load)</td><td>Hypertrophy, increased afterload. Left: aortic stenosis, hypertension. Right: pulmonic stenosis, pulmonary hypertension.</td></tr>
+          <tr><td class="h">Diffuse (volume load)</td><td>Dilation, increased preload. Left: displaced left and down; aortic or mitral regurgitation, cardiomyopathy. Right: atrial septal defect.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-auscultation" style="--acc:#2f6b5e;--acc-bg:#e2eae8;--acc-zebra:#f0f5f4;--acc-ink:#255349">
+    <div class="shead"><span class="dot" style="background:#2f6b5e"></span><h2>Auscultation — Areas, Diaphragm & Bell</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why the areas are where they are</td><td>Not over the valves: the next place DOWNSTREAM along the blood flow with no bone in the way. Aortic stenosis can radiate to both carotids.</td></tr>
+          <tr><td class="h">The five areas</td><td>Aortic (right 2nd space), pulmonic (left 2nd), Erb's point (between pulmonic and mitral), tricuspid (lower left sternal border), mitral (apex).</td></tr>
+          <tr><td class="h">Bell</td><td>Low pitch. Light pressure, no gaps. Apex, then medially along the lower sternal border. S3, S4, mitral stenosis.</td></tr>
+          <tr><td class="h">Diaphragm</td><td>High pitch. Press firmly, whole precordium. S1, S2, clicks, opening snap, aortic and mitral regurgitation, friction rubs.</td></tr>
+          <tr><td class="h">Technique</td><td>Quiet room, skin contact always (never over clothing), isolate each sound, close your eyes. Unsure if systolic? Palpate the carotid while listening.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-murmur-describe" style="--acc:#c08a2e;--acc-bg:#f6efe2;--acc-zebra:#fbf7f0;--acc-ink:#966c24">
+    <div class="shead"><span class="dot" style="background:#c08a2e"></span><h2>Describing & Grading Murmurs</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Murmur / thrill / bruit</td><td>Murmur: turbulent flow over a valve, heard. Thrill: its vibration, felt with the balls of the hand held still. Bruit: turbulent flow in a vessel.</td></tr>
+          <tr><td class="h">Causes of a murmur</td><td>Partially obstructed valve; increased flow through a normal valve (child); ejection into a dilated chamber; regurgitation; shunting to a lower pressure chamber.</td></tr>
+          <tr><td class="h">Seven characteristics</td><td>Timing, shape, location, radiation, intensity, pitch, quality.</td></tr>
+          <tr><td class="h">Shapes</td><td>Crescendo-decrescendo (diamond); decrescendo (starts maximal, fades); plateau (unchanging); crescendo (grows).</td></tr>
+          <tr><td class="h">Levine grades</td><td>1 heard only after tuning in. 2 heard immediately. 3 moderately loud. 4 loud WITH THRILL. 5 thrill, heard with stethoscope partly off. 6 thrill, heard entirely off.</td></tr>
+          <tr><td class="h">Pitch and quality</td><td>High, medium, low. Blowing, harsh, rumbling, musical.</td></tr>
+          <tr><td class="h">Innocent</td><td>No structural abnormality; grade 1-3; softer on standing, sitting up or Valsalva; childhood. Defined by no symptoms or structural disease, not by grade. A thrill = not innocent.</td></tr>
+          <tr><td class="h">Physiologic vs pathologic</td><td>Physiologic: anemia, pregnancy, fever, hyperthyroidism. Pathologic: structural (aortic or pulmonic stenosis, hypertrophic cardiomyopathy, atrial septal defect).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-murmurs" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>The Murmurs One by One</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Lesion</th><th>Timing & shape</th><th>Pitch</th><th>Loudest</th><th>Radiation</th><th>Maneuvers</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="6">SYSTOLIC</td></tr>
+          <tr><td class="h">Aortic stenosis</td><td>Midsystolic, crescendo-decrescendo</td><td>Medium, harsh</td><td>Aortic area</td><td>Carotids, down left sternal border, even apex</td><td>Sitting forward; louder with squatting and leg raise</td></tr>
+          <tr><td class="h">Pulmonic stenosis</td><td>Midsystolic, crescendo-decrescendo</td><td>Medium, harsh</td><td>Pulmonic area</td><td>Left shoulder and neck if loud</td><td>None</td></tr>
+          <tr><td class="h">Hypertrophic cardiomyopathy</td><td>Midsystolic, crescendo-decrescendo</td><td>Medium, harsh</td><td>Erb's point, tricuspid area</td><td>Down left sternal border to apex; NEVER the neck</td><td>Softer with squatting; LOUDER with Valsalva and standing</td></tr>
+          <tr><td class="h">Tricuspid regurgitation</td><td>Pansystolic, plateau</td><td>Medium, blowing</td><td>Lower left sternal border</td><td>Right sternum, xiphoid; NOT the axilla</td><td>May increase slightly with inspiration</td></tr>
+          <tr><td class="h">Mitral regurgitation</td><td>Pansystolic, holosystolic</td><td>Medium-high, harsh</td><td>Apex</td><td>LEFT AXILLA</td><td>Louder with handgrip or squatting; apical thrill if loud</td></tr>
+          <tr><td class="grp" colspan="6">DIASTOLIC</td></tr>
+          <tr><td class="h">Aortic regurgitation</td><td>Early diastolic, decrescendo; grade 1-3</td><td>High, blowing (like breath sounds)</td><td>Aortic area, down left spaces</td><td>Apex if loud</td><td>Sit forward, exhale, hold</td></tr>
+          <tr><td class="h">Pulmonic regurgitation</td><td>Early diastolic, decrescendo; grade 1-3</td><td>High</td><td>Pulmonic area</td><td>None</td><td>None; may increase with inspiration</td></tr>
+          <tr><td class="h">Mitral stenosis</td><td>Mid to late diastolic, decrescendo; grade 1-4</td><td>Low rumble: BELL</td><td>Apex</td><td>Little or none</td><td>Bell at the apical impulse, left lateral decubitus</td></tr>
+          <tr><td class="h">Tricuspid stenosis</td><td>Mid to late diastolic, decrescendo; grade 1-4</td><td>Low rumble after an opening snap: bell</td><td>Lower left sternal border near xiphoid</td><td>Little or none</td><td>Bell</td></tr>
+          <tr><td class="grp" colspan="6">OTHER</td></tr>
+          <tr><td class="h">Pericardial friction rub</td><td>Scratchy, both systole and diastole; plateau</td><td>High: diaphragm</td><td>Erb's point</td><td>Little</td><td>Louder leaning forward, exhaled, breath held</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-maneuvers" style="--acc:#5b4a8a;--acc-bg:#e8e6ef;--acc-zebra:#f4f2f7;--acc-ink:#473a6c">
+    <div class="shead"><span class="dot" style="background:#5b4a8a"></span><h2>Maneuvers</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Valsalva (strain)</td><td>Forceful expiration against a closed airway: bear down, or push against your hand on the mid-abdomen. Less preload. Hypertrophic cardiomyopathy LOUDER; aortic stenosis softer or unchanged.</td></tr>
+          <tr><td class="h">Standing from squatting</td><td>Less venous return, less preload. Hypertrophic cardiomyopathy LOUDER; aortic stenosis SOFTER; mitral prolapse click earlier, murmur longer.</td></tr>
+          <tr><td class="h">Squatting from standing or leg raise</td><td>More venous return, more preload. Hypertrophic cardiomyopathy SOFTER; aortic stenosis LOUDER; mitral prolapse click later, murmur shorter.</td></tr>
+          <tr><td class="h">Isometric handgrip</td><td>Raises resistance. Increases mitral regurgitation, pulmonic stenosis, ventricular septal defect, aortic regurgitation, mitral stenosis.</td></tr>
+          <tr><td class="h">The one rule</td><td>Smaller left ventricle = more outflow obstruction in hypertrophic cardiomyopathy. More blood through a fixed narrow valve = louder aortic stenosis.</td></tr>
+          <tr><td class="h">Positions</td><td>Left lateral decubitus: apex (S3, S4, mitral stenosis). Seated, leaning forward, exhaled: aortic regurgitation, friction rub.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-peripheral" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Peripheral Vascular Examination</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Inspection</td><td>Size, symmetry, venous pattern, hair growth, edema, skin color, ulcers. Always compare sides.</td></tr>
+          <tr><td class="h">Capillary refill</td><td>2-3 seconds. Quincke's sign: nail bed flashes red to pale with each beat.</td></tr>
+          <tr><td class="h">Pulse grades</td><td>4+ bounding, 3+ increased, 2+ brisk normal, 1+ faint, 0 absent. ALWAYS compare both sides.</td></tr>
+          <tr><td class="h">Arterial insufficiency</td><td>Claudication to rest pain; pale or dusky red; cool; NO edema; thin shiny hairless skin; painful toe ulcer; gangrene; decreased pulses; pallor on elevation, dependent rubor.</td></tr>
+          <tr><td class="h">Venous insufficiency</td><td>No pain; brown hemosiderin staining; normal temperature; pitting edema; thickened skin; ulcer at the medial and lateral malleolus; gangrene rare; NORMAL pulses.</td></tr>
+          <tr><td class="h">Pulse landmarks</td><td>Brachial: medial to biceps tendon. Radial: lateral wrist. Ulnar: medial wrist, may be impalpable. Femoral: below inguinal ligament, midway anterior superior iliac spine to pubic symphysis. Dorsalis pedis: lateral to great toe extensor tendon. Posterior tibial: behind medial malleolus.</td></tr>
+          <tr><td class="h">Carotid</td><td>Hold breath, auscultate BEFORE palpating, one side at a time.</td></tr>
+          <tr><td class="h">Pulse lag</td><td>Radial and femoral together; femoral lag = coarctation of the aorta.</td></tr>
+          <tr><td class="h">Bruit sites</td><td>Aorta (upper midline); renal 3-4 cm lateral to aorta; iliac 3-4 cm lateral to umbilicus, about 2 cm below; femoral.</td></tr>
+          <tr><td class="h">Allen test</td><td>Compress radial and ulnar, clench 30 s, open; release ULNAR and watch the hand pink up; repeat for radial. Persistent pallor = occlusion. Done before an arterial blood gas.</td></tr>
+          <tr><td class="h">Ankle brachial index</td><td>Higher ankle pressure (dorsalis pedis or posterior tibial) over brachial systolic, each leg, 2 decimals. Supine 10 min; inflate 20 mm Hg above last pulse; deflate 1 mm Hg per second.</td></tr>
+          <tr><td class="h">Index values</td><td>Over 1.40 noncompressible calcified vessel. 0.90-1.40 normal. Under 0.90 peripheral arterial disease. Under 0.50 severe.</td></tr>
+          <tr><td class="h">Homans sign</td><td>Knee bent, dorsiflex the foot quickly and forcefully; pain BEHIND THE KNEE = positive. Deep vein thrombosis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-edema" style="--acc:#3f5b6b;--acc-bg:#e4e8ea;--acc-zebra:#f2f4f5;--acc-ink:#314753">
+    <div class="shead"><span class="dot" style="background:#3f5b6b"></span><h2>Peripheral Edema</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Excess fluid in the extravascular interstitial space. Up to 10% of body weight before pitting. Obscures veins, tendons, bony prominences.</td></tr>
+          <tr><td class="h">Technique</td><td>Thumb pressed firmly at least 2 seconds over the dorsum of the foot, behind the medial malleolus, or the shins. Describe depth AND extent. Unilateral or bilateral?</td></tr>
+          <tr><td class="h">1+</td><td>2 mm, disappears rapidly.</td></tr>
+          <tr><td class="h">2+</td><td>4 mm, gone in 10-15 seconds.</td></tr>
+          <tr><td class="h">3+</td><td>6 mm, may last more than 1 minute.</td></tr>
+          <tr><td class="h">4+</td><td>8 mm, can last more than 2 minutes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l5-exam" style="--acc:#4a4a4a;--acc-bg:#e6e6e6;--acc-zebra:#f2f2f2;--acc-ink:#3a3a3a">
+    <div class="shead"><span class="dot" style="background:#4a4a4a"></span><h2>Running the Examination</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Order</td><td>Inspection (including jugular venous pressure), palpation, auscultation, special techniques.</td></tr>
+          <tr><td class="h">Equipment and room</td><td>Stethoscope, ruler, penlight, tongue depressor. Tangential light, quiet room, warm hands, short nails.</td></tr>
+          <tr><td class="h">The patient</td><td>In a gown; never examine over clothing. Positioning: 30-45 degrees, left lateral decubitus, seated leaning forward.</td></tr>
+          <tr><td class="h">Cardiac OSCE (objective structured clinical examination)</td><td>21 October. The whole station is on the Cardiac OSCE run-sheet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lecture 5 so far; Exam 2 (Friday 20 November) covers Lectures 5 to 7. Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
