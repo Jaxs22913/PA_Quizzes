@@ -178,14 +178,30 @@
       }
       .page > .search-wrap { order: 30; }
       /* Every direct child of .page needs an explicit order at this width or it
-         floats above the header. Sits just under the search row, above Relax. */
+         floats above the header.
+         2026-09-25 (design review item 5, approved by Jaxon): the semester card
+         -- class tabs and exam accordions, the thing people open the site for --
+         moved up from ~1,650px down to directly under the search row. The
+         personal widgets follow it. Accordions still load closed. */
+      .page > #semester-card { order: 31; }
       .page > #question-issue-row { order: 32; }
       .page > #relax-cta-row { order: 33; }
       .page > #group-cta-row { order: 34; }
       .page > #stats-widget { order: 35; }
-      .page > #semester-card { order: 40; }
       .page > #continue-widget { order: 45; }
       .page > .more-links { order: 50; }
+      /* The issue control is "a thing you need a few times a semester, not a
+         place you go": on phones it is a small centred pill again, not the most
+         saturated full-width bar above the fold. */
+      .page > #question-issue-row { margin: 14px 0 4px; }
+      .page > #question-issue-row .question-issue-pill {
+        display: inline-flex; width: auto;
+        padding: 7px 14px; font-size: 13px; gap: 6px;
+        /* card ground, not the amber wash: the accent is solved for 4.60:1 on
+           the card, and the wash dropped it to 4.17:1 */
+        background: var(--card);
+      }
+      .page > #question-issue-row .question-issue-pill svg { width: 14px; height: 14px; }
 
       .mobile-widgets-row #week-widget,
       .mobile-widgets-row #continue-widget {
