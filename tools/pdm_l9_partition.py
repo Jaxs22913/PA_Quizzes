@@ -12,9 +12,11 @@ REYNOLDS' RULES, asserted rather than trusted:
      GFR and corrected sodium were not). This deck's own Quick Practice slide
      (43) asks for LDL-C and non-HDL-C to be calculated, so the two worked
      calculations in pool B are allowed -- and ONLY those two quantities. Any
-     other "calculate" in a stem fails the build. If the recording (still being
-     transcribed when this was written) shows she ruled this arithmetic out,
-     set ALLOW_CALC = False and re-run.
+     other "calculate" in a stem fails the build. CONFIRMED from the 21 September
+     recording (2026-09-25, both transcripts, part 3 6:03-9:48): "there will be
+     two things that you need to calculate ... for our purposes, we're gonna
+     practice this", "You may use calculator[s]" (Notability adds "I'll allow
+     it"), "So we had to do two calculations, and then we have to interpret." ALLOW_CALC stays True.
 
 Selection is swap-based local search, as on the CMS and PDM L5 builds: it
 spreads topics across both sets and holds the length-gameable share down. The

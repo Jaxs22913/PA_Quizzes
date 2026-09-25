@@ -23,6 +23,7 @@ topics = [
    ["Reference ranges are GIVEN", "“I'm not going to just throw a random number at you” — a troponin, triglyceride or C-reactive protein in a stem comes with the limit that reads it. Learn what a value MEANS."],
    ["Name the rhythm", "Electrocardiography is the one place where naming the finding is fair game. Lecture 7 is the toolkit: paper, leads, rate, intervals."],
    ["Next-best-test", "“What would be the next test that you would order?” Know what each imaging study can and cannot show, and what to do when one is equivocal."],
+   ["★ Two calculations ARE examinable", "Friedewald LDL-C and non-HDL-C, worked in class on the Lecture 9 practice slide: “two calculations, and then we have to interpret.” The newer LDL equations are calculator-only."],
    ["Not examined (said out loud)", "Ion-channel subtypes (but which ion moves in each phase IS). Bazett's formula (“I will never ask you about the formula”). The bifascicular-block aside. The order of the exercise-endpoint chart and the treadmill protocol tables."],
  ]},
  # ---------------- Lecture 7 ----------------
@@ -100,6 +101,7 @@ topics = [
  ]},
  # ---------------- Lecture 9 ----------------
  {"id": "biomarkers", "label": "The Four Cardiac Biomarkers", "color": "#a1363a", "rows": [
+   ["★ One word each", "CRP = INFLAMMATION · BNP = STRETCH, so volume · troponin = INJURY (“troponin is your friend”). “If you have troponin, don't even waste your time ordering a CK.”"],
    ["The frame", "Biomarkers: “is there ACUTE cardiac injury or stress?” Lipids: “what is the LONG-TERM atherosclerotic risk?”"],
    ["Troponin", "Myocyte INJURY. Marker of choice. Infarction = above the 99th PERCENTILE upper reference limit + ischemic symptoms. Sex-specific limits."],
    ["Troponin subunits", "I = CARDIAC SPECIFIC. T = mostly cardiac, trace skeletal. C = NOT useful."],
@@ -110,6 +112,7 @@ topics = [
    ["hs-CRP (high-sensitivity C-reactive protein)", "Inflammation; a RISK ENHANCER, never an acute test. Non-specific. Highest in bacterial infection. Lowered by statins, NSAIDs (nonsteroidal anti-inflammatory drugs), GLP-1 (glucagon-like peptide-1) agonists, lifestyle. In the Reynolds Risk Score."],
  ]},
  {"id": "order-biomarkers", "label": "When to Order Which", "color": "#7a2a2e", "rows": [
+   ["★ Acute chest pain, in full", "Troponin + EKG as soon as possible, plus a metabolic panel for KIDNEY FUNCTION (to read the troponin, for cath-lab contrast, for diabetes and hypertension). hs-CRP is “an office visit type lab”, never the chest-pain answer."],
    ["Chest pain", "SERIAL HIGH-SENSITIVITY TROPONIN, first-line; first value is also prognostic."],
    ["Dyspnea / heart failure", "BNP (B-type natriuretic peptide) or NT-proBNP (N-terminal pro B-type natriuretic peptide); also prognostic after acute coronary syndrome."],
    ["Muscle pain on a statin", "CREATINE KINASE, not troponin."],
@@ -126,6 +129,8 @@ topics = [
    ["Lipoprotein(a)", "LDL-like + apo(a) on apoB-100. Over 90% GENETIC, stable, NO FASTING, measure ONCE in all adults; repeat after menopause if borderline; CASCADE test families. STATINS DO NOT LOWER IT. About 20% of people elevated."],
  ]},
  {"id": "lipid-panel", "label": "Ordering & Reading a Lipid Panel", "color": "#8a5a24", "rows": [
+   ["★ LDL-C goal, both ends", "No single normal, so know the ends: average risk UNDER 100 · highest risk UNDER 55 (middle tier under 70). “LDL is the big one.” Golf, not bowling."],
+   ["★ Well patient + family history", "SCREENING, not diagnostic (the slide's asterisk): fasting lipid panel, A1C, lipoprotein(a) if never measured."],
    ["Measured", "Total cholesterol, HDL-C (high-density lipoprotein cholesterol), triglycerides."],
    ["Calculated", "LDL-C (low-density lipoprotein cholesterol) — an ESTIMATE — and non-HDL-C = total cholesterol − HDL-C."],
    ["Friedewald", "LDL-C = total − HDL-C − triglycerides ÷ 5. INVALID when triglycerides are 400 mg/dL or above; Martin/Hopkins or Sampson/NIH (National Institutes of Health) preferred."],
@@ -152,7 +157,7 @@ html = render(
     sub="Lectures 7, 8 and 9. Electrocardiography — the action potential, the conduction system, paper, leads, rate and the normal intervals. Cardiac imaging — the chest radiograph, echocardiography, stress testing, nuclear, computed tomography, magnetic resonance, angiography and vascular ultrasound. Cardiac biomarkers and lipid testing. Opens with how the exam is written.",
     topics=topics,
     guide_href="pdm-exam-2-study-guide.html",
-    footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 2 Study Guide (Class of 2028). Covers Lectures 7–9; Lecture 10 (Coagulation and Hemostasis Testing) is added when its deck is posted. Emphasis rows quote the 15 and 17 September 2026 recordings; the Lecture 9 rows are from the slides alone.",
+    footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 2 Study Guide (Class of 2028). Covers Lectures 7–9; Lecture 10 (Coagulation and Hemostasis Testing) is added when its deck is posted. Emphasis rows quote the 15, 17 and 21 September 2026 recordings; ★ = emphasized in the Lecture 9 recording.",
 )
 assert not re.search(r"(?i)ha[e]m|o[e]dem|tumo[u]r|colo[u]r|cent[r]e|ana[e]m|o[e]soph", html)
 open(OUT, "w", encoding="utf-8").write(html)
