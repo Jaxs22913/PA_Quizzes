@@ -1,3 +1,25 @@
+/* One prompt at a time (design review item 3, 2026-09-25). A first-time
+   visitor used to get the sign-in modal AND the install banner together on the
+   homepage, and the tour modal AND a controller toast together on their first
+   quiz. Two rules now:
+     - the two "asks" (install the app, sign in) never share a visit: whichever
+       claims the visit first wins, the other waits for a later visit;
+     - nothing opens while another prompt is already on screen.
+   sessionStorage is the "visit". home.js runs before this file, but only calls
+   in from timers that fire after it has loaded, and it guards on the global. */
+window.SitePrompts = {
+  claim: function (name) {
+    var c = null;
+    try { c = sessionStorage.getItem("sitePromptThisVisit"); } catch (e) {}
+    if (c && c !== name) return false;
+    try { sessionStorage.setItem("sitePromptThisVisit", name); } catch (e) {}
+    return true;
+  },
+  anyOpen: function () {
+    return !!document.querySelector(".tour-overlay.open, .tour-spotlight, .install-banner.show");
+  }
+};
+
 (function () {
   function el(tag, cls, html) {
     var e = document.createElement(tag);
@@ -21,6 +43,9 @@
 
   function start(steps, storageKey) {
     if (active || localStorage.getItem(storageKey)) return;
+    // Another prompt is already up: leave the tour unseen so it offers itself
+    // on the next load instead of stacking on top.
+    if (window.SitePrompts.anyOpen()) return;
     var validSteps = validate(steps);
     if (!validSteps.length) return;
     active = true;
@@ -369,6 +394,8 @@
       if (getComputedStyle(results).display !== "none") {
         announcedResults.add(results);
         celebrateScore(results);
+        // cloud-sync.js offers sign-in here, on the first finished quiz.
+        try { window.dispatchEvent(new CustomEvent("quizResultsShown")); } catch (err) {}
       }
     });
     resultsObserver.observe(document.body, { attributes: true, attributeFilter: ["class", "style"], subtree: true });
@@ -1451,20 +1478,10 @@
       shortcutsBtn.addEventListener("click", shortcutsHelp.open);
       group.insertBefore(shortcutsBtn, refreshBtn);
 
-      // One-time, site-wide (not per-quiz) heads-up that gamepads work here
-      // at all -- the shortcuts panel above has the actual button mapping,
-      // but that's opt-in (press ?) and easy to never discover on your own.
-      // Shown once ever via localStorage, not once per quiz, so it doesn't
-      // nag across 35+ quiz pages; delayed so it doesn't collide with the
-      // sign-in/install prompts that can also show on first load.
-      if (!localStorage.getItem("gamepadHintShown")) {
-        localStorage.setItem("gamepadHintShown", "1");
-        setTimeout(function () {
-          if (window.showToast) {
-            window.showToast("🎮 Controller supported on this quiz — A/B/X/Y to answer, RB/LB to move on/back. Press ? for full controls.", 5500);
-          }
-        }, 1400);
-      }
+      // The one-time "controller supported" toast used to fire on every
+      // first quiz load, phones included, on top of the tour prompt. It now
+      // waits for a controller to actually connect (the gamepadconnected
+      // handler further down gives the full mapping the first time).
 
       initHaptics();
       initSoundEffects();
@@ -3242,7 +3259,13 @@ window.openPauseOverlay = function (opts) {
 
   window.addEventListener("gamepadconnected", function (e) {
     prevPressed[e.gamepad.index] = {};
-    if (window.showToast) window.showToast("Controller connected 🎮 A/B/X/Y answers, RB/RT next, LB/LT back");
+    var firstPad = !localStorage.getItem("gamepadHintShown");
+    try { localStorage.setItem("gamepadHintShown", "1"); } catch (err) {}
+    if (window.showToast) {
+      window.showToast(firstPad
+        ? "Controller connected 🎮 A/B/X/Y to answer, RB/LB to move on/back. Press ? for full controls."
+        : "Controller connected 🎮 A/B/X/Y answers, RB/RT next, LB/LT back", firstPad ? 5500 : undefined);
+    }
     if (!polling) { polling = true; requestAnimationFrame(pollGamepads); }
   });
   window.addEventListener("gamepaddisconnected", function (e) {

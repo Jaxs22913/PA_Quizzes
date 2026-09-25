@@ -1259,8 +1259,13 @@ function showToast(message, duration) {
         localStorage.setItem("installBannerDismissed", "1");
         hideBanner();
       }
+      // First visit belongs to the homepage tour; the install ask waits for a
+      // later visit, and never shares a visit with the sign-in ask.
+      const tourPendingAtLoad = !localStorage.getItem("tourSeen:home");
       function maybeShowBanner(platform) {
         if (isStandalone() || localStorage.getItem("installBannerDismissed") || banner) return;
+        if (tourPendingAtLoad) return;
+        if (window.SitePrompts && (window.SitePrompts.anyOpen() || !window.SitePrompts.claim("install"))) return;
         banner = document.createElement("div");
         banner.className = "install-banner";
         banner.innerHTML = platform === "ios"

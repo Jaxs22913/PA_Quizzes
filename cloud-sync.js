@@ -315,50 +315,58 @@
   // shell for visual consistency with the site's other one-time prompts.
   var PROMPT_SEEN_KEY = "cloudSyncPromptSeen";
 
-  // Never surface this on a quiz page. The prompt fires on a timer after
-  // load, so gating on "is a question on screen right now" isn't enough --
-  // it would fire while the reader is still on the start screen and then
-  // sit there covering question 1 the moment they begin. A page carrying a
-  // quiz is a page where they came to work; the homepage, guides and arcade
-  // all still show it.
-  function onQuizPage() {
-    return !!document.getElementById("quiz");
+  // RE-TIMED 2026-09-25 (design review item 3, approved by Jaxon). It used to
+  // fire 1.2s after a first homepage load, on top of the install banner,
+  // before the visitor had got anything out of the site. It now waits for the
+  // results screen of their first finished quiz -- the moment keeping a score
+  // is obviously worth something -- and follows the one-ask-per-visit rule in
+  // theme.js (SitePrompts): if the install banner already had this visit, it
+  // waits for a later quiz. Never fires on page load, so the old "suppress on
+  // any page with #quiz" rule has nothing left to guard; the results screen is
+  // a quiz page on purpose.
+  function showSignInPrompt() {
+    if (localStorage.getItem(PROMPT_SEEN_KEY)) return;
+    if (currentUser) { localStorage.setItem(PROMPT_SEEN_KEY, "1"); return; }
+    if (window.SitePrompts && (window.SitePrompts.anyOpen() || !window.SitePrompts.claim("signin"))) return;
+    var overlay = el("div", "tour-overlay open");
+    var card = el("div", "tour-prompt");
+    card.appendChild(el("p", "tour-prompt-title", "Keep this score on all your devices"));
+    card.appendChild(el("p", "tour-prompt-text", "Sign in with Google to keep your quiz progress, highlights, and settings synced everywhere you use this site. Totally optional — everything already works fine without it."));
+    var actions = el("div", "tour-prompt-actions");
+    var laterBtn = el("button", "tour-btn", "Maybe later");
+    laterBtn.type = "button";
+    var goBtn = el("button", "tour-btn primary", GOOGLE_G + " Sign in with Google");
+    goBtn.type = "button";
+    goBtn.style.display = "inline-flex";
+    goBtn.style.alignItems = "center";
+    goBtn.style.gap = "8px";
+    actions.appendChild(laterBtn);
+    actions.appendChild(goBtn);
+    card.appendChild(actions);
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+
+    laterBtn.addEventListener("click", function () {
+      localStorage.setItem(PROMPT_SEEN_KEY, "1");
+      overlay.remove();
+    });
+    goBtn.addEventListener("click", function () {
+      localStorage.setItem(PROMPT_SEEN_KEY, "1");
+      overlay.remove();
+      window.cloudSignIn();
+    });
   }
 
   function maybeShowSignInPrompt() {
     if (localStorage.getItem(PROMPT_SEEN_KEY)) return;
     if (currentUser) { localStorage.setItem(PROMPT_SEEN_KEY, "1"); return; }
-    setTimeout(function () {
-      if (currentUser) return; // signed in via some other path while we waited
-      if (onQuizPage()) return;
-      var overlay = el("div", "tour-overlay open");
-      var card = el("div", "tour-prompt");
-      card.appendChild(el("p", "tour-prompt-title", "Save your progress across devices"));
-      card.appendChild(el("p", "tour-prompt-text", "Sign in with Google to keep your quiz progress, highlights, and settings synced everywhere you use this site. Totally optional — everything already works fine without it."));
-      var actions = el("div", "tour-prompt-actions");
-      var laterBtn = el("button", "tour-btn", "Maybe later");
-      laterBtn.type = "button";
-      var goBtn = el("button", "tour-btn primary", GOOGLE_G + " Sign in with Google");
-      goBtn.type = "button";
-      goBtn.style.display = "inline-flex";
-      goBtn.style.alignItems = "center";
-      goBtn.style.gap = "8px";
-      actions.appendChild(laterBtn);
-      actions.appendChild(goBtn);
-      card.appendChild(actions);
-      overlay.appendChild(card);
-      document.body.appendChild(overlay);
-
-      laterBtn.addEventListener("click", function () {
-        localStorage.setItem(PROMPT_SEEN_KEY, "1");
-        overlay.remove();
-      });
-      goBtn.addEventListener("click", function () {
-        localStorage.setItem(PROMPT_SEEN_KEY, "1");
-        overlay.remove();
-        window.cloudSignIn();
-      });
-    }, 1200); // let the page-load tour prompt (if any) claim the screen first
+    window.addEventListener("quizResultsShown", function () {
+      // let the score, confetti and chime land first
+      setTimeout(function () {
+        if (currentUser) return; // signed in via some other path while we waited
+        showSignInPrompt();
+      }, 1800);
+    }, { once: true });
   }
 
   function boot() {
