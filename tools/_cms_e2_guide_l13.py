@@ -141,10 +141,10 @@ SECTION = """
     <tr><th>Myopia &mdash; nearsighted</th><td><strong>&ldquo;Long eyeball&rdquo;</strong>,
       generally an over-protruding cornea. Too much refractive power, so distant objects focus
       <strong>in front of</strong> the retina. Corrected with a <strong>concave, negative
-      dioptre</strong> lens that scatters light and moves focus back.</td></tr>
+      diopter</strong> lens that scatters light and moves focus back.</td></tr>
     <tr><th>Hyperopia &mdash; farsighted</th><td><strong>&ldquo;Short eyeball&rdquo;</strong>,
       generally a flat cornea. Too little power, so objects focus <strong>behind</strong> the
-      retina. Corrected with a <strong>convex, positive dioptre</strong> lens that converges
+      retina. Corrected with a <strong>convex, positive diopter</strong> lens that converges
       light forward. Risk factors are anything shortening axial length &mdash; trauma pushing
       the lens back, or a mass behind the globe.</td></tr>
     <tr><th>Astigmatism</th><td><strong>Uneven curvature</strong> of cornea or lens, so no

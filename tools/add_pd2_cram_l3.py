@@ -82,7 +82,7 @@ TOPICS = [
    ("ZYGOMATIC FRACTURE", "FLATTENING OF THE MALAR EMINENCE, best seen from BEHIND the seated patient looking down. PAIN ON OPENING THE MOUTH because TEMPORALIS passes MEDIAL to the arch and inserts on the MANDIBLE."),
    ("HYPHAEMA", "Blood in the ANTERIOR CHAMBER from blunt trauma. Check ACUITY · PUPILS (crescent-like iris defect if torn) · RED REFLEX · INTRAOCULAR PRESSURE · SLIT LAMP."),
    ("CORNEAL ABRASION", "EVERT THE UPPER LID — a foreign body in the upper tarsal conjunctiva scratches with every blink. A HAZY CORNEA SUGGESTS BACTERIAL INFECTION. TOPICAL ANESTHETIC IS FOR DIAGNOSIS, NOT TREATMENT."),
-   ("CORNEAL ULCER", "HERPES SIMPLEX ULCERS ARE NOT VERY PAINFUL. Ophthalmoscope at +40 DIOPTRES may reveal it, but FLUORESCEIN IS MORE SENSITIVE for early ulcers. Fluorescein is taken up by cornea DEVOID OF EPITHELIUM."),
+   ("CORNEAL ULCER", "HERPES SIMPLEX ULCERS ARE NOT VERY PAINFUL. Ophthalmoscope at +40 DIOPTERS may reveal it, but FLUORESCEIN IS MORE SENSITIVE for early ulcers. Fluorescein is taken up by cornea DEVOID OF EPITHELIUM."),
  ]),
 ]
 

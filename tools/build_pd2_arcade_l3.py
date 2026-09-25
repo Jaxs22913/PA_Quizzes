@@ -117,7 +117,7 @@ DECK = dict(
   ["What is the rule about topical anesthetic in corneal abrasion?", "It gives immediate relief, but it is for diagnosis and not as a treatment."],
   ["How does fluorescein reveal a corneal defect?", "The dye is taken up by areas of cornea devoid of epithelium, seen under blue light."],
   ["Which corneal ulcer is NOT very painful?", "Herpes simplex."],
-  ["At what setting can an ophthalmoscope show a corneal ulcer, and what is more sensitive?", "+40 dioptres — but staining with fluorescein is more sensitive for early ulcers."],
+  ["At what setting can an ophthalmoscope show a corneal ulcer, and what is more sensitive?", "+40 diopters — but staining with fluorescein is more sensitive for early ulcers."],
   ["Which complaints are EMERGENT?", "Sudden vision loss, retinal artery occlusion, chemical burns, rupture, acute angle-closure glaucoma, and vitreous hemorrhage."],
   ["Which complaints are URGENT — a day or less?", "Acute glaucoma, orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular edema or hemorrhage, and hyphema."],
     ],

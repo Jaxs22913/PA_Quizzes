@@ -99,7 +99,7 @@ EXPLICIT = {
     "somatotrophin": "somatotropin", "adrenocorticotrophic": "adrenocorticotropic",
     "corticotrophic": "corticotropic", "gonadotrophic": "gonadotropic",
     "thyrotrophic": "thyrotropic",
-    "fibreoptic": "fiberoptic", "fibreglass": "fiberglass",
+    "fibreoptic": "fiberoptic", "dioptre": "diopter", "dioptres": "diopters", "fibreglass": "fiberglass",
     "draught": "draft", "cosy": "cozy", "storey": "story", "tyre": "tire",
     "tyres": "tires", "cheque": "check", "sceptical": "skeptical",
     "sceptic": "skeptic", "plough": "plow", "moustache": "mustache",
