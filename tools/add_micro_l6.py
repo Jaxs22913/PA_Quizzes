@@ -174,7 +174,7 @@ CARDS = [
   ["Which MHC class do cytotoxic T cells read?", "Class I."],
   ["Which MHC class is on macrophages, APCs and B cells?", "Class II."],
   ["What is required for an APC to activate a T helper cell?", "A class II MHC receptor."],
-  ["What does an activated T helper cell produce?", "Interleukin 2 — and it is described as the boss of the immune system."],
+  ["What does an activated T helper cell produce?", "Interleukin 2 — called the boss of the immune system."],
   ["How many genes do lymphocytes use to build their receptors?", "More than 500."],
   ["What happens to lymphocyte clones specific for self?", "They are eliminated before the fetus is harmed. A defect gives severe combined immunodeficiency."],
   ["How large is the naive lymphocyte pool?", "Ten to the fourteenth up to ten to the eighteenth variations — up to a quintillion."],

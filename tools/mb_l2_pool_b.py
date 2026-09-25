@@ -164,7 +164,7 @@ POOL_B = [
    c=3, cite=c(32)),
 
  dict(topic="Nucleic acid synthesis", io=IO6,
-   q="Quinolones and fluoroquinolones act by which mechanism, and what are they used for?",
+   q="Which description of quinolones and fluoroquinolones is correct?",
    opts=[
      ["Inhibiting DNA gyrase, preventing DNA from unwinding; used for urinary tract infections and hospital acquired infections",
       "Correct. Nalidixic acid is first generation; ciprofloxacin, levofloxacin and moxifloxacin are later generations. They are artificially produced."],

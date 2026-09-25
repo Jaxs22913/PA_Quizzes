@@ -282,7 +282,7 @@ BODY = '''<main>
 
 TEST_YOURSELF = '''  var TEST_YOURSELF = {
     generalMicro: [
-      {q:"Which step of the Gram stain does the lecture call the most critical?",
+      {q:"Which step of the Gram stain is the most critical?",
        choices:["Crystal violet","Gram's iodine","Decolorization with acetone alcohol","Safranin counterstain"],correct:2,
        explain:"Decolorization takes about ten seconds and is the step most affected by technical variation in timing and reagents. Over-decolorize and a Gram-positive reads as negative."},
       {q:"Which portion of lipopolysaccharide carries endotoxin activity?",

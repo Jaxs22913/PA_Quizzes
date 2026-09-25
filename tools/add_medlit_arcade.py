@@ -277,7 +277,7 @@ DECKS = [
   ("Which value extremes are desirable?", "The lower end of systolic pressure; the higher end of high-density lipoprotein."),
   ("Does a normal test rule out disease?", "No."),
   ("Why repeat an abnormal test?", "Regression to the mean."),
-  ("What is said of normal/abnormal cutoffs?", "They are often arbitrary &mdash; be careful of labelling."),
+  ("What caution applies to normal/abnormal cutoffs?", "They are often arbitrary &mdash; be careful of labelling."),
  ]),
 
  ("medlit-tests", "Diagnostic Tests", "accent1", GRID_ICON, [

@@ -144,7 +144,7 @@ POOL_C = [
      ["Combining two antibiotics that act antagonistically",
       "Drug antagonism is discussed under combinations, not in the quotation."],
      ["Self-medication with too small doses, so that instead of clearing infection the microbes are “educated” to resist penicillin and penicillin-fast organisms are bred out and passed on",
-      "Correct. He describes the chain ending in someone who develops a septicaemia or pneumonia that penicillin cannot save."],
+      "Correct. Fleming warned that too-small doses breed penicillin-fast organisms that pass from person to person until they reach someone with a septicemia or pneumonia penicillin cannot save."],
      ["Prescribing penicillin for viral illness",
       "Inappropriate use for viruses appears in the modern list rather than in Fleming's quotation."]],
    c=2, cite=c(65)),
@@ -254,7 +254,7 @@ POOL_C = [
    c=2, cite=c(60)),
 
  dict(topic="Hypersensitivity", io=IO8,
-   q="Hypersensitivity reactions are most often seen with which drugs, and what range do they cover?",
+   q="Which description of antibiotic hypersensitivity reactions is correct?",
    opts=[
      ["Aminoglycosides; ranging from tinnitus to deafness",
       "Aminoglycoside auditory effects are direct toxicity rather than hypersensitivity."],

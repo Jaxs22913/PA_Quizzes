@@ -1412,11 +1412,16 @@ def build():
     footer_el = donor[foot_start:foot_end]
     tail = donor[donor.index("</main>"):]
 
-    # The donor ships an unformatted placeholder in that footer; say what this
-    # page was actually built from instead.
-    footer_el = footer_el.replace(
-        "Built from your %s lecture decks",
-        "Built from Professor Webster&rsquo;s Exam 1 review and her three lecture decks")
+    # The donor's footer says it was built from the lecture decks; say what this
+    # page was actually built from instead. The donor carried an unformatted
+    # "%s" placeholder when this page was first built and was later repaired to
+    # read "PAJ 5200", so both spellings are replaced -- matching only the old
+    # one silently changed the shipped footer on a rebuild (found 2026-09-24).
+    for _donor_footer in ("Built from your %s lecture decks",
+                          "Built from your PAJ 5200 lecture decks"):
+        footer_el = footer_el.replace(
+            _donor_footer,
+            "Built from Professor Webster&rsquo;s Exam 1 review and her three lecture decks")
     footer = footer_el + "\n" + tail
 
     header = (

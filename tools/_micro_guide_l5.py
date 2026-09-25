@@ -497,7 +497,7 @@ TEST = """    hostdefenses: [
       {q:"Does interferon kill viruses?",
        o:["No — it stops spread to surrounding tissue","Yes, by lysing the envelope",
           "Yes, by digesting viral nucleic acid","Only alpha interferon does"],a:0,
-       why:"The deck says so outright. It protects the neighbours rather than clearing the infection."},
+       why:"Interferon does not kill viruses: it binds cell surfaces and induces antiviral proteins, which simply stops spread to surrounding tissue."},
       {q:"Which leukocyte is 55 to 90 per cent of the white count, and which is 0.5 per cent?",
        o:["Neutrophils 55–90; basophils 0.5","Lymphocytes 55–90; eosinophils 0.5",
           "Neutrophils 55–90; eosinophils 0.5","Monocytes 55–90; basophils 0.5"],a:0,

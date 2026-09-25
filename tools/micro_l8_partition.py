@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Split and guard the Microbiology Lecture 8 pool into 2 x 30.
 
-Diagnosing Infections (Dr. Webster). 62 questions.
+Diagnosing Infections (Dr. Fair, per the calendar row for 2026-09-18; the deck
+names no lecturer, and its PAJ5200.* filename is the pattern of Dr. Fair's decks.
+An earlier version of this line named the other Micro lecturer). 62 questions.
 
 OBJECTIVE COVERAGE IS NOT MEANINGFUL FOR THIS LECTURE, unlike Lectures 5 and 7.
 The deck's instructional objective slide reproduces the COURSE-wide list --
