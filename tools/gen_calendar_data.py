@@ -3,6 +3,16 @@
 import json, re, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from parse_calendar import parse
+import parse_calendar_export
+
+# The newest source wins. On 2026-09-25 Jaxon exported the live Outlook "Class of
+# 2028 Academic Calendar" (Professor Shah's shared calendar) to a table PDF; it
+# covers the week of Sep 21 onward and supersedes the monthly print-outs for
+# those dates (it moved 13 events and named the real lecturers, e.g. Carter).
+# Everything BEFORE EXPORT_FROM still comes from the monthly PDFs.
+EXPORT_PDF = os.path.expanduser(
+    "~/Desktop/PA Quizzes/Calendars/Fall Semester - 2026/Outlook export 2026-09-25.pdf")
+EXPORT_FROM = "2026-09-21"
 
 OUT = "/Users/jaxonluke/Developer/PA_Quizzes/calendar-data.js"
 
@@ -68,6 +78,31 @@ MOVED = {
 }
 
 
+# Titles the printed calendar got wrong, fixed by what was actually taught.
+# (date, title_substring) -> replacement title. Loud if one stops matching.
+RETITLE = {
+    ("2026-09-17", "LECTURE #20 - Hypotension"): (
+        "CMS I - LECTURE #20 - Hypertension - Dr. Jaquith",
+        "the 9/17 recording is the '20. Hypertension- Jaquith' deck; the 09-25 Outlook "
+        "export has Hypotension as #21 (Carter, 9/23)"),
+}
+
+
+def apply_retitles(out):
+    unused = set(RETITLE)
+    for e in out:
+        for key in list(unused):
+            d, frag = key
+            if e["date"] == d and frag.lower() in e["title"].lower():
+                new, why = RETITLE[key]
+                print("  retitled: %s  %r -> %r  (%s)" % (d, e["title"], new, why))
+                e["title"] = new
+                unused.discard(key)
+    for d, frag in unused:
+        print("  NOTE: no event matched the RETITLE %r on %s; delete it if the source now carries the fix." % (frag, d))
+    return out
+
+
 # Courses the school pulled from a term after printing the calendar. The PDFs
 # still carry every lecture, so without this a regeneration would put the whole
 # course back -- the same failure mode MOVED exists to prevent, one course wide
@@ -123,7 +158,14 @@ def apply_moves(out):
 
 
 def main():
-    evs = parse()
+    evs = [e for e in parse() if e["date"] < EXPORT_FROM]
+    seen = set()
+    for e in parse_calendar_export.parse(EXPORT_PDF):
+        k = (e["date"], e["title"])   # the export lists both halves of a lunch-split session
+        if k in seen:
+            continue
+        seen.add(k)
+        evs.append(e)
     out = []
 
     for d, t, c, ty in SUMMER_TAIL:
@@ -162,6 +204,7 @@ def main():
         return h * 60 + int(m.group(2))
 
     out = apply_moves(out)
+    out = apply_retitles(out)
     out = apply_drops(out)
     out.sort(key=lambda x: (x["date"], minutes(x["start"]), x["title"]))
 
