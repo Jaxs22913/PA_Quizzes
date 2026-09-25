@@ -60,6 +60,14 @@ def fix(text):
 
 def main():
     apply = "--apply" in sys.argv
+    # RETIRED 2026-09-24. The last rule rewrites "the deck" to "the material",
+    # which is the same dependency relabelled -- [[self_contained_questions]]
+    # forbids it, and it left "the material notes/asks/warns" strings in the
+    # PD2 master forms. Attributions are deleted and hand-rewritten, never
+    # substituted by rule.
+    if apply and "--i-know-it-relabels" not in sys.argv:
+        sys.exit("REFUSING --apply: rule-based decitation relabels instead of deleting. "
+                 "Hand-write each rewrite.")
     total = 0
     for f in sorted(glob.glob(os.path.join(HERE, "pd2_l*_pool_*.py"))):
         src = io.open(f, encoding="utf-8").read()

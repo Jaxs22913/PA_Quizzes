@@ -47,6 +47,18 @@ _MECH = _re.compile(r"percent of the (course|grade)|sequester|file nam|late assi
                     r"how long does .* run|what may a student bring", _re.I)
 assert not [q for q in POOL if _MECH.search(q["q"])], "course-mechanics question in the pool"
 
+# Site explanation rule (Jaxon 2026-09-22, supersedes PD2's old "names the
+# distractor" allowance): every explanation refutes or confirms AND states the
+# replacing fact from the deck, at least 60 characters.
+_THIN = [(i, j) for i, q in enumerate(POOL) for j, o in enumerate(q["opts"]) if len(o[1].strip()) < 60]
+assert not _THIN, "explanation under 60 characters at (pool index, option) %r" % _THIN[:8]
+
+# Sign names the derm deck never uses (check_deck_vocabulary.py caught these as
+# distractors on 2026-09-22); distractors must come from the deck's own terms.
+_OFFDECK = _re.compile(r"nikolsky|auspitz", _re.I)
+assert not [q for q in POOL if any(_OFFDECK.search(t) for o in q["opts"] for t in o)], \
+    "a term the dermatology deck never uses (Nikolsky / Auspitz) is back in the pool"
+
 random.seed(20260818)
 
 MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
@@ -141,7 +153,18 @@ if __name__ == "__main__":
         print("   topics: %d of %d  %s" % (len(tops), len(ALL_TOPICS), dict(tops)))
         print()
 
+    # The shipped pages AND the master forms pair to these sets by stem, so a
+    # re-run must reproduce the committed selection (it does as of 2026-09-24:
+    # explanation-only pool edits leave the seeded search untouched). Refuse to
+    # overwrite if the selection would change; --force re-selects deliberately.
+    out_path = os.path.join(HERE, "pd2_l2_sets.json")
+    if os.path.exists(out_path) and "--force" not in sys.argv:
+        old = json.load(open(out_path, encoding="utf-8"))
+        for key, new in (("set1", s1), ("set2", s2)):
+            if [q["cite"] + q["opts"][q["c"]][0] for q in old[key]] != [q["cite"] + q["opts"][q["c"]][0] for q in new]:
+                sys.exit("REFUSING to overwrite pd2_l2_sets.json: %s would select different questions "
+                         "or keys than the shipped set; pass --force to re-select deliberately." % key)
     json.dump({"set1": s1, "set2": s2},
-              open(os.path.join(HERE, "pd2_l2_sets.json"), "w"),
+              open(out_path, "w"),
               ensure_ascii=False, indent=1)
     print("wrote pd2_l2_sets.json")

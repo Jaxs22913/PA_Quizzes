@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 """Length-bias fixes for the PD2 Lecture 3 pool.
 
-PAD, NEVER TRIM. A physical-diagnosis answer is usually a TECHNIQUE with its
+PAD, NEVER TRIM. (This table predates the site rule of 2026-08-30, SHORTEN THE
+ANSWER, NEVER PAD: any NEW length fix must shorten the key instead. Entries whose
+distractor was replaced on 2026-09-24 -- a second defensible answer, or a question
+rewritten to be self-contained -- were removed rather than re-padded.)
+Original note: A physical-diagnosis answer is usually a TECHNIQUE with its
 caveat attached ("look down, grasp the lashes, place the stick at least 1 cm
 above the margin") -- cutting it would delete the step that makes the technique
 work. The runner-up distractor is lengthened instead.
@@ -16,17 +20,13 @@ FIXES = {
  (7, 1):  "Rapid deterioration suggests cataract; gradual loss suggests a vascular cause",
  (10, 1): "Relief suggests a deep source, and no relief suggests a surface problem",
  (11, 2): "Fever, weight loss, night sweats and an associated rash",
- (14, 2): "Rheumatoid arthritis, systemic lupus erythematosus and psoriasis",
  (16, 1): "Usually the retina — vascular occlusion and retinal detachment",
  (17, 2): "Simple glaucoma or a slowly maturing cataract",
- (23, 1): "Temporal arteritis with jaw claudication",
  (27, 1): "Refractive error alone, without a neurological component",
- (29, 3): "Corneal abrasion and a retained foreign body",
  (32, 1): "Failing to measure the intraocular pressure in every patient",
- (35, 2): "Pressure is harmless once a topical anaesthetic has been instilled",
- (40, 2): "Measure the distance from the lateral orbital angle with a ruler",
+ (35, 2): "Pressure is harmless once a topical anesthetic has been instilled",
  (41, 1): "Cataract, glaucoma and age-related macular degeneration",
- (44, 2): "Thyroid eye disease, orbital cellulitis and orbital tumour",
+ (44, 2): "Thyroid eye disease, orbital cellulitis and orbital tumor",
  (45, 1): "Antibody blockade at the neuromuscular junction of the levator",
  (46, 1): "The hordeolum is chronic and painless; the chalazion is acute and painful",
  (47, 1): "On the lid margin, right at the base of the lashes",
@@ -34,27 +34,25 @@ FIXES = {
  (52, 2): "If the patient has previously had cataract surgery on that eye",
  (53, 1): "Ask the patient to look up and relax, then pull the upper lid directly upward",
  (57, 1): "Pain present with photophobia and a hazy, clouded cornea",
- (58, 1): "When the haemorrhage is small, flat and confined to one sector",
+ (58, 1): "When the hemorrhage is small, flat and confined to one sector",
  (59, 1): "Redness maximal around the cornea, sparing the periphery entirely",
  (60, 2): "Vision is normal but the pupil is fixed and mid-dilated",
  (62, 2): "Graves disease, myasthenia gravis and thyroid orbitopathy",
  (67, 1): "Uncomplicated bacterial conjunctivitis",
  (68, 1): "Dilation of the superficial conjunctival vessels, maximal at the periphery",
  (69, 2): "Bilateral involvement together with a tender preauricular node",
- (71, 1): "That it is optional background material and would not be tested",
  (73, 1): "At 200 feet the patient reads print that a normal eye reads at 20 feet",
- (74, 2): "The acuity recorded at the patient's last optometry visit",
  (75, 2): "A field defect from an acuity problem, by isolating each quadrant in turn",
  (76, 1): "Simple myopia, hyperopia or astigmatism",
  (77, 1): "The swinging light test together with the cover-uncover test",
  (78, 1): "Moving a red-topped pin inward from beyond the boundary of each quadrant",
  (79, 1): "Move a plain white target inward and ask when it is first seen at all",
- (80, 2): "At the centre of the visual field, and enlarged in macular degeneration",
+ (80, 2): "At the center of the visual field, and enlarged in macular degeneration",
  (82, 1): "Misalignment of the visual axes — a few degrees of deviation is normal",
  (83, 1): "Repeat the whole test with the other eye covered",
  (84, 1): "An afferent pupillary defect of the optic nerve",
  (85, 1): "The upper lid droops below the pupil at rest — most often myasthenia gravis",
- (86, 3): "It is benign only if both pupils measure under three millimetres",
+ (86, 3): "It is benign only if both pupils measure under three millimeters",
  (87, 3): "Equal pupils that both react briskly to light",
  (88, 1): "Itching or discharge — from an allergic conjunctivitis",
  (89, 1): "Alignment of the visual axes; indicated for diplopia or squint",
@@ -66,7 +64,7 @@ FIXES = {
  (98, 2): "Horner syndrome, myasthenia gravis and Graves disease",
  (99, 3): "A large slow pupil with reduced light reaction and a slow near reaction",
  (100, 1): "The parasympathetic supply travelling through the ciliary ganglion",
- (101, 1): "The involved iris is darker in colour than its fellow",
+ (101, 1): "The involved iris is darker in color than its fellow",
  (102, 1): "A small pupil that reacts briskly, with ptosis and anhidrosis",
  (103, 1): "Corneal clarity — a shadow means an epithelial defect is present",
  (104, 1): "The scar is visible only through the pupil; the cataract is superficial",
@@ -83,7 +81,6 @@ FIXES = {
  (117, 1): "To measure the intraocular pressure more accurately",
  (118, 1): "It should be prescribed for home use to control the pain",
  (120, 2): "The dye is injected intravenously and photographed with a blue flash",
- (122, 1): "Set at zero dioptres — and this is more sensitive than fluorescein",
+ (122, 1): "Set at zero diopters — and this is more sensitive than fluorescein",
  (124, 1): "Sudden vision loss, chemical burns and suspected globe rupture",
- (125, 1): "Because it happens to come last in the material",
 }

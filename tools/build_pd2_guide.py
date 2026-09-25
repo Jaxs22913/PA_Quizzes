@@ -515,7 +515,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"History of present illness, review of systems, past medical history, social history, family history, medications and allergies are all focused, alongside the examination. A focused encounter is a targeted selection, not a shorter version of everything."},
       {q:"You are examining a patient whose answers are being supplied by someone else. Where should your attention be?",
        choices:["On whoever is supplying the answers","On the documentation form","Divided evenly between the two","On the patient"],correct:3,
-       explain:"Stated emphatically: you should ALWAYS be looking at and interacting with your patient, not the person answering. The encounter is with the patient even when the words come from elsewhere."},
+       explain:"You should ALWAYS be looking at and interacting with your patient, not the person answering. The encounter is with the patient even when the words come from elsewhere."},
       {q:"Part of your examination was not performed. What must the note say?",
        choices:["Record the finding you would expect if it were normal","Document why it was not done","Leave the section blank","Copy the finding from a classmate who saw the same patient"],correct:1,
        explain:"You cannot make up history or physical examination findings. If you did not do something, document why — and a note may never be written with another student, even for the same patient."},
@@ -527,7 +527,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
       {q:"A lesion is a circumscribed, FLAT discoloration measuring 2 cm. What is it?",
        choices:["A plaque","A patch","A macule","A papule"],correct:1,
        explain:"Flat and over 1 cm is a patch — a large macule, or macules that have coalesced. Vitiligo and café au lait spots are the examples. A plaque is elevated; a macule is the same flat lesion under 1 cm."},
-      {q:"You press a glass slide against a purple lesion and the colour does NOT fade. What does this mean?",
+      {q:"You press a glass slide against a purple lesion and the color does NOT fade. What does this mean?",
        choices:["Vascular engorgement","Increased melanin pigmentation","Hemorrhage in the skin","An allergic reaction"],correct:2,
        explain:"Diascopy. Blood inside vessels can be pressed out, so engorgement blanches; blood outside the vessels cannot, so hemorrhage does not. This is why petechiae, purpura and ecchymosis all fail to blanch."},
       {q:"A bulla ruptures leaving a moist area that does not bleed. How is this described?",
@@ -565,8 +565,7 @@ head = re.sub(r"<header class=\"top\">.*?</header>",
   '<header class="top">\n'
   '  <h1>Physical Diagnosis 2 &middot; Exam 1 &mdash; Study Guide</h1>\n'
   '  <p>PAJ 5310 Physical Diagnosis II &middot; Class of 2028</p>\n'
-  '  <p>Covers Lectures 1 and 2 &middot; Ophthalmology and ENT sections are added as those decks are '
-  'posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n'
+  '  <p>Covers Lectures 1&ndash;4 &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n'
   '</header>', head, count=1, flags=re.S)
 
 # ---- figures -------------------------------------------------------------

@@ -137,10 +137,10 @@ html = render(
     title="Cram Sheet — Physical Diagnosis 2 Exam 1",
     kicker="Physical Diagnosis 2 Exam 1 · Class of 2028",
     h1="Physical Diagnosis 2 Exam 1 Cram Sheet",
-    sub="The encounter, the oral presentation and documentation; then the skin — structure, the descriptive vocabulary, abnormal findings of skin, hair and nails, and the examination itself.",
+    sub="The encounter, the oral presentation and documentation; the skin — structure, the descriptive vocabulary, abnormal findings of skin, hair and nails, and the examination itself; then the advanced ocular and ENT examinations.",
     topics=topics,
     guide_href="pd2-exam-1-study-guide.html",
-    footer_note="Condensed from the Physical Diagnosis 2 Exam 1 Study Guide (Class of 2028). Covers Lectures 1 and 2; Ophthalmology and ENT are added as those decks are posted. For the full explanation behind any of these, see the full guide.",
+    footer_note="Condensed from the Physical Diagnosis 2 Exam 1 Study Guide (Class of 2028). Covers Lectures 1 to 4: the encounter and documentation, dermatology, the advanced ocular examination and the advanced ENT examination. For the full explanation behind any of these, see the full guide.",
 )
 open(OUT, "w", encoding="utf-8").write(html)
 rows = sum(len(t["rows"]) for t in topics)

@@ -19,6 +19,23 @@ introduction, much of it course mechanics -- the syllabus changes, who the
 course directors are, how the labs run -- which the PD2 house rule excludes from
 questions. 18 authored questions is an honest reflection of what is examinable
 in it, so it contributes 3 per form while the other three contribute 19 each.
+
+DO NOT RE-RUN THIS TO "REFRESH" THE SHIPPED FORMS (guard added 2026-09-24).
+The shipped master-exams.json is no longer what this script draws:
+  - On 2026-09-22 Jaxon removed three Lecture 1 course-mechanics questions
+    (facilitator feedback, grading rubric, reusing your own work) WITHOUT
+    replacing them, so forms A, D and E hold 59 questions, B and C 60.
+  - pd2_l1_pool_a lost those items (18 -> 15), which shifts every later draw
+    from the seeded shuffle, so a re-run would pick different questions for
+    every form, not just the three.
+  - The stems, explanations and restored keys in master-exams.json were then
+    carried in item by item from the lecture pools (paired by stem), and the
+    pages are rendered from that file by render_pd2_masters.py.
+So main() now builds the forms in memory, compares the selection (form, order,
+stem, option texts, key) with the existing file, and REFUSES to overwrite it
+if anything would change. Pass --force only when a fresh draw is really
+intended (e.g. rebuilding the forms after the exam), and then re-check the
+course-mechanics exclusion, the 59/60 counts and the render.
 """
 import importlib, json, os, random, sys
 from collections import Counter
@@ -114,6 +131,15 @@ def main():
               % (name, len(f), pos[0], pos[1], pos[2], pos[3]))
 
     out = os.path.join(ROOT, FOLDER, "master-exams.json")
+    if os.path.exists(out) and "--force" not in sys.argv:
+        old = json.load(open(out, encoding="utf-8"))
+        sig = lambda f: [(q["q"], [o[0] for o in q["opts"]], q["c"]) for q in f]
+        changed = [n for n, f in zip(FORMS, forms) if sig(f) != sig(old.get(n, []))]
+        if changed:
+            sys.exit("REFUSING to overwrite %s: this draw differs from the shipped forms "
+                     "(%s). The shipped forms were edited after drawing (see the docstring). "
+                     "Re-run with --force only if a fresh draw is intended."
+                     % (os.path.relpath(out, ROOT), ", ".join(changed)))
     json.dump({n: f for n, f in zip(FORMS, forms)}, open(out, "w", encoding="utf-8"),
               ensure_ascii=False)
     print("\nwrote", os.path.relpath(out, ROOT))

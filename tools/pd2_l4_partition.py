@@ -80,17 +80,30 @@ assert len(_FORK) >= 12, ("the tuning fork and hearing loss block was called out
 _CENTOR = [q for q in POOL if q["topic"] == "Centor criteria"]
 assert len(_CENTOR) >= 2, "Centor needs at least one question per set"
 
-# ---- Guard 5: an explanation must name something, not just say "no" --------
-# A flat length bar was the wrong test. "That is vertigo." is sixteen characters
-# and teaches the discrimination completely; "Reversed." is nine and teaches
-# nothing. The defect is an explanation that NEGATES without naming what the
-# distractor actually is -- so that is what gets tested, the same way
-# check_leadin_present.py ended up testing for its defect rather than
-# enumerating the valid shapes.
-_BARE_NEG = re.compile(r"^(?:not\b|neither\b|it does not\b|reversed\.$|the opposite\b|"
-                       r"one of (?:several|four|five|the)\b|also \w+\.$|"
-                       r"(?:they|it) (?:are|is) explicitly\b|regional causes\.$|"
-                       r"a different finding\b|far below\b|explicitly to be\b)", re.I)
+# ---- Guard 5: every explanation refutes AND supplies the replacing fact ----
+# RETIRED 2026-09-24: the old Guard 5 failed an explanation only if it opened
+# with a bare negation AND ran under 52 characters, on the theory that "That is
+# vertigo." teaches the discrimination. By 2026-09-22 65% of PD2 Exam 1's
+# distractor explanations were under 60 characters. Jaxon decided 2026-09-22
+# that PD2 uses the site rule (memory: pd2_exam_spec, option_explanation_length):
+# every explanation, correct or wrong, is at least 60 characters, and a wrong
+# option's explanation refutes it AND states the fact that replaces it. Length
+# is the enforceable half; the refute-plus-fact half is authored by hand. Do not
+# reintroduce the "names the distractor" guard.
+MIN_EXPL = 60
+
+# ---- Guard 6: one ask per stem, and no source citations --------------------
+# 24 stems asked two things ("What is it, and does it matter?"), which forces a
+# compound key and let a 2026-09-13 mechanical key-shortening cut half the
+# answer away. A stem must ask exactly one thing.
+_TWO_ASK = re.compile(r",? and (?:what|why|which|how|who|where|does|in whom)\b|"
+                      r"— and what\b|\bwhat\b[^?]*\band what\b", re.I)
+_two = [q["q"][:70] for q in POOL if _TWO_ASK.search(q["q"])]
+assert not _two, "stem asks two things -- split or narrow it: %r" % _two[:3]
+from _selfcontain_rx import RX as _CITES
+_cit = [s[:70] for q in POOL for s in [q["q"]] + [x for o in q["opts"] for x in o]
+        if _CITES.search(s)]
+assert not _cit, "question cites its source (lecture/deck/lecturer): %r" % _cit[:3]
 
 SLOTS = ("etiology", "epidemiology", "risk factors", "manifestation", "differential",
          "initial test", "gold standard", "test finding", "first-line", "escalation",
@@ -151,8 +164,11 @@ def validate(pool):
         if len(set(o[0] for o in q["opts"])) != 4: bad.append((i, "duplicate option text"))
         for o in q["opts"]:
             if not o[1].strip(): bad.append((i, "option missing explanation"))
-            if _BARE_NEG.match(o[1].strip()) and len(o[1].strip()) < 52:
-                bad.append((i, "explanation only NEGATES: %r" % o[1][:44]))
+            if len(o[1].strip()) < MIN_EXPL:
+                bad.append((i, "explanation under %d characters: %r" % (MIN_EXPL, o[1][:44])))
+        for j, o in enumerate(q["opts"]):
+            if (j == q["c"]) != o[1].startswith("Correct"):
+                bad.append((i, "only the key's explanation may open with 'Correct': option %d" % j))
     return bad
 
 
@@ -217,6 +233,24 @@ if __name__ == "__main__":
                  sum(1 for q in s if q["topic"] in FORK_TOPICS),
                  sum(1 for q in s if q["topic"] == "Centor criteria")))
 
-    with open(os.path.join(HERE, "pd2_l4_sets.json"), "w", encoding="utf-8") as fh:
+    # ---- Selection guard (2026-09-24) -------------------------------------
+    # The shipped topic pages are rendered from pd2_l4_sets.json, and the PD2
+    # master forms were paired against them. A text-only pool edit reproduces
+    # the committed selection exactly (the search is seeded and its random
+    # stream does not depend on text), but an edit that flips a question's
+    # length-gameable status changes the score and so the selection. Refuse to
+    # overwrite a sets file whose selection (topic, slot, cite, key position,
+    # per question, in order) would change, unless --force is given on purpose.
+    _out = os.path.join(HERE, "pd2_l4_sets.json")
+    def _sig(sets):
+        return [(q["topic"], q["slot"], q["cite"], q["c"]) for k in ("set1", "set2") for q in sets[k]]
+    if os.path.exists(_out) and "--force" not in sys.argv:
+        _old = json.load(open(_out, encoding="utf-8"))
+        _chg = sum(a != b for a, b in zip(_sig(_old), _sig({"set1": s1, "set2": s2})))
+        assert _chg == 0, ("%d of 60 selected questions would change; the shipped pages and "
+                           "master pairing assume the committed selection. Re-run with --force "
+                           "only if a new selection is intended." % _chg)
+        print("selection guard: identical selection to the committed sets file")
+    with open(_out, "w", encoding="utf-8") as fh:
         json.dump({"set1": s1, "set2": s2}, fh, ensure_ascii=False, indent=1)
     print("\nwrote pd2_l4_sets.json")

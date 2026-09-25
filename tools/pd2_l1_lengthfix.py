@@ -6,11 +6,11 @@ the candidate set by construction. Every replacement stays unambiguously false.
 FIXES = {
  6:  (3, "None — a focused encounter narrows the physical examination but never narrows the history at all"),
  7:  (1, "A diagnosis and a prescription, with the reasoning behind them left implicit rather than stated aloud"),
- 13: (1, "Earlier work may contain clinical guidance that has since changed and would now be inaccurate"),
- 14: (3, "Keep communication strictly to the presenting clinical question and nothing further"),
- 15: (2, "Ask the course team for a single standardised rubric so that any disagreement between facilitators is settled"),
- 16: (1, "A classmate's completed version of the very same assignment for comparison"),
- 17: (1, "The physical examination is narrowed while the history is still taken in full"),
+ # 2026-09-22: the three course-mechanics questions (old 13, 15, 16) were
+ # removed from the pool, so their fixes went with them and old 14 -> 13,
+ # old 17 -> 14.
+ 13: (3, "Keep communication strictly to the presenting clinical question and nothing further"),
+ 14: (1, "The physical examination is narrowed while the history is still taken in full"),
 }
 
 if __name__ == "__main__":

@@ -8,19 +8,19 @@
    "opts": [
     [
      "Conjunctivitis",
-     "That is paired with grittiness."
+     "Conjunctivitis pairs eye pain with a gritty feeling; eye pain with headache suggests acute narrow angle glaucoma."
     ],
     [
      "Acute narrow angle glaucoma",
-     "Correct — the pairing for headache plus eye pain."
+     "Correct — eye pain together with headache is the pairing for acute narrow angle glaucoma."
     ],
     [
-     "Temporal arteritis with jaw claudication",
-     "That is paired with temporal pain specifically."
+     "Corneal abrasion or foreign body",
+     "A corneal abrasion or foreign body hurts with blinking; eye pain with headache suggests acute narrow angle glaucoma."
     ],
     [
      "Optic neuritis",
-     "That is paired with pain on eye motion."
+     "Optic neuritis causes pain on eye motion; eye pain with headache suggests acute narrow angle glaucoma."
     ]
    ],
    "c": 1,
@@ -31,23 +31,23 @@
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
    "chart": true,
-   "q": "On the red-eye chart, how is the PAIN of acute iritis described?",
+   "q": "What is the pain of acute iritis like?",
    "opts": [
     [
      "Severe, aching, deep",
-     "That is glaucoma."
+     "Severe, aching, deep pain is glaucoma; the pain of acute iritis is moderate rather than severe."
     ],
     [
      "Absent",
-     "That is subconjunctival haemorrhage."
+     "Absent pain is subconjunctival hemorrhage; the pain of acute iritis is moderate, aching and deep."
     ],
     [
      "Moderate, aching, deep",
-     "Correct — the chart's iritis column."
+     "Correct — acute iritis causes moderate, aching, deep pain, along with decreased vision."
     ],
     [
      "Mild discomfort rather than pain",
-     "That is conjunctivitis."
+     "Mild discomfort rather than pain is conjunctivitis; the pain of acute iritis is moderate, aching and deep."
     ]
    ],
    "c": 2,
@@ -57,23 +57,23 @@
    "topic": "Near reaction",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "etiology",
-   "q": "Which nerve mediates the pupillary constriction of the near reaction, and which two things accompany it?",
+   "q": "Which nerve mediates the pupillary constriction of the near reaction?",
    "opts": [
     [
      "The oculomotor nerve; accompanied by convergence and accommodation",
-     "Correct — parasympathetic fibres travelling with the oculomotor nerve constrict the pupil, while convergence and accommodation occur alongside it rather than causing it."
+     "Correct — the oculomotor nerve mediates the near constriction; convergence and accommodation happen alongside it but are not part of it."
     ],
     [
      "The optic nerve; accompanied by convergence and dilation",
-     "The optic nerve is the afferent limb, and dilation is not part of it."
+     "The oculomotor nerve, not the optic nerve, mediates the near constriction, and the pupils constrict rather than dilate."
     ],
     [
      "The trochlear nerve; accompanied by depression and intorsion",
-     "That nerve moves the superior oblique."
+     "The trochlear nerve does not mediate it; the near constriction, like the light reaction, is mediated by the oculomotor nerve, cranial nerve III."
     ],
     [
      "The abducens nerve; accompanied by abduction",
-     "That nerve moves the lateral rectus."
+     "The abducens nerve does not mediate it, and the eyes converge rather than abduct; the near constriction is mediated by the oculomotor nerve."
     ]
    ],
    "c": 0,
@@ -83,23 +83,23 @@
    "topic": "Referral",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "referral",
-   "q": "Which complaints fall in the URGENT group, seen by ophthalmology within a day or less?",
+   "q": "Which of these belongs in the URGENT group, seen by ophthalmology within a day or less?",
    "opts": [
     [
      "Pinguecula and pterygium",
-     "Those are routine."
+     "A pinguecula is harmless, and neither is on the urgent list, which includes acute glaucoma and retinal detachment."
     ],
     [
      "Acute glaucoma",
-     "Correct — the urgent list. Orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular oedema or haemorrhage, and hyphaema."
+     "Correct — acute glaucoma is on the urgent list with orbital cellulitis, corneal ulcer or abrasion, retinal detachment and hyphema."
     ],
     [
      "Sudden vision loss, chemical burns and suspected globe rupture",
-     "Those are emergent, referred immediately."
+     "Those are emergent complaints, referred to ophthalmology immediately rather than within a day."
     ],
     [
      "Dry eye and blepharitis",
-     "Those are routine."
+     "Neither is on the urgent list, which includes acute glaucoma, orbital cellulitis, retinal detachment and hyphema."
     ]
    ],
    "c": 1,
@@ -110,23 +110,23 @@
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
    "chart": true,
-   "q": "The chart warns that the eye in a ciliary-injection condition may be diffusely red instead. Which other clues does it give to catch those conditions?",
+   "q": "Corneal injury, acute iritis and glaucoma can make the eye diffusely red rather than showing ciliary injection. Which clues still point to them?",
    "opts": [
     [
-     "Pain, decreased vision, unequal pupils",
-     "Correct — the chart's four backup clues when the injection pattern is unhelpful. A less than perfectly clear cornea."
+     "Pain, decreased vision, unequal pupils, a hazy cornea",
+     "Correct — pain, decreased vision, unequal pupils and a less than perfectly clear cornea mark these more serious disorders."
     ],
     [
      "Itch, watery discharge and lid crusting",
-     "Those point toward benign conjunctivitis."
+     "Itching and watery discharge point to allergic or viral conditions; the serious disorders show pain, poor vision and unequal pupils."
     ],
     [
      "Bilateral involvement together with a tender preauricular node",
-     "Those point toward viral conjunctivitis."
+     "Bilateral involvement and a preauricular node do not mark these disorders; pain, decreased vision, unequal pupils and a hazy cornea do."
     ],
     [
      "Fever and periorbital swelling",
-     "Those suggest cellulitis, which is not on this chart."
+     "Fever and periorbital swelling do not mark these disorders; pain, decreased vision, unequal pupils and a hazy cornea do."
     ]
    ],
    "c": 0,
@@ -140,19 +140,19 @@
    "opts": [
     [
      "Covering and uncovering each eye in turn",
-     "That is the cover-uncover test."
+     "Covering and uncovering each eye reveals slight muscle imbalance; it is not a visual field test."
     ],
     [
-     "At arm's length",
-     "Correct — the technique in full. Hands held two feet apart lateral to the ears, wiggling the fingers and bringing them slowly into the centre of view until seen, testing each quadrant or each hour of the clock."
+     "Wiggling fingers brought slowly inward from beside the ears until seen",
+     "Correct — at arm's length, hands two feet apart beside the ears, wiggling fingers come slowly inward until seen, quadrant by quadrant."
     ],
     [
      "Moving a red-topped pin inward from beyond the boundary of each quadrant",
-     "That is the kinetic red target test."
+     "A red-topped pin moved in from each quadrant is the kinetic red target test, the static test's partner."
     ],
     [
      "Shining a light alternately into each eye",
-     "That is the swinging light test."
+     "Swinging a light between the eyes is the swinging light test of optic nerve function, not a field test."
     ]
    ],
    "c": 1,
@@ -166,19 +166,19 @@
    "opts": [
     [
      "At the lateral canthus",
-     "Not where the material places it."
+     "A chalazion does not point to the lateral canthus; it usually points inside the lid rather than on the lid margin."
     ],
     [
      "Inside the lid rather than on the lid margin",
-     "Correct — the chalazion arises in a meibomian gland within the tarsal plate, so it points inward towards the conjunctival surface rather than at the lash line."
+     "Correct — a chalazion, a nodule of a blocked meibomian gland, usually points inside the lid rather than on the lid margin."
     ],
     [
      "On the lid margin, right at the base of the lashes",
-     "That is the external hordeolum."
+     "The lid margin is where a hordeolum sits; a chalazion usually points inside the lid rather than on the margin."
     ],
     [
      "At the medial canthus",
-     "That location suggests lacrimal sac disease."
+     "The medial canthus is where the lacrimal sac is compressed; a chalazion usually points inside the lid, not at a canthus."
     ]
    ],
    "c": 1,
@@ -188,23 +188,23 @@
    "topic": "Corneal ulcer",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "initial test",
-   "q": "At what setting can an ophthalmoscope be used to look for a corneal ulcer, and what is more sensitive?",
+   "q": "At what setting can an ophthalmoscope be used to look for a corneal ulcer?",
    "opts": [
     [
-     "Set at +40 dioptres, giving roughly a ten times magnifier",
-     "Correct — it is both the setting and the better test. But staining with fluorescein is more sensitive for early ulcers."
+     "Set at +40 diopters, giving roughly a ten times magnifier",
+     "Correct — +40 diopters in effect fixes a 10 times magnifying lens, though fluorescein staining is more sensitive for early ulcers."
     ],
     [
-     "Set at zero dioptres — and this is more sensitive than fluorescein",
-     "Neither the setting nor the comparison matches."
+     "Set at zero diopters — and this is more sensitive than fluorescein",
+     "The setting is +40 diopters, not zero, and fluorescein staining is more sensitive than the ophthalmoscope for early ulcers."
     ],
     [
-     "Set at minus 20 dioptres — with fluorescein being less sensitive",
-     "It is fluorescein is MORE sensitive."
+     "Set at minus 20 diopters — with fluorescein being less sensitive",
+     "The setting is +40 diopters, and fluorescein is the MORE sensitive test for early ulcers."
     ],
     [
      "No ophthalmoscope setting is useful here",
-     "It is a specific one."
+     "The ophthalmoscope at +40 diopters acts as a 10 times magnifier that may reveal the corneal ulcer."
     ]
    ],
    "c": 0,
@@ -218,19 +218,19 @@
    "opts": [
     [
      "Acute narrow angle glaucoma",
-     "That gives headache with eye pain."
+     "Acute narrow angle glaucoma pairs eye pain with headache; pain with blinking suggests corneal abrasion or foreign body."
     ],
     [
      "Optic neuritis",
-     "That gives pain on eye MOTION, not on blinking."
+     "Optic neuritis causes pain on eye motion; pain with blinking suggests a corneal abrasion or foreign body."
     ],
     [
      "Temporal arteritis",
-     "That gives temporal pain."
+     "Temporal arteritis pairs eye pain with temporal pain; pain with blinking suggests a corneal abrasion or foreign body."
     ],
     [
      "Corneal abrasion or a foreign body",
-     "Correct — the lid moving over the defect is what hurts."
+     "Correct — eye pain with blinking points to a corneal abrasion or a foreign body on the eye's surface."
     ]
    ],
    "c": 3,
@@ -241,23 +241,23 @@
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "prognosis",
    "chart": true,
-   "q": "On the red-eye chart, what does it give as the significance of the glaucoma column?",
+   "q": "A red eye with severe deep pain, a steamy cornea and a dilated fixed pupil signifies what?",
    "opts": [
     [
      "Bacterial, viral and other infections, or allergy and irritation",
-     "That is the conjunctivitis column."
+     "Infection, allergy or irritation is the significance of conjunctivitis, which has mild discomfort, a clear cornea and a normal pupil."
     ],
     [
      "Abrasions and other injuries; viral and bacterial infections",
-     "That is the corneal injury column."
+     "Injuries and infections are the significance of corneal injury, where the pupil is unaffected unless iritis develops."
     ],
     [
      "Often none; may result from trauma, bleeding disorders, or a sudden increase in venous pressure",
-     "That is subconjunctival haemorrhage."
+     "That is subconjunctival hemorrhage, which is painless with a clear cornea and an unaffected pupil."
     ],
     [
      "An acute increase in intraocular pressure — an emergency",
-     "Correct — the chart labels it an emergency outright."
+     "Correct — severe deep pain, a steamy cornea and a fixed dilated pupil signify an acute rise in intraocular pressure, an emergency."
     ]
    ],
    "c": 3,
@@ -271,19 +271,19 @@
    "opts": [
     [
      "Simple glaucoma or cataract",
-     "That is the gradual painless group."
+     "Simple glaucoma or cataract causes GRADUAL painless loss, not the acute unilateral painless picture."
     ],
     [
-     "Retinal vascular occlusion, retinal detachment, vitreous haemorrhage, macular degeneration",
-     "Correct — the painless group."
+     "Retinal vascular occlusion, retinal detachment, vitreous hemorrhage, macular degeneration",
+     "Correct — acute, unilateral, painless loss suggests retinal vascular occlusion, retinal detachment, vitreous hemorrhage or macular degeneration."
     ],
     [
-     "Corneal abrasion or ulcer, uveitis, traumatic hyphaema, acute narrow angle glaucoma",
-     "Those make up the acute unilateral PAINFUL group."
+     "Corneal abrasion or ulcer, uveitis, traumatic hyphema, acute narrow angle glaucoma",
+     "Those are the acute, unilateral PAINFUL causes, which usually sit in the cornea and anterior chamber."
     ],
     [
      "Thermal, radiation or chemical exposure",
-     "That is the acute BILATERAL painful group."
+     "Thermal, radiation or chemical exposure is considered when symptoms are acute, BILATERAL and painful."
     ]
    ],
    "c": 1,
@@ -297,19 +297,19 @@
    "opts": [
     [
      "Graves disease, myasthenia gravis and thyroid orbitopathy",
-     "Those relate to lid signs."
+     "Graves disease causes proptosis and myasthenia gravis ptosis; nodular episcleritis goes with rheumatoid arthritis and lupus."
     ],
     [
      "Sjögren syndrome and sarcoidosis",
-     "Sjögren appears under dry eye, not here."
+     "Sjogren's syndrome causes dry mouth and dry eyes; nodular episcleritis goes with rheumatoid arthritis and lupus."
     ],
     [
      "Rheumatoid arthritis and lupus erythematosus",
-     "Correct — the two associations."
+     "Correct — nodular episcleritis can be seen in rheumatoid arthritis and lupus erythematosus."
     ],
     [
      "Diabetes and hypertension",
-     "Those drive retinopathy rather than this finding."
+     "Diabetes and hypertension show in the fundus, as retinopathy and hard exudates; nodular episcleritis goes with rheumatoid arthritis and lupus."
     ]
    ],
    "c": 2,
@@ -320,23 +320,23 @@
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
    "chart": true,
-   "q": "On the red-eye chart, which column has NO ocular discharge AND an unaffected pupil AND a clear cornea AND absent pain?",
+   "q": "Which cause of red eye has no discharge, an unaffected pupil, a clear cornea and no pain?",
    "opts": [
     [
-     "Subconjunctival haemorrhage",
-     "Correct — every column reads negative, which is what makes it benign."
+     "Subconjunctival hemorrhage",
+     "Correct — subconjunctival hemorrhage has absent pain and discharge, an unaffected pupil and vision, and a clear cornea."
     ],
     [
      "Uncomplicated bacterial conjunctivitis",
-     "That has watery, mucoid or mucopurulent discharge and mild discomfort."
+     "Conjunctivitis has watery, mucoid or mucopurulent discharge and mild discomfort, though its pupil and cornea are normal."
     ],
     [
      "Acute iritis",
-     "That has aching pain and a small or irregular pupil."
+     "Acute iritis has moderate aching pain and a pupil that may be small and irregular."
     ],
     [
      "Glaucoma",
-     "That has severe pain, a cloudy cornea and a fixed pupil."
+     "Glaucoma has severe aching pain, a steamy cloudy cornea and a dilated fixed pupil."
     ]
    ],
    "c": 0,
@@ -350,19 +350,19 @@
    "opts": [
     [
      "The time of dilation and the agents used",
-     "Correct — it is both."
+     "Correct — record the time of dilation and the agents used; a weak mydriatic reverses in 4 to 6 hours."
     ],
     [
      "The visual acuity before dilation only",
-     "Acuity matters but is not what it is here."
+     "Acuity is not what dilation requires you to record; document the time of dilation and the agents used."
     ],
     [
      "The patient's consent form number",
-     "Not what it is."
+     "A form number is not what is recorded; document the time of dilation and the agents used."
     ],
     [
      "Nothing specific",
-     "The material requires documentation."
+     "Dilation must be documented: record both the time of dilation and the agents used."
     ]
    ],
    "c": 0,
@@ -375,20 +375,20 @@
    "q": "Which complaints fall in the EMERGENT group, referred to ophthalmology immediately?",
    "opts": [
     [
-     "Sudden vision loss, retinal artery occlusion, chemical burns, rupture, acute angle-closure glaucoma, and vitreous haemorrhage",
-     "Correct — the emergent list, which Beck asked the class to know."
+     "Sudden vision loss, retinal artery occlusion, chemical burns, rupture, acute angle-closure glaucoma, and vitreous hemorrhage",
+     "Correct — sudden vision loss, retinal artery occlusion, chemical burns, rupture, angle closure and vitreous hemorrhage go to ophthalmology immediately."
     ],
     [
-     "Acute glaucoma, orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular oedema, and hyphaema",
-     "That is the URGENT group, seen within a day or less."
+     "Acute glaucoma, orbital cellulitis, corneal ulcer or abrasion, retinal detachment, macular edema, and hyphema",
+     "Those are the urgent complaints, sent for ophthalmology follow-up in one day or less rather than immediately."
     ],
     [
      "Blepharitis, chalazion and dry eye",
-     "Those are routine."
+     "None of these is on the emergent list, which includes sudden vision loss, chemical burns and globe rupture."
     ],
     [
-     "Conjunctivitis and subconjunctival haemorrhage",
-     "Those are routine."
+     "Conjunctivitis and subconjunctival hemorrhage",
+     "A subconjunctival hemorrhage is usually harmless, and neither is emergent; chemical burns and rupture are."
     ]
    ],
    "c": 0,
@@ -402,19 +402,19 @@
    "opts": [
     [
      "A primary neurologic cause rather than a primary ophthalmologic one",
-     "Correct, and this point is stated explicitly."
+     "Correct — bilateral visual loss usually implies a primary neurologic etiology and not a primary ophthalmologic problem."
     ],
     [
      "A primary ophthalmologic cause rather than a neurologic one",
-     "The stated relationship runs the opposite way."
+     "It runs the other way: bilateral visual loss usually implies a primary neurologic etiology, not an ophthalmologic one."
     ],
     [
      "An infective cause",
-     "Not the inference to draw from it."
+     "Infection is not the usual inference; bilateral visual loss usually implies a primary neurologic etiology."
     ],
     [
      "A traumatic cause",
-     "Not the inference to draw from it."
+     "Trauma is not the usual inference; bilateral visual loss usually implies a primary neurologic etiology rather than an eye problem."
     ]
    ],
    "c": 0,
@@ -428,19 +428,19 @@
    "opts": [
     [
      "After dilating",
-     "Dilation abolishes the reaction being tested."
+     "Pupillary reactions come before dilation in the suggested order, not after; a mydriatic's effect lasts 4 to 6 hours."
     ],
     [
      "It makes no difference",
-     "It makes all the difference."
+     "Timing matters: pupillary reactions are checked before dilating, and the dilation lasts 4 to 6 hours."
     ],
     [
      "Only after the fundoscopic examination",
-     "Fundoscopy usually follows dilation."
+     "Fundoscopy is done after dilation outside primary care, so the pupils are checked before it, not after."
     ],
     [
      "Before dilating",
-     "Correct — a dilating drop paralyses the iris sphincter, so once it is instilled the light reflex cannot be assessed for hours and any afferent defect is lost."
+     "Correct — pupillary reactions are checked before dilating; the weak mydriatic used for fundoscopy takes 4 to 6 hours to reverse."
     ]
    ],
    "c": 3,
@@ -450,23 +450,23 @@
    "topic": "Dilated pupil",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "differential",
-   "q": "Once local eye disease is excluded, which three causes of a dilated pupil remain?",
+   "q": "Once local eye disease is excluded, which of these remains a cause of a dilated pupil?",
    "opts": [
     [
-     "Optic neuritis, papilloedema and optic atrophy",
-     "Those affect the afferent limb rather than pupil size at rest."
+     "Optic neuritis, papilledema and optic atrophy",
+     "Optic nerve disease affects the afferent limb; the remaining causes are a third nerve lesion, an Adie's pupil or pharmacologic block."
     ],
     [
      "Compression or other lesion of the third cranial nerve",
-     "Correct — the three, and Beck called them important to know. Parasympathetic denervation from a ciliary ganglion lesion producing an Adie's pupil; and pharmacologic block of the pupillary sphincter."
+     "Correct — the three remaining causes are a third nerve lesion, ciliary ganglion damage causing Adie's pupil, and pharmacologic sphincter block."
     ],
     [
      "Glaucoma, cataract and macular degeneration",
-     "None of these dilates the pupil."
+     "Those are local eye diseases, already excluded; what remains is a third nerve lesion, an Adie's pupil or a pharmacologic block."
     ],
     [
      "Horner syndrome, myasthenia gravis and Graves disease",
-     "Horner produces a SMALL pupil."
+     "Horner syndrome gives a SMALL pupil; what remains is a third nerve lesion, an Adie's pupil or a pharmacologic block."
     ]
    ],
    "c": 1,
@@ -480,19 +480,19 @@
    "opts": [
     [
      "The eyelids and eyebrows",
-     "Not among the named omissions."
+     "Lids and brows are not among the common omissions; the structures commonly missed are the cornea and lens."
     ],
     [
      "The lacrimal sac and puncta",
-     "Not among the named omissions."
+     "The lacrimal sac is not among the common omissions; the structures commonly missed are the cornea and lens."
     ],
     [
      "The extraocular muscles",
-     "Movement testing is listed separately."
+     "Eye movements are not among the common omissions; the two structures commonly missed are the cornea and lens."
     ],
     [
      "The cornea and the lens",
-     "Correct — 'failure to examine the cornea and lens' is on the list."
+     "Correct — failure to examine the cornea and lens is one of the common mistakes in the eye examination."
     ]
    ],
    "c": 3,
@@ -506,19 +506,19 @@
    "opts": [
     [
      "Object size makes no difference",
-     "Beck said explicitly that size is important."
+     "Size is important: it determines whether the periocular soft tissues or the globe itself is likely to be injured."
     ],
     [
      "Only velocity matters, not size",
-     "It is both."
+     "Velocity matters for penetration, but size matters too: larger objects hit the orbital rim, smaller ones the globe."
     ],
     [
      "Larger objects transfer most of the energy to the orbital rim",
-     "Correct — the mechanical distinction. Smaller objects may strike the globe directly."
+     "Correct — larger objects transfer most of their energy to the orbital rim, while smaller objects may strike the globe itself."
     ],
     [
      "Larger objects strike the globe directly; smaller objects hit the orbital rim",
-     "This reverses the mechanics."
+     "This reverses the mechanics: smaller objects may strike the globe directly, while larger ones load the orbital rim."
     ]
    ],
    "c": 2,
@@ -532,19 +532,19 @@
    "opts": [
     [
      "Dry eye",
-     "That causes irritation and blurring."
+     "Dryness belongs with lacrimal obstruction or Sjogren's syndrome; diplopia arises from faulty alignment or a neurological problem."
     ],
     [
      "Cataract",
-     "It is monocular diplopia with cataract elsewhere, not as this cause."
+     "Cataract is a lens opacity causing gradual painless loss; diplopia arises from faulty alignment or a neurological problem."
     ],
     [
      "A neurological problem",
-     "Correct — the neurological grouping. Lesions in the brainstem or cerebellum, or weakness or paralysis of one or more extraocular muscles."
+     "Correct — besides faulty alignment, diplopia comes from neurological problems: brainstem or cerebellar lesions, or extraocular muscle weakness."
     ],
     [
      "Refractive error alone, without a neurological component",
-     "Refractive error blurs rather than doubles."
+     "Refractive error is what a pinhole corrects; diplopia arises from faulty alignment or a neurological problem."
     ]
    ],
    "c": 2,
@@ -554,23 +554,23 @@
    "topic": "Pupils",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "escalation",
-   "q": "An acute, significantly dilated pupil is a medical emergency particularly when accompanied by what, and from which two causes?",
+   "q": "An acute, significantly dilated pupil is a medical emergency particularly when accompanied by what?",
    "opts": [
     [
      "Headache or other neurologic signs",
-     "Correct, and it is flagged in red as a point to notice. From uncal herniation or a posterior communicating artery aneurysm."
+     "Correct — with headache or neurologic signs, an acutely dilated pupil may mean uncal herniation or a posterior communicating artery aneurysm."
     ],
     [
      "Itching or discharge — from an allergic conjunctivitis",
-     "Neither is an emergency."
+     "Itching and discharge point to allergy, which leaves the pupil unaffected; headache or neurologic signs make the dilated pupil an emergency."
     ],
     [
      "Fever — from orbital cellulitis",
-     "Serious, but not the pairing for this sign."
+     "Fever is not the warning pairing; an acutely dilated pupil is an emergency with headache or other neurologic signs."
     ],
     [
      "Blurred vision alone — from cataract",
-     "Cataract does not dilate the pupil."
+     "Cataract is a lens opacity that does not dilate the pupil; headache or neurologic signs make a dilated pupil an emergency."
     ]
    ],
    "c": 0,
@@ -580,23 +580,23 @@
    "topic": "Xanthelasma",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
-   "q": "Where do xanthelasma plaques sit, and what should they prompt?",
+   "q": "Which description of xanthelasma is accurate?",
    "opts": [
     [
      "At the lid margin — consider bacterial infection",
-     "That describes a hordeolum."
+     "A painful infection at the lid margin is a hordeolum; xanthelasma sit nasally on the lids and suggest lipid disorders."
     ],
     [
      "On the bulbar conjunctiva — consider ultraviolet exposure",
-     "That describes pinguecula."
+     "A yellowish nodule on the bulbar conjunctiva is a pinguecula; xanthelasma sit nasally on the lids and suggest lipid disorders."
     ],
     [
      "Along the NASAL portions of one or both eyelids — consider lipid disorders",
-     "Correct — it is both the position and the inference."
+     "Correct — xanthelasma are raised yellowish plaques along the nasal portions of the eyelids that should prompt a look for lipid disorders."
     ],
     [
      "Along the temporal portions of the lids — consider thyroid disease",
-     "It is the nasal portion and lipid disorders."
+     "The plaques sit on the nasal, not temporal, portions of the lids, and they point to lipid disorders rather than thyroid disease."
     ]
    ],
    "c": 2,
@@ -610,19 +610,19 @@
    "opts": [
     [
      "Viral conjunctivitis",
-     "That also produces watery or mucoid discharge."
+     "Viral conditions give watery or mucoid discharge; purulent discharge suggests a bacterial infection."
     ],
     [
      "Dry eye",
-     "That produces no discharge."
+     "Dryness points to lacrimal obstruction or Sjogren's syndrome; purulent discharge suggests a bacterial infection."
     ],
     [
      "Bacterial infection",
-     "Correct — the pairing for purulent discharge."
+     "Correct — purulent discharge suggests a bacterial infection, while watery or mucoid discharge suggests allergy or a virus."
     ],
     [
      "Allergic conjunctivitis",
-     "That produces watery or mucoid discharge."
+     "Allergic conditions give watery or mucoid discharge; purulent discharge suggests a bacterial infection."
     ]
    ],
    "c": 2,
@@ -632,23 +632,23 @@
    "topic": "Fluorescein",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "initial test",
-   "q": "How does fluorescein reveal a corneal defect?",
+   "q": "How is a fluorescein stain performed?",
    "opts": [
     [
      "The dye stains intact epithelium and spares defects",
-     "This reverses the mechanism."
+     "It is the reverse: the dye is taken up by areas of cornea devoid of epithelium, lit with a blue light."
     ],
     [
      "The dye is injected intravenously and photographed with a blue flash",
-     "That is fluorescein angiography."
+     "The dye is placed in the eye, not injected; a blue light then shows foreign bodies or corneal damage."
     ],
     [
-     "The dye changes the colour of the aqueous humour",
-     "Not how the test works."
+     "The dye changes the color of the aqueous humor",
+     "The dye is placed on the eye and viewed under blue light, where areas of cornea without epithelium take it up."
     ],
     [
      "Orange dye is instilled and a blue light used",
-     "Correct — uptake marks where the epithelium is missing. The dye is taken up by areas of cornea devoid of epithelium."
+     "Correct — orange dye goes into the eye and a blue light shows foreign bodies or corneal damage, since bare areas take up the dye."
     ]
    ],
    "c": 3,
@@ -658,23 +658,23 @@
    "topic": "History",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "risk factors",
-   "q": "Which immunisation status matters in eye trauma?",
+   "q": "Which immunization status matters in eye trauma?",
    "opts": [
     [
      "Hepatitis B",
-     "Not the immunisation it is."
+     "Hepatitis B status is not the one tied to eye trauma; tetanus immunization status is what matters after an eye injury."
     ],
     [
      "Tetanus",
-     "Correct — it is tetanus status specifically for eye trauma."
+     "Correct — tetanus immunization status is important in any patient with a history of eye trauma."
     ],
     [
      "Influenza",
-     "Not the immunisation it is here."
+     "Influenza status is not the one tied to eye trauma; tetanus immunization status is what matters after an eye injury."
     ],
     [
      "Pneumococcal",
-     "Not the immunisation it is."
+     "Pneumococcal status is not the one tied to eye trauma; tetanus immunization status is what matters after an eye injury."
     ]
    ],
    "c": 1,
@@ -688,19 +688,19 @@
    "opts": [
     [
      "Palpate the globe to judge its forward position",
-     "Palpating the globe is contraindicated in trauma and is not the technique here."
+     "The globe is not palpated, and it is critical not to in trauma; protrusion is judged by inspecting from behind and above."
     ],
     [
      "Stand behind the seated patient and inspect from above",
-     "Correct — the technique Beck demonstrated and kept in scope. Drawing the lid slightly upward to compare the corneas against the lower lids."
+     "Correct — stand behind the seated patient, look down from above, and draw the lids up to compare the corneas with the lower lids."
     ],
     [
      "Sit facing the patient and compare the two eyes directly",
-     "The material specifically asks you to look down from above."
+     "Prominent eyes are judged from behind and above the seated patient, comparing the corneas with the lower lids."
     ],
     [
-     "Measure the distance from the lateral orbital angle with a ruler",
-     "That is the exophthalmometer measurement, which Beck said she would not test."
+     "Shine a light from the temporal side and look for a shadow",
+     "Oblique light from the temporal side looks for the iris shadow of a narrow angle; protrusion is judged from behind and above."
     ]
    ],
    "c": 1,
@@ -714,45 +714,45 @@
    "opts": [
     [
      "Full and rapid dilation",
-     "It is an incomplete response."
+     "The dilation is incomplete, not full; mydriatics only partly dilate the small, irregular Argyll Robertson pupil."
     ],
     [
      "No change at all",
-     "It is incomplete rather than absent dilation."
+     "The pupil does respond, but incompletely; mydriatics cause an incomplete dilation of an Argyll Robertson pupil."
     ],
     [
      "Paradoxical constriction",
-     "Not a response it is."
+     "A mydriatic dilates rather than constricts; in an Argyll Robertson pupil the dilation is simply incomplete."
     ],
     [
      "Incomplete dilation",
-     "Correct — the lesion affects the light reflex pathway rather than the iris muscle itself, so the pupil still responds to a dilating drop, but incompletely."
+     "Correct — mydriatics cause only an incomplete dilation of an Argyll Robertson pupil."
     ]
    ],
    "c": 3,
    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 84"
   },
   {
-   "topic": "Subconjunctival haemorrhage",
+   "topic": "Subconjunctival hemorrhage",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "escalation",
-   "q": "When is globe rupture more likely in a patient with a subconjunctival haemorrhage?",
+   "q": "When is globe rupture more likely in a patient with a subconjunctival hemorrhage?",
    "opts": [
     [
-     "When the haemorrhage is small, flat and confined to one sector",
-     "That is the ordinary benign pattern."
+     "When the hemorrhage is small, flat and confined to one sector",
+     "A small patch is the usually harmless picture; rupture is more likely when the hemorrhage encircles the entire cornea after trauma."
     ],
     [
      "When the patient is anticoagulated",
-     "That explains the bleed but does not indicate rupture."
+     "A bleeding disorder can cause the hemorrhage, but rupture is signaled by trauma with blood encircling the entire cornea."
     ],
     [
      "When both eyes are affected",
-     "Bilaterality is not the warning sign."
+     "Bilaterality is not the warning sign; rupture is more likely with trauma and hemorrhage encircling the entire cornea."
     ],
     [
-     "In trauma, and when the haemorrhage encircles the entire cornea",
-     "Correct — it is both the mechanism and the 360-degree pattern."
+     "In trauma, and when the hemorrhage encircles the entire cornea",
+     "Correct — globe rupture is more likely after trauma and when the hemorrhage encircles the entire cornea."
     ]
    ],
    "c": 3,
@@ -766,19 +766,19 @@
    "opts": [
     [
      "Pupil reactivity",
-     "An important test, but not the phrase."
+     "Pupillary reactions are checked before dilating, but visual acuity is the one called the vital sign of the eye."
     ],
     [
      "Visual fields",
-     "Not the phrase."
+     "Visual field testing follows acuity in the order; visual acuity is the one called the vital sign of the eye."
     ],
     [
      "Visual acuity",
-     "Correct — the material labels acuity testing the vital sign of the eye."
+     "Correct — visual acuity testing is called the vital sign of the eye and comes early in the suggested order."
     ],
     [
      "Intraocular pressure",
-     "Analogous to blood pressure, but not called the vital sign."
+     "Intraocular pressure is likened to systemic blood pressure, but visual acuity is the one called the vital sign of the eye."
     ]
    ],
    "c": 2,
@@ -794,19 +794,19 @@
    "opts": [
     [
      "Do not take a history",
-     "The history is still required."
+     "The history still matters, including tetanus status and any chemical's acidity; what must not be done is palpating the globe."
     ],
     [
      "Do not palpate the globe",
-     "Correct — it is this critical in trauma."
+     "Correct — in trauma it is critical not to palpate the globe, and too much pressure on a ruptured globe is a known mistake."
     ],
     [
      "Do not measure visual acuity",
-     "Acuity is still required."
+     "Visual acuity is still tested in trauma, following the same pattern as a routine eye examination; the globe is not palpated."
     ],
     [
      "Do not inspect the lids",
-     "Inspection is still required."
+     "The eyelids are still examined in trauma as part of the routine pattern; what must not be done is palpating the globe."
     ]
    ],
    "c": 1,
@@ -820,19 +820,19 @@
    "opts": [
     [
      "Tonometry and fundoscopy",
-     "Those assess pressure and the fundus."
+     "Tonometry measures intraocular pressure and fundoscopy views the disc and retina; fields use the finger wiggle and red target tests."
     ],
     [
      "The static finger wiggle test and the kinetic red target test",
-     "Correct — it is the two."
+     "Correct — confrontation fields are best tested by combining the static finger wiggle test with the kinetic red target test."
     ],
     [
      "The swinging light test together with the cover-uncover test",
-     "Those assess pupils and alignment."
+     "The swinging light test checks optic nerve function and cover-uncover muscle imbalance; fields use finger wiggle and red target."
     ],
     [
      "The pinhole test and the Snellen chart",
-     "Those assess acuity."
+     "The pinhole and Snellen chart test visual acuity; confrontation fields use the finger wiggle and kinetic red target tests."
     ]
    ],
    "c": 1,
@@ -842,23 +842,23 @@
    "topic": "Horner syndrome",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
-   "q": "Which four features make up Horner syndrome?",
+   "q": "Which three features define Horner syndrome?",
    "opts": [
     [
      "A large slow pupil with reduced light reaction and a slow near reaction",
-     "That is Adie's tonic pupil."
+     "A large pupil with slow light and near reactions is Adie's tonic pupil; Horner syndrome gives a small pupil with ptosis."
     ],
     [
      "Ptosis, miosis of the affected eye, anhidrosis of the ipsilateral face",
-     "Correct — and the preserved reaction is what separates it from a third nerve palsy. A small pupil that still reacts to light and near."
+     "Correct — Horner syndrome gives ptosis, miosis and ipsilateral facial anhidrosis, and the small pupil still reacts to light and near."
     ],
     [
      "Ptosis, mydriasis, lateral deviation, and a fixed pupil",
-     "That is an oculomotor nerve palsy."
+     "A fixed dilated pupil with ptosis and lateral deviation is oculomotor palsy; Horner gives ptosis, miosis and anhidrosis."
     ],
     [
      "Lid lag, proptosis, chemosis and diplopia",
-     "Those are thyroid eye signs."
+     "Lid lag and proptosis are hyperthyroid and Graves signs; Horner syndrome gives ptosis, miosis and anhidrosis."
     ]
    ],
    "c": 1,
@@ -872,19 +872,19 @@
    "opts": [
     [
      "Neither — they affect the conjunctiva",
-     "Both are lid malpositions."
+     "They are lid malpositions, not conjunctival disease: entropion turns the lower lid in, ectropion turns it out."
     ],
     [
      "The lower lid",
-     "Correct — it is the lower lid for both."
+     "Correct — entropion is inward folding and ectropion outward turning, and both affect the lower lid."
     ],
     [
      "The upper lid",
-     "The lower lid is the one affected."
+     "Both malpositions affect the lower lid: entropion folds it inward and ectropion turns it outward."
     ],
     [
      "Both lids equally",
-     "It is the lower lid."
+     "They do not affect both lids equally; entropion and ectropion are both lower lid malpositions."
     ]
    ],
    "c": 1,
@@ -898,19 +898,19 @@
    "opts": [
     [
      "Compression of the oculomotor nerve",
-     "That is a third nerve palsy."
+     "Oculomotor damage is a separate ptosis cause; senile ptosis comes from weakened muscle, relaxed tissues and herniated fat."
     ],
     [
      "Weakened muscle, relaxed tissues",
-     "Correct — the three-part mechanical explanation. The weight of herniated fat."
+     "Correct — senile ptosis comes from weakened muscle and relaxed tissues, plus the weight of herniated fat."
     ],
     [
      "Antibody blockade at the neuromuscular junction of the levator",
-     "That is myasthenia gravis."
+     "Myasthenia gravis is a separate cause of ptosis; senile ptosis comes from weakened muscle, relaxed tissues and herniated fat."
     ],
     [
      "Interruption of the sympathetic supply",
-     "That is Horner syndrome."
+     "Sympathetic interruption causes Horner syndrome's ptosis; senile ptosis comes from weakened muscle, relaxed tissues and herniated fat."
     ]
    ],
    "c": 1,
@@ -924,19 +924,19 @@
    "opts": [
     [
      "The masseter originates on the mandible and inserts on the zygoma",
-     "Not the muscle relationship it is."
+     "The pain is explained by the temporalis, which passes medial to the arch and inserts on the mandible, not by the masseter."
     ],
     [
      "The infraorbital nerve is compressed during jaw movement",
-     "Nerve damage causes hypoaesthesia rather than pain on opening."
+     "Infraorbital nerve damage causes hypesthesia of the infraorbital area; mouth-opening pain comes from the temporalis under the arch."
     ],
     [
      "The temporomandibular joint is always involved",
-     "Not the explanation."
+     "The jaw joint is not the explanation; the temporalis passes medial to the zygomatic arch and inserts on the mandible."
     ],
     [
      "The temporalis muscle passes medial to the arch and inserts on the mandible",
-     "Correct — the anatomical explanation Beck gave alongside the finding."
+     "Correct — the temporalis passes medial to the zygomatic arch and inserts on the mandible, so a fracture can hurt on opening."
     ]
    ],
    "c": 3,
@@ -949,20 +949,20 @@
    "q": "Watery or mucoid discharge suggests which conditions?",
    "opts": [
     [
-     "Traumatic",
-     "Not sorted by discharge."
+     "Acute glaucoma",
+     "Acute glaucoma produces no ocular discharge; watery or mucoid discharge suggests allergic or viral conditions."
     ],
     [
      "Allergic or viral",
-     "Correct — the pairing for watery and mucoid discharge."
+     "Correct — watery or mucoid discharge goes with allergic or viral conditions, while purulent discharge suggests bacteria."
     ],
     [
      "Bacterial infection",
-     "That produces purulent discharge."
+     "Bacterial infections produce purulent discharge; watery or mucoid discharge suggests allergic or viral conditions."
     ],
     [
-     "Fungal infection",
-     "Not a category the material sorts by discharge."
+     "Acute iritis",
+     "Acute iritis produces no ocular discharge; watery or mucoid discharge suggests allergic or viral conditions."
     ]
    ],
    "c": 1,
@@ -976,19 +976,19 @@
    "opts": [
     [
      "Testing for a nasal defect in the other eye",
-     "Correct — the material asks you to test that possibility explicitly."
+     "Correct — a temporal defect in one eye may suggest a nasal defect in the other eye, so test that possibility."
     ],
     [
      "Immediate fundoscopy of the same eye only",
-     "Not what the material directs here."
+     "Fundoscopy is not the next step; a temporal defect in one eye may mean a nasal defect in the other, which should be tested."
     ],
     [
      "Repeating acuity in the same eye",
-     "Not the next step."
+     "Acuity is not the next step; a temporal field defect in one eye should prompt testing the other eye for a nasal defect."
     ],
     [
      "Measuring intraocular pressure",
-     "Not the next step for this finding."
+     "Pressure is not the next step; a temporal field defect in one eye should prompt testing the other eye for a nasal defect."
     ]
    ],
    "c": 0,
@@ -1002,19 +1002,19 @@
    "opts": [
     [
      "The oculomotor nerve",
-     "That gives a dilated fixed pupil with lateral deviation."
+     "Oculomotor paralysis gives a dilated fixed pupil with lateral deviation; Horner syndrome is a sympathetic interruption."
     ],
     [
      "The optic nerve",
-     "That gives an afferent defect."
+     "Optic nerve damage gives an afferent (Marcus Gunn) defect; Horner syndrome is a sympathetic interruption."
     ],
     [
      "The sympathetic innervation of the pupil and the levator palpebrae superioris",
-     "Correct — which explains both the small pupil and the ptosis."
+     "Correct — interrupting sympathetic supply to the pupil and levator palpebrae superioris explains both the miosis and the ptosis."
     ],
     [
      "The parasympathetic supply travelling through the ciliary ganglion",
-     "That is Adie's tonic pupil."
+     "Parasympathetic loss at the ciliary ganglion produces Adie's tonic pupil; Horner syndrome is a sympathetic interruption."
     ]
    ],
    "c": 2,
@@ -1028,19 +1028,19 @@
    "opts": [
     [
      "The manufacturer of the product",
-     "Not what it is."
+     "The brand is not what matters; the essential fact after a chemical exposure is its acidity or alkalinity."
     ],
     [
      "The acidity or alkalinity of the fluid",
-     "Correct — it is knowing this essential."
+     "Correct — after any chemical or fluid exposure, knowing whether the fluid was acidic or alkaline is essential."
     ],
     [
      "The volume of fluid involved",
-     "Not what it is is essential."
+     "Volume is not what must be known; you must establish whether the fluid or chemical was acidic or alkaline."
     ],
     [
      "Whether the patient was wearing contact lenses",
-     "Relevant generally, but not the stated essential here."
+     "Contact lens wear is not the essential fact here; you must establish the acidity or alkalinity of the fluid."
     ]
    ],
    "c": 1,
@@ -1054,19 +1054,19 @@
    "opts": [
     [
      "Hypothyroidism and iron deficiency",
-     "Neither is given for blepharitis."
+     "Hypothyroidism shows as lateral eyebrow sparseness; blepharitis is associated with bacterial infection and atopic dermatitis."
     ],
     [
      "Graves disease and myasthenia gravis",
-     "Those relate to lid lag and ptosis."
+     "Graves disease causes proptosis and myasthenia gravis causes ptosis; blepharitis goes with bacteria and atopic dermatitis."
     ],
     [
      "Rheumatoid arthritis and lupus",
-     "Those are given for nodular episcleritis."
+     "Rheumatoid arthritis and lupus go with nodular episcleritis; blepharitis goes with bacterial infection and atopic dermatitis."
     ],
     [
      "Bacterial infection and atopic dermatitis",
-     "Correct — the two associations to know."
+     "Correct — blepharitis is a common eye inflammation associated with bacterial infections and with atopic dermatitis."
     ]
    ],
    "c": 3,
@@ -1076,23 +1076,23 @@
    "topic": "Corneal abrasion",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "avoid",
-   "q": "What is the rule about topical anaesthetic in corneal abrasion?",
+   "q": "What is the rule about topical anesthetic in corneal abrasion?",
    "opts": [
     [
      "It should be prescribed for home use to control the pain",
-     "The material restricts it to diagnosis."
+     "It is not a take-home treatment; topical anesthetic in abrasion is used for diagnosis only, despite the immediate relief."
     ],
     [
      "It should never be used at all",
-     "The material does use it diagnostically."
+     "It is used, but for diagnosis: topical anesthetic brings immediate relief of an abrasion and is not a treatment."
     ],
     [
      "It is only useful if the cornea is hazy",
-     "Haziness suggests bacterial infection instead."
+     "A hazy cornea suggests bacterial infection; topical anesthetic is used for diagnosis of an abrasion, not treatment."
     ],
     [
-     "It brings immediate relief",
-     "Correct — the material draws exactly this line. But should be used for DIAGNOSIS and not as a treatment."
+     "Use it for diagnosis, not as a treatment",
+     "Correct — topical anesthetic brings immediate relief of an abrasion, but it is used for diagnosis and not as a treatment."
     ]
    ],
    "c": 3,
@@ -1102,23 +1102,23 @@
    "topic": "Injection pattern",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "differential",
-   "q": "Injection localised JUST AROUND THE CORNEA suggests which three conditions?",
+   "q": "Injection localized JUST AROUND THE CORNEA suggests which three conditions?",
    "opts": [
     [
      "Keratitis, iritis, or acute glaucoma",
-     "Correct — the three, and this is the pattern that must not be dismissed as conjunctivitis."
+     "Correct — injection just around the cornea could result from keratitis, iritis or acute glaucoma."
     ],
     [
      "Conjunctivitis, blepharitis, or dry eye",
-     "Those give diffuse or lid-margin redness."
+     "Conjunctivitis gives diffuse redness maximal peripherally, not a ring around the cornea; that ring suggests keratitis, iritis or glaucoma."
     ],
     [
-     "Subconjunctival haemorrhage, pinguecula, or pterygium",
-     "Those are localised surface lesions."
+     "Subconjunctival hemorrhage, pinguecula, or pterygium",
+     "Those are localized patches or growths of the conjunctiva; injection just around the cornea suggests keratitis, iritis or acute glaucoma."
     ],
     [
      "Episcleritis, chalazion, or hordeolum",
-     "Those do not produce a circumcorneal ring."
+     "Those are nodules and lid lesions; injection just around the cornea suggests keratitis, iritis or acute glaucoma."
     ]
    ],
    "c": 0,
@@ -1131,20 +1131,20 @@
    "q": "What is the warning about pressure on a globe that may be ruptured?",
    "opts": [
     [
-     "Failing to diagnose a penetrated or ruptured globe",
-     "Correct — it is both the missed diagnosis and the pressure. Placing too much pressure on it, is a listed mistake."
+     "Placing too much pressure on it is a mistake",
+     "Correct — failing to diagnose a ruptured globe and placing too much pressure on it are both common examination mistakes."
     ],
     [
      "Pressure is required to assess the depth of injury",
-     "The material warns against pressure."
+     "Pressure is not used to judge depth; placing too much pressure on a ruptured globe is itself a recognized examination mistake."
     ],
     [
-     "Pressure is harmless once a topical anaesthetic has been instilled",
-     "Anaesthesia does not make pressure safe."
+     "Pressure is harmless once a topical anesthetic has been instilled",
+     "Anesthetic does not make it safe; placing too much pressure on a ruptured globe is a recognized examination mistake."
     ],
     [
-     "Pressure should be applied only with a cotton bud",
-     "It is not to apply pressure at all."
+     "Pressure should be applied only with a cotton swab",
+     "No instrument makes it safe; too much pressure on a ruptured globe is a recognized mistake, and the globe is not palpated in trauma."
     ]
    ],
    "c": 0,
@@ -1159,19 +1159,19 @@
    "opts": [
     [
      "Glaucoma",
-     "That shows diffuse redness with a steamy cornea and a dilated fixed pupil."
+     "Glaucoma gives deep-vessel redness around the limbus, a steamy cloudy cornea, a dilated fixed pupil and decreased vision."
     ],
     [
      "Corneal injury or infection",
-     "That shows ciliary injection with usually decreased vision."
+     "Corneal injury or infection gives deep-vessel redness around the limbus with vision usually decreased."
     ],
     [
      "Conjunctivitis",
-     "Correct — diffuse peripheral redness with preserved vision is the conjunctivitis column."
+     "Correct — conjunctivitis gives diffuse conjunctival redness maximal peripherally, with vision affected only by mild blurring."
     ],
     [
      "Acute iritis",
-     "That shows ciliary injection with decreased vision."
+     "Acute iritis gives injection of the deeper vessels around the limbus and decreased vision."
     ]
    ],
    "c": 2,
@@ -1185,19 +1185,19 @@
    "opts": [
     [
      "The oculomotor nerve is being compressed on that side",
-     "That is an efferent problem."
+     "Oculomotor compression causes a fixed dilated pupil; the swinging light dilation comes from reduced afferent input from the optic nerve."
     ],
     [
      "The ciliary ganglion has degenerated",
-     "That is Adie's tonic pupil."
+     "Ciliary ganglion degeneration causes Adie's tonic pupil; the swinging light dilation comes from reduced afferent input."
     ],
     [
      "The afferent stimulus on that side is reduced",
-     "Correct — the explanation of the mechanism. So the efferent signal to both pupils is reduced and a net dilation results."
+     "Correct — the reduced afferent stimulus reduces the efferent signals to both pupils, so a net dilation occurs."
     ],
     [
      "The affected pupil is pharmacologically blocked",
-     "That is a different cause of a dilated pupil."
+     "Pharmacologic sphincter block is a cause of a dilated pupil, but the swinging light dilation comes from reduced afferent input."
     ]
    ],
    "c": 2,
@@ -1211,19 +1211,19 @@
    "opts": [
     [
      "Allergic conjunctivitis",
-     "That itches rather than causing deep pain."
+     "Allergy shows itching and excessive tearing rather than deep pain, which is linked to acute narrow angle glaucoma."
     ],
     [
      "Corneal abrasion",
-     "That causes surface pain and foreign body sensation."
+     "A corneal abrasion is a surface injury that feels better with topical anesthetic; deep pain points to acute narrow angle glaucoma."
     ],
     [
      "Blepharitis",
-     "That causes burning and grittiness."
+     "Blepharitis is a common lid inflammation linked to bacterial infection or atopic dermatitis; deep pain points to angle closure."
     ],
     [
      "Acute narrow angle glaucoma",
-     "Correct — it is deep pain to this."
+     "Correct — deep eye pain is linked to acute narrow angle glaucoma; pain from a deeper source is not relieved by topical anesthetic."
     ]
    ],
    "c": 3,
@@ -1233,27 +1233,27 @@
    "topic": "Referral",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "education",
-   "q": "Why did Beck ask the class to know the referral list specifically?",
+   "q": "Which of these complaints should be referred to ophthalmology IMMEDIATELY?",
    "opts": [
     [
-     "Because it happens to come last in the material",
-     "Position is not her reason."
+     "Hyphema",
+     "Hyphema is urgent, not emergent: it needs ophthalmology follow-up within one day or less."
     ],
     [
-     "Because it duplicates PD1 content",
-     "That is what she said about the corneal reflection test."
+     "Orbital cellulitis",
+     "Orbital cellulitis is urgent, not emergent: it needs ophthalmology follow-up within one day or less."
     ],
     [
-     "Because it appears in the textbook",
-     "Not the reason she gave."
+     "Corneal abrasion",
+     "A corneal abrasion is urgent, not emergent: it needs ophthalmology follow-up within one day or less."
     ],
     [
-     "Because they will be the ones making those dispositions",
-     "Correct — her stated reason: 'you're going to be making those dispos'."
+     "Chemical burn",
+     "Correct — chemical burns are emergent and go to ophthalmology immediately, as do rupture and sudden vision loss."
     ]
    ],
    "c": 3,
-   "cite": "Lecture recording, 26 August 2026"
+   "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 124"
   },
   {
    "topic": "Eyebrows",
@@ -1263,19 +1263,19 @@
    "opts": [
     [
      "Hypothyroidism",
-     "Correct — the association for lateral eyebrow loss."
+     "Correct — lateral sparseness of the eyebrows is the eyebrow finding associated with hypothyroidism."
     ],
     [
      "Hyperthyroidism",
-     "The material associates lid lag with hyperthyroidism, not eyebrow loss."
+     "Hyperthyroidism is linked to lid lag, not eyebrow loss; lateral eyebrow sparseness suggests hypothyroidism."
     ],
     [
-     "Seborrhoeic dermatitis",
-     "That causes scaliness of the eyebrows."
+     "Seborrheic dermatitis",
+     "Seborrheic dermatitis causes scaliness of the eyebrows; lateral sparseness suggests hypothyroidism."
     ],
     [
      "Iron deficiency",
-     "Not an association it is."
+     "Iron deficiency is not an eyebrow association; lateral sparseness of the eyebrows suggests hypothyroidism."
     ]
    ],
    "c": 0,
@@ -1285,23 +1285,23 @@
    "topic": "Ptosis",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "etiology",
-   "q": "Besides senile and congenital forms, which three causes of ptosis are there?",
+   "q": "Besides Horner syndrome and the senile and congenital forms, which causes of ptosis remain?",
    "opts": [
     [
      "Myasthenia gravis, oculomotor nerve damage",
-     "Correct — the three, spanning neuromuscular junction, motor nerve and sympathetic chain. Damage to the sympathetic supply (Horner syndrome)."
+     "Correct — ptosis also comes from myasthenia gravis and oculomotor nerve damage, alongside Horner syndrome's sympathetic loss."
     ],
     [
      "Bell palsy, trigeminal neuralgia and stroke",
-     "Bell palsy weakens lid CLOSURE, not elevation."
+     "None of these is a ptosis cause; drooping of the upper lid comes from myasthenia gravis or oculomotor nerve damage."
     ],
     [
-     "Thyroid eye disease, orbital cellulitis and orbital tumour",
-     "Those cause proptosis, which is a different finding."
+     "Thyroid eye disease, orbital cellulitis and orbital tumor",
+     "Orbital disease such as cellulitis or tumor causes proptosis, not ptosis; ptosis comes from myasthenia gravis or third nerve damage."
     ],
     [
      "Blepharitis, chalazion and dermatochalasis",
-     "Those are lid conditions but not the ptosis causes."
+     "Lid lesions such as a chalazion are not ptosis causes; the remaining causes are myasthenia gravis and oculomotor nerve damage."
     ]
    ],
    "c": 0,
@@ -1315,19 +1315,19 @@
    "opts": [
     [
      "Episcleritis from scleritis",
-     "A real distinction, but not the one the material ties to death."
+     "Nodular episcleritis goes with rheumatoid arthritis and lupus; the pair that matters because one can kill is preseptal versus orbital cellulitis."
     ],
     [
      "Cataract from glaucoma",
-     "Not the pair it is."
+     "Simple glaucoma and cataract both cause gradual painless loss; the pair that matters because one can kill is preseptal versus orbital cellulitis."
     ],
     [
      "Hordeolum from chalazion",
-     "Not the pair it is."
+     "A hordeolum is a painful lid-margin infection and a chalazion a painless nodule; the pair that matters is preseptal versus orbital cellulitis."
     ],
     [
      "Preseptal from orbital cellulitis",
-     "Correct — it is exactly this reason."
+     "Correct — preseptal cellulitis must be told apart from orbital cellulitis, because orbital cellulitis can lead to death."
     ]
    ],
    "c": 3,
@@ -1338,23 +1338,23 @@
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
    "chart": true,
-   "q": "On the red-eye chart, what is the PUPIL like in glaucoma?",
+   "q": "In acute glaucoma, what is the pupil like?",
    "opts": [
     [
      "May be small and, with time, irregular",
-     "That is acute iritis."
+     "A small pupil that may become irregular is acute iritis; in acute glaucoma the pupil is dilated and fixed."
     ],
     [
      "Not affected unless iritis develops",
-     "That is corneal injury or infection."
+     "A pupil spared unless iritis develops is corneal injury or infection; in acute glaucoma it is dilated and fixed."
     ],
     [
      "Dilated and fixed",
-     "Correct — the chart's glaucoma column, and a cardinal danger sign."
+     "Correct — acute glaucoma gives a dilated, fixed pupil, with a steamy cornea and an acute rise in intraocular pressure."
     ],
     [
      "Not affected",
-     "That is conjunctivitis and subconjunctival haemorrhage."
+     "An unaffected pupil belongs to conjunctivitis and subconjunctival hemorrhage; in acute glaucoma it is dilated and fixed."
     ]
    ],
    "c": 2,
@@ -1368,19 +1368,19 @@
    "opts": [
     [
      "Direct ophthalmoscopy",
-     "That comes near the end."
+     "Direct ophthalmoscopy comes last, among the special tests with the slit lamp and ocular pressure; inspection comes first."
     ],
     [
      "Ocular pressure",
-     "That comes among the special tests."
+     "Ocular pressure is a special test near the end, done only if it can be measured accurately and safely; inspection comes first."
     ],
     [
      "Inspection",
-     "Correct — the order begins with inspection."
+     "Correct — the suggested order begins with inspection, then the external examination, before acuity and fields."
     ],
     [
      "Visual acuity",
-     "That comes after inspection and external examination."
+     "Visual acuity follows inspection and the external examination of the cornea, lens and pupils."
     ]
    ],
    "c": 2,
@@ -1394,19 +1394,19 @@
    "opts": [
     [
      "Refer immediately regardless",
-     "The material asks you to retest in the binocular field first."
+     "A few beats on lateral gaze are normal, so first bring the finger back into binocular vision and see if it persists."
     ],
     [
      "Measure the intraocular pressure",
-     "Unrelated."
+     "Pressure has no role here; bring the finger back into binocular vision and consider neurologic disease if nystagmus persists."
     ],
     [
      "Bring the finger back into binocular vision",
-     "Correct — persistence within the binocular field is what makes it abnormal. If the nystagmus persists there, consider a neurologic condition."
+     "Correct — bring the finger back into binocular vision; nystagmus that persists there suggests a neurologic condition."
     ],
     [
      "Repeat the whole test with the other eye covered",
-     "Not the manoeuvre."
+     "Covering an eye is not the step; bring the finger back into the binocular field and see whether the nystagmus persists."
     ]
    ],
    "c": 2,
@@ -1420,45 +1420,45 @@
    "opts": [
     [
      "If the patient has previously had cataract surgery on that eye",
-     "Not a contraindication it is."
+     "Cataract surgery in the elderly is a reason not to dilate the pupils, not to skip this test; avoid it if the area is inflamed."
     ],
     [
      "If the patient is over sixty-five",
-     "Age is not a contraindication."
+     "Age is no reason to avoid it; the lacrimal sac compression test is avoided when the area is significantly inflamed or tender."
     ],
     [
      "If the area is significantly inflamed or tender",
-     "Correct — it is to avoid it in that situation."
+     "Correct — the lacrimal sac compression test is avoided if the area is significantly inflamed or tender."
     ],
     [
      "If the patient wears contact lenses",
-     "Not a contraindication it is."
+     "Contact lens wear is no reason to avoid it; the test is avoided only when the area is significantly inflamed or tender."
     ]
    ],
    "c": 2,
    "cite": "PD II Advanced Exam Ocular Lecture - Beck.pptx, Slide 38"
   },
   {
-   "topic": "Sclera colour",
+   "topic": "Sclera color",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
    "q": "A BLUE sclera indicates what?",
    "opts": [
     [
      "Long-term steroid use",
-     "Not an association it is."
+     "Steroid use is a cataract risk factor, not a cause of scleral color; a blue sclera suggests osteogenesis imperfecta."
     ],
     [
      "Osteogenesis imperfecta",
-     "Correct — the association for blue sclerae."
+     "Correct — a blue sclera is the scleral color seen in osteogenesis imperfecta."
     ],
     [
      "Liver disease",
-     "That gives a yellow sclera."
+     "Liver disease gives a yellow sclera through jaundice; a blue sclera is seen in osteogenesis imperfecta."
     ],
     [
      "Thyroid eye disease",
-     "Not associated with scleral colour here."
+     "Thyroid eye disease causes proptosis and lid lag, not scleral color; a blue sclera suggests osteogenesis imperfecta."
     ]
    ],
    "c": 1,
@@ -1472,19 +1472,19 @@
    "opts": [
     [
      "Inflammation of the iris",
-     "Correct — the pairing for photophobia."
+     "Correct — eye pain accompanied by photophobia is the pairing for inflammation of the iris."
     ],
     [
-     "Corneal abrasion",
-     "That is signalled by pain with blinking."
+     "Optic neuritis",
+     "Optic neuritis causes pain on eye motion; eye pain with photophobia suggests inflammation of the iris."
     ],
     [
      "Temporal arteritis",
-     "That gives temporal pain."
+     "Temporal arteritis pairs eye pain with temporal pain; photophobia suggests inflammation of the iris."
     ],
     [
      "Conjunctivitis",
-     "That gives a gritty feeling."
+     "Conjunctivitis pairs eye pain with a gritty feeling; photophobia suggests inflammation of the iris."
     ]
    ],
    "c": 0,
@@ -1498,19 +1498,19 @@
    "opts": [
     [
      "A slight muscle imbalance not otherwise seen",
-     "Correct — the stated purpose."
+     "Correct — the cover-uncover test may reveal a slight muscle imbalance not otherwise seen."
     ],
     [
      "An afferent pupillary defect of the optic nerve",
-     "That is the swinging light test."
+     "An afferent pupillary defect is found with the swinging light test; cover-uncover reveals slight muscle imbalance."
     ],
     [
      "A refractive error",
-     "That is the pinhole test."
+     "Refractive error is shown by pinhole testing; the cover-uncover test reveals slight muscle imbalance."
     ],
     [
      "A field defect",
-     "That is confrontation testing."
+     "Field defects are found by confrontation testing; the cover-uncover test reveals slight muscle imbalance."
     ]
    ],
    "c": 0,
@@ -1521,23 +1521,23 @@
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "test finding",
    "chart": true,
-   "q": "On the red-eye chart, what is the CORNEA like in glaucoma?",
+   "q": "In acute glaucoma, what is the cornea like?",
    "opts": [
     [
      "Steamy and cloudy",
-     "Correct — the chart's glaucoma column."
+     "Correct — acute glaucoma makes the cornea steamy and cloudy, alongside a dilated fixed pupil and severe deep pain."
     ],
     [
      "Clear",
-     "That is conjunctivitis and subconjunctival haemorrhage."
+     "A clear cornea belongs to conjunctivitis and subconjunctival hemorrhage; acute glaucoma makes it steamy and cloudy."
     ],
     [
      "Clear or slightly clouded",
-     "That is acute iritis."
+     "Clear or slightly clouded is the cornea of acute iritis; acute glaucoma makes it steamy and cloudy."
     ],
     [
      "Changes depending on the cause",
-     "That is corneal injury or infection."
+     "A cornea that changes with the cause is corneal injury or infection; acute glaucoma makes it steamy and cloudy."
     ]
    ],
    "c": 0,
@@ -1547,23 +1547,23 @@
    "topic": "Upper lid eversion",
    "io": "Instructional Objectives — Advanced Ocular Medical History and Examination",
    "slot": "initial test",
-   "q": "What is the correct technique for everting the upper lid to search for a foreign body?",
+   "q": "What is the first step in everting the upper lid to search for a foreign body?",
    "opts": [
     [
      "Ask the patient to look up and relax, then pull the upper lid directly upward",
-     "Looking up defeats the eversion; it is downgaze."
+     "The patient looks down, not up, and the lashes are pulled gently down and forward rather than straight upward."
     ],
     [
      "Press on the globe itself to push the lid outward",
-     "It is explicitly not to press on the eyeball."
+     "You never press on the eyeball itself; the patient looks down and the lid is turned over a stick above the tarsal plate."
     ],
     [
-     "Use a cotton bud placed at the lid margin itself",
-     "The material places the stick at least 1 cm above the margin."
+     "Use a cotton swab placed at the lid margin itself",
+     "The stick goes at least 1 cm above the lid margin, at the upper border of the tarsal plate, after the patient looks down."
     ],
     [
      "Ask the patient to look down and relax",
-     "Correct — the step-by-step, including the 1 cm landmark. Raise the lid slightly so the lashes protrude, grasp the lashes and pull down and forward, then place a stick at least 1 cm above the lid margin at the upper border of the tarsal plate and push down as you raise the lid edge."
+     "Correct — the patient looks down and relaxes; then the lashes are pulled down and forward over a stick placed 1 cm above the margin."
     ]
    ],
    "c": 3,

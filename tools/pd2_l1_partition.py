@@ -1,9 +1,28 @@
 #!/usr/bin/env python3
-"""Select the Physical Diagnosis 2 Lecture 1 quiz: ONE set of fifteen.
+"""Select the Physical Diagnosis 2 Lecture 1 quiz: ONE set of twelve.
 
 Not the house two-by-thirty. The lecture is largely course orientation, and with
 that excluded there are about eighteen genuinely clinical questions in the
 source. Fifteen selected from eighteen is what the material honestly supports.
+
+2026-09-22: three of those eighteen were course mechanics after all (handling
+feedback that differs between facilitators, reviewing the grading rubric, and
+reusing your own work for academic credit). Jaxon chose REMOVE ONLY, not
+replace: they are gone from the pool, the shipped quiz went from 15 to 12, and
+the asserts below make sure none of them can ever be selected again.
+
+DO NOT RE-RUN THIS TO "REFRESH" THE QUIZ. The shipped set was chosen from the
+18-question pool with the seed below; with 15 left in the pool the same seed
+draws a different twelve, so a re-run would silently replace shipped questions
+and desynchronise pd2_l1_sets.json from the page and the master forms (which
+pair to it by stem). The committed pd2_l1_sets.json is the page's twelve with
+the three removed, edited in place. The script therefore refuses to overwrite a
+sets file whose selection would change; pass --force only when a NEW selection
+is actually wanted (then re-render the page and tell the masters owner).
+
+Explanations follow the site rule decided 2026-09-22: every option explanation
+refutes (or confirms) AND states the replacing fact, at least 60 characters.
+The old PD2 "names the distractor" allowance is retired; asserted below.
 
 Same machinery as the other partitions: length-bias remediation first, then
 selection against objective coverage, then rotation to spread the answer
@@ -33,9 +52,25 @@ assert not [q for q in POOL if _CTX.search(q["q"])], "question depends on having
 _MECH = _re.compile(r"percent of the (course|grade)|sequester|file nam|late assignment|dress code|"
                     r"how long does .* run|what may a student bring", _re.I)
 assert not [q for q in POOL if _MECH.search(q["q"])], "course-mechanics question in the pool"
+# The three removed 2026-09-22, by exact stem and by subject, so a rewording
+# cannot slip one back in either.
+_REMOVED = {
+    "Why can reusing your own earlier written work create an academic integrity problem?",
+    "How should a student handle feedback that differs between facilitators?",
+    "What should be reviewed before submitting a written clinical assignment?",
+}
+_MECH2 = _re.compile(r"facilitator|rubric|academic (credit|integrity)|plagiar|reus(e|ing) (your|a) |"
+                     r"grading|submitt(ed|ing) (for|a written)", _re.I)
+assert not [q for q in POOL if q["q"] in _REMOVED], "a removed course-mechanics question is back"
+assert not [q for q in POOL if _MECH2.search(q["q"]) or any(_MECH2.search(o[0]) for o in q["opts"][q["c"]:q["c"] + 1])], \
+    "course-mechanics question (feedback / rubric / academic credit) in the pool"
+
+# Site explanation rule (Jaxon 2026-09-22): refute + replacing fact, >= 60 chars.
+_THIN = [(i, j) for i, q in enumerate(POOL) for j, o in enumerate(q["opts"]) if len(o[1].strip()) < 60]
+assert not _THIN, "explanation under 60 characters at (question, option) %r" % _THIN[:8]
 
 random.seed(20260818)
-SET_SIZE = 15
+SET_SIZE = 12
 MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
 
 
@@ -101,6 +136,14 @@ if __name__ == "__main__":
     print("   answer positions A/B/C/D: %d/%d/%d/%d" % tuple(pos.get(i, 0) for i in range(4)))
     print("   length-gameable: %.0f%%" % gameable_pct(qs))
     print("   objectives: %d of %d" % (len(ios), len(ALL_IOS)))
-    json.dump({"set1": qs}, open(os.path.join(HERE, "pd2_l1_sets.json"), "w"),
+    out_path = os.path.join(HERE, "pd2_l1_sets.json")
+    if os.path.exists(out_path) and "--force" not in sys.argv:
+        shipped = [q["q"] for q in json.load(open(out_path, encoding="utf-8"))["set1"]]
+        if shipped != [q["q"] for q in qs]:
+            sys.exit("REFUSING to overwrite pd2_l1_sets.json: this run selects a different set "
+                     "(%d of %d shipped stems kept, order may differ). See the docstring; "
+                     "pass --force only to deliberately re-select." %
+                     (len(set(shipped) & set(q["q"] for q in qs)), len(shipped)))
+    json.dump({"set1": qs}, open(out_path, "w"),
               ensure_ascii=False, indent=1)
     print("\nwrote pd2_l1_sets.json")

@@ -41,6 +41,15 @@ def gameable(opts):
 
 def main():
     apply = "--apply" in sys.argv
+    # RETIRED 2026-09-24. Its cut-at-the-first-comma rule dropped list items
+    # from keys (pd2_l1_pool_a [6] and [7] lost three of four history elements
+    # and the treatment plan; check_truncated_keys.py flags the pattern) and
+    # pasted the cut tail into the explanation as a sentence fragment. Both L1
+    # keys have since been restored by hand, and a re-run would cut them again.
+    # Shorten keys by hand, question by question ([[distractor_style_matching]]).
+    if apply and "--i-know-it-truncates-keys" not in sys.argv:
+        sys.exit("REFUSING --apply: this rule truncates list keys (see the comment above). "
+                 "Shorten keys by hand instead.")
     changed = total = 0
     leftover = []
     for fn in FILES:

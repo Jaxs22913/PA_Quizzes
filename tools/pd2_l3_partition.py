@@ -39,6 +39,22 @@ dropped it would miss the slide she emphasised most.
 
 House rules for this course also apply: no question may depend on having the
 deck open, and none may be about course mechanics.
+
+EXPLANATIONS: every option explanation, correct and wrong, is at least 60
+characters -- a wrong option's refutes it AND states the replacing fact (Jaxon,
+2026-09-22: PD2 uses the site rule). Asserted below.
+
+SELECTION GUARD (added 2026-09-24). The committed pd2_l3_sets.json is NOT what
+this script now produces. On 2026-09-24 the pool was rewritten (self-contained
+stems, refute-plus-fact explanations, three recording-cited questions replaced)
+and one replacement changed an unshipped question's length-gameability, which
+changes the local search's accept/reject path: a scratch re-run selected
+different questions (set1[25], set2[7], set2[9]). Students had already studied
+the shipped selection a week before the exam, so the text fixes were carried
+into the committed sets file directly instead of re-partitioning. This script
+therefore REFUSES to overwrite a sets file whose question selection (stems, in
+order) would change. Pass --force only when a new selection is intended -- for
+example after Exam 1 has been sat -- and re-render and re-check the pages after.
 """
 import sys, os, json, random, re
 from collections import Counter
@@ -100,6 +116,10 @@ assert not [q for q in POOL if _MECH.search(q["q"])], "course-mechanics question
 _CHART = [i for i, q in enumerate(POOL) if q.get("chart")]
 assert len(_CHART) >= 8, ("Beck singled out the red-eye chart -- the pool needs enough "
                           "chart questions to put some in both sets, found %d" % len(_CHART))
+
+_thin = [(q["q"][:50], i) for q in POOL for i, o in enumerate(q["opts"]) if len(o[1]) < 60]
+assert not _thin, ("explanation under 60 characters -- refute AND state the replacing fact: %r"
+                   % _thin[:3])
 
 SLOTS = ("etiology", "epidemiology", "risk factors", "manifestation", "differential",
          "initial test", "gold standard", "test finding", "first-line", "escalation",
@@ -214,6 +234,18 @@ if __name__ == "__main__":
                  len(set(q["topic"] for q in s)), len(set(q["slot"] for q in s)),
                  sum(1 for q in s if q.get("chart"))))
 
-    with open(os.path.join(HERE, "pd2_l3_sets.json"), "w", encoding="utf-8") as fh:
+    _out = os.path.join(HERE, "pd2_l3_sets.json")
+    if os.path.exists(_out) and "--force" not in sys.argv:
+        _cur = json.load(open(_out, encoding="utf-8"))
+        _was = [q["q"] for k in ("set1", "set2") for q in _cur[k]]
+        _now = [q["q"] for q in s1 + s2]
+        if _was != _now:
+            _n = sum(1 for a, b in zip(_was, _now) if a != b)
+            print("\nREFUSING to overwrite pd2_l3_sets.json: the selection would change at "
+                  "%d of %d positions (see the SELECTION GUARD note in the docstring). "
+                  "Edit the sets file directly for text fixes, or pass --force for an "
+                  "intended re-selection." % (_n, len(_now)))
+            sys.exit(2)
+    with open(_out, "w", encoding="utf-8") as fh:
         json.dump({"set1": s1, "set2": s2}, fh, ensure_ascii=False, indent=1)
     print("\nwrote pd2_l3_sets.json")

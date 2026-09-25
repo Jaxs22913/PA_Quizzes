@@ -30,7 +30,7 @@ INTRO = ("Thirty questions on the advanced ocular history and examination. Cover
          "<i>&ldquo;I genuinely think it&rsquo;s important that you are very familiar with that "
          "chart.&rdquo;</i> That slide extracts as completely blank &mdash; it is a picture of "
          "the table &mdash; so its content was recovered by optical character recognition and is "
-         "marked image-only in the citations. Every question cites its slide, or the recording.")
+         "marked image-only in the citations. Every question cites its slide.")
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "ocular-exam-quiz.html" if n == 1 else "ocular-exam-quiz-version-2.html"
     html = render(title=f"Advanced Ocular History &amp; Examination Quiz {n} &mdash; PD2 Exam 1",
