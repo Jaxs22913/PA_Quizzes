@@ -101,6 +101,16 @@ def shell(n):
     src = open(os.path.join(REPO, folder, "cms-exam-%d-study-guide.html" % n), encoding="utf8").read()
     head = src[:src.index('<header class="top">')]
     head = re.sub(r'\s*<link rel="alternate"[^>]*\.docx"[^>]*>\n?', "\n", head)
+    # The study guide's Word link points at the study guide's .docx. This page
+    # gets its OWN link, and only once tools/build_guide_docx.py has written
+    # that file -- theme.js turns the link into a Word button, and a button to
+    # a .docx that does not exist is a 404.
+    docx = "cms-exam-%d-clin-med-pro-guide.docx" % n
+    if os.path.exists(os.path.join(REPO, folder, docx)):
+        head = head.replace(
+            "</head>",
+            '  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.'
+            'wordprocessingml.document" href="%s" title="Editable Word copy">\n</head>' % docx, 1)
     head = re.sub(r"<title>.*?</title>",
                   "<title>Clinical Medicine and Surgery I &middot; Exam %d &mdash; Clin Med Pro Guide</title>" % n,
                   head, count=1, flags=re.S)
