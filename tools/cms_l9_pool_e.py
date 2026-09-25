@@ -73,12 +73,12 @@ POOL_E = [
    c=0, cite=c(66)),
 
  dict(topic="Kaposi sarcoma", io=IOB, slot="escalation",
-   q="Which systemic agents are first-line in Kaposi sarcoma, and what is true of combining them with antiretroviral therapy?",
+   q="Which systemic agents are first-line in Kaposi sarcoma, and how do they combine with antiretroviral therapy?",
    opts=[
      ["Liposomal doxorubicin and paclitaxel; antiretroviral therapy plus chemotherapy is more effective than antiretroviral therapy alone in advanced disease",
       "Correct — combination beats antiretroviral therapy alone once disease is advanced."],
      ["Liposomal doxorubicin and paclitaxel; antiretroviral therapy alone is more effective than the combination in advanced disease",
-      "In advanced disease the tumour burden is too great for immune recovery alone; adding chemotherapy to antiretroviral therapy works better than either by itself."],
+      "The combination is more effective than antiretroviral therapy alone."],
      ["Vismodegib and sonidegib; antiretroviral therapy plus a hedgehog inhibitor is more effective than antiretroviral therapy alone",
       "Hedgehog inhibitors belong to basal cell carcinoma."],
      ["Romidepsin and vorinostat; antiretroviral therapy plus a histone deacetylase inhibitor is more effective than antiretroviral therapy alone",
@@ -138,7 +138,7 @@ POOL_E = [
    c=0, cite=c(75)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, slot="agent/regimen",
-   q="Which initial skin-directed therapies are listed for cutaneous T-cell lymphoma?",
+   q="Which initial skin-directed therapies are used in cutaneous T-cell lymphoma?",
    opts=[
      ["Topical corticosteroids, topical mechlorethamine, bexarotene gel, and ultraviolet phototherapy",
       "Correct — four skin-directed options."],

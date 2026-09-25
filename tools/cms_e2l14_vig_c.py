@@ -3,7 +3,7 @@
 
 The rest of the vignette bank, so the pair of 30s has room: mixed presentations
 across the whole lecture, weighted toward the discriminations that decide
-disposition. Same house style: FIVE options, varied lead-in, per-option
+disposition. Same house style: FOUR options (five until 2026-09-13), varied lead-in, per-option
 refutation, self-contained.
 
 Correct answer authored FIRST; cms_e2_partition.py rotates it.
@@ -49,11 +49,11 @@ QUESTIONS = [
         ["Referral for operative removal", "That is disproportionate for a conjunctival object."]]),
 
  dict(topic="Hyphema", io=IO_A, lead="management", cite=D % 25,
-  q="A 26-year-old with hyphema has an intraocular pressure of 34 mmHg (normal 10 to 21) and no suspicion of an open globe. Which agents are used?",
+  q="A 26-year-old with hyphema has an intraocular pressure of 34 mmHg (normal 10 to 21) and no suspicion of an open globe. Which agents lower the pressure?",
   opts=[["Beta blockers, pilocarpine and acetazolamide, with osmotic agents if needed", "Correct. That is how a raised pressure is brought down here."],
-        ["Topical corticosteroids alone", "Steroids are part of care but do not lower pressure."],
+        ["Topical corticosteroids alone", "Topical corticosteroids are part of hyphema care, but raised pressure is treated with beta blockers or acetazolamide."],
         ["Aspirin to improve perfusion", "Aspirin raises the rebleed risk and is avoided."],
-        ["A mydriatic to open the angle", "Dilation is not used in ocular trauma."]]),
+        ["A mydriatic to open the angle", "Cycloplegic drops, which paralyze the ciliary body, are part of hyphema care, but pressure is lowered with beta blockers, pilocarpine, osmotic agents or acetazolamide."]]),
 
  dict(topic="Hyphema", io=IO_A, lead="mechanism", cite=D % 25,
   q="A cycloplegic drop is prescribed for a patient with a hyphema. What is it doing?",
@@ -73,9 +73,9 @@ QUESTIONS = [
  dict(topic="Orbital contusion", io=IO_A, lead="mechanism", cite=D % 31,
   q="Why does the bruising in an orbital contusion stay in front of the eye rather than spreading behind it?",
   opts=[["The tarsal plate and septal margin act as a wall", "Correct. That is what keeps it preseptal."],
-        ["The orbital fat absorbs the blood", "Not the described mechanism."],
-        ["The periosteum is impermeable", "Not the described mechanism."],
-        ["Venous drainage carries it forward", "Not the described mechanism."]]),
+        ["The orbital fat absorbs the blood", "The fat does not absorb it; the tarsal plate and septal margin form a wall that keeps the blood preseptal."],
+        ["The periosteum is impermeable", "The periosteum is not the barrier; the tarsal plate and septal margin act as a wall that keeps the blood in front."],
+        ["Venous drainage carries it forward", "Venous drainage is not the mechanism; the tarsal plate and septal margin wall the blood off in the anterior tissues."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="patient education", cite=D % 36,
   q="A 55-year-old with a fresh retinal detachment asks how urgently she needs to be seen. Which is the most accurate response?",
@@ -108,9 +108,9 @@ QUESTIONS = [
  dict(topic="Orbital floor fracture", io=IO_A, lead="prognosis", cite=D % 43,
   q="A patient's optic nerve was damaged at the moment of an orbital injury. What should be expected from surgery?",
   opts=[["The damage is unlikely to improve, and surgery may worsen it", "Correct. That is why the decision is made carefully."],
-        ["Surgery reliably restores the lost vision", "It does not."],
-        ["Surgery restores vision if done within 24 hours", "Timing does not change this."],
-        ["Vision recovers spontaneously in most cases", "Not what is described."]]),
+        ["Surgery reliably restores the lost vision", "Surgery does not restore it; optic nerve damage already present is unlikely to improve, and surgery may worsen it."],
+        ["Surgery restores vision if done within 24 hours", "Timing does not change the outlook; damage already present in the optic nerve is unlikely to improve."],
+        ["Vision recovers spontaneously in most cases", "Spontaneous recovery is not expected; damage already done to the optic nerve is unlikely to improve."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="diagnosis", cite=D % 44,
   q="Which combination of findings should raise a basilar skull fracture after head trauma?",

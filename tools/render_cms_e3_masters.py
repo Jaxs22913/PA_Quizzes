@@ -2,8 +2,14 @@
 # -*- coding: utf-8 -*-
 """Render the five CMS I Exam 3 (ENT) Master Exams -- 50 questions each.
 
-Run tools/cmsent_partition.py first: it writes the JSON these read, and it is
-what moves the correct answer off position A.
+Reads Clinical Medicine and Surgery I Exam 3/master-exams.json, which is the
+SOURCE OF TRUTH for these pages. Do not regenerate it with
+tools/cmsent_partition.py: commit 1a7f27ae (2026-09-16) hand-edited that JSON
+(patient stems, lead-ins, and every option set put in alphabetical order, which
+is what now sets the key positions), so the partition script would revert it
+and now refuses to unless forced -- see its docstring. Edit the JSON, then run
+this; it reproduces the five pages from the JSON byte for byte (verified
+2026-09-24 against the committed pages).
 """
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))

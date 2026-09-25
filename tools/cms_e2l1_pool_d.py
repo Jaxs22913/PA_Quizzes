@@ -196,7 +196,7 @@ POOL_D = [
  dict(topic="Fluorescein examination", io=IOA, slot="initial test",
    q="How is a fluorescein examination performed, and what does it detect?",
    opts=[
-     ["A yellow dye is instilled and the eye examined under a Wood lamp with ultraviolet light, detecting corneal abrasions, ulcers and foreign bodies",
+     ["A yellow dye is instilled and the eye examined under a Wood's lamp with ultraviolet light, detecting corneal abrasions, ulcers and foreign bodies",
       "Correct — fluorescein pools wherever the corneal epithelium is missing and glows green under ultraviolet light, so abrasions, ulcers and retained foreign bodies become visible."],
      ["Dye is injected into the arm and a blue-flash camera photographs the retina",
       "That is fluorescein ANGIOGRAPHY, a different test."],
@@ -211,7 +211,7 @@ POOL_D = [
    opts=[
      ["The dye is injected into the hand or arm, reaches the eye in about 10 to 15 seconds, and a blue-flash camera images blood flow in the retina and choroid",
       "Correct — injected rather than instilled, and it images flow rather than surface defects."],
-     ["The dye is instilled as a drop and viewed with a Wood lamp",
+     ["The dye is instilled as a drop and viewed with a Wood's lamp",
       "That is the surface examination."],
      ["It uses iodine contrast and so is contraindicated in shellfish allergy",
       "Fluorescein contains no iodine, so a shellfish or iodine allergy is not a contraindication; that concern belongs to iodinated radiographic contrast."],
@@ -220,7 +220,7 @@ POOL_D = [
    c=0, cite=c(10)),
 
  dict(topic="Fluorescein angiography", io=IOA, slot="education",
-   q="What is noted about the safety of fluorescein angiography dye?",
+   q="How safe is the dye used in fluorescein angiography?",
    opts=[
      ["It is relatively safe and has no iodine",
       "Correct — fluorescein contains no iodine, so the iodinated-contrast precautions do not apply; reactions are usually limited to transient nausea and yellow discolouration of skin and urine."],

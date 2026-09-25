@@ -22,7 +22,7 @@ POOL_B = [
    c=0, cite=c(7)),
 
  dict(topic="Glaucoma", io=IOA, lead="test",
-   q="A 63-year-old woman is being screened for glaucoma. Which two instruments are named?",
+   q="A 63-year-old woman is being evaluated for glaucoma. Which two tests are used?",
    opts=[
      ["Tonometry and gonioscopy", "Correct; tonometry measures pressure, gonioscopy views the angle."],
      ["Ophthalmoscopy and lumbar puncture", "Lumbar puncture belongs to the papilledema workup."],
@@ -49,7 +49,7 @@ POOL_B = [
    c=0, cite=c(24)),
 
  dict(topic="Vascular occlusion", io=IOA, lead="test",
-   q="A 66-year-old man has a retinal vascular occlusion. Which two studies are named as confirmatory?",
+   q="A 66-year-old man has a retinal vascular occlusion. Which two studies confirm it?",
    opts=[
      ["Colour fundus photography and fluorescein angiography", "Correct, used for both the arterial and venous occlusions."],
      ["MRI and lumbar puncture", "Those belong to the papilledema workup."],
@@ -58,7 +58,7 @@ POOL_B = [
    c=0, cite=c(39)),
 
  dict(topic="Retinal detachment", io=IOA, lead="test",
-   q="A 67-year-old woman has a suspected retinal detachment. What advantage is given for ultrasound?",
+   q="A 67-year-old woman has a suspected retinal detachment. What advantage does ultrasound offer?",
    opts=[
      ["It is more sensitive than the fundoscopic exam", "Correct, and it determines the type of detachment."],
      ["It measures intraocular pressure", "That is tonometry."],
@@ -86,16 +86,16 @@ POOL_B = [
 
  # ---------------- Management ----------------
  dict(topic="Amaurosis fugax", io=IOB, lead="treatment",
-   q="A 67-year-old man has amaurosis fugax. What is identified as the core of management?",
+   q="A 67-year-old man has amaurosis fugax. What is the core of management?",
    opts=[
-     ["Treat the underlying cause", "Correct; the transient visual loss is only a warning, and the value of recognising it lies in finding and treating the embolic source before a stroke follows."],
+     ["Treat the underlying cause", "Correct — management treats the cause: aspirin and clopidogrel to reduce stroke risk, carotid endarterectomy for carotid emboli, and calcium channel blockers for vascular spasm."],
      ["Lower the intraocular pressure", "That is glaucoma management."],
      ["Start high-dose corticosteroids", "Those treat arteritic optic neuropathy."],
      ["Observe without intervention", "The cause must be found and treated."]],
    c=0, cite=c(8)),
 
  dict(topic="Amaurosis fugax", io=IOB, lead="treatment",
-   q="A 64-year-old woman has amaurosis fugax attributed to vascular spasm from Raynaud's. Which drug class is used?",
+   q="A 64-year-old woman has amaurosis fugax attributed to vascular spasm from Raynaud's. Which drug class treats it?",
    opts=[
      ["Calcium channel blockers", "Correct, for the vasospastic mechanism."],
      ["Beta-blockers", "Those are used as drops for glaucoma."],
@@ -108,7 +108,7 @@ POOL_B = [
    opts=[
      ["Pilocarpine or timolol", "Correct, a topical alpha-blocker or beta-blocker."],
      ["Latanoprost or tafluprost", "Those are first-line for the chronic form."],
-     ["Prednisolone drops", "Steroid drops are not the described treatment."],
+     ["Prednisolone drops", "Steroid drops do not lower the pressure; pilocarpine or timolol is instilled, with intravenous acetazolamide."],
      ["Atropine drops", "Anticholinergics worsen angle closure."]],
    c=0, cite=c(20)),
 
@@ -122,7 +122,7 @@ POOL_B = [
    c=0, cite=c(20)),
 
  dict(topic="Glaucoma", io=IOB, lead="treatment",
-   q="A 66-year-old man asks what the definitive treatment for glaucoma is. What is stated?",
+   q="A 66-year-old man with glaucoma asks about treatment. What is the definitive treatment?",
    opts=[
      ["Surgery", "Correct, for both the acute and chronic forms."],
      ["Lifelong eye drops", "Some patients remain on drops, but that is not definitive."],
@@ -131,7 +131,7 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Retinal detachment", io=IOB, lead="treatment",
-   q="A 65-year-old man has a retinal detachment. What timeframe is given for surgical repair?",
+   q="A 65-year-old man has a retinal detachment. How soon is surgical repair performed?",
    opts=[
      ["Urgently, or within a week depending on type", "Correct."],
      ["Only if vision fails to improve", "Repair is not conditional on that."],
@@ -158,7 +158,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="Papilledema", io=IOB, lead="treatment",
-   q="A 43-year-old woman has papilledema from an identified cause. What is given as management?",
+   q="A 43-year-old woman has papilledema from an identified cause. How is the papilledema managed?",
    opts=[
      ["Treat the underlying disorder", "Correct, after imaging and lumbar puncture."],
      ["Topical pressure-lowering drops", "The pressure is intracranial, not intraocular."],
@@ -232,11 +232,11 @@ POOL_B = [
    c=0, cite=c(8)),
 
  dict(topic="Optic neuritis", io=IOA, lead="prognosis",
-   q="A 29-year-old man with optic neuritis asks how long recovery takes. What is described?",
+   q="A 29-year-old man with optic neuritis asks how long recovery takes. What is the usual course?",
    opts=[
      ["Improvement within weeks, normal vision within a year", "Correct, often without treatment."],
      ["No recovery at any point", "Recovery is the rule."],
-     ["Recovery within hours", "Faster than the described course."],
+     ["Recovery within hours", "Recovery is slower than that: vision begins to improve after a few weeks and most have near-normal vision at one year."],
      ["Gradual decline over years", "That is chronic glaucoma."]],
    c=0, cite=c(24)),
 
@@ -250,7 +250,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="AAION", io=IOA, lead="prognosis",
-   q="A 80-year-old woman is treated for arteritic optic neuropathy. What does the outlook depend on?",
+   q="An 80-year-old woman is treated for arteritic optic neuropathy. What does the outlook depend on?",
    opts=[
      ["Duration of symptoms and when steroids began", "Correct, which is why early therapy is critical."],
      ["Whether surgery was performed", "Surgery is not the treatment."],
@@ -271,7 +271,7 @@ POOL_B = [
    q="A 77-year-old man is being treated for arteritic optic neuropathy. Why is it a medical emergency?",
    opts=[
      ["Untreated, it leads to blindness", "Correct, and the second eye is at risk."],
-     ["It causes a stroke within hours", "Blindness, not stroke, is the stated risk."],
+     ["It causes a stroke within hours", "The emergency is the eye, not a stroke: untreated, it leads to blindness, including in the other eye."],
      ["It raises intraocular pressure acutely", "That is angle-closure glaucoma."],
      ["It detaches the retina", "That is a separate condition."]],
    c=0, cite=c(49)),
@@ -280,7 +280,7 @@ POOL_B = [
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
    q="A 60-year-old man is being taught how to separate papilledema from glaucoma at the optic disc. What is the key difference?",
    opts=[
-     ["Papilledema pushes the disc out; glaucoma cups it in", "Correct; raised intracranial pressure swells the disc forward, while raised intraocular pressure excavates it backwards, so the two look opposite on fundoscopy."],
+     ["Papilledema pushes the disc out; glaucoma cups it in", "Correct — papilledema is swelling of the optic disc from raised intracranial pressure, while glaucoma cups the disc, widening and deepening its central cup as nerve fibers are lost."],
      ["Both cup the disc equally", "They move in opposite directions."],
      ["Neither changes the disc", "Both change it markedly."],
      ["Only glaucoma affects the appearance of the disc", "Papilledema is defined by disc swelling."]],
@@ -305,7 +305,7 @@ POOL_B = [
    c=0, cite=c(35)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
-   q="A 55-year-old woman is learning the two glaucomas. Which pairing is given?",
+   q="A 55-year-old woman is learning the two glaucomas. Which pairing of course and angle is correct?",
    opts=[
      ["Acute is closed-angle; chronic is open-angle", "Correct."],
      ["Acute is open-angle; chronic is closed-angle", "This reverses them."],
@@ -314,7 +314,7 @@ POOL_B = [
    c=0, cite=c(9)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
-   q="A 73-year-old man asks what separates the two forms of anterior ischemic optic neuropathy. What is given?",
+   q="A 73-year-old man asks what separates the two forms of anterior ischemic optic neuropathy. Which feature distinguishes them?",
    opts=[
      ["Whether giant cell arteritis is present", "Correct; the arteritic form is caused by it."],
      ["Which eye is affected", "Either eye may be affected in both."],
@@ -327,7 +327,7 @@ POOL_B = [
    opts=[
      ["More than one condition uses it", "Correct; it fits amaurosis fugax and retinal detachment."],
      ["It is never a real symptom", "It is a genuine and useful description."],
-     ["It always means glaucoma", "Glaucoma is not described this way."],
+     ["It always means glaucoma", "Glaucoma does not present as a curtain: the acute form brings pain and halos, the chronic form gradual peripheral loss."],
      ["It indicates raised intracranial pressure", "That gives non-specific change instead."]],
    c=0, cite=c(6)),
 
@@ -363,21 +363,21 @@ POOL_B = [
    opts=[
      ["One to two days", "Correct, after medical measures have lowered the pressure."],
      ["Within the hour", "Medical therapy comes first."],
-     ["After two weeks", "Longer than the interval given."],
+     ["After two weeks", "Too late: laser peripheral iridotomy, the definitive treatment, is done one to two days after onset."],
      ["At the next routine appointment", "The procedure is scheduled promptly."]],
    c=0, cite=c(20)),
 
  dict(topic="Optic neuritis", io=IOB, lead="treatment",
-   q="A 33-year-old woman with optic neuritis is found to have multiple sclerosis. Which treatment is mentioned?",
+   q="A 33-year-old woman with optic neuritis has two characteristic demyelinating lesions on magnetic resonance imaging. Which treatment is appropriate?",
    opts=[
-     ["Corticosteroids", "Correct, considered when a demyelinating cause is identified."],
+     ["Corticosteroids", "Correct. Corticosteroids may delay the onset of multiple sclerosis and quicken visual recovery."],
      ["Carbonic anhydrase inhibitors", "Those lower intraocular pressure."],
      ["Antiplatelet therapy", "That reduces embolic risk."],
      ["Calcium channel blockers", "Those treat vascular spasm."]],
    c=0, cite=c(24)),
 
  dict(topic="Retinal detachment", io=IOB, lead="treatment",
-   q="A 66-year-old man needs retinal detachment repair. Which of these is listed among the surgical options?",
+   q="A 66-year-old man needs retinal detachment repair. Which of these is a surgical option?",
    opts=[
      ["Pneumatic retinopexy", "Correct, with cryotherapy, vitrectomy, laser photocoagulation and scleral buckle."],
      ["Peripheral iridotomy", "That treats angle-closure glaucoma."],

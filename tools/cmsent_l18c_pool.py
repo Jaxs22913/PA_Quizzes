@@ -124,10 +124,11 @@ Q("Brucellosis", IO,
   "A 38-year-old man who drinks unpasteurised milk from a local farm has fever, fatigue, malaise "
   "and generalised lymphadenopathy including the neck.",
   [["Trimethoprim-sulfamethoxazole or tetracycline",
-    "Correct. The exposure to unpasteurised milk points to Brucella, and the distinguishing clinical "
-    "feature is that the lymphadenopathy is total-body rather than confined to one region, which "
-    "separates it from the regional adenopathies on the same slide. Diagnosis is by serology and "
-    "culture."],
+    "Correct. Brucellosis is transmitted by ingestion of unpasteurized milk and presents "
+    "with total body lymphadenopathy, fever, fatigue and malaise, unlike the submandibular, "
+    "jugulodigastric or preauricular nodes of suppurative lymphadenopathy and cat scratch "
+    "disease. Diagnosis is by serology and cultures; management is "
+    "trimethoprim-sulfamethoxazole or tetracycline."],
    ["Streptomycin",
     "Streptomycin is the treatment for tularemia, acquired from rabbits, ticks or contaminated "
     "water, which presents with tonsillitis and painful regional adenopathy rather than generalised "

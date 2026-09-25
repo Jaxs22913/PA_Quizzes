@@ -213,7 +213,7 @@ POOL_B = [
      ["All irritants produce symptoms 48 to 72 hours after exposure",
       "That timing belongs to delayed hypersensitivity in the allergic form."],
      ["Timing does not vary with the irritant",
-      "Timing depends entirely on the agent: a strong acid or alkali burns within minutes, while a weak detergent needs repeated exposure over weeks."]],
+      "Timing varies with the exposure."]],
    c=0, cite=c(81)),
 
  dict(topic="Allergic contact dermatitis", io=IOC,
@@ -326,7 +326,7 @@ POOL_B = [
      ["Topical corticosteroid exposure",
       "Correct — and treatment begins by stopping it, with a warning that the eruption may temporarily worsen on withdrawal."],
      ["Sun exposure",
-      "Photoreactions are covered in General Dermatology II rather than being this association."],
+      "Sun exposure is not the key association; topical corticosteroid exposure is the most important modifiable association of perioral dermatitis."],
      ["Malassezia overgrowth",
       "That is seborrhoeic dermatitis."],
      ["Nickel exposure",

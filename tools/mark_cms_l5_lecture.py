@@ -57,7 +57,7 @@ CRAM_ROWS = [
 ]
 
 CARDS = [
- ["What did Professor Shah say you will see on the exam instead of a travel history?", "The picture — the serpiginous advancing track of cutaneous larva migrans."],
+ ["What is the classic lesion of cutaneous larva migrans?", "An erythematous, raised, vesicular, linear or serpentine cutaneous trail."],
  ["How do the scratch marks of cutaneous larva migrans behave?", "They flake but do not break the skin."],
  ["What is first line for cutaneous larva migrans, and at what dose?", "Albendazole 400 milligrams by mouth daily for three days."],
  ["What follow-up does ivermectin need that albendazole does not?", "Review and blood tests to check the liver."],

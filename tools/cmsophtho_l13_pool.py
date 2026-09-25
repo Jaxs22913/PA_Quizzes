@@ -148,8 +148,7 @@ Q("Conjunctival melanoma", IO,
   "treatment", D, 53),
 
 Q("Myopia", IO,
-  "A 15-year-old girl cannot read the board at school but reads comfortably at her desk. Which "
-  "refractive error is this, and how is the eye shaped?",
+  "A 15-year-old girl cannot read the board at school but reads comfortably at her desk. Which statement correctly identifies her refractive error and the shape of the eye?",
   [["Myopia, with the eye too long", "Correct. Light focuses in front of the retina, so distance "
                                      "is blurred and near is clear."],
    ["Hyperopia, with the eye too short", "Light focuses behind the retina; near vision suffers "

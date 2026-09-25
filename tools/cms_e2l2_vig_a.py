@@ -1,5 +1,5 @@
 # CMS I Exam 2, Lecture 11 Neuro-Ophthalmology — VIGNETTE pool, part A.
-# Built to the exam standard Jaxon set 2026-08-26/27: FIVE options, a patient in
+# Built to the exam standard Jaxon set 2026-08-26/27: FOUR options (five until 2026-09-13), a patient in
 # every stem, each wrong option refuted on its own terms, options kept short
 # (reference median 19 chars, max 66) with the reasoning in the explanation.
 SRC = "11. Neuro-Ophthalmology STUDENT VERSION 2026.pptx"
@@ -19,7 +19,7 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Horner syndrome", io=IO, lead="test",
-   q="A 61-year-old woman has ptosis and miosis on the left. You want to confirm the diagnosis in clinic. Which test is named?",
+   q="A 61-year-old woman has ptosis and miosis on the left. You want to confirm the diagnosis in clinic. Which test should be used?",
    opts=[
      ["Dilute apraclonidine drops", "Correct. Ineffective in a normal pupil, they dilate the Horner pupil in most patients."],
      ["Dilute pilocarpine drops", "That is the test for an Adie tonic pupil, which is supersensitive to it."],
@@ -55,7 +55,7 @@ POOL_A = [
    c=0, cite=c(26)),
 
  dict(topic="Marcus Gunn pupil", io=IO, lead="diagnosis",
-   q="A 33-year-old woman has a relative afferent pupillary defect on the left. Where is the lesion placed?",
+   q="A 33-year-old woman has a relative afferent pupillary defect on the left. Where is the lesion most likely to be?",
    opts=[
      ["Retina or optic nerve", "Correct, and therefore pre-chiasmal."],
      ["Optic chiasm", "A chiasmal lesion gives a field defect rather than this pupillary sign."],
@@ -75,10 +75,10 @@ POOL_A = [
  dict(topic="Argyll Robertson pupil", io=IO, lead="test",
    q="A 49-year-old man has bilateral miosis with light-near dissociation. Which condition should be tested for first?",
    opts=[
-     ["Tertiary syphilis", "Correct — the Argyll Robertson pupil is the classic sign of neurosyphilis, in which the light reflex pathway is damaged while the near response is preserved."],
+     ["Tertiary syphilis", "Correct — bilateral miosis with light-near dissociation is an Argyll Robertson pupil, classically associated with tertiary syphilis, so a syphilis workup may be indicated."],
      ["Multiple sclerosis", "Listed as a possible cause, but syphilis is the classic one."],
      ["Diabetes mellitus", "Also listed, but not the classic association."],
-     ["Giant cell arteritis", "Giant cell arteritis causes ischaemic optic neuropathy and sudden vision loss, not light-near dissociation."]],
+     ["Giant cell arteritis", "Giant cell arteritis causes arteritic anterior ischemic optic neuropathy with sudden vision loss; light-near dissociation instead points to an Argyll Robertson pupil."]],
    c=0, cite=c(32)),
 
  dict(topic="Adie tonic pupil", io=IO, lead="diagnosis",
@@ -102,7 +102,7 @@ POOL_A = [
  dict(topic="Adie tonic pupil", io=IO, lead="diagnosis",
    q="A 30-year-old woman with a large tonic pupil has normal eyelid position and full eye movements. Which finding argues against a third nerve palsy?",
    opts=[
-     ["No ptosis and no extraocular weakness", "Correct — the third nerve also supplies levator and four extraocular muscles, so a palsy large enough to dilate the pupil would almost always cause ptosis and limited movement too."],
+     ["No ptosis and no extraocular weakness", "Correct — an Adie pupil has no other features of third nerve palsy, whereas a third nerve palsy also weakens the levator and extraocular muscles, giving ptosis and a down-and-out eye."],
      ["Photophobia", "That can occur with an Adie pupil and does not separate the two."],
      ["Blurred near vision", "Also common to both and not discriminating."],
      ["Female sex in the thirties", "Typical of Adie pupil but not a finding that excludes a palsy."]],
@@ -127,7 +127,7 @@ POOL_A = [
    c=0, cite=c(41)),
 
  dict(topic="Third nerve palsy", io=IO, lead="diagnosis",
-   q="A 66-year-old man with long-standing diabetes has a third nerve palsy with a normal, reactive pupil. Which cause is named as most common?",
+   q="A 66-year-old man with long-standing diabetes has a third nerve palsy with a normal, reactive pupil. What is the most likely cause?",
    opts=[
      ["Microvascular disease", "Correct, and pupil sparing is what makes it the likely one here."],
      ["Posterior communicating artery aneurysm", "That is the most dreaded cause, and it typically involves the pupil."],
@@ -136,12 +136,12 @@ POOL_A = [
    c=0, cite=c(40)),
 
  dict(topic="Third nerve palsy", io=IO, lead="diagnosis",
-   q="Which structure is identified as the most dreaded cause of a pupil-involved third nerve palsy?",
+   q="What is the most dreaded cause of a pupil-involved third nerve palsy?",
    opts=[
      ["Posterior communicating artery aneurysm", "Correct, with rupture threatened within hours to days."],
      ["Internal carotid artery dissection", "That causes a third-order Horner syndrome instead."],
-     ["Cavernous sinus thrombosis", "Cavernous sinus thrombosis is a third-order Horner cause; the feared cause of a pupil-involved third nerve palsy is a posterior communicating artery aneurysm."],
-     ["Basilar artery occlusion", "Not named in relation to this palsy."]],
+     ["Cavernous sinus thrombosis", "Cavernous sinus thrombosis is a third-order Horner syndrome cause; the most dreaded cause of third nerve palsy is compression by a posterior communicating artery aneurysm."],
+     ["Basilar artery occlusion", "Basilar artery occlusion is not the dreaded cause; that is compression by a posterior communicating artery aneurysm."]],
    c=0, cite=c(40)),
 
  dict(topic="Fourth nerve palsy", io=IO, lead="diagnosis",
@@ -159,7 +159,7 @@ POOL_A = [
      ["It arises dorsally and crosses", "Correct, so the left nucleus supplies the right eye."],
      ["It carries parasympathetic fibres", "Those travel with the third nerve."],
      ["It supplies two extraocular muscles", "It supplies superior oblique alone."],
-     ["It exits through the optic canal", "The trochlear nerve does not use the optic canal; what is unique is that it is the only cranial nerve to exit from the dorsal brainstem and cross to the opposite side."]],
+     ["It exits through the optic canal", "The optic canal is not the distinctive feature; the trochlear is the only nerve that arises from the dorsal surface of the brainstem and crosses."]],
    c=0, cite=c(42)),
 
  dict(topic="Sixth nerve palsy", io=IO, lead="diagnosis",
@@ -172,7 +172,7 @@ POOL_A = [
    c=0, cite=c(45)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="next step",
-   q="A 59-year-old woman has an isolated, atraumatic sixth nerve palsy. Which investigation is directed?",
+   q="A 59-year-old woman has an isolated, atraumatic sixth nerve palsy. Which investigation is indicated?",
    opts=[
      ["MRI brain with and without contrast", "Correct, and check haemoglobin A1C if there are risk factors and no known diabetes."],
      ["Stat computed tomography angiography", "That is reserved for a pupil-involved third nerve palsy."],
@@ -229,9 +229,9 @@ POOL_A = [
    q="A 26-year-old woman develops new monocular nystagmus. Which is the most appropriate step?",
    opts=[
      ["Refer to ophthalmology", "Correct. Nystagmus acquired in adulthood, and monocular nystagmus, both warrant work-up."],
-     ["Reassure her it is physiologic", "Monocular and asymmetric nystagmus is specifically flagged as concerning."],
+     ["Reassure her it is physiologic", "New monocular nystagmus is not physiologic; monocular or asymmetric nystagmus is concerning and needs a work-up."],
      ["Start a calcium channel blocker", "That is used for vascular spasm in amaurosis fugax."],
-     ["Prescribe prism glasses", "Prism glasses correct ocular misalignment; new nystagmus in one eye only requires investigation for an underlying cause."]],
+     ["Prescribe prism glasses", "Prism glasses do not address the cause; new monocular nystagmus is a concerning pattern that needs ophthalmology referral for a complete exam, then imaging."]],
    c=0, cite=c(5)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
@@ -253,7 +253,7 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Opioid toxicity", io=IO, lead="education",
-   q="A patient is discharged after naloxone reversal. Which point is emphasised?",
+   q="A patient is discharged after naloxone reversal. Which point about naloxone matters most?",
    opts=[
      ["Naloxone may need repeating", "Correct. It lasts about two hours, so respiratory depression can return."],
      ["The pupils will stay dilated", "Opioid toxicity constricts the pupils."],

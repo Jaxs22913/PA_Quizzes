@@ -262,7 +262,7 @@ POOL_B = [
    q="A 24-year-old woman with primary hyperhidrosis says she has been told repeatedly that she just needs to wash more and relax. Which is the most appropriate counselling point?",
    opts=[
      ["Primary hyperhidrosis is a medical condition rather than a problem of hygiene or anxiety",
-      "Correct — the misconception is addressed directly, and quality-of-life impairment is comparable to severe psoriasis."],
+      "Correct — primary hyperhidrosis is not caused by poor hygiene or anxiety; it is a medical condition, with quality-of-life impairment comparable to severe psoriasis."],
      ["Improved hygiene and stress reduction will resolve the sweating over time",
       "Anxiety exacerbates the condition but neither causes nor cures it."],
      ["The condition affects a very small minority and treatment options are limited",

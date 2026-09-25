@@ -50,10 +50,10 @@ POOL_B = [
    c=0, cite=c(26)),
 
  dict(topic="Tinea corporis", io=IOB, slot="differential",
-   q="Which condition is flagged in a clinical pearl as often confused with tinea corporis?",
+   q="Which condition is most often confused with tinea corporis?",
    opts=[
      ["Nummular eczema",
-      "Correct — both produce round scaly plaques, and the discriminator is central clearing, which tinea has and nummular eczema does not."],
+      "Correct — nummular eczema is the classic mimic."],
      ["Psoriasis",
       "Psoriasis is on the differential but is not the one singled out."],
      ["Discoid lupus",
@@ -70,7 +70,7 @@ POOL_B = [
      ["To the lesion only, avoiding normal skin",
       "The advancing edge extends beyond what is visible."],
      ["Five centimetres beyond the border",
-      "Five centimetres is more than needed; a two-centimetre margin covers the advancing hyphae, which extend beyond the visible edge."],
+      "Wider than needed."],
      ["To the whole affected limb",
       "Whole-limb application is not what is described."]],
    c=0, cite=c(28)),
@@ -105,7 +105,7 @@ POOL_B = [
    q="Who gets tinea cruris, what is it commonly called, and what does it often coexist with?",
    opts=[
      ["More common in men; jock itch; often coexists with tinea pedis",
-      "Correct — the groin is usually infected by fungus carried from the feet on hands or clothing, so treating the groin alone leaves the reservoir in place."],
+      "Correct — which is why the coexisting foot infection must be treated too."],
      ["More common in women; jock itch; often coexists with tinea capitis",
       "The sex and the coexisting infection are both wrong."],
      ["Equally common in both sexes; ringworm; often coexists with onychomycosis",
@@ -124,7 +124,7 @@ POOL_B = [
      ["Trichophyton tonsurans and Microsporum canis; contact with pets and shared combs",
       "Those organisms and routes belong to tinea capitis."],
      ["Staphylococcus aureus and Streptococcus pyogenes; skin breaks and lymphoedema",
-      "Those are bacterial pathogens from a different lecture."]],
+      "Staphylococcus aureus and Streptococcus pyogenes are bacteria; tinea cruris is caused by dermatophytes, most often Trichophyton rubrum and Epidermophyton floccosum."]],
    c=0, cite=c(31)),
 
  dict(topic="Tinea cruris", io=IOB, slot="differential",
@@ -245,7 +245,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Tinea pedis", io=IOC, slot="education",
-   q="Which piece of tinea pedis patient education is marked as essential?",
+   q="Which piece of tinea pedis patient education is essential?",
    opts=[
      ["Dry between the toes after bathing",
       "Correct — alongside antifungal foot powder for shoes, open-toed sandals when possible, sandals in community showers, and changing socks frequently."],

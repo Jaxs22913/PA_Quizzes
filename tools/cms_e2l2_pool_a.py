@@ -1,6 +1,6 @@
 # CMS I Exam 2, Lecture 11 Neuro-Ophthalmology — OBJECTIVE set pool.
 # Joins the pathway-and-anatomy items routed here from the vignette pool
-# (cms_e2l2_split.RECALL). Five options throughout, per the exam standard;
+# (cms_e2l2_split.RECALL). Four options throughout (five until 2026-09-13), per the exam standard;
 # stems are framed with a patient wherever the content allows one, since the
 # standard measures that even on an objective set.
 SRC = "11. Neuro-Ophthalmology STUDENT VERSION 2026.pptx"
@@ -22,11 +22,11 @@ POOL_A = [
    opts=[
      ["It is usually asymptomatic if acquired before age eight", "Correct, which is why onset age matters."],
      ["It is always symptomatic regardless of onset", "Early onset is the stated exception."],
-     ["It becomes symptomatic only in adulthood", "Symptoms track age at onset rather than current age: a brain that develops alongside the eye movement adapts to it and never registers oscillopsia."],
+     ["It becomes symptomatic only in adulthood", "Symptoms depend on onset age, not current age: nystagmus is usually symptomatic unless acquired before 8 years of age, so onset at three explains her lack of symptoms."],
      ["It causes diplopia in all cases", "Diplopia is not the symptom described."]],
    c=0, cite=c(3)),
  dict(topic="Nystagmus", io=IO, lead="recall",
-   q="A 40-year-old man reports the room spinning alongside his nystagmus. Which symptom is this, and what is it commonly associated with?",
+   q="A 40-year-old man reports the room spinning alongside his nystagmus. Which statement correctly names this symptom and its common association?",
    opts=[
      ["Vertigo, with vestibular problems", "Correct, and it is often the primary symptom."],
      ["Oscillopsia, with vestibular problems", "Oscillopsia is the sense of the environment moving."],
@@ -34,7 +34,7 @@ POOL_A = [
      ["Amaurosis, with carotid disease", "That is transient visual loss."]],
    c=0, cite=c(3)),
  dict(topic="Pupillary pathway", io=IO, lead="recall",
-   q="Which muscle constricts the pupil, and which dilates it?",
+   q="Which statement correctly pairs the pupillary muscles with their actions?",
    opts=[
      ["Iris sphincter constricts, radial muscle dilates", "Correct: miosis and mydriasis respectively."],
      ["Radial muscle constricts, iris sphincter dilates", "This reverses the two."],
@@ -55,7 +55,7 @@ POOL_A = [
      ["Three", "Correct: hypothalamus to cord, cord to superior cervical ganglion, then to the eye."],
      ["Two", "Two is the general autonomic pattern, but this pathway has three orders."],
      ["One", "A single neuron describes the somatic efferent route."],
-     ["Four", "The pathway has three neurons, running hypothalamus to spinal cord, then to the superior cervical ganglion, then to the orbit, which is why Horner syndrome can be localised."]],
+     ["Four", "There are three orders: hypothalamus to the ciliospinal center at C8 to T2, then to the superior cervical ganglion, then along the carotid artery to the pupillary dilator."]],
    c=0, cite=c(13)),
  dict(topic="Horner syndrome", io=IO, lead="recall",
    q="Which triad defines Horner syndrome?",
@@ -71,7 +71,7 @@ POOL_A = [
      ["It is often idiopathic", "Correct, before the ordered causes are considered."],
      ["It is always malignant", "Malignancy is one cause among several."],
      ["It is always vascular", "Vascular causes are third-order ones."],
-     ["It is usually congenital", "Congenital cases occur but are uncommon; the pathway's long course through neck and chest means an acquired lesion along it is the usual cause."]],
+     ["It is usually congenital", "Horner syndrome is an acquired condition following damage to the sympathetic nerve supply, and it is often idiopathic rather than congenital."]],
    c=0, cite=c(30)),
  dict(topic="Third nerve palsy", io=IO, lead="recall",
    q="How is a third nerve palsy classified?",
@@ -82,7 +82,7 @@ POOL_A = [
      ["Traumatic or atraumatic only", "Aetiology is separate from the classification."]],
    c=0, cite=c(41)),
  dict(topic="Cranial nerves", io=IO, lead="recall",
-   q="Which muscle does the abducens nerve supply, and what does it do?",
+   q="Which statement correctly describes the muscle the abducens nerve supplies and its action?",
    opts=[
      ["Lateral rectus, which abducts", "Correct."],
      ["Superior oblique, which intorts", "That is the trochlear nerve."],
@@ -90,7 +90,7 @@ POOL_A = [
      ["Orbicularis oculi, which closes the lid", "That is the facial nerve."]],
    c=0, cite=c(44)),
  dict(topic="Cranial nerves", io=IO, lead="recall",
-   q="Which muscle does the trochlear nerve supply, and what are its actions?",
+   q="Which statement correctly describes the muscle the trochlear nerve supplies and its actions?",
    opts=[
      ["Superior oblique, which intorts and depresses", "Correct."],
      ["Inferior oblique, which extorts and elevates", "That is supplied by the oculomotor nerve."],
@@ -133,7 +133,7 @@ POOL_A = [
    q="Where is the lesion in an Adie tonic pupil?",
    opts=[
      ["Ciliary ganglion", "Correct, with aberrant reinnervation afterwards."],
-     ["Edinger-Westphal nucleus", "That is upstream, and a lesion there is not what is described."],
+     ["Edinger-Westphal nucleus", "The Edinger-Westphal nucleus is upstream; an Adie pupil follows damage to the ciliary ganglion or the short ciliary nerves."],
      ["Pretectal nucleus", "That is the Argyll Robertson location."],
      ["Superior cervical ganglion", "That is sympathetic."]],
    c=0, cite=c(35)),
@@ -146,12 +146,12 @@ POOL_A = [
      ["Anhidrosis", "That belongs to Horner syndrome."]],
    c=0, cite=c(36)),
  dict(topic="Care strategies", io=IO, lead="recall",
-   q="Which imaging is named in the general work-up of neuro-ophthalmological disorders?",
+   q="Which imaging is used, if indicated, in the general work-up of neuro-ophthalmological disorders?",
    opts=[
      ["Head computed tomography or MRI", "Correct, if indicated after history and examination."],
-     ["Abdominal ultrasound", "Not relevant here."],
+     ["Abdominal ultrasound", "Abdominal ultrasound plays no part; the work-up uses head computed tomography or magnetic resonance imaging of the brain."],
      ["Carotid Doppler in every case", "That is used when an embolic source is suspected."],
-     ["Positron emission tomography", "Positron emission tomography images metabolic activity and is not used here; the structural imaging needed is magnetic resonance."]],
+     ["Positron emission tomography", "Positron emission tomography is not part of this work-up; when imaging is indicated, it is head computed tomography or magnetic resonance imaging of the brain."]],
    c=0, cite=c(54)),
  dict(topic="Pupillary pathway", io=IO, lead="recall",
    q="Along which cranial nerve do the afferent impulses of the light reflex travel?",
@@ -162,7 +162,7 @@ POOL_A = [
      ["Seventh", "That closes the eyelids."]],
    c=0, cite=c(11)),
  dict(topic="Pharmacologic mydriasis", io=IO, lead="recall",
-   q="Which agents are named as causing a pharmacologically dilated pupil?",
+   q="Which agents can cause a pharmacologically dilated pupil?",
    opts=[
      ["Atropine, ipratropium, scopolamine, glycopyrrolate", "Correct: anticholinergics, giving a large pupil unreactive to light."],
      ["Pilocarpine and carbachol", "Those are cholinergic agonists and constrict the pupil."],
@@ -174,7 +174,7 @@ POOL_A = [
    opts=[
      ["It is only mildly enlarged", "Correct, unlike the very large anticholinergic pupil."],
      ["It is smaller than normal", "Sympathomimetics dilate rather than constrict."],
-     ["It does not react to near", "Near reaction is not the distinguishing feature given."],
+     ["It does not react to near", "Near reaction does not separate them; the sympathomimetic pupil is only 1 to 2 millimeters larger than baseline."],
      ["It causes ptosis", "Ptosis is not part of pharmacologic mydriasis."]],
    c=0, cite=c(22)),
  dict(topic="Accommodation", io=IO, lead="recall",

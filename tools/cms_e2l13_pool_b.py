@@ -80,7 +80,7 @@ QUESTIONS = [
   opts=[["Under five years", "Correct, per the preventive task force and the paediatric academy."],
         ["Under two years", "Screening is recommended by five, not two."],
         ["Under ten years", "That is too late to treat well."],
-        ["At school entry only", "A specific age threshold is given."]]),
+        ["At school entry only", "School entry is not the threshold; every child should be screened for amblyopia before age five."]]),
 
  dict(topic="Amblyopia", io=IO_A, lead="treatment", cite=D % 30,
   q="A 4-year-old boy has amblyopia of the left eye. What is the treatment?",
@@ -168,8 +168,8 @@ QUESTIONS = [
         ["Anti-VEGF injections", "Those treat wet macular degeneration."]]),
 
  dict(topic="Cataract", io=IO_A, lead="complication", cite=D % 39,
-  q="A 68-year-old woman's vision clouds again two years after cataract surgery. What has happened, and what treats it?",
-  opts=[["Posterior capsule opacification, treated by laser", "Correct. Residual lens epithelial cells cloud the capsule."],
+  q="A 68-year-old woman's vision clouds again two years after cataract surgery. What has most likely happened?",
+  opts=[["Posterior capsule opacification", "Correct. Residual lens epithelial cells cloud the capsule."],
         ["The cataract has regrown", "The lens is gone; it cannot regrow."],
         ["Macular degeneration has started", "That distorts the centre rather than clouding."],
         ["Glaucoma has developed", "That takes the peripheral field."]]),
@@ -194,7 +194,7 @@ QUESTIONS = [
   opts=[["It risks seeding tumour cells", "Correct, so diagnosis rests on examination and imaging."],
         ["The tissue is too small to sample", "Size is not the reason."],
         ["Anaesthesia is unsafe at that age", "Anaesthesia is not the objection."],
-        ["It would damage the optic nerve", "Seeding is the stated risk."]]),
+        ["It would damage the optic nerve", "Optic nerve damage is not the objection; biopsy is avoided because it risks seeding tumor cells."]]),
 
  dict(topic="Retinoblastoma", io=IO_B, lead="next step", cite=D % 42,
   q="A newborn has a parent who had retinoblastoma. When should the baby be seen?",

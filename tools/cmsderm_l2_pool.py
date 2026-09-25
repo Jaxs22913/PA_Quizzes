@@ -300,7 +300,7 @@ Q("Stasis dermatitis",
     "Fever is neither required for nor exclusive to venous thrombosis, and this patient is indeed afebrile. Using a "
     "normal temperature to rule out a thrombotic event would be a serious error."],
    ["Compression therapy should be started immediately to relieve the swelling",
-    "Compressing a leg before excluding deep venous thrombosis and confirming adequate arterial supply risks both propagating a clot and causing ischaemic damage; compression is the cornerstone only once those questions are settled."]],
+    "Compression comes only after deep venous thrombosis is excluded and arterial status is clarified, with an ankle-brachial index or toe pressure where arterial disease is suspected."]],
   0, 115),
 
 Q("Bullous pemphigoid",
@@ -504,7 +504,7 @@ Q("Psoriasis",
     "and may follow systemic steroid withdrawal. It is abrupt and life-threatening, begins with several days of "
     "fever, and is commonly mistaken for bacterial or viral infection."],
    ["A widespread bacterial skin infection",
-    "The pustules are sterile and neutrophil-rich rather than infective; pre-existing psoriasis with recent systemic steroid withdrawal identifies this as a pustular flare, which is commonly mistaken for infection."],
+    "The pustules of this flare are sterile; pre-existing psoriasis with recent systemic steroid withdrawal points to pustular psoriasis, which is commonly mistaken for infection."],
    ["Acute generalised exanthematous pustulosis from the prednisone",
     "A drug-induced pustular eruption is a reasonable thought, but the temporal relationship here is to steroid "
     "withdrawal rather than to steroid exposure, and the patient's established psoriasis supplies the substrate "
@@ -733,7 +733,7 @@ Q("Primary morphology",
   "A 6-year-old boy is brought in with fever and a rash. Examination shows non-blanching deposits of blood in the "
   "skin, several measuring 6 mm across. What is the most appropriate interpretation of this finding?",
   [["Purpura, which should be treated as a medical emergency until proven otherwise",
-    "Correct. Blood deposits of 4 mm or more are purpura, and non-blanching purpura with fever in a child raises meningococcaemia, which can kill within hours."],
+    "Correct. Blood deposits of 4 mm or more are purpura, which is a medical emergency until proven otherwise; with fever in a child it demands immediate evaluation."],
    ["Petechiae, which should be treated as a medical emergency until proven otherwise",
     "The urgency is right but the term is wrong: petechiae are deposits of blood 1 to 2 mm, and these lesions are "
     "6 mm. Precision matters here because the size defines which term is being used to communicate the finding."],

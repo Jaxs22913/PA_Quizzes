@@ -75,9 +75,7 @@ Q("Seborrheic keratosis",
     "feeling velvety or warty and appearing stuck or pasted onto the skin. They are common in older adults and are "
     "easily mistaken for neoplasms."],
    ["Malignant melanoma, requiring urgent excisional biopsy",
-    "The stuck-on appearance and velvety texture are characteristic of a benign keratosis, though the resemblance to "
-    "neoplasm is exactly why the lesion is taught. Genuine asymmetry, border irregularity, or colour variation would "
-    "change the assessment."],
+    "The stuck-on appearance and velvety texture are characteristic of a benign seborrheic keratosis, a lesion easily mistaken for a neoplasm. Genuine asymmetry, border irregularity, or color variation would change the assessment."],
    ["Solar lentigines, which are flat macules rather than raised",
     "Solar lentigines are macules — flat, without elevation. These lesions are raised papules and plaques with a "
     "palpable velvety surface."],

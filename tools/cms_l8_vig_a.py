@@ -276,7 +276,7 @@ POOL_A = [
      ["The psychological and social impact is real, and psychological intervention is part of management",
       "Correct — low self-esteem and poor body image are named explicitly."],
      ["The condition is indeed cosmetic, so treatment is optional and reassurance is enough",
-      "Calling it cosmetic dismisses both the substantial psychological burden and the real loss of photoprotection in depigmented skin."],
+      "Dismissing it as cosmetic is exactly what to avoid."],
      ["The condition indicates an underlying malignancy, which explains how unwell he feels",
       "That association belongs to acanthosis nigricans."],
      ["The condition will resolve spontaneously within a year, so no treatment is needed",

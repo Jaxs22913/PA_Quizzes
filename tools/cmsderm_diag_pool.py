@@ -452,7 +452,7 @@ Q("Vitiligo", D9, 22,
 Q("Seborrheic keratosis", D9, 17,
   "A 68-year-old woman has several beige to dark brown papules and plaques 5 to 15 mm on the trunk that feel velvety and appear pasted onto the skin surface. They have appeared gradually over years.",
   [["Seborrheic keratosis","Correct. Seborrheic keratoses are benign papules and plaques, beige to brown to black, 2 to 20 mm, feeling velvety or warty and appearing stuck or pasted onto the skin. They are common in older adults and easily mistaken for neoplasms."],
-   ["Malignant melanoma","Melanoma shows asymmetry, irregular borders, colour variegation, and evolution rather than a uniform stuck-on velvety surface, though the resemblance is exactly why these lesions are taught."],
+   ["Malignant melanoma","Melanoma shows asymmetry, irregular borders, color variegation, and evolution rather than a uniform stuck-on velvety surface, although seborrheic keratoses are easily mistaken for neoplasms."],
    ["Melanocytic naevus","Common acquired naevi are usually under 6 mm with a homogeneous smooth surface rather than a warty stuck-on quality."],
    ["Actinic keratosis","Actinic keratoses are rough scaly papules on sun-exposed skin with a sandpaper texture, often more apparent by touch than by sight."]], 0),
 

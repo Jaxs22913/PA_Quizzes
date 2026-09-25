@@ -185,10 +185,10 @@ POOL_A = [
    c=0, cite=c(24)),
 
  dict(topic="Acanthosis nigricans", io=IOA,
-   q="Which counselling point is emphasised for acanthosis nigricans?",
+   q="Which counseling point is appropriate for a patient with acanthosis nigricans?",
    opts=[
      ["It is a metabolic warning sign rather than a hygiene problem, and 5 to 10% weight loss improves the findings",
-      "Correct — the hygiene misconception is specifically addressed."],
+      "Correct — acanthosis nigricans signals insulin resistance rather than poor hygiene, and losing even 5 to 10% of body weight improves the findings."],
      ["It is a benign cosmetic change that carries no systemic implication at all",
       "It is a visible marker of insulin resistance and sometimes of malignancy."],
      ["It responds fully to topical antifungal therapy within several weeks",

@@ -176,7 +176,7 @@ SYSTEMS = [
   ("acne-severe-nodular.jpg", "Severe inflammatory and nodular disease, the band where isotretinoin monotherapy becomes an option. Slide 13.")]),
 
 ("Melanoma &mdash; Clark level (anatomic depth)", L10, "50",
- "<b>This slide is a figure with no text at all</b>, so the levels below are read off the diagram's own anatomy. Clark level grades melanoma by <b>which layer of skin it has reached</b>. <span class=warn>It has largely been superseded by Breslow thickness, which is the deck's stated dominant prognostic variable</span> &mdash; but Clark levels still appear on pathology reports, so the ladder is worth recognising.",
+ "<b>This slide is a figure with no text at all</b>, so the levels below are read off the diagram's own anatomy. The level of invasion, conventionally called the Clark level, grades melanoma by <b>which layer of skin it has reached</b>. <span class=warn>It has largely been superseded by Breslow thickness, which is the deck's stated dominant prognostic variable</span> &mdash; but Clark levels still appear on pathology reports, so the ladder is worth recognising.",
  [("Level I", "Confined to the <b>epidermis</b>, above the basement membrane &mdash; melanoma in situ."),
   ("Level II", "Invades into the <b>papillary dermis</b>."),
   ("Level III", "<b>Fills and expands the papillary dermis</b>, down to the papillary&ndash;reticular interface."),
@@ -333,7 +333,7 @@ def build():
     --c-panel:#eef5f4; --c-warn:#8c3b12; --c-mute:#4c5f5e;
   }
   body{margin:0;}
-  /* Fullscreen on a desktop, per Jaxon 2026-08-27. The old 1100px cap left
+  /* Fullscreen on a desktop, requested 2026-08-27. The old 1100px cap left
      half a monitor empty and forced the figures under the table; the width is
      what lets each system read as table-beside-picture instead. Still capped,
      because a table line running the full width of an ultrawide is unreadable. */

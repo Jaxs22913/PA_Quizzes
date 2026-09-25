@@ -79,7 +79,7 @@ DECKS = [
   ["Why is nodular melanoma high risk?", "It grows rapidly, is often amelanotic, and may lack the classic features."],
   ["Where does acral lentiginous melanoma arise?", "Palms, soles and nail units."],
   ["What does the D in ABCDE stand for, and what is its caveat?", "Diameter over six millimetres, though smaller lesions can still be melanoma."],
-  ["Slide 50's level I of invasion (the Clark level) means what?", "Confined to the epidermis."],
+  ["What does Clark level I of invasion mean?", "Confined to the epidermis."],
   ["Level IV of invasion means what?", "Invasion into the reticular dermis."],
   ["Level V of invasion means what?", "Invasion into the subcutaneous tissue."],
   ["What is the difference between the level of invasion and Breslow thickness?", "The level is an anatomic layer; Breslow is a measurement, and Breslow dominates prognosis."],

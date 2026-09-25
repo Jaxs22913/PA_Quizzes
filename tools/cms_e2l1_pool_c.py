@@ -90,7 +90,7 @@ POOL_C = [
    c=0, cite=c(49)),
 
  dict(topic="Scleritis", io=IOA, slot="referral",
-   q="How urgently does scleritis need ophthalmology, and why?",
+   q="Which statement correctly describes the urgency of ophthalmology referral for scleritis?",
    opts=[
      ["Urgently — the sclera is at risk of perforation and may need a surgical patch",
       "Correct — progressive scleral thinning can perforate the globe, which may require a surgical patch graft, so referral is urgent."],
@@ -301,16 +301,16 @@ POOL_C = [
    c=0, cite=c(58)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="test finding",
-   q="What is Hutchinson sign and what does it predict?",
+   q="Which finding is Hutchinson sign in herpes zoster ophthalmicus?",
    opts=[
-     ["Involvement of the tip of the nose, predicting a higher risk of ocular involvement",
-      "Correct — the nasociliary nerve supplies both the nose tip and the globe, so vesicles on the nose tip mean that branch is involved and the eye is at higher risk."],
-     ["Involvement of the lower lid, predicting corneal scarring",
-      "Zoster ophthalmicus often spares the lower lid; it is involvement of the NOSE TIP that predicts ocular disease, through the nasociliary nerve."],
-     ["A dendrite with end bulbs, predicting recurrence",
-      "That is the simplex corneal finding."],
-     ["A violaceous scleral patch, predicting perforation",
-      "That is scleritis."]],
+     ["Involvement of the tip of the nose",
+      "Correct — Hutchinson sign is involvement of the tip of the nose in herpes zoster, and it signals a higher risk of ocular involvement."],
+     ["Involvement of the lower eyelid",
+      "Herpes zoster ophthalmicus often spares the lower lid; the sign that predicts ocular involvement is involvement of the tip of the nose."],
+     ["A dendrite with terminal end bulbs",
+      "A true dendrite with terminal end bulbs is the corneal staining finding of herpes simplex, not a skin sign of zoster."],
+     ["A violaceous patch on the sclera",
+      "A violaceous hue of the sclera is a sign of scleritis, where choroid shows through thinned sclera, not a sign of zoster."]],
    c=0, cite=c(58)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="agent/regimen",
@@ -393,7 +393,7 @@ POOL_C = [
 
  # ---- corneal ulcer ----
  dict(topic="Corneal ulcer", io=IOA, slot="risk factors",
-   q="Which single risk factor is called major for a corneal ulcer?",
+   q="Which single risk factor is the major one for a corneal ulcer?",
    opts=[
      ["Contact lens use", "Correct — a contact lens abrades the epithelium and holds organisms against the cornea, which is why lens wear dominates the risk for ulceration."],
      ["Sunlight exposure", "That drives pterygium."],
@@ -402,7 +402,7 @@ POOL_C = [
    c=0, cite=c(60)),
 
  dict(topic="Corneal ulcer", io=IOA, slot="manifestation",
-   q="Which examination behaviour is described in corneal ulcer?",
+   q="Which examination behaviour is characteristic of a corneal ulcer?",
    opts=[
      ["The patient resists opening the affected eye",
       "Correct — photophobia and foreign body sensation make opening the eye painful, so blepharospasm and resistance to examination are themselves a clue."],
@@ -490,7 +490,7 @@ POOL_C = [
    c=0, cite=c(62)),
 
  dict(topic="Anterior uveitis", io=IOA, slot="manifestation",
-   q="What is true of vision in anterior uveitis?",
+   q="What happens to vision in anterior uveitis?",
    opts=[
      ["It is often preserved", "Correct — which is why the other signs matter so much."],
      ["It is always severely reduced", "Vision is often preserved, which is precisely why the pain, photophobia and ciliary flush carry the diagnosis."],
@@ -525,7 +525,7 @@ POOL_C = [
    c=0, cite=c(64)),
 
  dict(topic="Posterior uveitis", io=IOA, slot="etiology",
-   q="Which infectious causes are given for posterior uveitis?",
+   q="Which infectious causes produce posterior uveitis?",
    opts=[
      ["Toxoplasmosis and cytomegalovirus", "Correct — toxoplasmosis and cytomegalovirus both infect the retina and choroid directly, the latter especially in immunocompromised patients."],
      ["Adenovirus and Staphylococcus aureus", "Those are conjunctivitis causes."],

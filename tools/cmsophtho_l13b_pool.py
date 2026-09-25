@@ -45,7 +45,7 @@ Q("Cataract", IO,
   "two-step", D, 37),
 
 Q("Macular degeneration", IO,
-  "A 78-year-old man with dry macular degeneration asks whether anything slows it. What is offered?",
+  "A 78-year-old man with dry macular degeneration asks whether anything slows it. Which measure can slow it?",
   [["Antioxidant and zinc supplementation", "Correct — supplementation slows progression in "
                                             "intermediate dry disease."],
    ["Intravitreal anti-VEGF injections", "Those treat the wet form."],
@@ -145,8 +145,7 @@ Q("Presbyopia", IO,
   "two-step", D, 18),
 
 Q("Idiopathic intracranial hypertension", IO,
-  "A 26-year-old woman with idiopathic intracranial hypertension is started on treatment. Which "
-  "measures are used?",
+  "A 26-year-old woman with idiopathic intracranial hypertension is started on treatment. Which measures does it include?",
   [["Weight reduction and acetazolamide", "Correct, with serial visual field monitoring."],
    ["Topical antiglaucoma drops", "The pressure raised here is intracranial."],
    ["Intravitreal anti-VEGF", "That treats neovascular macular disease."],

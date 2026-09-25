@@ -8,10 +8,12 @@ themselves.
   ANSWER POSITIONS. Every question is authored with the correct choice first,
   because _cmsent_style.Q asserts the key's explanation opens "Correct".
   Rendering a pool straight out would make all five forms answerable without
-  reading -- the PD1 bug, see [[answer_position_bias_check]]. Options are
-  permuted here, PER FORM, so each form lands as close to even across A-D as
-  fifty questions allow (13/13/12/12 rather than a national average that hides
-  a skewed individual paper).
+  reading -- the PD1 bug, see [[answer_position_bias_check]]. This script
+  permutes the options PER FORM (as even across A-D as fifty questions allow),
+  BUT THAT IS NOT WHAT SHIPS: commit 1a7f27ae (2026-09-16) put every option set
+  of the live master-exams.json into ALPHABETICAL order, so the shipped key
+  position is whatever the alphabet gives (measured 2026-09-24: Form D sits at
+  8/6/17/19 across A-D, not 13/13/12/12). See THE LIVE FILE IS HAND-EDITED below.
 
   STRATIFICATION. Each form draws from all five lectures in proportion, so
   every form is a genuine cumulative rehearsal rather than a sample of whichever
@@ -23,7 +25,25 @@ themselves.
   LENGTH BIAS. Reported, not silently accepted. The bar is the same as the other
   master sets; 0% is not the target, because a real answer is sometimes longer.
 
-    python3 tools/cmsent_partition.py
+  THE LIVE FILE IS HAND-EDITED -- DO NOT REGENERATE IT. Commit 1a7f27ae
+  (2026-09-16) edited Clinical Medicine and Surgery I Exam 3/master-exams.json
+  directly, after this script last wrote it: 145 stem edits (63 stems rewritten
+  so that every one opens on a patient, 80 lead-ins remapped to what their
+  options answer) and 235 option sets alphabetised. None of that is in the
+  pools, so re-running this script would silently revert all of it, and would
+  also undo later text fixes made straight in the JSON (e.g. 2026-09-24: form B
+  #2's restored cystic fibrosis key, form B #2 and form D #47's explanations).
+  So build() now REFUSES to overwrite a master-exams.json that differs from
+  what it would write, and says so. Fix master text in the JSON (pairing by
+  stem, then by option set, never by position) and re-render with
+  tools/render_cms_e3_masters.py, which reproduces the five pages from the
+  JSON byte for byte. Pass --force only after porting 1a7f27ae's edits back
+  into the pools (and apply_leadins) and confirming the output is what you
+  want -- it overwrites the live masters.
+
+    python3 tools/cmsent_partition.py            # refuses if the live file differs
+    python3 tools/cmsent_partition.py --dry-run  # build and report, write nothing
+    python3 tools/cmsent_partition.py --force    # overwrite the live file (see above)
 """
 import importlib.util, os, json, random, re, collections, glob
 import sys
@@ -63,7 +83,7 @@ def gameable(opts, c):
     return L[c] > runner and (L[c] - runner) >= MARGIN_CHARS and L[c] >= runner * (1 + MARGIN_FRAC)
 
 
-def build(strict=True):
+def build(strict=True, force=False, dry_run=False):
     spec = importlib.util.spec_from_file_location(
         "shortfix", os.path.join(HERE, "cmsent_shortfix.py"))
     sf = importlib.util.module_from_spec(spec); spec.loader.exec_module(spec and sf)
@@ -165,11 +185,25 @@ def build(strict=True):
             q.pop("deck", None)
             q.pop("lead", None)
     out = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3", "master-exams.json")
-    json.dump({f: forms[f] for f in FORMS}, open(out, "w"), indent=1, ensure_ascii=False)
+    text = json.dumps({f: forms[f] for f in FORMS}, indent=1, ensure_ascii=False)
+    if dry_run:
+        print("--dry-run: nothing written")
+        return forms
+    if os.path.exists(out) and not force:
+        live = open(out, encoding="utf-8").read()
+        if live != text:
+            raise SystemExit(
+                "REFUSING to overwrite %s: it differs from what this script would write.\n"
+                "The live file was hand-edited in commit 1a7f27ae (patient stems, lead-ins,\n"
+                "alphabetised options) and has had text fixes since; regenerating would revert\n"
+                "them. Edit the JSON directly and re-render with render_cms_e3_masters.py, or\n"
+                "read this module's docstring before passing --force." % os.path.relpath(out, ROOT))
+    open(out, "w", encoding="utf-8").write(text)
     print("wrote", os.path.relpath(out, ROOT))
     return forms
 
 
 if __name__ == "__main__":
     import sys
-    build(strict="--allow-short" not in sys.argv)
+    build(strict="--allow-short" not in sys.argv, force="--force" in sys.argv,
+          dry_run="--dry-run" in sys.argv)

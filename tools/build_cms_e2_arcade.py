@@ -111,7 +111,7 @@ DECK = dict(
   ["Which pre-septal patients are admitted?", "Moderate-severe or toxic disease, poor expected compliance, a child of five years or younger, or no improvement on oral antibiotics."],
   ["Untreated cellulitis spreads to cause what?", "Intracranial spread — meningitis or cavernous sinus thrombosis."],
   ["Which instrument examines the anterior structures?", "The slit lamp — a low-power microscope with a high-intensity slit beam."],
-  ["Fluorescein EXAMINATION versus ANGIOGRAPHY?", "Examination: dye instilled, Wood lamp, finds abrasions, ulcers and foreign bodies. Angiography: dye injected, reaches the eye in 10-15 seconds, blue-flash camera, images retinal and choroidal blood flow."],
+  ["Fluorescein EXAMINATION versus ANGIOGRAPHY?", "Examination: dye instilled, Wood's lamp, finds abrasions, ulcers and foreign bodies. Angiography: dye injected, reaches the eye in 10-15 seconds, blue-flash camera, images retinal and choroidal blood flow."],
   ["Is there iodine in fluorescein?", "No — it is relatively safe and contains no iodine."],
     ],
     matchCards=[

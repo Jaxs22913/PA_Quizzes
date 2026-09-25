@@ -71,7 +71,7 @@ Q("Cranial nerve III palsy", IO,
   "two-step", D, 39),
 
 Q("Cranial nerve IV palsy", IO,
-  "Which muscle does the fourth cranial nerve supply, and what is its action?",
+  "Which statement correctly describes the muscle the fourth cranial nerve supplies and its action?",
   [["Superior oblique, which depresses the adducted eye",
     "Correct — hence vertical diplopia worse on downgaze."],
    ["Inferior oblique, which elevates the adducted eye",

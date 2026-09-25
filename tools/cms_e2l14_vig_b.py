@@ -3,7 +3,7 @@
 
 Lid lacerations, contusion and periorbital haematoma, retinal and vitreous
 detachment, orbital floor fracture, and basilar skull fracture. Same house
-style: FIVE options, varied lead-in, per-option refutation, self-contained.
+style: FOUR options (five until 2026-09-13), varied lead-in, per-option refutation, self-contained.
 
 Correct answer authored FIRST; cms_e2_partition.py rotates it.
 """
@@ -24,7 +24,7 @@ QUESTIONS = [
   opts=[["Chronic tearing from a transected canalicular system", "Correct. The canalicular injury is what makes the medial third special."],
         ["Permanent ptosis", "That follows levator involvement, which is a different site."],
         ["Loss of central vision", "The lid does not carry vision."],
-        ["Corneal ulceration within days", "Not the described consequence."]]),
+        ["Corneal ulceration within days", "The lid injury does not ulcerate the cornea; a deep medial third laceration can cut the canalicular system, causing chronic tearing."]]),
 
  dict(topic="Lid laceration", io=IO_A, lead="next step", cite=D % 26,
   q="A 21-year-old has a full-thickness upper lid laceration. Beyond repairing the lid, which is the most important step?",
@@ -58,7 +58,7 @@ QUESTIONS = [
   q="A 64-year-old with long-standing proliferative diabetic retinopathy has a localised, concave retinal detachment. Which is the most appropriate management?",
   opts=[["Surgical repair", "Correct. A traction detachment is managed surgically."],
         ["Treat the underlying systemic disease alone", "That is the approach for an exudative detachment."],
-        ["Observation with serial imaging", "Not the described management."],
+        ["Observation with serial imaging", "Observation is not enough for a traction detachment, which is managed surgically."],
         ["Intravitreal antibiotics", "There is no infection."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="management", cite=D % 39,

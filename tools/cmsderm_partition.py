@@ -8,7 +8,8 @@ themselves:
   ANSWER POSITIONS. Every question was authored with the correct choice first,
   which would make all five forms answerable without reading (see
   [[answer_position_bias_check]] -- this is exactly the PD1 bug). Options are
-  permuted so the key lands on a balanced A-E cycle.
+  permuted so the key lands on a balanced cycle across the options -- A-D
+  since the move to four options on 2026-09-13 (A-E when first built).
 
   STRATIFICATION. Each form draws proportionally from all nine lectures, so all
   five are genuinely cumulative and comparable rather than over-weighting
@@ -156,7 +157,7 @@ def build():
     before = sum(gameable(q["opts"], q["c"]) for _, _, q in flat)
     print(f"gameable after padding: {before}/{len(flat)} = {before/len(flat):.1%}  (bar 35%)")
 
-    # --- permute options onto a balanced A-E cycle ---
+    # --- permute options onto a balanced cycle (A-D; four options since 2026-09-13) ---
     rng = random.Random(SEED)
     NOPT = len(flat[0][2]["opts"])
     assert all(len(q["opts"]) == NOPT for _, _, q in flat), (

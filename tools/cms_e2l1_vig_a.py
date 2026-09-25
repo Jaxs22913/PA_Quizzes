@@ -398,7 +398,7 @@ VIG_A = [
    c=0, cite=c(25)),
 
  dict(topic="Dacryoadenitis", io=IOA, lead="first-line", slot="agent/regimen",
-   q="A 36-year-old woman has pain, redness and swelling over the outer third of her upper eyelid, with an enlarged node in front of the ear on the same side. Workup points to an inflammatory cause. Which treatment is given, and how quickly should it work?",
+   q="A 36-year-old woman has pain, redness and swelling over the outer third of her upper eyelid, with an enlarged node in front of the ear on the same side. Workup points to an inflammatory cause. Which statement correctly describes the treatment and its expected response?",
    opts=[
      ["Oral corticosteroids, with a response expected within 48 hours",
       "Correct — inflammatory disease responds to corticosteroids quickly, and failure to improve within 48 hours should prompt reconsideration of the diagnosis."],

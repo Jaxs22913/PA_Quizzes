@@ -27,6 +27,23 @@ A LOT are next management plan / first line treatment / patient education", and
   written thirteen times.
 
 Every question is authored with its correct answer first.
+REFUSES TO OVERWRITE cms_e2l1_vig_sets.json (added 2026-09-24). The shipped pages
+(ophthalmology-i-vignettes.html and
+ophthalmology-i-vignettes-version-2.html) were hand-edited after this script last
+rendered them: the 2026-08-31 self-contained pass rewrote their stems, one
+distractor was replaced (ketotifen, a second dual-acting correct answer, became
+cromolyn sodium), and b44287af stripped the "Objective" prefix from `io`. On
+2026-09-24 cms_e2l1_vig_sets.json was set to the pages' exact QUESTIONS (they are
+authoritative) and the pools' stems and options were brought to the page text.
+The pools' EXPLANATIONS still differ from the pages (about 170 of them: the
+pools carry longer ones from the 2026-09-20 pass, some importing facts the deck
+does not state, e.g. doxycycline "oesophageal ulceration"), and the pools' io
+still carries the prefix. A re-run would therefore push unaudited text onto
+the site. So the script writes only when the result is identical to what is
+committed; otherwise it prints what would change and exits 1. Pass --force
+only after the pool explanations have been audited against the deck and you
+intend the pages to change -- then re-render with render_cms_e2l1.py, which
+also moves these pages onto the current template (class picks).
 """
 import sys, os, json, random, re
 from collections import Counter
@@ -197,6 +214,28 @@ def validate(pool):
     return bad
 
 
+def _guarded_write(path, data):
+    """Refuse to change a committed sets file unless --force (see docstring)."""
+    new = json.dumps(data, ensure_ascii=False, indent=1)
+    if os.path.exists(path) and "--force" not in sys.argv:
+        old = open(path, encoding="utf-8").read()
+        if old != new:
+            cur = json.loads(old)
+            nd = 0
+            for k in ("set1", "set2"):
+                for i, (a, b) in enumerate(zip(cur.get(k, []), data[k])):
+                    if a != b:
+                        nd += 1
+                        if nd <= 8:
+                            print("  would change %s[%d] (%s): %s" % (k, i, a.get("topic"),
+                                  sorted(f for f in set(a) | set(b) if a.get(f) != b.get(f))))
+            sys.exit("REFUSED: %s would change (%d question(s) differ); it mirrors the "
+                     "shipped pages. Re-run with --force only after reading the docstring."
+                     % (os.path.basename(path), nd))
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(new)
+
+
 if __name__ == "__main__":
     print("vignette pool:", len(POOL), "  (held out as NOT examinable: %d "
           "red-eye triage vignettes, slides 66-71)" % len(_EXTRA))
@@ -253,6 +292,5 @@ if __name__ == "__main__":
                  len(set(q["topic"] for q in s)), ndx, DX_CAP,
                  len(set(q["lead"] for q in s))))
 
-    with open(os.path.join(HERE, "cms_e2l1_vig_sets.json"), "w", encoding="utf-8") as fh:
-        json.dump({"set1": s1, "set2": s2}, fh, ensure_ascii=False, indent=1)
+    _guarded_write(os.path.join(HERE, "cms_e2l1_vig_sets.json"), {"set1": s1, "set2": s2})
     print("\nwrote cms_e2l1_vig_sets.json")

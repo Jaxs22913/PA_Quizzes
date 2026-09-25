@@ -219,9 +219,8 @@ Q("Dermatofibroma",
    ["Nikolsky sign, indicating epidermal separation",
     "Nikolsky sign is the slipping away of the top layers of skin when rubbed, positive in pemphigus. It has nothing "
     "to do with a firm dermal nodule."],
-   ["Darier sign, indicating mastocytosis",
-    "Darier sign is urtication of a lesion after stroking and points to mastocytosis rather than to a fibrous dermal "
-    "nodule."]],
+   ["Darier's sign, indicating mastocytosis",
+    "Darier's sign points to mastocytosis, alongside an elevated tryptase and urticaria pigmentosa lesions, rather than to a fibrous dermal nodule."]],
   0, 46),
 
 Q("Dermatofibroma",
@@ -444,7 +443,7 @@ Q("Pyogenic granuloma",
     "granulomatous. It is a benign vascular tumour common in children, young adults, and pregnancy, arising as a "
     "response to injury or hormonal factors, most often on the head, neck, and fingers."],
    ["Pyogenic granuloma, so named because it is a granulomatous response to bacterial infection",
-    "The name is a double misnomer: the lesion is a reactive proliferation of capillaries following trauma, with neither infection nor granuloma formation involved."],
+    "The name is a misnomer twice over: the lesion is neither infectious nor granulomatous but a benign vascular tumor that grows rapidly, often after injury."],
    ["Cherry angioma",
     "Cherry angiomas are smooth firm deep red papules under 5 mm that occur with increasing age on the trunk. They do "
     "not appear rapidly after trauma on a finger in an adolescent."],

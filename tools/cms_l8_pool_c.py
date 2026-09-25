@@ -144,7 +144,7 @@ POOL_C = [
    c=0, cite=c(39)),
 
  dict(topic="Dysplastic naevus", io=IOB,
-   q="What relationship is drawn between naevus count and melanoma risk?",
+   q="What is the relationship between naevus count and melanoma risk?",
    opts=[
      ["The higher the number of naevi, the higher the risk of melanoma",
       "Correct — in dysplastic naevus syndrome there can be over one hundred by adolescence."],
@@ -205,6 +205,6 @@ POOL_C = [
      ["Weight loss, smoking cessation and avoidance of constrictive clothing",
       "Those belong to hidradenitis suppurativa."],
      ["Household washing at high temperature and treatment of all contacts",
-      "That belongs to the infestations lecture."]],
+      "Hot washing of bedding and treating contacts are infestation measures; vitiligo management adds psychological intervention and cosmetic therapies."]],
    c=0, cite=c(25)),
 ]

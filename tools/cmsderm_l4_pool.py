@@ -522,9 +522,7 @@ Q("MRSA considerations",
 Q("MRSA considerations",
   "In which patient with impetigo should a culture be obtained rather than relying on clinical appearance alone?",
   [["A healthcare worker or teacher, who is at high risk for methicillin-resistant Staphylococcus aureus",
-    "Correct. Cultures are obtained if the patient is at high risk for methicillin-resistant Staphylococcus aureus "
-    "infection, with healthcare workers and teachers given as the examples, or if acute post-streptococcal "
-    "glomerulonephritis is a concern."],
+    "Correct. Cultures are obtained if the patient is at high risk for methicillin-resistant Staphylococcus aureus infection, such as a healthcare worker or teacher, or if acute post-streptococcal glomerulonephritis is present."],
    ["Any child under five years of age",
     "Impetigo is common in infants and children and is most often diagnosed by clinical appearance. Age alone does "
     "not create the resistance risk that prompts culture."],

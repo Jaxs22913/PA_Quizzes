@@ -152,7 +152,7 @@ VIG_C = [
    q="A 44-year-old man has several small vascular lesions with a central punctum and radiating vessels across his upper chest and arms. Which history is most important to take?",
    opts=[
      ["Alcohol use, liver-damaging medications, and hormone use",
-      "Correct — spider angiomas reflect oestrogen excess, which arises with impaired hepatic clearance in liver disease and with pregnancy or exogenous hormones, so alcohol, hepatotoxic drugs, hormones and pregnancies are all relevant."],
+      "Correct — ask about pregnancies too. Spider angiomas track estrogen excess and cirrhosis or liver failure."],
      ["Footwear, occupation and use of hand tools",
       "That is the corn and callus history."],
      ["Immobility, incontinence and nutritional status",
@@ -249,7 +249,7 @@ VIG_C = [
      ["Annual magnetic resonance imaging of the whole body",
       "Routine whole-body imaging is not part of the described surveillance."],
      ["Intralesional corticosteroid to any enlarging lesion",
-      "Intralesional steroid is a keloid treatment; neurofibromas are monitored, with the skin examined at each visit for change suggesting malignant transformation."]],
+      "That is a scar treatment, not neurofibromatosis surveillance."]],
    c=0, cite=c(103)),
 
  dict(topic="Xanthelasma", io=IOA, lead="test",
@@ -360,7 +360,7 @@ VIG_C = [
    q="A 62-year-old attends about a new lesion on his sun-exposed forearm. Beyond addressing the lesion, which counselling should be offered?",
    opts=[
      ["Sunscreen, sun avoidance at peak hours, and skin checks",
-      "Correct — the patient has already come in about the skin, which makes it the natural moment to address cumulative ultraviolet damage and self-examination."],
+      "Correct — any new sun-exposed lesion is an opening for general skin-cancer education."],
      ["Avoiding cosmetic procedures such as ear piercing",
       "That is for the keloid-prone patient."],
      ["Repositioning every two hours and barrier creams",
@@ -379,6 +379,6 @@ VIG_C = [
      ["That the lesion would become malignant if left in place",
       "These are benign lesions, so that would be untrue."],
      ["That lifelong surveillance of the site will be needed",
-      "Lifelong surveillance is not required for a benign lesion; what must be discussed is that removal can leave pigment change and the lesion may recur."]],
+      "Lifelong surveillance is not required after removing a benign lesion."]],
    c=0, cite=c(112)),
 ]

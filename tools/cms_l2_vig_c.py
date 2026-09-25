@@ -157,7 +157,7 @@ POOL_C = [
      ["Potassium hydroxide preparation of the herald patch",
       "This excludes tinea but the herald patch and subsequent pattern are diagnostic."],
      ["Serum rapid plasma reagin",
-      "Secondary syphilis can mimic this eruption but characteristically involves the palms and soles, which are not described here."]],
+      "A herald patch with a spreading trunk eruption does not call for syphilis serology first."]],
    c=0, cite=c(171)),
 
  dict(topic="Bullous pemphigoid", io=IOC,

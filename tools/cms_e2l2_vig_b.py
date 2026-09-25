@@ -15,7 +15,7 @@ POOL_B = [
    c=0, cite=c(19)),
 
  dict(topic="Accommodation", io=IO, lead="diagnosis",
-   q="A patient shifts gaze from a distant sign to a book. Which three changes are described?",
+   q="A patient shifts gaze from a distant sign to a book. Which three changes make up this near response?",
    opts=[
      ["Lens thickens, pupils constrict, eyes converge", "Correct. The near response acts on lens, pupil and globes together."],
      ["Lens flattens, pupils dilate, eyes diverge", "That is the opposite of the near response."],
@@ -69,11 +69,11 @@ POOL_B = [
    c=0, cite=c(13)),
 
  dict(topic="Pupil size", io=IO, lead="diagnosis",
-   q="You cover a healthy person's right eye and watch the left pupil. What happens, and why?",
+   q="You cover a healthy person's right eye and watch the left pupil. Which statement correctly describes the response?",
    opts=[
      ["It enlarges, as average illumination halves", "Correct. Pupil size reflects an average of the light detected by both eyes."],
      ["It constricts, as the covered eye is dark", "Covering reduces total light, so the pupil enlarges."],
-     ["It is unchanged, as each eye acts alone", "The eyes are not independent: light reaching either retina constricts both pupils through the consensual reflex, so covering one changes the other."],
+     ["It is unchanged, as each eye acts alone", "Pupil size is set by the average illumination detected by both eyes, so covering the right eye halves that average and the left pupil enlarges."],
      ["It enlarges only in the covered eye", "The uncovered pupil is the one observed to change."]],
    c=0, cite=c(7)),
 
@@ -105,16 +105,16 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Care strategies", io=IO, lead="next step",
-   q="A patient presents with a new neuro-ophthalmological complaint. Which sequence is summarised?",
+   q="A patient presents with a new neuro-ophthalmological complaint. Which sequence of care is recommended?",
    opts=[
      ["History and examination, then imaging if indicated", "Correct, with ophthalmology and appropriate specialist referral."],
-     ["Imaging first, then history", "Imaging without a history has no target; the history and examination localise the lesion and determine which study is appropriate."],
+     ["Imaging first, then history", "Care begins with a thorough history and physical examination; labs and imaging, such as head computed tomography or brain magnetic resonance imaging, follow if indicated."],
      ["Immediate surgical referral", "Referral is to ophthalmology and other specialists as appropriate."],
      ["Observation for six months in all cases", "That interval applies to traumatic cranial nerve palsies."]],
    c=0, cite=c(54)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="treatment",
-   q="A 35-year-old man has a traumatic fourth nerve palsy with binocular diplopia. What is advised in the interim?",
+   q="A 35-year-old man has a traumatic fourth nerve palsy with binocular diplopia. What relieves the diplopia while the palsy is observed?",
    opts=[
      ["Patch one eye", "Correct, to relieve binocular diplopia while observing for about six months."],
      ["Start systemic corticosteroids", "Those are for giant cell arteritis, not a traumatic palsy."],
@@ -123,10 +123,10 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="education",
-   q="A parent asks about patching for a young child with a congenital palsy. What is specified?",
+   q="A parent asks about patching for a young child with a congenital palsy. What should the parent be told?",
    opts=[
      ["It should be supervised by ophthalmology", "Correct, especially under about five years of age."],
-     ["It should be continuous until resolution", "Continuous patching risks inducing amblyopia in the covered eye, so it is used intermittently and under supervision."],
+     ["It should be continuous until resolution", "Patching is not simply continued until resolution; in a young child, especially under 5 years, it should be done under the care of an ophthalmologist."],
      ["It is contraindicated in children", "Patching is used, but under specialist care."],
      ["It is unnecessary before school age", "The caution is about supervision, not deferral."]],
    c=0, cite=c(46)),
@@ -150,21 +150,21 @@ POOL_B = [
    c=0, cite=c(28)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
-   q="A 3-month-old infant is noted to have nystagmus. What is advised?",
+   q="A 3-month-old infant is noted to have nystagmus. What is the next step?",
    opts=[
      ["Refer for work-up", "Correct. Infants and young children with nystagmus warrant referral."],
      ["Reassure, as it is always physiologic", "Infantile nystagmus specifically warrants referral."],
-     ["Repeat examination at age five", "Waiting until five wastes the critical period of visual development, during which the cause must be identified and treated."],
+     ["Repeat examination at age five", "Waiting is not appropriate; infants and young children with nystagmus are referred to ophthalmology for a complete exam, with imaging and labs if relevant."],
      ["Start patching immediately", "Patching addresses diplopia and amblyopia, not this."]],
    c=0, cite=c(5)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
-   q="Which type of nystagmus is called the most common form?",
+   q="Which type of nystagmus is the most common?",
    opts=[
      ["Horizontal jerk", "Correct, with eyes moving slowly to one side and quickly back."],
-     ["Torsional jerk", "Also recognised but not the most common."],
-     ["Pendular", "Pendular nystagmus has equal-speed movement in both directions; the common form has a slow drift with a fast corrective phase."],
-     ["Upbeat", "That is specifically flagged as concerning rather than common."]],
+     ["Torsional jerk", "Torsional jerk nystagmus exists, but horizontal jerk nystagmus is the most common form of nystagmus."],
+     ["Pendular", "Pendular nystagmus has two phases of equal velocity and is commonly congenital; the most common form is horizontal jerk nystagmus, slow to one side and quick back."],
+     ["Upbeat", "Upbeat nystagmus is not common; it is always abnormal, pointing to a cerebellar or medullary lesion."]],
    c=0, cite=c(4)),
 
  dict(topic="Anisocoria", io=IO, lead="diagnosis",
@@ -213,7 +213,7 @@ POOL_B = [
    c=0, cite=c(41)),
 
  dict(topic="Fourth nerve palsy", io=IO, lead="diagnosis",
-   q="A 45-year-old man has an isolated fourth nerve palsy with no history of trauma. Which cause is named as most common?",
+   q="A 45-year-old man has an isolated fourth nerve palsy with no history of trauma. What is the most common cause?",
    opts=[
      ["Congenital", "Correct. Isolated fourth nerve palsy is most commonly congenital, even in adults."],
      ["Microvascular disease", "That is an acquired cause, alongside trauma."],

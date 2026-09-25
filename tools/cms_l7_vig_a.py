@@ -74,7 +74,7 @@ VIG_A = [
    q="A 63-year-old man with type 2 diabetes mellitus has a painful corn on his fifth toe. Which is the most appropriate management?",
    opts=[
      ["Refer him to podiatry",
-      "Correct — neuropathy means he cannot feel an ulcer developing beneath the corn and poor perfusion means it will not heal, so self-treatment with a keratolytic acid is dangerous."],
+      "Correct — a diabetic foot lesion goes to podiatry."],
      ["Start an over-the-counter salicylic acid product and review in a month",
       "Keratolytics are reasonable in general, but the diabetic foot is referred."],
      ["Pare the lesion down in clinic and advise wider footwear",
@@ -141,7 +141,7 @@ VIG_A = [
      ["Recurrence is fifty to one hundred per cent, so steroid injection follows",
       "Correct — the recurrent lesion is often larger than the original, which is why excision is never done alone. Combination therapy has the best success rates."],
      ["Recurrence is under five per cent, so excision alone is usually curative",
-      "Recurrence after excision alone runs from fifty to one hundred per cent and the lesion often returns larger, because the operation inflicts the very injury that provokes keloid formation."],
+      "Recurrence after excision alone runs far higher than that."],
      ["Excision is contraindicated in keloids because it always causes bleeding",
       "Bleeding is not the reason excision alone is avoided."],
      ["Excision is preferred over all other options because it removes the fibrous tissue completely",
@@ -223,7 +223,7 @@ VIG_A = [
      ["Cryotherapy to the projection, with review in three months",
       "Freezing the horn does not address the process at its base."],
      ["Dermoscopy alone, which will identify the underlying lesion",
-      "Dermoscopy cannot see through compacted keratin to the base, and it is the base that determines whether the lesion is benign, premalignant or malignant."]],
+      "Dermoscopy cannot establish what lies beneath a cutaneous horn."]],
    c=0, cite=c(27)),
 
  dict(topic="Cutaneous horn", io=IOA, lead="diagnosis",

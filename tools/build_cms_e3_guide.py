@@ -14,12 +14,22 @@ and once for the guide, and keeping them in step was manual.
 
 Sections 3 to 5 will be added as Lectures 17 to 19 are built; the header says so
 rather than implying the block is complete.
+
+IMPORTING THIS MODULE MUST NOT WRITE ANYTHING (2026-09-24). Until then the whole
+build ran at import time, so `import build_cms_e3_guide` from another script
+silently overwrote the shipped guide with an Exam 2 Word link and no footer. The
+build now runs only from main(). It also carries the two things the donor could
+not supply and that were hand-added to the shipped page after the last build:
+the Exam 3 Word link (the donor's head points at cms-exam-2-study-guide.docx)
+and the guide footer (the donor's footer sits inside its <main>, which is
+dropped). Because the donor is the LIVE Exam 2 guide, any edit to that page's
+head or tail changes this output: run with --dry-run first; the build refuses
+to overwrite a page it would change unless --force is given.
 """
 import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-os.chdir(ROOT)
 
 from _cms_e3_guide_l15 import SECTION as S15
 from _cms_e3_guide_l16 import SECTION as S16
@@ -99,7 +109,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        why:"A conductive loss with a normal-looking drum is the pattern; hearing better in noise is the sentence patients volunteer."},
       {q:"Which cause of acute otitis media is by far the most common overall?",
        o:["A virus","Streptococcus pneumoniae","Haemophilus influenzae","Moraxella catarrhalis"],a:0,
-       why:"The slide lists only bacteria; he corrected it out loud. Most episodes resolve without antibiotics."},
+       why:"Viral infection is by far the most common cause overall. Streptococcus pneumoniae, Haemophilus influenzae and Moraxella catarrhalis are only the most common bacterial organisms, and most episodes resolve spontaneously."},
       {q:"Recurrent ear discharge with NO external canal infection, and white flaky debris in a retraction pocket. What is it?",
        o:["Cholesteatoma","Chronic suppurative otitis media","Otomycosis","Otitis externa"],a:0,
        why:"It erodes bone, so it is removed surgically rather than watched."},
@@ -114,39 +124,12 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
     ],
   };'''
 
-donor = open(DONOR, encoding="utf-8").read()
-head = donor[:donor.index('<div class="layout wrap"')]
-tail = donor[donor.index("</main>") + len("</main>"):]
-ty_start = tail.index("var TEST_YOURSELF = {")
-ty_end = tail.index("\n  };", ty_start) + len("\n  };")
-tail = tail[:ty_start] + TEST_YOURSELF.lstrip() + tail[ty_end:]
-
-# Exam 2 is INDIGO; Exam 3 is VIOLET.
-for old, new in (("#2d3f7a", "#6a4fa3"), ("#5566b5", "#8a6fc0"), ("#1b2450", "#2f1e52"),
-                 ("#7b8ad0", "#a992d8"), ("#1e2233", "#251e33"), ("#b9c2ee", "#cdbde9")):
-    head = head.replace(old, new)
-    tail = tail.replace(old, new)
-
-head = re.sub(r"<title>.*?</title>",
-              "<title>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Study Guide</title>",
-              head, count=1, flags=re.S)
-head = re.sub(r"<header class=\"top\">.*?</header>",
-  '<header class="top">\n'
-  '  <h1>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Study Guide</h1>\n'
-  '  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>\n'
-  '  <p>Ear, nose and throat block &middot; <b>all five lectures</b> &middot; Instructional '
-  'Objectives taken verbatim from the syllabus</p>\n'
-  '</header>', head, count=1, flags=re.S)
-
 # The guide registers one TEST_YOURSELF.ent bank for the whole of ENT, so its
 # button sits after the last section rather than inside one. Without it the bank
 # is unreachable -- which is how it shipped, until 2026-09-11.
 TY_BUTTON = ('\n<button type="button" class="test-yourself-btn" style="--acc:#6a4fa3" '
              'onclick="window.openTestYourself(\'Test yourself &mdash; ENT\', '
              'TEST_YOURSELF.ent)">Test yourself! &rarr;</button>\n')
-
-body = ('<main class="content">%s\n%s\n%s\n%s\n%s\n%s</main>'
-        % (S15, S16, S17, S18, S19, TY_BUTTON))
 
 # The condition blocks and the Weber/Rinne table need styles the donor lacks.
 EXTRA = """
@@ -176,22 +159,81 @@ EXTRA = """
     dl.eight dd{margin-bottom:7px;} .cond figure.fig{float:none;max-width:100%;margin:0 0 10px;}}
 </style>"""
 
-html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + body + tail
-html = html.replace("</body>", EXTRA + "\n</body>")
+DONOR_DOCX = 'href="cms-exam-2-study-guide.docx"'
+OWN_DOCX = 'href="cms-exam-3-study-guide.docx"'
 
-os.makedirs(os.path.dirname(OUT), exist_ok=True)
-open(OUT, "w", encoding="utf-8").write(html)
+# The donor's footer sits inside its <main>, which is replaced, so the guide's
+# own footer is carried here (Back to Homepage, class line, report-a-mistake).
+FOOTER = ('<footer class="guide-foot">\n'
+          '  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>\n'
+          '  <p style="text-align:center;">Built from your PAJ 5500 lecture decks for personal study &middot; Class of 2028.</p>\n'
+          '  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>\n'
+          '</footer>\n')
 
-IMGDIR = "cms-ent-chart-images"
-for fn in re.findall(r'src="%s/([^"]+)"' % IMGDIR, html):
-    assert os.path.exists(os.path.join(os.path.dirname(OUT), IMGDIR, fn)), fn
-for tag in ("section", "table", "tr", "td", "th", "div", "p", "ol", "ul", "li", "nav",
-            "figure", "figcaption", "dl", "dt", "dd", "blockquote"):
-    o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
-    assert o == c, "%s unbalanced: %d open, %d close" % (tag, o, c)
-assert "data-audio-dir" not in html, "audio dir must stay absent until mp3s exist"
-assert "#2d3f7a" not in html, "donor indigo left in the Exam 3 guide"
-print("wrote %s (%d KB)" % (os.path.basename(OUT), len(html) // 1024))
-print("subsections: %d   conditions: %d   figures: %d   test-yourself: %d"
-      % (html.count('class="sub"'), html.count('<div class="cond">'),
-         html.count("<figure"), TEST_YOURSELF.count("{q:")))
+
+def main():
+    os.chdir(ROOT)
+    donor = open(DONOR, encoding="utf-8").read()
+    head = donor[:donor.index('<div class="layout wrap"')]
+    tail = donor[donor.index("</main>") + len("</main>"):]
+    ty_start = tail.index("var TEST_YOURSELF = {")
+    ty_end = tail.index("\n  };", ty_start) + len("\n  };")
+    tail = tail[:ty_start] + TEST_YOURSELF.lstrip() + tail[ty_end:]
+
+    # Exam 2 is INDIGO; Exam 3 is VIOLET.
+    for old, new in (("#2d3f7a", "#6a4fa3"), ("#5566b5", "#8a6fc0"), ("#1b2450", "#2f1e52"),
+                     ("#7b8ad0", "#a992d8"), ("#1e2233", "#251e33"), ("#b9c2ee", "#cdbde9")):
+        head = head.replace(old, new)
+        tail = tail.replace(old, new)
+
+    # The donor's head links the Exam 2 Word copy; this page has its own.
+    assert head.count(DONOR_DOCX) == 1, "donor Word link not found"
+    head = head.replace(DONOR_DOCX, OWN_DOCX)
+
+    head = re.sub(r"<title>.*?</title>",
+                  "<title>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Study Guide</title>",
+                  head, count=1, flags=re.S)
+    head = re.sub(r"<header class=\"top\">.*?</header>",
+      '<header class="top">\n'
+      '  <h1>Clinical Medicine and Surgery I &middot; Exam 3 &mdash; Study Guide</h1>\n'
+      '  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>\n'
+      '  <p>Ear, nose and throat block &middot; <b>all five lectures</b> &middot; Instructional '
+      'Objectives taken verbatim from the syllabus</p>\n'
+      '</header>', head, count=1, flags=re.S)
+
+
+    body = ('<main class="content">%s\n%s\n%s\n%s\n%s\n%s%s</main>'
+            % (S15, S16, S17, S18, S19, TY_BUTTON, FOOTER))
+
+
+    html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + body + tail
+    html = html.replace("</body>", EXTRA + "\n</body>")
+
+    old = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else None
+    if "--dry-run" in sys.argv:
+        print("dry run: the build %s the shipped page" % ("MATCHES" if old == html else "DIFFERS FROM"))
+        return
+    if old is not None and old != html and "--force" not in sys.argv:
+        sys.exit("refusing to overwrite %s: the build would change it (see --dry-run); "
+                 "pass --force if the change is intended" % os.path.basename(OUT))
+
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    open(OUT, "w", encoding="utf-8").write(html)
+
+    IMGDIR = "cms-ent-chart-images"
+    for fn in re.findall(r'src="%s/([^"]+)"' % IMGDIR, html):
+        assert os.path.exists(os.path.join(os.path.dirname(OUT), IMGDIR, fn)), fn
+    for tag in ("section", "table", "tr", "td", "th", "div", "p", "ol", "ul", "li", "nav",
+                "figure", "figcaption", "dl", "dt", "dd", "blockquote"):
+        o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
+        assert o == c, "%s unbalanced: %d open, %d close" % (tag, o, c)
+    assert "data-audio-dir" not in html, "audio dir must stay absent until mp3s exist"
+    assert "#2d3f7a" not in html, "donor indigo left in the Exam 3 guide"
+    print("wrote %s (%d KB)" % (os.path.basename(OUT), len(html) // 1024))
+    print("subsections: %d   conditions: %d   figures: %d   test-yourself: %d"
+          % (html.count('class="sub"'), html.count('<div class="cond">'),
+             html.count("<figure"), TEST_YOURSELF.count("{q:")))
+
+
+if __name__ == "__main__":
+    main()

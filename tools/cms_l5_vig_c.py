@@ -100,7 +100,7 @@ POOL_C = [
      ["Take prophylactic doxycycline through the summer months while she continues to hike",
       "Continuous prophylaxis is not among the described measures."],
      ["Rely on showering promptly after each hike, since this removes ticks before they attach",
-      "Showering does not remove an attached tick, and attachment can occur within hours; deliberate tick checks and repellent are what prevent transmission."]],
+      "Tick checks and repellents are the mainstays."]],
    c=0, cite=c(80)),
 
  dict(topic="Rocky Mountain spotted fever", io=IOA,
@@ -126,7 +126,7 @@ POOL_C = [
      ["Start amoxicillin now, since doxycycline should be reserved for confirmed disease",
       "Doxycycline is the treatment for this illness in all groups."],
      ["Repeat the assay in three days and treat only if it has become positive by then",
-      "Antibodies take one to two weeks to appear, so waiting for seroconversion delays treatment past the point where it prevents death; doxycycline starts on clinical suspicion."]],
+      "Delaying treatment for serology is exactly the error to avoid."]],
    c=0, cite=c(85)),
 
  dict(topic="Rocky Mountain spotted fever", io=IOC,

@@ -230,11 +230,12 @@ Q("Vasomotor rhinitis", I17,
 Q("Nasal polyps and asthma", I17,
   "A clinician lists the conditions associated with multiple benign nasal polyps and their "
   "approximate frequencies.",
-  [["Allergic fungal sinusitis 85%, asthma 20 to 50%, cystic fibrosis 5 to 44%",
-    "Correct. These are the recognised figures. Allergic "
-    "fungal sinusitis carries the highest association, asthma is common, and cystic fibrosis is the "
-    "one that changes management in a child. Aspirin intolerance is 8 to 20 per cent, alcohol "
-    "intolerance 50 per cent and Churg-Strauss 50 per cent."],
+  [["Allergic fungal sinusitis 85%, asthma 20 to 50%, cystic fibrosis 6 to 44%",
+    "Correct. All three accompany multiple benign polyps: polyps occur in about 85% of "
+    "patients with allergic fungal sinusitis and in 6 to 44% of patients with cystic "
+    "fibrosis, and asthma is present in 20 to 50% of patients with polyps. Aspirin "
+    "intolerance (8 to 26% of polyp patients), alcohol intolerance (50%) and Churg-Strauss "
+    "syndrome (polyps in 50%) also belong on the list."],
    ["Cystic fibrosis is associated in over 90% of cases",
     "The association is real and clinically decisive in children, but the figure is far lower. "
     "Overstating it would imply almost every polyp patient has cystic fibrosis."],
@@ -242,8 +243,10 @@ Q("Nasal polyps and asthma", I17,
     "This understates a well-recognised association of 20 to 50 per cent, and it would remove the "
     "prompt to ask every polyp patient about wheeze."],
    ["No systemic conditions are associated with nasal polyps",
-    "The associations are the reason polyps are investigated rather than simply removed, and they "
-    "are the entire content of that slide."]],
+    "Multiple benign polyps have a long list of associations, including asthma, cystic "
+    "fibrosis, allergic rhinitis, allergic fungal sinusitis, chronic rhinosinusitis and "
+    "primary ciliary dyskinesia, which is why every child with them is evaluated for cystic "
+    "fibrosis and asthma."]],
   "finding", D17, 63),
 
 Q("Sinusitis in children", I17,

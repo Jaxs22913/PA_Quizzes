@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """Render the four CMS I Exam 2 Lecture 1 quizzes -- two objective sets and
-two vignette sets, as [[cms_exam_spec]] requires for every CMS topic."""
+two vignette sets, as [[cms_exam_spec]] requires for every CMS topic.
+
+2026-09-24: the sets files now mirror the SHIPPED pages exactly (see the
+guard in cms_e2l1_partition.py), so the QUESTIONS this writes equal the pages'.
+The page CHROME does not: the shipped pages predate the class-picks and
+picture-stem template, so re-running this also moves them onto the current
+template. Do that deliberately, not as a side effect of a text fix -- a text
+fix on these four pages is made in the page and in the sets file together."""
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))

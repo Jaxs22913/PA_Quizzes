@@ -5,7 +5,7 @@ The remainder of the objective bank, so the pair of 30s has room. Weighted
 toward objective b, care strategies by age, which the other two pools touch
 only lightly, and toward the discriminations that decide disposition.
 
-SELF-CONTAINED. FIVE options; correct answer authored FIRST.
+SELF-CONTAINED. FOUR options (five until 2026-09-13); correct answer authored FIRST.
 """
 D = "CMS I Ocular Trauma - Shah Fallsv.pptx, Slide %d"
 IO_A = "a — Ocular trauma: etiology, manifestations, testing, management, referral, prognosis"
@@ -27,11 +27,11 @@ QUESTIONS = [
         ["Concussion alone", "Concussion does not produce gaze-provoked bradycardia."]]),
 
  dict(topic="Care by age", io=IO_B, lead="risk factor", cite=D % 5,
-  q="In which population is ocular trauma the leading cause of monocular blindness, and why does that shape counselling?",
-  opts=[["Young adult men, so eye protection is the message that matters most", "Correct. That is the group in which it leads."],
-        ["Elderly women, so fall prevention is the message", "Not the group in which trauma leads."],
-        ["Infants, so childproofing is the message", "Not the group in which trauma leads."],
-        ["Adolescent girls, so sports goggles are the message", "Not the group in which trauma leads."]]),
+  q="Ocular trauma is the leading cause of monocular blindness in one population. Which statement correctly pairs that population with its counseling message?",
+  opts=[["Young adult men, so eye protection is the message that matters most", "Correct. Ocular trauma is the leading cause of monocular blindness in young adult men in the United States."],
+        ["Elderly women, so fall prevention is the message", "Elderly women are not that group; ocular trauma is the leading cause of monocular blindness in young adult men."],
+        ["Infants, so childproofing is the message", "Infants are not that group; ocular trauma is the leading cause of monocular blindness in young adult men."],
+        ["Adolescent girls, so sports goggles are the message", "Adolescent girls are not that group; ocular trauma is the leading cause of monocular blindness in young adult men."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="diagnosis", cite=D % 36,
   q="Which set of symptoms fits a retinal detachment?",

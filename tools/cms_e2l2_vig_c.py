@@ -55,7 +55,7 @@ POOL_C = [
    c=0, cite=c(36)),
 
  dict(topic="Nystagmus", io=IO, lead="next step",
-   q="A 19-year-old woman develops new nystagmus with vertigo. After referral to ophthalmology, what is placed next in the sequence?",
+   q="A 19-year-old woman develops new nystagmus with vertigo. After referral to ophthalmology for a complete examination, what is the next step in the work-up?",
    opts=[
      ["Initial imaging", "Correct: referral, then imaging, then labs if relevant, to find the underlying cause."],
      ["Laboratory testing", "Labs come after imaging, and only if relevant."],
@@ -66,11 +66,11 @@ POOL_C = [
  dict(topic="Acute angle closure", io=IO, lead="education",
    q="A 70-year-old woman with a history of anterior uveitis is prescribed a nebulised bronchodilator. Which risk should she be warned about?",
    opts=[
-     ["Acute angle-closure glaucoma", "Correct. Nebulised bronchodilators and systemic anticholinergics are listed risk factors."],
+     ["Acute angle-closure glaucoma", "Correct. Nebulized bronchodilators and systemic anticholinergics are risk factors for acute angle-closure glaucoma."],
      ["Retinal detachment", "Its risks are myopia, trauma, cataract surgery and age."],
      ["Optic neuritis", "That is inflammatory and linked to demyelination."],
      ["Central retinal artery occlusion", "That is embolic and not linked to nebulisers."]],
-   c=0, cite=c(22)),
+   c=0, cite="12. Acute Vision Loss current - Jaquith.pptx, Slide 14"),
 
  dict(topic="Pharmacologic mydriasis", io=IO, lead="education",
    q="A nurse develops a unilateral fixed dilated pupil after handling a scopolamine patch. What should she be told?",
@@ -82,11 +82,11 @@ POOL_C = [
    c=0, cite=c(22)),
 
  dict(topic="Care strategies", io=IO, lead="next step",
-   q="A 68-year-old man has a new visual field defect and a suspected chiasmal lesion. Which referral is listed alongside ophthalmology?",
+   q="A 68-year-old man has a new visual field defect and a suspected chiasmal lesion. Which referral is appropriate alongside ophthalmology?",
    opts=[
-     ["Neurology or neurosurgery", "Correct, with vascular surgery also named as appropriate."],
+     ["Neurology or neurosurgery", "Correct. Beyond ophthalmology, the appropriate specialist referral is neurology, neurosurgery or vascular surgery."],
      ["Cardiology", "A cardiac source is pursued for embolic transient visual loss, not a chiasmal lesion."],
-     ["Endocrinology", "A pituitary lesion may need endocrine input later, but the referral named here is neurological."],
+     ["Endocrinology", "A pituitary lesion may need endocrine input later, but a suspected chiasmal lesion is referred to neurology or neurosurgery."],
      ["Rheumatology", "That would follow suspected giant cell arteritis, which presents with visual loss rather than a chiasmal field defect."]],
    c=0, cite=c(54)),
 
@@ -100,10 +100,10 @@ POOL_C = [
    c=0, cite=c(43)),
 
  dict(topic="Third nerve palsy", io=IO, lead="treatment",
-   q="A 29-year-old man has a traumatic third nerve palsy. What is advised about corrective treatment?",
+   q="A 29-year-old man has a traumatic third nerve palsy. What is the recommended approach to corrective treatment?",
    opts=[
      ["Observe about six months first", "Correct, with patching in the interim for binocular diplopia."],
-     ["Operate within two weeks", "Traumatic palsies frequently recover spontaneously over months, so surgery is deferred until the deficit has stabilised."],
+     ["Operate within two weeks", "Early surgery is not advised; a traumatic third nerve palsy is observed for about 6 months before corrective treatment, with patching for diplopia meanwhile."],
      ["Start high-dose corticosteroids", "Those are for giant cell arteritis."],
      ["Begin pilocarpine drops", "That is a diagnostic test for an Adie pupil."]],
    c=0, cite=c(41)),
@@ -118,7 +118,7 @@ POOL_C = [
    c=0, cite=c(46)),
 
  dict(topic="Argyll Robertson pupil", io=IO, lead="education",
-   q="A 55-year-old man with Argyll Robertson pupils asks what else to look for. Which associated finding is named?",
+   q="A 55-year-old man with Argyll Robertson pupils asks what else to look for. Which associated finding should be sought?",
    opts=[
      ["Sensory ataxia", "Correct, from tabes dorsalis with posterior column involvement."],
      ["Jaw claudication", "That belongs to giant cell arteritis."],

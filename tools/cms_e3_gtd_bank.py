@@ -90,10 +90,10 @@ ITEMS = [
     # ---------------------------------------------------------------- ear
     dict(cond="Acute otitis media", img="l15-s016_pos1.jpg", slide=16, deck=D15, io=EAR,
          alt="Otoscopic view of a tympanic membrane that is uniformly red and bulging outward, with the normal landmarks obscured",
-         why="The drum is erythematous AND bulging outward, which is the combination the slide gives for acute otitis media.",
+         why="The drum is erythematous and bulging outward. Those are the examination findings of acute otitis media, often with a purulent effusion visible behind the drum.",
          wrong=[("Otitis media with effusion", "That drum is retracted or neutral and dull, with an air-fluid level or bubbles behind it, not pushed outward."),
                 ("Otitis externa", "That is redness and swelling of the canal wall; here the canal is clear and the drum itself is the abnormality."),
-                ("Tympanic membrane perforation", "There is no hole here — the membrane is intact and convex.")]),
+                ("Tympanic membrane perforation", "Perforation is a disruption in the drum, central or marginal; this membrane is intact, red and bulging outward instead.")]),
 
     dict(cond="Otitis media with effusion", img="l15-s016_pos2.jpg", slide=16, deck=D15, io=EAR,
          alt="Otoscopic view showing multiple rounded air bubbles and a fluid line behind an intact, non-bulging tympanic membrane",
@@ -111,7 +111,7 @@ ITEMS = [
 
     dict(cond="Cholesteatoma", img="l15-s034_pos1.jpg", slide=34, deck=D15, io=EAR,
          alt="Otoscopic view with a retraction pocket in the upper tympanic membrane filled with pale flaky keratin debris, marked by an arrowhead and an arrow",
-         why="A retraction pocket of the drum containing squamous epithelium and keratin debris — the slide's own description of the finding.",
+         why="A retraction pocket of the drum containing squamous epithelium and keratin debris (arrowhead), with debris visible behind the drum (arrow), is the examination finding of cholesteatoma.",
          wrong=[("Otitis media with effusion", "That is clear fluid and bubbles behind an intact drum, with no retraction pocket and no white debris."),
                 ("Tympanosclerosis", "That is a chalky white plaque within the drum itself, flat and scar-like, not debris sitting in a pocket."),
                 ("Glomus tumour", "That is a red vascular mass behind the drum, not white keratin.")]),
@@ -119,7 +119,7 @@ ITEMS = [
     dict(cond="Tympanic membrane perforation", img="l15-s047_pos1.jpg", slide=47, deck=D15, io=EAR,
          alt="Otoscopic view of a tympanic membrane with a discrete dark hole through it and the middle ear visible beyond",
          why="There is a full-thickness defect in the drum — you can see through it into the middle ear.",
-         wrong=[("Acute otitis media", "That drum is intact and bulging; this one has a hole in it."),
+         wrong=[("Acute otitis media", "Acute otitis media gives an erythematous, bulging drum that is still intact; this one shows a disruption through it."),
                 ("Cholesteatoma", "That is keratin debris in a retraction pocket, not an opening through the membrane."),
                 ("Otitis media with effusion", "That drum is intact with fluid behind it, which is exactly what a perforation drains.")]),
 
@@ -174,7 +174,7 @@ ITEMS = [
 
     dict(cond="Glomus tumour", img="l16-s051_pos1.jpg", slide=51, deck=D16, io=EAR,
          alt="Otoscopic view of a red vascular mass sitting behind the lower part of the tympanic membrane and showing through it",
-         why="A red vascular mass in the middle ear showing through the drum — the slide's middle ear mass effect.",
+         why="A red, highly vascular mass in the middle ear showing through the drum. These benign vascular growths cause a middle ear mass effect, pulsatile tinnitus and conductive hearing loss.",
          wrong=[("Barotrauma", "That is blood within the middle ear from unequalized pressure, dark and diffuse rather than a discrete mass."),
                 ("Cholesteatoma", "That is white keratin debris in a retraction pocket, not a red vascular mass."),
                 ("Acute otitis media", "That is a diffusely red bulging drum, not a discrete mass visible behind a clear membrane.")]),
@@ -192,7 +192,7 @@ ITEMS = [
          why="Bilateral smooth swellings arising from the septum itself and narrowing both airways — blood trapped under the perichondrium.",
          wrong=[("Nasal polyps", "Those are pale grey translucent masses arising from the lateral wall, not red swellings of the septum."),
                 ("Deviated nasal septum", "That displaces the septum to one side; it does not produce a swelling on both sides."),
-                ("Septal perforation", "That is a hole through the septum — the opposite finding.")]),
+                ("Septal perforation", "A perforation is a hole through the septum, the opposite finding to this collection of blood between the septum and its perichondrium.")]),
 
     dict(cond="Septal perforation", img="l17-s038_pos1.jpg", slide=38, deck=D17, io=NOSE,
          alt="Two endoscopic views of the nasal cavity showing an opening through the septum with the opposite side visible through it",
@@ -212,7 +212,7 @@ ITEMS = [
          alt="Close view of a child's nostril occluded by a smooth bright green object",
          why="A smooth manufactured object of a colour nothing biological is, sitting in one nostril.",
          wrong=[("Nasal polyps", "Those are pale grey and translucent, and they arise from the mucosa rather than lying loose."),
-                ("Epistaxis", "That is active bleeding, not a retained object."),
+                ("Epistaxis", "Epistaxis is active bleeding from the nose; the finding here is a retained object sitting in the nasal cavity, not blood."),
                 ("Rhinitis", "That gives swollen boggy turbinates and clear discharge, with nothing discrete in the airway.")]),
 
     dict(cond="Nasal fracture", img="l17-s058_pos3.jpg", slide=58, deck=D17, io=NOSE,
@@ -225,7 +225,7 @@ ITEMS = [
     # --------------------------------------------------------------- neck
     dict(cond="Haemangioma", img="l18-s027_pos1.jpg", slide=27, deck=D18, io=NECK,
          alt="Bright red slightly raised soft plaque with a lobulated surface on the skin behind and below the ear of an infant",
-         why="A red, soft, raised vascular plaque in an infant — the slide's red or bluish soft mass of the first months of life.",
+         why="A red, soft, raised vascular lesion in an infant. These vascular malformations appear in the first few months of life as a red or bluish soft, compressible mass, and most involute on their own.",
          wrong=[("Branchial cleft cyst", "That is a smooth deep swelling along the anterior border of the sternocleidomastoid, with normal skin over it."),
                 ("Thyroglossal duct cyst", "That sits in the midline near the hyoid and moves on swallowing; it does not colour the skin."),
                 ("Cystic hygroma", "That is a soft compressible deep swelling that transilluminates, not a red surface lesion.")]),
@@ -257,11 +257,11 @@ ITEMS = [
          why="Shallow round ulcers with a yellow-grey base and an erythematous rim on freely moving, non-keratinized mucosa.",
          wrong=[("Herpes simplex ulcers", "Those begin as clustered vesicles and favour keratinized surfaces such as the hard palate and vermilion."),
                 ("Oral candidiasis", "That is a removable white plaque on red mucosa, not an ulcer with a defined rim."),
-                ("Oral leukoplakia", "That is an intact white plaque, not a break in the surface.")]),
+                ("Oral leukoplakia", "Leukoplakia is a white plaque that cannot be scraped off, with an intact surface; this is a painful round ulcer with a red halo.")]),
 
     dict(cond="Oral lichen planus", img="l19-s021_pos1.jpg", slide=21, deck=D19, io=ORAL,
          alt="Buccal mucosa with a network of fine lacy white lines over a faintly red background, next to the lower molars",
-         why="Fine lacy white striae forming a network — Wickham striae, the reticular form named on the slide.",
+         why="Fine lacy white lines forming a network on the buccal mucosa are Wickham striae, the reticular type of oral lichen planus.",
          wrong=[("Oral leukoplakia", "That is a solid homogeneous white plaque, not a lace-like network of lines."),
                 ("Oral candidiasis", "That is creamy curd-like material that wipes off; striae are within the mucosa and do not."),
                 ("Leukoedema", "That is a diffuse translucent haze without any defined linear pattern.")]),
@@ -346,8 +346,8 @@ ITEMS = [
 
     dict(cond="Vocal cord papillomatosis", img="l19-s049_pos1.jpg", slide=49, deck=D19, io=THROAT,
          alt="Laryngoscopic view of the vocal folds carrying several pale irregular wart-like growths along their free edges",
-         why="Exophytic wart-like growths on the vocal folds themselves — the warty lesions the slide describes.",
+         why="Exophytic warty lesions on the vocal folds. This benign, noncontagious condition, also called recurrent respiratory papillomatosis, is caused by human papilloma virus subtypes 6 and 11.",
          wrong=[("Vocal cord nodules", "Those are smooth symmetrical bumps at the junction of the anterior and middle thirds, not warty excrescences."),
-                ("Vocal cord polyp", "That is a single smooth fluid-filled swelling on one fold."),
+                ("Vocal cord polyp", "A polyp is a single unilateral, pedunculated, fluid-filled lesion on one fold, not several warty growths."),
                 ("Laryngeal carcinoma", "That is an infiltrating ulcerated mass that distorts the fold, not discrete pale warty growths.")]),
 ]

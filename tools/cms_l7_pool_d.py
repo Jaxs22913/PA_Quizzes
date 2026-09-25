@@ -143,7 +143,7 @@ POOL_D = [
      ["Beta-blockers and corticosteroids; both are named first line",
       "Correct — propranolol by mouth or timolol topically, whose mechanism is not well understood, and corticosteroids given topically, intralesionally or orally to slow growth and shrink the lesion."],
      ["Intralesional corticosteroid alone, with fluorouracil added if the lesion continues to enlarge",
-      "Fluorouracil is used for keloids and actinic damage; an infantile haemangioma responds to beta blockade, which accelerates its natural involution."],
+      "Fluorouracil is a keloid treatment, not a hemangioma one."],
      ["Surgical excision in every case, performed before the proliferative phase has finished",
       "Surgery is one option but is not the first-line treatment."],
      ["Cryotherapy with liquid nitrogen, repeated until the lesion has flattened completely",

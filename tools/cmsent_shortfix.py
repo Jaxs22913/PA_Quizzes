@@ -71,7 +71,9 @@ SHORT = {
  ("cmsent_topup2_pool", 14):"Once the swelling settles, within about two weeks",
  ("cmsent_l18b_pool", 5):   "Physical therapy, as most resolve",
  ("cmsent_l19b_pool", 7):   "Unilateral paralysis from recurrent laryngeal injury",
- ("cmsent_topup2_pool", 11):"Allergic fungal sinusitis 85%, asthma 20 to 50%",
+ # 2026-09-24: the old short key dropped cystic fibrosis, the third association the stem asks
+ # the clinician to screen for. Restored; the figures moved to the key's explanation.
+ ("cmsent_topup2_pool", 11):"Allergic fungal sinusitis, asthma and cystic fibrosis",
  ("cmsent_topup2_pool", 6): "Add systemic antibiotics",
  ("cmsent_l16c_pool", 15):  "Headache, ataxia, or focal neurological signs",
  ("cmsent_l15c_pool", 12):  "Move the tragus or pinna",

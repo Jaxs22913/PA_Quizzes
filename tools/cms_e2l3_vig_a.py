@@ -1,5 +1,5 @@
 # CMS I Exam 2, Lecture 12 Acute Vision Loss — VIGNETTE pool, part A.
-# Exam standard (2026-08-26/27): FIVE options, a patient in every stem, each
+# Exam standard (2026-08-26/27): FOUR options (five until 2026-09-13), a patient in every stem, each
 # wrong option refuted on its own terms, options short with the reasoning in
 # the explanation. Part A covers amaurosis fugax, both glaucomas, optic
 # neuritis and retinal detachment; part B covers the vascular occlusions,
@@ -29,7 +29,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="cause",
-   q="A 71-year-old woman has had three episodes of painless monocular blackout, each lasting under a minute. Which source is named as most common?",
+   q="A 71-year-old woman has had three episodes of painless monocular blackout, each lasting under a minute. What is the most likely source?",
    opts=[
      ["A carotid or cardiac embolus", "Correct. Most commonly a transient ischemic attack of retinal origin."],
      ["Optic nerve demyelination", "That produces optic neuritis, which is not transient in this way."],
@@ -40,7 +40,7 @@ POOL_A = [
  dict(topic="Amaurosis fugax", io=IOA, lead="reasoning",
    q="A 64-year-old man reports that vision in his left eye went completely dark for about six hours yesterday before returning. Why does this history argue against a transient ischemic attack?",
    opts=[
-     ["A transient ischemic attack lasts seconds to minutes", "Correct. Jaquith was explicit that hours puts it outside that window."],
+     ["A transient ischemic attack lasts seconds to minutes", "Correct. A transient ischemic attack lasts seconds to minutes, so six hours of lost vision falls well outside that window."],
      ["A transient ischemic attack is always painful", "It is painless, which is why pain suggests another cause."],
      ["A transient ischemic attack never recovers", "Full recovery is the rule."],
      ["A transient ischemic attack spares the retina", "The retinal circulation is exactly what it involves."]],
@@ -74,12 +74,12 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="prognosis",
-   q="A 67-year-old woman with amaurosis fugax asks what happens next. What is given as the outlook?",
+   q="A 67-year-old woman with amaurosis fugax asks what happens next. What is the usual outlook?",
    opts=[
      ["About 85% recover fully", "Correct, and the remainder progress to a central retinal artery occlusion."],
-     ["About half lose vision permanently", "The figure given is far more favourable."],
+     ["About half lose vision permanently", "The outlook is far better: about 85% recover fully, and the rest progress to a central retinal artery occlusion."],
      ["Recovery depends on surgery", "Recovery is usually spontaneous once the cause is treated."],
-     ["The second eye is always affected", "That is not stated."]],
+     ["The second eye is always affected", "There is no rule that the other eye follows; the risk after amaurosis fugax is progression to a central retinal artery occlusion."]],
    c=0, cite=c(8)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="treatment",
@@ -92,7 +92,7 @@ POOL_A = [
    c=0, cite=c(8)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="treatment",
-   q="A 69-year-old man has amaurosis fugax and you want to reduce his stroke risk. Which therapy is named?",
+   q="A 69-year-old man has amaurosis fugax and you want to reduce his stroke risk. Which therapy is indicated?",
    opts=[
      ["Aspirin and clopidogrel", "Correct, given to reduce cerebrovascular accident risk."],
      ["Oral acetazolamide", "That lowers intraocular pressure, not stroke risk."],
@@ -156,9 +156,9 @@ POOL_A = [
    c=0, cite=c(20)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="risk factor",
-   q="A 59-year-old woman with a history of anterior uveitis is started on a new inhaler and later develops a painful red eye. Which class is flagged as a risk factor?",
+   q="A 59-year-old woman with a history of anterior uveitis is started on a new inhaler and later develops a painful red eye. Which drug class is a risk factor for her presentation?",
    opts=[
-     ["Nebulized bronchodilators", "Correct, listed alongside systemic anticholinergics such as atropine."],
+     ["Nebulized bronchodilators", "Correct. Nebulized bronchodilators and systemic anticholinergics such as atropine are risk factors for acute angle closure."],
      ["Beta-blocker eye drops", "Those are used to treat glaucoma, not to precipitate it."],
      ["Prostaglandin analogues", "Those lower intraocular pressure."],
      ["Calcium channel blockers", "Those are used for vascular spasm."]],
@@ -167,16 +167,16 @@ POOL_A = [
  dict(topic="Angle-closure glaucoma", io=IOA, lead="education",
    q="A 63-year-old man with angle-closure glaucoma is about to start a medication for overactive bladder. Which counselling point applies?",
    opts=[
-     ["Anticholinergic drugs can worsen his glaucoma", "Correct — antimuscarinic drugs dilate the pupil, which crowds the iris into the drainage angle and can precipitate an acute attack in a susceptible eye."],
+     ["Anticholinergic drugs can worsen his glaucoma", "Correct — systemic anticholinergic medications such as atropine are a risk factor for acute angle closure, in which the iris blocks the drainage circuit and pressure rises."],
      ["Anticholinergic drugs will lower his pressure", "They act in the opposite direction."],
      ["Anticholinergic drugs cause optic neuritis", "That is inflammatory, not drug-induced here."],
-     ["Anticholinergic drugs cause papilledema", "Vitamin A toxicity, not anticholinergics, is the drug cause listed."]],
+     ["Anticholinergic drugs cause papilledema", "Papilledema comes from raised intracranial pressure, as in vitamin A toxicity; anticholinergics precipitate angle closure."]],
    c=0, cite=c(14)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="diagnosis",
    q="A 64-year-old man is admitted with an intractable headache localised behind one eye. Multiple clinicians have treated him for migraine. On examination his eye is red and his vision is reduced. Which diagnosis should be excluded?",
    opts=[
-     ["Angle-closure glaucoma", "Correct — acute angle closure produces headache with nausea that mimics migraine, and the red eye with reduced vision is what separates them."],
+     ["Angle-closure glaucoma", "Correct — acute angle-closure glaucoma causes severe, sudden eye pain with headache, nausea and vomiting, and decreased vision, which fits this presentation."],
      ["Papilledema", "That gives non-specific visual change without a red eye."],
      ["Optic neuritis", "That hurts on eye movement rather than presenting as a headache."],
      ["Retinal detachment", "That is painless and shows a field defect."]],
@@ -211,7 +211,7 @@ POOL_A = [
    c=0, cite=c(16)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="pathophysiology",
-   q="A 70-year-old woman has chronic open-angle glaucoma. Which abnormality is described?",
+   q="A 70-year-old woman has chronic open-angle glaucoma. Which abnormality underlies it?",
    opts=[
      ["Trabecular meshwork change with aging", "Correct, next to the canal of Schlemm, damaging the optic nerve."],
      ["The iris obstructing the drainage angle", "That is the acute angle-closure mechanism."],
@@ -229,9 +229,9 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Open-angle glaucoma", io=IOB, lead="treatment",
-   q="A 64-year-old woman is newly diagnosed with chronic open-angle glaucoma. Which is listed as first-line?",
+   q="A 64-year-old woman is newly diagnosed with chronic open-angle glaucoma. Which drug is first-line?",
    opts=[
-     ["Latanoprost", "Correct, with tafluprost and timolol drops."],
+     ["Latanoprost", "Correct. Latanoprost, tafluprost and timolol drops are first-line, and all lower intraocular pressure."],
      ["Laser peripheral iridotomy", "That is definitive treatment for the angle-closure form."],
      ["Intravenous mannitol", "That is used acutely for a very high pressure."],
      ["Anterior chamber paracentesis", "That is used in central retinal artery occlusion."]],
@@ -241,7 +241,7 @@ POOL_A = [
    q="A 72-year-old man has chronic open-angle glaucoma that continues to progress on maximal drops. What comes next?",
    opts=[
      ["Laser trabeculoplasty", "Correct, used when the disease is refractory or advanced."],
-     ["A stronger prostaglandin analogue", "He is already on maximal medical therapy, so adding drug potency will not help; laser or incisional surgery is needed to create outflow."],
+     ["A stronger prostaglandin analogue", "Prostaglandin analogues such as latanoprost are already first-line drops; disease that is refractory or advanced moves to surgery, such as laser trabeculoplasty."],
      ["Observation alone", "Progression on treatment calls for escalation."],
      ["Systemic corticosteroids", "Those are not used for this."]],
    c=0, cite=c(21)),
@@ -266,11 +266,11 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Optic neuritis", io=IOA, lead="epidemiology",
-   q="A 26-year-old woman is diagnosed with optic neuritis. Which patient profile is described for this condition?",
+   q="A 26-year-old woman is diagnosed with optic neuritis. Which patient profile is typical of this condition?",
    opts=[
      ["Aged 18 to 45 and mostly female", "Correct; about 75% are women."],
      ["Aged over 60 and mostly male", "That fits the ischemic and occlusive diseases."],
-     ["Children under 10", "Not the group described."],
+     ["Children under 10", "Children are not the typical group; optic neuritis usually affects adults aged 18 to 45, about 75 percent of them women."],
      ["Aged 40 to 60 and mostly male", "That fits non-arteritic optic neuropathy."]],
    c=0, cite=c(23)),
 
@@ -284,7 +284,7 @@ POOL_A = [
    c=0, cite=c(23)),
 
  dict(topic="Optic neuritis", io=IOB, lead="test",
-   q="A 27-year-old woman has optic neuritis. Which imaging is specified?",
+   q="A 27-year-old woman has optic neuritis. Which imaging is ordered?",
    opts=[
      ["MRI of brain and orbits, with and without contrast", "Correct, looking for demyelinating lesions."],
      ["Orbital ultrasound", "That is used for retinal detachment."],
@@ -375,7 +375,7 @@ POOL_A = [
    c=0, cite=c(30)),
 
  dict(topic="Retinal detachment", io=IOB, lead="treatment",
-   q="A 59-year-old man needs repair of a retinal detachment. Which is listed as an option?",
+   q="A 59-year-old man needs repair of a retinal detachment. Which procedure is a surgical option?",
    opts=[
      ["Scleral buckle", "Correct, with vitrectomy, pneumatic retinopexy, cryotherapy and laser photocoagulation."],
      ["Peripheral iridotomy", "That treats angle-closure glaucoma."],
@@ -384,7 +384,7 @@ POOL_A = [
    c=0, cite=c(30)),
 
  dict(topic="Retinal detachment", io=IOA, lead="finding",
-   q="A 65-year-old woman undergoes dilated ophthalmoscopy for suspected detachment. Which appearance is described?",
+   q="A 65-year-old woman undergoes dilated ophthalmoscopy for suspected detachment. What does a detached retina look like?",
    opts=[
      ["An elevated grey area with folds", "Correct, well demarcated and pigmented, with orange crescent-shaped tears."],
      ["A cherry-red spot at the fovea", "That is arterial occlusion."],

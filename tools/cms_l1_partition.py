@@ -117,6 +117,31 @@ if __name__ == "__main__":
             print("      %-58s %d" % (io[:58], n))
         print()
 
+    # GUARD (2026-09-24). The two shipped pages, clinical-reasoning-quiz.html
+    # and -version-2.html, are AUTHORITATIVE for Lecture 1: there is no
+    # render_cms_l1.py, the pages were hand-edited after they were built (the
+    # 2026-08-31 self-contained pass), and this pool was rewritten separately on
+    # 2026-09-20. Same 60 questions, same keys, but about 70 stems and
+    # explanations now read differently in the pool and on the pages. A sets
+    # file written from here would therefore NOT be what students see, and
+    # anything rendered from it would silently replace the shipped wording.
+    # So: compare with the pages first, and refuse to write a divergent sets
+    # file unless --force is given (use it only once the pages are meant to be
+    # regenerated from this pool, after the pool has been checked against them).
+    import re as _re
+    def _page_questions(fn):
+        h = open(os.path.join(os.path.dirname(HERE), "Clinical Medicine and Surgery I Exam 1", fn),
+                 encoding="utf-8").read()
+        i = _re.search(r"(?:const|let|var)\s+QUESTIONS\s*=\s*", h).end()
+        return json.JSONDecoder().raw_decode(h[i:])[0]
+    _diverge = 0
+    for _s, _fn in ((s1, "clinical-reasoning-quiz.html"), (s2, "clinical-reasoning-quiz-version-2.html")):
+        _pq = _page_questions(_fn)
+        _diverge += (len(_pq) != len(_s)) + sum(a != b for a, b in zip(_s, _pq))
+    if _diverge and "--force" not in sys.argv:
+        print("REFUSED: %d question(s) differ from the shipped Lecture 1 pages, which are authoritative;"
+              " cms_l1_sets.json not written (see the GUARD note; --force overrides)." % _diverge)
+        sys.exit(1)
     json.dump({"set1": s1, "set2": s2}, open(os.path.join(HERE, "cms_l1_sets.json"), "w"),
               ensure_ascii=False, indent=1)
     print("wrote cms_l1_sets.json")

@@ -26,12 +26,12 @@ IOB = "11 — Identify medical care strategies for pigmented skin lesions for ad
 
 VIG_D = [
  dict(topic="Ephelides", io=IOA, lead="treatment",
-   q="A 24-year-old with red hair and widespread freckling across her nose and cheeks asks what can be done about them. Which management is supported, and which must be avoided?",
+   q="A 24-year-old with red hair and widespread freckling across her nose and cheeks asks what can be done about them. Which management is appropriate, and which must be avoided?",
    opts=[
      ["Sun protection, patient education and topical depigmenting agents; cryotherapy is NOT used",
       "Correct — cryotherapy is difficult because of the size of the lesions, so intense pulsed light or lasers are preferred."],
      ["Cryotherapy to each individual lesion, with sun protection counselling afterwards",
-      "Freckles are small and numerous, so treating each one with cryotherapy risks scattered hypopigmented scars across the face; sun protection is the mainstay."],
+      "Cryotherapy is not used for these, because of the lesion size."],
      ["Surgical excision of the most prominent lesions",
       "Excision is not offered for freckles."],
      ["No treatment of any kind is available or appropriate",
@@ -42,9 +42,9 @@ VIG_D = [
    q="A 26-year-old woman is booked for intense pulsed light treatment of her freckles. What must she be told to expect?",
    opts=[
      ["The lesions can relapse, so this is not necessarily permanent",
-      "Correct — the treatment clears existing pigment but does not change the melanocyte response to ultraviolet light, so lesions recur with further sun exposure."],
+      "Correct — lesions can relapse after light or laser treatment."],
      ["The result is permanent once a full course has been completed",
-      "The result is not permanent; the underlying tendency to pigment in response to sun remains, so lesions can relapse."],
+      "Relapse after light or laser treatment is common."],
      ["Her freckles will darken before they fade, over about six weeks",
       "No such course is described."],
      ["She will need lifelong monthly maintenance treatments",
@@ -57,15 +57,15 @@ VIG_D = [
      ["No treatment is necessary; cosmetic removal by cryotherapy or quality-switched laser only if she wishes",
       "Correct — treatment is elective, not indicated."],
      ["Cryotherapy to all of the lesions, since solar lentigines are considered to be premalignant",
-      "Solar lentigines are benign and not premalignant, so destroying them offers no risk reduction and treatment is unnecessary."],
+      "These are not premalignant, and treatment is not necessary."],
      ["Topical fluorouracil as field therapy across both hands",
-      "Field therapy targets dysplastic keratinocytes in actinic damage; a solar lentigo is a benign pigmented macule and needs no treatment."],
+      "Field therapy belongs to actinic keratosis, not to these lesions."],
      ["Excisional biopsy of the largest lesion to exclude melanoma",
       "Nothing in the stem raises that concern."]],
    c=0, cite=c(12)),
 
  dict(topic="Seborrheic keratosis", io=IOA, lead="treatment",
-   q="A 70-year-old man wants several waxy stuck-on lesions on his trunk removed because they catch on his clothing. Which options are given?",
+   q="A 70-year-old man wants several waxy stuck-on lesions on his trunk removed because they catch on his clothing. Which options are available?",
    opts=[
      ["Retinoids, cryotherapy or quality-switched laser, since removal here is elective",
       "Correct — treatment is not necessary; removal is for cosmetic or symptomatic reasons."],
@@ -78,16 +78,16 @@ VIG_D = [
    c=0, cite=c(15)),
 
  dict(topic="Seborrheic keratosis", io=IOA, lead="education",
-   q="A 69-year-old woman is about to have an irritated seborrhoeic keratosis frozen. What should she be told beforehand, and why does it matter?",
+   q="A 69-year-old woman is about to have an irritated seborrheic keratosis frozen. What should she be told beforehand?",
    opts=[
      ["That the lesion can come back after freezing, so she is not surprised or disappointed later",
-      "Correct — she framed this as protecting the relationship as much as informing the patient."],
+      "Correct — seborrheic keratoses can recur after cryotherapy, so warning her beforehand keeps her from being surprised or disappointed if one returns."],
      ["That freezing is curative and the lesion will not return",
       "Recurrence after cryotherapy is exactly what the patient is warned about."],
      ["That the site will remain permanently depigmented",
-      "That is not the counselling point given here."],
+      "Permanent depigmentation is not the warning for seborrheic keratosis; the point to raise is that these lesions do recur after cryotherapy."],
      ["That she will need a confirmatory biopsy afterwards to establish the diagnosis",
-      "The diagnosis is clinical."]],
+      "No biopsy is needed afterward; seborrheic keratosis is a clinical diagnosis based on its velvety or warty, stuck-on appearance."]],
    c=0, cite=c(15)),
 
  dict(topic="Vitiligo", io=IOA, lead="treatment",
@@ -117,12 +117,12 @@ VIG_D = [
    c=0, cite=c(25)),
 
  dict(topic="Vitiligo", io=IOA, lead="education",
-   q="A 31-year-old man with extensive vitiligo says the condition troubles him socially far more than physically. Which aspect of care is singled out alongside repigmentation?",
+   q="A 31-year-old man with extensive vitiligo says the condition troubles him socially far more than physically. Which aspect of care matters alongside repigmentation?",
    opts=[
      ["Psychological intervention, alongside cosmetic and non-traditional therapies",
       "Correct — it is listed as part of management rather than as an afterthought."],
      ["Screening the whole family for autoimmune thyroid disease at diagnosis",
-      "Associated autoimmune disease is checked as clinically indicated rather than by screening the whole family; what is emphasised here is psychological support."],
+      "Family-wide autoimmune screening is not part of this."],
      ["Annual skin cancer surveillance for every patient",
       "Skin cancer risk is raised in connection with psoralen therapy, not as routine surveillance."],
      ["Immediate referral for surgical grafting in all patients",
@@ -143,7 +143,7 @@ VIG_D = [
    c=0, cite=c(30)),
 
  dict(topic="Congenital melanocytic naevus", io=IOA, lead="education",
-   q="The parents of a child with a very large congenital naevus ask what support exists. What is pointed them towards, and what shapes the plan?",
+   q="The parents of a child with a very large congenital naevus ask what support exists. Where should they be pointed, and what shapes the plan?",
    opts=[
      ["Counselling and support groups, with management balancing melanoma risk, cosmetic outcome and preserved function",
       "Correct — the goal is removing as much as possible while preserving function and improving appearance."],

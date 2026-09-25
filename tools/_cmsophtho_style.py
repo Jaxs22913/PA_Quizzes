@@ -29,11 +29,11 @@ derm masters, and it differs from them in ways that matter:
   TWO-STEP form, where the vignette is only a gate and the question asks for an
   organism, mechanism or complication of a condition it never names.
 
-  OPTIONS. Five, short, ONE REGISTER per question -- five conditions, or five
-  actions, or five organisms. Never mixed.
+  OPTIONS. Four (five until 2026-09-13), short, ONE REGISTER per question --
+  four conditions, or four actions, or four organisms. Never mixed.
 
 ANSWER POSITION IS NOT SET HERE. Every question is authored correct-first for
-readability and the partitioner permutes onto a balanced A-E cycle. Rendering
+readability and the partitioner permutes onto a balanced A-D cycle. Rendering
 straight from a pool is the PD1 bug ([[answer_position_bias_check]]).
 
 LENGTH BIAS: shorten the KEY, never pad distractors (Jaxon 2026-08-30), and do

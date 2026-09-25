@@ -277,7 +277,7 @@ POOL_B = [
      ["Follicular papules and pustules confined to one location, usually the buttock",
       "Correct — it may need repeated courses of treatment."],
      ["Follicular pustules over the trunk and buttocks after hot tub exposure",
-      "That is Pseudomonas folliculitis from the previous lecture."],
+      "Pustules after hot tub exposure are Pseudomonas folliculitis; hookworm folliculitis stays confined to one site, usually the buttock."],
      ["Pustules on an erythematous base each pierced by a single central hair shaft",
       "That is ordinary bacterial folliculitis."],
      ["Indurated crusted nodules on the trunk of an infant with heavy infestation",

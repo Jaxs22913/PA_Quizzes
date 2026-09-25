@@ -194,7 +194,7 @@ POOL_A = [
    q="Being aware of the base rate of disease for the diagnoses on your differential list is recommended for what reason?",
    opts=[
      ["It removes the need to gather further data",
-      "The same slide recommends actively seeking alternatives and asking disproving questions, so data gathering continues."],
+      "Base-rate awareness does not end data gathering; good decision-making also means actively seeking alternatives and asking questions that disprove the hypothesis."],
      ["It guarantees the working diagnosis will be correct",
       "No awareness of base rates guarantees a correct diagnosis; the advice sits alongside remembering that you are often wrong."],
      ["It is one of the suggestions for good decision-making",

@@ -28,7 +28,7 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Clinical approach", io=IOA, slot="initial test",
-   q="Which examination priorities are listed for a suspected malignant cutaneous lesion?",
+   q="Which examination priorities apply to a suspected malignant cutaneous lesion?",
    opts=[
      ["Good lighting, dermoscopy when trained, and a total-body skin survey when indicated; palms, soles and nails; oral mucosa when Kaposi sarcoma is possible; regional nodes for invasive or high-risk disease",
       "Correct — note the oral mucosa is tied specifically to Kaposi sarcoma."],
@@ -37,16 +37,16 @@ POOL_A = [
      ["Wood lamp examination and potassium hydroxide preparation of any scale; palms, soles and nails; oral mucosa when tinea is possible; regional nodes in every patient regardless of risk",
       "Neither the lamp nor the preparation is part of this workup."],
      ["Dermoscopy alone, since the total-body survey, the palms, soles and nails, the oral mucosa and the regional nodes all belong to the dermatologist rather than the referring clinician",
-      "These are the referring clinician's responsibilities, because acral and mucosal melanoma and regional nodal spread can be missed entirely if nobody looks before referral."]],
+      "The examining clinician performs all of these, not dermoscopy alone."]],
    c=0, cite=c(4)),
 
  dict(topic="Clinical approach", io=IOA, slot="risk factors",
-   q="Which history elements should be elicited?",
+   q="Which history elements must be elicited?",
    opts=[
      ["Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational or recreational ultraviolet exposure and tanning-bed use; prior skin cancer, immunosuppression or transplant, human immunodeficiency virus risk; chronic scars, wounds or radiation sites; family history",
       "Correct — note chronic scars and radiation sites among them."],
      ["Onset and change, bleeding or non-healing, pain or pruritus; sunburns, occupational exposure and tanning-bed use; chronic scars, wounds and radiation sites; family history — but not prior skin cancer, immunosuppression, transplant or human immunodeficiency virus status, which the dermatologist obtains at the time of biopsy",
-      "Prior skin cancer, immunosuppression and transplant status change the pretest probability substantially, so they are established at the first encounter rather than deferred."],
+      "A full history is needed at the first encounter."],
      ["Onset and change; sunburns, occupational exposure and tanning-bed use; chronic scars and radiation sites; family history — but not immunosuppression or transplant status, which do not alter cutaneous malignancy risk",
       "Immunosuppression is explicitly listed and matters greatly."],
      ["Onset and change, pain or pruritus; occupational and recreational ultraviolet exposure and tanning-bed use; immunosuppression and family history — but not prior skin cancer, which does not predict a second primary",
@@ -54,12 +54,12 @@ POOL_A = [
    c=0, cite=c(4)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="etiology",
-   q="What is the core mechanism of actinic keratosis, and how is it positioned relative to keratinocyte carcinoma?",
+   q="What is the core mechanism of actinic keratosis, and how does it relate to keratinocyte carcinoma?",
    opts=[
      ["Chronic ultraviolet injury producing dysplastic keratinocytic change in a field of sun-damaged skin; it is premalignant and lies on a biologic continuum with keratinocyte carcinoma, not a distinct separate entity",
       "Correct — a continuum, not a separate disease."],
      ["Chronic ultraviolet injury producing dysplastic melanocytic change in a field of sun-damaged skin; it is premalignant but a distinct entity quite separate from keratinocyte carcinoma, with no biologic continuum between them",
-      "The dysplastic cell is the keratinocyte rather than the melanocyte, and the lesion sits on a continuum with squamous cell carcinoma rather than being a separate disease."],
+      "The change is keratinocytic, and it is not a separate entity."],
      ["Human papillomavirus infection of keratinocytes in a field of sun-damaged skin; it is a benign lesion lying on a continuum with verruca rather than with keratinocyte carcinoma",
       "Ultraviolet injury, not a virus, and it is premalignant."],
      ["Chronic thermal injury producing dysplastic keratinocytic change in a field of scarred skin; it is premalignant and lies on a continuum with keratinocyte carcinoma but is unrelated to ultraviolet exposure",
@@ -93,7 +93,7 @@ POOL_A = [
    c=0, cite=c(11)),
 
  dict(topic="Actinic keratosis", io=IOA, slot="manifestation",
-   q="Describe the actinic keratosis lesion, including the finding that may be more apparent by touch than by sight.",
+   q="Describe the actinic keratosis lesion, including the finding more apparent by touch than by sight.",
    opts=[
      ["Small 0.2 to 0.6 cm flesh-coloured, pink or slightly hyperpigmented papules with a characteristic sandpaper texture on palpation",
       "Correct — the sandpaper texture is often felt before it is seen."],

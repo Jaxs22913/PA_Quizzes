@@ -20,7 +20,7 @@ POOL_D = [
      ["It is the most common skin disease, affecting about 80% of Americans in their lifetime",
       "Correct. It usually begins with the onset of puberty."],
      ["It is the second most common, affecting about 40% of Americans in their lifetime",
-      "Acne is the commonest skin disease in the United States, and the lifetime proportion affected is roughly double this figure."],
+      "It ranks first, at roughly twice that figure."],
      ["It is the most common in adolescents only, affecting about 20% of adults",
       "The 80% figure is a lifetime prevalence across the population."],
      ["It is uncommon overall, affecting fewer than 10% of Americans in their lifetime",
@@ -275,9 +275,9 @@ POOL_D = [
    c=0, cite=c(131)),
 
  dict(topic="Abscess", io=IOA, slot="referral",
-   q="How is the definitive procedure described for an abscess that will not drain?",
+   q="What is the definitive procedure for an abscess that will not drain?",
    opts=[
-     ["Surgical incision and drainage, covered in detail in a later course",
+     ["Surgical incision and drainage",
       "Correct — the aim is to eradicate infection and prevent recurrence."],
      ["Wide excision of the affected area under general anaesthesia",
       "That belongs to hidradenitis suppurativa."],

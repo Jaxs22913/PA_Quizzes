@@ -113,7 +113,7 @@ DECKS = [
   ["Does the site of a herpes simplex lesion tell you the viral type?", "No. Either type can cause oral or genital infection."],
   ["Can herpes simplex be transmitted with no visible lesion?", "Yes, during asymptomatic shedding."],
   ["What is the preferred test for herpes simplex?", "Type-specific amplification testing from a fresh vesicle, ulcer base or crust."],
-  ["Which herpes simplex test does the deck tell you not to use?", "Immunoglobulin M serology."],
+  ["Which herpes simplex test should not be used?", "Immunoglobulin M serology."],
   ["Why can a negative swab from an older herpes lesion not exclude infection?", "Because viral shedding is intermittent."],
   ["Which first episodes of herpes simplex are treated?", "Every one of them."],
   ["Does suppressive valacyclovir eliminate transmission risk?", "No. It lowers it, and condoms reduce but do not eliminate it."],

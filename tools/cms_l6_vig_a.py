@@ -50,17 +50,17 @@ VIG_A = [
    q="The parents of a child with tinea capitis ask how long fungal particles survive on the hairbrush she shares with her sister. Which is the most appropriate response?",
    opts=[
      ["Fungal particles remain viable for months, so hair-care items must not be shared and should be cleaned",
-      "Correct — dermatophyte arthrospores are hardy and survive on hair-care items for months, which is why shared brushes and combs sustain reinfection within a household."],
+      "Correct — fungal particles stay viable for months."],
      ["Fungal particles remain viable for a few hours, so normal washing of the brush between uses is enough",
-      "Viability lasts months rather than hours, so ordinary washing between uses does not interrupt transmission."],
+      "Viability lasts months, not hours."],
      ["Fungal particles cannot survive off the scalp at all, so shared items carry no risk of transmission",
-      "Spores survive well off the scalp, which is exactly why fomite spread through brushes, hats and pillows occurs."],
+      "Fomite transmission is well recognised."],
      ["Fungal particles remain viable for months, but only on furniture and clothing rather than on combs",
       "Combs and hairbrushes are named specifically as fomites."]],
    c=0, cite=c(10)),
 
  dict(topic="Tinea capitis", io=IOB, lead="test",
-   q="A 5-year-old has a scaly patch of alopecia. Before starting a prolonged systemic antifungal course, which investigations are recommended?",
+   q="A 5-year-old has a scaly patch of alopecia. Before starting a prolonged systemic antifungal course, which investigations are appropriate?",
    opts=[
      ["Potassium hydroxide microscopy and fungal culture when feasible",
       "Correct — confirm before committing to prolonged oral therapy."],
@@ -125,16 +125,16 @@ VIG_A = [
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, lead="next step",
-   q="You are about to prescribe a systemic antifungal for an 8-year-old with confirmed tinea capitis. Which safety step is identified before the first dose?",
+   q="You are about to prescribe a systemic antifungal for an 8-year-old with confirmed tinea capitis. Which safety step comes before the first dose?",
    opts=[
      ["Review drug interactions and hepatic disease, and obtain baseline liver tests when indicated by the agent, its labeling, and patient risk",
       "Correct — baseline testing is indication-driven, not automatic."],
      ["Review drug interactions and renal disease, and obtain a baseline creatinine in every patient regardless of the agent chosen",
-      "The organ at risk is the liver rather than the kidney, so hepatic disease and liver tests are what must be reviewed."],
+      "It is hepatic disease and liver tests that matter, not renal."],
      ["Review drug interactions and cardiac disease, and obtain a baseline electrocardiogram in every patient before the first dose",
       "No cardiac testing requirement is described here."],
      ["No safety step is needed, because oral antifungals used for scalp disease carry no clinically important interactions",
-      "These agents are given for weeks to months and interact through hepatic metabolism, so interactions and liver status are checked first."]],
+      "An interaction and hepatic review is required."]],
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, lead="treatment",
@@ -190,7 +190,7 @@ VIG_A = [
    c=0, cite=c(19)),
 
  dict(topic="Tinea barbae", io=IOB, lead="test",
-   q="A man with a pustular beard eruption has hairs that are firmly anchored and do not pull out easily. Which test is suggested to help separate this from tinea barbae?",
+   q="A man with a pustular beard eruption has hairs that are firmly anchored and do not pull out easily. Which test helps separate this from tinea barbae?",
    opts=[
      ["Bacterial culture",
       "Correct — used to rule out bacterial folliculitis."],
@@ -199,7 +199,7 @@ VIG_A = [
      ["Patch testing",
       "Not part of the tinea barbae workup."],
      ["Serology for dermatophyte antibodies",
-      "No dermatophyte serology exists; the separation is made by sampling the lesion, since tinea barbae loosens the hairs while bacterial folliculitis does not."]],
+      "No such serology exists for dermatophytes."]],
    c=0, cite=c(21)),
 
  dict(topic="Tinea barbae", io=IOB, lead="treatment",
@@ -249,7 +249,7 @@ VIG_A = [
      ["Accept the negative result and treat the lesion as nummular eczema with a topical corticosteroid",
       "A steroid on an unrecognised tinea produces tinea incognito."],
      ["Repeat the identical potassium hydroxide preparation weekly until it eventually turns positive",
-      "Microscopy misses infection when the scraping is sparse, and repeating the same insensitive test does not resolve that; culture is more sensitive."],
+      "Culture is the next test, not a repeat of the same preparation."],
      ["Start an oral antifungal without further testing, since the clinical picture alone is sufficient",
       "Culture is the described step before escalating."]],
    c=0, cite=c(26)),
@@ -362,7 +362,7 @@ VIG_A = [
    q="A 60-year-old man has diffuse thickening and scaling of both soles extending onto the medial and lateral surfaces of the feet, in a pattern resembling a shoe. Which variant of tinea pedis is this?",
    opts=[
      ["Hyperkeratotic",
-      "Correct — the hyperkeratotic variant thickens and scales the whole weight-bearing surface and extends up the sides, giving the moccasin distribution described."],
+      "Correct — the shoe distribution is characteristic of the hyperkeratotic variant."],
      ["Interdigital",
       "That form macerates and erodes the toe web spaces."],
      ["Vesiculobullous",
@@ -437,16 +437,16 @@ VIG_A = [
    c=0, cite=c(44)),
 
  dict(topic="Tinea pedis", io=IOB, lead="education",
-   q="Which self-care measure is singled out as essential for a patient with tinea pedis?",
+   q="Which self-care measure is essential for a patient with tinea pedis?",
    opts=[
      ["Drying between the toes after bathing",
-      "Correct — the interdigital spaces stay damp long after bathing, and that retained moisture is what allows the dermatophyte to persist and recur."],
+      "Correct — drying between the toes is the essential measure."],
      ["Wearing occlusive footwear throughout the day",
       "Occlusion creates the warm moist environment the fungus needs."],
      ["Soaking the feet in hot water each evening",
-      "Hot soaks leave the skin more macerated, which favours the organism rather than suppressing it."],
+      "Soaking the feet macerates the skin further."],
      ["Applying a corticosteroid powder to the shoes",
-      "A corticosteroid in the shoe would suppress local immunity and worsen the infection; an antifungal powder is what is used."]],
+      "An antifungal foot powder, not a steroid, is what belongs in the shoe."]],
    c=0, cite=c(45)),
 
  dict(topic="Tinea manuum", io=IOB, lead="diagnosis",

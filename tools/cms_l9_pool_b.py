@@ -136,7 +136,7 @@ POOL_B = [
      ["Surgical excision or Mohs micrographic surgery for invasive disease; hedgehog pathway inhibitors for advanced or metastatic disease",
       "Hedgehog inhibitors belong to basal cell carcinoma."],
      ["Radiation therapy alone for invasive disease; curettage and electrodesiccation for advanced or metastatic disease",
-      "The sequence is inverted: curettage and electrodesiccation suit superficial lesions, and advanced or metastatic disease needs systemic therapy rather than a destructive office procedure."]],
+      "Neither half of that sequence is right."]],
    c=0, cite=c(24)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, slot="escalation",

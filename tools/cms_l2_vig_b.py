@@ -60,7 +60,7 @@ POOL_B = [
      ["Bullous pemphigoid",
       "This gives tense bullae, a negative Nikolsky sign and only occasional mucosal involvement."],
      ["Erythema multiforme",
-      "This is covered in General Dermatology II and presents with target lesions."],
+      "Erythema multiforme produces target lesions with three concentric zones on acral surfaces, not flaccid bullae with a positive Nikolsky sign."],
      ["Lichen planus",
       "Oral lichen planus produces lacey white striae rather than flaccid bullae with a positive Nikolsky sign."]],
    c=0, cite=c(130)),
@@ -205,7 +205,7 @@ POOL_B = [
      ["Neutrophils aligned in a row at the dermal-epidermal junction",
       "That is bullous pemphigoid."],
      ["Munro microabscesses within the stratum corneum",
-      "Munro microabscesses are collections of neutrophils in the stratum corneum and are characteristic of psoriasis rather than lichen planus."]],
+      "Munro microabscesses belong to psoriasis."]],
    c=0, cite=c(177)),
 
  dict(topic="Lichen planus", io=IOC,

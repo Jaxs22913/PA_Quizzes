@@ -271,9 +271,9 @@ POOL_E = [
      ["Accept it as diagnostic and begin suppressive therapy",
       "A low-positive result needs confirmation first."],
      ["Discard it and repeat the identical assay in six months",
-      "Repeating the same assay reproduces the same false positive; confirmation requires a different method."],
+      "A second method is needed, not a repeat of the same one."],
      ["Confirm it with an immunoglobulin M level on the same sample",
-      "Immunoglobulin M is not reliable here, so it cannot serve as the confirmatory method."]],
+      "Immunoglobulin M is not used for confirmation."]],
    c=0, cite=c(123)),
 
  dict(topic="Herpes simplex virus", io=IOB, slot="differential",
@@ -358,11 +358,11 @@ POOL_E = [
    q="How does herpetic whitlow present?",
    opts=[
      ["Prodromal burning or tingling, then grouped vesicles on an erythematous swollen digit, sometimes with fever or lymphangitis",
-      "Correct — the virus is inoculated into the finger, so the sensory prodrome precedes grouped vesicles on a swollen digit, with lymphangitis if it tracks proximally."],
+      "Correct — that is the sequence."],
      ["Painless swelling of the whole hand, then a single large bulla on the palm, sometimes with joint stiffness",
       "Whitlow is painful and affects the distal finger."],
      ["Sudden nail plate separation, then thickening and yellow discolouration, sometimes with subungual debris",
-      "Nail plate separation with thickening and subungual debris describes onychomycosis, a slow fungal nail infection rather than an acute painful vesicular one."],
+      "That is onychomycosis."],
      ["A slowly enlarging painless nodule on the finger, then central umbilication, sometimes with satellite lesions",
       "Umbilicated papules describe molluscum contagiosum."]],
    c=0, cite=c(126)),
@@ -498,16 +498,16 @@ POOL_E = [
    c=0, cite=c(130)),
 
  dict(topic="Molluscum contagiosum", io=IOC, slot="referral",
-   q="A child has genital molluscum lesions. What is true of interpreting this?",
+   q="A child has genital molluscum lesions. How should this be interpreted?",
    opts=[
      ["It requires context-sensitive assessment, because location alone does not prove abuse",
       "Correct — location alone is not proof."],
      ["It confirms sexual abuse, so a report should be filed on the location alone",
-      "Genital molluscum in a child is frequently autoinoculated from scratching elsewhere, so the site alone does not establish abuse."],
+      "Location alone does not prove abuse."],
      ["It excludes sexual abuse, because genital lesions in children are always autoinoculated",
-      "Autoinoculation is common but does not rule out abuse either, which is why the assessment must weigh the whole context."],
+      "Neither does location alone exclude it."],
      ["It requires no assessment at all, because genital lesions are expected in children",
-      "The finding is not simply expected and dismissible; it calls for a careful, context-sensitive assessment."]],
+      "Careful assessment is still required."]],
    c=0, cite=c(133)),
 
  dict(topic="Molluscum contagiosum", io=IOB, slot="referral",
@@ -540,7 +540,7 @@ POOL_E = [
    q="Which single feature is characteristic of the molluscum lesion?",
    opts=[
      ["Central umbilication",
-      "Correct — the poxvirus replicates in the epidermis and the central core of infected cells collapses, leaving the dimpled umbilication that identifies the lesion."],
+      "Correct — central umbilication is the characteristic feature."],
      ["An advancing scaly border",
       "That is the dermatophyte pattern."],
      ["A thrombosed capillary dot",
@@ -654,7 +654,7 @@ POOL_E = [
    c=0, cite=c(138)),
 
  dict(topic="Warts", io=IOB, slot="manifestation",
-   q="Which variations of verruca are listed?",
+   q="Which variations of verruca are recognised?",
    opts=[
      ["Verruca vulgaris, verruca plana, verruca plantaris, mosaic warts, and genital warts",
       "Correct — five variants."],
@@ -663,7 +663,7 @@ POOL_E = [
      ["Verruca vulgaris, seborrheic keratosis, and squamous cell carcinoma",
       "Those two are in the wart differential, not variants."],
      ["Verruca vulgaris, verruca plantaris, and condyloma acuminatum only",
-      "The list is longer: verruca plana and mosaic warts belong alongside verruca vulgaris, plantaris and genital warts."]],
+      "The list is longer than this."]],
    c=0, cite=c(138)),
 
  dict(topic="Warts", io=IOB, slot="manifestation",
@@ -784,7 +784,7 @@ POOL_E = [
    c=0, cite=c(145)),
 
  dict(topic="Warts", io=IOB, slot="agent/regimen",
-   q="Which two treatments are given for plantar warts?",
+   q="Which two treatments are used for plantar warts?",
    opts=[
      ["Salicylic acid 40% and cryotherapy",
       "Correct — the two named options."],
@@ -849,14 +849,14 @@ POOL_E = [
    c=0, cite=c(148)),
 
  dict(topic="Warts", io=IOB, slot="prognosis",
-   q="What is true of eradicating human papillomavirus with wart therapy?",
+   q="Can wart therapy eradicate human papillomavirus?",
    opts=[
      ["No therapy eradicates it with certainty, and recurrence can occur",
       "Correct — set expectations accordingly."],
      ["Cryotherapy eradicates it reliably, so recurrence does not occur",
       "No therapy eradicates it with certainty."],
      ["Salicylic acid eradicates it reliably when used for six weeks",
-      "Salicylic acid debrides the wart tissue but does not clear latent virus from surrounding skin, so recurrence remains possible."],
+      "Salicylic acid does not reliably eradicate the virus."],
      ["Surgical excision eradicates it reliably in immunocompetent patients",
       "Excision is not offered as curative here."]],
    c=0, cite=c(149)),
@@ -875,7 +875,7 @@ POOL_E = [
    c=0, cite=c(149)),
 
  dict(topic="Warts", io=IOB, slot="avoid",
-   q="What is warned against for benign warts likely to resolve on their own?",
+   q="What should be avoided for benign warts likely to resolve on their own?",
    opts=[
      ["Excessive freezing or destructive therapy",
       "Correct — do not over-treat a self-limiting lesion."],
@@ -888,7 +888,7 @@ POOL_E = [
    c=0, cite=c(149)),
 
  dict(topic="Warts", io=IOB, slot="referral",
-   q="Which wart cases should be referred?",
+   q="Which wart cases warrant referral?",
    opts=[
      ["Periungual, facial, extensive, recalcitrant, diagnostically uncertain, or immunocompromised cases",
       "Correct — six referral categories."],

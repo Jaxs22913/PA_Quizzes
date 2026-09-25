@@ -221,10 +221,16 @@ QUESTIONS = [
 
  dict(topic="Nasal polyps", io=IO_A, lead="defining feature", cite=D % 59,
   q="Which triad makes up aspirin-exacerbated respiratory disease?",
-  opts=[["Nasal polyps, asthma and aspirin sensitivity", "Correct."],
-        ["Polyps, deviated septum and epistaxis", "Three separate conditions rather than a syndrome."],
-        ["Polyps, sinusitis and hearing loss", "Hearing loss belongs to the ear lectures."],
-        ["Asthma, eczema and hay fever", "That is the atopic triad, not this one."]]),
+  opts=[["Nasal polyps, asthma and aspirin sensitivity", "Correct. Nasal polyps are "
+         "frequently associated with chronic rhinosinusitis, asthma and aspirin sensitivity "
+         "in the syndrome of aspirin-exacerbated respiratory disease."],
+        ["Polyps, deviated septum and epistaxis", "A deviated septum can cause recurrent "
+         "nosebleeds, but neither belongs to this syndrome, which pairs nasal polyps with "
+         "asthma and aspirin sensitivity."],
+        ["Polyps, sinusitis and hearing loss", "Hearing loss is not part of it; the syndrome "
+         "joins nasal polyps and chronic rhinosinusitis with asthma and aspirin sensitivity."],
+        ["Asthma, eczema and hay fever", "Eczema and hay fever are not part of it; the "
+         "syndrome is nasal polyps with asthma and sensitivity to aspirin."]]),
 
  dict(topic="Nasal polyps", io=IO_B, lead="next step", cite=D % 61,
   q="What must every child with benign multiple nasal polyposis be evaluated for?",

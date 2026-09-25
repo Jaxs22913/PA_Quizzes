@@ -41,9 +41,7 @@ Q("Relative afferent pupillary defect", IO,
   "two-step", D, 26),
 
 Q("Horner syndrome", IO,
-  "A 57-year-old smoker has a droopy right upper lid and a small right pupil that reacts to light. "
-  "The right side of his face is dry. He has had a cough for three months. What is the most likely "
-  "diagnosis, and what must be excluded?",
+  "A 57-year-old smoker has a droopy right upper lid and a small right pupil that reacts to light. The right side of his face is dry. He has had a cough for three months. Which statement about his diagnosis is correct?",
   [["Horner syndrome, and an apical lung tumour must be excluded",
     "Correct. Ptosis, miosis and anhidrosis; a Pancoast tumour is the concern with this history."],
    ["Third nerve palsy, and an aneurysm must be excluded",

@@ -2,13 +2,13 @@
  "set1": [
   {
    "topic": "Trachoma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "escalation",
    "q": "What does trichiasis from trachoma require?",
    "opts": [
     [
      "Surgical treatment",
-     "Correct — the inturned lashes are the result of fixed cicatricial scarring, which only lid surgery can correct before the cornea is destroyed."
+     "Correct — the lashes keep abrading the cornea until they are dealt with surgically."
     ],
     [
      "A further course of azithromycin",
@@ -20,7 +20,7 @@
     ],
     [
      "Observation only",
-     "Observation allows the lashes to keep abrading the cornea; lid surgery is needed to prevent blindness."
+     "Observation leaves the lashes abrading the cornea."
     ]
    ],
    "c": 0,
@@ -28,9 +28,9 @@
   },
   {
    "topic": "Subconjunctival haemorrhage",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "initial test",
-   "q": "What is emphasised most in evaluating a subconjunctival haemorrhage?",
+   "q": "What matters most in evaluating a subconjunctival haemorrhage?",
    "opts": [
     [
      "Computed tomography of the orbits and sinuses with contrast",
@@ -38,7 +38,7 @@
     ],
     [
      "Immediate slit lamp with fluorescein",
-     "Slit lamp with fluorescein looks for corneal epithelial defects; a subconjunctival haemorrhage is diagnosed on inspection and assessed through the history."
+     "The slit lamp does not explain why the haemorrhage happened."
     ],
     [
      "Serum lipid profile",
@@ -46,7 +46,7 @@
     ],
     [
      "History — and check the blood pressure if there is no explanation",
-     "Correct — the eye itself needs little assessment; the value lies in finding a cause, and an unexplained haemorrhage should prompt a blood pressure check."
+     "Correct — history is the priority, and an unexplained bleed warrants a blood pressure check."
     ]
    ],
    "c": 3,
@@ -54,25 +54,25 @@
   },
   {
    "topic": "Conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "test finding",
    "q": "Preauricular lymph node enlargement in conjunctivitis points to which three causes?",
    "opts": [
     [
      "Ordinary bacterial and allergic",
-     "Ordinary bacterial conjunctivitis characteristically has NO preauricular node, which is part of what separates it from viral disease."
+     "Ordinary bacterial and allergic conjunctivitis usually spare the preauricular node."
     ],
     [
      "Fungal and parasitic",
-     "Fungal and parasitic organisms are not among the causes of conjunctivitis here; the node points to chlamydial, gonococcal and viral disease."
+     "Neither is a usual cause of conjunctivitis."
     ],
     [
      "Chlamydial, gonococcal and viral",
-     "Correct — the conjunctiva drains to the preauricular node, and only these three provoke enough lymphoid response to enlarge it palpably."
+     "Correct — these three are the node-enlarging causes."
     ],
     [
      "Allergic, autoimmune and toxic",
-     "Allergic, autoimmune and toxic conjunctivitis are not infections and do not enlarge the preauricular node."
+     "None of these enlarges the preauricular node."
     ]
    ],
    "c": 2,
@@ -80,7 +80,7 @@
   },
   {
    "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "etiology",
    "q": "What is a chalazion, in mechanism?",
    "opts": [
@@ -106,7 +106,7 @@
   },
   {
    "topic": "Entropion and ectropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "escalation",
    "q": "What is the definitive treatment for entropion or ectropion?",
    "opts": [
@@ -116,7 +116,7 @@
     ],
     [
      "Botulinum toxin injection",
-     "Botulinum toxin does not reposition a lax or scarred lid; surgery is the definitive repair."
+     "Botulinum toxin does not reposition the lid margin."
     ],
     [
      "Topical antibiotic ointment",
@@ -124,7 +124,7 @@
     ],
     [
      "Surgery",
-     "Correct — the lid malposition is mechanical, so only surgical repositioning corrects it definitively."
+     "Correct — only surgery restores lid position permanently."
     ]
    ],
    "c": 3,
@@ -132,7 +132,7 @@
   },
   {
    "topic": "Chlamydial conjunctivitis",
-   "io": "Objective b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
+   "io": "b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
    "slot": "complication",
    "q": "Why are neonates with chlamydial conjunctivitis often treated in hospital?",
    "opts": [
@@ -146,7 +146,7 @@
     ],
     [
      "Because the diagnosis can only be confirmed in hospital",
-     "The diagnosis is made from a conjunctival sample that can be taken anywhere; admission is driven by concurrent pneumonia or pneumonitis."
+     "Confirming the diagnosis does not require admission."
     ],
     [
      "Because there is often concomitant pneumonia or pneumonitis",
@@ -158,21 +158,21 @@
   },
   {
    "topic": "Chlamydial conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "education",
-   "q": "Which counselling points are attached to doxycycline?",
+   "q": "Which counselling points go with doxycycline?",
    "opts": [
     [
      "Double the dose if symptoms persist",
-     "Doubling the dose is never appropriate self-management; persistent symptoms warrant review rather than more drug."
+     "Doubling the dose is never the counselling point."
     ],
     [
      "Avoid the sun, and read which foods cannot be taken with it",
-     "Correct — doxycycline is photosensitising and chelates with calcium, iron and magnesium, so sun protection and separating it from antacids and supplements both matter, taken with a full glass of water while staying upright."
+     "Correct — photosensitivity plus food and mineral interactions; take it with a full glass of water, stay upright, and separate it from antacids and from iron, calcium or magnesium."
     ],
     [
      "Take it on an empty stomach and lie down afterwards",
-     "The advice is the reverse: stay upright after the dose, because doxycycline can cause oesophageal ulceration if it lodges on the way down."
+     "Doxycycline should be taken upright, and separated from certain supplements."
     ],
     [
      "Avoid all dairy for a month after the course",
@@ -184,9 +184,9 @@
   },
   {
    "topic": "Allergic conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "agent/regimen",
-   "q": "Which single agent is named that both blocks histamine and stabilises mast cells?",
+   "q": "Which single agent both blocks histamine and stabilises mast cells?",
    "opts": [
     [
      "Erythromycin",
@@ -198,11 +198,11 @@
     ],
     [
      "Olopatadine",
-     "Correct — olopatadine antagonises the histamine receptor for immediate relief and stabilises mast cells to prevent further release, covering both phases."
+     "Correct — olopatadine carries both actions in one drop."
     ],
     [
-     "Ketotifen",
-     "Ketotifen also has dual activity, but olopatadine is the agent named here for that combined action."
+     "Cromolyn sodium",
+     "Cromolyn sodium is not the dual-acting drop; olopatadine is both a topical antihistamine (H1 blocker) and a mast cell stabilizer."
     ]
    ],
    "c": 2,
@@ -210,13 +210,13 @@
   },
   {
    "topic": "Posterior uveitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "avoid",
    "q": "What must happen before immunosuppression in posterior uveitis?",
    "opts": [
     [
      "Infection must be excluded",
-     "Correct — toxoplasmosis and cytomegalovirus are among the causes, and immunosuppressing an untreated intraocular infection allows it to destroy the retina."
+     "Correct — immunosuppressing an unrecognised infection would worsen it."
     ],
     [
      "A lipid profile must be obtained",
@@ -224,11 +224,11 @@
     ],
     [
      "Intraocular pressure must be normalised",
-     "Pressure control is not the precondition; excluding an infectious cause before suppressing immunity is."
+     "Intraocular pressure is not the precondition."
     ],
     [
      "The patient must have failed topical therapy",
-     "Topical therapy does not reach the posterior segment, so failing it is not a meaningful step; excluding infection is what must come first."
+     "Posterior disease does not respond to topical therapy anyway."
     ]
    ],
    "c": 0,
@@ -236,25 +236,25 @@
   },
   {
    "topic": "Conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "differential",
-   "q": "How is acute divided from chronic conjunctivitis?",
+   "q": "What divides acute from chronic conjunctivitis?",
    "opts": [
     [
      "Acute is 48 hours or less; chronic is longer",
-     "Two days is far too short to call anything chronic; the division falls at four weeks."
+     "48 hours is far shorter than the cut-off."
     ],
     [
      "Acute is three months or less; chronic is longer",
-     "Three months is well past the cut-off, which is four weeks."
+     "Three months is well past the cut-off."
     ],
     [
      "Acute is four weeks or less; chronic is more than four weeks",
-     "Correct — four weeks is the dividing line, and passing it shifts the differential away from ordinary infection towards chlamydial, allergic, toxic and autoimmune causes."
+     "Correct — four weeks is the dividing line."
     ],
     [
      "Acute is one week or less; chronic is more than one week",
-     "One week is too short; most infective conjunctivitis is still settling then, and the cut-off is four weeks."
+     "One week is shorter than the cut-off."
     ]
    ],
    "c": 2,
@@ -262,7 +262,7 @@
   },
   {
    "topic": "Trachoma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "agent/regimen",
    "q": "What is the mass drug administration regimen for trachoma, and at what prevalence threshold?",
    "opts": [
@@ -272,15 +272,15 @@
     ],
     [
      "Topical erythromycin to affected individuals only",
-     "Treating only the affected individuals leaves the reservoir intact; whole districts are treated once prevalence reaches five per cent."
+     "Treatment goes to the whole eligible community, not to individuals."
     ],
     [
      "Azithromycin one gram weekly for four weeks",
-     "A single one-gram dose is used; azithromycin's long tissue half-life makes repeated weekly dosing unnecessary."
+     "It is a single dose, not four weekly ones."
     ],
     [
      "Azithromycin one gram orally as a single dose, in units with prevalence at or above five per cent",
-     "Correct — a single one-gram dose of azithromycin is given to the whole district when prevalence reaches five per cent, since treating individuals alone cannot interrupt transmission."
+     "Correct — agent, dose and prevalence threshold all match."
     ]
    ],
    "c": 3,
@@ -288,7 +288,7 @@
   },
   {
    "topic": "Herpetic keratitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "agent/regimen",
    "q": "What is the systemic treatment for herpes simplex or zoster keratitis?",
    "opts": [
@@ -298,7 +298,7 @@
     ],
     [
      "Oral antivirals — aciclovir, valaciclovir or famciclovir — for ten days",
-     "Correct — aciclovir, valaciclovir or famciclovir for ten days treats both, with the valine prodrugs offering better oral absorption and less frequent dosing."
+     "Correct — these agents and this duration cover both simplex and zoster."
     ],
     [
      "A topical fluoroquinolone given four times daily for ten days",
@@ -314,9 +314,9 @@
   },
   {
    "topic": "Pinguecula and pterygium",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "first-line",
-   "q": "What is the conservative management, and what should the patient be told about it?",
+   "q": "Which statement correctly describes the conservative management of a pinguecula or pterygium?",
    "opts": [
     [
      "Topical antibiotics for ten days",
@@ -328,11 +328,11 @@
     ],
     [
      "Sun, dust and wind protection with lubricating eyedrops — but it will not make the lesion resolve",
-     "Correct — protection and lubrication relieve symptoms and slow progression, but the degenerative tissue is already laid down and will not regress, so expectations must be set."
+     "Correct — conservative care controls symptoms but does not resolve the lesion."
     ],
     [
      "Sun protection and lubricating drops, which usually resolve the lesion within weeks",
-     "Conservative measures relieve irritation and slow growth but do not make the lesion disappear; the deposited tissue does not regress."
+     "Conservative management will not make it resolve."
     ]
    ],
    "c": 2,
@@ -340,7 +340,7 @@
   },
   {
    "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "differential",
    "q": "A mass sits ABOVE the medial canthal tendon rather than below it. What should be suspected?",
    "opts": [
@@ -354,7 +354,7 @@
     ],
     [
      "A lacrimal sac tumour, which is rare",
-     "Correct — the lacrimal sac lies BELOW the medial canthal tendon, so a mass above it is not a distended sac and raises the possibility of a rare lacrimal sac tumour."
+     "Correct — position relative to the tendon is the discriminator."
     ],
     [
      "A chalazion",
@@ -366,25 +366,25 @@
   },
   {
    "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
-   "q": "Which sign is described at the meibomian glands in meibomitis?",
+   "q": "Which sign appears at the meibomian glands in meibomitis?",
    "opts": [
     [
      "Thick, sometimes toothpaste-like lipid secretion",
-     "Correct — inflamed meibomian glands produce inspissated lipid that expresses as a thick, toothpaste-like plug."
+     "Correct — the secretion thickens to a toothpaste consistency."
     ],
     [
      "Clear watery secretion in excess",
-     "The secretion is thickened rather than thinned; a clear watery excess is not the meibomitis finding."
+     "The secretion thickens rather than thins."
     ],
     [
      "Complete absence of any meibomian secretion",
-     "Secretion is present but abnormal; it is thickened and inspissated rather than absent."
+     "The secretion is abnormal, not absent."
     ],
     [
      "Blood-tinged secretion",
-     "Blood-tinged secretion is not a feature; the characteristic finding is thick, toothpaste-like lipid."
+     "Blood-tinged secretion is not a feature."
     ]
    ],
    "c": 0,
@@ -392,13 +392,13 @@
   },
   {
    "topic": "Episcleritis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "test finding",
    "q": "What happens when the vessels are touched with a cotton-tip applicator after anaesthesia in episcleritis?",
    "opts": [
     [
      "They bleed immediately",
-     "Bleeding is not a feature; the point of the manoeuvre is that episcleral vessels slide over the sclera while scleral vessels do not."
+     "The vessels move rather than bleed."
     ],
     [
      "They can be moved slightly",
@@ -418,25 +418,25 @@
   },
   {
    "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "escalation",
    "q": "How long is lid hygiene given before escalating in blepharitis?",
    "opts": [
     [
      "Two weeks",
-     "Correct — two weeks of lid hygiene is the trial period before topical antibiotics are added."
+     "Correct — two weeks of hygiene before topical antibiotics."
     ],
     [
      "Two days",
-     "Two days is far too short to judge lid hygiene; the trial runs two weeks."
+     "Too short to judge the response."
     ],
     [
      "Two months",
-     "Two months is longer than needed; escalation is considered at two weeks."
+     "Longer than needed before escalating."
     ],
     [
      "Six weeks",
-     "Six weeks is too long to wait; the trial period is two weeks."
+     "Longer than the trial period."
     ]
    ],
    "c": 0,
@@ -444,25 +444,25 @@
   },
   {
    "topic": "Dacryoadenitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "etiology",
-   "q": "Which cause of dacryoadenitis is most common?",
+   "q": "What is the most common cause of dacryoadenitis?",
    "opts": [
     [
      "Fungal",
-     "Fungal infection of the lacrimal gland is not a recognised common cause; inflammatory disease is."
+     "Fungal dacryoadenitis is not a recognised cause."
     ],
     [
      "Inflammatory",
-     "Correct — inflammatory causes predominate, and bacterial infection of the lacrimal gland is rare by comparison."
+     "Correct — inflammatory causes lead; bacterial ones are rare."
     ],
     [
      "Bacterial",
-     "Bacterial dacryoadenitis is rare; inflammatory causes are much the commonest."
+     "Bacterial causes are rare."
     ],
     [
      "Viral",
-     "Viral is listed, and is usually bilateral, but is not named most common."
+     "Viral dacryoadenitis occurs and is usually bilateral, but inflammatory causes are the most common."
     ]
    ],
    "c": 1,
@@ -470,7 +470,7 @@
   },
   {
    "topic": "Ectropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "complication",
    "q": "Which complication follows the outward-turning lid margin of ectropion?",
    "opts": [
@@ -496,7 +496,7 @@
   },
   {
    "topic": "Dermatochalasis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "first-line",
    "q": "What is the treatment for dermatochalasis?",
    "opts": [
@@ -522,7 +522,7 @@
   },
   {
    "topic": "Dacryoadenitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
    "q": "Where is the swelling in dacryoadenitis?",
    "opts": [
@@ -548,7 +548,7 @@
   },
   {
    "topic": "Posterior uveitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "prognosis",
    "q": "How does the time course of posterior uveitis compare with anterior uveitis?",
    "opts": [
@@ -558,15 +558,15 @@
     ],
     [
      "It develops a lot more slowly and may last several years",
-     "Correct — posterior uveitis usually develops far more slowly than anterior disease and can smoulder for years, although some forms are acute and rapidly threaten vision."
+     "Correct — it develops more slowly and can persist for years, though it can also turn acute and threaten vision."
     ],
     [
      "It develops faster and resolves within days",
-     "Posterior disease is generally the slower of the two and can persist for years rather than resolving in days."
+     "That is the anterior pattern, not the posterior one."
     ],
     [
      "Both follow an identical course",
-     "The two differ: anterior uveitis is acute and short-lived, while posterior disease is typically insidious and prolonged."
+     "The two courses differ markedly."
     ]
    ],
    "c": 1,
@@ -574,17 +574,17 @@
   },
   {
    "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "education",
    "q": "What should a patient with a chalazion be told about the timescale of improvement?",
    "opts": [
     [
      "It will never improve without surgery",
-     "Many chalazia resolve with warm compresses and massage alone; surgery is not inevitable."
+     "Many resolve with conservative care alone."
     ],
     [
      "Improvement may take months",
-     "Correct — a sterile lipid granuloma resolves slowly, and setting an expectation of months prevents premature demands for surgery."
+     "Correct — setting a months-long expectation prevents premature escalation."
     ],
     [
      "Improvement should be complete within 48 hours",
@@ -592,7 +592,7 @@
     ],
     [
      "Improvement should be complete within one week",
-     "One week is far too fast; a chalazion may take months to settle with conservative treatment."
+     "Far faster than a chalazion resolves."
     ]
    ],
    "c": 1,
@@ -600,17 +600,17 @@
   },
   {
    "topic": "Herpetic keratitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "escalation",
    "q": "When is intravenous aciclovir given in herpes zoster keratitis?",
    "opts": [
     [
      "If the patient is immunocompromised",
-     "Correct — intravenous therapy is reserved for severe, disseminated, orbital, retinal or central nervous system disease and for significantly immunocompromised patients, rather than for any immune impairment."
+     "Correct — reserved for severe, disseminated, orbital, retinal, central nervous system or significantly immunocompromised disease."
     ],
     [
      "In every case of zoster keratitis",
-     "Most zoster keratitis is treated orally; intravenous therapy is reserved for severe, disseminated or neurologic disease and significant immunocompromise."
+     "Intravenous therapy is reserved, not routine."
     ],
     [
      "Only if there is a pseudodendrite",
@@ -626,7 +626,7 @@
   },
   {
    "topic": "Viral conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "etiology",
    "q": "Which organism most commonly causes acute viral conjunctivitis?",
    "opts": [
@@ -636,11 +636,11 @@
     ],
     [
      "Adenovirus",
-     "Correct — adenovirus accounts for the great majority and explains the highly contagious, watery, follicular picture with a tender preauricular node."
+     "Correct — adenovirus is by far the most common."
     ],
     [
      "Herpes simplex virus",
-     "Herpes simplex affects the cornea as keratitis with a dendrite rather than causing ordinary acute conjunctivitis."
+     "That organism causes keratitis rather than conjunctivitis."
     ],
     [
      "Chlamydia trachomatis",
@@ -652,17 +652,17 @@
   },
   {
    "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
-   "q": "What is true of the tear film in blepharitis?",
+   "q": "What happens to the tear film in blepharitis?",
    "opts": [
     [
      "It is increased, watery and overflowing",
-     "The film is decreased or destabilised rather than increased and watery."
+     "The film is decreased or abnormal, not overflowing."
     ],
     [
      "It is unaffected",
-     "The tear film is affected; a decreased or frothy film is one of the signs of the disease."
+     "Tear film change is one of the signs."
     ],
     [
      "It is purulent",
@@ -670,7 +670,7 @@
     ],
     [
      "It is decreased, or frothy and foamy",
-     "Correct — the disordered lipid layer both reduces tear volume and destabilises the film, so it appears decreased, or frothy and foamy."
+     "Correct — both descriptions apply."
     ]
    ],
    "c": 3,
@@ -678,17 +678,17 @@
   },
   {
    "topic": "Xanthelasma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "education",
-   "q": "What is true of the prognosis of locally treated xanthelasma?",
+   "q": "What is the prognosis of locally treated xanthelasma?",
    "opts": [
     [
      "Recurrences are common even after effective local treatment",
-     "Correct — local removal clears the deposit but not the metabolic driver behind it, so the lesions commonly return."
+     "Correct — recurrence is common whatever the local treatment."
     ],
     [
      "Local treatment is curative and recurrence is rare",
-     "Recurrence is common rather than rare, because local treatment does nothing to the underlying lipid disorder."
+     "Local treatment does not prevent recurrence."
     ],
     [
      "The lesions resolve spontaneously within two to four weeks",
@@ -704,7 +704,7 @@
   },
   {
    "topic": "Pinguecula and pterygium",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "risk factors",
    "q": "What causes pinguecula and pterygium?",
    "opts": [
@@ -718,7 +718,7 @@
     ],
     [
      "Chronic exposure to sunlight and wind",
-     "Correct — cumulative ultraviolet light with wind and dust drives degenerative change in the conjunctival stroma, which is why both are commoner near the equator and in outdoor workers."
+     "Correct — chronic sun and wind exposure drives both."
     ],
     [
      "Colonisation with Staphylococcus aureus",
@@ -730,7 +730,7 @@
   },
   {
    "topic": "Pinguecula and pterygium",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "differential",
    "q": "What separates a pinguecula from a pterygium?",
    "opts": [
@@ -740,7 +740,7 @@
     ],
     [
      "The pterygium extends into the cornea; the pinguecula does not involve it",
-     "Correct — both are degenerative limbal lesions from chronic exposure, but only the pterygium grows across the limbus onto the cornea, which is what can threaten vision."
+     "Correct — corneal involvement is the whole distinction; pterodactyls fly into the cornea and penguins cannot."
     ],
     [
      "The pinguecula extends into the cornea; the pterygium does not",
@@ -748,7 +748,7 @@
     ],
     [
      "The pterygium is yellow and the pinguecula is fleshy",
-     "Both are yellowish and fleshy; what separates them is whether the lesion has crossed the limbus onto the cornea."
+     "Colour does not separate the two."
     ]
    ],
    "c": 1,
@@ -756,25 +756,25 @@
   },
   {
    "topic": "Xanthelasma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
-   "q": "How does xanthelasma appear and how does it feel?",
+   "q": "How does xanthelasma appear on examination?",
    "opts": [
     [
      "Crusting and scaling around the lash bases",
-     "That is blepharitis."
+     "Crusting and scaling around the lash bases is a sign of blepharitis; xanthelasma forms oval-shaped yellowish plaques instead."
     ],
     [
      "A triangular fleshy wedge growing onto the cornea",
-     "That is a pterygium."
+     "A fleshy wedge that spreads onto the cornea is a pterygium; xanthelasma is a yellowish plaque on the eyelid skin, not the eye surface."
     ],
     [
-     "Oval-shaped yellowish plaques, and typically asymptomatic",
-     "Correct — the lesions are lipid deposits in the dermis, so they form soft yellowish plaques near the medial canthus and cause no symptoms."
+     "Oval-shaped yellowish plaques around the eyelids",
+     "Correct — xanthelasma forms oval-shaped yellowish plaques, soft cholesterol deposits under the skin on or around the eyelids, and is typically asymptomatic."
     ],
     [
      "Tender red nodules at the lid margin",
-     "That is a hordeolum."
+     "A tender eyelid nodule points to a hordeolum; xanthelasma plaques are soft, yellowish and typically asymptomatic."
     ]
    ],
    "c": 2,
@@ -784,25 +784,25 @@
  "set2": [
   {
    "topic": "Dacryoadenitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "avoid",
    "q": "What caution applies before starting corticosteroids in dacryoadenitis?",
    "opts": [
     [
      "Do not begin them until bacterial and other infectious causes have been reasonably excluded",
-     "Correct — corticosteroids suppress the inflammatory response, so giving them to an undiagnosed bacterial infection allows it to progress."
+     "Correct — steroids given over an unrecognised infection or tumour do harm."
     ],
     [
      "Do not begin them until a contrast-enhanced computed tomography scan is available",
-     "Imaging is not needed in every case; the requirement before steroids is to exclude an infectious cause."
+     "Imaging is not automatically required."
     ],
     [
      "Do not begin them in any patient over sixty-five",
-     "Age is not the limiting factor; excluding infection before immunosuppressing is."
+     "Age is not the caution here."
     ],
     [
      "Do not begin them without an ophthalmology consultation",
-     "Consultation may be helpful, but the specific caution is to exclude bacterial and other infectious causes first."
+     "Excluding infection matters more than obtaining a consultation."
     ]
    ],
    "c": 0,
@@ -810,21 +810,21 @@
   },
   {
    "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "prognosis",
-   "q": "What is true of the long-term course of blepharitis?",
+   "q": "What is the long-term course of blepharitis?",
    "opts": [
     [
      "It resolves completely within two weeks of lid hygiene",
-     "Lid hygiene improves symptoms but does not cure the disease; it is chronic and needs ongoing control."
+     "Treatment controls it; it does not cure it."
     ],
     [
      "It progresses to corneal ulceration if untreated",
-     "Corneal ulceration is not the expected course; blepharitis is a chronic lid margin disease controlled with hygiene."
+     "Progression to corneal ulceration is not the usual course."
     ],
     [
      "It resolves spontaneously without any treatment",
-     "It does not remit on its own; without continued lid hygiene symptoms return."
+     "It needs ongoing management rather than resolving on its own."
     ],
     [
      "It is chronic and can be controlled rather than cured",
@@ -836,13 +836,13 @@
   },
   {
    "topic": "Corneal ulcer",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "referral",
    "q": "How urgently does a corneal ulcer need ophthalmology?",
    "opts": [
     [
      "Emergently",
-     "Correct — an ulcer is an established break in the cornea that can perforate, so it goes above the 24-hour urgency of keratitis to emergent referral."
+     "Correct — an ulcer outranks keratitis's 24-hour window."
     ],
     [
      "Urgently, within 24 hours",
@@ -862,17 +862,17 @@
   },
   {
    "topic": "Trachoma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "etiology",
-   "q": "Which Chlamydia trachomatis serotypes cause trachoma, and how does that differ from adult inclusion conjunctivitis?",
+   "q": "Which statement correctly contrasts the Chlamydia trachomatis serotypes behind trachoma and adult inclusion conjunctivitis?",
    "opts": [
     [
      "Both are caused by serotypes A, B and C",
-     "The serotypes differ: A, B and C cause trachoma, while D to K cause adult inclusion conjunctivitis and genital infection."
+     "The two are caused by different serotype groups."
     ],
     [
      "Both are caused by serotypes D to K",
-     "D to K cause adult inclusion conjunctivitis; trachoma is caused by serotypes A, B and C."
+     "The two are caused by different serotype groups."
     ],
     [
      "Trachoma is serotypes A, B and C; adult inclusion conjunctivitis is serotypes D to K",
@@ -888,17 +888,17 @@
   },
   {
    "topic": "Conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "test finding",
    "q": "Conjunctival FOLLICLES point to which causes?",
    "opts": [
     [
      "Autoimmune only",
-     "Autoimmune disease is not the follicular group; follicles point to chlamydial and viral infection."
+     "Autoimmune disease does not produce follicles."
     ],
     [
      "Chlamydial and viral",
-     "Correct — follicles are lymphoid aggregates, so they appear where the response is lymphocytic: chlamydial and viral infection."
+     "Correct — follicles point to chlamydial and viral causes."
     ],
     [
      "Bacterial and allergic",
@@ -914,13 +914,13 @@
   },
   {
    "topic": "Fluorescein angiography",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "education",
-   "q": "What is noted about the safety of fluorescein angiography dye?",
+   "q": "How safe is the dye used in fluorescein angiography?",
    "opts": [
     [
      "It contains iodine and is contraindicated in renal impairment",
-     "Fluorescein contains no iodine at all, which is precisely what separates it from iodinated radiographic contrast."
+     "Fluorescein contains no iodine."
     ],
     [
      "It is radioactive and requires shielding",
@@ -928,11 +928,11 @@
     ],
     [
      "It commonly causes anaphylaxis",
-     "Anaphylaxis is rare; the usual effects are transient nausea and temporary yellow discolouration of skin and urine."
+     "Anaphylaxis is rare, not common."
     ],
     [
      "It is relatively safe and has no iodine",
-     "Correct — fluorescein contains no iodine, so the iodinated-contrast precautions do not apply; reactions are usually limited to transient nausea and yellow discolouration of skin and urine."
+     "Correct — it is relatively safe and iodine-free."
     ]
    ],
    "c": 3,
@@ -940,9 +940,9 @@
   },
   {
    "topic": "Entropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
-   "q": "Which symptom is given for entropion?",
+   "q": "Which symptom does entropion produce?",
    "opts": [
     [
      "Severe boring pain worse at night",
@@ -958,7 +958,7 @@
     ],
     [
      "Tearing",
-     "Tearing is the hallmark of ectropion, where the everted lid no longer channels tears into the punctum."
+     "Tearing belongs to ectropion."
     ]
    ],
    "c": 2,
@@ -966,17 +966,17 @@
   },
   {
    "topic": "Xanthelasma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "initial test",
-   "q": "Which laboratory workup is ordered for xanthelasma?",
+   "q": "Which laboratory workup follows a diagnosis of xanthelasma?",
    "opts": [
     [
      "Serum lipid profile, plus tests for diabetes mellitus and liver function",
-     "Correct — the plaques are a cutaneous marker of disordered lipid handling, so lipids, glucose and liver function are all checked."
+     "Correct — the lesion flags a metabolic disorder, so all three are checked."
     ],
     [
      "Serum lipid profile alone",
-     "A lipid profile alone is incomplete; diabetes mellitus and liver dysfunction also underlie the lesion and are tested for."
+     "Diabetes and liver testing are needed as well."
     ],
     [
      "Complete blood count with differential, blood cultures and wound Gram stain",
@@ -992,25 +992,25 @@
   },
   {
    "topic": "Herpetic keratitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "test finding",
-   "q": "What is Hutchinson sign and what does it predict?",
+   "q": "Which finding is Hutchinson sign in herpes zoster ophthalmicus?",
    "opts": [
     [
-     "A violaceous scleral patch, predicting perforation",
-     "That is scleritis."
+     "A violaceous patch on the sclera",
+     "A violaceous hue of the sclera is a sign of scleritis, where choroid shows through thinned sclera, not a sign of zoster."
     ],
     [
-     "Involvement of the tip of the nose, predicting a higher risk of ocular involvement",
-     "Correct — the nasociliary nerve supplies both the nose tip and the globe, so vesicles on the nose tip mean that branch is involved and the eye is at higher risk."
+     "Involvement of the tip of the nose",
+     "Correct — Hutchinson sign is involvement of the tip of the nose in herpes zoster, and it signals a higher risk of ocular involvement."
     ],
     [
-     "Involvement of the lower eyelid, predicting subsequent corneal scarring",
-     "Zoster ophthalmicus often spares the lower lid; it is involvement of the NOSE TIP that predicts ocular disease, through the nasociliary nerve."
+     "Involvement of the lower eyelid",
+     "Herpes zoster ophthalmicus often spares the lower lid; the sign that predicts ocular involvement is involvement of the tip of the nose."
     ],
     [
-     "A dendrite with end bulbs, predicting recurrence",
-     "That is the simplex corneal finding."
+     "A dendrite with terminal end bulbs",
+     "A true dendrite with terminal end bulbs is the corneal staining finding of herpes simplex, not a skin sign of zoster."
     ]
    ],
    "c": 1,
@@ -1018,9 +1018,9 @@
   },
   {
    "topic": "Blepharitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "risk factors",
-   "q": "Which three associations are given for blepharitis and meibomitis?",
+   "q": "Which three conditions are associated with blepharitis and meibomitis?",
    "opts": [
     [
      "Nasolacrimal duct obstruction",
@@ -1028,7 +1028,7 @@
     ],
     [
      "Rosacea, seborrhoeic dermatitis, and colonisation with Staphylococcus aureus",
-     "Correct — rosacea and seborrhoeic dermatitis both disturb the lid margin, and Staphylococcus aureus colonisation completes the triad."
+     "Correct — these three are the classic associations."
     ],
     [
      "Contact lens wear, dry eye, and chronic topical corticosteroid use",
@@ -1044,13 +1044,13 @@
   },
   {
    "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "prognosis",
    "q": "Once antibiotics are started for dacryocystitis, when should improvement be expected?",
    "opts": [
     [
      "Within 24 to 48 hours",
-     "Correct — a soft tissue infection responding to an appropriate antibiotic should be visibly improving within 24 to 48 hours, and failure to do so prompts reassessment."
+     "Correct — improvement is expected inside that window."
     ],
     [
      "Within 2 to 3 weeks",
@@ -1070,7 +1070,7 @@
   },
   {
    "topic": "Cellulitis",
-   "io": "Objective b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
+   "io": "b — Identify medical care strategies for ophthalmological disorders in the lecture topic list for the following populations: infant, child, adolescent, adult, elderly",
    "slot": "escalation",
    "q": "Which patients with PRE-septal cellulitis are hospitalised?",
    "opts": [
@@ -1080,7 +1080,7 @@
     ],
     [
      "Only patients over sixty-five",
-     "The age criterion runs the other way: it is children of five or under who are admitted, because spread behind the septum is faster and harder to assess."
+     "The age criterion sits at five and under, not sixty-five and over."
     ],
     [
      "Only contact lens wearers",
@@ -1088,7 +1088,7 @@
     ],
     [
      "Moderate to severe or toxic disease, concern for poor compliance, a child of five years or younger, or no improvement after oral antibiotics were started",
-     "Correct — each marks either a patient who cannot be safely observed at home or disease already failing oral therapy, and children of five or under are admitted because post-septal spread is quicker and harder to detect."
+     "Correct — these are the four admission criteria, with five years as the paediatric cut-off."
     ]
    ],
    "c": 3,
@@ -1096,21 +1096,21 @@
   },
   {
    "topic": "Anterior uveitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
-   "q": "What is true of vision in anterior uveitis?",
+   "q": "What happens to vision in anterior uveitis?",
    "opts": [
     [
      "It is always severely reduced",
-     "Vision is often preserved, which is precisely why the pain, photophobia and ciliary flush carry the diagnosis."
+     "Vision is often preserved."
     ],
     [
      "It is lost entirely within hours",
-     "Vision is typically preserved rather than lost within hours; sudden painful vision loss suggests acute angle closure instead."
+     "Vision is not lost within hours."
     ],
     [
      "It is only affected at night",
-     "There is no night-specific pattern; vision is usually preserved, and photophobia is the prominent visual symptom."
+     "There is no night-specific pattern."
     ],
     [
      "It is often preserved",
@@ -1122,7 +1122,7 @@
   },
   {
    "topic": "Chlamydial conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "agent/regimen",
    "q": "What is the treatment for adult chlamydial conjunctivitis?",
    "opts": [
@@ -1132,11 +1132,11 @@
     ],
     [
      "A topical fluoroquinolone for seven days",
-     "Topical therapy does not clear the concurrent urogenital infection that accompanies ocular chlamydia, so treatment is systemic."
+     "Chlamydial conjunctivitis needs systemic treatment."
     ],
     [
      "Doxycycline 100 milligrams orally twice daily for seven days",
-     "Correct — doxycycline penetrates cells to reach the intracellular organism, and seven days covers its slow replication cycle."
+     "Correct — agent, dose and duration all match."
     ],
     [
      "Erythromycin 50 milligrams per kilogram per day for fourteen days",
@@ -1148,7 +1148,7 @@
   },
   {
    "topic": "Pinguecula and pterygium",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "test finding",
    "q": "Where on the eye do these lesions almost always sit?",
    "opts": [
@@ -1158,15 +1158,15 @@
     ],
     [
      "At three o'clock or nine o'clock",
-     "Correct — the nasal and temporal limbus at three and nine o'clock takes the most reflected sun and wind, which is where the degenerative change occurs."
+     "Correct — nasally or temporally, in the interpalpebral zone."
     ],
     [
      "At twelve o'clock, under the upper lid",
-     "The upper limbus is shaded by the lid and brow; these lesions form nasally and temporally at three and nine o'clock."
+     "The upper lid covers this position, which is spared."
     ],
     [
      "At six o'clock, on the lower limbus",
-     "The lower limbus is not the typical site; exposure is greatest nasally and temporally, at three and nine o'clock."
+     "The lower limbus is not where these sit."
     ]
    ],
    "c": 1,
@@ -1174,7 +1174,7 @@
   },
   {
    "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "first-line",
    "q": "How is an afebrile, systemically well, reliable patient with mild dacryocystitis managed?",
    "opts": [
@@ -1184,7 +1184,7 @@
     ],
     [
      "Outpatient oral antibiotics for ten days",
-     "Correct — a well patient with localised infection and reliable follow-up can be treated at home with a ten-day oral antibiotic course."
+     "Correct — this patient can be managed as an outpatient."
     ],
     [
      "Hospital admission with intravenous antibiotics for 48 to 72 hours",
@@ -1200,7 +1200,7 @@
   },
   {
    "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "differential",
    "q": "Which single examination finding separates a chalazion from a hordeolum?",
    "opts": [
@@ -1210,15 +1210,15 @@
     ],
     [
      "Tenderness — the hordeolum is tender and the chalazion is not",
-     "Correct — a hordeolum is an acute infection of a lid gland and is tender, while a chalazion is a sterile granuloma of retained lipid and is painless."
+     "Correct — tenderness is the discriminating sign."
     ],
     [
      "Size — the hordeolum is always larger",
-     "Size does not separate them; a chalazion can be the larger lesion, and tenderness is what distinguishes them."
+     "Size does not separate the two."
     ],
     [
      "Colour — the chalazion is yellow and the hordeolum is red",
-     "Colour does not reliably separate them; tenderness does, because only the hordeolum is acutely infected."
+     "Colour does not separate the two."
     ]
    ],
    "c": 1,
@@ -1226,7 +1226,7 @@
   },
   {
    "topic": "Dacryocystitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "etiology",
    "q": "What underlies dacryocystitis?",
    "opts": [
@@ -1240,7 +1240,7 @@
     ],
     [
      "Nasolacrimal duct obstruction",
-     "Correct — obstruction of the nasolacrimal duct dams tears in the lacrimal sac, and the stagnant fluid becomes infected."
+     "Correct — obstruction of the duct is the underlying cause."
     ],
     [
      "Meibomian gland obstruction",
@@ -1252,25 +1252,25 @@
   },
   {
    "topic": "Scleritis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "referral",
-   "q": "How urgently does scleritis need ophthalmology, and why?",
+   "q": "Which statement correctly describes the urgency of ophthalmology referral for scleritis?",
    "opts": [
     [
      "Never — scleritis is managed in primary care with lubricating tears",
-     "Artificial tears do not treat scleritis; it needs systemic anti-inflammatory therapy and urgent ophthalmology."
+     "Scleritis needs urgent ophthalmology involvement."
     ],
     [
      "Urgently — the sclera is at risk of perforation and may need a surgical patch",
-     "Correct — progressive scleral thinning can perforate the globe, which may require a surgical patch graft, so referral is urgent."
+     "Correct — the urgency follows from the perforation risk."
     ],
     [
      "Routinely, since it is usually self-limited",
-     "Episcleritis is the self-limited one; scleritis threatens perforation and is referred urgently."
+     "That is episcleritis."
     ],
     [
      "Non-urgently, unless vision changes",
-     "Referral is urgent whether or not vision has changed, because the risk is scleral perforation."
+     "It is urgent regardless of vision."
     ]
    ],
    "c": 1,
@@ -1278,13 +1278,13 @@
   },
   {
    "topic": "Corneal ulcer",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
-   "q": "Which examination behaviour is described in corneal ulcer?",
+   "q": "Which examination behaviour is characteristic of a corneal ulcer?",
    "opts": [
     [
      "The patient reports no discomfort at all",
-     "A corneal ulcer is markedly painful; the cornea is among the most densely innervated tissues in the body."
+     "The eye is painful."
     ],
     [
      "The patient reports itching rather than pain",
@@ -1292,11 +1292,11 @@
     ],
     [
      "The patient resists opening the affected eye",
-     "Correct — photophobia and foreign body sensation make opening the eye painful, so blepharospasm and resistance to examination are themselves a clue."
+     "Correct — photophobia and foreign body sensation make the patient resist."
     ],
     [
      "The patient holds the eye wide open to relieve pressure",
-     "The eye is held shut rather than wide open; photophobia and foreign body sensation make opening it painful."
+     "The patient is reluctant to open the eye, not eager."
     ]
    ],
    "c": 2,
@@ -1304,13 +1304,13 @@
   },
   {
    "topic": "Xanthelasma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "first-line",
-   "q": "Beyond local treatment, what should be done for xanthelasma?",
+   "q": "Beyond local treatment, what else must be done for xanthelasma?",
    "opts": [
     [
      "Nothing further, since the lesions are cosmetic",
-     "They are not merely cosmetic; they mark a metabolic disorder that carries cardiovascular risk."
+     "The plaques signal a metabolic disorder that needs treating."
     ],
     [
      "Start a topical antibiotic",
@@ -1318,11 +1318,11 @@
     ],
     [
      "Refer urgently to ophthalmology",
-     "The lesions are not sight-threatening and need no urgent referral; the priority is the metabolic workup."
+     "Urgent referral is not needed."
     ],
     [
      "Treat the underlying metabolic issue",
-     "Correct — the plaques signal a lipid or metabolic disorder, so treating that underlying problem matters more than removing the lesion."
+     "Correct — the plaques are a marker, so the cause is what gets treated."
     ]
    ],
    "c": 3,
@@ -1330,7 +1330,7 @@
   },
   {
    "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "referral",
    "q": "When is a hordeolum referred to ophthalmology, and for what?",
    "opts": [
@@ -1340,11 +1340,11 @@
     ],
     [
      "Never — hordeola are managed entirely in primary care",
-     "Persistent lesions are referred; a hordeolum that fails two weeks of conservative treatment needs incision and drainage."
+     "Persistent cases do get referred."
     ],
     [
      "If persistent — for example no improvement in two weeks — for incision and drainage",
-     "Correct — a hordeolum that has not improved after about two weeks of warm compresses is referred for incision and drainage."
+     "Correct — that is the threshold and the procedure."
     ],
     [
      "Immediately at first presentation, for an intralesional steroid injection",
@@ -1356,13 +1356,13 @@
   },
   {
    "topic": "Posterior uveitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "etiology",
-   "q": "Which infectious causes are given for posterior uveitis?",
+   "q": "Which infectious causes produce posterior uveitis?",
    "opts": [
     [
      "Toxoplasmosis and cytomegalovirus",
-     "Correct — toxoplasmosis and cytomegalovirus both infect the retina and choroid directly, the latter especially in immunocompromised patients."
+     "Correct — these are the two infectious causes."
     ],
     [
      "Adenovirus and Staphylococcus aureus",
@@ -1382,17 +1382,17 @@
   },
   {
    "topic": "Scleritis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "complication",
    "q": "Which patients carry the greatest perforation risk in scleritis?",
    "opts": [
     [
      "All patients with scleritis equally",
-     "Risk is not uniform across scleritis; it tracks the necrotising subtype rather than the diagnosis as a whole."
+     "The risk is not uniform across all scleritis."
     ],
     [
      "Only patients who also have an identified systemic autoimmune disease",
-     "An associated autoimmune disease raises overall severity, but perforation risk follows the necrotising subtype, which can occur without a confirmed systemic diagnosis."
+     "A systemic association does not by itself define the risk."
     ],
     [
      "Only contact lens wearers",
@@ -1400,7 +1400,7 @@
     ],
     [
      "Those with necrotising disease, rather than all scleritis uniformly",
-     "Correct — perforation risk is concentrated in necrotising scleritis, where the sclera is actively destroyed; non-necrotising diffuse and nodular disease carries a far lower risk."
+     "Correct — the risk concentrates in necrotising disease."
     ]
    ],
    "c": 3,
@@ -1408,9 +1408,9 @@
   },
   {
    "topic": "Entropion and ectropion",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "initial test",
-   "q": "Which examination is specified for entropion and ectropion, and what is it looking for?",
+   "q": "Which statement correctly describes the examination required for entropion and ectropion?",
    "opts": [
     [
      "Slit lamp examination, to assess corneal involvement",
@@ -1434,13 +1434,13 @@
   },
   {
    "topic": "Corneal ulcer",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "risk factors",
-   "q": "Which single risk factor is called major for a corneal ulcer?",
+   "q": "Which single risk factor is the major one for a corneal ulcer?",
    "opts": [
     [
      "Contact lens use",
-     "Correct — a contact lens abrades the epithelium and holds organisms against the cornea, which is why lens wear dominates the risk for ulceration."
+     "Correct — it is the major risk factor."
     ],
     [
      "Sunlight exposure",
@@ -1460,7 +1460,7 @@
   },
   {
    "topic": "Chalazion and hordeolum",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "referral",
    "q": "Why is a chalazion that recurs or persists more than two to three months referred?",
    "opts": [
@@ -1470,15 +1470,15 @@
     ],
     [
      "To rule out sebaceous carcinoma",
-     "Correct — sebaceous carcinoma of the meibomian gland can masquerade as a recurrent chalazion, so persistent lesions are biopsied."
+     "Correct — sebaceous carcinoma can masquerade as a chalazion."
     ],
     [
      "To rule out basal cell carcinoma",
-     "Basal cell carcinoma is a lid margin tumour, but the malignancy that mimics a recurrent chalazion is sebaceous carcinoma."
+     "Sebaceous, not basal cell, carcinoma is the concern."
     ],
     [
      "To rule out orbital cellulitis",
-     "Orbital cellulitis is acute and febrile with restricted eye movement, not a slowly recurring painless nodule."
+     "Orbital cellulitis is acute, not a persistent lump."
     ]
    ],
    "c": 1,
@@ -1486,7 +1486,7 @@
   },
   {
    "topic": "Viral conjunctivitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "manifestation",
    "q": "Which combination distinguishes acute viral conjunctivitis on examination?",
    "opts": [
@@ -1500,7 +1500,7 @@
     ],
     [
      "Conjunctival follicles, tender preauricular nodes, and profuse watery discharge",
-     "Correct — the lymphocytic response produces follicles, especially inferiorly, and enlarges the draining preauricular node, while the discharge stays watery rather than purulent."
+     "Correct — this triad fits, with follicles especially inferiorly."
     ],
     [
      "Conjunctival papillae with thick yellow discharge and no preauricular node",
@@ -1512,9 +1512,9 @@
   },
   {
    "topic": "Dacryoadenitis",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "first-line",
-   "q": "How is INFLAMMATORY dacryoadenitis treated, and how fast should it respond?",
+   "q": "Which statement correctly describes the treatment of INFLAMMATORY dacryoadenitis and its expected response?",
    "opts": [
     [
      "Oral antibiotics, with a response expected within 48 hours",
@@ -1530,7 +1530,7 @@
     ],
     [
      "Corticosteroids, with a response expected within 48 hours",
-     "Correct — inflammatory disease responds to corticosteroids quickly, and a failure to improve within 48 hours should prompt reconsideration of the diagnosis."
+     "Correct — corticosteroids, with response inside 48 hours."
     ]
    ],
    "c": 3,
@@ -1538,13 +1538,13 @@
   },
   {
    "topic": "Trachoma",
-   "io": "Objective a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
+   "io": "a — Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, appropriate referrals, patient education, and prognosis of the following common ophthalmological disorders",
    "slot": "epidemiology",
-   "q": "What is true of trachoma's global significance?",
+   "q": "What is trachoma's global significance?",
    "opts": [
     [
      "It is the leading infectious cause of blindness worldwide",
-     "Correct — repeated childhood infection in endemic areas scars the lids over decades, making trachoma the commonest infectious cause of blindness worldwide."
+     "Correct — it leads all infectious causes of blindness worldwide."
     ],
     [
      "It is the leading cause of blindness in United States adults over 75",
@@ -1556,7 +1556,7 @@
     ],
     [
      "It is now eradicated worldwide",
-     "Trachoma is targeted for elimination but is not eradicated; mass azithromycin campaigns are still running in endemic districts."
+     "Elimination campaigns are still running."
     ]
    ],
    "c": 0,

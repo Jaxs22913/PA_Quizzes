@@ -65,7 +65,7 @@ POOL_C = [
    q="Which four features separate pemphigus from bullous pemphigoid?",
    opts=[
      ["Intraepithelial rather than subepithelial, flaccid rather than tense blisters, positive rather than negative Nikolsky sign, and acantholysis on biopsy",
-      "Correct — the comparison table is the highest-yield slide in this section."],
+      "Correct — pemphigus blisters are intraepithelial and flaccid, with a positive Nikolsky sign and acantholysis; bullous pemphigoid is the reverse on all four."],
      ["Subepithelial, tense blisters, negative Nikolsky sign and acantholysis",
       "That mixes the two: those are the pemphigoid features apart from acantholysis."],
      ["Intraepithelial, tense blisters, negative Nikolsky sign and no acantholysis",

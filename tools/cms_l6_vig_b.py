@@ -31,7 +31,7 @@ VIG_B = [
    q="A patient with dystrophic toenails asks for oral terbinafine. Which is the most appropriate next step before prescribing?",
    opts=[
      ["Confirm fungus first, because many dystrophic nails are not fungal",
-      "Correct — psoriasis, trauma and lichen planus all produce dystrophic nails, and oral antifungals carry hepatic and interaction risks over a months-long course."],
+      "Correct — many dystrophic nails are not fungal at all."],
      ["Prescribe the terbinafine, because the clinical appearance alone is diagnostic",
       "Appearance alone does not establish onychomycosis."],
      ["Prescribe a topical agent instead, because oral therapy is never used for nails",
@@ -41,14 +41,14 @@ VIG_B = [
    c=0, cite=c(51)),
 
  dict(topic="Onychomycosis", io=IOB, lead="test",
-   q="A 64-year-old has thickened discoloured toenails and you decide to confirm the diagnosis before prescribing. Which tests are listed, and how should the sample be taken?",
+   q="A 64-year-old has thickened discoloured toenails and you decide to confirm the diagnosis before prescribing. Which tests apply, and how should the sample be taken?",
    opts=[
      ["Potassium hydroxide microscopy, periodic acid–Schiff stain of clippings, culture, or amplification testing; sample the most proximal accessible diseased nail bed",
       "Correct — sample subungual debris after trimming the onycholytic nail. Sampling proximally is the part most often missed."],
      ["Potassium hydroxide microscopy or fungal culture only; sample the most distal free edge of the nail plate before any trimming of the onycholytic nail is performed",
-      "The distal free edge carries the oldest, least viable material; sampling the most proximal diseased tissue reaches organisms that are still growing."],
+      "The sample should come from the most proximal accessible diseased tissue."],
      ["Serology for dermatophyte antibodies or a blood culture; no local sampling of the nail is required at any stage",
-      "Neither serology nor blood culture detects a nail dermatophyte; the diagnosis rests on sampling the nail itself."],
+      "Neither test exists for this purpose."],
      ["A Wood lamp examination followed by biopsy of the nail matrix; sample only after six weeks of topical therapy has failed",
       "That is not the described diagnostic pathway."]],
    c=0, cite=c(51)),
@@ -67,12 +67,12 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Onychomycosis", io=IOB, lead="treatment",
-   q="A patient cannot take terbinafine for confirmed onychomycosis. Which alternative is named, and what does it say about fluconazole?",
+   q="A patient cannot take terbinafine for confirmed onychomycosis. Which alternative applies, and what is the position on fluconazole?",
    opts=[
      ["Itraconazole is an alternative; fluconazole is off label in the United States",
-      "Correct — both points come from the same slide."],
+      "Correct — itraconazole is an alternative when terbinafine cannot be used, and fluconazole is off label for this use in the United States."],
      ["Fluconazole is the alternative; itraconazole is off label in the United States",
-      "The two are reversed: itraconazole is the named alternative, and it is fluconazole that is off label for this indication."],
+      "These two are assigned the other way round."],
      ["Griseofulvin is the alternative; fluconazole is first-line in the United States",
       "Griseofulvin is the tinea capitis agent for Microsporum."],
      ["Nystatin is the alternative; fluconazole is contraindicated in nail disease",
@@ -132,7 +132,7 @@ VIG_B = [
    c=0, cite=c(62)),
 
  dict(topic="Id reaction", io=IOB, lead="diagnosis",
-   q="A 26-year-old has an itchy hand eruption and you suspect an id reaction. Which three criteria are given for establishing it?",
+   q="A 26-year-old has an itchy hand eruption and you suspect an id reaction. Which three criteria establish it?",
    opts=[
      ["A dermatophyte infection elsewhere, absence of fungal elements at the reaction site, and resolution when the primary infection is treated",
       "Correct — all three must be satisfied."],
@@ -236,7 +236,7 @@ VIG_B = [
    c=0, cite=c(68)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="diagnosis",
-   q="A 70-year-old with obesity, diabetes and incontinence is examined for candidal skin disease. Which sites are listed as the common ones to inspect?",
+   q="A 70-year-old with obesity, diabetes and incontinence is examined for candidal skin disease. Which sites are the common ones to inspect?",
    opts=[
      ["Inframammary, axillary, abdominal, inguinal, and interdigital folds",
       "Correct — the perineal folds are on the list too, making six named sites."],
@@ -258,7 +258,7 @@ VIG_B = [
      ["Tinea incognito from prior steroid use",
       "That would need a history of inappropriate steroid treatment."],
      ["Malignant transformation of the plaque",
-      "Malignant change does not present acutely with odour and drainage; those features point to bacterial superinfection of the macerated fold."]],
+      "Malignant transformation is not the concern here."]],
    c=0, cite=c(68)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="treatment",
@@ -275,25 +275,25 @@ VIG_B = [
    c=0, cite=c(72)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="treatment",
-   q="A 58-year-old woman with candidal intertrigo is prescribed a topical azole. Beyond the antifungal, which environmental measures are required?",
+   q="A 58-year-old woman with candidal intertrigo is prescribed a topical azole. Beyond the antifungal, which environmental measures are needed?",
    opts=[
      ["Gently dry the folds, reduce friction and occlusion, use moisture-wicking fabric or absorbent material, and address incontinence or hyperhidrosis",
       "Correct — correcting the environment is listed first."],
      ["Apply an occlusive dressing to the folds, avoid all washing and drying of the area, use a non-absorbent fabric, and treat incontinence only once the rash has settled",
       "Occlusion is precisely what has to be reduced."],
      ["Soak the folds in warm water twice daily, apply talcum powder, and cover the area with a waterproof film",
-      "Soaking and occlusion keep the fold wet, which is what allows Candida to thrive; the aim is to dry and ventilate it."],
+      "None of these help, and soaking worsens maceration."],
      ["Expose the folds to direct sunlight daily, avoid moisture-wicking fabric, and treat incontinence only if it is severe",
-      "Moisture-wicking fabric helps rather than hinders, and incontinence must be managed whatever its severity, since urine keeps the fold wet."]],
+      "Each of these is the opposite of what the folds need."]],
    c=0, cite=c(72)),
 
  dict(topic="Cutaneous candidiasis", io=IOB, lead="treatment",
-   q="A patient with candidal intertrigo has marked inflammation. What is true of adding a corticosteroid?",
+   q="A patient with candidal intertrigo has marked inflammation. What is the position on adding a corticosteroid?",
    opts=[
      ["Consider a low-potency corticosteroid only briefly, and only alongside adequate antifungal treatment",
       "Correct — brief, low-potency, and never alone."],
      ["Use a high-potency corticosteroid for several weeks, alongside adequate antifungal treatment",
-      "A potent steroid used for weeks in a warm moist fold thins the skin and suppresses local immunity, allowing the Candida to flourish; a low-potency agent briefly is what is appropriate."],
+      "Low potency and a brief course, not high potency for weeks."],
      ["Use a low-potency corticosteroid as the sole treatment until the inflammation settles",
       "It must accompany adequate antifungal treatment."],
      ["Never use a corticosteroid in any circumstance, because it will always cause tinea incognito",
@@ -310,7 +310,7 @@ VIG_B = [
      ["Switch to a systemic corticosteroid to control the inflammation",
       "A systemic steroid would worsen a fungal infection."],
      ["Refer for surgical excision of the affected skin folds",
-      "Excising skin folds does not address why defences are failing; recurrent extensive disease warrants evaluation for diabetes, immunosuppression or another diagnosis."]],
+      "Surgical excision has no role in intertrigo."]],
    c=0, cite=c(72)),
 
  dict(topic="Pityriasis versicolor", io=IOB, lead="diagnosis",

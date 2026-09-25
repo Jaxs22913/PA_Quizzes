@@ -48,7 +48,7 @@ POOL_B = [
    c=0, cite=c(27)),
 
  dict(topic="Pinguecula and pterygium", io=IOA, slot="first-line",
-   q="What is the conservative management, and what should the patient be told about it?",
+   q="Which statement correctly describes the conservative management of a pinguecula or pterygium?",
    opts=[
      ["Sun, dust and wind protection with lubricating eyedrops — but it will not make the lesion resolve",
       "Correct — protection and lubrication relieve symptoms and slow progression, but the degenerative tissue is already laid down and will not regress, so expectations must be set."],
@@ -87,7 +87,7 @@ POOL_B = [
    c=0, cite=c(29)),
 
  dict(topic="Subconjunctival haemorrhage", io=IOA, slot="initial test",
-   q="What is emphasised most in evaluating a subconjunctival haemorrhage?",
+   q="What matters most in evaluating a subconjunctival haemorrhage?",
    opts=[
      ["History — and check the blood pressure if there is no explanation",
       "Correct — the eye itself needs little assessment; the value lies in finding a cause, and an unexplained haemorrhage should prompt a blood pressure check."],
@@ -152,7 +152,7 @@ POOL_B = [
    c=0, cite=cn(31)),
 
  dict(topic="Conjunctivitis", io=IOA, slot="differential",
-   q="How is acute divided from chronic conjunctivitis?",
+   q="What divides acute from chronic conjunctivitis?",
    opts=[
      ["Acute is four weeks or less; chronic is more than four weeks",
       "Correct — four weeks is the dividing line, and passing it shifts the differential away from ordinary infection towards chlamydial, allergic, toxic and autoimmune causes."],
@@ -213,10 +213,10 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="Allergic conjunctivitis", io=IOA, slot="agent/regimen",
-   q="Which single agent is named that both blocks histamine and stabilises mast cells?",
+   q="Which single agent both blocks histamine and stabilises mast cells?",
    opts=[
      ["Olopatadine", "Correct — olopatadine antagonises the histamine receptor for immediate relief and stabilises mast cells to prevent further release, covering both phases."],
-     ["Ketotifen", "Ketotifen also has dual activity, but olopatadine is the agent named here for that combined action."],
+     ["Cromolyn sodium", "Cromolyn sodium is not the dual-acting drop; olopatadine is both a topical antihistamine (H1 blocker) and a mast cell stabilizer."],
      ["Erythromycin", "That is an antibiotic, used in neonatal chlamydial disease."],
      ["Doxycycline", "That is for adult chlamydial conjunctivitis."]],
    c=0, cite=c(35)),
@@ -387,7 +387,7 @@ POOL_B = [
    c=0, cite=c(43)),
 
  dict(topic="Chlamydial conjunctivitis", io=IOA, slot="education",
-   q="Which counselling points are attached to doxycycline?",
+   q="Which counselling points go with doxycycline?",
    opts=[
      ["Avoid the sun, and read which foods cannot be taken with it",
       "Correct — doxycycline is photosensitising and chelates with calcium, iron and magnesium, so sun protection and separating it from antacids and supplements both matter, taken with a full glass of water while staying upright."],
@@ -452,7 +452,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Trachoma", io=IOA, slot="epidemiology",
-   q="What is true of trachoma's global significance?",
+   q="What is trachoma's global significance?",
    opts=[
      ["It is the leading infectious cause of blindness worldwide",
       "Correct — repeated childhood infection in endemic areas scars the lids over decades, making trachoma the commonest infectious cause of blindness worldwide."],
@@ -465,7 +465,7 @@ POOL_B = [
    c=0, cite=c(45)),
 
  dict(topic="Trachoma", io=IOA, slot="etiology",
-   q="Which Chlamydia trachomatis serotypes cause trachoma, and how does that differ from adult inclusion conjunctivitis?",
+   q="Which statement correctly contrasts the Chlamydia trachomatis serotypes behind trachoma and adult inclusion conjunctivitis?",
    opts=[
      ["Trachoma is serotypes A, B and C; adult inclusion conjunctivitis is serotypes D to K",
       "Correct — same organism, different serotypes and different disease."],
@@ -533,7 +533,7 @@ POOL_B = [
      ["Rosacea and seborrhoeic dermatitis",
       "Those are blepharitis associations."],
      ["Rheumatoid arthritis and granulomatosis with polyangiitis",
-      "Those are scleritis associations in the pathophysiology lecture."],
+      "These are not among the autoimmune conjunctivitis conditions, which are ocular mucous membrane pemphigoid, Stevens-Johnson syndrome, Sjögren disease and graft-versus-host disease."],
      ["Diabetes mellitus and hypertension",
       "Those drive retinopathy."]],
    c=0, cite=c(38)),

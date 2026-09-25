@@ -47,7 +47,7 @@ VIG_A = [
    c=0, cite=c(14)),
 
  dict(topic="Actinic keratosis", io=IOA, lead="treatment",
-   q="A 74-year-old farmer has eleven actinic keratoses across his forehead and temples. Which approach is favoured, and why?",
+   q="A 74-year-old farmer has eleven actinic keratoses across his forehead and temples. Which approach is preferred, and why?",
    opts=[
      ["Field-directed therapy, because multiple lesions in one anatomic region reflect field cancerization risk",
       "Correct — options are fluorouracil, imiquimod, photodynamic therapy, or fluorouracil plus calcipotriene."],
@@ -56,7 +56,7 @@ VIG_A = [
      ["Observation with annual review, because eleven lesions in one region indicates indolent disease",
       "A high lesion burden raises concern rather than lowering it."],
      ["Immediate wide excision of the whole affected field, because eleven lesions cannot be treated topically",
-      "Excising a whole field is disfiguring and unnecessary; multiple lesions in sun-damaged skin are exactly what field therapy is designed to treat, including subclinical ones."]],
+      "Excising a whole field is not an option."]],
    c=0, cite=c(14)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, lead="diagnosis",
@@ -65,11 +65,11 @@ VIG_A = [
      ["Squamous cell carcinoma", "Correct — and the lip is one of the named high-risk sites."],
      ["Basal cell carcinoma", "That is pearly and translucent with telangiectasias, and grows over years."],
      ["Actinic keratosis", "That is a small rough sandpaper papule without ulceration or induration."],
-     ["Keratoacanthoma", "Keratoacanthoma belongs in the differential, but it grows rapidly over weeks with a central keratin plug; a hard ulcerating lip nodule over two months fits squamous cell carcinoma."]],
+     ["Keratoacanthoma", "It is in the differential, but this description is classic for carcinoma."]],
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, lead="next step",
-   q="A 58-year-old kidney transplant recipient, six years post-transplant, has developed his fourth squamous cell carcinoma this year. Which is true of this pattern, and what can be offered to reduce new tumours?",
+   q="A 58-year-old kidney transplant recipient, six years post-transplant, has developed his fourth squamous cell carcinoma this year. What does this pattern mean, and what can be offered to reduce new tumours?",
    opts=[
      ["Multiple tumours typically emerge about five years after transplant and are often aggressive; nicotinamide 500 mg orally twice daily reduces new squamous cell carcinoma by about 30%",
       "Correct — both the timing and the chemoprevention figure."],
@@ -142,7 +142,7 @@ VIG_A = [
      ["Shave or punch biopsy, because the HISTOLOGIC subtype determines behaviour and dictates treatment selection",
       "Correct — histology, not clinical appearance, drives the plan."],
      ["Shave or punch biopsy, because the CLINICAL subtype determines behaviour and dictates treatment selection",
-      "The clinical appearance guides suspicion, but it is the histologic subtype, particularly micronodular and infiltrative, that predicts subclinical spread and dictates treatment."],
+      "That role belongs to the histologic subtype, not the clinical one."],
      ["Wide local excision with 1 cm margins, because tissue diagnosis and treatment are achieved together",
       "Biopsy precedes definitive treatment here."],
      ["Sentinel lymph node biopsy, because nodal status determines treatment selection",
@@ -150,7 +150,7 @@ VIG_A = [
    c=0, cite=c(36)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="treatment",
-   q="A 64-year-old has a biopsy-confirmed superficial basal cell carcinoma on the upper back, with no high-risk features. Which topical regimen is appropriate, and what must follow it?",
+   q="A 64-year-old has a biopsy-confirmed superficial basal cell carcinoma on the upper back, with no high-risk features. Which topical regimen applies, and what must follow it?",
    opts=[
      ["Imiquimod five nights weekly for 6 to 10 weeks, or fluorouracil twice daily for up to 12 weeks; clinical clearance must be confirmed afterwards",
       "Correct — confirming clearance is part of the regimen, not optional."],
@@ -159,7 +159,7 @@ VIG_A = [
      ["Vismodegib orally for 6 to 10 weeks; clinical clearance must be confirmed afterwards",
       "Hedgehog inhibitors are for advanced or metastatic disease."],
      ["Liquid nitrogen cryotherapy every 2 to 3 weeks for 12 weeks; clearance must be confirmed afterwards",
-      "Cryotherapy is a destructive rather than a topical regimen, and it gives no histological confirmation of clearance."]],
+      "Cryotherapy is not a topical regimen."]],
    c=0, cite=c(37)),
 
  dict(topic="Basal cell carcinoma", io=IOB, lead="education",
@@ -196,7 +196,7 @@ VIG_A = [
      ["Intense intermittent exposure favours squamous cell carcinoma; prolonged cumulative exposure favours basal cell carcinoma",
       "The two patterns are the wrong way round."],
      ["Both patterns favour basal cell carcinoma equally, since ultraviolet exposure is not subdivided in this way",
-      "The patterns differ: intermittent intense burning favours basal cell carcinoma and melanoma, while cumulative daily exposure favours squamous cell carcinoma."],
+      "The two exposure patterns favour different diagnoses."],
      ["Both patterns favour melanoma, since keratinocyte carcinoma is not ultraviolet-driven",
       "Both keratinocyte carcinomas are ultraviolet-driven."]],
    c=0, cite=c(33)),

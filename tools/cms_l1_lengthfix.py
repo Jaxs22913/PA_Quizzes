@@ -19,7 +19,7 @@ FIXES = {
  28: (3, "Endocrine — traumatic brain injury and traumatic subdural haematoma"),
  29: (2, "Central nervous system lupus and neurosarcoidosis"),
  34: (0, "Published guidelines, a literature review, and the cost data for each test"),
- 37: (2, "Treating the patient empirically before any diagnosis has been formally considered"),
+ 37: (2, "Treating empirically before a definitive diagnosis is reached"),
  38: (3, "A system that applies only to unstable patients presenting to emergency medicine"),
  40: (2, "It cannot be combined with clinical guidelines, and it disregards patient values entirely"),
  42: (1, "They should be used only once evidence-based medicine has failed to answer the question"),
@@ -34,8 +34,6 @@ FIXES = {
  64: (3, "As a task that is best delegated to non-clinical support staff within the practice"),
  66: (0, "Excess follow-up appointments and over-explanation of the possible side effects of treatment"),
  68: (1, "Medication timing, appointment keeping, and the sharing of records between providers"),
- 70: (2, "Musculoskeletal medicine, rheumatology, gastroenterology, urology, and reproductive endocrinology"),
- 71: (3, "Cost, local availability, expected turnaround time, and laboratory reporting format of every diagnostic test ordered for a given patient"),
 }
 
 if __name__ == "__main__":

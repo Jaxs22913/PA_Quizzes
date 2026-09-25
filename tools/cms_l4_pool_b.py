@@ -341,7 +341,7 @@ POOL_B = [
    q="When should cultures be obtained in impetigo?",
    opts=[
      ["When the patient is at high risk for methicillin-resistant Staphylococcus aureus, or when post-streptococcal glomerulonephritis is present",
-      "Correct — a health-care worker or teacher is the example given of high risk."],
+      "Correct — impetigo is cultured when the patient is at high risk for methicillin-resistant Staphylococcus aureus, such as a health-care worker or teacher, or has post-streptococcal glomerulonephritis."],
      ["In every case at first presentation, since staphylococcal and streptococcal disease are treated differently",
       "Impetigo is most often diagnosed by clinical appearance alone."],
      ["Only when the lesions have failed to respond after a full two-week course of topical mupirocin",

@@ -23,7 +23,7 @@ topics = [
  ["Resistant", "Above goal despite <b>three complementary drugs at maximally tolerated doses</b>."],
  ["Hypertensive emergency", "Severe elevation <b>with acute hypertension-mediated organ injury</b>. <b>No numeric cutoff exists</b> &mdash; 230/130 with no acute organ involvement is severe <i>asymptomatic</i> hypertension. Qualifying injury: encephalopathy, acute pulmonary oedema, acute kidney injury, aortic dissection, acute coronary syndrome."],
  ["White coat vs masked", "<b>White coat</b> = high office, normal out-of-office. <b>Masked</b> = normal office, high out-of-office &mdash; and it carries <b>real cardiovascular risk</b>, which is why out-of-office measurement is not only about avoiding overtreatment."],
- ["Epidemiology", "Roughly <b>one in five</b> of those affected are controlled to goal nationally. <b>Systolic keeps climbing after middle age; diastolic plateaus or falls</b> &mdash; hence isolated systolic elevation in older adults."],
+ ["Epidemiology", "Roughly <b>one in five</b> of those affected are controlled to goal nationally. <b>Prevalence rises sharply with age</b>: 23.4% at 18&ndash;39 years, 52.5% at 40&ndash;59 and 71.6% at 60 and over."],
  ["Risk factors (primary)", "Advancing age &middot; family history &middot; excess adiposity &middot; high dietary sodium &middot; inactivity &middot; excess alcohol &middot; dyslipidaemia &middot; insulin resistance. Low potassium intake and poor sleep are modifiable too."],
 ]},
 

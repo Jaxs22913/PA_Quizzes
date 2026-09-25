@@ -135,7 +135,7 @@ Q("Xanthelasma", IO,
   "A 54-year-old woman has painless, oval yellowish plaques on both upper lids near the inner "
   "canthus. Vision is normal. What is the most appropriate initial workup?",
   [["Serum lipid profile, fasting glucose, HbA1c and liver function tests",
-    "Correct. The local lesion is a marker; the underlying metabolic issue is what is treated."],
+    "Correct. Order a serum lipid profile, fasting glucose and hemoglobin A1C, and liver function tests; the lesion is a marker of the metabolic issue that is treated."],
    ["Slit lamp examination alone", "It confirms the appearance but misses the systemic point."],
    ["Biopsy of the lesion", "The diagnosis is clinical."],
    ["Computed tomography of the orbits", "Imaging has no role in this diagnosis."]],
@@ -332,7 +332,7 @@ Q("Gonococcal conjunctivitis", IO,
     "Correct, with specialty consultation — the untreated risk is corneal perforation."],
    ["Topical antibiotic drops as an outpatient", "Insufficient for gonococcal disease in a "
                                                  "newborn."],
-   ["Oral erythromycin at home", "Systemic ceftriaxone in hospital is what is specified."],
+   ["Oral erythromycin at home", "Oral treatment at home is not enough; a newborn with suspected gonococcal conjunctivitis is hospitalized for systemic ceftriaxone."],
    ["Observation with lid hygiene", "This is a sight-threatening emergency."]],
   "treatment", D, 41),
 
@@ -414,7 +414,7 @@ Q("Post-septal cellulitis", IO,
   [["Cavernous sinus thrombosis", "Correct. Intracranial spread gives meningitis or cavernous "
                                   "sinus thrombosis."],
    ["Recurrent chalazion", "Unrelated to orbital infection."],
-   ["Refractive change", "Not a described complication."],
+   ["Refractive change", "Refractive change is not the concern; untreated orbital infection can spread intracranially, causing meningitis or cavernous sinus thrombosis."],
    ["Pinguecula formation", "A degenerative surface lesion, unrelated."]],
   "two-step", D, 53),
 

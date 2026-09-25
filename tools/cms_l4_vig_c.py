@@ -72,7 +72,7 @@ POOL_C = [
    q="A 66-year-old man with cellulitis of the calf has an area that is tense, cyanotic and bronzed, and has not improved on antibiotics. Which is the most appropriate next step?",
    opts=[
      ["Surgical debridement, because devitalised tissue is not perfused so antibiotics cannot reach it",
-      "Correct — once the vessels supplying tissue have thrombosed, no systemic antibiotic can reach it, so the dead tissue must be removed surgically."],
+      "Correct — devitalised tissue will not respond to antibiotics alone."],
      ["Escalation to intravenous vancomycin, because the organism is likely to be resistant",
       "The problem is drug delivery to dead tissue rather than resistance."],
      ["Continued oral antibiotics for a further week, because resolution can take two weeks",

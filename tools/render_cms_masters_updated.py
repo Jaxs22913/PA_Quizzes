@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Render the five UPDATED CMS I Exam 1 Master Exams -- 65 five-option questions each.
+"""Render the five UPDATED CMS I Exam 1 Master Exams -- 65 four-option questions each.
 
 Separate from render_cms_masters.py, which renders the original 60-question
 four-option forms built by reusing topic-quiz questions. These are newly written
-items in the reference-question style Jaxon supplied on 2026-08-26: five options
-A-E, a per-option refutation, and a slide citation on every question.
+items in the reference-question style Jaxon supplied on 2026-08-26: a per-option
+refutation and a slide citation on every question. They were built with five
+options, A-E; CMS moved to four options, A-D, on 2026-09-13, and the intro below
+said "Five options, A-E" for ten days after that (fixed 2026-09-24).
 """
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +21,7 @@ CHIPS = ["Clinical reasoning", "General Derm I", "Derm II", "Bacterial", "Infest
 INTRO = ("Sixty-five newly written questions drawn from every lecture in the Exam 1 dermatology "
          "block, in exam proportions rather than at random &mdash; each of the nine lectures "
          "contributes to every form, so this is a genuine cumulative rehearsal and not a sample of "
-         "whichever topic had the most questions written for it. <b>Five options, A&ndash;E</b>, and "
+         "whichever topic had the most questions written for it. <b>Four options, A&ndash;D</b>, and "
          "every wrong choice gets its own explanation saying why it is wrong rather than a shared "
          "note. <b>No question appears in more than one form</b>, so working through all five gives "
          "you 325 distinct questions. Every question cites the slide it came from.")

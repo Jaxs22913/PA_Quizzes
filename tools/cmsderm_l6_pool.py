@@ -508,7 +508,7 @@ Q("Herpes simplex virus",
     "Correct. Either herpes simplex virus type can cause oral or genital infection, and lesion location does not "
     "reliably determine type. Infections can occur anywhere on the skin, and typing requires a type-specific test."],
    ["Genital or buttock lesions are always herpes simplex virus type 2",
-    "Either type infects either site, and type 1 now accounts for a substantial share of genital infection, so location cannot assign the type or predict recurrence risk."],
+    "Either herpes simplex type can cause oral or genital infection and location does not reliably determine type, although type 1 genital infection recurs less often."],
    ["Type can be determined by the appearance of the vesicles",
     "Grouped vesicles on an erythematous base breaking down to shallow painful ulcers is the appearance of both "
     "types. Morphology does not distinguish them."],
@@ -561,7 +561,7 @@ Q("Herpetic whitlow",
     "covered, hand hygiene used, contact with mucosa and broken skin avoided until healed, and early oral acyclovir, "
     "valacyclovir, or famciclovir may shorten the episode."],
    ["Incise and drain, then start oral antivirals",
-    "There is no pus to release; incising a herpetic whitlow delays healing and opens a route for bacterial superinfection, which is why it is specifically contraindicated."],
+    "Incision and drainage does not treat herpes simplex and can delay healing, so it is avoided; bacterial superinfection is treated only when it is actually present."],
    ["Apply a topical antifungal and keep the hand dry",
     "That approach belongs to chronic paronychia, where Candida albicans is the most common pathogen and the cause is "
     "prolonged wet work."],
@@ -824,7 +824,7 @@ Q("Herpes zoster",
    ["Lumbar dermatomes in the majority of cases",
     "Lumbar involvement occurs but is less frequent than thoracic and cranial disease."],
    ["The distribution is random and no dermatome predominates",
-    "There is a clear and clinically useful predominance, which is why the percentages are taught."]],
+    "Involvement is far from even: thoracic dermatomes account for about 55 percent and cranial for about 20 percent, ahead of lumbar and sacral."]],
   0, 100),
 
 Q("Tinea corporis",

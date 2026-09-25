@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Render the five CMS I Exam 2 ophthalmology Master Exams -- 65 questions each.
 
-Built the same way as the Updated Exam 1 derm masters: newly written five-option
-items in the reference-question style, not recycled topic-quiz questions. Run
+Built the same way as the Updated Exam 1 derm masters: newly written four-option
+items (five-option until the 2026-09-13 conversion) in the reference-question style, not recycled topic-quiz questions. Run
 tools/cmsophtho_partition.py first -- it writes the JSON these read, and it is
 what puts the correct answer somewhere other than position A.
 """
@@ -22,7 +22,7 @@ INTRO = ("Sixty-five newly written questions drawn from all five ophthalmology l
          "proportions rather than at random &mdash; every lecture contributes to every form, so "
          "this is a genuine cumulative rehearsal and not a sample of whichever deck happened to be "
          "the longest. Mostly patient vignettes, weighted towards <b>diagnosis and treatment</b>. "
-         "<b>Five options, A&ndash;E</b>, and every wrong choice gets its own explanation saying why "
+         "<b>Four options, A&ndash;D</b>, and every wrong choice gets its own explanation saying why "
          "it is wrong rather than a shared note. <b>No question appears in more than one form</b>, "
          "so working through all five gives you 325 distinct questions. Every question comes from "
          "the slides and cites the one it came from.")

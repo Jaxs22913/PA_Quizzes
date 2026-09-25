@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""Partition a CMS I Exam 2 five-option pool into two 30s.
+"""Partition a CMS I Exam 2 four-option pool into two 30s.
 
     python3 cms_e2_partition.py l2vig     # Lecture 11 Neuro-Ophthalmology, vignettes
     python3 cms_e2_partition.py l2io      # Lecture 11, objective set
     python3 cms_e2_partition.py l3vig     # Lecture 12 Acute Vision Loss, vignettes
     python3 cms_e2_partition.py l3io      # Lecture 12, objective set
 
-Unlike the pharmacology partitions this is FIVE-option, because CMS follows the
-exam standard Jaxon set from his own reference items on 2026-08-26/27. The
+CMS follows the exam standard Jaxon set from his own reference items on
+2026-08-26/27. It was FIVE-option until 2026-09-13, when every question moved to
+four; NOPT below is read off the pools, so nothing here hardcodes the count. The
 scoring optimises the things that standard actually measures -- patient stems,
 share of pure-diagnosis items, length gameability -- rather than only objective
 coverage, so a set does not have to be repaired after the fact.
 
-Answer position is set by ROTATION across A-E, never chosen while authoring.
+Answer position is set by ROTATION across A-D, never chosen while authoring.
 """
 import sys, os, json, random, re, statistics
 from collections import Counter

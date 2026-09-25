@@ -209,7 +209,7 @@ POOL_B = [
      ["Common blue naevi occur on the palms and soles; cellular blue naevi occur on the trunk and the extremities only",
       "Both occur on the same sites and neither is confined to palms and soles."],
      ["Common blue naevi are present at birth; cellular blue naevi develop only after the fifth decade of life",
-      "Neither timing fits: blue naevi are typically acquired in childhood or adolescence rather than congenital or confined to later life."]],
+      "Neither timing is right for these two lesions."]],
    c=0, cite=c(39)),
 
  dict(topic="Blue naevus", io=IOA,

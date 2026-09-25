@@ -42,12 +42,12 @@ POOL_B = [
    c=0, cite=c(32)),
 
  dict(topic="CRVO", io=IOA, lead="comparison",
-   q="A 61-year-old woman asks which retinal vascular occlusion is seen more often. What is stated?",
+   q="A 61-year-old woman asks which retinal vascular occlusion is seen more often. What should she be told?",
    opts=[
      ["Vein occlusion is more common", "Correct, more common than central retinal artery occlusion."],
-     ["Artery occlusion is more common", "Venous occlusion is the commoner of the two, since the vein is compressed by the stiffened artery where they share a sheath."],
-     ["They occur equally often", "One is stated to be more common."],
-     ["Neither occurs after age 50", "Age over 50 is a listed risk factor."]],
+     ["Artery occlusion is more common", "The reverse is true: central retinal vein occlusion, caused by a thrombus in the central retinal vein, is more common than central retinal artery occlusion."],
+     ["They occur equally often", "They are not equal: central retinal vein occlusion is more common than central retinal artery occlusion."],
+     ["Neither occurs after age 50", "Both occur in older patients: age over 50 is a risk factor for vein occlusion, and old age is a risk factor for artery occlusion."]],
    c=0, cite=c(32)),
 
  dict(topic="CRVO", io=IOB, lead="test",
@@ -80,7 +80,7 @@ POOL_B = [
  dict(topic="BRVO", io=IOB, lead="next step",
    q="A 64-year-old woman has a branch retinal vein occlusion. How does her management compare with the central form?",
    opts=[
-     ["It is essentially the same", "Correct — the pathology is identical and only the site of the occlusion differs, so the assessment and treatment follow the same path."],
+     ["It is essentially the same", "Correct — both are blockages of retinal veins; a branch occlusion blocks a smaller side vein and affects part of the eye, but is approached the same way as the central form."],
      ["It requires laser iridotomy", "That is for angle-closure glaucoma."],
      ["It requires high-dose steroids", "Those are for arteritic optic neuropathy."],
      ["It requires surgical reattachment", "That is for detachment."]],
@@ -99,7 +99,7 @@ POOL_B = [
  dict(topic="CRAO", io=IOB, lead="reasoning",
    q="A 74-year-old woman presents 40 minutes after sudden painless monocular vision loss. Why is she treated immediately?",
    opts=[
-     ["Retinal damage is irreversible after 90 minutes", "Correct — the retina has the highest metabolic rate of any tissue and infarcts within about 90 minutes of losing its arterial supply, so the window is very short."],
+     ["Retinal damage is irreversible after 90 minutes", "Correct — central retinal artery occlusion is an ophthalmologic emergency, as irreversible retinal damage may occur after 90 minutes of blocked flow."],
      ["Retinal damage is irreversible after 8 hours", "Eight hours is the thrombolysis window, not the damage threshold."],
      ["Damage is reversible at any point", "It is not."],
      ["Damage occurs only if both eyes are affected", "One eye is enough."]],
@@ -115,7 +115,7 @@ POOL_B = [
    c=0, cite=c(38)),
 
  dict(topic="CRAO", io=IOA, lead="symptom",
-   q="A 71-year-old man with a central retinal artery occlusion describes what remains of his sight. Which pattern is given?",
+   q="A 71-year-old man with a central retinal artery occlusion describes what remains of his sight. Which pattern is typical?",
    opts=[
      ["An island of vision in the temporal field", "Correct, with acuity from counting fingers to light perception."],
      ["A central island with peripheral loss", "That is the tunnel vision of chronic glaucoma."],
@@ -142,7 +142,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="CRAO", io=IOB, lead="next step",
-   q="A 68-year-old man with a central retinal artery occlusion asks about his general health risk. What is emphasised?",
+   q="A 68-year-old man with a central retinal artery occlusion asks about his general health risk. What should he be told?",
    opts=[
      ["His stroke risk is markedly increased", "Correct; plaque reaching the retinal artery implies more in the carotids."],
      ["His stroke risk is unchanged", "It rises at the onset of the occlusion."],
@@ -172,19 +172,19 @@ POOL_B = [
  dict(topic="Papilledema", io=IOA, lead="pathophysiology",
    q="A 41-year-old man is told he has papilledema. Which pressure is raised?",
    opts=[
-     ["Intracranial pressure", "Correct — papilledema is disc swelling from raised pressure inside the skull transmitted along the optic nerve sheath, and it is distinct from raised pressure inside the eye."],
+     ["Intracranial pressure", "Correct — papilledema is swelling of the optic disc caused by increased intracranial pressure, secondary to causes such as tumor, trauma, intracranial infection or hemorrhage."],
      ["Intraocular pressure", "That is the glaucoma mechanism."],
      ["Central venous pressure", "Not the mechanism described."],
      ["Arterial blood pressure", "Hypertension is a risk factor elsewhere, not this mechanism."]],
    c=0, cite=c(43)),
 
  dict(topic="Papilledema", io=IOA, lead="cause",
-   q="A 38-year-old woman with papilledema is taking large doses of a supplement. Which is listed as a cause?",
+   q="A 38-year-old woman with papilledema is taking large doses of a supplement. Which of these can cause papilledema?",
    opts=[
-     ["Vitamin A toxicity", "Correct, listed with tumour, trauma, intracranial infection and haemorrhage."],
-     ["Vitamin C excess", "Not a listed cause."],
-     ["Iron deficiency", "Not a listed cause."],
-     ["Vitamin D toxicity", "Not the vitamin named."]],
+     ["Vitamin A toxicity", "Correct. Vitamin A toxicity raises intracranial pressure, as do tumor, trauma, intracranial infection and hemorrhage."],
+     ["Vitamin C excess", "Vitamin C is not a cause; of the vitamins, only vitamin A toxicity raises intracranial pressure and swells the disc."],
+     ["Iron deficiency", "Iron deficiency is not a cause; the swelling follows raised intracranial pressure, as from vitamin A toxicity."],
+     ["Vitamin D toxicity", "Vitamin D is not a cause; papilledema follows raised intracranial pressure from tumor, trauma, infection, hemorrhage or vitamin A toxicity."]],
    c=0, cite=c(43)),
 
  dict(topic="Papilledema", io=IOB, lead="test",
@@ -282,9 +282,9 @@ POOL_B = [
    q="A 55-year-old man is diagnosed with non-arteritic anterior ischemic optic neuropathy. What share of anterior ischemic optic neuropathy does this form represent?",
    opts=[
      ["90 to 95 percent", "Correct, and it presents at 40 to 60 years of age."],
-     ["50 to 60 percent", "Lower than the figure given."],
+     ["50 to 60 percent", "Too low: the non-arteritic form accounts for 90 to 95 percent of anterior ischemic optic neuropathy."],
      ["5 to 10 percent", "That is the arteritic share."],
-     ["Under 5 percent", "Far below the figure given."]],
+     ["Under 5 percent", "Far too low: the non-arteritic form accounts for 90 to 95 percent of cases, so it is the majority form."]],
    c=0, cite=c(48)),
 
  dict(topic="NAION", io=IOB, lead="next step",
@@ -301,12 +301,12 @@ POOL_B = [
    opts=[
      ["Moving the dose away from bedtime", "Correct, to avoid nocturnal hypotension, which can worsen the condition."],
      ["Doubling the bedtime dose", "That would deepen the overnight fall in pressure."],
-     ["Stopping all antihypertensives", "Stopping antihypertensives altogether trades one vascular risk for another; the aim is to avoid the nocturnal pressure dip by moving the dose."],
+     ["Stopping all antihypertensives", "Stopping treatment is not the advice; cardiovascular risk factor modification continues, and only bedtime doses may be avoided to prevent nocturnal hypotension."],
      ["Adding a corticosteroid", "Steroids treat the arteritic form."]],
    c=0, cite=c(52)),
 
  dict(topic="AION", io=IOA, lead="finding",
-   q="A 68-year-old woman has sudden painless vision loss. Which optic disc appearance is described in anterior ischemic optic neuropathy?",
+   q="A 68-year-old woman has sudden painless vision loss. What optic disc appearance is expected in anterior ischemic optic neuropathy?",
    opts=[
      ["A swollen, pale disc", "Correct, with loss of side or central vision."],
      ["A deeply cupped disc", "That is chronic glaucoma."],
@@ -419,7 +419,7 @@ POOL_B = [
  dict(topic="Amaurosis fugax", io=IOA, lead="diagnosis",
    q="A 65-year-old woman with sickle cell disease describes brief episodes in which the lower half of the vision in one eye fogs over and then clears within a minute. Which is the most likely diagnosis?",
    opts=[
-     ["Amaurosis fugax", "Correct; sickle cell is a listed risk factor and the episodes are transient."],
+     ["Amaurosis fugax", "Correct. Sickle cell disease is a risk factor for amaurosis fugax, and the episodes are brief and clear completely."],
      ["Retinal detachment", "That defect advances rather than clearing."],
      ["Optic neuritis", "That develops over hours to days."],
      ["Papilledema", "That produces persistent non-specific change."]],

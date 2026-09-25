@@ -204,16 +204,16 @@ POOL_C = [
    c=3, cite=c(28)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="Which of the following is listed as a barrier to treatment and medication adherence?",
+   q="Which of the following is a barrier to treatment and medication adherence?",
    opts=[
      ["Cost and affordability of medications or services",
-      "Correct. Cost and affordability heads the list of barriers carried over from Patient-Centered Healthcare."],
+      "Correct — cost and affordability of medications or services is a barrier to adherence, alongside low health literacy, fear of side effects and transportation constraints."],
      ["High health literacy",
-      "Low health literacy, not high, is listed as a barrier."],
+      "High health literacy is not a barrier; it is low health literacy or lack of understanding that undermines treatment and medication adherence."],
      ["Strong communication and follow-up by the care team",
       "Poor communication and follow-up is the barrier; strong communication is protective."],
      ["Ready access to transportation",
-      "Transportation or time constraints are listed as a barrier, so ready access is the opposite."]],
+      "Ready access to transportation supports adherence; it is transportation or time constraints that act as a barrier to treatment."]],
    c=0, cite=c(29)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
@@ -243,16 +243,16 @@ POOL_C = [
    c=2, cite=c(29)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="For which specific behaviours are the counselling guidelines in Bates' Chapter 7 recommended?",
+   q="For which three behaviors do specific counseling guidelines for adults exist?",
    opts=[
      ["Diet, exercise, and sleep hygiene",
-      "These are reasonable health behaviours but are not the three named."],
+      "Diet, exercise and sleep hygiene are not the trio; specific adult counseling guidelines address unhealthy alcohol use, tobacco smoking cessation and sexually transmitted infections."],
      ["Medication timing, appointment keeping, and record sharing",
-      "None of these are the behaviours for which specific guidelines are cited."],
+      "These are adherence logistics rather than health behaviors; the specific adult counseling guidelines address alcohol use, tobacco smoking and sexually transmitted infections."],
      ["Weight control, hydration, and screen time",
-      "Weight control, hydration and screen time are not the three; the guidelines cover unhealthy alcohol use, tobacco cessation and sexually transmitted infections."],
+      "Weight control, hydration and screen time are not the trio; the specific adult guidelines cover unhealthy alcohol use, tobacco smoking cessation and sexually transmitted infections."],
      ["Unhealthy alcohol use, tobacco smoking cessation, and sexually transmitted infections",
-      "Correct. All three are common, modifiable and carry substantial long-term risk, which is why structured counselling guidance exists for each."]],
+      "Correct — specific counseling guidelines for adults exist for unhealthy alcohol use, tobacco smoking cessation and sexually transmitted infections."]],
    c=3, cite=c(28)),
 
  dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
@@ -267,30 +267,4 @@ POOL_C = [
      ["Poor communication or follow-up by the care team",
       "The breakdown described is financial rather than a failure of communication."]],
    c=0, cite=c(29)),
-
- dict(topic="Course framework", io="Discuss clinical principles and decision-making",
-   q="Which body systems does the course description list as the focus of Clinical Medicine and Surgery I?",
-   opts=[
-     ["Neurology, psychiatry, endocrinology, and nephrology",
-      "Neurology, psychiatry, endocrinology and nephrology fall to other courses; this one covers skin, eye, ear-nose-throat, heart, lung and blood."],
-     ["Dermatology, ophthalmology, otorhinolaryngology, cardiology, pulmonology, and haematology-oncology",
-      "Correct. These six are listed, with emphasis on etiology, clinical manifestations, diagnostic evaluation and management."],
-     ["Musculoskeletal, rheumatology, gastroenterology, and urology",
-      "These appear only as categories within the differential-diagnosis mnemonic, not as course topics."],
-     ["Obstetrics, gynaecology, paediatrics, and geriatrics",
-      "Obstetrics, gynaecology, paediatrics and geriatrics are separate courses; this one covers dermatology, ophthalmology, otorhinolaryngology, cardiology, pulmonology and haematology-oncology."]],
-   c=1, cite=c(2)),
-
- dict(topic="Course framework", io="Discuss clinical principles and decision-making",
-   q="Which aspects does the course say it will compare and contrast across conditions?",
-   opts=[
-     ["Only etiology and management",
-      "The list is considerably longer than these two."],
-     ["Only signs, symptoms, and diagnosis",
-      "Risk factors, patient education, referrals and follow-up are included as well."],
-     ["Etiology, epidemiology, risk factors, clinical manifestations, diagnostic evaluation, management, patient education, referrals, and follow-up",
-      "Correct. This is the full list given in the course description."],
-     ["Cost, availability, and turnaround time of diagnostic tests",
-      "These practical considerations are not part of the stated comparison."]],
-   c=2, cite=c(2)),
 ]

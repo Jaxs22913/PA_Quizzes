@@ -86,7 +86,7 @@ POOL_D = [
    c=0, cite=c(46)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",
-   q="What caveat is attached to the 6 mm diameter criterion?",
+   q="What caveat attaches to the 6 mm diameter criterion?",
    opts=[
      ["Smaller lesions can be melanoma",
       "Correct — the threshold is a prompt, not a rule-out."],
@@ -125,12 +125,12 @@ POOL_D = [
    c=0, cite=c(51)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="initial test",
-   q="What is true of what sentinel lymph node biopsy achieves?",
+   q="What does sentinel lymph node biopsy achieve?",
    opts=[
      ["It is a STAGING procedure, and may not itself improve overall survival",
       "Correct — an important expectation to set with a patient."],
      ["It is a THERAPEUTIC procedure that reliably improves overall survival",
-      "It identifies whether the nodes are involved, which determines stage and eligibility for adjuvant therapy, but removing an involved sentinel node has not itself been shown to prolong survival."],
+      "It is a staging procedure, and may not improve overall survival."],
      ["It is a screening procedure used before any biopsy of the primary lesion",
       "It follows diagnosis of the primary."],
      ["It replaces re-excision of the primary lesion when nodes are negative",
@@ -177,7 +177,7 @@ POOL_D = [
    c=0, cite=c(55)),
 
  dict(topic="Malignant melanoma", io=IOB, slot="education",
-   q="What self-examination should melanoma patients perform, and which sites must be included?",
+   q="Which self-examination should melanoma patients perform, and which sites must be included?",
    opts=[
      ["Monthly self-examination using the recognition mnemonic and ugly-duckling principles, including the scalp, back, palms, soles and nails",
       "Correct — the acral and scalp sites are easy to miss."],
@@ -186,7 +186,7 @@ POOL_D = [
      ["Monthly self-examination of the trunk and limbs only, since acral, nail and scalp melanoma are too rare to warrant routine checking",
       "Palms, soles, nails and scalp are named specifically."],
      ["No self-examination at all, since surveillance of the skin, scalp, nails and acral sites is entirely the specialist team's responsibility",
-      "A patient sees their own skin far more often than any clinician, so monthly self-examination is the main surveillance, with the scalp, back, palms, soles and nails specifically included."]],
+      "Monthly self-examination is still required."]],
    c=0, cite=c(56)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="differential",

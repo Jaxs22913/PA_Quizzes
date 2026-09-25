@@ -229,7 +229,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="Pressure injury", io=IOB, slot="education",
-   q="What is called the best measure against pressure injury, and what does it include?",
+   q="What is the best measure against pressure injury, and what does it include?",
    opts=[
      ["Prevention: frequent skin assessment, nutrition assessment, moisture control and skin care, repositioning every two hours, pain management, improved mobility and specialty mattresses",
       "Correct — barrier creams and incontinence management sit under moisture control."],
@@ -238,7 +238,7 @@ POOL_B = [
      ["Prophylactic antibiotics: routinely covering skin flora in every immobile patient in order to prevent any wound infection before it has a chance to start",
       "No prophylactic antibiotic strategy is described."],
      ["Occlusive dressings: silicone gel sheeting worn twelve to twenty-four hours a day over every bony prominence at risk",
-      "Silicone gel sheeting treats scars; pressure injury is prevented by removing the pressure, through repositioning, offloading and skin care."]],
+      "Silicone sheeting treats scars, not pressure injury."]],
    c=0, cite=c(35)),
 
  dict(topic="Pressure injury", io=IOA, slot="agent/regimen",

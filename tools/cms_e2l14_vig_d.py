@@ -5,7 +5,7 @@ The last of the vignette bank. Weighted toward telling the trauma diagnoses
 apart from one another and from the medical ophthalmology already covered in
 Lectures 10 to 13, since that is what a vignette actually asks.
 
-SELF-CONTAINED. FIVE options; correct answer authored FIRST.
+SELF-CONTAINED. FOUR options (five until 2026-09-13); correct answer authored FIRST.
 """
 D = "CMS I Ocular Trauma - Shah Fallsv.pptx, Slide %d"
 IO_A = "a — Ocular trauma: etiology, manifestations, testing, management, referral, prognosis"
@@ -56,7 +56,7 @@ QUESTIONS = [
 
  dict(topic="Periorbital haematoma", io=IO_A, lead="diagnosis", cite=D % 33,
   q="A 68-year-old on apixaban develops painful proptosis of one eye over an hour with no injury. Which is the most likely diagnosis?",
-  opts=[["Periorbital haematoma from anticoagulation", "Correct. It is not always traumatic, and anticoagulants are a listed cause."],
+  opts=[["Periorbital haematoma from anticoagulation", "Correct. Periorbital hematoma is not always traumatic, and anticoagulant medication is one of its causes."],
         ["Orbital cellulitis", "That is infective, usually with fever and a longer course."],
         ["Thyroid eye disease", "That develops over months and is usually bilateral."],
         ["Acute angle-closure glaucoma", "That does not cause proptosis."]]),

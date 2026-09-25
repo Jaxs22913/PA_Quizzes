@@ -71,8 +71,8 @@ CRAM_ROWS = [
 ]
 
 CARDS = [
- ["What makes something likely to be on this exam, in her words?", "If it is different from every other disease. Most of this lecture is clinical diagnosis, so the exceptions stand out."],
- ["Which distinction did she say outright would NOT be tested?", "Lupus versus rosacea. 'I'm not testing for lupus right now.'"],
+ ["Which serologic test is most specific for dermatitis herpetiformis?", "IgA (immunoglobulin A) anti-epidermal transglutaminase."],
+ ["Which rosacea differential has greasy scales in the nasolabial folds and scalp?", "Seborrheic dermatitis, which responds to antifungals."],
  ["Clinically, how does the lupus butterfly rash differ from rosacea?", "Lupus spares the nasolabial folds; rosacea involves them."],
  ["What does a positive antinuclear antibody test tell you?", "Only that more testing is needed. It can rule out an autoimmune condition, not rule one in."],
  ["What is the gold standard test for dermatitis herpetiformis?", "Skin biopsy."],
@@ -133,7 +133,7 @@ def main():
         print("cram: lecture rows already present")
 
     a = open(ARCADE, encoding="utf-8").read()
-    marker = '"What makes something likely to be on this exam, in her words?"'
+    marker = '"Which serologic test is most specific for dermatitis herpetiformis?"'
     if marker in a:
         print("arcade: lecture cards already present")
         return

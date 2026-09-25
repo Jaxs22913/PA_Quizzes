@@ -98,8 +98,7 @@ Q("Chemical injury", IO,
   "A 28-year-old worker has a chemical splash to the eye. What is the single most important "
   "action?",
   [["Copious irrigation before anything else",
-    "Correct. The referral-timing slide lists chemical injury as EMERGENT and says "
-    "IRRIGATE FIRST."],
+    "Correct. Chemical injury is emergent: copious irrigation starts at once, before visual acuity, imaging or referral calls."],
    ["Checking visual acuity first", "Acuity waits; irrigation cannot."],
    ["Computed tomography of the orbit", "Imaging is irrelevant to a surface chemical burn."],
    ["Patching the eye and referring", "Patching a chemical injury without irrigation is harmful."]],

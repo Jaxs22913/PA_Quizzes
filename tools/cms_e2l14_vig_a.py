@@ -2,7 +2,7 @@
 """CMS I Exam 2, Lecture 14 (Ocular Trauma) -- vignette set A.
 
 Open globe, corneal abrasion and foreign body, hyphema, and the rules that
-govern all of them. Patient stems in the CMS house style: FIVE options, a
+govern all of them. Patient stems in the CMS house style: FOUR options (five until 2026-09-13), a
 varied lead-in, and a per-option refutation. SELF-CONTAINED throughout.
 
 Correct answer authored FIRST; cms_e2_partition.py rotates it.
@@ -20,7 +20,7 @@ QUESTIONS = [
         ["Irrigate the eye with copious saline", "Irrigation does nothing for a ruptured globe and adds pressure."]]),
 
  dict(topic="Open globe injury", io=IO_A, lead="initial and confirmatory test", cite=D % 6,
-  q="A 41-year-old welder felt something strike his eye while grinding without goggles. Vision is 20/40 and the eye is quiet. Which imaging is appropriate, and which must be avoided?",
+  q="A 41-year-old welder felt something strike his eye while grinding without goggles. Vision is 20/40 and the eye is quiet. Which imaging plan is correct?",
   opts=[["Computed tomography of the orbit; avoid magnetic resonance imaging", "Correct. A magnetic field can move a metallic fragment through the eye."],
         ["Magnetic resonance imaging of the orbit; avoid computed tomography", "That reverses the safe choice."],
         ["Ocular ultrasound with firm probe pressure; avoid computed tomography", "Probe pressure is unsafe if the globe may be open."],
@@ -55,14 +55,14 @@ QUESTIONS = [
         ["Leave it, since it will resorb", "It does not resorb on its own."]]),
 
  dict(topic="Hyphema", io=IO_A, lead="diagnosis", cite=D % 24,
-  q="A 16-year-old was hit in the eye by a paintball. There is a layer of blood across the lower anterior chamber with a visible fluid level. Which is the most likely diagnosis, and what else must be considered?",
+  q="A 16-year-old was hit in the eye by a paintball. There is a layer of blood across the lower anterior chamber with a visible fluid level. Which statement about the most likely diagnosis is correct?",
   opts=[["Hyphema, and it can itself indicate an open globe", "Correct. It is not always an isolated injury."],
         ["Subconjunctival haemorrhage overlying the iris", "That sits on the surface, outside the chamber."],
         ["Vitreous haemorrhage seen through the pupil", "That lies behind the lens."],
         ["Traumatic iritis with cells in the chamber", "Cells are not a layered blood level."]]),
 
  dict(topic="Hyphema", io=IO_A, lead="management", cite=D % 25,
-  q="A 22-year-old with a traumatic hyphema is admitted. Which regimen fits, and what is it aiming at?",
+  q="A 22-year-old with a traumatic hyphema is admitted. Which statement correctly describes the regimen and its goal?",
   opts=[["Bed rest head-up, antiemetics, cycloplegic and aminocaproic acid, to prevent a rebleed",
          "Correct. Every element serves that one goal."],
         ["Ambulation and warm compresses, to clear the blood faster", "Speed of clearance is not the aim, and activity risks a rebleed."],
@@ -78,7 +78,7 @@ QUESTIONS = [
 
  dict(topic="Hyphema", io=IO_A, lead="risk factor", cite=D % 25,
   q="A 15-year-old with sickle cell disease sustains a hyphema. Why does that history matter?",
-  opts=[["It raises the risk of complications", "Correct. Sickle cell disease is specifically flagged."],
+  opts=[["It raises the risk of complications", "Correct. Sickle cell anemia increases the risk in hyphema, where a secondary hemorrhage can cause permanent visual loss."],
         ["It rules out a rebleed", "It does the opposite."],
         ["It makes aminocaproic acid unnecessary", "It does not remove the need to prevent a rebleed."],
         ["It means the pressure need not be checked", "Pressure is still measured unless the globe may be open."]]),

@@ -12,6 +12,15 @@ and there is no reason to expect Exam 2 to differ.
 THE HEDGED SLIDES GET THEIR OWN ROWS. Several slides read as absolutes and are
 softened by their own speaker notes; a cram sheet that repeated only the slide
 would drill the wrong reflex.
+
+OVERWRITE GUARD (added 2026-09-24): the SHIPPED page is no longer this script's
+output. Content was added to the page after the last build, so running this
+script replaced the shipped page with a much shorter one (it did so twice on
+2026-09-24, once from a scratch copy, because the output path is an absolute
+repo path). It now refuses to overwrite an existing page unless --force is
+given. Use --out=PATH to write the build somewhere else for comparison. Only use
+--force after the builder has been brought back up to the page and a scratch
+build diffs clean against it.
 """
 import sys, os, re
 sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/cram-sheet-template")
@@ -134,7 +143,7 @@ topics = [
    ["Management", "MILD PRE-SEPTAL → outpatient ORAL abx 10–14 DAYS vs STAPH (±MRSA) and STREP. ADMIT + IV 48–72h then oral ≥1 week if: moderate-severe/toxic, poor compliance, CHILD ≤5 YEARS, no improvement on orals — AND ALL POST-SEPTAL."],
    ["Untreated", "INTRACRANIAL SPREAD → MENINGITIS or CAVERNOUS SINUS THROMBOSIS. Expect improvement 24–48h. May need ENT, OMFS, and/or ID consults."],
    ["The hedge", "MILD, CLEARLY PRE-SEPTAL disease with normal vision, pupils and painless full movements may be managed CLINICALLY WITHOUT ROUTINE CT."],
-   ["The four modalities", "SLIT LAMP: anterior — lids, cornea, conjunctiva, sclera, iris. OPHTHALMOSCOPY: direct / indirect / SLIT-LAMP (most common). FLUORESCEIN EXAM: dye INSTILLED, Wood lamp — abrasions, ulcers, foreign bodies. FLUORESCEIN ANGIOGRAPHY: dye INJECTED, reaches eye in 10–15 SEC, blue flash, NO IODINE — retina and choroid blood flow."],
+   ["The four modalities", "SLIT LAMP: anterior — lids, cornea, conjunctiva, sclera, iris. OPHTHALMOSCOPY: direct / indirect / SLIT-LAMP (most common). FLUORESCEIN EXAM: dye INSTILLED, Wood's lamp — abrasions, ulcers, foreign bodies. FLUORESCEIN ANGIOGRAPHY: dye INJECTED, reaches eye in 10–15 SEC, blue flash, NO IODINE — retina and choroid blood flow."],
  ]},
 ]
 
@@ -149,8 +158,14 @@ html = render(
                  "Where a slide reads as an absolute and its own speaker notes say otherwise, "
                  "the hedge is written out rather than the slide."),
     primary="#2d3f7a")
-os.makedirs(os.path.dirname(OUT), exist_ok=True)
-open(OUT, "w", encoding="utf-8").write(html)
+_OUT_ARG = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--out=")), None)
+_TARGET = _OUT_ARG or OUT
+if _OUT_ARG is None and os.path.exists(OUT) and "--force" not in sys.argv:
+    sys.exit("REFUSING to overwrite %s: the shipped page carries content this "
+             "builder does not reproduce. Use --out=PATH for a scratch build, or "
+             "--force once the builder matches the page." % OUT)
+os.makedirs(os.path.dirname(_TARGET), exist_ok=True)
+open(_TARGET, "w", encoding="utf-8").write(html)
 print("wrote %s (%d KB, %d sections, %d rows)"
       % (os.path.basename(OUT), len(html) // 1024, len(topics),
          sum(len(t["rows"]) for t in topics)))

@@ -5,7 +5,7 @@ Lid lacerations, orbital contusion, periorbital haematoma, retinal and vitreous
 detachment, orbital floor fracture, and basilar skull fracture.
 
 Grounded in the deck (Chand Shah, MPAS, PA-C). SELF-CONTAINED throughout.
-FIVE options; correct answer authored FIRST, rotated by cms_e2_partition.py.
+FOUR options (five until 2026-09-13); correct answer authored FIRST, rotated by cms_e2_partition.py.
 """
 D = "CMS I Ocular Trauma - Shah Fallsv.pptx, Slide %d"
 IO_A = "a — Ocular trauma: etiology, manifestations, testing, management, referral, prognosis"
@@ -33,13 +33,13 @@ QUESTIONS = [
          "Correct. It does not need the specialist to close it."],
         ["Immediate transfer for operative repair", "Not required for a partial-thickness cut."],
         ["Closed with tissue adhesive and no follow-up", "Follow-up is still arranged."],
-        ["Referred to plastic surgery routinely", "Ophthalmology follow-up is what is described."]]),
+        ["Referred to plastic surgery routinely", "Routine plastic surgery referral is not needed; without a referral criterion the laceration is repaired on site, with ophthalmology follow-up."]]),
 
  dict(topic="Lid laceration", io=IO_A, lead="management", cite=D % 27,
   q="Why may a facial laceration be left open for 24 hours before closure?",
   opts=[["The face is highly vascular", "Correct. That vascularity is what permits the delay."],
-        ["It reduces the need for antibiotics", "Not the stated reason."],
-        ["It allows swelling to resolve first", "Not the reason given for the face."],
+        ["It reduces the need for antibiotics", "Antibiotics are not the reason; the face's high vascularity is what allows closure to wait 24 hours."],
+        ["It allows swelling to resolve first", "Swelling is not the reason; the face's high vascularity is what allows closure to be delayed for 24 hours."],
         ["It is required by tetanus prophylaxis", "Unrelated to wound timing."]]),
 
  # ---------------- contusion and haematoma ----------------
@@ -71,7 +71,7 @@ QUESTIONS = [
          "Correct. It is not always traumatic."],
         ["A corneal abrasion earlier in the week", "That does not bleed into the orbit."],
         ["Seasonal allergy", "It does not cause orbital bleeding."],
-        ["A previous hyphema", "Not a listed cause of spontaneous orbital bleeding."]]),
+        ["A previous hyphema", "A previous hyphema is not a cause; spontaneous orbital bleeding follows anticoagulants, eye surgery, varices or sickle cell anemia."]]),
 
  # ---------------- retinal and vitreous detachment ----------------
  dict(topic="Retinal detachment", io=IO_A, lead="diagnosis", cite=D % 35,
@@ -112,9 +112,9 @@ QUESTIONS = [
  dict(topic="Retinal detachment", io=IO_A, lead="management", cite=D % 35,
   q="What position is the patient placed in while awaiting repair of a retinal detachment?",
   opts=[["Head of bed elevated 30 to 40 degrees", "Correct, alongside pain control and antiemetics."],
-        ["Flat, with the head lower than the body", "That is not the described position."],
-        ["Prone with the face down", "Not described here."],
-        ["Sitting fully upright", "More than the described elevation."]]),
+        ["Flat, with the head lower than the body", "Lying flat is wrong; the head of the bed is elevated 30 to 40 degrees, with pain control and antiemetics."],
+        ["Prone with the face down", "Face-down positioning is not part of care; the head of the bed is elevated 30 to 40 degrees."],
+        ["Sitting fully upright", "Fully upright is more than needed; the head of the bed is elevated 30 to 40 degrees while awaiting repair."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="referral", cite=D % 36,
   q="Within what period must a patient with a retinal detachment see ophthalmology?",
@@ -127,8 +127,8 @@ QUESTIONS = [
  dict(topic="Orbital floor fracture", io=IO_A, lead="mechanism", cite=D % 40,
   q="In a true blowout fracture, which wall gives way most often?",
   opts=[["The orbital floor", "Correct. Raised orbital pressure blows out the floor most frequently, or the medial wall."],
-        ["The lateral wall", "Not the wall that gives way first."],
-        ["The posterior wall", "Not described as the site."],
+        ["The lateral wall", "The lateral wall is not the one that fails; the orbital floor gives way most often, and otherwise the medial wall."],
+        ["The posterior wall", "The posterior wall is not the one that fails; raised orbital pressure blows out the floor most often, or the medial wall."],
         ["The superior orbital rim", "The rim is the second mechanism, not the wall that fails."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="diagnosis", cite=D % 41,
@@ -153,8 +153,8 @@ QUESTIONS = [
         ["Concussion without orbital injury", "The gaze-provoked symptoms point to entrapment."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="next step", cite=D % 43,
-  q="Muscle entrapment is confirmed on computed tomography. Who is called, and why?",
-  opts=[["A facial trauma surgeon urgently, because the muscle can necrose", "Correct. A compromised blood supply is the reason for the urgency."],
+  q="Muscle entrapment is confirmed on computed tomography. Which consult is needed?",
+  opts=[["A facial trauma surgeon urgently, because the muscle can necrose", "Correct. An entrapped muscle risks necrosis if its blood supply is compromised, so the facial trauma surgeon is called at once."],
         ["Ophthalmology within 2 to 3 days", "Too slow for an entrapped muscle."],
         ["Neurosurgery for admission", "That is the basilar skull fracture pathway."],
         ["No consult; ice and analgesia suffice", "That is the pathway for a fracture without entrapment."]]),
@@ -163,9 +163,9 @@ QUESTIONS = [
   q="Why is surgery for an orbital fracture often delayed one to two weeks?",
   opts=[["To let orbital swelling settle, lowering intraorbital pressure during the operation",
          "Correct. Operating into a swollen orbit raises the pressure further."],
-        ["To allow the fracture to begin healing", "Not the stated reason."],
+        ["To allow the fracture to begin healing", "Fracture healing is not the aim; surgery waits one to two weeks so orbital swelling can decrease first."],
         ["To complete a course of antibiotics", "Antibiotics are for blood in the maxillary sinus."],
-        ["To wait for the diplopia to resolve spontaneously", "Not the stated reason."]]),
+        ["To wait for the diplopia to resolve spontaneously", "Diplopia is not the reason; the delay lets orbital swelling decrease so intraorbital pressure stays lower during surgery."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="referral", cite=D % 43,
   q="Why is ophthalmology consulted for a true blowout fracture even without entrapment?",
@@ -192,9 +192,9 @@ QUESTIONS = [
  dict(topic="Basilar skull fracture", io=IO_A, lead="initial test", cite=D % 44,
   q="Which bedside test may be positive when cerebrospinal fluid is present?",
   opts=[["A dextrose stick", "Correct. Cerebrospinal fluid contains glucose."],
-        ["A urine dipstick for protein", "Not the described test."],
+        ["A urine dipstick for protein", "A protein dipstick is not the test; cerebrospinal fluid may turn a dextrose stick positive or leave a halo on filter paper."],
         ["Fluorescein staining", "That examines the cornea."],
-        ["A rapid streptococcal antigen test", "Unrelated to this fluid."]]),
+        ["A rapid streptococcal antigen test", "A streptococcal antigen test has no role; a positive dextrose stick or a halo on filter paper suggests cerebrospinal fluid."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="management", cite=D % 47,
   q="A patient with a basilar skull fracture has a cerebrospinal fluid leak. What follows?",

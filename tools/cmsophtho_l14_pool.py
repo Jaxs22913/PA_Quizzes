@@ -218,8 +218,7 @@ Q("Basilar skull fracture", IO,
   "diagnosis", D, 44),
 
 Q("Basilar skull fracture", IO,
-  "A 51-year-old woman has bruising over both mastoid processes two days after a fall. What is this "
-  "sign called, and what does it indicate?",
+  "A 51-year-old woman has bruising over both mastoid processes two days after a fall. Which statement correctly identifies this sign?",
   [["Battle sign, indicating a basilar skull fracture", "Correct."],
    ["Periorbital haematoma from direct trauma",
     "That is bruising around the eyes rather than behind the ears."],

@@ -50,7 +50,7 @@ POOL_C = [
    q="What is the dimple sign, and which lesion shows it?",
    opts=[
      ["The lesion retracts beneath the skin surface with lateral compression; dermatofibroma",
-      "Correct — a dermatofibroma is tethered to the overlying epidermis by fibrous tissue, so squeezing from the sides pulls it inward rather than pushing it up."],
+      "Correct — the lesion retracts inward when pinched, which is the dimple sign."],
      ["The lesion blanches completely under direct downward pressure; cherry angioma",
       "Blanching is a vascular finding rather than the dimple sign."],
      ["The lesion transmits a wave-like fluid shift on palpation; pilonidal abscess",
@@ -91,7 +91,7 @@ POOL_C = [
      ["A peripheral pigment network with a central white mass",
       "Correct — the central white area corresponds to the fibrous core."],
      ["A moth-eaten border with uniform pigment throughout",
-      "That is the solar lentigo pattern from Lecture 3."],
+      "A moth-eaten border is the dermoscopic sign of a solar lentigo; a dermatofibroma shows a peripheral pigment network around a central white mass."],
      ["An epithelial collarette around a moist exophytic base",
       "That is the pyogenic granuloma's clinical, not dermoscopic, finding."],
      ["A central keratin-filled crater within a smooth dome",

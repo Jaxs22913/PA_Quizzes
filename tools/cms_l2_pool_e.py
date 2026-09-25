@@ -171,7 +171,7 @@ POOL_E = [
      ["A band-like infiltrate of lymphocytes filling the papillary dermis",
       "That is the lichen planus finding."],
      ["Granular immunoglobulin A deposited at the tips of the dermal papillae",
-      "Granular immunoglobulin A at the dermal papillary tips is the finding in dermatitis herpetiformis; bullous pemphigoid shows a neutrophil row at the junction."]],
+      "That is dermatitis herpetiformis."]],
    c=0, cite=c(124)),
 
  dict(topic="Lichen planus", io=IOC, slot="test finding",
@@ -304,7 +304,7 @@ POOL_E = [
      ["Apply the strongest available steroid at the first sign of a flare, then stop abruptly",
       "Potency is chosen by site, and application is demonstrated rather than maximised."],
      ["Avoid all sun exposure and apply broad-spectrum sunscreen several times daily",
-      "That is photoprotection advice from Lecture 3."]],
+      "Repeated sunscreen and sun avoidance are photoprotection advice; atopic dermatitis education centers on emollient after rinsing, avoiding irritants and a flare plan."]],
    c=0, cite=c(58)),
 
  dict(topic="Dyshidrotic eczema", io=IOC, slot="education",
@@ -370,7 +370,7 @@ POOL_E = [
      ["Referral for hair transplantation early in the disease course",
       "Transplantation is discussed for androgenetic rather than areata."],
      ["Referral to a wig service before starting any medical therapy",
-      "A wig may help, but what is emphasised is psychological support, because the condition's main burden is the distress of visible sudden hair loss."]],
+      "A wig referral is not the measure in question."]],
    c=0, cite=c(140)),
 
  # ---------------- complications

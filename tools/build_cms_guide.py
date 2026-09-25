@@ -338,14 +338,14 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"SnNout — a test with high Sensitivity and a Negative result helps rule out a disease, because sensitivity is the property related to fewer false-negatives."},
       {q:"Sensitivity says nothing about which type of erroneous result?",
        choices:["False-positives","False-negatives","True-positives","True-negatives"],correct:0,
-       explain:"The lecture footnotes this directly: sensitivity is related to fewer false-negatives and does not address false-positives. Specificity is the property that speaks to false-positives."},
+       explain:"Sensitivity is related to fewer false-negatives and does not address false-positives. Specificity is the property that speaks to false-positives."},
       {q:"Which three inputs build a pretest probability?",
        choices:["Sensitivity, specificity, and the result","Signs and symptoms, history and risk factors, and how common the condition is","Cost, availability, and turnaround time","Likelihood of success, tolerance, and risk"],correct:1,
        explain:"Pretest probability is the likelihood before the result is known, built from the clinical picture, the patient's history and risk, and the frequency of the condition in the population."},
       {q:"A patient is unstable with an atypical presentation, and you begin treating the symptoms before a definitive diagnosis. Which approach is this?",
        choices:["The hypothetico-deductive method","Evidence-based medicine","The naturalistic (event-driven) approach","Pattern recognition"],correct:2,
        explain:"The naturalistic approach treats signs and symptoms before a definitive diagnosis, used mostly in emergency medicine for unstable patients and atypical presentations, ruling out the worst case and following the response."},
-      {q:"How does the lecture describe the value of treatment versus no treatment?",
+      {q:"Which statement describes the value of treatment versus no treatment?",
        choices:["Independent of the probability of disease","A linear function of the probability of disease","Determined only by cost","Fixed once a working diagnosis exists"],correct:1,
        explain:"It is a linear function of the probability of disease, weighed with the likelihood of success and the patient's ability to tolerate treatment — and balanced against the risk of treating a well person."}
     ],'''

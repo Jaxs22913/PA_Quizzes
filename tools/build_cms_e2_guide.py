@@ -25,8 +25,17 @@ includes CHILD -- the slide's version omits it. [[guide_verbatim_io_rule]].
 data-audio-dir is deliberately absent: pointing at an audio folder with no mp3s
 in it breaks read-aloud on iPad, because the 404 pushes speech synthesis outside
 the original tap.
+
+OVERWRITE GUARD (added 2026-09-24): the SHIPPED page is no longer this script's
+output. Content was added to the page after the last build, so running this
+script replaced the shipped page with a much shorter one (it did so twice on
+2026-09-24, once from a scratch copy, because the output path is an absolute
+repo path). It now refuses to overwrite an existing page unless --force is
+given. Use --out=PATH to write the build somewhere else for comparison. Only use
+--force after the builder has been brought back up to the page and a scratch
+build diffs clean against it.
 """
-import os, re
+import os, re, sys
 
 ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1/cms-exam-1-study-guide.html")
@@ -167,7 +176,7 @@ BODY = """<main class="content">
     <tr><th>Test</th><th>What it is</th><th>What it finds</th></tr>
     <tr><td><b>Slit lamp</b></td><td>Low-power microscope with a high-intensity slit beam</td><td>Anterior structures: lids, cornea, conjunctiva, sclera, iris</td></tr>
     <tr><td><b>Ophthalmoscopy</b></td><td>Direct (hand-held), indirect (lens + head-worn), or slit-lamp &mdash; the last is <b>most common</b> because the patient is already seated there</td><td>Vitreous, retina, retinal vessels, macula, optic disc</td></tr>
-    <tr><td><b>Fluorescein examination</b></td><td>Yellow dye <b>instilled</b>, viewed under a Wood lamp (ultraviolet)</td><td>Corneal abrasions, ulcers, foreign bodies</td></tr>
+    <tr><td><b>Fluorescein examination</b></td><td>Yellow dye <b>instilled</b>, viewed under a Wood's lamp (ultraviolet)</td><td>Corneal abrasions, ulcers, foreign bodies</td></tr>
     <tr><td><b>Fluorescein angiography</b></td><td>Dye <b>injected</b> into hand or arm, reaches the eye in 10&ndash;15 seconds, blue-flash camera. <b>No iodine</b>, relatively safe</td><td>Blood flow in retina and choroid: diabetic retinopathy, macular degeneration and oedema, ocular melanoma, detachment, retinitis pigmentosa</td></tr>
   </table>
 
@@ -421,7 +430,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"Episcleral vessels blanch with phenylephrine, and can be moved with a cotton-tip applicator. Scleral vessels do neither."},
       {q:"What is the FIRST sign that scleritis is responding to treatment?",
        choices:["The violaceous hue fades","Decreased PAIN, even if the eye looks unchanged","Vision returns to normal","The discharge stops"],correct:1,
-       explain:"This is flagged specifically, so an eye that still looks inflamed is not misread as treatment failure."},
+       explain:"Decreased pain is the first sign of response to treatment, even when the inflammation still looks unchanged."},
       {q:"A contact lens wearer has a central epithelial defect with a white infiltrate. What is the next step?",
        choices:["Patch the eye and review in two days","Remove the lenses without patching and arrange SAME-DAY ophthalmology","Give a take-home topical anaesthetic","Start a topical corticosteroid"],correct:1,
        explain:"Microbial keratitis until proven otherwise. Never patch, never send home an anaesthetic, never start steroids."},
@@ -487,8 +496,14 @@ body = body.replace("@@FLUSH@@", figone(
 assert "@@" not in body, "unfilled figure token"
 
 html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + body + tail
-os.makedirs(os.path.dirname(OUT), exist_ok=True)
-open(OUT, "w", encoding="utf-8").write(html)
+_OUT_ARG = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--out=")), None)
+_TARGET = _OUT_ARG or OUT
+if _OUT_ARG is None and os.path.exists(OUT) and "--force" not in sys.argv:
+    sys.exit("REFUSING to overwrite %s: the shipped page carries content this "
+             "builder does not reproduce. Use --out=PATH for a scratch build, or "
+             "--force once the builder matches the page." % OUT)
+os.makedirs(os.path.dirname(_TARGET), exist_ok=True)
+open(_TARGET, "w", encoding="utf-8").write(html)
 
 for fn in re.findall(r'src="%s/([^"]+)"' % IMGDIR, html):
     assert os.path.exists(os.path.join(os.path.dirname(OUT), IMGDIR, fn)), fn

@@ -151,7 +151,7 @@ POOL_A = [
    q="A 17-year-old girl with acanthosis nigricans is embarrassed and has been scrubbing her neck daily, believing it is dirt. Which is the most appropriate counselling point?",
    opts=[
      ["The change is a metabolic warning sign rather than a hygiene problem, and 5 to 10% weight loss improves it",
-      "Correct — the hygiene misconception is specifically addressed in the teaching."],
+      "Correct — acanthosis nigricans is a metabolic warning sign, not a hygiene issue, and even a 5 to 10% reduction in body weight improves the findings."],
      ["The change is caused by friction from clothing and will settle with gentler fabrics",
       "Friction is not the mechanism; hyperinsulinaemia drives keratinocyte proliferation."],
      ["The change is permanent and no intervention will alter its appearance at all",

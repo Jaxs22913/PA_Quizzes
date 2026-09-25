@@ -239,7 +239,7 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Keratoacanthoma", io=IOA, lead="treatment",
-   q="A 58-year-old woman is to have a keratoacanthoma excised from her forearm. Which margin is specified?",
+   q="A 58-year-old woman is to have a keratoacanthoma excised from her forearm. Which margin is required?",
    opts=[
      ["Five millimetres",
       "Correct — with Mohs surgery for large, recurrent or cosmetically sensitive lesions."],
@@ -281,9 +281,9 @@ VIG_B = [
    q="A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-coloured pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?",
    opts=[
      ["The contents are keratin, not sebum",
-      "Correct — the cyst is lined by epidermis that sheds keratin inward, and the pale greasy contents that resemble sebum are macerated keratin."],
+      "Correct — it is often called a sebaceous cyst because the material looks like sebum, but the contents are keratin."],
      ["Yes, it is a blocked sebaceous gland filled with sebum",
-      "The lining is epidermal rather than sebaceous and the contents are keratin, which is why the popular name is a misnomer despite the resemblance."],
+      "This is exactly the misconception to correct."],
      ["It is a collection of lipid-laden macrophages",
       "That is xanthelasma."],
      ["It is mucin extruded from a nearby joint",

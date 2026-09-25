@@ -8,12 +8,12 @@ IOB = "11 — Identify medical care strategies for pre-malignant and malignant c
 
 VIG_D = [
  dict(topic="Clinical approach", io=IOA, lead="next step",
-   q="A patient presents with a lesion you have not seen before. Before you commit to a diagnosis, what should you do?",
+   q="A patient presents with a lesion you have not seen before. What must you do before committing to a diagnosis?",
    opts=[
      ["Characterise it systematically",
       "Correct — describe before naming. Lesion type, colour, texture, border, size, distribution, palpability, ulceration, bleeding, induration and evolution."],
      ["Name the most likely diagnosis, then look only for the features that support it",
-      "Naming the diagnosis first invites confirmation bias: features that fit are noticed and those that do not are explained away, which is how melanoma is missed."],
+      "That reverses the required order."],
      ["Photograph it and wait for the dermatology opinion before describing anything",
       "Description is the first step, not a deferred one."],
      ["Biopsy immediately, since description adds nothing once tissue is available",
@@ -28,7 +28,7 @@ VIG_D = [
      ["Palms, soles and nails in every patient; the oral mucosa specifically when melanoma is possible; and the regional nodes for every lesion whatever its risk",
       "The oral examination is tied to Kaposi sarcoma."],
      ["The affected area alone, since the total-body survey, the acral sites and the regional nodes all belong to the dermatologist",
-      "Acral and mucosal melanoma and regional nodal spread can be missed entirely if nobody looks before referral, so these are the referring clinician's responsibility."],
+      "The examination must go wider than the affected area alone."],
      ["The scalp and trunk only, since acral sites and the oral mucosa are rarely involved in cutaneous malignancy",
       "Palms, soles and nails are explicitly included."]],
    c=0, cite=c(4)),
@@ -66,7 +66,7 @@ VIG_D = [
    q="A 69-year-old man has an ulcer on his ear that has not healed in three months. The base is firm and indurated. Which is the most likely diagnosis?",
    opts=[
      ["Squamous cell carcinoma",
-      "Correct — a non-healing indurated ulcer indicates invasion below the epidermis, and the ear is a high-risk site alongside lip, scalp, temple, nose, genitalia and mucosal surfaces, all carrying higher recurrence and metastatic risk."],
+      "Correct. A non-healing ulcer with an indurated base is a recognised presentation, and induration is a red flag. The ear is also a high-risk site — with mucosal surfaces, lip, scalp, temple, nose and genitalia — all carrying higher recurrence and metastatic risk."],
      ["Basal cell carcinoma",
       "Basal cell carcinoma is usually a pearly papule with telangiectasias and a rolled border. It can erode "
       "centrally, but a firm, indurated, non-healing ulcer is the squamous pattern."],
@@ -78,7 +78,7 @@ VIG_D = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOA, lead="treatment",
-   q="A 68-year-old man's biopsy reports squamous cell carcinoma in situ on the forearm with no high-risk features. Which options are given?",
+   q="A 68-year-old man's biopsy reports squamous cell carcinoma in situ on the forearm with no high-risk features. Which options apply?",
    opts=[
      ["Imiquimod, topical fluorouracil",
       "Correct — three options for appropriately selected in situ disease. Or curettage and electrodesiccation."],
@@ -91,7 +91,7 @@ VIG_D = [
    c=0, cite=c(24)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, lead="education",
-   q="A patient asks how likely his actinically induced squamous cell carcinoma is to spread. Which figure is given, and what raises it?",
+   q="A patient asks how likely his actinically induced squamous cell carcinoma is to spread. What is the figure, and what raises it?",
    opts=[
      ["An estimated 3 to 7%, raised substantially by high-risk sites or features, immunosuppression, multiple tumours, recurrence, or nodal involvement",
       "Correct — the baseline is modest but modifiable."],
@@ -100,7 +100,7 @@ VIG_D = [
      ["An estimated 3 to 7%, and nothing raises it further, since metastatic risk is fixed at the moment of diagnosis whatever the site or immune status",
       "Several named factors raise it substantially."],
      ["Under 0.1%, raised only by nodal involvement already present at the time of diagnosis",
-      "Under 0.1 per cent greatly understates it; actinically induced squamous cell carcinoma metastasises in about 3 to 7 per cent of cases, and high-risk sites and features raise that."]],
+      "The figure is 3 to 7%, not under 0.1%."]],
    c=0, cite=c(26)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="diagnosis",
@@ -126,7 +126,7 @@ VIG_D = [
    c=0, cite=c(35)),
 
  dict(topic="Basal cell carcinoma", io=IOB, lead="treatment",
-   q="A patient with an advanced basal cell carcinoma is no longer a surgical candidate. Which systemic option is given?",
+   q="A patient with an advanced basal cell carcinoma is no longer a surgical candidate. Which systemic option applies?",
    opts=[
      ["A hedgehog pathway inhibitor",
       "Correct — reserved for advanced or metastatic disease or extensive tumour burden. Vismodegib or sonidegib."],
@@ -148,7 +148,7 @@ VIG_D = [
    c=0, cite=c(41)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="next step",
-   q="A 45-year-old patient has a suspicious pigmented lesion that needs sampling. Which is the initial diagnostic test?",
+   q="A 45-year-old patient has a suspicious pigmented lesion that needs sampling. What is the initial diagnostic test?",
    opts=[
      ["Biopsy or excision to confirm the diagnosis",
       "Correct — tissue is required before staging decisions."],
@@ -166,7 +166,7 @@ VIG_D = [
      ["A 1 cm margin", "Correct — lesions under 1 mm take a 1 cm margin."],
      ["A 0.5 to 1 cm margin", "That range is for in situ disease."],
      ["A 1 to 2 cm margin", "That is for lesions thicker than 1 mm."],
-     ["A 3 cm margin", "A 3 cm margin is far wider than needed; below 1 mm thickness a 1 cm margin is appropriate."]],
+     ["A 3 cm margin", "Wider than any margin used for melanoma."]],
    c=0, cite=c(52)),
 
  dict(topic="Malignant melanoma", io=IOA, lead="education",
@@ -196,7 +196,7 @@ VIG_D = [
    c=0, cite=c(63)),
 
  dict(topic="Kaposi sarcoma", io=IOB, lead="treatment",
-   q="An 82-year-old with classic Kaposi sarcoma has a few troublesome plaques on one shin and no visceral disease. Which local options are given?",
+   q="An 82-year-old with classic Kaposi sarcoma has a few troublesome plaques on one shin and no visceral disease. Which local options apply?",
    opts=[
      ["Palliative local therapy — intralesional vincristine, vinblastine or bleomycin, or radiation",
       "Correct — cryotherapy and intralesional vinblastine are also listed for all forms."],
@@ -209,7 +209,7 @@ VIG_D = [
    c=0, cite=c(66)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, lead="treatment",
-   q="A patient with early patch-stage cutaneous T-cell lymphoma is to begin treatment. Which initial skin-directed options are listed?",
+   q="A patient with early patch-stage cutaneous T-cell lymphoma is to begin treatment. Which initial skin-directed options apply?",
    opts=[
      ["Topical corticosteroids, topical mechlorethamine, bexarotene gel",
       "Correct — four skin-directed options for early disease. Ultraviolet phototherapy."],
@@ -222,7 +222,7 @@ VIG_D = [
    c=0, cite=c(75)),
 
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, lead="next step",
-   q="A patient with cutaneous T-cell lymphoma develops enlarged inguinal nodes. What may these represent, and what is required?",
+   q="A patient with cutaneous T-cell lymphoma develops enlarged inguinal nodes. What might these represent, and what is required?",
    opts=[
      ["They may be benign dermatopathic change or lymphoma involvement, and require directed biopsy or imaging to distinguish",
       "Correct — enlargement alone does not establish spread."],
@@ -231,16 +231,16 @@ VIG_D = [
      ["They are always benign dermatopathic change and need no directed biopsy, imaging or further assessment",
       "Either is possible, so they must be assessed."],
      ["They indicate regional infection rather than lymphoma and warrant a course of oral antibiotics",
-      "Enlarged nodes in established cutaneous T-cell lymphoma raise nodal involvement rather than infection, and that possibility has to be assessed rather than treated blindly with antibiotics."]],
+      "Infection is not the explanation to reach for."]],
    c=0, cite=c(70)),
 
  dict(topic="Nail unit neoplasms", io=IOA, lead="test",
-   q="A 58-year-old patient asks you to look at one abnormal nail. Which preparatory step is specified before inspection?",
+   q="A 58-year-old patient asks you to look at one abnormal nail. Which preparatory step comes before inspection?",
    opts=[
      ["Remove the polish and inspect every nail, the periungual skin, the palms and soles, and the regional nodes",
       "Correct — a single-nail problem is assessed against all the others."],
      ["Remove the polish and inspect the affected nail alone, since comparison with other nails is unhelpful",
-      "Comparison across nails is exactly what makes one abnormal nail interpretable, since a change affecting a single digit carries different weight from one affecting several."],
+      "Every nail must be inspected, not just the affected one."],
      ["Leave the polish in place to avoid disturbing the nail plate, and inspect the periungual skin only",
       "The polish must come off."],
      ["Inspect the affected nail under a Wood lamp before removing any polish",
@@ -248,7 +248,7 @@ VIG_D = [
    c=0, cite=c(93)),
 
  dict(topic="Nail unit neoplasms", io=IOA, lead="diagnosis",
-   q="A patient has a single nail with longitudinal erythronychia, distal subungual hyperkeratosis and splinter haemorrhages. Which benign tumours are associated with this pattern?",
+   q="A patient has a single nail with longitudinal erythronychia, distal subungual hyperkeratosis and splinter haemorrhages. Which benign tumours produce this pattern?",
    opts=[
      ["Onychopapilloma or onychomatricoma",
       "Correct — single-nail longitudinal change with distal hyperkeratosis."],

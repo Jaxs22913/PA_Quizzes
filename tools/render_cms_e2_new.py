@@ -2,7 +2,8 @@
 """Render the CMS I Exam 2 Lecture 11 and 12 quizzes.
 
 Palette inherited from the existing Exam 2 ophthalmology quizzes so the exam
-reads as one thing. Five-option sets, per the exam standard.
+reads as one thing. Four-option sets, per the exam standard (five-option until
+the 2026-09-13 conversion).
 
     python3 render_cms_e2_new.py l2vig
 """

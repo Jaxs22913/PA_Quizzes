@@ -84,7 +84,7 @@ VIG_B = [
  dict(topic="Dacryoadenitis vs dacryocystitis", io=IOA, lead="diagnosis", slot="differential",
    q="A 39-year-old man has pain, redness and swelling confined to the outer third of his upper eyelid, with an enlarged node in front of the ear on the same side. Which is the most likely diagnosis?",
    opts=[
-     ["Dacryoadenitis", "Correct — the lacrimal gland sits superotemporally, and preauricular nodes are described."],
+     ["Dacryoadenitis", "Correct. Swelling over the lateral third of the upper lid, with ipsilateral preauricular lymphadenopathy, fits dacryoadenitis."],
      ["Dacryocystitis", "That produces swelling over the lacrimal sac, at the inner lower lid."],
      ["Pre-septal cellulitis", "That produces diffuse balloon-like lid swelling, not a localised outer-third mass."],
      ["Hordeolum", "That is a small tender nodule at the lash line."]],
@@ -398,13 +398,13 @@ VIG_B = [
      ["A slit lamp", "Correct — a low-power microscope with a high-intensity slit beam for the anterior structures."],
      ["A direct ophthalmoscope", "That is for the innermost structures, including the retina and optic disc."],
      ["A tonometer pen", "That measures intraocular pressure."],
-     ["A Wood lamp", "That provides the ultraviolet light for a fluorescein examination."]],
+     ["A Wood's lamp", "That provides the ultraviolet light for a fluorescein examination."]],
    c=0, cite=c(7)),
 
  dict(topic="Fluorescein", io=IOA, lead="initial test", slot="initial test",
    q="A 35-year-old man may have a corneal abrasion after a fingernail injury. Which examination will best demonstrate it?",
    opts=[
-     ["Instil fluorescein and examine under a Wood lamp with ultraviolet light",
+     ["Instil fluorescein and examine under a Wood's lamp with ultraviolet light",
       "Correct — the surface fluorescein examination detects abrasions, ulcers and foreign bodies."],
      ["Inject fluorescein intravenously and photograph the retina with a blue flash",
       "That is fluorescein ANGIOGRAPHY, which images the posterior circulation."],
@@ -441,7 +441,7 @@ VIG_B = [
    c=0, cite=c(41)),
 
  dict(topic="Anterior uveitis", io=IOA, lead="first-line", slot="first-line",
-   q="A 37-year-old woman with confirmed non-infectious anterior uveitis is under ophthalmology care. Which treatment is described as typical?",
+   q="A 37-year-old woman with confirmed non-infectious anterior uveitis is under ophthalmology care. Which treatment is typical?",
    opts=[
      ["Topical corticosteroids", "Correct — topical corticosteroids reach the anterior chamber in useful concentration and suppress the inflammation that would otherwise form permanent adhesions."],
      ["Intraocular corticosteroid injection", "That is needed for posterior disease, which does not respond to topical treatment."],
@@ -476,7 +476,7 @@ VIG_B = [
    c=0, cite=c(56)),
 
  dict(topic="Trachoma", io=IOA, lead="treatment" if False else "first-line", slot="agent/regimen",
-   q="A public health team is treating an area where trachoma prevalence is eight per cent. Which regimen is described?",
+   q="A public health team is treating an area where trachoma prevalence is eight per cent. Which regimen applies?",
    opts=[
      ["Azithromycin one gram orally as a single dose, given to all eligible members of the evaluation unit",
       "Correct — mass drug administration, at or above the five per cent threshold."],

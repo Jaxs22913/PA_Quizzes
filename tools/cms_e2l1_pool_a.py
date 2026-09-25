@@ -26,7 +26,7 @@ IOB = ("Objective b — Identify medical care strategies for ophthalmological di
 POOL_A = [
  # ---- entropion / ectropion ----
  dict(topic="Entropion", io=IOA, slot="manifestation",
-   q="Which symptom is given for entropion?",
+   q="Which symptom does entropion produce?",
    opts=[
      ["Foreign body sensation", "Correct — the inward-turned lashes rub the globe."],
      ["Tearing", "Tearing is the hallmark of ectropion, where the everted lid no longer channels tears into the punctum."],
@@ -88,7 +88,7 @@ POOL_A = [
    c=0, cite=c(13)),
 
  dict(topic="Entropion and ectropion", io=IOA, slot="initial test",
-   q="Which examination is specified for entropion and ectropion, and what is it looking for?",
+   q="Which statement correctly describes the examination required for entropion and ectropion?",
    opts=[
      ["Slit lamp examination, to assess corneal involvement",
       "Correct — the question is whether the cornea has been damaged."],
@@ -138,20 +138,20 @@ POOL_A = [
 
  # ---- xanthelasma ----
  dict(topic="Xanthelasma", io=IOA, slot="manifestation",
-   q="How does xanthelasma appear and how does it feel?",
+   q="How does xanthelasma appear on examination?",
    opts=[
-     ["Oval-shaped yellowish plaques, and typically asymptomatic",
-      "Correct — the lesions are lipid deposits in the dermis, so they form soft yellowish plaques near the medial canthus and cause no symptoms."],
+     ["Oval-shaped yellowish plaques around the eyelids",
+      "Correct — xanthelasma forms oval-shaped yellowish plaques, soft cholesterol deposits under the skin on or around the eyelids, and is typically asymptomatic."],
      ["Tender red nodules at the lid margin",
-      "That is a hordeolum."],
+      "A tender eyelid nodule points to a hordeolum; xanthelasma plaques are soft, yellowish and typically asymptomatic."],
      ["Crusting and scaling around the lash bases",
-      "That is blepharitis."],
+      "Crusting and scaling around the lash bases is a sign of blepharitis; xanthelasma forms oval-shaped yellowish plaques instead."],
      ["A triangular fleshy wedge growing onto the cornea",
-      "That is a pterygium."]],
+      "A fleshy wedge that spreads onto the cornea is a pterygium; xanthelasma is a yellowish plaque on the eyelid skin, not the eye surface."]],
    c=0, cite=c(16)),
 
  dict(topic="Xanthelasma", io=IOA, slot="initial test",
-   q="Which laboratory workup is ordered for xanthelasma?",
+   q="Which laboratory workup follows a diagnosis of xanthelasma?",
    opts=[
      ["Serum lipid profile, plus tests for diabetes mellitus and liver function",
       "Correct — the plaques are a cutaneous marker of disordered lipid handling, so lipids, glucose and liver function are all checked."],
@@ -164,7 +164,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Xanthelasma", io=IOA, slot="education",
-   q="What is true of the prognosis of locally treated xanthelasma?",
+   q="What is the prognosis of locally treated xanthelasma?",
    opts=[
      ["Recurrences are common even after effective local treatment",
       "Correct — local removal clears the deposit but not the metabolic driver behind it, so the lesions commonly return."],
@@ -177,7 +177,7 @@ POOL_A = [
    c=0, cite=c(17)),
 
  dict(topic="Xanthelasma", io=IOA, slot="first-line",
-   q="Beyond local treatment, what should be done for xanthelasma?",
+   q="Beyond local treatment, what else must be done for xanthelasma?",
    opts=[
      ["Treat the underlying metabolic issue",
       "Correct — the plaques signal a lipid or metabolic disorder, so treating that underlying problem matters more than removing the lesion."],
@@ -204,7 +204,7 @@ POOL_A = [
 
  # ---- blepharitis / meibomitis ----
  dict(topic="Blepharitis", io=IOA, slot="risk factors",
-   q="Which three associations are given for blepharitis and meibomitis?",
+   q="Which three conditions are associated with blepharitis and meibomitis?",
    opts=[
      ["Rosacea, seborrhoeic dermatitis, and colonisation with Staphylococcus aureus",
       "Correct — rosacea and seborrhoeic dermatitis both disturb the lid margin, and Staphylococcus aureus colonisation completes the triad."],
@@ -217,7 +217,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Blepharitis", io=IOA, slot="manifestation",
-   q="Which sign is described at the meibomian glands in meibomitis?",
+   q="Which sign appears at the meibomian glands in meibomitis?",
    opts=[
      ["Thick, sometimes toothpaste-like lipid secretion",
       "Correct — inflamed meibomian glands produce inspissated lipid that expresses as a thick, toothpaste-like plug."],
@@ -230,7 +230,7 @@ POOL_A = [
    c=0, cite=c(18)),
 
  dict(topic="Blepharitis", io=IOA, slot="manifestation",
-   q="What is true of the tear film in blepharitis?",
+   q="What happens to the tear film in blepharitis?",
    opts=[
      ["It is decreased, or frothy and foamy",
       "Correct — the disordered lipid layer both reduces tear volume and destabilises the film, so it appears decreased, or frothy and foamy."],
@@ -261,7 +261,7 @@ POOL_A = [
    c=0, cite=c(19)),
 
  dict(topic="Blepharitis", io=IOA, slot="prognosis",
-   q="What is true of the long-term course of blepharitis?",
+   q="What is the long-term course of blepharitis?",
    opts=[
      ["It is chronic and can be controlled rather than cured",
       "Correct — an important expectation to set with the patient."],
@@ -380,11 +380,11 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="etiology",
-   q="Which cause of dacryoadenitis is most common?",
+   q="What is the most common cause of dacryoadenitis?",
    opts=[
      ["Inflammatory", "Correct — inflammatory causes predominate, and bacterial infection of the lacrimal gland is rare by comparison."],
      ["Bacterial", "Bacterial dacryoadenitis is rare; inflammatory causes are much the commonest."],
-     ["Viral", "Viral is listed, and is usually bilateral, but is not named most common."],
+     ["Viral", "Viral dacryoadenitis occurs and is usually bilateral, but inflammatory causes are the most common."],
      ["Fungal", "Fungal infection of the lacrimal gland is not a recognised common cause; inflammatory disease is."]],
    c=0, cite=c(22)),
 
@@ -402,7 +402,7 @@ POOL_A = [
    c=0, cite=c(22)),
 
  dict(topic="Dacryoadenitis", io=IOA, slot="first-line",
-   q="How is INFLAMMATORY dacryoadenitis treated, and how fast should it respond?",
+   q="Which statement correctly describes the treatment of INFLAMMATORY dacryoadenitis and its expected response?",
    opts=[
      ["Corticosteroids, with a response expected within 48 hours",
       "Correct — inflammatory disease responds to corticosteroids quickly, and a failure to improve within 48 hours should prompt reconsideration of the diagnosis."],

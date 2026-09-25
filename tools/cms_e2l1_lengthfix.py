@@ -83,7 +83,8 @@ FIXES = {
  (102, 1): "A pseudodendrite lacking terminal end bulbs, pathognomonic for herpes simplex",
  (103, 2): "It has larger and more prominent terminal end bulbs",
  (104, 1): "Simplex affects older patients and is dermatomal; zoster affects younger patients and is not",
- (105, 1): "Involvement of the lower eyelid, predicting subsequent corneal scarring",
+ # (105, 1) removed 2026-09-24: its padded two-part text contradicted the rewritten
+ # Hutchinson-sign distractor now shipped as "Involvement of the lower eyelid".
  (106, 1): "A topical fluoroquinolone given four times daily for ten days",
  (107, 1): "Oral antivirals withheld until ophthalmology has been consulted",
  (109, 1): "Recombinant zoster vaccine for all adults over sixty-five years only",

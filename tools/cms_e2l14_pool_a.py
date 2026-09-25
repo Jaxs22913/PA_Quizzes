@@ -7,7 +7,7 @@ corneal abrasion and foreign body, and hyphema.
 Grounded in the deck (Chand Shah, MPAS, PA-C). SELF-CONTAINED: no question
 refers to "the lecture" or "the deck".
 
-FIVE options, per the CMS house style. Correct answer is authored FIRST in
+FOUR options (five until 2026-09-13), per the CMS house style. Correct answer is authored FIRST in
 every question; cms_e2_partition.py rotates it.
 """
 D = "CMS I Ocular Trauma - Shah Fallsv.pptx, Slide %d"
@@ -121,7 +121,7 @@ QUESTIONS = [
   opts=[["It becomes hydrated, oedematous and opaque", "Correct. Aqueous entering the capsule clouds it."],
         ["It hardens and darkens", "That describes an age-related nuclear change."],
         ["It is unaffected if the cut is peripheral", "A capsular breach affects the lens wherever it sits."],
-        ["It dislocates posteriorly in every case", "Dislocation is not the described consequence."]]),
+        ["It dislocates posteriorly in every case", "A cut capsule does not make the lens dislocate; the lens becomes hydrated, edematous and opaque."]]),
 
  # ---------------- corneal abrasion and foreign body ----------------
  dict(topic="Corneal abrasion", io=IO_A, lead="initial test", cite=D % 18,
@@ -161,7 +161,7 @@ QUESTIONS = [
 
  # ---------------- hyphema ----------------
  dict(topic="Hyphema", io=IO_A, lead="diagnosis", cite=D % 24,
-  q="A patient struck in the eye has blood layered in the anterior chamber. What is this, and what else must be considered?",
+  q="A patient struck in the eye has blood layered in the anterior chamber. Which statement correctly identifies the finding and its significance?",
   opts=[["Hyphema, which can itself be a sign of open globe", "Correct. It is not always an isolated injury."],
         ["Subconjunctival haemorrhage over the iris", "That sits on the surface, not within the chamber."],
         ["Vitreous haemorrhage seen through the pupil", "That lies behind the lens."],
@@ -190,7 +190,7 @@ QUESTIONS = [
 
  dict(topic="Hyphema", io=IO_A, lead="risk factor", cite=D % 25,
   q="Which condition raises the risk of complications from hyphema?",
-  opts=[["Sickle cell disease", "Correct. It is specifically flagged as raising the risk."],
+  opts=[["Sickle cell disease", "Correct. Sickle cell anemia increases the risk in hyphema, which already carries a high risk of secondary hemorrhage."],
         ["Seasonal allergic rhinitis", "It does not affect the risk."],
         ["Hypothyroidism", "It does not affect the risk."],
         ["Iron deficiency anaemia", "It is not the condition that raises the risk."]]),

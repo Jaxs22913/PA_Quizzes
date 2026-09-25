@@ -315,7 +315,7 @@ POOL_A = [
      ["Resistance of Cutibacterium acnes to the prescribed antimicrobial",
       "Resistance would show as failure to improve, not disproportionate scarring."],
      ["An underlying immunodeficiency impairing the healing of each lesion",
-      "Immunodeficiency is not the explanation; disproportionate scarring points to picking or manipulation of the lesions."]],
+      "Immunodeficiency is not the explanation for disproportionate scarring."]],
    c=0, cite=c(36)),
 
  dict(topic="Folliculitis", io=IOA,
