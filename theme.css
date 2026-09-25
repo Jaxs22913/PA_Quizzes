@@ -2224,6 +2224,33 @@ h2.deck-title {
   font-weight: 700;
 }
 
+/* No sideways panning on phones (design review item 6, 2026-09-25). A
+   sweep of every guide, cram sheet and chart at 390px found 21 pages wider
+   than the screen (CMS E2 guide 537px, Clin Path E1 554px, PD2 E1 682px),
+   almost all from one wide comparison table, a few from a fixed-width figure
+   or an unbreakable slash-joined word.
+   A wide table now scrolls inside its own box -- display:block turns the
+   table element into the scroll container while its rows still lay out as a
+   table -- and figures never exceed the column. Scoped to guide-type pages'
+   <main>, so quiz tables and practicum overlays are untouched. */
+@media (max-width: 640px) {
+  body > .wrap main table,
+  body > .layout main table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  /* !important only to beat inline max-width:560px on older guides' figures */
+  body > .wrap main img,
+  body > .layout main img { max-width: 100% !important; height: auto; }
+  /* long slash-joined runs ("deformities/asymmetry/polyps/...") break only
+     when they would otherwise overflow */
+  body > .wrap main,
+  body > .layout main { min-width: 0; overflow-wrap: break-word; }
+}
+
 /* Long-form reading measure. Study guides currently run ~110 characters
    per line; 68 is the comfortable range. Applies to prose only -- tables,
    figures and the palpation panels keep the full column width. */
