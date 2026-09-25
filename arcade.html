@@ -192,6 +192,13 @@
       return '<div class="tab-panel' + (cls.id === activeId ? " active" : "") + '" data-class="' + cls.id + '">' + examsHTML + '</div>';
     }).join("");
 
+    // on a phone the tabs are one scrolling row: bring the remembered tab
+    // into view without moving the page
+    var act = tabsEl.querySelector(".tab-btn.active");
+    if (act && tabsEl.scrollWidth > tabsEl.clientWidth) {
+      tabsEl.scrollLeft = Math.max(0, act.offsetLeft - tabsEl.offsetLeft - 16);
+    }
+
     tabsEl.querySelectorAll(".tab-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var id = btn.getAttribute("data-tab");

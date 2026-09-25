@@ -234,6 +234,23 @@ body {
   letter-spacing: .06em; margin: 0 0 14px; text-align: center;
 }
 .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  /* One scrolling chip row on phones (design review item 18, 2026-09-25):
+     the chips used to stack seven rows and push the content a screen down. The
+     row bleeds to the screen edges, snaps chip by chip, and fades at both
+     ends so it reads as scrollable. The homepage class tabs deliberately
+     WRAP (resolved_site_bugs) and are not touched. */
+  @media (max-width: 640px) {
+    .tabs {
+      flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity; scroll-padding: 0 16px;
+      margin-left: -16px; margin-right: -16px; padding: 4px 16px 10px;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%);
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tabs .tab-btn { flex: none; white-space: nowrap; scroll-snap-align: start; box-shadow: none; }  /* a shadow clipped by the scroll box reads as a grey band */
+  }
 .tab-btn {
   border: 1px solid var(--border); background: var(--card); color: var(--muted);
   border-radius: 12px; padding: 10px 16px; font: inherit; font-size: 14px; font-weight: 700;
