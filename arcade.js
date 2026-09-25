@@ -9898,9 +9898,23 @@ function bumpStreak() {
   renderStreak();
   return s;
 }
+// A streak only counts if it was kept yesterday or today; the stored count
+// of a lapsed streak used to keep showing.
+function activeStreak() {
+  var s = loadStreak(), t = todayStr();
+  return (s.last === t || s.last === addDays(t, -1)) ? (s.count || 0) : 0;
+}
+// No streak yet reads as an invitation, not a zero shown as a badge
+// (design review item 15).
 function renderStreak() {
   var el = document.getElementById("streak-count");
-  if (el) el.textContent = loadStreak().count;
+  if (!el) return;
+  var n = activeStreak();
+  var pill = document.getElementById("streak-pill");
+  var label = pill && pill.querySelector("span:not(.flame)");
+  if (pill) pill.classList.toggle("is-empty", n < 1);
+  el.textContent = n < 1 ? "" : n;
+  if (label) label.textContent = n < 1 ? "Start a streak today" : "-day streak";
 }
 
 // ---- Match best times (per deck, ms) ----

@@ -148,7 +148,7 @@
     if (!classes.length) {
       tabsEl.innerHTML = "";
       panelsEl.innerHTML =
-        '<div class="empty-state"><div class="big">\uD83D\uDCC5</div>' +
+        '<div class="empty-state"><div class="big">' + window.SiteIcon("calendar", 40) + '</div>' +
         "<p>Decks for this semester appear here once its lectures start.</p></div>";
       return;
     }
@@ -161,12 +161,30 @@
 
     panelsEl.innerHTML = classes.map(function (cls) {
       var examsHTML = cls.exams.map(function (exam) {
-        var decksHTML = exam.deckIds.length
-          ? exam.deckIds.map(function (id) { return deckCardHTML(findDeck(id)); }).join("")
-          : '<div class="empty-state"><div class="big">🚧</div><p>Decks for this exam are coming soon.</p></div>';
+        var decks = exam.deckIds.map(findDeck).filter(Boolean);
+        var decksHTML = decks.length
+          ? decks.map(deckCardHTML).join("")
+          : '<div class="empty-state soon"><div class="big">' + window.SiteIcon("layers", 22) + '</div>' +
+            '<p>Decks for this exam are on the way. Each lecture gets its own deck, and it shows up here the day it is built.</p></div>';
+        // "due" counts only cards already studied: to a newcomer every card
+        // is technically due, which says nothing
+        var cards = 0, due = 0, started = false;
+        decks.forEach(function (d) {
+          cards += d.cards.length;
+          d.cards.forEach(function (_, i) {
+            var e = entryFor(d.id, i);
+            if (e) { started = true; if (isDue(e)) due++; }
+          });
+        });
+        var meta = decks.length
+          ? '<span class="exam-meta"><span>' + decks.length + (decks.length === 1 ? " deck" : " decks") +
+            " \u00b7 " + cards + " cards</span>" +
+            (started ? '<span class="due">' + (due ? due + " due" : "all caught up") + "</span>" : "") +
+            '<span class="mode-dots" title="Study, Learn, Sprint and Match" aria-label="Four modes: Study, Learn, Sprint, Match"><i class="m1"></i><i class="m2"></i><i class="m3"></i><i class="m4"></i></span></span>'
+          : '<span class="exam-meta"><span>Coming soon</span></span>';
         return (
-          '<details class="exam-section">' +
-            '<summary><span>' + exam.name + '</span></summary>' +
+          '<details class="exam-section' + (decks.length ? "" : " is-soon") + '">' +
+            '<summary><span class="exam-title"><span>' + exam.name + '</span>' + meta + '</span></summary>' +
             '<div class="exam-content"><div class="deck-grid">' + decksHTML + '</div></div>' +
           '</details>'
         );
@@ -184,8 +202,11 @@
     });
   }
 
-  initHeader();
-  renderHome();
+  // theme.js is deferred and carries the icon set; deferred scripts have run
+  // by DOMContentLoaded
+  function go() { initHeader(); renderHome(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go);
+  else go();
 })();
 </script>
 </body>

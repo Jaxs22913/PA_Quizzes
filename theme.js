@@ -28,7 +28,9 @@ window.SiteIcon = (function () {
     book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14.5H6.5A2.5 2.5 0 0 0 4 20z"/><path d="M4 20a1.5 1.5 0 0 0 1.5 1.5H20V17.5"/>',
     star: '<path d="M12 3.6l2.6 5.2 5.8.9-4.2 4.1 1 5.7L12 16.8l-5.2 2.7 1-5.7-4.2-4.1 5.8-.9z"/>',
     gamepad: '<rect x="2.5" y="7" width="19" height="11" rx="5.5"/><path d="M7.5 10.8v3.4M5.8 12.5h3.4"/><path d="M15.5 11.3h.01M17.8 13.6h.01" stroke-width="2.6"/>',
-    medal: '<path d="M8.5 3h7l-2.2 7M8.5 3l2.2 7"/><circle cx="12" cy="15.5" r="5.5"/>'
+    medal: '<path d="M8.5 3h7l-2.2 7M8.5 3l2.2 7"/><circle cx="12" cy="15.5" r="5.5"/>',
+    calendar: '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+    layers: '<path d="M12 3.5l8.5 4.5-8.5 4.5L3.5 8z"/><path d="M3.5 12.2l8.5 4.5 8.5-4.5"/><path d="M3.5 16.2l8.5 4.5 8.5-4.5"/>'
   };
   return function (name, size, extraClass) {
     size = size || 16;

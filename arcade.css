@@ -310,6 +310,25 @@ body {
 }
 .streak-pill span { color: var(--muted); font-weight: 600; }
 .streak-pill b { color: var(--ink); font-weight: 800; }
+.streak-pill.is-empty .flame { animation: none; }
+
+/* Exam rows that say something (design review item 15): deck count, cards
+   due, and the four mode lights -- Study / Learn / Sprint / Match, the same
+   four colours as the marquee, so no new colour. */
+.exam-section summary .exam-title { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.exam-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.exam-meta .due { color: var(--ink); }
+.mode-dots { display: inline-flex; gap: 4px; }
+.mode-dots i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.mode-dots .m1 { background: var(--accent); }
+.mode-dots .m2 { background: var(--accent2); }
+.mode-dots .m3 { background: var(--accent3); }
+.mode-dots .m4 { background: var(--accent4); }
+.exam-section.is-soon summary { color: var(--muted); }
+.empty-state .big .si { color: var(--muted); }
+.empty-state.soon { text-align: left; display: flex; gap: 12px; align-items: flex-start; padding: 6px 2px 4px; }
+.empty-state.soon p { margin: 0; }
+.empty-state.soon .big { font-size: 0; margin: 0; }
 
 .deck-card {
   background: var(--card); border: 1px solid var(--border); border-top-width: 4px;
