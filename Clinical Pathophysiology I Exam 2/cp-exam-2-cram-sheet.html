@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Clinical Pathophysiology I Exam 2</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#6e1f2f;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cp-exam-2-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Pathophysiology I · Exam 2 · Class of 2028</div>
+    <h1>Clinical Pathophysiology I Exam 2 Cram Sheet</h1>
+    <p class="sub">Lecture 6 Cardiac and Lecture 7 Vascular, condensed. Lectures 8–10 are added as each is posted. Mechanism only, never management.</p>
+    <div class="toc">
+      <a href="#l6-chd" style="color:#561825"><span class="dot" style="background:#6e1f2f"></span>L6 · Coronary Heart Disease & Ischemia</a>
+      <a href="#l6-plaque" style="color:#6c4610"><span class="dot" style="background:#8a5a14"></span>L6 · Lipoproteins, Atherosclerosis & Plaque</a>
+      <a href="#l6-acs" style="color:#7e2d3b"><span class="dot" style="background:#a23a4c"></span>L6 · Angina & Acute Coronary Syndrome</a>
+      <a href="#l6-valves" style="color:#254a53"><span class="dot" style="background:#2f5f6b"></span>L6 · Valve Disease</a>
+      <a href="#l6-myo" style="color:#462d56"><span class="dot" style="background:#5a3a6e"></span>L6 · Infective, Myocardial & Pericardial</a>
+      <a href="#l7-structure" style="color:#18465a"><span class="dot" style="background:#1f5a73"></span>L7 · Vessel Anatomy & Function</a>
+      <a href="#l7-wall" style="color:#24533e"><span class="dot" style="background:#2e6b4f"></span>L7 · Wall Injury, Vessel Size & Blood Pressure</a>
+      <a href="#l7-athero" style="color:#5f3a18"><span class="dot" style="background:#7a4a1f"></span>L7 · Arteriosclerosis & Atherosclerosis</a>
+      <a href="#l7-aneurysm" style="color:#532348"><span class="dot" style="background:#6b2d5c"></span>L7 · Aneurysm & Dissection</a>
+      <a href="#l7-other" style="color:#303e5f"><span class="dot" style="background:#3d4f7a"></span>L7 · Other Arterial Disease & Veins</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cp-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="l6-chd" style="--acc:#6e1f2f;--acc-bg:#ebe0e2;--acc-zebra:#f5eff0;--acc-ink:#561825">
+    <div class="shead"><span class="dot" style="background:#6e1f2f"></span><h2>L6 · Coronary Heart Disease & Ischemia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Coronary heart disease</td><td>Insufficient delivery of oxygenated blood to the myocardium because of ATHEROSCLEROTIC coronary arteries. About 50% of cardiovascular deaths. Also called ischemic heart disease, coronary artery disease.</td></tr>
+          <tr><td class="h">Ischemia = supply vs demand</td><td>Begins when oxygen SUPPLY &lt; DEMAND → less ATP (adenosine triphosphate). Causes abnormal function AND abnormal rhythms; prolonged → irreversible damage.</td></tr>
+          <tr><td class="h">Supply falls</td><td>Large plaques · acute platelet aggregation then thrombosis · VASOSPASM · abnormal microcirculation · poor perfusion pressure.</td></tr>
+          <tr><td class="h">Demand rises</td><td>Workload = HEART RATE · PRELOAD · AFTERLOAD · CONTRACTILITY. Raise any one → more oxygen demand.</td></tr>
+          <tr><td class="h">Etiologies</td><td>ATHEROSCLEROSIS behind almost all → predisposes to thrombosis, vasospasm, endothelial dysfunction. Microcirculation: small-vessel endothelium regulates flow abnormally. Uncommon: low blood oxygen content (respiratory); poor perfusion (hypotension, hypovolemia).</td></tr>
+          <tr><td class="h">Major risk factors</td><td>Age · family history · abnormal lipids · smoking · hypertension · diabetes mellitus · obesity.</td></tr>
+          <tr><td class="h">Probable risk factors</td><td>Male sex · HOMOCYSTEINE · high-sensitivity C-reactive protein.</td></tr>
+          <tr><td class="h">Collateral circulation</td><td>Develops when plaque builds over YEARS — why slow occlusion is tolerated better than sudden.</td></tr>
+          <tr><td class="h">Flow tracks demand</td><td>Myocardial oxygen consumption and blood flow correspond NEARLY LINEARLY; METABOLIC SIGNALS are the principal determinants of delivery.</td></tr>
+          <tr><td class="h">Coronary anatomy</td><td>LEFT MAIN → left anterior descending (anterior interventricular) + CIRCUMFLEX. RIGHT CORONARY → marginal + posterior interventricular.</td></tr>
+          <tr><td class="h">Frank–Starling</td><td>More diastolic filling → more ejected. Force ∝ initial sarcomere length (preload). Maximal force at 2.6 micrometers, rarely exceeded in the normal heart.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l6-plaque" style="--acc:#8a5a14;--acc-bg:#efe8de;--acc-zebra:#f7f3ef;--acc-ink:#6c4610">
+    <div class="shead"><span class="dot" style="background:#8a5a14"></span><h2>L6 · Lipoproteins, Atherosclerosis & Plaque</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Low-density lipoprotein</td><td>Cholesterol-rich → HIGHEST risk.</td></tr>
+          <tr><td class="h">Very-low-density lipoprotein</td><td>Triglyceride-rich → INCREASES risk.</td></tr>
+          <tr><td class="h">High-density lipoprotein</td><td>DECREASES risk — carries cholesterol BACK TO THE LIVER, away from plaque.</td></tr>
+          <tr><td class="h">Familial hypercholesterolemia</td><td>Most common genetic hyperlipidemia. Defective LOW-DENSITY LIPOPROTEIN RECEPTOR on liver cells → liver cannot clear cholesterol.</td></tr>
+          <tr><td class="h">Homocysteine</td><td>Amino acid from METHIONINE → CYSTEINE. Atherogenic + prothrombotic: intimal thickening, elastic lamina disruption, smooth muscle hypertrophy, platelet accumulation, platelet-rich occlusive thrombus.</td></tr>
+          <tr><td class="h">Plaque sequence</td><td>ENDOTHELIAL INJURY (wall stress, toxins, inflammation, hyperlipidemia) → permeable endothelium, leukocytes recruited → low-density lipoprotein leaks in and is OXIDIZED → FOAM CELLS → mediators + growth factor → smooth muscle proliferation → LIPID CORE → collagen/fibrin CAP.</td></tr>
+          <tr><td class="h">75%</td><td>Occlusion at which blood flow is COMPROMISED.</td></tr>
+          <tr><td class="h">Vulnerable plaque (slide 24, image only)</td><td>LARGE lipid core · THIN fibrous cap · rich in MACROPHAGES · increased MMPs (matrix metalloproteinases) · POOR in smooth muscle · LOW-GRADE stenosis.</td></tr>
+          <tr><td class="h">Stable vs vulnerable</td><td>Stable: thick cap, small core, many smooth muscle cells. Vulnerable: thin cap, large core, many macrophages. Smooth muscle BUILDS the cap; macrophages DIGEST it.</td></tr>
+          <tr><td class="h">Why plaques rupture</td><td>Composition + mechanical stress. Trigger: SHEAR from high-velocity flow through a severe stenosis. VASA VASORUM capillaries hemorrhage → pressure builds inside the plaque.</td></tr>
+          <tr><td class="h">Rupture consequences</td><td>Exposed subendothelial proteins → platelet aggregation → THROMBUS; EMBOLI block smaller vessels downstream.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l6-acs" style="--acc:#a23a4c;--acc-bg:#f2e3e6;--acc-zebra:#f8f1f2;--acc-ink:#7e2d3b">
+    <div class="shead"><span class="dot" style="background:#a23a4c"></span><h2>L6 · Angina & Acute Coronary Syndrome</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Coronary syndromes</td><td>CHRONIC: stable angina, ischemic cardiomyopathy. ACUTE: unstable angina, myocardial infarction. Classified by severity and onset.</td></tr>
+          <tr><td class="h">Angina pectoris</td><td>Intermittent ischemia NOT enough to kill cells; when demand rises; may cause pulmonary congestion.</td></tr>
+          <tr><td class="h">Stable (typical)</td><td>MOST COMMON. Fixed stenosis → ischemia only under increased WORKLOAD.</td></tr>
+          <tr><td class="h">Prinzmetal (variant)</td><td>VASOSPASM (cause unknown). Unpredictable; NO relation to physical or emotional stress.</td></tr>
+          <tr><td class="h">Unstable (crescendo)</td><td>May progress to acute ischemia → counted with the ACUTE coronary syndromes.</td></tr>
+          <tr><td class="h">Acute coronary syndrome</td><td>Unstable angina + myocardial infarction (hard to tell apart clinically). Pain longer than typical angina; PLAQUE RUPTURE + ACUTE THROMBOSIS.</td></tr>
+          <tr><td class="h">Infarction mechanism</td><td>Prolonged/total loss of flow → NECROSIS or APOPTOSIS. Thrombus on a cracked plaque → platelet plug → clotting cascade → occlusion. Outcome depends on COLLATERALS, WORKLOAD, TIME.</td></tr>
+          <tr><td class="h">Occlusion timeline</td><td>Immediately: ATP depleted. Few minutes: cannot contract. AFTER 30 MINUTES: irreversible necrosis.</td></tr>
+          <tr><td class="h">Location</td><td>Nearly all in LEFT VENTRICLE. Left anterior descending 40–50% · right coronary 30–40% · left circumflex 15–20%.</td></tr>
+          <tr><td class="h">Gross changes</td><td>6 h: first visible · 18–24 h: paler · then yellow, soft, red vascular border · 1–2 weeks: necrotic tissue removed · by 6 weeks: fibrous scar.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l6-valves" style="--acc:#2f5f6b;--acc-bg:#e2e9ea;--acc-zebra:#f0f4f5;--acc-ink:#254a53">
+    <div class="shead"><span class="dot" style="background:#2f5f6b"></span><h2>L6 · Valve Disease</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Stenosis vs regurgitation</td><td>STENOSIS = fails to OPEN → PRESSURE work, gradient across valve. REGURGITATION = fails to CLOSE → VOLUME work.</td></tr>
+          <tr><td class="h">Stenosis facts</td><td>Hemodynamics affected at 50% closure; slow → compensatory HYPERTROPHY. Causes: RHEUMATIC scarring, aging CALCIFICATION.</td></tr>
+          <tr><td class="h">Regurgitation facts</td><td>Acute: infection or PAPILLARY MUSCLE RUPTURE. Causes: rheumatic heart disease, infective endocarditis.</td></tr>
+          <tr><td class="h">Mitral stenosis</td><td>DIASTOLIC left atrial &gt; left ventricular gradient. Left atrial congestion/pressure ↑, pulmonary pressure ↑, stroke volume ↓ → pulmonary hypertension → right heart failure. Late: ATRIAL FIBRILLATION, atrial enlargement, ATRIAL CLOTS.</td></tr>
+          <tr><td class="h">Mitral regurgitation</td><td>SYSTOLIC backflow into atrium. HIGH AFTERLOAD INCREASES it. Atrium AND ventricle dilate + hypertrophy; severe → left heart failure.</td></tr>
+          <tr><td class="h">Mitral valve prolapse</td><td>BALLOONING into left atrium in systole. Usually silent; sometimes some regurgitation.</td></tr>
+          <tr><td class="h">Aortic stenosis</td><td>Most often AGE-RELATED CALCIFICATION; common with BICUSPID valve (slide: clinically apparent over 79). Systolic left ventricle–aortic gradient → LEFT VENTRICULAR HYPERTROPHY → ischemia and ANGINA → failure.</td></tr>
+          <tr><td class="h">Aortic regurgitation</td><td>DIASTOLIC leak back into left ventricle. AORTIC ROOT DILATION common (aging, connective tissue disease). Left ventricle hypertrophies + dilates; DIASTOLIC PRESSURE FALLS.</td></tr>
+          <tr><td class="h">Timing rule</td><td>DIASTOLE: mitral stenosis, aortic regurgitation. SYSTOLE: mitral regurgitation, prolapse, aortic stenosis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l6-myo" style="--acc:#5a3a6e;--acc-bg:#e8e3eb;--acc-zebra:#f3f1f5;--acc-ink:#462d56">
+    <div class="shead"><span class="dot" style="background:#5a3a6e"></span><h2>L6 · Infective, Myocardial & Pericardial</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Rheumatic heart disease</td><td>After GROUP A BETA-HEMOLYTIC STREPTOCOCCUS. IMMUNE attack by CROSS-REACTIVITY; HLA (human leukocyte antigen) predisposition. All layers → carditis. Valves: swelling, erosions, platelets + fibrin, then SCARRING and SHORTENING.</td></tr>
+          <tr><td class="h">Infective endocarditis</td><td>Invasion + colonization of endocardium; BLOODSTREAM INVASION is a prerequisite. VEGETATIONS = organisms in FIBRIN → dysfunction + EMBOLI. Commonest: Streptococcus, Staphylococcus aureus.</td></tr>
+          <tr><td class="h">Subacute endocarditis</td><td>Insidious; needs a PREEXISTING valve lesion. LESS VIRULENT organisms (slide lists S. aureus, Streptococcus, Candida) cannot attack a healthy endocardium. (Textbook generally pairs S. aureus with the acute form.)</td></tr>
+          <tr><td class="h">Myocarditis</td><td>Inflammation + leukocyte infiltration + necrosis. Microbes, immune disease, physical agents; COXSACKIEVIRUS most common in North America. Left ventricular dysfunction, ALL FOUR chambers dilated, edematous muscle, endocardium usually NORMAL.</td></tr>
+          <tr><td class="h">Dilated cardiomyopathy</td><td>Also 'congested'. Dilation of one or both ventricles → failure. ALCOHOL · GENETICS · PREGNANCY · POST-VIRAL.</td></tr>
+          <tr><td class="h">Hypertrophic cardiomyopathy</td><td>Thick, HYPERKINETIC muscle. OUTFLOW OBSTRUCTION + impaired DIASTOLIC FILLING.</td></tr>
+          <tr><td class="h">Restrictive cardiomyopathy</td><td>Stiff, FIBROTIC, noncompliant (e.g. AMYLOIDOSIS) → restricted filling → low stroke volume → failure.</td></tr>
+          <tr><td class="h">Pericardial effusion types</td><td>SEROUS transudate (heart failure, hypoproteinemia) · SEROSANGUINOUS (blunt trauma, heart surgery, cardiopulmonary resuscitation) · CHYLOUS (lymph obstruction) · BLOOD/hemopericardium (penetrating trauma).</td></tr>
+          <tr><td class="h">Tamponade</td><td>Large effusion COMPRESSES chambers from outside → filling impaired. Life-threatening.</td></tr>
+          <tr><td class="h">Pericarditis</td><td>ACUTE: mostly idiopathic, mostly VIRAL. CHRONIC: ADHESIVE mediastinopericarditis (heart stuck to mediastinum → workload ↑) or CONSTRICTIVE (dense scarred sac = STIFF CAGE → impaired diastolic filling).</td></tr>
+          <tr><td class="h">Not in the deck</td><td>Objective m (blood pressure regulation) → see Lecture 7. Objective n (conduction system): no slide; only ischemia → abnormal rhythms, mitral stenosis → atrial fibrillation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-structure" style="--acc:#1f5a73;--acc-bg:#e0e8eb;--acc-zebra:#eff3f5;--acc-ink:#18465a">
+    <div class="shead"><span class="dot" style="background:#1f5a73"></span><h2>L7 · Vessel Anatomy & Function</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Five components</td><td>ARTERIES high pressure, strong walls, fast flow → ARTERIOLES control release into capillaries (main resistance, 'small but mighty') → CAPILLARIES exchange → VENULES collect → VEINS return blood, RESERVOIR, low pressure, thin walls.</td></tr>
+          <tr><td class="h">Three layers</td><td>INTIMA: endothelium on basement membrane + thin matrix. MEDIA: elastin + smooth muscle 'like tree rings', expand in systole, recoil in diastole. ADVENTITIA: loose connective tissue, nerves, its own small arterioles in large vessels.</td></tr>
+          <tr><td class="h">Capillaries</td><td>NO MEDIA. ≈ red cell diameter. Large cross-section, LOW flow → easy exchange. Densest in MYOCARDIUM and BRAIN. Pericytes around them.</td></tr>
+          <tr><td class="h">Capillary types</td><td>CONTINUOUS (least permeable; blood–brain barrier) · FENESTRATED (kidney glomeruli, small intestine) · SINUSOIDAL (leakiest; liver, marrow, spleen, endocrine).</td></tr>
+          <tr><td class="h">Functions</td><td>Nutrients in · wastes out · hormones carried · HOMEOSTASIS of tissue fluid.</td></tr>
+          <tr><td class="h">Loops</td><td>PULMONARY: right heart → lungs. SYSTEMIC: left heart → tissues → right heart. Artery = AWAY from heart, so pulmonary artery carries deoxygenated blood.</td></tr>
+          <tr><td class="h">Veins hold</td><td>About 66% of total blood volume.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-wall" style="--acc:#2e6b4f;--acc-bg:#e2eae6;--acc-zebra:#f0f5f3;--acc-ink:#24533e">
+    <div class="shead"><span class="dot" style="background:#2e6b4f"></span><h2>L7 · Wall Injury, Vessel Size & Blood Pressure</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Healthy endothelium</td><td>NONTHROMBOGENIC; modulates medial tone (resistance); METABOLIZES ANGIOTENSIN; regulates inflammation; controls smooth muscle growth.</td></tr>
+          <tr><td class="h">Smooth muscle cells</td><td>Predominant media cell. Proliferate; make collagen, elastin, proteoglycans, growth factors, cytokines; constrict/dilate.</td></tr>
+          <tr><td class="h">Neointimal hyperplasia</td><td>Injury → smooth muscle MIGRATES INTO INTIMA, proliferates, makes matrix; endothelium regrows with LESS NITRIC OXIDE; platelets activate; leukocytes recruited → thick intima, NARROW LUMEN. Same response to ANY injury.</td></tr>
+          <tr><td class="h">The twofold problem</td><td>Thicker intima narrows the lumen AND lost nitric oxide (a vasodilator) lets it constrict.</td></tr>
+          <tr><td class="h">Two mechanisms</td><td>NARROWING (progressive: atherosclerosis; precipitous: thrombosis, embolism) or WEAKENING (dilation, rupture).</td></tr>
+          <tr><td class="h">Size predicts disease</td><td>LARGE elastic (aorta 2–3.5 cm) → ANEURYSM (elastic loss). MEDIUM muscular (coronary 3–4 mm, renal) → ATHEROSCLEROSIS. SMALL (≤2 mm) + ARTERIOLES (20–100 micrometers) → HYPERTENSION.</td></tr>
+          <tr><td class="h">Blood pressure</td><td>= CARDIAC OUTPUT × VASCULAR RESISTANCE. Resistance set at ARTERIOLES (constrictors vs dilators). Output = rate × stroke volume; volume set by SODIUM (water follows sodium).</td></tr>
+          <tr><td class="h">Low pressure response</td><td>Kidney RENIN (low afferent arteriolar pressure) → angiotensinogen → ANGIOTENSIN I → endothelial catabolism → ANGIOTENSIN II → smooth muscle tone ↑ + ALDOSTERONE ↑ (sodium resorption).</td></tr>
+          <tr><td class="h">Hypertension risks</td><td>Atherosclerosis, congestive heart failure, renal failure, CEREBRAL HEMORRHAGE, AORTIC DISSECTION.</td></tr>
+          <tr><td class="h">Essential hypertension</td><td>90–95%, idiopathic. Genetic + environmental. INSUFFICIENT RENAL SODIUM EXCRETION → volume ↑ → output ↑ → constriction → pressure ↑.</td></tr>
+          <tr><td class="h">Secondary hypertension</td><td>RENOVASCULAR: renal artery stenosis → low afferent pressure → RENIN. PRIMARY HYPERALDOSTERONISM: a common cause.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-athero" style="--acc:#7a4a1f;--acc-bg:#ece6e0;--acc-zebra:#f6f2ef;--acc-ink:#5f3a18">
+    <div class="shead"><span class="dot" style="background:#7a4a1f"></span><h2>L7 · Arteriosclerosis & Atherosclerosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Arteriosclerosis</td><td>'Hardening of the arteries': wall thickening + LOSS OF ELASTICITY. Four patterns below.</td></tr>
+          <tr><td class="h">Arteriolosclerosis</td><td>Small arteries/arterioles; HYPERTENSION. HYALINE = protein-thickened glassy wall, narrow lumen. HYPERPLASTIC = ONION SKINNING (concentric smooth muscle).</td></tr>
+          <tr><td class="h">Fibromuscular intimal hyperplasia</td><td>Muscular arteries; inflammation or mechanical injury; a healing response → IN-STENT RESTENOSIS; limits solid-organ transplants.</td></tr>
+          <tr><td class="h">Mönckeberg medial sclerosis</td><td>CALCIFICATION OF THE MEDIA of muscular arteries; usually NOT clinically significant.</td></tr>
+          <tr><td class="h">Atherosclerosis</td><td>'Gruel' + 'hardening'. MOST clinically relevant. Coronary, cerebral, peripheral disease; about half of Western deaths.</td></tr>
+          <tr><td class="h">Risk factors</td><td>Hyperlipidemia · LIPOPROTEIN(a) (altered low-density lipoprotein, independent of total cholesterol) · smoking · hypertension · diabetes · METABOLIC SYNDROME · C-reactive protein · FAMILY HISTORY = MOST IMPORTANT · age · men + postmenopausal women.</td></tr>
+          <tr><td class="h">Sequence</td><td>Injury → LOW-DENSITY LIPOPROTEIN accumulates → MONOCYTE adhesion → PLATELET adhesion → smooth muscle RECRUITED → proliferation, matrix, T cells → lipid → CALCIFICATION.</td></tr>
+          <tr><td class="h">Atheroma</td><td>Intimal plaque into the lumen: SOFT LIPID CORE + FIBROUS CAP. Stable → ischemia; unstable → rupture, thrombosis, embolism.</td></tr>
+          <tr><td class="h">★ Peripheral arterial disease</td><td>'Do know': stenosis → ischemia → CLAUDICATION when working muscle's demand rises.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-aneurysm" style="--acc:#6b2d5c;--acc-bg:#eae2e8;--acc-zebra:#f5f0f4;--acc-ink:#532348">
+    <div class="shead"><span class="dot" style="background:#6b2d5c"></span><h2>L7 · Aneurysm & Dissection</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Aneurysm vs dissection</td><td>ANEURYSM = localized abnormal DILATION. DISSECTION = blood enters a wall defect and TUNNELS through the MEDIA.</td></tr>
+          <tr><td class="h">Shapes</td><td>TRUE saccular (focal bulge, 'berry') · TRUE fusiform (whole circumference) · FALSE (ruptured wall, hematoma held by extravascular tissue) · DISSECTION (intimal tear splits media).</td></tr>
+          <tr><td class="h">Weakening ≠ rupture</td><td>An aneurysm is a WEAK wall, not a ruptured one; rupture risk rises with SIZE (in lecture: under 4 cm rarely, over 5.5 cm very high).</td></tr>
+          <tr><td class="h">Pathogenesis</td><td>Poor connective tissue (defective collagen; abnormal transforming growth factor signaling = MARFAN) · collagen degradation &gt; synthesis (inflammation, proteases) · smooth muscle LOSS (ischemia, hypertension, TERTIARY SYPHILIS).</td></tr>
+          <tr><td class="h">Predisposing</td><td>Atherosclerosis · hypertension · smoking.</td></tr>
+          <tr><td class="h">Abdominal aortic aneurysm</td><td>ATHEROSCLEROTIC; abdominal aorta + common iliac arteries.</td></tr>
+          <tr><td class="h">Thoracic aortic aneurysm</td><td>HYPERTENSION; also Marfan, inflammation.</td></tr>
+          <tr><td class="h">Aortic dissection</td><td>Laminar planes of MEDIA SPLIT → blood channel in the wall. HYPERTENSION = major risk factor.</td></tr>
+          <tr><td class="h">Cerebral saccular (berry)</td><td>Thin/absent media; absent or fragmented internal elastic lamina. LACK OF ELASTIC LAMINA = main feature. Usually acquired.</td></tr>
+          <tr><td class="h">Fusiform / mycotic</td><td>Fusiform: whole circumference (atherosclerosis). MYCOTIC: infected emboli from INFECTIVE ENDOCARDITIS (rare).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-other" style="--acc:#3d4f7a;--acc-bg:#e4e6ec;--acc-zebra:#f1f3f6;--acc-ink:#303e5f">
+    <div class="shead"><span class="dot" style="background:#3d4f7a"></span><h2>L7 · Other Arterial Disease & Veins</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Fibromuscular dysplasia</td><td>Focal irregular thickening (hyperplasia + fibrosis of MEDIA and INTIMA) of medium/large muscular arteries → stenosis. RENAL arteries. 'STRING OF BEADS' on angiography; may dilate and rupture.</td></tr>
+          <tr><td class="h">Vasculitis</td><td>Vessel wall inflammation, mostly SMALL vessels. Mechanisms: IMMUNE-MEDIATED or DIRECT INFECTIOUS INVASION. Large: giant cell arteritis. Medium: polyarteritis nodosa, Kawasaki. Small: ANCA (anti-neutrophil cytoplasmic antibody) necrotizing; immune complex (lupus, rheumatoid arthritis). Said to go light.</td></tr>
+          <tr><td class="h">Raynaud phenomenon</td><td>EXAGGERATED VASOCONSTRICTION to COLD + STRESS, extremities. WHITE (spasm) → BLUE (anoxia) → RED (oxygenated blood returns).</td></tr>
+          <tr><td class="h">Arteriovenous fistula</td><td>Direct artery–vein link BYPASSING CAPILLARIES: developmental, aneurysm rupturing into a vein, penetrating injury, inflammatory necrosis, surgical (hemodialysis access).</td></tr>
+          <tr><td class="h">Veins</td><td>Larger lumen, THINNER MEDIA (capacitance), VALVES stop gravitational backflow.</td></tr>
+          <tr><td class="h">Varicose veins</td><td>Dilated, tortuous; VALVE INSUFFICIENCY; chronic high intraluminal pressure + weak wall. Superficial (saphenous), legs; also pelvis/rectum.</td></tr>
+          <tr><td class="h">Esophageal varices / hemorrhoids</td><td>Varices: submucosal distal esophageal veins from CIRRHOSIS + PORTAL HYPERTENSION. Hemorrhoids: varicose venous plexus at the ANORECTAL junction.</td></tr>
+          <tr><td class="h">Deep vein thrombosis</td><td>Deep veins (femoral, popliteal, tibial); STASIS in a dilated vein. THIRD most common cardiovascular cause of death.</td></tr>
+          <tr><td class="h">Deep vein thrombosis risks</td><td>Reduced flow (IMMOBILITY) · raised venous pressure · mechanical injury · raised viscosity (dehydration, thrombocytosis) · anatomy · hypercoagulable (cancer, sepsis, lupus, ORAL ESTROGEN).</td></tr>
+          <tr><td class="h">Virchow triad</td><td>VESSEL WALL DAMAGE · FLOW TURBULENCE · HYPERCOAGULABILITY.</td></tr>
+          <tr><td class="h">Clot fate</td><td>Neutrophils + macrophages infiltrate fibrin; COLLAGEN replaces fibrin over weeks → less flow. Dislodges → EMBOLUS → PULMONARY ARTERY = pulmonary embolus.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Clinical Pathophysiology I Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
