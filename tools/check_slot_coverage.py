@@ -107,6 +107,9 @@ TITLES = {
  "e4l21": "Exam 4 Lecture 21 - Hypotension",
  "e4l22": "Exam 4 Lecture 22 - Atherosclerosis and Lipid Disorders",
  "e4l25": "Exam 4 Lecture 25 - Heart Failure",
+ # Exam 5 (Cardiology Block Exam II), same shape as Exam 4 -- added 2026-09-25.
+ "e5l27": "Exam 5 Lecture 27 - Arterial Occlusive Disease and Aortic Aneurysm",
+ "e5l28": "Exam 5 Lecture 28 - Cardiomyopathy",
 }
 
 
@@ -114,12 +117,13 @@ def _discover():
     import glob, os.path as _p
     here = _p.dirname(_p.abspath(__file__))
     found = {}
-    for path in glob.glob(_p.join(here, "cms_l*_pool_*.py")) + glob.glob(_p.join(here, "cms_e4l*_pool_*.py")):
-        m = re.match(r"cms_((?:e4)?l\d+)_pool_([a-z])$", _p.basename(path)[:-3])
+    for path in glob.glob(_p.join(here, "cms_l*_pool_*.py")) + glob.glob(_p.join(here, "cms_e4l*_pool_*.py")) \
+            + glob.glob(_p.join(here, "cms_e5l*_pool_*.py")):
+        m = re.match(r"cms_((?:e[45])?l\d+)_pool_([a-z])$", _p.basename(path)[:-3])
         if m:
             found.setdefault(m.group(1), []).append("cms_%s_pool_%s" % m.groups())
     out = OrderedDict()
-    for key in sorted(found, key=lambda k: (k.startswith("e4"), int(re.sub(r"^(e4)?l", "", k)))):
+    for key in sorted(found, key=lambda k: (k[:2] if k.startswith("e") else "", int(re.sub(r"^(e[45])?l", "", k)))):
         title = TITLES.get(key)
         assert title, ("pools exist for %s but it has no title here -- add one rather "
                        "than letting the lecture go unchecked" % key)

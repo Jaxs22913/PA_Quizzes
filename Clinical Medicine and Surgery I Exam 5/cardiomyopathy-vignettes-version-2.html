@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b4538c; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardiomyopathy Vignettes 2 — CMS I Exam 5</title>
+<style>
+  :root{
+    --navy:#7a2d5a; --indigo:#b4538c; --gold:#c08a2e; --ice:#faeef4;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Cardiomyopathy &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 5 &middot; Lecture 28</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Dilated</span><span class="chip">Myocarditis</span><span class="chip">Outflow obstruction</span><span class="chip">Restrictive vs constrictive</span><span class="chip">Stress (Takotsubo)</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 20-year-old man with acute myocarditis after a flulike illness is on the ward with heart failure symptoms. He reports new palpitations, and his nurse notes a brief episode of lightheadedness. Which complication poses the most immediate threat to his life?", "opts": [["Aortic dissection", "Aortic dissection is not a complication of myocarditis. The life-threatening risk behind palpitations and presyncope here is ventricular arrhythmia or heart block."], ["Pericardial thickening", "Pericardial thickening marks constrictive pericarditis, the differential of restrictive cardiomyopathy. Myocarditis threatens life through ventricular arrhythmia."], ["Mitral valve prolapse", "Mitral valve prolapse is a valve disorder unrelated to myocarditis. Palpitations with near-syncope in myocarditis signal ventricular arrhythmia or heart block."], ["Ventricular arrhythmia", "Correct. Palpitations, syncope or sudden cardiac death in myocarditis are due to underlying ventricular arrhythmias or atrioventricular block, and myocarditis can cause rapidly progressive, often fatal, arrhythmia."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 51", "slot": "complication", "lead": "complication"}, {"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 24-year-old woman with chest pain and breathlessness after a recent viral illness is being evaluated for myocarditis. Her electrocardiogram shows sinus tachycardia. Which laboratory result would indicate cardiac myonecrosis?", "opts": [["Elevated serum troponin", "Correct. Serum troponin is the indicator of cardiac myonecrosis in myocarditis. The rest of the work-up adds leukocytosis on the blood count, a possibly elevated sedimentation rate and electrocardiogram changes."], ["A low white cell count", "The blood count in myocarditis shows leukocytosis, a raised rather than low white cell count, and it does not measure myocardial injury. Troponin does."], ["Normal sedimentation rate", "The erythrocyte sedimentation rate may be elevated in myocarditis, and in either case it does not indicate myonecrosis. Troponin is the marker of heart muscle injury."], ["A low natriuretic peptide", "A B-type natriuretic peptide below 100 pg/mL argues against heart failure; it is not a marker of myonecrosis. Elevated troponin is."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 54", "slot": "test finding", "lead": "test"}, {"topic": "Takotsubo cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 71-year-old woman admitted with stress cardiomyopathy after a house fire has a repeat echocardiogram that shows a thrombus in the akinetic left ventricular apex. She is in sinus rhythm. Which treatment is now indicated?", "opts": [["Nitrate infusion", "A nitrate infusion does not treat a ventricular thrombus. Supportive care in Takotsubo adds anticoagulation when a left ventricular thrombus is present."], ["Surgical myectomy", "Myectomy relieves septal obstruction in hypertrophic cardiomyopathy. A thrombus in the akinetic apex is treated with anticoagulation."], ["Anticoagulation", "Correct. Treatment of Takotsubo is empiric and supportive and depends on the presentation: anticoagulation if a left ventricular thrombus is present, beta blockers as helpful, and diuretics if heart failure is present."], ["Pacemaker insertion", "A pacemaker treats heart block from conduction disease, which she does not have. A left ventricular thrombus calls for anticoagulation."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 104", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 58-year-old woman with idiopathic dilated cardiomyopathy has taken a beta blocker, an angiotensin-converting enzyme inhibitor, spironolactone and a diuretic for many months. She still has breathlessness on moderate exertion, and a repeat echocardiogram shows an ejection fraction of 25%. Which is the most appropriate next step?", "opts": [["Implantable cardioverter defibrillator", "Correct. An implantable cardioverter defibrillator is indicated when the ejection fraction stays below 35% after maximum medical therapy, because sudden cardiac death from arrhythmia is a major cause of death in dilated cardiomyopathy."], ["Endomyocardial biopsy to find a cause", "Biopsy is not routine and rarely useful in dilated cardiomyopathy; it is kept for rapidly deteriorating function or systemic disease such as hemochromatosis. Her persistent low ejection fraction calls for a defibrillator."], ["Surgical myectomy of the septum", "Myectomy removes septal muscle that obstructs outflow in hypertrophic cardiomyopathy. Her problem is a dilated, weak ventricle, which is treated with a defibrillator after maximal therapy."], ["Stopping the beta blocker", "All patients with dilated cardiomyopathy should stay on a beta blocker and an angiotensin-converting enzyme inhibitor; beta blockers reduce mortality, so stopping it would remove a proven therapy."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 43", "slot": "escalation", "lead": "next step"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 71-year-old woman with restrictive cardiomyopathy and marked biatrial enlargement has had palpitations for a week, and the electrocardiogram now shows atrial fibrillation. Which treatment reduces her risk of embolism?", "opts": [["Surgical myectomy", "Myectomy removes obstructing septal muscle in hypertrophic cardiomyopathy. Embolism from atrial thrombi in restrictive disease is prevented with anticoagulation."], ["A positive inotrope", "Inotropes do not prevent thromboembolism. With atrial fibrillation and big atria, anticoagulation is used to prevent embolism."], ["Anticoagulation", "Correct. Atrial fibrillation is common in restrictive cardiomyopathy because of atrial enlargement, it raises the risk of atrial thrombus, and anticoagulants may be needed to prevent embolism from atrial thrombi."], ["Aggressive diuresis", "Diuretics treat congestion and must be used cautiously in restrictive disease; they do nothing to prevent emboli. Anticoagulation prevents embolism from atrial thrombi."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 99", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 26-year-old man with suspected viral myocarditis has an elevated troponin and normal coronary arteries. His cardiologist wants to see how much of the heart muscle is inflamed without an invasive procedure. Which test shows the extent of inflammation?", "opts": [["Gadolinium-enhanced cardiac magnetic resonance imaging", "Correct. Gadolinium-enhanced magnetic resonance imaging is part of the myocarditis work-up because the gadolinium improves visibility of the inflammation and shows its extent."], ["Ambulatory rhythm monitoring for forty-eight hours", "Ambulatory monitoring detects arrhythmias and grades sudden death risk, most notably in hypertrophic cardiomyopathy. It cannot show inflamed heart muscle."], ["Exercise echocardiography with treadmill testing", "Exercise echocardiography assesses functional capacity, ischemia and obstruction in hypertrophic cardiomyopathy. It does not show the extent of inflammation."], ["Right heart catheterization with pressure tracings", "Pressure tracings help evaluate restrictive physiology. Inflammation is shown noninvasively by gadolinium-enhanced magnetic resonance imaging."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 54", "slot": "test finding", "lead": "test"}, {"topic": "Takotsubo cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 70-year-old woman was admitted with chest pain after a near drowning. Her electrocardiogram showed ST elevation with T-wave inversion, and echocardiography showed hypokinesis of the midsegment and apex of the left ventricle. Which catheterization finding is expected if this is stress cardiomyopathy?", "opts": [["A proximal coronary occlusion", "An occluded coronary artery would mean a true myocardial infarction. The definition of Takotsubo requires the absence of angiographic coronary disease."], ["A ruptured coronary plaque", "Acute plaque rupture is exactly what is absent in stress cardiomyopathy. Catheterization most often shows normal coronary arteries."], ["Triple-vessel narrowing", "Severe multivessel coronary disease would point to ischemic heart disease. In Takotsubo the coronary arteries are most often normal."], ["Normal coronary arteries", "Correct. Stress cardiomyopathy mimics acute coronary syndrome but lacks angiographic coronary artery disease or acute plaque rupture; catheterization most often shows normal coronary arteries."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 103", "slot": "test finding", "lead": "test"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 48-year-old woman with obstructive hypertrophic cardiomyopathy is admitted after surgery with low blood pressure, and a resident proposes a drug to strengthen her heart's contraction. Which drug class should be avoided in her?", "opts": [["Beta blockers such as metoprolol", "Beta blockers are the initial medication for outflow tract obstruction, reducing contractility and improving filling. They are not the class to avoid."], ["Antiarrhythmics such as amiodarone", "Amiodarone reduces the risk of sudden cardiac death and converts atrial fibrillation in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."], ["Calcium channel blockers like verapamil", "Verapamil and diltiazem treat outflow obstruction by slowing the heart and reducing contractility. Drugs that increase contractility are the ones avoided."], ["Positive inotropes such as digoxin", "Correct. Positive inotropes such as digoxin, epinephrine and norepinephrine are avoided because the increased contractility worsens outflow obstruction, raises the risk of myocardial ischemia and may induce arrhythmias."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 77", "slot": "avoid", "lead": "avoid"}, {"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 19-year-old woman with a week of fever and myalgia now has severe breathlessness. She is cold and clammy with a blood pressure of 78/50, heart rate 128, raised jugular venous pressure and crackles throughout both lungs. Myocarditis is suspected. Which is the most appropriate next step?", "opts": [["Exercise testing to grade severity", "Exercise testing has no place in cardiogenic shock. Myocarditis this severe needs aggressive hemodynamic stabilization."], ["Aggressive hemodynamic stabilization", "Correct. Myocarditis can present as cardiogenic shock, and although supportive care is the mainstay, treatment is directed toward the scenario and may require aggressive hemodynamic stabilization first."], ["Outpatient follow-up in one week", "She is in cardiogenic shock, a presentation of myocarditis that can be rapidly fatal. Delay is unsafe; aggressive hemodynamic stabilization comes first."], ["Elective biopsy before any support", "Biopsy can establish the diagnosis later, but it is not done before a patient in shock is stabilized. Aggressive hemodynamic stabilization comes first."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 56", "slot": "escalation", "lead": "next step"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 32-year-old man with hypertrophic cardiomyopathy and outflow tract obstruction has breathlessness and chest tightness on exertion. His blood pressure is 124/78 and heart rate is 76. He takes no cardiac medication yet. Which is the initial medication for his outflow obstruction?", "opts": [["A high-intensity loop diuretic", "Diuretics lower preload and can worsen obstruction; if needed they are used with caution to avoid dehydration. The initial drug for obstruction is a beta blocker."], ["A beta blocker such as metoprolol", "Correct. A beta blocker such as metoprolol is the initial medication for left ventricular outflow tract obstruction; it slows the heart and improves diastolic filling. Verapamil or diltiazem is the alternative."], ["A nitrate such as nitroglycerin", "Nitrates reduce preload and afterload, which aggravates outflow tract obstruction, so they are avoided in hypertrophic cardiomyopathy. A beta blocker comes first."], ["A positive inotrope such as digoxin", "Positive inotropes such as digoxin increase contractility, raise the risk of ischemia and may induce arrhythmias, so they are avoided. A beta blocker is the initial drug."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 76", "slot": "first-line", "lead": "treatment"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 76-year-old man with restrictive cardiomyopathy from cardiac sarcoidosis has two episodes of syncope. His heart rate is 34, and the electrocardiogram shows complete heart block. Which is the most appropriate next step?", "opts": [["Surgical myectomy", "Myectomy relieves outflow obstruction in hypertrophic cardiomyopathy and does not treat heart block. Conduction system disease needs a permanent pacemaker."], ["Alcohol septal ablation", "Alcohol septal ablation treats septal outflow obstruction, and it can itself cause heart block. Complete heart block from nodal fibrosis needs a permanent pacemaker."], ["Endomyocardial biopsy", "A biopsy may help find a cause when imaging and genetic testing are negative, but it does not treat symptomatic heart block. A permanent pacemaker does."], ["Permanent pacemaker", "Correct. Fibrosis of the sinoatrial and atrioventricular nodes in restrictive cardiomyopathy can lead to heart block, and a permanent pacemaker is used for this conduction system disease."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 99", "slot": "escalation", "lead": "next step"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 60-year-old man has just been diagnosed with symptomatic idiopathic dilated cardiomyopathy and an ejection fraction of 25%. He asks what his long-term outlook is. Which statement about his prognosis is most accurate?", "opts": [["Nearly all recover fully in weeks", "Full recovery in most patients describes stress (Takotsubo) cardiomyopathy. Symptomatic dilated cardiomyopathy carries about 50% mortality at five years."], ["Worst outlook of any heart muscle disease", "The poorest prognosis among heart muscle diseases belongs to restrictive cardiomyopathy. Dilated cardiomyopathy is poor too, with 50% mortality at five years."], ["A normal life span without therapy", "Dilated cardiomyopathy is progressive, with 50% mortality at five years once symptomatic, and outcome depends on response to medical therapy."], ["About half die within five years", "Correct. Once symptoms emerge, prognosis is poor overall, with 50% mortality at five years, largely from progressive disease and sudden cardiac death due to arrhythmia. The course depends on response to therapy."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 45", "slot": "prognosis", "lead": "complication"}, {"topic": "Populations and care", "io": "Identify medical care strategies for cardiomyopathies for the following populations. 8. adolescent 9. adult 10. elderly", "q": "A 66-year-old man with stable cardiomyopathy on full medical therapy says he tires after walking a block and feels anxious about exercising. He has no symptoms at rest. Which referral is most appropriate to improve his exercise tolerance?", "opts": [["A competitive sports clearance clinic", "Competitive sport is not the goal for a patient who tires after a block. Structured cardiac rehabilitation builds exercise tolerance and quality of life."], ["A cardiac rehabilitation program", "Correct. Cardiac rehabilitation programs improve exercise tolerance and quality of life, with education on medication adherence, nutrition and symptom monitoring, and psychological support for chronic illness."], ["Hospice referral for end-stage care", "Hospice referral is for end-stage cardiomyopathy. A stable patient with limited exercise tolerance is referred to cardiac rehabilitation instead."], ["Genetic screening of his children", "Genetic screening targets hypertrophic cardiomyopathy in adolescents and families with inherited disease. It would not improve his own exercise tolerance."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 107", "slot": "referral", "lead": "referral"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 71-year-old woman with restrictive cardiomyopathy has fatigue and exercise intolerance along with leg edema, hepatomegaly and ascites, but her lungs are relatively clear. Which pattern of heart failure is expected to dominate in this condition?", "opts": [["Isolated left-sided failure", "Left-sided failure brings pulmonary congestion, crackles and orthopnea to the fore. In restrictive cardiomyopathy right-sided failure often dominates instead."], ["High-output heart failure", "Restrictive cardiomyopathy reduces output because stiff ventricles fill poorly. The dominant pattern is right-sided failure, not a high-output state."], ["Pure systolic failure", "Systolic function is usually normal in restrictive cardiomyopathy; the problem is diastolic filling, and right-sided failure tends to dominate."], ["Right-sided heart failure", "Correct. Although filling pressures are raised in both ventricles, right heart failure is often more prominent and may dominate in restrictive cardiomyopathy, giving edema, hepatomegaly and ascites."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 90", "slot": "manifestation", "lead": "complication"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 17-year-old boy with hypertrophic cardiomyopathy asks his clinician what the most serious risk of his disease is. He has occasional palpitations and plays recreational basketball. Which complication is the leading cause of death in this condition?", "opts": [["Embolic stroke", "Embolic stroke is a risk once atrial fibrillation develops, which is why anticoagulation is used. The leading cause of death is sudden cardiac death."], ["Aortic dissection", "Aortic dissection is not a complication of hypertrophic cardiomyopathy. The leading cause of death is sudden cardiac death, usually from ventricular fibrillation."], ["Sudden cardiac death", "Correct. Sudden cardiac death is the leading cause of mortality in hypertrophic cardiomyopathy, highest in preadolescents and adolescents with extreme exertion, and over 80% of cases are associated with ventricular fibrillation."], ["Progressive heart failure", "Heart failure symptoms gradually progress in hypertrophic cardiomyopathy, but sudden cardiac death, mostly from ventricular fibrillation, is the leading cause of mortality."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 82", "slot": "complication", "lead": "complication"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 67-year-old woman with suspected restrictive cardiomyopathy has right-sided heart failure and big atria on echocardiogram. Her cardiologist wants to measure pressures inside both ventricles to characterize the filling problem. Which invasive test evaluates ventricular pressure tracings?", "opts": [["Exercise echocardiography", "Exercise echocardiography assesses functional capacity and obstruction, mainly in hypertrophic cardiomyopathy. Ventricular pressure tracings need catheterization."], ["Cardiac catheterization", "Correct. Cardiac catheterization is useful in restrictive cardiomyopathy to evaluate ventricular pressure tracings, alongside cardiac magnetic resonance imaging and, when needed, endomyocardial biopsy."], ["Endomyocardial biopsy", "Biopsy samples tissue to confirm or exclude a diagnosis; it does not record pressure tracings. Catheterization measures ventricular pressures."], ["Transesophageal echocardiogram", "Transesophageal echocardiography images the valves and chambers with ultrasound but does not record direct ventricular pressure tracings. Cardiac catheterization does."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 97", "slot": "initial test", "lead": "test"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 60-year-old man with dilated cardiomyopathy has orthopnea (breathlessness lying flat), crackles at both lung bases and diminished breath sounds at the right base. A chest radiograph is ordered. Which finding on the film would indicate pulmonary edema?", "opts": [["Short horizontal lines meeting the pleura", "Correct. Kerley B lines are horizontal lines 1 to 2 cm long that meet the pleura at right angles and indicate pulmonary edema. Cardiomegaly and pleural effusions are the other expected radiograph findings."], ["A small heart with clear lung fields", "Dilated cardiomyopathy shows cardiomegaly, pleural effusions and pulmonary edema on the chest radiograph. A small heart with clear lungs would argue against congestion."], ["A normal film that excludes congestion", "The radiograph in dilated cardiomyopathy is expected to show cardiomegaly and effusions, and edema may show as Kerley B lines. A normal film would not fit his crackles."], ["Isolated thickening of the pericardium", "Pericardial thickening is the imaging clue to constrictive pericarditis, and it is shown on cardiac magnetic resonance imaging rather than as the sign of pulmonary edema."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 39", "slot": "test finding", "lead": "test"}, {"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 45-year-old man presents with new-onset heart failure a week after a flulike illness. He smokes and has hyperlipidemia, so the team wants to exclude coronary disease before labeling this myocarditis. Which test rules out coronary ischemia as the cause of his new heart failure?", "opts": [["Sedimentation rate", "The erythrocyte sedimentation rate may be elevated in myocarditis but is nonspecific and cannot exclude coronary disease. Angiography does."], ["Chest radiograph", "The chest radiograph is nonspecific and may show cardiomegaly, but it cannot show the coronary arteries. Cardiac angiography rules out ischemia."], ["Cardiac angiography", "Correct. Cardiac angiography is used in the myocarditis work-up to rule out coronary ischemia as the cause of new-onset heart failure, which matters in a patient with coronary risk factors."], ["Endomyocardial biopsy", "Biopsy is the gold standard for confirming myocarditis once other causes are excluded, but it does not image the coronary arteries. Angiography rules out ischemia."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 54", "slot": "initial test", "lead": "test"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 64-year-old man has restrictive cardiomyopathy confirmed on imaging, but cardiac magnetic resonance imaging and genetic testing have not identified a cause. His team is considering endomyocardial biopsy. When is biopsy performed in this condition?", "opts": [["Only after cardiac transplantation is done", "Biopsy is used during the diagnostic work-up, when imaging and genetic testing are negative, not only after transplantation."], ["Never, since it cannot change management", "Biopsy is performed precisely when a tissue sample could confirm or exclude a diagnosis that would change management, after negative imaging and genetic tests."], ["When imaging and genetic tests are negative", "Correct. Endomyocardial biopsy is performed when all imaging studies and genetic testing are negative, or when a tissue sample is likely to confirm or exclude a diagnosis that would change management."], ["As the first test in every suspected case", "Biopsy is not the first test; echocardiography, electrocardiogram and radiograph come first, then cardiac magnetic resonance imaging. Biopsy follows negative imaging and genetic testing."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 97", "slot": "gold standard", "lead": "test"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 47-year-old man has new dilated cardiomyopathy with an ejection fraction of 30%. He reports fatigue, heat intolerance and weight loss, and the conjunctivae look pale. Which initial laboratory tests are most useful for finding a contributing cause?", "opts": [["Blood cultures and a throat swab", "Cultures do not appear in the dilated cardiomyopathy laboratory panel. The panel looks for anemia, electrolyte and renal problems, liver disease and thyroid dysfunction."], ["Urine osmolality and cortisol", "Neither test is part of the listed work-up. Anemia is checked with a blood count and thyroid dysfunction with thyroid function tests, alongside metabolic and liver panels."], ["Thyroid function and a blood count", "Correct. The initial laboratory work-up for dilated cardiomyopathy includes a complete blood count for anemia, a metabolic panel, liver function and thyroid function. His symptoms point to thyroid disease and anemia."], ["Serum lipase and amylase levels", "Pancreatic enzymes are not part of the dilated cardiomyopathy work-up. The listed tests are a blood count for anemia, a metabolic panel, liver function and thyroid function."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 36", "slot": "initial test", "lead": "test"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 26-year-old woman with obstructive hypertrophic cardiomyopathy is leaving for a summer hiking trip in a hot climate. She takes a beta blocker and asks how to lower her risk of symptoms while away. Which counseling point is most appropriate?", "opts": [["Take extra diuretic on hot days", "Diuretics lower preload and can aggravate outflow obstruction; they are used with caution to avoid dehydration. Extra doses in the heat would be dangerous."], ["Use alcohol to relax at the campsite", "Patients with hypertrophic cardiomyopathy are taught to avoid excess alcohol consumption, alongside keeping well hydrated and avoiding competitive exertion."], ["Stay well hydrated; avoid dehydration", "Correct. Patients with hypertrophic cardiomyopathy should maintain hydration, because dehydration lowers preload and worsens outflow obstruction; diuretics are used with caution for the same reason."], ["Restrict fluids to soften the murmur", "Fluid restriction reduces preload, which worsens obstruction and makes the murmur louder. Education is to maintain hydration and avoid dehydration."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 82", "slot": "education", "lead": "education"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 73-year-old woman has just been diagnosed with restrictive cardiomyopathy from amyloidosis. She has right-sided heart failure and asks how her condition compares with other kinds of heart muscle disease. Which statement about her prognosis is most accurate?", "opts": [["Poorest of all heart muscle diseases", "Correct. Restrictive cardiomyopathy has the poorest prognosis among all types of heart muscle disease, and it often presents at an advanced stage with pronounced cardiopulmonary symptoms."], ["Complete recovery within weeks", "Complete recovery in most patients is the course of stress (Takotsubo) cardiomyopathy. Restrictive cardiomyopathy has the poorest prognosis of all heart muscle diseases."], ["A normal life span with diuretics", "Diuretics relieve congestion but do not change the outlook, which is the poorest among heart muscle diseases. Transplantation is an option in advanced disease."], ["Better than other cardiomyopathies", "Restrictive cardiomyopathy carries the poorest prognosis among heart muscle diseases rather than a better one, partly because it presents late."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 99", "slot": "prognosis", "lead": "complication"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 66-year-old man has right-sided heart failure with a raised jugular venous pressure and ascites. Echocardiogram shows abnormal diastolic filling, normal-sized ventricles and big atria, but the team cannot tell restrictive cardiomyopathy from constrictive pericarditis. Which test is used to differentiate them?", "opts": [["Ambulatory rhythm monitoring", "Rhythm monitoring detects arrhythmias such as atrial fibrillation but cannot image the pericardium. Cardiac magnetic resonance imaging differentiates the two."], ["Cardiac magnetic resonance imaging", "Correct. Echocardiography alone is not definitive because restrictive cardiomyopathy and constrictive pericarditis look alike; cardiac magnetic resonance imaging differentiates them by showing pericardial thickening in pericarditis."], ["Repeat transthoracic echocardiogram", "Echocardiography alone is not definitive for this distinction, so repeating it adds little. Cardiac magnetic resonance imaging shows the pericardial thickening that settles it."], ["Exercise stress echocardiogram", "Exercise echocardiography is used for functional capacity and obstruction in hypertrophic cardiomyopathy. Magnetic resonance imaging separates restriction from constriction."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 96", "slot": "differential", "lead": "test"}, {"topic": "Populations and care", "io": "Identify medical care strategies for cardiomyopathies for the following populations. 8. adolescent 9. adult 10. elderly", "q": "A 15-year-old boy is seen for a sports physical. He has no symptoms, but his father was recently diagnosed with hypertrophic cardiomyopathy, which is inherited in an autosomal dominant pattern. Which strategy for this adolescent is most appropriate?", "opts": [["Genetic screening for the condition", "Correct. Age-specific strategies for adolescents include genetic screening for hypertrophic cardiomyopathy, and disease detected in a family member is a common reason evaluation begins. One affected parent is enough to pass it on."], ["Waiting until adulthood to evaluate", "Hypertrophic cardiomyopathy is the leading cause of sudden death in preadolescents and adolescents, so evaluation should not wait. Genetic screening is the adolescent strategy."], ["A routine chest radiograph each year", "The chest radiograph may be normal in hypertrophic cardiomyopathy and is not a screening tool. Adolescents with an affected parent get genetic screening."], ["An endomyocardial biopsy at this visit", "Biopsy has no role in screening relatives. The adolescent strategy for a family history of hypertrophic cardiomyopathy is genetic screening."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 105", "slot": "referral", "lead": "next step"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 59-year-old man with obstructive hypertrophic cardiomyopathy has just undergone alcohol septal ablation, in which alcohol is injected through a catheter into a septal branch of the coronary artery. He asks when he can expect his symptoms to improve. Which answer is most accurate?", "opts": [["Never; it is a diagnostic test", "Alcohol septal ablation is a treatment for outflow obstruction, not a diagnostic test. The septum thins over months after the therapeutic infarction."], ["Over months as the septum thins", "Correct. Alcohol septal ablation induces a therapeutic infarction of the proximal septum, and it takes months for the septum to thin and the outflow obstruction to ease."], ["Within minutes of the injection", "The ablation creates a controlled infarction of septal muscle, and the benefit comes as the septum thins, which takes months rather than minutes."], ["Only after a repeat injection", "A repeat procedure is not routine; the effect develops over months as the infarcted septal muscle thins. Reintervention is needed in a minority of patients."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 81", "slot": "prognosis", "lead": "education"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 38-year-old woman with obstructive hypertrophic cardiomyopathy still has disabling breathlessness despite a beta blocker and later verapamil. Echocardiogram shows systolic anterior motion (the anterior mitral leaflet pulled into the outflow tract) with mitral regurgitation. Which is the most appropriate next step?", "opts": [["Permanent pacemaker alone", "A permanent pacemaker treats conduction disease such as heart block. Refractory outflow obstruction is relieved by removing septal muscle with myectomy or alcohol septal ablation."], ["Long-term nitrate therapy", "Nitrates reduce preload and afterload and aggravate outflow tract obstruction, so they are avoided. Refractory obstruction goes on to septal reduction by myectomy."], ["Escalating loop diuretics", "Diuretics lower preload and can worsen obstruction; they are used only with caution. Symptoms refractory to medication are treated with septal myectomy."], ["Surgical septal myectomy", "Correct. Surgical myectomy excises part of the septal myocardium causing outflow obstruction, and the mitral regurgitation from systolic anterior motion may resolve with myectomy alone, without valve replacement."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 79", "slot": "escalation", "lead": "next step"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 52-year-old woman with hypertrophic cardiomyopathy has new palpitations. Her pulse is irregularly irregular and the electrocardiogram shows atrial fibrillation. Echocardiogram shows left atrial enlargement. Which treatment prevents embolic stroke in her?", "opts": [["Anticoagulation", "Correct. Atrial fibrillation in hypertrophic cardiomyopathy is treated with anticoagulation to prevent embolic stroke, together with antiarrhythmics such as amiodarone and, where needed, radiofrequency ablation."], ["Digoxin for rate control", "Digoxin is a positive inotrope that is avoided in hypertrophic cardiomyopathy because it increases contractility. Stroke prevention in atrial fibrillation is anticoagulation."], ["Nitrate therapy", "Nitrates reduce preload and afterload, aggravate outflow obstruction and do nothing to prevent emboli. Anticoagulation prevents embolic stroke in atrial fibrillation."], ["Diuretic therapy", "Diuretics are used only with caution in hypertrophic cardiomyopathy and do not prevent thromboembolism. Anticoagulation is the stroke-prevention step."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 78", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 30-year-old man is diagnosed with dilated cardiomyopathy. His father had a cardiomyopathy and his older brother died suddenly at 35. No alcohol, drug or chemotherapy exposure is found. Which is the most appropriate referral for him and his family?", "opts": [["Family screening only after age 60", "Most dilated cardiomyopathy presents between 20 and 60, and his brother died at 35. Waiting until 60 would come too late; genetic counseling is indicated now."], ["Genetic counseling for the family", "Correct. Familial dilated cardiomyopathy accounts for up to 35% of cases, usually autosomal dominant, and genetic counseling is part of patient education when there is a family history of cardiomyopathy or sudden death."], ["Reassurance that it is not inherited", "A family history of cardiomyopathy and sudden death is a red flag for familial disease, which is common and usually autosomal dominant. Reassurance would miss relatives at risk."], ["Heart biopsies for his relatives", "Biopsy is rarely useful in dilated cardiomyopathy and is not a family screening tool. The step for a positive family history is genetic counseling."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 45", "slot": "referral", "lead": "referral"}, {"topic": "Populations and care", "io": "Identify medical care strategies for cardiomyopathies for the following populations. 8. adolescent 9. adult 10. elderly", "q": "A 79-year-old man with cardiomyopathy has become lightheaded on standing since his medications were increased at his last visit. He is frail and has lost weight. Which parts of his drug therapy call for particular caution at his age?", "opts": [["Diuretics and vasodilators", "Correct. Age-specific strategies for elderly patients with cardiomyopathy call for cautious use of diuretics and vasodilators, with therapy tailored to comorbidity and frailty and a focus on symptom control."], ["Sodium restriction advice", "Sodium restriction is a lifestyle measure, not a drug, and it is part of adult cardiomyopathy care. The medications singled out for caution in the elderly are diuretics and vasodilators."], ["Home-based rehabilitation", "Home-based rehabilitation is recommended for elderly or mobility-limited patients and is not a drug. Caution in the elderly applies to diuretics and vasodilators."], ["Implanted device checks", "Device follow-up is not the concern here. His lightheadedness after medication changes fits the elderly caution about diuretics and vasodilators."]], "c": 0, "cite": "Cardiomyopathy - Carter.pptx, Slide 106", "slot": "avoid", "lead": "avoid"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 46-year-old man who has drunk heavily for 20 years has six months of worsening breathlessness on exertion and orthopnea (breathlessness lying flat). The apical impulse is displaced laterally and a third heart sound (an early diastolic sound just after the second heart sound) is heard. Echocardiogram shows dilated, thin-walled ventricles with an ejection fraction of 25%, and coronary angiography shows no significant narrowing. Which is the most likely diagnosis?", "opts": [["Stress cardiomyopathy", "Stress (Takotsubo) cardiomyopathy is a transient regional weakness of the mid and apical segments after a stressor, mostly in postmenopausal women, not a slow global dilation over months."], ["Dilated cardiomyopathy", "Correct. Dilation and impaired contraction without severe coronary disease or pressure or volume overload define dilated cardiomyopathy, and long-term excess alcohol is one of its named causes. The displaced apical impulse and third heart sound fit a dilated, volume-overloaded ventricle."], ["Hypertrophic cardiomyopathy", "Hypertrophic cardiomyopathy shows a thick, often asymmetric septum with a small cavity and a normal or high ejection fraction, not thin, dilated walls with an ejection fraction of 25%."], ["Restrictive cardiomyopathy", "Restrictive cardiomyopathy keeps a near-normal cavity size and systolic function with stiff walls and big atria. Dilated, thin walls with poor squeeze are the dilated pattern instead."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 17", "slot": "differential", "lead": "diagnosis"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

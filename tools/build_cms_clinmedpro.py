@@ -22,7 +22,7 @@ Page shell (head, pull-refresh, back bar, footer logo, service-worker script)
 is sliced from that exam's own study guide so palette + chrome match exactly.
 
 Structure (keep identical if this is merged into tools/build_cms_clinmedpro.py):
-  header.top           h1, course line, block line, .hdr-links (Exam 1-4 Clin Med Pro guides + study guide)
+  header.top           h1, course line, block line, .hdr-links (every exam's Clin Med Pro guide + study guide)
   .layout.wrap
     nav.toc            a.top-link per lecture (#lNN), a.sub-link per condition (#<cond id>)
     main
@@ -36,7 +36,11 @@ Usage: python3 tools/build_cms_clinmedpro.py <exam> [<exam> ...]
 """
 import html, json, os, re, sys
 
-REPO = os.path.expanduser("~/Developer/PA_Quizzes")
+# The repo this file sits in (identical to ~/Developer/PA_Quizzes for the live
+# clone); PA_QUIZZES_REPO overrides it, e.g. to build into a scratch copy.
+# Changed 2026-09-25: the hard-coded path meant a scratch run wrote into the
+# live clone.
+REPO = os.environ.get("PA_QUIZZES_REPO") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NC = "Not covered in the lecture"
 CONTESTED = "Contested on the slides"
 FIELDS = [
@@ -51,7 +55,8 @@ FIELDS = [
     ("treatment", "Treatment/Therapy"),
     ("mortality", "Mortality &#9733;"),
 ]
-BLOCKS = {1: "Dermatology", 2: "Ophthalmology", 3: "Ear, nose and throat", 4: "Cardiology I"}
+BLOCKS = {1: "Dermatology", 2: "Ophthalmology", 3: "Ear, nose and throat", 4: "Cardiology I",
+          5: "Cardiology II"}
 
 e = lambda s: html.escape(s or "", quote=True)
 
@@ -229,7 +234,7 @@ def render(n):
     nc_mort = sum(1 for L in lectures for c in L["conditions"] if c["fields"]["mortality"].strip() == NC)
 
     links = []
-    for k in (1, 2, 3, 4):
+    for k in sorted(BLOCKS):
         label = "Exam %d &middot; %s" % (k, BLOCKS[k])
         href = "../Clinical Medicine and Surgery I Exam %d/cms-exam-%d-clin-med-pro-guide.html" % (k, k)
         if k == n:

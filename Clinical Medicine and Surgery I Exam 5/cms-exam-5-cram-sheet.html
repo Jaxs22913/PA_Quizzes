@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — CMS I Exam 5</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#7a2d5a;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Medicine and Surgery I · Exam 5 · Class of 2028</div>
+    <h1>CMS I Exam 5 Cram Sheet</h1>
+    <p class="sub">Arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed from the Exam 5 study guide: claudication and the ankle-brachial index, acute limb ischemia, carotid and aneurysm thresholds, dissection, and the five cardiomyopathies. Built from the slides only; lecture audio emphasis to be added after 10/01. The rest of the block follows when posted.</p>
+    <div class="toc">
+      <a href="#l27-pad" style="color:#5f2346"><span class="dot" style="background:#7a2d5a"></span>Peripheral Artery Disease</a>
+      <a href="#l27-cli" style="color:#7f2918"><span class="dot" style="background:#a3341f"></span>Critical Limb Ischemia &amp; Acute Occlusion</a>
+      <a href="#l27-carotid" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Carotid Artery Disease</a>
+      <a href="#l27-aorta" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Aneurysms &amp; Dissection</a>
+      <a href="#l28-dcm" style="color:#46306c"><span class="dot" style="background:#5a3d8a"></span>Dilated Cardiomyopathy</a>
+      <a href="#l28-myo" style="color:#18482d"><span class="dot" style="background:#1f5c3a"></span>Myocarditis &amp; Takotsubo</a>
+      <a href="#l28-hcm" style="color:#5f2337"><span class="dot" style="background:#7a2d47"></span>Hypertrophic Cardiomyopathy</a>
+      <a href="#l28-rcm" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Restrictive Cardiomyopathy &amp; Populations</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-5-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="l27-pad" style="--acc:#7a2d5a;--acc-bg:#ece2e8;--acc-zebra:#f6f0f3;--acc-ink:#5f2346">
+    <div class="shead"><span class="dot" style="background:#7a2d5a"></span><h2>Peripheral Artery Disease</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Who</td><td>Older than <b>60</b> with no other risk factors, or <b>50 with risk factors</b>; males &gt; females; <b>half also have coronary artery disease</b>. Smoking = <b>three times</b> the risk; elevated homocysteine = earlier atherosclerosis.</td></tr>
+          <tr><td class="h">Claudication</td><td>Activity pain relieved by rest in <b>about 10 minutes</b>, analogous to angina. <b>Site = level:</b> buttock/hip = aortoiliac; thigh = common femoral; <b>upper two-thirds of calf = superficial femoral (most common)</b>; lower third of calf = popliteal; foot = tibial/peroneal.</td></tr>
+          <tr><td class="h">Leriche triad</td><td>Claudication + <b>absent or diminished femoral pulses</b> + <b>erectile dysfunction</b> (aortoiliac).</td></tr>
+          <tr><td class="h">Exam</td><td>Dry, thin, shiny skin; hair and nail loss; atrophy; cool limb (temperature line &asymp; level); pulses gone <b>below</b> the stenosis; capillary refill &gt; 2 s; bruits. <b>Buerger:</b> leg up 45&deg; for 1 minute &rarr; <b>pallor</b>; dangle &rarr; <b>dependent rubor</b>. Darker skin: use temperature, texture, capillary refill.</td></tr>
+          <tr><td class="h">Ankle-brachial index</td><td>Initial bedside test. Higher ankle &divide; higher arm; the <b>lower leg</b> is the overall index. <b>0.9&ndash;1.3</b> normal &middot; <b>0.4&ndash;0.9</b> claudication &middot; <b>0&ndash;0.4</b> rest pain / tissue loss &middot; <b>&gt; 1.3 abnormal</b> (calcified, non-compressible &mdash; diabetes).</td></tr>
+          <tr><td class="h">Imaging</td><td><b>Duplex ultrasound</b> = mainstay initial imaging (no contrast, no radiation). Computed tomography angiography: no with contrast allergy or poor renal function. Magnetic resonance angiography: the contrast-allergy alternative; no with pacemaker or intracranial aneurysm clips. <b>Conventional angiography = gold standard</b>, used to guide intervention.</td></tr>
+          <tr><td class="h">Treatment</td><td>Stop smoking; blood pressure &lt; 140/90 (&lt; 130/80 diabetes or renal failure); diabetes and weight control; <b>supervised exercise</b> (beats home-based) 30&ndash;45 min &times;3/week. Aspirin, clopidogrel, <b>cilostazol</b>; simvastatin or pravastatin (low-density lipoprotein &lt; 100, &lt; 70 high risk); pentoxifylline; folic acid + B12 + B6 for high homocysteine.</td></tr>
+          <tr><td class="h">Revascularize when</td><td>Disabling claudication despite exercise and drugs: angioplasty &plusmn; stent, atherectomy; <b>bypass (saphenous vein or synthetic) mainly for critical limb ischemia</b>; endarterectomy; amputation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l27-cli" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Critical Limb Ischemia &amp; Acute Occlusion</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Rest pain</td><td>Constant, burning, forefoot and toes, <b>worse elevated or reclining</b>, wakes at night, narcotics fail. <b>Relieved by dangling the leg or walking</b> (the paradox).</td></tr>
+          <tr><td class="h">Ulcers &amp; gangrene</td><td>Ulcers at toe tips, between digits, metatarsal heads: <b>dry, punched out, painful, little bleeding</b>; osteomyelitis risk. <b>Dry gangrene</b>: hard, clear demarcation. <b>Wet gangrene = surgical emergency</b> (moist, edema, blisters, clostridial gas, sepsis).</td></tr>
+          <tr><td class="h">Acute limb ischemia</td><td><b>Sudden occlusion of a previously patent artery &mdash; vascular emergency.</b> Emboli: heart is the source in <b>80&ndash;90%</b> (atrial fibrillation, post-infarct ventricular thrombus). Six P&rsquo;s: pain, pallor, pulselessness, paresthesia, paralysis, poikilothermia. <b>Earliest neurologic sign: sensory loss over the dorsum of the foot.</b></td></tr>
+          <tr><td class="h">Rutherford</td><td><b>I</b> viable &middot; <b>IIA</b> salvageable if prompt (no sensory loss, no weakness) &middot; <b>IIB</b> salvageable only with immediate revascularization &rarr; surgical suite &middot; <b>III</b> irreversible &rarr; major amputation, no imaging needed. (IIA arterial Doppler: slides disagree.)</td></tr>
+          <tr><td class="h">Treat</td><td><b>Immediate vascular surgery consult</b> + <b>intravenous heparin</b>; catheter-directed thrombolysis (alteplase) if <b>&lt; 14 days</b>; thromboembolectomy; bypass; amputation.</td></tr>
+          <tr><td class="h">Blue toe</td><td>Atheroembolism (cholesterol, fibrin, platelets from proximal plaque): painful blue toe, livedo reticularis &mdash; <b>distal pulses still palpable</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l27-carotid" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Carotid Artery Disease</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why it matters</td><td><b>80% of new noncardioembolic strokes</b>; strokes mostly from <b>plaque rupture</b>. Asymptomatic outnumber symptomatic <b>4:1</b>.</td></tr>
+          <tr><td class="h">Symptoms</td><td>Transient ischemic attack (&lt; 24 h), stroke, <b>amaurosis fugax</b> (monocular blindness like a curtain descending). Auscultate each carotid separately, breath held.</td></tr>
+          <tr><td class="h">Tests</td><td><b>Duplex ultrasonography</b> = initial screening and follow-up. Computed tomography / magnetic resonance angiography. <b>Digital subtraction angiography = gold standard</b>, not for screening. <b>Do not screen asymptomatic adults.</b></td></tr>
+          <tr><td class="h">Treat</td><td>&lt; 50%: medical (antiplatelets, blood pressure, glucose, statins, <b>stop smoking &mdash; nearly doubles stroke risk</b>). Surgery: <b>symptomatic &gt; 70%</b> or <b>asymptomatic &gt; 80% with life expectancy &gt; 5 years</b>. <b>Endarterectomy = gold standard</b> (stroke or nerve damage); stenting for poor surgical candidates.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l27-aorta" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Aneurysms &amp; Dissection</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Dilation &gt; <b>50%</b> of normal. Infrarenal aorta 2 cm; <b>&gt; 3 cm = aneurysm</b>; <b>90% infrarenal</b>. True = all three layers (saccular or fusiform).</td></tr>
+          <tr><td class="h">Abdominal: risk</td><td><b>Smoking ever = strongest</b>; male (2:1 under 80, 1:1 over 80); age; Caucasian; atherosclerosis; hypertension; family history; other aneurysms. <b>Protective: female, non-Caucasian, diabetes</b> (but women rupture more). 15,000 deaths/year.</td></tr>
+          <tr><td class="h">Abdominal: signs</td><td>Mostly incidental. Expansion pain (hypogastrium, back, flank, groin), early satiety, blue toe. <b>Rupture triad (50%): pain + pulsatile mass (virtually diagnostic) + hypotension</b>; Grey Turner sign (flank ecchymosis). Bruit nonspecific.</td></tr>
+          <tr><td class="h">Abdominal: tests</td><td><b>Ultrasound = initial screening</b> and serial size. X-ray calcified outline 75%. <b>Computed tomography angiography = best diagnostic and planning study.</b> Magnetic resonance imaging for stable dye-allergic patients. Type and crossmatch.</td></tr>
+          <tr><td class="h">Abdominal: sizes</td><td>3.0&ndash;3.9 cm ultrasound <b>every 3 years</b>; 4.0&ndash;5.4 cm <b>every 6&ndash;12 months</b>. Specialist at <b>4.5 cm</b>; urgent for pain at any size. <b>Repair: &ge; 5.0 cm women, &gt; 5.5 cm men, or 0.5 cm growth in 6 months.</b> Rupture rare &lt; 5 cm.</td></tr>
+          <tr><td class="h">Abdominal: treat</td><td>Stop smoking, aggressive blood pressure control, moderate exercise. Endovascular or open repair. Symptomatic unruptured: large-bore lines, pain and blood pressure control (beta blocker), repair. <b>Ruptured: surgical emergency</b> &mdash; large-bore lines, type and crossmatch.</td></tr>
+          <tr><td class="h">Thoracic</td><td>Hypertension common; mostly incidental on chest X-ray (<b>widened mediastinum</b>). Ascending &rarr; aortic regurgitation, heart failure; <b>arch &rarr; hoarseness</b>; descending &rarr; dysphagia, stridor, cough. <b>Computed tomography angiography most used.</b> Beta blockers, blood pressure control; urgent imaging for pain. <b>Repair all symptomatic</b>; ascending &gt; 5.5, descending &gt; 6.0 cm, growth &gt; 0.5 cm/<b>year</b>.</td></tr>
+          <tr><td class="h">Pseudoaneurysm</td><td>Blood outside the wall after arterial rupture &mdash; <b>femoral artery after catheterization</b>. Thin wall, irregular, hematoma. <b>&lt; 2 cm watch</b>; ultrasound-guided <b>thrombin injection</b>.</td></tr>
+          <tr><td class="h">Dissection</td><td>Intimal tear &rarr; false lumen in the media. 60s&ndash;70s (younger in <b>Marfan</b>), male, <b>hypertension</b>. <b>Sudden tearing chest pain</b> that moves; syncope; aortic regurgitation. Electrocardiogram may be normal; <b>computed tomography chest and abdomen</b>. <b>Systolic 100&ndash;120 mmHg with esmolol or nitroprusside</b>; surgery; high untreated mortality.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l28-dcm" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Dilated Cardiomyopathy</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td><b>Most common</b> cardiomyopathy: dilated, poorly contracting ventricle(s) <b>without</b> severe coronary disease or pressure/volume overload &rarr; systolic failure, globular heart; mitral (early) and tricuspid regurgitation.</td></tr>
+          <tr><td class="h">Who / why</td><td>Ages 20&ndash;60, male, high in African Americans. Idiopathic; <b>familial up to 35%</b> (autosomal dominant); viral or Chagas myocarditis; chemotherapy; <b>alcohol (can recover if stopped)</b>; thiamine deficiency; lupus, rheumatoid arthritis; <b>peripartum</b> (last trimester to 6 months after delivery). Idiopathic = main indication for transplant.</td></tr>
+          <tr><td class="h">Signs</td><td>Progressive exertional dyspnea, orthopnea, paroxysmal nocturnal dyspnea, edema; <b>laterally displaced impulse, third heart sound</b>, regurgitant murmurs, narrow pulse pressure, jugular distension, hepatojugular reflux.</td></tr>
+          <tr><td class="h">Tests</td><td><b>Normal electrocardiogram almost rules it out.</b> Echo: <b>dilated thin walls</b>, ejection fraction &lt; 40%. X-ray: cardiomegaly, Kerley B lines. B-type natriuretic peptide &lt; 100 pg/mL excludes heart failure. Magnetic resonance imaging for inflammatory or infiltrative causes; biopsy rarely.</td></tr>
+          <tr><td class="h">Treat</td><td>As chronic heart failure: <b>every patient gets a beta blocker + angiotensin-converting enzyme inhibitor</b>; loop diuretics; spironolactone; sacubitril/valsartan. Anticoagulate only for atrial fibrillation, artificial valve or mural thrombus. <b>Defibrillator if ejection fraction &lt; 35% after maximal therapy</b>; biventricular pacemaker; assist device (bridge or destination); transplant.</td></tr>
+          <tr><td class="h">Teach / outlook</td><td>Remove the cause; <b>sodium &lt; 2 g/day</b>; genetic counseling if familial. <b>50% dead at 5 years once symptomatic.</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l28-myo" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>Myocarditis &amp; Takotsubo</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Myocarditis: who</td><td>Otherwise healthy, <b>young males</b>; <b>flulike illness 1&ndash;2 weeks before</b>; viral most frequent (Coxsackie B, parvovirus B19, human herpesvirus 6, COVID-19 (coronavirus disease 2019)...). Viral myocarditis = 20% of dilated cardiomyopathy.</td></tr>
+          <tr><td class="h">Myocarditis: picture</td><td>New heart failure or cardiogenic shock with no prior heart disease; palpitations, syncope, sudden death (ventricular arrhythmia, heart block).</td></tr>
+          <tr><td class="h">Myocarditis: tests</td><td>Troponin, leukocytosis, sedimentation rate, echo; angiography to exclude ischemia; gadolinium magnetic resonance imaging. <b>Endomyocardial biopsy = gold standard</b>, for unexplained deterioration not responding to treatment.</td></tr>
+          <tr><td class="h">Myocarditis: treat</td><td><b>Supportive care is the mainstay</b>; stabilize. Most mild cases recover; <b>one third later develop dilated cardiomyopathy</b>.</td></tr>
+          <tr><td class="h">Takotsubo</td><td><b>90% postmenopausal women</b> after a big emotional or physical stressor; low cardiac risk. Mimics acute coronary syndrome: chest pain, dyspnea; troponin up; <b>ST elevation, T inversion</b>; echo <b>mid and apical hypokinesis</b>. <b>Confirmed by catheterization: normal coronaries.</b> Treat by the acute coronary syndrome protocol, admit to cardiology; beta blockers. <b>Most recover completely.</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l28-hcm" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Hypertrophic Cardiomyopathy</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What / who</td><td>Unexplained left ventricular hypertrophy, <b>asymmetric septal</b>. <b>Autosomal dominant</b> (sarcomere genes); <b>1 in 500</b>; male. <b>Leading cause of sudden death in preadolescents and adolescents</b> (extreme exertion; &gt; 80% ventricular fibrillation).</td></tr>
+          <tr><td class="h">Obstruction</td><td>Septum narrows the outflow tract + <b>systolic anterior motion</b> of the anterior mitral leaflet &rarr; mid-systolic obstruction.</td></tr>
+          <tr><td class="h">Symptoms</td><td>Dyspnea (commonest), palpitations, <b>exertional syncope / presyncope on standing = high sudden-death risk, urgent work-up</b>, angina without coronary disease.</td></tr>
+          <tr><td class="h">Signs</td><td>Normal blood pressure and rate; <b>pulsus bisferiens</b> (double peak); forceful sustained apex; <b>fourth heart sound</b>. Crescendo-decrescendo murmur, left sternal border 3rd&ndash;4th space, to the suprasternal notch, <b>not the carotids</b>.</td></tr>
+          <tr><td class="h">Maneuvers</td><td><b>More blood in the heart = softer; less = louder.</b> Squat, leg raise, handgrip &rarr; softer. <b>Valsalva, standing</b>, amyl nitrite &rarr; louder. Breathing: no effect.</td></tr>
+          <tr><td class="h">Tests</td><td><b>Echocardiography = test of choice</b>: wall <b>&ge; 1.5 cm</b>, septal pattern, small cavity, ejection fraction normal (&gt; 75% late). Electrocardiogram: inferior and lateral Q waves, left axis deviation. Magnetic resonance imaging if echo questionable; 24&ndash;48 h ambulatory monitor; catheterization only before invasive therapy; genetic testing does not change treatment.</td></tr>
+          <tr><td class="h">Treat</td><td><b>Beta blocker first</b>, then verapamil or diltiazem. <b>AVOID nitrates, dehydrating diuretics, digoxin, epinephrine, norepinephrine.</b> Amiodarone (cuts sudden death), disopyramide, defibrillator; atrial fibrillation &rarr; anticoagulate. <b>Myectomy</b> or <b>alcohol septal ablation</b> (months to thin).</td></tr>
+          <tr><td class="h">Teach</td><td>Mild to moderate <b>noncompetitive</b> activity; <b>stay hydrated</b>; avoid excess alcohol. Sudden death = leading cause of death.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l28-rcm" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Restrictive Cardiomyopathy &amp; Populations</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td><b>Least common.</b> Stiff, normal-size ventricles; <b>big atria</b>, atrial fibrillation; ejection fraction preserved until late; <b>right-sided failure dominates</b>; heart block from nodal fibrosis. <b>Poorest prognosis</b> of all.</td></tr>
+          <tr><td class="h">Causes</td><td><b>Amyloidosis (most common in the United States)</b>, hemochromatosis, sarcoidosis, <b>mediastinal radiation, chemotherapy</b>; idiopathic; genetic.</td></tr>
+          <tr><td class="h">Signs</td><td>Late presentation; hepatomegaly, ascites, pedal edema; prefers sitting; raised jugular venous pressure; <b>Kussmaul sign</b> (jugular pressure <b>rises with inspiration</b>); fourth heart sound if no regurgitation.</td></tr>
+          <tr><td class="h">Tests</td><td>Electrocardiogram: <b>low QRS voltage in amyloid</b>. Echo: big atria, preserved function &mdash; <b>not definitive</b>. <b>Cardiac magnetic resonance imaging separates it from constrictive pericarditis (pericardial thickening = pericarditis).</b> Biopsy when all else is negative.</td></tr>
+          <tr><td class="h">Treat</td><td>Treat the cause; <b>diuretics with caution (preload-dependent)</b>; beta blockers, verapamil or diltiazem; anticoagulate atrial thrombi; pacemaker for heart block; transplant.</td></tr>
+          <tr><td class="h">Populations</td><td><b>Adolescent:</b> genetic screening for hypertrophic cardiomyopathy, activity restriction if high risk. <b>Adult:</b> guideline-directed therapy, devices, sodium restriction, alcohol cessation, assist device or transplant. <b>Elderly:</b> tailored to frailty, <b>cautious diuretics and vasodilators</b>, symptom control, palliative discussions. Rehab and hospice referral in end-stage disease.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the CMS I Exam 5 Study Guide (Class of 2028). For the full explanation behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
