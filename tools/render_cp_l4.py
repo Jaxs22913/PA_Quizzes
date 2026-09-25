@@ -1,5 +1,22 @@
 #!/usr/bin/env python3
-"""Render the two Clinical Pathophysiology I Lecture 4 quizzes."""
+"""Render the two Clinical Pathophysiology I Lecture 4 quizzes.
+
+DEFAULT MODE IS SPLICE (2026-09-24). The shipped pages were rendered on
+2026-08-26 from the quiz template as it stood then. The template has since
+gained class picks, "You vs the class" and picture-stem styles, so a full
+re-render no longer reproduces the shipped page: it would silently switch those
+engine features on for this quiz (class picks are "new exams only") and restore
+the build-time intro. So by default this script only replaces the
+`const QUESTIONS = [...]` literal inside each existing page with the questions
+from cp_l4_sets.json (json.dumps indent=2, the pages' own format), and asserts
+the literal round-trips before touching it. Everything else on the page is
+left byte-for-byte alone. Proof on 2026-09-24: splice(sets) == shipped page.
+
+    python3 render_cp_l4.py          # splice sets into the existing pages
+    python3 render_cp_l4.py --full   # full template re-render (engine changes!)
+
+Chain: cp_l4_pool_[a-d].py -> cp_l4_partition.py -> cp_l4_sets.json -> this.
+"""
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))
@@ -32,8 +49,31 @@ INTRO = ("Thirty questions on ophthalmic pathophysiology, drawn from the ten num
          "question asks it. "
          "<b>Two figures in this deck disagree with each other</b> on the normal intraocular "
          "pressure &mdash; slide 24 says 10&ndash;21 mmHg and slide 25 says about 6&ndash;19 "
-         "&mdash; so nothing is graded on that value. Every question cites its slide, or the "
-         "recording it came from.")
+         "&mdash; so nothing is graded on that value. Every question cites its slide.")
+PFX = "const QUESTIONS = "
+
+
+def splice(path, questions):
+    txt = open(path, encoding="utf-8").read()
+    assert txt.count(PFX) == 1, "expected exactly one QUESTIONS literal in %s" % path
+    start = txt.index(PFX) + len(PFX)
+    old, end = json.JSONDecoder().raw_decode(txt, start)
+    assert txt[end] == ";", "QUESTIONS literal not terminated by ';' in %s" % path
+    assert json.dumps(old, ensure_ascii=False, indent=2) == txt[start:end], (
+        "QUESTIONS literal in %s is not in json.dumps(indent=2) form; refusing to splice" % path)
+    new = txt[:start] + json.dumps(questions, ensure_ascii=False, indent=2) + txt[end:]
+    if new != txt:
+        open(path, "w", encoding="utf-8").write(new)
+    return new != txt
+
+
+if "--full" not in sys.argv:
+    for n, key in ((1, "set1"), (2, "set2")):
+        fn = "ophthalmic-pathophys-quiz.html" if n == 1 else "ophthalmic-pathophys-quiz-version-2.html"
+        changed = splice(os.path.join(OUT, fn), S[key])
+        print("spliced" if changed else "unchanged", fn, "(%d questions)" % len(S[key]))
+    sys.exit(0)
+
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "ophthalmic-pathophys-quiz.html" if n == 1 else "ophthalmic-pathophys-quiz-version-2.html"
     html = render(title=f"Ophthalmic Pathophysiology Quiz {n} &mdash; Clin Path I Exam 1",

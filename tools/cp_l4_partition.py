@@ -105,7 +105,7 @@ KFE_TOPICS = {
     "visual pathway":       {"Visual pathway", "Visual field defects",
                              "Optic neuropathy"},
     "refraction errors":    {"Myopia", "Hyperopia", "Astigmatism"},
-    "retinal detachment":   {"Retinal detachment", "Vitreous ageing"},
+    "retinal detachment":   {"Retinal detachment", "Vitreous aging"},
     "glaucoma":             {"Glaucoma mechanism", "Open-angle glaucoma",
                              "Angle-closure glaucoma"},
     "presbyopia":           {"Presbyopia"},
@@ -230,6 +230,14 @@ if __name__ == "__main__":
                                      "exam" % name)
     print("exam-list check: both sets cover all seven topics he named aloud\n")
 
+    # GUARD (2026-09-25): recordings weight emphasis, they are never a fact
+    # source. A pool item whose cite is the recording (au()) has no slide
+    # behind it, so it may not ship. "Which conditions can coexist with
+    # astigmatism?" shipped that way and was replaced in cp_l4_sets.json by the
+    # slide-12 amblyopia item.
+    _rec = [q["q"][:60] for q in s1 + s2 if "recording" in q["cite"].lower()]
+    assert not _rec, "recording-only questions selected (no slide behind them): %r" % _rec
+
     for name, s in (("SET 1", s1), ("SET 2", s2)):
         pos = Counter(q["c"] for q in s)
         print("%s  n=%d  positions %s  gameable %.1f%%  objectives %d  topics %d  kfe %d"
@@ -237,6 +245,20 @@ if __name__ == "__main__":
                  len(set(q["io"] for q in s)), len(set(q["topic"] for q in s)),
                  sum(1 for q in s if q.get("kfe"))))
 
-    with open(os.path.join(HERE, "cp_l4_sets.json"), "w", encoding="utf-8") as fh:
+    # GUARD (2026-09-25): the selection above is an UNSEEDED random search, so a
+    # re-run picks different questions/orders/keys than the shipped pages. Since
+    # 2026-09-24 cp_l4_sets.json also holds hand-repaired stems and explanations
+    # (thin-explanation + self-contained fixes) that the pages were spliced from
+    # (render_cp_l4.py). Overwriting it would silently discard them. Only pass
+    # --force when deliberately rebuilding BOTH quizzes from scratch.
+    out = os.path.join(HERE, "cp_l4_sets.json")
+    if os.path.exists(out) and "--force" not in sys.argv:
+        old = json.load(open(out, encoding="utf-8"))
+        same = all([q["q"] for q in old[k]] == [q["q"] for q in s]
+                   for k, s in (("set1", s1), ("set2", s2)))
+        if not same:
+            raise SystemExit("REFUSING to overwrite cp_l4_sets.json: the new selection "
+                             "differs from the shipped one. Pass --force to rebuild.")
+    with open(out, "w", encoding="utf-8") as fh:
         json.dump({"set1": s1, "set2": s2}, fh, ensure_ascii=False, indent=1)
     print("\nwrote cp_l4_sets.json")

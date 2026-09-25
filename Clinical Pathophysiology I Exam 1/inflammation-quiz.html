@@ -315,7 +315,7 @@ const QUESTIONS = [
       ],
       [
         "Exudation, then vasodilation, then endothelial contraction",
-        "This reverses the causal chain entirely."
+        "Exudation comes last, not first: vasodilation of the arterioles starts the sequence, and endothelial contraction then allows exudation."
       ],
       [
         "Vasodilation of arterioles, then endothelial contraction increasing capillary permeability, then exudation",
@@ -323,7 +323,7 @@ const QUESTIONS = [
       ],
       [
         "Endothelial contraction, then vasodilation of the arterioles, then leukocyte transmigration into the tissue",
-        "Transmigration belongs to the leukocyte sequence, and the order of the first two is inverted."
+        "Transmigration belongs to the later leukocyte events; the three vascular mechanisms run vasodilation, endothelial contraction, then exudation."
       ]
     ],
     "c": 2,
@@ -332,23 +332,23 @@ const QUESTIONS = [
   {
     "topic": "T lymphocytes",
     "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response",
-    "q": "Which two of the listed subsets both act against virus-infected and tumour cells?",
+    "q": "Which two cell types both act against virus-infected and tumor cells?",
     "opts": [
       [
         "T helper cells and regulatory suppressor T cells",
-        "T helper cells activate and regulate other lymphocytes; regulatory T cells restore normal function."
+        "T helper cells activate and regulate T and B cells, and regulatory T cells return immune function to normal after infection; neither targets infected cells."
       ],
       [
         "B lymphocytes and plasma cells",
-        "These mediate antibody production rather than direct cell killing."
+        "B lymphocytes and plasma cells mediate antibody production; virus-infected and tumor cells are the targets of CD8+ cytotoxic T cells and natural killer cells."
       ],
       [
         "CD8+ cytotoxic T cells and natural killer cells",
-        "Correct. Both target virus-infected and tumour cells."
+        "Correct. CD8+ cytotoxic T cells and natural killer cells are the two subsets that act against virus-infected and tumor cells."
       ],
       [
         "Monocytes and macrophages",
-        "These are phagocytic and antigen-presenting rather than cytotoxic in this description."
+        "Monocytes and macrophages phagocytose and present pathogen pieces to T cells; virus-infected and tumor cells fall to CD8+ cytotoxic T cells and natural killer cells."
       ]
     ],
     "c": 2,
@@ -357,23 +357,23 @@ const QUESTIONS = [
   {
     "topic": "Sequence of events",
     "io": "Describe the vascular changes associated with acute inflammation",
-    "q": "Which vascular event immediately follows increased vascular permeability in the reviewed sequence?",
+    "q": "In the sequence of events of acute inflammation, which event immediately follows increased vascular permeability?",
     "opts": [
       [
         "Vasoconstriction of the arterioles",
-        "Vasoconstriction is the first event in the whole sequence."
+        "Vasoconstriction opens the whole sequence, before vasodilation; hemoconcentration and stasis are what follow increased permeability."
       ],
       [
-        "Haemoconcentration and stasis",
-        "Correct. As fluid and protein leave the vessel, the remaining blood concentrates and flow slows — which is what allows leukocytes to marginate and adhere next."
+        "Hemoconcentration and stasis",
+        "Correct. Hemoconcentration and stasis come directly after increased vascular permeability and directly before leukocyte adhesion."
       ],
       [
         "Chemotaxis",
-        "Chemotaxis comes later, after leukocyte adhesion and transmigration."
+        "Chemotaxis comes later, after leukocyte adhesion and transmigration; hemoconcentration and stasis directly follow increased vascular permeability."
       ],
       [
         "Phagocytosis",
-        "Phagocytosis is the final step of the reviewed sequence."
+        "Phagocytosis is the final step, after aggregation; the event right after increased permeability is hemoconcentration and stasis."
       ]
     ],
     "c": 1,
@@ -386,11 +386,11 @@ const QUESTIONS = [
     "opts": [
       [
         "It marks the point at which acute inflammation gives way to chronic inflammation in the tissue",
-        "Chronicity is defined by duration and by the persistence of macrophages and lymphocytes, not by stasis."
+        "Stasis is an acute event, directly after increased permeability; chronic inflammation is defined by its longer course (days, weeks, months) and lymphocytes and macrophages."
       ],
       [
         "It reverses the earlier increase in permeability",
-        "Nothing in the sequence describes permeability reversing at this point."
+        "Nothing reverses at this point: increased vascular permeability is the step before stasis, and leukocyte adhesion is the step after it."
       ],
       [
         "It terminates the inflammatory response",
@@ -398,7 +398,7 @@ const QUESTIONS = [
       ],
       [
         "It precedes leukocyte adhesion in the sequence, as slowed flow allows leukocytes to contact the endothelium",
-        "Correct. Haemoconcentration and stasis sit immediately before leukocyte adhesion in the reviewed sequence."
+        "Correct. Hemoconcentration and stasis sit immediately before leukocyte adhesion in the sequence of events of acute inflammation."
       ]
     ],
     "c": 3,
@@ -407,15 +407,15 @@ const QUESTIONS = [
   {
     "topic": "Exudation",
     "io": "Describe the molecular mechanisms of inflammatory processes",
-    "q": "Exudation refers to the movement of what, and to where?",
+    "q": "Which movement does the term exudation describe?",
     "opts": [
       [
         "Leukocytes from the interstitium back into the capillary lumen",
-        "Leukocyte movement is outward, and is covered by transmigration rather than exudation."
+        "Leukocytes leave the vessel for the tissue, not the reverse; exudation carries fluid and blood proteins out into the interstitial spaces."
       ],
       [
         "Erythrocytes into the alveolar space",
-        "No such process is described; haemorrhagic inflammation involves vessel damage rather than exudation as defined here."
+        "Exudation is not specific to the alveoli; it is fluid and blood proteins moving into the interstitial spaces once capillary permeability rises."
       ],
       [
         "Fluid and blood proteins into the interstitial spaces",
@@ -423,7 +423,7 @@ const QUESTIONS = [
       ],
       [
         "Fibrin into the vascular lumen to form a thrombus",
-        "The coagulation system creates a fibrous network at the site of injury, outside the vessel, to trap exudate and microorganisms."
+        "A fibrous network is made by the coagulation system at the site of injury to trap exudate; exudation is fluid and blood proteins entering the interstitial spaces."
       ]
     ],
     "c": 2,
@@ -432,11 +432,11 @@ const QUESTIONS = [
   {
     "topic": "Patterns",
     "io": "Describe the various types and etiologies of inflammation",
-    "q": "Fibrinous inflammation forms a thick meshwork that can be removed only by what, and what happens if that removal fails?",
+    "q": "Which pairing of removal mechanism and result of failed removal is correct for the meshwork of fibrinous inflammation?",
     "opts": [
       [
         "Phagocytosis by neutrophils; failure produces pus",
-        "Pus is the defining content of the suppurative pattern, not a consequence of failed fibrinolysis."
+        "Pus defines the suppurative pattern; the fibrin meshwork is removed only by fibrolytic enzymes, and failure of that removal leads to scar tissue."
       ],
       [
         "Fibrolytic enzymes; failure results in scar tissue formation",
@@ -444,11 +444,11 @@ const QUESTIONS = [
       ],
       [
         "Complement fragment C3b; failure results in ulceration",
-        "C3b is an opsonin, and ulceration is a separate pattern involving necrosis and sloughing of surface epithelium."
+        "C3b is an opsonin that binds foreign material; the fibrin meshwork can only be removed by fibrolytic enzymes, and failed removal results in scar tissue."
       ],
       [
         "Macrophage digestion; failure results in gangrene",
-        "Gangrenous inflammation is a severe form of necrosis, not a consequence of retained fibrin."
+        "The fibrin meshwork can only be removed by fibrolytic enzymes, and failure results in scar tissue; gangrene is a severe form of necrosis instead."
       ]
     ],
     "c": 1,
@@ -457,23 +457,23 @@ const QUESTIONS = [
   {
     "topic": "Acute inflammation review",
     "io": "Describe the cellular changes associated with acute inflammation",
-    "q": "Which leukocyte is named in the exudate of acute inflammation on the review slide?",
+    "q": "Which leukocyte is characteristic of the exudate of acute inflammation?",
     "opts": [
       [
         "The lymphocyte",
-        "Lymphocytes characterise chronic inflammation."
+        "Lymphocytes, with macrophages and plasma cells, characterize chronic inflammation; the acute exudate carries neutrophils."
       ],
       [
         "The neutrophil",
-        "Correct. The review describes exudation of fluid, plasma, proteins and leukocytes, with neutrophils named specifically."
+        "Correct. Acute inflammation involves exudation of fluid, plasma, proteins and leukocytes, and the leukocyte of that exudate is the neutrophil."
       ],
       [
         "The plasma cell",
-        "Plasma cells appear in the chronic inflammation review."
+        "Plasma cells belong to chronic inflammation, where they mediate antibody production; the acute exudate carries neutrophils."
       ],
       [
         "The eosinophil",
-        "Eosinophils are tied to allergic and parasitic processes rather than to the general acute exudate."
+        "Eosinophils are tied to allergic reactions and parasitic infections; the leukocyte of the acute exudate is the neutrophil."
       ]
     ],
     "c": 1,
@@ -485,20 +485,20 @@ const QUESTIONS = [
     "q": "Histamine and serotonin share which pair of effects?",
     "opts": [
       [
-        "Chemotaxis and opsonisation",
-        "Chemotaxis is attributed to complement components and possibly bradykinin; opsonisation to immunoglobulin G and C3b."
+        "Chemotaxis and opsonization",
+        "Chemotaxis comes from complement components and possibly bradykinin, and opsonization from immunoglobulin G and C3b, not from histamine."
       ],
       [
         "Vasodilation and increased vascular permeability",
-        "Correct. Both are credited with dilating vessels and raising permeability, which is why they are the earliest vascular mediators."
+        "Correct. Histamine dilates arterioles and increases capillary and venule permeability, and serotonin likewise causes vasodilation and increased vascular permeability."
       ],
       [
         "Pain and fibrin deposition",
-        "Pain belongs to bradykinin, and fibrin deposition to the coagulation system."
+        "Pain belongs to bradykinin and fibrin deposition to the coagulation system; histamine and serotonin share vasodilation and increased vascular permeability."
       ],
       [
         "Antibody production and antigen presentation",
-        "These are cellular immune functions rather than mediator effects."
+        "Antibody production and antigen presentation belong to B lymphocytes and monocytes; histamine and serotonin act on the vessels."
       ]
     ],
     "c": 1,
@@ -507,7 +507,7 @@ const QUESTIONS = [
   {
     "topic": "Granulocytes",
     "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response",
-    "q": "Granulocytes are characterised under light microscopy by what, and what do those structures primarily do?",
+    "q": "Which feature defines granulocytes under light microscopy?",
     "opts": [
       [
         "Differently staining cytoplasmic granules that are membrane-bound enzymes acting in the digestion of phagocytized particles",
@@ -515,15 +515,15 @@ const QUESTIONS = [
       ],
       [
         "A kidney-shaped nucleus that permits the cell to transmigrate between two adjacent endothelial cells nearby",
-        "A kidney-shaped nucleus is the described feature of the monocyte, and is not linked to transmigration here."
+        "A kidney-shaped nucleus belongs to the monocyte, an agranulocyte; granulocytes are defined by differently staining cytoplasmic granules."
       ],
       [
         "Azurophilic granules that function purely as antigen-presenting structures",
-        "Non-specific azurophilic granules — lysosomes — are described in agranulocytes, and antigen presentation is a separate function."
+        "Non-specific azurophilic granules (lysosomes) are found in agranulocytes; granulocyte granules are enzymes that digest phagocytized particles."
       ],
       [
         "Surface receptors that bind the Fc portion of immunoglobulin G",
-        "Fc receptors are described on phagocytic cells in the context of opsonisation, not as the defining granulocyte feature."
+        "Fc receptors let phagocytic cells recognize immunoglobulin G during opsonization; granulocytes are defined by their staining cytoplasmic granules."
       ]
     ],
     "c": 0,
@@ -536,7 +536,7 @@ const QUESTIONS = [
     "opts": [
       [
         "White blood cells (lymphocytes and macrophages), proliferation of blood vessels, fibrosis and tissue necrosis",
-        "Correct. All four are listed together as the histological associations of chronic inflammation."
+        "Correct. Chronic inflammation is associated histologically with lymphocytes and macrophages, new blood vessels, fibrosis and tissue necrosis."
       ],
       [
         "Neutrophil predominance with an absence of vascular proliferation",
@@ -544,11 +544,11 @@ const QUESTIONS = [
       ],
       [
         "Eosinophil infiltration with mucus hypersecretion",
-        "Eosinophils dominate allergic reactions, and mucus hypersecretion describes the catarrhal pattern."
+        "Eosinophils dominate allergic reactions and mucus hypersecretion is the catarrhal pattern; chronic inflammation shows lymphocytes, macrophages, new vessels and fibrosis."
       ],
       [
         "Serous exudate with low protein content, no cellular infiltrate, and no proliferation of blood vessels",
-        "That describes the serous pattern, which occurs early or with mild inflammation."
+        "That describes the serous pattern, which occurs early or with mild inflammation; chronic inflammation shows proliferation of blood vessels, fibrosis and necrosis."
       ]
     ],
     "c": 0,
@@ -564,8 +564,8 @@ const QUESTIONS = [
         "Serous inflammation is largely low-protein plasma occurring early or with mild inflammation."
       ],
       [
-        "Haemorrhagic",
-        "Haemorrhagic inflammation involves damage to blood vessels and occurs alongside other exudates."
+        "Hemorrhagic",
+        "Hemorrhagic inflammation involves damage to blood vessels and occurs alongside other exudates."
       ],
       [
         "Catarrhal",
@@ -582,7 +582,7 @@ const QUESTIONS = [
   {
     "topic": "Monocytes",
     "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response",
-    "q": "What does a monocyte become after leaving the bloodstream, and what does it then do?",
+    "q": "What is the fate of a monocyte once it leaves the bloodstream?",
     "opts": [
       [
         "A tissue macrophage that removes dead cell debris and attacks microorganisms",
@@ -590,15 +590,15 @@ const QUESTIONS = [
       ],
       [
         "A plasma cell that secretes antibody directly into the interstitium",
-        "Plasma cells arise from the B lymphocyte lineage in this description."
+        "Monocytes do not become plasma cells; a monocyte leaving the bloodstream becomes a tissue macrophage that clears debris and microorganisms."
       ],
       [
         "A fibroblast that lays down scar tissue",
-        "Fibroblastic scar tissue is a healing outcome, not a monocyte fate."
+        "Fibroblastic scar tissue is a healing outcome, not a monocyte fate; monocytes become tissue macrophages after leaving the blood."
       ],
       [
         "A dendritic cell that migrates to the thymus",
-        "No such transformation is described, and the thymus is where T lymphocytes mature."
+        "The thymus is where T lymphocytes mature; a monocyte that leaves the bloodstream becomes a tissue macrophage instead."
       ]
     ],
     "c": 0,
@@ -611,19 +611,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Producing antibody directed against antigens the host has encountered previously",
-        "Antibody production belongs to B lymphocytes and plasma cells."
+        "Producing antibody is a B lymphocyte role; regulatory T cells return immune function to normal after infection and prevent autoimmunity."
       ],
       [
         "Presenting phagocytosed material to naive T cells",
-        "That is described for monocytes."
+        "Presenting pieces of pathogens to T cells is a monocyte role; regulatory T cells instead restore normal immune function and prevent autoimmunity."
       ],
       [
-        "Killing tumour cells directly through granule release",
-        "Direct killing of tumour cells is assigned to CD8+ cytotoxic T cells and natural killer cells."
+        "Killing tumor cells directly through granule release",
+        "CD8+ cytotoxic T cells and natural killer cells act against tumor cells; regulatory T cells return immune function to normal and prevent autoimmunity."
       ],
       [
         "Returning the immune system to normal operation after infection, and preventing autoimmunity",
-        "Correct. Both halves of that role are given, which is why loss of this subset is conceptually linked to autoimmune disease."
+        "Correct. Regulatory (suppressor) T cells return the immune system to normal operation after infection and prevent autoimmunity."
       ]
     ],
     "c": 3,
@@ -636,19 +636,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Mucus, plasma and erythrocytes",
-        "Mucus hypersecretion defines the catarrhal pattern; erythrocytes feature in haemorrhagic inflammation."
+        "Mucus hypersecretion defines the catarrhal pattern; the pseudomembrane is a necrotic layer of fibrin, inflammatory cells and debris."
       ],
       [
         "Granulation tissue, proliferating fibroblasts and newly formed capillary networks throughout",
-        "These are features of healing and of chronic inflammation rather than of this pattern."
+        "Proliferating blood vessels and connective tissue accompany chronic inflammation; the pseudomembrane is fibrin, inflammatory cells and debris."
       ],
       [
         "Fibrin, inflammatory cells and debris, forming a membrane-like covering over the affected mucosa",
-        "Correct. That covering over the mucosa is what the term describes."
+        "Correct. Pseudomembranous inflammation is a superficial necrotic layer of fibrin, inflammatory cells and debris forming a membrane-like covering over mucosa."
       ],
       [
         "Pus alone, without a fibrin component",
-        "Pus without a membrane describes the suppurative pattern."
+        "Pus without any membrane describes the suppurative pattern; the pseudomembrane is a necrotic layer of fibrin, inflammatory cells and debris."
       ]
     ],
     "c": 2,
@@ -661,19 +661,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Fibrinogen forming a thick meshwork over the serosal surface",
-        "That is the fibrinous pattern."
+        "Large amounts of fibrinogen forming a thick meshwork define the fibrinous pattern; suppurative inflammation is pus."
       ],
       [
         "Low-protein plasma with minimal cellular content",
-        "That is the serous pattern."
+        "Largely plasma with low protein is the serous pattern; suppurative inflammation contains white blood cell remnants, protein and debris."
       ],
       [
         "A superficial necrotic layer forming a membrane over affected mucosa",
-        "That is the pseudomembranous pattern."
+        "A superficial necrotic layer forming a membrane is the pseudomembranous pattern; suppurative inflammation is pus instead."
       ],
       [
         "Remnants of white blood cells, protein and tissue debris — that is, pus",
-        "Correct. That is the suppurative or purulent pattern."
+        "Correct. Suppurative (purulent) inflammation contains remnants of white blood cells, protein and tissue debris, which is pus."
       ]
     ],
     "c": 3,
@@ -682,23 +682,23 @@ const QUESTIONS = [
   {
     "topic": "Patterns",
     "io": "Describe the various types and etiologies of inflammation",
-    "q": "Haemorrhagic inflammation is described as arising from what, and occurring in what relationship to other exudates?",
+    "q": "Which combination of cause and relationship to other exudates characterizes hemorrhagic inflammation?",
     "opts": [
       [
         "Mucus hypersecretion, and occurring in isolation",
-        "That describes the catarrhal pattern, and haemorrhagic inflammation is not described as isolated."
+        "Mucus hypersecretion defines the catarrhal pattern; hemorrhagic inflammation comes from blood vessel damage and occurs with other exudates."
       ],
       [
         "Fibrinogen deposition, and preceding every other exudate pattern",
-        "Fibrinogen deposition defines the fibrinous pattern."
+        "Fibrinogen deposition defines the fibrinous pattern; hemorrhagic inflammation comes from blood vessel damage alongside other exudates."
       ],
       [
         "Epithelial sloughing, and replacing other exudates",
-        "Epithelial sloughing defines the ulcerative pattern."
+        "Sloughing of surface epithelium defines the ulcerative pattern; hemorrhagic inflammation comes from damage to blood vessels."
       ],
       [
         "Damage to blood vessels, and occurring together with other exudates",
-        "Correct. Haemorrhagic inflammation is damage to blood vessels occurring with other exudates."
+        "Correct. Hemorrhagic inflammation is damage to blood vessels occurring with other exudates."
       ]
     ],
     "c": 3,
@@ -719,11 +719,11 @@ const QUESTIONS = [
       ],
       [
         "A chronic autoimmune process",
-        "Chronic inflammation is characterised by macrophages, monocytes and mononuclear cells including lymphocytes and plasma cells."
+        "Chronic inflammation is characterized by macrophages, monocytes and mononuclear cells including lymphocytes and plasma cells, not by eosinophils."
       ],
       [
         "A humoral antibody response",
-        "Antibody production is mediated by B lymphocytes and plasma cells, which are agranulocytes."
+        "Antibody production is mediated by B lymphocytes and plasma cells; bi-lobed nuclei with pink-orange granules identify eosinophils instead."
       ]
     ],
     "c": 1,
@@ -736,19 +736,19 @@ const QUESTIONS = [
     "opts": [
       [
         "It cannot renew its lysosomes, so it dies after phagocytosing a few pathogens",
-        "Correct. The inability to renew lysosomes is precisely why the neutrophil is a short-lived, single-use phagocyte."
+        "Correct. Neutrophils are not able to renew their lysosomes, so they die after having phagocytosed a few pathogens."
       ],
       [
         "It lacks the enzymes needed to digest the bacterial cell wall it engulfs",
-        "The neutrophil is described as very active in phagocytizing bacteria, so the enzymes are present."
+        "The neutrophil is very active in phagocytizing bacteria, so its digestive enzymes are present; its limit is that it cannot renew its lysosomes."
       ],
       [
-        "It must first be opsonised before it can engulf anything",
-        "Opsonins coat the target material, not the phagocyte."
+        "It must first be opsonized before it can engulf anything",
+        "Opsonins coat the target material, not the phagocyte, and they enhance recognition and attachment rather than being a precondition."
       ],
       [
         "It converts into a macrophage after a single encounter",
-        "It is the monocyte that leaves the bloodstream to become a tissue macrophage."
+        "Neutrophils do not convert; it is the monocyte that becomes a tissue macrophage, while the neutrophil dies because it cannot renew its lysosomes."
       ]
     ],
     "c": 0,
@@ -761,19 +761,19 @@ const QUESTIONS = [
     "opts": [
       [
         "The reaction of vascularized living tissue to injury",
-        "Correct. The definition given is specifically the reaction of vascularized living tissue to injury — vascularity is part of the definition, which is why avascular tissue cannot mount one."
+        "Correct. Inflammation is defined as the reaction of vascularized living tissue to injury, so living tissue with a blood supply is part of the definition."
       ],
       [
         "The proliferation of fibroblasts following any cellular insult",
-        "Fibroblastic scar tissue is one possible outcome of the process, not the definition of it."
+        "Fibroblastic scar tissue is one way the process heals the site; inflammation itself is the reaction of vascularized living tissue to injury."
       ],
       [
         "The activation of the adaptive immune system by a foreign antigen",
-        "Adaptive immunity may or may not be involved; the contrast is between purely physical damage and injury that activates an immune response."
+        "Inflammation can follow purely physical damage with no immune activation, as in trauma; it is defined as the reaction of vascularized living tissue to injury."
       ],
       [
         "The death of tissue through coagulative or liquefactive pathways",
-        "That describes necrosis, which appears here only as a feature of gangrenous inflammation."
+        "Coagulative and liquefactive necrosis distinguish dry from wet gangrene, a single pattern of inflammation, rather than defining inflammation itself."
       ]
     ],
     "c": 0,
@@ -786,11 +786,11 @@ const QUESTIONS = [
     "opts": [
       [
         "Reduced hydrostatic pressure within the capillary bed",
-        "Dilation of the supplying arterioles raises rather than lowers flow into the bed."
+        "A fall in capillary pressure is not the effect; vasodilation of the arterioles supplying the injured region results in increased blood flow."
       ],
       [
         "Contraction of the capillary endothelium",
-        "Endothelial contraction is a separate mechanism that follows, allowing increased permeability."
+        "Endothelial contraction is a separate mechanism that follows and allows increased permeability; vasodilation of the arterioles itself increases blood flow."
       ],
       [
         "Movement of blood proteins into the interstitium",
@@ -807,19 +807,19 @@ const QUESTIONS = [
   {
     "topic": "Chronic inflammation",
     "io": "Describe the various types and etiologies of inflammation",
-    "q": "Which cell types characterise chronic inflammation on review?",
+    "q": "Which cell types characterize chronic inflammation?",
     "opts": [
       [
         "Neutrophils and eosinophils predominantly, without mononuclear infiltrate",
-        "Neutrophils dominate the acute response; eosinophils are prominent in allergy and parasitic infection."
+        "Neutrophils dominate the acute response and eosinophils allergy and parasites; chronic inflammation shows macrophages, monocytes, lymphocytes and plasma cells."
       ],
       [
         "Macrophages, monocytes and mononuclear cells including lymphocytes and plasma cells",
-        "Correct. The review slide lists exactly these, accompanied by proliferation of blood vessels and connective tissue."
+        "Correct. Chronic inflammation is characterized by macrophages, monocytes and mononuclear cells, with proliferation of blood vessels and connective tissue."
       ],
       [
         "Basophils and mast cells only",
-        "Basophils are responsible for allergic and antigen responses through histamine, and are not given as the characteristic chronic cell."
+        "Basophils drive allergic and antigen responses through histamine; chronic inflammation is characterized by macrophages, monocytes and lymphocytes."
       ],
       [
         "Fibroblasts in the absence of leukocytes",
@@ -844,11 +844,11 @@ const QUESTIONS = [
       ],
       [
         "Transmigration, adhesion, aggregation, phagocytosis, chemotaxis",
-        "Adhesion must precede transmigration, and chemotaxis cannot be last."
+        "Adhesion must come before transmigration and chemotaxis is not last; the order after stasis is adhesion, transmigration, chemotaxis, aggregation, then phagocytosis."
       ],
       [
         "Aggregation, chemotaxis, transmigration, adhesion, phagocytosis",
-        "This inverts nearly the whole sequence."
+        "Aggregation cannot come first; the order after stasis is adhesion, transmigration, chemotaxis, aggregation, then phagocytosis."
       ]
     ],
     "c": 0,
@@ -857,19 +857,19 @@ const QUESTIONS = [
   {
     "topic": "Basophils",
     "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response",
-    "q": "Basophils are chiefly responsible for which response, and through which mediator?",
+    "q": "Which pairing of response and mediator describes the basophil's chief role?",
     "opts": [
       [
-        "Parasitic defence, through major basic protein",
-        "Parasitic infections are the eosinophil's domain, and that mediator belongs to it too."
+        "Parasitic defense, through major basic protein",
+        "Parasitic infection is the eosinophil's domain; basophils are chiefly responsible for allergic and antigen responses through histamine."
       ],
       [
         "Antibody production, through immunoglobulin G",
-        "Antibody production is the role of B lymphocytes and plasma cells."
+        "Antibody production is the role of B lymphocytes and plasma cells; basophils are chiefly responsible for allergic and antigen response through histamine."
       ],
       [
         "Cell-mediated immunity, through T cell receptors",
-        "That describes T lymphocytes."
+        "Cell-mediated immunity through T cell receptors describes T lymphocytes; basophils act through histamine in allergic responses."
       ],
       [
         "Allergic and antigen response, through histamine",
@@ -882,23 +882,23 @@ const QUESTIONS = [
   {
     "topic": "Eosinophils",
     "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response",
-    "q": "What colour do eosinophil granules characteristically assume, and what is the nuclear shape?",
+    "q": "Which combination of granule color and nuclear shape identifies the eosinophil?",
     "opts": [
       [
         "Pale lilac granules, multilobed nucleus",
-        "That combination describes the neutrophil."
+        "Pale lilac granules with a multilobed nucleus describe the neutrophil; eosinophils have pink-orange granules and a bi-lobed nucleus."
       ],
       [
         "Coarse dark granules, bi- or tri-lobed nucleus",
-        "That describes the basophil."
+        "A bi- or tri-lobed nucleus with coarse granules describes the basophil; the eosinophil nucleus is bi-lobed with pink-orange granules."
       ],
       [
         "Pink-orange granules, bi-lobed nucleus",
-        "Correct. The cytoplasm is full of granules that assume a characteristic pink-orange colour, with a bi-lobed nucleus."
+        "Correct. The cytoplasm is full of granules that assume a characteristic pink-orange color, with a bi-lobed nucleus."
       ],
       [
         "No visible granules, kidney-shaped nucleus",
-        "That describes the monocyte, an agranulocyte."
+        "No visible granules and a kidney-shaped nucleus describe the monocyte, an agranulocyte, not the granule-packed eosinophil."
       ]
     ],
     "c": 2,
@@ -910,20 +910,20 @@ const QUESTIONS = [
     "q": "Why can an implanted medical device provoke an inflammatory response even when it is sterile?",
     "opts": [
       [
-        "Because sterilisation leaves residual endotoxin behind, and that endotoxin then acts as a chemotactic agent",
-        "No such residual endotoxin mechanism applies."
+        "Because sterilization leaves residual endotoxin behind, and that endotoxin then acts as a chemotactic agent",
+        "Endotoxin plays no part; a sterile device provokes inflammation because it becomes coated with immunoglobulin G and C3b."
       ],
       [
-        "Because the material becomes coated with immunoglobulin G and C3b, and immune cells recognise that coating and attach to it",
-        "Correct. Opsonisation of the biomaterial is what makes it a target regardless of sterility."
+        "Because the material becomes coated with immunoglobulin G and C3b, and immune cells recognize that coating and attach to it",
+        "Correct. Opsonization of the biomaterial is what makes it a target regardless of sterility."
       ],
       [
         "Because the device physically obstructs lymphatic drainage",
-        "Lymphatic obstruction is not offered as the mechanism."
+        "Lymphatic obstruction is not the mechanism; the device is coated with immunoglobulin G and C3b, which immune cells recognize."
       ],
       [
         "Because implantation always causes bacterial contamination of surrounding tissue",
-        "The point of the example is precisely that the response occurs even when sterile."
+        "The response occurs even when the device is sterile, because immune cells recognize its immunoglobulin G and C3b coating."
       ]
     ],
     "c": 1,
@@ -932,7 +932,7 @@ const QUESTIONS = [
   {
     "topic": "Leukocyte comparison",
     "io": "Compare and contrast the mechanism of white blood cells in the inflammatory response",
-    "q": "What does the abbreviation PMN refer to?",
+    "q": "The term PMN (polymorphonuclear leukocyte) refers to which cells?",
     "opts": [
       [
         "All granulocytes",
@@ -940,7 +940,7 @@ const QUESTIONS = [
       ],
       [
         "Neutrophils only",
-        "Neutrophils are the most numerous granulocyte, but the term covers all of them."
+        "Neutrophils are only one of the three granulocytes; PMN (polymorphonuclear leukocyte) covers neutrophils, basophils and eosinophils."
       ],
       [
         "All mononuclear leucocytes",
@@ -948,7 +948,7 @@ const QUESTIONS = [
       ],
       [
         "Plasma cells and memory B cells",
-        "Neither is a granulocyte."
+        "Plasma cells and memory B cells are mononuclear cells, not granulocytes; PMN (polymorphonuclear leukocyte) refers to all granulocytes."
       ]
     ],
     "c": 0,
@@ -961,19 +961,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Pain generation and leukocyte chemotaxis",
-        "Pain and possible increased chemotaxis are attributed to bradykinin."
+        "Pain and possibly increased chemotaxis are effects of bradykinin; serotonin causes vasodilation and increased vascular permeability."
       ],
       [
-        "Opsonisation of biomaterials",
-        "Opsonisation is performed by immunoglobulin G and C3b."
+        "Opsonization of biomaterials",
+        "Opsonization of biomaterials is done by immunoglobulin G and C3b; serotonin causes vasodilation and increased vascular permeability."
       ],
       [
         "Vasodilation and increased vascular permeability",
-        "Correct. Serotonin is given the same pair of vascular effects as histamine, which is why the two are grouped together."
+        "Correct. Serotonin causes vasodilation and increased vascular permeability, the same pair of vascular effects as histamine."
       ],
       [
         "Formation of a fibrous network trapping microorganisms",
-        "That is the coagulation system's contribution."
+        "A fibrous network that traps microorganisms is made by the coagulation system; serotonin's effects are vasodilation and permeability."
       ]
     ],
     "c": 2,
@@ -986,7 +986,7 @@ const QUESTIONS = [
     "opts": [
       [
         "Increased blood flow",
-        "Increased blood flow is the first process, well before neutrophil migration."
+        "Increased blood flow is the first of the five processes, well before neutrophil migration; chemotaxis is the process that immediately follows migration."
       ],
       [
         "Chemotaxis",
@@ -994,11 +994,11 @@ const QUESTIONS = [
       ],
       [
         "Increased permeability",
-        "Increased permeability is the second process and precedes neutrophil migration."
+        "Increased permeability is the second process and precedes neutrophil migration; chemotaxis is the process that immediately follows migration."
       ],
       [
         "Exudation of plasma proteins",
-        "Exudation is described under the vascular mechanisms rather than as one of the five numbered processes."
+        "Exudation is one of the vascular mechanisms, not one of the five main processes; chemotaxis follows neutrophil migration."
       ]
     ],
     "c": 1,
@@ -1011,7 +1011,7 @@ const QUESTIONS = [
     "opts": [
       [
         "Dry involves fibrinous exudate; wet involves serous exudate",
-        "Neither exudate type is used to define gangrene here."
+        "Exudate type does not separate the two; dry gangrene is coagulative necrosis and wet is liquefactive necrosis from infection."
       ],
       [
         "Dry is coagulative necrosis; wet is liquefactive necrosis arising from infection",
@@ -1019,11 +1019,11 @@ const QUESTIONS = [
       ],
       [
         "Dry gangrene occurs on mucosal surfaces; wet gangrene occurs on serosal surfaces",
-        "The distinction drawn is the type of necrosis and the presence of infection, not the surface involved."
+        "The surface involved does not separate them; dry gangrene is coagulative necrosis and wet gangrene is liquefactive necrosis from infection."
       ],
       [
         "Dry is acute; wet is chronic",
-        "Chronicity is a separate axis from pattern."
+        "Chronicity is a separate axis from pattern; dry versus wet gangrene turns on coagulative versus liquefactive necrosis from infection."
       ]
     ],
     "c": 1,
@@ -1036,19 +1036,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Bradykinin and complement components",
-        "Correct. Both are listed under the plasma proteins heading, alongside the coagulation system."
+        "Correct. Bradykinin and complement components are both plasma proteins, as is the coagulation system."
       ],
       [
         "Histamine and serotonin",
-        "These are listed separately as the vasoactive mediators, ahead of the plasma proteins."
+        "Histamine and serotonin are separate mediators causing vasodilation and permeability; the plasma proteins are bradykinin, complement and the coagulation system."
       ],
       [
         "Immunoglobulin G and C3b",
-        "These are grouped as opsonins."
+        "Immunoglobulin G and C3b are grouped as opsonins; the plasma protein mediators are bradykinin, complement components and coagulation."
       ],
       [
         "Fibrinogen and fibrolytic enzymes",
-        "Fibrinogen appears under the fibrinous pattern rather than in the mediator list."
+        "Fibrinogen belongs to the fibrinous pattern and fibrolytic enzymes remove it; the plasma protein mediators are bradykinin and complement."
       ]
     ],
     "c": 0,

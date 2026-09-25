@@ -7,9 +7,14 @@ this same condition list from the management side, and slide 23 puts an
 epistaxis MANAGEMENT column right beside the pathophysiology. Guarded below.
 
 BOTH LIVE SLIDE CORRECTIONS ARE CARDED AS THE CORRECTION, not as the slide:
-labyrinthitis gives CONTINUOUS vertigo (he fixed slide 17 aloud, twice), and
-the polyp heading means T HELPER CELL type 2 (he fixed slide 21 aloud). A card
-that taught the uncorrected slide would be worse than no card.
+labyrinthitis gives CONTINUOUS vertigo (slide 17 says "episodic"; corrected in
+the recording, twice), and the polyp heading means type 2 allergic
+inflammation (slide 21). Since 2026-09-24 the cards state the corrected fact
+WITHOUT attribution -- no "he corrected", no "the slide says" -- per
+[[self_contained_questions]], and the one card that argued WHY labyrinthitis
+must be continuous now teaches the deck's own axis instead (duration: days vs
+Meniere's hours, slides 16-17). The slide-17 contradiction is flagged for
+Jaxon, not resolved here; this deck matches the Clin Path quizzes and guide.
 
 Arcade has no image support, so the recognition half -- what otitis externa or
 a nasal polyp looks like -- lives in the guide's eleven figures. This is the
@@ -52,15 +57,15 @@ DECK = dict(
   ["Why does Weber go to the bad ear in conductive loss?", "The blockage stops competing room noise reaching that cochlea, so the bone-conducted tone has that ear to itself."],
   ["What does Rinne show in conductive loss?", "Bone conduction greater than air — abnormal."],
   ["What does Rinne show in sensorineural loss?", "Air conduction greater than bone — the normal ratio."],
-  ["Name the conductive causes on the slide.", "Cerumen impaction, otosclerosis, otitis media, tympanic membrane perforation."],
-  ["Name the sensorineural causes on the slide.", "Presbycusis, ototoxic drugs, noise trauma, acoustic neuroma."],
+  ["Name four conductive causes of hearing loss.", "Cerumen impaction, otosclerosis, otitis media, tympanic membrane perforation."],
+  ["Name four sensorineural causes of hearing loss.", "Presbycusis, ototoxic drugs, noise trauma, acoustic neuroma."],
   ["What are the four core mechanisms of conductive loss?", "Obstruction, mass loading, stiffness, and discontinuity."],
   ["Impacted cerumen, foreign bodies and canal exostoses — which mechanism?", "Obstruction."],
   ["Middle ear effusion and cholesteatoma — which mechanism?", "Mass loading."],
   ["Otosclerosis — which mechanism?", "Stiffness."],
   ["Temporal bone fracture and ossicular necrosis — which mechanism?", "Discontinuity."],
   ["How do mass loading and stiffness differ?", "Mass loading adds weight to a chain that can still move; stiffness stops the chain moving at all."],
-  ["What is a cholesteatoma?", "A cholesterol collection forming a small mass in the ear — off-deck, but he said to know it. It sits under mass loading."],
+  ["How does a cholesteatoma cause conductive hearing loss?", "By mass loading — added tissue weight damps tympanic membrane and ossicular movement."],
   # --- otosclerosis ---
   ["What is the bone remodelling sequence in otosclerosis?", "Abnormal osteoclastic resorption, then hypervascular spongy osteoid replacement."],
   ["Where does otosclerosis remodel?", "Around the otic capsule and the stapes footplate."],
@@ -118,9 +123,9 @@ DECK = dict(
   ["What is the mechanism of labyrinthitis?", "Inflammatory swelling, vascular congestion and endolymphatic disruption across the semicircular canals AND the cochlea."],
   ["Why do hearing and balance fail together in labyrinthitis?", "One continuous fluid space serves both organs, so inflammation anywhere in it disturbs both."],
   ["What causes labyrinthitis?", "Viral infection — typically a recent viral upper respiratory infection."],
-  ["Is the vertigo of labyrinthitis episodic or continuous?", "CONTINUOUS — the slide says episodic and he corrected it aloud, twice."],
+  ["Is the vertigo of labyrinthitis episodic or continuous?", "Continuous. Episodic vertigo lasting hours is the Ménière pattern."],
   ["How long does labyrinthitis vertigo run?", "Days, improving slowly over weeks."],
-  ["Why does the labyrinthitis correction matter?", "Episodic vertigo lasting hours is Ménière — if labyrinthitis were episodic too, the axis that separates them would collapse."],
+  ["How does the duration of labyrinthitis vertigo differ from that of Ménière vertigo?", "Labyrinthitis vertigo lasts days and improves over weeks; Ménière attacks last hours."],
   ["Which way does labyrinthitis nystagmus beat?", "Horizontal-rotary, with the fast phase beating AWAY from the affected side."],
   ["What separates vestibular neuritis from labyrinthitis?", "Neuritis inflames the nerve fibres only, so hearing is spared. That is the only difference."],
   ["What is canalithiasis?", "Dislodged otoconia floating free in the semicircular canals."],
@@ -142,7 +147,7 @@ DECK = dict(
   ["Why does 'non-neoplastic' matter for polyps?", "No new tissue is being grown — existing mucosa is waterlogged."],
   ["Which cytokines drive nasal polyps?", "Interleukins 4, 5 and 13."],
   ["Which cell floods the tissue in nasal polyps?", "Eosinophils."],
-  ["The polyp slide says 'Type 2 Inflammation'. What did he correct it to?", "T HELPER CELL type 2 allergic inflammation."],
+  ["What type of inflammation drives nasal polyps?", "Chronic type 2 allergic inflammation."],
   ["What enlarges the inferior turbinates?", "Venous sinusoid engorgement, mucosal oedema, or bony hypertrophy."],
   ["What is rhinitis medicamentosa?", "Rebound hyperaemia from overuse of topical decongestant sprays."],
   ["Which physical law governs a deviated septum?", "Poiseuille's law — small narrowing raises resistance dramatically."],
@@ -216,10 +221,15 @@ assert not _mg, "management card in a pathophysiology deck: %r" % _mg[:3]
 
 # ---- guard: both live corrections are carded as the CORRECTION -------------
 _all = " ".join(t for p in DECK["cards"] for t in p)
-assert "CONTINUOUS" in _all and "corrected it aloud" in _all, \
+_by_q = {q: a for q, a in DECK["cards"]}
+assert _by_q.get("Is the vertigo of labyrinthitis episodic or continuous?", "").startswith("Continuous"), \
     "the slide-17 labyrinthitis correction is not carded"
-assert "T HELPER CELL type 2" in _all, \
+assert "type 2 allergic" in _by_q.get("What type of inflammation drives nasal polyps?", ""), \
     "the slide-21 polyp correction is not carded"
+# ...and no card cites where the correction came from [[self_contained_questions]]
+_cite = [p[0][:60] for p in DECK["cards"] + DECK["matchCards"]
+         if re.search(r"corrected it aloud|he corrected|the slide says", " ".join(p), re.I)]
+assert not _cite, "a card cites the lecture or slide: %r" % _cite
 # ...and nothing teaches the uncorrected slide
 _wrong = [p[0][:60] for p in DECK["cards"]
           if re.search(r"labyrinthitis", " ".join(p), re.I)

@@ -13,7 +13,7 @@ FIXES = {
  2:  (3, "Endothelial contraction, then vasodilation of the arterioles, then leukocyte transmigration into the tissue"),
  7:  (2, "Over minutes to hours only, beginning after a full 24 hours have elapsed since the injury"),
  8:  (3, "Serous exudate with low protein content, no cellular infiltrate, and no proliferation of blood vessels"),
- 9:  (1, "Opsonisation of foreign material, phagocytosis by neutrophils, and enzymatic degradation"),
+ 9:  (1, "Opsonization of foreign material, phagocytosis by neutrophils, and enzymatic degradation"),
  12: (3, "Mucus hypersecretion accompanying inflammation of a mucous membrane surface"),
  16: (1, "Formation of a membrane-like covering over intact and otherwise viable mucosa"),
  17: (2, "Dry gangrene occurs on mucosal surfaces; wet gangrene occurs on serosal surfaces"),
@@ -34,7 +34,7 @@ FIXES = {
  39: (1, "A plasma cell that secretes antibody directly into the interstitium"),
  41: (3, "Restoring the immune system to its normal function once the infection has resolved"),
  46: (0, "Vasoconstriction of the arterioles"),
- 47: (3, "Haemoconcentration occurring within the capillary bed"),
+ 47: (3, "Hemoconcentration occurring within the capillary bed"),
  48: (0, "It marks the point at which acute inflammation gives way to chronic inflammation in the tissue"),
  52: (0, "Long term, lasting at least several days, with proliferation of both blood vessels and connective tissue"),
  54: (0, "The final mediator released during the whole response, causing fibrosis and the formation of dense scar tissue at the site"),
@@ -44,7 +44,7 @@ FIXES = {
  59: (3, "A receptor on the surface of the phagocyte that binds directly to the bacterial cell wall"),
  60: (0, "Through the complement receptors that bind to the C3b fragment"),
  61: (1, "When fibrin is degraded during healing; it then acts to prevent any further clot formation at that site"),
- 62: (0, "Because sterilisation leaves residual endotoxin behind, and that endotoxin then acts as a chemotactic agent"),
+ 62: (0, "Because sterilization leaves residual endotoxin behind, and that endotoxin then acts as a chemotactic agent"),
 }
 
 if __name__ == "__main__":

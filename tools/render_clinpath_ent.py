@@ -20,11 +20,7 @@ INTRO = ("Mechanism only. This course draws its line against Clinical Medicine a
          "exams, a third of my neurology questions were vertigo related. So know this, know these "
          "things.&rdquo;</i> The four peripheral causes are separated here on the axes that "
          "actually distinguish them &mdash; how long the vertigo lasts, whether hearing goes with "
-         "it, and whether a viral infection came first. "
-         "<b>One correction is baked in.</b> The slide gives labyrinthitis &ldquo;episodic&rdquo; "
-         "vertigo; the lecturer corrected that aloud &mdash; <i>&ldquo;this is not episodic. This "
-         "is continuous vertigo.&rdquo;</i> The questions teach continuous, and the study guide "
-         "records where the deck disagrees.")
+         "it, and whether a viral infection came first.")
 
 for n, key in ((1, "set1"), (2, "set2")):
     qs = SETS[key]

@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
-"""Partition the CMS Lecture 1 pool into two 30-question sets.
+"""Partition the Clinical Pathophysiology I Lecture 1 (Inflammation) pool into two 30-question sets.
 
 Optimises three things at once, which is why the pool is written oversized:
   - answer position balance (each of A-D near 25%)
   - instructional-objective coverage in BOTH sets
   - length bias (picking the longest option must not beat guessing)
+
+There is no Lecture 1 renderer: the two shipped pages
+(Clinical Pathophysiology I Exam 1/inflammation-quiz.html and
+inflammation-quiz-version-2.html) hold these sets as their QUESTIONS literal.
+On 2026-09-24 the pools were brought to the pages' text, and a run of this
+script (pools + cp_l1_lengthfix) reproduced both pages' QUESTIONS exactly --
+same questions, order, keys, options, explanations. The selection depends only
+on option text, answer index and objective, so stem and explanation edits do
+not reselect; an OPTION-TEXT edit can. After any pool edit, compare the output
+with both pages before pasting anything into them.
 """
 import sys, os, json, random
 from collections import Counter

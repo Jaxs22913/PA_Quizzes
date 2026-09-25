@@ -29,6 +29,26 @@ scope out of an illustration. Asserted below.
 
 Every question is authored with its correct answer first, because choosing the
 index by hand while writing is how the "always A" bug was introduced.
+
+2026-09-24 -- RECORDING-ONLY QUESTIONS ARE NO LONGER DRAWN, AND THIS SCRIPT NO
+LONGER OVERWRITES THE SHIPPED SELECTION BY DEFAULT. Site rule (CLAUDE.md sec. 7,
+slides-only grounding): a lecturer's aside does not add content the deck lacks,
+and no question is built on a lecture's worked example. Six shipped pool-D items
+rested on the recording alone (Barrett's oesophagus as THE metaplasia example,
+columnar cells meaning "secondary to reflux", the pathologist as sole
+diagnostician, lung-to-brain via the carotids, the plural "carcinomata", the
+leio-/rhabdo- prefixes). cp_l3_sets.json and both pages now carry unshipped
+deck-grounded pool items in those six positions instead (same objective or
+slide, same answer position), chosen by hand -- not by this script. Pool-D
+items that the deck does support are re-cited to their slide and still ship.
+So:
+  * POOL excludes any item whose cite is the recording (EXCLUDED_REC below).
+  * Re-running therefore selects DIFFERENTLY from the shipped sets. The script
+    compares its selection (option texts, order and keys per position) with the
+    existing cp_l3_sets.json and REFUSES to write when they differ, unless run
+    with --force. A text-only change (stems, explanations) still writes.
+  * Run with --force only when you mean to reselect both quizzes; then re-render,
+    re-check, and tell the Clin Path masters, which sample from these pages.
 """
 import sys, os, json, random
 from collections import Counter
@@ -39,7 +59,9 @@ from cp_l3_pool_b import POOL_B
 from cp_l3_pool_c import POOL_C
 from cp_l3_pool_d import POOL_D
 
-POOL = POOL_A + POOL_B + POOL_C + POOL_D
+_REC = "2026-08-20 lecture recording"
+EXCLUDED_REC = [q for q in POOL_A + POOL_B + POOL_C + POOL_D if q["cite"].startswith(_REC)]
+POOL = [q for q in POOL_A + POOL_B + POOL_C + POOL_D if not q["cite"].startswith(_REC)]
 
 # SCOPE GUARD: Clinical Pathophysiology is mechanism, never management. The
 # same oncology material is taught elsewhere in the curriculum, so the line has
@@ -147,6 +169,16 @@ if __name__ == "__main__":
         print("   objectives: %d of %d" % (len(ios), len(ALL_IOS)))
         print()
 
+    # GUARD (2026-09-24): never silently replace the shipped selection.
+    _out = os.path.join(HERE, "cp_l3_sets.json")
+    if os.path.exists(_out) and "--force" not in sys.argv:
+        _old = json.load(open(_out, encoding="utf-8"))
+        _fp = lambda qs: [([o[0] for o in q["opts"]], q["c"]) for q in qs]
+        if _fp(_old["set1"]) != _fp(s1) or _fp(_old["set2"]) != _fp(s2):
+            print("REFUSING to overwrite cp_l3_sets.json: this run selects different questions, "
+                  "options or keys than the shipped sets (see the 2026-09-24 note in the docstring). "
+                  "Re-run with --force only if you intend to reselect both quizzes.")
+            sys.exit(2)
     json.dump({"set1": s1, "set2": s2},
               open(os.path.join(HERE, "cp_l3_sets.json"), "w"),
               ensure_ascii=False, indent=1)

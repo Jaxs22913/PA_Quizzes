@@ -234,7 +234,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"The neutrophil cannot renew its lysosomes. The monocyte can replace its lysosomal contents, which is exactly why it is the cell of the sustained chronic phase."},
       {q:"Which mediator raises capillary permeability AND causes pain?",
        choices:["Histamine","Serotonin","Bradykinin","Complement C3b"],correct:2,
-       explain:"All three of histamine, serotonin and bradykinin raise permeability. Pain is listed only for bradykinin, which also may increase leukocyte chemotaxis."},
+       explain:"Histamine, serotonin and bradykinin all raise vascular permeability, but only bradykinin also causes pain, and it may increase leukocyte chemotaxis as well."},
       {q:"An implanted device provokes inflammation despite being sterile. Why?",
        choices:["Residual endotoxin from sterilisation","It is coated with immunoglobulin G and C3b, which immune cells recognise","It obstructs lymphatic drainage","Sterilisation is never complete"],correct:1,
        explain:"Biomaterials become coated with the opsonins immunoglobulin G and C3b. Immune cells recognise that coating and attach — the response is to the opsonised surface, not to infection."},

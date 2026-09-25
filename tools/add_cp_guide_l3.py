@@ -286,7 +286,7 @@ TESTS = '''    abnormalgrowth: [
        expl:"The portal vein delivers to the liver and the inferior vena cava to the right heart and then the lungs. And spread is NOT random: it is determined by venous flow, specific receptors on tumour and endothelial cells, and genetically determined metastatic fitness."},
       {q:"Seeding most commonly occurs in which cavity?",
        choices:["The peritoneal cavity","The pleural cavity","The pericardial cavity","The subarachnoid space"],correct:0,
-       expl:"All four are named, but the peritoneum is singled out as commonest. A cavity here is defined by the membrane covering the organs plus the membrane covering the cavity wall."},
+       expl:"Seeding follows tumor invasion through an organ surface into a cavity. It can reach the pleural and pericardial cavities and the subarachnoid space, but it most commonly occurs in the peritoneal cavity."},
       {q:"A malignant tumour arises from adipose tissue. What is it called?",
        choices:["A sarcoma","A carcinoma","An adenocarcinoma","A papilloma"],correct:0,
        expl:"Adipose tissue is supportive, so mesenchymal, so sarcoma. Mesenchymal \\u2192 sarcoma; epithelial \\u2192 carcinoma. That one rule decodes most tumour names."},
@@ -305,9 +305,9 @@ TESTS = '''    abnormalgrowth: [
       {q:"Human papillomavirus E6 and E7 block which proteins?",
        choices:["E6 blocks p53; E7 blocks RB","E6 blocks RB; E7 blocks p53","Both block p53","Both block BRCA-1"],correct:0,
        expl:"p53 promotes self destruction of mutated cells; RB inhibits cell growth. So E6 removes apoptosis and E7 removes a growth brake. Hepatitis B also encodes a protein that binds p53 \\u2014 three organisms converging on two proteins."},
-      {q:"Which organism in this lecture is a bacterium, and what does it cause?",
+      {q:"Which of these cancer-associated microbes is a bacterium?",
        choices:["Helicobacter pylori \\u2014 gastric adenocarcinoma and MALT lymphoma","Epstein Barr virus \\u2014 B cell lymphoma","Hepatitis B \\u2014 hepatocellular carcinoma","Human papillomavirus \\u2014 cervical cancer"],correct:0,
-       expl:"Gram-negative, colonizes the stomach, causes chronic gastritis which may lead to atrophic gastritis and intestinal metaplasia. Eradication can REDUCE gastric cancer risk and may induce regression of some early MALT lymphomas."},
+       expl:"Helicobacter pylori is a Gram-negative bacterium that colonizes the stomach and causes chronic gastritis; it is associated with gastric adenocarcinoma and mucosa-associated lymphoid tissue (MALT) lymphoma. The other three are viruses."},
       {q:"What happens to Epstein Barr virus infection in a patient with normal immune function?",
        choices:["No immortalization of B lymphocytes \\u2014 asymptomatic or self-limited mononucleosis","B lymphocytes are immortalized but the lymphoma regresses","Nasopharyngeal carcinoma develops within years","The virus is completely cleared and cannot reinfect"],correct:0,
        expl:"The virus infects B lymphocytes and 'immortalizes' them, but normal immune function is what stops that becoming cancer."},
@@ -316,13 +316,13 @@ TESTS = '''    abnormalgrowth: [
        expl:"And those patients develop colon cancer by age 50. RB is associated with retinoblastoma AND osteosarcoma; p16 with malignant melanoma; NF-1 and NF-2 with neurofibromatosis."},
       {q:"What does Tis mean in the TNM system?",
        choices:["The lesion has not invaded through the basement membrane","The primary tumour cannot be assessed","There is no evidence of primary tumour","The tumour is too small to measure"],correct:0,
-       expl:"'is' = in situ. It is the same threshold the dysplasia diagram turns on \\u2014 everything up to and including carcinoma in situ is still above the basement membrane."},
+       expl:"'is' refers to in situ: a Tis lesion has not invaded through the tissue basement membrane, whereas T1 to T3 mark increasing size and depth of invasion of the primary lesion."},
       {q:"What do Nx and N0 mean respectively?",
        choices:["Nodes cannot be assessed; no regional nodal metastasis","No nodal metastasis; nodes cannot be assessed","Nodes not sampled; one node involved","Nodes removed; nodes normal in size"],correct:0,
        expl:"The convention generalises across the whole system: x means cannot be assessed, 0 means none found. So Mx is distant metastasis cannot be assessed and M0 is no distant metastasis."},
-      {q:"What caveat does the lecture attach to TNM definitions?",
+      {q:"Which caveat applies to TNM (tumor, node, metastasis) definitions?",
        choices:["They are cancer-specific; for some cancers depth of invasion matters more than size","They are identical across all cancers","They apply only to carcinomas, not sarcomas","They have replaced histological grading"],correct:0,
-       expl:"Which is why the deck's example table is for one named cancer rather than all of them. What transfers is the grammar: T, N, M, x and 0 \\u2014 not the specific cut-offs."}
+       expl:"TNM definitions are cancer-specific, and for some cancers depth of invasion matters more than size. The notation stays constant: x means cannot be assessed and 0 means none found."}
     ],
 '''
 

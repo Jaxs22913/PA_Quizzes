@@ -223,7 +223,7 @@
 
   <div id="start" class="card start">
     <h2>Before you begin</h2>
-    <p style="font-size:14.5px;margin:0 0 6px">Thirty questions on abnormal cell growth and differentiation, drawn from the syllabus instructional objectives. Covers the non-neoplastic abnormalities &mdash; agenesis, aplasia, hypoplasia, atrophy, hypertrophy, metaplasia and dysplasia &mdash; then what a neoplasm is, histological grading by differentiation, benign against malignant, the three routes of tumour spread, the naming rule that turns tissue of origin into sarcoma or carcinoma, the four categories of gene alteration, chemical carcinogenesis, the microbial causes with their exact mechanisms, heredity, and the TNM system. <b>Pathophysiology only</b> &mdash; every question asks what is happening in the tissue and why, never what you would do about it. <b>The 20 August lecture recording is folded in</b> &mdash; this lecture signposts nothing about the exam, so those questions carry the teaching that never reaches a slide instead: Barrett&rsquo;s oesophagus for metaplasia, cervical dysplasia for dysplasia, weight training for hypertrophy, and the vascular reasoning that predicts where a cancer will spread. Every question cites its slide, or the recording timestamp it came from.</p>
+    <p style="font-size:14.5px;margin:0 0 6px">Thirty questions on abnormal cell growth and differentiation, drawn from the syllabus instructional objectives. Covers the non-neoplastic abnormalities &mdash; agenesis, aplasia, hypoplasia, atrophy, hypertrophy, metaplasia and dysplasia &mdash; then what a neoplasm is, histological grading by differentiation, benign against malignant, the three routes of tumour spread, the naming rule that turns tissue of origin into sarcoma or carcinoma, the four categories of gene alteration, chemical carcinogenesis, the microbial causes with their exact mechanisms, heredity, and the TNM system. <b>Pathophysiology only</b> &mdash; every question asks what is happening in the tissue and why, never what you would do about it. Every question is grounded in the slides and cites the slide it came from.</p>
     <div class="chips"><span class="chip">Non-neoplastic growth</span><span class="chip">Neoplasia &amp; grading</span><span class="chip">Routes of spread</span><span class="chip">Carcinogenesis</span><span class="chip">TNM staging</span></div>
     <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
       with a review of everything you missed.</p>
@@ -307,23 +307,23 @@ const QUESTIONS = [
   {
     "topic": "Benign vs malignant",
     "io": "c — Describe neoplastic abnormalities of cell growth",
-    "q": "How do the borders of benign and malignant tumours differ?",
+    "q": "How do the borders of benign and malignant tumors differ?",
     "opts": [
       [
         "Benign has a ragged border and infiltrates surrounding tissue; malignant is well circumscribed and compresses it",
-        "This reverses the two descriptions entirely."
+        "That reverses the two: a benign tumor is well circumscribed and compresses surrounding tissue, while a malignant one has a ragged border and infiltrates it."
       ],
       [
         "Both have well circumscribed borders, and they are distinguished only by growth rate",
-        "Border character is one of the listed differences, so growth rate is not the only one."
+        "Only a benign tumor has a well circumscribed border; a malignant tumor's border is ragged and not easily discernible."
       ],
       [
         "Both have ragged borders, and they are distinguished only by whether they metastasize",
-        "The benign tumour is described as well circumscribed."
+        "Only a malignant tumor has a ragged border; a benign tumor is well circumscribed and often has a fibrous capsule."
       ],
       [
         "Benign is well circumscribed and compresses; malignant is ragged and invades",
-        "Correct — the benign tumour pushes surrounding tissue aside, the malignant one infiltrates and goes through it."
+        "Correct — the benign tumor pushes surrounding tissue aside, the malignant one infiltrates and goes through it."
       ]
     ],
     "c": 3,
@@ -332,19 +332,19 @@ const QUESTIONS = [
   {
     "topic": "Repair genes",
     "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis",
-    "q": "Which genes are named as promoting repair of damaged deoxyribonucleic acid?",
+    "q": "Which genes promote repair of damaged deoxyribonucleic acid?",
     "opts": [
       [
         "NF-1 and NF-2",
-        "Those are tumour suppressor genes."
+        "NF-1 and NF-2 (neurofibromatosis types 1 and 2) are tumor suppressor genes, which inhibit cell growth rather than repair damaged deoxyribonucleic acid."
       ],
       [
         "Retinoblastoma and adenomatous polyposis coli",
-        "Those are also tumour suppressor genes."
+        "Retinoblastoma and adenomatous polyposis coli are tumor suppressor genes that inhibit cell growth; the repair genes are BRCA-1 and BRCA-2."
       ],
       [
         "p16 and p53",
-        "p16 is named under heredity as a tumour suppressor; p53 works in apoptosis."
+        "p16 is a tumor suppressor linked to malignant melanoma, and p53 is needed to promote self destruction of mutated cells; neither is a repair gene."
       ],
       [
         "BRCA-1 and BRCA-2",
@@ -357,27 +357,27 @@ const QUESTIONS = [
   {
     "topic": "Dysplasia",
     "io": "b — Describe non-neoplastic abnormalities of cell growth",
-    "q": "What is the classic example of dysplasia, and what usually causes it?",
+    "q": "Which pairing gives an example of dysplasia with its usual cause?",
     "opts": [
       [
         "Skeletal muscle hypertrophy, usually caused by resistance training",
-        "That was his hypertrophy example."
+        "Skeletal muscle hypertrophy is enlargement of individual cells, not the disordered epithelial growth with variation in cell size and shape that defines dysplasia."
       ],
       [
         "Cervical dysplasia, usually caused by human papillomavirus",
-        "Correct — he added that it might become archival one day because of the vaccine."
+        "Correct — high-risk human papillomavirus infects cervical epithelial cells, and the resulting uncontrolled proliferation raises the risk of progression from dysplasia to carcinoma."
       ],
       [
-        "Barrett's oesophagus, usually caused by chronic acid reflux",
-        "That was his metaplasia example."
+        "Barrett's esophagus, usually caused by chronic acid reflux",
+        "Chronic irritation changing one cell type into another is metaplasia, not dysplasia; high-risk human papillomavirus drives cervical dysplasia toward carcinoma."
       ],
       [
-        "Endometrial hyperplasia, usually caused by excess oestrogen",
-        "That was his hyperplasia example."
+        "Endometrial hyperplasia, usually caused by excess estrogen",
+        "Hyperplasia is not dysplasia; dysplasia is disordered epithelial growth with loss of architectural orientation and darker, larger nuclei."
       ]
     ],
     "c": 1,
-    "cite": "2026-08-20 lecture recording, 10:47"
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 37"
   },
   {
     "topic": "Metastasis",
@@ -398,7 +398,7 @@ const QUESTIONS = [
       ],
       [
         "Local invasion of a cancer into the tissue immediately surrounding it",
-        "That is invasion; metastasis means reaching a distant site."
+        "That is local invasion; a metastasis is a portion of the cancer that has migrated from the primary site to other sites."
       ]
     ],
     "c": 1,
@@ -407,23 +407,23 @@ const QUESTIONS = [
   {
     "topic": "Benign vs malignant",
     "io": "c — Describe neoplastic abnormalities of cell growth",
-    "q": "Which five features define a benign tumour?",
+    "q": "Which set of features characterizes a benign tumor?",
     "opts": [
       [
         "Autonomous growth, clonal origin, parenchyma and stroma, a single genetic alteration, no stimulus needed",
-        "Those are the features of a neoplasm generally, benign or malignant."
+        "Those describe any neoplasm, benign or malignant; a benign tumor specifically is well circumscribed, compresses surrounding tissue, and does not metastasize."
       ],
       [
         "Pleomorphism, abnormal nuclei, mitoses, abnormal differentiation, and invasion",
-        "Those are the histological features that move a tumour towards malignancy."
+        "Pleomorphism, abnormal nuclei, mitoses and abnormal differentiation mark the malignant end; a benign tumor is usually well differentiated."
       ],
       [
         "Circumscribed, compresses, often encapsulated, well differentiated, no metastasis, slow",
-        "Correct — each has a malignant counterpart on the same slide: ragged border, infiltrates and invades, various degrees of differentiation, may metastasize, grows rapidly."
+        "Correct — each has a malignant counterpart: a ragged border, infiltration and invasion, various degrees of differentiation, possible metastasis, and rapid growth."
       ],
       [
         "Ragged border, infiltrates surrounding tissue, no capsule, variably differentiated, may metastasize, grows rapidly",
-        "That is the malignant list, which is the contrast being drawn."
+        "That is the malignant profile; a benign tumor is instead well circumscribed, often has a fibrous capsule, and does not metastasize."
       ]
     ],
     "c": 2,
@@ -435,20 +435,20 @@ const QUESTIONS = [
     "q": "What determines where a cancer metastasizes?",
     "opts": [
       [
-        "Venous blood flow, tumour and endothelial receptors, and genetic fitness",
+        "Venous blood flow, tumor and endothelial receptors, and genetic fitness",
         "Correct — metastatic spread is NOT random but determined by these three."
       ],
       [
-        "Chance alone, since circulating tumour cells lodge wherever the vessel first narrows",
-        "Metastatic spread is not random."
+        "Chance alone, since circulating tumor cells lodge wherever the vessel first narrows",
+        "Metastatic spread is not random; the pattern of venous blood flow, tumor and endothelial cell receptors, and genetic fitness decide where it lands."
       ],
       [
         "The size of the primary lesion and the duration of the disease",
-        "Those affect staging rather than the pattern of spread."
+        "Primary lesion size feeds staging; where a cancer spreads is set by venous blood flow, specific receptors, and genetically determined fitness."
       ],
       [
-        "The histological grade of the tumour and its rate of mitosis",
-        "Grade and mitotic rate describe the tumour, not where it goes."
+        "The histological grade of the tumor and its rate of mitosis",
+        "Grade and mitotic rate describe the tumor itself; its destination is set by venous blood flow, specific receptors, and genetic fitness."
       ]
     ],
     "c": 0,
@@ -461,19 +461,19 @@ const QUESTIONS = [
     "opts": [
       [
         "It has no effect on cancer risk once colonization has occurred",
-        "Eradication does reduce the risk."
+        "Eradication of Helicobacter pylori with antibiotics can reduce the risk of gastric cancer, so colonization does not fix the risk for good."
       ],
       [
         "It increases the risk, because the inflammatory response is protective",
-        "The inflammation is the problem rather than the protection."
+        "Chronic inflammation raises epithelial cell turnover and the chance of acquiring mutations, so it drives cancer rather than protecting against it."
       ],
       [
         "It reverses established gastric adenocarcinoma",
-        "Regression is described for some early MALT lymphomas, not for established carcinoma."
+        "Eradication may induce regression of some early MALT (mucosa-associated lymphoid tissue) lymphomas, not of established gastric adenocarcinoma."
       ],
       [
         "It reduces gastric cancer risk, and some early MALT lymphomas regress",
-        "Correct — evidence that the chronic inflammation itself is the carcinogenic driver."
+        "Correct — eradicating Helicobacter pylori with antibiotics can reduce gastric cancer risk and may induce regression of some early MALT (mucosa-associated lymphoid tissue) lymphomas."
       ]
     ],
     "c": 3,
@@ -482,23 +482,23 @@ const QUESTIONS = [
   {
     "topic": "Malignant histology",
     "io": "k — Describe the histological grading of cancer",
-    "q": "Which four histological features move a tumour from the benign end towards the malignant end?",
+    "q": "Which four histological features move a tumor from the benign end towards the malignant end?",
     "opts": [
       [
         "Encapsulation, uniform nuclei, absent mitoses, and normal differentiation",
-        "These are the benign features, at the opposite end of the same spectrum."
+        "Those sit at the benign end, where a tumor often has a fibrous capsule and is usually well differentiated; the malignant end brings pleomorphism, abnormal nuclei and mitoses."
       ],
       [
-        "Invasion, lymphatic spread, haematogenous spread, and seeding",
-        "Those are behaviours and routes of spread rather than histological features."
+        "Invasion, lymphatic spread, hematogenous spread, and seeding",
+        "Those are invasion and the routes of tumor spread, not histological features; the histological features are pleomorphism, abnormal nuclei, mitoses and abnormal differentiation."
       ],
       [
         "Initiation, promotion, progression, and metastasis",
-        "Those are stages of carcinogenesis rather than grading features."
+        "Initiation and promotion are steps of chemical carcinogenesis, not histological features; the malignant end shows pleomorphism, abnormal nuclei, mitoses and abnormal differentiation."
       ],
       [
         "Pleomorphism, abnormal nuclei, mitoses, and abnormal differentiation",
-        "Correct — these lie on a spectrum rather than a switch."
+        "Correct — pleomorphism, abnormal nuclei, mitoses and abnormal differentiation increase from the benign end toward the malignant end."
       ]
     ],
     "c": 3,
@@ -507,11 +507,11 @@ const QUESTIONS = [
   {
     "topic": "Hypertrophy",
     "io": "b — Describe non-neoplastic abnormalities of cell growth",
-    "q": "What causes an organ to enlarge in hypertrophy, and where is it especially important?",
+    "q": "Which statement correctly describes hypertrophy?",
     "opts": [
       [
         "Autonomous proliferation of a clone of cells; especially important in glandular tissue",
-        "That describes a neoplasm."
+        "Autonomous proliferation of a clone of cells is a neoplasm; hypertrophy is enlargement of individual cells, not the addition of more cells."
       ],
       [
         "Enlargement of the individual cells; especially important in permanent tissues such as skeletal and cardiac muscle",
@@ -519,11 +519,11 @@ const QUESTIONS = [
       ],
       [
         "An increase in the number of cells; especially important in labile tissues such as epithelium and bone marrow",
-        "That describes hyperplasia rather than hypertrophy."
+        "An increase in cell number is hyperplasia; hypertrophy enlarges individual cells and matters most in skeletal and cardiac muscle."
       ],
       [
         "Replacement of one mature cell type by another; especially important at epithelial junctions",
-        "That describes metaplasia."
+        "Replacing one cell type with another is metaplasia; hypertrophy keeps the same cell type and enlarges each cell."
       ]
     ],
     "c": 1,
@@ -535,20 +535,20 @@ const QUESTIONS = [
     "q": "What is a papilloma?",
     "opts": [
       [
-        "A malignant tumour arising from supportive, mesenchymal tissue",
-        "That is a sarcoma."
+        "A malignant tumor arising from supportive, mesenchymal tissue",
+        "A malignant tumor of supportive, mesenchymal tissue is a sarcoma; a papilloma is a benign tumor of an epithelial surface."
       ],
       [
-        "A malignant epithelial tumour showing squamous cell differentiation",
-        "That is a squamous cell carcinoma."
+        "A malignant epithelial tumor showing squamous cell differentiation",
+        "Malignant epithelium with squamous differentiation is squamous cell carcinoma; a papilloma is a benign epithelial tumor."
       ],
       [
-        "A tumour with finger-like or warty projections from an epithelial surface",
+        "A tumor with finger-like or warty projections from an epithelial surface",
         "Correct — the projections are visible microscopically or macroscopically."
       ],
       [
-        "A tumour forming a glandular pattern or arising from a gland",
-        "That is an adenoma."
+        "A tumor forming a glandular pattern or arising from a gland",
+        "A glandular pattern or gland of origin defines an adenoma; a papilloma instead has finger-like or warty projections."
       ]
     ],
     "c": 2,
@@ -561,11 +561,11 @@ const QUESTIONS = [
     "opts": [
       [
         "It stays at the same relatively low rate as the stem cell",
-        "Proliferation after commitment is dramatic, not unchanged."
+        "Proliferation after commitment can be dramatic; it is the stem cell itself that keeps a relatively low rate of proliferation."
       ],
       [
         "It becomes autonomous and no longer requires physiologic stimuli",
-        "Autonomy is a property of neoplasia, not of normal differentiation."
+        "Growth without physiologic stimuli defines a neoplasm; a normal cell committed to differentiation can proliferate dramatically but has a limited life-span."
       ],
       [
         "It can be dramatic, but those cells have a limited life-span",
@@ -582,19 +582,19 @@ const QUESTIONS = [
   {
     "topic": "Heredity",
     "io": "j — Compare and contrast the theories of heredity and carcinogenesis",
-    "q": "What happens in familial adenomatosis polyposis syndrome, and by what age does cancer develop?",
+    "q": "Which statement describes familial adenomatosis polyposis syndrome?",
     "opts": [
       [
         "Patients develop a single premalignant polyp in childhood, and colon cancer by age thirty",
-        "The polyp burden described is in the hundreds to thousands."
+        "Patients develop 500 to 2,500 premalignant adenomatous polyps in their teens and twenties, and colon cancer by age 50."
       ],
       [
         "Patients develop multiple neurofibromas at puberty, and sarcoma by age forty",
-        "That describes the neurofibromatosis picture instead."
+        "Nervous system tumors follow neurofibromatosis types 1 and 2; this syndrome instead produces hundreds to thousands of colon polyps."
       ],
       [
         "Patients develop skin cancer in sun-exposed areas from early childhood",
-        "That is xeroderma pigmentosum."
+        "Skin cancer in sun-exposed areas is xeroderma pigmentosum, an inherited inability to repair mutations caused by ultraviolet B radiation."
       ],
       [
         "Hundreds to thousands of premalignant polyps young, then colon cancer by fifty",
@@ -611,7 +611,7 @@ const QUESTIONS = [
     "opts": [
       [
         "Atrophy is disordered growth of epithelial cells with variation in size and shape",
-        "That is dysplasia."
+        "Disordered epithelial growth with variation in size and shape is dysplasia; atrophy is shrinkage of an organ that matured normally."
       ],
       [
         "Atrophy is shrinkage of a tissue or organ that had already formed and matured normally",
@@ -623,7 +623,7 @@ const QUESTIONS = [
       ],
       [
         "Atrophy is enlargement of an organ because its individual cells enlarge",
-        "That is hypertrophy, and it is the opposite direction."
+        "Enlargement from individual cell enlargement is hypertrophy; atrophy is shrinkage of an organ that had formed and matured normally."
       ]
     ],
     "c": 1,
@@ -632,7 +632,7 @@ const QUESTIONS = [
   {
     "topic": "TNM",
     "io": "l — Describe the tumor, nodes, metastases (TNM) staging system",
-    "q": "What important caveat attaches to TNM definitions?",
+    "q": "What important caveat attaches to TNM (tumor, nodes, metastases) definitions?",
     "opts": [
       [
         "They are cancer-specific; for some cancers depth of invasion matters more than size",
@@ -644,11 +644,11 @@ const QUESTIONS = [
       ],
       [
         "They apply only to epithelial malignancies and not to sarcomas",
-        "No such restriction is stated."
+        "TNM definitions are cancer-specific rather than limited to epithelial tumors; for some cancers depth of invasion outweighs size."
       ],
       [
         "They replace histological grading, which is no longer used",
-        "Staging and grading answer different questions and both remain."
+        "Staging measures the extent of spread, while histological grading measures differentiation; neither replaces the other."
       ]
     ],
     "c": 0,
@@ -660,20 +660,20 @@ const QUESTIONS = [
     "q": "What are the purposes of cancer staging?",
     "opts": [
       [
-        "To determine whether the tumour is benign or malignant",
-        "That question is answered before staging begins."
+        "To determine whether the tumor is benign or malignant",
+        "Benign versus malignant is settled first; staging then indicates extent of spread, determines prognosis, and guides management."
       ],
       [
         "Extent of spread, prognosis, and guiding management",
         "Correct — all three. Staging answers a different question from histological grading."
       ],
       [
-        "To measure how closely the tumour resembles the normal tissue it came from",
-        "That is grading rather than staging."
+        "To measure how closely the tumor resembles the normal tissue it came from",
+        "Resemblance to the normal tissue is histological grading; staging instead describes how far the cancer has spread within the patient."
       ],
       [
-        "To identify which gene alterations caused the tumour",
-        "Staging describes extent, not causation."
+        "To identify which gene alterations caused the tumor",
+        "Staging describes extent, based on primary lesion size, regional lymph nodes, and blood-borne metastases, not what caused the tumor."
       ]
     ],
     "c": 1,
@@ -686,19 +686,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Ultraviolet B, and ionizing radiation",
-        "Correct — ultraviolet B is the wavelength that damages deoxyribonucleic acid directly."
+        "Correct — both ultraviolet B and ionizing radiation cause cancer; unrepaired ultraviolet B mutations explain the skin cancers of xeroderma pigmentosum."
       ],
       [
         "Ultraviolet A only, together with infrared radiation",
-        "The ultraviolet form named is B, and infrared is not listed."
+        "The radiation forms that cause cancer are ultraviolet B and ionizing radiation; ultraviolet A and infrared are not among them."
       ],
       [
         "Microwave and radiofrequency radiation",
-        "Neither is named as a carcinogen here."
+        "The radiation forms that cause cancer are ultraviolet B and ionizing radiation, not microwave or radiofrequency radiation."
       ],
       [
         "Ionizing radiation only, with no ultraviolet contribution",
-        "Ultraviolet B is named alongside ionizing radiation."
+        "Ultraviolet B causes cancer alongside ionizing radiation, as the skin cancers in sun-exposed areas of xeroderma pigmentosum show."
       ]
     ],
     "c": 0,
@@ -707,7 +707,7 @@ const QUESTIONS = [
   {
     "topic": "Benign classification",
     "io": "e — Compare and contrast the different types of benign tumors according to origin",
-    "q": "A benign tumour arises from cartilage. Which category does it fall into?",
+    "q": "A benign tumor arises from cartilage. Which category does it fall into?",
     "opts": [
       [
         "Epithelial, since cartilage lines a surface",
@@ -715,15 +715,15 @@ const QUESTIONS = [
       ],
       [
         "Glandular, so it would be called an adenoma",
-        "There is no gland of origin."
+        "An adenoma is a benign epithelial tumor with a glandular pattern; cartilage is supportive tissue, so the tumor is mesenchymal."
       ],
       [
-        "Neither, since the classification covers only epithelial tumours",
-        "The classification explicitly has a mesenchymal category."
+        "Neither, since the classification covers only epithelial tumors",
+        "Benign tumors are classified as mesenchymal or epithelial, and cartilage belongs to the mesenchymal, supportive group."
       ],
       [
         "Mesenchymal, since cartilage is supportive tissue",
-        "Correct — connective tissue, adipose, cartilage, smooth and striated muscle, and bone are all listed."
+        "Correct — mesenchymal tumors arise from supportive tissue: connective tissue, adipose tissue, cartilage, smooth and striated muscle, and bone."
       ]
     ],
     "c": 3,
@@ -732,7 +732,7 @@ const QUESTIONS = [
   {
     "topic": "Stem cell kinetics",
     "io": "a — Describe the molecular mechanisms of abnormal cell growth and differentiation",
-    "q": "Why does a tumour mass grow faster than normal tissue?",
+    "q": "Why does a tumor mass grow faster than normal tissue?",
     "opts": [
       [
         "A higher proliferative fraction together with a lower rate of cell loss",
@@ -744,40 +744,40 @@ const QUESTIONS = [
       ],
       [
         "A lower proliferative fraction together with a lower rate of cell loss",
-        "A lower proliferative fraction would slow growth rather than accelerate it."
+        "A lower proliferative fraction would slow growth; a tumor mass outgrows normal tissue through a higher proliferative fraction and a lower rate of cell loss."
       ],
       [
         "An unchanged proliferative fraction with a shorter individual cell cycle",
-        "The proliferative fraction is exactly what changes."
+        "The proliferative fraction does change: it rises, because abnormal differentiation keeps more cells in the proliferative pool."
       ]
     ],
     "c": 0,
     "cite": "Abnormal Cell Growth for posting.pptx, Slide 22"
   },
   {
-    "topic": "Nomenclature",
+    "topic": "Malignant classification",
     "io": "f — Compare and contrast the different types of malignant tumors according to origin",
-    "q": "What is the correct plural of carcinoma?",
+    "q": "What is a carcinoma with a glandular growth pattern called?",
     "opts": [
       [
-        "Carcinomae",
-        "Not the form he gave."
+        "A squamous cell carcinoma",
+        "Squamous cell carcinoma is the carcinoma with squamous cell differentiation, not a glandular growth pattern."
       ],
       [
-        "Carcinomi",
-        "Not the form he gave."
+        "A sarcoma",
+        "A sarcoma is a malignant tumor of mesenchymal, supportive tissue, not an epithelial carcinoma with glandular growth."
       ],
       [
-        "Carcinomata",
-        "Correct — he called adding an s a misnomer, while allowing that most people do it."
+        "An adenocarcinoma",
+        "Correct — a carcinoma is a malignant epithelial tumor, and one with a glandular growth pattern is an adenocarcinoma."
       ],
       [
-        "Carcinomas",
-        "He named this specifically as the mistaken form."
+        "An adenoma",
+        "An adenoma is the benign epithelial tumor with a glandular pattern; the malignant glandular carcinoma is an adenocarcinoma."
       ]
     ],
     "c": 2,
-    "cite": "2026-08-20 lecture recording, 34:36"
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 18"
   },
   {
     "topic": "Helicobacter pylori",
@@ -786,19 +786,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Cervical carcinoma and oropharyngeal squamous cell carcinoma",
-        "Those relate to human papillomavirus."
+        "Cervical cancer and oropharyngeal squamous cell carcinoma follow high-risk human papillomavirus, not Helicobacter pylori."
       ],
       [
         "Gastric adenocarcinoma and mucosa-associated lymphoid tissue lymphoma",
-        "Correct — usually abbreviated to MALT lymphoma."
+        "Correct — chronic Helicobacter pylori gastritis is associated with gastric adenocarcinoma and MALT (mucosa-associated lymphoid tissue) lymphoma."
       ],
       [
         "Hepatocellular carcinoma and cholangiocarcinoma",
-        "Those relate to the hepatitis viruses rather than to Helicobacter."
+        "Hepatocellular carcinoma follows chronic hepatitis B and hepatitis C infection; Helicobacter pylori is linked to gastric cancers."
       ],
       [
         "Nasopharyngeal carcinoma and Burkitt lymphoma",
-        "Those relate to Epstein Barr virus."
+        "Nasopharyngeal carcinoma and B cell lymphomas follow Epstein Barr virus, which immortalizes B lymphocytes."
       ]
     ],
     "c": 1,
@@ -807,7 +807,7 @@ const QUESTIONS = [
   {
     "topic": "Chemical carcinogens",
     "io": "h — Describe the steps of chemical carcinogenesis",
-    "q": "Which carcinogens are produced by the combustion of tobacco, and what do they cause?",
+    "q": "Which statement correctly identifies the carcinogens produced by the combustion of tobacco?",
     "opts": [
       [
         "Polycyclic aromatic hydrocarbons, causing bladder and lung cancer",
@@ -815,15 +815,15 @@ const QUESTIONS = [
       ],
       [
         "Aromatic amines, causing bladder and lung cancer; among the most powerful carcinogens known",
-        "Aromatic amines are classically emphasised in OCCUPATIONAL bladder cancer."
+        "Aromatic amines are classically emphasized in occupational bladder cancer; the tobacco combustion products are polycyclic aromatic hydrocarbons."
       ],
       [
-        "Nitrosamines, causing gastric and oesophageal cancer",
-        "Nitrosamines are not the agents produced by tobacco combustion."
+        "Nitrosamines, causing gastric and esophageal cancer",
+        "The key tobacco combustion products are polycyclic aromatic hydrocarbons, which cause bladder and lung cancer rather than gastric cancer."
       ],
       [
         "Aflatoxins, causing hepatocellular carcinoma",
-        "Aflatoxin is not among the chemical carcinogens listed here."
+        "Aflatoxin is not a tobacco combustion product; burning tobacco yields polycyclic aromatic hydrocarbons, among the most powerful carcinogens known."
       ]
     ],
     "c": 0,
@@ -836,19 +836,19 @@ const QUESTIONS = [
     "opts": [
       [
         "The subarachnoid space",
-        "Seeding occurs there, but the peritoneum is the commonest."
+        "Seeding can reach the subarachnoid space, but it most commonly occurs in the peritoneal cavity."
       ],
       [
         "The peritoneal cavity",
-        "Correct — the pericardial and pleural cavities and the subarachnoid space are also named."
+        "Correct — seeding most commonly occurs in the peritoneal cavity; the pericardial and pleural cavities and the subarachnoid space can also be seeded."
       ],
       [
         "The pericardial cavity",
-        "It is one of the named cavities but not the commonest."
+        "The pericardial cavity can be seeded, but seeding most commonly occurs in the peritoneal cavity."
       ],
       [
         "The pleural cavity",
-        "Also named, but not the commonest."
+        "The pleural cavity can be seeded, but seeding most commonly occurs in the peritoneal cavity."
       ]
     ],
     "c": 1,
@@ -857,23 +857,23 @@ const QUESTIONS = [
   {
     "topic": "Heredity",
     "io": "j — Compare and contrast the theories of heredity and carcinogenesis",
-    "q": "Which cancer patients are described as sometimes carrying an inherited mutation of BRCA-1 or BRCA-2?",
+    "q": "Which cancer patients may carry an inherited mutation of BRCA-1 or BRCA-2?",
     "opts": [
       [
         "A minority of breast cancer patients",
-        "Correct — a minority, not most."
+        "Correct — a minority of breast cancer patients have an inherited mutation of these deoxyribonucleic acid repair genes."
       ],
       [
         "The majority of breast cancer patients",
-        "It is a minority."
+        "Only a minority of breast cancer patients carry an inherited BRCA-1 or BRCA-2 mutation, not the majority."
       ],
       [
         "All patients with familial adenomatous polyposis",
-        "That syndrome follows from adenomatous polyposis coli."
+        "Familial adenomatous polyposis follows an inherited alteration of the adenomatous polyposis coli tumor suppressor gene."
       ],
       [
         "All patients with xeroderma pigmentosum",
-        "That follows from a different set of repair genes."
+        "Xeroderma pigmentosum follows inherited defective repair genes that cannot fix ultraviolet B damage; BRCA-1 and BRCA-2 relate to breast cancer."
       ]
     ],
     "c": 0,
@@ -890,15 +890,15 @@ const QUESTIONS = [
       ],
       [
         "Types 6 and 11",
-        "Those are the low-risk types not named here for cervical cancer."
+        "Types 6 and 11 are not the cervical cancer subtypes; high-risk types 16 and 18 cause the majority of cervical cancers."
       ],
       [
         "Types 1 and 2",
-        "Not the subtypes responsible for cervical cancer."
+        "Types 1 and 2 are not the cervical cancer subtypes; of many genetic subtypes, types 16 and 18 most commonly cause it."
       ],
       [
         "Types 31 and 33",
-        "It is types 16 and 18."
+        "Types 31 and 33 are not the leading cervical cancer subtypes; types 16 and 18 cause the majority of cervical cancers."
       ]
     ],
     "c": 0,
@@ -911,11 +911,11 @@ const QUESTIONS = [
     "opts": [
       [
         "Abnormal apoptosis of neighbouring stromal cells",
-        "Stromal apoptosis is not the named step."
+        "Stromal cell apoptosis is not a step; invasion involves abnormal cell-substratum interaction and invasion into adjacent structures."
       ],
       [
         "Abnormal lymphatic valve function",
-        "No such mechanism is described."
+        "Lymphatic valves play no part; the step alongside invasion into adjacent structures is abnormal cell-substratum interaction."
       ],
       [
         "Abnormal cell-substratum interaction",
@@ -923,24 +923,24 @@ const QUESTIONS = [
       ],
       [
         "Abnormal cell-cycle checkpoint control",
-        "Checkpoint failure is a gene-alteration problem rather than this step."
+        "Checkpoint loss is a gene alteration, as when the viral protein E7 inhibits the retinoblastoma protein; the step alongside invasion is abnormal cell-substratum interaction."
       ]
     ],
     "c": 2,
     "cite": "Abnormal Cell Growth for posting.pptx, Slide 24"
   },
   {
-    "topic": "Tumour suppressors",
+    "topic": "Tumor suppressors",
     "io": "g — Compare and contrast the categories of gene alterations in carcinogenesis",
-    "q": "What do tumour suppressor genes do, and what are some examples?",
+    "q": "Which statement correctly describes tumor suppressor genes?",
     "opts": [
       [
         "They repair damaged deoxyribonucleic acid; the examples are BRCA-1 and BRCA-2",
-        "That is the repair-gene category."
+        "BRCA-1 and BRCA-2 are repair genes for damaged deoxyribonucleic acid; tumor suppressor genes inhibit cell growth."
       ],
       [
         "They trigger apoptosis in damaged cells; no specific examples are named",
-        "Apoptosis genes are the fourth category and are described separately."
+        "Genes promoting self destruction of damaged cells form a separate category; tumor suppressor genes inhibit cell growth."
       ],
       [
         "They inhibit cell growth; the examples are NF-1, NF-2, retinoblastoma and adenomatous polyposis coli",
@@ -948,7 +948,7 @@ const QUESTIONS = [
       ],
       [
         "They promote regulated cell growth; the examples are growth factors and their receptors",
-        "That is the protooncogene category."
+        "Promoting regulated growth describes protooncogenes, such as growth factors and their receptors; tumor suppressor genes inhibit growth."
       ]
     ],
     "c": 2,
@@ -961,19 +961,19 @@ const QUESTIONS = [
     "opts": [
       [
         "Invade through the basement membrane into surrounding tissue",
-        "Invasion is a malignant behaviour, and an adenoma is benign."
+        "Invasion of surrounding tissue is a malignant behavior; an adenoma is a benign epithelial tumor, which compresses surrounding tissue instead."
       ],
       [
         "Seed the peritoneal cavity through an organ surface",
-        "Seeding requires malignant invasion through the organ surface."
+        "Seeding is invasion of a tumor through an organ surface into a body cavity; an adenoma is benign, so it compresses rather than invades."
       ],
       [
         "Produce finger-like projections from the epithelial surface",
-        "That describes a papilloma rather than an adenoma."
+        "Finger-like projections from an epithelial surface define a papilloma; an adenoma forms a glandular pattern or derives from a gland."
       ],
       [
         "Secrete the hormone or hormones produced by its gland of origin",
-        "Correct — the tumour retains a function of the tissue it came from."
+        "Correct — the tumor retains a function of the tissue it came from."
       ]
     ],
     "c": 3,
@@ -986,11 +986,11 @@ const QUESTIONS = [
     "opts": [
       [
         "One cell, which underwent a genetic alteration",
-        "Correct — the whole population is clonal."
+        "Correct — the entire proliferating population derives from one cell that underwent a genetic alteration, so the neoplasm is clonal."
       ],
       [
         "Many cells, each of which underwent an independent genetic alteration",
-        "The derivation is from a single cell, not many."
+        "The whole proliferating population derives from a single genetically altered cell, not from many independent ones."
       ],
       [
         "Two cells, one parenchymal and one stromal",
@@ -998,7 +998,7 @@ const QUESTIONS = [
       ],
       [
         "A variable number, depending on the tissue in which it arises",
-        "It is one cell, without qualification."
+        "The number does not vary with tissue; every neoplasm's proliferating population derives from one genetically altered cell."
       ]
     ],
     "c": 0,
@@ -1007,52 +1007,52 @@ const QUESTIONS = [
   {
     "topic": "Abnormal growth",
     "io": "a — Describe the molecular mechanisms of abnormal cell growth and differentiation",
-    "q": "Which two abnormalities separate a tumour cell from a normal cell?",
+    "q": "Which two abnormalities separate a tumor cell from a normal cell?",
     "opts": [
       [
         "Abnormal vascular supply, and abnormal stromal composition",
-        "Stroma and vessels are components of a neoplasm rather than this contrast."
+        "Stroma, the connective tissue and blood vessels, is a component of every neoplasm; tumor cells differ from normal cells in growth regulation and cell-cell interactions."
       ],
       [
         "Abnormal differentiation, and abnormal cell size",
-        "Differentiation is graded separately; cell size alone is not the contrast drawn."
+        "Differentiation and cell size are not the pair; tumor cells show abnormal regulation of cell growth and abnormal cell-cell interactions."
       ],
       [
         "Abnormal regulation of cell growth, and abnormal cell-cell interactions",
-        "Correct — the same slide also contrasts a normal stem cell with a cancer stem cell."
+        "Correct — compared with normal cells, tumor cells show abnormal regulation of cell growth and abnormal cell-cell interactions."
       ],
       [
         "Abnormal apoptosis, and abnormal deoxyribonucleic acid repair",
-        "Both are genuinely important in carcinogenesis, but they are not the pair on this slide."
+        "Apoptosis and repair genes matter in carcinogenesis, but the normal-versus-tumor contrast is growth regulation and cell-cell interaction."
       ]
     ],
     "c": 2,
     "cite": "Abnormal Cell Growth for posting.pptx, Slide 19"
   },
   {
-    "topic": "Metastasis",
+    "topic": "Hematogenous spread",
     "io": "d — Compare and contrast the routes of tumor spread",
-    "q": "Why does lung cancer metastasize to the brain? What is the vascular explanation?",
+    "q": "Why do cancers spreading through the portal vein and the inferior vena cava reach the liver and the lungs?",
     "opts": [
       [
-        "Cells from the lung follow lymphatic drainage into the subarachnoid space",
-        "That would be seeding rather than haematogenous spread."
+        "Because lymphatic drainage from most organs terminates in the liver and lungs",
+        "Lymphatic spread follows the natural route of lymphatic drainage from the tumor margin; the liver and lung pattern is venous."
       ],
       [
-        "Cells enter the left heart and leave by the carotids",
-        "Correct — the lung sits downstream of the pulmonary circulation, so its cells reach the systemic arterial side and the internal carotid takes them to the brain."
+        "Because those are the organs each vein drains into",
+        "Correct — hematogenous spread is typically venous, so fragments in the portal vein reach the liver and those in the inferior vena cava reach the lungs."
       ],
       [
-        "Cells from the lung enter the portal vein, which carries them to the brain",
-        "The portal vein carries gastrointestinal blood to the liver."
+        "Because liver and lung tissue are uniquely receptive to any tumor cell",
+        "Specific receptors on tumor and endothelial cells do shape metastasis, but the liver and lung pattern follows the venous flow of the portal vein and inferior vena cava."
       ],
       [
-        "Cells from the lung travel retrogradely up the inferior vena cava",
-        "The inferior vena cava carries blood towards the heart from below."
+        "Because tumor cells preferentially enter arterial rather than venous blood",
+        "Hematogenous tumor spread is typically through veins, especially the portal vein and inferior vena cava, not arteries."
       ]
     ],
     "c": 1,
-    "cite": "2026-08-20 lecture recording, 53:38"
+    "cite": "Abnormal Cell Growth for posting.pptx, Slide 14"
   }
 ];
 const LTR = ["A","B","C","D"];

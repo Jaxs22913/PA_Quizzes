@@ -33,8 +33,6 @@ INTRO = ("Sixty questions drawn from every lecture in the Exam 1 block, in exam 
          "at pathophysiology against management, and these forms hold that line throughout "
          "&mdash; the ENT lecture's epistaxis slide carries a management column and not one "
          "question is built on it. <b>No vignettes</b>, per the same spec. "
-         "One deck error is corrected in place: the slide calls the vertigo of labyrinthitis "
-         "&ldquo;episodic&rdquo; and the lecturer corrected that aloud to <b>continuous</b>. "
          "Every question cites its slide.")
 
 for name in ("A", "B", "C", "D", "E"):
